@@ -141,6 +141,163 @@ federal_administration:
   verification: bulk-import
   as_of: '2026-11-20'
   locator: Native Village of Akhiok
+indian_health_service:
+- area: Alaska
+  source: indian-health-service-alaska-area-profile-anchorage-service-area
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  locator: '"Federally Recognized Tribes" list, Anchorage Service Area profile'
+  note: Listed as "Native Village of Akhiok". Profile does not state a single operator for this service area (several tribal organizations hold Title I/Title V agreements).
+- area: Alaska
+  service_unit: Anchorage Service Area
+  source: indian-health-service-alaska-area-profile-anchorage-service-area
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  locator: '"Federally Recognized Tribes" list, Anchorage Service Area profile'
+  note: 'The source''s words: "Native Village of Akhiok".'
+governance:
+- aspect: form
+  value: Traditional Tribal Constitution and Bylaws
+  quote: Traditional Tribal Constitution and Bylaws
+  source: constitution-native-village-of-akhiok-undated-text
+  confidence: medium
+  verification: read-in-full
+  locator: Title
+  document_version:
+    document: native-village-of-akhiok-constitution
+    version: undated-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Undated; the adoption certificate''s date and vote counts are blank in the scan, and the article numbering repeats Article IV.'
+- aspect: governing-body
+  value: Council
+  quote: There shall be a Council composed of a President and four mem-
+  source: constitution-native-village-of-akhiok-undated-text
+  confidence: medium
+  verification: read-in-full
+  locator: Article IV, Section 1
+  document_version:
+    document: native-village-of-akhiok-constitution
+    version: undated-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Undated; the adoption certificate''s date and vote counts are blank in the scan, and the article numbering repeats Article IV.'
+- aspect: governing-body-size
+  value: 5 members
+  quote: There shall be a Council composed of a President and four mem-
+  source: constitution-native-village-of-akhiok-undated-text
+  confidence: medium
+  verification: read-in-full
+  locator: Article IV, Section 1
+  document_version:
+    document: native-village-of-akhiok-constitution
+    version: undated-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Undated; the adoption certificate''s date and vote counts are blank in the scan, and the article numbering repeats Article IV.'
+- aspect: governing-body-selection
+  value: Elected by adult members of the village
+  quote: bers elected by the adult members of the Village of Akhiok.
+  source: constitution-native-village-of-akhiok-undated-text
+  confidence: medium
+  verification: read-in-full
+  locator: Article IV, Section 1
+  document_version:
+    document: native-village-of-akhiok-constitution
+    version: undated-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Undated; the adoption certificate''s date and vote counts are blank in the scan, and the article numbering repeats Article IV.'
+- aspect: governing-body-term
+  value: 3 years, first terms staggered
+  quote: Each member of the Council shall serve for a three year term,
+  source: constitution-native-village-of-akhiok-undated-text
+  confidence: medium
+  verification: read-in-full
+  locator: Article IV, Section 3
+  document_version:
+    document: native-village-of-akhiok-constitution
+    version: undated-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Undated; the adoption certificate''s date and vote counts are blank in the scan, and the article numbering repeats Article IV.'
+- aspect: general-council
+  value: Annual meeting of all members
+  quote: Section 1 - Annual Membership Meeting. An annual meeting of the members shall
+  source: constitution-native-village-of-akhiok-undated-text
+  confidence: medium
+  verification: read-in-full
+  locator: Bylaws, Article III, Section 1
+  document_version:
+    document: native-village-of-akhiok-constitution
+    version: undated-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Undated; the adoption certificate''s date and vote counts are blank in the scan, and the article numbering repeats Article IV.'
+- aspect: head-of-government
+  value: President
+  quote: The President of the Council shall preside over
+  source: constitution-native-village-of-akhiok-undated-text
+  confidence: medium
+  verification: read-in-full
+  locator: Bylaws, Article 1, Section 1
+  document_version:
+    document: native-village-of-akhiok-constitution
+    version: undated-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Undated; the adoption certificate''s date and vote counts are blank in the scan, and the article numbering repeats Article IV.'
+- aspect: head-of-government
+  value: President
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  verification: bulk-import
+  as_of: '2026-11-20'
+  locator: Native Village of Akhiok
+  note: The title of the leader's office as the federal directory lists it; the holder's name is not recorded.
+- aspect: other-officers
+  value: Vice-President, Secretary/Treasurer
+  quote: The Secretary/Treasurer shall act as a
+  source: constitution-native-village-of-akhiok-undated-text
+  confidence: medium
+  verification: read-in-full
+  locator: Bylaws, Article 1, Section 3
+  document_version:
+    document: native-village-of-akhiok-constitution
+    version: undated-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Undated; the adoption certificate''s date and vote counts are blank in the scan, and the article numbering repeats Article IV.'
+- aspect: elections
+  value: Annually
+  quote: be held for the purpose of electing Council members whose terms have expired
+  source: constitution-native-village-of-akhiok-undated-text
+  confidence: medium
+  verification: read-in-full
+  locator: Bylaws, Article III, Section 1
+  document_version:
+    document: native-village-of-akhiok-constitution
+    version: undated-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Undated; the adoption certificate''s date and vote counts are blank in the scan, and the article numbering repeats Article IV.'
+- aspect: voting-age
+  value: '18'
+  quote: All members of the Village of Akhiok 18 years or over shall have the
+  source: constitution-native-village-of-akhiok-undated-text
+  confidence: medium
+  verification: read-in-full
+  locator: Bylaws, Article V, Section 1
+  document_version:
+    document: native-village-of-akhiok-constitution
+    version: undated-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Undated; the adoption certificate''s date and vote counts are blank in the scan, and the article numbering repeats Article IV.'
+- aspect: amendment
+  value: Ratified by majority vote of adult members
+  quote: Amendments shall become effective when ratified by a majority vote
+  source: constitution-native-village-of-akhiok-undated-text
+  confidence: medium
+  verification: read-in-full
+  locator: Article VII
+  document_version:
+    document: native-village-of-akhiok-constitution
+    version: undated-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Undated; the adoption certificate''s date and vote counts are blank in the scan, and the article numbering repeats Article IV.'
+- aspect: recall-and-removal
+  value: Forfeiture on felony or dishonesty conviction
+  quote: who is convicted of a felony or any other offense involving dishonesty or
+  source: constitution-native-village-of-akhiok-undated-text
+  confidence: medium
+  verification: read-in-full
+  locator: Article IV - Change of Officers, Section 1
+  document_version:
+    document: native-village-of-akhiok-constitution
+    version: undated-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Undated; the adoption certificate''s date and vote counts are blank in the scan, and the article numbering repeats Article IV.'
 justice_institutions:
 - kind: tribal-court
   name: Tribal Court

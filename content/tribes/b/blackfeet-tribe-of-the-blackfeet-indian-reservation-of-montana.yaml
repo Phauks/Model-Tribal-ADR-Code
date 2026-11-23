@@ -202,6 +202,30 @@ federal_administration:
   verification: bulk-import
   as_of: '2026-11-20'
   locator: Blackfeet Tribe of the Blackfeet Indian Reservation of Montana
+indian_health_service:
+- area: Billings
+  source: indian-health-service-billings-careers-brochure
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  locator: '"Tribes of Montana and Wyoming" list'
+  note: 'Listed as "Blackfeet Nation". Also listed under the same Area in: indian-health-service-direct-service-tribes. Service unit named for the reservation; page does not list the nation by its full name.'
+- area: Billings
+  service_unit: Blackfeet Service Unit
+  source: indian-health-service-billings-blackfeet-service-unit
+  confidence: medium
+  verification: read-in-full
+  as_of: '2026-11-23'
+  locator: page text
+  note: 'The source''s words: "Blackfeet Indian Reservation".'
+- area: Billings
+  operator: indian-health-service
+  source: indian-health-service-direct-service-tribes
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  locator: Direct Service Tribes by IHS Area > Billings Area
+  note: Listed as "Blackfeet Tribal Business Council". The Direct Service Tribes list says some Tribes have a mixed Indian Health Service and Tribal arrangement.
 government_structure:
 - kind: indian-reorganization-act
   detail: Listed as "The Blackfeet Tribe of the Blackfeet Indian Reservation" among organizations under
@@ -227,6 +251,207 @@ government_structure:
   as_of: '1935'
   locator: preamble / approval and certification of adoption
   note: Historical constitution; a later constitution may have replaced it.
+governance:
+- aspect: form
+  value: Constitution under Section 16 of the Act of June 18, 1934
+  quote: vested in us by Section 16 of the Act of June 18, 1934 (48 Statutes
+  source: constitution-blackfeet-tribe-of-the-blackfeet-indian-reservation-of-montana-1998-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1998'
+  locator: Preamble
+  document_version:
+    document: blackfeet-tribe-of-the-blackfeet-indian-reservation-of-montana-constitution
+    version: 1998-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Several amendments supersede earlier text; facts follow the current amendments (X and XI) where they apply.'
+- aspect: governing-body
+  value: Blackfeet Tribal Business Council
+  quote: of a council known as the Blackfeet Tribal Business Council.
+  source: constitution-blackfeet-tribe-of-the-blackfeet-indian-reservation-of-montana-1998-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1998'
+  locator: Article III, Section 1
+  document_version:
+    document: blackfeet-tribe-of-the-blackfeet-indian-reservation-of-montana-constitution
+    version: 1998-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Several amendments supersede earlier text; facts follow the current amendments (X and XI) where they apply.'
+- aspect: governing-body-size
+  value: 9 members
+  quote: Business Council shall be elected to specifically enumerated positions
+  source: constitution-blackfeet-tribe-of-the-blackfeet-indian-reservation-of-montana-1998-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1998'
+  locator: Article IV, Section 2
+  document_version:
+    document: blackfeet-tribe-of-the-blackfeet-indian-reservation-of-montana-constitution
+    version: 1998-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Several amendments supersede earlier text; facts follow the current amendments (X and XI) where they apply.'
+- aspect: governing-body-selection
+  value: Elected by eligible tribal voters, by district position
+  quote: by the eligible voters of the Blackfeet Tribe.
+  source: constitution-blackfeet-tribe-of-the-blackfeet-indian-reservation-of-montana-1998-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1998'
+  locator: Article IV, Section 1
+  document_version:
+    document: blackfeet-tribe-of-the-blackfeet-indian-reservation-of-montana-constitution
+    version: 1998-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Several amendments supersede earlier text; facts follow the current amendments (X and XI) where they apply.'
+- aspect: governing-body-term
+  value: 4 years
+  quote: Tribal Business Council shall be elected for a term of four (4) years
+  source: constitution-blackfeet-tribe-of-the-blackfeet-indian-reservation-of-montana-1998-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1998'
+  locator: Article IV, Section 1
+  document_version:
+    document: blackfeet-tribe-of-the-blackfeet-indian-reservation-of-montana-constitution
+    version: 1998-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Several amendments supersede earlier text; facts follow the current amendments (X and XI) where they apply.'
+- aspect: head-of-government
+  value: Chairman
+  quote: 'its membership: (1) A chairman; (2) A vice chairman.'
+  source: constitution-blackfeet-tribe-of-the-blackfeet-indian-reservation-of-montana-1998-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1998'
+  locator: Article III, Section 4(a)
+  document_version:
+    document: blackfeet-tribe-of-the-blackfeet-indian-reservation-of-montana-constitution
+    version: 1998-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Several amendments supersede earlier text; facts follow the current amendments (X and XI) where they apply.'
+- aspect: head-of-government
+  value: Chairperson
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  verification: bulk-import
+  as_of: '2026-11-20'
+  locator: Blackfeet Tribe of the Blackfeet Indian Reservation of Montana
+  note: The title of the leader's office as the federal directory lists it; the holder's name is not recorded. Listed as “Chairman”; recorded without the holder's own form of the title.
+- aspect: head-of-government-selection
+  value: Elected by the tribal council from its membership
+  quote: The tribal council so organized shall elect from
+  source: constitution-blackfeet-tribe-of-the-blackfeet-indian-reservation-of-montana-1998-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1998'
+  locator: Article III, Section 4(a)
+  document_version:
+    document: blackfeet-tribe-of-the-blackfeet-indian-reservation-of-montana-constitution
+    version: 1998-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Several amendments supersede earlier text; facts follow the current amendments (X and XI) where they apply.'
+- aspect: other-officers
+  value: Vice chairman, secretary, sergeant-at-arms
+  quote: (1) A secretary; (2) A sergeant-at-arms
+  source: constitution-blackfeet-tribe-of-the-blackfeet-indian-reservation-of-montana-1998-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1998'
+  locator: Article III, Section 4(b)
+  document_version:
+    document: blackfeet-tribe-of-the-blackfeet-indian-reservation-of-montana-constitution
+    version: 1998-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Several amendments supersede earlier text; facts follow the current amendments (X and XI) where they apply.'
+- aspect: elections
+  value: Every 2 years, last Tuesday of June in even-numbered years
+  quote: shall be held on the last Tuesday of June in
+  source: constitution-blackfeet-tribe-of-the-blackfeet-indian-reservation-of-montana-1998-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1998'
+  locator: Article IV, Section 4(a)
+  document_version:
+    document: blackfeet-tribe-of-the-blackfeet-indian-reservation-of-montana-constitution
+    version: 1998-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Several amendments supersede earlier text; facts follow the current amendments (X and XI) where they apply.'
+- aspect: voting-age
+  value: '18'
+  quote: (18) years of age or older shall be eligible to vote when he or she
+  source: constitution-blackfeet-tribe-of-the-blackfeet-indian-reservation-of-montana-1998-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1998'
+  locator: Article IV, Section 10
+  document_version:
+    document: blackfeet-tribe-of-the-blackfeet-indian-reservation-of-montana-constitution
+    version: 1998-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Several amendments supersede earlier text; facts follow the current amendments (X and XI) where they apply.'
+- aspect: election-authority
+  value: Election Board appointed by the Tribal Council
+  quote: or by an Election Board appointed by the Tribal Council.
+  source: constitution-blackfeet-tribe-of-the-blackfeet-indian-reservation-of-montana-1998-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1998'
+  locator: Article IV, Section 7
+  document_version:
+    document: blackfeet-tribe-of-the-blackfeet-indian-reservation-of-montana-constitution
+    version: 1998-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Several amendments supersede earlier text; facts follow the current amendments (X and XI) where they apply.'
+- aspect: judiciary
+  value: Minor courts, established by the council
+  quote: establish minor courts for the adjudication of claims or disputes
+  source: constitution-blackfeet-tribe-of-the-blackfeet-indian-reservation-of-montana-1998-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1998'
+  locator: Article VI, Section 1(k)
+  document_version:
+    document: blackfeet-tribe-of-the-blackfeet-indian-reservation-of-montana-constitution
+    version: 1998-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Several amendments supersede earlier text; facts follow the current amendments (X and XI) where they apply.'
+- aspect: amendment
+  value: Majority vote of qualified voters at an election called by the Secretary of the Interior
+  quote: This constitution and by-laws may be amended by a majority vote of the
+  source: constitution-blackfeet-tribe-of-the-blackfeet-indian-reservation-of-montana-1998-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1998'
+  locator: Article X
+  document_version:
+    document: blackfeet-tribe-of-the-blackfeet-indian-reservation-of-montana-constitution
+    version: 1998-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Several amendments supersede earlier text; facts follow the current amendments (X and XI) where they apply.'
+- aspect: secretarial-approval
+  value: Required for amendments
+  quote: no amendment shall become effective until it shall have been approved
+  source: constitution-blackfeet-tribe-of-the-blackfeet-indian-reservation-of-montana-1998-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1998'
+  locator: Article X
+  document_version:
+    document: blackfeet-tribe-of-the-blackfeet-indian-reservation-of-montana-constitution
+    version: 1998-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Several amendments supersede earlier text; facts follow the current amendments (X and XI) where they apply.'
+- aspect: recall-and-removal
+  value: Expulsion by two-thirds of the entire Council
+  quote: member for cause by two-thirds (2/3) or more members of the entire Blackfeet
+  source: constitution-blackfeet-tribe-of-the-blackfeet-indian-reservation-of-montana-1998-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1998'
+  locator: Article V, Section 2
+  document_version:
+    document: blackfeet-tribe-of-the-blackfeet-indian-reservation-of-montana-constitution
+    version: 1998-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Several amendments supersede earlier text; facts follow the current amendments (X and XI) where they apply.'
+- aspect: recall-and-removal
+  value: Recall by petition of 20% of eligible voters
+  quote: Tribal Business Council by at least twenty percent (20%) of the total
+  source: constitution-blackfeet-tribe-of-the-blackfeet-indian-reservation-of-montana-1998-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1998'
+  locator: Article V, Section 4
+  document_version:
+    document: blackfeet-tribe-of-the-blackfeet-indian-reservation-of-montana-constitution
+    version: 1998-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Several amendments supersede earlier text; facts follow the current amendments (X and XI) where they apply.'
 governing_documents:
 - kind: law-code
   title: Code
@@ -484,6 +709,81 @@ jurisdiction:
     from images and matched to the roster. Row re-read on 2026-11-22 from the page image (the govinfo
     PDF has no text layer for the table); verification level unchanged because the name was not matched
     word for word in machine-read text.'
+- topic: public-law-280
+  value: not-assumed
+  detail: Montana's 2024 legislative staff summary states that the Flathead Reservation is the only reservation in Montana under Public Law 280; no other Montana reservation is under state jurisdiction by the 1963 act. (Mont. Legis. Servs. Div., Montana & Public Law 280, at 1 (Apr. 2024).)
+  source: montana-legislative-services-division-public-law-280-2024
+  confidence: medium
+  verification: read-in-full
+  locator: Mont. Legis. Servs. Div. memo p. 1; Mont. Code Ann. § 2-1-301
+  note: 'Secondary source (legislative staff). Statutory text names only Flathead in § 2-1-301. Little Shell has no reservation in the roster data. Turtle Mountain (ND-based) has MT presence only. Fort Peck: a state court allowed divorce under a 1938 tribal enactment (State ex rel. Iron Bear v. Dist. Ct., 162 Mont. 335, 512 P.2d 1292 (1973)); that is tribal consent in a domestic-relations setting, not Public Law 280; the research read only the opening. Also cites: montana-code-annotated-2-1-301.'
+- topic: public-law-280
+  value: not-assumed
+  detail: The Supreme Court held that Montana never took the "affirmative legislative action" needed to assume jurisdiction over the Blackfeet Reservation, so a tribal-council act could not give the State civil jurisdiction. (Kennerly v. Dist. Ct. of Mont., 400 U.S. 423, 425, 427 (1971).)
+  source: kennerly-v-district-court-of-montana-1971
+  confidence: high
+  verification: read-in-full
+  locator: 400 U.S. at 425
+  note: 'Quote as printed in the official report (dash punctuation as in the PDF text). Holding at 427: the Tribal Council''s unilateral action was insufficient under the 1953 Act.'
+- topic: public-law-280
+  value: optional-state
+  detail: Montana law lets any other tribe request state jurisdiction by resolution to the governor, who must proclaim it within 60 days, but only after the tribe's own approval and the consent of each affected county commission. (Mont. Code Ann. § 2-1-302.)
+  source: montana-code-annotated-2-1-301
+  confidence: high
+  verification: read-in-full
+  locator: Mont. Code Ann. § 2-1-302(1)-(2); § 2-1-303
+  note: Procedure only; the research found no proclamation under it for any other tribe. Under § 2-1-303 the State assumes jurisdiction 60 days after the proclamation. Enacted as 1963 Mont. Laws ch. 81 (section history lines).
+treaties:
+- title: Treaty with the Blackfeet, 1855
+  signed: '1855-10-17'
+  statutes_at_large: 11 Stat. 657
+  kappler:
+    volume: 2
+    page: 736
+    link: https://treaties.okstate.edu/treaties/treaty-with-the-blackfeet-1855-0736
+  signatory: Piegan; Blackfeet
+  source: kappler-indian-affairs-laws-and-treaties-vol-2-1904
+  confidence: medium
+  verification: inferred
+  locator: p. 736 (Treaty with the Blackfeet, 1855; Kappler header "Oct. 17, 1855. | 11 Stat., 657. | Ratified Apr. 15, 1856. | Proclaimed Apr. 25, 1856.")
+  note: The nation's official name carries the name the treaty gives this party. Linked to the nation by Claude (AI assistant) from the treaty's text and the nation's name, not from a source that names the successor; not yet checked against a second source. Piegan (Blackfeet Tribe of Montana) The page is the treaty's first page as the Oklahoma State University database's address gives it.
+- title: Treaty with the Blackfeet Sioux, 1865
+  signed: '1865-10-19'
+  statutes_at_large: 14 Stat. 727
+  kappler:
+    volume: 2
+    page: 898
+    link: https://treaties.okstate.edu/treaties/treaty-with-the-blackfeet-sioux-1865-0898
+  signatory: Blackfeet
+  source: kappler-indian-affairs-laws-and-treaties-vol-2-1904
+  confidence: medium
+  verification: inferred
+  locator: p. 898 (Treaty with the Blackfeet Sioux, 1865; Kappler header "Oct. 19, 1865. | 14 Stat., 727. | Ratified Mar. 5, 1866. | Proclaimed Mar. 17, 1866.")
+  note: The nation's official name carries the name the treaty gives this party. Linked to the nation by Claude (AI assistant) from the treaty's text and the nation's name, not from a source that names the successor; not yet checked against a second source. Piegan (Blackfeet Tribe of Montana) The page is the treaty's first page as the Oklahoma State University database's address gives it.
+- title: Treaty with the Sioux-Brule, Oglala, Miniconjou, Yanktonai, Hunkpapa, Blackfeet, Cuthead, Two Kettle, Sans Arcs, and Santee-and Arapaho, 1868
+  signed: '1868-04-29'
+  statutes_at_large: 15 Stat. 635
+  kappler:
+    volume: 2
+    page: 998
+    link: https://treaties.okstate.edu/treaties/treaty-with-the-sioux-brule-oglala-miniconjou-yanktonai-hunkpapa-blackfeet-cuthead-two-kettle-sans-arcs-and-santee-and-arapaho-1868-0998
+  signatory: Blackfeet
+  source: kappler-indian-affairs-laws-and-treaties-vol-2-1904
+  confidence: medium
+  verification: inferred
+  locator: p. 998 (Treaty with the Sioux-Brule, Oglala, Miniconjou, Yanktonai, Hunkpapa, Blackfeet, Cuthead, Two Kettle, Sans Arcs, and Santee-and Arapaho, 1868; Kappler header "Apr. 29, 1868. | 15 Stats., 635. | Ratified, Feb. 16, 1869. | Proclaimed, Feb. 24, 1869.")
+  note: The nation's official name carries the name the treaty gives this party. Linked to the nation by Claude (AI assistant) from the treaty's text and the nation's name, not from a source that names the successor; not yet checked against a second source. Piegan (Blackfeet Tribe of Montana) The page is the treaty's first page as the Oklahoma State University database's address gives it.
+land_establishment:
+- land_area: Blackfeet Reserve, Montana (as then bounded)
+  method: executive-order
+  instrument: Exec. Order of July 5, 1873, 1 Kappler 855-856
+  date: '1873-07-05'
+  detail: First set aside
+  source: executive-order-1873-07-05-blackfeet-reservation
+  confidence: medium
+  verification: read-in-full
+  locator: 1 Kappler 855-856
+  note: 'The instrument reads: “be set apart as a reservation for the Gros Ventre, Piegan, Blood, Blackfeet, River Crow, and other Indians”. Substantially reduced by Exec. Order of Aug. 19, 1874 and the Act of Apr. 15, 1874 (18 Stat. 28), and later the Act of May 1, 1888 (cited in Kappler as 25 Stat. 129); the 1855 Treaty (11 Stat. 657) created a common hunting ground, not a reservation. Order text begins on p. 855 and ends on p. 856.'
 memberships:
 - organization: Rocky Mountain Tribal Leaders Council
   source: rocky-mountain-tribal-leaders-council-who-we-are

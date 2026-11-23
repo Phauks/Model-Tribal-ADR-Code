@@ -1,6 +1,6 @@
 profile: content/tribes/d/delaware-nation.yaml
 topic: dispute-resolution
-status: partly-searched
+status: none-found
 last_searched: '2026-11-23'
 searches:
 - date: '2026-11-22'
@@ -67,6 +67,48 @@ searches:
     held no lead.
 - date: '2026-11-23'
   searched_by: Claude (AI assistant)
+  method: browser
+  place_kind: nation-website
+  address: https://www.delawarenation-nsn.gov/ordinances/
+  query: dispute resolution wording
+  outcome: not-found
+  reason: Ordinance list has no mediation, arbitration or peacemaking titles.
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: browser
+  place_kind: nation-website
+  address: https://delawarenation-nsn.gov/?p=29084
+  query: dispute resolution wording
+  outcome: not-found
+  reason: Types of Cases Heard page; court only.
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: browser
+  place_kind: web-search
+  address: 'WebSearch: Delaware Nation Anadarko Oklahoma tribal court code of laws dispute resolution
+    delawarenation-nsn.gov'
+  query: Delaware Nation Anadarko Oklahoma tribal court code of laws dispute resolution delawarenation-nsn.gov
+  outcome: not-found
+  reason: Found the nation's own court and ordinances pages.
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: browser
+  place_kind: web-search
+  address: 'WebSearch: Delaware Nation Oklahoma tribal court OR code mediation OR "dispute resolution"'
+  query: Delaware Nation Oklahoma tribal court OR code mediation OR "dispute resolution"
+  outcome: not-found
+  reason: Results mostly the Delaware Tribe (a different nation) and Choctaw pages.
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: web-archive-index
+  address: https://web.archive.org/cdx/search/cdx?url=delawarenation.com/*&fl=original,timestamp,mimetype,statuscode&filter=statuscode:200&collapse=urlkey&limit=5000
+  query: archived captures of the site, fetched by the fetch archived copies workflow
+  outcome: error
+  reason: The Wayback Machine capture index did not answer (connection refused) in any of the three rounds;
+    worth trying again.
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
   method: script
   place_kind: nation-code-site
   address: http://delawarenation.com/wp-content/uploads/2019/01/2018-219-Appr-Elect-Ord-Rev-Reso-at-back.pdf
@@ -74,5 +116,5 @@ searches:
   outcome: dead-link
   reason: 'Still not readable on 2026-11-23 (direct request: HTTP 404), and the Wayback Machine had no
     copy.'
-next_steps: 'Open by hand in a browser, or ask the nation''s office for: http://delawarenation.com/wp-content/uploads/2019/01/2018-219-Appr-Elect-Ord-Rev-Reso-at-back.pdf
-  (no readable copy on 2026-11-23, directly or in the Wayback Machine).'
+next_steps: Ask the nation's court or government office whether it has a peacemaking, mediation or other
+  dispute resolution program, and check law library holdings of its code.

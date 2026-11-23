@@ -1,0 +1,31 @@
+profile: content/tribes/s/soboba-band-of-luiseno-indians.yaml
+topic: federal-ties
+status: found
+last_searched: '2026-11-23'
+searches:
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: ai-review
+  place_kind: federal-list
+  address: https://www.ihs.gov/california/index.cfm/tribal/laws-regs-policy/list-of-federally-recognized-tribes-in-ca/
+  query: Indian Health Service Area, service unit and operator
+  outcome: found
+  reason: California Area.
+  records:
+  - research/raw/2026-11-23/indian-health-service-areas.json#soboba-band-of-luiseno-indians
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: ai-review
+  place_kind: treaty-database
+  address: https://treaties.okstate.edu/treaties/
+  query: Ratified treaties (Kappler vol. 2) whose signatories the nation descends from
+  outcome: not-found
+  reason: 'No ratified treaty: the 18 treaties negotiated with California tribes in 1851-52 were never ratified (the Senate rejected them in secret session in 1852).'
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: ai-review
+  place_kind: official-compilation
+  address: https://archive.org/details/bp_996062
+  query: How the nation's reservation was set aside
+  outcome: not-found
+  reason: 'Candidate: Exec. Order of May 16, 1876 (San Bernardino County tracts), 1 Kappler 821, and later Mission Indian orders (Aug. 26 and Sept. 29, 1877; 1880s-1890s). Not entered: The May 16, 1876 order lists tracts only as "Mission", "Torros", "Village" (three times), "Cahezons" and "Agua Caliente" by township and section. Linking any of these to a present nation requires matching surveys or later records not read, and the 1877 orders leave out names entirely. Not linked.'

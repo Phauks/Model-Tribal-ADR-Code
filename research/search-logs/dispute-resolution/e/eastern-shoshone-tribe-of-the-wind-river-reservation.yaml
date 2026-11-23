@@ -1,7 +1,7 @@
 profile: content/tribes/e/eastern-shoshone-tribe-of-the-wind-river-reservation.yaml
 topic: dispute-resolution
-status: partly-searched
-last_searched: '2026-11-22'
+status: found
+last_searched: '2026-11-23'
 searches:
 - date: '2026-11-22'
   searched_by: Claude (AI assistant)
@@ -54,5 +54,64 @@ searches:
   outcome: not-public
   reason: NILL lists the draft (dated June 20, 1989) with seven chapters, but the page says the tribe
     has not given permission for the full text to be online; its table of contents was created June 2018.
-next_steps: The provisions this nation's profile lists by section title are still unread. A person could
-  open the blocked code sites in a browser, or ask the nation's court clerk or law library for the text.
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: browser
+  place_kind: state-court-directory
+  address: https://www.wyocourts.gov/legal-help-by-topic/wind-river-tribal-court/
+  query: dispute resolution wording
+  outcome: not-found
+  reason: Describes Wind River Tribal Court jurisdiction only.
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: browser
+  place_kind: web-search
+  address: 'WebSearch: Eastern Shoshone Tribe Wind River Reservation law and order code tribal court rules
+    "mediation"'
+  query: Eastern Shoshone Tribe Wind River Reservation law and order code tribal court rules "mediation"
+  outcome: not-found
+  reason: Found Wyoming courts page and NARF code index (already tried).
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: browser
+  place_kind: web-search
+  address: 'WebSearch: Eastern Shoshone Tribe Wind River tribal court mediation OR peacemaking OR "dispute
+    resolution"'
+  query: Eastern Shoshone Tribe Wind River tribal court mediation OR peacemaking OR "dispute resolution"
+  outcome: not-found
+  reason: Results were news about leadership dispute and generic peacemaking pages.
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: web-archive
+  address: https://web.archive.org/web/20260203075943id_/https://narf.org/nill/codes/shoshonearapaho
+  query: fetched by the fetch archived copies workflow; searched for dispute resolution, mediation, arbitration,
+    peacemaking, circles, elders' courts and restorative justice
+  outcome: found
+  reason: 'The archived index lists DRAFT Title XVI: Peacemaker Court (dated June 20, 1989), with chapter
+    headings on peacemakers and agreed arbitration; the index says the tribe has not given permission
+    for the full text to be online.'
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: web-archive
+  address: https://web.archive.org/web/20260202135810id_/https://narf.org/nill/codes/shoshonearapaho/index.html
+  query: fetched by the fetch archived copies workflow; searched for dispute resolution, mediation, arbitration,
+    peacemaking, circles, elders' courts and restorative justice
+  outcome: found
+  reason: 'Same index as above at its index.html address: DRAFT Title XVI: Peacemaker Court (June 20,
+    1989), full text withheld by the tribe.'
+  records:
+  - research/reviews/2026-11-23-dispute-resolution-retry.json#eastern-shoshone-tribe-of-the-wind-river-reservation-retry-1
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: web-archive-index
+  address: https://web.archive.org/cdx/search/cdx?url=narf.org/nill/codes/shoshonearapaho/*&fl=original,timestamp,mimetype,statuscode&filter=statuscode:200&collapse=urlkey&limit=2000
+  query: archived captures of the site, fetched by the fetch archived copies workflow
+  outcome: not-found
+  reason: The capture index lists 22 archived addresses for narf.org/nill/codes/shoshonearapaho/*; those
+    whose address names a code, law, court or dispute resolution page were fetched in this retry or are
+    listed in next steps.
+next_steps: Lead author's review of the candidates in research/reviews/2026-11-23-dispute-resolution-retry.csv
+  (Gate 1) before any record goes into the profile.

@@ -11,7 +11,7 @@ Everything here is project design unless a source is cited. Statements labeled "
 - **Research records stay in git** as they are now (sources, nation profiles, document histories, glossary entries; [decision record 0004](decisions/0004-content-as-plain-files.md)). Only essays, and later commentary and other long prose written by people, move to the bucket.
 - **Our own small editor**, built on ProseMirror, offers exactly what the print book, the ebook and the website can all show: headings, paragraphs, **bold**, *italic*, underline, links, lists, quotations, tables, citations, glossary links, and the essay boxes for cases, quotations and analysis. Nothing else can be typed or pasted in, so nothing a writer does can break the print build. A Markdown view is one click away for anything easier to type as text.
 - **Version history** keeps every saved version for good. Any two can be compared paragraph by paragraph, any one can be restored as a new version, and any one can be published.
-- **Working on the same draft at once** is protected, not yet live: a save names the version the writer started from, and a save made after someone else's is refused and shown side by side, so nothing is lost. Live co-editing on a Durable Object is the next step ([Built so far and still to build](#built-so-far-and-still-to-build)).
+- **Working on the same draft at once** is live on the essay pages: everyone editing an essay types into one shared text and sees the others' cursors, and the live room saves the versions (see [On the essay page](#on-the-essay-page)). A save from the workspace editor still names the version the writer started from, and a save made after someone else's is refused and shown side by side, so nothing is lost.
 
 ## What writers can do
 
@@ -101,6 +101,44 @@ Review and editing happen on the essay's own page, not in a separate place (lead
 - **The bar above the text** says where the draft stands (the newest version, who saved it, how many blocks changed, which version readers see) and holds two choices: **Show** (Published only, or With drafts) and, for contribute access and above, **Mode** (Reading or Editing). It links to the essay's History, and a person with full access can publish the draft from it.
 - **With drafts** shows the newest version with each changed block marked "Draft" (a solid bar in the margin) and each new block marked "New" (a dashed bar). The marks come from a line comparison of the published and newest bodies (`lineChanges` in `site/src/lib/essays/merge.ts`); a removed paragraph is not marked yet.
 - **Editing** opens the editor in place of the text, loaded only then. It saves by itself a few seconds after typing stops, at least every half minute while typing goes on, and when the tab is hidden or the editor closes. Those versions carry the note "Auto-saved", and the History page folds a run of them under the newest. "Name this version" saves the text as it stands as a version with a note of its own, even when nothing changed since the last save, because a saved version never changes.
+- **Editing live.** Editing mode first joins the essay's live editing room. In the room, everyone edits one shared text, each person's cursor shows with their name, and Undo takes back only that person's own changes. A line above the text says who else is there. The room saves a version about a minute after typing stops, so the editor does not save by itself. "Name this version" still saves a named version, which reaches the room at once, as do a restore and text arriving from git. The Markdown view is off while editing live, so everyone keeps one shared text. If the room cannot be reached within six seconds, or refuses (for example, when the sign-in has ended), the editor opens on its own and saves by itself as below. If the connection drops, typing goes on and the changes are sent when it is back; a copy is kept in the browser in case the tab closes first.
+- **Nothing typed is lost to a failed save.** Until the site confirms a save, the browser keeps a copy of the text (`site/src/lib/essays/local-draft.ts`), and the editor offers it back ("Bring it back") the next time the essay opens, starting from the version it was based on so a newer save by someone else still shows as a conflict. When the sign-in has ended, the save addresses answer "401" instead of sending the person to sign in, and the editor says "Not saved". Only the save made as the tab is hidden uses keepalive, and only under about 60 KB, because browsers refuse keepalive requests over 64 KiB (Fetch Standard, "fetch" algorithm, keepalive quota); larger essays rely on the browser's copy if the tab closes. So unpublished text is not left on a shared computer, the copies are forgotten at sign-out and on any page opened while signed out, except the sign-in pages.
+
+### Pictures, videos and recordings
+
+The lead author asked on Nov. 23, 2026 for pictures as their own block, to "allow digitally to add videos" ("we can figure out how to make that work with the physical book"), to "build with r2, we also might just end up with YouTube linking anyways," and for the website to "also accept just audio files." A figure is a picture, a video or a sound recording set between paragraphs:
+
+```markdown
+:::: figure picture /files/U-20261123-7KQ2MD/council%20house.jpg
+The council house in 1934.
+
+::: description
+A wooden building with a porch and three people standing in front.
+:::
+
+::: credit
+Photo by the Tribal archives.
+:::
+::::
+```
+
+- **Kinds.** `picture`, `video` or `sound`. The address is a file sent from the editor (`/files/<reference>/<name>`), or, for a video, a YouTube link. Any other address is refused when publishing, so an essay never shows a file from somewhere unknown (`site/src/lib/essays/figures.ts`).
+- **Parts.** The paragraphs are the caption. **Description** is read aloud in place of a picture or video (the picture's alternative text); publishing warns when a picture or video has none. **Credit** says who made it. **Transcript** gives what is said in a video or recording; the page shows it folded under the figure and unfolds it for printing. All four are part of the essay's text, so they have the essay's version history and drafts.
+- **Adding one.** "Picture, video or recording" in the editor's bar opens a dialog: choose a file, or paste a YouTube link, and fill in the caption, description, credit and transcript. A file goes through the shared upload path in pieces of 10 MB with a progress bar ([docs/uploads.md](uploads.md)); essay figures skip the review queue, because publishing the essay is the review. The figure lands after the block the cursor is in, never inside a paragraph, list or box. Inside a figure, "Add Description", "Add Credit" and "Add Transcript" add a missing part.
+- **Files stay in the project's bucket**, not a video service (lead author, Nov. 23, 2026). They are served with byte ranges, so the browser's own player can seek. Co-authors (comment access and above) can see a draft's figures; everyone can once the essay is published. Each figure has a link to ask for its removal through the request form.
+- **YouTube videos** show YouTube's still frame and a "Play the video" button. YouTube's player, from `youtube-nocookie.com`, loads only when someone presses it, so readers who never play a video load nothing from YouTube; without scripts, the button is a link to the video on YouTube (YouTube Help, "Embed videos & playlists").
+- **In print** a figure is a box with its caption, description, credit and transcript, and where to find it: the YouTube address, or "It appears with this essay on the website." Pictures will print once the print build fetches published essays and their files from the website, which waits on the project's domain.
+
+### Checks and Go to
+
+The editor's **Checks** button (contribute access and above) opens a panel of what may need a look. Each item is underlined in the text, wavy for spelling and grammar and dotted for definitions (lead author, Nov. 22, 2026: "spell-check ... as well as grammer-check functionality, try and find good libraries"). Choosing an item selects its words; the panel offers the fix, **Ignore**, and for spelling **Add to dictionary**. The choice to show Checks is remembered in the browser.
+
+- **Spelling and grammar** come from Harper (`harper.js`, Apache-2.0, by Automattic), which runs in the browser, so no text is sent anywhere (Harper, "harper.js" documentation). Its dictionary and rules are one WebAssembly file of about 20 MB, fetched only when someone turns Checks on, kept by the browser after that, and left out of the offline copy of the site. The text is checked one block at a time, and each block's result is kept until it changes. A long essay takes about six to ten seconds the first time, then only the edited block is checked again (measured on the timeline essay, about 47,000 characters, Nov. 23, 2026). Citations are left out of the text checked.
+- **What it is told to skip.** The dictionary also gets the names of nations (official, self-designation and former names), glossary terms and court case titles, about 1,500 words, and the words a person adds, which stay in that browser. Three Harper rules are off because the style guide decides otherwise: dashes, the en dash in number ranges, and the single ellipsis character. Spelling items for abbreviations ("v.", "U.S.C.", "Civ. Proc."), single letters and words joined by an apostrophe or ʻokina are dropped.
+- **Has a glossary entry** marks the first unlinked use of each glossary term. **Link to the glossary** turns it into a glossary link. **May need a definition** lists two-to-four-word phrases used four or more times that have no glossary entry (`site/src/lib/essays/checks.ts`).
+- **Citations and quotations** lists what the publishing checks would report: a citation key with no source record, a quotation with no citation, and the like.
+
+**Go to** (Ctrl+G) shows the essay's counts of components, words and characters, which are not shown otherwise (lead author, Nov. 22, 2026: "instead of lines, use components, words, characters. This doesn't always need to be seen right away"), and moves to a component (a heading, paragraph or box), a word number or a character number.
 
 ## Where published essays live
 
@@ -133,7 +171,7 @@ The first version of this design kept drafts in Cloudflare and sent each finishe
 | --- | --- | --- | --- |
 | Saved versions | A full copy of the essay each time someone saves, with who, when and a note ("Sent to advisors") | Markdown in the private bucket under `essays/<id>/versions/`; a row in `essay_versions`; an activity log entry | For good |
 | Publications | Which saved version readers see, and since when | A row in `essay_publications` pointing at a saved version | For good; can be held back from readers |
-| Live history (to be built) | Every keystroke while several people edit together | The draft's Durable Object | While the draft is open |
+| Live history | Every change while several people edit together | The essay's Durable Object (`EssayRoom`) | Until the room saves the next version |
 
 Any two saved versions can be compared, paragraph by paragraph and word by word within a changed paragraph, and any one can be restored by someone with full access (restoring saves it as a new version, so nothing is lost). Each version is dated with its number and the moment it was saved or published, for example "Nov. 22, 2026, 10:30 p.m. PT", not added to the content version number (lead author, Nov. 22, 2026). This is the history of the project's **own** writing; the history of documents the project **cites** is a separate record ([decision record 0018](decisions/0018-document-version-history.md)).
 
@@ -141,14 +179,14 @@ Any two saved versions can be compared, paragraph by paragraph and word by word 
 
 ## Built so far and still to build
 
-Built (pull request "Edit essays on the website"): the editor with its Markdown view and preview, saved versions in the bucket, conflict protection, compare, restore, publish, hold back, the public essay pages and their version lists, the public copy, the hourly git copy, and bringing in the git text. Then (pull request "Edit essays in place"): the essay page's bar, the With drafts view, and editing in place with saving by itself.
+Built (pull request "Edit essays on the website"): the editor with its Markdown view and preview, saved versions in the bucket, conflict protection, compare, restore, publish, hold back, the public essay pages and their version lists, the public copy, the hourly git copy, and bringing in the git text. Then (pull request "Edit essays in place"): the essay page's bar, the With drafts view, and editing in place with saving by itself. Then (pull request "Check spelling, grammar and definitions in the editor"): Checks and Go to. Then (pull request "Add pictures, videos and recordings to essays"): figures.
 
 Next, in this order:
 
-1. **Live co-editing.** One SQLite-backed Durable Object per draft, holding a Yjs document, with hibernating WebSockets and presence (who is in the draft and where), so several people can type at once. Access is checked by the Worker at connection and again during the session (comment-level connections can read but their edits are dropped). Cloudflare's `y-partyserver` (ISC) or the `yjs` package on the WebSocket Hibernation API directly; the Durable Object class is exported from a small second Worker or after the SvelteKit build, settled when built.
+1. **Live co-editing.** The room is built (pull request "Add the live editing room"). Each essay gets one SQLite-backed Durable Object, `EssayRoom` in `site/src/lib/server/live/essay-room.ts`, that holds a Yjs document. It keeps hibernating WebSockets and presence (who is in the essay and where), so several people can type at once. It runs in a small second Worker, `model-tribal-adr-code-live`, so the website's many deploys do not restart rooms mid-sentence. It uses the `yjs` package on the WebSocket Hibernation API directly rather than `y-partyserver`, which saves its copy only every few seconds and does not install beside this site's Cloudflare types. Comment-level connections can read along but their edits are dropped. The room saves one version after each pause, not one per automatic save (versioning option A of the editing review, Nov. 23, 2026). It saves about a minute after the typing stops, at least every ten minutes while it goes on, and a few seconds after the last person leaves. The website's handshake and the browser module came next (pull request "Connect the website to the live editing room"), then the editor joining the room (pull request "Edit essays live together").
 2. **Comments** on drafts in D1, anchored with Yjs relative positions and the quoted words, so they follow the text as it changes. Sign-offs stay in `reviews`.
 3. **Print and ebook from the public copy**, recording each essay's SHA-256 in the build record.
-4. **Figures and media records**, including images in the Typst and EPUB builds.
+4. **Pictures in the Typst and EPUB builds**, fetched with the published essays; then charts, a timeline strip and a comparison grid as further figure kinds.
 5. **Bucket lock** on `essays/` (see below), and moving `content/essays/` to the copy branch once the Foundations chapters settle.
 6. Later: suggested changes (tracked changes), offline drafting.
 
@@ -170,6 +208,9 @@ A round-trip test (Nov. 21, 2026) read the three essays in `content/essays/` int
 - Cloudflare, "Pricing" and "Limits," *Durable Objects* (last updated Nov. 13, 2026), [developers.cloudflare.com/durable-objects/platform/pricing/](https://developers.cloudflare.com/durable-objects/platform/pricing/), [developers.cloudflare.com/durable-objects/platform/limits/](https://developers.cloudflare.com/durable-objects/platform/limits/).
 - Cloudflare, "Use WebSockets," *Durable Objects*, [developers.cloudflare.com/durable-objects/best-practices/websockets/](https://developers.cloudflare.com/durable-objects/best-practices/websockets/); PartyKit repository and `y-partyserver` README, [github.com/cloudflare/partykit](https://github.com/cloudflare/partykit).
 - GitHub Docs, "Triggering a workflow" (on workflows started by the `GITHUB_TOKEN`), [docs.github.com/en/actions/how-tos/write-workflows/choose-when-workflows-run/trigger-a-workflow](https://docs.github.com/en/actions/how-tos/write-workflows/choose-when-workflows-run/trigger-a-workflow) (seen as a search result on Nov. 22, 2026; not read in full).
+- Automattic, Harper and `harper.js` (Apache-2.0), [writewithharper.com/docs/harperjs/introduction](https://writewithharper.com/docs/harperjs/introduction), and the `harper.js` 3.2.0 package's type definitions (read Nov. 23, 2026).
+- WHATWG, *Fetch Standard*, "fetch" (a keepalive request fails when in-flight keepalive bodies exceed 64 kibibytes), [fetch.spec.whatwg.org](https://fetch.spec.whatwg.org/#fetching); measured in headless Chromium on Nov. 23, 2026 (50,000 characters sent, 70,000 refused).
+- YouTube Help, "Embed videos & playlists" (privacy-enhanced mode: youtube-nocookie.com stores no cookies for a viewer until they play the video), [support.google.com/youtube/answer/171780](https://support.google.com/youtube/answer/171780).
 - ProseMirror, `prosemirror-markdown`, [github.com/ProseMirror/prosemirror-markdown](https://github.com/ProseMirror/prosemirror-markdown); markdown-it, `markdown-it-container` and `markdown-it-ins`, [github.com/markdown-it](https://github.com/markdown-it).
 - Tiptap, "Pricing," [tiptap.dev/pricing](https://tiptap.dev/pricing).
 - The lead author's requests: project threads "Plan collaborative editing for the website" (Nov. 21 and 22, 2026), "Build the Foundations part with strong sources" and "Edit essays on the website" (Nov. 22, 2026).

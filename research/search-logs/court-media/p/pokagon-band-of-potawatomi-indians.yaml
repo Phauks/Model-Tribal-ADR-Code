@@ -1,0 +1,54 @@
+profile: content/tribes/p/pokagon-band-of-potawatomi-indians.yaml
+topic: court-media
+status: found
+last_searched: '2026-11-23'
+searches:
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: web-search
+  address: Web search (the AI assistant's search tool)
+  query: Pokagon Band tribal court video
+  outcome: found
+  reason: Results included a NARF page for a film about the Pokagon Band tribal court and Peacemaking Center, the nation's Native Justice page, and a PBS WNIT special (a song and culture program, excluded).
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: tribal-court-site
+  address: http://www.pokagonband-nsn.gov/government/tribal-court
+  query: tribal court page media
+  outcome: blocked
+  reason: 'Not read: the WebFetch budget for this session ran out (proxy HTTP 403), so this page was not opened.'
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: tribal-court-site
+  address: https://www.pokagonband-nsn.gov/government/tribal-courts/
+  query: tribal courts page media
+  outcome: blocked
+  reason: 'Not read: the WebFetch budget for this session ran out (proxy HTTP 403), so this page was not opened.'
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: tribal-court-site
+  address: https://www.pokagonband-nsn.gov/government/tribal-courts/
+  query: video, photos
+  outcome: not-found
+  reason: Fetched with curl. Tribal Courts page has no video or court photos; footer '© 2026 Pokagon Band of Potawatomi |'.
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: tribal-court-site
+  address: https://www.pokagonband-nsn.gov/government/tribal-courts/native-justice/
+  query: video, photos
+  outcome: not-found
+  reason: Fetched with curl. Native Justice page has no video or court photos.
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: intertribal-organization
+  address: https://peacemaking.narf.org/about-peacemaking/videos-about-peacemaking/
+  query: Pokagon videos and YouTube IDs
+  outcome: found
+  reason: Fetched with curl. NARF page lists 'About Peacemaking - Judge Michael Petoskey' (YouTube nZfiiAvQNNU, NARF channel by oEmbed, 'Pokagon Band of Potawatomi Peacemaking Training (September 2016)'); the 'Pokagon Native Justice Program' item has no video embedded. Footer '© 2026 • Indigenous Peacemaking Initiative | Native American Rights Fund • All Rights Reserved'.
+next_steps: Dropped the NARF short link ?p=4510 (returns the NARF home page, HTTP 406). The NARF 'Pokagon Native Justice Program' introduction video has no embed on the NARF page; ask NARF or the Band for it. Candidates are listed in research/media/2026-11-23-court-and-peacemaking-media-candidates.md.

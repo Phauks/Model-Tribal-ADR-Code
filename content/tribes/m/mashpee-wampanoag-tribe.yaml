@@ -199,6 +199,39 @@ federal_administration:
   verification: bulk-import
   as_of: '2026-11-20'
   locator: Mashpee Wampanoag Tribe
+indian_health_service:
+- area: Nashville
+  source: indian-health-service-direct-service-tribes
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  locator: '"Direct Service Tribes by IHS Area" list'
+  note: 'Listed as "Mashpee Wampanoag Tribe". Also listed under the same Area in: indian-health-service-nashville-careers-brochure. Service unit named for the tribe; listed as a federal direct care service facility.'
+- area: Nashville
+  service_unit: Mashpee Wampanoag Health Service Unit
+  source: indian-health-service-nashville-mashpee-service-unit
+  confidence: medium
+  verification: read-in-full
+  as_of: '2026-11-23'
+  locator: page text
+  note: 'The source''s words: "Mashpee Wampanoag Health Service Unit".'
+- area: Nashville
+  operator: indian-health-service
+  source: indian-health-service-nashville-healthcare-facilities
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  locator: list of Tribes
+  note: Listed as "Federal Direct Care Service Facilities". The Direct Service Tribes list says some Tribes have a mixed Indian Health Service and Tribal arrangement.
+governance:
+- aspect: head-of-government
+  value: Chairperson
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  verification: bulk-import
+  as_of: '2026-11-20'
+  locator: Mashpee Wampanoag Tribe
+  note: The title of the leader's office as the federal directory lists it; the holder's name is not recorded. Listed as “Chairman”; recorded without the holder's own form of the title.
 governing_documents:
 - kind: law-code
   title: Mashpee Wampanoag Indian Tribal Council, Inc. - Corporate Documents and Selected Ordinances
@@ -235,12 +268,16 @@ governing_documents:
 justice_institutions:
 - kind: peacemaking-program
   name: Peacemaker Court
+  link: https://mashpeewampanoagtribe-nsn.gov/about-peacemakers-court
   source: narf-ipi-tribal-peacemaking-laws
   confidence: medium
   verification: title-only
   as_of: '2025-09-29'
-  note: Forum named in the title of a published tribal law listed by the Native American Rights Fund;
-    whether it currently operates was not checked.
+  note: 'Forum named in the title of a published tribal law listed by the Native American Rights Fund;
+    whether it currently operates was not checked. Link added 2026-11-23 after a second search: the nation''s
+    page “About Peacemakers Court”, which says the Peacemakers Court of the Mashpee Wampanoag Tribe is
+    part of the Tribal Judiciary, fetched with status 200 on 2026-11-23; see research/reviews/2026-11-22-service-links.json,
+    service-146.'
 - kind: tribal-court
   name: Tribal Court
   link: https://mashpeewampanoagtribe-nsn.gov/tribal-court-homepage
@@ -448,6 +485,15 @@ jurisdiction:
     prints its table as page images, so nation names were read from images and matched to the roster.
     Row re-read on 2026-11-22 from the page image (the govinfo PDF has no text layer for the table); verification
     level unchanged because the name was not matched word for word in machine-read text.'
+- topic: public-law-280
+  value: not-a-public-law-280-state
+  detail: Massachusetts is not one of the states that Public Law 280 required to take jurisdiction or that chose to take it, so the state has no Public Law 280 jurisdiction over the nation's Indian country in Massachusetts. Other federal laws can still give a state some jurisdiction.
+  source: bia-faq-public-law-280
+  confidence: high
+  verification: inferred
+  as_of: '2017-07-18'
+  locator: Answer, second and third paragraphs (the lists of mandatory and optional states)
+  note: Inferred from the state's absence from both lists. Nation placed in Massachusetts by the Census Bureau's land areas.
 memberships:
 - organization: United South and Eastern Tribes
   source: united-south-and-eastern-tribes-member-tribal-nations

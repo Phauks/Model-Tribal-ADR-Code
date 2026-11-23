@@ -43,6 +43,13 @@ supreme_court:
   - {name: "Elena Kagan", vote: majority}
   source: https://api.oyez.org/cases/2015/15-420
   checked: '2026-11-22'
+courtlistener:
+  cluster: 3212620
+  citation: "579 U.S. 140"
+  case_name: "United States v. Bryant"
+  link: https://www.courtlistener.com/opinion/3212620/united-states-v-bryant/
+  release: '2026-09-30'
+  checked: '2026-11-23'
 rights:
   status: no-permission-needed
   basis: us-government-work

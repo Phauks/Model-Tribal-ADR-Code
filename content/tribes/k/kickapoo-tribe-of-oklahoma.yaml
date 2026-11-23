@@ -153,6 +153,14 @@ federal_administration:
   verification: bulk-import
   as_of: '2026-11-20'
   locator: Kickapoo Tribe of Oklahoma
+indian_health_service:
+- area: Oklahoma City
+  source: indian-health-service-oklahoma-city-careers-brochure
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  locator: '"Tribes of Oklahoma, Kansas and Texas" list'
+  note: 'Listed as "Kickapoo Tribe of Oklahoma". Also listed under the same Area in: indian-health-service-self-governance-tribes. Also on the Indian Health Service Self-Governance Tribes list (Kickapoo Tribe of Oklahoma (1997)); the list does not say which service unit or programs the compact covers.'
 government_structure:
 - kind: oklahoma-indian-welfare-act
   detail: Listed as "The Kickapoo Tribe of Oklahoma" among organizations under constitutions approved
@@ -177,6 +185,219 @@ government_structure:
   as_of: '1937'
   locator: preamble / approval and certification of adoption
   note: Historical constitution; a later constitution may have replaced it.
+governance:
+- aspect: form
+  value: Constitution and Bylaws pursuant to the Thomas-Rogers Oklahoma Indian Welfare Act of June 26, 1936
+  quote: to the Thomas -Rogers Oklahoma Indian Welfare Act of June 26, 1936.
+  source: constitution-kickapoo-tribe-of-oklahoma-1977-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1977-12-10'
+  locator: Preamble
+  document_version:
+    document: kickapoo-tribe-of-oklahoma-constitution
+    version: 1977-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Scanned text with reading errors in several passages; text is the 1977 constitution as labeled.'
+- aspect: governing-body
+  value: Kickapoo Council
+  quote: the Kickapoo Council. The membership of the Council shall be all the
+  source: constitution-kickapoo-tribe-of-oklahoma-1977-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1977-12-10'
+  locator: Article IV, Section 1
+  document_version:
+    document: kickapoo-tribe-of-oklahoma-constitution
+    version: 1977-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Scanned text with reading errors in several passages; text is the 1977 constitution as labeled.'
+- aspect: governing-body
+  value: Business Committee
+  quote: which have not been reserved to the Kickapoo Council through
+  source: constitution-kickapoo-tribe-of-oklahoma-1977-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1977-12-10'
+  locator: Article V, Section 1(a)
+  document_version:
+    document: kickapoo-tribe-of-oklahoma-constitution
+    version: 1977-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Scanned text with reading errors in several passages; text is the 1977 constitution as labeled.'
+- aspect: governing-body-size
+  value: 5 members
+  quote: The Business Committee shall consist of five (5) members
+  source: constitution-kickapoo-tribe-of-oklahoma-1977-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1977-12-10'
+  locator: Article V, Section 1
+  document_version:
+    document: kickapoo-tribe-of-oklahoma-constitution
+    version: 1977-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Scanned text with reading errors in several passages; text is the 1977 constitution as labeled.'
+- aspect: governing-body-selection
+  value: Elected from the Kickapoo Council membership
+  quote: elected from the membership of the Kickapoo Council and shall include
+  source: constitution-kickapoo-tribe-of-oklahoma-1977-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1977-12-10'
+  locator: Article V, Section 1
+  document_version:
+    document: kickapoo-tribe-of-oklahoma-constitution
+    version: 1977-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Scanned text with reading errors in several passages; text is the 1977 constitution as labeled.'
+- aspect: governing-body-term
+  value: 3 years
+  quote: and the Grievance Committee shall be for three (3) years from the date
+  source: constitution-kickapoo-tribe-of-oklahoma-1977-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1977-12-10'
+  locator: Article V, Section 4
+  document_version:
+    document: kickapoo-tribe-of-oklahoma-constitution
+    version: 1977-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Scanned text with reading errors in several passages; text is the 1977 constitution as labeled.'
+- aspect: general-council
+  value: All members 18 years of age or older
+  quote: members of the Kickapoo Tribe of Oklahoma, eighteen (18) years of age
+  source: constitution-kickapoo-tribe-of-oklahoma-1977-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1977-12-10'
+  locator: Article IV, Section 1
+  document_version:
+    document: kickapoo-tribe-of-oklahoma-constitution
+    version: 1977-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Scanned text with reading errors in several passages; text is the 1977 constitution as labeled.'
+- aspect: head-of-government
+  value: Chairman
+  quote: Section 1. Chairman. The Chairman shall preside at all meetings
+  source: constitution-kickapoo-tribe-of-oklahoma-1977-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1977-12-10'
+  locator: Article XXI, Section 1
+  document_version:
+    document: kickapoo-tribe-of-oklahoma-constitution
+    version: 1977-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Scanned text with reading errors in several passages; text is the 1977 constitution as labeled.'
+- aspect: head-of-government
+  value: Chairperson
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  verification: bulk-import
+  as_of: '2026-11-20'
+  locator: Kickapoo Tribe of Oklahoma
+  note: The title of the leader's office as the federal directory lists it; the holder's name is not recorded. Listed as “Chairman”; recorded without the holder's own form of the title.
+- aspect: other-officers
+  value: Vice-Chairman, Secretary, Treasurer, Councilman
+  quote: 'the following officers: Chairman, Vice-Chairman, Secretary, Treasurer'
+  source: constitution-kickapoo-tribe-of-oklahoma-1977-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1977-12-10'
+  locator: Article V, Section 1
+  document_version:
+    document: kickapoo-tribe-of-oklahoma-constitution
+    version: 1977-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Scanned text with reading errors in several passages; text is the 1977 constitution as labeled.'
+- aspect: elections
+  value: Annual, second Saturday in June
+  quote: second Saturday in June; Provided, that in the event of an emergency
+  source: constitution-kickapoo-tribe-of-oklahoma-1977-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1977-12-10'
+  locator: Article VII, Section 4
+  document_version:
+    document: kickapoo-tribe-of-oklahoma-constitution
+    version: 1977-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Scanned text with reading errors in several passages; text is the 1977 constitution as labeled.'
+- aspect: election-authority
+  value: Election Board
+  quote: Sec. 3. Election Board. There shall be an Election Board appointed
+  source: constitution-kickapoo-tribe-of-oklahoma-1977-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1977-12-10'
+  locator: Article V, Section 3
+  document_version:
+    document: kickapoo-tribe-of-oklahoma-constitution
+    version: 1977-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Scanned text with reading errors in several passages; text is the 1977 constitution as labeled.'
+- aspect: judiciary
+  value: Council may create a Tribal court system by ordinance
+  quote: may exercise its judicial powers through the creation of a Tribal court
+  source: constitution-kickapoo-tribe-of-oklahoma-1977-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1977-12-10'
+  locator: Article XVI
+  document_version:
+    document: kickapoo-tribe-of-oklahoma-constitution
+    version: 1977-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Scanned text with reading errors in several passages; text is the 1977 constitution as labeled.'
+- aspect: amendment
+  value: Majority of votes cast in a referendum
+  quote: approved by a majority of the votes cast.
+  source: constitution-kickapoo-tribe-of-oklahoma-1977-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1977-12-10'
+  locator: Article XXII
+  document_version:
+    document: kickapoo-tribe-of-oklahoma-constitution
+    version: 1977-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Scanned text with reading errors in several passages; text is the 1977 constitution as labeled.'
+- aspect: secretarial-approval
+  value: Required for amendments
+  quote: by the Secretary of the Interior, shall be submitted to a referendum
+  source: constitution-kickapoo-tribe-of-oklahoma-1977-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1977-12-10'
+  locator: Article XXII
+  document_version:
+    document: kickapoo-tribe-of-oklahoma-constitution
+    version: 1977-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Scanned text with reading errors in several passages; text is the 1977 constitution as labeled.'
+- aspect: recall-and-removal
+  value: Removal by majority of the body's total membership
+  quote: affirmative vote of a majority of its total membership.
+  source: constitution-kickapoo-tribe-of-oklahoma-1977-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1977-12-10'
+  locator: Article IX, Section 1
+  document_version:
+    document: kickapoo-tribe-of-oklahoma-constitution
+    version: 1977-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Scanned text with reading errors in several passages; text is the 1977 constitution as labeled.'
+- aspect: recall-and-removal
+  value: Recall by election on valid petition
+  quote: purpose of recall of an elected Tribal official. The election shall be
+  source: constitution-kickapoo-tribe-of-oklahoma-1977-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1977-12-10'
+  locator: Article IX, Section 2
+  document_version:
+    document: kickapoo-tribe-of-oklahoma-constitution
+    version: 1977-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Scanned text with reading errors in several passages; text is the 1977 constitution as labeled.'
+- aspect: other
+  value: Grievance Committee of 3 members
+  quote: Sec. 2. Grievance Committee. This Committee shall consist of three
+  source: constitution-kickapoo-tribe-of-oklahoma-1977-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1977-12-10'
+  locator: Article V, Section 2
+  document_version:
+    document: kickapoo-tribe-of-oklahoma-constitution
+    version: 1977-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Scanned text with reading errors in several passages; text is the 1977 constitution as labeled.'
 governing_documents:
 - kind: law-code
   title: Criminal Code
@@ -363,6 +584,198 @@ jurisdiction:
   as_of: 2022-05
   locator: '"Exercising jurisdiction since" line'
   note: Listed as "Kickapoo Tribe of Oklahoma". Also on the NCAI implementing tribes list (national-congress-of-american-indians-implementing-tribes-special-tribal-criminal-jurisdiction).
+- topic: public-law-280
+  value: not-a-public-law-280-state
+  detail: Oklahoma is not one of the states that Public Law 280 required to take jurisdiction or that chose to take it, so the state has no Public Law 280 jurisdiction over the nation's Indian country in Oklahoma. Other federal laws can still give a state some jurisdiction.
+  source: bia-faq-public-law-280
+  confidence: medium
+  verification: inferred
+  as_of: '2017-07-18'
+  locator: Answer, second and third paragraphs (the lists of mandatory and optional states)
+  note: Inferred from the state's absence from both lists. Nation placed in Oklahoma by its office state in the BIA Tribal Leaders Directory, so confidence is medium.
+treaties:
+- title: Treaty with the Wyandot, etc., 1795
+  signed: '1795-08-03'
+  statutes_at_large: 7 Stat. 49
+  kappler:
+    volume: 2
+    page: 39
+    link: https://treaties.okstate.edu/treaties/treaty-with-the-wyandot-etc-1795-0039
+  signatory: Kickapoo
+  source: kappler-indian-affairs-laws-and-treaties-vol-2-1904
+  confidence: medium
+  verification: inferred
+  locator: p. 39 (Treaty with the Wyandot, etc., 1795; Kappler header "Aug. 3, 1795. | 7 Stat., 49. | Proclamation, Dec. 2, 1795.")
+  note: 'The nation is one successor of the party the treaty names. Linked to the nation by Claude (AI assistant) from the treaty''s text. Checked on Nov. 23, 2026: The Oklahoma State University Tribal Treaties Database''s successor list for this treaty names the nation; the list is in the page''s source but is no longer displayed while the database reviews it. Kickapoo Tribe of Oklahoma. The page is the treaty''s first page as the Oklahoma State University database''s address gives it.'
+- title: Treaty with the Delawares, etc., 1803
+  signed: '1803-06-07'
+  statutes_at_large: 7 Stat. 74
+  kappler:
+    volume: 2
+    page: 64
+    link: https://treaties.okstate.edu/treaties/treaty-with-the-delawares-etc-1803-0064
+  signatory: Kickapoo
+  source: kappler-indian-affairs-laws-and-treaties-vol-2-1904
+  confidence: medium
+  verification: inferred
+  locator: p. 64 (Treaty with the Delawares, etc., 1803; Kappler header "June 7, 1803. | 7 Stat., 74. | Proclamation Dec. 26, 1803.")
+  note: 'The nation is one successor of the party the treaty names. Linked to the nation by Claude (AI assistant) from the treaty''s text. Checked on Nov. 23, 2026: The Oklahoma State University Tribal Treaties Database''s successor list for this treaty names the nation; the list is in the page''s source but is no longer displayed while the database reviews it. Kickapoo Tribe of Oklahoma. The page is the treaty''s first page as the Oklahoma State University database''s address gives it.'
+- title: Treaty with the Eel River, etc., 1803
+  signed: '1803-08-07'
+  statutes_at_large: 7 Stat. 77
+  kappler:
+    volume: 2
+    page: 66
+    link: https://treaties.okstate.edu/treaties/treaty-with-the-eel-river-etc-1803-0066
+  signatory: Kickapoo
+  source: kappler-indian-affairs-laws-and-treaties-vol-2-1904
+  confidence: medium
+  verification: inferred
+  locator: p. 66 (Treaty with the Eel River, etc., 1803; Kappler header "Aug. 7, 1803. | 7 Stat., 77. | Proclamation, Dec. 23, 1803.")
+  note: 'The nation is one successor of the party the treaty names. Linked to the nation by Claude (AI assistant) from the treaty''s text. Checked on Nov. 23, 2026: The Oklahoma State University Tribal Treaties Database''s successor list for this treaty names the nation; the list is in the page''s source but is no longer displayed while the database reviews it. Kickapoo Tribe of Oklahoma. The page is the treaty''s first page as the Oklahoma State University database''s address gives it.'
+- title: Treaty with the Kickapoo, 1809
+  signed: '1809-12-09'
+  statutes_at_large: 7 Stat. 117
+  kappler:
+    volume: 2
+    page: 104
+    link: https://treaties.okstate.edu/treaties/treaty-with-the-kickapoo-1809-0104
+  signatory: Kickapoo
+  source: kappler-indian-affairs-laws-and-treaties-vol-2-1904
+  confidence: medium
+  verification: inferred
+  locator: p. 104 (Treaty with the Kickapoo, 1809; Kappler header "Dec. 9, 1809. | 7 Stat., 117. | Ratified Mar. 5, 1810. | Proclaimed Mar. 8,")
+  note: 'The nation is one successor of the party the treaty names. Linked to the nation by Claude (AI assistant) from the treaty''s text. Checked on Nov. 23, 2026: The Oklahoma State University Tribal Treaties Database''s successor list for this treaty names the nation; the list is in the page''s source but is no longer displayed while the database reviews it. Kickapoo Tribe of Oklahoma. The page is the treaty''s first page as the Oklahoma State University database''s address gives it.'
+- title: Treaty with the Wyandot, etc., 1814
+  signed: '1814-07-22'
+  statutes_at_large: 7 Stat. 118
+  kappler:
+    volume: 2
+    page: 105
+    link: https://treaties.okstate.edu/treaties/treaty-with-the-wyandot-etc-1814-0105
+  signatory: Kickapoo
+  source: kappler-indian-affairs-laws-and-treaties-vol-2-1904
+  confidence: medium
+  verification: inferred
+  locator: p. 105 (Treaty with the Wyandot, etc., 1814; Kappler header "July 22, 1814. | 7 Stat., 118. | Ratified, Dec. 13, 1814. | Proclaimed Dec. 21, 1814.")
+  note: 'The nation is one successor of the party the treaty names. Linked to the nation by Claude (AI assistant) from the treaty''s text. Checked on Nov. 23, 2026: The Oklahoma State University Tribal Treaties Database''s successor list for this treaty names the nation; the list is in the page''s source but is no longer displayed while the database reviews it. Kickapoo Tribe of Oklahoma. The page is the treaty''s first page as the Oklahoma State University database''s address gives it.'
+- title: Treaty with the Kickapoo, 1815
+  signed: '1815-09-02'
+  statutes_at_large: 7 Stat. 130
+  kappler:
+    volume: 2
+    page: 116
+    link: https://treaties.okstate.edu/treaties/treaty-with-the-kickapoo-1815-0116
+  signatory: Kickapoo
+  source: kappler-indian-affairs-laws-and-treaties-vol-2-1904
+  confidence: medium
+  verification: inferred
+  locator: p. 116 (Treaty with the Kickapoo, 1815; Kappler header "Sept. 2, 1815. | 7 Stat., 130. | Ratified Dec. 26, 1815.")
+  note: 'The nation is one successor of the party the treaty names. Linked to the nation by Claude (AI assistant) from the treaty''s text. Checked on Nov. 23, 2026: The Oklahoma State University Tribal Treaties Database''s successor list for this treaty names the nation; the list is in the page''s source but is no longer displayed while the database reviews it. Kickapoo Tribe of Oklahoma. The page is the treaty''s first page as the Oklahoma State University database''s address gives it.'
+- title: Treaty with the Wea and Kickapoo, 1816
+  signed: '1816-06-04'
+  statutes_at_large: 7 Stat. 145
+  kappler:
+    volume: 2
+    page: 131
+    link: https://treaties.okstate.edu/treaties/treaty-with-the-wea-and-kickapoo-1816-0131
+  signatory: Kickapoo
+  source: kappler-indian-affairs-laws-and-treaties-vol-2-1904
+  confidence: medium
+  verification: inferred
+  locator: p. 131 (Treaty with the Wea and Kickapoo, 1816; Kappler header "June 4, 1816. | 7 Stat., 145. | Proclamation, Dec. 30, 1816.")
+  note: 'The nation is one successor of the party the treaty names. Linked to the nation by Claude (AI assistant) from the treaty''s text. Checked on Nov. 23, 2026: The Oklahoma State University Tribal Treaties Database''s successor list for this treaty names the nation; the list is in the page''s source but is no longer displayed while the database reviews it. Kickapoo Tribe of Oklahoma. The page is the treaty''s first page as the Oklahoma State University database''s address gives it.'
+- title: Treaty with the Kickapoo, 1819
+  signed: '1819-07-30'
+  statutes_at_large: 7 Stat. 200
+  kappler:
+    volume: 2
+    page: 182
+    link: https://treaties.okstate.edu/treaties/treaty-with-the-kickapoo-1819-0182
+  signatory: Kickapoo
+  source: kappler-indian-affairs-laws-and-treaties-vol-2-1904
+  confidence: medium
+  verification: inferred
+  locator: p. 182 (Treaty with the Kickapoo, 1819; Kappler header "July 30, 1819. | 7 Stat., 200. | Proclamation, Jan. 13, 1821.")
+  note: 'The nation is one successor of the party the treaty names. Linked to the nation by Claude (AI assistant) from the treaty''s text. Checked on Nov. 23, 2026: The Oklahoma State University Tribal Treaties Database''s successor list for this treaty names the nation; the list is in the page''s source but is no longer displayed while the database reviews it. Kickapoo Tribe of Oklahoma. The page is the treaty''s first page as the Oklahoma State University database''s address gives it.'
+- title: Treaty with the Kickapoo, 1819
+  signed: '1819-08-30'
+  statutes_at_large: 7 Stat. 202
+  kappler:
+    volume: 2
+    page: 184
+    link: https://treaties.okstate.edu/treaties/treaty-with-the-kickapoo-1819-0184
+  signatory: Kickapoo of the Vermilion
+  source: kappler-indian-affairs-laws-and-treaties-vol-2-1904
+  confidence: medium
+  verification: inferred
+  locator: p. 184 (Treaty with the Kickapoo, 1819; Kappler header "Aug. 30, 1819. | 7 Stat., 202. | Proclamation, May 10, 1820.")
+  note: 'The nation is one successor of the party the treaty names. Linked to the nation by Claude (AI assistant) from the treaty''s text. Checked on Nov. 23, 2026: The Oklahoma State University Tribal Treaties Database''s successor list for this treaty names the nation; the list is in the page''s source but is no longer displayed while the database reviews it. Kickapoo Tribe of Oklahoma. The page is the treaty''s first page as the Oklahoma State University database''s address gives it.'
+- title: Treaty with the Kickapoo, 1820
+  signed: '1820-07-19'
+  statutes_at_large: 7 Stat. 208
+  kappler:
+    volume: 2
+    page: 189
+    link: https://treaties.okstate.edu/treaties/treaty-with-the-kickapoo-1820-0189
+  signatory: Kickapoo
+  source: kappler-indian-affairs-laws-and-treaties-vol-2-1904
+  confidence: medium
+  verification: inferred
+  locator: p. 189 (Treaty with the Kickapoo, 1820; Kappler header "July 19, 1820. | 7 Stat., 208. | Proclamation, Jan. 13, 1821.")
+  note: 'The nation is one successor of the party the treaty names. Linked to the nation by Claude (AI assistant) from the treaty''s text. Checked on Nov. 23, 2026: The Oklahoma State University Tribal Treaties Database''s successor list for this treaty names the nation; the list is in the page''s source but is no longer displayed while the database reviews it. Kickapoo Tribe of Oklahoma. The page is the treaty''s first page as the Oklahoma State University database''s address gives it.'
+- title: Treaty with the Kickapoo of the Vermilion, 1820
+  signed: '1820-09-05'
+  statutes_at_large: 7 Stat. 210
+  kappler:
+    volume: 2
+    page: 191
+    link: https://treaties.okstate.edu/treaties/treaty-with-the-kickapoo-of-the-vermilion-1820-0191
+  signatory: Kickapoo of the Vermilion
+  source: kappler-indian-affairs-laws-and-treaties-vol-2-1904
+  confidence: medium
+  verification: inferred
+  locator: p. 191 (Treaty with the Kickapoo of the Vermilion, 1820; Kappler header "Sept. 5, 1820. | 7 Stat., 210. | Proclamation, Jan. 8, 1821.")
+  note: 'The nation is one successor of the party the treaty names. Linked to the nation by Claude (AI assistant) from the treaty''s text. Checked on Nov. 23, 2026: The Oklahoma State University Tribal Treaties Database''s successor list for this treaty names the nation; the list is in the page''s source but is no longer displayed while the database reviews it. Kickapoo Tribe of Oklahoma. The page is the treaty''s first page as the Oklahoma State University database''s address gives it.'
+- title: Treaty with the Kickapoo, 1832
+  signed: '1832-10-24'
+  statutes_at_large: 7 Stat. 391
+  kappler:
+    volume: 2
+    page: 365
+    link: https://treaties.okstate.edu/treaties/treaty-with-the-kickapoo-1832-0365
+  signatory: Kickapoo
+  source: kappler-indian-affairs-laws-and-treaties-vol-2-1904
+  confidence: medium
+  verification: inferred
+  locator: p. 365 (Treaty with the Kickapoo, 1832; Kappler header "Oct. 24, 1832. | 7 Stat., 391. | Proclamation, Feb. 13, 1833.")
+  note: 'The nation is one successor of the party the treaty names. Linked to the nation by Claude (AI assistant) from the treaty''s text. Checked on Nov. 23, 2026: The Oklahoma State University Tribal Treaties Database''s successor list for this treaty names the nation; the list is in the page''s source but is no longer displayed while the database reviews it. Kickapoo Tribe of Oklahoma. The page is the treaty''s first page as the Oklahoma State University database''s address gives it.'
+- title: Treaty with the Kickapoo, 1854
+  signed: '1854-05-18'
+  statutes_at_large: 10 Stat. 1078
+  kappler:
+    volume: 2
+    page: 634
+    link: https://treaties.okstate.edu/treaties/treaty-with-the-kickapoo-1854-0634
+  signatory: Kickapoo
+  source: kappler-indian-affairs-laws-and-treaties-vol-2-1904
+  confidence: medium
+  verification: inferred
+  locator: p. 634 (Treaty with the Kickapoo, 1854; Kappler header "May 18, 1854. | 10 Stat., 1078. | Ratified, July 11, 1854. | Proclaimed July 17, 1854.")
+  note: 'The nation is one successor of the party the treaty names. Linked to the nation by Claude (AI assistant) from the treaty''s text. Checked on Nov. 23, 2026: The Oklahoma State University Tribal Treaties Database''s successor list for this treaty names the nation; the list is in the page''s source but is no longer displayed while the database reviews it. Kickapoo Tribe of Oklahoma. The page is the treaty''s first page as the Oklahoma State University database''s address gives it.'
+- title: Treaty with the Kickapoo, 1862
+  signed: '1862-06-28'
+  statutes_at_large: 13 Stat. 623
+  kappler:
+    volume: 2
+    page: 835
+    link: https://treaties.okstate.edu/treaties/treaty-with-the-kickapoo-1862-0835
+  signatory: Kickapoo
+  source: kappler-indian-affairs-laws-and-treaties-vol-2-1904
+  confidence: medium
+  verification: inferred
+  locator: p. 835 (Treaty with the Kickapoo, 1862; Kappler header "June 28, 1862. | 13 Stats., 623. | Ratified Mar. 13, 1863. | Proclaimed May 28, 1863.")
+  note: 'The nation is one successor of the party the treaty names. Linked to the nation by Claude (AI assistant) from the treaty''s text. Checked on Nov. 23, 2026: The Oklahoma State University Tribal Treaties Database''s successor list for this treaty names the nation; the list is in the page''s source but is no longer displayed while the database reviews it. Kickapoo Tribe of Oklahoma. The page is the treaty''s first page as the Oklahoma State University database''s address gives it.'
 review:
   status: drafted-from-public-sources
   last_verified: '2026-11-21'

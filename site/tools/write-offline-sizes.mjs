@@ -25,7 +25,7 @@ const staticFolder = 'static';
 const skipped = new Set(['/manifest.webmanifest', '/icon.svg', '/edition.json', '/offline-sizes.json', '/offline-fingerprints.json', '/service-worker.js', '/_headers', '/_redirects', '/_routes.json']);
 /** Files the service worker never saves at all. */
 const neverSaved = new Set(['/edition.json', '/offline-sizes.json', '/offline-fingerprints.json', '/service-worker.js', '/_headers', '/_redirects', '/_routes.json']);
-const neverCached = ['/workspace', '/sign-in', '/sign-out', '/requests', '/copies'];
+const neverCached = ['/workspace', '/sign-in', '/sign-out', '/requests', '/copies', '/map-tiles'];
 
 /**
  * The page a file belongs to: "/nations/x/__data.json" belongs to "/nations/x".

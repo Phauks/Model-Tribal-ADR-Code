@@ -24,28 +24,17 @@ limits: >-
 # Icon pack comparison
 
 - **Date:** Nov. 21, 2026
-- **Question:** Which icon pack should the website (SvelteKit) and the book
-  (Typst and EPUB) use? The theme setting was to become a sun-or-moon button.
-- **Outcome:** Lucide, chosen by Trevor on Nov. 21, 2026. Recorded in
-  [site/DESIGN.md](../../../site/DESIGN.md), section 6.
+- **Question:** Which icon pack should the website (SvelteKit) and the book (Typst and EPUB) use? The theme setting was to become a sun-or-moon button.
+- **Outcome:** Lucide, chosen by Trevor on Nov. 21, 2026. Recorded in [site/DESIGN.md](../../../site/DESIGN.md), section 6.
 
 ## Method
 
-1. Downloaded each pack's published npm package and read its license file:
-   `lucide-static` 1.77.0, `@tabler/icons` 3.52.0, `@phosphor-icons/core`
-   2.1.1, `heroicons` 2.2.0, `@material-symbols/svg-400` 0.49.0, `iconoir`
-   7.12.2 and `remixicon` 4.9.1.
-2. Looked up the same 19 icons in each pack: sun, moon, map pin, phone,
-   external link, flag (report a problem), search, menu, sign in, user,
-   document, book, download, share, scales, handshake, people, gavel and
-   calendar.
-3. Read each pack's Svelte package metadata with `npm view` (version, release
-   date, `peerDependencies`, `sideEffects`) and its README.
-4. Measured the stem of Atkinson Hyperlegible Next from `pdf/fonts/` by
-   rendering the letter n at 1,000 units per em: Regular 84 units, SemiBold
+1. Downloaded each pack's published npm package and read its license file: `lucide-static` 1.77.0, `@tabler/icons` 3.52.0, `@phosphor-icons/core` 2.1.1, `heroicons` 2.2.0, `@material-symbols/svg-400` 0.49.0, `iconoir` 7.12.2 and `remixicon` 4.9.1.
+2. Looked up the same 19 icons in each pack: sun, moon, map pin, phone, external link, flag (report a problem), search, menu, sign in, user, document, book, download, share, scales, handshake, people, gavel and calendar.
+3. Read each pack's Svelte package metadata with `npm view` (version, release date, `peerDependencies`, `sideEffects`) and its README.
+4. Measured the stem of Atkinson Hyperlegible Next from `pdf/fonts/` by rendering the letter n at 1,000 units per em: Regular 84 units, SemiBold
    123. Compared that with each pack's stroke from its SVG files.
-5. Rendered three Lucide SVGs beside Atkinson Hyperlegible Next with Typst
-   0.15.2 to confirm print reuse.
+5. Rendered three Lucide SVGs beside Atkinson Hyperlegible Next with Typst 0.15.2 to confirm print reuse.
 
 ## Findings
 
@@ -58,15 +47,11 @@ limits: >-
 | Material Symbols | 19 | Apache 2.0 | None |
 | Iconoir | 16; no scales, handshake or gavel | MIT | None |
 
-Remix Icon was left out: its 2026 "Remix Icon License v1.0" is a custom
-license that bars use as a logo and use to build another icon library.
+Remix Icon was left out: its 2026 "Remix Icon License v1.0" is a custom license that bars use as a logo and use to build another icon library.
 
-Icons that read as Native imagery and must not be used: Lucide `feather`,
-`tent`, `tent-tree`, `bow-arrow`; Tabler `feather`, `tent`, `campfire`;
-Phosphor `tipi`, `feather`, `tent`, `campfire`.
+Icons that read as Native imagery and must not be used: Lucide `feather`, `tent`, `tent-tree`, `bow-arrow`; Tabler `feather`, `tent`, `campfire`; Phosphor `tipi`, `feather`, `tent`, `campfire`.
 
-The full comparison, with every icon drawn in each pack in light and dark, is
-in a project artifact: https://claude.ai/artifact/KeK5fmLBaZbVaTy4u4FbWb
+The full comparison, with every icon drawn in each pack in light and dark, is in a project artifact: https://claude.ai/artifact/KeK5fmLBaZbVaTy4u4FbWb
 
 ## Sources
 

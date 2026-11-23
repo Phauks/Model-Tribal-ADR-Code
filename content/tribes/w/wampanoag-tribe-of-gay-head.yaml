@@ -168,6 +168,14 @@ contacts:
   verification: title-only
   as_of: '2026-11-22'
   note: The nation's own website links this page as "Contact Us". Its title is "Contact Us — Wampanoag Tribe of Gay Head (Aquinnah)". Found by scripts/tribes/find_contacts.py.
+- kind: email-general
+  value: officemanager@wampanoagtribe-nsn.gov
+  label: General office email shown on the nation's website
+  source: wampanoagtribe-nsn-administration-1
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: General office address, shown as a mailto link on the page. Found by scripts/tribes/find_emails_deep.mjs.
 official_images:
 - kind: logo
   alternative_text: Wampanoag Tribe of Gay Head (Aquinnah)
@@ -200,6 +208,210 @@ federal_administration:
   verification: bulk-import
   as_of: '2026-11-20'
   locator: Wampanoag Tribe of Gay Head (Aquinnah)
+indian_health_service:
+- area: Nashville
+  source: indian-health-service-nashville-healthcare-facilities
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  locator: '"Tribally Administered Programs" table'
+  note: 'Listed as "Wampanoag Tribe of Gay Head". Also listed under the same Area in: indian-health-service-nashville-careers-brochure, indian-health-service-self-governance-tribes. Also on the Indian Health Service Self-Governance Tribes list (Wampanoag Tribe of Gay Head (Aquinnah) (2001)); the list does not say which service unit or programs the compact covers.'
+- area: Nashville
+  operator: tribal
+  source: indian-health-service-nashville-healthcare-facilities
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  locator: Tribally Administered Programs table
+  note: Listed as "Wampanoag Tribe of Gay Head".
+governance:
+- aspect: form
+  value: Non-IRA constitution
+  quote: The tribe has provided this office with a copy of its non-IRA constitution,
+  source: constitution-wampanoag-tribe-of-gay-head-1990-text
+  confidence: medium
+  verification: read-in-full
+  as_of: 1990-11
+  document_version:
+    document: wampanoag-tribe-of-gay-head-constitution
+    version: 1990-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Scan begins with the 1991 BIA cover memo and comments letter; the constitution itself is the text adopted November 18, 1990.'
+- aspect: governing-body
+  value: Tribal Council
+  quote: Tribe of Gay Head (Aquinnah), shall be known as the Tribal Council.
+  source: constitution-wampanoag-tribe-of-gay-head-1990-text
+  confidence: medium
+  verification: read-in-full
+  as_of: 1990-11
+  locator: Article I, Section 5
+  document_version:
+    document: wampanoag-tribe-of-gay-head-constitution
+    version: 1990-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Scan begins with the 1991 BIA cover memo and comments letter; the constitution itself is the text adopted November 18, 1990.'
+- aspect: governing-body-size
+  value: Chairman, vice-chairman, secretary, treasurer and 7 council members
+  quote: e. ) Seven council members.
+  source: constitution-wampanoag-tribe-of-gay-head-1990-text
+  confidence: medium
+  verification: read-in-full
+  as_of: 1990-11
+  locator: Article IV, Section 1
+  document_version:
+    document: wampanoag-tribe-of-gay-head-constitution
+    version: 1990-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Scan begins with the 1991 BIA cover memo and comments letter; the constitution itself is the text adopted November 18, 1990.'
+- aspect: governing-body-selection
+  value: Elected by tribal members
+  quote: Tribal elections shall be held at the annual meeting of the
+  source: constitution-wampanoag-tribe-of-gay-head-1990-text
+  confidence: medium
+  verification: read-in-full
+  as_of: 1990-11
+  locator: Article V, Section 4
+  document_version:
+    document: wampanoag-tribe-of-gay-head-constitution
+    version: 1990-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Scan begins with the 1991 BIA cover memo and comments letter; the constitution itself is the text adopted November 18, 1990.'
+- aspect: governing-body-term
+  value: 1, 2 or 3 years, staggered
+  quote: a. ) Three members for a period of one year.
+  source: constitution-wampanoag-tribe-of-gay-head-1990-text
+  confidence: medium
+  verification: read-in-full
+  as_of: 1990-11
+  locator: Article V, Section 2
+  document_version:
+    document: wampanoag-tribe-of-gay-head-constitution
+    version: 1990-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Scan begins with the 1991 BIA cover memo and comments letter; the constitution itself is the text adopted November 18, 1990.'
+- aspect: head-of-government
+  value: Chairman
+  quote: 'a.) Duty to Preside : The Chairman shall preside over all'
+  source: constitution-wampanoag-tribe-of-gay-head-1990-text
+  confidence: medium
+  verification: read-in-full
+  as_of: 1990-11
+  locator: Article VII, Section 3
+  document_version:
+    document: wampanoag-tribe-of-gay-head-constitution
+    version: 1990-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Scan begins with the 1991 BIA cover memo and comments letter; the constitution itself is the text adopted November 18, 1990.'
+- aspect: head-of-government
+  value: Chairperson
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  verification: bulk-import
+  as_of: '2026-11-20'
+  locator: Wampanoag Tribe of Gay Head (Aquinnah)
+  note: The title of the leader's office as the federal directory lists it; the holder's name is not recorded. Listed as “Chairman”; recorded without the holder's own form of the title.
+- aspect: head-of-government-selection
+  value: Elected by tribal members
+  quote: Officers of the tribal council are elected for a period of two
+  source: constitution-wampanoag-tribe-of-gay-head-1990-text
+  confidence: medium
+  verification: read-in-full
+  as_of: 1990-11
+  locator: Article V, Section 1
+  document_version:
+    document: wampanoag-tribe-of-gay-head-constitution
+    version: 1990-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Scan begins with the 1991 BIA cover memo and comments letter; the constitution itself is the text adopted November 18, 1990.'
+- aspect: head-of-government-term
+  value: 2 years
+  quote: Officers of the tribal council are elected for a period of two
+  source: constitution-wampanoag-tribe-of-gay-head-1990-text
+  confidence: medium
+  verification: read-in-full
+  as_of: 1990-11
+  locator: Article V, Section 1
+  document_version:
+    document: wampanoag-tribe-of-gay-head-constitution
+    version: 1990-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Scan begins with the 1991 BIA cover memo and comments letter; the constitution itself is the text adopted November 18, 1990.'
+- aspect: other-officers
+  value: Vice-chairman, secretary, treasurer
+  quote: b. ) One vice-chairman
+  source: constitution-wampanoag-tribe-of-gay-head-1990-text
+  confidence: medium
+  verification: read-in-full
+  as_of: 1990-11
+  locator: Article IV, Section 1
+  document_version:
+    document: wampanoag-tribe-of-gay-head-constitution
+    version: 1990-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Scan begins with the 1991 BIA cover memo and comments letter; the constitution itself is the text adopted November 18, 1990.'
+- aspect: elections
+  value: Annually in November
+  quote: Tribal elections shall be held at the annual meeting of the
+  source: constitution-wampanoag-tribe-of-gay-head-1990-text
+  confidence: medium
+  verification: read-in-full
+  as_of: 1990-11
+  locator: Article V, Section 4
+  document_version:
+    document: wampanoag-tribe-of-gay-head-constitution
+    version: 1990-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Scan begins with the 1991 BIA cover memo and comments letter; the constitution itself is the text adopted November 18, 1990.'
+- aspect: voting-age
+  value: '18'
+  quote: 'Section 5. Voter Qualifications : Any tribal member who is at least 18 years of age'
+  source: constitution-wampanoag-tribe-of-gay-head-1990-text
+  confidence: medium
+  verification: read-in-full
+  as_of: 1990-11
+  locator: Article V, Section 5
+  document_version:
+    document: wampanoag-tribe-of-gay-head-constitution
+    version: 1990-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Scan begins with the 1991 BIA cover memo and comments letter; the constitution itself is the text adopted November 18, 1990.'
+- aspect: judiciary
+  value: Tribe may establish judicial branch by ordinance
+  quote: 'Section 1. Authority to Establish : The tribe may establish by tribal ordinance a'
+  source: constitution-wampanoag-tribe-of-gay-head-1990-text
+  confidence: medium
+  verification: read-in-full
+  as_of: 1990-11
+  locator: Article XIII, Section 1
+  document_version:
+    document: wampanoag-tribe-of-gay-head-constitution
+    version: 1990-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Scan begins with the 1991 BIA cover memo and comments letter; the constitution itself is the text adopted November 18, 1990.'
+- aspect: amendment
+  value: Two-thirds vote of those participating in a referendum election
+  quote: This constitution may be amended by a two-thirds vote of those participating in a
+  source: constitution-wampanoag-tribe-of-gay-head-1990-text
+  confidence: medium
+  verification: read-in-full
+  as_of: 1990-11
+  locator: Article XVI
+  document_version:
+    document: wampanoag-tribe-of-gay-head-constitution
+    version: 1990-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Scan begins with the 1991 BIA cover memo and comments letter; the constitution itself is the text adopted November 18, 1990.'
+- aspect: recall-and-removal
+  value: Recall by petition of 50 eligible voters
+  quote: (50) eligible voters have signed the petition.
+  source: constitution-wampanoag-tribe-of-gay-head-1990-text
+  confidence: medium
+  verification: read-in-full
+  as_of: 1990-11
+  locator: Article VI, Section 1(c)
+  document_version:
+    document: wampanoag-tribe-of-gay-head-constitution
+    version: 1990-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Scan begins with the 1991 BIA cover memo and comments letter; the constitution itself is the text adopted November 18, 1990.'
+- aspect: other
+  value: Referendum on Council enactments, two-thirds of voters binding
+  quote: council shall be submitted to popular referendum within ninety days. The vote of two-thirds of the
+  source: constitution-wampanoag-tribe-of-gay-head-1990-text
+  confidence: medium
+  verification: read-in-full
+  as_of: 1990-11
+  locator: Article VII, Section 2
+  document_version:
+    document: wampanoag-tribe-of-gay-head-constitution
+    version: 1990-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Scan begins with the 1991 BIA cover memo and comments letter; the constitution itself is the text adopted November 18, 1990.'
 governing_documents:
 - kind: law-code
   title: Wampanoag Tribe of Gay Head (Aquinnah)
@@ -281,6 +493,23 @@ jurisdiction:
     the notice prints its table as page images, so nation names were read from images and matched to the
     roster. Row re-read on 2026-11-22 from the page image (the govinfo PDF has no text layer for the table);
     verification level unchanged because the name was not matched word for word in machine-read text.'
+- topic: public-law-280
+  value: not-a-public-law-280-state
+  detail: Massachusetts is not one of the states that Public Law 280 required to take jurisdiction or that chose to take it, so the state has no Public Law 280 jurisdiction over the nation's Indian country in Massachusetts. Other federal laws can still give a state some jurisdiction.
+  source: bia-faq-public-law-280
+  confidence: high
+  verification: inferred
+  as_of: '2017-07-18'
+  locator: Answer, second and third paragraphs (the lists of mandatory and optional states)
+  note: Inferred from the state's absence from both lists. Nation placed in Massachusetts by the Census Bureau's land areas.
+- topic: state-jurisdiction-statute
+  value: state-criminal-and-civil-jurisdiction
+  detail: Settlement lands and other Indian-held land in the town of Gay Head (Aquinnah) are subject to the civil and criminal laws, ordinances and jurisdiction of Massachusetts and the town, except as the Act or the State Implementing Act expressly provides. (Pub. L. No. 100-95, § 9, 101 Stat. at 709.)
+  source: public-law-100-95
+  confidence: high
+  verification: read-in-full
+  locator: Pub. L. 100-95 § 9, 101 Stat. at 709-10
+  note: Section 7(a) (101 Stat. at 707) also bars the tribal council from exercising jurisdiction "in contravention of" the Act and Massachusetts criminal and civil regulatory law. 25 U.S.C. § 1771g is "omitted" from the Code. The research did not research Aquinnah litigation after 1987. No comparable statute found for the Mashpee Wampanoag Tribe.
 memberships:
 - organization: United South and Eastern Tribes
   source: united-south-and-eastern-tribes-member-tribal-nations

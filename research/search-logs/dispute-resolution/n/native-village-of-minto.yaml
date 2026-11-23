@@ -71,9 +71,22 @@ searches:
 - date: '2026-11-23'
   searched_by: Claude (AI assistant)
   method: script
+  place_kind: state-court-directory
+  address: https://courts.alaska.gov/courtdir/docs/tribal-court-directory.pdf
+  query: 'this nation''s entry: types of cases heard'
+  outcome: found
+  reason: Entry "Minto, Native Village of" (p. 139) lists "Dispute resolution/Peacemaking" among the cases
+    heard; found while reading the directory in full for the Nov. 23 retry.
+  records:
+  - research/reviews/2026-11-23-dispute-resolution-retry.json#native-village-of-minto-retry-1
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: script
   place_kind: web-archive
   address: https://web.archive.org/web/20260423234958/https://mintodevelopmentcorp.com/minto-alaska/
   query: 'retry of an address that failed earlier: a direct request, then the Wayback Machine copy'
   outcome: not-found
   reason: Read the Wayback Machine copy of 2026-04-23 ("Our Community - Minto Development Corporation");
     it shows no codes, court or dispute resolution forum.
+next_steps: Lead author's review of the candidates (Gate 1) before any record goes into the profile. Also
+  the candidates in research/reviews/2026-11-23-dispute-resolution-retry.csv.

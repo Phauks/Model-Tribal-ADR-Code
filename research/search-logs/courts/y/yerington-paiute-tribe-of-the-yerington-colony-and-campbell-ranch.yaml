@@ -213,6 +213,73 @@ searches:
   reason: Western Region court's served-tribes list does not include the Yerington Paiute Tribe.
 - date: '2026-11-23'
   searched_by: Claude (AI assistant)
+  method: ai-review
+  place_kind: web-search
+  address: web search
+  query: nvcourts.gov tribal courts Nevada list Duckwater Ely Shoshone Yerington Winnemucca
+  outcome: not-found
+  reason: 'Second search: “Tribal Court”: Results were a Nevada Supreme Court resource file (refused,
+    below), a State Bar of Nevada magazine article and state agency contact lists of tribal chairs; no
+    tribal court directory was read.'
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: state-court-directory
+  address: https://nvcourts.gov/__data/assets/pdf_file/0031/48496/Nevada_Tribal_Jurisdictions_and_Services_Resource_1.pdf
+  query: 'scripts/review/service_links.py second: the nation''s name'
+  outcome: blocked
+  reason: 'Second search: “Tribal Court”: The Nevada courts site refused the request (status 403); not
+    worked around.'
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: other
+  address: https://nvbar.org/wp-content/uploads/NevadaLawyer_February2024_NevadasTribalCourts.pdf
+  query: 'scripts/review/service_links.py second: the nation''s name'
+  outcome: not-found
+  reason: 'Second search: “Tribal Court”: Status 200; a February 2024 Nevada Lawyer article on Nevada''s
+    tribal courts that mentions some of these courts in passing; an article, not a directory entry; not
+    used.'
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: bureau-of-indian-affairs-list
+  address: https://www.bia.gov/CFRCourts/western-region-cfr-court
+  query: 'scripts/review/service_links.py second: the nation''s name'
+  outcome: blocked
+  reason: 'Second search: “Tribal Court”: The Bureau of Indian Affairs page for the Western Region Court
+    of Indian Offenses answered "Access denied" (status 403); not worked around.'
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: bureau-of-indian-affairs-list
+  address: https://www.bia.gov/regional-offices/western/court-indian-offenses
+  query: 'scripts/review/service_links.py second: the nation''s name'
+  outcome: not-found
+  reason: 'Second search: “Tribal Court”: Status 200; the Western Region Court of Indian Offenses page
+    does not name this nation.'
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: ai-review
+  place_kind: web-search
+  address: web search
+  query: National American Indian Court Judges Association tribal court directory
+  outcome: not-found
+  reason: 'Second search: “Tribal Court”: The association''s site shows programs, membership and regions;
+    it publishes no directory of tribal courts, so it lists no court for this nation.'
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: ai-review
+  place_kind: project-capture
+  address: research/reviews/2026-11-22-service-links.json
+  outcome: not-found
+  reason: 'Second search: “Tribal Court”: Claude weighed what the second search found against the lead
+    author''s order (own page, then directory entry): none-found; the link stays empty and the service
+    stays listed.'
+  records:
+  - research/reviews/2026-11-22-service-links.json#service-428
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
   method: script
   place_kind: nation-website
   address: https://yeringtonpaiute.us/

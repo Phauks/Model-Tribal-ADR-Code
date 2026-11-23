@@ -70,7 +70,7 @@ export interface StoryOmission {
 export interface StoryFullText {
 	telling: string;
 	locator: string;
-	basis: 'public-domain' | 'nation-law' | 'permission';
+	basis: 'public-domain' | 'nation-law' | 'permission' | 'lead-author-decision';
 	basis_note: string;
 	transcribed_from: string;
 	paragraphs: (string | StoryOmission)[];

@@ -521,12 +521,23 @@ sup.citation {
 	text-decoration: underline;
 }
 
-/* The marker or source a link has just gone to is highlighted, so the eye finds it. */
+/*
+ * The marker or source a link has just gone to is highlighted, so the eye
+ * finds it. It arrives marked in the fill-in yellow, which fades to the
+ * resting highlight; with motion reduced it shows the resting highlight at once.
+ */
 .note-marker:target,
 .source-list > li:target {
 	background: var(--color-notice-background);
 	outline: 2px solid var(--color-focus-ring);
 	outline-offset: 1px;
+	animation: arrived var(--motion-duration-highlight) var(--motion-easing-standard);
+}
+
+@keyframes arrived {
+	from {
+		background: var(--color-placeholder-background);
+	}
 }
 
 .notes {
@@ -543,18 +554,26 @@ sup.citation {
 /*
  * The Sources list numbers its entries itself, so each number can link back
  * to the place in the text that cites the source; a source cited in several
- * places adds a letter for each, a, b, c.
+ * places adds a letter for each, a, b, c, on a "Cited 3 times" line under
+ * the citation. Each source is one row between thin lines, so a long list
+ * stays easy to scan (Trevor, Nov. 23, 2026).
  */
 .notes ol.source-list {
 	list-style: none;
 	padding-left: 0;
+	margin: 0;
 }
 
 .source-list > li {
 	position: relative;
-	padding-left: 2.5em;
+	padding: var(--space-2) 0 var(--space-2) 2.5em;
+	border-top: 1px solid var(--color-line);
 	/* Each source's number is a link back to the text; a full line height keeps it a 24 pixel target (WCAG 2.2, 2.5.8) beside small text. */
 	min-height: 1.5rem;
+}
+
+.source-list > li:first-child {
+	border-top: 0;
 }
 
 .source-list .source-number {
@@ -563,15 +582,23 @@ sup.citation {
 	width: 2em;
 	min-height: 1.5rem;
 	text-align: right;
+	font-weight: var(--font-weight-semibold);
+	font-variant-numeric: tabular-nums;
+}
+
+.source-cited {
+	display: block;
+	margin-top: var(--space-1);
+	color: var(--color-ink-muted);
 }
 
 .source-letter {
+	display: inline-block;
+	min-width: 1.5rem;
+	min-height: 1.5rem;
+	text-align: center;
 	font-style: italic;
 	font-weight: var(--font-weight-semibold);
-}
-
-.source-backlinks:has(.source-letter) {
-	margin-right: 0.25em;
 }
 
 /* Long web addresses in citations break anywhere rather than widen the page. */
@@ -585,9 +612,21 @@ sup.citation {
 }
 
 .source-uses {
-	margin: var(--space-1) 0 var(--space-3);
+	margin: var(--space-1) 0 0;
 	padding-left: var(--space-4);
 	list-style: none;
+	border-left: 2px solid var(--color-line);
+}
+
+/*
+ * The facts each source supports wait behind "Show what each source
+ * supports" (SourceList.svelte). Without scripts that button cannot work, so
+ * the facts show; on paper they always print.
+ */
+@media screen {
+	:root[data-scripts='on'] .notes:not(.showing-facts) .source-uses {
+		display: none;
+	}
 }
 
 .source-use-section {
@@ -829,6 +868,124 @@ sup.citation {
 	break-inside: avoid-page;
 }
 
+/*
+ * Essay figures (src/lib/essays/figures.ts): a picture, a video or a sound
+ * recording, with its caption and credit under it and its transcript folded
+ * below. Pictures and players never grow wider than the text.
+ */
+.essay-text > .essay-figure-block {
+	margin: var(--space-5) 0;
+	break-inside: avoid-page;
+}
+
+.essay-figure {
+	margin: 0;
+}
+
+.essay-figure :is(img, video) {
+	display: block;
+	max-width: 100%;
+	height: auto;
+	border-radius: var(--radius-panel);
+}
+
+.essay-figure audio {
+	display: block;
+	width: 100%;
+}
+
+.essay-figure figcaption {
+	margin-top: var(--space-2);
+	font-size: var(--font-size-small);
+	color: var(--color-ink-muted);
+}
+
+.essay-figure figcaption p {
+	margin: 0 0 var(--space-1);
+	text-indent: 0;
+}
+
+.essay-figure-credit {
+	font-style: italic;
+}
+
+.essay-figure-youtube {
+	position: relative;
+	display: block;
+	color: var(--color-band-text);
+	text-decoration: none;
+}
+
+.essay-figure-youtube img {
+	width: 100%;
+	aspect-ratio: 16 / 9;
+	object-fit: cover;
+}
+
+.essay-figure-play {
+	position: absolute;
+	inset: auto var(--space-3) var(--space-3) var(--space-3);
+	display: flex;
+	flex-direction: column;
+	gap: var(--space-1);
+	padding: var(--space-2) var(--space-3);
+	background: var(--color-band);
+	border-radius: var(--radius-control);
+	font-weight: var(--font-weight-semibold);
+}
+
+.essay-figure-play-note {
+	font-size: var(--font-size-small);
+	font-weight: normal;
+}
+
+.essay-figure-youtube:focus-visible {
+	outline: 3px solid var(--color-focus-ring);
+	outline-offset: 2px;
+}
+
+.essay-figure-frame {
+	display: block;
+	width: 100%;
+	aspect-ratio: 16 / 9;
+	border: 0;
+	border-radius: var(--radius-panel);
+}
+
+.essay-figure-transcript {
+	margin-top: var(--space-3);
+	padding: var(--space-3) var(--space-4);
+	background: var(--color-surface);
+	border-radius: var(--radius-panel);
+}
+
+.essay-figure-transcript > summary {
+	cursor: pointer;
+	font-weight: var(--font-weight-semibold);
+}
+
+.essay-figure-transcript > p {
+	margin: var(--space-2) 0 0;
+}
+
+.essay-figure-missing {
+	padding: var(--space-3);
+	border: 1px dashed var(--color-line);
+	color: var(--color-ink-muted);
+}
+
+@media print {
+	.essay-figure :is(video, audio),
+	.essay-figure-removal,
+	.essay-figure-play-note {
+		display: none;
+	}
+
+	.essay-figure-transcript {
+		display: block;
+	}
+}
+
 .essay-list {
 	padding-left: var(--space-5);
 }
@@ -923,7 +1080,27 @@ sup.citation {
 	display: none !important;
 }
 
+/*
+ * Motion (site/DESIGN.md, section 6, "Motion"; src/lib/motion.ts). Timing
+ * comes from the --motion-* tokens. When the reader picks Reduce motion in
+ * Settings, or the device asks for less motion, every duration becomes 0 and
+ * nothing animates or glides; paper never shows anything part way.
+ */
+:root[data-motion='reduce'] {
+	--motion-duration-short: 0ms;
+	--motion-duration-medium: 0ms;
+	--motion-duration-long: 0ms;
+	--motion-duration-highlight: 0ms;
+}
+
 @media (prefers-reduced-motion: reduce) {
+	:root:root {
+		--motion-duration-short: 0ms;
+		--motion-duration-medium: 0ms;
+		--motion-duration-long: 0ms;
+		--motion-duration-highlight: 0ms;
+	}
+
 	*,
 	*::before,
 	*::after {
@@ -931,6 +1108,45 @@ sup.citation {
 		transition: none !important;
 		scroll-behavior: auto !important;
 	}
+}
+
+:root[data-motion='reduce'] *,
+:root[data-motion='reduce'] *::before,
+:root[data-motion='reduce'] *::after {
+	animation: none !important;
+	transition: none !important;
+	scroll-behavior: auto !important;
+}
+
+/* Other people's cursors while editing together (Settings, Editing; src/lib/reading-settings.ts).
+   Only this reader's view changes. */
+:root[data-other-cursors='lines'] .ProseMirror-yjs-cursor > div {
+	display: none;
+}
+
+:root[data-other-cursors='off'] .ProseMirror-yjs-cursor {
+	display: none;
+}
+
+/* A selection wraps the selected words themselves, so only its color is taken away. */
+:root[data-other-cursors='off'] .ProseMirror-yjs-selection {
+	background-color: transparent !important;
+}
+
+@media print {
+	*,
+	*::before,
+	*::after {
+		animation: none !important;
+		transition: none !important;
+	}
+}
+
+/* Page changes cross-fade (crossFadePages in src/lib/motion.ts). */
+::view-transition-old(root),
+::view-transition-new(root) {
+	animation-duration: var(--motion-duration-medium);
+	animation-timing-function: var(--motion-easing-standard);
 }
 
 /* Parts that exist only on paper, such as the page details line. */
@@ -1048,4 +1264,132 @@ sup.citation {
 	tr {
 		break-inside: avoid;
 	}
+}
+
+/*
+ * A nation's own words on its page (decision record 0041): written by the
+ * nation's team and filled in by the Worker (src/lib/server/nation-page-overlay.ts).
+ * Each block says who wrote it, and looks different from the facts the
+ * project cites, so a reader can tell them apart.
+ */
+.nation-slot:empty {
+	display: none;
+}
+
+.nation-words {
+	margin: var(--space-4) 0 var(--space-5);
+	padding: var(--space-4) var(--space-5);
+	border: 1px dashed var(--color-link);
+	border-radius: var(--radius-panel);
+	max-width: var(--layout-measure);
+}
+
+.nation-words > h2 {
+	margin-top: 0;
+}
+
+.nation-words-text > :last-child {
+	margin-bottom: 0;
+}
+
+.nation-byline {
+	color: var(--color-ink-muted);
+	margin: 0 0 var(--space-3);
+}
+
+.nation-statement {
+	margin: var(--space-4) 0;
+	padding: var(--space-3) var(--space-4);
+	border-left: 6px solid var(--color-link);
+	border-radius: var(--radius-control);
+	background: var(--color-notice-background);
+	max-width: var(--layout-measure);
+}
+
+.nation-statement > :last-child {
+	margin-bottom: 0;
+}
+
+.nation-statement-heading {
+	margin: 0 0 var(--space-1);
+}
+
+.nation-pictures {
+	margin: var(--space-4) 0 var(--space-5);
+}
+
+.nation-picture-grid {
+	display: grid;
+	grid-template-columns: repeat(auto-fill, minmax(min(14rem, 100%), 1fr));
+	gap: var(--space-4);
+}
+
+.nation-picture-grid figure {
+	margin: 0;
+}
+
+.nation-picture-grid img {
+	display: block;
+	width: 100%;
+	height: auto;
+	border-radius: var(--radius-control);
+}
+
+.nation-picture-grid figcaption {
+	margin-top: var(--space-1);
+	color: var(--color-ink-muted);
+}
+
+.nation-contacts {
+	margin-top: var(--space-4);
+	padding: var(--space-4);
+	border: 1px dashed var(--color-link);
+	border-radius: var(--radius-panel);
+}
+
+.nation-contacts > h2 {
+	margin-top: 0;
+	font-size: var(--font-size-large);
+}
+
+.nation-contacts h3 {
+	margin: var(--space-3) 0 var(--space-1);
+	font-size: var(--font-size-body);
+	font-weight: var(--font-weight-semibold);
+}
+
+.nation-contacts dl {
+	margin: 0 0 var(--space-3);
+}
+
+.nation-contacts dt {
+	color: var(--color-ink-muted);
+	font-size: var(--font-size-small);
+}
+
+.nation-contacts dd {
+	margin: 0 0 var(--space-2);
+	overflow-wrap: anywhere;
+}
+
+.nation-hidden-note {
+	color: var(--color-ink-muted);
+}
+
+/* "Claimed by the nation", in place of the build's "Unclaimed" line (Trevor, Nov. 23, 2026). */
+.nation-claim {
+	margin: var(--space-3) 0 var(--space-5);
+}
+
+.nation-claim-badge {
+	display: inline-flex;
+	align-items: center;
+	gap: var(--space-1);
+	margin-right: var(--space-2);
+	padding: 0 var(--space-2);
+	border: 1px solid var(--color-link);
+	border-radius: 999px;
+	background: var(--color-surface);
+	color: var(--color-link);
+	font-weight: var(--font-weight-semibold);
 }

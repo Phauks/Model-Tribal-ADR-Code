@@ -1,0 +1,53 @@
+profile: content/tribes/l/little-river-band-of-ottawa-indians.yaml
+topic: court-media
+status: none-found
+last_searched: '2026-11-23'
+searches:
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: web-search
+  address: Web search (the AI assistant's search tool)
+  query: Little River Band Ottawa peacemaking video
+  outcome: not-found
+  reason: Results were unrelated Canadian music and arts videos, with nothing from the tribe.
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: web-search
+  address: Web search (the AI assistant's search tool)
+  query: Little River Band Ottawa Indians tribal court youtube
+  outcome: not-found
+  reason: Results were the tribe's court docket PDFs, with no video.
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: nation-website
+  address: https://www.lrboi-nsn.gov/government/tribal-judicial/peacemaking
+  query: embedded video, gallery or podcast about peacemaking
+  outcome: error
+  reason: Fetch was refused because the session's web-fetch budget was used up, so the page was not read.
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: tribal-court-site
+  address: https://www.lrboi-nsn.gov/government/tribal-judicial
+  query: embedded video, audio, photo galleries, channel links and the rights line
+  outcome: not-found
+  reason: Fetched with curl (HTTP 200) and read the page for embedded video, audio, galleries and the rights line; no court or peacemaking media on the page.
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: tribal-court-site
+  address: https://www.lrboi-nsn.gov/government/tribal-judicial/court-of-appeals
+  query: embedded video, audio, photo galleries, channel links and the rights line
+  outcome: not-found
+  reason: Fetched with curl (HTTP 200) and read the page for embedded video, audio, galleries and the rights line; no court or peacemaking media on the page.
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: nation-website
+  address: https://www.lrboi-nsn.gov/
+  query: embedded video, audio, photo galleries, channel links and the rights line
+  outcome: not-found
+  reason: Fetched with curl (HTTP 200) and read the page for embedded video, audio, galleries and the rights line; no court or peacemaking media on the page.

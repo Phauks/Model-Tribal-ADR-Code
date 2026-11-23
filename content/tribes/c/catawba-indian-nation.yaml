@@ -225,6 +225,22 @@ federal_administration:
   verification: bulk-import
   as_of: '2026-11-20'
   locator: Catawba Indian Nation
+indian_health_service:
+- area: Nashville
+  source: indian-health-service-nashville-healthcare-facilities
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  locator: '"Tribally Administered Programs" table'
+  note: 'Listed as "Catawba Indian Nation". Also listed under the same Area in: indian-health-service-direct-service-tribes, indian-health-service-nashville-careers-brochure.'
+- area: Nashville
+  operator: tribal
+  source: indian-health-service-nashville-healthcare-facilities
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  locator: Tribally Administered Programs table
+  note: Listed as "Catawba Indian Nation".
 government_structure:
 - kind: indian-reorganization-act
   detail: Listed as "The Catawba Tribe of Indians South Carolina" among organizations under constitutions
@@ -249,6 +265,159 @@ government_structure:
   as_of: '1944'
   locator: preamble / approval and certification of adoption
   note: Historical constitution; a later constitution may have replaced it.
+governance:
+- aspect: form
+  value: Constitution and by-laws under the Indian Reorganization Act of June 18, 1934
+  quote: Indian Reorganization Act of June 18, 1934 (48 Stat. 984), as amended by
+  source: university-of-oklahoma-indian-reorganization-act-sccatcons
+  confidence: medium
+  verification: read-in-full
+  as_of: '1944-04-13'
+  locator: Certification of Adoption
+  document_version:
+    document: catawba-indian-nation-constitution
+    version: 1944-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+- aspect: governing-body
+  value: General Tribal Council
+  quote: of South Carolina shall be the General Tribal Council which shall be composed
+  source: university-of-oklahoma-indian-reorganization-act-sccatcons
+  confidence: medium
+  verification: read-in-full
+  as_of: '1944-04-13'
+  locator: Article III, Section 1
+  document_version:
+    document: catawba-indian-nation-constitution
+    version: 1944-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+- aspect: general-council
+  value: All qualified voters of the Catawba Tribe
+  quote: of all qualified voters of the Catawba Tribe.
+  source: university-of-oklahoma-indian-reorganization-act-sccatcons
+  confidence: medium
+  verification: read-in-full
+  as_of: '1944-04-13'
+  locator: Article III, Section 1
+  document_version:
+    document: catawba-indian-nation-constitution
+    version: 1944-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+- aspect: head-of-government
+  value: Chief
+  quote: ballot, shall elect from its own members (a) a Chief, (b) an Assistant
+  source: university-of-oklahoma-indian-reorganization-act-sccatcons
+  confidence: medium
+  verification: read-in-full
+  as_of: '1944-04-13'
+  locator: Article III, Section 3
+  document_version:
+    document: catawba-indian-nation-constitution
+    version: 1944-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+- aspect: head-of-government
+  value: Chief
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  verification: bulk-import
+  as_of: '2026-11-20'
+  locator: Catawba Indian Nation
+  note: The title of the leader's office as the federal directory lists it; the holder's name is not recorded.
+- aspect: head-of-government-selection
+  value: Elected by the General Tribal Council from its own members
+  quote: ballot, shall elect from its own members (a) a Chief, (b) an Assistant
+  source: university-of-oklahoma-indian-reorganization-act-sccatcons
+  confidence: medium
+  verification: read-in-full
+  as_of: '1944-04-13'
+  locator: Article III, Section 3
+  document_version:
+    document: catawba-indian-nation-constitution
+    version: 1944-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+- aspect: other-officers
+  value: Assistant Chief, Secretary-Treasurer, two Trustees
+  quote: (c) a Secretary-Treasurer, and (d) two Trustees who shall, ex officio,
+  source: university-of-oklahoma-indian-reorganization-act-sccatcons
+  confidence: medium
+  verification: read-in-full
+  as_of: '1944-04-13'
+  locator: Article III, Section 3
+  document_version:
+    document: catawba-indian-nation-constitution
+    version: 1944-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+- aspect: elections
+  value: Every 2 years at the July meeting
+  quote: at the July meeting of every even year.
+  source: university-of-oklahoma-indian-reorganization-act-sccatcons
+  confidence: medium
+  verification: read-in-full
+  as_of: '1944-04-13'
+  locator: Article III, Section 4
+  document_version:
+    document: catawba-indian-nation-constitution
+    version: 1944-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+- aspect: voting-age
+  value: '21'
+  quote: 21 years of age or over shall be qualified voters
+  source: university-of-oklahoma-indian-reorganization-act-sccatcons
+  confidence: medium
+  verification: read-in-full
+  as_of: '1944-04-13'
+  locator: Article III, Section 2
+  document_version:
+    document: catawba-indian-nation-constitution
+    version: 1944-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+- aspect: amendment
+  value: Majority vote of the General Tribal Council
+  quote: proposed by a majority vote of the Catawba General Tribal Council and may
+  source: university-of-oklahoma-indian-reorganization-act-sccatcons
+  confidence: medium
+  verification: read-in-full
+  as_of: '1944-04-13'
+  locator: Article VI
+  document_version:
+    document: catawba-indian-nation-constitution
+    version: 1944-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+- aspect: secretarial-approval
+  value: Required for ordinances
+  quote: be subject to the approval of the Secretary of the Interior, providing
+  source: university-of-oklahoma-indian-reorganization-act-sccatcons
+  confidence: medium
+  verification: read-in-full
+  as_of: '1944-04-13'
+  locator: Article IV, Section 1(e)
+  document_version:
+    document: catawba-indian-nation-constitution
+    version: 1944-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+- aspect: recall-and-removal
+  value: Removal by two-thirds vote of those present
+  quote: A two-thirds (2/3) vote of those present
+  source: university-of-oklahoma-indian-reorganization-act-sccatcons
+  confidence: medium
+  verification: read-in-full
+  as_of: '1944-04-13'
+  locator: Article V, Section 2
+  document_version:
+    document: catawba-indian-nation-constitution
+    version: 1944-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+- aspect: other
+  value: Executive Committee of the Chief, Assistant Chief, Secretary-Treasurer and two Trustees
+  quote: consisting of the Chief, Assistant Chief, Secretary-Treasurer, and the
+  source: university-of-oklahoma-indian-reorganization-act-sccatcons
+  confidence: medium
+  verification: read-in-full
+  as_of: '1944-04-13'
+  locator: Article III, Section 5
+  document_version:
+    document: catawba-indian-nation-constitution
+    version: 1944-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
 governing_documents:
 - kind: constitution
   title: Constitution
@@ -375,6 +544,23 @@ jurisdiction:
     prints its table as page images, so nation names were read from images and matched to the roster.
     Row re-read on 2026-11-22 from the page image (the govinfo PDF has no text layer for the table); verification
     level unchanged because the name was not matched word for word in machine-read text.'
+- topic: public-law-280
+  value: not-a-public-law-280-state
+  detail: South Carolina is not one of the states that Public Law 280 required to take jurisdiction or that chose to take it, so the state has no Public Law 280 jurisdiction over the nation's Indian country in South Carolina. Other federal laws can still give a state some jurisdiction.
+  source: bia-faq-public-law-280
+  confidence: high
+  verification: inferred
+  as_of: '2017-07-18'
+  locator: Answer, second and third paragraphs (the lists of mandatory and optional states)
+  note: Inferred from the state's absence from both lists. Nation placed in South Carolina by the Census Bureau's land areas.
+- topic: state-jurisdiction-statute
+  value: state-criminal-and-civil-jurisdiction
+  detail: South Carolina has civil, criminal and regulatory jurisdiction over the Catawba Tribe, its members and lands as over any other person or land, except where the State Act or federal implementing law says otherwise; federal law adopts the Settlement Agreement and State Act for these questions. (S.C. Code Ann. § 27-16-40; Pub. L. No. 103-116, § 10(1), 107 Stat. at 1126.)
+  source: south-carolina-code-27-16-40
+  confidence: high
+  verification: read-in-full
+  locator: S.C. Code Ann. § 27-16-40
+  note: 'Federal side: § 10(1), "All matters involving tribal powers, immunities, and jurisdiction, whether criminal, civil, or regulatory, shall be governed by the terms and provisions of the Settlement Agreement and the State Act." Section 5(e)(?) of the federal Act (107 Stat. at 1122): the Act does not "deprive the State of jurisdiction other than as expressly provided." The State Act also lets the Tribe create tribal courts (S.C. Code Ann. §§ 27-16-110 to -120 not fully read). Also cites: public-law-103-116.'
 memberships:
 - organization: United South and Eastern Tribes
   source: united-south-and-eastern-tribes-member-tribal-nations

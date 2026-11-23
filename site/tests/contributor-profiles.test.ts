@@ -25,7 +25,8 @@ const ready: ProfileAnswers = {
 	...emptyAnswers,
 	givenName: 'Ada',
 	familyName: 'Lovelace',
-	adultConfirmed: true,
+	nativeName: 'Sample Name',
+	ageGroup: '18-or-older',
 	interests: ['write', 'review'],
 	creditForm: 'name-and-nation',
 	nationAnswer: 'listed',
@@ -60,9 +61,12 @@ describe('contributor profiles', () => {
 		expect(await listProfiles(database)).toEqual([]);
 	});
 
-	it('sends the registration at the first confirmation and keeps a copy of each version', async () => {
+	it('signs the person up at the first confirmation and keeps a copy of each version', async () => {
 		const profile = await confirmed();
-		expect(profile).toMatchObject({ status: 'submitted', confirmedVersion: 1, hasUnconfirmedChanges: false });
+		expect(profile).toMatchObject({ status: 'welcomed', confirmedVersion: 1, hasUnconfirmedChanges: false });
+		// A writer's credit goes under Contributors until the lead author moves it.
+		expect(profile.creditSection).toBe('contributors');
+		expect(profile.answers.nativeName).toBe('Sample Name');
 		expect(profile.answers.nations[0].nationName).toBe('Sample Nation');
 		expect(profile.answers.interests).toEqual(['review', 'write']);
 		const [listing] = await listProfiles(database);
@@ -74,8 +78,6 @@ describe('contributor profiles', () => {
 
 	it('prints credits only from the confirmed version, never from unconfirmed edits', async () => {
 		const profile = await confirmed();
-		await decideProfile(database, profile, 'welcomed', null, lead);
-		await setCreditSection(database, profile, 'contributors', lead);
 		await saveAnswers(database, account, { ...ready, creditForm: 'pseudonym', creditPseudonym: 'Changed Mind' });
 
 		const [credit] = await confirmedCredits(database);

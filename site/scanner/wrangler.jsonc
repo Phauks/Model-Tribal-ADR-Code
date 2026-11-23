@@ -1,0 +1,81 @@
+// Cloudflare Worker that scans files for viruses and malware
+// (site/SCANNING.md). It reads waiting files from the private bucket, scans
+// them in a Cloudflare Container (engine/), and writes each result to the
+// file_scans table, which the website checks before it serves a file.
+//
+// Workers Builds deploys it from the GitHub repository (root directory:
+// site/scanner, build command: cd .. && npm ci, deploy command:
+// npx wrangler deploy). Deploying builds the engine's image from
+// engine/Dockerfile, so it takes ten minutes or so. No secret is stored in
+// GitHub (decision record 0006).
+{
+	"$schema": "../node_modules/wrangler/config-schema.json",
+	"name": "model-tribal-adr-code-scanner",
+	"main": "worker.ts",
+	"compatibility_date": "2026-11-20",
+	"compatibility_flags": ["nodejs_compat"],
+	// No public address: nothing reaches it but its own cron.
+	"workers_dev": false,
+	"preview_urls": false,
+	"observability": {
+		"enabled": true
+	},
+	// The scan engine: ClamAV, YARA rules and structural checks, with no
+	// internet access. standard-1 is half a CPU, 4 GiB of memory and 8 GB of
+	// disk: ClamAV's signatures take about 1.5 GiB in memory, and a file up
+	// to the 2 GiB limit is written to disk while it is scanned. One instance
+	// is enough, because the desk scans one file at a time.
+	"containers": [
+		{
+			"name": "scan-engine",
+			"image": "./engine/Dockerfile",
+			"instance_type": "standard-1",
+			"max_instances": 1
+		}
+	],
+	"exports": {
+		"ScanEngine": { "type": "durable-object", "storage": "sqlite", "container": "scan-engine" },
+		"ScanDesk": { "type": "durable-object", "storage": "sqlite" }
+	},
+	"durable_objects": {
+		"bindings": [
+			{ "name": "scanEngine", "class_name": "ScanEngine" },
+			{ "name": "scanDesk", "class_name": "ScanDesk" }
+		]
+	},
+	// The same database and bucket as the website, by the same binding names.
+	"d1_databases": [
+		{
+			"binding": "database",
+			"database_name": "model-tribal-adr-code",
+			"database_id": "2386ebd3-cea2-4ca1-9fff-0772fcd8bc6b",
+			"migrations_dir": "../migrations"
+		}
+	],
+	"r2_buckets": [
+		{
+			"binding": "sourceDocuments",
+			"bucket_name": "model-tribal-adr-code-sources"
+		}
+	],
+	// Every minute: wake the desk to scan whatever is waiting. Daily at 06:23
+	// UTC: call the rebuild hook, if one is set, so the engine is rebuilt
+	// with the day's ClamAV signatures (site/SCANNING.md, "Keeping
+	// signatures current").
+	"triggers": {
+		"crons": ["* * * * *", "23 6 * * *"]
+	},
+	// SCAN_PROVIDER picks who scans: "container" (the engine above), "http"
+	// (any service at SCAN_HTTP_ADDRESS that answers with the same JSON) or
+	// "off" (nothing is scanned; every file stays held). SCAN_SIZE_LIMIT_MB
+	// is the largest file sent to the scanner; larger ones are held for a
+	// reviewer. Two optional secrets are set in the Cloudflare dashboard
+	// (Worker > Settings > Variables and Secrets), never here:
+	// SCAN_HTTP_TOKEN, the key for an "http" provider, and
+	// SCAN_REBUILD_HOOK_URL, the deploy hook for the daily rebuild.
+	"vars": {
+		"SCAN_PROVIDER": "container",
+		"SCAN_HTTP_ADDRESS": "",
+		"SCAN_SIZE_LIMIT_MB": "2048"
+	}
+}

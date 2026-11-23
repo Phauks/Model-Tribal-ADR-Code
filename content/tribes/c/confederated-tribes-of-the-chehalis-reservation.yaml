@@ -222,6 +222,23 @@ federal_administration:
   verification: bulk-import
   as_of: '2026-11-20'
   locator: Confederated Tribes of the Chehalis Reservation
+indian_health_service:
+- area: Portland
+  source: indian-health-service-portland-careers-brochure
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  locator: '"Tribes of Oregon, Washington and Idaho" list'
+  note: Listed as "Confederated Tribes of the Chehalis Reservation".
+governance:
+- aspect: head-of-government
+  value: Chairperson
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  verification: bulk-import
+  as_of: '2026-11-20'
+  locator: Confederated Tribes of the Chehalis Reservation
+  note: The title of the leader's office as the federal directory lists it; the holder's name is not recorded. Listed as “Chairman”; recorded without the holder's own form of the title.
 governing_documents:
 - kind: law-code
   title: Confederated Tribes of the Chehalis Reservation
@@ -542,6 +559,17 @@ jurisdiction:
   locator: '"Exercising jurisdiction since" line'
   note: Listed as "Confederated Tribes of the Chehalis Reservation". Also on the NCAI implementing tribes
     list (national-congress-of-american-indians-implementing-tribes-special-tribal-criminal-jurisdiction).
+land_establishment:
+- land_area: Chehalis Reserve (selection at the mouth of the Black River), Washington Territory
+  method: other
+  instrument: Order of the Sec'y of the Interior, July 8, 1864, 1 Kappler 903
+  date: '1864-07-08'
+  detail: First set aside
+  source: order-1864-07-08-chehalis-reservation
+  confidence: medium
+  verification: read-in-full
+  locator: 1 Kappler 903
+  note: 'The instrument reads: “I approve the suggestion made in relation to the subject, and you are hereby authorized and instructed to purchase the improvements of D. Mounts”. Approval of the superintendent''s selection of a reservation of about six sections; not an executive order. Exec. Order of Oct. 1, 1886 (1 Kappler 903) refers to the tract "reserved for the use and occupation of the Chehalis Indians, by order of the Secretary of the Interior, dated July 8, 1864" and restored part of it to the public domain.'
 memberships:
 - organization: Northwest Portland Area Indian Health Board
   source: northwest-portland-area-indian-health-board-member-tribes

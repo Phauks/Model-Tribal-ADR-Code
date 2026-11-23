@@ -238,6 +238,14 @@ searches:
   reason: Directory lists 'Hoopa Valley Tribal Court' in Humboldt County.
 - date: '2026-11-23'
   searched_by: Claude (AI assistant)
+  method: ai-review
+  place_kind: other
+  address: https://www.californialawreview.org/print/regenerative-tribal-jurisdiction
+  query: 'Indian law journals sweep: articles and reports on Tribal courts, wellness courts and peacemaking'
+  outcome: found
+  reason: Read in full; named a wellness court now in the profile (source van-schilfgaarde-2024-restorative-justice-regenerative-tribal-jurisdiction).
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
   method: script
   place_kind: web-archive
   address: https://web.archive.org/web/20240926234853/https://www.hoopacourt.com/
@@ -263,5 +271,3 @@ searches:
   outcome: error
   reason: 'Still not readable on 2026-11-23 (direct request: no answer), and the Wayback Machine had no
     copy.'
-next_steps: 'Open by hand in a browser, or ask the nation''s office for: https://www.hoopa-nsn.gov/the-tribal-government/hoopa-valley-tribal-court
-  (no readable copy on 2026-11-23, directly or in the Wayback Machine).'

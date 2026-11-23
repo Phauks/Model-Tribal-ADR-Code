@@ -7,6 +7,7 @@ import {
 	giveWorkspaceAccess,
 	profileByIdentifier,
 	profileVersions,
+	setBoardMembership,
 	setCreditSection,
 	type Decision
 } from '#lib/server/contributor-profiles.ts';
@@ -50,13 +51,13 @@ export const actions: Actions = {
 		const { person, database, profile } = await loadProfile(event);
 		const form = await event.request.formData();
 		const decision = formText(form, 'decision') as Decision | null;
-		if (decision !== 'welcomed' && decision !== 'declined') return fail(400, { problem: 'Choose welcome or decline.' });
+		if (decision !== 'welcomed' && decision !== 'declined') return fail(400, { problem: 'Choose signed up or removed.' });
 		const note = formText(form, 'note', 2000);
 		if (decision === 'declined' && !note) {
-			return fail(400, { problem: 'Give the person a reason when declining; they see it on their profile.' });
+			return fail(400, { problem: 'Give the person a reason when removing them; they see it on their profile.' });
 		}
 		await decideProfile(database, profile, decision, note, person);
-		return { done: decision === 'welcomed' ? 'Welcomed.' : 'Declined. The person sees the reason on their profile.' };
+		return { done: decision === 'welcomed' ? 'Signed up.' : 'Removed. The person sees the reason on their profile.' };
 	},
 
 	section: async (event) => {
@@ -66,6 +67,14 @@ export const actions: Actions = {
 		const section = value && (creditSections as readonly string[]).includes(value) ? (value as CreditSection) : null;
 		await setCreditSection(database, profile, section, person);
 		return { done: 'Credit section saved.' };
+	},
+
+	board: async (event) => {
+		const { person, database, profile } = await loadProfile(event);
+		const form = await event.request.formData();
+		const member = form.get('boardMember') === 'yes';
+		await setBoardMembership(database, profile, member, member ? formText(form, 'boardOffice', 100) : null, person);
+		return { done: member ? 'Saved as a board member.' : 'Saved as not on the board.' };
 	},
 
 	access: async (event) => {

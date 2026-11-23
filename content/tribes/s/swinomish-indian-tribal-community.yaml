@@ -121,6 +121,14 @@ federal_administration:
   verification: bulk-import
   as_of: '2026-11-20'
   locator: Swinomish Indian Tribal Community
+indian_health_service:
+- area: Portland
+  source: indian-health-service-portland-careers-brochure
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  locator: '"Tribes of Oregon, Washington and Idaho" list'
+  note: 'Listed as "Swinomish Indian Tribal Community". Also listed under the same Area in: indian-health-service-self-governance-tribes. Also on the Indian Health Service Self-Governance Tribes list (Swinomish Indian Tribal Community (1997)); the list does not say which service unit or programs the compact covers.'
 government_structure:
 - kind: indian-reorganization-act
   detail: Listed as "The Swinomish Indian Tribal Community, Washington" among organizations under constitutions
@@ -145,6 +153,255 @@ government_structure:
   as_of: '1936'
   locator: preamble / approval and certification of adoption
   note: Historical constitution; a later constitution may have replaced it.
+governance:
+- aspect: form
+  value: Constitution and By-Laws under Act of Congress of June 18, 1934
+  quote: act of Congress of June 18, 1934, do ordain and establish this Constitution for the Swinomish
+  source: constitution-swinomish-indian-tribal-community-2017-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '2017-05-23'
+  locator: Preamble
+  document_version:
+    document: swinomish-indian-tribal-community-constitution
+    version: 2017-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+- aspect: governing-body
+  value: Swinomish Indian Senate
+  quote: The governing body of the Community shall consist of a council, known as
+  source: constitution-swinomish-indian-tribal-community-2017-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '2017-05-23'
+  locator: Article III, Section 1
+  document_version:
+    document: swinomish-indian-tribal-community-constitution
+    version: 2017-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+- aspect: governing-body-size
+  value: 11 members
+  quote: This Senate shall consist of eleven (11) members duly elected to serve five (5) years
+  source: constitution-swinomish-indian-tribal-community-2017-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '2017-05-23'
+  locator: Article III, Section 2
+  document_version:
+    document: swinomish-indian-tribal-community-constitution
+    version: 2017-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+- aspect: governing-body-selection
+  value: Elected by secret ballot
+  quote: All elections shall be by secret ballot.
+  source: constitution-swinomish-indian-tribal-community-2017-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '2017-05-23'
+  locator: Article IV, Section 3
+  document_version:
+    document: swinomish-indian-tribal-community-constitution
+    version: 2017-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+- aspect: governing-body-term
+  value: 5 years, staggered
+  quote: duly elected to serve five (5) years,
+  source: constitution-swinomish-indian-tribal-community-2017-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '2017-05-23'
+  locator: Article III, Section 2
+  document_version:
+    document: swinomish-indian-tribal-community-constitution
+    version: 2017-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+- aspect: general-council
+  value: Eligible voters; quorum of 50
+  quote: the general council shall consist of fifty (50) eligible voters.
+  source: constitution-swinomish-indian-tribal-community-2017-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '2017-05-23'
+  locator: By-Laws, Article V, Section 3
+  document_version:
+    document: swinomish-indian-tribal-community-constitution
+    version: 2017-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+- aspect: head-of-government
+  value: Chairman
+  quote: 'The Senate so organized shall elect from its own number: (1) a chairman;'
+  source: constitution-swinomish-indian-tribal-community-2017-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '2017-05-23'
+  locator: Article III, Section 3
+  document_version:
+    document: swinomish-indian-tribal-community-constitution
+    version: 2017-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+- aspect: head-of-government
+  value: Chairperson
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  verification: bulk-import
+  as_of: '2026-11-20'
+  locator: Swinomish Indian Tribal Community
+  note: The title of the leader's office as the federal directory lists it; the holder's name is not recorded. Listed as “Chairman”; recorded without the holder's own form of the title.
+- aspect: head-of-government-selection
+  value: Elected by the Senate from its own number
+  quote: 'The Senate so organized shall elect from its own number: (1) a chairman;'
+  source: constitution-swinomish-indian-tribal-community-2017-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '2017-05-23'
+  locator: Article III, Section 3
+  document_version:
+    document: swinomish-indian-tribal-community-constitution
+    version: 2017-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+- aspect: other-officers
+  value: Vice-Chairman, Secretary, Treasurer
+  quote: 'chairman; and from within or without, (3) a secretary; (4) a treasurer:'
+  source: constitution-swinomish-indian-tribal-community-2017-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '2017-05-23'
+  locator: Article III, Section 3
+  document_version:
+    document: swinomish-indian-tribal-community-constitution
+    version: 2017-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+- aspect: elections
+  value: Every year, second Saturday in February
+  quote: meeting shall be held on the second Saturday in February of each year
+  source: constitution-swinomish-indian-tribal-community-2017-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '2017-05-23'
+  locator: By-Laws, Article V, Section 2
+  document_version:
+    document: swinomish-indian-tribal-community-constitution
+    version: 2017-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+- aspect: voting-age
+  value: '21'
+  quote: All members of the Community who are twenty-one (21) years of age or older
+  source: constitution-swinomish-indian-tribal-community-2017-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '2017-05-23'
+  locator: Article IV, Section 1
+  document_version:
+    document: swinomish-indian-tribal-community-constitution
+    version: 2017-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+- aspect: election-authority
+  value: Senate
+  quote: The time and places of voting shall be designated by the Senate.
+  source: constitution-swinomish-indian-tribal-community-2017-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '2017-05-23'
+  locator: Article IV, Section 2
+  document_version:
+    document: swinomish-indian-tribal-community-constitution
+    version: 2017-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+- aspect: judiciary
+  value: Tribal Court and Court of Appeals
+  quote: The Tribal Court System shall include a Tribal Court and such other lower
+  source: constitution-swinomish-indian-tribal-community-2017-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '2017-05-23'
+  locator: Article IX, Section 1
+  document_version:
+    document: swinomish-indian-tribal-community-constitution
+    version: 2017-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+- aspect: judicial-selection
+  value: Appointed by the Senate
+  quote: The Senate shall appoint judges who shall serve for a term
+  source: constitution-swinomish-indian-tribal-community-2017-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '2017-05-23'
+  locator: Article IX, Section 3
+  document_version:
+    document: swinomish-indian-tribal-community-constitution
+    version: 2017-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+- aspect: judicial-term
+  value: 4 years
+  quote: of four (4) years unless sooner removed for cause as provided by this Constitution or by
+  source: constitution-swinomish-indian-tribal-community-2017-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '2017-05-23'
+  locator: Article IX, Section 3
+  document_version:
+    document: swinomish-indian-tribal-community-constitution
+    version: 2017-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+- aspect: judicial-independence
+  value: Pay may not be reduced during term
+  quote: shall not be diminished during their term of office
+  source: constitution-swinomish-indian-tribal-community-2017-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '2017-05-23'
+  locator: Article IX, Section 5
+  document_version:
+    document: swinomish-indian-tribal-community-constitution
+    version: 2017-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+- aspect: judicial-independence
+  value: Judges disciplined or removed by 7-vote Senate for listed grounds
+  quote: By a vote of at least seven (7) of its members, a judge may be disciplined or removed
+  source: constitution-swinomish-indian-tribal-community-2017-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '2017-05-23'
+  locator: Article IX, Section 6(c)
+  document_version:
+    document: swinomish-indian-tribal-community-constitution
+    version: 2017-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+- aspect: amendment
+  value: Senate approval by 5 members, then majority vote in Secretarial election
+  quote: Whenever five (5) members of the Senate shall consider an amendment necessary
+  source: constitution-swinomish-indian-tribal-community-2017-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '2017-05-23'
+  locator: Article X
+  document_version:
+    document: swinomish-indian-tribal-community-constitution
+    version: 2017-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+- aspect: secretarial-approval
+  value: Required for amendments
+  quote: approved by him, shall thereupon take effect.
+  source: constitution-swinomish-indian-tribal-community-2017-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '2017-05-23'
+  locator: Article X
+  document_version:
+    document: swinomish-indian-tribal-community-constitution
+    version: 2017-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+- aspect: recall-and-removal
+  value: Expulsion by two-thirds Senate vote
+  quote: The Senate may by a two-thirds affirmative vote expel any member for neglect of
+  source: constitution-swinomish-indian-tribal-community-2017-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '2017-05-23'
+  locator: Article V, Section 2
+  document_version:
+    document: swinomish-indian-tribal-community-constitution
+    version: 2017-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
 governing_documents:
 - kind: law-code
   title: Swinomish Tribal Code
@@ -579,6 +836,31 @@ jurisdiction:
   as_of: 2022-05
   locator: '"Exercising jurisdiction since" line'
   note: Listed as "Swinomish Indian Tribal Community". Also on the NCAI implementing tribes list (national-congress-of-american-indians-implementing-tribes-special-tribal-criminal-jurisdiction).
+treaties:
+- title: Treaty with the Dwamish, Suquamish, etc., 1855
+  signed: '1855-01-22'
+  statutes_at_large: 12 Stat. 927
+  kappler:
+    volume: 2
+    page: 669
+    link: https://treaties.okstate.edu/treaties/treaty-with-the-dwamish-suquamish-etc-1855-0669
+  signatory: Skagit; Swin-a-mish
+  source: kappler-indian-affairs-laws-and-treaties-vol-2-1904
+  confidence: medium
+  verification: inferred
+  locator: p. 669 (Treaty with the Dwamish, Suquamish, etc., 1855; Kappler header "Jan. 22, 1855. | 12 Stat. 927. Ratified Mar. 8, 1859. | Proclaimed Apr. 11, 1859.")
+  note: The nation's official name carries the name the treaty gives this party. Linked to the nation by Claude (AI assistant) from the treaty's text and the nation's name, not from a source that names the successor; not yet checked against a second source. Treaty of Point Elliott; Swinomish signers in text The page is the treaty's first page as the Oklahoma State University database's address gives it.
+land_establishment:
+- land_area: Swinomish (Perry's Island/Shais-quihl) tract, Washington
+  method: treaty
+  instrument: Treaty of Point Elliott, Jan. 22, 1855, art. II, 12 Stat. 927, 928
+  date: '1855-01-22'
+  detail: First set aside
+  source: treaty-with-the-dwamish-suquamish-etc-1855
+  confidence: medium
+  verification: read-in-full
+  locator: 12 Stat. 928
+  note: 'The instrument reads: “the peninsula at the southeastern end of Perry’s Island called Shais-quihl”. Exec. Order of Sept. 9, 1873 (1 Kappler 925) fixed the northern boundary of the "Swinomish Reservation."'
 memberships:
 - organization: Northwest Indian Fisheries Commission
   source: northwest-indian-fisheries-commission-member-tribes

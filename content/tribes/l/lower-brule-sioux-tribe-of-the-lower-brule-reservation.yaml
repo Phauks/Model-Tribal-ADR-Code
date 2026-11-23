@@ -195,6 +195,22 @@ federal_administration:
   verification: bulk-import
   as_of: '2026-11-20'
   locator: Lower Brule Sioux Tribe of the Lower Brule Reservation, South Dakota
+indian_health_service:
+- area: Great Plains
+  source: indian-health-service-great-plains-area-home
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  locator: '"Tribes of North Dakota, South Dakota, Nebraska, and Iowa" list'
+  note: 'Listed as "Lower Brule Sioux Tribe". Also listed under the same Area in: indian-health-service-direct-service-tribes.'
+- area: Great Plains
+  operator: indian-health-service
+  source: indian-health-service-direct-service-tribes
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  locator: Direct Service Tribes by IHS Area > Great Plains Area
+  note: Listed as "Lower Brule Sioux Tribe". The Direct Service Tribes list says some Tribes have a mixed Indian Health Service and Tribal arrangement.
 government_structure:
 - kind: indian-reorganization-act
   detail: Listed as "The Lower Brule Tribe, South Dakota" among organizations under constitutions approved
@@ -219,6 +235,243 @@ government_structure:
   as_of: '1935'
   locator: preamble / approval and certification of adoption
   note: Historical constitution; a later constitution may have replaced it.
+governance:
+- aspect: form
+  value: Constitution and Bylaws adopted under the Act of June 18, 1934
+  quote: as provided in the Act of June 18, 1934, as amended by the Act of June 15, 1935.
+  source: constitution-lower-brule-sioux-tribe-of-the-lower-brule-reservation-1942-text
+  confidence: high
+  verification: read-in-full
+  as_of: '1942-05-18'
+  locator: Article VI
+  document_version:
+    document: lower-brule-sioux-tribe-of-the-lower-brule-reservation-constitution
+    version: 1942-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: The extract is the 1935 constitution as amended through 1986, not only the 1942 version; facts follow the text as printed.'
+- aspect: governing-body
+  value: Tribal Council
+  quote: The governing body of the Lower Brule Sioux Tribe shall consist of a Council, known as the Lower Brule Sioux Tribal Council, hereinafter designated as the “Tribal Council”.
+  source: constitution-lower-brule-sioux-tribe-of-the-lower-brule-reservation-1942-text
+  confidence: high
+  verification: read-in-full
+  as_of: '1942-05-18'
+  locator: Article III, Section 1
+  document_version:
+    document: lower-brule-sioux-tribe-of-the-lower-brule-reservation-constitution
+    version: 1942-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: The extract is the 1935 constitution as amended through 1986, not only the 1942 version; facts follow the text as printed.'
+- aspect: governing-body-size
+  value: 6 members
+  quote: The voters shall elect at large a Chairman, Vice-Chairman, Treasurer and three Councilmen.
+  source: constitution-lower-brule-sioux-tribe-of-the-lower-brule-reservation-1942-text
+  confidence: high
+  verification: read-in-full
+  as_of: '1942-05-18'
+  locator: Article III, Section 2
+  document_version:
+    document: lower-brule-sioux-tribe-of-the-lower-brule-reservation-constitution
+    version: 1942-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: The extract is the 1935 constitution as amended through 1986, not only the 1942 version; facts follow the text as printed.'
+- aspect: governing-body-selection
+  value: Elected at large by the voters
+  quote: The voters shall elect at large a Chairman, Vice-Chairman, Treasurer and three Councilmen.
+  source: constitution-lower-brule-sioux-tribe-of-the-lower-brule-reservation-1942-text
+  confidence: high
+  verification: read-in-full
+  as_of: '1942-05-18'
+  locator: Article III, Section 2
+  document_version:
+    document: lower-brule-sioux-tribe-of-the-lower-brule-reservation-constitution
+    version: 1942-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: The extract is the 1935 constitution as amended through 1986, not only the 1942 version; facts follow the text as printed.'
+- aspect: governing-body-term
+  value: 2 years
+  quote: The elected councilmen shall serve for two years.
+  source: constitution-lower-brule-sioux-tribe-of-the-lower-brule-reservation-1942-text
+  confidence: high
+  verification: read-in-full
+  as_of: '1942-05-18'
+  locator: Article III, Section 4
+  document_version:
+    document: lower-brule-sioux-tribe-of-the-lower-brule-reservation-constitution
+    version: 1942-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: The extract is the 1935 constitution as amended through 1986, not only the 1942 version; facts follow the text as printed.'
+- aspect: head-of-government
+  value: Chairman
+  quote: The Chairman of the Tribal Council shall preside over all meetings of the Tribal Council,
+  source: constitution-lower-brule-sioux-tribe-of-the-lower-brule-reservation-1942-text
+  confidence: high
+  verification: read-in-full
+  as_of: '1942-05-18'
+  locator: Bylaws Article I, Section 1
+  document_version:
+    document: lower-brule-sioux-tribe-of-the-lower-brule-reservation-constitution
+    version: 1942-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: The extract is the 1935 constitution as amended through 1986, not only the 1942 version; facts follow the text as printed.'
+- aspect: head-of-government
+  value: Chairperson
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  verification: bulk-import
+  as_of: '2026-11-20'
+  locator: Lower Brule Sioux Tribe of the Lower Brule Reservation, South Dakota
+  note: The title of the leader's office as the federal directory lists it; the holder's name is not recorded. Listed as “Chairman”; recorded without the holder's own form of the title.
+- aspect: head-of-government-selection
+  value: Elected at large by the voters
+  quote: The voters shall elect at large a Chairman, Vice-Chairman, Treasurer and three Councilmen.
+  source: constitution-lower-brule-sioux-tribe-of-the-lower-brule-reservation-1942-text
+  confidence: high
+  verification: read-in-full
+  as_of: '1942-05-18'
+  locator: Article III, Section 2
+  document_version:
+    document: lower-brule-sioux-tribe-of-the-lower-brule-reservation-constitution
+    version: 1942-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: The extract is the 1935 constitution as amended through 1986, not only the 1942 version; facts follow the text as printed.'
+- aspect: other-officers
+  value: Vice-Chairman, Treasurer, Secretary, Sergeant at Arms, Chaplain
+  quote: (1) a Secretary, (2) a Sergeant at Arms, (3) a Chaplain, and (4) other such officers and committees as may be deemed necessary
+  source: constitution-lower-brule-sioux-tribe-of-the-lower-brule-reservation-1942-text
+  confidence: high
+  verification: read-in-full
+  as_of: '1942-05-18'
+  locator: Article III, Section 3
+  document_version:
+    document: lower-brule-sioux-tribe-of-the-lower-brule-reservation-constitution
+    version: 1942-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: The extract is the 1935 constitution as amended through 1986, not only the 1942 version; facts follow the text as printed.'
+- aspect: elections
+  value: Every 2 years on the first Tuesday of September
+  quote: elections shall be held on the first Tuesday of September in even numbered years
+  source: constitution-lower-brule-sioux-tribe-of-the-lower-brule-reservation-1942-text
+  confidence: high
+  verification: read-in-full
+  as_of: '1942-05-18'
+  locator: Article IV, Section 2
+  document_version:
+    document: lower-brule-sioux-tribe-of-the-lower-brule-reservation-constitution
+    version: 1942-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: The extract is the 1935 constitution as amended through 1986, not only the 1942 version; facts follow the text as printed.'
+- aspect: voting-age
+  value: '18'
+  quote: All enrolled resident members of the Lower Brule Sioux Tribe eighteen (18) years of age or over
+  source: constitution-lower-brule-sioux-tribe-of-the-lower-brule-reservation-1942-text
+  confidence: high
+  verification: read-in-full
+  as_of: '1942-05-18'
+  locator: Article IV, Section 1
+  document_version:
+    document: lower-brule-sioux-tribe-of-the-lower-brule-reservation-constitution
+    version: 1942-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: The extract is the 1935 constitution as amended through 1986, not only the 1942 version; facts follow the text as printed.'
+- aspect: election-authority
+  value: Election Board appointed by Tribal Council
+  quote: the Council shall appoint a five (5) member election Board plus five (5) alternates
+  source: constitution-lower-brule-sioux-tribe-of-the-lower-brule-reservation-1942-text
+  confidence: high
+  verification: read-in-full
+  as_of: '1942-05-18'
+  locator: Article IV, Section 3(a)
+  document_version:
+    document: lower-brule-sioux-tribe-of-the-lower-brule-reservation-constitution
+    version: 1942-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: The extract is the 1935 constitution as amended through 1986, not only the 1942 version; facts follow the text as printed.'
+- aspect: judiciary
+  value: Tribal court and appellate court
+  quote: There shall be a judicial branch comprised of an appellate court, a tribal court consisting of one chiefjudge with supportive staff.
+  source: constitution-lower-brule-sioux-tribe-of-the-lower-brule-reservation-1942-text
+  confidence: high
+  verification: read-in-full
+  as_of: '1942-05-18'
+  locator: Article VII, Section 1
+  document_version:
+    document: lower-brule-sioux-tribe-of-the-lower-brule-reservation-constitution
+    version: 1942-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: The extract is the 1935 constitution as amended through 1986, not only the 1942 version; facts follow the text as printed.'
+- aspect: judicial-selection
+  value: Elected by the voters
+  quote: Judges shall be elected by the eligible voters for a term of four (4) years
+  source: constitution-lower-brule-sioux-tribe-of-the-lower-brule-reservation-1942-text
+  confidence: high
+  verification: read-in-full
+  as_of: '1942-05-18'
+  locator: Article VII, Section 2
+  document_version:
+    document: lower-brule-sioux-tribe-of-the-lower-brule-reservation-constitution
+    version: 1942-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: The extract is the 1935 constitution as amended through 1986, not only the 1942 version; facts follow the text as printed.'
+- aspect: judicial-term
+  value: 4 years
+  quote: Judges shall be elected by the eligible voters for a term of four (4) years
+  source: constitution-lower-brule-sioux-tribe-of-the-lower-brule-reservation-1942-text
+  confidence: high
+  verification: read-in-full
+  as_of: '1942-05-18'
+  locator: Article VII, Section 2
+  document_version:
+    document: lower-brule-sioux-tribe-of-the-lower-brule-reservation-constitution
+    version: 1942-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: The extract is the 1935 constitution as amended through 1986, not only the 1942 version; facts follow the text as printed.'
+- aspect: amendment
+  value: Majority vote of qualified voters at election called by Secretary of the Interior
+  quote: This Constitution and Bylaws may be amended by a majority vote of the qualified voters of the Tribe voting at an election called for that purpose by the Secretary of the Interior
+  source: constitution-lower-brule-sioux-tribe-of-the-lower-brule-reservation-1942-text
+  confidence: high
+  verification: read-in-full
+  as_of: '1942-05-18'
+  locator: Article IX
+  document_version:
+    document: lower-brule-sioux-tribe-of-the-lower-brule-reservation-constitution
+    version: 1942-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: The extract is the 1935 constitution as amended through 1986, not only the 1942 version; facts follow the text as printed.'
+- aspect: secretarial-approval
+  value: Required for amendments
+  quote: but no amendment shall become effective until it shall have been approved by the Secretary of the Interior.
+  source: constitution-lower-brule-sioux-tribe-of-the-lower-brule-reservation-1942-text
+  confidence: high
+  verification: read-in-full
+  as_of: '1942-05-18'
+  locator: Article IX
+  document_version:
+    document: lower-brule-sioux-tribe-of-the-lower-brule-reservation-constitution
+    version: 1942-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: The extract is the 1935 constitution as amended through 1986, not only the 1942 version; facts follow the text as printed.'
+- aspect: recall-and-removal
+  value: Recall by petition of 30% of voters in last election
+  quote: bearing the signatures of no less than thirty percent (30%) of the qualified voters voting in the last regular tribal election.
+  source: constitution-lower-brule-sioux-tribe-of-the-lower-brule-reservation-1942-text
+  confidence: high
+  verification: read-in-full
+  as_of: '1942-05-18'
+  locator: Article V, Section 4
+  document_version:
+    document: lower-brule-sioux-tribe-of-the-lower-brule-reservation-constitution
+    version: 1942-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: The extract is the 1935 constitution as amended through 1986, not only the 1942 version; facts follow the text as printed.'
+- aspect: recall-and-removal
+  value: Expulsion by unanimous vote of remaining Council
+  quote: The Tribal Council may by a unanimous vote of the remaining council vote to expel any member
+  source: constitution-lower-brule-sioux-tribe-of-the-lower-brule-reservation-1942-text
+  confidence: high
+  verification: read-in-full
+  as_of: '1942-05-18'
+  locator: Article V, Section 2
+  document_version:
+    document: lower-brule-sioux-tribe-of-the-lower-brule-reservation-constitution
+    version: 1942-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: The extract is the 1935 constitution as amended through 1986, not only the 1942 version; facts follow the text as printed.'
+- aspect: other
+  value: Ordinances subject to Secretary of the Interior review
+  quote: which shall be subject to review by the Secretary of the Interior, governing the conduct of person
+  source: constitution-lower-brule-sioux-tribe-of-the-lower-brule-reservation-1942-text
+  confidence: high
+  verification: read-in-full
+  as_of: '1942-05-18'
+  locator: Article VI, Section 1(j)
+  document_version:
+    document: lower-brule-sioux-tribe-of-the-lower-brule-reservation-constitution
+    version: 1942-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: The extract is the 1935 constitution as amended through 1986, not only the 1942 version; facts follow the text as printed.'
 governing_documents:
 - kind: law-code
   title: Tribal code
@@ -289,19 +542,27 @@ governing_documents:
 justice_institutions:
 - kind: tribal-court
   name: Tribal Court
+  link: https://ujs.sd.gov/tribal-courts/
   source: national-indian-law-library-lower-brule-sioux
   confidence: medium
   verification: bulk-import
   as_of: '2026-11-21'
   locator: Contact Info, Tribal Court
-  note: The page gives a contact for a tribal court without a fuller name.
+  note: The page gives a contact for a tribal court without a fuller name. Link is the entry in the South
+    Dakota Unified Judicial System's Tribal Courts list (“South Dakota Tribal Court Contact Information”);
+    no page of the court's own was found in a second search (2026-11-23; research/reviews/2026-11-22-service-links.json,
+    service-138).
 - kind: tribal-court
   name: Lower Brule Sioux Tribal Court
+  link: https://ujs.sd.gov/tribal-courts/
   source: tribal-law-policy-institute-justice-systems
   confidence: medium
   verification: bulk-import
   as_of: '2022'
   locator: South Dakota section, entry 'Lower Brule Sioux Tribe – Kul Wicasa Oyate'
+  note: Link is the entry in the South Dakota Unified Judicial System's Tribal Courts list (“South Dakota
+    Tribal Court Contact Information”); no page of the court's own was found in a second search (2026-11-23;
+    research/reviews/2026-11-22-service-links.json, service-139).
 gaming:
   compacts:
   - state: SD
@@ -397,6 +658,86 @@ jurisdiction:
     from images and matched to the roster. Row re-read on 2026-11-22 from the page image (the govinfo
     PDF has no text layer for the table); verification level unchanged because the name was not matched
     word for word in machine-read text.'
+- topic: public-law-280
+  value: optional-state-consent-not-given
+  detail: South Dakota's 1957 act (S.D. Codified Laws §§ 1-1-12 to 1-1-16) offered to assume civil and criminal jurisdiction if the affected tribes consented; the Eighth Circuit found consent was not given, so jurisdiction was never assumed under it. (Rosebud Sioux Tribe v. South Dakota, 900 F.2d 1164, 1166 (8th Cir. 1990).)
+  source: rosebud-sioux-tribe-v-south-dakota-1990
+  confidence: high
+  verification: read-in-full
+  locator: 900 F.2d at 1166; S.D. Codified Laws §§ 1-1-12, 1-1-13 (SL 1957, ch. 319)
+  note: 'Section 1-1-13 says a tribe that took no action within one year of Oct. 1, 1957 is deemed to consent; the court nevertheless held consent was not given. The sections are still printed in the code. The related 1959 highway statute (§ 1-1-17) also never took effect because its condition (roads jointly maintained by State and United States) was never met (900 F.2d at 1166). Shakopee, Northern Cheyenne and Turtle Mountain have only trust-land presence in SD in the roster and are not mapped. Also cites: south-dakota-codified-laws-1-1-12, south-dakota-codified-laws-1-1-13.'
+- topic: public-law-280
+  value: not-assumed
+  detail: South Dakota's 1961 act (S.D. Codified Laws §§ 1-1-18 to 1-1-21) declared a general assumption of jurisdiction in Indian country, but it takes effect only on a gubernatorial proclamation, which was never issued; the general assumption never occurred. (S.D. Codified Laws § 1-1-21; 900 F.2d at 1167.)
+  source: south-dakota-codified-laws-1-1-18
+  confidence: high
+  verification: read-in-full
+  locator: S.D. Codified Laws § 1-1-21 (SL 1961, ch. 464, § 4); 900 F.2d at 1167
+  note: 'Quote is from Rosebud. A 1963 attempt to assume full jurisdiction (1963 S.D. Laws ch. 467) was defeated 3 to 1 in a referendum (900 F.2d at 1167). Statute text in § 1-1-21: highways are excepted from the proclamation requirement. Also cites: south-dakota-codified-laws-1-1-21, rosebud-sioux-tribe-v-south-dakota-1990.'
+- topic: public-law-280
+  value: assumption-held-invalid
+  detail: 'South Dakota''s 1961 highway-only assumption was held invalid by the South Dakota Supreme Court in 1964 (In re Hankins) and, after that court revived it in State v. Onihan (1988), by the Eighth Circuit in 1990: without tribal consent the State has no civil or criminal jurisdiction over highways through Indian lands. (Rosebud, 900 F.2d at 1166-67, 1172.)'
+  source: rosebud-sioux-tribe-v-south-dakota-1990
+  confidence: high
+  verification: read-in-full
+  locator: 900 F.2d at 1166
+  note: 'Hankins: 80 S.D. 435, 442-43, 125 N.W.2d 839, 842-43 (state cannot assume jurisdiction over highways alone; the Eighth Circuit describes this at 900 F.2d at 1167). Rosebud''s further holding (at 1170-72): the highway-only scheme does not meet Public Law 280, and the 1968 consent requirement bars later nonconsensual assumption. Cert. history not checked. Parties: Rosebud, Cheyenne River, Oglala, Standing Rock; the holding is about "Indian lands in the state" generally. Also cites: in-re-hankins-petition-1964.'
+- topic: public-law-280
+  value: not-assumed
+  detail: 'Today South Dakota holds no Public Law 280 jurisdiction over any of its reservations: the 1957 act was never consented to, the 1961 general act never took effect, and the 1961 highway piece is invalid; the statutes stay in the code. (Rosebud, 900 F.2d at 1166-67; S.D. Codified Laws §§ 1-1-12 to 1-1-21.)'
+  source: rosebud-sioux-tribe-v-south-dakota-1990
+  confidence: medium
+  verification: read-in-full
+  locator: 900 F.2d at 1166-67; S.D. Codified Laws §§ 1-1-12, 1-1-18
+  note: 'Quote is the 1957 assumption text, § 1-1-12, shown because it is still printed in the code. Conclusion that nothing is in force is mine, drawn from Rosebud (1990) plus the statutes; the research did not find any later tribal consent election or any post-1990 South Dakota assumption. Goldberg (2010) fn. 4 reaches the same view. Also cites: south-dakota-codified-laws-1-1-12, south-dakota-codified-laws-1-1-18.'
+treaties:
+- title: Treaty with the Sioux-Lower Brule Band, 1865
+  signed: '1865-10-14'
+  statutes_at_large: 14 Stat. 699
+  kappler:
+    volume: 2
+    page: 885
+    link: https://treaties.okstate.edu/treaties/treaty-with-the-sioux-lower-brule-band-1865-0885
+  signatory: Lower Brulé
+  source: kappler-indian-affairs-laws-and-treaties-vol-2-1904
+  confidence: medium
+  verification: inferred
+  locator: p. 885 (Treaty with the Sioux-Lower Brule Band, 1865; Kappler header "Oct. 14, 1865. | 14 Stats., 699.| Ratified Mar. 5, 1866. | Proclaimed Mar. 17, 1866.")
+  note: The nation's official name carries the name the treaty gives this party. Linked to the nation by Claude (AI assistant) from the treaty's text and the nation's name, not from a source that names the successor; not yet checked against a second source. The page is the treaty's first page as the Oklahoma State University database's address gives it.
+- title: Treaty with the Sioux-Brule, Oglala, Miniconjou, Yanktonai, Hunkpapa, Blackfeet, Cuthead, Two Kettle, Sans Arcs, and Santee-and Arapaho, 1868
+  signed: '1868-04-29'
+  statutes_at_large: 15 Stat. 635
+  kappler:
+    volume: 2
+    page: 998
+    link: https://treaties.okstate.edu/treaties/treaty-with-the-sioux-brule-oglala-miniconjou-yanktonai-hunkpapa-blackfeet-cuthead-two-kettle-sans-arcs-and-santee-and-arapaho-1868-0998
+  signatory: Brulé; Brule
+  source: kappler-indian-affairs-laws-and-treaties-vol-2-1904
+  confidence: medium
+  verification: inferred
+  locator: p. 998 (Treaty with the Sioux-Brule, Oglala, Miniconjou, Yanktonai, Hunkpapa, Blackfeet, Cuthead, Two Kettle, Sans Arcs, and Santee-and Arapaho, 1868; Kappler header "Apr. 29, 1868. | 15 Stats., 635. | Ratified, Feb. 16, 1869. | Proclaimed, Feb. 24, 1869.")
+  note: 'The nation is one successor of the party the treaty names. Linked to the nation by Claude (AI assistant) from the treaty''s text. Checked on Nov. 23, 2026: The Oklahoma State University Tribal Treaties Database''s successor list for this treaty names the nation; the list is in the page''s source but is no longer displayed while the database reviews it. Brule band; Lower Brule Sioux Tribe. The page is the treaty''s first page as the Oklahoma State University database''s address gives it.'
+land_establishment:
+- land_area: Great Sioux Reservation (the land of the Lower Brule Reservation lies within it)
+  method: treaty
+  instrument: Treaty with the Sioux, Apr. 29, 1868, art. II, 15 Stat. 635, 636
+  date: '1868-04-29'
+  detail: First set aside
+  source: treaty-with-the-sioux-and-arapaho-1868
+  confidence: medium
+  verification: read-in-full
+  locator: 15 Stat. 636
+  note: 'The instrument reads: “shall be, and the same is, set apart for the absolute and undisturbed use and occupation of the Indians herein named”. The treaty set apart the Great Sioux Reservation (the district between the east bank of the Missouri, the Nebraska line, the 104th meridian and the 46th parallel); the separate Lower Brule Reservation was carved from it by the Act of Mar. 2, 1889. Treaty is the first instrument for this land.'
+- land_area: Lower Brule Reservation, Dakota Territory
+  method: statute
+  instrument: Act of Mar. 2, 1889, ch. 405, § 5, 25 Stat. 888, 889
+  date: '1889-03-02'
+  detail: Later change
+  source: act-1889-03-02-sioux-separate-reservations
+  confidence: high
+  verification: read-in-full
+  locator: 25 Stat. 889
+  note: 'The instrument reads: “is hereby set apart for a permanent reservation for the Indians receiving rations and annuities at the Lower Brule Agency”. Separate reservation created from the Great Sioux Reservation.'
 memberships:
 - organization: Great Plains Tribal Leaders Health Board
   source: great-plains-tribal-leaders-health-board-member-tribes

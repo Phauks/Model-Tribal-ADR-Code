@@ -172,6 +172,23 @@ federal_administration:
   verification: bulk-import
   as_of: '2026-11-20'
   locator: Fort McDowell Yavapai Nation, Arizona
+indian_health_service:
+- area: Phoenix
+  source: indian-health-service-phoenix-tribal-information
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  locator: '"Arizona Tribes" / "Nevada and Utah Tribes" lists'
+  note: Listed as "Fort McDowell Yavapai Nation".
+- area: Phoenix
+  service_unit: Fort McDowell Yavapai Nation health program
+  source: indian-health-service-phoenix-healthcare-facilities
+  confidence: medium
+  verification: read-in-full
+  as_of: '2026-11-23'
+  locator: page text
+  note: 'The source''s words: "Fort McDowell Yavapai Nation".'
+  operator: tribal
 government_structure:
 - kind: indian-reorganization-act
   detail: Listed as "The Fort McDowell Mohave-Apache Community Arizona" among organizations under constitutions
@@ -198,6 +215,291 @@ government_structure:
   locator: preamble / approval and certification of adoption
   note: Matched by former name (Fort McDowell Mohave-Apache Community); confirm. Historical constitution;
     a later constitution may have replaced it.
+governance:
+- aspect: form
+  value: Constitution adopted in a Secretarial election
+  quote: to a Secretarial election authorized by the Deputy Commissioner of Indian
+  source: national-indian-law-library-constitution-constitutions-fort-mcdowell
+  confidence: medium
+  verification: read-in-full
+  as_of: '1999-11-12'
+  locator: Certificate of Results
+  document_version:
+    document: fort-mcdowell-yavapai-nation-constitution
+    version: 1999-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Text is the 1999 constitution with Bureau of Indian Affairs approval correspondence; scan is clean.'
+- aspect: governing-body
+  value: Fort McDowell Tribal Council
+  quote: body of the Fort McDowell Yavapai Nation shall be the Fort McDowell
+  source: national-indian-law-library-constitution-constitutions-fort-mcdowell
+  confidence: medium
+  verification: read-in-full
+  as_of: '1999-11-12'
+  locator: Article V, Section 1
+  document_version:
+    document: fort-mcdowell-yavapai-nation-constitution
+    version: 1999-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Text is the 1999 constitution with Bureau of Indian Affairs approval correspondence; scan is clean.'
+- aspect: governing-body-size
+  value: 5 members
+  quote: Tribal Council and shall consist of the President, Vice President, Treasurer;
+  source: national-indian-law-library-constitution-constitutions-fort-mcdowell
+  confidence: medium
+  verification: read-in-full
+  as_of: '1999-11-12'
+  locator: Article V, Section 1
+  document_version:
+    document: fort-mcdowell-yavapai-nation-constitution
+    version: 1999-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Text is the 1999 constitution with Bureau of Indian Affairs approval correspondence; scan is clean.'
+- aspect: governing-body-selection
+  value: Elected by popular vote
+  quote: all to be chosen by popular vote
+  source: national-indian-law-library-constitution-constitutions-fort-mcdowell
+  confidence: medium
+  verification: read-in-full
+  as_of: '1999-11-12'
+  locator: Article V, Section 1
+  document_version:
+    document: fort-mcdowell-yavapai-nation-constitution
+    version: 1999-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Text is the 1999 constitution with Bureau of Indian Affairs approval correspondence; scan is clean.'
+- aspect: governing-body-term
+  value: 4 years
+  quote: Secretary and members of the Tribal Council shall be elected for terms
+  source: national-indian-law-library-constitution-constitutions-fort-mcdowell
+  confidence: medium
+  verification: read-in-full
+  as_of: '1999-11-12'
+  locator: Article V, Section 7
+  document_version:
+    document: fort-mcdowell-yavapai-nation-constitution
+    version: 1999-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Text is the 1999 constitution with Bureau of Indian Affairs approval correspondence; scan is clean.'
+- aspect: head-of-government
+  value: President
+  quote: The President shall be elected to the Office
+  source: national-indian-law-library-constitution-constitutions-fort-mcdowell
+  confidence: medium
+  verification: read-in-full
+  as_of: '1999-11-12'
+  locator: Article V, Section 2
+  document_version:
+    document: fort-mcdowell-yavapai-nation-constitution
+    version: 1999-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Text is the 1999 constitution with Bureau of Indian Affairs approval correspondence; scan is clean.'
+- aspect: head-of-government
+  value: President
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  verification: bulk-import
+  as_of: '2026-11-20'
+  locator: Fort McDowell Yavapai Nation, Arizona
+  note: The title of the leader's office as the federal directory lists it; the holder's name is not recorded.
+- aspect: head-of-government-selection
+  value: Elected by voters of the Nation
+  quote: of the President by the voters of the Nation.
+  source: national-indian-law-library-constitution-constitutions-fort-mcdowell
+  confidence: medium
+  verification: read-in-full
+  as_of: '1999-11-12'
+  locator: Article V, Section 2
+  document_version:
+    document: fort-mcdowell-yavapai-nation-constitution
+    version: 1999-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Text is the 1999 constitution with Bureau of Indian Affairs approval correspondence; scan is clean.'
+- aspect: head-of-government-term
+  value: 4 years
+  quote: Secretary and members of the Tribal Council shall be elected for terms
+  source: national-indian-law-library-constitution-constitutions-fort-mcdowell
+  confidence: medium
+  verification: read-in-full
+  as_of: '1999-11-12'
+  locator: Article V, Section 7
+  document_version:
+    document: fort-mcdowell-yavapai-nation-constitution
+    version: 1999-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Text is the 1999 constitution with Bureau of Indian Affairs approval correspondence; scan is clean.'
+- aspect: other-officers
+  value: Vice President, Treasurer, Secretary
+  quote: Tribal Council and shall consist of the President, Vice President, Treasurer;
+  source: national-indian-law-library-constitution-constitutions-fort-mcdowell
+  confidence: medium
+  verification: read-in-full
+  as_of: '1999-11-12'
+  locator: Article V, Section 1
+  document_version:
+    document: fort-mcdowell-yavapai-nation-constitution
+    version: 1999-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Text is the 1999 constitution with Bureau of Indian Affairs approval correspondence; scan is clean.'
+- aspect: elections
+  value: Every 2 years, second Tuesday in January of even-numbered years
+  quote: shall be held on the second Tuesday in January
+  source: national-indian-law-library-constitution-constitutions-fort-mcdowell
+  confidence: medium
+  verification: read-in-full
+  as_of: '1999-11-12'
+  locator: Article VI, Section 2(C)
+  document_version:
+    document: fort-mcdowell-yavapai-nation-constitution
+    version: 1999-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Text is the 1999 constitution with Bureau of Indian Affairs approval correspondence; scan is clean.'
+- aspect: voting-age
+  value: '21'
+  quote: who is at least 21 years of age on the date of the
+  source: national-indian-law-library-constitution-constitutions-fort-mcdowell
+  confidence: medium
+  verification: read-in-full
+  as_of: '1999-11-12'
+  locator: Article VI, Section 4
+  document_version:
+    document: fort-mcdowell-yavapai-nation-constitution
+    version: 1999-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Text is the 1999 constitution with Bureau of Indian Affairs approval correspondence; scan is clean.'
+- aspect: election-authority
+  value: Election Board
+  quote: for the appointment of independent Election Board officials as are necessary
+  source: national-indian-law-library-constitution-constitutions-fort-mcdowell
+  confidence: medium
+  verification: read-in-full
+  as_of: '1999-11-12'
+  locator: Article VI, Section 1
+  document_version:
+    document: fort-mcdowell-yavapai-nation-constitution
+    version: 1999-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Text is the 1999 constitution with Bureau of Indian Affairs approval correspondence; scan is clean.'
+- aspect: branches
+  value: Legislative and judicial
+  quote: the Legislative and Judicial branches.
+  source: national-indian-law-library-constitution-constitutions-fort-mcdowell
+  confidence: medium
+  verification: read-in-full
+  as_of: '1999-11-12'
+  locator: Article IV, Section 1
+  document_version:
+    document: fort-mcdowell-yavapai-nation-constitution
+    version: 1999-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Text is the 1999 constitution with Bureau of Indian Affairs approval correspondence; scan is clean.'
+- aspect: separation-of-powers
+  value: Stated
+  quote: exercise powers reserved to another branch.
+  source: national-indian-law-library-constitution-constitutions-fort-mcdowell
+  confidence: medium
+  verification: read-in-full
+  as_of: '1999-11-12'
+  locator: Article IV, Section 1
+  document_version:
+    document: fort-mcdowell-yavapai-nation-constitution
+    version: 1999-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Text is the 1999 constitution with Bureau of Indian Affairs approval correspondence; scan is clean.'
+- aspect: judiciary
+  value: Trial Court and Supreme Court
+  quote: Fort McDowell Yavapai Judiciary which shall consist of a Trial Court
+  source: national-indian-law-library-constitution-constitutions-fort-mcdowell
+  confidence: medium
+  verification: read-in-full
+  as_of: '1999-11-12'
+  locator: Article VII, Section 1
+  document_version:
+    document: fort-mcdowell-yavapai-nation-constitution
+    version: 1999-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Text is the 1999 constitution with Bureau of Indian Affairs approval correspondence; scan is clean.'
+- aspect: judicial-selection
+  value: Appointed by majority of Tribal Council
+  quote: Judge(s) shall be appointed by a majority of the Tribal Council.
+  source: national-indian-law-library-constitution-constitutions-fort-mcdowell
+  confidence: medium
+  verification: read-in-full
+  as_of: '1999-11-12'
+  locator: Article VII, Section 5
+  document_version:
+    document: fort-mcdowell-yavapai-nation-constitution
+    version: 1999-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Text is the 1999 constitution with Bureau of Indian Affairs approval correspondence; scan is clean.'
+- aspect: judicial-term
+  value: 2 years for trial judges; 4 years for Supreme Court
+  quote: shall hold office for a period of two years, unless sooner removed under
+  source: national-indian-law-library-constitution-constitutions-fort-mcdowell
+  confidence: medium
+  verification: read-in-full
+  as_of: '1999-11-12'
+  locator: Article VII, Section 6
+  document_version:
+    document: fort-mcdowell-yavapai-nation-constitution
+    version: 1999-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Text is the 1999 constitution with Bureau of Indian Affairs approval correspondence; scan is clean.'
+- aspect: judicial-independence
+  value: Pay may not be reduced during term
+  quote: The Tribal Council shall not diminish the compensation of a Judge during
+  source: national-indian-law-library-constitution-constitutions-fort-mcdowell
+  confidence: medium
+  verification: read-in-full
+  as_of: '1999-11-12'
+  locator: Article VII, Section 9
+  document_version:
+    document: fort-mcdowell-yavapai-nation-constitution
+    version: 1999-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Text is the 1999 constitution with Bureau of Indian Affairs approval correspondence; scan is clean.'
+- aspect: amendment
+  value: Majority vote of voters at Secretary-called election, 30% turnout
+  quote: may be amended by a majority vote of the voters of the Fort McDowell
+  source: national-indian-law-library-constitution-constitutions-fort-mcdowell
+  confidence: medium
+  verification: read-in-full
+  as_of: '1999-11-12'
+  locator: Article XII
+  document_version:
+    document: fort-mcdowell-yavapai-nation-constitution
+    version: 1999-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Text is the 1999 constitution with Bureau of Indian Affairs approval correspondence; scan is clean.'
+- aspect: secretarial-approval
+  value: Required for amendments
+  quote: but no amendment shall become effective until it shall have been approved
+  source: national-indian-law-library-constitution-constitutions-fort-mcdowell
+  confidence: medium
+  verification: read-in-full
+  as_of: '1999-11-12'
+  locator: Article XII
+  document_version:
+    document: fort-mcdowell-yavapai-nation-constitution
+    version: 1999-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Text is the 1999 constitution with Bureau of Indian Affairs approval correspondence; scan is clean.'
+- aspect: recall-and-removal
+  value: Removal of judges by unanimous vote of Tribal Council
+  quote: Trial or Supreme Court by a unanimous vote of all five members of
+  source: national-indian-law-library-constitution-constitutions-fort-mcdowell
+  confidence: medium
+  verification: read-in-full
+  as_of: '1999-11-12'
+  locator: Article VII, Section 11(A)
+  document_version:
+    document: fort-mcdowell-yavapai-nation-constitution
+    version: 1999-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Text is the 1999 constitution with Bureau of Indian Affairs approval correspondence; scan is clean.'
+- aspect: recall-and-removal
+  value: Removal of officials by unanimous vote of remaining Council members after hearing
+  quote: a unanimous vote of the remaining members of the Tribal Council
+  source: national-indian-law-library-constitution-constitutions-fort-mcdowell
+  confidence: medium
+  verification: read-in-full
+  as_of: '1999-11-12'
+  locator: Article IX, Section 1(B)
+  document_version:
+    document: fort-mcdowell-yavapai-nation-constitution
+    version: 1999-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Text is the 1999 constitution with Bureau of Indian Affairs approval correspondence; scan is clean.'
+- aspect: recall-and-removal
+  value: Recall by petition of 40% of qualified voters
+  quote: signed by at least 40 percent of the total qualified voters of the
+  source: national-indian-law-library-constitution-constitutions-fort-mcdowell
+  confidence: medium
+  verification: read-in-full
+  as_of: '1999-11-12'
+  locator: Article IX, Section 2(A)
+  document_version:
+    document: fort-mcdowell-yavapai-nation-constitution
+    version: 1999-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Text is the 1999 constitution with Bureau of Indian Affairs approval correspondence; scan is clean.'
 governing_documents:
 - kind: law-code
   title: Law and Order Code of the Fort McDowell Yavapai Community, Arizona
@@ -512,6 +814,30 @@ jurisdiction:
     the notice prints its table as page images, so nation names were read from images and matched to the
     roster. Row re-read on 2026-11-22 from the page image (the govinfo PDF has no text layer for the table);
     verification level unchanged because the name was not matched word for word in machine-read text.'
+- topic: public-law-280
+  value: optional-state
+  detail: Arizona enacted A.R.S. §§ 36-1801 and 36-1865 under Public Law 280, applying its air and water pollution laws to all Indian lands with civil and criminal enforcement on reservations; that is the only subject-matter assumption BIA lists for Arizona. (Francisco v. State, 113 Ariz. 427, 430 n.2 (1976).)
+  source: francisco-v-state-1976
+  confidence: medium
+  verification: read-in-full
+  locator: 113 Ariz. at 430 n.2
+  note: 'BIA dates the Arizona assumption to 1967. The research could not read the 1967 session law (azmemory.azlibrary.gov blocked); Goldberg cites "Ariz. Rev. Stat. §§ 36-1801, 36-1856 (1973 Supp.)" (36-1856 vs. the court''s 36-1865; the research follows the court). Applies to every Arizona reservation by its terms but only for pollution control. Also cites: goldberg-2010-tribal-jurisdictional-status-analysis.'
+- topic: public-law-280
+  value: repealed
+  detail: A.R.S. § 36-1801 (state jurisdiction over air pollution on Indian lands) was recodified as § 49-561 in 1986 and is no longer in Arizona law; EPA treated the assumption as inconsistent with federal law. (81 Fed. Reg. 7209, 7211 (Feb. 11, 2016).)
+  source: federal-register-2016-arizona-air-plan-rescissions
+  confidence: medium
+  verification: read-in-full
+  locator: 81 Fed. Reg. at 7211, Part II.B.2
+  note: 'Confirmed that A.R.S. § 49-561 returns "page not found" on azleg.gov while neighbouring § 49-551 loads. The research could not read the repealing session laws. Goldberg (2010) says water-pollution assumption was repealed by Ariz. Laws 1986 § 19(B) and air by Ariz. Laws 2003 § 4; Laws 2003 ch. 4 is a community-college bill, so her citation is unverified. Status of the water-pollution section (36-1865) is from Goldberg only. Also cites: goldberg-2010-tribal-jurisdictional-status-analysis.'
+- topic: public-law-280
+  value: not-assumed
+  detail: Apart from the repealed pollution statutes, Arizona has not assumed civil or criminal jurisdiction over Indian reservations; the Arizona Supreme Court held the State has no authority to extend its laws to an Indian reservation. (Francisco v. State, 113 Ariz. 427, 431 (1976).)
+  source: francisco-v-state-1976
+  confidence: medium
+  verification: read-in-full
+  locator: 113 Ariz. at 431
+  note: 1976 holding about service of process on the Tohono O'odham (Papago) reservation, reasoning from the 1968 consent requirement. The research did not find any later Arizona assumption. Other federal statutes can still give Arizona limited authority; none checked here.
 memberships:
 - organization: Inter Tribal Council of Arizona
   source: inter-tribal-council-of-arizona-member-tribes

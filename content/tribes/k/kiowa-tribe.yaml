@@ -204,6 +204,231 @@ federal_administration:
   verification: bulk-import
   as_of: '2026-11-20'
   locator: Kiowa Tribe (previously listed as Kiowa Indian Tribe of Oklahoma)
+indian_health_service:
+- area: Oklahoma City
+  source: indian-health-service-oklahoma-city-careers-brochure
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  locator: '"Tribes of Oklahoma, Kansas and Texas" list'
+  note: 'Listed as "Kiowa Indian Tribe of Oklahoma". Also listed under the same Area in: indian-health-service-direct-service-tribes. Page lists tribal names generically ("Delaware", "Apache", "Wichita"); matched to the roster nation of that name. Operator from Direct Service Tribes list.'
+- area: Oklahoma City
+  service_unit: Lawton Service Unit (Lawton Indian Hospital)
+  source: indian-health-service-oklahoma-city-lawton-service-unit
+  confidence: medium
+  verification: read-in-full
+  as_of: '2026-11-23'
+  locator: page text
+  note: 'The source''s words: "25,000 members of the Caddo, Comanche, Delaware, Fort Sill Apache, Kiowa, Apache, and Wichita tribes are concentrated".'
+- area: Oklahoma City
+  operator: indian-health-service
+  source: indian-health-service-direct-service-tribes
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  locator: list of Tribes
+  note: Listed as "Kiowa Tribe of Oklahoma". The Direct Service Tribes list says some Tribes have a mixed Indian Health Service and Tribal arrangement.
+governance:
+- aspect: governing-body
+  value: Kiowa Indian Council (KIC)
+  quote: The governing body of the tribe,
+  source: constitution-kiowa-tribe-1982-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1982-06-05'
+  locator: Article I, Section 2
+  document_version:
+    document: kiowa-tribe-constitution
+    version: 1982-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Text is the 1982 constitution with amendments III to V ratified June 5, 1982; scan has garbled passages and the chairman and vice-chairman terms are read from Article III.'
+- aspect: governing-body
+  value: Kiowa Business Committee
+  quote: four (4) officers and four (4) committeemen,
+  source: constitution-kiowa-tribe-1982-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1982-06-05'
+  locator: Article III, Section 1
+  document_version:
+    document: kiowa-tribe-constitution
+    version: 1982-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Text is the 1982 constitution with amendments III to V ratified June 5, 1982; scan has garbled passages and the chairman and vice-chairman terms are read from Article III.'
+- aspect: governing-body-size
+  value: 8 members
+  quote: An eight (8) member representative
+  source: constitution-kiowa-tribe-1982-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1982-06-05'
+  locator: Article I, Section 3
+  document_version:
+    document: kiowa-tribe-constitution
+    version: 1982-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Text is the 1982 constitution with amendments III to V ratified June 5, 1982; scan has garbled passages and the chairman and vice-chairman terms are read from Article III.'
+- aspect: governing-body-selection
+  value: Chosen by vote of the Kiowa Indian Council by secret ballot
+  quote: shall be determined by vote of the Kiowa Indian
+  source: constitution-kiowa-tribe-1982-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1982-06-05'
+  locator: Article III, Section 2
+  document_version:
+    document: kiowa-tribe-constitution
+    version: 1982-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Text is the 1982 constitution with amendments III to V ratified June 5, 1982; scan has garbled passages and the chairman and vice-chairman terms are read from Article III.'
+- aspect: governing-body-term
+  value: 2 years
+  quote: be for a period of two (2) years and until a successor is duly elected
+  source: constitution-kiowa-tribe-1982-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1982-06-05'
+  locator: Article III, Section 3
+  document_version:
+    document: kiowa-tribe-constitution
+    version: 1982-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Text is the 1982 constitution with amendments III to V ratified June 5, 1982; scan has garbled passages and the chairman and vice-chairman terms are read from Article III.'
+- aspect: general-council
+  value: All members 18 years of age or older
+  quote: composed of all members at least eighteen (18) years of age or over,
+  source: constitution-kiowa-tribe-1982-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1982-06-05'
+  locator: Article I, Section 2
+  document_version:
+    document: kiowa-tribe-constitution
+    version: 1982-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Text is the 1982 constitution with amendments III to V ratified June 5, 1982; scan has garbled passages and the chairman and vice-chairman terms are read from Article III.'
+- aspect: head-of-government
+  value: Chairman
+  quote: The chairman of the Kiowa Business Committee shall pre-
+  source: constitution-kiowa-tribe-1982-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1982-06-05'
+  locator: Article XII, Section 1
+  document_version:
+    document: kiowa-tribe-constitution
+    version: 1982-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Text is the 1982 constitution with amendments III to V ratified June 5, 1982; scan has garbled passages and the chairman and vice-chairman terms are read from Article III.'
+- aspect: head-of-government
+  value: Chairperson
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  verification: bulk-import
+  as_of: '2026-11-20'
+  locator: Kiowa Tribe (previously listed as Kiowa Indian Tribe of Oklahoma)
+  note: The title of the leader's office as the federal directory lists it; the holder's name is not recorded. Listed as “Chairman”; recorded without the holder's own form of the title.
+- aspect: head-of-government-selection
+  value: Chosen by vote of the Kiowa Indian Council
+  quote: The selection of chairman, vice-chairman, treasurer, secretary,
+  source: constitution-kiowa-tribe-1982-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1982-06-05'
+  locator: Article III, Section 2
+  document_version:
+    document: kiowa-tribe-constitution
+    version: 1982-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Text is the 1982 constitution with amendments III to V ratified June 5, 1982; scan has garbled passages and the chairman and vice-chairman terms are read from Article III.'
+- aspect: head-of-government-term
+  value: 2 years
+  quote: be for a period of two (2) years and until a successor is duly elected
+  source: constitution-kiowa-tribe-1982-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1982-06-05'
+  locator: Article III, Section 3
+  document_version:
+    document: kiowa-tribe-constitution
+    version: 1982-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Text is the 1982 constitution with amendments III to V ratified June 5, 1982; scan has garbled passages and the chairman and vice-chairman terms are read from Article III.'
+- aspect: other-officers
+  value: Vice-Chairman, Treasurer, Secretary
+  quote: The selection of chairman, vice-chairman, treasurer, secretary,
+  source: constitution-kiowa-tribe-1982-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1982-06-05'
+  locator: Article III, Section 2
+  document_version:
+    document: kiowa-tribe-constitution
+    version: 1982-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Text is the 1982 constitution with amendments III to V ratified June 5, 1982; scan has garbled passages and the chairman and vice-chairman terms are read from Article III.'
+- aspect: elections
+  value: Annual, first Saturday of June
+  quote: election on the first Saturday of June and all terms of office shall be
+  source: constitution-kiowa-tribe-1982-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1982-06-05'
+  locator: Article III, Section 5
+  document_version:
+    document: kiowa-tribe-constitution
+    version: 1982-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Text is the 1982 constitution with amendments III to V ratified June 5, 1982; scan has garbled passages and the chairman and vice-chairman terms are read from Article III.'
+- aspect: voting-age
+  value: '18'
+  quote: years of age on election day regardless of their place of residence
+  source: constitution-kiowa-tribe-1982-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1982-06-05'
+  locator: Article VI, Section 6
+  document_version:
+    document: kiowa-tribe-constitution
+    version: 1982-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Text is the 1982 constitution with amendments III to V ratified June 5, 1982; scan has garbled passages and the chairman and vice-chairman terms are read from Article III.'
+- aspect: election-authority
+  value: General election board
+  quote: There shall be a general election board composed of five (5) people
+  source: constitution-kiowa-tribe-1982-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1982-06-05'
+  locator: Article XIII, Section 1
+  document_version:
+    document: kiowa-tribe-constitution
+    version: 1982-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Text is the 1982 constitution with amendments III to V ratified June 5, 1982; scan has garbled passages and the chairman and vice-chairman terms are read from Article III.'
+- aspect: amendment
+  value: Majority of eligible voters, in an election with at least 600 voting
+  quote: Such amendment shall be effective if ratified by a majority of the eligible
+  source: constitution-kiowa-tribe-1982-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1982-06-05'
+  locator: Article IV, Section 1
+  document_version:
+    document: kiowa-tribe-constitution
+    version: 1982-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Text is the 1982 constitution with amendments III to V ratified June 5, 1982; scan has garbled passages and the chairman and vice-chairman terms are read from Article III.'
+- aspect: recall-and-removal
+  value: Recall by ballot vote of Kiowa Indian Council
+  quote: the Kiowa Indian Council.
+  source: constitution-kiowa-tribe-1982-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1982-06-05'
+  locator: Article IV, Section 1
+  document_version:
+    document: kiowa-tribe-constitution
+    version: 1982-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Text is the 1982 constitution with amendments III to V ratified June 5, 1982; scan has garbled passages and the chairman and vice-chairman terms are read from Article III.'
+- aspect: other
+  value: Council holds all powers not vested in the Business Committee
+  quote: By this article, all powers, NOT expressly vested in the business
+  source: constitution-kiowa-tribe-1982-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1982-06-05'
+  locator: Article V, Section 5
+  document_version:
+    document: kiowa-tribe-constitution
+    version: 1982-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Text is the 1982 constitution with amendments III to V ratified June 5, 1982; scan has garbled passages and the chairman and vice-chairman terms are read from Article III.'
 governing_documents:
 - kind: constitution
   title: Kiowa Indian Tribe of Oklahoma - Tribal Constitution
@@ -468,6 +693,90 @@ jurisdiction:
     table as page images, so nation names were read from images and matched to the roster. Row re-read
     on 2026-11-22 from the page image, and the name was found word for word in the notice''s machine-read
     (OCR) text by the second gap review (research/reviews/2026-11-22-icwa-agents.csv).'
+- topic: public-law-280
+  value: not-a-public-law-280-state
+  detail: Oklahoma is not one of the states that Public Law 280 required to take jurisdiction or that chose to take it, so the state has no Public Law 280 jurisdiction over the nation's Indian country in Oklahoma. Other federal laws can still give a state some jurisdiction.
+  source: bia-faq-public-law-280
+  confidence: medium
+  verification: inferred
+  as_of: '2017-07-18'
+  locator: Answer, second and third paragraphs (the lists of mandatory and optional states)
+  note: Inferred from the state's absence from both lists. Nation placed in Oklahoma by its office state in the BIA Tribal Leaders Directory, so confidence is medium.
+- topic: violence-against-women-act-special-tribal-criminal-jurisdiction
+  value: exercising
+  detail: Listed by the Tribal Law and Policy Institute among the Tribes that have implemented special Tribal criminal jurisdiction under the Violence Against Women Act Reauthorization Act of 2022 (25 U.S.C. § 1304).
+  source: tribal-law-and-policy-institute-special-tribal-criminal-jurisdiction-chart
+  confidence: medium
+  verification: inferred
+  as_of: '2026-08-11'
+  locator: Chart row 39, "Implemented VAWA STCJ" column
+  note: Listed as "Kiowa Tribe". The chart is undated (file last modified Aug. 11, 2026) and comes from a Justice Department technical-assistance provider, not the Department itself.
+treaties:
+- title: Treaty with the Kiowa, etc., 1837
+  signed: '1837-05-26'
+  statutes_at_large: 7 Stat. 533
+  kappler:
+    volume: 2
+    page: 489
+    link: https://treaties.okstate.edu/treaties/treaty-with-the-kiowa-etc-1837-0489
+  signatory: Kiowa
+  source: kappler-indian-affairs-laws-and-treaties-vol-2-1904
+  confidence: medium
+  verification: inferred
+  locator: p. 489 (Treaty with the Kiowa, etc., 1837; Kappler header "May 26, 1837. | 7 Stat., 533. | Proclamation, Feb. 21, 1838.")
+  note: The nation's official name carries the name the treaty gives this party. Linked to the nation by Claude (AI assistant) from the treaty's text and the nation's name, not from a source that names the successor; not yet checked against a second source. The page is the treaty's first page as the Oklahoma State University database's address gives it.
+- title: Treaty with the Comanche, Kiowa, and Apache, 1853
+  signed: '1853-07-27'
+  statutes_at_large: 10 Stat. 1013
+  kappler:
+    volume: 2
+    page: 600
+    link: https://treaties.okstate.edu/treaties/treaty-with-the-comanche-kiowa-and-apache-1853-0600
+  signatory: Kiowa
+  source: kappler-indian-affairs-laws-and-treaties-vol-2-1904
+  confidence: medium
+  verification: inferred
+  locator: p. 600 (Treaty with the Comanche, Kiowa, and Apache, 1853; Kappler header "July 27, 1853. | 10 Stats., 1013. | Ratified Apr. 12, 1854. | Proclaimed Feb. 12, 1855 [4].")
+  note: The nation's official name carries the name the treaty gives this party. Linked to the nation by Claude (AI assistant) from the treaty's text and the nation's name, not from a source that names the successor; not yet checked against a second source. The page is the treaty's first page as the Oklahoma State University database's address gives it.
+- title: Treaty with the Comanche and Kiowa, 1865
+  signed: '1865-10-18'
+  statutes_at_large: 14 Stat. 717
+  kappler:
+    volume: 2
+    page: 892
+    link: https://treaties.okstate.edu/treaties/treaty-with-the-comanche-and-kiowa-1865-0892
+  signatory: Kiowa
+  source: kappler-indian-affairs-laws-and-treaties-vol-2-1904
+  confidence: medium
+  verification: inferred
+  locator: p. 892 (Treaty with the Comanche and Kiowa, 1865; Kappler header "Oct. 18, 1865. | 14 Stat., 717. | Ratified May 22, 1866. | Proclaimed May 26, 1866.")
+  note: The nation's official name carries the name the treaty gives this party. Linked to the nation by Claude (AI assistant) from the treaty's text and the nation's name, not from a source that names the successor; not yet checked against a second source. The page is the treaty's first page as the Oklahoma State University database's address gives it.
+- title: Treaty with the Kiowa and Comanche, 1867
+  signed: '1867-10-21'
+  statutes_at_large: 15 Stat. 581
+  kappler:
+    volume: 2
+    page: 977
+    link: https://treaties.okstate.edu/treaties/treaty-with-the-kiowa-and-comanche-1867-0977
+  signatory: Kiowa
+  source: kappler-indian-affairs-laws-and-treaties-vol-2-1904
+  confidence: medium
+  verification: inferred
+  locator: p. 977 (Treaty with the Kiowa and Comanche, 1867; Kappler header "Oct. 21, 1867. | 15 Stats., 581. | Ratified, July 25, 1868. | Proclaimed, Aug. 25, 1868.")
+  note: The nation's official name carries the name the treaty gives this party. Linked to the nation by Claude (AI assistant) from the treaty's text and the nation's name, not from a source that names the successor; not yet checked against a second source. The page is the treaty's first page as the Oklahoma State University database's address gives it.
+- title: Treaty with the Kiowa, Comanche, and Apache, 1867
+  signed: '1867-10-21'
+  statutes_at_large: 15 Stat. 589
+  kappler:
+    volume: 2
+    page: 982
+    link: https://treaties.okstate.edu/treaties/treaty-with-the-kiowa-comanche-and-apache-1867-0982
+  signatory: Kiowa
+  source: kappler-indian-affairs-laws-and-treaties-vol-2-1904
+  confidence: medium
+  verification: inferred
+  locator: p. 982 (Treaty with the Kiowa, Comanche, and Apache, 1867; Kappler header "Oct. 21, 1867. | 15 Stats., 589. | Ratified, July 25, 1868. | Proclaimed Aug. 25 1868.")
+  note: The nation's official name carries the name the treaty gives this party. Linked to the nation by Claude (AI assistant) from the treaty's text and the nation's name, not from a source that names the successor; not yet checked against a second source. The page is the treaty's first page as the Oklahoma State University database's address gives it.
 review:
   status: drafted-from-public-sources
   last_verified: '2026-11-21'

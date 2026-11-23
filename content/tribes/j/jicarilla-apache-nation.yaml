@@ -154,6 +154,30 @@ federal_administration:
   verification: bulk-import
   as_of: '2026-11-20'
   locator: Jicarilla Apache Nation, New Mexico
+indian_health_service:
+- area: Albuquerque
+  source: indian-health-service-albuquerque-careers-brochure
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  locator: '"Tribes of New Mexico, Colorado and Texas" list'
+  note: 'Listed as "Jicarilla Apache Nation". Also listed under the same Area in: indian-health-service-direct-service-tribes.'
+- area: Albuquerque
+  service_unit: Jicarilla Service Unit
+  source: indian-health-service-albuquerque-jicarilla-service-unit
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  locator: page text
+  note: 'The source''s words: "serves primarily the members of the Jicarilla Apache Nation".'
+- area: Albuquerque
+  operator: indian-health-service
+  source: indian-health-service-direct-service-tribes
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  locator: Direct Service Tribes by IHS Area > Albuquerque Area
+  note: Listed as "Jicarilla Apache Nation". The Direct Service Tribes list says some Tribes have a mixed Indian Health Service and Tribal arrangement.
 government_structure:
 - kind: indian-reorganization-act
   detail: Listed as "The Jicarilla Apache Tribe of New Mexico" among organizations under constitutions
@@ -175,6 +199,279 @@ government_structure:
   as_of: '1937'
   locator: preamble / approval and certification of adoption
   note: Historical constitution; a later constitution may have replaced it.
+governance:
+- aspect: form
+  value: Revised Constitution under the Indian Reorganization Act of June 18, 1934
+  quote: the Indian Reorganization Act of June 18, 1934, (48 Stat, 984), desiring
+  source: constitution-jicarilla-apache-nation-1969-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1969-02-13'
+  locator: Preamble
+  document_version:
+    document: jicarilla-apache-nation-constitution
+    version: 1969-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: The scan includes two Interior letters (1969 and 1970) before the 1968 Revised Constitution text, and the certificate date is illegible.'
+- aspect: governing-body
+  value: Jicarilla Apache Tribal Council
+  quote: be exercised by the Jicarilla Apache Tribal Council, hereinafter
+  source: constitution-jicarilla-apache-nation-1969-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1969-02-13'
+  locator: Article VI, Section 1
+  document_version:
+    document: jicarilla-apache-nation-constitution
+    version: 1969-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: The scan includes two Interior letters (1969 and 1970) before the 1968 Revised Constitution text, and the certificate date is illegible.'
+- aspect: governing-body-size
+  value: 8 members
+  quote: The tribal council shall consist of eight members, elected
+  source: constitution-jicarilla-apache-nation-1969-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1969-02-13'
+  locator: Article VI, Section 2
+  document_version:
+    document: jicarilla-apache-nation-constitution
+    version: 1969-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: The scan includes two Interior letters (1969 and 1970) before the 1968 Revised Constitution text, and the certificate date is illegible.'
+- aspect: governing-body-selection
+  value: Elected at large
+  quote: at large from the membership of the Jicarilla Apache Tribe, to fill
+  source: constitution-jicarilla-apache-nation-1969-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1969-02-13'
+  locator: Article VI, Section 2
+  document_version:
+    document: jicarilla-apache-nation-constitution
+    version: 1969-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: The scan includes two Interior letters (1969 and 1970) before the 1968 Revised Constitution text, and the certificate date is illegible.'
+- aspect: governing-body-term
+  value: 4 years, staggered
+  quote: of four (4) years, or until their successors are duly installed.
+  source: constitution-jicarilla-apache-nation-1969-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1969-02-13'
+  locator: Article VII, Section 11
+  document_version:
+    document: jicarilla-apache-nation-constitution
+    version: 1969-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: The scan includes two Interior letters (1969 and 1970) before the 1968 Revised Constitution text, and the certificate date is illegible.'
+- aspect: head-of-government
+  value: President
+  quote: the tribe shall be known as the President and Vice President of the
+  source: constitution-jicarilla-apache-nation-1969-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1969-02-13'
+  locator: Article VII, Section 8
+  document_version:
+    document: jicarilla-apache-nation-constitution
+    version: 1969-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: The scan includes two Interior letters (1969 and 1970) before the 1968 Revised Constitution text, and the certificate date is illegible.'
+- aspect: head-of-government
+  value: President
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  verification: bulk-import
+  as_of: '2026-11-20'
+  locator: Jicarilla Apache Nation, New Mexico
+  note: The title of the leader's office as the federal directory lists it; the holder's name is not recorded.
+- aspect: head-of-government-selection
+  value: Elected by the qualified electors
+  quote: shall be elected by the qualified electors of the Jicarilla Apache
+  source: constitution-jicarilla-apache-nation-1969-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1969-02-13'
+  locator: Article XIII, Section 2
+  document_version:
+    document: jicarilla-apache-nation-constitution
+    version: 1969-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: The scan includes two Interior letters (1969 and 1970) before the 1968 Revised Constitution text, and the certificate date is illegible.'
+- aspect: head-of-government-term
+  value: 4 years
+  quote: of four (4) years, or until their successors are duly installed, to
+  source: constitution-jicarilla-apache-nation-1969-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1969-02-13'
+  locator: Article XIV, Section 1
+  document_version:
+    document: jicarilla-apache-nation-constitution
+    version: 1969-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: The scan includes two Interior letters (1969 and 1970) before the 1968 Revised Constitution text, and the certificate date is illegible.'
+- aspect: other-officers
+  value: Vice President, secretary, treasurer, administrative manager
+  quote: treasurer, administrative manager, and such other officials as the
+  source: constitution-jicarilla-apache-nation-1969-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1969-02-13'
+  locator: Article XIII, Section 1
+  document_version:
+    document: jicarilla-apache-nation-constitution
+    version: 1969-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: The scan includes two Interior letters (1969 and 1970) before the 1968 Revised Constitution text, and the certificate date is illegible.'
+- aspect: elections
+  value: Every even-numbered year, second Saturday after National Independence Day
+  quote: Independence Day In every even numbered year.
+  source: constitution-jicarilla-apache-nation-1969-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1969-02-13'
+  locator: Article VII, Section 11
+  document_version:
+    document: jicarilla-apache-nation-constitution
+    version: 1969-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: The scan includes two Interior letters (1969 and 1970) before the 1968 Revised Constitution text, and the certificate date is illegible.'
+- aspect: voting-age
+  value: '21'
+  quote: least twenty-one (21) years of age at the time of such election.
+  source: constitution-jicarilla-apache-nation-1969-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1969-02-13'
+  locator: Article VII, Section 3
+  document_version:
+    document: jicarilla-apache-nation-constitution
+    version: 1969-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: The scan includes two Interior letters (1969 and 1970) before the 1968 Revised Constitution text, and the certificate date is illegible.'
+- aspect: election-authority
+  value: Election Board
+  quote: An election board, appointed by the President of the
+  source: constitution-jicarilla-apache-nation-1969-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1969-02-13'
+  locator: Article VII, Section 1
+  document_version:
+    document: jicarilla-apache-nation-constitution
+    version: 1969-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: The scan includes two Interior letters (1969 and 1970) before the 1968 Revised Constitution text, and the certificate date is illegible.'
+- aspect: branches
+  value: Legislative, executive and judicial
+  quote: 'are divided into three distinct departments: The legislative, the'
+  source: constitution-jicarilla-apache-nation-1969-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1969-02-13'
+  locator: Article V, Section 1
+  document_version:
+    document: jicarilla-apache-nation-constitution
+    version: 1969-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: The scan includes two Interior letters (1969 and 1970) before the 1968 Revised Constitution text, and the certificate date is illegible.'
+- aspect: separation-of-powers
+  value: Stated
+  quote: and no person or group of persons charged
+  source: constitution-jicarilla-apache-nation-1969-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1969-02-13'
+  locator: Article V, Section 1
+  document_version:
+    document: jicarilla-apache-nation-constitution
+    version: 1969-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: The scan includes two Interior letters (1969 and 1970) before the 1968 Revised Constitution text, and the certificate date is illegible.'
+- aspect: judiciary
+  value: Tribal trial and appellate courts
+  quote: be vested in the tribal courts, including a trial and appellate court,
+  source: constitution-jicarilla-apache-nation-1969-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1969-02-13'
+  locator: Article XXIII, Section 1
+  document_version:
+    document: jicarilla-apache-nation-constitution
+    version: 1969-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: The scan includes two Interior letters (1969 and 1970) before the 1968 Revised Constitution text, and the certificate date is illegible.'
+- aspect: judicial-selection
+  value: Appointed by the President with three-fourths Council concurrence
+  quote: of one or more judges, appointed by the president, with the concurrence
+  source: constitution-jicarilla-apache-nation-1969-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1969-02-13'
+  locator: Article XXIV, Section 1
+  document_version:
+    document: jicarilla-apache-nation-constitution
+    version: 1969-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: The scan includes two Interior letters (1969 and 1970) before the 1968 Revised Constitution text, and the certificate date is illegible.'
+- aspect: judicial-independence
+  value: Removal for cause by three-fourths Council vote
+  quote: Such removal shall be accomplished by not less than three-fourths
+  source: constitution-jicarilla-apache-nation-1969-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1969-02-13'
+  locator: Article XXIV, Section 2
+  document_version:
+    document: jicarilla-apache-nation-constitution
+    version: 1969-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: The scan includes two Interior letters (1969 and 1970) before the 1968 Revised Constitution text, and the certificate date is illegible.'
+- aspect: amendment
+  value: Secretary-called election; majority of voters at 30% turnout
+  quote: 'call an election for the amendment of this constitution:'
+  source: constitution-jicarilla-apache-nation-1969-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1969-02-13'
+  locator: Article XXII, Section 1
+  document_version:
+    document: jicarilla-apache-nation-constitution
+    version: 1969-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: The scan includes two Interior letters (1969 and 1970) before the 1968 Revised Constitution text, and the certificate date is illegible.'
+- aspect: secretarial-approval
+  value: Required for amendments
+  quote: Secretary of the Interior, and if approved by him shall thereupon
+  source: constitution-jicarilla-apache-nation-1969-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1969-02-13'
+  locator: Article XXII, Section 2
+  document_version:
+    document: jicarilla-apache-nation-constitution
+    version: 1969-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: The scan includes two Interior letters (1969 and 1970) before the 1968 Revised Constitution text, and the certificate date is illegible.'
+- aspect: recall-and-removal
+  value: Removal by majority of the whole Council for misconduct
+  quote: may be removed from office by majority
+  source: constitution-jicarilla-apache-nation-1969-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1969-02-13'
+  locator: Article VIII, Section 1
+  document_version:
+    document: jicarilla-apache-nation-constitution
+    version: 1969-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: The scan includes two Interior letters (1969 and 1970) before the 1968 Revised Constitution text, and the certificate date is illegible.'
+- aspect: recall-and-removal
+  value: Recall by petition of 25% of eligible voters
+  quote: Upon receipt of a petition signed by at least twenty-five (257=)
+  source: constitution-jicarilla-apache-nation-1969-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1969-02-13'
+  locator: Article VIII, Section 2
+  document_version:
+    document: jicarilla-apache-nation-constitution
+    version: 1969-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: The scan includes two Interior letters (1969 and 1970) before the 1968 Revised Constitution text, and the certificate date is illegible.'
+- aspect: other
+  value: Executive committee of four council members
+  quote: composed of four (4) council members to assure the prompt conduct of
+  source: constitution-jicarilla-apache-nation-1969-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1969-02-13'
+  locator: Article XII, Section 1
+  document_version:
+    document: jicarilla-apache-nation-constitution
+    version: 1969-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: The scan includes two Interior letters (1969 and 1970) before the 1968 Revised Constitution text, and the certificate date is illegible.'
 governing_documents:
 - kind: law-code
   title: Jicarilla Apache Nation - Code
@@ -381,6 +678,26 @@ jurisdiction:
     the notice prints its table as page images, so nation names were read from images and matched to the
     roster. Row re-read on 2026-11-22 from the page image (the govinfo PDF has no text layer for the table);
     verification level unchanged because the name was not matched word for word in machine-read text.'
+- topic: public-law-280
+  value: not-a-public-law-280-state
+  detail: New Mexico is not one of the states that Public Law 280 required to take jurisdiction or that chose to take it, so the state has no Public Law 280 jurisdiction over the nation's Indian country in New Mexico. Other federal laws can still give a state some jurisdiction.
+  source: bia-faq-public-law-280
+  confidence: high
+  verification: inferred
+  as_of: '2017-07-18'
+  locator: Answer, second and third paragraphs (the lists of mandatory and optional states)
+  note: Inferred from the state's absence from both lists. Nation placed in New Mexico by the Census Bureau's land areas.
+land_establishment:
+- land_area: Jicarilla Apache Reserve (Colorado line to the Navajo reservation), New Mexico
+  method: executive-order
+  instrument: Exec. Order of Mar. 25, 1874, 1 Kappler 874
+  date: '1874-03-25'
+  detail: First set aside
+  source: executive-order-1874-03-25-jicarilla-apache-reservation
+  confidence: high
+  verification: read-in-full
+  locator: 1 Kappler 874
+  note: 'The instrument reads: “set apart as a reservation for the Jicarilla Apache Indians by the first article of an agreement concluded with the said Indians December 10, 1873, subject to the action of Congress”. Revoked July 18, 1876; the reservation was re-established by Exec. Orders of Sept. 21, 1880 (revoked May 15, 1884) and Feb. 11, 1887 (1 Kappler 875), the order of Feb. 11, 1887 being the one that created the present core of the reservation.'
 review:
   status: drafted-from-public-sources
   last_verified: '2026-11-21'

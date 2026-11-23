@@ -176,6 +176,191 @@ federal_administration:
   verification: bulk-import
   as_of: '2026-11-20'
   locator: Coeur D'Alene Tribe
+indian_health_service:
+- area: Portland
+  source: indian-health-service-portland-careers-brochure
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  locator: '"Tribes of Oregon, Washington and Idaho" list'
+  note: 'Listed as "Coeur D''Alene Tribe of Indians". Also listed under the same Area in: indian-health-service-self-governance-tribes. Also on the Indian Health Service Self-Governance Tribes list (Coeur D’Alene Tribe (1995)); the list does not say which service unit or programs the compact covers.'
+governance:
+- aspect: form
+  value: Approved by Acting Commissioner of Indian Affairs
+  quote: Affairs, is herewith approved.
+  source: university-of-oklahoma-indian-reorganization-act-coeurcons
+  confidence: medium
+  verification: read-in-full
+  as_of: '1947-06-05'
+  locator: Approval
+  document_version:
+    document: coeur-dalene-tribe-constitution
+    version: 1947-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+- aspect: governing-body
+  value: Tribal Council
+  quote: Tribe shall be a Tribal Council consisting of seven members duly elected
+  source: university-of-oklahoma-indian-reorganization-act-coeurcons
+  confidence: medium
+  verification: read-in-full
+  as_of: '1947-06-05'
+  locator: Article III, Section 1
+  document_version:
+    document: coeur-dalene-tribe-constitution
+    version: 1947-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+- aspect: governing-body-size
+  value: 7 members
+  quote: Tribe shall be a Tribal Council consisting of seven members duly elected
+  source: university-of-oklahoma-indian-reorganization-act-coeurcons
+  confidence: medium
+  verification: read-in-full
+  as_of: '1947-06-05'
+  locator: Article III, Section 1
+  document_version:
+    document: coeur-dalene-tribe-constitution
+    version: 1947-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+- aspect: governing-body-selection
+  value: Elected by popular vote at tribal meeting
+  quote: elected by popular vote at a meeting of the tribe on the
+  source: university-of-oklahoma-indian-reorganization-act-coeurcons
+  confidence: medium
+  verification: read-in-full
+  as_of: '1947-06-05'
+  locator: Article IV, Section 1
+  document_version:
+    document: coeur-dalene-tribe-constitution
+    version: 1947-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+- aspect: governing-body-term
+  value: 3 years, staggered
+  quote: to serve three years.
+  source: university-of-oklahoma-indian-reorganization-act-coeurcons
+  confidence: medium
+  verification: read-in-full
+  as_of: '1947-06-05'
+  locator: Article III, Section 1
+  document_version:
+    document: coeur-dalene-tribe-constitution
+    version: 1947-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+- aspect: head-of-government
+  value: Chairman
+  quote: Council shall preside over all meetings of the Council and of the Tribe.
+  source: university-of-oklahoma-indian-reorganization-act-coeurcons
+  confidence: medium
+  verification: read-in-full
+  as_of: '1947-06-05'
+  locator: By-laws Article I, Section 1
+  document_version:
+    document: coeur-dalene-tribe-constitution
+    version: 1947-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+- aspect: head-of-government
+  value: Chairperson
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  verification: bulk-import
+  as_of: '2026-11-20'
+  locator: Coeur D'Alene Tribe
+  note: The title of the leader's office as the federal directory lists it; the holder's name is not recorded. Listed as “Chairman”; recorded without the holder's own form of the title.
+- aspect: head-of-government-selection
+  value: Elected by Tribal Council from its membership
+  quote: The Tribal Council shall elect from its membership
+  source: university-of-oklahoma-indian-reorganization-act-coeurcons
+  confidence: medium
+  verification: read-in-full
+  as_of: '1947-06-05'
+  locator: Article III, Section 2
+  document_version:
+    document: coeur-dalene-tribe-constitution
+    version: 1947-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+- aspect: other-officers
+  value: Vice-chairman, Secretary-Treasurer
+  quote: (2) a vice-chairman, (3) a secretary-treasurer, and may
+  source: university-of-oklahoma-indian-reorganization-act-coeurcons
+  confidence: medium
+  verification: read-in-full
+  as_of: '1947-06-05'
+  locator: Article III, Section 2
+  document_version:
+    document: coeur-dalene-tribe-constitution
+    version: 1947-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+- aspect: elections
+  value: Annually, first Saturday in May
+  quote: first Saturday in May of each year.
+  source: university-of-oklahoma-indian-reorganization-act-coeurcons
+  confidence: medium
+  verification: read-in-full
+  as_of: '1947-06-05'
+  locator: Article IV, Section 1
+  document_version:
+    document: coeur-dalene-tribe-constitution
+    version: 1947-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+- aspect: voting-age
+  value: '21'
+  quote: Tribe who is twenty-one (21) years of age or over shall be entitled to
+  source: university-of-oklahoma-indian-reorganization-act-coeurcons
+  confidence: medium
+  verification: read-in-full
+  as_of: '1947-06-05'
+  locator: Article IV, Section 6
+  document_version:
+    document: coeur-dalene-tribe-constitution
+    version: 1947-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+- aspect: judiciary
+  value: Council may establish a reservation court
+  quote: court and to adopt a suitable code for the maintenance of law and order
+  source: university-of-oklahoma-indian-reorganization-act-coeurcons
+  confidence: medium
+  verification: read-in-full
+  as_of: '1947-06-05'
+  locator: Article VII, Section 1(d)
+  document_version:
+    document: coeur-dalene-tribe-constitution
+    version: 1947-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+- aspect: amendment
+  value: Majority vote in election called by Commissioner of Indian Affairs
+  quote: majority vote of the qualified members of the Tribe who vote at an election
+  source: university-of-oklahoma-indian-reorganization-act-coeurcons
+  confidence: medium
+  verification: read-in-full
+  as_of: '1947-06-05'
+  locator: Article VIII
+  document_version:
+    document: coeur-dalene-tribe-constitution
+    version: 1947-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+- aspect: secretarial-approval
+  value: Required for amendments (Commissioner of Indian Affairs)
+  quote: amendment shall bedome effective until it shall have been approved by the
+  source: university-of-oklahoma-indian-reorganization-act-coeurcons
+  confidence: medium
+  verification: read-in-full
+  as_of: '1947-06-05'
+  locator: Article VIII
+  document_version:
+    document: coeur-dalene-tribe-constitution
+    version: 1947-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+- aspect: recall-and-removal
+  value: Expulsion or suspension by majority of total Council membership
+  quote: of the total membership of the Council, expel or suspend any of its members
+  source: university-of-oklahoma-indian-reorganization-act-coeurcons
+  confidence: medium
+  verification: read-in-full
+  as_of: '1947-06-05'
+  locator: Article VI, Section 2
+  document_version:
+    document: coeur-dalene-tribe-constitution
+    version: 1947-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
 governing_documents:
 - kind: law-code
   title: Coeur D'Alene Tribe - Tribal Code - Table of Contents
@@ -386,6 +571,27 @@ jurisdiction:
     prints its table as page images, so nation names were read from images and matched to the roster.
     Row re-read on 2026-11-22 from the page image, and the name was found word for word in the notice''s
     machine-read (OCR) text by the second gap review (research/reviews/2026-11-22-icwa-agents.csv).'
+land_establishment:
+- land_area: Northern Idaho reservation for the Coeur d'Alenes and other tribes
+  method: executive-order
+  instrument: Exec. Order of June 14, 1867, 1 Kappler 837
+  date: '1867-06-14'
+  detail: First set aside
+  source: executive-order-1867-06-14-southern-and-northern-idaho-reservations
+  confidence: low
+  verification: inferred
+  locator: 1 Kappler 837
+  note: 'The instrument reads: “Let the lands be set apart as reservations for the Indians within named, as recommended by the Acting Secretary of the Interior.”. The accompanying recommendation sets apart a northern reservation (about 20 miles square) for "the Cœur d''Alenes and other tribes of northern Idaho" (1 Kappler 836); the reservation was not actually established on the ground until the Exec. Order of Nov. 8, 1873. Low confidence that the 1867 tract is the same land.'
+- land_area: Coeur d'Alene Reserve, Idaho
+  method: executive-order
+  instrument: Exec. Order of Nov. 8, 1873, 1 Kappler 837
+  date: '1873-11-08'
+  detail: Later change
+  source: executive-order-1873-11-08-coeur-dalene-reservation
+  confidence: high
+  verification: read-in-full
+  locator: 1 Kappler 837
+  note: 'The instrument reads: “withdrawn from sale and set apart as a reservation for the Cœur d’Alene Indians, in said Territory”. First order naming a Coeur d''Alene reservation; enlarged by later orders and the act of Mar. 3, 1891 (26 Stat. 1027).'
 memberships:
 - organization: Northwest Portland Area Indian Health Board
   source: northwest-portland-area-indian-health-board-member-tribes

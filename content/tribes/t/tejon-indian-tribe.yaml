@@ -118,6 +118,15 @@ contacts:
   verification: bulk-import
   as_of: '2026-11-20'
   locator: Tejon Indian Tribe
+- kind: email-general
+  value: office@tejonindiantribe-nsn.gov
+  label: General office email listed in the federal Tribal Leaders Directory
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  verification: bulk-import
+  as_of: '2026-11-23'
+  locator: Tejon Indian Tribe
+  note: A general office address (not a leader's own) in the directory's email field, read on Nov. 23, 2026.
 official_images:
 - kind: logo
   alternative_text: Tejon Indian Tribe
@@ -149,6 +158,23 @@ federal_administration:
   verification: bulk-import
   as_of: '2026-11-20'
   locator: Tejon Indian Tribe
+indian_health_service:
+- area: California
+  source: indian-health-service-california-federally-recognized-tribes
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  locator: regional lists (West Central, Southern, Northern, East Central)
+  note: Listed as "Tejon Indian Tribe".
+governance:
+- aspect: head-of-government
+  value: Chairperson
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  verification: bulk-import
+  as_of: '2026-11-20'
+  locator: Tejon Indian Tribe
+  note: The title of the leader's office as the federal directory lists it; the holder's name is not recorded.
 gaming:
   compacts:
   - state: CA

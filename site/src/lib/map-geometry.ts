@@ -343,9 +343,13 @@ interface Panel {
 
 /**
  * Census areas a nation has asked the project to leave off the map, by
- * Census code (charter commitment 6: the nation's request wins). None yet.
+ * Census code (charter commitment 6: the nation's request wins). The list is
+ * kept in geography/withdrawn-land-areas.json so that the map tiles
+ * (tools/build-map-tiles.mjs) leave out the same areas.
  */
-const withdrawnLandAreas = new Set<string>([]);
+const withdrawnLandAreas = new Set<string>(
+	(JSON.parse(readFileSync(new URL('../../geography/withdrawn-land-areas.json', import.meta.url), 'utf8')) as { codes: string[] }).codes
+);
 
 /**
  * An area whose outline covers less than this many square map units gets a

@@ -138,6 +138,14 @@ contacts:
   verification: title-only
   as_of: '2026-11-22'
   note: The nation's own website links this page as "Contact Us". Its title is "Contact Us - Paskenta Band of Nomlaki Indians". Found by scripts/tribes/find_contacts.py.
+- kind: email-general
+  value: office@paskenta.org
+  label: General office email shown on the nation's website
+  source: paskenta-nsn-contact-us
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: General office address, shown as text on the page. Found by scripts/tribes/find_emails_deep.mjs.
 official_images:
 - kind: logo
   alternative_text: Paskenta Band of Nomlaki Indians
@@ -176,6 +184,251 @@ federal_administration:
   verification: bulk-import
   as_of: '2026-11-20'
   locator: Paskenta Band of Nomlaki Indians of California
+indian_health_service:
+- area: California
+  source: indian-health-service-california-federally-recognized-tribes
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  locator: regional lists (West Central, Southern, Northern, East Central)
+  note: Listed as "Paskenta Band of Nomlaki Indians of California".
+governance:
+- aspect: form
+  value: Approved under the Indian Reorganization Act of June 18, 1934
+  quote: by the Act of June 18, 1934 (48 Stat. 984), as amended and delegated
+  source: constitution-paskenta-band-of-nomlaki-indians-of-california-1998-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1998-05-15'
+  locator: Certificate of Approval
+  document_version:
+    document: paskenta-band-of-nomlaki-indians-of-california-constitution
+    version: 1998-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: The certificate of ratification and the vote counts are blank or garbled on the scan; facts come from the text and the Certificate of Approval dated 15 May 1998.'
+- aspect: governing-body
+  value: Tribal Council
+  quote: The governing body of the Band shall be the Tribal Council, which shall
+  source: constitution-paskenta-band-of-nomlaki-indians-of-california-1998-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1998-05-15'
+  locator: Article III, Section 1
+  document_version:
+    document: paskenta-band-of-nomlaki-indians-of-california-constitution
+    version: 1998-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: The certificate of ratification and the vote counts are blank or garbled on the scan; facts come from the text and the Certificate of Approval dated 15 May 1998.'
+- aspect: governing-body-size
+  value: 5 members
+  quote: consist of five (5) Tribal members elected from the General Council.
+  source: constitution-paskenta-band-of-nomlaki-indians-of-california-1998-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1998-05-15'
+  locator: Article III, Section 1
+  document_version:
+    document: paskenta-band-of-nomlaki-indians-of-california-constitution
+    version: 1998-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: The certificate of ratification and the vote counts are blank or garbled on the scan; facts come from the text and the Certificate of Approval dated 15 May 1998.'
+- aspect: governing-body-selection
+  value: Elected from the General Council
+  quote: consist of five (5) Tribal members elected from the General Council.
+  source: constitution-paskenta-band-of-nomlaki-indians-of-california-1998-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1998-05-15'
+  locator: Article III, Section 1
+  document_version:
+    document: paskenta-band-of-nomlaki-indians-of-california-constitution
+    version: 1998-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: The certificate of ratification and the vote counts are blank or garbled on the scan; facts come from the text and the Certificate of Approval dated 15 May 1998.'
+- aspect: governing-body-term
+  value: 2 years
+  quote: Thereafter, all terms of office shall be for two (2) years and elections shall be
+  source: constitution-paskenta-band-of-nomlaki-indians-of-california-1998-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1998-05-15'
+  locator: Article IV, Section 1
+  document_version:
+    document: paskenta-band-of-nomlaki-indians-of-california-constitution
+    version: 1998-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: The certificate of ratification and the vote counts are blank or garbled on the scan; facts come from the text and the Certificate of Approval dated 15 May 1998.'
+- aspect: general-council
+  value: All Band members 18 or older
+  quote: eighteen (18) years of age or older. The General Council shall exercise its powers
+  source: constitution-paskenta-band-of-nomlaki-indians-of-california-1998-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1998-05-15'
+  locator: Article III, Section 2
+  document_version:
+    document: paskenta-band-of-nomlaki-indians-of-california-constitution
+    version: 1998-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: The certificate of ratification and the vote counts are blank or garbled on the scan; facts come from the text and the Certificate of Approval dated 15 May 1998.'
+- aspect: head-of-government
+  value: Chairperson
+  quote: The Chairperson of the Tribal Council shall preside at all meetings of said
+  source: constitution-paskenta-band-of-nomlaki-indians-of-california-1998-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1998-05-15'
+  locator: Article VIII, Section 1
+  document_version:
+    document: paskenta-band-of-nomlaki-indians-of-california-constitution
+    version: 1998-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: The certificate of ratification and the vote counts are blank or garbled on the scan; facts come from the text and the Certificate of Approval dated 15 May 1998.'
+- aspect: head-of-government
+  value: Chairperson
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  verification: bulk-import
+  as_of: '2026-11-20'
+  locator: Paskenta Band of Nomlaki Indians of California
+  note: The title of the leader's office as the federal directory lists it; the holder's name is not recorded. Listed as “Chairman”; recorded without the holder's own form of the title.
+- aspect: head-of-government-selection
+  value: Elected by highest number of votes
+  quote: The candidate receiving the highest number of votes for a particular office
+  source: constitution-paskenta-band-of-nomlaki-indians-of-california-1998-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1998-05-15'
+  locator: Article IV, Section 4
+  document_version:
+    document: paskenta-band-of-nomlaki-indians-of-california-constitution
+    version: 1998-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: The certificate of ratification and the vote counts are blank or garbled on the scan; facts come from the text and the Certificate of Approval dated 15 May 1998.'
+- aspect: head-of-government-term
+  value: 2 years
+  quote: Chairperson, Secretary, and Treasurer shall be elected to two (2) year terms while
+  source: constitution-paskenta-band-of-nomlaki-indians-of-california-1998-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1998-05-15'
+  locator: Article IV, Section 1
+  document_version:
+    document: paskenta-band-of-nomlaki-indians-of-california-constitution
+    version: 1998-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: The certificate of ratification and the vote counts are blank or garbled on the scan; facts come from the text and the Certificate of Approval dated 15 May 1998.'
+- aspect: other-officers
+  value: Vice-Chairperson, Secretary, Treasurer, and one other member
+  quote: Council shall consist of a Chairperson, Vice-Chairperson, Secretary, Treasurer, and
+  source: constitution-paskenta-band-of-nomlaki-indians-of-california-1998-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1998-05-15'
+  locator: Article III, Section 1
+  document_version:
+    document: paskenta-band-of-nomlaki-indians-of-california-constitution
+    version: 1998-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: The certificate of ratification and the vote counts are blank or garbled on the scan; facts come from the text and the Certificate of Approval dated 15 May 1998.'
+- aspect: elections
+  value: Annually
+  quote: held annually consistent with the constitution.
+  source: constitution-paskenta-band-of-nomlaki-indians-of-california-1998-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1998-05-15'
+  locator: Article IV, Section 1
+  document_version:
+    document: paskenta-band-of-nomlaki-indians-of-california-constitution
+    version: 1998-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: The certificate of ratification and the vote counts are blank or garbled on the scan; facts come from the text and the Certificate of Approval dated 15 May 1998.'
+- aspect: voting-age
+  value: '18'
+  quote: Any enrolled member of the Band who is at least eighteen (18) years of age
+  source: constitution-paskenta-band-of-nomlaki-indians-of-california-1998-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1998-05-15'
+  locator: Article IV, Section 2
+  document_version:
+    document: paskenta-band-of-nomlaki-indians-of-california-constitution
+    version: 1998-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: The certificate of ratification and the vote counts are blank or garbled on the scan; facts come from the text and the Certificate of Approval dated 15 May 1998.'
+- aspect: election-authority
+  value: Elections Board
+  quote: All elections shall be supervised and conducted by an Elections Board
+  source: constitution-paskenta-band-of-nomlaki-indians-of-california-1998-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1998-05-15'
+  locator: Article IV, Section 6
+  document_version:
+    document: paskenta-band-of-nomlaki-indians-of-california-constitution
+    version: 1998-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: The certificate of ratification and the vote counts are blank or garbled on the scan; facts come from the text and the Certificate of Approval dated 15 May 1998.'
+- aspect: judiciary
+  value: Council may form or join tribal courts
+  quote: To form or join Tribal courts/consortia/Indian organizations now
+  source: constitution-paskenta-band-of-nomlaki-indians-of-california-1998-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1998-05-15'
+  locator: Article VI, Section 1(j)
+  document_version:
+    document: paskenta-band-of-nomlaki-indians-of-california-constitution
+    version: 1998-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: The certificate of ratification and the vote counts are blank or garbled on the scan; facts come from the text and the Certificate of Approval dated 15 May 1998.'
+- aspect: amendment
+  value: Majority of eligible voters, with two-thirds turnout
+  quote: This Constitution may be amended by a majority vote of the eligible voters
+  source: constitution-paskenta-band-of-nomlaki-indians-of-california-1998-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1998-05-15'
+  locator: Article XII
+  document_version:
+    document: paskenta-band-of-nomlaki-indians-of-california-constitution
+    version: 1998-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: The certificate of ratification and the vote counts are blank or garbled on the scan; facts come from the text and the Certificate of Approval dated 15 May 1998.'
+- aspect: recall-and-removal
+  value: Recall by petition of 40% of eligible voters
+  quote: Upon receipt of a petition signed by at least forty (40) percent of the eligible
+  source: constitution-paskenta-band-of-nomlaki-indians-of-california-1998-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1998-05-15'
+  locator: Article V, Section 2
+  document_version:
+    document: paskenta-band-of-nomlaki-indians-of-california-constitution
+    version: 1998-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: The certificate of ratification and the vote counts are blank or garbled on the scan; facts come from the text and the Certificate of Approval dated 15 May 1998.'
+- aspect: recall-and-removal
+  value: Declared vacant by majority of Tribal Council for abuse of office
+  quote: by a vote of a majority of the members of the Tribal Council then in office
+  source: constitution-paskenta-band-of-nomlaki-indians-of-california-1998-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1998-05-15'
+  locator: Article V, Section 1
+  document_version:
+    document: paskenta-band-of-nomlaki-indians-of-california-constitution
+    version: 1998-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: The certificate of ratification and the vote counts are blank or garbled on the scan; facts come from the text and the Certificate of Approval dated 15 May 1998.'
+- aspect: recall-and-removal
+  value: Removal by majority of General Council in attendance for missing a General Council meeting
+  quote: vote of the members of the General Council in attendance, provided that the
+  source: constitution-paskenta-band-of-nomlaki-indians-of-california-1998-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1998-05-15'
+  locator: Article VIII, Section 6
+  document_version:
+    document: paskenta-band-of-nomlaki-indians-of-california-constitution
+    version: 1998-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: The certificate of ratification and the vote counts are blank or garbled on the scan; facts come from the text and the Certificate of Approval dated 15 May 1998.'
+- aspect: other
+  value: General Council reserves initiative power
+  quote: The General Council of the Band reserves the power independently to
+  source: constitution-paskenta-band-of-nomlaki-indians-of-california-1998-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1998-05-15'
+  locator: Article IX, Section 2
+  document_version:
+    document: paskenta-band-of-nomlaki-indians-of-california-constitution
+    version: 1998-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: The certificate of ratification and the vote counts are blank or garbled on the scan; facts come from the text and the Certificate of Approval dated 15 May 1998.'
 gaming:
   compacts:
   - state: CA

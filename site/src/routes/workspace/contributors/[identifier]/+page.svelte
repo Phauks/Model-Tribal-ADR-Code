@@ -42,6 +42,10 @@
 		<dd>{profile.personIdentifier ? 'Yes' : 'No'}</dd>
 	</div>
 	<div>
+		<dt>Board of directors</dt>
+		<dd>{profile.boardMember ? `Board member${profile.boardOffice ? `, ${profile.boardOffice}` : ''}` : 'No'}</dd>
+	</div>
+	<div>
 		<dt>Credit section</dt>
 		<dd>{profile.creditSection ? creditSectionLabels[profile.creditSection] : 'Not placed yet'}</dd>
 	</div>
@@ -63,24 +67,24 @@
 
 {#if data.canManage}
 	<section>
-		<h2>Decide</h2>
+		<h2>Sign-up</h2>
 		<form method="post" action="?/decide">
 			<fieldset>
-				<legend>Registration</legend>
+				<legend>Status</legend>
 				<div class="choice">
 					<input type="radio" id="decision-welcomed" name="decision" value="welcomed" checked={profile.status !== 'declined'} />
-					<label for="decision-welcomed">Welcome</label>
+					<label for="decision-welcomed">Signed up</label>
 				</div>
 				<div class="choice">
 					<input type="radio" id="decision-declined" name="decision" value="declined" checked={profile.status === 'declined'} />
-					<label for="decision-declined">Decline</label>
+					<label for="decision-declined">Removed (deleted after 12 months)</label>
 				</div>
 			</fieldset>
 			<div class="field">
-				<label for="note">Note to the person (required when declining; they see it on their profile)</label>
+				<label for="note">Note to the person (required when removing; they see it on their profile)</label>
 				<textarea id="note" name="note" rows="3">{profile.decisionNote ?? ''}</textarea>
 			</div>
-			<p><button class="button" type="submit">Save the decision</button></p>
+			<p><button class="button" type="submit">Save</button></p>
 		</form>
 
 		<h2>Place the credit</h2>
@@ -95,6 +99,24 @@
 				</select>
 			</div>
 			<p><button class="button button-quiet" type="submit">Save the section</button></p>
+		</form>
+
+		<h2>Board of directors</h2>
+		<p>
+			Board members are listed first on the People page, when they have a contributor page. Only the lead author
+			can change this.
+		</p>
+		<form method="post" action="?/board">
+			<div class="choice">
+				<input type="checkbox" id="boardMember" name="boardMember" value="yes" checked={profile.boardMember} />
+				<label for="boardMember">On the nonprofit's board</label>
+			</div>
+			<div class="field">
+				<label for="boardOffice">Office (optional)</label>
+				<p class="hint" id="boardOffice-hint">For example President, Secretary or Treasurer. Leave it empty until offices are set.</p>
+				<input type="text" id="boardOffice" name="boardOffice" maxlength="100" value={profile.boardOffice ?? ''} aria-describedby="boardOffice-hint" />
+			</div>
+			<p><button class="button button-quiet" type="submit">Save</button></p>
 		</form>
 
 		{#if !profile.personIdentifier}

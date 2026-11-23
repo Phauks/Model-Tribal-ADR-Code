@@ -91,6 +91,227 @@ federal_administration:
   verification: bulk-import
   as_of: '2026-11-20'
   locator: Scotts Valley Band of Pomo Indians of California
+indian_health_service:
+- area: California
+  source: indian-health-service-california-federally-recognized-tribes
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  locator: regional lists (West Central, Southern, Northern, East Central)
+  note: Listed as "Scotts Valley Band of Pomo Indians of California".
+governance:
+- aspect: governing-body
+  value: Tribal Council
+  quote: The governing body of the Band shall be the Tribal Council, which shall consist of seven (7)
+  source: constitution-scotts-valley-band-of-pomo-indians-of-california-1994-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1994-09-24'
+  locator: Article III, Section 1
+  document_version:
+    document: scotts-valley-band-of-pomo-indians-of-california-constitution
+    version: 1994-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+- aspect: governing-body-size
+  value: 7 members
+  quote: which shall consist of seven (7)
+  source: constitution-scotts-valley-band-of-pomo-indians-of-california-1994-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1994-09-24'
+  locator: Article III, Section 1
+  document_version:
+    document: scotts-valley-band-of-pomo-indians-of-california-constitution
+    version: 1994-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+- aspect: governing-body-selection
+  value: Elected from the General Council
+  quote: tribal members elected from the General Council.
+  source: constitution-scotts-valley-band-of-pomo-indians-of-california-1994-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1994-09-24'
+  locator: Article III, Section 1
+  document_version:
+    document: scotts-valley-band-of-pomo-indians-of-california-constitution
+    version: 1994-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+- aspect: governing-body-term
+  value: 4 years
+  quote: the term of office shall be four (4) years.
+  source: constitution-scotts-valley-band-of-pomo-indians-of-california-1994-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1994-09-24'
+  locator: Article IV, Section 1(a)
+  document_version:
+    document: scotts-valley-band-of-pomo-indians-of-california-constitution
+    version: 1994-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+- aspect: general-council
+  value: All members of the Band 18 or older
+  quote: The General Council shall consist of all members of the Band who are eighteen (IS) years of
+  source: constitution-scotts-valley-band-of-pomo-indians-of-california-1994-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1994-09-24'
+  locator: Article III, Section 2
+  document_version:
+    document: scotts-valley-band-of-pomo-indians-of-california-constitution
+    version: 1994-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+- aspect: head-of-government
+  value: Chairperson
+  quote: The Chairperson of the Band also shall serve as the Chairperson of the Tribal Council
+  source: constitution-scotts-valley-band-of-pomo-indians-of-california-1994-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1994-09-24'
+  locator: Article VIII, Section 2
+  document_version:
+    document: scotts-valley-band-of-pomo-indians-of-california-constitution
+    version: 1994-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+- aspect: head-of-government
+  value: Chairperson
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  verification: bulk-import
+  as_of: '2026-11-20'
+  locator: Scotts Valley Band of Pomo Indians of California
+  note: The title of the leader's office as the federal directory lists it; the holder's name is not recorded. Listed as “Chairman”; recorded without the holder's own form of the title.
+- aspect: head-of-government-selection
+  value: Chosen by the Tribal Council from its members
+  quote: shall elect from its members a Chairperson, Vice-Chairperson, Secretary and Treasurer.
+  source: constitution-scotts-valley-band-of-pomo-indians-of-california-1994-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1994-09-24'
+  locator: Article IV, Section 1(a)
+  document_version:
+    document: scotts-valley-band-of-pomo-indians-of-california-constitution
+    version: 1994-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+- aspect: head-of-government-term
+  value: 4 years
+  quote: shall serve for four (4) years or until their terms as Tribal Council members expire
+  source: constitution-scotts-valley-band-of-pomo-indians-of-california-1994-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1994-09-24'
+  locator: Article IV, Section 1(a)
+  document_version:
+    document: scotts-valley-band-of-pomo-indians-of-california-constitution
+    version: 1994-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+- aspect: other-officers
+  value: Vice-Chairperson, Secretary, Treasurer
+  quote: Vice-Chairperson, Secretary, Treasurer, and three (3) members
+  source: constitution-scotts-valley-band-of-pomo-indians-of-california-1994-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1994-09-24'
+  locator: Article III, Section 1
+  document_version:
+    document: scotts-valley-band-of-pomo-indians-of-california-constitution
+    version: 1994-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+- aspect: voting-age
+  value: '18'
+  quote: Any enrolled member of the Band who is at least eighteen (IS) years of age at the time of the
+  source: constitution-scotts-valley-band-of-pomo-indians-of-california-1994-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1994-09-24'
+  locator: Article IV, Section 2
+  document_version:
+    document: scotts-valley-band-of-pomo-indians-of-california-constitution
+    version: 1994-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+- aspect: election-authority
+  value: Elections Board
+  quote: All elections shall be supervised and conducted by an Elections Board composed of five
+  source: constitution-scotts-valley-band-of-pomo-indians-of-california-1994-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1994-09-24'
+  locator: Article IV, Section 6
+  document_version:
+    document: scotts-valley-band-of-pomo-indians-of-california-constitution
+    version: 1994-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+- aspect: judiciary
+  value: Tribal Court
+  quote: There shall be a Tribal Court for the Tribe.
+  source: constitution-scotts-valley-band-of-pomo-indians-of-california-1994-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1994-09-24'
+  locator: Article XI, Section 1
+  document_version:
+    document: scotts-valley-band-of-pomo-indians-of-california-constitution
+    version: 1994-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+- aspect: judicial-selection
+  value: Nominated by Chairperson, approved by 3/5 vote of Council
+  quote: Judges shall be nominated by the Chairperson of the Tribal Council
+  source: constitution-scotts-valley-band-of-pomo-indians-of-california-1994-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1994-09-24'
+  locator: Article XI, Section 3
+  document_version:
+    document: scotts-valley-band-of-pomo-indians-of-california-constitution
+    version: 1994-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+- aspect: judicial-term
+  value: Set by Tribal Council ordinance
+  quote: The tenure and salary of tribal judges shall be established by ordinance of the Tribal Council.
+  source: constitution-scotts-valley-band-of-pomo-indians-of-california-1994-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1994-09-24'
+  locator: Article XI, Section 3
+  document_version:
+    document: scotts-valley-band-of-pomo-indians-of-california-constitution
+    version: 1994-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+- aspect: amendment
+  value: Majority vote of qualified voters in election
+  quote: This Constitution may be amended by a majority vote of the qualified voters of the Band
+  source: constitution-scotts-valley-band-of-pomo-indians-of-california-1994-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1994-09-24'
+  locator: Article XIV
+  document_version:
+    document: scotts-valley-band-of-pomo-indians-of-california-constitution
+    version: 1994-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+- aspect: recall-and-removal
+  value: Recall by petition of 30% of qualified voters
+  quote: Upon receipt of a petition signed by at least thirty percent (30%) of the qualified voters of the
+  source: constitution-scotts-valley-band-of-pomo-indians-of-california-1994-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1994-09-24'
+  locator: Article V, Section 2
+  document_version:
+    document: scotts-valley-band-of-pomo-indians-of-california-constitution
+    version: 1994-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+- aspect: recall-and-removal
+  value: Council declares seat vacant by majority vote
+  quote: by a vote of a majority of the members of the Tribal Council then in office
+  source: constitution-scotts-valley-band-of-pomo-indians-of-california-1994-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1994-09-24'
+  locator: Article V, Section 1
+  document_version:
+    document: scotts-valley-band-of-pomo-indians-of-california-constitution
+    version: 1994-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
 gaming:
   ordinances:
   - approved: '1999-02-16'

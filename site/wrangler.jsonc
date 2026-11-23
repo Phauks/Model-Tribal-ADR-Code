@@ -40,6 +40,19 @@
 			"bucket_name": "model-tribal-adr-code-sources"
 		}
 	],
+	// Live editing rooms, one per essay. They run in their own Worker,
+	// model-tribal-adr-code-live (live/wrangler.jsonc), so that this site's
+	// deploys do not close people's live connections (COLLABORATION.md,
+	// "Essays").
+	"durable_objects": {
+		"bindings": [
+			{
+				"name": "essayRooms",
+				"class_name": "EssayRoom",
+				"script_name": "model-tribal-adr-code-live"
+			}
+		]
+	},
 	// Limits how often one address can send the request form: five a minute
 	// is plenty for a person and slows down automated spam, without asking
 	// anyone to make an account or solve a puzzle (docs/requests.md).
@@ -76,6 +89,14 @@
 			"name": "signInNetworkLimit",
 			"namespace_id": "1004",
 			"simple": { "limit": 30, "period": 60 }
+		},
+		// Limits how many files one account can start sending, or YouTube
+		// links it can add, in a minute (docs/uploads.md). The pieces of a
+		// file are not counted; the daily allowance limits the rest.
+		{
+			"name": "uploadLimit",
+			"namespace_id": "1005",
+			"simple": { "limit": 30, "period": 60 }
 		}
 	],
 	// Cloudflare Email Service, for sign-in codes. It sends only from a domain
@@ -83,9 +104,28 @@
 	// SIGN_IN_EMAIL_FROM below. While that is empty, the site sends no email
 	// and people sign in with a password or a link from the lead author
 	// (COLLABORATION.md, "Setting up sign-in").
-	"send_email": [{ "name": "signInEmail" }],
+	//
+	// The second binding sends summaries of updates to pages readers follow,
+	// from UPDATE_EMAIL_FROM. That address is the switch for those emails:
+	// while it is empty, nothing is sent and readers see notices on the site
+	// only. Set it once the domain is onboarded (docs/domain-to-do.md;
+	// COLLABORATION.md, "Following pages"). SITE_ADDRESS is the site's public
+	// address, for the links in those emails; change it when the site moves
+	// to the domain.
+	"send_email": [{ "name": "signInEmail" }, { "name": "updateEmail" }],
 	"vars": {
-		"SIGN_IN_EMAIL_FROM": ""
+		"SIGN_IN_EMAIL_FROM": "",
+		"UPDATE_EMAIL_FROM": "",
+		"SITE_ADDRESS": "https://model-tribal-adr-code.trevordgoldsmith.workers.dev"
+	},
+	// Every hour, at 17 minutes past: find updates to followed pages and send
+	// the summary emails that are due. Mondays at 09:41 UTC: check the private
+	// address book against the federal and Alaska directories and the nation
+	// pages (COLLABORATION.md, "Address book"). tools/add-scheduled-run.mjs adds the
+	// Worker's scheduled handler after the build, since the SvelteKit adapter
+	// makes only a fetch handler.
+	"triggers": {
+		"crons": ["17 * * * *", "41 9 * * 1"]
 	}
 	// One setting is made in the Cloudflare dashboard (Worker > Settings >
 	// Variables and Secrets) rather than here, because this file is public:

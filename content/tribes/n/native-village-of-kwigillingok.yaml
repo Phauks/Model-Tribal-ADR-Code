@@ -168,6 +168,68 @@ federal_administration:
   verification: bulk-import
   as_of: '2026-11-20'
   locator: Native Village of Kwigillingok
+indian_health_service:
+- area: Alaska
+  source: indian-health-service-alaska-area-profile-yukon-kuskokwim-delta-service-area
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  locator: '"Federally Recognized Tribes" list, Yukon-Kuskokwim Delta Service Area profile'
+  note: Listed as "Native Village of Kwigillingok". Service area operator statement is from the same profile; profile is old (about 2007) and the operator statement may have changed.
+- area: Alaska
+  service_unit: Yukon-Kuskokwim Delta Service Area
+  source: indian-health-service-alaska-area-profile-yukon-kuskokwim-delta-service-area
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  locator: '"Federally Recognized Tribes" list, Yukon-Kuskokwim Delta Service Area profile'
+  note: 'The source''s words: "Native Village of Kwigillingok".'
+  operator: tribal
+governance:
+- aspect: governing-body-selection
+  value: Chosen as the Village decides
+  quote: and officers or tha governing body shall bo chosen and
+  source: constitution-native-village-of-kwigillingok-1949-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1949-10-24'
+  locator: Section 2
+  document_version:
+    document: native-village-of-kwigillingok-constitution
+    version: 1949-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Scan is so garbled that most governing-body passages are unreadable; facts are given only for the passages legible enough to quote, with OCR errors kept.'
+- aspect: head-of-government
+  value: President
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  verification: bulk-import
+  as_of: '2026-11-20'
+  locator: Native Village of Kwigillingok
+  note: The title of the leader's office as the federal directory lists it; the holder's name is not recorded.
+- aspect: amendment
+  value: Majority vote of Village members in an election
+  quote: tno Village ex-'P.oors voting in sn electee n calic ti by the tocro tary of tho
+  source: constitution-native-village-of-kwigillingok-1949-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1949-10-24'
+  locator: Article VI
+  document_version:
+    document: native-village-of-kwigillingok-constitution
+    version: 1949-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Scan is so garbled that most governing-body passages are unreadable; facts are given only for the passages legible enough to quote, with OCR errors kept.'
+- aspect: secretarial-approval
+  value: Required for amendments
+  quote: aro approved by tho Cecrotury of tec interior and by a mjority voto of
+  source: constitution-native-village-of-kwigillingok-1949-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1949-10-24'
+  locator: Article VI
+  document_version:
+    document: native-village-of-kwigillingok-constitution
+    version: 1949-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Scan is so garbled that most governing-body passages are unreadable; facts are given only for the passages legible enough to quote, with OCR errors kept.'
 justice_institutions:
 - kind: tribal-court
   name: Tribal Court

@@ -68,6 +68,63 @@ searches:
     held no lead.
 - date: '2026-11-23'
   searched_by: Claude (AI assistant)
+  method: browser
+  place_kind: national-indian-law-library
+  address: https://www.narf.org/nill/codes/death_valley/
+  query: mediation, arbitration, peacemaking, circles, elders, dispute resolution wording
+  outcome: not-found
+  reason: Page lists only the Enrollment and Election ordinances and 1988 ordinances on water and garbage
+    fees; no dispute resolution wording.
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: browser
+  place_kind: web-search
+  address: 'WebSearch: Timbisha Shoshone Tribe tribal court OR code OR constitution "dispute resolution"
+    OR mediation'
+  query: dispute resolution, mediation, peacemaking, code or court for this nation
+  outcome: not-found
+  reason: Search returned only titles and links, mostly the NARF nation page and generic Alaska tribal
+    court lists, with no page showing dispute resolution wording for this nation.
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: web-archive-index
+  address: https://web.archive.org/cdx/search/cdx?url=timbisha.com/*&fl=original,timestamp,mimetype,statuscode&filter=statuscode:200&collapse=urlkey&limit=5000
+  query: archived captures of the site, fetched by the fetch archived copies workflow
+  outcome: not-found
+  reason: The capture index lists 1037 archived addresses for timbisha.com/*; those whose address names
+    a code, law, court or dispute resolution page were fetched in this retry or are listed in next steps.
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: web-archive
+  address: https://web.archive.org/web/20260202024211id_/http://www.timbisha.com/images/Documents/election%20ordinance.pdf
+  query: fetched by the fetch archived copies workflow; searched for dispute resolution, mediation, arbitration,
+    peacemaking, circles, elders' courts and restorative justice
+  outcome: scanned-unreadable
+  reason: Archived copy (capture of 2026-02-02) is a PDF with no text layer; it was not read from page
+    images in this retry.
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: web-archive
+  address: https://web.archive.org/web/20260202024214id_/http://www.timbisha.com/images/Documents/enrollment%20ordinance.pdf
+  query: fetched by the fetch archived copies workflow; searched for dispute resolution, mediation, arbitration,
+    peacemaking, circles, elders' courts and restorative justice
+  outcome: scanned-unreadable
+  reason: Archived copy (capture of 2026-02-02) is a PDF with no text layer; it was not read from page
+    images in this retry.
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: web-archive
+  address: https://web.archive.org/web/2026id_/https://timbisha.com/newsite/wp-content/uploads/2020/10/Constitution-of-the-Timbisha-Shoshone-Tribe.pdf
+  query: fetched by the fetch archived copies workflow; searched for dispute resolution, mediation, arbitration,
+    peacemaking, circles, elders' courts and restorative justice
+  outcome: scanned-unreadable
+  reason: Archived copy is a PDF with no text layer; it was not read from page images in this retry.
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
   method: script
   place_kind: web-archive
   address: https://web.archive.org/web/20260202024211/https://www.timbisha.com/images/Documents/election%20ordinance.pdf

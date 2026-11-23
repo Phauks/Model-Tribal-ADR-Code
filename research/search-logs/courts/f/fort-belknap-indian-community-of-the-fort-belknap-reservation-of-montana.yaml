@@ -1,6 +1,6 @@
 profile: content/tribes/f/fort-belknap-indian-community-of-the-fort-belknap-reservation-of-montana.yaml
 topic: courts
-status: none-found
+status: found
 last_searched: '2026-11-23'
 searches:
 - date: '2026-11-21'
@@ -184,11 +184,92 @@ searches:
   reason: Search returned no official Fort Belknap court page beyond the nation's Courts page, which names no court.
 - date: '2026-11-23'
   searched_by: Claude (AI assistant)
+  method: ai-review
+  place_kind: web-search
+  address: web search
+  query: Fort Belknap Tribal Court Montana
+  outcome: found
+  reason: 'Second search: Every service listed for this nation that the first pass left without a link:
+    The results included https://ftbelknap.org/courts, the Courts page of the nation''s website.'
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: nation-website
+  address: https://ftbelknap.org/courts
+  query: 'scripts/review/service_links.py second: Fort Belknap; Courts'
+  outcome: found
+  reason: 'Second search: Every service listed for this nation that the first pass left without a link:
+    Status 200; the nation''s page headed "Courts" carries the Law and Order Code and the court''s filing
+    forms (petitions, filing schedule, request for court document); now the service''s link.'
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: state-court-directory
+  address: https://indianlaw.mt.gov/cc/index
+  query: 'scripts/review/service_links.py second: Chippewa Cree; Fort Belknap'
+  outcome: dead-link
+  reason: 'Second search: Every service listed for this nation that the first pass left without a link:
+    The Montana Indian Law portal address from the search results redirected to a "not found" page on
+    mt.gov (status 404).'
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: ai-review
+  place_kind: web-search
+  address: web search
+  query: Montana courts tribal courts directory Chippewa Cree Fort Belknap state law library
+  outcome: not-found
+  reason: 'Second search: Every service listed for this nation that the first pass left without a link:
+    No Montana court system list of tribal courts came up; the Montana Indian Law portal and legal-aid
+    pages name the Tribes, not court directory entries.'
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: ai-review
+  place_kind: web-search
+  address: web search
+  query: National American Indian Court Judges Association tribal court directory
+  outcome: not-found
+  reason: 'Second search: Every service listed for this nation that the first pass left without a link:
+    The association''s site shows programs, membership and regions; it publishes no directory of tribal
+    courts, so it lists no court for this nation.'
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: ai-review
+  place_kind: web-search
+  address: web search
+  query: Montana tribal state court forum members tribal courts list courts.mt.gov
+  outcome: not-found
+  reason: 'Second search: Every service listed for this nation that the first pass left without a link:
+    No Montana court system list of tribal courts came up; the results were the Montana Indian Law portal
+    (its addresses now redirect to a "not found" page), other Tribes'' court pages and state handbooks.'
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: ai-review
+  place_kind: project-capture
+  address: research/reviews/2026-11-22-service-links.json
+  outcome: found
+  reason: 'Second search: “Tribal Court”: Claude weighed what the second search found against the lead
+    author''s order (own page, then directory entry): own-page, https://ftbelknap.org/courts.'
+  records:
+  - research/reviews/2026-11-22-service-links.json#service-086
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: ai-review
+  place_kind: project-capture
+  address: research/reviews/2026-11-22-service-links.json
+  outcome: found
+  reason: 'Second search: “Fort Belknap Tribal Court”: Claude weighed what the second search found against
+    the lead author''s order (own page, then directory entry): own-page, https://ftbelknap.org/courts.'
+  records:
+  - research/reviews/2026-11-22-service-links.json#service-087
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
   method: script
   place_kind: web-archive
   address: https://web.archive.org/web/20261114195053/https://ftbelknap.org/
   query: 'retry of an address that failed earlier: a direct request, then the Wayback Machine copy'
   outcome: not-found
   reason: Read the Wayback Machine copy of 2026-11-14 (""); it shows no court.
-next_steps: 'Open by hand in a browser, or ask the nation''s office for: https://indianlaw.mt.gov/fb (no
-  readable copy on 2026-11-23, directly or in the Wayback Machine).'
+next_steps: 'Not confirmed in the Nov. 22, 2026 court review (the lead author decides): Tribal Court (court-068,
+  not-found-after-search); Fort Belknap Tribal Court (court-069, not-found-after-search). No page or official
+  directory entry was found on 2026-11-22 for “Tribal Court”; “Fort Belknap Tribal Court” (research/reviews/2026-11-22-service-links.json).
+  The second search of 2026-11-23 linked “Tribal Court”; “Fort Belknap Tribal Court” (research/reviews/2026-11-22-service-links.json).'

@@ -193,6 +193,14 @@ federal_administration:
   verification: bulk-import
   as_of: '2026-11-20'
   locator: Reno-Sparks Indian Colony, Nevada
+indian_health_service:
+- area: Phoenix
+  source: indian-health-service-phoenix-tribal-information
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  locator: '"Arizona Tribes" / "Nevada and Utah Tribes" lists'
+  note: 'Listed as "Reno-Sparks Indian Colony". Also listed under the same Area in: indian-health-service-self-governance-tribes. Also on the Indian Health Service Self-Governance Tribes list (Reno-Sparks Indian Colony (2014)); the list does not say which service unit or programs the compact covers.'
 government_structure:
 - kind: indian-reorganization-act
   detail: Listed as "The Reno-Sparks Indian Colony, Nevada" among organizations under constitutions approved
@@ -217,6 +225,159 @@ government_structure:
   as_of: '1936'
   locator: preamble / approval and certification of adoption
   note: Historical constitution; a later constitution may have replaced it.
+governance:
+- aspect: form
+  value: Constitution and by-laws under the Indian Reorganization Act
+  quote: secure certain privileges and powers offered to us by the Indian Reorganization Act
+  source: university-of-oklahoma-indian-reorganization-act-rscons
+  confidence: medium
+  verification: read-in-full
+  as_of: '1935-11-14'
+  locator: Preamble
+  document_version:
+    document: reno-sparks-indian-colony-constitution
+    version: 1935-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Certification dates ratification to December 16, 1935 and the Secretary''s approval to January 15, 1936.'
+- aspect: governing-body
+  value: Reno-Sparks Indian Council
+  quote: The governing body under this constitution shall be the Reno-Sparks Indian Council which shall be composed of six
+  source: university-of-oklahoma-indian-reorganization-act-rscons
+  confidence: medium
+  verification: read-in-full
+  as_of: '1935-11-14'
+  locator: Article III, Section 1
+  document_version:
+    document: reno-sparks-indian-colony-constitution
+    version: 1935-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Certification dates ratification to December 16, 1935 and the Secretary''s approval to January 15, 1936.'
+- aspect: governing-body-size
+  value: 6 members, 3 per district in two districts
+  quote: composed of six members who shall be chosen by secret ballot by the qualified voters of the Reno-Sparks Colony
+  source: university-of-oklahoma-indian-reorganization-act-rscons
+  confidence: medium
+  verification: read-in-full
+  as_of: '1935-11-14'
+  locator: Article III, Section 1
+  document_version:
+    document: reno-sparks-indian-colony-constitution
+    version: 1935-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Certification dates ratification to December 16, 1935 and the Secretary''s approval to January 15, 1936.'
+- aspect: governing-body-selection
+  value: Elected by secret ballot, by district
+  quote: members who shall be chosen by secret ballot by the qualified voters of the Reno-Sparks Colony
+  source: university-of-oklahoma-indian-reorganization-act-rscons
+  confidence: medium
+  verification: read-in-full
+  as_of: '1935-11-14'
+  locator: Article III, Section 1
+  document_version:
+    document: reno-sparks-indian-colony-constitution
+    version: 1935-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Certification dates ratification to December 16, 1935 and the Secretary''s approval to January 15, 1936.'
+- aspect: governing-body-term
+  value: 2 years
+  quote: Members of the Reno-Sparks Indian Council shall be elected by secret ballot for a term of two years.
+  source: university-of-oklahoma-indian-reorganization-act-rscons
+  confidence: medium
+  verification: read-in-full
+  as_of: '1935-11-14'
+  locator: Article III, Section 7
+  document_version:
+    document: reno-sparks-indian-colony-constitution
+    version: 1935-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Certification dates ratification to December 16, 1935 and the Secretary''s approval to January 15, 1936.'
+- aspect: head-of-government
+  value: Chairman
+  quote: shall elect from within its own members a chairman and a vice-chairman
+  source: university-of-oklahoma-indian-reorganization-act-rscons
+  confidence: medium
+  verification: read-in-full
+  as_of: '1935-11-14'
+  locator: Article III, Section 5
+  document_version:
+    document: reno-sparks-indian-colony-constitution
+    version: 1935-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Certification dates ratification to December 16, 1935 and the Secretary''s approval to January 15, 1936.'
+- aspect: head-of-government
+  value: Chairperson
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  verification: bulk-import
+  as_of: '2026-11-20'
+  locator: Reno-Sparks Indian Colony, Nevada
+  note: The title of the leader's office as the federal directory lists it; the holder's name is not recorded. Listed as “Chairman”; recorded without the holder's own form of the title.
+- aspect: head-of-government-selection
+  value: Elected by the council from its own members
+  quote: shall elect from within its own members a chairman and a vice-chairman
+  source: university-of-oklahoma-indian-reorganization-act-rscons
+  confidence: medium
+  verification: read-in-full
+  as_of: '1935-11-14'
+  locator: Article III, Section 5
+  document_version:
+    document: reno-sparks-indian-colony-constitution
+    version: 1935-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Certification dates ratification to December 16, 1935 and the Secretary''s approval to January 15, 1936.'
+- aspect: other-officers
+  value: Vice-chairman, Secretary, Treasurer
+  quote: from within or without its own members a secretary and treasurer
+  source: university-of-oklahoma-indian-reorganization-act-rscons
+  confidence: medium
+  verification: read-in-full
+  as_of: '1935-11-14'
+  locator: Article III, Section 5
+  document_version:
+    document: reno-sparks-indian-colony-constitution
+    version: 1935-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Certification dates ratification to December 16, 1935 and the Secretary''s approval to January 15, 1936.'
+- aspect: elections
+  value: Biennially on the third Saturday of December
+  quote: elections shall be held by the qualified voters of the colony biennially on the third Saturday of December.
+  source: university-of-oklahoma-indian-reorganization-act-rscons
+  confidence: medium
+  verification: read-in-full
+  as_of: '1935-11-14'
+  locator: Article III, Section 7
+  document_version:
+    document: reno-sparks-indian-colony-constitution
+    version: 1935-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Certification dates ratification to December 16, 1935 and the Secretary''s approval to January 15, 1936.'
+- aspect: judiciary
+  value: Indian court, established by ordinance
+  quote: providing for the maintenance of law and order and the administration of justice by the establishment of an Indian court, and defining its duties and powers.
+  source: university-of-oklahoma-indian-reorganization-act-rscons
+  confidence: medium
+  verification: read-in-full
+  as_of: '1935-11-14'
+  locator: Article IV, Section 1(h)
+  document_version:
+    document: reno-sparks-indian-colony-constitution
+    version: 1935-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Certification dates ratification to December 16, 1935 and the Secretary''s approval to January 15, 1936.'
+- aspect: amendment
+  value: Election called by Secretary on request of one-fourth of eligible voters
+  quote: It shall be the duty of the Secretary of the Interior to call an election upon the request of one-fourth (1/4) of the eligible voters of the colony.
+  source: university-of-oklahoma-indian-reorganization-act-rscons
+  confidence: medium
+  verification: read-in-full
+  as_of: '1935-11-14'
+  locator: Article V, Section 1
+  document_version:
+    document: reno-sparks-indian-colony-constitution
+    version: 1935-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Certification dates ratification to December 16, 1935 and the Secretary''s approval to January 15, 1936.'
+- aspect: secretarial-approval
+  value: Required for amendments
+  quote: and the Secretary of the Interior shall have approved same
+  source: university-of-oklahoma-indian-reorganization-act-rscons
+  confidence: medium
+  verification: read-in-full
+  as_of: '1935-11-14'
+  locator: Article III
+  document_version:
+    document: reno-sparks-indian-colony-constitution
+    version: 1935-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Certification dates ratification to December 16, 1935 and the Secretary''s approval to January 15, 1936.'
 governing_documents:
 - kind: law-code
   title: Reno-Sparks Indian Colony - Tribal Code, Table of Contents
@@ -465,6 +626,22 @@ jurisdiction:
     the notice prints its table as page images, so nation names were read from images and matched to the
     roster. Row re-read on 2026-11-22 from the page image (the govinfo PDF has no text layer for the table);
     verification level unchanged because the name was not matched word for word in machine-read text.'
+- topic: public-law-280
+  value: optional-state
+  detail: Nevada's 1955 act assumed civil and criminal jurisdiction over Indian country in all counties, unless a county board petitioned the Governor before the effective date (90 days after July 1, 1955) and the Governor excluded that county's Indian country by proclamation. (1955 Nev. Stat. ch. 198, §§ 1-3, at 297.)
+  source: nevada-statutes-1955-chapter-198
+  confidence: high
+  verification: read-in-full
+  locator: 1955 Nev. Stat. ch. 198, §§ 1-2, at 297
+  note: 'Mapped to the nations whose lands appear in the 1975 and 1988 retrocession notices (see those facts). Odger''s Ranch and Ruby Valley Allotment, named in the 1975 notice, are not mapped because the research could not tie them to a roster entry. The 1955 act was later folded into NRS 41.430 (history line "1:198:1955"). Also cites: davis-v-warden-1972.'
+- topic: public-law-280
+  value: optional-state
+  detail: Since July 1, 1974 NRS 41.430 applies only where the tribe consented, by referendum under sections 6-14 of the 1973 act or under 25 U.S.C. § 1326; where a tribe refused, Nevada "recedes from and relinquishes" jurisdiction. The Indian affairs commission was to hold the referenda by June 4, 1974. (1973 Nev. Stat. ch. 601, §§ 1, 6, at 1051-53; Nev. Rev. Stat. § 41.430(3)-(4).)
+  source: nevada-statutes-1973-chapter-601
+  confidence: high
+  verification: read-in-full
+  locator: 1973 Nev. Stat. ch. 601, § 1, subsec. 4, at 1052; NRS 41.430(4)
+  note: 'Sections 1-5 took effect July 1, 1974 (§ 16). The current NRS text still carries this language. Goldberg (2010) says no tribe asked to continue; the 1976 AIPRC report says Ely Colony alone chose to keep state jurisdiction. Goldberg''s date for the assumption (1967) conflicts with the Statutes (1955). Also cites: nevada-revised-statutes-41-430.'
 memberships:
 - organization: Inter-Tribal Council of Nevada
   source: inter-tribal-council-of-nevada-member-tribes

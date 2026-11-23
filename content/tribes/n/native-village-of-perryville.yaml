@@ -158,6 +158,23 @@ federal_administration:
   verification: bulk-import
   as_of: '2026-11-20'
   locator: Native Village of Perryville
+indian_health_service:
+- area: Alaska
+  source: indian-health-service-alaska-area-profile-bristol-bay-service-area
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  locator: '"Federally Recognized Tribes" list, Bristol Bay Service Area profile'
+  note: Listed as "Native Village of Perryville". Service area operator statement is from the same profile; profile is old (about 2007) and the operator statement may have changed.
+- area: Alaska
+  service_unit: Bristol Bay Service Area
+  source: indian-health-service-alaska-area-profile-bristol-bay-service-area
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  locator: '"Federally Recognized Tribes" list, Bristol Bay Service Area profile'
+  note: 'The source''s words: "Native Village of Perryville".'
+  operator: tribal
 government_structure:
 - kind: alaska-indian-reorganization-act
   detail: Constitution (Native Village of Perryville, Alaska) (approved 1950) states it was adopted under
@@ -171,6 +188,75 @@ government_structure:
   as_of: '1950'
   locator: preamble / approval and certification of adoption
   note: Historical constitution; a later constitution may have replaced it.
+governance:
+- aspect: form
+  value: Constitution and By-laws by authority of the act of Congress of June 18, 1834, as amended
+  quote: by authority of the act of Congress of June 18, 1834, as
+  source: constitution-native-village-of-perryville-1950-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1950-09-01'
+  locator: Preamble
+  document_version:
+    document: native-village-of-perryville-constitution
+    version: 1950-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Garbled scan; the governing body''s size, selection and term (Article 3) are unreadable, and the act date is printed as June 18, 1834 (likely 1934).'
+- aspect: governing-body
+  value: Governing body (kind chosen by Village membership)
+  quote: Bhall decide what kind of governing body it wishes to set up to speak
+  source: constitution-native-village-of-perryville-1950-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1950-09-01'
+  locator: Article 3, Section 1
+  document_version:
+    document: native-village-of-perryville-constitution
+    version: 1950-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Garbled scan; the governing body''s size, selection and term (Article 3) are unreadable, and the act date is printed as June 18, 1834 (likely 1934).'
+- aspect: head-of-government
+  value: President
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  verification: bulk-import
+  as_of: '2026-11-20'
+  locator: Native Village of Perryville
+  note: The title of the leader's office as the federal directory lists it; the holder's name is not recorded.
+- aspect: voting-age
+  value: '21'
+  quote: members of the Village 21 years of
+  source: constitution-native-village-of-perryville-1950-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1950-09-01'
+  locator: Article 5, Section 1
+  document_version:
+    document: native-village-of-perryville-constitution
+    version: 1950-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Garbled scan; the governing body''s size, selection and term (Article 3) are unreadable, and the act date is printed as June 18, 1834 (likely 1934).'
+- aspect: amendment
+  value: Majority vote of Village members in election called by Secretary of the Interior
+  quote: changes are approved by the Secretary of the Interior and by a ma-
+  source: constitution-native-village-of-perryville-1950-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1950-09-01'
+  locator: Article 6
+  document_version:
+    document: native-village-of-perryville-constitution
+    version: 1950-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Garbled scan; the governing body''s size, selection and term (Article 3) are unreadable, and the act date is printed as June 18, 1834 (likely 1934).'
+- aspect: secretarial-approval
+  value: Required for amendments
+  quote: changes are approved by the Secretary of the Interior and by a ma-
+  source: constitution-native-village-of-perryville-1950-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1950-09-01'
+  locator: Article 6
+  document_version:
+    document: native-village-of-perryville-constitution
+    version: 1950-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Garbled scan; the governing body''s size, selection and term (Article 3) are unreadable, and the act date is printed as June 18, 1834 (likely 1934).'
 governing_documents:
 - kind: constitution
   title: Constitution

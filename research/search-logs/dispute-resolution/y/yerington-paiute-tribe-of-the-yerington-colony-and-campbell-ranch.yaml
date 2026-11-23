@@ -51,6 +51,61 @@ searches:
     held no lead.
 - date: '2026-11-23'
   searched_by: Claude (AI assistant)
+  method: browser
+  place_kind: national-indian-law-library
+  address: https://nill.narf.org/codes/yeringtonpaiutecode/index.html
+  query: mediation, arbitration, peacemaking, circles, elders, dispute resolution wording
+  outcome: not-found
+  reason: Table of contents lists Tribal Court, Domestic Relations, Juvenile, Enrollment and other titles
+    (some Not Available); full text not online; no dispute resolution wording.
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: browser
+  place_kind: web-search
+  address: 'WebSearch: Yerington Paiute Tribe tribal court OR code OR "dispute resolution" OR mediation'
+  query: dispute resolution, mediation, peacemaking, code or court for this nation
+  outcome: not-found
+  reason: Search returned only titles and links, mostly the NARF nation page and generic Alaska tribal
+    court lists, with no page showing dispute resolution wording for this nation.
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: web-archive-index
+  address: https://web.archive.org/cdx/search/cdx?url=yeringtonpaiute.us/*&fl=original,timestamp,mimetype,statuscode&filter=statuscode:200&collapse=urlkey&limit=5000
+  query: archived captures of the site, fetched by the fetch archived copies workflow
+  outcome: not-found
+  reason: The capture index lists 1327 archived addresses for yeringtonpaiute.us/*; those whose address
+    names a code, law, court or dispute resolution page were fetched in this retry or are listed in next
+    steps.
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: web-archive
+  address: https://web.archive.org/web/20261117043444id_/https://yeringtonpaiute.us/
+  query: fetched by the fetch archived copies workflow; searched for dispute resolution, mediation, arbitration,
+    peacemaking, circles, elders' courts and restorative justice
+  outcome: error
+  reason: The archived copy could not be fetched in any round (202, capture not ready); worth trying again.
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: web-archive
+  address: https://web.archive.org/web/20240226001436id_/https://yeringtonpaiute.us/services/court/
+  query: fetched by the fetch archived copies workflow; searched for dispute resolution, mediation, arbitration,
+    peacemaking, circles, elders' courts and restorative justice
+  outcome: not-found
+  reason: 'Archived copy (capture of 2024-02-26) read by script: no dispute resolution term in its text.'
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: web-archive
+  address: https://web.archive.org/web/20191016182124id_/http://yeringtonpaiute.us:80/index.php/tribal-court
+  query: fetched by the fetch archived copies workflow; searched for dispute resolution, mediation, arbitration,
+    peacemaking, circles, elders' courts and restorative justice
+  outcome: not-found
+  reason: 'Archived copy (capture of 2019-10-16) read by script: no dispute resolution term in its text.'
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
   method: script
   place_kind: nation-website
   address: https://yeringtonpaiute.us/
@@ -58,5 +113,4 @@ searches:
   outcome: blocked
   reason: 'Still not readable on 2026-11-23 (direct request: HTTP 403), and the Wayback Machine answered
     202 (copy not ready).'
-next_steps: 'Open by hand in a browser, or ask the nation''s office for: https://yeringtonpaiute.us/ (no
-  readable copy on 2026-11-23, directly or in the Wayback Machine).'
+next_steps: 'Try again later, or open by hand in a browser: https://web.archive.org/web/20261117043444id_/https://yeringtonpaiute.us/.'

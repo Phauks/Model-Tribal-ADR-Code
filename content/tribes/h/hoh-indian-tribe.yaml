@@ -138,6 +138,14 @@ contacts:
   verification: title-only
   as_of: '2026-11-22'
   note: The nation's own website links this page as "Contact". The page answered with a bot check, so only the link was read. Found by scripts/tribes/find_contacts.py.
+- kind: email-general
+  value: receptionist@hohtribe-nsn.org
+  label: General office email shown on the nation's website
+  source: hohtribe-nsn-government-administration
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: General office address, shown as a mailto link on the page. Found by scripts/tribes/find_emails_deep.mjs.
 official_images:
 - kind: logo
   image_link: https://hohtribe-nsn.org/wp-content/uploads/2020/04/cropped-logo-180x180.png
@@ -169,6 +177,23 @@ federal_administration:
   verification: bulk-import
   as_of: '2026-11-20'
   locator: Hoh Indian Tribe
+indian_health_service:
+- area: Portland
+  source: indian-health-service-portland-careers-brochure
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  locator: '"Tribes of Oregon, Washington and Idaho" list'
+  note: Listed as "Hoh Indian Tribe".
+governance:
+- aspect: head-of-government
+  value: Chairperson
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  verification: bulk-import
+  as_of: '2026-11-20'
+  locator: Hoh Indian Tribe
+  note: The title of the leader's office as the federal directory lists it; the holder's name is not recorded. Listed as “Chairwoman”; recorded without the holder's own form of the title.
 governing_documents:
 - kind: law-code
   title: Hoh Indian Tribe
@@ -348,6 +373,17 @@ jurisdiction:
     its table as page images, so nation names were read from images and matched to the roster. Row re-read
     on 2026-11-22 from the page image, and the name was found word for word in the notice''s machine-read
     (OCR) text by the second gap review (research/reviews/2026-11-22-icwa-agents.csv).'
+land_establishment:
+- land_area: Hoh River Reserve, Washington
+  method: executive-order
+  instrument: Exec. Order of Sept. 11, 1893, 1 Kappler 916
+  date: '1893-09-11'
+  detail: First set aside
+  source: executive-order-1893-09-11-hoh-reservation
+  confidence: high
+  verification: read-in-full
+  locator: 1 Kappler 917
+  note: 'The instrument reads: “withdrawn from sale and settlement and set apart as a reservation for the Hoh Indians not now residing upon any Indian reservation”.'
 memberships:
 - organization: Northwest Indian Fisheries Commission
   source: northwest-indian-fisheries-commission-member-tribes

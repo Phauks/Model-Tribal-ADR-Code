@@ -1,7 +1,7 @@
 profile: content/tribes/s/shoshone-bannock-tribes-of-the-fort-hall-reservation.yaml
 topic: gaming-dispute-procedures
-status: partly-searched
-last_searched: '2026-11-22'
+status: found
+last_searched: '2026-11-23'
 searches:
 - date: '2026-11-22'
   searched_by: Claude (AI assistant)
@@ -33,7 +33,49 @@ searches:
   outcome: scanned-unreadable
   reason: This amendment listed 2010-02-16 has no text layer on most pages (29 of 29 pages have no text
     layer; no OCR available).
-next_steps: Read the scanned ordinance listed 1994-10-18 (https://www.nigc.gov/wp-content/uploads/2025/03/shoshonebannocktribe-shoshonebannockord101894.pdf)
-  with OCR or by hand. Read the scanned amendment listed 2006-10-16 (https://www.nigc.gov/wp-content/uploads/2025/03/shoshonebannocktribe-shoshonebannockamd101608.pdf)
-  with OCR or by hand. Read the scanned amendment listed 2010-02-16 (https://www.nigc.gov/wp-content/uploads/2025/03/shoshonebannocktribe-Ord-02.16.10.pdf)
-  with OCR or by hand.
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: ai-review
+  place_kind: nigc-ordinance-pdf
+  address: https://www.nigc.gov/wp-content/uploads/2025/03/shoshonebannocktribe-Ord-02.16.10.pdf
+  query: 'read scanned PDF page images: patron or gaming public disputes, complaints and claims, grievances,
+    licensing hearings framed as disputes, arbitration, mediation, peacemaking and Tribal court review'
+  outcome: found
+  reason: 'Small-model reviewers read PDF pages 1-29 of 29 of this amendment listed 2010-02-16 as page
+    images (it has no text layer) and recorded 3 procedure(s): licensing-hearing, other, patron-dispute.'
+  records:
+  - research/reviews/2026-11-22-ordinance-disputes.json#shoshone-bannock-tribes-amendment-2010-02-16#p1
+  - research/reviews/2026-11-22-ordinance-disputes.json#shoshone-bannock-tribes-amendment-2010-02-16#p2
+  - research/reviews/2026-11-22-ordinance-disputes.json#shoshone-bannock-tribes-amendment-2010-02-16#p3
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: ai-review
+  place_kind: nigc-ordinance-pdf
+  address: https://www.nigc.gov/wp-content/uploads/2025/03/shoshonebannocktribe-shoshonebannockamd101608.pdf
+  query: 'read scanned PDF page images: patron or gaming public disputes, complaints and claims, grievances,
+    licensing hearings framed as disputes, arbitration, mediation, peacemaking and Tribal court review'
+  outcome: found
+  reason: 'Small-model reviewers read PDF pages 1-37 of 37 of this amendment listed 2006-10-16 as page
+    images (it has no text layer) and recorded 6 procedure(s): employee-grievance, licensing-hearing,
+    other, patron-dispute.'
+  records:
+  - research/reviews/2026-11-22-ordinance-disputes.json#shoshone-bannock-tribes-amendment-2006-10-16#p1
+  - research/reviews/2026-11-22-ordinance-disputes.json#shoshone-bannock-tribes-amendment-2006-10-16#p2
+  - research/reviews/2026-11-22-ordinance-disputes.json#shoshone-bannock-tribes-amendment-2006-10-16#p3
+  - research/reviews/2026-11-22-ordinance-disputes.json#shoshone-bannock-tribes-amendment-2006-10-16#p4
+  - research/reviews/2026-11-22-ordinance-disputes.json#shoshone-bannock-tribes-amendment-2006-10-16#p5
+  - research/reviews/2026-11-22-ordinance-disputes.json#shoshone-bannock-tribes-amendment-2006-10-16#p6
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: ai-review
+  place_kind: nigc-ordinance-pdf
+  address: https://www.nigc.gov/wp-content/uploads/2025/03/shoshonebannocktribe-shoshonebannockord101894.pdf
+  query: 'read scanned PDF page images: patron or gaming public disputes, complaints and claims, grievances,
+    licensing hearings framed as disputes, arbitration, mediation, peacemaking and Tribal court review'
+  outcome: not-found
+  reason: Small-model reviewers read PDF pages 1-28 of 28 of this ordinance listed 1994-10-18 as page
+    images (it has no text layer) and found no dispute procedure (The passages are licensing and revocation
+    procedures, an employment eligibility power, injunction and seizure provisions and a bingo winner-verification
+    rule; none is framed as a patron, employee or other dispute procedure).
+next_steps: The lead author decides the procedures in research/reviews/2026-11-22-ordinance-disputes.csv;
+  the nation's own current ordinance may differ from the list's copy.

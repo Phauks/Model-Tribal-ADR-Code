@@ -120,6 +120,14 @@ contacts:
   verification: title-only
   as_of: '2026-11-22'
   note: The nation's own website links this page as "Contact". Its title is "Round Valley Indian Tribes - Contact Us". Found by scripts/tribes/find_contacts.py.
+- kind: email-general
+  value: tribalreceptionist@rvit.org
+  label: General office email shown on the nation's website
+  source: rvit-government-tribal-council
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: General office address, shown as a mailto link on the page. Found by scripts/tribes/find_emails_deep.mjs.
 official_images:
 - kind: logo
   image_link: https://www.rvit.org/assets/logo_rvit_no_center.svg
@@ -150,6 +158,275 @@ federal_administration:
   verification: bulk-import
   as_of: '2026-11-20'
   locator: Round Valley Indian Tribes, Round Valley Reservation, California
+indian_health_service:
+- area: California
+  source: indian-health-service-california-federally-recognized-tribes
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  locator: regional lists (West Central, Southern, Northern, East Central)
+  note: Listed as "Round Valley Indian Tribes, Round Valley Reservation, California".
+governance:
+- aspect: governing-body
+  value: Round Valley Tribal Council
+  quote: The governing body of the Tribe shall be kncwn as the Round Valley Tribal Council which shall consist of seven (7)
+  source: constitution-round-valley-indian-tribes-round-valley-reservation-1994-text-2
+  confidence: medium
+  verification: read-in-full
+  as_of: '1994-09-14'
+  locator: Article IV, Section X
+  document_version:
+    document: round-valley-indian-tribes-round-valley-reservation-constitution
+    version: 1994-text-2
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: The extract begins with an unfilled 2005 Proposed Amendment No. 1 page (voting age) before the 1994 constitution, which is the text read here.'
+- aspect: governing-body-size
+  value: 7 members
+  quote: which shall consist of seven (7) members including the President and Vioe President.
+  source: constitution-round-valley-indian-tribes-round-valley-reservation-1994-text-2
+  confidence: medium
+  verification: read-in-full
+  as_of: '1994-09-14'
+  locator: Article IV, Section X
+  document_version:
+    document: round-valley-indian-tribes-round-valley-reservation-constitution
+    version: 1994-text-2
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: The extract begins with an unfilled 2005 Proposed Amendment No. 1 page (voting age) before the 1994 constitution, which is the text read here.'
+- aspect: governing-body-selection
+  value: Elected by highest number of votes
+  quote: The candidates receiving the highest number of votes for the available positions shall be declared the winners for those positions.
+  source: constitution-round-valley-indian-tribes-round-valley-reservation-1994-text-2
+  confidence: medium
+  verification: read-in-full
+  as_of: '1994-09-14'
+  locator: Article VIII, Section 12
+  document_version:
+    document: round-valley-indian-tribes-round-valley-reservation-constitution
+    version: 1994-text-2
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: The extract begins with an unfilled 2005 Proposed Amendment No. 1 page (voting age) before the 1994 constitution, which is the text read here.'
+- aspect: governing-body-term
+  value: 4 years, staggered
+  quote: The terms of office for all Tribal Council members including the President and Vice President shall be four (4) years or until a successor is chosen and seated.
+  source: constitution-round-valley-indian-tribes-round-valley-reservation-1994-text-2
+  confidence: medium
+  verification: read-in-full
+  as_of: '1994-09-14'
+  locator: Article IV, Section 2
+  document_version:
+    document: round-valley-indian-tribes-round-valley-reservation-constitution
+    version: 1994-text-2
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: The extract begins with an unfilled 2005 Proposed Amendment No. 1 page (voting age) before the 1994 constitution, which is the text read here.'
+- aspect: head-of-government
+  value: President
+  quote: The Tribal Council shall select a President and a Vice President
+  source: constitution-round-valley-indian-tribes-round-valley-reservation-1994-text-2
+  confidence: medium
+  verification: read-in-full
+  as_of: '1994-09-14'
+  locator: Article IV, Section 3
+  document_version:
+    document: round-valley-indian-tribes-round-valley-reservation-constitution
+    version: 1994-text-2
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: The extract begins with an unfilled 2005 Proposed Amendment No. 1 page (voting age) before the 1994 constitution, which is the text read here.'
+- aspect: head-of-government
+  value: President
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  verification: bulk-import
+  as_of: '2026-11-20'
+  locator: Round Valley Indian Tribes, Round Valley Reservation, California
+  note: The title of the leader's office as the federal directory lists it; the holder's name is not recorded.
+- aspect: head-of-government-selection
+  value: Selected by the Tribal Council from its members
+  quote: The Tribal Council shall select a President and a Vice President
+  source: constitution-round-valley-indian-tribes-round-valley-reservation-1994-text-2
+  confidence: medium
+  verification: read-in-full
+  as_of: '1994-09-14'
+  locator: Article IV, Section 3
+  document_version:
+    document: round-valley-indian-tribes-round-valley-reservation-constitution
+    version: 1994-text-2
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: The extract begins with an unfilled 2005 Proposed Amendment No. 1 page (voting age) before the 1994 constitution, which is the text read here.'
+- aspect: head-of-government-term
+  value: 4 years
+  quote: shall each serve a four (4) year term or until successors are chosen and
+  source: constitution-round-valley-indian-tribes-round-valley-reservation-1994-text-2
+  confidence: medium
+  verification: read-in-full
+  as_of: '1994-09-14'
+  locator: Article IV, Section 3
+  document_version:
+    document: round-valley-indian-tribes-round-valley-reservation-constitution
+    version: 1994-text-2
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: The extract begins with an unfilled 2005 Proposed Amendment No. 1 page (voting age) before the 1994 constitution, which is the text read here.'
+- aspect: other-officers
+  value: Vice President, secretary, treasurer, sergeant-at-arms
+  quote: The Tribal Council shall select a secretary, a treasurer and a
+  source: constitution-round-valley-indian-tribes-round-valley-reservation-1994-text-2
+  confidence: medium
+  verification: read-in-full
+  as_of: '1994-09-14'
+  locator: Article IV, Section 3
+  document_version:
+    document: round-valley-indian-tribes-round-valley-reservation-constitution
+    version: 1994-text-2
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: The extract begins with an unfilled 2005 Proposed Amendment No. 1 page (voting age) before the 1994 constitution, which is the text read here.'
+- aspect: elections
+  value: First Tuesday of November in even-numbered years
+  quote: shall be held on the first Tuesday of November in even numbered years.
+  source: constitution-round-valley-indian-tribes-round-valley-reservation-1994-text-2
+  confidence: medium
+  verification: read-in-full
+  as_of: '1994-09-14'
+  locator: Article VIII, Section 1
+  document_version:
+    document: round-valley-indian-tribes-round-valley-reservation-constitution
+    version: 1994-text-2
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: The extract begins with an unfilled 2005 Proposed Amendment No. 1 page (voting age) before the 1994 constitution, which is the text read here.'
+- aspect: voting-age
+  value: '18'
+  quote: and who are age eighteen (18) or older on the date of any tribal
+  source: constitution-round-valley-indian-tribes-round-valley-reservation-1994-text-2
+  confidence: medium
+  verification: read-in-full
+  as_of: '1994-09-14'
+  locator: Article VIII, Section 6
+  document_version:
+    document: round-valley-indian-tribes-round-valley-reservation-constitution
+    version: 1994-text-2
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: The extract begins with an unfilled 2005 Proposed Amendment No. 1 page (voting age) before the 1994 constitution, which is the text read here.'
+- aspect: election-authority
+  value: Election Board
+  quote: Hie Tribal Council shall appoint an Election Board consisting of at least four (4) tribal members
+  source: constitution-round-valley-indian-tribes-round-valley-reservation-1994-text-2
+  confidence: medium
+  verification: read-in-full
+  as_of: '1994-09-14'
+  locator: Article VIII, Section 3
+  document_version:
+    document: round-valley-indian-tribes-round-valley-reservation-constitution
+    version: 1994-text-2
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: The extract begins with an unfilled 2005 Proposed Amendment No. 1 page (voting age) before the 1994 constitution, which is the text read here.'
+- aspect: separation-of-powers
+  value: Stated
+  quote: No person or group of persons charged with the exercise of powers properly belonging to one of these departments shall exercise any of the powers properly belonging to either of the others
+  source: constitution-round-valley-indian-tribes-round-valley-reservation-1994-text-2
+  confidence: medium
+  verification: read-in-full
+  as_of: '1994-09-14'
+  locator: Article III
+  document_version:
+    document: round-valley-indian-tribes-round-valley-reservation-constitution
+    version: 1994-text-2
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: The extract begins with an unfilled 2005 Proposed Amendment No. 1 page (voting age) before the 1994 constitution, which is the text read here.'
+- aspect: judiciary
+  value: Tribal Court and Tribal Court of Appeals
+  quote: the Judiciary which shall consist of a Tribal Court and a Tribal Ocurt of Appeals
+  source: constitution-round-valley-indian-tribes-round-valley-reservation-1994-text-2
+  confidence: medium
+  verification: read-in-full
+  as_of: '1994-09-14'
+  locator: Article VI, Section 1
+  document_version:
+    document: round-valley-indian-tribes-round-valley-reservation-constitution
+    version: 1994-text-2
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: The extract begins with an unfilled 2005 Proposed Amendment No. 1 page (voting age) before the 1994 constitution, which is the text read here.'
+- aspect: judicial-selection
+  value: Appointed by the Tribal Council
+  quote: The Tribal Council shall appoint one Chief Judge to the Tribal
+  source: constitution-round-valley-indian-tribes-round-valley-reservation-1994-text-2
+  confidence: medium
+  verification: read-in-full
+  as_of: '1994-09-14'
+  locator: Article VI, Section 6(a)
+  document_version:
+    document: round-valley-indian-tribes-round-valley-reservation-constitution
+    version: 1994-text-2
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: The extract begins with an unfilled 2005 Proposed Amendment No. 1 page (voting age) before the 1994 constitution, which is the text read here.'
+- aspect: judicial-term
+  value: Chief Judge 3 years, Associate Judges 2 years
+  quote: The Chief Judge s hall serve for a period of three (3) years.
+  source: constitution-round-valley-indian-tribes-round-valley-reservation-1994-text-2
+  confidence: medium
+  verification: read-in-full
+  as_of: '1994-09-14'
+  locator: Article VI, Section 6(a)
+  document_version:
+    document: round-valley-indian-tribes-round-valley-reservation-constitution
+    version: 1994-text-2
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: The extract begins with an unfilled 2005 Proposed Amendment No. 1 page (voting age) before the 1994 constitution, which is the text read here.'
+- aspect: judicial-independence
+  value: Pay may not be reduced during term
+  quote: The Tribal Council shall not diminish the compensation of any Judge or Justice during his or her term of office.
+  source: constitution-round-valley-indian-tribes-round-valley-reservation-1994-text-2
+  confidence: medium
+  verification: read-in-full
+  as_of: '1994-09-14'
+  locator: Article VI, Section 9
+  document_version:
+    document: round-valley-indian-tribes-round-valley-reservation-constitution
+    version: 1994-text-2
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: The extract begins with an unfilled 2005 Proposed Amendment No. 1 page (voting age) before the 1994 constitution, which is the text read here.'
+- aspect: judicial-independence
+  value: Removal only by vote of 6 council members
+  quote: only by a vote of at least six (6) members of the Tribal Council.
+  source: constitution-round-valley-indian-tribes-round-valley-reservation-1994-text-2
+  confidence: medium
+  verification: read-in-full
+  as_of: '1994-09-14'
+  locator: Article VI, Section 11(b)
+  document_version:
+    document: round-valley-indian-tribes-round-valley-reservation-constitution
+    version: 1994-text-2
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: The extract begins with an unfilled 2005 Proposed Amendment No. 1 page (voting age) before the 1994 constitution, which is the text read here.'
+- aspect: amendment
+  value: Majority vote in an election called by the Secretary of the Interior
+  quote: a majority vote of the qualified voters of the Tribe voting at an election called for that purpose by the Secretary of the Interior
+  source: constitution-round-valley-indian-tribes-round-valley-reservation-1994-text-2
+  confidence: medium
+  verification: read-in-full
+  as_of: '1994-09-14'
+  locator: Article XV, Section 1
+  document_version:
+    document: round-valley-indian-tribes-round-valley-reservation-constitution
+    version: 1994-text-2
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: The extract begins with an unfilled 2005 Proposed Amendment No. 1 page (voting age) before the 1994 constitution, which is the text read here.'
+- aspect: secretarial-approval
+  value: Required for amendments
+  quote: but no amendment shall becane effective until approved by the Secretary of the Interior
+  source: constitution-round-valley-indian-tribes-round-valley-reservation-1994-text-2
+  confidence: medium
+  verification: read-in-full
+  as_of: '1994-09-14'
+  locator: Article XV, Section 1
+  document_version:
+    document: round-valley-indian-tribes-round-valley-reservation-constitution
+    version: 1994-text-2
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: The extract begins with an unfilled 2005 Proposed Amendment No. 1 page (voting age) before the 1994 constitution, which is the text read here.'
+- aspect: recall-and-removal
+  value: Recall by petition of 33% of eligible voters
+  quote: percent (33%) of the eligible voters of the Tribe
+  source: constitution-round-valley-indian-tribes-round-valley-reservation-1994-text-2
+  confidence: medium
+  verification: read-in-full
+  as_of: '1994-09-14'
+  locator: Article IV, Section 11(b)
+  document_version:
+    document: round-valley-indian-tribes-round-valley-reservation-constitution
+    version: 1994-text-2
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: The extract begins with an unfilled 2005 Proposed Amendment No. 1 page (voting age) before the 1994 constitution, which is the text read here.'
+- aspect: recall-and-removal
+  value: Removal by Tribal Council for cause
+  quote: The Tribal Council shall remove a Council member for any of the following reasons
+  source: constitution-round-valley-indian-tribes-round-valley-reservation-1994-text-2
+  confidence: medium
+  verification: read-in-full
+  as_of: '1994-09-14'
+  locator: Article IV, Section 10(a)
+  document_version:
+    document: round-valley-indian-tribes-round-valley-reservation-constitution
+    version: 1994-text-2
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: The extract begins with an unfilled 2005 Proposed Amendment No. 1 page (voting age) before the 1994 constitution, which is the text read here.'
 governing_documents:
 - kind: law-code
   title: Tribal code
@@ -285,6 +562,17 @@ jurisdiction:
     from images and matched to the roster. Row re-read on 2026-11-22 from the page image (the govinfo
     PDF has no text layer for the table); verification level unchanged because the name was not matched
     word for word in machine-read text.'
+land_establishment:
+- land_area: Round Valley (Nome Cult) Reserve, California
+  method: other
+  instrument: Order of the Secretary of the Interior (Nov. 18, 1858), as recited in Commissioner's letter of Jan. 6, 1860, 1 Kappler 824-825
+  date: '1858-11-18'
+  detail: First set aside
+  source: letter-1860-01-06-round-valley-reserve
+  confidence: low
+  verification: inferred
+  locator: 1 Kappler 825
+  note: 'The instrument reads: “the entire valley of Nome Cult, designated by you as the Round Valley, was set apart and reserved for Indian purposes”. The Nov. 18, 1858 Commissioner''s letter to Superintendent Henley (1 Kappler 824-825) conveys the Secretary''s direction that "the entire Nome Cult Valley shall be retained as a reservation." The 1860 letter cited is the source read for the quotation. Later made one of the Act of Apr. 8, 1864 (13 Stat. 39) reservations; boundaries fixed by Exec. Orders (1870 onward). Not an executive order or statute in the first instance; confidence low.'
 review:
   status: drafted-from-public-sources
   last_verified: '2026-11-21'

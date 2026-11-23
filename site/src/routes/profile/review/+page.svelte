@@ -8,7 +8,7 @@
 	const missing = $derived(Object.entries(data.missing));
 	const sections: Record<string, string> = {
 		givenName: 'about',
-		adultConfirmed: 'about',
+		ageGroup: 'about',
 		phone: 'contact',
 		nations: 'nations',
 		interests: 'help',

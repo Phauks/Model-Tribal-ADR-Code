@@ -1,7 +1,7 @@
 profile: content/tribes/l/little-traverse-bay-bands-of-odawa-indians.yaml
 topic: courts
 status: found
-last_searched: '2026-11-22'
+last_searched: '2026-11-23'
 searches:
 - date: '2026-11-22'
   searched_by: Claude (AI assistant)
@@ -62,3 +62,11 @@ searches:
   query: 'Individual courts review: every court, district, division and appellate court of the nation'
   outcome: found
   reason: Returned nation pages; the judicial branch and contact pages above were confirmed by fetch.
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: ai-review
+  place_kind: other
+  address: https://tribaljustice.org/wp-content/uploads/2024/06/Promising-Strategies-for-Tribal-Healing-to-Wellness-Courts-Peer-to-Peer-Learning-through-Mentor-Courts.pdf
+  query: 'Indian law journals sweep: articles and reports on Tribal courts, wellness courts and peacemaking'
+  outcome: found
+  reason: Read in full; named a wellness court now in the profile (source tlpi-2024-promising-strategies-healing-to-wellness-mentor-courts).

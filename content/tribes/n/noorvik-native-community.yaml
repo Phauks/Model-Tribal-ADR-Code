@@ -122,6 +122,15 @@ contacts:
   verification: bulk-import
   as_of: '2026-11-20'
   locator: Noorvik Native Community
+- kind: email-general
+  value: tribemanager@nuurvik.org
+  label: General office email listed in the federal Tribal Leaders Directory
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  verification: bulk-import
+  as_of: '2026-11-23'
+  locator: Noorvik Native Community
+  note: A general office address (not a leader's own) in the directory's email field, read on Nov. 23, 2026.
 languages:
 - name: Iñupiaq
   language_tag: ipk
@@ -140,6 +149,23 @@ federal_administration:
   verification: bulk-import
   as_of: '2026-11-20'
   locator: Noorvik Native Community
+indian_health_service:
+- area: Alaska
+  source: indian-health-service-alaska-area-profile-kotzebue-service-area
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  locator: '"Federally Recognized Tribes" list, Kotzebue Service Area profile'
+  note: Listed as "Noorvik Native Community". Service area operator statement is from the same profile; profile is old (about 2007) and the operator statement may have changed.
+- area: Alaska
+  service_unit: Kotzebue Service Area
+  source: indian-health-service-alaska-area-profile-kotzebue-service-area
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  locator: '"Federally Recognized Tribes" list, Kotzebue Service Area profile'
+  note: 'The source''s words: "Noorvik Native Community".'
+  operator: tribal
 government_structure:
 - kind: alaska-indian-reorganization-act
   detail: Listed as "The Noorvik Native Community" among organizations under constitutions approved by
@@ -167,6 +193,111 @@ government_structure:
   note: The text cites the Act of June 18, 1934; the Indian Reorganization Act reached Alaska through
     the Act of May 1, 1936, so this is recorded as the Alaska amendment. Historical constitution; a later
     constitution may have replaced it.
+governance:
+- aspect: form
+  value: Constitution and By-laws by authority of Act of June 18, 1934
+  quote: by authority of the Act of Congress of June 18, 1934, as amended by
+  source: constitution-noorvik-native-community-1939-text-3
+  confidence: medium
+  verification: read-in-full
+  as_of: '1939-12-27'
+  locator: Preamble
+  document_version:
+    document: noorvik-native-community-constitution
+    version: 1939-text-3
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+- aspect: governing-body-selection
+  value: Chosen by the Community membership
+  quote: The Community shall then choose the
+  source: constitution-noorvik-native-community-1939-text-3
+  confidence: medium
+  verification: read-in-full
+  as_of: '1939-12-27'
+  locator: Article III, Section 2
+  document_version:
+    document: noorvik-native-community-constitution
+    version: 1939-text-3
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+- aspect: general-council
+  value: Whole membership meets at least once a year
+  quote: A general meeting of the whole membership shall be
+  source: constitution-noorvik-native-community-1939-text-3
+  confidence: medium
+  verification: read-in-full
+  as_of: '1939-12-27'
+  locator: Article III, Section 3
+  document_version:
+    document: noorvik-native-community-constitution
+    version: 1939-text-3
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+- aspect: head-of-government
+  value: President
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  verification: bulk-import
+  as_of: '2026-11-20'
+  locator: Noorvik Native Community
+  note: The title of the leader's office as the federal directory lists it; the holder's name is not recorded.
+- aspect: voting-age
+  value: '21'
+  quote: one years of age or over shall have the right to vote in Community
+  source: constitution-noorvik-native-community-1939-text-3
+  confidence: medium
+  verification: read-in-full
+  as_of: '1939-12-27'
+  locator: Article V, Section 1
+  document_version:
+    document: noorvik-native-community-constitution
+    version: 1939-text-3
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+- aspect: election-authority
+  value: Election Board
+  quote: Chairman, Election Board,
+  source: constitution-noorvik-native-community-1939-text-3
+  confidence: medium
+  verification: read-in-full
+  as_of: '1939-12-27'
+  locator: Certification of Adoption
+  document_version:
+    document: noorvik-native-community-constitution
+    version: 1939-text-3
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+- aspect: amendment
+  value: Majority vote in an election called by Secretary of the Interior
+  quote: ity vote of the Community members voting m an election called by
+  source: constitution-noorvik-native-community-1939-text-3
+  confidence: medium
+  verification: read-in-full
+  as_of: '1939-12-27'
+  locator: Article VI
+  document_version:
+    document: noorvik-native-community-constitution
+    version: 1939-text-3
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+- aspect: secretarial-approval
+  value: Required for amendments
+  quote: approved by the Secretary of the Interior and by amajor-
+  source: constitution-noorvik-native-community-1939-text-3
+  confidence: medium
+  verification: read-in-full
+  as_of: '1939-12-27'
+  locator: Article VI
+  document_version:
+    document: noorvik-native-community-constitution
+    version: 1939-text-3
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+- aspect: other
+  value: Governing body chosen by membership at a general meeting
+  quote: decide to keep that governing body, or it may choose a new form
+  source: constitution-noorvik-native-community-1939-text-3
+  confidence: medium
+  verification: read-in-full
+  as_of: '1939-12-27'
+  locator: Article III, Section 1
+  document_version:
+    document: noorvik-native-community-constitution
+    version: 1939-text-3
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
 governing_documents:
 - kind: law-code
   title: Climate change resolution

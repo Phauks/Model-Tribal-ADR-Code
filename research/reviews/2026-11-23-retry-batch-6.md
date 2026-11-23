@@ -15,9 +15,9 @@ The retry went back to every address that had failed in a search log (a refusal,
 | Topic | Found | Not found | Blocked | Dead link | Error | Total |
 | --- | ---: | ---: | ---: | ---: | ---: | ---: |
 | `courts` | 59 | 37 | 11 | 10 | 5 | 122 |
-| `dispute-resolution` | 21 | 31 | 2 | 8 | 2 | 64 |
+| `dispute-resolution` | 14 | 38 | 2 | 8 | 2 | 64 |
 
-A `dispute-resolution` log counts as `found` when the page read shows the nation's codes, a court or a dispute resolution forum, the test the data gap thread set for these pages (hand-pull list, Part 2f). A court alone is a lead, not a dispute resolution method; the lead author decides whether it belongs in the profile. Sixty logs moved from `partly-searched` to `found` or `none-found`; the rest keep their `next_steps`, naming the addresses still unreadable.
+A `dispute-resolution` log counts as `found` when the page read shows the nation's codes, a court or a dispute resolution forum, the test the data gap thread set for these pages (hand-pull list, Part 2f). A court alone is a lead, not a dispute resolution method; the lead author decides whether it belongs in the profile. Where the data gap thread's own reading of a log on Nov. 23 found no dispute resolution method (seven logs, among them Grand Portage, Guidiville, Manzanita and Ohkay Owingeh), this retry's entry was changed to `not-found` and that reading stands. About sixty logs moved from `partly-searched` to `found` or `none-found`; the rest keep their `next_steps`, naming the addresses still unreadable.
 
 ## Findings for the lead author
 

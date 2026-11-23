@@ -141,6 +141,15 @@ contacts:
   verification: title-only
   as_of: '2026-11-22'
   note: The nation's own website links this page as "Contact Us". Its title is "Contact Us | Yakutat Tlingit Tribe". Found by scripts/tribes/find_contacts.py.
+- kind: email-general
+  value: admin@ytttribe.org
+  label: General office email listed in the federal Tribal Leaders Directory
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  verification: bulk-import
+  as_of: '2026-11-23'
+  locator: Yakutat Tlingit Tribe
+  note: A general office address (not a leader's own) in the directory's email field, read on Nov. 23, 2026.
 official_images:
 - kind: logo
   image_link: https://yakutattlingittribe.org/wp-content/uploads/2018/10/ytt-logo-756x1024.png
@@ -190,6 +199,32 @@ federal_administration:
   verification: bulk-import
   as_of: '2026-11-20'
   locator: Yakutat Tlingit Tribe
+indian_health_service:
+- area: Alaska
+  source: indian-health-service-alaska-area-profile-mount-edgecumbe-service-area
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  locator: '"Federally Recognized Tribes" list, Mt. Edgecumbe Service Area profile'
+  note: Listed as "Yakutat Tlingit Tribe". Service area operator statement is from the same profile; profile is old (about 2007) and the operator statement may have changed.
+- area: Alaska
+  service_unit: Mt. Edgecumbe Service Area
+  source: indian-health-service-alaska-area-profile-mount-edgecumbe-service-area
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  locator: '"Federally Recognized Tribes" list, Mt. Edgecumbe Service Area profile'
+  note: 'The source''s words: "Yakutat Tlingit Tribe".'
+  operator: tribal
+governance:
+- aspect: head-of-government
+  value: President
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  verification: bulk-import
+  as_of: '2026-11-20'
+  locator: Yakutat Tlingit Tribe
+  note: The title of the leader's office as the federal directory lists it; the holder's name is not recorded.
 justice_institutions:
 - kind: tribal-court
   name: Tribal Court

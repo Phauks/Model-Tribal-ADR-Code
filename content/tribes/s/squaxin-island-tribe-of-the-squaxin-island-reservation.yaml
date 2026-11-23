@@ -151,6 +151,203 @@ federal_administration:
   verification: bulk-import
   as_of: '2026-11-20'
   locator: Squaxin Island Tribe of the Squaxin Island Reservation
+indian_health_service:
+- area: Portland
+  source: indian-health-service-portland-careers-brochure
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  locator: '"Tribes of Oregon, Washington and Idaho" list'
+  note: 'Listed as "Squaxin Island Tribe". Also listed under the same Area in: indian-health-service-self-governance-tribes. Also on the Indian Health Service Self-Governance Tribes list (Squaxin Island Indian Tribe (1995)); the list does not say which service unit or programs the compact covers.'
+governance:
+- aspect: governing-body
+  value: Squaxin Island Tribal Council
+  quote: be known as the Squaxin Island Tribal Council. The Council shall have
+  source: constitution-squaxin-island-tribe-of-the-squaxin-island-reservation-1965-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1965-07-08'
+  locator: Article III, Section 1
+  document_version:
+    document: squaxin-island-tribe-of-the-squaxin-island-reservation-constitution
+    version: 1965-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Scan is garbled in places (Article V, Section 2 and Article VIII), so some readings are from partly legible lines.'
+- aspect: governing-body-size
+  value: '5 members: Chairman, Vice-Chairman, Secretary, Treasurer and one member'
+  quote: a Vice-Chairman, a Secretary, a Treasurer, and one member* All shall
+  source: constitution-squaxin-island-tribe-of-the-squaxin-island-reservation-1965-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1965-07-08'
+  locator: Article V, Section 1
+  document_version:
+    document: squaxin-island-tribe-of-the-squaxin-island-reservation-constitution
+    version: 1965-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Scan is garbled in places (Article V, Section 2 and Article VIII), so some readings are from partly legible lines.'
+- aspect: governing-body-selection
+  value: Elected by secret ballot
+  quote: and votes are to be cast for their election by secret ballot at the
+  source: constitution-squaxin-island-tribe-of-the-squaxin-island-reservation-1965-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1965-07-08'
+  locator: Article V, Section 2
+  document_version:
+    document: squaxin-island-tribe-of-the-squaxin-island-reservation-constitution
+    version: 1965-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Scan is garbled in places (Article V, Section 2 and Article VIII), so some readings are from partly legible lines.'
+- aspect: governing-body-term
+  value: 3 years
+  quote: serve for a three-year term. Those officers and members elected at the
+  source: constitution-squaxin-island-tribe-of-the-squaxin-island-reservation-1965-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1965-07-08'
+  locator: Article V, Section 1
+  document_version:
+    document: squaxin-island-tribe-of-the-squaxin-island-reservation-constitution
+    version: 1965-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Scan is garbled in places (Article V, Section 2 and Article VIII), so some readings are from partly legible lines.'
+- aspect: head-of-government
+  value: Chairman
+  quote: The Chairman of the tribal council shall preside over
+  source: constitution-squaxin-island-tribe-of-the-squaxin-island-reservation-1965-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1965-07-08'
+  locator: Article VI, Section 1
+  document_version:
+    document: squaxin-island-tribe-of-the-squaxin-island-reservation-constitution
+    version: 1965-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Scan is garbled in places (Article V, Section 2 and Article VIII), so some readings are from partly legible lines.'
+- aspect: head-of-government
+  value: Chairperson
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  verification: bulk-import
+  as_of: '2026-11-20'
+  locator: Squaxin Island Tribe of the Squaxin Island Reservation
+  note: The title of the leader's office as the federal directory lists it; the holder's name is not recorded. Listed as “Chairman”; recorded without the holder's own form of the title.
+- aspect: head-of-government-selection
+  value: Elected by secret ballot
+  quote: and votes are to be cast for their election by secret ballot at the
+  source: constitution-squaxin-island-tribe-of-the-squaxin-island-reservation-1965-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1965-07-08'
+  locator: Article V, Section 2
+  document_version:
+    document: squaxin-island-tribe-of-the-squaxin-island-reservation-constitution
+    version: 1965-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Scan is garbled in places (Article V, Section 2 and Article VIII), so some readings are from partly legible lines.'
+- aspect: head-of-government-term
+  value: 3 years
+  quote: serve for a three-year term. Those officers and members elected at the
+  source: constitution-squaxin-island-tribe-of-the-squaxin-island-reservation-1965-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1965-07-08'
+  locator: Article V, Section 1
+  document_version:
+    document: squaxin-island-tribe-of-the-squaxin-island-reservation-constitution
+    version: 1965-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Scan is garbled in places (Article V, Section 2 and Article VIII), so some readings are from partly legible lines.'
+- aspect: other-officers
+  value: Vice-Chairman, Secretary, Treasurer
+  quote: a Vice-Chairman, a Secretary, a Treasurer, and one member* All shall
+  source: constitution-squaxin-island-tribe-of-the-squaxin-island-reservation-1965-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1965-07-08'
+  locator: Article V, Section 1
+  document_version:
+    document: squaxin-island-tribe-of-the-squaxin-island-reservation-constitution
+    version: 1965-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Scan is garbled in places (Article V, Section 2 and Article VIII), so some readings are from partly legible lines.'
+- aspect: elections
+  value: Every 3 years at the annual January meeting
+  quote: annual January meeting every third year
+  source: constitution-squaxin-island-tribe-of-the-squaxin-island-reservation-1965-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1965-07-08'
+  locator: Article V, Section 2
+  document_version:
+    document: squaxin-island-tribe-of-the-squaxin-island-reservation-constitution
+    version: 1965-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Scan is garbled in places (Article V, Section 2 and Article VIII), so some readings are from partly legible lines.'
+- aspect: voting-age
+  value: '21'
+  quote: shall have the right to vote; and provided he has been domiciled
+  source: constitution-squaxin-island-tribe-of-the-squaxin-island-reservation-1965-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1965-07-08'
+  locator: Article V, Section 4
+  document_version:
+    document: squaxin-island-tribe-of-the-squaxin-island-reservation-constitution
+    version: 1965-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Scan is garbled in places (Article V, Section 2 and Article VIII), so some readings are from partly legible lines.'
+- aspect: election-authority
+  value: General council, through an electoral code
+  quote: in accordance with an electoral code adopted by
+  source: constitution-squaxin-island-tribe-of-the-squaxin-island-reservation-1965-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1965-07-08'
+  locator: Article V, Section 2
+  document_version:
+    document: squaxin-island-tribe-of-the-squaxin-island-reservation-constitution
+    version: 1965-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Scan is garbled in places (Article V, Section 2 and Article VIII), so some readings are from partly legible lines.'
+- aspect: amendment
+  value: Majority vote of qualified voters at an election called by the Secretary of the Interior
+  quote: This constitution and bylaws may be amended by a majority
+  source: constitution-squaxin-island-tribe-of-the-squaxin-island-reservation-1965-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1965-07-08'
+  locator: Article X, Section 1
+  document_version:
+    document: squaxin-island-tribe-of-the-squaxin-island-reservation-constitution
+    version: 1965-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Scan is garbled in places (Article V, Section 2 and Article VIII), so some readings are from partly legible lines.'
+- aspect: secretarial-approval
+  value: Required for amendments
+  quote: been approved by the Secretary of the Interior.
+  source: constitution-squaxin-island-tribe-of-the-squaxin-island-reservation-1965-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1965-07-08'
+  locator: Article X, Section 1
+  document_version:
+    document: squaxin-island-tribe-of-the-squaxin-island-reservation-constitution
+    version: 1965-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Scan is garbled in places (Article V, Section 2 and Article VIII), so some readings are from partly legible lines.'
+- aspect: recall-and-removal
+  value: Removal by general council vote after petition of 50% of eligible voters
+  quote: members of the general council shall have the power to
+  source: constitution-squaxin-island-tribe-of-the-squaxin-island-reservation-1965-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1965-07-08'
+  locator: Article VII, Section 2
+  document_version:
+    document: squaxin-island-tribe-of-the-squaxin-island-reservation-constitution
+    version: 1965-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Scan is garbled in places (Article V, Section 2 and Article VIII), so some readings are from partly legible lines.'
+- aspect: other
+  value: Referendum on petition of 50% of eligible voters, or request of council majority
+  quote: Upon receipt of a petition of at least 50 percent of the eligible
+  source: constitution-squaxin-island-tribe-of-the-squaxin-island-reservation-1965-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1965-07-08'
+  locator: Article IX
+  document_version:
+    document: squaxin-island-tribe-of-the-squaxin-island-reservation-constitution
+    version: 1965-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Scan is garbled in places (Article V, Section 2 and Article VIII), so some readings are from partly legible lines.'
 governing_documents:
 - kind: law-code
   title: Squaxin Island Tribe
@@ -516,6 +713,31 @@ jurisdiction:
     and matched to the roster. Row re-read on 2026-11-22 from the page image (the govinfo PDF has no text
     layer for the table); verification level unchanged because the name was not matched word for word
     in machine-read text.'
+treaties:
+- title: Treaty with the Nisqualli, Puyallup, etc., 1854
+  signed: '1854-12-26'
+  statutes_at_large: 10 Stat. 1132
+  kappler:
+    volume: 2
+    page: 661
+    link: https://treaties.okstate.edu/treaties/treaty-with-the-nisqualli-puyallup-etc-1854-0661
+  signatory: Squawskin
+  source: kappler-indian-affairs-laws-and-treaties-vol-2-1904
+  confidence: medium
+  verification: inferred
+  locator: p. 661 (Treaty with the Nisqualli, Puyallup, etc., 1854; Kappler header "Dec. 26, 1854. | 10 Stat., 1132. | Ratified Mar. 3, 1855. | Proclaimed Apr. 10, 1855.")
+  note: The nation is one successor of the party the treaty names; band-level attribution was not determined. Linked to the nation by Claude (AI assistant) from the treaty's text and the nation's name, not from a source that names the successor; not yet checked against a second source. Squawskin = Squaxin Island Tribe (named in preamble) The page is the treaty's first page as the Oklahoma State University database's address gives it.
+land_establishment:
+- land_area: Klah-che-min (Squaxin) Island, Washington
+  method: treaty
+  instrument: Treaty of Medicine Creek, Dec. 26, 1854, art. II, 10 Stat. 1132
+  date: '1854-12-26'
+  detail: First set aside
+  source: treaty-with-the-nisqualli-puyallup-etc-1854
+  confidence: high
+  verification: read-in-full
+  locator: 10 Stat. 1132
+  note: 'The instrument reads: “The small island called Klah-che-min, situated opposite the mouths of Hammersley’s and Totten’s inlets”. Art. II: "There is, however, reserved for the present use and occupation of the said tribes and bands, the following tracts of land."'
 memberships:
 - organization: Northwest Indian Fisheries Commission
   source: northwest-indian-fisheries-commission-member-tribes

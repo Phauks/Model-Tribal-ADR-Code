@@ -163,6 +163,14 @@ federal_administration:
   verification: bulk-import
   as_of: '2026-11-20'
   locator: Omaha Tribe of Nebraska
+indian_health_service:
+- area: Great Plains
+  source: indian-health-service-great-plains-area-home
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  locator: '"Tribes of North Dakota, South Dakota, Nebraska, and Iowa" list'
+  note: Listed as "Omaha Tribe of Nebraska".
 government_structure:
 - kind: indian-reorganization-act
   detail: Listed as "The Omaha Tribe of Nebraska" among organizations under constitutions approved by
@@ -187,6 +195,255 @@ government_structure:
   as_of: '1936'
   locator: preamble / approval and certification of adoption
   note: Historical constitution; a later constitution may have replaced it.
+governance:
+- aspect: form
+  value: Constitution adopted under the Indian Reorganization Act of June 18, 1934
+  quote: according to the Act of Congress, dated June 18, 1934, known as the Indian
+  source: constitution-omaha-tribe-of-nebraska-2025-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2025-11-13'
+  locator: Preamble
+  document_version:
+    document: omaha-tribe-of-nebraska-constitution
+    version: 2025-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author.
+- aspect: governing-body
+  value: Tribal Council
+  quote: The governing body under this Constitution and Bylaws shall be
+  source: constitution-omaha-tribe-of-nebraska-2025-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2025-11-13'
+  locator: Article III, Section 1
+  document_version:
+    document: omaha-tribe-of-nebraska-constitution
+    version: 2025-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author.
+- aspect: governing-body-size
+  value: 7 members
+  quote: composed of seven (7) members to be elected
+  source: constitution-omaha-tribe-of-nebraska-2025-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2025-11-13'
+  locator: Article III, Section 1
+  document_version:
+    document: omaha-tribe-of-nebraska-constitution
+    version: 2025-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author.
+- aspect: governing-body-selection
+  value: Elected by the people
+  quote: The Councilmen shall be elected by the people for a period of three
+  source: constitution-omaha-tribe-of-nebraska-2025-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2025-11-13'
+  locator: Article III, Section 2
+  document_version:
+    document: omaha-tribe-of-nebraska-constitution
+    version: 2025-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author.
+- aspect: governing-body-term
+  value: 3 years, staggered
+  quote: The Councilmen shall be elected on a staggered basis on the first
+  source: constitution-omaha-tribe-of-nebraska-2025-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2025-11-13'
+  locator: Article III, Section 4
+  document_version:
+    document: omaha-tribe-of-nebraska-constitution
+    version: 2025-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author.
+- aspect: head-of-government
+  value: Chairman
+  quote: The officers of the Tribal Council shall be the Chairman,
+  source: constitution-omaha-tribe-of-nebraska-2025-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2025-11-13'
+  locator: Article III, Section 3
+  document_version:
+    document: omaha-tribe-of-nebraska-constitution
+    version: 2025-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author.
+- aspect: head-of-government
+  value: Chairperson
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  verification: bulk-import
+  as_of: '2026-11-20'
+  locator: Omaha Tribe of Nebraska
+  note: The title of the leader's office as the federal directory lists it; the holder's name is not recorded. Listed as “Chairman”; recorded without the holder's own form of the title.
+- aspect: head-of-government-selection
+  value: Chosen by the Tribal Council from its own membership
+  quote: who shall be selected by the Tribal Council
+  source: constitution-omaha-tribe-of-nebraska-2025-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2025-11-13'
+  locator: Article III, Section 3
+  document_version:
+    document: omaha-tribe-of-nebraska-constitution
+    version: 2025-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author.
+- aspect: head-of-government-term
+  value: 1 year
+  quote: The officers shall serve one (1) year terms,
+  source: constitution-omaha-tribe-of-nebraska-2025-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2025-11-13'
+  locator: Article III, Section 3
+  document_version:
+    document: omaha-tribe-of-nebraska-constitution
+    version: 2025-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author.
+- aspect: other-officers
+  value: Vice-Chairman, Secretary, Treasurer
+  quote: The officers of the Tribal Council shall be the Chairman,
+  source: constitution-omaha-tribe-of-nebraska-2025-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2025-11-13'
+  locator: Article III, Section 3
+  document_version:
+    document: omaha-tribe-of-nebraska-constitution
+    version: 2025-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author.
+- aspect: elections
+  value: First Tuesday of November every year
+  quote: The Councilmen shall be elected on a staggered basis on the first
+  source: constitution-omaha-tribe-of-nebraska-2025-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2025-11-13'
+  locator: Article III, Section 4
+  document_version:
+    document: omaha-tribe-of-nebraska-constitution
+    version: 2025-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author.
+- aspect: voting-age
+  value: '18'
+  quote: All recognized members of the Omaha Tribe, eighteen (18) years of
+  source: constitution-omaha-tribe-of-nebraska-2025-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2025-11-13'
+  locator: Article V, Section 1
+  document_version:
+    document: omaha-tribe-of-nebraska-constitution
+    version: 2025-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author.
+- aspect: judiciary
+  value: Tribal Court system of trial courts and an appellate court
+  quote: The Omaha Tribal Court system shall consist of one (1) or more
+  source: constitution-omaha-tribe-of-nebraska-2025-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2025-11-13'
+  locator: Article X, Section 1
+  document_version:
+    document: omaha-tribe-of-nebraska-constitution
+    version: 2025-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author.
+- aspect: judicial-selection
+  value: Appointed by the Tribal Council
+  quote: The Tribal Council shall appoint a full-time Chief
+  source: constitution-omaha-tribe-of-nebraska-2025-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2025-11-13'
+  locator: Article X, Section 1
+  document_version:
+    document: omaha-tribe-of-nebraska-constitution
+    version: 2025-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author.
+- aspect: judicial-term
+  value: 'Chief Judge: 4 years'
+  quote: The term of the Chief Judge shall be four (4) years.
+  source: constitution-omaha-tribe-of-nebraska-2025-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2025-11-13'
+  locator: Article X, Section 2
+  document_version:
+    document: omaha-tribe-of-nebraska-constitution
+    version: 2025-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author.
+- aspect: judicial-independence
+  value: Judges' salaries may not be reduced during their terms
+  quote: Salaries of judges may not be reduced during
+  source: constitution-omaha-tribe-of-nebraska-2025-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2025-11-13'
+  locator: Article X, Section 3
+  document_version:
+    document: omaha-tribe-of-nebraska-constitution
+    version: 2025-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author.
+- aspect: judicial-independence
+  value: Chief Judge may not hear appeals from his own trial decisions
+  quote: may not hear any appeal from his own trial court decisions
+  source: constitution-omaha-tribe-of-nebraska-2025-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2025-11-13'
+  locator: Article X, Section 2
+  document_version:
+    document: omaha-tribe-of-nebraska-constitution
+    version: 2025-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author.
+- aspect: amendment
+  value: Majority vote of qualified voters at election called by the Tribe's Election Commission
+  quote: of the qualified voters of the Omaha Tribe voting at an election called for that purpose
+  source: constitution-omaha-tribe-of-nebraska-2025-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2025-11-13'
+  locator: Article IX, Section 1
+  document_version:
+    document: omaha-tribe-of-nebraska-constitution
+    version: 2025-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author.
+- aspect: recall-and-removal
+  value: Recall by petition, for gross neglect or improper conduct
+  quote: The Omaha people may recall any elected Tribal official or Tribal
+  source: constitution-omaha-tribe-of-nebraska-2025-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2025-11-13'
+  locator: Article VI, Section 1
+  document_version:
+    document: omaha-tribe-of-nebraska-constitution
+    version: 2025-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author.
+- aspect: recall-and-removal
+  value: Council may call recall election by 5 votes, for gross misconduct or neglect
+  quote: by an affirmative vote of five (5) members, call a recall election
+  source: constitution-omaha-tribe-of-nebraska-2025-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2025-11-13'
+  locator: Article VI, Section 9
+  document_version:
+    document: omaha-tribe-of-nebraska-constitution
+    version: 2025-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author.
+- aspect: other
+  value: Referendum on Council actions by petition of 25% of votes cast in last election
+  quote: referendum vote of the people upon a written petition signed by not less than twenty-five
+  source: constitution-omaha-tribe-of-nebraska-2025-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2025-11-13'
+  locator: Article VII, Section 1
+  document_version:
+    document: omaha-tribe-of-nebraska-constitution
+    version: 2025-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author.
 governing_documents:
 - kind: law-code
   title: Omaha Tribe of Nebraska
@@ -274,12 +531,16 @@ governing_documents:
 justice_institutions:
 - kind: tribal-court
   name: Tribal Court
+  link: https://nebraskajudicial.gov/administration/committees-commissions/access-justice-commission-committees/consortium-tribal-state-and-federal-courts
   source: national-indian-law-library-omaha-of-nebraska
   confidence: medium
   verification: bulk-import
   as_of: '2026-11-21'
   locator: Contact Info, Tribal Court
-  note: The page gives a contact for a tribal court without a fuller name.
+  note: The page gives a contact for a tribal court without a fuller name. Link is the entry in the Nebraska
+    Judicial Branch's member list of the Consortium of Tribal, State, and Federal Courts; no page of the
+    court's own was found in a second search (2026-11-23; research/reviews/2026-11-22-service-links.json,
+    service-274).
 - kind: tribal-court
   name: Omaha Tribal Court
   link: http://omaha-nsn.gov/tribe/government/tribal-court/
@@ -513,6 +774,96 @@ jurisdiction:
     prints its table as page images, so nation names were read from images and matched to the roster.
     Row re-read on 2026-11-22 from the page image (the govinfo PDF has no text layer for the table); verification
     level unchanged because the name was not matched word for word in machine-read text.'
+treaties:
+- title: Treaty with the Makah, 1815
+  signed: '1815-07-20'
+  statutes_at_large: 7 Stat. 129
+  kappler:
+    volume: 2
+    page: 115
+    link: https://treaties.okstate.edu/treaties/treaty-with-the-makah-1815-0115
+  signatory: Makah
+  source: kappler-indian-affairs-laws-and-treaties-vol-2-1904
+  confidence: medium
+  verification: inferred
+  locator: p. 115 (Treaty with the Makah, 1815; Kappler header "July 20, 1815. | 7 Stat., 129. | Ratified Dec. 26, 1815.")
+  note: 'The nation is one successor of the party the treaty names. Linked to the nation by Claude (AI assistant) from the treaty''s text. Checked on Nov. 23, 2026: The treaty''s text names the party as the Mahas, the Omaha; the database''s title and list read the name as Makah, the Washington nation. OSU tags this treaty "Makah" but the text names the "Mahas" (Omaha) at Portage des Sioux 1815 / Maha tribe 1825; Omaha Tribe of Nebraska is the successor. The page is the treaty''s first page as the Oklahoma State University database''s address gives it.'
+- title: Treaty with the Makah Tribe, 1825
+  signed: '1825-10-06'
+  statutes_at_large: 7 Stat. 282
+  kappler:
+    volume: 2
+    page: 260
+    link: https://treaties.okstate.edu/treaties/treaty-with-the-makah-tribe-1825-0260
+  signatory: Makah
+  source: kappler-indian-affairs-laws-and-treaties-vol-2-1904
+  confidence: medium
+  verification: inferred
+  locator: p. 260 (Treaty with the Makah Tribe, 1825; Kappler header "Oct. 6, 1825. | 7 Stat., 282. | Proclamation, Feb. 6, 1826.")
+  note: 'The nation is one successor of the party the treaty names. Linked to the nation by Claude (AI assistant) from the treaty''s text. Checked on Nov. 23, 2026: The treaty''s text names the party as the Maha tribe, the Omaha; the database''s title and list read the name as Makah, the Washington nation. OSU tags this treaty "Makah" but the text names the "Mahas" (Omaha) at Portage des Sioux 1815 / Maha tribe 1825; Omaha Tribe of Nebraska is the successor. The page is the treaty''s first page as the Oklahoma State University database''s address gives it.'
+- title: Treaty with the Sauk and Foxes, etc., 1830
+  signed: '1830-07-15'
+  statutes_at_large: 7 Stat. 328
+  kappler:
+    volume: 2
+    page: 305
+    link: https://treaties.okstate.edu/treaties/treaty-with-the-sauk-and-foxes-etc-1830-0305
+  signatory: Omaha
+  source: kappler-indian-affairs-laws-and-treaties-vol-2-1904
+  confidence: medium
+  verification: inferred
+  locator: p. 305 (Treaty with the Sauk and Foxes, etc., 1830; Kappler header "July 15, 1830. | 7 Stat., 328. | Proclamation, Feb. 24, 1831.")
+  note: The nation's official name carries the name the treaty gives this party. Linked to the nation by Claude (AI assistant) from the treaty's text and the nation's name, not from a source that names the successor; not yet checked against a second source. The page is the treaty's first page as the Oklahoma State University database's address gives it.
+- title: Treaty with the Oto, etc., 1836
+  signed: '1836-10-15'
+  statutes_at_large: 7 Stat. 524
+  kappler:
+    volume: 2
+    page: 479
+    link: https://treaties.okstate.edu/treaties/treaty-with-the-oto-etc-1836-0479
+  signatory: Omaha
+  source: kappler-indian-affairs-laws-and-treaties-vol-2-1904
+  confidence: medium
+  verification: inferred
+  locator: p. 479 (Treaty with the Oto, etc., 1836; Kappler header "Oct. 15, 1836. | 7 Stat., 524. | Proclamation, Feb. 15, 1837.")
+  note: The nation's official name carries the name the treaty gives this party. Linked to the nation by Claude (AI assistant) from the treaty's text and the nation's name, not from a source that names the successor; not yet checked against a second source. The page is the treaty's first page as the Oklahoma State University database's address gives it.
+- title: Treaty with the Omaha, 1854
+  signed: '1854-03-16'
+  statutes_at_large: 10 Stat. 1043
+  kappler:
+    volume: 2
+    page: 611
+    link: https://treaties.okstate.edu/treaties/treaty-with-the-omaha-1854-0611
+  signatory: Omaha
+  source: kappler-indian-affairs-laws-and-treaties-vol-2-1904
+  confidence: medium
+  verification: inferred
+  locator: p. 611 (Treaty with the Omaha, 1854; Kappler header "March 16, 1854. | 10 Stats., 1043. | Ratified Apr. 17, 1854. | Proclaimed June 21, 1854.")
+  note: The nation's official name carries the name the treaty gives this party. Linked to the nation by Claude (AI assistant) from the treaty's text and the nation's name, not from a source that names the successor; not yet checked against a second source. The page is the treaty's first page as the Oklahoma State University database's address gives it.
+- title: Treaty with the Omaha, 1865
+  signed: '1865-03-06'
+  statutes_at_large: 14 Stat. 667
+  kappler:
+    volume: 2
+    page: 872
+    link: https://treaties.okstate.edu/treaties/treaty-with-the-omaha-1865-0872
+  signatory: Omaha
+  source: kappler-indian-affairs-laws-and-treaties-vol-2-1904
+  confidence: medium
+  verification: inferred
+  locator: p. 872 (Treaty with the Omaha, 1865; Kappler header "Mar. 6, 1865. | 14 Stats., 667. | Ratified, Feb. 13, 1866. | Proclaimed Feb. 15, 1866.")
+  note: The nation's official name carries the name the treaty gives this party. Linked to the nation by Claude (AI assistant) from the treaty's text and the nation's name, not from a source that names the successor; not yet checked against a second source. The page is the treaty's first page as the Oklahoma State University database's address gives it.
+land_establishment:
+- land_area: Omaha Reservation, Nebraska Territory
+  method: treaty
+  instrument: Treaty with the Omahas, Mar. 16, 1854, art. 1, 10 Stat. 1043, 1044
+  date: '1854-03-16'
+  detail: First set aside
+  source: treaty-with-the-omaha-1854
+  confidence: medium
+  verification: read-in-full
+  locator: 10 Stat. 1043
+  note: 'The instrument reads: “which is reserved by the ... for their future home”. Reserve described as the country "north of said due west line".'
 memberships:
 - organization: Great Plains Tribal Leaders Health Board
   source: great-plains-tribal-leaders-health-board-member-tribes

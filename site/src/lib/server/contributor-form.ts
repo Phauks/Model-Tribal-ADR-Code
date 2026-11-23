@@ -5,11 +5,13 @@
  * (missingAnswers in src/lib/contributors.ts).
  */
 import {
+	ageGroups,
 	availabilities,
 	contactMethods,
 	creditForms,
 	interests,
 	nationAnswers,
+	specialties,
 	type NationAffiliation,
 	type ProfileAnswers
 } from '#lib/contributors.ts';
@@ -93,9 +95,10 @@ export function readProfileForm(form: FormData, nations: readonly NationChoice[]
 	const answers: ProfileAnswers = {
 		givenName: text('givenName', 200),
 		familyName: text('familyName', 200),
+		nativeName: text('nativeName', 200),
 		phone,
 		preferredContact: choice(contactMethods, formText(form, 'preferredContact')),
-		adultConfirmed: ticked('adultConfirmed'),
+		ageGroup: choice(ageGroups, formText(form, 'ageGroup')),
 		nationAnswer,
 		nations: listed,
 		background: text('background', 4000),
@@ -106,6 +109,12 @@ export function readProfileForm(form: FormData, nations: readonly NationChoice[]
 			.filter((value): value is (typeof interests)[number] =>
 				(interests as readonly unknown[]).includes(value)
 			),
+		specialties: form
+			.getAll('specialties')
+			.filter((value): value is (typeof specialties)[number] =>
+				(specialties as readonly unknown[]).includes(value)
+			),
+		specialtyOther: text('specialtyOther', 100),
 		availability: choice(availabilities, formText(form, 'availability')),
 		creditForm: choice(creditForms, formText(form, 'creditForm')),
 		creditName: text('creditName', 200),

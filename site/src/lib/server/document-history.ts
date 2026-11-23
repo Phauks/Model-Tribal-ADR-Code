@@ -128,7 +128,7 @@ function earliestDate(version: DocumentVersion): string | undefined {
 	return dates[0];
 }
 
-function labelOf(version: DocumentVersion | undefined, fallback: string): string {
+export function labelOf(version: DocumentVersion | undefined, fallback: string): string {
 	return version?.label ?? fallback;
 }
 
@@ -215,8 +215,7 @@ export function documentHistoryView(
 }
 
 /** The document histories that name this nation, each recording its sources. */
-export function documentHistoriesFor(nationId: string, sources: SourceRecorder): DocumentHistoryView[] {
-	return documentHistories()
-		.filter((record) => record.nations?.includes(nationId))
-		.map((record) => documentHistoryView(record, sources));
+/** The document histories that name a nation, such as its gaming compacts. */
+export function nationDocumentHistories(nationId: string): DocumentHistoryRecord[] {
+	return documentHistories().filter((record) => record.nations?.includes(nationId));
 }

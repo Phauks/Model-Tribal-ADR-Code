@@ -167,6 +167,14 @@ federal_administration:
   verification: bulk-import
   as_of: '2026-11-20'
   locator: St. Croix Chippewa Indians of Wisconsin
+indian_health_service:
+- area: Bemidji
+  source: indian-health-service-bemidji-healthcare-facilities
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  locator: Tribal Health Programs lists (Michigan, Minnesota, Wisconsin)
+  note: Listed as "St. Croix Chippewa Indians of Wisconsin".
 government_structure:
 - kind: indian-reorganization-act
   detail: Listed as "St.Croix Chippewa Indians of Wisconsin" among organizations under constitutions approved
@@ -191,6 +199,159 @@ government_structure:
   as_of: '1942'
   locator: preamble / approval and certification of adoption
   note: Historical constitution; a later constitution may have replaced it.
+governance:
+- aspect: form
+  value: Constitution and By-laws under the Indian Reorganization Act of June 18, 1934
+  quote: June 18, 1934 (48 Stat. 984), hereby adopt this constitution.
+  source: constitution-st-croix-chippewa-indians-of-wisconsin-1942-text-2
+  confidence: medium
+  verification: read-in-full
+  as_of: '1942-11-12'
+  locator: Preamble
+  document_version:
+    document: st-croix-chippewa-indians-of-wisconsin-constitution
+    version: 1942-text-2
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Scan is garbled in Article IV and the By-laws; the officer lines are read from jumbled text.'
+- aspect: governing-body
+  value: St. Croix Council
+  quote: The governing body of this organization shall be the St.
+  source: constitution-st-croix-chippewa-indians-of-wisconsin-1942-text-2
+  confidence: medium
+  verification: read-in-full
+  as_of: '1942-11-12'
+  locator: Article IV, Section 1
+  document_version:
+    document: st-croix-chippewa-indians-of-wisconsin-constitution
+    version: 1942-text-2
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Scan is garbled in Article IV and the By-laws; the officer lines are read from jumbled text.'
+- aspect: governing-body-size
+  value: 5 members
+  quote: Croix Council, which shall be composed of five members elected
+  source: constitution-st-croix-chippewa-indians-of-wisconsin-1942-text-2
+  confidence: medium
+  verification: read-in-full
+  as_of: '1942-11-12'
+  locator: Article IV, Section 1
+  document_version:
+    document: st-croix-chippewa-indians-of-wisconsin-constitution
+    version: 1942-text-2
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Scan is garbled in Article IV and the By-laws; the officer lines are read from jumbled text.'
+- aspect: governing-body-selection
+  value: Elected by popular vote
+  quote: biennially by popular vote.
+  source: constitution-st-croix-chippewa-indians-of-wisconsin-1942-text-2
+  confidence: medium
+  verification: read-in-full
+  as_of: '1942-11-12'
+  locator: Article IV, Section 1
+  document_version:
+    document: st-croix-chippewa-indians-of-wisconsin-constitution
+    version: 1942-text-2
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Scan is garbled in Article IV and the By-laws; the officer lines are read from jumbled text.'
+- aspect: head-of-government
+  value: President
+  quote: Theofficers of the Council shall consist of a president,
+  source: constitution-st-croix-chippewa-indians-of-wisconsin-1942-text-2
+  confidence: medium
+  verification: read-in-full
+  as_of: '1942-11-12'
+  locator: Article IV, Section 3
+  document_version:
+    document: st-croix-chippewa-indians-of-wisconsin-constitution
+    version: 1942-text-2
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Scan is garbled in Article IV and the By-laws; the officer lines are read from jumbled text.'
+- aspect: head-of-government
+  value: Chairperson
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  verification: bulk-import
+  as_of: '2026-11-20'
+  locator: St. Croix Chippewa Indians of Wisconsin
+  note: The title of the leader's office as the federal directory lists it; the holder's name is not recorded. Listed as “Chairman”; recorded without the holder's own form of the title.
+- aspect: head-of-government-selection
+  value: Elected from the Council membership
+  quote: shall be elected from the Council membership.
+  source: constitution-st-croix-chippewa-indians-of-wisconsin-1942-text-2
+  confidence: medium
+  verification: read-in-full
+  as_of: '1942-11-12'
+  locator: Article IV, Section 3
+  document_version:
+    document: st-croix-chippewa-indians-of-wisconsin-constitution
+    version: 1942-text-2
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Scan is garbled in Article IV and the By-laws; the officer lines are read from jumbled text.'
+- aspect: other-officers
+  value: Vice-president, Secretary-treasurer
+  quote: Theofficers of the Council shall consist of a president,
+  source: constitution-st-croix-chippewa-indians-of-wisconsin-1942-text-2
+  confidence: medium
+  verification: read-in-full
+  as_of: '1942-11-12'
+  locator: Article IV, Section 3
+  document_version:
+    document: st-croix-chippewa-indians-of-wisconsin-constitution
+    version: 1942-text-2
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Scan is garbled in Article IV and the By-laws; the officer lines are read from jumbled text.'
+- aspect: elections
+  value: Biennially, regular election on a Saturday in June
+  quote: biennially by popular vote.
+  source: constitution-st-croix-chippewa-indians-of-wisconsin-1942-text-2
+  confidence: medium
+  verification: read-in-full
+  as_of: '1942-11-12'
+  locator: Article IV, Section 2
+  document_version:
+    document: st-croix-chippewa-indians-of-wisconsin-constitution
+    version: 1942-text-2
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Scan is garbled in Article IV and the By-laws; the officer lines are read from jumbled text.'
+- aspect: voting-age
+  value: '21'
+  quote: Members who are 21 years of age or over
+  source: constitution-st-croix-chippewa-indians-of-wisconsin-1942-text-2
+  confidence: medium
+  verification: read-in-full
+  as_of: '1942-11-12'
+  locator: Article IV, Section 4
+  document_version:
+    document: st-croix-chippewa-indians-of-wisconsin-constitution
+    version: 1942-text-2
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Scan is garbled in Article IV and the By-laws; the officer lines are read from jumbled text.'
+- aspect: amendment
+  value: Majority vote of qualified voters at an election called by the Secretary of the Interior
+  quote: This constitutionand by-laws may be amended by a majority vote
+  source: constitution-st-croix-chippewa-indians-of-wisconsin-1942-text-2
+  confidence: medium
+  verification: read-in-full
+  as_of: '1942-11-12'
+  locator: Article VII (Amendments)
+  document_version:
+    document: st-croix-chippewa-indians-of-wisconsin-constitution
+    version: 1942-text-2
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Scan is garbled in Article IV and the By-laws; the officer lines are read from jumbled text.'
+- aspect: secretarial-approval
+  value: Required for amendments
+  quote: effective until it shall have been approved by the Secretary of the
+  source: constitution-st-croix-chippewa-indians-of-wisconsin-1942-text-2
+  confidence: medium
+  verification: read-in-full
+  as_of: '1942-11-12'
+  locator: Article VII (Amendments)
+  document_version:
+    document: st-croix-chippewa-indians-of-wisconsin-constitution
+    version: 1942-text-2
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Scan is garbled in Article IV and the By-laws; the officer lines are read from jumbled text.'
+- aspect: other
+  value: Referendum on petition of one-third of eligible voters, or request of a council majority
+  quote: Upon a petition by at least one-third of the eligible voters,
+  source: constitution-st-croix-chippewa-indians-of-wisconsin-1942-text-2
+  confidence: medium
+  verification: read-in-full
+  as_of: '1942-11-12'
+  locator: Article VI, Section 1
+  document_version:
+    document: st-croix-chippewa-indians-of-wisconsin-constitution
+    version: 1942-text-2
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Scan is garbled in Article IV and the By-laws; the officer lines are read from jumbled text.'
 governing_documents:
 - kind: law-code
   title: Tribal code
@@ -407,6 +568,59 @@ jurisdiction:
     the notice prints its table as page images, so nation names were read from images and matched to the
     roster. Row re-read on 2026-11-22 from the page image (the govinfo PDF has no text layer for the table);
     verification level unchanged because the name was not matched word for word in machine-read text.'
+treaties:
+- title: Treaty with the Chippewa, 1826
+  signed: '1826-08-05'
+  statutes_at_large: 7 Stat. 290
+  kappler:
+    volume: 2
+    page: 268
+    link: https://treaties.okstate.edu/treaties/treaty-with-the-chippewa-1826-0268
+  signatory: River St. Croix
+  source: kappler-indian-affairs-laws-and-treaties-vol-2-1904
+  confidence: medium
+  verification: inferred
+  locator: p. 268 (Treaty with the Chippewa, 1826; Kappler header "Aug. 5, 1826. | 7 Stat., 290. | Proclamation, Feb. 7, 1827.")
+  note: 'The nation is one successor of the party the treaty names. Linked to the nation by Claude (AI assistant) from the treaty''s text. Checked on Nov. 23, 2026: The Oklahoma State University Tribal Treaties Database''s successor list for this treaty names the nation; the list is in the page''s source but is no longer displayed while the database reviews it. River St. Croix band to St. Croix Chippewa Indians of Wisconsin. The page is the treaty''s first page as the Oklahoma State University database''s address gives it.'
+- title: Treaty with the Chippewa, 1842
+  signed: '1842-10-04'
+  statutes_at_large: 7 Stat. 591
+  kappler:
+    volume: 2
+    page: 542
+    link: https://treaties.okstate.edu/treaties/treaty-with-the-chippewa-1842-0542
+  signatory: Chippewa of Lake Superior
+  source: kappler-indian-affairs-laws-and-treaties-vol-2-1904
+  confidence: medium
+  verification: inferred
+  locator: p. 542 (Treaty with the Chippewa, 1842; Kappler header "Oct. 4, 1842. | 7 Stat., 591. | Proclamation, Mar. 23, 1843.")
+  note: 'The nation is one successor of the party the treaty names. Linked to the nation by Claude (AI assistant) from the treaty''s text. Checked on Nov. 23, 2026: The Oklahoma State University Tribal Treaties Database''s successor list for this treaty names the nation; the list is in the page''s source but is no longer displayed while the database reviews it. Lake Superior Chippewa bands (Wisconsin, Michigan, Minnesota) signed jointly; modern band attribution follows the nation''s name ("Lake Superior Chippewa"). The page is the treaty''s first page as the Oklahoma State University database''s address gives it.'
+- title: Treaty with the Chippewa of the Mississippi and Lake Superior, 1847
+  signed: '1847-08-02'
+  statutes_at_large: 9 Stat. 904
+  kappler:
+    volume: 2
+    page: 567
+    link: https://treaties.okstate.edu/treaties/treaty-with-the-chippewa-of-the-mississippi-and-lake-superior-1847-0567
+  signatory: Chippewa of Lake Superior
+  source: kappler-indian-affairs-laws-and-treaties-vol-2-1904
+  confidence: medium
+  verification: inferred
+  locator: p. 567 (Treaty with the Chippewa of the Mississippi and Lake Superior, 1847; Kappler header "Aug. 2. 1847. | 9 Stat., 904. | Ratified Apr. 3, 1848. | Proclaimed, Apr. 7, 1848.")
+  note: 'The nation is one successor of the party the treaty names. Linked to the nation by Claude (AI assistant) from the treaty''s text. Checked on Nov. 23, 2026: The Oklahoma State University Tribal Treaties Database''s successor list for this treaty names the nation; the list is in the page''s source but is no longer displayed while the database reviews it. Lake Superior Chippewa bands (Wisconsin, Michigan, Minnesota) signed jointly; modern band attribution follows the nation''s name ("Lake Superior Chippewa"). The page is the treaty''s first page as the Oklahoma State University database''s address gives it.'
+- title: Treaty with the Chippewa, 1854
+  signed: '1854-09-30'
+  statutes_at_large: 10 Stat. 1109
+  kappler:
+    volume: 2
+    page: 648
+    link: https://treaties.okstate.edu/treaties/treaty-with-the-chippewa-1854-0648
+  signatory: Chippewa of Lake Superior
+  source: kappler-indian-affairs-laws-and-treaties-vol-2-1904
+  confidence: medium
+  verification: inferred
+  locator: p. 648 (Treaty with the Chippewa, 1854; Kappler header "Sept. 30, 1854. | 10 Stats., 1109. | Ratified Jan. 10, 1855. | Proclaimed Jan. 29, 1855.")
+  note: 'The nation is one successor of the party the treaty names. Linked to the nation by Claude (AI assistant) from the treaty''s text. Checked on Nov. 23, 2026: The Oklahoma State University Tribal Treaties Database''s successor list for this treaty names the nation; the list is in the page''s source but is no longer displayed while the database reviews it. Lake Superior Chippewa bands (Wisconsin, Michigan, Minnesota) signed jointly; modern band attribution follows the nation''s name ("Lake Superior Chippewa"). The page is the treaty''s first page as the Oklahoma State University database''s address gives it.'
 memberships:
 - organization: Midwest Alliance of Sovereign Tribes
   source: midwest-alliance-of-sovereign-tribes-member-tribes

@@ -44,6 +44,13 @@ supreme_court:
   - {name: "Neil Gorsuch", vote: none}
   source: https://api.oyez.org/cases/2016/15-1500
   checked: '2026-11-22'
+courtlistener:
+  cluster: 4385683
+  citation: "581 U.S. 155"
+  case_name: "Lewis v. Clarke"
+  link: https://www.courtlistener.com/opinion/4385683/lewis-v-clarke/
+  release: '2026-09-30'
+  checked: '2026-11-23'
 rights:
   status: no-permission-needed
   basis: us-government-work

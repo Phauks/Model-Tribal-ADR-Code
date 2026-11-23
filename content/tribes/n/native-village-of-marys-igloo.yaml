@@ -114,6 +114,15 @@ contacts:
   verification: bulk-import
   as_of: '2026-11-20'
   locator: Native Village of Mary's Igloo
+- kind: email-general
+  value: tc.mi@kawerak.org
+  label: General office email listed by the State of Alaska
+  source: alaska-dcra-federally-recognized-tribes-contacts
+  confidence: high
+  verification: bulk-import
+  as_of: '2026-11-23'
+  locator: Native Village of Mary's Igloo
+  note: A general office address (not a person's own) in the state's email field for the tribe, read on Nov. 23, 2026.
 languages:
 - name: Iñupiaq
   language_tag: ipk
@@ -132,6 +141,32 @@ federal_administration:
   verification: bulk-import
   as_of: '2026-11-20'
   locator: Native Village of Mary's Igloo
+indian_health_service:
+- area: Alaska
+  source: indian-health-service-alaska-area-profile-norton-sound-service-area
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  locator: '"Federally Recognized Tribes" list, Norton Sound Service Area profile'
+  note: Listed as "Native Village of Mary’s Igloo". Service area operator statement is from the same profile; profile is old (about 2007) and the operator statement may have changed.
+- area: Alaska
+  service_unit: Norton Sound Service Area
+  source: indian-health-service-alaska-area-profile-norton-sound-service-area
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  locator: '"Federally Recognized Tribes" list, Norton Sound Service Area profile'
+  note: 'The source''s words: "Native Village of Mary’s Igloo".'
+  operator: tribal
+governance:
+- aspect: head-of-government
+  value: President
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  verification: bulk-import
+  as_of: '2026-11-20'
+  locator: Native Village of Mary's Igloo
+  note: The title of the leader's office as the federal directory lists it; the holder's name is not recorded.
 governing_documents:
 - kind: law-code
   title: Native Village of Mary's Igloo - Ordinance Table of Contents

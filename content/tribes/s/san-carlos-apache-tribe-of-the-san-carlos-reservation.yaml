@@ -187,6 +187,23 @@ federal_administration:
   verification: bulk-import
   as_of: '2026-11-20'
   locator: San Carlos Apache Tribe of the San Carlos Reservation, Arizona
+indian_health_service:
+- area: Phoenix
+  source: indian-health-service-phoenix-tribal-information
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  locator: '"Arizona Tribes" / "Nevada and Utah Tribes" lists'
+  note: Listed as "San Carlos Apache Tribe".
+- area: Phoenix
+  service_unit: San Carlos Apache Healthcare
+  source: indian-health-service-phoenix-healthcare-facilities
+  confidence: medium
+  verification: read-in-full
+  as_of: '2026-11-23'
+  locator: page text
+  note: 'The source''s words: "San Carlos Apache Healthcare".'
+  operator: tribal
 government_structure:
 - kind: indian-reorganization-act
   detail: Listed as "The San Carlos Apache Tribe, Arizona" among organizations under constitutions approved
@@ -220,6 +237,159 @@ government_structure:
   as_of: '1936'
   locator: preamble / approval and certification of adoption
   note: Historical constitution; a later constitution may have replaced it.
+governance:
+- aspect: form
+  value: Amended Constitution and Bylaws under the Act of June 18, 1934
+  quote: June 18, 1934 (48 Stat. 984), as amended, do hereby approve
+  source: constitution-san-carlos-apache-tribe-of-the-san-carlos-reservation-1954-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1954-04-19'
+  locator: Approval
+  document_version:
+    document: san-carlos-apache-tribe-of-the-san-carlos-reservation-constitution
+    version: 1954-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Heavily garbled scan with broken words and bylaws mixed in; facts come only from legible passages, and the council term and voting age are not confidently readable so they are omitted.'
+- aspect: governing-body
+  value: San Carlos Council
+  quote: Carlos Council.
+  source: constitution-san-carlos-apache-tribe-of-the-san-carlos-reservation-1954-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1954-04-19'
+  locator: Article I, Section 1
+  document_version:
+    document: san-carlos-apache-tribe-of-the-san-carlos-reservation-constitution
+    version: 1954-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Heavily garbled scan with broken words and bylaws mixed in; facts come only from legible passages, and the council term and voting age are not confidently readable so they are omitted.'
+- aspect: governing-body-size
+  value: Chairman, vice-chairman and 9 members; number changeable by ordinance
+  quote: Sec. 4. The Council, from time to time, may by ordinance change
+  source: constitution-san-carlos-apache-tribe-of-the-san-carlos-reservation-1954-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1954-04-19'
+  locator: Article IV, Section 4
+  document_version:
+    document: san-carlos-apache-tribe-of-the-san-carlos-reservation-constitution
+    version: 1954-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Heavily garbled scan with broken words and bylaws mixed in; facts come only from legible passages, and the council term and voting age are not confidently readable so they are omitted.'
+- aspect: governing-body-selection
+  value: Elected by popular vote, by district
+  quote: Three members, by popular vote of the Bylas District;
+  source: constitution-san-carlos-apache-tribe-of-the-san-carlos-reservation-1954-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1954-04-19'
+  locator: Article IV, Section 1
+  document_version:
+    document: san-carlos-apache-tribe-of-the-san-carlos-reservation-constitution
+    version: 1954-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Heavily garbled scan with broken words and bylaws mixed in; facts come only from legible passages, and the council term and voting age are not confidently readable so they are omitted.'
+- aspect: head-of-government
+  value: Chairman
+  quote: Chairman, by popular vote of the Tribe;
+  source: constitution-san-carlos-apache-tribe-of-the-san-carlos-reservation-1954-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1954-04-19'
+  locator: Article IV, Section 1
+  document_version:
+    document: san-carlos-apache-tribe-of-the-san-carlos-reservation-constitution
+    version: 1954-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Heavily garbled scan with broken words and bylaws mixed in; facts come only from legible passages, and the council term and voting age are not confidently readable so they are omitted.'
+- aspect: head-of-government
+  value: Chairperson
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  verification: bulk-import
+  as_of: '2026-11-20'
+  locator: San Carlos Apache Tribe of the San Carlos Reservation, Arizona
+  note: The title of the leader's office as the federal directory lists it; the holder's name is not recorded. Listed as “Chairman”; recorded without the holder's own form of the title.
+- aspect: head-of-government-selection
+  value: Elected by popular vote of the Tribe
+  quote: Chairman, by popular vote of the Tribe;
+  source: constitution-san-carlos-apache-tribe-of-the-san-carlos-reservation-1954-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1954-04-19'
+  locator: Article IV, Section 1
+  document_version:
+    document: san-carlos-apache-tribe-of-the-san-carlos-reservation-constitution
+    version: 1954-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Heavily garbled scan with broken words and bylaws mixed in; facts come only from legible passages, and the council term and voting age are not confidently readable so they are omitted.'
+- aspect: other-officers
+  value: Vice-Chairman, Secretary, Treasurer
+  quote: Secretary. The secretary shall conduct all tribal cor-
+  source: constitution-san-carlos-apache-tribe-of-the-san-carlos-reservation-1954-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1954-04-19'
+  locator: Bylaws, Article I, Section 3
+  document_version:
+    document: san-carlos-apache-tribe-of-the-san-carlos-reservation-constitution
+    version: 1954-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Heavily garbled scan with broken words and bylaws mixed in; facts come only from legible passages, and the council term and voting age are not confidently readable so they are omitted.'
+- aspect: elections
+  value: Councilmen every 2 years, Chairman every 4 years, first Tuesday in April
+  quote: years on the first Tuesday in April.
+  source: constitution-san-carlos-apache-tribe-of-the-san-carlos-reservation-1954-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1954-04-19'
+  locator: Article VIII, Section 1
+  document_version:
+    document: san-carlos-apache-tribe-of-the-san-carlos-reservation-constitution
+    version: 1954-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Heavily garbled scan with broken words and bylaws mixed in; facts come only from legible passages, and the council term and voting age are not confidently readable so they are omitted.'
+- aspect: judicial-selection
+  value: Appointed by the Tribal Council
+  quote: shall be appointed by the Tribal
+  source: constitution-san-carlos-apache-tribe-of-the-san-carlos-reservation-1954-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1954-04-19'
+  locator: Bylaws, Article V, Section 5
+  document_version:
+    document: san-carlos-apache-tribe-of-the-san-carlos-reservation-constitution
+    version: 1954-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Heavily garbled scan with broken words and bylaws mixed in; facts come only from legible passages, and the council term and voting age are not confidently readable so they are omitted.'
+- aspect: amendment
+  value: Majority vote of qualified voters in an election called by the Secretary
+  quote: qualified voters of the Tribe voting at an
+  source: constitution-san-carlos-apache-tribe-of-the-san-carlos-reservation-1954-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1954-04-19'
+  locator: Article XIII
+  document_version:
+    document: san-carlos-apache-tribe-of-the-san-carlos-reservation-constitution
+    version: 1954-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Heavily garbled scan with broken words and bylaws mixed in; facts come only from legible passages, and the council term and voting age are not confidently readable so they are omitted.'
+- aspect: secretarial-approval
+  value: Required for amendments
+  quote: been approved by the Secretary of the Interior.
+  source: constitution-san-carlos-apache-tribe-of-the-san-carlos-reservation-1954-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1954-04-19'
+  locator: Article XIII
+  document_version:
+    document: san-carlos-apache-tribe-of-the-san-carlos-reservation-constitution
+    version: 1954-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Heavily garbled scan with broken words and bylaws mixed in; facts come only from legible passages, and the council term and voting age are not confidently readable so they are omitted.'
+- aspect: recall-and-removal
+  value: Council removal by two-thirds vote, then reelection
+  quote: defense, require such member to stand for
+  source: constitution-san-carlos-apache-tribe-of-the-san-carlos-reservation-1954-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1954-04-19'
+  locator: Article IX, Section 2
+  document_version:
+    document: san-carlos-apache-tribe-of-the-san-carlos-reservation-constitution
+    version: 1954-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Heavily garbled scan with broken words and bylaws mixed in; facts come only from legible passages, and the council term and voting age are not confidently readable so they are omitted.'
 governing_documents:
 - kind: constitution
   title: Constitution
@@ -479,6 +649,41 @@ jurisdiction:
     from images and matched to the roster. Row re-read on 2026-11-22 from the page image (the govinfo
     PDF has no text layer for the table); verification level unchanged because the name was not matched
     word for word in machine-read text.'
+- topic: public-law-280
+  value: optional-state
+  detail: Arizona enacted A.R.S. §§ 36-1801 and 36-1865 under Public Law 280, applying its air and water pollution laws to all Indian lands with civil and criminal enforcement on reservations; that is the only subject-matter assumption BIA lists for Arizona. (Francisco v. State, 113 Ariz. 427, 430 n.2 (1976).)
+  source: francisco-v-state-1976
+  confidence: medium
+  verification: read-in-full
+  locator: 113 Ariz. at 430 n.2
+  note: 'BIA dates the Arizona assumption to 1967. The research could not read the 1967 session law (azmemory.azlibrary.gov blocked); Goldberg cites "Ariz. Rev. Stat. §§ 36-1801, 36-1856 (1973 Supp.)" (36-1856 vs. the court''s 36-1865; the research follows the court). Applies to every Arizona reservation by its terms but only for pollution control. Also cites: goldberg-2010-tribal-jurisdictional-status-analysis.'
+- topic: public-law-280
+  value: repealed
+  detail: A.R.S. § 36-1801 (state jurisdiction over air pollution on Indian lands) was recodified as § 49-561 in 1986 and is no longer in Arizona law; EPA treated the assumption as inconsistent with federal law. (81 Fed. Reg. 7209, 7211 (Feb. 11, 2016).)
+  source: federal-register-2016-arizona-air-plan-rescissions
+  confidence: medium
+  verification: read-in-full
+  locator: 81 Fed. Reg. at 7211, Part II.B.2
+  note: 'Confirmed that A.R.S. § 49-561 returns "page not found" on azleg.gov while neighbouring § 49-551 loads. The research could not read the repealing session laws. Goldberg (2010) says water-pollution assumption was repealed by Ariz. Laws 1986 § 19(B) and air by Ariz. Laws 2003 § 4; Laws 2003 ch. 4 is a community-college bill, so her citation is unverified. Status of the water-pollution section (36-1865) is from Goldberg only. Also cites: goldberg-2010-tribal-jurisdictional-status-analysis.'
+- topic: public-law-280
+  value: not-assumed
+  detail: Apart from the repealed pollution statutes, Arizona has not assumed civil or criminal jurisdiction over Indian reservations; the Arizona Supreme Court held the State has no authority to extend its laws to an Indian reservation. (Francisco v. State, 113 Ariz. 427, 431 (1976).)
+  source: francisco-v-state-1976
+  confidence: medium
+  verification: read-in-full
+  locator: 113 Ariz. at 431
+  note: 1976 holding about service of process on the Tohono O'odham (Papago) reservation, reasoning from the 1968 consent requirement. The research did not find any later Arizona assumption. Other federal statutes can still give Arizona limited authority; none checked here.
+land_establishment:
+- land_area: San Carlos division of the White Mountain Indian Reservation, Arizona
+  method: executive-order
+  instrument: Exec. Order of Dec. 14, 1872, 1 Kappler 813
+  date: '1872-12-14'
+  detail: First set aside
+  source: executive-order-1872-12-14-white-mountain-reservation-san-carlos-division
+  confidence: high
+  verification: read-in-full
+  locator: 1 Kappler 813
+  note: 'The instrument reads: “withheld from sale and added to the White Mountain Indian Reservation in said Territory, which addition shall hereafter be known as the “San Carlos division of the”. Original instrument for the San Carlos land; it added the San Carlos division to the White Mountain Reservation (later separately administered as San Carlos). Later orders (1873-77) restored parts to the public domain.'
 memberships:
 - organization: Inter Tribal Council of Arizona
   source: inter-tribal-council-of-arizona-member-tribes

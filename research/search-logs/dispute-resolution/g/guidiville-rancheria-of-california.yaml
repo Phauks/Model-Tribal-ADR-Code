@@ -1,6 +1,6 @@
 profile: content/tribes/g/guidiville-rancheria-of-california.yaml
 topic: dispute-resolution
-status: found
+status: none-found
 last_searched: '2026-11-23'
 searches:
 - date: '2026-11-22'
@@ -48,10 +48,28 @@ searches:
     held no lead.
 - date: '2026-11-23'
   searched_by: Claude (AI assistant)
+  method: browser
+  place_kind: web-search
+  address: 'WebSearch: Guidiville Rancheria of California tribal code OR constitution dispute resolution'
+  query: Guidiville Rancheria of California tribal code OR constitution dispute resolution
+  outcome: not-found
+  reason: Only gaming ordinances and NARF profile.
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: web-archive
+  address: https://web.archive.org/web/20250723005339id_/https://caltribalfamilies.org/places/guidiville-rancheria/
+  query: fetched by the fetch archived copies workflow; searched for dispute resolution, mediation, arbitration,
+    peacemaking, circles, elders' courts and restorative justice
+  outcome: not-found
+  reason: 'Archived copy (capture of 2025-07-23) read by script: no dispute resolution term in its text.'
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
   method: script
   place_kind: web-archive
   address: https://web.archive.org/web/20250723005339/https://caltribalfamilies.org/places/guidiville-rancheria/
   query: 'retry of an address that failed earlier: a direct request, then the Wayback Machine copy'
-  outcome: found
-  reason: The Wayback Machine copy of 2025-07-23 lists the nation's Tribal court as Intertribal Court
-    of Southern California (https://www.intertribalcourt.org/rules-and-laws).
+  outcome: not-found
+  reason: 'The Wayback Machine copy of 2025-07-23 lists the nation''s Tribal court as Intertribal Court of Southern California (https://www.intertribalcourt.org/rules-and-laws). A court or code page alone is a lead, not a dispute resolution method, and the data gap thread''s reading of this log on Nov. 23 found none, so this entry counts as not found.'
+next_steps: Ask the nation's court or government office whether it has a peacemaking, mediation or other
+  dispute resolution program, and check law library holdings of its code.

@@ -1,0 +1,33 @@
+profile: content/tribes/s/seneca-nation-of-indians.yaml
+topic: federal-ties
+status: found
+last_searched: '2026-11-23'
+searches:
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: ai-review
+  place_kind: federal-list
+  address: https://www.ihs.gov/nashville/healthcarefacilities/
+  query: Indian Health Service Area, service unit and operator
+  outcome: found
+  reason: Nashville Area.
+  records:
+  - research/raw/2026-11-23/indian-health-service-areas.json#seneca-nation-of-indians
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: ai-review
+  place_kind: treaty-database
+  address: https://treaties.okstate.edu/treaties/
+  query: Ratified treaties (Kappler vol. 2) whose signatories the nation descends from
+  outcome: found
+  reason: 8 ratified treaties linked.
+  records:
+  - research/raw/2026-11-23/treaties.json#seneca-nation-of-indians
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: ai-review
+  place_kind: official-compilation
+  address: https://archive.org/details/bp_996062
+  query: How the nation's reservation was set aside
+  outcome: not-found
+  reason: 'Candidate: New York reservations (Treaty of Big Tree 1797; Canandaigua 1794, 7 Stat. 44). Not entered: Not read in this pass.'

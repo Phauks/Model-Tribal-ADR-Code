@@ -137,6 +137,23 @@ federal_administration:
   verification: bulk-import
   as_of: '2026-11-20'
   locator: Inaja Band of Diegueno Mission Indians of the Inaja and Cosmit Reservation, California
+indian_health_service:
+- area: California
+  source: indian-health-service-california-federally-recognized-tribes
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  locator: regional lists (West Central, Southern, Northern, East Central)
+  note: Listed as "Inaja Band of Diegueno Mission Indians of the Inaja and Cosmit Reservation, California".
+governance:
+- aspect: head-of-government
+  value: Chairperson
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  verification: bulk-import
+  as_of: '2026-11-20'
+  locator: Inaja Band of Diegueno Mission Indians of the Inaja and Cosmit Reservation, California
+  note: The title of the leader's office as the federal directory lists it; the holder's name is not recorded.
 jurisdiction:
 - topic: public-law-280
   value: mandatory-state
@@ -163,6 +180,17 @@ jurisdiction:
     names were read from images and matched to the roster. Row re-read on 2026-11-22 from the page image
     (the govinfo PDF has no text layer for the table); verification level unchanged because the name was
     not matched word for word in machine-read text.'
+land_establishment:
+- land_area: Inaja and Cosmit Reservation, San Diego County, California
+  method: executive-order
+  instrument: Exec. Order of Dec. 27, 1875, 1 Kappler 820-821
+  date: '1875-12-27'
+  detail: First set aside
+  source: executive-order-1875-12-27-mission-indian-reservations
+  confidence: medium
+  verification: read-in-full
+  locator: 1 Kappler 820-821
+  note: 'The instrument reads: “Inaja. — Township 13 south, range 3 east ... withdrawn from sale and set apart as reservations for the permanent use and occupancy of the Mission Indians in Lower California”. The order also lists "Cosmit" (OCR reads "Gosmit") as a separate tract; the roster nation holds the combined Inaja and Cosmit Reservation.'
 memberships:
 - organization: Southern California Tribal Chairmen's Association
   source: southern-california-tribal-chairmens-association-member-tribes

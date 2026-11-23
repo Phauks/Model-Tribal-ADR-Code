@@ -68,6 +68,32 @@ searches:
     held no lead.
 - date: '2026-11-23'
   searched_by: Claude (AI assistant)
+  method: browser
+  place_kind: web-search
+  address: 'WebSearch: Native Village of False Pass tribal court OR constitution dispute resolution'
+  query: Native Village of False Pass tribal court OR constitution dispute resolution
+  outcome: not-found
+  reason: Only NARF profile; the Alaska court directory does not list False Pass.
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: web-archive
+  address: https://web.archive.org/web/20250916173749id_/http://www.apiai.org/tribes/false-pass
+  query: fetched by the fetch archived copies workflow; searched for dispute resolution, mediation, arbitration,
+    peacemaking, circles, elders' courts and restorative justice
+  outcome: not-found
+  reason: 'Archived copy (capture of 2025-09-16) read by script: no dispute resolution term in its text.'
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: state-court-directory
+  address: https://courts.alaska.gov/courtdir/docs/tribal-court-directory.pdf
+  query: 'this nation''s entry: justice system, cases heard, diversion agreements'
+  outcome: not-found
+  reason: The 2022 Alaska Tribal Court Directory has no entry under this nation's name or its village
+    (searched for "False Pass" and "Isanotski").
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
   method: script
   place_kind: web-archive
   address: https://web.archive.org/web/20250916173749/https://www.apiai.org/tribes/false-pass/
@@ -75,3 +101,5 @@ searches:
   outcome: not-found
   reason: Read the Wayback Machine copy of 2025-09-16 ("False Pass |   Aleutian Pribilof Islands Association");
     it shows no codes, court or dispute resolution forum.
+next_steps: Ask the nation's court or government office whether it has a peacemaking, mediation or other
+  dispute resolution program, and check law library holdings of its code.

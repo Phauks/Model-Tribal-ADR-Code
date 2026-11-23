@@ -195,6 +195,118 @@ searches:
   reason: 'Not fetched: the session''s WebFetch budget was exhausted (proxy 403).'
 - date: '2026-11-23'
   searched_by: Claude (AI assistant)
+  method: ai-review
+  place_kind: web-search
+  address: web search
+  query: Arizona courts tribal court directory azcourts.gov Ak-Chin Havasupai Tonto Apache Yavapai-Prescott
+  outcome: not-found
+  reason: 'Second search: Every service listed for this nation that the first pass left without a link:
+    The Arizona courts site has no tribal court directory in the results; the lists that came up are a
+    state health agency''s and an insurer''s contact lists, not official court directories.'
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: ai-review
+  place_kind: web-search
+  address: web search
+  query: site:azcourts.gov tribal courts Arizona list of tribal courts contact
+  outcome: not-found
+  reason: 'Second search: Every service listed for this nation that the first pass left without a link:
+    No Arizona Judicial Branch tribal court list came up; the lists found are a state health agency''s,
+    a child-welfare agency''s and an insurer''s.'
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: ai-review
+  place_kind: web-search
+  address: web search
+  query: '"Tonto Apache" tribal court Payson'
+  outcome: not-found
+  reason: 'Second search: Every service listed for this nation that the first pass left without a link:
+    Results were directories, a 2004 State Bar of Arizona accessibility site-visit report on the court,
+    and the intertribal council''s page; no court page of the nation''s own came up.'
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: other
+  address: https://www.azbar.org/media/nqnp24nk/nativeamerican-tontoapachetribalcourt.pdf
+  query: 'scripts/review/service_links.py second: Tonto Apache Tribal Court'
+  outcome: not-found
+  reason: 'Second search: Every service listed for this nation that the first pass left without a link:
+    Status 200; a 2004 State Bar of Arizona committee report on a site visit to the Tonto Apache Tribal
+    Court: it names the court but is a one-time report, not a directory entry or the court''s own page;
+    not used.'
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: ai-review
+  place_kind: web-search
+  address: web search
+  query: site:azbar.org tribal courts Arizona list nativeamerican tribal court
+  outcome: not-found
+  reason: 'Second search: Every service listed for this nation that the first pass left without a link:
+    No State Bar of Arizona list of tribal courts came up.'
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: ai-review
+  place_kind: web-search
+  address: web search
+  query: National American Indian Court Judges Association tribal court directory
+  outcome: not-found
+  reason: 'Second search: Every service listed for this nation that the first pass left without a link:
+    The association''s site shows programs, membership and regions; it publishes no directory of tribal
+    courts, so it lists no court for this nation.'
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: ai-review
+  place_kind: web-search
+  address: web search
+  query: Arizona State Tribal and Federal Court Forum members tribal courts azcourts
+  outcome: not-found
+  reason: 'Second search: Every service listed for this nation that the first pass left without a link:
+    The results gave the Arizona Supreme Court''s State, Tribal & Federal Court Forum page and its administrative
+    orders, read below.'
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: state-court-directory
+  address: https://www.azcourts.gov/stfcf
+  query: 'scripts/review/service_links.py second: the nation''s name'
+  outcome: not-found
+  reason: 'Second search: Every service listed for this nation that the first pass left without a link:
+    Status 200; the Arizona State, Tribal & Federal Court Forum page lists no tribal courts and does not
+    name this nation.'
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: ai-review
+  place_kind: web-search
+  address: web search
+  query: site:tontoapache.org tribal court
+  outcome: not-found
+  reason: 'Second search: Every service listed for this nation that the first pass left without a link:
+    The search returned no pages of the nation''s site; the results were directories and a 2004 State
+    Bar of Arizona site-visit report.'
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: ai-review
+  place_kind: project-capture
+  address: research/reviews/2026-11-22-service-links.json
+  outcome: not-found
+  reason: 'Second search: “Tribal Court”: Claude weighed what the second search found against the lead
+    author''s order (own page, then directory entry): none-found; the link stays empty and the service
+    stays listed.'
+  records:
+  - research/reviews/2026-11-22-service-links.json#service-378
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: ai-review
+  place_kind: project-capture
+  address: research/reviews/2026-11-22-service-links.json
+  outcome: not-found
+  reason: 'Second search: “Tonto Apache Tribal Court”: Claude weighed what the second search found against
+    the lead author''s order (own page, then directory entry): none-found; the link stays empty and the
+    service stays listed.'
+  records:
+  - research/reviews/2026-11-22-service-links.json#service-379
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
   method: script
   place_kind: nation-website
   address: https://itcaonline.com/sitemap.xml
@@ -202,5 +314,9 @@ searches:
   outcome: not-found
   reason: The site has no sitemap at this address (404 on 2026-11-23); the sitemap was only a way to find
     pages, so nothing on the topic is missing because of it.
-next_steps: 'Open by hand in a browser, or ask the nation''s office for: https://itcaonline.com/member-tribes/tonto-apache-tribe/
-  (no readable copy on 2026-11-23, directly or in the Wayback Machine).'
+next_steps: 'Not confirmed in the Nov. 22, 2026 court review (the lead author decides): Tribal Court (court-285,
+  cannot-tell); Tonto Apache Tribal Court (court-286, cannot-tell). No page or official directory entry
+  was found on 2026-11-22 for “Tribal Court”; “Tonto Apache Tribal Court” (research/reviews/2026-11-22-service-links.json).
+  The second search of 2026-11-23 (web searches and state court lists) found no page or official directory
+  entry for “Tribal Court”; “Tonto Apache Tribal Court”; a call to the nation''s office could say whether
+  the court has a page.'

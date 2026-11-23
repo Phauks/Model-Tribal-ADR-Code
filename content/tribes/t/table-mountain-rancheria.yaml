@@ -120,6 +120,227 @@ federal_administration:
   verification: bulk-import
   as_of: '2026-11-20'
   locator: Table Mountain Rancheria
+indian_health_service:
+- area: California
+  source: indian-health-service-california-federally-recognized-tribes
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  locator: regional lists (West Central, Southern, Northern, East Central)
+  note: Listed as "Table Mountain Rancheria".
+governance:
+- aspect: form
+  value: Constitution
+  quote: hereby ordain and establish this Constitution.
+  source: constitution-table-mountain-rancheria-1980-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1980'
+  locator: Preamble
+  document_version:
+    document: table-mountain-rancheria-constitution
+    version: 1980-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: File mixes the 1980 constitution with a later unadopted BIA-revised draft and 1992 and 1999 resolutions and letters; facts come only from the 1980 constitution (Articles I to XIII).'
+- aspect: governing-body
+  value: General council
+  quote: The governing body shall be the general council, which
+  source: constitution-table-mountain-rancheria-1980-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1980'
+  locator: Article IV, Section 1
+  document_version:
+    document: table-mountain-rancheria-constitution
+    version: 1980-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: File mixes the 1980 constitution with a later unadopted BIA-revised draft and 1992 and 1999 resolutions and letters; facts come only from the 1980 constitution (Articles I to XIII).'
+- aspect: governing-body-size
+  value: 5 members (tribal council)
+  quote: consisting of five (5) members from
+  source: constitution-table-mountain-rancheria-1980-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1980'
+  locator: Article IV, Section 2
+  document_version:
+    document: table-mountain-rancheria-constitution
+    version: 1980-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: File mixes the 1980 constitution with a later unadopted BIA-revised draft and 1992 and 1999 resolutions and letters; facts come only from the 1980 constitution (Articles I to XIII).'
+- aspect: governing-body-selection
+  value: Elected by the general council by secret ballot
+  quote: The general council shall elect from its membership by
+  source: constitution-table-mountain-rancheria-1980-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1980'
+  locator: Article IV, Section 2
+  document_version:
+    document: table-mountain-rancheria-constitution
+    version: 1980-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: File mixes the 1980 constitution with a later unadopted BIA-revised draft and 1992 and 1999 resolutions and letters; facts come only from the 1980 constitution (Articles I to XIII).'
+- aspect: governing-body-term
+  value: 4 years
+  quote: Members of the tribal council shall serve a four (4)
+  source: constitution-table-mountain-rancheria-1980-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1980'
+  locator: Article IV, Section 2
+  document_version:
+    document: table-mountain-rancheria-constitution
+    version: 1980-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: File mixes the 1980 constitution with a later unadopted BIA-revised draft and 1992 and 1999 resolutions and letters; facts come only from the 1980 constitution (Articles I to XIII).'
+- aspect: general-council
+  value: All adult enrolled members, 18 or older
+  quote: which shall consist of all adult enrolled members of the Table Mountain
+  source: constitution-table-mountain-rancheria-1980-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1980'
+  locator: Article IV, Section 1
+  document_version:
+    document: table-mountain-rancheria-constitution
+    version: 1980-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: File mixes the 1980 constitution with a later unadopted BIA-revised draft and 1992 and 1999 resolutions and letters; facts come only from the 1980 constitution (Articles I to XIII).'
+- aspect: head-of-government
+  value: Chairperson
+  quote: The Chairperson of the tribal council shall preside at
+  source: constitution-table-mountain-rancheria-1980-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1980'
+  locator: Article XI, Section 1
+  document_version:
+    document: table-mountain-rancheria-constitution
+    version: 1980-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: File mixes the 1980 constitution with a later unadopted BIA-revised draft and 1992 and 1999 resolutions and letters; facts come only from the 1980 constitution (Articles I to XIII).'
+- aspect: head-of-government
+  value: Chairperson
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  verification: bulk-import
+  as_of: '2026-11-20'
+  locator: Table Mountain Rancheria
+  note: The title of the leader's office as the federal directory lists it; the holder's name is not recorded.
+- aspect: head-of-government-selection
+  value: Elected by the qualified voters
+  quote: (2) members, each elected by the qualified voters in such
+  source: constitution-table-mountain-rancheria-1980-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1980'
+  locator: Article IV, Section 2
+  document_version:
+    document: table-mountain-rancheria-constitution
+    version: 1980-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: File mixes the 1980 constitution with a later unadopted BIA-revised draft and 1992 and 1999 resolutions and letters; facts come only from the 1980 constitution (Articles I to XIII).'
+- aspect: head-of-government-term
+  value: 4 years
+  quote: Members of the tribal council shall serve a four (4)
+  source: constitution-table-mountain-rancheria-1980-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1980'
+  locator: Article IV, Section 2
+  document_version:
+    document: table-mountain-rancheria-constitution
+    version: 1980-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: File mixes the 1980 constitution with a later unadopted BIA-revised draft and 1992 and 1999 resolutions and letters; facts come only from the 1980 constitution (Articles I to XIII).'
+- aspect: other-officers
+  value: Vice-Chairperson, Secretary-Treasurer
+  quote: which a Chairperson, Vice-Chairperson, Secretary-Treasurer and two
+  source: constitution-table-mountain-rancheria-1980-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1980'
+  locator: Article IV, Section 2
+  document_version:
+    document: table-mountain-rancheria-constitution
+    version: 1980-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: File mixes the 1980 constitution with a later unadopted BIA-revised draft and 1992 and 1999 resolutions and letters; facts come only from the 1980 constitution (Articles I to XIII).'
+- aspect: elections
+  value: Every 4 years, first Tuesday of December
+  quote: shall be held every four (4) years on the first Tuesday of
+  source: constitution-table-mountain-rancheria-1980-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1980'
+  locator: Article V, Section 1
+  document_version:
+    document: table-mountain-rancheria-constitution
+    version: 1980-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: File mixes the 1980 constitution with a later unadopted BIA-revised draft and 1992 and 1999 resolutions and letters; facts come only from the 1980 constitution (Articles I to XIII).'
+- aspect: voting-age
+  value: '18'
+  quote: is eighteen (18) years of age at the time of election, shall be
+  source: constitution-table-mountain-rancheria-1980-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1980'
+  locator: Article V, Section 2
+  document_version:
+    document: table-mountain-rancheria-constitution
+    version: 1980-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: File mixes the 1980 constitution with a later unadopted BIA-revised draft and 1992 and 1999 resolutions and letters; facts come only from the 1980 constitution (Articles I to XIII).'
+- aspect: judiciary
+  value: Council may form or join a tribal court
+  quote: (j) To form or Join existing tribal court/consortium/Indian
+  source: constitution-table-mountain-rancheria-1980-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1980'
+  locator: Article VII, Section 1(j)
+  document_version:
+    document: table-mountain-rancheria-constitution
+    version: 1980-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: File mixes the 1980 constitution with a later unadopted BIA-revised draft and 1992 and 1999 resolutions and letters; facts come only from the 1980 constitution (Articles I to XIII).'
+- aspect: amendment
+  value: Ratified by voters at Secretarial election, 30% turnout
+  quote: Amendments to this Constitution will be ratified in the
+  source: constitution-table-mountain-rancheria-1980-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1980'
+  locator: Article X, Section 1
+  document_version:
+    document: table-mountain-rancheria-constitution
+    version: 1980-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: File mixes the 1980 constitution with a later unadopted BIA-revised draft and 1992 and 1999 resolutions and letters; facts come only from the 1980 constitution (Articles I to XIII).'
+- aspect: recall-and-removal
+  value: Removal by 3 council votes after hearing
+  quote: expel any officer of the tribal council who is proven guilty of
+  source: constitution-table-mountain-rancheria-1980-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1980'
+  locator: Article VI, Section 2
+  document_version:
+    document: table-mountain-rancheria-constitution
+    version: 1980-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: File mixes the 1980 constitution with a later unadopted BIA-revised draft and 1992 and 1999 resolutions and letters; facts come only from the 1980 constitution (Articles I to XIII).'
+- aspect: recall-and-removal
+  value: Recall by petition of 30% of qualified voters
+  quote: thirty percent (30%) of the qualified voters of the Table Mountain
+  source: constitution-table-mountain-rancheria-1980-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1980'
+  locator: Article VIII, Section 3
+  document_version:
+    document: table-mountain-rancheria-constitution
+    version: 1980-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: File mixes the 1980 constitution with a later unadopted BIA-revised draft and 1992 and 1999 resolutions and letters; facts come only from the 1980 constitution (Articles I to XIII).'
+- aspect: other
+  value: Referendum on petition of 30% of qualified voters
+  quote: submit any enacted or proposed tribal legislation to a referendum
+  source: constitution-table-mountain-rancheria-1980-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1980'
+  locator: Article VIII, Section 1
+  document_version:
+    document: table-mountain-rancheria-constitution
+    version: 1980-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: File mixes the 1980 constitution with a later unadopted BIA-revised draft and 1992 and 1999 resolutions and letters; facts come only from the 1980 constitution (Articles I to XIII).'
 gaming:
   compacts:
   - state: CA

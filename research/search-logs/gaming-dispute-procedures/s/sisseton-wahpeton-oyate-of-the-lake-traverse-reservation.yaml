@@ -1,7 +1,7 @@
 profile: content/tribes/s/sisseton-wahpeton-oyate-of-the-lake-traverse-reservation.yaml
 topic: gaming-dispute-procedures
 status: found
-last_searched: '2026-11-22'
+last_searched: '2026-11-23'
 searches:
 - date: '2026-11-22'
   searched_by: Claude (AI assistant)
@@ -36,6 +36,31 @@ searches:
   outcome: scanned-unreadable
   reason: This amendment listed 2008-12-09 has no text layer on most pages (21 of 21 pages have no text
     layer; no OCR available).
-next_steps: Read the scanned amendment listed 2004-10-26 (https://www.nigc.gov/wp-content/uploads/2025/03/sissetonwahpetonsioux-sisamend102604.pdf)
-  with OCR or by hand. Read the scanned amendment listed 2008-12-09 (https://www.nigc.gov/wp-content/uploads/2025/03/sissetonwahpetonsioux-swoordamendappr120908.pdf)
-  with OCR or by hand.
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: ai-review
+  place_kind: nigc-ordinance-pdf
+  address: https://www.nigc.gov/wp-content/uploads/2025/03/sissetonwahpetonsioux-swoordamendappr120908.pdf
+  query: 'read scanned PDF page images: patron or gaming public disputes, complaints and claims, grievances,
+    licensing hearings framed as disputes, arbitration, mediation, peacemaking and Tribal court review'
+  outcome: found
+  reason: 'Small-model reviewers read PDF pages 1-21 of 21 of this amendment listed 2008-12-09 as page
+    images (it has no text layer) and recorded 2 procedure(s): patron-dispute.'
+  records:
+  - research/reviews/2026-11-22-ordinance-disputes.json#sisseton-wahpeton-oyate-amendment-2008-12-09#p1
+  - research/reviews/2026-11-22-ordinance-disputes.json#sisseton-wahpeton-oyate-amendment-2008-12-09#p2
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: ai-review
+  place_kind: nigc-ordinance-pdf
+  address: https://www.nigc.gov/wp-content/uploads/2025/03/sissetonwahpetonsioux-sisamend102604.pdf
+  query: 'read scanned PDF page images: patron or gaming public disputes, complaints and claims, grievances,
+    licensing hearings framed as disputes, arbitration, mediation, peacemaking and Tribal court review'
+  outcome: found
+  reason: 'Small-model reviewers read PDF pages 1-20 of 20 of this amendment listed 2004-10-26 as page
+    images (it has no text layer) and recorded 2 procedure(s): patron-dispute.'
+  records:
+  - research/reviews/2026-11-22-ordinance-disputes.json#sisseton-wahpeton-oyate-amendment-2004-10-26#p1
+  - research/reviews/2026-11-22-ordinance-disputes.json#sisseton-wahpeton-oyate-amendment-2004-10-26#p2
+next_steps: The lead author decides the procedures in research/reviews/2026-11-22-ordinance-disputes.csv;
+  the nation's own current ordinance may differ from the list's copy.

@@ -1,6 +1,6 @@
 profile: content/tribes/m/miccosukee-tribe-of-indians.yaml
 topic: dispute-resolution
-status: found
+status: none-found
 last_searched: '2026-11-23'
 searches:
 - date: '2026-11-22'
@@ -50,10 +50,55 @@ searches:
     held no lead.
 - date: '2026-11-23'
   searched_by: Claude (AI assistant)
+  method: browser
+  place_kind: national-indian-law-library
+  address: https://nill.narf.org/tribes/miccosukee.html
+  query: dispute resolution wording
+  outcome: not-found
+  reason: Profile lists a tribal court contact and links to constitution and code; no ADR wording.
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: browser
+  place_kind: web-search
+  address: 'WebSearch: Miccosukee Tribe constitution elders OR "general council" settle disputes Miccosukee
+    tribal court'
+  query: Miccosukee Tribe constitution elders OR "general council" settle disputes Miccosukee tribal court
+  outcome: not-found
+  reason: Found a constitution copy at gateway.indigenouspeople.net (not official).
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: browser
+  place_kind: web-search
+  address: 'WebSearch: Miccosukee Tribe of Indians tribal court OR code mediation OR "dispute resolution"
+    OR elders'
+  query: Miccosukee Tribe of Indians tribal court OR code mediation OR "dispute resolution" OR elders
+  outcome: not-found
+  reason: Found NARF profile, Ballotpedia court entry and news.
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: web-archive-index
+  address: https://web.archive.org/cdx/search/cdx?url=miccosukee.com/*&fl=original,timestamp,mimetype,statuscode&filter=statuscode:200&collapse=urlkey&limit=5000
+  query: archived captures of the site, fetched by the fetch archived copies workflow
+  outcome: not-found
+  reason: The capture index lists 5000 archived addresses for miccosukee.com/*; those whose address names
+    a code, law, court or dispute resolution page were fetched in this retry or are listed in next steps.
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: web-archive
+  address: https://web.archive.org/web/20261023164615id_/https://miccosukee.com/miccosukee-tribe-history/
+  query: fetched by the fetch archived copies workflow; searched for dispute resolution, mediation, arbitration,
+    peacemaking, circles, elders' courts and restorative justice
+  outcome: not-found
+  reason: 'Archived copy (capture of 2026-10-23) read by script: no dispute resolution term in its text.'
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
   method: script
   place_kind: web-archive
   address: https://web.archive.org/web/20261023164615/https://miccosukee.com/miccosukee-tribe-history/
   query: 'retry of an address that failed earlier: a direct request, then the Wayback Machine copy'
-  outcome: found
-  reason: The Wayback Machine copy of 2026-10-23 ("Miccosukee Tribe - Miccosukee Casino &amp; Resort")
-    shows a court.
+  outcome: not-found
+  reason: 'The Wayback Machine copy of 2026-10-23 ("Miccosukee Tribe - Miccosukee Casino &amp; Resort") shows a court. A court or code page alone is a lead, not a dispute resolution method, and the data gap thread''s reading of this log on Nov. 23 found none, so this entry counts as not found.'
+next_steps: Ask the nation's court or government office whether it has a peacemaking, mediation or other
+  dispute resolution program, and check law library holdings of its code.

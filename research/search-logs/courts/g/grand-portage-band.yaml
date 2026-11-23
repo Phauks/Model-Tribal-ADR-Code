@@ -180,6 +180,95 @@ searches:
 - date: '2026-11-23'
   searched_by: Claude (AI assistant)
   method: script
+  place_kind: state-court-directory
+  address: https://www.mncourts.gov/Help-Topics/Tribal-Court.aspx
+  query: 'scripts/review/service_links.py second: Grand Portage'
+  outcome: blocked
+  reason: 'Second search: Every service listed for this nation that the first pass left without a link:
+    The Minnesota Judicial Branch site answered with a challenge page (status 403); not worked around.'
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: ai-review
+  place_kind: web-search
+  address: web search
+  query: Minnesota Judicial Branch tribal courts list Grand Portage Tribal Court
+  outcome: not-found
+  reason: 'Second search: Every service listed for this nation that the first pass left without a link:
+    The results were Minnesota Judicial Branch documents on mncourts.gov, which refused the project''s
+    requests (status 403).'
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: state-court-directory
+  address: https://www.mncourts.gov/mncourtsgov/media/scao_library/CJI/TCSCF-Members-Tribal-Court-Judges-(website-December-2022).pdf
+  query: 'scripts/review/service_links.py second: Grand Portage'
+  outcome: blocked
+  reason: 'Second search: Every service listed for this nation that the first pass left without a link:
+    The Minnesota Judicial Branch''s Tribal Court/State Court Forum member list refused the request (status
+    403); not worked around.'
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: ai-review
+  place_kind: web-search
+  address: web search
+  query: site:grandportageband.com court
+  outcome: not-found
+  reason: 'Second search: Every service listed for this nation that the first pass left without a link:
+    The search returned no pages of grandportageband.com.'
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: ai-review
+  place_kind: web-search
+  address: web search
+  query: '"Grand Portage Tribal Court"'
+  outcome: not-found
+  reason: 'Second search: Every service listed for this nation that the first pass left without a link:
+    Results were Minnesota Judicial Branch documents (refused, see above), state agency pages and pages
+    of the nation''s site that do not name a court.'
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: nation-website
+  address: https://www.grandportageband.com/?p=997
+  query: 'scripts/review/service_links.py second: court'
+  outcome: not-found
+  reason: 'Second search: Every service listed for this nation that the first pass left without a link:
+    Status 200 (Elderly Nutrition Program page); it names no court.'
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: ai-review
+  place_kind: web-search
+  address: web search
+  query: National American Indian Court Judges Association tribal court directory
+  outcome: not-found
+  reason: 'Second search: Every service listed for this nation that the first pass left without a link:
+    The association''s site shows programs, membership and regions; it publishes no directory of tribal
+    courts, so it lists no court for this nation.'
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: ai-review
+  place_kind: project-capture
+  address: research/reviews/2026-11-22-service-links.json
+  outcome: not-found
+  reason: 'Second search: “Tribal Court”: Claude weighed what the second search found against the lead
+    author''s order (own page, then directory entry): none-found; the link stays empty and the service
+    stays listed.'
+  records:
+  - research/reviews/2026-11-22-service-links.json#service-091
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: ai-review
+  place_kind: project-capture
+  address: research/reviews/2026-11-22-service-links.json
+  outcome: not-found
+  reason: 'Second search: “Grand Portage Band of Chippewa Tribal Court”: Claude weighed what the second
+    search found against the lead author''s order (own page, then directory entry): none-found; the link
+    stays empty and the service stays listed.'
+  records:
+  - research/reviews/2026-11-22-service-links.json#service-092
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: script
   place_kind: web-archive
   address: https://web.archive.org/web/20240707202055/https://www.mncourts.gov/mncourtsgov/media/scao_library/CJI/TCSCF-Members-Tribal-Court-Judges-(website-December-2022).pdf
   query: 'retry of an address that failed earlier: a direct request, then the Wayback Machine copy'

@@ -263,6 +263,14 @@ federal_administration:
   verification: bulk-import
   as_of: '2026-11-20'
   locator: Confederated Salish and Kootenai Tribes of the Flathead Reservation
+indian_health_service:
+- area: Billings
+  source: indian-health-service-self-governance-tribes
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  locator: Self-Governance Tribes list by Area
+  note: 'Listed as "Confederated Salish and Kootenai Tribes of the Flathead Nation". Also listed under the same Area in: indian-health-service-billings-careers-brochure. Also on the Indian Health Service Self-Governance Tribes list (Confederated Salish and Kootenai Tribes of the Flathead Nation (1993)); the list does not say which service unit or programs the compact covers.'
 government_structure:
 - kind: indian-reorganization-act
   detail: Listed as "The Confederated Salish and Kootenai Tribes of the Flathead Reservation, Montana"
@@ -300,6 +308,15 @@ government_structure:
   as_of: '1935'
   locator: preamble / approval and certification of adoption
   note: Historical constitution; a later constitution may have replaced it.
+governance:
+- aspect: head-of-government
+  value: Chairperson
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  verification: bulk-import
+  as_of: '2026-11-20'
+  locator: Confederated Salish and Kootenai Tribes of the Flathead Reservation
+  note: The title of the leader's office as the federal directory lists it; the holder's name is not recorded. Listed as “Chairman”; recorded without the holder's own form of the title.
 governing_documents:
 - kind: law-code
   title: Confederated Salish and Kootenai Tribes of the Flathead Reservation
@@ -666,6 +683,44 @@ jurisdiction:
     from images and matched to the roster. Row re-read on 2026-11-22 from the page image (the govinfo
     PDF has no text layer for the table); verification level unchanged because the name was not matched
     word for word in machine-read text.'
+treaties:
+- title: Treaty with the Flatheads, etc., 1855
+  signed: '1855-07-16'
+  statutes_at_large: 12 Stat. 975
+  kappler:
+    volume: 2
+    page: 722
+    link: https://treaties.okstate.edu/treaties/treaty-with-the-flatheads-etc-1855-0722
+  signatory: Flathead; Kootenai
+  source: kappler-indian-affairs-laws-and-treaties-vol-2-1904
+  confidence: medium
+  verification: inferred
+  locator: p. 722 (Treaty with the Flatheads, etc., 1855; Kappler header "July 16, 1855. | 12 Stats., 975. | Ratified Mar. 8, 1859. | Proclaimed Apr. 18, 1859.")
+  note: The nation is one successor of the party the treaty names; band-level attribution was not determined. Linked to the nation by Claude (AI assistant) from the treaty's text and the nation's name, not from a source that names the successor; not yet checked against a second source. Confederated Salish and Kootenai Tribes (Flathead, Pend d'Oreille, Kootenai) The page is the treaty's first page as the Oklahoma State University database's address gives it.
+- title: Treaty with the Blackfeet, 1855
+  signed: '1855-10-17'
+  statutes_at_large: 11 Stat. 657
+  kappler:
+    volume: 2
+    page: 736
+    link: https://treaties.okstate.edu/treaties/treaty-with-the-blackfeet-1855-0736
+  signatory: Flathead; Upper Pend d’Oreilles; Kootenai
+  source: kappler-indian-affairs-laws-and-treaties-vol-2-1904
+  confidence: medium
+  verification: inferred
+  locator: p. 736 (Treaty with the Blackfeet, 1855; Kappler header "Oct. 17, 1855. | 11 Stat., 657. | Ratified Apr. 15, 1856. | Proclaimed Apr. 25, 1856.")
+  note: The nation is one successor of the party the treaty names; band-level attribution was not determined. Linked to the nation by Claude (AI assistant) from the treaty's text and the nation's name, not from a source that names the successor; not yet checked against a second source. Confederated Salish and Kootenai Tribes (Flathead, Pend d'Oreille, Kootenai) The page is the treaty's first page as the Oklahoma State University database's address gives it.
+land_establishment:
+- land_area: Flathead (Jocko) Reservation, Montana
+  method: treaty
+  instrument: Treaty of Hell Gate, July 16, 1855, art. II, 12 Stat. 975
+  date: '1855-07-16'
+  detail: First set aside
+  source: treaty-with-the-flatheads-etc-1855
+  confidence: high
+  verification: read-in-full
+  locator: 12 Stat. 975
+  note: 'The instrument reads: “There is, however, reserved from the lands above ceded, ... for the use and occupation of the said confederated tribes, and as a general Indian reservation”. Kappler lists the Jocko Reserve (Flathead Agency) as "established by treaty July 16, 1855" (1 Kappler 859).'
 memberships:
 - organization: Rocky Mountain Tribal Leaders Council
   source: rocky-mountain-tribal-leaders-council-who-we-are

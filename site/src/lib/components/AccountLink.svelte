@@ -6,8 +6,10 @@
 	// takes its place (Trevor asked for this on Nov. 22, 2026). It opens a
 	// short list, following the WAI-ARIA disclosure pattern rather than a
 	// menu, since the items are plain links and a form: who is signed in, Your
-	// profile, Workspace (for people with workspace access), Password and Sign
-	// out. Trevor asked on Nov. 22, 2026 for "Signed in as" and Sign out to
+	// profile, Your uploads (docs/uploads.md), Following, Workspace (for people
+	// with workspace access), Account settings and Sign out. The password moved
+	// into Account settings, under Sign-in and security (site/DESIGN.md,
+	// section 6, "Settings and Account"). Trevor asked on Nov. 22, 2026 for "Signed in as" and Sign out to
 	// live here rather than across the top of the workspace and profile pages.
 	//
 	// The workspace and profile pages know who is signed in; they keep the name
@@ -17,13 +19,19 @@
 	// Nobody needs to sign in to read the site or to make a request.
 	import { onMount } from 'svelte';
 	import { page } from '$app/state';
-	import KeyRound from '@lucide/svelte/icons/key-round';
 	import LogIn from '@lucide/svelte/icons/log-in';
 	import LogOut from '@lucide/svelte/icons/log-out';
 	import UserRound from '@lucide/svelte/icons/user-round';
+	import UserRoundCog from '@lucide/svelte/icons/user-round-cog';
+	import Upload from '@lucide/svelte/icons/upload';
 	import LayoutDashboard from '@lucide/svelte/icons/layout-dashboard';
+	import Bell from '@lucide/svelte/icons/bell';
+	import { followingState } from '#lib/following-state.svelte.ts';
+	import { unreadLabel } from '#lib/following.ts';
 	import { roleLabels, type Role } from '#lib/permissions.ts';
 	import { readSignedInHint } from '#lib/signed-in-hint.ts';
+	import { forgetLocalDrafts } from '#lib/essays/local-draft.ts';
+	import { followSettingsEverywhere, forgetEverywhere } from '#lib/settings-everywhere.ts';
 
 	interface SignedInAs {
 		name: string;
@@ -46,7 +54,9 @@
 		const person = page.data.person as { displayName: string; role: Role } | undefined;
 		if (person) return { name: person.displayName, role: roleLabels[person.role].toLocaleLowerCase('en-US') };
 		const email = page.data.email as string | undefined;
-		if (email && page.url.pathname.startsWith('/profile')) return { name: email, role: '' };
+		if (email && ['/profile', '/account', '/uploads'].some((prefix) => page.url.pathname.startsWith(prefix))) {
+			return { name: email, role: '' };
+		}
 		return undefined;
 	});
 	const signedInAs = $derived(fromPage ?? remembered);
@@ -54,13 +64,31 @@
 	const signedIn = $derived(hintSignedIn || fromPage !== undefined);
 	const hasWorkspace = $derived(hintHasWorkspace || page.data.person !== undefined);
 
+	// Updates to followed pages the reader has not seen: a number on the
+	// button and beside Following in the list (site/DESIGN.md, "Follow").
+	let mounted = $state(false);
+	const unread = $derived(signedIn && followingState.current.signedIn ? followingState.current.unread : 0);
+
+	$effect(() => {
+		if (mounted && signedIn) void followingState.refresh(page.url.pathname);
+	});
+	// Settings kept with the account, when the person chose that (Settings, This device).
+	$effect(() => {
+		if (mounted && signedIn) return followSettingsEverywhere();
+	});
+
 	onMount(() => {
+		mounted = true;
 		const hint = readSignedInHint(document.cookie);
 		hintSignedIn = hint.signedIn;
 		hintHasWorkspace = hint.workspacePageNames.length > 0;
 		try {
 			if (fromPage) localStorage.setItem(nameStorageKey, JSON.stringify(fromPage));
-			else if (!signedIn) localStorage.removeItem(nameStorageKey);
+			else if (!signedIn) {
+				localStorage.removeItem(nameStorageKey);
+				// Unsaved essay text kept by the editor (local-draft.ts) does not outlast the sign-in.
+				if (!location.pathname.startsWith('/sign-in')) forgetLocalDrafts();
+			}
 			else {
 				const stored = JSON.parse(localStorage.getItem(nameStorageKey) ?? 'null') as SignedInAs | null;
 				if (stored && typeof stored.name === 'string') remembered = { name: stored.name, role: String(stored.role ?? '') };
@@ -76,6 +104,8 @@
 		} catch {
 			// Nothing was kept.
 		}
+		forgetLocalDrafts();
+		forgetEverywhere();
 	}
 
 	function closeOnOutside(event: FocusEvent | MouseEvent) {
@@ -102,11 +132,12 @@
 			type="button"
 			aria-expanded={open}
 			aria-controls="account-links"
-			aria-label="Your account"
-			title="Your account"
+			aria-label={unread > 0 ? `Your account: ${unread} new ${unread === 1 ? 'update' : 'updates'} to pages you follow` : 'Your account'}
+			title={unread > 0 ? `Your account. ${unread} new ${unread === 1 ? 'update' : 'updates'} to pages you follow` : 'Your account'}
 			onclick={() => (open = !open)}
 		>
 			<UserRound size={24} />
+			{#if unread > 0}<span class="unread-badge" aria-hidden="true">{unreadLabel(unread)}</span>{/if}
 		</button>
 		<ul id="account-links" class="account-links" hidden={!open}>
 			<li class="signed-in-as">
@@ -124,6 +155,19 @@
 					Your profile
 				</a>
 			</li>
+			<li>
+				<a href="/following" data-sveltekit-reload>
+					<Bell size={20} strokeWidth={1.75} />
+					Following
+					{#if unread > 0}<span class="unread-count">{unreadLabel(unread)} new</span>{/if}
+				</a>
+			</li>
+			<li>
+				<a href="/uploads" data-sveltekit-reload>
+					<Upload size={20} strokeWidth={1.75} />
+					Your uploads
+				</a>
+			</li>
 			{#if hasWorkspace}
 				<li>
 					<a href="/workspace" data-sveltekit-reload>
@@ -133,9 +177,9 @@
 				</li>
 			{/if}
 			<li>
-				<a href="/profile/password" data-sveltekit-reload>
-					<KeyRound size={20} strokeWidth={1.75} />
-					Password
+				<a href="/account" data-sveltekit-reload>
+					<UserRoundCog size={20} strokeWidth={1.75} />
+					Account settings
 				</a>
 			</li>
 			<li>
@@ -187,6 +231,35 @@
 	/* Round, like a profile picture, so it reads as the account and not as another setting. */
 	.account-button {
 		border-radius: 50%;
+	}
+
+	.account-button {
+		position: relative;
+	}
+
+	/* The number of new updates, on the button's corner, in the action color. */
+	.unread-badge {
+		position: absolute;
+		top: 2px;
+		right: 0;
+		min-width: 1.25rem;
+		padding: 0 0.3rem;
+		border-radius: 0.625rem;
+		background: var(--color-action);
+		color: var(--color-action-text);
+		font-size: 0.75rem;
+		font-weight: var(--font-weight-bold);
+		line-height: 1.25rem;
+		text-align: center;
+		pointer-events: none;
+	}
+
+	.unread-count {
+		margin-left: auto;
+		padding-left: var(--space-3);
+		font-size: var(--font-size-small);
+		font-weight: var(--font-weight-semibold);
+		color: var(--color-action);
 	}
 
 	.account-button[aria-expanded='true'] {

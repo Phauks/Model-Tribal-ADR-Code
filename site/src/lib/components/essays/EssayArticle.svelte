@@ -10,9 +10,10 @@
 	// above the text (EssayAccessBar.svelte), the draft with its changes
 	// marked, and the editor in place of the text, loaded only then.
 	import { onMount } from 'svelte';
+	import { figurePlayers } from '#lib/essays/figure-players.ts';
 	import SourceList from '#lib/components/SourceList.svelte';
 	import EssayAccessBar from '#lib/components/essays/EssayAccessBar.svelte';
-	import { signedInHintCookie } from '#lib/signed-in-hint.ts';
+	import { readSignedInHint } from '#lib/signed-in-hint.ts';
 	import type { SourceEntry } from '#lib/server/source-uses.ts';
 	import type { EssayPageState } from '#lib/server/essay-page-state.ts';
 
@@ -63,12 +64,20 @@
 			redirect: 'manual'
 		}).catch(() => null);
 		if (!response?.ok || !response.headers.get('Content-Type')?.includes('application/json')) return;
-		access = (await response.json()) as EssayPageState;
+		const answer = (await response.json()) as EssayPageState;
+		// Two loads can cross; never step back to an older version.
+		if (access && answer.latest.number < access.latest.number) return;
+		access = answer;
+	}
+
+	// The editor's last save lands after it closes: show that text, and open the editor on it next time.
+	function saved(): void {
+		if (mode === 'reading') void loadAccess();
 	}
 
 	onMount(() => {
 		if (!isNewest) return;
-		if (!document.cookie.split(';').some((entry) => entry.trim() === `${signedInHintCookie}=1`)) return;
+		if (!readSignedInHint(document.cookie).signedIn) return;
 		try {
 			if (localStorage.getItem(viewKey) === 'published') view = 'published';
 		} catch {
@@ -123,12 +132,12 @@
 		{#await import('#lib/components/essays/EssayEditor.svelte')}
 			<p class="small muted">Opening the editor…</p>
 		{:then { default: EssayEditor }}
-			<EssayEditor {identifier} text={access.text} version={access.latest.number} canEdit={access.canEdit} autoSave />
+			<EssayEditor {identifier} text={access.text} version={access.latest.number} canEdit={access.canEdit} autoSave live onsaved={saved} />
 		{:catch}
 			<p class="small">The editor could not be opened. <a href="/workspace/essays/{identifier}/edit">Open it in the workspace</a>.</p>
 		{/await}
 	{:else}
-		<div class="essay-text">
+		<div class="essay-text" use:figurePlayers>
 			{@html shown.html}
 		</div>
 		<SourceList sources={shown.sources} />

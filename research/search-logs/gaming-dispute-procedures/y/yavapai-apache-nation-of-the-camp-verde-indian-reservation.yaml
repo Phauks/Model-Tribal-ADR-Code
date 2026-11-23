@@ -1,7 +1,7 @@
 profile: content/tribes/y/yavapai-apache-nation-of-the-camp-verde-indian-reservation.yaml
 topic: gaming-dispute-procedures
 status: found
-last_searched: '2026-11-22'
+last_searched: '2026-11-23'
 searches:
 - date: '2026-11-22'
   searched_by: Claude (AI assistant)
@@ -78,7 +78,49 @@ searches:
     and recorded 1 procedure(s): patron-dispute.'
   records:
   - research/reviews/2026-11-22-ordinance-disputes.json#yavapai-apache-nation-amendment-2022-02-28#i1
-next_steps: Read the scanned amendment listed 2004-08-27 (https://www.nigc.gov/wp-content/uploads/2025/03/yavapaiapachetribe-amendappr082704.pdf)
-  with OCR or by hand. Read the scanned amendment listed 2005-05-23 (https://www.nigc.gov/wp-content/uploads/2025/03/yavapaiapachetribe-amendappr052305.pdf)
-  with OCR or by hand. Read the scanned amendment listed 2006-07-21 (https://www.nigc.gov/wp-content/uploads/2025/03/yavapaiapachetribe-amendappr072106.pdf)
-  with OCR or by hand.
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: ai-review
+  place_kind: nigc-ordinance-pdf
+  address: https://www.nigc.gov/wp-content/uploads/2025/03/yavapaiapachetribe-amendappr072106.pdf
+  query: 'read scanned PDF page images: patron or gaming public disputes, complaints and claims, grievances,
+    licensing hearings framed as disputes, arbitration, mediation, peacemaking and Tribal court review'
+  outcome: found
+  reason: 'Small-model reviewers read PDF pages 1-6, 22-55 of 66 of this amendment listed 2006-07-21 as
+    page images (it has no text layer) and recorded 8 procedure(s): employee-grievance, other, patron-dispute.
+    Not read: pages 7-21, 56-66 (40-page budget for long documents).'
+  records:
+  - research/reviews/2026-11-22-ordinance-disputes.json#yavapai-apache-nation-amendment-2006-07-21#p1
+  - research/reviews/2026-11-22-ordinance-disputes.json#yavapai-apache-nation-amendment-2006-07-21#p2
+  - research/reviews/2026-11-22-ordinance-disputes.json#yavapai-apache-nation-amendment-2006-07-21#p3
+  - research/reviews/2026-11-22-ordinance-disputes.json#yavapai-apache-nation-amendment-2006-07-21#p4
+  - research/reviews/2026-11-22-ordinance-disputes.json#yavapai-apache-nation-amendment-2006-07-21#p5
+  - research/reviews/2026-11-22-ordinance-disputes.json#yavapai-apache-nation-amendment-2006-07-21#p6
+  - research/reviews/2026-11-22-ordinance-disputes.json#yavapai-apache-nation-amendment-2006-07-21#p7
+  - research/reviews/2026-11-22-ordinance-disputes.json#yavapai-apache-nation-amendment-2006-07-21#p8
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: ai-review
+  place_kind: nigc-ordinance-pdf
+  address: https://www.nigc.gov/wp-content/uploads/2025/03/yavapaiapachetribe-amendappr052305.pdf
+  query: 'read scanned PDF page images: patron or gaming public disputes, complaints and claims, grievances,
+    licensing hearings framed as disputes, arbitration, mediation, peacemaking and Tribal court review'
+  outcome: not-found
+  reason: Small-model reviewers read PDF pages 2-4 of 4 of this amendment listed 2005-05-23 as page images
+    (it has no text layer) and found no dispute procedure (Resolution 30-05 amends only the monthly vendor
+    licensing threshold in Section 1, Subsection R; no dispute passage).
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: ai-review
+  place_kind: nigc-ordinance-pdf
+  address: https://www.nigc.gov/wp-content/uploads/2025/03/yavapaiapachetribe-amendappr082704.pdf
+  query: 'read scanned PDF page images: patron or gaming public disputes, complaints and claims, grievances,
+    licensing hearings framed as disputes, arbitration, mediation, peacemaking and Tribal court review'
+  outcome: not-found
+  reason: Small-model reviewers read PDF pages 1-5 of 5 of this amendment listed 2004-08-27 as page images
+    (it has no text layer) and found no dispute procedure (the resolution and exhibits concern revenue
+    allocation only; no dispute passage).
+next_steps: 'The lead author decides the procedures in research/reviews/2026-11-22-ordinance-disputes.csv;
+  the nation''s own current ordinance may differ from the list''s copy. Not read: pages 7-21, 56-66 of
+  the amendment listed 2006-07-21 (https://www.nigc.gov/wp-content/uploads/2025/03/yavapaiapachetribe-amendappr072106.pdf),
+  left by the 40-page budget for long documents.'

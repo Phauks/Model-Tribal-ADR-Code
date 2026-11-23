@@ -62,6 +62,35 @@ searches:
     held no lead.
 - date: '2026-11-23'
   searched_by: Claude (AI assistant)
+  method: browser
+  place_kind: other
+  address: https://tribaljustice.org/places/specialized-court-projects/northern-california-intertribal-court-system-members-hopland-band-of-pomo-indians-cahto-tribe-of-the-laytonville-rancheria-and-the-coyote-valley-band-of-pomo-indians/
+  query: dispute resolution wording
+  outcome: found
+  reason: Page about the intertribal court system serving Cahto says peacemaking is rooted in tribal tradition.
+  records:
+  - research/reviews/2026-11-23-dispute-resolution-retry.json#cahto-tribe-of-the-laytonville-rancheria-retry-1
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: browser
+  place_kind: web-search
+  address: 'WebSearch: Cahto Tribe of the Laytonville Rancheria tribal court peacemaking OR mediation
+    OR "dispute resolution"'
+  query: Cahto Tribe of the Laytonville Rancheria tribal court peacemaking OR mediation OR "dispute resolution"
+  outcome: not-found
+  reason: Found a tribaljustice.org page on the Northern California Intertribal Court System, of which
+    Cahto is a member.
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: web-archive
+  address: https://web.archive.org/web/20241128194008id_/https://caltribalfamilies.org/places/cahto-tribe-of-the-laytonville-rancheria/
+  query: fetched by the fetch archived copies workflow; searched for dispute resolution, mediation, arbitration,
+    peacemaking, circles, elders' courts and restorative justice
+  outcome: not-found
+  reason: 'Archived copy (capture of 2024-11-28) read by script: no dispute resolution term in its text.'
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
   method: script
   place_kind: web-archive
   address: https://web.archive.org/web/20241128194008/https://caltribalfamilies.org/places/cahto-tribe-of-the-laytonville-rancheria/
@@ -69,3 +98,5 @@ searches:
   outcome: found
   reason: The Wayback Machine copy of 2024-11-28 lists the nation's Tribal court as Northern California
     intertribal Court System (https://www.tribalcourt.org/).
+next_steps: Lead author's review of the candidates in research/reviews/2026-11-23-dispute-resolution-retry.csv
+  (Gate 1) before any record goes into the profile.

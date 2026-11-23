@@ -205,6 +205,65 @@ searches:
   reason: Nation's tribal code section names the Turtle Mountain Appellate Court as the court of last resort.
 - date: '2026-11-23'
   searched_by: Claude (AI assistant)
+  method: ai-review
+  place_kind: web-search
+  address: web search
+  query: ndcourts.gov tribal courts North Dakota list Turtle Mountain Fort Berthold Standing Rock
+  outcome: found
+  reason: 'Second search: Every service listed for this nation that the first pass left without a link:
+    The results led to the North Dakota Court System''s Tribal Courts page, read below.'
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: state-court-directory
+  address: https://www.ndcourts.gov/other-courts/tribal
+  query: 'scripts/review/service_links.py second: the nation''s name'
+  outcome: found
+  reason: 'Second search: Every service listed for this nation that the first pass left without a link:
+    North Dakota Court System, Other Courts, Tribal Courts page (status 200): lists the nation (Standing
+    Rock Sioux Tribe; Three Affiliated - MHA Nation; Turtle Mountain Band of Chippewa) with its website.'
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: ai-review
+  place_kind: web-search
+  address: web search
+  query: '"Turtle Mountain Tribal Court" Belcourt'
+  outcome: not-found
+  reason: 'Second search: Every service listed for this nation that the first pass left without a link:
+    Results were law-code copies (including law.tmchippewa.com, the Tribe''s code), news and grant pages;
+    no court page of the nation''s own came up.'
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: ai-review
+  place_kind: web-search
+  address: web search
+  query: National American Indian Court Judges Association tribal court directory
+  outcome: not-found
+  reason: 'Second search: Every service listed for this nation that the first pass left without a link:
+    The association''s site shows programs, membership and regions; it publishes no directory of tribal
+    courts, so it lists no court for this nation.'
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: ai-review
+  place_kind: project-capture
+  address: research/reviews/2026-11-22-service-links.json
+  outcome: found
+  reason: 'Second search: “Tribal Court”: Claude weighed what the second search found against the lead
+    author''s order (own page, then directory entry): directory, https://www.ndcourts.gov/other-courts/tribal.'
+  records:
+  - research/reviews/2026-11-22-service-links.json#service-386
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: ai-review
+  place_kind: project-capture
+  address: research/reviews/2026-11-22-service-links.json
+  outcome: found
+  reason: 'Second search: “Turtle Mountain Chippewa Tribal Court”: Claude weighed what the second search
+    found against the lead author''s order (own page, then directory entry): directory, https://www.ndcourts.gov/other-courts/tribal.'
+  records:
+  - research/reviews/2026-11-22-service-links.json#service-387
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
   method: script
   place_kind: web-archive
   address: https://web.archive.org/web/20260501080538/https://tmchippewa.com/sitemap.xml
@@ -212,3 +271,6 @@ searches:
   outcome: not-found
   reason: The Wayback Machine copy of the sitemap (2026-05-01) lists no court, code or dispute resolution
     page.
+next_steps: No page or official directory entry was found on 2026-11-22 for “Tribal Court”; “Turtle Mountain
+  Chippewa Tribal Court” (research/reviews/2026-11-22-service-links.json). The second search of 2026-11-23
+  linked “Tribal Court”; “Turtle Mountain Chippewa Tribal Court” (research/reviews/2026-11-22-service-links.json).

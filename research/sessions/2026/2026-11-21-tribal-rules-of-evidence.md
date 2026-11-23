@@ -62,41 +62,20 @@ limits: >-
 
 # Tribal rules of evidence: spike
 
-Trevor asked (Nov. 21, 2026) for a tentative look at the rules of evidence
-Native nations' courts use and how evidence works in Tribal ADR, to decide
-whether the topic is worth pursuing. Result:
-[2026-11-21-tribal-rules-of-evidence](../../analyses/2026-11-21-tribal-rules-of-evidence.md).
+Trevor asked (Nov. 21, 2026) for a tentative look at the rules of evidence Native nations' courts use and how evidence works in Tribal ADR, to decide whether the topic is worth pursuing. Result: [2026-11-21-tribal-rules-of-evidence](../../analyses/2026-11-21-tribal-rules-of-evidence.md).
 
 ## What was reused
 
-- The 85 provisions with a stated confidentiality rule in
-  `research/tribal-law/provisions.csv` (from the tribal law texts session).
-- The 1,616 text layers of captured Tribal law documents, kept privately in
-  the project's working files.
+- The 85 provisions with a stated confidentiality rule in `research/tribal-law/provisions.csv` (from the tribal law texts session).
+- The 1,616 text layers of captured Tribal law documents, kept privately in the project's working files.
 
 ## Machine pass over the captures
 
-1. `python3 scripts/law/evidence_spike_extract.py <capture text dir> snippets.json`
-   pulled 317 passage records (patterns: Federal Rules of Evidence, a state's
-   rules, "not bound by rules of evidence," custom with elders or proof,
-   traditional privileges, compromise offers).
-2. Three smaller-model helpers classified the records into court evidence
-   rules (108), proof of custom (136) and privilege or compromise (73), each
-   with a supporting quotation checked by script as an exact substring of
-   the passage.
-3. The quotation-free result is
-   [evidence-spike-passages.csv](../../tribal-law/evidence-spike-passages.csv)
-   (210 rows after dropping "irrelevant" and "none"). The passages and the
-   classifications with quotations stay private in
-   `research/tribal-law/evidence-spike/` in the project's working files.
+1. `python3 scripts/law/evidence_spike_extract.py <capture text dir> snippets.json` pulled 317 passage records (patterns: Federal Rules of Evidence, a state's rules, "not bound by rules of evidence," custom with elders or proof, traditional privileges, compromise offers).
+2. Three smaller-model helpers classified the records into court evidence rules (108), proof of custom (136) and privilege or compromise (73), each with a supporting quotation checked by script as an exact substring of the passage.
+3. The quotation-free result is [evidence-spike-passages.csv](../../tribal-law/evidence-spike-passages.csv) (210 rows after dropping "irrelevant" and "none"). The passages and the classifications with quotations stay private in `research/tribal-law/evidence-spike/` in the project's working files.
 
-Helpers' own caveats, kept here for whoever reviews the CSV: preliminary
-question rules (like Fed. R. Evid. 104(a)) are coded "not-bound" with that
-scope, which is not a general relaxation; four tables of contents that
-suggest adoption of the federal or a state's rules (Klamath, Cherokee
-Nation, Salish and Kootenai, Match-e-be-Nash-She-Wish) need the full text;
-seven "community expert witness" definitions were coded as expert testimony
-on custom although they do not say how custom is proven.
+Helpers' own caveats, kept here for whoever reviews the CSV: preliminary question rules (like Fed. R. Evid. 104(a)) are coded "not-bound" with that scope, which is not a general relaxation; four tables of contents that suggest adoption of the federal or a state's rules (Klamath, Cherokee Nation, Salish and Kootenai, Match-e-be-Nash-She-Wish) need the full text; seven "community expert witness" definitions were coded as expert testimony on custom although they do not say how custom is proven.
 
 ## Section 2.1 keyword counts
 
@@ -125,41 +104,14 @@ for name, pattern in features.items():
 
 ## Checked by download
 
-Passages the analysis relies on were checked against downloaded text:
-Warm Springs §§ 204.100 and 204.120(4); Northern Cheyenne § 6.1.2 and its
-draft marking; Pascua Yaqui R. 4(A), 20 and 21; Wyandotte §§ 503 and 505
-and the Federal Rules gap filler; Arakawa's quotation of the Lower Elwha
-ordinance; Stockbridge-Munsee § TCT.02.14; Lac Courte Oreilles
-§§ TCT.4.1.010 and TCT.4.3.080; the Umatilla preamble and Rule 502;
-Belone's three methods and court-appointed experts; Colville § 1-9-8 (from
-the project's capture); 25 C.F.R. § 11.504; 25 U.S.C. §§ 1302(a)(6),
-1302(c)(4) and 1304(d); Fed. R. Evid. 1101(a). Everything else was read
-through the fetch tool and is marked so in the analysis.
+Passages the analysis relies on were checked against downloaded text: Warm Springs §§ 204.100 and 204.120(4); Northern Cheyenne § 6.1.2 and its draft marking; Pascua Yaqui R. 4(A), 20 and 21; Wyandotte §§ 503 and 505 and the Federal Rules gap filler; Arakawa's quotation of the Lower Elwha ordinance; Stockbridge-Munsee § TCT.02.14; Lac Courte Oreilles §§ TCT.4.1.010 and TCT.4.3.080; the Umatilla preamble and Rule 502; Belone's three methods and court-appointed experts; Colville § 1-9-8 (from the project's capture); 25 C.F.R. § 11.504; 25 U.S.C. §§ 1302(a)(6), 1302(c)(4) and 1304(d); Fed. R. Evid. 1101(a). Everything else was read through the fetch tool and is marked so in the analysis.
 
 ## Follow-up: Morote (2026)
 
-Trevor uploaded the article on Nov. 21, 2026 (evening, Pacific time). It was
-read in full from its text layer (pages 79 to 106) and added to the analysis
-as section 1.6. The private copy is
-`research/captures/articles/morote-2026-tribal-rules-of-evidence.pdf` in the
-project's working files. Leads from its footnotes, not followed: Indian
-Tradition and Custom in Adjudication Under Rules of Evidence (Tribal Court
-Clearinghouse; the article gives the author as "John Zion," probably James W.
-Zion, not verified);
-Max Virupaksha Katner, Native American Oral Evidence: Finding a New Hearsay
-Exception (Georgetown Tribal Law Journal, 2020; the article cites it two ways);
-Hope M. Babcock, "[This] I Know From My Grandfather," 37 Am. Indian L. Rev.
-19 (2013). The article cites Fletcher's 2006 working paper under a different
-title from the one on the paper itself; the analysis uses the title on the
-paper.
+Trevor uploaded the article on Nov. 21, 2026 (evening, Pacific time). It was read in full from its text layer (pages 79 to 106) and added to the analysis as section 1.6. The private copy is `research/captures/articles/morote-2026-tribal-rules-of-evidence.pdf` in the project's working files. Leads from its footnotes, not followed: Indian Tradition and Custom in Adjudication Under Rules of Evidence (Tribal Court Clearinghouse; the article gives the author as "John Zion," probably James W. Zion, not verified); Max Virupaksha Katner, Native American Oral Evidence: Finding a New Hearsay Exception (Georgetown Tribal Law Journal, 2020; the article cites it two ways); Hope M. Babcock, "[This] I Know From My Grandfather," 37 Am. Indian L. Rev. 19 (2013). The article cites Fletcher's 2006 working paper under a different title from the one on the paper itself; the analysis uses the title on the paper.
 
 ## Leads not followed
 
-- Nell Jessup Newton, Tribal Court Praxis: One Year in the Life of Twenty
-  Indian Tribal Courts, 22 Am. Indian L. Rev. (1998) (first page not
-  verified), for how courts
-  handle evidence in practice.
-- Justin B. Richland, Arguing with Tradition: The Language of Law in Hopi
-  Tribal Court (2008), on how tradition is argued in court.
-- Arbitration: whether Tribal arbitration codes say which evidence rules
-  apply was not searched.
+- Nell Jessup Newton, Tribal Court Praxis: One Year in the Life of Twenty Indian Tribal Courts, 22 Am. Indian L. Rev. (1998) (first page not verified), for how courts handle evidence in practice.
+- Justin B. Richland, Arguing with Tradition: The Language of Law in Hopi Tribal Court (2008), on how tradition is argued in court.
+- Arbitration: whether Tribal arbitration codes say which evidence rules apply was not searched.

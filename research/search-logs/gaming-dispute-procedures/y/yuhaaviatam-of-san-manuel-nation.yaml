@@ -1,7 +1,7 @@
 profile: content/tribes/y/yuhaaviatam-of-san-manuel-nation.yaml
 topic: gaming-dispute-procedures
 status: found
-last_searched: '2026-11-22'
+last_searched: '2026-11-23'
 searches:
 - date: '2026-11-22'
   searched_by: Claude (AI assistant)
@@ -119,10 +119,45 @@ searches:
   outcome: scanned-unreadable
   reason: This amendment listed 2025-08-05 has no text layer on most pages (28 of 29 pages have no text
     layer (only the approval letter has text); no OCR available).
-next_steps: Read the scanned amendment listed 2000-03-10 (https://www.nigc.gov/wp-content/uploads/2025/03/sanmanuelband-sanmanuelamend031000.pdf)
-  with OCR or by hand. Read the scanned amendment listed 2004-10-26 (https://www.nigc.gov/wp-content/uploads/2025/03/sanmanuelband-sanmanuelamend102604.pdf)
-  with OCR or by hand. Read the scanned amendment listed 2010-08-30 (https://www.nigc.gov/wp-content/uploads/2025/03/sanmanuelband-Amdappr08302010.pdf)
-  with OCR or by hand. Read the scanned amendment listed 2015-02-02 (https://www.nigc.gov/wp-content/uploads/2025/03/SanManuelappr02032015.pdf)
-  with OCR or by hand. Read the scanned amendment listed 2016-01-15 (https://www.nigc.gov/wp-content/uploads/2025/03/SanManualBand20160115GO.pdf)
-  with OCR or by hand. Read the scanned amendment listed 2025-08-05 (https://www.nigc.gov/wp-content/uploads/2025/08/2025.08.05-San-Manuel-Gam-Ord-Amend.pdf)
-  with OCR or by hand.
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: ai-review
+  place_kind: nigc-ordinance-pdf
+  address: https://www.nigc.gov/wp-content/uploads/2025/08/2025.08.05-San-Manuel-Gam-Ord-Amend.pdf
+  query: 'read scanned PDF page images: patron or gaming public disputes, complaints and claims, grievances,
+    licensing hearings framed as disputes, arbitration, mediation, peacemaking and Tribal court review'
+  outcome: found
+  reason: 'Small-model reviewers read PDF pages 2-29 of 29 of this amendment listed 2025-08-05 as page
+    images (it has no text layer) and recorded 2 procedure(s): licensing-hearing, patron-dispute.'
+  records:
+  - research/reviews/2026-11-22-ordinance-disputes.json#yuhaaviatam-of-san-manuel-nation-formally-san-manuel-band-of-mission-indians-amendment-2025-08-05#p1
+  - research/reviews/2026-11-22-ordinance-disputes.json#yuhaaviatam-of-san-manuel-nation-formally-san-manuel-band-of-mission-indians-amendment-2025-08-05#p2
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: ai-review
+  place_kind: nigc-ordinance-pdf
+  address: https://www.nigc.gov/wp-content/uploads/2025/03/SanManualBand20160115GO.pdf
+  query: 'read scanned PDF page images: patron or gaming public disputes, complaints and claims, grievances,
+    licensing hearings framed as disputes, arbitration, mediation, peacemaking and Tribal court review'
+  outcome: found
+  reason: 'Small-model reviewers read PDF pages 1-25 of 25 of this amendment listed 2016-01-15 as page
+    images (it has no text layer) and recorded 1 procedure(s): patron-dispute.'
+  records:
+  - research/reviews/2026-11-22-ordinance-disputes.json#yuhaaviatam-of-san-manuel-nation-formally-san-manuel-band-of-mission-indians-amendment-2016-01-15#p1
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: ai-review
+  place_kind: nigc-ordinance-pdf
+  address: https://www.nigc.gov/wp-content/uploads/2025/03/SanManuelappr02032015.pdf
+  query: 'read scanned PDF page images: patron or gaming public disputes, complaints and claims, grievances,
+    licensing hearings framed as disputes, arbitration, mediation, peacemaking and Tribal court review'
+  outcome: found
+  reason: 'Small-model reviewers read PDF pages 1-28 of 28 of this amendment listed 2015-02-02 as page
+    images (it has no text layer) and recorded 1 procedure(s): patron-dispute.'
+  records:
+  - research/reviews/2026-11-22-ordinance-disputes.json#yuhaaviatam-of-san-manuel-nation-formally-san-manuel-band-of-mission-indians-amendment-2015-02-02#p1
+next_steps: 'The lead author decides the procedures in research/reviews/2026-11-22-ordinance-disputes.csv;
+  the nation''s own current ordinance may differ from the list''s copy. Older scanned documents were not
+  read, because the newer documents read replace them: amendment listed 2010-08-30 (https://www.nigc.gov/wp-content/uploads/2025/03/sanmanuelband-Amdappr08302010.pdf);
+  amendment listed 2004-10-26 (https://www.nigc.gov/wp-content/uploads/2025/03/sanmanuelband-sanmanuelamend102604.pdf);
+  amendment listed 2000-03-10 (https://www.nigc.gov/wp-content/uploads/2025/03/sanmanuelband-sanmanuelamend031000.pdf).'

@@ -1,5 +1,7 @@
 <script lang="ts">
 	import {
+		ageGroupLabels,
+		ageGroups,
 		availabilities,
 		availabilityLabels,
 		contactMethodLabels,
@@ -12,6 +14,8 @@
 		interests,
 		nationAnswerLabels,
 		nationAnswers,
+		specialties,
+		specialtyLabels,
 		type ProfileAnswers
 	} from '#lib/contributors.ts';
 	import type { PageProps } from './$types';
@@ -28,9 +32,10 @@
 		};
 		set('givenName', answers.givenName);
 		set('familyName', answers.familyName);
+		set('nativeName', answers.nativeName);
 		set('phone', answers.phone);
 		set('preferredContact', answers.preferredContact);
-		set('adultConfirmed', answers.adultConfirmed);
+		set('ageGroup', answers.ageGroup);
 		set('nationAnswer', answers.nationAnswer);
 		answers.nations.forEach((nation, index) => {
 			set(`nation${index + 1}Name`, nation.nationName);
@@ -41,6 +46,8 @@
 		set('languages', answers.languages);
 		set('organization', answers.organization);
 		values.interests = answers.interests.join('\n');
+		values.specialties = (answers.specialties ?? []).join('\n');
+		set('specialtyOther', answers.specialtyOther);
 		set('availability', answers.availability);
 		set('creditForm', answers.creditForm);
 		set('creditName', answers.creditName);
@@ -108,13 +115,12 @@
 	<fieldset id="about">
 		<legend><h2>About you</h2></legend>
 		<p class="hint">
-			Not everyone’s name has a given name and a family name. If yours does not, put your whole name in
-			the first box and leave the second empty. The family name is used only to put the list of credits
-			in order.
+			If your name does not have a first and last name, put your whole name in the first box. The last
+			name is used only to sort the list of credits.
 		</p>
 		<div class="field-row">
 			<div class="field">
-				<label for="givenName">Given name or names</label>
+				<label for="givenName">First name</label>
 				{@render fieldError('givenName')}
 				<input
 					type="text"
@@ -127,7 +133,7 @@
 				/>
 			</div>
 			<div class="field">
-				<label for="familyName">Family name (optional)</label>
+				<label for="familyName">Last name (optional)</label>
 				{@render fieldError('familyName')}
 				<input
 					type="text"
@@ -138,30 +144,42 @@
 				/>
 			</div>
 		</div>
-		<div class="choice">
+		<div class="field">
+			<label for="nativeName">A Native name, or another name you go by (optional)</label>
+			<p class="hint" id="nativeName-hint">
+				For example, a name in your nation’s language. It is printed only if you write it in your credit
+				below.
+			</p>
 			<input
-				type="checkbox"
-				id="adultConfirmed"
-				name="adultConfirmed"
-				value="yes"
-				checked={value('adultConfirmed') === 'yes'}
-				aria-describedby="adultConfirmed-hint"
+				type="text"
+				id="nativeName"
+				name="nativeName"
+				value={value('nativeName')}
+				aria-describedby="nativeName-hint"
 			/>
-			<label for="adultConfirmed">
-				I am an adult (past the age of majority) where I live
-				<span class="hint" id="adultConfirmed-hint">
-					A young person can still help, with a parent or guardian, through the
-					<a href="/requests?kind=contribute">request form</a>.
-				</span>
-			</label>
 		</div>
+		<fieldset aria-describedby="ageGroup-hint">
+			<legend>How old are you?</legend>
+			<p class="hint" id="ageGroup-hint">
+				Signing up is for people 13 or older. Someone younger can still help, with a parent or guardian,
+				through the <a href="/requests?kind=contribute">request form</a>. People under 18 are credited by a
+				description or a name they choose.
+			</p>
+			{@render fieldError('ageGroup')}
+			{#each ageGroups as option (option)}
+				<div class="choice">
+					<input type="radio" id="ageGroup-{option}" name="ageGroup" value={option} checked={value('ageGroup') === option} />
+					<label for="ageGroup-{option}">{ageGroupLabels[option]}</label>
+				</div>
+			{/each}
+		</fieldset>
 	</fieldset>
 
 	<fieldset id="contact">
 		<legend><h2>How to reach you</h2></legend>
 		<p class="hint">
-			We use the email address you signed in with. Add a phone number only if you would like us to call
-			or text you. Neither is ever printed or published.
+			Your email address is <strong>{data.email}</strong>, the one you signed in with. Add a phone number
+			only if you would like us to call or text you. Neither is ever printed or published.
 		</p>
 		<div class="field">
 			<label for="phone">Phone number (optional)</label>
@@ -297,6 +315,36 @@
 				value={value('organization')}
 			/>
 		</div>
+		<fieldset aria-describedby="specialties-hint">
+			<legend>Your specialties (optional)</legend>
+			<p class="hint" id="specialties-hint">
+				If you have a page on this website, these are shown with your name there and on the People page.
+			</p>
+			{#each specialties as option (option)}
+				<div class="choice">
+					<input
+						type="checkbox"
+						id="specialties-{option}"
+						name="specialties"
+						value={option}
+						checked={chosen('specialties', option)}
+					/>
+					<label for="specialties-{option}">{specialtyLabels[option]}</label>
+				</div>
+			{/each}
+			<div class="field">
+				<label for="specialtyOther">Other, in your own words</label>
+				{@render fieldError('specialtyOther')}
+				<input
+					type="text"
+					id="specialtyOther"
+					name="specialtyOther"
+					maxlength="100"
+					value={value('specialtyOther')}
+					aria-invalid={errors.specialtyOther ? 'true' : undefined}
+				/>
+			</div>
+		</fieldset>
 	</fieldset>
 
 	<fieldset id="help">
@@ -361,8 +409,8 @@
 		<div class="field">
 			<label for="creditName">Your name as it should be printed, if different (optional)</label>
 			<p class="hint" id="creditName-hint">
-				For example with a middle initial, a name in your language, or diacritics. Left empty, we print
-				your given and family names.
+				For example with your Native name, a middle initial, or diacritics. Left empty, we print your
+				first and last names.
 			</p>
 			<input
 				type="text"

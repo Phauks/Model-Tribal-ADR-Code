@@ -175,6 +175,23 @@ federal_administration:
   verification: bulk-import
   as_of: '2026-11-20'
   locator: Wrangell Cooperative Association
+indian_health_service:
+- area: Alaska
+  source: indian-health-service-alaska-area-profile-mount-edgecumbe-service-area
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  locator: '"Federally Recognized Tribes" list, Mt. Edgecumbe Service Area profile'
+  note: Listed as "Wrangell Cooperative Association". Service area operator statement is from the same profile; profile is old (about 2007) and the operator statement may have changed.
+- area: Alaska
+  service_unit: Mt. Edgecumbe Service Area
+  source: indian-health-service-alaska-area-profile-mount-edgecumbe-service-area
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  locator: '"Federally Recognized Tribes" list, Mt. Edgecumbe Service Area profile'
+  note: 'The source''s words: "Wrangell Cooperative Association".'
+  operator: tribal
 government_structure:
 - kind: alaska-indian-reorganization-act
   detail: Constitution (Wrangell Cooperative Association Alaska) (approved 1942) states it was adopted
@@ -188,6 +205,207 @@ government_structure:
   as_of: '1942'
   locator: preamble / approval and certification of adoption
   note: Historical constitution; a later constitution may have replaced it.
+governance:
+- aspect: form
+  value: Constitution and By-laws under Act of Congress of June 18, 1934
+  quote: with, and by authority of, the Act of Congress of June 18, 1934 (48 Stat.
+  source: university-of-oklahoma-indian-reorganization-act-wrancons
+  confidence: medium
+  verification: read-in-full
+  as_of: '1950-12-28'
+  locator: Preamble
+  document_version:
+    document: wrangell-cooperative-association-constitution
+    version: 1950-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Text is the constitution approved in 1942 and ratified in 1947, with Amendment I (approved December 28, 1950, ratified February 8, 1951) attached; the 1950 label is the amendment''s approval date.'
+- aspect: governing-body
+  value: Council
+  quote: shall be a Council composed of eight members, elected by the adult members
+  source: university-of-oklahoma-indian-reorganization-act-wrancons
+  confidence: medium
+  verification: read-in-full
+  as_of: '1950-12-28'
+  locator: Article III, Section 1
+  document_version:
+    document: wrangell-cooperative-association-constitution
+    version: 1950-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Text is the constitution approved in 1942 and ratified in 1947, with Amendment I (approved December 28, 1950, ratified February 8, 1951) attached; the 1950 label is the amendment''s approval date.'
+- aspect: governing-body-size
+  value: 8 members
+  quote: shall be a Council composed of eight members, elected by the adult members
+  source: university-of-oklahoma-indian-reorganization-act-wrancons
+  confidence: medium
+  verification: read-in-full
+  as_of: '1950-12-28'
+  locator: Article III, Section 1
+  document_version:
+    document: wrangell-cooperative-association-constitution
+    version: 1950-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Text is the constitution approved in 1942 and ratified in 1947, with Amendment I (approved December 28, 1950, ratified February 8, 1951) attached; the 1950 label is the amendment''s approval date.'
+- aspect: governing-body-selection
+  value: Elected by adult members
+  quote: shall be a Council composed of eight members, elected by the adult members
+  source: university-of-oklahoma-indian-reorganization-act-wrancons
+  confidence: medium
+  verification: read-in-full
+  as_of: '1950-12-28'
+  locator: Article III, Section 1
+  document_version:
+    document: wrangell-cooperative-association-constitution
+    version: 1950-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Text is the constitution approved in 1942 and ratified in 1947, with Amendment I (approved December 28, 1950, ratified February 8, 1951) attached; the 1950 label is the amendment''s approval date.'
+- aspect: governing-body-term
+  value: 2 years
+  quote: annual election date and shall serve for a period of two years or until
+  source: university-of-oklahoma-indian-reorganization-act-wrancons
+  confidence: medium
+  verification: read-in-full
+  as_of: '1950-12-28'
+  locator: Article III, Section 2
+  document_version:
+    document: wrangell-cooperative-association-constitution
+    version: 1950-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Text is the constitution approved in 1942 and ratified in 1947, with Amendment I (approved December 28, 1950, ratified February 8, 1951) attached; the 1950 label is the amendment''s approval date.'
+- aspect: head-of-government
+  value: President
+  quote: SEC. 3. The President shall be elected annually by
+  source: university-of-oklahoma-indian-reorganization-act-wrancons
+  confidence: medium
+  verification: read-in-full
+  as_of: '1950-12-28'
+  locator: Article III, Section 3
+  document_version:
+    document: wrangell-cooperative-association-constitution
+    version: 1950-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Text is the constitution approved in 1942 and ratified in 1947, with Amendment I (approved December 28, 1950, ratified February 8, 1951) attached; the 1950 label is the amendment''s approval date.'
+- aspect: head-of-government
+  value: President
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  verification: bulk-import
+  as_of: '2026-11-20'
+  locator: Wrangell Cooperative Association
+  note: The title of the leader's office as the federal directory lists it; the holder's name is not recorded.
+- aspect: head-of-government-selection
+  value: Chosen by the Council from its members
+  quote: the Council from within its membership to serve for a term of one year.
+  source: university-of-oklahoma-indian-reorganization-act-wrancons
+  confidence: medium
+  verification: read-in-full
+  as_of: '1950-12-28'
+  locator: Article III, Section 3
+  document_version:
+    document: wrangell-cooperative-association-constitution
+    version: 1950-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Text is the constitution approved in 1942 and ratified in 1947, with Amendment I (approved December 28, 1950, ratified February 8, 1951) attached; the 1950 label is the amendment''s approval date.'
+- aspect: head-of-government-term
+  value: 1 year
+  quote: the Council from within its membership to serve for a term of one year.
+  source: university-of-oklahoma-indian-reorganization-act-wrancons
+  confidence: medium
+  verification: read-in-full
+  as_of: '1950-12-28'
+  locator: Article III, Section 3
+  document_version:
+    document: wrangell-cooperative-association-constitution
+    version: 1950-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Text is the constitution approved in 1942 and ratified in 1947, with Amendment I (approved December 28, 1950, ratified February 8, 1951) attached; the 1950 label is the amendment''s approval date.'
+- aspect: other-officers
+  value: Vice-President, Secretary, Treasurer
+  quote: SEC. 2. The Council shall elect a Vice-President
+  source: university-of-oklahoma-indian-reorganization-act-wrancons
+  confidence: medium
+  verification: read-in-full
+  as_of: '1950-12-28'
+  locator: Bylaws, Article I, Section 2
+  document_version:
+    document: wrangell-cooperative-association-constitution
+    version: 1950-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Text is the constitution approved in 1942 and ratified in 1947, with Amendment I (approved December 28, 1950, ratified February 8, 1951) attached; the 1950 label is the amendment''s approval date.'
+- aspect: elections
+  value: First Thursday in February
+  quote: Section 1. The annual election date shall be the first Thursday
+  source: university-of-oklahoma-indian-reorganization-act-wrancons
+  confidence: medium
+  verification: read-in-full
+  as_of: '1950-12-28'
+  locator: Amendment I (Article IV, Section 1)
+  document_version:
+    document: wrangell-cooperative-association-constitution
+    version: 1950-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Text is the constitution approved in 1942 and ratified in 1947, with Amendment I (approved December 28, 1950, ratified February 8, 1951) attached; the 1950 label is the amendment''s approval date.'
+- aspect: voting-age
+  value: '21'
+  quote: age of twenty-one years shall have the right to vote.
+  source: university-of-oklahoma-indian-reorganization-act-wrancons
+  confidence: medium
+  verification: read-in-full
+  as_of: '1950-12-28'
+  locator: Article VI, Section 3
+  document_version:
+    document: wrangell-cooperative-association-constitution
+    version: 1950-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Text is the constitution approved in 1942 and ratified in 1947, with Amendment I (approved December 28, 1950, ratified February 8, 1951) attached; the 1950 label is the amendment''s approval date.'
+- aspect: election-authority
+  value: Council
+  quote: shall be held in accordance with rules and regulations of the Council.
+  source: university-of-oklahoma-indian-reorganization-act-wrancons
+  confidence: medium
+  verification: read-in-full
+  as_of: '1950-12-28'
+  locator: Article IV, Section 4
+  document_version:
+    document: wrangell-cooperative-association-constitution
+    version: 1950-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Text is the constitution approved in 1942 and ratified in 1947, with Amendment I (approved December 28, 1950, ratified February 8, 1951) attached; the 1950 label is the amendment''s approval date.'
+- aspect: amendment
+  value: Majority vote of adult members in election called by Secretary
+  quote: by a majority vote of the adult members of the Village voting at an election
+  source: university-of-oklahoma-indian-reorganization-act-wrancons
+  confidence: medium
+  verification: read-in-full
+  as_of: '1950-12-28'
+  locator: Article IX
+  document_version:
+    document: wrangell-cooperative-association-constitution
+    version: 1950-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Text is the constitution approved in 1942 and ratified in 1947, with Amendment I (approved December 28, 1950, ratified February 8, 1951) attached; the 1950 label is the amendment''s approval date.'
+- aspect: secretarial-approval
+  value: Required for amendments
+  quote: if approved by the Secretary of the Interior, shall be effective when ratified
+  source: university-of-oklahoma-indian-reorganization-act-wrancons
+  confidence: medium
+  verification: read-in-full
+  as_of: '1950-12-28'
+  locator: Article IX
+  document_version:
+    document: wrangell-cooperative-association-constitution
+    version: 1950-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Text is the constitution approved in 1942 and ratified in 1947, with Amendment I (approved December 28, 1950, ratified February 8, 1951) attached; the 1950 label is the amendment''s approval date.'
+- aspect: recall-and-removal
+  value: Recall by petition of one-third of members
+  quote: Upon petition signed by one-third of the members of the Association
+  source: university-of-oklahoma-indian-reorganization-act-wrancons
+  confidence: medium
+  verification: read-in-full
+  as_of: '1950-12-28'
+  locator: Article VII, Section 1(c)
+  document_version:
+    document: wrangell-cooperative-association-constitution
+    version: 1950-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Text is the constitution approved in 1942 and ratified in 1947, with Amendment I (approved December 28, 1950, ratified February 8, 1951) attached; the 1950 label is the amendment''s approval date.'
+- aspect: recall-and-removal
+  value: Seat declared vacant by Council after 3 months' absence
+  quote: meetings of the Council for a period of three months without cause or excuse,
+  source: university-of-oklahoma-indian-reorganization-act-wrancons
+  confidence: medium
+  verification: read-in-full
+  as_of: '1950-12-28'
+  locator: Article VII, Section 1(b)
+  document_version:
+    document: wrangell-cooperative-association-constitution
+    version: 1950-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Text is the constitution approved in 1942 and ratified in 1947, with Amendment I (approved December 28, 1950, ratified February 8, 1951) attached; the 1950 label is the amendment''s approval date.'
 governing_documents:
 - kind: constitution
   title: Constitution

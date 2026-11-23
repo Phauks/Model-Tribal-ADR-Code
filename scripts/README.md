@@ -1,11 +1,8 @@
 # Scripts
 
-Checks that run on every pull request (see `.github/workflows/checks.yml`).
-Run them from the repository root before opening a pull request.
+Checks that run on every pull request (see `.github/workflows/checks.yml`). Run them from the repository root before opening a pull request.
 
-The workflow's final job, `All checks`, passes only when every other check
-passes, and it is the only check the `main` ruleset requires. To add a check,
-add a job to the workflow and list it under `all-checks.needs`.
+The workflow's final job, `All checks`, passes only when every other check passes, and it is the only check the `main` ruleset requires. To add a check, add a job to the workflow and list it under `all-checks.needs`.
 
 | Script | Checks | Needs |
 | --- | --- | --- |
@@ -27,10 +24,7 @@ add a job to the workflow and list it under `all-checks.needs`.
 
 ## Native nations dataset
 
-Scripts that built the first profiles in `content/tribes/` from cited facts in
-`research/raw/` (see [research/raw/README.md](../research/raw/README.md)).
-They are kept so the first edition can be reproduced; once profiles are edited
-by hand, add new facts by hand or in a new raw file and review the diff.
+Scripts that built the first profiles in `content/tribes/` from cited facts in `research/raw/` (see [research/raw/README.md](../research/raw/README.md)). They are kept so the first edition can be reproduced; once profiles are edited by hand, add new facts by hand or in a new raw file and review the diff.
 
 | Script | Does | Needs |
 | --- | --- | --- |
@@ -62,9 +56,7 @@ Run by hand, never in continuous integration:
 
 ## Data gap review
 
-Run by hand, never in continuous integration. They follow up rows 1, 7 and
-11 of the [dataset gap audit](../research/analyses/2026-11-21-dataset-gap-audit.md)
-and fill in the `verification` level from [decision record 0014](../docs/decisions/0014-verification-levels-and-record-lint.md).
+Run by hand, never in continuous integration. They follow up rows 1, 7 and 11 of the [dataset gap audit](../research/analyses/2026-11-21-dataset-gap-audit.md) and fill in the `verification` level from [decision record 0014](../docs/decisions/0014-verification-levels-and-record-lint.md).
 
 | Script | Does | Needs |
 | --- | --- | --- |
@@ -77,9 +69,7 @@ and fill in the `verification` level from [decision record 0014](../docs/decisio
 
 ## Dispute resolution coverage search
 
-Run by hand, never in continuous integration. It follows up row 2 of the
-[dataset gap audit](../research/analyses/2026-11-21-dataset-gap-audit.md) and
-writes the [search logs](../research/search-logs/README.md) of decision record
+Run by hand, never in continuous integration. It follows up row 2 of the [dataset gap audit](../research/analyses/2026-11-21-dataset-gap-audit.md) and writes the [search logs](../research/search-logs/README.md) of decision record
 0025. It never changes a profile.
 
 | Script | Does | Needs |
@@ -92,7 +82,9 @@ Run by hand, never in continuous integration. It reads the gaming ordinances alr
 
 | Script | Does | Needs |
 | --- | --- | --- |
-| `review/ordinance_disputes.py` | `batches` reads the saved text of every ordinance and amendment in `research/gaming/ordinance-documents.json`, marks pages with no text layer, approval letter pages and tables of contents, finds sections on patron disputes, employee grievances, licensing hearings and appeals, mediation, arbitration, peacemaking and Tribal court review by heading and keyword, picks each nation's newest document with each kind of procedure, records every document checked (scanned ones as `scanned-unreadable`; no OCR) and writes review batches for reviewers following [the brief](../research/reviews/briefs/2026-11-22-ordinance-disputes.md) into a private work folder; `merge` checks every reviewer snippet against the document text, queues low-confidence and garbled items for a second look and applies its verdicts, and writes `research/reviews/2026-11-22-ordinance-disputes.{json,csv}` (empty decision column), a counts file, one search log per profile and a private file of the snippets | Python 3 standard library and the saved text (`pdftotext` only for a missing text file); `merge` also `scripts/requirements.txt` |
+| `review/ordinance_disputes.py` | `batches` reads the saved text of every ordinance and amendment in `research/gaming/ordinance-documents.json`, marks pages with no text layer, approval letter pages and tables of contents, finds sections on patron disputes, employee grievances, licensing hearings and appeals, mediation, arbitration, peacemaking and Tribal court review by heading and keyword, picks each nation's newest document with each kind of procedure, records every document checked (scanned ones as `scanned-unreadable`; no OCR) and writes review batches for reviewers following [the brief](../research/reviews/briefs/2026-11-22-ordinance-disputes.md) into a private work folder; `merge` checks every reviewer snippet against the document text, queues low-confidence and garbled items for a second look and applies its verdicts, and writes `research/reviews/2026-11-22-ordinance-disputes.{json,csv}` (empty decision column), a counts file, one search log per profile and a private file of the snippets; `grab` (Nov. 23, 2026) adds the compact passages readers set aside, flags items with no steps, and marks every item keep, under the lead author's grab-now answer | Python 3 standard library and the saved text (`pdftotext` only for a missing text file); `merge` also `scripts/requirements.txt` |
+| `review/ordinance_scans.py` | Reads the scanned ordinances (no text layer) as page images, in steps run in the `ordinance_disputes.py` work folder. `select` picks, for each nation whose `gaming-dispute-procedures` search log is `partly-searched` (or a list given with `--nations`), the newest full ordinance on the list if it is scanned and the scanned amendments listed on or after it, at most 3, and lists the same choice for every other nation as a second tier that is not downloaded. `download` fetches each first-tier PDF from its public link on the Commission's site, one at a time with a pause; it stops on a refusal and never tries to get around one. `pages` classifies each page as approval letter, other text, blank or image (no OCR). `batches` writes reading batches for reviewers following [the scan brief](../research/reviews/briefs/2026-11-23-ordinance-scans.md); it refuses to overwrite existing batches without `--force`. `merge-scans` adds the readers' items to `research/reviews/2026-11-22-ordinance-disputes.{json,csv}` (ids ending `#p<n>`, `partly-read` flags, the `grab` flags and decision, and spot-check verdicts from the work folder), appends a search entry per document to each nation's search log and sets its status, updates the counts file and the private snippets file. `second-tier --from WORK --work WORK2` writes the second tier's choice as the reading list of a new work folder, so the same steps can read it; `merge-scans` then replaces only the documents read in that folder. `merge-scans` also flags a document as `wrong-file`, with nothing recorded, when its file has the same sha256 as another nation's document and its link names that nation. `spot-check` prints the seeded sample of items to check by hand. Run `merge-scans` after `ordinance_disputes.py merge` and `grab`, because `merge` rewrites the review files and search logs from scratch | Python 3, `curl`, poppler (`pdfinfo`, `pdftotext`, `pdftoppm`); `merge-scans` also `scripts/requirements.txt` |
+| `review/dispute_resolution_retry.py` | The second try (Nov. 23, 2026) at the nations whose dispute resolution search stayed `partly-searched`. `build --data FILE` turns the private work file (each nation's web searches, archived copies from the "fetch archived copies" workflow, and the 2022 Alaska Tribal Court Directory reading, plus the lead session's candidates) into `research/reviews/2026-11-23-dispute-resolution-retry.{json,csv}` (empty `lead_author_decision` column) and a counts file. `apply` appends those searches to the `dispute-resolution` search logs, never adding the same date, place and address twice, and sets each status (found, partly-searched while a place still failed, otherwise none-found). `grab` applies the lead author's grab-now rule: every candidate is kept and its weak spots go in a `flags` column. It never changes a profile | Python 3, `scripts/requirements.txt` |
 
 ## Applying the second gap review, Nov. 22, 2026
 
@@ -110,7 +102,7 @@ Run by hand, never in continuous integration. It follows the lead author's rule 
 
 | Script | Does | Needs |
 | --- | --- | --- |
-| `review/service_links.py` | `gather` joins each service with no link to the Nov. 21 and Nov. 22 court reviews and to the linked entries of the same profile, then reads the nation's website, court pages and peacemaking pages where those give no own page, with the helpers of `review/court_listings_second_pass.py` (robots.txt obeyed; pages that review already fetched are read from its saved copies with `--reuse`); `merge` picks each link in the lead author's order (the service's own page, then the official directory entry that lists it, else none) with the hand decisions in `DECISIONS`, checks each link against a fetch log, and writes `research/reviews/2026-11-22-service-links.{json,csv}` and a search log entry for every place looked; `apply` sets `link` and adds to the note where it came from and when it was fetched, leaving `verification` and every other line as it was | `pip install -r scripts/requirements.txt beautifulsoup4`, plus `curl` and `pdftotext` |
+| `review/service_links.py` | `gather` joins each service with no link to the Nov. 21 and Nov. 22 court reviews and to the linked entries of the same profile, then reads the nation's website, court pages and peacemaking pages where those give no own page, with the helpers of `review/court_listings_second_pass.py` (robots.txt obeyed; pages that review already fetched are read from its saved copies with `--reuse`); `merge` picks each link in the lead author's order (the service's own page, then the official directory entry that lists it, else none) with the hand decisions in `DECISIONS`, checks each link against a fetch log, and writes `research/reviews/2026-11-22-service-links.{json,csv}` and a search log entry for every place looked; `apply` sets `link` and adds to the note where it came from and when it was fetched, leaving `verification` and every other line as it was, and leaves alone a service that already has the review's link; `second WORK_DIRECTORY` records the second, deeper search of Nov. 23, 2026 (web searches and state court lists, kept in the work folder as `searches.tsv` and `fetch-log.json`): it checks each link in `SECOND_DECISIONS` against the fetch log, updates the review rows those decisions change and adds every search to the nation's search log, appending to its text so earlier entries stay as they were; run `apply` after it | `pip install -r scripts/requirements.txt beautifulsoup4`, plus `curl` and `pdftotext` |
 
 ## Gaming compacts and ordinances
 
@@ -130,22 +122,26 @@ Run by hand, never in continuous integration. They build the catalog in [`resear
 
 ## Tribal law texts
 
-Run by hand, never in continuous integration. They build
-[`research/tribal-law/`](../research/tribal-law/README.md) and never change a
-profile. The documents they download, and the quotations, stay private.
+Run by hand, never in continuous integration. They build [`research/tribal-law/`](../research/tribal-law/README.md) and never change a profile. The documents they download, and the quotations, stay private.
 
 | Script | Does | Needs |
 | --- | --- | --- |
 | `law/collect_law_texts.py` | `targets` lists every law code, court rules and dispute resolution link the profiles cite; `fetch` downloads each one and the chapters its index page links to, pacing each site; `scan` cuts the passages around dispute resolution terms into batches for reviewers; `merge` checks their quotations against the text and writes the provision files | `scripts/requirements.txt`, `curl`, `pdftotext`, `pandoc` |
 | `law/second_pass.py` | `prepare` writes review batches of the hard cases and a fixed random sample; `apply` writes the second reader's verdicts beside the provisions | Python 3 standard library |
 
+## Free case law sources
+
+Run by hand, never in continuous integration. Both use free public data with no account or key, find the newest data on their own, and can be re-run whenever new data or new case records arrive ([sources note](../research/analyses/2026-11-23-free-legal-information-sources.md)).
+
+| Script | Does | Needs |
+| --- | --- | --- |
+| `caselaw/check_case_citations.py` | Looks up every case source record's citations in CourtListener's newest quarterly bulk files and compares the case name and year; writes `research/reviews/<date>-case-citations-courtlistener.csv`, and with `--apply` (or later `--apply-report`) a `courtlistener` block (cluster number and link) in each record that matches. About 2.6 GB of downloads, cached for re-runs | `scripts/requirements.txt`, `curl` |
+| `caselaw/tribal_court_opinions.py` | Indexes the tribal court opinions in the Caselaw Access Project reporters named in `research/tribal-court-opinions/sources.yaml`: nations, topics and the case records each opinion cites; with `--file-captures` files each volume as a private capture in the bucket ([README](../research/tribal-court-opinions/README.md)) | `scripts/requirements.txt`, `curl`; R2 keys for `--file-captures` |
+| `caselaw/caselaw_sources.py` | Shared helpers for both: downloads, the newest CourtListener release, citation parsing and case name comparison | |
+
 ## Constitutions
 
-Run by hand, in this order, never in continuous integration. They build the
-catalog in [`research/constitutions/`](../research/constitutions/README.md)
-and the constitution version histories in `content/documents/`. The documents
-they download stay private, outside the repository; the work files (JSON
-between steps) go in a scratch folder.
+Run by hand, in this order, never in continuous integration. They build the catalog in [`research/constitutions/`](../research/constitutions/README.md) and the constitution version histories in `content/documents/`. The documents they download stay private, outside the repository; the work files (JSON between steps) go in a scratch folder.
 
 | Script | Does | Needs |
 | --- | --- | --- |
@@ -160,3 +156,26 @@ between steps) go in a scratch folder.
 | `constitutions/summarize_articles.py` | `split` writes the tagged articles of each newest text for AI reviewers to confirm and summarize; `merge` joins the answers. The summaries stay in the private work files: no AI summaries of constitutions are published | `scripts/requirements.txt` and `requests` |
 | `constitutions/build_catalog.py` | Classifies, groups copies, orders versions and writes the catalog, a history record for every nation with a text, and source records | `scripts/requirements.txt` and `requests` |
 | `constitutions/name_versions_in_profiles.py` | Adds `document_version` beside profile facts that cite a superseded or undated version | `scripts/requirements.txt` |
+
+## Indian law journals sweep, Nov. 23, 2026
+
+Run by hand, never in continuous integration. It reads the public catalogs that law school repositories publish for harvesters, so later sweeps can compare new articles against `content/sources/` ([session note](../research/sessions/2026/2026-11-23-indian-law-journals.md)).
+
+| Script | Does | Needs |
+| --- | --- | --- |
+| `review/journal_oai_harvest.py` | Harvests the OAI-PMH catalog of each named repository collection (for example the American Indian Law Review at the University of Oklahoma) into one JSON list of titles, authors, dates, keywords, abstracts and landing pages; downloads no articles | Python standard library only |
+
+## Governance
+
+Run by hand, in this order, never in continuous integration. They write the `governance` facts in the profiles and the logs in `research/search-logs/governance/` ([decision record 0042](../docs/decisions/0042-governance-facts-from-governing-documents.md); [readings](../research/governance/README.md)). The constitution texts are the private captures' text extracts.
+
+| Script | Does | Needs |
+| --- | --- | --- |
+| `governance/prepare_batches.py` | Picks each nation's constitution version to read and splits the texts into batches for AI readers, who follow `governance/reader-brief.md` | `scripts/requirements.txt` |
+| `governance/apply.py` | `readings` checks every quote against its text and writes `research/governance/readings.json`; `directory` records the title of each leader's office from a saved query of the Tribal Leaders Directory; `write` puts the facts in the profiles and writes the search logs | `scripts/requirements.txt` |
+
+## Printed book
+
+| Script | Does | Needs |
+| --- | --- | --- |
+| `books/publish_file_sets.py` | Uploads the editions that `npm run build:editions` writes in `pdf/output/editions/` to the bucket under `books/`, where the website's order routes read them; skips files already there and sends `details.json` last ([docs/book-orders.md](../docs/book-orders.md)). Lists the plan unless given `--confirm` | `boto3` and the R2 keys in the environment |

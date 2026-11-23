@@ -135,6 +135,14 @@ contacts:
   verification: title-only
   as_of: '2026-11-22'
   note: The nation's own website links this page as "Contact". Its title is "Contact | Yurok Tribe". Found by scripts/tribes/find_contacts.py.
+- kind: email-general
+  value: councilops@yuroktribe.nsn.us
+  label: General office email shown on the nation's website
+  source: yuroktribe-tribal-council
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: General office address, shown as a mailto link on the page. Found by scripts/tribes/find_emails_deep.mjs.
 official_images:
 - kind: logo
   image_link: https://static.wixstatic.com/media/23c897_3128a1d364db47b19426eb7d828059e5%7Emv2.png/v1/fill/w_180%2Ch_180%2Clg_1%2Cusm_0.66_1.00_0.01/23c897_3128a1d364db47b19426eb7d828059e5%7Emv2.png
@@ -158,6 +166,263 @@ federal_administration:
   verification: bulk-import
   as_of: '2026-11-20'
   locator: Yurok Tribe of the Yurok Reservation, California
+indian_health_service:
+- area: California
+  source: indian-health-service-california-federally-recognized-tribes
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  locator: regional lists (West Central, Southern, Northern, East Central)
+  note: Listed as "Yurok Tribe of the Yurok Reservation, California".
+governance:
+- aspect: governing-body
+  value: Yurok Tribal Council
+  quote: to the Yurok Tribal Council, and in the exercise thereof the Yurok Tribal Council shall have
+  source: constitution-yurok-tribe-of-the-yurok-reservation-1993-text
+  confidence: high
+  verification: read-in-full
+  as_of: '1993-11-19'
+  locator: Article IV, Section 5(a)
+  document_version:
+    document: yurok-tribe-of-the-yurok-reservation-constitution
+    version: 1993-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: Extract includes the 2000 certification of amendment CA001 to Article IV, Section 5 and the 1993 Interim Council resolution.'
+- aspect: governing-body-size
+  value: 9 members
+  quote: 'The Yurok Tribal Council shall consist of: nine (9) members'
+  source: constitution-yurok-tribe-of-the-yurok-reservation-1993-text
+  confidence: high
+  verification: read-in-full
+  as_of: '1993-11-19'
+  locator: Article III, Section 1
+  document_version:
+    document: yurok-tribe-of-the-yurok-reservation-constitution
+    version: 1993-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: Extract includes the 2000 certification of amendment CA001 to Article IV, Section 5 and the 1993 Interim Council resolution.'
+- aspect: governing-body-selection
+  value: Chairperson and Vice-Chairperson elected at large; seven elected by district
+  quote: elected by Districts, with the eligible voters in each of the seven (7) Districts electing one Council
+  source: constitution-yurok-tribe-of-the-yurok-reservation-1993-text
+  confidence: high
+  verification: read-in-full
+  as_of: '1993-11-19'
+  locator: Article III, Section 1
+  document_version:
+    document: yurok-tribe-of-the-yurok-reservation-constitution
+    version: 1993-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: Extract includes the 2000 certification of amendment CA001 to Article IV, Section 5 and the 1993 Interim Council resolution.'
+- aspect: governing-body-term
+  value: 3 years
+  quote: be three (3) years, except that in the first election
+  source: constitution-yurok-tribe-of-the-yurok-reservation-1993-text
+  confidence: high
+  verification: read-in-full
+  as_of: '1993-11-19'
+  locator: Article III, Section 3
+  document_version:
+    document: yurok-tribe-of-the-yurok-reservation-constitution
+    version: 1993-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: Extract includes the 2000 certification of amendment CA001 to Article IV, Section 5 and the 1993 Interim Council resolution.'
+- aspect: general-council
+  value: Tribal Voting Membership (members 18 or older)
+  quote: Each member of the Yurok Tribe, who has attained the age of eighteen (18)
+  source: constitution-yurok-tribe-of-the-yurok-reservation-1993-text
+  confidence: high
+  verification: read-in-full
+  as_of: '1993-11-19'
+  locator: Article III, Section 4
+  document_version:
+    document: yurok-tribe-of-the-yurok-reservation-constitution
+    version: 1993-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: Extract includes the 2000 certification of amendment CA001 to Article IV, Section 5 and the 1993 Interim Council resolution.'
+- aspect: head-of-government
+  value: Tribal Chairperson
+  quote: The Chairperson shall be the chief executive officer of the Tribe
+  source: constitution-yurok-tribe-of-the-yurok-reservation-1993-text
+  confidence: high
+  verification: read-in-full
+  as_of: '1993-11-19'
+  locator: Article IV, Section 1
+  document_version:
+    document: yurok-tribe-of-the-yurok-reservation-constitution
+    version: 1993-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: Extract includes the 2000 certification of amendment CA001 to Article IV, Section 5 and the 1993 Interim Council resolution.'
+- aspect: head-of-government
+  value: Chairperson
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  verification: bulk-import
+  as_of: '2026-11-20'
+  locator: Yurok Tribe of the Yurok Reservation, California
+  note: The title of the leader's office as the federal directory lists it; the holder's name is not recorded.
+- aspect: head-of-government-selection
+  value: Elected at large by the eligible voters
+  quote: by the eligible voters of the Tribe.
+  source: constitution-yurok-tribe-of-the-yurok-reservation-1993-text
+  confidence: high
+  verification: read-in-full
+  as_of: '1993-11-19'
+  locator: Article III, Section 1
+  document_version:
+    document: yurok-tribe-of-the-yurok-reservation-constitution
+    version: 1993-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: Extract includes the 2000 certification of amendment CA001 to Article IV, Section 5 and the 1993 Interim Council resolution.'
+- aspect: head-of-government-term
+  value: 3 years
+  quote: be three (3) years, except that in the first election
+  source: constitution-yurok-tribe-of-the-yurok-reservation-1993-text
+  confidence: high
+  verification: read-in-full
+  as_of: '1993-11-19'
+  locator: Article III, Section 3
+  document_version:
+    document: yurok-tribe-of-the-yurok-reservation-constitution
+    version: 1993-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: Extract includes the 2000 certification of amendment CA001 to Article IV, Section 5 and the 1993 Interim Council resolution.'
+- aspect: other-officers
+  value: Vice-Chairperson, Tribal Secretary
+  quote: The Tribal Secretary shall be elected by the Yurok Tribal Council
+  source: constitution-yurok-tribe-of-the-yurok-reservation-1993-text
+  confidence: high
+  verification: read-in-full
+  as_of: '1993-11-19'
+  locator: Article IV, Section 3
+  document_version:
+    document: yurok-tribe-of-the-yurok-reservation-constitution
+    version: 1993-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: Extract includes the 2000 certification of amendment CA001 to Article IV, Section 5 and the 1993 Interim Council resolution.'
+- aspect: elections
+  value: Primary each October; run-off each November if needed
+  quote: A primary election shall be conducted in October of each year
+  source: constitution-yurok-tribe-of-the-yurok-reservation-1993-text
+  confidence: high
+  verification: read-in-full
+  as_of: '1993-11-19'
+  locator: Article III, Section 8
+  document_version:
+    document: yurok-tribe-of-the-yurok-reservation-constitution
+    version: 1993-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: Extract includes the 2000 certification of amendment CA001 to Article IV, Section 5 and the 1993 Interim Council resolution.'
+- aspect: voting-age
+  value: '18'
+  quote: Each member of the Yurok Tribe, who has attained the age of eighteen (18)
+  source: constitution-yurok-tribe-of-the-yurok-reservation-1993-text
+  confidence: high
+  verification: read-in-full
+  as_of: '1993-11-19'
+  locator: Article III, Section 4
+  document_version:
+    document: yurok-tribe-of-the-yurok-reservation-constitution
+    version: 1993-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: Extract includes the 2000 certification of amendment CA001 to Article IV, Section 5 and the 1993 Interim Council resolution.'
+- aspect: election-authority
+  value: Election Board (established by Council ordinance)
+  quote: shall by Ordinance establish an Election Board
+  source: constitution-yurok-tribe-of-the-yurok-reservation-1993-text
+  confidence: high
+  verification: read-in-full
+  as_of: '1993-11-19'
+  locator: Article IV, Section 5(f)
+  document_version:
+    document: yurok-tribe-of-the-yurok-reservation-constitution
+    version: 1993-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: Extract includes the 2000 certification of amendment CA001 to Article IV, Section 5 and the 1993 Interim Council resolution.'
+- aspect: branches
+  value: Executive and judicial branches
+  quote: within the executive or judicial branches
+  source: constitution-yurok-tribe-of-the-yurok-reservation-1993-text
+  confidence: high
+  verification: read-in-full
+  as_of: '1993-11-19'
+  locator: Article IV, Section 1(f)
+  document_version:
+    document: yurok-tribe-of-the-yurok-reservation-constitution
+    version: 1993-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: Extract includes the 2000 certification of amendment CA001 to Article IV, Section 5 and the 1993 Interim Council resolution.'
+- aspect: judiciary
+  value: Tribal court(s) established by ordinance
+  quote: The judicial power of the Yurok Tribe shall be vested in such Tribal court(s)
+  source: constitution-yurok-tribe-of-the-yurok-reservation-1993-text
+  confidence: high
+  verification: read-in-full
+  as_of: '1993-11-19'
+  locator: Article VII
+  document_version:
+    document: yurok-tribe-of-the-yurok-reservation-constitution
+    version: 1993-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: Extract includes the 2000 certification of amendment CA001 to Article IV, Section 5 and the 1993 Interim Council resolution.'
+- aspect: judicial-selection
+  value: Selection set by ordinance
+  quote: specify the manner of selection, term of office and qualifications of judges
+  source: constitution-yurok-tribe-of-the-yurok-reservation-1993-text
+  confidence: high
+  verification: read-in-full
+  as_of: '1993-11-19'
+  locator: Article VII
+  document_version:
+    document: yurok-tribe-of-the-yurok-reservation-constitution
+    version: 1993-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: Extract includes the 2000 certification of amendment CA001 to Article IV, Section 5 and the 1993 Interim Council resolution.'
+- aspect: judicial-term
+  value: Set by ordinance
+  quote: specify the manner of selection, term of office and qualifications of judges
+  source: constitution-yurok-tribe-of-the-yurok-reservation-1993-text
+  confidence: high
+  verification: read-in-full
+  as_of: '1993-11-19'
+  locator: Article VII
+  document_version:
+    document: yurok-tribe-of-the-yurok-reservation-constitution
+    version: 1993-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: Extract includes the 2000 certification of amendment CA001 to Article IV, Section 5 and the 1993 Interim Council resolution.'
+- aspect: judicial-independence
+  value: Ordinances to ensure judicial independence
+  quote: ensure the impartiality and independence of the Judiciary by specifying causes and procedures for removal
+  source: constitution-yurok-tribe-of-the-yurok-reservation-1993-text
+  confidence: high
+  verification: read-in-full
+  as_of: '1993-11-19'
+  locator: Article VII
+  document_version:
+    document: yurok-tribe-of-the-yurok-reservation-constitution
+    version: 1993-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: Extract includes the 2000 certification of amendment CA001 to Article IV, Section 5 and the 1993 Interim Council resolution.'
+- aspect: amendment
+  value: Two-thirds of those voting
+  quote: of those voting shall be required to amend this
+  source: constitution-yurok-tribe-of-the-yurok-reservation-1993-text
+  confidence: high
+  verification: read-in-full
+  as_of: '1993-11-19'
+  locator: Article XII, Section 2
+  document_version:
+    document: yurok-tribe-of-the-yurok-reservation-constitution
+    version: 1993-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: Extract includes the 2000 certification of amendment CA001 to Article IV, Section 5 and the 1993 Interim Council resolution.'
+- aspect: recall-and-removal
+  value: Recall by petition of 30% of eligible voters
+  quote: Upon written petition of at least thirty (30) percent of the eligible voters of the Yurok Tribe
+  source: constitution-yurok-tribe-of-the-yurok-reservation-1993-text
+  confidence: high
+  verification: read-in-full
+  as_of: '1993-11-19'
+  locator: Article X, Section 2
+  document_version:
+    document: yurok-tribe-of-the-yurok-reservation-constitution
+    version: 1993-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: Extract includes the 2000 certification of amendment CA001 to Article IV, Section 5 and the 1993 Interim Council resolution.'
+- aspect: other
+  value: Initiative by petition of 20% of eligible voters
+  quote: petition signed by at least twenty (20) percent of the eligible voters.
+  source: constitution-yurok-tribe-of-the-yurok-reservation-1993-text
+  confidence: high
+  verification: read-in-full
+  as_of: '1993-11-19'
+  locator: Article XI, Section 1
+  document_version:
+    document: yurok-tribe-of-the-yurok-reservation-constitution
+    version: 1993-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: Extract includes the 2000 certification of amendment CA001 to Article IV, Section 5 and the 1993 Interim Council resolution.'
 governing_documents:
 - kind: law-code
   title: Yurok Tribal Code
@@ -265,6 +530,14 @@ justice_institutions:
   verification: read-in-full
   as_of: '2026-11-22'
   note: 'The page names the court: “Yurok Wellness Court”. Listed under ''Court Programs'' on the court''s own site. The page gives no court location. Found in the individual courts review of 2026-11-22 (research/reviews/2026-11-22-individual-courts.json, yurok-tribe-of-the-yurok-reservation#2).'
+- kind: healing-to-wellness-court
+  name: Joint jurisdiction family wellness courts (Yurok Tribe with Humboldt and Del Norte Counties)
+  link: https://yuroktribalcourt.org/
+  source: van-schilfgaarde-2024-restorative-justice-regenerative-tribal-jurisdiction
+  confidence: medium
+  verification: read-in-full
+  as_of: 2024-02
+  note: 'The article says: "The Yurok Tribe has partnered with both Humboldt County and Del Norte County to implement joint jurisdiction family wellness courts." It also reports that in 2012 the Tribe signed memoranda of understanding with both counties that permit the transfer of cases to the Tribal court. No formal name is given, so the name here describes the courts; they may overlap the Yurok Wellness Court listed above. The journal sweep of 2026-11-23 (research/sessions/2026/2026-11-23-indian-law-journals.md).'
 dispute_resolution:
   provisions:
   - kind: other

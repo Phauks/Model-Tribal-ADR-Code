@@ -137,6 +137,14 @@ federal_administration:
   verification: bulk-import
   as_of: '2026-11-20'
   locator: Keweenaw Bay Indian Community, Michigan
+indian_health_service:
+- area: Bemidji
+  source: indian-health-service-bemidji-healthcare-facilities
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  locator: Tribal Health Programs lists (Michigan, Minnesota, Wisconsin)
+  note: 'Listed as "Keweenaw Bay Indian Community, Michigan". Also listed under the same Area in: indian-health-service-self-governance-tribes. Also on the Indian Health Service Self-Governance Tribes list (Keweenaw Bay Indian Community (2002)); the list does not say which service unit or programs the compact covers.'
 government_structure:
 - kind: indian-reorganization-act
   detail: Listed as "Keweenah Bay Indian Community, Michigan" among organizations under constitutions
@@ -158,6 +166,267 @@ government_structure:
   as_of: '1936'
   locator: preamble / approval and certification of adoption
   note: Historical constitution; a later constitution may have replaced it.
+governance:
+- aspect: form
+  value: Constitution and by-laws under the Act of June 18, 1934
+  quote: by virtue of the authority granted me by the act of June 18, 1934 (48 Stat. 984), as amended
+  source: constitution-keweenaw-bay-indian-community-1936-text
+  confidence: high
+  verification: read-in-full
+  as_of: '1936-12-17'
+  locator: Certification of Adoption
+  document_version:
+    document: keweenaw-bay-indian-community-constitution
+    version: 1936-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: The text is the 1936 constitution as amended through Amendment VI (2025), with the judiciary article added in 2018; the amended provisions are used.'
+- aspect: governing-body
+  value: Tribal Council
+  quote: The governing body of the Keweenaw Bay Indian Community shall be the Tribal Council.
+  source: constitution-keweenaw-bay-indian-community-1936-text
+  confidence: high
+  verification: read-in-full
+  as_of: '1936-12-17'
+  locator: Article III, Section 1
+  document_version:
+    document: keweenaw-bay-indian-community-constitution
+    version: 1936-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: The text is the 1936 constitution as amended through Amendment VI (2025), with the judiciary article added in 2018; the amended provisions are used.'
+- aspect: governing-body-size
+  value: 12 members
+  quote: The Tribal Council shall consist of twelve councilmen
+  source: constitution-keweenaw-bay-indian-community-1936-text
+  confidence: high
+  verification: read-in-full
+  as_of: '1936-12-17'
+  locator: Article III, Section 2
+  document_version:
+    document: keweenaw-bay-indian-community-constitution
+    version: 1936-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: The text is the 1936 constitution as amended through Amendment VI (2025), with the judiciary article added in 2018; the amended provisions are used.'
+- aspect: governing-body-selection
+  value: Elected by popular ballot by district
+  quote: to be elected by popular ballot as follows
+  source: constitution-keweenaw-bay-indian-community-1936-text
+  confidence: high
+  verification: read-in-full
+  as_of: '1936-12-17'
+  locator: Article III, Section 2
+  document_version:
+    document: keweenaw-bay-indian-community-constitution
+    version: 1936-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: The text is the 1936 constitution as amended through Amendment VI (2025), with the judiciary article added in 2018; the amended provisions are used.'
+- aspect: governing-body-term
+  value: 3 years
+  quote: after the first election each councilman shall be elected for a period of three years.
+  source: constitution-keweenaw-bay-indian-community-1936-text
+  confidence: high
+  verification: read-in-full
+  as_of: '1936-12-17'
+  locator: Article IV, Section 2
+  document_version:
+    document: keweenaw-bay-indian-community-constitution
+    version: 1936-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: The text is the 1936 constitution as amended through Amendment VI (2025), with the judiciary article added in 2018; the amended provisions are used.'
+- aspect: head-of-government
+  value: President
+  quote: After each popular election the Tribal Council shall elect from within its own number a President,
+  source: constitution-keweenaw-bay-indian-community-1936-text
+  confidence: high
+  verification: read-in-full
+  as_of: '1936-12-17'
+  locator: Article III, Section 4
+  document_version:
+    document: keweenaw-bay-indian-community-constitution
+    version: 1936-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: The text is the 1936 constitution as amended through Amendment VI (2025), with the judiciary article added in 2018; the amended provisions are used.'
+- aspect: head-of-government
+  value: President
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  verification: bulk-import
+  as_of: '2026-11-20'
+  locator: Keweenaw Bay Indian Community, Michigan
+  note: The title of the leader's office as the federal directory lists it; the holder's name is not recorded.
+- aspect: head-of-government-selection
+  value: Chosen by the Tribal Council from its members
+  quote: After each popular election the Tribal Council shall elect from within its own number a President,
+  source: constitution-keweenaw-bay-indian-community-1936-text
+  confidence: high
+  verification: read-in-full
+  as_of: '1936-12-17'
+  locator: Article III, Section 4
+  document_version:
+    document: keweenaw-bay-indian-community-constitution
+    version: 1936-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: The text is the 1936 constitution as amended through Amendment VI (2025), with the judiciary article added in 2018; the amended provisions are used.'
+- aspect: other-officers
+  value: Vice-President, Secretary, Assistant Secretary, Treasurer
+  quote: a Vice-President, a Secretary, an Assistant Secretary, a Treasurer
+  source: constitution-keweenaw-bay-indian-community-1936-text
+  confidence: high
+  verification: read-in-full
+  as_of: '1936-12-17'
+  locator: Article III, Section 4
+  document_version:
+    document: keweenaw-bay-indian-community-constitution
+    version: 1936-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: The text is the 1936 constitution as amended through Amendment VI (2025), with the judiciary article added in 2018; the amended provisions are used.'
+- aspect: elections
+  value: Yearly, on the third Saturday before term expiration
+  quote: thereafter elections shall be held each year, on the third Saturday prior to the expiration of office
+  source: constitution-keweenaw-bay-indian-community-1936-text
+  confidence: high
+  verification: read-in-full
+  as_of: '1936-12-17'
+  locator: Article IV, Section 1
+  document_version:
+    document: keweenaw-bay-indian-community-constitution
+    version: 1936-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: The text is the 1936 constitution as amended through Amendment VI (2025), with the judiciary article added in 2018; the amended provisions are used.'
+- aspect: voting-age
+  value: '18'
+  quote: who is eighteen years of age or over and maintains residence on the reservation
+  source: constitution-keweenaw-bay-indian-community-1936-text
+  confidence: high
+  verification: read-in-full
+  as_of: '1936-12-17'
+  locator: Article IV, Section 6
+  document_version:
+    document: keweenaw-bay-indian-community-constitution
+    version: 1936-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: The text is the 1936 constitution as amended through Amendment VI (2025), with the judiciary article added in 2018; the amended provisions are used.'
+- aspect: election-authority
+  value: Tribal Council or appointed election board
+  quote: The Tribal Council or an election board appointed by the Tribal Council shall determine rules and regulations governing elections.
+  source: constitution-keweenaw-bay-indian-community-1936-text
+  confidence: high
+  verification: read-in-full
+  as_of: '1936-12-17'
+  locator: Article IV, Section 3
+  document_version:
+    document: keweenaw-bay-indian-community-constitution
+    version: 1936-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: The text is the 1936 constitution as amended through Amendment VI (2025), with the judiciary article added in 2018; the amended provisions are used.'
+- aspect: judiciary
+  value: Tribal Court and Appellate Court
+  quote: The judicial power of the Keweenaw Bay Indian Community will be vested in a Tribal Court system.
+  source: constitution-keweenaw-bay-indian-community-1936-text
+  confidence: high
+  verification: read-in-full
+  as_of: '1936-12-17'
+  locator: Article IX, Section 2
+  document_version:
+    document: keweenaw-bay-indian-community-constitution
+    version: 1936-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: The text is the 1936 constitution as amended through Amendment VI (2025), with the judiciary article added in 2018; the amended provisions are used.'
+- aspect: judicial-selection
+  value: Elected by popular vote (Tribal Court judges)
+  quote: Both the Chief and Associate Judges of the Tribal Court will be elected to Tribal Court office
+  source: constitution-keweenaw-bay-indian-community-1936-text
+  confidence: high
+  verification: read-in-full
+  as_of: '1936-12-17'
+  locator: Article IX, Section 6
+  document_version:
+    document: keweenaw-bay-indian-community-constitution
+    version: 1936-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: The text is the 1936 constitution as amended through Amendment VI (2025), with the judiciary article added in 2018; the amended provisions are used.'
+- aspect: judicial-selection
+  value: Appointed by President, approved by Tribal Council (Appellate Court justices)
+  quote: may be appointed to serve as a Justice of the Appellate Court by the President, subject to the approval
+  source: constitution-keweenaw-bay-indian-community-1936-text
+  confidence: high
+  verification: read-in-full
+  as_of: '1936-12-17'
+  locator: Article IX, Section 12(b)
+  document_version:
+    document: keweenaw-bay-indian-community-constitution
+    version: 1936-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: The text is the 1936 constitution as amended through Amendment VI (2025), with the judiciary article added in 2018; the amended provisions are used.'
+- aspect: judicial-term
+  value: 3 years (Tribal Court judges)
+  quote: The Chief Judge and Associate Judge will be elected to hold office for a period of three (3) years.
+  source: constitution-keweenaw-bay-indian-community-1936-text
+  confidence: high
+  verification: read-in-full
+  as_of: '1936-12-17'
+  locator: Article IX, Section 6
+  document_version:
+    document: keweenaw-bay-indian-community-constitution
+    version: 1936-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: The text is the 1936 constitution as amended through Amendment VI (2025), with the judiciary article added in 2018; the amended provisions are used.'
+- aspect: judicial-term
+  value: 3 years (Appellate Court justices)
+  quote: The Justices will be appointed to hold office for a period of three (3) years.
+  source: constitution-keweenaw-bay-indian-community-1936-text
+  confidence: high
+  verification: read-in-full
+  as_of: '1936-12-17'
+  locator: Article IX, Section 12(c)
+  document_version:
+    document: keweenaw-bay-indian-community-constitution
+    version: 1936-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: The text is the 1936 constitution as amended through Amendment VI (2025), with the judiciary article added in 2018; the amended provisions are used.'
+- aspect: judicial-independence
+  value: Pay may not be reduced during term
+  quote: the amount of which will not be reduced during such persons’ term of office.
+  source: constitution-keweenaw-bay-indian-community-1936-text
+  confidence: high
+  verification: read-in-full
+  as_of: '1936-12-17'
+  locator: Article IX, Section 13
+  document_version:
+    document: keweenaw-bay-indian-community-constitution
+    version: 1936-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: The text is the 1936 constitution as amended through Amendment VI (2025), with the judiciary article added in 2018; the amended provisions are used.'
+- aspect: amendment
+  value: Majority vote in Secretarial election, 30% turnout
+  quote: This Constitution and By-laws may be amended by a majority vote of the qualified voters of the community
+  source: constitution-keweenaw-bay-indian-community-1936-text
+  confidence: high
+  verification: read-in-full
+  as_of: '1936-12-17'
+  locator: Article VIII, Section 1
+  document_version:
+    document: keweenaw-bay-indian-community-constitution
+    version: 1936-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: The text is the 1936 constitution as amended through Amendment VI (2025), with the judiciary article added in 2018; the amended provisions are used.'
+- aspect: secretarial-approval
+  value: Required for amendments
+  quote: but no amendment shall become effective until it shall have been approved by the Secretary of the Interior
+  source: constitution-keweenaw-bay-indian-community-1936-text
+  confidence: high
+  verification: read-in-full
+  as_of: '1936-12-17'
+  locator: Article VIII, Section 1
+  document_version:
+    document: keweenaw-bay-indian-community-constitution
+    version: 1936-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: The text is the 1936 constitution as amended through Amendment VI (2025), with the judiciary article added in 2018; the amended provisions are used.'
+- aspect: recall-and-removal
+  value: Judges and justices removed by majority of other judges for listed causes
+  quote: The Tribal Court System may remove any Judge or Justice by an affirmative vote of a majority of all other Judges and Justices
+  source: constitution-keweenaw-bay-indian-community-1936-text
+  confidence: high
+  verification: read-in-full
+  as_of: '1936-12-17'
+  locator: Article IX, Section 9
+  document_version:
+    document: keweenaw-bay-indian-community-constitution
+    version: 1936-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: The text is the 1936 constitution as amended through Amendment VI (2025), with the judiciary article added in 2018; the amended provisions are used.'
+- aspect: recall-and-removal
+  value: Expulsion by two-thirds Council vote after hearing
+  quote: The Tribal Council may expel a member found guilty of gross neglect of duty or improper conduct by a two-thirds vote.
+  source: constitution-keweenaw-bay-indian-community-1936-text
+  confidence: high
+  verification: read-in-full
+  as_of: '1936-12-17'
+  locator: Article V, Section 2
+  document_version:
+    document: keweenaw-bay-indian-community-constitution
+    version: 1936-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: The text is the 1936 constitution as amended through Amendment VI (2025), with the judiciary article added in 2018; the amended provisions are used.'
 governing_documents:
 - kind: law-code
   title: Keweenaw Bay Indian Community, Michigan
@@ -355,6 +624,66 @@ jurisdiction:
     the notice prints its table as page images, so nation names were read from images and matched to the
     roster. Row re-read on 2026-11-22 from the page image (the govinfo PDF has no text layer for the table);
     verification level unchanged because the name was not matched word for word in machine-read text.'
+- topic: public-law-280
+  value: not-a-public-law-280-state
+  detail: Michigan is not one of the states that Public Law 280 required to take jurisdiction or that chose to take it, so the state has no Public Law 280 jurisdiction over the nation's Indian country in Michigan. Other federal laws can still give a state some jurisdiction.
+  source: bia-faq-public-law-280
+  confidence: high
+  verification: inferred
+  as_of: '2017-07-18'
+  locator: Answer, second and third paragraphs (the lists of mandatory and optional states)
+  note: Inferred from the state's absence from both lists. Nation placed in Michigan by the Census Bureau's land areas.
+treaties:
+- title: Treaty with the Chippewa, 1842
+  signed: '1842-10-04'
+  statutes_at_large: 7 Stat. 591
+  kappler:
+    volume: 2
+    page: 542
+    link: https://treaties.okstate.edu/treaties/treaty-with-the-chippewa-1842-0542
+  signatory: Chippewa of Lake Superior
+  source: kappler-indian-affairs-laws-and-treaties-vol-2-1904
+  confidence: low
+  verification: inferred
+  locator: p. 542 (Treaty with the Chippewa, 1842; Kappler header "Oct. 4, 1842. | 7 Stat., 591. | Proclamation, Mar. 23, 1843.")
+  note: 'The nation is one successor of the party the treaty names. Linked to the nation by Claude (AI assistant) from the treaty''s text. Checked on Nov. 23, 2026: The Oklahoma State University Tribal Treaties Database''s successor list for this treaty (no longer displayed) does not name the nation, so no second source names it; the relation rests on the treaty''s text and the history of the nation''s people. Lake Superior Chippewa bands (Wisconsin, Michigan, Minnesota) signed jointly; modern band attribution follows the nation''s name ("Lake Superior Chippewa"). The page is the treaty''s first page as the Oklahoma State University database''s address gives it.'
+- title: Treaty with the Chippewa of the Mississippi and Lake Superior, 1847
+  signed: '1847-08-02'
+  statutes_at_large: 9 Stat. 904
+  kappler:
+    volume: 2
+    page: 567
+    link: https://treaties.okstate.edu/treaties/treaty-with-the-chippewa-of-the-mississippi-and-lake-superior-1847-0567
+  signatory: Chippewa of Lake Superior
+  source: kappler-indian-affairs-laws-and-treaties-vol-2-1904
+  confidence: medium
+  verification: inferred
+  locator: p. 567 (Treaty with the Chippewa of the Mississippi and Lake Superior, 1847; Kappler header "Aug. 2. 1847. | 9 Stat., 904. | Ratified Apr. 3, 1848. | Proclaimed, Apr. 7, 1848.")
+  note: 'The nation is one successor of the party the treaty names. Linked to the nation by Claude (AI assistant) from the treaty''s text. Checked on Nov. 23, 2026: The Oklahoma State University Tribal Treaties Database''s successor list for this treaty names the nation; the list is in the page''s source but is no longer displayed while the database reviews it. Lake Superior Chippewa bands (Wisconsin, Michigan, Minnesota) signed jointly; modern band attribution follows the nation''s name ("Lake Superior Chippewa"). The page is the treaty''s first page as the Oklahoma State University database''s address gives it.'
+- title: Treaty with the Chippewa, 1854
+  signed: '1854-09-30'
+  statutes_at_large: 10 Stat. 1109
+  kappler:
+    volume: 2
+    page: 648
+    link: https://treaties.okstate.edu/treaties/treaty-with-the-chippewa-1854-0648
+  signatory: Chippewa of Lake Superior
+  source: kappler-indian-affairs-laws-and-treaties-vol-2-1904
+  confidence: low
+  verification: inferred
+  locator: p. 648 (Treaty with the Chippewa, 1854; Kappler header "Sept. 30, 1854. | 10 Stats., 1109. | Ratified Jan. 10, 1855. | Proclaimed Jan. 29, 1855.")
+  note: 'The nation is one successor of the party the treaty names. Linked to the nation by Claude (AI assistant) from the treaty''s text. Checked on Nov. 23, 2026: The Oklahoma State University Tribal Treaties Database''s successor list for this treaty (no longer displayed) does not name the nation, so no second source names it; the relation rests on the treaty''s text and the history of the nation''s people. Lake Superior Chippewa bands (Wisconsin, Michigan, Minnesota) signed jointly; modern band attribution follows the nation''s name ("Lake Superior Chippewa"). The page is the treaty''s first page as the Oklahoma State University database''s address gives it.'
+land_establishment:
+- land_area: L'Anse and Vieux Desert tracts, Michigan
+  method: treaty
+  instrument: Treaty of La Pointe, Sept. 30, 1854, art. II, 10 Stat. 1109
+  date: '1854-09-30'
+  detail: First set aside
+  source: treaty-with-the-chippewa-1854
+  confidence: high
+  verification: read-in-full
+  locator: 10 Stat. 1109
+  note: 'The instrument reads: “1st. For the L’Anse and Vieux De Sert bands, all the unsold lands in the following townships in the State of Michigan”. Art. II: "The United States agree to set apart and withhold from sale, for the use of the Chippewas of Lake Superior, the following described tracts of land." Kappler lists L''Anse Reserve as established by this treaty (1 Kappler 847).'
 memberships:
 - organization: Midwest Alliance of Sovereign Tribes
   source: midwest-alliance-of-sovereign-tribes-member-tribes

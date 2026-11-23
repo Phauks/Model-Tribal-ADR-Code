@@ -10,6 +10,7 @@ import { workerEnvironment } from '#lib/server/environment.ts';
 import { eventStatement, refusedAction } from '#lib/server/events.ts';
 import { sessionAccount, sessionCookie } from '#lib/server/accounts.ts';
 import { activePersonBySubject } from '#lib/server/people.ts';
+import { isLiveEditingRequest, openLiveEditing } from '#lib/server/live-editing.ts';
 import { changesSomething, isCrossSite, isGuardedPath } from '#lib/server/request-guard.ts';
 import { clearSessionCookie } from '#lib/server/sign-in.ts';
 import { clearSignedIn, markSignedIn } from '#lib/server/signed-in-hint.ts';
@@ -17,10 +18,17 @@ import { permissionsOf } from '#lib/permissions.ts';
 import { workspacePagesFor } from '#lib/workspace-menu.ts';
 
 /** Pages that show private information and must never be cached or framed. */
-const privatePrefixes = ['/workspace', '/profile', '/sign-in', '/sign-out', '/requests'];
+const privatePrefixes = ['/workspace', '/profile', '/account', '/sign-in', '/sign-out', '/requests', '/following', '/uploads', '/book/orders', '/book/files'];
 
 /** Pages that need to know who is signed in. */
-const signedInPrefixes = ['/workspace', '/profile', '/sign-in'];
+const signedInPrefixes = ['/workspace', '/profile', '/account', '/sign-in', '/following', '/uploads', '/files'];
+
+/**
+ * Pieces of files people send (src/lib/server/uploads.ts). A large file is
+ * hundreds of pieces, so they have their own limit (uploadLimit, on starting
+ * each file) instead of the limit on workspace changes.
+ */
+const piecePrefix = '/uploads/pieces/';
 
 export const handle: Handle = async ({ event, resolve }) => {
 	event.locals.person = undefined;
@@ -69,7 +77,7 @@ export const handle: Handle = async ({ event, resolve }) => {
 		// Each person may make a limited number of changes a minute, so a
 		// stolen session or a runaway script cannot rewrite much before
 		// someone notices (wrangler.jsonc, workspaceChangeLimit).
-		if (changing && event.locals.person && environment.workspaceChangeLimit) {
+		if (changing && event.locals.person && environment.workspaceChangeLimit && !path.startsWith(piecePrefix)) {
 			const { success } = await environment.workspaceChangeLimit.limit({
 				key: event.locals.person.identifier
 			});
@@ -81,6 +89,11 @@ export const handle: Handle = async ({ event, resolve }) => {
 			}
 		}
 	}
+
+	// A live editing connection goes to the essay's room before SvelteKit
+	// routes it: its answer is a WebSocket, which takes no added headers
+	// (src/lib/server/live-editing.ts).
+	if (!building && isLiveEditingRequest(event.request, event.url)) return openLiveEditing(event);
 
 	const response = await resolve(event);
 

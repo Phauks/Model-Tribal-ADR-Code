@@ -1,0 +1,38 @@
+profile: content/tribes/n/northern-arapaho-tribe-of-the-wind-river-reservation.yaml
+topic: court-media
+status: partly-searched
+last_searched: '2026-11-23'
+searches:
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: web-search
+  address: Web search (the AI assistant's search tool)
+  query: Eastern Shoshone Northern Arapaho Wind River tribal court peacemaking video
+  outcome: not-found
+  reason: Results were Wyoming Public Media news stories, a court-of-appeals journal listing and NARF pages, with no video made by the tribes' court (same search as the Eastern Shoshone entry).
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: tribal-court-site
+  address: https://www.wrtribalcourt.com/
+  query: 'Wind River tribal court site (shared with Eastern Shoshone): video, gallery, podcast'
+  outcome: blocked
+  reason: The site returned a One moment, please page saying the request was being verified, so I did not read the content.
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: nation-website
+  address: https://www.northernarapaho.com/
+  query: nation website for court or peacemaking video
+  outcome: error
+  reason: 'Not fetched: the WebFetch budget for this session ran out before I reached it.'
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: nation-website
+  address: https://www.northernarapaho.com/
+  query: court or peacemaking video
+  outcome: not-found
+  reason: Fetched with curl. Home page has one YouTube video, 'Who Are the Northern Arapaho?' by Wyoming PBS (oEmbed), general culture, excluded; it links a Northern Arapaho YouTube channel not opened.
+next_steps: Check the tribe's YouTube channel (youtube.com/c/NorthernArapahoTribe) by hand. The shared Wind River court site was not fetched.

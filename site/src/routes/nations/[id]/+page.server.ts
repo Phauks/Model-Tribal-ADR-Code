@@ -15,12 +15,14 @@ import { emptySectionNote, type EmptyNote } from '#lib/search-status.ts';
 import { layoutPresenceMap, pointInBox, shapeInBox, shareStateShapes, type BoxLayers, type NationMapData, type PresenceMapLayout } from '#lib/presence-map.ts';
 import { landAreaKindLabels } from '#lib/nations-map-drawing.ts';
 import { readableDate } from '#lib/readable-date.ts';
-import { documentHeading, documentHistoriesFor } from '#lib/server/document-history.ts';
+import { documentHeading, documentHistoryView, labelOf, nationDocumentHistories } from '#lib/server/document-history.ts';
 import { nationServices, type ServiceCategory } from '#lib/nation-services.ts';
 import { SourceUses, type CitationMark } from '#lib/server/source-uses.ts';
+import { recognitionBadges } from '#lib/recognition-badges.ts';
 import { recognitionView } from '#lib/server/recognition.ts';
 import type { CitationPart } from '#lib/legal-citations.ts';
 import { nationIndexRows } from '#lib/server/nation-index.ts';
+import { nationTileMapData } from '#lib/server/nations-map.ts';
 import { displayName, humanize, regionAnchor, reviewStatusLabels, stateName } from '#lib/nation-labels.ts';
 import type { EntryGenerator, PageServerLoad } from './$types';
 
@@ -46,6 +48,7 @@ interface FactItem {
 
 /** What the courts and jurisdiction sections say when they have nothing to show. */
 interface EmptySections {
+	government?: EmptyNote;
 	courts?: EmptyNote;
 	jurisdiction?: EmptyNote;
 }
@@ -128,6 +131,7 @@ function atAGlance(record: NationRecord, sources: SourceUses): FactGroup[] {
 	return [
 		...group('recognition', recognitionLabel, recognitionItems(record, sources, recognitionLabel)),
 		...group('states', statesLabel, statesItem(record, sources, statesLabel)),
+		...governmentAtAGlance(record, sources),
 		...group(
 			'federal_administration',
 			regionLabel,
@@ -204,12 +208,163 @@ function recognitionItems(record: NationRecord, sources: SourceUses, label: stri
 	}));
 }
 
-/** The names the page gives each jurisdiction topic a record can hold. */
+/** The section that shows how the nation's government is set up. */
+const governmentHeading = 'Government';
+
+/**
+ * The groups of the Government section, in the order the page shows them,
+ * and the label each aspect of `governance` gets in its group
+ * (schemas/tribe.schema.json; decision record 0042).
+ */
+const governanceGroups: { field: string; label: string; aspects: Record<string, string | undefined> }[] = [
+	{ field: 'governance-form', label: 'Form of government', aspects: { form: undefined } },
+	{
+		field: 'governance-body',
+		label: 'Governing body',
+		aspects: {
+			'governing-body': 'Name',
+			'governing-body-size': 'Members',
+			'governing-body-selection': 'How chosen',
+			'governing-body-term': 'Term'
+		}
+	},
+	{ field: 'governance-general-council', label: 'General council', aspects: { 'general-council': undefined } },
+	{
+		field: 'governance-head',
+		label: 'Head of government',
+		aspects: {
+			'head-of-government': 'Title',
+			'head-of-government-selection': 'How chosen',
+			'head-of-government-term': 'Term',
+			'other-officers': 'Other officers'
+		}
+	},
+	{
+		field: 'governance-elections',
+		label: 'Elections',
+		aspects: { elections: 'When', 'voting-age': 'Voting age', 'election-authority': 'Run by' }
+	},
+	{
+		field: 'governance-branches',
+		label: 'Branches of government',
+		aspects: { branches: undefined, 'separation-of-powers': 'Separation of powers' }
+	},
+	{
+		field: 'governance-judiciary',
+		label: 'Courts and judges',
+		aspects: {
+			judiciary: 'Courts',
+			'judicial-selection': 'How judges are chosen',
+			'judicial-term': 'Judges’ term',
+			'judicial-independence': 'Protection'
+		}
+	},
+	{
+		field: 'governance-amendment',
+		label: 'Changing the governing document',
+		aspects: { amendment: 'How', 'secretarial-approval': 'Secretary of the Interior’s approval' }
+	},
+	{ field: 'governance-removal', label: 'Recall and removal', aspects: { 'recall-and-removal': undefined } },
+	{ field: 'governance-other', label: 'Other', aspects: { other: undefined } }
+];
+
+/** The legal form a federal source records, in the page's words. */
+const governmentStructureKinds: Record<string, string> = {
+	'indian-reorganization-act': 'Organized under the Indian Reorganization Act',
+	'oklahoma-indian-welfare-act': 'Organized under the Oklahoma Indian Welfare Act',
+	'alaska-indian-reorganization-act': 'Organized under the Indian Reorganization Act as amended for Alaska',
+	'written-constitution-other': 'Written constitution adopted outside those Acts',
+	traditional: 'Traditional government'
+};
+
+/**
+ * Government: how the nation's government is set up, as its own governing
+ * document, its website or an official directory states it. Each line is one
+ * plain fact with its source; the words of the source that state it go in the
+ * Sources list beside the fact, so a reader can check it. Never a summary of
+ * a constitution (decision record 0042). The last line names the version of
+ * each governing document the facts were read from, linked to its history in
+ * "Laws and agreements".
+ */
+function governmentFacts(
+	record: NationRecord,
+	sources: SourceUses,
+	documents: { id: string; heading: string; versions?: { id: string; label?: string }[] }[]
+): FactGroup[] {
+	const facts = record.governance ?? [];
+	const groups: FactGroup[] = [];
+	const read = new Map<string, FactItem>();
+	for (const definition of governanceGroups) {
+		const items: FactItem[] = [];
+		if (definition.field === 'governance-form') {
+			for (const fact of record.government_structure ?? []) {
+				const text = governmentStructureKinds[fact.kind] ?? humanize(fact.kind);
+				const note = fact.as_of ? `As of ${fact.as_of}` : undefined;
+				if (items.some((item) => item.text === text)) {
+					sources.citeFact(fact, definition.label, text, items.find((item) => item.text === text)!.citations);
+					continue;
+				}
+				items.push(cited(sources, definition.label, fact, { text, note }));
+			}
+		}
+		for (const [aspect, label] of Object.entries(definition.aspects)) {
+			for (const fact of facts.filter((candidate) => candidate.aspect === aspect)) {
+				const fromDirectory = !fact.document_version && !fact.quote;
+				const itemLabel = fromDirectory && label ? `${label} in the federal directory` : label;
+				const shown = [itemLabel, fact.value].filter(Boolean).join(': ');
+				const citations: CitationMark[] = [];
+				const sourceText = fact.quote ? `${shown}. “${fact.quote}”` : shown;
+				sources.citeFact(fact, definition.label, sourceText, citations);
+				items.push({ label: itemLabel, text: fact.value, citations });
+				const version = fact.document_version as { document: string; version: string } | undefined;
+				if (version && !read.has(`${version.document}/${version.version}`)) {
+					const document = documents.find((candidate) => candidate.id === version.document);
+					const label = document?.versions?.find((candidate) => candidate.id === version.version)?.label;
+					if (document) {
+						read.set(`${version.document}/${version.version}`, {
+							text: label ? `${document.heading}: ${label}` : document.heading,
+							link: `#document-${document.id}`
+						});
+					}
+				}
+			}
+		}
+		groups.push(...group(definition.field, definition.label, items));
+	}
+	if (read.size > 0) groups.push(...group('governance-read', 'Read from', [...read.values()]));
+	return groups;
+}
+
+/**
+ * At a glance: the name of the governing body and the title of the head of
+ * government. The title the federal directory lists comes first, being the
+ * newest; otherwise the governing document's.
+ */
+function governmentAtAGlance(record: NationRecord, sources: SourceUses): FactGroup[] {
+	const facts = record.governance ?? [];
+	const pick = (aspect: string) => {
+		const matching = facts.filter((fact) => fact.aspect === aspect);
+		return matching.find((fact) => !fact.document_version) ?? matching[0];
+	};
+	const body = pick('governing-body');
+	const head = pick('head-of-government');
+	const bodyLabel = 'Governing body';
+	const headLabel = 'Head of government';
+	return [
+		...group('governance-glance-body', bodyLabel, body ? [cited(sources, bodyLabel, body, { text: body.value, link: '#government-heading' })] : []),
+		...group('governance-glance-head', headLabel, head ? [cited(sources, headLabel, head, { text: head.value, link: '#government-heading' })] : [])
+	];
+}
+
+/** The names the page gives each jurisdiction topic a record can hold, in the order the page shows them. */
 const jurisdictionTopics: Record<string, string> = {
 	'public-law-280': 'Public Law 280',
-	'indian-child-welfare-act': 'Indian Child Welfare Act',
-	'violence-against-women-act-special-tribal-criminal-jurisdiction': 'Violence Against Women Act'
+	'state-jurisdiction-statute': 'State jurisdiction under other federal laws',
+	'violence-against-women-act-special-tribal-criminal-jurisdiction': 'Violence Against Women Act',
+	'tribal-law-and-order-act-enhanced-sentencing': 'Tribal Law and Order Act',
+	'indian-child-welfare-act': 'Indian Child Welfare Act'
 };
+const topicOrder = Object.keys(jurisdictionTopics);
 
 /**
  * Jurisdiction: who has authority over what, as federal law and federal lists
@@ -219,7 +374,9 @@ const jurisdictionTopics: Record<string, string> = {
 function jurisdictionFacts(record: NationRecord, sources: SourceUses): FactGroup[] {
 	const section = 'Jurisdiction';
 	const byTopic = new Map<string, FactItem[]>();
-	for (const fact of record.jurisdiction ?? []) {
+	const rank = (topic: string) => (topicOrder.includes(topic) ? topicOrder.indexOf(topic) : topicOrder.length);
+	const facts = [...(record.jurisdiction ?? [])].sort((first, second) => rank(first.topic) - rank(second.topic));
+	for (const fact of facts) {
 		const label = jurisdictionTopics[fact.topic] ?? humanize(fact.topic);
 		const text = fact.detail ?? humanize(fact.value ?? '');
 		if (!text) continue;
@@ -228,6 +385,100 @@ function jurisdictionFacts(record: NationRecord, sources: SourceUses): FactGroup
 		byTopic.set(label, list);
 	}
 	return [...byTopic.entries()].map(([label, items]) => ({ field: `jurisdiction-${label}`, label, items }));
+}
+
+/** How the page words each way a land base was set aside. */
+const establishmentWords: Record<string, string> = {
+	treaty: 'Treaty',
+	'executive-order': 'Executive order',
+	statute: 'Act of Congress',
+	agreement: 'Agreement',
+	'secretarial-proclamation': 'Proclamation of the Secretary of the Interior',
+	purchase: 'Purchase',
+	'court-decree': 'Court decree',
+	'state-action': 'State action',
+	// A letter or proclamation of an official: the instrument says what it is.
+	other: ''
+};
+
+/**
+ * The nation's relationship with the United States: its treaties, each linked
+ * to its text in Kappler's Indian Affairs: Laws and Treaties; how its land was
+ * set aside; and the Indian Health Service Area and service unit that serve it.
+ * The Bureau of Indian Affairs region stays in At a glance.
+ */
+function federalTies(record: NationRecord, sources: SourceUses): FactGroup[] {
+	const section = 'Treaties and federal ties';
+	const treaties = [...(record.treaties ?? [])].sort((first, second) => first.signed.localeCompare(second.signed));
+	return [
+		...group(
+			'treaties',
+			'Treaties',
+			treaties.map((fact) =>
+				cited(sources, section, fact, {
+					text: fact.title,
+					link: fact.kappler?.link ? webLink(fact.kappler.link) : undefined,
+					detail: [
+						readableDate(fact.signed),
+						fact.statutes_at_large,
+						fact.kappler?.page ? `${fact.kappler.volume ?? 2} Kappler ${fact.kappler.page}` : undefined
+					]
+						.filter(Boolean)
+						.join(', '),
+					note: fact.signatory ? `Signed as “${fact.signatory}”.` : undefined
+				})
+			)
+		),
+		...group(
+			'land_establishment',
+			'How the land was set aside',
+			(record.land_establishment ?? []).map((fact) =>
+				cited(sources, section, fact, {
+					label: fact.land_area,
+					text: [establishmentWords[fact.method] ?? humanize(fact.method), fact.instrument].filter(Boolean).join(': '),
+					detail: fact.date ? readableDate(fact.date) : undefined,
+					note: fact.detail
+				})
+			)
+		),
+		...group('indian_health_service', 'Indian Health Service', healthItems(record, sources, section))
+	];
+}
+
+/**
+ * The Indian Health Service Area once, with the markers of every source that
+ * names it, then each service unit or health program and who runs the
+ * nation's health services, each with its own source.
+ */
+function healthItems(record: NationRecord, sources: SourceUses, section: string): FactItem[] {
+	const facts = record.indian_health_service ?? [];
+	if (facts.length === 0) return [];
+	const areas = [...new Set(facts.map((fact) => fact.area))];
+	const areaCitations: CitationMark[] = [];
+	// The Area's markers are those of the facts that name only the Area; the
+	// service unit and operator lines carry their own.
+	const areaOnly = facts.filter((fact) => !fact.service_unit && !fact.operator);
+	for (const fact of areaOnly.length > 0 ? areaOnly : facts) sources.citeFact(fact, section, `${fact.area} Area`, areaCitations);
+	const items: FactItem[] = [{ text: areas.map((area) => `${area} Area`).join('; '), citations: areaCitations }];
+	for (const fact of facts) {
+		if (!fact.service_unit) continue;
+		const runBy =
+			fact.operator === 'tribal'
+				? 'run by the nation or a Tribal organization'
+				: fact.operator === 'indian-health-service'
+					? 'run by the Indian Health Service'
+					: undefined;
+		items.push(cited(sources, section, fact, { label: 'Service unit or program', text: fact.service_unit, detail: runBy }));
+	}
+	for (const fact of facts) {
+		if (!fact.operator || fact.service_unit) continue;
+		const text =
+			fact.operator === 'tribal'
+				? 'Run by the nation or a Tribal organization'
+				: 'Run by the Indian Health Service (a Direct Service Tribe)';
+		items.push(cited(sources, section, fact, { label: 'Health services', text }));
+	}
+	return items;
 }
 
 /**
@@ -462,6 +713,10 @@ function nationMap(record: NationRecord, sources: SourceUses): NationMapData | u
 			text: 'land area outlines, simplified for a national map',
 			where: `retrieved ${geometry.landAreaSource.retrieved}`
 		});
+		sources.add('protomaps-basemap-openstreetmap', {
+			section: 'Map',
+			text: 'the map of places, roads and water under the land areas, where the browser can draw it'
+		});
 		const layout = layoutPresenceMap(geometry.frames, states, new Set(), zoomedPaths, {
 			focus: areas.map((area) => area.path),
 			closestZoom: landAreaClosestZoom
@@ -483,7 +738,8 @@ function nationMap(record: NationRecord, sources: SourceUses): NationMapData | u
 		views: views.map((view, index) => ({ key: view.key, label: view.label, layout: shared.layouts[index], layers: view.layers })),
 		stateNames: [...present].map(stateName).sort((first, second) => first.localeCompare(second, 'en')),
 		region: region ? { name: `${region.name} Region`, link: `/nations/map#${regionAnchor(region.name)}` } : undefined,
-		landAreas: areas.map((area) => ({ name: area.name, kind: landAreaKindLabels[area.kind] }))
+		landAreas: areas.map((area) => ({ name: area.name, kind: landAreaKindLabels[area.kind] })),
+		tileMap: areas.length > 0 ? nationTileMapData(areas.map((area) => area.identifier)) : undefined
 	};
 }
 
@@ -500,6 +756,8 @@ export const load: PageServerLoad = ({ params }) => {
 		example: record.example === true,
 		officialName: displayName(record.names.official),
 		listedName: record.names.official,
+		// Badges under the name; no federal recognition has none (src/lib/recognition-badges.ts).
+		badges: recognitionBadges(record.recognition ?? []),
 		review: {
 			...status,
 			lastVerified: record.review?.last_verified ? readableDate(record.review.last_verified) : undefined
@@ -516,10 +774,12 @@ export const load: PageServerLoad = ({ params }) => {
 			pronunciations: [],
 			glance: [],
 			contacts: { websites: [], offices: [] },
+			government: [],
 			courts: [],
 			law: [],
 			documents: [],
 			jurisdiction: [],
+			ties: [],
 			empty: {} as EmptySections,
 			neighbors: [],
 			map: undefined,
@@ -532,6 +792,10 @@ export const load: PageServerLoad = ({ params }) => {
 	}
 
 	const sources = new SourceUses();
+	// Each source is filed under the part of the page that first cites it, so a
+	// long Sources list folds into groups that follow the page (Trevor, Nov. 23,
+	// 2026). The name and seal at the top go with At a glance.
+	sources.part('At a glance');
 	// The nation's seal or logo, only when its reuse status allows showing it
 	// (docs/official-images.md). The Worker serves it from the private bucket.
 	// It is shown first, under the name, so its source is numbered first.
@@ -600,18 +864,46 @@ export const load: PageServerLoad = ({ params }) => {
 	// the order the page shows them: At a glance comes right after the title.
 	const names = [page.listedName, page.officialName];
 	const glance = atAGlance(record, sources);
+	sources.part(contactsHeading);
 	const contacts = contactCard(record, sources);
+	sources.part('Map');
 	const map = nationMap(record, sources);
+	const histories = nationDocumentHistories(record.id);
+	sources.part(governmentHeading);
+	const government = governmentFacts(
+		record,
+		sources,
+		histories.map((history) => ({
+			id: history.id,
+			heading: documentHeading(history.title, names),
+			versions: history.versions.map((version) => ({ id: version.id, label: labelOf(version, version.id) }))
+		}))
+	);
+	sources.part('Courts and dispute resolution');
 	const courts = courtsAndDisputeResolution(record, sources);
-	const documents = documentHistoriesFor(record.id, sources).map((document) => ({
-		...document,
-		heading: documentHeading(document.title, names)
-	}));
+	// Within Laws and agreements, each document's sources go under its heading.
+	const documents = histories.map((history) => {
+		const heading = documentHeading(history.title, names);
+		sources.part(lawHeading, heading);
+		return { ...documentHistoryView(history, sources), heading };
+	});
+	sources.part(lawHeading, documentsLabel);
 	const law = [...publishedLaw(record, sources, documents), ...missingLaw(record, documents)];
+	sources.part('Jurisdiction');
 	const jurisdiction = jurisdictionFacts(record, sources);
+	sources.part('Treaties and federal ties');
+	const ties = federalTies(record, sources);
 	// The legal sections always show, and say plainly when nothing was found,
 	// so a reader can see whether recourse may be available (Trevor, Nov. 22, 2026).
 	const empty: EmptySections = {
+		government:
+			government.length > 0
+				? undefined
+				: emptySectionNote(
+						'how the nation’s government is set up',
+						'A nation can govern itself under a constitution or by tradition that is not published online; its government office can say.',
+						searchSummary('governance', record.id)
+					),
 		courts:
 			courts.length > 0
 				? undefined
@@ -638,10 +930,12 @@ export const load: PageServerLoad = ({ params }) => {
 		glance,
 		contacts,
 		map,
+		government,
 		courts,
 		law,
 		documents,
 		jurisdiction,
+		ties,
 		empty,
 		neighbors: sameStates(record),
 		sources: sources.list
@@ -652,6 +946,7 @@ export const load: PageServerLoad = ({ params }) => {
 	const hasContacts = contacts.websites.length > 0 || contacts.offices.length > 0;
 	if (glance.length > 0 || map) items.push({ label: 'At a glance', link: '#glance-heading' });
 	if (hasContacts) items.push({ label: contactsHeading, link: '#contacts-heading' });
+	items.push({ label: governmentHeading, link: '#government-heading' });
 	items.push({ label: 'Courts and dispute resolution', link: '#courts-heading' });
 	items.push({
 		label: lawHeading,
@@ -659,6 +954,7 @@ export const load: PageServerLoad = ({ params }) => {
 		children: documents.map((document) => ({ label: document.heading, link: `#document-${document.id}` }))
 	});
 	items.push({ label: 'Jurisdiction', link: '#jurisdiction-heading' });
+	if (ties.length > 0) items.push({ label: 'Treaties and federal ties', link: '#ties-heading' });
 	if (result.neighbors.length > 0) {
 		items.push({ label: 'Other nations in the same states', link: '#neighbors-heading' });
 	}

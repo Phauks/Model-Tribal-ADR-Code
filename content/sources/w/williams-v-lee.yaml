@@ -44,6 +44,13 @@ supreme_court:
   - {name: "Charles E. Whittaker", vote: majority}
   source: https://api.oyez.org/cases/1958/39
   checked: '2026-11-22'
+courtlistener:
+  cluster: 105807
+  citation: "358 U.S. 217"
+  case_name: "Williams v. Lee"
+  link: https://www.courtlistener.com/opinion/105807/williams-v-lee/
+  release: '2026-09-30'
+  checked: '2026-11-23'
 rights:
   status: no-permission-needed
   basis: us-government-work

@@ -1,7 +1,7 @@
 profile: content/tribes/o/omaha-tribe-of-nebraska.yaml
 topic: gaming-dispute-procedures
 status: found
-last_searched: '2026-11-22'
+last_searched: '2026-11-23'
 searches:
 - date: '2026-11-22'
   searched_by: Claude (AI assistant)
@@ -56,6 +56,33 @@ searches:
     and recorded 1 procedure(s): patron-dispute.'
   records:
   - research/reviews/2026-11-22-ordinance-disputes.json#omaha-tribe-of-nebraska-amendment-2013-07-23#i1
-next_steps: Read the scanned amendment listed 1997-04-07 (https://www.nigc.gov/wp-content/uploads/2025/03/omahatribe-omahatribeamend040797.pdf)
-  with OCR or by hand. Read the scanned amendment listed 2005-08-08 (https://www.nigc.gov/wp-content/uploads/2025/03/omahatribe-amendappr080805.pdf)
-  with OCR or by hand.
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: ai-review
+  place_kind: nigc-ordinance-pdf
+  address: https://www.nigc.gov/wp-content/uploads/2025/03/omahatribe-amendappr080805.pdf
+  query: 'read scanned PDF page images: patron or gaming public disputes, complaints and claims, grievances,
+    licensing hearings framed as disputes, arbitration, mediation, peacemaking and Tribal court review'
+  outcome: found
+  reason: 'Small-model reviewers read PDF pages 1-34 of 34 of this amendment listed 2005-08-08 as page
+    images (it has no text layer) and recorded 5 procedure(s): other, patron-dispute.'
+  records:
+  - research/reviews/2026-11-22-ordinance-disputes.json#omaha-tribe-of-nebraska-amendment-2005-08-08#p1
+  - research/reviews/2026-11-22-ordinance-disputes.json#omaha-tribe-of-nebraska-amendment-2005-08-08#p2
+  - research/reviews/2026-11-22-ordinance-disputes.json#omaha-tribe-of-nebraska-amendment-2005-08-08#p3
+  - research/reviews/2026-11-22-ordinance-disputes.json#omaha-tribe-of-nebraska-amendment-2005-08-08#p4
+  - research/reviews/2026-11-22-ordinance-disputes.json#omaha-tribe-of-nebraska-amendment-2005-08-08#p5
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: ai-review
+  place_kind: nigc-ordinance-pdf
+  address: https://www.nigc.gov/wp-content/uploads/2025/03/omahatribe-omahatribeamend040797.pdf
+  query: 'read scanned PDF page images: patron or gaming public disputes, complaints and claims, grievances,
+    licensing hearings framed as disputes, arbitration, mediation, peacemaking and Tribal court review'
+  outcome: not-found
+  reason: Small-model reviewers read PDF pages 1-7 of 7 of this amendment listed 1997-04-07 as page images
+    (it has no text layer) and found no dispute procedure (The only passages are the NIGC approval letter
+    and two resolutions setting Commission membership, terms and compensation; no patron, employee, licensing
+    dispute or other dispute procedure appears).
+next_steps: The lead author decides the procedures in research/reviews/2026-11-22-ordinance-disputes.csv;
+  the nation's own current ordinance may differ from the list's copy.

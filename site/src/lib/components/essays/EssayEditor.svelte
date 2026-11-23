@@ -9,6 +9,12 @@
 	// goes on, and when the tab is hidden or the editor closes. Those
 	// versions carry the note "Auto-saved"; "Name this version" saves the
 	// text as it stands as a version with a note of its own.
+	//
+	// With `live`, the editor first joins the essay's live editing room
+	// (src/lib/essays/live.ts): everyone in the room edits one shared text,
+	// sees each other's cursors, and the room saves versions itself, so the
+	// editor stops saving by itself. If the room cannot be reached in a few
+	// seconds, the editor opens as before and saves by itself.
 	import 'prosemirror-view/style/prosemirror.css';
 	import { onDestroy, onMount, tick, untrack } from 'svelte';
 	import { baseKeymap, lift, setBlockType, toggleMark, wrapIn } from 'prosemirror-commands';
@@ -19,10 +25,19 @@
 	import { liftListItem, sinkListItem, splitListItem, wrapInList } from 'prosemirror-schema-list';
 	import { EditorState, Plugin, TextSelection, type Command, type Transaction } from 'prosemirror-state';
 	import { EditorView } from 'prosemirror-view';
+	import { initProseMirrorDoc, redoCommand, undoCommand, yCursorPlugin, ySyncPlugin, yUndoPlugin } from 'y-prosemirror';
+	import { joinEssayRoom, type EssayRoom, type LiveStatus } from '#lib/essays/live.ts';
 	import SourceList from '#lib/components/SourceList.svelte';
 	import { essaySchema as schema, parseEssay, writeEssay } from '#lib/essays/document.ts';
 	import { boxParts, casePartOrder, joinFrontMatter, lawPartOrder, splitFrontMatter, type BoxPart } from '#lib/essays/syntax.ts';
 	import type { RenderedEssay } from '#lib/essays/render.ts';
+	import { checkMarks, issueAt } from '#lib/essays/check-marks.ts';
+	import EssayChecks from '#lib/components/essays/EssayChecks.svelte';
+	import EssayGoTo from '#lib/components/essays/EssayGoTo.svelte';
+	import EssayFigureDialog from '#lib/components/essays/EssayFigureDialog.svelte';
+	import { figurePartOrder, figureParts, type FigurePart, type NewFigure } from '#lib/essays/figures.ts';
+	import { figurePlayers } from '#lib/essays/figure-players.ts';
+	import { dropLocalDraft, isSaveAnswer, keepaliveLimit, keepLocalDraft, localDraft, type LocalDraft } from '#lib/essays/local-draft.ts';
 
 	let {
 		identifier,
@@ -30,6 +45,7 @@
 		version,
 		canEdit,
 		autoSave = false,
+		live = false,
 		onsaved
 	}: {
 		identifier: string;
@@ -38,6 +54,8 @@
 		canEdit: boolean;
 		/** Save by itself as the person types (on an essay page). */
 		autoSave?: boolean;
+		/** Join the essay's live editing room when it can be reached. */
+		live?: boolean;
 		/** Called with the version number after each save. */
 		onsaved?: (version: number) => void;
 	} = $props();
@@ -59,6 +77,8 @@
 	let saving = $state(false);
 	let conflict = $state<{ latest: number; latestText: string; mine: string } | null>(null);
 	let preview = $state<RenderedEssay | null>(null);
+	/** Text this browser kept because the site never confirmed saving it (local-draft.ts). */
+	let recovered = $state<LocalDraft | null>(null);
 
 	let host: HTMLDivElement | undefined = $state();
 	let view: EditorView | undefined;
@@ -71,6 +91,7 @@
 		boxSource: string | null;
 		boxParts: Set<string>;
 		analysisTitle: string | null;
+		figureParts: Set<string>;
 	}>({
 		marks: new Set(),
 		block: 'paragraph',
@@ -78,14 +99,20 @@
 		box: null,
 		boxSource: null,
 		boxParts: new Set(),
-		analysisTitle: null
+		analysisTitle: null,
+		figureParts: new Set()
 	});
 	/** The parts the box around the cursor can take and does not have yet. */
 	const missingParts = $derived(
 		active.box ? (active.box === 'law_block' ? lawPartOrder : casePartOrder).filter((kind) => !active.boxParts.has(kind)) : []
 	);
 
+	/** The parts the figure around the cursor does not have yet. */
+	const missingFigureParts = $derived(active.inside.has('figure_block') ? figurePartOrder.filter((kind) => !active.figureParts.has(kind)) : []);
+
 	/* Dialogs --------------------------------------------------------------- */
+
+	let figureDialog: ReturnType<typeof EssayFigureDialog> | undefined = $state();
 
 	type Picker = 'citation' | 'case' | 'law' | 'term' | 'link' | 'analysis-title';
 	let picker = $state<Picker | null>(null);
@@ -96,7 +123,26 @@
 	let linkAddress = $state('');
 	let shownText = $state('');
 	let editingCitationAt = $state<number | null>(null);
-	let library = $state<{ sources: [string, string][]; terms: [string, string][] } | null>(null);
+	let library = $state<{ sources: [string, string][]; terms: [string, string][]; words?: string[] } | null>(null);
+
+	/* Checks and Go to ------------------------------------------------------- */
+
+	const checksKey = 'editor-checks';
+	/** Goes up by one each time the text changes, so the checks run again. */
+	let revision = $state(0);
+	let showChecks = $state(false);
+	let showGoTo = $state(false);
+	let chosenIssue = $state<string | null>(null);
+
+	function toggleChecks(): void {
+		showChecks = !showChecks;
+		if (showChecks) void loadLibrary();
+		try {
+			localStorage.setItem(checksKey, showChecks ? 'on' : 'off');
+		} catch {
+			// Storage can be blocked; the choice is then not remembered.
+		}
+	}
 	let libraryProblem = $state('');
 
 	async function loadLibrary(): Promise<void> {
@@ -155,7 +201,7 @@
 	/* Commands -------------------------------------------------------------- */
 
 	function run(command: Command): void {
-		if (!view || !canEdit) return;
+		if (!view || !editable()) return;
 		command(view.state, view.dispatch, view);
 		view.focus();
 	}
@@ -243,6 +289,66 @@
 		};
 	}
 
+	/** Blocks from a few lines of Markdown typed in the figure dialog, so *italics* and citations work there too. */
+	function blocksOf(text: string): EditorNode[] {
+		const blocks: EditorNode[] = [];
+		parseEssay(text).forEach((node) => blocks.push(node));
+		return blocks;
+	}
+
+	function newFigurePart(kind: FigurePart, text?: string): EditorNode {
+		return schema.node('figure_part', { kind }, text ? blocksOf(text) : [schema.node('paragraph')]);
+	}
+
+	/**
+	 * Adds a figure after the block the cursor is in, at the top level of the
+	 * essay, so a figure never lands inside a paragraph, a list or a box.
+	 */
+	function addFigure(figure: NewFigure): void {
+		const parts = [
+			...blocksOf(figure.caption),
+			...(figure.description ? [newFigurePart('description', figure.description)] : []),
+			...(figure.credit ? [newFigurePart('credit', figure.credit)] : []),
+			...(figure.transcript ? [newFigurePart('transcript', figure.transcript)] : [])
+		];
+		const node = schema.node('figure_block', { kind: figure.kind, address: figure.address }, parts.length ? parts : [schema.node('paragraph')]);
+		run((state, dispatch) => {
+			const start = state.selection.$from;
+			const at = start.depth > 0 ? start.after(1) : state.selection.from;
+			if (dispatch) {
+				const transaction = state.tr.insert(at, node);
+				const inside = TextSelection.findFrom(transaction.doc.resolve(at + 1), 1, true);
+				if (inside) transaction.setSelection(inside);
+				dispatch(transaction.scrollIntoView());
+			}
+			return true;
+		});
+	}
+
+	/** Adds a part to the figure around the cursor, in its place in the order of parts. */
+	function addFigurePart(kind: FigurePart): Command {
+		return (state, dispatch) => {
+			const found = enclosing(state, 'figure_block');
+			if (!found) return false;
+			let at = found.position + found.node.nodeSize - 1;
+			let offset = found.position + 1;
+			for (let index = 0; index < found.node.childCount; index += 1) {
+				const child = found.node.child(index);
+				if (child.type.name === 'figure_part' && figurePartOrder.indexOf(child.attrs.kind) > figurePartOrder.indexOf(kind)) {
+					at = offset;
+					break;
+				}
+				offset += child.nodeSize;
+			}
+			if (dispatch) {
+				const transaction = state.tr.insert(at, newFigurePart(kind));
+				transaction.setSelection(TextSelection.near(transaction.doc.resolve(at + 2)));
+				dispatch(transaction.scrollIntoView());
+			}
+			return true;
+		};
+	}
+
 	function setAttributes(name: string, attrs: Record<string, unknown>): Command {
 		return (state, dispatch) => {
 			const found = enclosing(state, name);
@@ -320,10 +426,10 @@
 
 	/* The editor -------------------------------------------------------------- */
 
-	function partsOf(node: EditorNode | undefined): Set<string> {
+	function partsOf(node: EditorNode | undefined, part = 'case_part'): Set<string> {
 		const kinds = new Set<string>();
 		node?.forEach((child) => {
-			if (child.type.name === 'case_part') kinds.add(child.attrs.kind);
+			if (child.type.name === part) kinds.add(child.attrs.kind);
 		});
 		return kinds;
 	}
@@ -346,7 +452,8 @@
 			box: boxFound ? (boxFound.node.type.name as Box) : null,
 			boxSource: boxFound?.node.attrs.source ?? null,
 			boxParts: partsOf(boxFound?.node),
-			analysisTitle: enclosing(state, 'analysis_block')?.node.attrs.title ?? null
+			analysisTitle: enclosing(state, 'analysis_block')?.node.attrs.title ?? null,
+			figureParts: partsOf(enclosing(state, 'figure_block')?.node, 'figure_part')
 		};
 	}
 
@@ -362,19 +469,26 @@
 		const tracker = new Plugin({
 			view: () => ({
 				update: (editorView, previous) => {
-					if (!editorView.state.doc.eq(previous.doc)) markChanged();
+					if (!editorView.state.doc.eq(previous.doc)) {
+						markChanged();
+						revision += 1;
+					}
 					describe(editorView.state);
 				}
 			})
 		});
+		// In the live room the text comes from the room, and undo takes back only this person's changes.
+		const shared = inRoom && room ? initProseMirrorDoc(room.fragment, schema) : null;
+		const undoKey = shared ? undoCommand : undo;
+		const redoKey = shared ? redoCommand : redo;
 		return EditorState.create({
-			doc: parseEssay(body),
+			doc: shared ? shared.doc : parseEssay(body),
 			plugins: [
 				rules,
 				keymap({
-					'Mod-z': undo,
-					'Shift-Mod-z': redo,
-					'Mod-y': redo,
+					'Mod-z': undoKey,
+					'Shift-Mod-z': redoKey,
+					'Mod-y': redoKey,
 					'Mod-b': toggleMark(schema.marks.strong),
 					'Mod-i': toggleMark(schema.marks.em),
 					'Mod-u': toggleMark(schema.marks.underline),
@@ -389,10 +503,17 @@
 					'Mod-s': () => {
 						void save();
 						return true;
+					},
+					'Mod-g': () => {
+						showGoTo = true;
+						return true;
 					}
 				}),
 				keymap(baseKeymap),
-				history(),
+				...(shared && room
+					? [ySyncPlugin(room.fragment, { mapping: shared.mapping }), yCursorPlugin(room.awareness), yUndoPlugin()]
+					: [history()]),
+				checkMarks(),
 				tracker
 			]
 		});
@@ -403,8 +524,13 @@
 		if (!host) return;
 		view = new EditorView(host, {
 			state: createState(body),
-			editable: () => canEdit,
+			editable,
 			attributes: { class: 'essay-editor-text essay-text', 'aria-label': 'Essay text', role: 'textbox', 'aria-multiline': 'true' },
+			handleClick: (editorView, position) => {
+				const issue = issueAt(editorView, position);
+				if (issue) chosenIssue = issue;
+				return false;
+			},
 			handleDoubleClickOn: (_view, _position, node, nodePosition) =>
 				node.type.name === 'citation' ? editCitation(nodePosition, node) : false,
 			dispatchTransaction(transaction: Transaction) {
@@ -449,6 +575,121 @@
 		mode = next;
 	}
 
+	/* The live editing room ------------------------------------------------- */
+
+	let room: EssayRoom | null = null;
+	/** Whether the editor shows the room's shared text (non-reactive: read while building plugins). */
+	let inRoom = false;
+	/** The same, for the page to show. */
+	let inRoomShown = $state(false);
+	let liveStatus = $state<LiveStatus | null>(null);
+	let liveProblem = $state('');
+	let people = $state<string[]>([]);
+	let joining = $state(false);
+	let joinTimer: ReturnType<typeof setTimeout> | undefined;
+	/** How long to wait for the room before opening the editor on its own. */
+	const joinWaitMilliseconds = 6_000;
+	/** Cursor colors come from the design tokens, read from the page so each theme gets its own. */
+	const cursorTokens = ['--color-action', '--color-link', '--color-danger', '--color-focus'];
+
+	function cursorColor(): string {
+		const token = cursorTokens[Math.floor(Math.random() * cursorTokens.length)];
+		return getComputedStyle(document.documentElement).getPropertyValue(token).trim() || 'currentColor';
+	}
+
+	function editable(): boolean {
+		if (!canEdit || joining) return false;
+		if (!inRoom) return true;
+		return liveStatus?.state === 'live' ? liveStatus.canEdit : liveStatus?.state === 'offline';
+	}
+
+	async function joinRoom(): Promise<void> {
+		joining = true;
+		view?.setProps({});
+		const joined = joinEssayRoom(identifier, {
+			basedOn,
+			user: { name: 'Someone', color: cursorColor() }
+		});
+		room = joined;
+		joined.subscribe((next) => {
+			liveStatus = next;
+			if (next.state === 'refused' && inRoom) {
+				// Cut off for good: keep what this tab has, and stop typing into a room that will not take it.
+				keepLocalDraft(identifier, currentFile(), basedOn);
+				liveProblem = `${next.reason} Your text is kept in this browser.`;
+			}
+			view?.setProps({});
+		});
+		const waited = await Promise.race([
+			joined.whenSynced.then(() => 'synced' as const, () => 'refused' as const),
+			new Promise<'late'>((resolve) => {
+				joinTimer = setTimeout(() => resolve('late'), joinWaitMilliseconds);
+			})
+		]);
+		clearTimeout(joinTimer);
+		if (closed || room !== joined) return;
+		if (waited !== 'synced') {
+			// Open the editor on its own, saving by itself as before.
+			const reason = joined.status.state === 'refused' ? joined.status.reason : 'The live room did not answer.';
+			joined.destroy();
+			room = null;
+			liveStatus = null;
+			liveProblem = `${reason} Editing on your own; your changes save by themselves.`;
+			joining = false;
+			view?.setProps({});
+			return;
+		}
+		inRoom = true;
+		inRoomShown = true;
+		joining = false;
+		status = '';
+		liveProblem = '';
+		frontMatter = joined.frontMatter.toString();
+		savedFrontMatter = frontMatter;
+		joined.frontMatter.observe(() => {
+			frontMatter = joined.frontMatter.toString();
+		});
+		const showPeople = () => {
+			people = [...joined.awareness.getStates().entries()]
+				.filter(([client]) => client !== joined.document.clientID)
+				.map(([, state]) => (state.user as { name?: string } | undefined)?.name ?? 'Someone');
+		};
+		joined.awareness.on('change', showPeople);
+		showPeople();
+		joined.onSaved(({ version }) => {
+			basedOn = version;
+			dirty = false;
+			onsaved?.(version);
+		});
+		if (joined.status.state === 'live') basedOn = joined.status.version;
+		mountEditor('');
+		dirty = false;
+	}
+
+	/** The front matter box writes into the room's shared copy. */
+	function frontMatterEdited(): void {
+		if (inRoom && room) {
+			const shared = room.frontMatter;
+			if (shared.toString() !== frontMatter) {
+				room.document.transact(() => {
+					shared.delete(0, shared.length);
+					shared.insert(0, frontMatter);
+				});
+			}
+			return;
+		}
+		markChanged();
+	}
+
+	function liveText(state: LiveStatus): string {
+		if (state.state === 'connecting') return 'Joining the live room…';
+		if (state.state === 'offline') return 'Offline. Your changes stay here and go to the room when the connection is back.';
+		if (state.state === 'refused') return state.reason;
+		if (!state.canEdit) return `Live, reading only. Version ${state.version}.`;
+		// The room reports unsaved changes only on joining and saving, so changes seen since count too.
+		return state.unsaved || dirty ? 'Live. The room saves a version a minute after typing stops.' : `Live. Saved as version ${state.version}.`;
+	}
+
 	/* Saving by itself ------------------------------------------------------ */
 
 	const autoSaveIdleMilliseconds = 4_000;
@@ -467,16 +708,28 @@
 	let closed = false;
 
 	function scheduleAutoSave(): void {
-		if (!autoSave || !canEdit || conflict || closed) return;
+		// In the live room, the room saves versions.
+		if (!autoSave || !canEdit || conflict || closed || inRoom) return;
 		firstUnsavedEdit ??= Date.now();
 		clearTimeout(autoSaveTimer);
 		const untilLongest = firstUnsavedEdit + autoSaveLongestMilliseconds - Date.now();
 		autoSaveTimer = setTimeout(() => void autoSaveNow(), Math.max(0, Math.min(autoSaveIdleMilliseconds, untilLongest)));
 	}
 
+	/** After a save that failed, try again in half a minute rather than straight away. */
+	function retryAutoSave(): void {
+		if (!autoSave || closed) return;
+		clearTimeout(autoSaveTimer);
+		autoSaveTimer = setTimeout(() => void autoSaveNow(), autoSaveLongestMilliseconds);
+	}
+
+	function unsaved(): boolean {
+		return dirty || frontMatter !== savedFrontMatter;
+	}
+
 	async function autoSaveNow(): Promise<void> {
 		clearTimeout(autoSaveTimer);
-		if (!autoSave || !canEdit || conflict || !(dirty || frontMatter !== savedFrontMatter)) return;
+		if (!autoSave || !canEdit || conflict || inRoom || !unsaved()) return;
 		if (saving) {
 			scheduleAutoSave();
 			return;
@@ -484,44 +737,86 @@
 		await save(false, true);
 	}
 
+	/** The tab is being hidden, maybe closed: keep the text here and send it while the page may still go away. */
 	function saveWhenHidden(): void {
-		if (document.visibilityState === 'hidden') void autoSaveNow();
+		if (document.visibilityState !== 'hidden') return;
+		// Cut off from the room, changes wait in this tab; keep a copy in case it closes.
+		if (inRoom) {
+			if (liveStatus?.state !== 'live' && unsaved()) keepLocalDraft(identifier, currentFile(), basedOn);
+			return;
+		}
+		if (!autoSave || !canEdit || conflict || !unsaved()) return;
+		const file = currentFile();
+		keepLocalDraft(identifier, file, basedOn);
+		void (inFlight ?? Promise.resolve()).then(() => save(false, true, { file, last: true }));
 	}
 
-	async function save(saveOver = false, automatic = false): Promise<void> {
+	/** The save on its way, so a last save waits for it rather than being skipped. */
+	let inFlight: Promise<void> | null = null;
+
+	async function save(saveOver = false, automatic = false, { file = currentFile(), last = false } = {}): Promise<void> {
 		if (!canEdit || saving) return;
 		saving = true;
+		const done = new Promise<void>((resolve) => {
+			finishSave = resolve;
+		});
+		inFlight = done;
+		try {
+			await sendSave(saveOver, automatic, file, last);
+		} finally {
+			saving = false;
+			inFlight = null;
+			finishSave();
+		}
+	}
+
+	let finishSave: () => void = () => {};
+
+	async function sendSave(saveOver: boolean, automatic: boolean, file: string, last: boolean): Promise<void> {
 		status = automatic ? 'Saving by itself…' : 'Saving…';
-		const file = currentFile();
 		const editsSent = edits;
+		// Until the site has the text, this browser keeps a copy (local-draft.ts).
+		keepLocalDraft(identifier, file, basedOn);
+		const body = JSON.stringify({
+			text: file,
+			basedOn: saveOver && conflict ? conflict.latest : basedOn,
+			note: automatic ? 'Auto-saved' : note,
+			// On an essay page the button names the text as it stands, saved or not.
+			name: autoSave && !automatic
+		});
 		const response = await fetch(`/workspace/essays/${identifier}/save`, {
 			method: 'POST',
-			headers: { 'Content-Type': 'application/json' },
-			keepalive: automatic,
-			body: JSON.stringify({
-				text: file,
-				basedOn: saveOver && conflict ? conflict.latest : basedOn,
-				note: automatic ? 'Auto-saved' : note,
-				// On an essay page the button names the text as it stands, saved or not.
-				name: autoSave && !automatic
-			})
+			headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
+			// Keepalive lets a save finish after the tab closes, but browsers refuse it over 64 KiB.
+			keepalive: last && body.length < keepaliveLimit,
+			body
 		}).catch(() => null);
-		saving = false;
 		if (!response) {
-			status = 'Not saved: the site could not be reached. Your text is still here; try again.';
-			if (automatic) scheduleAutoSave();
+			status = 'Not saved: the site could not be reached. Your text is kept in this browser; it will try again.';
+			if (automatic) retryAutoSave();
+			return;
+		}
+		if (!isSaveAnswer(response)) {
+			status = 'Not saved: the site did not answer as expected. Your text is kept in this browser; it will try again.';
+			if (automatic) retryAutoSave();
 			return;
 		}
 		const answer = await response.json().catch(() => ({}));
+		if (response.status === 401) {
+			status = `Not saved: ${answer.message ?? 'you are signed out.'} Your text is kept in this browser.`;
+			if (automatic) retryAutoSave();
+			return;
+		}
 		if (response.status === 409) {
 			conflict = { latest: answer.latest, latestText: answer.latestText, mine: file };
 			status = '';
 			return;
 		}
-		if (!response.ok) {
-			status = `Not saved: ${answer.message ?? response.statusText}`;
+		if (!response.ok || typeof answer.number !== 'number') {
+			status = `Not saved: ${answer.message ?? response.statusText}. Your text is kept in this browser.`;
 			return;
 		}
+		dropLocalDraft(identifier, file);
 		const split = splitFrontMatter(file);
 		savedBody = split.body;
 		savedFrontMatter = split.frontMatter;
@@ -552,20 +847,71 @@
 		status = `Showing version ${conflict.latest}. Your text is still in the box below until you leave the page.`;
 	}
 
+	function bringBack(): void {
+		if (!recovered) return;
+		const split = splitFrontMatter(recovered.text);
+		if (inRoom && view) {
+			// In the room, the kept text replaces the shared text, as one change others see.
+			const kept = parseEssay(split.body);
+			view.dispatch(view.state.tr.replaceWith(0, view.state.doc.content.size, kept.content));
+			frontMatter = split.frontMatter;
+			frontMatterEdited();
+			recovered = null;
+			dropLocalDraft(identifier);
+			status = 'Brought back the text kept in this browser.';
+			return;
+		}
+		frontMatter = split.frontMatter;
+		// The version it started from, so a newer save by someone else still shows as a conflict.
+		basedOn = recovered.basedOn;
+		if (mode === 'markdown') markdown = split.body;
+		else mountEditor(split.body);
+		recovered = null;
+		markChanged();
+		status = 'Brought back the text kept in this browser.';
+	}
+
+	function discardRecovered(): void {
+		dropLocalDraft(identifier);
+		recovered = null;
+	}
+
 	function warnBeforeLeaving(event: BeforeUnloadEvent): void {
+		// Connected to the room, the room already has every change.
+		if (inRoom && liveStatus?.state === 'live') return;
 		if (dirty || frontMatter !== savedFrontMatter) event.preventDefault();
 	}
 
 	onMount(() => {
 		mountEditor(initial.body);
 		dirty = false;
+		if (untrack(() => live)) void joinRoom();
+		const kept = canEdit ? localDraft(identifier) : null;
+		if (kept && kept.text === untrack(() => text)) dropLocalDraft(identifier);
+		else if (kept) recovered = kept;
+		try {
+			if (canEdit && localStorage.getItem(checksKey) === 'on') toggleChecks();
+		} catch {
+			// As above.
+		}
 	});
 
 	onDestroy(() => {
-		// Closing the editor on an essay page saves what is not saved yet.
-		if (autoSave) void autoSaveNow();
 		closed = true;
 		clearTimeout(autoSaveTimer);
+		clearTimeout(joinTimer);
+		if (room) {
+			// The room saves 5 seconds after the last person leaves; only text it never received needs a copy.
+			if (inRoom && liveStatus?.state !== 'live' && unsaved()) keepLocalDraft(identifier, currentFile(), basedOn);
+			room.destroy();
+			room = null;
+		}
+		// Closing the editor on an essay page saves what is not saved yet, after any save on its way.
+		if (autoSave && canEdit && !conflict && unsaved()) {
+			const file = currentFile();
+			keepLocalDraft(identifier, file, basedOn);
+			void (inFlight ?? Promise.resolve()).then(() => save(false, true, { file, last: true }));
+		}
 		view?.destroy();
 	});
 
@@ -590,7 +936,14 @@
 	<div class="editor-bar" role="toolbar" aria-label="Editing">
 		<div class="tabs" role="group" aria-label="View">
 			<button type="button" class="tool" aria-pressed={mode === 'rich'} onclick={() => switchMode('rich')}>Text</button>
-			<button type="button" class="tool" aria-pressed={mode === 'markdown'} onclick={() => switchMode('markdown')}>Markdown</button>
+			<button
+				type="button"
+				class="tool"
+				aria-pressed={mode === 'markdown'}
+				disabled={inRoomShown}
+				title={inRoomShown ? 'The Markdown view is off while editing live, so everyone keeps one shared text.' : undefined}
+				onclick={() => switchMode('markdown')}>Markdown</button
+			>
 			<button type="button" class="tool" aria-pressed={mode === 'preview'} onclick={() => switchMode('preview')}>Preview</button>
 		</div>
 		{#if canEdit && mode === 'rich'}
@@ -632,21 +985,60 @@
 				{/if}
 				<button type="button" class="tool" onclick={() => run(lift)} title="Take the paragraph out of its box or list">Out of box</button>
 			</div>
+			<div role="group" aria-label="Figures">
+				<button type="button" class="tool" onclick={() => figureDialog?.show()} title="A picture, video or sound recording, added after this paragraph">Picture, video or recording</button>
+				{#each missingFigureParts as kind (kind)}
+					<button type="button" class="tool" onclick={() => run(addFigurePart(kind))}>Add {figureParts[kind]}</button>
+				{/each}
+			</div>
 			<div role="group" aria-label="References">
 				<button type="button" class="tool" onclick={() => openPicker('citation')}>Cite a source</button>
 				<button type="button" class="tool" onclick={() => openPicker('term')}>Glossary term</button>
 			</div>
 			<div role="group" aria-label="History">
-				<button type="button" class="tool" onclick={() => run(undo)}>Undo</button>
-				<button type="button" class="tool" onclick={() => run(redo)}>Redo</button>
+				<button type="button" class="tool" onclick={() => run(inRoom ? undoCommand : undo)}>Undo</button>
+				<button type="button" class="tool" onclick={() => run(inRoom ? redoCommand : redo)}>Redo</button>
+			</div>
+		{/if}
+		{#if mode === 'rich'}
+			<div role="group" aria-label="Checks and Go to">
+				{#if canEdit}
+					<button type="button" class="tool" aria-pressed={showChecks} onclick={toggleChecks}>Checks</button>
+				{/if}
+				<button type="button" class="tool" aria-pressed={showGoTo} title="Ctrl+G" onclick={() => (showGoTo = !showGoTo)}>Go to</button>
 			</div>
 		{/if}
 	</div>
+
+	{#if showGoTo && mode === 'rich'}
+		<EssayGoTo view={() => view} onclose={() => (showGoTo = false)} />
+	{/if}
+	{#if showChecks && mode === 'rich'}
+		<EssayChecks view={() => view} {revision} {identifier} file={currentFile} {library} {canEdit} bind:selected={chosenIssue} />
+	{/if}
 
 	{#if active.boxSource && mode === 'rich'}
 		<p class="small muted context">In a {active.box === 'law_block' ? 'law' : 'case'}: <code>{active.boxSource}</code>. Its heading on the page is this source’s full citation.</p>
 	{/if}
 
+	{#if inRoomShown}
+		<p class="small live-row" aria-live="polite">
+			<span class="live-dot" class:offline={liveStatus?.state !== 'live'} aria-hidden="true"></span>
+			{#if people.length === 0}Editing live. No one else is here.{:else}Editing live with {people.join(', ')}.{/if}
+		</p>
+	{/if}
+	{#if liveProblem}
+		<div class="notice" role="note"><p>{liveProblem}</p></div>
+	{/if}
+	{#if recovered}
+		<div class="notice" role="note">
+			<p>
+				This browser kept text from {new Date(recovered.at).toLocaleString('en-US', { dateStyle: 'medium', timeStyle: 'short' })} that the site never confirmed saving.
+				<button type="button" class="button" onclick={bringBack}>Bring it back</button>
+				<button type="button" class="button button-quiet" onclick={discardRecovered}>Discard it</button>
+			</p>
+		</div>
+	{/if}
 	<div class="editor-area" hidden={mode !== 'rich'} bind:this={host}></div>
 
 	{#if mode === 'markdown'}
@@ -675,7 +1067,7 @@
 			{/if}
 			<article class="reading essay">
 				<h1>{preview.title}</h1>
-				<div class="essay-text">{@html preview.html}</div>
+				<div class="essay-text" use:figurePlayers>{@html preview.html}</div>
 				<SourceList sources={preview.sources} />
 			</article>
 		{/if}
@@ -685,7 +1077,7 @@
 		<summary>Details (front matter)</summary>
 		<p class="small">The title, part and status, in YAML. The title shown on the page comes from here.</p>
 		<label class="visually-hidden" for="front-matter">Front matter</label>
-		<textarea id="front-matter" class="front-matter" bind:value={frontMatter} readonly={!canEdit} rows="6" oninput={markChanged}></textarea>
+		<textarea id="front-matter" class="front-matter" bind:value={frontMatter} readonly={!editable()} rows="6" oninput={frontMatterEdited}></textarea>
 	</details>
 
 	{#if conflict}
@@ -717,12 +1109,14 @@
 				<input id="save-note" type="text" bind:value={note} placeholder="Sent to advisors" maxlength="500" />
 				<button type="button" class="button" onclick={() => save()} disabled={saving}>Save version</button>
 			{/if}
-			<span class="small" role="status" aria-live="polite">{status || (dirty ? 'Unsaved changes' : `Version ${basedOn}`)}</span>
+			<span class="small" role="status" aria-live="polite">{status || (liveStatus && inRoomShown ? liveText(liveStatus) : joining ? 'Joining the live room…' : dirty ? 'Unsaved changes' : `Version ${basedOn}`)}</span>
 		</div>
 	{:else}
 		<p class="small muted">You can read this essay. Ask the lead author for contribute access to edit it.</p>
 	{/if}
 </div>
+
+<EssayFigureDialog bind:this={figureDialog} essay={identifier} onadd={addFigure} />
 
 <dialog bind:this={pickerDialog} class="picker" onclose={() => (picker = null)} aria-labelledby="picker-heading">
 	{#if picker}
@@ -854,6 +1248,30 @@
 		overflow-x: auto;
 	}
 
+	/* What the checks found (EssayChecks.svelte): wavy for spelling and grammar, dotted for definitions. */
+	.editor-area :global(.check-mark) {
+		text-decoration-line: underline;
+		text-decoration-thickness: 2px;
+		text-underline-offset: 3px;
+		cursor: pointer;
+	}
+
+	.editor-area :global(.check-spelling) {
+		text-decoration-style: wavy;
+		text-decoration-color: var(--color-danger);
+	}
+
+	.editor-area :global(.check-grammar) {
+		text-decoration-style: wavy;
+		text-decoration-color: var(--color-link);
+	}
+
+	.editor-area :global(.check-definition),
+	.editor-area :global(.check-repeated) {
+		text-decoration-style: dotted;
+		text-decoration-color: var(--color-action);
+	}
+
 	.editor-area :global(.ProseMirror) {
 		min-height: 60vh;
 		padding: var(--space-3);
@@ -969,5 +1387,47 @@
 
 	.context {
 		margin: 0;
+	}
+
+	.live-row {
+		display: flex;
+		align-items: center;
+		gap: var(--space-2);
+		margin: 0 0 var(--space-2);
+	}
+
+	.live-dot {
+		width: 0.6rem;
+		height: 0.6rem;
+		border-radius: 50%;
+		background: var(--color-action);
+	}
+
+	.live-dot.offline {
+		background: var(--color-ink-muted);
+	}
+
+	/* Other people's cursors and selections in the live room (y-prosemirror). */
+	:global(.ProseMirror-yjs-cursor) {
+		position: relative;
+		margin-left: -1px;
+		margin-right: -1px;
+		border-left: 2px solid;
+		word-break: normal;
+		pointer-events: none;
+	}
+
+	:global(.ProseMirror-yjs-cursor > div) {
+		position: absolute;
+		top: -1.15em;
+		left: -2px;
+		font-size: 0.75rem;
+		font-weight: 600;
+		line-height: 1.2;
+		white-space: nowrap;
+		color: var(--color-action-text);
+		padding: 0 0.3em;
+		border-radius: 0.25em 0.25em 0.25em 0;
+		user-select: none;
 	}
 </style>

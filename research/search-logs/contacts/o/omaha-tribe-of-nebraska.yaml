@@ -1,7 +1,7 @@
 profile: content/tribes/o/omaha-tribe-of-nebraska.yaml
 topic: contacts
 status: none-found
-last_searched: '2026-11-22'
+last_searched: '2026-11-23'
 searches:
 - date: '2026-11-22'
   searched_by: Claude (AI assistant)
@@ -11,3 +11,19 @@ searches:
   query: links whose words or address say contact; mailto links and email addresses
   outcome: not-found
   reason: No page linked as a contact page on the nation's own site and no general office email. 1 other addresses (departments, people or other sites) were found and not added.
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: browser
+  place_kind: nation-website
+  address: https://www.omahatribe.com/
+  query: 'general office email on the nation''s own site: home, contact, about, government, council, office and staff pages, read in a browser'
+  outcome: not-found
+  reason: Read 9 pages; they showed 7 addresses, none a general office account (department or staff addresses, not copied).
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: official-directory
+  address: https://www.bia.gov/service/tribal-leaders-directory
+  query: email field for the nation in the federal Tribal Leaders Directory
+  outcome: not-found
+  reason: The directory lists only a leader's own address or none; leaders' addresses are kept out of the public record (lead author's decision, Nov. 23, 2026).

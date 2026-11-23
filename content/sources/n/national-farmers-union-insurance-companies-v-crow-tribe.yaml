@@ -44,6 +44,13 @@ supreme_court:
   - {name: "Sandra Day O'Connor", vote: majority}
   source: https://api.oyez.org/cases/1984/84-320
   checked: '2026-11-22'
+courtlistener:
+  cluster: 111442
+  citation: "471 U.S. 845"
+  case_name: "National Farmers Union Insurance v. Crow Tribe of Indians"
+  link: https://www.courtlistener.com/opinion/111442/national-farmers-union-insurance-v-crow-tribe-of-indians/
+  release: '2026-09-30'
+  checked: '2026-11-23'
 rights:
   status: no-permission-needed
   basis: us-government-work
