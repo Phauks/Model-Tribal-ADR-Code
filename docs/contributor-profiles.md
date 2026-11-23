@@ -36,9 +36,7 @@ on a review page before anything is used.
    section," because it gives users "a second chance to notice and correct
    errors before submitting data."[^govuk-check] The person ticks a box and
    confirms.
-5. **The project keeps a copy.** Each confirmation stores a numbered version:
-   every answer as the person saw it and the credit line as it was
-   previewed. The first confirmation signs the person up. There is no waiting step: everyone who confirms is accepted (lead author, 2026-11-22), and the credit goes under Contributors for writers, Reviewers for reviewers, or Thanks for everyone else.
+5. **The project keeps a copy.** Each confirmation stores a numbered version: every answer as the person saw it and the credit line as it was previewed. The first confirmation signs the person up. There is no waiting step: everyone who confirms is accepted (lead author, 2026-11-22), and the credit goes under Contributors for writers, Reviewers for reviewers, or Thanks for everyone else.
 6. **The lead author follows up** on the workspace's Contributors page. They can move a credit to another section, or remove anyone who should not be listed, with a reason the person sees on their profile. They give reviewers and writers workspace access with a role.
 7. **Later changes.** The person can edit at any time. Edits are saved but
    not used until confirmed again: credits always come from the last
@@ -116,12 +114,7 @@ A credit is built from the person's last confirmed version by `creditOf` in
 | A chosen name | The chosen name |
 | No credit | Nothing |
 
-Each signed-up contributor's credit sits in one section of the book: contributors (with biographies), reviewers or acknowledgments (printed as Thanks). Advisors are not a separate section (lead author, 2026-11-22).
-The workspace shows the credits "as they would be printed today", sorted by
-family name. Credits for an essay's byline come from the editing workspace,
-which records who wrote each draft and reads the credited name and opt-in from
-the profile at publish time (thread "Plan collaborative editing for the
-website").
+Each signed-up contributor's credit sits in one section of the book: contributors (with biographies), reviewers or acknowledgments (printed as Thanks). Advisors are not a separate section (lead author, 2026-11-22). The workspace shows the credits "as they would be printed today", sorted by family name. Credits for an essay's byline come from the editing workspace, which records who wrote each draft and reads the credited name and opt-in from the profile at publish time (thread "Plan collaborative editing for the website").
 
 The roles are coarser than the Contributor Role Taxonomy (CRediT), "a
 community-owned taxonomy of 14 contributor roles" approved as an ANSI/NISO
