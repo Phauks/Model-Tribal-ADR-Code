@@ -104,6 +104,15 @@ contacts:
   verification: bulk-import
   as_of: '2026-11-20'
   locator: Village of Bill Moore's Slough
+- kind: email-general
+  value: bms99620@gmail.com
+  label: General office email listed by the State of Alaska
+  source: alaska-dcra-federally-recognized-tribes-contacts
+  confidence: high
+  verification: bulk-import
+  as_of: '2026-11-23'
+  locator: Village of Bill Moore's Slough
+  note: A general office address (not a person's own) in the state's email field for the tribe, read on Nov. 23, 2026.
 languages:
 - name: Central Yup'ik
   language_tag: esu

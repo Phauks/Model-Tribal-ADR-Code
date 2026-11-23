@@ -1,7 +1,7 @@
 profile: content/tribes/m/mackinaw-bands-of-chippewa-and-ottawa-indians.yaml
 topic: contacts
-status: none-found
-last_searched: '2026-11-22'
+status: found
+last_searched: '2026-11-23'
 searches:
 - date: '2026-11-22'
   searched_by: Claude (AI assistant)
@@ -11,3 +11,11 @@ searches:
   query: Mackinaw Bands of Chippewa and Ottawa Indians Michigan tribe contact
   outcome: not-found
   reason: Wikipedia, MSU and Michigan lists, and the tribe's own mackinacband.com site appeared.
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: ai-review
+  place_kind: web-search
+  address: WebSearch
+  query: the group's name and state, with official website, contact, or the state commission on Indian affairs
+  outcome: found
+  reason: Found mackbands@gmail.com on http://mackinacbandsorg.blogspot.com/.
