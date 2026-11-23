@@ -137,7 +137,7 @@
 				<ul>
 					{#each template.downloads as download (download.href)}
 						<li>
-							<a href={download.href} download>{download.kind}</a>
+							<a href={download.href} download>{download.href.slice(download.href.lastIndexOf('.'))}<span class="visually-hidden"> ({download.kind})</span></a>
 							<span class="small muted">({Math.max(1, Math.round(download.bytes / 1024))} KB)</span>
 							<br />
 							<span class="small"

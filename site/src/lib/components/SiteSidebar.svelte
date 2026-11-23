@@ -14,6 +14,7 @@
 	// the workspace pages their role opens. Workspace pages know this when the
 	// Worker renders them; the pages built ahead of time read it from the
 	// signed-in hint (src/lib/signed-in-hint.ts) once the script runs.
+	import { untrack } from 'svelte';
 	import { page } from '$app/state';
 	import ChevronRight from '@lucide/svelte/icons/chevron-right';
 	import FileClock from '@lucide/svelte/icons/file-clock';
@@ -213,7 +214,14 @@
 	let openSections = $state<Record<string, boolean>>({});
 	let sectionPages = $state<Record<string, OutlineItem[] | 'loading' | 'failed'>>({});
 
+	// Read once when the sidebar starts. `untrack` keeps this from re-running each
+	// time opening a section changes the state it reads, which looped and, when a
+	// list failed to load, fetched it again and again.
 	$effect(() => {
+		untrack(restoreOpenSections);
+	});
+
+	function restoreOpenSections(): void {
 		try {
 			const saved: unknown = JSON.parse(localStorage.getItem(openSectionsKey) ?? '[]');
 			if (Array.isArray(saved)) {
@@ -225,7 +233,7 @@
 		} catch {
 			// Storage can be blocked or hold something else; every section then starts shut.
 		}
-	});
+	}
 
 	/** Whether the section shows its page's own outline, rather than the list of its pages. */
 	function showsPageOutline(section: SiteSection): boolean {
@@ -261,7 +269,22 @@
 			{@const branch = Boolean(item.children?.length)}
 			{@const open = branch && unfolded(item)}
 			<li>
-				<div class="entry">
+				<div class="entry" class:active={isActive(item)}>
+					{#if branch}
+						<button
+							type="button"
+							class="fold needs-scripts"
+							aria-expanded={open}
+							aria-controls="{listId}-{index}"
+							title={open ? 'Fold' : 'Unfold'}
+							onclick={() => fold(item)}
+						>
+							<ChevronRight size={16} aria-hidden="true" />
+							<span class="visually-hidden">{open ? 'Fold' : 'Unfold'} {item.label}</span>
+						</button>
+					{:else}
+						<span class="fold-space needs-scripts" aria-hidden="true"></span>
+					{/if}
 					<a
 						href={item.link}
 						class:active={isActive(item)}
@@ -276,19 +299,6 @@
 							>{item.label}{#if item.note}{' '}<span class="note">({item.note})</span>{/if}</span
 						>
 					</a>
-					{#if branch}
-						<button
-							type="button"
-							class="fold needs-scripts"
-							aria-expanded={open}
-							aria-controls="{listId}-{index}"
-							title={open ? 'Fold' : 'Unfold'}
-							onclick={() => fold(item)}
-						>
-							<ChevronRight size={16} aria-hidden="true" />
-							<span class="visually-hidden">{open ? 'Fold' : 'Unfold'} {item.label}</span>
-						</button>
-					{/if}
 				</div>
 				{#if branch && item.children}
 					{@render outlineList(item.children, depth + 1, `${listId}-${index}`, !open)}
@@ -304,13 +314,6 @@
 			{@const current = section === currentSection}
 			<li class:current>
 				<div class="entry">
-					{#if section.built}
-						<a href={section.link} aria-current={current && path === section.link ? 'page' : undefined}>
-							{section.label}
-						</a>
-					{:else}
-						<span class="unbuilt">{section.label}<span class="visually-hidden"> (not yet published)</span></span>
-					{/if}
 					{#if showsPageOutline(section)}
 						<button
 							type="button"
@@ -336,6 +339,15 @@
 							<ChevronRight size={16} aria-hidden="true" />
 							<span class="visually-hidden">{sectionOpen ? 'Fold' : 'Unfold'} {section.label}</span>
 						</button>
+					{:else}
+						<span class="fold-space needs-scripts" aria-hidden="true"></span>
+					{/if}
+					{#if section.built}
+						<a href={section.link} aria-current={current && path === section.link ? 'page' : undefined}>
+							{section.label}
+						</a>
+					{:else}
+						<span class="unbuilt">{section.label}<span class="visually-hidden"> (not yet published)</span></span>
 					{/if}
 				</div>
 				{#if outline && showsPageOutline(section)}
@@ -449,9 +461,16 @@
 
 <style>
 	/* ---- Folding (src/lib/outline-folding.ts) ---- */
+	/* The caret sits to the left of the label it opens (Trevor, Nov. 23, 2026).
+	   A row without one keeps the same space, so labels line up. */
 	.entry {
 		display: flex;
 		align-items: flex-start;
+	}
+
+	.fold-space {
+		flex: none;
+		width: 1.75rem;
 	}
 
 	.entry > a,
@@ -517,6 +536,16 @@
 		color: var(--color-ink);
 		font-weight: var(--font-weight-semibold);
 		text-decoration: none;
+	}
+
+	.sections > li > .entry > a,
+	.sections > li > .entry > .unbuilt {
+		padding-left: var(--space-1);
+	}
+
+	:global(:root:not([data-scripts='on'])) .sections > li > .entry > a,
+	:global(:root:not([data-scripts='on'])) .sections > li > .entry > .unbuilt {
+		padding-left: var(--space-3);
 	}
 
 	/* Sections whose pages are not published yet: named, not linked. */
@@ -605,13 +634,19 @@
 		margin-left: var(--space-3) !important;
 	}
 
-	.outline a {
-		display: flex;
-		gap: var(--space-2);
-		align-items: baseline;
-		padding: 0.35rem var(--space-3);
+	/* The bar marking where the reader is spans the whole row, caret included. */
+	.outline .entry {
 		margin-left: -1px;
 		border-left: 3px solid transparent;
+	}
+
+	.outline a {
+		display: flex;
+		flex: 1;
+		min-width: 0;
+		gap: var(--space-2);
+		align-items: baseline;
+		padding: 0.35rem var(--space-3) 0.35rem var(--space-1);
 		color: var(--color-ink-muted);
 		text-decoration: none;
 		line-height: 1.35;
@@ -627,11 +662,19 @@
 		font-style: italic;
 	}
 
+	:global(:root:not([data-scripts='on'])) .outline a {
+		padding-left: var(--space-3);
+	}
+
 	/* The page or heading being read: an orange bar and ink text. */
-	.outline a.active,
-	.outline a[aria-current='page'] {
+	.outline .entry.active,
+	.outline .entry:has(> a[aria-current='page']) {
 		border-left-color: var(--color-action);
 		background: var(--color-surface);
+	}
+
+	.outline a.active,
+	.outline a[aria-current='page'] {
 		color: var(--color-ink);
 		font-weight: var(--font-weight-semibold);
 	}
