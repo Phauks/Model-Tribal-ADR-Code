@@ -1,4 +1,5 @@
 import { error, fail, redirect } from '@sveltejs/kit';
+import { mailNations } from 'virtual:mail-nations';
 import { composeDefaults, isComposeMode, parseAddressList, type AnsweredMessage, type ComposeMode } from '#lib/mail.ts';
 import { can } from '#lib/permissions.ts';
 import { afterResponse } from '#lib/server/environment.ts';
@@ -19,6 +20,7 @@ import {
 	type MessageDetail
 } from '#lib/server/mail/store.ts';
 import { releaseAttachment } from '#lib/server/mail/scans.ts';
+import { blockSender, domainPattern, senderCard, SenderError, unblockSender, unsubscribe } from '#lib/server/mail/senders.ts';
 import { suppress } from '#lib/server/mail/suppressions.ts';
 import { deleteDraft, draftForThread, getUndoSeconds, undoSend } from '#lib/server/mail/writing.ts';
 import { formText, requirePermission } from '#lib/server/workspace.ts';
@@ -59,6 +61,9 @@ export const load: PageServerLoad = async (event) => {
 	const asked = event.url.searchParams.get('compose');
 	const draft = await draftForThread(context, person.identifier, thread.identifier);
 	const writing = await composerData(context, person.displayName, [thread.counterpartAddress]);
+	const card = thread.counterpartAddress ? await senderCard(context, thread.counterpartAddress, thread.identifier) : null;
+	const nation = card?.contact?.nationIdentifier ? mailNations.find((item) => item.identifier === card.contact!.nationIdentifier) : undefined;
+	const sender = card ? { ...card, nation: nation ? { name: nation.name, page: nation.page } : null } : null;
 	if (draft && !isComposeMode(asked)) {
 		const fields = draft.fields;
 		const target = finished.find((message) => message.identifier === fields.message) ?? null;
@@ -88,6 +93,8 @@ export const load: PageServerLoad = async (event) => {
 				otherDraft: false
 			},
 			writing,
+			sender,
+			canSeeAddressBook: can(person, 'manage-address-book'),
 			undone: event.url.searchParams.get('undone'),
 			canManage: can(person, 'manage-mail')
 		};
@@ -123,6 +130,8 @@ export const load: PageServerLoad = async (event) => {
 			otherDraft: draft !== null
 		},
 		writing,
+		sender,
+		canSeeAddressBook: can(person, 'manage-address-book'),
 		undone: null,
 		canManage: can(person, 'manage-mail')
 	};
@@ -255,6 +264,43 @@ export const actions: Actions = {
 			return fail(400, { problem: 'That file cannot be released: only a file the virus check could not finish can be, never one where something was found.' });
 		}
 		return { done: 'Released. The file can now be downloaded and forwarded.' };
+	},
+	block: async (event) => {
+		const person = requirePermission(event, 'manage-mail');
+		const context = mailContext();
+		const form = await event.request.formData();
+		const thread = await getThread(context, threadOf(event), person.identifier);
+		if (!thread?.counterpartAddress) return fail(400, { problem: 'This conversation has no sender to block.' });
+		const pattern = form.get('whole') === 'domain' ? domainPattern(thread.counterpartAddress) : thread.counterpartAddress;
+		try {
+			await blockSender(context, person.identifier, pattern, { threadIdentifier: thread.identifier, note: thread.subject });
+		} catch (problem) {
+			if (problem instanceof SenderError) return fail(400, { problem: problem.message });
+			throw problem;
+		}
+		return { done: `Blocked ${pattern}. This conversation is in Spam, and new mail from ${pattern.startsWith('@') ? 'that domain' : 'this sender'} goes there too. Unblock in Inbox settings.` };
+	},
+	unblock: async (event) => {
+		const person = requirePermission(event, 'manage-mail');
+		const form = await event.request.formData();
+		const pattern = formText(form, 'pattern', 300);
+		if (!pattern || !(await unblockSender(mailContext(), person.identifier, pattern))) return fail(400, { problem: 'That sender is not blocked.' });
+		return { done: `Unblocked ${pattern}. Move this conversation back to the inbox if you want it there.` };
+	},
+	unsubscribe: async (event) => {
+		const person = requirePermission(event, 'read-mail');
+		const context = mailContext();
+		const form = await event.request.formData();
+		const message = formText(form, 'message', 100);
+		if (!message) return fail(400, { problem: 'Choose a message.' });
+		try {
+			const result = await unsubscribe(context, mailCarriers(context), person.identifier, message);
+			if (result.how === 'page') return { done: 'This list unsubscribes only on its own web page. Open it below; the conversation is archived.', page: result.page };
+			return { done: result.how === 'one-click' ? 'Unsubscribed. The conversation is archived.' : 'Sent the list’s unsubscribe message. The conversation is archived.' };
+		} catch (problem) {
+			if (problem instanceof SenderError) return fail(400, { problem: problem.message });
+			throw problem;
+		}
 	},
 	undo: async (event) => {
 		const person = requirePermission(event, 'read-mail');

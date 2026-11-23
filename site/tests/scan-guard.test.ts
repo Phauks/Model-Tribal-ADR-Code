@@ -87,6 +87,9 @@ const bucketCalls: Record<string, BucketUse> = {
       kind: "kept-not-served",
       why: "The HTML version of a message, shown only in a sandboxed frame that runs no scripts and loads nothing from outside.",
     },
+  "src/lib/server/mail/export.ts messageCopy get(row.raw_key)": {
+    kind: "sent-file-open",
+  },
   "src/lib/server/mail/outbound.ts sendMessage put(rawKey)": {
     kind: "project-file",
     why: "A copy of a message the project sent, built by the site after its attachments passed the check.",
