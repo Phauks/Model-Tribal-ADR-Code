@@ -22,19 +22,14 @@ describe('emptySectionNote', () => {
 		expect(empty.note).not.toMatch(/does not exist|no court exists/i);
 	});
 
-	it('says a search is not finished', () => {
+	it('says only "None Identified" while a search is not finished', () => {
 		const empty = emptySectionNote(what, why, { status: 'partly-searched', places: 1, placeKinds: [] });
-		expect(empty.text).toBe('None found yet');
-		expect(empty.note).toContain('one place');
-		expect(empty.note).toContain('not finished');
+		expect(empty).toEqual({ text: 'None Identified', note: '' });
 	});
 
 	it('says when no search has been made', () => {
 		const empty = emptySectionNote('a constitution', '', undefined);
-		expect(empty.text).toBe('None found yet');
-		expect(empty.note).toBe(
-			'None of the sources checked so far name a constitution, and a full search has not been made yet.'
-		);
+		expect(empty).toEqual({ text: 'None Identified', note: '' });
 	});
 
 	it('says a lead is being checked when a search found something not yet shown', () => {
