@@ -33,21 +33,24 @@ export type PageOutline = {
  * the Library gathers Downloads and Copies of documents. On those pages the
  * section counts as current, and when the page gives no outline of its own the
  * sidebar lists the gathered pages instead.
+ *
+ * `opens` marks a section the sidebar can open from any page, to list the pages
+ * inside it (src/lib/server/section-contents.ts, /sidebar/[section].json).
  */
-export type SiteSection = { label: string; link: string; built: boolean; gathers?: OutlineItem[] };
+export type SiteSection = { label: string; link: string; built: boolean; gathers?: OutlineItem[]; opens?: boolean };
 
 export const siteSections: SiteSection[] = [
 	{ label: 'Model code', link: '/code', built: false },
 	{ label: 'Peacemaking', link: '/peacemaking', built: false },
-	{ label: 'Foundations', link: '/foundations', built: true },
-	{ label: 'Essays', link: '/essays', built: true },
+	{ label: 'Foundations', link: '/foundations', built: true, opens: true },
+	{ label: 'Essays', link: '/essays', built: true, opens: true },
 	// Only the stories are published so far; the methods catalog joins them later.
-	{ label: 'Methods and stories', link: '/stories', built: true },
-	{ label: 'Nations', link: '/nations', built: true },
-	{ label: 'Library', link: '/library', built: true, gathers: libraryOutline() },
-	{ label: 'Glossary', link: '/glossary', built: true },
-	{ label: 'Events', link: '/events', built: true },
-	{ label: 'About', link: '/about', built: true },
+	{ label: 'Methods and stories', link: '/stories', built: true, opens: true },
+	{ label: 'Nations', link: '/nations', built: true, opens: true },
+	{ label: 'Library', link: '/library', built: true, gathers: libraryOutline(), opens: true },
+	{ label: 'Glossary', link: '/glossary', built: true, opens: true },
+	{ label: 'Events', link: '/events', built: true, opens: true },
+	{ label: 'About', link: '/about', built: true, opens: true },
 	{ label: 'Sponsorship', link: '/sponsor', built: true }
 ];
 
