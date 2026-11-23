@@ -18,6 +18,29 @@ archives: []
 history:
   status: live
   last_checked: 2026-11-21
+reading_links:
+  checked: '2026-11-23'
+  links:
+  - site: govinfo
+    label: "GovInfo"
+    access: official
+    link: https://www.govinfo.gov/link/cfr/43/30?sectionnum=150&year=mostrecent&link-type=pdf
+  - site: ecfr
+    label: "eCFR"
+    access: official
+    link: https://www.ecfr.gov/current/title-43/section-30.150
+  - site: cornell
+    label: "Cornell LII"
+    access: free
+    link: https://www.law.cornell.edu/cfr/text/43/30.150
+  - site: westlaw
+    label: "Westlaw"
+    access: subscription
+    link: https://1.next.westlaw.com/Link/Document/FullText?findType=Y&cite=43%20C.F.R.%20%C2%A7%2030.150
+  - site: lexis
+    label: "Lexis"
+    access: subscription
+    link: https://advance.lexis.com/api/search?q=43%20C.F.R.%20%C2%A7%2030.150
 rights:
   status: no-permission-needed
   basis: us-government-work

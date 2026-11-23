@@ -51,6 +51,43 @@ courtlistener:
   link: https://www.courtlistener.com/opinion/6477117/denezpi-v-united-states/
   release: '2026-09-30'
   checked: '2026-11-23'
+reading_links:
+  checked: '2026-11-23'
+  links:
+  - site: supremecourt
+    label: "supremecourt.gov"
+    access: official
+    link: https://www.supremecourt.gov/opinions/21pdf/596us2r41_2924.pdf
+  - site: courtlistener
+    label: "CourtListener"
+    access: free
+    link: https://www.courtlistener.com/opinion/6477117/denezpi-v-united-states/
+  - site: justia
+    label: "Justia"
+    access: free
+    link: https://supreme.justia.com/cases/federal/us/596/591/
+    unchecked: true
+  - site: oyez
+    label: "Oyez"
+    access: free
+    link: https://www.oyez.org/cases/2021/20-7622
+  - site: google-scholar
+    label: "Google Scholar"
+    access: free
+    link: https://scholar.google.com/scholar?hl=en&as_sdt=2006&q=%22596%20U.S.%20591%22
+    unchecked: true
+  - site: westlaw
+    label: "Westlaw"
+    access: subscription
+    link: https://1.next.westlaw.com/Link/Document/FullText?findType=Y&cite=596%20U.S.%20591
+  - site: lexis
+    label: "Lexis"
+    access: subscription
+    link: https://advance.lexis.com/api/search?q=596%20U.S.%20591
+  - site: wikipedia
+    label: "Wikipedia"
+    access: background
+    link: https://en.wikipedia.org/wiki/Denezpi_v._United_States
 rights:
   status: no-permission-needed
   basis: us-government-work

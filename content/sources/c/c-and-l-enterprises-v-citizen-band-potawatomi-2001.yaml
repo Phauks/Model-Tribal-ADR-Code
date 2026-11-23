@@ -31,6 +31,43 @@ courtlistener:
   link: https://www.courtlistener.com/opinion/118423/c-l-enterprises-inc-v-citizen-band-potawatomi-indian-tribe-of-oklahoma/
   release: '2026-09-30'
   checked: '2026-11-23'
+reading_links:
+  checked: '2026-11-23'
+  links:
+  - site: library-of-congress
+    label: "Library of Congress"
+    access: official
+    link: https://www.loc.gov/item/usrep532411/
+  - site: courtlistener
+    label: "CourtListener"
+    access: free
+    link: https://www.courtlistener.com/opinion/118423/c-l-enterprises-inc-v-citizen-band-potawatomi-indian-tribe-of-oklahoma/
+  - site: justia
+    label: "Justia"
+    access: free
+    link: https://supreme.justia.com/cases/federal/us/532/411/
+    unchecked: true
+  - site: oyez
+    label: "Oyez"
+    access: free
+    link: https://www.oyez.org/cases/2000/00-292
+  - site: cornell
+    label: "Cornell LII"
+    access: free
+    link: https://www.law.cornell.edu/supremecourt/text/532/411
+  - site: google-scholar
+    label: "Google Scholar"
+    access: free
+    link: https://scholar.google.com/scholar?hl=en&as_sdt=2006&q=%22532%20U.S.%20411%22
+    unchecked: true
+  - site: westlaw
+    label: "Westlaw"
+    access: subscription
+    link: https://1.next.westlaw.com/Link/Document/FullText?findType=Y&cite=532%20U.S.%20411
+  - site: lexis
+    label: "Lexis"
+    access: subscription
+    link: https://advance.lexis.com/api/search?q=532%20U.S.%20411
 rights:
   status: no-permission-needed
   basis: us-government-work

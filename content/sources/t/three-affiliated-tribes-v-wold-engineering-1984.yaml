@@ -17,6 +17,35 @@ archives: []
 history:
   status: live
   last_checked: '2026-11-23'
+reading_links:
+  checked: '2026-11-23'
+  links:
+  - site: library-of-congress
+    label: "Library of Congress"
+    access: official
+    link: https://www.loc.gov/item/usrep467138/
+  - site: justia
+    label: "Justia"
+    access: free
+    link: https://supreme.justia.com/cases/federal/us/467/138/
+    unchecked: true
+  - site: cornell
+    label: "Cornell LII"
+    access: free
+    link: https://www.law.cornell.edu/supremecourt/text/467/138
+  - site: google-scholar
+    label: "Google Scholar"
+    access: free
+    link: https://scholar.google.com/scholar?hl=en&as_sdt=2006&q=%22467%20U.S.%20138%22
+    unchecked: true
+  - site: westlaw
+    label: "Westlaw"
+    access: subscription
+    link: https://1.next.westlaw.com/Link/Document/FullText?findType=Y&cite=467%20U.S.%20138
+  - site: lexis
+    label: "Lexis"
+    access: subscription
+    link: https://advance.lexis.com/api/search?q=467%20U.S.%20138
 rights:
   status: no-permission-needed
   basis: us-government-work

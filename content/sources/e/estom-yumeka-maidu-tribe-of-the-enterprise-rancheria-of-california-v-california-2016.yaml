@@ -35,6 +35,26 @@ courtlistener:
   link: https://www.courtlistener.com/opinion/7318501/estom-yumeka-maidu-tribe-of-the-enterprise-rancheria-v-california/
   release: '2026-09-30'
   checked: '2026-11-23'
+reading_links:
+  checked: '2026-11-23'
+  links:
+  - site: courtlistener
+    label: "CourtListener"
+    access: free
+    link: https://www.courtlistener.com/opinion/7318501/estom-yumeka-maidu-tribe-of-the-enterprise-rancheria-v-california/
+  - site: google-scholar
+    label: "Google Scholar"
+    access: free
+    link: https://scholar.google.com/scholar?hl=en&as_sdt=2006&q=%22163%20F.%20Supp.%203d%20769%22
+    unchecked: true
+  - site: westlaw
+    label: "Westlaw"
+    access: subscription
+    link: https://1.next.westlaw.com/Link/Document/FullText?findType=Y&cite=163%20F.%20Supp.%203d%20769
+  - site: lexis
+    label: "Lexis"
+    access: subscription
+    link: https://advance.lexis.com/api/search?q=163%20F.%20Supp.%203d%20769
 rights:
   status: no-permission-needed
   basis: fact-only
