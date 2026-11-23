@@ -15,7 +15,7 @@ describe('the pages inside each section, for the sidebar', () => {
 	});
 
 	it('lists each section’s pages with working addresses', async () => {
-		expect((await sectionContents('nations'))?.map((item) => item.link)).toEqual(['/nations', '/nations/map', '/nations/recourse', '/nations/data']);
+		expect((await sectionContents('nations'))?.map((item) => item.link)).toEqual(['/nations', '/nations/map', '/nations/timeline', '/nations/recourse', '/nations/data']);
 		expect((await sectionContents('library'))?.[0]?.link).toBe('/copies');
 		const glossary = (await sectionContents('glossary')) ?? [];
 		expect(glossary.length).toBeGreaterThan(0);

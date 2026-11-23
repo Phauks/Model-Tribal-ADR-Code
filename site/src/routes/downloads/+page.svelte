@@ -51,13 +51,21 @@
 					]
 				},
 				{
+					label: 'The timeline',
+					description: 'Every dated treaty, law, agreement, court decision and federal law, with its citation',
+					links: [
+						{ format: 'CSV', href: '/nations/timeline/entries.csv' },
+						{ format: 'JSON', href: '/nations/timeline/entries.json' }
+					]
+				},
+				{
 					label: 'The glossary',
 					description: 'Every term with its short definition',
 					links: [{ format: 'JSON', href: '/glossary/terms.json' }]
 				},
 				{
 					label: 'All the data in one file',
-					description: 'Every nation’s record and sources, the list of nations, the provisions, the glossary and the stories',
+					description: 'Every nation’s record and sources, the list of nations, the provisions, the timeline, the glossary and the stories',
 					links: [{ format: 'ZIP', href: '/zip/data.zip' }]
 				}
 			],
