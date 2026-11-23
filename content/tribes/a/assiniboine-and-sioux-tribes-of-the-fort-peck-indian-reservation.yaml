@@ -671,6 +671,47 @@ jurisdiction_agreements:
   verification: read-in-full
   locator: Title and recitals
   note: 'The source reads: “COOPERATIVE AGREEMENT PROVIDING FOR CROSS-DEPUTIZATION OF LAW ENFORCEMENT OFFICERS OF THE ASSINIBOINE AND SIOUX TRIBES OF THE FORT PECK RESERVATION”. The copy is undated; it cites a 1997 Bureau of Indian Affairs manual. The posted copy is a sample in a federal resource library; current status is not confirmed.'
+court_practice:
+- kind: filing-fees
+  title: Filing Fees — Fort Peck Tribal Court
+  court: Fort Peck Tribal Court
+  link: https://fptc.org/filing-fees
+  detail: 'Fee schedule: civil complaint $25, family court petition $25, adoption $100, traditional adoption $50, divorce $75, marriage license $30, guardianship $25, name change $25. Fee waivers are generally not allowed (waiver policy and Administrative Order 2023-5.0 cited).'
+  source: fort-peck-tribal-court-filing-fees-fort-peck-tribal-court
+  confidence: high
+  verification: read-in-full
+  locator: Filing Fees page
+  note: 'The source reads: “FILING FEE SCHEDULE:”.'
+- kind: public-defender
+  title: Public Defender Program — Fort Peck Tribal Court
+  court: Fort Peck Tribal Court
+  link: https://fptc.org/public-defender-program
+  detail: Public Defender Program page states income guidelines for indigent representation at 125% of the Federal Poverty Level Guidelines.
+  source: fort-peck-tribal-court-public-defender-program-fort-peck-tribal-court
+  confidence: high
+  verification: read-in-full
+  locator: Public Defender Program page
+  note: 'The source reads: “INCOME GUIDELINES FOR INDIGENT REPRESENTATION”.'
+- kind: bar-admission
+  title: Licensed Advocates — Fort Peck Tribal Court
+  court: Fort Peck Tribal Court
+  link: https://fptc.org/licensed-advocates-1
+  detail: Page provides a PDF of licensed advocates for 2026 ("AttorneyPractice"); the home page also links a Tribal Bar Exam page and a Montana Tribal Advocate Incubator Project flyer.
+  source: fort-peck-tribal-court-licensed-advocates-fort-peck-tribal-court
+  confidence: high
+  verification: title-only
+  locator: Licensed Advocates page
+  note: 'The source reads: “Licensed Advocates PDF”. Admission requirements not read; Tribal Bar Exam page (http://www.fptc.org/tribal-bar-exam) not opened.'
+- kind: forms
+  title: Court Forms
+  court: Fort Peck Tribal Court
+  link: https://fptc.org/court-forms
+  detail: Court Forms page linked from home page; not opened.
+  source: fort-peck-tribal-court
+  confidence: high
+  verification: title-only
+  locator: Home page links
+  note: Page not opened.
 nearby_state_courts:
 - state: MT
   county: Roosevelt County

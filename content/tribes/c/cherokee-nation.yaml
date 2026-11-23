@@ -859,6 +859,67 @@ jurisdiction_agreements:
   verification: read-in-full
   locator: Section I.L, Oklahoma (two-column list of 34 tribes)
   note: 'The source reads: “Cherokee Nation”. The report says most of the 34 agreements "expired on June 30, 2013" and that 16 new agreements had been executed by early 2014; it does not say which. Status is therefore uncertain. The name in the list is matched to the roster by name and state. Report date is March 2014, so current status needs confirming. Most Oklahoma agreements in the survey lapsed on June 30, 2013, and some were renewed; the survey does not settle which, so the status is left unknown.'
+court_practice:
+- kind: court-rules
+  title: Cherokee Nation Court Rules
+  court: Cherokee Nation Judicial Branch
+  link: https://www.cherokeecourts.org/Court-Rules
+  detail: 'Lists the Cherokee Nation Constitution, District Court Rules (administrative order SC-AD-19-01, file dated 2019-06), DC-AD-2022-01 Guidance for Filers, Full Faith and Credit: Foreign Judgments, and Supreme Court Rules (SC-AD-19-02, file dated 2019-08).'
+  source: cherokee-nation-judicial-branch-court-rules
+  confidence: high
+  verification: read-in-full
+  locator: Court Rules page
+  note: 'The source reads: “The rules for the Cherokee Nation District and Supreme Courts are listed below.”.'
+- kind: bar-admission
+  title: Cherokee Nation Bar Association
+  court: Cherokee Nation Judicial Branch
+  link: https://www.cherokeecourts.org/Cherokee-Nation-Bar-Association
+  detail: Applicants complete an application with an original certificate of good standing from a state bar and submit it to the Supreme Court Clerk; the Justices review it and the process usually takes about 45 days; bar fees are paid only after admission. The page links a Bar Member Application, Oath of Attorney, Supreme Court Attorney Rules Nos. 130-139, bar dues order and by-laws.
+  source: cherokee-nation-judicial-branch-cherokee-nation-bar-association
+  confidence: high
+  verification: read-in-full
+  locator: Cherokee Nation Bar Association page
+  note: 'The source reads: “To become a bar member, you must complete an application with original documentation of good standing”.'
+- kind: filing-fees
+  title: Cherokee Nation District Court Cost and Fee Schedule
+  court: Cherokee Nation District Court
+  link: https://www.cherokeecourts.org/District-Court/Documents
+  detail: 'Fee schedule: civil, paternity and adoption filing $100.00; small claims and landlord/tenant $75.00; guardianship, name change and several motions $50.00; marriage license $10.00; issuance of summons $5.00 per name.'
+  source: cherokee-nation-district-court-documents
+  confidence: high
+  verification: read-in-full
+  locator: Documents page, Filing Fees
+  note: 'The source reads: “CHEROKEE NATION DISTRICT COURT COST AND FEE SCHEDULE”.'
+- kind: forms
+  title: Supreme Court Forms and Information
+  court: Cherokee Nation Supreme Court
+  link: https://www.cherokeecourts.org/Supreme-Court/Supreme-Court-Forms-and-Information
+  detail: Supreme Court filing fees stated as new case filing $150.00 and appeal filing $100.00; documents listed include Petition In Error, Designation Of Record, Status and Simplification Conference Report, Subpoena, Return of Service, Pre-Trial Conference Report.
+  source: cherokee-nation-supreme-court-supreme-court-forms-and-information
+  confidence: high
+  verification: read-in-full
+  locator: Supreme Court Forms and Information page
+  note: 'The source reads: “Supreme Court Filing Fees Information”.'
+- kind: filing-fees
+  title: Supreme Court Forms and Information (filing fees section)
+  court: Cherokee Nation Supreme Court
+  link: https://www.cherokeecourts.org/Supreme-Court/Supreme-Court-Forms-and-Information
+  detail: 'Supreme Court fees: new case filing $150.00, appeal filing $100.00.'
+  source: cherokee-nation-supreme-court-supreme-court-forms-and-information
+  confidence: high
+  verification: read-in-full
+  locator: Supreme Court Filing Fees Information
+  note: 'The source reads: “The following filing fees apply to Supreme Court Cases:”.'
+- kind: forms
+  title: Documents (District Court forms and fee schedule)
+  court: Cherokee Nation District Court
+  link: https://www.cherokeecourts.org/District-Court/Documents
+  detail: The District Court Documents page also lists downloadable petitions (for example a Petition to Vacate Guardianship) alongside its fee schedule.
+  source: cherokee-nation-district-court-documents
+  confidence: medium
+  verification: read-in-full
+  locator: Documents page
+  note: 'The source reads: “Please see attached Administrative Order concerning filing with the District Court: DC-AD-22-01”. Forms list seen only in raw page text; titles not fully checked.'
 nearby_state_courts:
 - state: OK
   county: Craig County

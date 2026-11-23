@@ -29,6 +29,7 @@ describe('the workspace pages in the left sidebar', () => {
 			'changes',
 			'nonprofit',
 			'service-checks',
+			'sponsors',
 			'activity'
 		]);
 	});

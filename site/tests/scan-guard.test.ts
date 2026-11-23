@@ -167,6 +167,8 @@ const fileIntakes: Record<string, string> = {
     "Files sent with requests and forms, proof for a nation team, and nation page pictures. Stored with storeSentFile by saveRequest, saveApplication and savePicture.",
   "src/routes/profile/+page.server.ts picture File.arrayBuffer":
     "Profile pictures. Stored with storeSentFile by savePicture (profile-pictures.ts).",
+  "src/routes/account/sponsorship/+page.server.ts save File.arrayBuffer":
+    "Sponsor logos. Stored with storeSentFile by setLogo (sponsors.ts) and served with openScannedFile by logoResponse (sponsor-logos.ts).",
   "src/routes/mail/internal/arrive/+server.ts POST Request.arrayBuffer":
     "Mail arriving from the email Worker. receiveMail stores each attachment with storeSentFile.",
   "src/routes/workspace/inbox/compose.ts readAttachments File.arrayBuffer":

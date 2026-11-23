@@ -22,6 +22,17 @@ declare global {
 			session: ActiveSession | undefined;
 			/** Why a permission check refused this request, for the activity log (src/hooks.server.ts). */
 			refused: string | undefined;
+			/**
+			 * A session that has passed the first step of sign-in but not yet the
+			 * second (src/lib/server/two-step.ts). It reaches only /sign-in/two-step.
+			 */
+			waitingSession: ActiveSession | undefined;
+			/**
+			 * Set when the person's role needs two-step sign-in and they have not
+			 * set it up: the workspace stays closed until they do
+			 * (src/lib/server/workspace.ts, requirePerson).
+			 */
+			twoStepNeeded: boolean;
 		}
 		// interface PageData {}
 		// interface PageState {}
@@ -108,6 +119,16 @@ declare global {
 		LULU_CLIENT_SECRET?: string;
 		STRIPE_SECRET_KEY?: string;
 		STRIPE_WEBHOOK_SECRET?: string;
+		/**
+		 * Sponsor gifts (docs/sponsorship.md). Off unless SPONSOR_GIFTS is
+		 * "test" (a Stripe test key only) or "live" (a live key, and
+		 * SPONSOR_GIFTS_RECEIVER naming who receives the money).
+		 */
+		SPONSOR_GIFTS?: string;
+		/** The signing secret of the Stripe webhook endpoint at /sponsorship/payment-webhook. */
+		STRIPE_SPONSOR_WEBHOOK_SECRET?: string;
+		/** Who receives sponsors' gifts, as the gift form names them. */
+		SPONSOR_GIFTS_RECEIVER?: string;
 	}
 }
 

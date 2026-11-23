@@ -836,6 +836,57 @@ jurisdiction_agreements:
   verification: bulk-import
   locator: Section "Sales to tribes who have entered into a tax agreement with the State of Michigan"
   note: 'The source reads: “Pokagon Band of Potawatomi Indians”. The page states "The State has entered into tax agreements with ten of the twelve federally recognized Indian tribes located in Michigan." and lists this tribe; the quote is the name as listed. Signing dates are not on this page.'
+court_practice:
+- kind: filing-fees
+  title: Schedule of Court Fees (revised 8/14/14)
+  court: Pokagon Band Tribal Court
+  link: https://www.pokagonband-nsn.gov/wp-content/uploads/2022/09/pbtc-fees-revised-08-14-2014-1484.pdf
+  detail: Schedule of court fees revised 2014-08-14.
+  source: pokagon-band-of-potawatomi-indians-tribal-courts-pokagon-band-of-potaw
+  confidence: medium
+  verification: read-in-full
+  locator: Tribal Courts page
+  note: Older than five years.
+- kind: bar-admission
+  title: Tribal Courts (Requirements for Practicing Before Tribal Court)
+  court: Pokagon Band Tribal Court
+  link: https://www.pokagonband-nsn.gov/government/tribal-courts/
+  detail: Attorneys admitted in any state and in good standing may practice before the Tribal Court; each applicant completes an application.
+  source: pokagon-band-of-potawatomi-indians-tribal-courts-pokagon-band-of-potaw
+  confidence: high
+  verification: read-in-full
+  locator: Requirements for Practicing Before Tribal Court
+  note: 'The source reads: “The Tribal Court allow attorneys, who are admitted to practice in any state and who are in good standing, to practice before the Tribal Court.”.'
+- kind: court-rules
+  title: Court Rules
+  court: Pokagon Band Tribal Court
+  link: https://www.pokagonband-nsn.gov/government/tribal-courts/court-rules/
+  detail: Court Rules page linked from Tribal Courts page; not opened.
+  source: pokagon-band-of-potawatomi-indians-tribal-courts-pokagon-band-of-potaw
+  confidence: high
+  verification: title-only
+  locator: Tribal Courts page
+  note: Page not opened.
+- kind: forms
+  title: Tribal Court Forms
+  court: Pokagon Band Tribal Court
+  link: https://www.pokagonband-nsn.gov/government/tribal-courts/court-court-forms/
+  detail: Tribal Court Forms page linked from Tribal Courts page; not opened.
+  source: pokagon-band-of-potawatomi-indians-tribal-courts-pokagon-band-of-potaw
+  confidence: high
+  verification: title-only
+  locator: Tribal Courts page
+  note: Page not opened.
+- kind: bar-admission
+  title: ATY-001 Application for Admission to Practice (Revised 04-02-2025)
+  court: Pokagon Band Tribal Court
+  link: https://www.pokagonband-nsn.gov/wp-content/uploads/ATY-001-Application-for-Admission-to-Practice-Revised-04-02-2025.pdf
+  detail: Application for Admission to Practice, revised 2025-04-02; an Oath of Admission is also linked; admission to the Tribal Court is deemed admission to the Appellate Court.
+  source: pokagon-band-of-potawatomi-indians-tribal-courts-pokagon-band-of-potaw
+  confidence: high
+  verification: read-in-full
+  locator: Requirements for Practicing Before Tribal Court
+  note: 'The source reads: “Admission to practice before the Tribal Court is deemed admission to practice before the Appellate Court.”.'
 nearby_state_courts:
 - state: MI
   county: Cass County

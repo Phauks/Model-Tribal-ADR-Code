@@ -726,6 +726,17 @@ jurisdiction_agreements:
   verification: bulk-import
   locator: Section "Limited Tax Collection Agreement"
   note: 'The source reads: “The two Indian tribes with limited tax collection agreements are the Sisseton Wahpeton Oyate and the Yankton Sioux Tribe.”. Covers use tax and contractor''s excise tax, not sales tax, at specific listed businesses. The page gives no signing date.'
+court_practice:
+- kind: forms
+  title: Forms
+  court: Yankton Sioux Tribal Court
+  link: https://www.yanktonsiouxtribe.net/forms
+  detail: 'Forms page linked from the Tribal Court page (examples: CHINS, Protection Order).'
+  source: yankton-sioux-tribe-of-south-dakota-website-tribal-laws
+  confidence: high
+  verification: title-only
+  locator: Tribal Court page
+  note: Forms page not opened.
 nearby_state_courts:
 - state: SD
   county: Charles Mix County
