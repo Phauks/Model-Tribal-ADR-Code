@@ -4,7 +4,7 @@ One record per Native nation per topic, saying how the project searched for that
 
 - Path: `<topic>/<letter>/<profile id>.yaml`, for example `dispute-resolution/a/augustine-band-of-cahuilla-indians.yaml`. The letter folder is the profile's (`_other` for a first character that is not a letter).
 - Fields: [`schemas/search-log.schema.json`](../../schemas/search-log.schema.json); example: [`schemas/examples/search-log.example.yaml`](../../schemas/examples/search-log.example.yaml).
-- Topics in use: `dispute-resolution`, `courts`, `gaming-dispute-procedures` (dispute procedures in Tribal gaming ordinances, [review of Nov. 22, 2026](../reviews/2026-11-22-ordinance-disputes.md)), `contacts` (the nation's contact page, general email and, where none was on file, website, phone and address; [session of Nov. 22, 2026](../sessions/2026/2026-11-22-nation-contacts.md)). A new topic is a new folder; the schema does not change.
+- Topics in use: `dispute-resolution`, `courts`, `gaming-dispute-procedures` (dispute procedures in Tribal gaming ordinances, [review of Nov. 22, 2026](../reviews/2026-11-22-ordinance-disputes.md)), `court-media` (videos, sound recordings and pictures about the nation's court or peacemaking program; [session of Nov. 23, 2026](../sessions/2026/2026-11-23-court-and-peacemaking-media.md)), `contacts` (the nation's contact page, general email and, where none was on file, website, phone and address; [session of Nov. 22, 2026](../sessions/2026/2026-11-22-nation-contacts.md)). A new topic is a new folder; the schema does not change.
 
 ## Adding a search
 
