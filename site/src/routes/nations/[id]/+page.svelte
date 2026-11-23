@@ -91,6 +91,7 @@
 			<span class="muted">
 				{page.review.meaning}{#if page.review.lastVerified}{' '}Sources checked {page.review.lastVerified}.{/if}
 			</span>
+			<a class="no-print" href="/changes?page={encodeURIComponent(`/nations/${page.id}`)}">Changes to this page</a>
 		</p>
 	{/snippet}
 
@@ -138,6 +139,13 @@
 				<FactGroups groups={data.jurisdiction} />
 			{/if}
 		</Collapsible>
+
+		<!-- 7a. Treaties and federal ties: treaties with links to Kappler, how the land was set aside, Indian Health Service -->
+		{#if data.ties.length > 0}
+			<Collapsible heading="Treaties and federal ties" identifier="ties-heading">
+				<FactGroups groups={data.ties} />
+			</Collapsible>
+		{/if}
 
 		<!-- 8. Other nations in the same states: plain lists, never a ranking -->
 		{#if data.neighbors.length > 0}

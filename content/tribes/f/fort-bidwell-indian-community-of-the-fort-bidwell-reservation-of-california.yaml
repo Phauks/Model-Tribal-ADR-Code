@@ -120,6 +120,14 @@ federal_administration:
   verification: bulk-import
   as_of: '2026-11-20'
   locator: Fort Bidwell Indian Community of the Fort Bidwell Reservation of California
+indian_health_service:
+- area: California
+  source: indian-health-service-california-federally-recognized-tribes
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  locator: regional lists (West Central, Southern, Northern, East Central)
+  note: Listed as "Fort Bidwell Indian Community of the Fort Bidwell Indian Community of the Fort Bidwell Reservation of California".
 government_structure:
 - kind: indian-reorganization-act
   detail: Listed as "The Fort Bidwell Indian Community, California" among organizations under constitutions

@@ -355,12 +355,15 @@ function governmentAtAGlance(record: NationRecord, sources: SourceUses): FactGro
 	];
 }
 
-/** The names the page gives each jurisdiction topic a record can hold. */
+/** The names the page gives each jurisdiction topic a record can hold, in the order the page shows them. */
 const jurisdictionTopics: Record<string, string> = {
 	'public-law-280': 'Public Law 280',
-	'indian-child-welfare-act': 'Indian Child Welfare Act',
-	'violence-against-women-act-special-tribal-criminal-jurisdiction': 'Violence Against Women Act'
+	'state-jurisdiction-statute': 'State jurisdiction under other federal laws',
+	'violence-against-women-act-special-tribal-criminal-jurisdiction': 'Violence Against Women Act',
+	'tribal-law-and-order-act-enhanced-sentencing': 'Tribal Law and Order Act',
+	'indian-child-welfare-act': 'Indian Child Welfare Act'
 };
+const topicOrder = Object.keys(jurisdictionTopics);
 
 /**
  * Jurisdiction: who has authority over what, as federal law and federal lists
@@ -370,7 +373,9 @@ const jurisdictionTopics: Record<string, string> = {
 function jurisdictionFacts(record: NationRecord, sources: SourceUses): FactGroup[] {
 	const section = 'Jurisdiction';
 	const byTopic = new Map<string, FactItem[]>();
-	for (const fact of record.jurisdiction ?? []) {
+	const rank = (topic: string) => (topicOrder.includes(topic) ? topicOrder.indexOf(topic) : topicOrder.length);
+	const facts = [...(record.jurisdiction ?? [])].sort((first, second) => rank(first.topic) - rank(second.topic));
+	for (const fact of facts) {
 		const label = jurisdictionTopics[fact.topic] ?? humanize(fact.topic);
 		const text = fact.detail ?? humanize(fact.value ?? '');
 		if (!text) continue;
@@ -379,6 +384,99 @@ function jurisdictionFacts(record: NationRecord, sources: SourceUses): FactGroup
 		byTopic.set(label, list);
 	}
 	return [...byTopic.entries()].map(([label, items]) => ({ field: `jurisdiction-${label}`, label, items }));
+}
+
+/** How the page words each way a land base was set aside. */
+const establishmentWords: Record<string, string> = {
+	treaty: 'Treaty',
+	'executive-order': 'Executive order',
+	statute: 'Act of Congress',
+	agreement: 'Agreement',
+	'secretarial-proclamation': 'Proclamation of the Secretary of the Interior',
+	purchase: 'Purchase',
+	'court-decree': 'Court decree',
+	'state-action': 'State action',
+	other: 'Other'
+};
+
+/**
+ * The nation's relationship with the United States: its treaties, each linked
+ * to its text in Kappler's Indian Affairs: Laws and Treaties; how its land was
+ * set aside; and the Indian Health Service Area and service unit that serve it.
+ * The Bureau of Indian Affairs region stays in At a glance.
+ */
+function federalTies(record: NationRecord, sources: SourceUses): FactGroup[] {
+	const section = 'Treaties and federal ties';
+	const treaties = [...(record.treaties ?? [])].sort((first, second) => first.signed.localeCompare(second.signed));
+	return [
+		...group(
+			'treaties',
+			'Treaties',
+			treaties.map((fact) =>
+				cited(sources, section, fact, {
+					text: fact.title,
+					link: fact.kappler?.link ? webLink(fact.kappler.link) : undefined,
+					detail: [
+						readableDate(fact.signed),
+						fact.statutes_at_large,
+						fact.kappler?.page ? `${fact.kappler.volume ?? 2} Kappler ${fact.kappler.page}` : undefined
+					]
+						.filter(Boolean)
+						.join(', '),
+					note: fact.signatory ? `Signed as “${fact.signatory}”.` : undefined
+				})
+			)
+		),
+		...group(
+			'land_establishment',
+			'How the land was set aside',
+			(record.land_establishment ?? []).map((fact) =>
+				cited(sources, section, fact, {
+					label: fact.land_area,
+					text: [establishmentWords[fact.method] ?? humanize(fact.method), fact.instrument].filter(Boolean).join(': '),
+					detail: fact.date ? readableDate(fact.date) : undefined,
+					note: fact.detail
+				})
+			)
+		),
+		...group('indian_health_service', 'Indian Health Service', healthItems(record, sources, section))
+	];
+}
+
+/**
+ * The Indian Health Service Area once, with the markers of every source that
+ * names it, then each service unit or health program and who runs the
+ * nation's health services, each with its own source.
+ */
+function healthItems(record: NationRecord, sources: SourceUses, section: string): FactItem[] {
+	const facts = record.indian_health_service ?? [];
+	if (facts.length === 0) return [];
+	const areas = [...new Set(facts.map((fact) => fact.area))];
+	const areaCitations: CitationMark[] = [];
+	// The Area's markers are those of the facts that name only the Area; the
+	// service unit and operator lines carry their own.
+	const areaOnly = facts.filter((fact) => !fact.service_unit && !fact.operator);
+	for (const fact of areaOnly.length > 0 ? areaOnly : facts) sources.citeFact(fact, section, `${fact.area} Area`, areaCitations);
+	const items: FactItem[] = [{ text: areas.map((area) => `${area} Area`).join('; '), citations: areaCitations }];
+	for (const fact of facts) {
+		if (!fact.service_unit) continue;
+		const runBy =
+			fact.operator === 'tribal'
+				? 'run by the nation or a Tribal organization'
+				: fact.operator === 'indian-health-service'
+					? 'run by the Indian Health Service'
+					: undefined;
+		items.push(cited(sources, section, fact, { label: 'Service unit or program', text: fact.service_unit, detail: runBy }));
+	}
+	for (const fact of facts) {
+		if (!fact.operator || fact.service_unit) continue;
+		const text =
+			fact.operator === 'tribal'
+				? 'Run by the nation or a Tribal organization'
+				: 'Run by the Indian Health Service (a Direct Service Tribe)';
+		items.push(cited(sources, section, fact, { label: 'Health services', text }));
+	}
+	return items;
 }
 
 /**
@@ -674,6 +772,7 @@ export const load: PageServerLoad = ({ params }) => {
 			law: [],
 			documents: [],
 			jurisdiction: [],
+			ties: [],
 			empty: {} as EmptySections,
 			neighbors: [],
 			map: undefined,
@@ -785,6 +884,8 @@ export const load: PageServerLoad = ({ params }) => {
 	const law = [...publishedLaw(record, sources, documents), ...missingLaw(record, documents)];
 	sources.part('Jurisdiction');
 	const jurisdiction = jurisdictionFacts(record, sources);
+	sources.part('Treaties and federal ties');
+	const ties = federalTies(record, sources);
 	// The legal sections always show, and say plainly when nothing was found,
 	// so a reader can see whether recourse may be available (Trevor, Nov. 22, 2026).
 	const empty: EmptySections = {
@@ -827,6 +928,7 @@ export const load: PageServerLoad = ({ params }) => {
 		law,
 		documents,
 		jurisdiction,
+		ties,
 		empty,
 		neighbors: sameStates(record),
 		sources: sources.list
@@ -845,6 +947,7 @@ export const load: PageServerLoad = ({ params }) => {
 		children: documents.map((document) => ({ label: document.heading, link: `#document-${document.id}` }))
 	});
 	items.push({ label: 'Jurisdiction', link: '#jurisdiction-heading' });
+	if (ties.length > 0) items.push({ label: 'Treaties and federal ties', link: '#ties-heading' });
 	if (result.neighbors.length > 0) {
 		items.push({ label: 'Other nations in the same states', link: '#neighbors-heading' });
 	}

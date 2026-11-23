@@ -169,6 +169,30 @@ federal_administration:
   verification: bulk-import
   as_of: '2026-11-20'
   locator: Cheyenne River Sioux Tribe of the Cheyenne River Reservation, South Dakota
+indian_health_service:
+- area: Great Plains
+  source: indian-health-service-great-plains-area-home
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  locator: '"Tribes of North Dakota, South Dakota, Nebraska, and Iowa" list'
+  note: 'Listed as "Cheyenne River Sioux Tribe". Also listed under the same Area in: indian-health-service-direct-service-tribes. Mixed Indian Health Service and tribal 638 operation per page.'
+- area: Great Plains
+  service_unit: Cheyenne River Service Unit
+  source: indian-health-service-great-plains-cheyenne-river-service-unit
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  locator: page text
+  note: 'The source''s words: "The Cheyenne River Sioux Tribe through a 638 contract with IHS, operates four satellite health stations".'
+- area: Great Plains
+  operator: indian-health-service
+  source: indian-health-service-direct-service-tribes
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  locator: Direct Service Tribes by IHS Area > Great Plains Area
+  note: Listed as "Cheyenne River Sioux Tribe". The Direct Service Tribes list says some Tribes have a mixed Indian Health Service and Tribal arrangement.
 government_structure:
 - kind: indian-reorganization-act
   detail: Listed as "The Cheyenne River Sioux Tribe, South Dakota" among organizations under constitutions
@@ -590,6 +614,91 @@ jurisdiction:
     were read from images and matched to the roster. Row re-read on 2026-11-22 from the page image (the
     govinfo PDF has no text layer for the table); verification level unchanged because the name was not
     matched word for word in machine-read text.'
+- topic: public-law-280
+  value: optional-state-consent-not-given
+  detail: South Dakota's 1957 act (S.D. Codified Laws §§ 1-1-12 to 1-1-16) offered to assume civil and criminal jurisdiction if the affected tribes consented; the Eighth Circuit found consent was not given, so jurisdiction was never assumed under it. (Rosebud Sioux Tribe v. South Dakota, 900 F.2d 1164, 1166 (8th Cir. 1990).)
+  source: rosebud-sioux-tribe-v-south-dakota-1990
+  confidence: high
+  verification: read-in-full
+  locator: 900 F.2d at 1166; S.D. Codified Laws §§ 1-1-12, 1-1-13 (SL 1957, ch. 319)
+  note: 'Section 1-1-13 says a tribe that took no action within one year of Oct. 1, 1957 is deemed to consent; the court nevertheless held consent was not given. The sections are still printed in the code. The related 1959 highway statute (§ 1-1-17) also never took effect because its condition (roads jointly maintained by State and United States) was never met (900 F.2d at 1166). Shakopee, Northern Cheyenne and Turtle Mountain have only trust-land presence in SD in the roster and are not mapped. Also cites: south-dakota-codified-laws-1-1-12, south-dakota-codified-laws-1-1-13.'
+- topic: public-law-280
+  value: not-assumed
+  detail: South Dakota's 1961 act (S.D. Codified Laws §§ 1-1-18 to 1-1-21) declared a general assumption of jurisdiction in Indian country, but it takes effect only on a gubernatorial proclamation, which was never issued; the general assumption never occurred. (S.D. Codified Laws § 1-1-21; 900 F.2d at 1167.)
+  source: south-dakota-codified-laws-1-1-18
+  confidence: high
+  verification: read-in-full
+  locator: S.D. Codified Laws § 1-1-21 (SL 1961, ch. 464, § 4); 900 F.2d at 1167
+  note: 'Quote is from Rosebud. A 1963 attempt to assume full jurisdiction (1963 S.D. Laws ch. 467) was defeated 3 to 1 in a referendum (900 F.2d at 1167). Statute text in § 1-1-21: highways are excepted from the proclamation requirement. Also cites: south-dakota-codified-laws-1-1-21, rosebud-sioux-tribe-v-south-dakota-1990.'
+- topic: public-law-280
+  value: assumption-held-invalid
+  detail: 'South Dakota''s 1961 highway-only assumption was held invalid by the South Dakota Supreme Court in 1964 (In re Hankins) and, after that court revived it in State v. Onihan (1988), by the Eighth Circuit in 1990: without tribal consent the State has no civil or criminal jurisdiction over highways through Indian lands. (Rosebud, 900 F.2d at 1166-67, 1172.)'
+  source: rosebud-sioux-tribe-v-south-dakota-1990
+  confidence: high
+  verification: read-in-full
+  locator: 900 F.2d at 1166
+  note: 'Hankins: 80 S.D. 435, 442-43, 125 N.W.2d 839, 842-43 (state cannot assume jurisdiction over highways alone; the Eighth Circuit describes this at 900 F.2d at 1167). Rosebud''s further holding (at 1170-72): the highway-only scheme does not meet Public Law 280, and the 1968 consent requirement bars later nonconsensual assumption. Cert. history not checked. Parties: Rosebud, Cheyenne River, Oglala, Standing Rock; the holding is about "Indian lands in the state" generally. Also cites: in-re-hankins-petition-1964.'
+- topic: public-law-280
+  value: not-assumed
+  detail: 'Today South Dakota holds no Public Law 280 jurisdiction over any of its reservations: the 1957 act was never consented to, the 1961 general act never took effect, and the 1961 highway piece is invalid; the statutes stay in the code. (Rosebud, 900 F.2d at 1166-67; S.D. Codified Laws §§ 1-1-12 to 1-1-21.)'
+  source: rosebud-sioux-tribe-v-south-dakota-1990
+  confidence: medium
+  verification: read-in-full
+  locator: 900 F.2d at 1166-67; S.D. Codified Laws §§ 1-1-12, 1-1-18
+  note: 'Quote is the 1957 assumption text, § 1-1-12, shown because it is still printed in the code. Conclusion that nothing is in force is mine, drawn from Rosebud (1990) plus the statutes; the research did not find any later tribal consent election or any post-1990 South Dakota assumption. Goldberg (2010) fn. 4 reaches the same view. Also cites: south-dakota-codified-laws-1-1-12, south-dakota-codified-laws-1-1-18.'
+treaties:
+- title: Treaty with the Sioux-Miniconjou Band, 1865
+  signed: '1865-10-10'
+  statutes_at_large: 14 Stat. 695
+  kappler:
+    volume: 2
+    page: 883
+    link: https://treaties.okstate.edu/treaties/treaty-with-the-sioux-miniconjou-band-1865-0883
+  signatory: Miniconjou
+  source: kappler-indian-affairs-laws-and-treaties-vol-2-1904
+  confidence: low
+  verification: inferred
+  locator: p. 883 (Treaty with the Sioux-Miniconjou Band, 1865; Kappler header "Oct. 10, 1865. | 14 Stats., 695.| Ratified Mar. 5, 1866. | Proclaimed Mar. 17, 1866.")
+  note: The nation is one successor of the party the treaty names; band-level attribution was not determined. Linked to the nation by Claude (AI assistant) from the treaty's text and the nation's name, not from a source that names the successor; not yet checked against a second source. Miniconjou band -> Cheyenne River Sioux Tribe The page is the treaty's first page as the Oklahoma State University database's address gives it.
+- title: Treaty with the Sioux-Two-Kettle Band, 1865
+  signed: '1865-10-19'
+  statutes_at_large: 14 Stat. 723
+  kappler:
+    volume: 2
+    page: 896
+    link: https://treaties.okstate.edu/treaties/treaty-with-the-sioux-two-kettle-band-1865-0896
+  signatory: Two Kettle
+  source: kappler-indian-affairs-laws-and-treaties-vol-2-1904
+  confidence: low
+  verification: inferred
+  locator: p. 896 (Treaty with the Sioux-Two-Kettle Band, 1865; Kappler header "Oct. 19, 1865. | 14 Stats, 723. | Ratified Mar. 5, 1866. | Proclaimed Mar. 17, 1866.")
+  note: The nation is one successor of the party the treaty names; band-level attribution was not determined. Linked to the nation by Claude (AI assistant) from the treaty's text and the nation's name, not from a source that names the successor; not yet checked against a second source. Two Kettle band -> Cheyenne River Sioux Tribe The page is the treaty's first page as the Oklahoma State University database's address gives it.
+- title: Treaty with the Sioux-Sans Arc Band, 1865
+  signed: '1865-10-20'
+  statutes_at_large: 14 Stat. 731
+  kappler:
+    volume: 2
+    page: 899
+    link: https://treaties.okstate.edu/treaties/treaty-with-the-sioux-sans-arcs-band-1865-0899
+  signatory: Sans Arc
+  source: kappler-indian-affairs-laws-and-treaties-vol-2-1904
+  confidence: low
+  verification: inferred
+  locator: p. 899 (Treaty with the Sioux-Sans Arc Band, 1865; Kappler header "Oct. 20, 1865. | 14 Stat., 731. | Ratified Mar. 5, 1866. | Proclaimed Mar. 17, 1866.")
+  note: The nation is one successor of the party the treaty names; band-level attribution was not determined. Linked to the nation by Claude (AI assistant) from the treaty's text and the nation's name, not from a source that names the successor; not yet checked against a second source. Sans Arc band -> Cheyenne River Sioux Tribe The page is the treaty's first page as the Oklahoma State University database's address gives it.
+- title: Treaty with the Sioux-Brule, Oglala, Miniconjou, Yanktonai, Hunkpapa, Blackfeet, Cuthead, Two Kettle, Sans Arcs, and Santee-and Arapaho, 1868
+  signed: '1868-04-29'
+  statutes_at_large: 15 Stat. 635
+  kappler:
+    volume: 2
+    page: 998
+    link: https://treaties.okstate.edu/treaties/treaty-with-the-sioux-brule-oglala-miniconjou-yanktonai-hunkpapa-blackfeet-cuthead-two-kettle-sans-arcs-and-santee-and-arapaho-1868-0998
+  signatory: Miniconjou; Two Kettle; Sans Arc; Miniconjou, Sans Arc, Two Kettle, Blackfeet Sioux
+  source: kappler-indian-affairs-laws-and-treaties-vol-2-1904
+  confidence: low
+  verification: inferred
+  locator: p. 998 (Treaty with the Sioux-Brule, Oglala, Miniconjou, Yanktonai, Hunkpapa, Blackfeet, Cuthead, Two Kettle, Sans Arcs, and Santee-and Arapaho, 1868; Kappler header "Apr. 29, 1868. | 15 Stats., 635. | Ratified, Feb. 16, 1869. | Proclaimed, Feb. 24, 1869.")
+  note: The nation is one successor of the party the treaty names; band-level attribution was not determined. Linked to the nation by Claude (AI assistant) from the treaty's text and the nation's name, not from a source that names the successor; not yet checked against a second source. Miniconjou band -> Cheyenne River Sioux Tribe The page is the treaty's first page as the Oklahoma State University database's address gives it.
 memberships:
 - organization: Great Plains Tribal Leaders Health Board
   source: great-plains-tribal-leaders-health-board-member-tribes

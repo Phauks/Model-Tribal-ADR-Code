@@ -246,6 +246,14 @@ federal_administration:
   verification: bulk-import
   as_of: '2026-11-20'
   locator: Ponca Tribe of Nebraska
+indian_health_service:
+- area: Great Plains
+  source: indian-health-service-great-plains-area-home
+  confidence: medium
+  verification: read-in-full
+  as_of: '2026-11-23'
+  locator: '"Tribes of North Dakota, South Dakota, Nebraska, and Iowa" list'
+  note: Listed as "Ponca Tribe". Indian Health Service page lists "Ponca Tribe" without state under Great Plains Area (ND, SD, NE, IA); matched to the Nebraska nation because the Oklahoma Ponca are listed separately under Oklahoma City Area.
 government_structure:
 - kind: indian-reorganization-act
   detail: Listed as "The Ponca Tribe of Native Americans, Nebraska" among organizations under constitutions
@@ -721,6 +729,59 @@ jurisdiction:
     prints its table as page images, so nation names were read from images and matched to the roster.
     Row re-read on 2026-11-22 from the page image (the govinfo PDF has no text layer for the table); verification
     level unchanged because the name was not matched word for word in machine-read text.'
+treaties:
+- title: Treaty with the Ponca, 1817
+  signed: '1817-06-25'
+  statutes_at_large: 7 Stat. 155
+  kappler:
+    volume: 2
+    page: 140
+    link: https://treaties.okstate.edu/treaties/treaty-with-the-ponca-1817-0140
+  signatory: Ponca
+  source: kappler-indian-affairs-laws-and-treaties-vol-2-1904
+  confidence: medium
+  verification: inferred
+  locator: p. 140 (Treaty with the Ponca, 1817; Kappler header "June 25, 1817 | 7 Stat., 155. | Proclamation, Dec. 26,1877.")
+  note: The nation's official name carries the name the treaty gives this party. Linked to the nation by Claude (AI assistant) from the treaty's text and the nation's name, not from a source that names the successor; not yet checked against a second source. Ponca Tribe of Nebraska (restored 1990) is also a successor to the Ponca The page is the treaty's first page as the Oklahoma State University database's address gives it.
+- title: Treaty with the Ponca, 1825
+  signed: '1825-06-09'
+  statutes_at_large: 7 Stat. 247
+  kappler:
+    volume: 2
+    page: 225
+    link: https://treaties.okstate.edu/treaties/treaty-with-the-ponca-1825-0225
+  signatory: Ponca
+  source: kappler-indian-affairs-laws-and-treaties-vol-2-1904
+  confidence: medium
+  verification: inferred
+  locator: p. 225 (Treaty with the Ponca, 1825; Kappler header "June 9, 1825. | 7 Stat., 247. | Proclamation, Feb 6, 1826.")
+  note: The nation's official name carries the name the treaty gives this party. Linked to the nation by Claude (AI assistant) from the treaty's text and the nation's name, not from a source that names the successor; not yet checked against a second source. Ponca Tribe of Nebraska (restored 1990) is also a successor to the Ponca The page is the treaty's first page as the Oklahoma State University database's address gives it.
+- title: Treaty with the Ponca, 1858
+  signed: '1858-03-12'
+  statutes_at_large: 12 Stat. 997
+  kappler:
+    volume: 2
+    page: 772
+    link: https://treaties.okstate.edu/treaties/treaty-with-the-ponca-1858-0772
+  signatory: Ponca
+  source: kappler-indian-affairs-laws-and-treaties-vol-2-1904
+  confidence: medium
+  verification: inferred
+  locator: p. 772 (Treaty with the Ponca, 1858; Kappler header "Mar. 12, 1858. | 12 Stats., 997. | Ratified Mar. 8, 1859. | Proclaimed Apr. 11, 1859.")
+  note: The nation's official name carries the name the treaty gives this party. Linked to the nation by Claude (AI assistant) from the treaty's text and the nation's name, not from a source that names the successor; not yet checked against a second source. Ponca Tribe of Nebraska (restored 1990) is also a successor to the Ponca The page is the treaty's first page as the Oklahoma State University database's address gives it.
+- title: Treaty with the Ponca, 1865
+  signed: '1865-03-10'
+  statutes_at_large: 14 Stat. 675
+  kappler:
+    volume: 2
+    page: 875
+    link: https://treaties.okstate.edu/treaties/treaty-with-the-ponca-1865-0875
+  signatory: Ponca
+  source: kappler-indian-affairs-laws-and-treaties-vol-2-1904
+  confidence: medium
+  verification: inferred
+  locator: p. 875 (Treaty with the Ponca, 1865; Kappler header "Mar. 10, 1865. | 14 Stat., 675. | Ratified Mar. 2, 1867. | Proclaimed Mar. 28, 1867.")
+  note: The nation's official name carries the name the treaty gives this party. Linked to the nation by Claude (AI assistant) from the treaty's text and the nation's name, not from a source that names the successor; not yet checked against a second source. Ponca Tribe of Nebraska (restored 1990) is also a successor to the Ponca The page is the treaty's first page as the Oklahoma State University database's address gives it.
 memberships:
 - organization: Great Plains Tribal Leaders Health Board
   source: great-plains-tribal-leaders-health-board-member-tribes
