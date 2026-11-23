@@ -216,6 +216,11 @@ describe('finishing a sign-in', () => {
 			destination: '/profile'
 		});
 		expect(await activePersonBySubject(database, newcomer.identifier)).toBeUndefined();
+		// A newcomer who signed in to follow a page goes back to it.
+		expect(await finishSignIn(database, cookieJar(), newcomer, 'code', '/nations/navajo-nation', 'lead@example.org')).toEqual({
+			outcome: 'signed-in',
+			destination: '/nations/navajo-nation'
+		});
 	});
 
 	it('does not sign in someone whose access was removed', async () => {
