@@ -211,6 +211,207 @@ government_structure:
   as_of: '1938'
   locator: preamble / approval and certification of adoption
   note: Historical constitution; a later constitution may have replaced it.
+governance:
+- aspect: form
+  value: Constitution and By-laws under the Indian Reorganization Act of June 18, 1934
+  quote: and by authority of, the Act of Congress of June 18, 1934 (48 Stat. 984),
+  source: university-of-oklahoma-indian-reorganization-act-sitkacons
+  confidence: medium
+  verification: read-in-full
+  as_of: '1938-10-11'
+  locator: Preamble
+  document_version:
+    document: sitka-tribe-of-alaska-constitution
+    version: 1938-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+- aspect: governing-body
+  value: Council
+  quote: There shall be a Council composed of the President and six other members
+  source: university-of-oklahoma-indian-reorganization-act-sitkacons
+  confidence: medium
+  verification: read-in-full
+  as_of: '1938-10-11'
+  locator: Article III, Section 1(a)
+  document_version:
+    document: sitka-tribe-of-alaska-constitution
+    version: 1938-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+- aspect: governing-body-size
+  value: '7 members: President and six other members'
+  quote: There shall be a Council composed of the President and six other members
+  source: university-of-oklahoma-indian-reorganization-act-sitkacons
+  confidence: medium
+  verification: read-in-full
+  as_of: '1938-10-11'
+  locator: Article III, Section 1(a)
+  document_version:
+    document: sitka-tribe-of-alaska-constitution
+    version: 1938-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+- aspect: governing-body-selection
+  value: Elected by secret ballot
+  quote: Council shall be elected by secret ballot on the first Thursday after the
+  source: university-of-oklahoma-indian-reorganization-act-sitkacons
+  confidence: medium
+  verification: read-in-full
+  as_of: '1938-10-11'
+  locator: Article III, Section 2(a)
+  document_version:
+    document: sitka-tribe-of-alaska-constitution
+    version: 1938-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+- aspect: governing-body-term
+  value: 2 years (President 1 year)
+  quote: shall be elected to serve for a term of two years.
+  source: university-of-oklahoma-indian-reorganization-act-sitkacons
+  confidence: medium
+  verification: read-in-full
+  as_of: '1938-10-11'
+  locator: Article III, Section 3(c)
+  document_version:
+    document: sitka-tribe-of-alaska-constitution
+    version: 1938-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+- aspect: general-council
+  value: The Association, all adult members
+  quote: age of 21 years shall have the right to vote.
+  source: university-of-oklahoma-indian-reorganization-act-sitkacons
+  confidence: medium
+  verification: read-in-full
+  as_of: '1938-10-11'
+  locator: Article V, Section 3
+  document_version:
+    document: sitka-tribe-of-alaska-constitution
+    version: 1938-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+- aspect: head-of-government
+  value: President
+  quote: There shall be a Council composed of the President and six other members
+  source: university-of-oklahoma-indian-reorganization-act-sitkacons
+  confidence: medium
+  verification: read-in-full
+  as_of: '1938-10-11'
+  locator: Article III, Section 1(a)
+  document_version:
+    document: sitka-tribe-of-alaska-constitution
+    version: 1938-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+- aspect: head-of-government
+  value: Chairperson
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  verification: bulk-import
+  as_of: '2026-11-20'
+  locator: Sitka Tribe of Alaska
+  note: The title of the leader's office as the federal directory lists it; the holder's name is not recorded.
+- aspect: head-of-government-selection
+  value: Elected annually
+  quote: elected annually and shall serve for a term of one year.
+  source: university-of-oklahoma-indian-reorganization-act-sitkacons
+  confidence: medium
+  verification: read-in-full
+  as_of: '1938-10-11'
+  locator: Article III, Section 3(b)
+  document_version:
+    document: sitka-tribe-of-alaska-constitution
+    version: 1938-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+- aspect: head-of-government-term
+  value: 1 year
+  quote: elected annually and shall serve for a term of one year.
+  source: university-of-oklahoma-indian-reorganization-act-sitkacons
+  confidence: medium
+  verification: read-in-full
+  as_of: '1938-10-11'
+  locator: Article III, Section 3(b)
+  document_version:
+    document: sitka-tribe-of-alaska-constitution
+    version: 1938-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+- aspect: other-officers
+  value: Vice President, Secretary, Treasurer
+  quote: a Vice President, and from within or without, a Secretary , a Treasurer,
+  source: university-of-oklahoma-indian-reorganization-act-sitkacons
+  confidence: medium
+  verification: read-in-full
+  as_of: '1938-10-11'
+  locator: Article III, Section 2(c)
+  document_version:
+    document: sitka-tribe-of-alaska-constitution
+    version: 1938-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+- aspect: elections
+  value: Annually, first Thursday after the third Monday in April
+  quote: third Monday in April.
+  source: university-of-oklahoma-indian-reorganization-act-sitkacons
+  confidence: medium
+  verification: read-in-full
+  as_of: '1938-10-11'
+  locator: Article III, Section 2(a)
+  document_version:
+    document: sitka-tribe-of-alaska-constitution
+    version: 1938-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+- aspect: voting-age
+  value: '21'
+  quote: age of 21 years shall have the right to vote.
+  source: university-of-oklahoma-indian-reorganization-act-sitkacons
+  confidence: medium
+  verification: read-in-full
+  as_of: '1938-10-11'
+  locator: Article V, Section 3
+  document_version:
+    document: sitka-tribe-of-alaska-constitution
+    version: 1938-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+- aspect: amendment
+  value: Majority vote of adult members at an election called by the Secretary of the Interior
+  quote: by a majority vote of the adult members of the Association voting at an
+  source: university-of-oklahoma-indian-reorganization-act-sitkacons
+  confidence: medium
+  verification: read-in-full
+  as_of: '1938-10-11'
+  locator: Article VIII
+  document_version:
+    document: sitka-tribe-of-alaska-constitution
+    version: 1938-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+- aspect: secretarial-approval
+  value: Required for amendments
+  quote: if approved by the Secretary of the Interior, shall be effective when ratified
+  source: university-of-oklahoma-indian-reorganization-act-sitkacons
+  confidence: medium
+  verification: read-in-full
+  as_of: '1938-10-11'
+  locator: Article VIII
+  document_version:
+    document: sitka-tribe-of-alaska-constitution
+    version: 1938-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+- aspect: recall-and-removal
+  value: Seat declared vacant by the Council for three months of absence
+  quote: without cause of excuse, may have his seat declared vacant by the Council
+  source: university-of-oklahoma-indian-reorganization-act-sitkacons
+  confidence: medium
+  verification: read-in-full
+  as_of: '1938-10-11'
+  locator: Article VI, Section 1(b)
+  document_version:
+    document: sitka-tribe-of-alaska-constitution
+    version: 1938-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+- aspect: recall-and-removal
+  value: Recall by petition of one-third of adult members
+  quote: Upon a petition signed by one-third of
+  source: university-of-oklahoma-indian-reorganization-act-sitkacons
+  confidence: medium
+  verification: read-in-full
+  as_of: '1938-10-11'
+  locator: Article VI, Section 1(c)
+  document_version:
+    document: sitka-tribe-of-alaska-constitution
+    version: 1938-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
 governing_documents:
 - kind: law-code
   title: Sitka Tribe of Alaska

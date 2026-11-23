@@ -199,6 +199,243 @@ government_structure:
   as_of: '1936'
   locator: preamble / approval and certification of adoption
   note: Historical constitution; a later constitution may have replaced it.
+governance:
+- aspect: form
+  value: Organized under Section 16 of the Act of June 18, 1934
+  quote: The Minnesota Chippewa Tribe is hereby organized under Section 16 of the Act of June 18, 1934 (48 Stat. 984), as amended.
+  source: constitution-minnesota-chippewa-tribe-2006-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2006-01-05'
+  locator: Article I, Section 1
+  document_version:
+    document: minnesota-chippewa-tribe-constitution
+    version: 2006-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: The text is the 1963 revised constitution and bylaws, with amendments noted in footnotes (III and IV approved January 5, 2006); the version label says 2006.'
+- aspect: governing-body
+  value: Tribal Executive Committee
+  quote: The governing bodies of the Minnesota Chippewa Tribe shall be the Tribal Executive Committee and the Reservation Business Committees of the White Earth
+  source: constitution-minnesota-chippewa-tribe-2006-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2006-01-05'
+  locator: Article III
+  document_version:
+    document: minnesota-chippewa-tribe-constitution
+    version: 2006-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: The text is the 1963 revised constitution and bylaws, with amendments noted in footnotes (III and IV approved January 5, 2006); the version label says 2006.'
+- aspect: governing-body
+  value: Reservation Business Committee
+  quote: Each of the six (6) Reservations shall elect a Reservation Business Committee composed of not more than five (5) members nor less than three (3) members.
+  source: constitution-minnesota-chippewa-tribe-2006-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2006-01-05'
+  locator: Article III, Section 2
+  document_version:
+    document: minnesota-chippewa-tribe-constitution
+    version: 2006-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: The text is the 1963 revised constitution and bylaws, with amendments noted in footnotes (III and IV approved January 5, 2006); the version label says 2006.'
+- aspect: governing-body-size
+  value: Chairman and Secretary-Treasurer of each of six Reservations
+  quote: The Tribal Executive Committee shall be composed of the Chairman and Secretary-Treasurer of each of the six (6) Reservation Business Committees
+  source: constitution-minnesota-chippewa-tribe-2006-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2006-01-05'
+  locator: Article III, Section 1
+  document_version:
+    document: minnesota-chippewa-tribe-constitution
+    version: 2006-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: The text is the 1963 revised constitution and bylaws, with amendments noted in footnotes (III and IV approved January 5, 2006); the version label says 2006.'
+- aspect: governing-body-size
+  value: 3 to 5 members
+  quote: composed of not more than five (5) members nor less than three (3) members.
+  source: constitution-minnesota-chippewa-tribe-2006-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2006-01-05'
+  locator: Article III, Section 2
+  document_version:
+    document: minnesota-chippewa-tribe-constitution
+    version: 2006-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: The text is the 1963 revised constitution and bylaws, with amendments noted in footnotes (III and IV approved January 5, 2006); the version label says 2006.'
+- aspect: governing-body-selection
+  value: Elected by each Reservation
+  quote: Each of the six (6) Reservations shall elect a Reservation Business Committee
+  source: constitution-minnesota-chippewa-tribe-2006-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2006-01-05'
+  locator: Article III, Section 2
+  document_version:
+    document: minnesota-chippewa-tribe-constitution
+    version: 2006-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: The text is the 1963 revised constitution and bylaws, with amendments noted in footnotes (III and IV approved January 5, 2006); the version label says 2006.'
+- aspect: governing-body-term
+  value: 4 years
+  quote: Thereafter, the term of office for officers and committeemen shall be four (4) years.
+  source: constitution-minnesota-chippewa-tribe-2006-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2006-01-05'
+  locator: Article IV, Section 3
+  document_version:
+    document: minnesota-chippewa-tribe-constitution
+    version: 2006-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: The text is the 1963 revised constitution and bylaws, with amendments noted in footnotes (III and IV approved January 5, 2006); the version label says 2006.'
+- aspect: governing-body-term
+  value: 2 years for Tribal Executive Committee officers
+  quote: who shall continue in office for the period of two (2) years
+  source: constitution-minnesota-chippewa-tribe-2006-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2006-01-05'
+  locator: Article III, Section 1
+  document_version:
+    document: minnesota-chippewa-tribe-constitution
+    version: 2006-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: The text is the 1963 revised constitution and bylaws, with amendments noted in footnotes (III and IV approved January 5, 2006); the version label says 2006.'
+- aspect: head-of-government
+  value: President (Tribal Executive Committee)
+  quote: select from within the group a President, a Vice-President, a Secretary, and a Treasurer
+  source: constitution-minnesota-chippewa-tribe-2006-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2006-01-05'
+  locator: Article III, Section 1
+  document_version:
+    document: minnesota-chippewa-tribe-constitution
+    version: 2006-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: The text is the 1963 revised constitution and bylaws, with amendments noted in footnotes (III and IV approved January 5, 2006); the version label says 2006.'
+- aspect: head-of-government
+  value: Chairman (Reservation Business Committee)
+  quote: The Reservation Business Committee shall be composed of a Chairman, Secretary-Treasurer, and one (1), two (2), or three (3) Committeemen.
+  source: constitution-minnesota-chippewa-tribe-2006-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2006-01-05'
+  locator: Article III, Section 2
+  document_version:
+    document: minnesota-chippewa-tribe-constitution
+    version: 2006-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: The text is the 1963 revised constitution and bylaws, with amendments noted in footnotes (III and IV approved January 5, 2006); the version label says 2006.'
+- aspect: head-of-government
+  value: President
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  verification: bulk-import
+  as_of: '2026-11-20'
+  locator: 'Minnesota Chippewa Tribe, Minnesota (Six component reservations: Bois Forte Band (Nett Lake); Fond du Lac Band; Grand Portage Band; Leech Lake Band; Mille Lacs Band; White Earth Band)'
+  note: The title of the leader's office as the federal directory lists it; the holder's name is not recorded.
+- aspect: head-of-government-selection
+  value: Selected by the Tribal Executive Committee from its members
+  quote: select from within the group a President, a Vice-President, a Secretary, and a Treasurer
+  source: constitution-minnesota-chippewa-tribe-2006-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2006-01-05'
+  locator: Article III, Section 1
+  document_version:
+    document: minnesota-chippewa-tribe-constitution
+    version: 2006-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: The text is the 1963 revised constitution and bylaws, with amendments noted in footnotes (III and IV approved January 5, 2006); the version label says 2006.'
+- aspect: head-of-government-term
+  value: 2 years
+  quote: who shall continue in office for the period of two (2) years
+  source: constitution-minnesota-chippewa-tribe-2006-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2006-01-05'
+  locator: Article III, Section 1
+  document_version:
+    document: minnesota-chippewa-tribe-constitution
+    version: 2006-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: The text is the 1963 revised constitution and bylaws, with amendments noted in footnotes (III and IV approved January 5, 2006); the version label says 2006.'
+- aspect: other-officers
+  value: Vice-President, Secretary, Treasurer; Secretary-Treasurer and Committeemen for each Reservation
+  quote: select from within the group a President, a Vice-President, a Secretary, and a Treasurer
+  source: constitution-minnesota-chippewa-tribe-2006-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2006-01-05'
+  locator: Article III, Section 1
+  document_version:
+    document: minnesota-chippewa-tribe-constitution
+    version: 2006-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: The text is the 1963 revised constitution and bylaws, with amendments noted in footnotes (III and IV approved January 5, 2006); the version label says 2006.'
+- aspect: voting-age
+  value: '18'
+  quote: All members of the tribe, eighteen (18) years of age or over, shall have the right to vote at all elections held within the reservation of their enrollment.
+  source: constitution-minnesota-chippewa-tribe-2006-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2006-01-05'
+  locator: Article IV, Section 1
+  document_version:
+    document: minnesota-chippewa-tribe-constitution
+    version: 2006-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: The text is the 1963 revised constitution and bylaws, with amendments noted in footnotes (III and IV approved January 5, 2006); the version label says 2006.'
+- aspect: election-authority
+  value: Tribal Executive Committee (uniform election ordinance)
+  quote: 'uniform election ordinance to be adopted by the Tribal Executive Committee which shall provide that:'
+  source: constitution-minnesota-chippewa-tribe-2006-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2006-01-05'
+  locator: Article IV, Section 1
+  document_version:
+    document: minnesota-chippewa-tribe-constitution
+    version: 2006-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: The text is the 1963 revised constitution and bylaws, with amendments noted in footnotes (III and IV approved January 5, 2006); the version label says 2006.'
+- aspect: amendment
+  value: Majority vote at Secretary-called election (30% turnout)
+  quote: amended or revoked by a majority vote of the qualified voters of the Tribe voting at an election called for that purpose by the Secretary of the Interior
+  source: constitution-minnesota-chippewa-tribe-2006-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2006-01-05'
+  locator: Article XII, Section 1
+  document_version:
+    document: minnesota-chippewa-tribe-constitution
+    version: 2006-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: The text is the 1963 revised constitution and bylaws, with amendments noted in footnotes (III and IV approved January 5, 2006); the version label says 2006.'
+- aspect: secretarial-approval
+  value: Required for amendments
+  quote: No amendment shall be effective until approved by the Secretary of the Interior.
+  source: constitution-minnesota-chippewa-tribe-2006-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2006-01-05'
+  locator: Article XII, Section 1
+  document_version:
+    document: minnesota-chippewa-tribe-constitution
+    version: 2006-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: The text is the 1963 revised constitution and bylaws, with amendments noted in footnotes (III and IV approved January 5, 2006); the version label says 2006.'
+- aspect: recall-and-removal
+  value: Removal by two-thirds vote of Reservation Business Committee
+  quote: 'The Reservation Business Committee by a two-thirds (2/3) vote of its members shall remove any officer or member of the Committee for the following causes:'
+  source: constitution-minnesota-chippewa-tribe-2006-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2006-01-05'
+  locator: Article X, Section 2
+  document_version:
+    document: minnesota-chippewa-tribe-constitution
+    version: 2006-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: The text is the 1963 revised constitution and bylaws, with amendments noted in footnotes (III and IV approved January 5, 2006); the version label says 2006.'
+- aspect: recall-and-removal
+  value: Recall election after hearing on charges
+  quote: or it may schedule a recall election which shall be held within thirty (30) days after the date set for the hearing.
+  source: constitution-minnesota-chippewa-tribe-2006-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2006-01-05'
+  locator: Article X, Section 3
+  document_version:
+    document: minnesota-chippewa-tribe-constitution
+    version: 2006-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: The text is the 1963 revised constitution and bylaws, with amendments noted in footnotes (III and IV approved January 5, 2006); the version label says 2006.'
 governing_documents:
 - kind: constitution
   title: Revised Constitution and Bylaws of the Minnesota Chippewa Tribe, Minnesota

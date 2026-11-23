@@ -195,6 +195,243 @@ government_structure:
   as_of: '1937'
   locator: preamble / approval and certification of adoption
   note: Historical constitution; a later constitution may have replaced it.
+governance:
+- aspect: form
+  value: Under the authority of the Indian Reorganization Act (IRA)
+  quote: constitution and bylaws under the authority of the IRA in order to form a more functional
+  source: constitution-iowa-tribe-of-kansas-and-nebraska-1980-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1980'
+  locator: Preamble
+  document_version:
+    document: iowa-tribe-of-kansas-and-nebraska-constitution
+    version: 1980-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Article VI, Section 1 reads ''at least four (3) members'' of the Executive Committee, copied as printed; the extract is the constitution as amended August 27, 1980.'
+- aspect: governing-body
+  value: General Council
+  quote: The General Council, composed of all enrolled members who are at
+  source: constitution-iowa-tribe-of-kansas-and-nebraska-1980-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1980'
+  locator: Article IV, Section 1
+  document_version:
+    document: iowa-tribe-of-kansas-and-nebraska-constitution
+    version: 1980-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Article VI, Section 1 reads ''at least four (3) members'' of the Executive Committee, copied as printed; the extract is the constitution as amended August 27, 1980.'
+- aspect: governing-body
+  value: Executive Committee
+  quote: The Executive Committee, composed of five (5) members elected at
+  source: constitution-iowa-tribe-of-kansas-and-nebraska-1980-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1980'
+  locator: Article IV, Section 2
+  document_version:
+    document: iowa-tribe-of-kansas-and-nebraska-constitution
+    version: 1980-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Article VI, Section 1 reads ''at least four (3) members'' of the Executive Committee, copied as printed; the extract is the constitution as amended August 27, 1980.'
+- aspect: governing-body-size
+  value: 5 members
+  quote: The Executive Committee, composed of five (5) members elected at
+  source: constitution-iowa-tribe-of-kansas-and-nebraska-1980-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1980'
+  locator: Article IV, Section 2
+  document_version:
+    document: iowa-tribe-of-kansas-and-nebraska-constitution
+    version: 1980-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Article VI, Section 1 reads ''at least four (3) members'' of the Executive Committee, copied as printed; the extract is the constitution as amended August 27, 1980.'
+- aspect: governing-body-selection
+  value: Elected at large from the General Council
+  quote: large from the General Council for three-year terms of office, shall exercise those
+  source: constitution-iowa-tribe-of-kansas-and-nebraska-1980-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1980'
+  locator: Article IV, Section 2
+  document_version:
+    document: iowa-tribe-of-kansas-and-nebraska-constitution
+    version: 1980-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Article VI, Section 1 reads ''at least four (3) members'' of the Executive Committee, copied as printed; the extract is the constitution as amended August 27, 1980.'
+- aspect: governing-body-term
+  value: 3 years
+  quote: for three-year terms of office
+  source: constitution-iowa-tribe-of-kansas-and-nebraska-1980-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1980'
+  locator: Article IV, Section 2
+  document_version:
+    document: iowa-tribe-of-kansas-and-nebraska-constitution
+    version: 1980-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Article VI, Section 1 reads ''at least four (3) members'' of the Executive Committee, copied as printed; the extract is the constitution as amended August 27, 1980.'
+- aspect: general-council
+  value: All enrolled members at least 18 years of age
+  quote: The General Council, composed of all enrolled members who are at
+  source: constitution-iowa-tribe-of-kansas-and-nebraska-1980-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1980'
+  locator: Article IV, Section 1
+  document_version:
+    document: iowa-tribe-of-kansas-and-nebraska-constitution
+    version: 1980-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Article VI, Section 1 reads ''at least four (3) members'' of the Executive Committee, copied as printed; the extract is the constitution as amended August 27, 1980.'
+- aspect: head-of-government
+  value: Chairman
+  quote: by secret ballot, a Chairman, Vice-Chairmen, Secretary, Treasurer and member.
+  source: constitution-iowa-tribe-of-kansas-and-nebraska-1980-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1980'
+  locator: Article IV, Section 2
+  document_version:
+    document: iowa-tribe-of-kansas-and-nebraska-constitution
+    version: 1980-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Article VI, Section 1 reads ''at least four (3) members'' of the Executive Committee, copied as printed; the extract is the constitution as amended August 27, 1980.'
+- aspect: head-of-government
+  value: Chairperson
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  verification: bulk-import
+  as_of: '2026-11-20'
+  locator: Iowa Tribe of Kansas and Nebraska
+  note: The title of the leader's office as the federal directory lists it; the holder's name is not recorded. Listed as “Chairwoman”; recorded without the holder's own form of the title.
+- aspect: head-of-government-selection
+  value: Elected by the General Council by secret ballot
+  quote: by secret ballot, a Chairman, Vice-Chairmen, Secretary, Treasurer and member.
+  source: constitution-iowa-tribe-of-kansas-and-nebraska-1980-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1980'
+  locator: Article IV, Section 2
+  document_version:
+    document: iowa-tribe-of-kansas-and-nebraska-constitution
+    version: 1980-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Article VI, Section 1 reads ''at least four (3) members'' of the Executive Committee, copied as printed; the extract is the constitution as amended August 27, 1980.'
+- aspect: head-of-government-term
+  value: 3 years
+  quote: for three-year terms of office
+  source: constitution-iowa-tribe-of-kansas-and-nebraska-1980-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1980'
+  locator: Article IV, Section 2
+  document_version:
+    document: iowa-tribe-of-kansas-and-nebraska-constitution
+    version: 1980-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Article VI, Section 1 reads ''at least four (3) members'' of the Executive Committee, copied as printed; the extract is the constitution as amended August 27, 1980.'
+- aspect: other-officers
+  value: Vice-Chairmen, Secretary, Treasurer, member
+  quote: by secret ballot, a Chairman, Vice-Chairmen, Secretary, Treasurer and member.
+  source: constitution-iowa-tribe-of-kansas-and-nebraska-1980-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1980'
+  locator: Article IV, Section 2
+  document_version:
+    document: iowa-tribe-of-kansas-and-nebraska-constitution
+    version: 1980-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Article VI, Section 1 reads ''at least four (3) members'' of the Executive Committee, copied as printed; the extract is the constitution as amended August 27, 1980.'
+- aspect: elections
+  value: Every third annual meeting, third Saturday in October
+  quote: held at each third (3rd) Annual Meeting beginning with the first Annual
+  source: constitution-iowa-tribe-of-kansas-and-nebraska-1980-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1980'
+  locator: Article XII, Section 1(a)
+  document_version:
+    document: iowa-tribe-of-kansas-and-nebraska-constitution
+    version: 1980-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Article VI, Section 1 reads ''at least four (3) members'' of the Executive Committee, copied as printed; the extract is the constitution as amended August 27, 1980.'
+- aspect: voting-age
+  value: '18'
+  quote: vote, provided the member is eighteen (18) years of age or over on the date of the
+  source: constitution-iowa-tribe-of-kansas-and-nebraska-1980-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1980'
+  locator: Article IX, Section 3
+  document_version:
+    document: iowa-tribe-of-kansas-and-nebraska-constitution
+    version: 1980-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Article VI, Section 1 reads ''at least four (3) members'' of the Executive Committee, copied as printed; the extract is the constitution as amended August 27, 1980.'
+- aspect: election-authority
+  value: Executive Committee enacts the election ordinance
+  quote: which shall be enacted by the Executive Committee.
+  source: constitution-iowa-tribe-of-kansas-and-nebraska-1980-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1980'
+  locator: Article IX, Section 2
+  document_version:
+    document: iowa-tribe-of-kansas-and-nebraska-constitution
+    version: 1980-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Article VI, Section 1 reads ''at least four (3) members'' of the Executive Committee, copied as printed; the extract is the constitution as amended August 27, 1980.'
+- aspect: judiciary
+  value: Tribal judicial system
+  quote: To maintain law and order, and establish a tribal judicial system
+  source: constitution-iowa-tribe-of-kansas-and-nebraska-1980-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1980'
+  locator: Article V, Section 1(h)
+  document_version:
+    document: iowa-tribe-of-kansas-and-nebraska-constitution
+    version: 1980-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Article VI, Section 1 reads ''at least four (3) members'' of the Executive Committee, copied as printed; the extract is the constitution as amended August 27, 1980.'
+- aspect: amendment
+  value: Majority vote of qualified voters in a Secretary-called election (30% turnout)
+  quote: This constitution and bylaws may be amended by a majority vote of the qualified
+  source: constitution-iowa-tribe-of-kansas-and-nebraska-1980-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1980'
+  locator: Article XV
+  document_version:
+    document: iowa-tribe-of-kansas-and-nebraska-constitution
+    version: 1980-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Article VI, Section 1 reads ''at least four (3) members'' of the Executive Committee, copied as printed; the extract is the constitution as amended August 27, 1980.'
+- aspect: secretarial-approval
+  value: Required for amendments
+  quote: it shall have been approved by the Secretary of the Interior.
+  source: constitution-iowa-tribe-of-kansas-and-nebraska-1980-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1980'
+  locator: Article XV
+  document_version:
+    document: iowa-tribe-of-kansas-and-nebraska-constitution
+    version: 1980-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Article VI, Section 1 reads ''at least four (3) members'' of the Executive Committee, copied as printed; the extract is the constitution as amended August 27, 1980.'
+- aspect: recall-and-removal
+  value: Removal by vote of four (3) Executive Committee members
+  quote: removed from office if at least four (3) members of the Executive Committee vote in favor
+  source: constitution-iowa-tribe-of-kansas-and-nebraska-1980-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1980'
+  locator: Article VI, Section 1
+  document_version:
+    document: iowa-tribe-of-kansas-and-nebraska-constitution
+    version: 1980-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Article VI, Section 1 reads ''at least four (3) members'' of the Executive Committee, copied as printed; the extract is the constitution as amended August 27, 1980.'
+- aspect: recall-and-removal
+  value: Recall by petition of 75% of voters at the preceding election
+  quote: percent (75%) of the number of voters who signed the register at the preceding election,
+  source: constitution-iowa-tribe-of-kansas-and-nebraska-1980-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1980'
+  locator: Article VI, Section 2
+  document_version:
+    document: iowa-tribe-of-kansas-and-nebraska-constitution
+    version: 1980-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Article VI, Section 1 reads ''at least four (3) members'' of the Executive Committee, copied as printed; the extract is the constitution as amended August 27, 1980.'
 governing_documents:
 - kind: constitution
   title: Constitution

@@ -165,6 +165,63 @@ government_structure:
   note: The text cites the Act of June 18, 1934; the Indian Reorganization Act reached Alaska through
     the Act of May 1, 1936, so this is recorded as the Alaska amendment. Historical constitution; a later
     constitution may have replaced it.
+governance:
+- aspect: form
+  value: Constitution and by-laws by authority of the act of June 18, 1934
+  quote: by authority of the act of June 18. 1034, as amended by
+  source: constitution-native-village-of-savoonga-1940-text-2
+  confidence: medium
+  verification: read-in-full
+  as_of: '1940-04-10'
+  locator: Preamble
+  document_version:
+    document: native-village-of-savoonga-constitution
+    version: 1940-text-2
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Scan garbled in the governing-body selection clauses and the voting-age line (printed as ''til''), so those facts are omitted.'
+- aspect: governing-body
+  value: Governing body (kind chosen by Village membership)
+  quote: governing body it wishes to set up to -speak
+  source: constitution-native-village-of-savoonga-1940-text-2
+  confidence: medium
+  verification: read-in-full
+  as_of: '1940-04-10'
+  locator: Article 3, Section 1
+  document_version:
+    document: native-village-of-savoonga-constitution
+    version: 1940-text-2
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Scan garbled in the governing-body selection clauses and the voting-age line (printed as ''til''), so those facts are omitted.'
+- aspect: head-of-government
+  value: President
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  verification: bulk-import
+  as_of: '2026-11-20'
+  locator: Native Village of Savoonga
+  note: The title of the leader's office as the federal directory lists it; the holder's name is not recorded.
+- aspect: amendment
+  value: Majority vote of Village members in election called by Secretary
+  quote: are approved by the Secretary of the Interior and by a majority vote
+  source: constitution-native-village-of-savoonga-1940-text-2
+  confidence: medium
+  verification: read-in-full
+  as_of: '1940-04-10'
+  locator: Article 6
+  document_version:
+    document: native-village-of-savoonga-constitution
+    version: 1940-text-2
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Scan garbled in the governing-body selection clauses and the voting-age line (printed as ''til''), so those facts are omitted.'
+- aspect: secretarial-approval
+  value: Required for amendments
+  quote: are approved by the Secretary of the Interior and by a majority vote
+  source: constitution-native-village-of-savoonga-1940-text-2
+  confidence: medium
+  verification: read-in-full
+  as_of: '1940-04-10'
+  locator: Article 6
+  document_version:
+    document: native-village-of-savoonga-constitution
+    version: 1940-text-2
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Scan garbled in the governing-body selection clauses and the voting-age line (printed as ''til''), so those facts are omitted.'
 governing_documents:
 - kind: constitution
   title: Constitution

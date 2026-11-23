@@ -210,6 +210,219 @@ government_structure:
   as_of: '1938'
   locator: preamble / approval and certification of adoption
   note: Historical constitution; a later constitution may have replaced it.
+governance:
+- aspect: form
+  value: Adopted under the Thomas-Rogers Oklahoma Indian Welfare Act of June 26, 1936
+  quote: the Thomas-Rogers Oklahoma Indian Welfare Act of June 26, 1936, do
+  source: constitution-ottawa-tribe-of-oklahoma-1980-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1980-12-19'
+  locator: Preamble
+  document_version:
+    document: ottawa-tribe-of-oklahoma-constitution
+    version: 1980-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Scan of the 1980 constitution and bylaws (approved 1979, ratified 19 December 1980) with OCR errors; the document says it supersedes the 1938 constitution.'
+- aspect: governing-body
+  value: Ottawa Council
+  quote: The supreme governing body of this organization shall be the Ottawa
+  source: constitution-ottawa-tribe-of-oklahoma-1980-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1980-12-19'
+  locator: Article IV
+  document_version:
+    document: ottawa-tribe-of-oklahoma-constitution
+    version: 1980-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Scan of the 1980 constitution and bylaws (approved 1979, ratified 19 December 1980) with OCR errors; the document says it supersedes the 1938 constitution.'
+- aspect: governing-body
+  value: Business Committee
+  quote: The business committee shall have power to transact business and otherwise
+  source: constitution-ottawa-tribe-of-oklahoma-1980-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1980-12-19'
+  locator: Article VI
+  document_version:
+    document: ottawa-tribe-of-oklahoma-constitution
+    version: 1980-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Scan of the 1980 constitution and bylaws (approved 1979, ratified 19 December 1980) with OCR errors; the document says it supersedes the 1938 constitution.'
+- aspect: governing-body-selection
+  value: Elected by majority vote
+  quote: The candidate receiving a majority vote
+  source: constitution-ottawa-tribe-of-oklahoma-1980-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1980-12-19'
+  locator: Article VIII, Section 4
+  document_version:
+    document: ottawa-tribe-of-oklahoma-constitution
+    version: 1980-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Scan of the 1980 constitution and bylaws (approved 1979, ratified 19 December 1980) with OCR errors; the document says it supersedes the 1938 constitution.'
+- aspect: governing-body-term
+  value: 3 years
+  quote: after, all terms of office shall be for three (3) years and elections shall be
+  source: constitution-ottawa-tribe-of-oklahoma-1980-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1980-12-19'
+  locator: Article VIII, Section 1
+  document_version:
+    document: ottawa-tribe-of-oklahoma-constitution
+    version: 1980-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Scan of the 1980 constitution and bylaws (approved 1979, ratified 19 December 1980) with OCR errors; the document says it supersedes the 1938 constitution.'
+- aspect: general-council
+  value: All tribal members 18 or older, forming the Ottawa Council
+  quote: eighteen (18) years of age and over.
+  source: constitution-ottawa-tribe-of-oklahoma-1980-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1980-12-19'
+  locator: Article IV
+  document_version:
+    document: ottawa-tribe-of-oklahoma-constitution
+    version: 1980-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Scan of the 1980 constitution and bylaws (approved 1979, ratified 19 December 1980) with OCR errors; the document says it supersedes the 1938 constitution.'
+- aspect: head-of-government
+  value: Chief
+  quote: Section 1 . Chief. It shall be the duty of the chief to preside at all meetings
+  source: constitution-ottawa-tribe-of-oklahoma-1980-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1980-12-19'
+  locator: Bylaws, Article I, Section 1
+  document_version:
+    document: ottawa-tribe-of-oklahoma-constitution
+    version: 1980-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Scan of the 1980 constitution and bylaws (approved 1979, ratified 19 December 1980) with OCR errors; the document says it supersedes the 1938 constitution.'
+- aspect: head-of-government
+  value: Chief
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  verification: bulk-import
+  as_of: '2026-11-20'
+  locator: Ottawa Tribe of Oklahoma
+  note: The title of the leader's office as the federal directory lists it; the holder's name is not recorded.
+- aspect: head-of-government-term
+  value: 3 years
+  quote: after, all terms of office shall be for three (3) years and elections shall be
+  source: constitution-ottawa-tribe-of-oklahoma-1980-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1980-12-19'
+  locator: Article VIII, Section 1
+  document_version:
+    document: ottawa-tribe-of-oklahoma-constitution
+    version: 1980-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Scan of the 1980 constitution and bylaws (approved 1979, ratified 19 December 1980) with OCR errors; the document says it supersedes the 1938 constitution.'
+- aspect: other-officers
+  value: Second chief, secretary-treasurer, two council members
+  quote: The officers of the tribe shall be a chief, second chief, secretary-treasurer
+  source: constitution-ottawa-tribe-of-oklahoma-1980-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1980-12-19'
+  locator: Article V
+  document_version:
+    document: ottawa-tribe-of-oklahoma-constitution
+    version: 1980-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Scan of the 1980 constitution and bylaws (approved 1979, ratified 19 December 1980) with OCR errors; the document says it supersedes the 1938 constitution.'
+- aspect: elections
+  value: Annually on the first Saturday in May
+  quote: held annually on the first Saturday in May. Officials of the business
+  source: constitution-ottawa-tribe-of-oklahoma-1980-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1980-12-19'
+  locator: Article VIII, Section 1
+  document_version:
+    document: ottawa-tribe-of-oklahoma-constitution
+    version: 1980-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Scan of the 1980 constitution and bylaws (approved 1979, ratified 19 December 1980) with OCR errors; the document says it supersedes the 1938 constitution.'
+- aspect: voting-age
+  value: '18'
+  quote: provided the member is eighteen (18) years of age or over on the date of the
+  source: constitution-ottawa-tribe-of-oklahoma-1980-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1980-12-19'
+  locator: Article VIII, Section 3
+  document_version:
+    document: ottawa-tribe-of-oklahoma-constitution
+    version: 1980-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Scan of the 1980 constitution and bylaws (approved 1979, ratified 19 December 1980) with OCR errors; the document says it supersedes the 1938 constitution.'
+- aspect: election-authority
+  value: Election committee appointed by the business committee
+  quote: election committee shall be solely responsible for calling and conducting the
+  source: constitution-ottawa-tribe-of-oklahoma-1980-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1980-12-19'
+  locator: Article VIII, Section 2
+  document_version:
+    document: ottawa-tribe-of-oklahoma-constitution
+    version: 1980-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Scan of the 1980 constitution and bylaws (approved 1979, ratified 19 December 1980) with OCR errors; the document says it supersedes the 1938 constitution.'
+- aspect: amendment
+  value: Majority vote of business committee or petition of 20% of adult members, then referendum
+  quote: Amendments to this constitution and bylaws may be proposed by a majority
+  source: constitution-ottawa-tribe-of-oklahoma-1980-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1980-12-19'
+  locator: Article XV
+  document_version:
+    document: ottawa-tribe-of-oklahoma-constitution
+    version: 1980-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Scan of the 1980 constitution and bylaws (approved 1979, ratified 19 December 1980) with OCR errors; the document says it supersedes the 1938 constitution.'
+- aspect: secretarial-approval
+  value: Required for amendments
+  quote: (20%) of the adult members of the tribe, and, if approved by the Secretary
+  source: constitution-ottawa-tribe-of-oklahoma-1980-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1980-12-19'
+  locator: Article XV
+  document_version:
+    document: ottawa-tribe-of-oklahoma-constitution
+    version: 1980-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Scan of the 1980 constitution and bylaws (approved 1979, ratified 19 December 1980) with OCR errors; the document says it supersedes the 1938 constitution.'
+- aspect: recall-and-removal
+  value: Removal by majority of the total membership of the body
+  quote: vote of a majority of the total membership of the elected or appointive
+  source: constitution-ottawa-tribe-of-oklahoma-1980-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1980-12-19'
+  locator: Article IX, Section 1
+  document_version:
+    document: ottawa-tribe-of-oklahoma-constitution
+    version: 1980-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Scan of the 1980 constitution and bylaws (approved 1979, ratified 19 December 1980) with OCR errors; the document says it supersedes the 1938 constitution.'
+- aspect: recall-and-removal
+  value: Recall by petition of 30% of the Ottawa Council
+  quote: percent (30%) of the Ottawa Council, it shall be the duty of the grievance
+  source: constitution-ottawa-tribe-of-oklahoma-1980-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1980-12-19'
+  locator: Article IX, Section 2
+  document_version:
+    document: ottawa-tribe-of-oklahoma-constitution
+    version: 1980-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Scan of the 1980 constitution and bylaws (approved 1979, ratified 19 December 1980) with OCR errors; the document says it supersedes the 1938 constitution.'
+- aspect: other
+  value: Grievance committee of five members elected by the Ottawa Council
+  quote: The grievance committee shall consist of five (5) members who
+  source: constitution-ottawa-tribe-of-oklahoma-1980-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1980-12-19'
+  locator: Article VII, Section 1
+  document_version:
+    document: ottawa-tribe-of-oklahoma-constitution
+    version: 1980-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Scan of the 1980 constitution and bylaws (approved 1979, ratified 19 December 1980) with OCR errors; the document says it supersedes the 1938 constitution.'
 governing_documents:
 - kind: law-code
   title: Tribal code

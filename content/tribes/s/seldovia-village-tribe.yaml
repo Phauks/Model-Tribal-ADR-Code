@@ -190,6 +190,219 @@ federal_administration:
   verification: bulk-import
   as_of: '2026-11-20'
   locator: Seldovia Village Tribe
+governance:
+- aspect: form
+  value: Constitution under the Indian Reorganization Act of June 18, 1934
+  quote: we ordain and institute this constitution to promote our Tribe's social, economic and cultural progress, pursuant to the Indian Reorganization Act of June 18, 1934 (49 Stat. 984), as amended.
+  source: constitution-seldovia-village-tribe-2010-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '2010-01-07'
+  locator: Preamble
+  document_version:
+    document: seldovia-village-tribe-constitution
+    version: 2010-text
+  note: 'Read from the text by an AI reader (Claude Sonnet); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: The constitution in the file was adopted in 1992 (certificate dated April 3, 1992), not 2010; the 2010 date belongs to the appended corporate charter of the Augustine Corporation, which was ignored.'
+- aspect: governing-body
+  value: Seldovia Tribal Council
+  quote: The governing body of the Seldovia Village Tribe shall be the Seldovia Tribal Council.
+  source: constitution-seldovia-village-tribe-2010-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '2010-01-07'
+  locator: Article V, Section 1
+  document_version:
+    document: seldovia-village-tribe-constitution
+    version: 2010-text
+  note: 'Read from the text by an AI reader (Claude Sonnet); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: The constitution in the file was adopted in 1992 (certificate dated April 3, 1992), not 2010; the 2010 date belongs to the appended corporate charter of the Augustine Corporation, which was ignored.'
+- aspect: governing-body-size
+  value: 9 members
+  quote: The Council shall consist of nine (9) members
+  source: constitution-seldovia-village-tribe-2010-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '2010-01-07'
+  locator: Article V, Section 2
+  document_version:
+    document: seldovia-village-tribe-constitution
+    version: 2010-text
+  note: 'Read from the text by an AI reader (Claude Sonnet); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: The constitution in the file was adopted in 1992 (certificate dated April 3, 1992), not 2010; the 2010 date belongs to the appended corporate charter of the Augustine Corporation, which was ignored.'
+- aspect: governing-body-selection
+  value: Elected by majority vote of qualified members
+  quote: who shall be elected by a majority vote of qualified members of the Tribe at their annual election or meeting
+  source: constitution-seldovia-village-tribe-2010-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '2010-01-07'
+  locator: Article V, Section 2
+  document_version:
+    document: seldovia-village-tribe-constitution
+    version: 2010-text
+  note: 'Read from the text by an AI reader (Claude Sonnet); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: The constitution in the file was adopted in 1992 (certificate dated April 3, 1992), not 2010; the 2010 date belongs to the appended corporate charter of the Augustine Corporation, which was ignored.'
+- aspect: governing-body-term
+  value: 3 years, staggered
+  quote: Except as may be necessary to establish and maintain the staggered terms of the Council, all Council members shall serve three (3) year terms.
+  source: constitution-seldovia-village-tribe-2010-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '2010-01-07'
+  locator: Article V, Section 4
+  document_version:
+    document: seldovia-village-tribe-constitution
+    version: 2010-text
+  note: 'Read from the text by an AI reader (Claude Sonnet); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: The constitution in the file was adopted in 1992 (certificate dated April 3, 1992), not 2010; the 2010 date belongs to the appended corporate charter of the Augustine Corporation, which was ignored.'
+- aspect: head-of-government
+  value: President
+  quote: The President shall preside at all meetings of the Tribe and of the Council
+  source: constitution-seldovia-village-tribe-2010-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '2010-01-07'
+  locator: Article VII, Section 1
+  document_version:
+    document: seldovia-village-tribe-constitution
+    version: 2010-text
+  note: 'Read from the text by an AI reader (Claude Sonnet); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: The constitution in the file was adopted in 1992 (certificate dated April 3, 1992), not 2010; the 2010 date belongs to the appended corporate charter of the Augustine Corporation, which was ignored.'
+- aspect: head-of-government
+  value: President
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  verification: bulk-import
+  as_of: '2026-11-20'
+  locator: Seldovia Village Tribe
+  note: The title of the leader's office as the federal directory lists it; the holder's name is not recorded. Listed as “President/CEO”; recorded without the holder's own form of the title.
+- aspect: head-of-government-selection
+  value: Chosen by the Council from its members
+  quote: who shall be elected annually by the members of the Council from among their number
+  source: constitution-seldovia-village-tribe-2010-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '2010-01-07'
+  locator: Article V, Section 3
+  document_version:
+    document: seldovia-village-tribe-constitution
+    version: 2010-text
+  note: 'Read from the text by an AI reader (Claude Sonnet); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: The constitution in the file was adopted in 1992 (certificate dated April 3, 1992), not 2010; the 2010 date belongs to the appended corporate charter of the Augustine Corporation, which was ignored.'
+- aspect: head-of-government-term
+  value: 1 year
+  quote: The terms of the President, Vice-President, and Secretary/Treasurer shall be one year.
+  source: constitution-seldovia-village-tribe-2010-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '2010-01-07'
+  locator: Article V, Section 4
+  document_version:
+    document: seldovia-village-tribe-constitution
+    version: 2010-text
+  note: 'Read from the text by an AI reader (Claude Sonnet); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: The constitution in the file was adopted in 1992 (certificate dated April 3, 1992), not 2010; the 2010 date belongs to the appended corporate charter of the Augustine Corporation, which was ignored.'
+- aspect: other-officers
+  value: Vice-President, Secretary/Treasurer
+  quote: The officers shall include a President, Vice- President, and Secretary /Treasurer
+  source: constitution-seldovia-village-tribe-2010-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '2010-01-07'
+  locator: Article V, Section 3
+  document_version:
+    document: seldovia-village-tribe-constitution
+    version: 2010-text
+  note: 'Read from the text by an AI reader (Claude Sonnet); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: The constitution in the file was adopted in 1992 (certificate dated April 3, 1992), not 2010; the 2010 date belongs to the appended corporate charter of the Augustine Corporation, which was ignored.'
+- aspect: elections
+  value: At least once annually
+  quote: The regular meeting or election of the Seldovia Village Tribe shall be held at least once annually in Seldovia.
+  source: constitution-seldovia-village-tribe-2010-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '2010-01-07'
+  locator: Article VI, Section 3
+  document_version:
+    document: seldovia-village-tribe-constitution
+    version: 2010-text
+  note: 'Read from the text by an AI reader (Claude Sonnet); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: The constitution in the file was adopted in 1992 (certificate dated April 3, 1992), not 2010; the 2010 date belongs to the appended corporate charter of the Augustine Corporation, which was ignored.'
+- aspect: voting-age
+  value: '18'
+  quote: Any duly enrolled voting member of the Seldovia Village Tribe eighteen (18) years of age or older shall be eligible to vote in all Tribal elections.
+  source: constitution-seldovia-village-tribe-2010-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '2010-01-07'
+  locator: Article VI, Section 1
+  document_version:
+    document: seldovia-village-tribe-constitution
+    version: 2010-text
+  note: 'Read from the text by an AI reader (Claude Sonnet); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: The constitution in the file was adopted in 1992 (certificate dated April 3, 1992), not 2010; the 2010 date belongs to the appended corporate charter of the Augustine Corporation, which was ignored.'
+- aspect: election-authority
+  value: Election committee of 3 members appointed by the Council
+  quote: There shall be an election committee consisting of three (3) members appointed by the Council for each tribal election or meeting
+  source: constitution-seldovia-village-tribe-2010-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '2010-01-07'
+  locator: Article VI, Section 7
+  document_version:
+    document: seldovia-village-tribe-constitution
+    version: 2010-text
+  note: 'Read from the text by an AI reader (Claude Sonnet); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: The constitution in the file was adopted in 1992 (certificate dated April 3, 1992), not 2010; the 2010 date belongs to the appended corporate charter of the Augustine Corporation, which was ignored.'
+- aspect: judiciary
+  value: Council may establish tribal courts or other judicial bodies
+  quote: including the establishment of tribal courts or other judicial bodies.
+  source: constitution-seldovia-village-tribe-2010-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '2010-01-07'
+  locator: Article X, Section 3(i)
+  document_version:
+    document: seldovia-village-tribe-constitution
+    version: 2010-text
+  note: 'Read from the text by an AI reader (Claude Sonnet); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: The constitution in the file was adopted in 1992 (certificate dated April 3, 1992), not 2010; the 2010 date belongs to the appended corporate charter of the Augustine Corporation, which was ignored.'
+- aspect: amendment
+  value: Majority vote of voting members in a Secretarial election with 30% participation
+  quote: This constitution, and any amendment to it, when adopted by a majority vote of the voting members of the Seldovia village Tribe voting at an election called for that purpose by the Secretary of the Interior
+  source: constitution-seldovia-village-tribe-2010-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '2010-01-07'
+  locator: Article XII
+  document_version:
+    document: seldovia-village-tribe-constitution
+    version: 2010-text
+  note: 'Read from the text by an AI reader (Claude Sonnet); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: The constitution in the file was adopted in 1992 (certificate dated April 3, 1992), not 2010; the 2010 date belongs to the appended corporate charter of the Augustine Corporation, which was ignored.'
+- aspect: secretarial-approval
+  value: Required for amendments
+  quote: shall be submitted to the Secretary of the Interior, or his authorized representative, for approval and shall be effective from the date of such approval
+  source: constitution-seldovia-village-tribe-2010-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '2010-01-07'
+  locator: Article XII
+  document_version:
+    document: seldovia-village-tribe-constitution
+    version: 2010-text
+  note: 'Read from the text by an AI reader (Claude Sonnet); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: The constitution in the file was adopted in 1992 (certificate dated April 3, 1992), not 2010; the 2010 date belongs to the appended corporate charter of the Augustine Corporation, which was ignored.'
+- aspect: recall-and-removal
+  value: Recall by petition of 30% of eligible voters
+  quote: The recall process shall be initiated by filing a valid petition with the Council asking for such recall, signed by at least thirty percent (30%) of the eligible voters
+  source: constitution-seldovia-village-tribe-2010-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '2010-01-07'
+  locator: Article IX, Section 2
+  document_version:
+    document: seldovia-village-tribe-constitution
+    version: 2010-text
+  note: 'Read from the text by an AI reader (Claude Sonnet); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: The constitution in the file was adopted in 1992 (certificate dated April 3, 1992), not 2010; the 2010 date belongs to the appended corporate charter of the Augustine Corporation, which was ignored.'
+- aspect: recall-and-removal
+  value: Removal by 6 members of the Council
+  quote: Any Council member found guilty by the Council of behavior involving gross misconduct in office or neglect of duty shall be removed from office if at least six (6) members of the Council vote in favor of such removal.
+  source: constitution-seldovia-village-tribe-2010-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '2010-01-07'
+  locator: Article IX, Section 1
+  document_version:
+    document: seldovia-village-tribe-constitution
+    version: 2010-text
+  note: 'Read from the text by an AI reader (Claude Sonnet); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: The constitution in the file was adopted in 1992 (certificate dated April 3, 1992), not 2010; the 2010 date belongs to the appended corporate charter of the Augustine Corporation, which was ignored.'
 jurisdiction:
 - topic: public-law-280
   value: mandatory-state

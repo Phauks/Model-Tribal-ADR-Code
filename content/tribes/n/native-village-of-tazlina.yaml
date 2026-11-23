@@ -184,6 +184,114 @@ federal_administration:
   verification: bulk-import
   as_of: '2026-11-20'
   locator: Native Village of Tazlina
+governance:
+- aspect: governing-body
+  value: Council
+  quote: There shall be a Council composed of a President and
+  source: constitution-native-village-of-tazlina-undated-text
+  confidence: medium
+  verification: read-in-full
+  locator: Article IV, Section 1
+  document_version:
+    document: native-village-of-tazlina-constitution
+    version: undated-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Undated ''Traditional'' constitution; the certification of adoption is largely illegible.'
+- aspect: governing-body-size
+  value: President and 4 members
+  quote: four members elected by the adult members of the Community.
+  source: constitution-native-village-of-tazlina-undated-text
+  confidence: medium
+  verification: read-in-full
+  locator: Article IV, Section 1
+  document_version:
+    document: native-village-of-tazlina-constitution
+    version: undated-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Undated ''Traditional'' constitution; the certification of adoption is largely illegible.'
+- aspect: governing-body-selection
+  value: Elected by the adult members
+  quote: four members elected by the adult members of the Community.
+  source: constitution-native-village-of-tazlina-undated-text
+  confidence: medium
+  verification: read-in-full
+  locator: Article IV, Section 1
+  document_version:
+    document: native-village-of-tazlina-constitution
+    version: undated-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Undated ''Traditional'' constitution; the certification of adoption is largely illegible.'
+- aspect: governing-body-term
+  value: 2 years
+  quote: Section 3- Each member of the Council shall serve for a term
+  source: constitution-native-village-of-tazlina-undated-text
+  confidence: medium
+  verification: read-in-full
+  locator: Article IV, Section 3
+  document_version:
+    document: native-village-of-tazlina-constitution
+    version: undated-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Undated ''Traditional'' constitution; the certification of adoption is largely illegible.'
+- aspect: head-of-government
+  value: President
+  quote: There shall be a Council composed of a President and
+  source: constitution-native-village-of-tazlina-undated-text
+  confidence: medium
+  verification: read-in-full
+  locator: Article IV, Section 1
+  document_version:
+    document: native-village-of-tazlina-constitution
+    version: undated-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Undated ''Traditional'' constitution; the certification of adoption is largely illegible.'
+- aspect: head-of-government
+  value: President
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  verification: bulk-import
+  as_of: '2026-11-20'
+  locator: Native Village of Tazlina
+  note: The title of the leader's office as the federal directory lists it; the holder's name is not recorded.
+- aspect: other-officers
+  value: Vice president, Secretary-treasurer
+  quote: Section 2- The vice president. The duties of the vice president,
+  source: constitution-native-village-of-tazlina-undated-text
+  confidence: medium
+  verification: read-in-full
+  locator: Bylaws, Article I, Sections 2-3
+  document_version:
+    document: native-village-of-tazlina-constitution
+    version: undated-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Undated ''Traditional'' constitution; the certification of adoption is largely illegible.'
+- aspect: voting-age
+  value: '18'
+  quote: All members of the Village 18 years of age or over
+  source: constitution-native-village-of-tazlina-undated-text
+  confidence: medium
+  verification: read-in-full
+  locator: Article IV, Section 1
+  document_version:
+    document: native-village-of-tazlina-constitution
+    version: undated-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Undated ''Traditional'' constitution; the certification of adoption is largely illegible.'
+- aspect: amendment
+  value: Council or Community resolution; majority vote of adult members, 25% turnout
+  quote: effective when ratified by a majority vote of adult members, provided
+  source: constitution-native-village-of-tazlina-undated-text
+  confidence: medium
+  verification: read-in-full
+  locator: Article VII
+  document_version:
+    document: native-village-of-tazlina-constitution
+    version: undated-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Undated ''Traditional'' constitution; the certification of adoption is largely illegible.'
+- aspect: recall-and-removal
+  value: Forfeited on felony or dishonesty conviction
+  quote: who is convicted of a felony or any other offense involving dishonesty
+  source: constitution-native-village-of-tazlina-undated-text
+  confidence: medium
+  verification: read-in-full
+  locator: Article VI, Section 1
+  document_version:
+    document: native-village-of-tazlina-constitution
+    version: undated-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Undated ''Traditional'' constitution; the certification of adoption is largely illegible.'
 justice_institutions:
 - kind: tribal-court
   name: Tribal Court

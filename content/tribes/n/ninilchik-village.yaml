@@ -190,6 +190,182 @@ federal_administration:
   verification: bulk-import
   as_of: '2026-11-20'
   locator: Ninilchik Village
+governance:
+- aspect: governing-body
+  value: Ninilchik Traditional Council
+  quote: The governing body of the Ninilchik Tribe shall be called the Ninilchik Traditional
+  source: constitution-ninilchik-village-2010-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '2010'
+  locator: Article V, Section 1
+  document_version:
+    document: ninilchik-village-constitution
+    version: 2010-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Cover is dated August 23, 2010 with amendments A-D; the scan has heavy OCR damage and the amendment article heading is unreadable, so the amendment locator is blank.'
+- aspect: governing-body-size
+  value: 5 members
+  quote: The NTC shall consist of five (5) tribal members elected pursuant to this
+  source: constitution-ninilchik-village-2010-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '2010'
+  locator: Article V, Section 2
+  document_version:
+    document: ninilchik-village-constitution
+    version: 2010-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Cover is dated August 23, 2010 with amendments A-D; the scan has heavy OCR damage and the amendment article heading is unreadable, so the amendment locator is blank.'
+- aspect: governing-body-selection
+  value: Elected under election ordinance
+  quote: constitution and an election ordinance enacted by the NTC.
+  source: constitution-ninilchik-village-2010-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '2010'
+  locator: Article V, Section 2
+  document_version:
+    document: ninilchik-village-constitution
+    version: 2010-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Cover is dated August 23, 2010 with amendments A-D; the scan has heavy OCR damage and the amendment article heading is unreadable, so the amendment locator is blank.'
+- aspect: governing-body-term
+  value: 3 years, staggered
+  quote: Each NTC member shall serve for a term of three (3) years or until a successor
+  source: constitution-ninilchik-village-2010-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '2010'
+  locator: Article V, Section 3
+  document_version:
+    document: ninilchik-village-constitution
+    version: 2010-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Cover is dated August 23, 2010 with amendments A-D; the scan has heavy OCR damage and the amendment article heading is unreadable, so the amendment locator is blank.'
+- aspect: head-of-government
+  value: President
+  quote: The President of the NTC shall preside over all meetings of the NTC and all
+  source: constitution-ninilchik-village-2010-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '2010'
+  locator: Article X, Section 1
+  document_version:
+    document: ninilchik-village-constitution
+    version: 2010-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Cover is dated August 23, 2010 with amendments A-D; the scan has heavy OCR damage and the amendment article heading is unreadable, so the amendment locator is blank.'
+- aspect: head-of-government
+  value: President
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  verification: bulk-import
+  as_of: '2026-11-20'
+  locator: Ninilchik Village
+  note: The title of the leader's office as the federal directory lists it; the holder's name is not recorded.
+- aspect: head-of-government-selection
+  value: Elected by the NTC at first meeting after installation
+  quote: the NTC shall elect its President, Vice-President
+  source: constitution-ninilchik-village-2010-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '2010'
+  locator: Article V, Section 5
+  document_version:
+    document: ninilchik-village-constitution
+    version: 2010-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Cover is dated August 23, 2010 with amendments A-D; the scan has heavy OCR damage and the amendment article heading is unreadable, so the amendment locator is blank.'
+- aspect: other-officers
+  value: Vice-President, Secretary/Treasurer
+  quote: Secretary/Treasurer and such other officers as it deems necessary.
+  source: constitution-ninilchik-village-2010-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '2010'
+  locator: Article V, Section 5
+  document_version:
+    document: ninilchik-village-constitution
+    version: 2010-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Cover is dated August 23, 2010 with amendments A-D; the scan has heavy OCR damage and the amendment article heading is unreadable, so the amendment locator is blank.'
+- aspect: elections
+  value: Every year, second Monday in November
+  quote: terms shall be held on the second Monday in November in each year.
+  source: constitution-ninilchik-village-2010-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '2010'
+  locator: Article VII, Section 4
+  document_version:
+    document: ninilchik-village-constitution
+    version: 2010-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Cover is dated August 23, 2010 with amendments A-D; the scan has heavy OCR damage and the amendment article heading is unreadable, so the amendment locator is blank.'
+- aspect: voting-age
+  value: '18'
+  quote: who are eighteen years of age or
+  source: constitution-ninilchik-village-2010-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '2010'
+  locator: Article VII, Section 1
+  document_version:
+    document: ninilchik-village-constitution
+    version: 2010-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Cover is dated August 23, 2010 with amendments A-D; the scan has heavy OCR damage and the amendment article heading is unreadable, so the amendment locator is blank.'
+- aspect: election-authority
+  value: Election Committee
+  quote: The election committee shall determine the validity of the petition and conduct the recall
+  source: constitution-ninilchik-village-2010-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '2010'
+  locator: Article IX, Section 1
+  document_version:
+    document: ninilchik-village-constitution
+    version: 2010-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Cover is dated August 23, 2010 with amendments A-D; the scan has heavy OCR damage and the amendment article heading is unreadable, so the amendment locator is blank.'
+- aspect: amendment
+  value: Majority of registered voters, with 30% turnout
+  quote: majority of the registered voters in an election in which at least thirty (30%) percent of the
+  source: constitution-ninilchik-village-2010-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '2010'
+  document_version:
+    document: ninilchik-village-constitution
+    version: 2010-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Cover is dated August 23, 2010 with amendments A-D; the scan has heavy OCR damage and the amendment article heading is unreadable, so the amendment locator is blank.'
+- aspect: recall-and-removal
+  value: Recall by petition of 30% of registered voters
+  quote: a recall petition signed by at least thirty percent (30%) of the registered voters. A recall
+  source: constitution-ninilchik-village-2010-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '2010'
+  locator: Article IX, Section 1
+  document_version:
+    document: ninilchik-village-constitution
+    version: 2010-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Cover is dated August 23, 2010 with amendments A-D; the scan has heavy OCR damage and the amendment article heading is unreadable, so the amendment locator is blank.'
+- aspect: recall-and-removal
+  value: Removal by other NTC members for listed causes
+  quote: Any member of the NTC shall be subject to removal by the other members of
+  source: constitution-ninilchik-village-2010-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '2010'
+  locator: Article V, Section 7(a)
+  document_version:
+    document: ninilchik-village-constitution
+    version: 2010-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Cover is dated August 23, 2010 with amendments A-D; the scan has heavy OCR damage and the amendment article heading is unreadable, so the amendment locator is blank.'
+- aspect: other
+  value: Powers not in constitution reserved to general membership
+  quote: are reserved to the general membership and
+  source: constitution-ninilchik-village-2010-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '2010'
+  locator: Section 2 - General
+  document_version:
+    document: ninilchik-village-constitution
+    version: 2010-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Cover is dated August 23, 2010 with amendments A-D; the scan has heavy OCR damage and the amendment article heading is unreadable, so the amendment locator is blank.'
 governing_documents:
 - kind: law-code
   title: Ninilchik Village

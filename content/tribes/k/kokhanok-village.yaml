@@ -181,6 +181,195 @@ federal_administration:
   verification: bulk-import
   as_of: '2026-11-20'
   locator: Kokhanok Village
+governance:
+- aspect: governing-body
+  value: Kokhanok Tribal Council
+  quote: Tribal Council, and may be referred to as the
+  source: constitution-kokhanok-village-2004-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '2004-01-28'
+  locator: Article IV, Section 1
+  document_version:
+    document: kokhanok-village-constitution
+    version: 2004-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+- aspect: governing-body-size
+  value: 5 members
+  quote: The Council shall consist of five members elected directly by the
+  source: constitution-kokhanok-village-2004-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '2004-01-28'
+  locator: Article IV, Section 2
+  document_version:
+    document: kokhanok-village-constitution
+    version: 2004-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+- aspect: governing-body-selection
+  value: Elected directly by the qualified voters of the Village
+  quote: The Council shall consist of five members elected directly by the
+  source: constitution-kokhanok-village-2004-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '2004-01-28'
+  locator: Article IV, Section 2
+  document_version:
+    document: kokhanok-village-constitution
+    version: 2004-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+- aspect: governing-body-term
+  value: 3 years, staggered
+  quote: Council members shall serve three year staggered terms.
+  source: constitution-kokhanok-village-2004-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '2004-01-28'
+  locator: Article IV, Section 3
+  document_version:
+    document: kokhanok-village-constitution
+    version: 2004-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+- aspect: head-of-government
+  value: President
+  quote: Section 2 President. The president shall preside at all meetings of the community and of
+  source: constitution-kokhanok-village-2004-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '2004-01-28'
+  locator: Article XI, Section 2
+  document_version:
+    document: kokhanok-village-constitution
+    version: 2004-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+- aspect: head-of-government
+  value: President
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  verification: bulk-import
+  as_of: '2026-11-20'
+  locator: Kokhanok Village
+  note: The title of the leader's office as the federal directory lists it; the holder's name is not recorded.
+- aspect: head-of-government-selection
+  value: Elected by Council members from among themselves
+  quote: Tribal Council members shall elect from among its members a
+  source: constitution-kokhanok-village-2004-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '2004-01-28'
+  locator: Article IV, Section 4
+  document_version:
+    document: kokhanok-village-constitution
+    version: 2004-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+- aspect: other-officers
+  value: President, Vice-President, Secretary-Treasurer
+  quote: president, vice-president, and secretary-treasurer. Officers shall be selected immediately
+  source: constitution-kokhanok-village-2004-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '2004-01-28'
+  locator: Article IV, Section 4
+  document_version:
+    document: kokhanok-village-constitution
+    version: 2004-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+- aspect: elections
+  value: Annual, at the Annual Kokhanok Tribal meeting
+  quote: General elections of officers shall occur during the .Annual
+  source: constitution-kokhanok-village-2004-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '2004-01-28'
+  locator: Article V, Section 3
+  document_version:
+    document: kokhanok-village-constitution
+    version: 2004-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+- aspect: voting-age
+  value: '18'
+  quote: Any enrolled Tribal member 1 8 years or older on tire
+  source: constitution-kokhanok-village-2004-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '2004-01-28'
+  locator: Article V, Section 1
+  document_version:
+    document: kokhanok-village-constitution
+    version: 2004-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+- aspect: election-authority
+  value: Tribal Council, by ordinance
+  quote: The Council may by ordinance set forth procedures for
+  source: constitution-kokhanok-village-2004-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '2004-01-28'
+  locator: Article V, Section 6
+  document_version:
+    document: kokhanok-village-constitution
+    version: 2004-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+- aspect: judiciary
+  value: Council may establish a court by ordinance
+  quote: The Council may, by ordinance, establish a court of general or limited jurisdiction.
+  source: constitution-kokhanok-village-2004-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '2004-01-28'
+  locator: Article IX
+  document_version:
+    document: kokhanok-village-constitution
+    version: 2004-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+- aspect: amendment
+  value: Majority vote of qualified voters, 20% of eligible voting
+  quote: Proposed amendments will be adopted upon a majority vote of the
+  source: constitution-kokhanok-village-2004-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '2004-01-28'
+  locator: Article XV, Section 2
+  document_version:
+    document: kokhanok-village-constitution
+    version: 2004-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+- aspect: recall-and-removal
+  value: Removal by at least 3 Council members' votes
+  quote: if at least three members of the Council vote in favor of removal.
+  source: constitution-kokhanok-village-2004-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '2004-01-28'
+  locator: Article VI, Section 1
+  document_version:
+    document: kokhanok-village-constitution
+    version: 2004-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+- aspect: recall-and-removal
+  value: Recall by petition of 20% of qualified voters
+  quote: Tribal members shall have the power to recall any member of the
+  source: constitution-kokhanok-village-2004-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '2004-01-28'
+  locator: Article VI, Section 2
+  document_version:
+    document: kokhanok-village-constitution
+    version: 2004-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+- aspect: other
+  value: Judicial power vested in Tribal Council until a separate judiciary is established
+  quote: the judicial power of the tribe is vested in
+  source: constitution-kokhanok-village-2004-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '2004-01-28'
+  locator: Article IX
+  document_version:
+    document: kokhanok-village-constitution
+    version: 2004-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
 jurisdiction:
 - topic: public-law-280
   value: mandatory-state

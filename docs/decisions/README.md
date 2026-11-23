@@ -40,9 +40,11 @@ A record is never rewritten after it is accepted. A later record supersedes it a
 | [0031](0031-serve-copies-of-documents-from-the-private-bucket.md) | Serve the project's copies of cited documents, including nations' constitutions and laws | Accepted |
 | [0032](0032-starred-pages-and-shared-collections-on-the-reader-s-device.md) | Starred pages, private notes and shared collections, kept on the reader's device | Accepted |
 | [0033](0033-nation-page-map-has-the-big-maps-views.md) | Give the map on each nation's page the big map's views | Accepted |
-| [0034](0034-show-stories-in-full-where-rights-allow.md) | Show the whole story on its page where the rights allow | Accepted |
+| [0034](0034-show-stories-in-full-where-rights-allow.md) | Show the whole story on its page where the rights allow | Accepted; amended by 0036 |
 | [0035](0035-follow-pages-with-notices-that-never-quote.md) | Following pages, with notices that never say what changed | Accepted |
+| [0036](0036-show-every-story-in-full.md) | Show every story in full on the website | Accepted |
 | [0037](0037-keep-a-copy-of-every-directly-cited-page.md) | Keep our own copy of every page a record directly cites | Accepted |
 | [0041](0041-nation-teams-keep-their-own-pages.md) | Let each nation choose a team that keeps its own page, with delegation inside that nation only | Accepted |
+| [0042](0042-governance-facts-from-governing-documents.md) | Record how each nation's government is set up, as plain facts from its own documents | Accepted |
 
 Template: Status, Date, Context, Decision, Consequences, Sources.
