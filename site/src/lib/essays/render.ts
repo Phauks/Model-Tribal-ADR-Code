@@ -41,6 +41,13 @@ export interface EssayLibrary {
 	 * cases by topic.
 	 */
 	boxPage?(anchor: string): string | undefined;
+	/**
+	 * Every court case the project has a record of, as source key to case
+	 * name, so a case named in italics in the text links to it.
+	 */
+	caseNames?(): Record<string, string>;
+	/** Where a case's name links when no essay has a box for it: the copy of the opinion on this site, or where it was published. */
+	caseLink?(key: string): string | undefined;
 }
 
 /** One heading in the essay, for the page's outline. */
@@ -179,6 +186,110 @@ function markTopics(tokens: Token[]): void {
 			token.type = 'topics_list';
 			token.children = [];
 		}
+	}
+}
+
+/** A case name as it is compared: plain apostrophes, one space, no case or final period. */
+function caseNameForm(name: string): string {
+	return name.normalize('NFC').replace(/[’‘]/g, "'").replace(/\s+/g, ' ').trim().replace(/\.$/, '').toLowerCase();
+}
+
+/** Party names too common to stand for one case. */
+const sharedParties = new Set(['united states', 'state', 'the state', 'people', 'commonwealth']);
+
+const caseNameLists = new WeakMap<EssayLibrary, Map<string, string>>();
+
+/**
+ * Case names to source keys: each case's full name ("Worcester v.
+ * Georgia"), and the name of a party that only one case has, as an essay
+ * shortens it after the first mention ("Worcester", "Crow Dog").
+ */
+function caseNameList(library: EssayLibrary): Map<string, string> {
+	const cached = caseNameLists.get(library);
+	if (cached) return cached;
+	const names = new Map<string, string | null>();
+	const add = (name: string, key: string) => {
+		const form = caseNameForm(name);
+		if (!form || sharedParties.has(form)) return;
+		names.set(form, names.has(form) && names.get(form) !== key ? null : key);
+	};
+	const cases = Object.entries(library.caseNames?.() ?? {});
+	for (const [key, title] of cases) add(title, key);
+	const parties = new Map<string, string | null>();
+	for (const [key, title] of cases) {
+		const prefixed = /^(?:ex parte|in re)\s+(.+)$/i.exec(title)?.[1];
+		for (const party of prefixed ? [prefixed] : title.split(/\s+v\.\s+/)) {
+			const form = caseNameForm(party);
+			parties.set(form, parties.has(form) && parties.get(form) !== key ? null : key);
+		}
+	}
+	for (const [form, key] of parties) if (key && !names.has(form)) add(form, key);
+	const list = new Map([...names].filter((entry): entry is [string, string] => entry[1] !== null));
+	caseNameLists.set(library, list);
+	return list;
+}
+
+/** The case a name stands for: its full name or a party's, or the start of one case's full name ("California v. Cabazon Band"). */
+function caseNamed(names: Map<string, string>, form: string): string | undefined {
+	const named = names.get(form);
+	if (named || !form.includes(' v. ')) return named;
+	const keys = new Set([...names].filter(([name]) => name.startsWith(`${form} `) || name.startsWith(`${form},`)).map(([, key]) => key));
+	return keys.size === 1 ? [...keys][0] : undefined;
+}
+
+/**
+ * Links a court case named in italics in the essay's own text to the case's
+ * box, or, when no essay has a box for it, to the opinion (Trevor, Nov. 23,
+ * 2026: link case names, with a preview on hover, LinkPreviews.svelte). Only
+ * the first mention in each section links, so a paragraph is not a row of
+ * links; a heading, a link already there and a case's own box are left as
+ * they are.
+ */
+function linkCaseNames(tokens: Token[], library: EssayLibrary, boxesHere: Set<string>): void {
+	const names = caseNameList(library);
+	if (names.size === 0) return;
+	const targetOf = (key: string): string | undefined =>
+		boxesHere.has(key) || library.boxPage?.(`case-${key}`) ? `#case-${key}` : library.caseLink?.(key);
+	let linked = new Set<string>();
+	let inHeading = false;
+	let ownBox: string | undefined;
+	for (const token of tokens) {
+		if (token.type === 'heading_open') {
+			inHeading = true;
+			linked = new Set();
+		} else if (token.type === 'heading_close') inHeading = false;
+		else if (token.type === 'container_case_open' || token.type === 'container_law_open') {
+			ownBox = essayBlocks[token.type === 'container_case_open' ? 'case' : 'law'].exec(token.info.trim())?.[1];
+			linked = new Set();
+		} else if (token.type === 'container_case_close' || token.type === 'container_law_close') {
+			ownBox = undefined;
+			linked = new Set();
+		}
+		if (token.type !== 'inline' || inHeading || !token.children) continue;
+		const children: Token[] = [];
+		let linkDepth = 0;
+		for (let index = 0; index < token.children.length; index += 1) {
+			const child = token.children[index];
+			if (child.type === 'link_open') linkDepth += 1;
+			if (child.type === 'link_close') linkDepth -= 1;
+			const text = token.children[index + 1];
+			const close = token.children[index + 2];
+			const key =
+				child.type === 'em_open' && linkDepth === 0 && text?.type === 'text' && close?.type === 'em_close'
+					? caseNamed(names, caseNameForm(text.content))
+					: undefined;
+			const target = key && key !== ownBox && !linked.has(key) ? targetOf(key) : undefined;
+			if (!key || !target) {
+				children.push(child);
+				continue;
+			}
+			linked.add(key);
+			const open = new Token('link_open', 'a', 1);
+			open.attrs = [['href', target], ['class', 'case-link'], ['data-case', key]];
+			children.push(open, child, text, close, new Token('link_close', 'a', -1));
+			index += 2;
+		}
+		token.children = children;
 	}
 }
 
@@ -543,6 +654,8 @@ export function renderEssay(text: string, library: EssayLibrary, { lines }: { li
 	}
 	markAttributions(tokens);
 	markTopics(tokens);
+	const boxesHere = new Set([...body.matchAll(/^:{4,}[ \t]*case[ \t]+([a-z0-9-]+)[ \t]*$/gm)].map((box) => box[1]));
+	linkCaseNames(tokens, library, boxesHere);
 	tokens = arrangeFigures(tokens);
 	const shown = lines ? markChangedBlocks(tokens, lines) : tokens;
 	// A link to a case or law box that is not on this page goes to the page that holds it.

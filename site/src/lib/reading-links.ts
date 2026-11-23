@@ -29,6 +29,30 @@ export interface ReadingLinks {
 	links: ReadingLink[];
 }
 
+const libraryOfCongressItem = /^https:\/\/www\.loc\.gov\/item\/usrep(\d{3})(\d{3,4})\/?$/;
+
+/**
+ * The PDFs of a Supreme Court case's official report among its reading
+ * links: the Library of Congress scan of the United States Reports, whose PDF
+ * sits at a fixed address beside the item page, and the Court's own slip
+ * opinion or preliminary print. The site keeps its own copy of each
+ * (tools/fetch-public-copies.mjs), so a case's text is on this site even when
+ * its record cites a web page.
+ */
+export function officialReportLinks(readingLinks: ReadingLinks | undefined): string[] {
+	const found: string[] = [];
+	for (const entry of readingLinks?.links ?? []) {
+		const item = entry.site === 'library-of-congress' ? libraryOfCongressItem.exec(entry.link) : null;
+		if (item) {
+			const name = `usrep${item[1]}${item[2]}`;
+			found.push(`https://tile.loc.gov/storage-services/service/ll/usrep/usrep${item[1]}/${name}/${name}.pdf`);
+		} else if (entry.site === 'supremecourt') {
+			found.push(entry.link);
+		}
+	}
+	return found;
+}
+
 function escapeHtml(text: string): string {
 	return text.replaceAll('&', '&amp;').replaceAll('<', '&lt;').replaceAll('>', '&gt;').replaceAll('"', '&quot;');
 }

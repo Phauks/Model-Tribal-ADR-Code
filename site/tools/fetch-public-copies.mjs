@@ -12,6 +12,9 @@
  *   with redistribution: true, when the link is a PDF on a United States
  *   government site, or a Federal Register document page (the copy is the
  *   official PDF of that document, found with the Federal Register API).
+ * - The official report of a Supreme Court case those records' reading links
+ *   name: the Library of Congress scan of the United States Reports, or the
+ *   Court's own PDF.
  * - The Statutes at Large, Public Law and Federal Register citations that
  *   nation pages link to GovInfo (src/lib/legal-citations.ts).
  *
@@ -37,6 +40,7 @@ import { appendFileSync, existsSync, mkdirSync, readFileSync, writeFileSync } fr
 import path from 'node:path';
 import { parseCsv } from '../src/lib/csv.ts';
 import { citationParts } from '../src/lib/legal-citations.ts';
+import { officialReportLinks } from '../src/lib/reading-links.ts';
 import { nations, repositoryRoot, sources } from '../src/lib/server/content.ts';
 
 const userAgent = 'model-tribal-adr-code research copy (public documents)';
@@ -90,7 +94,7 @@ const federalRegisterNumbers = new Map(); // document number -> { pages, records
 for (const record of sources().values()) {
 	const rights = record.rights ?? {};
 	if (!['us-government-work', 'public-domain'].includes(rights.basis) || rights.redistribution !== true) continue;
-	const links = [...new Set([record.original_link, record.citation?.URL].filter(Boolean))];
+	const links = [...new Set([record.original_link, record.citation?.URL, ...officialReportLinks(record.reading_links)].filter(Boolean))];
 	for (const link of links) {
 		const page = federalRegisterPage.exec(link);
 		if (page) {

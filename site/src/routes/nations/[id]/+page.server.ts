@@ -1,4 +1,3 @@
-import { nationOutline } from '#lib/server/section-contents.ts';
 import { error } from '@sveltejs/kit';
 import type { OutlineItem, PageOutline } from '#lib/site-sections.ts';
 import geometry from 'virtual:map-geometry';
@@ -1012,11 +1011,8 @@ export const load: PageServerLoad = ({ params }) => {
 			map: undefined,
 			sources: [],
 			outline: {
-				items: nationOutline({
-					name: page.officialName,
-					link: `/nations/${record.id}`,
-					headings: [{ label: 'Review status', link: '#review-status' }]
-				})
+				title: page.officialName,
+				items: [{ label: 'Review status', link: '#review-status' }]
 			} satisfies PageOutline as PageOutline
 		};
 	}
@@ -1210,7 +1206,7 @@ export const load: PageServerLoad = ({ params }) => {
 	}
 	items.push({ label: 'References', link: '#sources-heading' });
 
-	// The Nations section's pages stay above it (src/lib/server/section-contents.ts).
-	const outline: PageOutline = { items: nationOutline({ name: page.officialName, link: `/nations/${record.id}`, headings: items }) };
+	// The sidebar puts the nation and these headings under Directory (src/lib/sidebar-outline.ts).
+	const outline: PageOutline = { title: page.officialName, items };
 	return { ...result, outline };
 };

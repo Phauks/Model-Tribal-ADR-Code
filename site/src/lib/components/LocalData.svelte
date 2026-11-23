@@ -10,6 +10,7 @@
 	import Trash2 from '@lucide/svelte/icons/trash-2';
 	import Upload from '@lucide/svelte/icons/upload';
 	import { tick } from 'svelte';
+	import { forgetSidebarChoices } from './sidebar/sidebar-state.svelte.ts';
 	import { collections } from '#lib/offline-collections.ts';
 	import { controllingWorker, documentsStatus, offlineStatus, removeCollection, removeDocuments } from '#lib/offline-saving.ts';
 	import { defaultPrintOptions, loadPrintOptions, savePrintOptions } from '#lib/print-options.ts';
@@ -131,7 +132,11 @@
 	async function remove(): Promise<void> {
 		working = true;
 		const notDone: string[] = [];
-		if (chosen.includes('settings')) onreset();
+		if (chosen.includes('settings')) {
+			onreset();
+			// What the sidebar remembers: hidden or not, and which sections are open.
+			forgetSidebarChoices();
+		}
 		if (chosen.includes('print')) savePrintOptions({ ...defaultPrintOptions });
 		if (chosen.includes('starred')) saveStarred([]);
 		if (chosen.includes('pages')) {
