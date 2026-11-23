@@ -22,6 +22,9 @@ Request file (JSON):
     ]
   }
 
+An optional "workers" field (1 to 4, default 4) sets how many captures are
+read at once; use 1 or 2 when the Wayback Machine is refusing connections.
+
 An item with "url" downloads that capture (use the id_ form to get the
 original bytes without the Wayback banner). An item with "save" asks Save Page
 Now for a new capture of the page and records the capture address it reports.
@@ -108,7 +111,8 @@ def main() -> None:
     saves = [item for item in request["items"] if item.get("save")]
     fetches = [item for item in request["items"] if not item.get("save")]
     # Captures are read a few at a time; Save Page Now requests go one at a time, spaced out.
-    with concurrent.futures.ThreadPoolExecutor(WORKERS) as pool:
+    workers = max(1, min(WORKERS, int(request.get("workers", WORKERS))))
+    with concurrent.futures.ThreadPoolExecutor(workers) as pool:
         for entry in pool.map(lambda item: fetch_one(item, out), fetches):
             manifest.append(entry)
             (out / "manifest.json").write_text(json.dumps(manifest, indent=1))
