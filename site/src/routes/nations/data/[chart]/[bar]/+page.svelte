@@ -31,19 +31,21 @@
 </p>
 <p class="description">{data.description}</p>
 
-<DataTable
-	identifier="records"
-	label="Table: {data.bar.label}"
-	columns={data.columns}
-	rows={data.rows}
-	defaultSort={{ key: data.columns[0].key, direction: 'ascending' }}
-	rowName={data.rowName}
-	searchLabel={data.rows.length >= 10 ? `Search these ${data.rowName[1]}` : undefined}
-	filters={data.rows.length > 5}
-	download="{data.chart.identifier}-{data.bar.slug}"
-	shareable
-	{cell}
-/>
+<div class="records-table">
+	<DataTable
+		identifier="records"
+		label="Table: {data.bar.label}"
+		columns={data.columns}
+		rows={data.rows}
+		defaultSort={{ key: data.columns[0].key, direction: 'ascending' }}
+		rowName={data.rowName}
+		searchLabel={data.rows.length >= 10 ? `Search these ${data.rowName[1]}` : undefined}
+		filters={data.rows.length > 5}
+		download="{data.chart.identifier}-{data.bar.slug}"
+		shareable
+		{cell}
+	/>
+</div>
 
 {#snippet cell(row: TableRow, column: TableColumn)}
 	{@const items = data.items[row.key]?.[column.key] ?? []}
@@ -96,6 +98,31 @@
 
 	.items li + li {
 		margin-top: var(--space-1);
+	}
+
+	/*
+	 * Each item's source marker stands apart from a sentence, beside a link, so
+	 * it gets the 24 pixel target WCAG 2.2, 2.5.8 asks for, as on the contact
+	 * card; each item's line is at least as tall, so links on lines one under
+	 * another keep their spacing.
+	 */
+	.records-table :global(.note-marker) {
+		display: inline-block;
+		min-width: 24px;
+		min-height: 24px;
+		line-height: 24px;
+		text-align: center;
+		vertical-align: top;
+	}
+
+	.items li {
+		min-height: 24px;
+		line-height: 24px;
+	}
+
+	/* A long name wraps inside its own box, so its link stays one target rather than two scraps of line. */
+	.items li > a {
+		display: inline-block;
 	}
 
 	.detail {
