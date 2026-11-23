@@ -22,6 +22,12 @@ The workflow's final job, `All checks`, passes only when every other check passe
 | --- | --- | --- |
 | `analysis/dispute_resolution_practice.py` | Counts the dispute resolution records in the profiles by kind, evidence tier, recognition and region, and lists data quality flags, as JSON for `research/analyses/` | `scripts/requirements.txt` |
 
+## Model forms
+
+| Script | Does | Needs |
+| --- | --- | --- |
+| `forms/build_forms.py` | Builds a Word (.docx) and a PDF copy of each model court form in `content/forms/`, leaving off its front matter and its notes for courts and putting in each placeholder's model text from `content/variables/`, then writes `SHA256SUMS.txt` and `checksums.json` with each file's SHA-256 hash (decision record 0047). `--out DIR` (default `site/static/help/forms`, served at `/help/forms/`), `--no-pdf` | `scripts/requirements.txt`, pandoc, LibreOffice |
+
 ## Native nations dataset
 
 Scripts that built the first profiles in `content/tribes/` from cited facts in `research/raw/` (see [research/raw/README.md](../research/raw/README.md)). They are kept so the first edition can be reproduced; once profiles are edited by hand, add new facts by hand or in a new raw file and review the diff.
