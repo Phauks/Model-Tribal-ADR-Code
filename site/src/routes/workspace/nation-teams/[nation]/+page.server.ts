@@ -5,6 +5,7 @@ import {
 	dateAsTermEnd,
 	describeParts,
 	endProblem,
+	longestTerm,
 	pageParts,
 	placeProblem,
 	teamLevelLabels,
@@ -56,7 +57,8 @@ export const load: PageServerLoad = async (event) => {
 		canManage: canManageTeam(granter),
 		isAdministrator: granter.isAdministrator,
 		usualEnds: Object.fromEntries(teamLevels.map((level) => [level, termEnd(usualTerm[level]).slice(0, 10)])),
-		latestEnd: termEnd(730).slice(0, 10)
+		// The latest end date any level allows; the server checks each level's own limit.
+		latestEnd: termEnd(Math.max(...Object.values(longestTerm))).slice(0, 10)
 	};
 };
 
