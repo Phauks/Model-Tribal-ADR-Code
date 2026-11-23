@@ -7,9 +7,9 @@ describe('source document links', () => {
 		const html =
 			'<cite>Worcester v. Georgia</cite> (1832). <span class="source-links has-archive"><a class="source-original" href="https://www.law.cornell.edu/a?b=1&amp;c=2">www.law.cornell.edu</a>' +
 			'<span class="source-archived"><span class="source-separator">; </span><a href="https://web.archive.org/web/2026/x">archived copy, Nov. 21, 2026</a></span></span>' +
-			' <span class="source-saved">(<a href="/copies/govinfo/worcester.pdf">copy on this site, saved Nov. 21, 2026, PDF</a>)</span>';
+			' <span class="source-saved">(<a href="/copies/govinfo/worcester.pdf">Saved Resource, Nov. 21, 2026, PDF</a>)</span>';
 		expect(sourceDocuments(html)).toEqual({
-			copy: { href: '/copies/govinfo/worcester.pdf', label: 'copy on this site, saved Nov. 21, 2026, PDF' },
+			copy: { href: '/copies/govinfo/worcester.pdf', label: 'Saved Resource, Nov. 21, 2026, PDF' },
 			original: { href: 'https://www.law.cornell.edu/a?b=1&c=2', label: 'www.law.cornell.edu' },
 			archived: { href: 'https://web.archive.org/web/2026/x', label: 'archived copy, Nov. 21, 2026' }
 		});
