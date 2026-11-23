@@ -721,6 +721,47 @@ jurisdiction_agreements:
   verification: read-in-full
   locator: Findings and deputization provisions
   note: 'The source reads: “agrees to deputize qualified Yurok Tribe Department of Public Safety Officers who”. The copy is undated. The posted copy is a sample in a federal resource library; current status is not confirmed.'
+court_practice:
+- kind: legal-aid
+  title: Legal Access Center – Yurok Tribal Court
+  court: Yurok Tribal Court
+  link: https://yuroktribalcourt.org/programs/legal-access-center/
+  detail: The Yurok Legal Access Center helps Yurok Tribal members and families with civil legal forms (custody, divorce, protection orders, evictions, name changes, guardianship) for the Yurok Tribal Court and some California Superior Court forms.
+  source: yurok-tribal-court-legal-access-center-yurok-tribal-court
+  confidence: high
+  verification: read-in-full
+  locator: Legal Access Center
+  note: 'The source reads: “The Yurok Legal Access Center (YLAC) provides support to Yurok Tribal members and their families”. Tribal court program.'
+- kind: forms
+  title: Court Forms
+  court: Yurok Tribal Court
+  link: https://yuroktribalcourt.org/forms/
+  detail: Court Forms page; a Self-Help Guides page is also linked.
+  source: yurok-tribal-court-establishing-a-justice-system-that-respec
+  confidence: high
+  verification: title-only
+  locator: Home page links
+  note: Pages not opened.
+- kind: forms
+  title: Self-Help Guides
+  court: Yurok Tribal Court
+  link: https://yuroktribalcourt.org/self-help-guides/
+  detail: Self-Help Guides page linked from home page.
+  source: yurok-tribal-court-establishing-a-justice-system-that-respec
+  confidence: high
+  verification: title-only
+  locator: Home page links
+  note: Page not opened.
+- kind: bar-admission
+  title: Bar Members
+  court: Yurok Tribal Court
+  link: https://yuroktribalcourt.org/?page_id=27
+  detail: Bar Members page linked from home page.
+  source: yurok-tribal-court-establishing-a-justice-system-that-respec
+  confidence: medium
+  verification: title-only
+  locator: Home page links
+  note: Page not opened.
 nearby_state_courts:
 - state: CA
   county: Humboldt County

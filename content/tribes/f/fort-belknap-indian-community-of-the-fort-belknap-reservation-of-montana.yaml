@@ -703,6 +703,16 @@ jurisdiction_agreements:
   verification: bulk-import
   locator: Table "State and Tribal Tax Agreements"
   note: 'The source reads: “Fort Belknap Tribe Alcoholic Beverages Tax Agreement”. Listed on the department''s current publication page; signing dates are in the linked PDFs, which were not opened.'
+court_practice:
+- kind: forms
+  title: Forms/Documents
+  court: Fort Belknap Courts
+  link: https://ftbelknap.org/forms%2Fdocuments
+  detail: Forms/Documents page linked from Courts page; Courts page offers a Motion Form and a Power of Attorney form.
+  source: fort-belknap-indian-community-courts
+  confidence: high
+  verification: read-in-full
+  locator: Courts page
 nearby_state_courts:
 - state: MT
   county: Blaine County

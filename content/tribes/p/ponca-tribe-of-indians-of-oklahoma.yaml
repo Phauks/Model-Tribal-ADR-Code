@@ -616,6 +616,47 @@ jurisdiction_agreements:
   verification: inferred
   locator: Section I.L, Oklahoma (two-column list of 34 tribes)
   note: 'The source reads: “Ponca Nation”. The report says most of the 34 agreements "expired on June 30, 2013" and that 16 new agreements had been executed by early 2014; it does not say which. Status is therefore uncertain. The name in the list is matched to the roster by name and state. Report date is March 2014, so current status needs confirming. Most Oklahoma agreements in the survey lapsed on June 30, 2013, and some were renewed; the survey does not settle which, so the status is left unknown.'
+court_practice:
+- kind: filing-fees
+  title: Tribal District Court (Fees)
+  court: Ponca Tribal District Court
+  link: https://www.ponca-nsn.gov/tribal-district-court.html
+  detail: 'Filing fees: petition $100, motion $50, appeal $150, marriage license $50; service fees include certified mail $25.'
+  source: ponca-tribe-of-indians-of-oklahoma-tribal-district-court
+  confidence: high
+  verification: read-in-full
+  locator: Fees
+  note: 'The source reads: “FILING FEES”.'
+- kind: forms
+  title: Forms
+  court: Ponca Tribal District Court
+  link: https://www.ponca-nsn.gov/forms.html
+  detail: Forms page linked from the Tribal District Court page; the court page says forms may be retrieved from the Court.
+  source: ponca-tribe-of-indians-of-oklahoma-tribal-district-court
+  confidence: high
+  verification: read-in-full
+  locator: Tribal District Court page
+  note: 'The source reads: “Forms may be retrieved from the Court.”.'
+- kind: public-defender
+  title: Tribal District Court (Public Defender and Conflict Defender)
+  court: Ponca Tribal District Court
+  link: https://www.ponca-nsn.gov/tribal-district-court.html
+  detail: Page lists a Public Defender and a Conflict Defender (names omitted here); no eligibility information.
+  source: ponca-tribe-of-indians-of-oklahoma-tribal-district-court
+  confidence: high
+  verification: read-in-full
+  locator: Tribal District Court page
+  note: 'The source reads: “Public Defender”.'
+- kind: bar-admission
+  title: Tribal District Court (Bar Association)
+  court: Ponca Tribal District Court
+  link: https://www.ponca-nsn.gov/tribal-district-court.html
+  detail: Page has a Bar Association heading; admission procedure not read in this pass.
+  source: ponca-tribe-of-indians-of-oklahoma-tribal-district-court
+  confidence: low
+  verification: inferred
+  locator: Tribal District Court page
+  note: 'The source reads: “BAR ASSOCIATION”. Heading only seen; details not confirmed.'
 nearby_state_courts:
 - state: OK
   county: Noble County

@@ -134,6 +134,12 @@ The nation page now lists the court cases in the project's sources whose source 
 
 The facts are medium confidence: the court for a county is inferred from the state's court structure, not read from a list that names the county, and in several states one district court sits for several counties. Seven state pages (Kansas, Utah, Minnesota, Nevada, Oklahoma, New Mexico and New York) were behind a bot check, so their address and title come from a search listing and their facts are marked title-only. Nations with no Census area, and Alaska Native villages whose statistical area was not matched to a profile, have no entry.
 
+## Using the courts
+
+`scripts/jurisdiction/build_court_practice.py` recorded 163 pages and documents for 58 nations in the new `court_practice` list (`research/raw/2026-11-23/court-practice.json`): 38 form lists, 37 admission-to-practice pages, 35 court rules, 29 fee schedules, 16 public defender pages and 8 legal aid pages. A Sonnet agent read the court sites of the first 109 nations in the court list, about 135 page fetches, following up to three pages per court; the remaining nations were not reached and have no search log for this topic yet. A page that already had a source record is cited under that record's key.
+
+Thirty-two courts gave nothing: the Navajo court site is a frame shell whose frames did not load, and the Blackfeet, Sac and Fox, Puyallup, Red Lake, Shoshone-Bannock, Southern Ute, Confederated Salish and Kootenai, Kenaitze, Agua Caliente, Orutsararmiut, Poarch Creek and Wyandotte sites were blocked or dead. Each is in the court-practice search log. Legal aid is thin: no Legal Services Corporation list ties its Native American grantees to nations, so the legal aid facts come only from nations' own pages. Many facts are links seen in a court's menu or document list whose target was not opened; those are marked title-only. The Wind River Tribal Court serves both the Eastern Shoshone and Northern Arapaho, so its facts are on both profiles.
+
 ## Output
 
 Batches in `research/jurisdiction/`; the Violence Against Women Act research is in `research/raw/2026-11-23/violence-against-women-act-jurisdiction.json`.

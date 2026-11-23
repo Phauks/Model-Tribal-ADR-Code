@@ -736,6 +736,37 @@ jurisdiction_agreements:
   verification: read-in-full
   locator: Section I.L, Oklahoma (two-column list of 34 tribes)
   note: 'The source reads: “Cheyenne Arapaho Tribe”. The report says most of the 34 agreements "expired on June 30, 2013" and that 16 new agreements had been executed by early 2014; it does not say which. Status is therefore uncertain. The name in the list is matched to the roster by name and state. Report date is March 2014, so current status needs confirming. Most Oklahoma agreements in the survey lapsed on June 30, 2013, and some were renewed; the survey does not settle which, so the status is left unknown.'
+court_practice:
+- kind: public-defender
+  title: 'Judicial Branch (contact information: Public Defender''s Office)'
+  court: Cheyenne and Arapaho Tribes Judicial Branch
+  link: https://www.cheyenneandarapaho-nsn.gov/government/judicial
+  detail: The Judicial Branch contact list includes a Public Defender's Office with an email address; no description of eligibility.
+  source: cheyenne-and-arapaho-tribes-judicial-branch
+  confidence: high
+  verification: read-in-full
+  locator: Contact information
+  note: 'The source reads: “Public Defender''s Office”.'
+- kind: legal-aid
+  title: 'Judicial Branch (contact information: Legal Aid Services)'
+  court: Cheyenne and Arapaho Tribes Judicial Branch
+  link: https://www.cheyenneandarapaho-nsn.gov/government/judicial
+  detail: Contact list names Legal Aid Services (tribal office) and Oklahoma Indian Legal Services, with phone numbers; no eligibility details.
+  source: cheyenne-and-arapaho-tribes-judicial-branch
+  confidence: high
+  verification: read-in-full
+  locator: Contact information
+  note: 'The source reads: “Legal Aid Services”. Oklahoma Indian Legal Services is an LSC-funded program; page names it as spelled "Oklahoman Indian Legal Services".'
+- kind: forms
+  title: Judicial Branch (Forms and files)
+  court: Cheyenne and Arapaho Tribes Judicial Branch
+  link: https://www.cheyenneandarapaho-nsn.gov/government/judicial
+  detail: Forms and files table includes Appearance and Consent to Guardianship, Application for Citation for Contempt, Change of Name Petition, Foreign Judgements, Garnishment Forms, Code of Ethics.
+  source: cheyenne-and-arapaho-tribes-judicial-branch
+  confidence: high
+  verification: read-in-full
+  locator: Forms and files
+  note: 'The source reads: “Forms and files”.'
 nearby_state_courts:
 - state: OK
   county: Roger Mills County

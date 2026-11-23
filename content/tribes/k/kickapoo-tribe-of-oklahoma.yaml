@@ -577,6 +577,25 @@ jurisdiction_agreements:
   verification: inferred
   locator: Section I.L, Oklahoma (two-column list of 34 tribes)
   note: 'The source reads: “Kickapoo Tribe”. The report says most of the 34 agreements "expired on June 30, 2013" and that 16 new agreements had been executed by early 2014; it does not say which. Status is therefore uncertain. The name in the list is matched to the roster by name and state. Report date is March 2014, so current status needs confirming. Most Oklahoma agreements in the survey lapsed on June 30, 2013, and some were renewed; the survey does not settle which, so the status is left unknown.'
+court_practice:
+- kind: court-rules
+  title: Rules of Civil Procedure
+  court: Kickapoo Tribe of Oklahoma Tribal Court
+  link: https://www.kickapootribeofoklahoma.com/s/Rules-of-Civil-Procedure.pdf
+  detail: Rules of Civil Procedure PDF, listed under Tribal Court on the Forms page; also Rules of Evidence, Criminal Procedures, Appellate Procedure and Courtroom Rules.
+  source: kickapoo-tribe-of-oklahoma-forms-kickapoo-tribe-of-oklahoma
+  confidence: high
+  verification: read-in-full
+  locator: Forms page, Tribal Court list
+- kind: filing-fees
+  title: Uniform Fee Schedule
+  court: Kickapoo Tribe of Oklahoma Tribal Court
+  link: https://www.kickapootribeofoklahoma.com/s/Kickapoo_Tribal_Court_Uniform_Fee_Schedule_Updated.pdf
+  detail: Uniform fee schedule; the page also lists "Court Fees" (2024 Uniform Fee Schedule) and a Bail Bond Fee Schedule.
+  source: kickapoo-tribe-of-oklahoma-forms-kickapoo-tribe-of-oklahoma
+  confidence: high
+  verification: read-in-full
+  locator: Forms page, Tribal Court list
 nearby_state_courts:
 - state: OK
   county: Lincoln County

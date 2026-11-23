@@ -663,6 +663,27 @@ jurisdiction_agreements:
   verification: bulk-import
   locator: Table of tribal governments with tax agreements
   note: 'The source reads: “White Earth Mahnomen”. The page says the agreements "do not have expiration dates" and either party can seek to amend or cancel them. The table lists the short name "White Earth", matched to the roster by name and state.'
+court_practice:
+- kind: legal-aid
+  title: Judicial Services (Anishinabe Legal Services)
+  court: White Earth Nation Judicial Services
+  link: https://www.whiteearth.com/divisions/judicial-services
+  detail: The page states Anishinabe Legal Services is a Legal Services Corporation grantee providing free legal help to low-income people on or near the Leech Lake, Red Lake and White Earth Reservations in northwestern Minnesota.
+  source: white-earth-nation-judicial-services
+  confidence: high
+  verification: read-in-full
+  locator: Anishinabe Legal Services
+  note: 'The source reads: “Anishinabe Legal Services is a Legal Services Corporation (LSC) grantee”. Stated by the nation''s own page; also relevant to Leech Lake and Red Lake.'
+- kind: forms
+  title: Judicial Services (Interactive Court Forms)
+  court: White Earth Nation Judicial Services
+  link: https://www.whiteearth.com/divisions/judicial-services
+  detail: Page offers interactive court forms through LawHelp Interactive (a Custody Petition) and sample motions to dismiss.
+  source: white-earth-nation-judicial-services
+  confidence: high
+  verification: read-in-full
+  locator: Interactive Court Forms
+  note: 'The source reads: “Interactive Court Forms”.'
 nearby_state_courts:
 - state: MN
   county: Mahnomen County

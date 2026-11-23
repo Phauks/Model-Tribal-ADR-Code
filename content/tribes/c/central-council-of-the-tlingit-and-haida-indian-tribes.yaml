@@ -653,6 +653,44 @@ jurisdiction_agreements:
   verification: read-in-full
   locator: Section I.A, Alaska
   note: 'The source reads: “Central Council of the Tlingit & Haida Indian Tribes of Alaska is a federally recognized”. Part of the eleven identical Alaska form agreements. The state agency is inferred. Date taken from the report: in effect since October 1, 2000. Report date is March 2014, so current status needs confirming.'
+court_practice:
+- kind: bar-admission
+  title: Tribal Court Bar Admission Application
+  court: Tlingit & Haida Tribal Court
+  link: https://tlingitandhaida.gov/wp-content/uploads/TandH-Bar-Admission-Application_2026.pdf
+  detail: Bar admission application (file name indicates 2026) linked from the Tribal Court page Forms section.
+  source: central-council-of-the-tlingit-haida-tribal-court
+  confidence: high
+  verification: read-in-full
+  locator: Notices & Forms
+- kind: forms
+  title: Tribal Court (Forms)
+  court: Tlingit & Haida Tribal Court
+  link: https://tlingitandhaida.gov/governance/tribal-court/
+  detail: Forms section links child custody, divorce, guardianship, protective order and parenting plan petitions, marriage license application, certificate of service, motion & affidavit, response to motion, copy request and others.
+  source: central-council-of-the-tlingit-haida-tribal-court
+  confidence: high
+  verification: read-in-full
+  locator: Notices & Forms
+  note: 'The source reads: “Browse All Forms”.'
+- kind: filing-fees
+  title: Request to Waive Court Fees
+  court: Tlingit & Haida Tribal Court
+  link: https://tlingitandhaida.gov/wp-content/uploads/RequesttoWaiveCourtFees.pdf
+  detail: A form to request waiver of court fees; no fee amounts found on the page.
+  source: central-council-of-the-tlingit-haida-tribal-court
+  confidence: medium
+  verification: read-in-full
+  locator: Notices & Forms
+- kind: court-rules
+  title: Procedures for Appealing to Tribal Supreme Court
+  court: Tlingit & Haida Tribal Court
+  link: https://tlingitandhaida.gov/wp-content/uploads/ProceduresforAppealingtoTribalSupremeCourt.pdf
+  detail: Appeal procedure document linked from the Tribal Court page.
+  source: central-council-of-the-tlingit-haida-tribal-court
+  confidence: high
+  verification: read-in-full
+  locator: Notices & Forms
 related_entities:
 - name: Sealaska Corp.
   relation: alaska-native-claims-settlement-act-regional-corporation

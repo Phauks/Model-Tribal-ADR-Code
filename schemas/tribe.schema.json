@@ -686,6 +686,23 @@
         "unevaluatedProperties": false
       }
     },
+    "court_practice": {
+      "type": "array",
+      "description": "What a person needs to use the nation's courts: admission to practice before them, court rules, filing fees, court forms, a public defender and legal aid. One fact per item per source, read from the court's or the nation's own pages.",
+      "items": {
+        "type": "object",
+        "$ref": "#/$defs/citedFact",
+        "required": ["kind", "title"],
+        "properties": {
+          "kind": { "type": "string", "enum": ["bar-admission", "court-rules", "filing-fees", "forms", "public-defender", "legal-aid"] },
+          "title": { "type": "string", "description": "The page or document, as the source names it." },
+          "court": { "type": "string", "description": "The court the item belongs to, as the source names it." },
+          "link": { "type": "string", "format": "uri" },
+          "detail": { "type": "string", "description": "What the page or document says, in a sentence or two, such as the fee amounts or how to apply." }
+        },
+        "unevaluatedProperties": false
+      }
+    },
     "nearby_state_courts": {
       "type": "array",
       "description": "The state trial court of general jurisdiction for each county (or parish, borough or census area) that the nation's Census land or statistical area lies in, so a reader can see which state court sits alongside the tribal court. One fact per county; the county comes from the Census Bureau's area-to-county relationship file, named in the note.",
