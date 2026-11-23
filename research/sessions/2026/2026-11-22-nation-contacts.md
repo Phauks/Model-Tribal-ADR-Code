@@ -37,7 +37,7 @@ Method: a contact page counts only on the nation's own website. Sites shared wit
 
 Second round (same day, after the first pull request): the 247 nations the search limit had cut off were searched, and 16 more nations gained a website, with 11 contact pages, 9 general emails, 10 phone numbers and 17 addresses. In all, the session added 323 contact pages, 91 general emails, 39 websites, 27 phone numbers and 39 addresses; 482 profiles now have an email or a contact page and 646 a phone, email or contact page. The search logs hold 954 records: 360 found, 549 none found, 45 partly searched.
 
-Records that may name the same group, for the lead author to decide whether to merge them. The site found for the first record of each pair is already the second's website, so it was not added again:
+Records that may name the same group, for the lead author to decide whether to merge them. On Nov. 22, 2026 the lead author chose to merge seven of the nine pairs (all but Pokanoket and Eastern Pequot, whose records may name different groups); scripts/tribes/merge_duplicate_records.py merged each into the second-named record of its pair, except Mattaponi, kept as mattaponi-indian-tribe. The site found for the first record of each pair is already the second's website, so it was not added again:
 
 - meherrin-tribe and meherrin-tribe-of-north-carolina;
 - mobile-washington-county-band-of-choctaw-indians-of-south-alabama and mowa-band-of-choctaw-indians;
