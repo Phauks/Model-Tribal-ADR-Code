@@ -9,7 +9,6 @@ export const load: PageServerLoad = () => {
 	return {
 		firstRows: rows.slice(0, recoursePageSize),
 		total: rows.length,
-		nationCount: new Set(rows.map((row) => row.nation.id)).size,
-		checkedCount: rows.filter((row) => row.checked).length
+		nationCount: new Set(rows.map((row) => row.nation.id)).size
 	};
 };
