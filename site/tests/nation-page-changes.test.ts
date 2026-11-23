@@ -140,14 +140,14 @@ describe('changes in the database', () => {
 		expect(await claimOf(database, navajo)).toBeUndefined();
 		await addPlace(
 			database,
-			{ nationIdentifier: navajo, email: 'office@navajo.example', displayName: 'Office', level: 'steward', parts: null, office: null, expiresAt: termEnd(365), basis: 'Letter', addedByProject: true },
+			{ nationIdentifier: navajo, email: 'office@navajo.example', displayName: 'Office', level: 'steward', parts: null, office: 'Office of the President', expiresAt: termEnd(365), basis: 'Letter', addedByProject: true },
 			lead
 		);
-		expect(await claimOf(database, navajo)).toMatchObject({ claimedSince: expect.any(String) });
+		expect(await claimOf(database, navajo)).toMatchObject({ claimedSince: expect.any(String), offices: ['Office of the President'] });
 		expect(await claimedNations(database)).toEqual(new Set([navajo]));
 		const overlay = pageOverlay(navajo, {}, await claimOf(database, navajo))!;
-		expect(overlay.slots.top).toContain('Claimed by the nation');
-		expect(overlay.slots.top).toContain('[data-build-status]{display:none!important}');
+		expect(overlay.slots.status).toContain('Claimed by the nation');
+		expect(overlay.slots.status).toContain('[data-build-status]{display:none!important}');
 	});
 
 	it('shows the team reports about its page without who sent them, and records its answer', async () => {

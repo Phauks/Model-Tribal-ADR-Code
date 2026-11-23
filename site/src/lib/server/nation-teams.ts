@@ -619,7 +619,7 @@ export async function claimOf(
 	database: D1Database,
 	nationIdentifier: string,
 	time = now()
-): Promise<{ claimedSince: string } | undefined> {
+): Promise<{ claimedSince: string; offices: string[] } | undefined> {
 	const row = await database
 		.prepare(
 			`SELECT MIN(granted_at) AS claimedSince FROM nation_team_members
@@ -627,7 +627,18 @@ export async function claimOf(
 		)
 		.bind(nationIdentifier, time)
 		.first<{ claimedSince: string | null }>();
-	return row?.claimedSince ? { claimedSince: row.claimedSince } : undefined;
+	if (!row?.claimedSince) return undefined;
+	// The offices the team's people hold, never their names: the status badge's
+	// panel says who keeps the page by office (Trevor, Nov. 23, 2026).
+	const offices = await database
+		.prepare(
+			`SELECT DISTINCT office FROM nation_team_members
+			 WHERE nation_identifier = ? AND ended_at IS NULL AND expires_at > ? AND office IS NOT NULL AND TRIM(office) <> ''
+			 ORDER BY office`
+		)
+		.bind(nationIdentifier, time)
+		.all<{ office: string }>();
+	return { claimedSince: row.claimedSince, offices: offices.results.map((office) => office.office.trim()) };
 }
 
 /** Every nation whose page is claimed now (see claimOf). */
