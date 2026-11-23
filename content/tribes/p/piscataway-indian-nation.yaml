@@ -28,6 +28,23 @@ states:
   confidence: high
   verification: inferred
   as_of: '2025'
+contacts:
+- kind: website
+  value: https://piscatawayindiannation.org/
+  label: Official website
+  source: piscatawayindiannation-home-page
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: The nation's own website, found by web search and opened to confirm it is the nation's.
+- kind: email-general
+  value: piscatawayindiannation@gmail.com
+  label: General office email shown on the nation's website
+  source: piscatawayindiannation-home-page
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  note: General office address, shown as text on the page; the site was found by web search.
 review:
   status: drafted-from-public-sources
   last_verified: '2026-11-21'

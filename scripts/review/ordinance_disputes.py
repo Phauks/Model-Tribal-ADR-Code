@@ -593,6 +593,29 @@ def text_path(work, capture):
     return path.with_suffix(".txt") if path.suffix.lower() == ".pdf" else path.with_name(path.name + ".txt")
 
 
+def write_csv(out, items):
+    """Write the review spreadsheet, one row per item."""
+    import csv
+    columns = ["id", "nations", "list_nation_column", "document", "document_kind", "listed_date", "final_link",
+               "section", "pages", "kind", "current_kind", "who_hears", "time_limits", "review_or_appeal",
+               "mediation_arbitration_court", "steps_summary", "final_decision_maker", "refers_to",
+               "framed_as_dispute_resolution", "confidence", "quote_check", "ocr_text", "second_look_verdict",
+               "second_look_kind", "second_look_reason", "flags", "lead_author_decision"]
+    with out.with_suffix(".csv").open("w", encoding="utf-8", newline="") as handle:
+        writer = csv.writer(handle, lineterminator="\n")
+        writer.writerow(columns)
+        for i in items:
+            writer.writerow([i["id"], " ".join(i["nations"]), i["list_nation_column"], i["document"],
+                             i["document_kind"], i["listed_date"], i["final_link"] or i["link"],
+                             i["locator"].get("section", ""), i["locator"].get("pages", ""), i["kind"],
+                             i["current_kind"], i["steps"].get("who_hears", ""), i["steps"].get("time_limits", ""),
+                             i["steps"].get("review_or_appeal", ""), i["steps"].get("mediation_arbitration_court", ""),
+                             i["steps_summary"], i["final_decision_maker"], i["refers_to"],
+                             i["framed_as_dispute_resolution"], i["confidence"], i["quote_check"], i["ocr_text"],
+                             i["second_look"]["verdict"], i["second_look"]["kind"], i["second_look"]["reason"],
+                             "; ".join(i["flags"]), i.get("lead_author_decision") or ""])
+
+
 def merge(args):
     import csv
     import yaml
@@ -706,24 +729,7 @@ def merge(args):
         "items": items, "documents_without_items": without,
     }
     out.with_suffix(".json").write_text(json.dumps(payload, ensure_ascii=False, indent=1) + "\n", encoding="utf-8")
-    columns = ["id", "nations", "list_nation_column", "document", "document_kind", "listed_date", "final_link",
-               "section", "pages", "kind", "current_kind", "who_hears", "time_limits", "review_or_appeal",
-               "mediation_arbitration_court", "steps_summary", "final_decision_maker", "refers_to",
-               "framed_as_dispute_resolution", "confidence", "quote_check", "ocr_text", "second_look_verdict",
-               "second_look_kind", "second_look_reason", "flags", "lead_author_decision"]
-    with out.with_suffix(".csv").open("w", encoding="utf-8", newline="") as handle:
-        writer = csv.writer(handle, lineterminator="\n")
-        writer.writerow(columns)
-        for i in items:
-            writer.writerow([i["id"], " ".join(i["nations"]), i["list_nation_column"], i["document"],
-                             i["document_kind"], i["listed_date"], i["final_link"] or i["link"],
-                             i["locator"].get("section", ""), i["locator"].get("pages", ""), i["kind"],
-                             i["current_kind"], i["steps"].get("who_hears", ""), i["steps"].get("time_limits", ""),
-                             i["steps"].get("review_or_appeal", ""), i["steps"].get("mediation_arbitration_court", ""),
-                             i["steps_summary"], i["final_decision_maker"], i["refers_to"],
-                             i["framed_as_dispute_resolution"], i["confidence"], i["quote_check"], i["ocr_text"],
-                             i["second_look"]["verdict"], i["second_look"]["kind"], i["second_look"]["reason"],
-                             "; ".join(i["flags"]), ""])
+    write_csv(out, items)
     try:
         PRIVATE_COPY.parent.mkdir(parents=True, exist_ok=True)
         PRIVATE_COPY.write_text(json.dumps(private, ensure_ascii=False, indent=1) + "\n", encoding="utf-8")
@@ -836,6 +842,102 @@ def merge(args):
     print(json.dumps(counts, indent=1))
 
 
+GRAB_DATE = "2026-11-23"
+GRAB_DECISION = ("keep (lead author, 2026-11-23: grab now, classify later; "
+                 "filter by the flags column before use)")
+BARE_POWER_FLAG = ("no-steps: names a body's power or duty to hear complaints or disputes, or points elsewhere, "
+                   "but sets out no steps; tagged by wording on 2026-11-23, so it may miss or over-include a few")
+COMPACT_FLAG = ("compact-terms: Tribal-State compact terms printed in the ordinance, set aside by the first "
+                "reader and added on 2026-11-23 under the lead author's grab-now rule; not read further")
+BARE_POWER_WORDS = re.compile(r"no (procedure|steps?|further steps?|process)\b|power only|"
+                              r"power or duty with no steps|no steps\b", re.I)
+
+
+def grab(args):
+    """Apply the lead author's answer of Nov. 23, 2026 ("just grab it and we can deal with the info later").
+
+    Adds the Tribal-State compact passages that first readers set aside as items flagged ``compact-terms``,
+    flags items that set out no steps (mostly bare commission powers) ``no-steps``, and marks every item keep, so the lead author can filter later.
+    Run after ``merge``; it reads the review JSON and the batch and verdict files in the work folder.
+    """
+    import collections
+    work = pathlib.Path(args.work)
+    out = ROOT / REVIEW_BASE
+    payload = json.loads(out.with_suffix(".json").read_text(encoding="utf-8"))
+    items = payload["items"]
+    by_document = {}
+    for entry in items + payload["documents_without_items"]:
+        by_document.setdefault(entry["document"], entry)
+    sections = {}
+    for path in sorted((work / "batches").glob("batch-*.json")):
+        for document in json.loads(path.read_text(encoding="utf-8"))["documents"]:
+            for section in document["sections"]:
+                sections[section["ref"]] = section
+    known = {ref for i in items for ref in i["refs"]}
+    added = 0
+    for path in sorted((work / "verdicts").glob("batch-*.json")):
+        for verdict in json.loads(path.read_text(encoding="utf-8")):
+            numbered = 0
+            for skipped in verdict.get("skipped", []):
+                why = skipped.get("why") or skipped.get("reason") or ""
+                ref = skipped.get("ref")
+                if "compact" not in why.lower() or not ref or ref in known:
+                    continue
+                numbered += 1
+                base = by_document[verdict["document"]]
+                section = sections.get(ref, {})
+                pages = section.get("pages") or []
+                items.append({
+                    "id": f"{verdict['document']}#c{numbered}", "document": base["document"],
+                    "nations": base["nations"], "profiles": base["profiles"],
+                    "list_nation_column": base["list_nation_column"], "document_kind": base["document_kind"],
+                    "listed_date": base["listed_date"], "link": base["link"], "final_link": base["final_link"],
+                    "source": base["source"], "batch": base["batch"],
+                    "locator": {"section": section.get("heading") or "", "pages": ", ".join(
+                        str(p) for p in sorted(set(pages)))},
+                    "kind": "other", "current_kind": "other",
+                    "steps": {"who_hears": "not read", "time_limits": "not read", "review_or_appeal": "not read",
+                              "mediation_arbitration_court": "not read"},
+                    "steps_summary": "Tribal-State compact terms printed in the ordinance. First reader's note: "
+                                     + why.rstrip(".") + ".",
+                    "final_decision_maker": "not read", "refers_to": "Tribal-State compact",
+                    "framed_as_dispute_resolution": False, "confidence": "low", "refs": [ref],
+                    "quote_check": "no snippet (added from the first reader's skip note)", "snippet_words": 0,
+                    "ocr_text": False, "garble_score": None, "verification": "title-only",
+                    "first_reader": FIRST_READER,
+                    "second_look": {"verdict": "not-queued", "kind": "other",
+                                    "reason": "added after review under the grab-now rule", "reader": ""},
+                    "flags": [COMPACT_FLAG], "as_of": GRAB_DATE,
+                })
+                known.add(ref)
+                added += 1
+    bare = 0
+    for item in items:
+        text = " ".join([item["steps_summary"], item["steps"].get("who_hears", ""),
+                         item["second_look"].get("reason") or ""])
+        if COMPACT_FLAG not in item["flags"] and BARE_POWER_WORDS.search(text) and BARE_POWER_FLAG not in item["flags"]:
+            item["flags"].append(BARE_POWER_FLAG)
+            bare += 1
+        item["lead_author_decision"] = GRAB_DECISION
+    # Keep the merge order; each added compact item follows its document's other items.
+    order = {}
+    for position, item in enumerate(items):
+        if COMPACT_FLAG not in item["flags"]:
+            order[item["document"]] = position
+    items.sort(key=lambda i: (order.get(i["document"], len(items)), COMPACT_FLAG in i["flags"], i["document"]))
+    out.with_suffix(".json").write_text(json.dumps(payload, ensure_ascii=False, indent=1) + "\n", encoding="utf-8")
+    write_csv(out, items)
+    counts_path = out.with_name(out.name + "-counts.json")
+    counts = json.loads(counts_path.read_text(encoding="utf-8"))
+    counts["grab_2026_11_23"] = {
+        "items_after": len(items), "compact_terms_added": added, "bare_power_flagged": bare,
+        "flags": dict(collections.Counter(f.split(":")[0] for i in items for f in i["flags"])),
+        "decision": GRAB_DECISION,
+    }
+    counts_path.write_text(json.dumps(counts, ensure_ascii=False, indent=1) + "\n", encoding="utf-8")
+    print(json.dumps(counts["grab_2026_11_23"], indent=1))
+
+
 def main():
     parser = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
     sub = parser.add_subparsers(dest="command", required=True)
@@ -844,11 +946,10 @@ def main():
     command.add_argument("--captures", default=str(DEFAULT_CAPTURES))
     command = sub.add_parser("merge")
     command.add_argument("--work", required=True)
+    command = sub.add_parser("grab")
+    command.add_argument("--work", required=True)
     args = parser.parse_args()
-    if args.command == "batches":
-        batches(args)
-    else:
-        merge(args)
+    {"batches": batches, "merge": merge, "grab": grab}[args.command](args)
 
 
 if __name__ == "__main__":
