@@ -16,6 +16,13 @@ names:
     confidence: high
     verification: bulk-import
     as_of: '2026'
+  - name: Meherrin Tribe
+    source: ofa-petitions-in-process
+    confidence: high
+    verification: bulk-import
+    as_of: '2026-11-21'
+    locator: Current Petitions Status table, row 119B; detail page https://www.bia.gov/as-ia/ofa/petitions-in-process/meherrin-tribe
+    note: Name of a second record for the same group (id meherrin-tribe), merged into this one on Nov. 23, 2026; the match is by name and state, not a source that says the two are the same.
   self_designation:
   - name: Kauwets’a·ka
     language_tag: und
@@ -56,6 +63,18 @@ recognition:
   confidence: high
   verification: bulk-import
   as_of: '2026'
+- type: petitioning
+  legal_basis: 25 C.F.R. Part 83
+  petition_number: 119B
+  petition_stage: Awaiting Supplement
+  source: ofa-petitions-in-process
+  confidence: high
+  verification: bulk-import
+  as_of: '2026-11-21'
+  locator: Current Petitions Status table, row 119B; detail page https://www.bia.gov/as-ia/ofa/petitions-in-process/meherrin-tribe
+  note: 'Federal Register history: Proposed Finding Against Acknowledgment of the Meherrin Indian Tribe,
+    79 FR 3859 (2014-01-23). Office of Federal Acknowledgment list entry #119B (2013 edition): Meherrin
+    Indian Tribe - Letter of Intent to Petition 06/27/1995.'
 states:
 - state: NC
   presence: other
@@ -71,6 +90,14 @@ states:
   confidence: high
   verification: inferred
   as_of: '2026'
+- state: NC
+  presence: other
+  source: ofa-petitions-in-process
+  confidence: high
+  verification: bulk-import
+  as_of: '2026-11-21'
+  note: State under which the Office of Federal Acknowledgment lists the petitioner (petitioner location);
+    not a statement about land or offices.
 census_areas:
 - geographic_identifier: '9825'
   name: Meherrin SDTSA
