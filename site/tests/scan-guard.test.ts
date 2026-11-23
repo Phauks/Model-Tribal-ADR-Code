@@ -148,6 +148,10 @@ const bucketCalls: Record<string, BucketUse> = {
     kind: "project-file",
     why: "Copies of government documents and constitutions the project saved from their official sources.",
   },
+  "src/lib/server/document-zips.ts entries get(key)": {
+    kind: "project-file",
+    why: "Copies of government documents and constitutions the project saved from their official sources, put into a ZIP download.",
+  },
   "src/routes/nations/[id]/image/+server.ts GET get(image.key)": {
     kind: "project-file",
     why: "Nation seals and images the project collected from official sources.",
@@ -170,6 +174,10 @@ const fileIntakes: Record<string, string> = {
     "Files the team attaches to outgoing mail. queueMessage stores them with storeSentFile, and sendMessage waits until they pass.",
   "src/routes/uploads/pieces/[reference]/[number]/+server.ts PUT Request.arrayBuffer":
     "Upload pieces, written into the upload’s multipart object; finishUpload puts the file in line.",
+  "src/lib/sha256.ts hashFile Blob.arrayBuffer":
+    "Verify a file: the browser hashes a file the reader chose on their own computer. The bytes never leave the browser.",
+  "src/lib/sha256.ts hashFile Blob.stream":
+    "Verify a file, for files too large to hash in one go. The bytes never leave the browser.",
 };
 
 interface Found {
