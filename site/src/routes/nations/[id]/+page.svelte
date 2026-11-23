@@ -151,13 +151,13 @@
 						marks={opinions.citations}
 					/>
 					{#if opinions.disputeResolutionCount > 0}
-						{opinions.disputeResolutionCount === opinions.count ? 'All of them' : opinions.disputeResolutionCount.toLocaleString('en-US')} mention peacemaking, mediation, arbitration or another way of settling a dispute outside a trial; they are listed first.
+						{opinions.disputeResolutionCount === opinions.count ? 'All of them' : `Of these, ${opinions.disputeResolutionCount.toLocaleString('en-US')}`} mention peacemaking, mediation, arbitration or another way of settling a dispute outside a trial; they are listed first.
 					{/if}
 				</p>
 				<ul class="opinions">
 					{#each opinions.shown as opinion (opinion.path)}
 						<li>
-							<a href={opinion.path}><i>{opinion.name}</i></a>, {opinion.citation} ({opinion.court} {opinion.year}){#if opinion.topics.length > 0}<span class="small muted"> Mentions {opinion.topics.join(', ')}.</span>{/if}
+							<a href={opinion.path}><i>{opinion.name}</i></a>, {opinion.citation} ({opinion.court} {opinion.year}){#if opinion.topics.length > 0}<span class="small muted mentions">Mentions {opinion.topics.join(', ')}.</span>{/if}
 						</li>
 					{/each}
 				</ul>
@@ -276,6 +276,9 @@
 <style>
 	.opinions li + li {
 		margin-top: var(--space-2);
+	}
+	.mentions {
+		display: block;
 	}
 	.review-status {
 		margin: var(--space-3) 0 var(--space-5);

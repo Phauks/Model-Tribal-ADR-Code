@@ -22,7 +22,7 @@
 				name: { text: opinion.name, href: opinion.path },
 				court: { text: opinion.court },
 				decided: { text: readableDate(opinion.decided), sortValue: opinion.decided },
-				citation: { text: opinion.docket ? `${opinion.citation} (No. ${opinion.docket})` : opinion.citation },
+				citation: { text: opinion.docket ? `${opinion.citation} (${opinion.docket})` : opinion.citation },
 				topics: { text: opinion.topics.join(', ') },
 				removal: { text: 'Ask to remove', href: opinion.removal }
 			}
