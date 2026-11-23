@@ -21,7 +21,10 @@ citation:
       - 21
 original_link: https://nill.narf.org/documents/1884regulations.pdf
 retrieved: '2026-11-21'
-archives: []   # Wayback capture pending: the shared archive workflow fills this in
+archives:
+- service: wayback
+  link: https://web.archive.org/web/20260204060634/http://nill.narf.org/documents/1884regulations.pdf
+  captured: '2026-02-04'
 history:
   status: live
   last_checked: '2026-11-21'
