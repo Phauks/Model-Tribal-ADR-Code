@@ -397,6 +397,13 @@ interface ShadedViewRule {
 }
 
 const shadedViewRules: Record<ShadedMapView, ShadedViewRule> = {
+	recognition: {
+		has: (record) => {
+			const types = new Set((record.recognition ?? []).map((fact) => fact.type));
+			return { federal: types.has('federal'), state: types.has('state'), petitioning: types.has('petitioning'), other: types.has('territorial-law') || types.has('congressional-special-relationship') };
+		},
+		facts: (record) => (record.recognition ?? []).filter((fact) => fact.type !== 'unrecognized')
+	},
 	'courts-and-peacemaking': {
 		has: (record) => {
 			const courts = courtsOf(record);

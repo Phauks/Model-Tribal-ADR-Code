@@ -23,7 +23,7 @@ export interface MapViewEntry {
 }
 
 /** Groups in the order they are listed. */
-export const mapViewGroups = ['Where nations are', 'Courts and dispute resolution', 'Jurisdiction', 'Gaming', 'Federal administration'] as const;
+export const mapViewGroups = ['Where nations are', 'Recognition', 'Courts and dispute resolution', 'Jurisdiction', 'Gaming', 'Federal administration'] as const;
 
 export const mapViews: MapViewEntry[] = [
 	{
@@ -43,6 +43,14 @@ export const mapViews: MapViewEntry[] = [
 		description: 'Reservations, trust lands and statistical areas from the 2020 census',
 		keywords: ['reservation', 'trust land', 'rancheria', 'pueblo', 'census', 'boundaries', 'aiannh'],
 		nationPage: { key: 'lands', label: 'Land Areas', description: 'The census areas the nation’s entry names' }
+	},
+	{
+		key: 'recognition',
+		label: 'Recognition',
+		heading: 'recognition-heading',
+		group: 'Recognition',
+		description: 'Federal and state recognition, petitions for federal acknowledgment, and other statuses',
+		keywords: ['federally recognized', 'state recognized', 'acknowledgment', 'petition', 'office of federal acknowledgment', 'list act', 'status', 'territorial']
 	},
 	{
 		key: 'courts-and-peacemaking',

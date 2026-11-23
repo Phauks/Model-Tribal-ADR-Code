@@ -7,6 +7,7 @@
  */
 
 export type ShadedMapView =
+	| 'recognition'
 	| 'courts-and-peacemaking'
 	| 'public-law-280'
 	| 'violence-against-women-act'
@@ -16,6 +17,7 @@ export type ShadedMapView =
 	| 'indian-health-service';
 
 export const shadedMapViews: ShadedMapView[] = [
+	'recognition',
 	'courts-and-peacemaking',
 	'public-law-280',
 	'violence-against-women-act',
@@ -66,6 +68,16 @@ export const agreementCategories: ShadeCategory[] = [
 	{ key: 'child-welfare-agreement', label: 'Child welfare agreement', shade: 3 },
 	{ key: 'tax-agreement', label: 'Tax agreement', shade: 2 },
 	{ key: 'other', label: 'Other agreement', shade: 1 }
+];
+
+/**
+ * Recognition statuses (each record's `recognition` facts), in order of precedence: the federal answer first, then the statuses other governments give, as the recognition badges order them (src/lib/recognition-badges.ts). The table shows every status each nation holds. A record of no recognition is not a category: as with the badges, a nation with no federal or state status is simply not shaded (Trevor, Nov. 22, 2026). A status is a legal fact, not a judgment of a nation's standing as a people.
+ */
+export const recognitionCategories: ShadeCategory[] = [
+	{ key: 'federal', label: 'Federally recognized', shade: 4 },
+	{ key: 'state', label: 'State recognized', shade: 3 },
+	{ key: 'petitioning', label: 'Petitioning for federal acknowledgment', shade: 2 },
+	{ key: 'other', label: 'Special relationship recognized by Congress, or status under territorial law', shade: 1 }
 ];
 
 /**
@@ -149,6 +161,16 @@ export interface ShadedViewDefinition {
 }
 
 export const shadedViewDefinitions: Record<ShadedMapView, ShadedViewDefinition> = {
+	recognition: {
+		categories: recognitionCategories,
+		unrecorded: 'No federal or state status recorded',
+		note: 'Each nation’s land areas are shaded by the first status it holds: federal recognition, recognition by a state, a petition for federal acknowledgment, or a relationship recognized by Congress or under territorial law. The table shows every status each nation holds. A status is a legal fact, not a judgment of a nation’s standing as a people. Each nation’s page gives the status, its legal basis and its sources. Select an area to go to its nation’s row.',
+		caption: 'Nations with a federal, state or other status recorded, and which',
+		rows: 'nations',
+		kindHeaders: { federal: 'Federal', state: 'State', petitioning: 'Petitioning', other: 'Congress or territorial law' },
+		section: 'glance-heading',
+		sources: { section: 'Recognition', text: 'each nation’s recognition status and its legal basis' }
+	},
 	'courts-and-peacemaking': {
 		categories: courtCategories,
 		unrecorded: 'No court or forum recorded yet',
