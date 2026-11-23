@@ -114,3 +114,20 @@ describe('migration 0018', () => {
 		expect(database.prepare('SELECT COUNT(*) AS count FROM upload_nation_comments').get()).toEqual({ count: 0 });
 	});
 });
+
+describe('migration order', () => {
+	// Wrangler 4.166 (compareMigrationPaths): by the number before the first underscore, then by name.
+	const wranglerOrder = (a: string, b: string) => {
+		const number = (name: string) => parseInt(name.split('_')[0], 10);
+		if (number(a) !== number(b)) return number(a) - number(b);
+		return a < b ? -1 : a > b ? 1 : 0;
+	};
+
+	it('is the same whether names are sorted as text, as the tests do, or the way Wrangler sorts them', () => {
+		const names = readdirSync(folder).filter((name) => name.endsWith('.sql'));
+		const examples = ['20261123T0435_add_b.sql', '20261124T0001_add_c.sql', '20261123T2359_add_d.sql', '20270101T0000_add_e.sql'];
+		for (const list of [names, [...names, ...examples]]) {
+			expect([...list].sort()).toEqual([...list].sort(wranglerOrder));
+		}
+	});
+});
