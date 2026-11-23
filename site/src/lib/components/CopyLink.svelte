@@ -4,6 +4,7 @@
 	 * room's invite link: the whole address, selectable, with a copy button
 	 * that says when it worked.
 	 */
+	import Check from '@lucide/svelte/icons/check';
 	import Copy from '@lucide/svelte/icons/copy';
 
 	let { link, label }: { link: string; label: string } = $props();
@@ -25,7 +26,20 @@
 	<label for={id}>{label}</label>
 	<div class="row">
 		<input type="text" id={id} value={link} readonly onfocus={(event) => event.currentTarget.select()} />
-		<button class="button button-quiet" type="button" onclick={copy}><Copy size={18} strokeWidth={1.75} /> Copy</button>
+		<!-- Icon only (Trevor, Nov. 23, 2026); the icon turns to a check once copied. -->
+		<button
+			class="icon-button"
+			type="button"
+			onclick={copy}
+			aria-label={copied === 'Copied.' ? 'Link copied' : `Copy the ${label.toLowerCase()}`}
+			title={copied === 'Copied.' ? 'Copied' : 'Copy the link'}
+		>
+			{#if copied === 'Copied.'}<Check size={20} strokeWidth={1.75} aria-hidden="true" />{:else}<Copy
+					size={20}
+					strokeWidth={1.75}
+					aria-hidden="true"
+				/>{/if}
+		</button>
 	</div>
 	<p class="hint" role="status">{copied}</p>
 </div>
@@ -42,7 +56,4 @@
 		min-width: 0;
 	}
 
-	.button {
-		gap: var(--space-2);
-	}
 </style>
