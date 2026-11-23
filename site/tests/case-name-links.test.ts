@@ -39,7 +39,7 @@ describe('case names in the text', () => {
 		).html;
 		expect(html.match(/data-case="worcester-v-georgia"/g)).toHaveLength(2);
 		expect(html).toContain('<a href="#case-worcester-v-georgia" class="case-link" data-case="worcester-v-georgia"><em>Worcester v. Georgia</em></a> held it, as <em>Worcester</em> says');
-		expect(html).toContain('<a href="/copies/tile.loc.gov/crow-dog.pdf" class="case-link" data-case="ex-parte-crow-dog"><em>Ex parte Crow Dog</em></a>');
+		expect(html).toContain('<a href="/copies/tile.loc.gov/crow-dog.pdf" class="case-link" data-case="ex-parte-crow-dog" target="_blank" rel="noopener"><em>Ex parte Crow Dog</em><span class="visually-hidden"> (opens in a new tab)</span></a>');
 		expect(html).toContain('<a href="/essays/other#case-united-states-v-kagama" class="case-link" data-case="united-states-v-kagama"><em>Kagama</em></a>');
 		expect(html).toContain('<em>Georgia</em> alone');
 		// No box and no copy: Cherokee Nation is left as text; the box does not link to itself.
@@ -48,7 +48,7 @@ describe('case names in the text', () => {
 
 	it('knows a case by the start of its full name', () => {
 		expect(renderEssay('*California v. Cabazon Band* and *California v. Cabazon*.\n', library).html).toContain(
-			'<a href="/copies/cabazon.pdf" class="case-link" data-case="california-v-cabazon-band-of-mission-indians"><em>California v. Cabazon Band</em></a> and <em>California v. Cabazon</em>.'
+			'<a href="/copies/cabazon.pdf" class="case-link" data-case="california-v-cabazon-band-of-mission-indians" target="_blank" rel="noopener"><em>California v. Cabazon Band</em><span class="visually-hidden"> (opens in a new tab)</span></a> and <em>California v. Cabazon</em>.'
 		);
 	});
 

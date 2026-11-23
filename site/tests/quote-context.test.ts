@@ -62,6 +62,35 @@ describe('paragraphs of a document', () => {
 		]);
 		expect(paragraphs[1].page).toBe(9);
 	});
+
+	it('sets apart a quotation the court introduces, even when its last line is full (Lone Wolf, 187 U.S. at 566)', () => {
+		const pdfPage = {
+			page: 14,
+			label: null,
+			method: 'text-layer',
+			text: [
+				'OCTOBER TERM, 1902.',
+				'Opinron of the Court.',
+				'availed of from considerations of governmental policy, par-',
+				'ticularly if consistent with perfect good faith towards the In-',
+				'dians. In United States v Eagama, (1885) 118 U. S. 375,',
+				'speaking of the Indians, the court said (p. 382)',
+				'"After an experience of a hundred years of the treaty-mak-',
+				'ing system of government, Congress has determined upon a',
+				'tion or tribe prior to March third, eighteen hundred and sev-',
+				"enty-one, shall be hereby invalidated or impaired.'\"",
+				'In upholding the validity of an act of Congress which con-',
+				'ferred jurisdiction upon the courts of the United States for',
+				'certain crimes committed on an Indian reservation within a',
+				'State, the court said (p. 383)'
+			].join('\n')
+		};
+		expect(paragraphsOf([pdfPage]).map((paragraph) => paragraph.text.slice(0, 30))).toEqual([
+			'availed of from considerations',
+			'"After an experience of a hund',
+			'In upholding the validity of a'
+		]);
+	});
 });
 
 describe('finding a quotation', () => {
