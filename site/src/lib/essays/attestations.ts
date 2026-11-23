@@ -98,6 +98,8 @@ export interface Attestation {
 	sectionSha256: string;
 	note: string | null;
 	createdAt: string;
+	/** Whether the person chose to show their name to readers under the section. */
+	shownToReaders: boolean;
 }
 
 /**
@@ -116,4 +118,66 @@ export function currentAttestations(attestations: Attestation[], slug: string): 
 		(first, second) =>
 			attestationRoles.indexOf(first.role) - attestationRoles.indexOf(second.role) || first.createdAt.localeCompare(second.createdAt)
 	);
+}
+
+/**
+ * Whether the "Show my name to readers" box starts checked. Advisors stay
+ * unnamed on the public site until the lead author says otherwise, so it
+ * starts off for them in every role; for everyone else it starts on for
+ * writing and editing and off for reviewing.
+ */
+export function namesShownByDefault(personRole: string, role: AttestationRole): boolean {
+	return personRole !== 'advisor' && role !== 'reviewed';
+}
+
+/** Each section's SHA-256 as the text stands, by heading id. */
+export async function essaySectionHashes(doc: EditorNode): Promise<Record<string, string>> {
+	const hashes: Record<string, string> = {};
+	for (const section of essaySections(doc)) hashes[section.slug] = await sha256Hex(sectionText(doc, section));
+	return hashes;
+}
+
+/** Who readers see under a section: each role with its names, in the order Written, Edited, Reviewed. */
+export type ReaderCredits = Record<string, { role: AttestationRole; names: string[] }[]>;
+
+/**
+ * The credits readers see under each heading of a published text: the
+ * attestations whose person chose to show them and whose text is the
+ * section as published (`hashes`, from essaySectionHashes).
+ */
+export function readerCredits(attestations: Attestation[], hashes: Record<string, string>): ReaderCredits {
+	const credits: ReaderCredits = {};
+	for (const slug of new Set(attestations.map((attestation) => attestation.sectionSlug))) {
+		if (!hashes[slug]) continue;
+		const lines: ReaderCredits[string] = [];
+		for (const attestation of currentAttestations(attestations, slug)) {
+			if (!attestation.shownToReaders || attestation.sectionSha256 !== hashes[slug]) continue;
+			const line = lines.find((candidate) => candidate.role === attestation.role);
+			if (!line) lines.push({ role: attestation.role, names: [attestation.personName] });
+			else if (!line.names.includes(attestation.personName)) line.names.push(attestation.personName);
+		}
+		if (lines.length) credits[slug] = lines;
+	}
+	return credits;
+}
+
+function escapeText(text: string): string {
+	return text.replaceAll('&', '&amp;').replaceAll('<', '&lt;').replaceAll('>', '&gt;').replaceAll('"', '&quot;');
+}
+
+/** "Ann", "Ann and Ben", "Ann, Ben, and Cal" (the style guide uses the serial comma). */
+function joinNames(names: string[]): string {
+	if (names.length < 3) return names.join(' and ');
+	return `${names.slice(0, -1).join(', ')}, and ${names.at(-1)}`;
+}
+
+/** Puts each section's credit line under its heading in an essay's HTML. */
+export function withReaderCredits(html: string, credits: ReaderCredits): string {
+	if (Object.keys(credits).length === 0) return html;
+	return html.replace(/(<h([23])\b[^>]*\bid="([^"]+)"[^>]*>[\s\S]*?<\/h\2>)/g, (heading: string, _all: string, _level: string, slug: string) => {
+		const lines = credits[slug];
+		if (!lines) return heading;
+		const text = lines.map((line) => `${attestationRoleLabels[line.role]} ${escapeText(joinNames(line.names))}.`).join(' ');
+		return `${heading}\n<p class="essay-section-credit">${text}</p>`;
+	});
 }

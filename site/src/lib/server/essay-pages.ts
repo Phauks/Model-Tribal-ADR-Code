@@ -18,6 +18,9 @@ import { syncEssaysFromGitOnce } from './essay-git-sync.ts';
 import { casesByTopicMarkdown, taggedCases } from '../essays/case-topics.ts';
 import { frontMatterField, splitFrontMatter } from '../essays/syntax.ts';
 import { workerEnvironment } from './environment.ts';
+import { essayAttestations } from './essay-attestations.ts';
+import { essaySectionHashes, readerCredits, withReaderCredits } from '../essays/attestations.ts';
+import { parseEssay } from '../essays/document.ts';
 import {
 	boxPages,
 	essayPath,
@@ -112,6 +115,43 @@ export async function renderedVersion(bucket: R2Bucket, row: { object_key: strin
 	return rendered;
 }
 
+/**
+ * Each section's SHA-256 in a version, by heading id, kept in the Worker's
+ * cache like the rendering, for the credits under each heading.
+ */
+async function sectionHashesOf(bucket: R2Bucket, row: { object_key: string; sha256: string }): Promise<Record<string, string>> {
+	const cache = (globalThis as { caches?: { default?: Cache } }).caches?.default;
+	const cacheKey = `https://essay-cache.invalid/${encodeURIComponent(siteBuild)}/sections/${row.sha256}`;
+	if (cache) {
+		const cached = await cache.match(cacheKey).catch(() => undefined);
+		if (cached) return (await cached.json()) as Record<string, string>;
+	}
+	const hashes = await essaySectionHashes(parseEssay(splitFrontMatter(await readVersionText(bucket, row)).body));
+	if (cache) {
+		await cache
+			.put(cacheKey, new Response(JSON.stringify(hashes), { headers: { 'Cache-Control': 'max-age=31536000' } }))
+			.catch(() => undefined);
+	}
+	return hashes;
+}
+
+/**
+ * The published HTML with "Written by", "Edited by" and "Reviewed by" under
+ * each heading whose people chose to show their names and attested to the
+ * section as published (docs/editing.md, "Attesting to a section"). A
+ * failure here leaves the essay as it is, without credits.
+ */
+async function withCredits(database: D1Database, bucket: R2Bucket, identifier: string, row: { object_key: string; sha256: string }, html: string): Promise<string> {
+	try {
+		const attestations = (await essayAttestations(database, identifier)).filter((attestation) => attestation.shownToReaders);
+		if (attestations.length === 0) return html;
+		return withReaderCredits(html, readerCredits(attestations, await sectionHashesOf(bucket, row)));
+	} catch (problem) {
+		console.error('Essay credits could not be added', problem);
+		return html;
+	}
+}
+
 export interface PublicationSummary {
 	number: number;
 	versionNumber: number;
@@ -150,12 +190,13 @@ export async function essayPage(part: EssayPart, slug: string, publicationNumber
 	const row = publicationNumber === undefined ? listed[0] : listed.find((candidate) => candidate.number === publicationNumber);
 	if (!row?.object_key || !row.sha256) error(404, 'No publication of this essay has this number.');
 	const rendered = await renderedVersion(bucket, { object_key: row.object_key, sha256: row.sha256 });
+	const html = await withCredits(database, bucket, identifier, { object_key: row.object_key, sha256: row.sha256 }, rendered.html);
 	return {
 		identifier,
 		part,
 		path,
 		title: rendered.title,
-		html: rendered.html,
+		html,
 		sources: rendered.sources,
 		headings: rendered.headings,
 		publication: summary(row, path, row === listed[0]),

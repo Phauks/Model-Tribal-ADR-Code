@@ -18,14 +18,14 @@ export async function essayAttestations(database: D1Database, essay: string): Pr
 		.prepare(
 			`SELECT essay_attestations.identifier, section_slug AS sectionSlug, section_title AS sectionTitle, essay_attestations.role,
 				person_identifier AS personIdentifier, people.display_name AS personName, section_sha256 AS sectionSha256,
-				note, created_at AS createdAt
+				note, created_at AS createdAt, shown_to_readers AS shownToReaders
 			 FROM essay_attestations JOIN people ON people.identifier = essay_attestations.person_identifier
 			 WHERE essay_identifier = ? AND withdrawn_at IS NULL
 			 ORDER BY created_at, essay_attestations.identifier`
 		)
 		.bind(essay)
-		.all<Attestation>();
-	return result.results;
+		.all<Omit<Attestation, 'shownToReaders'> & { shownToReaders: number }>();
+	return result.results.map((row) => ({ ...row, shownToReaders: row.shownToReaders === 1 }));
 }
 
 export interface NewAttestation {
@@ -37,6 +37,8 @@ export interface NewAttestation {
 	sectionLevel: 2 | 3;
 	sectionText: string;
 	note: string | null;
+	/** Whether readers see the person's name under the section. */
+	shownToReaders: boolean;
 }
 
 /** Records an attestation, and answers its identifier and the text's SHA-256. */
@@ -50,8 +52,8 @@ export async function attest(database: D1Database, input: NewAttestation): Promi
 		database
 			.prepare(
 				`INSERT INTO essay_attestations (identifier, essay_identifier, section_slug, section_title, section_level, role,
-					person_identifier, section_text, section_sha256, note, created_at)
-				 VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)`
+					person_identifier, section_text, section_sha256, note, created_at, shown_to_readers)
+				 VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)`
 			)
 			.bind(
 				identifier,
@@ -64,7 +66,8 @@ export async function attest(database: D1Database, input: NewAttestation): Promi
 				text,
 				sha256,
 				input.note,
-				now()
+				now(),
+				input.shownToReaders ? 1 : 0
 			),
 		eventStatement(database, {
 			personIdentifier: input.personIdentifier,
@@ -103,4 +106,19 @@ export async function withdrawAttestation(
 		})
 	]);
 	return true;
+}
+
+/** Shows or hides a person's own attestation to readers. Answers false when there is none to change. */
+export async function showToReaders(
+	database: D1Database,
+	input: { essay: string; identifier: string; personIdentifier: string; shown: boolean }
+): Promise<boolean> {
+	const result = await database
+		.prepare(
+			`UPDATE essay_attestations SET shown_to_readers = ?
+			 WHERE identifier = ? AND essay_identifier = ? AND person_identifier = ? AND withdrawn_at IS NULL`
+		)
+		.bind(input.shown ? 1 : 0, input.identifier, input.essay, input.personIdentifier)
+		.run();
+	return result.meta.changes > 0;
 }

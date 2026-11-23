@@ -745,6 +745,15 @@ sup.citation {
 	padding-left: var(--space-6);
 }
 
+/* Who wrote, edited and reviewed a section, under its heading (attestations.ts, withReaderCredits). */
+.essay-text .essay-section-credit {
+	margin: calc(-1 * var(--space-2)) 0 var(--space-4);
+	font-size: var(--font-size-small);
+	font-style: italic;
+	text-indent: 0;
+	color: var(--color-ink-muted);
+}
+
 .essay-block-label {
 	margin: 0 0 var(--space-2);
 	font-size: var(--font-size-small);

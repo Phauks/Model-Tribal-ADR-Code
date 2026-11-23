@@ -172,14 +172,16 @@
 	let attestations = $state<Attestation[]>([]);
 	let attestationsLoaded = $state(false);
 	let attestingPerson = $state<string | null>(null);
+	let attestingRole = $state('');
 	let canWriteOrEdit = $state(false);
 	let hashTimer: ReturnType<typeof setTimeout> | undefined;
 
 	async function loadAttestations(): Promise<void> {
 		const response = await fetch(`/workspace/essays/${identifier}/attestations`).catch(() => null);
 		if (!response?.ok) return;
-		const body = (await response.json()) as { attestations: Attestation[]; you: string; canWriteOrEdit: boolean };
+		const body = (await response.json()) as { attestations: Attestation[]; you: string; yourRole: string; canWriteOrEdit: boolean };
 		attestingPerson = body.you;
+		attestingRole = body.yourRole;
 		canWriteOrEdit = body.canWriteOrEdit;
 		attestationsChanged(body.attestations);
 	}
@@ -1338,7 +1340,7 @@
 </div>
 
 <EssayFigureDialog bind:this={figureDialog} essay={identifier} onadd={addFigure} />
-<EssayAttestDialog bind:this={attestDialog} essay={identifier} {attestations} you={attestingPerson} {canWriteOrEdit} onchange={attestationsChanged} />
+<EssayAttestDialog bind:this={attestDialog} essay={identifier} {attestations} you={attestingPerson} yourRole={attestingRole} {canWriteOrEdit} onchange={attestationsChanged} />
 
 <dialog bind:this={pickerDialog} class="picker" onclose={() => (picker = null)} aria-labelledby="picker-heading">
 	{#if picker}
