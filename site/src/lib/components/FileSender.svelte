@@ -747,10 +747,10 @@
 									<input type="checkbox" aria-label="Choose {row.name}" bind:checked={row.chosen} disabled={row.state === 'sending'} />
 								</td>
 								<td class="name">
-									<span><Icon size={18} aria-hidden="true" /> <span class="text">{row.name}</span></span>
+									<span class="name-line"><Icon size={18} aria-hidden="true" /> <span class="text">{row.name}</span></span>
 									{#if row.note}<span class="row-note small muted">Note: {row.note}</span>{/if}
 									<span class="phone-only phone-detail small">
-										{@render rowStatus(row)}{#if rowDetail(row)}<span class="muted"> · {rowDetail(row)}</span>{/if}
+										{@render rowStatus(row)}{#if rowDetail(row)}<span class="muted">&nbsp;· {rowDetail(row)}</span>{/if}
 									</span>
 								</td>
 								<td class="number">{row.link ? 'Video' : readableSize(row.size)}</td>
@@ -811,12 +811,10 @@
 							<tr class:problem={file.problem}>
 								<td class="choose"></td>
 								<td class="name">
-									<span><FileText size={18} aria-hidden="true" /> <span class="text">{file.name}</span></span>
+									<span class="name-line"><FileText size={18} aria-hidden="true" /> <span class="text">{file.name}</span></span>
 									<span class="phone-only phone-detail small">
-										{@render earlierStatus(file)}{#if file.filedAs}<span class="muted"> · {file.filedAs}</span>{:else if !file.problem && file.sizeBytes}<span
-												class="muted"
-											>
-												· {readableSize(file.sizeBytes)}</span
+										{@render earlierStatus(file)}{#if file.filedAs}<span class="muted">&nbsp;· {file.filedAs}</span>{:else if !file.problem && file.sizeBytes}<span
+												class="muted">&nbsp;· {readableSize(file.sizeBytes)}</span
 											>{/if}
 									</span>
 								</td>
@@ -969,17 +967,18 @@
 	}
 	/* Before any file is added: a large drop area, as drawn (design/upload-table, mockup 2). */
 	.strip.empty {
-		flex-direction: column;
 		justify-content: center;
 		min-height: 14rem;
 		padding: var(--space-5);
 		text-align: center;
 	}
 	.strip.empty .strip-icon {
+		flex-basis: 100%;
+		justify-content: center;
 		color: var(--color-link);
 	}
 	.strip.empty .strip-text {
-		flex: none;
+		flex-basis: 100%;
 		min-width: 0;
 	}
 	.strip-kinds {
@@ -1073,7 +1072,7 @@
 	.name {
 		min-width: 14rem;
 	}
-	.name > span {
+	.name-line {
 		display: flex;
 		gap: var(--space-2);
 		align-items: center;
@@ -1279,9 +1278,6 @@
 			align-items: center;
 			margin: var(--space-1) 0 0 calc(18px + var(--space-2));
 			font-weight: normal;
-		}
-		.phone-detail .muted {
-			padding-left: 0.25em;
 		}
 		.phone-detail .bar {
 			order: 3;
