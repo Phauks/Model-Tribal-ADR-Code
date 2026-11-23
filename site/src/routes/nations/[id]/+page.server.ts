@@ -397,7 +397,8 @@ const establishmentWords: Record<string, string> = {
 	purchase: 'Purchase',
 	'court-decree': 'Court decree',
 	'state-action': 'State action',
-	other: 'Other'
+	// A letter or proclamation of an official: the instrument says what it is.
+	other: ''
 };
 
 /**

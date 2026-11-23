@@ -859,6 +859,27 @@ treaties:
   verification: inferred
   locator: p. 674 (Treaty with the S'klallam, 1855; Kappler header "Jan. 26, 1855. | 12 Stats., 933. | Ratified Mar. 8, 1859. | Proclaimed Apr. 29, 1859.")
   note: The nation's official name carries the name the treaty gives this party. Linked to the nation by Claude (AI assistant) from the treaty's text and the nation's name, not from a source that names the successor; not yet checked against a second source. Skokomish named in preamble (Point No Point) The page is the treaty's first page as the Oklahoma State University database's address gives it.
+land_establishment:
+- land_area: Reservation of six sections at the head of Hood's Canal, Washington
+  method: treaty
+  instrument: Treaty of Point No Point, Jan. 26, 1855, art. II, 12 Stat. 934 (art. II begins at 933)
+  date: '1855-01-26'
+  detail: First set aside
+  source: treaty-with-the-sklallam-1855
+  confidence: medium
+  verification: read-in-full
+  locator: 12 Stat. 934
+  note: 'The instrument reads: “amount of six sections, or three thousand eight hundred and forty acres, situated at the head of Hood’s Canal, to be hereafter set apart”. The preamble names the S''Klallam villages and the Sko-ko-mish, Too-an-hooch and Chem-a-kum tribes. The tract was ''to be hereafter set apart'' and was fixed later by Exec. Order of Feb. 25, 1874.'
+- land_area: Skokomish Reserve, Washington Territory
+  method: executive-order
+  instrument: Exec. Order of Feb. 25, 1874, 1 Kappler 924
+  date: '1874-02-25'
+  detail: Later change
+  source: executive-order-1874-02-25-skokomish-reservation
+  confidence: high
+  verification: read-in-full
+  locator: 1 Kappler 924
+  note: 'The instrument reads: “withdrawn from sale or other disposition and set apart for the use of the S’Klallam Indians the following tract of country on Hood’s Canal”. Describes the tract beginning at the mouth of the Skokomish River, inclusive of the six treaty sections.'
 memberships:
 - organization: Northwest Indian Fisheries Commission
   source: northwest-indian-fisheries-commission-member-tribes

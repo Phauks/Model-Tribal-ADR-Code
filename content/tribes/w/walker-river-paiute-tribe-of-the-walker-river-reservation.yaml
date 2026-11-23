@@ -585,6 +585,27 @@ jurisdiction:
   verification: inferred
   locator: 40 Fed. Reg. at 27,501
   note: 'INFERENCE, not stated in any source the research read: because the notice covers only jurisdiction "acquired by the State," a nation absent from it was not under state jurisdiction in 1975. The 1976 AIPRC report (fn. 21) lists the previously covered areas and omits these nations. The 1955 act let counties exclude Indian country by Governor''s proclamation (Pyramid Lake did); the research did not locate the proclamations or minutes for the other counties, so the reason for each nation is unconfirmed. Fort Mojave also has AZ/CA lands; Duck Valley ID; Fort McDermitt OR. Also cites: american-indian-policy-review-commission-task-force-four-1976, goldberg-2010-tribal-jurisdictional-status-analysis.'
+land_establishment:
+- land_area: Walker River (Walker Lake) Reserve, Nevada
+  method: other
+  instrument: Letter of Comm'r of Indian Affairs, Nov. 29, 1859, 1 Kappler 868
+  date: '1859-11-29'
+  detail: First set aside
+  source: letter-1859-11-29-pyramid-lake-walker-lake-reservations
+  confidence: low
+  verification: inferred
+  locator: 1 Kappler 868
+  note: 'The instrument reads: “a tract in the northeastern part of the valley of W alker’s River, including Walker’s Lake”. Same 1859 letter reserves a tract including Walker''s Lake; the surveyed Walker River reservation was set apart by Exec. Order of Mar. 19, 1874. Quote OCR spacing ("W alker") is preserved from the scan.'
+- land_area: Walker River Reservation, Nevada
+  method: executive-order
+  instrument: Exec. Order of Mar. 19, 1874, 1 Kappler 869
+  date: '1874-03-19'
+  detail: Later change
+  source: executive-order-1874-03-19-walker-river-reservation
+  confidence: high
+  verification: read-in-full
+  locator: 1 Kappler 869
+  note: 'The instrument reads: “the reservation situated on Walker River, Nevada, as surveyed by Eugene Monroe, December, 1864”. Withdrawn from public sale and set apart for the Pah-Ute Indians residing thereon; first order directly establishing the surveyed reservation.'
 memberships:
 - organization: Inter-Tribal Council of Nevada
   source: inter-tribal-council-of-nevada-member-tribes
