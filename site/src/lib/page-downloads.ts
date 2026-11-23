@@ -214,6 +214,16 @@ export function pageDownloads(path: string, mapTable?: { file: string; label: st
 						{ format: 'CSV', link: '/nations/timeline/entries.csv' },
 						{ format: 'JSON', link: '/nations/timeline/entries.json' }
 					]
+				},
+				{
+					label: 'Sources of the entries',
+					description: 'CSL JSON for Zotero, RIS for EndNote or Mendeley, BibTeX for LaTeX',
+					kind: 'sources',
+					links: [
+						{ format: 'CSL JSON', link: '/nations/timeline/sources.json' },
+						{ format: 'RIS', link: '/nations/timeline/sources.ris' },
+						{ format: 'BibTeX', link: '/nations/timeline/sources.bib' }
+					]
 				}
 			]
 		};

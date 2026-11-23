@@ -1,14 +1,29 @@
 <script lang="ts">
 	// The full timeline (site/DESIGN.md, section 6, "Timeline"): every dated
-	// record on one line, filtered by nation, state, kind and era. The filters
-	// are kept in the address (?nation=, ?state=, ?kind=, ?from=, ?to=), so a
-	// view can be shared, and a nation's page opens it with ?nation=.
+	// record on one line, filtered by nation, kind, era, state and what the
+	// opinions mention, as in the approved mockup (design/shared-timeline). The
+	// filters are kept in the address (?nation=, ?state=, ?kind=, ?mentions=,
+	// ?from=, ?to=), so a view can be shared, and a nation's page opens it
+	// with ?nation=.
 	import { onMount } from 'svelte';
 	import { replaceState } from '$app/navigation';
+	import Search from '@lucide/svelte/icons/search';
 	import SlidersHorizontal from '@lucide/svelte/icons/sliders-horizontal';
 	import X from '@lucide/svelte/icons/x';
 	import Timeline from '#lib/components/Timeline.svelte';
-	import { eras, extentOf, timelineKinds, yearOf, type OpinionYear, type TimelineEntry, type TimelineKind, type TimelineRange } from '#lib/timeline.ts';
+	import { kindIcons } from '#lib/timeline-icons.ts';
+	import {
+		eras,
+		extentOf,
+		mentioning,
+		timelineKinds,
+		yearOf,
+		type Mentions,
+		type OpinionYear,
+		type TimelineEntry,
+		type TimelineKind,
+		type TimelineRange
+	} from '#lib/timeline.ts';
 	import type { PageProps } from './$types';
 
 	let { data }: PageProps = $props();
@@ -30,7 +45,9 @@
 		)
 	);
 	const allOpinions = $derived(
-		data.opinions.map(([year, count, peacemaking, place]): OpinionYear => ({ year, count, peacemaking, nation: place >= 0 ? data.nations[place].id : undefined }))
+		data.opinions.map(
+			([year, count, peacemaking, place, mediation, both]): OpinionYear => ({ year, count, peacemaking, mediation, both, nation: place >= 0 ? data.nations[place].id : undefined })
+		)
 	);
 	const nationsById = $derived(Object.fromEntries(data.nations.map((nation) => [nation.id, nation])));
 	const extent = $derived(extentOf(allEntries, allOpinions));
@@ -42,6 +59,9 @@
 	let nationText = $state('');
 	let ready = $state(false);
 	let filtersOpen = $state(false);
+	/** The eras checked; the view spans them. */
+	let chosenEras = $state<string[]>([]);
+	let mentions = $state<Mentions>({ peacemaking: false, mediation: false });
 
 	const filtered = $derived(nation !== '' || stateCode !== '');
 	const belongs = (ids: string[] | undefined) =>
@@ -53,7 +73,8 @@
 			? allEntries.flatMap((entry) => (belongs(entry.nations) ? [entry] : entry.kind === 'federal' && !entry.nations ? [{ ...entry, context: true }] : []))
 			: allEntries
 	);
-	const opinions = $derived(filtered ? allOpinions.filter((year) => belongs(year.nation ? [year.nation] : undefined)) : allOpinions);
+	// Only the opinions have their words tagged, so the Mentions filter narrows them and leaves the other kinds as they are.
+	const opinions = $derived(mentioning(filtered ? allOpinions.filter((year) => belongs(year.nation ? [year.nation] : undefined)) : allOpinions, mentions));
 
 	const counts = $derived(
 		Object.fromEntries(
@@ -64,12 +85,26 @@
 		) as Record<TimelineKind, number>
 	);
 	const visible = $derived(shown ?? kinds);
-	const era = $derived(eras.find((each) => range && Math.abs(range.from - Math.max(each.start, extent.from)) < 0.01 && Math.abs(range.to - Math.min(each.end, extent.to)) < 0.01));
 
-	function chooseEra(name: string) {
-		const chosen = eras.find((each) => each.name === name);
-		range = chosen ? { from: Math.max(chosen.start, extent.from), to: Math.min(chosen.end, extent.to) } : undefined;
+	/** The years from the first checked era to the last, inside the years there are entries for. */
+	function spanOf(names: string[]): TimelineRange | undefined {
+		const picked = eras.filter((each) => names.includes(each.name));
+		if (picked.length === 0) return undefined;
+		return { from: Math.max(Math.min(...picked.map((each) => each.start)), extent.from), to: Math.min(Math.max(...picked.map((each) => each.end)), extent.to) };
 	}
+
+	const sameRange = (first: TimelineRange | undefined, second: TimelineRange | undefined) =>
+		!!first && !!second && Math.abs(first.from - second.from) < 0.01 && Math.abs(first.to - second.to) < 0.01;
+
+	function toggleEra(name: string) {
+		chosenEras = eras.filter((each) => (each.name === name) !== chosenEras.includes(each.name)).map((each) => each.name);
+		range = spanOf(chosenEras);
+	}
+
+	// Zooming away from the checked eras clears them.
+	$effect(() => {
+		if (chosenEras.length > 0 && !sameRange(range, spanOf(chosenEras))) chosenEras = [];
+	});
 
 	function toggleKind(kind: TimelineKind) {
 		shown = visible.includes(kind) ? visible.filter((each) => each !== kind) : kinds.filter((each) => visible.includes(each) || each === kind);
@@ -92,11 +127,20 @@
 		if (data.states.some((state) => state.code === askedState)) stateCode = askedState;
 		const askedKinds = (params.get('kind') ?? '').split(',').filter((kind): kind is TimelineKind => kinds.includes(kind as TimelineKind));
 		if (askedKinds.length > 0) shown = askedKinds;
+		const askedMentions = new Set((params.get('mentions') ?? '').split(','));
+		mentions = { peacemaking: askedMentions.has('peacemaking'), mediation: askedMentions.has('mediation') };
 		const from = Number(params.get('from'));
 		const to = Number(params.get('to'));
-		if (params.has('from') && params.has('to') && Number.isFinite(from) && Number.isFinite(to) && to > from) range = { from, to };
+		if (params.has('from') && params.has('to') && Number.isFinite(from) && Number.isFinite(to) && to > from) {
+			range = { from, to };
+			// A view that spans whole eras opens with them checked.
+			const inside = eras.filter((each) => each.start < to && each.end > from).map((each) => each.name);
+			if (sameRange({ from: Math.round(range.from), to: Math.round(range.to) }, roundRange(spanOf(inside)))) chosenEras = inside;
+		}
 		ready = true;
 	});
+
+	const roundRange = (given: TimelineRange | undefined) => given && { from: Math.round(given.from), to: Math.round(given.to) };
 
 	// The view in the address, so it can be shared.
 	$effect(() => {
@@ -105,6 +149,8 @@
 		if (nation) params.set('nation', nation);
 		if (stateCode) params.set('state', stateCode);
 		if (shown && shown.length < kinds.length) params.set('kind', shown.join(','));
+		const chosenMentions = (['peacemaking', 'mediation'] as const).filter((each) => mentions[each]);
+		if (chosenMentions.length > 0) params.set('mentions', chosenMentions.join(','));
 		if (range) {
 			params.set('from', String(Math.round(range.from)));
 			params.set('to', String(Math.round(range.to)));
@@ -115,7 +161,7 @@
 		if (url.href !== location.href) replaceState(url, {});
 	});
 
-	const filterCount = $derived([nation, stateCode, shown && shown.length < kinds.length, range].filter(Boolean).length);
+	const filterCount = $derived([nation, stateCode, shown && shown.length < kinds.length, range, mentions.peacemaking || mentions.mediation].filter(Boolean).length);
 
 	const firstYear = $derived(Math.min(...allEntries.map((entry) => Math.floor(yearOf(entry.date)))));
 </script>
@@ -150,7 +196,10 @@
 					</button>
 				</p>
 			{:else}
-				<input id="timeline-nation" type="search" list="timeline-nations" placeholder="Find a nation" bind:value={nationText} oninput={chooseNation} onchange={chooseNation} />
+				<span class="search">
+					<Search size={18} aria-hidden="true" />
+					<input id="timeline-nation" type="search" list="timeline-nations" placeholder="Find a nation" bind:value={nationText} oninput={chooseNation} onchange={chooseNation} />
+				</span>
 				<datalist id="timeline-nations">
 					{#each data.nations as each (each.id)}
 						<option value={each.name}></option>
@@ -162,9 +211,10 @@
 		<fieldset class="filter">
 			<legend>Kind</legend>
 			{#each timelineKinds as { kind, label } (kind)}
+				{@const Icon = kindIcons[kind]}
 				<label class="option kind-{kind}">
 					<input type="checkbox" checked={visible.includes(kind)} onchange={() => toggleKind(kind)} />
-					<span class="swatch" aria-hidden="true"></span>
+					<span class="kind-icon"><Icon size={16} aria-hidden="true" /></span>
 					<span class="name">{label}</span>
 					<span class="count">{counts[kind].toLocaleString('en-US')}</span>
 				</label>
@@ -173,10 +223,9 @@
 
 		<fieldset class="filter">
 			<legend>Era</legend>
-			<label class="option"><input type="radio" name="era" checked={!range} onchange={() => chooseEra('')} /> <span class="name">Every year</span></label>
 			{#each eras as each (each.name)}
 				<label class="option">
-					<input type="radio" name="era" checked={era?.name === each.name} onchange={() => chooseEra(each.name)} />
+					<input type="checkbox" checked={chosenEras.includes(each.name)} onchange={() => toggleEra(each.name)} />
 					<span class="name">{each.name}</span>
 				</label>
 			{/each}
@@ -191,6 +240,12 @@
 				{/each}
 			</select>
 		</div>
+
+		<fieldset class="filter">
+			<legend>Mentions</legend>
+			<label class="option"><input type="checkbox" bind:checked={mentions.peacemaking} /> <span class="name">Peacemaking</span></label>
+			<label class="option"><input type="checkbox" bind:checked={mentions.mediation} /> <span class="name">Mediation or arbitration</span></label>
+		</fieldset>
 	</form>
 
 	<div class="results">
@@ -206,7 +261,19 @@
 			chips={false}
 			overview
 			summary
-		/>
+			countsInView
+		>
+			{#snippet toolbarStart()}
+				{#each chosenEras as name (name)}
+					<span class="pill">
+						{name}
+						<button type="button" class="icon-button" aria-label="Show every era" title="Show every era" onclick={() => toggleEra(name)}>
+							<X size={16} aria-hidden="true" />
+						</button>
+					</span>
+				{/each}
+			{/snippet}
+		</Timeline>
 	</div>
 </div>
 
@@ -255,10 +322,24 @@
 		padding: var(--space-3) 0 0;
 	}
 
+	.search {
+		position: relative;
+		display: block;
+	}
+
+	.search :global(svg) {
+		position: absolute;
+		left: var(--space-3);
+		top: 50%;
+		transform: translateY(-50%);
+		color: var(--color-ink-muted);
+		pointer-events: none;
+	}
+
 	input[type='search'] {
 		width: 100%;
 		min-height: var(--layout-target-minimum);
-		padding: 0 var(--space-3);
+		padding: 0 var(--space-3) 0 calc(var(--space-3) + 1.625rem);
 		border: 2px solid var(--color-control-border);
 		border-radius: var(--radius-control);
 		background: var(--color-paper);
@@ -294,11 +375,28 @@
 		font-variant-numeric: tabular-nums;
 	}
 
-	.swatch {
-		width: 0.7rem;
-		height: 0.7rem;
-		border-radius: 50%;
-		background: var(--kind-color);
+	.kind-icon {
+		display: inline-flex;
+		color: var(--kind-color);
+	}
+
+	/* The checked era in the toolbar, with a button that clears it. */
+	.pill {
+		display: inline-flex;
+		align-items: center;
+		gap: var(--space-1);
+		padding: 0 0 0 var(--space-3);
+		border: 1px solid var(--color-control-border);
+		border-radius: 999px;
+		background: var(--color-surface);
+		font-size: var(--font-size-small);
+	}
+
+	.pill .icon-button {
+		min-width: 1.5rem;
+		min-height: 1.5rem;
+		width: 1.5rem;
+		height: 1.5rem;
 	}
 
 	.kind-treaty {
