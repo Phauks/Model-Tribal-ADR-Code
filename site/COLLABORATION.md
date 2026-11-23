@@ -190,6 +190,10 @@ On the request's page in the workspace, editors see each form, open the filled f
 
 Anyone signed in can send files on `/uploads/send` and follow them on `/uploads` (Your uploads, also in the account menu). The lead author and editors review them on `/workspace/uploads` (permission `review-uploads`). Files arrive in 10 MB pieces into the private bucket under `uploads/<identifier>/`, are checked by type and for hidden content as they arrive, and wait for a reviewer, who files them, keeps them for reference, or says why they were not used. A YouTube link can stand in for a video. Filed files are served at `/files/<reference>/<name>`. The code is in `src/lib/uploads.ts`, `src/lib/server/uploads.ts`, `src/lib/server/upload-checks.ts` and `src/lib/server/upload-serving.ts`; the design is docs/uploads.md and decision record 0038. A nation reviewer reads and comments on the files that name their nation on `/workspace/nation-uploads` (permission `comment-on-nation-uploads`); they never see who sent a file.
 
+## Virus and malware scanning
+
+Files people send and email attachments are held until a virus scan says they are clean. Site code puts a file in line with `requestScan` and serves it only when `mayServe` says yes (`src/lib/server/file-scans.ts`); the scanner, a Worker of its own (`model-tribal-adr-code-scanner`, `scanner/wrangler.jsonc`), scans waiting files with ClamAV, YARA rules and structural checks in a Cloudflare Container and writes the results to the `file_scans` table. The provider is a setting. Everything about it, including how to set it up, is in SCANNING.md; the choices are decision record 0046.
+
 ## How sign-in works
 
 The "Sign in" link in the masthead of every page, and "Co-author sign-in" in the footer, start here. The design follows the lead author's Grimbinder project (`worker/account/` there).
@@ -357,5 +361,5 @@ Every change to the site's pages is listed at `/changes`, newest first, the way 
 - Hiding material from the website directly from the workspace, before a pull request; for now hiding is a pull request.
 - Editing records other than essays from the website. Those changes stay pull requests, which keeps history orderly. Nation teams (above) are the exception for their own nation's page.
 - Emails to a nation's office when someone joins or leaves its team, and the weekly summary of changes (waits on a domain).
-- A virus scan for files people send (docs/uploads.md, "Not built yet").
+- Using the virus scan for files people send and email attachments. The scanner is built (SCANNING.md); the uploads and inbox pages start using it in their own changes.
 - Joining the live editing room from the essay editor, comments on drafts, and figures (docs/editing.md, "Built so far and still to build").
