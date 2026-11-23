@@ -189,6 +189,17 @@ profile changes, and refused attempts.
 OWASP recommends logging access-control failures and protecting logs from
 tampering (OWASP, *Logging Cheat Sheet*; NIST SP 800-92).
 
+## Address book
+
+`/workspace/address-book` (lead author only, permission `manage-address-book`) is the project's private list of contacts: each Native nation's government as an organization, the leader the federal Tribal Leaders Directory names for it, and anyone else the project writes to. The lead author asked for it on Nov. 23, 2026 ("We should have internal contacts, so that csv becomes the basis of our address book"; "Maintain this list in the server with knowledge or source and up to dateness"). Nothing in it is shown on the public site.
+
+- **Tables** (`migrations/0012_address_book.sql`): `contacts` (person or organization, linked to a nation and, for a person, to the organization they act for), `contact_methods` (emails and phones), `contact_tags`, and `contact_changes`, which keeps every change with the row as it was. Leaders' own addresses live only here and in the private outreach list in project files, never in the repository (lead author's decision, Nov. 23, 2026).
+- **Where each address came from.** Every email and phone records the kind of source, such as the nation's website or the federal directory, and the page it was read on. It also records the first day it was recorded and the last day it was seen there.
+- **When an address needs checking** (`src/lib/address-book.ts`): a leader's or state-listed address after 180 days, any other after a year, and any address once the nation's next election, as the federal directory gives it, has passed since the last check. The rule is worked out when the page is read, so it can change without a migration.
+- **Checking against the directories.** "Check now" reads the federal and Alaska directories. An email still listed counts as checked that day; one no longer listed is marked replaced, and the address now listed is added to the same contact with a note naming who holds it. Addresses read on a nation's website are marked checked by hand on the contact's page.
+- **Mailing list.** `mailingList()` in `src/lib/server/address-book.ts` gives one email per contact (the first choice in use, each address once), and the page offers it as a CSV download. Mail code marks a hard bounce with `editContactMethod()`, status `bounced`. Unsubscribes are kept by the mail code, not here: retiring an address is not an unsubscribe.
+- **Seeding.** `scripts/outreach/import_address_book.py` turns the private outreach list and the two directories into SQL that is loaded into D1 directly; the SQL is never committed.
+
 ## Requests from nations
 
 The form at `/requests` follows docs/requests.md step by step, with a branch
