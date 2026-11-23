@@ -130,6 +130,26 @@
       "scan-code-light": {
         "$value": "#FFFFFF",
         "$description": "Light squares and quiet zone of a QR code, the same in both themes."
+      },
+      "viewer-background": {
+        "$value": "#151311",
+        "$description": "Behind a picture opened in the image viewer, the same in both themes so every picture is seen against the same dark ground."
+      },
+      "viewer-text": {
+        "$value": "#F3EFEA",
+        "$description": "Text in the image viewer. 16.2:1 on viewer-background."
+      },
+      "viewer-text-muted": {
+        "$value": "#C9C0B8",
+        "$description": "Credit and secondary text in the image viewer. 10.3:1 on viewer-background."
+      },
+      "viewer-link": {
+        "$value": "#8FD3DA",
+        "$description": "Links in the image viewer, always underlined. 11.0:1 on viewer-background."
+      },
+      "viewer-control-border": {
+        "$value": "#9A918A",
+        "$description": "Borders of buttons in the image viewer (non-text minimum 3:1). 6.0:1 on viewer-background."
       }
     },
     "dark": {
@@ -260,6 +280,26 @@
       "scan-code-light": {
         "$value": "#FFFFFF",
         "$description": "Light squares and quiet zone of a QR code, the same in both themes."
+      },
+      "viewer-background": {
+        "$value": "#151311",
+        "$description": "Behind a picture opened in the image viewer, the same in both themes so every picture is seen against the same dark ground."
+      },
+      "viewer-text": {
+        "$value": "#F3EFEA",
+        "$description": "Text in the image viewer. 16.2:1 on viewer-background."
+      },
+      "viewer-text-muted": {
+        "$value": "#C9C0B8",
+        "$description": "Credit and secondary text in the image viewer. 10.3:1 on viewer-background."
+      },
+      "viewer-link": {
+        "$value": "#8FD3DA",
+        "$description": "Links in the image viewer, always underlined. 11.0:1 on viewer-background."
+      },
+      "viewer-control-border": {
+        "$value": "#9A918A",
+        "$description": "Borders of buttons in the image viewer (non-text minimum 3:1). 6.0:1 on viewer-background."
       }
     }
   },

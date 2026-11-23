@@ -15,6 +15,7 @@
 	import Clock from '@lucide/svelte/icons/clock';
 	import { afterNavigate } from '$app/navigation';
 	import { fillNationSlots } from '#lib/nation-page-slots.ts';
+	import { imageViewerAttributes } from '#lib/image-viewer.ts';
 	import type { PageProps } from './$types';
 
 	let { data }: PageProps = $props();
@@ -266,14 +267,27 @@
 		<GlancePanel>
 			{#snippet picture()}
 				{#if data.image && !imageFailed}
+					<!-- Selecting the seal opens it larger, as on Wikipedia (src/lib/image-viewer.ts). -->
+					{@const description = `${data.image.kind} of ${page.officialName}`}
 					<figure class="nation-image" data-print-part="officialImages">
-						<img
-							src={data.image.src}
-							alt="{data.image.kind} of {page.officialName}"
-							loading="lazy"
-							decoding="async"
-							onerror={() => (imageFailed = true)}
-						/>
+						<a
+							href={data.image.src}
+							{...imageViewerAttributes(description, {
+								title: description,
+								credit: data.image.credit,
+								original: data.image.original,
+								source: data.image.source,
+								removal: data.image.removal
+							})}
+						>
+							<img
+								src={data.image.src}
+								alt={description}
+								loading="lazy"
+								decoding="async"
+								onerror={() => (imageFailed = true)}
+							/>
+						</a>
 					</figure>
 				{/if}
 			{/snippet}
@@ -340,6 +354,14 @@
 
 	.nation-image {
 		margin: 0 0 var(--space-3);
+	}
+
+	.nation-image a {
+		display: block;
+		width: fit-content;
+		margin: 0 auto;
+		border-radius: var(--radius-control);
+		cursor: zoom-in;
 	}
 
 	/* Seals are square and logos are often wide, so the box sets only the limits. */
