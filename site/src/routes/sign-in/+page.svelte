@@ -33,11 +33,8 @@
 
 {#snippet keepSignedIn(id: string, checked: boolean)}
 	<div class="choice">
-		<input type="checkbox" {id} name="keep" value="yes" {checked} aria-describedby="{id}-hint" />
-		<div>
-			<label for={id}>Keep me signed in for 30 days</label>
-			<p class="hint" id="{id}-hint">Only on a device you do not share. The workspace still signs you out after 12 hours.</p>
-		</div>
+		<input type="checkbox" {id} name="keep" value="yes" {checked} />
+		<label for={id}>Keep me signed in for 30 days</label>
 	</div>
 {/snippet}
 
@@ -159,10 +156,7 @@
 				/>
 			</div>
 			<div class="field">
-				<div class="label-row">
-					<label for="password">Password</label>
-					<a href="/sign-in/forgot?returnTo={encodeURIComponent(returnTo)}">Forgot your password?</a>
-				</div>
+				<label for="password">Password</label>
 				<p class="hint" id="password-hint">
 					{data.codesAvailable
 						? 'Only if you chose one. Otherwise, email yourself a code below.'
@@ -176,6 +170,8 @@
 					aria-describedby={describedBy('password', 'password-hint')}
 					aria-invalid={field === 'password' && problem ? 'true' : undefined}
 				/>
+				<!-- After the field, so Tab goes from the email address straight to the password. -->
+				<p class="forgot"><a href="/sign-in/forgot?returnTo={encodeURIComponent(returnTo)}">Forgot your password?</a></p>
 			</div>
 			{@render keepSignedIn('keep', keep)}
 			<button class="button wide" type="submit">Sign in</button>
@@ -208,12 +204,12 @@
 	.choice {
 		display: flex;
 		gap: var(--space-3);
-		align-items: flex-start;
+		align-items: center;
 		margin: 0 0 var(--space-4);
 	}
 
 	.choice input {
-		margin-top: 0.2em;
+		margin: 0;
 		width: 1.25rem;
 		height: 1.25rem;
 		flex: none;
@@ -223,25 +219,8 @@
 		font-weight: var(--font-weight-regular);
 	}
 
-	.choice .hint {
-		margin: 0;
-	}
-
-
-	.label-row {
-		display: flex;
-		flex-wrap: wrap;
-		justify-content: space-between;
-		align-items: baseline;
-		gap: var(--space-1) var(--space-3);
-	}
-
-	.label-row label {
-		font-weight: var(--font-weight-semibold);
-		margin-bottom: var(--space-1);
-	}
-
-	.label-row a {
+	.forgot {
+		margin: var(--space-2) 0 0;
 		font-size: var(--font-size-small);
 	}
 
