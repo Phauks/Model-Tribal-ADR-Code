@@ -4,13 +4,27 @@ Readers can order a printed copy of the book on the website at `/book`. Lulu's P
 
 ## How an order flows
 
-1. The reader picks a size, binding, ink, paper and cover finish on `/book`, enters where the copy goes, and asks for the price. The page shows an estimate from Lulu's pricing calculator until then (`site/src/lib/book-order.ts`).
-2. `/book/quote` asks Lulu's print-job cost calculation for that product, page count and address. Lulu's answer includes printing, shipping, its order fee and tax.
-3. `/book/order` prices the order again, records it in the `book_orders` table, and opens a Stripe Checkout page for the reader's price: Lulu's total, plus `BOOK_MARGIN_CENTS`, plus Stripe's card fee (`readerPriceCents`).
+1. The reader picks a size, binding, ink, paper and cover finish on `/book`, then enters only the country, state and postal code and asks for prices. The page shows an estimate from Lulu's pricing calculator until then (`site/src/lib/book-order.ts`).
+2. `/book/quote` asks Lulu's print-job cost calculation for that product, page count and postal code once for each of the five shipping speeds (Mail, Priority Mail, Ground, Expedited, Express) and lists every speed Lulu prices, with its total. Lulu's answer includes printing, shipping, its order fee and tax. The page shows the chosen speed's price in parts (`priceParts` in `site/src/lib/server/book-orders.ts`): printing, shipping, Lulu's order fee, sales tax, the amount toward copies for Tribal Nations' courts (when `BOOK_MARGIN_CENTS` is set) and the card processing fee. The parts add up to the price.
+3. The reader then enters the name, street, city, telephone and email the copy goes to, and may add a gift (see "Adding a gift" below). `/book/order` prices the order again with the full address and records it in the `book_orders` table. It then opens a Stripe Checkout page for the reader's price: Lulu's total, plus `BOOK_MARGIN_CENTS`, plus Stripe's card fee (`readerPriceCents`). A gift is a second line on that page.
 4. When Stripe reports the payment at `/book/payment-webhook`, the order is marked paid once and sent to Lulu as a print job, with a 120-minute delay before printing so a mistake can still be canceled. Lulu charges the card on file in the project's Lulu API account.
 5. Lulu downloads the interior and cover from `/book/files/...`, with a link key made from `BOOK_FILE_LINK_SECRET` for that one file.
 6. Lulu reports status changes at `/book/printer-webhook` (topic `PRINT_JOB_STATUS_CHANGED`, signed with the API secret). The reader's page `/book/orders/<order>` shows the status and tracking link.
 7. Name, address, telephone and email are cleared 90 days after an order ships, is canceled or expires.
+
+Lulu's cost calculation asks for a city. Prices by postal code send the placeholder city "City for price" (`addressForQuote`), and `/book/order` prices again with the real city before anything is charged. Whether Lulu's sandbox accepts the placeholder has not been tried yet, because there are no sandbox keys; check it on the first test order.
+
+## Adding a gift
+
+A buyer may add a gift to the project on the order page (`site/src/lib/checkout-gift.ts`, `site/src/lib/components/CheckoutGift.svelte`). The choices are No thanks, Round up to the next whole $5 (left out when the price already is one), $5, $10, $25 and Other ($1 to $1,000). No thanks is chosen until the buyer picks something else: a gift chosen in advance reads as a trick, and the EU bars pre-ticked extra payments (Directive 2011/83/EU, art. 22). The page shows the price, the gift and the total before the buyer goes to Stripe.
+
+The gift goes to Stripe as its own line ("Gift to Model Tribal ADR Code") with `metadata[gift_cents]`, and is saved in `book_orders.gift_cents`, never in `price_cents`, so book receipts and gifts are counted apart. Lulu never receives it. The order's page thanks the buyer for it.
+
+Stripe's own add-on features did not fit: optional items need saved Price records and cannot take a typed amount, a custom amount cannot sit beside another line, and Stripe's fee-coverage option is a private preview for nonprofits only. So the server works out the gift and sends it as an inline price.
+
+In test mode the gift is always offered. In live mode it is offered only once `SPONSOR_GIFTS_RECEIVER` names who receives gifts, the same setting sponsor gifts need ([sponsorship.md](sponsorship.md)); until then the server refuses any gift above $0 (`site/src/lib/server/checkout-gifts.ts`).
+
+Paid event tickets can reuse the same component when they come.
 
 ## Prepared files
 
@@ -57,6 +71,7 @@ All are set in the Cloudflare dashboard for the Worker, never in the repository 
 | `LULU_ENVIRONMENT` | Variable | `sandbox` or `production`. |
 | `LULU_CLIENT_KEY`, `LULU_CLIENT_SECRET` | Secrets | From the Lulu developer portal (separate accounts for sandbox and production). |
 | `STRIPE_SECRET_KEY` | Secret | A restricted key is enough: write access to Checkout Sessions. |
+| `SPONSOR_GIFTS_RECEIVER` | Variable | Who receives gifts. In live mode the order page offers a gift only when this is set. |
 | `STRIPE_WEBHOOK_SECRET` | Secret | The signing secret of the webhook endpoint `https://<site>/book/payment-webhook`, for `checkout.session.completed` and `checkout.session.expired`. |
 
 Lulu's webhook is registered once with `POST /webhooks/` for topic `PRINT_JOB_STATUS_CHANGED` and URL `https://<site>/book/printer-webhook`.

@@ -121,6 +121,38 @@ export function readerPriceCents(printerCostCents: number, marginCents: number):
 	return Math.ceil((printerCostCents + marginCents + 30) / (1 - 0.029));
 }
 
+export interface PricePart {
+	label: string;
+	cents: number;
+}
+
+function centsOrZero(amount: string | undefined): number {
+	const value = Number(amount);
+	return Number.isFinite(value) && value > 0 ? Math.round(value * 100) : 0;
+}
+
+/**
+ * The reader's price in parts, as the order page lists them: printing,
+ * shipping, Lulu's order fee and tax from Lulu's own answer, then anything
+ * added toward copies for nations, and the card fee as what is left. The
+ * parts always add up to the price. If Lulu leaves a part out, it is counted
+ * in printing.
+ */
+export function priceParts(cost: CostCalculation, priceCents: number, marginCents: number): PricePart[] {
+	const printerCostCents = dollarsToCents(cost.total_cost_incl_tax);
+	const shipping = centsOrZero(cost.shipping_cost?.total_cost_excl_tax);
+	const fee = centsOrZero(cost.fulfillment_cost?.total_cost_excl_tax);
+	const tax = centsOrZero(cost.total_tax);
+	const printing = Math.max(0, printerCostCents - shipping - fee - tax);
+	const parts: PricePart[] = [{ label: 'Printing', cents: printing }];
+	if (shipping) parts.push({ label: 'Shipping', cents: shipping });
+	if (fee) parts.push({ label: 'Lulu’s order fee', cents: fee });
+	if (tax) parts.push({ label: 'Sales tax', cents: tax });
+	if (marginCents) parts.push({ label: 'Toward copies for Tribal Nations’ courts', cents: marginCents });
+	parts.push({ label: 'Card processing fee', cents: priceCents - printerCostCents - marginCents });
+	return parts;
+}
+
 export function dollarsToCents(amount: string): number {
 	const value = Number(amount);
 	if (!Number.isFinite(value) || value <= 0) throw new Error(`Not an amount: ${amount}`);
@@ -137,6 +169,8 @@ export interface NewOrder {
 	email: string;
 	printerCostCents: number;
 	priceCents: number;
+	/** An optional gift to the project, kept apart from the price (docs/book-orders.md, "Adding a gift"). */
+	giftCents?: number;
 }
 
 export async function saveOrder(database: D1Database, order: NewOrder, now: string): Promise<void> {
@@ -145,8 +179,8 @@ export async function saveOrder(database: D1Database, order: NewOrder, now: stri
 	await database
 		.prepare(
 			`INSERT INTO book_orders (identifier, mode, status, file_set, title, pod_package_identifier, page_count, choice,
-				shipping_level, printer_cost_cents, price_cents, recipient_name, shipping_address, email, created_at, updated_at)
-			VALUES (?, ?, 'awaiting-payment', ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)`
+				shipping_level, printer_cost_cents, price_cents, gift_cents, recipient_name, shipping_address, email, created_at, updated_at)
+			VALUES (?, ?, 'awaiting-payment', ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)`
 		)
 		.bind(
 			order.identifier,
@@ -159,6 +193,7 @@ export async function saveOrder(database: D1Database, order: NewOrder, now: stri
 			order.shippingLevel,
 			order.printerCostCents,
 			order.priceCents,
+			order.giftCents ?? 0,
 			order.shippingAddress.name,
 			JSON.stringify(order.shippingAddress),
 			order.email,
@@ -180,6 +215,7 @@ export interface OrderRow {
 	shipping_level: ShippingLevel;
 	printer_cost_cents: number;
 	price_cents: number;
+	gift_cents: number;
 	recipient_name: string | null;
 	shipping_address: string | null;
 	email: string | null;

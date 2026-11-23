@@ -75,7 +75,9 @@ export function readBookOrderForm(body: unknown, needsEmail: boolean): Result {
 		phone_number: text(rawAddress.phone, 30)
 	};
 	if (!/^[A-Z]{2}$/.test(address.country_code)) return { ok: false, problem: 'Choose a country.' };
-	if (!address.city || !address.postcode) return { ok: false, problem: 'Enter the city and postal code.' };
+	// A price needs only the postal code, state and country; the full address is needed to order.
+	if (!address.postcode) return { ok: false, problem: 'Enter the postal code.' };
+	if (needsEmail && !address.city) return { ok: false, problem: 'Enter the city.' };
 	if (['US', 'CA'].includes(address.country_code) && !address.state_code) return { ok: false, problem: 'Enter the state or province.' };
 
 	const form: BookOrderForm = { choice, shippingLevel, address };
@@ -95,7 +97,8 @@ export function addressForQuote(address: ShippingAddress): Omit<ShippingAddress,
 	return {
 		street1: address.street1 || 'Address for price',
 		street2: address.street2,
-		city: address.city,
+		// Lulu prices by postal code, state and country; the city is a placeholder until the reader gives it.
+		city: address.city || 'City for price',
 		state_code: address.state_code,
 		postcode: address.postcode,
 		country_code: address.country_code,

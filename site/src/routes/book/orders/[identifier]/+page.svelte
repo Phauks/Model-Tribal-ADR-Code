@@ -30,6 +30,9 @@
 	{/if}
 	<div class="panel">
 		<p><strong>{data.order.title}</strong>, {data.order.pages} pages, {formatDollars(data.order.priceCents / 100)}</p>
+		{#if data.order.giftCents > 0}
+			<p>And a gift to the project of {formatDollars(data.order.giftCents / 100)}. Thank you.</p>
+		{/if}
 		<p>{statusText[data.order.status] ?? data.order.status}</p>
 		{#if data.order.trackingLink}
 			<p><a href={data.order.trackingLink} rel="noreferrer">Track the package</a></p>
