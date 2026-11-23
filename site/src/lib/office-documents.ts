@@ -9,7 +9,17 @@
  * and code, numbered and bulleted lists, tables with borders and links.
  */
 import { strToU8, zipSync, type Zippable } from 'fflate';
+import tokens from '../../design-tokens.json';
+import { themeColors, type TokenGroup } from './design-tokens.ts';
 import { provenance, type Block, type PageDocument, type Run } from './page-document.ts';
+
+/** The light theme's colors from site/design-tokens.json, the ones a printed page uses. */
+const colors = themeColors(tokens as TokenGroup, 'light');
+/** OpenDocument writes a color with its leading mark; Word writes the six digits alone. */
+const palette = { heading: colors.band, muted: colors['ink-muted'], link: colors.link, border: colors['control-border'] };
+const wordPalette = Object.fromEntries(
+	Object.entries(palette).map(([name, value]) => [name, value.replace(/^#/, '').toUpperCase()])
+) as typeof palette;
 
 function xml(text: string): string {
 	return text.replaceAll('&', '&amp;').replaceAll('<', '&lt;').replaceAll('>', '&gt;').replaceAll('"', '&quot;');
@@ -169,7 +179,7 @@ class WordWriter {
 
 function wordStyles(): string {
 	const heading = (level: number, size: number) =>
-		`<w:style w:type="paragraph" w:styleId="Heading${level}"><w:name w:val="heading ${level}"/><w:basedOn w:val="Normal"/><w:next w:val="Normal"/><w:qFormat/><w:pPr><w:keepNext/><w:spacing w:before="${level === 1 ? 360 : 240}" w:after="120"/><w:outlineLvl w:val="${level - 1}"/></w:pPr><w:rPr><w:b/><w:color w:val="0F4C54"/><w:sz w:val="${size}"/></w:rPr></w:style>`;
+		`<w:style w:type="paragraph" w:styleId="Heading${level}"><w:name w:val="heading ${level}"/><w:basedOn w:val="Normal"/><w:next w:val="Normal"/><w:qFormat/><w:pPr><w:keepNext/><w:spacing w:before="${level === 1 ? 360 : 240}" w:after="120"/><w:outlineLvl w:val="${level - 1}"/></w:pPr><w:rPr><w:b/><w:color w:val="${wordPalette.heading}"/><w:sz w:val="${size}"/></w:rPr></w:style>`;
 	return `<?xml version="1.0" encoding="UTF-8" standalone="yes"?><w:styles ${wordNamespaces}><w:docDefaults><w:rPrDefault><w:rPr><w:rFonts w:ascii="Arial" w:hAnsi="Arial" w:cs="Arial" w:eastAsia="Arial"/><w:sz w:val="22"/><w:lang w:val="en-US"/></w:rPr></w:rPrDefault><w:pPrDefault><w:pPr><w:spacing w:after="160" w:line="276" w:lineRule="auto"/></w:pPr></w:pPrDefault></w:docDefaults><w:style w:type="paragraph" w:default="1" w:styleId="Normal"><w:name w:val="Normal"/><w:qFormat/></w:style>${[
 		[1, 36],
 		[2, 30],
@@ -181,7 +191,7 @@ function wordStyles(): string {
 		.map(([level, size]) => heading(level, size))
 		.join(
 			''
-		)}<w:style w:type="paragraph" w:styleId="Quote"><w:name w:val="Quote"/><w:basedOn w:val="Normal"/><w:qFormat/><w:pPr><w:ind w:left="720" w:right="720"/></w:pPr><w:rPr><w:i/></w:rPr></w:style><w:style w:type="paragraph" w:styleId="Code"><w:name w:val="Code"/><w:basedOn w:val="Normal"/><w:pPr><w:spacing w:after="0"/></w:pPr><w:rPr><w:rFonts w:ascii="Courier New" w:hAnsi="Courier New" w:cs="Courier New"/><w:sz w:val="20"/></w:rPr></w:style><w:style w:type="paragraph" w:styleId="ListParagraph"><w:name w:val="List Paragraph"/><w:basedOn w:val="Normal"/><w:qFormat/><w:pPr><w:spacing w:after="80"/><w:contextualSpacing/></w:pPr></w:style><w:style w:type="paragraph" w:styleId="Caption"><w:name w:val="caption"/><w:basedOn w:val="Normal"/><w:qFormat/><w:rPr><w:i/><w:sz w:val="18"/></w:rPr></w:style><w:style w:type="paragraph" w:styleId="Provenance"><w:name w:val="Provenance"/><w:basedOn w:val="Normal"/><w:rPr><w:color w:val="555555"/><w:sz w:val="18"/></w:rPr></w:style><w:style w:type="character" w:styleId="Hyperlink"><w:name w:val="Hyperlink"/><w:rPr><w:color w:val="1A6D76"/><w:u w:val="single"/></w:rPr></w:style><w:style w:type="table" w:styleId="TableGrid"><w:name w:val="Table Grid"/><w:tblPr><w:tblBorders><w:top w:val="single" w:sz="4" w:space="0" w:color="999999"/><w:left w:val="single" w:sz="4" w:space="0" w:color="999999"/><w:bottom w:val="single" w:sz="4" w:space="0" w:color="999999"/><w:right w:val="single" w:sz="4" w:space="0" w:color="999999"/><w:insideH w:val="single" w:sz="4" w:space="0" w:color="999999"/><w:insideV w:val="single" w:sz="4" w:space="0" w:color="999999"/></w:tblBorders><w:tblCellMar><w:left w:w="80" w:type="dxa"/><w:right w:w="80" w:type="dxa"/></w:tblCellMar></w:tblPr></w:style></w:styles>`;
+		)}<w:style w:type="paragraph" w:styleId="Quote"><w:name w:val="Quote"/><w:basedOn w:val="Normal"/><w:qFormat/><w:pPr><w:ind w:left="720" w:right="720"/></w:pPr><w:rPr><w:i/></w:rPr></w:style><w:style w:type="paragraph" w:styleId="Code"><w:name w:val="Code"/><w:basedOn w:val="Normal"/><w:pPr><w:spacing w:after="0"/></w:pPr><w:rPr><w:rFonts w:ascii="Courier New" w:hAnsi="Courier New" w:cs="Courier New"/><w:sz w:val="20"/></w:rPr></w:style><w:style w:type="paragraph" w:styleId="ListParagraph"><w:name w:val="List Paragraph"/><w:basedOn w:val="Normal"/><w:qFormat/><w:pPr><w:spacing w:after="80"/><w:contextualSpacing/></w:pPr></w:style><w:style w:type="paragraph" w:styleId="Caption"><w:name w:val="caption"/><w:basedOn w:val="Normal"/><w:qFormat/><w:rPr><w:i/><w:sz w:val="18"/></w:rPr></w:style><w:style w:type="paragraph" w:styleId="Provenance"><w:name w:val="Provenance"/><w:basedOn w:val="Normal"/><w:rPr><w:color w:val="${wordPalette.muted}"/><w:sz w:val="18"/></w:rPr></w:style><w:style w:type="character" w:styleId="Hyperlink"><w:name w:val="Hyperlink"/><w:rPr><w:color w:val="${wordPalette.link}"/><w:u w:val="single"/></w:rPr></w:style><w:style w:type="table" w:styleId="TableGrid"><w:name w:val="Table Grid"/><w:tblPr><w:tblBorders><w:top w:val="single" w:sz="4" w:space="0" w:color="${wordPalette.border}"/><w:left w:val="single" w:sz="4" w:space="0" w:color="${wordPalette.border}"/><w:bottom w:val="single" w:sz="4" w:space="0" w:color="${wordPalette.border}"/><w:right w:val="single" w:sz="4" w:space="0" w:color="${wordPalette.border}"/><w:insideH w:val="single" w:sz="4" w:space="0" w:color="${wordPalette.border}"/><w:insideV w:val="single" w:sz="4" w:space="0" w:color="${wordPalette.border}"/></w:tblBorders><w:tblCellMar><w:left w:w="80" w:type="dxa"/><w:right w:w="80" w:type="dxa"/></w:tblCellMar></w:tblPr></w:style></w:styles>`;
 }
 
 function coreProperties(document: PageDocument): string {
@@ -311,7 +321,7 @@ function listStyle(name: string, ordered: boolean): string {
 
 function openStyles(): string {
 	const heading = (level: number, size: string) =>
-		`<style:style style:name="Heading_20_${level}" style:display-name="Heading ${level}" style:family="paragraph" style:parent-style-name="Standard" style:next-style-name="Text_20_body" style:default-outline-level="${level}"><style:paragraph-properties fo:margin-top="${level === 1 ? '0.25in' : '0.17in'}" fo:margin-bottom="0.08in" fo:keep-with-next="always"/><style:text-properties fo:font-size="${size}" fo:font-weight="bold" fo:color="#0f4c54"/></style:style>`;
+		`<style:style style:name="Heading_20_${level}" style:display-name="Heading ${level}" style:family="paragraph" style:parent-style-name="Standard" style:next-style-name="Text_20_body" style:default-outline-level="${level}"><style:paragraph-properties fo:margin-top="${level === 1 ? '0.25in' : '0.17in'}" fo:margin-bottom="0.08in" fo:keep-with-next="always"/><style:text-properties fo:font-size="${size}" fo:font-weight="bold" fo:color="${palette.heading}"/></style:style>`;
 	return `<?xml version="1.0" encoding="UTF-8"?><office:document-styles ${openDocumentNamespaces} office:version="1.3"><office:styles><style:default-style style:family="paragraph"><style:text-properties style:font-name="Arial" fo:font-family="Arial, Liberation Sans, sans-serif" fo:font-size="11pt" fo:language="en" fo:country="US"/></style:default-style><style:style style:name="Standard" style:family="paragraph"/><style:style style:name="Text_20_body" style:display-name="Text body" style:family="paragraph" style:parent-style-name="Standard"><style:paragraph-properties fo:margin-bottom="0.1in" fo:line-height="115%"/></style:style>${[
 		[1, '18pt'],
 		[2, '15pt'],
@@ -323,7 +333,7 @@ function openStyles(): string {
 		.map(([level, size]) => heading(level as number, size as string))
 		.join(
 			''
-		)}<style:style style:name="Quotations" style:family="paragraph" style:parent-style-name="Text_20_body"><style:paragraph-properties fo:margin-left="0.4in" fo:margin-right="0.4in"/><style:text-properties fo:font-style="italic"/></style:style><style:style style:name="Preformatted_20_Text" style:display-name="Preformatted Text" style:family="paragraph" style:parent-style-name="Standard"><style:text-properties fo:font-family="'Courier New', monospace" fo:font-size="10pt"/></style:style><style:style style:name="List_20_Contents" style:display-name="List Contents" style:family="paragraph" style:parent-style-name="Text_20_body"><style:paragraph-properties fo:margin-bottom="0.04in"/></style:style><style:style style:name="Table_20_Contents" style:display-name="Table Contents" style:family="paragraph" style:parent-style-name="Standard"/><style:style style:name="Caption" style:family="paragraph" style:parent-style-name="Text_20_body"><style:text-properties fo:font-size="9pt" fo:font-style="italic"/></style:style><style:style style:name="Provenance" style:family="paragraph" style:parent-style-name="Text_20_body"><style:text-properties fo:font-size="9pt" fo:color="#555555"/></style:style></office:styles></office:document-styles>`;
+		)}<style:style style:name="Quotations" style:family="paragraph" style:parent-style-name="Text_20_body"><style:paragraph-properties fo:margin-left="0.4in" fo:margin-right="0.4in"/><style:text-properties fo:font-style="italic"/></style:style><style:style style:name="Preformatted_20_Text" style:display-name="Preformatted Text" style:family="paragraph" style:parent-style-name="Standard"><style:text-properties fo:font-family="'Courier New', monospace" fo:font-size="10pt"/></style:style><style:style style:name="List_20_Contents" style:display-name="List Contents" style:family="paragraph" style:parent-style-name="Text_20_body"><style:paragraph-properties fo:margin-bottom="0.04in"/></style:style><style:style style:name="Table_20_Contents" style:display-name="Table Contents" style:family="paragraph" style:parent-style-name="Standard"/><style:style style:name="Caption" style:family="paragraph" style:parent-style-name="Text_20_body"><style:text-properties fo:font-size="9pt" fo:font-style="italic"/></style:style><style:style style:name="Provenance" style:family="paragraph" style:parent-style-name="Text_20_body"><style:text-properties fo:font-size="9pt" fo:color="${palette.muted}"/></style:style></office:styles></office:document-styles>`;
 }
 
 function openContent(document: PageDocument): string {
@@ -335,9 +345,9 @@ function openContent(document: PageDocument): string {
 			(name) =>
 				`<style:style style:name="T${name}" style:family="text"><style:text-properties fo:font-family="'Courier New', monospace"${name.includes('B') ? ' fo:font-weight="bold"' : ''}${name.includes('I') ? ' fo:font-style="italic"' : ''}/></style:style>`
 		),
-		'<style:style style:name="Rule" style:family="paragraph" style:parent-style-name="Standard"><style:paragraph-properties fo:border-bottom="0.5pt solid #999999" fo:padding-bottom="0.04in"/></style:style>',
+		`<style:style style:name="Rule" style:family="paragraph" style:parent-style-name="Standard"><style:paragraph-properties fo:border-bottom="0.5pt solid ${palette.border}" fo:padding-bottom="0.04in"/></style:style>`,
 		'<style:style style:name="Table" style:family="table"><style:table-properties style:width="6.5in" table:align="margins"/></style:style>',
-		'<style:style style:name="Cell" style:family="table-cell"><style:table-cell-properties fo:border="0.5pt solid #999999" fo:padding="0.04in"/></style:style>',
+		`<style:style style:name="Cell" style:family="table-cell"><style:table-cell-properties fo:border="0.5pt solid ${palette.border}" fo:padding="0.04in"/></style:style>`,
 		listStyle('LBullets', false),
 		listStyle('LNumbered', true)
 	].join('');
