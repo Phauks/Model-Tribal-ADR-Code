@@ -888,6 +888,148 @@ sup.citation {
 	margin-top: 0 !important;
 }
 
+/*
+ * A quotation in its paragraph (src/lib/essays/quote-context-view.ts): the
+ * "Show the paragraph" button sits on the attribution's line, at the left,
+ * and opens a filled panel under it with the quoted words highlighted. The
+ * panel's own text is upright, since only the quotation above is set in
+ * italics; the highlight is italic and underlined as well as colored, so
+ * color is never the only cue. Mockup: design/quote-context in the project
+ * files (Trevor approved it Nov. 23, 2026).
+ */
+.quote-context-bar {
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+	justify-content: space-between;
+	gap: var(--space-1) var(--space-3);
+	margin-top: calc(-1 * var(--space-3));
+	margin-bottom: var(--space-4);
+}
+
+.essay-quote > .quote-context-bar {
+	margin-top: 0;
+	margin-bottom: var(--space-2);
+}
+
+.quote-context-bar > .essay-attribution {
+	margin: 0 0 0 auto !important;
+}
+
+.quote-context-button {
+	display: inline-flex;
+	align-items: center;
+	gap: var(--space-1);
+	min-height: 2.75rem;
+	padding: 0 var(--space-2) 0 var(--space-1);
+	margin-left: calc(-1 * var(--space-1));
+	border: 0;
+	border-radius: var(--radius-control);
+	background: transparent;
+	color: var(--color-link);
+	font: inherit;
+	font-size: var(--font-size-small);
+	font-style: normal;
+	font-weight: var(--font-weight-semibold);
+	text-indent: 0;
+	cursor: pointer;
+}
+
+.quote-context-button span {
+	text-decoration: underline;
+	text-decoration-thickness: 1px;
+	text-underline-offset: 3px;
+}
+
+.quote-context-button:hover {
+	background: color-mix(in srgb, var(--color-link) 12%, transparent);
+}
+
+.quote-context-icon {
+	flex: none;
+	width: 1.125rem;
+	height: 1.125rem;
+	fill: none;
+	stroke: currentColor;
+	stroke-width: 2;
+	stroke-linecap: round;
+	stroke-linejoin: round;
+}
+
+.quote-context {
+	margin: 0 0 var(--space-4);
+	padding: var(--space-1) var(--space-4) var(--space-3);
+	border-radius: var(--radius-panel);
+	background: var(--color-surface);
+	font-size: var(--font-size-small);
+	font-style: normal;
+	text-indent: 0;
+}
+
+.quote-context-head {
+	display: flex;
+	justify-content: space-between;
+	align-items: baseline;
+	gap: var(--space-3);
+	padding: var(--space-2) 0 var(--space-1);
+	margin-bottom: var(--space-2);
+	border-bottom: 1px solid var(--color-line);
+	color: var(--color-ink-muted);
+}
+
+.quote-context-title {
+	font-weight: var(--font-weight-semibold);
+	letter-spacing: 0.04em;
+	text-transform: uppercase;
+}
+
+.quote-context p {
+	margin: 0 0 var(--space-2);
+	font-style: normal;
+	text-indent: 0;
+}
+
+.quote-context .quote-context-near {
+	color: var(--color-ink-muted);
+}
+
+.quote-context .quote-context-heading {
+	font-weight: var(--font-weight-semibold);
+}
+
+.quote-context mark {
+	padding: 1px 0;
+	background: var(--color-placeholder-background);
+	box-shadow: inset 0 -2px 0 var(--color-placeholder-rule);
+	color: inherit;
+	font-style: italic;
+}
+
+.quote-context .quote-context-more {
+	display: flex;
+	margin: 0 auto var(--space-1);
+}
+
+.quote-context-status,
+.quote-context-note {
+	color: var(--color-ink-muted);
+}
+
+.quote-context-foot {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
+	gap: var(--space-1) var(--space-4);
+	margin-top: var(--space-2);
+	padding-top: var(--space-2);
+	border-top: 1px solid var(--color-line);
+	color: var(--color-ink-muted);
+}
+
+.quote-context-foot a {
+	color: var(--color-link);
+}
+
 .essay-analysis {
 	background: var(--color-surface);
 	border-radius: var(--radius-panel);

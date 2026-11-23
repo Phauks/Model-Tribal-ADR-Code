@@ -4,7 +4,9 @@
 	// with a glossary entry that is not linked, and a phrase used so often it
 	// may need one; src/lib/essays/checks.ts), and the citation and quotation
 	// checks publishing runs (the preview's problems and warnings). Checks run
-	// a moment after typing stops. Choosing an issue selects its words; its
+	// a moment after typing stops. The quotation check (Trevor, Nov. 23, 2026)
+	// runs when asked: each quotation is looked for in its source's documents
+	// in the source library (src/routes/workspace/essays/[id]/quotes). Choosing an issue selects its words; its
 	// buttons fix it, link it, add the word to the dictionary or hide it.
 	import { onDestroy, onMount } from 'svelte';
 	import { TextSelection } from 'prosemirror-state';
@@ -42,6 +44,71 @@
 	let issues = $state<CheckIssue[]>([]);
 	let publishing = $state<{ problems: string[]; warnings: string[] } | null>(null);
 	let ignored = $state(new Set<string>());
+
+	interface QuotationCheck {
+		line: number;
+		source: string;
+		pinpoint: string | null;
+		excerpt: string;
+		result: 'exact' | 'close' | 'not-found' | 'no-copy';
+		readersCanOpen: boolean;
+		copy: string | null;
+		differences: { source: string; quoted: string }[];
+		shortCopy: boolean;
+	}
+
+	let quotations = $state<QuotationCheck[] | null>(null);
+	let quotationState = $state<'' | 'checking' | 'failed'>('');
+	const quotationGroups = $derived(
+		quotations
+			? [
+					{ title: 'Quotations that differ from their source', items: quotations.filter((check) => check.result === 'close') },
+					{ title: 'Quotations not found in their source', items: quotations.filter((check) => check.result === 'not-found') },
+					{
+						title: 'Quotations readers cannot open in context',
+						items: quotations.filter((check) => check.result !== 'not-found' && check.result !== 'close' && !check.readersCanOpen)
+					}
+				]
+			: []
+	);
+
+	async function checkQuotations(): Promise<void> {
+		quotationState = 'checking';
+		const response = await fetch(`/workspace/essays/${identifier}/quotes`, {
+			method: 'POST',
+			headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
+			body: JSON.stringify({ text: file() })
+		}).catch(() => null);
+		if (!response?.ok) {
+			quotationState = 'failed';
+			return;
+		}
+		quotations = ((await response.json()) as { checks: QuotationCheck[] }).checks;
+		quotationState = '';
+	}
+
+	function quotationMessage(check: QuotationCheck): string {
+		const where = check.copy ? ` (${check.copy})` : '';
+		if (check.result === 'close') {
+			const words = check.differences
+				.map((difference) =>
+					difference.source && difference.quoted
+						? `the source has "${difference.source}" where the quotation has "${difference.quoted}"`
+						: difference.source
+							? `the quotation leaves out "${difference.source}"`
+							: `the quotation adds "${difference.quoted}"`
+				)
+				.join('; ');
+			return `${words || 'A few words differ'}${where}. Check the quotation against the source; a copy can misread too.`;
+		}
+		if (check.result === 'not-found') {
+			return check.shortCopy
+				? `Not found in the copy we hold${where}, which looks like a summary rather than the whole opinion. Check the quotation and its pinpoint, or add a full copy.`
+				: `Not found in the copy we hold${where}. Check the quotation and its pinpoint.`;
+		}
+		if (check.result === 'no-copy') return 'The library holds no copy of this source, so the quotation cannot be checked or opened.';
+		return `Matches a private copy${where}, which readers cannot see. A public copy of the source would let readers open it.`;
+	}
 	let running = $state(false);
 
 	const ignoreKey = (issue: CheckIssue) => `${issue.kind}:${issue.problem.toLowerCase()}:${issue.message}`;
@@ -276,6 +343,29 @@
 			</ul>
 		</details>
 	{/if}
+	<div class="quotations">
+		<button type="button" class="button button-quiet small" onclick={() => void checkQuotations()} disabled={quotationState === 'checking'}>
+			{quotations ? 'Check the quotations again' : 'Check the quotations against their sources'}
+		</button>
+		<span class="small muted" role="status" aria-live="polite">
+			{#if quotationState === 'checking'}Checking each quotation in the source library…{:else if quotationState === 'failed'}The check could not run. Try again.{:else if quotations}{quotations.length} quotations; {quotations.filter((check) => check.result === 'exact').length} match word for word, {quotations.filter((check) => check.readersCanOpen).length} can be opened by readers.{/if}
+		</span>
+	</div>
+	{#each quotationGroups as group (group.title)}
+		{#if group.items.length > 0}
+			<details open={group.items.length <= 25}>
+				<summary>{group.title} ({group.items.length})</summary>
+				<ul class="plain">
+					{#each group.items as check (`${check.line}-${check.source}`)}
+						<li>
+							<strong>“{check.excerpt}”</strong>
+							<span class="small">{check.source}{check.pinpoint ? `, ${check.pinpoint}` : ''}, line {check.line}. {quotationMessage(check)}</span>
+						</li>
+					{/each}
+				</ul>
+			</details>
+		{/if}
+	{/each}
 	{#each groups as group (group.title)}
 		{#if group.items.length > 0}
 			<details open={group.items.length <= 25}>
@@ -327,6 +417,19 @@
 
 	.status {
 		margin: 0 0 var(--space-2);
+	}
+
+	.quotations {
+		display: flex;
+		flex-wrap: wrap;
+		align-items: center;
+		gap: var(--space-1) var(--space-2);
+		margin: 0 0 var(--space-2);
+	}
+
+	.plain li > strong,
+	.plain li > .small {
+		display: block;
 	}
 
 	details {
