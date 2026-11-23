@@ -640,6 +640,37 @@ gaming:
     locator: table row 270, Ordinance Date column
     note: Original ordinance date as listed (Ordinance Date column). NIGC table row 270 lists the nation
       as "Spokane Tribe of the Spokane Reservation".
+  enforcement_actions:
+  - kinds:
+    - settlement-agreement
+    tracking_number: SA-SPO
+    date: '2006-07-21'
+    link: https://www.nigc.gov?wpdmdl=8110&ind=8121
+    source: national-indian-gaming-commission-enforcement-actions
+    confidence: high
+    verification: bulk-import
+    locator: Row SA-SPO
+    note: The list titles the action “Spokane Tribe of Indians” and gives its type as SA.
+  - kinds:
+    - notice-of-violation
+    tracking_number: NOV-08-13
+    date: '2008-07-28'
+    link: https://www.nigc.gov?wpdmdl=8020&ind=8031
+    source: national-indian-gaming-commission-enforcement-actions
+    confidence: high
+    verification: bulk-import
+    locator: Row NOV-08-13
+    note: The list titles the action “Spokane Tribe of Indians” and gives its type as NOV.
+  - kinds:
+    - settlement-agreement
+    tracking_number: SA-08-13
+    date: '2008-08-27'
+    link: https://www.nigc.gov?wpdmdl=7984&ind=7995
+    source: national-indian-gaming-commission-enforcement-actions
+    confidence: high
+    verification: bulk-import
+    locator: Row SA-08-13
+    note: The list titles the action “Spokane Tribe of Indians” and gives its type as SA.
 jurisdiction:
 - topic: public-law-280
   value: optional-state

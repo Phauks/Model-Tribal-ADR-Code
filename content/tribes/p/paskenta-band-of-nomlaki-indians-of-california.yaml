@@ -500,6 +500,17 @@ gaming:
     as_of: '2024-12-10'
     note: Listed in the NIGC Gaming Tribe Report (by-state report) as "Paskenta Band of Nomlaki Indians".
       Name extracted from the PDF by the page-fetch tool and matched to the roster.
+  indian_lands_opinions:
+  - parcel: Unspecified land
+    legal_theory: Restored Lands
+    accepted: true
+    date: '2000-04-18'
+    link: https://www.nigc.gov?wpdmdl=2521&ind=2522
+    source: national-indian-gaming-commission-indian-lands-opinions
+    confidence: high
+    verification: bulk-import
+    locator: Row for Paskenta Band of Nomlaki Indians, 2000-04-18
+    note: The list names the tribe as “Paskenta Band of Nomlaki Indians”.
 jurisdiction:
 - topic: public-law-280
   value: mandatory-state

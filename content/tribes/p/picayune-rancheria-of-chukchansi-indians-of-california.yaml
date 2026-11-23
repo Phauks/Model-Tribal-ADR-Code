@@ -603,6 +603,79 @@ gaming:
     as_of: '2024-12-10'
     note: Listed in the NIGC Gaming Tribe Report (by-state report) as "Picayune Rancheria of Chukchansi
       Indians". Name extracted from the PDF by the page-fetch tool and matched to the roster.
+  indian_lands_opinions:
+  - parcel: Madera, CA
+    legal_theory: Within Reservation Boundaries
+    accepted: true
+    date: '2000-03-02'
+    link: https://www.nigc.gov?wpdmdl=2517&ind=2518
+    source: national-indian-gaming-commission-indian-lands-opinions
+    confidence: high
+    verification: bulk-import
+    locator: Row for Picayune Rancheria of Chukchansi Indians, 2000-03-02
+    note: The list names the tribe as “Picayune Rancheria of Chukchansi Indians”.
+  - parcel: Madera, CA
+    legal_theory: Within Reservation Boundaries
+    accepted: true
+    date: '2001-12-03'
+    link: https://www.nigc.gov?wpdmdl=2532&ind=2533
+    source: national-indian-gaming-commission-indian-lands-opinions
+    confidence: high
+    verification: bulk-import
+    locator: Row for Picayune Rancheria of Chukchansi Indians, 2001-12-03
+    note: The list names the tribe as “Picayune Rancheria of Chukchansi Indians”.
+  enforcement_actions:
+  - kinds:
+    - notice-of-violation
+    tracking_number: NOV-14-01
+    date: '2014-09-09'
+    link: https://www.nigc.gov?wpdmdl=7729&ind=7740
+    source: national-indian-gaming-commission-enforcement-actions
+    confidence: high
+    verification: bulk-import
+    locator: Row NOV-14-01
+    note: The list titles the action “Picayune Rancheria of the Chukchansi Indians” and gives its type as NOV.
+  - kinds:
+    - notice-of-violation
+    tracking_number: NOV-14-02
+    date: '2014-09-09'
+    link: https://www.nigc.gov?wpdmdl=7730&ind=7741
+    source: national-indian-gaming-commission-enforcement-actions
+    confidence: high
+    verification: bulk-import
+    locator: Row NOV-14-02
+    note: The list titles the action “Picayune Rancheria of the Chukchansi Indians” and gives its type as NOV.
+  - kinds:
+    - temporary-closure-order
+    tracking_number: TCO-14-01
+    date: '2014-10-07'
+    link: https://www.nigc.gov?wpdmdl=7728&ind=7739
+    source: national-indian-gaming-commission-enforcement-actions
+    confidence: high
+    verification: bulk-import
+    locator: Row TCO-14-01
+    note: The list titles the action “Picayune Rancheria of the Chukchansi Indians” and gives its type as TCO.
+  - kinds:
+    - notice-of-violation
+    - temporary-closure-order
+    tracking_number: NOV-14-03/TCO-14-02
+    date: '2014-10-10'
+    link: https://www.nigc.gov?wpdmdl=7727&ind=7738
+    source: national-indian-gaming-commission-enforcement-actions
+    confidence: high
+    verification: bulk-import
+    locator: Row NOV-14-03/TCO-14-02
+    note: The list titles the action “Picayune Rancheria of the Chukchansi Indians” and gives its type as NOV/TCO.
+  - kinds:
+    - settlement-agreement
+    tracking_number: SA-15-01
+    date: '2015-12-21'
+    link: https://www.nigc.gov?wpdmdl=7725&ind=7736
+    source: national-indian-gaming-commission-enforcement-actions
+    confidence: high
+    verification: bulk-import
+    locator: Row SA-15-01
+    note: The list titles the action “Picayune Rancheria of the Chukchansi Indians” and gives its type as SA.
 jurisdiction:
 - topic: public-law-280
   value: mandatory-state

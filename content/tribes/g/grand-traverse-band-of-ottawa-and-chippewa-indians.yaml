@@ -704,6 +704,38 @@ gaming:
       and Chippewa Indians, Michigan". Facilities as machine-extracted from the report text (verify):
       Crystal Shores Casino; Turtle Creek Casino; Leelanau Sands Casino. Name extracted from the PDF by
       the page-fetch tool and matched to the roster.'
+  indian_lands_opinions:
+  - parcel: Turtle Creek Site, Grand Traverse County, MI
+    legal_theory: Restored Lands
+    accepted: true
+    date: '2001-08-31'
+    link: https://www.nigc.gov?wpdmdl=2530&ind=2531
+    source: national-indian-gaming-commission-indian-lands-opinions
+    confidence: high
+    verification: bulk-import
+    locator: Row for Grand Traverse Band of Ottawa and Chippewa Indians, 2001-08-31
+    note: The list names the tribe as “Grand Traverse Band of Ottawa and Chippewa Indians”.
+  - parcel: Benzie Parcel, Benzie County, Michigan
+    legal_theory: Restored Lands
+    accepted: false
+    date: '2025-07-22'
+    link: https://www.nigc.gov/wp-content/uploads/2025/08/2025.07.22-Indian-lands-op-Grand-Traverse-Benzie-Parcel.pdf
+    source: national-indian-gaming-commission-indian-lands-opinions
+    confidence: high
+    verification: bulk-import
+    locator: Row for Grand Traverse Band of Ottawa and Chippewa Indians, 2025-07-22
+    note: The list names the tribe as “Grand Traverse Band of Ottawa and Chippewa Indians”.
+  enforcement_actions:
+  - kinds:
+    - notice-of-violation
+    tracking_number: NOV-26-01
+    date: '2026-01-12'
+    link: https://www.nigc.gov?wpdmdl=13729&ind=13730
+    source: national-indian-gaming-commission-enforcement-actions
+    confidence: high
+    verification: bulk-import
+    locator: Row NOV-26-01
+    note: The list titles the action “Grand Traverse Band of Ottawa and Chippewa Indians” and gives its type as NOV.
 jurisdiction:
 - topic: indian-child-welfare-act
   value: designated-agent-listed

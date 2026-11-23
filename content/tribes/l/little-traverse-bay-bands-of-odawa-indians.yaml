@@ -1000,6 +1000,27 @@ gaming:
     as_of: '2024-12-10'
     note: Listed in the NIGC Gaming Tribe Report (by-state report) as "Little Traverse Bay Band of Odawa
       Indians". Name extracted from the PDF by the page-fetch tool and matched to the roster.
+  indian_lands_opinions:
+  - parcel: Mackinaw City Tract, Emmet County, MI
+    legal_theory: Restored Lands
+    accepted: true
+    date: '1997-11-12'
+    link: https://www.nigc.gov?wpdmdl=2484&ind=2485
+    source: national-indian-gaming-commission-indian-lands-opinions
+    confidence: high
+    verification: bulk-import
+    locator: Row for Little Traverse Bay Band of Odawa Indians, 1997-11-12
+    note: The list names the tribe as “Little Traverse Bay Band of Odawa Indians”.
+  - parcel: Victories Tract, Emmet County, MI
+    legal_theory: Restored Lands
+    accepted: true
+    date: '1999-08-05'
+    link: https://www.nigc.gov?wpdmdl=2502&ind=2503
+    source: national-indian-gaming-commission-indian-lands-opinions
+    confidence: high
+    verification: bulk-import
+    locator: Row for Little Traverse Bay Band of Odawa Indians, 1999-08-05
+    note: The list names the tribe as “Little Traverse Bay Band of Odawa Indians”.
 jurisdiction:
 - topic: indian-child-welfare-act
   value: designated-agent-listed

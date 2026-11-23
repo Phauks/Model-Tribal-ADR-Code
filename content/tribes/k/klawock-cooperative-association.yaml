@@ -494,6 +494,17 @@ gaming:
     note: 'Listed in the NIGC Gaming Tribe Report (alphabetical report) as "Klawock Cooperative Association".
       Facilities as machine-extracted from the report text (verify): Klawock Casino. Name extracted from
       the PDF by the page-fetch tool and matched to the roster.'
+  enforcement_actions:
+  - kinds:
+    - notice-of-violation
+    tracking_number: NOV-04-05
+    date: '2004-08-24'
+    link: https://www.nigc.gov?wpdmdl=8203&ind=8225
+    source: national-indian-gaming-commission-enforcement-actions
+    confidence: high
+    verification: bulk-import
+    locator: Row NOV-04-05
+    note: The list titles the action “Klawock Cooperative Association” and gives its type as NOV.
 jurisdiction:
 - topic: public-law-280
   value: mandatory-state

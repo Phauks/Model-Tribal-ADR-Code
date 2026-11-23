@@ -309,6 +309,17 @@ gaming:
       as "Fond du Lac Band of Minnesota Chippewa Tribe". Name matched to roster by spelling variant. Ordinance
       of the Fond du Lac Band, a component reservation of the Minnesota Chippewa Tribe; the roster lists
       only the Minnesota Chippewa Tribe.
+  enforcement_actions:
+  - kinds:
+    - notice-of-violation
+    tracking_number: NOV-11-02
+    date: '2011-07-12'
+    link: https://www.nigc.gov?wpdmdl=7748&ind=7768
+    source: national-indian-gaming-commission-enforcement-actions
+    confidence: high
+    verification: bulk-import
+    locator: Row NOV-11-02
+    note: The list titles the action “Fond du Lac Band of Lake Superior Chippewa” and gives its type as NOV.
 jurisdiction:
 - topic: public-law-280
   value: mandatory-state

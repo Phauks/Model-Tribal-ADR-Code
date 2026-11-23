@@ -589,6 +589,37 @@ gaming:
     as_of: '2024-12-10'
     note: Listed in the NIGC Gaming Tribe Report (by-state report) as "Sac & Fox Tribe of the Mississippi
       in Iowa". Name extracted from the PDF by the page-fetch tool and matched to the roster.
+  enforcement_actions:
+  - kinds:
+    - notice-of-violation
+    tracking_number: NOV-03-02
+    date: '2003-04-30'
+    link: https://www.nigc.gov?wpdmdl=8251&ind=8262
+    source: national-indian-gaming-commission-enforcement-actions
+    confidence: high
+    verification: bulk-import
+    locator: Row NOV-03-02
+    note: The list titles the action “Sac & Fox Tribe of the Mississippi in Iowa” and gives its type as NOV.
+  - kinds:
+    - notice-of-violation
+    tracking_number: CO-03-02
+    date: '2003-05-12'
+    link: https://www.nigc.gov?wpdmdl=8250&ind=8261
+    source: national-indian-gaming-commission-enforcement-actions
+    confidence: high
+    verification: bulk-import
+    locator: Row CO-03-02
+    note: The list titles the action “Sac & Fox Tribe of the Mississippi in Iowa” and gives its type as NOV.
+  - kinds:
+    - notice-of-violation
+    tracking_number: NOV-03-02 – OGPR
+    date: '2003-12-19'
+    link: https://www.nigc.gov?wpdmdl=8234&ind=8245
+    source: national-indian-gaming-commission-enforcement-actions
+    confidence: high
+    verification: bulk-import
+    locator: Row NOV-03-02 – OGPR
+    note: The list titles the action “Sac & Fox Tribe of the Mississippi in Iowa” and gives its type as NOV.
 jurisdiction:
 - topic: public-law-280
   value: optional-state

@@ -537,6 +537,68 @@ gaming:
     locator: table row 289, Amendment Date column
     note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 289 lists the nation
       as "Tonkawa Tribe of Indians of Oklahoma".
+  enforcement_actions:
+  - kinds:
+    - closure-order
+    tracking_number: CO 06-01
+    date: '2006-02-02'
+    link: https://www.nigc.gov?wpdmdl=8151&ind=8161
+    source: national-indian-gaming-commission-enforcement-actions
+    confidence: high
+    verification: bulk-import
+    locator: Row CO 06-01
+    note: The list titles the action “Tonkawa Tribe of Oklahoma” and gives its type as CO.
+  - kinds:
+    - notice-of-violation
+    tracking_number: NOV-06-06
+    date: '2006-02-02'
+    link: https://www.nigc.gov?wpdmdl=8152&ind=8162
+    source: national-indian-gaming-commission-enforcement-actions
+    confidence: high
+    verification: bulk-import
+    locator: Row NOV-06-06
+    note: The list titles the action “Tonkawa Tribe of Oklahoma” and gives its type as NOV.
+  - kinds:
+    - pre-opening-agreement
+    - settlement-agreement
+    tracking_number: POA/SA-06-01
+    date: '2006-07-05'
+    link: https://www.nigc.gov?wpdmdl=8126&ind=8137
+    source: national-indian-gaming-commission-enforcement-actions
+    confidence: high
+    verification: bulk-import
+    locator: Row POA/SA-06-01
+    note: The list titles the action “Tonkawa Tribe of Oklahoma” and gives its type as POA/SA.
+  - kinds:
+    - notice-of-violation
+    tracking_number: NOV-09-06
+    date: '2009-02-12'
+    link: https://www.nigc.gov?wpdmdl=7921&ind=7932
+    source: national-indian-gaming-commission-enforcement-actions
+    confidence: high
+    verification: bulk-import
+    locator: Row NOV-09-06
+    note: The list titles the action “Tonkawa Tribe of Oklahoma” and gives its type as NOV.
+  - kinds:
+    - notice-of-violation
+    tracking_number: NOV-09-06A(replacing NOV-09-06)
+    date: '2009-02-18'
+    link: https://www.nigc.gov?wpdmdl=7920&ind=7931
+    source: national-indian-gaming-commission-enforcement-actions
+    confidence: high
+    verification: bulk-import
+    locator: Row NOV-09-06A(replacing NOV-09-06)
+    note: The list titles the action “Tonkawa Tribe of Oklahoma” and gives its type as NOV.
+  - kinds:
+    - settlement-agreement
+    tracking_number: SA-09-06
+    date: '2009-03-04'
+    link: https://www.nigc.gov?wpdmdl=7901&ind=7923
+    source: national-indian-gaming-commission-enforcement-actions
+    confidence: high
+    verification: bulk-import
+    locator: Row SA-09-06
+    note: The list titles the action “Tonkawa Indian Tribe” and gives its type as SA.
 jurisdiction:
 - topic: indian-child-welfare-act
   value: designated-agent-listed

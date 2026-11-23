@@ -713,6 +713,27 @@ gaming:
     locator: table row 149, Amendment Date column
     note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 149 lists the nation
       as "Mescalero Apache Tribe". Name matched to roster by spelling variant.
+  enforcement_actions:
+  - kinds:
+    - notice-of-violation
+    tracking_number: NOV-06-05
+    date: '2006-01-31'
+    link: https://www.nigc.gov?wpdmdl=8153&ind=8163
+    source: national-indian-gaming-commission-enforcement-actions
+    confidence: high
+    verification: bulk-import
+    locator: Row NOV-06-05
+    note: The list titles the action “Mescalero Apache Tribe” and gives its type as NOV.
+  - kinds:
+    - settlement-agreement
+    tracking_number: SA-06-05
+    date: '2006-05-09'
+    link: https://www.nigc.gov?wpdmdl=8129&ind=8140
+    source: national-indian-gaming-commission-enforcement-actions
+    confidence: high
+    verification: bulk-import
+    locator: Row SA-06-05
+    note: The list titles the action “Mescalero Apache Tribe” and gives its type as SA.
 jurisdiction:
 - topic: indian-child-welfare-act
   value: designated-agent-listed

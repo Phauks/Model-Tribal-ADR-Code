@@ -690,6 +690,27 @@ gaming:
     note: 'Listed in the NIGC Gaming Tribe Report (alphabetical report) as "Alabama-Coushatta Tribe of
       Texas". Facilities as machine-extracted from the report text (verify): Ischoopa Travel Center; Naskila
       Gaming. Name extracted from the PDF by the page-fetch tool and matched to the roster.'
+  enforcement_actions:
+  - kinds:
+    - notice-of-violation
+    tracking_number: NOV-24-01
+    date: '2024-09-05'
+    link: https://www.nigc.gov?wpdmdl=13013&ind=13014
+    source: national-indian-gaming-commission-enforcement-actions
+    confidence: high
+    verification: bulk-import
+    locator: Row NOV-24-01
+    note: The list titles the action “Alabama-Coushatta Tribe of Texas” and gives its type as NOV.
+  - kinds:
+    - settlement-agreement
+    tracking_number: SA-24-01
+    date: '2025-06-06'
+    link: https://www.nigc.gov?wpdmdl=12372&ind=12374
+    source: national-indian-gaming-commission-enforcement-actions
+    confidence: high
+    verification: bulk-import
+    locator: Row SA-24-01
+    note: The list titles the action “Alabama-Coushatta Tribe of Texas” and gives its type as SA.
 jurisdiction:
 - topic: indian-child-welfare-act
   value: designated-agent-listed

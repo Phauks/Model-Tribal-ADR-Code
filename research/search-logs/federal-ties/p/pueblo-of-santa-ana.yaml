@@ -29,3 +29,11 @@ searches:
   query: How the nation's reservation was set aside
   outcome: not-found
   reason: 'Candidate: Spanish grant confirmations and Court of Private Land Claims decrees. Not entered: Laguna and Santa Ana are not in the Act of Dec. 22, 1858 (11 Stat. 374). Their original grants were confirmed by other proceedings (Laguna: survey approved by the Court of Private Land Claims on Aug. 22, 1899, per Exec. Order No. 1221) that were not located. Laguna is entered only for the 1917 addition; Santa Ana has no entry.'
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: official-list
+  address: https://www.nigc.gov/office-of-general-counsel/legal-opinions/indian-lands-opinions/ and https://www.nigc.gov/commission/commission-actions/enforcement-actions/
+  query: Indian lands opinions and enforcement actions of the National Indian Gaming Commission (scripts/jurisdiction/build_gaming_commission_records.py)
+  outcome: not-found
+  reason: Neither list names the nation.

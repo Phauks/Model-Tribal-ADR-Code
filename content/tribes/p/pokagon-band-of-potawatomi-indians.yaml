@@ -802,6 +802,38 @@ gaming:
     note: Listed in the NIGC Gaming Tribe Report (by-state report) as "Pokagon Band of Potawatomi Indians
       of Michigan and Indiana". Name extracted from the PDF by the page-fetch tool and matched to the
       roster.
+  indian_lands_opinions:
+  - parcel: Unspecified Parcels, Michigan and Indiana
+    legal_theory: Restored Lands
+    accepted: true
+    date: '1997-09-19'
+    link: https://www.nigc.gov?wpdmdl=2479&ind=2480
+    source: national-indian-gaming-commission-indian-lands-opinions
+    confidence: high
+    verification: bulk-import
+    locator: Row for Pokagon Band of Potawatomi Indians, 1997-09-19
+    note: The list names the tribe as “Pokagon Band of Potawatomi Indians”.
+  enforcement_actions:
+  - kinds:
+    - notice-of-violation
+    tracking_number: NOV-09-04
+    date: '2009-01-28'
+    link: https://www.nigc.gov?wpdmdl=7936&ind=7947
+    source: national-indian-gaming-commission-enforcement-actions
+    confidence: high
+    verification: bulk-import
+    locator: Row NOV-09-04
+    note: The list titles the action “Pokagon Band of Potawatomi Indians” and gives its type as NOV.
+  - kinds:
+    - settlement-agreement
+    tracking_number: SA-09-04
+    date: '2009-02-25'
+    link: https://www.nigc.gov?wpdmdl=7916&ind=7927
+    source: national-indian-gaming-commission-enforcement-actions
+    confidence: high
+    verification: bulk-import
+    locator: Row SA-09-04
+    note: The list titles the action “Pokagon Band of Potawatomi Indians” and gives its type as SA.
 jurisdiction:
 - topic: indian-child-welfare-act
   value: designated-agent-listed

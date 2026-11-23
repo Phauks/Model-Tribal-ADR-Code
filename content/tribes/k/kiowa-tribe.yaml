@@ -672,6 +672,58 @@ gaming:
     note: 'Listed in the NIGC Gaming Tribe Report (alphabetical report) as "Kiowa Tribe of Oklahoma".
       Facilities as machine-extracted from the report text (verify): Kiowa Casino Carnegie; Kiowa Casino
       Red River. Name extracted from the PDF by the page-fetch tool and matched to the roster.'
+  indian_lands_opinions:
+  - parcel: Cotton County, OK
+    legal_theory: Indian Lands Oklahoma
+    accepted: true
+    date: '2005-11-15'
+    link: https://www.nigc.gov?wpdmdl=2580&ind=2581
+    source: national-indian-gaming-commission-indian-lands-opinions
+    confidence: high
+    verification: bulk-import
+    locator: Row for Kiowa Tribe of Oklahoma, 2005-11-15
+    note: The list names the tribe as “Kiowa Tribe of Oklahoma”.
+  enforcement_actions:
+  - kinds:
+    - notice-of-violation
+    tracking_number: NOV-99-06
+    date: '1999-04-01'
+    link: https://www.nigc.gov?wpdmdl=1941&ind=1942
+    source: national-indian-gaming-commission-enforcement-actions
+    confidence: high
+    verification: bulk-import
+    locator: Row NOV-99-06
+    note: The list titles the action “Kiowa Tribe of Oklahoma” and gives its type as NOV.
+  - kinds:
+    - closure-order
+    tracking_number: CO-99-06
+    date: '1999-04-01'
+    link: https://www.nigc.gov?wpdmdl=1943&ind=1944
+    source: national-indian-gaming-commission-enforcement-actions
+    confidence: high
+    verification: bulk-import
+    locator: Row CO-99-06
+    note: The list titles the action “Kiowa Tribe of Oklahoma” and gives its type as CO.
+  - kinds:
+    - notice-of-violation
+    tracking_number: NOV-00-03
+    date: '2000-01-19'
+    link: https://www.nigc.gov?wpdmdl=2022&ind=2023
+    source: national-indian-gaming-commission-enforcement-actions
+    confidence: high
+    verification: bulk-import
+    locator: Row NOV-00-03
+    note: The list titles the action “Kiowa Tribe of Oklahoma” and gives its type as NOV.
+  - kinds:
+    - pre-opening-agreement
+    tracking_number: POA-00-08
+    date: '2005-08-31'
+    link: https://www.nigc.gov?wpdmdl=8169&ind=8180
+    source: national-indian-gaming-commission-enforcement-actions
+    confidence: high
+    verification: bulk-import
+    locator: Row POA-00-08
+    note: The list titles the action “Kiowa Tribe of Oklahoma” and gives its type as POA.
 jurisdiction:
 - topic: indian-child-welfare-act
   value: designated-agent-listed

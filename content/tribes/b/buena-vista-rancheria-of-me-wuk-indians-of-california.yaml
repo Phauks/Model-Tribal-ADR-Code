@@ -286,6 +286,17 @@ gaming:
     note: 'Listed in the NIGC Gaming Tribe Report (alphabetical report) as "Buena Vista Rancheria of Me-Wuk
       Indians". Facilities as machine-extracted from the report text (verify): Harrah''s Northern California.
       Name extracted from the PDF by the page-fetch tool and matched to the roster.'
+  indian_lands_opinions:
+  - parcel: Amador County, CA
+    legal_theory: Within Reservation Boundaries
+    accepted: true
+    date: '2005-06-30'
+    link: https://www.nigc.gov?wpdmdl=2574&ind=2575
+    source: national-indian-gaming-commission-indian-lands-opinions
+    confidence: high
+    verification: bulk-import
+    locator: Row for Buena Vista Rancheria of Me-Wuk Indians, 2005-06-30
+    note: The list names the tribe as “Buena Vista Rancheria of Me-Wuk Indians”.
 jurisdiction:
 - topic: public-law-280
   value: mandatory-state

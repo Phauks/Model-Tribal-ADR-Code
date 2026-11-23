@@ -369,6 +369,27 @@ gaming:
     locator: table row 128, Amendment Date column
     note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 128 lists the nation
       as "La Posta Band of Diegueno Mission Indians". Name matched to roster by spelling variant.
+  enforcement_actions:
+  - kinds:
+    - notice-of-violation
+    tracking_number: NOV-09-13
+    date: '2009-03-30'
+    link: https://www.nigc.gov?wpdmdl=7879&ind=7902
+    source: national-indian-gaming-commission-enforcement-actions
+    confidence: high
+    verification: bulk-import
+    locator: Row NOV-09-13
+    note: The list titles the action “La Posta Band of Mission Indians” and gives its type as NOV.
+  - kinds:
+    - settlement-agreement
+    tracking_number: SA-09-13
+    date: '2009-05-05'
+    link: https://www.nigc.gov?wpdmdl=7849&ind=7864
+    source: national-indian-gaming-commission-enforcement-actions
+    confidence: high
+    verification: bulk-import
+    locator: Row SA-09-13
+    note: The list titles the action “La Posta Band of Mission Indians” and gives its type as SA.
 jurisdiction:
 - topic: public-law-280
   value: mandatory-state

@@ -715,6 +715,27 @@ gaming:
       Tribes of the Flathead Reservation". Facilities as machine-extracted from the report text (verify):
       Gray Wolf Peak Casino; Big Arm Marina Casino; KwaTaqNuk Resort. Name extracted from the PDF by the
       page-fetch tool and matched to the roster.'
+  enforcement_actions:
+  - kinds:
+    - notice-of-violation
+    tracking_number: NOV-08-11
+    date: '2008-07-11'
+    link: https://www.nigc.gov?wpdmdl=8024&ind=8035
+    source: national-indian-gaming-commission-enforcement-actions
+    confidence: high
+    verification: bulk-import
+    locator: Row NOV-08-11
+    note: The list titles the action “Confederated Salish and Kootenai Tribes” and gives its type as NOV.
+  - kinds:
+    - settlement-agreement
+    tracking_number: SA-08-11
+    date: '2008-08-04'
+    link: https://www.nigc.gov?wpdmdl=8018&ind=8029
+    source: national-indian-gaming-commission-enforcement-actions
+    confidence: high
+    verification: bulk-import
+    locator: Row SA-08-11
+    note: The list titles the action “Confederated Salish and Kootenai Tribes” and gives its type as SA.
 jurisdiction:
 - topic: public-law-280
   value: optional-state

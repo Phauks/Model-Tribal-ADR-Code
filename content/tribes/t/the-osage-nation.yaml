@@ -691,6 +691,17 @@ gaming:
     locator: table row 179, Amendment Date column
     note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 179 lists the nation
       as "Osage Tribe". Name matched to roster by spelling variant.
+  indian_lands_opinions:
+  - parcel: North Tulsa, Bartlesville, Osage County, OK
+    legal_theory: Within Reservation Boundaries
+    accepted: true
+    date: '2005-07-28'
+    link: https://www.nigc.gov?wpdmdl=2576&ind=2577
+    source: national-indian-gaming-commission-indian-lands-opinions
+    confidence: high
+    verification: bulk-import
+    locator: Row for Osage Nation, 2005-07-28
+    note: The list names the tribe as “Osage Nation”.
 jurisdiction:
 - topic: indian-child-welfare-act
   value: designated-agent-listed

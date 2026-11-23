@@ -942,6 +942,17 @@ gaming:
     as_of: '2024-12-10'
     note: Listed in the NIGC Gaming Tribe Report (by-state report) as "Little River Band of Ottawa Indians".
       Name extracted from the PDF by the page-fetch tool and matched to the roster.
+  indian_lands_opinions:
+  - parcel: Manistee Orchard, Manistee County, MI
+    legal_theory: Restored Lands
+    accepted: true
+    date: '1998-03-16'
+    link: https://www.nigc.gov?wpdmdl=2491&ind=2492
+    source: national-indian-gaming-commission-indian-lands-opinions
+    confidence: high
+    verification: bulk-import
+    locator: Row for Little River Band of Ottawa Indians, 1998-03-16
+    note: The list names the tribe as “Little River Band of Ottawa Indians”.
 jurisdiction:
 - topic: indian-child-welfare-act
   value: designated-agent-listed

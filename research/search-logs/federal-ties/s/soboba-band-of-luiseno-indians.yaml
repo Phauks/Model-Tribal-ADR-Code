@@ -29,3 +29,11 @@ searches:
   query: How the nation's reservation was set aside
   outcome: not-found
   reason: 'Candidate: Exec. Order of May 16, 1876 (San Bernardino County tracts), 1 Kappler 821, and later Mission Indian orders (Aug. 26 and Sept. 29, 1877; 1880s-1890s). Not entered: The May 16, 1876 order lists tracts only as "Mission", "Torros", "Village" (three times), "Cahezons" and "Agua Caliente" by township and section. Linking any of these to a present nation requires matching surveys or later records not read, and the 1877 orders leave out names entirely. Not linked.'
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: official-list
+  address: https://www.nigc.gov/office-of-general-counsel/legal-opinions/indian-lands-opinions/ and https://www.nigc.gov/commission/commission-actions/enforcement-actions/
+  query: Indian lands opinions and enforcement actions of the National Indian Gaming Commission (scripts/jurisdiction/build_gaming_commission_records.py)
+  outcome: found
+  reason: Recorded 4 enforcement actions.

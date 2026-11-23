@@ -738,6 +738,47 @@ gaming:
     locator: table row 296, Amendment Date column
     note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 296 lists the nation
       as "Turtle Mountain Band of Chippewa Indians".
+  enforcement_actions:
+  - kinds:
+    - notice-of-violation
+    tracking_number: NOV-09-22
+    date: '2009-04-13'
+    link: https://www.nigc.gov?wpdmdl=7872&ind=7884
+    source: national-indian-gaming-commission-enforcement-actions
+    confidence: high
+    verification: bulk-import
+    locator: Row NOV-09-22
+    note: The list titles the action “Turtle Mountain Band of Chippewa Indians” and gives its type as NOV.
+  - kinds:
+    - settlement-agreement
+    tracking_number: SA-09-22
+    date: '2009-06-01'
+    link: https://www.nigc.gov?wpdmdl=7811&ind=7822
+    source: national-indian-gaming-commission-enforcement-actions
+    confidence: high
+    verification: bulk-import
+    locator: Row SA-09-22
+    note: The list titles the action “Turtle Mountain Band of Chippewa Indians” and gives its type as SA.
+  - kinds:
+    - notice-of-violation
+    tracking_number: NOV-23-01
+    date: '2023-02-16'
+    link: https://www.nigc.gov?wpdmdl=2976&ind=2977
+    source: national-indian-gaming-commission-enforcement-actions
+    confidence: high
+    verification: bulk-import
+    locator: Row NOV-23-01
+    note: The list titles the action “Turtle Mountain Band of Chippewa Indians” and gives its type as NOV.
+  - kinds:
+    - settlement-agreement
+    tracking_number: SA-23-02
+    date: '2023-06-01'
+    link: https://www.nigc.gov?wpdmdl=2972&ind=2973
+    source: national-indian-gaming-commission-enforcement-actions
+    confidence: high
+    verification: bulk-import
+    locator: Row SA-23-02
+    note: The list titles the action “Turtle Mountain Band of Chippewa Indians” and gives its type as SA.
 jurisdiction:
 - topic: indian-child-welfare-act
   value: designated-agent-listed

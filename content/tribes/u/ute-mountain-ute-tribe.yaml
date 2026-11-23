@@ -564,6 +564,27 @@ gaming:
     as_of: '2024-12-10'
     note: Listed in the NIGC Gaming Tribe Report (by-state report) as "Ute Mountain Ute Tribe". Name extracted
       from the PDF by the page-fetch tool and matched to the roster.
+  enforcement_actions:
+  - kinds:
+    - notice-of-violation
+    tracking_number: NOV-05-10
+    date: '2005-02-17'
+    link: https://www.nigc.gov?wpdmdl=8200&ind=8222
+    source: national-indian-gaming-commission-enforcement-actions
+    confidence: high
+    verification: bulk-import
+    locator: Row NOV-05-10
+    note: The list titles the action “Ute Mountain Ute Tribe” and gives its type as NOV.
+  - kinds:
+    - settlement-agreement
+    tracking_number: SA-05-10
+    date: '2005-04-26'
+    link: https://www.nigc.gov?wpdmdl=8187&ind=8208
+    source: national-indian-gaming-commission-enforcement-actions
+    confidence: high
+    verification: bulk-import
+    locator: Row SA-05-10
+    note: The list titles the action “Ute Mountain Ute Tribe” and gives its type as SA.
 jurisdiction:
 - topic: indian-child-welfare-act
   value: designated-agent-listed

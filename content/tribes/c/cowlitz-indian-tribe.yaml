@@ -460,6 +460,17 @@ gaming:
     note: 'Listed in the NIGC Gaming Tribe Report (alphabetical report) as "Cowlitz Tribe". Facilities
       as machine-extracted from the report text (verify): ilani Casino Resort. Name extracted from the
       PDF by the page-fetch tool and matched to the roster.'
+  indian_lands_opinions:
+  - parcel: Clark County, WA
+    legal_theory: Restored Lands
+    accepted: true
+    date: '2005-11-23'
+    link: https://www.nigc.gov?wpdmdl=2582&ind=2583
+    source: national-indian-gaming-commission-indian-lands-opinions
+    confidence: high
+    verification: bulk-import
+    locator: Row for Cowlitz Tribe, 2005-11-23
+    note: The list names the tribe as “Cowlitz Tribe”.
 jurisdiction:
 - topic: public-law-280
   value: optional-state

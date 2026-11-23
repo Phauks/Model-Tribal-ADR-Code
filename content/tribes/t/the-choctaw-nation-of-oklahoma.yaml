@@ -835,6 +835,18 @@ gaming:
       Casino Too - McAlester Travel Plaza; Choctaw Casino - Idabel; Choctaw Casino - Pocola; Choctaw Casino
       - Wilburton Travel Plaza. Name extracted from the PDF by the page-fetch tool and matched to the
       roster.'
+  enforcement_actions:
+  - kinds:
+    - notice-of-violation
+    - closure-order
+    tracking_number: NOV/CO-99-04
+    date: '1999-07-08'
+    link: https://www.nigc.gov?wpdmdl=1953&ind=1954
+    source: national-indian-gaming-commission-enforcement-actions
+    confidence: high
+    verification: bulk-import
+    locator: Row NOV/CO-99-04
+    note: The list titles the action “Choctaw Nation of Oklahoma” and gives its type as NOV/CO.
 jurisdiction:
 - topic: indian-child-welfare-act
   value: designated-agent-listed

@@ -826,6 +826,27 @@ gaming:
     as_of: '2024-12-10'
     note: Listed in the NIGC Gaming Tribe Report (by-state report) as "Pascua Yaqui Tribe of Arizona".
       Name extracted from the PDF by the page-fetch tool and matched to the roster.
+  enforcement_actions:
+  - kinds:
+    - notice-of-violation
+    tracking_number: NOV-06-09
+    date: '2006-03-29'
+    link: https://www.nigc.gov?wpdmdl=8145&ind=8155
+    source: national-indian-gaming-commission-enforcement-actions
+    confidence: high
+    verification: bulk-import
+    locator: Row NOV-06-09
+    note: The list titles the action “Pascua Yaqui Tribe” and gives its type as NOV.
+  - kinds:
+    - civil-fine-assessment
+    tracking_number: CFA-06-09
+    date: '2006-05-17'
+    link: https://www.nigc.gov?wpdmdl=8128&ind=8139
+    source: national-indian-gaming-commission-enforcement-actions
+    confidence: high
+    verification: bulk-import
+    locator: Row CFA-06-09
+    note: The list titles the action “Pascua Yaqui Tribe” and gives its type as CFA.
 jurisdiction:
 - topic: public-law-280
   value: retroceded

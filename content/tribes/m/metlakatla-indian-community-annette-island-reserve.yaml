@@ -573,6 +573,27 @@ gaming:
     as_of: '2024-12-10'
     note: Listed in the NIGC Gaming Tribe Report (by-state report) as "Metlakatla Indian Community, Annette
       Island Reservation". Name extracted from the PDF by the page-fetch tool and matched to the roster.
+  enforcement_actions:
+  - kinds:
+    - notice-of-violation
+    tracking_number: NOV-18-02
+    date: '2018-03-27'
+    link: https://www.nigc.gov?wpdmdl=7702&ind=7713
+    source: national-indian-gaming-commission-enforcement-actions
+    confidence: high
+    verification: bulk-import
+    locator: Row NOV-18-02
+    note: The list titles the action “Metlakatla Indian Community” and gives its type as NOV.
+  - kinds:
+    - settlement-agreement
+    tracking_number: SA-18-02
+    date: '2018-05-16'
+    link: https://www.nigc.gov?wpdmdl=3017&ind=3018
+    source: national-indian-gaming-commission-enforcement-actions
+    confidence: high
+    verification: bulk-import
+    locator: Row SA-18-02
+    note: The list titles the action “Metlakatla Indian Community” and gives its type as SA.
 jurisdiction:
 - topic: public-law-280
   value: excepted

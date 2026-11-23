@@ -619,6 +619,27 @@ gaming:
     locator: table row 259, Amendment Date column
     note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 259 lists the nation
       as "Shoalwater Bay Tribe". Name matched to roster by spelling variant.
+  enforcement_actions:
+  - kinds:
+    - notice-of-violation
+    tracking_number: NOV-99-10
+    date: '1999-08-05'
+    link: https://www.nigc.gov?wpdmdl=1955&ind=1956
+    source: national-indian-gaming-commission-enforcement-actions
+    confidence: high
+    verification: bulk-import
+    locator: Row NOV-99-10
+    note: The list titles the action “Shoalwater Bay Indian Tribe” and gives its type as NOV.
+  - kinds:
+    - notice-of-violation
+    tracking_number: SA/NOV/CO-99-10
+    date: '2003-11-12'
+    link: https://www.nigc.gov?wpdmdl=8235&ind=8246
+    source: national-indian-gaming-commission-enforcement-actions
+    confidence: high
+    verification: bulk-import
+    locator: Row SA/NOV/CO-99-10
+    note: The list titles the action “Shoalwater Bay Indian Tribe” and gives its type as NOV.
 jurisdiction:
 - topic: public-law-280
   value: optional-state

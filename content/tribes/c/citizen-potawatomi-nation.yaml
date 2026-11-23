@@ -666,6 +666,27 @@ gaming:
       Oklahoma". Facilities as machine-extracted from the report text (verify): Firelake Travel Plaza;
       Golf Clubhouse; Firelake Entertainment Center; Grand Casino Hotel Resort. Name extracted from the
       PDF by the page-fetch tool and matched to the roster.'
+  enforcement_actions:
+  - kinds:
+    - notice-of-violation
+    tracking_number: NOV-08-01
+    date: '2008-04-28'
+    link: https://www.nigc.gov?wpdmdl=8060&ind=8071
+    source: national-indian-gaming-commission-enforcement-actions
+    confidence: high
+    verification: bulk-import
+    locator: Row NOV-08-01
+    note: The list titles the action “Citizen Potawatomi Nation” and gives its type as NOV.
+  - kinds:
+    - settlement-agreement
+    tracking_number: SA-08-01
+    date: '2008-07-08'
+    link: https://www.nigc.gov?wpdmdl=8025&ind=8036
+    source: national-indian-gaming-commission-enforcement-actions
+    confidence: high
+    verification: bulk-import
+    locator: Row SA-08-01
+    note: The list titles the action “Citizen Potawatomi Nation” and gives its type as SA.
 jurisdiction:
 - topic: indian-child-welfare-act
   value: designated-agent-listed

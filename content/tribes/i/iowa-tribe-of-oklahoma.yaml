@@ -660,6 +660,17 @@ gaming:
     note: 'Listed in the NIGC Gaming Tribe Report (alphabetical report) as "Iowa Tribe of Oklahoma". Facilities
       as machine-extracted from the report text (verify): Cimarron Casino; Ioway Travel Plaza Casino;
       Ioway Casino. Name extracted from the PDF by the page-fetch tool and matched to the roster.'
+  indian_lands_opinions:
+  - parcel: Whitecloud Allotment, Lincoln County, OK
+    legal_theory: Indian Lands Oklahoma
+    accepted: true
+    date: '2010-01-07'
+    link: https://www.nigc.gov?wpdmdl=2635&ind=2636
+    source: national-indian-gaming-commission-indian-lands-opinions
+    confidence: high
+    verification: bulk-import
+    locator: Row for Iowa Tribe of Oklahoma, 2010-01-07
+    note: The list names the tribe as “Iowa Tribe of Oklahoma”.
 jurisdiction:
 - topic: indian-child-welfare-act
   value: designated-agent-listed

@@ -495,6 +495,27 @@ gaming:
     locator: table row 225, Amendment Date column
     note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 225 lists the nation
       as "Red Lake Band of Chippewa Indians".
+  enforcement_actions:
+  - kinds:
+    - notice-of-violation
+    tracking_number: NOV-06-04
+    date: '2006-01-31'
+    link: https://www.nigc.gov?wpdmdl=8154&ind=8174
+    source: national-indian-gaming-commission-enforcement-actions
+    confidence: high
+    verification: bulk-import
+    locator: Row NOV-06-04
+    note: The list titles the action “Red Lake Band of Chippewa Indians” and gives its type as NOV.
+  - kinds:
+    - settlement-agreement
+    tracking_number: SA-06-04
+    date: '2006-03-20'
+    link: https://www.nigc.gov?wpdmdl=8147&ind=8157
+    source: national-indian-gaming-commission-enforcement-actions
+    confidence: high
+    verification: bulk-import
+    locator: Row SA-06-04
+    note: The list titles the action “Red Lake Band of Chippewa Indians” and gives its type as SA.
 jurisdiction:
 - topic: public-law-280
   value: excepted

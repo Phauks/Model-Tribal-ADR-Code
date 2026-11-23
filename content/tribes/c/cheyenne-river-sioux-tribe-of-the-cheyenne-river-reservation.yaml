@@ -588,6 +588,57 @@ gaming:
     locator: table row 40, Amendment Date column
     note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 40 lists the nation
       as "Cheyenne River Sioux Tribe". Name matched to roster by spelling variant.
+  enforcement_actions:
+  - kinds:
+    - settlement-agreement
+    tracking_number: SA-16-02
+    date: '2016-09-06'
+    link: https://www.nigc.gov?wpdmdl=7723&ind=7734
+    source: national-indian-gaming-commission-enforcement-actions
+    confidence: high
+    verification: bulk-import
+    locator: Row SA-16-02
+    note: The list titles the action “Cheyenne River Sioux Tribe” and gives its type as SA.
+  - kinds:
+    - notice-of-violation
+    tracking_number: NOV-18-03
+    date: '2018-10-24'
+    link: https://www.nigc.gov?wpdmdl=3014&ind=3016
+    source: national-indian-gaming-commission-enforcement-actions
+    confidence: high
+    verification: bulk-import
+    locator: Row NOV-18-03
+    note: The list titles the action “Cheyenne River Sioux Tribe” and gives its type as NOV.
+  - kinds:
+    - civil-fine-assessment
+    tracking_number: CFA-18-03
+    date: '2018-11-21'
+    link: https://www.nigc.gov?wpdmdl=3012&ind=3015
+    source: national-indian-gaming-commission-enforcement-actions
+    confidence: high
+    verification: bulk-import
+    locator: Row CFA-18-03
+    note: The list titles the action “Cheyenne River Sioux Tribe” and gives its type as CFA.
+  - kinds:
+    - settlement-agreement
+    tracking_number: SA-18-03
+    date: '2019-01-17'
+    link: https://www.nigc.gov?wpdmdl=3010&ind=3011
+    source: national-indian-gaming-commission-enforcement-actions
+    confidence: high
+    verification: bulk-import
+    locator: Row SA-18-03
+    note: The list titles the action “Cheyenne River Sioux Tribe” and gives its type as SA.
+  - kinds:
+    - settlement-agreement
+    tracking_number: SA-18-03
+    date: '2019-05-15'
+    link: https://www.nigc.gov?wpdmdl=2998&ind=2999
+    source: national-indian-gaming-commission-enforcement-actions
+    confidence: high
+    verification: bulk-import
+    locator: Row SA-18-03
+    note: The list titles the action “Cheyenne River Sioux Tribe” and gives its type as SA.
 jurisdiction:
 - topic: indian-child-welfare-act
   value: designated-agent-listed

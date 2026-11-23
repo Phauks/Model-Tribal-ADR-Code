@@ -301,6 +301,27 @@ gaming:
     note: Listed in the NIGC Gaming Tribe Report (by-state report) as "United Auburn Indian Community
       of the Auburn Rancheria". Name extracted from the PDF by the page-fetch tool and matched to the
       roster.
+  indian_lands_opinions:
+  - parcel: Resultant Parcel B, Placer County, CA
+    legal_theory: Restored Lands
+    accepted: true
+    date: '2000-01-18'
+    link: https://www.nigc.gov?wpdmdl=2513&ind=2514
+    source: national-indian-gaming-commission-indian-lands-opinions
+    confidence: high
+    verification: bulk-import
+    locator: Row for United Auburn Indian Community, 2000-01-18
+    note: The list names the tribe as “United Auburn Indian Community”.
+  - parcel: Resultant Parcel B, Placer County, CA
+    legal_theory: Restored Lands
+    accepted: true
+    date: '2002-01-03'
+    link: https://www.nigc.gov?wpdmdl=2536&ind=2537
+    source: national-indian-gaming-commission-indian-lands-opinions
+    confidence: high
+    verification: bulk-import
+    locator: Row for United Auburn Indian Community, 2002-01-03
+    note: The list names the tribe as “United Auburn Indian Community”.
 jurisdiction:
 - topic: public-law-280
   value: mandatory-state

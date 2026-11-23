@@ -701,6 +701,27 @@ gaming:
     locator: table row 173, Amendment Date column
     note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 173 lists the nation
       as "Oglala Sioux Tribe".
+  enforcement_actions:
+  - kinds:
+    - notice-of-violation
+    tracking_number: NOV-07-05
+    date: '2007-09-24'
+    link: https://www.nigc.gov?wpdmdl=8066&ind=8077
+    source: national-indian-gaming-commission-enforcement-actions
+    confidence: high
+    verification: bulk-import
+    locator: Row NOV-07-05
+    note: The list titles the action “Oglala Sioux Tribe” and gives its type as NOV.
+  - kinds:
+    - settlement-agreement
+    tracking_number: SA-07-05
+    date: '2007-12-05'
+    link: https://www.nigc.gov?wpdmdl=8064&ind=8075
+    source: national-indian-gaming-commission-enforcement-actions
+    confidence: high
+    verification: bulk-import
+    locator: Row SA-07-05
+    note: The list titles the action “Oglala Sioux Tribe” and gives its type as SA.
 jurisdiction:
 - topic: indian-child-welfare-act
   value: designated-agent-listed

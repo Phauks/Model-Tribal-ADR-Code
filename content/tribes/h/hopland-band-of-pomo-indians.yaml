@@ -753,6 +753,27 @@ gaming:
     locator: table row 100, Amendment Date column
     note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 100 lists the nation
       as "Hopland Band of Pomo Indians".
+  enforcement_actions:
+  - kinds:
+    - notice-of-violation
+    tracking_number: NOV-05-03
+    date: '2005-02-17'
+    link: https://www.nigc.gov?wpdmdl=8196&ind=8218
+    source: national-indian-gaming-commission-enforcement-actions
+    confidence: high
+    verification: bulk-import
+    locator: Row NOV-05-03
+    note: The list titles the action “Hopland Band of Pomo Indians” and gives its type as NOV.
+  - kinds:
+    - settlement-agreement
+    tracking_number: SA-05-03
+    date: '2005-05-11'
+    link: https://www.nigc.gov?wpdmdl=8172&ind=8183
+    source: national-indian-gaming-commission-enforcement-actions
+    confidence: high
+    verification: bulk-import
+    locator: Row SA-05-03
+    note: The list titles the action “Hopland Band of Pomo Indians” and gives its type as SA.
 jurisdiction:
 - topic: public-law-280
   value: mandatory-state

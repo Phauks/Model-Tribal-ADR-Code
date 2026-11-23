@@ -501,6 +501,27 @@ gaming:
       as "Red Cliff, Sokogon, Chippewa Lac Court Orielles Band Tribe". Name matched to roster by spelling
       variant. This row names three nations jointly (Red Cliff, Sokaogon and Lac Courte Oreilles); the
       fact is repeated for each.
+  enforcement_actions:
+  - kinds:
+    - notice-of-violation
+    tracking_number: NOV-08-22
+    date: '2008-10-01'
+    link: https://www.nigc.gov?wpdmdl=7977&ind=7988
+    source: national-indian-gaming-commission-enforcement-actions
+    confidence: high
+    verification: bulk-import
+    locator: Row NOV-08-22
+    note: The list titles the action “Lac Courte Oreilles Band of Lake Superior Chippewa Indians of Wisconsin” and gives its type as NOV.
+  - kinds:
+    - settlement-agreement
+    tracking_number: SA-08-22
+    date: '2008-10-15'
+    link: https://www.nigc.gov?wpdmdl=7964&ind=7986
+    source: national-indian-gaming-commission-enforcement-actions
+    confidence: high
+    verification: bulk-import
+    locator: Row SA-08-22
+    note: The list titles the action “Lac Courtes Oreille Band of Lake Superior Chippewa Indians of Wisconsin” and gives its type as SA.
 jurisdiction:
 - topic: public-law-280
   value: mandatory-state

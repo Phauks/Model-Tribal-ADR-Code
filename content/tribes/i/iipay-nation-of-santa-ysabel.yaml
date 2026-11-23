@@ -280,6 +280,27 @@ gaming:
     locator: table row 245, Ordinance Date column
     note: Original ordinance date as listed (Ordinance Date column). NIGC table row 245 lists the nation
       as "Santa Ysabel Band of Diegueno Mission Indians". Name matched to roster by spelling variant.
+  enforcement_actions:
+  - kinds:
+    - notice-of-violation
+    tracking_number: NOV-09-32
+    date: '2009-06-08'
+    link: https://www.nigc.gov?wpdmdl=7806&ind=7817
+    source: national-indian-gaming-commission-enforcement-actions
+    confidence: high
+    verification: bulk-import
+    locator: Row NOV-09-32
+    note: The list titles the action “IIPAY Nation of the Santa Ysabel Reservation” and gives its type as NOV.
+  - kinds:
+    - settlement-agreement
+    tracking_number: SA-09-32
+    date: '2009-07-29'
+    link: https://www.nigc.gov?wpdmdl=7781&ind=7797
+    source: national-indian-gaming-commission-enforcement-actions
+    confidence: high
+    verification: bulk-import
+    locator: Row SA-09-32
+    note: The list titles the action “IIPAY Nation of the Santa Ysabel Reservation” and gives its type as SA.
 jurisdiction:
 - topic: public-law-280
   value: mandatory-state

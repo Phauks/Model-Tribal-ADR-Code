@@ -660,6 +660,27 @@ gaming:
     locator: table row 180, Amendment Date column
     note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 180 lists the nation
       as "Otoe-Missouria Tribe of Indians".
+  enforcement_actions:
+  - kinds:
+    - settlement-agreement
+    tracking_number: NOV-06-01
+    date: '2006-01-18'
+    link: https://www.nigc.gov?wpdmdl=8166&ind=8177
+    source: national-indian-gaming-commission-enforcement-actions
+    confidence: high
+    verification: bulk-import
+    locator: Row NOV-06-01
+    note: The list titles the action “Otoe-Missouria Tribe of Oklahoma” and gives its type as SA.
+  - kinds:
+    - settlement-agreement
+    tracking_number: SA-06-01
+    date: '2006-03-20'
+    link: https://www.nigc.gov?wpdmdl=8146&ind=8156
+    source: national-indian-gaming-commission-enforcement-actions
+    confidence: high
+    verification: bulk-import
+    locator: Row SA-06-01
+    note: The list titles the action “Otoe-Missouria Tribe of Oklahoma” and gives its type as SA.
 jurisdiction:
 - topic: indian-child-welfare-act
   value: designated-agent-listed

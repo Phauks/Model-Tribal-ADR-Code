@@ -670,6 +670,27 @@ gaming:
     locator: table row 314, Amendment Date column
     note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 314 lists the nation
       as "Yankton Sioux Tribe".
+  enforcement_actions:
+  - kinds:
+    - notice-of-violation
+    tracking_number: NOV-22-01
+    date: '2022-03-30'
+    link: https://www.nigc.gov?wpdmdl=2987&ind=2988
+    source: national-indian-gaming-commission-enforcement-actions
+    confidence: high
+    verification: bulk-import
+    locator: Row NOV-22-01
+    note: The list titles the action “Yankton Sioux Tribe of South Dakota” and gives its type as NOV.
+  - kinds:
+    - civil-fine-assessment
+    tracking_number: CFA-22-01
+    date: '2022-07-06'
+    link: https://www.nigc.gov?wpdmdl=2985&ind=2986
+    source: national-indian-gaming-commission-enforcement-actions
+    confidence: high
+    verification: bulk-import
+    locator: Row CFA-22-01
+    note: The list titles the action “Yankton Sioux Tribe of South Dakota” and gives its type as CFA.
 jurisdiction:
 - topic: indian-child-welfare-act
   value: designated-agent-listed

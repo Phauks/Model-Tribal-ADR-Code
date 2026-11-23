@@ -961,6 +961,27 @@ gaming:
     locator: table row 292, Amendment Date column
     note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 292 lists the nation
       as "Tulalip Tribes of the Tulalip Reservation". Name matched to roster by spelling variant.
+  enforcement_actions:
+  - kinds:
+    - notice-of-violation
+    tracking_number: NOV-09-10
+    date: '2009-03-04'
+    link: https://www.nigc.gov?wpdmdl=7913&ind=7924
+    source: national-indian-gaming-commission-enforcement-actions
+    confidence: high
+    verification: bulk-import
+    locator: Row NOV-09-10
+    note: The list titles the action “Tulalip Tribe” and gives its type as NOV.
+  - kinds:
+    - settlement-agreement
+    tracking_number: SA-09-10
+    date: '2009-04-28'
+    link: https://www.nigc.gov?wpdmdl=7853&ind=7860
+    source: national-indian-gaming-commission-enforcement-actions
+    confidence: high
+    verification: bulk-import
+    locator: Row SA-09-10
+    note: The list titles the action “Tulalip Tribe” and gives its type as SA.
 jurisdiction:
 - topic: public-law-280
   value: optional-state

@@ -245,6 +245,8 @@ export interface NationRecord {
 		compacts?: CitedFact[];
 		ordinances?: CitedFact[];
 		operates_gaming?: CitedFact & { value: boolean };
+		indian_lands_opinions?: (CitedFact & { parcel: string; legal_theory?: string; accepted?: boolean; date: string; link?: string })[];
+		enforcement_actions?: (CitedFact & { kinds: string[]; tracking_number: string; date: string; link?: string })[];
 	};
 	review: { status: string; last_verified?: string; note?: string };
 	sensitivity?: { restricted?: boolean; tribal_review_required?: boolean };

@@ -602,6 +602,67 @@ gaming:
       Rocky Boy''s Reservation, Montana". Facilities as machine-extracted from the report text (verify):
       Northern Winz Casino II; Northern Winz Hotel and Casino. Name extracted from the PDF by the page-fetch
       tool and matched to the roster.'
+  enforcement_actions:
+  - kinds:
+    - notice-of-violation
+    tracking_number: NOV-08-04
+    date: '2008-05-21'
+    link: https://www.nigc.gov?wpdmdl=8045&ind=8056
+    source: national-indian-gaming-commission-enforcement-actions
+    confidence: high
+    verification: bulk-import
+    locator: Row NOV-08-04
+    note: The list titles the action “Chippewa Cree Tribe” and gives its type as NOV.
+  - kinds:
+    - settlement-agreement
+    tracking_number: SA-08-04
+    date: '2008-06-24'
+    link: https://www.nigc.gov?wpdmdl=8040&ind=8051
+    source: national-indian-gaming-commission-enforcement-actions
+    confidence: high
+    verification: bulk-import
+    locator: Row SA-08-04
+    note: The list titles the action “Chippewa Cree Tribe” and gives its type as SA.
+  - kinds:
+    - notice-of-violation
+    tracking_number: NOV-09-21
+    date: '2009-04-13'
+    link: https://www.nigc.gov?wpdmdl=7871&ind=7883
+    source: national-indian-gaming-commission-enforcement-actions
+    confidence: high
+    verification: bulk-import
+    locator: Row NOV-09-21
+    note: The list titles the action “Chippewa Cree Tribe” and gives its type as NOV.
+  - kinds:
+    - settlement-agreement
+    tracking_number: SA-09-21
+    date: '2009-05-15'
+    link: https://www.nigc.gov?wpdmdl=7829&ind=7840
+    source: national-indian-gaming-commission-enforcement-actions
+    confidence: high
+    verification: bulk-import
+    locator: Row SA-09-21
+    note: The list titles the action “Chippewa Cree Tribe” and gives its type as SA.
+  - kinds:
+    - notice-of-violation
+    tracking_number: NOV-09-31
+    date: '2009-06-04'
+    link: https://www.nigc.gov?wpdmdl=7808&ind=7819
+    source: national-indian-gaming-commission-enforcement-actions
+    confidence: high
+    verification: bulk-import
+    locator: Row NOV-09-31
+    note: The list titles the action “Chippewa Cree Tribe” and gives its type as NOV.
+  - kinds:
+    - settlement-agreement
+    tracking_number: SA-09-31
+    date: '2009-07-14'
+    link: https://www.nigc.gov?wpdmdl=7785&ind=7800
+    source: national-indian-gaming-commission-enforcement-actions
+    confidence: high
+    verification: bulk-import
+    locator: Row SA-09-31
+    note: The list titles the action “Chippewa Cree Tribe” and gives its type as SA.
 jurisdiction:
 - topic: indian-child-welfare-act
   value: designated-agent-listed

@@ -835,6 +835,27 @@ gaming:
       Gaming - Wittenberg; Ho-Chunk Gaming - Tomah; Ho-Chunk Gaming - Nekoosa; Ho-Chunk Gaming - Black
       River Falls; Ho-Chunk Gaming - Wisconsin Dells. Name extracted from the PDF by the page-fetch tool
       and matched to the roster.'
+  enforcement_actions:
+  - kinds:
+    - notice-of-violation
+    tracking_number: NOV-09-03
+    date: '2009-01-28'
+    link: https://www.nigc.gov?wpdmdl=7935&ind=7946
+    source: national-indian-gaming-commission-enforcement-actions
+    confidence: high
+    verification: bulk-import
+    locator: Row NOV-09-03
+    note: The list titles the action “Ho-Chunk Nation” and gives its type as NOV.
+  - kinds:
+    - settlement-agreement
+    tracking_number: SA-09-03
+    date: '2009-03-09'
+    link: https://www.nigc.gov?wpdmdl=7897&ind=7908
+    source: national-indian-gaming-commission-enforcement-actions
+    confidence: high
+    verification: bulk-import
+    locator: Row SA-09-03
+    note: The list titles the action “Ho-Chunk Nation” and gives its type as SA.
 jurisdiction:
 - topic: public-law-280
   value: mandatory-state

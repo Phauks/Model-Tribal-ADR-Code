@@ -319,6 +319,17 @@ gaming:
     locator: table row 255, Amendment Date column
     note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 255 lists the nation
       as "Shawnee Tribe of Oklahoma".
+  indian_lands_opinions:
+  - parcel: Oklahoma City Parcels, Oklahoma County, OK
+    legal_theory: Restored Lands
+    accepted: false
+    date: '2010-11-10'
+    link: https://www.nigc.gov?wpdmdl=2637&ind=2638
+    source: national-indian-gaming-commission-indian-lands-opinions
+    confidence: high
+    verification: bulk-import
+    locator: Row for Shawnee Tribe of OK, 2010-11-10
+    note: The list names the tribe as “Shawnee Tribe of OK”.
 jurisdiction:
 - topic: indian-child-welfare-act
   value: designated-agent-listed

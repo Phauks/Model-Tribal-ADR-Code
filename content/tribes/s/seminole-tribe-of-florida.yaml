@@ -753,6 +753,80 @@ gaming:
     as_of: '2024-12-10'
     note: Listed in the NIGC Gaming Tribe Report (by-state report) as "Seminole Tribe of Florida". Name
       extracted from the PDF by the page-fetch tool and matched to the roster.
+  enforcement_actions:
+  - kinds:
+    - notice-of-violation
+    tracking_number: NOV-97-M02
+    date: '1997-05-30'
+    link: https://www.nigc.gov?wpdmdl=1865&ind=1866
+    source: national-indian-gaming-commission-enforcement-actions
+    confidence: high
+    verification: bulk-import
+    locator: Row NOV-97-M02
+    note: The list titles the action “Seminole of Florida” and gives its type as NOV.
+  - kinds:
+    - notice-of-violation
+    tracking_number: NOV-98-12
+    date: '1998-04-02'
+    link: https://www.nigc.gov?wpdmdl=1903&ind=1904
+    source: national-indian-gaming-commission-enforcement-actions
+    confidence: high
+    verification: bulk-import
+    locator: Row NOV-98-12
+    note: The list titles the action “Seminole of Florida” and gives its type as NOV.
+  - kinds:
+    - notice-of-violation
+    - settlement-agreement
+    tracking_number: NOV-SA-98-12
+    date: '1998-06-25'
+    link: https://www.nigc.gov?wpdmdl=1908&ind=1909
+    source: national-indian-gaming-commission-enforcement-actions
+    confidence: high
+    verification: bulk-import
+    locator: Row NOV-SA-98-12
+    note: The list titles the action “Seminole of Florida” and gives its type as NOV-SA.
+  - kinds:
+    - notice-of-violation
+    - closure-order
+    - settlement-agreement
+    tracking_number: SA-00-07
+    date: '2000-05-25'
+    link: https://www.nigc.gov?wpdmdl=2028&ind=2029
+    source: national-indian-gaming-commission-enforcement-actions
+    confidence: high
+    verification: bulk-import
+    locator: Row SA-00-07
+    note: The list titles the action “Seminole of Florida” and gives its type as NOV/CO/SA.
+  - kinds:
+    - civil-fine-assessment
+    tracking_number: CFA-97-M02
+    date: '2000-08-17'
+    link: https://www.nigc.gov?wpdmdl=2038&ind=2039
+    source: national-indian-gaming-commission-enforcement-actions
+    confidence: high
+    verification: bulk-import
+    locator: Row CFA-97-M02
+    note: The list titles the action “Seminole of Florida” and gives its type as CFA.
+  - kinds:
+    - notice-of-violation
+    tracking_number: NOV-10-01
+    date: '2010-06-03'
+    link: https://www.nigc.gov?wpdmdl=7760&ind=7772
+    source: national-indian-gaming-commission-enforcement-actions
+    confidence: high
+    verification: bulk-import
+    locator: Row NOV-10-01
+    note: The list titles the action “Seminole Tribe of Florida” and gives its type as NOV.
+  - kinds:
+    - civil-fine-assessment
+    tracking_number: CFA-10-01
+    date: '2010-10-27'
+    link: https://www.nigc.gov?wpdmdl=7758&ind=7770
+    source: national-indian-gaming-commission-enforcement-actions
+    confidence: high
+    verification: bulk-import
+    locator: Row CFA-10-01
+    note: The list titles the action “Seminole Tribe of Florida” and gives its type as CFA.
 jurisdiction:
 - topic: public-law-280
   value: optional-state

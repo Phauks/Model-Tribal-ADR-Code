@@ -468,6 +468,27 @@ gaming:
     as_of: '2024-12-10'
     note: Listed in the NIGC Gaming Tribe Report (by-state report) as "Santa Rosa Rancheria Tachi Yokut
       Tribe". Name extracted from the PDF by the page-fetch tool and matched to the roster.
+  enforcement_actions:
+  - kinds:
+    - notice-of-violation
+    tracking_number: NOV-06-15
+    date: '2006-07-20'
+    link: https://www.nigc.gov?wpdmdl=8111&ind=8122
+    source: national-indian-gaming-commission-enforcement-actions
+    confidence: high
+    verification: bulk-import
+    locator: Row NOV-06-15
+    note: The list titles the action “Santa Rosa Rancheria Tachi-Yokut Tribe” and gives its type as NOV.
+  - kinds:
+    - settlement-agreement
+    tracking_number: SA-06-15
+    date: '2006-09-06'
+    link: https://www.nigc.gov?wpdmdl=8105&ind=8116
+    source: national-indian-gaming-commission-enforcement-actions
+    confidence: high
+    verification: bulk-import
+    locator: Row SA-06-15
+    note: The list titles the action “Santa Rosa Rancheria Tachi-Yokut Tribe” and gives its type as SA.
 jurisdiction:
 - topic: public-law-280
   value: mandatory-state

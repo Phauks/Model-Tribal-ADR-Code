@@ -292,6 +292,47 @@ gaming:
       Me-wuk Indians of California". Facilities as machine-extracted from the report text (verify): Chicken
       Ranch Casino Resort; Chicken Ranch Casino & Event Hall. Name extracted from the PDF by the page-fetch
       tool and matched to the roster.'
+  enforcement_actions:
+  - kinds:
+    - notice-of-violation
+    tracking_number: NOV-08-18
+    date: '2008-08-21'
+    link: https://www.nigc.gov?wpdmdl=8000&ind=8011
+    source: national-indian-gaming-commission-enforcement-actions
+    confidence: high
+    verification: bulk-import
+    locator: Row NOV-08-18
+    note: The list titles the action “Chicken Ranch Band of Me-Wuk Indians” and gives its type as NOV.
+  - kinds:
+    - settlement-agreement
+    tracking_number: SA-08-18
+    date: '2008-09-22'
+    link: https://www.nigc.gov?wpdmdl=7981&ind=7992
+    source: national-indian-gaming-commission-enforcement-actions
+    confidence: high
+    verification: bulk-import
+    locator: Row SA-08-18
+    note: The list titles the action “Chicken Ranch Band of Me-Wuk Indians” and gives its type as SA.
+  - kinds:
+    - notice-of-violation
+    tracking_number: NOV-09-15
+    date: '2009-04-01'
+    link: https://www.nigc.gov?wpdmdl=7876&ind=7888
+    source: national-indian-gaming-commission-enforcement-actions
+    confidence: high
+    verification: bulk-import
+    locator: Row NOV-09-15
+    note: The list titles the action “Chicken Ranch Rancheria” and gives its type as NOV.
+  - kinds:
+    - settlement-agreement
+    tracking_number: SA-09-15
+    date: '2009-04-28'
+    link: https://www.nigc.gov?wpdmdl=7852&ind=7861
+    source: national-indian-gaming-commission-enforcement-actions
+    confidence: high
+    verification: bulk-import
+    locator: Row SA-09-15
+    note: The list titles the action “Chicken Ranch Rancheria” and gives its type as SA.
 jurisdiction:
 - topic: public-law-280
   value: mandatory-state

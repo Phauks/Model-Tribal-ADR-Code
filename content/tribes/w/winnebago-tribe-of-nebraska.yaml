@@ -741,6 +741,37 @@ gaming:
     as_of: '2024-12-10'
     note: Listed in the NIGC Gaming Tribe Report (by-state report) as "Winnebago Tribe of Nebraska". Name
       extracted from the PDF by the page-fetch tool and matched to the roster.
+  enforcement_actions:
+  - kinds:
+    - notice-of-violation
+    tracking_number: NOV-08-25
+    date: '2008-11-04'
+    link: https://www.nigc.gov?wpdmdl=7962&ind=7973
+    source: national-indian-gaming-commission-enforcement-actions
+    confidence: high
+    verification: bulk-import
+    locator: Row NOV-08-25
+    note: The list titles the action “Winnebago Tribe of Nebraska” and gives its type as NOV.
+  - kinds:
+    - civil-fine-assessment
+    tracking_number: CFA-08-25
+    date: '2008-12-15'
+    link: https://www.nigc.gov?wpdmdl=7955&ind=7966
+    source: national-indian-gaming-commission-enforcement-actions
+    confidence: high
+    verification: bulk-import
+    locator: Row CFA-08-25
+    note: The list titles the action “Winnebago Tribe of Nebraska” and gives its type as CFA.
+  - kinds:
+    - settlement-agreement
+    tracking_number: SA-08-25
+    date: '2009-01-14'
+    link: https://www.nigc.gov?wpdmdl=7941&ind=7952
+    source: national-indian-gaming-commission-enforcement-actions
+    confidence: high
+    verification: bulk-import
+    locator: Row SA-08-25
+    note: The list titles the action “Winnebago Tribe of Nebraska” and gives its type as SA.
 jurisdiction:
 - topic: public-law-280
   value: mandatory-state
