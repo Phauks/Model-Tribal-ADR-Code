@@ -468,6 +468,16 @@ export async function confirmedCredits(database: D1Database): Promise<CreditEntr
 		const credit = creditOf(JSON.parse(row.snapshot) as ProfileAnswers);
 		if (credit) entries.push({ section: row.section, ...credit });
 	}
+	// Credits of people who deleted their account and chose to keep their name (src/lib/server/account-deletion.ts).
+	const retained = await database
+		.prepare(
+			`SELECT section, line, sort_key AS sortKey, biography, in_book AS inBook, on_website AS onWebsite
+			 FROM retained_credits`
+		)
+		.all<{ section: CreditSection; line: string; sortKey: string; biography: string | null; inBook: number; onWebsite: number }>();
+	for (const row of retained.results) {
+		entries.push({ ...row, inBook: Boolean(row.inBook), onWebsite: Boolean(row.onWebsite) });
+	}
 	return entries.sort((first, second) => first.sortKey.localeCompare(second.sortKey, 'en-US'));
 }
 

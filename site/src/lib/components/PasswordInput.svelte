@@ -1,5 +1,5 @@
 <script lang="ts">
-	// A password field with a "Show" button beside it, so people can check what they typed. It follows the GOV.UK Design System's password input: an eye icon with a word beside it, an announcement for screen readers when the password is shown or hidden, and the field hidden again when the form is sent, so the browser does not keep the password as ordinary text (DESIGN.md, section 6, "Password fields").
+	// A password field with an eye button inside its right edge, so people can check what they typed (Trevor, Nov. 22, 2026). The button names its action for screen readers ("Show password", "Hide password"), a polite announcement says when the password is shown or hidden, and the field goes back to hidden when the form is sent, so the browser does not keep the password as ordinary text (DESIGN.md, section 6, "Password fields").
 	//
 	// Without scripts the button never appears and the field is an ordinary password field.
 	import { onMount } from 'svelte';
@@ -32,7 +32,7 @@
 	});
 </script>
 
-<div class="password-input">
+<div class="password-input" class:ready>
 	<input
 		bind:this={field}
 		{id}
@@ -44,17 +44,16 @@
 	{#if ready}
 		<button
 			type="button"
-			class="button button-quiet show-button"
+			class="show-button"
 			aria-controls={id}
 			aria-label={shown ? 'Hide password' : 'Show password'}
+			title={shown ? 'Hide password' : 'Show password'}
 			onclick={toggle}
 		>
 			{#if shown}
-				<EyeOff size={20} strokeWidth={1.75} />
-				Hide
+				<EyeOff size={20} strokeWidth={1.75} aria-hidden="true" />
 			{:else}
-				<Eye size={20} strokeWidth={1.75} />
-				Show
+				<Eye size={20} strokeWidth={1.75} aria-hidden="true" />
 			{/if}
 		</button>
 	{/if}
@@ -63,19 +62,31 @@
 
 <style>
 	.password-input {
-		display: flex;
-		gap: var(--space-2);
-		align-items: stretch;
+		position: relative;
 	}
 
-	.password-input input {
-		flex: 1;
-		min-width: 0;
+	/* Room on the right for the eye button, only once it is there. */
+	.password-input.ready input {
+		padding-inline-end: calc(var(--layout-target-minimum) + var(--space-1));
 	}
 
 	.show-button {
-		flex: none;
-		gap: var(--space-2);
-		padding: var(--space-2) var(--space-3);
+		position: absolute;
+		inset-block: 2px;
+		inset-inline-end: 2px;
+		display: inline-flex;
+		align-items: center;
+		justify-content: center;
+		min-width: var(--layout-target-minimum);
+		padding: 0;
+		border: none;
+		border-radius: var(--radius-control);
+		background: transparent;
+		color: var(--color-ink-muted);
+		cursor: pointer;
+	}
+
+	.show-button:hover {
+		color: var(--color-ink);
 	}
 </style>
