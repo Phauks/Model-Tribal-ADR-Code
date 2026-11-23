@@ -103,10 +103,8 @@
 				<span class="status-badge"><Clock size={16} strokeWidth={2} aria-hidden="true" />{page.review.label}</span>
 				<span class="muted">{page.review.meaning}</span>
 			{:else}
+				<!-- Just the status: the longer notice under it was taken off (Trevor, Nov. 23, 2026). -->
 				<span class="status-badge"><Clock size={16} strokeWidth={2} aria-hidden="true" />Unclaimed</span>
-				<span class="muted">
-					No one from the nation keeps this page yet. {page.review.meaning}{#if page.review.lastVerified}{' '}Sources checked {page.review.lastVerified}.{/if}
-				</span>
 				<a class="no-print" href="/profile/nation-team?nation={page.id}">Work for this nation? Claim this page</a>
 			{/if}
 			<a class="no-print" href="/changes?page={encodeURIComponent(`/nations/${page.id}`)}">Changes to this page</a>

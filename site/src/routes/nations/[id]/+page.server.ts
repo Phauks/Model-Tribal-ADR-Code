@@ -968,10 +968,7 @@ export const load: PageServerLoad = ({ params }) => {
 		listedName: record.names.official,
 		// Badges under the name; no federal recognition has none (src/lib/recognition-badges.ts).
 		badges: recognitionBadges(record.recognition ?? []),
-		review: {
-			...status,
-			lastVerified: record.review?.last_verified ? readableDate(record.review.last_verified) : undefined
-		},
+		review: status,
 		withdrawn: record.review?.status === 'withdrawn-at-request',
 		// The copies of the nation's documents this site holds, to save offline or download as a ZIP.
 		heldCopies: heldCopies(record.id)
