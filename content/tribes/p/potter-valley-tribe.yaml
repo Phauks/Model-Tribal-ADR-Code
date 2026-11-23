@@ -147,6 +147,255 @@ indian_health_service:
   as_of: '2026-11-23'
   locator: regional lists (West Central, Southern, Northern, East Central)
   note: Listed as "Potter Valley Tribe, California".
+governance:
+- aspect: form
+  value: Constitution adopted under inherent sovereignty
+  quote: pursuant to our inherent sovereignty as a nation, do
+  source: constitution-potter-valley-tribe-2004-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '2004-07-29'
+  locator: Preamble
+  document_version:
+    document: potter-valley-tribe-constitution
+    version: 2004-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+- aspect: governing-body
+  value: Tribal Council
+  quote: The Tribal Council is the governing body of the Potter Valley Tribe.
+  source: constitution-potter-valley-tribe-2004-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '2004-07-29'
+  locator: Article IV, Section 1
+  document_version:
+    document: potter-valley-tribe-constitution
+    version: 2004-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+- aspect: governing-body-size
+  value: 3 members
+  quote: 'The Tribal Council shall be composed of:'
+  source: constitution-potter-valley-tribe-2004-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '2004-07-29'
+  locator: Article IV, Section 2
+  document_version:
+    document: potter-valley-tribe-constitution
+    version: 2004-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+- aspect: governing-body-selection
+  value: Elected by simple majority of registered voters
+  quote: The Tribal Secretary shall be elected by a simple majority of those
+  source: constitution-potter-valley-tribe-2004-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '2004-07-29'
+  locator: Article V, Tribal Secretary (a)
+  document_version:
+    document: potter-valley-tribe-constitution
+    version: 2004-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+- aspect: governing-body-term
+  value: 4 years, staggered (initial terms 2 or 4 years)
+  quote: Tribal Council shall be for four (4) year terms
+  source: constitution-potter-valley-tribe-2004-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '2004-07-29'
+  locator: Article IV, Section 4(b)
+  document_version:
+    document: potter-valley-tribe-constitution
+    version: 2004-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+- aspect: general-council
+  value: All members at least 18 years old
+  quote: The General Council of the Potter Valley Tribe shall consist of all Potter Valley Tribal members
+  source: constitution-potter-valley-tribe-2004-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '2004-07-29'
+  locator: Article III
+  document_version:
+    document: potter-valley-tribe-constitution
+    version: 2004-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+- aspect: head-of-government
+  value: Tribal Chairperson
+  quote: The Tribal Chairperson shall be elected by a simple majority of those
+  source: constitution-potter-valley-tribe-2004-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '2004-07-29'
+  locator: Article V, Tribal Chairperson
+  document_version:
+    document: potter-valley-tribe-constitution
+    version: 2004-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+- aspect: head-of-government
+  value: Chairperson
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  verification: bulk-import
+  as_of: '2026-11-20'
+  locator: Potter Valley Tribe, California
+  note: The title of the leader's office as the federal directory lists it; the holder's name is not recorded. Listed as “Chairman”; recorded without the holder's own form of the title.
+- aspect: head-of-government-selection
+  value: Elected by simple majority of registered voters
+  quote: The Tribal Chairperson shall be elected by a simple majority of those
+  source: constitution-potter-valley-tribe-2004-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '2004-07-29'
+  locator: Article V, Tribal Chairperson (a)
+  document_version:
+    document: potter-valley-tribe-constitution
+    version: 2004-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+- aspect: head-of-government-term
+  value: 4 years
+  quote: The Tribal Chairperson’s term shall be four (4) years.
+  source: constitution-potter-valley-tribe-2004-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '2004-07-29'
+  locator: Article V, Tribal Chairperson (b)
+  document_version:
+    document: potter-valley-tribe-constitution
+    version: 2004-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+- aspect: other-officers
+  value: Tribal Secretary, Tribal Treasurer
+  quote: The Tribal Treasurer shall be elected by a simple majority of those
+  source: constitution-potter-valley-tribe-2004-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '2004-07-29'
+  locator: Article V, Tribal Treasurer (a)
+  document_version:
+    document: potter-valley-tribe-constitution
+    version: 2004-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+- aspect: elections
+  value: Every 2 years on the first Saturday of November
+  quote: all general elections shall be held every two (2) years on the first Saturday
+  source: constitution-potter-valley-tribe-2004-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '2004-07-29'
+  locator: Article IX, Election Dates (a)
+  document_version:
+    document: potter-valley-tribe-constitution
+    version: 2004-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+- aspect: voting-age
+  value: '18'
+  quote: Tribe who are at least eighteen (18) years old on the day of the election.
+  source: constitution-potter-valley-tribe-2004-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '2004-07-29'
+  locator: Article IX, General Council
+  document_version:
+    document: potter-valley-tribe-constitution
+    version: 2004-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+- aspect: election-authority
+  value: Election Board
+  quote: An Election Board appointed by the Tribal Council shall supervise and administer
+  source: constitution-potter-valley-tribe-2004-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '2004-07-29'
+  locator: Article IX, Section 1
+  document_version:
+    document: potter-valley-tribe-constitution
+    version: 2004-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+- aspect: judiciary
+  value: Tribal court, or Intertribal Court of California
+  quote: The Tribal Council of the Potter Valley Tribe shall establish a tribal court or in
+  source: constitution-potter-valley-tribe-2004-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '2004-07-29'
+  locator: Article VI, Section 1
+  document_version:
+    document: potter-valley-tribe-constitution
+    version: 2004-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+- aspect: judicial-selection
+  value: Appointed by the Tribal Council
+  quote: (t) Establish a Tribal judiciary, appoint judges, or in the alternative choose to
+  source: constitution-potter-valley-tribe-2004-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '2004-07-29'
+  locator: Article IV, Powers (t)
+  document_version:
+    document: potter-valley-tribe-constitution
+    version: 2004-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+- aspect: judicial-independence
+  value: Decisions free from political intervention of Tribal Council
+  quote: the judiciary shall be free from political entanglements and intervention of the
+  source: constitution-potter-valley-tribe-2004-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '2004-07-29'
+  locator: Article VI, Section 3
+  document_version:
+    document: potter-valley-tribe-constitution
+    version: 2004-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+- aspect: amendment
+  value: Election under the Election Ordinance
+  quote: Adoption of any amendments to this Constitution shall take place by an election
+  source: constitution-potter-valley-tribe-2004-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '2004-07-29'
+  locator: Article XIII, Section 2
+  document_version:
+    document: potter-valley-tribe-constitution
+    version: 2004-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+- aspect: recall-and-removal
+  value: Removal by Tribal Council for felony conviction
+  quote: The Tribal Council may remove a member of the Tribal Council if he/she
+  source: constitution-potter-valley-tribe-2004-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '2004-07-29'
+  locator: Article IV, Removal (a)
+  document_version:
+    document: potter-valley-tribe-constitution
+    version: 2004-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+- aspect: recall-and-removal
+  value: Recall by petition of two-thirds of General Council, then majority vote
+  quote: petition, signed by at least two thirds (2/3) of the General Council stating
+  source: constitution-potter-valley-tribe-2004-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '2004-07-29'
+  locator: Article IV, Recall (a)
+  document_version:
+    document: potter-valley-tribe-constitution
+    version: 2004-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+- aspect: other
+  value: Initiative by General Council petition
+  quote: The General Council may propose any measure by a petition.
+  source: constitution-potter-valley-tribe-2004-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '2004-07-29'
+  locator: Article VIII
+  document_version:
+    document: potter-valley-tribe-constitution
+    version: 2004-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
 jurisdiction:
 - topic: public-law-280
   value: mandatory-state

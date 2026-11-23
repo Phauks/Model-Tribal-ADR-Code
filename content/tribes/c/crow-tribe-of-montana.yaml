@@ -207,6 +207,303 @@ indian_health_service:
   as_of: '2026-11-23'
   locator: Direct Service Tribes by IHS Area > Billings Area
   note: Listed as "Crow Tribal Council". The Direct Service Tribes list says some Tribes have a mixed Indian Health Service and Tribal arrangement.
+governance:
+- aspect: form
+  value: Constitution approved by the Secretary of the Interior
+  quote: I, Secretary of the Interior, or designee, do hereby approve this Constitution of the Crow
+  source: constitution-crow-tribe-of-montana-2001-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2001-12-04'
+  locator: Article XV
+  document_version:
+    document: crow-tribe-of-montana-constitution
+    version: 2001-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author.
+- aspect: governing-body
+  value: Crow Tribal General Council
+  quote: The Crow Tribal General Council as governing
+  source: constitution-crow-tribe-of-montana-2001-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2001-12-04'
+  locator: Article I
+  document_version:
+    document: crow-tribe-of-montana-constitution
+    version: 2001-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author.
+- aspect: governing-body
+  value: Legislative Branch (Legislature)
+  quote: 'The powers and duties of the Legislative Branch shall be:'
+  source: constitution-crow-tribe-of-montana-2001-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2001-12-04'
+  locator: Article V, Section 2
+  document_version:
+    document: crow-tribe-of-montana-constitution
+    version: 2001-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author.
+- aspect: governing-body-size
+  value: Three per district, six districts
+  quote: The Crow Tribal General Council shall elect three members from
+  source: constitution-crow-tribe-of-montana-2001-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2001-12-04'
+  locator: Article V, Section 1
+  document_version:
+    document: crow-tribe-of-montana-constitution
+    version: 2001-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author.
+- aspect: governing-body-selection
+  value: Elected by qualified voters
+  quote: shall be elected by qualified voters in an election held in accordance with an Election
+  source: constitution-crow-tribe-of-montana-2001-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2001-12-04'
+  locator: Article V, Section 1
+  document_version:
+    document: crow-tribe-of-montana-constitution
+    version: 2001-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author.
+- aspect: governing-body-term
+  value: 4 years, staggered
+  quote: election for members of the Legislative Branch shall occur after four (4) years from the
+  source: constitution-crow-tribe-of-montana-2001-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2001-12-04'
+  locator: Article V, Section 1
+  document_version:
+    document: crow-tribe-of-montana-constitution
+    version: 2001-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author.
+- aspect: general-council
+  value: All adult enrolled members 18 or older entitled to vote
+  quote: The Crow Tribal General Council shall consist of all adult enrolled members of the Crow
+  source: constitution-crow-tribe-of-montana-2001-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2001-12-04'
+  locator: Article I
+  document_version:
+    document: crow-tribe-of-montana-constitution
+    version: 2001-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author.
+- aspect: head-of-government
+  value: Chairperson (Executive Branch)
+  quote: Chairperson, Vice-Chairperson, Secretary and Vice-Secretary. Each Executive Officer shall
+  source: constitution-crow-tribe-of-montana-2001-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2001-12-04'
+  locator: Article IV, Section 1
+  document_version:
+    document: crow-tribe-of-montana-constitution
+    version: 2001-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author.
+- aspect: head-of-government
+  value: Speaker of the House (Legislative Branch)
+  quote: The Speaker of the House shall conduct all sessions of the Legislative Branch.
+  source: constitution-crow-tribe-of-montana-2001-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2001-12-04'
+  locator: Article V, Section 4
+  document_version:
+    document: crow-tribe-of-montana-constitution
+    version: 2001-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author.
+- aspect: head-of-government
+  value: Chairperson
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  verification: bulk-import
+  as_of: '2026-11-20'
+  locator: Crow Tribe of Montana
+  note: The title of the leader's office as the federal directory lists it; the holder's name is not recorded. Listed as “Chairman”; recorded without the holder's own form of the title.
+- aspect: head-of-government-selection
+  value: Elected by qualified voters
+  quote: be elected by the qualified voters in an election held in accordance with an Election
+  source: constitution-crow-tribe-of-montana-2001-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2001-12-04'
+  locator: Article IV, Section 1
+  document_version:
+    document: crow-tribe-of-montana-constitution
+    version: 2001-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author.
+- aspect: head-of-government-term
+  value: 4 years
+  quote: Members of the Executive Branch shall serve a four (4) year term or until their successors
+  source: constitution-crow-tribe-of-montana-2001-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2001-12-04'
+  locator: Article IV, Section 1
+  document_version:
+    document: crow-tribe-of-montana-constitution
+    version: 2001-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author.
+- aspect: other-officers
+  value: Vice-Chairperson, Secretary, Vice-Secretary
+  quote: Chairperson, Vice-Chairperson, Secretary and Vice-Secretary. Each Executive Officer shall
+  source: constitution-crow-tribe-of-montana-2001-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2001-12-04'
+  locator: Article IV, Section 1
+  document_version:
+    document: crow-tribe-of-montana-constitution
+    version: 2001-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author.
+- aspect: elections
+  value: Every 4 years in November; inauguration in December
+  quote: Thereafter, elections for all Executive Branch positions shall be held every four (4)
+  source: constitution-crow-tribe-of-montana-2001-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2001-12-04'
+  locator: Article VI, Section 1
+  document_version:
+    document: crow-tribe-of-montana-constitution
+    version: 2001-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author.
+- aspect: voting-age
+  value: '18'
+  quote: years of age or older at the time of election shall be entitled to vote in any election of the
+  source: constitution-crow-tribe-of-montana-2001-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2001-12-04'
+  locator: Article VI, Section 3
+  document_version:
+    document: crow-tribe-of-montana-constitution
+    version: 2001-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author.
+- aspect: election-authority
+  value: Secretary of the Executive Branch
+  quote: to hold an election within sixty (60) days of the declaration of vacancy to elect a
+  source: constitution-crow-tribe-of-montana-2001-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2001-12-04'
+  locator: Article VII, Section 1
+  document_version:
+    document: crow-tribe-of-montana-constitution
+    version: 2001-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author.
+- aspect: branches
+  value: Executive, Legislative and Judicial
+  quote: Executive, Legislative and Judicial Branches, which shall exercise a separation of powers.
+  source: constitution-crow-tribe-of-montana-2001-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2001-12-04'
+  locator: Article I
+  document_version:
+    document: crow-tribe-of-montana-constitution
+    version: 2001-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author.
+- aspect: separation-of-powers
+  value: Stated
+  quote: Executive, Legislative and Judicial Branches, which shall exercise a separation of powers.
+  source: constitution-crow-tribe-of-montana-2001-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2001-12-04'
+  locator: Article I
+  document_version:
+    document: crow-tribe-of-montana-constitution
+    version: 2001-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author.
+- aspect: judiciary
+  value: Judicial Branch of courts established under the Crow Law and Order Code
+  quote: A Judicial Branch of the Crow Tribal Government shall consist of all courts established by
+  source: constitution-crow-tribe-of-montana-2001-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2001-12-04'
+  locator: Article X
+  document_version:
+    document: crow-tribe-of-montana-constitution
+    version: 2001-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author.
+- aspect: judicial-selection
+  value: Election process set by the Crow Law and Order Code
+  quote: the Judicial Branch judges shall be in accordance with the Crow Law and Order Code.
+  source: constitution-crow-tribe-of-montana-2001-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2001-12-04'
+  locator: Article X
+  document_version:
+    document: crow-tribe-of-montana-constitution
+    version: 2001-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author.
+- aspect: judicial-independence
+  value: Separate and distinct branch of government
+  quote: The Judicial Branch shall be a separate and distinct branch of government from the
+  source: constitution-crow-tribe-of-montana-2001-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2001-12-04'
+  locator: Article X
+  document_version:
+    document: crow-tribe-of-montana-constitution
+    version: 2001-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author.
+- aspect: amendment
+  value: Two-thirds vote of the Crow Tribal General Council
+  quote: This Constitution may be amended by a two-thirds (2/3) vote of the Crow Tribal General
+  source: constitution-crow-tribe-of-montana-2001-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2001-12-04'
+  locator: Article XII
+  document_version:
+    document: crow-tribe-of-montana-constitution
+    version: 2001-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author.
+- aspect: secretarial-approval
+  value: Required for amendments
+  quote: shall become effective until approved by the Secretary of the Interior or his duly authorized
+  source: constitution-crow-tribe-of-montana-2001-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2001-12-04'
+  locator: Article XII
+  document_version:
+    document: crow-tribe-of-montana-constitution
+    version: 2001-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author.
+- aspect: recall-and-removal
+  value: Removal by two-thirds vote of General Council on petition
+  quote: The removal petition must pass by a two-thirds (2/3) majority vote. A removal
+  source: constitution-crow-tribe-of-montana-2001-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2001-12-04'
+  locator: Article VIII, Section 1
+  document_version:
+    document: crow-tribe-of-montana-constitution
+    version: 2001-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author.
+- aspect: recall-and-removal
+  value: Recall by petition of 25% of General Council, then two-thirds vote
+  quote: Upon receipt of a petition signed by at least twenty-five percent (25%) of
+  source: constitution-crow-tribe-of-montana-2001-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2001-12-04'
+  locator: Article VIII, Section 3
+  document_version:
+    document: crow-tribe-of-montana-constitution
+    version: 2001-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author.
 governing_documents:
 - kind: law-code
   title: Crow Tribe of Montana

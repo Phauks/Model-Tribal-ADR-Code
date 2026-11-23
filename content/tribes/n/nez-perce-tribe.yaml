@@ -204,6 +204,206 @@ indian_health_service:
   as_of: '2026-11-23'
   locator: '"Tribes of Oregon, Washington and Idaho" list'
   note: 'Listed as "Nez Perce Tribe". Also listed under the same Area in: indian-health-service-self-governance-tribes. Also on the Indian Health Service Self-Governance Tribes list (Nez Perce Indian Tribe (2001)); the list does not say which service unit or programs the compact covers.'
+governance:
+- aspect: form
+  value: Revised Constitution and Bylaws
+  quote: Revised Constitution and Bylaws of the Nez Perce
+  source: constitution-nez-perce-tribe-2005-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2005-05-07'
+  document_version:
+    document: nez-perce-tribe-constitution
+    version: 2005-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: The text includes amendment approvals dated through September 2006, later than the 2005 version label.'
+- aspect: governing-body
+  value: Tribal Executive Committee (NPTEC)
+  quote: administered by a Tribal Executive Committee
+  source: constitution-nez-perce-tribe-2005-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2005-05-07'
+  locator: Article VI, Section 1
+  document_version:
+    document: nez-perce-tribe-constitution
+    version: 2005-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: The text includes amendment approvals dated through September 2006, later than the 2005 version label.'
+- aspect: governing-body-size
+  value: 9 members
+  quote: (hereinafter referred to as NPTEC), consisting of nine
+  source: constitution-nez-perce-tribe-2005-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2005-05-07'
+  locator: Article VI, Section 1
+  document_version:
+    document: nez-perce-tribe-constitution
+    version: 2005-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: The text includes amendment approvals dated through September 2006, later than the 2005 version label.'
+- aspect: governing-body-selection
+  value: Elected by the Tribal General Council
+  quote: (9) members elected by the Tribal General Council.
+  source: constitution-nez-perce-tribe-2005-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2005-05-07'
+  locator: Article VI, Section 1
+  document_version:
+    document: nez-perce-tribe-constitution
+    version: 2005-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: The text includes amendment approvals dated through September 2006, later than the 2005 version label.'
+- aspect: governing-body-term
+  value: 3 years
+  quote: the NPTEC shall be three years; the three year
+  source: constitution-nez-perce-tribe-2005-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2005-05-07'
+  locator: Article VI, Section 2(A)
+  document_version:
+    document: nez-perce-tribe-constitution
+    version: 2005-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: The text includes amendment approvals dated through September 2006, later than the 2005 version label.'
+- aspect: general-council
+  value: Enrolled members 18 or older
+  quote: Any enrolled member of the Nez Perce Tribe who is
+  source: constitution-nez-perce-tribe-2005-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2005-05-07'
+  locator: Article V, Section 5
+  document_version:
+    document: nez-perce-tribe-constitution
+    version: 2005-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: The text includes amendment approvals dated through September 2006, later than the 2005 version label.'
+- aspect: head-of-government
+  value: Chairman
+  quote: The Chairman, as chief executive officer of the
+  source: constitution-nez-perce-tribe-2005-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2005-05-07'
+  locator: Bylaws, Article I, Section 1
+  document_version:
+    document: nez-perce-tribe-constitution
+    version: 2005-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: The text includes amendment approvals dated through September 2006, later than the 2005 version label.'
+- aspect: head-of-government
+  value: Chairperson
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  verification: bulk-import
+  as_of: '2026-11-20'
+  locator: Nez Perce Tribe
+  note: The title of the leader's office as the federal directory lists it; the holder's name is not recorded. Listed as “Chairman”; recorded without the holder's own form of the title.
+- aspect: head-of-government-selection
+  value: Elected by NPTEC from its own membership
+  quote: purpose of electing from its own membership (a) a
+  source: constitution-nez-perce-tribe-2005-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2005-05-07'
+  locator: Article VI, Section 4
+  document_version:
+    document: nez-perce-tribe-constitution
+    version: 2005-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: The text includes amendment approvals dated through September 2006, later than the 2005 version label.'
+- aspect: other-officers
+  value: Vice-Chairman, Secretary, Treasurer, Assistant Secretary-Treasurer, Chaplain
+  quote: Treasurer, (e) an Assistant Secretary-Treasurer; and (f)
+  source: constitution-nez-perce-tribe-2005-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2005-05-07'
+  locator: Article VI, Section 4
+  document_version:
+    document: nez-perce-tribe-constitution
+    version: 2005-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: The text includes amendment approvals dated through September 2006, later than the 2005 version label.'
+- aspect: elections
+  value: Annually at the May meeting of the General Council
+  quote: Members of the NPTEC shall be elected at the
+  source: constitution-nez-perce-tribe-2005-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2005-05-07'
+  locator: Article VI, Section 2(A)
+  document_version:
+    document: nez-perce-tribe-constitution
+    version: 2005-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: The text includes amendment approvals dated through September 2006, later than the 2005 version label.'
+- aspect: voting-age
+  value: '18'
+  quote: eighteen or over shall be entitled to vote in General
+  source: constitution-nez-perce-tribe-2005-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2005-05-07'
+  locator: Article V, Section 5
+  document_version:
+    document: nez-perce-tribe-constitution
+    version: 2005-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: The text includes amendment approvals dated through September 2006, later than the 2005 version label.'
+- aspect: election-authority
+  value: Election Judges
+  quote: It shall be the duty of the Election Judges to
+  source: constitution-nez-perce-tribe-2005-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2005-05-07'
+  locator: Article V, Section 4(D)
+  document_version:
+    document: nez-perce-tribe-constitution
+    version: 2005-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: The text includes amendment approvals dated through September 2006, later than the 2005 version label.'
+- aspect: amendment
+  value: Two-thirds vote at an election called for that purpose
+  quote: two-thirds vote at an election called for that purpose,
+  source: constitution-nez-perce-tribe-2005-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2005-05-07'
+  locator: Article IX, Section 1
+  document_version:
+    document: nez-perce-tribe-constitution
+    version: 2005-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: The text includes amendment approvals dated through September 2006, later than the 2005 version label.'
+- aspect: secretarial-approval
+  value: Required for amendments
+  quote: become effective until approved by the Secretary of
+  source: constitution-nez-perce-tribe-2005-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2005-05-07'
+  locator: Article IX, Section 1
+  document_version:
+    document: nez-perce-tribe-constitution
+    version: 2005-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: The text includes amendment approvals dated through September 2006, later than the 2005 version label.'
+- aspect: recall-and-removal
+  value: Recall by 75% of votes cast (minimum 260 votes)
+  quote: at least seventy-five percent of the votes cast favor
+  source: constitution-nez-perce-tribe-2005-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2005-05-07'
+  locator: Article VI, Section 6
+  document_version:
+    document: nez-perce-tribe-constitution
+    version: 2005-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: The text includes amendment approvals dated through September 2006, later than the 2005 version label.'
+- aspect: recall-and-removal
+  value: Expulsion by majority vote of NPTEC
+  quote: NPTEC shall, by majority vote, expel any member of
+  source: constitution-nez-perce-tribe-2005-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2005-05-07'
+  locator: Article VII, Section 2
+  document_version:
+    document: nez-perce-tribe-constitution
+    version: 2005-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: The text includes amendment approvals dated through September 2006, later than the 2005 version label.'
 governing_documents:
 - kind: law-code
   title: Nez Perce Tribal Code

@@ -186,6 +186,15 @@ indian_health_service:
   as_of: '2026-11-23'
   locator: Tribal Health Programs lists (Michigan, Minnesota, Wisconsin)
   note: 'Listed as "Lac Courte Oreilles Band of Lake Superior Chippewa Indians of Wisconsin". Also listed under the same Area in: indian-health-service-self-governance-tribes.'
+governance:
+- aspect: head-of-government
+  value: Chairperson
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  verification: bulk-import
+  as_of: '2026-11-20'
+  locator: Lac Courte Oreilles Band of Lake Superior Chippewa Indians of Wisconsin
+  note: The title of the leader's office as the federal directory lists it; the holder's name is not recorded. Listed as “Chairman”; recorded without the holder's own form of the title.
 governing_documents:
 - kind: law-code
   title: Tribal code

@@ -292,6 +292,267 @@ government_structure:
   as_of: '1938'
   locator: preamble / approval and certification of adoption
   note: Historical constitution; a later constitution may have replaced it.
+governance:
+- aspect: form
+  value: Constitution adopted pursuant to the Indian Reorganization Act of 1934, as amended
+  quote: this Constitution pursuant to the Indian Reorganization Act of 1934, as amended.
+  source: constitution-te-moak-tribe-of-western-shoshone-indians-of-nevada-1982-text
+  confidence: high
+  verification: read-in-full
+  as_of: '1982-08-26'
+  locator: Preamble
+  document_version:
+    document: te-moak-tribe-of-western-shoshone-indians-of-nevada-constitution
+    version: 1982-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author.
+- aspect: governing-body
+  value: Tribal Council
+  quote: The executive and legislative powers of the Tribe shall be vested in a Tribal
+  source: constitution-te-moak-tribe-of-western-shoshone-indians-of-nevada-1982-text
+  confidence: high
+  verification: read-in-full
+  as_of: '1982-08-26'
+  locator: Article 4, Section 1
+  document_version:
+    document: te-moak-tribe-of-western-shoshone-indians-of-nevada-constitution
+    version: 1982-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author.
+- aspect: governing-body
+  value: Band Councils (one per constituent Band)
+  quote: Band Councils, one Band Council for each constituent
+  source: constitution-te-moak-tribe-of-western-shoshone-indians-of-nevada-1982-text
+  confidence: high
+  verification: read-in-full
+  as_of: '1982-08-26'
+  locator: Article 4, Section 1
+  document_version:
+    document: te-moak-tribe-of-western-shoshone-indians-of-nevada-constitution
+    version: 1982-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author.
+- aspect: governing-body-size
+  value: 8 members (initial)
+  quote: The initial composition of the Tribal Council shall consist of eight (8) members
+  source: constitution-te-moak-tribe-of-western-shoshone-indians-of-nevada-1982-text
+  confidence: high
+  verification: read-in-full
+  as_of: '1982-08-26'
+  locator: Article 4, Section 2(a)
+  document_version:
+    document: te-moak-tribe-of-western-shoshone-indians-of-nevada-constitution
+    version: 1982-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author.
+- aspect: governing-body-selection
+  value: Selected by the Band Councils from their membership
+  quote: selected from and by the membership of each
+  source: constitution-te-moak-tribe-of-western-shoshone-indians-of-nevada-1982-text
+  confidence: high
+  verification: read-in-full
+  as_of: '1982-08-26'
+  locator: Article 4, Section 2(a)
+  document_version:
+    document: te-moak-tribe-of-western-shoshone-indians-of-nevada-constitution
+    version: 1982-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author.
+- aspect: governing-body-term
+  value: 3 years
+  quote: for the duration of his/her three (3) year term of office on the Band Council.
+  source: constitution-te-moak-tribe-of-western-shoshone-indians-of-nevada-1982-text
+  confidence: high
+  verification: read-in-full
+  as_of: '1982-08-26'
+  locator: Article 4, Section 2(d)
+  document_version:
+    document: te-moak-tribe-of-western-shoshone-indians-of-nevada-constitution
+    version: 1982-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author.
+- aspect: head-of-government
+  value: Tribal Chairperson
+  quote: Tribal Chairperson. The Tribal Chairperson shall have the following duties
+  source: constitution-te-moak-tribe-of-western-shoshone-indians-of-nevada-1982-text
+  confidence: high
+  verification: read-in-full
+  as_of: '1982-08-26'
+  locator: Article 4, Section 5(a)
+  document_version:
+    document: te-moak-tribe-of-western-shoshone-indians-of-nevada-constitution
+    version: 1982-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author.
+- aspect: head-of-government
+  value: Chairperson
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  verification: bulk-import
+  as_of: '2026-11-20'
+  locator: 'Te-Moak Tribe of Western Shoshone Indians of Nevada (Four constituent bands: Battle Mountain Band; Elko Band; South Fork Band; and Wells Band)'
+  note: The title of the leader's office as the federal directory lists it; the holder's name is not recorded.
+- aspect: head-of-government-selection
+  value: Elected at large by registered voters
+  quote: The Tribal Chairperson shall be elected at large by the registered voters of the Tribe
+  source: constitution-te-moak-tribe-of-western-shoshone-indians-of-nevada-1982-text
+  confidence: high
+  verification: read-in-full
+  as_of: '1982-08-26'
+  locator: Article 4, Section 2(c)
+  document_version:
+    document: te-moak-tribe-of-western-shoshone-indians-of-nevada-constitution
+    version: 1982-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author.
+- aspect: other-officers
+  value: Secretary, Finance Officer
+  quote: Secretary and a Finance Officer.
+  source: constitution-te-moak-tribe-of-western-shoshone-indians-of-nevada-1982-text
+  confidence: high
+  verification: read-in-full
+  as_of: '1982-08-26'
+  locator: Article 4, Section 2(e)
+  document_version:
+    document: te-moak-tribe-of-western-shoshone-indians-of-nevada-constitution
+    version: 1982-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author.
+- aspect: elections
+  value: Every 3 years, same month (Band Council elections)
+  quote: An election shall be held during the
+  source: constitution-te-moak-tribe-of-western-shoshone-indians-of-nevada-1982-text
+  confidence: high
+  verification: read-in-full
+  as_of: '1982-08-26'
+  locator: Article 7, Section 1
+  document_version:
+    document: te-moak-tribe-of-western-shoshone-indians-of-nevada-constitution
+    version: 1982-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author.
+- aspect: voting-age
+  value: '18'
+  quote: who have reached the age of eighteen (18) years may register to
+  source: constitution-te-moak-tribe-of-western-shoshone-indians-of-nevada-1982-text
+  confidence: high
+  verification: read-in-full
+  as_of: '1982-08-26'
+  locator: Article 5, Section 1(a)
+  document_version:
+    document: te-moak-tribe-of-western-shoshone-indians-of-nevada-constitution
+    version: 1982-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author.
+- aspect: election-authority
+  value: Band Election Committees
+  quote: appoint an impartial Election Committee composed
+  source: constitution-te-moak-tribe-of-western-shoshone-indians-of-nevada-1982-text
+  confidence: high
+  verification: read-in-full
+  as_of: '1982-08-26'
+  locator: Article 7, Section 9
+  document_version:
+    document: te-moak-tribe-of-western-shoshone-indians-of-nevada-constitution
+    version: 1982-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author.
+- aspect: judiciary
+  value: Court of general jurisdiction and Supreme Court
+  quote: There shall be a court of general jurisdiction and a Supreme Court of appellate
+  source: constitution-te-moak-tribe-of-western-shoshone-indians-of-nevada-1982-text
+  confidence: high
+  verification: read-in-full
+  as_of: '1982-08-26'
+  locator: Article 8, Section 1
+  document_version:
+    document: te-moak-tribe-of-western-shoshone-indians-of-nevada-constitution
+    version: 1982-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author.
+- aspect: judicial-selection
+  value: Appointed by the Tribal Council
+  quote: The judges of both Tribal Courts shall be appointed by the Tribal Council for six (6)
+  source: constitution-te-moak-tribe-of-western-shoshone-indians-of-nevada-1982-text
+  confidence: high
+  verification: read-in-full
+  as_of: '1982-08-26'
+  locator: Article 8, Section 4(a)
+  document_version:
+    document: te-moak-tribe-of-western-shoshone-indians-of-nevada-constitution
+    version: 1982-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author.
+- aspect: judicial-term
+  value: 6 years
+  quote: years terms, except for the initial appointments to fill those positions.
+  source: constitution-te-moak-tribe-of-western-shoshone-indians-of-nevada-1982-text
+  confidence: high
+  verification: read-in-full
+  as_of: '1982-08-26'
+  locator: Article 8, Section 4(a)
+  document_version:
+    document: te-moak-tribe-of-western-shoshone-indians-of-nevada-constitution
+    version: 1982-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author.
+- aspect: judicial-independence
+  value: Pay may not be reduced during term
+  quote: diminished during their term of office.
+  source: constitution-te-moak-tribe-of-western-shoshone-indians-of-nevada-1982-text
+  confidence: high
+  verification: read-in-full
+  as_of: '1982-08-26'
+  locator: Article 8, Section 5
+  document_version:
+    document: te-moak-tribe-of-western-shoshone-indians-of-nevada-constitution
+    version: 1982-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author.
+- aspect: judicial-independence
+  value: Judges unseated only by recall under Article 4, Section 8
+  quote: A judge shall be unseated from office only in the manner set forth in Section 8 of Article 4.
+  source: constitution-te-moak-tribe-of-western-shoshone-indians-of-nevada-1982-text
+  confidence: high
+  verification: read-in-full
+  as_of: '1982-08-26'
+  locator: Article 8, Section 6(a)
+  document_version:
+    document: te-moak-tribe-of-western-shoshone-indians-of-nevada-constitution
+    version: 1982-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author.
+- aspect: amendment
+  value: Majority vote in Secretarial election, 30% turnout
+  quote: This Constitution may be amended by a majority vote of the
+  source: constitution-te-moak-tribe-of-western-shoshone-indians-of-nevada-1982-text
+  confidence: high
+  verification: read-in-full
+  as_of: '1982-08-26'
+  locator: Article 13, Section 1
+  document_version:
+    document: te-moak-tribe-of-western-shoshone-indians-of-nevada-constitution
+    version: 1982-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author.
+- aspect: secretarial-approval
+  value: Required for amendments
+  quote: until it is approved by the Secretary of the Interior or his authorized representative.
+  source: constitution-te-moak-tribe-of-western-shoshone-indians-of-nevada-1982-text
+  confidence: high
+  verification: read-in-full
+  as_of: '1982-08-26'
+  locator: Article 13, Section 1
+  document_version:
+    document: te-moak-tribe-of-western-shoshone-indians-of-nevada-constitution
+    version: 1982-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author.
+- aspect: recall-and-removal
+  value: Removal by two-thirds (2/3) Tribal Council vote
+  quote: removed from the Tribal Council for improper conduct or gross neglect of duty by a two-thirds (2/3) vote
+  source: constitution-te-moak-tribe-of-western-shoshone-indians-of-nevada-1982-text
+  confidence: high
+  verification: read-in-full
+  as_of: '1982-08-26'
+  locator: Article 4, Section 7(a)
+  document_version:
+    document: te-moak-tribe-of-western-shoshone-indians-of-nevada-constitution
+    version: 1982-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author.
+- aspect: recall-and-removal
+  value: Recall of Chairperson by majority of voters if 50% of registered voters vote
+  quote: percent (50%) of those voting in the election favor such a recall
+  source: constitution-te-moak-tribe-of-western-shoshone-indians-of-nevada-1982-text
+  confidence: high
+  verification: read-in-full
+  as_of: '1982-08-26'
+  locator: Article 4, Section 8(c)
+  document_version:
+    document: te-moak-tribe-of-western-shoshone-indians-of-nevada-constitution
+    version: 1982-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author.
 governing_documents:
 - kind: law-code
   title: Approved Ordinances for the Te-Moak Tribe of Western Shoshone

@@ -170,6 +170,219 @@ indian_health_service:
   as_of: '2026-11-23'
   locator: Direct Service Tribes by IHS Area > Phoenix Area
   note: Listed as "Tonto Apache Indian Tribe". The Direct Service Tribes list says some Tribes have a mixed Indian Health Service and Tribal arrangement.
+governance:
+- aspect: form
+  value: Constitution under Section 16 of the Indian Reorganization Act of June 18, 1934
+  quote: to organize and establish ourselves under Section 16 of the Indian
+  source: constitution-tonto-apache-tribe-of-arizona-1979-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1979'
+  locator: Preamble
+  document_version:
+    document: tonto-apache-tribe-of-arizona-constitution
+    version: 1979-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Approval date and part of the certificate of results are illegible in the scan; the 1979 date is taken from the certificate.'
+- aspect: governing-body
+  value: Tonto Apache Tribal Council
+  quote: The governing body of the Tribe shall be known as the Tonto
+  source: constitution-tonto-apache-tribe-of-arizona-1979-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1979'
+  locator: Article IV, Section 1
+  document_version:
+    document: tonto-apache-tribe-of-arizona-constitution
+    version: 1979-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Approval date and part of the certificate of results are illegible in the scan; the 1979 date is taken from the certificate.'
+- aspect: governing-body-size
+  value: 5 members
+  quote: 'The Tribal Council shall consist of five (5) voting members: (a) a'
+  source: constitution-tonto-apache-tribe-of-arizona-1979-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1979'
+  locator: Article IV, Section 2
+  document_version:
+    document: tonto-apache-tribe-of-arizona-constitution
+    version: 1979-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Approval date and part of the certificate of results are illegible in the scan; the 1979 date is taken from the certificate.'
+- aspect: governing-body-selection
+  value: Elected at regular elections
+  quote: shall be elected for terms of four (4) years; one (1) Council member shall be
+  source: constitution-tonto-apache-tribe-of-arizona-1979-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1979'
+  locator: Article V, Section 6(b)
+  document_version:
+    document: tonto-apache-tribe-of-arizona-constitution
+    version: 1979-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Approval date and part of the certificate of results are illegible in the scan; the 1979 date is taken from the certificate.'
+- aspect: governing-body-term
+  value: 4 years for Chairman and Vice-Chairman, 2 years for Council members
+  quote: for the Chairman and Vice-Chairman and two (2) years for the Council
+  source: constitution-tonto-apache-tribe-of-arizona-1979-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1979'
+  locator: Article IV, Section 4
+  document_version:
+    document: tonto-apache-tribe-of-arizona-constitution
+    version: 1979-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Approval date and part of the certificate of results are illegible in the scan; the 1979 date is taken from the certificate.'
+- aspect: head-of-government
+  value: Chairman
+  quote: Council shall preside over all meetings of the Tribal Council, shall perform
+  source: constitution-tonto-apache-tribe-of-arizona-1979-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1979'
+  locator: Article IV, Section 5(a)
+  document_version:
+    document: tonto-apache-tribe-of-arizona-constitution
+    version: 1979-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Approval date and part of the certificate of results are illegible in the scan; the 1979 date is taken from the certificate.'
+- aspect: head-of-government
+  value: Chairperson
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  verification: bulk-import
+  as_of: '2026-11-20'
+  locator: Tonto Apache Tribe of Arizona
+  note: The title of the leader's office as the federal directory lists it; the holder's name is not recorded. Listed as “Chairman”; recorded without the holder's own form of the title.
+- aspect: head-of-government-selection
+  value: Elected at regular elections
+  quote: shall be elected for terms of four (4) years; one (1) Council member shall be
+  source: constitution-tonto-apache-tribe-of-arizona-1979-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1979'
+  locator: Article V, Section 6(b)
+  document_version:
+    document: tonto-apache-tribe-of-arizona-constitution
+    version: 1979-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Approval date and part of the certificate of results are illegible in the scan; the 1979 date is taken from the certificate.'
+- aspect: head-of-government-term
+  value: 4 years
+  quote: for the Chairman and Vice-Chairman and two (2) years for the Council
+  source: constitution-tonto-apache-tribe-of-arizona-1979-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1979'
+  locator: Article IV, Section 4
+  document_version:
+    document: tonto-apache-tribe-of-arizona-constitution
+    version: 1979-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Approval date and part of the certificate of results are illegible in the scan; the 1979 date is taken from the certificate.'
+- aspect: other-officers
+  value: Vice-Chairman, Secretary, Treasurer
+  quote: Sec. 3. The Tribal Council shall select a Secretary, Treasurer and such
+  source: constitution-tonto-apache-tribe-of-arizona-1979-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1979'
+  locator: Article IV, Section 3
+  document_version:
+    document: tonto-apache-tribe-of-arizona-constitution
+    version: 1979-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Approval date and part of the certificate of results are illegible in the scan; the 1979 date is taken from the certificate.'
+- aspect: elections
+  value: Annually on the second Saturday in June
+  quote: Regular elections shall be held annually on the second Saturday
+  source: constitution-tonto-apache-tribe-of-arizona-1979-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1979'
+  locator: Article V, Section 6(a)
+  document_version:
+    document: tonto-apache-tribe-of-arizona-constitution
+    version: 1979-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Approval date and part of the certificate of results are illegible in the scan; the 1979 date is taken from the certificate.'
+- aspect: voting-age
+  value: '18'
+  quote: Tribal members eighteen (18) years of age or older are eligible
+  source: constitution-tonto-apache-tribe-of-arizona-1979-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1979'
+  locator: Article V, Section 2(a)
+  document_version:
+    document: tonto-apache-tribe-of-arizona-constitution
+    version: 1979-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Approval date and part of the certificate of results are illegible in the scan; the 1979 date is taken from the certificate.'
+- aspect: election-authority
+  value: Tribal Council
+  quote: The Tribal Council shall enact an ordinance governing the
+  source: constitution-tonto-apache-tribe-of-arizona-1979-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1979'
+  locator: Article V, Section 4(b)
+  document_version:
+    document: tonto-apache-tribe-of-arizona-constitution
+    version: 1979-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Approval date and part of the certificate of results are illegible in the scan; the 1979 date is taken from the certificate.'
+- aspect: amendment
+  value: Majority vote of qualified voters in a Secretarial election
+  quote: This Constitution may be amended by a majority vote of the qualified voters
+  source: constitution-tonto-apache-tribe-of-arizona-1979-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1979'
+  locator: Article X
+  document_version:
+    document: tonto-apache-tribe-of-arizona-constitution
+    version: 1979-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Approval date and part of the certificate of results are illegible in the scan; the 1979 date is taken from the certificate.'
+- aspect: secretarial-approval
+  value: Required for amendments, while required by federal law or this Constitution
+  quote: been approved by the Secretary of the Interior so long as the Secretary's
+  source: constitution-tonto-apache-tribe-of-arizona-1979-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1979'
+  locator: Article X
+  document_version:
+    document: tonto-apache-tribe-of-arizona-constitution
+    version: 1979-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Approval date and part of the certificate of results are illegible in the scan; the 1979 date is taken from the certificate.'
+- aspect: recall-and-removal
+  value: Removal by majority vote of remaining Council members
+  quote: by a majority vote of all the remaining members of the Tribal Council if, in
+  source: constitution-tonto-apache-tribe-of-arizona-1979-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1979'
+  locator: Article VI, Section 2(a)
+  document_version:
+    document: tonto-apache-tribe-of-arizona-constitution
+    version: 1979-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Approval date and part of the certificate of results are illegible in the scan; the 1979 date is taken from the certificate.'
+- aspect: recall-and-removal
+  value: Recall by majority vote of voters in a special election
+  quote: from office by a majority vote of the eligible voters voting in a special
+  source: constitution-tonto-apache-tribe-of-arizona-1979-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1979'
+  locator: Article VI, Section 3(a)
+  document_version:
+    document: tonto-apache-tribe-of-arizona-constitution
+    version: 1979-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Approval date and part of the certificate of results are illegible in the scan; the 1979 date is taken from the certificate.'
+- aspect: other
+  value: Initiative on petition of 30% of eligible voters
+  quote: least thirty percent (30%) of the eligible voters of the Tribe, any enacted or
+  source: constitution-tonto-apache-tribe-of-arizona-1979-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1979'
+  locator: Article IX, Section 1
+  document_version:
+    document: tonto-apache-tribe-of-arizona-constitution
+    version: 1979-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Approval date and part of the certificate of results are illegible in the scan; the 1979 date is taken from the certificate.'
 governing_documents:
 - kind: constitution
   title: Tonto Apache Tribe of Arizona - Tribal Constitution

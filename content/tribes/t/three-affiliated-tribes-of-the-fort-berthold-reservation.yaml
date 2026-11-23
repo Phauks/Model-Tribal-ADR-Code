@@ -213,6 +213,219 @@ government_structure:
   as_of: '1936'
   locator: preamble / approval and certification of adoption
   note: Historical constitution; a later constitution may have replaced it.
+governance:
+- aspect: form
+  value: Constitution and Bylaws
+  quote: This Constitution and attached Bylaws. when adopted by a
+  source: constitution-three-affiliated-tribes-of-the-fort-berthold-reservation-1975-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1975-12-12'
+  locator: Article IV
+  document_version:
+    document: three-affiliated-tribes-of-the-fort-berthold-reservation-constitution
+    version: 1975-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Extract also contains the 1937 federal corporate charter after the constitution; facts come from the constitution, bylaws and amendments only, including 1985 Amendment VIII.'
+- aspect: governing-body
+  value: Tribal Business Council
+  quote: as the Tribal Business Council.
+  source: constitution-three-affiliated-tribes-of-the-fort-berthold-reservation-1975-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1975-12-12'
+  locator: Article III, Section 1
+  document_version:
+    document: three-affiliated-tribes-of-the-fort-berthold-reservation-constitution
+    version: 1975-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Extract also contains the 1937 federal corporate charter after the constitution; facts come from the constitution, bylaws and amendments only, including 1985 Amendment VIII.'
+- aspect: governing-body-size
+  value: 11 members (Chairman plus 10)
+  quote: of a Chairman elected at large and ten (10) members elected
+  source: constitution-three-affiliated-tribes-of-the-fort-berthold-reservation-1975-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1975-12-12'
+  locator: Article III, Section 2(a)
+  document_version:
+    document: three-affiliated-tribes-of-the-fort-berthold-reservation-constitution
+    version: 1975-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Extract also contains the 1937 federal corporate charter after the constitution; facts come from the constitution, bylaws and amendments only, including 1985 Amendment VIII.'
+- aspect: governing-body-selection
+  value: Elected at large by reservation-wide vote; members qualify by segment
+  quote: subject to an election open to all qualified voters on a
+  source: constitution-three-affiliated-tribes-of-the-fort-berthold-reservation-1975-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1975-12-12'
+  locator: Article III, Section 2(b)
+  document_version:
+    document: three-affiliated-tribes-of-the-fort-berthold-reservation-constitution
+    version: 1975-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Extract also contains the 1937 federal corporate charter after the constitution; facts come from the constitution, bylaws and amendments only, including 1985 Amendment VIII.'
+- aspect: governing-body-term
+  value: 4 years, staggered
+  quote: in 1978 and every four (4) years thereafter.
+  source: constitution-three-affiliated-tribes-of-the-fort-berthold-reservation-1975-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1975-12-12'
+  locator: Article IV, Section 3(a)
+  document_version:
+    document: three-affiliated-tribes-of-the-fort-berthold-reservation-constitution
+    version: 1975-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Extract also contains the 1937 federal corporate charter after the constitution; facts come from the constitution, bylaws and amendments only, including 1985 Amendment VIII.'
+- aspect: head-of-government
+  value: Chairman
+  quote: of a Chairman elected at large and ten (10) members elected
+  source: constitution-three-affiliated-tribes-of-the-fort-berthold-reservation-1975-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1975-12-12'
+  locator: Article III, Section 2(a)
+  document_version:
+    document: three-affiliated-tribes-of-the-fort-berthold-reservation-constitution
+    version: 1975-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Extract also contains the 1937 federal corporate charter after the constitution; facts come from the constitution, bylaws and amendments only, including 1985 Amendment VIII.'
+- aspect: head-of-government
+  value: Chairperson
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  verification: bulk-import
+  as_of: '2026-11-20'
+  locator: Three Affiliated Tribes of the Fort Berthold Reservation, North Dakota
+  note: The title of the leader's office as the federal directory lists it; the holder's name is not recorded. Listed as “Chairman”; recorded without the holder's own form of the title.
+- aspect: head-of-government-selection
+  value: Elected at large by majority of votes cast
+  quote: shall be elected at large by a majority of all votes cast
+  source: constitution-three-affiliated-tribes-of-the-fort-berthold-reservation-1975-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1975-12-12'
+  locator: Article III, Section 2(c)
+  document_version:
+    document: three-affiliated-tribes-of-the-fort-berthold-reservation-constitution
+    version: 1975-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Extract also contains the 1937 federal corporate charter after the constitution; facts come from the constitution, bylaws and amendments only, including 1985 Amendment VIII.'
+- aspect: head-of-government-term
+  value: 4 years
+  quote: in 1978 and every four (4) years thereafter.
+  source: constitution-three-affiliated-tribes-of-the-fort-berthold-reservation-1975-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1975-12-12'
+  locator: Article IV, Section 3(a)
+  document_version:
+    document: three-affiliated-tribes-of-the-fort-berthold-reservation-constitution
+    version: 1975-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Extract also contains the 1937 federal corporate charter after the constitution; facts come from the constitution, bylaws and amendments only, including 1985 Amendment VIII.'
+- aspect: other-officers
+  value: Vice-chairman, secretary, treasurer
+  quote: vice-chairman, a secretary, and a treasurer from its own
+  source: constitution-three-affiliated-tribes-of-the-fort-berthold-reservation-1975-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1975-12-12'
+  locator: Article III, Section 5
+  document_version:
+    document: three-affiliated-tribes-of-the-fort-berthold-reservation-constitution
+    version: 1975-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Extract also contains the 1937 federal corporate charter after the constitution; facts come from the constitution, bylaws and amendments only, including 1985 Amendment VIII.'
+- aspect: elections
+  value: Third Tuesday of September in even-numbered years
+  quote: shall be held on the third
+  source: constitution-three-affiliated-tribes-of-the-fort-berthold-reservation-1975-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1975-12-12'
+  locator: Article IV, Section 3(a)
+  document_version:
+    document: three-affiliated-tribes-of-the-fort-berthold-reservation-constitution
+    version: 1975-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Extract also contains the 1937 federal corporate charter after the constitution; facts come from the constitution, bylaws and amendments only, including 1985 Amendment VIII.'
+- aspect: voting-age
+  value: '18'
+  quote: who is eighteen (18) years
+  source: constitution-three-affiliated-tribes-of-the-fort-berthold-reservation-1975-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1975-12-12'
+  locator: Article IV, Section 2(a)
+  document_version:
+    document: three-affiliated-tribes-of-the-fort-berthold-reservation-constitution
+    version: 1975-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Extract also contains the 1937 federal corporate charter after the constitution; facts come from the constitution, bylaws and amendments only, including 1985 Amendment VIII.'
+- aspect: election-authority
+  value: Tribal Business Council or an election board it appoints
+  quote: an election board appointed
+  source: constitution-three-affiliated-tribes-of-the-fort-berthold-reservation-1975-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1975-12-12'
+  locator: Article IV, Section 5
+  document_version:
+    document: three-affiliated-tribes-of-the-fort-berthold-reservation-constitution
+    version: 1975-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Extract also contains the 1937 federal corporate charter after the constitution; facts come from the constitution, bylaws and amendments only, including 1985 Amendment VIII.'
+- aspect: judiciary
+  value: Tribal courts set up by Tribal Business Council ordinance
+  quote: to set up courts for the trial and
+  source: constitution-three-affiliated-tribes-of-the-fort-berthold-reservation-1975-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1975-12-12'
+  locator: Article VI, Section 3(b)
+  document_version:
+    document: three-affiliated-tribes-of-the-fort-berthold-reservation-constitution
+    version: 1975-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Extract also contains the 1937 federal corporate charter after the constitution; facts come from the constitution, bylaws and amendments only, including 1985 Amendment VIII.'
+- aspect: amendment
+  value: Majority vote of qualified voters at election called by Secretary of the Interior
+  quote: This Constitution and Bylaws may be amended by a majority
+  source: constitution-three-affiliated-tribes-of-the-fort-berthold-reservation-1975-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1975-12-12'
+  locator: Article X
+  document_version:
+    document: three-affiliated-tribes-of-the-fort-berthold-reservation-constitution
+    version: 1975-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Extract also contains the 1937 federal corporate charter after the constitution; facts come from the constitution, bylaws and amendments only, including 1985 Amendment VIII.'
+- aspect: secretarial-approval
+  value: Required for amendments
+  quote: no amendment shall become effective until it shall have
+  source: constitution-three-affiliated-tribes-of-the-fort-berthold-reservation-1975-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1975-12-12'
+  locator: Article X
+  document_version:
+    document: three-affiliated-tribes-of-the-fort-berthold-reservation-constitution
+    version: 1975-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Extract also contains the 1937 federal corporate charter after the constitution; facts come from the constitution, bylaws and amendments only, including 1985 Amendment VIII.'
+- aspect: recall-and-removal
+  value: Expulsion of council member for cause by 7 votes
+  quote: for cause by seven or more members voting for such expulsion,
+  source: constitution-three-affiliated-tribes-of-the-fort-berthold-reservation-1975-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1975-12-12'
+  locator: Article V, Section 2
+  document_version:
+    document: three-affiliated-tribes-of-the-fort-berthold-reservation-constitution
+    version: 1975-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Extract also contains the 1937 federal corporate charter after the constitution; facts come from the constitution, bylaws and amendments only, including 1985 Amendment VIII.'
+- aspect: other
+  value: Referendum on petition of 10% of qualified voters of each community
+  quote: Upon a petition signed by at least 10 percent of the qualified
+  source: constitution-three-affiliated-tribes-of-the-fort-berthold-reservation-1975-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1975-12-12'
+  locator: Article VIII
+  document_version:
+    document: three-affiliated-tribes-of-the-fort-berthold-reservation-constitution
+    version: 1975-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Extract also contains the 1937 federal corporate charter after the constitution; facts come from the constitution, bylaws and amendments only, including 1985 Amendment VIII.'
 governing_documents:
 - kind: law-code
   title: Three Affiliated Tribes of the Fort Berthold Reservation, North Dakota

@@ -179,6 +179,279 @@ indian_health_service:
   as_of: '2026-11-23'
   locator: regional lists (West Central, Southern, Northern, East Central)
   note: Listed as "Ione Band of Miwok Indians of California".
+governance:
+- aspect: form
+  value: Section 16 of the Indian Reorganization Act of June 18, 1934
+  quote: in accordance with Section 16 of the Indian Reorganization Act of June 18,
+  source: constitution-ione-band-of-miwok-indians-of-california-2002-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '2002-09-06'
+  locator: Certificate of Results of Election
+  document_version:
+    document: ione-band-of-miwok-indians-of-california-constitution
+    version: 2002-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: The Certificate of Results of Election is partly illegible; facts come from the body of the Constitution and the 2002 Certificate of Approval.'
+- aspect: governing-body
+  value: Tribal Council
+  quote: The governing body of the Tribe shall be a council known as
+  source: constitution-ione-band-of-miwok-indians-of-california-2002-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '2002-09-06'
+  locator: Article V, Section 1
+  document_version:
+    document: ione-band-of-miwok-indians-of-california-constitution
+    version: 2002-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: The Certificate of Results of Election is partly illegible; facts come from the body of the Constitution and the 2002 Certificate of Approval.'
+- aspect: governing-body-size
+  value: 5 members
+  quote: shall consist of a Chairperson, a Vice-
+  source: constitution-ione-band-of-miwok-indians-of-california-2002-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '2002-09-06'
+  locator: Article V, Section 2
+  document_version:
+    document: ione-band-of-miwok-indians-of-california-constitution
+    version: 2002-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: The Certificate of Results of Election is partly illegible; facts come from the body of the Constitution and the 2002 Certificate of Approval.'
+- aspect: governing-body-selection
+  value: Elected by the General Council
+  quote: Council shall be elected by the General Council.
+  source: constitution-ione-band-of-miwok-indians-of-california-2002-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '2002-09-06'
+  locator: Article V, Section 2
+  document_version:
+    document: ione-band-of-miwok-indians-of-california-constitution
+    version: 2002-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: The Certificate of Results of Election is partly illegible; facts come from the body of the Constitution and the 2002 Certificate of Approval.'
+- aspect: governing-body-term
+  value: 3 years
+  quote: shall be elected every three (3) years.
+  source: constitution-ione-band-of-miwok-indians-of-california-2002-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '2002-09-06'
+  locator: Article V, Section 3(a)
+  document_version:
+    document: ione-band-of-miwok-indians-of-california-constitution
+    version: 2002-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: The Certificate of Results of Election is partly illegible; facts come from the body of the Constitution and the 2002 Certificate of Approval.'
+- aspect: general-council
+  value: All tribal members eligible to vote in Tribal elections
+  quote: The General Council is composed of all tribal
+  source: constitution-ione-band-of-miwok-indians-of-california-2002-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '2002-09-06'
+  locator: Article VII, Section 2
+  document_version:
+    document: ione-band-of-miwok-indians-of-california-constitution
+    version: 2002-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: The Certificate of Results of Election is partly illegible; facts come from the body of the Constitution and the 2002 Certificate of Approval.'
+- aspect: head-of-government
+  value: Chairperson
+  quote: The Chairperson shall be the chief executive officer of
+  source: constitution-ione-band-of-miwok-indians-of-california-2002-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '2002-09-06'
+  locator: Article VI, Section 1
+  document_version:
+    document: ione-band-of-miwok-indians-of-california-constitution
+    version: 2002-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: The Certificate of Results of Election is partly illegible; facts come from the body of the Constitution and the 2002 Certificate of Approval.'
+- aspect: head-of-government
+  value: Chairperson
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  verification: bulk-import
+  as_of: '2026-11-20'
+  locator: Ione Band of Miwok Indians of California
+  note: The title of the leader's office as the federal directory lists it; the holder's name is not recorded. Listed as “Chairwoman”; recorded without the holder's own form of the title.
+- aspect: head-of-government-selection
+  value: Elected by the General Council
+  quote: Council shall be elected by the General Council.
+  source: constitution-ione-band-of-miwok-indians-of-california-2002-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '2002-09-06'
+  locator: Article V, Section 2
+  document_version:
+    document: ione-band-of-miwok-indians-of-california-constitution
+    version: 2002-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: The Certificate of Results of Election is partly illegible; facts come from the body of the Constitution and the 2002 Certificate of Approval.'
+- aspect: head-of-government-term
+  value: 3 years
+  quote: shall be elected every three (3) years.
+  source: constitution-ione-band-of-miwok-indians-of-california-2002-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '2002-09-06'
+  locator: Article V, Section 3(a)
+  document_version:
+    document: ione-band-of-miwok-indians-of-california-constitution
+    version: 2002-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: The Certificate of Results of Election is partly illegible; facts come from the body of the Constitution and the 2002 Certificate of Approval.'
+- aspect: other-officers
+  value: Vice-Chairperson, Secretary, Treasurer, member-at-large
+  quote: Chairperson, a Secretary, a Treasurer, and a member-at-large.
+  source: constitution-ione-band-of-miwok-indians-of-california-2002-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '2002-09-06'
+  locator: Article V, Section 2
+  document_version:
+    document: ione-band-of-miwok-indians-of-california-constitution
+    version: 2002-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: The Certificate of Results of Election is partly illegible; facts come from the body of the Constitution and the 2002 Certificate of Approval.'
+- aspect: elections
+  value: Every 3 years
+  quote: shall be elected every three (3) years.
+  source: constitution-ione-band-of-miwok-indians-of-california-2002-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '2002-09-06'
+  locator: Article V, Section 3(a)
+  document_version:
+    document: ione-band-of-miwok-indians-of-california-constitution
+    version: 2002-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: The Certificate of Results of Election is partly illegible; facts come from the body of the Constitution and the 2002 Certificate of Approval.'
+- aspect: voting-age
+  value: '18'
+  quote: All duly enrolled members of the Tribe who are eighteen (18) years
+  source: constitution-ione-band-of-miwok-indians-of-california-2002-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '2002-09-06'
+  locator: Article X, Section 2
+  document_version:
+    document: ione-band-of-miwok-indians-of-california-constitution
+    version: 2002-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: The Certificate of Results of Election is partly illegible; facts come from the body of the Constitution and the 2002 Certificate of Approval.'
+- aspect: election-authority
+  value: Election Committee
+  quote: the establishment of an election committee;
+  source: constitution-ione-band-of-miwok-indians-of-california-2002-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '2002-09-06'
+  locator: Article X, Section 1
+  document_version:
+    document: ione-band-of-miwok-indians-of-california-constitution
+    version: 2002-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: The Certificate of Results of Election is partly illegible; facts come from the body of the Constitution and the 2002 Certificate of Approval.'
+- aspect: judiciary
+  value: Judicial power in Tribal Council until tribal courts are established by ordinance
+  quote: The judicial power of the Tribe shall be vested in the Tribal Council until such time as
+  source: constitution-ione-band-of-miwok-indians-of-california-2002-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '2002-09-06'
+  locator: Article VIII
+  document_version:
+    document: ione-band-of-miwok-indians-of-california-constitution
+    version: 2002-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: The Certificate of Results of Election is partly illegible; facts come from the body of the Constitution and the 2002 Certificate of Approval.'
+- aspect: judicial-selection
+  value: Set by ordinance
+  quote: specify the manner of selection, term of office and qualifications of
+  source: constitution-ione-band-of-miwok-indians-of-california-2002-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '2002-09-06'
+  locator: Article VIII
+  document_version:
+    document: ione-band-of-miwok-indians-of-california-constitution
+    version: 2002-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: The Certificate of Results of Election is partly illegible; facts come from the body of the Constitution and the 2002 Certificate of Approval.'
+- aspect: judicial-term
+  value: Set by ordinance
+  quote: specify the manner of selection, term of office and qualifications of
+  source: constitution-ione-band-of-miwok-indians-of-california-2002-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '2002-09-06'
+  locator: Article VIII
+  document_version:
+    document: ione-band-of-miwok-indians-of-california-constitution
+    version: 2002-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: The Certificate of Results of Election is partly illegible; facts come from the body of the Constitution and the 2002 Certificate of Approval.'
+- aspect: judicial-independence
+  value: Removal causes and procedures set by ordinance
+  quote: by specifying causes and procedures for removal and
+  source: constitution-ione-band-of-miwok-indians-of-california-2002-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '2002-09-06'
+  locator: Article VIII
+  document_version:
+    document: ione-band-of-miwok-indians-of-california-constitution
+    version: 2002-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: The Certificate of Results of Election is partly illegible; facts come from the body of the Constitution and the 2002 Certificate of Approval.'
+- aspect: judicial-independence
+  value: Pay cuts no greater than those applied to the Council
+  quote: prohibiting reductions in rates of compensation greater than those that may be applied to
+  source: constitution-ione-band-of-miwok-indians-of-california-2002-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '2002-09-06'
+  locator: Article VIII
+  document_version:
+    document: ione-band-of-miwok-indians-of-california-constitution
+    version: 2002-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: The Certificate of Results of Election is partly illegible; facts come from the body of the Constitution and the 2002 Certificate of Approval.'
+- aspect: amendment
+  value: Majority vote of qualified voters in a Secretary-called election
+  quote: This Constitution may be amended by a majority vote of the qualified voters of the
+  source: constitution-ione-band-of-miwok-indians-of-california-2002-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '2002-09-06'
+  locator: Article XVII
+  document_version:
+    document: ione-band-of-miwok-indians-of-california-constitution
+    version: 2002-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: The Certificate of Results of Election is partly illegible; facts come from the body of the Constitution and the 2002 Certificate of Approval.'
+- aspect: secretarial-approval
+  value: Required for amendments
+  quote: but no amendment shall become effective until it shall have been approved
+  source: constitution-ione-band-of-miwok-indians-of-california-2002-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '2002-09-06'
+  locator: Article XVII
+  document_version:
+    document: ione-band-of-miwok-indians-of-california-constitution
+    version: 2002-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: The Certificate of Results of Election is partly illegible; facts come from the body of the Constitution and the 2002 Certificate of Approval.'
+- aspect: recall-and-removal
+  value: Removal by unanimous vote of remaining Council members
+  quote: The Tribal Council shall, by an unanimous vote of all its remaining
+  source: constitution-ione-band-of-miwok-indians-of-california-2002-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '2002-09-06'
+  locator: Article XI, Section 2
+  document_version:
+    document: ione-band-of-miwok-indians-of-california-constitution
+    version: 2002-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: The Certificate of Results of Election is partly illegible; facts come from the body of the Constitution and the 2002 Certificate of Approval.'
+- aspect: recall-and-removal
+  value: Recall by petition of 51% of the General Council
+  quote: Upon receipt of a valid petition signed by at least fifty-one percent
+  source: constitution-ione-band-of-miwok-indians-of-california-2002-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '2002-09-06'
+  locator: Article XI, Section 3
+  document_version:
+    document: ione-band-of-miwok-indians-of-california-constitution
+    version: 2002-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: The Certificate of Results of Election is partly illegible; facts come from the body of the Constitution and the 2002 Certificate of Approval.'
 governing_documents:
 - kind: constitution
   title: Ione Band of Miwok Indians of California - California

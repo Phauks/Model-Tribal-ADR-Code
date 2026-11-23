@@ -207,6 +207,231 @@ indian_health_service:
   as_of: '2026-11-23'
   locator: '"Tribes of Oklahoma, Kansas and Texas" list'
   note: 'Listed as "The Muscogee (Creek) Nation". Also listed under the same Area in: indian-health-service-self-governance-tribes.'
+governance:
+- aspect: form
+  value: Organized under Section 3 of the Act of June 26, 1936
+  quote: is hereby organized under Section 3 of the Act of June 26, 1936 (48 Stat. 1967).
+  source: constitution-the-muscogee-nation-1979-text-2
+  confidence: high
+  verification: read-in-full
+  as_of: '1979-10-06'
+  locator: Article I, Section 1
+  document_version:
+    document: the-muscogee-nation-constitution
+    version: 1979-text-2
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: Annotated edition carrying later amendments (2009, 2013, 2015, 2021) beside the 1979 wording; where two versions of a section appear (Art. VI Sec. 2(c), Art. VII Sec. 2) both are in the text and facts follow the amended wording.'
+- aspect: governing-body
+  value: Muscogee (Creek) National Council
+  quote: All legislative power herein shall be vested in the Muscogee (Creek) National Council, which shall consist of one (1) House with two (2) representatives from each district elected.
+  source: constitution-the-muscogee-nation-1979-text-2
+  confidence: high
+  verification: read-in-full
+  as_of: '1979-10-06'
+  locator: Article VI, Section 2
+  document_version:
+    document: the-muscogee-nation-constitution
+    version: 1979-text-2
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: Annotated edition carrying later amendments (2009, 2013, 2015, 2021) beside the 1979 wording; where two versions of a section appear (Art. VI Sec. 2(c), Art. VII Sec. 2) both are in the text and facts follow the amended wording.'
+- aspect: governing-body-size
+  value: Maximum of 16 members, two per district
+  quote: the number of National Council Representatives will be set at a maximum of sixteen (16) members
+  source: constitution-the-muscogee-nation-1979-text-2
+  confidence: high
+  verification: read-in-full
+  as_of: '1979-10-06'
+  locator: Article VI, Section 2
+  document_version:
+    document: the-muscogee-nation-constitution
+    version: 1979-text-2
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: Annotated edition carrying later amendments (2009, 2013, 2015, 2021) beside the 1979 wording; where two versions of a section appear (Art. VI Sec. 2(c), Art. VII Sec. 2) both are in the text and facts follow the amended wording.'
+- aspect: governing-body-selection
+  value: Elected by all eligible voters of the Nation
+  quote: by a vote of all the eligible voters of the Nation and shall hold office
+  source: constitution-the-muscogee-nation-1979-text-2
+  confidence: high
+  verification: read-in-full
+  as_of: '1979-10-06'
+  locator: Article VI, Section 2(a)
+  document_version:
+    document: the-muscogee-nation-constitution
+    version: 1979-text-2
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: Annotated edition carrying later amendments (2009, 2013, 2015, 2021) beside the 1979 wording; where two versions of a section appear (Art. VI Sec. 2(c), Art. VII Sec. 2) both are in the text and facts follow the amended wording.'
+- aspect: governing-body-term
+  value: 4 years
+  quote: for four (4) years. Beginning with the first election after this
+  source: constitution-the-muscogee-nation-1979-text-2
+  confidence: high
+  verification: read-in-full
+  as_of: '1979-10-06'
+  locator: Article VI, Section 2(a)
+  document_version:
+    document: the-muscogee-nation-constitution
+    version: 1979-text-2
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: Annotated edition carrying later amendments (2009, 2013, 2015, 2021) beside the 1979 wording; where two versions of a section appear (Art. VI Sec. 2(c), Art. VII Sec. 2) both are in the text and facts follow the amended wording.'
+- aspect: head-of-government
+  value: Principal Chief
+  quote: shall be known as the Office of the Principal Chief of the
+  source: constitution-the-muscogee-nation-1979-text-2
+  confidence: high
+  verification: read-in-full
+  as_of: '1979-10-06'
+  locator: Article V, Section 1(a)
+  document_version:
+    document: the-muscogee-nation-constitution
+    version: 1979-text-2
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: Annotated edition carrying later amendments (2009, 2013, 2015, 2021) beside the 1979 wording; where two versions of a section appear (Art. VI Sec. 2(c), Art. VII Sec. 2) both are in the text and facts follow the amended wording.'
+- aspect: head-of-government
+  value: Principal Chief
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  verification: bulk-import
+  as_of: '2026-11-20'
+  locator: The Muscogee (Creek) Nation
+  note: The title of the leader's office as the federal directory lists it; the holder's name is not recorded.
+- aspect: head-of-government-selection
+  value: Elected by majority of votes cast
+  quote: upon election by majority of the votes cast.
+  source: constitution-the-muscogee-nation-1979-text-2
+  confidence: high
+  verification: read-in-full
+  as_of: '1979-10-06'
+  locator: Article V, Section 1(a)
+  document_version:
+    document: the-muscogee-nation-constitution
+    version: 1979-text-2
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: Annotated edition carrying later amendments (2009, 2013, 2015, 2021) beside the 1979 wording; where two versions of a section appear (Art. VI Sec. 2(c), Art. VII Sec. 2) both are in the text and facts follow the amended wording.'
+- aspect: head-of-government-term
+  value: 4 years
+  quote: term of four (4) years upon election by majority of the votes cast.
+  source: constitution-the-muscogee-nation-1979-text-2
+  confidence: high
+  verification: read-in-full
+  as_of: '1979-10-06'
+  locator: Article V, Section 1(a)
+  document_version:
+    document: the-muscogee-nation-constitution
+    version: 1979-text-2
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: Annotated edition carrying later amendments (2009, 2013, 2015, 2021) beside the 1979 wording; where two versions of a section appear (Art. VI Sec. 2(c), Art. VII Sec. 2) both are in the text and facts follow the amended wording.'
+- aspect: other-officers
+  value: Second Chief
+  quote: shall be the Second Chief who shall be elected in the
+  source: constitution-the-muscogee-nation-1979-text-2
+  confidence: high
+  verification: read-in-full
+  as_of: '1979-10-06'
+  locator: Article V, Section 1(c)
+  document_version:
+    document: the-muscogee-nation-constitution
+    version: 1979-text-2
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: Annotated edition carrying later amendments (2009, 2013, 2015, 2021) beside the 1979 wording; where two versions of a section appear (Art. VI Sec. 2(c), Art. VII Sec. 2) both are in the text and facts follow the amended wording.'
+- aspect: elections
+  value: Election dates no more than 4 years apart
+  quote: Election dates for offices of the Muscogee (Creek) Nation shall be no more than four (4) years apart.
+  source: constitution-the-muscogee-nation-1979-text-2
+  confidence: high
+  verification: read-in-full
+  as_of: '1979-10-06'
+  locator: Article IV, Section 6
+  document_version:
+    document: the-muscogee-nation-constitution
+    version: 1979-text-2
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: Annotated edition carrying later amendments (2009, 2013, 2015, 2021) beside the 1979 wording; where two versions of a section appear (Art. VI Sec. 2(c), Art. VII Sec. 2) both are in the text and facts follow the amended wording.'
+- aspect: voting-age
+  value: '18'
+  quote: they are at least eighteen (18) years of age at the
+  source: constitution-the-muscogee-nation-1979-text-2
+  confidence: high
+  verification: read-in-full
+  as_of: '1979-10-06'
+  locator: Article IV, Section 2
+  document_version:
+    document: the-muscogee-nation-constitution
+    version: 1979-text-2
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: Annotated edition carrying later amendments (2009, 2013, 2015, 2021) beside the 1979 wording; where two versions of a section appear (Art. VI Sec. 2(c), Art. VII Sec. 2) both are in the text and facts follow the amended wording.'
+- aspect: election-authority
+  value: Election Board
+  quote: an Election Board comprised of five (5) citizens who shall be charged
+  source: constitution-the-muscogee-nation-1979-text-2
+  confidence: high
+  verification: read-in-full
+  as_of: '1979-10-06'
+  locator: Article IV, Section 1
+  document_version:
+    document: the-muscogee-nation-constitution
+    version: 1979-text-2
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: Annotated edition carrying later amendments (2009, 2013, 2015, 2021) beside the 1979 wording; where two versions of a section appear (Art. VI Sec. 2(c), Art. VII Sec. 2) both are in the text and facts follow the amended wording.'
+- aspect: judiciary
+  value: Supreme Court and inferior courts
+  quote: shall be vested in one Supreme Court limited to matters
+  source: constitution-the-muscogee-nation-1979-text-2
+  confidence: high
+  verification: read-in-full
+  as_of: '1979-10-06'
+  locator: Article VII, Section 1
+  document_version:
+    document: the-muscogee-nation-constitution
+    version: 1979-text-2
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: Annotated edition carrying later amendments (2009, 2013, 2015, 2021) beside the 1979 wording; where two versions of a section appear (Art. VI Sec. 2(c), Art. VII Sec. 2) both are in the text and facts follow the amended wording.'
+- aspect: judicial-selection
+  value: Appointed by Principal Chief, subject to majority approval of National Council
+  quote: appointed by the Principal Chief, subject to majority
+  source: constitution-the-muscogee-nation-1979-text-2
+  confidence: high
+  verification: read-in-full
+  as_of: '1979-10-06'
+  locator: Article VII, Section 2
+  document_version:
+    document: the-muscogee-nation-constitution
+    version: 1979-text-2
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: Annotated edition carrying later amendments (2009, 2013, 2015, 2021) beside the 1979 wording; where two versions of a section appear (Art. VI Sec. 2(c), Art. VII Sec. 2) both are in the text and facts follow the amended wording.'
+- aspect: judicial-term
+  value: 6 years
+  quote: terms shall be for six (6) years beginning July 1.
+  source: constitution-the-muscogee-nation-1979-text-2
+  confidence: high
+  verification: read-in-full
+  as_of: '1979-10-06'
+  locator: Article VII, Section 2
+  document_version:
+    document: the-muscogee-nation-constitution
+    version: 1979-text-2
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: Annotated edition carrying later amendments (2009, 2013, 2015, 2021) beside the 1979 wording; where two versions of a section appear (Art. VI Sec. 2(c), Art. VII Sec. 2) both are in the text and facts follow the amended wording.'
+- aspect: amendment
+  value: Two-thirds vote of National Council, or two-thirds of voters at special election
+  quote: A two-thirds (2/3) affirmative vote
+  source: constitution-the-muscogee-nation-1979-text-2
+  confidence: high
+  verification: read-in-full
+  as_of: '1979-10-06'
+  locator: Article IX, Section 1(a)
+  document_version:
+    document: the-muscogee-nation-constitution
+    version: 1979-text-2
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: Annotated edition carrying later amendments (2009, 2013, 2015, 2021) beside the 1979 wording; where two versions of a section appear (Art. VI Sec. 2(c), Art. VII Sec. 2) both are in the text and facts follow the amended wording.'
+- aspect: recall-and-removal
+  value: Removal by three-fourths vote of National Council after petition of 20% of voters
+  quote: three-fourth (3/4) vote of the National Council shall be required for
+  source: constitution-the-muscogee-nation-1979-text-2
+  confidence: high
+  verification: read-in-full
+  as_of: '1979-10-06'
+  locator: Article VIII, Section 3
+  document_version:
+    document: the-muscogee-nation-constitution
+    version: 1979-text-2
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: Annotated edition carrying later amendments (2009, 2013, 2015, 2021) beside the 1979 wording; where two versions of a section appear (Art. VI Sec. 2(c), Art. VII Sec. 2) both are in the text and facts follow the amended wording.'
+- aspect: recall-and-removal
+  value: Recall by voters on petition of 15% of electorate
+  quote: fifteen (15) percent of the electorate.
+  source: constitution-the-muscogee-nation-1979-text-2
+  confidence: high
+  verification: read-in-full
+  as_of: '1979-10-06'
+  locator: Article XII, Section 8
+  document_version:
+    document: the-muscogee-nation-constitution
+    version: 1979-text-2
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: Annotated edition carrying later amendments (2009, 2013, 2015, 2021) beside the 1979 wording; where two versions of a section appear (Art. VI Sec. 2(c), Art. VII Sec. 2) both are in the text and facts follow the amended wording.'
 governing_documents:
 - kind: law-code
   title: The Muscogee (Creek) Nation

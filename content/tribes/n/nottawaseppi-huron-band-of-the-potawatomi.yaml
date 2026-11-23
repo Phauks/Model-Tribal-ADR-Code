@@ -204,6 +204,255 @@ indian_health_service:
   as_of: '2026-11-23'
   locator: Tribal Health Programs lists (Michigan, Minnesota, Wisconsin)
   note: 'Listed as "Nottawaseppi Huron Band of Potawatomi, Michigan". Also listed under the same Area in: indian-health-service-self-governance-tribes. Also on the Indian Health Service Self-Governance Tribes list (Nottawaseppi Huron Band of the Potawatomi (2018)); the list does not say which service unit or programs the compact covers.'
+governance:
+- aspect: form
+  value: Amended and Restated Constitution
+  quote: attached Amended and Restated Constitution of the Nottawaseppi Huron Band of the
+  source: constitution-nottawaseppi-huron-band-of-the-potawatomi-2013-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '2013-04-27'
+  locator: Certificate of Results of Election
+  document_version:
+    document: nottawaseppi-huron-band-of-the-potawatomi-constitution
+    version: 2013-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+- aspect: governing-body
+  value: Tribal Council
+  quote: a Tribal Council comprised of five (5) Tribal Members meeting the qualifications
+  source: constitution-nottawaseppi-huron-band-of-the-potawatomi-2013-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '2013-04-27'
+  locator: Article IV, Section 1(a)
+  document_version:
+    document: nottawaseppi-huron-band-of-the-potawatomi-constitution
+    version: 2013-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+- aspect: governing-body-size
+  value: 5 members
+  quote: a Tribal Council comprised of five (5) Tribal Members meeting the qualifications
+  source: constitution-nottawaseppi-huron-band-of-the-potawatomi-2013-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '2013-04-27'
+  locator: Article IV, Section 1(a)
+  document_version:
+    document: nottawaseppi-huron-band-of-the-potawatomi-constitution
+    version: 2013-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+- aspect: governing-body-selection
+  value: Elected at large by eligible tribal voters
+  quote: who are elected at large by eligible tribal
+  source: constitution-nottawaseppi-huron-band-of-the-potawatomi-2013-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '2013-04-27'
+  locator: Article IV, Section 1(a)
+  document_version:
+    document: nottawaseppi-huron-band-of-the-potawatomi-constitution
+    version: 2013-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+- aspect: governing-body-term
+  value: 4 years
+  quote: Each position on the Tribal Council shall have a term of office of four (4) years.
+  source: constitution-nottawaseppi-huron-band-of-the-potawatomi-2013-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '2013-04-27'
+  locator: Article IV, Section 2(a)
+  document_version:
+    document: nottawaseppi-huron-band-of-the-potawatomi-constitution
+    version: 2013-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+- aspect: head-of-government
+  value: Chairperson
+  quote: Chairperson, Vice-Chairperson, Secretary, Treasurer and Sergeant-at-Arms
+  source: constitution-nottawaseppi-huron-band-of-the-potawatomi-2013-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '2013-04-27'
+  locator: Article IV, Section 3(a)
+  document_version:
+    document: nottawaseppi-huron-band-of-the-potawatomi-constitution
+    version: 2013-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+- aspect: head-of-government
+  value: Chairperson
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  verification: bulk-import
+  as_of: '2026-11-20'
+  locator: Nottawaseppi Huron Band of the Potawatomi, Michigan
+  note: The title of the leader's office as the federal directory lists it; the holder's name is not recorded.
+- aspect: head-of-government-selection
+  value: Elected by Council members under bylaws
+  quote: its officers, and procedures for the election of its members to each officer position
+  source: constitution-nottawaseppi-huron-band-of-the-potawatomi-2013-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '2013-04-27'
+  locator: Article IV, Section 3(b)
+  document_version:
+    document: nottawaseppi-huron-band-of-the-potawatomi-constitution
+    version: 2013-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+- aspect: other-officers
+  value: Vice-Chairperson, Secretary, Treasurer, Sergeant-at-Arms
+  quote: Chairperson, Vice-Chairperson, Secretary, Treasurer and Sergeant-at-Arms
+  source: constitution-nottawaseppi-huron-band-of-the-potawatomi-2013-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '2013-04-27'
+  locator: Article IV, Section 3(a)
+  document_version:
+    document: nottawaseppi-huron-band-of-the-potawatomi-constitution
+    version: 2013-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+- aspect: elections
+  value: Each April, with annual General Membership meeting
+  quote: Elections shall be held in the month of April in conjunction with the annual
+  source: constitution-nottawaseppi-huron-band-of-the-potawatomi-2013-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '2013-04-27'
+  locator: Article V, Section 1(a)
+  document_version:
+    document: nottawaseppi-huron-band-of-the-potawatomi-constitution
+    version: 2013-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+- aspect: voting-age
+  value: '18'
+  quote: Only those Tribal Members who have attained the age of eighteen (18) on the date
+  source: constitution-nottawaseppi-huron-band-of-the-potawatomi-2013-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '2013-04-27'
+  locator: Article V, Section 3(a)
+  document_version:
+    document: nottawaseppi-huron-band-of-the-potawatomi-constitution
+    version: 2013-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+- aspect: election-authority
+  value: Election Board (5 eligible voters)
+  quote: An election board, consisting of five (5) eligible voters of the Band, shall be
+  source: constitution-nottawaseppi-huron-band-of-the-potawatomi-2013-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '2013-04-27'
+  locator: Article V, Section 2(a)
+  document_version:
+    document: nottawaseppi-huron-band-of-the-potawatomi-constitution
+    version: 2013-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+- aspect: judiciary
+  value: Tribal Court and Tribal Supreme Court
+  quote: The Tribal Court system shall be comprised of a court of general
+  source: constitution-nottawaseppi-huron-band-of-the-potawatomi-2013-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '2013-04-27'
+  locator: Article XI, Section 1(a)
+  document_version:
+    document: nottawaseppi-huron-band-of-the-potawatomi-constitution
+    version: 2013-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+- aspect: judicial-selection
+  value: Appointed by 2/3 vote of entire Tribal Council
+  quote: vote of 2/3 (two/thirds) of the members of the entire Tribal Council.
+  source: constitution-nottawaseppi-huron-band-of-the-potawatomi-2013-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '2013-04-27'
+  locator: Article XI, Section 4(a)
+  document_version:
+    document: nottawaseppi-huron-band-of-the-potawatomi-constitution
+    version: 2013-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+- aspect: judicial-term
+  value: Chief Judge 4 years
+  quote: a term of four (4) years and this term will last until the oath
+  source: constitution-nottawaseppi-huron-band-of-the-potawatomi-2013-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '2013-04-27'
+  locator: Article XI, Section 6(a)
+  document_version:
+    document: nottawaseppi-huron-band-of-the-potawatomi-constitution
+    version: 2013-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+- aspect: judicial-term
+  value: Supreme Court Justices 6 years
+  quote: shall serve for a term of six (6) years and this term will last
+  source: constitution-nottawaseppi-huron-band-of-the-potawatomi-2013-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '2013-04-27'
+  locator: Article XI, Section 6(b)
+  document_version:
+    document: nottawaseppi-huron-band-of-the-potawatomi-constitution
+    version: 2013-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+- aspect: judicial-independence
+  value: Pay may not be reduced during term
+  quote: be reduced during such persons' term of office.
+  source: constitution-nottawaseppi-huron-band-of-the-potawatomi-2013-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '2013-04-27'
+  locator: Article XI, Section 7
+  document_version:
+    document: nottawaseppi-huron-band-of-the-potawatomi-constitution
+    version: 2013-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+- aspect: judicial-independence
+  value: Judges removable only for cause, by 2/3 of entire council
+  quote: shall obtain a minimum 2/3 (two-thirds) affirmative vote of the
+  source: constitution-nottawaseppi-huron-band-of-the-potawatomi-2013-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '2013-04-27'
+  locator: Article XI, Section 8(a)
+  document_version:
+    document: nottawaseppi-huron-band-of-the-potawatomi-constitution
+    version: 2013-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+- aspect: amendment
+  value: Majority of eligible voters at election (30% turnout)
+  quote: This Constitution may be amended by a majority of the eligible voters of the Band
+  source: constitution-nottawaseppi-huron-band-of-the-potawatomi-2013-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '2013-04-27'
+  locator: Article XII(a)
+  document_version:
+    document: nottawaseppi-huron-band-of-the-potawatomi-constitution
+    version: 2013-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+- aspect: recall-and-removal
+  value: Recall by petition of 20% of eligible voters, then majority vote
+  quote: signed by a minimum of twenty percent (20%) of the eligible voters in the Band
+  source: constitution-nottawaseppi-huron-band-of-the-potawatomi-2013-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '2013-04-27'
+  locator: Article IV, Section 9(a)
+  document_version:
+    document: nottawaseppi-huron-band-of-the-potawatomi-constitution
+    version: 2013-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+- aspect: recall-and-removal
+  value: Removal by 4 Council votes
+  quote: 'vote of at least four (4) Tribal Council members for the following reasons:'
+  source: constitution-nottawaseppi-huron-band-of-the-potawatomi-2013-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '2013-04-27'
+  locator: Article IV, Section 8(a)
+  document_version:
+    document: nottawaseppi-huron-band-of-the-potawatomi-constitution
+    version: 2013-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
 governing_documents:
 - kind: law-code
   title: Nottawaseppi Huron Band of Potawatomi

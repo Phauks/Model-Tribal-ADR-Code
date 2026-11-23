@@ -214,6 +214,267 @@ government_structure:
   as_of: '1937'
   locator: preamble / approval and certification of adoption
   note: Historical constitution; a later constitution may have replaced it.
+governance:
+- aspect: form
+  value: Constitution adopted under the Oklahoma Indian Welfare Act of June 26, 1936
+  quote: pursuant to Section 3 of the Oklahoma Indian Welfare Act of June 26, 1936;
+  source: constitution-wyandotte-nation-1999-text
+  confidence: high
+  verification: read-in-full
+  as_of: '1999-09-29'
+  locator: Article 15
+  document_version:
+    document: wyandotte-nation-constitution
+    version: 1999-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author.
+- aspect: governing-body
+  value: Wyandotte Nation Council
+  quote: The supreme governing body of the Nation shall be the Wyandotte Nation Council.
+  source: constitution-wyandotte-nation-1999-text
+  confidence: high
+  verification: read-in-full
+  as_of: '1999-09-29'
+  locator: Article 6, Section 1
+  document_version:
+    document: wyandotte-nation-constitution
+    version: 1999-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author.
+- aspect: governing-body
+  value: Board of Directors
+  quote: (d) The Board of Directors shall make laws to govern the actions of the membership
+  source: constitution-wyandotte-nation-1999-text
+  confidence: high
+  verification: read-in-full
+  as_of: '1999-09-29'
+  locator: Article 7, Section 2(d)
+  document_version:
+    document: wyandotte-nation-constitution
+    version: 1999-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author.
+- aspect: governing-body-size
+  value: 6 members
+  quote: There shall be a Board of Directors which shall consist of the officers as provided in
+  source: constitution-wyandotte-nation-1999-text
+  confidence: high
+  verification: read-in-full
+  as_of: '1999-09-29'
+  locator: Article 6, Section 3
+  document_version:
+    document: wyandotte-nation-constitution
+    version: 1999-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author.
+- aspect: governing-body-selection
+  value: Elected in Nation elections
+  quote: elected in accordance with Article 9, Section 2. Provided, that Officers of the Nation who
+  source: constitution-wyandotte-nation-1999-text
+  confidence: high
+  verification: read-in-full
+  as_of: '1999-09-29'
+  locator: Article 6, Section 2(a)
+  document_version:
+    document: wyandotte-nation-constitution
+    version: 1999-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author.
+- aspect: governing-body-term
+  value: 4 years
+  quote: Thereafter all terms of office will be elected for four years or until their
+  source: constitution-wyandotte-nation-1999-text
+  confidence: high
+  verification: read-in-full
+  as_of: '1999-09-29'
+  locator: Article 9, Section 1
+  document_version:
+    document: wyandotte-nation-constitution
+    version: 1999-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author.
+- aspect: general-council
+  value: All Nation members at least 18 years of age
+  quote: Nation Council shall consist of all Nation members who are at least 18 years of age.
+  source: constitution-wyandotte-nation-1999-text
+  confidence: high
+  verification: read-in-full
+  as_of: '1999-09-29'
+  locator: Article 6, Section 1
+  document_version:
+    document: wyandotte-nation-constitution
+    version: 1999-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author.
+- aspect: head-of-government
+  value: Chief
+  quote: The Executive Power shall be vested in the Chief of the Wyandotte Nation and duly
+  source: constitution-wyandotte-nation-1999-text
+  confidence: high
+  verification: read-in-full
+  as_of: '1999-09-29'
+  locator: Article 6, Section 4
+  document_version:
+    document: wyandotte-nation-constitution
+    version: 1999-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author.
+- aspect: head-of-government
+  value: Chief
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  verification: bulk-import
+  as_of: '2026-11-20'
+  locator: Wyandotte Nation
+  note: The title of the leader's office as the federal directory lists it; the holder's name is not recorded.
+- aspect: head-of-government-selection
+  value: Elected in Nation elections
+  quote: elected in accordance with Article 9, Section 2. Provided, that Officers of the Nation who
+  source: constitution-wyandotte-nation-1999-text
+  confidence: high
+  verification: read-in-full
+  as_of: '1999-09-29'
+  locator: Article 6, Section 2(a)
+  document_version:
+    document: wyandotte-nation-constitution
+    version: 1999-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author.
+- aspect: head-of-government-term
+  value: 4 years
+  quote: Thereafter all terms of office will be elected for four years or until their
+  source: constitution-wyandotte-nation-1999-text
+  confidence: high
+  verification: read-in-full
+  as_of: '1999-09-29'
+  locator: Article 9, Section 1
+  document_version:
+    document: wyandotte-nation-constitution
+    version: 1999-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author.
+- aspect: other-officers
+  value: Second Chief, four Council persons
+  quote: (a) The Officers of the Nation shall be the Chief, Second Chief, and four Council persons
+  source: constitution-wyandotte-nation-1999-text
+  confidence: high
+  verification: read-in-full
+  as_of: '1999-09-29'
+  locator: Article 6, Section 2(a)
+  document_version:
+    document: wyandotte-nation-constitution
+    version: 1999-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author.
+- aspect: voting-age
+  value: '18'
+  quote: member is at least 18 years of age on election day and is properly registered.
+  source: constitution-wyandotte-nation-1999-text
+  confidence: high
+  verification: read-in-full
+  as_of: '1999-09-29'
+  locator: Article 9, Section 4
+  document_version:
+    document: wyandotte-nation-constitution
+    version: 1999-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author.
+- aspect: election-authority
+  value: Election Board
+  quote: establishment of an Election Board, which shall not have in its membership any elected
+  source: constitution-wyandotte-nation-1999-text
+  confidence: high
+  verification: read-in-full
+  as_of: '1999-09-29'
+  locator: Article 9, Section 2
+  document_version:
+    document: wyandotte-nation-constitution
+    version: 1999-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author.
+- aspect: judiciary
+  value: Supreme Court and inferior courts
+  quote: The judicial power of the Wyandotte Nation is hereby vested in the Supreme Court
+  source: constitution-wyandotte-nation-1999-text
+  confidence: high
+  verification: read-in-full
+  as_of: '1999-09-29'
+  locator: Article 6, Section 6
+  document_version:
+    document: wyandotte-nation-constitution
+    version: 1999-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author.
+- aspect: judicial-selection
+  value: Selected by the Board of Directors
+  quote: The Supreme Court Justices and Nation Court Judges shall be selected by the Board
+  source: constitution-wyandotte-nation-1999-text
+  confidence: high
+  verification: read-in-full
+  as_of: '1999-09-29'
+  locator: Article 7, Section 5(c)
+  document_version:
+    document: wyandotte-nation-constitution
+    version: 1999-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author.
+- aspect: judicial-term
+  value: 4 years
+  quote: of Directors and shall serve four year terms and until their successor be duly confirmed
+  source: constitution-wyandotte-nation-1999-text
+  confidence: high
+  verification: read-in-full
+  as_of: '1999-09-29'
+  locator: Article 7, Section 5(c)
+  document_version:
+    document: wyandotte-nation-constitution
+    version: 1999-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author.
+- aspect: judicial-independence
+  value: Justices removable only for criminal activity, misconduct, negligence or absence from duty
+  quote: be suspended or dismissed by the Nation Council only for criminal activity, misconduct,
+  source: constitution-wyandotte-nation-1999-text
+  confidence: high
+  verification: read-in-full
+  as_of: '1999-09-29'
+  locator: Article 7, Section 5
+  document_version:
+    document: wyandotte-nation-constitution
+    version: 1999-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author.
+- aspect: amendment
+  value: Election called by Secretary on request of Board or Council
+  quote: Secretary of the Interior upon a request by the Board of Directors or upon request of
+  source: constitution-wyandotte-nation-1999-text
+  confidence: high
+  verification: read-in-full
+  as_of: '1999-09-29'
+  locator: Article 12
+  document_version:
+    document: wyandotte-nation-constitution
+    version: 1999-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author.
+- aspect: recall-and-removal
+  value: Removal by Nation Council for misconduct, malfeasance or gross neglect
+  quote: The Nation Council of the Wyandotte Nation shall have the power to remove any elected
+  source: constitution-wyandotte-nation-1999-text
+  confidence: high
+  verification: read-in-full
+  as_of: '1999-09-29'
+  locator: Article 10, Section 1
+  document_version:
+    document: wyandotte-nation-constitution
+    version: 1999-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author.
+- aspect: recall-and-removal
+  value: Recall by petition of 50 Council members, then election
+  quote: Upon receipt of a petition signed by at least 50 members of the Nation Council, the
+  source: constitution-wyandotte-nation-1999-text
+  confidence: high
+  verification: read-in-full
+  as_of: '1999-09-29'
+  locator: Article 10, Section 2
+  document_version:
+    document: wyandotte-nation-constitution
+    version: 1999-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author.
+- aspect: other
+  value: Grievance Committee of five elected Council members
+  quote: The Grievance Committee shall be elected and consist of five members of the Nation
+  source: constitution-wyandotte-nation-1999-text
+  confidence: high
+  verification: read-in-full
+  as_of: '1999-09-29'
+  locator: Article 6, Section 5
+  document_version:
+    document: wyandotte-nation-constitution
+    version: 1999-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author.
 governing_documents:
 - kind: law-code
   title: Wyandotte Nation - Tribal Codes and Ordinances

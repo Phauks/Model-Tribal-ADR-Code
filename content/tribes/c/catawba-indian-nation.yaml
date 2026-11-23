@@ -265,6 +265,159 @@ government_structure:
   as_of: '1944'
   locator: preamble / approval and certification of adoption
   note: Historical constitution; a later constitution may have replaced it.
+governance:
+- aspect: form
+  value: Constitution and by-laws under the Indian Reorganization Act of June 18, 1934
+  quote: Indian Reorganization Act of June 18, 1934 (48 Stat. 984), as amended by
+  source: university-of-oklahoma-indian-reorganization-act-sccatcons
+  confidence: medium
+  verification: read-in-full
+  as_of: '1944-04-13'
+  locator: Certification of Adoption
+  document_version:
+    document: catawba-indian-nation-constitution
+    version: 1944-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+- aspect: governing-body
+  value: General Tribal Council
+  quote: of South Carolina shall be the General Tribal Council which shall be composed
+  source: university-of-oklahoma-indian-reorganization-act-sccatcons
+  confidence: medium
+  verification: read-in-full
+  as_of: '1944-04-13'
+  locator: Article III, Section 1
+  document_version:
+    document: catawba-indian-nation-constitution
+    version: 1944-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+- aspect: general-council
+  value: All qualified voters of the Catawba Tribe
+  quote: of all qualified voters of the Catawba Tribe.
+  source: university-of-oklahoma-indian-reorganization-act-sccatcons
+  confidence: medium
+  verification: read-in-full
+  as_of: '1944-04-13'
+  locator: Article III, Section 1
+  document_version:
+    document: catawba-indian-nation-constitution
+    version: 1944-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+- aspect: head-of-government
+  value: Chief
+  quote: ballot, shall elect from its own members (a) a Chief, (b) an Assistant
+  source: university-of-oklahoma-indian-reorganization-act-sccatcons
+  confidence: medium
+  verification: read-in-full
+  as_of: '1944-04-13'
+  locator: Article III, Section 3
+  document_version:
+    document: catawba-indian-nation-constitution
+    version: 1944-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+- aspect: head-of-government
+  value: Chief
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  verification: bulk-import
+  as_of: '2026-11-20'
+  locator: Catawba Indian Nation
+  note: The title of the leader's office as the federal directory lists it; the holder's name is not recorded.
+- aspect: head-of-government-selection
+  value: Elected by the General Tribal Council from its own members
+  quote: ballot, shall elect from its own members (a) a Chief, (b) an Assistant
+  source: university-of-oklahoma-indian-reorganization-act-sccatcons
+  confidence: medium
+  verification: read-in-full
+  as_of: '1944-04-13'
+  locator: Article III, Section 3
+  document_version:
+    document: catawba-indian-nation-constitution
+    version: 1944-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+- aspect: other-officers
+  value: Assistant Chief, Secretary-Treasurer, two Trustees
+  quote: (c) a Secretary-Treasurer, and (d) two Trustees who shall, ex officio,
+  source: university-of-oklahoma-indian-reorganization-act-sccatcons
+  confidence: medium
+  verification: read-in-full
+  as_of: '1944-04-13'
+  locator: Article III, Section 3
+  document_version:
+    document: catawba-indian-nation-constitution
+    version: 1944-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+- aspect: elections
+  value: Every 2 years at the July meeting
+  quote: at the July meeting of every even year.
+  source: university-of-oklahoma-indian-reorganization-act-sccatcons
+  confidence: medium
+  verification: read-in-full
+  as_of: '1944-04-13'
+  locator: Article III, Section 4
+  document_version:
+    document: catawba-indian-nation-constitution
+    version: 1944-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+- aspect: voting-age
+  value: '21'
+  quote: 21 years of age or over shall be qualified voters
+  source: university-of-oklahoma-indian-reorganization-act-sccatcons
+  confidence: medium
+  verification: read-in-full
+  as_of: '1944-04-13'
+  locator: Article III, Section 2
+  document_version:
+    document: catawba-indian-nation-constitution
+    version: 1944-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+- aspect: amendment
+  value: Majority vote of the General Tribal Council
+  quote: proposed by a majority vote of the Catawba General Tribal Council and may
+  source: university-of-oklahoma-indian-reorganization-act-sccatcons
+  confidence: medium
+  verification: read-in-full
+  as_of: '1944-04-13'
+  locator: Article VI
+  document_version:
+    document: catawba-indian-nation-constitution
+    version: 1944-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+- aspect: secretarial-approval
+  value: Required for ordinances
+  quote: be subject to the approval of the Secretary of the Interior, providing
+  source: university-of-oklahoma-indian-reorganization-act-sccatcons
+  confidence: medium
+  verification: read-in-full
+  as_of: '1944-04-13'
+  locator: Article IV, Section 1(e)
+  document_version:
+    document: catawba-indian-nation-constitution
+    version: 1944-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+- aspect: recall-and-removal
+  value: Removal by two-thirds vote of those present
+  quote: A two-thirds (2/3) vote of those present
+  source: university-of-oklahoma-indian-reorganization-act-sccatcons
+  confidence: medium
+  verification: read-in-full
+  as_of: '1944-04-13'
+  locator: Article V, Section 2
+  document_version:
+    document: catawba-indian-nation-constitution
+    version: 1944-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+- aspect: other
+  value: Executive Committee of the Chief, Assistant Chief, Secretary-Treasurer and two Trustees
+  quote: consisting of the Chief, Assistant Chief, Secretary-Treasurer, and the
+  source: university-of-oklahoma-indian-reorganization-act-sccatcons
+  confidence: medium
+  verification: read-in-full
+  as_of: '1944-04-13'
+  locator: Article III, Section 5
+  document_version:
+    document: catawba-indian-nation-constitution
+    version: 1944-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
 governing_documents:
 - kind: constitution
   title: Constitution

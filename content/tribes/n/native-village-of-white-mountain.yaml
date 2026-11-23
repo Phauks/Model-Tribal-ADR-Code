@@ -194,6 +194,87 @@ government_structure:
   note: The text cites the Act of June 18, 1934; the Indian Reorganization Act reached Alaska through
     the Act of May 1, 1936, so this is recorded as the Alaska amendment. Historical constitution; a later
     constitution may have replaced it.
+governance:
+- aspect: form
+  value: Constitution and By-laws by authority of the act of Congress of June 18, 1934
+  quote: by authority of the act of Congress of June
+  source: constitution-native-village-of-white-mountain-1939-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1939-11-25'
+  locator: Preamble
+  document_version:
+    document: native-village-of-white-mountain-constitution
+    version: 1939-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Scan partly garbled in Articles V-VI and the bylaws.'
+- aspect: governing-body
+  value: Governing body (kind chosen by Village membership)
+  quote: governing body it wishes to set up to speak and
+  source: constitution-native-village-of-white-mountain-1939-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1939-11-25'
+  locator: Article III, Section 1
+  document_version:
+    document: native-village-of-white-mountain-constitution
+    version: 1939-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Scan partly garbled in Articles V-VI and the bylaws.'
+- aspect: governing-body-selection
+  value: Chosen by the Village membership
+  quote: The Village shall then choose the mem-
+  source: constitution-native-village-of-white-mountain-1939-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1939-11-25'
+  locator: Article III, Section 2
+  document_version:
+    document: native-village-of-white-mountain-constitution
+    version: 1939-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Scan partly garbled in Articles V-VI and the bylaws.'
+- aspect: head-of-government
+  value: President
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  verification: bulk-import
+  as_of: '2026-11-20'
+  locator: Native Village of White Mountain
+  note: The title of the leader's office as the federal directory lists it; the holder's name is not recorded.
+- aspect: voting-age
+  value: '21'
+  quote: of the Village 21 years of
+  source: constitution-native-village-of-white-mountain-1939-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1939-11-25'
+  locator: Article V, Section 1
+  document_version:
+    document: native-village-of-white-mountain-constitution
+    version: 1939-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Scan partly garbled in Articles V-VI and the bylaws.'
+- aspect: amendment
+  value: Secretary approval and majority vote of Village members in election called by the Secretary
+  quote: approved by the Secretary of the Interior and bya ma-
+  source: constitution-native-village-of-white-mountain-1939-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1939-11-25'
+  locator: Article VI
+  document_version:
+    document: native-village-of-white-mountain-constitution
+    version: 1939-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Scan partly garbled in Articles V-VI and the bylaws.'
+- aspect: secretarial-approval
+  value: Required for amendments
+  quote: approved by the Secretary of the Interior and bya ma-
+  source: constitution-native-village-of-white-mountain-1939-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1939-11-25'
+  locator: Article VI
+  document_version:
+    document: native-village-of-white-mountain-constitution
+    version: 1939-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Scan partly garbled in Articles V-VI and the bylaws.'
 governing_documents:
 - kind: law-code
   title: Native Village of White Mountain

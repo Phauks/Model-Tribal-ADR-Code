@@ -198,6 +198,183 @@ government_structure:
   as_of: '1941'
   locator: preamble / approval and certification of adoption
   note: Historical constitution; a later constitution may have replaced it.
+governance:
+- aspect: form
+  value: Constitution and By-laws under the Acts of Congress of June 18, 1934 and May 1, 1936
+  quote: the Acts of Congress of June 18, 1934 (48 Stat. 984), and May 1, 1936
+  source: constitution-organized-village-of-saxman-1941-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1941-01-14'
+  locator: Preamble
+  document_version:
+    document: organized-village-of-saxman-constitution
+    version: 1941-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Parts of the scan are scrambled (Article III and the oath), so facts are limited to clearly readable passages.'
+- aspect: governing-body
+  value: Council
+  quote: shall be a Council
+  source: constitution-organized-village-of-saxman-1941-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1941-01-14'
+  locator: Article III, Section 1
+  document_version:
+    document: organized-village-of-saxman-constitution
+    version: 1941-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Parts of the scan are scrambled (Article III and the oath), so facts are limited to clearly readable passages.'
+- aspect: governing-body-size
+  value: President and six members (not fewer than six)
+  quote: than six; and may attend to such other business as may be lawful.
+  source: constitution-organized-village-of-saxman-1941-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1941-01-14'
+  locator: Article III, Section 2
+  document_version:
+    document: organized-village-of-saxman-constitution
+    version: 1941-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Parts of the scan are scrambled (Article III and the oath), so facts are limited to clearly readable passages.'
+- aspect: governing-body-selection
+  value: Elected by village membership over age 21
+  quote: of the village over the age of 21.
+  source: constitution-organized-village-of-saxman-1941-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1941-01-14'
+  locator: Article III, Section 1
+  document_version:
+    document: organized-village-of-saxman-constitution
+    version: 1941-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Parts of the scan are scrambled (Article III and the oath), so facts are limited to clearly readable passages.'
+- aspect: governing-body-term
+  value: 2 years
+  quote: for a period of two years
+  source: constitution-organized-village-of-saxman-1941-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1941-01-14'
+  locator: Article III, Section 3
+  document_version:
+    document: organized-village-of-saxman-constitution
+    version: 1941-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Parts of the scan are scrambled (Article III and the oath), so facts are limited to clearly readable passages.'
+- aspect: head-of-government
+  value: President
+  quote: The president shall be elected annually
+  source: constitution-organized-village-of-saxman-1941-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1941-01-14'
+  locator: Article III, Section 4
+  document_version:
+    document: organized-village-of-saxman-constitution
+    version: 1941-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Parts of the scan are scrambled (Article III and the oath), so facts are limited to clearly readable passages.'
+- aspect: head-of-government
+  value: President
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  verification: bulk-import
+  as_of: '2026-11-20'
+  locator: Organized Village of Saxman
+  note: The title of the leader's office as the federal directory lists it; the holder's name is not recorded.
+- aspect: head-of-government-selection
+  value: Elected annually
+  quote: The president shall be elected annually
+  source: constitution-organized-village-of-saxman-1941-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1941-01-14'
+  locator: Article III, Section 4
+  document_version:
+    document: organized-village-of-saxman-constitution
+    version: 1941-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Parts of the scan are scrambled (Article III and the oath), so facts are limited to clearly readable passages.'
+- aspect: head-of-government-term
+  value: 1 year
+  quote: The president shall be elected annually
+  source: constitution-organized-village-of-saxman-1941-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1941-01-14'
+  locator: Article III, Section 4
+  document_version:
+    document: organized-village-of-saxman-constitution
+    version: 1941-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Parts of the scan are scrambled (Article III and the oath), so facts are limited to clearly readable passages.'
+- aspect: other-officers
+  value: Vice president, secretary, treasurer
+  quote: its membership a vice
+  source: constitution-organized-village-of-saxman-1941-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1941-01-14'
+  locator: Article III, Section 6
+  document_version:
+    document: organized-village-of-saxman-constitution
+    version: 1941-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Parts of the scan are scrambled (Article III and the oath), so facts are limited to clearly readable passages.'
+- aspect: elections
+  value: First Thursday after the third Monday in April
+  quote: The annual election date shall be the first Thursday after
+  source: constitution-organized-village-of-saxman-1941-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1941-01-14'
+  locator: Article IV, Section 1
+  document_version:
+    document: organized-village-of-saxman-constitution
+    version: 1941-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Parts of the scan are scrambled (Article III and the oath), so facts are limited to clearly readable passages.'
+- aspect: voting-age
+  value: '21'
+  quote: who is 21 years of age or
+  source: constitution-organized-village-of-saxman-1941-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1941-01-14'
+  locator: Article V, Section 3
+  document_version:
+    document: organized-village-of-saxman-constitution
+    version: 1941-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Parts of the scan are scrambled (Article III and the oath), so facts are limited to clearly readable passages.'
+- aspect: amendment
+  value: Majority vote at election called by the Secretary, 30% turnout
+  quote: may be amended by a majority vote
+  source: constitution-organized-village-of-saxman-1941-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1941-01-14'
+  locator: Article IX
+  document_version:
+    document: organized-village-of-saxman-constitution
+    version: 1941-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Parts of the scan are scrambled (Article III and the oath), so facts are limited to clearly readable passages.'
+- aspect: secretarial-approval
+  value: Required for amendments
+  quote: been approved by the Secretary of the Interior.
+  source: constitution-organized-village-of-saxman-1941-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1941-01-14'
+  locator: Article IX
+  document_version:
+    document: organized-village-of-saxman-constitution
+    version: 1941-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Parts of the scan are scrambled (Article III and the oath), so facts are limited to clearly readable passages.'
+- aspect: recall-and-removal
+  value: Seat declared vacant by the Council after 3 months of absence
+  quote: declared vacant by the Council, whereupon
+  source: constitution-organized-village-of-saxman-1941-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1941-01-14'
+  locator: Article VII, Section 1(b)
+  document_version:
+    document: organized-village-of-saxman-constitution
+    version: 1941-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Parts of the scan are scrambled (Article III and the oath), so facts are limited to clearly readable passages.'
 governing_documents:
 - kind: law-code
   title: Climate change resolution

@@ -208,6 +208,207 @@ government_structure:
   as_of: '1938'
   locator: preamble / approval and certification of adoption
   note: Historical constitution; a later constitution may have replaced it.
+governance:
+- aspect: form
+  value: Constitution and By-Laws under the Indian Reorganization Act of June 18, 1934
+  quote: in accordance with section 16 of the Indian Reorganization Act of June 18,
+  source: constitution-confederated-tribes-of-the-warm-springs-reservation-of-oregon-1992-text
+  confidence: high
+  verification: read-in-full
+  as_of: '1992'
+  locator: Certification of Adoption
+  document_version:
+    document: confederated-tribes-of-the-warm-springs-reservation-of-oregon-constitution
+    version: 1992-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: Text is the 1938 constitution with amendments I to XIV through 1992; original-language passages printed beside amended ones are not used, and the Constitution names a Chairman while the By-Laws name a President of the Council.'
+- aspect: governing-body
+  value: Tribal Council
+  quote: The Tribal Council shall be composed of members chosen
+  source: constitution-confederated-tribes-of-the-warm-springs-reservation-of-oregon-1992-text
+  confidence: high
+  verification: read-in-full
+  as_of: '1992'
+  locator: Article IV, Section 1
+  document_version:
+    document: confederated-tribes-of-the-warm-springs-reservation-of-oregon-constitution
+    version: 1992-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: Text is the 1938 constitution with amendments I to XIV through 1992; original-language passages printed beside amended ones are not used, and the Constitution names a Chairman while the By-Laws name a President of the Council.'
+- aspect: governing-body-size
+  value: 11 members
+  quote: The Council shall consist of eleven members, to be selected
+  source: constitution-confederated-tribes-of-the-warm-springs-reservation-of-oregon-1992-text
+  confidence: high
+  verification: read-in-full
+  as_of: '1992'
+  locator: Article IV, Section 1
+  document_version:
+    document: confederated-tribes-of-the-warm-springs-reservation-of-oregon-constitution
+    version: 1992-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: Text is the 1938 constitution with amendments I to XIV through 1992; original-language passages printed beside amended ones are not used, and the Constitution names a Chairman while the By-Laws name a President of the Council.'
+- aspect: governing-body-selection
+  value: Elected by district, plus recognized district chiefs
+  quote: Simnasho District, 3 elected members and the recognized chief of the district, or his
+  source: constitution-confederated-tribes-of-the-warm-springs-reservation-of-oregon-1992-text
+  confidence: high
+  verification: read-in-full
+  as_of: '1992'
+  locator: Article IV, Section 2
+  document_version:
+    document: confederated-tribes-of-the-warm-springs-reservation-of-oregon-constitution
+    version: 1992-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: Text is the 1938 constitution with amendments I to XIV through 1992; original-language passages printed beside amended ones are not used, and the Constitution names a Chairman while the By-Laws name a President of the Council.'
+- aspect: governing-body-term
+  value: 3 years, chiefs serve for life
+  quote: three years except that the chiefs shall serve for life, and their successors shall be
+  source: constitution-confederated-tribes-of-the-warm-springs-reservation-of-oregon-1992-text
+  confidence: high
+  verification: read-in-full
+  as_of: '1992'
+  locator: Article IV, Section 3
+  document_version:
+    document: confederated-tribes-of-the-warm-springs-reservation-of-oregon-constitution
+    version: 1992-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: Text is the 1938 constitution with amendments I to XIV through 1992; original-language passages printed beside amended ones are not used, and the Constitution names a Chairman while the By-Laws name a President of the Council.'
+- aspect: head-of-government
+  value: President of the Council
+  quote: SECTION 1. PRESIDENT.--It shall be the duty of the President of the Council to
+  source: constitution-confederated-tribes-of-the-warm-springs-reservation-of-oregon-1992-text
+  confidence: high
+  verification: read-in-full
+  as_of: '1992'
+  locator: By-Laws, Article I, Section 1
+  document_version:
+    document: confederated-tribes-of-the-warm-springs-reservation-of-oregon-constitution
+    version: 1992-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: Text is the 1938 constitution with amendments I to XIV through 1992; original-language passages printed beside amended ones are not used, and the Constitution names a Chairman while the By-Laws name a President of the Council.'
+- aspect: head-of-government
+  value: Chairperson
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  verification: bulk-import
+  as_of: '2026-11-20'
+  locator: Confederated Tribes of the Warm Springs Reservation of Oregon
+  note: The title of the leader's office as the federal directory lists it; the holder's name is not recorded. Listed as “Chairman”; recorded without the holder's own form of the title.
+- aspect: head-of-government-selection
+  value: Chosen by the Tribal Council from its membership
+  quote: The Tribal Council shall select from its membership, a
+  source: constitution-confederated-tribes-of-the-warm-springs-reservation-of-oregon-1992-text
+  confidence: high
+  verification: read-in-full
+  as_of: '1992'
+  locator: Article IV, Section 11
+  document_version:
+    document: confederated-tribes-of-the-warm-springs-reservation-of-oregon-constitution
+    version: 1992-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: Text is the 1938 constitution with amendments I to XIV through 1992; original-language passages printed beside amended ones are not used, and the Constitution names a Chairman while the By-Laws name a President of the Council.'
+- aspect: other-officers
+  value: Chairman, Vice-Chairman, Secretary-Treasurer
+  quote: Chairman and Vice-Chairman, and from within or outside of its membership, a
+  source: constitution-confederated-tribes-of-the-warm-springs-reservation-of-oregon-1992-text
+  confidence: high
+  verification: read-in-full
+  as_of: '1992'
+  locator: Article IV, Section 11
+  document_version:
+    document: confederated-tribes-of-the-warm-springs-reservation-of-oregon-constitution
+    version: 1992-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: Text is the 1938 constitution with amendments I to XIV through 1992; original-language passages printed beside amended ones are not used, and the Constitution names a Chairman while the By-Laws name a President of the Council.'
+- aspect: elections
+  value: Set by Tribal Council, at least 30 days before terms expire
+  quote: by the Tribal Council at least 30 days in advance of the expiration of the term of
+  source: constitution-confederated-tribes-of-the-warm-springs-reservation-of-oregon-1992-text
+  confidence: high
+  verification: read-in-full
+  as_of: '1992'
+  locator: Article IV, Section 6
+  document_version:
+    document: confederated-tribes-of-the-warm-springs-reservation-of-oregon-constitution
+    version: 1992-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: Text is the 1938 constitution with amendments I to XIV through 1992; original-language passages printed beside amended ones are not used, and the Constitution names a Chairman while the By-Laws name a President of the Council.'
+- aspect: voting-age
+  value: 21 (or married)
+  quote: married, or who are over 21 years of age, are entitled to vote in the district in which
+  source: constitution-confederated-tribes-of-the-warm-springs-reservation-of-oregon-1992-text
+  confidence: high
+  verification: read-in-full
+  as_of: '1992'
+  locator: Article IV, Section 5
+  document_version:
+    document: confederated-tribes-of-the-warm-springs-reservation-of-oregon-constitution
+    version: 1992-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: Text is the 1938 constitution with amendments I to XIV through 1992; original-language passages printed beside amended ones are not used, and the Constitution names a Chairman while the By-Laws name a President of the Council.'
+- aspect: judiciary
+  value: Courts the Tribal Council may set up by ordinance
+  quote: governing law enforcement on the reservation, and to set up courts for the
+  source: constitution-confederated-tribes-of-the-warm-springs-reservation-of-oregon-1992-text
+  confidence: high
+  verification: read-in-full
+  as_of: '1992'
+  locator: Article V, Section 1(i)
+  document_version:
+    document: confederated-tribes-of-the-warm-springs-reservation-of-oregon-constitution
+    version: 1992-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: Text is the 1938 constitution with amendments I to XIV through 1992; original-language passages printed beside amended ones are not used, and the Constitution names a Chairman while the By-Laws name a President of the Council.'
+- aspect: amendment
+  value: Majority vote of qualified voters
+  quote: This Constitution and By-laws may be amended by a majority vote of
+  source: constitution-confederated-tribes-of-the-warm-springs-reservation-of-oregon-1992-text
+  confidence: high
+  verification: read-in-full
+  as_of: '1992'
+  locator: Article IX, Section 1
+  document_version:
+    document: confederated-tribes-of-the-warm-springs-reservation-of-oregon-constitution
+    version: 1992-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: Text is the 1938 constitution with amendments I to XIV through 1992; original-language passages printed beside amended ones are not used, and the Constitution names a Chairman while the By-Laws name a President of the Council.'
+- aspect: secretarial-approval
+  value: Required for amendments
+  quote: effective until it shall have been approved by the Secretary of the Interior to call an
+  source: constitution-confederated-tribes-of-the-warm-springs-reservation-of-oregon-1992-text
+  confidence: high
+  verification: read-in-full
+  as_of: '1992'
+  locator: Article IX, Section 1
+  document_version:
+    document: confederated-tribes-of-the-warm-springs-reservation-of-oregon-constitution
+    version: 1992-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: Text is the 1938 constitution with amendments I to XIV through 1992; original-language passages printed beside amended ones are not used, and the Constitution names a Chairman while the By-Laws name a President of the Council.'
+- aspect: recall-and-removal
+  value: Recall by petition of 30% of eligible district voters
+  quote: a petition for the recall of such member signed by at least 30 per cent of the eligible
+  source: constitution-confederated-tribes-of-the-warm-springs-reservation-of-oregon-1992-text
+  confidence: high
+  verification: read-in-full
+  as_of: '1992'
+  locator: Article IV, Section 10
+  document_version:
+    document: confederated-tribes-of-the-warm-springs-reservation-of-oregon-constitution
+    version: 1992-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: Text is the 1938 constitution with amendments I to XIV through 1992; original-language passages printed beside amended ones are not used, and the Constitution names a Chairman while the By-Laws name a President of the Council.'
+- aspect: recall-and-removal
+  value: Expulsion for cause by two-thirds vote of the Council
+  quote: The Council may expel a member for cause by a 2/3
+  source: constitution-confederated-tribes-of-the-warm-springs-reservation-of-oregon-1992-text
+  confidence: high
+  verification: read-in-full
+  as_of: '1992'
+  locator: Article IV, Section 9
+  document_version:
+    document: confederated-tribes-of-the-warm-springs-reservation-of-oregon-constitution
+    version: 1992-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: Text is the 1938 constitution with amendments I to XIV through 1992; original-language passages printed beside amended ones are not used, and the Constitution names a Chairman while the By-Laws name a President of the Council.'
+- aspect: other
+  value: Recognized district chiefs sit on Council and serve for life
+  quote: the chiefs shall serve for life, and their successors shall be
+  source: constitution-confederated-tribes-of-the-warm-springs-reservation-of-oregon-1992-text
+  confidence: high
+  verification: read-in-full
+  as_of: '1992'
+  locator: Article IV, Section 3
+  document_version:
+    document: confederated-tribes-of-the-warm-springs-reservation-of-oregon-constitution
+    version: 1992-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: Text is the 1938 constitution with amendments I to XIV through 1992; original-language passages printed beside amended ones are not used, and the Constitution names a Chairman while the By-Laws name a President of the Council.'
 governing_documents:
 - kind: law-code
   title: Confederated Tribes of the Warm Springs Reservation of Oregon

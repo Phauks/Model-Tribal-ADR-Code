@@ -236,6 +236,207 @@ government_structure:
   as_of: '1939'
   locator: preamble / approval and certification of adoption
   note: Historical constitution; a later constitution may have replaced it.
+governance:
+- aspect: form
+  value: Constitution and By-laws under the Thomas-Rogers Oklahoma Indian Welfare Act
+  quote: do adopt the following Constitution and By-laws pursuant
+  source: university-of-oklahoma-indian-reorganization-act-okmiacons
+  confidence: medium
+  verification: read-in-full
+  as_of: '1939-10-10'
+  locator: Preamble
+  document_version:
+    document: miami-tribe-of-oklahoma-constitution
+    version: 1939-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+- aspect: governing-body
+  value: Miami Council
+  quote: The supreme governing body of the Tribe shall be
+  source: university-of-oklahoma-indian-reorganization-act-okmiacons
+  confidence: medium
+  verification: read-in-full
+  as_of: '1939-10-10'
+  locator: Article III
+  document_version:
+    document: miami-tribe-of-oklahoma-constitution
+    version: 1939-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+- aspect: governing-body
+  value: Business Committee
+  quote: There shall be a Business Committee which
+  source: university-of-oklahoma-indian-reorganization-act-okmiacons
+  confidence: medium
+  verification: read-in-full
+  as_of: '1939-10-10'
+  locator: Article V, Section 1
+  document_version:
+    document: miami-tribe-of-oklahoma-constitution
+    version: 1939-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+- aspect: governing-body-size
+  value: 5 members
+  quote: Chief, Secretary-Treasurer, and two councilmen, who shall be elected at
+  source: university-of-oklahoma-indian-reorganization-act-okmiacons
+  confidence: medium
+  verification: read-in-full
+  as_of: '1939-10-10'
+  locator: Article IV
+  document_version:
+    document: miami-tribe-of-oklahoma-constitution
+    version: 1939-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+- aspect: governing-body-selection
+  value: Elected by majority vote of members present at open Council meeting
+  quote: an open Council meeting by a majority vote of the membership present
+  source: university-of-oklahoma-indian-reorganization-act-okmiacons
+  confidence: medium
+  verification: read-in-full
+  as_of: '1939-10-10'
+  locator: Article IV
+  document_version:
+    document: miami-tribe-of-oklahoma-constitution
+    version: 1939-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+- aspect: governing-body-term
+  value: 3 years
+  quote: The term of office shall be for three years
+  source: university-of-oklahoma-indian-reorganization-act-okmiacons
+  confidence: medium
+  verification: read-in-full
+  as_of: '1939-10-10'
+  locator: Article VI, Section 2
+  document_version:
+    document: miami-tribe-of-oklahoma-constitution
+    version: 1939-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+- aspect: head-of-government
+  value: Chief
+  quote: The officers of the Tribe shall be the Chief, Second
+  source: university-of-oklahoma-indian-reorganization-act-okmiacons
+  confidence: medium
+  verification: read-in-full
+  as_of: '1939-10-10'
+  locator: Article IV
+  document_version:
+    document: miami-tribe-of-oklahoma-constitution
+    version: 1939-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+- aspect: head-of-government
+  value: Chief
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  verification: bulk-import
+  as_of: '2026-11-20'
+  locator: Miami Tribe of Oklahoma
+  note: The title of the leader's office as the federal directory lists it; the holder's name is not recorded.
+- aspect: head-of-government-selection
+  value: Elected by majority vote of members present at open Council meeting
+  quote: an open Council meeting by a majority vote of the membership present
+  source: university-of-oklahoma-indian-reorganization-act-okmiacons
+  confidence: medium
+  verification: read-in-full
+  as_of: '1939-10-10'
+  locator: Article IV
+  document_version:
+    document: miami-tribe-of-oklahoma-constitution
+    version: 1939-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+- aspect: head-of-government-term
+  value: 3 years
+  quote: The term of office shall be for three years
+  source: university-of-oklahoma-indian-reorganization-act-okmiacons
+  confidence: medium
+  verification: read-in-full
+  as_of: '1939-10-10'
+  locator: Article VI, Section 2
+  document_version:
+    document: miami-tribe-of-oklahoma-constitution
+    version: 1939-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+- aspect: other-officers
+  value: Second Chief, Secretary-Treasurer, two councilmen
+  quote: Chief, Secretary-Treasurer, and two councilmen, who shall be elected at
+  source: university-of-oklahoma-indian-reorganization-act-okmiacons
+  confidence: medium
+  verification: read-in-full
+  as_of: '1939-10-10'
+  locator: Article IV
+  document_version:
+    document: miami-tribe-of-oklahoma-constitution
+    version: 1939-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+- aspect: elections
+  value: Every 3 years on the first Tuesday of September
+  quote: held by the Council on the first Tuesday of September 1939, and each third
+  source: university-of-oklahoma-indian-reorganization-act-okmiacons
+  confidence: medium
+  verification: read-in-full
+  as_of: '1939-10-10'
+  locator: Article VI, Section 1
+  document_version:
+    document: miami-tribe-of-oklahoma-constitution
+    version: 1939-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+- aspect: voting-age
+  value: '21'
+  quote: Miami Indians residing in Oklahoma; Males, 21 years of age; and females,
+  source: university-of-oklahoma-indian-reorganization-act-okmiacons
+  confidence: medium
+  verification: read-in-full
+  as_of: '1939-10-10'
+  locator: Article III
+  document_version:
+    document: miami-tribe-of-oklahoma-constitution
+    version: 1939-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+- aspect: election-authority
+  value: Council
+  quote: held by the Council on the first Tuesday of September 1939
+  source: university-of-oklahoma-indian-reorganization-act-okmiacons
+  confidence: medium
+  verification: read-in-full
+  as_of: '1939-10-10'
+  locator: Article VI, Section 1
+  document_version:
+    document: miami-tribe-of-oklahoma-constitution
+    version: 1939-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+- aspect: amendment
+  value: Majority vote in a referendum, after Secretary approval
+  quote: and if approved by the Secretary of the Interior shall be submitted to
+  source: university-of-oklahoma-indian-reorganization-act-okmiacons
+  confidence: medium
+  verification: read-in-full
+  as_of: '1939-10-10'
+  locator: Article IX
+  document_version:
+    document: miami-tribe-of-oklahoma-constitution
+    version: 1939-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+- aspect: secretarial-approval
+  value: Required for amendments
+  quote: and if approved by the Secretary of the Interior shall be submitted to
+  source: university-of-oklahoma-indian-reorganization-act-okmiacons
+  confidence: medium
+  verification: read-in-full
+  as_of: '1939-10-10'
+  locator: Article IX
+  document_version:
+    document: miami-tribe-of-oklahoma-constitution
+    version: 1939-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+- aspect: recall-and-removal
+  value: Removal by majority vote of Miami Council after a hearing
+  quote: after giving the accused a hearing, to remove him from office and proceed
+  source: university-of-oklahoma-indian-reorganization-act-okmiacons
+  confidence: medium
+  verification: read-in-full
+  as_of: '1939-10-10'
+  locator: Article VII, Removal of Officers
+  document_version:
+    document: miami-tribe-of-oklahoma-constitution
+    version: 1939-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
 governing_documents:
 - kind: law-code
   title: Tribal code

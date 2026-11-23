@@ -212,6 +212,267 @@ indian_health_service:
   locator: page text
   note: 'The source''s words: "Zuni-Ramah SU (ZRSU) – IHS".'
   operator: indian-health-service
+governance:
+- aspect: form
+  value: Constitution approved under the Act of June 18, 1934 (48 Stat. 984), as amended
+  quote: authority granted to me by the Act of June 18, 1934 (48 Stat. 984), as amended
+  source: constitution-zuni-tribe-of-the-zuni-reservation-2014-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2014'
+  locator: Approval
+  document_version:
+    document: zuni-tribe-of-the-zuni-reservation-constitution
+    version: 2014-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: Text is the 1970 constitution with the 2014 amendments in place; the Article XX history note is the source for the amendment fact.'
+- aspect: governing-body
+  value: Zuni Tribal Council
+  quote: The legislative authority of the Zuni Tribe shall rest in the Zuni Tribal Council
+  source: constitution-zuni-tribe-of-the-zuni-reservation-2014-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2014'
+  locator: Article V, Section 1
+  document_version:
+    document: zuni-tribe-of-the-zuni-reservation-constitution
+    version: 2014-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: Text is the 1970 constitution with the 2014 amendments in place; the Article XX history note is the source for the amendment fact.'
+- aspect: governing-body-size
+  value: 8 members, including governor and lieutenant governor
+  quote: The tribal council shall consist of eight (8) members
+  source: constitution-zuni-tribe-of-the-zuni-reservation-2014-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2014'
+  locator: Article V, Section 2
+  document_version:
+    document: zuni-tribe-of-the-zuni-reservation-constitution
+    version: 2014-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: Text is the 1970 constitution with the 2014 amendments in place; the Article XX history note is the source for the amendment fact.'
+- aspect: governing-body-selection
+  value: Elected at large by popular vote
+  quote: all elected at large by popular vote as hereinafter provided
+  source: constitution-zuni-tribe-of-the-zuni-reservation-2014-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2014'
+  locator: Article V, Section 2
+  document_version:
+    document: zuni-tribe-of-the-zuni-reservation-constitution
+    version: 2014-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: Text is the 1970 constitution with the 2014 amendments in place; the Article XX history note is the source for the amendment fact.'
+- aspect: governing-body-term
+  value: 4 years
+  quote: shall be elected for terms of four (4) years.
+  source: constitution-zuni-tribe-of-the-zuni-reservation-2014-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2014'
+  locator: Article XV, Section 7
+  document_version:
+    document: zuni-tribe-of-the-zuni-reservation-constitution
+    version: 2014-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: Text is the 1970 constitution with the 2014 amendments in place; the Article XX history note is the source for the amendment fact.'
+- aspect: head-of-government
+  value: Governor
+  quote: The Governor of the Zuni Tribe shall exercise the following authorities as the chief executive
+  source: constitution-zuni-tribe-of-the-zuni-reservation-2014-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2014'
+  locator: Article XII, Section 1
+  document_version:
+    document: zuni-tribe-of-the-zuni-reservation-constitution
+    version: 2014-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: Text is the 1970 constitution with the 2014 amendments in place; the Article XX history note is the source for the amendment fact.'
+- aspect: head-of-government
+  value: Governor
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  verification: bulk-import
+  as_of: '2026-11-20'
+  locator: Zuni Tribe of the Zuni Reservation, New Mexico
+  note: The title of the leader's office as the federal directory lists it; the holder's name is not recorded.
+- aspect: head-of-government-selection
+  value: Elected at large as a team with lieutenant governor on one ticket
+  quote: shall run for office as a team on
+  source: constitution-zuni-tribe-of-the-zuni-reservation-2014-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2014'
+  locator: Article XV, Section 3
+  document_version:
+    document: zuni-tribe-of-the-zuni-reservation-constitution
+    version: 2014-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: Text is the 1970 constitution with the 2014 amendments in place; the Article XX history note is the source for the amendment fact.'
+- aspect: head-of-government-term
+  value: 4 years
+  quote: shall be elected for terms of four (4) years.
+  source: constitution-zuni-tribe-of-the-zuni-reservation-2014-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2014'
+  locator: Article XV, Section 7
+  document_version:
+    document: zuni-tribe-of-the-zuni-reservation-constitution
+    version: 2014-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: Text is the 1970 constitution with the 2014 amendments in place; the Article XX history note is the source for the amendment fact.'
+- aspect: other-officers
+  value: Lieutenant Governor, Treasurer
+  quote: The governor, lieutenant governor and the treasurer shall comprise the executive department
+  source: constitution-zuni-tribe-of-the-zuni-reservation-2014-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2014'
+  locator: Article XI, Section 1
+  document_version:
+    document: zuni-tribe-of-the-zuni-reservation-constitution
+    version: 2014-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: Text is the 1970 constitution with the 2014 amendments in place; the Article XX history note is the source for the amendment fact.'
+- aspect: elections
+  value: Every 4 years
+  quote: The regular election of the Zuni Tribe shall be held every four (4) years
+  source: constitution-zuni-tribe-of-the-zuni-reservation-2014-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2014'
+  locator: Article XV, Section 6
+  document_version:
+    document: zuni-tribe-of-the-zuni-reservation-constitution
+    version: 2014-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: Text is the 1970 constitution with the 2014 amendments in place; the Article XX history note is the source for the amendment fact.'
+- aspect: voting-age
+  value: '18'
+  quote: who is eighteen (18) years of age, or older
+  source: constitution-zuni-tribe-of-the-zuni-reservation-2014-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2014'
+  locator: Article XV, Section 5
+  document_version:
+    document: zuni-tribe-of-the-zuni-reservation-constitution
+    version: 2014-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: Text is the 1970 constitution with the 2014 amendments in place; the Article XX history note is the source for the amendment fact.'
+- aspect: election-authority
+  value: Zuni Tribal Council, by ordinance
+  quote: The Zuni Tribal Council shall, by appropriate ordinance, establish procedures and regulate the conduct of all tribal elections
+  source: constitution-zuni-tribe-of-the-zuni-reservation-2014-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2014'
+  locator: Article XV, Section 1
+  document_version:
+    document: zuni-tribe-of-the-zuni-reservation-constitution
+    version: 2014-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: Text is the 1970 constitution with the 2014 amendments in place; the Article XX history note is the source for the amendment fact.'
+- aspect: branches
+  value: Legislative, Executive and Judicial
+  quote: shall consist of a Legislative, and Executive, and a Judicial Department.
+  source: constitution-zuni-tribe-of-the-zuni-reservation-2014-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2014'
+  locator: Article IV, Section 1
+  document_version:
+    document: zuni-tribe-of-the-zuni-reservation-constitution
+    version: 2014-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: Text is the 1970 constitution with the 2014 amendments in place; the Article XX history note is the source for the amendment fact.'
+- aspect: judiciary
+  value: Trial court, and court of appeals by ordinance
+  quote: The trial court shall consist of a chief judge and two associate judges
+  source: constitution-zuni-tribe-of-the-zuni-reservation-2014-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2014'
+  locator: Article XIV, Section 1
+  document_version:
+    document: zuni-tribe-of-the-zuni-reservation-constitution
+    version: 2014-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: Text is the 1970 constitution with the 2014 amendments in place; the Article XX history note is the source for the amendment fact.'
+- aspect: judicial-selection
+  value: Appointed by the Governor with council concurrence
+  quote: appointed by the Governor of the Zuni Tribe, with the concurrence of the tribal council
+  source: constitution-zuni-tribe-of-the-zuni-reservation-2014-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2014'
+  locator: Article XIV, Section 1
+  document_version:
+    document: zuni-tribe-of-the-zuni-reservation-constitution
+    version: 2014-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: Text is the 1970 constitution with the 2014 amendments in place; the Article XX history note is the source for the amendment fact.'
+- aspect: judicial-term
+  value: 6 years (trial judges)
+  quote: The tenure of trial judges shall be six (6) years.
+  source: constitution-zuni-tribe-of-the-zuni-reservation-2014-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2014'
+  locator: Article XIV, Section 3
+  document_version:
+    document: zuni-tribe-of-the-zuni-reservation-constitution
+    version: 2014-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: Text is the 1970 constitution with the 2014 amendments in place; the Article XX history note is the source for the amendment fact.'
+- aspect: amendment
+  value: Majority of all council members, or 30% petition, then majority vote
+  quote: an election authorized by the tribal council by a majority of all members of the tribal council
+  source: constitution-zuni-tribe-of-the-zuni-reservation-2014-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2014'
+  locator: Article XX, Section 1
+  document_version:
+    document: zuni-tribe-of-the-zuni-reservation-constitution
+    version: 2014-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: Text is the 1970 constitution with the 2014 amendments in place; the Article XX history note is the source for the amendment fact.'
+- aspect: secretarial-approval
+  value: Requirement removed
+  quote: The intent of this amendment is to remove the requirement that the Secretary
+  source: constitution-zuni-tribe-of-the-zuni-reservation-2014-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2014'
+  locator: Article XX, History (2014 amendment)
+  document_version:
+    document: zuni-tribe-of-the-zuni-reservation-constitution
+    version: 2014-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: Text is the 1970 constitution with the 2014 amendments in place; the Article XX history note is the source for the amendment fact.'
+- aspect: recall-and-removal
+  value: Recall by petition of 25% of those entitled to vote
+  quote: Upon receipt of a petition signed by at least twenty-five percent (25%) of those entitled to vote
+  source: constitution-zuni-tribe-of-the-zuni-reservation-2014-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2014'
+  locator: Article XVII, Section 2
+  document_version:
+    document: zuni-tribe-of-the-zuni-reservation-constitution
+    version: 2014-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: Text is the 1970 constitution with the 2014 amendments in place; the Article XX history note is the source for the amendment fact.'
+- aspect: recall-and-removal
+  value: Removal by vote of at least five council members
+  quote: be removed from office if not less than five (5) members shall cast ballots in favor of removal at a legally
+  source: constitution-zuni-tribe-of-the-zuni-reservation-2014-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2014'
+  locator: Article XVII, Section 1
+  document_version:
+    document: zuni-tribe-of-the-zuni-reservation-constitution
+    version: 2014-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: Text is the 1970 constitution with the 2014 amendments in place; the Article XX history note is the source for the amendment fact.'
+- aspect: other
+  value: Governor veto over council enactments
+  quote: The governor shall have veto power over enactments of the tribal council
+  source: constitution-zuni-tribe-of-the-zuni-reservation-2014-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2014'
+  locator: Article XII, Section 1(e)
+  document_version:
+    document: zuni-tribe-of-the-zuni-reservation-constitution
+    version: 2014-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: Text is the 1970 constitution with the 2014 amendments in place; the Article XX history note is the source for the amendment fact.'
 governing_documents:
 - kind: law-code
   title: Zuni Tribe of the Zuni Reservation, New Mexico

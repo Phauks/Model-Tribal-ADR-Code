@@ -177,6 +177,195 @@ indian_health_service:
   as_of: '2026-11-23'
   locator: '"Federally Recognized Tribes" list, Interior Alaska Service Area profile'
   note: 'The source''s words: "Huslia Village".'
+governance:
+- aspect: governing-body
+  value: Huslia Tribal Council
+  quote: The governing body of the Native Tribe of Huslia shall be the Huslia Tribal Council, also referred to as
+  source: constitution-huslia-village-1995-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1995-04-26'
+  locator: Article 4, Section 1
+  document_version:
+    document: huslia-village-constitution
+    version: 1995-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Certificate says the constitution was adopted October 15, 1992 and three provisions were amended April 26, 1995; the extract is the amended text.'
+- aspect: governing-body-size
+  value: 7 members
+  quote: The Council shall consist of seven members who shall be elected by a majority vote of the
+  source: constitution-huslia-village-1995-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1995-04-26'
+  locator: Article 4, Section 2
+  document_version:
+    document: huslia-village-constitution
+    version: 1995-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Certificate says the constitution was adopted October 15, 1992 and three provisions were amended April 26, 1995; the extract is the amended text.'
+- aspect: governing-body-selection
+  value: Elected by majority vote of the qualified voters
+  quote: The Council shall consist of seven members who shall be elected by a majority vote of the
+  source: constitution-huslia-village-1995-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1995-04-26'
+  locator: Article 4, Section 2
+  document_version:
+    document: huslia-village-constitution
+    version: 1995-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Certificate says the constitution was adopted October 15, 1992 and three provisions were amended April 26, 1995; the extract is the amended text.'
+- aspect: governing-body-term
+  value: 3 years, staggered
+  quote: The officers and Council members shall hold office for a term of three years. The terms of the
+  source: constitution-huslia-village-1995-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1995-04-26'
+  locator: Article 4, Section 6
+  document_version:
+    document: huslia-village-constitution
+    version: 1995-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Certificate says the constitution was adopted October 15, 1992 and three provisions were amended April 26, 1995; the extract is the amended text.'
+- aspect: head-of-government
+  value: First Chief
+  quote: The First Chief shall preside at all meetings of the tribe and shall have general supervision of the
+  source: constitution-huslia-village-1995-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1995-04-26'
+  locator: Article 5, Section 2
+  document_version:
+    document: huslia-village-constitution
+    version: 1995-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Certificate says the constitution was adopted October 15, 1992 and three provisions were amended April 26, 1995; the extract is the amended text.'
+- aspect: head-of-government
+  value: First Chief
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  verification: bulk-import
+  as_of: '2026-11-20'
+  locator: Huslia Village
+  note: The title of the leader's office as the federal directory lists it; the holder's name is not recorded.
+- aspect: head-of-government-selection
+  value: Elected by qualified voters in the general tribal election
+  quote: Officers shall be elected during the general tribal election by qualified voters.
+  source: constitution-huslia-village-1995-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1995-04-26'
+  locator: Article 4, Section 4
+  document_version:
+    document: huslia-village-constitution
+    version: 1995-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Certificate says the constitution was adopted October 15, 1992 and three provisions were amended April 26, 1995; the extract is the amended text.'
+- aspect: head-of-government-term
+  value: 3 years
+  quote: The officers and Council members shall hold office for a term of three years.
+  source: constitution-huslia-village-1995-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1995-04-26'
+  locator: Article 4, Section 6
+  document_version:
+    document: huslia-village-constitution
+    version: 1995-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Certificate says the constitution was adopted October 15, 1992 and three provisions were amended April 26, 1995; the extract is the amended text.'
+- aspect: other-officers
+  value: Second Chief, Secretary/Treasurer
+  quote: The Council shall include a First Chief, Second Chief, Secretary/Treasurer, and four (4) Council
+  source: constitution-huslia-village-1995-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1995-04-26'
+  locator: Article 4, Section 4
+  document_version:
+    document: huslia-village-constitution
+    version: 1995-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Certificate says the constitution was adopted October 15, 1992 and three provisions were amended April 26, 1995; the extract is the amended text.'
+- aspect: elections
+  value: Every year in October
+  quote: The Tribal Council shall set a date every year for regular elections to be held in
+  source: constitution-huslia-village-1995-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1995-04-26'
+  locator: Article 8, Section 3
+  document_version:
+    document: huslia-village-constitution
+    version: 1995-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Certificate says the constitution was adopted October 15, 1992 and three provisions were amended April 26, 1995; the extract is the amended text.'
+- aspect: voting-age
+  value: '18'
+  quote: Any duly enrolled member of the Native Tribe of Huslia eighteen (18) years of age or older
+  source: constitution-huslia-village-1995-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1995-04-26'
+  locator: Article 8, Section 1
+  document_version:
+    document: huslia-village-constitution
+    version: 1995-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Certificate says the constitution was adopted October 15, 1992 and three provisions were amended April 26, 1995; the extract is the amended text.'
+- aspect: election-authority
+  value: Election committee
+  quote: The Council shall appoint an election committee of three adult tribal members each year
+  source: constitution-huslia-village-1995-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1995-04-26'
+  locator: Article 8, Section 5
+  document_version:
+    document: huslia-village-constitution
+    version: 1995-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Certificate says the constitution was adopted October 15, 1992 and three provisions were amended April 26, 1995; the extract is the amended text.'
+- aspect: judiciary
+  value: Council may establish tribal courts
+  quote: To provide for the maintenance of law and order and the administration of justice, including the establishment of
+  source: constitution-huslia-village-1995-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1995-04-26'
+  locator: Article 9, Section 1(j)
+  document_version:
+    document: huslia-village-constitution
+    version: 1995-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Certificate says the constitution was adopted October 15, 1992 and three provisions were amended April 26, 1995; the extract is the amended text.'
+- aspect: amendment
+  value: Majority vote of qualified voters in a Council-called election
+  quote: This Constitution may be amended by a majority vote of the qualified voters of the
+  source: constitution-huslia-village-1995-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1995-04-26'
+  locator: Article 15, Section 1
+  document_version:
+    document: huslia-village-constitution
+    version: 1995-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Certificate says the constitution was adopted October 15, 1992 and three provisions were amended April 26, 1995; the extract is the amended text.'
+- aspect: recall-and-removal
+  value: Removal by Tribal Council, four votes
+  quote: may be removed from office by the Tribal Council. Four (4) Tribal Council
+  source: constitution-huslia-village-1995-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1995-04-26'
+  locator: Article 7, Section 1
+  document_version:
+    document: huslia-village-constitution
+    version: 1995-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Certificate says the constitution was adopted October 15, 1992 and three provisions were amended April 26, 1995; the extract is the amended text.'
+- aspect: recall-and-removal
+  value: Recall by petition of 60% of qualified voters
+  quote: signed by at least sixty percent (60%) of the qualified voters is presented to the Tribal Council.
+  source: constitution-huslia-village-1995-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1995-04-26'
+  locator: Article 7, Section 2
+  document_version:
+    document: huslia-village-constitution
+    version: 1995-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Certificate says the constitution was adopted October 15, 1992 and three provisions were amended April 26, 1995; the extract is the amended text.'
 governing_documents:
 - kind: constitution
   title: Huslia Village - Constitution Table of Contents

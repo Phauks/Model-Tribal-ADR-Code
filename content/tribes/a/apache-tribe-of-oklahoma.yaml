@@ -197,6 +197,206 @@ indian_health_service:
   as_of: '2026-11-23'
   locator: list of Tribes
   note: Listed as "Apache Tribe of Oklahoma". The Direct Service Tribes list says some Tribes have a mixed Indian Health Service and Tribal arrangement.
+governance:
+- aspect: form
+  value: Constitution, as ratified February 5, 1972 and amended
+  quote: As ratified February 5, 1972,
+  source: constitution-apache-tribe-of-oklahoma-1987-text-2
+  confidence: medium
+  verification: read-in-full
+  as_of: '1987-06-20'
+  document_version:
+    document: apache-tribe-of-oklahoma-constitution
+    version: 1987-text-2
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Extract skips Articles X to XIII (text runs from Article IX to Article XIV) and ends with the amendment certificate; several passages are OCR-garbled.'
+- aspect: governing-body
+  value: Tribal Council
+  quote: The supreme governing body of the Apache Tribe of Oklahoma shall be the
+  source: constitution-apache-tribe-of-oklahoma-1987-text-2
+  confidence: medium
+  verification: read-in-full
+  as_of: '1987-06-20'
+  locator: Article III
+  document_version:
+    document: apache-tribe-of-oklahoma-constitution
+    version: 1987-text-2
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Extract skips Articles X to XIII (text runs from Article IX to Article XIV) and ends with the amendment certificate; several passages are OCR-garbled.'
+- aspect: governing-body
+  value: Business Committee
+  quote: There shall be a business committee which shall consist of the officers as
+  source: constitution-apache-tribe-of-oklahoma-1987-text-2
+  confidence: medium
+  verification: read-in-full
+  as_of: '1987-06-20'
+  locator: Article V
+  document_version:
+    document: apache-tribe-of-oklahoma-constitution
+    version: 1987-text-2
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Extract skips Articles X to XIII (text runs from Article IX to Article XIV) and ends with the amendment certificate; several passages are OCR-garbled.'
+- aspect: governing-body-size
+  value: All members 18 and older
+  quote: The tribal council shall consist of all members of the
+  source: constitution-apache-tribe-of-oklahoma-1987-text-2
+  confidence: medium
+  verification: read-in-full
+  as_of: '1987-06-20'
+  locator: Article III
+  document_version:
+    document: apache-tribe-of-oklahoma-constitution
+    version: 1987-text-2
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Extract skips Articles X to XIII (text runs from Article IX to Article XIV) and ends with the amendment certificate; several passages are OCR-garbled.'
+- aspect: governing-body-size
+  value: 5 members on the Business Committee
+  quote: provided in Article IV and two (2) members.
+  source: constitution-apache-tribe-of-oklahoma-1987-text-2
+  confidence: medium
+  verification: read-in-full
+  as_of: '1987-06-20'
+  locator: Article V
+  document_version:
+    document: apache-tribe-of-oklahoma-constitution
+    version: 1987-text-2
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Extract skips Articles X to XIII (text runs from Article IX to Article XIV) and ends with the amendment certificate; several passages are OCR-garbled.'
+- aspect: governing-body-selection
+  value: Elected by secret ballot
+  quote: Elections shall be by secret ballot and absentee voting shall
+  source: constitution-apache-tribe-of-oklahoma-1987-text-2
+  confidence: medium
+  verification: read-in-full
+  as_of: '1987-06-20'
+  locator: Article VII, Section 2
+  document_version:
+    document: apache-tribe-of-oklahoma-constitution
+    version: 1987-text-2
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Extract skips Articles X to XIII (text runs from Article IX to Article XIV) and ends with the amendment certificate; several passages are OCR-garbled.'
+- aspect: governing-body-term
+  value: 2 years
+  quote: officer and business committee member shall be for a period of two (2)
+  source: constitution-apache-tribe-of-oklahoma-1987-text-2
+  confidence: medium
+  verification: read-in-full
+  as_of: '1987-06-20'
+  locator: Article V
+  document_version:
+    document: apache-tribe-of-oklahoma-constitution
+    version: 1987-text-2
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Extract skips Articles X to XIII (text runs from Article IX to Article XIV) and ends with the amendment certificate; several passages are OCR-garbled.'
+- aspect: general-council
+  value: All members 18 and older
+  quote: The tribal council shall consist of all members of the
+  source: constitution-apache-tribe-of-oklahoma-1987-text-2
+  confidence: medium
+  verification: read-in-full
+  as_of: '1987-06-20'
+  locator: Article III
+  document_version:
+    document: apache-tribe-of-oklahoma-constitution
+    version: 1987-text-2
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Extract skips Articles X to XIII (text runs from Article IX to Article XIV) and ends with the amendment certificate; several passages are OCR-garbled.'
+- aspect: head-of-government
+  value: Chairman
+  quote: The officers of the tribe shall be the chairman, vice-chairman and
+  source: constitution-apache-tribe-of-oklahoma-1987-text-2
+  confidence: medium
+  verification: read-in-full
+  as_of: '1987-06-20'
+  locator: Article IV
+  document_version:
+    document: apache-tribe-of-oklahoma-constitution
+    version: 1987-text-2
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Extract skips Articles X to XIII (text runs from Article IX to Article XIV) and ends with the amendment certificate; several passages are OCR-garbled.'
+- aspect: head-of-government
+  value: Chairperson
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  verification: bulk-import
+  as_of: '2026-11-20'
+  locator: Apache Tribe of Oklahoma
+  note: The title of the leader's office as the federal directory lists it; the holder's name is not recorded. Listed as “Chairman”; recorded without the holder's own form of the title.
+- aspect: head-of-government-selection
+  value: Elected by secret ballot
+  quote: Elections shall be by secret ballot and absentee voting shall
+  source: constitution-apache-tribe-of-oklahoma-1987-text-2
+  confidence: medium
+  verification: read-in-full
+  as_of: '1987-06-20'
+  locator: Article VII, Section 2
+  document_version:
+    document: apache-tribe-of-oklahoma-constitution
+    version: 1987-text-2
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Extract skips Articles X to XIII (text runs from Article IX to Article XIV) and ends with the amendment certificate; several passages are OCR-garbled.'
+- aspect: head-of-government-term
+  value: 2 years
+  quote: officer and business committee member shall be for a period of two (2)
+  source: constitution-apache-tribe-of-oklahoma-1987-text-2
+  confidence: medium
+  verification: read-in-full
+  as_of: '1987-06-20'
+  locator: Article V
+  document_version:
+    document: apache-tribe-of-oklahoma-constitution
+    version: 1987-text-2
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Extract skips Articles X to XIII (text runs from Article IX to Article XIV) and ends with the amendment certificate; several passages are OCR-garbled.'
+- aspect: other-officers
+  value: Vice-Chairman, Secretary-Treasurer
+  quote: The officers of the tribe shall be the chairman, vice-chairman and
+  source: constitution-apache-tribe-of-oklahoma-1987-text-2
+  confidence: medium
+  verification: read-in-full
+  as_of: '1987-06-20'
+  locator: Article IV
+  document_version:
+    document: apache-tribe-of-oklahoma-constitution
+    version: 1987-text-2
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Extract skips Articles X to XIII (text runs from Article IX to Article XIV) and ends with the amendment certificate; several passages are OCR-garbled.'
+- aspect: elections
+  value: Every 2 years, on the 3rd Saturday of the month of the initial election
+  quote: Thereafter, the general election shall be held at two (2)
+  source: constitution-apache-tribe-of-oklahoma-1987-text-2
+  confidence: medium
+  verification: read-in-full
+  as_of: '1987-06-20'
+  locator: Article VII, Section 1
+  document_version:
+    document: apache-tribe-of-oklahoma-constitution
+    version: 1987-text-2
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Extract skips Articles X to XIII (text runs from Article IX to Article XIV) and ends with the amendment certificate; several passages are OCR-garbled.'
+- aspect: election-authority
+  value: Business Committee (by ordinance)
+  quote: duly adopted by the business committee, provided that the initial one held
+  source: constitution-apache-tribe-of-oklahoma-1987-text-2
+  confidence: medium
+  verification: read-in-full
+  as_of: '1987-06-20'
+  locator: Article VII, Section 3
+  document_version:
+    document: apache-tribe-of-oklahoma-constitution
+    version: 1987-text-2
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Extract skips Articles X to XIII (text runs from Article IX to Article XIV) and ends with the amendment certificate; several passages are OCR-garbled.'
+- aspect: recall-and-removal
+  value: Removal of business committee members by Council majority after petition of 50 members
+  quote: Upon the signed petition of fifty (50) members of the Apache Tribal
+  source: constitution-apache-tribe-of-oklahoma-1987-text-2
+  confidence: medium
+  verification: read-in-full
+  as_of: '1987-06-20'
+  locator: Article IX
+  document_version:
+    document: apache-tribe-of-oklahoma-constitution
+    version: 1987-text-2
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Extract skips Articles X to XIII (text runs from Article IX to Article XIV) and ends with the amendment certificate; several passages are OCR-garbled.'
+- aspect: other
+  value: Quorum of 50 Tribal Council members
+  quote: Fifty (50) members of the Apache Tribal Council shall
+  source: constitution-apache-tribe-of-oklahoma-1987-text-2
+  confidence: medium
+  verification: read-in-full
+  as_of: '1987-06-20'
+  locator: Article XV, Section 1
+  document_version:
+    document: apache-tribe-of-oklahoma-constitution
+    version: 1987-text-2
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Extract skips Articles X to XIII (text runs from Article IX to Article XIV) and ends with the amendment certificate; several passages are OCR-garbled.'
 governing_documents:
 - kind: constitution
   title: Constitution

@@ -206,6 +206,195 @@ indian_health_service:
   as_of: '2026-11-23'
   locator: '"Federally Recognized Tribes" list, Anchorage Service Area profile'
   note: 'The source''s words: "Gulkana Village".'
+governance:
+- aspect: form
+  value: Traditional Constitution
+  quote: TRADITIONAL CONSTITUTION
+  source: constitution-gulkana-village-council-2001-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '2001-03-31'
+  locator: Title
+  document_version:
+    document: gulkana-village-council-constitution
+    version: 2001-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Batch status is superseded; this is the 2001 constitution as adopted, and the scan omits the Article heading above the initiative and referendum section.'
+- aspect: governing-body
+  value: Gulkana Village Council
+  quote: The governing body of the Tribe shall consist of a 7
+  source: constitution-gulkana-village-council-2001-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '2001-03-31'
+  locator: Article V, Section 1
+  document_version:
+    document: gulkana-village-council-constitution
+    version: 2001-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Batch status is superseded; this is the 2001 constitution as adopted, and the scan omits the Article heading above the initiative and referendum section.'
+- aspect: governing-body-size
+  value: 7 members
+  quote: member council known as the Gulkana Village Council and hereinafter will
+  source: constitution-gulkana-village-council-2001-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '2001-03-31'
+  locator: Article V, Section 1
+  document_version:
+    document: gulkana-village-council-constitution
+    version: 2001-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Batch status is superseded; this is the 2001 constitution as adopted, and the scan omits the Article heading above the initiative and referendum section.'
+- aspect: governing-body-selection
+  value: Elected by the voters
+  quote: Six (6) members of the Council shall-be elected directly by the
+  source: constitution-gulkana-village-council-2001-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '2001-03-31'
+  locator: Article V, Section 2
+  document_version:
+    document: gulkana-village-council-constitution
+    version: 2001-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Batch status is superseded; this is the 2001 constitution as adopted, and the scan omits the Article heading above the initiative and referendum section.'
+- aspect: governing-body-term
+  value: 2 years
+  quote: Council members shall be for two years.
+  source: constitution-gulkana-village-council-2001-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '2001-03-31'
+  locator: Article V, Section 4
+  document_version:
+    document: gulkana-village-council-constitution
+    version: 2001-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Batch status is superseded; this is the 2001 constitution as adopted, and the scan omits the Article heading above the initiative and referendum section.'
+- aspect: head-of-government
+  value: President
+  quote: The President of the Council shall preside at all meetings of
+  source: constitution-gulkana-village-council-2001-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '2001-03-31'
+  locator: Article VI
+  document_version:
+    document: gulkana-village-council-constitution
+    version: 2001-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Batch status is superseded; this is the 2001 constitution as adopted, and the scan omits the Article heading above the initiative and referendum section.'
+- aspect: head-of-government
+  value: President
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  verification: bulk-import
+  as_of: '2026-11-20'
+  locator: Gulkana Village Council
+  note: The title of the leader's office as the federal directory lists it; the holder's name is not recorded.
+- aspect: head-of-government-selection
+  value: Elected directly by the voters
+  quote: The office of President is a distinct position, to be elected directly
+  source: constitution-gulkana-village-council-2001-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '2001-03-31'
+  locator: Article V, Section 2
+  document_version:
+    document: gulkana-village-council-constitution
+    version: 2001-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Batch status is superseded; this is the 2001 constitution as adopted, and the scan omits the Article heading above the initiative and referendum section.'
+- aspect: other-officers
+  value: Vice-President, Secretary/Treasurer
+  quote: members a Vice-President, a Secretary/Treasurer and such other officers,
+  source: constitution-gulkana-village-council-2001-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '2001-03-31'
+  locator: Article V, Section 2
+  document_version:
+    document: gulkana-village-council-constitution
+    version: 2001-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Batch status is superseded; this is the 2001 constitution as adopted, and the scan omits the Article heading above the initiative and referendum section.'
+- aspect: elections
+  value: Annually, on a date set by the Village Council
+  quote: The annual general tribal election or meeting shall be held
+  source: constitution-gulkana-village-council-2001-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '2001-03-31'
+  locator: Article VII, Election Day
+  document_version:
+    document: gulkana-village-council-constitution
+    version: 2001-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Batch status is superseded; this is the 2001 constitution as adopted, and the scan omits the Article heading above the initiative and referendum section.'
+- aspect: voting-age
+  value: '18'
+  quote: Any member of the Tribe eighteen (18) years of age or
+  source: constitution-gulkana-village-council-2001-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '2001-03-31'
+  locator: Article VII, Voter Qualification
+  document_version:
+    document: gulkana-village-council-constitution
+    version: 2001-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Batch status is superseded; this is the 2001 constitution as adopted, and the scan omits the Article heading above the initiative and referendum section.'
+- aspect: judiciary
+  value: Council may establish a Tribal judicial system
+  quote: including through the establishment of an
+  source: constitution-gulkana-village-council-2001-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '2001-03-31'
+  locator: Article VIII, Other Council Powers, n.
+  document_version:
+    document: gulkana-village-council-constitution
+    version: 2001-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Batch status is superseded; this is the 2001 constitution as adopted, and the scan omits the Article heading above the initiative and referendum section.'
+- aspect: amendment
+  value: Majority vote of eligible tribal members in an election
+  quote: ratified by a majority vote of eligible tribal members voting in an election
+  source: constitution-gulkana-village-council-2001-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '2001-03-31'
+  locator: Article XII
+  document_version:
+    document: gulkana-village-council-constitution
+    version: 2001-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Batch status is superseded; this is the 2001 constitution as adopted, and the scan omits the Article heading above the initiative and referendum section.'
+- aspect: recall-and-removal
+  value: Recall by voters on petition of 30% of eligible voters
+  quote: Any or all members of the Tribal Council may be recalled by the
+  source: constitution-gulkana-village-council-2001-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '2001-03-31'
+  locator: Article V, Recall
+  document_version:
+    document: gulkana-village-council-constitution
+    version: 2001-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Batch status is superseded; this is the 2001 constitution as adopted, and the scan omits the Article heading above the initiative and referendum section.'
+- aspect: recall-and-removal
+  value: Removal by 4 Council votes for neglect or misconduct
+  quote: at least four (4) Council members voting by secret ballot, provided that
+  source: constitution-gulkana-village-council-2001-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '2001-03-31'
+  locator: Article V, Removal
+  document_version:
+    document: gulkana-village-council-constitution
+    version: 2001-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Batch status is superseded; this is the 2001 constitution as adopted, and the scan omits the Article heading above the initiative and referendum section.'
+- aspect: other
+  value: Initiative on petition of 30% of eligible voters
+  quote: thirty percent (30%) of the eligible voting members, the Council shall call
+  source: constitution-gulkana-village-council-2001-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '2001-03-31'
+  locator: Section 1 (Initiative)
+  document_version:
+    document: gulkana-village-council-constitution
+    version: 2001-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Batch status is superseded; this is the 2001 constitution as adopted, and the scan omits the Article heading above the initiative and referendum section.'
 jurisdiction:
 - topic: public-law-280
   value: mandatory-state

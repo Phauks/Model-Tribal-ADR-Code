@@ -194,6 +194,183 @@ indian_health_service:
   as_of: '2026-11-23'
   locator: regional lists (West Central, Southern, Northern, East Central)
   note: Listed as "Yocha Dehe Wintun Nation, California".
+governance:
+- aspect: form
+  value: Constitution and Bylaws under the Indian Reorganization Act
+  quote: Act, do hereby ordain and establish this constitution and bylaws.
+  source: constitution-yocha-dehe-wintun-nation-1976-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1976-03-18'
+  locator: Preamble
+  document_version:
+    document: yocha-dehe-wintun-nation-constitution
+    version: 1976-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Adoption certificate vote counts are illegible in the scan.'
+- aspect: governing-body
+  value: Community council
+  quote: shall be the community council, composed of all qualified voters
+  source: constitution-yocha-dehe-wintun-nation-1976-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1976-03-18'
+  locator: Article IV, Section 1
+  document_version:
+    document: yocha-dehe-wintun-nation-constitution
+    version: 1976-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Adoption certificate vote counts are illegible in the scan.'
+- aspect: general-council
+  value: All qualified voters of the band 18 or older
+  quote: of -the band who are 18 years of age or older.
+  source: constitution-yocha-dehe-wintun-nation-1976-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1976-03-18'
+  locator: Article IV, Section 1
+  document_version:
+    document: yocha-dehe-wintun-nation-constitution
+    version: 1976-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Adoption certificate vote counts are illegible in the scan.'
+- aspect: head-of-government
+  value: Chairman
+  quote: The chairman shall preside at all meetings of the
+  source: constitution-yocha-dehe-wintun-nation-1976-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1976-03-18'
+  locator: Bylaws, Article I, Section 1
+  document_version:
+    document: yocha-dehe-wintun-nation-constitution
+    version: 1976-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Adoption certificate vote counts are illegible in the scan.'
+- aspect: head-of-government
+  value: Chairperson
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  verification: bulk-import
+  as_of: '2026-11-20'
+  locator: Yocha Dehe Wintun Nation, California
+  note: The title of the leader's office as the federal directory lists it; the holder's name is not recorded. Listed as “Chairman”; recorded without the holder's own form of the title.
+- aspect: head-of-government-selection
+  value: Elected by the community council from its members
+  quote: The community council shall elect from its members, by
+  source: constitution-yocha-dehe-wintun-nation-1976-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1976-03-18'
+  locator: Article IV, Section 2
+  document_version:
+    document: yocha-dehe-wintun-nation-constitution
+    version: 1976-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Adoption certificate vote counts are illegible in the scan.'
+- aspect: head-of-government-term
+  value: 3 years
+  quote: who shall hold office for three
+  source: constitution-yocha-dehe-wintun-nation-1976-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1976-03-18'
+  locator: Article IV, Section 2
+  document_version:
+    document: yocha-dehe-wintun-nation-constitution
+    version: 1976-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Adoption certificate vote counts are illegible in the scan.'
+- aspect: other-officers
+  value: Secretary, Treasurer
+  quote: a secretary and a treasurer, who shall hold office for three
+  source: constitution-yocha-dehe-wintun-nation-1976-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1976-03-18'
+  locator: Article IV, Section 2
+  document_version:
+    document: yocha-dehe-wintun-nation-constitution
+    version: 1976-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Adoption certificate vote counts are illegible in the scan.'
+- aspect: elections
+  value: Every 3 years at the January meetings of the community council
+  quote: meetings of the community council each third year in accordance
+  source: constitution-yocha-dehe-wintun-nation-1976-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1976-03-18'
+  locator: Article VI, Section 2
+  document_version:
+    document: yocha-dehe-wintun-nation-constitution
+    version: 1976-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Adoption certificate vote counts are illegible in the scan.'
+- aspect: voting-age
+  value: '18'
+  quote: of -the band who are 18 years of age or older.
+  source: constitution-yocha-dehe-wintun-nation-1976-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1976-03-18'
+  locator: Article IV, Section 1
+  document_version:
+    document: yocha-dehe-wintun-nation-constitution
+    version: 1976-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Adoption certificate vote counts are illegible in the scan.'
+- aspect: election-authority
+  value: Executive committee (sets election ordinance)
+  quote: in accordance with an election ordinance adopted by the executive committee.
+  source: constitution-yocha-dehe-wintun-nation-1976-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1976-03-18'
+  locator: Article VI, Section 2
+  document_version:
+    document: yocha-dehe-wintun-nation-constitution
+    version: 1976-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Adoption certificate vote counts are illegible in the scan.'
+- aspect: amendment
+  value: Majority vote of the community council at a Secretarial election
+  quote: majority vote of the community council at an election authorized
+  source: constitution-yocha-dehe-wintun-nation-1976-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1976-03-18'
+  locator: Article X, Section 1
+  document_version:
+    document: yocha-dehe-wintun-nation-constitution
+    version: 1976-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Adoption certificate vote counts are illegible in the scan.'
+- aspect: secretarial-approval
+  value: Required for amendments
+  quote: and approved by him.
+  source: constitution-yocha-dehe-wintun-nation-1976-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1976-03-18'
+  locator: Article X, Section 1
+  document_version:
+    document: yocha-dehe-wintun-nation-constitution
+    version: 1976-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Adoption certificate vote counts are illegible in the scan.'
+- aspect: recall-and-removal
+  value: Recall by petition of 30% of qualified voters
+  quote: Upon receipt of a petition signed by thirty percent (30%) of the qualified voters requesting the recall
+  source: constitution-yocha-dehe-wintun-nation-1976-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1976-03-18'
+  locator: Article VII, Section 2
+  document_version:
+    document: yocha-dehe-wintun-nation-constitution
+    version: 1976-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Adoption certificate vote counts are illegible in the scan.'
+- aspect: recall-and-removal
+  value: Office vacated automatically on felony conviction while in office
+  quote: the office shall be automatically vacated.
+  source: constitution-yocha-dehe-wintun-nation-1976-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1976-03-18'
+  locator: Article VII, Section 1
+  document_version:
+    document: yocha-dehe-wintun-nation-constitution
+    version: 1976-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Adoption certificate vote counts are illegible in the scan.'
 gaming:
   compacts:
   - state: CA

@@ -185,6 +185,219 @@ government_structure:
   as_of: '1937'
   locator: preamble / approval and certification of adoption
   note: Historical constitution; a later constitution may have replaced it.
+governance:
+- aspect: form
+  value: Constitution and Bylaws pursuant to the Thomas-Rogers Oklahoma Indian Welfare Act of June 26, 1936
+  quote: to the Thomas -Rogers Oklahoma Indian Welfare Act of June 26, 1936.
+  source: constitution-kickapoo-tribe-of-oklahoma-1977-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1977-12-10'
+  locator: Preamble
+  document_version:
+    document: kickapoo-tribe-of-oklahoma-constitution
+    version: 1977-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Scanned text with reading errors in several passages; text is the 1977 constitution as labeled.'
+- aspect: governing-body
+  value: Kickapoo Council
+  quote: the Kickapoo Council. The membership of the Council shall be all the
+  source: constitution-kickapoo-tribe-of-oklahoma-1977-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1977-12-10'
+  locator: Article IV, Section 1
+  document_version:
+    document: kickapoo-tribe-of-oklahoma-constitution
+    version: 1977-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Scanned text with reading errors in several passages; text is the 1977 constitution as labeled.'
+- aspect: governing-body
+  value: Business Committee
+  quote: which have not been reserved to the Kickapoo Council through
+  source: constitution-kickapoo-tribe-of-oklahoma-1977-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1977-12-10'
+  locator: Article V, Section 1(a)
+  document_version:
+    document: kickapoo-tribe-of-oklahoma-constitution
+    version: 1977-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Scanned text with reading errors in several passages; text is the 1977 constitution as labeled.'
+- aspect: governing-body-size
+  value: 5 members
+  quote: The Business Committee shall consist of five (5) members
+  source: constitution-kickapoo-tribe-of-oklahoma-1977-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1977-12-10'
+  locator: Article V, Section 1
+  document_version:
+    document: kickapoo-tribe-of-oklahoma-constitution
+    version: 1977-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Scanned text with reading errors in several passages; text is the 1977 constitution as labeled.'
+- aspect: governing-body-selection
+  value: Elected from the Kickapoo Council membership
+  quote: elected from the membership of the Kickapoo Council and shall include
+  source: constitution-kickapoo-tribe-of-oklahoma-1977-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1977-12-10'
+  locator: Article V, Section 1
+  document_version:
+    document: kickapoo-tribe-of-oklahoma-constitution
+    version: 1977-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Scanned text with reading errors in several passages; text is the 1977 constitution as labeled.'
+- aspect: governing-body-term
+  value: 3 years
+  quote: and the Grievance Committee shall be for three (3) years from the date
+  source: constitution-kickapoo-tribe-of-oklahoma-1977-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1977-12-10'
+  locator: Article V, Section 4
+  document_version:
+    document: kickapoo-tribe-of-oklahoma-constitution
+    version: 1977-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Scanned text with reading errors in several passages; text is the 1977 constitution as labeled.'
+- aspect: general-council
+  value: All members 18 years of age or older
+  quote: members of the Kickapoo Tribe of Oklahoma, eighteen (18) years of age
+  source: constitution-kickapoo-tribe-of-oklahoma-1977-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1977-12-10'
+  locator: Article IV, Section 1
+  document_version:
+    document: kickapoo-tribe-of-oklahoma-constitution
+    version: 1977-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Scanned text with reading errors in several passages; text is the 1977 constitution as labeled.'
+- aspect: head-of-government
+  value: Chairman
+  quote: Section 1. Chairman. The Chairman shall preside at all meetings
+  source: constitution-kickapoo-tribe-of-oklahoma-1977-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1977-12-10'
+  locator: Article XXI, Section 1
+  document_version:
+    document: kickapoo-tribe-of-oklahoma-constitution
+    version: 1977-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Scanned text with reading errors in several passages; text is the 1977 constitution as labeled.'
+- aspect: head-of-government
+  value: Chairperson
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  verification: bulk-import
+  as_of: '2026-11-20'
+  locator: Kickapoo Tribe of Oklahoma
+  note: The title of the leader's office as the federal directory lists it; the holder's name is not recorded. Listed as “Chairman”; recorded without the holder's own form of the title.
+- aspect: other-officers
+  value: Vice-Chairman, Secretary, Treasurer, Councilman
+  quote: 'the following officers: Chairman, Vice-Chairman, Secretary, Treasurer'
+  source: constitution-kickapoo-tribe-of-oklahoma-1977-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1977-12-10'
+  locator: Article V, Section 1
+  document_version:
+    document: kickapoo-tribe-of-oklahoma-constitution
+    version: 1977-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Scanned text with reading errors in several passages; text is the 1977 constitution as labeled.'
+- aspect: elections
+  value: Annual, second Saturday in June
+  quote: second Saturday in June; Provided, that in the event of an emergency
+  source: constitution-kickapoo-tribe-of-oklahoma-1977-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1977-12-10'
+  locator: Article VII, Section 4
+  document_version:
+    document: kickapoo-tribe-of-oklahoma-constitution
+    version: 1977-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Scanned text with reading errors in several passages; text is the 1977 constitution as labeled.'
+- aspect: election-authority
+  value: Election Board
+  quote: Sec. 3. Election Board. There shall be an Election Board appointed
+  source: constitution-kickapoo-tribe-of-oklahoma-1977-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1977-12-10'
+  locator: Article V, Section 3
+  document_version:
+    document: kickapoo-tribe-of-oklahoma-constitution
+    version: 1977-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Scanned text with reading errors in several passages; text is the 1977 constitution as labeled.'
+- aspect: judiciary
+  value: Council may create a Tribal court system by ordinance
+  quote: may exercise its judicial powers through the creation of a Tribal court
+  source: constitution-kickapoo-tribe-of-oklahoma-1977-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1977-12-10'
+  locator: Article XVI
+  document_version:
+    document: kickapoo-tribe-of-oklahoma-constitution
+    version: 1977-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Scanned text with reading errors in several passages; text is the 1977 constitution as labeled.'
+- aspect: amendment
+  value: Majority of votes cast in a referendum
+  quote: approved by a majority of the votes cast.
+  source: constitution-kickapoo-tribe-of-oklahoma-1977-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1977-12-10'
+  locator: Article XXII
+  document_version:
+    document: kickapoo-tribe-of-oklahoma-constitution
+    version: 1977-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Scanned text with reading errors in several passages; text is the 1977 constitution as labeled.'
+- aspect: secretarial-approval
+  value: Required for amendments
+  quote: by the Secretary of the Interior, shall be submitted to a referendum
+  source: constitution-kickapoo-tribe-of-oklahoma-1977-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1977-12-10'
+  locator: Article XXII
+  document_version:
+    document: kickapoo-tribe-of-oklahoma-constitution
+    version: 1977-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Scanned text with reading errors in several passages; text is the 1977 constitution as labeled.'
+- aspect: recall-and-removal
+  value: Removal by majority of the body's total membership
+  quote: affirmative vote of a majority of its total membership.
+  source: constitution-kickapoo-tribe-of-oklahoma-1977-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1977-12-10'
+  locator: Article IX, Section 1
+  document_version:
+    document: kickapoo-tribe-of-oklahoma-constitution
+    version: 1977-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Scanned text with reading errors in several passages; text is the 1977 constitution as labeled.'
+- aspect: recall-and-removal
+  value: Recall by election on valid petition
+  quote: purpose of recall of an elected Tribal official. The election shall be
+  source: constitution-kickapoo-tribe-of-oklahoma-1977-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1977-12-10'
+  locator: Article IX, Section 2
+  document_version:
+    document: kickapoo-tribe-of-oklahoma-constitution
+    version: 1977-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Scanned text with reading errors in several passages; text is the 1977 constitution as labeled.'
+- aspect: other
+  value: Grievance Committee of 3 members
+  quote: Sec. 2. Grievance Committee. This Committee shall consist of three
+  source: constitution-kickapoo-tribe-of-oklahoma-1977-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1977-12-10'
+  locator: Article V, Section 2
+  document_version:
+    document: kickapoo-tribe-of-oklahoma-constitution
+    version: 1977-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Scanned text with reading errors in several passages; text is the 1977 constitution as labeled.'
 governing_documents:
 - kind: law-code
   title: Criminal Code

@@ -217,6 +217,219 @@ government_structure:
   as_of: '1941'
   locator: preamble / approval and certification of adoption
   note: Historical constitution; a later constitution may have replaced it.
+governance:
+- aspect: form
+  value: Act of Congress of June 18, 1934, as amended
+  quote: laws in accordance with, and by authority of, the Act of Congress of June 18, 1934 (48 Stat.
+  source: constitution-chilkat-indian-village-2006-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2006-11-07'
+  locator: Preamble
+  document_version:
+    document: chilkat-indian-village-constitution
+    version: 2006-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: The certificate of results at the end is an unfilled blank form; the 7 November 2006 adoption date comes from the page footers.'
+- aspect: governing-body
+  value: Council
+  quote: There shall be a Council composed of seven members elected by the Village.
+  source: constitution-chilkat-indian-village-2006-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2006-11-07'
+  locator: Article IV, Sec. 1(a)
+  document_version:
+    document: chilkat-indian-village-constitution
+    version: 2006-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: The certificate of results at the end is an unfilled blank form; the 7 November 2006 adoption date comes from the page footers.'
+- aspect: governing-body-size
+  value: 7 members
+  quote: There shall be a Council composed of seven members elected by the Village.
+  source: constitution-chilkat-indian-village-2006-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2006-11-07'
+  locator: Article IV, Sec. 1(a)
+  document_version:
+    document: chilkat-indian-village-constitution
+    version: 2006-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: The certificate of results at the end is an unfilled blank form; the 7 November 2006 adoption date comes from the page footers.'
+- aspect: governing-body-selection
+  value: Elected by secret ballot
+  quote: Members of the Council shall be elected by secret ballot on the first Thursday after
+  source: constitution-chilkat-indian-village-2006-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2006-11-07'
+  locator: Article IV, Sec. 2(a)
+  document_version:
+    document: chilkat-indian-village-constitution
+    version: 2006-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: The certificate of results at the end is an unfilled blank form; the 7 November 2006 adoption date comes from the page footers.'
+- aspect: governing-body-term
+  value: 3 years
+  quote: Each of the members of the Council shall be elected to serve for a term of
+  source: constitution-chilkat-indian-village-2006-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2006-11-07'
+  locator: Article IV, Section 3(b)
+  document_version:
+    document: chilkat-indian-village-constitution
+    version: 2006-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: The certificate of results at the end is an unfilled blank form; the 7 November 2006 adoption date comes from the page footers.'
+- aspect: general-council
+  value: All resident members 18 or older
+  quote: The phrase “voting membership” means any member, who is 18 years of age or older,
+  source: constitution-chilkat-indian-village-2006-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2006-11-07'
+  locator: By-laws Article VI, Section 1
+  document_version:
+    document: chilkat-indian-village-constitution
+    version: 2006-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: The certificate of results at the end is an unfilled blank form; the 7 November 2006 adoption date comes from the page footers.'
+- aspect: head-of-government
+  value: President
+  quote: The President of the Council shall preside over all meetings of the Village and of
+  source: constitution-chilkat-indian-village-2006-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2006-11-07'
+  locator: By-laws Article I, Section 1
+  document_version:
+    document: chilkat-indian-village-constitution
+    version: 2006-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: The certificate of results at the end is an unfilled blank form; the 7 November 2006 adoption date comes from the page footers.'
+- aspect: head-of-government
+  value: President
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  verification: bulk-import
+  as_of: '2026-11-20'
+  locator: Chilkat Indian Village (Klukwan)
+  note: The title of the leader's office as the federal directory lists it; the holder's name is not recorded.
+- aspect: head-of-government-selection
+  value: Elected by the Council from its members
+  quote: electing from within its membership a President, and a Vice-
+  source: constitution-chilkat-indian-village-2006-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2006-11-07'
+  locator: Article IV, Sec. 2(b)
+  document_version:
+    document: chilkat-indian-village-constitution
+    version: 2006-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: The certificate of results at the end is an unfilled blank form; the 7 November 2006 adoption date comes from the page footers.'
+- aspect: head-of-government-term
+  value: 1 year
+  quote: for a term of one year.
+  source: constitution-chilkat-indian-village-2006-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2006-11-07'
+  locator: Article IV, Section 3(c)
+  document_version:
+    document: chilkat-indian-village-constitution
+    version: 2006-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: The certificate of results at the end is an unfilled blank form; the 7 November 2006 adoption date comes from the page footers.'
+- aspect: other-officers
+  value: Vice-President, Secretary, Treasurer
+  quote: President, and from within or without, a Secretary, a Treasurer, and such
+  source: constitution-chilkat-indian-village-2006-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2006-11-07'
+  locator: Article IV, Sec. 2(b)
+  document_version:
+    document: chilkat-indian-village-constitution
+    version: 2006-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: The certificate of results at the end is an unfilled blank form; the 7 November 2006 adoption date comes from the page footers.'
+- aspect: elections
+  value: Annually, first Thursday after third Monday in May
+  quote: the third Monday in May, or on such other date as may be fixed by the Council.
+  source: constitution-chilkat-indian-village-2006-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2006-11-07'
+  locator: Article IV, Sec. 2(a)
+  document_version:
+    document: chilkat-indian-village-constitution
+    version: 2006-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: The certificate of results at the end is an unfilled blank form; the 7 November 2006 adoption date comes from the page footers.'
+- aspect: voting-age
+  value: '18'
+  quote: All Resident Members of the Village 18 years of age or older, shall
+  source: constitution-chilkat-indian-village-2006-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2006-11-07'
+  locator: Article VI, Section 3
+  document_version:
+    document: chilkat-indian-village-constitution
+    version: 2006-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: The certificate of results at the end is an unfilled blank form; the 7 November 2006 adoption date comes from the page footers.'
+- aspect: election-authority
+  value: Election committee
+  quote: Annual and special elections of the Council shall be held under the direction of
+  source: constitution-chilkat-indian-village-2006-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2006-11-07'
+  locator: Article IV, Sec. 2(c)
+  document_version:
+    document: chilkat-indian-village-constitution
+    version: 2006-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: The certificate of results at the end is an unfilled blank form; the 7 November 2006 adoption date comes from the page footers.'
+- aspect: judiciary
+  value: Council may establish tribal courts if deemed necessary
+  quote: jurisdiction and to establish tribal courts if deemed necessary for that purpose.
+  source: constitution-chilkat-indian-village-2006-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2006-11-07'
+  locator: Article V, Section 1(n)
+  document_version:
+    document: chilkat-indian-village-constitution
+    version: 2006-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: The certificate of results at the end is an unfilled blank form; the 7 November 2006 adoption date comes from the page footers.'
+- aspect: amendment
+  value: Majority vote in Secretarial election, 30% turnout
+  quote: This Constitution may be amended by a majority vote of the members of the
+  source: constitution-chilkat-indian-village-2006-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2006-11-07'
+  locator: Article X, Section 1
+  document_version:
+    document: chilkat-indian-village-constitution
+    version: 2006-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: The certificate of results at the end is an unfilled blank form; the 7 November 2006 adoption date comes from the page footers.'
+- aspect: recall-and-removal
+  value: Forfeit office on conviction of major felony or dishonesty offense
+  quote: major felony or any other offense involving dishonesty shall forfeit his office and will
+  source: constitution-chilkat-indian-village-2006-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2006-11-07'
+  locator: Article VII, Section 1(a)
+  document_version:
+    document: chilkat-indian-village-constitution
+    version: 2006-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: The certificate of results at the end is an unfilled blank form; the 7 November 2006 adoption date comes from the page footers.'
+- aspect: recall-and-removal
+  value: Recall by petition of one-third of voting membership
+  quote: Upon a petition signed by one-third of the voting membership of the Village asking
+  source: constitution-chilkat-indian-village-2006-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2006-11-07'
+  locator: Article VII, Section 1(c)
+  document_version:
+    document: chilkat-indian-village-constitution
+    version: 2006-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: The certificate of results at the end is an unfilled blank form; the 7 November 2006 adoption date comes from the page footers.'
 governing_documents:
 - kind: constitution
   title: Constitution

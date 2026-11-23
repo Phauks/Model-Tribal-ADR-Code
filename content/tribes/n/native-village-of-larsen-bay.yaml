@@ -190,6 +190,158 @@ indian_health_service:
   as_of: '2026-11-23'
   locator: '"Federally Recognized Tribes" list, Anchorage Service Area profile'
   note: 'The source''s words: "Native Village of Larsen Bay".'
+governance:
+- aspect: governing-body
+  value: Larsen Bay Tribal Council
+  quote: Larsen Bay Tribal Council. The council shall consist of (7) members who
+  source: constitution-native-village-of-larsen-bay-undated-text
+  confidence: medium
+  verification: read-in-full
+  locator: Article IV, Section 1
+  document_version:
+    document: native-village-of-larsen-bay-constitution
+    version: undated-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Undated; the extract has no adoption date or certificate.'
+- aspect: governing-body-size
+  value: 7 members
+  quote: The council shall consist of (7) members who
+  source: constitution-native-village-of-larsen-bay-undated-text
+  confidence: medium
+  verification: read-in-full
+  locator: Article IV, Section 1
+  document_version:
+    document: native-village-of-larsen-bay-constitution
+    version: undated-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Undated; the extract has no adoption date or certificate.'
+- aspect: governing-body-selection
+  value: Elected by majority vote of qualified members
+  quote: shall be elected by a majority vote of the qualified members of the tribe at
+  source: constitution-native-village-of-larsen-bay-undated-text
+  confidence: medium
+  verification: read-in-full
+  locator: Article IV, Section 1
+  document_version:
+    document: native-village-of-larsen-bay-constitution
+    version: undated-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Undated; the extract has no adoption date or certificate.'
+- aspect: governing-body-term
+  value: 3 years, staggered
+  quote: The terms of the seven (7) council members shall be three (3) years, except
+  source: constitution-native-village-of-larsen-bay-undated-text
+  confidence: medium
+  verification: read-in-full
+  locator: Article IV, Section III
+  document_version:
+    document: native-village-of-larsen-bay-constitution
+    version: undated-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Undated; the extract has no adoption date or certificate.'
+- aspect: head-of-government
+  value: President
+  quote: The president of the Tribal Council shall preside
+  source: constitution-native-village-of-larsen-bay-undated-text
+  confidence: medium
+  verification: read-in-full
+  locator: By-laws, Article 2, Section 1
+  document_version:
+    document: native-village-of-larsen-bay-constitution
+    version: undated-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Undated; the extract has no adoption date or certificate.'
+- aspect: head-of-government
+  value: President
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  verification: bulk-import
+  as_of: '2026-11-20'
+  locator: Native Village of Larsen Bay
+  note: The title of the leader's office as the federal directory lists it; the holder's name is not recorded.
+- aspect: head-of-government-selection
+  value: Chosen by the council from among its members
+  quote: elected by the tribal council from among its members at their first
+  source: constitution-native-village-of-larsen-bay-undated-text
+  confidence: medium
+  verification: read-in-full
+  locator: Article IV, Section 1
+  document_version:
+    document: native-village-of-larsen-bay-constitution
+    version: undated-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Undated; the extract has no adoption date or certificate.'
+- aspect: other-officers
+  value: Vice president, Secretary/Treasurer
+  quote: The council shall include a President, vice president,
+  source: constitution-native-village-of-larsen-bay-undated-text
+  confidence: medium
+  verification: read-in-full
+  locator: Article IV, Section 1
+  document_version:
+    document: native-village-of-larsen-bay-constitution
+    version: undated-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Undated; the extract has no adoption date or certificate.'
+- aspect: elections
+  value: Each year, on a date set by the council
+  quote: The tribal council shall set a date each year for regular elections in the
+  source: constitution-native-village-of-larsen-bay-undated-text
+  confidence: medium
+  verification: read-in-full
+  locator: Article VI, Section 1
+  document_version:
+    document: native-village-of-larsen-bay-constitution
+    version: undated-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Undated; the extract has no adoption date or certificate.'
+- aspect: voting-age
+  value: '18'
+  quote: Any member of the tribe eighteen years of age or older shall have the right
+  source: constitution-native-village-of-larsen-bay-undated-text
+  confidence: medium
+  verification: read-in-full
+  locator: Article VI
+  document_version:
+    document: native-village-of-larsen-bay-constitution
+    version: undated-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Undated; the extract has no adoption date or certificate.'
+- aspect: judiciary
+  value: Council may establish civil and criminal tribal courts
+  quote: including through the establishment of appropriate civil and
+  source: constitution-native-village-of-larsen-bay-undated-text
+  confidence: medium
+  verification: read-in-full
+  locator: Article VII, Section 1, J
+  document_version:
+    document: native-village-of-larsen-bay-constitution
+    version: undated-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Undated; the extract has no adoption date or certificate.'
+- aspect: amendment
+  value: Majority vote of qualified voters
+  quote: This Constitution may be amended by a majority vote of the qualified
+  source: constitution-native-village-of-larsen-bay-undated-text
+  confidence: medium
+  verification: read-in-full
+  locator: Article IX
+  document_version:
+    document: native-village-of-larsen-bay-constitution
+    version: undated-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Undated; the extract has no adoption date or certificate.'
+- aspect: recall-and-removal
+  value: Removal by vote of at least 5 council members
+  quote: affirmative vote of at least five (5) tribal council members voting by secret
+  source: constitution-native-village-of-larsen-bay-undated-text
+  confidence: medium
+  verification: read-in-full
+  locator: Article IV, Section VII
+  document_version:
+    document: native-village-of-larsen-bay-constitution
+    version: undated-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Undated; the extract has no adoption date or certificate.'
+- aspect: recall-and-removal
+  value: Recall by petition of 25% of eligible voters
+  quote: signed by at least twenty five percent (25%) of the eligible voters is
+  source: constitution-native-village-of-larsen-bay-undated-text
+  confidence: medium
+  verification: read-in-full
+  locator: Article IV, Section VIII
+  document_version:
+    document: native-village-of-larsen-bay-constitution
+    version: undated-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Undated; the extract has no adoption date or certificate.'
 jurisdiction:
 - topic: public-law-280
   value: mandatory-state

@@ -184,6 +184,302 @@ indian_health_service:
   as_of: '2026-11-23'
   locator: '"Tribes of Oklahoma, Kansas and Texas" list'
   note: 'Listed as "The Modoc Tribe of Oklahoma". Also listed under the same Area in: indian-health-service-self-governance-tribes. Also on the Indian Health Service Self-Governance Tribes list (Modoc Tribe of Oklahoma (2000)); the list does not say which service unit or programs the compact covers.'
+governance:
+- aspect: form
+  value: Constitution under the Oklahoma Indian Welfare Act of June 26, 1936 and Act of May 25, 1978
+  quote: Indian Welfare Act of June 26, 1936, (49 Stat. 1967) and Section 2 of the
+  source: constitution-modoc-nation-1990-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1990-07-09'
+  locator: Preamble
+  document_version:
+    document: modoc-nation-constitution
+    version: 1990-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+- aspect: governing-body
+  value: Modoc Tribal Council
+  quote: The Modoc Tribal Council shall be the governing body of the
+  source: constitution-modoc-nation-1990-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1990-07-09'
+  locator: Article I, Section 2
+  document_version:
+    document: modoc-nation-constitution
+    version: 1990-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+- aspect: governing-body
+  value: Modoc Elected Council
+  quote: The Elected Council shall consist of a Chief,
+  source: constitution-modoc-nation-1990-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1990-07-09'
+  locator: Article IV, Section 1
+  document_version:
+    document: modoc-nation-constitution
+    version: 1990-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+- aspect: governing-body-size
+  value: 5 members
+  quote: The Modoc Elected Council shall be a five (5) marker
+  source: constitution-modoc-nation-1990-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1990-07-09'
+  locator: Article I, Section 3
+  document_version:
+    document: modoc-nation-constitution
+    version: 1990-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+- aspect: governing-body-selection
+  value: Elected by secret ballot of the Tribal Council
+  quote: secret ballot of the Tribal Council.
+  source: constitution-modoc-nation-1990-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1990-07-09'
+  locator: Article IV, Section 1
+  document_version:
+    document: modoc-nation-constitution
+    version: 1990-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+- aspect: governing-body-term
+  value: 4 years
+  quote: period of four (4) years or until a successor is duly elected and installed
+  source: constitution-modoc-nation-1990-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1990-07-09'
+  locator: Article IV, Section 2
+  document_version:
+    document: modoc-nation-constitution
+    version: 1990-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+- aspect: general-council
+  value: All enrolled members at least 18 years of age
+  quote: who axe at least eighteen (18) years of age or older.
+  source: constitution-modoc-nation-1990-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1990-07-09'
+  locator: Article III, Section 1
+  document_version:
+    document: modoc-nation-constitution
+    version: 1990-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+- aspect: head-of-government
+  value: Chief
+  quote: The Chief shall serve as executive officer and spokesman for
+  source: constitution-modoc-nation-1990-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1990-07-09'
+  locator: Article VI, Section 1
+  document_version:
+    document: modoc-nation-constitution
+    version: 1990-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+- aspect: head-of-government
+  value: Chief
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  verification: bulk-import
+  as_of: '2026-11-20'
+  locator: Modoc Nation
+  note: The title of the leader's office as the federal directory lists it; the holder's name is not recorded.
+- aspect: head-of-government-selection
+  value: Elected by secret ballot of the Tribal Council
+  quote: secret ballot of the Tribal Council.
+  source: constitution-modoc-nation-1990-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1990-07-09'
+  locator: Article IV, Section 1
+  document_version:
+    document: modoc-nation-constitution
+    version: 1990-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+- aspect: head-of-government-term
+  value: 4 years
+  quote: period of four (4) years or until a successor is duly elected and installed
+  source: constitution-modoc-nation-1990-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1990-07-09'
+  locator: Article IV, Section 2
+  document_version:
+    document: modoc-nation-constitution
+    version: 1990-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+- aspect: other-officers
+  value: Second Chief, Secretary/Treasurer, two Council Members
+  quote: Second Chief, Secretary/Treasurer, and two (2) Council Msribers elected by
+  source: constitution-modoc-nation-1990-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1990-07-09'
+  locator: Article IV, Section 1
+  document_version:
+    document: modoc-nation-constitution
+    version: 1990-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+- aspect: elections
+  value: Annual meeting of Tribal Council, first Saturday of May
+  quote: The annual Modoc Tribal Council meeting shall be held the first
+  source: constitution-modoc-nation-1990-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1990-07-09'
+  locator: Article X, Section 1
+  document_version:
+    document: modoc-nation-constitution
+    version: 1990-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+- aspect: voting-age
+  value: '18'
+  quote: Provided, That member is at least eighteen (18) years of age on election day
+  source: constitution-modoc-nation-1990-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1990-07-09'
+  locator: Article IX, Section 4
+  document_version:
+    document: modoc-nation-constitution
+    version: 1990-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+- aspect: election-authority
+  value: Modoc Elected Council
+  quote: election ordinance enacted by the Modoc Elected Council within six (6)
+  source: constitution-modoc-nation-1990-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1990-07-09'
+  locator: Article IX, Section 3
+  document_version:
+    document: modoc-nation-constitution
+    version: 1990-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+- aspect: branches
+  value: Executive and judicial departments
+  quote: ARTICLE VII - JUDICIAL DEPARTMENT
+  source: constitution-modoc-nation-1990-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1990-07-09'
+  locator: Article VII
+  document_version:
+    document: modoc-nation-constitution
+    version: 1990-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+- aspect: judiciary
+  value: Three-member court
+  quote: three (3) member court elected by popular vote of the Modoc Tribal council.
+  source: constitution-modoc-nation-1990-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1990-07-09'
+  locator: Article VII, Section 1
+  document_version:
+    document: modoc-nation-constitution
+    version: 1990-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+- aspect: judicial-selection
+  value: Elected by vote of the Modoc Tribal Council
+  quote: three (3) member court elected by popular vote of the Modoc Tribal council.
+  source: constitution-modoc-nation-1990-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1990-07-09'
+  locator: Article VII, Section 1
+  document_version:
+    document: modoc-nation-constitution
+    version: 1990-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+- aspect: judicial-term
+  value: 3 years
+  quote: Tribal Judges shall be elected for terms of three (3) years and
+  source: constitution-modoc-nation-1990-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1990-07-09'
+  locator: Article VII, Section 3
+  document_version:
+    document: modoc-nation-constitution
+    version: 1990-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+- aspect: judicial-independence
+  value: Judicial decisions final
+  quote: Decisions of the Judicial Department shall be final.
+  source: constitution-modoc-nation-1990-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1990-07-09'
+  locator: Article VIII, Section 3
+  document_version:
+    document: modoc-nation-constitution
+    version: 1990-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+- aspect: amendment
+  value: Majority vote at Secretary-called election (30% turnout)
+  quote: This constitution may be amended by a majority vote of the qualified voters
+  source: constitution-modoc-nation-1990-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1990-07-09'
+  locator: Article XVII
+  document_version:
+    document: modoc-nation-constitution
+    version: 1990-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+- aspect: secretarial-approval
+  value: Required for amendments, so long as Federal law requires
+  quote: shall become effective until it has been approved by the Secretary of the
+  source: constitution-modoc-nation-1990-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1990-07-09'
+  locator: Article XVII
+  document_version:
+    document: modoc-nation-constitution
+    version: 1990-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+- aspect: recall-and-removal
+  value: Recall by Tribal Council majority vote on petition of 10 members
+  quote: Council, by a majority vote of those present, may recall the
+  source: constitution-modoc-nation-1990-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1990-07-09'
+  locator: Article XIII, Section 1(d)
+  document_version:
+    document: modoc-nation-constitution
+    version: 1990-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+- aspect: recall-and-removal
+  value: Removal of Elected Council member by Tribal Council special meeting
+  quote: (a) The Modoc Elected Council may initiate action to remove one of
+  source: constitution-modoc-nation-1990-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1990-07-09'
+  locator: Article XIII, Section 2(a)
+  document_version:
+    document: modoc-nation-constitution
+    version: 1990-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+- aspect: other
+  value: Initiative by petition of one-third of registered voters
+  quote: one-third (1/3) of the registered voters. Each page of the petition shall
+  source: constitution-modoc-nation-1990-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1990-07-09'
+  document_version:
+    document: modoc-nation-constitution
+    version: 1990-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
 justice_institutions:
 - kind: court-of-indian-offenses
   name: Miami Agency CFR Court (Court of Indian Offenses)

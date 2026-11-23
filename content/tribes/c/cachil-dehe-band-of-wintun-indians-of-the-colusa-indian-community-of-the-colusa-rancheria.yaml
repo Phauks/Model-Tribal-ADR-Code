@@ -210,6 +210,183 @@ government_structure:
   as_of: '1941'
   locator: preamble / approval and certification of adoption
   note: Historical constitution; a later constitution may have replaced it.
+governance:
+- aspect: form
+  value: Constitution under the act of June 18, 1934
+  quote: of June 18, 1934 (48 Stat.
+  source: constitution-cachil-dehe-band-of-wintun-indians-of-the-colusa-indian-community-of-the-colusa-rancheria-1941-text-2
+  confidence: medium
+  verification: read-in-full
+  as_of: '1941-11-23'
+  locator: Preamble
+  document_version:
+    document: cachil-dehe-band-of-wintun-indians-of-the-colusa-indian-community-of-the-colusa-rancheria-constitution
+    version: 1941-text-2
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Scan is rough in places (broken words, stray marks); quotes are copied as they appear.'
+- aspect: governing-body
+  value: Colusa Indian Community Council
+  quote: shall be composed of all qualified voters
+  source: constitution-cachil-dehe-band-of-wintun-indians-of-the-colusa-indian-community-of-the-colusa-rancheria-1941-text-2
+  confidence: medium
+  verification: read-in-full
+  as_of: '1941-11-23'
+  locator: Article III, Section 1
+  document_version:
+    document: cachil-dehe-band-of-wintun-indians-of-the-colusa-indian-community-of-the-colusa-rancheria-constitution
+    version: 1941-text-2
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Scan is rough in places (broken words, stray marks); quotes are copied as they appear.'
+- aspect: governing-body-size
+  value: All qualified voters of the band
+  quote: shall be composed of all qualified voters
+  source: constitution-cachil-dehe-band-of-wintun-indians-of-the-colusa-indian-community-of-the-colusa-rancheria-1941-text-2
+  confidence: medium
+  verification: read-in-full
+  as_of: '1941-11-23'
+  locator: Article III, Section 1
+  document_version:
+    document: cachil-dehe-band-of-wintun-indians-of-the-colusa-indian-community-of-the-colusa-rancheria-constitution
+    version: 1941-text-2
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Scan is rough in places (broken words, stray marks); quotes are copied as they appear.'
+- aspect: governing-body-selection
+  value: Officers elected by secret ballot from council members
+  quote: members,by secret ballot, (2) a chairman, (b) a vice-chairman,
+  source: constitution-cachil-dehe-band-of-wintun-indians-of-the-colusa-indian-community-of-the-colusa-rancheria-1941-text-2
+  confidence: medium
+  verification: read-in-full
+  as_of: '1941-11-23'
+  locator: Article III, Section 3
+  document_version:
+    document: cachil-dehe-band-of-wintun-indians-of-the-colusa-indian-community-of-the-colusa-rancheria-constitution
+    version: 1941-text-2
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Scan is rough in places (broken words, stray marks); quotes are copied as they appear.'
+- aspect: general-council
+  value: All qualified voters of the band
+  quote: shall be composed of all qualified voters
+  source: constitution-cachil-dehe-band-of-wintun-indians-of-the-colusa-indian-community-of-the-colusa-rancheria-1941-text-2
+  confidence: medium
+  verification: read-in-full
+  as_of: '1941-11-23'
+  locator: Article III, Section 1
+  document_version:
+    document: cachil-dehe-band-of-wintun-indians-of-the-colusa-indian-community-of-the-colusa-rancheria-constitution
+    version: 1941-text-2
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Scan is rough in places (broken words, stray marks); quotes are copied as they appear.'
+- aspect: head-of-government
+  value: Chairman
+  quote: members,by secret ballot, (2) a chairman, (b) a vice-chairman,
+  source: constitution-cachil-dehe-band-of-wintun-indians-of-the-colusa-indian-community-of-the-colusa-rancheria-1941-text-2
+  confidence: medium
+  verification: read-in-full
+  as_of: '1941-11-23'
+  locator: Article III, Section 3
+  document_version:
+    document: cachil-dehe-band-of-wintun-indians-of-the-colusa-indian-community-of-the-colusa-rancheria-constitution
+    version: 1941-text-2
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Scan is rough in places (broken words, stray marks); quotes are copied as they appear.'
+- aspect: head-of-government
+  value: Chairperson
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  verification: bulk-import
+  as_of: '2026-11-20'
+  locator: Cachil DeHe Band of Wintun Indians of the Colusa Indian Community of the Colusa Rancheria, California
+  note: The title of the leader's office as the federal directory lists it; the holder's name is not recorded. Listed as “Chairman”; recorded without the holder's own form of the title.
+- aspect: head-of-government-selection
+  value: Elected by secret ballot from council members
+  quote: members,by secret ballot, (2) a chairman, (b) a vice-chairman,
+  source: constitution-cachil-dehe-band-of-wintun-indians-of-the-colusa-indian-community-of-the-colusa-rancheria-1941-text-2
+  confidence: medium
+  verification: read-in-full
+  as_of: '1941-11-23'
+  locator: Article III, Section 3
+  document_version:
+    document: cachil-dehe-band-of-wintun-indians-of-the-colusa-indian-community-of-the-colusa-rancheria-constitution
+    version: 1941-text-2
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Scan is rough in places (broken words, stray marks); quotes are copied as they appear.'
+- aspect: other-officers
+  value: Vice-chairman, secretary-treasurer
+  quote: (c) a secretary-treasurer, and such other officers and committees as
+  source: constitution-cachil-dehe-band-of-wintun-indians-of-the-colusa-indian-community-of-the-colusa-rancheria-1941-text-2
+  confidence: medium
+  verification: read-in-full
+  as_of: '1941-11-23'
+  locator: Article III, Section 3
+  document_version:
+    document: cachil-dehe-band-of-wintun-indians-of-the-colusa-indian-community-of-the-colusa-rancheria-constitution
+    version: 1941-text-2
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Scan is rough in places (broken words, stray marks); quotes are copied as they appear.'
+- aspect: elections
+  value: Officials chosen at the November meeting each year
+  quote: chosen at the November meeting.
+  source: constitution-cachil-dehe-band-of-wintun-indians-of-the-colusa-indian-community-of-the-colusa-rancheria-1941-text-2
+  confidence: medium
+  verification: read-in-full
+  as_of: '1941-11-23'
+  locator: Article III, Section 5
+  document_version:
+    document: cachil-dehe-band-of-wintun-indians-of-the-colusa-indian-community-of-the-colusa-rancheria-constitution
+    version: 1941-text-2
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Scan is rough in places (broken words, stray marks); quotes are copied as they appear.'
+- aspect: voting-age
+  value: '21'
+  quote: Indians who are 21 years of age or over
+  source: constitution-cachil-dehe-band-of-wintun-indians-of-the-colusa-indian-community-of-the-colusa-rancheria-1941-text-2
+  confidence: medium
+  verification: read-in-full
+  as_of: '1941-11-23'
+  locator: Article III, Section 2
+  document_version:
+    document: cachil-dehe-band-of-wintun-indians-of-the-colusa-indian-community-of-the-colusa-rancheria-constitution
+    version: 1941-text-2
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Scan is rough in places (broken words, stray marks); quotes are copied as they appear.'
+- aspect: amendment
+  value: Majority vote of qualified voters at an election called by the Secretary of the Interior
+  quote: of the Community voting at any
+  source: constitution-cachil-dehe-band-of-wintun-indians-of-the-colusa-indian-community-of-the-colusa-rancheria-1941-text-2
+  confidence: medium
+  verification: read-in-full
+  as_of: '1941-11-23'
+  locator: Article VI, Section 1
+  document_version:
+    document: cachil-dehe-band-of-wintun-indians-of-the-colusa-indian-community-of-the-colusa-rancheria-constitution
+    version: 1941-text-2
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Scan is rough in places (broken words, stray marks); quotes are copied as they appear.'
+- aspect: secretarial-approval
+  value: Required for amendments
+  quote: it shall have been approved by the Secretary of the Interior.
+  source: constitution-cachil-dehe-band-of-wintun-indians-of-the-colusa-indian-community-of-the-colusa-rancheria-1941-text-2
+  confidence: medium
+  verification: read-in-full
+  as_of: '1941-11-23'
+  locator: Article VI, Section 1
+  document_version:
+    document: cachil-dehe-band-of-wintun-indians-of-the-colusa-indian-community-of-the-colusa-rancheria-constitution
+    version: 1941-text-2
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Scan is rough in places (broken words, stray marks); quotes are copied as they appear.'
+- aspect: recall-and-removal
+  value: Removal by majority vote of the Community Council
+  quote: from office any officer of the Council
+  source: constitution-cachil-dehe-band-of-wintun-indians-of-the-colusa-indian-community-of-the-colusa-rancheria-1941-text-2
+  confidence: medium
+  verification: read-in-full
+  as_of: '1941-11-23'
+  locator: Article IV, Section 3
+  document_version:
+    document: cachil-dehe-band-of-wintun-indians-of-the-colusa-indian-community-of-the-colusa-rancheria-constitution
+    version: 1941-text-2
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Scan is rough in places (broken words, stray marks); quotes are copied as they appear.'
+- aspect: other
+  value: Business Committee of chairman, vice-chairman and secretary-treasurer
+  quote: The Business Committee shall consist of the
+  source: constitution-cachil-dehe-band-of-wintun-indians-of-the-colusa-indian-community-of-the-colusa-rancheria-1941-text-2
+  confidence: medium
+  verification: read-in-full
+  as_of: '1941-11-23'
+  locator: Article III, Section 7
+  document_version:
+    document: cachil-dehe-band-of-wintun-indians-of-the-colusa-indian-community-of-the-colusa-rancheria-constitution
+    version: 1941-text-2
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Scan is rough in places (broken words, stray marks); quotes are copied as they appear.'
 governing_documents:
 - kind: law-code
   title: Liquor ordinance

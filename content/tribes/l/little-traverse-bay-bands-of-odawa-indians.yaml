@@ -196,6 +196,303 @@ indian_health_service:
   as_of: '2026-11-23'
   locator: Tribal Health Programs lists (Michigan, Minnesota, Wisconsin)
   note: Listed as "Little Traverse Bay Band of Odawa Indians, Michigan".
+governance:
+- aspect: form
+  value: Constitution as an act of inherent self-governance
+  quote: We have created this document as an act of inherent self-governance pursuant to the
+  source: constitution-little-traverse-bay-bands-of-odawa-indians-2005-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2005-02-01'
+  locator: Preamble
+  document_version:
+    document: little-traverse-bay-bands-of-odawa-indians-constitution
+    version: 2005-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author.
+- aspect: governing-body
+  value: Tribal Council
+  quote: Legislative powers shall be vested in the Tribal Council.
+  source: constitution-little-traverse-bay-bands-of-odawa-indians-2005-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2005-02-01'
+  locator: Article VII, Section A
+  document_version:
+    document: little-traverse-bay-bands-of-odawa-indians-constitution
+    version: 2005-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author.
+- aspect: governing-body-size
+  value: 9 members
+  quote: composed of nine (9) Tribal members elected in an open election by popular vote.
+  source: constitution-little-traverse-bay-bands-of-odawa-indians-2005-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2005-02-01'
+  locator: Article VII, Section A
+  document_version:
+    document: little-traverse-bay-bands-of-odawa-indians-constitution
+    version: 2005-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author.
+- aspect: governing-body-selection
+  value: Elected at large by popular vote
+  quote: The members of the Tribal Council, Chairperson and Vice-Chairperson shall be elected at
+  source: constitution-little-traverse-bay-bands-of-odawa-indians-2005-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2005-02-01'
+  locator: Article XII, Section A
+  document_version:
+    document: little-traverse-bay-bands-of-odawa-indians-constitution
+    version: 2005-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author.
+- aspect: governing-body-term
+  value: 4 years, staggered
+  quote: The term of office shall be four (4) years except as provided in Article XII for the first
+  source: constitution-little-traverse-bay-bands-of-odawa-indians-2005-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2005-02-01'
+  locator: Article VII, Section G
+  document_version:
+    document: little-traverse-bay-bands-of-odawa-indians-constitution
+    version: 2005-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author.
+- aspect: general-council
+  value: All Tribal members; annual meeting each Spring
+  quote: The Tribal Membership, through this document, directs the Executive Branch of the Little
+  source: constitution-little-traverse-bay-bands-of-odawa-indians-2005-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2005-02-01'
+  locator: Article I, Section C
+  document_version:
+    document: little-traverse-bay-bands-of-odawa-indians-constitution
+    version: 2005-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author.
+- aspect: head-of-government
+  value: Chairperson
+  quote: in the Tribal Chairperson and the Vice-Chairperson.
+  source: constitution-little-traverse-bay-bands-of-odawa-indians-2005-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2005-02-01'
+  locator: Article VIII, Section A
+  document_version:
+    document: little-traverse-bay-bands-of-odawa-indians-constitution
+    version: 2005-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author.
+- aspect: head-of-government
+  value: Chairperson
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  verification: bulk-import
+  as_of: '2026-11-20'
+  locator: Little Traverse Bay Bands of Odawa Indians, Michigan
+  note: The title of the leader's office as the federal directory lists it; the holder's name is not recorded.
+- aspect: head-of-government-selection
+  value: Elected at large by popular vote
+  quote: The members of the Tribal Council, Chairperson and Vice-Chairperson shall be elected at
+  source: constitution-little-traverse-bay-bands-of-odawa-indians-2005-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2005-02-01'
+  locator: Article XII, Section A
+  document_version:
+    document: little-traverse-bay-bands-of-odawa-indians-constitution
+    version: 2005-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author.
+- aspect: head-of-government-term
+  value: 4 years
+  quote: The Chairperson and Vice-Chairperson shall serve four (4) year terms.
+  source: constitution-little-traverse-bay-bands-of-odawa-indians-2005-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2005-02-01'
+  locator: Article VIII, Section H
+  document_version:
+    document: little-traverse-bay-bands-of-odawa-indians-constitution
+    version: 2005-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author.
+- aspect: other-officers
+  value: Vice-Chairperson; Legislative Leader, Secretary, Treasurer
+  quote: The officers of the Tribal Council shall be the Legislative Leader, Secretary and
+  source: constitution-little-traverse-bay-bands-of-odawa-indians-2005-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2005-02-01'
+  locator: Article VII, Section B
+  document_version:
+    document: little-traverse-bay-bands-of-odawa-indians-constitution
+    version: 2005-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author.
+- aspect: elections
+  value: General elections in June of odd-numbered years
+  quote: elections will be held in June of odd numbered years
+  source: constitution-little-traverse-bay-bands-of-odawa-indians-2005-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2005-02-01'
+  locator: Article XII, Section A
+  document_version:
+    document: little-traverse-bay-bands-of-odawa-indians-constitution
+    version: 2005-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author.
+- aspect: election-authority
+  value: Election Board
+  quote: Election Board shall conduct all general and special elections.
+  source: constitution-little-traverse-bay-bands-of-odawa-indians-2005-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2005-02-01'
+  locator: Article XI, Section A
+  document_version:
+    document: little-traverse-bay-bands-of-odawa-indians-constitution
+    version: 2005-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author.
+- aspect: branches
+  value: Tribal Council (Legislative), Tribal Chairperson (Executive), Tribal Court (Judicial)
+  quote: 'three (3) branches: Tribal Council (Legislative), Tribal Chairperson (Executive), and Tribal'
+  source: constitution-little-traverse-bay-bands-of-odawa-indians-2005-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2005-02-01'
+  locator: Article VI, Section B
+  document_version:
+    document: little-traverse-bay-bands-of-odawa-indians-constitution
+    version: 2005-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author.
+- aspect: separation-of-powers
+  value: Stated
+  quote: No branch of the government shall exercise the powers, duties or functions delegated to
+  source: constitution-little-traverse-bay-bands-of-odawa-indians-2005-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2005-02-01'
+  locator: Article VI, Section D
+  document_version:
+    document: little-traverse-bay-bands-of-odawa-indians-constitution
+    version: 2005-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author.
+- aspect: judiciary
+  value: Tribal Court and Tribal Appellate Court
+  quote: Appellate Court”) and such lower courts as the Tribal Council may establish upon written
+  source: constitution-little-traverse-bay-bands-of-odawa-indians-2005-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2005-02-01'
+  locator: Article IX, Section A
+  document_version:
+    document: little-traverse-bay-bands-of-odawa-indians-constitution
+    version: 2005-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author.
+- aspect: judicial-selection
+  value: Appointed by 6 of 9 Tribal Council votes
+  quote: affirmative vote of six (6) of the nine (9) members of the Tribal Council.
+  source: constitution-little-traverse-bay-bands-of-odawa-indians-2005-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2005-02-01'
+  locator: Article IX, Section D(1)
+  document_version:
+    document: little-traverse-bay-bands-of-odawa-indians-constitution
+    version: 2005-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author.
+- aspect: judicial-term
+  value: 'Tribal Court judges: 4 years'
+  quote: of four (4) years and these terms will last until their replacement is sworn in.
+  source: constitution-little-traverse-bay-bands-of-odawa-indians-2005-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2005-02-01'
+  locator: Article IX, Section F(1)
+  document_version:
+    document: little-traverse-bay-bands-of-odawa-indians-constitution
+    version: 2005-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author.
+- aspect: judicial-term
+  value: 'Appellate justices: 6 years'
+  quote: shall serve for terms of six (6) years. There shall be no limitation on the number of terms
+  source: constitution-little-traverse-bay-bands-of-odawa-indians-2005-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2005-02-01'
+  locator: Article IX, Section F(2)
+  document_version:
+    document: little-traverse-bay-bands-of-odawa-indians-constitution
+    version: 2005-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author.
+- aspect: judicial-independence
+  value: Judicial branch independent of legislative and executive
+  quote: from the Legislative and Executive branches of the Tribal government and no person
+  source: constitution-little-traverse-bay-bands-of-odawa-indians-2005-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2005-02-01'
+  locator: Article IX, Section H(1)
+  document_version:
+    document: little-traverse-bay-bands-of-odawa-indians-constitution
+    version: 2005-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author.
+- aspect: amendment
+  value: Two-thirds majority vote of qualified voters
+  quote: This Constitution may be amended by a two-thirds (2/3) majority vote of the qualified
+  source: constitution-little-traverse-bay-bands-of-odawa-indians-2005-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2005-02-01'
+  locator: Article XVII, Section A
+  document_version:
+    document: little-traverse-bay-bands-of-odawa-indians-constitution
+    version: 2005-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author.
+- aspect: recall-and-removal
+  value: Recall by petition of 20% of registered voters
+  quote: percent (20%) of the registered voters who voted in the last general election is
+  source: constitution-little-traverse-bay-bands-of-odawa-indians-2005-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2005-02-01'
+  locator: Article XIII, Section A(1)(a)
+  document_version:
+    document: little-traverse-bay-bands-of-odawa-indians-constitution
+    version: 2005-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author.
+- aspect: recall-and-removal
+  value: Judge removed by Tribal Judiciary for listed causes
+  quote: A Tribal Judge or Justice may only be removed by the Tribal Judiciary itself.
+  source: constitution-little-traverse-bay-bands-of-odawa-indians-2005-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2005-02-01'
+  locator: Article XIII, Section B(1)
+  document_version:
+    document: little-traverse-bay-bands-of-odawa-indians-constitution
+    version: 2005-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author.
+- aspect: recall-and-removal
+  value: Prosecutor removed by 6 of 9 Council votes
+  quote: A prosecutor or assistant prosecutor may only be removed by a vote of six (6) of the
+  source: constitution-little-traverse-bay-bands-of-odawa-indians-2005-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2005-02-01'
+  locator: Article XIII, Section C
+  document_version:
+    document: little-traverse-bay-bands-of-odawa-indians-constitution
+    version: 2005-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author.
+- aspect: other
+  value: Referendum on Council decision by 6 Council votes
+  quote: The Tribal Council may decide by an affirmative vote of six (6) Council members
+  source: constitution-little-traverse-bay-bands-of-odawa-indians-2005-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2005-02-01'
+  locator: Article XIV, Section B(1)
+  document_version:
+    document: little-traverse-bay-bands-of-odawa-indians-constitution
+    version: 2005-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author.
 governing_documents:
 - kind: law-code
   title: 'Waganakising Odawa Tribal Code : Little Traverse Bay Bands of Odawa Indians'

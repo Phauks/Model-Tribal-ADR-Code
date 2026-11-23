@@ -194,6 +194,219 @@ government_structure:
   as_of: '1938'
   locator: preamble / approval and certification of adoption
   note: Historical constitution; a later constitution may have replaced it.
+governance:
+- aspect: form
+  value: Secretarial election under Section 16 of the Indian Reorganization Act
+  quote: in accordance with Section 16 of the Indian Reorganization Act of June 18, 1934 (48 Stat. 984), as amended.
+  source: constitution-white-mountain-apache-tribe-of-the-fort-apache-reservation-1993-text
+  confidence: high
+  verification: read-in-full
+  as_of: '1993-11-12'
+  locator: Certification of Adoption
+  document_version:
+    document: white-mountain-apache-tribe-of-the-fort-apache-reservation-constitution
+    version: 1993-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: Article III, Section 5 gives four-year council terms but Article VI, Section 1 says council elections are held every two years; both are reported as the text states.'
+- aspect: governing-body
+  value: White Mountain Apache Tribal Council
+  quote: 'The governing body of the White Mountain Apache Tribe shall be known as the White Mountain Apache Tribal Council and shall consist of a Chairman, Vice Chairman and nine members to be chosen as follows:'
+  source: constitution-white-mountain-apache-tribe-of-the-fort-apache-reservation-1993-text
+  confidence: high
+  verification: read-in-full
+  as_of: '1993-11-12'
+  locator: Article III, Section 1
+  document_version:
+    document: white-mountain-apache-tribe-of-the-fort-apache-reservation-constitution
+    version: 1993-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: Article III, Section 5 gives four-year council terms but Article VI, Section 1 says council elections are held every two years; both are reported as the text states.'
+- aspect: governing-body-size
+  value: 9 members plus Chairman and Vice Chairman
+  quote: 'Chairman, Vice Chairman and nine members to be chosen as follows:'
+  source: constitution-white-mountain-apache-tribe-of-the-fort-apache-reservation-1993-text
+  confidence: high
+  verification: read-in-full
+  as_of: '1993-11-12'
+  locator: Article III, Section 1
+  document_version:
+    document: white-mountain-apache-tribe-of-the-fort-apache-reservation-constitution
+    version: 1993-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: Article III, Section 5 gives four-year council terms but Article VI, Section 1 says council elections are held every two years; both are reported as the text states.'
+- aspect: governing-body-selection
+  value: Elected by popular vote, by district
+  quote: Two members, by popular vote of the Cibecue, Oak Creek and Grasshopper District 2
+  source: constitution-white-mountain-apache-tribe-of-the-fort-apache-reservation-1993-text
+  confidence: high
+  verification: read-in-full
+  as_of: '1993-11-12'
+  locator: Article III, Section 1
+  document_version:
+    document: white-mountain-apache-tribe-of-the-fort-apache-reservation-constitution
+    version: 1993-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: Article III, Section 5 gives four-year council terms but Article VI, Section 1 says council elections are held every two years; both are reported as the text states.'
+- aspect: governing-body-term
+  value: 4 years, staggered
+  quote: Tribal Council Members shall be elected for a term of four years or until a successor is chosen.
+  source: constitution-white-mountain-apache-tribe-of-the-fort-apache-reservation-1993-text
+  confidence: high
+  verification: read-in-full
+  as_of: '1993-11-12'
+  locator: Article III, Section 5
+  document_version:
+    document: white-mountain-apache-tribe-of-the-fort-apache-reservation-constitution
+    version: 1993-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: Article III, Section 5 gives four-year council terms but Article VI, Section 1 says council elections are held every two years; both are reported as the text states.'
+- aspect: head-of-government
+  value: Chairman
+  quote: The Chairman and Vice-Chairman of the Tribal Council shall be elected for a term of four years by popular vote of the Tribe
+  source: constitution-white-mountain-apache-tribe-of-the-fort-apache-reservation-1993-text
+  confidence: high
+  verification: read-in-full
+  as_of: '1993-11-12'
+  locator: Article III, Section 7
+  document_version:
+    document: white-mountain-apache-tribe-of-the-fort-apache-reservation-constitution
+    version: 1993-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: Article III, Section 5 gives four-year council terms but Article VI, Section 1 says council elections are held every two years; both are reported as the text states.'
+- aspect: head-of-government
+  value: Chairperson
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  verification: bulk-import
+  as_of: '2026-11-20'
+  locator: White Mountain Apache Tribe of the Fort Apache Reservation, Arizona
+  note: The title of the leader's office as the federal directory lists it; the holder's name is not recorded. Listed as “Chairman”; recorded without the holder's own form of the title.
+- aspect: head-of-government-selection
+  value: Elected by popular vote of the Tribe
+  quote: The Chairman and Vice-Chairman of the Tribal Council shall be elected for a term of four years by popular vote of the Tribe
+  source: constitution-white-mountain-apache-tribe-of-the-fort-apache-reservation-1993-text
+  confidence: high
+  verification: read-in-full
+  as_of: '1993-11-12'
+  locator: Article III, Section 7
+  document_version:
+    document: white-mountain-apache-tribe-of-the-fort-apache-reservation-constitution
+    version: 1993-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: Article III, Section 5 gives four-year council terms but Article VI, Section 1 says council elections are held every two years; both are reported as the text states.'
+- aspect: head-of-government-term
+  value: 4 years
+  quote: The Chairman and Vice-Chairman of the Tribal Council shall be elected for a term of four years by popular vote of the Tribe
+  source: constitution-white-mountain-apache-tribe-of-the-fort-apache-reservation-1993-text
+  confidence: high
+  verification: read-in-full
+  as_of: '1993-11-12'
+  locator: Article III, Section 7
+  document_version:
+    document: white-mountain-apache-tribe-of-the-fort-apache-reservation-constitution
+    version: 1993-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: Article III, Section 5 gives four-year council terms but Article VI, Section 1 says council elections are held every two years; both are reported as the text states.'
+- aspect: other-officers
+  value: Secretary, treasurer and other officers chosen by Council
+  quote: Section 4. Organization of Council. The Council shall choose, either from within or without its own membership or from non-members, a secretary, a treasurer, and such other officers as it may consider necessary.
+  source: constitution-white-mountain-apache-tribe-of-the-fort-apache-reservation-1993-text
+  confidence: high
+  verification: read-in-full
+  as_of: '1993-11-12'
+  locator: Article III, Section 4
+  document_version:
+    document: white-mountain-apache-tribe-of-the-fort-apache-reservation-constitution
+    version: 1993-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: Article III, Section 5 gives four-year council terms but Article VI, Section 1 says council elections are held every two years; both are reported as the text states.'
+- aspect: elections
+  value: Every 2 years on the first Wednesday in April
+  quote: Regular elections for Council Members shall be held every two years on the first Wednesday in April.
+  source: constitution-white-mountain-apache-tribe-of-the-fort-apache-reservation-1993-text
+  confidence: high
+  verification: read-in-full
+  as_of: '1993-11-12'
+  locator: Article VI, Section 1
+  document_version:
+    document: white-mountain-apache-tribe-of-the-fort-apache-reservation-constitution
+    version: 1993-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: Article III, Section 5 gives four-year council terms but Article VI, Section 1 says council elections are held every two years; both are reported as the text states.'
+- aspect: voting-age
+  value: '18'
+  quote: Any -enrolled member of the Tribe eighteen years of age or older shall have the right to vote.
+  source: constitution-white-mountain-apache-tribe-of-the-fort-apache-reservation-1993-text
+  confidence: high
+  verification: read-in-full
+  as_of: '1993-11-12'
+  locator: Article VI, Section 3
+  document_version:
+    document: white-mountain-apache-tribe-of-the-fort-apache-reservation-constitution
+    version: 1993-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: Article III, Section 5 gives four-year council terms but Article VI, Section 1 says council elections are held every two years; both are reported as the text states.'
+- aspect: election-authority
+  value: Election board
+  quote: Such ordinances shall prescribe the duties of the election board,
+  source: constitution-white-mountain-apache-tribe-of-the-fort-apache-reservation-1993-text
+  confidence: high
+  verification: read-in-full
+  as_of: '1993-11-12'
+  locator: Article VI, Section 8
+  document_version:
+    document: white-mountain-apache-tribe-of-the-fort-apache-reservation-constitution
+    version: 1993-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: Article III, Section 5 gives four-year council terms but Article VI, Section 1 says council elections are held every two years; both are reported as the text states.'
+- aspect: judiciary
+  value: Tribal courts established by Council ordinance
+  quote: (q) To enact ordinances establishing and governing tribal courts and law enforcement on the reservation
+  source: constitution-white-mountain-apache-tribe-of-the-fort-apache-reservation-1993-text
+  confidence: high
+  verification: read-in-full
+  as_of: '1993-11-12'
+  locator: Article IV, Section 1(q)
+  document_version:
+    document: white-mountain-apache-tribe-of-the-fort-apache-reservation-constitution
+    version: 1993-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: Article III, Section 5 gives four-year council terms but Article VI, Section 1 says council elections are held every two years; both are reported as the text states.'
+- aspect: amendment
+  value: Majority vote of qualified voters at election called by Secretary of the Interior
+  quote: This constitution may be amended by a majority vote of the qualified voters of the Tribe voting at an election called for that purpose by the Secretary of the Interior,
+  source: constitution-white-mountain-apache-tribe-of-the-fort-apache-reservation-1993-text
+  confidence: high
+  verification: read-in-full
+  as_of: '1993-11-12'
+  locator: Article X, Section 1
+  document_version:
+    document: white-mountain-apache-tribe-of-the-fort-apache-reservation-constitution
+    version: 1993-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: Article III, Section 5 gives four-year council terms but Article VI, Section 1 says council elections are held every two years; both are reported as the text states.'
+- aspect: secretarial-approval
+  value: Required for amendments
+  quote: but no amendment shall become effective until it shall have been approved by the Secretary of the Interior or by operation of law.
+  source: constitution-white-mountain-apache-tribe-of-the-fort-apache-reservation-1993-text
+  confidence: high
+  verification: read-in-full
+  as_of: '1993-11-12'
+  locator: Article X, Section 1
+  document_version:
+    document: white-mountain-apache-tribe-of-the-fort-apache-reservation-constitution
+    version: 1993-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: Article III, Section 5 gives four-year council terms but Article VI, Section 1 says council elections are held every two years; both are reported as the text states.'
+- aspect: recall-and-removal
+  value: Forfeiture after two missed regular meetings or felony
+  quote: fails or refuses to attend two regular meetings in succession unless excused due to illness or other causes
+  source: constitution-white-mountain-apache-tribe-of-the-fort-apache-reservation-1993-text
+  confidence: high
+  verification: read-in-full
+  as_of: '1993-11-12'
+  locator: Article VII, Section 1
+  document_version:
+    document: white-mountain-apache-tribe-of-the-fort-apache-reservation-constitution
+    version: 1993-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: Article III, Section 5 gives four-year council terms but Article VI, Section 1 says council elections are held every two years; both are reported as the text states.'
+- aspect: other
+  value: Referendum on Council enactments, petition of 20 percent of eligible voters
+  quote: Upon a petition of at least twenty percent of the eligible voters of the Tribe, or upon the request of the majority of the members of the Tribal Council,
+  source: constitution-white-mountain-apache-tribe-of-the-fort-apache-reservation-1993-text
+  confidence: high
+  verification: read-in-full
+  as_of: '1993-11-12'
+  locator: Article VIII
+  document_version:
+    document: white-mountain-apache-tribe-of-the-fort-apache-reservation-constitution
+    version: 1993-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: Article III, Section 5 gives four-year council terms but Article VI, Section 1 says council elections are held every two years; both are reported as the text states.'
 governing_documents:
 - kind: law-code
   title: White Mountain Apache Tribal Code

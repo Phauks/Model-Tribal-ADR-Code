@@ -140,6 +140,15 @@ indian_health_service:
   as_of: '2026-11-23'
   locator: '"Tribes of Oklahoma, Kansas and Texas" list'
   note: 'Listed as "Shawnee Tribe". Also listed under the same Area in: indian-health-service-self-governance-tribes.'
+governance:
+- aspect: head-of-government
+  value: Chief
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  verification: bulk-import
+  as_of: '2026-11-20'
+  locator: Shawnee Tribe
+  note: The title of the leader's office as the federal directory lists it; the holder's name is not recorded.
 governing_documents:
 - kind: law-code
   title: Tribal Laws, Titles, Codes, Resolutions and Other Tribal Documents

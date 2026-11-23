@@ -197,6 +197,255 @@ indian_health_service:
   as_of: '2026-11-23'
   locator: '"Tribes of Oregon, Washington and Idaho" list'
   note: 'Listed as "Jamestown S’Klallam Tribe". Also listed under the same Area in: indian-health-service-self-governance-tribes. Also on the Indian Health Service Self-Governance Tribes list (Jamestown S’Klallam Indian Tribe (1994)); the list does not say which service unit or programs the compact covers.'
+governance:
+- aspect: form
+  value: Constitution, as amended and restated, ratified by the qualified voters
+  quote: This Constitution, as amended and restated, was approved and ratified on November 8, 2022, by
+  source: constitution-jamestown-sklallam-tribe-2022-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2022-11-08'
+  locator: Article XII
+  document_version:
+    document: jamestown-sklallam-tribe-constitution
+    version: 2022-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author.
+- aspect: governing-body
+  value: Jamestown S'Klallam Tribal Council
+  quote: The representative governing body of the Tribe shall be known as the Jamestown S'Klallam
+  source: constitution-jamestown-sklallam-tribe-2022-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2022-11-08'
+  locator: Article III, Section 1
+  document_version:
+    document: jamestown-sklallam-tribe-constitution
+    version: 2022-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author.
+- aspect: governing-body-size
+  value: 5 members
+  quote: The Tribal Council shall consist of five (5) members each duly elected to serve in one (1) of the
+  source: constitution-jamestown-sklallam-tribe-2022-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2022-11-08'
+  locator: Article III, Section 2
+  document_version:
+    document: jamestown-sklallam-tribe-constitution
+    version: 2022-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author.
+- aspect: governing-body-selection
+  value: Elected by the General Council
+  quote: (a) Electing Tribal Council members in accordance with Article V;
+  source: constitution-jamestown-sklallam-tribe-2022-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2022-11-08'
+  locator: Article IV, Section 2(a)
+  document_version:
+    document: jamestown-sklallam-tribe-constitution
+    version: 2022-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author.
+- aspect: governing-body-term
+  value: 4 years, staggered
+  quote: The Chairperson and the Secretary shall be elected every four (4) years, commencing with the
+  source: constitution-jamestown-sklallam-tribe-2022-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2022-11-08'
+  locator: Article III, Section 3
+  document_version:
+    document: jamestown-sklallam-tribe-constitution
+    version: 2022-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author.
+- aspect: general-council
+  value: All qualified Tribal citizens
+  quote: The General Council shall be composed of all Tribal citizens who are qualified voters pursuant
+  source: constitution-jamestown-sklallam-tribe-2022-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2022-11-08'
+  locator: Article IV, Section 1
+  document_version:
+    document: jamestown-sklallam-tribe-constitution
+    version: 2022-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author.
+- aspect: head-of-government
+  value: Chairperson
+  quote: The Tribal Council officer positions shall consist of 1) a Chairperson, 2) a Vice Chairperson, 3) a
+  source: constitution-jamestown-sklallam-tribe-2022-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2022-11-08'
+  locator: Article III, Section 3
+  document_version:
+    document: jamestown-sklallam-tribe-constitution
+    version: 2022-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author.
+- aspect: head-of-government
+  value: Chairperson
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  verification: bulk-import
+  as_of: '2026-11-20'
+  locator: Jamestown S'Klallam Tribe
+  note: The title of the leader's office as the federal directory lists it; the holder's name is not recorded. Listed as “Chairman”; recorded without the holder's own form of the title.
+- aspect: head-of-government-selection
+  value: Elected by the General Council
+  quote: (a) Electing Tribal Council members in accordance with Article V;
+  source: constitution-jamestown-sklallam-tribe-2022-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2022-11-08'
+  locator: Article IV, Section 2(a)
+  document_version:
+    document: jamestown-sklallam-tribe-constitution
+    version: 2022-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author.
+- aspect: head-of-government-term
+  value: 4 years
+  quote: The Chairperson and the Secretary shall be elected every four (4) years, commencing with the
+  source: constitution-jamestown-sklallam-tribe-2022-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2022-11-08'
+  locator: Article III, Section 3
+  document_version:
+    document: jamestown-sklallam-tribe-constitution
+    version: 2022-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author.
+- aspect: other-officers
+  value: Vice Chairperson, Secretary, Treasurer, Councilperson
+  quote: Secretary, 4) a Treasurer, and 5) a Councilperson.
+  source: constitution-jamestown-sklallam-tribe-2022-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2022-11-08'
+  locator: Article III, Section 3
+  document_version:
+    document: jamestown-sklallam-tribe-constitution
+    version: 2022-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author.
+- aspect: elections
+  value: Tuesday after the first Monday in November
+  quote: Regular elections for the Tribal Council, and for other matters, shall be held on the Tuesday after
+  source: constitution-jamestown-sklallam-tribe-2022-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2022-11-08'
+  locator: Article V, Section 3
+  document_version:
+    document: jamestown-sklallam-tribe-constitution
+    version: 2022-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author.
+- aspect: voting-age
+  value: '18'
+  quote: They must be at least eighteen (18) years of age on the date of the election, which makes
+  source: constitution-jamestown-sklallam-tribe-2022-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2022-11-08'
+  locator: Article V, Section 1(a)
+  document_version:
+    document: jamestown-sklallam-tribe-constitution
+    version: 2022-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author.
+- aspect: election-authority
+  value: Election Board
+  quote: The Tribal Council shall appoint an Election Board whose three (3) members shall serve for
+  source: constitution-jamestown-sklallam-tribe-2022-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2022-11-08'
+  locator: Article V, Section 4
+  document_version:
+    document: jamestown-sklallam-tribe-constitution
+    version: 2022-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author.
+- aspect: judiciary
+  value: Tribal Court
+  quote: A Tribal Court shall be established to provide prosecutorial and judicial services to the Tribe,
+  source: constitution-jamestown-sklallam-tribe-2022-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2022-11-08'
+  locator: Article VIII
+  document_version:
+    document: jamestown-sklallam-tribe-constitution
+    version: 2022-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author.
+- aspect: judicial-selection
+  value: Appointed by the Tribal Council
+  quote: may appoint persons to
+  source: constitution-jamestown-sklallam-tribe-2022-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2022-11-08'
+  locator: Article VIII
+  document_version:
+    document: jamestown-sklallam-tribe-constitution
+    version: 2022-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author.
+- aspect: judicial-term
+  value: 4 years (Chief Judge); 2 years minimum (Associate Judges)
+  quote: fill said positions for a term of not less than four (4) years for Chief Judge, not less than
+  source: constitution-jamestown-sklallam-tribe-2022-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2022-11-08'
+  locator: Article VIII
+  document_version:
+    document: jamestown-sklallam-tribe-constitution
+    version: 2022-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author.
+- aspect: judicial-independence
+  value: Removal only for cause, after notice and hearing
+  quote: only for criminal activity, misconduct, negligence, or absence from duty upon due notice
+  source: constitution-jamestown-sklallam-tribe-2022-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2022-11-08'
+  locator: Article VIII
+  document_version:
+    document: jamestown-sklallam-tribe-constitution
+    version: 2022-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author.
+- aspect: amendment
+  value: Election under Article V (referendum)
+  quote: This Constitution may be amended by an election as provided for in Article V.
+  source: constitution-jamestown-sklallam-tribe-2022-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2022-11-08'
+  locator: Article X
+  document_version:
+    document: jamestown-sklallam-tribe-constitution
+    version: 2022-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author.
+- aspect: recall-and-removal
+  value: Removal by resolution of remaining Council members
+  quote: 'remaining members of the Tribal Council may by resolution remove such person from office:'
+  source: constitution-jamestown-sklallam-tribe-2022-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2022-11-08'
+  locator: Article VI, Section 1(a)
+  document_version:
+    document: jamestown-sklallam-tribe-constitution
+    version: 2022-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author.
+- aspect: recall-and-removal
+  value: Recall by petition of one-third of registered voters
+  quote: Upon receipt of a valid petition signed by at least one-third (1/3) of the registered voters
+  source: constitution-jamestown-sklallam-tribe-2022-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2022-11-08'
+  locator: Article V, Section 8
+  document_version:
+    document: jamestown-sklallam-tribe-constitution
+    version: 2022-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author.
 governing_documents:
 - kind: law-code
   title: Jamestown S'Klallam Tribe

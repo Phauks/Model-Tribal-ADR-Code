@@ -165,6 +165,15 @@ indian_health_service:
   as_of: '2026-11-23'
   locator: regional lists (West Central, Southern, Northern, East Central)
   note: Listed as "Capitan Grande Band of Diegueno Mission Indians of California (Barona Group of Capitan Grande Band of Mission Indians of the Barona Reservation, California)". Indian Health Service line is "Capitan Grande Band ... (Barona Group of Capitan Grande Band of Mission Indians of the Barona Reservation, California)".
+governance:
+- aspect: head-of-government
+  value: Spokesman
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  verification: bulk-import
+  as_of: '2026-11-20'
+  locator: 'Capitan Grande Band of Diegueno Mission Indians of California: Barona Group of Capitan Grande Band of Mission Indians of the Barona Reservation, California'
+  note: The title of the leader's office as the federal directory lists it; the holder's name is not recorded.
 gaming:
   compacts:
   - state: CA

@@ -204,6 +204,75 @@ government_structure:
   note: The text cites the Act of June 18, 1934; the Indian Reorganization Act reached Alaska through
     the Act of May 1, 1936, so this is recorded as the Alaska amendment. Historical constitution; a later
     constitution may have replaced it.
+governance:
+- aspect: form
+  value: Constitution and By-Laws under Act of Congress of June 18, 1934
+  quote: By-laws, by authority of the Act of Congress of June 18, 1934,
+  source: constitution-stebbins-community-association-1939-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1939-12-05'
+  locator: Preamble
+  document_version:
+    document: stebbins-community-association-constitution
+    version: 1939-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Scan is badly garbled in Articles III, V and VI, so no voting-age fact is given.'
+- aspect: general-council
+  value: All community members, general meeting at least once a year
+  quote: membership shall be held at least once a year.
+  source: constitution-stebbins-community-association-1939-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1939-12-05'
+  locator: Article III, Section 3
+  document_version:
+    document: stebbins-community-association-constitution
+    version: 1939-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Scan is badly garbled in Articles III, V and VI, so no voting-age fact is given.'
+- aspect: head-of-government
+  value: President
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  verification: bulk-import
+  as_of: '2026-11-20'
+  locator: Stebbins Community Association
+  note: The title of the leader's office as the federal directory lists it; the holder's name is not recorded.
+- aspect: amendment
+  value: Majority vote of members, approved by Secretary of the Interior
+  quote: changesare approved by the Secretary of the Interior and by a ma-
+  source: constitution-stebbins-community-association-1939-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1939-12-05'
+  locator: Article VI
+  document_version:
+    document: stebbins-community-association-constitution
+    version: 1939-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Scan is badly garbled in Articles III, V and VI, so no voting-age fact is given.'
+- aspect: secretarial-approval
+  value: Required for amendments
+  quote: changesare approved by the Secretary of the Interior
+  source: constitution-stebbins-community-association-1939-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1939-12-05'
+  locator: Article VI
+  document_version:
+    document: stebbins-community-association-constitution
+    version: 1939-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Scan is badly garbled in Articles III, V and VI, so no voting-age fact is given.'
+- aspect: other
+  value: Membership decides kind of governing body at general meeting
+  quote: bership shall decide what kind of governing body it wishes to set
+  source: constitution-stebbins-community-association-1939-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1939-12-05'
+  locator: Article III, Section 1
+  document_version:
+    document: stebbins-community-association-constitution
+    version: 1939-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Scan is badly garbled in Articles III, V and VI, so no voting-age fact is given.'
 governing_documents:
 - kind: constitution
   title: Constitution

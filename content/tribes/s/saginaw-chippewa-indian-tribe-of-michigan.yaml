@@ -214,6 +214,231 @@ government_structure:
   as_of: '1937'
   locator: preamble / approval and certification of adoption
   note: Historical constitution; a later constitution may have replaced it.
+governance:
+- aspect: form
+  value: Amended constitution under Public Law 99-346
+  quote: Pursuant to Section 4 of Public Law 99-346, of June 30, 1986,
+  source: constitution-saginaw-chippewa-indian-tribe-of-michigan-1986-text
+  confidence: high
+  verification: read-in-full
+  as_of: '1986-11-04'
+  locator: Certification of Adoption
+  document_version:
+    document: saginaw-chippewa-indian-tribe-of-michigan-constitution
+    version: 1986-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author.
+- aspect: governing-body
+  value: Saginaw Chippewa Tribal Council
+  quote: The governing body of the Saginaw Chippewa Tribe of Michigan shall be known as the Saginaw Chippewa Tribal Council.
+  source: constitution-saginaw-chippewa-indian-tribe-of-michigan-1986-text
+  confidence: high
+  verification: read-in-full
+  as_of: '1986-11-04'
+  locator: Article IV, Section 1
+  document_version:
+    document: saginaw-chippewa-indian-tribe-of-michigan-constitution
+    version: 1986-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author.
+- aspect: governing-body-size
+  value: '12 members: 10 Isabella, 1 Saganing, 1 At Large'
+  quote: composed of twelve Tribal members elected by popular vote by the respective resident Tribal members entitled to vote in each of three voting districts.
+  source: constitution-saginaw-chippewa-indian-tribe-of-michigan-1986-text
+  confidence: high
+  verification: read-in-full
+  as_of: '1986-11-04'
+  locator: Article IV, Section 1
+  document_version:
+    document: saginaw-chippewa-indian-tribe-of-michigan-constitution
+    version: 1986-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author.
+- aspect: governing-body-selection
+  value: Elected by popular vote in three districts
+  quote: elected by popular vote by the respective resident Tribal members entitled to vote in each of three voting districts
+  source: constitution-saginaw-chippewa-indian-tribe-of-michigan-1986-text
+  confidence: high
+  verification: read-in-full
+  as_of: '1986-11-04'
+  locator: Article IV, Section 1
+  document_version:
+    document: saginaw-chippewa-indian-tribe-of-michigan-constitution
+    version: 1986-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author.
+- aspect: governing-body-term
+  value: 2 years
+  quote: The Tribal Council shall be elected every two years in the month of November.
+  source: constitution-saginaw-chippewa-indian-tribe-of-michigan-1986-text
+  confidence: high
+  verification: read-in-full
+  as_of: '1986-11-04'
+  locator: Article IV, Section 8
+  document_version:
+    document: saginaw-chippewa-indian-tribe-of-michigan-constitution
+    version: 1986-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author.
+- aspect: head-of-government
+  value: Tribal Chief
+  quote: shall elect from its number one Tribal Chief, one
+  source: constitution-saginaw-chippewa-indian-tribe-of-michigan-1986-text
+  confidence: high
+  verification: read-in-full
+  as_of: '1986-11-04'
+  locator: Article IV, Section 5
+  document_version:
+    document: saginaw-chippewa-indian-tribe-of-michigan-constitution
+    version: 1986-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author.
+- aspect: head-of-government
+  value: Chief
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  verification: bulk-import
+  as_of: '2026-11-20'
+  locator: Saginaw Chippewa Indian Tribe of Michigan
+  note: The title of the leader's office as the federal directory lists it; the holder's name is not recorded.
+- aspect: head-of-government-selection
+  value: Chosen by the Tribal Council from its members
+  quote: shall elect from its number one Tribal Chief, one
+  source: constitution-saginaw-chippewa-indian-tribe-of-michigan-1986-text
+  confidence: high
+  verification: read-in-full
+  as_of: '1986-11-04'
+  locator: Article IV, Section 5
+  document_version:
+    document: saginaw-chippewa-indian-tribe-of-michigan-constitution
+    version: 1986-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author.
+- aspect: head-of-government-term
+  value: 2 years
+  quote: The Tribal Council shall be elected every two years in the month of November.
+  source: constitution-saginaw-chippewa-indian-tribe-of-michigan-1986-text
+  confidence: high
+  verification: read-in-full
+  as_of: '1986-11-04'
+  locator: Article IV, Section 8
+  document_version:
+    document: saginaw-chippewa-indian-tribe-of-michigan-constitution
+    version: 1986-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author.
+- aspect: other-officers
+  value: Subchief, Tribal Secretary, Tribal Treasurer
+  quote: Subchief, one Tribal Secretary, and one Tribal Treasurer
+  source: constitution-saginaw-chippewa-indian-tribe-of-michigan-1986-text
+  confidence: high
+  verification: read-in-full
+  as_of: '1986-11-04'
+  locator: Article IV, Section 5
+  document_version:
+    document: saginaw-chippewa-indian-tribe-of-michigan-constitution
+    version: 1986-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author.
+- aspect: elections
+  value: Every 2 years in November
+  quote: The Tribal Council shall be elected every two years in the month of November.
+  source: constitution-saginaw-chippewa-indian-tribe-of-michigan-1986-text
+  confidence: high
+  verification: read-in-full
+  as_of: '1986-11-04'
+  locator: Article IV, Section 8
+  document_version:
+    document: saginaw-chippewa-indian-tribe-of-michigan-constitution
+    version: 1986-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author.
+- aspect: voting-age
+  value: '18'
+  quote: 18 years of age or over shall be entitled to vote at any election
+  source: constitution-saginaw-chippewa-indian-tribe-of-michigan-1986-text
+  confidence: high
+  verification: read-in-full
+  as_of: '1986-11-04'
+  locator: Article IV, Section 11
+  document_version:
+    document: saginaw-chippewa-indian-tribe-of-michigan-constitution
+    version: 1986-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author.
+- aspect: judiciary
+  value: Tribal Court system, independent of Tribal Council
+  quote: To establish a Tribal Court system for the administration of justice and the resolution of disputes within the jurisdiction of the Tribe.
+  source: constitution-saginaw-chippewa-indian-tribe-of-michigan-1986-text
+  confidence: high
+  verification: read-in-full
+  as_of: '1986-11-04'
+  locator: Article VI, Section 1(t)
+  document_version:
+    document: saginaw-chippewa-indian-tribe-of-michigan-constitution
+    version: 1986-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author.
+- aspect: judicial-independence
+  value: Courts independent of the Tribal Council
+  quote: Such courts shall be independent of the Tribal Council.
+  source: constitution-saginaw-chippewa-indian-tribe-of-michigan-1986-text
+  confidence: high
+  verification: read-in-full
+  as_of: '1986-11-04'
+  locator: Article VI, Section 1(t)
+  document_version:
+    document: saginaw-chippewa-indian-tribe-of-michigan-constitution
+    version: 1986-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author.
+- aspect: amendment
+  value: Majority vote in each of three districts at an election called by the Secretary
+  quote: This Constitution and By-Laws may be amended by a majority vote of the qualified voters in each of the three voting districts at an election called for by the Secretary of the Interior
+  source: constitution-saginaw-chippewa-indian-tribe-of-michigan-1986-text
+  confidence: high
+  verification: read-in-full
+  as_of: '1986-11-04'
+  locator: Article VII
+  document_version:
+    document: saginaw-chippewa-indian-tribe-of-michigan-constitution
+    version: 1986-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author.
+- aspect: secretarial-approval
+  value: Required for amendments
+  quote: but no amendment shall be effective until it shall have been approved by the Secretary of the Interior.
+  source: constitution-saginaw-chippewa-indian-tribe-of-michigan-1986-text
+  confidence: high
+  verification: read-in-full
+  as_of: '1986-11-04'
+  locator: Article VII
+  document_version:
+    document: saginaw-chippewa-indian-tribe-of-michigan-constitution
+    version: 1986-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author.
+- aspect: recall-and-removal
+  value: Removal by two-thirds vote of Tribal Council
+  quote: removed from office by the Tribal Council by a vote of two-thirds (2/3) of the members of the Tribal Council members voting
+  source: constitution-saginaw-chippewa-indian-tribe-of-michigan-1986-text
+  confidence: high
+  verification: read-in-full
+  as_of: '1986-11-04'
+  locator: Article IV, Section 14(a)
+  document_version:
+    document: saginaw-chippewa-indian-tribe-of-michigan-constitution
+    version: 1986-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author.
+- aspect: recall-and-removal
+  value: Removal by election in district on petition of 30% of voters
+  quote: Upon receipt of a petition signed by at least thirty (30) percent of the eligible voters within the voting district concerned seeking removal
+  source: constitution-saginaw-chippewa-indian-tribe-of-michigan-1986-text
+  confidence: high
+  verification: read-in-full
+  as_of: '1986-11-04'
+  locator: Article IV, Section 14(b)
+  document_version:
+    document: saginaw-chippewa-indian-tribe-of-michigan-constitution
+    version: 1986-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author.
+- aspect: other
+  value: Referendum on petition of 30% in each district
+  quote: Upon petition of at least 30 percent of the eligible voters in each of the three (3) respective voting
+  source: constitution-saginaw-chippewa-indian-tribe-of-michigan-1986-text
+  confidence: high
+  verification: read-in-full
+  as_of: '1986-11-04'
+  locator: Article V
+  document_version:
+    document: saginaw-chippewa-indian-tribe-of-michigan-constitution
+    version: 1986-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author.
 governing_documents:
 - kind: law-code
   title: Saginaw Chippewa Indian Tribe of Michigan

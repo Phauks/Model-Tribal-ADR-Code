@@ -257,6 +257,279 @@ government_structure:
   as_of: '1936'
   locator: preamble / approval and certification of adoption
   note: Historical constitution; a later constitution may have replaced it.
+governance:
+- aspect: form
+  value: Constitution and Bylaws under Act of Congress of June 18, 1934
+  quote: according to the Act of Congress, dated June 18, 1934 (48 Stat. 984).
+  source: constitution-winnebago-tribe-of-nebraska-1994-text
+  confidence: high
+  verification: read-in-full
+  as_of: '1994-07-15'
+  locator: Preamble
+  document_version:
+    document: winnebago-tribe-of-nebraska-constitution
+    version: 1994-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: Text carries amendments effective as late as March 10, 2009, so it is a later amended form than the 1994 label.'
+- aspect: governing-body
+  value: Tribal Council
+  quote: SECTION 1. The governing body of this Tribe shall be the Tribal Council, composed of nine members, who
+  source: constitution-winnebago-tribe-of-nebraska-1994-text
+  confidence: high
+  verification: read-in-full
+  as_of: '1994-07-15'
+  locator: Article III, Section 1
+  document_version:
+    document: winnebago-tribe-of-nebraska-constitution
+    version: 1994-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: Text carries amendments effective as late as March 10, 2009, so it is a later amended form than the 1994 label.'
+- aspect: governing-body-size
+  value: 9 members
+  quote: SECTION 1. The governing body of this Tribe shall be the Tribal Council, composed of nine members, who
+  source: constitution-winnebago-tribe-of-nebraska-1994-text
+  confidence: high
+  verification: read-in-full
+  as_of: '1994-07-15'
+  locator: Article III, Section 1
+  document_version:
+    document: winnebago-tribe-of-nebraska-constitution
+    version: 1994-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: Text carries amendments effective as late as March 10, 2009, so it is a later amended form than the 1994 label.'
+- aspect: governing-body-selection
+  value: Elected at large
+  quote: elected at large by secret ballot at an election hereinafter provided for by the qualified voters of the
+  source: constitution-winnebago-tribe-of-nebraska-1994-text
+  confidence: high
+  verification: read-in-full
+  as_of: '1994-07-15'
+  locator: Article III, Section 1
+  document_version:
+    document: winnebago-tribe-of-nebraska-constitution
+    version: 1994-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: Text carries amendments effective as late as March 10, 2009, so it is a later amended form than the 1994 label.'
+- aspect: governing-body-term
+  value: 3 years, staggered
+  quote: of office shall be three (3) years.
+  source: constitution-winnebago-tribe-of-nebraska-1994-text
+  confidence: high
+  verification: read-in-full
+  as_of: '1994-07-15'
+  locator: Article III, Section 2
+  document_version:
+    document: winnebago-tribe-of-nebraska-constitution
+    version: 1994-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: Text carries amendments effective as late as March 10, 2009, so it is a later amended form than the 1994 label.'
+- aspect: head-of-government
+  value: Chairman
+  quote: (a) The Chairman of the Tribal Council shall preside at all meetings of the Council.
+  source: constitution-winnebago-tribe-of-nebraska-1994-text
+  confidence: high
+  verification: read-in-full
+  as_of: '1994-07-15'
+  locator: Bylaws, Article I, Section 1(a)
+  document_version:
+    document: winnebago-tribe-of-nebraska-constitution
+    version: 1994-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: Text carries amendments effective as late as March 10, 2009, so it is a later amended form than the 1994 label.'
+- aspect: head-of-government
+  value: Chairperson
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  verification: bulk-import
+  as_of: '2026-11-20'
+  locator: Winnebago Tribe of Nebraska
+  note: The title of the leader's office as the federal directory lists it; the holder's name is not recorded.
+- aspect: head-of-government-selection
+  value: Elected by the Council from its members
+  quote: SECTION 3. The Tribal Council, in their first meeting after the election, shall elect from their membership a
+  source: constitution-winnebago-tribe-of-nebraska-1994-text
+  confidence: high
+  verification: read-in-full
+  as_of: '1994-07-15'
+  locator: Article III, Section 3
+  document_version:
+    document: winnebago-tribe-of-nebraska-constitution
+    version: 1994-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: Text carries amendments effective as late as March 10, 2009, so it is a later amended form than the 1994 label.'
+- aspect: head-of-government-term
+  value: 1 year
+  quote: Council may appoint one from the tribal membership. All Officers shall serve for a term of one (1) year, or
+  source: constitution-winnebago-tribe-of-nebraska-1994-text
+  confidence: high
+  verification: read-in-full
+  as_of: '1994-07-15'
+  locator: Article III, Section 3
+  document_version:
+    document: winnebago-tribe-of-nebraska-constitution
+    version: 1994-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: Text carries amendments effective as late as March 10, 2009, so it is a later amended form than the 1994 label.'
+- aspect: other-officers
+  value: Vice Chairman, Secretary, Treasurer
+  quote: Chairman, a Vice Chairman, and a Secretary. A Treasurer shall be appointed from their membership, or the
+  source: constitution-winnebago-tribe-of-nebraska-1994-text
+  confidence: high
+  verification: read-in-full
+  as_of: '1994-07-15'
+  locator: Article III, Section 3
+  document_version:
+    document: winnebago-tribe-of-nebraska-constitution
+    version: 1994-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: Text carries amendments effective as late as March 10, 2009, so it is a later amended form than the 1994 label.'
+- aspect: elections
+  value: Every year on the first Tuesday after the first Monday in October
+  quote: All regular elections shall be held on the first Tuesday after the first Monday in October of
+  source: constitution-winnebago-tribe-of-nebraska-1994-text
+  confidence: high
+  verification: read-in-full
+  as_of: '1994-07-15'
+  locator: Article V, Section 3
+  document_version:
+    document: winnebago-tribe-of-nebraska-constitution
+    version: 1994-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: Text carries amendments effective as late as March 10, 2009, so it is a later amended form than the 1994 label.'
+- aspect: voting-age
+  value: '18'
+  quote: Any recognized member of the Winnebago Tribe eighteen (18) years of age and over who has
+  source: constitution-winnebago-tribe-of-nebraska-1994-text
+  confidence: high
+  verification: read-in-full
+  as_of: '1994-07-15'
+  locator: Article V, Section 5
+  document_version:
+    document: winnebago-tribe-of-nebraska-constitution
+    version: 1994-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: Text carries amendments effective as late as March 10, 2009, so it is a later amended form than the 1994 label.'
+- aspect: election-authority
+  value: Tribal Council
+  quote: of the Tribal Council, who shall provide all necessary equipment, appoint election officials, and furnish
+  source: constitution-winnebago-tribe-of-nebraska-1994-text
+  confidence: high
+  verification: read-in-full
+  as_of: '1994-07-15'
+  locator: Article V, Section 2
+  document_version:
+    document: winnebago-tribe-of-nebraska-constitution
+    version: 1994-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: Text carries amendments effective as late as March 10, 2009, so it is a later amended form than the 1994 label.'
+- aspect: branches
+  value: Legislative, executive and judicial
+  quote: Winnebago Tribe of Nebraska; legislative, executive and judicial, and all offices, bodies and tribunals by
+  source: constitution-winnebago-tribe-of-nebraska-1994-text
+  confidence: high
+  verification: read-in-full
+  as_of: '1994-07-15'
+  locator: Article IV, Section 4
+  document_version:
+    document: winnebago-tribe-of-nebraska-constitution
+    version: 1994-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: Text carries amendments effective as late as March 10, 2009, so it is a later amended form than the 1994 label.'
+- aspect: judiciary
+  value: Tribal Court
+  quote: SECTION 1. Judicial Powers. The court system shall consist of one Chief Judge and Associate Judges
+  source: constitution-winnebago-tribe-of-nebraska-1994-text
+  confidence: high
+  verification: read-in-full
+  as_of: '1994-07-15'
+  locator: Article X, Section 1
+  document_version:
+    document: winnebago-tribe-of-nebraska-constitution
+    version: 1994-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: Text carries amendments effective as late as March 10, 2009, so it is a later amended form than the 1994 label.'
+- aspect: judicial-selection
+  value: Appointed by the Tribal Council
+  quote: appointed by the Tribal Council. The term of the Chief Judge shall be six (6) years with the terms of
+  source: constitution-winnebago-tribe-of-nebraska-1994-text
+  confidence: high
+  verification: read-in-full
+  as_of: '1994-07-15'
+  locator: Article X, Section 1
+  document_version:
+    document: winnebago-tribe-of-nebraska-constitution
+    version: 1994-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: Text carries amendments effective as late as March 10, 2009, so it is a later amended form than the 1994 label.'
+- aspect: judicial-term
+  value: 6 years (Chief Judge)
+  quote: The term of the Chief Judge shall be six (6) years with the terms of
+  source: constitution-winnebago-tribe-of-nebraska-1994-text
+  confidence: high
+  verification: read-in-full
+  as_of: '1994-07-15'
+  locator: Article X, Section 1
+  document_version:
+    document: winnebago-tribe-of-nebraska-constitution
+    version: 1994-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: Text carries amendments effective as late as March 10, 2009, so it is a later amended form than the 1994 label.'
+- aspect: judicial-independence
+  value: Judges removable for just cause
+  quote: A Judge may be removed for just cause
+  source: constitution-winnebago-tribe-of-nebraska-1994-text
+  confidence: high
+  verification: read-in-full
+  as_of: '1994-07-15'
+  locator: Article X, Section 1
+  document_version:
+    document: winnebago-tribe-of-nebraska-constitution
+    version: 1994-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: Text carries amendments effective as late as March 10, 2009, so it is a later amended form than the 1994 label.'
+- aspect: amendment
+  value: Majority vote of qualified voters in election called by Secretary of the Interior
+  quote: This Constitution and Bylaws may be amended by a majority vote of the qualified voters of the Winnebago
+  source: constitution-winnebago-tribe-of-nebraska-1994-text
+  confidence: high
+  verification: read-in-full
+  as_of: '1994-07-15'
+  locator: Article IX
+  document_version:
+    document: winnebago-tribe-of-nebraska-constitution
+    version: 1994-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: Text carries amendments effective as late as March 10, 2009, so it is a later amended form than the 1994 label.'
+- aspect: secretarial-approval
+  value: Required for amendments
+  quote: until it shall have been approved by the Secretary of the Interior. It shall be the duty of the
+  source: constitution-winnebago-tribe-of-nebraska-1994-text
+  confidence: high
+  verification: read-in-full
+  as_of: '1994-07-15'
+  locator: Article IX
+  document_version:
+    document: winnebago-tribe-of-nebraska-constitution
+    version: 1994-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: Text carries amendments effective as late as March 10, 2009, so it is a later amended form than the 1994 label.'
+- aspect: recall-and-removal
+  value: Expulsion by two-thirds vote of Council
+  quote: The Tribal Council may by a two thirds (2/3) affirmative vote of the Council expel any member,
+  source: constitution-winnebago-tribe-of-nebraska-1994-text
+  confidence: high
+  verification: read-in-full
+  as_of: '1994-07-15'
+  locator: Article VI, Section 2(a)
+  document_version:
+    document: winnebago-tribe-of-nebraska-constitution
+    version: 1994-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: Text carries amendments effective as late as March 10, 2009, so it is a later amended form than the 1994 label.'
+- aspect: recall-and-removal
+  value: Recall by petition of 40 percent of last election voters
+  quote: Any appointed or elected official may be recalled by petition, initiated by a qualified voter,
+  source: constitution-winnebago-tribe-of-nebraska-1994-text
+  confidence: high
+  verification: read-in-full
+  as_of: '1994-07-15'
+  locator: Article VI, Section 3(a)
+  document_version:
+    document: winnebago-tribe-of-nebraska-constitution
+    version: 1994-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: Text carries amendments effective as late as March 10, 2009, so it is a later amended form than the 1994 label.'
+- aspect: other
+  value: Referendum on Council powers, petition of 25 percent of last annual voters
+  quote: Any exercise of the enumerated powers lodged in the Tribal Council shall be subject to a
+  source: constitution-winnebago-tribe-of-nebraska-1994-text
+  confidence: high
+  verification: read-in-full
+  as_of: '1994-07-15'
+  locator: Article VII, Section 1
+  document_version:
+    document: winnebago-tribe-of-nebraska-constitution
+    version: 1994-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: Text carries amendments effective as late as March 10, 2009, so it is a later amended form than the 1994 label.'
 governing_documents:
 - kind: law-code
   title: Winnebago Tribe of Nebraska - Code

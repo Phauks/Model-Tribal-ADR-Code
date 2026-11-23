@@ -188,6 +188,219 @@ government_structure:
   as_of: '1937'
   locator: preamble / approval and certification of adoption
   note: Historical constitution; a later constitution may have replaced it.
+governance:
+- aspect: form
+  value: Constitution and Bylaws under Oklahoma Indian Welfare Act
+  quote: do adopt the following Constitution and Bylaws pursuant to
+  source: constitution-seneca-cayuga-nation-1990-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1990-10-15'
+  locator: Preamble
+  document_version:
+    document: seneca-cayuga-nation-constitution
+    version: 1990-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: The text is the 1937 constitution and bylaws with footnotes recording amendments of 1973, 1985 and 1990, and the amended wording is read as printed.'
+- aspect: governing-body
+  value: General Council
+  quote: The supreme governing body of the Tribe shall bo the Seneca-Cayuga
+  source: constitution-seneca-cayuga-nation-1990-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1990-10-15'
+  locator: Article IV
+  document_version:
+    document: seneca-cayuga-nation-constitution
+    version: 1990-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: The text is the 1937 constitution and bylaws with footnotes recording amendments of 1973, 1985 and 1990, and the amended wording is read as printed.'
+- aspect: governing-body
+  value: Business Committee
+  quote: The Business Committee shall have power to transact business
+  source: constitution-seneca-cayuga-nation-1990-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1990-10-15'
+  locator: Article VI
+  document_version:
+    document: seneca-cayuga-nation-constitution
+    version: 1990-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: The text is the 1937 constitution and bylaws with footnotes recording amendments of 1973, 1985 and 1990, and the amended wording is read as printed.'
+- aspect: governing-body-size
+  value: 7 members
+  quote: and four (4) Councilmen who shall be elected
+  source: constitution-seneca-cayuga-nation-1990-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1990-10-15'
+  locator: Article V
+  document_version:
+    document: seneca-cayuga-nation-constitution
+    version: 1990-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: The text is the 1937 constitution and bylaws with footnotes recording amendments of 1973, 1985 and 1990, and the amended wording is read as printed.'
+- aspect: governing-body-selection
+  value: Elected by secret ballot
+  quote: shall be elected by secret ballot
+  source: constitution-seneca-cayuga-nation-1990-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1990-10-15'
+  locator: Article V
+  document_version:
+    document: seneca-cayuga-nation-constitution
+    version: 1990-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: The text is the 1937 constitution and bylaws with footnotes recording amendments of 1973, 1985 and 1990, and the amended wording is read as printed.'
+- aspect: governing-body-term
+  value: 2 years
+  quote: of the Business Committee shall be elected for a two (2) year
+  source: constitution-seneca-cayuga-nation-1990-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1990-10-15'
+  locator: Article VIII
+  document_version:
+    document: seneca-cayuga-nation-constitution
+    version: 1990-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: The text is the 1937 constitution and bylaws with footnotes recording amendments of 1973, 1985 and 1990, and the amended wording is read as printed.'
+- aspect: general-council
+  value: All members 18 or older
+  quote: be all members of the Seneca-Cayuga Tribe of Oklahoma eighteen
+  source: constitution-seneca-cayuga-nation-1990-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1990-10-15'
+  locator: Article IV
+  document_version:
+    document: seneca-cayuga-nation-constitution
+    version: 1990-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: The text is the 1937 constitution and bylaws with footnotes recording amendments of 1973, 1985 and 1990, and the amended wording is read as printed.'
+- aspect: head-of-government
+  value: Chief
+  quote: The Officers of the Tribe shall be the Chief, Second Chief,
+  source: constitution-seneca-cayuga-nation-1990-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1990-10-15'
+  locator: Article V
+  document_version:
+    document: seneca-cayuga-nation-constitution
+    version: 1990-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: The text is the 1937 constitution and bylaws with footnotes recording amendments of 1973, 1985 and 1990, and the amended wording is read as printed.'
+- aspect: head-of-government
+  value: Chief
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  verification: bulk-import
+  as_of: '2026-11-20'
+  locator: Seneca-Cayuga Nation
+  note: The title of the leader's office as the federal directory lists it; the holder's name is not recorded.
+- aspect: head-of-government-selection
+  value: Elected at annual election
+  quote: shall be elected to a two (2) year term of office, and the
+  source: constitution-seneca-cayuga-nation-1990-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1990-10-15'
+  locator: Article VIII
+  document_version:
+    document: seneca-cayuga-nation-constitution
+    version: 1990-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: The text is the 1937 constitution and bylaws with footnotes recording amendments of 1973, 1985 and 1990, and the amended wording is read as printed.'
+- aspect: head-of-government-term
+  value: 2 years
+  quote: shall be elected to a two (2) year term of office, and the
+  source: constitution-seneca-cayuga-nation-1990-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1990-10-15'
+  locator: Article VIII
+  document_version:
+    document: seneca-cayuga-nation-constitution
+    version: 1990-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: The text is the 1937 constitution and bylaws with footnotes recording amendments of 1973, 1985 and 1990, and the amended wording is read as printed.'
+- aspect: other-officers
+  value: Second Chief, Secretary-Treasurer, four Councilmen
+  quote: Secretary -Treasurer , and four (4) Councilmen who shall be elected
+  source: constitution-seneca-cayuga-nation-1990-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1990-10-15'
+  locator: Article V
+  document_version:
+    document: seneca-cayuga-nation-constitution
+    version: 1990-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: The text is the 1937 constitution and bylaws with footnotes recording amendments of 1973, 1985 and 1990, and the amended wording is read as printed.'
+- aspect: elections
+  value: Annually, first Saturday of June
+  quote: Annual meetings shall be held on the first Saturday of June of
+  source: constitution-seneca-cayuga-nation-1990-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1990-10-15'
+  locator: Article VIII
+  document_version:
+    document: seneca-cayuga-nation-constitution
+    version: 1990-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: The text is the 1937 constitution and bylaws with footnotes recording amendments of 1973, 1985 and 1990, and the amended wording is read as printed.'
+- aspect: voting-age
+  value: '18'
+  quote: (18) years of age and older
+  source: constitution-seneca-cayuga-nation-1990-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1990-10-15'
+  locator: Article IV
+  document_version:
+    document: seneca-cayuga-nation-constitution
+    version: 1990-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: The text is the 1937 constitution and bylaws with footnotes recording amendments of 1973, 1985 and 1990, and the amended wording is read as printed.'
+- aspect: amendment
+  value: Majority vote in referendum
+  quote: shall be effective if approved by a majority vote.
+  source: constitution-seneca-cayuga-nation-1990-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1990-10-15'
+  locator: Article XI
+  document_version:
+    document: seneca-cayuga-nation-constitution
+    version: 1990-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: The text is the 1937 constitution and bylaws with footnotes recording amendments of 1973, 1985 and 1990, and the amended wording is read as printed.'
+- aspect: secretarial-approval
+  value: Required for amendments
+  quote: and if approved by the Secretary of the Interior shall be
+  source: constitution-seneca-cayuga-nation-1990-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1990-10-15'
+  locator: Article XI
+  document_version:
+    document: seneca-cayuga-nation-constitution
+    version: 1990-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: The text is the 1937 constitution and bylaws with footnotes recording amendments of 1973, 1985 and 1990, and the amended wording is read as printed.'
+- aspect: recall-and-removal
+  value: Removal by majority vote of Council after hearing
+  quote: power, by majority vote, after giving the accused a hearing,
+  source: constitution-seneca-cayuga-nation-1990-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1990-10-15'
+  locator: Article X
+  document_version:
+    document: seneca-cayuga-nation-constitution
+    version: 1990-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: The text is the 1937 constitution and bylaws with footnotes recording amendments of 1973, 1985 and 1990, and the amended wording is read as printed.'
+- aspect: other
+  value: Grievance Committee investigates complaints against Business Committee
+  quote: The Grievance Committee shall investigate complaints of misconduct
+  source: constitution-seneca-cayuga-nation-1990-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1990-10-15'
+  locator: Article X
+  document_version:
+    document: seneca-cayuga-nation-constitution
+    version: 1990-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: The text is the 1937 constitution and bylaws with footnotes recording amendments of 1973, 1985 and 1990, and the amended wording is read as printed.'
 governing_documents:
 - kind: constitution
   title: Seneca-Cayuga Nation - Tribal Constitution

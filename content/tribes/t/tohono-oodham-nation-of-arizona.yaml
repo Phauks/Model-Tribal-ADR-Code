@@ -201,6 +201,267 @@ government_structure:
   locator: preamble / approval and certification of adoption
   note: Matched by former name (Papago Tribe); confirm. Historical constitution; a later constitution
     may have replaced it.
+governance:
+- aspect: form
+  value: Constitution adopted under Section 16 of the Indian Reorganization Act of June 18, 1934
+  quote: with Section 16 of the Indian Reorganization Act of June 18, 1934 (48 Stat . 984), as amended,
+  source: constitution-tohono-oodham-nation-of-arizona-1986-text
+  confidence: high
+  verification: read-in-full
+  as_of: '1986-03-06'
+  locator: History
+  document_version:
+    document: tohono-oodham-nation-of-arizona-constitution
+    version: 1986-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: Extract is the 2006 printing (1st ed.) of the 1986 constitution; the approval clause in Article XXII is too garbled to quote.'
+- aspect: governing-body
+  value: Tohono O'odham Council
+  quote: vested in the Tohono O'odham Council, which shalt consist of two representatives,
+  source: constitution-tohono-oodham-nation-of-arizona-1986-text
+  confidence: high
+  verification: read-in-full
+  as_of: '1986-03-06'
+  locator: Article V, Section 1
+  document_version:
+    document: tohono-oodham-nation-of-arizona-constitution
+    version: 1986-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: Extract is the 2006 printing (1st ed.) of the 1986 constitution; the approval clause in Article XXII is too garbled to quote.'
+- aspect: governing-body-size
+  value: 2 representatives per district
+  quote: vested in the Tohono O'odham Council, which shalt consist of two representatives,
+  source: constitution-tohono-oodham-nation-of-arizona-1986-text
+  confidence: high
+  verification: read-in-full
+  as_of: '1986-03-06'
+  locator: Article V, Section 1
+  document_version:
+    document: tohono-oodham-nation-of-arizona-constitution
+    version: 1986-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: Extract is the 2006 printing (1st ed.) of the 1986 constitution; the approval clause in Article XXII is too garbled to quote.'
+- aspect: governing-body-selection
+  value: Elected from each district
+  quote: elected from each of the districts of the Tohono O'odharn
+  source: constitution-tohono-oodham-nation-of-arizona-1986-text
+  confidence: high
+  verification: read-in-full
+  as_of: '1986-03-06'
+  locator: Article V, Section 1
+  document_version:
+    document: tohono-oodham-nation-of-arizona-constitution
+    version: 1986-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: Extract is the 2006 printing (1st ed.) of the 1986 constitution; the approval clause in Article XXII is too garbled to quote.'
+- aspect: governing-body-term
+  value: 4 years
+  quote: Nation shall be four (4) years, unless extended by the Tohono O'odham Council for
+  source: constitution-tohono-oodham-nation-of-arizona-1986-text
+  confidence: high
+  verification: read-in-full
+  as_of: '1986-03-06'
+  locator: Article XI, Section 1
+  document_version:
+    document: tohono-oodham-nation-of-arizona-constitution
+    version: 1986-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: Extract is the 2006 printing (1st ed.) of the 1986 constitution; the approval clause in Article XXII is too garbled to quote.'
+- aspect: head-of-government
+  value: Chairman
+  quote: be vested in the office of the Chairman of the Tohono O'odhan Nation . The
+  source: constitution-tohono-oodham-nation-of-arizona-1986-text
+  confidence: high
+  verification: read-in-full
+  as_of: '1986-03-06'
+  locator: Article VII, Section 1
+  document_version:
+    document: tohono-oodham-nation-of-arizona-constitution
+    version: 1986-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: Extract is the 2006 printing (1st ed.) of the 1986 constitution; the approval clause in Article XXII is too garbled to quote.'
+- aspect: head-of-government
+  value: Chairperson
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  verification: bulk-import
+  as_of: '2026-11-20'
+  locator: Tohono O'odham Nation of Arizona
+  note: The title of the leader's office as the federal directory lists it; the holder's name is not recorded. Listed as “Chairman”; recorded without the holder's own form of the title.
+- aspect: head-of-government-selection
+  value: Elected at large with the vice chairman
+  quote: chairman together with the vice chairman shall be elected at large by a
+  source: constitution-tohono-oodham-nation-of-arizona-1986-text
+  confidence: high
+  verification: read-in-full
+  as_of: '1986-03-06'
+  locator: Article VII, Section 1
+  document_version:
+    document: tohono-oodham-nation-of-arizona-constitution
+    version: 1986-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: Extract is the 2006 printing (1st ed.) of the 1986 constitution; the approval clause in Article XXII is too garbled to quote.'
+- aspect: head-of-government-term
+  value: 4 years
+  quote: majority of votes cast by all qualified voters for a term of four years .
+  source: constitution-tohono-oodham-nation-of-arizona-1986-text
+  confidence: high
+  verification: read-in-full
+  as_of: '1986-03-06'
+  locator: Article VII, Section 1
+  document_version:
+    document: tohono-oodham-nation-of-arizona-constitution
+    version: 1986-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: Extract is the 2006 printing (1st ed.) of the 1986 constitution; the approval clause in Article XXII is too garbled to quote.'
+- aspect: other-officers
+  value: Vice-Chairman
+  quote: vice chairman shall assist the chairman when requested to do
+  source: constitution-tohono-oodham-nation-of-arizona-1986-text
+  confidence: high
+  verification: read-in-full
+  as_of: '1986-03-06'
+  locator: Article VII, Section 3
+  document_version:
+    document: tohono-oodham-nation-of-arizona-constitution
+    version: 1986-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: Extract is the 2006 printing (1st ed.) of the 1986 constitution; the approval clause in Article XXII is too garbled to quote.'
+- aspect: elections
+  value: Every 2 years, date set by election ordinance
+  quote: General elections shall be held every other year at a date set in
+  source: constitution-tohono-oodham-nation-of-arizona-1986-text
+  confidence: high
+  verification: read-in-full
+  as_of: '1986-03-06'
+  locator: Article X, Section 2
+  document_version:
+    document: tohono-oodham-nation-of-arizona-constitution
+    version: 1986-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: Extract is the 2006 printing (1st ed.) of the 1986 constitution; the approval clause in Article XXII is too garbled to quote.'
+- aspect: voting-age
+  value: '18'
+  quote: of eighteen (18) years prior to the election date shall have the right to vote,
+  source: constitution-tohono-oodham-nation-of-arizona-1986-text
+  confidence: high
+  verification: read-in-full
+  as_of: '1986-03-06'
+  locator: Article X, Section 1
+  document_version:
+    document: tohono-oodham-nation-of-arizona-constitution
+    version: 1986-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: Extract is the 2006 printing (1st ed.) of the 1986 constitution; the approval clause in Article XXII is too garbled to quote.'
+- aspect: election-authority
+  value: Tohono O'odham Council
+  quote: The Tohono O'odham Council shall enact an election ordinance
+  source: constitution-tohono-oodham-nation-of-arizona-1986-text
+  confidence: high
+  verification: read-in-full
+  as_of: '1986-03-06'
+  locator: Article X, Section 7
+  document_version:
+    document: tohono-oodham-nation-of-arizona-constitution
+    version: 1986-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: Extract is the 2006 printing (1st ed.) of the 1986 constitution; the approval clause in Article XXII is too garbled to quote.'
+- aspect: branches
+  value: Legislative, Executive and Judicial
+  quote: The gevernment of the Tohono O'odham Nation shall be composed of three inde-
+  source: constitution-tohono-oodham-nation-of-arizona-1986-text
+  confidence: high
+  verification: read-in-full
+  as_of: '1986-03-06'
+  locator: Article IV
+  document_version:
+    document: tohono-oodham-nation-of-arizona-constitution
+    version: 1986-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: Extract is the 2006 printing (1st ed.) of the 1986 constitution; the approval clause in Article XXII is too garbled to quote.'
+- aspect: judiciary
+  value: Tohono O'odham Judiciary, with Courts and a court of appeals
+  quote: the Tohono O'odham Judiciary, which shall consist of the Tohono O'odham Courts
+  source: constitution-tohono-oodham-nation-of-arizona-1986-text
+  confidence: high
+  verification: read-in-full
+  as_of: '1986-03-06'
+  locator: Article VIII, Section 1
+  document_version:
+    document: tohono-oodham-nation-of-arizona-constitution
+    version: 1986-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: Extract is the 2006 printing (1st ed.) of the 1986 constitution; the approval clause in Article XXII is too garbled to quote.'
+- aspect: judicial-selection
+  value: Appointed by the Tohono O'odham Council
+  quote: consist of at least six (6) judges appointed by the Tohono O'odham Council .
+  source: constitution-tohono-oodham-nation-of-arizona-1986-text
+  confidence: high
+  verification: read-in-full
+  as_of: '1986-03-06'
+  locator: Article VIII, Section 3
+  document_version:
+    document: tohono-oodham-nation-of-arizona-constitution
+    version: 1986-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: Extract is the 2006 printing (1st ed.) of the 1986 constitution; the approval clause in Article XXII is too garbled to quote.'
+- aspect: judicial-term
+  value: 6 years, staggered
+  quote: years . Thereafter their terms shall be six (6) years and staggered so that
+  source: constitution-tohono-oodham-nation-of-arizona-1986-text
+  confidence: high
+  verification: read-in-full
+  as_of: '1986-03-06'
+  locator: Article VIII, Section 4
+  document_version:
+    document: tohono-oodham-nation-of-arizona-constitution
+    version: 1986-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: Extract is the 2006 printing (1st ed.) of the 1986 constitution; the approval clause in Article XXII is too garbled to quote.'
+- aspect: judicial-independence
+  value: Pay may not be diminished during term
+  quote: shall not be diminished during their continuance in office .
+  source: constitution-tohono-oodham-nation-of-arizona-1986-text
+  confidence: high
+  verification: read-in-full
+  as_of: '1986-03-06'
+  locator: Article VIII, Section 9
+  document_version:
+    document: tohono-oodham-nation-of-arizona-constitution
+    version: 1986-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: Extract is the 2006 printing (1st ed.) of the 1986 constitution; the approval clause in Article XXII is too garbled to quote.'
+- aspect: amendment
+  value: Majority vote of registered voters in an election called by the Secretary
+  quote: Section 2 . This constitution may be amended by a majority vote of the
+  source: constitution-tohono-oodham-nation-of-arizona-1986-text
+  confidence: high
+  verification: read-in-full
+  as_of: '1986-03-06'
+  locator: Article XXII, Section 2
+  document_version:
+    document: tohono-oodham-nation-of-arizona-constitution
+    version: 1986-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: Extract is the 2006 printing (1st ed.) of the 1986 constitution; the approval clause in Article XXII is too garbled to quote.'
+- aspect: recall-and-removal
+  value: Removal by majority vote of the Council
+  quote: the tribal government shall be removed from office by majority vote of th e
+  source: constitution-tohono-oodham-nation-of-arizona-1986-text
+  confidence: high
+  verification: read-in-full
+  as_of: '1986-03-06'
+  locator: Article XIII, Section 1
+  document_version:
+    document: tohono-oodham-nation-of-arizona-constitution
+    version: 1986-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: Extract is the 2006 printing (1st ed.) of the 1986 constitution; the approval clause in Article XXII is too garbled to quote.'
+- aspect: recall-and-removal
+  value: Recall by petition of 30% of eligible voters, then majority vote
+  quote: the secretary of the Tohono O'odham Council signed by at least thirty percent (30%)
+  source: constitution-tohono-oodham-nation-of-arizona-1986-text
+  confidence: high
+  verification: read-in-full
+  as_of: '1986-03-06'
+  locator: Article XIII, Section 2
+  document_version:
+    document: tohono-oodham-nation-of-arizona-constitution
+    version: 1986-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: Extract is the 2006 printing (1st ed.) of the 1986 constitution; the approval clause in Article XXII is too garbled to quote.'
+- aspect: other
+  value: Initiative by petition of 300 registered voters
+  quote: council accompanied by a petition signed by not less than three hundred (300)
+  source: constitution-tohono-oodham-nation-of-arizona-1986-text
+  confidence: high
+  verification: read-in-full
+  as_of: '1986-03-06'
+  locator: Article XV
+  document_version:
+    document: tohono-oodham-nation-of-arizona-constitution
+    version: 1986-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: Extract is the 2006 printing (1st ed.) of the 1986 constitution; the approval clause in Article XXII is too garbled to quote.'
 governing_documents:
 - kind: law-code
   title: Tohono O'odham

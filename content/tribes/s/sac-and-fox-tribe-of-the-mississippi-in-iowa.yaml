@@ -186,6 +186,183 @@ government_structure:
   note: The text also cites the Act of June 26, 1936 (49 Stat. 1967); because the nation is outside Oklahoma
     and the ratification clause cites section 16 of the Indian Reorganization Act, it is recorded as the
     Indian Reorganization Act. Historical constitution; a later constitution may have replaced it.
+governance:
+- aspect: form
+  value: Constitution and bylaws adopted under Section 16 of the Indian Reorganization Act
+  quote: in accordance with Section 16 of the Indian Reorganization Act of June 18, 1934 (48 Stat. 984)
+  source: constitution-sac-and-fox-tribe-of-the-mississippi-in-iowa-1937-text
+  confidence: high
+  verification: read-in-full
+  as_of: '1937-12-20'
+  locator: Certification of Adoption
+  document_version:
+    document: sac-and-fox-tribe-of-the-mississippi-in-iowa-constitution
+    version: 1937-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author.
+- aspect: governing-body
+  value: Sac and Fox Tribal Council
+  quote: The name of the governing body of this organization shall be the Sac and Fox Tribal Council.
+  source: constitution-sac-and-fox-tribe-of-the-mississippi-in-iowa-1937-text
+  confidence: high
+  verification: read-in-full
+  as_of: '1937-12-20'
+  locator: Article III, Section 1
+  document_version:
+    document: sac-and-fox-tribe-of-the-mississippi-in-iowa-constitution
+    version: 1937-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author.
+- aspect: governing-body-size
+  value: 7 members
+  quote: The Tribal Council shall consist of seven members elected at large
+  source: constitution-sac-and-fox-tribe-of-the-mississippi-in-iowa-1937-text
+  confidence: high
+  verification: read-in-full
+  as_of: '1937-12-20'
+  locator: Article IV, Section 1
+  document_version:
+    document: sac-and-fox-tribe-of-the-mississippi-in-iowa-constitution
+    version: 1937-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author.
+- aspect: governing-body-selection
+  value: Elected at large
+  quote: The Tribal Council shall consist of seven members elected at large
+  source: constitution-sac-and-fox-tribe-of-the-mississippi-in-iowa-1937-text
+  confidence: high
+  verification: read-in-full
+  as_of: '1937-12-20'
+  locator: Article IV, Section 1
+  document_version:
+    document: sac-and-fox-tribe-of-the-mississippi-in-iowa-constitution
+    version: 1937-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author.
+- aspect: governing-body-term
+  value: 4 years
+  quote: the term of office of Tribal Council members, chosen at each general election, shall be four years
+  source: constitution-sac-and-fox-tribe-of-the-mississippi-in-iowa-1937-text
+  confidence: high
+  verification: read-in-full
+  as_of: '1937-12-20'
+  locator: Article VI, Section 1
+  document_version:
+    document: sac-and-fox-tribe-of-the-mississippi-in-iowa-constitution
+    version: 1937-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author.
+- aspect: head-of-government
+  value: Chief of the Council
+  quote: The officers of the Tribe shall consist of a Chief of the Council, an Assistant Chief of the Council
+  source: constitution-sac-and-fox-tribe-of-the-mississippi-in-iowa-1937-text
+  confidence: high
+  verification: read-in-full
+  as_of: '1937-12-20'
+  locator: Article VIII, Section 1
+  document_version:
+    document: sac-and-fox-tribe-of-the-mississippi-in-iowa-constitution
+    version: 1937-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author.
+- aspect: head-of-government
+  value: Chairperson
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  verification: bulk-import
+  as_of: '2026-11-20'
+  locator: Sac & Fox Tribe of the Mississippi in Iowa
+  note: The title of the leader's office as the federal directory lists it; the holder's name is not recorded. Listed as “Chair”; recorded without the holder's own form of the title.
+- aspect: head-of-government-selection
+  value: Elected by majority vote of the Tribal Council from its own members
+  quote: all of whom shall be elected by a majority vote of the Tribal Council from its own members
+  source: constitution-sac-and-fox-tribe-of-the-mississippi-in-iowa-1937-text
+  confidence: high
+  verification: read-in-full
+  as_of: '1937-12-20'
+  locator: Article VIII, Section 1
+  document_version:
+    document: sac-and-fox-tribe-of-the-mississippi-in-iowa-constitution
+    version: 1937-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author.
+- aspect: other-officers
+  value: Assistant Chief, Secretary, Treasurer
+  quote: The officers of the Tribe shall consist of a Chief of the Council, an Assistant Chief of the Council
+  source: constitution-sac-and-fox-tribe-of-the-mississippi-in-iowa-1937-text
+  confidence: high
+  verification: read-in-full
+  as_of: '1937-12-20'
+  locator: Article VIII, Section 1
+  document_version:
+    document: sac-and-fox-tribe-of-the-mississippi-in-iowa-constitution
+    version: 1937-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author.
+- aspect: elections
+  value: Third Tuesday of October in odd-numbered years
+  quote: The general election of the Tribal Council by the Tribe shall be held on the third Tuesday of October of each odd-numbered year beginning 1939
+  source: constitution-sac-and-fox-tribe-of-the-mississippi-in-iowa-1937-text
+  confidence: high
+  verification: read-in-full
+  as_of: '1937-12-20'
+  locator: Article V, Section 2
+  document_version:
+    document: sac-and-fox-tribe-of-the-mississippi-in-iowa-constitution
+    version: 1937-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author.
+- aspect: voting-age
+  value: '21'
+  quote: Every member of the Tribe who is twenty-one years of age or over and who has been residing on the reservation for at least six months preceding any election
+  source: constitution-sac-and-fox-tribe-of-the-mississippi-in-iowa-1937-text
+  confidence: high
+  verification: read-in-full
+  as_of: '1937-12-20'
+  locator: Bylaws, Article IV, Section 1
+  document_version:
+    document: sac-and-fox-tribe-of-the-mississippi-in-iowa-constitution
+    version: 1937-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author.
+- aspect: amendment
+  value: Majority vote of adult members at an election called by the Secretary
+  quote: This Constitution and Bylaws may be amended by a majority vote of the adult members of the Sac and Fox Tribe in Iowa voting at an election called for that purpose by the Secretary of the Interior
+  source: constitution-sac-and-fox-tribe-of-the-mississippi-in-iowa-1937-text
+  confidence: high
+  verification: read-in-full
+  as_of: '1937-12-20'
+  locator: Article V
+  document_version:
+    document: sac-and-fox-tribe-of-the-mississippi-in-iowa-constitution
+    version: 1937-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author.
+- aspect: secretarial-approval
+  value: Required for amendments
+  quote: but no amendment shall become effective until it shall have been approved by the Secretary of the Interior
+  source: constitution-sac-and-fox-tribe-of-the-mississippi-in-iowa-1937-text
+  confidence: high
+  verification: read-in-full
+  as_of: '1937-12-20'
+  locator: Article V
+  document_version:
+    document: sac-and-fox-tribe-of-the-mississippi-in-iowa-constitution
+    version: 1937-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author.
+- aspect: recall-and-removal
+  value: Removal by majority vote of Tribal Council for absences
+  quote: Any member of the Tribal Council who willfully fails to attend four consecutive meetings of the Tribal Council may be removed from office by a majority vote of the Tribal Council
+  source: constitution-sac-and-fox-tribe-of-the-mississippi-in-iowa-1937-text
+  confidence: high
+  verification: read-in-full
+  as_of: '1937-12-20'
+  locator: Article VIII, Section 2
+  document_version:
+    document: sac-and-fox-tribe-of-the-mississippi-in-iowa-constitution
+    version: 1937-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author.
+- aspect: recall-and-removal
+  value: Recall by petition of 30% of eligible voters
+  quote: Upon a petition signed by not less than thirty percent of the eligible voters of the Tribe
+  source: constitution-sac-and-fox-tribe-of-the-mississippi-in-iowa-1937-text
+  confidence: high
+  verification: read-in-full
+  as_of: '1937-12-20'
+  locator: Article XII, Section 1
+  document_version:
+    document: sac-and-fox-tribe-of-the-mississippi-in-iowa-constitution
+    version: 1937-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author.
 governing_documents:
 - kind: law-code
   title: Sac & Fox Tribe of the Mississippi in Iowa - Code Table of Contents

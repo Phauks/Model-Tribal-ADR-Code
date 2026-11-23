@@ -220,6 +220,279 @@ indian_health_service:
   as_of: '2026-11-23'
   locator: Direct Service Tribes by IHS Area > Great Plains Area
   note: Listed as "Turtle Mountain Band of Chippewa". The Direct Service Tribes list says some Tribes have a mixed Indian Health Service and Tribal arrangement.
+governance:
+- aspect: form
+  value: Constitution and Bylaws
+  quote: CONSTITUTION AND BYLAWS
+  source: constitution-turtle-mountain-band-of-chippewa-indians-of-north-dakota-2015-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2015'
+  locator: Title
+  document_version:
+    document: turtle-mountain-band-of-chippewa-indians-of-north-dakota-constitution
+    version: 2015-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author.
+- aspect: governing-body
+  value: Tribal Council
+  quote: The governing body shall be the Tribal Council and shall consist of
+  source: constitution-turtle-mountain-band-of-chippewa-indians-of-north-dakota-2015-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2015'
+  locator: Article IV, Section 1
+  document_version:
+    document: turtle-mountain-band-of-chippewa-indians-of-north-dakota-constitution
+    version: 2015-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author.
+- aspect: governing-body-size
+  value: 9 members
+  quote: nine (9) members, eight (8) of whom shall be district representatives and one (1)
+  source: constitution-turtle-mountain-band-of-chippewa-indians-of-north-dakota-2015-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2015'
+  locator: Article IV, Section 1
+  document_version:
+    document: turtle-mountain-band-of-chippewa-indians-of-north-dakota-constitution
+    version: 2015-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author.
+- aspect: governing-body-selection
+  value: Elected by district; Chairman elected by the tribe as a whole
+  quote: shall be Chairman elected by the tribe as a whole, regardless of the districts.
+  source: constitution-turtle-mountain-band-of-chippewa-indians-of-north-dakota-2015-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2015'
+  locator: Article IV, Section 1
+  document_version:
+    document: turtle-mountain-band-of-chippewa-indians-of-north-dakota-constitution
+    version: 2015-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author.
+- aspect: governing-body-term
+  value: 2 years
+  quote: numbered years commencing in the year 1962 and shall hold office for two (2)
+  source: constitution-turtle-mountain-band-of-chippewa-indians-of-north-dakota-2015-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2015'
+  locator: Article V, Section 7
+  document_version:
+    document: turtle-mountain-band-of-chippewa-indians-of-north-dakota-constitution
+    version: 2015-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author.
+- aspect: head-of-government
+  value: Chairman
+  quote: the Chief Executive Officer of the Tribe.
+  source: constitution-turtle-mountain-band-of-chippewa-indians-of-north-dakota-2015-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2015'
+  locator: Article VI, Section 2
+  document_version:
+    document: turtle-mountain-band-of-chippewa-indians-of-north-dakota-constitution
+    version: 2015-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author.
+- aspect: head-of-government
+  value: Chairperson
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  verification: bulk-import
+  as_of: '2026-11-20'
+  locator: Turtle Mountain Band of Chippewa Indians of North Dakota
+  note: The title of the leader's office as the federal directory lists it; the holder's name is not recorded. Listed as “Chairman”; recorded without the holder's own form of the title.
+- aspect: head-of-government-selection
+  value: Elected on a reservation-wide or at-large basis
+  quote: The Chairman shall be elected on a
+  source: constitution-turtle-mountain-band-of-chippewa-indians-of-north-dakota-2015-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2015'
+  locator: Article VI, Section 1
+  document_version:
+    document: turtle-mountain-band-of-chippewa-indians-of-north-dakota-constitution
+    version: 2015-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author.
+- aspect: head-of-government-term
+  value: 2 years
+  quote: reservation wide or at large basis for a term of two (2) years or until a successor
+  source: constitution-turtle-mountain-band-of-chippewa-indians-of-north-dakota-2015-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2015'
+  locator: Article VI, Section 1
+  document_version:
+    document: turtle-mountain-band-of-chippewa-indians-of-north-dakota-constitution
+    version: 2015-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author.
+- aspect: other-officers
+  value: Vice-Chairman, Secretary-Treasurer
+  quote: 'There shall be the following Tribal Officers: A Chairman, Vice-'
+  source: constitution-turtle-mountain-band-of-chippewa-indians-of-north-dakota-2015-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2015'
+  locator: Article VI, Section 1
+  document_version:
+    document: turtle-mountain-band-of-chippewa-indians-of-north-dakota-constitution
+    version: 2015-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author.
+- aspect: elections
+  value: First Tuesday in November of even-numbered years
+  quote: November, in even numbered years commencing in 2016. If a holiday, the tribal
+  source: constitution-turtle-mountain-band-of-chippewa-indians-of-north-dakota-2015-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2015'
+  locator: Article V, Section 5
+  document_version:
+    document: turtle-mountain-band-of-chippewa-indians-of-north-dakota-constitution
+    version: 2015-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author.
+- aspect: voting-age
+  value: '18'
+  quote: Any enrolled member of the Tribe, eighteen (18) years of age or over, shall
+  source: constitution-turtle-mountain-band-of-chippewa-indians-of-north-dakota-2015-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2015'
+  locator: Article V, Section 2(a)
+  document_version:
+    document: turtle-mountain-band-of-chippewa-indians-of-north-dakota-constitution
+    version: 2015-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author.
+- aspect: branches
+  value: Judicial branch, separate from the Council and Chairman
+  quote: This section shall create a separate and equal judicial branch of government.
+  source: constitution-turtle-mountain-band-of-chippewa-indians-of-north-dakota-2015-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2015'
+  locator: Article XIV, Section 2
+  document_version:
+    document: turtle-mountain-band-of-chippewa-indians-of-north-dakota-constitution
+    version: 2015-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author.
+- aspect: separation-of-powers
+  value: Stated
+  quote: This section shall create a separate and equal judicial branch of government.
+  source: constitution-turtle-mountain-band-of-chippewa-indians-of-north-dakota-2015-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2015'
+  locator: Article XIV, Section 2
+  document_version:
+    document: turtle-mountain-band-of-chippewa-indians-of-north-dakota-constitution
+    version: 2015-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author.
+- aspect: judiciary
+  value: Turtle Mountain Appellate Court, Tribal Court and Judicial Board
+  quote: consist of the Turtle Mountain Appellate Court, the Tribal Court, the Judicial
+  source: constitution-turtle-mountain-band-of-chippewa-indians-of-north-dakota-2015-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2015'
+  locator: Article XIV, Section 2
+  document_version:
+    document: turtle-mountain-band-of-chippewa-indians-of-north-dakota-constitution
+    version: 2015-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author.
+- aspect: judicial-selection
+  value: Elected reservation-wide or at large
+  quote: to a reservation-wide or at large election. The candidate receiving the most
+  source: constitution-turtle-mountain-band-of-chippewa-indians-of-north-dakota-2015-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2015'
+  locator: Article XIV, Section 4
+  document_version:
+    document: turtle-mountain-band-of-chippewa-indians-of-north-dakota-constitution
+    version: 2015-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author.
+- aspect: judicial-term
+  value: 4 years
+  quote: other judges and Chief Clerk of Court shall be four years.
+  source: constitution-turtle-mountain-band-of-chippewa-indians-of-north-dakota-2015-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2015'
+  locator: Article XIV, Section 4(e)
+  document_version:
+    document: turtle-mountain-band-of-chippewa-indians-of-north-dakota-constitution
+    version: 2015-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author.
+- aspect: judicial-independence
+  value: Impeachment only for cause, after due process
+  quote: impeachment based only upon cause, as developed by the Judicial Board,
+  source: constitution-turtle-mountain-band-of-chippewa-indians-of-north-dakota-2015-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2015'
+  locator: Article XIV, Section 5(a)
+  document_version:
+    document: turtle-mountain-band-of-chippewa-indians-of-north-dakota-constitution
+    version: 2015-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author.
+- aspect: amendment
+  value: Majority vote of qualified voters at an election
+  quote: This Constitution and Bylaws may be amended by a majority of the
+  source: constitution-turtle-mountain-band-of-chippewa-indians-of-north-dakota-2015-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2015'
+  locator: Article XIII, Section 1
+  document_version:
+    document: turtle-mountain-band-of-chippewa-indians-of-north-dakota-constitution
+    version: 2015-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author.
+- aspect: secretarial-approval
+  value: Required for amendments
+  quote: no amendment shall become effective until it shall have been approved by the
+  source: constitution-turtle-mountain-band-of-chippewa-indians-of-north-dakota-2015-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2015'
+  locator: Article XIII, Section 1
+  document_version:
+    document: turtle-mountain-band-of-chippewa-indians-of-north-dakota-constitution
+    version: 2015-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author.
+- aspect: recall-and-removal
+  value: Automatic removal on felony conviction
+  quote: Conviction of a felony is grounds for automatic
+  source: constitution-turtle-mountain-band-of-chippewa-indians-of-north-dakota-2015-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2015'
+  locator: Article VIII, Section 2
+  document_version:
+    document: turtle-mountain-band-of-chippewa-indians-of-north-dakota-constitution
+    version: 2015-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author.
+- aspect: recall-and-removal
+  value: Recall grounds and procedure set by Council ordinance
+  quote: The Tribal Council shall enact ordinances which shall prescribe
+  source: constitution-turtle-mountain-band-of-chippewa-indians-of-north-dakota-2015-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2015'
+  locator: Article VIII, Section 2
+  document_version:
+    document: turtle-mountain-band-of-chippewa-indians-of-north-dakota-constitution
+    version: 2015-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author.
+- aspect: other
+  value: Referendum on petition of 20% of resident voters or 5 Council votes
+  quote: Upon receipt of a petition by twenty percent (20%) of the resident
+  source: constitution-turtle-mountain-band-of-chippewa-indians-of-north-dakota-2015-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2015'
+  locator: Article VIII, Section 1
+  document_version:
+    document: turtle-mountain-band-of-chippewa-indians-of-north-dakota-constitution
+    version: 2015-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author.
 governing_documents:
 - kind: constitution
   title: Constitution and By-laws of the Turtle Mountain Band of Chippewa Indians, Belcourt, North Dakota

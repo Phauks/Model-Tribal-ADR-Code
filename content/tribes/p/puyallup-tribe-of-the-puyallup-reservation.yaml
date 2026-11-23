@@ -199,6 +199,219 @@ government_structure:
   as_of: '1936'
   locator: preamble / approval and certification of adoption
   note: Historical constitution; a later constitution may have replaced it.
+governance:
+- aspect: form
+  value: Constitution under Indian Reorganization Act of June 18, 1934
+  quote: the Indian Reorganization Act of June 18, 1934, do hereby form an authorized
+  source: university-of-oklahoma-indian-reorganization-act-puycons
+  confidence: medium
+  verification: read-in-full
+  as_of: '1936-03-11'
+  locator: Preamble
+  document_version:
+    document: puyallup-tribe-of-the-puyallup-reservation-constitution
+    version: 1936-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+- aspect: governing-body
+  value: Puyallup tribal council
+  quote: shall be the Puyallup tribal council.
+  source: university-of-oklahoma-indian-reorganization-act-puycons
+  confidence: medium
+  verification: read-in-full
+  as_of: '1936-03-11'
+  locator: Article III, Section 1
+  document_version:
+    document: puyallup-tribe-of-the-puyallup-reservation-constitution
+    version: 1936-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+- aspect: governing-body-size
+  value: 5 members
+  quote: This council shall consist of five members,
+  source: university-of-oklahoma-indian-reorganization-act-puycons
+  confidence: medium
+  verification: read-in-full
+  as_of: '1936-03-11'
+  locator: Article III, Section 2
+  document_version:
+    document: puyallup-tribe-of-the-puyallup-reservation-constitution
+    version: 1936-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+- aspect: governing-body-selection
+  value: Elected by the tribal voters
+  quote: duly elected to serve 3 years, two members being elected each year except
+  source: university-of-oklahoma-indian-reorganization-act-puycons
+  confidence: medium
+  verification: read-in-full
+  as_of: '1936-03-11'
+  locator: Article III, Section 2
+  document_version:
+    document: puyallup-tribe-of-the-puyallup-reservation-constitution
+    version: 1936-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+- aspect: governing-body-term
+  value: 3 years, staggered (one seat every third year)
+  quote: duly elected to serve 3 years, two members being elected each year except
+  source: university-of-oklahoma-indian-reorganization-act-puycons
+  confidence: medium
+  verification: read-in-full
+  as_of: '1936-03-11'
+  locator: Article III, Section 2
+  document_version:
+    document: puyallup-tribe-of-the-puyallup-reservation-constitution
+    version: 1936-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+- aspect: head-of-government
+  value: Chairman
+  quote: within its own number, (1) a chairman; (2) a vice chairman; and from within
+  source: university-of-oklahoma-indian-reorganization-act-puycons
+  confidence: medium
+  verification: read-in-full
+  as_of: '1936-03-11'
+  locator: Article III, Section 3
+  document_version:
+    document: puyallup-tribe-of-the-puyallup-reservation-constitution
+    version: 1936-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+- aspect: head-of-government
+  value: Chairperson
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  verification: bulk-import
+  as_of: '2026-11-20'
+  locator: Puyallup Tribe of the Puyallup Reservation
+  note: The title of the leader's office as the federal directory lists it; the holder's name is not recorded. Listed as “Chairman”; recorded without the holder's own form of the title.
+- aspect: head-of-government-selection
+  value: Chosen by the council from its own number
+  quote: The council so organized shall elect from
+  source: university-of-oklahoma-indian-reorganization-act-puycons
+  confidence: medium
+  verification: read-in-full
+  as_of: '1936-03-11'
+  locator: Article III, Section 3
+  document_version:
+    document: puyallup-tribe-of-the-puyallup-reservation-constitution
+    version: 1936-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+- aspect: other-officers
+  value: Vice chairman, secretary, treasurer
+  quote: (3) a secretary, and (4) a treasurer
+  source: university-of-oklahoma-indian-reorganization-act-puycons
+  confidence: medium
+  verification: read-in-full
+  as_of: '1936-03-11'
+  locator: Article III, Section 3
+  document_version:
+    document: puyallup-tribe-of-the-puyallup-reservation-constitution
+    version: 1936-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+- aspect: elections
+  value: Staggered, called at least 60 days before terms expire
+  quote: the tribal council shall be called at least 60 days prior to expiration
+  source: university-of-oklahoma-indian-reorganization-act-puycons
+  confidence: medium
+  verification: read-in-full
+  as_of: '1936-03-11'
+  locator: Article III, Section 4
+  document_version:
+    document: puyallup-tribe-of-the-puyallup-reservation-constitution
+    version: 1936-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+- aspect: voting-age
+  value: '21'
+  quote: All members of the Puyallup Tribe, 21
+  source: university-of-oklahoma-indian-reorganization-act-puycons
+  confidence: medium
+  verification: read-in-full
+  as_of: '1936-03-11'
+  locator: Article IV, Section 1
+  document_version:
+    document: puyallup-tribe-of-the-puyallup-reservation-constitution
+    version: 1936-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+- aspect: election-authority
+  value: Tribal council
+  quote: All elections shall be held according to
+  source: university-of-oklahoma-indian-reorganization-act-puycons
+  confidence: medium
+  verification: read-in-full
+  as_of: '1936-03-11'
+  locator: Article IV, Section 5
+  document_version:
+    document: puyallup-tribe-of-the-puyallup-reservation-constitution
+    version: 1936-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+- aspect: judiciary
+  value: Reservation court (council may establish by ordinance)
+  quote: of law and order and the administration of justice by establishing a reservation
+  source: university-of-oklahoma-indian-reorganization-act-puycons
+  confidence: medium
+  verification: read-in-full
+  as_of: '1936-03-11'
+  locator: Article VI, Section 1(k)
+  document_version:
+    document: puyallup-tribe-of-the-puyallup-reservation-constitution
+    version: 1936-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+- aspect: amendment
+  value: Majority vote at Secretarial election (30% turnout), same as ratification
+  quote: ratified and approved in the same manner as this constitution and bylaws.
+  source: university-of-oklahoma-indian-reorganization-act-puycons
+  confidence: medium
+  verification: read-in-full
+  as_of: '1936-03-11'
+  locator: Article X
+  document_version:
+    document: puyallup-tribe-of-the-puyallup-reservation-constitution
+    version: 1936-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+- aspect: secretarial-approval
+  value: Required for amendments
+  quote: Secretary of the Interior and if approved shall become effective.
+  source: university-of-oklahoma-indian-reorganization-act-puycons
+  confidence: medium
+  verification: read-in-full
+  as_of: '1936-03-11'
+  locator: Article X
+  document_version:
+    document: puyallup-tribe-of-the-puyallup-reservation-constitution
+    version: 1936-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+- aspect: recall-and-removal
+  value: Recall by petition of one-third of eligible voters
+  quote: Upon a petition of at least one-third of
+  source: university-of-oklahoma-indian-reorganization-act-puycons
+  confidence: medium
+  verification: read-in-full
+  as_of: '1936-03-11'
+  locator: Article V, Section 3
+  document_version:
+    document: puyallup-tribe-of-the-puyallup-reservation-constitution
+    version: 1936-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+- aspect: recall-and-removal
+  value: Expulsion by two-thirds vote of council
+  quote: The tribal council may by a two-thirds vote
+  source: university-of-oklahoma-indian-reorganization-act-puycons
+  confidence: medium
+  verification: read-in-full
+  as_of: '1936-03-11'
+  locator: Article V, Section 2
+  document_version:
+    document: puyallup-tribe-of-the-puyallup-reservation-constitution
+    version: 1936-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+- aspect: other
+  value: Referendum on council ordinances (one-third petition or council request)
+  quote: of the eligible voters of the Puyallup Tribe, or upon the request of a
+  source: university-of-oklahoma-indian-reorganization-act-puycons
+  confidence: medium
+  verification: read-in-full
+  as_of: '1936-03-11'
+  locator: Article VIII, Section 1
+  document_version:
+    document: puyallup-tribe-of-the-puyallup-reservation-constitution
+    version: 1936-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
 governing_documents:
 - kind: law-code
   title: Puyallup Tribe of the Puyallup Reservation

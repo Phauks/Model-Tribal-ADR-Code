@@ -233,6 +233,180 @@ indian_health_service:
   as_of: '2026-11-23'
   locator: list of Tribes
   note: Listed as "Comanche Tribe of Oklahoma". The Direct Service Tribes list says some Tribes have a mixed Indian Health Service and Tribal arrangement.
+governance:
+- aspect: form
+  value: Constitution approved by Commissioner of Indian Affairs
+  quote: approve the foregoing Constitution of the Comanche Indian Tribe.
+  source: constitution-comanche-nation-undated-text
+  confidence: medium
+  verification: read-in-full
+  locator: Approval
+  document_version:
+    document: comanche-nation-constitution
+    version: undated-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Text is the 1966 constitution with amendments through 1985, heavily garbled by OCR; the Amendment XVII ratification date conflicts (1979 certificate versus 1981 note).'
+- aspect: governing-body
+  value: Comanche Tribal Council
+  quote: The supreme governing body of this organization shall be the Comanche
+  source: constitution-comanche-nation-undated-text
+  confidence: medium
+  verification: read-in-full
+  locator: Article IV, Section 1
+  document_version:
+    document: comanche-nation-constitution
+    version: undated-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Text is the 1966 constitution with amendments through 1985, heavily garbled by OCR; the Amendment XVII ratification date conflicts (1979 certificate versus 1981 note).'
+- aspect: governing-body
+  value: Comanche Business Committee
+  quote: In addition to the tribal council, there shall be elected a Comanche
+  source: constitution-comanche-nation-undated-text
+  confidence: medium
+  verification: read-in-full
+  locator: Article IV, Section 2
+  document_version:
+    document: comanche-nation-constitution
+    version: undated-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Text is the 1966 constitution with amendments through 1985, heavily garbled by OCR; the Amendment XVII ratification date conflicts (1979 certificate versus 1981 note).'
+- aspect: governing-body-size
+  value: 7 members
+  quote: The Comanche Business Committee shall be composed of seven (7)
+  source: constitution-comanche-nation-undated-text
+  confidence: medium
+  verification: read-in-full
+  locator: Article VI, Section 1
+  document_version:
+    document: comanche-nation-constitution
+    version: undated-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Text is the 1966 constitution with amendments through 1985, heavily garbled by OCR; the Amendment XVII ratification date conflicts (1979 certificate versus 1981 note).'
+- aspect: governing-body-selection
+  value: Elected by secret ballot
+  quote: sommitteemen and officers shall be by secret ballot.
+  source: constitution-comanche-nation-undated-text
+  confidence: medium
+  verification: read-in-full
+  locator: Article VII, Section 1(d)
+  document_version:
+    document: comanche-nation-constitution
+    version: undated-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Text is the 1966 constitution with amendments through 1985, heavily garbled by OCR; the Amendment XVII ratification date conflicts (1979 certificate versus 1981 note).'
+- aspect: governing-body-term
+  value: 3 years
+  quote: all terms of office shall be for a period of three years or until
+  source: constitution-comanche-nation-undated-text
+  confidence: medium
+  verification: read-in-full
+  locator: Article VII, Section 1(b)
+  document_version:
+    document: comanche-nation-constitution
+    version: undated-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Text is the 1966 constitution with amendments through 1985, heavily garbled by OCR; the Amendment XVII ratification date conflicts (1979 certificate versus 1981 note).'
+- aspect: general-council
+  value: All members 18 or older
+  quote: The Tribal Council shall consist of all members of the Comanche
+  source: constitution-comanche-nation-undated-text
+  confidence: medium
+  verification: read-in-full
+  locator: Article V, Section 1
+  document_version:
+    document: comanche-nation-constitution
+    version: undated-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Text is the 1966 constitution with amendments through 1985, heavily garbled by OCR; the Amendment XVII ratification date conflicts (1979 certificate versus 1981 note).'
+- aspect: head-of-government
+  value: Tribal chairman
+  quote: The chairman shall be the chief executive of the Comanche Indian
+  source: constitution-comanche-nation-undated-text
+  confidence: medium
+  verification: read-in-full
+  locator: Article XII, Section 1
+  document_version:
+    document: comanche-nation-constitution
+    version: undated-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Text is the 1966 constitution with amendments through 1985, heavily garbled by OCR; the Amendment XVII ratification date conflicts (1979 certificate versus 1981 note).'
+- aspect: head-of-government
+  value: Chairperson
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  verification: bulk-import
+  as_of: '2026-11-20'
+  locator: Comanche Nation, Oklahoma
+  note: The title of the leader's office as the federal directory lists it; the holder's name is not recorded. Listed as “Chairman”; recorded without the holder's own form of the title.
+- aspect: head-of-government-selection
+  value: Elected by secret ballot
+  quote: sommitteemen and officers shall be by secret ballot.
+  source: constitution-comanche-nation-undated-text
+  confidence: medium
+  verification: read-in-full
+  locator: Article VII, Section 1(d)
+  document_version:
+    document: comanche-nation-constitution
+    version: undated-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Text is the 1966 constitution with amendments through 1985, heavily garbled by OCR; the Amendment XVII ratification date conflicts (1979 certificate versus 1981 note).'
+- aspect: head-of-government-term
+  value: 3 years
+  quote: all terms of office shall be for a period of three years or until
+  source: constitution-comanche-nation-undated-text
+  confidence: medium
+  verification: read-in-full
+  locator: Article VII, Section 1(b)
+  document_version:
+    document: comanche-nation-constitution
+    version: undated-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Text is the 1966 constitution with amendments through 1985, heavily garbled by OCR; the Amendment XVII ratification date conflicts (1979 certificate versus 1981 note).'
+- aspect: other-officers
+  value: Vice-chairman, Secretary-treasurer
+  quote: man, a tribal vice-chairman, and a tribal secretary-treasurer.
+  source: constitution-comanche-nation-undated-text
+  confidence: medium
+  verification: read-in-full
+  locator: Article IV, Section 3
+  document_version:
+    document: comanche-nation-constitution
+    version: undated-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Text is the 1966 constitution with amendments through 1985, heavily garbled by OCR; the Amendment XVII ratification date conflicts (1979 certificate versus 1981 note).'
+- aspect: elections
+  value: Annually at the April tribal council meeting
+  quote: At each annual Comanche Tribal Council meeting subsequent to the
+  source: constitution-comanche-nation-undated-text
+  confidence: medium
+  verification: read-in-full
+  locator: Article VII, Section 2
+  document_version:
+    document: comanche-nation-constitution
+    version: undated-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Text is the 1966 constitution with amendments through 1985, heavily garbled by OCR; the Amendment XVII ratification date conflicts (1979 certificate versus 1981 note).'
+- aspect: voting-age
+  value: '18'
+  quote: Amendment I - changed age for voting to 18 years
+  source: constitution-comanche-nation-undated-text
+  confidence: medium
+  verification: read-in-full
+  locator: Amendment I (history note)
+  document_version:
+    document: comanche-nation-constitution
+    version: undated-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Text is the 1966 constitution with amendments through 1985, heavily garbled by OCR; the Amendment XVII ratification date conflicts (1979 certificate versus 1981 note).'
+- aspect: amendment
+  value: Majority of those voting in election called by Commissioner
+  quote: and shall become effective when ratified by a majority vote of those who cast
+  source: constitution-comanche-nation-undated-text
+  confidence: medium
+  verification: read-in-full
+  locator: Article XI, Section 1
+  document_version:
+    document: comanche-nation-constitution
+    version: undated-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Text is the 1966 constitution with amendments through 1985, heavily garbled by OCR; the Amendment XVII ratification date conflicts (1979 certificate versus 1981 note).'
+- aspect: recall-and-removal
+  value: Recall by Council vote after petition of 200 voters
+  quote: unless a petition signed by two hundred (200) eligible voters
+  source: constitution-comanche-nation-undated-text
+  confidence: medium
+  verification: read-in-full
+  locator: Article VIII, Section 2
+  document_version:
+    document: comanche-nation-constitution
+    version: undated-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Text is the 1966 constitution with amendments through 1985, heavily garbled by OCR; the Amendment XVII ratification date conflicts (1979 certificate versus 1981 note).'
 governing_documents:
 - kind: law-code
   title: Comanche Nation, Oklahoma

@@ -189,6 +189,169 @@ indian_health_service:
   as_of: '2026-11-23'
   locator: Direct Service Tribes by IHS Area > Billings Area
   note: Listed as "Shoshone Business Council". The Direct Service Tribes list says some Tribes have a mixed Indian Health Service and Tribal arrangement.
+governance:
+- aspect: form
+  value: Constitution and By-laws
+  quote: CONSTITUTION AND BY-LAWb FOR GOVERNING THE
+  source: constitution-eastern-shoshone-tribe-of-the-wind-river-reservation-1938-text-2
+  confidence: medium
+  verification: read-in-full
+  as_of: '1938-09-27'
+  document_version:
+    document: eastern-shoshone-tribe-of-the-wind-river-reservation-constitution
+    version: 1938-text-2
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Heavily garbled scan; facts are limited to legible passages and quotes keep OCR errors as printed.'
+- aspect: governing-body
+  value: Shoshone and Arapahoe Business Council
+  quote: known fit the Shoshone and Arapahoe Business Council.
+  source: constitution-eastern-shoshone-tribe-of-the-wind-river-reservation-1938-text-2
+  confidence: medium
+  verification: read-in-full
+  as_of: '1938-09-27'
+  document_version:
+    document: eastern-shoshone-tribe-of-the-wind-river-reservation-constitution
+    version: 1938-text-2
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Heavily garbled scan; facts are limited to legible passages and quotes keep OCR errors as printed.'
+- aspect: governing-body-size
+  value: 6 members from each tribe
+  quote: Council is to consist of six members duly
+  source: constitution-eastern-shoshone-tribe-of-the-wind-river-reservation-1938-text-2
+  confidence: medium
+  verification: read-in-full
+  as_of: '1938-09-27'
+  locator: Section I, A
+  document_version:
+    document: eastern-shoshone-tribe-of-the-wind-river-reservation-constitution
+    version: 1938-text-2
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Heavily garbled scan; facts are limited to legible passages and quotes keep OCR errors as printed.'
+- aspect: governing-body-selection
+  value: Elected from their respective tribes
+  quote: The Council members shall be elected
+  source: constitution-eastern-shoshone-tribe-of-the-wind-river-reservation-1938-text-2
+  confidence: medium
+  verification: read-in-full
+  as_of: '1938-09-27'
+  locator: Section I, A
+  document_version:
+    document: eastern-shoshone-tribe-of-the-wind-river-reservation-constitution
+    version: 1938-text-2
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Heavily garbled scan; facts are limited to legible passages and quotes keep OCR errors as printed.'
+- aspect: governing-body-term
+  value: 2 years
+  quote: tribe to aerve for a tern of two years on tha
+  source: constitution-eastern-shoshone-tribe-of-the-wind-river-reservation-1938-text-2
+  confidence: medium
+  verification: read-in-full
+  as_of: '1938-09-27'
+  locator: Section II
+  document_version:
+    document: eastern-shoshone-tribe-of-the-wind-river-reservation-constitution
+    version: 1938-text-2
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Heavily garbled scan; facts are limited to legible passages and quotes keep OCR errors as printed.'
+- aspect: head-of-government
+  value: Chairman (of the joint councils)
+  quote: man of the joint councils may call special
+  source: constitution-eastern-shoshone-tribe-of-the-wind-river-reservation-1938-text-2
+  confidence: medium
+  verification: read-in-full
+  as_of: '1938-09-27'
+  locator: Section I, B
+  document_version:
+    document: eastern-shoshone-tribe-of-the-wind-river-reservation-constitution
+    version: 1938-text-2
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Heavily garbled scan; facts are limited to legible passages and quotes keep OCR errors as printed.'
+- aspect: head-of-government
+  value: Chairperson
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  verification: bulk-import
+  as_of: '2026-11-20'
+  locator: Eastern Shoshone Tribe of the Wind River Reservation, Wyoming
+  note: The title of the leader's office as the federal directory lists it; the holder's name is not recorded. Listed as “Chairman”; recorded without the holder's own form of the title.
+- aspect: head-of-government-selection
+  value: Chosen by secret ballot by the council members of each tribe
+  quote: Council members of each tribe ere to elect
+  source: constitution-eastern-shoshone-tribe-of-the-wind-river-reservation-1938-text-2
+  confidence: medium
+  verification: read-in-full
+  as_of: '1938-09-27'
+  locator: Section I, B
+  document_version:
+    document: eastern-shoshone-tribe-of-the-wind-river-reservation-constitution
+    version: 1938-text-2
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Heavily garbled scan; facts are limited to legible passages and quotes keep OCR errors as printed.'
+- aspect: head-of-government-term
+  value: 6 months, eligible for reelection
+  quote: (6) months, after
+  source: constitution-eastern-shoshone-tribe-of-the-wind-river-reservation-1938-text-2
+  confidence: medium
+  verification: read-in-full
+  as_of: '1938-09-27'
+  locator: Section I, B
+  document_version:
+    document: eastern-shoshone-tribe-of-the-wind-river-reservation-constitution
+    version: 1938-text-2
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Heavily garbled scan; facts are limited to legible passages and quotes keep OCR errors as printed.'
+- aspect: elections
+  value: Every 2 years, second Monday in November
+  quote: General elections will be held on the second Monday
+  source: constitution-eastern-shoshone-tribe-of-the-wind-river-reservation-1938-text-2
+  confidence: medium
+  verification: read-in-full
+  as_of: '1938-09-27'
+  locator: Section II
+  document_version:
+    document: eastern-shoshone-tribe-of-the-wind-river-reservation-constitution
+    version: 1938-text-2
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Heavily garbled scan; facts are limited to legible passages and quotes keep OCR errors as printed.'
+- aspect: voting-age
+  value: '21'
+  quote: Arapahoe tribes of this reservation and over the age of twenty-
+  source: constitution-eastern-shoshone-tribe-of-the-wind-river-reservation-1938-text-2
+  confidence: medium
+  verification: read-in-full
+  as_of: '1938-09-27'
+  locator: Section II
+  document_version:
+    document: eastern-shoshone-tribe-of-the-wind-river-reservation-constitution
+    version: 1938-text-2
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Heavily garbled scan; facts are limited to legible passages and quotes keep OCR errors as printed.'
+- aspect: election-authority
+  value: District Farmers of the U.S. Indian Service presiding over precincts
+  quote: Eech election precinct shell be presided over by the
+  source: constitution-eastern-shoshone-tribe-of-the-wind-river-reservation-1938-text-2
+  confidence: medium
+  verification: read-in-full
+  as_of: '1938-09-27'
+  locator: Section II
+  document_version:
+    document: eastern-shoshone-tribe-of-the-wind-river-reservation-constitution
+    version: 1938-text-2
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Heavily garbled scan; facts are limited to legible passages and quotes keep OCR errors as printed.'
+- aspect: amendment
+  value: Two-thirds of Business Council in joint session, or petition of 25% of qualified voters
+  quote: Amendments to this Constitution nay be proposed by two-third (2/3)
+  source: constitution-eastern-shoshone-tribe-of-the-wind-river-reservation-1938-text-2
+  confidence: medium
+  verification: read-in-full
+  as_of: '1938-09-27'
+  locator: Section IV
+  document_version:
+    document: eastern-shoshone-tribe-of-the-wind-river-reservation-constitution
+    version: 1938-text-2
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Heavily garbled scan; facts are limited to legible passages and quotes keep OCR errors as printed.'
+- aspect: recall-and-removal
+  value: Dismissal by majority vote of the member's council at a joint meeting, for law violations or misconduct
+  quote: By a majority vote of the members of his
+  source: constitution-eastern-shoshone-tribe-of-the-wind-river-reservation-1938-text-2
+  confidence: medium
+  verification: read-in-full
+  as_of: '1938-09-27'
+  locator: Section I, A
+  document_version:
+    document: eastern-shoshone-tribe-of-the-wind-river-reservation-constitution
+    version: 1938-text-2
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Heavily garbled scan; facts are limited to legible passages and quotes keep OCR errors as printed.'
 governing_documents:
 - kind: law-code
   title: The Law and Order Code of the Shoshone and Arapaho Tribes of the Wind River Indian Reservation,

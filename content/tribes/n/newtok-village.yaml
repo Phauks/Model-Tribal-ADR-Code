@@ -168,6 +168,169 @@ indian_health_service:
   locator: '"Federally Recognized Tribes" list, Yukon-Kuskokwim Delta Service Area profile'
   note: 'The source''s words: "Newtok Village".'
   operator: tribal
+governance:
+- aspect: form
+  value: Traditional Constitution under inherent sovereign authority
+  quote: under the inherent sovereign authority of our Newtok Traditional Council Newtok,
+  source: constitution-newtok-village-undated-text
+  confidence: medium
+  verification: read-in-full
+  locator: Preamble
+  document_version:
+    document: newtok-village-constitution
+    version: undated-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Undated; the certification of election results and several article numbers are garbled in the scan.'
+- aspect: governing-body
+  value: Newtok Traditional Council
+  quote: The governing body of the Newtok Traditional Council Village shall be
+  source: constitution-newtok-village-undated-text
+  confidence: medium
+  verification: read-in-full
+  locator: Article IV, Section I
+  document_version:
+    document: newtok-village-constitution
+    version: undated-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Undated; the certification of election results and several article numbers are garbled in the scan.'
+- aspect: governing-body-size
+  value: 7 members
+  quote: The Newtok Traditional Council shall have (7) seven members
+  source: constitution-newtok-village-undated-text
+  confidence: medium
+  verification: read-in-full
+  locator: Article IV, Section II
+  document_version:
+    document: newtok-village-constitution
+    version: undated-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Undated; the certification of election results and several article numbers are garbled in the scan.'
+- aspect: governing-body-selection
+  value: Elected by majority vote of qualified voters
+  quote: who shall be elected by the majority vote of the qualified voters casting their ballots in
+  source: constitution-newtok-village-undated-text
+  confidence: medium
+  verification: read-in-full
+  locator: Article IV, Section II
+  document_version:
+    document: newtok-village-constitution
+    version: undated-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Undated; the certification of election results and several article numbers are garbled in the scan.'
+- aspect: governing-body-term
+  value: 3 years (president and vice-president); 2 years (others)
+  quote: Newtok Traditional Council members shall hold office for
+  source: constitution-newtok-village-undated-text
+  confidence: medium
+  verification: read-in-full
+  locator: Article IV, Section VI
+  document_version:
+    document: newtok-village-constitution
+    version: undated-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Undated; the certification of election results and several article numbers are garbled in the scan.'
+- aspect: head-of-government
+  value: President
+  quote: The President will be at all meetings of the Council and at the
+  source: constitution-newtok-village-undated-text
+  confidence: medium
+  verification: read-in-full
+  locator: Article V, Section II
+  document_version:
+    document: newtok-village-constitution
+    version: undated-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Undated; the certification of election results and several article numbers are garbled in the scan.'
+- aspect: head-of-government
+  value: President
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  verification: bulk-import
+  as_of: '2026-11-20'
+  locator: Newtok Village
+  note: The title of the leader's office as the federal directory lists it; the holder's name is not recorded.
+- aspect: head-of-government-selection
+  value: Elected by the Newtok Traditional Village membership
+  quote: The President and vice- president will be elected by the
+  source: constitution-newtok-village-undated-text
+  confidence: medium
+  verification: read-in-full
+  locator: Article IV, Section III
+  document_version:
+    document: newtok-village-constitution
+    version: undated-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Undated; the certification of election results and several article numbers are garbled in the scan.'
+- aspect: other-officers
+  value: Vice-president, Secretary/Treasurer
+  quote: The officers of the Council shall include President, vice-president,
+  source: constitution-newtok-village-undated-text
+  confidence: medium
+  verification: read-in-full
+  locator: Article IV, Section III
+  document_version:
+    document: newtok-village-constitution
+    version: undated-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Undated; the certification of election results and several article numbers are garbled in the scan.'
+- aspect: elections
+  value: Held in October
+  quote: 'Council positions shall be held in month of October in Newtok Village:'
+  source: constitution-newtok-village-undated-text
+  confidence: medium
+  verification: read-in-full
+  locator: Article VIII, Section III
+  document_version:
+    document: newtok-village-constitution
+    version: undated-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Undated; the certification of election results and several article numbers are garbled in the scan.'
+- aspect: voting-age
+  value: '18'
+  quote: who is eighteen (18) years of age or older, who is currently resides in Newtok
+  source: constitution-newtok-village-undated-text
+  confidence: medium
+  verification: read-in-full
+  locator: Article VIII, Section I
+  document_version:
+    document: newtok-village-constitution
+    version: undated-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Undated; the certification of election results and several article numbers are garbled in the scan.'
+- aspect: judiciary
+  value: Newtok Traditional Courts or other judicial bodies (Council power)
+  quote: including the establishment of Newtok Traditional
+  source: constitution-newtok-village-undated-text
+  confidence: medium
+  verification: read-in-full
+  locator: Article VIIII, Section III, j
+  document_version:
+    document: newtok-village-constitution
+    version: undated-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Undated; the certification of election results and several article numbers are garbled in the scan.'
+- aspect: amendment
+  value: Majority vote of qualified voters in election
+  quote: This Constitution may be amended by a majority vote of the qualified voters of Newtok
+  source: constitution-newtok-village-undated-text
+  confidence: medium
+  verification: read-in-full
+  locator: Article XIV
+  document_version:
+    document: newtok-village-constitution
+    version: undated-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Undated; the certification of election results and several article numbers are garbled in the scan.'
+- aspect: recall-and-removal
+  value: Removal by Council for misconduct, dishonesty or 3 unexcused absences
+  quote: Newtok Traditional Council shall have a power to remove any
+  source: constitution-newtok-village-undated-text
+  confidence: medium
+  verification: read-in-full
+  locator: Article VII, Section I
+  document_version:
+    document: newtok-village-constitution
+    version: undated-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Undated; the certification of election results and several article numbers are garbled in the scan.'
+- aspect: recall-and-removal
+  value: Recall by majority vote of Newtok Village members at a public meeting
+  quote: Any member of the Newtok Traditional Council may be recall by the
+  source: constitution-newtok-village-undated-text
+  confidence: medium
+  verification: read-in-full
+  locator: Article VII, Section II
+  document_version:
+    document: newtok-village-constitution
+    version: undated-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Undated; the certification of election results and several article numbers are garbled in the scan.'
 governing_documents:
 - kind: law-code
   title: Climate change resolution

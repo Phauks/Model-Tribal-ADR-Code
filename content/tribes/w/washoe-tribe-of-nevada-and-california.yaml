@@ -282,6 +282,219 @@ government_structure:
   as_of: '1936'
   locator: preamble / approval and certification of adoption
   note: Historical constitution; a later constitution may have replaced it.
+governance:
+- aspect: form
+  value: Constitution and bylaws pursuant to the Indian Reorganization Act of June 18, 1934
+  quote: constitution and bylaws pursuant to the Indian Reorganization Act of June 18,
+  source: constitution-washoe-tribe-of-nevada-and-california-1990-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1990-06-23'
+  locator: Preamble
+  document_version:
+    document: washoe-tribe-of-nevada-and-california-constitution
+    version: 1990-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Text is the 1990 constitution and bylaws as adopted, with no later amendments, though the label says as amended; the certificate vote counts are garbled.'
+- aspect: governing-body
+  value: Washoe Tribal Council
+  quote: council known as the Washoe Tribal Council.
+  source: constitution-washoe-tribe-of-nevada-and-california-1990-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1990-06-23'
+  locator: Article III, Section 1
+  document_version:
+    document: washoe-tribe-of-nevada-and-california-constitution
+    version: 1990-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Text is the 1990 constitution and bylaws as adopted, with no later amendments, though the label says as amended; the certificate vote counts are garbled.'
+- aspect: governing-body-size
+  value: 12 members
+  quote: be composed of twelve (12) council members, which includes a Chairman elected
+  source: constitution-washoe-tribe-of-nevada-and-california-1990-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1990-06-23'
+  locator: Article III, Section 1
+  document_version:
+    document: washoe-tribe-of-nevada-and-california-constitution
+    version: 1990-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Text is the 1990 constitution and bylaws as adopted, with no later amendments, though the label says as amended; the certificate vote counts are garbled.'
+- aspect: governing-body-selection
+  value: 'Mixed: voters, community councils and colony residents'
+  quote: Section 3 . Within thirty (30) days after the election of community councils,
+  source: constitution-washoe-tribe-of-nevada-and-california-1990-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1990-06-23'
+  locator: Article III, Section 3
+  document_version:
+    document: washoe-tribe-of-nevada-and-california-constitution
+    version: 1990-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Text is the 1990 constitution and bylaws as adopted, with no later amendments, though the label says as amended; the certificate vote counts are garbled.'
+- aspect: governing-body-term
+  value: 4 years
+  quote: council members, shell hold office for a term of four (4) years or until the
+  source: constitution-washoe-tribe-of-nevada-and-california-1990-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1990-06-23'
+  locator: Article III, Section 4
+  document_version:
+    document: washoe-tribe-of-nevada-and-california-constitution
+    version: 1990-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Text is the 1990 constitution and bylaws as adopted, with no later amendments, though the label says as amended; the certificate vote counts are garbled.'
+- aspect: head-of-government
+  value: Chairman
+  quote: Section 1 . The Chairman of the Washoe Tribal Council shall preside over all
+  source: constitution-washoe-tribe-of-nevada-and-california-1990-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1990-06-23'
+  locator: Bylaws, Article I, Section 1
+  document_version:
+    document: washoe-tribe-of-nevada-and-california-constitution
+    version: 1990-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Text is the 1990 constitution and bylaws as adopted, with no later amendments, though the label says as amended; the certificate vote counts are garbled.'
+- aspect: head-of-government
+  value: Chairperson
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  verification: bulk-import
+  as_of: '2026-11-20'
+  locator: Washoe Tribe of Nevada & California (Carson Colony, Dresslerville Colony, Woodfords Community, Stewart Community, & Washoe Ranches)
+  note: The title of the leader's office as the federal directory lists it; the holder's name is not recorded. Listed as “Chairman”; recorded without the holder's own form of the title.
+- aspect: head-of-government-selection
+  value: Elected by the eligible voters
+  quote: by the eligible voters of the tribe. The Vice-Chairman shall be elected by
+  source: constitution-washoe-tribe-of-nevada-and-california-1990-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1990-06-23'
+  locator: Article III, Section 1
+  document_version:
+    document: washoe-tribe-of-nevada-and-california-constitution
+    version: 1990-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Text is the 1990 constitution and bylaws as adopted, with no later amendments, though the label says as amended; the certificate vote counts are garbled.'
+- aspect: head-of-government-term
+  value: 4 years
+  quote: council members, shell hold office for a term of four (4) years or until the
+  source: constitution-washoe-tribe-of-nevada-and-california-1990-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1990-06-23'
+  locator: Article III, Section 4
+  document_version:
+    document: washoe-tribe-of-nevada-and-california-constitution
+    version: 1990-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Text is the 1990 constitution and bylaws as adopted, with no later amendments, though the label says as amended; the certificate vote counts are garbled.'
+- aspect: other-officers
+  value: Vice-Chairman, Secretary-Treasurer
+  quote: council members from within the council membership, and a Secretary-
+  source: constitution-washoe-tribe-of-nevada-and-california-1990-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1990-06-23'
+  locator: Article III, Section 1
+  document_version:
+    document: washoe-tribe-of-nevada-and-california-constitution
+    version: 1990-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Text is the 1990 constitution and bylaws as adopted, with no later amendments, though the label says as amended; the certificate vote counts are garbled.'
+- aspect: elections
+  value: Every 4 years
+  quote: elections shall be held on this same election date every fourth year.
+  source: constitution-washoe-tribe-of-nevada-and-california-1990-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1990-06-23'
+  locator: Article IV, Section 1
+  document_version:
+    document: washoe-tribe-of-nevada-and-california-constitution
+    version: 1990-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Text is the 1990 constitution and bylaws as adopted, with no later amendments, though the label says as amended; the certificate vote counts are garbled.'
+- aspect: voting-age
+  value: '21'
+  quote: Section 2 . All members of the Washoe Tribe, twenty-one (21) years of age or
+  source: constitution-washoe-tribe-of-nevada-and-california-1990-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1990-06-23'
+  locator: Article IV, Section 2
+  document_version:
+    document: washoe-tribe-of-nevada-and-california-constitution
+    version: 1990-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Text is the 1990 constitution and bylaws as adopted, with no later amendments, though the label says as amended; the certificate vote counts are garbled.'
+- aspect: election-authority
+  value: Washoe Tribal Council
+  quote: with an election ordinance enacted by the Washoe Tribal Council. All ensuing
+  source: constitution-washoe-tribe-of-nevada-and-california-1990-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1990-06-23'
+  locator: Article IV, Section 1
+  document_version:
+    document: washoe-tribe-of-nevada-and-california-constitution
+    version: 1990-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Text is the 1990 constitution and bylaws as adopted, with no later amendments, though the label says as amended; the certificate vote counts are garbled.'
+- aspect: amendment
+  value: Majority of qualified voters in election called by Secretary of the Interior
+  quote: Section 1 . This constitution and bylaws may be amended by a majority of the
+  source: constitution-washoe-tribe-of-nevada-and-california-1990-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1990-06-23'
+  locator: Article X, Section 1
+  document_version:
+    document: washoe-tribe-of-nevada-and-california-constitution
+    version: 1990-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Text is the 1990 constitution and bylaws as adopted, with no later amendments, though the label says as amended; the certificate vote counts are garbled.'
+- aspect: secretarial-approval
+  value: Required for amendments
+  quote: amendment shall become effective until it shall have been approved by the
+  source: constitution-washoe-tribe-of-nevada-and-california-1990-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1990-06-23'
+  locator: Article X, Section 1
+  document_version:
+    document: washoe-tribe-of-nevada-and-california-constitution
+    version: 1990-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Text is the 1990 constitution and bylaws as adopted, with no later amendments, though the label says as amended; the certificate vote counts are garbled.'
+- aspect: recall-and-removal
+  value: Removal by two-thirds vote of Council
+  quote: expelled from office by a two-thirds (2/3) vote of the Washoe Tribal Council
+  source: constitution-washoe-tribe-of-nevada-and-california-1990-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1990-06-23'
+  locator: Article V, Section 2
+  document_version:
+    document: washoe-tribe-of-nevada-and-california-constitution
+    version: 1990-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Text is the 1990 constitution and bylaws as adopted, with no later amendments, though the label says as amended; the certificate vote counts are garbled.'
+- aspect: recall-and-removal
+  value: Recall by residents of the colony or community
+  quote: Stewart, may be recalled from the Washoe Tribal Council by the residents of
+  source: constitution-washoe-tribe-of-nevada-and-california-1990-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1990-06-23'
+  locator: Article IX, Section 3(a)
+  document_version:
+    document: washoe-tribe-of-nevada-and-california-constitution
+    version: 1990-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Text is the 1990 constitution and bylaws as adopted, with no later amendments, though the label says as amended; the certificate vote counts are garbled.'
+- aspect: other
+  value: Community councils (local governing bodies)
+  quote: Stewart Communities shall elect local governing bodies which
+  source: constitution-washoe-tribe-of-nevada-and-california-1990-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1990-06-23'
+  locator: Article III, Section 2
+  document_version:
+    document: washoe-tribe-of-nevada-and-california-constitution
+    version: 1990-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Text is the 1990 constitution and bylaws as adopted, with no later amendments, though the label says as amended; the certificate vote counts are garbled.'
 governing_documents:
 - kind: law-code
   title: Washoe Tribe of Nevada & California

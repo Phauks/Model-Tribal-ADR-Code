@@ -203,6 +203,207 @@ government_structure:
   as_of: '1950'
   locator: preamble / approval and certification of adoption
   note: Historical constitution; a later constitution may have replaced it.
+governance:
+- aspect: form
+  value: Constitution pursuant to Oklahoma Indian Welfare Act of June 26, 1936
+  quote: offered by the Oklahoma Indian Welfare Act of June 26, 1936 (49 Stat. 1967), do establish this
+  source: constitution-ponca-tribe-of-indians-of-oklahoma-1950-text-2
+  confidence: high
+  verification: read-in-full
+  as_of: '1950-09-20'
+  locator: Preamble
+  document_version:
+    document: ponca-tribe-of-indians-of-oklahoma-constitution
+    version: 1950-text-2
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author.
+- aspect: governing-body
+  value: Business Committee
+  quote: The governing body of the Ponca Tribe of Indians shall be a Business
+  source: constitution-ponca-tribe-of-indians-of-oklahoma-1950-text-2
+  confidence: high
+  verification: read-in-full
+  as_of: '1950-09-20'
+  locator: Article III, Section 1
+  document_version:
+    document: ponca-tribe-of-indians-of-oklahoma-constitution
+    version: 1950-text-2
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author.
+- aspect: governing-body-size
+  value: 7 members
+  quote: Committee consisting of seven members elected by a vote of the tribal membership.
+  source: constitution-ponca-tribe-of-indians-of-oklahoma-1950-text-2
+  confidence: high
+  verification: read-in-full
+  as_of: '1950-09-20'
+  locator: Article III, Section 1
+  document_version:
+    document: ponca-tribe-of-indians-of-oklahoma-constitution
+    version: 1950-text-2
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author.
+- aspect: governing-body-selection
+  value: Elected by vote of the tribal membership
+  quote: consisting of seven members elected by a vote of the tribal membership.
+  source: constitution-ponca-tribe-of-indians-of-oklahoma-1950-text-2
+  confidence: high
+  verification: read-in-full
+  as_of: '1950-09-20'
+  locator: Article III, Section 1
+  document_version:
+    document: ponca-tribe-of-indians-of-oklahoma-constitution
+    version: 1950-text-2
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author.
+- aspect: governing-body-term
+  value: 4 years
+  quote: each committee member shall be four (4) years from the date of installation of office.
+  source: constitution-ponca-tribe-of-indians-of-oklahoma-1950-text-2
+  confidence: high
+  verification: read-in-full
+  as_of: '1950-09-20'
+  locator: Article III, Section 1
+  document_version:
+    document: ponca-tribe-of-indians-of-oklahoma-constitution
+    version: 1950-text-2
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author.
+- aspect: head-of-government
+  value: Chairman
+  quote: membership (1) a chairman, (2) a vice-chairman
+  source: constitution-ponca-tribe-of-indians-of-oklahoma-1950-text-2
+  confidence: high
+  verification: read-in-full
+  as_of: '1950-09-20'
+  locator: Article III, Section 3
+  document_version:
+    document: ponca-tribe-of-indians-of-oklahoma-constitution
+    version: 1950-text-2
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author.
+- aspect: head-of-government
+  value: Chairperson
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  verification: bulk-import
+  as_of: '2026-11-20'
+  locator: Ponca Tribe of Indians of Oklahoma
+  note: The title of the leader's office as the federal directory lists it; the holder's name is not recorded. Listed as “Chairman”; recorded without the holder's own form of the title.
+- aspect: head-of-government-selection
+  value: Elected by the Business Committee from its own membership
+  quote: The Business Committee so organized shall elect from within its own
+  source: constitution-ponca-tribe-of-indians-of-oklahoma-1950-text-2
+  confidence: high
+  verification: read-in-full
+  as_of: '1950-09-20'
+  locator: Article III, Section 3
+  document_version:
+    document: ponca-tribe-of-indians-of-oklahoma-constitution
+    version: 1950-text-2
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author.
+- aspect: other-officers
+  value: Vice-Chairman, Secretary-Treasurer
+  quote: membership (1) a chairman, (2) a vice-chairman, and from within or without, (3) a secretary-
+  source: constitution-ponca-tribe-of-indians-of-oklahoma-1950-text-2
+  confidence: high
+  verification: read-in-full
+  as_of: '1950-09-20'
+  locator: Article III, Section 3
+  document_version:
+    document: ponca-tribe-of-indians-of-oklahoma-constitution
+    version: 1950-text-2
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author.
+- aspect: elections
+  value: Third Saturday in March, from 2024
+  quote: Election Board on the third Saturday in March beginning in 2024 for those terms expiring in
+  source: constitution-ponca-tribe-of-indians-of-oklahoma-1950-text-2
+  confidence: high
+  verification: read-in-full
+  as_of: '1950-09-20'
+  locator: Article IV, Section 3
+  document_version:
+    document: ponca-tribe-of-indians-of-oklahoma-constitution
+    version: 1950-text-2
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author.
+- aspect: voting-age
+  value: '18'
+  quote: All members of the Ponca Tribe of Indians eighteen years of age or over
+  source: constitution-ponca-tribe-of-indians-of-oklahoma-1950-text-2
+  confidence: high
+  verification: read-in-full
+  as_of: '1950-09-20'
+  locator: Article IV, Section 6
+  document_version:
+    document: ponca-tribe-of-indians-of-oklahoma-constitution
+    version: 1950-text-2
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author.
+- aspect: election-authority
+  value: Election Board
+  quote: A five (5) member Election Board shall be created by electing tribal
+  source: constitution-ponca-tribe-of-indians-of-oklahoma-1950-text-2
+  confidence: high
+  verification: read-in-full
+  as_of: '1950-09-20'
+  locator: Article IV, Section 3
+  document_version:
+    document: ponca-tribe-of-indians-of-oklahoma-constitution
+    version: 1950-text-2
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author.
+- aspect: branches
+  value: Business Committee holds executive, legislative and judicial powers
+  quote: executive, legislative, and judicial powers of the Tribe including such powers as may in the
+  source: constitution-ponca-tribe-of-indians-of-oklahoma-1950-text-2
+  confidence: high
+  verification: read-in-full
+  as_of: '1950-09-20'
+  locator: Article VIII, Section 2A
+  document_version:
+    document: ponca-tribe-of-indians-of-oklahoma-constitution
+    version: 1950-text-2
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author.
+- aspect: judiciary
+  value: Tribal judicial system (optional, set up by Business Committee)
+  quote: Ponca Business Committee may, if it deems appropriate, establish a Tribal judicial system
+  source: constitution-ponca-tribe-of-indians-of-oklahoma-1950-text-2
+  confidence: high
+  verification: read-in-full
+  as_of: '1950-09-20'
+  locator: Article VIII, Section 2A
+  document_version:
+    document: ponca-tribe-of-indians-of-oklahoma-constitution
+    version: 1950-text-2
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author.
+- aspect: amendment
+  value: Referendum of adult members by majority vote
+  quote: and shall be effective if approved by a majority vote.
+  source: constitution-ponca-tribe-of-indians-of-oklahoma-1950-text-2
+  confidence: high
+  verification: read-in-full
+  as_of: '1950-09-20'
+  locator: Article IX
+  document_version:
+    document: ponca-tribe-of-indians-of-oklahoma-constitution
+    version: 1950-text-2
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author.
+- aspect: recall-and-removal
+  value: Suspension by four affirmative votes of Business Committee
+  quote: The Business Committee by four (4) affirmative votes may suspend any
+  source: constitution-ponca-tribe-of-indians-of-oklahoma-1950-text-2
+  confidence: high
+  verification: read-in-full
+  as_of: '1950-09-20'
+  locator: Article V, Section 2
+  document_version:
+    document: ponca-tribe-of-indians-of-oklahoma-constitution
+    version: 1950-text-2
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author.
+- aspect: recall-and-removal
+  value: Recall by petition of 65% of last election's voters
+  quote: Upon receipt of a valid petition signed by at least sixty-five percent (65%)
+  source: constitution-ponca-tribe-of-indians-of-oklahoma-1950-text-2
+  confidence: high
+  verification: read-in-full
+  as_of: '1950-09-20'
+  locator: Article V, Section 3
+  document_version:
+    document: ponca-tribe-of-indians-of-oklahoma-constitution
+    version: 1950-text-2
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author.
 governing_documents:
 - kind: law-code
   title: Ponca Tribe of Indians of Oklahoma

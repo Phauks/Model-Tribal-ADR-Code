@@ -383,6 +383,191 @@ government_structure:
   as_of: '1957'
   locator: preamble / approval and certification of adoption
   note: Historical constitution; a later constitution may have replaced it.
+governance:
+- aspect: form
+  value: Constitution and Bylaws under Act of June 18, 1934
+  quote: by the Act of June 18, 1934 (48 Stat. 984), as amended by the Act of June
+  source: university-of-oklahoma-indian-reorganization-act-flsemcons
+  confidence: medium
+  verification: read-in-full
+  locator: Approval
+  document_version:
+    document: seminole-tribe-of-florida-constitution
+    version: undated-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: The version label is undated, but the text states it was ratified August 21, 1957 (approved July 11, 1957).'
+- aspect: governing-body
+  value: Tribal Council
+  quote: The governing body of the Seminole Tribe
+  source: university-of-oklahoma-indian-reorganization-act-flsemcons
+  confidence: medium
+  verification: read-in-full
+  locator: Article III, Section 1
+  document_version:
+    document: seminole-tribe-of-florida-constitution
+    version: undated-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: The version label is undated, but the text states it was ratified August 21, 1957 (approved July 11, 1957).'
+- aspect: governing-body-size
+  value: 8 members
+  quote: of Florida shall be known as the Tribal Council and shall consist of eight
+  source: university-of-oklahoma-indian-reorganization-act-flsemcons
+  confidence: medium
+  verification: read-in-full
+  locator: Article III, Section 1
+  document_version:
+    document: seminole-tribe-of-florida-constitution
+    version: undated-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: The version label is undated, but the text states it was ratified August 21, 1957 (approved July 11, 1957).'
+- aspect: governing-body-selection
+  value: Elected by secret ballot, reservation seats and at-large
+  quote: (8) members elected by secret ballot as provided in Article IV, Section
+  source: university-of-oklahoma-indian-reorganization-act-flsemcons
+  confidence: medium
+  verification: read-in-full
+  locator: Article III, Section 1
+  document_version:
+    document: seminole-tribe-of-florida-constitution
+    version: undated-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: The version label is undated, but the text states it was ratified August 21, 1957 (approved July 11, 1957).'
+- aspect: governing-body-term
+  value: 4 years
+  quote: of four (4) years.
+  source: university-of-oklahoma-indian-reorganization-act-flsemcons
+  confidence: medium
+  verification: read-in-full
+  locator: Article IV, Section 4
+  document_version:
+    document: seminole-tribe-of-florida-constitution
+    version: undated-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: The version label is undated, but the text states it was ratified August 21, 1957 (approved July 11, 1957).'
+- aspect: head-of-government
+  value: Chairman
+  quote: its membership a Chairman and Vice-Chairman.
+  source: university-of-oklahoma-indian-reorganization-act-flsemcons
+  confidence: medium
+  verification: read-in-full
+  locator: Article III, Section 2
+  document_version:
+    document: seminole-tribe-of-florida-constitution
+    version: undated-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: The version label is undated, but the text states it was ratified August 21, 1957 (approved July 11, 1957).'
+- aspect: head-of-government
+  value: Chairperson
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  verification: bulk-import
+  as_of: '2026-11-20'
+  locator: Seminole Tribe of Florida
+  note: The title of the leader's office as the federal directory lists it; the holder's name is not recorded. Listed as “Chairman”; recorded without the holder's own form of the title.
+- aspect: head-of-government-selection
+  value: Selected by Tribal Council from its membership
+  quote: The Tribal Council shall select from within
+  source: university-of-oklahoma-indian-reorganization-act-flsemcons
+  confidence: medium
+  verification: read-in-full
+  locator: Article III, Section 2
+  document_version:
+    document: seminole-tribe-of-florida-constitution
+    version: undated-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: The version label is undated, but the text states it was ratified August 21, 1957 (approved July 11, 1957).'
+- aspect: head-of-government-term
+  value: 2 years
+  quote: so selected shall hold office a for a period of two years or until the
+  source: university-of-oklahoma-indian-reorganization-act-flsemcons
+  confidence: medium
+  verification: read-in-full
+  locator: Article III, Section 2
+  document_version:
+    document: seminole-tribe-of-florida-constitution
+    version: undated-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: The version label is undated, but the text states it was ratified August 21, 1957 (approved July 11, 1957).'
+- aspect: other-officers
+  value: Vice-Chairman, Secretary, Treasurer
+  quote: from within or without the membership of the tribe a Secretary and a Treasurer
+  source: university-of-oklahoma-indian-reorganization-act-flsemcons
+  confidence: medium
+  verification: read-in-full
+  locator: Article III, Section 2
+  document_version:
+    document: seminole-tribe-of-florida-constitution
+    version: undated-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: The version label is undated, but the text states it was ratified August 21, 1957 (approved July 11, 1957).'
+- aspect: elections
+  value: Every 2 years, by secret ballot
+  quote: by secret ballot shall be held every two (2) years.
+  source: university-of-oklahoma-indian-reorganization-act-flsemcons
+  confidence: medium
+  verification: read-in-full
+  locator: Article IV, Section 8
+  document_version:
+    document: seminole-tribe-of-florida-constitution
+    version: undated-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: The version label is undated, but the text states it was ratified August 21, 1957 (approved July 11, 1957).'
+- aspect: voting-age
+  value: '18'
+  quote: 18 years of age and over. Resident voters shall register with the reservation
+  source: university-of-oklahoma-indian-reorganization-act-flsemcons
+  confidence: medium
+  verification: read-in-full
+  locator: Article IV, Section 2
+  document_version:
+    document: seminole-tribe-of-florida-constitution
+    version: undated-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: The version label is undated, but the text states it was ratified August 21, 1957 (approved July 11, 1957).'
+- aspect: election-authority
+  value: Tribal Council by ordinance; Secretary of the Interior if Council fails
+  quote: the Interior, within sixty (60) days after the regular election date, may
+  source: university-of-oklahoma-indian-reorganization-act-flsemcons
+  confidence: medium
+  verification: read-in-full
+  locator: Article IV, Section 8
+  document_version:
+    document: seminole-tribe-of-florida-constitution
+    version: undated-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: The version label is undated, but the text states it was ratified August 21, 1957 (approved July 11, 1957).'
+- aspect: amendment
+  value: Majority vote in Secretarial election, 30% turnout
+  quote: is adopted by a majority vote of the qualified voters of the tribe voting
+  source: university-of-oklahoma-indian-reorganization-act-flsemcons
+  confidence: medium
+  verification: read-in-full
+  locator: Article VII
+  document_version:
+    document: seminole-tribe-of-florida-constitution
+    version: undated-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: The version label is undated, but the text states it was ratified August 21, 1957 (approved July 11, 1957).'
+- aspect: secretarial-approval
+  value: Required for amendments
+  quote: and, if approved by him, shall thereupon take effect.
+  source: university-of-oklahoma-indian-reorganization-act-flsemcons
+  confidence: medium
+  verification: read-in-full
+  locator: Article VII
+  document_version:
+    document: seminole-tribe-of-florida-constitution
+    version: undated-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: The version label is undated, but the text states it was ratified August 21, 1957 (approved July 11, 1957).'
+- aspect: recall-and-removal
+  value: Removal by majority vote of Tribal Council
+  quote: of a majority remove any official or councilman from office who fails to
+  source: university-of-oklahoma-indian-reorganization-act-flsemcons
+  confidence: medium
+  verification: read-in-full
+  locator: Article IV, Section 5
+  document_version:
+    document: seminole-tribe-of-florida-constitution
+    version: undated-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: The version label is undated, but the text states it was ratified August 21, 1957 (approved July 11, 1957).'
+- aspect: recall-and-removal
+  value: Recall by petition of 20% of eligible voters
+  quote: (20%) of the eligible voters, may request the recall of such reservation
+  source: university-of-oklahoma-indian-reorganization-act-flsemcons
+  confidence: medium
+  verification: read-in-full
+  locator: Article IV, Section 5
+  document_version:
+    document: seminole-tribe-of-florida-constitution
+    version: undated-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: The version label is undated, but the text states it was ratified August 21, 1957 (approved July 11, 1957).'
 governing_documents:
 - kind: law-code
   title: Seminole Tribe of Florida Judicial Codes

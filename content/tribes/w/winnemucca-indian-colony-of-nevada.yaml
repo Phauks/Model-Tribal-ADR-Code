@@ -157,6 +157,219 @@ indian_health_service:
   as_of: '2026-11-23'
   locator: '"Arizona Tribes" / "Nevada and Utah Tribes" lists'
   note: Listed as "Winnemucca Indian Colony".
+governance:
+- aspect: form
+  value: Constitution and bylaws under Section 16 of the Indian Reorganization Act of 1934
+  quote: pursuant to Section 16 of that act and do affirm it as the foundation
+  source: constitution-winnemucca-indian-colony-of-nevada-1971-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1971-03-05'
+  locator: Preamble
+  document_version:
+    document: winnemucca-indian-colony-of-nevada-constitution
+    version: 1971-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: The certificate of election on the last page is garbled, so the vote count and date are unreadable.'
+- aspect: governing-body
+  value: Winnemucca Colony Council
+  quote: consist of a council known as the Winnemucca Colony Council, here-
+  source: constitution-winnemucca-indian-colony-of-nevada-1971-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1971-03-05'
+  locator: Article III, Section 1
+  document_version:
+    document: winnemucca-indian-colony-of-nevada-constitution
+    version: 1971-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: The certificate of election on the last page is garbled, so the vote count and date are unreadable.'
+- aspect: governing-body-size
+  value: 5 members
+  quote: of five (5) members including a chairman and a vice chairman selected
+  source: constitution-winnemucca-indian-colony-of-nevada-1971-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1971-03-05'
+  locator: Article III, Section 1
+  document_version:
+    document: winnemucca-indian-colony-of-nevada-constitution
+    version: 1971-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: The certificate of election on the last page is garbled, so the vote count and date are unreadable.'
+- aspect: governing-body-selection
+  value: Elected by colony voters
+  quote: All ensuing elections shall be held every too (2) years
+  source: constitution-winnemucca-indian-colony-of-nevada-1971-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1971-03-05'
+  locator: Article IV, Section 2
+  document_version:
+    document: winnemucca-indian-colony-of-nevada-constitution
+    version: 1971-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: The certificate of election on the last page is garbled, so the vote count and date are unreadable.'
+- aspect: governing-body-term
+  value: 2 years
+  quote: two (2) years or until their successors are duly elected and seated.
+  source: constitution-winnemucca-indian-colony-of-nevada-1971-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1971-03-05'
+  locator: Article III, Section 3
+  document_version:
+    document: winnemucca-indian-colony-of-nevada-constitution
+    version: 1971-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: The certificate of election on the last page is garbled, so the vote count and date are unreadable.'
+- aspect: head-of-government
+  value: Chairman
+  quote: The Chairman of the Winnemucca Colony Councils herein-
+  source: constitution-winnemucca-indian-colony-of-nevada-1971-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1971-03-05'
+  locator: Bylaws, Article I, Section 1
+  document_version:
+    document: winnemucca-indian-colony-of-nevada-constitution
+    version: 1971-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: The certificate of election on the last page is garbled, so the vote count and date are unreadable.'
+- aspect: head-of-government
+  value: Chairperson
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  verification: bulk-import
+  as_of: '2026-11-20'
+  locator: Winnemucca Indian Colony of Nevada
+  note: The title of the leader's office as the federal directory lists it; the holder's name is not recorded. Listed as “Chairman”; recorded without the holder's own form of the title.
+- aspect: head-of-government-selection
+  value: Selected by the council from its members
+  quote: of five (5) members including a chairman and a vice chairman selected
+  source: constitution-winnemucca-indian-colony-of-nevada-1971-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1971-03-05'
+  locator: Article III, Section 1
+  document_version:
+    document: winnemucca-indian-colony-of-nevada-constitution
+    version: 1971-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: The certificate of election on the last page is garbled, so the vote count and date are unreadable.'
+- aspect: head-of-government-term
+  value: 2 years
+  quote: two (2) years or until their successors are duly elected and seated.
+  source: constitution-winnemucca-indian-colony-of-nevada-1971-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1971-03-05'
+  locator: Article III, Section 3
+  document_version:
+    document: winnemucca-indian-colony-of-nevada-constitution
+    version: 1971-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: The certificate of election on the last page is garbled, so the vote count and date are unreadable.'
+- aspect: other-officers
+  value: Vice chairman, secretary-treasurer
+  quote: by the council from within its own members. A secretary-treasurer
+  source: constitution-winnemucca-indian-colony-of-nevada-1971-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1971-03-05'
+  locator: Article III, Section 1
+  document_version:
+    document: winnemucca-indian-colony-of-nevada-constitution
+    version: 1971-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: The certificate of election on the last page is garbled, so the vote count and date are unreadable.'
+- aspect: elections
+  value: Every 2 years in October
+  quote: starting in 1972 during the month of October and shall be conducted
+  source: constitution-winnemucca-indian-colony-of-nevada-1971-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1971-03-05'
+  locator: Article IV, Section 2
+  document_version:
+    document: winnemucca-indian-colony-of-nevada-constitution
+    version: 1971-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: The certificate of election on the last page is garbled, so the vote count and date are unreadable.'
+- aspect: voting-age
+  value: '21'
+  quote: (21) years ox age or older,- shall be qualified to vote.
+  source: constitution-winnemucca-indian-colony-of-nevada-1971-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1971-03-05'
+  locator: Article IV, Section 3
+  document_version:
+    document: winnemucca-indian-colony-of-nevada-constitution
+    version: 1971-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: The certificate of election on the last page is garbled, so the vote count and date are unreadable.'
+- aspect: election-authority
+  value: Election board appointed by the council
+  quote: board appointed by the council. Such procedures shall include
+  source: constitution-winnemucca-indian-colony-of-nevada-1971-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1971-03-05'
+  locator: Article IV, Section 2
+  document_version:
+    document: winnemucca-indian-colony-of-nevada-constitution
+    version: 1971-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: The certificate of election on the last page is garbled, so the vote count and date are unreadable.'
+- aspect: amendment
+  value: Same manner as original ratification
+  quote: and approved in the same manner as the constitution was originally
+  source: constitution-winnemucca-indian-colony-of-nevada-1971-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1971-03-05'
+  locator: Article IX, Section 1
+  document_version:
+    document: winnemucca-indian-colony-of-nevada-constitution
+    version: 1971-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: The certificate of election on the last page is garbled, so the vote count and date are unreadable.'
+- aspect: secretarial-approval
+  value: Required for amendments
+  quote: amendment shall be effective until approved by the Secretary of
+  source: constitution-winnemucca-indian-colony-of-nevada-1971-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1971-03-05'
+  locator: Article IX, Section 1
+  document_version:
+    document: winnemucca-indian-colony-of-nevada-constitution
+    version: 1971-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: The certificate of election on the last page is garbled, so the vote count and date are unreadable.'
+- aspect: recall-and-removal
+  value: Removal by majority vote of council
+  quote: removed from office by a majority vote of the council members if,
+  source: constitution-winnemucca-indian-colony-of-nevada-1971-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1971-03-05'
+  locator: Article V, Section 2
+  document_version:
+    document: winnemucca-indian-colony-of-nevada-constitution
+    version: 1971-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: The certificate of election on the last page is garbled, so the vote count and date are unreadable.'
+- aspect: recall-and-removal
+  value: Recall by petition of one-third of qualified voters
+  quote: petition requesting such election signed by at least one-third (1/3)
+  source: constitution-winnemucca-indian-colony-of-nevada-1971-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1971-03-05'
+  locator: Article V, Section 3
+  document_version:
+    document: winnemucca-indian-colony-of-nevada-constitution
+    version: 1971-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: The certificate of election on the last page is garbled, so the vote count and date are unreadable.'
+- aspect: other
+  value: Referendum, initiative and recall by ordinance
+  quote: through referendum, initiative, and recall, the procedures to be
+  source: constitution-winnemucca-indian-colony-of-nevada-1971-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1971-03-05'
+  locator: Article VII, Section 2
+  document_version:
+    document: winnemucca-indian-colony-of-nevada-constitution
+    version: 1971-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: The certificate of election on the last page is garbled, so the vote count and date are unreadable.'
 governing_documents:
 - kind: law-code
   title: Winnemucca Indian Colony of Nevada - Tribal Ordinances

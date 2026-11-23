@@ -227,6 +227,195 @@ indian_health_service:
   as_of: '2026-11-23'
   locator: Direct Service Tribes by IHS Area > Oklahoma City Area
   note: Listed as "Seminole Nation of Oklahoma". The Direct Service Tribes list says some Tribes have a mixed Indian Health Service and Tribal arrangement.
+governance:
+- aspect: form
+  value: Constitution, ratified by majority of qualified voters in special election
+  quote: This constitution when ratified by a
+  source: constitution-the-seminole-nation-of-oklahoma-1989-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1989-02-25'
+  locator: Article XIV
+  document_version:
+    document: the-seminole-nation-of-oklahoma-constitution
+    version: 1989-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Text is the constitution as amended February 25, 1989; scan has OCR errors in several words (for example Eo, Fy, t«, Se cti on), and status is unknown.'
+- aspect: governing-body
+  value: General Council
+  quote: be known as the General Council and
+  source: constitution-the-seminole-nation-of-oklahoma-1989-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1989-02-25'
+  locator: Article IV, Section 1
+  document_version:
+    document: the-seminole-nation-of-oklahoma-constitution
+    version: 1989-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Text is the constitution as amended February 25, 1989; scan has OCR errors in several words (for example Eo, Fy, t«, Se cti on), and status is unknown.'
+- aspect: governing-body-size
+  value: 2 representatives from each of 14 bands
+  quote: shall consist of two (2) band
+  source: constitution-the-seminole-nation-of-oklahoma-1989-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1989-02-25'
+  locator: Article IV, Section 1
+  document_version:
+    document: the-seminole-nation-of-oklahoma-constitution
+    version: 1989-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Text is the constitution as amended February 25, 1989; scan has OCR errors in several words (for example Eo, Fy, t«, Se cti on), and status is unknown.'
+- aspect: governing-body-selection
+  value: Elected by band
+  quote: council members shall be by band and
+  source: constitution-the-seminole-nation-of-oklahoma-1989-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1989-02-25'
+  locator: Article X, Section 6
+  document_version:
+    document: the-seminole-nation-of-oklahoma-constitution
+    version: 1989-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Text is the constitution as amended February 25, 1989; scan has OCR errors in several words (for example Eo, Fy, t«, Se cti on), and status is unknown.'
+- aspect: governing-body-term
+  value: 4 years
+  quote: serve a term of four years or until
+  source: constitution-the-seminole-nation-of-oklahoma-1989-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1989-02-25'
+  locator: Article IV, Section 4
+  document_version:
+    document: the-seminole-nation-of-oklahoma-constitution
+    version: 1989-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Text is the constitution as amended February 25, 1989; scan has OCR errors in several words (for example Eo, Fy, t«, Se cti on), and status is unknown.'
+- aspect: head-of-government
+  value: Chief
+  quote: be vested in a Chief and an Assistant
+  source: constitution-the-seminole-nation-of-oklahoma-1989-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1989-02-25'
+  locator: Article III, Section 1
+  document_version:
+    document: the-seminole-nation-of-oklahoma-constitution
+    version: 1989-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Text is the constitution as amended February 25, 1989; scan has OCR errors in several words (for example Eo, Fy, t«, Se cti on), and status is unknown.'
+- aspect: head-of-government
+  value: Principal Chief
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  verification: bulk-import
+  as_of: '2026-11-20'
+  locator: The Seminole Nation of Oklahoma
+  note: The title of the leader's office as the federal directory lists it; the holder's name is not recorded.
+- aspect: head-of-government-selection
+  value: Elected at large by majority of votes cast
+  quote: Chief shall be at large. No candidate
+  source: constitution-the-seminole-nation-of-oklahoma-1989-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1989-02-25'
+  locator: Article X, Section 5
+  document_version:
+    document: the-seminole-nation-of-oklahoma-constitution
+    version: 1989-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Text is the constitution as amended February 25, 1989; scan has OCR errors in several words (for example Eo, Fy, t«, Se cti on), and status is unknown.'
+- aspect: head-of-government-term
+  value: 4 years
+  quote: four years pursuant to the provisions
+  source: constitution-the-seminole-nation-of-oklahoma-1989-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1989-02-25'
+  locator: Article III, Section 3
+  document_version:
+    document: the-seminole-nation-of-oklahoma-constitution
+    version: 1989-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Text is the constitution as amended February 25, 1989; scan has OCR errors in several words (for example Eo, Fy, t«, Se cti on), and status is unknown.'
+- aspect: other-officers
+  value: Secretary
+  quote: appoint for so long as it desires a
+  source: constitution-the-seminole-nation-of-oklahoma-1989-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1989-02-25'
+  locator: Article IV, Section 2
+  document_version:
+    document: the-seminole-nation-of-oklahoma-constitution
+    version: 1989-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Text is the constitution as amended February 25, 1989; scan has OCR errors in several words (for example Eo, Fy, t«, Se cti on), and status is unknown.'
+- aspect: elections
+  value: No more than 4 years apart
+  quote: election dates shall be no more than
+  source: constitution-the-seminole-nation-of-oklahoma-1989-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1989-02-25'
+  locator: Article X, Section 2
+  document_version:
+    document: the-seminole-nation-of-oklahoma-constitution
+    version: 1989-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Text is the constitution as amended February 25, 1989; scan has OCR errors in several words (for example Eo, Fy, t«, Se cti on), and status is unknown.'
+- aspect: voting-age
+  value: '18'
+  quote: that they are at least 18 years of age.
+  source: constitution-the-seminole-nation-of-oklahoma-1989-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1989-02-25'
+  locator: Article X, Section 1
+  document_version:
+    document: the-seminole-nation-of-oklahoma-constitution
+    version: 1989-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Text is the constitution as amended February 25, 1989; scan has OCR errors in several words (for example Eo, Fy, t«, Se cti on), and status is unknown.'
+- aspect: election-authority
+  value: Election board of three members
+  quote: an election board consisting
+  source: constitution-the-seminole-nation-of-oklahoma-1989-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1989-02-25'
+  locator: Article X, Section 3
+  document_version:
+    document: the-seminole-nation-of-oklahoma-constitution
+    version: 1989-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Text is the constitution as amended February 25, 1989; scan has OCR errors in several words (for example Eo, Fy, t«, Se cti on), and status is unknown.'
+- aspect: amendment
+  value: Majority vote of qualified voters in special election
+  quote: amended Fy a majority vote of the
+  source: constitution-the-seminole-nation-of-oklahoma-1989-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1989-02-25'
+  locator: Article XIII, Section 1
+  document_version:
+    document: the-seminole-nation-of-oklahoma-constitution
+    version: 1989-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Text is the constitution as amended February 25, 1989; scan has OCR errors in several words (for example Eo, Fy, t«, Se cti on), and status is unknown.'
+- aspect: secretarial-approval
+  value: Required for amendments (by Commissioner of Indian Affairs)
+  quote: submitted t« the Commissioner of Indian
+  source: constitution-the-seminole-nation-of-oklahoma-1989-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1989-02-25'
+  locator: Article XIII, Section 1
+  document_version:
+    document: the-seminole-nation-of-oklahoma-constitution
+    version: 1989-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Text is the constitution as amended February 25, 1989; scan has OCR errors in several words (for example Eo, Fy, t«, Se cti on), and status is unknown.'
+- aspect: recall-and-removal
+  value: Removal by 19 General Council votes
+  quote: an affirmative vote of nineteen (19)
+  source: constitution-the-seminole-nation-of-oklahoma-1989-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1989-02-25'
+  locator: Article IX, Section 1
+  document_version:
+    document: the-seminole-nation-of-oklahoma-constitution
+    version: 1989-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Text is the constitution as amended February 25, 1989; scan has OCR errors in several words (for example Eo, Fy, t«, Se cti on), and status is unknown.'
 governing_documents:
 - kind: law-code
   title: The Seminole Nation of Oklahoma - Tribal Code, Table of Contents

@@ -168,6 +168,206 @@ indian_health_service:
   as_of: '2026-11-23'
   locator: regional lists (West Central, Southern, Northern, East Central)
   note: Listed as "Federated Indians of Graton Rancheria, California".
+governance:
+- aspect: form
+  value: Constitution approved at May 3, 1997 General Membership Meeting
+  quote: AS APPROVED AT MAY 3, 1997
+  source: constitution-federated-indians-of-graton-rancheria-1997-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1997-05-03'
+  document_version:
+    document: federated-indians-of-graton-rancheria-constitution
+    version: 1997-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Text is the 1997 constitution followed by an excerpt of P.L. 106-568 (sections 1407-1408) on interim government; the Act says the 1997 constitution governs the Interim Tribal Council until a final constitution is ratified.'
+- aspect: governing-body
+  value: Tribal Council
+  quote: The governing body of the Tribe shall be the Tribal Council, which shall
+  source: constitution-federated-indians-of-graton-rancheria-1997-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1997-05-03'
+  locator: Article III, Section 1
+  document_version:
+    document: federated-indians-of-graton-rancheria-constitution
+    version: 1997-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Text is the 1997 constitution followed by an excerpt of P.L. 106-568 (sections 1407-1408) on interim government; the Act says the 1997 constitution governs the Interim Tribal Council until a final constitution is ratified.'
+- aspect: governing-body-size
+  value: 7 members
+  quote: consist of seven (7) Tribal members elected from the General Council.
+  source: constitution-federated-indians-of-graton-rancheria-1997-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1997-05-03'
+  locator: Article III, Section 1
+  document_version:
+    document: federated-indians-of-graton-rancheria-constitution
+    version: 1997-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Text is the 1997 constitution followed by an excerpt of P.L. 106-568 (sections 1407-1408) on interim government; the Act says the 1997 constitution governs the Interim Tribal Council until a final constitution is ratified.'
+- aspect: governing-body-selection
+  value: Elected by secret ballot
+  quote: Tribal Council elections shall be conducted by secret ballot.
+  source: constitution-federated-indians-of-graton-rancheria-1997-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1997-05-03'
+  locator: Article IV, Section 3
+  document_version:
+    document: federated-indians-of-graton-rancheria-constitution
+    version: 1997-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Text is the 1997 constitution followed by an excerpt of P.L. 106-568 (sections 1407-1408) on interim government; the Act says the 1997 constitution governs the Interim Tribal Council until a final constitution is ratified.'
+- aspect: governing-body-term
+  value: 2 years
+  quote: all terms of office shall be for two (2)
+  source: constitution-federated-indians-of-graton-rancheria-1997-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1997-05-03'
+  locator: Article IV, Section 1
+  document_version:
+    document: federated-indians-of-graton-rancheria-constitution
+    version: 1997-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Text is the 1997 constitution followed by an excerpt of P.L. 106-568 (sections 1407-1408) on interim government; the Act says the 1997 constitution governs the Interim Tribal Council until a final constitution is ratified.'
+- aspect: general-council
+  value: All members of the Tribe 18 or older
+  quote: The General Council shall consist of all members of the Tribe who are
+  source: constitution-federated-indians-of-graton-rancheria-1997-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1997-05-03'
+  locator: Article III, Section 2
+  document_version:
+    document: federated-indians-of-graton-rancheria-constitution
+    version: 1997-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Text is the 1997 constitution followed by an excerpt of P.L. 106-568 (sections 1407-1408) on interim government; the Act says the 1997 constitution governs the Interim Tribal Council until a final constitution is ratified.'
+- aspect: head-of-government
+  value: Chair
+  quote: The Chair shall preside at ail meetings of the Tribal Council and of the
+  source: constitution-federated-indians-of-graton-rancheria-1997-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1997-05-03'
+  locator: Article VIII, Section 1
+  document_version:
+    document: federated-indians-of-graton-rancheria-constitution
+    version: 1997-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Text is the 1997 constitution followed by an excerpt of P.L. 106-568 (sections 1407-1408) on interim government; the Act says the 1997 constitution governs the Interim Tribal Council until a final constitution is ratified.'
+- aspect: head-of-government
+  value: Chairperson
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  verification: bulk-import
+  as_of: '2026-11-20'
+  locator: Federated Indians of Graton Rancheria, California
+  note: The title of the leader's office as the federal directory lists it; the holder's name is not recorded. Listed as “Chairman”; recorded without the holder's own form of the title.
+- aspect: head-of-government-selection
+  value: Elected at election by General Council voters
+  quote: the Chair, Vice-Chair, Secretary, and Treasurer
+  source: constitution-federated-indians-of-graton-rancheria-1997-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1997-05-03'
+  locator: Article IV, Section 1
+  document_version:
+    document: federated-indians-of-graton-rancheria-constitution
+    version: 1997-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Text is the 1997 constitution followed by an excerpt of P.L. 106-568 (sections 1407-1408) on interim government; the Act says the 1997 constitution governs the Interim Tribal Council until a final constitution is ratified.'
+- aspect: head-of-government-term
+  value: 2 years
+  quote: shall be elected to two (2) year terms
+  source: constitution-federated-indians-of-graton-rancheria-1997-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1997-05-03'
+  locator: Article IV, Section 1
+  document_version:
+    document: federated-indians-of-graton-rancheria-constitution
+    version: 1997-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Text is the 1997 constitution followed by an excerpt of P.L. 106-568 (sections 1407-1408) on interim government; the Act says the 1997 constitution governs the Interim Tribal Council until a final constitution is ratified.'
+- aspect: other-officers
+  value: Vice-Chair, Secretary, Treasurer
+  quote: the Chair, Vice-Chair, Secretary, and Treasurer
+  source: constitution-federated-indians-of-graton-rancheria-1997-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1997-05-03'
+  locator: Article IV, Section 1
+  document_version:
+    document: federated-indians-of-graton-rancheria-constitution
+    version: 1997-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Text is the 1997 constitution followed by an excerpt of P.L. 106-568 (sections 1407-1408) on interim government; the Act says the 1997 constitution governs the Interim Tribal Council until a final constitution is ratified.'
+- aspect: elections
+  value: Annually
+  quote: elections shall be held annually
+  source: constitution-federated-indians-of-graton-rancheria-1997-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1997-05-03'
+  locator: Article IV, Section 1
+  document_version:
+    document: federated-indians-of-graton-rancheria-constitution
+    version: 1997-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Text is the 1997 constitution followed by an excerpt of P.L. 106-568 (sections 1407-1408) on interim government; the Act says the 1997 constitution governs the Interim Tribal Council until a final constitution is ratified.'
+- aspect: voting-age
+  value: '18'
+  quote: eighteen (18) years of age or older.
+  source: constitution-federated-indians-of-graton-rancheria-1997-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1997-05-03'
+  locator: Article III, Section 2
+  document_version:
+    document: federated-indians-of-graton-rancheria-constitution
+    version: 1997-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Text is the 1997 constitution followed by an excerpt of P.L. 106-568 (sections 1407-1408) on interim government; the Act says the 1997 constitution governs the Interim Tribal Council until a final constitution is ratified.'
+- aspect: election-authority
+  value: Election Board
+  quote: The Election Board shall supervise and conduct all Tribal elections
+  source: constitution-federated-indians-of-graton-rancheria-1997-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1997-05-03'
+  locator: Article IV, Section 5
+  document_version:
+    document: federated-indians-of-graton-rancheria-constitution
+    version: 1997-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Text is the 1997 constitution followed by an excerpt of P.L. 106-568 (sections 1407-1408) on interim government; the Act says the 1997 constitution governs the Interim Tribal Council until a final constitution is ratified.'
+- aspect: amendment
+  value: Petition of 30% of registered voters, then majority vote in amendment election
+  quote: Council accompanied by a petition signed by at least thirty percent (30%) of the
+  source: constitution-federated-indians-of-graton-rancheria-1997-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1997-05-03'
+  locator: Article XII
+  document_version:
+    document: federated-indians-of-graton-rancheria-constitution
+    version: 1997-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Text is the 1997 constitution followed by an excerpt of P.L. 106-568 (sections 1407-1408) on interim government; the Act says the 1997 constitution governs the Interim Tribal Council until a final constitution is ratified.'
+- aspect: recall-and-removal
+  value: Removal by majority of Tribal Council for abuse of powers
+  quote: If a majority of the Tribal Council then in office determine that a member has
+  source: constitution-federated-indians-of-graton-rancheria-1997-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1997-05-03'
+  locator: Article V, Section 1
+  document_version:
+    document: federated-indians-of-graton-rancheria-constitution
+    version: 1997-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Text is the 1997 constitution followed by an excerpt of P.L. 106-568 (sections 1407-1408) on interim government; the Act says the 1997 constitution governs the Interim Tribal Council until a final constitution is ratified.'
+- aspect: recall-and-removal
+  value: Recall by petition of 40% of registered voters
+  quote: Upon receipt of a petition signed by at least forty percent (40%) of the
+  source: constitution-federated-indians-of-graton-rancheria-1997-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1997-05-03'
+  locator: Article V, Section 2
+  document_version:
+    document: federated-indians-of-graton-rancheria-constitution
+    version: 1997-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Text is the 1997 constitution followed by an excerpt of P.L. 106-568 (sections 1407-1408) on interim government; the Act says the 1997 constitution governs the Interim Tribal Council until a final constitution is ratified.'
 governing_documents:
 - kind: constitution
   title: Constitution

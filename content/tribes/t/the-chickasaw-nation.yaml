@@ -217,6 +217,267 @@ indian_health_service:
   as_of: '2026-11-23'
   locator: '"Tribes of Oklahoma, Kansas and Texas" list'
   note: 'Listed as "The Chickasaw Nation". Also listed under the same Area in: indian-health-service-self-governance-tribes. Also on the Indian Health Service Self-Governance Tribes list (Chickasaw Nation (1995)); the list does not say which service unit or programs the compact covers.'
+governance:
+- aspect: form
+  value: Constitution ordained under Treaties of 1855 and 1866
+  quote: first, second, fourth and seventh articles of the Treaty between the United States, the Choctaws and
+  source: constitution-the-chickasaw-nation-2002-text-2
+  confidence: high
+  verification: read-in-full
+  as_of: '2002'
+  locator: Preamble
+  document_version:
+    document: the-chickasaw-nation-constitution
+    version: 2002-text-2
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: Two-column scan; Articles XII and XIII were repealed by Amendment V, so the judicial text here is the Amendment V replacement.'
+- aspect: governing-body
+  value: Tribal Legislature
+  quote: Chickasaw Nation shall be vested in the Tribal
+  source: constitution-the-chickasaw-nation-2002-text-2
+  confidence: high
+  verification: read-in-full
+  as_of: '2002'
+  locator: Article VI, Section 1
+  document_version:
+    document: the-chickasaw-nation-constitution
+    version: 2002-text-2
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: Two-column scan; Articles XII and XIII were repealed by Amendment V, so the judicial text here is the Amendment V replacement.'
+- aspect: governing-body-size
+  value: 13 members
+  quote: The Tribal Legislature shall consist of
+  source: constitution-the-chickasaw-nation-2002-text-2
+  confidence: high
+  verification: read-in-full
+  as_of: '2002'
+  locator: Article VI, Section 3
+  document_version:
+    document: the-chickasaw-nation-constitution
+    version: 2002-text-2
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: Two-column scan; Articles XII and XIII were repealed by Amendment V, so the judicial text here is the Amendment V replacement.'
+- aspect: governing-body-selection
+  value: Elected from four districts
+  quote: members to be elected from the
+  source: constitution-the-chickasaw-nation-2002-text-2
+  confidence: high
+  verification: read-in-full
+  as_of: '2002'
+  locator: Article VI, Section 3
+  document_version:
+    document: the-chickasaw-nation-constitution
+    version: 2002-text-2
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: Two-column scan; Articles XII and XIII were repealed by Amendment V, so the judicial text here is the Amendment V replacement.'
+- aspect: governing-body-term
+  value: 3 years, staggered
+  quote: be elected for three (3) year terms and shall
+  source: constitution-the-chickasaw-nation-2002-text-2
+  confidence: high
+  verification: read-in-full
+  as_of: '2002'
+  locator: Article VI, Section 3
+  document_version:
+    document: the-chickasaw-nation-constitution
+    version: 2002-text-2
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: Two-column scan; Articles XII and XIII were repealed by Amendment V, so the judicial text here is the Amendment V replacement.'
+- aspect: head-of-government
+  value: Governor
+  quote: Nation shall be vested in a Chief Magistrate,
+  source: constitution-the-chickasaw-nation-2002-text-2
+  confidence: high
+  verification: read-in-full
+  as_of: '2002'
+  locator: Article X, Section 1
+  document_version:
+    document: the-chickasaw-nation-constitution
+    version: 2002-text-2
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: Two-column scan; Articles XII and XIII were repealed by Amendment V, so the judicial text here is the Amendment V replacement.'
+- aspect: head-of-government
+  value: Governor
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  verification: bulk-import
+  as_of: '2026-11-20'
+  locator: The Chickasaw Nation
+  note: The title of the leader's office as the federal directory lists it; the holder's name is not recorded.
+- aspect: head-of-government-selection
+  value: Elected, running as a team with Lieutenant Governor
+  quote: shall run as a team and shall be
+  source: constitution-the-chickasaw-nation-2002-text-2
+  confidence: high
+  verification: read-in-full
+  as_of: '2002'
+  locator: Article X, Section 3
+  document_version:
+    document: the-chickasaw-nation-constitution
+    version: 2002-text-2
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: Two-column scan; Articles XII and XIII were repealed by Amendment V, so the judicial text here is the Amendment V replacement.'
+- aspect: head-of-government-term
+  value: 4 years
+  quote: elected for a term of four (4) years and shall
+  source: constitution-the-chickasaw-nation-2002-text-2
+  confidence: high
+  verification: read-in-full
+  as_of: '2002'
+  locator: Article X, Section 3
+  document_version:
+    document: the-chickasaw-nation-constitution
+    version: 2002-text-2
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: Two-column scan; Articles XII and XIII were repealed by Amendment V, so the judicial text here is the Amendment V replacement.'
+- aspect: other-officers
+  value: Lieutenant Governor, Chairperson, Secretary
+  quote: to be elected are a Chairperson and a
+  source: constitution-the-chickasaw-nation-2002-text-2
+  confidence: high
+  verification: read-in-full
+  as_of: '2002'
+  locator: Article VI, Section 1
+  document_version:
+    document: the-chickasaw-nation-constitution
+    version: 2002-text-2
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: Two-column scan; Articles XII and XIII were repealed by Amendment V, so the judicial text here is the Amendment V replacement.'
+- aspect: voting-age
+  value: '18'
+  quote: All citizens eighteen (18) years of age
+  source: constitution-the-chickasaw-nation-2002-text-2
+  confidence: high
+  verification: read-in-full
+  as_of: '2002'
+  locator: Article III, Section 1
+  document_version:
+    document: the-chickasaw-nation-constitution
+    version: 2002-text-2
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: Two-column scan; Articles XII and XIII were repealed by Amendment V, so the judicial text here is the Amendment V replacement.'
+- aspect: election-authority
+  value: Tribal Legislature
+  quote: election procedures and regulations for tribal
+  source: constitution-the-chickasaw-nation-2002-text-2
+  confidence: high
+  verification: read-in-full
+  as_of: '2002'
+  locator: Article VII, Section 6
+  document_version:
+    document: the-chickasaw-nation-constitution
+    version: 2002-text-2
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: Two-column scan; Articles XII and XIII were repealed by Amendment V, so the judicial text here is the Amendment V replacement.'
+- aspect: branches
+  value: Legislative, Executive and Judicial
+  quote: '(3) distinct departments: 1. Legislative 2.'
+  source: constitution-the-chickasaw-nation-2002-text-2
+  confidence: high
+  verification: read-in-full
+  as_of: '2002'
+  locator: Article V, Section 1
+  document_version:
+    document: the-chickasaw-nation-constitution
+    version: 2002-text-2
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: Two-column scan; Articles XII and XIII were repealed by Amendment V, so the judicial text here is the Amendment V replacement.'
+- aspect: separation-of-powers
+  value: Stated
+  quote: properly attached to either of the others.
+  source: constitution-the-chickasaw-nation-2002-text-2
+  confidence: high
+  verification: read-in-full
+  as_of: '2002'
+  locator: Article V, Section 1
+  document_version:
+    document: the-chickasaw-nation-constitution
+    version: 2002-text-2
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: Two-column scan; Articles XII and XIII were repealed by Amendment V, so the judicial text here is the Amendment V replacement.'
+- aspect: judiciary
+  value: Supreme Court and inferior courts set by Legislature
+  quote: shall be vested in one Supreme Court, and in
+  source: constitution-the-chickasaw-nation-2002-text-2
+  confidence: high
+  verification: read-in-full
+  as_of: '2002'
+  locator: Amendment V, Section 1
+  document_version:
+    document: the-chickasaw-nation-constitution
+    version: 2002-text-2
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: Two-column scan; Articles XII and XIII were repealed by Amendment V, so the judicial text here is the Amendment V replacement.'
+- aspect: judicial-selection
+  value: Elected by popular vote
+  quote: three Justices elected by popular vote by
+  source: constitution-the-chickasaw-nation-2002-text-2
+  confidence: high
+  verification: read-in-full
+  as_of: '2002'
+  locator: Amendment V, Section 3
+  document_version:
+    document: the-chickasaw-nation-constitution
+    version: 2002-text-2
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: Two-column scan; Articles XII and XIII were repealed by Amendment V, so the judicial text here is the Amendment V replacement.'
+- aspect: judicial-term
+  value: 3 years
+  quote: elected for terms of three (3) years and shall
+  source: constitution-the-chickasaw-nation-2002-text-2
+  confidence: high
+  verification: read-in-full
+  as_of: '2002'
+  locator: Amendment V, Section 3
+  document_version:
+    document: the-chickasaw-nation-constitution
+    version: 2002-text-2
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: Two-column scan; Articles XII and XIII were repealed by Amendment V, so the judicial text here is the Amendment V replacement.'
+- aspect: amendment
+  value: Majority of votes cast in electorate election
+  quote: Any amendment adopted by a majority
+  source: constitution-the-chickasaw-nation-2002-text-2
+  confidence: high
+  verification: read-in-full
+  as_of: '2002'
+  locator: Article XVIII, Section 3
+  document_version:
+    document: the-chickasaw-nation-constitution
+    version: 2002-text-2
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: Two-column scan; Articles XII and XIII were repealed by Amendment V, so the judicial text here is the Amendment V replacement.'
+- aspect: secretarial-approval
+  value: Required for amendments
+  quote: submitted to the Secretary of the Interior, or
+  source: constitution-the-chickasaw-nation-2002-text-2
+  confidence: high
+  verification: read-in-full
+  as_of: '2002'
+  locator: Article XVIII, Section 3
+  document_version:
+    document: the-chickasaw-nation-constitution
+    version: 2002-text-2
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: Two-column scan; Articles XII and XIII were repealed by Amendment V, so the judicial text here is the Amendment V replacement.'
+- aspect: recall-and-removal
+  value: Impeachment by 10 Legislature votes
+  quote: required to impeach the official.
+  source: constitution-the-chickasaw-nation-2002-text-2
+  confidence: high
+  verification: read-in-full
+  as_of: '2002'
+  locator: Article XVI, Section 1(h)
+  document_version:
+    document: the-chickasaw-nation-constitution
+    version: 2002-text-2
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: Two-column scan; Articles XII and XIII were repealed by Amendment V, so the judicial text here is the Amendment V replacement.'
+- aspect: recall-and-removal
+  value: Recall by majority vote at election, 30% turnout
+  quote: Recall from office shall require
+  source: constitution-the-chickasaw-nation-2002-text-2
+  confidence: high
+  verification: read-in-full
+  as_of: '2002'
+  locator: Article XVI, Section 2(c)
+  document_version:
+    document: the-chickasaw-nation-constitution
+    version: 2002-text-2
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: Two-column scan; Articles XII and XIII were repealed by Amendment V, so the judicial text here is the Amendment V replacement.'
+- aspect: other
+  value: Governor veto; override needs 9 Legislature votes
+  quote: Such veto shall be overriden only by an
+  source: constitution-the-chickasaw-nation-2002-text-2
+  confidence: high
+  verification: read-in-full
+  as_of: '2002'
+  locator: Article VII, Section 9
+  document_version:
+    document: the-chickasaw-nation-constitution
+    version: 2002-text-2
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: Two-column scan; Articles XII and XIII were repealed by Amendment V, so the judicial text here is the Amendment V replacement.'
 governing_documents:
 - kind: law-code
   title: Tribal code

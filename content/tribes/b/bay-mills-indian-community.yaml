@@ -184,6 +184,207 @@ government_structure:
   as_of: '1936'
   locator: preamble / approval and certification of adoption
   note: Historical constitution; a later constitution may have replaced it.
+governance:
+- aspect: form
+  value: Constitution adopted under the Indian Reorganization Act of June 18, 1934
+  quote: in accordance with section 16 of the Indian Reorganization Act of June 18, 1934 (48 Stat. 984) as amended by the Act of June 15, 1935 (49 Stat. 378).
+  source: constitution-bay-mills-indian-community-1936-text-2
+  confidence: high
+  verification: read-in-full
+  as_of: '1936-11-04'
+  locator: Certification of Adoption
+  document_version:
+    document: bay-mills-indian-community-constitution
+    version: 1936-text-2
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author.
+- aspect: governing-body
+  value: General Tribal Council
+  quote: The governing body of the Community shall be the General Tribal Council which shall be composed of all qualified voters of the Community.
+  source: constitution-bay-mills-indian-community-1936-text-2
+  confidence: high
+  verification: read-in-full
+  as_of: '1936-11-04'
+  locator: Article IV, Section 1
+  document_version:
+    document: bay-mills-indian-community-constitution
+    version: 1936-text-2
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author.
+- aspect: governing-body
+  value: Executive Council
+  quote: The five so elected shall constitute the Executive Council, which shall exercise the powers and duties delegated to it
+  source: constitution-bay-mills-indian-community-1936-text-2
+  confidence: high
+  verification: read-in-full
+  as_of: '1936-11-04'
+  locator: Article IV, Section 2 (Amendment IV)
+  document_version:
+    document: bay-mills-indian-community-constitution
+    version: 1936-text-2
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author.
+- aspect: governing-body-size
+  value: 5 members
+  quote: The five so elected shall constitute the Executive Council
+  source: constitution-bay-mills-indian-community-1936-text-2
+  confidence: high
+  verification: read-in-full
+  as_of: '1936-11-04'
+  locator: Article IV, Section 2 (Amendment IV)
+  document_version:
+    document: bay-mills-indian-community-constitution
+    version: 1936-text-2
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author.
+- aspect: governing-body-selection
+  value: Elected by secret ballot from General Tribal Council members
+  quote: The General Tribal Council shall elect from its own members who are twenty-one (21) years of age or over, by secret ballot
+  source: constitution-bay-mills-indian-community-1936-text-2
+  confidence: high
+  verification: read-in-full
+  as_of: '1936-11-04'
+  locator: Article IV, Section 2 (Amendment IV)
+  document_version:
+    document: bay-mills-indian-community-constitution
+    version: 1936-text-2
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author.
+- aspect: governing-body-term
+  value: 2 years
+  quote: Members of the Executive Council shall hold office for a term of two (2) years.
+  source: constitution-bay-mills-indian-community-1936-text-2
+  confidence: high
+  verification: read-in-full
+  as_of: '1936-11-04'
+  locator: Article IV, Section 2 (Amendment IV)
+  document_version:
+    document: bay-mills-indian-community-constitution
+    version: 1936-text-2
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author.
+- aspect: general-council
+  value: All qualified voters of the Community
+  quote: The governing body of the Community shall be the General Tribal Council which shall be composed of all qualified voters of the Community.
+  source: constitution-bay-mills-indian-community-1936-text-2
+  confidence: high
+  verification: read-in-full
+  as_of: '1936-11-04'
+  locator: Article IV, Section 1
+  document_version:
+    document: bay-mills-indian-community-constitution
+    version: 1936-text-2
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author.
+- aspect: head-of-government
+  value: President
+  quote: a President, a Vice-President, a Secretary, a Treasurer, and one Councilman.
+  source: constitution-bay-mills-indian-community-1936-text-2
+  confidence: high
+  verification: read-in-full
+  as_of: '1936-11-04'
+  locator: Article IV, Section 2 (Amendment IV)
+  document_version:
+    document: bay-mills-indian-community-constitution
+    version: 1936-text-2
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author.
+- aspect: head-of-government
+  value: President
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  verification: bulk-import
+  as_of: '2026-11-20'
+  locator: Bay Mills Indian Community, Michigan
+  note: The title of the leader's office as the federal directory lists it; the holder's name is not recorded.
+- aspect: head-of-government-selection
+  value: Elected by the General Tribal Council from its members
+  quote: The General Tribal Council shall elect from its own members who are twenty-one (21) years of age or over, by secret ballot
+  source: constitution-bay-mills-indian-community-1936-text-2
+  confidence: high
+  verification: read-in-full
+  as_of: '1936-11-04'
+  locator: Article IV, Section 2 (Amendment IV)
+  document_version:
+    document: bay-mills-indian-community-constitution
+    version: 1936-text-2
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author.
+- aspect: head-of-government-term
+  value: 2 years
+  quote: Members of the Executive Council shall hold office for a term of two (2) years.
+  source: constitution-bay-mills-indian-community-1936-text-2
+  confidence: high
+  verification: read-in-full
+  as_of: '1936-11-04'
+  locator: Article IV, Section 2 (Amendment IV)
+  document_version:
+    document: bay-mills-indian-community-constitution
+    version: 1936-text-2
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author.
+- aspect: other-officers
+  value: Vice-President, Secretary, Treasurer, Councilman
+  quote: a President, a Vice-President, a Secretary, a Treasurer, and one Councilman.
+  source: constitution-bay-mills-indian-community-1936-text-2
+  confidence: high
+  verification: read-in-full
+  as_of: '1936-11-04'
+  locator: Article IV, Section 2 (Amendment IV)
+  document_version:
+    document: bay-mills-indian-community-constitution
+    version: 1936-text-2
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author.
+- aspect: voting-age
+  value: '18'
+  quote: Any member of the Bay Mills Indian Community who is eighteen (18) years of age or over shall be entitled to vote
+  source: constitution-bay-mills-indian-community-1936-text-2
+  confidence: high
+  verification: read-in-full
+  as_of: '1936-11-04'
+  locator: Amendment V
+  document_version:
+    document: bay-mills-indian-community-constitution
+    version: 1936-text-2
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author.
+- aspect: election-authority
+  value: Executive Council
+  quote: and thereafter the Executive Council shall make such provisions for all elections.
+  source: constitution-bay-mills-indian-community-1936-text-2
+  confidence: high
+  verification: read-in-full
+  as_of: '1936-11-04'
+  locator: Article IV, Section 4
+  document_version:
+    document: bay-mills-indian-community-constitution
+    version: 1936-text-2
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author.
+- aspect: amendment
+  value: Majority vote of qualified voters at an election called by the Secretary of the Interior
+  quote: This Constitution and By-laws may be amended by a majority vote of the qualified voters of the Community voting at an election called for that purpose by the Secretary of the Interior
+  source: constitution-bay-mills-indian-community-1936-text-2
+  confidence: high
+  verification: read-in-full
+  as_of: '1936-11-04'
+  locator: Article VIII
+  document_version:
+    document: bay-mills-indian-community-constitution
+    version: 1936-text-2
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author.
+- aspect: secretarial-approval
+  value: Required for amendments
+  quote: no amendment shall become effective until it shall have been approved by the Secretary of the Interior.
+  source: constitution-bay-mills-indian-community-1936-text-2
+  confidence: high
+  verification: read-in-full
+  as_of: '1936-11-04'
+  locator: Article VIII
+  document_version:
+    document: bay-mills-indian-community-constitution
+    version: 1936-text-2
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author.
+- aspect: recall-and-removal
+  value: Expulsion by two-thirds vote of General Tribal Council
+  quote: The General Tribal Council may by a two-thirds affirmative vote expel any member of the Executive Council
+  source: constitution-bay-mills-indian-community-1936-text-2
+  confidence: high
+  verification: read-in-full
+  as_of: '1936-11-04'
+  locator: Article V, Section 2
+  document_version:
+    document: bay-mills-indian-community-constitution
+    version: 1936-text-2
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author.
 governing_documents:
 - kind: law-code
   title: Tribal code

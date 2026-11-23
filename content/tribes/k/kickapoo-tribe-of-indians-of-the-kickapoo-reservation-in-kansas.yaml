@@ -183,6 +183,207 @@ government_structure:
   as_of: '1937'
   locator: preamble / approval and certification of adoption
   note: Historical constitution; a later constitution may have replaced it.
+governance:
+- aspect: form
+  value: Constitution under the Indian Reorganization Act of June 18, 1934
+  quote: of the Indian Reorganization Act of June 18, 1934, and
+  source: constitution-kickapoo-tribe-of-indians-of-the-kickapoo-reservation-in-kansas-1937-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1937-06-19'
+  locator: Preamble
+  document_version:
+    document: kickapoo-tribe-of-indians-of-the-kickapoo-reservation-in-kansas-constitution
+    version: 1937-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: The text is the 1937 constitution as amended through Amendment V (1979); the 1937 corporate charter is also in the scan, and OCR errors are frequent.'
+- aspect: governing-body
+  value: Tribal Council
+  quote: shall be the Tribal Council which shall be composed of
+  source: constitution-kickapoo-tribe-of-indians-of-the-kickapoo-reservation-in-kansas-1937-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1937-06-19'
+  locator: Article III, Section 1
+  document_version:
+    document: kickapoo-tribe-of-indians-of-the-kickapoo-reservation-in-kansas-constitution
+    version: 1937-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: The text is the 1937 constitution as amended through Amendment V (1979); the 1937 corporate charter is also in the scan, and OCR errors are frequent.'
+- aspect: governing-body-size
+  value: 7 members
+  quote: seven members elected by the tribe
+  source: constitution-kickapoo-tribe-of-indians-of-the-kickapoo-reservation-in-kansas-1937-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1937-06-19'
+  locator: Article III, Section 1
+  document_version:
+    document: kickapoo-tribe-of-indians-of-the-kickapoo-reservation-in-kansas-constitution
+    version: 1937-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: The text is the 1937 constitution as amended through Amendment V (1979); the 1937 corporate charter is also in the scan, and OCR errors are frequent.'
+- aspect: governing-body-selection
+  value: Elected by the tribe
+  quote: seven members elected by the tribe
+  source: constitution-kickapoo-tribe-of-indians-of-the-kickapoo-reservation-in-kansas-1937-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1937-06-19'
+  locator: Article III, Section 1
+  document_version:
+    document: kickapoo-tribe-of-indians-of-the-kickapoo-reservation-in-kansas-constitution
+    version: 1937-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: The text is the 1937 constitution as amended through Amendment V (1979); the 1937 corporate charter is also in the scan, and OCR errors are frequent.'
+- aspect: governing-body-term
+  value: 2 years
+  quote: elected at each annual election shall serve for two years.
+  source: constitution-kickapoo-tribe-of-indians-of-the-kickapoo-reservation-in-kansas-1937-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1937-06-19'
+  locator: Article III, Section 2
+  document_version:
+    document: kickapoo-tribe-of-indians-of-the-kickapoo-reservation-in-kansas-constitution
+    version: 1937-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: The text is the 1937 constitution as amended through Amendment V (1979); the 1937 corporate charter is also in the scan, and OCR errors are frequent.'
+- aspect: head-of-government
+  value: Chairman
+  quote: Chairman of the Tribal Council.
+  source: constitution-kickapoo-tribe-of-indians-of-the-kickapoo-reservation-in-kansas-1937-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1937-06-19'
+  locator: By-laws, Article I, Section 1
+  document_version:
+    document: kickapoo-tribe-of-indians-of-the-kickapoo-reservation-in-kansas-constitution
+    version: 1937-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: The text is the 1937 constitution as amended through Amendment V (1979); the 1937 corporate charter is also in the scan, and OCR errors are frequent.'
+- aspect: head-of-government
+  value: Chairperson
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  verification: bulk-import
+  as_of: '2026-11-20'
+  locator: Kickapoo Tribe of Indians of the Kickapoo Reservation in Kansas
+  note: The title of the leader's office as the federal directory lists it; the holder's name is not recorded. Listed as “Chairwoman”; recorded without the holder's own form of the title.
+- aspect: head-of-government-selection
+  value: Chosen by the Tribal Council from its own members
+  quote: from its own number a Chairman, a Vice-Chairman, a
+  source: constitution-kickapoo-tribe-of-indians-of-the-kickapoo-reservation-in-kansas-1937-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1937-06-19'
+  locator: Article III, Section 3
+  document_version:
+    document: kickapoo-tribe-of-indians-of-the-kickapoo-reservation-in-kansas-constitution
+    version: 1937-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: The text is the 1937 constitution as amended through Amendment V (1979); the 1937 corporate charter is also in the scan, and OCR errors are frequent.'
+- aspect: other-officers
+  value: Vice-Chairman, Secretary, Treasurer
+  quote: from its own number a Chairman, a Vice-Chairman, a
+  source: constitution-kickapoo-tribe-of-indians-of-the-kickapoo-reservation-in-kansas-1937-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1937-06-19'
+  locator: Article III, Section 3
+  document_version:
+    document: kickapoo-tribe-of-indians-of-the-kickapoo-reservation-in-kansas-constitution
+    version: 1937-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: The text is the 1937 constitution as amended through Amendment V (1979); the 1937 corporate charter is also in the scan, and OCR errors are frequent.'
+- aspect: elections
+  value: Annually, first Monday in October
+  quote: shall be held annually on the
+  source: constitution-kickapoo-tribe-of-indians-of-the-kickapoo-reservation-in-kansas-1937-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1937-06-19'
+  locator: Article III, Section 2
+  document_version:
+    document: kickapoo-tribe-of-indians-of-the-kickapoo-reservation-in-kansas-constitution
+    version: 1937-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: The text is the 1937 constitution as amended through Amendment V (1979); the 1937 corporate charter is also in the scan, and OCR errors are frequent.'
+- aspect: voting-age
+  value: '21'
+  quote: age or over shall be qualified voters in General Council
+  source: constitution-kickapoo-tribe-of-indians-of-the-kickapoo-reservation-in-kansas-1937-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1937-06-19'
+  locator: Article III, Section 4
+  document_version:
+    document: kickapoo-tribe-of-indians-of-the-kickapoo-reservation-in-kansas-constitution
+    version: 1937-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: The text is the 1937 constitution as amended through Amendment V (1979); the 1937 corporate charter is also in the scan, and OCR errors are frequent.'
+- aspect: judiciary
+  value: Council may establish reservation courts
+  quote: justice by establishing appropriate courts on
+  source: constitution-kickapoo-tribe-of-indians-of-the-kickapoo-reservation-in-kansas-1937-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1937-06-19'
+  locator: Article V, Section 1(j) (Amendment V)
+  document_version:
+    document: kickapoo-tribe-of-indians-of-the-kickapoo-reservation-in-kansas-constitution
+    version: 1937-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: The text is the 1937 constitution as amended through Amendment V (1979); the 1937 corporate charter is also in the scan, and OCR errors are frequent.'
+- aspect: amendment
+  value: Majority vote at election called by Secretary of the Interior, 30% turnout
+  quote: This Constitution and By-laws may be amended by a ma-
+  source: constitution-kickapoo-tribe-of-indians-of-the-kickapoo-reservation-in-kansas-1937-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1937-06-19'
+  locator: Article VII
+  document_version:
+    document: kickapoo-tribe-of-indians-of-the-kickapoo-reservation-in-kansas-constitution
+    version: 1937-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: The text is the 1937 constitution as amended through Amendment V (1979); the 1937 corporate charter is also in the scan, and OCR errors are frequent.'
+- aspect: secretarial-approval
+  value: Required for amendments
+  quote: become effective until it shall have been approved
+  source: constitution-kickapoo-tribe-of-indians-of-the-kickapoo-reservation-in-kansas-1937-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1937-06-19'
+  locator: Article VII
+  document_version:
+    document: kickapoo-tribe-of-indians-of-the-kickapoo-reservation-in-kansas-constitution
+    version: 1937-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: The text is the 1937 constitution as amended through Amendment V (1979); the 1937 corporate charter is also in the scan, and OCR errors are frequent.'
+- aspect: recall-and-removal
+  value: Recall by petition of 30% of qualified voters, then vote at tribal meeting
+  quote: Upon a petition signed by 30 per cent of the
+  source: constitution-kickapoo-tribe-of-indians-of-the-kickapoo-reservation-in-kansas-1937-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1937-06-19'
+  locator: Article IV, Section 1
+  document_version:
+    document: kickapoo-tribe-of-indians-of-the-kickapoo-reservation-in-kansas-constitution
+    version: 1937-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: The text is the 1937 constitution as amended through Amendment V (1979); the 1937 corporate charter is also in the scan, and OCR errors are frequent.'
+- aspect: recall-and-removal
+  value: Removal by vote of five Council members for neglect or misconduct
+  quote: The Tribal Council may by a vote of five of
+  source: constitution-kickapoo-tribe-of-indians-of-the-kickapoo-reservation-in-kansas-1937-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1937-06-19'
+  locator: Article IV, Section 2
+  document_version:
+    document: kickapoo-tribe-of-indians-of-the-kickapoo-reservation-in-kansas-constitution
+    version: 1937-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: The text is the 1937 constitution as amended through Amendment V (1979); the 1937 corporate charter is also in the scan, and OCR errors are frequent.'
+- aspect: other
+  value: 'Referendum: petition of 30% of voters can veto Council action'
+  quote: Upon petition by 30 percent of the qualified
+  source: constitution-kickapoo-tribe-of-indians-of-the-kickapoo-reservation-in-kansas-1937-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1937-06-19'
+  locator: Article VI, Section 1
+  document_version:
+    document: kickapoo-tribe-of-indians-of-the-kickapoo-reservation-in-kansas-constitution
+    version: 1937-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: The text is the 1937 constitution as amended through Amendment V (1979); the 1937 corporate charter is also in the scan, and OCR errors are frequent.'
 governing_documents:
 - kind: law-code
   title: Kansas Kickapoo Tribal Codes and Ordinances

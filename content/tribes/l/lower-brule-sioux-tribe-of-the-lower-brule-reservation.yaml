@@ -235,6 +235,243 @@ government_structure:
   as_of: '1935'
   locator: preamble / approval and certification of adoption
   note: Historical constitution; a later constitution may have replaced it.
+governance:
+- aspect: form
+  value: Constitution and Bylaws adopted under the Act of June 18, 1934
+  quote: as provided in the Act of June 18, 1934, as amended by the Act of June 15, 1935.
+  source: constitution-lower-brule-sioux-tribe-of-the-lower-brule-reservation-1942-text
+  confidence: high
+  verification: read-in-full
+  as_of: '1942-05-18'
+  locator: Article VI
+  document_version:
+    document: lower-brule-sioux-tribe-of-the-lower-brule-reservation-constitution
+    version: 1942-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: The extract is the 1935 constitution as amended through 1986, not only the 1942 version; facts follow the text as printed.'
+- aspect: governing-body
+  value: Tribal Council
+  quote: The governing body of the Lower Brule Sioux Tribe shall consist of a Council, known as the Lower Brule Sioux Tribal Council, hereinafter designated as the “Tribal Council”.
+  source: constitution-lower-brule-sioux-tribe-of-the-lower-brule-reservation-1942-text
+  confidence: high
+  verification: read-in-full
+  as_of: '1942-05-18'
+  locator: Article III, Section 1
+  document_version:
+    document: lower-brule-sioux-tribe-of-the-lower-brule-reservation-constitution
+    version: 1942-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: The extract is the 1935 constitution as amended through 1986, not only the 1942 version; facts follow the text as printed.'
+- aspect: governing-body-size
+  value: 6 members
+  quote: The voters shall elect at large a Chairman, Vice-Chairman, Treasurer and three Councilmen.
+  source: constitution-lower-brule-sioux-tribe-of-the-lower-brule-reservation-1942-text
+  confidence: high
+  verification: read-in-full
+  as_of: '1942-05-18'
+  locator: Article III, Section 2
+  document_version:
+    document: lower-brule-sioux-tribe-of-the-lower-brule-reservation-constitution
+    version: 1942-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: The extract is the 1935 constitution as amended through 1986, not only the 1942 version; facts follow the text as printed.'
+- aspect: governing-body-selection
+  value: Elected at large by the voters
+  quote: The voters shall elect at large a Chairman, Vice-Chairman, Treasurer and three Councilmen.
+  source: constitution-lower-brule-sioux-tribe-of-the-lower-brule-reservation-1942-text
+  confidence: high
+  verification: read-in-full
+  as_of: '1942-05-18'
+  locator: Article III, Section 2
+  document_version:
+    document: lower-brule-sioux-tribe-of-the-lower-brule-reservation-constitution
+    version: 1942-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: The extract is the 1935 constitution as amended through 1986, not only the 1942 version; facts follow the text as printed.'
+- aspect: governing-body-term
+  value: 2 years
+  quote: The elected councilmen shall serve for two years.
+  source: constitution-lower-brule-sioux-tribe-of-the-lower-brule-reservation-1942-text
+  confidence: high
+  verification: read-in-full
+  as_of: '1942-05-18'
+  locator: Article III, Section 4
+  document_version:
+    document: lower-brule-sioux-tribe-of-the-lower-brule-reservation-constitution
+    version: 1942-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: The extract is the 1935 constitution as amended through 1986, not only the 1942 version; facts follow the text as printed.'
+- aspect: head-of-government
+  value: Chairman
+  quote: The Chairman of the Tribal Council shall preside over all meetings of the Tribal Council,
+  source: constitution-lower-brule-sioux-tribe-of-the-lower-brule-reservation-1942-text
+  confidence: high
+  verification: read-in-full
+  as_of: '1942-05-18'
+  locator: Bylaws Article I, Section 1
+  document_version:
+    document: lower-brule-sioux-tribe-of-the-lower-brule-reservation-constitution
+    version: 1942-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: The extract is the 1935 constitution as amended through 1986, not only the 1942 version; facts follow the text as printed.'
+- aspect: head-of-government
+  value: Chairperson
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  verification: bulk-import
+  as_of: '2026-11-20'
+  locator: Lower Brule Sioux Tribe of the Lower Brule Reservation, South Dakota
+  note: The title of the leader's office as the federal directory lists it; the holder's name is not recorded. Listed as “Chairman”; recorded without the holder's own form of the title.
+- aspect: head-of-government-selection
+  value: Elected at large by the voters
+  quote: The voters shall elect at large a Chairman, Vice-Chairman, Treasurer and three Councilmen.
+  source: constitution-lower-brule-sioux-tribe-of-the-lower-brule-reservation-1942-text
+  confidence: high
+  verification: read-in-full
+  as_of: '1942-05-18'
+  locator: Article III, Section 2
+  document_version:
+    document: lower-brule-sioux-tribe-of-the-lower-brule-reservation-constitution
+    version: 1942-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: The extract is the 1935 constitution as amended through 1986, not only the 1942 version; facts follow the text as printed.'
+- aspect: other-officers
+  value: Vice-Chairman, Treasurer, Secretary, Sergeant at Arms, Chaplain
+  quote: (1) a Secretary, (2) a Sergeant at Arms, (3) a Chaplain, and (4) other such officers and committees as may be deemed necessary
+  source: constitution-lower-brule-sioux-tribe-of-the-lower-brule-reservation-1942-text
+  confidence: high
+  verification: read-in-full
+  as_of: '1942-05-18'
+  locator: Article III, Section 3
+  document_version:
+    document: lower-brule-sioux-tribe-of-the-lower-brule-reservation-constitution
+    version: 1942-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: The extract is the 1935 constitution as amended through 1986, not only the 1942 version; facts follow the text as printed.'
+- aspect: elections
+  value: Every 2 years on the first Tuesday of September
+  quote: elections shall be held on the first Tuesday of September in even numbered years
+  source: constitution-lower-brule-sioux-tribe-of-the-lower-brule-reservation-1942-text
+  confidence: high
+  verification: read-in-full
+  as_of: '1942-05-18'
+  locator: Article IV, Section 2
+  document_version:
+    document: lower-brule-sioux-tribe-of-the-lower-brule-reservation-constitution
+    version: 1942-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: The extract is the 1935 constitution as amended through 1986, not only the 1942 version; facts follow the text as printed.'
+- aspect: voting-age
+  value: '18'
+  quote: All enrolled resident members of the Lower Brule Sioux Tribe eighteen (18) years of age or over
+  source: constitution-lower-brule-sioux-tribe-of-the-lower-brule-reservation-1942-text
+  confidence: high
+  verification: read-in-full
+  as_of: '1942-05-18'
+  locator: Article IV, Section 1
+  document_version:
+    document: lower-brule-sioux-tribe-of-the-lower-brule-reservation-constitution
+    version: 1942-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: The extract is the 1935 constitution as amended through 1986, not only the 1942 version; facts follow the text as printed.'
+- aspect: election-authority
+  value: Election Board appointed by Tribal Council
+  quote: the Council shall appoint a five (5) member election Board plus five (5) alternates
+  source: constitution-lower-brule-sioux-tribe-of-the-lower-brule-reservation-1942-text
+  confidence: high
+  verification: read-in-full
+  as_of: '1942-05-18'
+  locator: Article IV, Section 3(a)
+  document_version:
+    document: lower-brule-sioux-tribe-of-the-lower-brule-reservation-constitution
+    version: 1942-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: The extract is the 1935 constitution as amended through 1986, not only the 1942 version; facts follow the text as printed.'
+- aspect: judiciary
+  value: Tribal court and appellate court
+  quote: There shall be a judicial branch comprised of an appellate court, a tribal court consisting of one chiefjudge with supportive staff.
+  source: constitution-lower-brule-sioux-tribe-of-the-lower-brule-reservation-1942-text
+  confidence: high
+  verification: read-in-full
+  as_of: '1942-05-18'
+  locator: Article VII, Section 1
+  document_version:
+    document: lower-brule-sioux-tribe-of-the-lower-brule-reservation-constitution
+    version: 1942-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: The extract is the 1935 constitution as amended through 1986, not only the 1942 version; facts follow the text as printed.'
+- aspect: judicial-selection
+  value: Elected by the voters
+  quote: Judges shall be elected by the eligible voters for a term of four (4) years
+  source: constitution-lower-brule-sioux-tribe-of-the-lower-brule-reservation-1942-text
+  confidence: high
+  verification: read-in-full
+  as_of: '1942-05-18'
+  locator: Article VII, Section 2
+  document_version:
+    document: lower-brule-sioux-tribe-of-the-lower-brule-reservation-constitution
+    version: 1942-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: The extract is the 1935 constitution as amended through 1986, not only the 1942 version; facts follow the text as printed.'
+- aspect: judicial-term
+  value: 4 years
+  quote: Judges shall be elected by the eligible voters for a term of four (4) years
+  source: constitution-lower-brule-sioux-tribe-of-the-lower-brule-reservation-1942-text
+  confidence: high
+  verification: read-in-full
+  as_of: '1942-05-18'
+  locator: Article VII, Section 2
+  document_version:
+    document: lower-brule-sioux-tribe-of-the-lower-brule-reservation-constitution
+    version: 1942-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: The extract is the 1935 constitution as amended through 1986, not only the 1942 version; facts follow the text as printed.'
+- aspect: amendment
+  value: Majority vote of qualified voters at election called by Secretary of the Interior
+  quote: This Constitution and Bylaws may be amended by a majority vote of the qualified voters of the Tribe voting at an election called for that purpose by the Secretary of the Interior
+  source: constitution-lower-brule-sioux-tribe-of-the-lower-brule-reservation-1942-text
+  confidence: high
+  verification: read-in-full
+  as_of: '1942-05-18'
+  locator: Article IX
+  document_version:
+    document: lower-brule-sioux-tribe-of-the-lower-brule-reservation-constitution
+    version: 1942-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: The extract is the 1935 constitution as amended through 1986, not only the 1942 version; facts follow the text as printed.'
+- aspect: secretarial-approval
+  value: Required for amendments
+  quote: but no amendment shall become effective until it shall have been approved by the Secretary of the Interior.
+  source: constitution-lower-brule-sioux-tribe-of-the-lower-brule-reservation-1942-text
+  confidence: high
+  verification: read-in-full
+  as_of: '1942-05-18'
+  locator: Article IX
+  document_version:
+    document: lower-brule-sioux-tribe-of-the-lower-brule-reservation-constitution
+    version: 1942-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: The extract is the 1935 constitution as amended through 1986, not only the 1942 version; facts follow the text as printed.'
+- aspect: recall-and-removal
+  value: Recall by petition of 30% of voters in last election
+  quote: bearing the signatures of no less than thirty percent (30%) of the qualified voters voting in the last regular tribal election.
+  source: constitution-lower-brule-sioux-tribe-of-the-lower-brule-reservation-1942-text
+  confidence: high
+  verification: read-in-full
+  as_of: '1942-05-18'
+  locator: Article V, Section 4
+  document_version:
+    document: lower-brule-sioux-tribe-of-the-lower-brule-reservation-constitution
+    version: 1942-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: The extract is the 1935 constitution as amended through 1986, not only the 1942 version; facts follow the text as printed.'
+- aspect: recall-and-removal
+  value: Expulsion by unanimous vote of remaining Council
+  quote: The Tribal Council may by a unanimous vote of the remaining council vote to expel any member
+  source: constitution-lower-brule-sioux-tribe-of-the-lower-brule-reservation-1942-text
+  confidence: high
+  verification: read-in-full
+  as_of: '1942-05-18'
+  locator: Article V, Section 2
+  document_version:
+    document: lower-brule-sioux-tribe-of-the-lower-brule-reservation-constitution
+    version: 1942-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: The extract is the 1935 constitution as amended through 1986, not only the 1942 version; facts follow the text as printed.'
+- aspect: other
+  value: Ordinances subject to Secretary of the Interior review
+  quote: which shall be subject to review by the Secretary of the Interior, governing the conduct of person
+  source: constitution-lower-brule-sioux-tribe-of-the-lower-brule-reservation-1942-text
+  confidence: high
+  verification: read-in-full
+  as_of: '1942-05-18'
+  locator: Article VI, Section 1(j)
+  document_version:
+    document: lower-brule-sioux-tribe-of-the-lower-brule-reservation-constitution
+    version: 1942-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: The extract is the 1935 constitution as amended through 1986, not only the 1942 version; facts follow the text as printed.'
 governing_documents:
 - kind: law-code
   title: Tribal code

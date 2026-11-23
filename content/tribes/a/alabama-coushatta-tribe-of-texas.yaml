@@ -246,6 +246,279 @@ government_structure:
   as_of: '1938'
   locator: preamble / approval and certification of adoption
   note: Historical constitution; a later constitution may have replaced it.
+governance:
+- aspect: form
+  value: Constitution adopted under the Indian Reorganization Act of June 18, 1934
+  quote: pursuant to the Indian Reorganization Act of June 18, 1934 (48 Stat.
+  source: constitution-alabama-coushatta-tribe-of-texas-2023-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2023'
+  locator: Preamble
+  document_version:
+    document: alabama-coushatta-tribe-of-texas-constitution
+    version: 2023-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: Revised and annotated compilation (July 2023) with footnoted amendment history; facts are from the current amended text.'
+- aspect: governing-body
+  value: Alabama-Coushatta Tribal Council
+  quote: Tribe of Texas shall be known as the Alabama-Coushatta Tribal Council and shall be
+  source: constitution-alabama-coushatta-tribe-of-texas-2023-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2023'
+  locator: Article V, Section 1
+  document_version:
+    document: alabama-coushatta-tribe-of-texas-constitution
+    version: 2023-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: Revised and annotated compilation (July 2023) with footnoted amendment history; facts are from the current amended text.'
+- aspect: governing-body-size
+  value: 7 members
+  quote: composed of seven (7) members as listed in this Article.
+  source: constitution-alabama-coushatta-tribe-of-texas-2023-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2023'
+  locator: Article V, Section 1
+  document_version:
+    document: alabama-coushatta-tribe-of-texas-constitution
+    version: 2023-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: Revised and annotated compilation (July 2023) with footnoted amendment history; facts are from the current amended text.'
+- aspect: governing-body-selection
+  value: Elected by eligible voters
+  quote: who are elected by the eligible voters of the Tribe in accordance with this Constitution and
+  source: constitution-alabama-coushatta-tribe-of-texas-2023-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2023'
+  locator: Article V, Section 1
+  document_version:
+    document: alabama-coushatta-tribe-of-texas-constitution
+    version: 2023-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: Revised and annotated compilation (July 2023) with footnoted amendment history; facts are from the current amended text.'
+- aspect: governing-body-term
+  value: 3 years, staggered
+  quote: the eligible voters of the Tribe for a period of three (3) years, and all council members shall
+  source: constitution-alabama-coushatta-tribe-of-texas-2023-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2023'
+  locator: Article V, Section 2
+  document_version:
+    document: alabama-coushatta-tribe-of-texas-constitution
+    version: 2023-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: Revised and annotated compilation (July 2023) with footnoted amendment history; facts are from the current amended text.'
+- aspect: general-council
+  value: Eligible voters at General Membership Meetings
+  quote: at least one General Membership Meeting in the month of December and any others as
+  source: constitution-alabama-coushatta-tribe-of-texas-2023-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2023'
+  locator: Article X, Section 1
+  document_version:
+    document: alabama-coushatta-tribe-of-texas-constitution
+    version: 2023-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: Revised and annotated compilation (July 2023) with footnoted amendment history; facts are from the current amended text.'
+- aspect: head-of-government
+  value: Chairperson
+  quote: a Chairperson of Tribal Council from the seven (7) members of the Tribal Council.
+  source: constitution-alabama-coushatta-tribe-of-texas-2023-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2023'
+  locator: Article V, Section 4
+  document_version:
+    document: alabama-coushatta-tribe-of-texas-constitution
+    version: 2023-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: Revised and annotated compilation (July 2023) with footnoted amendment history; facts are from the current amended text.'
+- aspect: head-of-government
+  value: Chairperson
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  verification: bulk-import
+  as_of: '2026-11-20'
+  locator: Alabama-Coushatta Tribe of Texas
+  note: The title of the leader's office as the federal directory lists it; the holder's name is not recorded. Listed as “Chairman”; recorded without the holder's own form of the title.
+- aspect: head-of-government-selection
+  value: Elected by eligible voters from among council members
+  quote: the eligible voters of the Tribe will elect
+  source: constitution-alabama-coushatta-tribe-of-texas-2023-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2023'
+  locator: Article V, Section 4
+  document_version:
+    document: alabama-coushatta-tribe-of-texas-constitution
+    version: 2023-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: Revised and annotated compilation (July 2023) with footnoted amendment history; facts are from the current amended text.'
+- aspect: head-of-government-term
+  value: Until the next Annual Election
+  quote: Chairperson shall serve until the next Annual Election.
+  source: constitution-alabama-coushatta-tribe-of-texas-2023-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2023'
+  locator: Article V, Section 4
+  document_version:
+    document: alabama-coushatta-tribe-of-texas-constitution
+    version: 2023-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: Revised and annotated compilation (July 2023) with footnoted amendment history; facts are from the current amended text.'
+- aspect: other-officers
+  value: Vice-Chairperson, Secretary, Treasurer
+  quote: Chairperson, Vice-Chairperson, Secretary and Treasurer.
+  source: constitution-alabama-coushatta-tribe-of-texas-2023-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2023'
+  locator: Article V, Section 3
+  document_version:
+    document: alabama-coushatta-tribe-of-texas-constitution
+    version: 2023-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: Revised and annotated compilation (July 2023) with footnoted amendment history; facts are from the current amended text.'
+- aspect: elections
+  value: Annually on the first Wednesday of November
+  quote: Council shall be held annually on the first Wednesday of November.
+  source: constitution-alabama-coushatta-tribe-of-texas-2023-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2023'
+  locator: Article VIII, Section 1
+  document_version:
+    document: alabama-coushatta-tribe-of-texas-constitution
+    version: 2023-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: Revised and annotated compilation (July 2023) with footnoted amendment history; facts are from the current amended text.'
+- aspect: voting-age
+  value: '18'
+  quote: All Resident Tribal Members who are eighteen (18) years or older and who
+  source: constitution-alabama-coushatta-tribe-of-texas-2023-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2023'
+  locator: Article VIII, Section 3(a)
+  document_version:
+    document: alabama-coushatta-tribe-of-texas-constitution
+    version: 2023-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: Revised and annotated compilation (July 2023) with footnoted amendment history; facts are from the current amended text.'
+- aspect: election-authority
+  value: Tribal Council (by ordinance)
+  quote: The Tribal Council shall have the authority to
+  source: constitution-alabama-coushatta-tribe-of-texas-2023-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2023'
+  locator: Article VIII, Section 5
+  document_version:
+    document: alabama-coushatta-tribe-of-texas-constitution
+    version: 2023-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: Revised and annotated compilation (July 2023) with footnoted amendment history; facts are from the current amended text.'
+- aspect: branches
+  value: Tribal Chiefs, Tribal Council, Tribal Administration, Tribal Court System
+  quote: The government of the Alabama-Coushatta Tribe of Texas shall include Tribal Chiefs,
+  source: constitution-alabama-coushatta-tribe-of-texas-2023-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2023'
+  locator: Article III
+  document_version:
+    document: alabama-coushatta-tribe-of-texas-constitution
+    version: 2023-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: Revised and annotated compilation (July 2023) with footnoted amendment history; facts are from the current amended text.'
+- aspect: judiciary
+  value: Tribal Court, Court of Appeals, and Peacemaker Court
+  quote: Tribe of Texas shall be vested in a Tribal Court, Court of Appeals, and a Peacemaker Court,
+  source: constitution-alabama-coushatta-tribe-of-texas-2023-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2023'
+  locator: Article XIII, Section 1
+  document_version:
+    document: alabama-coushatta-tribe-of-texas-constitution
+    version: 2023-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: Revised and annotated compilation (July 2023) with footnoted amendment history; facts are from the current amended text.'
+- aspect: judicial-selection
+  value: Appointed by the Tribal Council
+  quote: appoint the Judges of the Tribal Court, the Court of Appeals, and Peacemakers of the
+  source: constitution-alabama-coushatta-tribe-of-texas-2023-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2023'
+  locator: Article XIII, Section 5
+  document_version:
+    document: alabama-coushatta-tribe-of-texas-constitution
+    version: 2023-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: Revised and annotated compilation (July 2023) with footnoted amendment history; facts are from the current amended text.'
+- aspect: judicial-term
+  value: 4 years
+  quote: to serve for a term of four (4) years, and all Judges and Peacemakers shall
+  source: constitution-alabama-coushatta-tribe-of-texas-2023-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2023'
+  locator: Article XIII, Section 5
+  document_version:
+    document: alabama-coushatta-tribe-of-texas-constitution
+    version: 2023-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: Revised and annotated compilation (July 2023) with footnoted amendment history; facts are from the current amended text.'
+- aspect: amendment
+  value: Majority vote of eligible voters; 30 percent must vote
+  quote: This Constitution and By-Laws may be amended by a majority vote of the Eligible
+  source: constitution-alabama-coushatta-tribe-of-texas-2023-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2023'
+  locator: Article XIX
+  document_version:
+    document: alabama-coushatta-tribe-of-texas-constitution
+    version: 2023-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: Revised and annotated compilation (July 2023) with footnoted amendment history; facts are from the current amended text.'
+- aspect: secretarial-approval
+  value: Required for amendments
+  quote: but no amendment shall become effective until it has been approved by the Secretary of
+  source: constitution-alabama-coushatta-tribe-of-texas-2023-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2023'
+  locator: Article XIX
+  document_version:
+    document: alabama-coushatta-tribe-of-texas-constitution
+    version: 2023-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: Revised and annotated compilation (July 2023) with footnoted amendment history; facts are from the current amended text.'
+- aspect: recall-and-removal
+  value: Removal by 5 council votes for neglect of duty or gross misconduct
+  quote: The Tribal Council may by an affirmative vote of five (5) expel any
+  source: constitution-alabama-coushatta-tribe-of-texas-2023-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2023'
+  locator: Article IX, Section 1
+  document_version:
+    document: alabama-coushatta-tribe-of-texas-constitution
+    version: 2023-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: Revised and annotated compilation (July 2023) with footnoted amendment history; facts are from the current amended text.'
+- aspect: recall-and-removal
+  value: Recall by petition of 30 percent of prior annual voters, then majority vote
+  quote: recalled unless at least thirty (30) percent of Eligible Voters who voted in the immediate
+  source: constitution-alabama-coushatta-tribe-of-texas-2023-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2023'
+  locator: Article XV, Section 2
+  document_version:
+    document: alabama-coushatta-tribe-of-texas-constitution
+    version: 2023-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: Revised and annotated compilation (July 2023) with footnoted amendment history; facts are from the current amended text.'
+- aspect: other
+  value: Principal Chief and Second Chief, life terms, ex-officio council members
+  quote: These shall consist of a Principal Chief and a Second Chief.
+  source: constitution-alabama-coushatta-tribe-of-texas-2023-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2023'
+  locator: Article IV, Section 1
+  document_version:
+    document: alabama-coushatta-tribe-of-texas-constitution
+    version: 2023-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: Revised and annotated compilation (July 2023) with footnoted amendment history; facts are from the current amended text.'
 governing_documents:
 - kind: constitution
   title: Alabama-Coushatta Tribe of Texas Constitution and By Laws

@@ -166,6 +166,206 @@ indian_health_service:
   as_of: '2026-11-23'
   locator: '"Federally Recognized Tribes" list, Interior Alaska Service Area profile'
   note: 'The source''s words: "Northway Village".'
+governance:
+- aspect: form
+  value: Traditional Constitution
+  quote: The attached Traditional Constitution of the Northway Tribe was submitted to the
+  source: constitution-northway-village-2004-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '2004-09-07'
+  document_version:
+    document: northway-village-constitution
+    version: 2004-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Several headings and the officers section are garbled in the scan; the locators use the labels that remain legible.'
+- aspect: governing-body
+  value: Northway Tribal Council
+  quote: the Northway Tribal Council, also referred to as the
+  source: constitution-northway-village-2004-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '2004-09-07'
+  locator: Article 4, Section 1
+  document_version:
+    document: northway-village-constitution
+    version: 2004-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Several headings and the officers section are garbled in the scan; the locators use the labels that remain legible.'
+- aspect: governing-body-size
+  value: 7 members
+  quote: shall consist seven (7) adult, resident tribal members, elected by the qualified tribal
+  source: constitution-northway-village-2004-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '2004-09-07'
+  locator: Article 4, Section 2
+  document_version:
+    document: northway-village-constitution
+    version: 2004-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Several headings and the officers section are garbled in the scan; the locators use the labels that remain legible.'
+- aspect: governing-body-selection
+  value: Elected by the qualified tribal voters
+  quote: elected by the qualified tribal
+  source: constitution-northway-village-2004-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '2004-09-07'
+  locator: Article 4, Section 2
+  document_version:
+    document: northway-village-constitution
+    version: 2004-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Several headings and the officers section are garbled in the scan; the locators use the labels that remain legible.'
+- aspect: governing-body-term
+  value: 2 years, staggered
+  quote: shall hold office for a term of two (2) years
+  source: constitution-northway-village-2004-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '2004-09-07'
+  locator: Article 4, Section 7
+  document_version:
+    document: northway-village-constitution
+    version: 2004-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Several headings and the officers section are garbled in the scan; the locators use the labels that remain legible.'
+- aspect: head-of-government
+  value: President
+  quote: The President shall be the first in command to preside over
+  source: constitution-northway-village-2004-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '2004-09-07'
+  locator: Article 5, Section 3
+  document_version:
+    document: northway-village-constitution
+    version: 2004-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Several headings and the officers section are garbled in the scan; the locators use the labels that remain legible.'
+- aspect: head-of-government
+  value: President
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  verification: bulk-import
+  as_of: '2026-11-20'
+  locator: Northway Village
+  note: The title of the leader's office as the federal directory lists it; the holder's name is not recorded.
+- aspect: head-of-government-selection
+  value: Appointed by the Council
+  quote: Officers shall be appointed by the Council
+  source: constitution-northway-village-2004-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '2004-09-07'
+  locator: Article 4
+  document_version:
+    document: northway-village-constitution
+    version: 2004-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Several headings and the officers section are garbled in the scan; the locators use the labels that remain legible.'
+- aspect: other-officers
+  value: Vice President, Secretary/Treasurer
+  quote: include a President, Vice President, and Secretary/Treasurer.
+  source: constitution-northway-village-2004-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '2004-09-07'
+  locator: Article 4
+  document_version:
+    document: northway-village-constitution
+    version: 2004-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Several headings and the officers section are garbled in the scan; the locators use the labels that remain legible.'
+- aspect: elections
+  value: Every year in April
+  quote: members shall be held each year in April, with three being elected one year, and four
+  source: constitution-northway-village-2004-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '2004-09-07'
+  locator: Article 4, Section 7
+  document_version:
+    document: northway-village-constitution
+    version: 2004-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Several headings and the officers section are garbled in the scan; the locators use the labels that remain legible.'
+- aspect: voting-age
+  value: '18'
+  quote: Any tribal member eighteen (18) years of age or older, and is physically present in
+  source: constitution-northway-village-2004-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '2004-09-07'
+  locator: Article 8, Section 1
+  document_version:
+    document: northway-village-constitution
+    version: 2004-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Several headings and the officers section are garbled in the scan; the locators use the labels that remain legible.'
+- aspect: election-authority
+  value: Election Committee
+  quote: election committee of at least two adults to supervise, administer, and conduct tribal
+  source: constitution-northway-village-2004-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '2004-09-07'
+  locator: Article 8, Section 5
+  document_version:
+    document: northway-village-constitution
+    version: 2004-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Several headings and the officers section are garbled in the scan; the locators use the labels that remain legible.'
+- aspect: judiciary
+  value: Council may establish tribal court system
+  quote: The Council shall have the power to establish a tribal court system.
+  source: constitution-northway-village-2004-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '2004-09-07'
+  locator: Article 9, Section 1
+  document_version:
+    document: northway-village-constitution
+    version: 2004-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Several headings and the officers section are garbled in the scan; the locators use the labels that remain legible.'
+- aspect: amendment
+  value: Majority vote in an election called for that purpose
+  quote: amended or repealed by a majority vote of the qualified voters
+  source: constitution-northway-village-2004-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '2004-09-07'
+  locator: Article 14
+  document_version:
+    document: northway-village-constitution
+    version: 2004-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Several headings and the officers section are garbled in the scan; the locators use the labels that remain legible.'
+- aspect: recall-and-removal
+  value: Removal by Council vote of at least 5 members
+  quote: be removed from office by the Council. A minimum of at least 5 Council members must
+  source: constitution-northway-village-2004-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '2004-09-07'
+  locator: Article 7, Section 1
+  document_version:
+    document: northway-village-constitution
+    version: 2004-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Several headings and the officers section are garbled in the scan; the locators use the labels that remain legible.'
+- aspect: recall-and-removal
+  value: Recall by petition of 35 voters, then election
+  quote: signed by at least 35 of the qualified tribal voters of Northway
+  source: constitution-northway-village-2004-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '2004-09-07'
+  locator: Article 7, Section 2
+  document_version:
+    document: northway-village-constitution
+    version: 2004-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Several headings and the officers section are garbled in the scan; the locators use the labels that remain legible.'
+- aspect: other
+  value: Tribal membership meetings may be called by petition of 35 voters
+  quote: through a petition signed by at least 35 of the qualified tribal voters.
+  source: constitution-northway-village-2004-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '2004-09-07'
+  locator: Article 6, Section 6(B)
+  document_version:
+    document: northway-village-constitution
+    version: 2004-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Several headings and the officers section are garbled in the scan; the locators use the labels that remain legible.'
 justice_institutions:
 - kind: tribal-court
   name: Tribal Court

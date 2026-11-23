@@ -240,6 +240,219 @@ government_structure:
   as_of: '1936'
   locator: preamble / approval and certification of adoption
   note: Historical constitution; a later constitution may have replaced it.
+governance:
+- aspect: form
+  value: Constitution under the Indian Reorganization Act
+  quote: under the Indian Reorganization Act, do hereby establish the following
+  source: constitution-prairie-island-indian-community-in-the-state-of-minnesota-2017-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2017'
+  locator: Preamble
+  document_version:
+    document: prairie-island-indian-community-in-the-state-of-minnesota-constitution
+    version: 2017-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: Footer reads as amended February 22, 2017, and the text ends with the 1936 approval certificate; facts follow the text as given.'
+- aspect: governing-body
+  value: Community Council
+  quote: called “The Community Council of the Prairie Island Indian Reservation”, and
+  source: constitution-prairie-island-indian-community-in-the-state-of-minnesota-2017-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2017'
+  locator: Article IV, Section 1
+  document_version:
+    document: prairie-island-indian-community-in-the-state-of-minnesota-constitution
+    version: 2017-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: Footer reads as amended February 22, 2017, and the text ends with the 1936 approval certificate; facts follow the text as given.'
+- aspect: governing-body-size
+  value: 5 members
+  quote: shall be composed of five members who shall be duly elected by secret ballot by
+  source: constitution-prairie-island-indian-community-in-the-state-of-minnesota-2017-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2017'
+  locator: Article IV, Section 1
+  document_version:
+    document: prairie-island-indian-community-in-the-state-of-minnesota-constitution
+    version: 2017-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: Footer reads as amended February 22, 2017, and the text ends with the 1936 approval certificate; facts follow the text as given.'
+- aspect: governing-body-selection
+  value: Elected by secret ballot of qualified voters
+  quote: duly elected by secret ballot by
+  source: constitution-prairie-island-indian-community-in-the-state-of-minnesota-2017-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2017'
+  locator: Article IV, Section 1
+  document_version:
+    document: prairie-island-indian-community-in-the-state-of-minnesota-constitution
+    version: 2017-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: Footer reads as amended February 22, 2017, and the text ends with the 1936 approval certificate; facts follow the text as given.'
+- aspect: governing-body-term
+  value: 2 years
+  quote: elected for a term of two (2) years.
+  source: constitution-prairie-island-indian-community-in-the-state-of-minnesota-2017-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2017'
+  locator: Article IV, Section 2
+  document_version:
+    document: prairie-island-indian-community-in-the-state-of-minnesota-constitution
+    version: 2017-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: Footer reads as amended February 22, 2017, and the text ends with the 1936 approval certificate; facts follow the text as given.'
+- aspect: head-of-government
+  value: President
+  quote: their membership by secret ballot one president, a vice president, a secretary, a
+  source: constitution-prairie-island-indian-community-in-the-state-of-minnesota-2017-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2017'
+  locator: Article IV, Section 3
+  document_version:
+    document: prairie-island-indian-community-in-the-state-of-minnesota-constitution
+    version: 2017-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: Footer reads as amended February 22, 2017, and the text ends with the 1936 approval certificate; facts follow the text as given.'
+- aspect: head-of-government
+  value: President
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  verification: bulk-import
+  as_of: '2026-11-20'
+  locator: Prairie Island Indian Community in the State of Minnesota
+  note: The title of the leader's office as the federal directory lists it; the holder's name is not recorded.
+- aspect: head-of-government-selection
+  value: Chosen by the Council from its members by secret ballot
+  quote: their membership by secret ballot one president, a vice president, a secretary, a
+  source: constitution-prairie-island-indian-community-in-the-state-of-minnesota-2017-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2017'
+  locator: Article IV, Section 3
+  document_version:
+    document: prairie-island-indian-community-in-the-state-of-minnesota-constitution
+    version: 2017-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: Footer reads as amended February 22, 2017, and the text ends with the 1936 approval certificate; facts follow the text as given.'
+- aspect: head-of-government-term
+  value: 2 years
+  quote: two years or until their successor is elected.
+  source: constitution-prairie-island-indian-community-in-the-state-of-minnesota-2017-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2017'
+  locator: Article IV, Section 3
+  document_version:
+    document: prairie-island-indian-community-in-the-state-of-minnesota-constitution
+    version: 2017-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: Footer reads as amended February 22, 2017, and the text ends with the 1936 approval certificate; facts follow the text as given.'
+- aspect: other-officers
+  value: Vice president, secretary, treasurer, assistant secretary-treasurer
+  quote: treasurer, and an assistant secretary-treasurer, who shall hold office for a term of
+  source: constitution-prairie-island-indian-community-in-the-state-of-minnesota-2017-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2017'
+  locator: Article IV, Section 3
+  document_version:
+    document: prairie-island-indian-community-in-the-state-of-minnesota-constitution
+    version: 2017-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: Footer reads as amended February 22, 2017, and the text ends with the 1936 approval certificate; facts follow the text as given.'
+- aspect: elections
+  value: Every 2 years
+  quote: Elections thereafter shall be held every two years, and not
+  source: constitution-prairie-island-indian-community-in-the-state-of-minnesota-2017-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2017'
+  locator: Article VI, Section 1
+  document_version:
+    document: prairie-island-indian-community-in-the-state-of-minnesota-constitution
+    version: 2017-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: Footer reads as amended February 22, 2017, and the text ends with the 1936 approval certificate; facts follow the text as given.'
+- aspect: voting-age
+  value: '18'
+  quote: by having reached the age of 18 years and be an enrolled member of the
+  source: constitution-prairie-island-indian-community-in-the-state-of-minnesota-2017-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2017'
+  locator: Article VI, Section 5
+  document_version:
+    document: prairie-island-indian-community-in-the-state-of-minnesota-constitution
+    version: 2017-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: Footer reads as amended February 22, 2017, and the text ends with the 1936 approval certificate; facts follow the text as given.'
+- aspect: election-authority
+  value: Two judges and two clerks of election appointed by Council
+  quote: Council shall appoint two judges and two clerks of election from among the
+  source: constitution-prairie-island-indian-community-in-the-state-of-minnesota-2017-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2017'
+  locator: Article VI, Section 3
+  document_version:
+    document: prairie-island-indian-community-in-the-state-of-minnesota-constitution
+    version: 2017-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: Footer reads as amended February 22, 2017, and the text ends with the 1936 approval certificate; facts follow the text as given.'
+- aspect: judiciary
+  value: Court of Domestic Relations (Council may establish)
+  quote: The Community Council is hereby authorized to establish a
+  source: constitution-prairie-island-indian-community-in-the-state-of-minnesota-2017-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2017'
+  locator: Article XI, Section 1
+  document_version:
+    document: prairie-island-indian-community-in-the-state-of-minnesota-constitution
+    version: 2017-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: Footer reads as amended February 22, 2017, and the text ends with the 1936 approval certificate; facts follow the text as given.'
+- aspect: amendment
+  value: Majority vote of qualified voters in election called by Secretary of the Interior
+  quote: qualified voters of the Prairie Island Indian Community voting at an election
+  source: constitution-prairie-island-indian-community-in-the-state-of-minnesota-2017-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2017'
+  locator: Article XIII
+  document_version:
+    document: prairie-island-indian-community-in-the-state-of-minnesota-constitution
+    version: 2017-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: Footer reads as amended February 22, 2017, and the text ends with the 1936 approval certificate; facts follow the text as given.'
+- aspect: secretarial-approval
+  value: Required for amendments
+  quote: shall become effective until it shall have been approved by the Secretary of the
+  source: constitution-prairie-island-indian-community-in-the-state-of-minnesota-2017-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2017'
+  locator: Article XIII
+  document_version:
+    document: prairie-island-indian-community-in-the-state-of-minnesota-constitution
+    version: 2017-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: Footer reads as amended February 22, 2017, and the text ends with the 1936 approval certificate; facts follow the text as given.'
+- aspect: recall-and-removal
+  value: Removal by Tribal Court on complaint signed by 30% of enrolled voters
+  quote: misconduct, neglect of duty signed by 30% of the enrolled eligible voters of the
+  source: constitution-prairie-island-indian-community-in-the-state-of-minnesota-2017-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2017'
+  locator: Article VII, Section 1
+  document_version:
+    document: prairie-island-indian-community-in-the-state-of-minnesota-constitution
+    version: 2017-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: Footer reads as amended February 22, 2017, and the text ends with the 1936 approval certificate; facts follow the text as given.'
+- aspect: other
+  value: Referendum on Council actions on 25% petition
+  quote: signed by not less than twenty-five per cent of the total number of
+  source: constitution-prairie-island-indian-community-in-the-state-of-minnesota-2017-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2017'
+  locator: Article VIII, Section 1
+  document_version:
+    document: prairie-island-indian-community-in-the-state-of-minnesota-constitution
+    version: 2017-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: Footer reads as amended February 22, 2017, and the text ends with the 1936 approval certificate; facts follow the text as given.'
 governing_documents:
 - kind: law-code
   title: Tribal code

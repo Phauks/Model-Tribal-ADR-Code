@@ -200,6 +200,279 @@ government_structure:
   as_of: '1936'
   locator: preamble / approval and certification of adoption
   note: Historical constitution; a later constitution may have replaced it.
+governance:
+- aspect: form
+  value: Revised Constitution and By-Laws approved by Secretary of the Interior
+  quote: This revised Constitution and By-Laws, when adopted by majority
+  source: constitution-flandreau-santee-sioux-tribe-of-south-dakota-2022-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2022-07-08'
+  locator: Article II
+  document_version:
+    document: flandreau-santee-sioux-tribe-of-south-dakota-constitution
+    version: 2022-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: Text is the 2022 amended constitution and by-laws; scan is clean apart from a few garbled characters.'
+- aspect: governing-body
+  value: Executive Committee
+  quote: Tribe shall be the Executive Committee.
+  source: constitution-flandreau-santee-sioux-tribe-of-south-dakota-2022-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2022-07-08'
+  locator: Article III, Section 1
+  document_version:
+    document: flandreau-santee-sioux-tribe-of-south-dakota-constitution
+    version: 2022-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: Text is the 2022 amended constitution and by-laws; scan is clean apart from a few garbled characters.'
+- aspect: governing-body-size
+  value: 8 members, Treasurer non-voting
+  quote: (to be appointed and is a non-voting position), Trustee I, Trustee
+  source: constitution-flandreau-santee-sioux-tribe-of-south-dakota-2022-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2022-07-08'
+  locator: Article III, Section 1
+  document_version:
+    document: flandreau-santee-sioux-tribe-of-south-dakota-constitution
+    version: 2022-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: Text is the 2022 amended constitution and by-laws; scan is clean apart from a few garbled characters.'
+- aspect: governing-body-selection
+  value: Elected by the qualified voters
+  quote: term of office will expire shall be subject to re-election by the
+  source: constitution-flandreau-santee-sioux-tribe-of-south-dakota-2022-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2022-07-08'
+  locator: Article V, Section 1
+  document_version:
+    document: flandreau-santee-sioux-tribe-of-south-dakota-constitution
+    version: 2022-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: Text is the 2022 amended constitution and by-laws; scan is clean apart from a few garbled characters.'
+- aspect: governing-body-term
+  value: 4 years, staggered
+  quote: members shall be four (4) years.
+  source: constitution-flandreau-santee-sioux-tribe-of-south-dakota-2022-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2022-07-08'
+  locator: Article III, Section 4
+  document_version:
+    document: flandreau-santee-sioux-tribe-of-south-dakota-constitution
+    version: 2022-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: Text is the 2022 amended constitution and by-laws; scan is clean apart from a few garbled characters.'
+- aspect: head-of-government
+  value: President
+  quote: The President shall preside at all
+  source: constitution-flandreau-santee-sioux-tribe-of-south-dakota-2022-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2022-07-08'
+  locator: By-Laws, Article I, Section 1
+  document_version:
+    document: flandreau-santee-sioux-tribe-of-south-dakota-constitution
+    version: 2022-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: Text is the 2022 amended constitution and by-laws; scan is clean apart from a few garbled characters.'
+- aspect: head-of-government
+  value: President
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  verification: bulk-import
+  as_of: '2026-11-20'
+  locator: Flandreau Santee Sioux Tribe of South Dakota
+  note: The title of the leader's office as the federal directory lists it; the holder's name is not recorded.
+- aspect: head-of-government-selection
+  value: Elected by the qualified voters
+  quote: term of office will expire shall be subject to re-election by the
+  source: constitution-flandreau-santee-sioux-tribe-of-south-dakota-2022-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2022-07-08'
+  locator: Article V, Section 1
+  document_version:
+    document: flandreau-santee-sioux-tribe-of-south-dakota-constitution
+    version: 2022-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: Text is the 2022 amended constitution and by-laws; scan is clean apart from a few garbled characters.'
+- aspect: head-of-government-term
+  value: 4 years
+  quote: members shall be four (4) years.
+  source: constitution-flandreau-santee-sioux-tribe-of-south-dakota-2022-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2022-07-08'
+  locator: Article III, Section 4
+  document_version:
+    document: flandreau-santee-sioux-tribe-of-south-dakota-constitution
+    version: 2022-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: Text is the 2022 amended constitution and by-laws; scan is clean apart from a few garbled characters.'
+- aspect: other-officers
+  value: Vice-President, Secretary, Treasurer, Trustees I-IV
+  quote: shall consist of a President, Vice-President, Secretary, Treasurer
+  source: constitution-flandreau-santee-sioux-tribe-of-south-dakota-2022-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2022-07-08'
+  locator: Article III, Section 1
+  document_version:
+    document: flandreau-santee-sioux-tribe-of-south-dakota-constitution
+    version: 2022-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: Text is the 2022 amended constitution and by-laws; scan is clean apart from a few garbled characters.'
+- aspect: elections
+  value: Each election year, general election at August General Council meeting
+  quote: The general election shall be held in conjunction with the August
+  source: constitution-flandreau-santee-sioux-tribe-of-south-dakota-2022-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2022-07-08'
+  locator: Article V, Section 2
+  document_version:
+    document: flandreau-santee-sioux-tribe-of-south-dakota-constitution
+    version: 2022-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: Text is the 2022 amended constitution and by-laws; scan is clean apart from a few garbled characters.'
+- aspect: voting-age
+  value: '18'
+  quote: eighteen (18) years of age or over and a resident of Moody
+  source: constitution-flandreau-santee-sioux-tribe-of-south-dakota-2022-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2022-07-08'
+  locator: Article III, Section 2
+  document_version:
+    document: flandreau-santee-sioux-tribe-of-south-dakota-constitution
+    version: 2022-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: Text is the 2022 amended constitution and by-laws; scan is clean apart from a few garbled characters.'
+- aspect: election-authority
+  value: Election Board
+  quote: Elections shall be conducted by an Election Board in accordance
+  source: constitution-flandreau-santee-sioux-tribe-of-south-dakota-2022-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2022-07-08'
+  locator: Article V, Section 2
+  document_version:
+    document: flandreau-santee-sioux-tribe-of-south-dakota-constitution
+    version: 2022-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: Text is the 2022 amended constitution and by-laws; scan is clean apart from a few garbled characters.'
+- aspect: branches
+  value: Tribal governing body and tribal judiciary
+  quote: separation of power between the
+  source: constitution-flandreau-santee-sioux-tribe-of-south-dakota-2022-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2022-07-08'
+  locator: Article IX, Section 3
+  document_version:
+    document: flandreau-santee-sioux-tribe-of-south-dakota-constitution
+    version: 2022-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: Text is the 2022 amended constitution and by-laws; scan is clean apart from a few garbled characters.'
+- aspect: separation-of-powers
+  value: Stated
+  quote: separation of power between the
+  source: constitution-flandreau-santee-sioux-tribe-of-south-dakota-2022-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2022-07-08'
+  locator: Article IX, Section 3
+  document_version:
+    document: flandreau-santee-sioux-tribe-of-south-dakota-constitution
+    version: 2022-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: Text is the 2022 amended constitution and by-laws; scan is clean apart from a few garbled characters.'
+- aspect: judiciary
+  value: Tribal Court and Appellate Court
+  quote: shall be composed of a court of general jurisdiction which
+  source: constitution-flandreau-santee-sioux-tribe-of-south-dakota-2022-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2022-07-08'
+  locator: Article IX, Section 1
+  document_version:
+    document: flandreau-santee-sioux-tribe-of-south-dakota-constitution
+    version: 2022-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: Text is the 2022 amended constitution and by-laws; scan is clean apart from a few garbled characters.'
+- aspect: judicial-selection
+  value: Appointed by the Executive Committee
+  quote: by the Executive Committee for a four year term.
+  source: constitution-flandreau-santee-sioux-tribe-of-south-dakota-2022-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2022-07-08'
+  locator: Article IX, Section 4
+  document_version:
+    document: flandreau-santee-sioux-tribe-of-south-dakota-constitution
+    version: 2022-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: Text is the 2022 amended constitution and by-laws; scan is clean apart from a few garbled characters.'
+- aspect: judicial-term
+  value: 4 years
+  quote: by the Executive Committee for a four year term.
+  source: constitution-flandreau-santee-sioux-tribe-of-south-dakota-2022-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2022-07-08'
+  locator: Article IX, Section 4
+  document_version:
+    document: flandreau-santee-sioux-tribe-of-south-dakota-constitution
+    version: 2022-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: Text is the 2022 amended constitution and by-laws; scan is clean apart from a few garbled characters.'
+- aspect: judicial-independence
+  value: Tribal court decisions not reviewable by Executive Committee
+  quote: shall not be subject to review by the Executive Committee.
+  source: constitution-flandreau-santee-sioux-tribe-of-south-dakota-2022-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2022-07-08'
+  locator: Article IX, Section 3
+  document_version:
+    document: flandreau-santee-sioux-tribe-of-south-dakota-constitution
+    version: 2022-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: Text is the 2022 amended constitution and by-laws; scan is clean apart from a few garbled characters.'
+- aspect: amendment
+  value: Majority vote of enrolled members 18+ at Secretary-called election, 30% turnout
+  quote: may be amended by a majority vote of
+  source: constitution-flandreau-santee-sioux-tribe-of-south-dakota-2022-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2022-07-08'
+  locator: Article X
+  document_version:
+    document: flandreau-santee-sioux-tribe-of-south-dakota-constitution
+    version: 2022-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: Text is the 2022 amended constitution and by-laws; scan is clean apart from a few garbled characters.'
+- aspect: secretarial-approval
+  value: Required for amendments
+  quote: shall become effective until it shall have been approved
+  source: constitution-flandreau-santee-sioux-tribe-of-south-dakota-2022-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2022-07-08'
+  locator: Article X
+  document_version:
+    document: flandreau-santee-sioux-tribe-of-south-dakota-constitution
+    version: 2022-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: Text is the 2022 amended constitution and by-laws; scan is clean apart from a few garbled characters.'
+- aspect: recall-and-removal
+  value: Removal by Executive Committee on felony conviction
+  quote: An elected official shall be removed from office by
+  source: constitution-flandreau-santee-sioux-tribe-of-south-dakota-2022-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2022-07-08'
+  locator: Article VI, Section 2
+  document_version:
+    document: flandreau-santee-sioux-tribe-of-south-dakota-constitution
+    version: 2022-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: Text is the 2022 amended constitution and by-laws; scan is clean apart from a few garbled characters.'
+- aspect: recall-and-removal
+  value: Removal by petition of no confidence signed by 65% of voters
+  quote: least sixty-five (65) percent of the qualified voters of the Tribe
+  source: constitution-flandreau-santee-sioux-tribe-of-south-dakota-2022-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2022-07-08'
+  locator: Article VI, Section 3
+  document_version:
+    document: flandreau-santee-sioux-tribe-of-south-dakota-constitution
+    version: 2022-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: Text is the 2022 amended constitution and by-laws; scan is clean apart from a few garbled characters.'
 governing_documents:
 - kind: law-code
   title: Flandreau Santee Sioux Tribe of South Dakota

@@ -145,6 +145,15 @@ indian_health_service:
   as_of: '2026-11-23'
   locator: regional lists (West Central, Southern, Northern, East Central)
   note: Listed as "Los Coyotes Band of Cahuilla an Cupeno Indians, California".
+governance:
+- aspect: head-of-government
+  value: Spokesperson
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  verification: bulk-import
+  as_of: '2026-11-20'
+  locator: Los Coyotes Band of Cahuilla and Cupeno Indians, California
+  note: The title of the leader's office as the federal directory lists it; the holder's name is not recorded.
 governing_documents:
 - kind: law-code
   title: Los Coyotes Band of Indians Law and Order Code

@@ -160,6 +160,111 @@ government_structure:
   as_of: '1936'
   locator: preamble / approval and certification of adoption
   note: Historical constitution; a later constitution may have replaced it.
+governance:
+- aspect: form
+  value: Adopted by election under Section 16 of the Indian Reorganization Act
+  quote: accordance with sedion 16 of the Indian Reorganization
+  source: constitution-santee-sioux-nation-1936-text-2
+  confidence: medium
+  verification: read-in-full
+  as_of: '1936-04-03'
+  locator: Certification of Adoption
+  document_version:
+    document: santee-sioux-nation-constitution
+    version: 1936-text-2
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Heavily degraded OCR throughout; election, term, voting-age and removal provisions are largely unreadable, so only legible passages are used.'
+- aspect: governing-body
+  value: Tribal Council
+  quote: Stated meetings of the tribal council shall be held
+  source: constitution-santee-sioux-nation-1936-text-2
+  confidence: medium
+  verification: read-in-full
+  as_of: '1936-04-03'
+  locator: Bylaws, Article IV, Section 1
+  document_version:
+    document: santee-sioux-nation-constitution
+    version: 1936-text-2
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Heavily degraded OCR throughout; election, term, voting-age and removal provisions are largely unreadable, so only legible passages are used.'
+- aspect: governing-body-selection
+  value: Elected by popular assembly of each voting district
+  quote: Eacll voting district shall, in popular assembly
+  source: constitution-santee-sioux-nation-1936-text-2
+  confidence: medium
+  verification: read-in-full
+  as_of: '1936-04-03'
+  locator: Article V, Section 2
+  document_version:
+    document: santee-sioux-nation-constitution
+    version: 1936-text-2
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Heavily degraded OCR throughout; election, term, voting-age and removal provisions are largely unreadable, so only legible passages are used.'
+- aspect: head-of-government
+  value: Chairman
+  quote: The chairman of the tribal council shall preside at all
+  source: constitution-santee-sioux-nation-1936-text-2
+  confidence: medium
+  verification: read-in-full
+  as_of: '1936-04-03'
+  locator: Bylaws, Article I, Section 1
+  document_version:
+    document: santee-sioux-nation-constitution
+    version: 1936-text-2
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Heavily degraded OCR throughout; election, term, voting-age and removal provisions are largely unreadable, so only legible passages are used.'
+- aspect: head-of-government
+  value: Chairperson
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  verification: bulk-import
+  as_of: '2026-11-20'
+  locator: Santee Sioux Nation, Nebraska
+  note: The title of the leader's office as the federal directory lists it; the holder's name is not recorded. Listed as “Chairman”; recorded without the holder's own form of the title.
+- aspect: other-officers
+  value: Vice chairman, secretary, treasurer
+  quote: The vice chairman shall preside at all meetings of the
+  source: constitution-santee-sioux-nation-1936-text-2
+  confidence: medium
+  verification: read-in-full
+  as_of: '1936-04-03'
+  locator: Bylaws, Article I, Section 2
+  document_version:
+    document: santee-sioux-nation-constitution
+    version: 1936-text-2
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Heavily degraded OCR throughout; election, term, voting-age and removal provisions are largely unreadable, so only legible passages are used.'
+- aspect: elections
+  value: Annually, last Tuesday of September
+  quote: annually .elect one
+  source: constitution-santee-sioux-nation-1936-text-2
+  confidence: medium
+  verification: read-in-full
+  as_of: '1936-04-03'
+  locator: Article III, Section 2
+  document_version:
+    document: santee-sioux-nation-constitution
+    version: 1936-text-2
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Heavily degraded OCR throughout; election, term, voting-age and removal provisions are largely unreadable, so only legible passages are used.'
+- aspect: amendment
+  value: Majority vote of qualified voters in an election called by the Secretary
+  quote: may be amended by a majority vote
+  source: constitution-santee-sioux-nation-1936-text-2
+  confidence: medium
+  verification: read-in-full
+  as_of: '1936-04-03'
+  locator: Article IX
+  document_version:
+    document: santee-sioux-nation-constitution
+    version: 1936-text-2
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Heavily degraded OCR throughout; election, term, voting-age and removal provisions are largely unreadable, so only legible passages are used.'
+- aspect: other
+  value: Referendum on petition of 25% of voters
+  quote: subject to a referendum vqte of the people
+  source: constitution-santee-sioux-nation-1936-text-2
+  confidence: medium
+  verification: read-in-full
+  as_of: '1936-04-03'
+  locator: Article VII, Section 1
+  document_version:
+    document: santee-sioux-nation-constitution
+    version: 1936-text-2
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Heavily degraded OCR throughout; election, term, voting-age and removal provisions are largely unreadable, so only legible passages are used.'
 governing_documents:
 - kind: law-code
   title: Santee Sioux Nation, Nebraska

@@ -201,6 +201,231 @@ government_structure:
   as_of: '1942'
   locator: preamble / approval and certification of adoption
   note: Historical constitution; a later constitution may have replaced it.
+governance:
+- aspect: form
+  value: Constitution and By-laws under Section 16 of the Indian Reorganization Act
+  quote: Indian Reorganization Act of June 18, 1934 (48 Stat. 984), as amended by
+  source: university-of-oklahoma-indian-reorganization-act-moapacons
+  confidence: medium
+  verification: read-in-full
+  as_of: '1942-02-13'
+  locator: Certification of Adoption
+  document_version:
+    document: moapa-band-of-paiute-indians-of-the-moapa-river-indian-reservation-constitution
+    version: 1942-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+- aspect: governing-body
+  value: Business Council
+  quote: Paiute Indians shall consist of a council, known as the Business Council.
+  source: university-of-oklahoma-indian-reorganization-act-moapacons
+  confidence: medium
+  verification: read-in-full
+  as_of: '1942-02-13'
+  locator: Article III, Section 1
+  document_version:
+    document: moapa-band-of-paiute-indians-of-the-moapa-river-indian-reservation-constitution
+    version: 1942-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+- aspect: governing-body-size
+  value: 6 members
+  quote: The Business Council shall consist of six
+  source: university-of-oklahoma-indian-reorganization-act-moapacons
+  confidence: medium
+  verification: read-in-full
+  as_of: '1942-02-13'
+  locator: Article III, Section 2
+  document_version:
+    document: moapa-band-of-paiute-indians-of-the-moapa-river-indian-reservation-constitution
+    version: 1942-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+- aspect: governing-body-selection
+  value: Elected by secret ballot
+  quote: All elections shall be by secret ballot and
+  source: university-of-oklahoma-indian-reorganization-act-moapacons
+  confidence: medium
+  verification: read-in-full
+  as_of: '1942-02-13'
+  locator: Article III, Section 5
+  document_version:
+    document: moapa-band-of-paiute-indians-of-the-moapa-river-indian-reservation-constitution
+    version: 1942-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+- aspect: governing-body-term
+  value: 3 years, two elected each year
+  quote: members duly elected to serve three years, two members being elected each
+  source: university-of-oklahoma-indian-reorganization-act-moapacons
+  confidence: medium
+  verification: read-in-full
+  as_of: '1942-02-13'
+  locator: Article III, Section 2
+  document_version:
+    document: moapa-band-of-paiute-indians-of-the-moapa-river-indian-reservation-constitution
+    version: 1942-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+- aspect: head-of-government
+  value: Chairman
+  quote: from within its own number, (1) a chairman, (2) a vice-chairman; and from
+  source: university-of-oklahoma-indian-reorganization-act-moapacons
+  confidence: medium
+  verification: read-in-full
+  as_of: '1942-02-13'
+  locator: Article III, Section 3
+  document_version:
+    document: moapa-band-of-paiute-indians-of-the-moapa-river-indian-reservation-constitution
+    version: 1942-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+- aspect: head-of-government
+  value: Chairperson
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  verification: bulk-import
+  as_of: '2026-11-20'
+  locator: Moapa Band of Paiute Indians of the Moapa River Indian Reservation, Nevada
+  note: The title of the leader's office as the federal directory lists it; the holder's name is not recorded. Listed as “Chairwoman”; recorded without the holder's own form of the title.
+- aspect: head-of-government-selection
+  value: Elected by the Business Council from its members
+  quote: from within its own number, (1) a chairman, (2) a vice-chairman; and from
+  source: university-of-oklahoma-indian-reorganization-act-moapacons
+  confidence: medium
+  verification: read-in-full
+  as_of: '1942-02-13'
+  locator: Article III, Section 3
+  document_version:
+    document: moapa-band-of-paiute-indians-of-the-moapa-river-indian-reservation-constitution
+    version: 1942-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+- aspect: head-of-government-term
+  value: 3 years
+  quote: members duly elected to serve three years, two members being elected each
+  source: university-of-oklahoma-indian-reorganization-act-moapacons
+  confidence: medium
+  verification: read-in-full
+  as_of: '1942-02-13'
+  locator: Article III, Section 2
+  document_version:
+    document: moapa-band-of-paiute-indians-of-the-moapa-river-indian-reservation-constitution
+    version: 1942-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+- aspect: other-officers
+  value: Vice-Chairman, Secretary, Treasurer
+  quote: within or without, (3) a secretary, and (4) a treasurer; and may appoint
+  source: university-of-oklahoma-indian-reorganization-act-moapacons
+  confidence: medium
+  verification: read-in-full
+  as_of: '1942-02-13'
+  locator: Article III, Section 3
+  document_version:
+    document: moapa-band-of-paiute-indians-of-the-moapa-river-indian-reservation-constitution
+    version: 1942-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+- aspect: elections
+  value: Annually on the second Tuesday of December
+  quote: Council shall be held on the second Tuesday of December.
+  source: university-of-oklahoma-indian-reorganization-act-moapacons
+  confidence: medium
+  verification: read-in-full
+  as_of: '1942-02-13'
+  locator: Article III, Section 4
+  document_version:
+    document: moapa-band-of-paiute-indians-of-the-moapa-river-indian-reservation-constitution
+    version: 1942-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+- aspect: voting-age
+  value: '21'
+  quote: twenty-one (21) years of age or over, who has resided
+  source: university-of-oklahoma-indian-reorganization-act-moapacons
+  confidence: medium
+  verification: read-in-full
+  as_of: '1942-02-13'
+  locator: Article VI, Section 1
+  document_version:
+    document: moapa-band-of-paiute-indians-of-the-moapa-river-indian-reservation-constitution
+    version: 1942-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+- aspect: election-authority
+  value: Business Council or its election board
+  quote: Business Council or by an election board appointed by the Business Council.
+  source: university-of-oklahoma-indian-reorganization-act-moapacons
+  confidence: medium
+  verification: read-in-full
+  as_of: '1942-02-13'
+  locator: Article III, Section 5
+  document_version:
+    document: moapa-band-of-paiute-indians-of-the-moapa-river-indian-reservation-constitution
+    version: 1942-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+- aspect: judiciary
+  value: Reservation court
+  quote: of justice by establishing a reservation court and defining its duties
+  source: university-of-oklahoma-indian-reorganization-act-moapacons
+  confidence: medium
+  verification: read-in-full
+  as_of: '1942-02-13'
+  locator: Article V, Section 1(f)
+  document_version:
+    document: moapa-band-of-paiute-indians-of-the-moapa-river-indian-reservation-constitution
+    version: 1942-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+- aspect: amendment
+  value: Majority vote at Secretary-called election (30% turnout), then Secretary approval
+  quote: voting at an election called for that purpose by the Secretary of the Interior;
+  source: university-of-oklahoma-indian-reorganization-act-moapacons
+  confidence: medium
+  verification: read-in-full
+  as_of: '1942-02-13'
+  locator: Article VIII
+  document_version:
+    document: moapa-band-of-paiute-indians-of-the-moapa-river-indian-reservation-constitution
+    version: 1942-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+- aspect: secretarial-approval
+  value: Required for amendments
+  quote: have been approved by the Secretary of the Interior.
+  source: university-of-oklahoma-indian-reorganization-act-moapacons
+  confidence: medium
+  verification: read-in-full
+  as_of: '1942-02-13'
+  locator: Article VIII
+  document_version:
+    document: moapa-band-of-paiute-indians-of-the-moapa-river-indian-reservation-constitution
+    version: 1942-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+- aspect: recall-and-removal
+  value: Expulsion by two-thirds vote of Business Council
+  quote: The Business Council may, by two-thirds vote,
+  source: university-of-oklahoma-indian-reorganization-act-moapacons
+  confidence: medium
+  verification: read-in-full
+  as_of: '1942-02-13'
+  locator: Article IV, Section 2
+  document_version:
+    document: moapa-band-of-paiute-indians-of-the-moapa-river-indian-reservation-constitution
+    version: 1942-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+- aspect: recall-and-removal
+  value: Recall election on petition of one-third of eligible voters
+  quote: of the eligible voters of the reservation calling for the recall of any
+  source: university-of-oklahoma-indian-reorganization-act-moapacons
+  confidence: medium
+  verification: read-in-full
+  as_of: '1942-02-13'
+  locator: Article IV, Section 3
+  document_version:
+    document: moapa-band-of-paiute-indians-of-the-moapa-river-indian-reservation-constitution
+    version: 1942-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+- aspect: other
+  value: Superintendent approves enactments subject to Secretary review
+  quote: in charge of the Reservation, who shall, within ten days thereafter, approve
+  source: university-of-oklahoma-indian-reorganization-act-moapacons
+  confidence: medium
+  verification: read-in-full
+  as_of: '1942-02-13'
+  locator: Article V, Section 4
+  document_version:
+    document: moapa-band-of-paiute-indians-of-the-moapa-river-indian-reservation-constitution
+    version: 1942-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
 governing_documents:
 - kind: corporate-charter
   title: Corporate charter (Moapa Band of Paiute Indians of the Moapa River Reservation, Nevada)

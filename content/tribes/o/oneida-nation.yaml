@@ -205,6 +205,195 @@ government_structure:
   as_of: '1936'
   locator: preamble / approval and certification of adoption
   note: Historical constitution; a later constitution may have replaced it.
+governance:
+- aspect: governing-body
+  value: General Tribal Council
+  quote: The governing body of the Oneida Nation shall be the General Tribal Council
+  source: constitution-oneida-nation-2015-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2015-06-16'
+  locator: Article III, Section 1
+  document_version:
+    document: oneida-nation-constitution
+    version: 2015-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author.
+- aspect: governing-body-selection
+  value: Elected by secret ballot of qualified voters
+  quote: The qualified voters of the Oneida Nation shall elect from among the enrolled
+  source: constitution-oneida-nation-2015-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2015-06-16'
+  locator: Article III, Section 3
+  document_version:
+    document: oneida-nation-constitution
+    version: 2015-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author.
+- aspect: governing-body-term
+  value: 3 years
+  quote: The officials provided for in Section 3 of this Article shall be elected every three
+  source: constitution-oneida-nation-2015-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2015-06-16'
+  locator: Article III, Section 5
+  document_version:
+    document: oneida-nation-constitution
+    version: 2015-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author.
+- aspect: general-council
+  value: All qualified voters of the Oneida Nation
+  quote: composed of all the qualified voters of the Oneida Nation
+  source: constitution-oneida-nation-2015-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2015-06-16'
+  locator: Article III, Section 1
+  document_version:
+    document: oneida-nation-constitution
+    version: 2015-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author.
+- aspect: head-of-government
+  value: Chairman
+  quote: The Chairman of the Council shall preside over all
+  source: constitution-oneida-nation-2015-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2015-06-16'
+  locator: By-laws, Article I, Section 1
+  document_version:
+    document: oneida-nation-constitution
+    version: 2015-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author.
+- aspect: head-of-government
+  value: Chairperson
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  verification: bulk-import
+  as_of: '2026-11-20'
+  locator: Oneida Nation
+  note: The title of the leader's office as the federal directory lists it; the holder's name is not recorded. Listed as “Chairman”; recorded without the holder's own form of the title.
+- aspect: head-of-government-selection
+  value: Elected by secret ballot of qualified voters
+  quote: The qualified voters of the Oneida Nation shall elect from among the enrolled
+  source: constitution-oneida-nation-2015-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2015-06-16'
+  locator: Article III, Section 3
+  document_version:
+    document: oneida-nation-constitution
+    version: 2015-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author.
+- aspect: head-of-government-term
+  value: 3 years
+  quote: The officials provided for in Section 3 of this Article shall be elected every three
+  source: constitution-oneida-nation-2015-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2015-06-16'
+  locator: Article III, Section 5
+  document_version:
+    document: oneida-nation-constitution
+    version: 2015-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author.
+- aspect: other-officers
+  value: Vice-Chairman, Secretary, Treasurer, five councilmen
+  quote: a chairman; (b) a vice-chairman; (c)
+  source: constitution-oneida-nation-2015-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2015-06-16'
+  locator: Article III, Section 3
+  document_version:
+    document: oneida-nation-constitution
+    version: 2015-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author.
+- aspect: elections
+  value: Every 3 years in July
+  quote: The officials provided for in Section 3 of this Article shall be elected every three
+  source: constitution-oneida-nation-2015-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2015-06-16'
+  locator: Article III, Section 5
+  document_version:
+    document: oneida-nation-constitution
+    version: 2015-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author.
+- aspect: voting-age
+  value: '18'
+  quote: All enrolled members of the Oneida Nation who are eighteen (18) years of age or
+  source: constitution-oneida-nation-2015-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2015-06-16'
+  locator: Article III, Section 2
+  document_version:
+    document: oneida-nation-constitution
+    version: 2015-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author.
+- aspect: election-authority
+  value: General Tribal Council sets election rules
+  quote: shall enact necessary rules and regulations governing the
+  source: constitution-oneida-nation-2015-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2015-06-16'
+  locator: Article III, Section 5
+  document_version:
+    document: oneida-nation-constitution
+    version: 2015-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author.
+- aspect: judiciary
+  value: Judiciary established by the General Tribal Council by law
+  quote: The General Tribal Council shall, by law, establish a judiciary to exercise the
+  source: constitution-oneida-nation-2015-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2015-06-16'
+  locator: Article V, Section 1
+  document_version:
+    document: oneida-nation-constitution
+    version: 2015-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author.
+- aspect: amendment
+  value: Approved by 65% of eligible voters who vote on the question
+  quote: approved by sixty-five percent (65%) of the members eligible to
+  source: constitution-oneida-nation-2015-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2015-06-16'
+  locator: Article VI, Section 3
+  document_version:
+    document: oneida-nation-constitution
+    version: 2015-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author.
+- aspect: recall-and-removal
+  value: Removal by two-thirds vote of the General Tribal Council
+  quote: The General Tribal Council may at its discretion remove any official on the Business
+  source: constitution-oneida-nation-2015-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2015-06-16'
+  locator: Article III, Section 3
+  document_version:
+    document: oneida-nation-constitution
+    version: 2015-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author.
+- aspect: other
+  value: 'Business Committee: chairman, vice-chairman, secretary, treasurer and five councilmen'
+  quote: (e) and five councilmen. These shall constitute the Business
+  source: constitution-oneida-nation-2015-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2015-06-16'
+  locator: Article III, Section 3
+  document_version:
+    document: oneida-nation-constitution
+    version: 2015-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author.
 governing_documents:
 - kind: law-code
   title: Oneida Nation - Code of Laws

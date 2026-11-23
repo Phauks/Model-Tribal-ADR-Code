@@ -259,6 +259,195 @@ indian_health_service:
   locator: '"Federally Recognized Tribes" list, Mt. Edgecumbe Service Area profile'
   note: 'The source''s words: "Skagway Village".'
   operator: tribal
+governance:
+- aspect: form
+  value: Constitution and Bylaws of the federally recognized tribe
+  quote: This is the Constitution and Bylaws of the federally recognized tribe of Skagway Village. This
+  source: constitution-skagway-village-2021-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2021'
+  locator: 'Article 1: Name'
+  document_version:
+    document: skagway-village-constitution
+    version: 2021-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: The certification of election results block is an unfilled template (date and vote counts blank).'
+- aspect: governing-body
+  value: Skagway Traditional Council
+  quote: The Skagway Traditional Council is the governing body of the Skagway
+  source: constitution-skagway-village-2021-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2021'
+  locator: Article 4, Section One
+  document_version:
+    document: skagway-village-constitution
+    version: 2021-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: The certification of election results block is an unfilled template (date and vote counts blank).'
+- aspect: governing-body-size
+  value: '5 members: a President and 4 other members'
+  quote: The Council shall consist of a President and 4 other members.
+  source: constitution-skagway-village-2021-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2021'
+  locator: Article 4, Section Two
+  document_version:
+    document: skagway-village-constitution
+    version: 2021-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: The certification of election results block is an unfilled template (date and vote counts blank).'
+- aspect: governing-body-selection
+  value: Elected by majority vote of eligible tribal members
+  quote: members of the Council shall be elected by a majority vote of tribal members eligible to vote at
+  source: constitution-skagway-village-2021-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2021'
+  locator: Article 4, Section Two
+  document_version:
+    document: skagway-village-constitution
+    version: 2021-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: The certification of election results block is an unfilled template (date and vote counts blank).'
+- aspect: governing-body-term
+  value: 3 years, staggered
+  quote: Council members shall serve in staggered 3-year terms.
+  source: constitution-skagway-village-2021-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2021'
+  locator: Article 4, Section Five
+  document_version:
+    document: skagway-village-constitution
+    version: 2021-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: The certification of election results block is an unfilled template (date and vote counts blank).'
+- aspect: head-of-government
+  value: President
+  quote: The President shall preside, and act as Chairperson, at all meetings
+  source: constitution-skagway-village-2021-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2021'
+  locator: Article 6, Section One
+  document_version:
+    document: skagway-village-constitution
+    version: 2021-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: The certification of election results block is an unfilled template (date and vote counts blank).'
+- aspect: head-of-government
+  value: President
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  verification: bulk-import
+  as_of: '2026-11-20'
+  locator: Skagway Village
+  note: The title of the leader's office as the federal directory lists it; the holder's name is not recorded.
+- aspect: head-of-government-selection
+  value: Elected by majority of elected Council members
+  quote: Secretary, and Treasurer. All officers shall be elected by a majority vote of the elected Council
+  source: constitution-skagway-village-2021-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2021'
+  locator: Article 4, Section Three
+  document_version:
+    document: skagway-village-constitution
+    version: 2021-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: The certification of election results block is an unfilled template (date and vote counts blank).'
+- aspect: other-officers
+  value: Vice-President, Secretary, Treasurer
+  quote: 'Section Three: Officers. The officers of the Council shall include a President, Vice-President,'
+  source: constitution-skagway-village-2021-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2021'
+  locator: Article 4, Section Three
+  document_version:
+    document: skagway-village-constitution
+    version: 2021-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: The certification of election results block is an unfilled template (date and vote counts blank).'
+- aspect: elections
+  value: Annually
+  quote: The Tribe's election shall occur annually.
+  source: constitution-skagway-village-2021-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2021'
+  locator: Article 5, Section Three
+  document_version:
+    document: skagway-village-constitution
+    version: 2021-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: The certification of election results block is an unfilled template (date and vote counts blank).'
+- aspect: voting-age
+  value: '18'
+  quote: 18 years of age shall be eligible to vote in Tribal elections, unless otherwise provided through
+  source: constitution-skagway-village-2021-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2021'
+  locator: Article 5, Section One
+  document_version:
+    document: skagway-village-constitution
+    version: 2021-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: The certification of election results block is an unfilled template (date and vote counts blank).'
+- aspect: election-authority
+  value: Election Committee of 3 persons appointed by the Council
+  quote: There shall be an Election Committee consisting of 3 persons
+  source: constitution-skagway-village-2021-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2021'
+  locator: Article 5, Section Five
+  document_version:
+    document: skagway-village-constitution
+    version: 2021-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: The certification of election results block is an unfilled template (date and vote counts blank).'
+- aspect: judiciary
+  value: Council may establish tribal courts of limited or general jurisdiction
+  quote: including the establishment of tribal courts of limited or
+  source: constitution-skagway-village-2021-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2021'
+  locator: Article 9, Section Three(m)
+  document_version:
+    document: skagway-village-constitution
+    version: 2021-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: The certification of election results block is an unfilled template (date and vote counts blank).'
+- aspect: amendment
+  value: Majority vote of eligible voters at an election called for that purpose (30% turnout)
+  quote: This Constitution may be amended by a majority vote of the members of the Tribe eligible to vote
+  source: constitution-skagway-village-2021-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2021'
+  locator: Article 15
+  document_version:
+    document: skagway-village-constitution
+    version: 2021-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: The certification of election results block is an unfilled template (date and vote counts blank).'
+- aspect: recall-and-removal
+  value: Removal by at least 3 Council members after notice
+  quote: shall be removed from office if at least 3 members of the
+  source: constitution-skagway-village-2021-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2021'
+  locator: Article 8, Section One
+  document_version:
+    document: skagway-village-constitution
+    version: 2021-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: The certification of election results block is an unfilled template (date and vote counts blank).'
+- aspect: recall-and-removal
+  value: Recall by petition of 30% of eligible voters, with or without cause
+  quote: Eligible voters shall have the power to recall any member of the Council
+  source: constitution-skagway-village-2021-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2021'
+  locator: Article 8, Section Two
+  document_version:
+    document: skagway-village-constitution
+    version: 2021-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: The certification of election results block is an unfilled template (date and vote counts blank).'
 jurisdiction:
 - topic: public-law-280
   value: mandatory-state

@@ -218,6 +218,195 @@ government_structure:
   as_of: '1936'
   locator: preamble / approval and certification of adoption
   note: Historical constitution; a later constitution may have replaced it.
+governance:
+- aspect: form
+  value: Constitution under the Indian Reorganization Act of June 18, 1934
+  quote: 16 of the Indian Reorganization Act of June 18, 1934 (48 Stat. 984), as
+  source: university-of-oklahoma-indian-reorganization-act-quecons
+  confidence: medium
+  verification: read-in-full
+  as_of: '1936-11-03'
+  locator: Certification of Adoption
+  document_version:
+    document: quechan-tribe-of-the-fort-yuma-indian-reservation-constitution
+    version: 1936-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+- aspect: governing-body
+  value: Quechan Tribal Council
+  quote: SECTION 1. The Quechan Tribal Council shall be composed
+  source: university-of-oklahoma-indian-reorganization-act-quecons
+  confidence: medium
+  verification: read-in-full
+  as_of: '1936-11-03'
+  locator: Article III, Section 1
+  document_version:
+    document: quechan-tribe-of-the-fort-yuma-indian-reservation-constitution
+    version: 1936-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+- aspect: governing-body-size
+  value: 7 members
+  quote: of seven members of the Quechan Tribe, who shall be residents of the Fort
+  source: university-of-oklahoma-indian-reorganization-act-quecons
+  confidence: medium
+  verification: read-in-full
+  as_of: '1936-11-03'
+  locator: Article III, Section 1
+  document_version:
+    document: quechan-tribe-of-the-fort-yuma-indian-reservation-constitution
+    version: 1936-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+- aspect: governing-body-selection
+  value: Elected by popular vote
+  quote: They shall be elected to office by popular vote
+  source: university-of-oklahoma-indian-reorganization-act-quecons
+  confidence: medium
+  verification: read-in-full
+  as_of: '1936-11-03'
+  locator: Article III, Section 1
+  document_version:
+    document: quechan-tribe-of-the-fort-yuma-indian-reservation-constitution
+    version: 1936-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+- aspect: governing-body-term
+  value: 2 years
+  quote: for a term of two years from
+  source: university-of-oklahoma-indian-reorganization-act-quecons
+  confidence: medium
+  verification: read-in-full
+  as_of: '1936-11-03'
+  locator: Article III, Section 1
+  document_version:
+    document: quechan-tribe-of-the-fort-yuma-indian-reservation-constitution
+    version: 1936-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+- aspect: head-of-government
+  value: President
+  quote: to preside at all meetings of the Council.
+  source: university-of-oklahoma-indian-reorganization-act-quecons
+  confidence: medium
+  verification: read-in-full
+  as_of: '1936-11-03'
+  locator: By-laws, Article I, Section 1
+  document_version:
+    document: quechan-tribe-of-the-fort-yuma-indian-reservation-constitution
+    version: 1936-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+- aspect: head-of-government
+  value: President
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  verification: bulk-import
+  as_of: '2026-11-20'
+  locator: Quechan Tribe of the Fort Yuma Indian Reservation, California & Arizona
+  note: The title of the leader's office as the federal directory lists it; the holder's name is not recorded.
+- aspect: head-of-government-selection
+  value: Elected by the Council from its own members
+  quote: electing from their own members a President
+  source: university-of-oklahoma-indian-reorganization-act-quecons
+  confidence: medium
+  verification: read-in-full
+  as_of: '1936-11-03'
+  locator: Article III, Section 5
+  document_version:
+    document: quechan-tribe-of-the-fort-yuma-indian-reservation-constitution
+    version: 1936-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+- aspect: other-officers
+  value: Vice-President, Tribal Secretary, Tribal Treasurer
+  quote: a Tribal Secretary and a Tribal Treasurer.
+  source: university-of-oklahoma-indian-reorganization-act-quecons
+  confidence: medium
+  verification: read-in-full
+  as_of: '1936-11-03'
+  locator: Article III, Section 5
+  document_version:
+    document: quechan-tribe-of-the-fort-yuma-indian-reservation-constitution
+    version: 1936-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+- aspect: elections
+  value: Every 2 years, first Monday in January
+  quote: first Monday of January of each alternate year
+  source: university-of-oklahoma-indian-reorganization-act-quecons
+  confidence: medium
+  verification: read-in-full
+  as_of: '1936-11-03'
+  locator: Article III, Section 4
+  document_version:
+    document: quechan-tribe-of-the-fort-yuma-indian-reservation-constitution
+    version: 1936-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+- aspect: judiciary
+  value: Council may establish minor courts
+  quote: to establish minor courts for
+  source: university-of-oklahoma-indian-reorganization-act-quecons
+  confidence: medium
+  verification: read-in-full
+  as_of: '1936-11-03'
+  locator: Article IV, Section 7
+  document_version:
+    document: quechan-tribe-of-the-fort-yuma-indian-reservation-constitution
+    version: 1936-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+- aspect: amendment
+  value: Majority vote of qualified voters at an election called by the Secretary
+  quote: amended by a majority vote of the qualified voters of the Tribe voting
+  source: university-of-oklahoma-indian-reorganization-act-quecons
+  confidence: medium
+  verification: read-in-full
+  as_of: '1936-11-03'
+  locator: Article X
+  document_version:
+    document: quechan-tribe-of-the-fort-yuma-indian-reservation-constitution
+    version: 1936-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+- aspect: secretarial-approval
+  value: Required for amendments
+  quote: but no amendment shall become effective until
+  source: university-of-oklahoma-indian-reorganization-act-quecons
+  confidence: medium
+  verification: read-in-full
+  as_of: '1936-11-03'
+  locator: Article X
+  document_version:
+    document: quechan-tribe-of-the-fort-yuma-indian-reservation-constitution
+    version: 1936-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+- aspect: recall-and-removal
+  value: Recall by popular vote
+  quote: to recall any member of the Council who has served for at least six months.
+  source: university-of-oklahoma-indian-reorganization-act-quecons
+  confidence: medium
+  verification: read-in-full
+  as_of: '1936-11-03'
+  locator: Article VI, Section 3
+  document_version:
+    document: quechan-tribe-of-the-fort-yuma-indian-reservation-constitution
+    version: 1936-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+- aspect: recall-and-removal
+  value: Automatic forfeiture after three consecutive missed meetings
+  quote: absent from any three consecutive regular or special meetings without sufficient
+  source: university-of-oklahoma-indian-reorganization-act-quecons
+  confidence: medium
+  verification: read-in-full
+  as_of: '1936-11-03'
+  locator: Article VI, Section 1
+  document_version:
+    document: quechan-tribe-of-the-fort-yuma-indian-reservation-constitution
+    version: 1936-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+- aspect: other
+  value: Popular veto of ordinances on petition of 100 adult members
+  quote: If one hundred adult members of the Tribe
+  source: university-of-oklahoma-indian-reorganization-act-quecons
+  confidence: medium
+  verification: read-in-full
+  as_of: '1936-11-03'
+  locator: Article VII, Section 3
+  document_version:
+    document: quechan-tribe-of-the-fort-yuma-indian-reservation-constitution
+    version: 1936-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
 governing_documents:
 - kind: constitution
   title: Constitution

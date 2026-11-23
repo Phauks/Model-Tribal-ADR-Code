@@ -213,6 +213,15 @@ indian_health_service:
   as_of: '2026-11-23'
   locator: '"Federally Recognized Tribes" list, Anchorage Service Area profile'
   note: 'The source''s words: "Cheesh-Na Tribe (aka Native Village of Chistochina)".'
+governance:
+- aspect: head-of-government
+  value: President
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  verification: bulk-import
+  as_of: '2026-11-20'
+  locator: Cheesh-Na Tribe
+  note: The title of the leader's office as the federal directory lists it; the holder's name is not recorded.
 jurisdiction:
 - topic: public-law-280
   value: mandatory-state

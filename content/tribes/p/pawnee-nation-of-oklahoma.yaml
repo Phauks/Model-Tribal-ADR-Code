@@ -191,6 +191,303 @@ government_structure:
   as_of: '1938'
   locator: preamble / approval and certification of adoption
   note: Historical constitution; a later constitution may have replaced it.
+governance:
+- aspect: form
+  value: Adopted under the Oklahoma Indian Welfare Act of June 26, 1936
+  quote: pursuant to the Oklahoma Indian Welfare Act of June 26,
+  source: constitution-pawnee-nation-of-oklahoma-2021-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2021-05-01'
+  locator: Preamble
+  document_version:
+    document: pawnee-nation-of-oklahoma-constitution
+    version: 2021-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: Text is the constitution as revised by the 1 May 2021 referendum; the Certificate of Approval is dated 27 April 1998, before the later revisions.'
+- aspect: governing-body
+  value: Pawnee Business Council
+  quote: The supreme governing body of the Pawnee Nation of Oklahoma shall be the
+  source: constitution-pawnee-nation-of-oklahoma-2021-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2021-05-01'
+  locator: Article IV, Section 1
+  document_version:
+    document: pawnee-nation-of-oklahoma-constitution
+    version: 2021-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: Text is the constitution as revised by the 1 May 2021 referendum; the Certificate of Approval is dated 27 April 1998, before the later revisions.'
+- aspect: governing-body-size
+  value: 8 members
+  quote: Pawnee Business Council, which shall consist of eight (8) members.
+  source: constitution-pawnee-nation-of-oklahoma-2021-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2021-05-01'
+  locator: Article IV, Section 1
+  document_version:
+    document: pawnee-nation-of-oklahoma-constitution
+    version: 2021-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: Text is the constitution as revised by the 1 May 2021 referendum; the Certificate of Approval is dated 27 April 1998, before the later revisions.'
+- aspect: governing-body-selection
+  value: Elected in regular elections
+  quote: Thereafter, all members of the Pawnee Business Council shall be elected to a
+  source: constitution-pawnee-nation-of-oklahoma-2021-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2021-05-01'
+  locator: Article IV, Section 4(iv)
+  document_version:
+    document: pawnee-nation-of-oklahoma-constitution
+    version: 2021-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: Text is the constitution as revised by the 1 May 2021 referendum; the Certificate of Approval is dated 27 April 1998, before the later revisions.'
+- aspect: governing-body-term
+  value: 4 years
+  quote: four-year term of office and shall serve until their successors shall be duly
+  source: constitution-pawnee-nation-of-oklahoma-2021-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2021-05-01'
+  locator: Article IV, Section 4(iv)
+  document_version:
+    document: pawnee-nation-of-oklahoma-constitution
+    version: 2021-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: Text is the constitution as revised by the 1 May 2021 referendum; the Certificate of Approval is dated 27 April 1998, before the later revisions.'
+- aspect: head-of-government
+  value: President
+  quote: The President shall preside at all meetings of the Pawnee Business Council,
+  source: constitution-pawnee-nation-of-oklahoma-2021-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2021-05-01'
+  locator: Article V, Section 1
+  document_version:
+    document: pawnee-nation-of-oklahoma-constitution
+    version: 2021-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: Text is the constitution as revised by the 1 May 2021 referendum; the Certificate of Approval is dated 27 April 1998, before the later revisions.'
+- aspect: head-of-government
+  value: President
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  verification: bulk-import
+  as_of: '2026-11-20'
+  locator: Pawnee Nation of Oklahoma
+  note: The title of the leader's office as the federal directory lists it; the holder's name is not recorded.
+- aspect: head-of-government-selection
+  value: Elected in Business Council election
+  quote: President, Treasurer, and the First and Second Council Members shall be
+  source: constitution-pawnee-nation-of-oklahoma-2021-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2021-05-01'
+  locator: Article IV, Section 4(iv)
+  document_version:
+    document: pawnee-nation-of-oklahoma-constitution
+    version: 2021-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: Text is the constitution as revised by the 1 May 2021 referendum; the Certificate of Approval is dated 27 April 1998, before the later revisions.'
+- aspect: head-of-government-term
+  value: 4 years
+  quote: four-year term of office and shall serve until their successors shall be duly
+  source: constitution-pawnee-nation-of-oklahoma-2021-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2021-05-01'
+  locator: Article IV, Section 4(iv)
+  document_version:
+    document: pawnee-nation-of-oklahoma-constitution
+    version: 2021-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: Text is the constitution as revised by the 1 May 2021 referendum; the Certificate of Approval is dated 27 April 1998, before the later revisions.'
+- aspect: other-officers
+  value: Vice-President, Secretary, Treasurer
+  quote: In the absence of the President, the Vice-President shall perform the duties of
+  source: constitution-pawnee-nation-of-oklahoma-2021-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2021-05-01'
+  locator: Article V, Sections 2-4
+  document_version:
+    document: pawnee-nation-of-oklahoma-constitution
+    version: 2021-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: Text is the constitution as revised by the 1 May 2021 referendum; the Certificate of Approval is dated 27 April 1998, before the later revisions.'
+- aspect: elections
+  value: First Saturday in May of each odd-numbered year
+  quote: Saturday in May of each odd numbered year.
+  source: constitution-pawnee-nation-of-oklahoma-2021-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2021-05-01'
+  locator: Article IV, Section 4(i)
+  document_version:
+    document: pawnee-nation-of-oklahoma-constitution
+    version: 2021-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: Text is the constitution as revised by the 1 May 2021 referendum; the Certificate of Approval is dated 27 April 1998, before the later revisions.'
+- aspect: voting-age
+  value: '18'
+  quote: No member of the Pawnee Nation of Oklahoma, eighteen (18) years of age or
+  source: constitution-pawnee-nation-of-oklahoma-2021-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2021-05-01'
+  locator: Article IV, Section 4(ii)
+  document_version:
+    document: pawnee-nation-of-oklahoma-constitution
+    version: 2021-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: Text is the constitution as revised by the 1 May 2021 referendum; the Certificate of Approval is dated 27 April 1998, before the later revisions.'
+- aspect: election-authority
+  value: Election commission provided by the Business Council
+  quote: The Pawnee Business Council shall provide an election commission to
+  source: constitution-pawnee-nation-of-oklahoma-2021-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2021-05-01'
+  locator: Article IV, Section 4(i)
+  document_version:
+    document: pawnee-nation-of-oklahoma-constitution
+    version: 2021-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: Text is the constitution as revised by the 1 May 2021 referendum; the Certificate of Approval is dated 27 April 1998, before the later revisions.'
+- aspect: separation-of-powers
+  value: Stated
+  quote: provided the concepts of separation of powers is
+  source: constitution-pawnee-nation-of-oklahoma-2021-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2021-05-01'
+  locator: Article II, Section 2(ii)
+  document_version:
+    document: pawnee-nation-of-oklahoma-constitution
+    version: 2021-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: Text is the constitution as revised by the 1 May 2021 referendum; the Certificate of Approval is dated 27 April 1998, before the later revisions.'
+- aspect: judiciary
+  value: Supreme Court (five Justices) and District Court
+  quote: 93-65 and shall consist of five Justices and at least one trial court, known as the District
+  source: constitution-pawnee-nation-of-oklahoma-2021-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2021-05-01'
+  locator: Article IX, Section 1
+  document_version:
+    document: pawnee-nation-of-oklahoma-constitution
+    version: 2021-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: Text is the constitution as revised by the 1 May 2021 referendum; the Certificate of Approval is dated 27 April 1998, before the later revisions.'
+- aspect: judicial-selection
+  value: Selected by majority vote of the Business Council
+  quote: Judges of District Courts shall be selected by a majority vote of the Business Council.
+  source: constitution-pawnee-nation-of-oklahoma-2021-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2021-05-01'
+  locator: Article IX, Section 3
+  document_version:
+    document: pawnee-nation-of-oklahoma-constitution
+    version: 2021-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: Text is the constitution as revised by the 1 May 2021 referendum; the Certificate of Approval is dated 27 April 1998, before the later revisions.'
+- aspect: judicial-term
+  value: 6 years
+  quote: shall serve six year terms beginning at the date of their confirmation in office
+  source: constitution-pawnee-nation-of-oklahoma-2021-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2021-05-01'
+  locator: Article IX, Section 4
+  document_version:
+    document: pawnee-nation-of-oklahoma-constitution
+    version: 2021-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: Text is the constitution as revised by the 1 May 2021 referendum; the Certificate of Approval is dated 27 April 1998, before the later revisions.'
+- aspect: judicial-independence
+  value: Removed only by majority of the other active Justices and Judges
+  quote: removed from office only by a majority of the other active Justices and Judges sitting
+  source: constitution-pawnee-nation-of-oklahoma-2021-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2021-05-01'
+  locator: Article IX, Section 5
+  document_version:
+    document: pawnee-nation-of-oklahoma-constitution
+    version: 2021-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: Text is the constitution as revised by the 1 May 2021 referendum; the Certificate of Approval is dated 27 April 1998, before the later revisions.'
+- aspect: judicial-independence
+  value: No removal because of a judicial decision
+  quote: judicial officer be removed from office because of his decision in any case before the
+  source: constitution-pawnee-nation-of-oklahoma-2021-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2021-05-01'
+  locator: Article IX, Section 5
+  document_version:
+    document: pawnee-nation-of-oklahoma-constitution
+    version: 2021-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: Text is the constitution as revised by the 1 May 2021 referendum; the Certificate of Approval is dated 27 April 1998, before the later revisions.'
+- aspect: amendment
+  value: Majority of qualified voters, at least 50 must cast ballots
+  quote: This Constitution may be amended by a majority vote of the qualified voters of the
+  source: constitution-pawnee-nation-of-oklahoma-2021-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2021-05-01'
+  locator: Article XI
+  document_version:
+    document: pawnee-nation-of-oklahoma-constitution
+    version: 2021-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: Text is the constitution as revised by the 1 May 2021 referendum; the Certificate of Approval is dated 27 April 1998, before the later revisions.'
+- aspect: secretarial-approval
+  value: Required where federal law requires
+  quote: The amendment shall become effective when approved by the Secretary of
+  source: constitution-pawnee-nation-of-oklahoma-2021-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2021-05-01'
+  locator: Article XI
+  document_version:
+    document: pawnee-nation-of-oklahoma-constitution
+    version: 2021-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: Text is the constitution as revised by the 1 May 2021 referendum; the Certificate of Approval is dated 27 April 1998, before the later revisions.'
+- aspect: recall-and-removal
+  value: Recall by petition of 35% of last regular election voters
+  quote: verified by the Enrollment Department that thirty five percent (35%)
+  source: constitution-pawnee-nation-of-oklahoma-2021-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2021-05-01'
+  locator: Article VII, Section 2(i)(b)
+  document_version:
+    document: pawnee-nation-of-oklahoma-constitution
+    version: 2021-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: Text is the constitution as revised by the 1 May 2021 referendum; the Certificate of Approval is dated 27 April 1998, before the later revisions.'
+- aspect: recall-and-removal
+  value: Removal for cause by petition in District Court
+  quote: Removal for Cause – Pawnee Business Council members may be removed for
+  source: constitution-pawnee-nation-of-oklahoma-2021-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2021-05-01'
+  locator: Article VII, Section 4(i)
+  document_version:
+    document: pawnee-nation-of-oklahoma-constitution
+    version: 2021-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: Text is the constitution as revised by the 1 May 2021 referendum; the Certificate of Approval is dated 27 April 1998, before the later revisions.'
+- aspect: recall-and-removal
+  value: Forfeiture for missing two meetings per year
+  quote: attend two (2) regular or special meetings per year from the date of oath of office, unless
+  source: constitution-pawnee-nation-of-oklahoma-2021-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2021-05-01'
+  locator: Article VII, Section 1
+  document_version:
+    document: pawnee-nation-of-oklahoma-constitution
+    version: 2021-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: Text is the constitution as revised by the 1 May 2021 referendum; the Certificate of Approval is dated 27 April 1998, before the later revisions.'
+- aspect: other
+  value: Nasharo Council, 8 members, reviews membership and treaty acts
+  quote: The Nasharo Council shall consist of eight (8) members with a quorum of five
+  source: constitution-pawnee-nation-of-oklahoma-2021-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2021-05-01'
+  locator: Article VIII, Section 1
+  document_version:
+    document: pawnee-nation-of-oklahoma-constitution
+    version: 2021-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: Text is the constitution as revised by the 1 May 2021 referendum; the Certificate of Approval is dated 27 April 1998, before the later revisions.'
 governing_documents:
 - kind: law-code
   title: Pawnee Nation of Oklahoma, Law and Order Code

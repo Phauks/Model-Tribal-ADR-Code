@@ -253,6 +253,291 @@ government_structure:
   as_of: '1949'
   locator: preamble / approval and certification of adoption
   note: Historical constitution; a later constitution may have replaced it.
+governance:
+- aspect: form
+  value: Not adopted under the Indian Reorganization Act
+  quote: This Constitution and Bylaws is not adopted under the Indian Reorganization Act, also known as
+  source: constitution-confederated-tribes-of-the-umatilla-indian-reservation-2021-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2021'
+  locator: Article III
+  document_version:
+    document: confederated-tribes-of-the-umatilla-indian-reservation-constitution
+    version: 2021-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author.
+- aspect: governing-body
+  value: Board of Trustees
+  quote: The governing body of the Confederated Tribes shall be a Board of Trustees.
+  source: constitution-confederated-tribes-of-the-umatilla-indian-reservation-2021-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2021'
+  locator: Article VI, Section 1
+  document_version:
+    document: confederated-tribes-of-the-umatilla-indian-reservation-constitution
+    version: 2021-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author.
+- aspect: governing-body-size
+  value: 8 members plus ex officio Chair of General Council
+  quote: officio member with the right to vote, and eight (8) members of the General Council elected by
+  source: constitution-confederated-tribes-of-the-umatilla-indian-reservation-2021-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2021'
+  locator: Article VI, Section 2
+  document_version:
+    document: confederated-tribes-of-the-umatilla-indian-reservation-constitution
+    version: 2021-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author.
+- aspect: governing-body-selection
+  value: Elected by the General Council
+  quote: officio member with the right to vote, and eight (8) members of the General Council elected by
+  source: constitution-confederated-tribes-of-the-umatilla-indian-reservation-2021-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2021'
+  locator: Article VI, Section 2
+  document_version:
+    document: confederated-tribes-of-the-umatilla-indian-reservation-constitution
+    version: 2021-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author.
+- aspect: governing-body-term
+  value: 2 years
+  quote: Members of the Board of Trustees shall each hold office for a period of two (2) years, or
+  source: constitution-confederated-tribes-of-the-umatilla-indian-reservation-2021-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2021'
+  locator: Article V, Section 5(c)
+  document_version:
+    document: confederated-tribes-of-the-umatilla-indian-reservation-constitution
+    version: 2021-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author.
+- aspect: general-council
+  value: All members 18 or over
+  quote: The General Council shall consist of all members of the Confederated Tribes of the age of
+  source: constitution-confederated-tribes-of-the-umatilla-indian-reservation-2021-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2021'
+  locator: Article V, Section 1
+  document_version:
+    document: confederated-tribes-of-the-umatilla-indian-reservation-constitution
+    version: 2021-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author.
+- aspect: head-of-government
+  value: Chair of the Board of Trustees
+  quote: The Chair of the Board of Trustees shall preside over all meetings of the Board of
+  source: constitution-confederated-tribes-of-the-umatilla-indian-reservation-2021-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2021'
+  locator: Article VI, Section 3(a)
+  document_version:
+    document: confederated-tribes-of-the-umatilla-indian-reservation-constitution
+    version: 2021-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author.
+- aspect: head-of-government
+  value: Chair of the General Council
+  quote: The Chair shall preside at the meetings of the General Council
+  source: constitution-confederated-tribes-of-the-umatilla-indian-reservation-2021-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2021'
+  locator: Article V, Section 3(a)
+  document_version:
+    document: confederated-tribes-of-the-umatilla-indian-reservation-constitution
+    version: 2021-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author.
+- aspect: head-of-government
+  value: Board of Trustees Chair
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  verification: bulk-import
+  as_of: '2026-11-20'
+  locator: Confederated Tribes of the Umatilla Indian Reservation
+  note: The title of the leader's office as the federal directory lists it; the holder's name is not recorded.
+- aspect: head-of-government-selection
+  value: Elected by the General Council
+  quote: The General Council shall elect its own officers, and shall also elect the members and officers of
+  source: constitution-confederated-tribes-of-the-umatilla-indian-reservation-2021-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2021'
+  locator: Article V, Section 2
+  document_version:
+    document: confederated-tribes-of-the-umatilla-indian-reservation-constitution
+    version: 2021-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author.
+- aspect: head-of-government-term
+  value: 2 years
+  quote: Officers of the General Council shall hold office for a period of two (2) years, or until
+  source: constitution-confederated-tribes-of-the-umatilla-indian-reservation-2021-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2021'
+  locator: Article V, Section 5(b)
+  document_version:
+    document: confederated-tribes-of-the-umatilla-indian-reservation-constitution
+    version: 2021-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author.
+- aspect: other-officers
+  value: Vice-Chair, Secretary, Interpreter (General Council)
+  quote: The officers of the General Council shall be a Chair, a Vice-Chair, a Secretary, and Interpreter,
+  source: constitution-confederated-tribes-of-the-umatilla-indian-reservation-2021-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2021'
+  locator: Article V, Section 3
+  document_version:
+    document: confederated-tribes-of-the-umatilla-indian-reservation-constitution
+    version: 2021-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author.
+- aspect: other-officers
+  value: Vice-Chair, Treasurer, Secretary (Board of Trustees)
+  quote: The officers of the Board of Trustees shall be a Chair, a Vice-Chair, a Treasurer and a Secretary.
+  source: constitution-confederated-tribes-of-the-umatilla-indian-reservation-2021-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2021'
+  locator: Article VI, Section 3
+  document_version:
+    document: confederated-tribes-of-the-umatilla-indian-reservation-constitution
+    version: 2021-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author.
+- aspect: elections
+  value: November of odd-numbered years
+  quote: held in November in odd numbered years.
+  source: constitution-confederated-tribes-of-the-umatilla-indian-reservation-2021-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2021'
+  locator: Article V, Section 5(a)
+  document_version:
+    document: confederated-tribes-of-the-umatilla-indian-reservation-constitution
+    version: 2021-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author.
+- aspect: voting-age
+  value: '18'
+  quote: eighteen (18) years or over.
+  source: constitution-confederated-tribes-of-the-umatilla-indian-reservation-2021-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2021'
+  locator: Article V, Section 1
+  document_version:
+    document: confederated-tribes-of-the-umatilla-indian-reservation-constitution
+    version: 2021-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author.
+- aspect: judiciary
+  value: Tribal Court
+  quote: The judicial power of the Confederated Tribes is vested in the Tribal Court
+  source: constitution-confederated-tribes-of-the-umatilla-indian-reservation-2021-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2021'
+  locator: Article VII, Section 1
+  document_version:
+    document: confederated-tribes-of-the-umatilla-indian-reservation-constitution
+    version: 2021-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author.
+- aspect: judicial-selection
+  value: Chief Judge appointed by the Board of Trustees
+  quote: The Board shall appoint a Chief Judge
+  source: constitution-confederated-tribes-of-the-umatilla-indian-reservation-2021-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2021'
+  locator: Article VII, Section 6
+  document_version:
+    document: confederated-tribes-of-the-umatilla-indian-reservation-constitution
+    version: 2021-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author.
+- aspect: judicial-term
+  value: Chief Judge at least 10 years; Associate Judges at least 4 years
+  quote: than ten years, and may appoint one or more Associate Judges for terms of not less than four
+  source: constitution-confederated-tribes-of-the-umatilla-indian-reservation-2021-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2021'
+  locator: Article VII, Section 6
+  document_version:
+    document: confederated-tribes-of-the-umatilla-indian-reservation-constitution
+    version: 2021-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author.
+- aspect: judicial-independence
+  value: Pay may not be reduced during term
+  quote: The Board shall not reduce the pay of a judge during his or her term of appointment.
+  source: constitution-confederated-tribes-of-the-umatilla-indian-reservation-2021-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2021'
+  locator: Article VII, Section 6
+  document_version:
+    document: confederated-tribes-of-the-umatilla-indian-reservation-constitution
+    version: 2021-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author.
+- aspect: judicial-independence
+  value: Judges removable only for good cause after probationary year
+  quote: of the Tribal Court for good cause upon due notice and an opportunity for a hearing open
+  source: constitution-confederated-tribes-of-the-umatilla-indian-reservation-2021-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2021'
+  locator: Article VII, Section 6
+  document_version:
+    document: confederated-tribes-of-the-umatilla-indian-reservation-constitution
+    version: 2021-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author.
+- aspect: judicial-independence
+  value: Court interpretations of Constitution not alterable by statute
+  quote: shall not be subject to alteration by later statutory amendment or enactment of the Board of
+  source: constitution-confederated-tribes-of-the-umatilla-indian-reservation-2021-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2021'
+  locator: Article VII, Section 2
+  document_version:
+    document: confederated-tribes-of-the-umatilla-indian-reservation-constitution
+    version: 2021-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author.
+- aspect: amendment
+  value: Majority vote of General Council members at election
+  quote: may be amended by a majority vote of the members of the General
+  source: constitution-confederated-tribes-of-the-umatilla-indian-reservation-2021-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2021'
+  locator: Article VIII
+  document_version:
+    document: confederated-tribes-of-the-umatilla-indian-reservation-constitution
+    version: 2021-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author.
+- aspect: recall-and-removal
+  value: Removal by General Council after Board certification
+  quote: the power to remove said member from office and to elect a successor
+  source: constitution-confederated-tribes-of-the-umatilla-indian-reservation-2021-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2021'
+  locator: Article VI, Section 5
+  document_version:
+    document: confederated-tribes-of-the-umatilla-indian-reservation-constitution
+    version: 2021-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author.
+- aspect: recall-and-removal
+  value: Recall by General Council vote on 10% petition
+  quote: a recall petition signed by at least ten percent (10%) of the members of the General Council
+  source: constitution-confederated-tribes-of-the-umatilla-indian-reservation-2021-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2021'
+  locator: Article V, Section 6
+  document_version:
+    document: confederated-tribes-of-the-umatilla-indian-reservation-constitution
+    version: 2021-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author.
 governing_documents:
 - kind: law-code
   title: Statutes of the Confederated Tribes of the Umatilla Indian Reservation

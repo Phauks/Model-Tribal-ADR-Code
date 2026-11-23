@@ -207,6 +207,231 @@ government_structure:
   as_of: '1936'
   locator: preamble / approval and certification of adoption
   note: Historical constitution; a later constitution may have replaced it.
+governance:
+- aspect: governing-body
+  value: Tribal Council
+  quote: Chippewa Indians of Wisconsin shall be the Tribal Council.
+  source: constitution-lac-du-flambeau-band-of-lake-superior-chippewa-indians-of-the-lac-du-flambeau-reservation-of-wisconsin-2005-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '2005-09-09'
+  locator: Article III, Section 1
+  document_version:
+    document: lac-du-flambeau-band-of-lake-superior-chippewa-indians-of-the-lac-du-flambeau-reservation-of-wisconsin-constitution
+    version: 2005-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Text is the constitution and bylaws with amendments through 2005; the two-tier judiciary is the 2005 amendment XXIII.'
+- aspect: governing-body-size
+  value: 12 members
+  quote: The Council shall consist of a President, Vice-President, Secretary,
+  source: constitution-lac-du-flambeau-band-of-lake-superior-chippewa-indians-of-the-lac-du-flambeau-reservation-of-wisconsin-2005-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '2005-09-09'
+  locator: Article III, Section 2
+  document_version:
+    document: lac-du-flambeau-band-of-lake-superior-chippewa-indians-of-the-lac-du-flambeau-reservation-of-wisconsin-constitution
+    version: 2005-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Text is the constitution and bylaws with amendments through 2005; the two-tier judiciary is the 2005 amendment XXIII.'
+- aspect: governing-body-selection
+  value: Elected by popular vote
+  quote: nominated and elected by popular vote as provided in Article IV of this Constitution.
+  source: constitution-lac-du-flambeau-band-of-lake-superior-chippewa-indians-of-the-lac-du-flambeau-reservation-of-wisconsin-2005-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '2005-09-09'
+  locator: Article III, Section 2
+  document_version:
+    document: lac-du-flambeau-band-of-lake-superior-chippewa-indians-of-the-lac-du-flambeau-reservation-of-wisconsin-constitution
+    version: 2005-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Text is the constitution and bylaws with amendments through 2005; the two-tier judiciary is the 2005 amendment XXIII.'
+- aspect: governing-body-term
+  value: 2 years
+  quote: officers and councilmen shall be elected for two years and serve until their
+  source: constitution-lac-du-flambeau-band-of-lake-superior-chippewa-indians-of-the-lac-du-flambeau-reservation-of-wisconsin-2005-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '2005-09-09'
+  locator: Article IV, Section 2
+  document_version:
+    document: lac-du-flambeau-band-of-lake-superior-chippewa-indians-of-the-lac-du-flambeau-reservation-of-wisconsin-constitution
+    version: 2005-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Text is the constitution and bylaws with amendments through 2005; the two-tier judiciary is the 2005 amendment XXIII.'
+- aspect: head-of-government
+  value: President
+  quote: The President of the Tribal Council shall preside at all meetings of the
+  source: constitution-lac-du-flambeau-band-of-lake-superior-chippewa-indians-of-the-lac-du-flambeau-reservation-of-wisconsin-2005-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '2005-09-09'
+  locator: Bylaws, Article I, Section 1
+  document_version:
+    document: lac-du-flambeau-band-of-lake-superior-chippewa-indians-of-the-lac-du-flambeau-reservation-of-wisconsin-constitution
+    version: 2005-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Text is the constitution and bylaws with amendments through 2005; the two-tier judiciary is the 2005 amendment XXIII.'
+- aspect: head-of-government
+  value: President
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  verification: bulk-import
+  as_of: '2026-11-20'
+  locator: Lac du Flambeau Band of Lake Superior Chippewa Indians of the Lac du Flambeau Reservation of Wisconsin
+  note: The title of the leader's office as the federal directory lists it; the holder's name is not recorded.
+- aspect: head-of-government-selection
+  value: Elected by popular vote
+  quote: nominated and elected by popular vote as provided in Article IV of this Constitution.
+  source: constitution-lac-du-flambeau-band-of-lake-superior-chippewa-indians-of-the-lac-du-flambeau-reservation-of-wisconsin-2005-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '2005-09-09'
+  locator: Article III, Section 2
+  document_version:
+    document: lac-du-flambeau-band-of-lake-superior-chippewa-indians-of-the-lac-du-flambeau-reservation-of-wisconsin-constitution
+    version: 2005-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Text is the constitution and bylaws with amendments through 2005; the two-tier judiciary is the 2005 amendment XXIII.'
+- aspect: head-of-government-term
+  value: 2 years
+  quote: officers and councilmen shall be elected for two years and serve until their
+  source: constitution-lac-du-flambeau-band-of-lake-superior-chippewa-indians-of-the-lac-du-flambeau-reservation-of-wisconsin-2005-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '2005-09-09'
+  locator: Article IV, Section 2
+  document_version:
+    document: lac-du-flambeau-band-of-lake-superior-chippewa-indians-of-the-lac-du-flambeau-reservation-of-wisconsin-constitution
+    version: 2005-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Text is the constitution and bylaws with amendments through 2005; the two-tier judiciary is the 2005 amendment XXIII.'
+- aspect: other-officers
+  value: Vice-President, Secretary, Treasurer
+  quote: Treasurer, and eight (8) additional members. The officers and councilmen shall be
+  source: constitution-lac-du-flambeau-band-of-lake-superior-chippewa-indians-of-the-lac-du-flambeau-reservation-of-wisconsin-2005-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '2005-09-09'
+  locator: Article III, Section 2
+  document_version:
+    document: lac-du-flambeau-band-of-lake-superior-chippewa-indians-of-the-lac-du-flambeau-reservation-of-wisconsin-constitution
+    version: 2005-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Text is the constitution and bylaws with amendments through 2005; the two-tier judiciary is the 2005 amendment XXIII.'
+- aspect: elections
+  value: Every year, first Tuesday in October
+  quote: thereafter elections of six (6) councilmen shall be held every year on the first Tuesday in
+  source: constitution-lac-du-flambeau-band-of-lake-superior-chippewa-indians-of-the-lac-du-flambeau-reservation-of-wisconsin-2005-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '2005-09-09'
+  locator: Article IV, Section 1
+  document_version:
+    document: lac-du-flambeau-band-of-lake-superior-chippewa-indians-of-the-lac-du-flambeau-reservation-of-wisconsin-constitution
+    version: 2005-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Text is the constitution and bylaws with amendments through 2005; the two-tier judiciary is the 2005 amendment XXIII.'
+- aspect: voting-age
+  value: '18'
+  quote: Any member of the Tribe who is eighteen (18) years of age or over and
+  source: constitution-lac-du-flambeau-band-of-lake-superior-chippewa-indians-of-the-lac-du-flambeau-reservation-of-wisconsin-2005-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '2005-09-09'
+  locator: Article IV, Section 6
+  document_version:
+    document: lac-du-flambeau-band-of-lake-superior-chippewa-indians-of-the-lac-du-flambeau-reservation-of-wisconsin-constitution
+    version: 2005-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Text is the constitution and bylaws with amendments through 2005; the two-tier judiciary is the 2005 amendment XXIII.'
+- aspect: election-authority
+  value: Tribal Council
+  quote: The Tribal Council shall determine rules and regulations governing
+  source: constitution-lac-du-flambeau-band-of-lake-superior-chippewa-indians-of-the-lac-du-flambeau-reservation-of-wisconsin-2005-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '2005-09-09'
+  locator: Article IV, Section 3
+  document_version:
+    document: lac-du-flambeau-band-of-lake-superior-chippewa-indians-of-the-lac-du-flambeau-reservation-of-wisconsin-constitution
+    version: 2005-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Text is the constitution and bylaws with amendments through 2005; the two-tier judiciary is the 2005 amendment XXIII.'
+- aspect: judiciary
+  value: Tribal Trial Court and Appeals Court
+  quote: There shall be a Tribal Trial Court and an Appeals
+  source: constitution-lac-du-flambeau-band-of-lake-superior-chippewa-indians-of-the-lac-du-flambeau-reservation-of-wisconsin-2005-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '2005-09-09'
+  locator: Article X, Section 1
+  document_version:
+    document: lac-du-flambeau-band-of-lake-superior-chippewa-indians-of-the-lac-du-flambeau-reservation-of-wisconsin-constitution
+    version: 2005-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Text is the constitution and bylaws with amendments through 2005; the two-tier judiciary is the 2005 amendment XXIII.'
+- aspect: judicial-selection
+  value: Appointed by the Tribal Council
+  quote: The Tribal Council shall select, by majority vote, Tribal Trial Court and
+  source: constitution-lac-du-flambeau-band-of-lake-superior-chippewa-indians-of-the-lac-du-flambeau-reservation-of-wisconsin-2005-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '2005-09-09'
+  locator: Article X, Section 7(a)
+  document_version:
+    document: lac-du-flambeau-band-of-lake-superior-chippewa-indians-of-the-lac-du-flambeau-reservation-of-wisconsin-constitution
+    version: 2005-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Text is the constitution and bylaws with amendments through 2005; the two-tier judiciary is the 2005 amendment XXIII.'
+- aspect: judicial-term
+  value: 3 years
+  quote: Each judge shall hold office for a period of three (3) years
+  source: constitution-lac-du-flambeau-band-of-lake-superior-chippewa-indians-of-the-lac-du-flambeau-reservation-of-wisconsin-2005-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '2005-09-09'
+  locator: Article X, Section 6
+  document_version:
+    document: lac-du-flambeau-band-of-lake-superior-chippewa-indians-of-the-lac-du-flambeau-reservation-of-wisconsin-constitution
+    version: 2005-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Text is the constitution and bylaws with amendments through 2005; the two-tier judiciary is the 2005 amendment XXIII.'
+- aspect: judicial-independence
+  value: Judges removable only for good cause, by two-thirds votes
+  quote: A judge may be removed only for good cause shown at the
+  source: constitution-lac-du-flambeau-band-of-lake-superior-chippewa-indians-of-the-lac-du-flambeau-reservation-of-wisconsin-2005-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '2005-09-09'
+  locator: Article X, Section 8(b)(1)
+  document_version:
+    document: lac-du-flambeau-band-of-lake-superior-chippewa-indians-of-the-lac-du-flambeau-reservation-of-wisconsin-constitution
+    version: 2005-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Text is the constitution and bylaws with amendments through 2005; the two-tier judiciary is the 2005 amendment XXIII.'
+- aspect: amendment
+  value: Majority vote of adult members in Secretarial election
+  quote: If at such election the amendment is adopted by a majority vote of the adult
+  source: constitution-lac-du-flambeau-band-of-lake-superior-chippewa-indians-of-the-lac-du-flambeau-reservation-of-wisconsin-2005-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '2005-09-09'
+  locator: Article VIII
+  document_version:
+    document: lac-du-flambeau-band-of-lake-superior-chippewa-indians-of-the-lac-du-flambeau-reservation-of-wisconsin-constitution
+    version: 2005-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Text is the constitution and bylaws with amendments through 2005; the two-tier judiciary is the 2005 amendment XXIII.'
+- aspect: secretarial-approval
+  value: Required for amendments
+  quote: if approved by him shall thereupon become effective.
+  source: constitution-lac-du-flambeau-band-of-lake-superior-chippewa-indians-of-the-lac-du-flambeau-reservation-of-wisconsin-2005-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '2005-09-09'
+  locator: Article VIII
+  document_version:
+    document: lac-du-flambeau-band-of-lake-superior-chippewa-indians-of-the-lac-du-flambeau-reservation-of-wisconsin-constitution
+    version: 2005-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Text is the constitution and bylaws with amendments through 2005; the two-tier judiciary is the 2005 amendment XXIII.'
+- aspect: recall-and-removal
+  value: Removal by Council majority on petition of 25 members
+  quote: organization may be removed from office for improper conduct or gross neglect of duty upon
+  source: constitution-lac-du-flambeau-band-of-lake-superior-chippewa-indians-of-the-lac-du-flambeau-reservation-of-wisconsin-2005-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '2005-09-09'
+  locator: Article V, Section 2
+  document_version:
+    document: lac-du-flambeau-band-of-lake-superior-chippewa-indians-of-the-lac-du-flambeau-reservation-of-wisconsin-constitution
+    version: 2005-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Text is the constitution and bylaws with amendments through 2005; the two-tier judiciary is the 2005 amendment XXIII.'
 governing_documents:
 - kind: law-code
   title: Lac Du Flambeau Band of Lake Superior Chippewa Indians of Wisconsin

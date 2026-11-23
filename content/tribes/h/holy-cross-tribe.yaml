@@ -184,6 +184,15 @@ indian_health_service:
   locator: '"Federally Recognized Tribes" list, Yukon-Kuskokwim Delta Service Area profile'
   note: 'The source''s words: "Holy Cross Village".'
   operator: tribal
+governance:
+- aspect: head-of-government
+  value: First Chief
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  verification: bulk-import
+  as_of: '2026-11-20'
+  locator: Holy Cross Tribe
+  note: The title of the leader's office as the federal directory lists it; the holder's name is not recorded.
 justice_institutions:
 - kind: tribal-court
   name: Holy Cross Tribal Court

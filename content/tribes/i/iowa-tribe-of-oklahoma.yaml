@@ -200,6 +200,243 @@ government_structure:
   as_of: '1937'
   locator: preamble / approval and certification of adoption
   note: Historical constitution; a later constitution may have replaced it.
+governance:
+- aspect: form
+  value: Adopted under the Thomas-Rogers Oklahoma Indian Welfare Act
+  quote: Constitution and By-laws pursuant to that Act.
+  source: constitution-iowa-tribe-of-oklahoma-2008-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2008'
+  locator: Preamble
+  document_version:
+    document: iowa-tribe-of-oklahoma-constitution
+    version: 2008-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author.
+- aspect: governing-body
+  value: Iowa Council
+  quote: be the Iowa Council composed of all members of the Tribe, eighteen (18) years of age
+  source: constitution-iowa-tribe-of-oklahoma-2008-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2008'
+  locator: Article III, Section 1
+  document_version:
+    document: iowa-tribe-of-oklahoma-constitution
+    version: 2008-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author.
+- aspect: governing-body
+  value: Business Committee
+  quote: There shall be a Business Committee composed of
+  source: constitution-iowa-tribe-of-oklahoma-2008-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2008'
+  locator: Article V, Section 1
+  document_version:
+    document: iowa-tribe-of-oklahoma-constitution
+    version: 2008-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author.
+- aspect: governing-body-size
+  value: 5 members (the officers)
+  quote: Chairperson, Secretary, Treasurer, and one (1) Councilperson.
+  source: constitution-iowa-tribe-of-oklahoma-2008-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2008'
+  locator: Article IV
+  document_version:
+    document: iowa-tribe-of-oklahoma-constitution
+    version: 2008-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author.
+- aspect: governing-body-selection
+  value: Elected at the annual meeting of the Council
+  quote: Annual meetings of the Council and election of officers
+  source: constitution-iowa-tribe-of-oklahoma-2008-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2008'
+  locator: Article VI, Section 1
+  document_version:
+    document: iowa-tribe-of-oklahoma-constitution
+    version: 2008-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author.
+- aspect: governing-body-term
+  value: 2 years
+  quote: shall be for two (2), or until their successors are elected and installed.
+  source: constitution-iowa-tribe-of-oklahoma-2008-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2008'
+  locator: Article IV
+  document_version:
+    document: iowa-tribe-of-oklahoma-constitution
+    version: 2008-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author.
+- aspect: general-council
+  value: All members of the Tribe, 18 years or older
+  quote: be the Iowa Council composed of all members of the Tribe, eighteen (18) years of age
+  source: constitution-iowa-tribe-of-oklahoma-2008-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2008'
+  locator: Article III, Section 1
+  document_version:
+    document: iowa-tribe-of-oklahoma-constitution
+    version: 2008-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author.
+- aspect: head-of-government
+  value: Chairperson
+  quote: The Chairperson shall preside at all meetings of the
+  source: constitution-iowa-tribe-of-oklahoma-2008-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2008'
+  locator: Article XI, Section 1
+  document_version:
+    document: iowa-tribe-of-oklahoma-constitution
+    version: 2008-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author.
+- aspect: head-of-government
+  value: Chairperson
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  verification: bulk-import
+  as_of: '2026-11-20'
+  locator: Iowa Tribe of Oklahoma
+  note: The title of the leader's office as the federal directory lists it; the holder's name is not recorded. Listed as “Chairman”; recorded without the holder's own form of the title.
+- aspect: head-of-government-selection
+  value: Elected at the annual meeting of the Council
+  quote: Annual meetings of the Council and election of officers
+  source: constitution-iowa-tribe-of-oklahoma-2008-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2008'
+  locator: Article VI, Section 1
+  document_version:
+    document: iowa-tribe-of-oklahoma-constitution
+    version: 2008-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author.
+- aspect: head-of-government-term
+  value: 2 years
+  quote: shall be for two (2), or until their successors are elected and installed.
+  source: constitution-iowa-tribe-of-oklahoma-2008-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2008'
+  locator: Article IV
+  document_version:
+    document: iowa-tribe-of-oklahoma-constitution
+    version: 2008-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author.
+- aspect: other-officers
+  value: Vice-Chairperson, Secretary, Treasurer, Councilperson
+  quote: Chairperson, Secretary, Treasurer, and one (1) Councilperson.
+  source: constitution-iowa-tribe-of-oklahoma-2008-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2008'
+  locator: Article IV
+  document_version:
+    document: iowa-tribe-of-oklahoma-constitution
+    version: 2008-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author.
+- aspect: elections
+  value: Annually, first Saturday of June
+  quote: shall be held on the first Saturday of June.
+  source: constitution-iowa-tribe-of-oklahoma-2008-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2008'
+  locator: Article VI, Section 1
+  document_version:
+    document: iowa-tribe-of-oklahoma-constitution
+    version: 2008-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author.
+- aspect: voting-age
+  value: '18'
+  quote: be the Iowa Council composed of all members of the Tribe, eighteen (18) years of age
+  source: constitution-iowa-tribe-of-oklahoma-2008-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2008'
+  locator: Article III, Section 1
+  document_version:
+    document: iowa-tribe-of-oklahoma-constitution
+    version: 2008-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author.
+- aspect: election-authority
+  value: Election Board
+  quote: be solely responsible for conducting the annual election of officers and any other Tribal
+  source: constitution-iowa-tribe-of-oklahoma-2008-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2008'
+  locator: Article VII, Section 3
+  document_version:
+    document: iowa-tribe-of-oklahoma-constitution
+    version: 2008-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author.
+- aspect: amendment
+  value: Majority of votes cast in a referendum
+  quote: Amendments to the Constitution and Bylaws may be proposed by a majority vote of the
+  source: constitution-iowa-tribe-of-oklahoma-2008-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2008'
+  locator: Article XV
+  document_version:
+    document: iowa-tribe-of-oklahoma-constitution
+    version: 2008-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author.
+- aspect: secretarial-approval
+  value: Required for amendments
+  quote: and if approved by the Secretary of the Interior, shall be submitted to
+  source: constitution-iowa-tribe-of-oklahoma-2008-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2008'
+  locator: Article XV
+  document_version:
+    document: iowa-tribe-of-oklahoma-constitution
+    version: 2008-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author.
+- aspect: recall-and-removal
+  value: Removal by majority of the body's total membership, for cause
+  quote: to remove, any of its members for cause by an affirmative vote of a majority of its total
+  source: constitution-iowa-tribe-of-oklahoma-2008-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2008'
+  locator: Article IX, Section 1
+  document_version:
+    document: iowa-tribe-of-oklahoma-constitution
+    version: 2008-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author.
+- aspect: recall-and-removal
+  value: Recall by petition of 30% of registered voters
+  quote: Upon receipt of a valid petition signed by at least thirty (30) percent
+  source: constitution-iowa-tribe-of-oklahoma-2008-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2008'
+  locator: Article IX, Section 2
+  document_version:
+    document: iowa-tribe-of-oklahoma-constitution
+    version: 2008-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author.
+- aspect: other
+  value: Initiative by petition of 20% of registered voters
+  quote: Upon receipt of a valid petition signed by at least twenty (20)
+  source: constitution-iowa-tribe-of-oklahoma-2008-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2008'
+  locator: Article XIV, Section 2(b)
+  document_version:
+    document: iowa-tribe-of-oklahoma-constitution
+    version: 2008-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author.
 governing_documents:
 - kind: law-code
   title: Tribal code

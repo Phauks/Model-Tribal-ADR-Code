@@ -205,6 +205,169 @@ indian_health_service:
   as_of: '2026-11-23'
   locator: regional lists (West Central, Southern, Northern, East Central)
   note: Listed as "Mechoopda Indian Tribe of Chico Rancheria, California".
+governance:
+- aspect: form
+  value: Constitution adopted pursuant to the Indian Reorganization Act of June 18, 1934
+  quote: approve and adopt this Constitution pursuant to the Indian Reorganization Act of June 18, 1934,
+  source: constitution-mechoopda-indian-tribe-of-chico-rancheria-undated-text
+  confidence: medium
+  verification: read-in-full
+  locator: Preamble
+  document_version:
+    document: mechoopda-indian-tribe-of-chico-rancheria-constitution
+    version: undated-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: The cover has no date; the certificates show a Secretarial election in 1997 and approval under a 1994 memorandum, so the text is the constitution as approved.'
+- aspect: governing-body
+  value: Tribal Council
+  quote: The governing body of the Mechoopda Indian Tribe will be the Tribal Council of the Mechoopda
+  source: constitution-mechoopda-indian-tribe-of-chico-rancheria-undated-text
+  confidence: medium
+  verification: read-in-full
+  locator: Article IV
+  document_version:
+    document: mechoopda-indian-tribe-of-chico-rancheria-constitution
+    version: undated-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: The cover has no date; the certificates show a Secretarial election in 1997 and approval under a 1994 memorandum, so the text is the constitution as approved.'
+- aspect: governing-body-size
+  value: 7 members
+  quote: The Tribal Council shall consist of seven (7) members elected at-large from the
+  source: constitution-mechoopda-indian-tribe-of-chico-rancheria-undated-text
+  confidence: medium
+  verification: read-in-full
+  locator: Article IV
+  document_version:
+    document: mechoopda-indian-tribe-of-chico-rancheria-constitution
+    version: undated-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: The cover has no date; the certificates show a Secretarial election in 1997 and approval under a 1994 memorandum, so the text is the constitution as approved.'
+- aspect: governing-body-selection
+  value: Elected at large
+  quote: The Tribal Council shall consist of seven (7) members elected at-large from the
+  source: constitution-mechoopda-indian-tribe-of-chico-rancheria-undated-text
+  confidence: medium
+  verification: read-in-full
+  locator: Article IV
+  document_version:
+    document: mechoopda-indian-tribe-of-chico-rancheria-constitution
+    version: undated-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: The cover has no date; the certificates show a Secretarial election in 1997 and approval under a 1994 memorandum, so the text is the constitution as approved.'
+- aspect: governing-body-term
+  value: 2 years, staggered
+  quote: Ail terms of office will be for two (2) years, except that terms shall be
+  source: constitution-mechoopda-indian-tribe-of-chico-rancheria-undated-text
+  confidence: medium
+  verification: read-in-full
+  locator: Article V, Section 4
+  document_version:
+    document: mechoopda-indian-tribe-of-chico-rancheria-constitution
+    version: undated-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: The cover has no date; the certificates show a Secretarial election in 1997 and approval under a 1994 memorandum, so the text is the constitution as approved.'
+- aspect: head-of-government
+  value: Chairperson
+  quote: Section 3. Chairperson. The Chairperson shall preside at ail meetings of the Tribal
+  source: constitution-mechoopda-indian-tribe-of-chico-rancheria-undated-text
+  confidence: medium
+  verification: read-in-full
+  locator: Article XIV, Section 3
+  document_version:
+    document: mechoopda-indian-tribe-of-chico-rancheria-constitution
+    version: undated-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: The cover has no date; the certificates show a Secretarial election in 1997 and approval under a 1994 memorandum, so the text is the constitution as approved.'
+- aspect: head-of-government
+  value: Chairperson
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  verification: bulk-import
+  as_of: '2026-11-20'
+  locator: Mechoopda Indian Tribe of Chico Rancheria, California
+  note: The title of the leader's office as the federal directory lists it; the holder's name is not recorded. Listed as “Chairman”; recorded without the holder's own form of the title.
+- aspect: head-of-government-selection
+  value: Elected by secret or absentee ballot
+  quote: Section 3. Elections. AD elections of Tribal Officials will be by secret or absentee ballot
+  source: constitution-mechoopda-indian-tribe-of-chico-rancheria-undated-text
+  confidence: medium
+  verification: read-in-full
+  locator: Article V, Section 3
+  document_version:
+    document: mechoopda-indian-tribe-of-chico-rancheria-constitution
+    version: undated-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: The cover has no date; the certificates show a Secretarial election in 1997 and approval under a 1994 memorandum, so the text is the constitution as approved.'
+- aspect: other-officers
+  value: Vice-Chairperson, Secretary, Treasurer
+  quote: Section 4. Vice-Chairperson. The Vice-Chairperson shall assist the Chairperson when called
+  source: constitution-mechoopda-indian-tribe-of-chico-rancheria-undated-text
+  confidence: medium
+  verification: read-in-full
+  locator: Article XIV, Section 4
+  document_version:
+    document: mechoopda-indian-tribe-of-chico-rancheria-constitution
+    version: undated-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: The cover has no date; the certificates show a Secretarial election in 1997 and approval under a 1994 memorandum, so the text is the constitution as approved.'
+- aspect: elections
+  value: Every 2 years, staggered
+  quote: The Chairperson, Secretary and two Member-at-large Council positions will be
+  source: constitution-mechoopda-indian-tribe-of-chico-rancheria-undated-text
+  confidence: medium
+  verification: read-in-full
+  locator: Article V, Section 4
+  document_version:
+    document: mechoopda-indian-tribe-of-chico-rancheria-constitution
+    version: undated-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: The cover has no date; the certificates show a Secretarial election in 1997 and approval under a 1994 memorandum, so the text is the constitution as approved.'
+- aspect: voting-age
+  value: '18'
+  quote: Ail enrolled members of the Tribe who are eighteen (18)
+  source: constitution-mechoopda-indian-tribe-of-chico-rancheria-undated-text
+  confidence: medium
+  verification: read-in-full
+  locator: Article V, Section 1
+  document_version:
+    document: mechoopda-indian-tribe-of-chico-rancheria-constitution
+    version: undated-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: The cover has no date; the certificates show a Secretarial election in 1997 and approval under a 1994 memorandum, so the text is the constitution as approved.'
+- aspect: amendment
+  value: Proposed by Tribal Council or 30% petition; ratified in Secretarial election
+  quote: Amendments may be proposed by the Tribal Coundl on its own initiative or upon receipt and
+  source: constitution-mechoopda-indian-tribe-of-chico-rancheria-undated-text
+  confidence: medium
+  verification: read-in-full
+  locator: Article XVI
+  document_version:
+    document: mechoopda-indian-tribe-of-chico-rancheria-constitution
+    version: undated-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: The cover has no date; the certificates show a Secretarial election in 1997 and approval under a 1994 memorandum, so the text is the constitution as approved.'
+- aspect: secretarial-approval
+  value: Required for amendments
+  quote: approved by the Secretary of the Interior or his duly authorized representative in the same
+  source: constitution-mechoopda-indian-tribe-of-chico-rancheria-undated-text
+  confidence: medium
+  verification: read-in-full
+  locator: Article XVI
+  document_version:
+    document: mechoopda-indian-tribe-of-chico-rancheria-constitution
+    version: undated-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: The cover has no date; the certificates show a Secretarial election in 1997 and approval under a 1994 memorandum, so the text is the constitution as approved.'
+- aspect: recall-and-removal
+  value: Removal by majority vote of a quorum of the Tribal Council
+  quote: shall be removed from office by a majority vote of
+  source: constitution-mechoopda-indian-tribe-of-chico-rancheria-undated-text
+  confidence: medium
+  verification: read-in-full
+  locator: Article VI, Section 1
+  document_version:
+    document: mechoopda-indian-tribe-of-chico-rancheria-constitution
+    version: undated-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: The cover has no date; the certificates show a Secretarial election in 1997 and approval under a 1994 memorandum, so the text is the constitution as approved.'
+- aspect: recall-and-removal
+  value: Recall by election after petition of 30% of qualified voters
+  quote: Upon receipt of a verified petition from the Election Committee signed by at least thirty percent (30%) of the qualified voters,
+  source: constitution-mechoopda-indian-tribe-of-chico-rancheria-undated-text
+  confidence: medium
+  verification: read-in-full
+  locator: Article VI, Section 2
+  document_version:
+    document: mechoopda-indian-tribe-of-chico-rancheria-constitution
+    version: undated-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: The cover has no date; the certificates show a Secretarial election in 1997 and approval under a 1994 memorandum, so the text is the constitution as approved.'
 gaming:
   compacts:
   - state: CA

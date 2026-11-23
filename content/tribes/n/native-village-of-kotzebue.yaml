@@ -221,6 +221,74 @@ government_structure:
   note: The text cites the Act of June 18, 1934; the Indian Reorganization Act reached Alaska through
     the Act of May 1, 1936, so this is recorded as the Alaska amendment. Historical constitution; a later
     constitution may have replaced it.
+governance:
+- aspect: form
+  value: Constitution and By-laws under Act of Congress of June 18, 1934
+  quote: By-laws, by authority of the act of Congress of June 18, 1934, as
+  source: constitution-native-village-of-kotzebue-1947-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1947-04-05'
+  document_version:
+    document: native-village-of-kotzebue-constitution
+    version: 1947-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Scan is badly garbled in the officers and governing-body articles; facts are omitted where the text could not be read reliably.'
+- aspect: head-of-government
+  value: Chairperson
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  verification: bulk-import
+  as_of: '2026-11-20'
+  locator: Native Village of Kotzebue
+  note: The title of the leader's office as the federal directory lists it; the holder's name is not recorded.
+- aspect: voting-age
+  value: '21'
+  quote: Village 21 yearsof
+  source: constitution-native-village-of-kotzebue-1947-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1947-04-05'
+  locator: Section 1
+  document_version:
+    document: native-village-of-kotzebue-constitution
+    version: 1947-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Scan is badly garbled in the officers and governing-body articles; facts are omitted where the text could not be read reliably.'
+- aspect: amendment
+  value: Majority vote of Village members in election called by Secretary of the Interior
+  quote: members, voting in an election called by the Sec-
+  source: constitution-native-village-of-kotzebue-1947-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1947-04-05'
+  locator: Article 6
+  document_version:
+    document: native-village-of-kotzebue-constitution
+    version: 1947-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Scan is badly garbled in the officers and governing-body articles; facts are omitted where the text could not be read reliably.'
+- aspect: secretarial-approval
+  value: Required for amendments
+  quote: changesare approved by the Secretary of the Interior and by majority
+  source: constitution-native-village-of-kotzebue-1947-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1947-04-05'
+  locator: Article 6
+  document_version:
+    document: native-village-of-kotzebue-constitution
+    version: 1947-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Scan is badly garbled in the officers and governing-body articles; facts are omitted where the text could not be read reliably.'
+- aspect: other
+  value: Membership decides kind of governing body at general meeting
+  quote: shall decide what kind of governing body it wishes to set up to speak
+  source: constitution-native-village-of-kotzebue-1947-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1947-04-05'
+  locator: Article 8, Section 1
+  document_version:
+    document: native-village-of-kotzebue-constitution
+    version: 1947-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Scan is badly garbled in the officers and governing-body articles; facts are omitted where the text could not be read reliably.'
 governing_documents:
 - kind: constitution
   title: Constitution

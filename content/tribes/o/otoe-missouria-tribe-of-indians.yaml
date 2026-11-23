@@ -198,6 +198,279 @@ indian_health_service:
   as_of: '2026-11-23'
   locator: Direct Service Tribes by IHS Area > Oklahoma City Area
   note: Listed as "Otoe-Missouria Tribe". The Direct Service Tribes list says some Tribes have a mixed Indian Health Service and Tribal arrangement.
+governance:
+- aspect: form
+  value: Adopted under the Thomas-Rogers Oklahoma Indian Welfare Act of June 26, 1936
+  quote: pursuant to our inherent powers of self-government and the Act of Congress approved June 26, 1936 (49 Stat. 1967), known as the Thomas-Rogers Oklahoma Indian Welfare Act.
+  source: constitution-otoe-missouria-tribe-of-indians-2009-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2009'
+  locator: Preamble
+  document_version:
+    document: otoe-missouria-tribe-of-indians-constitution
+    version: 2009-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: Extract is the constitution ratified in 1984 with Amendment A (2009, Article IV) attached, and has scan errors such as ''al members''.'
+- aspect: governing-body
+  value: Tribal Council
+  quote: The representative governing body of the Tribe shall be the Tribal Council composed of seven (7) members elected by secret ballot by the qualified voters of the Tribe.
+  source: constitution-otoe-missouria-tribe-of-indians-2009-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2009'
+  locator: Article VI, Section 1
+  document_version:
+    document: otoe-missouria-tribe-of-indians-constitution
+    version: 2009-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: Extract is the constitution ratified in 1984 with Amendment A (2009, Article IV) attached, and has scan errors such as ''al members''.'
+- aspect: governing-body-size
+  value: 7 members
+  quote: composed of seven (7) members elected by secret ballot by the qualified voters of the Tribe
+  source: constitution-otoe-missouria-tribe-of-indians-2009-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2009'
+  locator: Article VI, Section 1
+  document_version:
+    document: otoe-missouria-tribe-of-indians-constitution
+    version: 2009-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: Extract is the constitution ratified in 1984 with Amendment A (2009, Article IV) attached, and has scan errors such as ''al members''.'
+- aspect: governing-body-selection
+  value: Elected by secret ballot of qualified voters
+  quote: elected by secret ballot by the qualified voters of the Tribe
+  source: constitution-otoe-missouria-tribe-of-indians-2009-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2009'
+  locator: Article VI, Section 1
+  document_version:
+    document: otoe-missouria-tribe-of-indians-constitution
+    version: 2009-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: Extract is the constitution ratified in 1984 with Amendment A (2009, Article IV) attached, and has scan errors such as ''al members''.'
+- aspect: governing-body-term
+  value: 3 years
+  quote: Thereafter, all terms of office shall be for three (3) years or until successors are duly elected and installed.
+  source: constitution-otoe-missouria-tribe-of-indians-2009-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2009'
+  locator: Article VII, Section 1
+  document_version:
+    document: otoe-missouria-tribe-of-indians-constitution
+    version: 2009-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: Extract is the constitution ratified in 1984 with Amendment A (2009, Article IV) attached, and has scan errors such as ''al members''.'
+- aspect: general-council
+  value: All tribal members 18 or older who are duly registered to vote
+  quote: The General Council shall consist of al members of the Tribe eighteen (18) years of age or older, who are duly registered to vote.
+  source: constitution-otoe-missouria-tribe-of-indians-2009-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2009'
+  locator: Article V, Section 1
+  document_version:
+    document: otoe-missouria-tribe-of-indians-constitution
+    version: 2009-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: Extract is the constitution ratified in 1984 with Amendment A (2009, Article IV) attached, and has scan errors such as ''al members''.'
+- aspect: head-of-government
+  value: Chairman
+  quote: The Chairman of the Tribal Council shall preside over all Tribal Council and General Council meetings of the Tribe,
+  source: constitution-otoe-missouria-tribe-of-indians-2009-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2009'
+  locator: Article XIII, Section 1
+  document_version:
+    document: otoe-missouria-tribe-of-indians-constitution
+    version: 2009-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: Extract is the constitution ratified in 1984 with Amendment A (2009, Article IV) attached, and has scan errors such as ''al members''.'
+- aspect: head-of-government
+  value: Chairperson
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  verification: bulk-import
+  as_of: '2026-11-20'
+  locator: Otoe-Missouria Tribe of Indians, Oklahoma
+  note: The title of the leader's office as the federal directory lists it; the holder's name is not recorded. Listed as “Chairman”; recorded without the holder's own form of the title.
+- aspect: head-of-government-selection
+  value: Elected by plurality vote
+  quote: by plurality vote; provided, that a person shall be a candidate for only one (1) of the seven (7) positions.
+  source: constitution-otoe-missouria-tribe-of-indians-2009-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2009'
+  locator: Article VI, Section 3
+  document_version:
+    document: otoe-missouria-tribe-of-indians-constitution
+    version: 2009-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: Extract is the constitution ratified in 1984 with Amendment A (2009, Article IV) attached, and has scan errors such as ''al members''.'
+- aspect: head-of-government-term
+  value: 3 years
+  quote: Thereafter, all terms of office shall be for three (3) years or until successors are duly elected and installed.
+  source: constitution-otoe-missouria-tribe-of-indians-2009-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2009'
+  locator: Article VII, Section 1
+  document_version:
+    document: otoe-missouria-tribe-of-indians-constitution
+    version: 2009-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: Extract is the constitution ratified in 1984 with Amendment A (2009, Article IV) attached, and has scan errors such as ''al members''.'
+- aspect: other-officers
+  value: Vice-Chairman, Secretary, Treasurer, three Councilmen
+  quote: A Chairman, Vice-Chairman, Secretary, Treasurer, and three (3) Councilmen shall be elected at
+  source: constitution-otoe-missouria-tribe-of-indians-2009-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2009'
+  locator: Article VI, Section 3
+  document_version:
+    document: otoe-missouria-tribe-of-indians-constitution
+    version: 2009-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: Extract is the constitution ratified in 1984 with Amendment A (2009, Article IV) attached, and has scan errors such as ''al members''.'
+- aspect: elections
+  value: First Saturday of November, in years when Council terms expire
+  quote: Regular elections for the Tribal Council shall be conducted on the first Saturday of November during those years on which terms expire, beginning in 1985.
+  source: constitution-otoe-missouria-tribe-of-indians-2009-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2009'
+  locator: Article VII, Section 2(a)
+  document_version:
+    document: otoe-missouria-tribe-of-indians-constitution
+    version: 2009-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: Extract is the constitution ratified in 1984 with Amendment A (2009, Article IV) attached, and has scan errors such as ''al members''.'
+- aspect: voting-age
+  value: '18'
+  quote: at least eighteen (18) years of age on the date of the election
+  source: constitution-otoe-missouria-tribe-of-indians-2009-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2009'
+  locator: Article VII, Section 8(b)
+  document_version:
+    document: otoe-missouria-tribe-of-indians-constitution
+    version: 2009-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: Extract is the constitution ratified in 1984 with Amendment A (2009, Article IV) attached, and has scan errors such as ''al members''.'
+- aspect: election-authority
+  value: Election Board
+  quote: A four (4) member Election Board shall be created by electing persons to that body on an at-large basis
+  source: constitution-otoe-missouria-tribe-of-indians-2009-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2009'
+  locator: Article VII, Section 4
+  document_version:
+    document: otoe-missouria-tribe-of-indians-constitution
+    version: 2009-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: Extract is the constitution ratified in 1984 with Amendment A (2009, Article IV) attached, and has scan errors such as ''al members''.'
+- aspect: judiciary
+  value: Court of Indian Offenses until a separate Tribal Court is established
+  quote: the judicial authority of the Tribe shall be exercised by the Court of Indian Offenses.
+  source: constitution-otoe-missouria-tribe-of-indians-2009-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2009'
+  locator: Article XII, Section 1
+  document_version:
+    document: otoe-missouria-tribe-of-indians-constitution
+    version: 2009-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: Extract is the constitution ratified in 1984 with Amendment A (2009, Article IV) attached, and has scan errors such as ''al members''.'
+- aspect: judiciary
+  value: Tribal Court, established by judicial ordinance subject to Secretary approval
+  quote: The Tribal Council shall enact a judicial ordinance subject to approval by the Secretary of the Interior
+  source: constitution-otoe-missouria-tribe-of-indians-2009-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2009'
+  locator: Article XII, Section 3
+  document_version:
+    document: otoe-missouria-tribe-of-indians-constitution
+    version: 2009-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: Extract is the constitution ratified in 1984 with Amendment A (2009, Article IV) attached, and has scan errors such as ''al members''.'
+- aspect: judicial-selection
+  value: Appointed by the Chairman of the Tribal Council, confirmed by Council majority
+  quote: The tribal court shall consist of a Chief Judge and two (2) Associate Judges, Appointed by the Chairman of the Tribal Council
+  source: constitution-otoe-missouria-tribe-of-indians-2009-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2009'
+  locator: Article XII, Section 3(c)
+  document_version:
+    document: otoe-missouria-tribe-of-indians-constitution
+    version: 2009-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: Extract is the constitution ratified in 1984 with Amendment A (2009, Article IV) attached, and has scan errors such as ''al members''.'
+- aspect: judicial-independence
+  value: Judges unseated only by term expiration, removal or forfeiture
+  quote: Tribal judges may be unseated from their positions only by expiration of their term of appointment or by the removal or forfeiture provision of Article IX.
+  source: constitution-otoe-missouria-tribe-of-indians-2009-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2009'
+  locator: Article XII, Section 3(e)
+  document_version:
+    document: otoe-missouria-tribe-of-indians-constitution
+    version: 2009-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: Extract is the constitution ratified in 1984 with Amendment A (2009, Article IV) attached, and has scan errors such as ''al members''.'
+- aspect: amendment
+  value: Petition of 300 qualified voters, then majority referendum vote
+  quote: Amendments to this Constitution may be proposed by a valid petition signed by at least three hundred (300) qualified voters, and,
+  source: constitution-otoe-missouria-tribe-of-indians-2009-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2009'
+  locator: Article XV
+  document_version:
+    document: otoe-missouria-tribe-of-indians-constitution
+    version: 2009-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: Extract is the constitution ratified in 1984 with Amendment A (2009, Article IV) attached, and has scan errors such as ''al members''.'
+- aspect: secretarial-approval
+  value: Required for amendments
+  quote: approved by the Secretary of the Interior, shall be submitted to a referendum of the qualified voters of the Tribe
+  source: constitution-otoe-missouria-tribe-of-indians-2009-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2009'
+  locator: Article XV
+  document_version:
+    document: otoe-missouria-tribe-of-indians-constitution
+    version: 2009-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: Extract is the constitution ratified in 1984 with Amendment A (2009, Article IV) attached, and has scan errors such as ''al members''.'
+- aspect: recall-and-removal
+  value: Removal by four Tribal Council votes
+  quote: ribal government, malfeasance in office, or gross neglect of duty, may be removed from office if at least four (4) members of the Tribal Council vote in favor of such removal.
+  source: constitution-otoe-missouria-tribe-of-indians-2009-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2009'
+  locator: Article IX, Section 2
+  document_version:
+    document: otoe-missouria-tribe-of-indians-constitution
+    version: 2009-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: Extract is the constitution ratified in 1984 with Amendment A (2009, Article IV) attached, and has scan errors such as ''al members''.'
+- aspect: recall-and-removal
+  value: Recall by petition of 300 adult members, then General Council vote
+  quote: Upon receipt of a valid petition signed by at least three-hundred (300) adult members
+  source: constitution-otoe-missouria-tribe-of-indians-2009-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2009'
+  locator: Article VII, Section 10
+  document_version:
+    document: otoe-missouria-tribe-of-indians-constitution
+    version: 2009-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: Extract is the constitution ratified in 1984 with Amendment A (2009, Article IV) attached, and has scan errors such as ''al members''.'
+- aspect: other
+  value: Initiative by petition of 150 adult enrolled members
+  quote: Upon receipt of a valid petition signed by at least one hundred fifty (150) adult enrolled tribal members
+  source: constitution-otoe-missouria-tribe-of-indians-2009-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2009'
+  locator: Article X, Section 1
+  document_version:
+    document: otoe-missouria-tribe-of-indians-constitution
+    version: 2009-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: Extract is the constitution ratified in 1984 with Amendment A (2009, Article IV) attached, and has scan errors such as ''al members''.'
 governing_documents:
 - kind: constitution
   title: Otoe-Missouria Tribe of Indians, Oklahoma - Constitution

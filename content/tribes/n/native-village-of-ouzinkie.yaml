@@ -176,6 +176,114 @@ indian_health_service:
   as_of: '2026-11-23'
   locator: '"Federally Recognized Tribes" list, Anchorage Service Area profile'
   note: 'The source''s words: "Native Village of Ouzinkie".'
+governance:
+- aspect: governing-body
+  value: Council
+  quote: There shall be a Council composed of a president and six mem-
+  source: constitution-native-village-of-ouzinkie-undated-text
+  confidence: medium
+  verification: read-in-full
+  locator: Article IV, Section 1
+  document_version:
+    document: native-village-of-ouzinkie-constitution
+    version: undated-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Undated; parts of the bylaws (Articles II-IV) and the adoption certificate are illegible in the scan.'
+- aspect: governing-body-size
+  value: President and 6 members
+  quote: There shall be a Council composed of a president and six mem-
+  source: constitution-native-village-of-ouzinkie-undated-text
+  confidence: medium
+  verification: read-in-full
+  locator: Article IV, Section 1
+  document_version:
+    document: native-village-of-ouzinkie-constitution
+    version: undated-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Undated; parts of the bylaws (Articles II-IV) and the adoption certificate are illegible in the scan.'
+- aspect: governing-body-selection
+  value: Elected by the adult members
+  quote: elected by the adult members of the Village of Ouzinkie.
+  source: constitution-native-village-of-ouzinkie-undated-text
+  confidence: medium
+  verification: read-in-full
+  locator: Article IV, Section 1
+  document_version:
+    document: native-village-of-ouzinkie-constitution
+    version: undated-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Undated; parts of the bylaws (Articles II-IV) and the adoption certificate are illegible in the scan.'
+- aspect: governing-body-term
+  value: 3 years
+  quote: Each member of the Council shall serve for a three year term,
+  source: constitution-native-village-of-ouzinkie-undated-text
+  confidence: medium
+  verification: read-in-full
+  locator: Article IV, Section 3
+  document_version:
+    document: native-village-of-ouzinkie-constitution
+    version: undated-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Undated; parts of the bylaws (Articles II-IV) and the adoption certificate are illegible in the scan.'
+- aspect: head-of-government
+  value: President
+  quote: Section 1 - The President - The President of the Council shall preside over
+  source: constitution-native-village-of-ouzinkie-undated-text
+  confidence: medium
+  verification: read-in-full
+  locator: Bylaws, Article 1, Section 1
+  document_version:
+    document: native-village-of-ouzinkie-constitution
+    version: undated-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Undated; parts of the bylaws (Articles II-IV) and the adoption certificate are illegible in the scan.'
+- aspect: head-of-government
+  value: President
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  verification: bulk-import
+  as_of: '2026-11-20'
+  locator: Native Village of Ouzinkie
+  note: The title of the leader's office as the federal directory lists it; the holder's name is not recorded.
+- aspect: other-officers
+  value: Vice-President, Secretary/Treasurer
+  quote: Section 2 - The Vice-President - The duties of the Vice-President, in the ab-
+  source: constitution-native-village-of-ouzinkie-undated-text
+  confidence: medium
+  verification: read-in-full
+  locator: Bylaws, Article 1, Sections 2-3
+  document_version:
+    document: native-village-of-ouzinkie-constitution
+    version: undated-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Undated; parts of the bylaws (Articles II-IV) and the adoption certificate are illegible in the scan.'
+- aspect: voting-age
+  value: '18'
+  quote: Any person who is 18 years of age or
+  source: constitution-native-village-of-ouzinkie-undated-text
+  confidence: medium
+  verification: read-in-full
+  locator: Article III, Section 3
+  document_version:
+    document: native-village-of-ouzinkie-constitution
+    version: undated-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Undated; parts of the bylaws (Articles II-IV) and the adoption certificate are illegible in the scan.'
+- aspect: amendment
+  value: Council resolution; majority vote of adult members
+  quote: Amendments shall, become effective when ratified by a majority
+  source: constitution-native-village-of-ouzinkie-undated-text
+  confidence: medium
+  verification: read-in-full
+  locator: Article VII
+  document_version:
+    document: native-village-of-ouzinkie-constitution
+    version: undated-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Undated; parts of the bylaws (Articles II-IV) and the adoption certificate are illegible in the scan.'
+- aspect: recall-and-removal
+  value: Forfeit office on felony or dishonesty conviction
+  quote: who is convicted of a felony or any other offense involving dishonesty or
+  source: constitution-native-village-of-ouzinkie-undated-text
+  confidence: medium
+  verification: read-in-full
+  locator: Article VI, Section 1
+  document_version:
+    document: native-village-of-ouzinkie-constitution
+    version: undated-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Undated; parts of the bylaws (Articles II-IV) and the adoption certificate are illegible in the scan.'
 jurisdiction:
 - topic: public-law-280
   value: mandatory-state

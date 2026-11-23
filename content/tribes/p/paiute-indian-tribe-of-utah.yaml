@@ -233,6 +233,15 @@ government_structure:
   locator: preamble / approval and certification of adoption
   note: Shivwits Band is a constituent band of the Paiute Indian Tribe of Utah per the Bureau of Indian
     Affairs list. Historical constitution; a later constitution may have replaced it.
+governance:
+- aspect: head-of-government
+  value: Chairperson
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  verification: bulk-import
+  as_of: '2026-11-20'
+  locator: Paiute Indian Tribe of Utah (Cedar Band of Paiutes, Kanosh Band of Paiutes, Koosharem Band of Paiutes, Indian Peaks Band of Paiutes, and Shivwits Band of Paiutes)
+  note: The title of the leader's office as the federal directory lists it; the holder's name is not recorded. Listed as “Chairwoman”; recorded without the holder's own form of the title.
 governing_documents:
 - kind: constitution
   title: Paiute Indian Tribe of Utah - Tribal Constitution

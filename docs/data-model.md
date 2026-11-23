@@ -96,6 +96,10 @@ Contacts are the government's official, publicly published office contact points
 
 Population figures measure different things and are never added together: `citizens` (the nation's own count of its citizens or enrolled members), `resident-population` (everyone living in an area, Native or not), census self-identification counts, and service-area figures. Each figure keeps its date.
 
+### Government
+
+`government_structure` records the legal form a federal source gives, such as a constitution approved under the Indian Reorganization Act. `governance` records how the government is set up, one plain fact per item: an `aspect` (form, governing body and its size, selection and term, general council, head of government and its selection and term, other officers, elections, voting age, election authority, branches, separation of powers, the courts and their judges, amendment, the Secretary of the Interior's approval, recall and removal) and a `value` of a few words in the source's own names. A fact taken from a document's text also carries `quote`, the words that state it, copied exactly, and names the document's version in `document_version`; `scripts/governance/apply.py` keeps it only when the quote is in the text. Values are never summaries of a document ([decision record 0042](decisions/0042-governance-facts-from-governing-documents.md)). The search for each nation is logged in `research/search-logs/governance/`.
+
 ### Courts and other services
 
 `justice_institutions` lists the nation's courts, courts of appeals, peacemaking programs, traditional forums and healing to wellness courts, each with a `kind`, its `name` and a `link`; `dispute_resolution.forums` (below) lists its dispute resolution forums, also with a `link`. Every service listed has a link, so a reader can reach it and a reviewer can check it (the lead author's rule, Nov. 22, 2026: "If we list a service, it should have a link"). The link is, in this order:

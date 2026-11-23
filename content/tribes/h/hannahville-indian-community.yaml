@@ -182,6 +182,183 @@ government_structure:
   as_of: '1936'
   locator: preamble / approval and certification of adoption
   note: Historical constitution; a later constitution may have replaced it.
+governance:
+- aspect: form
+  value: Adopted under the Indian Reorganization Act of June 18, 1934
+  quote: Section 16 of the Indian Reorganization Act of June 18, 1934
+  source: constitution-hannahville-indian-community-2020-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2020'
+  locator: Certification of Adoption
+  document_version:
+    document: hannahville-indian-community-constitution
+    version: 2020-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author.
+- aspect: governing-body
+  value: Council
+  quote: A Council composed of the four officers of the community and of eight
+  source: constitution-hannahville-indian-community-2020-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2020'
+  locator: Article IV, Section 1
+  document_version:
+    document: hannahville-indian-community-constitution
+    version: 2020-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author.
+- aspect: governing-body-size
+  value: 12 members (4 officers and 8 councilpersons)
+  quote: A Council composed of the four officers of the community and of eight
+  source: constitution-hannahville-indian-community-2020-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2020'
+  locator: Article IV, Section 1
+  document_version:
+    document: hannahville-indian-community-constitution
+    version: 2020-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author.
+- aspect: governing-body-selection
+  value: Elected by the members of the Community
+  quote: The officers and the councilpersons shall be elected every three years
+  source: constitution-hannahville-indian-community-2020-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2020'
+  locator: Article IV, Section 2
+  document_version:
+    document: hannahville-indian-community-constitution
+    version: 2020-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author.
+- aspect: governing-body-term
+  value: 3 years
+  quote: The officers and the councilpersons shall be elected every three years
+  source: constitution-hannahville-indian-community-2020-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2020'
+  locator: Article IV, Section 2
+  document_version:
+    document: hannahville-indian-community-constitution
+    version: 2020-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author.
+- aspect: head-of-government
+  value: Chairperson
+  quote: The Chairperson of the Council shall preside over all meetings of the Council
+  source: constitution-hannahville-indian-community-2020-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2020'
+  locator: Bylaws, Article II, Section 1
+  document_version:
+    document: hannahville-indian-community-constitution
+    version: 2020-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author.
+- aspect: head-of-government
+  value: Chairperson
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  verification: bulk-import
+  as_of: '2026-11-20'
+  locator: Hannahville Indian Community, Michigan
+  note: The title of the leader's office as the federal directory lists it; the holder's name is not recorded.
+- aspect: head-of-government-selection
+  value: Elected by the members of the Community
+  quote: The officers and the councilpersons shall be elected every three years
+  source: constitution-hannahville-indian-community-2020-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2020'
+  locator: Article IV, Section 2
+  document_version:
+    document: hannahville-indian-community-constitution
+    version: 2020-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author.
+- aspect: head-of-government-term
+  value: 3 years
+  quote: The officers and the councilpersons shall be elected every three years
+  source: constitution-hannahville-indian-community-2020-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2020'
+  locator: Article IV, Section 2
+  document_version:
+    document: hannahville-indian-community-constitution
+    version: 2020-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author.
+- aspect: other-officers
+  value: Vice-chairperson, Secretary, Assistant Secretary (also Treasurer)
+  quote: the chairperson, vice-chairperson, the secretary, and the assistant secretary who shall also be the
+  source: constitution-hannahville-indian-community-2020-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2020'
+  locator: Article IV, Section 1
+  document_version:
+    document: hannahville-indian-community-constitution
+    version: 2020-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author.
+- aspect: elections
+  value: Every 3 years on the first Monday in May
+  quote: on the first Monday of May, except as provided in Section 7 of this Article.
+  source: constitution-hannahville-indian-community-2020-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2020'
+  locator: Article IV, Section 2
+  document_version:
+    document: hannahville-indian-community-constitution
+    version: 2020-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author.
+- aspect: voting-age
+  value: '18'
+  quote: Every member of the Hannahville Indian Community who has attained the age of
+  source: constitution-hannahville-indian-community-2020-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2020'
+  locator: Bylaws, Article I, Section 1
+  document_version:
+    document: hannahville-indian-community-constitution
+    version: 2020-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author.
+- aspect: election-authority
+  value: Election Board
+  quote: The Council Chairperson shall call for the Election Board to conduct an election to
+  source: constitution-hannahville-indian-community-2020-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2020'
+  locator: Article VII
+  document_version:
+    document: hannahville-indian-community-constitution
+    version: 2020-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author.
+- aspect: judiciary
+  value: Community Court
+  quote: Community Court to enforce these rules.
+  source: constitution-hannahville-indian-community-2020-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2020'
+  locator: Article V, Section 1(6)
+  document_version:
+    document: hannahville-indian-community-constitution
+    version: 2020-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author.
+- aspect: amendment
+  value: 75% supermajority of certified voters in an election
+  quote: adopted by a supermajority seventy-five percent (75%) vote and provided further
+  source: constitution-hannahville-indian-community-2020-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2020'
+  locator: Article VII
+  document_version:
+    document: hannahville-indian-community-constitution
+    version: 2020-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author.
 governing_documents:
 - kind: law-code
   title: Tribal code

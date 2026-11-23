@@ -167,6 +167,147 @@ indian_health_service:
   locator: '"Federally Recognized Tribes" list, Yukon-Kuskokwim Delta Service Area profile'
   note: 'The source''s words: "Village of Atmautluak".'
   operator: tribal
+governance:
+- aspect: form
+  value: Constitution and Bylaws under the Indian Reorganization Act
+  quote: INDIAN RB:>RG.ANIZATION ACT
+  source: constitution-village-of-atmautluak-undated-text
+  confidence: medium
+  verification: read-in-full
+  locator: Preamble
+  document_version:
+    document: village-of-atmautluak-constitution
+    version: undated-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Undated copy with heavy OCR damage; some words, including parts of Article VI, are unreadable.'
+- aspect: governing-body
+  value: Council
+  quote: There shall be a council composed of a
+  source: constitution-village-of-atmautluak-undated-text
+  confidence: medium
+  verification: read-in-full
+  locator: Article IV, Section 1
+  document_version:
+    document: village-of-atmautluak-constitution
+    version: undated-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Undated copy with heavy OCR damage; some words, including parts of Article VI, are unreadable.'
+- aspect: governing-body-size
+  value: 8 members (President and 7 members)
+  quote: President and seven members elected by the
+  source: constitution-village-of-atmautluak-undated-text
+  confidence: medium
+  verification: read-in-full
+  locator: Article IV, Section 1
+  document_version:
+    document: village-of-atmautluak-constitution
+    version: undated-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Undated copy with heavy OCR damage; some words, including parts of Article VI, are unreadable.'
+- aspect: governing-body-selection
+  value: Elected by the adult members of the Community
+  quote: President and seven members elected by the
+  source: constitution-village-of-atmautluak-undated-text
+  confidence: medium
+  verification: read-in-full
+  locator: Article IV, Section 1
+  document_version:
+    document: village-of-atmautluak-constitution
+    version: undated-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Undated copy with heavy OCR damage; some words, including parts of Article VI, are unreadable.'
+- aspect: governing-body-term
+  value: 3 years, overlapping
+  quote: term of three years. Terms shall overlap so
+  source: constitution-village-of-atmautluak-undated-text
+  confidence: medium
+  verification: read-in-full
+  locator: Article IV, Section 3
+  document_version:
+    document: village-of-atmautluak-constitution
+    version: undated-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Undated copy with heavy OCR damage; some words, including parts of Article VI, are unreadable.'
+- aspect: head-of-government
+  value: President
+  quote: The President. The President of Council shall
+  source: constitution-village-of-atmautluak-undated-text
+  confidence: medium
+  verification: read-in-full
+  locator: Bylaws, Article I, Section 1
+  document_version:
+    document: village-of-atmautluak-constitution
+    version: undated-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Undated copy with heavy OCR damage; some words, including parts of Article VI, are unreadable.'
+- aspect: head-of-government
+  value: President
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  verification: bulk-import
+  as_of: '2026-11-20'
+  locator: Village of Atmautluak
+  note: The title of the leader's office as the federal directory lists it; the holder's name is not recorded.
+- aspect: head-of-government-selection
+  value: Elected by the adult members of the Community
+  quote: President and seven members elected by the
+  source: constitution-village-of-atmautluak-undated-text
+  confidence: medium
+  verification: read-in-full
+  locator: Article IV, Section 1
+  document_version:
+    document: village-of-atmautluak-constitution
+    version: undated-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Undated copy with heavy OCR damage; some words, including parts of Article VI, are unreadable.'
+- aspect: head-of-government-term
+  value: 3 years, overlapping
+  quote: term of three years. Terms shall overlap so
+  source: constitution-village-of-atmautluak-undated-text
+  confidence: medium
+  verification: read-in-full
+  locator: Article IV, Section 3
+  document_version:
+    document: village-of-atmautluak-constitution
+    version: undated-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Undated copy with heavy OCR damage; some words, including parts of Article VI, are unreadable.'
+- aspect: other-officers
+  value: Vice President, Secretary-Treasurer
+  quote: The Vice President. The duties of the Vice
+  source: constitution-village-of-atmautluak-undated-text
+  confidence: medium
+  verification: read-in-full
+  locator: Bylaws, Article I, Section 2
+  document_version:
+    document: village-of-atmautluak-constitution
+    version: undated-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Undated copy with heavy OCR damage; some words, including parts of Article VI, are unreadable.'
+- aspect: voting-age
+  value: '18'
+  quote: All members of the Village 18 years of age or
+  source: constitution-village-of-atmautluak-undated-text
+  confidence: medium
+  verification: read-in-full
+  locator: Article IV, Section 1
+  document_version:
+    document: village-of-atmautluak-constitution
+    version: undated-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Undated copy with heavy OCR damage; some words, including parts of Article VI, are unreadable.'
+- aspect: amendment
+  value: Majority vote of adult members on the membership roll, 30% turnout
+  quote: shall become effective when ratified by a majority vote
+  source: constitution-village-of-atmautluak-undated-text
+  confidence: medium
+  verification: read-in-full
+  locator: Article VII
+  document_version:
+    document: village-of-atmautluak-constitution
+    version: undated-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Undated copy with heavy OCR damage; some words, including parts of Article VI, are unreadable.'
+- aspect: recall-and-removal
+  value: Forfeiture of office on felony or dishonesty conviction
+  quote: convicted of a felony or any
+  source: constitution-village-of-atmautluak-undated-text
+  confidence: medium
+  verification: read-in-full
+  locator: Article VI, Section 1
+  document_version:
+    document: village-of-atmautluak-constitution
+    version: undated-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Undated copy with heavy OCR damage; some words, including parts of Article VI, are unreadable.'
 governing_documents:
 - kind: law-code
   title: Climate change resolution

@@ -233,6 +233,159 @@ government_structure:
   as_of: '1938'
   locator: preamble / approval and certification of adoption
   note: Historical constitution; a later constitution may have replaced it.
+governance:
+- aspect: form
+  value: Constitution and By-laws under the Act of June 18, 1934
+  quote: do establish this Constitution and By-laws in accordance with, and by authority of, the Act of Congress of June 18, 1934 (48 Stat. 984)
+  source: constitution-craig-tribal-association-1938-text-3
+  confidence: medium
+  verification: read-in-full
+  as_of: '1938-10-08'
+  locator: Preamble
+  document_version:
+    document: craig-tribal-association-constitution
+    version: 1938-text-3
+  note: 'Read from the text by an AI reader (Claude Sonnet); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Document is the Constitution and By-laws of the Craig Community Association; the federal corporate charter was ignored; the extract appears to lack the constitution''s amendment article.'
+- aspect: governing-body
+  value: Council
+  quote: There shall be a Coun- cil composed of the President and six other members elected by the Association.
+  source: constitution-craig-tribal-association-1938-text-3
+  confidence: medium
+  verification: read-in-full
+  as_of: '1938-10-08'
+  locator: Article III, Section 1(a)
+  document_version:
+    document: craig-tribal-association-constitution
+    version: 1938-text-3
+  note: 'Read from the text by an AI reader (Claude Sonnet); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Document is the Constitution and By-laws of the Craig Community Association; the federal corporate charter was ignored; the extract appears to lack the constitution''s amendment article.'
+- aspect: governing-body-size
+  value: 7 members (President and 6 others)
+  quote: There shall be a Coun- cil composed of the President and six other members elected by the Association.
+  source: constitution-craig-tribal-association-1938-text-3
+  confidence: medium
+  verification: read-in-full
+  as_of: '1938-10-08'
+  locator: Article III, Section 1(a)
+  document_version:
+    document: craig-tribal-association-constitution
+    version: 1938-text-3
+  note: 'Read from the text by an AI reader (Claude Sonnet); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Document is the Constitution and By-laws of the Craig Community Association; the federal corporate charter was ignored; the extract appears to lack the constitution''s amendment article.'
+- aspect: governing-body-selection
+  value: Elected by the Association by secret ballot
+  quote: Members of the Council shall be elected by secret ballot on the first Thursday after the first Monday in April.
+  source: constitution-craig-tribal-association-1938-text-3
+  confidence: medium
+  verification: read-in-full
+  as_of: '1938-10-08'
+  locator: Article III, Section 2(a)
+  document_version:
+    document: craig-tribal-association-constitution
+    version: 1938-text-3
+  note: 'Read from the text by an AI reader (Claude Sonnet); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Document is the Constitution and By-laws of the Craig Community Association; the federal corporate charter was ignored; the extract appears to lack the constitution''s amendment article.'
+- aspect: governing-body-term
+  value: 2 years (President 1 year)
+  quote: Each of the other members of the Council shall be elected to serve for a term of two years.
+  source: constitution-craig-tribal-association-1938-text-3
+  confidence: medium
+  verification: read-in-full
+  as_of: '1938-10-08'
+  locator: Article III, Section 3(c)
+  document_version:
+    document: craig-tribal-association-constitution
+    version: 1938-text-3
+  note: 'Read from the text by an AI reader (Claude Sonnet); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Document is the Constitution and By-laws of the Craig Community Association; the federal corporate charter was ignored; the extract appears to lack the constitution''s amendment article.'
+- aspect: general-council
+  value: Association of members, meeting twice a year
+  quote: Regular meetings of the Association shall be held twice a year on the second Monday in October and the first Wednesday in April.
+  source: constitution-craig-tribal-association-1938-text-3
+  confidence: medium
+  verification: read-in-full
+  as_of: '1938-10-08'
+  locator: By-laws, Article V, Section 1
+  document_version:
+    document: craig-tribal-association-constitution
+    version: 1938-text-3
+  note: 'Read from the text by an AI reader (Claude Sonnet); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Document is the Constitution and By-laws of the Craig Community Association; the federal corporate charter was ignored; the extract appears to lack the constitution''s amendment article.'
+- aspect: head-of-government
+  value: President
+  quote: There shall be a Coun- cil composed of the President and six other members elected by the Association.
+  source: constitution-craig-tribal-association-1938-text-3
+  confidence: medium
+  verification: read-in-full
+  as_of: '1938-10-08'
+  locator: Article III, Section 1(a)
+  document_version:
+    document: craig-tribal-association-constitution
+    version: 1938-text-3
+  note: 'Read from the text by an AI reader (Claude Sonnet); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Document is the Constitution and By-laws of the Craig Community Association; the federal corporate charter was ignored; the extract appears to lack the constitution''s amendment article.'
+- aspect: head-of-government
+  value: President
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  verification: bulk-import
+  as_of: '2026-11-20'
+  locator: Craig Tribal Association
+  note: The title of the leader's office as the federal directory lists it; the holder's name is not recorded.
+- aspect: head-of-government-selection
+  value: Elected by the Association
+  quote: There shall be a Coun- cil composed of the President and six other members elected by the Association.
+  source: constitution-craig-tribal-association-1938-text-3
+  confidence: medium
+  verification: read-in-full
+  as_of: '1938-10-08'
+  locator: Article III, Section 1(a)
+  document_version:
+    document: craig-tribal-association-constitution
+    version: 1938-text-3
+  note: 'Read from the text by an AI reader (Claude Sonnet); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Document is the Constitution and By-laws of the Craig Community Association; the federal corporate charter was ignored; the extract appears to lack the constitution''s amendment article.'
+- aspect: head-of-government-term
+  value: 1 year
+  quote: The President of the Council shall be elected annually and shall serve for a term of one year.
+  source: constitution-craig-tribal-association-1938-text-3
+  confidence: medium
+  verification: read-in-full
+  as_of: '1938-10-08'
+  locator: Article III, Section 3(b)
+  document_version:
+    document: craig-tribal-association-constitution
+    version: 1938-text-3
+  note: 'Read from the text by an AI reader (Claude Sonnet); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Document is the Constitution and By-laws of the Craig Community Association; the federal corporate charter was ignored; the extract appears to lack the constitution''s amendment article.'
+- aspect: other-officers
+  value: Vice-President, Secretary, Treasurer
+  quote: by electing from within its membership a Vice- President, and from within or without, a Secretary, Treasurer,
+  source: constitution-craig-tribal-association-1938-text-3
+  confidence: medium
+  verification: read-in-full
+  as_of: '1938-10-08'
+  locator: Article III, Section 2(c)
+  document_version:
+    document: craig-tribal-association-constitution
+    version: 1938-text-3
+  note: 'Read from the text by an AI reader (Claude Sonnet); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Document is the Constitution and By-laws of the Craig Community Association; the federal corporate charter was ignored; the extract appears to lack the constitution''s amendment article.'
+- aspect: elections
+  value: First Thursday after the first Monday in April
+  quote: Members of the Council shall be elected by secret ballot on the first Thursday after the first Monday in April.
+  source: constitution-craig-tribal-association-1938-text-3
+  confidence: medium
+  verification: read-in-full
+  as_of: '1938-10-08'
+  locator: Article III, Section 2(a)
+  document_version:
+    document: craig-tribal-association-constitution
+    version: 1938-text-3
+  note: 'Read from the text by an AI reader (Claude Sonnet); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Document is the Constitution and By-laws of the Craig Community Association; the federal corporate charter was ignored; the extract appears to lack the constitution''s amendment article.'
+- aspect: voting-age
+  value: '21'
+  quote: All members of this Association over the age of 21 years
+  source: constitution-craig-tribal-association-1938-text-3
+  confidence: medium
+  verification: read-in-full
+  as_of: '1938-10-08'
+  locator: Article V, Section 3
+  document_version:
+    document: craig-tribal-association-constitution
+    version: 1938-text-3
+  note: 'Read from the text by an AI reader (Claude Sonnet); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Document is the Constitution and By-laws of the Craig Community Association; the federal corporate charter was ignored; the extract appears to lack the constitution''s amendment article.'
 governing_documents:
 - kind: constitution
   title: Constitution

@@ -278,6 +278,195 @@ government_structure:
   as_of: '1936'
   locator: preamble / approval and certification of adoption
   note: Historical constitution; a later constitution may have replaced it.
+governance:
+- aspect: form
+  value: Constitution and bylaws under Act of Congress of June 18, 1934
+  quote: and bylaws in accordance with the act of Congress, dated June 18, 1934
+  source: university-of-oklahoma-indian-reorganization-act-neponcons
+  confidence: medium
+  verification: read-in-full
+  as_of: '1936-01-16'
+  locator: Preamble
+  document_version:
+    document: ponca-tribe-of-nebraska-constitution
+    version: 1936-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+- aspect: governing-body
+  value: Board of governors
+  quote: known as the board of governors shall be elected by popular vote of the
+  source: university-of-oklahoma-indian-reorganization-act-neponcons
+  confidence: medium
+  verification: read-in-full
+  as_of: '1936-01-16'
+  locator: Article III, Section 1
+  document_version:
+    document: ponca-tribe-of-nebraska-constitution
+    version: 1936-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+- aspect: governing-body-size
+  value: 9 members
+  quote: A governing body of nine members, to be
+  source: university-of-oklahoma-indian-reorganization-act-neponcons
+  confidence: medium
+  verification: read-in-full
+  as_of: '1936-01-16'
+  locator: Article III, Section 1
+  document_version:
+    document: ponca-tribe-of-nebraska-constitution
+    version: 1936-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+- aspect: governing-body-selection
+  value: Elected by popular vote
+  quote: known as the board of governors shall be elected by popular vote of the
+  source: university-of-oklahoma-indian-reorganization-act-neponcons
+  confidence: medium
+  verification: read-in-full
+  as_of: '1936-01-16'
+  locator: Article III, Section 1
+  document_version:
+    document: ponca-tribe-of-nebraska-constitution
+    version: 1936-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+- aspect: governing-body-term
+  value: 3 years
+  quote: people for a term of three years.
+  source: university-of-oklahoma-indian-reorganization-act-neponcons
+  confidence: medium
+  verification: read-in-full
+  as_of: '1936-01-16'
+  locator: Article III, Section 1
+  document_version:
+    document: ponca-tribe-of-nebraska-constitution
+    version: 1936-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+- aspect: head-of-government
+  value: President
+  quote: shall elect from their membership one president,
+  source: university-of-oklahoma-indian-reorganization-act-neponcons
+  confidence: medium
+  verification: read-in-full
+  as_of: '1936-01-16'
+  locator: Article III, Section 4
+  document_version:
+    document: ponca-tribe-of-nebraska-constitution
+    version: 1936-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+- aspect: head-of-government
+  value: Chairperson
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  verification: bulk-import
+  as_of: '2026-11-20'
+  locator: Ponca Tribe of Nebraska
+  note: The title of the leader's office as the federal directory lists it; the holder's name is not recorded.
+- aspect: head-of-government-selection
+  value: Chosen by the board of governors from its membership
+  quote: shall elect from their membership one president,
+  source: university-of-oklahoma-indian-reorganization-act-neponcons
+  confidence: medium
+  verification: read-in-full
+  as_of: '1936-01-16'
+  locator: Article III, Section 4
+  document_version:
+    document: ponca-tribe-of-nebraska-constitution
+    version: 1936-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+- aspect: head-of-government-term
+  value: 1 year
+  quote: for a term of one year or until their successors are elected.
+  source: university-of-oklahoma-indian-reorganization-act-neponcons
+  confidence: medium
+  verification: read-in-full
+  as_of: '1936-01-16'
+  locator: Article III, Section 4
+  document_version:
+    document: ponca-tribe-of-nebraska-constitution
+    version: 1936-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+- aspect: other-officers
+  value: Vice president, secretary, treasurer
+  quote: one vice president, one secretary and one treasurer, who shall hold office
+  source: university-of-oklahoma-indian-reorganization-act-neponcons
+  confidence: medium
+  verification: read-in-full
+  as_of: '1936-01-16'
+  locator: Article III, Section 4
+  document_version:
+    document: ponca-tribe-of-nebraska-constitution
+    version: 1936-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+- aspect: elections
+  value: Annually on the third Tuesday of November
+  quote: of governors annually on the third Tuesday of November for a term of three
+  source: university-of-oklahoma-indian-reorganization-act-neponcons
+  confidence: medium
+  verification: read-in-full
+  as_of: '1936-01-16'
+  locator: Article III, Section 3
+  document_version:
+    document: ponca-tribe-of-nebraska-constitution
+    version: 1936-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+- aspect: voting-age
+  value: '21'
+  quote: twenty-one years of age and over, and who have maintained
+  source: university-of-oklahoma-indian-reorganization-act-neponcons
+  confidence: medium
+  verification: read-in-full
+  as_of: '1936-01-16'
+  locator: Article V, Section 1
+  document_version:
+    document: ponca-tribe-of-nebraska-constitution
+    version: 1936-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+- aspect: amendment
+  value: Majority vote of qualified voters in election called by Secretary of the Interior
+  quote: majority vote of the qualified voters of the Ponca Tribe voting at an election
+  source: university-of-oklahoma-indian-reorganization-act-neponcons
+  confidence: medium
+  verification: read-in-full
+  as_of: '1936-01-16'
+  locator: Article IX
+  document_version:
+    document: ponca-tribe-of-nebraska-constitution
+    version: 1936-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+- aspect: secretarial-approval
+  value: Required for amendments
+  quote: but no amendment shall become effective until it shall have been
+  source: university-of-oklahoma-indian-reorganization-act-neponcons
+  confidence: medium
+  verification: read-in-full
+  as_of: '1936-01-16'
+  locator: Article IX
+  document_version:
+    document: ponca-tribe-of-nebraska-constitution
+    version: 1936-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+- aspect: recall-and-removal
+  value: Removal by six votes of the board after complaint from 25 members
+  quote: of governors by a vote of six of the board members.
+  source: university-of-oklahoma-indian-reorganization-act-neponcons
+  confidence: medium
+  verification: read-in-full
+  as_of: '1936-01-16'
+  locator: Article VI, Section 1
+  document_version:
+    document: ponca-tribe-of-nebraska-constitution
+    version: 1936-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
+- aspect: other
+  value: Referendum on board's enumerated powers on 25% petition
+  quote: lodged in the board of governors shall be subject to a referendum vote
+  source: university-of-oklahoma-indian-reorganization-act-neponcons
+  confidence: medium
+  verification: read-in-full
+  as_of: '1936-01-16'
+  locator: Article VII, Section 1
+  document_version:
+    document: ponca-tribe-of-nebraska-constitution
+    version: 1936-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect.
 governing_documents:
 - kind: law-code
   title: Ponca Tribe of Nebraska Tribal Code

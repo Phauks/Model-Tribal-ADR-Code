@@ -14,7 +14,7 @@ export const load: PageServerLoad = async ({ parent }) => {
 export const actions: Actions = {
 	default: async (event) => {
 		const account = requireAccount(event);
-		const { database } = storage(event);
+		const { database, bucket } = storage(event);
 		const form = await event.request.formData();
 		const name = form.get('name');
 		if (name !== 'keep' && name !== 'remove') {
@@ -23,7 +23,7 @@ export const actions: Actions = {
 		if (form.get('sure') !== 'yes') {
 			return fail(400, { problem: 'Tick the box to confirm that you want to delete your account.', name });
 		}
-		const result = await deleteAccount(database, account, name === 'keep');
+		const result = await deleteAccount(database, account, name === 'keep', bucket);
 		if (result.outcome === 'last-lead-author') {
 			return fail(400, {
 				problem: 'You are the only lead author. Make someone else lead author on the People page first.',

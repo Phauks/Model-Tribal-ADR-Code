@@ -177,6 +177,291 @@ indian_health_service:
   locator: page text
   note: 'The source''s words: "tribally managed health care facility on the Osage Nation Campus".'
   operator: tribal
+governance:
+- aspect: form
+  value: Constitution ratified by majority vote of qualified voters
+  quote: This Constitution, when ratified by a majority vote of the qualified voters
+  source: constitution-the-osage-nation-2024-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2024'
+  locator: Article XXIII
+  document_version:
+    document: the-osage-nation-constitution
+    version: 2024-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: Extract is the 2024 printed edition (sixth edition) with amendment dates in its header; running heads and page numbers are interspersed.'
+- aspect: governing-body
+  value: Osage Nation Congress
+  quote: The Osage Nation Congress shall be composed of twelve (12)
+  source: constitution-the-osage-nation-2024-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2024'
+  locator: Article VI, Section 2
+  document_version:
+    document: the-osage-nation-constitution
+    version: 2024-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: Extract is the 2024 printed edition (sixth edition) with amendment dates in its header; running heads and page numbers are interspersed.'
+- aspect: governing-body-size
+  value: 12 representatives
+  quote: The Osage Nation Congress shall be composed of twelve (12)
+  source: constitution-the-osage-nation-2024-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2024'
+  locator: Article VI, Section 2
+  document_version:
+    document: the-osage-nation-constitution
+    version: 2024-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: Extract is the 2024 printed edition (sixth edition) with amendment dates in its header; running heads and page numbers are interspersed.'
+- aspect: governing-body-selection
+  value: Initially elected at large
+  quote: representatives to be initially elected at large, by qualified Osage voters,
+  source: constitution-the-osage-nation-2024-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2024'
+  locator: Article VI, Section 2
+  document_version:
+    document: the-osage-nation-constitution
+    version: 2024-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: Extract is the 2024 printed edition (sixth edition) with amendment dates in its header; running heads and page numbers are interspersed.'
+- aspect: governing-body-term
+  value: 4 years, staggered
+  quote: Nation Congress shall be elected to four (4) year terms with elections of
+  source: constitution-the-osage-nation-2024-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2024'
+  locator: Article VI, Section 3
+  document_version:
+    document: the-osage-nation-constitution
+    version: 2024-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: Extract is the 2024 printed edition (sixth edition) with amendment dates in its header; running heads and page numbers are interspersed.'
+- aspect: head-of-government
+  value: Principal Chief
+  quote: Principal Chief, who shall be titled
+  source: constitution-the-osage-nation-2024-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2024'
+  locator: Article VII, Section 1
+  document_version:
+    document: the-osage-nation-constitution
+    version: 2024-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: Extract is the 2024 printed edition (sixth edition) with amendment dates in its header; running heads and page numbers are interspersed.'
+- aspect: head-of-government
+  value: Principal Chief
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  verification: bulk-import
+  as_of: '2026-11-20'
+  locator: The Osage Nation
+  note: The title of the leader's office as the federal directory lists it; the holder's name is not recorded.
+- aspect: head-of-government-selection
+  value: Elected by qualified Osage voters at a general election
+  quote: The Principal Chief shall be elected by qualified Osage voters at a general
+  source: constitution-the-osage-nation-2024-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2024'
+  locator: Article VII, Section 2
+  document_version:
+    document: the-osage-nation-constitution
+    version: 2024-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: Extract is the 2024 printed edition (sixth edition) with amendment dates in its header; running heads and page numbers are interspersed.'
+- aspect: head-of-government-term
+  value: 4 years
+  quote: election to a term of four (4) years and shall serve until a successor has
+  source: constitution-the-osage-nation-2024-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2024'
+  locator: Article VII, Section 2
+  document_version:
+    document: the-osage-nation-constitution
+    version: 2024-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: Extract is the 2024 printed edition (sixth edition) with amendment dates in its header; running heads and page numbers are interspersed.'
+- aspect: other-officers
+  value: Assistant Principal Chief
+  quote: There shall be an Assistant Principal Chief, whose Osage title shall be
+  source: constitution-the-osage-nation-2024-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2024'
+  locator: Article VII, Section 6
+  document_version:
+    document: the-osage-nation-constitution
+    version: 2024-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: Extract is the 2024 printed edition (sixth edition) with amendment dates in its header; running heads and page numbers are interspersed.'
+- aspect: elections
+  value: First Monday in June of every even-numbered year
+  quote: General Elections shall be held on the first Monday in June commencing
+  source: constitution-the-osage-nation-2024-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2024'
+  locator: Article XIII, Section 4
+  document_version:
+    document: the-osage-nation-constitution
+    version: 2024-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: Extract is the 2024 printed edition (sixth edition) with amendment dates in its header; running heads and page numbers are interspersed.'
+- aspect: voting-age
+  value: '18'
+  quote: age of eighteen 18 years and are registered to vote as provided by Osage
+  source: constitution-the-osage-nation-2024-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2024'
+  locator: Article XIII, Section 1
+  document_version:
+    document: the-osage-nation-constitution
+    version: 2024-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: Extract is the 2024 printed edition (sixth edition) with amendment dates in its header; running heads and page numbers are interspersed.'
+- aspect: election-authority
+  value: Election Board created by Congress law
+  quote: The Osage Nation Congress shall enact a law creating an Election Board
+  source: constitution-the-osage-nation-2024-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2024'
+  locator: Article XIII, Section 3
+  document_version:
+    document: the-osage-nation-constitution
+    version: 2024-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: Extract is the 2024 printed edition (sixth edition) with amendment dates in its header; running heads and page numbers are interspersed.'
+- aspect: branches
+  value: Legislative, Executive and Judicial
+  quote: 'three (3) separate branches: the Legislative, the Executive, and the'
+  source: constitution-the-osage-nation-2024-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2024'
+  locator: Article V, Section 1
+  document_version:
+    document: the-osage-nation-constitution
+    version: 2024-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: Extract is the 2024 printed edition (sixth edition) with amendment dates in its header; running heads and page numbers are interspersed.'
+- aspect: separation-of-powers
+  value: Stated
+  quote: separate and distinct and no person or collection of persons, charged with
+  source: constitution-the-osage-nation-2024-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2024'
+  locator: Article V, Section 2
+  document_version:
+    document: the-osage-nation-constitution
+    version: 2024-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: Extract is the 2024 printed edition (sixth edition) with amendment dates in its header; running heads and page numbers are interspersed.'
+- aspect: judiciary
+  value: Supreme Court, Trial Court and inferior courts
+  quote: Supreme Court, in a lower Trial Court and in such inferior Courts as the
+  source: constitution-the-osage-nation-2024-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2024'
+  locator: Article VIII, Section 1
+  document_version:
+    document: the-osage-nation-constitution
+    version: 2024-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: Extract is the 2024 printed edition (sixth edition) with amendment dates in its header; running heads and page numbers are interspersed.'
+- aspect: judicial-selection
+  value: Appointed by Principal Chief with advice and consent of Congress
+  quote: Trial Court, by and with the advice and consent of the Osage Nation
+  source: constitution-the-osage-nation-2024-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2024'
+  locator: Article VIII, Section 7
+  document_version:
+    document: the-osage-nation-constitution
+    version: 2024-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: Extract is the 2024 printed edition (sixth edition) with amendment dates in its header; running heads and page numbers are interspersed.'
+- aspect: judicial-term
+  value: 4-year terms, then retention vote
+  quote: After serving one term of four (4) years, each will stand for
+  source: constitution-the-osage-nation-2024-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2024'
+  locator: Article VIII, Section 7
+  document_version:
+    document: the-osage-nation-constitution
+    version: 2024-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: Extract is the 2024 printed edition (sixth edition) with amendment dates in its header; running heads and page numbers are interspersed.'
+- aspect: judicial-independence
+  value: Pay changes not effective until after next general election or appointment
+  quote: No increase or decrease in compensation shall take effect
+  source: constitution-the-osage-nation-2024-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2024'
+  locator: Article VIII, Section 10
+  document_version:
+    document: the-osage-nation-constitution
+    version: 2024-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: Extract is the 2024 printed edition (sixth edition) with amendment dates in its header; running heads and page numbers are interspersed.'
+- aspect: judicial-independence
+  value: Judicial officers may not hold other office or position of profit
+  quote: Judicial officers shall not hold any other office or position of profit under
+  source: constitution-the-osage-nation-2024-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2024'
+  locator: Article VIII, Section 4
+  document_version:
+    document: the-osage-nation-constitution
+    version: 2024-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: Extract is the 2024 printed edition (sixth edition) with amendment dates in its header; running heads and page numbers are interspersed.'
+- aspect: amendment
+  value: Five-sixths of Congress, then 65% of electors
+  quote: Proposed amendments agreed to by five-sixths (5/6) of the
+  source: constitution-the-osage-nation-2024-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2024'
+  locator: Article XX, Section 1
+  document_version:
+    document: the-osage-nation-constitution
+    version: 2024-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: Extract is the 2024 printed edition (sixth edition) with amendment dates in its header; running heads and page numbers are interspersed.'
+- aspect: recall-and-removal
+  value: Removal by five-sixths of Congress after two-thirds motion
+  quote: Concurrence of five-sixths (5/6) of the members of the
+  source: constitution-the-osage-nation-2024-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2024'
+  locator: Article XII, Section 2
+  document_version:
+    document: the-osage-nation-constitution
+    version: 2024-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: Extract is the 2024 printed edition (sixth edition) with amendment dates in its header; running heads and page numbers are interspersed.'
+- aspect: recall-and-removal
+  value: Recall by petition of 15% of electorate
+  quote: number to at least fifteen (15) percent of the electorate.
+  source: constitution-the-osage-nation-2024-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2024'
+  locator: Article XI, Section 8
+  document_version:
+    document: the-osage-nation-constitution
+    version: 2024-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: Extract is the 2024 printed edition (sixth edition) with amendment dates in its header; running heads and page numbers are interspersed.'
+- aspect: other
+  value: 'Three recognized villages: Grayhorse, Pawhuska, Hominy'
+  quote: 'The recognized villages of the Osage Nation are: (a) the Grayhorse Indian'
+  source: constitution-the-osage-nation-2024-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2024'
+  locator: Article XIV, Section 1
+  document_version:
+    document: the-osage-nation-constitution
+    version: 2024-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. Reader''s note on the text: Extract is the 2024 printed edition (sixth edition) with amendment dates in its header; running heads and page numbers are interspersed.'
 governing_documents:
 - kind: law-code
   title: The Osage Nation

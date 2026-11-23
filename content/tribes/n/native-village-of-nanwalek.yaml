@@ -172,6 +172,207 @@ indian_health_service:
   as_of: '2026-11-23'
   locator: '"Federally Recognized Tribes" list, Anchorage Service Area profile'
   note: 'The source''s words: "Native Village of Nanwalek (aka English Bay)".'
+governance:
+- aspect: form
+  value: Constitution under Indian Reorganization Act of June 18, 1934
+  quote: Reorganization Act of June 18, 1934 (48 Stat. 984), as amended.
+  source: constitution-native-village-of-nanwalek-1995-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1995-06-23'
+  locator: Preamble
+  document_version:
+    document: native-village-of-nanwalek-constitution
+    version: 1995-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Scan carries 2006 fax headers and OCR errors; the certificate and cover letter give adoption May 8, 1995 and approval June 23, 1995.'
+- aspect: governing-body
+  value: Nanwalek Council
+  quote: Nanwalek Council, hereinafter referred to as the Council.
+  source: constitution-native-village-of-nanwalek-1995-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1995-06-23'
+  locator: Article IV, Section 1
+  document_version:
+    document: native-village-of-nanwalek-constitution
+    version: 1995-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Scan carries 2006 fax headers and OCR errors; the certificate and cover letter give adoption May 8, 1995 and approval June 23, 1995.'
+- aspect: governing-body-size
+  value: 7 members
+  quote: The Council shall consist of seven (7) members who shall be elected
+  source: constitution-native-village-of-nanwalek-1995-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1995-06-23'
+  locator: Article IV, Section 2
+  document_version:
+    document: native-village-of-nanwalek-constitution
+    version: 1995-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Scan carries 2006 fax headers and OCR errors; the certificate and cover letter give adoption May 8, 1995 and approval June 23, 1995.'
+- aspect: governing-body-selection
+  value: Elected by majority vote of qualified members of the Village
+  quote: by a majority vote of the qualified members of the Village.
+  source: constitution-native-village-of-nanwalek-1995-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1995-06-23'
+  locator: Article IV, Section 2
+  document_version:
+    document: native-village-of-nanwalek-constitution
+    version: 1995-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Scan carries 2006 fax headers and OCR errors; the certificate and cover letter give adoption May 8, 1995 and approval June 23, 1995.'
+- aspect: governing-body-term
+  value: 5 years, staggered
+  quote: Thereafter, all terms of office shall be for
+  source: constitution-native-village-of-nanwalek-1995-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1995-06-23'
+  locator: Article V, Section 2
+  document_version:
+    document: native-village-of-nanwalek-constitution
+    version: 1995-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Scan carries 2006 fax headers and OCR errors; the certificate and cover letter give adoption May 8, 1995 and approval June 23, 1995.'
+- aspect: head-of-government
+  value: First Chief
+  quote: The First Chief shall preside at all meetings of the Village and of the Council and
+  source: constitution-native-village-of-nanwalek-1995-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1995-06-23'
+  locator: Article XIII, Section 2
+  document_version:
+    document: native-village-of-nanwalek-constitution
+    version: 1995-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Scan carries 2006 fax headers and OCR errors; the certificate and cover letter give adoption May 8, 1995 and approval June 23, 1995.'
+- aspect: head-of-government
+  value: First Chief
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  verification: bulk-import
+  as_of: '2026-11-20'
+  locator: Native Village of Nanwalek (aka English Bay)
+  note: The title of the leader's office as the federal directory lists it; the holder's name is not recorded.
+- aspect: head-of-government-selection
+  value: Elected in village election
+  quote: First Chief, the Secretary/Treasurer, and two (2) Council members shall be elected to hold office
+  source: constitution-native-village-of-nanwalek-1995-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1995-06-23'
+  locator: Article V, Section 2
+  document_version:
+    document: native-village-of-nanwalek-constitution
+    version: 1995-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Scan carries 2006 fax headers and OCR errors; the certificate and cover letter give adoption May 8, 1995 and approval June 23, 1995.'
+- aspect: head-of-government-term
+  value: 5 years
+  quote: Thereafter, all terms of office shall be for
+  source: constitution-native-village-of-nanwalek-1995-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1995-06-23'
+  locator: Article V, Section 2
+  document_version:
+    document: native-village-of-nanwalek-constitution
+    version: 1995-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Scan carries 2006 fax headers and OCR errors; the certificate and cover letter give adoption May 8, 1995 and approval June 23, 1995.'
+- aspect: other-officers
+  value: Second Chief, Secretary/Treasurer
+  quote: The Council shall include a First Chief, Second Chief,
+  source: constitution-native-village-of-nanwalek-1995-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1995-06-23'
+  locator: Article IV, Section 3
+  document_version:
+    document: native-village-of-nanwalek-constitution
+    version: 1995-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Scan carries 2006 fax headers and OCR errors; the certificate and cover letter give adoption May 8, 1995 and approval June 23, 1995.'
+- aspect: voting-age
+  value: '18'
+  quote: Nanwalek eighteen (18) years of age or older and who has resided for at least three (3) years in
+  source: constitution-native-village-of-nanwalek-1995-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1995-06-23'
+  locator: Article V, Section 1
+  document_version:
+    document: native-village-of-nanwalek-constitution
+    version: 1995-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Scan carries 2006 fax headers and OCR errors; the certificate and cover letter give adoption May 8, 1995 and approval June 23, 1995.'
+- aspect: election-authority
+  value: Election board appointed by the Council
+  quote: There shall be an election board appointed by the Council
+  source: constitution-native-village-of-nanwalek-1995-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1995-06-23'
+  locator: Article V, Section 5
+  document_version:
+    document: native-village-of-nanwalek-constitution
+    version: 1995-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Scan carries 2006 fax headers and OCR errors; the certificate and cover letter give adoption May 8, 1995 and approval June 23, 1995.'
+- aspect: judiciary
+  value: Council may establish Village courts
+  quote: including the establishment of appropriate Village courts or other judicial bodies.
+  source: constitution-native-village-of-nanwalek-1995-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1995-06-23'
+  locator: Article VIII, Section 3, m
+  document_version:
+    document: native-village-of-nanwalek-constitution
+    version: 1995-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Scan carries 2006 fax headers and OCR errors; the certificate and cover letter give adoption May 8, 1995 and approval June 23, 1995.'
+- aspect: amendment
+  value: Majority vote of qualified voters in election called by Secretary of the Interior
+  quote: This Constitution may be amended by a majority vote of the qualified voters of
+  source: constitution-native-village-of-nanwalek-1995-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1995-06-23'
+  locator: Article XVI, Section 1
+  document_version:
+    document: native-village-of-nanwalek-constitution
+    version: 1995-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Scan carries 2006 fax headers and OCR errors; the certificate and cover letter give adoption May 8, 1995 and approval June 23, 1995.'
+- aspect: secretarial-approval
+  value: Required for amendments
+  quote: No amendment shall become effective until approved
+  source: constitution-native-village-of-nanwalek-1995-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1995-06-23'
+  locator: Article XVI, Section 1
+  document_version:
+    document: native-village-of-nanwalek-constitution
+    version: 1995-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Scan carries 2006 fax headers and OCR errors; the certificate and cover letter give adoption May 8, 1995 and approval June 23, 1995.'
+- aspect: recall-and-removal
+  value: Removal by vote of 4 council members
+  quote: if at least four (4) members of die Council vote in favor of such removal.
+  source: constitution-native-village-of-nanwalek-1995-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1995-06-23'
+  locator: Article VI, Section 1
+  document_version:
+    document: native-village-of-nanwalek-constitution
+    version: 1995-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Scan carries 2006 fax headers and OCR errors; the certificate and cover letter give adoption May 8, 1995 and approval June 23, 1995.'
+- aspect: recall-and-removal
+  value: Recall by petition of 30% of eligible voters
+  quote: signed by at least thirty percent (30%) of the eligible voters, and setting forth
+  source: constitution-native-village-of-nanwalek-1995-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1995-06-23'
+  locator: Article VI, Section 2
+  document_version:
+    document: native-village-of-nanwalek-constitution
+    version: 1995-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Scan carries 2006 fax headers and OCR errors; the certificate and cover letter give adoption May 8, 1995 and approval June 23, 1995.'
 justice_institutions:
 - kind: tribal-court
   name: Tribal Court

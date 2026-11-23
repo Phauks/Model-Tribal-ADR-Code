@@ -208,6 +208,219 @@ government_structure:
   as_of: '1936'
   locator: preamble / approval and certification of adoption
   note: Historical constitution; a later constitution may have replaced it.
+governance:
+- aspect: form
+  value: Constitution under the Act of Congress of June 18, 1934
+  quote: do ordain and establish this Constitution according to the Act of Congress, dated June 18, 1934
+  source: constitution-bad-river-band-of-the-lake-superior-tribe-of-chippewa-indians-of-the-bad-river-reservation-1978-text
+  confidence: high
+  verification: read-in-full
+  as_of: '1978-03-08'
+  locator: Preamble
+  document_version:
+    document: bad-river-band-of-the-lake-superior-tribe-of-chippewa-indians-of-the-bad-river-reservation-constitution
+    version: 1978-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author.
+- aspect: governing-body
+  value: Tribal Council
+  quote: The governing body under this Constitution and Bylaws shall be known as the Tribal Council.
+  source: constitution-bad-river-band-of-the-lake-superior-tribe-of-chippewa-indians-of-the-bad-river-reservation-1978-text
+  confidence: high
+  verification: read-in-full
+  as_of: '1978-03-08'
+  locator: Article III, Section 1
+  document_version:
+    document: bad-river-band-of-the-lake-superior-tribe-of-chippewa-indians-of-the-bad-river-reservation-constitution
+    version: 1978-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author.
+- aspect: governing-body-size
+  value: 7 members
+  quote: composed of seven (7) members to be elected by the people.
+  source: constitution-bad-river-band-of-the-lake-superior-tribe-of-chippewa-indians-of-the-bad-river-reservation-1978-text
+  confidence: high
+  verification: read-in-full
+  as_of: '1978-03-08'
+  locator: Article III, Section 1
+  document_version:
+    document: bad-river-band-of-the-lake-superior-tribe-of-chippewa-indians-of-the-bad-river-reservation-constitution
+    version: 1978-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author.
+- aspect: governing-body-selection
+  value: Elected by the people
+  quote: composed of seven (7) members to be elected by the people.
+  source: constitution-bad-river-band-of-the-lake-superior-tribe-of-chippewa-indians-of-the-bad-river-reservation-1978-text
+  confidence: high
+  verification: read-in-full
+  as_of: '1978-03-08'
+  locator: Article III, Section 1
+  document_version:
+    document: bad-river-band-of-the-lake-superior-tribe-of-chippewa-indians-of-the-bad-river-reservation-constitution
+    version: 1978-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author.
+- aspect: governing-body-term
+  value: 2 years, staggered
+  quote: The Tribal Chairperson, Treasurer, and the two Senior Council Members shall serve two (2) year terms beginning with the first election.
+  source: constitution-bad-river-band-of-the-lake-superior-tribe-of-chippewa-indians-of-the-bad-river-reservation-1978-text
+  confidence: high
+  verification: read-in-full
+  as_of: '1978-03-08'
+  locator: Article III, Section 3
+  document_version:
+    document: bad-river-band-of-the-lake-superior-tribe-of-chippewa-indians-of-the-bad-river-reservation-constitution
+    version: 1978-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author.
+- aspect: head-of-government
+  value: Tribal Chairperson
+  quote: The office of Tribal Chairperson shall be a full time occupation and shall pay a livable salary.
+  source: constitution-bad-river-band-of-the-lake-superior-tribe-of-chippewa-indians-of-the-bad-river-reservation-1978-text
+  confidence: high
+  verification: read-in-full
+  as_of: '1978-03-08'
+  locator: Article III, Section 3
+  document_version:
+    document: bad-river-band-of-the-lake-superior-tribe-of-chippewa-indians-of-the-bad-river-reservation-constitution
+    version: 1978-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author.
+- aspect: head-of-government
+  value: Chairperson
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  verification: bulk-import
+  as_of: '2026-11-20'
+  locator: Bad River Band of the Lake Superior Tribe of Chippewa Indians of the Bad River Reservation, Wisconsin
+  note: The title of the leader's office as the federal directory lists it; the holder's name is not recorded. Listed as “Chairwoman”; recorded without the holder's own form of the title.
+- aspect: head-of-government-selection
+  value: Elected by the voters
+  quote: Of the candidates nominated for office, the one receiving the largest number of votes for each specific office shall be deemed elected
+  source: constitution-bad-river-band-of-the-lake-superior-tribe-of-chippewa-indians-of-the-bad-river-reservation-1978-text
+  confidence: high
+  verification: read-in-full
+  as_of: '1978-03-08'
+  locator: Article III, Section 3
+  document_version:
+    document: bad-river-band-of-the-lake-superior-tribe-of-chippewa-indians-of-the-bad-river-reservation-constitution
+    version: 1978-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author.
+- aspect: head-of-government-term
+  value: 2 years
+  quote: The Tribal Chairperson, Treasurer, and the two Senior Council Members shall serve two (2) year terms beginning with the first election.
+  source: constitution-bad-river-band-of-the-lake-superior-tribe-of-chippewa-indians-of-the-bad-river-reservation-1978-text
+  confidence: high
+  verification: read-in-full
+  as_of: '1978-03-08'
+  locator: Article III, Section 3
+  document_version:
+    document: bad-river-band-of-the-lake-superior-tribe-of-chippewa-indians-of-the-bad-river-reservation-constitution
+    version: 1978-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author.
+- aspect: other-officers
+  value: Vice-Chairperson, Secretary, Treasurer
+  quote: The Tribal Vice-Chairperson, Secretary, and one Junior Council Member shall serve a one-year term beginning with the first election.
+  source: constitution-bad-river-band-of-the-lake-superior-tribe-of-chippewa-indians-of-the-bad-river-reservation-1978-text
+  confidence: high
+  verification: read-in-full
+  as_of: '1978-03-08'
+  locator: Article III, Section 3
+  document_version:
+    document: bad-river-band-of-the-lake-superior-tribe-of-chippewa-indians-of-the-bad-river-reservation-constitution
+    version: 1978-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author.
+- aspect: elections
+  value: Annually, first Tuesday after the first Monday in November
+  quote: the Tribal Council election shall be held on the first Tuesday following the first Monday of the month of November.
+  source: constitution-bad-river-band-of-the-lake-superior-tribe-of-chippewa-indians-of-the-bad-river-reservation-1978-text
+  confidence: high
+  verification: read-in-full
+  as_of: '1978-03-08'
+  locator: Article III, Section 2
+  document_version:
+    document: bad-river-band-of-the-lake-superior-tribe-of-chippewa-indians-of-the-bad-river-reservation-constitution
+    version: 1978-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author.
+- aspect: voting-age
+  value: '18'
+  quote: Qualified voters shall be all members of the Bad River Band of Chippewa Indians 18 years of age or older, on the day of the election.
+  source: constitution-bad-river-band-of-the-lake-superior-tribe-of-chippewa-indians-of-the-bad-river-reservation-1978-text
+  confidence: high
+  verification: read-in-full
+  as_of: '1978-03-08'
+  locator: Article IV, Section 1
+  document_version:
+    document: bad-river-band-of-the-lake-superior-tribe-of-chippewa-indians-of-the-bad-river-reservation-constitution
+    version: 1978-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author.
+- aspect: election-authority
+  value: Ad hoc election committee
+  quote: The incumbent Tribal Council shall establish by resolution an ad hoc election committee, composed of three Tribal members.
+  source: constitution-bad-river-band-of-the-lake-superior-tribe-of-chippewa-indians-of-the-bad-river-reservation-1978-text
+  confidence: high
+  verification: read-in-full
+  as_of: '1978-03-08'
+  locator: Article III, Section 2(b)
+  document_version:
+    document: bad-river-band-of-the-lake-superior-tribe-of-chippewa-indians-of-the-bad-river-reservation-constitution
+    version: 1978-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author.
+- aspect: judiciary
+  value: Indian court, established by ordinance
+  quote: for the administration of justice by establishing an Indian court and defining its duties and powers.
+  source: constitution-bad-river-band-of-the-lake-superior-tribe-of-chippewa-indians-of-the-bad-river-reservation-1978-text
+  confidence: high
+  verification: read-in-full
+  as_of: '1978-03-08'
+  locator: Article VI, Section 1(q)
+  document_version:
+    document: bad-river-band-of-the-lake-superior-tribe-of-chippewa-indians-of-the-bad-river-reservation-constitution
+    version: 1978-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author.
+- aspect: amendment
+  value: Majority vote of qualified voters at an election called by the Secretary of the Interior
+  quote: This Constitution and Bylaws may be amended by a majority vote of the qualified voters of the Bad River Band of the Lake Superior Tribe of Chippewa Indians voting at an election called for that purpose by the Secretary of the Interior
+  source: constitution-bad-river-band-of-the-lake-superior-tribe-of-chippewa-indians-of-the-bad-river-reservation-1978-text
+  confidence: high
+  verification: read-in-full
+  as_of: '1978-03-08'
+  locator: Article IX
+  document_version:
+    document: bad-river-band-of-the-lake-superior-tribe-of-chippewa-indians-of-the-bad-river-reservation-constitution
+    version: 1978-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author.
+- aspect: secretarial-approval
+  value: Required for amendments
+  quote: but no amendment shall become effective until it shall have been approved by the Secretary of the Interior.
+  source: constitution-bad-river-band-of-the-lake-superior-tribe-of-chippewa-indians-of-the-bad-river-reservation-1978-text
+  confidence: high
+  verification: read-in-full
+  as_of: '1978-03-08'
+  locator: Article IX
+  document_version:
+    document: bad-river-band-of-the-lake-superior-tribe-of-chippewa-indians-of-the-bad-river-reservation-constitution
+    version: 1978-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author.
+- aspect: recall-and-removal
+  value: Recall by petition of 30% of eligible resident voters
+  quote: Upon receipt of a petition signed by thirty (30) percent of the eligible resident voters calling for the recall of any member of the Council
+  source: constitution-bad-river-band-of-the-lake-superior-tribe-of-chippewa-indians-of-the-bad-river-reservation-1978-text
+  confidence: high
+  verification: read-in-full
+  as_of: '1978-03-08'
+  locator: Article V, Section 1
+  document_version:
+    document: bad-river-band-of-the-lake-superior-tribe-of-chippewa-indians-of-the-bad-river-reservation-constitution
+    version: 1978-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author.
+- aspect: recall-and-removal
+  value: Expulsion by 4 affirmative Council votes
+  quote: The Tribal Council may by an affirmative vote of four (4) members expel any member for neglect of duty or gross misconduct
+  source: constitution-bad-river-band-of-the-lake-superior-tribe-of-chippewa-indians-of-the-bad-river-reservation-1978-text
+  confidence: high
+  verification: read-in-full
+  as_of: '1978-03-08'
+  locator: Article V, Section 3
+  document_version:
+    document: bad-river-band-of-the-lake-superior-tribe-of-chippewa-indians-of-the-bad-river-reservation-constitution
+    version: 1978-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author.
 governing_documents:
 - kind: law-code
   title: Tribal code

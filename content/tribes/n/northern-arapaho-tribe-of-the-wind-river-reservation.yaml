@@ -179,6 +179,159 @@ indian_health_service:
   as_of: '2026-11-23'
   locator: Direct Service Tribes by IHS Area > Billings Area
   note: Listed as "Northern Arapaho Business Council". The Direct Service Tribes list says some Tribes have a mixed Indian Health Service and Tribal arrangement.
+governance:
+- aspect: governing-body
+  value: Shoshone and Arapahoe Business Council
+  quote: known fit the Shoshone and Arapahoe Business Council.
+  source: constitution-northern-arapaho-tribe-of-the-wind-river-reservation-1938-text-2
+  confidence: medium
+  verification: read-in-full
+  as_of: '1938-09-27'
+  locator: Preamble
+  document_version:
+    document: northern-arapaho-tribe-of-the-wind-river-reservation-constitution
+    version: 1938-text-2
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: This is the joint Shoshone and Arapahoe constitution for the Wind River Reservation; the scan is heavily garbled, so only clearly legible passages are quoted.'
+- aspect: governing-body-size
+  value: 6 members from each tribe
+  quote: Council is to consist of six members duly
+  source: constitution-northern-arapaho-tribe-of-the-wind-river-reservation-1938-text-2
+  confidence: medium
+  verification: read-in-full
+  as_of: '1938-09-27'
+  locator: Section I, A
+  document_version:
+    document: northern-arapaho-tribe-of-the-wind-river-reservation-constitution
+    version: 1938-text-2
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: This is the joint Shoshone and Arapahoe constitution for the Wind River Reservation; the scan is heavily garbled, so only clearly legible passages are quoted.'
+- aspect: governing-body-selection
+  value: Elected from their respective tribes
+  quote: The Council members shall be elected
+  source: constitution-northern-arapaho-tribe-of-the-wind-river-reservation-1938-text-2
+  confidence: medium
+  verification: read-in-full
+  as_of: '1938-09-27'
+  locator: Section I, A
+  document_version:
+    document: northern-arapaho-tribe-of-the-wind-river-reservation-constitution
+    version: 1938-text-2
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: This is the joint Shoshone and Arapahoe constitution for the Wind River Reservation; the scan is heavily garbled, so only clearly legible passages are quoted.'
+- aspect: governing-body-term
+  value: 2 years
+  quote: to aerve for a tern of two years on tha
+  source: constitution-northern-arapaho-tribe-of-the-wind-river-reservation-1938-text-2
+  confidence: medium
+  verification: read-in-full
+  as_of: '1938-09-27'
+  locator: Section II, B
+  document_version:
+    document: northern-arapaho-tribe-of-the-wind-river-reservation-constitution
+    version: 1938-text-2
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: This is the joint Shoshone and Arapahoe constitution for the Wind River Reservation; the scan is heavily garbled, so only clearly legible passages are quoted.'
+- aspect: head-of-government
+  value: Chairman (one for each tribe's Council)
+  quote: Council members of each tribe ere to elect
+  source: constitution-northern-arapaho-tribe-of-the-wind-river-reservation-1938-text-2
+  confidence: medium
+  verification: read-in-full
+  as_of: '1938-09-27'
+  locator: Section I, B
+  document_version:
+    document: northern-arapaho-tribe-of-the-wind-river-reservation-constitution
+    version: 1938-text-2
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: This is the joint Shoshone and Arapahoe constitution for the Wind River Reservation; the scan is heavily garbled, so only clearly legible passages are quoted.'
+- aspect: head-of-government
+  value: Chairperson
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  verification: bulk-import
+  as_of: '2026-11-20'
+  locator: Northern Arapaho Tribe of the Wind River Reservation, Wyoming
+  note: The title of the leader's office as the federal directory lists it; the holder's name is not recorded. Listed as “Chairman”; recorded without the holder's own form of the title.
+- aspect: head-of-government-selection
+  value: Elected by secret ballot by Council members of each tribe
+  quote: Council members of each tribe ere to elect
+  source: constitution-northern-arapaho-tribe-of-the-wind-river-reservation-1938-text-2
+  confidence: medium
+  verification: read-in-full
+  as_of: '1938-09-27'
+  locator: Section I, B
+  document_version:
+    document: northern-arapaho-tribe-of-the-wind-river-reservation-constitution
+    version: 1938-text-2
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: This is the joint Shoshone and Arapahoe constitution for the Wind River Reservation; the scan is heavily garbled, so only clearly legible passages are quoted.'
+- aspect: head-of-government-term
+  value: 6 months
+  quote: (6) months, after
+  source: constitution-northern-arapaho-tribe-of-the-wind-river-reservation-1938-text-2
+  confidence: medium
+  verification: read-in-full
+  as_of: '1938-09-27'
+  locator: Section I, B
+  document_version:
+    document: northern-arapaho-tribe-of-the-wind-river-reservation-constitution
+    version: 1938-text-2
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: This is the joint Shoshone and Arapahoe constitution for the Wind River Reservation; the scan is heavily garbled, so only clearly legible passages are quoted.'
+- aspect: elections
+  value: Every 2 years, second Monday in November
+  quote: General elections will be held on the second Monday
+  source: constitution-northern-arapaho-tribe-of-the-wind-river-reservation-1938-text-2
+  confidence: medium
+  verification: read-in-full
+  as_of: '1938-09-27'
+  locator: Section II, B
+  document_version:
+    document: northern-arapaho-tribe-of-the-wind-river-reservation-constitution
+    version: 1938-text-2
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: This is the joint Shoshone and Arapahoe constitution for the Wind River Reservation; the scan is heavily garbled, so only clearly legible passages are quoted.'
+- aspect: voting-age
+  value: '21'
+  quote: over the age of twenty-
+  source: constitution-northern-arapaho-tribe-of-the-wind-river-reservation-1938-text-2
+  confidence: medium
+  verification: read-in-full
+  as_of: '1938-09-27'
+  locator: Section II, B
+  document_version:
+    document: northern-arapaho-tribe-of-the-wind-river-reservation-constitution
+    version: 1938-text-2
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: This is the joint Shoshone and Arapahoe constitution for the Wind River Reservation; the scan is heavily garbled, so only clearly legible passages are quoted.'
+- aspect: election-authority
+  value: District Farmers of the U.S. Indian Service
+  quote: Eech election precinct shell be presided over by the
+  source: constitution-northern-arapaho-tribe-of-the-wind-river-reservation-1938-text-2
+  confidence: medium
+  verification: read-in-full
+  as_of: '1938-09-27'
+  locator: Section II, B
+  document_version:
+    document: northern-arapaho-tribe-of-the-wind-river-reservation-constitution
+    version: 1938-text-2
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: This is the joint Shoshone and Arapahoe constitution for the Wind River Reservation; the scan is heavily garbled, so only clearly legible passages are quoted.'
+- aspect: amendment
+  value: Proposed by two-thirds of Business Council; ratified by election
+  quote: Amendments to this Constitution nay be proposed by two-third (2/3)
+  source: constitution-northern-arapaho-tribe-of-the-wind-river-reservation-1938-text-2
+  confidence: medium
+  verification: read-in-full
+  as_of: '1938-09-27'
+  locator: Section IV
+  document_version:
+    document: northern-arapaho-tribe-of-the-wind-river-reservation-constitution
+    version: 1938-text-2
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: This is the joint Shoshone and Arapahoe constitution for the Wind River Reservation; the scan is heavily garbled, so only clearly legible passages are quoted.'
+- aspect: recall-and-removal
+  value: Dismissal by majority vote at joint Council meeting
+  quote: meeting a member can be dismissed if the charges
+  source: constitution-northern-arapaho-tribe-of-the-wind-river-reservation-1938-text-2
+  confidence: medium
+  verification: read-in-full
+  as_of: '1938-09-27'
+  locator: Section I, C
+  document_version:
+    document: northern-arapaho-tribe-of-the-wind-river-reservation-constitution
+    version: 1938-text-2
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: This is the joint Shoshone and Arapahoe constitution for the Wind River Reservation; the scan is heavily garbled, so only clearly legible passages are quoted.'
 governing_documents:
 - kind: law-code
   title: Northern Arapaho Tribal Code

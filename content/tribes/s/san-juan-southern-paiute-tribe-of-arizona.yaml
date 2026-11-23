@@ -165,6 +165,279 @@ indian_health_service:
   as_of: '2026-11-23'
   locator: Demographic Information bullet
   note: Listed as "San Juan Southern Paiute Tribe". Navajo Area budget document states the Area serves the Navajo Nation and the San Juan Southern Paiute Tribe; it also says both perform Community Health Services through ISDEAA agreements.
+governance:
+- aspect: form
+  value: Adopted by election under Section 16 of the Indian Reorganization Act
+  quote: accordance with Section 16 of the Indian Reorganization Act of June 18, 1934 (48 Stat. 984),
+  source: constitution-san-juan-southern-paiute-tribe-of-arizona-1996-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1996-09-15'
+  locator: Certificate of Results of Election
+  document_version:
+    document: san-juan-southern-paiute-tribe-of-arizona-constitution
+    version: 1996-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Text is the 1996 constitution with the BIA approval letter and certificate of results; the certificate vote counts are blank in the scan.'
+- aspect: governing-body
+  value: San Juan Southern Paiute Tribal Council
+  quote: shall be known as the San Juan Southern Paiute Tribal Council which shall consist of seven (7)
+  source: constitution-san-juan-southern-paiute-tribe-of-arizona-1996-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1996-09-15'
+  locator: Article IV, Section 1
+  document_version:
+    document: san-juan-southern-paiute-tribe-of-arizona-constitution
+    version: 1996-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Text is the 1996 constitution with the BIA approval letter and certificate of results; the certificate vote counts are blank in the scan.'
+- aspect: governing-body-size
+  value: 7 members
+  quote: shall be known as the San Juan Southern Paiute Tribal Council which shall consist of seven (7)
+  source: constitution-san-juan-southern-paiute-tribe-of-arizona-1996-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1996-09-15'
+  locator: Article IV, Section 1
+  document_version:
+    document: san-juan-southern-paiute-tribe-of-arizona-constitution
+    version: 1996-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Text is the 1996 constitution with the BIA approval letter and certificate of results; the certificate vote counts are blank in the scan.'
+- aspect: governing-body-selection
+  value: Selected by eligible voters
+  quote: Tribe who are selected by the eligible voters of the Tribe in accordance with this constitution
+  source: constitution-san-juan-southern-paiute-tribe-of-arizona-1996-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1996-09-15'
+  locator: Article IV, Section 1
+  document_version:
+    document: san-juan-southern-paiute-tribe-of-arizona-constitution
+    version: 1996-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Text is the 1996 constitution with the BIA approval letter and certificate of results; the certificate vote counts are blank in the scan.'
+- aspect: governing-body-term
+  value: 4 years
+  quote: the President and Vice President shall be four (4) years except as provided for in Article VIII,
+  source: constitution-san-juan-southern-paiute-tribe-of-arizona-1996-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1996-09-15'
+  locator: Article IV, Section 5
+  document_version:
+    document: san-juan-southern-paiute-tribe-of-arizona-constitution
+    version: 1996-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Text is the 1996 constitution with the BIA approval letter and certificate of results; the certificate vote counts are blank in the scan.'
+- aspect: head-of-government
+  value: President
+  quote: President and Vice President who must reside within the territory of the Tribe or within one
+  source: constitution-san-juan-southern-paiute-tribe-of-arizona-1996-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1996-09-15'
+  locator: Article IV, Section 2
+  document_version:
+    document: san-juan-southern-paiute-tribe-of-arizona-constitution
+    version: 1996-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Text is the 1996 constitution with the BIA approval letter and certificate of results; the certificate vote counts are blank in the scan.'
+- aspect: head-of-government
+  value: President
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  verification: bulk-import
+  as_of: '2026-11-20'
+  locator: San Juan Southern Paiute Tribe of Arizona
+  note: The title of the leader's office as the federal directory lists it; the holder's name is not recorded.
+- aspect: head-of-government-selection
+  value: Selected by eligible voters
+  quote: Tribe who are selected by the eligible voters of the Tribe in accordance with this constitution
+  source: constitution-san-juan-southern-paiute-tribe-of-arizona-1996-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1996-09-15'
+  locator: Article IV, Section 1
+  document_version:
+    document: san-juan-southern-paiute-tribe-of-arizona-constitution
+    version: 1996-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Text is the 1996 constitution with the BIA approval letter and certificate of results; the certificate vote counts are blank in the scan.'
+- aspect: head-of-government-term
+  value: 4 years
+  quote: the President and Vice President shall be four (4) years except as provided for in Article VIII,
+  source: constitution-san-juan-southern-paiute-tribe-of-arizona-1996-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1996-09-15'
+  locator: Article IV, Section 5
+  document_version:
+    document: san-juan-southern-paiute-tribe-of-arizona-constitution
+    version: 1996-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Text is the 1996 constitution with the BIA approval letter and certificate of results; the certificate vote counts are blank in the scan.'
+- aspect: elections
+  value: Odd-numbered years on the first Saturday of May
+  quote: be held in odd numbered years on the first Saturday of May beginning in 1997.
+  source: constitution-san-juan-southern-paiute-tribe-of-arizona-1996-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1996-09-15'
+  locator: Article VIII, Section 1
+  document_version:
+    document: san-juan-southern-paiute-tribe-of-arizona-constitution
+    version: 1996-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Text is the 1996 constitution with the BIA approval letter and certificate of results; the certificate vote counts are blank in the scan.'
+- aspect: voting-age
+  value: '18'
+  quote: All tribal members who are eighteen (18) years or older and who
+  source: constitution-san-juan-southern-paiute-tribe-of-arizona-1996-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1996-09-15'
+  locator: Article VIII, Section 7
+  document_version:
+    document: san-juan-southern-paiute-tribe-of-arizona-constitution
+    version: 1996-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Text is the 1996 constitution with the BIA approval letter and certificate of results; the certificate vote counts are blank in the scan.'
+- aspect: election-authority
+  value: Election Board appointed by the Tribal Council
+  quote: The Tribal Council shall appoint an Election Board to conduct
+  source: constitution-san-juan-southern-paiute-tribe-of-arizona-1996-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1996-09-15'
+  locator: Article VIII, Section 4
+  document_version:
+    document: san-juan-southern-paiute-tribe-of-arizona-constitution
+    version: 1996-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Text is the 1996 constitution with the BIA approval letter and certificate of results; the certificate vote counts are blank in the scan.'
+- aspect: branches
+  value: Tribal Council, Tribal Court System, Tribal Administration
+  quote: The government of the San Juan Southern Paiute Tribe shall include a Tribal Council, a Tribal
+  source: constitution-san-juan-southern-paiute-tribe-of-arizona-1996-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1996-09-15'
+  locator: Article III
+  document_version:
+    document: san-juan-southern-paiute-tribe-of-arizona-constitution
+    version: 1996-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Text is the 1996 constitution with the BIA approval letter and certificate of results; the certificate vote counts are blank in the scan.'
+- aspect: judiciary
+  value: 'Tribal Court System: Tribal Court and Court of Appeals'
+  quote: The Tribal Court System shall include a Tribal Court and
+  source: constitution-san-juan-southern-paiute-tribe-of-arizona-1996-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1996-09-15'
+  locator: Article VI, Section 1
+  document_version:
+    document: san-juan-southern-paiute-tribe-of-arizona-constitution
+    version: 1996-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Text is the 1996 constitution with the BIA approval letter and certificate of results; the certificate vote counts are blank in the scan.'
+- aspect: judicial-selection
+  value: Appointed by the Tribal Council
+  quote: The Tribal Council shall appoint judges to serve for a
+  source: constitution-san-juan-southern-paiute-tribe-of-arizona-1996-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1996-09-15'
+  locator: Article VI, Section 3
+  document_version:
+    document: san-juan-southern-paiute-tribe-of-arizona-constitution
+    version: 1996-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Text is the 1996 constitution with the BIA approval letter and certificate of results; the certificate vote counts are blank in the scan.'
+- aspect: judicial-term
+  value: 4 years
+  quote: term of four (4) years. There shall be one judge for the Tribal Court and either one or three
+  source: constitution-san-juan-southern-paiute-tribe-of-arizona-1996-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1996-09-15'
+  locator: Article VI, Section 3
+  document_version:
+    document: san-juan-southern-paiute-tribe-of-arizona-constitution
+    version: 1996-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Text is the 1996 constitution with the BIA approval letter and certificate of results; the certificate vote counts are blank in the scan.'
+- aspect: judicial-independence
+  value: Pay may not be reduced during term
+  quote: that shall not be diminished during their term of office.
+  source: constitution-san-juan-southern-paiute-tribe-of-arizona-1996-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1996-09-15'
+  locator: Article VI, Section 5
+  document_version:
+    document: san-juan-southern-paiute-tribe-of-arizona-constitution
+    version: 1996-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Text is the 1996 constitution with the BIA approval letter and certificate of results; the certificate vote counts are blank in the scan.'
+- aspect: judicial-independence
+  value: Judges removable for listed causes
+  quote: 'A judge shall be removed by the Tribal Council for:'
+  source: constitution-san-juan-southern-paiute-tribe-of-arizona-1996-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1996-09-15'
+  locator: Article VI, Section 6(a)
+  document_version:
+    document: san-juan-southern-paiute-tribe-of-arizona-constitution
+    version: 1996-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Text is the 1996 constitution with the BIA approval letter and certificate of results; the certificate vote counts are blank in the scan.'
+- aspect: amendment
+  value: Majority vote of qualified voters in a Secretarial election
+  quote: This constitution may be amended by a majority vote of the qualified voters of the Tribe voting
+  source: constitution-san-juan-southern-paiute-tribe-of-arizona-1996-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1996-09-15'
+  locator: Article XVI
+  document_version:
+    document: san-juan-southern-paiute-tribe-of-arizona-constitution
+    version: 1996-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Text is the 1996 constitution with the BIA approval letter and certificate of results; the certificate vote counts are blank in the scan.'
+- aspect: secretarial-approval
+  value: Required for amendments
+  quote: become effective until approved by the Secretary of the Interior or until deemed approved by
+  source: constitution-san-juan-southern-paiute-tribe-of-arizona-1996-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1996-09-15'
+  locator: Article XVI
+  document_version:
+    document: san-juan-southern-paiute-tribe-of-arizona-constitution
+    version: 1996-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Text is the 1996 constitution with the BIA approval letter and certificate of results; the certificate vote counts are blank in the scan.'
+- aspect: recall-and-removal
+  value: Removal by vote of at least 5 Council members for listed causes
+  quote: The Tribal Council may discipline or remove a Council Member, by a vote of at
+  source: constitution-san-juan-southern-paiute-tribe-of-arizona-1996-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1996-09-15'
+  locator: Article IX, Section 1(b)
+  document_version:
+    document: san-juan-southern-paiute-tribe-of-arizona-constitution
+    version: 1996-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Text is the 1996 constitution with the BIA approval letter and certificate of results; the certificate vote counts are blank in the scan.'
+- aspect: recall-and-removal
+  value: Recall by petition of 30% of eligible voters, then majority vote
+  quote: sixty (60) days to collect the signatures from thirty percent (30%) of the eligible
+  source: constitution-san-juan-southern-paiute-tribe-of-arizona-1996-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1996-09-15'
+  locator: Article IX, Section 3
+  document_version:
+    document: san-juan-southern-paiute-tribe-of-arizona-constitution
+    version: 1996-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Text is the 1996 constitution with the BIA approval letter and certificate of results; the certificate vote counts are blank in the scan.'
+- aspect: other
+  value: Initiative by petition of 30% of eligible voters
+  quote: upon petition of at least thirty percent (30%) of the eligible voters of the
+  source: constitution-san-juan-southern-paiute-tribe-of-arizona-1996-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1996-09-15'
+  locator: Article XI, Section 1
+  document_version:
+    document: san-juan-southern-paiute-tribe-of-arizona-constitution
+    version: 1996-text
+  note: 'Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author. The newest text found; a later version may be in effect. Reader''s note on the text: Text is the 1996 constitution with the BIA approval letter and certificate of results; the certificate vote counts are blank in the scan.'
 governing_documents:
 - kind: law-code
   title: Tribal code

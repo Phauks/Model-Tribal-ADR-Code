@@ -195,6 +195,255 @@ government_structure:
   as_of: '1936'
   locator: preamble / approval and certification of adoption
   note: Historical constitution; a later constitution may have replaced it.
+governance:
+- aspect: form
+  value: Constitution adopted under the Indian Reorganization Act of June 18, 1934
+  quote: according to the Act of Congress, dated June 18, 1934, known as the Indian
+  source: constitution-omaha-tribe-of-nebraska-2025-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2025-11-13'
+  locator: Preamble
+  document_version:
+    document: omaha-tribe-of-nebraska-constitution
+    version: 2025-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author.
+- aspect: governing-body
+  value: Tribal Council
+  quote: The governing body under this Constitution and Bylaws shall be
+  source: constitution-omaha-tribe-of-nebraska-2025-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2025-11-13'
+  locator: Article III, Section 1
+  document_version:
+    document: omaha-tribe-of-nebraska-constitution
+    version: 2025-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author.
+- aspect: governing-body-size
+  value: 7 members
+  quote: composed of seven (7) members to be elected
+  source: constitution-omaha-tribe-of-nebraska-2025-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2025-11-13'
+  locator: Article III, Section 1
+  document_version:
+    document: omaha-tribe-of-nebraska-constitution
+    version: 2025-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author.
+- aspect: governing-body-selection
+  value: Elected by the people
+  quote: The Councilmen shall be elected by the people for a period of three
+  source: constitution-omaha-tribe-of-nebraska-2025-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2025-11-13'
+  locator: Article III, Section 2
+  document_version:
+    document: omaha-tribe-of-nebraska-constitution
+    version: 2025-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author.
+- aspect: governing-body-term
+  value: 3 years, staggered
+  quote: The Councilmen shall be elected on a staggered basis on the first
+  source: constitution-omaha-tribe-of-nebraska-2025-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2025-11-13'
+  locator: Article III, Section 4
+  document_version:
+    document: omaha-tribe-of-nebraska-constitution
+    version: 2025-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author.
+- aspect: head-of-government
+  value: Chairman
+  quote: The officers of the Tribal Council shall be the Chairman,
+  source: constitution-omaha-tribe-of-nebraska-2025-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2025-11-13'
+  locator: Article III, Section 3
+  document_version:
+    document: omaha-tribe-of-nebraska-constitution
+    version: 2025-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author.
+- aspect: head-of-government
+  value: Chairperson
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  verification: bulk-import
+  as_of: '2026-11-20'
+  locator: Omaha Tribe of Nebraska
+  note: The title of the leader's office as the federal directory lists it; the holder's name is not recorded. Listed as “Chairman”; recorded without the holder's own form of the title.
+- aspect: head-of-government-selection
+  value: Chosen by the Tribal Council from its own membership
+  quote: who shall be selected by the Tribal Council
+  source: constitution-omaha-tribe-of-nebraska-2025-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2025-11-13'
+  locator: Article III, Section 3
+  document_version:
+    document: omaha-tribe-of-nebraska-constitution
+    version: 2025-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author.
+- aspect: head-of-government-term
+  value: 1 year
+  quote: The officers shall serve one (1) year terms,
+  source: constitution-omaha-tribe-of-nebraska-2025-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2025-11-13'
+  locator: Article III, Section 3
+  document_version:
+    document: omaha-tribe-of-nebraska-constitution
+    version: 2025-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author.
+- aspect: other-officers
+  value: Vice-Chairman, Secretary, Treasurer
+  quote: The officers of the Tribal Council shall be the Chairman,
+  source: constitution-omaha-tribe-of-nebraska-2025-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2025-11-13'
+  locator: Article III, Section 3
+  document_version:
+    document: omaha-tribe-of-nebraska-constitution
+    version: 2025-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author.
+- aspect: elections
+  value: First Tuesday of November every year
+  quote: The Councilmen shall be elected on a staggered basis on the first
+  source: constitution-omaha-tribe-of-nebraska-2025-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2025-11-13'
+  locator: Article III, Section 4
+  document_version:
+    document: omaha-tribe-of-nebraska-constitution
+    version: 2025-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author.
+- aspect: voting-age
+  value: '18'
+  quote: All recognized members of the Omaha Tribe, eighteen (18) years of
+  source: constitution-omaha-tribe-of-nebraska-2025-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2025-11-13'
+  locator: Article V, Section 1
+  document_version:
+    document: omaha-tribe-of-nebraska-constitution
+    version: 2025-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author.
+- aspect: judiciary
+  value: Tribal Court system of trial courts and an appellate court
+  quote: The Omaha Tribal Court system shall consist of one (1) or more
+  source: constitution-omaha-tribe-of-nebraska-2025-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2025-11-13'
+  locator: Article X, Section 1
+  document_version:
+    document: omaha-tribe-of-nebraska-constitution
+    version: 2025-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author.
+- aspect: judicial-selection
+  value: Appointed by the Tribal Council
+  quote: The Tribal Council shall appoint a full-time Chief
+  source: constitution-omaha-tribe-of-nebraska-2025-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2025-11-13'
+  locator: Article X, Section 1
+  document_version:
+    document: omaha-tribe-of-nebraska-constitution
+    version: 2025-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author.
+- aspect: judicial-term
+  value: 'Chief Judge: 4 years'
+  quote: The term of the Chief Judge shall be four (4) years.
+  source: constitution-omaha-tribe-of-nebraska-2025-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2025-11-13'
+  locator: Article X, Section 2
+  document_version:
+    document: omaha-tribe-of-nebraska-constitution
+    version: 2025-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author.
+- aspect: judicial-independence
+  value: Judges' salaries may not be reduced during their terms
+  quote: Salaries of judges may not be reduced during
+  source: constitution-omaha-tribe-of-nebraska-2025-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2025-11-13'
+  locator: Article X, Section 3
+  document_version:
+    document: omaha-tribe-of-nebraska-constitution
+    version: 2025-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author.
+- aspect: judicial-independence
+  value: Chief Judge may not hear appeals from his own trial decisions
+  quote: may not hear any appeal from his own trial court decisions
+  source: constitution-omaha-tribe-of-nebraska-2025-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2025-11-13'
+  locator: Article X, Section 2
+  document_version:
+    document: omaha-tribe-of-nebraska-constitution
+    version: 2025-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author.
+- aspect: amendment
+  value: Majority vote of qualified voters at election called by the Tribe's Election Commission
+  quote: of the qualified voters of the Omaha Tribe voting at an election called for that purpose
+  source: constitution-omaha-tribe-of-nebraska-2025-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2025-11-13'
+  locator: Article IX, Section 1
+  document_version:
+    document: omaha-tribe-of-nebraska-constitution
+    version: 2025-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author.
+- aspect: recall-and-removal
+  value: Recall by petition, for gross neglect or improper conduct
+  quote: The Omaha people may recall any elected Tribal official or Tribal
+  source: constitution-omaha-tribe-of-nebraska-2025-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2025-11-13'
+  locator: Article VI, Section 1
+  document_version:
+    document: omaha-tribe-of-nebraska-constitution
+    version: 2025-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author.
+- aspect: recall-and-removal
+  value: Council may call recall election by 5 votes, for gross misconduct or neglect
+  quote: by an affirmative vote of five (5) members, call a recall election
+  source: constitution-omaha-tribe-of-nebraska-2025-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2025-11-13'
+  locator: Article VI, Section 9
+  document_version:
+    document: omaha-tribe-of-nebraska-constitution
+    version: 2025-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author.
+- aspect: other
+  value: Referendum on Council actions by petition of 25% of votes cast in last election
+  quote: referendum vote of the people upon a written petition signed by not less than twenty-five
+  source: constitution-omaha-tribe-of-nebraska-2025-text
+  confidence: high
+  verification: read-in-full
+  as_of: '2025-11-13'
+  locator: Article VII, Section 1
+  document_version:
+    document: omaha-tribe-of-nebraska-constitution
+    version: 2025-text
+  note: Read from the text by an AI reader (Claude Haiku); the quoted words were found in the text by scripts/governance/apply.py. Not yet checked by the lead author.
 governing_documents:
 - kind: law-code
   title: Omaha Tribe of Nebraska
