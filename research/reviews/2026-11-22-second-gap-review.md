@@ -41,7 +41,7 @@ Every fact was found in the notice. The five listed under another name are combi
 
 Leads:
 
-- The six Minnesota Chippewa Tribe band profiles (Bois Forte, Fond du Lac, Grand Portage, Leech Lake, Mille Lacs, White Earth) each have their own row in the notice but no ICWA fact. Each could get one, cited to the notice.
+- The six Minnesota Chippewa Tribe band profiles (Bois Forte, Fond du Lac, Grand Portage, Leech Lake, Mille Lacs, White Earth) each have their own row in the notice but no ICWA fact. Each could get one, cited to the notice. Added Nov. 23, 2026.
 - The Chenega note says the notice prints "aka Chanega"; the notice prints "aka Chenega".
 
 ## Quotations in method and glossary records (rows 4 and 20)
@@ -93,6 +93,8 @@ The script requested every source record's address once.
 | Server error (5xx) | 4 |
 
 The 16 gone include four Crown-Indigenous Relations pages (rcaanc-cirnac.gc.ca), three Cherokee Nation pages, two Guam court pages, both National Indian Gaming Commission gaming tribe reports, the 2008 petitioner list and Tulalip Resolution 2024-473. Every source record still says `history.status: live`. Sources that are gone or moved need an archived copy or a new address, and their status set; the lint from decision record 0014 will then catch them going forward.
+
+Follow-up, Nov. 23: 9 of the 16 are now marked `removed`. The other 7 (the three Cherokee Nation pages and four Crown-Indigenous Relations pages) load when requested as a browser does; the 404 answered the script's own request, so they stay `live`.
 
 ## Gaming operations (row 16)
 
@@ -164,7 +166,7 @@ Session: [2026-11-22-child-welfare-agents-reread](../sessions/2026/2026-11-22-ch
 | `verification: read-in-full`, where this review's OCR also matched the name word for word | 70 |
 | Note corrected: Chenega, which the table prints "Native Village of Chenega (aka Chenega)", not "(aka Chanega)" (checked at 300 dpi) | 1 |
 
-The other 505 facts keep their level (inferred, or bulk-import for the five combined rows), because their names were matched word for word only in the transcription, not in machine-read text. The six Minnesota Chippewa band profiles were left without a fact for the lead author, as above.
+The other 505 facts keep their level (inferred, or bulk-import for the five combined rows), because their names were matched word for word only in the transcription, not in machine-read text. The six Minnesota Chippewa band profiles were left without a fact for the lead author, as above; each got one on Nov. 23.
 
 ### Governing documents (row 10)
 
