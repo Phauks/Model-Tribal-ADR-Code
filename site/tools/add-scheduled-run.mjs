@@ -7,7 +7,7 @@
 // index.js that keeps its fetch handler and adds `scheduled`, then points
 // the built Wrangler configuration at it. The scheduled handler passes the
 // run to the address scheduledPaths names for its cron trigger (the hourly
-// /following/scheduled, the weekly /address-book/scheduled) inside the same copy of the Worker, with a
+// /following/scheduled, the weekly /address-book/scheduled, /events/scheduled every 15 minutes) inside the same copy of the Worker, with a
 // random token made when that copy starts and kept only in its memory
 // (src/lib/server/scheduled-run.ts), so nothing outside can start a run.
 
@@ -27,7 +27,8 @@ export const scheduledTokenHeader = 'x-scheduled-run';
 // Alaska directories and the nation pages (src/lib/server/address-book.ts).
 export const scheduledPaths = {
 	'17 * * * *': '/following/scheduled',
-	'41 9 * * 1': '/address-book/scheduled'
+	'41 9 * * 1': '/address-book/scheduled',
+	'4,19,34,49 * * * *': '/events/scheduled'
 };
 
 export function entrySource() {

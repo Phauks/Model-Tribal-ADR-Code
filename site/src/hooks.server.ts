@@ -18,10 +18,10 @@ import { permissionsOf } from '#lib/permissions.ts';
 import { workspacePagesFor } from '#lib/workspace-menu.ts';
 
 /** Pages that show private information and must never be cached or framed. */
-const privatePrefixes = ['/workspace', '/profile', '/account', '/sign-in', '/sign-out', '/requests', '/following', '/uploads', '/book/orders', '/book/files'];
+const privatePrefixes = ['/workspace', '/profile', '/account', '/sign-in', '/sign-out', '/requests', '/following', '/uploads', '/book/orders', '/book/files', '/events'];
 
 /** Pages that need to know who is signed in. */
-const signedInPrefixes = ['/workspace', '/profile', '/account', '/sign-in', '/following', '/uploads', '/files'];
+const signedInPrefixes = ['/workspace', '/profile', '/account', '/sign-in', '/following', '/uploads', '/files', '/events'];
 
 /**
  * Pieces of files people send (src/lib/server/uploads.ts). A large file is
@@ -29,6 +29,13 @@ const signedInPrefixes = ['/workspace', '/profile', '/account', '/sign-in', '/fo
  * each file) instead of the limit on workspace changes.
  */
 const piecePrefix = '/uploads/pieces/';
+/**
+ * Where the inbox saves a person's draft a moment after they stop typing
+ * (src/routes/workspace/inbox/Composer.svelte). A draft is the writer's own
+ * and changes nothing anyone else sees, so saving it does not count against
+ * the limit on workspace changes.
+ */
+const draftSavePath = '/workspace/inbox/drafts/save';
 
 export const handle: Handle = async ({ event, resolve }) => {
 	event.locals.person = undefined;
@@ -77,7 +84,7 @@ export const handle: Handle = async ({ event, resolve }) => {
 		// Each person may make a limited number of changes a minute, so a
 		// stolen session or a runaway script cannot rewrite much before
 		// someone notices (wrangler.jsonc, workspaceChangeLimit).
-		if (changing && event.locals.person && environment.workspaceChangeLimit && !path.startsWith(piecePrefix)) {
+		if (changing && event.locals.person && environment.workspaceChangeLimit && !path.startsWith(piecePrefix) && path !== draftSavePath) {
 			const { success } = await environment.workspaceChangeLimit.limit({
 				key: event.locals.person.identifier
 			});
