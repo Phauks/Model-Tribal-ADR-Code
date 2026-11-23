@@ -12,17 +12,11 @@
 
 <div class="reading">
 	<h1>Native nations</h1>
-	<p class="lead">
-		One page for every nation and community, drafted from public sources, with a way for each nation to correct, restrict or remove what the page says about it.
-	</p>
 	{#if data.example}
 		<div class="notice" role="note">
 			<p>The nation records are not published yet. The page below is a fictitious example that shows the layout.</p>
 		</div>
 	{/if}
-	<p>
-		{data.total.toLocaleString('en-US')} pages. To find one nation, search its name in the search box at the top of every page. To browse, pick a first letter or a state below, or <a href="/nations/map">see the map</a> of nations by state, with the Bureau of Indian Affairs regions.
-	</p>
 </div>
 
 
@@ -48,7 +42,6 @@
 {#each data.otherGroups as group (group.entityType)}
 	<section aria-labelledby="group-{group.entityType}">
 		<h2 id="group-{group.entityType}">{group.label}</h2>
-		<p class="small muted">Listed in its own group, not as a tribe.</p>
 		<NationTable {group} identifier="nations-{group.entityType}" />
 	</section>
 {/each}

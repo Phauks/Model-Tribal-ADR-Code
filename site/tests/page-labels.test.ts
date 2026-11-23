@@ -21,6 +21,10 @@ describe('pageDownloads', () => {
 			'/nations/map/government-offices.geojson'
 		]);
 		expect(pageDownloads('/nations/map').citable).toBe(false);
+		// The table of the view on screen comes first.
+		const onScreen = pageDownloads('/nations/map', { file: 'gaming-by-state', label: 'Gaming by State' }).files[0];
+		expect(onScreen.label).toBe('The Gaming by State table');
+		expect(onScreen.links.map((link) => link.link)).toEqual(['/nations/map/tables/gaming-by-state.csv']);
 	});
 
 	it('offers the index pages the list, and the glossary its terms', () => {

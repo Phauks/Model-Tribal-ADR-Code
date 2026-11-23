@@ -5,6 +5,7 @@ import {
 	shownExcerpts,
 	shownFullText,
 	shownTellings,
+	storiesOfNation,
 	storyIsShown,
 	storySourceKeys,
 	type StoryRecord,
@@ -183,5 +184,27 @@ describe('full text (decision record 0034)', () => {
 		expect(shownFullText(story({ full_text: decided }), today)).toEqual(decided);
 		const restricted = story({ full_text: decided, tellings: [telling({ access: { level: 'restricted' } })] });
 		expect(shownFullText(restricted, today)).toBeUndefined();
+	});
+});
+
+describe('stories on a nation’s page', () => {
+	it('lists the stories that name the nation, including shared ones', () => {
+		const own = story({ id: 'own' });
+		const shared = story({ id: 'shared', nations: ['other-nation', 'example-nation'] });
+		const elsewhere = story({ id: 'elsewhere', nations: ['other-nation'] });
+		expect(storiesOfNation([own, shared, elsewhere], 'example-nation', today).map((record) => record.id)).toEqual([
+			'own',
+			'shared'
+		]);
+	});
+
+	it('never lists a restricted, withdrawn or embargoed story', () => {
+		const records = [
+			story({ id: 'restricted', access: { level: 'restricted' } }),
+			story({ id: 'flagged', sensitivity: { restricted: true } }),
+			story({ id: 'withdrawn', review_status: 'withdrawn-at-request' }),
+			story({ id: 'embargoed', access: { level: 'embargoed', until: '2027-01-01' } })
+		];
+		expect(storiesOfNation(records, 'example-nation', today)).toEqual([]);
 	});
 });

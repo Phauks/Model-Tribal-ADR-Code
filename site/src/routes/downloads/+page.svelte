@@ -1,10 +1,13 @@
 <script lang="ts">
 	import { onMount } from 'svelte';
 	import { version } from '$app/env';
+	import { page } from '$app/state';
+	import FileVerifier from '#lib/components/FileVerifier.svelte';
+	import { isSha256 } from '#lib/sha256.ts';
 	import Download from '@lucide/svelte/icons/download';
 	import { buildTime, formatBytes } from '#lib/offline-collections.ts';
 	import { citationDate, mapFiles, pageFormats } from '#lib/page-downloads.ts';
-	import { checksumsTextAddress, downloadChecksums, fileName, verifyAddress, verifyLink, type ChecksumEntry } from '#lib/checksums.ts';
+	import { checksumsAddress, checksumsTextAddress, downloadChecksums, fileName, verifyLink, verifySection, type ChecksumEntry } from '#lib/checksums.ts';
 	import type { PageProps } from './$types';
 
 	let { data }: PageProps = $props();
@@ -119,6 +122,19 @@
 		{ id: 'checking', label: 'Checking a file' },
 		{ id: 'never', label: 'Never in a download' }
 	];
+
+	// A "Check your copy" link carries the file's hash as ?sha256=<hash>&name=<file>#checking, so the
+	// checker below starts set to compare with it (Trevor asked on Nov. 23, 2026 that verifying a file
+	// be part of this page). Read from the address in the browser, since the page is built ahead of
+	// time, and again whenever a link on this page changes it.
+	let expected = $state('');
+	let expectedName = $state('');
+	$effect(() => {
+		const query = page.url.searchParams;
+		const hash = query.get('sha256')?.trim().toLowerCase() ?? '';
+		expected = isSha256(hash) ? hash : '';
+		expectedName = expected ? (query.get('name') ?? '').slice(0, 200) : '';
+	});
 
 	onMount(() => {
 		void downloadChecksums().then((list) => (hashes = list?.files ?? {}));
@@ -239,11 +255,33 @@
 		</p>
 	</section>
 
-	<h2 id="checking" class="group-heading">Checking a file</h2>
+	<h2 id={verifySection} class="group-heading">Checking a file</h2>
 	<p>
-		Each file’s SHA-256 is shown with it, so you can check that a file you downloaded is the one published here, unchanged. <a href={verifyAddress}>Verify a file</a> does it in your browser without uploading anything, and <a href={checksumsTextAddress} download>checksums.txt</a> lists every file.
+		Check that a file you downloaded from this site, or a copy of a document someone gave you, is the file this site published, with nothing changed or missing. Every file has a SHA-256, a string of 64 letters and digits worked out from every byte in it; change one byte and the SHA-256 changes. Each download above shows its SHA-256, and “Check your copy” sets the checker below to compare with it.
 	</p>
-	<p class="hint">If a nation asks us to remove a document, it leaves the site and these files at the next update. A file you already downloaded cannot be changed, so check this page for the current version.</p>
+
+	{#key expected}
+		<FileVerifier {expected} name={expectedName} />
+	{/key}
+
+	<h3>Files inside a ZIP of documents</h3>
+	<p>
+		A ZIP of documents is put together when you ask for it, so the ZIP has no SHA-256 of its own. Open it and check the files inside: documents.csv lists the SHA-256 of each one, and you can choose them all above at once.
+	</p>
+
+	<h3>Check on your own computer</h3>
+	<p>You can also work out a file’s SHA-256 without this site:</p>
+	<ul>
+		<li>Windows, in PowerShell: <code>Get-FileHash file.pdf -Algorithm SHA256</code></li>
+		<li>Mac, in Terminal: <code>shasum -a 256 file.pdf</code></li>
+		<li>Linux: <code>sha256sum file.pdf</code></li>
+	</ul>
+	<p>
+		Compare the result with the SHA-256 shown beside the download, or with the full lists: <a href={checksumsTextAddress} download>checksums.txt</a>, in the form <code>sha256sum -c</code> reads, and <a href={checksumsAddress} download>checksums.json</a>. Both list every download and every copy of a document this site holds today.
+	</p>
+	<p class="hint">
+		A match shows the file is the one published here. It does not show that what the file says is current: a nation may have amended a law since its copy was made. <a href="/copies">Copies of documents</a> gives the date each copy was made and where it was published. If a nation asks us to remove a document, it leaves the site and these files at the next update; a file you already downloaded cannot be changed, so check this page for the current version.
+	</p>
 
 	<h2 id="never" class="group-heading">Never in a download</h2>
 	<ul>

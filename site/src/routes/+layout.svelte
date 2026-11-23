@@ -36,6 +36,7 @@
 	import InlineNotes from '#lib/components/InlineNotes.svelte';
 	import CitationPopup from '#lib/components/CitationPopup.svelte';
 	import LinkPreviews from '#lib/components/LinkPreviews.svelte';
+	import ImageViewer from '#lib/components/ImageViewer.svelte';
 	import { onMount } from 'svelte';
 	import { onNavigate } from '$app/navigation';
 	import { crossFadePages, startMotion } from '#lib/motion.ts';
@@ -72,6 +73,7 @@
 <InlineNotes />
 <CitationPopup />
 <LinkPreviews />
+<ImageViewer />
 
 <style>
 	/*

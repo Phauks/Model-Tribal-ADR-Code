@@ -5,6 +5,7 @@ import {
 	changeId,
 	defaultFilters,
 	filterQuery,
+	followedPageAddress,
 	pageAddressOfFile,
 	parseChangeId,
 	readFilters,
@@ -31,6 +32,7 @@ import {
 	directoryOf,
 	hideChange,
 	listChanges,
+	pageRecordedSince,
 	recordBuildChanges,
 	showChange,
 	summaryOf,
@@ -137,6 +139,17 @@ describe('shared rules', () => {
 		expect(readFilters(new URLSearchParams('page=/glossary/adr')).days).toBe(0);
 	});
 
+	it('offers "Changes to this page" only on pages whose changes are recorded', () => {
+		expect(followedPageAddress('/nations/navajo-nation')).toBe('/nations/navajo-nation');
+		expect(followedPageAddress('/glossary/mediation/')).toBe('/glossary/mediation');
+		expect(followedPageAddress('/essays/peacemaking')).toBe('/essays/peacemaking');
+		expect(followedPageAddress('/charter')).toBe('/charter');
+		expect(followedPageAddress('/about')).toBe('/about');
+		for (const listing of ['/nations', '/nations/map', '/nations/recourse', '/nations/letter/a', '/changes', '/workspace/changes', '/', '/search']) {
+			expect(followedPageAddress(listing)).toBeUndefined();
+		}
+	});
+
 	it('shows sizes the way a wiki does', () => {
 		expect(sizeChangeText(1204)).toBe('+1,204');
 		expect(sizeChangeText(-88)).toBe('−88');
@@ -228,6 +241,15 @@ describe('recording the changes a build brings', () => {
 		const removed = (await listChanges(database, { ...all, changes: ['removed'] }, directoryOf(third))).changes;
 		// A nation page that is gone keeps no title of its own.
 		expect(removed).toMatchObject([{ address: '/nations/navajo-nation', change: 'removed', title: undefined, parts: [] }]);
+	});
+
+	it('knows when the history of a page with no changes began, so its history is never empty', async () => {
+		const first = build('2026-11-23T00:00:00Z', [nationPage('hopi-tribe', { Contacts: 'a' })]);
+		await recordBuildChanges(database, bucket, first, '2026-11-23T03:49:00Z');
+		expect((await listChanges(database, { ...all, page: '/nations/hopi-tribe' }, directoryOf(first))).changes).toEqual([]);
+		expect(await pageRecordedSince(database, '/nations/hopi-tribe')).toBe('2026-11-23T03:49:00Z');
+		// A page the history does not follow has no start.
+		expect(await pageRecordedSince(database, '/about')).toBeUndefined();
 	});
 
 	it('compares two versions of a page, and refuses to show hidden text', async () => {

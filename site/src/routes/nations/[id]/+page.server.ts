@@ -1,3 +1,4 @@
+import { nationOutline } from '#lib/server/section-contents.ts';
 import { error } from '@sveltejs/kit';
 import type { OutlineItem, PageOutline } from '#lib/site-sections.ts';
 import geometry from 'virtual:map-geometry';
@@ -18,13 +19,15 @@ import { landAreaKindLabels } from '#lib/nations-map-drawing.ts';
 import { readableDate } from '#lib/readable-date.ts';
 import { documentHeading, documentHistoryView, labelOf, nationDocumentHistories } from '#lib/server/document-history.ts';
 import { nationServices, type ServiceCategory } from '#lib/nation-services.ts';
-import { SourceUses, type CitationMark } from '#lib/server/source-uses.ts';
+import { SourceUses, whereInSource, type CitationMark } from '#lib/server/source-uses.ts';
+import { sourceAnchor } from '#lib/citation-marks.ts';
 import { recognitionBadges } from '#lib/recognition-badges.ts';
 import { recognitionView } from '#lib/server/recognition.ts';
 import type { CitationPart } from '#lib/legal-citations.ts';
 import { nationIndexRows } from '#lib/server/nation-index.ts';
 import { nationTileMapData } from '#lib/server/nations-map.ts';
 import { offlineSets } from '#lib/server/copy-lists.ts';
+import { nationStorySummaries } from '#lib/server/stories.ts';
 import { opinionsOf, opinionsSourceKey, type TribalCourtOpinion } from '#lib/server/tribal-court-opinions.ts';
 import { displayName, humanize, regionAnchor, reviewStatusLabels, stateName } from '#lib/nation-labels.ts';
 import type { EntryGenerator, PageServerLoad } from './$types';
@@ -90,6 +93,19 @@ function courtOpinions(nationId: string, sources: SourceUses): CourtOpinions | u
 }
 
 /** What the courts and jurisdiction sections say when they have nothing to show. */
+/** The nation's seal or logo at the top of At a glance, and what the image viewer shows with it. */
+interface NationImage {
+	src: string;
+	kind: string;
+	credit: string;
+	/** Where the image is published, such as the nation's website. */
+	original: string;
+	/** The image's entry in the Sources list, as a link within the page. */
+	source?: string;
+	/** Where the nation asks for the image to be taken down. */
+	removal: string;
+}
+
 interface EmptySections {
 	government?: EmptyNote;
 	courts?: EmptyNote;
@@ -824,7 +840,7 @@ interface StateNeighbors {
 const neighborListLimit = 30;
 
 /**
- * "Other nations in the same states": for each state where sources record
+ * "Nearby Nations" (Trevor's heading, Nov. 23, 2026): for each state where sources record
  * the nation, the other nations recorded there, in alphabetical order. A
  * plain list, never a ranking or a comparison (site/DESIGN.md, "Nation
  * pages"). Long lists give way to a link to the state's page.
@@ -967,10 +983,7 @@ export const load: PageServerLoad = ({ params }) => {
 		listedName: record.names.official,
 		// Badges under the name; no federal recognition has none (src/lib/recognition-badges.ts).
 		badges: recognitionBadges(record.recognition ?? []),
-		review: {
-			...status,
-			lastVerified: record.review?.last_verified ? readableDate(record.review.last_verified) : undefined
-		},
+		review: status,
 		withdrawn: record.review?.status === 'withdrawn-at-request',
 		// The copies of the nation's documents this site holds, to save offline or download as a ZIP.
 		heldCopies: heldCopies(record.id)
@@ -993,13 +1006,17 @@ export const load: PageServerLoad = ({ params }) => {
 			documents: [],
 			jurisdiction: [],
 			ties: [],
+			stories: [],
 			empty: {} as EmptySections,
 			neighbors: [],
 			map: undefined,
 			sources: [],
 			outline: {
-				title: page.officialName,
-				items: [{ label: 'Review status', link: '#review-status' }]
+				items: nationOutline({
+					name: page.officialName,
+					link: `/nations/${record.id}`,
+					headings: [{ label: 'Review status', link: '#review-status' }]
+				})
 			} satisfies PageOutline as PageOutline
 		};
 	}
@@ -1018,18 +1035,27 @@ export const load: PageServerLoad = ({ params }) => {
 	// It has no caption (Trevor, Nov. 22, 2026): the credit, and the statement
 	// that the nation does not endorse the site, go in its Sources entry,
 	// and a removal request goes through Report a problem.
-	let image: { src: string; kind: string } | undefined;
+	// Selecting it opens it larger in the image viewer, which shows the same
+	// credit and links to its Sources entry, to where it is published and to
+	// a removal request (src/lib/image-viewer.ts).
+	let image: NationImage | undefined;
 	if (shownImage) {
 		const kind = humanize(shownImage.kind);
 		// A copy from somewhere other than the nation's own website, such as
 		// Wikimedia Commons, names who made it and its license instead.
 		const origin = shownImage.credit ?? 'As the nation’s website publishes it.';
-		sources.use(
-			shownImage,
+		const credit = `${origin} It belongs to the nation, which does not endorse this site.`;
+		const sourceNumber = shownImage.source
+			? sources.add(shownImage.source, { section: kind, text: credit, where: whereInSource(shownImage) })
+			: undefined;
+		image = {
+			src: imagePath(record.id),
 			kind,
-			`${origin} It belongs to the nation, which does not endorse this site.`
-		);
-		image = { src: imagePath(record.id), kind };
+			credit,
+			original: shownImage.image_link,
+			source: sourceNumber ? `#${sourceAnchor(sourceNumber)}` : undefined,
+			removal: `/requests?${new URLSearchParams({ kind: 'remove', record: `nation-images/${record.id}` }).toString().replaceAll('%2F', '/')}`
+		};
 	}
 
 	const nameCitations: CitationMark[] = [];
@@ -1109,6 +1135,9 @@ export const load: PageServerLoad = ({ params }) => {
 	const jurisdiction = jurisdictionFacts(record, sources);
 	sources.part('Treaties and federal ties');
 	const ties = federalTies(record, sources);
+	// The nation's stories, each linked to its own page, which carries the
+	// story's citations; a restricted or withdrawn story is never listed.
+	const stories = nationStorySummaries(record.id);
 	// The legal sections always show, and say plainly when nothing was found,
 	// so a reader can see whether recourse may be available (Trevor, Nov. 22, 2026).
 	const empty: EmptySections = {
@@ -1154,6 +1183,7 @@ export const load: PageServerLoad = ({ params }) => {
 		documents,
 		jurisdiction,
 		ties,
+		stories,
 		empty,
 		neighbors: sameStates(record),
 		sources: sources.list
@@ -1174,10 +1204,13 @@ export const load: PageServerLoad = ({ params }) => {
 	});
 	items.push({ label: 'Jurisdiction', link: '#jurisdiction-heading' });
 	if (ties.length > 0) items.push({ label: 'Treaties and federal ties', link: '#ties-heading' });
+	if (stories.length > 0) items.push({ label: 'Stories', link: '#stories-heading' });
 	if (result.neighbors.length > 0) {
-		items.push({ label: 'Other nations in the same states', link: '#neighbors-heading' });
+		items.push({ label: 'Nearby Nations', link: '#neighbors-heading' });
 	}
 	items.push({ label: 'Sources', link: '#sources-heading' });
 
-	return { ...result, outline: { title: page.officialName, items } satisfies PageOutline as PageOutline };
+	// The Nations section's pages stay above it (src/lib/server/section-contents.ts).
+	const outline: PageOutline = { items: nationOutline({ name: page.officialName, link: `/nations/${record.id}`, headings: items }) };
+	return { ...result, outline };
 };

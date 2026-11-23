@@ -2,7 +2,7 @@
  * Copies of a source's entry in the Sources section
  * (src/lib/components/SourceList.svelte), shown away from the list:
  *
- * - the popup or drawer a marker opens (src/lib/components/CitationPopup.svelte);
+ * - the preview a marker shows when pointed at (src/lib/components/CitationPopup.svelte);
  * - the copy right under the paragraph that the "Show the note under the
  *   paragraph" setting opens (src/lib/components/InlineNotes.svelte);
  * - the copies the print option "Each note under its paragraph"

@@ -28,6 +28,7 @@ import {
 	shownFullText,
 	shownTellings,
 	storyIsShown,
+	storiesOfNation,
 	type Credit,
 	type StoryRecord,
 	type StoryTelling
@@ -230,6 +231,15 @@ function summaryOf(record: StoryRecord, date: string): StorySummary {
 export function storySummaries(): StorySummary[] {
 	const date = today();
 	return publishedStories().map((record) => summaryOf(record, date));
+}
+
+/**
+ * The stories one nation's page lists, each linked to its own page, by title.
+ * A story shared by several nations is listed on each of their pages.
+ */
+export function nationStorySummaries(nationId: string): StorySummary[] {
+	const date = today();
+	return storiesOfNation(publishedStories(), nationId, date).map((record) => summaryOf(record, date));
 }
 
 /** One story's page. */

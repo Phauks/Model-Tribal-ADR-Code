@@ -517,6 +517,19 @@ export async function listChanges(
 	};
 }
 
+/**
+ * When the site last saw a page built with it change, or first recorded it:
+ * for a page with no changes yet, when its history began. Undefined for a page
+ * the history does not follow.
+ */
+export async function pageRecordedSince(database: D1Database, address: string): Promise<string | undefined> {
+	const row = await database
+		.prepare('SELECT seen_at FROM page_states WHERE address = ?')
+		.bind(address)
+		.first<{ seen_at: string }>();
+	return row?.seen_at ?? undefined;
+}
+
 /** Every change to one page, oldest first, as stored. */
 async function pageRows(database: D1Database, address: string): Promise<ChangeRow[]> {
 	const { results } = await database

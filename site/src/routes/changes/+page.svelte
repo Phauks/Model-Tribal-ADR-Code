@@ -20,6 +20,7 @@
 		pageKindLabels,
 		pageKinds,
 		sizeChangeText,
+		siteReleaseName,
 		sizeChoices,
 		wordingIsShown,
 		type ChangeView
@@ -30,7 +31,8 @@
 
 	const filters = $derived(data.filters);
 	const history = $derived(Boolean(filters.page));
-	const historyKind = $derived(data.changes[0]?.kind);
+	const historyKind = $derived(data.pageKind ?? data.changes[0]?.kind);
+	const historyName = $derived(data.pageTitle ? `“${data.pageTitle}”` : (filters.page ?? ''));
 	const historyShowsWording = $derived(historyKind ? wordingIsShown(historyKind) : true);
 	const days = $derived(byDay(data.changes, pacificDay));
 	const feedLink = $derived(`/changes/feed.xml${filterQuery(filters)}`);
@@ -159,10 +161,12 @@
 	<nav aria-label="Breadcrumb" class="small">
 		<a href="/changes">Recent changes</a> › History
 	</nav>
-	<h1>History of {#if data.pageTitle}“{data.pageTitle}”{:else}{filters.page}{/if}</h1>
-	{#if data.pageOnSite && filters.page}
-		<p><a href={filters.page}>Read the page as it is now</a></p>
-	{/if}
+	<h1>History of {historyName}</h1>
+	<!-- Says plainly that the list is one page's, with the way back to every page's (Trevor, Nov. 23, 2026). -->
+	<p class="showing">
+		Showing changes to {#if data.pageOnSite && filters.page}<a href={filters.page}>{historyName}</a>{:else}{historyName}{/if} only
+		· <a href="/changes">Show all changes</a>
+	</p>
 	{#if !historyShowsWording}
 		<p class="notice">
 			<Lock size={16} aria-hidden="true" />
@@ -174,8 +178,8 @@
 		<p class="lede">Every version readers have seen. Choose two to compare, or open one to read it as it stood.</p>
 	{/if}
 
-	{#if data.changes.length === 0}
-		<p>No changes to this page have been recorded yet. Changes are recorded from Nov. 23, 2026 on.</p>
+	{#if data.changes.length === 0 && !data.recordedSince}
+		<p>No changes to this page have been recorded. Changes are recorded from Nov. 23, 2026 on.</p>
 	{:else}
 		<form method="get" action="/changes/compare" class="history-form">
 			{#if historyShowsWording && comparable.length > 1}
@@ -241,16 +245,26 @@
 								</td>
 							</tr>
 						{/each}
+						{#if data.changes.length === 0 && data.recordedSince}
+							<!-- A page that has not changed since the history began: the one version readers have seen. -->
+							<tr>
+								{#if historyShowsWording}<td class="radios"></td>{/if}
+								<td><time datetime={data.recordedSince}>{dateTime(data.recordedSince)}</time> <span class="tag new">Current</span></td>
+								<td>{siteReleaseName}</td>
+								<td>{#if !historyShowsWording}No changes yet{/if}</td>
+								<td><span class="summary">The page as it stood when the site began keeping its history. It has not changed since.</span></td>
+								<td class="links">{#if data.pageOnSite && filters.page}<a href={filters.page}>read</a>{/if}</td>
+							</tr>
+						{/if}
 					</tbody>
 				</table>
 			</div>
 		</form>
 	{/if}
-	{#if historyShowsWording}
-		<p class="small muted">
-			Versions saved while writing, before they were published, are kept in the workspace and are not listed here.
-		</p>
-	{/if}
+	<p class="small muted">
+		The history begins on Nov. 23, 2026, when the site began recording changes.
+		{#if historyShowsWording}Versions saved while writing, before they were published, are kept in the workspace and are not listed here.{/if}
+	</p>
 {:else}
 	<h1>Recent changes</h1>
 	<p class="lede">
@@ -621,6 +635,10 @@
 		text-decoration: line-through;
 	}
 
+	.showing {
+		margin-block-start: 0;
+	}
+
 	.notice {
 		background: var(--color-notice-background);
 		border-radius: var(--radius-panel);
@@ -643,6 +661,12 @@
 
 	.history .links {
 		white-space: nowrap;
+	}
+
+	/* Links break anywhere elsewhere on the site; here a short word such as "read" stays whole. */
+	.history .links a {
+		overflow-wrap: normal;
+		word-break: normal;
 	}
 
 	@media (max-width: 40rem) {

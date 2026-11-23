@@ -19,6 +19,8 @@
 	// and prints every fact.
 	import { onMount } from 'svelte';
 	import ChevronDown from '@lucide/svelte/icons/chevron-down';
+	import ChevronsDownUp from '@lucide/svelte/icons/chevrons-down-up';
+	import ChevronsUpDown from '@lucide/svelte/icons/chevrons-up-down';
 	import { backlinkLetter, sourceAnchor } from '#lib/citation-marks.ts';
 	import type { SourceEntry } from '#lib/server/source-uses.ts';
 	import { rangesText, sourceGroups } from '#lib/source-groups.ts';
@@ -118,9 +120,17 @@
 		<Collapsible heading="Sources" identifier="sources-heading" count={sources.length}>
 			<div class="source-tools needs-scripts no-print">
 				{#if groups}
-					<button class="text-button" type="button" onclick={openOrFoldAll}
-						>{openGroups === groups.length ? 'Fold all groups' : 'Open all groups'}</button
+					<!-- The open and close symbols, not words (Trevor, Nov. 23, 2026). -->
+					{@const allOpen = openGroups === groups.length}
+					<button
+						class="icon-button"
+						type="button"
+						aria-label={allOpen ? 'Close all groups' : 'Open all groups'}
+						title={allOpen ? 'Close all groups' : 'Open all groups'}
+						onclick={openOrFoldAll}
 					>
+						{#if allOpen}<ChevronsDownUp size={20} aria-hidden="true" />{:else}<ChevronsUpDown size={20} aria-hidden="true" />{/if}
+					</button>
 				{/if}
 				<button class="text-button" type="button" aria-pressed={showFacts} onclick={() => (showFacts = !showFacts)}
 					>Show what each source supports</button
@@ -163,6 +173,7 @@
 	.source-tools {
 		display: flex;
 		flex-wrap: wrap;
+		align-items: center;
 		gap: var(--space-2) var(--space-4);
 		margin: var(--space-2) 0 var(--space-3);
 	}

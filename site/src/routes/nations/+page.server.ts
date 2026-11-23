@@ -5,7 +5,6 @@ import type { PageServerLoad } from './$types';
 export const load: PageServerLoad = () => {
 	const rows = nationIndexRows();
 	return {
-		total: rows.length,
 		letters: letterLinks(),
 		states: stateLinks(),
 		// The small groups are listed here in full; the Native nations are browsed by letter or state.

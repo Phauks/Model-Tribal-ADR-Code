@@ -80,6 +80,10 @@ describe('figures on the website', () => {
 		expect(html).toContain(
 			'<img src="/files/U-20261123-7KQ2MD/council%20house.jpg" alt="A wooden building with a porch and three people standing in front." loading="lazy" decoding="async">'
 		);
+		// The picture is a link to its file, which the image viewer opens larger.
+		expect(html).toContain(
+			'<a href="/files/U-20261123-7KQ2MD/council%20house.jpg" class="image-viewer-link" aria-label="A wooden building with a porch and three people standing in front. (open larger)" title="Open larger" data-sveltekit-reload=""><img '
+		);
 		expect(html).toMatch(/<figcaption>\n<p>The council house in 1934.<\/p>\n<div class="essay-figure-credit">\n<p>Photo by the <em>Tribal Archives<\/em>.<\/p>/);
 		expect(html).toContain('href="/requests?kind=remove&amp;record=uploads/U-20261123-7KQ2MD"');
 		expect(html).not.toContain('<p>A wooden building');

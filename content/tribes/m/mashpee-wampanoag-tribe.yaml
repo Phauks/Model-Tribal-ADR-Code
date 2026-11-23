@@ -12,15 +12,14 @@ names:
   official_source: bia-recognized-entities-2026
 recognition:
 - type: federal
-  legal_basis: Federally Recognized Indian Tribe List Act of 1994, Pub. L. No. 103-454, § 104, 108 Stat.
-    4791, 4792 (25 U.S.C. § 5131); 25 C.F.R. § 83.6(a)
+  legal_basis: Indian Entities Recognized by and Eligible To Receive Services From the United States Bureau of Indian Affairs, 91 Fed. Reg. 4102, 4104 (Jan. 30, 2026)
   source: bia-recognized-entities-2026
   confidence: high
   verification: bulk-import
   as_of: '2026-01-30'
   locator: 91 Fed. Reg. 4104
 - type: federal
-  legal_basis: 25 C.F.R. Part 83; final determination 72 FR 8007 (2007-02-22)
+  legal_basis: Final Determination for Federal Acknowledgment of the Mashpee Wampanoag Indian Tribal Council, Inc. of Massachusetts, 72 Fed. Reg. 8007 (Feb. 22, 2007) (acknowledgment under the federal acknowledgment regulations, now 25 C.F.R. pt. 83)
   petition_number: '15'
   petition_stage: Letter of Intent to Petition 07/07/1975; Acknowledgment effective 05/23/2007 72 FR 8007
   since: '2007-05-23'
@@ -38,9 +37,7 @@ recognition:
   confidence: medium
   verification: read-in-full
   as_of: '1976-07-08'
-  note: Directs state agencies to deal directly with the Mashpee Wampanoag Indian Tribal Council; Executive
-    Order No. 637 (2024) refers to the Mashpee Wampanoag Tribe as recognized by the Commonwealth. Also
-    federally recognized.
+  note: Directs state agencies to deal directly with the Mashpee Wampanoag Indian Tribal Council; Executive Order No. 637 (2024) refers to the Mashpee Wampanoag Tribe as recognized by the Commonwealth. Also federally recognized.
 states:
 - state: MA
   presence: government-office

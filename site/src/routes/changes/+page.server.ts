@@ -1,6 +1,6 @@
 import { readFilters } from '#lib/page-history.ts';
 import { storageForPages } from '#lib/server/essay-pages.ts';
-import { listChanges } from '#lib/server/page-history.ts';
+import { listChanges, pageRecordedSince } from '#lib/server/page-history.ts';
 import { builtPages, recordThisBuildOnce } from '#lib/server/page-history-run.ts';
 import type { PageServerLoad } from './$types';
 
@@ -17,10 +17,16 @@ export const load: PageServerLoad = async ({ url, setHeaders }) => {
 	setHeaders({ 'cache-control': 'public, max-age=60' });
 	const page = filters.page ? directory.get(filters.page) : undefined;
 	const pageTitle = page?.title ?? list.changes.find((change) => change.title)?.title;
+	// A page that has not changed since the history began still shows the
+	// version readers see, so its history is never an empty list.
+	const recordedSince = filters.page && list.changes.length === 0 ? await pageRecordedSince(database, filters.page) : undefined;
 	return {
 		filters,
 		...list,
 		pageTitle,
+		// The kind of page decides whether earlier wording may be shown, even before its first change.
+		pageKind: page?.kind ?? list.changes[0]?.kind,
+		recordedSince,
 		pageOnSite: Boolean(page) || list.changes.some((change) => change.change !== 'removed' && change.title)
 	};
 };
