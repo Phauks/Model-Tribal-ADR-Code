@@ -87,7 +87,9 @@ const neverCached = [
 	fingerprintsAddress,
 	'/_app/version.json',
 	'/copies',
-	'/map-tiles'
+	'/map-tiles',
+	// ZIP downloads (/zip/) are files to keep, not pages to read offline.
+	'/zip'
 ];
 /** Not a real address: the list of collections the reader keeps, stored in the cache. */
 const keptCollectionsKey = '/__kept-collections';
@@ -103,12 +105,22 @@ const internalKeys = new Set([keptCollectionsKey, fingerprintsKey, changedKey]);
  * docs/official-images.md).
  */
 const nationImage = /^\/nations\/[^/]+\/image$/;
+/** Pictures a nation's team added to its page: never saved, for the same reason (decision record 0041). */
+const nationPicture = /^\/nations\/[^/]+\/pictures\//;
+/**
+ * A nation's page, and what its team published on it (changes.json): from the
+ * network whenever there is one, so a part the nation hid, or a change the
+ * project undid, is gone the next time the page is opened. The saved copy
+ * answers only offline.
+ */
+const nationLive = /^\/nations\/[^/.]+\/?(?:changes\.json)?$/;
 
 function isNeverCached(path: string): boolean {
 	return (
 		// The spelling checker's WebAssembly is large and for editors only; the browser's own cache keeps it.
 		path.endsWith('.wasm') ||
 		nationImage.test(path) ||
+		nationPicture.test(path) ||
 		neverCached.some((prefix) => path === prefix || path.startsWith(`${prefix}/`))
 	);
 }
@@ -382,6 +394,16 @@ async function respond(request: Request): Promise<Response> {
 		const response = await fetch(request);
 		if (response.ok) await cache.put(url.pathname, response.clone());
 		return response;
+	}
+
+	if (nationLive.test(url.pathname)) {
+		try {
+			const response = await fetch(request);
+			if (await isFromThisBuild(response)) await cache.put(request, response.clone());
+			return response;
+		} catch {
+			// Offline: the saved copy below, as for any page.
+		}
 	}
 
 	// Pages and page data: answer from the saved copy at once, refresh it in the background.

@@ -141,6 +141,7 @@ The editor's **Checks** button (contribute access and above) opens a panel of wh
 - **Citations and quotations** lists what the publishing checks would report: a citation key with no source record, a quotation with no citation, and the like.
 
 **Go to** (Ctrl+G) shows the essay's counts of components, words and characters, which are not shown otherwise (lead author, Nov. 22, 2026: "instead of lines, use components, words, characters. This doesn't always need to be seen right away"), and moves to a component (a heading, paragraph or box), a word number or a character number.
+- **Sources.** The lead author asked on Nov. 22, 2026 for "easy access to the source documents as well, so provide links to them." With the cursor on a citation, or in a case or law box, a line under the bar names the source and links to its documents: the copy this site keeps, the original address, and an archived copy, each opening in a new tab. "Sources" in the bar lists every source the essay cites, in the order it first cites them, with the same links; choosing one moves the cursor to its first citation. The links come from each source's full citation (`site/src/lib/essays/source-documents.ts`), fetched only for the sources the essay cites (`/workspace/essays/source-documents.json`), since every source's links at once would be about a megabyte.
 
 ## Where published essays live
 

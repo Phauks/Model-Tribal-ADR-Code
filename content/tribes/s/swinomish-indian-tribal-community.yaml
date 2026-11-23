@@ -848,6 +848,16 @@ jurisdiction_agreements:
   verification: read-in-full
   locator: Section on commissions
   note: 'The source reads: “The SHERIFF or his designee may, at any time, suspend or revoke the commission of any Tribal law”. Dated 1999; the day is blank in the copy. The posted copy is a sample in a federal resource library; current status is not confirmed.'
+nearby_state_courts:
+- state: WA
+  county: Skagit County
+  court: Superior Court for Skagit County
+  link: https://www.courts.wa.gov/court_dir/
+  source: state-trial-court-directory-wa
+  confidence: medium
+  verification: inferred
+  locator: Superior Courts by county or district
+  note: Skagit County holds 100% of the land of Swinomish Reservation (Census GEOID 4075), from the Census Bureau's 2020 area-to-county relationship file (census-2020-tribal-area-to-county-relationship-file). The court is the state's trial court of general jurisdiction for the county; the state page lists those courts, and a district court may sit for several counties.
 treaties:
 - title: Treaty with the Dwamish, Suquamish, etc., 1855
   signed: '1855-01-22'

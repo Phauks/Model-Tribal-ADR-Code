@@ -1,9 +1,11 @@
 <script lang="ts">
-	// On a nation's page, under "Laws and agreements": saves the copies this site holds of the
-	// nation's constitutions and laws for offline reading, or removes them (site/DESIGN.md,
-	// section 10; src/lib/offline-documents.ts). Shows nothing when the site holds no copies for the
-	// nation or offline saving is not running.
+	// On a nation's page, under "Laws and agreements": the copies this site holds of the nation's
+	// constitutions and laws, to download as a ZIP or to save for offline reading and remove again
+	// (site/DESIGN.md, section 10; src/lib/offline-documents.ts). Shows nothing when the site holds
+	// no copies for the nation. Saving shows only while offline saving is running.
 	import { onMount } from 'svelte';
+	import Download from '@lucide/svelte/icons/download';
+	import { verifyAddress } from '#lib/checksums.ts';
 	import { formatBytes } from '#lib/offline-collections.ts';
 	import { nationSet, type DocumentSetStatus } from '#lib/offline-documents.ts';
 	import {
@@ -14,10 +16,10 @@
 		type DocumentsProgress
 	} from '#lib/offline-saving.ts';
 
-	let { nation }: { nation: string } = $props();
+	let { nation, held }: { nation: string; held: { count: number; bytes: number } } = $props();
 
 	const set = $derived(nationSet(nation));
-	let held = $state<DocumentSetStatus | undefined>();
+	let saved = $state<DocumentSetStatus | undefined>();
 	let progress = $state<DocumentsProgress | undefined>();
 	let problem = $state<string | undefined>();
 	let online = $state(true);
@@ -26,9 +28,9 @@
 	async function refresh(): Promise<void> {
 		if (!controllingWorker()) return;
 		try {
-			held = (await documentsStatus([set])).sets.find((item) => item.set === set);
+			saved = (await documentsStatus([set])).sets.find((item) => item.set === set);
 		} catch {
-			held = undefined;
+			saved = undefined;
 		}
 	}
 
@@ -36,9 +38,9 @@
 		problem = undefined;
 		try {
 			const status = await saveDocuments(set, (update) => (progress = update));
-			held = status.sets.find((item) => item.set === set);
-			if (held && held.saved < held.total) {
-				problem = `${held.total - held.saved} files could not be saved. Press the button again to try them once more.`;
+			saved = status.sets.find((item) => item.set === set);
+			if (saved && saved.saved < saved.total) {
+				problem = `${saved.total - saved.saved} files could not be saved. Press the button again to try them once more.`;
 			}
 		} catch {
 			problem = 'Saving stopped, perhaps because the connection dropped. Press the button again to continue.';
@@ -50,7 +52,7 @@
 
 	async function remove(): Promise<void> {
 		problem = undefined;
-		held = (await removeDocuments(set).catch(() => undefined))?.sets.find((item) => item.set === set);
+		saved = (await removeDocuments(set).catch(() => undefined))?.sets.find((item) => item.set === set);
 		await refresh();
 	}
 
@@ -67,16 +69,15 @@
 	});
 </script>
 
-{#if held && held.total > 0}
+{#if held.count > 0}
 	<div class="documents-offline no-print">
 		<p>
-			{#if held.saved === 0}
-				This site holds {numbers.format(held.total)} of this nation’s documents, about {formatBytes(held.totalBytes)}. Save
-				them to read without a connection.
-			{:else if held.saved === held.total}
-				<strong>All {numbers.format(held.total)} of this nation’s documents are saved on this device</strong>, {formatBytes(held.bytes)}.
+			{#if saved && saved.total > 0 && saved.saved === saved.total}
+				<strong>All {numbers.format(saved.total)} of this nation’s documents are saved on this device</strong>, {formatBytes(saved.bytes)}.
+			{:else if saved && saved.saved > 0}
+				<strong>{numbers.format(saved.saved)} of this nation’s {numbers.format(saved.total)} documents are saved on this device.</strong>
 			{:else}
-				<strong>{numbers.format(held.saved)} of this nation’s {numbers.format(held.total)} documents are saved on this device.</strong>
+				This site holds {numbers.format(held.count)} of this nation’s documents, about {formatBytes(held.bytes)}. Download them, or save them to read without a connection.
 			{/if}
 		</p>
 		{#if progress}
@@ -88,17 +89,22 @@
 			</p>
 		{:else}
 			<p class="actions">
-				{#if held.saved < held.total}
+				<a class="button button-quiet" href="/zip/nations/{nation}.zip" download>
+					<Download size={18} aria-hidden="true" />
+					Download as a ZIP
+				</a>
+				{#if saved && saved.saved < saved.total}
 					<button class="button" type="button" disabled={!online} onclick={save}>
-						{held.saved === 0 ? 'Save this nation’s documents' : `Save the other ${numbers.format(held.total - held.saved)}`}
+						{saved.saved === 0 ? 'Save on this device' : `Save the other ${numbers.format(saved.total - saved.saved)}`}
 					</button>
 				{/if}
-				{#if held.saved > 0 || held.kept}
+				{#if saved && (saved.saved > 0 || saved.kept)}
 					<button class="button button-quiet" type="button" onclick={remove}>Remove from this device</button>
 				{/if}
 			</p>
-			{#if !online && held.saved < held.total}<p class="hint">Saving needs a connection.</p>{/if}
+			{#if !online}<p class="hint">Downloading and saving need a connection.</p>{/if}
 		{/if}
+		<p class="hint checking">The ZIP lists each document’s SHA-256, so you can <a href={verifyAddress}>verify the files</a>.</p>
 		{#if problem}<p class="field-error" role="alert">{problem}</p>{/if}
 	</div>
 {/if}
@@ -125,6 +131,16 @@
 		display: flex;
 		flex-wrap: wrap;
 		gap: var(--space-2);
+	}
+
+	.documents-offline > .checking {
+		flex: 1 1 100%;
+	}
+
+	.actions a {
+		display: inline-flex;
+		align-items: center;
+		gap: var(--space-1);
 	}
 
 	progress {

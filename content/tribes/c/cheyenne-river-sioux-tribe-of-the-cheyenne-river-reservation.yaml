@@ -645,6 +645,25 @@ jurisdiction_agreements:
   verification: bulk-import
   locator: Section "Comprehensive Tax Collection Agreement"
   note: 'The source reads: “The five Indian tribes with comprehensive tax collection agreements are Cheyenne River Sioux Tribe, Crow Creek Sioux Tribe, Oglala Sioux Tribe, Rosebud Sioux Tribe, and Standing Rock Sioux Tribe.”. Revenue from the tribe''s Special Jurisdiction is remitted on the state return and divided between the state and the tribe under the agreement terms. The page gives no signing date.'
+nearby_state_courts:
+- state: SD
+  county: Dewey County
+  court: Circuit Court for Dewey County
+  link: https://ujs.sd.gov/court-finder/
+  source: state-trial-court-directory-sd
+  confidence: medium
+  verification: inferred
+  locator: Circuit Courts by county or district
+  note: Dewey County holds 54% of the land of Cheyenne River Reservation (Census GEOID 0605), from the Census Bureau's 2020 area-to-county relationship file (census-2020-tribal-area-to-county-relationship-file). The court is the state's trial court of general jurisdiction for the county; the state page lists those courts, and a district court may sit for several counties.
+- state: SD
+  county: Ziebach County
+  court: Circuit Court for Ziebach County
+  link: https://ujs.sd.gov/court-finder/
+  source: state-trial-court-directory-sd
+  confidence: medium
+  verification: inferred
+  locator: Circuit Courts by county or district
+  note: Ziebach County holds 46% of the land of Cheyenne River Reservation (Census GEOID 0605), from the Census Bureau's 2020 area-to-county relationship file (census-2020-tribal-area-to-county-relationship-file). The court is the state's trial court of general jurisdiction for the county; the state page lists those courts, and a district court may sit for several counties.
 treaties:
 - title: Treaty with the Sioux-Miniconjou Band, 1865
   signed: '1865-10-10'

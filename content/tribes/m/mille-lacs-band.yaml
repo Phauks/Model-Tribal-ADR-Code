@@ -500,6 +500,34 @@ jurisdiction_agreements:
   verification: bulk-import
   locator: Table of tribal governments with tax agreements
   note: 'The source reads: “Mille Lacs Hinckley and Onamia”. The page says the agreements "do not have expiration dates" and either party can seek to amend or cancel them. The table lists the short name "Mille Lacs", matched to the roster by name and state.'
+nearby_state_courts:
+- state: MN
+  county: Mille Lacs County
+  court: District Court for Mille Lacs County
+  link: https://mncourts.gov/find-courts/district-courts
+  source: state-trial-court-directory-mn
+  confidence: medium
+  verification: title-only
+  locator: District Courts by county or district
+  note: Mille Lacs County holds 96% of the land of Mille Lacs Reservation (Census GEOID 2270), from the Census Bureau's 2020 area-to-county relationship file (census-2020-tribal-area-to-county-relationship-file). The court is the state's trial court of general jurisdiction for the county; the state page lists those courts, and a district court may sit for several counties.
+- state: MN
+  county: Pine County
+  court: District Court for Pine County
+  link: https://mncourts.gov/find-courts/district-courts
+  source: state-trial-court-directory-mn
+  confidence: medium
+  verification: title-only
+  locator: District Courts by county or district
+  note: Pine County holds 2% of the land of Mille Lacs Reservation (Census GEOID 2270), from the Census Bureau's 2020 area-to-county relationship file (census-2020-tribal-area-to-county-relationship-file). The court is the state's trial court of general jurisdiction for the county; the state page lists those courts, and a district court may sit for several counties.
+- state: MN
+  county: Aitkin County
+  court: District Court for Aitkin County
+  link: https://mncourts.gov/find-courts/district-courts
+  source: state-trial-court-directory-mn
+  confidence: medium
+  verification: title-only
+  locator: District Courts by county or district
+  note: Aitkin County holds 2% of the land of Mille Lacs Reservation (Census GEOID 2270), from the Census Bureau's 2020 area-to-county relationship file (census-2020-tribal-area-to-county-relationship-file). The court is the state's trial court of general jurisdiction for the county; the state page lists those courts, and a district court may sit for several counties.
 treaties:
 - title: Treaty with the Chippewa, 1826
   signed: '1826-08-05'

@@ -15,8 +15,10 @@ export type WorkspacePageName =
 	| 'nation-uploads'
 	| 'reviews'
 	| 'contributors'
+	| 'events'
 	| 'people'
 	| 'nation-teams'
+	| 'nation-pages'
 	| 'access'
 	| 'address-book'
 	| 'changes'
@@ -45,8 +47,11 @@ export const workspacePages: readonly WorkspacePage[] = [
 	// Everyone sees the documents they can open, by role or by grant.
 	{ name: 'reviews', label: 'Reviews', link: '/workspace/reviews' },
 	{ name: 'contributors', label: 'Contributors', link: '/workspace/contributors', needs: 'read-contributors' },
+	{ name: 'events', label: 'Events', link: '/workspace/events', needs: 'manage-events' },
 	{ name: 'people', label: 'People', link: '/workspace/people', needs: 'manage-people' },
 	{ name: 'nation-teams', label: 'Nation teams', link: '/workspace/nation-teams', needs: 'manage-people' },
+	// What nations published on their own pages, for the project to read afterwards.
+	{ name: 'nation-pages', label: 'Nations’ changes', link: '/workspace/nation-pages', needs: 'review-nation-pages' },
 	{ name: 'access', label: 'Access', link: '/workspace/access', needs: 'manage-people' },
 	{ name: 'address-book', label: 'Address book', link: '/workspace/address-book', needs: 'manage-address-book' },
 	{ name: 'changes', label: 'Hidden changes', link: '/workspace/changes', needs: 'hide-changes' },
