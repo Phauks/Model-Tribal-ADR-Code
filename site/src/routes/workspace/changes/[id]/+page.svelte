@@ -1,4 +1,5 @@
 <script lang="ts">
+	import Breadcrumbs from '#lib/components/Breadcrumbs.svelte';
 	import { enhance } from '$app/forms';
 	import { dateTime } from '#lib/change-dates.ts';
 	import { hideReasons, pageKindLabels } from '#lib/page-history.ts';
@@ -13,9 +14,12 @@
 	<title>Hide part of a change · Workspace · Model Tribal ADR Code</title>
 </svelte:head>
 
-<nav aria-label="Breadcrumb" class="small">
-	<a href="/workspace/changes">Hidden changes</a> › {change.id}
-</nav>
+<Breadcrumbs
+	trail={[
+		{ label: 'Workspace', href: '/workspace' },
+		{ label: 'Hidden changes', href: '/workspace/changes' }
+	]}
+/>
 
 <h1>Hide part of this change</h1>
 <p>

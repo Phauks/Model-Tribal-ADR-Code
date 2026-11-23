@@ -77,7 +77,7 @@ export const POST: RequestHandler = async ({ request, url, getClientAddress, loc
 			amountInCents: quote.priceCents,
 			gift: gift.cents > 0 ? { amountInCents: gift.cents, description: 'Gift to Model Tribal ADR Code' } : undefined,
 			email,
-			successAddress: `${url.origin}/book/orders/${identifier}?paid=1`,
+			successAddress: `${url.origin}/orders/${identifier}?paid=1`,
 			cancelAddress: `${url.origin}/book`
 		});
 		await recordPaymentSession(environment.database, identifier, checkout.identifier, now());

@@ -19,7 +19,10 @@ export async function aboutPage(identifier: string) {
 	if (!path || !gitText) error(404, 'No page has this address.');
 	const description = frontMatterField(splitFrontMatter(gitText).frontMatter, 'description')?.trim() || undefined;
 	try {
-		return { ...(await essayPage('about', identifier)), description };
+		const page = await essayPage('about', identifier);
+		// A page with a draft but no publication yet shows the git text, not
+		// the essays' "Not published yet", so readers never see an empty page.
+		if (!('unpublished' in page && page.unpublished)) return { ...page, description };
 	} catch (problem) {
 		// Not published yet (404), no database here (503), or the migration
 		// that adds this part is still to be applied: show the git text.

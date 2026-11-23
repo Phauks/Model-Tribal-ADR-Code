@@ -7,32 +7,20 @@
  */
 import type { D1Database, R2Bucket } from '@cloudflare/workers-types/index.ts';
 import { longestProblemText, openProblemsPerOrder, type ProblemKind, type ProblemStatus } from '#lib/book-order-problems.ts';
+import type { PrintChoice } from '#lib/book-order.ts';
+import { bookLine, statusOfBookOrder, type OrderSummary, type WorkspaceOrder } from '#lib/orders.ts';
 import { openScannedFile, storeSentFile, type OpenedFile } from './file-scans.ts';
 import { newIdentifier } from './identifiers.ts';
 import type { UploadedFile } from './request-form.ts';
-
-export interface OrderSummary {
-	identifier: string;
-	mode: 'test' | 'live';
-	status: string;
-	title: string;
-	pages: number;
-	priceCents: number;
-	/** The gift added at checkout, apart from the price (docs/book-orders.md, "Adding a gift"). */
-	giftCents: number;
-	refundedCents: number;
-	refundedAt: string | null;
-	trackingLink: string | null;
-	placedAt: string;
-	openProblems: number;
-}
 
 interface SummaryRow {
 	identifier: string;
 	mode: 'test' | 'live';
 	status: string;
-	title: string;
+	choice: string;
 	page_count: number;
+	print_job: number | null;
+	printer_status: string | null;
 	price_cents: number;
 	gift_cents: number;
 	refunded_cents: number;
@@ -42,13 +30,13 @@ interface SummaryRow {
 	open_problems: number;
 }
 
+/** A printed-copy order as the general orders lists show it (src/lib/orders.ts). */
 function summaryFromRow(row: SummaryRow): OrderSummary {
 	return {
 		identifier: row.identifier,
 		mode: row.mode,
-		status: row.status,
-		title: row.title,
-		pages: row.page_count,
+		status: statusOfBookOrder(row.status),
+		lines: [bookLine(JSON.parse(row.choice) as PrintChoice, row.page_count, row.print_job, row.printer_status)],
 		priceCents: row.price_cents,
 		giftCents: row.gift_cents,
 		refundedCents: row.refunded_cents,
@@ -59,8 +47,8 @@ function summaryFromRow(row: SummaryRow): OrderSummary {
 	};
 }
 
-const summaryColumns = `o.identifier, o.mode, o.status, o.title, o.page_count, o.price_cents, o.gift_cents, o.refunded_cents, o.refunded_at,
-	o.tracking_link, o.created_at,
+const summaryColumns = `o.identifier, o.mode, o.status, o.choice, o.page_count, o.print_job, o.printer_status, o.price_cents, o.gift_cents,
+	o.refunded_cents, o.refunded_at, o.tracking_link, o.created_at,
 	(SELECT count(*) FROM book_order_problems p WHERE p.order_identifier = o.identifier AND p.status = 'open') AS open_problems`;
 
 /**
@@ -79,42 +67,21 @@ export async function ordersOfAccount(database: D1Database, account: string): Pr
 	return results.map(summaryFromRow);
 }
 
-/** An order as the workspace's Book orders page shows it, with who it goes to and its Stripe payment. */
-export interface WorkspaceOrder extends OrderSummary {
-	recipientName: string | null;
-	email: string | null;
-	paymentSession: string | null;
-	printJob: number | null;
-	printerStatus: string | null;
-	printerMessage: string | null;
-}
-
-/** Every order, newest first, for the workspace's Book orders page. */
+/** Every order, newest first, for the workspace's Orders page, with who it goes to and its Stripe payment. */
 export async function allOrders(database: D1Database, limit = 300): Promise<WorkspaceOrder[]> {
 	const { results } = await database
 		.prepare(
-			`SELECT ${summaryColumns}, o.recipient_name, o.email, o.payment_session, o.print_job, o.printer_status, o.printer_message
+			`SELECT ${summaryColumns}, o.recipient_name, o.email, o.payment_session, o.printer_message
 			FROM book_orders o ORDER BY o.created_at DESC LIMIT ?`
 		)
 		.bind(limit)
-		.all<
-			SummaryRow & {
-				recipient_name: string | null;
-				email: string | null;
-				payment_session: string | null;
-				print_job: number | null;
-				printer_status: string | null;
-				printer_message: string | null;
-			}
-		>();
+		.all<SummaryRow & { recipient_name: string | null; email: string | null; payment_session: string | null; printer_message: string | null }>();
 	return results.map((row) => ({
 		...summaryFromRow(row),
 		recipientName: row.recipient_name,
 		email: row.email,
 		paymentSession: row.payment_session,
-		printJob: row.print_job,
-		printerStatus: row.printer_status,
-		printerMessage: row.printer_message
+		makerMessage: row.printer_message
 	}));
 }
 

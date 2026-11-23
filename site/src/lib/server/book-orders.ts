@@ -165,8 +165,9 @@ export interface NewOrder {
 	fileSet: FileSet;
 	choice: PrintChoice;
 	shippingLevel: ShippingLevel;
+	/** Only the country, state and postal code when Stripe's page asks for the rest (docs/store.md, "Buying in one step"). */
 	shippingAddress: ShippingAddress;
-	email: string;
+	email: string | null;
 	printerCostCents: number;
 	priceCents: number;
 	/** An optional gift to the project, kept apart from the price (docs/book-orders.md, "Adding a gift"). */
@@ -196,7 +197,7 @@ export async function saveOrder(database: D1Database, order: NewOrder, now: stri
 			order.printerCostCents,
 			order.priceCents,
 			order.giftCents ?? 0,
-			order.shippingAddress.name,
+			order.shippingAddress.name || null,
 			JSON.stringify(order.shippingAddress),
 			order.email,
 			order.accountIdentifier ?? null,
@@ -240,6 +241,83 @@ export function orderByIdentifier(database: D1Database, identifier: string): Pro
 
 export function orderByPrintJob(database: D1Database, printJob: number): Promise<OrderRow | null> {
 	return database.prepare('SELECT * FROM book_orders WHERE print_job = ?').bind(printJob).first<OrderRow>();
+}
+
+/**
+ * Whether an order still waits for the street address that Stripe's page asks
+ * for: orders from the Store's one-step dialog are priced by postal code only
+ * (docs/store.md, "Buying in one step").
+ */
+export function needsAddressFromPayment(order: Pick<OrderRow, 'shipping_address'>): boolean {
+	if (!order.shipping_address) return false;
+	return !(JSON.parse(order.shipping_address) as Partial<ShippingAddress>).street1;
+}
+
+/** The address, telephone and email a buyer gave on Stripe's page, for an order from the Store. */
+export async function recordBuyerAddress(database: D1Database, identifier: string, address: ShippingAddress, email: string, now: string): Promise<void> {
+	await database
+		.prepare('UPDATE book_orders SET recipient_name = ?, shipping_address = ?, email = ?, updated_at = ? WHERE identifier = ?')
+		.bind(address.name, JSON.stringify(address), email, now, identifier)
+		.run();
+}
+
+/**
+ * The address from a paid Stripe Checkout session. Stripe reports it under
+ * collected_information.shipping_details in newer API versions and under
+ * shipping_details in older ones, so both are read.
+ */
+export interface PaidSession {
+	customer_details?: { email?: string | null; phone?: string | null; name?: string | null } | null;
+	shipping_details?: StripeShipping | null;
+	collected_information?: { shipping_details?: StripeShipping | null } | null;
+}
+
+interface StripeShipping {
+	name?: string | null;
+	address?: { line1?: string | null; line2?: string | null; city?: string | null; state?: string | null; postal_code?: string | null; country?: string | null } | null;
+}
+
+/** Normalizes a postal code for comparing: no spaces or dashes, capital letters, US ZIP+4 cut to five digits. */
+function postalKey(code: string, country: string): string {
+	const plain = code.replace(/[\s-]/g, '').toUpperCase();
+	return country === 'US' ? plain.slice(0, 5) : plain;
+}
+
+/**
+ * The full shipping address from Stripe's page, or why it cannot be used: it
+ * must be in the country and postal code the price was worked out for, since
+ * Lulu's price (tax and shipping) depends on them.
+ */
+export function addressFromPayment(
+	session: PaidSession,
+	priced: Pick<ShippingAddress, 'country_code' | 'postcode' | 'state_code'>
+): { ok: true; address: ShippingAddress; email: string } | { ok: false; problem: string } {
+	const shipping = session.collected_information?.shipping_details ?? session.shipping_details;
+	const where = shipping?.address;
+	const email = session.customer_details?.email ?? '';
+	const phone = session.customer_details?.phone ?? '';
+	if (!shipping?.name || !where?.line1 || !where.city || !where.postal_code || !where.country) {
+		return { ok: false, problem: 'Stripe sent no shipping address with the payment.' };
+	}
+	if (!email || !phone) return { ok: false, problem: 'Stripe sent no email or telephone with the payment.' };
+	const country = where.country.toUpperCase();
+	if (country !== priced.country_code || postalKey(where.postal_code, country) !== postalKey(priced.postcode, country)) {
+		return { ok: false, problem: `The buyer gave the postal code ${where.postal_code} (${country}) on Stripe's page, but the price was for ${priced.postcode} (${priced.country_code}). Order the copy by hand or refund it.` };
+	}
+	return {
+		ok: true,
+		email,
+		address: {
+			name: shipping.name.slice(0, 100),
+			street1: where.line1.slice(0, 200),
+			street2: where.line2?.slice(0, 200) || undefined,
+			city: where.city.slice(0, 100),
+			state_code: where.state?.toUpperCase() || priced.state_code,
+			postcode: where.postal_code,
+			country_code: country,
+			phone_number: phone.slice(0, 30)
+		}
+	};
 }
 
 export async function recordPaymentSession(database: D1Database, identifier: string, session: string, now: string): Promise<void> {

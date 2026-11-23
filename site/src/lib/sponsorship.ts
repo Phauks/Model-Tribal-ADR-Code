@@ -31,30 +31,26 @@ export const earmarkShortLabels: Record<Earmark, string> = {
 };
 
 /**
- * The things a gift can fund that have a cost the Sponsorship page shows,
- * and what one cost buys: a printed copy for one nation, or a year of the
- * site. The lead author sets each cost on the workspace Sponsors page; none
- * is fixed here, because prices are not settled (docs/sponsorship.md).
+ * The costs the Sponsorship page shows, and what one cost buys: a paperback
+ * printed and mailed to one nation, a hardcover the same way, or a year of
+ * the website. The lead author sets each on the workspace Sponsors page;
+ * none is fixed here, because prices are not settled (docs/sponsorship.md).
  */
-export const costedEarmarks = ['books-for-nations', 'large-format', 'hosting'] as const;
-export type CostedEarmark = (typeof costedEarmarks)[number];
+export const costItems = ['paperback', 'hardcover', 'website'] as const;
+export type CostItem = (typeof costItems)[number];
 
-export const earmarkCostUnits: Record<CostedEarmark, 'copy' | 'year'> = {
-	'books-for-nations': 'copy',
-	'large-format': 'copy',
-	hosting: 'year'
+export const costItemUnits: Record<CostItem, 'copy' | 'year'> = {
+	paperback: 'copy',
+	hardcover: 'copy',
+	website: 'year'
 };
 
 /** How the workspace asks for each cost. */
-export const earmarkCostQuestions: Record<CostedEarmark, string> = {
-	'books-for-nations': 'One paperback, printed and mailed to a nation',
-	'large-format': 'One large-format copy, printed and mailed to a nation',
-	hosting: 'The website for a year, with its web address'
+export const costItemQuestions: Record<CostItem, string> = {
+	paperback: 'One paperback, printed and mailed to a nation',
+	hardcover: 'One hardcover, printed and mailed to a nation',
+	website: 'The website for a year, with its web address'
 };
-
-export function isCostedEarmark(value: unknown): value is CostedEarmark {
-	return typeof value === 'string' && (costedEarmarks as readonly string[]).includes(value);
-}
 
 export function isListing(value: unknown): value is Listing {
 	return typeof value === 'string' && (listings as readonly string[]).includes(value);

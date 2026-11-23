@@ -1,4 +1,5 @@
 <script lang="ts">
+	import Breadcrumbs from '../Breadcrumbs.svelte';
 	// Every published version of an essay, newest first. Each stays readable.
 	let {
 		section,
@@ -19,9 +20,12 @@
 	<title>Versions of {title} · {section} · Model Tribal ADR Code</title>
 </svelte:head>
 
-<nav aria-label="Breadcrumb" class="small">
-	<a href={sectionLink}>{section}</a> › <a href={path}>{title}</a> › Versions
-</nav>
+<Breadcrumbs
+	trail={[
+		{ label: section, href: sectionLink },
+		{ label: title, href: path }
+	]}
+/>
 
 <div class="reading">
 	<h1>Versions of {title}</h1>

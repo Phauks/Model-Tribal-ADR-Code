@@ -5,6 +5,7 @@
 	source of each fact cited beside it and listed under Sources.
 -->
 <script lang="ts">
+	import Breadcrumbs from '#lib/components/Breadcrumbs.svelte';
 	import CitationMarks from '#lib/components/CitationMarks.svelte';
 	import DataTable from '#lib/components/DataTable.svelte';
 	import SourceList from '#lib/components/SourceList.svelte';
@@ -19,10 +20,13 @@
 	<meta name="description" content={data.description} />
 </svelte:head>
 
-<nav aria-label="Breadcrumb" class="small breadcrumb">
-	<a href="/nations">Nations</a> › <a href="/nations/data">Data and charts</a> ›
-	<a href="/nations/data#{data.chart.identifier}">{data.chart.title}</a>
-</nav>
+<Breadcrumbs
+	trail={[
+		{ label: 'Nations', href: '/nations' },
+		{ label: 'Data and charts', href: '/nations/data' },
+		{ label: data.chart.title, href: `/nations/data#${data.chart.identifier}` }
+	]}
+/>
 
 <h1>{data.bar.label}</h1>
 <p class="lead count-line">
@@ -73,10 +77,6 @@
 {/if}
 
 <style>
-	.breadcrumb {
-		margin-bottom: var(--space-2);
-	}
-
 	.count-line {
 		margin-bottom: var(--space-2);
 	}

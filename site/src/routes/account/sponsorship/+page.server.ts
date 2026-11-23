@@ -1,6 +1,6 @@
 import { error, fail, redirect } from '@sveltejs/kit';
 import { can } from '#lib/permissions.ts';
-import { dollars, giftFrequencies, isEarmark, isListing, largestGift, smallestGift, type GiftFrequency } from '#lib/sponsorship.ts';
+import { dollars, giftFrequencies, isEarmark, isListing, largestGift, smallestGift, type Earmark, type GiftFrequency } from '#lib/sponsorship.ts';
 import { workerEnvironment } from '#lib/server/environment.ts';
 import {
 	checkedLink,
@@ -21,6 +21,7 @@ import {
 	removeManager,
 	saveListing,
 	saveStripeCustomer,
+	setEarmark,
 	setLogo,
 	sponsorByIdentifier,
 	sponsorsManagedBy,
@@ -44,6 +45,24 @@ import type { Actions, PageServerLoad, RequestEvent } from './$types';
  * reads: every action below checks that the signed-in account manages the
  * sponsorship.
  */
+/**
+ * What the Sponsorship page's gift form asked for (src/routes/sponsor/), to
+ * fill in the gift form here: an amount, how often, and where the gift goes.
+ * Anything not valid is left blank.
+ */
+function askedGift(search: URLSearchParams): { amount: string; frequency: GiftFrequency | null; toward: Earmark | null } {
+	const text = (search.get('other') || search.get('amount') || '').replace(/[$,\s]/g, '');
+	const amount = Number(text);
+	const valid = text !== '' && Number.isFinite(amount) && amount >= smallestGift && amount <= largestGift && Math.round(amount * 100) === amount * 100;
+	const frequency = search.get('frequency');
+	const toward = search.get('toward');
+	return {
+		amount: valid ? text : '',
+		frequency: giftFrequencies.includes(frequency as GiftFrequency) ? (frequency as GiftFrequency) : null,
+		toward: isEarmark(toward) ? toward : null
+	};
+}
+
 export const load: PageServerLoad = async (event) => {
 	const account = requireAccount(event);
 	const { database } = storage(event);
@@ -74,7 +93,8 @@ export const load: PageServerLoad = async (event) => {
 		largest: largestGift
 	};
 	const others = managed.filter((item) => item.identifier !== sponsor?.identifier).map((item) => ({ identifier: item.identifier, name: item.name }));
-	if (!sponsor) return { sponsor: null, others, gifts, viewingAs, mayDiagnose };
+	const asked = askedGift(event.url.searchParams);
+	if (!sponsor) return { sponsor: null, others, gifts, viewingAs, mayDiagnose, asked };
 
 	const shownMode = publicMode(state);
 	const [managers, invitations, history, allGifts, readyLogos] = await Promise.all([
@@ -134,6 +154,7 @@ export const load: PageServerLoad = async (event) => {
 			...gift,
 			amount: dollars(gift.amountInCents)
 		})),
+		asked,
 		hasStripeCustomer: Boolean(customer),
 		stripeProblem,
 		others,
@@ -162,13 +183,20 @@ export const actions: Actions = {
 	start: async (event) => {
 		const account = requireAccount(event);
 		const { database } = storage(event);
-		const name = formText(await event.request.formData(), 'name', 120);
+		const form = await event.request.formData();
+		const name = formText(form, 'name', 120);
 		if (!name)
 			return fail(400, {
 				problem: 'Give the name of the organization, or your own name if you give as a person.'
 			});
-		const sponsor = await createSponsor(database, account, name);
-		redirect(303, here(sponsor));
+		let sponsor = await createSponsor(database, account, name);
+		// Carry what the Sponsorship page's gift form asked for on to the gift form.
+		const asked = askedGift(new URLSearchParams([...form.entries()].filter((entry): entry is [string, string] => typeof entry[1] === 'string')));
+		if (asked.toward) sponsor = await setEarmark(database, sponsor, { account: account.subject, name: account.email }, asked.toward);
+		const carried = new URLSearchParams();
+		if (asked.amount) carried.set('amount', asked.amount);
+		if (asked.frequency) carried.set('frequency', asked.frequency);
+		redirect(303, here(sponsor, carried.size > 0 ? `&${carried}` : ''));
 	},
 
 	/** Saves the listing, where the gift goes, and the logo. */
@@ -267,6 +295,9 @@ export const actions: Actions = {
 			});
 		}
 		const { database } = storage(event);
+		const earmark = form.get('earmark');
+		// Where this gift goes, chosen beside the amount; Stripe's report records it with the gift.
+		if (isEarmark(earmark)) await setEarmark(database, sponsor, actor, earmark);
 		let customer = stripeCustomerFor(sponsor, state.mode);
 		let address: string;
 		try {

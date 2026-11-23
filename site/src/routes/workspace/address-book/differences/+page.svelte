@@ -1,4 +1,5 @@
 <script lang="ts">
+	import Breadcrumbs from '#lib/components/Breadcrumbs.svelte';
 	import { methodStatusNames } from '#lib/address-book.ts';
 	import { differenceKindNames, type DifferenceKind } from '#lib/address-book-sync.ts';
 	import type { PageProps } from './$types';
@@ -20,7 +21,12 @@
 	<title>Differences · Address book · Workspace · Model Tribal ADR Code</title>
 </svelte:head>
 
-<p class="small"><a href="/workspace/address-book">Address book</a></p>
+<Breadcrumbs
+	trail={[
+		{ label: 'Workspace', href: '/workspace' },
+		{ label: 'Address book', href: '/workspace/address-book' }
+	]}
+/>
 <h1>Differences with the nation pages</h1>
 <p>
 	Office emails and phones on which the nation pages and the address book disagree. The pages show what the profiles in

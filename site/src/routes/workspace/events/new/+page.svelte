@@ -1,4 +1,5 @@
 <script lang="ts">
+	import Breadcrumbs from '#lib/components/Breadcrumbs.svelte';
 	import EventFields from '#lib/components/EventFields.svelte';
 	import type { PageProps } from './$types';
 
@@ -9,7 +10,12 @@
 	<title>Add an event · Workspace · Model Tribal ADR Code</title>
 </svelte:head>
 
-<p class="small"><a href="/workspace/events">Events</a></p>
+<Breadcrumbs
+	trail={[
+		{ label: 'Workspace', href: '/workspace' },
+		{ label: 'Events', href: '/workspace/events' }
+	]}
+/>
 <h1>Add an event</h1>
 <p>The event is saved as a draft. Add the kinds of seat and the speakers on the next page, then publish it.</p>
 

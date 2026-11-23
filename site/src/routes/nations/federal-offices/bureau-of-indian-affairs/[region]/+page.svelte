@@ -10,6 +10,7 @@
 	cite.
 -->
 <script lang="ts">
+	import Breadcrumbs from '#lib/components/Breadcrumbs.svelte';
 	import type { NationIndexRow } from '#lib/server/nation-index.ts';
 	import type { PageProps } from './$types';
 
@@ -29,9 +30,12 @@
 	</ul>
 {/snippet}
 
-<nav aria-label="Breadcrumb" class="small">
-	<a href="/nations">Nations</a> › <a href="/nations/federal-offices">Federal offices</a> › {name}
-</nav>
+<Breadcrumbs
+	trail={[
+		{ label: 'Nations', href: '/nations' },
+		{ label: 'Federal offices', href: '/nations/federal-offices' }
+	]}
+/>
 
 <div class="reading">
 	<h1>Bureau of Indian Affairs {name}</h1>
@@ -59,7 +63,7 @@
 	{#if data.sources.length > 0}
 		<section aria-labelledby="sources">
 			<h2 id="sources">Sources</h2>
-			<ol class="small">
+			<ol class="small sources">
 				{#each data.sources as source (source.title)}
 					<li>{#if source.link}<a href={source.link}>{source.title}</a>{:else}{source.title}{/if}</li>
 				{/each}
@@ -67,3 +71,10 @@
 		</section>
 	{/if}
 </div>
+
+<style>
+	/* Each source is a link on its own line in small type; the space between them keeps each a 24 pixel target (WCAG 2.2, 2.5.8) however its title wraps. */
+	.sources > li + li {
+		margin-top: var(--space-2);
+	}
+</style>

@@ -1,4 +1,5 @@
 <script lang="ts">
+	import Breadcrumbs from '#lib/components/Breadcrumbs.svelte';
 	import DataTable from '#lib/components/DataTable.svelte';
 	import { readableDate } from '#lib/readable-date.ts';
 	import type { TableColumn, TableRow } from '#lib/tables/table-definition.ts';
@@ -35,9 +36,12 @@
 </svelte:head>
 
 <div class="reading">
-	<nav aria-label="Breadcrumb" class="small">
-		<a href="/nations">Nations</a> › <a href="/nations/{data.nation.id}">{data.nation.name}</a> › Court opinions
-	</nav>
+	<Breadcrumbs
+		trail={[
+			{ label: 'Nations', href: '/nations' },
+			{ label: data.nation.name, href: `/nations/${data.nation.id}` }
+		]}
+	/>
 	<h1>Court opinions: {data.nation.name}</h1>
 	<p>
 		These are the opinions of courts serving the nation that are published in the American Tribal Law Reporter or the Navajo Reporter, as the Caselaw Access Project at Harvard Law School Library released them in 2024. Each opens as its own page, with the publisher’s headnotes removed.

@@ -51,6 +51,10 @@
         "$value": "#FFFFFF",
         "$description": "Text on the band. 9.6:1 on band."
       },
+      "band-progress": {
+        "$value": "#F2A65A",
+        "$description": "The filled part of a progress bar on the band, such as the Sponsorship page's goal. 4.8:1 on band."
+      },
       "track-alternative-dispute-resolution": {
         "$value": "#B4461A",
         "$description": "Section numbers and labels in the ADR track. Always paired with the words. 5.3:1 on paper."
@@ -66,6 +70,14 @@
       "placeholder-rule": {
         "$value": "#8A6A00",
         "$description": "Underline of a placeholder."
+      },
+      "comment-highlight": {
+        "$value": "#FFF0B3",
+        "$description": "Words someone commented on, in the editor. Ink on it 14.2:1."
+      },
+      "comment-rule": {
+        "$value": "#8A6A00",
+        "$description": "Underline of commented words, and the edge of the comment being written. 5.3:1 on paper."
       },
       "focus": {
         "$value": "#FFD34D",
@@ -249,6 +261,10 @@
         "$value": "#F3EFEA",
         "$description": "Text on the band. 12.0:1 on band."
       },
+      "band-progress": {
+        "$value": "#F2A65A",
+        "$description": "The filled part of a progress bar on the band, such as the Sponsorship page's goal. 6.8:1 on band."
+      },
       "track-alternative-dispute-resolution": {
         "$value": "#FF9A66",
         "$description": "Section numbers and labels in the ADR track. Always paired with the words. 8.2:1 on paper."
@@ -264,6 +280,14 @@
       "placeholder-rule": {
         "$value": "#E0B83A",
         "$description": "Underline of a placeholder."
+      },
+      "comment-highlight": {
+        "$value": "#4A3B00",
+        "$description": "Words someone commented on, in the editor. Ink on it 9.6:1."
+      },
+      "comment-rule": {
+        "$value": "#E0B83A",
+        "$description": "Underline of commented words, and the edge of the comment being written."
       },
       "focus": {
         "$value": "#FFD34D",

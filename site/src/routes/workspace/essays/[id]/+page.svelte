@@ -1,4 +1,5 @@
 <script lang="ts">
+	import Breadcrumbs from '#lib/components/Breadcrumbs.svelte';
 	import { accessLevelLabels } from '#lib/permissions.ts';
 	import type { PageProps } from './$types';
 
@@ -31,7 +32,12 @@
 	<title>{data.title} · Essays · Workspace · Model Tribal ADR Code</title>
 </svelte:head>
 
-<nav aria-label="Breadcrumb" class="small"><a href="/workspace/essays">Essays</a> › {data.title}</nav>
+<Breadcrumbs
+	trail={[
+		{ label: 'Workspace', href: '/workspace' },
+		{ label: 'Essays', href: '/workspace/essays' }
+	]}
+/>
 
 <h1>{data.title}</h1>
 <p class="small muted">Your access: {accessLevelLabels[data.level].toLocaleLowerCase('en-US')}</p>

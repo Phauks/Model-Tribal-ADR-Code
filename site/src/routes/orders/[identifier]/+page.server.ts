@@ -1,6 +1,8 @@
 import { error, fail } from '@sveltejs/kit';
 import { isProblemKind, kindsWithPhoto, longestProblemText } from '#lib/book-order-problems.ts';
 import { problemsOfOrder, reportProblem } from '#lib/server/book-order-problems.ts';
+import type { PrintChoice } from '#lib/book-order.ts';
+import { bookLine } from '#lib/orders.ts';
 import { orderByIdentifier } from '#lib/server/book-orders.ts';
 import { workerEnvironment } from '#lib/server/environment.ts';
 import { now } from '#lib/server/identifiers.ts';
@@ -13,7 +15,7 @@ export const prerender = false;
 const orderPattern = /^[0-9a-f-]{36}$/;
 
 /**
- * Where a printed copy stands (docs/book-orders.md). The address is long and
+ * Where an order stands (docs/store.md, docs/book-orders.md). Its address was /book/orders/<order> before the Store. The address is long and
  * random, so only the person who ordered knows it; the page still shows no
  * address, telephone or email. From here the buyer reports a problem with
  * the order ("Your orders and problems").
@@ -27,7 +29,7 @@ export const load: PageServerLoad = async ({ params, url, locals }) => {
 	return {
 		justPaid: url.searchParams.get('paid') === '1',
 		order: {
-			title: order.title,
+			lines: [bookLine(JSON.parse(order.choice) as PrintChoice, order.page_count)],
 			mode: order.mode,
 			status: order.status,
 			pages: order.page_count,
