@@ -870,6 +870,25 @@ jurisdiction_agreements:
   verification: read-in-full
   locator: Section I.M, Oregon
   note: 'The source reads: “Confederated Tribes of the Grande Ronde Community of Oregon executed in”. The agreement terms expire on June 30, 2020 unless extended, per the report. Report date is March 2014, so current status needs confirming.'
+nearby_state_courts:
+- state: OR
+  county: Yamhill County
+  court: Circuit Court for Yamhill County
+  link: https://www.courts.oregon.gov/courts/Pages/default.aspx
+  source: state-trial-court-directory-or
+  confidence: medium
+  verification: inferred
+  locator: Circuit Courts by county or district
+  note: Yamhill County holds 90% of the land of Grand Ronde Community (Census GEOID 1365), from the Census Bureau's 2020 area-to-county relationship file (census-2020-tribal-area-to-county-relationship-file). The court is the state's trial court of general jurisdiction for the county; the state page lists those courts, and a district court may sit for several counties.
+- state: OR
+  county: Polk County
+  court: Circuit Court for Polk County
+  link: https://www.courts.oregon.gov/courts/Pages/default.aspx
+  source: state-trial-court-directory-or
+  confidence: medium
+  verification: inferred
+  locator: Circuit Courts by county or district
+  note: Polk County holds 9% of the land of Grand Ronde Community (Census GEOID 1365), from the Census Bureau's 2020 area-to-county relationship file (census-2020-tribal-area-to-county-relationship-file). The court is the state's trial court of general jurisdiction for the county; the state page lists those courts, and a district court may sit for several counties.
 treaties:
 - title: Treaty with the Rogue River, 1853
   signed: '1853-09-10'

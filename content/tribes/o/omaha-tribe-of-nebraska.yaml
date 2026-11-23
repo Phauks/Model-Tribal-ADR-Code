@@ -808,6 +808,43 @@ jurisdiction_agreements:
   verification: read-in-full
   locator: Section I.H, Nebraska
   note: 'The source reads: “Omaha Tribe,”. Effective July 1, 2010 through June 30, 2013 per the report, so the term had ended by the report date unless renewed. Report date is March 2014, so current status needs confirming.'
+nearby_state_courts:
+- state: NE
+  county: Thurston County
+  court: District Court for Thurston County
+  link: https://supremecourt.nebraska.gov/directories/district-court-contacts
+  source: state-trial-court-directory-ne
+  confidence: medium
+  verification: inferred
+  locator: District Courts by county or district
+  note: Thurston County holds 73% of the land of Omaha Reservation (Census GEOID 2550), from the Census Bureau's 2020 area-to-county relationship file (census-2020-tribal-area-to-county-relationship-file). The court is the state's trial court of general jurisdiction for the county; the state page lists those courts, and a district court may sit for several counties.
+- state: NE
+  county: Cuming County
+  court: District Court for Cuming County
+  link: https://supremecourt.nebraska.gov/directories/district-court-contacts
+  source: state-trial-court-directory-ne
+  confidence: medium
+  verification: inferred
+  locator: District Courts by county or district
+  note: Cuming County holds 23% of the land of Omaha Reservation (Census GEOID 2550), from the Census Bureau's 2020 area-to-county relationship file (census-2020-tribal-area-to-county-relationship-file). The court is the state's trial court of general jurisdiction for the county; the state page lists those courts, and a district court may sit for several counties.
+- state: NE
+  county: Burt County
+  court: District Court for Burt County
+  link: https://supremecourt.nebraska.gov/directories/district-court-contacts
+  source: state-trial-court-directory-ne
+  confidence: medium
+  verification: inferred
+  locator: District Courts by county or district
+  note: Burt County holds 3% of the land of Omaha Reservation (Census GEOID 2550), from the Census Bureau's 2020 area-to-county relationship file (census-2020-tribal-area-to-county-relationship-file). The court is the state's trial court of general jurisdiction for the county; the state page lists those courts, and a district court may sit for several counties.
+- state: IA
+  county: Monona County
+  court: District Court for Monona County
+  link: https://www.iowacourts.gov/iowa-courts/district-court
+  source: state-trial-court-directory-ia
+  confidence: medium
+  verification: inferred
+  locator: District Courts by county or district
+  note: Monona County holds 2% of the land of Omaha Reservation (Census GEOID 2550), from the Census Bureau's 2020 area-to-county relationship file (census-2020-tribal-area-to-county-relationship-file). The court is the state's trial court of general jurisdiction for the county; the state page lists those courts, and a district court may sit for several counties.
 treaties:
 - title: Treaty with the Makah, 1815
   signed: '1815-07-20'

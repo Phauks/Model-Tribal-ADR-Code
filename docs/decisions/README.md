@@ -56,5 +56,6 @@ A record is never rewritten after it is accepted. A later record supersedes it a
 | [0046](0046-scan-files-with-clamav-in-a-cloudflare-container.md) | Scan files for malware with ClamAV in a Cloudflare Container, and hold them until clean | Accepted |
 | [0047](0047-show-tribal-court-opinions-from-the-caselaw-access-project.md) | Show tribal court opinions from the Caselaw Access Project on the website | Accepted |
 | [0048](0048-events-and-registration.md) | List events on the website and take registrations, with continuing legal education later | Accepted |
+| [0049](0049-draft-model-court-forms-before-gate-2.md) | Draft model court forms for people using Tribal courts before Gate 2 | Accepted |
 
 Template: Status, Date, Context, Decision, Consequences, Sources.

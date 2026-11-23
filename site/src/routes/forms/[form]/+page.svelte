@@ -128,6 +128,27 @@
 			{/if}
 		</p>
 		<p class="small muted no-print">You can say no to any part of the form. Leave out anything you would rather not answer.</p>
+		{#if template.downloads}
+			<section class="form-downloads no-print" aria-labelledby="form-downloads-heading">
+				<h2 id="form-downloads-heading">Download</h2>
+				<p>A copy to change in a word processor, or to print and fill in by hand.</p>
+				<ul>
+					{#each template.downloads as download (download.href)}
+						<li>
+							<a href={download.href} download>{download.kind}</a>
+							<span class="small muted">({Math.max(1, Math.round(download.bytes / 1024))} KB)</span>
+							<br />
+							<span class="small">SHA-256: <code class="form-hash">{download.sha256}</code></span>
+						</li>
+					{/each}
+				</ul>
+				<p class="small">
+					To check that a file is the one published here, compare its SHA-256 hash with the one above. All the
+					hashes are in <a href="/help/forms/SHA256SUMS.txt">one list</a>; on a computer, put the files in one
+					folder with the list and run <code>sha256sum -c SHA256SUMS.txt</code>.
+				</p>
+			</section>
+		{/if}
 
 		{#if problem}
 			<div class="notice notice-problem" role="alert" tabindex="-1" {@attach focusOnArrival}><p>{problem}</p></div>
@@ -203,6 +224,9 @@
 </div>
 
 <style>
+	.form-hash {
+		overflow-wrap: anywhere;
+	}
 	fieldset {
 		margin: var(--space-6) 0;
 	}

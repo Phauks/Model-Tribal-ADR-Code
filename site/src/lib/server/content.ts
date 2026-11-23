@@ -218,6 +218,8 @@ export interface NationRecord {
 		status?: string;
 		detail?: string;
 	})[];
+	/** The state trial court for each county the nation's Census area lies in. */
+	nearby_state_courts?: (CitedFact & { state: string; county: string; court: string; link?: string })[];
 	treaties?: (CitedFact & {
 		title: string;
 		signed: string;
