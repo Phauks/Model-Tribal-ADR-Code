@@ -17,7 +17,13 @@ describe('pageDownloads', () => {
 			'/nations/cherokee-nation/contacts.vcf'
 		]);
 		expect(pageDownloads('/nations/cherokee-nation').citable).toBe(true);
-		expect(links('/nations/timeline')).toEqual(['/nations/timeline/entries.csv', '/nations/timeline/entries.json']);
+		expect(links('/nations/timeline')).toEqual([
+			'/nations/timeline/entries.csv',
+			'/nations/timeline/entries.json',
+			'/nations/timeline/sources.json',
+			'/nations/timeline/sources.ris',
+			'/nations/timeline/sources.bib'
+		]);
 		expect(links('/nations/map')).toEqual([
 			'/nations/map/land-areas.geojson',
 			'/nations/map/bureau-of-indian-affairs-regions.geojson',
