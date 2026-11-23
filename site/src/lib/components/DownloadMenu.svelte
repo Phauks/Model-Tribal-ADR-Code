@@ -299,7 +299,7 @@
 		right: 0;
 		top: calc(100% + var(--space-2));
 		z-index: 20;
-		width: min(28rem, calc(100vw - 2 * var(--space-3)));
+		width: min(var(--layout-popover), calc(100vw - 2 * var(--space-3)));
 		padding: var(--space-2) 0;
 		background: var(--color-surface-raised);
 		color: var(--color-ink);

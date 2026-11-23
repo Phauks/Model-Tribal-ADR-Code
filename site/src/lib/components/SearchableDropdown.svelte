@@ -239,7 +239,7 @@
 
 	.searchable-dropdown-control {
 		position: relative;
-		width: min(100%, 28rem);
+		width: min(100%, var(--layout-field));
 	}
 
 	.searchable-dropdown-control input {

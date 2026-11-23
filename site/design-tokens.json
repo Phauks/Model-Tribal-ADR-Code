@@ -529,10 +529,10 @@
     "$type": "dimension",
     "measure": {
       "$value": {
-        "value": 51,
-        "unit": "ch"
+        "value": 100,
+        "unit": "cqi"
       },
-      "$description": "Longest reading line at the Standard line width. In Atkinson Hyperlegible Next a ch (the width of a zero) is about 1.5 times an average letter, so 51ch holds about 75 characters of English text, inside the 80 that WCAG 2.2, 1.4.8 asks for (measured in Chromium at 18 px). Readers can pick Narrow (44ch) or Wide (58ch) in Settings."
+      "$description": "The one width every block of running text, notice and panel is held to: a share of the page's column (cqi, a percentage of the nearest size container, which is <main>). 100 fills the column, the default Trevor chose on Nov. 23, 2026. Readers set it from 40 to 100 percent with the Text width slider in Settings."
     },
     "side-column": {
       "$value": {
@@ -540,6 +540,48 @@
         "unit": "rem"
       },
       "$description": "Widest column beside the text on wide screens, such as At a glance and its map on a nation's page."
+    },
+    "label-column": {
+      "$value": {
+        "value": 14,
+        "unit": "rem"
+      },
+      "$description": "Width of the label column in a list of terms and answers (a summary list), beside the text."
+    },
+    "field": {
+      "$value": {
+        "value": 32,
+        "unit": "rem"
+      },
+      "$description": "Widest a one-line text field grows: room for a long name, address or title. Fields never grow past the text width, and narrow screens make them narrower."
+    },
+    "field-short": {
+      "$value": {
+        "value": 12,
+        "unit": "rem"
+      },
+      "$description": "Width of a field for a short answer: a date, a time, an amount, a code."
+    },
+    "popover": {
+      "$value": {
+        "value": 28,
+        "unit": "rem"
+      },
+      "$description": "Widest a small box that opens over the page gets: menus, link previews, citation popups, the search panel, notices. Always held inside the screen."
+    },
+    "panel": {
+      "$value": {
+        "value": 40,
+        "unit": "rem"
+      },
+      "$description": "Widest a dialog or a box that stands alone gets, such as the sign-in box. Always held inside the screen."
+    },
+    "card-min": {
+      "$value": {
+        "value": 18,
+        "unit": "rem"
+      },
+      "$description": "Narrowest a card in a grid of cards gets before the grid drops a column."
     },
     "target-minimum": {
       "$value": {

@@ -201,7 +201,7 @@
 
 <style>
 	.profile-summary {
-		grid-template-columns: minmax(8rem, 14rem) 1fr auto;
+		grid-template-columns: minmax(8rem, var(--layout-label-column)) 1fr auto;
 	}
 
 	.who {

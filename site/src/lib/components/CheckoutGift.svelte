@@ -128,7 +128,7 @@
 	}
 
 	.other input {
-		max-width: 10rem;
+		max-width: var(--layout-field-short);
 	}
 
 	.totals {

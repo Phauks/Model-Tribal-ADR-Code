@@ -709,7 +709,7 @@
 		bottom: calc(100% - var(--space-2));
 		left: var(--space-4);
 		z-index: 5;
-		width: min(22rem, 80vw);
+		width: min(var(--layout-popover), 80vw);
 		padding: var(--space-4);
 		border: 1px solid var(--color-line);
 		border-radius: var(--radius-panel);

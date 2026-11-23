@@ -95,7 +95,7 @@
 	}
 
 	select {
-		max-width: 28rem;
+		max-width: var(--layout-field);
 	}
 
 	input[type='number'] {

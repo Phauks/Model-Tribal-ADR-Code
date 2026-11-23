@@ -114,7 +114,7 @@
 
 <style>
 	.wide {
-		max-width: 48rem;
+		max-width: none;
 	}
 	.preview {
 		display: block;

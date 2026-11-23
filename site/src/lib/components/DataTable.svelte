@@ -302,7 +302,7 @@
 
 	.table-tools .field {
 		flex: 1 1 16rem;
-		max-width: 28rem;
+		max-width: var(--layout-field);
 		margin: 0;
 	}
 

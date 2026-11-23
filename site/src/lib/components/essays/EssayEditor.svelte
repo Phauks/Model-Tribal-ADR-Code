@@ -1884,7 +1884,7 @@
 	}
 
 	.picker {
-		width: min(40rem, 100% - 2 * var(--space-4));
+		width: min(var(--layout-panel), 100% - 2 * var(--space-4));
 		max-height: 85vh;
 		border: 1px solid var(--color-line);
 		border-radius: var(--radius-panel);

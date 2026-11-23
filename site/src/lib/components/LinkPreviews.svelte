@@ -291,7 +291,7 @@
 	.link-preview {
 		position: absolute;
 		z-index: 20;
-		width: min(24rem, calc(100vw - 16px));
+		width: min(var(--layout-popover), calc(100vw - 16px));
 		padding: var(--space-3) var(--space-4);
 		border: 1px solid var(--color-control-border);
 		border-radius: var(--radius-panel);
