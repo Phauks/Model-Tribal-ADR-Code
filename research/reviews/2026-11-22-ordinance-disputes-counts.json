@@ -65,5 +65,18 @@
   "none-found": 13,
   "partly-searched": 32
  },
- "second_look_queue_left": 0
+ "second_look_queue_left": 0,
+ "grab_2026_11_23": {
+  "items_after": 533,
+  "compact_terms_added": 21,
+  "bare_power_flagged": 100,
+  "flags": {
+   "no-steps": 100,
+   "compact-terms": 21,
+   "compact-terms-skipped": 1,
+   "check-overlap": 15,
+   "compact-terms-recorded": 3
+  },
+  "decision": "keep (lead author, 2026-11-23: grab now, classify later; filter by the flags column before use)"
+ }
 }
