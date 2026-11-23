@@ -21,6 +21,7 @@ import { bringBackReminders, getThread, listThreads, moveToFolder, purgeDeleted,
 import { composeDefaults, heldForVirusCheck, replyAllReach, type AnsweredMessage } from '#lib/mail.ts';
 import { releaseAttachment } from '#lib/server/mail/scans.ts';
 import { isSuppressed, suppress } from '#lib/server/mail/suppressions.ts';
+import { mailSigningKey } from '#lib/server/mail/settings.ts';
 import { makeToken } from '#lib/server/mail/tokens.ts';
 import { addAddressBook, addContact, rawMessage, recordingCarrier, testContext, testSettings } from './mail-fixtures.ts';
 import { entrySource, mailCron, mailRunHeader as toolHeader, mailRunTokenKey as toolKey } from '../tools/add-mail-handlers.mjs';
@@ -543,7 +544,7 @@ describe('outreach', () => {
 
 		// The other recipient unsubscribes by address before their turn comes.
 		const waiting = await context.database.prepare(`SELECT identifier, email FROM outreach_recipients WHERE status = 'queued'`).first<{ identifier: string; email: string }>();
-		const token = await makeToken(context.settings.signingKey!, 'unsubscribe', waiting!.identifier);
+		const token = await makeToken((await mailSigningKey(context.settings))!, 'unsubscribe', waiting!.identifier);
 		expect(await receiveMail(context, arriving(rawMessage({ From: 'x@else.example', To: `unsubscribe+${token}@example.org`, Subject: 'unsubscribe' }, ''), `unsubscribe+${token}@example.org`, 'x@else.example'))).toEqual({ outcome: 'unsubscribed', email: waiting!.email });
 		expect(await isSuppressed(context, waiting!.email)).toBe(true);
 		const status = await context.database.prepare('SELECT status FROM outreach_recipients WHERE identifier = ?').bind(waiting!.identifier).first();
@@ -556,7 +557,7 @@ describe('outreach', () => {
 		await addRecipients(context, batch, [{ contactIdentifier: null, nationIdentifier: 'example-nation', email: 'secretary@nation.example', name: 'Office', fields: fieldsFor({ name: 'Office', kind: 'organization', role: null, organizationName: null }, nation, 'https://example.org', 'Lead'), timeZone: 'America/Phoenix' }]);
 		const row = await context.database.prepare('SELECT identifier FROM outreach_recipients').first<{ identifier: string }>();
 		expect(await unsubscribeWithToken(context, 'notatoken', 'test')).toBeNull();
-		expect(await unsubscribeWithToken(context, await makeToken(context.settings.signingKey!, 'unsubscribe', row!.identifier), 'test')).toBe('secretary@nation.example');
+		expect(await unsubscribeWithToken(context, await makeToken((await mailSigningKey(context.settings))!, 'unsubscribe', row!.identifier), 'test')).toBe('secretary@nation.example');
 		expect(await isSuppressed(context, 'secretary@nation.example')).toBe(true);
 	});
 

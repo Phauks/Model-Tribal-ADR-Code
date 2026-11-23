@@ -75,7 +75,7 @@ describe('service checks', () => {
 			environment({
 				BOOK_ORDERS: 'test',
 				BOOK_ORDERS_CONTACT_EMAIL: 'books@example.org',
-				BOOK_FILE_LINK_SECRET: 'x',
+				bookFileLinkKey: { get: async () => 'x' },
 				LULU_ENVIRONMENT: 'sandbox',
 				LULU_CLIENT_KEY: 'k',
 				LULU_CLIENT_SECRET: 's',

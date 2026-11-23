@@ -8,7 +8,7 @@ Readers can order a printed copy of the book on the website at `/book`. Lulu's P
 2. `/book/quote` asks Lulu's print-job cost calculation for that product, page count and address. Lulu's answer includes printing, shipping, its order fee and tax.
 3. `/book/order` prices the order again, records it in the `book_orders` table, and opens a Stripe Checkout page for the reader's price: Lulu's total, plus `BOOK_MARGIN_CENTS`, plus Stripe's card fee (`readerPriceCents`).
 4. When Stripe reports the payment at `/book/payment-webhook`, the order is marked paid once and sent to Lulu as a print job, with a 120-minute delay before printing so a mistake can still be canceled. Lulu charges the card on file in the project's Lulu API account.
-5. Lulu downloads the interior and cover from `/book/files/...`, with a link key made from `BOOK_FILE_LINK_SECRET` for that one file.
+5. Lulu downloads the interior and cover from `/book/files/...`, with a link key made from the `bookFileLinkKey` secret for that one file.
 6. Lulu reports status changes at `/book/printer-webhook` (topic `PRINT_JOB_STATUS_CHANGED`, signed with the API secret). The reader's page `/book/orders/<order>` shows the status and tracking link.
 7. Name, address, telephone and email are cleared 90 days after an order ships, is canceled or expires.
 
@@ -53,7 +53,7 @@ All are set in the Cloudflare dashboard for the Worker, never in the repository 
 | `BOOK_ORDERS` | Variable | `test` (Stripe test keys and Lulu's sandbox only; enforced) or `live`. Anything else keeps ordering off. |
 | `BOOK_ORDERS_CONTACT_EMAIL` | Variable | The project's address Lulu writes to about a print job. |
 | `BOOK_MARGIN_CENTS` | Variable | Added to each copy toward copies sent to nations. Default 0. |
-| `BOOK_FILE_LINK_SECRET` | Secret | Any long random text; signs the links Lulu downloads files from. |
+| `bookFileLinkKey` | Secrets Store binding | Signs the links Lulu downloads files from. The secret `MODEL_TRIBAL_CODE_BOOK_FILE_LINK_KEY` is made once in Secrets Store; nothing to set (decision record 0053). |
 | `LULU_ENVIRONMENT` | Variable | `sandbox` or `production`. |
 | `LULU_CLIENT_KEY`, `LULU_CLIENT_SECRET` | Secrets | From the Lulu developer portal (separate accounts for sandbox and production). |
 | `STRIPE_SECRET_KEY` | Secret | A restricted key is enough: write access to Checkout Sessions. |

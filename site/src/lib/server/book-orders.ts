@@ -19,6 +19,7 @@ import {
 	type LuluSettings,
 	type ShippingAddress
 } from './lulu.ts';
+import type { StoredSecret } from './stored-secrets.ts';
 import { isTestKey, stripeSettings, type StripeSettings } from './stripe.ts';
 
 export type OrderMode = 'test' | 'live';
@@ -27,7 +28,8 @@ export interface OrderingOpen {
 	mode: OrderMode;
 	lulu: LuluSettings;
 	stripe: StripeSettings;
-	fileLinkSecret: string;
+	/** Signs the links Lulu downloads a book's files from: the bookFileLinkKey binding to Cloudflare Secrets Store. Read it with storedSecret. */
+	fileLinkSecret: StoredSecret;
 	contactEmail: string;
 	/** Added to each copy's price, in cents, toward copies sent to nations (BOOK_MARGIN_CENTS). */
 	marginCents: number;
@@ -39,7 +41,7 @@ export function orderingState(environment: WorkerEnvironment): { open: true; set
 	if (mode !== 'test' && mode !== 'live') return { open: false, reason: 'Ordering printed copies has not opened yet.' };
 	const lulu = luluSettings(environment);
 	const stripe = stripeSettings(environment);
-	const fileLinkSecret = environment.BOOK_FILE_LINK_SECRET;
+	const fileLinkSecret = environment.bookFileLinkKey;
 	const contactEmail = environment.BOOK_ORDERS_CONTACT_EMAIL;
 	if (!lulu || !stripe || !fileLinkSecret || !contactEmail) {
 		return { open: false, reason: 'Ordering is not set up yet.' };

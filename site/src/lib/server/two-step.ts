@@ -10,7 +10,7 @@
  * little off, and never twice (NIST SP 800-63B-4, section 3.1.4.1).
  *
  * The shared secret is kept encrypted with AES-GCM under a key derived from
- * the Worker's PASSWORD_KEY secret, when that is set (NIST SP 800-63B-4,
+ * the Worker's password key (the passwordKey binding), when that is set (NIST SP 800-63B-4,
  * section 3.1.4.1, asks that these secrets be protected; it is kept, not
  * hashed, because the site has to make the same codes as the app). Until the
  * key is set the secret is kept as it is, and it is encrypted the next time
@@ -192,7 +192,7 @@ export async function openSecret(stored: string, passwordKey: string | undefined
 	if (stored.startsWith(plainPrefix)) return stored.slice(plainPrefix.length);
 	if (!stored.startsWith(sealedPrefix)) return undefined;
 	if (!passwordKey) {
-		console.error('An authenticator secret is encrypted but PASSWORD_KEY is not set, so it cannot be checked.');
+		console.error('An authenticator secret is encrypted but the password key cannot be read, so it cannot be checked.');
 		return undefined;
 	}
 	try {
@@ -204,7 +204,7 @@ export async function openSecret(stored: string, passwordKey: string | undefined
 		);
 		return new TextDecoder().decode(opened);
 	} catch (problem) {
-		console.error('An authenticator secret could not be opened; was PASSWORD_KEY changed?', problem);
+		console.error('An authenticator secret could not be opened; was the password key changed?', problem);
 		return undefined;
 	}
 }

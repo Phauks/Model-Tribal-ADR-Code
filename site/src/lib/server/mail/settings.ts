@@ -1,8 +1,10 @@
 /**
- * The inbox's settings, from wrangler.jsonc variables and dashboard secrets
+ * The inbox's settings, from wrangler.jsonc variables, the mailSigningKey
+ * binding to Cloudflare Secrets Store and the outreach mailbox's password
  * (site/MAIL.md, "Switching email on"). While MAIL_DOMAIN is empty the inbox
  * pages still open, but nothing is received or sent.
  */
+import { storedSecret, type StoredSecret } from '../stored-secrets.ts';
 
 export interface MailSettings {
 	/** The project's mail domain, such as example.org, or null while email is off. */
@@ -18,8 +20,17 @@ export interface MailSettings {
 	/** The sender's name on mail from the project. */
 	senderName: string;
 	outreach: OutreachSettings | null;
-	/** Secret for signing unsubscribe and acknowledgment links. */
-	signingKey: string | null;
+	/**
+	 * The key that signs unsubscribe and acknowledgment links: the
+	 * mailSigningKey binding to Cloudflare Secrets Store. Read it with
+	 * mailSigningKey.
+	 */
+	signingKey: StoredSecret | null;
+}
+
+/** The value of the key that signs unsubscribe and acknowledgment links, or nothing while it is not set. */
+export function mailSigningKey(settings: MailSettings): Promise<string | undefined> {
+	return storedSecret(settings.signingKey ?? undefined);
 }
 
 export interface OutreachSettings {
@@ -55,7 +66,7 @@ export function mailSettings(environment: WorkerEnvironment): MailSettings {
 		siteAddress: text(environment.SITE_ADDRESS)?.replace(/\/+$/, '') ?? null,
 		senderName: text(environment.MAIL_SENDER_NAME) ?? 'Model Tribal ADR Code',
 		outreach: outreachSettings(environment),
-		signingKey: text(environment.MAIL_SIGNING_KEY)
+		signingKey: environment.mailSigningKey ?? null
 	};
 }
 

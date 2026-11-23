@@ -5,8 +5,8 @@ import {
 	codeLifetimeMinutes,
 	issueCode,
 	looksLikeEmail,
+	passwordKeyOf,
 	tryPassword,
-	usablePasswordKey,
 	useCode,
 	verifiedAccount
 } from '#lib/server/accounts.ts';
@@ -161,7 +161,7 @@ export const actions: Actions = {
 		if (password === '') return again('Enter your password.', 'password');
 		if (!(await withinLimit(request, email, 'password'))) return again(tooMany, undefined, 429);
 
-		const result = await tryPassword(environment.database, email, password, usablePasswordKey(environment.PASSWORD_KEY));
+		const result = await tryPassword(environment.database, email, password, await passwordKeyOf(environment));
 		if (result.outcome === 'paused' || result.outcome === 'off') {
 			return fail(429, {
 				step: 'email' as const,

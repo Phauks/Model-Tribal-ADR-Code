@@ -16,7 +16,7 @@
 import PostalMime, { type Email } from 'postal-mime';
 import { cleanAddress, messageIds, normalizeSubject, snippetOf, asksToStop, type MailAddress } from '#lib/mail.ts';
 import { actionStatement, bucketKeys, currentTime, type MailContext } from './context.ts';
-import { isProjectAddress } from './settings.ts';
+import { isProjectAddress, mailSigningKey } from './settings.ts';
 import { factsFor, ruleAddressForms, runRules } from './rules.ts';
 import { storeSentFile } from '#lib/server/file-scans.ts';
 import { blockedPattern } from './senders.ts';
@@ -250,7 +250,8 @@ export async function receiveMail(context: MailContext, arriving: ArrivingMail):
 	// Unsubscribe by address: unsubscribe+<token>@domain.
 	const token = unsubscribeAddressToken(arriving.to);
 	if (token) {
-		const recipient = settings.signingKey ? await readToken(settings.signingKey, 'unsubscribe', token) : null;
+		const signingKey = await mailSigningKey(settings);
+		const recipient = signingKey ? await readToken(signingKey, 'unsubscribe', token) : null;
 		const row = recipient
 			? await context.database.prepare('SELECT email FROM outreach_recipients WHERE identifier = ?').bind(recipient).first<{ email: string }>()
 			: null;

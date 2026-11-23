@@ -140,7 +140,7 @@ describe('when ordering is open', () => {
 	const complete = {
 		BOOK_ORDERS: 'test',
 		BOOK_ORDERS_CONTACT_EMAIL: 'project@example.org',
-		BOOK_FILE_LINK_SECRET: 'links',
+		bookFileLinkKey: { get: async () => 'links' },
 		LULU_ENVIRONMENT: 'sandbox',
 		LULU_CLIENT_KEY: 'key',
 		LULU_CLIENT_SECRET: 'secret',
@@ -165,7 +165,7 @@ describe('when ordering is open', () => {
 	});
 
 	it('closes when any setting is missing', () => {
-		expect(orderingState({ ...complete, BOOK_FILE_LINK_SECRET: undefined }).open).toBe(false);
+		expect(orderingState({ ...complete, bookFileLinkKey: undefined }).open).toBe(false);
 	});
 });
 

@@ -6,6 +6,7 @@ import type { EmailSendBinding } from '#lib/server/mail/carriers.ts';
 import type { SignInEmailBinding } from '#lib/server/sign-in-email.ts';
 import type { UpdateEmailBinding } from '#lib/server/following-email.ts';
 import type { SignedInPerson } from '#lib/server/people.ts';
+import type { StoredSecret } from '#lib/server/stored-secrets.ts';
 
 declare global {
 	namespace App {
@@ -40,8 +41,9 @@ declare global {
 
 	/**
 	 * Bindings and variables in wrangler.jsonc, and settings made in the
-	 * Cloudflare dashboard (decision record 0006). Settings are optional here
-	 * because the site still builds and serves its public pages without them.
+	 * Cloudflare dashboard (decision records 0006 and 0053). Settings are
+	 * optional here because the site still builds and serves its public pages
+	 * without them.
 	 */
 	interface WorkerEnvironment {
 		database: D1Database;
@@ -80,8 +82,8 @@ declare global {
 		MAIL_NOTICE_ADDRESS?: string;
 		/** The sender's name on mail from the project. */
 		MAIL_SENDER_NAME?: string;
-		/** Secret: signs unsubscribe and acknowledgment links. Set as a Secret in the dashboard. */
-		MAIL_SIGNING_KEY?: string;
+		/** Signs unsubscribe and acknowledgment links: a secret in Cloudflare Secrets Store (src/lib/server/stored-secrets.ts). */
+		mailSigningKey?: StoredSecret;
 		/** Which service carries outreach: "smtp" (src/lib/server/mail/carriers.ts). Empty while outreach is off. */
 		OUTREACH_CARRIER?: string;
 		/** The address outreach comes from, on the outreach mail service. */
@@ -97,12 +99,12 @@ declare global {
 		OUTREACH_SMTP_PASSWORD?: string;
 		/**
 		 * The secret key every password hash also goes through
-		 * (src/lib/server/sign-in-secrets.ts, passwordHash). A Secret in the
-		 * Cloudflare dashboard, at least 32 random characters, never in GitHub.
-		 * Once set it must never be removed or changed, or passwords made with
-		 * it stop working.
+		 * (src/lib/server/sign-in-secrets.ts, passwordHash), and that encrypts
+		 * authenticator secrets: a random secret in Cloudflare Secrets Store
+		 * (src/lib/server/stored-secrets.ts). Once used it must never be removed
+		 * or changed, or passwords made with it stop working.
 		 */
-		PASSWORD_KEY?: string;
+		passwordKey?: StoredSecret;
 		/**
 		 * Printed copies (docs/book-orders.md). Ordering stays off unless
 		 * BOOK_ORDERS is "test" (Stripe test keys and Lulu's sandbox only) or
@@ -113,8 +115,8 @@ declare global {
 		BOOK_ORDERS_CONTACT_EMAIL?: string;
 		/** Added to each copy's price, in cents, toward copies sent to nations. */
 		BOOK_MARGIN_CENTS?: string;
-		/** Signs the links Lulu uses to download a book's files. */
-		BOOK_FILE_LINK_SECRET?: string;
+		/** Signs the links Lulu uses to download a book's files: a secret in Cloudflare Secrets Store. */
+		bookFileLinkKey?: StoredSecret;
 		/** "sandbox" or "production". */
 		LULU_ENVIRONMENT?: string;
 		LULU_CLIENT_KEY?: string;

@@ -10,6 +10,7 @@
 import { orderingState, fileLink, markPaid, orderByIdentifier, recordPrinterRefusal, recordPrintJob } from '#lib/server/book-orders.ts';
 import { workerEnvironment } from '#lib/server/environment.ts';
 import { now } from '#lib/server/identifiers.ts';
+import { storedSecret } from '#lib/server/stored-secrets.ts';
 import { createPrintJob, LuluError, type ShippingAddress } from '#lib/server/lulu.ts';
 import { isStripeWebhook } from '#lib/server/stripe.ts';
 import { foilStampText, type PrintChoice } from '#lib/book-order.ts';
@@ -48,6 +49,10 @@ export const POST: RequestHandler = async ({ request, url }) => {
 	}
 	if (event.type !== 'checkout.session.completed' || session.payment_status !== 'paid') return plain('Ignored.', 200);
 
+	// Read before the order is marked paid, so that Stripe's retry finds it still waiting.
+	const signingKey = await storedSecret(settings.fileLinkSecret);
+	if (!signingKey) return plain('The file link key cannot be read.', 500);
+
 	// Stripe may send the same event twice; only the first one sends the order to Lulu.
 	if (!(await markPaid(environment.database, identifier, session.id, now()))) return plain('Already handled.', 200);
 	const order = await orderByIdentifier(environment.database, identifier);
@@ -68,8 +73,8 @@ export const POST: RequestHandler = async ({ request, url }) => {
 					quantity: 1,
 					printable_normalization: {
 						pod_package_id: order.pod_package_identifier,
-						interior: { source_url: await fileLink(url.origin, settings.fileLinkSecret, order.file_set, 'interior.pdf') },
-						cover: { source_url: await fileLink(url.origin, settings.fileLinkSecret, order.file_set, 'cover.pdf') }
+						interior: { source_url: await fileLink(url.origin, signingKey, order.file_set, 'interior.pdf') },
+						cover: { source_url: await fileLink(url.origin, signingKey, order.file_set, 'cover.pdf') }
 					},
 					...(choice.binding === 'linenWrap'
 						? foilStampText(order.title)
