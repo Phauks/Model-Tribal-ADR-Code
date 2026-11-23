@@ -117,6 +117,20 @@ if (!existsSync(tileMapPath) || !existsSync(landAreasPath)) {
 		const inside = latitude >= south && latitude <= north && (west > east || (longitude >= west && longitude <= east));
 		if (!inside) problem(`tile-map.json: land area ${area.code}'s dot is outside its box`);
 	}
+	// Each shaded view (src/lib/shaded-map-views.ts): every shaded area on the tiled map goes to a row its table has.
+	for (const [view, shading] of Object.entries(tileMap.shading ?? {})) {
+		const viewPath = path.join(output, `nations/map/views/${view}.json`);
+		if (!existsSync(viewPath)) {
+			problem(`nations/map/views/${view}.json is missing from the build`);
+			continue;
+		}
+		const body = JSON.parse(readFileSync(viewPath, 'utf8'));
+		const viewRows = new Set([...body.nationRows, ...body.areaRows].map((row) => row.anchor));
+		if (!body.drawing?.startsWith('<svg')) problem(`views/${view}.json has no drawing`);
+		for (const [code, area] of Object.entries(shading.areas)) {
+			if (!viewRows.has(area.anchor)) problem(`tile-map.json: ${view} sends land area ${code} to ${area.anchor}, which is not a row of its table`);
+		}
+	}
 }
 
 const manifestPath = path.join(output, 'manifest.webmanifest');

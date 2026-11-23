@@ -13,6 +13,7 @@
  * The maps' styles are in the page, under .map-figure.
  */
 import type { LandAreaKind, MapGeometry, ScaleBar } from './map-geometry.ts';
+import type { ShadedMapView } from './shaded-map-views.ts';
 
 /** A state or territory, with how many nations have a recorded presence there. */
 export interface StateCount {
@@ -57,7 +58,7 @@ export interface NationsMapDrawings {
 }
 
 /** Every view's key, including views fetched when opened. */
-export type NationsMapView = keyof NationsMapDrawings | 'lands';
+export type NationsMapView = keyof NationsMapDrawings | 'lands' | ShadedMapView;
 
 /** The Census Bureau's names for each kind of area, as the table and tooltips give them. */
 export const landAreaKindLabels: Record<LandAreaKind, string> = {
@@ -269,6 +270,69 @@ export function drawLandAreasMap(geometry: MapGeometry, areas: LandAreaCount[]):
 		`<path class="land" d="${geometry.land}"/>` +
 		`<path class="state-borders faint" d="${geometry.stateBorders}"/>` +
 		`<g class="land-areas">${layers.statistical.join('')}${layers.state.join('')}${layers.federal.join('')}</g>` +
+		drawFrameLabels(geometry) +
+		`</svg>`
+	);
+}
+
+/** A land area as a shaded view draws it (src/lib/shaded-map-views.ts): its map-class shade, its tooltip, and the table row it goes to if it has one. */
+export interface ShadedLandArea {
+	identifier: string;
+	shade: number;
+	anchor?: string;
+	description: string;
+}
+
+/** The middle of a drawn shape's bounding box, read from its path. */
+function middleOf(path: string): { x: number; y: number } | undefined {
+	const numbers = path.match(/-?\d+(?:\.\d+)?/g)?.map(Number) ?? [];
+	if (numbers.length < 2) return undefined;
+	const xs = numbers.filter((_, index) => index % 2 === 0);
+	const ys = numbers.filter((_, index) => index % 2 === 1);
+	return { x: (Math.min(...xs) + Math.max(...xs)) / 2, y: (Math.min(...ys) + Math.max(...ys)) / 2 };
+}
+
+const median = (values: number[]) => [...values].sort((first, second) => first - second)[Math.floor(values.length / 2)];
+
+/**
+ * A view that shades each land area by a fact about its nations, such as Public Law 280 (src/lib/shaded-map-views.ts). Areas with no fact are drawn in the lightest shade and go nowhere; the rest go to their row in the view's table. Labels, if given, are written at the middle of their areas, as the Indian Health Service view names its Areas.
+ */
+export function drawShadedLandAreasMap(
+	geometry: MapGeometry,
+	view: { key: string; title: string; areas: ShadedLandArea[]; labels?: { name: string; identifiers: string[] }[] }
+): string {
+	const byIdentifier = new Map(view.areas.map((area) => [area.identifier, area]));
+	const unrecorded: string[] = [];
+	const recorded: string[] = [];
+	const middles = new Map<string, { x: number; y: number }>();
+	for (const shape of geometry.landAreas) {
+		const area = byIdentifier.get(shape.identifier);
+		if (!area) continue;
+		const middle = shape.dot ?? middleOf(shape.path);
+		if (middle) middles.set(shape.identifier, middle);
+		const fill = `land-area count-${area.shade}`;
+		const drawn = shape.dot
+			? titled('circle', `class="${fill} dot" cx="${shape.dot.x}" cy="${shape.dot.y}" r="3"`, area.description)
+			: titled('path', `class="${fill}" d="${shape.path}"`, area.description);
+		if (area.anchor) recorded.push(link(area.anchor, area.description, drawn));
+		else unrecorded.push(`<g class="unlinked">${drawn}</g>`);
+	}
+	const labels = (view.labels ?? []).flatMap((label) => {
+		const points = label.identifiers.map((identifier) => middles.get(identifier)).filter((point): point is { x: number; y: number } => Boolean(point));
+		if (points.length === 0) return [];
+		const x = median(points.map((point) => point.x));
+		const y = median(points.map((point) => point.y));
+		return [`<text class="map-label region-label" x="${x.toFixed(1)}" y="${y.toFixed(1)}">${escape(label.name)}</text>`];
+	});
+	const titleId = `${view.key}-title`;
+	return (
+		`<svg class="map" viewBox="0 0 ${geometry.width} ${geometry.height}" role="group" aria-labelledby="${titleId}">` +
+		`<title id="${titleId}">${escape(view.title)}</title>` +
+		drawFrames(geometry) +
+		`<path class="land" d="${geometry.land}"/>` +
+		`<path class="state-borders faint" d="${geometry.stateBorders}"/>` +
+		`<g class="land-areas">${unrecorded.join('')}${recorded.join('')}</g>` +
+		(labels.length > 0 ? `<g class="region-labels" aria-hidden="true">${labels.join('')}</g>` : '') +
 		drawFrameLabels(geometry) +
 		`</svg>`
 	);
