@@ -57,6 +57,8 @@ declare module 'virtual:essay-library' {
 	export const essaysInGit: Record<string, string>;
 	/** Each court case's name and decision date, by source key. */
 	export const essayCaseNames: Record<string, { title: string; date: number[] }>;
+	/** Where a case's name links when no essay has a box for it (the copy of the opinion on this site, or where it was published), by source key. */
+	export const essayCaseLinks: Record<string, string>;
 	/** Words the spelling check should accept: names of nations, glossary terms and court cases. */
 	export const essaySpellingWords: string[];
 }

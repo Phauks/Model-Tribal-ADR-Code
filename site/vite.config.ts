@@ -9,6 +9,7 @@ import { buildMapGeometry } from './src/lib/map-geometry.ts';
 import { parseGitLog, type Change } from './src/lib/recent-changes.ts';
 import { fullCitations } from './src/lib/server/citations.ts';
 import { caseNames, essaysInGit, everyBoxFact, everyFullCitation, glossaryTerms, spellingWords } from './src/lib/server/essay-library.ts';
+import { caseLinks } from './src/lib/server/case-previews.ts';
 import { buildFormCatalog } from './src/lib/server/form-catalog.ts';
 import { followableBuild } from './src/lib/server/followable-build.ts';
 import { historyBuild } from './src/lib/server/page-history-build.ts';
@@ -316,6 +317,7 @@ function essayLibrary(): Plugin {
 				`export const essayBoxFacts = ${JSON.stringify(everyBoxFact())};`,
 				`export const essaysInGit = ${JSON.stringify(essaysInGit())};`,
 				`export const essayCaseNames = ${JSON.stringify(caseNames())};`,
+				`export const essayCaseLinks = ${JSON.stringify(caseLinks())};`,
 				`export const essaySpellingWords = ${JSON.stringify(spellingWords())};`
 			].join('\n');
 		}
