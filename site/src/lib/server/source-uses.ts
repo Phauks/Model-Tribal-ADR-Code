@@ -11,6 +11,11 @@
  * place in the source (locator) and the date the value was true (as of)
  * (docs/citation-style.md). add() and use() record a use that has no marker
  * of its own, such as the outlines a map is drawn from.
+ *
+ * part() names the part of the page the next citations sit in, such as
+ * "Courts and dispute resolution". A source keeps the part that first cites
+ * it, so a long Sources list can fold into groups that follow the page
+ * (Trevor, Nov. 23, 2026; src/lib/source-groups.ts).
  */
 import { markAnchor, type CitationMark } from '../citation-marks.ts';
 import type { CitedFact } from './content.ts';
@@ -46,6 +51,10 @@ export interface SourceEntry {
 	backlinks: string[];
 	/** The facts, grouped so a heading and a locator shared by several facts appear once. */
 	groups: SourceUseGroup[];
+	/** The part of the page that first cites the source, such as "Courts and dispute resolution". */
+	part?: string;
+	/** Within that part, the document or heading that first cites it, such as "Gaming compact with Arizona". */
+	subpart?: string;
 }
 
 /** The locator and as-of date of a cited fact, as one phrase. */
@@ -60,10 +69,20 @@ export class SourceUses {
 		Omit<SourceEntry, 'groups'> & { uses: SourceUse[] }
 	>();
 	readonly #citation: (key: string) => string;
+	#part: { part?: string; subpart?: string } = {};
 
 	/** citation gives a source's citation as HTML; by default, the short form formatSource writes. */
 	constructor(citation: (key: string) => string = (key) => formatSource(sources().get(key), key)) {
 		this.#citation = citation;
+	}
+
+	/**
+	 * Names the part of the page, and optionally the document or heading within
+	 * it, that the citations recorded next sit in. A source already numbered
+	 * keeps the part that first cited it.
+	 */
+	part(part: string, subpart?: string): void {
+		this.#part = { part, subpart };
 	}
 
 	/** Records that the source with this key supports one fact on the page, and returns the source's number. */
@@ -75,7 +94,8 @@ export class SourceUses {
 				key,
 				html: this.#citation(key),
 				backlinks: [],
-				uses: []
+				uses: [],
+				...this.#part
 			};
 			this.#entries.set(key, entry);
 		}

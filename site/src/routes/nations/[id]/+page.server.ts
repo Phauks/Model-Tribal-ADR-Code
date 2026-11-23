@@ -15,7 +15,7 @@ import { emptySectionNote, type EmptyNote } from '#lib/search-status.ts';
 import { layoutPresenceMap, pointInBox, shapeInBox, shareStateShapes, type BoxLayers, type NationMapData, type PresenceMapLayout } from '#lib/presence-map.ts';
 import { landAreaKindLabels } from '#lib/nations-map-drawing.ts';
 import { readableDate } from '#lib/readable-date.ts';
-import { documentHeading, documentHistoriesFor } from '#lib/server/document-history.ts';
+import { documentHeading, documentHistoryView, nationDocumentHistories } from '#lib/server/document-history.ts';
 import { nationServices, type ServiceCategory } from '#lib/nation-services.ts';
 import { SourceUses, type CitationMark } from '#lib/server/source-uses.ts';
 import { recognitionView } from '#lib/server/recognition.ts';
@@ -532,6 +532,10 @@ export const load: PageServerLoad = ({ params }) => {
 	}
 
 	const sources = new SourceUses();
+	// Each source is filed under the part of the page that first cites it, so a
+	// long Sources list folds into groups that follow the page (Trevor, Nov. 23,
+	// 2026). The name and seal at the top go with At a glance.
+	sources.part('At a glance');
 	// The nation's seal or logo, only when its reuse status allows showing it
 	// (docs/official-images.md). The Worker serves it from the private bucket.
 	// It is shown first, under the name, so its source is numbered first.
@@ -600,14 +604,21 @@ export const load: PageServerLoad = ({ params }) => {
 	// the order the page shows them: At a glance comes right after the title.
 	const names = [page.listedName, page.officialName];
 	const glance = atAGlance(record, sources);
+	sources.part(contactsHeading);
 	const contacts = contactCard(record, sources);
+	sources.part('Map');
 	const map = nationMap(record, sources);
+	sources.part('Courts and dispute resolution');
 	const courts = courtsAndDisputeResolution(record, sources);
-	const documents = documentHistoriesFor(record.id, sources).map((document) => ({
-		...document,
-		heading: documentHeading(document.title, names)
-	}));
+	// Within Laws and agreements, each document's sources go under its heading.
+	const documents = nationDocumentHistories(record.id).map((history) => {
+		const heading = documentHeading(history.title, names);
+		sources.part(lawHeading, heading);
+		return { ...documentHistoryView(history, sources), heading };
+	});
+	sources.part(lawHeading, documentsLabel);
 	const law = [...publishedLaw(record, sources, documents), ...missingLaw(record, documents)];
+	sources.part('Jurisdiction');
 	const jurisdiction = jurisdictionFacts(record, sources);
 	// The legal sections always show, and say plainly when nothing was found,
 	// so a reader can see whether recourse may be available (Trevor, Nov. 22, 2026).
