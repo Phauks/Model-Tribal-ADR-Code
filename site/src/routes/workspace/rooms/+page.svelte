@@ -3,7 +3,6 @@
 	import Plus from '@lucide/svelte/icons/plus';
 	import Video from '@lucide/svelte/icons/video';
 	import CopyLink from '#lib/components/CopyLink.svelte';
-	import { recordingChoiceLabels, recordingChoices } from '#lib/event-calendar.ts';
 	import { instantRoomHours } from '#lib/video-rooms.ts';
 	import type { PageProps } from './$types';
 
@@ -43,7 +42,7 @@
 		</div>
 		<CopyLink link={started.inviteLink} label="Invite link" />
 		<p>
-			<a class="button" href={started.roomLink}><Video size={20} strokeWidth={1.75} /> Go to the room</a>
+			<a class="button" href={started.roomLink} target="_blank" rel="noopener"><Video size={20} strokeWidth={1.75} /> Go to the room<span class="visually-hidden"> (opens in a new tab)</span></a>
 			<a class="button button-quiet" href="/workspace/rooms/{started.room}">Manage it</a>
 		</p>
 	{:else}
@@ -57,15 +56,6 @@
 				<label for="instant-title">Name <span class="hint">(optional)</span></label>
 				<input type="text" id="instant-title" name="title" maxlength="200" />
 			</div>
-			<fieldset>
-				<legend>Recording</legend>
-				{#each recordingChoices as choice (choice)}
-					<div class="choice">
-						<input type="radio" id="instant-recording-{choice}" name="recording" value={choice} checked={choice === 'undecided'} />
-						<label for="instant-recording-{choice}">{recordingChoiceLabels[choice]}</label>
-					</div>
-				{/each}
-			</fieldset>
 			<p><button class="button" type="submit"><Video size={20} strokeWidth={1.75} /> Start a room now</button></p>
 		</form>
 	{/if}
@@ -107,17 +97,6 @@
 {/snippet}
 
 <style>
-	.choice {
-		display: flex;
-		align-items: flex-start;
-		gap: var(--space-2);
-		margin-bottom: var(--space-2);
-	}
-
-	.choice input {
-		margin-top: 0.3em;
-	}
-
 	.button {
 		gap: var(--space-2);
 	}

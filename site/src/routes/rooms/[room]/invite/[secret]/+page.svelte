@@ -1,6 +1,7 @@
 <script lang="ts">
 	import RoomJoinPanel from '#lib/components/RoomJoinPanel.svelte';
 	import VideoRoom from '#lib/components/VideoRoom.svelte';
+	import CallBar from '#lib/components/CallBar.svelte';
 	import type { PageProps } from './$types';
 
 	let { data, form }: PageProps = $props();
@@ -16,9 +17,9 @@
 	<meta name="robots" content="noindex" />
 </svelte:head>
 
-<h1>{data.room.title}</h1>
-<p>{data.room.when}</p>
-<p class="small">You were invited to this room{data.role === 'host' ? ' as a host' : ''}. You do not need an account to join.</p>
+<CallBar title={data.room.title} when={data.room.when}>
+	{#if !token}You were invited{data.role === 'host' ? ' as a host' : ''}. No account is needed.{/if}
+</CallBar>
 
 {#if token}
 	<VideoRoom {token} host={data.role === 'host'} told={data.room.recording} />
