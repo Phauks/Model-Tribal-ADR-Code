@@ -31,6 +31,10 @@ An analysis describes what the sources document, never what a nation
 practices, and labels its own reasoning as project analysis. Re-run the script
 named in the analysis to reproduce its counts.
 
+## Quotations
+
+`quotes/` holds checked quotations for epigraphs and pull quotes, each matched word for word against a published source and cited with a pinpoint, with a list of popular quotations that are misattributed or untraced: [2026-11-23-quotations-on-peacemaking-and-self-government](quotes/2026-11-23-quotations-on-peacemaking-and-self-government.md).
+
 ## Reviews
 
 Reviews of the project's own data, done to help the lead author's review, are
