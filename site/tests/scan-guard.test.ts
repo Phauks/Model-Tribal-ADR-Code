@@ -189,7 +189,7 @@ const bucketCalls: Record<string, BucketUse> = {
 /** Every place site code reads the bytes of a file or a request body, and where they go. */
 const fileIntakes: Record<string, string> = {
   "src/lib/server/request-form.ts readFile File.arrayBuffer":
-    "Files sent with requests and forms, proof for a nation team, and nation page pictures. Stored with storeSentFile by saveRequest, saveApplication and savePicture.",
+    "Files sent with requests and forms, proof for a nation team, nation page pictures, and photos sent with a problem about a printed-copy order. Stored with storeSentFile by saveRequest, saveApplication, savePicture and reportProblem.",
   "src/routes/profile/+page.server.ts picture File.arrayBuffer":
     "Profile pictures. Stored with storeSentFile by savePicture (profile-pictures.ts).",
   "src/routes/account/sponsorship/+page.server.ts save File.arrayBuffer":

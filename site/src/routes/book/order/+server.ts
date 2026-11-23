@@ -17,7 +17,7 @@ import type { RequestHandler } from './$types';
 
 export const prerender = false;
 
-export const POST: RequestHandler = async ({ request, url, getClientAddress }) => {
+export const POST: RequestHandler = async ({ request, url, getClientAddress, locals }) => {
 	const environment = workerEnvironment();
 	const state = orderingState(environment);
 	if (!state.open) return json({ placed: false, reason: state.reason }, { status: 503 });
@@ -62,7 +62,9 @@ export const POST: RequestHandler = async ({ request, url, getClientAddress }) =
 			email: email!,
 			printerCostCents: quote.printerCostCents,
 			priceCents: quote.priceCents,
-			giftCents: gift.cents
+			giftCents: gift.cents,
+			// Shown under Account, Orders when ordered while signed in (docs/book-orders.md, "Your orders and problems").
+			accountIdentifier: locals.account?.subject ?? null
 		},
 		created
 	);

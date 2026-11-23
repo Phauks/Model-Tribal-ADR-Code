@@ -171,6 +171,8 @@ export interface NewOrder {
 	priceCents: number;
 	/** An optional gift to the project, kept apart from the price (docs/book-orders.md, "Adding a gift"). */
 	giftCents?: number;
+	/** The account that placed it while signed in, so it shows under Account, Orders; null for an order placed signed out. */
+	accountIdentifier?: string | null;
 }
 
 export async function saveOrder(database: D1Database, order: NewOrder, now: string): Promise<void> {
@@ -179,8 +181,8 @@ export async function saveOrder(database: D1Database, order: NewOrder, now: stri
 	await database
 		.prepare(
 			`INSERT INTO book_orders (identifier, mode, status, file_set, title, pod_package_identifier, page_count, choice,
-				shipping_level, printer_cost_cents, price_cents, gift_cents, recipient_name, shipping_address, email, created_at, updated_at)
-			VALUES (?, ?, 'awaiting-payment', ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)`
+				shipping_level, printer_cost_cents, price_cents, gift_cents, recipient_name, shipping_address, email, account_identifier, created_at, updated_at)
+			VALUES (?, ?, 'awaiting-payment', ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)`
 		)
 		.bind(
 			order.identifier,
@@ -197,6 +199,7 @@ export async function saveOrder(database: D1Database, order: NewOrder, now: stri
 			order.shippingAddress.name,
 			JSON.stringify(order.shippingAddress),
 			order.email,
+			order.accountIdentifier ?? null,
 			now,
 			now
 		)
@@ -224,6 +227,9 @@ export interface OrderRow {
 	printer_status: string | null;
 	printer_message: string | null;
 	tracking_link: string | null;
+	account_identifier: string | null;
+	refunded_cents: number;
+	refunded_at: string | null;
 	created_at: string;
 	updated_at: string;
 }

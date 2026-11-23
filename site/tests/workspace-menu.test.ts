@@ -33,6 +33,7 @@ describe('the workspace pages in the left sidebar', () => {
 			'nonprofit',
 			'service-checks',
 			'sponsors',
+			'book-orders',
 			'activity'
 		]);
 	});

@@ -134,7 +134,7 @@ export async function deleteAccountSettingsCopy(database: D1Database, accountIde
  * under This device.
  */
 export async function accountDataExport(database: D1Database, account: SignedInAccount): Promise<Record<string, unknown>> {
-	const [accountRow, person, profile, versions, follows, followSettings, settingsCopy, sessions, uploads, eventRegistrations, sponsorships, videoRooms] = await Promise.all([
+	const [accountRow, person, profile, versions, follows, followSettings, settingsCopy, sessions, uploads, eventRegistrations, sponsorships, videoRooms, bookOrders] = await Promise.all([
 		database
 			.prepare(
 				'SELECT email, email_verified_at, password_changed_at, created_at, last_signed_in_at, password_hash IS NOT NULL AS has_password FROM accounts WHERE identifier = ?'
@@ -201,7 +201,18 @@ export async function accountDataExport(database: D1Database, account: SignedInA
 				 WHERE p.account_identifier = ? ORDER BY p.told_at`
 			)
 			.bind(account.subject)
-			.all<Record<string, unknown>>()
+			.all<Record<string, unknown>>(),
+		// Printed copies ordered while signed in, and problems reported about them (docs/book-orders.md, "Your orders and problems").
+		database
+			.prepare(
+				`SELECT o.identifier, o.mode, o.status, o.title, o.page_count, o.shipping_level, o.price_cents, o.refunded_cents, o.refunded_at,
+				   o.recipient_name, o.shipping_address, o.email, o.tracking_link, o.created_at,
+				   (SELECT json_group_array(json_object('kind', p.kind, 'details', p.details, 'status', p.status, 'answer', p.answer, 'reportedAt', p.created_at))
+				    FROM book_order_problems p WHERE p.order_identifier = o.identifier) AS problems
+				 FROM book_orders o WHERE o.account_identifier = ? ORDER BY o.created_at`
+			)
+			.bind(account.subject)
+			.all<Record<string, unknown> & { shipping_address: string | null; problems: string }>()
 	]);
 	return {
 		about:
@@ -231,6 +242,11 @@ export async function accountDataExport(database: D1Database, account: SignedInA
 		eventRegistrations: eventRegistrations.results,
 		sponsorshipsYouManage: sponsorships.results.map((row) => ({ name: row.name, managerSince: row.added_at })),
 		videoRooms: videoRooms.results,
+		bookOrders: bookOrders.results.map((row) => ({
+			...row,
+			shipping_address: row.shipping_address ? (JSON.parse(row.shipping_address) as unknown) : null,
+			problems: JSON.parse(row.problems) as unknown
+		})),
 		followedPages: follows.results,
 		emailAboutFollowedPages: followSettings ?? { email: 'daily' },
 		settingsOnEveryDevice: settingsCopy ?? null,

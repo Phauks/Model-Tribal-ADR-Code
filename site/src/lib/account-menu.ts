@@ -20,6 +20,8 @@ export const accountPages: readonly AccountPage[] = [
 	{ label: 'Nation team', link: '/profile/nation-team' },
 	{ label: 'Sign-in and security', link: '/account/security', within: ['/profile/password'] },
 	{ label: 'Email and notifications', link: '/account/email' },
+	// Printed copies ordered while signed in, with tracking and problems (docs/book-orders.md, "Your orders and problems").
+	{ label: 'Your orders', link: '/account/orders' },
 	// An organization's gift and how the project thanks it in public (docs/sponsorship.md).
 	{ label: 'Sponsorship', link: '/account/sponsorship' },
 	{ label: 'Your data', link: '/account/data', within: ['/profile/delete-account'] }
