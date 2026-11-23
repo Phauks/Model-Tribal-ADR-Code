@@ -1,4 +1,4 @@
--- Nation teams (decision record 0039; site/COLLABORATION.md, "Nation teams").
+-- Nation teams (decision record 0041; site/COLLABORATION.md, "Nation teams").
 -- A Native nation chooses the people who keep its own page up to date. Each
 -- place on a team is for one nation only; a steward adds and removes people
 -- for that nation, at up to their own level and parts of the page. Every

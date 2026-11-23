@@ -1,5 +1,5 @@
 /**
- * Nation teams in the database (decision record 0039; site/COLLABORATION.md,
+ * Nation teams in the database (decision record 0041; site/COLLABORATION.md,
  * "Nation teams"): who is on each nation's team, requests to join one, and
  * the records of every change in the activity log. The rules themselves are
  * in src/lib/nation-teams.ts; every function here that changes a team is

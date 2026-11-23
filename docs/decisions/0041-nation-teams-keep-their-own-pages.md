@@ -1,4 +1,4 @@
-# 0039. Let each nation choose a team that keeps its own page, with delegation inside that nation only
+# 0041. Let each nation choose a team that keeps its own page, with delegation inside that nation only
 
 - **Status:** Accepted
 - **Date:** 2026-11-23
@@ -27,7 +27,7 @@ A proposal with mockups set out how a person proves they speak for a nation, the
 
 ## Consequences
 
-- Migration 0013 adds `nation_team_members` and `nation_team_applications`.
+- Migration 0015 adds `nation_team_members` and `nation_team_applications`.
 - Places count as grants on the nation's record in `grantsOf` (`site/src/lib/server/access.ts`), so every existing check, including reviews, sees them; anyone on a team approves the record in the nation's capacity.
 - New pages: `/profile/nation-team` (ask to join), `/workspace/nation-teams` (the lead author's list), `/workspace/nation-teams/requests/<reference>` (confirm or decline) and `/workspace/nation-teams/<nation>` (the team).
 - The "Nation reviewer" role stays for people the project adds by hand; a person new to the project who joins a team gets that role for the team's nation.

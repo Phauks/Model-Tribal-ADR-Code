@@ -105,7 +105,7 @@ nation"). The approval is recorded in the workspace; the record's
 
 ## Nation teams
 
-Each Native nation can choose a team of people who keep its own page up to date ([decision record 0039](../docs/decisions/0039-nation-teams-keep-their-own-pages.md)). The rules are in `src/lib/nation-teams.ts`; the database side is `src/lib/server/nation-teams.ts` (migration 0013).
+Each Native nation can choose a team of people who keep its own page up to date ([decision record 0041](../docs/decisions/0041-nation-teams-keep-their-own-pages.md)). The rules are in `src/lib/nation-teams.ts`; the database side is `src/lib/server/nation-teams.ts` (migration 0015).
 
 1. **Asking.** A signed-in person asks from `/profile/nation-team`, linked from their profile. They name the nation, their title or office, how the nation chose them (a letter, a resolution, or an office that speaks for it) and the parts of the page, and upload the letter or resolution. The file goes to the private bucket under `nation-teams/<identifier>/proof` and is only ever downloaded, never shown as a page.
 2. **Confirming.** The lead author opens the request at `/workspace/nation-teams`, writes to the nation's office using a contact the project already had for the nation (never one the person gave), records which contact, and then confirms the place the office agreed to, with how it was confirmed, or declines with a reason the person sees.

@@ -30,7 +30,7 @@ import type { Actions, PageServerLoad, RequestEvent } from './$types';
 /**
  * The nation comes only from the page's address, and every load and action
  * checks the signed-in person's own place on that nation's team, so nobody
- * can reach another nation's team from here (decision record 0039).
+ * can reach another nation's team from here (decision record 0041).
  */
 async function nationAndGranter(event: RequestEvent | Parameters<PageServerLoad>[0]) {
 	const person = requirePerson(event);
