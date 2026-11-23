@@ -521,12 +521,23 @@ sup.citation {
 	text-decoration: underline;
 }
 
-/* The marker or source a link has just gone to is highlighted, so the eye finds it. */
+/*
+ * The marker or source a link has just gone to is highlighted, so the eye
+ * finds it. It arrives marked in the fill-in yellow, which fades to the
+ * resting highlight; with motion reduced it shows the resting highlight at once.
+ */
 .note-marker:target,
 .source-list > li:target {
 	background: var(--color-notice-background);
 	outline: 2px solid var(--color-focus-ring);
 	outline-offset: 1px;
+	animation: arrived var(--motion-duration-highlight) var(--motion-easing-standard);
+}
+
+@keyframes arrived {
+	from {
+		background: var(--color-placeholder-background);
+	}
 }
 
 .notes {
@@ -923,7 +934,27 @@ sup.citation {
 	display: none !important;
 }
 
+/*
+ * Motion (site/DESIGN.md, section 6, "Motion"; src/lib/motion.ts). Timing
+ * comes from the --motion-* tokens. When the reader picks Reduce motion in
+ * Settings, or the device asks for less motion, every duration becomes 0 and
+ * nothing animates or glides; paper never shows anything part way.
+ */
+:root[data-motion='reduce'] {
+	--motion-duration-short: 0ms;
+	--motion-duration-medium: 0ms;
+	--motion-duration-long: 0ms;
+	--motion-duration-highlight: 0ms;
+}
+
 @media (prefers-reduced-motion: reduce) {
+	:root:root {
+		--motion-duration-short: 0ms;
+		--motion-duration-medium: 0ms;
+		--motion-duration-long: 0ms;
+		--motion-duration-highlight: 0ms;
+	}
+
 	*,
 	*::before,
 	*::after {
@@ -931,6 +962,30 @@ sup.citation {
 		transition: none !important;
 		scroll-behavior: auto !important;
 	}
+}
+
+:root[data-motion='reduce'] *,
+:root[data-motion='reduce'] *::before,
+:root[data-motion='reduce'] *::after {
+	animation: none !important;
+	transition: none !important;
+	scroll-behavior: auto !important;
+}
+
+@media print {
+	*,
+	*::before,
+	*::after {
+		animation: none !important;
+		transition: none !important;
+	}
+}
+
+/* Page changes cross-fade (crossFadePages in src/lib/motion.ts). */
+::view-transition-old(root),
+::view-transition-new(root) {
+	animation-duration: var(--motion-duration-medium);
+	animation-timing-function: var(--motion-easing-standard);
 }
 
 /* Parts that exist only on paper, such as the page details line. */

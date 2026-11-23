@@ -21,6 +21,7 @@
 		"check": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json --fail-on-warnings",
 		"test": "vitest run",
 		"check:colors": "node tools/check-colors-come-from-tokens.mjs",
+		"check:motion": "node tools/check-motion-comes-from-tokens.mjs",
 		"check:built-site": "node tools/check-built-site.mjs",
 		"check:accessibility": "node tools/check-accessibility.mjs",
 		"database:migrate:local": "wrangler d1 migrations apply database --local",

@@ -36,9 +36,16 @@
 	import InlineNotes from '#lib/components/InlineNotes.svelte';
 	import CitationPopup from '#lib/components/CitationPopup.svelte';
 	import LinkPreviews from '#lib/components/LinkPreviews.svelte';
+	import { onMount } from 'svelte';
+	import { onNavigate } from '$app/navigation';
+	import { crossFadePages, startMotion } from '#lib/motion.ts';
 	import type { LayoutProps } from './$types';
 
 	let { children, data }: LayoutProps = $props();
+
+	// Pages cross-fade, and printing finishes any movement first (src/lib/motion.ts).
+	onNavigate(crossFadePages);
+	onMount(startMotion);
 
 </script>
 
