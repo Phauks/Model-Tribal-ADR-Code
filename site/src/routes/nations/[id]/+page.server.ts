@@ -384,7 +384,52 @@ function jurisdictionFacts(record: NationRecord, sources: SourceUses): FactGroup
 		list.push(cited(sources, section, fact, { label: undefined, text }));
 		byTopic.set(label, list);
 	}
-	return [...byTopic.entries()].map(([label, items]) => ({ field: `jurisdiction-${label}`, label, items }));
+	return [
+		...[...byTopic.entries()].map(([label, items]) => ({ field: `jurisdiction-${label}`, label, items })),
+		...agreementGroups(record, sources, section)
+	];
+}
+
+/** The names the page gives each kind of jurisdiction agreement, in the order the page shows them. */
+const agreementKinds: Record<string, string> = {
+	'cross-deputization': 'Cross-deputization and law enforcement agreements',
+	'tax-agreement': 'Tax agreements',
+	'child-welfare-agreement': 'Child welfare agreements',
+	other: 'Other agreements'
+};
+
+/**
+ * Agreements with a state, county, city or federal agency, one group per
+ * kind: what the agreement is, who the other party is, when it was signed,
+ * and whether it has expired. Most sources do not say whether an agreement
+ * is still in force, so only an expired one is marked.
+ */
+function agreementGroups(record: NationRecord, sources: SourceUses, section: string): FactGroup[] {
+	const order = Object.keys(agreementKinds);
+	const rank = (kind: string) => (order.includes(kind) ? order.indexOf(kind) : order.length);
+	const facts = [...(record.jurisdiction_agreements ?? [])].sort(
+		(first, second) => rank(first.kind) - rank(second.kind) || (first.date ?? '').localeCompare(second.date ?? '')
+	);
+	const byKind = new Map<string, FactItem[]>();
+	for (const fact of facts) {
+		const label = agreementKinds[fact.kind] ?? humanize(fact.kind);
+		const list = byKind.get(label) ?? [];
+		list.push(
+			cited(sources, section, fact, {
+				text: fact.agreement ?? fact.other_party,
+				detail: [
+					fact.agreement ? `with ${fact.other_party}` : undefined,
+					fact.date ? readableDate(fact.date) : undefined,
+					fact.status === 'expired' ? 'expired' : undefined
+				]
+					.filter(Boolean)
+					.join(', '),
+				note: fact.detail
+			})
+		);
+		byKind.set(label, list);
+	}
+	return [...byKind.entries()].map(([label, items]) => ({ field: `jurisdiction-agreements-${label}`, label, items }));
 }
 
 /** How the page words each way a land base was set aside. */

@@ -25,6 +25,9 @@ import {
 	uploadsOfAccount,
 	withdrawUpload,
 	addNationComment,
+	releaseUnchecked,
+	scanOfKey,
+	advanceCheckedUploads,
 	nationUpload,
 	nationUploads,
 	nationSpokenFor,
@@ -33,6 +36,7 @@ import {
 	type SenderAnswers
 } from '#lib/server/uploads.ts';
 import { setGrant } from '#lib/server/access.ts';
+import { serveUploadFile } from '#lib/server/upload-serving.ts';
 import { testDatabase } from './database.ts';
 
 /** A stand-in for the R2 bucket binding, with multipart uploads. */
@@ -142,7 +146,7 @@ beforeEach(async () => {
 	reviewer = result.person;
 });
 
-async function sendWhole(bytes: Uint8Array, fileName: string, extra: Partial<SenderAnswers> = {}) {
+async function sendWhole(bytes: Uint8Array, fileName: string, extra: Partial<SenderAnswers> = {}, passScan = true) {
 	const started = await startUpload(
 		database,
 		fake.bucket,
@@ -155,7 +159,18 @@ async function sendWhole(bytes: Uint8Array, fileName: string, extra: Partial<Sen
 		if (!outcome.accepted) return { reference: started.reference, refused: outcome.reason };
 	}
 	await finishUpload(database, fake.bucket, (await uploadByReference(database, started.reference))!);
+	if (passScan) await scanned(started.reference, 'clean');
 	return { reference: started.reference, refused: null };
+}
+
+/** Stands in for the scanner: writes a result for every copy of the upload, then lets the site move it on. */
+async function scanned(reference: string, status: 'clean' | 'flagged' | 'cannot-scan', reason: string | null = null) {
+	const upload = (await uploadByReference(database, reference))!;
+	await database
+		.prepare(`UPDATE file_scans SET status = ?, reason = ?, finished_at = ? WHERE subject = ?`)
+		.bind(status, reason, '2026-11-23T00:00:00Z', upload.reference)
+		.run();
+	await advanceCheckedUploads(database, fake.bucket);
 }
 
 describe('sending files', () => {
@@ -169,7 +184,7 @@ describe('sending files', () => {
 		const preview = fake.stored.get(upload.preview_key!)!;
 		expect(new TextDecoder('latin1').decode(preview)).not.toContain('tEXt');
 		const history = await eventsFor(database, 'upload', upload.identifier);
-		expect(history.map((event) => event.action)).toEqual(['Upload started', 'Upload received']);
+		expect(history.map((event) => event.action)).toEqual(['Upload started', 'Upload received', 'Virus check passed']);
 		expect((await uploadQueue(database, 'open')).map((row) => row.reference)).toEqual([reference]);
 	});
 
@@ -188,7 +203,7 @@ describe('sending files', () => {
 		await finishUpload(database, fake.bucket, (await uploadByReference(database, started.reference))!);
 
 		const upload = (await uploadByReference(database, started.reference))!;
-		expect(upload).toMatchObject({ status: 'waiting-for-review', kind: 'video', media_type: 'video/mp4' });
+		expect(upload).toMatchObject({ status: 'checking', kind: 'video', media_type: 'video/mp4' });
 		expect(upload.fingerprint).toBe(
 			await fileFingerprint([await sha256Hex(bytes.subarray(0, pieceBytes)), await sha256Hex(bytes.subarray(pieceBytes))])
 		);
@@ -343,6 +358,55 @@ describe('when the sender deletes their account', () => {
 		expect(await database.prepare('SELECT 1 FROM accounts WHERE identifier = ?').bind(sender).first()).toBeNull();
 		expect(await uploadByReference(database, waiting.reference)).toBeNull();
 		expect(await uploadByReference(database, filedOne.reference)).toMatchObject({ status: 'filed', account_identifier: null });
+	});
+});
+
+describe('the virus check', () => {
+	const fileScan = async (key: string) =>
+		database.prepare('SELECT status FROM file_scans WHERE object_key = ?').bind(key).first<{ status: string }>();
+
+	it('holds a finished file at checking, with every copy in line, and serves nothing until it is clean', async () => {
+		const { reference } = await sendWhole(png(), 'held.png', {}, false);
+		const upload = (await uploadByReference(database, reference))!;
+		expect(upload.status).toBe('checking');
+		expect(await fileScan(upload.original_key!)).toEqual({ status: 'waiting' });
+		expect(await fileScan(upload.preview_key!)).toEqual({ status: 'waiting' });
+		await expect(
+			serveUploadFile(new Request('https://example.org/'), fake.bucket, { key: upload.original_key!, name: 'held.png', mediaType: 'image/png', kind: 'picture' }, { inline: true, cacheControl: 'no-store', scan: await scanOfKey(database, upload.original_key!) })
+		).rejects.toMatchObject({ status: 409 });
+		expect(await advanceCheckedUploads(database, fake.bucket)).toBe(0);
+		await scanned(reference, 'clean');
+		expect((await uploadByReference(database, reference))!.status).toBe('waiting-for-review');
+	});
+
+	it('refuses and deletes a file where something was found', async () => {
+		const { reference } = await sendWhole(png(), 'bad.png', {}, false);
+		const upload = (await uploadByReference(database, reference))!;
+		await scanned(reference, 'flagged', 'Eicar-Test-Signature');
+		expect(await uploadByReference(database, reference)).toMatchObject({ status: 'not-accepted', check_result: 'refused' });
+		expect((await uploadByReference(database, reference))!.decision_reason).toContain('Eicar-Test-Signature');
+		expect(fake.stored.size).toBe(0);
+		expect(await fileScan(upload.original_key!)).toBeNull();
+		await expect(releaseUnchecked(database, fake.bucket, reviewer, upload, 'Trust it')).rejects.toThrow(/could not check/);
+	});
+
+	it('lets a reviewer release a file that could not be checked, with a reason in the history', async () => {
+		const { reference } = await sendWhole(png(), 'locked.png', {}, false);
+		await scanned(reference, 'cannot-scan', 'encrypted');
+		const upload = (await uploadByReference(database, reference))!;
+		expect(upload.status).toBe('checking');
+		await releaseUnchecked(database, fake.bucket, reviewer, upload, 'From the tribal court clerk, by hand');
+		expect((await uploadByReference(database, reference))!.status).toBe('waiting-for-review');
+		const history = (await eventsFor(database, 'upload', upload.identifier)).map((entry) => entry.action);
+		expect(history).toContain('Released without a virus check');
+	});
+
+	it('forgets the scans when a file is withdrawn', async () => {
+		const { reference } = await sendWhole(png(), 'gone.png');
+		const upload = (await uploadByReference(database, reference))!;
+		await withdrawUpload(database, fake.bucket, upload);
+		expect(await fileScan(upload.original_key!)).toBeNull();
+		expect(await fileScan(upload.preview_key!)).toBeNull();
 	});
 });
 

@@ -1,7 +1,7 @@
 profile: content/tribes/n/navajo-nation.yaml
 topic: courts
 status: found
-last_searched: '2026-11-22'
+last_searched: '2026-11-23'
 searches:
 - date: '2026-11-21'
   searched_by: Claude (AI assistant)
@@ -416,3 +416,40 @@ searches:
   query: 'Individual courts review: every court, district, division and appellate court of the nation'
   outcome: not-found
   reason: '"The District and Family Courts of the Navajo Nation" is a frameset; no family court is named on the pages read.'
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: web-archive
+  address: https://web.archive.org/web/20261017063751/https://courts.navajo-nsn.gov/
+  query: 'retry of an address that failed earlier: a direct request, then the Wayback Machine copy'
+  outcome: error
+  reason: The Wayback Machine copy of 2026-10-17 is a frame page; its frames were not in the copy.
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: web-archive
+  address: https://web.archive.org/web/20261122194731/https://www.navajo-nsn.gov/
+  query: 'retry of an address that failed earlier: a direct request, then the Wayback Machine copy'
+  outcome: found
+  reason: The Wayback Machine copy of 2026-11-22 ("Home") shows the nation's court.
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: nation-website
+  address: https://www.navajo-nsn.gov/sitemap.xml
+  query: 'retry of an address that failed earlier: a direct request, then the Wayback Machine copy'
+  outcome: not-found
+  reason: The site has no sitemap at this address (404 on 2026-11-23); the sitemap was only a way to find
+    pages, so nothing on the topic is missing because of it.
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: web-archive
+  address: https://web.archive.org/web/20251208055018/https://courts.navajo-nsn.gov/sitemap.xml
+  query: 'retry of an address that failed earlier: a direct request, then the Wayback Machine copy'
+  outcome: not-found
+  reason: The Wayback Machine copy of the sitemap (2025-12-08) lists no court, code or dispute resolution
+    page.
+next_steps: 'Open by hand in a browser, or ask the nation''s office for: http://www.courts.navajo-nsn.gov/,
+  https://courts.navajo-nsn.gov/publicguide.htm, https://peacemaking.narf.org/wp-content/uploads/2025/07/Navajo-Title-7-Courts-and-Procedure.pdf
+  (no readable copy on 2026-11-23, directly or in the Wayback Machine).'

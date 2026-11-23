@@ -153,5 +153,14 @@ searches:
     Culture Based Mediation Court for criminal and civil referrals and voluntary community referrals.
   records:
   - research/reviews/2026-11-23-dispute-resolution-retry.json#red-lake-band-of-chippewa-indians-retry-1
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: web-archive
+  address: https://web.archive.org/web/20220330080449/http://www.rlnn.org/MinorSponsors/RLCourtsMain.html
+  query: 'retry of an address that failed earlier: a direct request, then the Wayback Machine copy'
+  outcome: found
+  reason: The Wayback Machine copy of 2022-03-30 ("WiiJiiWaagan Path of life Main Page") shows mediation,
+    codes or ordinances, a court.
 next_steps: Lead author's review of the candidates in research/reviews/2026-11-23-dispute-resolution-retry.csv
   (Gate 1) before any record goes into the profile.

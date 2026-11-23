@@ -45,6 +45,7 @@ import {
 } from '#lib/uploads.ts';
 import { youtubeVideoIdentifier } from '#lib/video-links.ts';
 import { accessTo } from './access.ts';
+import { fileScans, forgetScan, mayServe, releaseByHand, requestScan, scanAgain, type FileScan } from './file-scans.ts';
 import { eventStatement } from './events.ts';
 import { newIdentifier, newRequestReference, now } from './identifiers.ts';
 import type { SignedInPerson } from './people.ts';
@@ -612,7 +613,8 @@ export async function finishUpload(database: D1Database, bucket: R2Bucket, uploa
 
 	const at = now();
 	const figure = upload.way_in === 'essay-figure';
-	const status: UploadStatus = figure ? 'filed' : 'waiting-for-review';
+	// A figure is filed with its essay at once, but like every file it is not served until its scan allows it.
+	const status: UploadStatus = figure ? 'filed' : 'checking';
 	await database.batch([
 		database
 			.prepare(
@@ -632,6 +634,7 @@ export async function finishUpload(database: D1Database, bucket: R2Bucket, uploa
 			checkResult === 'careful-look' ? 'needs a careful look' : null
 		)
 	]);
+	await putInLineForScan(database, upload, scannedKeys({ original_key: upload.original_key, preview_key: previewKey }));
 	return status;
 }
 
@@ -739,15 +742,157 @@ export async function uploadsOfAccount(database: D1Database, accountIdentifier: 
 	}));
 }
 
-async function deleteBytes(bucket: R2Bucket, upload: UploadRow): Promise<void> {
+async function deleteBytes(database: D1Database, bucket: R2Bucket, upload: UploadRow): Promise<void> {
 	if (upload.multipart_identifier && upload.original_key) {
 		await bucket
 			.resumeMultipartUpload(upload.original_key, upload.multipart_identifier)
 			.abort()
 			.catch(() => undefined);
 	}
-	const keys = [upload.original_key, upload.preview_key].filter((key): key is string => !!key);
+	const keys = scannedKeys(upload);
 	if (keys.length > 0) await bucket.delete(keys);
+	for (const key of keys) {
+		// A scan row left behind is harmless, so a failure here never stops a deletion.
+		await forgetScan(database, key).catch((problem) => console.error('Could not forget a file scan', problem));
+	}
+}
+
+// ---------------------------------------------------------------------------
+// The virus check (site/SCANNING.md). A finished file waits at "checking"
+// until the scanner says every stored copy is clean, then goes to the queue.
+// A file where something was found is refused and deleted. Nothing is served,
+// downloaded or filed until its scan allows it.
+// ---------------------------------------------------------------------------
+
+/** The bucket keys of an upload's stored copies: the file as sent and a picture's copy without location. */
+export function scannedKeys(upload: Pick<UploadRow, 'original_key' | 'preview_key'>): string[] {
+	return [upload.original_key, upload.preview_key].filter((key): key is string => !!key);
+}
+
+/** Puts an upload's copies in line for the scanner. If that fails, the sweep tries again; the file stays held. */
+async function putInLineForScan(database: D1Database, upload: UploadRow, keys: readonly string[]): Promise<void> {
+	for (const key of keys) {
+		await requestScan(database, { objectKey: key, purpose: 'upload', subject: upload.reference }).catch((problem) =>
+			console.error('Could not put a file in line for the virus check', problem)
+		);
+	}
+}
+
+/** The scans of an upload's copies, in the order of scannedKeys; null for a copy with no scan. */
+export async function scansOf(database: D1Database, upload: UploadRow): Promise<(FileScan | null)[]> {
+	const keys = scannedKeys(upload);
+	if (keys.length === 0) return [];
+	const found = await fileScans(database, keys).catch(() => new Map<string, FileScan>());
+	return keys.map((key) => found.get(key) ?? null);
+}
+
+/** The scan of one stored copy, or null when there is none (or the scans cannot be read): held. */
+export async function scanOfKey(database: D1Database, key: string): Promise<FileScan | null> {
+	const found = await fileScans(database, [key]).catch(() => new Map<string, FileScan>());
+	return found.get(key) ?? null;
+}
+
+/**
+ * Moves files at "checking" on once their scans are in: every copy clean (or
+ * released by a reviewer) goes to the queue; anything found is refused and
+ * deleted. Copies with no scan are put in line again. Runs when the queue,
+ * an upload or Your uploads is opened. Returns how many files moved.
+ */
+export async function advanceCheckedUploads(
+	database: D1Database,
+	bucket: R2Bucket,
+	scope: { accountIdentifier?: string; uploadIdentifier?: string } = {}
+): Promise<number> {
+	const conditions = [`status = 'checking'`];
+	const values: string[] = [];
+	if (scope.accountIdentifier) {
+		conditions.push('account_identifier = ?');
+		values.push(scope.accountIdentifier);
+	}
+	if (scope.uploadIdentifier) {
+		conditions.push('identifier = ?');
+		values.push(scope.uploadIdentifier);
+	}
+	const checking = await database
+		.prepare(`SELECT * FROM uploads WHERE ${conditions.join(' AND ')} ORDER BY received_at LIMIT 50`)
+		.bind(...values)
+		.all<UploadRow>();
+	if (checking.results.length === 0) return 0;
+	let found: Map<string, FileScan>;
+	try {
+		found = await fileScans(database, checking.results.flatMap((upload) => scannedKeys(upload)));
+	} catch (problem) {
+		// The scans table is not there yet: every file stays held.
+		console.error('Could not read file scans', problem);
+		return 0;
+	}
+	let moved = 0;
+	for (const upload of checking.results) {
+		const keys = scannedKeys(upload);
+		if (keys.length === 0) continue;
+		const scans = keys.map((key) => found.get(key) ?? null);
+		const flagged = scans.find((scan) => scan?.status === 'flagged');
+		if (flagged) {
+			await deleteBytes(database, bucket, upload);
+			const at = now();
+			const reason = `The virus check found ${flagged.reason ? `“${flagged.reason}”` : 'something harmful'}, so the file was deleted.`;
+			await database.batch([
+				database
+					.prepare(
+						`UPDATE uploads SET status = 'not-accepted', check_result = 'refused', decision_reason = ?,
+						 checked_at = ?, decided_at = ?, deleted_at = ? WHERE identifier = ? AND status = 'checking'`
+					)
+					.bind(reason, at, at, at, upload.identifier),
+				uploadEvent(database, upload, 'Virus check found something; file deleted', null, flagged.reason)
+			]);
+			moved += 1;
+		} else if (scans.every((scan) => mayServe(scan))) {
+			const released = scans.some((scan) => scan?.status === 'released-by-hand');
+			await database.batch([
+				database
+					.prepare(`UPDATE uploads SET status = 'waiting-for-review', checked_at = ? WHERE identifier = ? AND status = 'checking'`)
+					.bind(now(), upload.identifier),
+				uploadEvent(database, upload, released ? 'Released without a virus check' : 'Virus check passed')
+			]);
+			moved += 1;
+		} else {
+			const missing = keys.filter((key) => !found.has(key));
+			if (missing.length > 0) await putInLineForScan(database, upload, missing);
+		}
+	}
+	return moved;
+}
+
+/**
+ * A reviewer releases a file the virus check could not check (locked, too
+ * large, or the check gave up), giving a reason. A file where something was
+ * found can never be released.
+ */
+export async function releaseUnchecked(
+	database: D1Database,
+	bucket: R2Bucket,
+	person: SignedInPerson,
+	upload: UploadRow,
+	note: string
+): Promise<void> {
+	if (!can(person, 'review-uploads')) throw new UploadProblem('Only reviewers can release a file.', 403);
+	let released = 0;
+	for (const key of scannedKeys(upload)) {
+		if (await releaseByHand(database, key, person.identifier, note)) released += 1;
+	}
+	if (released === 0) throw new UploadProblem('Only a file the virus check could not check can be released.', 409);
+	await database.batch([uploadEvent(database, upload, 'Released without a virus check', person.identifier, note)]);
+	await advanceCheckedUploads(database, bucket, { uploadIdentifier: upload.identifier });
+}
+
+/** A reviewer puts a file back in line for the virus check, for example after the check gave up. */
+export async function checkAgain(database: D1Database, person: SignedInPerson, upload: UploadRow): Promise<void> {
+	let again = 0;
+	for (const key of scannedKeys(upload)) {
+		if (await scanAgain(database, key)) again += 1;
+	}
+	if (again === 0) throw new UploadProblem('There is nothing to check again.', 409);
+	await database.batch([uploadEvent(database, upload, 'Virus check asked for again', person.identifier)]);
 }
 
 /** The sender takes a file back. Its bytes are deleted at once. */
@@ -755,7 +900,7 @@ export async function withdrawUpload(database: D1Database, bucket: R2Bucket, upl
 	if (!withdrawableStatuses.includes(upload.status)) {
 		throw new UploadProblem('This file can no longer be withdrawn. Write to us and we will help.', 409);
 	}
-	await deleteBytes(bucket, upload);
+	await deleteBytes(database, bucket, upload);
 	const at = now();
 	await database.batch([
 		database
@@ -788,7 +933,7 @@ export type QueueView = (typeof queueViews)[number];
 
 const viewStatuses: Record<QueueView, readonly UploadStatus[] | null> = {
 	open: ['waiting-for-review', 'in-review'],
-	waiting: ['needs-answer', 'waiting-for-nation'],
+	waiting: ['checking', 'needs-answer', 'waiting-for-nation'],
 	decided: decidedStatuses,
 	'not-accepted': ['not-accepted', 'withdrawn'],
 	all: null
@@ -1333,7 +1478,7 @@ export async function deleteOldUploads(database: D1Database, bucket: R2Bucket, l
 		.bind(declinedBefore, limit)
 		.all<UploadRow>();
 	for (const upload of declined.results) {
-		await deleteBytes(bucket, upload);
+		await deleteBytes(database, bucket, upload);
 		await database.batch([
 			database.prepare('UPDATE uploads SET deleted_at = ? WHERE identifier = ?').bind(now(), upload.identifier),
 			database.prepare('DELETE FROM upload_pieces WHERE upload_identifier = ?').bind(upload.identifier),
@@ -1366,7 +1511,7 @@ export async function forgetAccountUploads(
 		.all<UploadRow>();
 	const keep = rows.results.filter((upload) => upload.status === 'filed' || upload.status === 'kept-for-reference');
 	const remove = rows.results.filter((upload) => !keep.includes(upload));
-	for (const upload of remove) await deleteBytes(bucket, upload);
+	for (const upload of remove) await deleteBytes(database, bucket, upload);
 	const statements: D1PreparedStatement[] = [];
 	for (const upload of remove) {
 		statements.push(

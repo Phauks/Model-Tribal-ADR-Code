@@ -113,5 +113,15 @@ searches:
   reason: 'Entry (p. 491): Tribal Court active over 20 years; cases heard are alcohol, drug, firearm,
     firework, driving, animal control and curfew matters; no dispute resolution or peacemaking listed;
     interested in civil diversion, youth diversion and sentencing referrals.'
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: web-archive
+  address: https://web.archive.org/web/20260802092912/https://www.codepublishing.com/WA/NICS/
+  query: 'retry of an address that failed earlier: a direct request, then the Wayback Machine copy'
+  outcome: error
+  reason: The Wayback Machine copy of 2026-08-02 is a script-driven page that shows only its title (Northwest
+    Intertribal Court System, Tribal Appellate Court); the code text loads by script and was not in the
+    copy.
 next_steps: Ask the nation's court or government office whether it has a peacemaking, mediation or other
   dispute resolution program, and check law library holdings of its code.

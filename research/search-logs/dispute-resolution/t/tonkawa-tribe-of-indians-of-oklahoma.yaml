@@ -1,6 +1,6 @@
 profile: content/tribes/t/tonkawa-tribe-of-indians-of-oklahoma.yaml
 topic: dispute-resolution
-status: partly-searched
+status: none-found
 last_searched: '2026-11-23'
 searches:
 - date: '2026-11-22'
@@ -121,5 +121,12 @@ searches:
     peacemaking, circles, elders' courts and restorative justice
   outcome: not-found
   reason: 'Archived copy (capture of 2024-06-30) read by script: no dispute resolution term in its text.'
-next_steps: 'Try again later, or open by hand in a browser: https://web.archive.org/web/2026id_/http://www.tonkawatribe.com/programs/court.htm;
-  https://web.archive.org/web/2026id_/https://tonkawatribe.com/tribal-court-forms-packets/.'
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: web-archive
+  address: https://web.archive.org/web/20261017051009/https://tonkawatribe.com/
+  query: 'retry of an address that failed earlier: a direct request, then the Wayback Machine copy'
+  outcome: not-found
+  reason: Read the Wayback Machine copy of 2026-10-17 ("Tonkawa Tribe of Oklahoma | Official Website");
+    it shows no codes, court or dispute resolution forum.

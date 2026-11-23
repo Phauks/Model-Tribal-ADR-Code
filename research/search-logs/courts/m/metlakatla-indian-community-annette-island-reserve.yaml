@@ -1,7 +1,7 @@
 profile: content/tribes/m/metlakatla-indian-community-annette-island-reserve.yaml
 topic: courts
 status: found
-last_searched: '2026-11-22'
+last_searched: '2026-11-23'
 searches:
 - date: '2026-11-21'
   searched_by: Claude (AI assistant)
@@ -240,3 +240,16 @@ searches:
   query: 'Individual courts review: every court, district, division and appellate court of the nation'
   outcome: not-found
   reason: Tlingit & Haida Tribal Court page fetched (200); it is that tribe's court in Juneau and does not name Metlakatla.
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: web-archive
+  address: https://web.archive.org/web/20260802092912/https://www.codepublishing.com/WA/NICS/
+  query: 'retry of an address that failed earlier: a direct request, then the Wayback Machine copy'
+  outcome: error
+  reason: The Wayback Machine copy of 2026-08-02 is a script-driven page that shows only its title (Northwest
+    Intertribal Court System, Tribal Appellate Court); the code text loads by script and was not in the
+    copy.
+next_steps: 'Open by hand in a browser, or ask the nation''s office for: http://www.codepublishing.com/WA/NICS/,
+  https://courts.alaska.gov/courtdir/docs/tribal-court-directory.pdf (no readable copy on 2026-11-23,
+  directly or in the Wayback Machine).'

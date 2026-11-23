@@ -93,4 +93,12 @@ searches:
   outcome: error
   reason: The Wayback Machine capture index did not answer (connection refused) in any of the three rounds;
     worth trying again.
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: web-archive
+  address: https://web.archive.org/web/20251118200442/http://www.chemehuevi.net/tribal-court/
+  query: 'retry of an address that failed earlier: a direct request, then the Wayback Machine copy'
+  outcome: dead-link
+  reason: The Wayback Machine copy of 2025-11-18 is an empty page or an error page (no text).
 next_steps: 'Try again later, or open by hand in a browser: https://web.archive.org/web/20251118200442id_/http://www.chemehuevi.net/tribal-court/.'

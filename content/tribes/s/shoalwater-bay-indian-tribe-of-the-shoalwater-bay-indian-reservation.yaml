@@ -646,6 +646,18 @@ jurisdiction:
     from images and matched to the roster. Row re-read on 2026-11-22 from the page image (the govinfo
     PDF has no text layer for the table); verification level unchanged because the name was not matched
     word for word in machine-read text.'
+jurisdiction_agreements:
+- kind: cross-deputization
+  other_party: Pacific County Sheriff, Washington
+  agreement: Cross commission law enforcement agreement
+  state: WA
+  date: '2011'
+  status: expired
+  source: shoalwater-bay-tribe-pacific-county-cross-commission-agreement
+  confidence: high
+  verification: read-in-full
+  locator: Title
+  note: 'The source reads: “CROSS COMMISSION LAW ENFORCEMENT AGREEMENT BETWEEN THE SHOALWATER BAY TRIBAL COMMUNITY AND PACI FIC COUNTY”. Effective date reads "___ day of ___ 2011" and the term runs to December 31, 2014 unless terminated, so it may have lapsed. The posted copy is a sample in a federal resource library; current status is not confirmed.'
 land_establishment:
 - land_area: Shoalwater Reserve, Washington Territory
   method: executive-order

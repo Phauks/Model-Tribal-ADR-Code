@@ -973,6 +973,17 @@ jurisdiction:
   as_of: '2017-07-18'
   locator: Answer, second and third paragraphs (the lists of mandatory and optional states)
   note: Inferred from the state's absence from both lists. Nation placed in Michigan by the Census Bureau's land areas.
+jurisdiction_agreements:
+- kind: tax-agreement
+  other_party: Michigan Department of Treasury
+  agreement: Tax agreement between the tribe and the State of Michigan (sales and use tax exemptions and related taxes)
+  state: MI
+  status: in-effect
+  source: michigan-department-of-treasury-sales-to-federally-recognized-indian-tribes
+  confidence: high
+  verification: bulk-import
+  locator: Section "Sales to tribes who have entered into a tax agreement with the State of Michigan"
+  note: 'The source reads: “Little River Band of Ottawa Indians”. The page states "The State has entered into tax agreements with ten of the twelve federally recognized Indian tribes located in Michigan." and lists this tribe; the quote is the name as listed. Signing dates are not on this page.'
 treaties:
 - title: Treaty with the Ottawa, etc., 1836
   signed: '1836-03-28'

@@ -8,11 +8,13 @@
  * with a Content-Security-Policy that blocks scripts and a nosniff header, so
  * a file cannot run in the site's name (OWASP File Upload Cheat Sheet,
  * "File Storage Location" and "Content-Type validation"). Documents are
- * always downloaded.
+ * always downloaded. Nothing is served until its virus check allows it, for
+ * the very bytes that were checked (site/SCANNING.md).
  */
 import { error } from '@sveltejs/kit';
 import type { R2Bucket, R2Object, R2ObjectBody } from '@cloudflare/workers-types/index.ts';
 import type { UploadKind } from '#lib/uploads.ts';
+import { mayServe, type FileScan } from './file-scans.ts';
 import { servedRange } from './public-copy-serving.ts';
 
 export interface ServedFile {
@@ -31,14 +33,17 @@ export async function serveUploadFile(
 	request: Request,
 	bucket: R2Bucket,
 	file: ServedFile,
-	options: { inline: boolean; cacheControl: string }
+	options: { inline: boolean; cacheControl: string; scan: FileScan | null }
 ): Promise<Response> {
+	if (!mayServe(options.scan)) error(409, 'This file is held until the virus check passes.');
 	const wantsRange = request.headers.has('range');
 	const stored = (await bucket.get(file.key, {
 		onlyIf: request.headers as never,
 		...(wantsRange ? { range: request.headers as never } : {})
 	})) as R2Object | R2ObjectBody | null;
 	if (!stored) error(404, 'The file is no longer stored.');
+	// A copy replaced after its check is held again.
+	if (!mayServe(options.scan, stored)) error(409, 'This file is held until the virus check passes.');
 
 	const inline = options.inline && mayShowInline(file.kind);
 	// Header values must be plain ASCII; the full name goes in filename*.

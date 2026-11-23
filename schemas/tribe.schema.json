@@ -667,6 +667,25 @@
         "unevaluatedProperties": false
       }
     },
+    "jurisdiction_agreements": {
+      "type": "array",
+      "description": "Agreements between the nation and a state, county, city or federal agency that share or allocate jurisdiction: cross-deputization and law-enforcement agreements, tax agreements and compacts other than gaming compacts, and child welfare agreements. One fact per agreement per source.",
+      "items": {
+        "type": "object",
+        "$ref": "#/$defs/citedFact",
+        "required": ["kind", "other_party"],
+        "properties": {
+          "kind": { "type": "string", "enum": ["cross-deputization", "tax-agreement", "child-welfare-agreement", "other"] },
+          "other_party": { "type": "string", "description": "The state agency, county, city or federal agency that is party to the agreement, as the source names it." },
+          "agreement": { "type": "string", "description": "The agreement's title, or a short description when it has none." },
+          "state": { "type": "string", "pattern": "^[A-Z]{2}$" },
+          "date": { "$ref": "common.schema.json#/$defs/partialDate", "description": "Signed or effective date." },
+          "status": { "type": "string", "enum": ["in-effect", "expired", "unknown"] },
+          "detail": { "type": "string" }
+        },
+        "unevaluatedProperties": false
+      }
+    },
     "treaties": {
       "type": "array",
       "description": "Ratified United States treaties signed by the nation or by the tribes and bands it descends from, each linked to its text in Kappler's Indian Affairs: Laws and Treaties. A link to a historic signatory is a matched fact with its own confidence.",

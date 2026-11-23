@@ -202,6 +202,15 @@ export interface NationRecord {
 	})[];
 	dispute_resolution_law?: string[];
 	jurisdiction?: (CitedFact & { topic: string; value?: string; detail?: string })[];
+	jurisdiction_agreements?: (CitedFact & {
+		kind: string;
+		other_party: string;
+		agreement?: string;
+		state?: string;
+		date?: string;
+		status?: string;
+		detail?: string;
+	})[];
 	treaties?: (CitedFact & {
 		title: string;
 		signed: string;

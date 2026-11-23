@@ -771,6 +771,17 @@ jurisdiction:
   verification: read-in-full
   locator: 900 F.2d at 1166-67; S.D. Codified Laws §§ 1-1-12, 1-1-18
   note: 'Quote is the 1957 assumption text, § 1-1-12, shown because it is still printed in the code. Conclusion that nothing is in force is mine, drawn from Rosebud (1990) plus the statutes; the research did not find any later tribal consent election or any post-1990 South Dakota assumption. Goldberg (2010) fn. 4 reaches the same view. Also cites: south-dakota-codified-laws-1-1-12, south-dakota-codified-laws-1-1-18.'
+jurisdiction_agreements:
+- kind: tax-agreement
+  other_party: South Dakota Department of Revenue
+  agreement: Comprehensive tax collection agreement (sales, use, contractor's excise and tourism taxes)
+  state: SD
+  status: in-effect
+  source: south-dakota-department-of-revenue-sales-of-products-or-service-within-indian-country
+  confidence: high
+  verification: bulk-import
+  locator: Section "Comprehensive Tax Collection Agreement"
+  note: 'The source reads: “The five Indian tribes with comprehensive tax collection agreements are Cheyenne River Sioux Tribe, Crow Creek Sioux Tribe, Oglala Sioux Tribe, Rosebud Sioux Tribe, and Standing Rock Sioux Tribe.”. Revenue from the tribe''s Special Jurisdiction is remitted on the state return and divided between the state and the tribe under the agreement terms. The page gives no signing date.'
 treaties:
 - title: Treaty with the Sioune and Oglala Tribes, 1825
   signed: '1825-07-05'

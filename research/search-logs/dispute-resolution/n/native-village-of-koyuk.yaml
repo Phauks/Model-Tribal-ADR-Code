@@ -105,5 +105,14 @@ searches:
   outcome: not-found
   reason: 'Entry (pp. 72-73): the directory''s makers could not reach the Tribe as of October 2021, so
     the entry is blank.'
+- date: '2026-11-23'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: web-archive
+  address: https://web.archive.org/web/20180406081354/http://www.kawerak.org:80/communities/koyuk.html
+  query: 'retry of an address that failed earlier: a direct request, then the Wayback Machine copy'
+  outcome: not-found
+  reason: Read the Wayback Machine copy of 2018-04-06 ("Koyuk"); it shows no codes, court or dispute resolution
+    forum.
 next_steps: Ask the nation's court or government office whether it has a peacemaking, mediation or other
   dispute resolution program, and check law library holdings of its code.
