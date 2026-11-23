@@ -373,6 +373,17 @@ jurisdiction:
     its table as page images, so nation names were read from images and matched to the roster. Row re-read
     on 2026-11-22 from the page image, and the name was found word for word in the notice''s machine-read
     (OCR) text by the second gap review (research/reviews/2026-11-22-icwa-agents.csv).'
+land_establishment:
+- land_area: Hoh River Reserve, Washington
+  method: executive-order
+  instrument: Exec. Order of Sept. 11, 1893, 1 Kappler 916
+  date: '1893-09-11'
+  detail: First set aside
+  source: executive-order-1893-09-11-hoh-reservation
+  confidence: high
+  verification: read-in-full
+  locator: 1 Kappler 917
+  note: 'The instrument reads: “withdrawn from sale and settlement and set apart as a reservation for the Hoh Indians not now residing upon any Indian reservation”.'
 memberships:
 - organization: Northwest Indian Fisheries Commission
   source: northwest-indian-fisheries-commission-member-tribes

@@ -736,6 +736,17 @@ jurisdiction:
   as_of: '2017-07-18'
   locator: Answer, second and third paragraphs (the lists of mandatory and optional states)
   note: Inferred from the state's absence from both lists. Nation placed in New Mexico by the Census Bureau's land areas.
+land_establishment:
+- land_area: Fort Stanton Indian Reserve (Mescalero Apache), New Mexico
+  method: executive-order
+  instrument: Exec. Order of May 29, 1873, 1 Kappler 871
+  date: '1873-05-29'
+  detail: First set aside
+  source: executive-order-1873-05-29-mescalero-apache-reservation
+  confidence: high
+  verification: read-in-full
+  locator: 1 Kappler 871
+  note: 'The instrument reads: “be set apart as a reservation for the Mescalero Apache Indians, as recommended by the Secretary of the Interior and Commissioner of Indian Affairs”. Cancelled and replaced by the Exec. Order of Feb. 2, 1874 (same page range), which set apart different lands "for the use of said Mescalero Apaches and such other Indians as the Department may see fit to locate thereon."'
 review:
   status: drafted-from-public-sources
   last_verified: '2026-11-21'
