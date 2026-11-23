@@ -34,7 +34,7 @@ describe('the workspace pages in the left sidebar', () => {
 			'nonprofit',
 			'service-checks',
 			'sponsors',
-			'book-orders',
+			'orders',
 			'activity'
 		]);
 	});
@@ -86,7 +86,7 @@ describe('the signed-in hint', () => {
 	});
 
 	it('keeps page names with hyphens, such as review-requests', () => {
-		const names = ['overview', 'review-requests', 'nation-uploads', 'address-book', 'book-orders'];
+		const names = ['overview', 'review-requests', 'nation-uploads', 'address-book', 'orders'];
 		expect(readSignedInHint(`signed-in-hint=${signedInHintValue(names)}`).workspacePageNames).toEqual(names);
 		expect(readSignedInHint('signed-in-hint=overview.-bad.bad-.a--b').workspacePageNames).toEqual(['overview']);
 	});
