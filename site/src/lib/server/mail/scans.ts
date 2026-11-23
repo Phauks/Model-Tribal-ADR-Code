@@ -23,6 +23,8 @@ export interface AttachmentCheck {
 	explanation: string;
 	/** Whether someone who manages the inbox may release it by hand. */
 	releasable: boolean;
+	/** When it was checked, by which scanner and signatures, once it has been. */
+	checkedBy: string | null;
 }
 
 async function scansOf(context: MailContext, keys: string[]): Promise<Map<string, FileScan>> {
@@ -40,6 +42,7 @@ function checkOf(scan: FileScan | null, received: boolean): AttachmentCheck {
 		held: !mayServe(scan),
 		label: words.label,
 		explanation: words.explanation,
+		checkedBy: words.checkedBy,
 		// Only a received file can be released by hand; a file the team attached is simply sent again without it.
 		releasable: received && scan !== null && (scan.status === 'cannot-scan' || scan.status === 'failed') && scan.reason !== 'missing'
 	};

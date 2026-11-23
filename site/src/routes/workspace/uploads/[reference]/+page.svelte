@@ -163,7 +163,11 @@
 				{#each data.scans as scan, index (index)}
 					<li class={scan.status === 'clean' ? 'ok' : 'warn'}>
 						{#if scan.status === 'clean'}<ShieldCheck size={18} aria-hidden="true" />{:else}<ShieldAlert size={18} aria-hidden="true" />{/if}
-						<span>{data.scans.length > 1 ? (index === 0 ? 'File as sent: ' : 'Copy without location: ') : ''}{scan.label}. {scan.explanation}</span>
+						<span
+							>{data.scans.length > 1 ? (index === 0 ? 'File as sent: ' : 'Copy without location: ') : ''}{scan.label}. {scan.explanation}{#if scan.checkedBy}<br /><span
+									class="small muted">{scan.checkedBy}</span
+								>{/if}</span
+						>
 					</li>
 				{/each}
 			</ul>

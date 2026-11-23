@@ -14,6 +14,7 @@
  * the scanner to be running. Until it is, files simply wait.
  */
 import type { D1Database, R2Bucket, R2HTTPMetadata, R2ObjectBody } from '@cloudflare/workers-types/index.ts';
+import { readableDate } from '#lib/readable-date.ts';
 
 export const scanStatuses = ['waiting', 'scanning', 'retrying', 'clean', 'flagged', 'cannot-scan', 'failed', 'released-by-hand'] as const;
 export type ScanStatus = (typeof scanStatuses)[number];
@@ -221,8 +222,101 @@ export function stillScanning(scan: FileScan | null): boolean {
 	return !scan || scan.status === 'waiting' || scan.status === 'scanning' || scan.status === 'retrying';
 }
 
-/** Plain words for a file's scan, for the people who sent it and the people who review it. */
-export function scanStatusWords(scan: FileScan | null): { label: string; explanation: string } {
+/** What a scanner reports about itself with every result, read from its version string. */
+export interface ScannerVersion {
+	/** The scan engine's own code version, such as "1". */
+	engine: string | null;
+	/** The YARA Forge rules release as a date (2026-11-20), "none" when the engine ran without rules, or null. */
+	yaraRules: string | null;
+	/** ClamAV's signature database number, such as "28191". */
+	clamavDatabase: string | null;
+	/** The date of ClamAV's newest signatures (2026-11-22), when the engine reported it. */
+	clamavDatabaseDate: string | null;
+}
+
+function dashedDate(compact: string): string | null {
+	const match = /^(\d{4})(\d{2})(\d{2})$/.exec(compact);
+	return match ? `${match[1]}-${match[2]}-${match[3]}` : null;
+}
+
+/**
+ * Reads the engine's version string, such as
+ * engine/1+yara-rules/20261120+clamav-db/28191-20261122 (scanner/engine,
+ * compose_engine_version). Parts it does not recognise are left out.
+ */
+export function readScannerVersion(engineVersion: string | null): ScannerVersion | null {
+	if (!engineVersion) return null;
+	const parts = new Map(
+		engineVersion.split('+').map((part) => {
+			const slash = part.indexOf('/');
+			return slash < 0 ? [part, ''] : [part.slice(0, slash), part.slice(slash + 1)];
+		})
+	);
+	const rules = parts.get('yara-rules') ?? null;
+	const [database, databaseDate] = (parts.get('clamav-db') ?? '').split('-');
+	return {
+		engine: parts.get('engine') || null,
+		yaraRules: rules === null ? null : rules === 'none' || rules === 'off' ? 'none' : (dashedDate(rules) ?? rules),
+		clamavDatabase: database || null,
+		clamavDatabaseDate: databaseDate ? dashedDate(databaseDate) : null
+	};
+}
+
+/** Which scanner a provider name stands for, in plain words. */
+export function scannerName(provider: string | null): string {
+	if (provider === 'container') return 'the project’s scanner (ClamAV and YARA)';
+	if (provider === 'http') return 'the outside scanning service';
+	return provider ? `the “${provider}” scanner` : 'an unknown scanner';
+}
+
+/** The versions in one sentence, such as "ClamAV signatures 28191 of Nov. 22, 2026, YARA Forge rules of Nov. 20, 2026, engine 1". */
+export function scannerVersionWords(version: ScannerVersion | null): string | null {
+	if (!version) return null;
+	const words: string[] = [];
+	if (version.clamavDatabase) {
+		words.push(
+			`ClamAV signatures ${version.clamavDatabase}${version.clamavDatabaseDate ? ` of ${readableDate(version.clamavDatabaseDate)}` : ''}`
+		);
+	}
+	if (version.yaraRules === 'none') words.push('no YARA rules');
+	else if (version.yaraRules) words.push(`YARA Forge rules of ${readableDate(version.yaraRules)}`);
+	if (version.engine) words.push(`engine ${version.engine}`);
+	return words.length > 0 ? words.join(', ') : null;
+}
+
+/** A time stamp as "Nov. 23, 2026, 04:51 UTC". */
+export function readableScanTime(stamp: string): string {
+	const date = stamp.slice(0, 10);
+	const time = /T(\d{2}:\d{2})/.exec(stamp)?.[1];
+	return time ? `${readableDate(date)}, ${time} UTC` : readableDate(date);
+}
+
+/**
+ * Which scanner looked at the file, when, and with which signatures, such as
+ * "Checked Nov. 23, 2026, 04:51 UTC by the project’s scanner (ClamAV and
+ * YARA): ClamAV signatures 28191 of Nov. 22, 2026, YARA Forge rules of Nov.
+ * 20, 2026, engine 1." Null when no scanner has looked at it yet.
+ */
+export function scannedByWords(scan: FileScan | null): string | null {
+	if (!scan?.engineVersion || !scan.finishedAt) return null;
+	const versions = scannerVersionWords(readScannerVersion(scan.engineVersion));
+	return `Checked ${readableScanTime(scan.finishedAt)} by ${scannerName(scan.provider)}${versions ? `: ${versions}` : ''}.`;
+}
+
+/** The newest finished scan, so the workspace can show which scanner and signatures are in use. */
+export async function latestScan(database: D1Database): Promise<FileScan | null> {
+	const row = await database
+		.prepare('SELECT * FROM file_scans WHERE finished_at IS NOT NULL AND engine_version IS NOT NULL ORDER BY finished_at DESC LIMIT 1')
+		.first<FileScanRow>();
+	return row ? fileScanFromRow(row) : null;
+}
+
+/** Plain words for a file's scan, for the people who sent it and the people who review it, with who checked it. */
+export function scanStatusWords(scan: FileScan | null): { label: string; explanation: string; checkedBy: string | null } {
+	return { ...statusWords(scan), checkedBy: scannedByWords(scan) };
+}
+
+function statusWords(scan: FileScan | null): { label: string; explanation: string } {
 	if (!scan) return { label: 'Not checked', explanation: 'This file was never put in line for the virus check, so it is held.' };
 	switch (scan.status) {
 		case 'waiting':

@@ -10,8 +10,10 @@ import {
 	fileScans,
 	forgetScan,
 	heldFileAnswer,
+	latestScan,
 	mayServe,
 	openScannedFile,
+	readScannerVersion,
 	releaseByHand,
 	requestScan,
 	scanAgain,
@@ -480,5 +482,41 @@ describe('the scan desk', () => {
 		alarm = null;
 		await desk.alarm();
 		expect(alarm).toBe(Date.parse('2030-01-01T00:01:00.000Z'));
+	});
+});
+
+describe('which scanner checked a file', () => {
+	it('reads the engine’s version string', () => {
+		expect(readScannerVersion('engine/1+yara-rules/20261120+clamav-db/28191-20261122')).toEqual({
+			engine: '1',
+			yaraRules: '2026-11-20',
+			clamavDatabase: '28191',
+			clamavDatabaseDate: '2026-11-22'
+		});
+		expect(readScannerVersion('engine/1+yara-rules/off+clamav-db/28191')).toEqual({
+			engine: '1',
+			yaraRules: 'none',
+			clamavDatabase: '28191',
+			clamavDatabaseDate: null
+		});
+		expect(readScannerVersion(null)).toBeNull();
+	});
+
+	it('says when, by which scanner and with which signatures', async () => {
+		const database = testDatabase();
+		await requestScan(database, { objectKey: 'requests/r/1', purpose: 'request-file' });
+		expect(scanStatusWords(await fileScan(database, 'requests/r/1')).checkedBy).toBeNull();
+		await database
+			.prepare(
+				`UPDATE file_scans SET status = 'clean', provider = 'container', finished_at = '2026-11-23T04:51:09.000Z',
+				 engine_version = 'engine/1+yara-rules/20261120+clamav-db/28191-20261122' WHERE object_key = ?`
+			)
+			.bind('requests/r/1')
+			.run();
+		const scan = await fileScan(database, 'requests/r/1');
+		expect(scanStatusWords(scan).checkedBy).toBe(
+			'Checked Nov. 23, 2026, 04:51 UTC by the project’s scanner (ClamAV and YARA): ClamAV signatures 28191 of Nov. 22, 2026, YARA Forge rules of Nov. 20, 2026, engine 1.'
+		);
+		expect((await latestScan(database))?.objectKey).toBe('requests/r/1');
 	});
 });

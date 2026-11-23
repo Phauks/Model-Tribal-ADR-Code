@@ -225,7 +225,7 @@
 										<span class="held" title={attachment.check.explanation}>
 											<ShieldEllipsis size={16} aria-hidden="true" />
 											<span class="file">{attachment.filename}</span>
-											<span class="small muted">{attachment.check.label}</span>
+											<span class="small muted">{attachment.check.label}{attachment.check.checkedBy ? ` ${attachment.check.checkedBy}` : ''}</span>
 										</span>
 										{#if attachment.check.releasable && data.canManage}
 											<form method="post" action="?/release" class="release small">
@@ -241,6 +241,7 @@
 											<span class="file">{attachment.filename}</span>
 											<span class="small muted">{size(attachment.size)}</span>
 										</a>
+										{#if attachment.check?.checkedBy}<span class="small muted checked-by">{attachment.check.checkedBy}</span>{/if}
 									{/if}
 								</li>
 							{/each}
@@ -627,6 +628,11 @@
 		border: 1px dashed var(--color-control-border);
 		border-radius: var(--radius-control);
 		color: var(--color-ink-muted);
+	}
+	.checked-by {
+		display: block;
+		max-width: 40ch;
+		margin-top: var(--space-1);
 	}
 	.release {
 		display: flex;
