@@ -151,6 +151,17 @@
 	</section>
 {/if}
 
+{#if data.nationChanges && data.nationChanges.waiting > 0}
+	<section>
+		<h2>Nations’ changes</h2>
+		<p>
+			{data.nationChanges.waiting} {data.nationChanges.waiting === 1 ? 'change' : 'changes'} that nations published on their own pages
+			{data.nationChanges.waiting === 1 ? 'waits' : 'wait'} for the project to read{#if data.nationChanges.overdue}; <strong>{data.nationChanges.overdue} past 7 days</strong>{/if}.
+			<a href="/workspace/nation-pages">Read them</a>
+		</p>
+	</section>
+{/if}
+
 {#if data.recentReviews}
 	<section>
 		<h2>Latest reviews</h2>

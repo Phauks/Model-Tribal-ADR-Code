@@ -44,9 +44,9 @@ export interface ChangeRow<K extends ChangeKind = ChangeKind> {
 	discardedAt: string | null;
 }
 
-type StoredChange = Omit<ChangeRow, 'content'> & { content: string };
+export type StoredChange = Omit<ChangeRow, 'content'> & { content: string };
 
-const changeColumns = `nation_page_changes.identifier, nation_page_changes.nation_identifier AS nationIdentifier,
+export const changeColumns = `nation_page_changes.identifier, nation_page_changes.nation_identifier AS nationIdentifier,
 	nation_page_changes.kind, nation_page_changes.content, nation_page_changes.credit, nation_page_changes.status,
 	nation_page_changes.written_by AS writtenBy, writer.display_name AS writtenByName,
 	nation_page_changes.written_at AS writtenAt, nation_page_changes.published_by AS publishedBy,
@@ -55,12 +55,12 @@ const changeColumns = `nation_page_changes.identifier, nation_page_changes.natio
 	approver.display_name AS approvedByName, nation_page_changes.approved_at AS approvedAt,
 	nation_page_changes.restored_from AS restoredFrom, nation_page_changes.discarded_at AS discardedAt`;
 
-const changeTables = `nation_page_changes
+export const changeTables = `nation_page_changes
 	LEFT JOIN people AS writer ON writer.identifier = nation_page_changes.written_by
 	LEFT JOIN people AS publisher ON publisher.identifier = nation_page_changes.published_by
 	LEFT JOIN people AS approver ON approver.identifier = nation_page_changes.approved_by`;
 
-function fromStored(row: StoredChange): ChangeRow {
+export function fromStored(row: StoredChange): ChangeRow {
 	let raw: unknown = {};
 	try {
 		raw = JSON.parse(row.content);
