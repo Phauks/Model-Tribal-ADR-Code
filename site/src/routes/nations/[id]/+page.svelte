@@ -271,8 +271,10 @@
 					>
 						{#snippet cell(row: TableRow, column: TableColumn)}
 							{#if column.key === 'treaty'}
-								{#if row.cells.treaty.href}<a href={row.cells.treaty.href}>{row.cells.treaty.text}</a
-									>{:else}{row.cells.treaty.text}{/if}<CitationMarks marks={treatyMarks.get(row.key)} />
+								<span class="treaty-cell"
+									>{#if row.cells.treaty.href}<a href={row.cells.treaty.href}>{row.cells.treaty.text}</a
+										>{:else}{row.cells.treaty.text}{/if}<CitationMarks marks={treatyMarks.get(row.key)} /></span
+								>
 							{/if}
 						{/snippet}
 					</DataTable>
@@ -420,6 +422,19 @@
 {/snippet}
 
 <style>
+	/*
+	 * A treaty's markers follow its title with no text around them, so each
+	 * gets a full 24 by 24 pixel target, as in FactGroups (WCAG 2.2, 2.5.8),
+	 * and the title link gets two pixels above and below.
+	 */
+	.treaty-cell :global(.note-marker) {
+		padding: 5px 9px 5px 0.05em;
+	}
+
+	.treaty-cell > a {
+		padding-block: 2px;
+	}
+
 	/* Room before the line that follows a list, such as "All 949 opinions". */
 	.opinions,
 	.stories {
