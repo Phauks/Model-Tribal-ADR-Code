@@ -257,7 +257,7 @@ The tables are created by the files in `migrations/`. Workers Builds does not ru
 npm run database:migrate:remote   # wrangler d1 migrations apply database --remote
 ```
 
-Wrangler records which migrations ran, so running it again is safe. For the copy used by `npm run preview`, use `npm run database:migrate:local`.
+Wrangler records which migrations ran, so running it again is safe. For the copy used by `npm run preview`, use `npm run database:migrate:local`. To write a new migration, run `npm run database:new-migration -- "what it does"`; new files are named for the UTC time and what they do, such as `20261123T0430_add_file_scans.sql` ([migrations/README.md](migrations/README.md)).
 
 ### First sign-in
 
@@ -279,7 +279,7 @@ The tables are created by the files in `migrations/`. Workers Builds does not ru
 npm run database:migrate:remote   # wrangler d1 migrations apply database --remote
 ```
 
-Wrangler records which migrations ran, so running it again is safe. For the copy used by `npm run preview`, use `npm run database:migrate:local`.
+Wrangler records which migrations ran, so running it again is safe. For the copy used by `npm run preview`, use `npm run database:migrate:local`. To write a new migration, run `npm run database:new-migration -- "what it does"`; new files are named for the UTC time and what they do, such as `20261123T0430_add_file_scans.sql` ([migrations/README.md](migrations/README.md)).
 
 ### First sign-in
 
