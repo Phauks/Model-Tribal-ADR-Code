@@ -16,7 +16,10 @@
 	// an outline (sidebar/SidebarTree.svelte), the caret
 	// (sidebar/FoldButton.svelte) and the groups under the sections
 	// (sidebar/SidebarGroups.svelte). For someone signed in with workspace
-	// access, a Workspace group lists the workspace pages their role opens.
+	// access, a Workspace group lists the workspace pages their role opens;
+	// for anyone signed in, a Your account group lists the account pages and
+	// Following, which the profile button in the masthead no longer holds
+	// (Trevor, Nov. 23, 2026).
 	// Workspace pages know this when the Worker renders them; the pages built
 	// ahead of time read it from the signed-in hint (src/lib/signed-in-hint.ts).
 	import { tick, untrack } from 'svelte';
@@ -59,7 +62,11 @@
 
 	// The section being read: its pages (from the root layout), with this page's outline in place.
 	const pageOutline = $derived(page.data.outline as PageOutline | undefined);
-	const sectionPages = $derived(page.data.sectionPages as OutlineItem[] | undefined);
+	// Every section's pages: with the page, or read in the browser for the
+	// essays on a page built ahead of time (sidebar/sidebar-state.svelte.ts).
+	const pageLists = $derived((page.data.sidebarLists ?? {}) as Record<string, OutlineItem[]>);
+	const lists = $derived<Record<string, OutlineItem[]>>({ ...sidebar.fetched, ...pageLists });
+	const sectionPages = $derived(currentSection ? lists[currentSection.link] : undefined);
 	const currentItems = $derived(
 		composeSectionOutline(currentSection?.opens ? sectionPages : undefined, pageOutline, path, pageTitle)
 	);
@@ -70,8 +77,11 @@
 	// The workspace pages to list: from the page itself in the workspace,
 	// otherwise from the signed-in hint, read in the browser.
 	let hintedPageNames = $state<string[]>([]);
+	let hintedSignedIn = $state(false);
 	$effect(() => {
-		hintedPageNames = readSignedInHint(document.cookie).workspacePageNames;
+		const hint = readSignedInHint(document.cookie);
+		hintedPageNames = hint.workspacePageNames;
+		hintedSignedIn = hint.signedIn;
 	});
 	const permissions = $derived(page.data.permissions as Permission[] | undefined);
 	const workspaceMenu = $derived<WorkspacePage[]>(
@@ -79,7 +89,10 @@
 	);
 	const currentWorkspacePage = $derived(workspaceMenu.find((item) => isCurrentWorkspacePage(item.link, path)));
 
-	// On the Account pages, a "Your account" group lists them (src/lib/account-menu.ts).
+	// For someone signed in, a "Your account" group lists the Account pages
+	// (src/lib/account-menu.ts). The pages the Worker renders know at once who
+	// is signed in; the others wait for the hint.
+	const signedIn = $derived(hintedSignedIn || page.data.person !== undefined || page.data.email !== undefined);
 	const onAccountPage = $derived(isAccountPath(path));
 	const currentAccount = $derived(onAccountPage ? currentAccountPage(path) : undefined);
 
@@ -123,7 +136,7 @@
 	/** Whether a section has something to open: its pages, or the page's own outline. */
 	function opens(section: SiteSection): boolean {
 		if (!section.built) return false;
-		return section === currentSection ? currentItems.length > 0 : Boolean(section.opens);
+		return section === currentSection ? currentItems.length > 0 : Boolean(section.opens && lists[section.link]?.length);
 	}
 
 	/** The section being read starts open; the others start shut, until the reader chooses. */
@@ -136,12 +149,11 @@
 		untrack(() => sidebar.restore());
 	});
 
-	// Fetch the pages of each section the reader has open, other than the one being read.
+	// A page built ahead of time came without the essays' lists; read them now,
+	// before the reader opens them.
 	$effect(() => {
 		for (const section of siteSections) {
-			if (section !== currentSection && opens(section) && isSectionOpen(section) && !sidebar.loaded[section.link]) {
-				untrack(() => sidebar.load(section.link));
-			}
+			if (section.built && section.opens && !pageLists[section.link]) untrack(() => sidebar.fetchList(section.link));
 		}
 	});
 
@@ -264,7 +276,7 @@
 			{@const expandable = opens(section)}
 			{@const sectionOpen = expandable && isSectionOpen(section)}
 			{@const listId = `sidebar-${current ? 'outline' : 'pages'}-${idSuffix}-${index}`}
-			<li class:current>
+			<li class:current data-sidebar-section={section.link}>
 				<div class="entry">
 					<FoldButton
 						size="section"
@@ -282,7 +294,7 @@
 					{/if}
 				</div>
 				{#if current && expandable}
-					<div id={listId} class="section-contents" hidden={!sectionOpen}>
+					<div id={listId} class="section-contents" data-sidebar-list hidden={!sectionOpen}>
 						{#if outlineTitle}<p class="outline-title">{outlineTitle}</p>{/if}
 						<SidebarTree
 							items={currentItems}
@@ -294,24 +306,15 @@
 						/>
 					</div>
 				{:else if expandable}
-					{@const pages = sidebar.loaded[section.link]}
-					<div id={listId} hidden={!sectionOpen}>
-						{#if pages === 'loading'}
-							<p class="pages-note">Loading…</p>
-						{:else if pages === 'failed'}
-							<p class="pages-note">Could not load the list. <a href={section.link}>Go to {section.label}</a></p>
-						{:else if pages && pages.length > 0}
-							<SidebarTree
-								items={pages}
-								listId="{listId}-list"
-								isActive={isActive}
-								isCurrent={isCurrentPage}
-								isOpen={isItemOpen}
-								ontoggle={toggleItem}
-							/>
-						{:else if pages}
-							<p class="pages-note">Nothing published yet.</p>
-						{/if}
+					<div id={listId} data-sidebar-list hidden={!sectionOpen}>
+						<SidebarTree
+							items={lists[section.link]}
+							listId="{listId}-list"
+							isActive={isActive}
+							isCurrent={isCurrentPage}
+							isOpen={isItemOpen}
+							ontoggle={toggleItem}
+						/>
 					</div>
 				{/if}
 			</li>
@@ -321,7 +324,7 @@
 		{idSuffix}
 		{path}
 		{sidebar}
-		accountPages={onAccountPage ? [...accountPages] : []}
+		accountPages={signedIn || onAccountPage ? [...accountPages] : []}
 		{currentAccount}
 		{workspaceMenu}
 		{currentWorkspacePage}
@@ -426,12 +429,6 @@
 
 	.sections > li.current {
 		margin: var(--space-1) 0 var(--space-3);
-	}
-
-	.pages-note {
-		margin: var(--space-1) var(--space-3) var(--space-2);
-		font-size: var(--font-size-small);
-		color: var(--color-ink-muted);
 	}
 
 	.outline-title {

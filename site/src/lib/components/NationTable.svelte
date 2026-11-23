@@ -8,6 +8,8 @@
 	the table has no search box; the site search in the masthead finds a
 	nation by name. Readers can narrow it by recognition, state or review
 	status, copy a link that keeps those choices, and download the rows as CSV.
+	Each state opens the list of nations in it (Trevor, Nov. 23, 2026: every
+	table opens to the data behind it).
 -->
 <script lang="ts">
 	import DataTable from './DataTable.svelte';
@@ -23,7 +25,7 @@
 	const columns: TableColumn[] = [
 		{ key: 'name', header: 'Name', isRowHeader: true, sortable: true },
 		{ key: 'recognition', header: 'Recognition', sortable: true, custom: true, filterable: true },
-		{ key: 'states', header: 'States', sortable: true, filterable: true },
+		{ key: 'states', header: 'States', sortable: true, filterable: true, custom: true },
 		{ key: 'review', header: 'Review status', sortable: true, filterable: true }
 	];
 
@@ -57,6 +59,7 @@
 	}
 
 	const recognitionById = $derived(new Map(group.rows.map((row) => [row.id, badged(row.recognition)])));
+	const statesById = $derived(new Map(group.rows.map((row) => [row.id, row.states])));
 </script>
 
 <DataTable
@@ -70,7 +73,10 @@
 	download={identifier}
 	shareable
 >
-	{#snippet cell(row)}
+	{#snippet cell(row, column)}
+		{#if column.key === 'states'}
+			{#each statesById.get(row.key) ?? [] as code, index (code)}{index > 0 ? ', ' : ''}<a href="/nations/state/{code.toLocaleLowerCase('en-US')}">{stateName(code)}</a>{/each}
+		{:else}
 		{@const views = recognitionById.get(row.key) ?? []}
 		{#if views.length > 0}
 		<ul class="recognition">
@@ -83,6 +89,7 @@
 				</li>
 			{/each}
 		</ul>
+		{/if}
 		{/if}
 	{/snippet}
 </DataTable>

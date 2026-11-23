@@ -119,6 +119,19 @@
 	});
 </script>
 
+<!--
+	Each tag on a provision narrows the list to the provisions that share it
+	(Trevor, Nov. 23, 2026: every table opens to the data behind it). Without
+	scripts the tags are plain words, since filtering needs the full list.
+-->
+{#snippet tag(key: string, value: string, label: string)}
+	{#if allRows && !(choices[key] ?? []).includes(value)}
+		<button type="button" class="tag-button" aria-label="{label}: show only these" onclick={() => choose(toggleChoice(choices, key, value, true))}>{label}</button>
+	{:else}
+		{label}
+	{/if}
+{/snippet}
+
 <svelte:head>
 	<title>Find recourse · Model Tribal ADR Code</title>
 	<meta
@@ -137,13 +150,6 @@
 			'en-US'
 		)} provisions from {data.nationCount.toLocaleString('en-US')} nations. Pick a kind of dispute and a method to see which nations provide it and what their law says.
 	</p>
-	<div class="notice" role="note">
-		<p>
-			Each provision was read from the nation’s published law and summarized in plain words. {data.checkedCount.toLocaleString(
-				'en-US'
-			)} have been checked by a second reader; the rest are marked “Read once.” No nation has reviewed this list. Always read the cited law before relying on it, and tell us about a mistake with Report a problem.
-		</p>
-	</div>
 
 	{#if allRows}
 		<div class="phone-tools no-print">
@@ -220,18 +226,18 @@
 					<li class="result">
 						<p class="nation">
 							<a href="/nations/{row.nation.id}">{row.nation.name}</a>
-							{#if row.states.length > 0}<span class="muted states">· {row.states.join(', ')}</span>{/if}
+							{#if row.states.length > 0}<span class="muted states">· {#each row.states as state, index (state)}{index > 0 ? ', ' : ''}{@render tag('state', state, state)}{/each}</span>{/if}
 						</p>
 						<p class="citation small">
 							{#if row.link}<a href={row.link}>{row.citation}</a>{:else}{row.citation}{/if}
 						</p>
 						<p class="summary">{row.summary}</p>
 						<ul class="tags small" aria-label="About this provision">
-							<li>{row.method}</li>
-							<li>{row.subject}</li>
-							<li>{settingLabels[row.setting] ?? row.setting}</li>
-							<li>Starts: {entryLabels[row.entry] ?? row.entry}</li>
-							<li>Result: {outcomeLabels[row.outcome] ?? row.outcome}</li>
+							<li>{@render tag('method', row.method, row.method)}</li>
+							<li>{@render tag('subject', row.subject, row.subject)}</li>
+							<li>{@render tag('setting', row.setting, settingLabels[row.setting] ?? row.setting)}</li>
+							<li>{@render tag('entry', row.entry, `Starts: ${entryLabels[row.entry] ?? row.entry}`)}</li>
+							<li>{@render tag('outcome', row.outcome, `Result: ${outcomeLabels[row.outcome] ?? row.outcome}`)}</li>
 							{#if !row.checked}<li class="read-once">Read once</li>{/if}
 						</ul>
 					</li>
@@ -370,6 +376,25 @@
 		border-radius: var(--radius-control);
 		background: var(--color-surface);
 		color: var(--color-ink-muted);
+	}
+
+	.tag-button {
+		border: 0;
+		padding: 0;
+		background: transparent;
+		color: inherit;
+		font: inherit;
+		text-align: left;
+		cursor: pointer;
+	}
+
+	.tag-button:hover {
+		color: var(--color-link);
+		text-decoration: underline;
+	}
+
+	.tags li:has(.tag-button:hover) {
+		background: var(--color-surface-raised);
 	}
 
 	.tags .read-once {

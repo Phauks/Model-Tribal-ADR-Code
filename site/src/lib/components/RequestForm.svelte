@@ -4,6 +4,9 @@
 	// nation, its proof. Used by the request page and by the Report a problem
 	// dialog (ReportProblem.svelte), so both ask the same questions. Given
 	// onresult, the form sends itself in place, without leaving the page.
+	// Compact, for the dialog, asks them on one short page (Trevor, Nov. 23,
+	// 2026): the material, the details and a way to reply, with the optional
+	// questions about the reader and the files folded away.
 	import { applyAction, enhance } from '$app/forms';
 	import {
 		authorityStatementLabels,
@@ -23,7 +26,8 @@
 		headingLevel = 2,
 		prefix = '',
 		action,
-		onresult
+		onresult,
+		compact = false
 	}: {
 		kind: RequestKind;
 		nationIdentifier?: string;
@@ -40,6 +44,8 @@
 		action?: string;
 		/** Called with the answer when the form sends itself in place. */
 		onresult?: (result: ActionResult) => void;
+		/** One short page, for the dialog: no section headings, optional questions folded. */
+		compact?: boolean;
 	} = $props();
 
 	type ActionResult = Parameters<typeof applyAction>[0];
@@ -48,6 +54,19 @@
 	const subheading = $derived(`h${headingLevel + 1}`);
 	const errorCount = $derived(Object.keys(errors).length);
 	const accepted = 'application/pdf,image/png,image/jpeg,image/webp';
+
+	/** The folded questions open by themselves when they hold an answer or an error. */
+	const aboutYouAnswered = $derived(
+		['requesterName', 'requesterNation', 'requesterRole', 'writingForGovernment'].some((name) => value(name) !== '')
+	);
+	const fileErrors = $derived(['file1', 'file2', 'file3'].some((name) => errors[name]));
+	const moreSourcesAnswered = $derived(
+		[2, 3].some((slot) =>
+			['Kind', 'Title', 'Citation', 'Date', 'Location', 'File'].some(
+				(field) => value(`source${slot}${field}`) !== '' || errors[`source${slot}${field}`]
+			)
+		)
+	);
 
 	function value(name: string, fallback = ''): string {
 		return values[name] ?? fallback;
@@ -79,6 +98,173 @@
 	{#if errors[name]}
 		<p class="field-error" id="{prefix}{name}-error"><span class="visually-hidden">Error:</span> {errors[name]}</p>
 	{/if}
+{/snippet}
+
+{#snippet sourceSlot(slot: number)}
+	<fieldset class="source">
+		<legend><svelte:element this={subheading}>Source {slot}{slot > 1 ? ' (optional)' : ''}</svelte:element></legend>
+		<div class="field">
+			<label for="{prefix}source{slot}Kind">Kind of source</label>
+			{@render fieldError(`source${slot}Kind`)}
+			<select
+				id="{prefix}source{slot}Kind"
+				name="source{slot}Kind"
+				aria-invalid={errors[`source${slot}Kind`] ? 'true' : undefined}
+				aria-describedby={describedBy(`source${slot}Kind`)}
+			>
+				<option value="">Choose…</option>
+				{#each sourceKinds as option (option)}
+					<option value={option} selected={value(`source${slot}Kind`) === option}
+						>{sourceKindLabels[option]}</option
+					>
+				{/each}
+			</select>
+		</div>
+		<div class="field">
+			<label for="{prefix}source{slot}Title">Title</label>
+			<input type="text" id="{prefix}source{slot}Title" name="source{slot}Title" value={value(`source${slot}Title`)} />
+		</div>
+		<div class="field">
+			<label for="{prefix}source{slot}Citation">Citation or web address</label>
+			{@render fieldError(`source${slot}Citation`)}
+			<textarea
+				id="{prefix}source{slot}Citation"
+				name="source{slot}Citation"
+				rows="2"
+				aria-invalid={errors[`source${slot}Citation`] ? 'true' : undefined}
+				aria-describedby={describedBy(`source${slot}Citation`)}
+				>{value(`source${slot}Citation`)}</textarea
+			>
+		</div>
+		<div class="field-row">
+			<div class="field">
+				<label for="{prefix}source{slot}Date">Date</label>
+				<input type="text" id="{prefix}source{slot}Date" name="source{slot}Date" value={value(`source${slot}Date`)} class="short" />
+			</div>
+			<div class="field">
+				<label for="{prefix}source{slot}Location">Where it names the nation (page, section or entry)</label>
+				<input
+					type="text"
+					id="{prefix}source{slot}Location"
+					name="source{slot}Location"
+					value={value(`source${slot}Location`)}
+				/>
+			</div>
+		</div>
+		<div class="field">
+			<label for="{prefix}source{slot}File">Upload a copy (PDF, PNG, JPEG or WebP, up to 10 MB)</label>
+			{@render fieldError(`source${slot}File`)}
+			<input type="file" id="{prefix}source{slot}File" name="source{slot}File" accept={accepted} />
+		</div>
+	</fieldset>
+{/snippet}
+{#snippet materialField()}
+	{@const sensitive = kind === 'restrict' || kind === 'remove'}
+	<div class="field">
+		<label for="{prefix}material">Page, record or passage</label>
+		{#if sensitive}
+			<p class="hint" id="{prefix}material-hint">
+				Please only say where the material is. Do not repeat sensitive material here.
+			</p>
+		{:else if !compact}
+			<p class="hint" id="{prefix}material-hint">
+				Filled in from the page you came from, if any. Add more pages on new lines.
+			</p>
+		{/if}
+		{@render fieldError('material')}
+		<textarea
+			id="{prefix}material"
+			name="material"
+			rows={compact ? 2 : 3}
+			aria-invalid={errors.material ? 'true' : undefined}
+			aria-describedby={describedBy('material', sensitive || !compact)}>{value('material', material)}</textarea
+		>
+	</div>
+{/snippet}
+
+{#snippet detailsField()}
+	<div class="field">
+		<label for="{prefix}details">
+			{#if kind === 'correct'}What is wrong, and what should it say?{:else if kind === 'restrict' || kind === 'remove'}What should happen to the material?{:else if kind === 'contribute'}What would you like to offer?{:else if kind === 'add-nation'}Anything else we should know{compact ? ' (optional)' : ''}{:else}Your question{/if}
+		</label>
+		{@render fieldError('details')}
+		<textarea
+			id="{prefix}details"
+			name="details"
+			rows={compact ? 4 : 6}
+			aria-invalid={errors.details ? 'true' : undefined}
+			aria-describedby={describedBy('details')}>{value('details')}</textarea
+		>
+	</div>
+	{#if value('nationIdentifier', nationIdentifier) && (kind === 'correct' || kind === 'question' || kind === 'contribute')}
+		<!-- Reports about a claimed page also go to the nation's team (src/lib/nation-team-reports.ts). -->
+		<p class="hint">
+			If people the nation chose keep this page, they see where and what you wrote here as well as the
+			project, but never your name or contact details.
+		</p>
+	{/if}
+{/snippet}
+
+{#snippet aboutYouFields()}
+	<div class="field">
+		<label for="{prefix}requesterName">Name{compact ? '' : ' (optional)'}</label>
+		<input type="text" id="{prefix}requesterName" name="requesterName" value={value('requesterName')} autocomplete="name" />
+	</div>
+	<div class="field">
+		<label for="{prefix}requesterNation">Nation{compact ? '' : ' (optional)'}</label>
+		<input type="text" id="{prefix}requesterNation" name="requesterNation" value={value('requesterNation')} />
+	</div>
+	<div class="field">
+		<label for="{prefix}requesterRole">Role, for example court administrator or cultural preservation officer{compact ? '' : ' (optional)'}</label>
+		<input type="text" id="{prefix}requesterRole" name="requesterRole" value={value('requesterRole')} autocomplete="organization-title" />
+	</div>
+	{#if kind !== 'add-nation'}
+		<fieldset class="inline-choices">
+			<legend>Are you writing on behalf of the nation’s government or one of its offices?</legend>
+			<div class="choice">
+				<input type="radio" id="{prefix}writingForGovernment-yes" name="writingForGovernment" value="yes" checked={value('writingForGovernment') === 'yes'} />
+				<label for="{prefix}writingForGovernment-yes">Yes</label>
+			</div>
+			<div class="choice">
+				<input type="radio" id="{prefix}writingForGovernment-no" name="writingForGovernment" value="no" checked={value('writingForGovernment') === 'no'} />
+				<label for="{prefix}writingForGovernment-no">No, or not sure</label>
+			</div>
+		</fieldset>
+	{/if}
+{/snippet}
+
+{#snippet contactField()}
+	<div class="field">
+		<label for="{prefix}contact">Email address or phone number</label>
+		{@render fieldError('contact')}
+		<input
+			type="text"
+			id="{prefix}contact"
+			name="contact"
+			value={value('contact')}
+			autocomplete="email"
+			aria-invalid={errors.contact ? 'true' : undefined}
+			aria-describedby={describedBy('contact')}
+		/>
+	</div>
+{/snippet}
+
+{#snippet fileFields()}
+	<p class="hint">
+		{#if compact}
+			PDF, PNG, JPEG or WebP, up to 10 MB each.
+		{:else}
+			You can attach up to three files, for example a nation’s resolution or a corrected citation
+			(PDF, PNG, JPEG or WebP, up to 10 MB each).
+		{/if}
+	</p>
+	{#each [1, 2, 3] as slot (slot)}
+		<div class="field">
+			<label for="{prefix}file{slot}">File {slot}{compact ? '' : ' (optional)'}</label>
+			{@render fieldError(`file${slot}`)}
+			<input type="file" id="{prefix}file{slot}" name="file{slot}" accept={accepted} />
+		</div>
+	{/each}
 {/snippet}
 
 {#if problem}
@@ -162,168 +348,57 @@
 					nation’s own website, articles, books and genealogy records are welcome as supporting
 					material but do not count on their own.
 				</p>
-				{#each [1, 2, 3] as slot (slot)}
-					<fieldset class="source">
-						<legend><svelte:element this={subheading}>Source {slot}{slot > 1 ? ' (optional)' : ''}</svelte:element></legend>
-						<div class="field">
-							<label for="{prefix}source{slot}Kind">Kind of source</label>
-							{@render fieldError(`source${slot}Kind`)}
-							<select
-								id="{prefix}source{slot}Kind"
-								name="source{slot}Kind"
-								aria-invalid={errors[`source${slot}Kind`] ? 'true' : undefined}
-								aria-describedby={describedBy(`source${slot}Kind`)}
-							>
-								<option value="">Choose…</option>
-								{#each sourceKinds as option (option)}
-									<option value={option} selected={value(`source${slot}Kind`) === option}
-										>{sourceKindLabels[option]}</option
-									>
-								{/each}
-							</select>
-						</div>
-						<div class="field">
-							<label for="{prefix}source{slot}Title">Title</label>
-							<input type="text" id="{prefix}source{slot}Title" name="source{slot}Title" value={value(`source${slot}Title`)} />
-						</div>
-						<div class="field">
-							<label for="{prefix}source{slot}Citation">Citation or web address</label>
-							{@render fieldError(`source${slot}Citation`)}
-							<textarea
-								id="{prefix}source{slot}Citation"
-								name="source{slot}Citation"
-								rows="2"
-								aria-invalid={errors[`source${slot}Citation`] ? 'true' : undefined}
-								aria-describedby={describedBy(`source${slot}Citation`)}
-								>{value(`source${slot}Citation`)}</textarea
-							>
-						</div>
-						<div class="field-row">
-							<div class="field">
-								<label for="{prefix}source{slot}Date">Date</label>
-								<input type="text" id="{prefix}source{slot}Date" name="source{slot}Date" value={value(`source${slot}Date`)} class="short" />
-							</div>
-							<div class="field">
-								<label for="{prefix}source{slot}Location">Where it names the nation (page, section or entry)</label>
-								<input
-									type="text"
-									id="{prefix}source{slot}Location"
-									name="source{slot}Location"
-									value={value(`source${slot}Location`)}
-								/>
-							</div>
-						</div>
-						<div class="field">
-							<label for="{prefix}source{slot}File">Upload a copy (PDF, PNG, JPEG or WebP, up to 10 MB)</label>
-							{@render fieldError(`source${slot}File`)}
-							<input type="file" id="{prefix}source{slot}File" name="source{slot}File" accept={accepted} />
-						</div>
-					</fieldset>
-				{/each}
+				{#if compact}
+					{@render sourceSlot(1)}
+					<details class="fold" open={moreSourcesAnswered}>
+						<summary>More sources (optional)</summary>
+						{@render sourceSlot(2)}
+						{@render sourceSlot(3)}
+					</details>
+				{:else}
+					{#each [1, 2, 3] as slot (slot)}
+						{@render sourceSlot(slot)}
+					{/each}
+				{/if}
 			</fieldset>
+		{:else if compact}
+			{@render materialField()}
 		{:else}
 			<fieldset>
 				<legend><svelte:element this={heading}>Which material?</svelte:element></legend>
-				<div class="field">
-					<label for="{prefix}material">Page, record or passage</label>
-					<p class="hint" id="{prefix}material-hint">
-						{#if kind === 'restrict' || kind === 'remove'}
-							Please only say where the material is. Do not repeat sensitive material here.
-						{:else}
-							Filled in from the page you came from, if any. Add more pages on new lines.
-						{/if}
-					</p>
-					{@render fieldError('material')}
-					<textarea
-						id="{prefix}material"
-						name="material"
-						rows="3"
-						aria-invalid={errors.material ? 'true' : undefined}
-						aria-describedby={describedBy('material', true)}>{value('material', material)}</textarea
-					>
-				</div>
+				{@render materialField()}
 			</fieldset>
 		{/if}
 
-		<fieldset>
-			<legend><svelte:element this={heading}>Who are you?</svelte:element></legend>
-			<p class="hint">Only a way to reply is required.</p>
-			<div class="field">
-				<label for="{prefix}requesterName">Name (optional)</label>
-				<input type="text" id="{prefix}requesterName" name="requesterName" value={value('requesterName')} autocomplete="name" />
-			</div>
-			<div class="field">
-				<label for="{prefix}requesterNation">Nation (optional)</label>
-				<input type="text" id="{prefix}requesterNation" name="requesterNation" value={value('requesterNation')} />
-			</div>
-			<div class="field">
-				<label for="{prefix}requesterRole">Role, for example court administrator or cultural preservation officer (optional)</label>
-				<input type="text" id="{prefix}requesterRole" name="requesterRole" value={value('requesterRole')} autocomplete="organization-title" />
-			</div>
+		{#if compact}
+			{@render detailsField()}
+			{@render contactField()}
+			<details class="fold" open={aboutYouAnswered}>
+				<summary>About you (optional)</summary>
+				{@render aboutYouFields()}
+			</details>
 			{#if kind !== 'add-nation'}
-				<fieldset class="inline-choices">
-					<legend>Are you writing on behalf of the nation’s government or one of its offices?</legend>
-					<div class="choice">
-						<input type="radio" id="{prefix}writingForGovernment-yes" name="writingForGovernment" value="yes" checked={value('writingForGovernment') === 'yes'} />
-						<label for="{prefix}writingForGovernment-yes">Yes</label>
-					</div>
-					<div class="choice">
-						<input type="radio" id="{prefix}writingForGovernment-no" name="writingForGovernment" value="no" checked={value('writingForGovernment') === 'no'} />
-						<label for="{prefix}writingForGovernment-no">No, or not sure</label>
-					</div>
-				</fieldset>
+				<details class="fold" open={fileErrors}>
+					<summary>Attach files (optional)</summary>
+					{@render fileFields()}
+				</details>
 			{/if}
-			<div class="field">
-				<label for="{prefix}contact">Email address or phone number</label>
-				{@render fieldError('contact')}
-				<input
-					type="text"
-					id="{prefix}contact"
-					name="contact"
-					value={value('contact')}
-					autocomplete="email"
-					aria-invalid={errors.contact ? 'true' : undefined}
-					aria-describedby={describedBy('contact')}
-				/>
-			</div>
-		</fieldset>
+		{:else}
+			<fieldset>
+				<legend><svelte:element this={heading}>Who are you?</svelte:element></legend>
+				<p class="hint">Only a way to reply is required.</p>
+				{@render aboutYouFields()}
+				{@render contactField()}
+			</fieldset>
 
-		<fieldset>
-			<legend><svelte:element this={heading}>Details{kind === 'add-nation' ? ' (optional)' : ''}</svelte:element></legend>
-			<div class="field">
-				<label for="{prefix}details">
-					{#if kind === 'correct'}What is wrong, and what should it say?{:else if kind === 'restrict' || kind === 'remove'}What should happen to the material?{:else if kind === 'contribute'}What would you like to offer?{:else if kind === 'add-nation'}Anything else we should know{:else}Your question{/if}
-				</label>
-				{@render fieldError('details')}
-				<textarea
-					id="{prefix}details"
-					name="details"
-					rows="6"
-					aria-invalid={errors.details ? 'true' : undefined}
-					aria-describedby={describedBy('details')}>{value('details')}</textarea
-				>
-			</div>
-			{#if value('nationIdentifier', nationIdentifier) && (kind === 'correct' || kind === 'question' || kind === 'contribute')}
-				<!-- Reports about a claimed page also go to the nation's team (src/lib/nation-team-reports.ts). -->
-				<p class="hint">
-					If people the nation chose keep this page, they see where and what you wrote here as well as the
-					project, but never your name or contact details.
-				</p>
-			{/if}
-			{#if kind !== 'add-nation'}
-				<p class="hint">
-					You can attach up to three files, for example a nation’s resolution or a corrected citation
-					(PDF, PNG, JPEG or WebP, up to 10 MB each).
-				</p>
-				{#each [1, 2, 3] as slot (slot)}
-					<div class="field">
-						<label for="{prefix}file{slot}">File {slot} (optional)</label>
-						{@render fieldError(`file${slot}`)}
-						<input type="file" id="{prefix}file{slot}" name="file{slot}" accept={accepted} />
-					</div>
-				{/each}
-			{/if}
-		</fieldset>
+			<fieldset>
+				<legend><svelte:element this={heading}>Details{kind === 'add-nation' ? ' (optional)' : ''}</svelte:element></legend>
+				{@render detailsField()}
+				{#if kind !== 'add-nation'}
+					{@render fileFields()}
+				{/if}
+			</fieldset>
+		{/if}
 
 		{#if kind === 'contribute'}
 			<fieldset>
@@ -430,6 +505,21 @@
 
 	.field-row .field {
 		flex: 1 1 14rem;
+	}
+
+	/* The dialog's folded optional questions. */
+	details.fold {
+		margin: 0;
+	}
+
+	details.fold[open] {
+		margin-bottom: var(--space-4);
+	}
+
+	details.fold summary {
+		padding: var(--space-2) 0;
+		font-weight: var(--font-weight-bold);
+		cursor: pointer;
 	}
 
 	/* Hidden from people, visible to bots that fill in every field. */

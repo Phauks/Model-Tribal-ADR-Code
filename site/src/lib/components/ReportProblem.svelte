@@ -1,17 +1,19 @@
 <script lang="ts">
 	// "Report a problem" in the masthead (site/DESIGN.md, section 6). Trevor
 	// asked on Nov. 22, 2026 that it be a button and open a dialog over the
-	// page rather than a new page. The dialog is the shared Modal: the reader
-	// picks what is wrong (one choice is a missing nation), then answers the
-	// request form's questions for it (RequestForm.svelte), with the page they
-	// were on already filled in. The form is sent in place, and the dialog
-	// shows the reference number. Without scripts the control is a link to the
+	// page rather than a new page. The dialog is the shared Modal, on one page
+	// (Trevor, Nov. 23, 2026): a dropdown for what is wrong (one choice is a
+	// missing nation), and under it the request form's questions for that
+	// choice (RequestForm.svelte, compact), with the page they were on already
+	// filled in. The form is sent in place, and the dialog shows the reference
+	// number. Without scripts the control is a link to the
 	// request page, which asks the same questions.
 	import { onMount, tick } from 'svelte';
 	import { page } from '$app/state';
 	import type { applyAction } from '$app/forms';
 	import Flag from '@lucide/svelte/icons/flag';
 	import { requestKindHints, requestKindLabels, type RequestKind } from '#lib/requests.ts';
+	import Dropdown from './Dropdown.svelte';
 	import Modal from './Modal.svelte';
 	import RequestForm from './RequestForm.svelte';
 	import RequestSent from './RequestSent.svelte';
@@ -21,6 +23,11 @@
 
 	/** The kinds of request that report a problem; Contribute has its own button. */
 	const reportKinds: RequestKind[] = ['correct', 'add-nation', 'restrict', 'remove', 'question'];
+	const kindChoices = reportKinds.map((value) => ({
+		value,
+		label: requestKindLabels[value],
+		hint: requestKindHints[value]
+	}));
 
 	type ActionResult = Parameters<typeof applyAction>[0];
 	type Sent = { reference: string; kind: RequestKind; receivedAt: string };
@@ -28,8 +35,7 @@
 	let scripted = $state(false);
 	let modal: Modal<string> | undefined = $state();
 	let opener: HTMLButtonElement | undefined = $state();
-	let choice = $state<RequestKind | undefined>();
-	let kind = $state<RequestKind | undefined>();
+	let kind = $state<RequestKind>(reportKinds[0]);
 	let values = $state<Record<string, string>>({});
 	let errors = $state<Record<string, string>>({});
 	let problem = $state<string | undefined>();
@@ -50,8 +56,7 @@
 	const nationIdentifier = $derived(record.startsWith('tribes/') ? record.slice('tribes/'.length) : '');
 
 	function reset() {
-		choice = undefined;
-		kind = undefined;
+		kind = reportKinds[0];
 		values = {};
 		errors = {};
 		problem = undefined;
@@ -63,21 +68,11 @@
 		modal?.open();
 	}
 
-	async function proceed(event: SubmitEvent) {
-		event.preventDefault();
-		if (!choice) return;
-		kind = choice;
-		await tick();
-		document.getElementById('report-form-start')?.focus();
-	}
-
-	async function chooseAgain() {
-		kind = undefined;
-		values = {};
+	/** A new choice keeps what the reader typed; the old choice's messages go. */
+	function choose(next: RequestKind) {
+		kind = next;
 		errors = {};
 		problem = undefined;
-		await tick();
-		document.getElementById(`report-kind-${choice ?? reportKinds[0]}`)?.focus();
 	}
 
 	async function received(result: ActionResult) {
@@ -117,29 +112,10 @@
 				<RequestSent {sent} headingLevel={3} />
 			</div>
 			<p><button class="button" type="button" onclick={() => modal?.close()}>Close</button></p>
-		{:else if !kind}
-			<p class="small muted">About: {material}</p>
-			<form onsubmit={proceed}>
-				<fieldset>
-					<legend><h3>What is wrong?</h3></legend>
-					{#each reportKinds as option (option)}
-						<div class="choice">
-							<input type="radio" id="report-kind-{option}" name="report-kind" value={option} bind:group={choice} required />
-							<label for="report-kind-{option}">
-								{requestKindLabels[option]}
-								<span class="hint">{requestKindHints[option]}</span>
-							</label>
-						</div>
-					{/each}
-				</fieldset>
-				<p><button class="button" type="submit">Continue</button></p>
-			</form>
 		{:else}
-			<p id="report-form-start" tabindex="-1">
-				<strong>{requestKindLabels[kind]}.</strong>
-				{requestKindHints[kind]}
-				<button class="text-button" type="button" onclick={chooseAgain}>Choose something else</button>
-			</p>
+			<div class="report-kind">
+				<Dropdown label="What is wrong?" choices={kindChoices} value={kind} onchange={choose} />
+			</div>
 			<RequestForm
 				{kind}
 				{nationIdentifier}
@@ -148,6 +124,7 @@
 				{errors}
 				{problem}
 				headingLevel={3}
+				compact
 				prefix="report-"
 				action="/requests"
 				onresult={received}
@@ -178,56 +155,12 @@
 		color: var(--color-band-text);
 	}
 
-	fieldset {
-		border: 0;
-		margin: 0 0 var(--space-5);
-		padding: 0;
-		min-width: 0;
+	/* The dropdown sits at the top of the dialog, with room before the first question. */
+	.report-kind {
+		margin: calc(-1 * var(--space-4)) 0 var(--space-5);
 	}
 
-	legend {
-		padding: 0;
-	}
-
-	legend h3 {
-		margin: 0 0 var(--space-2);
-	}
-
-	.choice {
-		display: flex;
-		gap: var(--space-3);
-		align-items: flex-start;
-		margin: var(--space-3) 0;
-	}
-
-	.choice input {
-		margin-top: 0.3em;
-		width: 1.25rem;
-		height: 1.25rem;
-		flex: none;
-	}
-
-	.choice .hint {
-		display: block;
-	}
-
-	/* "Choose something else" acts in place, so it is a button that reads as a link. */
-	.text-button {
-		padding: 0;
-		border: 0;
-		background: none;
-		color: var(--color-link);
-		font: inherit;
-		text-decoration: underline;
-		cursor: pointer;
-	}
-
-	#report-form-start:focus-visible,
 	#report-sent:focus-visible {
 		outline: none;
-	}
-
-	p.muted {
-		overflow-wrap: anywhere;
 	}
 </style>

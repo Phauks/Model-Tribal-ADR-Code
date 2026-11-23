@@ -192,7 +192,7 @@
 			{/if}
 			<ul class="viewer-links">
 				{#if item.source}
-					<li><a href={item.source} onclick={close}>Source in the Sources list</a></li>
+					<li><a href={item.source} onclick={close}>Source in the References list</a></li>
 				{/if}
 				{#if item.original}
 					<li>

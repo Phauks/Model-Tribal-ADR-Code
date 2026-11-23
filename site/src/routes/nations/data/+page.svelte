@@ -17,7 +17,7 @@
 	<nav aria-label="Breadcrumb" class="small breadcrumb"><a href="/nations">Nations</a> › Data and charts</nav>
 	<h1>Data and charts</h1>
 	<p class="lead">
-		Counts drawn from the nation pages and the laws behind them. Pick a bar about provisions to read them in <a href="/nations/recourse">Find recourse</a>, or open any chart as a table to sort it and download it.
+		Counts drawn from the nation pages and the laws behind them. Pick any bar to see what it counts: a bar about provisions opens them in <a href="/nations/recourse">Find recourse</a>, and every other bar opens the nations or compacts behind it, each with its source. The buttons at a chart’s top right show it as a table to sort and download.
 	</p>
 	{#each data.charts as chart (chart.identifier)}
 		<BarChart {chart} />

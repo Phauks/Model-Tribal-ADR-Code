@@ -670,8 +670,11 @@ function buildShadedView(view: ShadedMapView) {
 		const nations = kindsByState.get(shape.code) ?? new Map<string, Set<string>>();
 		const counts = new Map<string, number>();
 		const shading = new Map<string, number>();
-		for (const kinds of nations.values()) {
+		// The nations each count is made of, so a count in the table opens to them.
+		const members = new Map<string, string[]>();
+		for (const [nation, kinds] of nations) {
 			for (const key of kinds) counts.set(key, (counts.get(key) ?? 0) + 1);
+			for (const key of kinds.size > 0 ? kinds : [unrecordedKey]) members.set(key, [...(members.get(key) ?? []), nation]);
 			const first = [...kinds].sort((one, other) => rank(one) - rank(other))[0] ?? unrecordedKey;
 			shading.set(first, (shading.get(first) ?? 0) + 1);
 		}
@@ -685,6 +688,7 @@ function buildShadedView(view: ShadedMapView) {
 			code: shape.code,
 			total,
 			counts: Object.fromEntries(counts),
+			members: Object.fromEntries(members),
 			category,
 			shaded: top ? (shading.get(top) ?? 0) : 0,
 			shade: category ? (categories[rank(category)]?.shade ?? 0) : 0,
@@ -701,6 +705,8 @@ interface ShadedState {
 	total: number;
 	/** How many of the state's nations have each kind, and under "unrecorded" how many have none there. */
 	counts: Record<string, number>;
+	/** The ids of the nations each count is made of. */
+	members: Record<string, string[]>;
 	/** The category most of its nations fall under, left out when most have none recorded. */
 	category?: string;
 	/** How many nations fall under the state's category, or under unrecorded when it has none. */
@@ -807,8 +813,16 @@ export function shadedView(view: ShadedMapView) {
 	const stateColumns = byState ? [...built.categories.map((category) => ({ key: category.key, header: category.label })), { key: 'unrecorded', header: unrecorded }] : [];
 	const stateRows = (byState ? built.states : [])
 		.filter((state) => state.anchor)
-		.map((state) => ({ anchor: state.anchor as string, code: state.code, name: stateName(state.code), total: state.total, counts: state.counts }))
+		.map((state) => ({ anchor: state.anchor as string, code: state.code, name: stateName(state.code), total: state.total, counts: state.counts, members: state.members }))
 		.sort((first, second) => first.name.localeCompare(second.name, 'en'));
+	// The names of the nations the by-state counts are made of, once each, so a count opens to its nations' names and pages.
+	const recordsById = new Map(built.records.map((record) => [record.id, record]));
+	const stateNations = Object.fromEntries(
+		[...new Set(stateRows.flatMap((row) => Object.values(row.members).flat()))].flatMap((id) => {
+			const record = recordsById.get(id);
+			return record ? [[id, displayName(record.names.official)]] : [];
+		})
+	);
 	const drawnStates = byState
 		? built.states.map((state) => {
 				const name = stateName(state.code);
@@ -818,7 +832,7 @@ export function shadedView(view: ShadedMapView) {
 				return { code: state.code, shade: state.shade, anchor: state.anchor, description };
 			})
 		: [];
-	const byStateData = { stateColumns, stateRows, drawnStates };
+	const byStateData = { stateColumns, stateRows, stateNations, drawnStates };
 
 	const sortedStates = (members: NationRecord[]) => [...new Set(members.flatMap(statesOf))].sort((first, second) => first.localeCompare(second, 'en'));
 

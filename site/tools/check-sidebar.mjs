@@ -1,6 +1,7 @@
 // Checks the left sidebar in a browser (src/lib/components/SiteSidebar.svelte):
-// what it lists inside a section, remembered sections, a list that fails to
-// load, the phone menu, a hidden sidebar and the page without JavaScript. Run
+// what it lists inside a section, every list there from the start with nothing
+// to load, remembered sections, the phone menu, a hidden sidebar and the page
+// without JavaScript. Run
 // from site/ after `npm run build`:
 //   node tools/check-sidebar.mjs
 //
@@ -80,40 +81,39 @@ const sidebarRequests = (page) => {
 	await context.close();
 }
 
-// 2. A remembered section opens on the next page, with one request for its list.
+// 2. A remembered section is open from the first paint, before the site's scripts run.
 {
-	const { context, page, errors } = await newPage();
-	const requests = sidebarRequests(page);
+	const { context, page } = await newPage();
 	await page.goto(`${base}/glossary`, { waitUntil: 'networkidle' });
 	await page.evaluate(() => localStorage.setItem('sidebar-open-sections', JSON.stringify({ '/library': true, '/glossary': false })));
-	requests.length = 0;
-	await page.reload({ waitUntil: 'networkidle' });
-	await page.waitForTimeout(500);
-	const library = page.locator(wide).getByRole('button', { name: 'Pages in Library' });
-	const glossary = page.locator(wide).getByRole('button', { name: 'Pages in Glossary' });
-	check((await library.getAttribute('aria-expanded')) === 'true', 'A remembered open section did not open');
-	check((await glossary.getAttribute('aria-expanded')) === 'false', 'A remembered shut section (the one being read) did not stay shut');
-	check(requests.length === 1, `Expected one request for the Library list, saw ${requests.length}`);
-	check(errors.length === 0, `Errors with remembered sections: ${errors.join('; ')}`);
+	// Only the inline script in app.html runs; the site's own scripts never arrive.
+	await context.route(`${base}/_app/**`, (route) => route.abort());
+	await page.reload({ waitUntil: 'load' });
+	check(await page.locator(`${wide} li[data-sidebar-section='/library'] a[href='/copies']`).isVisible(), 'A remembered open section is shut before the scripts run');
+	check(!(await page.locator(`${wide} li[data-sidebar-section='/glossary'] [data-sidebar-list]`).isVisible()), 'A remembered shut section is open before the scripts run');
 	await context.close();
 }
 
-// 3. A list that fails to load says so, is fetched once, and again only when reopened.
+// 3. Every list is there from the start: opening a section loads nothing and never says "Loading".
 {
 	const { context, page, errors } = await newPage();
+	// A page built ahead of time reads only the essays' lists, from the database; here it cannot.
 	await context.route(`${base}/sidebar/**`, (route) => route.fulfill({ status: 500, body: '' }));
 	const requests = sidebarRequests(page);
 	await page.goto(`${base}/glossary`, { waitUntil: 'networkidle' });
-	const nations = page.locator(wide).getByRole('button', { name: 'Pages in Nations' });
-	await nations.click();
-	await page.waitForTimeout(800);
-	check(await page.locator(`${wide} .pages-note`).filter({ hasText: 'Could not load' }).isVisible(), 'A failed list does not say so');
-	check(requests.length === 1, `A failed list was fetched ${requests.length} times`);
-	await nations.click();
-	await nations.click();
-	await page.waitForTimeout(500);
-	check(requests.length === 2, `Reopening a failed list should fetch it once more, saw ${requests.length} requests`);
-	check(errors.length === 0, `Errors with a failed list: ${errors.join('; ')}`);
+	const asked = requests.map((url) => new URL(url).pathname).sort();
+	check(JSON.stringify(asked) === JSON.stringify(['/sidebar/essays.json', '/sidebar/foundations.json']), `Only the essays' lists should be read, saw ${asked.join(', ')}`);
+	requests.length = 0;
+	for (const name of ['Nations', 'Library', 'Methods and stories', 'Events', 'About']) {
+		const button = page.locator(wide).getByRole('button', { name: `Pages in ${name}` });
+		if ((await button.count()) === 0) continue;
+		await button.click();
+		check((await page.locator(`${wide} #${await button.getAttribute('aria-controls')} a`).count()) > 0, `${name} opened with no pages listed`);
+	}
+	check(requests.length === 0, `Opening sections read ${requests.length} list(s)`);
+	check((await page.locator(wide).getByText(/Loading|Could not load/).count()) === 0, 'The sidebar says it is loading or could not load');
+	check((await page.locator(wide).getByRole('button', { name: 'Pages in Foundations' }).count()) === 0, 'A section with no list still has a caret');
+	check(errors.length === 0, `Errors while opening sections: ${errors.join('; ')}`);
 	await context.close();
 }
 
@@ -127,7 +127,7 @@ const sidebarRequests = (page) => {
 	await page.keyboard.press('Escape');
 	check(!(await menu.evaluate((element) => element.open)), 'Escape did not close the phone menu');
 	await menu.locator('summary').click();
-	await menu.locator('.sections a[href="/nations"]').click();
+	await menu.locator('.sections > li > .entry > a[href="/nations"]').click();
 	await page.waitForURL(`${base}/nations`);
 	await page.waitForTimeout(300);
 	check(!(await menu.evaluate((element) => element.open)), 'The phone menu stayed open after choosing a page');
