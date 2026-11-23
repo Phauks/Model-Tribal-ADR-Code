@@ -17,6 +17,17 @@ archives: []
 history:
   status: live
   last_checked: '2026-11-23'
+reading_links:
+  checked: '2026-11-23'
+  links:
+  - site: westlaw
+    label: "Westlaw"
+    access: subscription
+    link: https://1.next.westlaw.com/Link/Document/FullText?findType=Y&cite=Me.%20Rev.%20Stat.%20Ann.%20tit.%2030%2C%20%C2%A7%206204
+  - site: lexis
+    label: "Lexis"
+    access: subscription
+    link: https://advance.lexis.com/api/search?q=Me.%20Rev.%20Stat.%20Ann.%20tit.%2030%2C%20%C2%A7%206204
 rights:
   status: no-permission-needed
   basis: government-edict

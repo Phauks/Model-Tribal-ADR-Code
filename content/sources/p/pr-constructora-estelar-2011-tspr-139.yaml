@@ -29,6 +29,26 @@ courtlistener:
   link: https://www.courtlistener.com/opinion/10790287/constructora-estelar-se-v-autoridad-de-edificios-publicos/
   release: '2026-09-30'
   checked: '2026-11-23'
+reading_links:
+  checked: '2026-11-23'
+  links:
+  - site: courtlistener
+    label: "CourtListener"
+    access: free
+    link: https://www.courtlistener.com/opinion/10790287/constructora-estelar-se-v-autoridad-de-edificios-publicos/
+  - site: google-scholar
+    label: "Google Scholar"
+    access: free
+    link: https://scholar.google.com/scholar?hl=en&as_sdt=2006&q=%222011%20TSPR%20139%22
+    unchecked: true
+  - site: westlaw
+    label: "Westlaw"
+    access: subscription
+    link: https://1.next.westlaw.com/Link/Document/FullText?findType=Y&cite=2011%20TSPR%20139
+  - site: lexis
+    label: "Lexis"
+    access: subscription
+    link: https://advance.lexis.com/api/search?q=2011%20TSPR%20139
 rights:
   status: no-permission-needed
   basis: government-edict

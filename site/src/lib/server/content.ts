@@ -12,6 +12,7 @@
 import { existsSync, readdirSync, readFileSync, statSync } from 'node:fs';
 import path from 'node:path';
 import { parse } from 'yaml';
+import type { ReadingLinks } from '../reading-links.ts';
 import type { StoryRecord } from '../story-visibility.ts';
 import { imageMayBeShown, type OfficialImageRecord, type ServableImage } from '../official-images.ts';
 import { parseCsv } from '../csv.ts';
@@ -95,6 +96,8 @@ export interface SourceRecord {
 	/** The nations a source is about, by profile id. */
 	tribes?: string[];
 	archives?: { link?: string; url?: string; captured?: string }[];
+	/** Other places to read a case or law (src/lib/reading-links.ts). */
+	reading_links?: ReadingLinks;
 }
 
 let sourceCache: Map<string, SourceRecord> | undefined;

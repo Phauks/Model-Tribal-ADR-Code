@@ -13,6 +13,7 @@ import { marked } from 'marked';
 import { marksHtml, type CitationMark } from '../citation-marks.ts';
 import { verifyLink, fileName } from '../checksums.ts';
 import { copyPath, mediaLabel } from '../public-copies.ts';
+import { readingLinksHtml } from '../reading-links.ts';
 import { glossary, publicCopyFor, type SourceRecord } from './content.ts';
 
 export function escapeHtml(text: string): string {
@@ -66,7 +67,7 @@ export function formatSource(
 			text += `. <span class="source-links">${original}</span>`;
 		}
 	}
-	return text + savedCopyLink(source);
+	return text + savedCopyLink(source) + readingLinksHtml(source.reading_links);
 }
 
 /**

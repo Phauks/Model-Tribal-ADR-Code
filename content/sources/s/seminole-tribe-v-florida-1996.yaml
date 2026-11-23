@@ -47,6 +47,47 @@ courtlistener:
   link: https://www.courtlistener.com/opinion/118011/seminole-tribe-of-florida-v-florida/
   release: '2026-09-30'
   checked: '2026-11-23'
+reading_links:
+  checked: '2026-11-23'
+  links:
+  - site: library-of-congress
+    label: "Library of Congress"
+    access: official
+    link: https://www.loc.gov/item/usrep517044/
+  - site: courtlistener
+    label: "CourtListener"
+    access: free
+    link: https://www.courtlistener.com/opinion/118011/seminole-tribe-of-florida-v-florida/
+  - site: justia
+    label: "Justia"
+    access: free
+    link: https://supreme.justia.com/cases/federal/us/517/44/
+    unchecked: true
+  - site: oyez
+    label: "Oyez"
+    access: free
+    link: https://www.oyez.org/cases/1995/94-12
+  - site: cornell
+    label: "Cornell LII"
+    access: free
+    link: https://www.law.cornell.edu/supremecourt/text/517/44
+  - site: google-scholar
+    label: "Google Scholar"
+    access: free
+    link: https://scholar.google.com/scholar?hl=en&as_sdt=2006&q=%22517%20U.S.%2044%22
+    unchecked: true
+  - site: westlaw
+    label: "Westlaw"
+    access: subscription
+    link: https://1.next.westlaw.com/Link/Document/FullText?findType=Y&cite=517%20U.S.%2044
+  - site: lexis
+    label: "Lexis"
+    access: subscription
+    link: https://advance.lexis.com/api/search?q=517%20U.S.%2044
+  - site: wikipedia
+    label: "Wikipedia"
+    access: background
+    link: https://en.wikipedia.org/wiki/Seminole_Tribe_of_Florida_v._Florida
 rights:
   status: no-permission-needed
   basis: us-government-work
