@@ -19,6 +19,7 @@ const pages: SearchEntry[] = [
 	{ kind: 'page', title: 'Stories', also: ['Traditional stories', 'Peacemaking stories', 'Accounts', 'Teachings'], detail: 'Stories about making peace, in the words of the nations and people who tell them', link: '/stories' },
 	{ kind: 'page', title: 'Glossary', also: ['Terms', 'Definitions'], detail: 'Defined terms, and how to use them', link: '/glossary' },
 	{ kind: 'page', title: 'Downloads', also: ['Book', 'PDF', 'EPUB', 'Data'], detail: 'The book and the data behind this site', link: '/downloads' },
+	{ kind: 'page', title: 'Events', also: ['Calendar', 'Talks', 'Workshops', 'Register', 'Continuing legal education'], detail: 'Talks, panels, workshops and gatherings, and how to register', link: '/events' },
 	{ kind: 'page', title: 'About', also: ['About this work'], link: '/about' },
 	{ kind: 'page', title: 'Sponsorship', also: ['Sponsor', 'Funding', 'Support', 'Donate'], detail: 'How organizations can help fund this work', link: '/sponsor' },
 	{ kind: 'page', title: 'Timeline to public review', also: ['Timeline', 'Public review', 'Roadmap', 'Drafting committee', 'Where things stand'], detail: 'Where the model code stands and the steps to public review', link: '/about/timeline' },
