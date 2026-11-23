@@ -1,12 +1,21 @@
 import { fail } from '@sveltejs/kit';
 import { isUploadReference } from '#lib/uploads.ts';
-import { answerQuestion, ownUpload, UploadProblem, uploadsOfAccount, withdrawUpload } from '#lib/server/uploads.ts';
+import {
+	advanceCheckedUploads,
+	answerQuestion,
+	ownUpload,
+	UploadProblem,
+	uploadsOfAccount,
+	withdrawUpload
+} from '#lib/server/uploads.ts';
 import { formText, requireAccount, storage } from '#lib/server/workspace.ts';
 import type { Actions, PageServerLoad, RequestEvent } from './$types';
 
 export const load: PageServerLoad = async (event) => {
 	const account = requireAccount(event);
-	const { database } = storage(event);
+	const { database, bucket } = storage(event);
+	// Files whose virus check finished since the last visit move on now.
+	await advanceCheckedUploads(database, bucket, { accountIdentifier: account.subject });
 	return {
 		uploads: await uploadsOfAccount(database, account.subject),
 		sent: event.url.searchParams.get('sent')
