@@ -165,6 +165,15 @@ official_images:
   confidence: high
   as_of: '2026-11-21'
   verification: read-in-full
+languages:
+- name: Oneida Language
+  language_tag: one
+  source: oneida-nation-language
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  locator: Our Ways
+  note: 'The source reads: “Oneida Language About the Oneida Language”.'
 federal_administration:
   bureau_of_indian_affairs_region: Midwest
   bureau_of_indian_affairs_agency: Great Lakes Agency

@@ -168,6 +168,14 @@ tribal_insignia_database_entries:
   as_of: '2026-11-21'
   verification: bulk-import
   locator: Serial number 89002895
+languages:
+- name: Modoc
+  source: modoc-nation-history
+  confidence: medium
+  verification: inferred
+  as_of: '2026-11-23'
+  locator: History
+  note: 'The source reads: “the Modoc language, customs and culture were heavily suppressed”. History page; also lists language preservation among current initiatives.'
 federal_administration:
   bureau_of_indian_affairs_region: Eastern Oklahoma
   bureau_of_indian_affairs_agency: Miami Agency

@@ -92,6 +92,14 @@ official_images:
   confidence: high
   as_of: '2026-11-21'
   verification: read-in-full
+languages:
+- name: Ojibwe
+  source: grand-portage-band-language-page
+  confidence: medium
+  verification: inferred
+  as_of: '2026-11-23'
+  locator: Language
+  note: 'The source reads: “Ojibwe at the Post Office”. Page has only a few headings (Ojibwe at the Post Office; 10 Words for Mornings); no fuller statement was available.'
 federal_administration:
   bureau_of_indian_affairs_region: Midwest
   bureau_of_indian_affairs_agency: Minnesota Agency

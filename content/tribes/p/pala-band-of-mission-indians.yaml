@@ -166,6 +166,15 @@ tribal_insignia_database_entries:
   as_of: '2026-11-21'
   verification: bulk-import
   locator: Serial number 89001897
+languages:
+- name: Cupeño
+  language_tag: cup
+  source: pala-band-language-revitalization
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  locator: Language Revitalization
+  note: 'The source reads: “Online Cupeño Language Classes”.'
 federal_administration:
   bureau_of_indian_affairs_region: Pacific
   bureau_of_indian_affairs_agency: Southern California Agency

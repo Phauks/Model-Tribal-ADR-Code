@@ -177,6 +177,22 @@ tribal_insignia_database_entries:
   as_of: '2026-11-21'
   verification: bulk-import
   locator: Serial number 89001535
+languages:
+- name: Lingít
+  language_tag: tli
+  source: tlingit-and-haida-language-resources
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  locator: Language Resources
+  note: 'The source reads: “Lingít and Xaad Kíl into everyday life”.'
+- name: Xaad Kíl
+  source: tlingit-and-haida-language-resources
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-23'
+  locator: Language Resources
+  note: 'The source reads: “Lingít and Xaad Kíl into everyday life”. Haida language, spelled Xaad Kíl on the page; page names it together with Lingít.'
 federal_administration:
   bureau_of_indian_affairs_region: Alaska
   bureau_of_indian_affairs_agency: Alaska Regional Office
