@@ -1,6 +1,5 @@
-import { fail } from '@sveltejs/kit';
 import { can } from '#lib/permissions.ts';
-import { eventWhen, isEventTimeZone, recordingChoices, type RecordingChoice } from '#lib/event-calendar.ts';
+import { eventWhen, isEventTimeZone } from '#lib/event-calendar.ts';
 import { roomIsOpen } from '#lib/video-rooms.ts';
 import { workerEnvironment } from '#lib/server/environment.ts';
 import { videoRoomSettings } from '#lib/server/realtime-kit.ts';
@@ -43,12 +42,9 @@ export const actions: Actions = {
 		const account = requireAccount(event);
 		const { database } = storage(event);
 		const form = await event.request.formData();
-		const recording = String(form.get('recording') ?? 'undecided');
-		if (!(recordingChoices as readonly string[]).includes(recording)) return fail(400, { problem: 'Say whether the room may be recorded.' });
 		const zone = String(form.get('time-zone') ?? '');
 		const started = await startInstantRoom(database, {
 			title: formText(form, 'title', 200) ?? undefined,
-			recording: recording as RecordingChoice,
 			timeZone: isEventTimeZone(zone) ? zone : 'America/Los_Angeles',
 			createdBy: account.subject
 		});
