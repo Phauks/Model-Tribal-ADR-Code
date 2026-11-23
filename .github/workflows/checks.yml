@@ -21,7 +21,64 @@ on:
 permissions:
   contents: read
 
+# A newer push to the same pull request replaces a run still in progress, so
+# runners are not spent on a head that can no longer merge.
+concurrency:
+  group: checks-${{ github.event_name }}-${{ github.ref }}
+  cancel-in-progress: ${{ github.event_name == 'pull_request' }}
+
 jobs:
+  # Decides which of the slow jobs a pull request needs, from the files it
+  # changes. Pushes to main and started runs always run everything.
+  changes:
+    name: What changed
+    runs-on: ubuntu-latest
+    outputs:
+      site: ${{ steps.decide.outputs.site }}
+      every_size: ${{ steps.decide.outputs.every_size }}
+    steps:
+      - uses: actions/checkout@v5
+        with:
+          fetch-depth: 0
+      - id: decide
+        env:
+          BASE: ${{ github.event.pull_request.base.sha }}
+        run: |
+          if [ -z "$BASE" ]; then
+            echo "site=true" >> "$GITHUB_OUTPUT"
+            echo "every_size=true" >> "$GITHUB_OUTPUT"
+            exit 0
+          fi
+          files=$(git diff --name-only "$BASE"...HEAD)
+          echo "$files"
+          # The website reads content/, site/, LICENSES/, pdf/styles/, the
+          # capture index, search logs, scripts/captures/ and a few documents
+          # in docs/. A pull request that changes none of those skips the
+          # website build and its accessibility check.
+          site=false
+          while IFS= read -r file; do
+            [ -z "$file" ] && continue
+            case "$file" in
+              research/search-logs/*|research/capture-index*) site=true ;;
+              research/*) ;;
+              docs/charter.md|docs/requests.md|docs/contributor-forms/*) site=true ;;
+              docs/*) ;;
+              scripts/captures/*) site=true ;;
+              scripts/*) ;;
+              .github/workflows/checks.yml) site=true ;;
+              .github/*) ;;
+              pdf/styles/*) site=true ;;
+              pdf/*) ;;
+              *) site=true ;;
+            esac
+          done <<< "$files"
+          # Building the book at every trim size takes about six minutes, so
+          # pull requests do it only when they change the print pipeline.
+          every_size=false
+          if grep -q '^pdf/' <<< "$files"; then every_size=true; fi
+          echo "site=$site" >> "$GITHUB_OUTPUT"
+          echo "every_size=$every_size" >> "$GITHUB_OUTPUT"
+
   text:
     name: Text encoding
     runs-on: ubuntu-latest
@@ -85,8 +142,10 @@ jobs:
 
   site:
     name: Website build
+    needs: changes
+    if: needs.changes.outputs.site == 'true'
     runs-on: ubuntu-latest
-    # A normal run takes about ten minutes; this stops a stuck one long before
+    # A normal run takes about four minutes; this stops a stuck one long before
     # GitHub's six-hour limit, so the merge queue is not held up.
     timeout-minutes: 30
     defaults:
@@ -110,16 +169,43 @@ jobs:
         run: npm run build
       - name: Check the built pages, manifest and service worker
         run: npm run check:built-site
+
+  accessibility:
+    # Every page in both themes, split between four jobs that run at once
+    # (about two minutes of checking each instead of eight in one job).
+    name: Accessibility ${{ matrix.shard }}/4
+    needs: changes
+    if: needs.changes.outputs.site == 'true'
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    strategy:
+      fail-fast: false
+      matrix:
+        shard: [1, 2, 3, 4]
+    defaults:
+      run:
+        working-directory: site
+    steps:
+      - uses: actions/checkout@v5
+      - uses: actions/setup-node@v5
+        with:
+          node-version: "22"
+          cache: npm
+          cache-dependency-path: site/package-lock.json
+      - run: npm ci
+      - name: Build
+        run: npm run build
       - name: Install Chromium for the accessibility check
         run: npx playwright install --with-deps --only-shell chromium
-      - name: Accessibility check (axe-core, every page, both themes)
+      - name: Accessibility check (axe-core, this shard's pages, both themes)
         # The script limits each page and stops itself when nothing finishes for
         # five minutes; this is the last guard if the browser itself stalls.
         timeout-minutes: 20
-        run: npm run check:accessibility
+        run: npm run check:accessibility -- --shard ${{ matrix.shard }}/4
 
   print:
     name: Print build
+    needs: changes
     runs-on: ubuntu-latest
     env:
       TYPST_VERSION: "0.15.1"
@@ -148,7 +234,8 @@ jobs:
       - run: pip install -r requirements.txt
       - run: npm ci
       - run: npm test
-      - run: npm run build:every-size
+      - if: needs.changes.outputs.every_size == 'true'
+        run: npm run build:every-size
       - run: npm run build
       - uses: actions/upload-artifact@v4
         if: always()
@@ -180,7 +267,7 @@ jobs:
   all-checks:
     name: All checks
     if: always()
-    needs: [text, records, lint, prose, site, print]
+    needs: [changes, text, records, lint, prose, site, accessibility, print]
     runs-on: ubuntu-latest
     permissions:
       statuses: write
