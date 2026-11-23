@@ -46,6 +46,11 @@ access:
   pull_from:
   - free-web
   note: Free PDF from the law school repository (https://digitalrepository.unm.edu/cgi/viewcontent.cgi?article=1045&context=tlj). The repository refused automated downloads on 2026-11-23 (bot check), so the full text has not been read; it is on the pull list, part 1g.
+file:
+  storage_key: articles/fletcher-2004-restatement-common-law-grand-traverse.pdf
+  checksum: ae037c63691f926aca9f7529cf494643b29409b3d368f1c2ee7b848ea0e8c1d0
+  media_type: application/pdf
+  bytes: 953867
 found_in:
 - 2026-11-23-indian-law-journals
 notes: 'Catalog record only, from the repository''s metadata (journal sweep, 2026-11-23). Sweep priority: high. Why kept (project analysis): Restatement of Grand Traverse tribal court common law. The repository''s first-page field gives the article''s place in the issue, not a page number, so the first page is left out until the PDF is read.'

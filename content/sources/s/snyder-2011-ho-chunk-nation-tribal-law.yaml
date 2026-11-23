@@ -44,6 +44,11 @@ access:
   pull_from:
   - free-web
   note: Free PDF from the law school repository (https://digitalrepository.unm.edu/cgi/viewcontent.cgi?article=1057&context=tlj). The repository refused automated downloads on 2026-11-23 (bot check), so the full text has not been read; it is on the pull list, part 1g.
+file:
+  storage_key: articles/snyder-2011-ho-chunk-nation-tribal-law.pdf
+  checksum: c1ab440d1f06339632c4b16d70e002975f446b81938f63f8abdbe473b2f6101e
+  media_type: application/pdf
+  bytes: 427465
 found_in:
 - 2026-11-23-indian-law-journals
 notes: 'Catalog record only, from the repository''s metadata (journal sweep, 2026-11-23). Sweep priority: high. Why kept (project analysis): Ho-Chunk legal history, traditional practices, and government profile. The repository''s first-page field gives the article''s place in the issue, not a page number, so the first page is left out until the PDF is read.'
