@@ -25,6 +25,7 @@ import { attributionSource } from '../quote-context.ts';
 import { firstPage, opinionAt, quoteOpinionLabel, type OpinionEntry } from '../case-opinions.ts';
 import { readingLinksAfter } from '../reading-links.ts';
 import { boxParts, essayBlocks, essayMarkdown, frontMatterField, isAttribution, missingEllipses, splitFrontMatter, topicsIn, type CitationReference } from './syntax.ts';
+import { escapeHtml } from '../escape-html.ts';
 
 export interface EssayLibrary {
 	/** The full citation of a source, as HTML in the project's Indigo Book style. */
@@ -70,14 +71,6 @@ export interface RenderedEssay {
 	problems: string[];
 	/** Things a writer should check, such as a quotation that may leave out words without an ellipsis. Publishing still goes ahead. */
 	warnings: string[];
-}
-
-function escapeHtml(text: string): string {
-	return text
-		.replaceAll('&', '&amp;')
-		.replaceAll('<', '&lt;')
-		.replaceAll('>', '&gt;')
-		.replaceAll('"', '&quot;');
 }
 
 /** A heading's id: its words in lower case, joined by hyphens, made unique on the page. */

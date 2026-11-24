@@ -10,6 +10,7 @@
 	import { nationNames } from '#lib/nation-names.ts';
 	import { nationStatusLabels, readableSize, uploadKindLabels } from '#lib/uploads.ts';
 	import type { PageProps } from './$types';
+	import { mediumDate } from '#lib/readable-date.ts';
 
 	let { data }: PageProps = $props();
 
@@ -19,9 +20,6 @@
 	const icons = { document: FileText, picture: Image, sound: AudioLines, video: Film } as const;
 	const nationName = $derived(data.nation ? (names.get(data.nation) ?? 'your nation') : 'your nation');
 
-	function day(value: string): string {
-		return new Date(value).toLocaleDateString('en-US', { dateStyle: 'medium' });
-	}
 </script>
 
 <svelte:head>
@@ -65,7 +63,7 @@
 										.join(' · ')}
 								</span>
 							</th>
-							<td class="small nowrap">{day(upload.receivedAt)}</td>
+							<td class="small nowrap">{mediumDate(upload.receivedAt)}</td>
 							<td class="small">{nationStatusLabels[upload.status]}</td>
 							<td class="small">{upload.comments === 0 ? 'None yet' : upload.comments}</td>
 						</tr>

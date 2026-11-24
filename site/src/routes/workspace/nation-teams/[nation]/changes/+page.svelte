@@ -2,14 +2,12 @@
 	import NationChangeContent from '#lib/components/NationChangeContent.svelte';
 	import { changeKindLabels } from '#lib/nation-page-changes.ts';
 	import type { PageProps } from './$types';
+	import { mediumDateAndTime } from '#lib/readable-date.ts';
 
 	let { data, form }: PageProps = $props();
 
 	const stateLabels = { live: 'On the page now', waiting: 'Waiting to go live', replaced: 'Replaced', cancelled: 'Cancelled', undone: 'Undone by the project' } as const;
 
-	function when(value: string | null): string {
-		return value ? new Date(value).toLocaleString('en-US', { dateStyle: 'medium', timeStyle: 'short' }) : '';
-	}
 </script>
 
 <svelte:head>
@@ -49,7 +47,7 @@
 					<summary>
 						<strong>{version.summary}</strong>
 						<span class="small muted">
-							{stateLabels[version.state]} · {version.state === 'cancelled' ? '' : when(version.publishedAt)}
+							{stateLabels[version.state]} · {version.state === 'cancelled' ? '' : mediumDateAndTime(version.publishedAt)}
 							{#if version.publishedByName}· published by {version.publishedByName}{/if}
 							{#if version.writtenByName && version.writtenByName !== version.publishedByName}· written by {version.writtenByName}{/if}
 							{#if version.approvedByName}· approved early by {version.approvedByName}{/if}

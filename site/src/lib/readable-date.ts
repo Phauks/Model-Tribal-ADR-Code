@@ -12,3 +12,17 @@ export function readableDate(date: string): string {
 	if (!month) return date;
 	return match[3] ? `${month} ${Number(match[3])}, ${match[1]}` : `${month} ${match[1]}`;
 }
+
+/**
+ * A stored time as the workspace lists show it: "Nov. 24, 2026" in the reader's
+ * own time zone, or "" when there is none. Workspace pages used to write this
+ * function each on their own.
+ */
+export function mediumDate(value: string | null | undefined): string {
+	return value ? new Date(value).toLocaleDateString('en-US', { dateStyle: 'medium' }) : '';
+}
+
+/** A stored time with its time of day: "Nov. 24, 2026, 1:05 AM", or "" when there is none. */
+export function mediumDateAndTime(value: string | null | undefined): string {
+	return value ? new Date(value).toLocaleString('en-US', { dateStyle: 'medium', timeStyle: 'short' }) : '';
+}

@@ -3,6 +3,7 @@
 	import { repositoryLink } from '#lib';
 	import { decisionLabels, subjectKindLabels } from '#lib/permissions.ts';
 	import type { PageProps } from './$types';
+	import { mediumDateAndTime } from '#lib/readable-date.ts';
 
 	let { data, form }: PageProps = $props();
 
@@ -15,9 +16,6 @@
 		nation: 'for the nation'
 	};
 
-	function date(value: string): string {
-		return new Date(value).toLocaleString('en-US', { dateStyle: 'medium', timeStyle: 'short' });
-	}
 </script>
 
 <svelte:head>
@@ -80,7 +78,7 @@
 		{#each data.reviews as review (review.identifier)}
 			<li>
 				<strong>{decisionLabels[review.decision]}</strong>
-				by {review.personName} {capacityLabels[review.capacity]}, {date(review.createdAt)}
+				by {review.personName} {capacityLabels[review.capacity]}, {mediumDateAndTime(review.createdAt)}
 				<span class="small muted">({review.contentVersion})</span>
 				{#if review.note}<div class="note">{review.note}</div>{/if}
 			</li>

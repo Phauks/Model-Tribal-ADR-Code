@@ -16,14 +16,10 @@ import { copyHashHtml } from '../copy-hash.ts';
 import { copyPagePath, copyPath, mediaLabel } from '../public-copies.ts';
 import { officialReportLinks, readingLinksHtml } from '../reading-links.ts';
 import { glossary, publicCopyFor, type SourceRecord } from './content.ts';
+import { escapeHtml } from '../escape-html.ts';
 
-export function escapeHtml(text: string): string {
-	return text
-		.replaceAll('&', '&amp;')
-		.replaceAll('<', '&lt;')
-		.replaceAll('>', '&gt;')
-		.replaceAll('"', '&quot;');
-}
+/** Still exported here for code written before lib/escape-html.ts; new code imports that module. */
+export { escapeHtml };
 
 /** A short citation in the project's style, as HTML. */
 export function formatSource(

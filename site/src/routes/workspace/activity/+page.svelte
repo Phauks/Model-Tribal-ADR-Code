@@ -1,6 +1,7 @@
 <script lang="ts">
 	import { keyboardScroll } from '#lib/keyboard-scroll.ts';
 	import type { PageProps } from './$types';
+	import { mediumDateAndTime } from '#lib/readable-date.ts';
 
 	let { data }: PageProps = $props();
 
@@ -18,10 +19,6 @@
 		'missing-entry': 'is missing',
 		'missing-seal': 'has lost its seal'
 	};
-
-	function time(value: string): string {
-		return new Date(value).toLocaleString('en-US', { dateStyle: 'medium', timeStyle: 'short' });
-	}
 
 	function olderLink(sequence: number): string {
 		const search = new URLSearchParams();
@@ -107,7 +104,7 @@
 				{#each data.entries as entry (entry.sequence)}
 					<tr class:refused={entry.action.startsWith('Refused')}>
 						<td>{entry.sequence}</td>
-						<td>{time(entry.createdAt)}</td>
+						<td>{mediumDateAndTime(entry.createdAt)}</td>
 						<td>{entry.actorName ?? 'The site or a requester'}</td>
 						<td>
 							{entry.action}

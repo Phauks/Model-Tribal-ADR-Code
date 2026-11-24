@@ -16,6 +16,7 @@
 	} from '#lib/uploads.ts';
 	import { youtubeEmbedAddress, youtubeWatchAddress } from '#lib/video-links.ts';
 	import type { PageProps } from './$types';
+	import { mediumDateAndTime } from '#lib/readable-date.ts';
 
 	let { data, form }: PageProps = $props();
 
@@ -27,9 +28,6 @@
 	onMount(async () => (names = await nationNames()));
 	const nationName = $derived(names.get(data.nation) ?? 'your nation');
 
-	function when(value: string): string {
-		return new Date(value).toLocaleString('en-US', { dateStyle: 'medium', timeStyle: 'short' });
-	}
 </script>
 
 <svelte:head>
@@ -39,7 +37,7 @@
 <div class="wide">
 	<Breadcrumbs trail={[{ label: `Files about ${nationName}`, href: '/workspace/nation-uploads' }]} />
 	<h1>{name}</h1>
-	<p class="muted">{upload.reference} · sent {when(upload.received_at)}</p>
+	<p class="muted">{upload.reference} · sent {mediumDateAndTime(upload.received_at)}</p>
 	<p><span class="chip">{nationStatusLabels[upload.status]}</span></p>
 
 	{#if form && 'problem' in form}
@@ -99,7 +97,7 @@
 	{/if}
 	{#each data.comments as comment (comment.identifier)}
 		<div class="message">
-			<p class="small"><strong>{comment.person_name ?? 'A nation reviewer'}</strong> · {when(comment.created_at)}</p>
+			<p class="small"><strong>{comment.person_name ?? 'A nation reviewer'}</strong> · {mediumDateAndTime(comment.created_at)}</p>
 			<p>{comment.body}</p>
 		</div>
 	{/each}

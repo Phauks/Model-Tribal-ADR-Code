@@ -14,6 +14,7 @@
  * credit, to be credited on the website. Used by the editor and the server
  * alike.
  */
+import { escapeHtml } from '../escape-html.ts';
 
 export const creditRoles = ['wrote', 'edited', 'researched', 'reviewed'] as const;
 export type CreditRole = (typeof creditRoles)[number];
@@ -157,10 +158,6 @@ export function finishedReviewers(
 /** The credit lines readers see, by heading id, with each name as its person chose to be credited and their contributor page, if any. */
 export type ReaderCredits = Record<string, { role: CreditRole; people: { name: string; link: string | null }[] }[]>;
 
-function escapeText(text: string): string {
-	return text.replaceAll('&', '&amp;').replaceAll('<', '&lt;').replaceAll('>', '&gt;').replaceAll('"', '&quot;');
-}
-
 /** Puts each section's credit line under its heading in an essay's HTML: "Written by Ann. Researched by Ben and Cal." */
 export function withReaderCredits(html: string, credits: ReaderCredits): string {
 	if (Object.keys(credits).length === 0) return html;
@@ -169,7 +166,7 @@ export function withReaderCredits(html: string, credits: ReaderCredits): string 
 		if (!lines?.length) return heading;
 		const text = lines
 			.map((line) => {
-				const names = line.people.map((person) => (person.link ? `<a href="${escapeText(person.link)}">${escapeText(person.name)}</a>` : escapeText(person.name)));
+				const names = line.people.map((person) => (person.link ? `<a href="${escapeHtml(person.link)}">${escapeHtml(person.name)}</a>` : escapeHtml(person.name)));
 				return `${creditRoleLabels[line.role]} ${joinNames(names)}.`;
 			})
 			.join(' ');

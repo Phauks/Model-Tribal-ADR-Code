@@ -10,13 +10,10 @@
  * status line after the button tells a screen reader. Where a line names the hash without showing
  * it, such as "SHA-256" in a citation's saved copy line, the button is the copy icon alone.
  */
+import { escapeHtml } from './escape-html.ts';
 
 /** How long the check and "Copied" show. */
 export const copiedFor = 2000;
-
-function escapeHtml(text: string): string {
-	return text.replaceAll('&', '&amp;').replaceAll('<', '&lt;').replaceAll('>', '&gt;').replaceAll('"', '&quot;');
-}
 
 // Lucide 1.77.0 (ISC; LICENSES/Lucide.txt): copy and check, written out because the markup is also built as HTML text.
 const copyIcon =

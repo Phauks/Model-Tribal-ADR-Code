@@ -60,7 +60,12 @@ describe('deleting an account', () => {
 		const [credit] = await confirmedCredits(database);
 		expect(credit).toMatchObject({ section: 'contributors', line: 'Ada Lovelace', biography: 'Writes about mediation.' });
 		const kept = await database.prepare('SELECT * FROM retained_credits').first<Record<string, unknown>>();
-		expect(JSON.stringify(kept)).not.toContain('555');
+		// Only the public credit is kept. The row's random identifier and time are left out of the
+		// check, since a random identifier could contain any digits.
+		expect(Object.keys(kept ?? {}).sort()).toEqual(['biography', 'identifier', 'in_book', 'line', 'on_website', 'retained_at', 'section', 'sort_key']);
+		const { identifier: _identifier, retained_at: _retainedAt, ...keptCredit } = kept ?? {};
+		expect(JSON.stringify(keptCredit)).not.toContain('helper@example.org');
+		expect(JSON.stringify(keptCredit)).not.toContain('1985');
 	});
 
 	it('removes the credit and renames workspace work when the person removes their name', async () => {

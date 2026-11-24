@@ -26,7 +26,7 @@
 		type StatementSection
 	} from '#lib/nation-page-changes.ts';
 	import { answersFor, teamAnswerDays, teamAnswerLabels } from '#lib/nation-team-reports.ts';
-	import { readableDate } from '#lib/readable-date.ts';
+	import { mediumDateAndTime, readableDate } from '#lib/readable-date.ts';
 	import { requestKindLabels } from '#lib/requests.ts';
 	import type { PageProps } from './$types';
 
@@ -110,10 +110,6 @@
 		return lines;
 	});
 
-	function when(value: string | null): string {
-		return value ? new Date(value).toLocaleString('en-US', { dateStyle: 'medium', timeStyle: 'short' }) : '';
-	}
-
 	function the(title: string): string {
 		return /^the\s/i.test(title) ? title : `the ${title}`;
 	}
@@ -153,7 +149,7 @@
 	<section class="panel panel-filled" id="project-question" aria-labelledby="pause-heading">
 		<h2 id="pause-heading">The project has a question</h2>
 		<p>
-			The project paused publishing for this page on {when(data.pause.pausedAt)} and asks your team:
+			The project paused publishing for this page on {mediumDateAndTime(data.pause.pausedAt)} and asks your team:
 		</p>
 		<blockquote class="pause-question">{data.pause.question}</blockquote>
 		<p class="small">
@@ -161,7 +157,7 @@
 		</p>
 		{#if data.pause.answer}
 			<p class="small">
-				<strong>Your team’s answer</strong>, {data.pause.answeredByName ?? 'your team'}, {when(data.pause.answeredAt)}:
+				<strong>Your team’s answer</strong>, {data.pause.answeredByName ?? 'your team'}, {mediumDateAndTime(data.pause.answeredAt)}:
 			</p>
 			<p class="report-details">{data.pause.answer}</p>
 		{/if}
@@ -189,7 +185,7 @@
 				<li>
 					<p>
 						<strong>{requestKindLabels[report.kind]}</strong>
-						<span class="small muted">{report.reference}, {when(report.receivedAt)}</span>
+						<span class="small muted">{report.reference}, {mediumDateAndTime(report.receivedAt)}</span>
 					</p>
 					{#if report.material}<p class="small"><span class="muted">Where:</span> {report.material}</p>{/if}
 					{#if report.details}<p class="report-details">{report.details}</p>{/if}
@@ -202,7 +198,7 @@
 					{/if}
 					{#if report.outcome}
 						<p class="small">
-							<strong>{teamAnswerLabels[report.outcome]}</strong>, {report.answeredByName ?? 'your team'}, {when(report.answeredAt)}{#if report.note}: {report.note}{/if}
+							<strong>{teamAnswerLabels[report.outcome]}</strong>, {report.answeredByName ?? 'your team'}, {mediumDateAndTime(report.answeredAt)}{#if report.note}: {report.note}{/if}
 						</p>
 					{:else if data.canAnswer}
 						<form method="post" action="?/answer" class="report-answer">
@@ -451,7 +447,7 @@
 			{#each data.waiting as change (change.identifier)}
 				<li>
 					<strong>{describeChange(change.kind, change.content)}</strong>
-					<span class="small muted">Published by {change.publishedByName ?? 'a team member'}; goes live {when(change.liveAt)}.</span>
+					<span class="small muted">Published by {change.publishedByName ?? 'a team member'}; goes live {mediumDateAndTime(change.liveAt)}.</span>
 					<span class="change-actions">
 						{#if change.canApprove}
 							<form method="post" action="?/approve">
@@ -479,7 +475,7 @@
 			{#each data.drafts as draft (draft.identifier)}
 				<li>
 					<strong>{describeChange(draft.kind, draft.content)}</strong>
-					<span class="small muted">By {draft.writtenByName ?? 'a team member'}, {when(draft.writtenAt)}.</span>
+					<span class="small muted">By {draft.writtenByName ?? 'a team member'}, {mediumDateAndTime(draft.writtenAt)}.</span>
 					<span class="change-actions">
 						{#if data.allowed[draft.kind].publish}
 							<form method="post" action="?/publishDraft">

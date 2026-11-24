@@ -12,6 +12,7 @@
  *
  * This module must work in the browser and in Node (for tests).
  */
+import { escapeHtml } from './escape-html.ts';
 
 /** One marker on a page. */
 export interface CitationMark {
@@ -44,17 +45,9 @@ export function backlinkLetter(index: number): string {
 	return letters;
 }
 
-function escapeAttribute(text: string): string {
-	return text
-		.replaceAll('&', '&amp;')
-		.replaceAll('<', '&lt;')
-		.replaceAll('>', '&gt;')
-		.replaceAll('"', '&quot;');
-}
-
 /** One marker as HTML. */
 export function markHtml(mark: CitationMark): string {
-	const where = mark.where ? ` data-where="${escapeAttribute(mark.where)}"` : '';
+	const where = mark.where ? ` data-where="${escapeHtml(mark.where)}"` : '';
 	return (
 		`<a id="${mark.anchor}" class="note-marker" href="#${sourceAnchor(mark.number)}"` +
 		` aria-label="Source ${mark.number}"${where}>${mark.number}</a>`
