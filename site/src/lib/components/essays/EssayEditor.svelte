@@ -97,6 +97,7 @@
 	import { citationWithoutAddress, type SourceDocuments } from '#lib/essays/source-documents.ts';
 	import { figurePartOrder, figureParts, figurePartsFor, type FigureKind, type FigurePart, type NewFigure } from '#lib/essays/figures.ts';
 	import { figurePlayers, watchFigureFiles } from '#lib/essays/figure-players.ts';
+	import { essayChartFrom } from '#lib/table-builder.ts';
 	import { addAfterCurrent, addSection, moveCurrent } from '#lib/essays/placement.ts';
 	import { dropLocalDraft, isSaveAnswer, keepaliveLimit, keepLocalDraft, localDraft, type LocalDraft } from '#lib/essays/local-draft.ts';
 
@@ -114,8 +115,10 @@
 		yourName = null,
 		toolsInMasthead = false,
 		titleExtras,
+		addChart = null,
 		onsaved,
-		onoutline
+		onoutline,
+		onchartadded
 	}: {
 		identifier: string;
 		text: string;
@@ -146,6 +149,10 @@
 		onsaved?: (version: number) => void;
 		/** Called with the essay's outline as the draft stands, for the sidebar (editor-outline.ts). */
 		onoutline?: (items: OutlineItem[]) => void;
+		/** A Build a table address whose chart to add at the end of the essay once the editor is ready (?add-chart=). */
+		addChart?: string | null;
+		/** Called once the asked-for chart is added, or could not be. */
+		onchartadded?: () => void;
 	} = $props();
 
 	// The file as last saved, split so the editor shows only the body. The
@@ -919,6 +926,38 @@
 		);
 	}
 
+	/**
+	 * Adds a chart from Build a table at the end of the essay (Trevor, Nov.
+	 * 24, 2026: making our own charts should be "the same flow"): its title as
+	 * the caption, its numbers as of today as the table, and a source line
+	 * that links back to the builder (src/lib/table-builder.ts, essayChartFrom).
+	 */
+	async function placeChart(link: string): Promise<void> {
+		const chart = await essayChartFrom(link);
+		// Let the live room's text settle into the editor first.
+		await new Promise((resolve) => setTimeout(resolve, 300));
+		if (closed || !view) return;
+		if (!chart) {
+			figureFileNotice = 'That chart could not be read from Build a table. Add it with Add, then Chart.';
+			onchartadded?.();
+			return;
+		}
+		const node = schema.node('figure_block', { kind: 'chart', address: '' }, [
+			...blocksOf(chart.caption),
+			schema.node('table', null, [
+				tableRow([chart.labelHeader, chart.valueHeader], true),
+				...chart.rows.map(([label, value]) => tableRow([label, value.toLocaleString('en-US')]))
+			]),
+			newFigurePart('credit', chart.credit)
+		]);
+		const at = view.state.doc.content.size;
+		const transaction = view.state.tr.insert(at, node);
+		transaction.setSelection(TextSelection.near(transaction.doc.resolve(at + 1)));
+		view.dispatch(transaction.scrollIntoView());
+		(view.nodeDOM(at) as HTMLElement | null)?.scrollIntoView?.({ block: 'start' });
+		onchartadded?.();
+	}
+
 	/** A chart to fill in: its caption, a table of names and numbers, and a source line. */
 	function newChart(): EditorNode {
 		return schema.node('figure_block', { kind: 'chart', address: '' }, [
@@ -1646,7 +1685,9 @@
 		void loadReviewRequests();
 		const chosenSection = untrack(() => startAt);
 		if (chosenSection) setTimeout(() => goToSection(chosenSection), 300);
-		if (untrack(() => live)) void joinRoom();
+		const ready = untrack(() => live) ? joinRoom() : Promise.resolve();
+		const askedChart = untrack(() => addChart);
+		if (askedChart && untrack(() => canEdit)) void ready.then(() => placeChart(askedChart));
 		const kept = canEdit ? localDraft(identifier) : null;
 		if (kept && kept.text === untrack(() => text)) dropLocalDraft(identifier);
 		else if (kept) recovered = kept;
