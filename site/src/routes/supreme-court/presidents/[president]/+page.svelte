@@ -190,8 +190,12 @@
 		margin-top: var(--space-2);
 	}
 
-	/* A name that wraps stays one box, so the source mark after it never sits inside the link's area. */
-	.facts :global(dd > a:not(.note-marker)) {
-		display: inline-block;
+	/*
+	 * A source mark wide enough to be a full target whatever font draws it:
+	 * "[1]" after a name came out under 24 pixels on the build server, so its
+	 * target touched the name's link (axe-core target-size).
+	 */
+	.facts :global(.summary-list .note-marker) {
+		padding-left: 3px;
 	}
 </style>
