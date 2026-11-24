@@ -13,15 +13,16 @@
 	//
 	// A page about the site, such as the About page (src/lib/server/about-pages.ts),
 	// has no section, and shows the text from git until it is first published.
+	import Breadcrumbs from '../Breadcrumbs.svelte';
 	import { onMount } from 'svelte';
 	import { figurePlayers } from '#lib/essays/figure-players.ts';
 	import { quoteContext } from '#lib/essays/quote-context-view.ts';
 	import SourceList from '#lib/components/SourceList.svelte';
 	import EssayAccessBar from '#lib/components/essays/EssayAccessBar.svelte';
 	import EssayModePicker from '#lib/components/essays/EssayModePicker.svelte';
+	import EssayViewPicker from '#lib/components/essays/EssayViewPicker.svelte';
 	import EssayStatusPills from '#lib/components/essays/EssayStatusPills.svelte';
 	import History from '@lucide/svelte/icons/history';
-	import Send from '@lucide/svelte/icons/send';
 	import { readSignedInHint } from '#lib/signed-in-hint.ts';
 	import type { SourceEntry } from '#lib/server/source-uses.ts';
 	import type { EssayPageState } from '#lib/server/essay-page-state.ts';
@@ -99,12 +100,18 @@
 		// A review request's link opens the draft for commenting at its section: ?review=<section>, or ?review for the whole draft.
 		const asked = new URL(location.href).searchParams;
 		if (asked.has('review')) reviewAt = asked.get('review') || null;
+		// Comments for you opens the page at a comment, with ?comment=.
+		if (asked.get('comment')) {
+			commentAt = asked.get('comment');
+			reviewAt ??= null;
+		}
 		// The workspace's Edit button opens the page with ?edit.
 		openToEdit = asked.has('edit');
 		void loadAccess();
 	});
 
 	let reviewAt = $state<string | null | undefined>(undefined);
+	let commentAt = $state<string | null>(null);
 	let openToEdit = false;
 	let openedForReview = false;
 	$effect(() => {
@@ -140,10 +147,9 @@
 	{#if unpublished}<meta name="robots" content="noindex" />{/if}
 </svelte:head>
 
-{#if section}
-	<nav aria-label="Breadcrumb" class="small no-print">
-		<a href={sectionLink}>{section}</a> › {shownTitle}
-	</nav>
+<!-- In Commenting and Editing the bar comes first, as in the approved mockups (essay-editor-mockups/4 and v2-1). -->
+{#if section && sectionLink && mode === 'reading'}
+	<Breadcrumbs trail={[{ label: section, href: sectionLink }]} />
 {/if}
 
 {#if access && mode === 'reading'}
@@ -170,13 +176,19 @@
 		{:then { default: EssayEditor }}
 			{#key mode}
 				<!-- Commenting opens the same draft without editing it, so comments land on the words the authors see. -->
-				<EssayEditor {identifier} text={access.text} version={access.latest.number} canEdit={access.canEdit && mode === 'editing'} autoSave={mode === 'editing'} live startAt={reviewAt ?? null} onsaved={saved}>
-					{#snippet barStart()}<EssayModePicker bind:mode canEdit={access!.canEdit} />{/snippet}
+				<EssayEditor {identifier} text={access.text} version={access.latest.number} canEdit={access.canEdit && mode === 'editing'} autoSave={mode === 'editing'} live startAt={reviewAt ?? null} startThread={commentAt} publishedText={access.publishedText} publishedVersion={access.publishedVersion} yourName={access.you?.name ?? null} onsaved={saved}>
+					{#snippet barStart()}
+						<EssayModePicker bind:mode canEdit={access!.canEdit} />
+						{#if access!.publishedVersion !== null}<EssayViewPicker bind:view bind:mode />{/if}
+					{/snippet}
 					{#snippet barEnd()}
 						<a class="bar-link" href="/workspace/essays/{identifier}" title="History: every saved version, and publishing" aria-label="History"><History size={18} aria-hidden="true" /></a>
-						{#if access!.canPublish && mode === 'editing'}<a class="button bar-publish" href="/workspace/essays/{identifier}" title="Choose a saved version to publish"><Send size={16} aria-hidden="true" /> Publish…</a>{/if}
+						{#if access!.canPublish && mode === 'editing'}<a class="button bar-publish" href="/workspace/essays/{identifier}" title="Choose a saved version to publish">Publish…</a>{/if}
 					{/snippet}
-					{#snippet belowBar()}<EssayStatusPills state={access!} />{/snippet}
+					{#snippet titleExtras(extras)}
+						<EssayStatusPills state={access!} inReview={extras.inReview} />
+						{#if mode === 'commenting'}<p class="small muted essay-size">{extras.lines.toLocaleString('en-US')} lines · {extras.words.toLocaleString('en-US')} words</p>{/if}
+					{/snippet}
 				</EssayEditor>
 			{/key}
 		{:catch}
@@ -200,8 +212,8 @@
 	.bar-link {
 		display: inline-grid;
 		place-items: center;
-		min-width: var(--layout-target-minimum);
-		min-height: var(--layout-target-minimum);
+		min-width: calc(var(--bar-target, var(--layout-target-minimum)) - 4px);
+		min-height: var(--bar-target, var(--layout-target-minimum));
 		border-radius: var(--radius-control);
 		color: var(--color-ink);
 	}
@@ -214,6 +226,9 @@
 		display: inline-flex;
 		align-items: center;
 		gap: var(--space-1);
+		min-height: var(--bar-target, var(--layout-target-minimum));
+		padding: 0 var(--space-2);
+		font-size: var(--font-size-small);
 	}
 
 	/* Marks on the draft view, shown only to people with access (src/lib/essays/render.ts). */

@@ -1,9 +1,8 @@
 /**
- * The rows of the Native nations index and the ways to browse it. The index
- * is split into short pages, one per first letter and one per state, so no
- * page holds all 900-some rows (Trevor asked on Nov. 22, 2026 for a list that
- * loads better than one long page). Finding one nation by name is the job of
- * the site search in the masthead.
+ * The rows of the Native nations index and the ways to browse it. The
+ * directory at /nations shows every row in one table (Trevor, Nov. 23, 2026:
+ * "why not just one big table?"); the short pages, one per first letter and
+ * one per state, stay for the links that open a state's nations.
  */
 import { foldForSearch } from '../tables/table-definition.ts';
 import { displayName, entityTypeLabels, reviewStatusLabels, stateName } from '../nation-labels.ts';
@@ -24,6 +23,8 @@ export interface NationIndexRow {
 	statesText: string;
 	review: string;
 	recognition: RecognitionView[];
+	/** The Bureau of Indian Affairs region that serves the nation, such as "Pacific". */
+	region: string;
 }
 
 export interface NationGroup {
@@ -57,7 +58,8 @@ function rowOf(record: NationRecord): NationIndexRow {
 		states,
 		statesText: states.map(stateName).join(', '),
 		review: reviewStatusLabels[record.review?.status]?.label ?? record.review?.status ?? '',
-		recognition: recognitionViews(record)
+		recognition: recognitionViews(record),
+		region: record.federal_administration?.bureau_of_indian_affairs_region ?? ''
 	};
 }
 

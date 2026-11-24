@@ -27,6 +27,11 @@ archives:
 history:
   status: live
   last_checked: '2026-11-21'
+court_dates:
+  argued: ['1884-04-28']
+  printed: "Argued April 28, 1884.—Decided November 3, 1884."
+  source: https://tile.loc.gov/storage-services/service/ll/usrep/usrep112/usrep112094/usrep112094.pdf
+  checked: '2026-11-23'
 supreme_court:
   court: Waite Court
   natural_court: Waite Court (1882-1887)
@@ -112,3 +117,9 @@ notes: >-
   analysis) The superseding statute is the Indian Citizenship Act of 1924. Write-up of the Westlaw pull:
   research/pull-results/2026-11-21-legal-history-confirm-first-cases.md in the project's working files;
   the lead author's copy is kept privately and is not redistributed.
+nations_in_case:
+  checked: '2026-11-23'
+  named: []
+  not_linked:
+  - named_as: John Elk, "an Indian"
+    reason: The opinion does not say which nation Elk was born into.

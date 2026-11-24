@@ -1,6 +1,7 @@
 <script lang="ts">
 	// The page a story's method or topic badge opens: every story tagged with it
 	// (src/lib/server/story-tag-pages.ts).
+	import Breadcrumbs from './Breadcrumbs.svelte';
 	import type { StorySummary, StoryTag } from '#lib/server/stories.ts';
 	import CountBadge from './CountBadge.svelte';
 
@@ -22,9 +23,7 @@
 	<meta name="description" content="Stories about disputes and peace tagged with the {what.toLocaleLowerCase('en-US')} “{tag.name}”." />
 </svelte:head>
 
-<nav aria-label="Breadcrumb" class="small">
-	<a href="/stories">Stories</a> › {what}
-</nav>
+<Breadcrumbs trail={[{ label: 'Stories', href: '/stories' }]} />
 
 <div class="reading">
 	<h1><span class="muted tag-kind">{what}:</span> {title}</h1>

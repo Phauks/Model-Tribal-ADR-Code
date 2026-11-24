@@ -28,32 +28,19 @@
 	} from '#lib/search-filters.ts';
 	import {
 		documentFacets,
-		documentMatches,
 		loadSearchRecords,
 		nationFacets,
 		type DocumentSearchRow,
 		type NationSearchRow,
 		type SearchRecords
 	} from '#lib/search-records.ts';
-	import {
-		loadSearchIndex,
-		searchEntries,
-		searchKindLabels,
-		type SearchEntry,
-		type SearchResult
-	} from '#lib/site-search.ts';
-	import { foldForSearch, type TableColumn, type TableRow } from '#lib/tables/table-definition.ts';
+	import { matchEverything, resultGroupLabels } from '#lib/search-everything.ts';
+	import { loadSearchIndex, type SearchEntry, type SearchResult } from '#lib/site-search.ts';
+	import type { TableColumn, TableRow } from '#lib/tables/table-definition.ts';
 
 	type Show = 'all' | 'nation' | 'document' | 'story' | 'term' | 'page';
 
-	const showLabels: Record<Show, string> = {
-		all: 'Everything',
-		nation: searchKindLabels.nation,
-		document: 'Laws and governing documents',
-		story: searchKindLabels.story,
-		term: searchKindLabels.term,
-		page: searchKindLabels.page
-	};
+	const showLabels: Record<Show, string> = { all: 'Everything', ...resultGroupLabels };
 	const showOrder: Show[] = ['all', 'nation', 'document', 'story', 'term', 'page'];
 
 	/** Results shown per group before "Show all". */
@@ -99,8 +86,8 @@
 	);
 
 	const trimmed = $derived(query.trim());
-	const words = $derived(foldForSearch(trimmed).split(/\s+/).filter(Boolean));
-	const textResults = $derived(entries && trimmed ? searchEntries(entries, trimmed) : []);
+	/** What the words find, the same matches the masthead's search panel counts (src/lib/search-everything.ts). */
+	const matches = $derived(entries && records && trimmed ? matchEverything(entries, records, trimmed) : undefined);
 
 	const nationsById = $derived(new Map((records?.nations ?? []).map((row) => [row.id, row])));
 	/** Each nation's recognition badges, from the search index, by the nation's address. */
@@ -111,10 +98,7 @@
 	const nationPool = $derived.by<NationSearchRow[]>(() => {
 		if (!records) return [];
 		if (!trimmed) return records.nations;
-		return textResults
-			.filter((result) => result.kind === 'nation')
-			.map((result) => nationsById.get(result.link.slice('/nations/'.length)))
-			.filter((row): row is NationSearchRow => row !== undefined);
+		return (matches?.nation ?? []).map((match) => match.row);
 	});
 
 	const browsing = $derived(trimmed === '' && (filtering || show === 'nation' || show === 'document' || show === 'story'));
@@ -125,9 +109,7 @@
 	);
 
 	const documentPool = $derived(
-		(records?.documents ?? []).filter(
-			(row) => (!allowed || allowed.has(row.nation)) && (trimmed ? documentMatches(row, words) : true)
-		)
+		(trimmed ? (matches?.document ?? []) : (records?.documents ?? [])).filter((row) => !allowed || allowed.has(row.nation))
 	);
 	const documentCounts = $derived(facetCounts(documentPool, documentFacets, documentChoices));
 	const documents = $derived<DocumentSearchRow[]>(
@@ -136,7 +118,7 @@
 
 	const storyPool = $derived<SearchEntry[]>(
 		trimmed
-			? textResults.filter((result) => result.kind === 'story')
+			? (matches?.story ?? [])
 			: browsing || show === 'story'
 				? (entries ?? []).filter((entry) => entry.kind === 'story')
 				: []
@@ -153,9 +135,7 @@
 	 */
 	const counts = $derived.by(() => {
 		if (show === 'document') {
-			const pool = (records?.documents ?? []).filter(
-				(row) => (trimmed ? documentMatches(row, words) : true)
-			);
+			const pool = trimmed ? (matches?.document ?? []) : (records?.documents ?? []);
 			const found = filterRows(pool, documentFacets, documentChoices);
 			return facetCounts(throughNations(found.map((row) => [row.nation])), facets, choices);
 		}
@@ -183,8 +163,8 @@
 	}
 
 	// Glossary terms and the site's pages belong to no nation, so nation filters put them away.
-	const terms = $derived(filtering ? [] : textResults.filter((result) => result.kind === 'term'));
-	const pages = $derived(filtering ? [] : textResults.filter((result) => result.kind === 'page'));
+	const terms = $derived(filtering ? [] : (matches?.term ?? []));
+	const pages = $derived(filtering ? [] : (matches?.page ?? []));
 
 	const totals = $derived<Record<Show, number>>({
 		all: nations.length + documents.length + stories.length + terms.length + pages.length,
@@ -396,7 +376,7 @@
 						<span class="fold-mark"><ChevronDown size={24} /></span>
 						<h2 id="results-nation">
 							{showLabels.nation}
-							<span class="muted small">{nations.length.toLocaleString('en-US')}</span>
+							<CountBadge count={nations.length} />
 						</h2>
 					</summary>
 					<DataTable
@@ -405,6 +385,7 @@
 						columns={nationColumns}
 						rows={nationRows}
 						rowName={['nation', 'nations']}
+						total={nations.length}
 					>
 						{#snippet cell(row, column)}
 							{#if column.key === 'recognition'}
@@ -426,7 +407,7 @@
 						<span class="fold-mark"><ChevronDown size={24} /></span>
 						<h2 id="results-document">
 							{showLabels.document}
-							<span class="muted small">{documents.length.toLocaleString('en-US')}</span>
+							<CountBadge count={documents.length} />
 						</h2>
 					</summary>
 					<ol class="results" aria-labelledby="results-document">
@@ -454,7 +435,7 @@
 							<span class="fold-mark"><ChevronDown size={24} /></span>
 							<h2 id="results-{group}">
 								{showLabels[group]}
-								<span class="muted small">{items.length.toLocaleString('en-US')}</span>
+								<CountBadge count={items.length} />
 							</h2>
 						</summary>
 						<ol class="results" aria-labelledby="results-{group}">

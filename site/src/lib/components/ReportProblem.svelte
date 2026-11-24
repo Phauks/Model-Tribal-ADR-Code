@@ -1,7 +1,8 @@
 <script lang="ts">
 	// "Report a problem" in the masthead (site/DESIGN.md, section 6). Trevor
 	// asked on Nov. 22, 2026 that it be a button and open a dialog over the
-	// page rather than a new page. The dialog is the shared Modal, on one page
+	// page rather than a new page, and on Nov. 23, 2026 that it be only a flag
+	// icon like the masthead's other controls, named by its label and tooltip. The dialog is the shared Modal, on one page
 	// (Trevor, Nov. 23, 2026): a dropdown for what is wrong (one choice is a
 	// missing nation), and under it the request form's questions for that
 	// choice (RequestForm.svelte, compact), with the page they were on already
@@ -94,14 +95,20 @@
 </script>
 
 {#if scripted && !onRequestPage}
-	<button bind:this={opener} class="report-button" type="button" aria-haspopup="dialog" onclick={open}>
-		<Flag size={20} strokeWidth={1.75} />
-		<span>Report a problem</span>
+	<button
+		bind:this={opener}
+		class="icon-button"
+		type="button"
+		aria-haspopup="dialog"
+		aria-label="Report a problem"
+		title="Report a problem"
+		onclick={open}
+	>
+		<Flag size={24} />
 	</button>
 {:else}
-	<a class="report-button" href={link}>
-		<Flag size={20} strokeWidth={1.75} />
-		<span>Report a problem</span>
+	<a class="icon-button" href={link} aria-label="Report a problem" title="Report a problem">
+		<Flag size={24} />
 	</a>
 {/if}
 
@@ -134,25 +141,9 @@
 {/if}
 
 <style>
-	/* Outlined on the band, like Print and Download beside it. */
-	.report-button {
-		display: inline-flex;
-		align-items: center;
-		gap: var(--space-2);
-		min-height: var(--layout-target-minimum);
-		padding: 0 var(--space-3);
-		border: 1px solid var(--color-band-text);
-		border-radius: var(--radius-control);
-		background: transparent;
-		color: var(--color-band-text);
-		font: inherit;
-		font-weight: var(--font-weight-semibold);
-		text-decoration: none;
-		cursor: pointer;
-	}
-
-	.report-button:visited {
-		color: var(--color-band-text);
+	/* A link without scripts keeps the band's color after a visit. */
+	a.icon-button:visited {
+		color: inherit;
 	}
 
 	/* The dropdown sits at the top of the dialog, with room before the first question. */

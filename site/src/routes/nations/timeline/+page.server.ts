@@ -30,6 +30,8 @@ export const load: PageServerLoad = () => {
 					entry.italic ? 1 : 0
 				] as const
 		),
-		opinions: timeline.opinions.map((year) => [year.year, year.count, year.peacemaking, year.nation ? (place.get(year.nation) ?? -1) : -1] as const)
+		opinions: timeline.opinions.map(
+			(year) => [year.year, year.count, year.peacemaking, year.nation ? (place.get(year.nation) ?? -1) : -1, year.mediation ?? 0, year.both ?? 0] as const
+		)
 	};
 };

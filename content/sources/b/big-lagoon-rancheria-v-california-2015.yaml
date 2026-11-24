@@ -28,6 +28,12 @@ archives:
 history:
   status: live
   last_checked: '2026-11-21'
+court_dates:
+  rehearing_en_banc_denied: ['2015-07-08']
+  amended: ['2015-07-08']
+  printed: "June 4, 2015. As Amended on Denial of Rehearing En Banc July 8, 2015."
+  source: https://static.case.law/f3d/789/cases/0947-01.json
+  checked: '2026-11-23'
 courtlistener:
   cluster: 2805699
   citation: "789 F.3d 947"
@@ -84,3 +90,11 @@ notes: Big Lagoon Rancheria v. California, 789 F.3d 947 (9th Cir. 2015) (en banc
   challenge to the trust acquisition and tribal status was an improper collateral attack on BIA decisions. The opinion
   was amended by order of July 8, 2015. Read on the original link. Citator check (KeyCite) pending; see the project's
   Westlaw list.
+tribes:
+- big-lagoon-rancheria
+nations_in_case:
+  checked: '2026-11-23'
+  named:
+  - nation: big-lagoon-rancheria
+    named_as: Big Lagoon Rancheria
+    role: party

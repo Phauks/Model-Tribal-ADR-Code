@@ -443,6 +443,23 @@ def main() -> int:
         if path.parent.name != letter_folder(path.stem):
             errors.append(f"{path}: belongs in the folder '{letter_folder(path.stem)}/'")
 
+    nation_ids = {path.stem for path, _ in records.get("tribe.schema.json", [])}
+
+    def check_nations_in_case(path: pathlib.Path, record: dict) -> None:
+        """Every court case says which nations it names, each a nation record, and 'tribes' lists the same ones."""
+        if not str(record.get("kind", "")).endswith("-case"):
+            return
+        block = record.get("nations_in_case")
+        if not block:
+            errors.append(f"{path}: a court case needs nations_in_case (the nations it names, or none)")
+            return
+        named = [entry["nation"] for entry in block.get("named", [])]
+        for nation in named:
+            if nation not in nation_ids:
+                errors.append(f"{path}: nations_in_case names a missing nation record '{nation}'")
+        if list(dict.fromkeys(named)) != list(record.get("tribes", [])):
+            errors.append(f"{path}: tribes must list the nations in nations_in_case, in the same order")
+
     for path, record in records.get("source.schema.json", []):
         if record.get("key") != path.stem:
             errors.append(f"{path}: key does not match the file name")
@@ -450,6 +467,7 @@ def main() -> int:
             if session not in sessions:
                 errors.append(f"{path}: found_in names a missing research session '{session}'")
         check_methods(path, "methods", record.get("methods"))
+        check_nations_in_case(path, record)
 
     for path, record in records.get("method.schema.json", []):
         if record.get("id") != path.stem:

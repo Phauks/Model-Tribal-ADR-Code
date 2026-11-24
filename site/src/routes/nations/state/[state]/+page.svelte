@@ -1,4 +1,5 @@
 <script lang="ts">
+	import Breadcrumbs from '#lib/components/Breadcrumbs.svelte';
 	import NationBrowse from '#lib/components/NationBrowse.svelte';
 	import NationTable from '#lib/components/NationTable.svelte';
 	import type { PageProps } from './$types';
@@ -10,9 +11,7 @@
 	<title>{data.state.label} · Nations · Model Tribal ADR Code</title>
 </svelte:head>
 
-<nav aria-label="Breadcrumb" class="small">
-	<a href="/nations">Nations</a> › <a href="/nations#by-state">By state</a> › {data.state.label}
-</nav>
+<Breadcrumbs trail={[{ label: 'Nations', href: '/nations' }]} />
 
 <h1>Nations with a presence in {data.state.label}</h1>
 <p class="small muted">

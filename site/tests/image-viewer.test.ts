@@ -1,5 +1,6 @@
 import { describe, expect, it } from 'vitest';
 import {
+	downloadName,
 	imageViewerAttributeText,
 	imageViewerAttributes,
 	imageViewerLinkLabel,
@@ -16,8 +17,7 @@ describe('picture links', () => {
 				title: 'Seal of Navajo Nation',
 				credit: 'As the nation’s website publishes it.',
 				original: 'https://www.navajo-nsn.gov/seal.png',
-				source: '#source-1',
-				removal: ' '
+				source: ' '
 			})
 		).toEqual({
 			class: 'image-viewer-link',
@@ -26,8 +26,7 @@ describe('picture links', () => {
 			'data-sveltekit-reload': '',
 			'data-viewer-title': 'Seal of Navajo Nation',
 			'data-viewer-credit': 'As the nation’s website publishes it.',
-			'data-viewer-original': 'https://www.navajo-nsn.gov/seal.png',
-			'data-viewer-source': '#source-1'
+			'data-viewer-original': 'https://www.navajo-nsn.gov/seal.png'
 		});
 	});
 
@@ -68,5 +67,20 @@ describe('the viewer', () => {
 		expect(originalHost('https://www.navajo-nsn.gov/Portals/0/seal.png')).toBe('navajo-nsn.gov');
 		expect(originalHost('https://upload.wikimedia.org/a.png')).toBe('upload.wikimedia.org');
 		expect(originalHost('not a link')).toBeUndefined();
+	});
+});
+
+describe('downloading', () => {
+	it('names the file after its title, with the extension its media type calls for', () => {
+		expect(downloadName('Logo of Absentee-Shawnee Tribe of Indians of Oklahoma', '/nations/absentee-shawnee-tribe-of-indians-of-oklahoma/image', 'image/png')).toBe(
+			'logo-of-absentee-shawnee-tribe-of-indians-of-oklahoma.png'
+		);
+		expect(downloadName('Seal of the Pueblo of Zuñi', '/nations/zuni/image', 'image/jpeg; charset=binary')).toBe('seal-of-the-pueblo-of-zuni.jpg');
+	});
+
+	it('falls back to the extension in the address, then to no extension', () => {
+		expect(downloadName('Council house', '/files/U-1/council%20house.webp')).toBe('council-house.webp');
+		expect(downloadName('Council house', '/nations/x/pictures/abc')).toBe('council-house');
+		expect(downloadName('', '/nations/x/image', 'image/svg+xml')).toBe('picture.svg');
 	});
 });

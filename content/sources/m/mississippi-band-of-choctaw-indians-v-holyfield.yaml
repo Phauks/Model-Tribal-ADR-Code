@@ -27,6 +27,11 @@ archives:
 history:
   status: live
   last_checked: '2026-11-21'
+court_dates:
+  argued: ['1989-01-11']
+  printed: "Argued January 11, 1989—Decided April 3, 1989"
+  source: https://tile.loc.gov/storage-services/service/ll/usrep/usrep490/usrep490030/usrep490030.pdf
+  checked: '2026-11-23'
 supreme_court:
   court: Rehnquist Court
   natural_court: Rehnquist Court (1988-1990)
@@ -95,10 +100,16 @@ rights:
     Opinions of federal courts are works of the U.S. government (17 U.S.C. § 105); the host site's own
     additions are not reproduced.
   redistribution: true
-tribes:
-- mississippi-band-of-choctaw-indians
 found_in:
 - 2026-11-21-legal-history-and-key-cases
 notes: >-
   Full citation: 490 U.S. 30 (1989). Official report scan or slip opinion: https://tile.loc.gov/storage-services/service/ll/usrep/usrep490/usrep490030/usrep490030.pdf.
   Citator check (KeyCite) pending; see research/pull-lists/2026-11-21-legal-history-westlaw.md.
+tribes:
+- mississippi-band-of-choctaw-indians
+nations_in_case:
+  checked: '2026-11-23'
+  named:
+  - nation: mississippi-band-of-choctaw-indians
+    named_as: Mississippi Band of Choctaw Indians
+    role: party

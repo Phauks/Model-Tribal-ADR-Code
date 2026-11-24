@@ -22,6 +22,7 @@
 	const views = [
 		{ value: 'open', label: 'To review' },
 		{ value: 'waiting', label: 'Waiting on someone' },
+		{ value: 'careful-look', label: 'Needs a careful look' },
 		{ value: 'decided', label: 'Decided' },
 		{ value: 'not-accepted', label: 'Not accepted or withdrawn' },
 		{ value: 'all', label: 'All' }
@@ -34,11 +35,19 @@
 		return `${Math.round(hours / 24)} days`;
 	}
 
-	function address(view: string, kind: string | null): string {
+	function address(view: string, kind: string | null, nation: string | null): string {
 		const search = new URLSearchParams({ show: view });
 		if (kind) search.set('kind', kind);
+		if (nation) search.set('nation', nation);
 		return `?${search}`;
 	}
+
+	// Who has the file, or what it waits for, as the mockup's Reviewer column shows (design/uploads, mockup 3).
+	const waitingLabels: Partial<Record<string, string>> = {
+		'needs-answer': 'Asked a question',
+		'waiting-for-nation': 'Waiting for the nation',
+		checking: 'Being checked'
+	};
 </script>
 
 <svelte:head>
@@ -48,33 +57,44 @@
 <div class="wide">
 	<h1>Uploads</h1>
 	<p class="lead">Files people have sent. Check each one, then file it where it belongs or say why it was not used.</p>
-	<p><a class="button button-quiet" href="/workspace/intake"><Upload size={18} aria-hidden="true" /> Intake</a></p>
+	<p><a class="button button-quiet with-icon" href="/workspace/intake"><Upload size={18} aria-hidden="true" /> Intake</a></p>
 
-	<nav class="filters" aria-label="Show">
-		{#each views as view (view.value)}
-			<a
-				class="button button-quiet"
-				class:pressed={data.view === view.value}
-				aria-current={data.view === view.value ? 'page' : undefined}
-				href={address(view.value, data.kind)}
-			>
-				{view.label} ({data.counts[view.value]})
-			</a>
-		{/each}
-	</nav>
-	<form class="kind-filter" method="get">
-		<input type="hidden" name="show" value={data.view} />
-		<label class="small">
-			Kind
-			<select name="kind" onchange={(event) => event.currentTarget.form?.requestSubmit()}>
-				<option value="">All kinds</option>
-				{#each uploadKinds as kind (kind)}
-					<option value={kind} selected={data.kind === kind}>{uploadKindLabels[kind]}</option>
-				{/each}
-			</select>
-		</label>
-		<noscript><button class="button button-quiet" type="submit">Show</button></noscript>
-	</form>
+	<div class="filter-row">
+		<nav class="filters" aria-label="Show">
+			{#each views as view (view.value)}
+				<a
+					class="button button-quiet"
+					class:pressed={data.view === view.value}
+					aria-current={data.view === view.value ? 'page' : undefined}
+					href={address(view.value, data.kind, data.nation)}
+				>
+					{view.label} ({data.counts[view.value]})
+				</a>
+			{/each}
+		</nav>
+		<form class="kind-filter" method="get">
+			<input type="hidden" name="show" value={data.view} />
+			<label class="small">
+				Nation
+				<select name="nation" onchange={(event) => event.currentTarget.form?.requestSubmit()}>
+					<option value="">All nations</option>
+					{#each data.nations as nation (nation)}
+						<option value={nation} selected={data.nation === nation}>{names.get(nation) ?? nation}</option>
+					{/each}
+				</select>
+			</label>
+			<label class="small">
+				Kind
+				<select name="kind" onchange={(event) => event.currentTarget.form?.requestSubmit()}>
+					<option value="">All kinds</option>
+					{#each uploadKinds as kind (kind)}
+						<option value={kind} selected={data.kind === kind}>{uploadKindLabels[kind]}</option>
+					{/each}
+				</select>
+			</label>
+			<noscript><button class="button button-quiet" type="submit">Show</button></noscript>
+		</form>
+	</div>
 
 	{#if data.uploads.length === 0}
 		<p>Nothing here.</p>
@@ -88,7 +108,7 @@
 						<th scope="col">About</th>
 						<th scope="col">Checks</th>
 						<th scope="col">Waiting</th>
-						<th scope="col">Status</th>
+						<th scope="col">Reviewer</th>
 					</tr>
 				</thead>
 				<tbody>
@@ -120,7 +140,10 @@
 							</td>
 							<td class="small nowrap">{since(upload.receivedAt)}</td>
 							<td class="small">
-								{reviewerStatusLabels[upload.status]}{#if upload.reviewerName}<br /><span class="muted">{upload.reviewerName}</span>{/if}
+								{upload.reviewerName ?? waitingLabels[upload.status] ?? 'None'}
+								{#if data.view === 'decided' || data.view === 'not-accepted' || data.view === 'all'}
+									<br /><span class="muted">{reviewerStatusLabels[upload.status]}</span>
+								{/if}
 							</td>
 						</tr>
 					{/each}
@@ -137,11 +160,20 @@
 	.wide {
 		max-width: none;
 	}
+	.filter-row {
+		display: flex;
+		flex-wrap: wrap;
+		align-items: center;
+		gap: var(--space-2) var(--space-4);
+		margin-bottom: var(--space-4);
+	}
 	.filters {
 		display: flex;
 		flex-wrap: wrap;
 		gap: var(--space-2);
-		margin-bottom: var(--space-3);
+	}
+	.with-icon {
+		gap: var(--space-2);
 	}
 	.pressed {
 		background: var(--color-surface);
@@ -149,7 +181,9 @@
 		font-weight: var(--font-weight-semibold);
 	}
 	.kind-filter {
-		margin-bottom: var(--space-4);
+		display: flex;
+		flex-wrap: wrap;
+		gap: var(--space-2) var(--space-4);
 	}
 	.kind-filter label {
 		display: inline-flex;

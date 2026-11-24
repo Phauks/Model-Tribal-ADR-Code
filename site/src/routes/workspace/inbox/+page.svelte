@@ -86,6 +86,7 @@
 		{/if}
 	</form>
 </header>
+<p class="intro">Mail to the project’s addresses. Only people with the read-mail permission see this page.</p>
 
 {#if data.stuck.length}
 	<div class="notice notice-problem stuck" role="alert">
@@ -246,6 +247,10 @@
 	}
 	.list-head h1 {
 		margin: 0;
+	}
+	.intro {
+		margin: 0 0 var(--space-3);
+		color: var(--color-ink-muted);
 	}
 	.search {
 		position: relative;

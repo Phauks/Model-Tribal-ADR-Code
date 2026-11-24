@@ -27,6 +27,11 @@ archives:
 history:
   status: live
   last_checked: '2026-11-21'
+court_dates:
+  argued: ['1980-12-03']
+  printed: "Argued December 3, 1980—Decided March 24, 1981"
+  source: https://tile.loc.gov/storage-services/service/ll/usrep/usrep450/usrep450544/usrep450544.pdf
+  checked: '2026-11-23'
 supreme_court:
   court: Burger Court
   natural_court: Burger Court (1975-1981)
@@ -95,10 +100,16 @@ rights:
     Opinions of federal courts are works of the U.S. government (17 U.S.C. § 105); the host site's own
     additions are not reproduced.
   redistribution: true
-tribes:
-- crow-tribe-of-montana
 found_in:
 - 2026-11-21-legal-history-and-key-cases
 notes: >-
   Full citation: 450 U.S. 544 (1981). Official report scan or slip opinion: https://tile.loc.gov/storage-services/service/ll/usrep/usrep450/usrep450544/usrep450544.pdf.
   Citator check (KeyCite) pending; see research/pull-lists/2026-11-21-legal-history-westlaw.md.
+tribes:
+- crow-tribe-of-montana
+nations_in_case:
+  checked: '2026-11-23'
+  named:
+  - nation: crow-tribe-of-montana
+    named_as: Crow Tribe
+    role: subject

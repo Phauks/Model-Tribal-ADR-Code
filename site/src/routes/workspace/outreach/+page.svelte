@@ -53,43 +53,11 @@
 	</table>
 {/if}
 
-<section class="panel" aria-labelledby="new-batch">
-	<h3 id="new-batch">Make a batch</h3>
-	{#if liveTemplates.length === 0}
-		<p>Write a template first.</p>
-	{:else}
-		<form method="post" action="?/newBatch">
-			<div class="field"><label for="batch-name">Name</label><input type="text" id="batch-name" name="name" required maxlength="120" /></div>
-			<div class="field">
-				<label for="batch-template">Template</label>
-				<select id="batch-template" name="template" required>
-					{#each liveTemplates as template (template.identifier)}<option value={template.identifier}>{template.name} (version {template.version})</option>{/each}
-				</select>
-			</div>
-			<div class="field">
-				<label for="per-day">At most this many a day <span class="small muted">(start low; a new mailbox is trusted slowly)</span></label>
-				<input id="per-day" name="perDay" type="number" min="1" max="200" value="40" />
-			</div>
-			<div class="field">
-				<label for="window-start">Sending hours, in each nation’s time zone</label>
-				<span class="hours">
-					from <input id="window-start" name="windowStart" type="number" min="0" max="23" value="9" aria-label="Start hour" />
-					to <input name="windowEnd" type="number" min="1" max="24" value="15" aria-label="End hour" />
-				</span>
-			</div>
-			<p><label><input type="checkbox" name="weekdaysOnly" value="yes" checked /> Weekdays only</label></p>
-			<div class="field">
-				<label for="follow-up-days">Remind me if no reply after this many days <span class="small muted">(optional)</span></label>
-				<input id="follow-up-days" name="followUpDays" type="number" min="1" max="90" value="14" />
-			</div>
-			<p>
-				<label><input type="checkbox" name="askAcknowledgment" value="yes" /> Add a visible “let us know you got this” link</label>
-				<span class="small muted">It records only that the person pressed it.</span>
-			</p>
-			<button class="button" type="submit">Make the batch</button>
-		</form>
-	{/if}
-</section>
+{#if liveTemplates.length === 0}
+	<p>Write a template first, then make a batch.</p>
+{:else}
+	<p><a class="button" href="/workspace/outreach/new">New outreach batch</a></p>
+{/if}
 
 <h2>Templates</h2>
 <p><a class="button-quiet" href="/workspace/outreach/templates/new">Write a template</a></p>
@@ -150,9 +118,6 @@
 		text-align: left;
 		padding: var(--space-1) var(--space-2);
 		border-bottom: 1px solid var(--color-line);
-	}
-	.hours input {
-		width: 5rem;
 	}
 	.inline-form {
 		display: flex;

@@ -23,6 +23,7 @@
 		choices,
 		value,
 		onchange,
+		onhighlight,
 		placeholder = 'Type to search',
 		hideLabel = false,
 		name
@@ -31,6 +32,8 @@
 		choices: SearchableChoice<Value>[];
 		value: Value;
 		onchange: (value: Value) => void;
+		/** Called with the choice the reader is on in the open list, before picking it, so a page can start fetching what that choice shows. */
+		onhighlight?: (value: Value) => void;
 		placeholder?: string;
 		/** Keeps the label for screen readers only, as in a table row whose column header already names the box. */
 		hideLabel?: boolean;
@@ -70,6 +73,11 @@
 			found.get(name)?.push({ choice, index });
 		});
 		return [...found.entries()].map(([name, entries]) => ({ name, entries }));
+	});
+
+	$effect(() => {
+		const highlighted = expanded ? shown[active]?.value : undefined;
+		if (highlighted !== undefined && highlighted !== value) onhighlight?.(highlighted);
 	});
 
 	const status = $derived(

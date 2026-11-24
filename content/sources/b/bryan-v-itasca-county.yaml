@@ -27,6 +27,11 @@ archives:
 history:
   status: live
   last_checked: '2026-11-21'
+court_dates:
+  argued: ['1976-04-20']
+  printed: "Argued April 20, 1976—Decided June 14, 1976"
+  source: https://tile.loc.gov/storage-services/service/ll/usrep/usrep426/usrep426373/usrep426373.pdf
+  checked: '2026-11-23'
 supreme_court:
   court: Burger Court
   natural_court: Burger Court (1975-1981)
@@ -95,11 +100,17 @@ rights:
     Opinions of federal courts are works of the U.S. government (17 U.S.C. § 105); the host site's own
     additions are not reproduced.
   redistribution: true
-tribes:
-- minnesota-chippewa-tribe
 found_in:
 - 2026-11-21-legal-history-and-key-cases
 notes: >-
   Full citation: 426 U.S. 373 (1976). Official report scan or slip opinion: https://tile.loc.gov/storage-services/service/ll/usrep/usrep426/usrep426373/usrep426373.pdf.
   First quote follows the LOC scan; the second is quoted language within the opinion. Citator check (KeyCite)
   pending; see research/pull-lists/2026-11-21-legal-history-westlaw.md.
+tribes:
+- minnesota-chippewa-tribe
+nations_in_case:
+  checked: '2026-11-23'
+  named:
+  - nation: minnesota-chippewa-tribe
+    named_as: Minnesota Chippewa Tribe
+    role: subject

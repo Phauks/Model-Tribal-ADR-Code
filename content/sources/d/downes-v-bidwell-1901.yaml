@@ -33,6 +33,11 @@ citator:
   detail: >-
     Yellow flag: disagreement recognized by Fitisemanu v. United States (10th Cir. 2021). Read from the header of Trevor's Westlaw print, filed privately (bucket key westlaw/downes-v-bidwell-1901.pdf).
   checked: 2026-11-22
+court_dates:
+  argued: ['1901-01-08', '1901-01-09', '1901-01-10', '1901-01-11']
+  printed: "Argued January 8, 9, 10, 11, 1901.—Decided May 27, 1901."
+  source: https://tile.loc.gov/storage-services/service/ll/usrep/usrep182/usrep182244/usrep182244.pdf
+  checked: '2026-11-23'
 supreme_court:
   court: Fuller Court
   natural_court: Fuller Court (1898-1902)
@@ -102,3 +107,6 @@ topics:
 found_in:
 - 2026-11-22-foundations-sources
 notes: Read on Cornell LII and checked against the Library of Congress scan of the U.S. Reports (https://tile.loc.gov/storage-services/service/ll/usrep/usrep182/usrep182244/usrep182244.pdf) on Nov. 22, 2026. Brown, J., announced the judgment; White, J., concurring (with Shiras and McKenna, JJ.), stated the incorporated and unincorporated distinction; the word "unincorporated" itself does not appear in the opinion. Pinpoint pages not yet confirmed. KeyCite checked Nov. 22, 2026 (see citator).
+nations_in_case:
+  checked: '2026-11-23'
+  named: []

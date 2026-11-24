@@ -45,6 +45,15 @@
 	</div>
 {/if}
 
+{#if data.commentsForYou > 0}
+	<div class="notice" role="note">
+		<p>
+			{data.commentsForYou === 1 ? 'One comment is' : `${data.commentsForYou} comments are`} waiting on you.
+			<a href="/workspace/comments">See the comments for you</a>
+		</p>
+	</div>
+{/if}
+
 {#if data.ownNation}
 	<section class="panel">
 		<h2>Your nation’s record</h2>

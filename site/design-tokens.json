@@ -71,6 +71,54 @@
         "$value": "#8A6A00",
         "$description": "Underline of a placeholder."
       },
+      "comment-highlight": {
+        "$value": "#FFF0B3",
+        "$description": "Words someone commented on, in the editor. Ink on it 14.2:1."
+      },
+      "comment-rule": {
+        "$value": "#8A6A00",
+        "$description": "Underline of commented words, and the edge of the comment being written. 5.3:1 on paper."
+      },
+      "status-published": {
+        "$value": "#1E5C2E",
+        "$description": "Text of the Published label in the essay editor (essay-editor-mockups/4). 7.2:1 on its background."
+      },
+      "status-published-rule": {
+        "$value": "#328053",
+        "$description": "Edge of the Published label."
+      },
+      "status-published-background": {
+        "$value": "#EAF5EE",
+        "$description": "Fill of the Published label."
+      },
+      "status-draft": {
+        "$value": "#6B4A00",
+        "$description": "Text of draft labels: draft changes, new components, DRAFT beside the line numbers. 7.5:1 on its background."
+      },
+      "status-draft-rule": {
+        "$value": "#B98000",
+        "$description": "Bar beside a changed or new component, and the edge of draft labels. 3.2:1 on paper."
+      },
+      "status-draft-background": {
+        "$value": "#FFF6DA",
+        "$description": "Fill of the draft changes label."
+      },
+      "status-review": {
+        "$value": "#40357F",
+        "$description": "Text of In review labels and the In review band. 8.9:1 on its background."
+      },
+      "status-review-rule": {
+        "$value": "#5B4FA0",
+        "$description": "Bar beside a section in review, and the edge of the in-review label. 6.6:1 on paper."
+      },
+      "status-review-background": {
+        "$value": "#EFEDF9",
+        "$description": "Fill of the in-review label and band."
+      },
+      "status-review-border": {
+        "$value": "#CFC8EE",
+        "$description": "Edge of the In review band."
+      },
       "focus": {
         "$value": "#FFD34D",
         "$description": "Keyboard focus fill."
@@ -202,6 +250,14 @@
       "chart-series-7": {
         "$value": "#6250D6",
         "$description": "Chart slice or series 7 (violet), in this fixed order and never cycled. Always shown with its name and number in a legend, and every chart has a table view. Set validated for color vision deficiency (adjacent pairs) on surface-raised."
+      },
+      "viewer-checker-light": {
+        "$value": "#FFFFFF",
+        "$description": "Light squares of the checkerboard behind a picture in the image viewer, which shows through its clear parts, the same in both themes."
+      },
+      "viewer-checker-dark": {
+        "$value": "#D6D6D6",
+        "$description": "Gray squares of that checkerboard, the same in both themes."
       }
     },
     "dark": {
@@ -272,6 +328,54 @@
       "placeholder-rule": {
         "$value": "#E0B83A",
         "$description": "Underline of a placeholder."
+      },
+      "comment-highlight": {
+        "$value": "#4A3B00",
+        "$description": "Words someone commented on, in the editor. Ink on it 9.6:1."
+      },
+      "comment-rule": {
+        "$value": "#E0B83A",
+        "$description": "Underline of commented words, and the edge of the comment being written."
+      },
+      "status-published": {
+        "$value": "#8FD3A0",
+        "$description": "Text of the Published label in the essay editor. 7.6:1 on its background."
+      },
+      "status-published-rule": {
+        "$value": "#5FB476",
+        "$description": "Edge of the Published label."
+      },
+      "status-published-background": {
+        "$value": "#17352A",
+        "$description": "Fill of the Published label."
+      },
+      "status-draft": {
+        "$value": "#F2C25A",
+        "$description": "Text of draft labels. 8.0:1 on its background."
+      },
+      "status-draft-rule": {
+        "$value": "#E0A82E",
+        "$description": "Bar beside a changed or new component, and the edge of draft labels. 8.0:1 on paper."
+      },
+      "status-draft-background": {
+        "$value": "#3A2E0A",
+        "$description": "Fill of the draft changes label."
+      },
+      "status-review": {
+        "$value": "#C9C2F2",
+        "$description": "Text of In review labels and the In review band. 8.9:1 on its background."
+      },
+      "status-review-rule": {
+        "$value": "#9F94E0",
+        "$description": "Bar beside a section in review, and the edge of the in-review label. 6.3:1 on paper."
+      },
+      "status-review-background": {
+        "$value": "#26224A",
+        "$description": "Fill of the in-review label and band."
+      },
+      "status-review-border": {
+        "$value": "#4A4380",
+        "$description": "Edge of the In review band."
       },
       "focus": {
         "$value": "#FFD34D",
@@ -404,6 +508,14 @@
       "chart-series-7": {
         "$value": "#9085E9",
         "$description": "Chart slice or series 7 (violet), in this fixed order and never cycled. Always shown with its name and number in a legend, and every chart has a table view. Set validated for color vision deficiency (adjacent pairs) on surface-raised."
+      },
+      "viewer-checker-light": {
+        "$value": "#FFFFFF",
+        "$description": "Light squares of the checkerboard behind a picture in the image viewer, which shows through its clear parts, the same in both themes."
+      },
+      "viewer-checker-dark": {
+        "$value": "#D6D6D6",
+        "$description": "Gray squares of that checkerboard, the same in both themes."
       }
     }
   },
@@ -672,6 +784,13 @@
         "unit": "rem"
       },
       "$description": "Widest a small box that opens over the page gets: menus, link previews, citation popups, the search panel, notices. Always held inside the screen."
+    },
+    "popover-form": {
+      "$value": {
+        "value": 24,
+        "unit": "rem"
+      },
+      "$description": "Width of a short form that opens over the page, such as the masthead's sign-in panel (design/sign-in-popover). Always held inside the screen."
     },
     "panel": {
       "$value": {
