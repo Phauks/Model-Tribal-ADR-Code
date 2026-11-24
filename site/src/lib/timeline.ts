@@ -58,37 +58,30 @@ export interface TimelineEntry {
 export interface OpinionYear {
 	year: number;
 	count: number;
-	/** How many of them mention peacemaking. */
-	peacemaking: number;
-	/** How many mention mediation or arbitration, for the full timeline's Mentions filter. */
-	mediation?: number;
-	/** How many mention both peacemaking and mediation or arbitration. */
-	both?: number;
+	/**
+	 * The words of each opinion that mentions any, for the full timeline's
+	 * Mentions filter: one number per opinion, a bit for each word of
+	 * mentionWordList (src/lib/opinion-mentions.ts).
+	 */
+	mentions?: number[];
 	/** The nation, on the full timeline. */
 	nation?: string;
 }
 
-/** What the opinions are narrowed to on the full timeline: those that mention peacemaking, mediation or arbitration, or either. */
-export interface Mentions {
-	peacemaking: boolean;
-	mediation: boolean;
+/** An opinion's words as one number, a bit for each word of `words` (src/lib/opinion-mentions.ts, mentionWordList). */
+export function mentionBits(topics: string[], words: string[]): number {
+	return topics.reduce((bits, topic) => (words.includes(topic) ? bits | (1 << words.indexOf(topic)) : bits), 0);
 }
 
 /**
- * The opinion counts narrowed to the opinions that mention what is chosen. With both chosen, an
- * opinion that mentions either is counted once. The peacemaking mark under a bar keeps counting the
- * opinions among them that mention peacemaking.
+ * The opinion counts narrowed to the opinions that mention any of the chosen words (each
+ * opinion counted once), on the full timeline. With no word chosen, every opinion counts.
  */
-export function mentioning(years: OpinionYear[], mentions: Mentions): OpinionYear[] {
-	if (!mentions.peacemaking && !mentions.mediation) return years;
+export function mentioning(years: OpinionYear[], chosen: string[], words: string[]): OpinionYear[] {
+	const wanted = mentionBits(chosen, words);
+	if (wanted === 0) return years;
 	return years
-		.map((year) => {
-			const mediation = year.mediation ?? 0;
-			const both = year.both ?? 0;
-			if (mentions.peacemaking && mentions.mediation) return { ...year, count: year.peacemaking + mediation - both };
-			if (mentions.peacemaking) return { ...year, count: year.peacemaking };
-			return { ...year, count: mediation, peacemaking: both };
-		})
+		.map((year) => ({ ...year, count: (year.mentions ?? []).filter((bits) => (bits & wanted) !== 0).length }))
 		.filter((year) => year.count > 0);
 }
 
@@ -225,13 +218,12 @@ export function barYears(range: TimelineRange): number {
 }
 
 /** Counts grouped into bars of `width` years, by the bar's first year. */
-export function countsByBar(points: { year: number; count: number; peacemaking?: number }[], width: number): Map<number, { count: number; peacemaking: number }> {
-	const bars = new Map<number, { count: number; peacemaking: number }>();
+export function countsByBar(points: { year: number; count: number }[], width: number): Map<number, { count: number }> {
+	const bars = new Map<number, { count: number }>();
 	for (const point of points) {
 		const start = Math.floor(point.year / width) * width;
-		const bar = bars.get(start) ?? { count: 0, peacemaking: 0 };
+		const bar = bars.get(start) ?? { count: 0 };
 		bar.count += point.count;
-		bar.peacemaking += point.peacemaking ?? 0;
 		bars.set(start, bar);
 	}
 	return bars;
@@ -286,7 +278,7 @@ export function timelineRows(
 		kind: kindLabels.opinion,
 		title: `${year.count} published ${year.count === 1 ? 'opinion' : 'opinions'}`,
 		citation: '',
-		detail: year.peacemaking > 0 ? `${year.peacemaking} ${year.peacemaking === 1 ? 'mentions' : 'mention'} peacemaking` : '',
+		detail: '',
 		nations: names(year.nation ? [year.nation] : undefined),
 		link: year.nation ? address(`/nations/${year.nation}/opinions`) : ''
 	}));

@@ -55,7 +55,7 @@
 	{/if}
 	<section class="panel" aria-labelledby="glossary-heading">
 		<h3 id="glossary-heading"><a href="/glossary">Glossary</a></h3>
-		<p>The terms the model code defines, with how and when to use them.</p>
+		<p>Legal terms, with how and when to use them.</p>
 	</section>
 	<section class="panel" aria-labelledby="changelog-heading">
 		<h3 id="changelog-heading"><a href="/changelog">Changelog</a></h3>
