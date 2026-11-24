@@ -26,15 +26,18 @@ opinions:
   source: https://tile.loc.gov/storage-services/service/ll/usrep/usrep492/usrep492408/usrep492408.pdf
   checked: '2026-11-24'
   list:
-  - kind: plurality
+  - kind: judgment
     justice: Byron R. White
     page: 414
+    note: Announcing the judgment in Nos. 87-1697 and 87-1711 and dissenting in No. 87-1622.
   - kind: judgment
     justice: John Paul Stevens
     page: 433
+    note: Announcing the judgment in No. 87-1622 and concurring in the judgment in Nos. 87-1697 and 87-1711.
   - kind: concurrence in part and dissent in part
     justice: Harry A. Blackmun
     page: 448
+    note: Concurring in the judgment in No. 87-1622 and dissenting in Nos. 87-1697 and 87-1711.
 original_link: https://www.loc.gov/item/usrep492408/
 retrieved: '2026-11-24'
 history:
@@ -43,7 +46,6 @@ history:
 court_dates:
   argued:
   - '1989-01-10'
-  - '1989-06-29'
   printed: Argued January 10, 1989 Decided June 29, 1989
   source: https://tile.loc.gov/storage-services/service/ll/usrep/usrep492/usrep492408/usrep492408.pdf
   checked: '2026-11-24'
@@ -125,7 +127,7 @@ nations_in_case:
   - named_as: Bands of the Yakima Indian Nation
     reason: No nation record matches this name; it may be a historical name or a group that is not a recognized nation today.
 review:
-  status: unverified
+  status: verified
   by: scripts/caselaw/supreme_court_native_cases.py
   date: '2026-11-24'
   checks:
@@ -145,8 +147,8 @@ review:
     result: agree
     detail: 'Printed and Database: 1989-06-29'
   - check: opinions
-    result: settled
-    detail: 'Report: dissent White p. 414, special concurrence Stevens p. 433, special concurrence Blackmun p. 448; Database writers: Blackmun, Stevens, White; scan pages [(433, 413), (448, 412)]. Read from the scan by an AI reader (corrected): p. 414: JUSTICE WHITE, joined by THE CHIEF JUSTICE, JUSTICE SCALIA, and JUSTICE KENNEDY, delivered an opinion announcing the judgment of the Court in Nos. 87-1697 and 87-1711 and dissenting in No. 87-1622. p. 433: JUSTICE STEVENS, joined by JUSTICE O''CONNOR, delivered an opinion announcing the judgment of the Court in No. 87-1622 and concurring in the judgment in Nos. 87-1697 and 87-1711. p. 448: JUSTICE BLACKMUN, joined by JUSTICE BRENNAN and JUSTICE MARSHALL, ... filed an opinion concurring in the judgment in No. 87-1622 and dissenting in Nos. 87-1697 and 87-1711.'
+    result: confirmed
+    detail: 'Report: dissent White p. 414, special concurrence Stevens p. 433, special concurrence Blackmun p. 448; Database writers: Blackmun, Stevens, White; scan pages [(433, 413), (448, 412)]. Read from the scan by an AI reader (corrected): p. 414: JUSTICE WHITE, joined by THE CHIEF JUSTICE, JUSTICE SCALIA, and JUSTICE KENNEDY, delivered an opinion announcing the judgment of the Court in Nos. 87-1697 and 87-1711 and dissenting in No. 87-1622. p. 433: JUSTICE STEVENS, joined by JUSTICE O''CONNOR, delivered an opinion announcing the judgment of the Court in No. 87-1622 and concurring in the judgment in Nos. 87-1697 and 87-1711. p. 448: JUSTICE BLACKMUN, joined by JUSTICE BRENNAN and JUSTICE MARSHALL, ... filed an opinion concurring in the judgment in No. 87-1622 and dissenting in Nos. 87-1697 and 87-1711.. Confirmed: the report prints (read from the page images) p. 414: "JUSTICE WHITE, joined by THE CHIEF JUSTICE, JUSTICE SCALIA, and JUSTICE KENNEDY, delivered an opinion announcing the judgment of the Court in Nos. 87-1697 and 87-1711 and dissenting in No. 87-1622."; p. 433: "JUSTICE STEVENS, joined by JUSTICE O''CONNOR, delivered an opinion announcing the judgment of the Court in No. 87-1622 and concurring in the judgment in Nos. 87-1697 and 87-1711."; p. 448: "JUSTICE BLACKMUN, with whom JUSTICE BRENNAN and JUSTICE MARSHALL join, concurring in the judgment in No. 87-1622 and dissenting in Nos. 87-1697 and 87-1711."'
   - check: bench
     result: agree
     detail: Oyez and the Database give the same Justices and votes

@@ -41,7 +41,6 @@ court_dates:
   argued:
   - '1980-01-15'
   - '1980-01-16'
-  - '1980-03-18'
   printed: Argued January 15, 16, 1980 Decided March 18, 1980
   source: https://tile.loc.gov/storage-services/service/ll/usrep/usrep445/usrep445253/usrep445253.pdf
   checked: '2026-11-24'
@@ -119,7 +118,7 @@ nations_in_case:
   checked: '2026-11-24'
   named: []
 review:
-  status: unverified
+  status: verified
   by: scripts/caselaw/supreme_court_native_cases.py
   date: '2026-11-24'
   checks:
@@ -139,8 +138,8 @@ review:
     result: agree
     detail: 'Printed and Database: 1980-03-18'
   - check: opinions
-    result: settled
-    detail: 'Report: majority Blackmun p. 254; Database writers: Blackmun, Rehnquist. Read from the scan by an AI reader (corrected): p. 254: MIR. JusicE REBNQuiST delivered the opinion of the Court. p. 259: MR. JUSTICE BLACKMUN, with whom MR. JUSTICE WHITE joins, dissenting.'
+    result: confirmed
+    detail: 'Report: majority Blackmun p. 254; Database writers: Blackmun, Rehnquist. Read from the scan by an AI reader (corrected): p. 254: MIR. JusicE REBNQuiST delivered the opinion of the Court. p. 259: MR. JUSTICE BLACKMUN, with whom MR. JUSTICE WHITE joins, dissenting.. Confirmed: The report prints p. 254: "Mr. Justice Repnauist delivered the opinion of the Court"; p. 259: "MR. JUSTICE BLACKMUN, with whom MR. JUSTICE WHITE joins, dissenting"'
   - check: bench
     result: agree
     detail: Oyez and the Database give the same Justices and votes

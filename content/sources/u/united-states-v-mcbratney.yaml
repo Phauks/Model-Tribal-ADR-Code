@@ -34,6 +34,13 @@ retrieved: '2026-11-24'
 history:
   status: live
   last_checked: '2026-11-24'
+court_dates:
+  argued:
+  - '1882-01-18'
+  printed: Argued Jan. 18, 1882; decided Mar. 6, 1882
+  source: https://www.supremecourt.gov/opinions/datesofdecisions.pdf
+  note: The report prints only the term. These dates are from the Supreme Court Library's table of decision and argument dates, which takes them from the Court's Engrossed Minutes.
+  checked: '2026-11-24'
 supreme_court:
   court: Waite Court
   natural_court: Waite Court (1882-1882)
@@ -102,7 +109,7 @@ nations_in_case:
   checked: '2026-11-24'
   named: []
 review:
-  status: unverified
+  status: verified
   by: scripts/caselaw/supreme_court_native_cases.py
   date: '2026-11-24'
   checks:
@@ -116,8 +123,8 @@ review:
     result: agree
     detail: Caption found in the scan's text at 1.00
   - check: decided
-    result: missing
-    detail: Database 1882-03-06; no printed decision date
+    result: agree
+    detail: Supreme Court Library's table (from the Court's minutes) Mar. 6, 1882; Database 1882-03-06
   - check: opinions
     result: agree
     detail: 'Report: majority Gray p. 621; Database writers: Gray'

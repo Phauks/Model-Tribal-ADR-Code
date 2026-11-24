@@ -109,7 +109,7 @@ nations_in_case:
   checked: '2026-11-24'
   named: []
 review:
-  status: unverified
+  status: verified
   by: scripts/caselaw/supreme_court_native_cases.py
   date: '2026-11-24'
   checks:
@@ -123,11 +123,11 @@ review:
     result: agree
     detail: Caption found in the scan's text at 0.98
   - check: printed dates
-    result: agree
-    detail: Caselaw Access Project "Argued April 7, 8, 1910. Decided May 18, 1910."; scan "Argued April 7, 8, 1910.-Decided May 16, 1910."
+    result: confirmed
+    detail: 'Caselaw Access Project "Argued April 7, 8, 1910. Decided May 18, 1910."; scan "Argued April 7, 8, 1910.-Decided May 16, 1910.". Read from the scan by an AI reader (corrected): p. 488: Argued April 7, 8, 1910.-Decided May 16, 1910. (the record''s printed line says May 18). Confirmed: the report prints "Argued April 7, 8, 1910. Decided May 16, 1910." on p. 488 (text layer, 1.00)'
   - check: decided
-    result: settled
-    detail: 'Printed "Argued April 7, 8, 1910. Decided May 18, 1910."; Database 1910-05-16. Read from the scan by an AI reader (record right): p. 488: Argued April 7, 8, 1910.-Decided May 16, 1910.'
+    result: confirmed
+    detail: 'Printed "Argued April 7, 8, 1910. Decided May 18, 1910."; Database 1910-05-16. Read from the scan by an AI reader (record right): p. 488: Argued April 7, 8, 1910.-Decided May 16, 1910.. Confirmed: the report prints "Argued April 7, 8, 1910. Decided May 16, 1910." on p. 488 (text layer, 1.00)'
   - check: opinions
     result: agree
     detail: 'Report: majority Mckenna p. 488; Database writers: Mckenna'

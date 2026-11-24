@@ -28,7 +28,8 @@ history:
   status: live
   last_checked: '2026-11-24'
 court_dates:
-  printed: Decided June 3, 1963
+  printed: Decided June 3, 1963—Decree entered March 9, 1964—Amended decree entered February 28, 1966—Decided and supplemental decree entered January 9, 1979—Decided March 30, 1983—Second supplemental decree entered April 16, 1984—Decided June 19, 2000—Supplemental decree entered October 10, 2000
+  note: The heading lists every decision and decree in this original case; this entry is the supplemental decree of October 10, 2000.
   source: https://tile.loc.gov/storage-services/service/ll/usrep/usrep531/usrep531001/usrep531001.pdf
   checked: '2026-11-24'
 supreme_court:
@@ -104,7 +105,7 @@ nations_in_case:
   checked: '2026-11-24'
   named: []
 review:
-  status: unverified
+  status: verified
   by: scripts/caselaw/supreme_court_native_cases.py
   date: '2026-11-24'
   checks:
@@ -121,8 +122,8 @@ review:
     result: agree
     detail: Caselaw Access Project "Decided June 3, 1963"; scan "Decided June 3, 1963"
   - check: decided
-    result: settled
-    detail: 'Printed "Decided June 3, 1963"; Database 2000-10-10. Read from the scan by an AI reader (record right): p. 1: ''Supplemental decree entered October 10, 2000.'' The printed ''Decided June 3, 1963'' is the first date in the chain of decrees and opinions listed in the heading, not the decision date of this entry; the entry at 531 U.S. 1 is the supplemental decree entered October 10, 2000.'
+    result: confirmed
+    detail: 'Printed "Decided June 3, 1963"; Database 2000-10-10. Read from the scan by an AI reader (record right): p. 1: ''Supplemental decree entered October 10, 2000.'' The printed ''Decided June 3, 1963'' is the first date in the chain of decrees and opinions listed in the heading, not the decision date of this entry; the entry at 531 U.S. 1 is the supplemental decree entered October 10, 2000.. Confirmed: the report prints (read from the page images) p. 1: "Decided June 19, 2000—Supplemental decree entered October 10, 2000" (the heading lists every decision and decree in the case since 1963; this entry is the last of them)'
   - check: opinions
     result: agree
     detail: 'Report: per curiam Court p. 1; Database writers: none'

@@ -110,7 +110,7 @@ nations_in_case:
   checked: '2026-11-24'
   named: []
 review:
-  status: unverified
+  status: verified
   by: scripts/caselaw/supreme_court_native_cases.py
   date: '2026-11-24'
   checks:
@@ -130,8 +130,8 @@ review:
     result: agree
     detail: 'Printed and Database: 1894-05-26'
   - check: opinions
-    result: settled
-    detail: 'Report: majority Harlan p. 172; Database writers: Harlan; scan pages [(172, 173)]. Read from the scan by an AI reader (record right): p. 172: "MR. JUSTICE HARLAN, after stating the case, delivered the opinion of the court." (OCR: "MnR. Jusrion- TI&LAN, after stating the case, delivered the / opinion of the court.")'
+    result: confirmed
+    detail: 'Report: majority Harlan p. 172; Database writers: Harlan; scan pages [(172, 173)]. Read from the scan by an AI reader (record right): p. 172: "MR. JUSTICE HARLAN, after stating the case, delivered the opinion of the court." (OCR: "MnR. Jusrion- TI&LAN, after stating the case, delivered the / opinion of the court."). Confirmed: The report prints p. 172: "Justice Hannan, after stating the case, delivered the opinion of the court"'
   - check: bench
     result: agree
     detail: No Oyez votes; each opinion writer in the report sits on the Database's bench on the side the opinion takes

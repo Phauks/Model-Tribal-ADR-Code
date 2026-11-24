@@ -40,7 +40,6 @@ history:
 court_dates:
   argued:
   - '1971-10-18'
-  - '1971-04-24'
   printed: Argued October 18, 1971 Decided April 24, 1972
   source: https://tile.loc.gov/storage-services/service/ll/usrep/usrep406/usrep406128/usrep406128.pdf
   checked: '2026-11-24'
@@ -117,7 +116,7 @@ nations_in_case:
   checked: '2026-11-24'
   named: []
 review:
-  status: unverified
+  status: verified
   by: scripts/caselaw/supreme_court_native_cases.py
   date: '2026-11-24'
   checks:
@@ -125,8 +124,8 @@ review:
     result: agree
     detail: Caselaw Access Project 406 U.S. 128 "Affiliated Ute Citizens v. United States"; Database 406 U.S. 128 "AFFILIATED UTE CITIZENS OF UTAH et al. v. UNITED STATES et al."
   - check: scan
-    result: differs
-    detail: Scan has 36 pages; the report runs 128 to 164
+    result: confirmed
+    detail: 'Scan has 36 pages; the report runs 128 to 164. Confirmed: the scan''s pages are the report''s pp. 128-163 (36 of 36 pages show their page number or running head); p. 164 is also the first page of Weber v. Aetna Casualty & Surety Co., and is in that case''s scan'
   - check: caption
     result: agree
     detail: Caption found in the scan's text at 1.00
@@ -137,8 +136,8 @@ review:
     result: agree
     detail: 'Printed and Database: 1972-04-24'
   - check: opinions
-    result: settled
-    detail: 'Report: majority Blackmun p. 132, concurrence in part and dissent in part Douglas p. 157; Database writers: Blackmun. Read from the scan by an AI reader (record right): p. 132: MR.JUSTICE BLACKMUN delivered the opinion of the Court. p. 157: MR. JUSTICE DOUGLAS, concurring in. part and dissent-'
+    result: confirmed
+    detail: 'Report: majority Blackmun p. 132, concurrence in part and dissent in part Douglas p. 157; Database writers: Blackmun. Read from the scan by an AI reader (record right): p. 132: MR.JUSTICE BLACKMUN delivered the opinion of the Court. p. 157: MR. JUSTICE DOUGLAS, concurring in. part and dissent-. Confirmed: the report prints (read from the page images) p. 132: "MR. JUSTICE BLACKMUN delivered the opinion of the Court."; p. 157: "MR. JUSTICE DOUGLAS, concurring in part and dissenting in part."'
   - check: bench
     result: agree
     detail: Oyez and the Database give the same Justices and votes

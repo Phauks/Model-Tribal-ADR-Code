@@ -111,7 +111,7 @@ nations_in_case:
   checked: '2026-11-24'
   named: []
 review:
-  status: unverified
+  status: verified
   by: scripts/caselaw/supreme_court_native_cases.py
   date: '2026-11-24'
   checks:
@@ -122,8 +122,8 @@ review:
     result: agree
     detail: Scan has 13 pages; the report runs 355 to 367
   - check: caption
-    result: settled
-    detail: 'Caption found in the scan''s text at 0.79. Read from the scan by an AI reader (record right): p. 355: NORTHERN / PACIFIC RAILWAY / COMPANY v. / UNITED STATES.'
+    result: confirmed
+    detail: 'Caption found in the scan''s text at 0.79. Read from the scan by an AI reader (record right): p. 355: NORTHERN / PACIFIC RAILWAY / COMPANY v. / UNITED STATES.. Confirmed: the report prints the caption "NORTHERN PACIFIC RAILWAY COMPANY v. UNITED STATES" on p. 355 (fresh OCR, 0.93)'
   - check: printed dates
     result: agree
     detail: Caselaw Access Project "Argued January 8, 9, 1913. Decided February 24, 1913."; scan "Argued January 8, 9, 1913.-Decided February 24, 1913."

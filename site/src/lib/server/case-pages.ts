@@ -169,7 +169,7 @@ function caseOpinions(record: SourceRecord & CaseRecordParts): CaseOpinion[] {
 				title: opinionTitle(opinion.kind),
 				justice: opinion.kind === 'per curiam' ? '' : surname(opinion.justice),
 				page: opinion.page,
-				link: copy && Number.isInteger(first) && opinion.page >= first ? `${copyPagePath(copy)}#page=${opinion.page - first + 1}` : undefined,
+				link: copy && Number.isInteger(first) && opinion.page >= first ? `${copyPagePath(copy)}#page=${opinion.scan_page ?? opinion.page - first + 1}` : undefined,
 				note: opinion.note
 			}));
 	}

@@ -29,6 +29,10 @@ opinions:
   - kind: majority
     justice: William Orville Douglas
     page: 586
+  - kind: dissent
+    justice: Stanley Forman Reed
+    page: 590
+    note: A joint statement of Justices Reed, Frankfurter and Jackson, headed "Dissent."
 original_link: https://www.loc.gov/item/usrep333586/
 retrieved: '2026-11-24'
 history:
@@ -113,7 +117,7 @@ nations_in_case:
   checked: '2026-11-24'
   named: []
 review:
-  status: unverified
+  status: verified
   by: scripts/caselaw/supreme_court_native_cases.py
   date: '2026-11-24'
   checks:
@@ -133,8 +137,8 @@ review:
     result: agree
     detail: 'Printed and Database: 1948-04-05'
   - check: opinions
-    result: differs
-    detail: 'Report: majority Douglas p. 586; Database writers: Douglas, Frankfurter, Jackson, Reed'
+    result: confirmed
+    detail: 'Report: majority Douglas p. 586; Database writers: Douglas, Frankfurter, Jackson, Reed. Confirmed: the report prints (read from the page images) p. 586: "MR. JUSTICE DOUGLAS delivered the opinion of the Court."; p. 590: "MR. JUSTICE REED, MR. JUSTICE FRANKFURTER and MR. JUSTICE JACKSON would answer the question in the affirmative"'
   - check: bench
     result: agree
     detail: No Oyez votes; each opinion writer in the report sits on the Database's bench on the side the opinion takes

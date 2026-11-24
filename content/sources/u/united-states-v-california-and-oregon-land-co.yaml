@@ -121,7 +121,7 @@ nations_in_case:
   checked: '2026-11-24'
   named: []
 review:
-  status: unverified
+  status: verified
   by: scripts/caselaw/supreme_court_native_cases.py
   date: '2026-11-24'
   checks:
@@ -132,8 +132,8 @@ review:
     result: agree
     detail: Scan has 8 pages; the report runs 355 to 362
   - check: caption
-    result: settled
-    detail: 'Caption found in the scan''s text at 0.82. Read from the scan by an AI reader (record right): p. 355: UNITED STATES v. CALIFORNIA AND OREGON LAND COMPANY. / CALIFORNIA AND OREGON LAND COMPANY v. UNITED STATES. (caption block, OCR split across lines)'
+    result: confirmed
+    detail: 'Caption found in the scan''s text at 0.82. Read from the scan by an AI reader (record right): p. 355: UNITED STATES v. CALIFORNIA AND OREGON LAND COMPANY. / CALIFORNIA AND OREGON LAND COMPANY v. UNITED STATES. (caption block, OCR split across lines). Confirmed: the report prints the caption "UNITED STATES v. CALIFORNIA AND OREGON LAND COMPANY; CALIFORNIA AND OREGON LAND COMPANY v. UNITED STATES" on p. 355 (fresh OCR, 1.00)'
   - check: printed dates
     result: agree
     detail: Caselaw Access Project "Argued March 14, 17, 1902. Reargued December 9, 10, 1902. Reargued January 5, 6, 7, 1904. Decided February 1, 1904."; scan "Argued MIarch 14,17, 1902. Reargued December 9,10,1902. 5, 6, 7,1904. Decided February 1, 1904."

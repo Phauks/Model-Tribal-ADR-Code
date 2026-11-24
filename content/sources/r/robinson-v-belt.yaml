@@ -108,7 +108,7 @@ nations_in_case:
   checked: '2026-11-24'
   named: []
 review:
-  status: unverified
+  status: verified
   by: scripts/caselaw/supreme_court_native_cases.py
   date: '2026-11-24'
   checks:
@@ -122,8 +122,8 @@ review:
     result: agree
     detail: Caption found in the scan's text at 1.00
   - check: printed dates
-    result: agree
-    detail: Caselaw Access Project "Argued May 2, 1902. Decided October 27, 1902."; scan "Argued M1ay 2, 1902.-Decided October 27, 2902."
+    result: confirmed
+    detail: 'Caselaw Access Project "Argued May 2, 1902. Decided October 27, 1902."; scan "Argued M1ay 2, 1902.-Decided October 27, 2902.". Confirmed: the report prints "Argued May 2, 1902. Decided October 27, 1902." on p. 41 (text layer, 0.96)'
   - check: decided
     result: agree
     detail: 'Printed and Database: 1902-10-27'
@@ -131,5 +131,5 @@ review:
     result: agree
     detail: 'Report: majority Brown p. 43; Database writers: Brown'
   - check: bench
-    result: differs
-    detail: The Database lists Oliver Wendell Holmes, not serving on the day of decision; left out of the bench
+    result: confirmed
+    detail: 'The Database lists Oliver Wendell Holmes, not serving on the day of decision; left out of the bench. Confirmed: the Court''s list of Justices: Oliver Wendell Holmes served 1902-12-08 to 1932-01-12, so not on the bench on 1902-10-27'
