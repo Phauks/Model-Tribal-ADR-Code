@@ -1,0 +1,53 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/Phauks/Model-Tribal-ADR-Code/schemas/compact-clauses.schema.json",
+  "title": "Gaming compact clauses (table row)",
+  "description": "One row of research/gaming/compact-clauses.csv: a governing compact document, with the dispute resolution, renegotiation, term, revenue sharing and immunity clauses AI reviewers found in it (research/gaming/README.md). Built by scripts/gaming/clause_evidence.py; the site's data charts and table builder read it (site/src/lib/server/data-charts.ts, table-builder-datasets.ts). Every cell is text and an empty cell is left out before checking, so 'required' means the cell may not be empty. The vocabularies are those of the reviewers' briefs (research/gaming/briefs/).",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["id", "state", "title", "listed_date", "document_is", "needs_review", "reviewer", "verification", "document_link"],
+  "properties": {
+    "id": { "$ref": "common.schema.json#/$defs/slug", "description": "The document's id in compact-documents.csv." },
+    "state": { "$ref": "common.schema.json#/$defs/stateCode" },
+    "nations": { "$ref": "common.schema.json#/$defs/slugList", "description": "Ids of Tribe profiles in content/tribes/; empty when no profile cites the list row." },
+    "title": { "type": "string" },
+    "listed_date": { "$ref": "common.schema.json#/$defs/calendarDate", "description": "The date the Office of Indian Gaming list shows." },
+    "document_is": {
+      "type": "string",
+      "enum": ["full-compact", "amendment", "secretarial-procedures", "extension", "letter", "other", "cannot-tell"],
+      "description": "What the document is, judged from its opening and text."
+    },
+    "dispute_resolution.summary": { "type": "string" },
+    "dispute_resolution.steps": {
+      "type": "string",
+      "pattern": "^(notice|meet-and-confer|negotiation|mediation|arbitration|court|federal-court|state-court|tribal-court|secretary-of-the-interior|other)(;(notice|meet-and-confer|negotiation|mediation|arbitration|court|federal-court|state-court|tribal-court|secretary-of-the-interior|other))*$",
+      "description": "The steps of the dispute process in order, separated by semicolons."
+    },
+    "dispute_resolution.binding_arbitration": { "$ref": "common.schema.json#/$defs/yesOrNo" },
+    "dispute_resolution.locator": { "type": "string" },
+    "renegotiation.summary": { "type": "string" },
+    "renegotiation.locator": { "type": "string" },
+    "term.summary": { "type": "string" },
+    "term.years": { "$ref": "common.schema.json#/$defs/wholeNumber" },
+    "term.automatic_renewal": { "$ref": "common.schema.json#/$defs/yesOrNo" },
+    "revenue_sharing.summary": { "type": "string" },
+    "sovereign_immunity.summary": { "type": "string" },
+    "needs_review": { "$ref": "common.schema.json#/$defs/yesOrNo" },
+    "data_gap_review_items": {
+      "type": "string",
+      "pattern": "^[0-9]+(;[0-9]+)*$",
+      "description": "Numbers of the items in the data gap review (research/reviews/2026-11-21-data-gap-review.md) that cover this compact."
+    },
+    "reviewer": { "type": "string", "description": "Which reviewer read the document, for example 'small model, first pass'." },
+    "verification": { "$ref": "common.schema.json#/$defs/verification" },
+    "document_link": { "$ref": "common.schema.json#/$defs/link" },
+    "note": { "type": "string" }
+  },
+  "dependentRequired": {
+    "dispute_resolution.summary": ["dispute_resolution.locator"],
+    "dispute_resolution.locator": ["dispute_resolution.summary"],
+    "dispute_resolution.steps": ["dispute_resolution.summary"],
+    "renegotiation.summary": ["renegotiation.locator"],
+    "renegotiation.locator": ["renegotiation.summary"]
+  }
+}

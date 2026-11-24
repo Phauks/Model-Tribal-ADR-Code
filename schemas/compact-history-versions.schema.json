@@ -1,0 +1,54 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/Phauks/Model-Tribal-ADR-Code/schemas/compact-history-versions.schema.json",
+  "title": "Gaming compact version (table row)",
+  "description": "One row of research/gaming/compact-history-versions.csv: a version of a nation's compact with a state, in order, with what it did, what it amends or supersedes, its dispute clause and how that clause changed from the version before (research/gaming/README.md; the full histories are in content/documents/). Built by scripts/gaming/build_histories.py. A document two nations share appears once for each, so a row is known by its nation and id together. Every cell is text and an empty cell is left out before checking, so 'required' means the cell may not be empty.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["nation", "state", "track", "id", "event", "listed_date", "status", "source", "confidence", "verification"],
+  "properties": {
+    "nation": { "$ref": "common.schema.json#/$defs/slug", "description": "Id of a Tribe profile in content/tribes/ (scripts/validate_records.py checks it exists)." },
+    "state": { "$ref": "common.schema.json#/$defs/stateCode" },
+    "track": {
+      "type": "string",
+      "enum": ["gaming", "off-track-wagering", "blackjack", "video-games-of-chance"],
+      "description": "Which of the nation's compacts with the state: the main gaming compact, an Oklahoma off-track wagering compact, or a Minnesota blackjack or video games of chance compact."
+    },
+    "id": { "$ref": "common.schema.json#/$defs/slug", "description": "The document's id in compact-documents.csv." },
+    "event": { "type": "string", "enum": ["original", "amendment", "replacement", "extension", "secretarial-procedures", "disapproval", "letter"] },
+    "listed_date": { "$ref": "common.schema.json#/$defs/calendarDate" },
+    "published": { "$ref": "common.schema.json#/$defs/calendarDate", "description": "Date of the Federal Register notice." },
+    "status": {
+      "type": "string",
+      "enum": ["approved-or-in-effect", "superseded", "disapproved"],
+      "description": "approved-or-in-effect means no later document on the list took its place, not that its term was checked."
+    },
+    "amends": { "$ref": "common.schema.json#/$defs/slug", "description": "Id of the version it amends." },
+    "supersedes": { "$ref": "common.schema.json#/$defs/slug", "description": "Id of the version it replaces." },
+    "approval_citation": {
+      "type": "string",
+      "pattern": "^[0-9]+ Fed\\. Reg\\. [0-9]+ \\((Jan|Feb|Mar|Apr|May|June|July|Aug|Sept|Oct|Nov|Dec)\\.? [0-9]{1,2}, [0-9]{4}\\)$"
+    },
+    "dispute_steps": {
+      "type": "string",
+      "pattern": "^(notice|meet-and-confer|negotiation|mediation|arbitration|court|federal-court|state-court|tribal-court|secretary-of-the-interior|other)(;(notice|meet-and-confer|negotiation|mediation|arbitration|court|federal-court|state-court|tribal-court|secretary-of-the-interior|other))*$"
+    },
+    "dispute_summary": { "type": "string" },
+    "dispute_change": {
+      "type": "string",
+      "enum": ["added", "removed", "changed", "reworded", "renumbered", "unchanged", "not-compared"],
+      "description": "How the dispute clause changed from the version before (research/gaming/briefs/2026-11-21-compact-version-comparison.md)."
+    },
+    "dispute_change_summary": { "type": "string" },
+    "source": { "$ref": "common.schema.json#/$defs/slug", "description": "Key of a source record in content/sources/ (scripts/validate_records.py checks it exists)." },
+    "confidence": { "$ref": "common.schema.json#/$defs/confidence" },
+    "verification": { "$ref": "common.schema.json#/$defs/verification" }
+  },
+  "dependentRequired": {
+    "dispute_change": ["dispute_change_summary"],
+    "dispute_change_summary": ["dispute_change"]
+  },
+  "if": { "properties": { "event": { "const": "disapproval" } } },
+  "then": { "properties": { "status": { "const": "disapproved" } } },
+  "else": { "properties": { "status": { "not": { "const": "disapproved" } } } }
+}

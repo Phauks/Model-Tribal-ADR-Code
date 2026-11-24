@@ -12,12 +12,33 @@
     "calendarDate": {
       "type": "string",
       "format": "date",
-      "description": "Calendar date, YYYY-MM-DD."
+      "pattern": "^[0-9]{4}-(0[1-9]|1[0-2])-(0[1-9]|[12][0-9]|3[01])$",
+      "description": "Calendar date, YYYY-MM-DD. The pattern checks the form, because scripts/validate_records.py does not assert 'format'."
     },
     "link": {
       "type": "string",
       "format": "uri",
       "pattern": "^https?://"
+    },
+    "slugList": {
+      "type": "string",
+      "pattern": "^[a-z0-9]+(-[a-z0-9]+)*(; ?[a-z0-9]+(-[a-z0-9]+)*)*$",
+      "description": "Several slugs in one table cell, separated by a semicolon (with or without a space after it)."
+    },
+    "sha256": {
+      "type": "string",
+      "pattern": "^[0-9a-f]{64}$",
+      "description": "SHA-256 of a file, in lowercase hexadecimal."
+    },
+    "yesOrNo": {
+      "type": "string",
+      "enum": ["True", "False"],
+      "description": "A yes-or-no table cell, as Python writes a boolean."
+    },
+    "wholeNumber": {
+      "type": "string",
+      "pattern": "^(0|[1-9][0-9]*)$",
+      "description": "A whole number in a table cell."
     },
     "version": {
       "type": "string",
