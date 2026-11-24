@@ -37,6 +37,7 @@
 	import CitationPopup from '#lib/components/CitationPopup.svelte';
 	import LinkPreviews from '#lib/components/LinkPreviews.svelte';
 	import ImageViewer from '#lib/components/ImageViewer.svelte';
+	import SiteTextEditor from '#lib/components/SiteTextEditor.svelte';
 	import { onMount } from 'svelte';
 	import { onNavigate } from '$app/navigation';
 	import { page } from '$app/state';
@@ -102,6 +103,7 @@
 	<CitationPopup />
 	<LinkPreviews />
 	<ImageViewer />
+	<SiteTextEditor />
 {/if}
 
 <style>
