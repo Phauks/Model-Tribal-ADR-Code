@@ -40,18 +40,30 @@
 		</section>
 	{/if}
 
-	{#if data.essays.length > 0}
+	{#if data.essays.length + data.signers.length > 0}
 		<section aria-labelledby="on-this-site">
-			<h2 id="on-this-site">On this site <CountBadge count={data.essays.length} /></h2>
+			<h2 id="on-this-site">On this site <CountBadge count={data.essays.length + data.signers.length} /></h2>
 			<dl class="summary-list">
-				<div>
-					<dt>Essays</dt>
-					<dd>
-						{#each data.essays as essay (essay.link)}
-							<p><a href={essay.link}>{essay.title}</a>{#if essay.where}<span class="muted">&nbsp;› {essay.where}</span>{/if}</p>
-						{/each}
-					</dd>
-				</div>
+				{#if data.essays.length > 0}
+					<div>
+						<dt>Essays</dt>
+						<dd>
+							{#each data.essays as essay (essay.link)}
+								<p><a href={essay.link}>{essay.title}</a>{#if essay.where}<span class="muted">&nbsp;› {essay.where}</span>{/if}</p>
+							{/each}
+						</dd>
+					</div>
+				{/if}
+				{#if data.signers.length > 0}
+					<div>
+						<dt>Signers</dt>
+						<dd>
+							{#each data.signers as signer (signer.link)}
+								<p><a href={signer.link}>{signer.name}</a>{#if signer.detail}<span class="muted">, for {signer.detail}</span>{/if}</p>
+							{/each}
+						</dd>
+					</div>
+				{/if}
 			</dl>
 		</section>
 	{/if}
