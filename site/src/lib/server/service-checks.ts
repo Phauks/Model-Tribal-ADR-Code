@@ -660,7 +660,7 @@ const waybackCaptures: Check = {
 		const response = await fetcher(`${waybackWorkerAddress}/status.json`);
 		if (!response.ok) {
 			await response.body?.cancel();
-			return { state: 'off', summary: `The Wayback Worker answered ${response.status}, so source links are saved only by the slower archive workflow.`, details: [], fix: 'Add the archive.org keys to Secrets Store and deploy the Worker from site/wayback (site/WAYBACK.md, "Setting it up").' };
+			return { state: 'off', summary: `The Wayback Worker answered ${response.status}, so source links are saved only by the slower archive workflow.`, details: [], fix: 'Deploy the Worker from site/wayback and add its two archive.org key secrets (site/WAYBACK.md, "Setting it up").' };
 		}
 		const status = (await response.json()) as {
 			state: 'not-running' | 'keys-refused' | 'paused-daily-limit' | 'saving' | 'waiting-to-retry' | 'idle';
@@ -684,7 +684,7 @@ const waybackCaptures: Check = {
 				// The cron runs every minute even with nothing left, so a stale run means the schedule stopped.
 				return { state: 'problem', summary: status.minutesSinceLastRun === null ? 'The Wayback Worker has not run yet.' : `The Wayback Worker last ran ${status.minutesSinceLastRun} minutes ago; it runs every minute, even with nothing to save.`, details, fix: 'Check the Worker’s cron trigger and its logs in the Cloudflare dashboard (site/WAYBACK.md).' };
 			case 'keys-refused':
-				return { state: 'problem', summary: status.lastError ?? 'The Archive refused the archive.org keys.', details, fix: 'Make new keys at archive.org/account/s3.php and update them in Secrets Store (site/WAYBACK.md).' };
+				return { state: 'problem', summary: status.lastError ?? 'The archive.org keys are missing or refused.', details, fix: 'Add or replace the ARCHIVE_ORG_ACCESS_KEY and ARCHIVE_ORG_SECRET_KEY secrets on the model-tribal-adr-code-wayback Worker (site/WAYBACK.md).' };
 			case 'paused-daily-limit':
 				return { state: 'warning', summary: 'The Wayback Worker reached the Archive’s daily limit and starts again within the hour.', details };
 			case 'idle':

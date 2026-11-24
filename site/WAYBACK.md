@@ -1,6 +1,6 @@
 # Wayback Worker
 
-The Wayback Worker saves the source library's original links in the Internet Archive's Wayback Machine, signed in with the project's archive.org keys. Without the keys, Save Page Now allows 3 saves a minute and 200 a day; signed in, it allows 7 a minute and 30,000 a day, and a save runs in the background instead of holding the request open ([Save Page Now 2 API](https://docs.google.com/document/d/1Nsv52MvSjbLb2PCpHlat0gkzw0EvtSgpKHu4mk0MnrA)). The lead author chose on 2026-11-24 to keep the keys in Cloudflare, with this Worker doing the saves, so the keys never reach GitHub (decision record 0006).
+The Wayback Worker saves the source library's original links in the Internet Archive's Wayback Machine, signed in with the project's archive.org keys. Without the keys, Save Page Now allows 3 saves a minute and 200 a day; signed in, it allows 7 a minute and 30,000 a day, and a save runs in the background instead of holding the request open ([Save Page Now 2 API](https://docs.google.com/document/d/1Nsv52MvSjbLb2PCpHlat0gkzw0EvtSgpKHu4mk0MnrA)). The lead author chose on 2026-11-24 to keep the keys in Cloudflare, with this Worker doing the saves, so the keys never reach GitHub (decision record 0006). Only this Worker uses them, so they are secrets on the Worker itself rather than in the account's Secrets Store.
 
 ## How it works
 
@@ -18,7 +18,7 @@ The progress page names one of six states. The cron runs every minute even when 
 - **Waiting to try failed links again**: every link left failed in the last day, and each is tried again a day after its failure.
 - **Idle: nothing left to save**: every link on the list is captured, given up on, or marked by hand.
 - **Paused: daily limit reached**: the Archive's daily limit was reached; saving starts again within the hour.
-- **Stopped: the Archive refused the keys**: make new keys and update them in Secrets Store.
+- **Stopped: the archive.org keys are missing or refused**: add the two secrets to the Worker, or make new keys and replace them.
 - **Not running**: the Worker hasn't run in over five minutes; check its cron trigger and logs in the Cloudflare dashboard.
 
 The site's Service checks page shows the same state as its "Wayback captures" row.
@@ -38,7 +38,7 @@ A marked link is not tried again. The marks are kept beside the Worker's progres
 ## Setting it up
 
 1. Make a free account at archive.org and open https://archive.org/account/s3.php for the access key and secret key.
-2. In the Cloudflare dashboard, under Secrets Store, add them as `ARCHIVE_ORG_ACCESS_KEY` and `ARCHIVE_ORG_SECRET_KEY` (scope Workers), in the same store as the site's own keys.
-3. Create a Workers Builds project for this Worker: connect the repository, root directory `site/wayback`, build command `cd .. && npm ci`, deploy command `npx wrangler deploy`. The build token needs the "Account Secrets Store Edit" permission.
+2. Create a Workers Builds project for this Worker: connect the repository, root directory `site/wayback`, build command `cd .. && npm ci`, deploy command `npx wrangler deploy`, build watch path `site/wayback/*`.
+3. After the first deploy, open the Worker (model-tribal-adr-code-wayback) > Settings > Variables and Secrets, and add two secrets of type Secret: `ARCHIVE_ORG_ACCESS_KEY` and `ARCHIVE_ORG_SECRET_KEY`. Until they are set, the progress page says the keys are missing.
 
-After the first deploy, `https://model-tribal-adr-code-wayback.trevordgoldsmith.workers.dev/` shows its progress within a few minutes. Set the build watch path to `site/wayback/*`, because the Worker uses no other site code.
+After the first deploy, `https://model-tribal-adr-code-wayback.trevordgoldsmith.workers.dev/` shows its progress within a few minutes.

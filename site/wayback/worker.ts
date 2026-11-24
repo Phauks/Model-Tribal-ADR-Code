@@ -17,14 +17,11 @@
 
 import type { R2Bucket } from '@cloudflare/workers-types/index.ts';
 
-interface StoredSecret {
-	get(): Promise<string>;
-}
-
 interface Env {
 	sourceDocuments: R2Bucket;
-	archiveOrgAccessKey: StoredSecret;
-	archiveOrgSecretKey: StoredSecret;
+	// Worker secrets, set on this Worker in the Cloudflare dashboard (site/WAYBACK.md).
+	ARCHIVE_ORG_ACCESS_KEY?: string;
+	ARCHIVE_ORG_SECRET_KEY?: string;
 }
 
 interface Capture {
@@ -126,8 +123,11 @@ async function readQueue(): Promise<[string, string][]> {
 	return queue;
 }
 
-async function authorization(env: Env): Promise<string> {
-	return `LOW ${await env.archiveOrgAccessKey.get()}:${await env.archiveOrgSecretKey.get()}`;
+function authorization(env: Env): string {
+	if (!env.ARCHIVE_ORG_ACCESS_KEY || !env.ARCHIVE_ORG_SECRET_KEY) {
+		throw new Error('the archive.org keys are not set: add ARCHIVE_ORG_ACCESS_KEY and ARCHIVE_ORG_SECRET_KEY as secrets on this Worker');
+	}
+	return `LOW ${env.ARCHIVE_ORG_ACCESS_KEY}:${env.ARCHIVE_ORG_SECRET_KEY}`;
 }
 
 function markFailed(entry: Entry, problem: string, now: Date): void {
@@ -190,7 +190,7 @@ async function askForSave(entry: Entry, signIn: string, now: Date, progress: Pro
 	});
 	if (response.status === 401 || response.status === 403) {
 		await response.body?.cancel();
-		throw new Error(`Save Page Now refused the archive.org keys (HTTP ${response.status}); check ARCHIVE_ORG_ACCESS_KEY and ARCHIVE_ORG_SECRET_KEY in Secrets Store`);
+		throw new Error(`Save Page Now refused the archive.org keys (HTTP ${response.status}); check the ARCHIVE_ORG_ACCESS_KEY and ARCHIVE_ORG_SECRET_KEY secrets on this Worker`);
 	}
 	if (response.status === 429) {
 		await response.body?.cancel();
@@ -239,7 +239,7 @@ async function work(env: Env): Promise<void> {
 			}
 		}
 		const marks = await readMarks(env);
-		const signIn = await authorization(env);
+		const signIn = authorization(env);
 
 		let checks = 0;
 		for (const entry of Object.values(progress.records)) {
@@ -276,9 +276,9 @@ async function work(env: Env): Promise<void> {
 		}
 	} catch (problem) {
 		problems.push(message(problem));
-		if (/refused the archive\.org keys/.test(message(problem))) progress.keysRefused = now.toISOString();
+		if (/archive\.org keys/.test(message(problem))) progress.keysRefused = now.toISOString();
 	}
-	if (!problems.some((problem) => /refused the archive\.org keys/.test(problem))) progress.keysRefused = undefined;
+	if (!problems.some((problem) => /archive\.org keys/.test(problem))) progress.keysRefused = undefined;
 	if (problems.length) {
 		progress.lastError = problems.join('; ');
 		progress.lastErrorAt = now.toISOString();
@@ -290,7 +290,7 @@ type WorkerState = 'not-running' | 'keys-refused' | 'paused-daily-limit' | 'savi
 
 const stateWords: Record<WorkerState, string> = {
 	'not-running': 'Not running',
-	'keys-refused': 'Stopped: the Archive refused the keys',
+	'keys-refused': 'Stopped: the archive.org keys are missing or refused',
 	'paused-daily-limit': 'Paused: daily limit reached',
 	saving: 'Saving',
 	'waiting-to-retry': 'Waiting to try failed links again',

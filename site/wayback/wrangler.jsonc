@@ -1,7 +1,7 @@
 // Cloudflare Worker that saves source records' original links in the Wayback
-// Machine with the project's archive.org keys (site/WAYBACK.md, decision
-// record 0006: the keys live only in Cloudflare's Secrets Store, never in
-// GitHub).
+// Machine with the project's archive.org keys (site/WAYBACK.md). The keys are
+// secrets on this Worker, set in the Cloudflare dashboard, never in GitHub
+// (decision record 0006).
 //
 // Workers Builds deploys it from the GitHub repository (root directory:
 // site/wayback, build command: cd .. && npm ci, deploy command:
@@ -29,21 +29,8 @@
 			"binding": "sourceDocuments",
 			"bucket_name": "model-tribal-adr-code-sources"
 		}
-	],
-	// The archive.org keys, made by the lead author at
-	// https://archive.org/account/s3.php and stored in the account's Secrets
-	// Store. The store's identifier is not a secret. Deploying needs a build
-	// token with the "Account Secrets Store Edit" permission.
-	"secrets_store_secrets": [
-		{
-			"binding": "archiveOrgAccessKey",
-			"store_id": "9ce4ac3eb1774c8c9e46e40edb0efaef",
-			"secret_name": "ARCHIVE_ORG_ACCESS_KEY"
-		},
-		{
-			"binding": "archiveOrgSecretKey",
-			"store_id": "9ce4ac3eb1774c8c9e46e40edb0efaef",
-			"secret_name": "ARCHIVE_ORG_SECRET_KEY"
-		}
 	]
+	// ARCHIVE_ORG_ACCESS_KEY and ARCHIVE_ORG_SECRET_KEY are Worker secrets (Settings >
+	// Variables and Secrets), made at https://archive.org/account/s3.php. Only this
+	// Worker uses them, so they are not in the account's Secrets Store.
 }
