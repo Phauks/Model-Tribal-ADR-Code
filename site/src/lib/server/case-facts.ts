@@ -120,7 +120,7 @@ export function dateLines(record: CaseRecord): FactLine[] {
  * (Trevor, Nov. 23, 2026: "nations in cases should be linkable to the
  * nation"). A nation with no page here is named without a link.
  */
-function nationLine(record: CaseRecord, nations: Map<string, { name: string; entityType: string }>): FactLine | null {
+function nationLine(record: CaseRecord, nations: ReadonlyMap<string, { name: string; entityType: string }>): FactLine | null {
 	if (!Array.isArray(record.tribes) || record.tribes.length === 0) return null;
 	const names = record.tribes.map((id) => {
 		const nation = nations.get(id);
@@ -137,7 +137,7 @@ function nationLine(record: CaseRecord, nations: Map<string, { name: string; ent
 }
 
 /** The lines under a case box's heading. */
-export function caseFacts(record: CaseRecord, nations: Map<string, { name: string; entityType: string }>): FactLine[] {
+export function caseFacts(record: CaseRecord, nations: ReadonlyMap<string, { name: string; entityType: string }>): FactLine[] {
 	const facts: FactLine[] = dateLines(record);
 	const nationFact = nationLine(record, nations);
 	if (nationFact) facts.push(nationFact);
@@ -173,7 +173,7 @@ export function caseFacts(record: CaseRecord, nations: Map<string, { name: strin
 }
 
 /** The lines under a law box's heading: the nations or peoples it names. */
-export function lawFacts(record: CaseRecord, nations: Map<string, { name: string; entityType: string }>): FactLine[] {
+export function lawFacts(record: CaseRecord, nations: ReadonlyMap<string, { name: string; entityType: string }>): FactLine[] {
 	const nationFact = nationLine(record, nations);
 	return nationFact ? [nationFact] : [];
 }
