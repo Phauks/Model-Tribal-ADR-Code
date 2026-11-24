@@ -57,7 +57,7 @@
 <!-- Escape closes the open list, as in the site's other dropdowns; the <summary> inside is the control. -->
 <!-- svelte-ignore a11y_no_noninteractive_element_interactions -->
 <details class="check-dropdown" bind:this={details} onkeydown={closeOnEscape}>
-	<summary aria-label="{label}: {summary || 'none chosen'}">
+	<summary aria-label="{label}: {summary || placeholder}">
 		<span class="check-dropdown-value" class:empty={!summary}>{summary || placeholder}</span>
 		<ChevronDown size={20} strokeWidth={1.75} aria-hidden="true" />
 	</summary>
