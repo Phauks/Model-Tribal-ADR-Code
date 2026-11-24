@@ -8,4 +8,4 @@ description: "A printed copy of the book for every federally recognized Native n
 
 # Every Nation Initiative
 
-A printed copy of the book, mailed to the government of every federally recognized Native nation at no cost to the nation. Everything here stays free to read.
+A printed copy of the book, mailed at no cost to the government of every federally recognized Native nation, and then of every state-recognized nation. Everything here stays free to read.

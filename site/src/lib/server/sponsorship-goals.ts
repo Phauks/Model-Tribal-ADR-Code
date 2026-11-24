@@ -18,8 +18,10 @@ import type { GiftMode } from './sponsors.ts';
 export interface SponsorshipCounts {
 	/** Native nations with a page on the site. */
 	nationPages: number;
-	/** The nations the printed-copy goal counts: one copy for each federally recognized nation. */
+	/** The initiative's first level: one copy for each federally recognized nation. */
 	federallyRecognized: number;
+	/** Its second level: one copy for each nation recognized by the United States or by a state (a nation recognized by both counts once). */
+	federallyOrStateRecognized: number;
 	/** Source records in the repository. */
 	sources: number;
 }
@@ -125,8 +127,23 @@ export interface FundingCard {
 	share: number | null;
 }
 
-export interface SponsorshipGoals {
+/**
+ * The initiative's two levels (Trevor, Nov. 24, 2026): a copy for every
+ * federally recognized nation, then for every nation recognized by the
+ * United States or a state. Copies paid for fill the first level, and the
+ * second counts them too, since it includes the first.
+ */
+export interface InitiativeLevel {
+	key: 'federal' | 'federal-and-state';
 	nations: number;
+	/** Copies paid for toward this level, never more than its nations; null while the cost of a copy is not set. */
+	paid: number | null;
+}
+
+export interface SponsorshipGoals {
+	/** Federally recognized nations: the first level, and the hardcovers card. */
+	nations: number;
+	levels: InitiativeLevel[];
 	copies: CopyGoal | null;
 	cards: FundingCard[];
 }
@@ -135,11 +152,17 @@ export function sponsorshipGoals(counts: SponsorshipCounts, costs: SponsorshipCo
 	const nations = counts.federallyRecognized;
 	const books = given.total['books-for-nations'];
 	const paperback = costs.paperback;
-	const copies = paperback && nations > 0 ? { costCents: paperback, paid: Math.min(nations, Math.floor(books / paperback)) } : null;
+	const allNations = Math.max(nations, counts.federallyOrStateRecognized);
+	const copies = paperback && allNations > 0 ? { costCents: paperback, paid: Math.min(allNations, Math.floor(books / paperback)) } : null;
+	const levels: InitiativeLevel[] = [
+		{ key: 'federal', nations, paid: copies ? Math.min(nations, copies.paid) : null },
+		{ key: 'federal-and-state', nations: allNations, paid: copies ? copies.paid : null }
+	];
 	const site = costs.website ?? null;
 	const hardcovers = costs.hardcover && nations > 0 ? costs.hardcover * nations : null;
 	return {
 		nations,
+		levels,
 		copies,
 		cards: [
 			// Hardcovers take the place of paperbacks, so every gift toward copies counts toward them.

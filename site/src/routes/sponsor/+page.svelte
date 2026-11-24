@@ -46,6 +46,8 @@
 		discretionary: { title: earmarkLabels['needed-most'], text: 'Spent where the project decides.', icon: HandCoins }
 	} as const;
 
+	const levelNames = { federal: 'federally recognized', 'federal-and-state': 'federally and state-recognized' } as const;
+
 	const number = (value: number) => value.toLocaleString('en-US');
 	const percent = (share: number) => Math.round(share * 100);
 	// A large figure reads best in whole dollars.
@@ -100,22 +102,37 @@
 			<EssayArticle {...article} />
 			{#if goals.nations > 0}
 				<div class="goal">
-					{#if goals.copies}
-						<p class="count">{number(goals.copies.paid)} <span>of {number(goals.nations)} nations</span></p>
-						<div
-							class="bar"
-							role="progressbar"
-							aria-label="Nations whose copy is paid for"
-							aria-valuemin="0"
-							aria-valuemax={goals.nations}
-							aria-valuenow={goals.copies.paid}
-						>
-							<i style:width="{(goals.copies.paid / goals.nations) * 100}%"></i>
+					{#each goals.levels as level, index (level.key)}
+						<div class="level">
+							<p class="level-name">Level {index + 1}: {levelNames[level.key]}</p>
+							{#if level.paid !== null}
+								<p class="count">{number(level.paid)} <span>of {number(level.nations)} nations</span></p>
+								<div
+									class="bar"
+									role="progressbar"
+									aria-label="Level {index + 1}: nations whose copy is paid for"
+									aria-valuemin="0"
+									aria-valuemax={level.nations}
+									aria-valuenow={level.paid}
+								>
+									<i style:width="{(level.paid / level.nations) * 100}%"></i>
+								</div>
+								{@const left = level.nations - level.paid}
+								<p class="tracker">
+									<b>{Math.floor((level.paid / level.nations) * 100)}%</b>
+									{#if left > 0}
+										<span>{number(left)} to go</span>
+										{#if goals.copies}<span>{wholeDollars(left * goals.copies.costCents)} to finish</span>{/if}
+									{:else}
+										<span>Every copy paid for</span>
+									{/if}
+								</p>
+							{:else}
+								<p class="count">{number(level.nations)} <span>nations</span></p>
+							{/if}
 						</div>
-						<p class="note">{dollars(goals.copies.costCents)} prints and mails one paperback.</p>
-					{:else}
-						<p class="count">{number(goals.nations)} <span>nations</span></p>
-					{/if}
+					{/each}
+					{#if goals.copies}<p class="note">{dollars(goals.copies.costCents)} prints and mails one paperback.</p>{/if}
 				</div>
 			{/if}
 		</div>
@@ -316,18 +333,40 @@
 	}
 
 	.goal {
+		display: grid;
+		gap: var(--space-5);
 		margin-top: var(--space-6);
+	}
+
+	.tracker {
+		display: flex;
+		flex-wrap: wrap;
+		gap: var(--space-1) var(--space-4);
+		margin: var(--space-2) 0 0;
+		font-size: var(--font-size-small);
+		color: color-mix(in srgb, var(--color-band-text) 82%, var(--color-band));
+	}
+
+	.tracker b {
+		color: var(--color-band-text);
+	}
+
+	.level-name {
+		margin: 0 0 var(--space-1);
+		font-size: var(--font-size-small);
+		font-weight: var(--font-weight-semibold);
+		color: color-mix(in srgb, var(--color-band-text) 82%, var(--color-band));
 	}
 
 	.count {
 		margin: 0;
-		font-size: clamp(2.75rem, 7vw, 4rem);
+		font-size: clamp(2.25rem, 5vw, 3rem);
 		font-weight: var(--font-weight-bold);
 		line-height: 1;
 	}
 
 	.count span {
-		font-size: 1.5rem;
+		font-size: 1.25rem;
 		font-weight: var(--font-weight-semibold);
 		color: color-mix(in srgb, var(--color-band-text) 82%, var(--color-band));
 	}
@@ -348,7 +387,7 @@
 
 	.goal .bar {
 		height: 1.125rem;
-		margin: var(--space-4) 0 var(--space-2);
+		margin: var(--space-3) 0 0;
 		background: color-mix(in srgb, var(--color-band-text) 20%, transparent);
 	}
 

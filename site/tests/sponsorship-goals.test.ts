@@ -18,7 +18,7 @@ beforeEach(() => {
 	database = testDatabase();
 });
 
-const counts = { nationPages: 947, federallyRecognized: 581, sources: 7165 };
+const counts = { nationPages: 947, federallyRecognized: 581, federallyOrStateRecognized: 650, sources: 7165 };
 
 function given(total: Partial<GivenToward['total']>, siteLastYear = 0): GivenToward {
 	return { total: { 'needed-most': 0, 'books-for-nations': 0, 'large-format': 0, research: 0, hosting: 0, ...total }, siteLastYear, monthly: { cents: 0, sponsors: 0 } };
@@ -50,7 +50,17 @@ describe('what the Sponsorship page shows', () => {
 			costCents: 1600,
 			paid: 64
 		});
-		expect(sponsorshipGoals(counts, { paperback: 1600 }, given({ 'books-for-nations': 5_000_000 })).copies?.paid).toBe(581);
+		expect(sponsorshipGoals(counts, { paperback: 1600 }, given({ 'books-for-nations': 5_000_000 })).copies?.paid).toBe(650);
+	});
+
+	it('fills the federal level first, and counts the same copies toward federal and state', () => {
+		const level = (cents: number) => sponsorshipGoals(counts, { paperback: 1600 }, given({ 'books-for-nations': cents })).levels;
+		expect(level(102_500)).toEqual([
+			{ key: 'federal', nations: 581, paid: 64 },
+			{ key: 'federal-and-state', nations: 650, paid: 64 }
+		]);
+		expect(level(600 * 1600).map((each) => each.paid)).toEqual([581, 600]);
+		expect(sponsorshipGoals(counts, {}, given({})).levels.map((each) => each.paid)).toEqual([null, null]);
 	});
 
 	it('measures the site against this year and hardcovers against every nation', () => {
