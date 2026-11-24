@@ -170,9 +170,10 @@ jobs:
     needs: changes
     if: needs.changes.outputs.site == 'true'
     runs-on: ubuntu-latest
-    # A normal run takes about four minutes; this stops a stuck one long before
-    # GitHub's six-hour limit, so the merge queue is not held up.
-    timeout-minutes: 30
+    # A normal run takes 20 to 25 minutes, most of it the build; this stops a
+    # stuck one long before GitHub's six-hour limit, so the merge queue is not
+    # held up.
+    timeout-minutes: 40
     defaults:
       run:
         working-directory: site
@@ -211,6 +212,13 @@ jobs:
         run: npm run check:wide-tables
       - name: Check the tables' filters, columns and Sum row in a browser (tools/check-table-tools.mjs)
         run: npm run check:table-tools
+      # The pages the Worker answers, signed out and as the local fixture
+      # accounts, and the menus and dialogs while open, on a local database
+      # (tools/seed-local-database.mjs). The prerendered pages are the
+      # accessibility jobs' below.
+      - name: Accessibility check of the Worker's pages and open menus (tools/check-accessibility-live.mjs)
+        timeout-minutes: 10
+        run: npm run check:accessibility:live
 
   accessibility:
     # Every page in both themes, split between four jobs that run at once.

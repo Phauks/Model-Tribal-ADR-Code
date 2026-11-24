@@ -36,9 +36,10 @@ npm run build
 npm run check:built-site  # every page has a language, a title, one h1 and a skip link
 npm run check:built-worker   # the built Worker starts, and its scheduled and email handlers answer
 npm run check:accessibility  # axe-core on every built page, light and dark themes
+npm run check:accessibility:live  # axe-core on the Worker's pages and on open menus and dialogs
 ```
 
-The accessibility check opens each page in Chromium through Playwright. Install the browser once with `npx playwright install chromium`, or set `CHROMIUM_PATH` to a Chromium that is already installed. Pass `--pages /,/nations/map` to check only some pages. It covers the prerendered pages; the request form and sign-in pages are answered by the Worker and are checked by hand.
+The accessibility checks open each page in Chromium through Playwright. Install the browser once with `npx playwright install chromium`, or set `CHROMIUM_PATH` to a Chromium that is already installed. `check:accessibility` covers the prerendered pages as first loaded; pass `--pages /,/nations/map` to check only some. `check:accessibility:live` serves the built Worker with Wrangler on the local database, which it fills with the fixtures of First run, and covers what the other cannot reach: the sign-in, request, account, profile, events, uploads and workspace pages, signed out and as the fixture accounts, and the header's menus and dialogs, the sidebar and dropdowns while open. Pass `--only /workspace,/sign-in` to check only some pages. Problems it may not fail on for now are listed, with the reason, at the top of `tools/check-accessibility-live.mjs`.
 
 ## How it is deployed
 

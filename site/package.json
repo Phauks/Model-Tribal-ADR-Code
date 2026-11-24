@@ -24,6 +24,7 @@
 		"check:motion": "node tools/check-motion-comes-from-tokens.mjs",
 		"check:built-site": "node tools/check-built-site.mjs",
 		"check:accessibility": "node tools/check-accessibility.mjs",
+		"check:accessibility:live": "node tools/check-accessibility-live.mjs",
 		"check:built-worker": "node tools/check-built-worker.mjs",
 		"check:sidebar": "node tools/check-sidebar.mjs",
 		"check:timeline": "node tools/check-timeline.mjs",
