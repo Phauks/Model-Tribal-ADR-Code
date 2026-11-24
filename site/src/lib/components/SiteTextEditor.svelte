@@ -19,6 +19,7 @@
 	import { offerPageControls, type PageMode } from '#lib/page-editing.svelte.ts';
 	import { readSignedInHint } from '#lib/signed-in-hint.ts';
 	import { shownWords, type SiteTextPiece } from '#lib/site-text.ts';
+	import { readStored, writeStored } from '#lib/browser-storage.ts';
 
 	type Level = 'no-access' | 'comment' | 'contribute' | 'full';
 	interface Draft {
@@ -55,23 +56,6 @@
 	let openElement: Element | null = null;
 	const openPiece = $derived(open ? pieces.get(open.key) : undefined);
 
-	function readStorage(key: string): string | null {
-		try {
-			return sessionStorage.getItem(key);
-		} catch {
-			return null;
-		}
-	}
-
-	function writeStorage(key: string, value: string | null) {
-		try {
-			if (value === null) sessionStorage.removeItem(key);
-			else sessionStorage.setItem(key, value);
-		} catch {
-			// Private windows may refuse; editing still works on this page.
-		}
-	}
-
 	/** Every piece of text the page shows, by name. */
 	function keysOnPage(): string[] {
 		const keys = new Set<string>();
@@ -92,14 +76,14 @@
 		if (!response?.ok) {
 			if (response && (response.status === 401 || response.status === 403)) {
 				level = 'no-access';
-				writeStorage(levelKey, 'no-access');
+				writeStored(levelKey, 'no-access', 'session');
 			}
 			return;
 		}
 		const answer = (await response.json()) as { level: Level; pieces: SiteTextPiece[]; waiting: number };
 		level = answer.level;
 		waiting = answer.waiting;
-		writeStorage(levelKey, `${answer.level} ${Date.now()}`);
+		writeStored(levelKey, `${answer.level} ${Date.now()}`, 'session');
 		pieces = new Map([...pieces, ...answer.pieces.map((piece) => [piece.key, piece] as const)]);
 	}
 
@@ -160,7 +144,7 @@
 
 	function setMode(next: PageMode) {
 		mode = next;
-		writeStorage(modeKey, next === 'editing' ? 'editing' : null);
+		writeStored(modeKey, next === 'editing' ? 'editing' : null, 'session');
 		close();
 		if (showing) void refresh();
 		else restore();
@@ -308,17 +292,17 @@
 
 	onMount(() => {
 		if (!readSignedInHint(document.cookie).signedIn) return;
-		const remembered = readStorage(levelKey)?.split(' ');
+		const remembered = readStored(levelKey, 'session')?.split(' ');
 		const fresh = remembered && Date.now() - Number(remembered[1] ?? 0) < 10 * 60 * 1000;
 		if (fresh) level = remembered[0] as Level;
 		const asked = new URLSearchParams(location.search).has('edit-text');
 		if (asked) {
-			writeStorage(modeKey, 'editing');
+			writeStored(modeKey, 'editing', 'session');
 			const address = new URL(location.href);
 			address.searchParams.delete('edit-text');
 			history.replaceState(history.state, '', address);
 		}
-		if (readStorage(modeKey) === 'editing') mode = 'editing';
+		if (readStored(modeKey, 'session') === 'editing') mode = 'editing';
 		if (!(fresh && level === 'no-access')) void load(showing ? keysOnPage() : []).then(() => showing && apply());
 
 		document.addEventListener('click', onClick, true);

@@ -100,6 +100,7 @@
 	import { essayChartFrom } from '#lib/table-builder.ts';
 	import { addAfterCurrent, addSection, moveCurrent } from '#lib/essays/placement.ts';
 	import { dropLocalDraft, isSaveAnswer, keepaliveLimit, keepLocalDraft, localDraft, type LocalDraft } from '#lib/essays/local-draft.ts';
+	import { writeStored } from '#lib/browser-storage.ts';
 
 	let {
 		identifier,
@@ -713,11 +714,7 @@
 	function toggleChecks(): void {
 		showChecks = !showChecks;
 		if (showChecks) void loadLibrary();
-		try {
-			localStorage.setItem(checksKey, showChecks ? 'on' : 'off');
-		} catch {
-			// Storage can be blocked; the choice is then not remembered.
-		}
+		writeStored(checksKey, showChecks ? 'on' : 'off');
 	}
 	let libraryProblem = $state('');
 	/** Each source's citation as plain text, by key, for the headings of case and law boxes (case-headings.ts). */
@@ -1695,7 +1692,7 @@
 			if (canEdit && localStorage.getItem(checksKey) === 'on') toggleChecks();
 			else void loadLibrary();
 		} catch {
-			// As above.
+			// Storage can be blocked; the choice is then not remembered.
 		}
 	});
 

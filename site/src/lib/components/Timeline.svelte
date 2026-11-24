@@ -72,6 +72,7 @@
 	} from '#lib/timeline.ts';
 	import CitationMarks from './CitationMarks.svelte';
 	import { copyText } from '#lib/clipboard.ts';
+	import { readStored, writeStored } from '#lib/browser-storage.ts';
 
 	interface Props {
 		entries: TimelineEntry[];
@@ -157,22 +158,12 @@
 	function chooseLayout(next: Layout) {
 		layout = next;
 		active = undefined;
-		try {
-			localStorage.setItem(layoutKey, next);
-		} catch {
-			// Private windows may refuse storage; the choice then lasts for this page.
-		}
+		writeStored(layoutKey, next);
 	}
 
 	onMount(() => {
 		interactive = true;
-		let saved: string | null = null;
-		try {
-			saved = localStorage.getItem(layoutKey);
-		} catch {
-			saved = null;
-		}
-		layout = saved === 'across' ? 'across' : 'down';
+		layout = readStored(layoutKey) === 'across' ? 'across' : 'down';
 		// The era headings link to the legal history essay once it is published.
 		fetch('/foundations/published.json')
 			.then((response) => (response.ok ? response.json() : []))
