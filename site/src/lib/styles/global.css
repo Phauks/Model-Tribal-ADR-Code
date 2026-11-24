@@ -400,9 +400,17 @@ blockquote > footer {
 /*
  * Tables. Data tables that readers sort or search use DataTable.svelte
  * (spikes/tables/REPORT.md); its rules are in lib/tables/table-definition.ts.
- * Wide tables scroll in their own box.
+ * Wide tables scroll in their own box, and the box ends at the edge of the
+ * column, so a table never pushes the page sideways (Trevor, Nov. 24, 2026:
+ * "it should always keep the end of the table locked, so you cannot go over
+ * the side"). The box is positioned so that it also holds anything placed
+ * inside a cell, such as the hidden "Recognition:" label of the badges: placed
+ * against the page, that text sat out past a widened column and made the
+ * whole page scroll sideways.
  */
 .table-scroll {
+	position: relative;
+	max-width: 100%;
 	overflow-x: auto;
 	margin: 0 0 var(--space-5);
 }
@@ -1508,12 +1516,84 @@ sup.citation {
 }
 
 /*
- * Other places to read a cited case or law, after its citation
- * (src/lib/reading-links.ts). Left out of print, where the citation alone is
- * the reference.
+ * Where to read a cited case or law, after its citation
+ * (src/lib/reading-links.ts): a small book icon, with the number of places
+ * and an arrow, opens the list on the line below. No border, so it reads as a
+ * mark beside the citation, not a button in a toolbar (Trevor, Nov. 23,
+ * 2026). Without scripts the icon is hidden and the list shows. Left out of
+ * print, where the citation alone is the reference.
  */
-.reading-links {
+.reading-toggle {
+	display: inline-flex;
+	align-items: center;
+	gap: 0.2em;
+	margin-left: 0.3em;
+	padding: 0 0.15em;
+	min-height: 24px;
+	min-width: 24px;
+	vertical-align: -0.1em;
+	border: 0;
+	border-radius: var(--radius-control);
+	background: none;
+	color: var(--color-link);
+	font: inherit;
+	font-size: 0.85em;
+	font-weight: 400;
+	line-height: 1;
+	cursor: pointer;
+}
+
+.reading-toggle .reading-icon,
+.reading-toggle .reading-chevron {
+	flex: none;
+}
+
+.reading-count,
+.reading-toggle .reading-chevron {
+	color: var(--color-ink-muted);
+	font-variant-numeric: tabular-nums;
+}
+
+.reading-toggle:hover .reading-count,
+.reading-toggle:hover .reading-chevron {
+	color: var(--color-link);
+}
+
+.reading-toggle[aria-expanded='true'] .reading-chevron {
+	transform: rotate(180deg);
+}
+
+/* Set apart from the citation by a rule down its left side, one line for each kind of place (Trevor asked for "better delineation" on Nov. 23, 2026). */
+.reading-list {
+	display: block;
+	margin: var(--space-1) 0 var(--space-2);
+	padding-left: var(--space-3);
+	border-left: 2px solid var(--color-line);
 	font-size: 0.9em;
+	font-weight: var(--font-weight-regular);
+	line-height: 1.6;
+}
+
+.reading-line {
+	display: block;
+}
+
+.reading-line + .reading-line {
+	margin-top: var(--space-1);
+}
+
+/* At the head of a case or law box the list sits a full gap under the citation and above the facts. */
+.essay-case-citation .reading-list {
+	margin: var(--space-3) 0;
+}
+
+:root:not([data-scripts='on']) .essay-case-citation:has(.reading-list),
+.essay-case-citation:has(.reading-toggle[aria-expanded='true']) {
+	margin-bottom: 0;
+}
+
+:root[data-scripts='on'] .reading-toggle[aria-expanded='false'] + .reading-list {
+	display: none;
 }
 
 @media print {
@@ -2069,4 +2149,24 @@ a.topic-badge:hover {
 	text-align: center;
 	vertical-align: middle;
 	white-space: nowrap;
+}
+
+/*
+ * A nation's seal or logo is drawn for light paper, and many are black lines
+ * on a clear ground, which vanish on the dark theme's paper. In dark mode the
+ * image sits on a light plate (Trevor, Nov. 23, 2026: "yes, standard"), the
+ * same wherever a seal shows: search, At a glance, link previews and the map.
+ */
+@media (prefers-color-scheme: dark) {
+	:root:not([data-theme='light']) .image-backing {
+		padding: 2px;
+		border-radius: var(--radius-control);
+		background: var(--color-image-backing);
+	}
+}
+
+:root[data-theme='dark'] .image-backing {
+	padding: 2px;
+	border-radius: var(--radius-control);
+	background: var(--color-image-backing);
 }

@@ -204,6 +204,8 @@ jobs:
         run: npm run check:sidebar
       - name: Check the timeline's layout buttons in a browser (tools/check-timeline.mjs)
         run: npm run check:timeline
+      - name: Check that tables stay within the screen in a browser (tools/check-wide-tables.mjs)
+        run: npm run check:wide-tables
 
   accessibility:
     # Every page in both themes, split between four jobs that run at once

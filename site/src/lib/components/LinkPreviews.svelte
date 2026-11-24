@@ -274,7 +274,7 @@
 		{:else}
 			<div class="nation-preview">
 				{#if shown.image && !imageFailed}
-					<img src={shown.image} alt="" width="48" height="48" onerror={() => (imageFailed = true)} />
+					<img class="image-backing" src={shown.image} alt="" width="48" height="48" onerror={() => (imageFailed = true)} />
 				{/if}
 				<div>
 					<p class="link-preview-title"><strong>{shown.name}</strong></p>

@@ -15,6 +15,7 @@ describe('site sections for the sidebar', () => {
 			'Events',
 			'About',
 			'Sponsorship',
+			'Contribute',
 			'Store'
 		]);
 	});
@@ -49,6 +50,6 @@ describe('site sections for the sidebar', () => {
 
 	it('links only sections whose pages exist', () => {
 		const built = siteSections.filter((section) => section.built).map((section) => section.link);
-		expect(built).toEqual(['/foundations', '/essays', '/stories', '/nations', '/library', '/glossary', '/events', '/about', '/sponsor', '/store']);
+		expect(built).toEqual(['/foundations', '/essays', '/stories', '/nations', '/library', '/glossary', '/events', '/about', '/sponsor', '/requests?kind=contribute', '/store']);
 	});
 });

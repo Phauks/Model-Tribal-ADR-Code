@@ -23,7 +23,7 @@ export interface MapViewEntry {
 }
 
 /** Groups in the order they are listed. */
-export const mapViewGroups = ['Where nations are', 'Recognition', 'Courts and dispute resolution', 'Jurisdiction', 'Government', 'Gaming', 'Treaties and land', 'People and languages', 'Federal administration'] as const;
+export const mapViewGroups = ['Where nations are', 'Recognition', 'Courts', 'Jurisdiction', 'Government', 'Gaming', 'Treaties and land', 'People and languages', 'Federal administration'] as const;
 
 export const mapViews: MapViewEntry[] = [
 	{
@@ -54,9 +54,9 @@ export const mapViews: MapViewEntry[] = [
 	},
 	{
 		key: 'courts-and-peacemaking',
-		label: 'Courts and Peacemaking',
+		label: 'Courts',
 		heading: 'courts-and-peacemaking-heading',
-		group: 'Courts and dispute resolution',
+		group: 'Courts',
 		description: 'Nations with a tribal court, a peacemaking or traditional forum, or a healing to wellness court',
 		keywords: ['court', 'tribal court', 'peacemaking', 'traditional', 'elders', 'circle', 'wellness', 'drug court', 'court of indian offenses', 'cfr court', 'adr', 'dispute resolution']
 	},

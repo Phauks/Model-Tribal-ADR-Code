@@ -15,6 +15,7 @@ import { splitFrontMatter } from '../essays/syntax.ts';
 import type { SourceEntry } from './source-uses.ts';
 import type { D1Database, R2Bucket } from '@cloudflare/workers-types/index.ts';
 import { renderWithGenerated } from './essay-pages.ts';
+import type { YourWork } from '../essays/editing-outline.svelte.ts';
 import { latestVersion, publications, readVersionText, titleOf, version as versionRow } from './essays.ts';
 
 export interface EssayPageState {
@@ -37,6 +38,8 @@ export interface EssayPageState {
 	gitConflicts: number;
 	/** The person asking, for their name and color in the live room; set by the page's route. */
 	you: { identifier: string; name: string } | null;
+	/** The person's own work, for "Your work" in the sidebar while editing; set by the page's route. */
+	work?: YourWork;
 }
 
 export async function essayPageState(

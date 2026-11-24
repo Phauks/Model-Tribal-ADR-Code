@@ -18,17 +18,21 @@ export interface TeamReport {
 	note: string | null;
 	answeredAt: string | null;
 	answeredByName: string | null;
+	/** Who sent it, only when they chose to share it with the team. */
+	sender: { name: string | null; contact: string | null } | null;
 }
 
 const kindList = teamReportKinds.map((kind) => `'${kind}'`).join(', ');
 
-/** Open reports about a nation's page, newest first, without who sent them. */
+/** Open reports about a nation's page, newest first, with who sent them only when the sender shared it. */
 export async function reportsForTeam(database: D1Database, nationIdentifier: string): Promise<TeamReport[]> {
 	const result = await database
 		.prepare(
 			`SELECT requests.identifier, requests.reference, requests.kind, requests.material, requests.details,
 			        requests.received_at AS receivedAt, answers.outcome, answers.note, answers.answered_at AS answeredAt,
-			        people.display_name AS answeredByName
+			        people.display_name AS answeredByName, requests.shared_with_team AS sharedWithTeam,
+			        CASE WHEN requests.shared_with_team = 1 THEN requests.requester_name END AS senderName,
+			        CASE WHEN requests.shared_with_team = 1 THEN requests.contact END AS senderContact
 			 FROM requests
 			 LEFT JOIN nation_team_report_answers AS answers ON answers.request_identifier = requests.identifier
 			 LEFT JOIN people ON people.identifier = answers.answered_by
@@ -37,8 +41,11 @@ export async function reportsForTeam(database: D1Database, nationIdentifier: str
 			 LIMIT 100`
 		)
 		.bind(nationIdentifier)
-		.all<TeamReport>();
-	return result.results;
+		.all<Omit<TeamReport, 'sender'> & { sharedWithTeam: number; senderName: string | null; senderContact: string | null }>();
+	return result.results.map(({ sharedWithTeam, senderName, senderContact, ...report }) => ({
+		...report,
+		sender: sharedWithTeam === 1 ? { name: senderName, contact: senderContact } : null
+	}));
 }
 
 /** The team's answers to these reports, for the project's list. */

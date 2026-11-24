@@ -25,7 +25,7 @@
 		type ContactKind,
 		type StatementSection
 	} from '#lib/nation-page-changes.ts';
-	import { teamAnswerDays, teamAnswerLabels, teamAnswerOutcomes } from '#lib/nation-team-reports.ts';
+	import { answersFor, teamAnswerDays, teamAnswerLabels } from '#lib/nation-team-reports.ts';
 	import { readableDate } from '#lib/readable-date.ts';
 	import { requestKindLabels } from '#lib/requests.ts';
 	import type { PageProps } from './$types';
@@ -179,10 +179,10 @@
 
 {#if data.reports.length > 0}
 	<section class="panel panel-filled" aria-labelledby="reports-heading">
-		<h2 id="reports-heading">Problems readers reported</h2>
+		<h2 id="reports-heading">Messages and reports from readers</h2>
 		<p>
-			Readers reported these about your nation’s page. The project sees them too, and steps in if nobody on your
-			team answers within {teamAnswerDays} days. You see what was reported, never who sent it.
+			The project sees these too, and steps in if nobody on your team answers within {teamAnswerDays} days. You see
+			who wrote only when they chose to share it.
 		</p>
 		<ul class="report-list">
 			{#each data.reports as report (report.identifier)}
@@ -193,6 +193,13 @@
 					</p>
 					{#if report.material}<p class="small"><span class="muted">Where:</span> {report.material}</p>{/if}
 					{#if report.details}<p class="report-details">{report.details}</p>{/if}
+					{#if report.sender}
+						<p class="small">
+							<span class="muted">From:</span>
+							{#if report.sender.name}{report.sender.name},{/if}
+							{#if report.sender.contact?.includes('@')}<a href="mailto:{report.sender.contact}?subject={encodeURIComponent(`Your message about our nation’s page (${report.reference})`)}">{report.sender.contact}</a>{:else}{report.sender.contact}{/if}
+						</p>
+					{/if}
 					{#if report.outcome}
 						<p class="small">
 							<strong>{teamAnswerLabels[report.outcome]}</strong>, {report.answeredByName ?? 'your team'}, {when(report.answeredAt)}{#if report.note}: {report.note}{/if}
@@ -203,8 +210,8 @@
 							<label for="note-{report.reference}" class="small">Note for the project <span class="muted">(optional)</span></label>
 							<input type="text" id="note-{report.reference}" name="note" />
 							<div class="button-row">
-								{#each teamAnswerOutcomes as outcome (outcome)}
-									<button class="button {outcome === 'fixed' ? '' : 'button-quiet'}" type="submit" name="outcome" value={outcome}>{teamAnswerLabels[outcome]}</button>
+								{#each answersFor(report.sender !== null) as outcome (outcome)}
+									<button class="button {outcome === (report.sender ? 'wrote-back' : 'fixed') ? '' : 'button-quiet'}" type="submit" name="outcome" value={outcome}>{teamAnswerLabels[outcome]}</button>
 								{/each}
 							</div>
 						</form>

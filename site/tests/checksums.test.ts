@@ -45,7 +45,7 @@ describe('reading the checksums', () => {
 	});
 
 	it('links to the check and names the file', () => {
-		expect(verifyLink(hash, 'data.zip')).toBe(`/downloads?sha256=${hash}&name=data.zip#checking`);
+		expect(verifyLink(hash, 'data.zip')).toBe(`/verify?sha256=${hash}&name=data.zip`);
 		expect(fileName('/copies/a/b%20c.pdf')).toBe('b c.pdf');
 	});
 });

@@ -16,7 +16,11 @@
 	import type { TableColumn, TableRow } from '#lib/tables/table-definition.ts';
 	import { byStateColumns, byStateRows, categoryColumns, categoryRows, landAreaColumns, landAreaRows as buildLandAreaRows, mapTableFile, nationColumns, nationRows, regionColumns, regionRows as buildRegionRows, stateColumns, stateRows as buildStateRows } from '#lib/map-tables.ts';
 	import { mapTableOnScreen } from '#lib/map-table-on-screen.svelte.ts';
-	import X from '@lucide/svelte/icons/x';
+	import MapDetails from '#lib/components/MapDetails.svelte';
+	import { nationsLine, type MapDetails as MapDetailsType, type MapDetailsContact, type MapDetailsLine } from '#lib/map-details.ts';
+	import MapIcon from '@lucide/svelte/icons/map';
+	import MapPin from '@lucide/svelte/icons/map-pin';
+	import ViewSwitch from '#lib/components/ViewSwitch.svelte';
 	import type { PageProps } from './$types';
 
 	let { data }: PageProps = $props();
@@ -237,16 +241,16 @@
 	 * Selecting a place on the map opens a short preview of it beside the map, with a link to its full page (Trevor, 2026-11-23), rather than sending the reader down the table. A place's preview is keyed by its table row's id; a nation's, by "nation:" and its id.
 	 */
 	let preview = $state<string | undefined>();
-	let previewHeading = $state<HTMLElement | undefined>();
+	let detailsPanel = $state<MapDetails | undefined>();
 
-	type PreviewLine = { label: string; value: string };
-	type Preview = { kind: string; title: string; nation?: string; badges?: RecognitionBadge[]; lines: PreviewLine[]; nations?: ListedNation[]; page?: { href: string; label: string } };
+	/** A place's details: its facts, each count of nations opening to those nations (Trevor, 2026-11-24, mockup 3A), each linked to its page, or to the part of it that holds the view's facts and their sources. */
+	type PreviewLine = MapDetailsLine;
+	type Preview = MapDetailsType;
 
 	/** A nation's seal, website and contact, from its own small file (/nations/<id>/preview.json), fetched when its preview first opens. */
-	type ContactLine = { label: string; lines: string[]; link?: string; external?: boolean };
+	type ContactLine = MapDetailsContact;
 	type NationDetail = { image?: { src: string; kind: string }; website?: ContactLine; office?: string; address?: ContactLine; phone?: ContactLine; email?: ContactLine };
 	let nationDetails = $state<Record<string, NationDetail | null>>({});
-	let hiddenImages = $state<Record<string, boolean>>({});
 	function loadNationDetail(id: string): void {
 		if (id in nationDetails) return;
 		nationDetails[id] = null;
@@ -291,11 +295,11 @@
 			return { kind: 'Nation', title: name, nation: id, badges: nation?.badges, lines, page: { href: `/nations/${id}`, label: 'Open the nation’s page' } };
 		}
 		const state = data.stateRows.find((row) => `state-${row.code}` === key);
-		if (state) return { kind: 'State or territory', title: state.name, lines: [], nations: state.nations, page: { href: `/nations/state/${state.code.toLowerCase()}`, label: 'Open the state’s page' } };
+		if (state) return { kind: 'State or territory', title: state.name, lines: [nationsLine('Nations', state.nations)], nations: state.nations, page: { href: `/nations/state/${state.code.toLowerCase()}`, label: 'Open the state’s page' } };
 		const region = data.regionRows.find((row) => row.anchor === key);
-		if (region) return { kind: 'Bureau of Indian Affairs region', title: region.name, lines: region.states.length > 0 ? [{ label: 'States', value: region.states.join(', ') }] : [], nations: region.nations };
+		if (region) return { kind: 'Bureau of Indian Affairs region', title: region.name, lines: [...(region.states.length > 0 ? [{ label: 'States', value: region.states.join(', ') }] : []), nationsLine('Nations', region.nations)], nations: region.nations };
 		const area = lands?.rows.find((row) => row.anchor === key);
-		if (area) return onlyNation({ kind: area.kindLabel, title: area.name, lines: [], nations: area.nations });
+		if (area) return onlyNation({ kind: area.kindLabel, title: area.name, lines: [nationsLine('Nations', area.nations)], nations: area.nations });
 		for (const body of Object.values(shaded)) {
 			const nationRow = body.nationRows.find((row) => row.anchor === key);
 			if (nationRow) return previewOf(`nation:${nationRow.id}`);
@@ -305,12 +309,19 @@
 				const lines: PreviewLine[] = [];
 				if (definition.valueHeader && areaRow.value !== undefined) lines.push({ label: definition.valueHeader, value: areaRow.value.toLocaleString('en-US') });
 				if (areaRow.states.length > 0) lines.push({ label: 'States', value: areaRow.states.join(', ') });
+				lines.push(nationsLine('Nations', areaRow.nations, body.section));
 				return onlyNation({ kind: definition.categoryHeader ?? 'Category', title: areaRow.name, lines, nations: areaRow.nations });
 			}
 			const stateRow = body.stateRows.find((row) => row.anchor === key);
 			if (stateRow) {
 				const counts = stateRow.counts as Record<string, number>;
-				const lines = [{ label: 'Nations', value: stateRow.total.toLocaleString('en-US') }, ...body.stateColumns.filter((column) => (counts[column.key] ?? 0) > 0).map((column) => ({ label: column.header, value: (counts[column.key] ?? 0).toLocaleString('en-US') }))];
+				const members = stateRow.members as Record<string, string[]>;
+				const names = body.stateNations as Record<string, string>;
+				const named = (ids: string[]) => ids.map((id) => ({ id, name: names[id] ?? id }));
+				const lines = [
+					nationsLine('Nations', named([...new Set(Object.values(members).flat())]), body.section),
+					...body.stateColumns.filter((column) => (counts[column.key] ?? 0) > 0).map((column) => nationsLine(column.header, named(members[column.key] ?? []), body.section))
+				];
 				return { kind: 'State or territory', title: stateRow.name, lines, page: { href: `/nations/state/${stateRow.code.toLowerCase()}`, label: 'Open the state’s page' } };
 			}
 		}
@@ -322,7 +333,7 @@
 		const only = place.nations?.length === 1 ? place.nations[0] : undefined;
 		const nation = only ? previewOf(`nation:${only.id}`) : undefined;
 		if (!nation) return place;
-		return { ...nation, lines: [{ label: place.kind, value: place.title }, ...place.lines.filter((line) => line.label !== 'States'), ...nation.lines] };
+		return { ...nation, lines: [{ label: place.kind, value: place.title }, ...place.lines.filter((line) => line.label !== 'States' && !line.nations), ...nation.lines] };
 	}
 
 	const shownPreview = $derived(preview ? previewOf(preview) : undefined);
@@ -336,8 +347,15 @@
 		preview = key;
 		if (!key.startsWith('nation:') && location.hash !== `#${key}`) history.replaceState(history.state, '', `#${key}`);
 		await tick();
-		previewHeading?.focus({ preventScroll: true });
-		previewHeading?.closest('aside')?.scrollIntoView({ block: 'nearest' });
+		await detailsPanel?.focus();
+	}
+
+	/** The back arrow brings the table back where it was, and leaves the place out of the address. */
+	async function closeDetails(key: NationsMapView): Promise<void> {
+		preview = undefined;
+		if (location.hash) history.replaceState(history.state, '', `${location.pathname}${location.search}`);
+		await tick();
+		document.getElementById(`map-table-${key}`)?.focus({ preventScroll: true });
 	}
 
 	/** A count in a table opens its row's list of nations, as the row's name does. */
@@ -357,6 +375,9 @@
 		const ids = column.key === 'total' ? [...new Set(Object.values(members).flat())] : (members[column.key.replace(/^count-/, '')] ?? []);
 		return ids.map((id) => ({ id, name: (body.stateNations as Record<string, string>)[id] ?? id })).sort((first, second) => first.name.localeCompare(second.name, 'en', { sensitivity: 'base' }));
 	}
+
+	/** The states the Go to menu lists after the places that are always there. */
+	const goToStates = $derived(data.stateRows.map((row) => row.name).filter((name) => !tileMapPlaces.some((place) => place.name === name)).sort((first, second) => first.localeCompare(second, 'en')));
 
 	let tileHolder = $state<HTMLElement | undefined>();
 
@@ -450,6 +471,22 @@
 				<SearchableDropdown label="Map view" choices={mapViewChoices} value={pending ?? current} onchange={(key) => void choose(key)} onhighlight={prefetch} />
 			</div>
 		{/if}
+		{#if isShadedMapView(view.key) && (shaded[view.key]?.stateRows.length ?? 0) > 0}
+			{@const key = view.key}
+			<!-- The same switch the charts use for Bars, Pie and Table (Trevor, 2026-11-24, mockup 2A). -->
+			<div class="shown-by">
+				<span class="shown-by-label" aria-hidden="true">Show</span>
+				<ViewSwitch
+					label="Show {view.label} by"
+					value={byOf(key)}
+					onchange={(value) => (shownBy[key] = value)}
+					choices={[
+						{ value: 'nation', label: 'Nations', title: 'Shade each nation’s land areas and offices', icon: MapPin, showLabel: true },
+						{ value: 'state', label: 'States', title: 'Shade each state by what most of its nations have', icon: MapIcon, showLabel: true }
+					]}
+				/>
+			</div>
+		{/if}
 		{#if view.key === current && tileMapReady}
 			<!-- The states and territories are where they really are on the map, so the map goes to each by name (Trevor, 2026-11-22: every territory shown and named on its own). A menu rather than a row of buttons, so the row does not push the key out of sight (Trevor, 2026-11-23). -->
 			<label class="go-to">
@@ -459,22 +496,14 @@
 					{#each tileMapPlaces as place (place.name)}
 						<option value={place.name}>{place.name}</option>
 					{/each}
+					<!-- Every state with a nation, by name (Trevor, 2026-11-24: "any state ... zoom into that state"). -->
+					<optgroup label="States">
+						{#each goToStates as name (name)}
+							<option value={name}>{name}</option>
+						{/each}
+					</optgroup>
 				</select>
 			</label>
-		{/if}
-		{#if isShadedMapView(view.key) && (shaded[view.key]?.stateRows.length ?? 0) > 0}
-			{@const key = view.key}
-			<fieldset class="shown-by">
-				<legend class="small">Show by</legend>
-				<div class="shown-by-choices">
-					{#each [{ value: 'nation', label: 'Nation' }, { value: 'state', label: 'State' }] as choice (choice.value)}
-						<label class="shown-by-choice">
-							<input class="visually-hidden" type="radio" name="shown-by-{key}" value={choice.value} checked={byOf(key) === choice.value} onchange={() => (shownBy[key] = choice.value as 'nation' | 'state')} />
-							{choice.label}
-						</label>
-					{/each}
-				</div>
-			</fieldset>
 		{/if}
 		</div>
 			<div class="map-drawing" {@attach placeTileMap(view.key)} class:tiled={tileMapReady && view.key === current} class:waiting={tileMapWanted && !tileMapReady && view.key === current} data-nations-map={view.key === 'states' ? '' : undefined}>
@@ -524,64 +553,19 @@
 				</figcaption>
 			{/if}
 		</figure>
-		<!-- Beside the map on wide screens, under it on narrow ones. -->
+		<!-- Beside the map on wide screens, under it on narrow ones. A chosen place's details take the column, with a back arrow to the table, which stays as it was under them (Trevor, 2026-11-24, mockup 3A). -->
 		<div class="map-side">
 			{#if view.key === current && shownPreview}
 				{@const detail = shownPreview.nation ? nationDetails[shownPreview.nation] : undefined}
-				<aside class="map-preview" aria-labelledby="map-preview-title">
-					<div class="preview-top">
-						<p class="small muted preview-kind">{shownPreview.kind}</p>
-						<button type="button" class="icon-button preview-close" aria-label="Close the preview" title="Close" onclick={() => (preview = undefined)}>
-							<X aria-hidden="true" size={20} />
-						</button>
-					</div>
-					<div class="preview-head">
-						{#if detail?.image && shownPreview.nation && !hiddenImages[shownPreview.nation]}
-							{@const id = shownPreview.nation}
-							<img class="preview-image" src={detail.image.src} alt="{detail.image.kind} of {shownPreview.title}" width="64" height="64" onerror={() => (hiddenImages[id] = true)} />
-						{/if}
-						<h3 id="map-preview-title" tabindex="-1" bind:this={previewHeading}>
-							{shownPreview.title}{#if shownPreview.badges}{' '}<RecognitionBadges badges={shownPreview.badges} size="small" />{/if}
-						</h3>
-					</div>
-					{#if shownPreview.lines.length > 0}
-						<dl class="preview-facts">
-							{#each shownPreview.lines as line (line.label)}
-								<div><dt>{line.label}</dt><dd>{line.value}</dd></div>
-							{/each}
-						</dl>
-					{/if}
-					{#if detail && (detail.website || detail.address || detail.phone || detail.email)}
-						<dl class="preview-facts preview-contact">
-							{#each [detail.website, detail.address, detail.phone, detail.email] as contact, index (index)}
-								{#if contact}
-									<div>
-										<dt>{contact.label}</dt>
-										<dd>
-											{#if contact.link}
-												<a href={contact.link} target={contact.external ? '_blank' : undefined} rel={contact.external ? 'noopener noreferrer' : undefined}>{#each contact.lines as line, lineIndex (lineIndex)}{#if lineIndex > 0}<br />{/if}{line}{/each}</a>
-											{:else}
-												{#each contact.lines as line, lineIndex (lineIndex)}{#if lineIndex > 0}<br />{/if}{line}{/each}
-											{/if}
-										</dd>
-									</div>
-								{/if}
-							{/each}
-						</dl>
-					{/if}
-					{#if shownPreview.nations && shownPreview.nations.length > 0}
-						<p class="small preview-count">{shownPreview.nations.length.toLocaleString('en-US')} {shownPreview.nations.length === 1 ? 'nation' : 'nations'}</p>
-						<ul class="preview-nations">
-							{#each shownPreview.nations as nation (nation.id)}
-								<li><button type="button" class="link-button" onclick={() => void select(`nation:${nation.id}`)}>{nation.name}</button></li>
-							{/each}
-						</ul>
-					{/if}
-					{#if shownPreview.page}
-						<p class="preview-actions"><a class="button" href={shownPreview.page.href}>{shownPreview.page.label}</a></p>
-					{/if}
-				</aside>
+				<MapDetails
+					bind:this={detailsPanel}
+					details={shownPreview}
+					image={detail?.image ? { src: detail.image.src, alt: `${detail.image.kind} of ${shownPreview.title}` } : undefined}
+					contact={detail ? [detail.website, detail.address, detail.phone, detail.email].filter((entry) => entry !== undefined) : []}
+					back={{ label: 'Table', onclick: () => void closeDetails(view.key) }}
+				/>
 			{/if}
+			<div class="map-side-table" id="map-table-{view.key}" tabindex="-1" hidden={view.key === current && shownPreview !== undefined}>
 			{#if view.key === 'states'}
 				<DataTable
 					identifier="nations-by-state"
@@ -684,6 +668,7 @@
 					{cell}
 				/>
 			{/if}
+			</div>
 		</div>
 	</div>
 {/each}
@@ -739,159 +724,16 @@
 		max-width: 24rem;
 	}
 
-	/* A selected place's preview stays in view beside the map while the table scrolls under it. */
-	.map-preview {
-		position: sticky;
-		top: var(--space-3);
-		z-index: 3;
-		margin: 0 0 var(--space-4);
-		padding: var(--space-4);
-		border: 1px solid var(--color-line);
-		border-radius: var(--radius-panel);
-		background: var(--color-paper);
+	/* The table is focused when the back arrow brings it back, but is not a control. */
+	.map-side-table:focus {
+		outline: none;
 	}
 
-	.preview-top {
-		display: flex;
-		align-items: center;
-		justify-content: space-between;
-		gap: var(--space-2);
-		margin: calc(-1 * var(--space-2)) calc(-1 * var(--space-2)) 0 0;
-	}
-
-	.preview-kind {
-		margin: 0;
-	}
-
-	.preview-head {
-		display: flex;
-		align-items: center;
-		gap: var(--space-3);
-		margin: 0 0 var(--space-3);
-	}
-
-	/* The nation's seal or logo, where it may be shown. */
-	.preview-image {
-		flex: none;
-		width: 64px;
-		height: 64px;
-		object-fit: contain;
-	}
-
-	.map-preview h3 {
-		margin: 0;
-	}
-
-	.preview-contact {
-		padding-top: var(--space-3);
-		border-top: 1px solid var(--color-line);
-	}
-
-	.preview-contact a {
-		overflow-wrap: anywhere;
-	}
-
-	.preview-facts {
-		margin: 0 0 var(--space-3);
-	}
-
-	.preview-facts div {
-		margin: 0 0 var(--space-1);
-	}
-
-	.preview-facts dt {
-		font-weight: var(--font-weight-semibold);
-	}
-
-	.preview-facts dd {
-		margin: 0;
-	}
-
-	.preview-count {
-		margin: 0 0 var(--space-1);
-		font-weight: var(--font-weight-semibold);
-	}
-
-	.preview-nations {
-		max-height: 12rem;
-		overflow-y: auto;
-		margin: 0 0 var(--space-3);
-		padding: 0;
-		list-style: none;
-	}
-
-	/* A nation in the list opens its own preview: a button that reads as a link. */
-	.link-button {
-		min-height: 24px;
-		padding: 0;
-		border: 0;
-		background: none;
-		color: var(--color-link);
-		font: inherit;
-		text-align: left;
-		text-decoration: underline;
-		text-decoration-thickness: 1px;
-		text-underline-offset: 0.18em;
-		cursor: pointer;
-	}
-
-	.preview-actions {
-		display: flex;
-		flex-wrap: wrap;
-		gap: var(--space-2);
-		margin: 0;
-	}
-
-	/* Show by nation or by state: two buttons side by side, as the reading settings' alignment choices are. */
-	.shown-by {
-		margin: 0;
-		padding: 0;
-		border: 0;
-		display: flex;
-		align-items: center;
-		gap: var(--space-2);
-	}
-
-	.shown-by legend {
-		float: left;
-		margin-right: var(--space-2);
-	}
-
-	.shown-by-choices {
-		display: inline-flex;
-		border: 2px solid var(--color-control-border);
-		border-radius: var(--radius-control);
-		overflow: hidden;
-	}
-
-	.shown-by-choice {
-		display: inline-flex;
-		align-items: center;
-		justify-content: center;
-		min-width: var(--layout-target-minimum);
-		min-height: var(--layout-target-minimum);
-		padding: var(--space-1) var(--space-3);
-		box-sizing: border-box;
-		background: var(--color-paper);
-		color: var(--color-ink);
-		cursor: pointer;
-	}
-
-	.shown-by-choice + .shown-by-choice {
-		border-left: 2px solid var(--color-control-border);
-	}
-
-	.shown-by-choice:has(input:checked) {
-		background: var(--color-action);
-		color: var(--color-action-text);
-		box-shadow: inset 0 -4px 0 var(--color-action-text);
-	}
-
-	.shown-by-choice:has(input:focus-visible) {
-		outline: 3px solid var(--color-focus-ring);
-		outline-offset: -3px;
-		background: var(--color-focus);
-		color: var(--focus-text);
+	/* Show by Nations or States, labeled like the fields beside it. */
+	.shown-by-label {
+		display: block;
+		margin-bottom: var(--space-1);
+		font-weight: var(--font-weight-bold);
 	}
 
 	/* A state's name breaks only between words, however narrow the column. */
@@ -1050,20 +892,35 @@
 		}
 	}
 
+	/* Only the map is pinned, so the picker and the key scroll away and most of a phone's screen is left for the table (mockup audit, 2026-11-23, after the pinned picker, map and key took about 85% of a phone's screen). */
 	@media screen and (max-width: 1099.98px) and (min-height: 600px) {
 		.map-figure {
-			position: sticky;
-			top: 0;
-			z-index: 2;
-			margin-bottom: var(--space-3);
-			padding-bottom: var(--space-1);
-			border-bottom: 1px solid var(--color-line);
-			background: var(--color-paper);
+			display: contents;
+		}
+
+		.map-toolbar,
+		.map-figure figcaption {
+			margin-block: var(--space-3);
 		}
 
 		.map-drawing {
+			position: sticky;
+			top: 0;
+			z-index: 2;
 			max-width: min(975px, calc(42vh * 975 / 883));
 			margin-inline: auto;
+			padding-bottom: var(--space-1);
+			background: var(--color-paper);
+			/* The paper reaches the page's edges, so the table never shows beside the pinned map. */
+			box-shadow: 0 0 0 100vmax var(--color-paper);
+			clip-path: inset(0 -100vmax);
+		}
+	}
+
+	/* Below the narrow screens' menu bar (SiteSidebar.svelte), which also stays at the top. */
+	@media screen and (max-width: 63.99rem) and (min-height: 600px) {
+		.map-drawing {
+			top: calc(var(--layout-target-minimum) + 1px);
 		}
 	}
 
