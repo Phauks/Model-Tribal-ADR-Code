@@ -1,0 +1,149 @@
+key: employment-division-v-smith
+kind: federal-case
+citation:
+  type: legal_case
+  title: Employment Division v. Smith
+  authority: Supreme Court of the United States
+  container-title: U.S.
+  volume: '494'
+  page: '872'
+  issued:
+    date-parts:
+    - - 1990
+      - 4
+      - 17
+  URL: https://www.loc.gov/item/usrep494872/
+  accessed:
+    date-parts:
+    - - 2026
+      - 11
+      - 24
+caption:
+  printed: EMPLOYMENT DIVISION, DEPARTMENT OF HUMAN RESOURCES OF OREGON, et al. v. SMITH et al
+  source: https://tile.loc.gov/storage-services/service/ll/usrep/usrep494/usrep494872/usrep494872.pdf
+  checked: '2026-11-24'
+opinions:
+  source: https://tile.loc.gov/storage-services/service/ll/usrep/usrep494/usrep494872/usrep494872.pdf
+  checked: '2026-11-24'
+  list:
+  - kind: majority
+    justice: Antonin Scalia
+    page: 874
+  - kind: special concurrence
+    justice: Sandra Day O'Connor
+    page: 891
+  - kind: dissent
+    justice: Harry A. Blackmun
+    page: 907
+original_link: https://www.loc.gov/item/usrep494872/
+retrieved: '2026-11-24'
+history:
+  status: live
+  last_checked: '2026-11-24'
+court_dates:
+  argued:
+  - '1989-11-06'
+  - '1989-04-17'
+  printed: Argued November 6, 1989 Decided April 17, 1990
+  source: https://tile.loc.gov/storage-services/service/ll/usrep/usrep494/usrep494872/usrep494872.pdf
+  checked: '2026-11-24'
+supreme_court:
+  court: Rehnquist Court
+  natural_court: Rehnquist Court (1988-1990)
+  decision_type: majority opinion
+  vote:
+    majority: 6
+    minority: 3
+  justices:
+  - name: Thurgood Marshall
+    vote: minority
+  - name: William J. Brennan, Jr.
+    vote: minority
+  - name: Byron R. White
+    vote: majority
+  - name: Harry A. Blackmun
+    vote: minority
+    opinion: dissent
+  - name: William H. Rehnquist
+    vote: majority
+  - name: John Paul Stevens
+    vote: majority
+  - name: Sandra Day O'Connor
+    vote: majority
+    opinion: special concurrence
+  - name: Antonin Scalia
+    vote: majority
+    opinion: majority
+  - name: Anthony M. Kennedy
+    vote: majority
+  source: https://api.oyez.org/cases/1989/88-1213
+  checked: '2026-11-24'
+reading_links:
+  checked: '2026-11-24'
+  links:
+  - site: library-of-congress
+    label: Library of Congress
+    access: official
+    link: https://www.loc.gov/item/usrep494872/
+  - site: justia
+    label: Justia
+    access: free
+    link: https://supreme.justia.com/cases/federal/us/494/872/
+    unchecked: true
+  - site: oyez
+    label: Oyez
+    access: free
+    link: https://www.oyez.org/cases/1989/88-1213
+  - site: google-scholar
+    label: Google Scholar
+    access: free
+    link: https://scholar.google.com/scholar?hl=en&as_sdt=2006&q=%22494%20U.S.%20872%22
+    unchecked: true
+  - site: westlaw
+    label: Westlaw
+    access: subscription
+    link: https://1.next.westlaw.com/Link/Document/FullText?findType=Y&cite=494%20U.S.%20872
+    unchecked: true
+  - site: lexis
+    label: Lexis
+    access: subscription
+    link: https://advance.lexis.com/api/search?q=494%20U.S.%20872
+    unchecked: true
+rights:
+  status: no-permission-needed
+  basis: us-government-work
+  basis_note: Opinions of federal courts are works of the U.S. government (17 U.S.C. § 105); the host site's own additions are not reproduced.
+  redistribution: true
+found_in:
+- 2026-11-24-supreme-court-native-cases
+notes: 'Full citation: 494 U.S. 872 (1990). Official report scan: https://tile.loc.gov/storage-services/service/ll/usrep/usrep494/usrep494872/usrep494872.pdf. Written by scripts/caselaw/supreme_court_native_cases.py from the Supreme Court Database (case 1989-061), the Caselaw Access Project''s text of the report and the Library of Congress scan; not yet read by a person.'
+tribes: []
+nations_in_case:
+  checked: '2026-11-24'
+  named: []
+review:
+  status: unverified
+  by: scripts/caselaw/supreme_court_native_cases.py
+  date: '2026-11-24'
+  checks:
+  - check: cite
+    result: agree
+    detail: Caselaw Access Project 494 U.S. 872 "Employment Division v. Smith"; Database 494 U.S. 872 "EMPLOYMENT DIVISION, DEPARTMENT OF HUMAN RESOURCES OF OREGON, et al. v. SMITH et al."
+  - check: scan
+    result: agree
+    detail: Scan has 50 pages; the report runs 872 to 921
+  - check: caption
+    result: agree
+    detail: Caption found in the scan's text at 1.00
+  - check: printed dates
+    result: agree
+    detail: Caselaw Access Project "Argued November 6, 1989 Decided April 17, 1990"; scan "Argued November 6, 1989-Decided April 17, 1990"
+  - check: decided
+    result: agree
+    detail: 'Printed and Database: 1990-04-17'
+  - check: opinions
+    result: settled
+    detail: 'Report: majority Blackmun p. 874; Database writers: Blackmun, O Connor, Scalia. Read from the scan by an AI reader (corrected): p. 874: JUSTICE SCALIA delivered the opinion of the Court. p. 873: O''CONNOR, J., filed an opinion concurring in the judgment ... post, p. 891. BLACKMUN, J., filed a dissenting opinion ... post, p. 907. p. 891: JUSTICE O''CONNOR, with whom JUSTICE BRENNAN, JUSTICE MARSHALL, and JUSTICE BLACKMUN join as to Parts I and II, concurring in the judgment. p. 907: JUSTICE BLACKMUN, with whom JUSTICE BRENNAN and JUSTICE MARSHALL join, dissenting.'
+  - check: bench
+    result: agree
+    detail: Oyez and the Database give the same Justices and votes

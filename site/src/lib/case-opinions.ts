@@ -14,7 +14,11 @@ export type OpinionKind =
 	| 'concurrence'
 	| 'special concurrence'
 	| 'concurrence in the result'
+	| 'concurrence in part and in the judgment'
+	| 'concurrence in part and dissent in part'
+	| 'concurrence in part, concurrence in the judgment in part, and dissent in part'
 	| 'dissent'
+	| 'dissent in part'
 	| 'per curiam';
 
 export interface OpinionEntry {
@@ -38,6 +42,7 @@ export const opinionLabels: Record<string, string> = {
 	'dissent in part': 'opinion dissenting in part',
 	judgment: 'opinion announcing the judgment',
 	dissent: 'dissenting opinion',
+	'coauthored dissent': 'joint dissenting opinion',
 	'per curiam': 'per curiam opinion'
 };
 

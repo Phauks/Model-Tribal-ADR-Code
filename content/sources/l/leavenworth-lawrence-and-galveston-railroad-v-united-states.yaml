@@ -1,0 +1,141 @@
+key: leavenworth-lawrence-and-galveston-railroad-v-united-states
+kind: federal-case
+citation:
+  type: legal_case
+  title: Leavenworth, Lawrence, & Galveston Railroad v. United States
+  authority: Supreme Court of the United States
+  container-title: U.S.
+  volume: '92'
+  page: '733'
+  issued:
+    date-parts:
+    - - 1876
+      - 4
+      - 10
+  URL: https://www.loc.gov/item/usrep092733/
+  accessed:
+    date-parts:
+    - - 2026
+      - 11
+      - 24
+caption:
+  printed: Leavenworth, Lawrence, and Galveston Railroad Company v. United States
+  source: https://tile.loc.gov/storage-services/service/ll/usrep/usrep092/usrep092733/usrep092733.pdf
+  checked: '2026-11-24'
+opinions:
+  source: https://tile.loc.gov/storage-services/service/ll/usrep/usrep092/usrep092733/usrep092733.pdf
+  checked: '2026-11-24'
+  list:
+  - kind: majority
+    justice: David Davis
+    page: 739
+  - kind: dissent
+    justice: Stephen Johnson Field
+    page: 753
+original_link: https://www.loc.gov/item/usrep092733/
+retrieved: '2026-11-24'
+history:
+  status: live
+  last_checked: '2026-11-24'
+court_dates:
+  argued:
+  - '1875-10-20'
+  - '1875-10-21'
+  - '1875-10-22'
+  printed: Argued Oct. 20-22, 1875; decided Apr. 10, 1876
+  source: https://www.supremecourt.gov/opinions/datesofdecisions.pdf
+  note: The report prints only the term. These dates are from the Supreme Court Library's table of decision and argument dates, which takes them from the Court's Engrossed Minutes.
+  checked: '2026-11-24'
+supreme_court:
+  court: Waite Court
+  natural_court: Waite Court (1874-1877)
+  decision_type: majority opinion
+  vote:
+    majority: 6
+    minority: 3
+  justices:
+  - name: Morrison Remick Waite
+    vote: majority
+  - name: Nathan Clifford
+    vote: majority
+  - name: Noah Haynes Swayne
+    vote: minority
+  - name: Samuel Freeman Miller
+    vote: majority
+  - name: David Davis
+    vote: majority
+    opinion: majority
+  - name: Stephen Johnson Field
+    vote: minority
+    opinion: dissent
+  - name: William Strong
+    vote: minority
+  - name: Joseph P. Bradley
+    vote: majority
+  - name: Ward Hunt
+    vote: majority
+  source: http://scdb.wustl.edu/_brickFiles/Legacy_07/SCDB_Legacy_07_justiceCentered_Citation.csv.zip
+  note: From the Supreme Court Database, case 1875-158; Oyez has no votes for this case.
+  checked: '2026-11-24'
+reading_links:
+  checked: '2026-11-24'
+  links:
+  - site: library-of-congress
+    label: Library of Congress
+    access: official
+    link: https://www.loc.gov/item/usrep092733/
+  - site: justia
+    label: Justia
+    access: free
+    link: https://supreme.justia.com/cases/federal/us/92/733/
+    unchecked: true
+  - site: google-scholar
+    label: Google Scholar
+    access: free
+    link: https://scholar.google.com/scholar?hl=en&as_sdt=2006&q=%2292%20U.S.%20733%22
+    unchecked: true
+  - site: westlaw
+    label: Westlaw
+    access: subscription
+    link: https://1.next.westlaw.com/Link/Document/FullText?findType=Y&cite=92%20U.S.%20733
+    unchecked: true
+  - site: lexis
+    label: Lexis
+    access: subscription
+    link: https://advance.lexis.com/api/search?q=92%20U.S.%20733
+    unchecked: true
+rights:
+  status: no-permission-needed
+  basis: us-government-work
+  basis_note: Opinions of federal courts are works of the U.S. government (17 U.S.C. § 105); the host site's own additions are not reproduced.
+  redistribution: true
+found_in:
+- 2026-11-24-supreme-court-native-cases
+notes: 'Full citation: 92 U.S. 733 (1876). Official report scan: https://tile.loc.gov/storage-services/service/ll/usrep/usrep092/usrep092733/usrep092733.pdf. Written by scripts/caselaw/supreme_court_native_cases.py from the Supreme Court Database (case 1875-158), the Caselaw Access Project''s text of the report and the Library of Congress scan; not yet read by a person.'
+tribes: []
+nations_in_case:
+  checked: '2026-11-24'
+  named: []
+review:
+  status: unverified
+  by: scripts/caselaw/supreme_court_native_cases.py
+  date: '2026-11-24'
+  checks:
+  - check: cite
+    result: agree
+    detail: Caselaw Access Project 92 U.S. 733 "Leavenworth, Lawrence, & Galveston Railroad v. United States"; Database 92 U.S. 733 "LEAVENWORTH, LAWRENCE, AND GALVESTON RAILROAD COMPANY v. UNITED STATES"
+  - check: scan
+    result: agree
+    detail: Scan has 28 pages; the report runs 733 to 760
+  - check: caption
+    result: settled
+    detail: 'Caption found in the scan''s text at 0.87. Read from the scan by an AI reader (record right): p.733-734: LEAVENWORTH, LAWRENCE, AND GALVESTON RAILROAD COMPANY v. UNITED STATES (OCR: LEA.VENWORTH, LAWRENCE, AND GALVESTON COMPANY v. UMTED STATES. RAILROAD).'
+  - check: decided
+    result: agree
+    detail: Supreme Court Library's table (from the Court's minutes) Apr. 10, 1876; Database 1876-04-10
+  - check: opinions
+    result: settled
+    detail: 'Report: majority Davis p. 739; Database writers: Davis, Field. Read from the scan by an AI reader (corrected): p.739: MR. JUSTICE DAVIS delivered the opinion of the court. p.753: JUSTICE FIELD, with whom concurred MR. JUSTICE SWAYNE and MR. JUSTICE STRONG, dissenting. p.760: I am of opinion that the decree should be reversed.'
+  - check: bench
+    result: agree
+    detail: No Oyez votes; each opinion writer in the report sits on the Database's bench on the side the opinion takes

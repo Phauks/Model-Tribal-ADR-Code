@@ -1,0 +1,142 @@
+key: sac-and-fox-indians-of-mississippi-in-iowa-v-sac-and-fox-indians-of-mississippi-in-oklahoma
+kind: federal-case
+citation:
+  type: legal_case
+  title: Sac & Fox Indians of Mississippi in Iowa v. Sac & Fox Indians of Mississippi in Oklahoma
+  authority: Supreme Court of the United States
+  container-title: U.S.
+  volume: '220'
+  page: '481'
+  issued:
+    date-parts:
+    - - 1911
+      - 4
+      - 24
+  URL: https://www.loc.gov/item/usrep220481/
+  accessed:
+    date-parts:
+    - - 2026
+      - 11
+      - 24
+caption:
+  printed: SAC AND FOX INDIANS OF THE MISSISSIPPI IN IOWA v. SAC AND FOX INDIANS OF THE MISSISSIPPI IN OKLAHOMA, AND THE UNITED STATES
+  source: https://tile.loc.gov/storage-services/service/ll/usrep/usrep220/usrep220481/usrep220481.pdf
+  checked: '2026-11-24'
+opinions:
+  source: https://tile.loc.gov/storage-services/service/ll/usrep/usrep220/usrep220481/usrep220481.pdf
+  checked: '2026-11-24'
+  list:
+  - kind: majority
+    justice: Oliver Wendell Holmes
+    page: 482
+  - kind: dissent
+    justice: Joseph McKenna
+    page: 490
+original_link: https://www.loc.gov/item/usrep220481/
+retrieved: '2026-11-24'
+history:
+  status: live
+  last_checked: '2026-11-24'
+court_dates:
+  argued:
+  - '1910-12-14'
+  - '1910-12-15'
+  printed: Argued December 14, 15, 1910. Decided April 24, 1911.
+  source: https://tile.loc.gov/storage-services/service/ll/usrep/usrep220/usrep220481/usrep220481.pdf
+  checked: '2026-11-24'
+supreme_court:
+  court: White Court
+  natural_court: White Court (1911-1911)
+  decision_type: judgment of the Court
+  vote:
+    majority: 7
+    minority: 1
+  justices:
+  - name: Edward Douglass White
+    vote: majority
+  - name: Charles Evans Hughes
+    vote: majority
+  - name: John Marshall Harlan
+    vote: majority
+  - name: Joseph McKenna
+    vote: minority
+    opinion: dissent
+  - name: Oliver Wendell Holmes
+    vote: majority
+    opinion: plurality
+  - name: William Rufus Day
+    vote: majority
+  - name: Horace Harmon Lurton
+    vote: majority
+  - name: Willis Van Devanter
+    vote: not recorded
+  - name: Joseph Rucker Lamar
+    vote: majority
+  source: http://scdb.wustl.edu/_brickFiles/Legacy_07/SCDB_Legacy_07_justiceCentered_Citation.csv.zip
+  note: From the Supreme Court Database, case 1910-118; Oyez has no votes for this case.
+  checked: '2026-11-24'
+reading_links:
+  checked: '2026-11-24'
+  links:
+  - site: library-of-congress
+    label: Library of Congress
+    access: official
+    link: https://www.loc.gov/item/usrep220481/
+  - site: justia
+    label: Justia
+    access: free
+    link: https://supreme.justia.com/cases/federal/us/220/481/
+    unchecked: true
+  - site: google-scholar
+    label: Google Scholar
+    access: free
+    link: https://scholar.google.com/scholar?hl=en&as_sdt=2006&q=%22220%20U.S.%20481%22
+    unchecked: true
+  - site: westlaw
+    label: Westlaw
+    access: subscription
+    link: https://1.next.westlaw.com/Link/Document/FullText?findType=Y&cite=220%20U.S.%20481
+    unchecked: true
+  - site: lexis
+    label: Lexis
+    access: subscription
+    link: https://advance.lexis.com/api/search?q=220%20U.S.%20481
+    unchecked: true
+rights:
+  status: no-permission-needed
+  basis: us-government-work
+  basis_note: Opinions of federal courts are works of the U.S. government (17 U.S.C. § 105); the host site's own additions are not reproduced.
+  redistribution: true
+found_in:
+- 2026-11-24-supreme-court-native-cases
+notes: 'Full citation: 220 U.S. 481 (1911). Official report scan: https://tile.loc.gov/storage-services/service/ll/usrep/usrep220/usrep220481/usrep220481.pdf. Written by scripts/caselaw/supreme_court_native_cases.py from the Supreme Court Database (case 1910-118), the Caselaw Access Project''s text of the report and the Library of Congress scan; not yet read by a person.'
+tribes: []
+nations_in_case:
+  checked: '2026-11-24'
+  named: []
+review:
+  status: verified
+  by: scripts/caselaw/supreme_court_native_cases.py
+  date: '2026-11-24'
+  checks:
+  - check: cite
+    result: agree
+    detail: Caselaw Access Project 220 U.S. 481 "Sac & Fox Indians of Mississippi in Iowa v. Sac & Fox Indians of Mississippi in Oklahoma"; Database 220 U.S. 481 "SAC AND FOX INDIANS OF THE MISSISSIPPI IN IOWA v. SAC AND FOX INDIANS OF THE MISSISSIPPI IN OKLAHOMA, AND THE UNITED STATES"
+  - check: scan
+    result: agree
+    detail: Scan has 11 pages; the report runs 481 to 491
+  - check: caption
+    result: agree
+    detail: Caption found in the scan's text at 1.00
+  - check: printed dates
+    result: agree
+    detail: Caselaw Access Project "Argued December 14, 15, 1910. Decided April 24, 1911."; scan "Argued December 14, 15, 1910.-Decided April 24, 1911."
+  - check: decided
+    result: agree
+    detail: 'Printed and Database: 1911-04-24'
+  - check: opinions
+    result: agree
+    detail: 'Report: majority Holmes p. 482, dissent Mckenna p. 490; Database writers: Holmes, Mckenna'
+  - check: bench
+    result: agree
+    detail: No Oyez votes; each opinion writer in the report sits on the Database's bench on the side the opinion takes

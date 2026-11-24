@@ -147,6 +147,7 @@ const opinionWords: Record<string, string> = {
 		'Opinion concurring in part, concurring in the judgment in part, and dissenting in part',
 	dissent: 'Dissenting opinion',
 	'dissent in part': 'Opinion dissenting in part',
+	'coauthored dissent': 'Joint dissenting opinion',
 	'joining the dissent in part': 'Joined the dissent in part'
 };
 

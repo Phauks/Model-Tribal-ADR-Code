@@ -1,0 +1,141 @@
+key: andrus-v-glover-construction-co
+kind: federal-case
+citation:
+  type: legal_case
+  title: Andrus v. Glover Construction Co
+  authority: Supreme Court of the United States
+  container-title: U.S.
+  volume: '446'
+  page: '608'
+  issued:
+    date-parts:
+    - - 1980
+      - 5
+      - 27
+  URL: https://www.loc.gov/item/usrep446608/
+  accessed:
+    date-parts:
+    - - 2026
+      - 11
+      - 24
+caption:
+  printed: ANDRUS, SECRETARY OF THE INTERIOR, et al. v. GLOVER CONSTRUCTION CO
+  source: https://tile.loc.gov/storage-services/service/ll/usrep/usrep446/usrep446608/usrep446608.pdf
+  checked: '2026-11-24'
+opinions:
+  source: https://tile.loc.gov/storage-services/service/ll/usrep/usrep446/usrep446608/usrep446608.pdf
+  checked: '2026-11-24'
+  list:
+  - kind: majority
+    justice: Potter Stewart
+    page: 609
+original_link: https://www.loc.gov/item/usrep446608/
+retrieved: '2026-11-24'
+history:
+  status: live
+  last_checked: '2026-11-24'
+court_dates:
+  argued:
+  - '1980-03-24'
+  - '1980-05-27'
+  printed: Argued March 24, 1980 Decided May 27, 1980
+  source: https://tile.loc.gov/storage-services/service/ll/usrep/usrep446/usrep446608/usrep446608.pdf
+  checked: '2026-11-24'
+supreme_court:
+  court: Burger Court
+  natural_court: Burger Court (1975-1981)
+  decision_type: majority opinion
+  vote:
+    majority: 9
+    minority: 0
+  justices:
+  - name: Potter Stewart
+    vote: majority
+    opinion: majority
+  - name: Thurgood Marshall
+    vote: majority
+  - name: William J. Brennan, Jr.
+    vote: majority
+  - name: Byron R. White
+    vote: majority
+  - name: Warren E. Burger
+    vote: majority
+  - name: Harry A. Blackmun
+    vote: majority
+  - name: Lewis F. Powell, Jr.
+    vote: majority
+  - name: William H. Rehnquist
+    vote: majority
+  - name: John Paul Stevens
+    vote: majority
+  source: https://api.oyez.org/cases/1979/79-48
+  checked: '2026-11-24'
+reading_links:
+  checked: '2026-11-24'
+  links:
+  - site: library-of-congress
+    label: Library of Congress
+    access: official
+    link: https://www.loc.gov/item/usrep446608/
+  - site: justia
+    label: Justia
+    access: free
+    link: https://supreme.justia.com/cases/federal/us/446/608/
+    unchecked: true
+  - site: oyez
+    label: Oyez
+    access: free
+    link: https://www.oyez.org/cases/1979/79-48
+  - site: google-scholar
+    label: Google Scholar
+    access: free
+    link: https://scholar.google.com/scholar?hl=en&as_sdt=2006&q=%22446%20U.S.%20608%22
+    unchecked: true
+  - site: westlaw
+    label: Westlaw
+    access: subscription
+    link: https://1.next.westlaw.com/Link/Document/FullText?findType=Y&cite=446%20U.S.%20608
+    unchecked: true
+  - site: lexis
+    label: Lexis
+    access: subscription
+    link: https://advance.lexis.com/api/search?q=446%20U.S.%20608
+    unchecked: true
+rights:
+  status: no-permission-needed
+  basis: us-government-work
+  basis_note: Opinions of federal courts are works of the U.S. government (17 U.S.C. § 105); the host site's own additions are not reproduced.
+  redistribution: true
+found_in:
+- 2026-11-24-supreme-court-native-cases
+notes: 'Full citation: 446 U.S. 608 (1980). Official report scan: https://tile.loc.gov/storage-services/service/ll/usrep/usrep446/usrep446608/usrep446608.pdf. Written by scripts/caselaw/supreme_court_native_cases.py from the Supreme Court Database (case 1979-093), the Caselaw Access Project''s text of the report and the Library of Congress scan; not yet read by a person.'
+tribes: []
+nations_in_case:
+  checked: '2026-11-24'
+  named: []
+review:
+  status: verified
+  by: scripts/caselaw/supreme_court_native_cases.py
+  date: '2026-11-24'
+  checks:
+  - check: cite
+    result: agree
+    detail: Caselaw Access Project 446 U.S. 608 "Andrus v. Glover Construction Co."; Database 446 U.S. 608 "ANDRUS, SECRETARY OF THE INTERIOR, et al. v. GLOVER CONSTRUCTION CO."
+  - check: scan
+    result: agree
+    detail: Scan has 12 pages; the report runs 608 to 619
+  - check: caption
+    result: agree
+    detail: Caption found in the scan's text at 1.00
+  - check: printed dates
+    result: agree
+    detail: Caselaw Access Project "Argued March 24, 1980 Decided May 27, 1980"; scan "Argued March 24, 1980--Decided May 27, 1980"
+  - check: decided
+    result: agree
+    detail: 'Printed and Database: 1980-05-27'
+  - check: opinions
+    result: agree
+    detail: 'Report: majority Stewart p. 609; Database writers: Stewart'
+  - check: bench
+    result: agree
+    detail: Oyez and the Database give the same Justices and votes

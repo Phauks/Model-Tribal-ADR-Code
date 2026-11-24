@@ -1,0 +1,137 @@
+key: united-states-v-oklahoma-gas-and-electric-co
+kind: federal-case
+citation:
+  type: legal_case
+  title: United States v. Oklahoma Gas & Electric Co
+  authority: Supreme Court of the United States
+  container-title: U.S.
+  volume: '318'
+  page: '206'
+  issued:
+    date-parts:
+    - - 1943
+      - 2
+      - 15
+  URL: https://www.loc.gov/item/usrep318206/
+  accessed:
+    date-parts:
+    - - 2026
+      - 11
+      - 24
+caption:
+  printed: UNITED STATES v. OKLAHOMA GAS & ELECTRIC CO
+  source: https://tile.loc.gov/storage-services/service/ll/usrep/usrep318/usrep318206/usrep318206.pdf
+  checked: '2026-11-24'
+opinions:
+  source: https://tile.loc.gov/storage-services/service/ll/usrep/usrep318/usrep318206/usrep318206.pdf
+  checked: '2026-11-24'
+  list:
+  - kind: majority
+    justice: Robert Houghwout Jackson
+    page: 207
+original_link: https://www.loc.gov/item/usrep318206/
+retrieved: '2026-11-24'
+history:
+  status: live
+  last_checked: '2026-11-24'
+court_dates:
+  argued:
+  - '1942-12-09'
+  printed: Argued December 9, 1942. Decided February 15, 1943.
+  source: https://tile.loc.gov/storage-services/service/ll/usrep/usrep318/usrep318206/usrep318206.pdf
+  checked: '2026-11-24'
+supreme_court:
+  court: Stone Court
+  natural_court: Stone Court (1943-1945)
+  decision_type: majority opinion
+  vote:
+    majority: 7
+    minority: 2
+  justices:
+  - name: Harlan Fiske Stone
+    vote: majority
+  - name: Owen Josephus Roberts
+    vote: majority
+  - name: Hugo Lafayette Black
+    vote: minority
+  - name: Stanley Forman Reed
+    vote: majority
+  - name: Felix Frankfurter
+    vote: majority
+  - name: William Orville Douglas
+    vote: minority
+  - name: Frank Murphy
+    vote: majority
+  - name: Robert Houghwout Jackson
+    vote: majority
+    opinion: majority
+  - name: Wiley Blount Rutledge
+    vote: majority
+  source: http://scdb.wustl.edu/_brickFiles/Legacy_07/SCDB_Legacy_07_justiceCentered_Citation.csv.zip
+  note: From the Supreme Court Database, case 1942-093; Oyez has no votes for this case.
+  checked: '2026-11-24'
+reading_links:
+  checked: '2026-11-24'
+  links:
+  - site: library-of-congress
+    label: Library of Congress
+    access: official
+    link: https://www.loc.gov/item/usrep318206/
+  - site: justia
+    label: Justia
+    access: free
+    link: https://supreme.justia.com/cases/federal/us/318/206/
+    unchecked: true
+  - site: google-scholar
+    label: Google Scholar
+    access: free
+    link: https://scholar.google.com/scholar?hl=en&as_sdt=2006&q=%22318%20U.S.%20206%22
+    unchecked: true
+  - site: westlaw
+    label: Westlaw
+    access: subscription
+    link: https://1.next.westlaw.com/Link/Document/FullText?findType=Y&cite=318%20U.S.%20206
+    unchecked: true
+  - site: lexis
+    label: Lexis
+    access: subscription
+    link: https://advance.lexis.com/api/search?q=318%20U.S.%20206
+    unchecked: true
+rights:
+  status: no-permission-needed
+  basis: us-government-work
+  basis_note: Opinions of federal courts are works of the U.S. government (17 U.S.C. § 105); the host site's own additions are not reproduced.
+  redistribution: true
+found_in:
+- 2026-11-24-supreme-court-native-cases
+notes: 'Full citation: 318 U.S. 206 (1943). Official report scan: https://tile.loc.gov/storage-services/service/ll/usrep/usrep318/usrep318206/usrep318206.pdf. Written by scripts/caselaw/supreme_court_native_cases.py from the Supreme Court Database (case 1942-093), the Caselaw Access Project''s text of the report and the Library of Congress scan; not yet read by a person.'
+tribes: []
+nations_in_case:
+  checked: '2026-11-24'
+  named: []
+review:
+  status: verified
+  by: scripts/caselaw/supreme_court_native_cases.py
+  date: '2026-11-24'
+  checks:
+  - check: cite
+    result: agree
+    detail: Caselaw Access Project 318 U.S. 206 "United States v. Oklahoma Gas & Electric Co."; Database 318 U.S. 206 "UNITED STATES v. OKLAHOMA GAS & ELECTRIC CO."
+  - check: scan
+    result: agree
+    detail: Scan has 13 pages; the report runs 206 to 218
+  - check: caption
+    result: agree
+    detail: Caption found in the scan's text at 1.00
+  - check: printed dates
+    result: agree
+    detail: Caselaw Access Project "Argued December 9, 1942. Decided February 15, 1943."; scan "Argued December 9, 1942-Decided February 15, 1943."
+  - check: decided
+    result: agree
+    detail: 'Printed and Database: 1943-02-15'
+  - check: opinions
+    result: agree
+    detail: 'Report: majority Jackson p. 207; Database writers: Jackson'
+  - check: bench
+    result: agree
+    detail: No Oyez votes; each opinion writer in the report sits on the Database's bench on the side the opinion takes

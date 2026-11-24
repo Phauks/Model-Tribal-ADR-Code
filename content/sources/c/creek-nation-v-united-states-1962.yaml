@@ -1,0 +1,136 @@
+key: creek-nation-v-united-states-1962
+kind: federal-case
+citation:
+  type: legal_case
+  title: Creek Nation v. United States
+  authority: Supreme Court of the United States
+  container-title: U.S.
+  volume: '370'
+  page: '157'
+  issued:
+    date-parts:
+    - - 1962
+      - 6
+      - 4
+  URL: https://www.loc.gov/item/usrep370157/
+  accessed:
+    date-parts:
+    - - 2026
+      - 11
+      - 24
+caption:
+  printed: CREEK NATION v. UNITED STATES
+  source: https://tile.loc.gov/storage-services/service/ll/usrep/usrep370/usrep370157/usrep370157.pdf
+  checked: '2026-11-24'
+opinions:
+  source: https://tile.loc.gov/storage-services/service/ll/usrep/usrep370/usrep370157/usrep370157.pdf
+  checked: '2026-11-24'
+  list:
+  - kind: per curiam
+    justice: The Court
+    page: 157
+original_link: https://www.loc.gov/item/usrep370157/
+retrieved: '2026-11-24'
+history:
+  status: live
+  last_checked: '2026-11-24'
+court_dates:
+  argued:
+  - '1962-04-24'
+  printed: Argued April 24, 1962. Decided June 4, 1962.
+  source: https://tile.loc.gov/storage-services/service/ll/usrep/usrep370/usrep370157/usrep370157.pdf
+  checked: '2026-11-24'
+supreme_court:
+  court: Warren Court
+  natural_court: Warren Court (1962-1962)
+  decision_type: equally divided Court
+  vote:
+    majority: 4
+    minority: 4
+  justices:
+  - name: Earl Warren
+    vote: not recorded
+  - name: John Marshall Harlan
+    vote: not recorded
+  - name: Hugo Lafayette Black
+    vote: not recorded
+  - name: Felix Frankfurter
+    vote: not recorded
+  - name: William Orville Douglas
+    vote: not recorded
+  - name: Tom Campbell Clark
+    vote: not recorded
+  - name: William J. Brennan, Jr.
+    vote: not recorded
+  - name: Potter Stewart
+    vote: not recorded
+  - name: Byron Raymond White
+    vote: not recorded
+  source: http://scdb.wustl.edu/_brickFiles/2026_01/SCDB_2026_01_justiceCentered_Citation.csv.zip
+  note: From the Supreme Court Database, case 1961-120; Oyez has no votes for this case.
+  checked: '2026-11-24'
+reading_links:
+  checked: '2026-11-24'
+  links:
+  - site: library-of-congress
+    label: Library of Congress
+    access: official
+    link: https://www.loc.gov/item/usrep370157/
+  - site: justia
+    label: Justia
+    access: free
+    link: https://supreme.justia.com/cases/federal/us/370/157/
+    unchecked: true
+  - site: google-scholar
+    label: Google Scholar
+    access: free
+    link: https://scholar.google.com/scholar?hl=en&as_sdt=2006&q=%22370%20U.S.%20157%22
+    unchecked: true
+  - site: westlaw
+    label: Westlaw
+    access: subscription
+    link: https://1.next.westlaw.com/Link/Document/FullText?findType=Y&cite=370%20U.S.%20157
+    unchecked: true
+  - site: lexis
+    label: Lexis
+    access: subscription
+    link: https://advance.lexis.com/api/search?q=370%20U.S.%20157
+    unchecked: true
+rights:
+  status: no-permission-needed
+  basis: us-government-work
+  basis_note: Opinions of federal courts are works of the U.S. government (17 U.S.C. § 105); the host site's own additions are not reproduced.
+  redistribution: true
+found_in:
+- 2026-11-24-supreme-court-native-cases
+notes: 'Full citation: 370 U.S. 157 (1962). Official report scan: https://tile.loc.gov/storage-services/service/ll/usrep/usrep370/usrep370157/usrep370157.pdf. Written by scripts/caselaw/supreme_court_native_cases.py from the Supreme Court Database (case 1961-120), the Caselaw Access Project''s text of the report and the Library of Congress scan; not yet read by a person.'
+tribes: []
+nations_in_case:
+  checked: '2026-11-24'
+  named: []
+review:
+  status: verified
+  by: scripts/caselaw/supreme_court_native_cases.py
+  date: '2026-11-24'
+  checks:
+  - check: cite
+    result: agree
+    detail: Caselaw Access Project 370 U.S. 157 "Creek Nation v. United States"; Database 370 U.S. 157 "CREEK NATION v. UNITED STATES"
+  - check: scan
+    result: agree
+    detail: Scan has 1 pages; the report runs 157 to 157
+  - check: caption
+    result: agree
+    detail: Caption found in the scan's text at 1.00
+  - check: printed dates
+    result: agree
+    detail: Caselaw Access Project "Argued April 24, 1962. Decided June 4, 1962."; scan "Argued April 24, 1962.--Decided June 4, 1962."
+  - check: decided
+    result: agree
+    detail: 'Printed and Database: 1962-06-04'
+  - check: opinions
+    result: agree
+    detail: 'Report: per curiam Court p. 157; Database writers: none'
+  - check: bench
+    result: agree
+    detail: No Oyez votes; each opinion writer in the report sits on the Database's bench on the side the opinion takes

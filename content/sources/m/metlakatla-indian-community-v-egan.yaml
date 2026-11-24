@@ -1,0 +1,143 @@
+key: metlakatla-indian-community-v-egan
+kind: federal-case
+citation:
+  type: legal_case
+  title: Metlakatla Indian Community v. Egan
+  authority: Supreme Court of the United States
+  container-title: U.S.
+  volume: '363'
+  page: '555'
+  issued:
+    date-parts:
+    - - 1960
+      - 6
+      - 20
+  URL: https://www.loc.gov/item/usrep363555/
+  accessed:
+    date-parts:
+    - - 2026
+      - 11
+      - 24
+caption:
+  printed: METLAKATLA INDIAN COMMUNITY, ANNETTE ISLAND RESERVE, v. EGAN, GOVERNOR OF ALASKA, et al
+  source: https://tile.loc.gov/storage-services/service/ll/usrep/usrep363/usrep363555/usrep363555.pdf
+  checked: '2026-11-24'
+opinions:
+  source: https://tile.loc.gov/storage-services/service/ll/usrep/usrep363/usrep363555/usrep363555.pdf
+  checked: '2026-11-24'
+  list:
+  - kind: majority
+    justice: Felix Frankfurter
+    page: 556
+original_link: https://www.loc.gov/item/usrep363555/
+retrieved: '2026-11-24'
+history:
+  status: live
+  last_checked: '2026-11-24'
+court_dates:
+  argued:
+  - '1960-05-18'
+  printed: Argued May 18, 1960. Decided June 20, 1960.
+  source: https://tile.loc.gov/storage-services/service/ll/usrep/usrep363/usrep363555/usrep363555.pdf
+  checked: '2026-11-24'
+supreme_court:
+  court: Warren Court
+  natural_court: Warren Court (1958-1962)
+  decision_type: majority opinion
+  vote:
+    majority: 6
+    minority: 3
+  justices:
+  - name: John M. Harlan II
+    vote: majority
+  - name: Hugo L. Black
+    vote: minority
+    opinion: coauthored dissent
+  - name: William O. Douglas
+    vote: minority
+    opinion: coauthored dissent
+  - name: Potter Stewart
+    vote: majority
+  - name: William J. Brennan, Jr.
+    vote: majority
+  - name: Earl Warren
+    vote: minority
+    opinion: coauthored dissent
+  - name: Tom C. Clark
+    vote: majority
+  - name: Felix Frankfurter
+    vote: majority
+    opinion: majority
+  - name: Charles E. Whittaker
+    vote: majority
+  source: https://api.oyez.org/cases/1959/326
+  checked: '2026-11-24'
+reading_links:
+  checked: '2026-11-24'
+  links:
+  - site: library-of-congress
+    label: Library of Congress
+    access: official
+    link: https://www.loc.gov/item/usrep363555/
+  - site: justia
+    label: Justia
+    access: free
+    link: https://supreme.justia.com/cases/federal/us/363/555/
+    unchecked: true
+  - site: oyez
+    label: Oyez
+    access: free
+    link: https://www.oyez.org/cases/1959/326
+  - site: google-scholar
+    label: Google Scholar
+    access: free
+    link: https://scholar.google.com/scholar?hl=en&as_sdt=2006&q=%22363%20U.S.%20555%22
+    unchecked: true
+  - site: westlaw
+    label: Westlaw
+    access: subscription
+    link: https://1.next.westlaw.com/Link/Document/FullText?findType=Y&cite=363%20U.S.%20555
+    unchecked: true
+  - site: lexis
+    label: Lexis
+    access: subscription
+    link: https://advance.lexis.com/api/search?q=363%20U.S.%20555
+    unchecked: true
+rights:
+  status: no-permission-needed
+  basis: us-government-work
+  basis_note: Opinions of federal courts are works of the U.S. government (17 U.S.C. § 105); the host site's own additions are not reproduced.
+  redistribution: true
+found_in:
+- 2026-11-24-supreme-court-native-cases
+notes: 'Full citation: 363 U.S. 555 (1960). Official report scan: https://tile.loc.gov/storage-services/service/ll/usrep/usrep363/usrep363555/usrep363555.pdf. Written by scripts/caselaw/supreme_court_native_cases.py from the Supreme Court Database (case 1959-110), the Caselaw Access Project''s text of the report and the Library of Congress scan; not yet read by a person.'
+tribes: []
+nations_in_case:
+  checked: '2026-11-24'
+  named: []
+review:
+  status: unverified
+  by: scripts/caselaw/supreme_court_native_cases.py
+  date: '2026-11-24'
+  checks:
+  - check: cite
+    result: agree
+    detail: Caselaw Access Project 363 U.S. 555 "Metlakatla Indian Community v. Egan"; Database 363 U.S. 555 "METLAKATLA INDIAN COMMUNITY, ANNETTE ISLAND RESERVE, v. EGAN, GOVERNOR OF ALASKA, et al."
+  - check: scan
+    result: agree
+    detail: Scan has 9 pages; the report runs 555 to 563
+  - check: caption
+    result: agree
+    detail: Caption found in the scan's text at 1.00
+  - check: printed dates
+    result: agree
+    detail: Caselaw Access Project "Argued May 18, 1960. Decided June 20, 1960."; scan "Argued May 18, 1960.-Decided June 20, 1960."
+  - check: decided
+    result: agree
+    detail: 'Printed and Database: 1960-06-20'
+  - check: opinions
+    result: settled
+    detail: 'Report: majority Frankfurter p. 556; Database writers: Black, Douglas, Frankfurter, Warren. Read from the scan by an AI reader (record right): p. 556: MR. JUSTICE FRANKFURTER delivered the opinion of the Court. p. 563: ''THE CHIEF JUSTICE, MR. JUSTICE BLACK and MR. JUSTICE DOUGLAS dissent from remitting the parties to'' -- a bare statement of dissent with no opinion text, so it is not listed as an opinion.'
+  - check: bench
+    result: agree
+    detail: Oyez and the Database give the same Justices and votes

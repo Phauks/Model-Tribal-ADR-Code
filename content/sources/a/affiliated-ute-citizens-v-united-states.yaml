@@ -1,0 +1,144 @@
+key: affiliated-ute-citizens-v-united-states
+kind: federal-case
+citation:
+  type: legal_case
+  title: Affiliated Ute Citizens v. United States
+  authority: Supreme Court of the United States
+  container-title: U.S.
+  volume: '406'
+  page: '128'
+  issued:
+    date-parts:
+    - - 1972
+      - 4
+      - 24
+  URL: https://www.loc.gov/item/usrep406128/
+  accessed:
+    date-parts:
+    - - 2026
+      - 11
+      - 24
+caption:
+  printed: AFFILIATED UTE CITIZENS OF UTAH et al. v. UNITED STATES et al
+  source: https://tile.loc.gov/storage-services/service/ll/usrep/usrep406/usrep406128/usrep406128.pdf
+  checked: '2026-11-24'
+opinions:
+  source: https://tile.loc.gov/storage-services/service/ll/usrep/usrep406/usrep406128/usrep406128.pdf
+  checked: '2026-11-24'
+  list:
+  - kind: majority
+    justice: Harry A. Blackmun
+    page: 132
+  - kind: concurrence in part and dissent in part
+    justice: William Orville Douglas
+    page: 157
+original_link: https://www.loc.gov/item/usrep406128/
+retrieved: '2026-11-24'
+history:
+  status: live
+  last_checked: '2026-11-24'
+court_dates:
+  argued:
+  - '1971-10-18'
+  - '1971-04-24'
+  printed: Argued October 18, 1971 Decided April 24, 1972
+  source: https://tile.loc.gov/storage-services/service/ll/usrep/usrep406/usrep406128/usrep406128.pdf
+  checked: '2026-11-24'
+supreme_court:
+  court: Burger Court
+  natural_court: Burger Court (1971-1972)
+  decision_type: majority opinion
+  vote:
+    majority: 7
+    minority: 0
+  justices:
+  - name: Warren E. Burger
+    vote: majority
+  - name: William O. Douglas
+    vote: majority
+  - name: William J. Brennan, Jr.
+    vote: majority
+  - name: Potter Stewart
+    vote: majority
+  - name: Byron R. White
+    vote: majority
+  - name: Thurgood Marshall
+    vote: majority
+  - name: Harry A. Blackmun
+    vote: majority
+    opinion: majority
+  - name: Lewis F. Powell, Jr.
+    vote: none
+  - name: William H. Rehnquist
+    vote: none
+  source: https://api.oyez.org/cases/1971/70-78
+  checked: '2026-11-24'
+reading_links:
+  checked: '2026-11-24'
+  links:
+  - site: library-of-congress
+    label: Library of Congress
+    access: official
+    link: https://www.loc.gov/item/usrep406128/
+  - site: justia
+    label: Justia
+    access: free
+    link: https://supreme.justia.com/cases/federal/us/406/128/
+    unchecked: true
+  - site: oyez
+    label: Oyez
+    access: free
+    link: https://www.oyez.org/cases/1971/70-78
+  - site: google-scholar
+    label: Google Scholar
+    access: free
+    link: https://scholar.google.com/scholar?hl=en&as_sdt=2006&q=%22406%20U.S.%20128%22
+    unchecked: true
+  - site: westlaw
+    label: Westlaw
+    access: subscription
+    link: https://1.next.westlaw.com/Link/Document/FullText?findType=Y&cite=406%20U.S.%20128
+    unchecked: true
+  - site: lexis
+    label: Lexis
+    access: subscription
+    link: https://advance.lexis.com/api/search?q=406%20U.S.%20128
+    unchecked: true
+rights:
+  status: no-permission-needed
+  basis: us-government-work
+  basis_note: Opinions of federal courts are works of the U.S. government (17 U.S.C. § 105); the host site's own additions are not reproduced.
+  redistribution: true
+found_in:
+- 2026-11-24-supreme-court-native-cases
+notes: 'Full citation: 406 U.S. 128 (1972). Official report scan: https://tile.loc.gov/storage-services/service/ll/usrep/usrep406/usrep406128/usrep406128.pdf. Written by scripts/caselaw/supreme_court_native_cases.py from the Supreme Court Database (case 1971-097), the Caselaw Access Project''s text of the report and the Library of Congress scan; not yet read by a person.'
+tribes: []
+nations_in_case:
+  checked: '2026-11-24'
+  named: []
+review:
+  status: unverified
+  by: scripts/caselaw/supreme_court_native_cases.py
+  date: '2026-11-24'
+  checks:
+  - check: cite
+    result: agree
+    detail: Caselaw Access Project 406 U.S. 128 "Affiliated Ute Citizens v. United States"; Database 406 U.S. 128 "AFFILIATED UTE CITIZENS OF UTAH et al. v. UNITED STATES et al."
+  - check: scan
+    result: differs
+    detail: Scan has 36 pages; the report runs 128 to 164
+  - check: caption
+    result: agree
+    detail: Caption found in the scan's text at 1.00
+  - check: printed dates
+    result: agree
+    detail: Caselaw Access Project "Argued October 18, 1971 Decided April 24, 1972"; scan "Argued October 18, 1971-Decided April 24, 1972"
+  - check: decided
+    result: agree
+    detail: 'Printed and Database: 1972-04-24'
+  - check: opinions
+    result: settled
+    detail: 'Report: majority Blackmun p. 132, concurrence in part and dissent in part Douglas p. 157; Database writers: Blackmun. Read from the scan by an AI reader (record right): p. 132: MR.JUSTICE BLACKMUN delivered the opinion of the Court. p. 157: MR. JUSTICE DOUGLAS, concurring in. part and dissent-'
+  - check: bench
+    result: agree
+    detail: Oyez and the Database give the same Justices and votes

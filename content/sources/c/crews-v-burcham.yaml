@@ -1,0 +1,132 @@
+key: crews-v-burcham
+kind: federal-case
+citation:
+  type: legal_case
+  title: Crews v. Burcham
+  authority: Supreme Court of the United States
+  container-title: U.S.
+  volume: '66'
+  page: '352'
+  issued:
+    date-parts:
+    - - 1862
+      - 2
+      - 3
+  URL: https://www.loc.gov/item/usrep066352/
+  accessed:
+    date-parts:
+    - - 2026
+      - 11
+      - 24
+caption:
+  printed: Crews et al. vs. Burcham et al
+  source: https://tile.loc.gov/storage-services/service/ll/usrep/usrep066/usrep066352/usrep066352.pdf
+  checked: '2026-11-24'
+opinions:
+  source: https://tile.loc.gov/storage-services/service/ll/usrep/usrep066/usrep066352/usrep066352.pdf
+  checked: '2026-11-24'
+  list:
+  - kind: majority
+    justice: Samuel Nelson
+    page: 355
+original_link: https://www.loc.gov/item/usrep066352/
+retrieved: '2026-11-24'
+history:
+  status: live
+  last_checked: '2026-11-24'
+court_dates:
+  argued:
+  - '1862-01-21'
+  - '1862-01-22'
+  printed: Argued Jan. 21-22, 1862; decided Feb. 3, 1862
+  source: https://www.supremecourt.gov/opinions/datesofdecisions.pdf
+  note: The report prints only the term. These dates are from the Supreme Court Library's table of decision and argument dates, which takes them from the Court's Engrossed Minutes.
+  checked: '2026-11-24'
+supreme_court:
+  court: Taney Court
+  natural_court: Taney Court (1862-1862)
+  decision_type: majority opinion
+  vote:
+    majority: 5
+    minority: 0
+  justices:
+  - name: Roger Brooke Taney
+    vote: majority
+  - name: James Moore Wayne
+    vote: not recorded
+  - name: James Moore Wayne
+    vote: majority
+  - name: John Catron
+    vote: not recorded
+  - name: Samuel Nelson
+    vote: majority
+    opinion: majority
+  - name: Robert Cooper Grier
+    vote: majority
+  - name: Nathan Clifford
+    vote: majority
+  source: http://scdb.wustl.edu/_brickFiles/Legacy_07/SCDB_Legacy_07_justiceCentered_Citation.csv.zip
+  note: From the Supreme Court Database, case 1861-026; Oyez has no votes for this case.
+  checked: '2026-11-24'
+reading_links:
+  checked: '2026-11-24'
+  links:
+  - site: library-of-congress
+    label: Library of Congress
+    access: official
+    link: https://www.loc.gov/item/usrep066352/
+  - site: justia
+    label: Justia
+    access: free
+    link: https://supreme.justia.com/cases/federal/us/66/352/
+    unchecked: true
+  - site: google-scholar
+    label: Google Scholar
+    access: free
+    link: https://scholar.google.com/scholar?hl=en&as_sdt=2006&q=%2266%20U.S.%20352%22
+    unchecked: true
+  - site: westlaw
+    label: Westlaw
+    access: subscription
+    link: https://1.next.westlaw.com/Link/Document/FullText?findType=Y&cite=66%20U.S.%20352
+    unchecked: true
+  - site: lexis
+    label: Lexis
+    access: subscription
+    link: https://advance.lexis.com/api/search?q=66%20U.S.%20352
+    unchecked: true
+rights:
+  status: no-permission-needed
+  basis: us-government-work
+  basis_note: Opinions of federal courts are works of the U.S. government (17 U.S.C. § 105); the host site's own additions are not reproduced.
+  redistribution: true
+found_in:
+- 2026-11-24-supreme-court-native-cases
+notes: 'Full citation: 66 U.S. (1 Black 352) 352 (1862). Official report scan: https://tile.loc.gov/storage-services/service/ll/usrep/usrep066/usrep066352/usrep066352.pdf. Written by scripts/caselaw/supreme_court_native_cases.py from the Supreme Court Database (case 1861-026), the Caselaw Access Project''s text of the report and the Library of Congress scan; not yet read by a person.'
+tribes: []
+nations_in_case:
+  checked: '2026-11-24'
+  named: []
+review:
+  status: verified
+  by: scripts/caselaw/supreme_court_native_cases.py
+  date: '2026-11-24'
+  checks:
+  - check: cite
+    result: agree
+    detail: Caselaw Access Project 66 U.S. 352 "Crews v. Burcham"; Database 66 U.S. 352 "CREWS et al. VS. BURCHAM et al."
+  - check: scan
+    result: agree
+    detail: Scan has 7 pages; the report runs 352 to 358
+  - check: caption
+    result: agree
+    detail: Caption found in the scan's text at 1.00
+  - check: decided
+    result: agree
+    detail: Supreme Court Library's table (from the Court's minutes) Feb. 3, 1862; Database 1862-02-03
+  - check: opinions
+    result: agree
+    detail: 'Report: majority Nelson p. 355; Database writers: Nelson'
+  - check: bench
+    result: agree
+    detail: No Oyez votes; each opinion writer in the report sits on the Database's bench on the side the opinion takes

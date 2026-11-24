@@ -1,0 +1,133 @@
+key: doe-ex-dem-mann-v-wilson
+kind: federal-case
+citation:
+  type: legal_case
+  title: Doe ex dem. Mann v. Wilson
+  authority: Supreme Court of the United States
+  container-title: U.S.
+  volume: '64'
+  page: '457'
+  issued:
+    date-parts:
+    - - 1860
+      - 5
+      - 4
+  URL: https://www.loc.gov/item/usrep064457/
+  accessed:
+    date-parts:
+    - - 2026
+      - 11
+      - 24
+caption:
+  printed: John Doe, ex dem. Curtis Mann and Dolphus Hannah, Plaintiffs in Error, v. William Wilson
+  source: https://tile.loc.gov/storage-services/service/ll/usrep/usrep064/usrep064457/usrep064457.pdf
+  checked: '2026-11-24'
+opinions:
+  source: https://tile.loc.gov/storage-services/service/ll/usrep/usrep064/usrep064457/usrep064457.pdf
+  checked: '2026-11-24'
+  list:
+  - kind: majority
+    justice: John Catron
+    page: 461
+original_link: https://www.loc.gov/item/usrep064457/
+retrieved: '2026-11-24'
+history:
+  status: live
+  last_checked: '2026-11-24'
+court_dates:
+  printed: Decided May 4, 1860
+  source: https://www.supremecourt.gov/opinions/datesofdecisions.pdf
+  note: The report prints only the term. These dates are from the Supreme Court Library's table of decision and argument dates, which takes them from the Court's Engrossed Minutes.
+  checked: '2026-11-24'
+supreme_court:
+  court: Taney Court
+  natural_court: Taney Court (1858-1860)
+  decision_type: majority opinion
+  vote:
+    majority: 9
+    minority: 0
+  justices:
+  - name: Roger Brooke Taney
+    vote: majority
+  - name: John McLean
+    vote: majority
+  - name: James Moore Wayne
+    vote: majority
+  - name: John Catron
+    vote: majority
+    opinion: majority
+  - name: Peter Vivian Daniel
+    vote: majority
+  - name: Samuel Nelson
+    vote: majority
+  - name: Robert Cooper Grier
+    vote: majority
+  - name: John Archibald Campbell
+    vote: majority
+  - name: Nathan Clifford
+    vote: majority
+  source: http://scdb.wustl.edu/_brickFiles/Legacy_07/SCDB_Legacy_07_justiceCentered_Citation.csv.zip
+  note: From the Supreme Court Database, case 1859-115; Oyez has no votes for this case.
+  checked: '2026-11-24'
+reading_links:
+  checked: '2026-11-24'
+  links:
+  - site: library-of-congress
+    label: Library of Congress
+    access: official
+    link: https://www.loc.gov/item/usrep064457/
+  - site: justia
+    label: Justia
+    access: free
+    link: https://supreme.justia.com/cases/federal/us/64/457/
+    unchecked: true
+  - site: google-scholar
+    label: Google Scholar
+    access: free
+    link: https://scholar.google.com/scholar?hl=en&as_sdt=2006&q=%2264%20U.S.%20457%22
+    unchecked: true
+  - site: westlaw
+    label: Westlaw
+    access: subscription
+    link: https://1.next.westlaw.com/Link/Document/FullText?findType=Y&cite=64%20U.S.%20457
+    unchecked: true
+  - site: lexis
+    label: Lexis
+    access: subscription
+    link: https://advance.lexis.com/api/search?q=64%20U.S.%20457
+    unchecked: true
+rights:
+  status: no-permission-needed
+  basis: us-government-work
+  basis_note: Opinions of federal courts are works of the U.S. government (17 U.S.C. § 105); the host site's own additions are not reproduced.
+  redistribution: true
+found_in:
+- 2026-11-24-supreme-court-native-cases
+notes: 'Full citation: 64 U.S. (23 How. 457) 457 (1860). Official report scan: https://tile.loc.gov/storage-services/service/ll/usrep/usrep064/usrep064457/usrep064457.pdf. Written by scripts/caselaw/supreme_court_native_cases.py from the Supreme Court Database (case 1859-115), the Caselaw Access Project''s text of the report and the Library of Congress scan; not yet read by a person.'
+tribes: []
+nations_in_case:
+  checked: '2026-11-24'
+  named: []
+review:
+  status: verified
+  by: scripts/caselaw/supreme_court_native_cases.py
+  date: '2026-11-24'
+  checks:
+  - check: cite
+    result: agree
+    detail: Caselaw Access Project 64 U.S. 457 "Doe ex dem. Mann v. Wilson"; Database 64 U.S. 457 "JOHN DOE, EX DEM. CURTIS MANN AND DOLPHUS HANNAH, PLAINTIFFS IN ERROR, v. WILLIAM WILSON"
+  - check: scan
+    result: agree
+    detail: Scan has 8 pages; the report runs 457 to 464
+  - check: caption
+    result: agree
+    detail: Caption found in the scan's text at 0.94
+  - check: decided
+    result: agree
+    detail: Supreme Court Library's table (from the Court's minutes) May 4, 1860; Database 1860-05-04
+  - check: opinions
+    result: agree
+    detail: 'Report: majority Catron p. 461; Database writers: Catron'
+  - check: bench
+    result: agree
+    detail: No Oyez votes; each opinion writer in the report sits on the Database's bench on the side the opinion takes

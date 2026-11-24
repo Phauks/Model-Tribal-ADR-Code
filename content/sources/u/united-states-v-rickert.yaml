@@ -1,0 +1,138 @@
+key: united-states-v-rickert
+kind: federal-case
+citation:
+  type: legal_case
+  title: United States v. Rickert
+  authority: Supreme Court of the United States
+  container-title: U.S.
+  volume: '188'
+  page: '432'
+  issued:
+    date-parts:
+    - - 1903
+      - 2
+      - 23
+  URL: https://www.loc.gov/item/usrep188432/
+  accessed:
+    date-parts:
+    - - 2026
+      - 11
+      - 24
+caption:
+  printed: UNITED STATES v. RICKERT
+  source: https://tile.loc.gov/storage-services/service/ll/usrep/usrep188/usrep188432/usrep188432.pdf
+  checked: '2026-11-24'
+opinions:
+  source: https://tile.loc.gov/storage-services/service/ll/usrep/usrep188/usrep188432/usrep188432.pdf
+  checked: '2026-11-24'
+  list:
+  - kind: majority
+    justice: John Marshall Harlan
+    page: 435
+original_link: https://www.loc.gov/item/usrep188432/
+retrieved: '2026-11-24'
+history:
+  status: live
+  last_checked: '2026-11-24'
+court_dates:
+  argued:
+  - '1903-01-28'
+  - '1903-01-29'
+  printed: Argued January 28, 29,1903. Decided February 23, 1903.
+  source: https://tile.loc.gov/storage-services/service/ll/usrep/usrep188/usrep188432/usrep188432.pdf
+  checked: '2026-11-24'
+supreme_court:
+  court: Fuller Court
+  natural_court: Fuller Court (1903-1903)
+  decision_type: majority opinion
+  vote:
+    majority: 8
+    minority: 0
+  justices:
+  - name: Melville Weston Fuller
+    vote: majority
+  - name: Edward Douglass White
+    vote: majority
+  - name: John Marshall Harlan
+    vote: majority
+    opinion: majority
+  - name: David Josiah Brewer
+    vote: not recorded
+  - name: Henry Billings Brown
+    vote: majority
+  - name: George Shiras, Jr.
+    vote: majority
+  - name: Rufus Wheeler Peckham
+    vote: majority
+  - name: Joseph McKenna
+    vote: majority
+  - name: Oliver Wendell Holmes
+    vote: majority
+  source: http://scdb.wustl.edu/_brickFiles/Legacy_07/SCDB_Legacy_07_justiceCentered_Citation.csv.zip
+  note: From the Supreme Court Database, case 1902-063; Oyez has no votes for this case.
+  checked: '2026-11-24'
+reading_links:
+  checked: '2026-11-24'
+  links:
+  - site: library-of-congress
+    label: Library of Congress
+    access: official
+    link: https://www.loc.gov/item/usrep188432/
+  - site: justia
+    label: Justia
+    access: free
+    link: https://supreme.justia.com/cases/federal/us/188/432/
+    unchecked: true
+  - site: google-scholar
+    label: Google Scholar
+    access: free
+    link: https://scholar.google.com/scholar?hl=en&as_sdt=2006&q=%22188%20U.S.%20432%22
+    unchecked: true
+  - site: westlaw
+    label: Westlaw
+    access: subscription
+    link: https://1.next.westlaw.com/Link/Document/FullText?findType=Y&cite=188%20U.S.%20432
+    unchecked: true
+  - site: lexis
+    label: Lexis
+    access: subscription
+    link: https://advance.lexis.com/api/search?q=188%20U.S.%20432
+    unchecked: true
+rights:
+  status: no-permission-needed
+  basis: us-government-work
+  basis_note: Opinions of federal courts are works of the U.S. government (17 U.S.C. § 105); the host site's own additions are not reproduced.
+  redistribution: true
+found_in:
+- 2026-11-24-supreme-court-native-cases
+notes: 'Full citation: 188 U.S. 432 (1903). Official report scan: https://tile.loc.gov/storage-services/service/ll/usrep/usrep188/usrep188432/usrep188432.pdf. Written by scripts/caselaw/supreme_court_native_cases.py from the Supreme Court Database (case 1902-063), the Caselaw Access Project''s text of the report and the Library of Congress scan; not yet read by a person.'
+tribes: []
+nations_in_case:
+  checked: '2026-11-24'
+  named: []
+review:
+  status: verified
+  by: scripts/caselaw/supreme_court_native_cases.py
+  date: '2026-11-24'
+  checks:
+  - check: cite
+    result: agree
+    detail: Caselaw Access Project 188 U.S. 432 "United States v. Rickert"; Database 188 U.S. 432 "UNITED STATES v. RICKERT"
+  - check: scan
+    result: agree
+    detail: Scan has 14 pages; the report runs 432 to 445
+  - check: caption
+    result: agree
+    detail: Caption found in the scan's text at 1.00
+  - check: printed dates
+    result: agree
+    detail: Caselaw Access Project "Argued January 28, 29,1903. Decided February 23, 1903."; scan "Argued January 28, 29, 1903.-Decided Februai 23, 1903."
+  - check: decided
+    result: agree
+    detail: 'Printed and Database: 1903-02-23'
+  - check: opinions
+    result: agree
+    detail: 'Report: majority Harlan p. 435; Database writers: Harlan'
+  - check: bench
+    result: agree
+    detail: No Oyez votes; each opinion writer in the report sits on the Database's bench on the side the opinion takes

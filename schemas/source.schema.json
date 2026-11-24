@@ -211,7 +211,11 @@
                   "concurrence",
                   "special concurrence",
                   "concurrence in the result",
+                  "concurrence in part and in the judgment",
+                  "concurrence in part and dissent in part",
+                  "concurrence in part, concurrence in the judgment in part, and dissent in part",
                   "dissent",
+                  "dissent in part",
                   "per curiam"
                 ]
               },
@@ -393,7 +397,31 @@
       "description": "Research session ids (file names without .md) that found or updated this source.",
       "items": { "type": "string", "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2}-[a-z0-9-]+$" }
     },
-    "notes": { "type": "string" }
+    "notes": { "type": "string" },
+    "review": {
+      "type": "object",
+      "description": "For a record a script wrote: the cross-checks the script ran between independent sources and what each found (scripts/caselaw/supreme_court_native_cases.py). \"verified\" means every check agreed, not that a person has read the record; a person who reads it records that with status \"reviewed\". The record's other `checked` dates are the day the script read the sources.",
+      "additionalProperties": false,
+      "required": ["status", "by", "date", "checks"],
+      "properties": {
+        "status": { "type": "string", "enum": ["unverified", "verified", "reviewed"] },
+        "by": { "type": "string", "description": "The script, or the person who reviewed it." },
+        "date": { "$ref": "common.schema.json#/$defs/calendarDate" },
+        "checks": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": ["check", "result"],
+            "properties": {
+              "check": { "type": "string" },
+              "result": { "type": "string", "enum": ["agree", "differs", "missing", "settled"] },
+              "detail": { "type": "string" }
+            }
+          }
+        }
+      }
+    }
   },
   "$defs": {
     "courtDays": {

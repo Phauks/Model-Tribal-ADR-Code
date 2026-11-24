@@ -1,0 +1,141 @@
+key: united-states-v-mazurie
+kind: federal-case
+citation:
+  type: legal_case
+  title: United States v. Mazurie
+  authority: Supreme Court of the United States
+  container-title: U.S.
+  volume: '419'
+  page: '544'
+  issued:
+    date-parts:
+    - - 1975
+      - 1
+      - 21
+  URL: https://www.loc.gov/item/usrep419544/
+  accessed:
+    date-parts:
+    - - 2026
+      - 11
+      - 24
+caption:
+  printed: UNITED STATES v. MAZURIE et al
+  source: https://tile.loc.gov/storage-services/service/ll/usrep/usrep419/usrep419544/usrep419544.pdf
+  checked: '2026-11-24'
+opinions:
+  source: https://tile.loc.gov/storage-services/service/ll/usrep/usrep419/usrep419544/usrep419544.pdf
+  checked: '2026-11-24'
+  list:
+  - kind: majority
+    justice: William H. Rehnquist
+    page: 545
+original_link: https://www.loc.gov/item/usrep419544/
+retrieved: '2026-11-24'
+history:
+  status: live
+  last_checked: '2026-11-24'
+court_dates:
+  argued:
+  - '1974-11-12'
+  - '1974-01-21'
+  printed: Argued November 12, 1974 Decided January 21, 1975
+  source: https://tile.loc.gov/storage-services/service/ll/usrep/usrep419/usrep419544/usrep419544.pdf
+  checked: '2026-11-24'
+supreme_court:
+  court: Burger Court
+  natural_court: Burger Court (1972-1975)
+  decision_type: majority opinion
+  vote:
+    majority: 9
+    minority: 0
+  justices:
+  - name: William O. Douglas
+    vote: majority
+  - name: Potter Stewart
+    vote: majority
+  - name: Thurgood Marshall
+    vote: majority
+  - name: William J. Brennan, Jr.
+    vote: majority
+  - name: Byron R. White
+    vote: majority
+  - name: Warren E. Burger
+    vote: majority
+  - name: Harry A. Blackmun
+    vote: majority
+  - name: Lewis F. Powell, Jr.
+    vote: majority
+  - name: William H. Rehnquist
+    vote: majority
+    opinion: majority
+  source: https://api.oyez.org/cases/1974/73-1018
+  checked: '2026-11-24'
+reading_links:
+  checked: '2026-11-24'
+  links:
+  - site: library-of-congress
+    label: Library of Congress
+    access: official
+    link: https://www.loc.gov/item/usrep419544/
+  - site: justia
+    label: Justia
+    access: free
+    link: https://supreme.justia.com/cases/federal/us/419/544/
+    unchecked: true
+  - site: oyez
+    label: Oyez
+    access: free
+    link: https://www.oyez.org/cases/1974/73-1018
+  - site: google-scholar
+    label: Google Scholar
+    access: free
+    link: https://scholar.google.com/scholar?hl=en&as_sdt=2006&q=%22419%20U.S.%20544%22
+    unchecked: true
+  - site: westlaw
+    label: Westlaw
+    access: subscription
+    link: https://1.next.westlaw.com/Link/Document/FullText?findType=Y&cite=419%20U.S.%20544
+    unchecked: true
+  - site: lexis
+    label: Lexis
+    access: subscription
+    link: https://advance.lexis.com/api/search?q=419%20U.S.%20544
+    unchecked: true
+rights:
+  status: no-permission-needed
+  basis: us-government-work
+  basis_note: Opinions of federal courts are works of the U.S. government (17 U.S.C. § 105); the host site's own additions are not reproduced.
+  redistribution: true
+found_in:
+- 2026-11-24-supreme-court-native-cases
+notes: 'Full citation: 419 U.S. 544 (1975). Official report scan: https://tile.loc.gov/storage-services/service/ll/usrep/usrep419/usrep419544/usrep419544.pdf. Written by scripts/caselaw/supreme_court_native_cases.py from the Supreme Court Database (case 1974-026), the Caselaw Access Project''s text of the report and the Library of Congress scan; not yet read by a person.'
+tribes: []
+nations_in_case:
+  checked: '2026-11-24'
+  named: []
+review:
+  status: verified
+  by: scripts/caselaw/supreme_court_native_cases.py
+  date: '2026-11-24'
+  checks:
+  - check: cite
+    result: agree
+    detail: Caselaw Access Project 419 U.S. 544 "United States v. Mazurie"; Database 419 U.S. 544 "UNITED STATES v. MAZURIE et al."
+  - check: scan
+    result: agree
+    detail: Scan has 16 pages; the report runs 544 to 559
+  - check: caption
+    result: agree
+    detail: Caption found in the scan's text at 1.00
+  - check: printed dates
+    result: agree
+    detail: Caselaw Access Project "Argued November 12, 1974 Decided January 21, 1975"; scan "Argued November 12, 1974-Decided January 21,1975"
+  - check: decided
+    result: agree
+    detail: 'Printed and Database: 1975-01-21'
+  - check: opinions
+    result: agree
+    detail: 'Report: majority Rehnquist p. 545; Database writers: Rehnquist'
+  - check: bench
+    result: agree
+    detail: Oyez and the Database give the same Justices and votes

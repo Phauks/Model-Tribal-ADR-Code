@@ -1,0 +1,137 @@
+key: united-states-v-new-york-indians
+kind: federal-case
+citation:
+  type: legal_case
+  title: United States v. New York Indians
+  authority: Supreme Court of the United States
+  container-title: U.S.
+  volume: '173'
+  page: '464'
+  issued:
+    date-parts:
+    - - 1899
+      - 3
+      - 20
+  URL: https://www.loc.gov/item/usrep173464/
+  accessed:
+    date-parts:
+    - - 2026
+      - 11
+      - 24
+caption:
+  printed: UNITED STATES v. NEW YORK INDIANS
+  source: https://tile.loc.gov/storage-services/service/ll/usrep/usrep173/usrep173464/usrep173464.pdf
+  checked: '2026-11-24'
+opinions:
+  source: https://tile.loc.gov/storage-services/service/ll/usrep/usrep173/usrep173464/usrep173464.pdf
+  checked: '2026-11-24'
+  list:
+  - kind: majority
+    justice: Henry Billings Brown
+    page: 468
+original_link: https://www.loc.gov/item/usrep173464/
+retrieved: '2026-11-24'
+history:
+  status: live
+  last_checked: '2026-11-24'
+court_dates:
+  submitted:
+  - '1899-01-30'
+  printed: Submitted January 30, 1899. Decided March 20, 1899.
+  source: https://tile.loc.gov/storage-services/service/ll/usrep/usrep173/usrep173464/usrep173464.pdf
+  checked: '2026-11-24'
+supreme_court:
+  court: Fuller Court
+  natural_court: Fuller Court (1898-1902)
+  decision_type: majority opinion
+  vote:
+    majority: 6
+    minority: 3
+  justices:
+  - name: Melville Weston Fuller
+    vote: minority
+  - name: Edward Douglass White
+    vote: majority
+  - name: John Marshall Harlan
+    vote: minority
+  - name: Horace Gray
+    vote: majority
+  - name: David Josiah Brewer
+    vote: minority
+  - name: Henry Billings Brown
+    vote: majority
+    opinion: majority
+  - name: George Shiras, Jr.
+    vote: majority
+  - name: Rufus Wheeler Peckham
+    vote: majority
+  - name: Joseph McKenna
+    vote: majority
+  source: http://scdb.wustl.edu/_brickFiles/Legacy_07/SCDB_Legacy_07_justiceCentered_Citation.csv.zip
+  note: From the Supreme Court Database, case 1898-103; Oyez has no votes for this case.
+  checked: '2026-11-24'
+reading_links:
+  checked: '2026-11-24'
+  links:
+  - site: library-of-congress
+    label: Library of Congress
+    access: official
+    link: https://www.loc.gov/item/usrep173464/
+  - site: justia
+    label: Justia
+    access: free
+    link: https://supreme.justia.com/cases/federal/us/173/464/
+    unchecked: true
+  - site: google-scholar
+    label: Google Scholar
+    access: free
+    link: https://scholar.google.com/scholar?hl=en&as_sdt=2006&q=%22173%20U.S.%20464%22
+    unchecked: true
+  - site: westlaw
+    label: Westlaw
+    access: subscription
+    link: https://1.next.westlaw.com/Link/Document/FullText?findType=Y&cite=173%20U.S.%20464
+    unchecked: true
+  - site: lexis
+    label: Lexis
+    access: subscription
+    link: https://advance.lexis.com/api/search?q=173%20U.S.%20464
+    unchecked: true
+rights:
+  status: no-permission-needed
+  basis: us-government-work
+  basis_note: Opinions of federal courts are works of the U.S. government (17 U.S.C. § 105); the host site's own additions are not reproduced.
+  redistribution: true
+found_in:
+- 2026-11-24-supreme-court-native-cases
+notes: 'Full citation: 173 U.S. 464 (1899). Official report scan: https://tile.loc.gov/storage-services/service/ll/usrep/usrep173/usrep173464/usrep173464.pdf. Written by scripts/caselaw/supreme_court_native_cases.py from the Supreme Court Database (case 1898-103), the Caselaw Access Project''s text of the report and the Library of Congress scan; not yet read by a person.'
+tribes: []
+nations_in_case:
+  checked: '2026-11-24'
+  named: []
+review:
+  status: verified
+  by: scripts/caselaw/supreme_court_native_cases.py
+  date: '2026-11-24'
+  checks:
+  - check: cite
+    result: agree
+    detail: Caselaw Access Project 173 U.S. 464 "United States v. New York Indians"; Database 173 U.S. 464 "UNITED STATES v. NEW YORK INDIANS"
+  - check: scan
+    result: agree
+    detail: Scan has 10 pages; the report runs 464 to 473
+  - check: caption
+    result: agree
+    detail: Caption found in the scan's text at 1.00
+  - check: printed dates
+    result: agree
+    detail: Caselaw Access Project "Submitted January 30, 1899. Decided March 20, 1899."; scan "Submitted January 30, 1899.- Decided March 20, 1599."
+  - check: decided
+    result: agree
+    detail: 'Printed and Database: 1899-03-20'
+  - check: opinions
+    result: agree
+    detail: 'Report: majority Brown p. 468; Database writers: Brown'
+  - check: bench
+    result: agree
+    detail: No Oyez votes; each opinion writer in the report sits on the Database's bench on the side the opinion takes

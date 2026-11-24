@@ -79,6 +79,8 @@ export interface CasePage {
 	nationPages: { name: string; link: string }[];
 	court?: { name: string; link: string };
 	sources: SourceEntry[];
+	/** Set for a record a script wrote whose sources do not yet all agree (review.status "unverified", schemas/source.schema.json). */
+	unverified?: boolean;
 }
 
 interface CaseRecordParts {
@@ -86,6 +88,7 @@ interface CaseRecordParts {
 	opinions?: { list: OpinionEntry[] };
 	nations_in_case?: { named: { nation: string; named_as: string; role: string; note?: string }[] };
 	supreme_court?: { court: string; justices?: { name: string; opinion?: string }[] };
+	review?: { status: string };
 }
 
 const roles: Record<string, string> = { party: 'Party', government: 'Party through its officials or agency', subject: 'Not a party' };
@@ -247,6 +250,7 @@ export function casePage(key: string): CasePage {
 		essays: essaysCiting(key, name),
 		nationPages: nations.filter((nation) => nationNamesAndKinds().has(nation.id)).map((nation) => ({ name: nation.name, link: `/nations/${nation.id}` })),
 		court: bench && courtLink ? { name: bench.court, link: courtLink } : undefined,
-		sources: box.sources
+		sources: box.sources,
+		unverified: record.review?.status === 'unverified' || undefined
 	};
 }

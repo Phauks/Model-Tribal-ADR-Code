@@ -1,0 +1,142 @@
+key: metlakatla-indian-community-annette-islands-reserve-v-egan
+kind: federal-case
+citation:
+  type: legal_case
+  title: Metlakatla Indian Community, Annette Islands Reserve v. Egan
+  authority: Supreme Court of the United States
+  container-title: U.S.
+  volume: '369'
+  page: '45'
+  issued:
+    date-parts:
+    - - 1962
+      - 3
+      - 5
+  URL: https://www.loc.gov/item/usrep369045/
+  accessed:
+    date-parts:
+    - - 2026
+      - 11
+      - 24
+caption:
+  printed: METLAKATLA INDIAN COMMUNITY, ANNETTE ISLANDS RESERVE, v. EGAN, GOVERNOR OF ALASKA, et al
+  source: https://tile.loc.gov/storage-services/service/ll/usrep/usrep369/usrep369045/usrep369045.pdf
+  checked: '2026-11-24'
+opinions:
+  source: https://tile.loc.gov/storage-services/service/ll/usrep/usrep369/usrep369045/usrep369045.pdf
+  checked: '2026-11-24'
+  list:
+  - kind: majority
+    justice: Felix Frankfurter
+    page: 46
+original_link: https://www.loc.gov/item/usrep369045/
+retrieved: '2026-11-24'
+history:
+  status: live
+  last_checked: '2026-11-24'
+court_dates:
+  argued:
+  - '1961-12-13'
+  - '1961-12-14'
+  printed: Argued December 13-14, 1961. Decided March 5, 1962.
+  source: https://tile.loc.gov/storage-services/service/ll/usrep/usrep369/usrep369045/usrep369045.pdf
+  checked: '2026-11-24'
+supreme_court:
+  court: Warren Court
+  natural_court: Warren Court (1958-1962)
+  decision_type: majority opinion
+  vote:
+    majority: 9
+    minority: 0
+  justices:
+  - name: Earl Warren
+    vote: majority
+  - name: John Marshall Harlan
+    vote: majority
+  - name: Hugo Lafayette Black
+    vote: majority
+  - name: Felix Frankfurter
+    vote: majority
+    opinion: majority
+  - name: William Orville Douglas
+    vote: majority
+  - name: Tom Campbell Clark
+    vote: majority
+  - name: William J. Brennan, Jr.
+    vote: majority
+  - name: Charles Evans Whittaker
+    vote: majority
+  - name: Potter Stewart
+    vote: majority
+  source: http://scdb.wustl.edu/_brickFiles/2026_01/SCDB_2026_01_justiceCentered_Citation.csv.zip
+  note: From the Supreme Court Database, case 1961-041; Oyez has no votes for this case.
+  checked: '2026-11-24'
+reading_links:
+  checked: '2026-11-24'
+  links:
+  - site: library-of-congress
+    label: Library of Congress
+    access: official
+    link: https://www.loc.gov/item/usrep369045/
+  - site: justia
+    label: Justia
+    access: free
+    link: https://supreme.justia.com/cases/federal/us/369/45/
+    unchecked: true
+  - site: oyez
+    label: Oyez
+    access: free
+    link: https://www.oyez.org/cases/1961/2
+  - site: google-scholar
+    label: Google Scholar
+    access: free
+    link: https://scholar.google.com/scholar?hl=en&as_sdt=2006&q=%22369%20U.S.%2045%22
+    unchecked: true
+  - site: westlaw
+    label: Westlaw
+    access: subscription
+    link: https://1.next.westlaw.com/Link/Document/FullText?findType=Y&cite=369%20U.S.%2045
+    unchecked: true
+  - site: lexis
+    label: Lexis
+    access: subscription
+    link: https://advance.lexis.com/api/search?q=369%20U.S.%2045
+    unchecked: true
+rights:
+  status: no-permission-needed
+  basis: us-government-work
+  basis_note: Opinions of federal courts are works of the U.S. government (17 U.S.C. § 105); the host site's own additions are not reproduced.
+  redistribution: true
+found_in:
+- 2026-11-24-supreme-court-native-cases
+notes: 'Full citation: 369 U.S. 45 (1962). Official report scan: https://tile.loc.gov/storage-services/service/ll/usrep/usrep369/usrep369045/usrep369045.pdf. Written by scripts/caselaw/supreme_court_native_cases.py from the Supreme Court Database (case 1961-041), the Caselaw Access Project''s text of the report and the Library of Congress scan; not yet read by a person.'
+tribes: []
+nations_in_case:
+  checked: '2026-11-24'
+  named: []
+review:
+  status: verified
+  by: scripts/caselaw/supreme_court_native_cases.py
+  date: '2026-11-24'
+  checks:
+  - check: cite
+    result: agree
+    detail: Caselaw Access Project 369 U.S. 45 "Metlakatla Indian Community, Annette Islands Reserve v. Egan"; Database 369 U.S. 45 "METLAKATLA INDIAN COMMUNITY, ANNETTE ISLANDS RESERVE, v. EGAN, GOVERNOR OF ALASKA, et al."
+  - check: scan
+    result: agree
+    detail: Scan has 15 pages; the report runs 45 to 59
+  - check: caption
+    result: agree
+    detail: Caption found in the scan's text at 1.00
+  - check: printed dates
+    result: agree
+    detail: Caselaw Access Project "Argued December 13-14, 1961. Decided March 5, 1962."; scan "Argued December 13-14, 1961.-Decided March 5,1962."
+  - check: decided
+    result: agree
+    detail: 'Printed and Database: 1962-03-05'
+  - check: opinions
+    result: agree
+    detail: 'Report: majority Frankfurter p. 46; Database writers: Frankfurter'
+  - check: bench
+    result: agree
+    detail: No Oyez votes; each opinion writer in the report sits on the Database's bench on the side the opinion takes

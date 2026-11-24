@@ -1,0 +1,149 @@
+key: brendale-v-brendale-v-confederated-tribes-and-bands-of-the-yakima-indian-nation
+kind: federal-case
+citation:
+  type: legal_case
+  title: Brendale v. Brendale v. Confederated Tribes & Bands of the Yakima Indian Nation
+  authority: Supreme Court of the United States
+  container-title: U.S.
+  volume: '492'
+  page: '408'
+  issued:
+    date-parts:
+    - - 1989
+      - 6
+      - 29
+  URL: https://www.loc.gov/item/usrep492408/
+  accessed:
+    date-parts:
+    - - 2026
+      - 11
+      - 24
+caption:
+  printed: BRENDALE v. CONFEDERATED TRIBES AND BANDS OF THE YAKIMA INDIAN NATION et al
+  source: https://tile.loc.gov/storage-services/service/ll/usrep/usrep492/usrep492408/usrep492408.pdf
+  checked: '2026-11-24'
+opinions:
+  source: https://tile.loc.gov/storage-services/service/ll/usrep/usrep492/usrep492408/usrep492408.pdf
+  checked: '2026-11-24'
+  list:
+  - kind: plurality
+    justice: Byron R. White
+    page: 414
+  - kind: judgment
+    justice: John Paul Stevens
+    page: 433
+  - kind: concurrence in part and dissent in part
+    justice: Harry A. Blackmun
+    page: 448
+original_link: https://www.loc.gov/item/usrep492408/
+retrieved: '2026-11-24'
+history:
+  status: live
+  last_checked: '2026-11-24'
+court_dates:
+  argued:
+  - '1989-01-10'
+  - '1989-06-29'
+  printed: Argued January 10, 1989 Decided June 29, 1989
+  source: https://tile.loc.gov/storage-services/service/ll/usrep/usrep492/usrep492408/usrep492408.pdf
+  checked: '2026-11-24'
+supreme_court:
+  court: Rehnquist Court
+  natural_court: Rehnquist Court (1988-1990)
+  decision_type: plurality opinion
+  vote:
+    majority: 5
+    minority: 4
+  justices:
+  - name: Thurgood Marshall
+    vote: majority
+  - name: William J. Brennan, Jr.
+    vote: majority
+  - name: Byron R. White
+    vote: minority
+    opinion: dissent
+  - name: Harry A. Blackmun
+    vote: majority
+    opinion: special concurrence
+  - name: William H. Rehnquist
+    vote: minority
+  - name: John Paul Stevens
+    vote: majority
+    opinion: plurality
+  - name: Sandra Day O'Connor
+    vote: majority
+  - name: Antonin Scalia
+    vote: minority
+  - name: Anthony M. Kennedy
+    vote: minority
+  source: https://api.oyez.org/cases/1988/87-1622
+  checked: '2026-11-24'
+reading_links:
+  checked: '2026-11-24'
+  links:
+  - site: library-of-congress
+    label: Library of Congress
+    access: official
+    link: https://www.loc.gov/item/usrep492408/
+  - site: justia
+    label: Justia
+    access: free
+    link: https://supreme.justia.com/cases/federal/us/492/408/
+    unchecked: true
+  - site: oyez
+    label: Oyez
+    access: free
+    link: https://www.oyez.org/cases/1988/87-1622
+  - site: google-scholar
+    label: Google Scholar
+    access: free
+    link: https://scholar.google.com/scholar?hl=en&as_sdt=2006&q=%22492%20U.S.%20408%22
+    unchecked: true
+  - site: westlaw
+    label: Westlaw
+    access: subscription
+    link: https://1.next.westlaw.com/Link/Document/FullText?findType=Y&cite=492%20U.S.%20408
+    unchecked: true
+  - site: lexis
+    label: Lexis
+    access: subscription
+    link: https://advance.lexis.com/api/search?q=492%20U.S.%20408
+    unchecked: true
+rights:
+  status: no-permission-needed
+  basis: us-government-work
+  basis_note: Opinions of federal courts are works of the U.S. government (17 U.S.C. § 105); the host site's own additions are not reproduced.
+  redistribution: true
+found_in:
+- 2026-11-24-supreme-court-native-cases
+notes: 'Full citation: 492 U.S. 408 (1989). Official report scan: https://tile.loc.gov/storage-services/service/ll/usrep/usrep492/usrep492408/usrep492408.pdf. Written by scripts/caselaw/supreme_court_native_cases.py from the Supreme Court Database (case 1988-148), the Caselaw Access Project''s text of the report and the Library of Congress scan; not yet read by a person.'
+tribes: []
+nations_in_case:
+  checked: '2026-11-24'
+  named: []
+review:
+  status: unverified
+  by: scripts/caselaw/supreme_court_native_cases.py
+  date: '2026-11-24'
+  checks:
+  - check: cite
+    result: agree
+    detail: Caselaw Access Project 492 U.S. 408 "Brendale v. Brendale v. Confederated Tribes & Bands of the Yakima Indian Nation"; Database 492 U.S. 408 "PHILIP BRENDALE v. CONFEDERATED TRIBES AND BANDS OF THE YAKIMA INDIAN NATION et al."
+  - check: scan
+    result: agree
+    detail: Scan has 61 pages; the report runs 408 to 468
+  - check: caption
+    result: agree
+    detail: Caption found in the scan's text at 1.00
+  - check: printed dates
+    result: agree
+    detail: Caselaw Access Project "Argued January 10, 1989 Decided June 29, 1989"; scan "Argued January 10, 1989-Decided June 29, 1989"
+  - check: decided
+    result: agree
+    detail: 'Printed and Database: 1989-06-29'
+  - check: opinions
+    result: settled
+    detail: 'Report: dissent White p. 414, special concurrence Stevens p. 433, special concurrence Blackmun p. 448; Database writers: Blackmun, Stevens, White; scan pages [(433, 413), (448, 412)]. Read from the scan by an AI reader (corrected): p. 414: JUSTICE WHITE, joined by THE CHIEF JUSTICE, JUSTICE SCALIA, and JUSTICE KENNEDY, delivered an opinion announcing the judgment of the Court in Nos. 87-1697 and 87-1711 and dissenting in No. 87-1622. p. 433: JUSTICE STEVENS, joined by JUSTICE O''CONNOR, delivered an opinion announcing the judgment of the Court in No. 87-1622 and concurring in the judgment in Nos. 87-1697 and 87-1711. p. 448: JUSTICE BLACKMUN, joined by JUSTICE BRENNAN and JUSTICE MARSHALL, ... filed an opinion concurring in the judgment in No. 87-1622 and dissenting in Nos. 87-1697 and 87-1711.'
+  - check: bench
+    result: agree
+    detail: Oyez and the Database give the same Justices and votes

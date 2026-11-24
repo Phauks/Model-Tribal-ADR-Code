@@ -1,0 +1,140 @@
+key: oklahoma-tax-commission-v-graham
+kind: federal-case
+citation:
+  type: legal_case
+  title: Oklahoma Tax Commission v. Graham
+  authority: Supreme Court of the United States
+  container-title: U.S.
+  volume: '489'
+  page: '838'
+  issued:
+    date-parts:
+    - - 1989
+      - 3
+      - 29
+  URL: https://www.loc.gov/item/usrep489838/
+  accessed:
+    date-parts:
+    - - 2026
+      - 11
+      - 24
+caption:
+  printed: OKLAHOMA TAX COMMISSION v. GRAHAM et al
+  source: https://tile.loc.gov/storage-services/service/ll/usrep/usrep489/usrep489838/usrep489838.pdf
+  checked: '2026-11-24'
+opinions:
+  source: https://tile.loc.gov/storage-services/service/ll/usrep/usrep489/usrep489838/usrep489838.pdf
+  checked: '2026-11-24'
+  list:
+  - kind: per curiam
+    justice: The Court
+    page: 839
+original_link: https://www.loc.gov/item/usrep489838/
+retrieved: '2026-11-24'
+history:
+  status: live
+  last_checked: '2026-11-24'
+court_dates:
+  argued:
+  - '1989-02-21'
+  - '1989-03-29'
+  printed: Argued February 21, 1989 Decided March 29, 1989
+  source: https://tile.loc.gov/storage-services/service/ll/usrep/usrep489/usrep489838/usrep489838.pdf
+  checked: '2026-11-24'
+supreme_court:
+  court: Rehnquist Court
+  natural_court: Rehnquist Court (1988-1990)
+  decision_type: per curiam
+  vote:
+    majority: 9
+    minority: 0
+  justices:
+  - name: Thurgood Marshall
+    vote: majority
+  - name: William J. Brennan, Jr.
+    vote: majority
+  - name: Byron R. White
+    vote: majority
+  - name: Harry A. Blackmun
+    vote: majority
+  - name: William H. Rehnquist
+    vote: majority
+  - name: John Paul Stevens
+    vote: majority
+  - name: Sandra Day O'Connor
+    vote: majority
+  - name: Antonin Scalia
+    vote: majority
+  - name: Anthony M. Kennedy
+    vote: majority
+  source: https://api.oyez.org/cases/1988/88-266
+  checked: '2026-11-24'
+reading_links:
+  checked: '2026-11-24'
+  links:
+  - site: library-of-congress
+    label: Library of Congress
+    access: official
+    link: https://www.loc.gov/item/usrep489838/
+  - site: justia
+    label: Justia
+    access: free
+    link: https://supreme.justia.com/cases/federal/us/489/838/
+    unchecked: true
+  - site: oyez
+    label: Oyez
+    access: free
+    link: https://www.oyez.org/cases/1988/88-266
+  - site: google-scholar
+    label: Google Scholar
+    access: free
+    link: https://scholar.google.com/scholar?hl=en&as_sdt=2006&q=%22489%20U.S.%20838%22
+    unchecked: true
+  - site: westlaw
+    label: Westlaw
+    access: subscription
+    link: https://1.next.westlaw.com/Link/Document/FullText?findType=Y&cite=489%20U.S.%20838
+    unchecked: true
+  - site: lexis
+    label: Lexis
+    access: subscription
+    link: https://advance.lexis.com/api/search?q=489%20U.S.%20838
+    unchecked: true
+rights:
+  status: no-permission-needed
+  basis: us-government-work
+  basis_note: Opinions of federal courts are works of the U.S. government (17 U.S.C. § 105); the host site's own additions are not reproduced.
+  redistribution: true
+found_in:
+- 2026-11-24-supreme-court-native-cases
+notes: 'Full citation: 489 U.S. 838 (1989). Official report scan: https://tile.loc.gov/storage-services/service/ll/usrep/usrep489/usrep489838/usrep489838.pdf. Written by scripts/caselaw/supreme_court_native_cases.py from the Supreme Court Database (case 1988-065), the Caselaw Access Project''s text of the report and the Library of Congress scan; not yet read by a person.'
+tribes: []
+nations_in_case:
+  checked: '2026-11-24'
+  named: []
+review:
+  status: verified
+  by: scripts/caselaw/supreme_court_native_cases.py
+  date: '2026-11-24'
+  checks:
+  - check: cite
+    result: agree
+    detail: Caselaw Access Project 489 U.S. 838 "Oklahoma Tax Commission v. Graham"; Database 489 U.S. 838 "OKLAHOMA TAX COMMISSION v. GRAHAM et al."
+  - check: scan
+    result: agree
+    detail: Scan has 5 pages; the report runs 838 to 842
+  - check: caption
+    result: agree
+    detail: Caption found in the scan's text at 1.00
+  - check: printed dates
+    result: agree
+    detail: Caselaw Access Project "Argued February 21, 1989 Decided March 29, 1989"; scan "Argued February 21, 1989-Decided March 29, 1989"
+  - check: decided
+    result: agree
+    detail: 'Printed and Database: 1989-03-29'
+  - check: opinions
+    result: agree
+    detail: 'Report: per curiam Court p. 839; Database writers: none'
+  - check: bench
+    result: agree
+    detail: Oyez and the Database give the same Justices and votes

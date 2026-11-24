@@ -1,0 +1,141 @@
+key: puyallup-tribe-v-department-of-game
+kind: federal-case
+citation:
+  type: legal_case
+  title: Puyallup Tribe v. Department of Game
+  authority: Supreme Court of the United States
+  container-title: U.S.
+  volume: '391'
+  page: '392'
+  issued:
+    date-parts:
+    - - 1968
+      - 5
+      - 27
+  URL: https://www.loc.gov/item/usrep391392/
+  accessed:
+    date-parts:
+    - - 2026
+      - 11
+      - 24
+caption:
+  printed: PUYALLUP TRIBE v. DEPARTMENT OF GAME OF WASHINGTON et al
+  source: https://tile.loc.gov/storage-services/service/ll/usrep/usrep391/usrep391392/usrep391392.pdf
+  checked: '2026-11-24'
+opinions:
+  source: https://tile.loc.gov/storage-services/service/ll/usrep/usrep391/usrep391392/usrep391392.pdf
+  checked: '2026-11-24'
+  list:
+  - kind: majority
+    justice: William Orville Douglas
+    page: 393
+original_link: https://www.loc.gov/item/usrep391392/
+retrieved: '2026-11-24'
+history:
+  status: live
+  last_checked: '2026-11-24'
+court_dates:
+  argued:
+  - '1968-03-25'
+  - '1968-03-26'
+  printed: Argued March 25-26, 1968. Decided May 27, 1968.
+  source: https://tile.loc.gov/storage-services/service/ll/usrep/usrep391/usrep391392/usrep391392.pdf
+  checked: '2026-11-24'
+supreme_court:
+  court: Warren Court
+  natural_court: Warren Court (1967-1969)
+  decision_type: majority opinion
+  vote:
+    majority: 9
+    minority: 0
+  justices:
+  - name: John M. Harlan II
+    vote: majority
+  - name: Hugo L. Black
+    vote: majority
+  - name: William O. Douglas
+    vote: majority
+    opinion: majority
+  - name: Potter Stewart
+    vote: majority
+  - name: Thurgood Marshall
+    vote: majority
+  - name: William J. Brennan, Jr.
+    vote: majority
+  - name: Byron R. White
+    vote: majority
+  - name: Earl Warren
+    vote: majority
+  - name: Abe Fortas
+    vote: majority
+  source: https://api.oyez.org/cases/1967/247
+  checked: '2026-11-24'
+reading_links:
+  checked: '2026-11-24'
+  links:
+  - site: library-of-congress
+    label: Library of Congress
+    access: official
+    link: https://www.loc.gov/item/usrep391392/
+  - site: justia
+    label: Justia
+    access: free
+    link: https://supreme.justia.com/cases/federal/us/391/392/
+    unchecked: true
+  - site: oyez
+    label: Oyez
+    access: free
+    link: https://www.oyez.org/cases/1967/247
+  - site: google-scholar
+    label: Google Scholar
+    access: free
+    link: https://scholar.google.com/scholar?hl=en&as_sdt=2006&q=%22391%20U.S.%20392%22
+    unchecked: true
+  - site: westlaw
+    label: Westlaw
+    access: subscription
+    link: https://1.next.westlaw.com/Link/Document/FullText?findType=Y&cite=391%20U.S.%20392
+    unchecked: true
+  - site: lexis
+    label: Lexis
+    access: subscription
+    link: https://advance.lexis.com/api/search?q=391%20U.S.%20392
+    unchecked: true
+rights:
+  status: no-permission-needed
+  basis: us-government-work
+  basis_note: Opinions of federal courts are works of the U.S. government (17 U.S.C. § 105); the host site's own additions are not reproduced.
+  redistribution: true
+found_in:
+- 2026-11-24-supreme-court-native-cases
+notes: 'Full citation: 391 U.S. 392 (1968). Official report scan: https://tile.loc.gov/storage-services/service/ll/usrep/usrep391/usrep391392/usrep391392.pdf. Written by scripts/caselaw/supreme_court_native_cases.py from the Supreme Court Database (case 1967-136), the Caselaw Access Project''s text of the report and the Library of Congress scan; not yet read by a person.'
+tribes: []
+nations_in_case:
+  checked: '2026-11-24'
+  named: []
+review:
+  status: verified
+  by: scripts/caselaw/supreme_court_native_cases.py
+  date: '2026-11-24'
+  checks:
+  - check: cite
+    result: agree
+    detail: Caselaw Access Project 391 U.S. 392 "Puyallup Tribe v. Department of Game"; Database 391 U.S. 392 "PUYALLUP TRIBE v. DEPARTMENT OF GAME OF WASHINGTON et al."
+  - check: scan
+    result: agree
+    detail: Scan has 12 pages; the report runs 392 to 403
+  - check: caption
+    result: agree
+    detail: Caption found in the scan's text at 1.00
+  - check: printed dates
+    result: agree
+    detail: Caselaw Access Project "Argued March 25-26, 1968. Decided May 27, 1968."; scan "Argued March 25-26, 1968.-Decided May 27, 1968."
+  - check: decided
+    result: agree
+    detail: 'Printed and Database: 1968-05-27'
+  - check: opinions
+    result: agree
+    detail: 'Report: majority Douglas p. 393; Database writers: Douglas'
+  - check: bench
+    result: agree
+    detail: Oyez and the Database give the same Justices and votes

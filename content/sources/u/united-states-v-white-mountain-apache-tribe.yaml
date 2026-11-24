@@ -1,0 +1,149 @@
+key: united-states-v-white-mountain-apache-tribe
+kind: federal-case
+citation:
+  type: legal_case
+  title: United States v. White Mountain Apache Tribe
+  authority: Supreme Court of the United States
+  container-title: U.S.
+  volume: '537'
+  page: '465'
+  issued:
+    date-parts:
+    - - 2003
+      - 3
+      - 4
+  URL: https://www.loc.gov/item/usrep537465/
+  accessed:
+    date-parts:
+    - - 2026
+      - 11
+      - 24
+caption:
+  printed: UNITED STATES v. WHITE MOUNTAIN APACHE TRIBE
+  source: https://tile.loc.gov/storage-services/service/ll/usrep/usrep537/usrep537465/usrep537465.pdf
+  checked: '2026-11-24'
+opinions:
+  source: https://tile.loc.gov/storage-services/service/ll/usrep/usrep537/usrep537465/usrep537465.pdf
+  checked: '2026-11-24'
+  list:
+  - kind: majority
+    justice: David H. Souter
+    page: 468
+  - kind: concurrence
+    justice: Ruth Bader Ginsburg
+    page: 479
+  - kind: dissent
+    justice: Clarence Thomas
+    page: 481
+original_link: https://www.loc.gov/item/usrep537465/
+retrieved: '2026-11-24'
+history:
+  status: live
+  last_checked: '2026-11-24'
+court_dates:
+  argued:
+  - '2002-12-02'
+  - '2002-03-04'
+  printed: Argued December 2, 2002 Decided March 4, 2003
+  source: https://tile.loc.gov/storage-services/service/ll/usrep/usrep537/usrep537465/usrep537465.pdf
+  checked: '2026-11-24'
+supreme_court:
+  court: Rehnquist Court
+  natural_court: Rehnquist Court (1994-2005)
+  decision_type: majority opinion
+  vote:
+    majority: 5
+    minority: 4
+  justices:
+  - name: William H. Rehnquist
+    vote: minority
+  - name: John Paul Stevens
+    vote: majority
+  - name: Sandra Day O'Connor
+    vote: majority
+  - name: Antonin Scalia
+    vote: minority
+  - name: Anthony M. Kennedy
+    vote: minority
+  - name: David H. Souter
+    vote: majority
+    opinion: majority
+  - name: Clarence Thomas
+    vote: minority
+    opinion: dissent
+  - name: Ruth Bader Ginsburg
+    vote: majority
+    opinion: concurrence
+  - name: Stephen G. Breyer
+    vote: majority
+  source: https://api.oyez.org/cases/2002/01-1067
+  checked: '2026-11-24'
+reading_links:
+  checked: '2026-11-24'
+  links:
+  - site: library-of-congress
+    label: Library of Congress
+    access: official
+    link: https://www.loc.gov/item/usrep537465/
+  - site: justia
+    label: Justia
+    access: free
+    link: https://supreme.justia.com/cases/federal/us/537/465/
+    unchecked: true
+  - site: oyez
+    label: Oyez
+    access: free
+    link: https://www.oyez.org/cases/2002/01-1067
+  - site: google-scholar
+    label: Google Scholar
+    access: free
+    link: https://scholar.google.com/scholar?hl=en&as_sdt=2006&q=%22537%20U.S.%20465%22
+    unchecked: true
+  - site: westlaw
+    label: Westlaw
+    access: subscription
+    link: https://1.next.westlaw.com/Link/Document/FullText?findType=Y&cite=537%20U.S.%20465
+    unchecked: true
+  - site: lexis
+    label: Lexis
+    access: subscription
+    link: https://advance.lexis.com/api/search?q=537%20U.S.%20465
+    unchecked: true
+rights:
+  status: no-permission-needed
+  basis: us-government-work
+  basis_note: Opinions of federal courts are works of the U.S. government (17 U.S.C. § 105); the host site's own additions are not reproduced.
+  redistribution: true
+found_in:
+- 2026-11-24-supreme-court-native-cases
+notes: 'Full citation: 537 U.S. 465 (2003). Official report scan: https://tile.loc.gov/storage-services/service/ll/usrep/usrep537/usrep537465/usrep537465.pdf. Written by scripts/caselaw/supreme_court_native_cases.py from the Supreme Court Database (case 2002-024), the Caselaw Access Project''s text of the report and the Library of Congress scan; not yet read by a person.'
+tribes: []
+nations_in_case:
+  checked: '2026-11-24'
+  named: []
+review:
+  status: verified
+  by: scripts/caselaw/supreme_court_native_cases.py
+  date: '2026-11-24'
+  checks:
+  - check: cite
+    result: agree
+    detail: Caselaw Access Project 537 U.S. 465 "United States v. White Mountain Apache Tribe"; Database 537 U.S. 465 "UNITED STATES v. WHITE MOUNTAIN APACHE TRIBE"
+  - check: scan
+    result: agree
+    detail: Scan has 23 pages; the report runs 465 to 487
+  - check: caption
+    result: agree
+    detail: Caption found in the scan's text at 1.00
+  - check: printed dates
+    result: agree
+    detail: Caselaw Access Project "Argued December 2, 2002 Decided March 4, 2003"; scan "Argued December 2, 2002-Decided March 4, 2003"
+  - check: decided
+    result: agree
+    detail: 'Printed and Database: 2003-03-04'
+  - check: opinions
+    result: agree
+    detail: 'Report: majority Souter p. 468, concurrence Ginsburg p. 479, dissent Thomas p. 481; Database writers: Ginsburg, Souter, Thomas'
+  - check: bench
+    result: agree
+    detail: Oyez and the Database give the same Justices and votes

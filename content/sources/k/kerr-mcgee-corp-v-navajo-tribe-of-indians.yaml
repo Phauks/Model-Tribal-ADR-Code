@@ -1,0 +1,141 @@
+key: kerr-mcgee-corp-v-navajo-tribe-of-indians
+kind: federal-case
+citation:
+  type: legal_case
+  title: Kerr-McGee Corp. v. Navajo Tribe of Indians
+  authority: Supreme Court of the United States
+  container-title: U.S.
+  volume: '471'
+  page: '195'
+  issued:
+    date-parts:
+    - - 1985
+      - 4
+      - 16
+  URL: https://www.loc.gov/item/usrep471195/
+  accessed:
+    date-parts:
+    - - 2026
+      - 11
+      - 24
+caption:
+  printed: KERR-McGEE CORP. v. NAVAJO TRIBE OF INDIANS et al
+  source: https://tile.loc.gov/storage-services/service/ll/usrep/usrep471/usrep471195/usrep471195.pdf
+  checked: '2026-11-24'
+opinions:
+  source: https://tile.loc.gov/storage-services/service/ll/usrep/usrep471/usrep471195/usrep471195.pdf
+  checked: '2026-11-24'
+  list:
+  - kind: majority
+    justice: Warren Earl Burger
+    page: 196
+original_link: https://www.loc.gov/item/usrep471195/
+retrieved: '2026-11-24'
+history:
+  status: live
+  last_checked: '2026-11-24'
+court_dates:
+  argued:
+  - '1985-02-25'
+  - '1985-04-16'
+  printed: Argued February 25, 1985 Decided April 16, 1985
+  source: https://tile.loc.gov/storage-services/service/ll/usrep/usrep471/usrep471195/usrep471195.pdf
+  checked: '2026-11-24'
+supreme_court:
+  court: Burger Court
+  natural_court: Burger Court (1981-1986)
+  decision_type: majority opinion
+  vote:
+    majority: 8
+    minority: 0
+  justices:
+  - name: Thurgood Marshall
+    vote: majority
+  - name: William J. Brennan, Jr.
+    vote: majority
+  - name: Byron R. White
+    vote: majority
+  - name: Warren E. Burger
+    vote: majority
+    opinion: majority
+  - name: Harry A. Blackmun
+    vote: majority
+  - name: Lewis F. Powell, Jr.
+    vote: none
+  - name: William H. Rehnquist
+    vote: majority
+  - name: John Paul Stevens
+    vote: majority
+  - name: Sandra Day O'Connor
+    vote: majority
+  source: https://api.oyez.org/cases/1984/84-68
+  checked: '2026-11-24'
+reading_links:
+  checked: '2026-11-24'
+  links:
+  - site: library-of-congress
+    label: Library of Congress
+    access: official
+    link: https://www.loc.gov/item/usrep471195/
+  - site: justia
+    label: Justia
+    access: free
+    link: https://supreme.justia.com/cases/federal/us/471/195/
+    unchecked: true
+  - site: oyez
+    label: Oyez
+    access: free
+    link: https://www.oyez.org/cases/1984/84-68
+  - site: google-scholar
+    label: Google Scholar
+    access: free
+    link: https://scholar.google.com/scholar?hl=en&as_sdt=2006&q=%22471%20U.S.%20195%22
+    unchecked: true
+  - site: westlaw
+    label: Westlaw
+    access: subscription
+    link: https://1.next.westlaw.com/Link/Document/FullText?findType=Y&cite=471%20U.S.%20195
+    unchecked: true
+  - site: lexis
+    label: Lexis
+    access: subscription
+    link: https://advance.lexis.com/api/search?q=471%20U.S.%20195
+    unchecked: true
+rights:
+  status: no-permission-needed
+  basis: us-government-work
+  basis_note: Opinions of federal courts are works of the U.S. government (17 U.S.C. § 105); the host site's own additions are not reproduced.
+  redistribution: true
+found_in:
+- 2026-11-24-supreme-court-native-cases
+notes: 'Full citation: 471 U.S. 195 (1985). Official report scan: https://tile.loc.gov/storage-services/service/ll/usrep/usrep471/usrep471195/usrep471195.pdf. Written by scripts/caselaw/supreme_court_native_cases.py from the Supreme Court Database (case 1984-079), the Caselaw Access Project''s text of the report and the Library of Congress scan; not yet read by a person.'
+tribes: []
+nations_in_case:
+  checked: '2026-11-24'
+  named: []
+review:
+  status: verified
+  by: scripts/caselaw/supreme_court_native_cases.py
+  date: '2026-11-24'
+  checks:
+  - check: cite
+    result: agree
+    detail: Caselaw Access Project 471 U.S. 195 "Kerr-McGee Corp. v. Navajo Tribe of Indians"; Database 471 U.S. 195 "KERR-MCGEE CORP. v. NAVAJO TRIBE OF INDIANS et al."
+  - check: scan
+    result: agree
+    detail: Scan has 7 pages; the report runs 195 to 201
+  - check: caption
+    result: agree
+    detail: Caption found in the scan's text at 1.00
+  - check: printed dates
+    result: agree
+    detail: Caselaw Access Project "Argued February 25, 1985 Decided April 16, 1985"; scan "Argued February 25, 1985-Decided April 16, 1985"
+  - check: decided
+    result: agree
+    detail: 'Printed and Database: 1985-04-16'
+  - check: opinions
+    result: agree
+    detail: 'Report: majority Burger p. 196; Database writers: Burger'
+  - check: bench
+    result: agree
+    detail: Oyez and the Database give the same Justices and votes

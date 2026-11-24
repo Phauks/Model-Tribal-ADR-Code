@@ -1,0 +1,140 @@
+key: zia-v-united-states
+kind: federal-case
+citation:
+  type: legal_case
+  title: Zia v. United States
+  authority: Supreme Court of the United States
+  container-title: U.S.
+  volume: '168'
+  page: '198'
+  issued:
+    date-parts:
+    - - 1897
+      - 11
+      - 15
+  URL: https://www.loc.gov/item/usrep168198/
+  accessed:
+    date-parts:
+    - - 2026
+      - 11
+      - 24
+caption:
+  printed: ZIA, Pueblo of v. UNITED STATES
+  source: https://tile.loc.gov/storage-services/service/ll/usrep/usrep168/usrep168198/usrep168198.pdf
+  checked: '2026-11-24'
+opinions:
+  source: https://tile.loc.gov/storage-services/service/ll/usrep/usrep168/usrep168198/usrep168198.pdf
+  checked: '2026-11-24'
+  list:
+  - kind: majority
+    justice: Henry Billings Brown
+    page: 203
+original_link: https://www.loc.gov/item/usrep168198/
+retrieved: '2026-11-24'
+history:
+  status: live
+  last_checked: '2026-11-24'
+court_dates:
+  argued:
+  - '1897-10-12'
+  printed: Argued October 12, 1897. Decided November 15, 1897.
+  source: https://tile.loc.gov/storage-services/service/ll/usrep/usrep168/usrep168198/usrep168198.pdf
+  checked: '2026-11-24'
+supreme_court:
+  court: Fuller Court
+  natural_court: Fuller Court (1896-1897)
+  decision_type: majority opinion
+  vote:
+    majority: 9
+    minority: 0
+  justices:
+  - name: Melville Weston Fuller
+    vote: majority
+  - name: Edward Douglass White
+    vote: majority
+  - name: Stephen Johnson Field
+    vote: majority
+  - name: John Marshall Harlan
+    vote: majority
+  - name: Horace Gray
+    vote: majority
+  - name: David Josiah Brewer
+    vote: majority
+  - name: Henry Billings Brown
+    vote: majority
+    opinion: majority
+  - name: George Shiras, Jr.
+    vote: majority
+  - name: Rufus Wheeler Peckham
+    vote: majority
+  source: http://scdb.wustl.edu/_brickFiles/Legacy_07/SCDB_Legacy_07_justiceCentered_Citation.csv.zip
+  note: From the Supreme Court Database, case 1897-012; Oyez has no votes for this case.
+  checked: '2026-11-24'
+reading_links:
+  checked: '2026-11-24'
+  links:
+  - site: library-of-congress
+    label: Library of Congress
+    access: official
+    link: https://www.loc.gov/item/usrep168198/
+  - site: justia
+    label: Justia
+    access: free
+    link: https://supreme.justia.com/cases/federal/us/168/198/
+    unchecked: true
+  - site: google-scholar
+    label: Google Scholar
+    access: free
+    link: https://scholar.google.com/scholar?hl=en&as_sdt=2006&q=%22168%20U.S.%20198%22
+    unchecked: true
+  - site: westlaw
+    label: Westlaw
+    access: subscription
+    link: https://1.next.westlaw.com/Link/Document/FullText?findType=Y&cite=168%20U.S.%20198
+    unchecked: true
+  - site: lexis
+    label: Lexis
+    access: subscription
+    link: https://advance.lexis.com/api/search?q=168%20U.S.%20198
+    unchecked: true
+rights:
+  status: no-permission-needed
+  basis: us-government-work
+  basis_note: Opinions of federal courts are works of the U.S. government (17 U.S.C. § 105); the host site's own additions are not reproduced.
+  redistribution: true
+found_in:
+- 2026-11-24-supreme-court-native-cases
+notes: 'Full citation: 168 U.S. 198 (1897). Official report scan: https://tile.loc.gov/storage-services/service/ll/usrep/usrep168/usrep168198/usrep168198.pdf. Written by scripts/caselaw/supreme_court_native_cases.py from the Supreme Court Database (case 1897-012), the Caselaw Access Project''s text of the report and the Library of Congress scan; not yet read by a person.'
+tribes: []
+nations_in_case:
+  checked: '2026-11-24'
+  named: []
+  not_linked:
+  - named_as: Pueblo
+    reason: No nation record matches this name; it may be a historical name or a group that is not a recognized nation today.
+review:
+  status: verified
+  by: scripts/caselaw/supreme_court_native_cases.py
+  date: '2026-11-24'
+  checks:
+  - check: cite
+    result: agree
+    detail: Caselaw Access Project 168 U.S. 198 "Zia v. United States"; Database 168 U.S. 198 "ZIA, PUEBLO OF v. UNITED STATES"
+  - check: scan
+    result: agree
+    detail: Scan has 10 pages; the report runs 198 to 207
+  - check: caption
+    result: agree
+    detail: Caption found in the scan's text at 1.00
+  - check: printed dates
+    result: agree
+    detail: Caselaw Access Project "Argued October 12, 1897. Decided November 15, 1897."; scan "Argued October 12, 189T.- Decided November 15, 1891."
+  - check: decided
+    result: agree
+    detail: 'Printed and Database: 1897-11-15'
+  - check: opinions
+    result: agree
+    detail: 'Report: majority Brown p. 203; Database writers: Brown'
+  - check: bench
+    result: agree
+    detail: No Oyez votes; each opinion writer in the report sits on the Database's bench on the side the opinion takes

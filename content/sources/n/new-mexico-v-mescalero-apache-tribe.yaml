@@ -1,0 +1,141 @@
+key: new-mexico-v-mescalero-apache-tribe
+kind: federal-case
+citation:
+  type: legal_case
+  title: New Mexico v. Mescalero Apache Tribe
+  authority: Supreme Court of the United States
+  container-title: U.S.
+  volume: '462'
+  page: '324'
+  issued:
+    date-parts:
+    - - 1983
+      - 6
+      - 13
+  URL: https://www.loc.gov/item/usrep462324/
+  accessed:
+    date-parts:
+    - - 2026
+      - 11
+      - 24
+caption:
+  printed: NEW MEXICO et al. v. MESCALERO APACHE TRIBE
+  source: https://tile.loc.gov/storage-services/service/ll/usrep/usrep462/usrep462324/usrep462324.pdf
+  checked: '2026-11-24'
+opinions:
+  source: https://tile.loc.gov/storage-services/service/ll/usrep/usrep462/usrep462324/usrep462324.pdf
+  checked: '2026-11-24'
+  list:
+  - kind: majority
+    justice: Thurgood Marshall
+    page: 325
+original_link: https://www.loc.gov/item/usrep462324/
+retrieved: '2026-11-24'
+history:
+  status: live
+  last_checked: '2026-11-24'
+court_dates:
+  argued:
+  - '1983-04-19'
+  - '1983-06-13'
+  printed: Argued April 19, 1983 Decided June 13, 1983
+  source: https://tile.loc.gov/storage-services/service/ll/usrep/usrep462/usrep462324/usrep462324.pdf
+  checked: '2026-11-24'
+supreme_court:
+  court: Burger Court
+  natural_court: Burger Court (1981-1986)
+  decision_type: majority opinion
+  vote:
+    majority: 9
+    minority: 0
+  justices:
+  - name: Thurgood Marshall
+    vote: majority
+    opinion: majority
+  - name: William J. Brennan, Jr.
+    vote: majority
+  - name: Byron R. White
+    vote: majority
+  - name: Warren E. Burger
+    vote: majority
+  - name: Harry A. Blackmun
+    vote: majority
+  - name: Lewis F. Powell, Jr.
+    vote: majority
+  - name: William H. Rehnquist
+    vote: majority
+  - name: John Paul Stevens
+    vote: majority
+  - name: Sandra Day O'Connor
+    vote: majority
+  source: https://api.oyez.org/cases/1982/82-331
+  checked: '2026-11-24'
+reading_links:
+  checked: '2026-11-24'
+  links:
+  - site: library-of-congress
+    label: Library of Congress
+    access: official
+    link: https://www.loc.gov/item/usrep462324/
+  - site: justia
+    label: Justia
+    access: free
+    link: https://supreme.justia.com/cases/federal/us/462/324/
+    unchecked: true
+  - site: oyez
+    label: Oyez
+    access: free
+    link: https://www.oyez.org/cases/1982/82-331
+  - site: google-scholar
+    label: Google Scholar
+    access: free
+    link: https://scholar.google.com/scholar?hl=en&as_sdt=2006&q=%22462%20U.S.%20324%22
+    unchecked: true
+  - site: westlaw
+    label: Westlaw
+    access: subscription
+    link: https://1.next.westlaw.com/Link/Document/FullText?findType=Y&cite=462%20U.S.%20324
+    unchecked: true
+  - site: lexis
+    label: Lexis
+    access: subscription
+    link: https://advance.lexis.com/api/search?q=462%20U.S.%20324
+    unchecked: true
+rights:
+  status: no-permission-needed
+  basis: us-government-work
+  basis_note: Opinions of federal courts are works of the U.S. government (17 U.S.C. § 105); the host site's own additions are not reproduced.
+  redistribution: true
+found_in:
+- 2026-11-24-supreme-court-native-cases
+notes: 'Full citation: 462 U.S. 324 (1983). Official report scan: https://tile.loc.gov/storage-services/service/ll/usrep/usrep462/usrep462324/usrep462324.pdf. Written by scripts/caselaw/supreme_court_native_cases.py from the Supreme Court Database (case 1982-106), the Caselaw Access Project''s text of the report and the Library of Congress scan; not yet read by a person.'
+tribes: []
+nations_in_case:
+  checked: '2026-11-24'
+  named: []
+review:
+  status: verified
+  by: scripts/caselaw/supreme_court_native_cases.py
+  date: '2026-11-24'
+  checks:
+  - check: cite
+    result: agree
+    detail: Caselaw Access Project 462 U.S. 324 "New Mexico v. Mescalero Apache Tribe"; Database 462 U.S. 324 "NEW MEXICO et al. v. MESCALERO APACHE TRIBE"
+  - check: scan
+    result: agree
+    detail: Scan has 21 pages; the report runs 324 to 344
+  - check: caption
+    result: agree
+    detail: Caption found in the scan's text at 1.00
+  - check: printed dates
+    result: agree
+    detail: Caselaw Access Project "Argued April 19, 1983 Decided June 13, 1983"; scan "Argued April 19, 1983-Decided June 13, 1983"
+  - check: decided
+    result: agree
+    detail: 'Printed and Database: 1983-06-13'
+  - check: opinions
+    result: agree
+    detail: 'Report: majority Marshall p. 325; Database writers: Marshall'
+  - check: bench
+    result: agree
+    detail: Oyez and the Database give the same Justices and votes

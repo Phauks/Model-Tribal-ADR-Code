@@ -1,0 +1,136 @@
+key: united-states-v-alcea-band-1951
+kind: federal-case
+citation:
+  type: legal_case
+  title: United States v. Alcea Band
+  authority: Supreme Court of the United States
+  container-title: U.S.
+  volume: '341'
+  page: '48'
+  issued:
+    date-parts:
+    - - 1951
+      - 4
+      - 9
+  URL: https://www.loc.gov/item/usrep341048/
+  accessed:
+    date-parts:
+    - - 2026
+      - 11
+      - 24
+caption:
+  printed: UNITED STATES v. ALCEA BAND OF TILLAMOOKS et al
+  source: https://tile.loc.gov/storage-services/service/ll/usrep/usrep341/usrep341048/usrep341048.pdf
+  checked: '2026-11-24'
+opinions:
+  source: https://tile.loc.gov/storage-services/service/ll/usrep/usrep341/usrep341048/usrep341048.pdf
+  checked: '2026-11-24'
+  list:
+  - kind: per curiam
+    justice: The Court
+    page: 48
+original_link: https://www.loc.gov/item/usrep341048/
+retrieved: '2026-11-24'
+history:
+  status: live
+  last_checked: '2026-11-24'
+court_dates:
+  argued:
+  - '1951-03-02'
+  printed: Argued March 2, 1951. Decided April 9, 1951.
+  source: https://tile.loc.gov/storage-services/service/ll/usrep/usrep341/usrep341048/usrep341048.pdf
+  checked: '2026-11-24'
+supreme_court:
+  court: Vinson Court
+  natural_court: Vinson Court (1949-1953)
+  decision_type: per curiam
+  vote:
+    majority: 8
+    minority: 0
+  justices:
+  - name: Fred Moore Vinson
+    vote: majority
+  - name: Hugo Lafayette Black
+    vote: majority
+  - name: Stanley Forman Reed
+    vote: majority
+  - name: Felix Frankfurter
+    vote: majority
+  - name: William Orville Douglas
+    vote: majority
+  - name: Robert Houghwout Jackson
+    vote: not recorded
+  - name: Harold Hitz Burton
+    vote: majority
+  - name: Tom Campbell Clark
+    vote: majority
+  - name: Sherman Minton
+    vote: majority
+  source: http://scdb.wustl.edu/_brickFiles/2026_01/SCDB_2026_01_justiceCentered_Citation.csv.zip
+  note: From the Supreme Court Database, case 1950-059; Oyez has no votes for this case.
+  checked: '2026-11-24'
+reading_links:
+  checked: '2026-11-24'
+  links:
+  - site: library-of-congress
+    label: Library of Congress
+    access: official
+    link: https://www.loc.gov/item/usrep341048/
+  - site: justia
+    label: Justia
+    access: free
+    link: https://supreme.justia.com/cases/federal/us/341/48/
+    unchecked: true
+  - site: google-scholar
+    label: Google Scholar
+    access: free
+    link: https://scholar.google.com/scholar?hl=en&as_sdt=2006&q=%22341%20U.S.%2048%22
+    unchecked: true
+  - site: westlaw
+    label: Westlaw
+    access: subscription
+    link: https://1.next.westlaw.com/Link/Document/FullText?findType=Y&cite=341%20U.S.%2048
+    unchecked: true
+  - site: lexis
+    label: Lexis
+    access: subscription
+    link: https://advance.lexis.com/api/search?q=341%20U.S.%2048
+    unchecked: true
+rights:
+  status: no-permission-needed
+  basis: us-government-work
+  basis_note: Opinions of federal courts are works of the U.S. government (17 U.S.C. § 105); the host site's own additions are not reproduced.
+  redistribution: true
+found_in:
+- 2026-11-24-supreme-court-native-cases
+notes: 'Full citation: 341 U.S. 48 (1951). Official report scan: https://tile.loc.gov/storage-services/service/ll/usrep/usrep341/usrep341048/usrep341048.pdf. Written by scripts/caselaw/supreme_court_native_cases.py from the Supreme Court Database (case 1950-059), the Caselaw Access Project''s text of the report and the Library of Congress scan; not yet read by a person.'
+tribes: []
+nations_in_case:
+  checked: '2026-11-24'
+  named: []
+review:
+  status: verified
+  by: scripts/caselaw/supreme_court_native_cases.py
+  date: '2026-11-24'
+  checks:
+  - check: cite
+    result: agree
+    detail: Caselaw Access Project 341 U.S. 48 "United States v. Alcea Band"; Database 341 U.S. 48 "UNITED STATES v. ALCEA BAND OF TILLAMOOKS ET AL."
+  - check: scan
+    result: agree
+    detail: Scan has 2 pages; the report runs 48 to 49
+  - check: caption
+    result: agree
+    detail: Caption found in the scan's text at 1.00
+  - check: printed dates
+    result: agree
+    detail: Caselaw Access Project "Argued March 2, 1951. Decided April 9, 1951."; scan "Argued March 2, 1951.-Decided April 9, 1951."
+  - check: decided
+    result: agree
+    detail: 'Printed and Database: 1951-04-09'
+  - check: opinions
+    result: agree
+    detail: 'Report: per curiam Court p. 48; Database writers: none'
+  - check: bench
+    result: agree
+    detail: No Oyez votes; each opinion writer in the report sits on the Database's bench on the side the opinion takes

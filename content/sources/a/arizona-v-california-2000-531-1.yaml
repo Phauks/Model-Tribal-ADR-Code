@@ -1,0 +1,131 @@
+key: arizona-v-california-2000-531-1
+kind: federal-case
+citation:
+  type: legal_case
+  title: Arizona v. California
+  authority: Supreme Court of the United States
+  container-title: U.S.
+  volume: '531'
+  page: '1'
+  issued:
+    date-parts:
+    - - 2000
+      - 10
+      - 10
+  URL: https://www.loc.gov/item/usrep531001/
+  accessed:
+    date-parts:
+    - - 2026
+      - 11
+      - 24
+caption:
+  printed: ARIZONA v. CALIFORNIA et al
+  source: https://tile.loc.gov/storage-services/service/ll/usrep/usrep531/usrep531001/usrep531001.pdf
+  checked: '2026-11-24'
+original_link: https://www.loc.gov/item/usrep531001/
+retrieved: '2026-11-24'
+history:
+  status: live
+  last_checked: '2026-11-24'
+court_dates:
+  printed: Decided June 3, 1963
+  source: https://tile.loc.gov/storage-services/service/ll/usrep/usrep531/usrep531001/usrep531001.pdf
+  checked: '2026-11-24'
+supreme_court:
+  court: Rehnquist Court
+  natural_court: Rehnquist Court (1994-2005)
+  decision_type: decree
+  vote:
+    majority: 9
+    minority: 0
+  justices:
+  - name: William H. Rehnquist
+    vote: majority
+  - name: John Paul Stevens
+    vote: majority
+  - name: Sandra Day O'Connor
+    vote: majority
+  - name: Antonin Scalia
+    vote: majority
+  - name: Anthony M. Kennedy
+    vote: majority
+  - name: David H. Souter
+    vote: majority
+  - name: Clarence Thomas
+    vote: majority
+  - name: Ruth Bader Ginsburg
+    vote: majority
+  - name: Stephen G. Breyer
+    vote: majority
+  source: http://scdb.wustl.edu/_brickFiles/2026_01/SCDB_2026_01_justiceCentered_Citation.csv.zip
+  note: From the Supreme Court Database, case 2000-001; Oyez has no votes for this case.
+  checked: '2026-11-24'
+reading_links:
+  checked: '2026-11-24'
+  links:
+  - site: library-of-congress
+    label: Library of Congress
+    access: official
+    link: https://www.loc.gov/item/usrep531001/
+  - site: justia
+    label: Justia
+    access: free
+    link: https://supreme.justia.com/cases/federal/us/531/1/
+    unchecked: true
+  - site: oyez
+    label: Oyez
+    access: free
+    link: https://www.oyez.org/cases/2000/8-orig
+  - site: google-scholar
+    label: Google Scholar
+    access: free
+    link: https://scholar.google.com/scholar?hl=en&as_sdt=2006&q=%22531%20U.S.%201%22
+    unchecked: true
+  - site: westlaw
+    label: Westlaw
+    access: subscription
+    link: https://1.next.westlaw.com/Link/Document/FullText?findType=Y&cite=531%20U.S.%201
+    unchecked: true
+  - site: lexis
+    label: Lexis
+    access: subscription
+    link: https://advance.lexis.com/api/search?q=531%20U.S.%201
+    unchecked: true
+rights:
+  status: no-permission-needed
+  basis: us-government-work
+  basis_note: Opinions of federal courts are works of the U.S. government (17 U.S.C. § 105); the host site's own additions are not reproduced.
+  redistribution: true
+found_in:
+- 2026-11-24-supreme-court-native-cases
+notes: 'Full citation: 531 U.S. 1 (2000). Official report scan: https://tile.loc.gov/storage-services/service/ll/usrep/usrep531/usrep531001/usrep531001.pdf. Written by scripts/caselaw/supreme_court_native_cases.py from the Supreme Court Database (case 2000-001), the Caselaw Access Project''s text of the report and the Library of Congress scan; not yet read by a person.'
+tribes: []
+nations_in_case:
+  checked: '2026-11-24'
+  named: []
+review:
+  status: unverified
+  by: scripts/caselaw/supreme_court_native_cases.py
+  date: '2026-11-24'
+  checks:
+  - check: cite
+    result: agree
+    detail: Caselaw Access Project 531 U.S. 1 "Arizona v. California"; Database 531 U.S. 1 "STATE OF ARIZONA v. STATE OF CALIFORNIA, et al."
+  - check: scan
+    result: agree
+    detail: Scan has 3 pages; the report runs 1 to 3
+  - check: caption
+    result: agree
+    detail: Caption found in the scan's text at 1.00
+  - check: printed dates
+    result: agree
+    detail: Caselaw Access Project "Decided June 3, 1963"; scan "Decided June 3, 1963"
+  - check: decided
+    result: settled
+    detail: 'Printed "Decided June 3, 1963"; Database 2000-10-10. Read from the scan by an AI reader (record right): p. 1: ''Supplemental decree entered October 10, 2000.'' The printed ''Decided June 3, 1963'' is the first date in the chain of decrees and opinions listed in the heading, not the decision date of this entry; the entry at 531 U.S. 1 is the supplemental decree entered October 10, 2000.'
+  - check: opinions
+    result: agree
+    detail: 'Report: per curiam Court p. 1; Database writers: none'
+  - check: bench
+    result: agree
+    detail: No Oyez votes; each opinion writer in the report sits on the Database's bench on the side the opinion takes

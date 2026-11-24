@@ -1,0 +1,138 @@
+key: choctaw-nation-v-united-states-1943
+kind: federal-case
+citation:
+  type: legal_case
+  title: Choctaw Nation v. United States
+  authority: Supreme Court of the United States
+  container-title: U.S.
+  volume: '318'
+  page: '423'
+  issued:
+    date-parts:
+    - - 1943
+      - 3
+      - 8
+  URL: https://www.loc.gov/item/usrep318423/
+  accessed:
+    date-parts:
+    - - 2026
+      - 11
+      - 24
+caption:
+  printed: CHOCTAW NATION OF INDIANS v. UNITED STATES et al
+  source: https://tile.loc.gov/storage-services/service/ll/usrep/usrep318/usrep318423/usrep318423.pdf
+  checked: '2026-11-24'
+opinions:
+  source: https://tile.loc.gov/storage-services/service/ll/usrep/usrep318/usrep318423/usrep318423.pdf
+  checked: '2026-11-24'
+  list:
+  - kind: majority
+    justice: Frank Murphy
+    page: 423
+original_link: https://www.loc.gov/item/usrep318423/
+retrieved: '2026-11-24'
+history:
+  status: live
+  last_checked: '2026-11-24'
+court_dates:
+  argued:
+  - '1942-12-07'
+  - '1942-12-08'
+  printed: Argued December 7, 8, 1942. Decided March 8, 1943.
+  source: https://tile.loc.gov/storage-services/service/ll/usrep/usrep318/usrep318423/usrep318423.pdf
+  checked: '2026-11-24'
+supreme_court:
+  court: Stone Court
+  natural_court: Stone Court (1943-1945)
+  decision_type: majority opinion
+  vote:
+    majority: 8
+    minority: 0
+  justices:
+  - name: Harlan Fiske Stone
+    vote: majority
+  - name: Owen Josephus Roberts
+    vote: majority
+  - name: Hugo Lafayette Black
+    vote: majority
+  - name: Stanley Forman Reed
+    vote: majority
+  - name: Felix Frankfurter
+    vote: majority
+  - name: William Orville Douglas
+    vote: majority
+  - name: Frank Murphy
+    vote: majority
+    opinion: majority
+  - name: Robert Houghwout Jackson
+    vote: majority
+  - name: Wiley Blount Rutledge
+    vote: not recorded
+  source: http://scdb.wustl.edu/_brickFiles/Legacy_07/SCDB_Legacy_07_justiceCentered_Citation.csv.zip
+  note: From the Supreme Court Database, case 1942-161; Oyez has no votes for this case.
+  checked: '2026-11-24'
+reading_links:
+  checked: '2026-11-24'
+  links:
+  - site: library-of-congress
+    label: Library of Congress
+    access: official
+    link: https://www.loc.gov/item/usrep318423/
+  - site: justia
+    label: Justia
+    access: free
+    link: https://supreme.justia.com/cases/federal/us/318/423/
+    unchecked: true
+  - site: google-scholar
+    label: Google Scholar
+    access: free
+    link: https://scholar.google.com/scholar?hl=en&as_sdt=2006&q=%22318%20U.S.%20423%22
+    unchecked: true
+  - site: westlaw
+    label: Westlaw
+    access: subscription
+    link: https://1.next.westlaw.com/Link/Document/FullText?findType=Y&cite=318%20U.S.%20423
+    unchecked: true
+  - site: lexis
+    label: Lexis
+    access: subscription
+    link: https://advance.lexis.com/api/search?q=318%20U.S.%20423
+    unchecked: true
+rights:
+  status: no-permission-needed
+  basis: us-government-work
+  basis_note: Opinions of federal courts are works of the U.S. government (17 U.S.C. § 105); the host site's own additions are not reproduced.
+  redistribution: true
+found_in:
+- 2026-11-24-supreme-court-native-cases
+notes: 'Full citation: 318 U.S. 423 (1943). Official report scan: https://tile.loc.gov/storage-services/service/ll/usrep/usrep318/usrep318423/usrep318423.pdf. Written by scripts/caselaw/supreme_court_native_cases.py from the Supreme Court Database (case 1942-161), the Caselaw Access Project''s text of the report and the Library of Congress scan; not yet read by a person.'
+tribes: []
+nations_in_case:
+  checked: '2026-11-24'
+  named: []
+review:
+  status: verified
+  by: scripts/caselaw/supreme_court_native_cases.py
+  date: '2026-11-24'
+  checks:
+  - check: cite
+    result: agree
+    detail: Caselaw Access Project 318 U.S. 423 "Choctaw Nation v. United States"; Database 318 U.S. 423 "CHOCTAW NATION OF INDIANS v. UNITED STATES et al."
+  - check: scan
+    result: agree
+    detail: Scan has 11 pages; the report runs 423 to 433
+  - check: caption
+    result: agree
+    detail: Caption found in the scan's text at 1.00
+  - check: printed dates
+    result: agree
+    detail: Caselaw Access Project "Argued December 7, 8, 1942. Decided March 8, 1943."; scan "Argued December 7, 8, 1942.-Decided March 8, 1943."
+  - check: decided
+    result: agree
+    detail: 'Printed and Database: 1943-03-08'
+  - check: opinions
+    result: agree
+    detail: 'Report: majority Murphy p. 423; Database writers: Murphy'
+  - check: bench
+    result: agree
+    detail: No Oyez votes; each opinion writer in the report sits on the Database's bench on the side the opinion takes

@@ -1,0 +1,142 @@
+key: creek-nation-v-united-states-1943
+kind: federal-case
+citation:
+  type: legal_case
+  title: Creek Nation v. United States
+  authority: Supreme Court of the United States
+  container-title: U.S.
+  volume: '318'
+  page: '629'
+  issued:
+    date-parts:
+    - - 1943
+      - 4
+      - 5
+  URL: https://www.loc.gov/item/usrep318629/
+  accessed:
+    date-parts:
+    - - 2026
+      - 11
+      - 24
+caption:
+  printed: CREEK NATION v. UNITED STATES
+  source: https://tile.loc.gov/storage-services/service/ll/usrep/usrep318/usrep318629/usrep318629.pdf
+  checked: '2026-11-24'
+opinions:
+  source: https://tile.loc.gov/storage-services/service/ll/usrep/usrep318/usrep318629/usrep318629.pdf
+  checked: '2026-11-24'
+  list:
+  - kind: majority
+    justice: Hugo Lafayette Black
+    page: 630
+  - kind: dissent
+    justice: Frank Murphy
+    page: 641
+original_link: https://www.loc.gov/item/usrep318629/
+retrieved: '2026-11-24'
+history:
+  status: live
+  last_checked: '2026-11-24'
+court_dates:
+  argued:
+  - '1943-01-06'
+  - '1943-01-07'
+  printed: Argued January 6, 7, 1943. Decided April 5, 1943.
+  source: https://tile.loc.gov/storage-services/service/ll/usrep/usrep318/usrep318629/usrep318629.pdf
+  checked: '2026-11-24'
+supreme_court:
+  court: Stone Court
+  natural_court: Stone Court (1943-1945)
+  decision_type: majority opinion
+  vote:
+    majority: 6
+    minority: 2
+  justices:
+  - name: Harlan Fiske Stone
+    vote: majority
+  - name: Owen Josephus Roberts
+    vote: majority
+  - name: Hugo Lafayette Black
+    vote: majority
+    opinion: majority
+  - name: Stanley Forman Reed
+    vote: majority
+  - name: Felix Frankfurter
+    vote: minority
+  - name: William Orville Douglas
+    vote: majority
+  - name: Frank Murphy
+    vote: minority
+    opinion: dissent
+  - name: Robert Houghwout Jackson
+    vote: majority
+  - name: Wiley Blount Rutledge
+    vote: not recorded
+  source: http://scdb.wustl.edu/_brickFiles/Legacy_07/SCDB_Legacy_07_justiceCentered_Citation.csv.zip
+  note: From the Supreme Court Database, case 1942-104; Oyez has no votes for this case.
+  checked: '2026-11-24'
+reading_links:
+  checked: '2026-11-24'
+  links:
+  - site: library-of-congress
+    label: Library of Congress
+    access: official
+    link: https://www.loc.gov/item/usrep318629/
+  - site: justia
+    label: Justia
+    access: free
+    link: https://supreme.justia.com/cases/federal/us/318/629/
+    unchecked: true
+  - site: google-scholar
+    label: Google Scholar
+    access: free
+    link: https://scholar.google.com/scholar?hl=en&as_sdt=2006&q=%22318%20U.S.%20629%22
+    unchecked: true
+  - site: westlaw
+    label: Westlaw
+    access: subscription
+    link: https://1.next.westlaw.com/Link/Document/FullText?findType=Y&cite=318%20U.S.%20629
+    unchecked: true
+  - site: lexis
+    label: Lexis
+    access: subscription
+    link: https://advance.lexis.com/api/search?q=318%20U.S.%20629
+    unchecked: true
+rights:
+  status: no-permission-needed
+  basis: us-government-work
+  basis_note: Opinions of federal courts are works of the U.S. government (17 U.S.C. § 105); the host site's own additions are not reproduced.
+  redistribution: true
+found_in:
+- 2026-11-24-supreme-court-native-cases
+notes: 'Full citation: 318 U.S. 629 (1943). Official report scan: https://tile.loc.gov/storage-services/service/ll/usrep/usrep318/usrep318629/usrep318629.pdf. Written by scripts/caselaw/supreme_court_native_cases.py from the Supreme Court Database (case 1942-104), the Caselaw Access Project''s text of the report and the Library of Congress scan; not yet read by a person.'
+tribes: []
+nations_in_case:
+  checked: '2026-11-24'
+  named: []
+review:
+  status: verified
+  by: scripts/caselaw/supreme_court_native_cases.py
+  date: '2026-11-24'
+  checks:
+  - check: cite
+    result: agree
+    detail: Caselaw Access Project 318 U.S. 629 "Creek Nation v. United States"; Database 318 U.S. 629 "CREEK NATION v. UNITED STATES"
+  - check: scan
+    result: agree
+    detail: Scan has 15 pages; the report runs 629 to 643
+  - check: caption
+    result: agree
+    detail: Caption found in the scan's text at 1.00
+  - check: printed dates
+    result: agree
+    detail: Caselaw Access Project "Argued January 6, 7, 1943. Decided April 5, 1943."; scan "Argued January 6, 7, 1943.--Decided April 5, 1943."
+  - check: decided
+    result: agree
+    detail: 'Printed and Database: 1943-04-05'
+  - check: opinions
+    result: agree
+    detail: 'Report: majority Black p. 630, dissent Murphy p. 641; Database writers: Black, Murphy'
+  - check: bench
+    result: agree
+    detail: No Oyez votes; each opinion writer in the report sits on the Database's bench on the side the opinion takes

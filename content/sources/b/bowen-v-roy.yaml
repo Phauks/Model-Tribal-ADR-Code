@@ -1,0 +1,157 @@
+key: bowen-v-roy
+kind: federal-case
+citation:
+  type: legal_case
+  title: Bowen v. Roy
+  authority: Supreme Court of the United States
+  container-title: U.S.
+  volume: '476'
+  page: '693'
+  issued:
+    date-parts:
+    - - 1986
+      - 6
+      - 11
+  URL: https://www.loc.gov/item/usrep476693/
+  accessed:
+    date-parts:
+    - - 2026
+      - 11
+      - 24
+caption:
+  printed: BOWEN, SECRETARY OF HEALTH AND HUMAN SERVICES, et al. v. ROY et al
+  source: https://tile.loc.gov/storage-services/service/ll/usrep/usrep476/usrep476693/usrep476693.pdf
+  checked: '2026-11-24'
+opinions:
+  source: https://tile.loc.gov/storage-services/service/ll/usrep/usrep476/usrep476693/usrep476693.pdf
+  checked: '2026-11-24'
+  list:
+  - kind: judgment
+    justice: Warren E. Burger
+    page: 695
+  - kind: concurrence
+    justice: Harry A. Blackmun
+    page: 712
+  - kind: concurrence in part and in the judgment
+    justice: John Paul Stevens
+    page: 716
+  - kind: concurrence in part and dissent in part
+    justice: Sandra Day O'Connor
+    page: 724
+  - kind: dissent
+    justice: Byron R. White
+    page: 733
+original_link: https://www.loc.gov/item/usrep476693/
+retrieved: '2026-11-24'
+history:
+  status: live
+  last_checked: '2026-11-24'
+court_dates:
+  argued:
+  - '1986-01-14'
+  - '1986-06-11'
+  printed: Argued January 14, 1986 Decided June 11, 1986
+  source: https://tile.loc.gov/storage-services/service/ll/usrep/usrep476/usrep476693/usrep476693.pdf
+  checked: '2026-11-24'
+supreme_court:
+  court: Burger Court
+  natural_court: Burger Court (1981-1986)
+  decision_type: majority opinion
+  vote:
+    majority: 8
+    minority: 1
+  justices:
+  - name: Thurgood Marshall
+    vote: majority
+  - name: William J. Brennan, Jr.
+    vote: majority
+  - name: Byron R. White
+    vote: minority
+    opinion: dissent
+  - name: Warren E. Burger
+    vote: majority
+    opinion: majority
+  - name: Harry A. Blackmun
+    vote: majority
+    opinion: special concurrence
+  - name: Lewis F. Powell, Jr.
+    vote: majority
+  - name: William H. Rehnquist
+    vote: majority
+  - name: John Paul Stevens
+    vote: majority
+    opinion: special concurrence
+  - name: Sandra Day O'Connor
+    vote: majority
+    opinion: special concurrence
+  source: https://api.oyez.org/cases/1985/84-780
+  checked: '2026-11-24'
+reading_links:
+  checked: '2026-11-24'
+  links:
+  - site: library-of-congress
+    label: Library of Congress
+    access: official
+    link: https://www.loc.gov/item/usrep476693/
+  - site: justia
+    label: Justia
+    access: free
+    link: https://supreme.justia.com/cases/federal/us/476/693/
+    unchecked: true
+  - site: oyez
+    label: Oyez
+    access: free
+    link: https://www.oyez.org/cases/1985/84-780
+  - site: google-scholar
+    label: Google Scholar
+    access: free
+    link: https://scholar.google.com/scholar?hl=en&as_sdt=2006&q=%22476%20U.S.%20693%22
+    unchecked: true
+  - site: westlaw
+    label: Westlaw
+    access: subscription
+    link: https://1.next.westlaw.com/Link/Document/FullText?findType=Y&cite=476%20U.S.%20693
+    unchecked: true
+  - site: lexis
+    label: Lexis
+    access: subscription
+    link: https://advance.lexis.com/api/search?q=476%20U.S.%20693
+    unchecked: true
+rights:
+  status: no-permission-needed
+  basis: us-government-work
+  basis_note: Opinions of federal courts are works of the U.S. government (17 U.S.C. § 105); the host site's own additions are not reproduced.
+  redistribution: true
+found_in:
+- 2026-11-24-supreme-court-native-cases
+notes: 'Full citation: 476 U.S. 693 (1986). Official report scan: https://tile.loc.gov/storage-services/service/ll/usrep/usrep476/usrep476693/usrep476693.pdf. Written by scripts/caselaw/supreme_court_native_cases.py from the Supreme Court Database (case 1985-104), the Caselaw Access Project''s text of the report and the Library of Congress scan; not yet read by a person.'
+tribes: []
+nations_in_case:
+  checked: '2026-11-24'
+  named: []
+review:
+  status: unverified
+  by: scripts/caselaw/supreme_court_native_cases.py
+  date: '2026-11-24'
+  checks:
+  - check: cite
+    result: agree
+    detail: Caselaw Access Project 476 U.S. 693 "Bowen v. Roy"; Database 476 U.S. 693 "BOWEN, SECRETARY OF HEALTH AND HUMAN SERVICES, et al. v. ROY et al."
+  - check: scan
+    result: agree
+    detail: Scan has 41 pages; the report runs 693 to 733
+  - check: caption
+    result: agree
+    detail: Caption found in the scan's text at 1.00
+  - check: printed dates
+    result: agree
+    detail: Caselaw Access Project "Argued January 14, 1986 Decided June 11, 1986"; scan "Argued January 14, 1986-Decided June 11, 1986"
+  - check: decided
+    result: agree
+    detail: 'Printed and Database: 1986-06-11'
+  - check: opinions
+    result: settled
+    detail: 'Report: judgment Burger p. 695, concurrence Blackmun p. 712, concurrence in the result Stevens p. 716, concurrence in part and dissent in part O Connor p. 724, dissent White p. 733; Database writers: Blackmun, Burger, O Connor, Stevens, White; scan pages [(695, 694)]. Read from the scan by an AI reader (corrected): p. 695: CHIEF JUSTICE BURGER announced the judgment of the Court and delivered the opinion of the Court with respect to Parts I and II, and an opinion with respect to Part III ... p. 694: opinion of the Court with respect to Parts I and II, in which BRENNAN, MARSHALL, BLACKMUN, POWELL, REHNQUIST, STEVENS, and O''CONNOR, JJ., joined. p. 712: JUSTICE BLACKMUN, concurring in part. p. 716: JUSTICE STEVENS, concurring in part and concurring in the result. p. 724: JUSTICE O''CONNOR, with whom JUSTICE BRENNAN and JUSTICE MARSHALL join, concurring in part and dissenting in part. p. 733: WHITE, J., filed a dissenting opinion. Writer names corrected to match the bench list (Warren E. Burger, Byron R. White); Burger''s Parts I-II were joined by a majority, so his opinion is a majority opinion, and Stevens''s statement is concurring in part and in the result.'
+  - check: bench
+    result: agree
+    detail: Oyez and the Database give the same Justices and votes

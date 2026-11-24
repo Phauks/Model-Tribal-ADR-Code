@@ -1,0 +1,137 @@
+key: united-states-v-northwestern-express-stage-and-transportation-co
+kind: federal-case
+citation:
+  type: legal_case
+  title: United States v. Northwestern Express Stage & Transportation Co
+  authority: Supreme Court of the United States
+  container-title: U.S.
+  volume: '164'
+  page: '686'
+  issued:
+    date-parts:
+    - - 1897
+      - 1
+      - 4
+  URL: https://www.loc.gov/item/usrep164686/
+  accessed:
+    date-parts:
+    - - 2026
+      - 11
+      - 24
+caption:
+  printed: UNITED STATES AND THE SIOUX NATION v. NORTHWESTERN EXPRESS STAGE AND TRANSPORTATION COMPANY
+  source: https://tile.loc.gov/storage-services/service/ll/usrep/usrep164/usrep164686/usrep164686.pdf
+  checked: '2026-11-24'
+opinions:
+  source: https://tile.loc.gov/storage-services/service/ll/usrep/usrep164/usrep164686/usrep164686.pdf
+  checked: '2026-11-24'
+  list:
+  - kind: majority
+    justice: Edward Douglass White
+    page: 686
+original_link: https://www.loc.gov/item/usrep164686/
+retrieved: '2026-11-24'
+history:
+  status: live
+  last_checked: '2026-11-24'
+court_dates:
+  submitted:
+  - '1896-12-07'
+  printed: Submitted December 7, 1896. Decided January 4, 1897.
+  source: https://tile.loc.gov/storage-services/service/ll/usrep/usrep164/usrep164686/usrep164686.pdf
+  checked: '2026-11-24'
+supreme_court:
+  court: Fuller Court
+  natural_court: Fuller Court (1896-1897)
+  decision_type: majority opinion
+  vote:
+    majority: 9
+    minority: 0
+  justices:
+  - name: Melville Weston Fuller
+    vote: majority
+  - name: Edward Douglass White
+    vote: majority
+    opinion: majority
+  - name: Stephen Johnson Field
+    vote: majority
+  - name: John Marshall Harlan
+    vote: majority
+  - name: Horace Gray
+    vote: majority
+  - name: David Josiah Brewer
+    vote: majority
+  - name: Henry Billings Brown
+    vote: majority
+  - name: George Shiras, Jr.
+    vote: majority
+  - name: Rufus Wheeler Peckham
+    vote: majority
+  source: http://scdb.wustl.edu/_brickFiles/Legacy_07/SCDB_Legacy_07_justiceCentered_Citation.csv.zip
+  note: From the Supreme Court Database, case 1896-069; Oyez has no votes for this case.
+  checked: '2026-11-24'
+reading_links:
+  checked: '2026-11-24'
+  links:
+  - site: library-of-congress
+    label: Library of Congress
+    access: official
+    link: https://www.loc.gov/item/usrep164686/
+  - site: justia
+    label: Justia
+    access: free
+    link: https://supreme.justia.com/cases/federal/us/164/686/
+    unchecked: true
+  - site: google-scholar
+    label: Google Scholar
+    access: free
+    link: https://scholar.google.com/scholar?hl=en&as_sdt=2006&q=%22164%20U.S.%20686%22
+    unchecked: true
+  - site: westlaw
+    label: Westlaw
+    access: subscription
+    link: https://1.next.westlaw.com/Link/Document/FullText?findType=Y&cite=164%20U.S.%20686
+    unchecked: true
+  - site: lexis
+    label: Lexis
+    access: subscription
+    link: https://advance.lexis.com/api/search?q=164%20U.S.%20686
+    unchecked: true
+rights:
+  status: no-permission-needed
+  basis: us-government-work
+  basis_note: Opinions of federal courts are works of the U.S. government (17 U.S.C. § 105); the host site's own additions are not reproduced.
+  redistribution: true
+found_in:
+- 2026-11-24-supreme-court-native-cases
+notes: 'Full citation: 164 U.S. 686 (1897). Official report scan: https://tile.loc.gov/storage-services/service/ll/usrep/usrep164/usrep164686/usrep164686.pdf. Written by scripts/caselaw/supreme_court_native_cases.py from the Supreme Court Database (case 1896-069), the Caselaw Access Project''s text of the report and the Library of Congress scan; not yet read by a person.'
+tribes: []
+nations_in_case:
+  checked: '2026-11-24'
+  named: []
+review:
+  status: unverified
+  by: scripts/caselaw/supreme_court_native_cases.py
+  date: '2026-11-24'
+  checks:
+  - check: cite
+    result: agree
+    detail: Caselaw Access Project 164 U.S. 686 "United States v. Northwestern Express Stage & Transportation Co."; Database 164 U.S. 686 "UNITED STATES AND THE SIOUX NATION v. NORTHWESTERN EXPRESS STAGE AND TRANSPORTATION COMPANY"
+  - check: scan
+    result: agree
+    detail: Scan has 6 pages; the report runs 686 to 691
+  - check: caption
+    result: agree
+    detail: Caption found in the scan's text at 1.00
+  - check: printed dates
+    result: settled
+    detail: 'Caselaw Access Project "Submitted December 7, 1896. Decided January 4, 1897."; scan "not found". Read from the scan by an AI reader (record right): p. 686: "Submitted December 7, 1896.-Decided January 4, 1897." (OCR: "Submitted1Iecember 7,1896.-Decided January4, 1897."). The date line is on the scan, so the "not found" note in the check is wrong, and the record''s printed dates match.'
+  - check: decided
+    result: agree
+    detail: 'Printed and Database: 1897-01-04'
+  - check: opinions
+    result: agree
+    detail: 'Report: majority White p. 686; Database writers: White'
+  - check: bench
+    result: agree
+    detail: No Oyez votes; each opinion writer in the report sits on the Database's bench on the side the opinion takes

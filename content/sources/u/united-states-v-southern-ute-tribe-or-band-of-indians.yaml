@@ -1,0 +1,144 @@
+key: united-states-v-southern-ute-tribe-or-band-of-indians
+kind: federal-case
+citation:
+  type: legal_case
+  title: United States v. Southern Ute Tribe or Band of Indians
+  authority: Supreme Court of the United States
+  container-title: U.S.
+  volume: '402'
+  page: '159'
+  issued:
+    date-parts:
+    - - 1971
+      - 4
+      - 26
+  URL: https://www.loc.gov/item/usrep402159/
+  accessed:
+    date-parts:
+    - - 2026
+      - 11
+      - 24
+caption:
+  printed: UNITED STATES v. SOUTHERN UTE TRIBE OR BAND OF INDIANS
+  source: https://tile.loc.gov/storage-services/service/ll/usrep/usrep402/usrep402159/usrep402159.pdf
+  checked: '2026-11-24'
+opinions:
+  source: https://tile.loc.gov/storage-services/service/ll/usrep/usrep402/usrep402159/usrep402159.pdf
+  checked: '2026-11-24'
+  list:
+  - kind: majority
+    justice: William J. Brennan, Jr.
+    page: 159
+  - kind: dissent
+    justice: William Orville Douglas
+    page: 174
+original_link: https://www.loc.gov/item/usrep402159/
+retrieved: '2026-11-24'
+history:
+  status: live
+  last_checked: '2026-11-24'
+court_dates:
+  argued:
+  - '1971-03-01'
+  printed: Argued March 1, 1971 — Decided April 26, 1971
+  source: https://tile.loc.gov/storage-services/service/ll/usrep/usrep402/usrep402159/usrep402159.pdf
+  checked: '2026-11-24'
+supreme_court:
+  court: Burger Court
+  natural_court: Burger Court (1970-1971)
+  decision_type: majority opinion
+  vote:
+    majority: 8
+    minority: 1
+  justices:
+  - name: John M. Harlan II
+    vote: majority
+  - name: Hugo L. Black
+    vote: majority
+  - name: William O. Douglas
+    vote: minority
+    opinion: dissent
+  - name: Potter Stewart
+    vote: majority
+  - name: Thurgood Marshall
+    vote: majority
+  - name: William J. Brennan, Jr.
+    vote: majority
+    opinion: majority
+  - name: Byron R. White
+    vote: majority
+  - name: Warren E. Burger
+    vote: majority
+  - name: Harry A. Blackmun
+    vote: majority
+  source: https://api.oyez.org/cases/1970/515
+  checked: '2026-11-24'
+reading_links:
+  checked: '2026-11-24'
+  links:
+  - site: library-of-congress
+    label: Library of Congress
+    access: official
+    link: https://www.loc.gov/item/usrep402159/
+  - site: justia
+    label: Justia
+    access: free
+    link: https://supreme.justia.com/cases/federal/us/402/159/
+    unchecked: true
+  - site: oyez
+    label: Oyez
+    access: free
+    link: https://www.oyez.org/cases/1970/515
+  - site: google-scholar
+    label: Google Scholar
+    access: free
+    link: https://scholar.google.com/scholar?hl=en&as_sdt=2006&q=%22402%20U.S.%20159%22
+    unchecked: true
+  - site: westlaw
+    label: Westlaw
+    access: subscription
+    link: https://1.next.westlaw.com/Link/Document/FullText?findType=Y&cite=402%20U.S.%20159
+    unchecked: true
+  - site: lexis
+    label: Lexis
+    access: subscription
+    link: https://advance.lexis.com/api/search?q=402%20U.S.%20159
+    unchecked: true
+rights:
+  status: no-permission-needed
+  basis: us-government-work
+  basis_note: Opinions of federal courts are works of the U.S. government (17 U.S.C. § 105); the host site's own additions are not reproduced.
+  redistribution: true
+found_in:
+- 2026-11-24-supreme-court-native-cases
+notes: 'Full citation: 402 U.S. 159 (1971). Official report scan: https://tile.loc.gov/storage-services/service/ll/usrep/usrep402/usrep402159/usrep402159.pdf. Written by scripts/caselaw/supreme_court_native_cases.py from the Supreme Court Database (case 1970-093), the Caselaw Access Project''s text of the report and the Library of Congress scan; not yet read by a person.'
+tribes: []
+nations_in_case:
+  checked: '2026-11-24'
+  named: []
+review:
+  status: verified
+  by: scripts/caselaw/supreme_court_native_cases.py
+  date: '2026-11-24'
+  checks:
+  - check: cite
+    result: agree
+    detail: Caselaw Access Project 402 U.S. 159 "United States v. Southern Ute Tribe or Band of Indians"; Database 402 U.S. 159 "UNITED STATES v. SOUTHERN UTE TRIBE OR BAND OF INDIANS"
+  - check: scan
+    result: agree
+    detail: Scan has 23 pages; the report runs 159 to 181
+  - check: caption
+    result: agree
+    detail: Caption found in the scan's text at 1.00
+  - check: printed dates
+    result: agree
+    detail: Caselaw Access Project "Argued March 1, 1971 — Decided April 26, 1971"; scan "Argued March 1, 1971-Decided April 26, 1971"
+  - check: decided
+    result: agree
+    detail: 'Printed and Database: 1971-04-26'
+  - check: opinions
+    result: agree
+    detail: 'Report: majority Brennan p. 159, dissent Douglas p. 174; Database writers: Brennan, Douglas'
+  - check: bench
+    result: agree
+    detail: Oyez and the Database give the same Justices and votes

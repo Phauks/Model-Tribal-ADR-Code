@@ -1,0 +1,137 @@
+key: harris-v-bell
+kind: federal-case
+citation:
+  type: legal_case
+  title: Harris v. Bell
+  authority: Supreme Court of the United States
+  container-title: U.S.
+  volume: '254'
+  page: '103'
+  issued:
+    date-parts:
+    - - 1920
+      - 11
+      - 15
+  URL: https://www.loc.gov/item/usrep254103/
+  accessed:
+    date-parts:
+    - - 2026
+      - 11
+      - 24
+caption:
+  printed: HARRIS, FORMERLY FRANCIS, ET AL. v. BELL ET AL
+  source: https://tile.loc.gov/storage-services/service/ll/usrep/usrep254/usrep254103/usrep254103.pdf
+  checked: '2026-11-24'
+opinions:
+  source: https://tile.loc.gov/storage-services/service/ll/usrep/usrep254/usrep254103/usrep254103.pdf
+  checked: '2026-11-24'
+  list:
+  - kind: majority
+    justice: Willis Van Devanter
+    page: 104
+original_link: https://www.loc.gov/item/usrep254103/
+retrieved: '2026-11-24'
+history:
+  status: live
+  last_checked: '2026-11-24'
+court_dates:
+  argued:
+  - '1920-01-26'
+  printed: Argued January 26,1920. Decided November 15, 1920.
+  source: https://tile.loc.gov/storage-services/service/ll/usrep/usrep254/usrep254103/usrep254103.pdf
+  checked: '2026-11-24'
+supreme_court:
+  court: White Court
+  natural_court: White Court (1916-1921)
+  decision_type: majority opinion
+  vote:
+    majority: 9
+    minority: 0
+  justices:
+  - name: Edward Douglass White
+    vote: majority
+  - name: Joseph McKenna
+    vote: majority
+  - name: Oliver Wendell Holmes
+    vote: majority
+  - name: William Rufus Day
+    vote: majority
+  - name: Willis Van Devanter
+    vote: majority
+    opinion: majority
+  - name: Mahlon Pitney
+    vote: majority
+  - name: James Clark McReynolds
+    vote: majority
+  - name: Louis Dembitz Brandeis
+    vote: majority
+  - name: John Hessin Clarke
+    vote: majority
+  source: http://scdb.wustl.edu/_brickFiles/Legacy_07/SCDB_Legacy_07_justiceCentered_Citation.csv.zip
+  note: From the Supreme Court Database, case 1920-034; Oyez has no votes for this case.
+  checked: '2026-11-24'
+reading_links:
+  checked: '2026-11-24'
+  links:
+  - site: library-of-congress
+    label: Library of Congress
+    access: official
+    link: https://www.loc.gov/item/usrep254103/
+  - site: justia
+    label: Justia
+    access: free
+    link: https://supreme.justia.com/cases/federal/us/254/103/
+    unchecked: true
+  - site: google-scholar
+    label: Google Scholar
+    access: free
+    link: https://scholar.google.com/scholar?hl=en&as_sdt=2006&q=%22254%20U.S.%20103%22
+    unchecked: true
+  - site: westlaw
+    label: Westlaw
+    access: subscription
+    link: https://1.next.westlaw.com/Link/Document/FullText?findType=Y&cite=254%20U.S.%20103
+    unchecked: true
+  - site: lexis
+    label: Lexis
+    access: subscription
+    link: https://advance.lexis.com/api/search?q=254%20U.S.%20103
+    unchecked: true
+rights:
+  status: no-permission-needed
+  basis: us-government-work
+  basis_note: Opinions of federal courts are works of the U.S. government (17 U.S.C. § 105); the host site's own additions are not reproduced.
+  redistribution: true
+found_in:
+- 2026-11-24-supreme-court-native-cases
+notes: 'Full citation: 254 U.S. 103 (1920). Official report scan: https://tile.loc.gov/storage-services/service/ll/usrep/usrep254/usrep254103/usrep254103.pdf. Written by scripts/caselaw/supreme_court_native_cases.py from the Supreme Court Database (case 1920-034), the Caselaw Access Project''s text of the report and the Library of Congress scan; not yet read by a person.'
+tribes: []
+nations_in_case:
+  checked: '2026-11-24'
+  named: []
+review:
+  status: verified
+  by: scripts/caselaw/supreme_court_native_cases.py
+  date: '2026-11-24'
+  checks:
+  - check: cite
+    result: agree
+    detail: Caselaw Access Project 254 U.S. 103 "Harris v. Bell"; Database 254 U.S. 103 "HARRIS, FORMERLY FRANCIS, et al. v. BELL et al."
+  - check: scan
+    result: agree
+    detail: Scan has 11 pages; the report runs 103 to 113
+  - check: caption
+    result: agree
+    detail: Caption found in the scan's text at 1.00
+  - check: printed dates
+    result: agree
+    detail: Caselaw Access Project "Argued January 26,1920. Decided November 15, 1920."; scan "Argued January 26, 1920.-Decided November 15, 1920."
+  - check: decided
+    result: agree
+    detail: 'Printed and Database: 1920-11-15'
+  - check: opinions
+    result: agree
+    detail: 'Report: majority Devanter p. 104; Database writers: Devanter'
+  - check: bench
+    result: agree
+    detail: No Oyez votes; each opinion writer in the report sits on the Database's bench on the side the opinion takes
