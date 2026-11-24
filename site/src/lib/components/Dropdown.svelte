@@ -8,6 +8,13 @@
 	// opens the list; Up and Down move; Home and End jump to the first and
 	// last; Enter, Space or Tab picks; Escape closes the list without
 	// closing the dialog around it.
+	//
+	// Given a name, it is a form field: a hidden input sends the picked
+	// value, and without scripts the browser's own <select> stands in for
+	// it, so the form still works. With the label inside, the label sits in
+	// the box before the picked choice and the box fills its column, as in
+	// the gift panel on the Sponsorship page.
+	import { onMount } from 'svelte';
 	import Check from '@lucide/svelte/icons/check';
 	import ChevronDown from '@lucide/svelte/icons/chevron-down';
 	import type { Choice } from '#lib/reading-settings.ts';
@@ -15,17 +22,27 @@
 	let {
 		label,
 		choices,
-		value,
+		value = $bindable(),
 		onchange,
-		choiceStyle
+		choiceStyle,
+		name,
+		labelInside = false
 	}: {
 		label: string;
 		choices: Choice<Value>[];
 		value: Value;
-		onchange: (value: Value) => void;
+		onchange?: (value: Value) => void;
 		/** Inline style for a choice, such as its own font-family. The closed dropdown uses the picked choice's style too. */
 		choiceStyle?: (value: Value) => string | undefined;
+		/** The form field's name, for a dropdown inside a form. */
+		name?: string;
+		/** Puts the label inside the box, before the picked choice, and lets the box fill its column. */
+		labelInside?: boolean;
 	} = $props();
+
+	// The <select> sends the value until scripts run; then the hidden input does.
+	let scripted = $state(false);
+	onMount(() => (scripted = true));
 
 	const identifier = $props.id();
 	let expanded = $state(false);
@@ -58,7 +75,10 @@
 
 	function pick(index: number): void {
 		const choice = choices[index];
-		if (choice && choice.value !== value) onchange(choice.value);
+		if (choice && choice.value !== value) {
+			value = choice.value;
+			onchange?.(choice.value);
+		}
 		hide();
 	}
 
@@ -134,11 +154,24 @@
 	}
 </script>
 
-<div class="dropdown">
-	<!-- The label is not a <label>, since the combobox is not a form field; selecting it moves focus to the combobox, as a <label> would. -->
-	<!-- svelte-ignore a11y_click_events_have_key_events, a11y_no_static_element_interactions -->
-	<div class="dropdown-label" id="{identifier}-label" onclick={() => combobox?.focus()}>{label}</div>
-	<div class="dropdown-control">
+<div class="dropdown" class:label-inside={labelInside}>
+	{#if !labelInside}
+		<!-- The label is not a <label>, since the combobox is not a form field; selecting it moves focus to the combobox, as a <label> would. -->
+		<!-- svelte-ignore a11y_click_events_have_key_events, a11y_no_static_element_interactions -->
+		<div class="dropdown-label" id="{identifier}-label" onclick={() => combobox?.focus()}>{label}</div>
+	{/if}
+	{#if name}
+		<input type="hidden" name={scripted ? name : undefined} {value} />
+		<label class="dropdown-fallback">
+			<span class:visually-hidden={!labelInside}>{label}</span>
+			<select name={scripted ? undefined : name}>
+				{#each choices as choice (choice.value)}
+					<option value={choice.value} selected={choice.value === value}>{choice.label}</option>
+				{/each}
+			</select>
+		</label>
+	{/if}
+	<div class="dropdown-control" class:needs-scripts={Boolean(name)}>
 		<div
 			bind:this={combobox}
 			class="dropdown-button"
@@ -148,14 +181,17 @@
 			aria-controls="{identifier}-list"
 			aria-expanded={expanded}
 			aria-haspopup="listbox"
-			aria-labelledby="{identifier}-label {identifier}-combobox"
+			aria-labelledby="{identifier}-label {identifier}-value"
 			aria-describedby={selected?.hint ? `${identifier}-hint` : undefined}
 			aria-activedescendant={expanded ? optionId(active) : undefined}
 			onclick={() => (expanded ? hide() : show())}
 			onkeydown={onKeydown}
 			onblur={hide}
 		>
-			<span class="dropdown-value" style={choiceStyle?.(selected.value)}>{selected.label}</span>
+			{#if labelInside}
+				<span class="dropdown-label" id="{identifier}-label">{label}</span>
+			{/if}
+			<span class="dropdown-value" id="{identifier}-value" style={choiceStyle?.(selected.value)}>{selected.label}</span>
 			<ChevronDown size={20} strokeWidth={1.75} />
 		</div>
 		<!-- Pressing a choice must not take focus from the combobox, or the list would close before the click lands. -->
@@ -234,6 +270,49 @@
 
 	.dropdown-value {
 		min-width: 0;
+	}
+
+	/* The label inside the box: muted, before the picked choice, which is
+	   set in semibold so it reads as the answer. */
+	.label-inside {
+		margin: 0;
+	}
+
+	.label-inside .dropdown-control {
+		width: 100%;
+	}
+
+	.label-inside .dropdown-label {
+		flex: none;
+		margin: 0;
+		font-weight: normal;
+		color: var(--color-ink-muted);
+		cursor: inherit;
+	}
+
+	.label-inside .dropdown-value {
+		flex: 1;
+		font-weight: var(--font-weight-semibold);
+	}
+
+	/* The browser's own <select>, for readers without scripts. */
+	.dropdown-fallback {
+		display: flex;
+		align-items: center;
+		gap: var(--space-2);
+	}
+
+	.dropdown-fallback select {
+		width: min(100%, var(--layout-field));
+	}
+
+	.label-inside .dropdown-fallback select {
+		flex: 1;
+		width: auto;
+	}
+
+	:global(:root[data-scripts='on']) .dropdown-fallback {
+		display: none;
 	}
 
 	.dropdown-list {
