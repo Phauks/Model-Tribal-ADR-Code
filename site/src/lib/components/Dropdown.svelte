@@ -14,7 +14,12 @@
 	// it, so the form still works. With the label inside, the label sits in
 	// the box before the picked choice and the box fills its column, as in
 	// the gift panel on the Sponsorship page.
-	import { onMount } from 'svelte';
+	//
+	// A pick also sends a change event from the hidden input, so a form that
+	// listens for changes (a filter bar that applies itself, or one that sends
+	// itself on change) hears the dropdown as it heard the <select>. An icon
+	// can sit before the picked choice, as in the Recent changes filters.
+	import { onMount, tick, type Component } from 'svelte';
 	import Check from '@lucide/svelte/icons/check';
 	import ChevronDown from '@lucide/svelte/icons/chevron-down';
 	import type { Choice } from '#lib/reading-settings.ts';
@@ -26,7 +31,8 @@
 		onchange,
 		choiceStyle,
 		name,
-		labelInside = false
+		labelInside = false,
+		icon: Icon
 	}: {
 		label: string;
 		choices: Choice<Value>[];
@@ -38,6 +44,8 @@
 		name?: string;
 		/** Puts the label inside the box, before the picked choice, and lets the box fill its column. */
 		labelInside?: boolean;
+		/** A Lucide icon drawn before the picked choice. */
+		icon?: Component<{ size?: string | number; strokeWidth?: number; 'aria-hidden'?: 'true' }>;
 	} = $props();
 
 	// The <select> sends the value until scripts run; then the hidden input does.
@@ -49,6 +57,7 @@
 	let active = $state(0);
 	let combobox: HTMLDivElement | undefined = $state();
 	let list: HTMLUListElement | undefined = $state();
+	let field: HTMLInputElement | undefined = $state();
 	let typed = '';
 	let typedTimer: ReturnType<typeof setTimeout> | undefined;
 
@@ -78,6 +87,8 @@
 		if (choice && choice.value !== value) {
 			value = choice.value;
 			onchange?.(choice.value);
+			// After the hidden input holds the new value, as a <select> would have it.
+			void tick().then(() => field?.dispatchEvent(new Event('change', { bubbles: true })));
 		}
 		hide();
 	}
@@ -161,7 +172,7 @@
 		<div class="dropdown-label" id="{identifier}-label" onclick={() => combobox?.focus()}>{label}</div>
 	{/if}
 	{#if name}
-		<input type="hidden" name={scripted ? name : undefined} {value} />
+		<input bind:this={field} type="hidden" name={scripted ? name : undefined} {value} />
 		<label class="dropdown-fallback">
 			<span class:visually-hidden={!labelInside}>{label}</span>
 			<select name={scripted ? undefined : name}>
@@ -191,6 +202,7 @@
 			{#if labelInside}
 				<span class="dropdown-label" id="{identifier}-label">{label}</span>
 			{/if}
+			{#if Icon}<span class="dropdown-icon"><Icon size={16} aria-hidden="true" /></span>{/if}
 			<span class="dropdown-value" id="{identifier}-value" style={choiceStyle?.(selected.value)}>{selected.label}</span>
 			<ChevronDown size={20} strokeWidth={1.75} />
 		</div>
@@ -269,8 +281,20 @@
 		transform: rotate(180deg);
 	}
 
+	/* One line, as the browser's own <select> keeps it: a long choice ends in an ellipsis rather than making the box taller than the fields beside it. */
 	.dropdown-value {
+		flex: 1;
 		min-width: 0;
+		overflow: hidden;
+		text-overflow: ellipsis;
+		white-space: nowrap;
+	}
+
+	/* Nearer the choice it marks than the gap to the arrow. */
+	.dropdown-icon {
+		display: inline-flex;
+		margin-right: calc(var(--space-2) - var(--space-3));
+		color: var(--color-ink-muted);
 	}
 
 	/* The label inside the box: muted, before the picked choice, which is

@@ -15,13 +15,16 @@
 	// A dropdown a reader can type into to narrow a long list (site/DESIGN.md, section 6, "Searchable dropdown"). Trevor asked for it on 2026-11-23 for the map's views, which will grow (Public Law 280 and more), in place of a row of tabs. It follows the WAI-ARIA editable combobox pattern with list autocomplete (https://www.w3.org/WAI/ARIA/apg/patterns/combobox/examples/combobox-autocomplete-list/).
 	//
 	// Keys: typing filters the list by label, group, description and keywords; Down and Up open the list and move through it; Enter picks; Escape closes the list, and a second Escape clears what was typed; Tab leaves without changing the choice. A screen reader hears how many choices match.
+	//
+	// Given a name, it is a form field, as the plain Dropdown is: a hidden input sends the picked value, a pick sends a change event from it, and without scripts the browser's own <select> stands in for it, so the form still works.
+	import { onMount, tick } from 'svelte';
 	import Check from '@lucide/svelte/icons/check';
 	import ChevronDown from '@lucide/svelte/icons/chevron-down';
 
 	let {
 		label,
 		choices,
-		value,
+		value = $bindable(),
 		onchange,
 		onhighlight,
 		placeholder = 'Type to search',
@@ -31,7 +34,7 @@
 		label: string;
 		choices: SearchableChoice<Value>[];
 		value: Value;
-		onchange: (value: Value) => void;
+		onchange?: (value: Value) => void;
 		/** Called with the choice the reader is on in the open list, before picking it, so a page can start fetching what that choice shows. */
 		onhighlight?: (value: Value) => void;
 		placeholder?: string;
@@ -40,6 +43,11 @@
 		/** Sends the picked value with the form around the dropdown under this name. */
 		name?: string;
 	} = $props();
+
+	// The <select> sends the value until scripts run; then the hidden input does.
+	let scripted = $state(false);
+	onMount(() => (scripted = true));
+	let field: HTMLInputElement | undefined = $state();
 
 	const identifier = $props.id();
 	let expanded = $state(false);
@@ -104,7 +112,11 @@
 	function pick(index: number): void {
 		const choice = shown[index];
 		hide();
-		if (choice && choice.value !== value) onchange(choice.value);
+		if (choice && choice.value !== value) {
+			value = choice.value;
+			onchange?.(choice.value);
+			void tick().then(() => field?.dispatchEvent(new Event('change', { bubbles: true })));
+		}
 	}
 
 	function move(index: number): void {
@@ -150,9 +162,19 @@
 </script>
 
 <div class="searchable-dropdown">
-	<label class="searchable-dropdown-label" class:visually-hidden={hideLabel} for="{identifier}-input">{label}</label>
-	{#if name}<input type="hidden" {name} {value} />{/if}
-	<div class="searchable-dropdown-control" class:expanded>
+	{#if name}
+		<input bind:this={field} type="hidden" name={scripted ? name : undefined} {value} />
+		<label class="searchable-dropdown-fallback">
+			<span class:visually-hidden={hideLabel}>{label}</span>
+			<select name={scripted ? undefined : name}>
+				{#each choices as choice (choice.value)}
+					<option value={choice.value} selected={choice.value === value}>{choice.label}</option>
+				{/each}
+			</select>
+		</label>
+	{/if}
+	<label class="searchable-dropdown-label" class:visually-hidden={hideLabel} class:needs-scripts={Boolean(name)} for="{identifier}-input">{label}</label>
+	<div class="searchable-dropdown-control" class:expanded class:needs-scripts={Boolean(name)}>
 		<input
 			bind:this={input}
 			id="{identifier}-input"
@@ -248,6 +270,23 @@
 {/snippet}
 
 <style>
+	/* The browser's own <select>, for readers without scripts. */
+	.searchable-dropdown-fallback {
+		display: flex;
+		flex-direction: column;
+		gap: var(--space-1);
+		font-weight: var(--font-weight-bold);
+	}
+
+	.searchable-dropdown-fallback select {
+		width: min(100%, var(--layout-field));
+		font-weight: normal;
+	}
+
+	:global(:root[data-scripts='on']) .searchable-dropdown-fallback {
+		display: none;
+	}
+
 	.searchable-dropdown-label {
 		display: block;
 		font-weight: var(--font-weight-bold);
