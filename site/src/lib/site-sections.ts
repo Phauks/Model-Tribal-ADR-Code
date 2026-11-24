@@ -1,5 +1,5 @@
-// The site's sections, in the order of the working outline's main menu
-// (docs/outline.md, "The website"). The sidebar lists them on every page, and
+// The site's sections, in sidebar order (the original menu is in
+// docs/outline.md, "The website"). The sidebar lists them on every page, and
 // its second column lists the pages of the one being read.
 
 import { libraryOutline } from '#lib/library-pages.ts';
@@ -49,19 +49,24 @@ export type PageOutline = {
  */
 export type SiteSection = { label: string; link: string; built: boolean; gathers?: OutlineItem[]; opens?: boolean };
 
+// The site is a repository of Native legal information first, so the
+// nations, the library and the glossary lead, and the model code follows the
+// writing about it (Trevor, Nov. 24, 2026).
 export const siteSections: SiteSection[] = [
-	{ label: 'Model code', link: '/code', built: false },
-	{ label: 'Peacemaking', link: '/peacemaking', built: false },
+	{ label: 'Nations', link: '/nations', built: true, opens: true },
+	{ label: 'Library', link: '/library', built: true, gathers: libraryOutline(), opens: true },
+	{ label: 'Glossary', link: '/glossary', built: true, opens: true },
 	{ label: 'Foundations', link: '/foundations', built: true, opens: true },
 	{ label: 'Essays', link: '/essays', built: true, opens: true },
 	// Only the stories are published so far; the methods catalog joins them later.
 	{ label: 'Methods and stories', link: '/stories', built: true, opens: true },
-	{ label: 'Nations', link: '/nations', built: true, opens: true },
-	{ label: 'Library', link: '/library', built: true, gathers: libraryOutline(), opens: true },
-	{ label: 'Glossary', link: '/glossary', built: true, opens: true },
+	{ label: 'Model code', link: '/code', built: false },
+	{ label: 'Peacemaking', link: '/peacemaking', built: false },
 	{ label: 'Events', link: '/events', built: true, opens: true },
 	{ label: 'About', link: '/about', built: true, opens: true },
 	{ label: 'Sponsorship', link: '/sponsor', built: true },
+	// Contribute moved here from the masthead, which keeps only its buttons (Trevor, Nov. 24, 2026).
+	{ label: 'Contribute', link: '/requests?kind=contribute', built: true },
 	// The Store gathers the special-order page for books, which keeps its address (Trevor, Nov. 23, 2026).
 	{ label: 'Store', link: '/store', built: true, gathers: [{ label: 'Special order', link: '/book' }], opens: true }
 ];

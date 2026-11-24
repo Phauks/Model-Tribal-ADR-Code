@@ -309,7 +309,7 @@ const everyChange = `
 			NULL, 0, NULL, NULL, NULL, NULL,
 			json_array(CASE npc.kind
 				WHEN 'about' THEN 'About'
-				WHEN 'courts' THEN 'Courts and dispute resolution'
+				WHEN 'courts' THEN 'Courts'
 				WHEN 'statements' THEN 'Statements beside government records'
 				WHEN 'contacts' THEN 'Contacts'
 				WHEN 'pictures' THEN 'Pictures'

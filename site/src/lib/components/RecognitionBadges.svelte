@@ -7,9 +7,10 @@
 	recognition has no badge. The full wording is the tooltip and what a
 	screen reader reads.
 
-	On a nation's own page, a badge with an explanation is a button that opens
-	a panel saying how the nation came to hold that status, when, and the
-	document that shows it (Trevor, Nov. 23, 2026; src/lib/recognition-explanation.ts).
+	On a nation's own page and in the Native nations table, a badge with an
+	explanation is a button that opens a panel saying how the nation came to
+	hold that status, when, and the document that shows it (Trevor, Nov. 23
+	and 24, 2026; src/lib/recognition-explanation.ts).
 	The panel is a native popover, so Escape and a click elsewhere close it.
 -->
 <script lang="ts">
@@ -28,11 +29,13 @@
 		explanations
 	}: { badges: RecognitionBadge[]; size?: 'normal' | 'small'; explanations?: Record<string, BadgeExplanation> } = $props();
 
+	// Unique on the page, since a table shows one set of badges on every row.
+	const own = $props.id();
 	const panels: Record<string, HTMLElement | undefined> = $state({});
 	const buttons: Record<string, HTMLElement | undefined> = $state({});
 
 	function panelId(index: number): string {
-		return `recognition-explanation-${index}`;
+		return `recognition-explanation-${own}-${index}`;
 	}
 
 	/** Opens the panel under its badge, inside the window. */
@@ -163,6 +166,11 @@
 		min-height: var(--layout-target-minimum);
 		font-family: inherit;
 		cursor: pointer;
+	}
+
+	/* In a table's small badges the button keeps the pill's height, still at least 24 px to tap (WCAG 2.5.8). */
+	.recognition-badges-small .recognition-badge-button {
+		min-height: 1.5rem;
 	}
 
 	.recognition-badge-button:hover {

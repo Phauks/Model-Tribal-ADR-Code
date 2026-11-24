@@ -27,6 +27,7 @@
 		"check:sidebar": "node tools/check-sidebar.mjs",
 		"check:timeline": "node tools/check-timeline.mjs",
 		"check:wide-tables": "node tools/check-wide-tables.mjs",
+		"check:table-tools": "node tools/check-table-tools.mjs",
 		"database:migrate:local": "wrangler d1 migrations apply database --local",
 		"database:migrate:remote": "wrangler d1 migrations apply database --remote",
 		"database:new-migration": "node tools/new-migration.mjs",

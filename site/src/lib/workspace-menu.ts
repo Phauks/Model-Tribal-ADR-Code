@@ -7,7 +7,6 @@ import type { Permission } from './permissions.ts';
 
 export type WorkspacePageName =
 	| 'overview'
-	| 'essays'
 	| 'review-requests'
 	| 'comments'
 	| 'requests'
@@ -64,8 +63,7 @@ export interface WorkspacePage {
 /** In menu order: Overview, then each category's pages in the order of the categories. */
 export const workspacePages: readonly WorkspacePage[] = [
 	{ name: 'overview', label: 'Overview', link: '/workspace' },
-	// Everyone sees the essays they can open, by role or by grant.
-	{ name: 'essays', label: 'Essays', link: '/workspace/essays', category: 'Writing and review' },
+	// Essays are started, edited and reviewed on their own pages; Workspace › Essays was removed (lead author, Nov. 23, 2026).
 	// Drafts and sections people asked this person to review (src/lib/server/essay-review-requests.ts).
 	{ name: 'review-requests', label: 'Review requests', link: '/workspace/review-requests', category: 'Writing and review', needs: 'comment' },
 	// Comments that mention this person or answer them (src/lib/server/essay-comments.ts).

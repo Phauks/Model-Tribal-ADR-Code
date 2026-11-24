@@ -238,9 +238,9 @@
 			{/if}
 		</Collapsible>
 
-		<!-- 5. Courts and dispute resolution -->
-		<Collapsible heading="Courts and dispute resolution" identifier="courts-heading">
-			{@render editLink('courts-and-dispute-resolution', 'courts-heading', 'Courts and dispute resolution')}
+		<!-- 5. Courts -->
+		<Collapsible heading="Courts" identifier="courts-heading">
+			{@render editLink('courts-and-dispute-resolution', 'courts-heading', 'Courts')}
 			{#if data.empty.courts}
 				{@render emptySection(data.empty.courts)}
 			{:else}

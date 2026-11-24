@@ -1,9 +1,13 @@
 <script lang="ts">
 	import Breadcrumbs from '#lib/components/Breadcrumbs.svelte';
 	import { accessLevelLabels } from '#lib/permissions.ts';
+	import { sectionOf } from '#lib/site-sections.ts';
 	import type { PageProps } from './$types';
 
 	let { data, form }: PageProps = $props();
+
+	// The essay's section, such as Essays or Foundations, now that Workspace › Essays is gone.
+	const section = $derived(sectionOf(data.page));
 
 	const originLabels = { editor: 'Saved', git: 'Brought in from git', restore: 'Restored' } as const;
 
@@ -34,15 +38,15 @@
 
 <Breadcrumbs
 	trail={[
-		{ label: 'Workspace', href: '/workspace' },
-		{ label: 'Essays', href: '/workspace/essays' }
+		...(section ? [{ label: section.label, href: section.link }] : []),
+		{ label: data.title, href: data.page }
 	]}
 />
 
 <h1>{data.title}</h1>
 <p class="small muted">Your access: {accessLevelLabels[data.level].toLocaleLowerCase('en-US')}</p>
 <p class="actions">
-	<a class="button" href="/workspace/essays/{data.identifier}/edit">{data.canEdit ? 'Edit' : 'Read'}</a>
+	<a class="button" href={data.canEdit ? `${data.page}?edit` : data.page}>{data.canEdit ? 'Edit' : 'Read'}</a>
 	{#if data.publications.some((publication) => publication.listed)}
 		<a class="button button-quiet" href={data.page}>Published page</a>
 	{/if}
@@ -52,6 +56,20 @@
 	<div class="notice notice-problem" role="alert"><p>{form.problem}</p></div>
 {:else if form && 'done' in form}
 	<div class="notice" role="status"><p>{form.done}</p></div>
+{/if}
+
+{#if data.gitConflict}
+	<section class="panel" aria-labelledby="git-heading">
+		<h2 id="git-heading">Changed both here and in git</h2>
+		<p class="small">
+			Git changed {data.gitConflict.conflicts === 1 ? 'a paragraph' : `${data.gitConflict.conflicts} paragraphs`} that were also edited here since version {data.gitConflict.latestVersion}, so nothing from git was saved. Edit the paragraphs on the essay page to match what you want, or save the git text as a new version; either way every earlier version stays below to compare.
+		</p>
+		{#if data.canPublish}
+			<form method="post" action="?/bringIn">
+				<button class="button button-quiet" type="submit">Use the git text</button>
+			</form>
+		{/if}
+	</section>
 {/if}
 
 {#if data.versions.length > 1}

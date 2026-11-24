@@ -11,6 +11,7 @@ import { can } from '#lib/permissions.ts';
 import { commentsForYouCount } from '#lib/server/essay-comments.ts';
 import { reviewRequestCount } from '#lib/server/essay-review-requests.ts';
 import { draftsBy } from '#lib/server/essays.ts';
+import { canStartEssays } from '#lib/server/essay-workspace.ts';
 import type { YourWork } from '#lib/essays/editing-outline.svelte.ts';
 import type { RequestHandler } from './$types';
 
@@ -22,11 +23,12 @@ export const GET: RequestHandler = async (event) => {
 	const state = await essayPageState(database, bucket, identifier, level, outcome?.state === 'conflict' ? outcome.conflicts : 0);
 	if (!state) error(404, 'No essay has this address yet.');
 	// "Your work" under the essay's outline in the sidebar while editing (essay-editor-mockups/4 and v2-1).
-	const [reviewRequests, commentsForYou, drafts] = await Promise.all([
+	const [reviewRequests, commentsForYou, drafts, canStart] = await Promise.all([
 		reviewRequestCount(database, person.identifier),
 		can(person, 'comment') ? commentsForYouCount(database, person.identifier) : 0,
-		draftsBy(database, person.identifier)
+		draftsBy(database, person.identifier),
+		canStartEssays(database, person)
 	]);
 	const work: YourWork = { reviewRequests, commentsForYou, drafts };
-	return json({ ...state, you: { identifier: person.identifier, name: person.displayName }, work }, { headers: { 'Cache-Control': 'private, no-store' } });
+	return json({ ...state, you: { identifier: person.identifier, name: person.displayName }, work, canStart }, { headers: { 'Cache-Control': 'private, no-store' } });
 };

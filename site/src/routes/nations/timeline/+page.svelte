@@ -13,13 +13,13 @@
 	import X from '@lucide/svelte/icons/x';
 	import Timeline from '#lib/components/Timeline.svelte';
 	import { kindIcons } from '#lib/timeline-icons.ts';
+	import { mentionWordList } from '#lib/opinion-mentions.ts';
 	import {
 		eras,
 		extentOf,
 		mentioning,
 		timelineKinds,
 		yearOf,
-		type Mentions,
 		type OpinionYear,
 		type TimelineEntry,
 		type TimelineKind,
@@ -47,7 +47,7 @@
 	);
 	const allOpinions = $derived(
 		data.opinions.map(
-			([year, count, peacemaking, place, mediation, both]): OpinionYear => ({ year, count, peacemaking, mediation, both, nation: place >= 0 ? data.nations[place].id : undefined })
+			([year, count, place, mentions]): OpinionYear => ({ year, count, mentions, nation: place >= 0 ? data.nations[place].id : undefined })
 		)
 	);
 	const nationsById = $derived(Object.fromEntries(data.nations.map((nation) => [nation.id, nation])));
@@ -62,7 +62,8 @@
 	let filtersOpen = $state(false);
 	/** The eras checked; the view spans them. */
 	let chosenEras = $state<string[]>([]);
-	let mentions = $state<Mentions>({ peacemaking: false, mediation: false });
+	/** The words chosen in the Mentions filter (src/lib/opinion-mentions.ts). */
+	let mentions = $state<string[]>([]);
 
 	const filtered = $derived(nation !== '' || stateCode !== '');
 	const belongs = (ids: string[] | undefined) =>
@@ -75,7 +76,7 @@
 			: allEntries
 	);
 	// Only the opinions have their words tagged, so the Mentions filter narrows them and leaves the other kinds as they are.
-	const opinions = $derived(mentioning(filtered ? allOpinions.filter((year) => belongs(year.nation ? [year.nation] : undefined)) : allOpinions, mentions));
+	const opinions = $derived(mentioning(filtered ? allOpinions.filter((year) => belongs(year.nation ? [year.nation] : undefined)) : allOpinions, mentions, mentionWordList));
 
 	const counts = $derived(
 		Object.fromEntries(
@@ -128,8 +129,8 @@
 		if (data.states.some((state) => state.code === askedState)) stateCode = askedState;
 		const askedKinds = (params.get('kind') ?? '').split(',').filter((kind): kind is TimelineKind => kinds.includes(kind as TimelineKind));
 		if (askedKinds.length > 0) shown = askedKinds;
-		const askedMentions = new Set((params.get('mentions') ?? '').split(','));
-		mentions = { peacemaking: askedMentions.has('peacemaking'), mediation: askedMentions.has('mediation') };
+		const askedMentions = (params.get('mentions') ?? '').split(',');
+		mentions = mentionWordList.filter((word) => askedMentions.includes(word));
 		const from = Number(params.get('from'));
 		const to = Number(params.get('to'));
 		if (params.has('from') && params.has('to') && Number.isFinite(from) && Number.isFinite(to) && to > from) {
@@ -150,8 +151,7 @@
 		if (nation) params.set('nation', nation);
 		if (stateCode) params.set('state', stateCode);
 		if (shown && shown.length < kinds.length) params.set('kind', shown.join(','));
-		const chosenMentions = (['peacemaking', 'mediation'] as const).filter((each) => mentions[each]);
-		if (chosenMentions.length > 0) params.set('mentions', chosenMentions.join(','));
+		if (mentions.length > 0) params.set('mentions', mentions.join(','));
 		if (range) {
 			params.set('from', String(Math.round(range.from)));
 			params.set('to', String(Math.round(range.to)));
@@ -162,7 +162,7 @@
 		if (url.href !== location.href) replaceState(url, {});
 	});
 
-	const filterCount = $derived([nation, stateCode, shown && shown.length < kinds.length, range, mentions.peacemaking || mentions.mediation].filter(Boolean).length);
+	const filterCount = $derived([nation, stateCode, shown && shown.length < kinds.length, range, mentions.length > 0].filter(Boolean).length);
 
 	const firstYear = $derived(Math.min(...allEntries.map((entry) => Math.floor(yearOf(entry.date)))));
 </script>
@@ -244,8 +244,9 @@
 
 		<fieldset class="filter">
 			<legend>Mentions</legend>
-			<label class="option"><input type="checkbox" bind:checked={mentions.peacemaking} /> <span class="name">Peacemaking</span></label>
-			<label class="option"><input type="checkbox" bind:checked={mentions.mediation} /> <span class="name">Mediation or arbitration</span></label>
+			{#each mentionWordList as word (word)}
+				<label class="option"><input type="checkbox" bind:group={mentions} value={word} /> <span class="name">{word}</span></label>
+			{/each}
 		</fieldset>
 	</form>
 

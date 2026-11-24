@@ -47,6 +47,7 @@
 	import { chartTable, pieSlices, scaleTop, shareText, slicePath, type BarChartData } from '#lib/bar-chart.ts';
 	import TableDownload from '#lib/components/TableDownload.svelte';
 	import DataTable from './DataTable.svelte';
+	import ViewSwitch from './ViewSwitch.svelte';
 
 	let { chart, headingLevel = 2 }: { chart: BarChartData; headingLevel?: 2 | 3 } = $props();
 
@@ -127,19 +128,16 @@
 		<svelte:element this={`h${headingLevel}`} id="{chart.identifier}-title" class="chart-title">{chart.title}</svelte:element>
 		<div class="chart-tools no-print">
 			{#if interactive}
-				<div class="view-switch" role="group" aria-label="Show {chart.title} as">
-					<button type="button" class="view-button" aria-pressed={shownAs === 'chart'} aria-label="Bars" title="Show as bars" onclick={() => (shownAs = 'chart')}>
-						<ChartBar aria-hidden="true" size="1.25em" strokeWidth={1.75} />
-					</button>
-					{#if chart.partsOfWhole}
-						<button type="button" class="view-button" aria-pressed={shownAs === 'pie'} aria-label="Pie" title="Show as a pie" onclick={() => (shownAs = 'pie')}>
-							<ChartPie aria-hidden="true" size="1.25em" strokeWidth={1.75} />
-						</button>
-					{/if}
-					<button type="button" class="view-button" aria-pressed={shownAs === 'table'} aria-label="Table" title="Show as a table" onclick={() => (shownAs = 'table')}>
-						<Table aria-hidden="true" size="1.25em" strokeWidth={1.75} />
-					</button>
-				</div>
+				<ViewSwitch
+					label="Show {chart.title} as"
+					value={shownAs}
+					onchange={(value) => (shownAs = value)}
+					choices={[
+						{ value: 'chart', label: 'Bars', title: 'Show as bars', icon: ChartBar },
+						...(chart.partsOfWhole ? [{ value: 'pie' as const, label: 'Pie', title: 'Show as a pie', icon: ChartPie }] : []),
+						{ value: 'table', label: 'Table', title: 'Show as a table', icon: Table }
+					]}
+				/>
 			{/if}
 			<TableDownload name={chart.identifier} title={chart.title} table={() => table} csvHref={chart.csvHref} xlsxHref={chart.xlsxHref} published={left.length === 0} {interactive} label="Download the numbers" />
 			{#if interactive}
@@ -255,7 +253,8 @@
 			{/snippet}
 		</DataTable>
 	</div>
-	{#if chart.partsOfWhole}
+	<!-- The table shows the total as its Sum row instead (Trevor, Nov. 24, 2026: "If you have a total, just put a Sum Row at the bottom of the table"). -->
+	{#if chart.partsOfWhole && !(interactive && shownAs === 'table')}
 		<p class="small chart-total">Total: {total.toLocaleString('en-US')} {chart.valueHeader.toLocaleLowerCase('en-US')}{leftOut.length > 0 ? ' shown' : ''}</p>
 	{/if}
 	<!-- Only the word "Source", which links to where the numbers come from (Trevor, Nov. 23, 2026); a bar's own page lists the source of each record it counts. -->
@@ -304,11 +303,6 @@
 		gap: var(--space-1);
 	}
 
-	.view-switch {
-		display: flex;
-		gap: var(--space-1);
-	}
-
 	.view-button {
 		display: inline-flex;
 		align-items: center;
@@ -325,11 +319,6 @@
 	.view-button:hover {
 		color: var(--color-ink);
 		background: var(--color-surface);
-	}
-
-	.view-button[aria-pressed='true'] {
-		color: var(--color-link);
-		box-shadow: inset 0 -2px 0 var(--color-link);
 	}
 
 	/* A bar with an address: the name's link covers the whole row, so the bar and the number open it too (Trevor, Nov. 23, 2026). The cover sits above the bar's track, which is positioned and would otherwise take the click. */

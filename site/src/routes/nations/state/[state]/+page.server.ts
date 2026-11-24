@@ -1,4 +1,5 @@
 import { error } from '@sveltejs/kit';
+import geometry from 'virtual:map-geometry';
 import { groupsOf, letterLinks, nationIndexRows, stateLinks } from '#lib/server/nation-index.ts';
 import type { EntryGenerator, PageServerLoad } from './$types';
 
@@ -10,6 +11,8 @@ export const load: PageServerLoad = ({ params }) => {
 	const code = params.state.toLocaleUpperCase('en-US');
 	return {
 		state,
+		/** The box the state's map opens on. */
+		bounds: geometry.stateBounds[code] as [number, number, number, number] | undefined,
 		letters: letterLinks(),
 		groups: groupsOf(nationIndexRows().filter((row) => row.states.includes(code)))
 	};

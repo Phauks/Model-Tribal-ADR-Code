@@ -65,7 +65,6 @@
 	searchLabel="Search these opinions"
 	rowName={['opinion', 'opinions']}
 	filters
-	addFilter
 	shareable
 >
 	{#snippet cell(row: TableRow, column: TableColumn)}

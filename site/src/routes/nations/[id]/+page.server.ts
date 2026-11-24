@@ -805,7 +805,7 @@ const practiceKinds: Record<string, string> = {
  * such as the fee amounts or how to apply.
  */
 function courtPractice(record: NationRecord, sources: SourceUses): FactGroup[] {
-	const section = 'Courts and dispute resolution';
+	const section = 'Courts';
 	const order = Object.keys(practiceKinds);
 	const rank = (kind: string) => (order.includes(kind) ? order.indexOf(kind) : order.length);
 	const facts = [...(record.court_practice ?? [])].sort((first, second) => rank(first.kind) - rank(second.kind));
@@ -1071,7 +1071,7 @@ function nationMap(record: NationRecord, sources: SourceUses): NationMapData | u
 		views: views.map((view, index) => ({ key: view.key, label: view.label, layout: shared.layouts[index], layers: view.layers })),
 		stateNames: [...present].map(stateName).sort((first, second) => first.localeCompare(second, 'en')),
 		region: region ? { name: `${region.name} Region`, link: `/nations/map#${regionAnchor(region.name)}` } : undefined,
-		landAreas: areas.map((area) => ({ name: area.name, kind: landAreaKindLabels[area.kind] })),
+		landAreas: areas.map((area) => ({ code: area.identifier, name: area.name, kind: landAreaKindLabels[area.kind] })),
 		tileMap: areas.length > 0 ? nationTileMapData(areas.map((area) => area.identifier)) : undefined
 	};
 }
@@ -1235,7 +1235,7 @@ export const load: PageServerLoad = ({ params }) => {
 			versions: history.versions.map((version) => ({ id: version.id, label: labelOf(version, version.id) }))
 		}))
 	);
-	sources.part('Courts and dispute resolution');
+	sources.part('Courts');
 	const courts = courtsAndDisputeResolution(record, sources);
 	const practice = courtPractice(record, sources);
 	sources.part(opinionsHeading);
@@ -1303,7 +1303,7 @@ export const load: PageServerLoad = ({ params }) => {
 	if (glance.length > 0 || map) items.push({ label: 'At a glance', link: '#glance-heading' });
 	if (hasContacts) items.push({ label: contactsHeading, link: '#contacts-heading' });
 	items.push({ label: governmentHeading, link: '#government-heading' });
-	items.push({ label: 'Courts and dispute resolution', link: '#courts-heading' });
+	items.push({ label: 'Courts', link: '#courts-heading' });
 	if (opinions) items.push({ label: opinionsHeading, link: '#opinions-heading' });
 	if (cases.length > 0) items.push({ label: casesHeading, link: '#cases-heading' });
 	items.push({
