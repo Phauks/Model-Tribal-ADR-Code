@@ -649,6 +649,34 @@ function imageryCheck(name: MapImageryName): Check {
 	};
 }
 
+/** The Wayback Worker's public progress (site/WAYBACK.md); it has no binding, so it is reached by its address. */
+export const waybackWorkerAddress = 'https://model-tribal-adr-code-wayback.trevordgoldsmith.workers.dev';
+
+const waybackCaptures: Check = {
+	key: 'wayback-captures',
+	group: 'Workers',
+	name: 'Wayback captures',
+	async run({ fetcher }) {
+		const response = await fetcher(`${waybackWorkerAddress}/status.json`);
+		if (!response.ok) {
+			await response.body?.cancel();
+			return { state: 'off', summary: `The Wayback Worker answered ${response.status}, so source links are saved only by the slower archive workflow.`, details: [], fix: 'Add the archive.org keys to Secrets Store and deploy the Worker from site/wayback (site/WAYBACK.md, "Setting it up").' };
+		}
+		const status = (await response.json()) as { minutesSinceLastRun: number | null; lastError: string | null; left: number; captured: number; capturedLast24Hours: number; waiting: number; failedWillRetry: number; gaveUp: number };
+		const details = [
+			`${status.captured.toLocaleString('en-US')} captured (${status.capturedLast24Hours.toLocaleString('en-US')} in the last 24 hours), ${status.left.toLocaleString('en-US')} left, ${status.waiting} being saved now.`,
+			`${status.failedWillRetry} failed and will be tried again; ${status.gaveUp} given up after three tries. Progress page: ${waybackWorkerAddress}/`
+		];
+		if (status.minutesSinceLastRun === null || status.minutesSinceLastRun > 5) {
+			return { state: 'problem', summary: status.minutesSinceLastRun === null ? 'The Wayback Worker has not run yet.' : `The Wayback Worker last ran ${status.minutesSinceLastRun} minutes ago; it runs every minute.`, details, fix: 'Check the Worker’s cron trigger and its logs in the Cloudflare dashboard (site/WAYBACK.md).' };
+		}
+		if (status.lastError && /archive\.org keys/.test(status.lastError)) {
+			return { state: 'problem', summary: status.lastError, details, fix: 'Make new keys at archive.org/account/s3.php and update them in Secrets Store (site/WAYBACK.md).' };
+		}
+		return { state: 'working', summary: `The Wayback Worker is saving source links: ${status.left.toLocaleString('en-US')} left.`, details };
+	}
+};
+
 const breachedPasswords: Check = {
 	key: 'breached-passwords',
 	group: 'Outside services',
@@ -721,6 +749,7 @@ export const serviceChecks: readonly Check[] = [
 	liveEditing,
 	scannerDesk,
 	scanner,
+	waybackCaptures,
 	siteTextRebuilds,
 	rateLimitCheck('request-form-limit', 'Request form', 'requestFormLimit', 'the request form'),
 	rateLimitCheck('workspace-change-limit', 'Workspace changes', 'workspaceChangeLimit', 'making changes in the workspace'),
