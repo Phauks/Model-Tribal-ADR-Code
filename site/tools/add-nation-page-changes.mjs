@@ -6,8 +6,9 @@
 // It copies tools/nation-page-changes-worker.js beside the built Worker,
 // writes an entry file that wraps the current entry with it, points the
 // built Wrangler configuration at that entry, and asks Cloudflare to run the
-// Worker first for nation pages. Without that, the static assets would answer
-// /nations/<id> before the Worker saw it (decision record 0041, "Stage 2").
+// Worker first for nation pages and nations' offline lists. Without that, the
+// static assets would answer /nations/<id> before the Worker saw it (decision
+// record 0041, "Stage 2").
 
 import { copyFileSync, existsSync, readFileSync, writeFileSync } from 'node:fs';
 import path from 'node:path';
@@ -16,7 +17,7 @@ const workerFolder = '.svelte-kit/cloudflare/worker';
 const configPath = path.join(workerFolder, 'wrangler.json');
 const entryName = 'nation-pages-entry.js';
 const helperName = 'nation-page-changes.js';
-export const workerFirstPaths = ['/nations/*'];
+export const workerFirstPaths = ['/nations/*', '/copies/offline/nations/*'];
 
 /** @param {string} innerEntry the entry the build made, such as scheduled-entry.js */
 export function entrySource(innerEntry) {

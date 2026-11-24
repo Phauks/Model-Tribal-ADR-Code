@@ -131,7 +131,8 @@
 
 <p class="small page-links">
 	<a href="/workspace/nation-teams/{data.nation.identifier}">Your nation’s team</a> ·
-	<a href="/workspace/nation-teams/{data.nation.identifier}/changes">Changes and history</a>
+	<a href="/workspace/nation-teams/{data.nation.identifier}/changes">Changes and history</a> ·
+	<a href="/workspace/nation-teams/{data.nation.identifier}/laws-and-cases">Laws and cases</a>
 	{#if data.nation.page}· <a href={data.nation.page}>View the page</a>{/if}
 </p>
 <h1>Edit {the(data.nation.title)}’s page</h1>

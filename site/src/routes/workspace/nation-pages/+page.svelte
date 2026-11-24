@@ -14,13 +14,15 @@
 	import { changeKindLabels } from '#lib/nation-page-changes.ts';
 	import { reviewDays, reviewOutcomeLabels } from '#lib/nation-page-review.ts';
 	import { teamLevelLabels } from '#lib/nation-teams.ts';
+	import { restrictionLevelLabels } from '#lib/nation-restrictions.ts';
 	import { mediumDateAndTime, readableDate } from '#lib/readable-date.ts';
 	import type { PageProps } from './$types';
 
 	let { data, form }: PageProps = $props();
 
 	type Change = PageProps['data']['queue'][number];
-	type Opened = 'undo' | 'pause' | 'suspend';
+	type Opened = 'undo' | 'pause' | 'suspend' | 'ask';
+	type Restriction = PageProps['data']['restrictions'][number];
 
 	const tabs = [
 		{ value: 'to-read', label: 'To read' },
@@ -28,7 +30,7 @@
 		{ value: 'paused', label: 'Paused' }
 	] as const;
 	const tab = $derived(tabs.find((choice) => choice.value === page.url.searchParams.get('tab'))?.value ?? 'to-read');
-	const counts = $derived({ 'to-read': data.queue.length, read: null, paused: data.pauses.length } as Record<string, number | null>);
+	const counts = $derived({ 'to-read': data.queue.length + data.restrictions.length, read: null, paused: data.pauses.length } as Record<string, number | null>);
 
 	let scripted = $state(false);
 	let opened = $state<Record<string, Opened | undefined>>({});
@@ -57,6 +59,12 @@
 		const parts = [who, `${day(change.publishedAt)}, ${new Date(change.publishedAt).toLocaleTimeString('en-US', { timeStyle: 'short' })}`];
 		if (!change.waiting) parts.push('live');
 		return parts.join(' · ');
+	}
+
+	/** "A. Sample (Steward) · Nov. 24, 2026, 12:20 AM · live", for a nation's choice about its laws and cases, which is always live. */
+	function restrictionByline(save: Restriction): string {
+		const who = save.madeByName ? `${save.madeByName}${save.madeByLevel ? ` (${teamLevelLabels[save.madeByLevel]})` : ''}` : 'The team';
+		return [who, `${day(save.madeAt)}, ${new Date(save.madeAt).toLocaleTimeString('en-US', { timeStyle: 'short' })}`, 'live'].join(' · ');
 	}
 
 	/** Ends a summary with a full stop unless it already ends in punctuation. */
@@ -89,7 +97,7 @@
 </nav>
 
 {#if tab === 'to-read'}
-	{#if data.queue.length === 0}
+	{#if data.queue.length === 0 && data.restrictions.length === 0}
 		<p>Nothing is waiting. Every change nations published has been read.</p>
 	{:else}
 		<ol class="cards">
@@ -158,6 +166,65 @@
 					</article>
 				</li>
 			{/each}
+			{#each data.restrictions as save (save.identifier)}
+				<li class="card">
+					<article aria-labelledby="restriction-{save.identifier}">
+						<div class="card-top">
+							<h2 id="restriction-{save.identifier}">{save.nation.title} · Laws and cases</h2>
+							{#if save.overdue}<span class="flag flag-held">Past {reviewDays} days</span>{/if}
+							<span class="grow"></span>
+							<span class="small muted">{restrictionByline(save)}</span>
+						</div>
+						<div class="content">
+							<ul class="restriction-changes">
+								{#each save.changes as change (change.target)}
+									<li>
+										{#if change.caseName}<i>{change.label}</i>{:else}{change.label}{/if}:
+										{#if change.from === change.to}kept at <strong>{restrictionLevelLabels[change.to]}</strong>{:else}{restrictionLevelLabels[change.from]} → <strong>{restrictionLevelLabels[change.to]}</strong>{/if}{#if change.count}{' '}({change.count.toLocaleString('en-US')} {change.target === 'kind:opinions' ? (change.count === 1 ? 'opinion' : 'opinions') : change.count === 1 ? 'document' : 'documents'}){/if}
+									</li>
+								{/each}
+							</ul>
+							<p class="small"><span class="muted">Note from the team:</span> {save.note ?? 'none.'}</p>
+							{#if save.question}
+								<p class="small"><span class="muted">You asked:</span> {save.question}</p>
+								{#if save.answer}<p class="small"><span class="muted">The team answered ({save.answeredByName ?? 'the team'}):</span> {save.answer}</p>{:else}<p class="small muted">No answer from the team yet.</p>{/if}
+							{/if}
+						</div>
+						<div class="actions">
+							<form method="post" action="?/readRestrictions">
+								<input type="hidden" name="save" value={save.identifier} />
+								<button class="button small-button" type="submit"><Check size={16} aria-hidden="true" />Mark read</button>
+							</form>
+							{#if scripted}
+								<button class="button button-quiet small-button" type="button" aria-expanded={opened[save.identifier] === 'ask'} onclick={() => toggle(save.identifier, 'ask')}>Ask the team</button>
+								{#if save.canSuspend}
+									<button class="button button-quiet small-button warn" type="button" aria-expanded={opened[save.identifier] === 'suspend'} onclick={() => toggle(save.identifier, 'suspend')}>
+										Suspend {save.madeByName ?? 'this person'} and everyone they added
+									</button>
+								{/if}
+							{/if}
+							<span class="grow"></span>
+							<span class="small muted">{#if save.overdue}Was due {day(save.due)}{:else}Read by {day(save.due)}{/if} · {#if save.nation.page}<a href={save.nation.page}>View the page</a> · {/if}<a href="/workspace/nation-teams/{save.nation.identifier}/laws-and-cases">The team’s choices</a></span>
+						</div>
+						{#if shows(save.identifier, 'ask')}
+							<form method="post" action="?/askRestrictions" class="more">
+								<input type="hidden" name="save" value={save.identifier} />
+								<label for="ask-{save.identifier}">Your question for the team of {save.nation.title} <span class="muted">(the team sees it)</span></label>
+								<textarea id="ask-{save.identifier}" name="question" rows="3" required></textarea>
+								<div><button class="button button-quiet" type="submit">Ask the team</button></div>
+							</form>
+						{/if}
+						{#if save.canSuspend && shows(save.identifier, 'suspend')}
+							<form method="post" action="?/suspendRestrictions" class="more">
+								<input type="hidden" name="save" value={save.identifier} />
+								<p class="small">Ends their place on the team, and the places of everyone they added. Their choices stay in force until the nation’s office says otherwise.</p>
+								<div><button class="button button-quiet" type="submit">Suspend them and everyone they added</button></div>
+							</form>
+						{/if}
+						<p class="small muted stands">A nation’s choice about its own laws and opinions stands. If the nation’s leadership is in dispute, freeze the page instead.</p>
+					</article>
+				</li>
+			{/each}
 		</ol>
 	{/if}
 {:else if tab === 'read'}
@@ -210,6 +277,15 @@
 <p class="small muted">Every step is in the <a href="/workspace/activity">activity log</a>.</p>
 
 <style>
+	.restriction-changes {
+		margin: 0;
+		padding-left: var(--space-4);
+	}
+
+	.stands {
+		margin-top: var(--space-2);
+	}
+
 	.lede {
 		color: var(--color-ink-muted);
 	}
