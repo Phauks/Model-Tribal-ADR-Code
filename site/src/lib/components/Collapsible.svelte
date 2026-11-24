@@ -35,15 +35,37 @@
 
 	let { heading, identifier, class: extraClass = '', count, actions, children }: Props = $props();
 
-	// The heading leaves room for the buttons, and the buttons take the
-	// heading row's height, both measured once the page runs.
+	// The heading leaves room for the buttons, and the buttons sit at the end of the heading row with its height. Both are measured once the page runs, because the row can be narrower than the section: a heading beside a floated map ends where the map begins.
 	let actionsWidth = $state(0);
-	let summaryHeight = $state(0);
+	let wrapper = $state<HTMLElement>();
+	let summary = $state<HTMLElement>();
+	let row = $state<{ top: number; end: number; height: number }>();
+
+	$effect(() => {
+		if (!wrapper || !summary) return;
+		const box = wrapper;
+		const heading = summary;
+		const measure = () => {
+			const outer = box.getBoundingClientRect();
+			const inner = heading.getBoundingClientRect();
+			const rightToLeft = getComputedStyle(box).direction === 'rtl';
+			row = {
+				top: inner.top - outer.top,
+				end: rightToLeft ? inner.left - outer.left : outer.right - inner.right,
+				height: inner.height
+			};
+		};
+		const observer = new ResizeObserver(measure);
+		observer.observe(box);
+		observer.observe(heading, { box: 'border-box' });
+		measure();
+		return () => observer.disconnect();
+	});
 </script>
 
 {#snippet section(summaryRoom: number | undefined)}
 	<details class="collapsible {extraClass}" data-section={identifier} open>
-		<summary style:padding-inline-end={summaryRoom ? `${summaryRoom}px` : undefined} bind:clientHeight={summaryHeight}>
+		<summary style:padding-inline-end={summaryRoom ? `${summaryRoom}px` : undefined} bind:this={summary}>
 			<span class="fold-mark no-print"><ChevronDown size={24} /></span>
 			<h2 id={identifier}>{heading}{#if count !== undefined}<CountBadge {count} />{/if}</h2>
 		</summary>
@@ -52,9 +74,16 @@
 {/snippet}
 
 {#if actions}
-	<div class="with-actions">
+	<div class="with-actions" bind:this={wrapper}>
 		{@render section(actionsWidth)}
-		<div class="heading-actions no-print" style:height={summaryHeight ? `${summaryHeight}px` : undefined} bind:clientWidth={actionsWidth}>
+		<div
+			class="heading-actions no-print"
+			class:placed={row !== undefined}
+			style:inset-block-start={row ? `${row.top}px` : undefined}
+			style:inset-inline-end={row ? `${row.end}px` : undefined}
+			style:height={row ? `${row.height}px` : undefined}
+			bind:clientWidth={actionsWidth}
+		>
 			{@render actions()}
 		</div>
 	</div>
@@ -120,6 +149,12 @@
 		align-items: center;
 		gap: var(--space-1);
 		height: calc(var(--layout-target-minimum) + 2 * var(--space-3));
+		/* Hidden until placed, so they never show over a map beside the heading. */
+		visibility: hidden;
+	}
+
+	.heading-actions.placed {
+		visibility: visible;
 	}
 
 	.fold-mark {
