@@ -155,7 +155,7 @@
 					</p>
 				{:else}
 					<p class="key"><span class="swatch land" aria-hidden="true"></span>Census land areas named in this entry</p>
-					<ul class="small land-area-list">
+					<ul class="small land-area-list stacked-list">
 						{#each map.landAreas as area (area.name)}
 							<li>{area.name} <span class="muted">({area.kind})</span></li>
 						{/each}
@@ -324,6 +324,5 @@
 
 	.land-area-list {
 		margin: 0 0 var(--space-1);
-		padding-left: var(--space-5);
 	}
 </style>

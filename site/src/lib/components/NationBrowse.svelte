@@ -2,7 +2,7 @@
 	@component
 	The ways to browse the Native nations index: one link per first letter,
 	with the letters that start no name shown as plain text, and a link to the
-	list of states. The current letter is marked with aria-current.
+	table of every nation. The current letter is marked with aria-current.
 -->
 <script lang="ts">
 	import type { BrowseLink } from '#lib/server/nation-index.ts';
@@ -27,7 +27,7 @@
 			</li>
 		{/each}
 	</ul>
-	<p class="small"><a href="/nations#by-state">Browse by state</a> · <a href="/nations/map">See the map</a></p>
+	<p class="small"><a href="/nations">All Native nations</a> · <a href="/nations/map">See the map</a></p>
 </nav>
 
 <style>

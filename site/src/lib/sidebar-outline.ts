@@ -19,7 +19,16 @@ export type SectionContents = {
 	 * ("nations"). A list named by `list` comes from a shared module instead of
 	 * the page's data (src/lib/section-lists.ts).
 	 */
-	entries?: { noun: string; items: OutlineItem[]; list?: 'nations' };
+	entries?: {
+		noun: string;
+		items: OutlineItem[];
+		list?: 'nations';
+		/** A heading over the list, with its count and a "View all" link to the page that shows every entry. */
+		title?: string;
+		viewAll?: string;
+		/** The number beside the title, when it is not the number of items. */
+		count?: number;
+	};
 };
 
 /** The section's contents with the page being read, and its own outline, nested in place. */

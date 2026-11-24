@@ -11,7 +11,7 @@
 	<title>{data.state.label} · Nations · Model Tribal ADR Code</title>
 </svelte:head>
 
-<Breadcrumbs trail={[{ label: 'Nations', href: '/nations' }, { label: 'By state', href: '/nations#by-state' }]} />
+<Breadcrumbs trail={[{ label: 'Nations', href: '/nations' }]} />
 
 <h1>Nations with a presence in {data.state.label}</h1>
 <p class="small muted">

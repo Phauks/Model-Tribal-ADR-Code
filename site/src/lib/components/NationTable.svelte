@@ -19,15 +19,35 @@
 	import type { TableColumn, TableRow } from '#lib/tables/table-definition.ts';
 	import type { NationGroup } from '#lib/server/nation-index.ts';
 	import { stateName } from '#lib/nation-labels.ts';
+	import { bureauRegionPage } from '#lib/federal-offices.ts';
 
-	let { group, identifier }: { group: NationGroup; identifier: string } = $props();
+	let {
+		group,
+		identifier,
+		searchLabel,
+		regions = false,
+		count = true,
+		filters
+	}: {
+		group: NationGroup;
+		identifier: string;
+		/** Shows a search box with this label, for a table long enough to need one. */
+		searchLabel?: string;
+		/** Adds the Bureau of Indian Affairs region, as a column readers can filter by. */
+		regions?: boolean;
+		/** False leaves out the row count until a search or filter narrows the table, as when the heading shows it. */
+		count?: boolean;
+		/** Whether the column filters show; by default, when the table has more than five rows. */
+		filters?: boolean;
+	} = $props();
 
-	const columns: TableColumn[] = [
-		{ key: 'name', header: 'Name', isRowHeader: true, sortable: true },
+	const columns: TableColumn[] = $derived([
+		{ key: 'name', header: 'Name', isRowHeader: true, sortable: true, searchable: true },
 		{ key: 'recognition', header: 'Recognition', sortable: true, custom: true, filterable: true },
-		{ key: 'states', header: 'States', sortable: true, filterable: true, custom: true },
+		{ key: 'states', header: 'States', sortable: true, filterable: true, custom: true, searchable: true },
+		...(regions ? [{ key: 'region', header: 'Region', sortable: true, filterable: true, custom: true, searchable: true }] : []),
 		{ key: 'review', header: 'Review status', sortable: true, filterable: true }
-	];
+	]);
 
 	const rows: TableRow[] = $derived(
 		group.rows.map((row) => ({
@@ -46,6 +66,7 @@
 					values: badged(row.recognition).map((view) => view.badge.label)
 				},
 				states: { text: row.statesText, values: row.states.map(stateName) },
+				region: { text: row.region },
 				review: { text: row.review }
 			}
 		}))
@@ -65,16 +86,22 @@
 <DataTable
 	{identifier}
 	label="Table: {group.label}"
+	{searchLabel}
 	{columns}
 	{rows}
 	defaultSort={{ key: 'name', direction: 'ascending' }}
-	rowName={['page', 'pages']}
-	filters={group.rows.length > 5}
+	rowName={['nation', 'nations']}
+	{count}
+	filters={filters ?? group.rows.length > 5}
+	addFilter
 	download={identifier}
 	shareable
 >
 	{#snippet cell(row, column)}
-		{#if column.key === 'states'}
+		{#if column.key === 'region'}
+			{@const regionPage = bureauRegionPage(row.cells.region.text)}
+			{#if regionPage}<a href={regionPage}>{row.cells.region.text}</a>{:else}{row.cells.region.text}{/if}
+		{:else if column.key === 'states'}
 			{#each statesById.get(row.key) ?? [] as code, index (code)}{index > 0 ? ', ' : ''}<a href="/nations/state/{code.toLocaleLowerCase('en-US')}">{stateName(code)}</a>{/each}
 		{:else}
 		{@const views = recognitionById.get(row.key) ?? []}

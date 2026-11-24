@@ -1,8 +1,13 @@
 <script lang="ts">
 	// Label and value pairs for a nation's facts (site/DESIGN.md, "Summary list").
 	// Each fact ends with the markers of its sources (CitationMarks). A label
-	// with one value shows it plainly; several values make a list. A value's
-	// legal basis or note sits on its own line under it, in smaller type.
+	// with one value shows it plainly. Several values never get bullets
+	// (Trevor, Nov. 23, 2026, "label rows"): values that each have a label,
+	// such as a governing body's name, members and term, make small label rows;
+	// other values stack, one per line, with a thin rule between them. A note
+	// that every value shares, such as "Law code", is said once under the
+	// fact's label. A value's legal basis or note sits on its own line under
+	// it, in smaller type.
 	import type { CitationMark } from '#lib/citation-marks.ts';
 	import CitationMarks from './CitationMarks.svelte';
 	import TopicBadges from './TopicBadges.svelte';
@@ -25,13 +30,38 @@
 		field: string;
 		label: string;
 		items: FactItem[];
+		/** The note every value shares, in the words to say it once, such as "Law codes". */
+		note?: string;
 	}
 
 	let { groups }: { groups: FactGroup[] } = $props();
+
+	/** Every value has its own label, so they show as label rows. */
+	const labeled = (group: FactGroup) => group.items.every((item) => item.label);
+
+	/**
+	 * The detail and note every value of the group shares, said once under the
+	 * group's label. Only plain words; a detail with links stays with its value.
+	 */
+	function sharedNote(group: FactGroup): string | undefined {
+		if (group.items.length < 2) return undefined;
+		if (group.note) return group.note;
+		const [first, ...rest] = group.items;
+		if (group.items.some((item) => item.detailParts)) return undefined;
+		const words = [first.detail, first.note].filter(Boolean).join('. ');
+		if (!words) return undefined;
+		return rest.every((item) => item.detail === first.detail && item.note === first.note) ? words : undefined;
+	}
+
+	/** The values as shown: without the shared note, which the label carries. */
+	function shownItems(group: FactGroup): FactItem[] {
+		if (!sharedNote(group) || group.note) return group.items;
+		return group.items.map((item) => ({ ...item, detail: undefined, note: undefined }));
+	}
 </script>
 
-{#snippet fact(item: FactItem)}
-	{#if item.label}{item.label}:{' '}{/if}{#if item.badges}<TopicBadges topics={item.badges} />{:else if item.link}<a href={item.link}>{item.text}</a>{:else}{item.text}{/if}<CitationMarks
+{#snippet value(item: FactItem)}
+	{#if item.badges}<TopicBadges topics={item.badges} />{:else if item.link}<a href={item.link}>{item.text}</a>{:else}{item.text}{/if}<CitationMarks
 		marks={item.citations}
 	/>
 	{#if item.detailParts}
@@ -45,16 +75,31 @@
 	{#if item.note}<span class="fact-detail muted small">{item.note}</span>{/if}
 {/snippet}
 
+{#snippet fact(item: FactItem)}
+	{#if item.label}{item.label}:{' '}{/if}{@render value(item)}
+{/snippet}
+
 <dl class="summary-list">
 	{#each groups as group (group.field)}
+		{@const note = sharedNote(group)}
+		{@const items = shownItems(group)}
 		<div>
-			<dt>{group.label}</dt>
+			<dt>{group.label}{#if note}<span class="group-note muted small">{note}</span>{/if}</dt>
 			<dd>
-				{#if group.items.length === 1}
-					{@render fact(group.items[0])}
+				{#if items.length === 1}
+					{@render fact(items[0])}
+				{:else if labeled(group)}
+					<dl class="label-rows">
+						{#each items as item, index (index)}
+							<div>
+								<dt>{item.label}</dt>
+								<dd>{@render value(item)}</dd>
+							</div>
+						{/each}
+					</dl>
 				{:else}
-					<ul>
-						{#each group.items as item, index (index)}
+					<ul class="stacked-list">
+						{#each items as item, index (index)}
 							<li>{@render fact(item)}</li>
 						{/each}
 					</ul>
