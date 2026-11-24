@@ -65,7 +65,7 @@
 	<div class="head">
 		{#if image && hiddenImage !== image.src}
 			{@const src = image.src}
-			<img class="image" {src} alt={image.alt} width="64" height="64" onerror={() => (hiddenImage = src)} />
+			<img class="image image-backing" {src} alt={image.alt} width="64" height="64" onerror={() => (hiddenImage = src)} />
 		{/if}
 		<h3 id="{identifier}-title" tabindex="-1" bind:this={heading}>
 			{details.title}{#if details.badges}{' '}<RecognitionBadges badges={details.badges} size="small" />{/if}

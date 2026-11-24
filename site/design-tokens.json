@@ -179,6 +179,10 @@
         "$value": "#22201E",
         "$description": "Dark squares of a QR code, the same in both themes so phone cameras can read it. 20:1 on scan-code-light."
       },
+      "image-backing": {
+        "$value": "#FFFAF5",
+        "$description": "Plate behind a nation's seal or logo. Seals are drawn for light paper, so in dark mode they sit on a light plate and their dark lines stay visible (Trevor, Nov. 23, 2026)."
+      },
       "scan-code-light": {
         "$value": "#FFFFFF",
         "$description": "Light squares and quiet zone of a QR code, the same in both themes."
@@ -436,6 +440,10 @@
       "scan-code-dark": {
         "$value": "#22201E",
         "$description": "Dark squares of a QR code, the same in both themes so phone cameras can read it. 20:1 on scan-code-light."
+      },
+      "image-backing": {
+        "$value": "#F6EEE6",
+        "$description": "Plate behind a nation's seal or logo. Seals are drawn for light paper, so in dark mode they sit on a light plate and their dark lines stay visible (Trevor, Nov. 23, 2026)."
       },
       "scan-code-light": {
         "$value": "#FFFFFF",

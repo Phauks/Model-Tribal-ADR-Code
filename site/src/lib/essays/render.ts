@@ -22,6 +22,7 @@ import { scaleTop } from '../bar-chart.ts';
 import { imageViewerAttributeText } from '../image-viewer.ts';
 import { youtubeEmbedAddress, youtubePosterAddress } from '../video-links.ts';
 import { attributionSource } from '../quote-context.ts';
+import { readingLinksAfter } from '../reading-links.ts';
 import { boxParts, essayBlocks, essayMarkdown, frontMatterField, isAttribution, missingEllipses, splitFrontMatter, topicsIn, type CitationReference } from './syntax.ts';
 
 export interface EssayLibrary {
@@ -516,7 +517,7 @@ function configure(markdown: MarkdownIt, state: RenderState): MarkdownIt {
 			const factList = facts.length
 				? `<dl class="essay-case-facts">\n${facts.map(([name, value]) => `<div><dt>${escapeHtml(name)}</dt><dd>${value}</dd></div>`).join('\n')}\n</dl>\n`
 				: '';
-			return `<section class="${classes}"${id}>\n${label(box === 'law' ? 'Law' : 'Case')}<p class="essay-case-citation">${citation}${marksHtml([mark])}</p>\n${factList}`;
+			return `<section class="${classes}"${id}>\n${label(box === 'law' ? 'Law' : 'Case')}<p class="essay-case-citation">${readingLinksAfter(citation, marksHtml([mark]))}</p>\n${factList}`;
 		};
 		rules[`container_${box}_close`] = () => '</section>\n';
 	}
