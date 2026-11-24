@@ -1,5 +1,6 @@
 import { describe, expect, it } from 'vitest';
 import {
+	chosenColumns,
 	crossTable,
 	filterOptions,
 	groupedChart,
@@ -9,7 +10,8 @@ import {
 	settingsFromAddress,
 	settingsToAddress,
 	startingSettings,
-	type BuilderDataset
+	type BuilderDataset,
+	type BuilderSettings
 } from '../src/lib/table-builder.ts';
 
 const dataset: BuilderDataset = {
@@ -43,13 +45,39 @@ describe('Build a table', () => {
 		expect(rows[3].cells.name.href).toBeUndefined();
 	});
 
-	it('filters a list column by any of its values', () => {
-		const settings = { ...startingSettings(dataset), filters: { states: 'Nevada' } };
+	it('filters a list column by any of its values, as the shared table does', () => {
+		const settings = { ...startingSettings(dataset), filters: { states: { values: ['Nevada'] } } };
 		expect(recordTable(dataset, settings).rows).toHaveLength(3);
 		expect(filterOptions(dataset, {}, 'states')).toEqual([
-			{ value: 'Nevada', count: 3 },
-			{ value: 'Arizona', count: 1 }
+			{ value: 'Arizona', count: 1 },
+			{ value: 'Nevada', count: 3 }
 		]);
+		const either = { ...startingSettings(dataset), filters: { kind: { values: ['Peacemaking', 'Court of appeals'] } } };
+		expect(recordTable(dataset, either).rows.map((row) => row.key)).toEqual(['1', '2']);
+	});
+
+	it('filters the name column by the words it contains', () => {
+		const settings = { ...startingSettings(dataset), filters: { name: { contains: 'tribal' } } };
+		expect(recordTable(dataset, settings).rows.map((row) => row.key)).toEqual(['0', '3']);
+	});
+
+	it('gives the page every column and row, for the shared table to show and filter', () => {
+		const settings = { ...startingSettings(dataset), filters: { states: { values: ['Arizona'] } } };
+		const { columns, rows } = recordTable(dataset, settings, true);
+		expect(rows).toHaveLength(4);
+		expect(columns.map((column) => [column.key, Boolean(column.optional), Boolean(column.filterable), Boolean(column.searchable)])).toEqual([
+			['name', false, false, true],
+			['nation', false, true, true],
+			['states', true, true, true],
+			['kind', false, true, true],
+			['judges', true, false, false]
+		]);
+		expect(rows[2].cells.states).toMatchObject({ text: 'Arizona, Nevada', values: ['Arizona', 'Nevada'] });
+	});
+
+	it('keeps the columns a reader chose in the dataset order, and the starting ones on a reset', () => {
+		expect(chosenColumns(dataset, ['judges', 'name', 'states'])).toEqual(['name', 'states', 'judges']);
+		expect(chosenColumns(dataset, undefined)).toEqual(['name', 'nation', 'kind']);
 	});
 
 	it('groups and counts, with each count opening the rows it counts', () => {
@@ -83,6 +111,7 @@ describe('Build a table', () => {
 	it('builds a two-way table with a total column', () => {
 		const table = crossTable(dataset, { ...startingSettings(dataset), groupBy: 'kind', across: 'states' });
 		expect(table?.columns.map((column) => column.header)).toEqual(['Kind', 'Nevada', 'Arizona', notRecorded, 'Total']);
+		expect(table?.columns.filter((column) => column.sum).map((column) => column.header)).toEqual(['Nevada', 'Arizona', notRecorded, 'Total']);
 		const tribal = table?.rows.find((row) => row.key === 'Tribal court');
 		expect(tribal?.cells['across-0'].text).toBe('1');
 		expect(tribal?.cells['across-1'].text).toBe('');
@@ -90,12 +119,31 @@ describe('Build a table', () => {
 		expect(tribal?.cells['across-0'].href).toBe('/nations/data/build?data=courts&where.kind=Tribal+court&where.states=Nevada');
 	});
 
+	it('adds up a two-way table in a Sum row only where its parts make a whole', () => {
+		const sums = (settings: Partial<BuilderSettings>) => crossTable(dataset, { ...startingSettings(dataset), ...settings })?.columns.some((column) => column.sum);
+		expect(sums({ groupBy: 'kind', across: 'nation', measure: { kind: 'sum', column: 'judges' } })).toBe(true);
+		expect(sums({ groupBy: 'states', across: 'kind' })).toBe(false);
+		expect(sums({ groupBy: 'kind', across: 'states', measure: { kind: 'nations' } })).toBe(false);
+		expect(sums({ groupBy: 'kind', across: 'states', measure: { kind: 'average', column: 'judges' } })).toBe(false);
+	});
+
 	it('keeps its settings in the address and reads them back', () => {
-		const settings = { ...startingSettings(dataset), columns: ['states'], filters: { states: 'Nevada' }, groupBy: 'kind', across: 'nation', measure: { kind: 'sum' as const, column: 'judges' } };
+		const settings = {
+			...startingSettings(dataset),
+			columns: ['states'],
+			filters: { states: { values: ['Nevada', 'Arizona'] }, name: { contains: 'court' } },
+			groupBy: 'kind',
+			across: 'nation',
+			measure: { kind: 'sum' as const, column: 'judges' }
+		};
 		const address = settingsToAddress(settings, dataset);
-		expect(address.toString()).toBe('data=courts&columns=states&where.states=Nevada&group=kind&across=nation&value=sum.judges');
-		expect(settingsFromAddress(address, dataset)).toEqual(settings);
-		expect(resultTitle(dataset, settings)).toBe('Sum of judges by kind and nation: Nevada');
+		expect(address.toString()).toBe('data=courts&columns=states&where.states=Nevada&where.states=Arizona&where.name.contains=court&group=kind&across=nation&value=sum.judges');
+		expect(settingsFromAddress(address, dataset)).toEqual({ ...settings, filters: { name: { contains: 'court' }, states: { values: ['Nevada', 'Arizona'] } } });
+		expect(resultTitle(dataset, settings)).toBe('Sum of judges by kind and nation: Nevada, Arizona, “court”');
+	});
+
+	it('reads the links made before a filter could take several values', () => {
+		expect(settingsFromAddress(new URLSearchParams('data=courts&where.kind=Tribal+court'), dataset).filters).toEqual({ kind: { values: ['Tribal court'] } });
 	});
 
 	it('ignores settings the dataset has no column for', () => {
