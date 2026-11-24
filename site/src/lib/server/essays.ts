@@ -10,7 +10,7 @@
  * silently overwritten; the editor then shows both texts.
  */
 import type { D1Database, R2Bucket, R2Conditional } from '@cloudflare/workers-types/index.ts';
-import { eventStatement } from './events.ts';
+import { activityStatement } from './activity-log.ts';
 import { now } from './identifiers.ts';
 import { frontMatterField, splitFrontMatter } from '../essays/syntax.ts';
 
@@ -350,7 +350,7 @@ export async function saveVersion(
 				 VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)`
 			)
 			.bind(input.identifier, number, objectKey, sha256, bytes, title, input.note ?? null, input.basedOn, input.origin, input.personIdentifier, createdAt),
-		eventStatement(database, {
+		activityStatement(database, {
 			personIdentifier: input.personIdentifier,
 			action:
 				input.origin === 'git'
@@ -411,7 +411,7 @@ export async function publishVersion(
 				 VALUES (?, ?, ?, 1, ?, ?)`
 			)
 			.bind(identifier, number, versionNumber, personIdentifier, now()),
-		eventStatement(database, {
+		activityStatement(database, {
 			personIdentifier,
 			action: `Published version ${versionNumber} as publication ${number}`,
 			targetKind: 'document',
@@ -434,7 +434,7 @@ export async function setPublicationListed(
 		database
 			.prepare('UPDATE essay_publications SET listed = ? WHERE essay_identifier = ? AND number = ?')
 			.bind(listed ? 1 : 0, identifier, number),
-		eventStatement(database, {
+		activityStatement(database, {
 			personIdentifier,
 			action: listed ? `Listed publication ${number} again` : `Held back publication ${number}`,
 			targetKind: 'document',

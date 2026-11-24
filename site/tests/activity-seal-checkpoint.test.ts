@@ -7,14 +7,14 @@ import {
 	sealNewEntries
 } from '#lib/server/activity-seals.ts';
 import { administrationSummary } from '#lib/server/administration.ts';
-import { eventStatement } from '#lib/server/events.ts';
+import { activityStatement } from '#lib/server/activity-log.ts';
 import { testDatabase } from './database.ts';
 
 let database: D1Database;
 
 async function addEntries(count: number): Promise<void> {
 	for (let index = 0; index < count; index += 1) {
-		await eventStatement(database, {
+		await activityStatement(database, {
 			personIdentifier: null,
 			action: `Entry ${index}`,
 			targetKind: 'request',
@@ -59,7 +59,7 @@ describe('the seal checkpoint', () => {
 	it('counts entries not sealed yet the same way', async () => {
 		await addEntries(4);
 		await checkSealsSinceCheckpoint(database);
-		await eventStatement(database, { personIdentifier: null, action: 'Late', targetKind: 'request', targetIdentifier: 'late' }).run();
+		await activityStatement(database, { personIdentifier: null, action: 'Late', targetKind: 'request', targetIdentifier: 'late' }).run();
 		const check = await checkSealsSinceCheckpoint(database);
 		expect(check).toEqual(await checkSeals(database));
 		expect(check).toMatchObject({ intact: true, unsealed: 1 });

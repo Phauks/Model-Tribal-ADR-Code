@@ -13,7 +13,7 @@ import {
 	type FormAnswers,
 	type FormTemplate
 } from '#lib/forms.ts';
-import { eventStatement } from './events.ts';
+import { activityStatement } from './activity-log.ts';
 import type { SignedInPerson } from './people.ts';
 import { maximumFiles, readFile, type NewRequest, type UploadedFile } from './request-form.ts';
 import type { NewFormSubmission } from './request-store.ts';
@@ -224,7 +224,7 @@ export async function setFilingIdentifier(
 		database
 			.prepare(`UPDATE form_submissions SET filing_identifier = ? WHERE request_identifier = ?`)
 			.bind(filing, request.identifier),
-		eventStatement(database, {
+		activityStatement(database, {
 			personIdentifier: person.identifier,
 			action: `Forms filed under ${filing}`,
 			targetKind: 'request',

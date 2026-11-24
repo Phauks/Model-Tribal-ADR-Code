@@ -7,7 +7,7 @@ import { building, dev } from '$app/env';
 import type { Handle } from '@sveltejs/kit/hooks';
 import { sealNewEntries } from '#lib/server/activity-seals.ts';
 import { afterResponse, workerEnvironment } from '#lib/server/environment.ts';
-import { eventStatement, refusedAction } from '#lib/server/events.ts';
+import { activityStatement, refusedAction } from '#lib/server/activity-log.ts';
 import { endSession, pastWorkspaceLimits, sessionAccount, sessionCookie } from '#lib/server/accounts.ts';
 import { activePersonBySubject } from '#lib/server/people.ts';
 import { isLiveEditingRequest, openLiveEditing } from '#lib/server/live-editing.ts';
@@ -201,7 +201,7 @@ async function recordAndSeal(
 			!limiter ||
 			(await limiter.limit({ key: personIdentifier })).success;
 		if (refused && withinLimit) {
-			await eventStatement(database, {
+			await activityStatement(database, {
 				personIdentifier,
 				action: refusedAction,
 				targetKind: 'person',

@@ -1,5 +1,5 @@
 import { checkSealsAndRecord, sealNewEntries } from '#lib/server/activity-seals.ts';
-import { activityPage, eventTargets, type EventTarget } from '#lib/server/events.ts';
+import { activityPage, activityTargets, type ActivityTarget } from '#lib/server/activity-log.ts';
 import { listPeople } from '#lib/server/people.ts';
 import { requirePermission, storage } from '#lib/server/workspace.ts';
 import type { PageServerLoad } from './$types';
@@ -12,8 +12,8 @@ export const load: PageServerLoad = async (event) => {
 	const search = event.url.searchParams;
 
 	const requestedKind = search.get('kind') ?? '';
-	const targetKind = (eventTargets as readonly string[]).includes(requestedKind)
-		? (requestedKind as EventTarget)
+	const targetKind = (activityTargets as readonly string[]).includes(requestedKind)
+		? (requestedKind as ActivityTarget)
 		: undefined;
 	const before = Number.parseInt(search.get('before') ?? '', 10);
 	const people = await listPeople(database);

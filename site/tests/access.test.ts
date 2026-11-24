@@ -3,7 +3,7 @@ import type { D1Database } from '@cloudflare/workers-types/index.ts';
 import { everyDocument } from '#lib/permissions.ts';
 import { accessTo, endGrant, levelsFor, grantByIdentifier, grantsOf, listGrants, onAccessChanged, setGrant } from '#lib/server/access.ts';
 import { checkSeals, sealNewEntries } from '#lib/server/activity-seals.ts';
-import { activityPage } from '#lib/server/events.ts';
+import { activityPage } from '#lib/server/activity-log.ts';
 import { invitePerson, matchSignIn, type SignedInPerson } from '#lib/server/people.ts';
 import { testDatabase } from './database.ts';
 

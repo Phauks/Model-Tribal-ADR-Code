@@ -25,7 +25,7 @@ import {
 	type RestrictionSettings
 } from '../nation-restrictions.ts';
 import type { SiteRestrictions } from '../restricted-files.ts';
-import { eventStatement } from './events.ts';
+import { activityStatement } from './activity-log.ts';
 import { newIdentifier, now } from './identifiers.ts';
 import type { SignedInPerson } from './people.ts';
 
@@ -133,7 +133,7 @@ export async function saveByIdentifier(database: D1Database, identifier: string)
 }
 
 function logStatement(database: D1Database, person: SignedInPerson, nationIdentifier: string, action: string, note: string | null) {
-	return eventStatement(database, {
+	return activityStatement(database, {
 		personIdentifier: person.identifier,
 		action,
 		targetKind: 'document',

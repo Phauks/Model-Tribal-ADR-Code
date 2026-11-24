@@ -13,7 +13,7 @@ import {
 	type RequestStatus,
 	type SourceKind
 } from '#lib/requests.ts';
-import { eventStatement } from './events.ts';
+import { activityStatement } from './activity-log.ts';
 import { forgetScan, storeSentFile } from './file-scans.ts';
 import { newIdentifier, newRequestReference, now } from './identifiers.ts';
 import type { SignedInPerson } from './people.ts';
@@ -164,7 +164,7 @@ export async function saveRequest(
 							)
 					]
 				: []),
-			eventStatement(database, {
+			activityStatement(database, {
 				personIdentifier: null,
 				action: form
 					? `Form received through the website: ${form.title}, version ${form.version}, ${
@@ -296,7 +296,7 @@ export async function changeStatus(
 				 WHERE identifier = ?`
 			)
 			.bind(status, status, time, status, time, request.identifier),
-		eventStatement(database, {
+		activityStatement(database, {
 			personIdentifier: person.identifier,
 			action: `Status changed from “${requestStatusLabels[request.status]}” to “${requestStatusLabels[status]}”`,
 			targetKind: 'request',
@@ -322,7 +322,7 @@ export async function resolveRequest(
 				 WHERE identifier = ?`
 			)
 			.bind(outcome, reason, time, time, request.identifier),
-		eventStatement(database, {
+		activityStatement(database, {
 			personIdentifier: person.identifier,
 			action: `Resolved: ${requestOutcomeLabels[outcome]}`,
 			targetKind: 'request',
@@ -345,7 +345,7 @@ export async function reopenRequest(
 				`UPDATE requests SET status = 'acknowledged', outcome = NULL, resolved_at = NULL WHERE identifier = ?`
 			)
 			.bind(request.identifier),
-		eventStatement(database, {
+		activityStatement(database, {
 			personIdentifier: person.identifier,
 			action: `Reopened (was ${request.outcome ? requestOutcomeLabels[request.outcome] : 'resolved'})`,
 			targetKind: 'request',
@@ -361,7 +361,7 @@ export async function addNote(
 	note: string,
 	person: SignedInPerson
 ): Promise<void> {
-	await eventStatement(database, {
+	await activityStatement(database, {
 		personIdentifier: person.identifier,
 		action: 'Note',
 		targetKind: 'request',

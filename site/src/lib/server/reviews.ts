@@ -12,7 +12,7 @@ import {
 	type Subject,
 	type SubjectKind
 } from '#lib/permissions.ts';
-import { eventStatement } from './events.ts';
+import { activityStatement } from './activity-log.ts';
 import { newIdentifier, now } from './identifiers.ts';
 import type { SignedInPerson } from './people.ts';
 
@@ -89,7 +89,7 @@ export async function recordReview(
 				review.note,
 				now()
 			),
-		eventStatement(database, {
+		activityStatement(database, {
 			personIdentifier: person.identifier,
 			action: `${decisionLabels[review.decision]}: ${subjectKindLabels[review.subject.kind].toLocaleLowerCase('en-US')} ${review.subject.identifier}`,
 			targetKind: 'review',

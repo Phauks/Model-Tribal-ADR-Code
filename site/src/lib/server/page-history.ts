@@ -39,7 +39,7 @@ import {
 	type HistoryPage,
 	type PageKind
 } from '#lib/page-history.ts';
-import { eventStatement } from './events.ts';
+import { activityStatement } from './activity-log.ts';
 import { inGroupsOf } from '#lib/server/database-groups.ts';
 
 function now(): string {
@@ -828,7 +828,7 @@ export async function hideChange(
 					reason = excluded.reason, person_identifier = excluded.person_identifier, hidden_at = excluded.hidden_at`
 			)
 			.bind(id, Number(choice.text), Number(choice.summary), Number(choice.person), choice.reason, personIdentifier, at),
-		eventStatement(database, {
+		activityStatement(database, {
 			personIdentifier,
 			action: 'hid-change',
 			targetKind: 'document',
@@ -843,7 +843,7 @@ export async function hideChange(
 export async function showChange(database: D1Database, personIdentifier: string, id: string, note: string | null): Promise<void> {
 	await database.batch([
 		database.prepare('DELETE FROM hidden_changes WHERE change = ?').bind(id),
-		eventStatement(database, {
+		activityStatement(database, {
 			personIdentifier,
 			action: 'showed-change',
 			targetKind: 'document',
