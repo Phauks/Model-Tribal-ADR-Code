@@ -46,7 +46,8 @@
 	let input: HTMLInputElement | undefined = $state();
 	let list: HTMLUListElement | undefined = $state();
 
-	const selected = $derived(choices.find((choice) => choice.value === value) ?? choices[0]);
+	// An empty value shows the placeholder, for a box where nothing is picked yet.
+	const selected = $derived(choices.find((choice) => choice.value === value) ?? (value === '' ? undefined : choices[0]));
 
 	/** Every word typed must start a word of the choice's label, group, description or keywords, so "law 280" finds "Public Law 280" and "bia" finds the Bureau of Indian Affairs by its keyword. */
 	function matches(choice: SearchableChoice<Value>, words: string[]): boolean {
@@ -156,7 +157,7 @@
 			aria-controls="{identifier}-list"
 			aria-activedescendant={expanded && shown.length > 0 ? optionId(active) : undefined}
 			value={typing ? query : (selected?.label ?? '')}
-			placeholder={expanded ? placeholder : undefined}
+			placeholder={expanded || !selected ? placeholder : undefined}
 			oninput={onInput}
 			onkeydown={onKeydown}
 			onclick={() => {

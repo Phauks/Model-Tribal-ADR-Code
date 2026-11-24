@@ -68,7 +68,7 @@ export const nameKinds = ['native', 'goes-by', 'pen-name', 'other'] as const;
 export type NameKind = (typeof nameKinds)[number];
 
 export const nameKindLabels: Record<NameKind, string> = {
-	native: 'Native name',
+	native: 'Name in my language',
 	'goes-by': 'Name I go by',
 	'pen-name': 'Pen name',
 	other: 'Other'
@@ -100,7 +100,11 @@ export interface ProfileContact {
 	best: boolean;
 }
 
-/** How a person is connected to a nation; several may apply (Trevor, Nov. 23, 2026: "member, and works there"). */
+/**
+ * A person's relationships to a nation; several may apply (Trevor, Nov. 23,
+ * 2026: "member, and works there"). Each is stored as its own row, so
+ * changing one never touches another (Trevor, Nov. 24, 2026).
+ */
 export const nationConnections = ['citizen', 'descendant', 'family', 'community', 'works-for', 'works-with', 'other'] as const;
 export type NationConnection = (typeof nationConnections)[number];
 
@@ -112,6 +116,19 @@ export const nationConnectionLabels: Record<NationConnection, string> = {
 	'works-for': 'Work for the nation',
 	'works-with': 'Work with the nation',
 	other: 'Other'
+};
+
+/** Pronouns, chosen from a short list; several may apply, and "Other" is written in (Trevor, Nov. 24, 2026). */
+export const pronounChoices = ['she', 'he', 'they', 'name-only', 'other', 'not-saying'] as const;
+export type PronounChoice = (typeof pronounChoices)[number];
+
+export const pronounLabels: Record<PronounChoice, string> = {
+	she: 'she/her',
+	he: 'he/him',
+	they: 'they/them',
+	'name-only': 'Use my name',
+	other: 'Other',
+	'not-saying': 'I’d rather not say'
 };
 
 export interface ProfileLanguage {
@@ -392,4 +409,25 @@ export function slugOf(name: string): string {
 		.replace(/^-+|-+$/g, '')
 		.slice(0, 60)
 		.replace(/-+$/g, '');
+}
+
+const stateNames = new Set([
+	'Alabama', 'Alaska', 'Arizona', 'Arkansas', 'California', 'Colorado', 'Connecticut', 'Delaware', 'Florida', 'Georgia',
+	'Hawaii', 'Idaho', 'Illinois', 'Indiana', 'Iowa', 'Kansas', 'Kentucky', 'Louisiana', 'Maine', 'Maryland',
+	'Massachusetts', 'Michigan', 'Minnesota', 'Mississippi', 'Missouri', 'Montana', 'Nebraska', 'Nevada', 'New Hampshire', 'New Jersey',
+	'New Mexico', 'New York', 'North Carolina', 'North Dakota', 'Ohio', 'Oklahoma', 'Oregon', 'Pennsylvania', 'Rhode Island', 'South Carolina',
+	'South Dakota', 'Tennessee', 'Texas', 'Utah', 'Vermont', 'Virginia', 'Washington', 'West Virginia', 'Wisconsin', 'Wyoming'
+]);
+
+/**
+ * A nation's name for a credit line, without the states the Bureau of Indian
+ * Affairs list puts after it: "Navajo Nation, Arizona, New Mexico, & Utah"
+ * prints as "Navajo Nation". Only a trailing run of state names is removed,
+ * so a name with any other words after its last comma is printed whole.
+ */
+export function nationNameForCredit(official: string): string {
+	const parts = official.split(',');
+	let end = parts.length;
+	while (end > 1 && stateNames.has(parts[end - 1].trim().replace(/^(&|and)\s+/u, ''))) end -= 1;
+	return parts.slice(0, end).join(',').trim();
 }

@@ -13,6 +13,7 @@ const nations = reviewSubjects
 
 export const load: PageServerLoad = () => ({
 	nationTitles: nations.map((nation) => nation.title),
+	nationChoices: nations.map((nation) => ({ value: nation.identifier, label: nation.title })),
 	nationSlots
 });
 

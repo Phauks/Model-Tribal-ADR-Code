@@ -2,12 +2,13 @@
 	import ImagePlus from '@lucide/svelte/icons/image-plus';
 	import Plus from '@lucide/svelte/icons/plus';
 	import Trash2 from '@lucide/svelte/icons/trash-2';
+	import X from '@lucide/svelte/icons/x';
+	import FileUp from '@lucide/svelte/icons/file-up';
 	import UserRound from '@lucide/svelte/icons/user-round';
 	import SearchableDropdown, { type SearchableChoice } from '#lib/components/SearchableDropdown.svelte';
 	import CheckDropdown from '#lib/components/profile/CheckDropdown.svelte';
 	import PhoneField from '#lib/components/profile/PhoneField.svelte';
 	import PrivateMark from '#lib/components/profile/PrivateMark.svelte';
-	import ShownToggle from '#lib/components/profile/ShownToggle.svelte';
 	import {
 		availabilities,
 		availabilityLabels,
@@ -20,6 +21,10 @@
 		nationAnswers,
 		nationConnectionLabels,
 		nationConnections,
+		nationNameForCredit,
+		pronounChoices,
+		pronounLabels,
+		type PronounChoice,
 		specialties,
 		specialtyLabels,
 		type NameKind,
@@ -33,11 +38,12 @@
 	// Mockup state: the answers Trevor will see filled in on the screenshots.
 	let givenName = $state('Sample');
 	let familyName = $state('Name');
-	let fullNameShown = $state(true);
-	let otherNames = $state<{ key: number; name: string; kind: NameKind; shown: boolean }[]>([
-		{ key: 1, name: 'Sample Native Name', kind: 'native', shown: true },
-		{ key: 2, name: 'Sam', kind: 'goes-by', shown: false }
+	let otherNames = $state<{ key: number; name: string; kind: NameKind }[]>([
+		{ key: 1, name: 'Sample Native Name', kind: 'native' },
+		{ key: 2, name: 'Sam', kind: 'goes-by' }
 	]);
+	let pronouns = $state<PronounChoice[]>(['she']);
+	let pronounOther = $state('');
 	let birthYear = $state('1985');
 	let hadBirthday = $state('');
 	const thisYear = new Date().getFullYear();
@@ -45,36 +51,77 @@
 	const birthYears = Array.from({ length: 98 }, (_, index) => String(thisYear - 13 - index));
 	/** In the year someone turns 13 or 18, the year alone cannot say which side of the line they are on, so only then is a birthday asked. */
 	const turning = $derived(birthYear ? thisYear - Number(birthYear) : 0);
-	let pictureShown = $state(true);
 
 	let emails = $state<{ key: number; value: string; mayEmail: boolean }[]>([]);
 	let phones = $state<{ key: number; country: string; digits: string; mayCall: boolean; mayText: boolean }[]>([
 		{ key: 1, country: 'US', digits: '7025550134', mayCall: true, mayText: true }
 	]);
 	let signInMayEmail = $state(true);
-	let best = $state('phone-1');
+	let preferred = $state('phone-1');
 
 	let nationAnswer = $state('listed');
-	let nations = $state<{ key: number; name: string; connections: NationConnection[]; other: string; shown: boolean }[]>([
-		{ key: 1, name: 'Navajo Nation', connections: ['citizen', 'works-for'], other: '', shown: true }
+	/** A nation from the project's list by its identifier, so the person's page can link to it; "other" is written in. */
+	let nations = $state<{ key: number; identifier: string; name: string; connections: NationConnection[]; other: string }[]>([
+		{ key: 1, identifier: 'navajo-nation', name: '', connections: ['citizen', 'works-for'], other: '' }
 	]);
+	const nationChoices: SearchableChoice<string>[] = $derived([
+		...data.nationChoices,
+		{ value: 'other', label: 'Not on the list', keywords: ['other', 'First Nations', 'state recognized'] }
+	]);
+	const nationTitle = (identifier: string, written: string) =>
+		identifier === 'other' ? written : (data.nationChoices.find((choice) => choice.value === identifier)?.label ?? '');
 
-	let spoken = $state<{ key: number; code: string; other: string; speaks: boolean; reads: boolean; shown: boolean }[]>([
-		{ key: 1, code: 'nav', other: '', speaks: true, reads: true, shown: true },
-		{ key: 2, code: 'eng', other: '', speaks: true, reads: true, shown: false }
+	let spoken = $state<{ key: number; code: string; other: string; speaks: boolean; reads: boolean; writes: boolean }[]>([
+		{ key: 1, code: 'nav', other: '', speaks: true, reads: true, writes: false },
+		{ key: 2, code: 'eng', other: '', speaks: true, reads: true, writes: true }
 	]);
 	let organization = $state('Navajo Nation Peacemaking Program');
-	let organizationShown = $state(false);
-	let chosenSpecialties = $state(['peacemaking', 'language']);
-	let specialtiesShown = $state(true);
+	let chosenSpecialties = $state<string[]>(['peacemaking', 'language']);
+	let specialtyOthers = $state<string[]>([]);
+	let specialtyOtherDraft = $state('');
+	let specialtyPick = $state('');
+	/** Choices not yet picked, then "Other" for one in the person's own words. */
+	const specialtyChoices: SearchableChoice<string>[] = $derived([
+		...specialties.filter((option) => !chosenSpecialties.includes(option)).map((option) => ({ value: option as string, label: specialtyLabels[option] })),
+		{ value: 'other', label: 'Other, in your own words' }
+	]);
+	function addSpecialty(value: string): void {
+		if (value === 'other') specialtyPick = 'other';
+		else {
+			chosenSpecialties.push(value);
+			specialtyPick = '';
+		}
+	}
 	let chosenInterests = $state(['review', 'share-knowledge', 'translate']);
 	let availability = $state('monthly');
 	let description = $state('');
-	let descriptionShown = $state(false);
 	let biography = $state('');
-	let biographyShown = $state(false);
-	let inBook = $state(true);
-	let onWebsite = $state(true);
+
+	/**
+	 * Where each answer may appear (Trevor, Nov. 24, 2026: "Shown" did not say
+	 * whether that meant online or in anything published). Book means the
+	 * printed book and ebook; Website means the person's contributor page and
+	 * the credits on the website. Anything not ticked is never published.
+	 */
+	let uses = $state<Record<string, { book: boolean; website: boolean }>>({
+		picture: { book: false, website: true },
+		pronouns: { book: false, website: true },
+		name: { book: true, website: true },
+		'name-1': { book: true, website: true },
+		'name-2': { book: false, website: false },
+		'nation-1': { book: true, website: true },
+		'language-1': { book: false, website: true },
+		'language-2': { book: false, website: false },
+		organization: { book: false, website: true },
+		specialties: { book: false, website: true },
+		description: { book: false, website: false },
+		biography: { book: false, website: false }
+	});
+
+	/** Adds a row's Book and Website choices, both unticked, so nothing new is published until the person ticks it. */
+	function addUse(id: string): void {
+		uses[id] = { book: false, website: false };
+	}
 
 	let nextKey = 100;
 	const key = () => nextKey++;
@@ -91,27 +138,69 @@
 
 	const minor = $derived(turning < 18 || (turning === 18 && hadBirthday !== 'yes'));
 
-	/** The credit as it will read, from everything marked Shown. */
-	const creditLine = $derived.by(() => {
-		const names: string[] = [];
-		if (fullNameShown && !minor) names.push([givenName, familyName].filter(Boolean).join(' '));
-		const extra = otherNames.filter((name) => name.shown && name.name && (!minor || name.kind === 'pen-name')).map((name) => name.name);
-		let line = names.length > 0 ? [names[0], ...extra.map((name) => `(${name})`)].join(' ') : extra.join(' ');
-		if (!line && descriptionShown) line = description;
+	/** The credit as it will read in one place, from everything ticked for that place. */
+	function creditIn(place: 'book' | 'website'): string {
+		const on = (id: string) => uses[id]?.[place] ?? false;
+		const full = on('name') && !minor ? [givenName, familyName].filter(Boolean).join(' ') : '';
+		const extra = otherNames.filter((name) => on(`name-${name.key}`) && name.name && (!minor || name.kind === 'pen-name')).map((name) => name.name);
+		let line = full ? [full, ...extra.map((name) => `(${name})`)].join(' ') : extra.join(' ');
+		if (!line && on('description')) line = description;
 		if (!line) return '';
-		const shownNations = nations.filter((nation) => nation.shown && nation.name).map((nation) => nation.name);
+		const shownNations = nations.map((nation) => (on(`nation-${nation.key}`) ? nationNameForCredit(nationTitle(nation.identifier, nation.name)) : '')).filter(Boolean);
 		if (shownNations.length > 0) line += `, ${shownNations.join('; ')}`;
-		if (organizationShown && organization) line += `, ${organization}`;
+		if (on('organization') && organization) line += `, ${organization}`;
 		return line;
-	});
+	}
+
+	const bookCredit = $derived(creditIn('book'));
+	const websiteCredit = $derived(creditIn('website'));
+	/** What the contributor page adds to the website credit. */
+	const websiteExtras = $derived(
+		[
+			!minor && uses.picture?.website ? 'picture' : '',
+			spoken.some((language) => uses[`language-${language.key}`]?.website) ? 'languages' : '',
+			uses.specialties?.website ? 'specialties' : '',
+			!minor && uses.biography?.website && biography ? 'biography' : ''
+		].filter(Boolean)
+	);
 </script>
 
 <svelte:head>
 	<title>Edit your profile · Model Tribal ADR Code</title>
 </svelte:head>
 
+{#snippet useCells(id: string, what: string, printable = true, restricted = false)}
+	{#if restricted && minor}
+		<td class="use-private" colspan="2"><PrivateMark /></td>
+	{:else}
+		<td data-label="Book" class="mark">
+			{#if printable}<input type="checkbox" name="book" value={id} aria-label="Print {what} in the book" bind:checked={uses[id].book} />{:else}<span class="not-applicable" aria-label="Never printed">–</span>{/if}
+		</td>
+		<td data-label="Website" class="mark"><input type="checkbox" name="website" value={id} aria-label="Show {what} on the website" bind:checked={uses[id].website} /></td>
+	{/if}
+{/snippet}
+
+{#snippet privateCells()}
+	<td class="use-private" colspan="2"><PrivateMark /></td>
+{/snippet}
+
+{#snippet useBoxes(id: string, what: string, printable = true, restricted = false)}
+	{#if restricted && minor}
+		<div class="use-private"><PrivateMark /></div>
+	{:else}
+		<label class="use-box">
+			<span>Book</span>
+			{#if printable}<input type="checkbox" name="book" value={id} aria-label="Print {what} in the book" bind:checked={uses[id].book} />{:else}<span class="not-applicable" aria-label="Never printed">–</span>{/if}
+		</label>
+		<label class="use-box">
+			<span>Website</span>
+			<input type="checkbox" name="website" value={id} aria-label="Show {what} on the website" bind:checked={uses[id].website} />
+		</label>
+	{/if}
+{/snippet}
+
 <h1>Edit your profile</h1>
-<p class="lead">Only the lead author and editors see your answers. Anything marked Shown may appear with your credit.</p>
+<p class="lead">Only the lead author and editors see your answers. Tick Book or Website for anything that may appear there; nothing else is published.</p>
 
 <form method="post" enctype="multipart/form-data" novalidate class="profile-form">
 	<section aria-labelledby="about-heading">
@@ -127,15 +216,13 @@
 				</label>
 				<p class="hint">Square, from the middle. Checked for viruses; camera details removed.</p>
 			</div>
-			<div class="use">
-				{#if minor}<PrivateMark />{:else}<ShownToggle name="pictureShown" label="Show your picture on your contributor page" bind:checked={pictureShown} />{/if}
-			</div>
+			{@render useBoxes('picture', 'your picture', false, true)}
 		</div>
 
 		<table class="rows">
 			<caption class="visually-hidden">Your names</caption>
 			<thead>
-				<tr><th scope="col">Name</th><th scope="col">Kind</th><th scope="col" class="use">Credit</th><th scope="col"><span class="visually-hidden">Remove</span></th></tr>
+				<tr><th scope="col">Name</th><th scope="col">Kind</th><th scope="col" class="mark">Book</th><th scope="col" class="mark">Website</th><th scope="col"><span class="visually-hidden">Remove</span></th></tr>
 			</thead>
 			<tbody>
 				<tr>
@@ -146,9 +233,7 @@
 						</div>
 					</td>
 					<td data-label="Kind" class="fixed-kind">First and last name</td>
-					<td data-label="Credit" class="use">
-						{#if minor}<PrivateMark />{:else}<ShownToggle name="fullNameShown" label="Show your first and last name in your credit" bind:checked={fullNameShown} />{/if}
-					</td>
+					{@render useCells('name', 'your first and last name', true, true)}
 					<td></td>
 				</tr>
 				{#each otherNames as other, index (other.key)}
@@ -159,9 +244,7 @@
 								{#each nameKinds as kind (kind)}<option value={kind}>{nameKindLabels[kind]}</option>{/each}
 							</select>
 						</td>
-						<td data-label="Credit" class="use">
-							<ShownToggle name="otherNameShown" value={String(index)} label="Show {other.name || 'this name'} in your credit" bind:checked={other.shown} />
-						</td>
+						{@render useCells(`name-${other.key}`, other.name || 'this name', true, other.kind !== 'pen-name')}
 						<td class="remove">
 							<button type="button" class="icon-button" aria-label="Remove {other.name || 'this name'}" title="Remove" onclick={() => (otherNames = otherNames.filter((item) => item.key !== other.key))}>
 								<Trash2 size={20} strokeWidth={1.75} />
@@ -171,7 +254,20 @@
 				{/each}
 			</tbody>
 		</table>
-		<p class="add"><button type="button" class="button button-quiet" onclick={() => otherNames.push({ key: key(), name: '', kind: 'native', shown: false })}><Plus size={20} strokeWidth={1.75} aria-hidden="true" /> Add a name</button></p>
+		<p class="add"><button type="button" class="button button-quiet" onclick={() => { const added = key(); addUse(`name-${added}`); otherNames.push({ key: added, name: '', kind: 'native' }); }}><Plus size={20} strokeWidth={1.75} aria-hidden="true" /> Add a name</button></p>
+
+		<div class="field-with-use">
+			<div class="field">
+				<span class="field-label" id="pronouns-label">Pronouns</span>
+				<div class="short-control">
+					<CheckDropdown name="pronouns" label="Pronouns" choices={pronounChoices} labels={pronounLabels} bind:chosen={pronouns} />
+				</div>
+				{#if pronouns.includes('other')}
+					<input type="text" class="other-text short-control" name="pronounOther" aria-label="Your pronouns" placeholder="Your pronouns" bind:value={pronounOther} />
+				{/if}
+			</div>
+			{@render useBoxes('pronouns', 'your pronouns', false)}
+		</div>
 
 		<div class="field-with-use">
 			<div class="field">
@@ -188,7 +284,7 @@
 					</fieldset>
 				{/if}
 			</div>
-			<div class="use"><PrivateMark /></div>
+			<div class="use-private"><PrivateMark /></div>
 		</div>
 	</section>
 
@@ -202,8 +298,8 @@
 					<th scope="col" class="mark">Email</th>
 					<th scope="col" class="mark">Call</th>
 					<th scope="col" class="mark">Text</th>
-					<th scope="col" class="mark">Best</th>
-					<th scope="col" class="use">Credit</th>
+					<th scope="col" class="mark">Preferred</th>
+					<th scope="col" class="mark" colspan="2">Published</th>
 					<th scope="col"><span class="visually-hidden">Remove</span></th>
 				</tr>
 			</thead>
@@ -213,8 +309,8 @@
 					<td data-label="Email" class="mark"><input type="checkbox" name="signInMayEmail" aria-label="Email {data.email}" bind:checked={signInMayEmail} /></td>
 					<td data-label="Call" class="mark"><span class="not-applicable" aria-label="Not a phone">–</span></td>
 					<td data-label="Text" class="mark"><span class="not-applicable" aria-label="Not a phone">–</span></td>
-					<td data-label="Best" class="mark"><input type="radio" name="best" value="sign-in" aria-label="Best way: {data.email}" bind:group={best} /></td>
-					<td data-label="Credit" class="use"><PrivateMark /></td>
+					<td data-label="Preferred" class="mark"><input type="radio" name="preferred" value="sign-in" aria-label="Preferred: {data.email}" bind:group={preferred} /></td>
+					{@render privateCells()}
 					<td></td>
 				</tr>
 				{#each emails as email, index (email.key)}
@@ -223,8 +319,8 @@
 						<td data-label="Email" class="mark"><input type="checkbox" name="emailMayEmail" value={String(index)} aria-label="Email this address" bind:checked={email.mayEmail} /></td>
 						<td data-label="Call" class="mark"><span class="not-applicable" aria-label="Not a phone">–</span></td>
 						<td data-label="Text" class="mark"><span class="not-applicable" aria-label="Not a phone">–</span></td>
-						<td data-label="Best" class="mark"><input type="radio" name="best" value="email-{index}" aria-label="Best way: this address" bind:group={best} /></td>
-						<td data-label="Credit" class="use"><PrivateMark /></td>
+						<td data-label="Preferred" class="mark"><input type="radio" name="preferred" value="email-{index}" aria-label="Preferred: this address" bind:group={preferred} /></td>
+						{@render privateCells()}
 						<td class="remove"><button type="button" class="icon-button" aria-label="Remove this address" title="Remove" onclick={() => (emails = emails.filter((item) => item.key !== email.key))}><Trash2 size={20} strokeWidth={1.75} /></button></td>
 					</tr>
 				{/each}
@@ -234,8 +330,8 @@
 						<td data-label="Email" class="mark"><span class="not-applicable" aria-label="Not an email address">–</span></td>
 						<td data-label="Call" class="mark"><input type="checkbox" name="phoneMayCall" value={String(index)} aria-label="Call this number" bind:checked={phone.mayCall} /></td>
 						<td data-label="Text" class="mark"><input type="checkbox" name="phoneMayText" value={String(index)} aria-label="Text this number" bind:checked={phone.mayText} /></td>
-						<td data-label="Best" class="mark"><input type="radio" name="best" value="phone-{phone.key}" aria-label="Best way: this number" bind:group={best} /></td>
-						<td data-label="Credit" class="use"><PrivateMark /></td>
+						<td data-label="Preferred" class="mark"><input type="radio" name="preferred" value="phone-{phone.key}" aria-label="Preferred: this number" bind:group={preferred} /></td>
+						{@render privateCells()}
 						<td class="remove"><button type="button" class="icon-button" aria-label="Remove this number" title="Remove" onclick={() => (phones = phones.filter((item) => item.key !== phone.key))}><Trash2 size={20} strokeWidth={1.75} /></button></td>
 					</tr>
 				{/each}
@@ -260,34 +356,36 @@
 			<table class="rows">
 				<caption class="visually-hidden">Nations you are connected to</caption>
 				<thead>
-					<tr><th scope="col">Nation</th><th scope="col">Your connection</th><th scope="col" class="use">Credit</th><th scope="col"><span class="visually-hidden">Remove</span></th></tr>
+					<tr><th scope="col">Nation</th><th scope="col">Relationship</th><th scope="col" class="mark">Book</th><th scope="col" class="mark">Website</th><th scope="col"><span class="visually-hidden">Remove</span></th></tr>
 				</thead>
 				<tbody>
 					{#each nations as nation, index (nation.key)}
 						<tr>
-							<td data-label="Nation"><input type="text" name="nationName" list="nation-titles" aria-label="Nation {index + 1}" bind:value={nation.name} /></td>
-							<td data-label="Your connection">
+							<td data-label="Nation">
+								<SearchableDropdown label="Nation {index + 1}" hideLabel name="nation{index}" choices={nationChoices} value={nation.identifier} onchange={(value) => (nation.identifier = value)} />
+								{#if nation.identifier === 'other'}
+									<input type="text" class="other-text" name="nationOther{index}" aria-label="The nation’s name" placeholder="The nation’s name" bind:value={nation.name} />
+								{/if}
+							</td>
+							<td data-label="Relationship">
 								<CheckDropdown
 									name="nationConnection{index}"
-									label="Your connection to {nation.name || `nation ${index + 1}`}"
+									label="Your relationship to {nationTitle(nation.identifier, nation.name) || `nation ${index + 1}`}"
 									choices={nationConnections}
 									labels={nationConnectionLabels}
 									bind:chosen={nation.connections}
 								/>
 								{#if nation.connections.includes('other')}
-									<input type="text" class="other-text" name="nationConnectionOther{index}" aria-label="Other connection, in your own words" placeholder="In your own words" bind:value={nation.other} />
+									<input type="text" class="other-text" name="nationConnectionOther{index}" aria-label="Other relationship, in your own words" placeholder="In your own words" bind:value={nation.other} />
 								{/if}
 							</td>
-							<td data-label="Credit" class="use"><ShownToggle name="nationShown" value={String(index)} label="Show {nation.name || 'this nation'} in your credit" bind:checked={nation.shown} /></td>
-							<td class="remove"><button type="button" class="icon-button" aria-label="Remove {nation.name || 'this nation'}" title="Remove" onclick={() => (nations = nations.filter((item) => item.key !== nation.key))}><Trash2 size={20} strokeWidth={1.75} /></button></td>
+							{@render useCells(`nation-${nation.key}`, nationTitle(nation.identifier, nation.name) || 'this nation')}
+							<td class="remove"><button type="button" class="icon-button" aria-label="Remove {nationTitle(nation.identifier, nation.name) || 'this nation'}" title="Remove" onclick={() => (nations = nations.filter((item) => item.key !== nation.key))}><Trash2 size={20} strokeWidth={1.75} /></button></td>
 						</tr>
 					{/each}
 				</tbody>
 			</table>
-			<p class="add"><button type="button" class="button button-quiet" onclick={() => nations.push({ key: key(), name: '', connections: [], other: '', shown: false })}><Plus size={20} strokeWidth={1.75} aria-hidden="true" /> Add a nation</button></p>
-			<datalist id="nation-titles">
-				{#each data.nationTitles as title (title)}<option value={title}></option>{/each}
-			</datalist>
+			<p class="add"><button type="button" class="button button-quiet" onclick={() => { const added = key(); addUse(`nation-${added}`); nations.push({ key: added, identifier: '', name: '', connections: [], other: '' }); }}><Plus size={20} strokeWidth={1.75} aria-hidden="true" /> Add a nation</button></p>
 		{/if}
 	</section>
 
@@ -298,8 +396,16 @@
 				<label for="background">Tell us about yourself</label>
 				<p class="hint" id="background-hint">For example: peacemaking, mediation, Tribal courts or law, community roles, writing or research.</p>
 				<textarea id="background" name="background" rows="4" aria-describedby="background-hint"></textarea>
+				<div class="cv-row">
+					<label class="button button-quiet file-button">
+						<FileUp size={20} strokeWidth={1.75} aria-hidden="true" />
+						Add CV or résumé
+						<input type="file" name="curriculumVitae" accept=".pdf,.docx,.doc,.odt,.rtf,.txt" class="visually-hidden" />
+					</label>
+					<span class="hint">.pdf, .docx, .odt. Checked for viruses.</span>
+				</div>
 			</div>
-			<div class="use"><PrivateMark /></div>
+			<div class="use-private"><PrivateMark /></div>
 		</div>
 
 		<h3 id="languages-heading">Languages</h3>
@@ -310,7 +416,9 @@
 					<th scope="col">Language</th>
 					<th scope="col" class="mark">Speak</th>
 					<th scope="col" class="mark">Read</th>
-					<th scope="col" class="use">Credit</th>
+					<th scope="col" class="mark">Write</th>
+					<th scope="col" class="mark">Book</th>
+					<th scope="col" class="mark">Website</th>
 					<th scope="col"><span class="visually-hidden">Remove</span></th>
 				</tr>
 			</thead>
@@ -325,33 +433,55 @@
 						</td>
 						<td data-label="Speak" class="mark"><input type="checkbox" name="languageSpeaks" value={String(index)} aria-label="Speak" bind:checked={language.speaks} /></td>
 						<td data-label="Read" class="mark"><input type="checkbox" name="languageReads" value={String(index)} aria-label="Read" bind:checked={language.reads} /></td>
-						<td data-label="Credit" class="use"><ShownToggle name="languageShown" value={String(index)} label="Show this language on your contributor page" bind:checked={language.shown} /></td>
+						<td data-label="Write" class="mark"><input type="checkbox" name="languageWrites" value={String(index)} aria-label="Write" bind:checked={language.writes} /></td>
+						{@render useCells(`language-${language.key}`, 'this language', false)}
 						<td class="remove"><button type="button" class="icon-button" aria-label="Remove this language" title="Remove" onclick={() => (spoken = spoken.filter((item) => item.key !== language.key))}><Trash2 size={20} strokeWidth={1.75} /></button></td>
 					</tr>
 				{/each}
 			</tbody>
 		</table>
-		<p class="add"><button type="button" class="button button-quiet" onclick={() => spoken.push({ key: key(), code: '', other: '', speaks: true, reads: false, shown: false })}><Plus size={20} strokeWidth={1.75} aria-hidden="true" /> Add a language</button></p>
+		<p class="add"><button type="button" class="button button-quiet" onclick={() => { const added = key(); addUse(`language-${added}`); spoken.push({ key: added, code: '', other: '', speaks: true, reads: false, writes: false }); }}><Plus size={20} strokeWidth={1.75} aria-hidden="true" /> Add a language</button></p>
 
 		<div class="field-with-use">
 			<div class="field">
 				<label for="organization">Organization, office or school</label>
 				<input type="text" id="organization" name="organization" autocomplete="organization" bind:value={organization} />
 			</div>
-			<div class="use"><ShownToggle name="organizationShown" label="Show your organization in your credit" bind:checked={organizationShown} /></div>
+			{@render useBoxes('organization', 'your organization')}
 		</div>
 
 		<fieldset class="field-with-use">
 			<div>
 				<legend>Your specialties</legend>
-				<div class="choices-inline">
-					{#each specialties as option (option)}
-						<label class="choice"><input type="checkbox" name="specialties" value={option} bind:group={chosenSpecialties} /> {specialtyLabels[option]}</label>
-					{/each}
+				{#if chosenSpecialties.length + specialtyOthers.length > 0}
+					<ul class="chips">
+						{#each chosenSpecialties as option (option)}
+							<li>
+								<input type="hidden" name="specialties" value={option} />
+								{specialtyLabels[option as keyof typeof specialtyLabels]}
+								<button type="button" class="chip-remove" aria-label="Remove {specialtyLabels[option as keyof typeof specialtyLabels]}" title="Remove" onclick={() => (chosenSpecialties = chosenSpecialties.filter((item) => item !== option))}><X size={16} strokeWidth={2} /></button>
+							</li>
+						{/each}
+						{#each specialtyOthers as other (other)}
+							<li>
+								<input type="hidden" name="specialtyOther" value={other} />
+								{other}
+								<button type="button" class="chip-remove" aria-label="Remove {other}" title="Remove" onclick={() => (specialtyOthers = specialtyOthers.filter((item) => item !== other))}><X size={16} strokeWidth={2} /></button>
+							</li>
+						{/each}
+					</ul>
+				{/if}
+				<div class="short-control">
+					<SearchableDropdown label="Add a specialty" hideLabel choices={specialtyChoices} value={specialtyPick} onchange={addSpecialty} placeholder="Type to search, or pick" />
 				</div>
-				<input type="text" class="other-text" name="specialtyOther" aria-label="Other specialty" placeholder="Other, in your own words" maxlength="100" />
+				{#if specialtyPick === 'other'}
+					<div class="other-row short-control">
+						<input type="text" aria-label="Specialty, in your own words" placeholder="In your own words" maxlength="100" bind:value={specialtyOtherDraft} />
+						<button type="button" class="button button-quiet" onclick={() => { if (specialtyOtherDraft.trim()) specialtyOthers.push(specialtyOtherDraft.trim()); specialtyOtherDraft = ''; specialtyPick = ''; }}>Add</button>
+					</div>
+				{/if}
 			</div>
-			<div class="use"><ShownToggle name="specialtiesShown" label="Show your specialties on your contributor page" bind:checked={specialtiesShown} /></div>
+			{@render useBoxes('specialties', 'your specialties', false)}
 		</fieldset>
 	</section>
 
@@ -367,7 +497,7 @@
 					</label>
 				{/each}
 			</div>
-			<div class="use"><PrivateMark /></div>
+			<div class="use-private"><PrivateMark /></div>
 		</fieldset>
 		<div class="field-with-use">
 			<div class="field">
@@ -377,7 +507,7 @@
 					{#each availabilities as option (option)}<option value={option}>{availabilityLabels[option]}</option>{/each}
 				</select>
 			</div>
-			<div class="use"><PrivateMark /></div>
+			<div class="use-private"><PrivateMark /></div>
 		</div>
 	</section>
 
@@ -388,7 +518,7 @@
 				<label for="creditRole">A description, to use in place of a name</label>
 				<input type="text" id="creditRole" name="creditRole" placeholder="For example: a peacemaker from the nation" bind:value={description} />
 			</div>
-			<div class="use"><ShownToggle name="creditRoleShown" label="Use this description in your credit" bind:checked={descriptionShown} /></div>
+			{@render useBoxes('description', 'this description')}
 		</div>
 		<div class="field-with-use">
 			<div class="field">
@@ -396,21 +526,19 @@
 				<p class="hint" id="biography-hint">Two or three sentences. Asked of writers.</p>
 				<textarea id="biography" name="biography" rows="3" aria-describedby="biography-hint" bind:value={biography}></textarea>
 			</div>
-			<div class="use">{#if minor}<PrivateMark />{:else}<ShownToggle name="biographyShown" label="Print your biography with your credit" bind:checked={biographyShown} />{/if}</div>
+			{@render useBoxes('biography', 'your biography', true, true)}
 		</div>
-		<fieldset class="where">
-			<legend>Where</legend>
-			<label class="choice"><input type="checkbox" name="creditInBook" value="yes" bind:checked={inBook} /> In the book</label>
-			<label class="choice"><input type="checkbox" name="creditOnWebsite" value="yes" bind:checked={onWebsite} /> On the website</label>
-		</fieldset>
-		<div class="credit-preview" aria-live="polite">
-			<p class="small muted">Your credit</p>
-			{#if creditLine && (inBook || onWebsite)}
-				<p class="credit-line">{creditLine}</p>
-			{:else}
-				<p class="credit-line muted">No credit</p>
-			{/if}
-		</div>
+		<dl class="credit-preview" aria-live="polite">
+			<div>
+				<dt>In the book</dt>
+				<dd class="credit-line" class:muted={!bookCredit}>{bookCredit || 'No credit'}</dd>
+			</div>
+			<div>
+				<dt>On the website</dt>
+				<dd class="credit-line" class:muted={!websiteCredit}>{websiteCredit || 'No credit'}</dd>
+				{#if websiteCredit && websiteExtras.length > 0}<dd class="small muted">With your {websiteExtras.join(', ')}</dd>{/if}
+			</div>
+		</dl>
 	</section>
 
 	<div class="actions">
@@ -447,11 +575,12 @@
 		margin-bottom: var(--space-1);
 	}
 
-	/* A field, or a group of choices, with whether it is used on the right, lined up with the Credit column of the tables. */
+	/* A field, or a group of choices, with where it may appear on the right, lined up with the Book and Website columns of the tables. */
 	.field-with-use {
+		--mark-width: 5rem;
 		display: grid;
-		/* The last track matches the tables' Remove column, so every Shown and Private mark lines up. */
-		grid-template-columns: minmax(0, 1fr) 8.5rem var(--layout-target-minimum);
+		/* The last track matches the tables' Remove column, so every Book, Website and Private mark lines up. */
+		grid-template-columns: minmax(0, 1fr) var(--mark-width) var(--mark-width) var(--layout-target-minimum);
 		gap: 0;
 		align-items: end;
 		margin: 0 0 var(--space-4);
@@ -471,21 +600,38 @@
 		margin: 0;
 	}
 
-	/* The table cells' own padding, so the marks sit exactly under the Credit column. */
-	.field-with-use > .use,
-	.picture-row > .use {
-		padding-left: var(--space-2);
-		box-sizing: border-box;
-		width: 8.5rem;
+	/* Outside a table each box carries its own small Book or Website label, centered over the box as the column header is in a table. */
+	.use-box {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		gap: var(--space-1);
+		font-size: var(--font-size-small);
+		color: var(--color-ink-muted);
+		cursor: pointer;
 	}
 
-	.use {
-		width: 8.5rem;
+	.use-box input {
+		width: 1.25rem;
+		height: 1.25rem;
+		margin: 0 0 0.6rem;
+	}
+
+	.use-box .not-applicable {
+		line-height: 1.25rem;
+		margin-bottom: 0.6rem;
+	}
+
+	div.use-private {
+		grid-column: span 2;
+		display: flex;
+		justify-content: center;
 	}
 
 	.picture-row {
+		--mark-width: 5rem;
 		display: grid;
-		grid-template-columns: auto minmax(0, 1fr) 8.5rem var(--layout-target-minimum);
+		grid-template-columns: auto minmax(0, 1fr) var(--mark-width) var(--mark-width) var(--layout-target-minimum);
 		column-gap: 0;
 		align-items: center;
 		margin: 0 0 var(--space-4);
@@ -501,6 +647,28 @@
 		background: var(--color-surface);
 		border: 2px dashed var(--color-control-border);
 		color: var(--color-ink-muted);
+	}
+
+	.cv-row {
+		display: flex;
+		flex-wrap: wrap;
+		align-items: center;
+		gap: var(--space-2) var(--space-3);
+		margin-top: var(--space-2);
+	}
+
+	.cv-row .hint {
+		margin: 0;
+	}
+
+	.field-label {
+		display: block;
+		font-weight: var(--font-weight-semibold);
+		margin-bottom: var(--space-1);
+	}
+
+	.short-control {
+		max-width: 20rem;
 	}
 
 	.picture-actions .hint {
@@ -536,12 +704,13 @@
 		padding: var(--space-2);
 	}
 
-	table.rows .use {
-		width: 8.5rem;
+	table.rows .mark {
+		width: 5rem;
+		box-sizing: border-box;
+		text-align: center;
 	}
 
-	table.rows .mark {
-		width: 3.5rem;
+	table.rows td.use-private {
 		text-align: center;
 	}
 
@@ -619,11 +788,47 @@
 		margin: 0;
 	}
 
-	.choices-inline {
+	.chips {
 		display: flex;
 		flex-wrap: wrap;
-		gap: 0 var(--space-4);
+		gap: var(--space-2);
+		margin: 0 0 var(--space-2);
+		padding: 0;
+		list-style: none;
 	}
+
+	.chips li {
+		display: inline-flex;
+		align-items: center;
+		gap: var(--space-1);
+		padding: 0 0 0 var(--space-3);
+		border: 1px solid var(--color-line);
+		border-radius: 999px;
+		background: var(--color-surface);
+	}
+
+	.chip-remove {
+		display: inline-grid;
+		place-items: center;
+		width: 2.25rem;
+		height: 2.25rem;
+		border: 0;
+		border-radius: 50%;
+		background: transparent;
+		color: inherit;
+		cursor: pointer;
+	}
+
+	.chip-remove:hover {
+		background: color-mix(in srgb, currentColor 14%, transparent);
+	}
+
+	.other-row {
+		display: flex;
+		gap: var(--space-2);
+		margin-top: var(--space-2);
+	}
+
 
 	.birthday {
 		display: flex;
@@ -638,18 +843,7 @@
 		font-weight: normal;
 	}
 
-	.where {
-		display: flex;
-		flex-wrap: wrap;
-		gap: 0 var(--space-5);
-		align-items: center;
-		margin: 0 0 var(--space-4);
-	}
 
-	.where legend {
-		float: left;
-		margin: 0 var(--space-2) 0 0;
-	}
 
 	.credit-preview {
 		padding: var(--space-3) var(--space-4);
@@ -658,7 +852,19 @@
 		border-radius: var(--radius-control);
 	}
 
-	.credit-preview p {
+
+	.credit-preview {
+		display: grid;
+		gap: var(--space-3);
+		margin: 0;
+	}
+
+	.credit-preview dt {
+		font-size: var(--font-size-small);
+		color: var(--color-ink-muted);
+	}
+
+	.credit-preview dd {
 		margin: 0;
 	}
 
@@ -706,7 +912,7 @@
 		}
 
 		table.rows td.mark,
-		table.rows td.use {
+		table.rows td.use-private {
 			display: inline-flex;
 			align-items: center;
 			gap: var(--space-2);
@@ -746,17 +952,36 @@
 			grid-template-columns: 1fr;
 		}
 
-		.field-with-use,
-		.picture-row {
-			grid-template-columns: minmax(0, 1fr);
+		.field-with-use {
+			grid-template-columns: auto auto 1fr;
+			align-items: center;
 		}
 
-		.picture-row {
-			grid-template-columns: auto minmax(0, 1fr);
-		}
-
-		.picture-row > .use {
+		.field-with-use > :first-child {
 			grid-column: 1 / -1;
+		}
+
+		.picture-row {
+			grid-template-columns: auto auto 1fr;
+		}
+
+		.picture-row > .picture-actions {
+			grid-column: 2 / -1;
+		}
+
+		.use-box {
+			flex-direction: row-reverse;
+			margin: var(--space-2) var(--space-4) 0 0;
+		}
+
+		.use-box input,
+		.use-box .not-applicable {
+			margin: 0;
+		}
+
+		div.use-private {
+			justify-content: flex-start;
+			margin-top: var(--space-1);
 		}
 	}
 </style>
