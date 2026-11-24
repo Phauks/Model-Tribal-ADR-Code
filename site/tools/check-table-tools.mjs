@@ -115,7 +115,9 @@ for (const viewport of viewports) {
 
 	// The Name column's "Contains" box.
 	await nations.getByRole('button', { name: 'Filter Name', exact: true }).click();
-	await page.keyboard.type('Paiute');
+	// Typed into the box itself: the menu puts the focus there a moment after it opens, and on a slow machine keys pressed straight after the click would land before it (main went red this way on Nov. 24, 2026).
+	await page.locator('.table-popover:popover-open input[type="text"]').fill('Paiute');
+	await page.waitForFunction((text) => document.querySelector('.table-count')?.textContent !== text, federal, { timeout: 3000 }).catch(() => {});
 	const paiute = await nations.locator('tbody tr').evaluateAll((rows) => rows.map((row) => row.cells[0].textContent ?? ''));
 	check(paiute.length > 0 && paiute.every((name) => /paiute/i.test(name)), at(`/nations: "Contains Paiute" left names without it: ${paiute.filter((name) => !/paiute/i.test(name)).slice(0, 3).join('; ')}`));
 	checkInside(at('/nations, Name filter'), await openMenu(page));
