@@ -37,7 +37,8 @@ describe('the workspace pages in the left sidebar', () => {
 			'nonprofit',
 			'site-text',
 			'changes',
-			'service-checks'
+			'service-checks',
+			'wayback'
 		]);
 	});
 

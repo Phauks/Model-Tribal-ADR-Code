@@ -28,7 +28,10 @@ Checks:
     nations, methods, protocol sources and anthology telling exist; the
     story's access is at least as restrictive as its most restrictive telling;
     and each excerpt quotes a telling that allows quotation, within the word
-    limit, with a fingerprint that matches its words (decision record 0019)
+    limit, with a fingerprint that matches its words (decision record 0019);
+    each 'affected_by' entry names an existing source record (or an event),
+    appears once, and says where a listed telling, or an existing source
+    record, names it
   - each search log (research/search-logs/, decision record 0025) sits at
     <topic>/<letter>/<profile id>.yaml, names an existing Tribe profile, and
     its last_searched date is the latest search date, and its status is
@@ -332,6 +335,22 @@ def check_stories(stories: list, sources: set, tribe_ids: set, sessions: set, me
         for key in filter(None, keys):
             if key not in sources:
                 errors.append(f"{path}: cites a missing source record '{key}'")
+        seen_targets = set()
+        for number, entry in enumerate(record.get("affected_by", []), start=1):
+            name = f"{path}: affected_by {number}"
+            target = entry.get("record") or f"event:{entry.get('event')}"
+            if target in seen_targets:
+                errors.append(f"{name} repeats '{target}'")
+            seen_targets.add(target)
+            if entry.get("record") and entry["record"] not in sources:
+                errors.append(f"{name} names a missing source record '{entry['record']}'")
+            named_in = entry.get("named_in") or {}
+            if not named_in.get("telling") and not named_in.get("source"):
+                errors.append(f"{name} must say which telling or source names it (named_in.telling or named_in.source)")
+            if named_in.get("telling") and named_in["telling"] not in identifiers:
+                errors.append(f"{name} names a telling '{named_in['telling']}' this record does not list")
+            if named_in.get("source") and named_in["source"] not in sources:
+                errors.append(f"{name} names a missing source record '{named_in['source']}'")
         chosen = (record.get("anthology") or {}).get("telling")
         if chosen and chosen not in identifiers:
             errors.append(f"{path}: anthology names a telling '{chosen}' this record does not list")

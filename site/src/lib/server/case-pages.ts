@@ -35,6 +35,7 @@ import { copyPagePath } from '../public-copies.ts';
 import { opinionTitle, surname, type OpinionEntry } from '../case-opinions.ts';
 import type { SourceEntry } from './source-uses.ts';
 import { peopleInCase } from './biographies.ts';
+import { accountsOf, type AccountEntry } from './impact-accounts.ts';
 
 export interface CaseMention {
 	title: string;
@@ -83,6 +84,8 @@ export interface CasePage {
 	essays: CaseMention[];
 	nationPages: { name: string; link: string }[];
 	court?: { name: string; link: string };
+	/** Accounts of the case's impact on the people who lived under it (impact-accounts.ts). */
+	accounts: AccountEntry[];
 	sources: SourceEntry[];
 	/** Set for a record a script wrote whose sources do not yet all agree (review.status "unverified", schemas/source.schema.json). */
 	unverified?: boolean;
@@ -98,7 +101,9 @@ interface CaseRecordParts {
 
 const roles: Record<string, string> = { party: 'Party', government: 'Party through its officials or agency', subject: 'Not a party' };
 
-const boxParts: [part: 'background' | 'question' | 'holding' | 'quotes' | 'treatment', heading: string][] = [
+type BoxPartHeading = [part: 'background' | 'question' | 'holding' | 'summary' | 'quotes' | 'treatment', heading: string];
+
+const boxParts: BoxPartHeading[] = [
 	['background', 'Background'],
 	['question', 'Question'],
 	['holding', 'Holding'],
@@ -111,9 +116,9 @@ export function caseKeys(): string[] {
 	return [...sources().values()].filter((record) => (record.citation as { type?: string }).type === 'legal_case' && record.citation.title).map((record) => record.key);
 }
 
-function caseBox(text: string, key: string): { inner: string; at: number } | undefined {
-	const match = new RegExp(`^:{4,}[ \\t]*case[ \\t]+${key}[ \\t]*\\n([\\s\\S]*?)^:{4,}[ \\t]*$`, 'm').exec(text);
-	return match ? { inner: match[1], at: match.index } : undefined;
+function caseBox(text: string, key: string): { inner: string; at: number; kind: string } | undefined {
+	const match = new RegExp(`^:{4,}[ \\t]*(case|law)[ \\t]+${key}[ \\t]*\\n([\\s\\S]*?)^:{4,}[ \\t]*$`, 'm').exec(text);
+	return match ? { inner: match[2], at: match.index, kind: match[1] } : undefined;
 }
 
 function headingBefore(text: string, at: number): string {
@@ -128,11 +133,11 @@ function escapeRegExp(text: string): string {
  * The box's parts as the page's sections, each under its own heading, with
  * the number of quotations and Treatment paragraphs in a badge.
  */
-function boxSections(key: string, title: string, box: RecordBox | undefined): { html: string; topics: string[]; sources: SourceEntry[] } {
+export function boxSections(key: string, title: string, box: RecordBox | undefined, parts: BoxPartHeading[] = boxParts): { html: string; topics: string[]; sources: SourceEntry[] } {
 	const topics = box?.topics ?? [];
 	let markdown = '';
 	const counts: Record<string, number> = {};
-	for (const [part, heading] of boxParts) {
+	for (const [part, heading] of parts) {
 		const written = box ? boxPartMarkdown(key, box, part) : '';
 		if (!written) continue;
 		if (part === 'quotes') counts.quotes = box!.quotes!.length;
@@ -198,16 +203,28 @@ function caseNations(record: SourceRecord & CaseRecordParts): { nations: CaseNat
 	return { nations };
 }
 
-function essaysCiting(key: string, title: string): CaseMention[] {
+let essayTexts: { text: string; path: string }[] | undefined;
+
+/**
+ * Each essay as read, with each box it places filled from the record, so a
+ * case cited inside another case's box counts. Worked out once per build,
+ * since every case and law page asks.
+ */
+function essaysAsRead(): { text: string; path: string }[] {
+	essayTexts ??= Object.entries(essaysInGit).map(([identifier, written]) => {
+		const text = withRecordBoxes(written);
+		return { text, path: essayPath(identifier, partOf(identifier, splitFrontMatter(text).frontMatter)) };
+	});
+	return essayTexts;
+}
+
+export function essaysCiting(key: string, title: string): CaseMention[] {
 	const found: CaseMention[] = [];
 	const mention = new RegExp(`\\[@${escapeRegExp(key)}[\\],]|\\*${escapeRegExp(title)}\\*`);
-	for (const [identifier, written] of Object.entries(essaysInGit)) {
-		// The essay as read, with each box it places filled from the record, so a case cited inside another case's box counts.
-		const text = withRecordBoxes(written);
-		const path = essayPath(identifier, partOf(identifier, splitFrontMatter(text).frontMatter));
+	for (const { text, path } of essaysAsRead()) {
 		const box = caseBox(text, key);
 		if (box) {
-			found.push({ title: titleOf(text), link: `${path}#case-${key}`, where: headingBefore(text, box.at) });
+			found.push({ title: titleOf(text), link: `${path}#${box.kind}-${key}`, where: headingBefore(text, box.at) });
 			continue;
 		}
 		const at = text.search(mention);
@@ -216,7 +233,7 @@ function essaysCiting(key: string, title: string): CaseMention[] {
 	return found.sort((one, other) => one.title.localeCompare(other.title));
 }
 
-function citationLine(record: SourceRecord): string {
+export function citationLine(record: SourceRecord): string {
 	const { volume, page, number, authority } = record.citation;
 	const reporter = [volume, record.citation['container-title'], page].filter(Boolean).join(' ');
 	const year = record.citation.issued?.['date-parts']?.[0]?.[0];
@@ -252,6 +269,7 @@ export function casePage(key: string): CasePage {
 		essays: essaysCiting(key, name),
 		nationPages: nations.filter((nation) => nationNamesAndKinds().has(nation.id)).map((nation) => ({ name: nation.name, link: `/nations/${nation.id}` })),
 		court: bench && courtLink ? { name: bench.court, link: courtLink } : undefined,
+		accounts: accountsOf({ record: key }),
 		sources: box.sources,
 		unverified: record.review?.status === 'unverified' || undefined
 	};

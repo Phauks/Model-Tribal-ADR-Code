@@ -15,7 +15,7 @@ import path from 'node:path';
 import { parseCsv } from '../csv.ts';
 import { mentionWords } from '../opinion-mentions.ts';
 import { copyPagePath, removalRequestPath } from '../public-copies.ts';
-import { publicCopies, repositoryRoot } from './content.ts';
+import { publicCopies, redactedOpinionKeys, repositoryRoot } from './content.ts';
 
 /** The key of the dataset's source record (content/sources/c/). */
 export const opinionsSourceKey = 'caselaw-access-project-tribal-reporters';
@@ -37,7 +37,9 @@ export interface TribalCourtOpinion {
 	/** Its page on this site, with the site's masthead and sidebar around it. */
 	path: string;
 	removal: string;
-	/** The Caselaw Access Project's own page of the opinion, which an opinion the nation asked to cite only links to. */
+	/** Protected people's names are replaced by initials (research/tribal-court-opinions/redacted.csv). */
+	namesReplaced: boolean;
+	/** The Caselaw Access Project's own page of the opinion, which an opinion the nation asked to cite only links to. Empty for a redacted opinion, whose original still has the names. */
 	original: string;
 }
 
@@ -49,6 +51,7 @@ export function tribalCourtOpinions(): TribalCourtOpinion[] {
 		const file = path.join(repositoryRoot, 'research/tribal-court-opinions/opinions.csv');
 		const rows = existsSync(file) ? parseCsv(readFileSync(file, 'utf8')) : [];
 		const served = new Set(publicCopies().map((copy) => copy.key));
+		const redacted = redactedOpinionKeys();
 		opinionCache = rows
 			.filter((row) => row.copy_key && served.has(row.copy_key))
 			.map((row) => {
@@ -65,7 +68,8 @@ export function tribalCourtOpinions(): TribalCourtOpinion[] {
 					key: row.copy_key,
 					path: copyPagePath({ key: row.copy_key }),
 					removal: removalRequestPath({ key: row.copy_key }),
-					original: row.link
+					namesReplaced: redacted.has(row.copy_key),
+					original: redacted.has(row.copy_key) ? '' : row.link
 				};
 			})
 			.sort((first, second) => second.decided.localeCompare(first.decided) || first.name.localeCompare(second.name));

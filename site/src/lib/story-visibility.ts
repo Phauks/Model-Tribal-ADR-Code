@@ -87,6 +87,22 @@ export interface StoryProtocol {
 	how_the_project_follows_it?: string;
 }
 
+export interface StoryAccount {
+	type: 'firsthand' | 'descendant' | 'period-record' | 'published-history';
+	form?: string;
+	recorded?: string | number;
+	recorded_by?: string;
+	place?: string;
+}
+
+export interface StoryAffectedBy {
+	/** A source record's key: a law, treaty, court case or executive order. */
+	record?: string;
+	/** A federal policy or event, such as removal. */
+	event?: string;
+	named_in: { telling?: string; source?: string; locator: string; words?: string };
+}
+
 export interface StoryRecord {
 	id: string;
 	title: string;
@@ -99,6 +115,10 @@ export interface StoryRecord {
 	full_text?: StoryFullText;
 	methods?: string[];
 	topics?: string[];
+	/** Whose account it is and when it was recorded (schemas/story.schema.json, account). */
+	account?: StoryAccount;
+	/** The laws, treaties, cases and events the account is about, each where the account names it. */
+	affected_by?: StoryAffectedBy[];
 	tellings: StoryTelling[];
 	protocols?: StoryProtocol[];
 	access: AccessLevel;

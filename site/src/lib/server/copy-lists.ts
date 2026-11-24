@@ -102,7 +102,7 @@ function row(copy: PublicCopy, names: Map<string, string>): CopyRow {
 		nations: namesOf(copy, names),
 		path: copyPath(copy),
 		page: copyPagePath(copy),
-		original: copy.links.at(-1) ?? copy.links[0],
+		original: copy.links.at(-1) ?? copy.links[0] ?? '',
 		captured: copy.captured,
 		capturedText: copy.captured ? formatCaptureDate(copy.captured) : '',
 		size: fileSize(copy.bytes),
@@ -169,7 +169,16 @@ function detailShards(): Map<string, Record<string, CopyDetails>> {
 			}),
 			list: { slug, title: groupTitle(slug, names) },
 			...(opinion
-				? { opinion: { name: opinion.name, citation: opinion.citation, court: opinion.court, decided: opinion.decided, docket: opinion.docket } }
+				? {
+						opinion: {
+							name: opinion.name,
+							citation: opinion.citation,
+							court: opinion.court,
+							decided: opinion.decided,
+							docket: opinion.docket,
+							...(copy.namesReplaced ? { namesReplaced: true } : {})
+						}
+					}
 				: {})
 		};
 		const shard = copyDetailsShard(copy);

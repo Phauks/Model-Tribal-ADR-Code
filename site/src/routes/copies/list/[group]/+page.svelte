@@ -24,7 +24,8 @@
 			cells: {
 				title: { text: `${copy.title} (${copy.kind})`, href: copy.page },
 				nations: { text: copy.nations.join('; ') },
-				original: { text: new URL(copy.original).hostname, href: copy.original },
+				// A redacted opinion has no link to its original, which still has the names in it.
+				original: copy.original ? { text: new URL(copy.original).hostname, href: copy.original } : { text: 'Caselaw Access Project' },
 				captured: { text: copy.capturedText, sortValue: copy.captured },
 				size: { text: copy.size, sortValue: copy.bytes },
 				verify: { text: 'SHA-256', href: verifyLink(copy.sha256, fileName(copy.path)) },
