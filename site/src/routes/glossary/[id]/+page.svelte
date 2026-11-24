@@ -28,7 +28,8 @@
 </svelte:head>
 
 <InfoPage title={entry.term} {glance} sources={data.sources} trail={[{ label: 'Glossary', href: '/glossary' }]}>
-	<GlossaryEntry {entry} headingLevel={1} headword={false} />
+	{#snippet status()}<GlossaryEntry {entry} part="head" />{/snippet}
+	<GlossaryEntry {entry} headingLevel={1} part="body" />
 
 	{#if data.linkedFrom.length > 0}
 		<section aria-labelledby="linked-from">

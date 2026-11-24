@@ -43,14 +43,6 @@
 		{ label: 'Federal offices', href: '/nations/federal-offices' }
 	]}
 >
-	<section aria-labelledby="nations-served">
-		<h2 id="nations-served">Nations served <CountBadge count={data.count} /></h2>
-		{#each data.groups as group (group.entityType)}
-			{#if data.groups.length > 1}<h3>{group.label}</h3>{/if}
-			<NationTable {group} identifier="health-area-{data.office.key}-{group.entityType}" />
-		{/each}
-	</section>
-
 	{#if data.serviceUnits.length > 0}
 		<section aria-labelledby="service-units">
 			<h2 id="service-units">Service units and health programs <CountBadge count={data.serviceUnits.length} /></h2>
@@ -64,4 +56,19 @@
 			</ul>
 		</section>
 	{/if}
+
+	<section aria-labelledby="nations-served" class="past-glance">
+		<h2 id="nations-served">Nations served <CountBadge count={data.count} /></h2>
+		{#each data.groups as group (group.entityType)}
+			{#if data.groups.length > 1}<h3>{group.label}</h3>{/if}
+			<NationTable {group} identifier="health-area-{data.office.key}-{group.entityType}" />
+		{/each}
+	</section>
 </InfoPage>
+
+<style>
+	/* The table of nations is wide, so it starts under At a glance rather than squeezed beside it; the service units, a list, run beside it. */
+	.past-glance {
+		clear: both;
+	}
+</style>
