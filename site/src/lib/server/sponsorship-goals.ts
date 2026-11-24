@@ -1,8 +1,10 @@
 /**
  * What the Sponsorship page shows about each thing a gift can fund
  * (docs/sponsorship.md, "The Sponsorship page"), as in mockup A, which
- * Trevor approved on Nov. 23, 2026: a paperback for every nation, the site
- * for a year, hardcovers for every nation, and wherever it is needed most.
+ * Trevor approved on Nov. 23, 2026, with the choices he named on Nov. 24:
+ * a paperback for every nation (the initiative), hardcovers for every
+ * nation, Accessibility Formats, Research, Digital Infrastructure (the site
+ * for a year) and Discretionary.
  * Each cost is set by the lead author on the workspace Sponsors page once it
  * is known, and only totals across every sponsor are used; no sponsor's own
  * amount is ever shown.
@@ -114,7 +116,7 @@ export interface CopyGoal {
 
 /** One of the cards under "More you can fund". */
 export interface FundingCard {
-	key: 'site' | 'hardcovers' | 'needed-most';
+	key: 'hardcovers' | 'accessibility' | 'research' | 'site' | 'discretionary';
 	/** What a gift from this card goes toward. */
 	earmark: Earmark;
 	/** The figure on the card in cents (a year of the site, or hardcovers for every nation), or null when not set or when there is none. */
@@ -140,10 +142,12 @@ export function sponsorshipGoals(counts: SponsorshipCounts, costs: SponsorshipCo
 		nations,
 		copies,
 		cards: [
-			{ key: 'site', earmark: 'hosting', costCents: site, share: site ? Math.min(1, given.siteLastYear / site) : null },
 			// Hardcovers take the place of paperbacks, so every gift toward copies counts toward them.
 			{ key: 'hardcovers', earmark: 'books-for-nations', costCents: hardcovers, share: hardcovers ? Math.min(1, books / hardcovers) : null },
-			{ key: 'needed-most', earmark: 'needed-most', costCents: null, share: null }
+			{ key: 'accessibility', earmark: 'large-format', costCents: null, share: null },
+			{ key: 'research', earmark: 'research', costCents: null, share: null },
+			{ key: 'site', earmark: 'hosting', costCents: site, share: site ? Math.min(1, given.siteLastYear / site) : null },
+			{ key: 'discretionary', earmark: 'needed-most', costCents: null, share: null }
 		]
 	};
 }

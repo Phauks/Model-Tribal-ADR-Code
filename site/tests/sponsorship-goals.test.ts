@@ -21,7 +21,7 @@ beforeEach(() => {
 const counts = { nationPages: 947, federallyRecognized: 581, sources: 7165 };
 
 function given(total: Partial<GivenToward['total']>, siteLastYear = 0): GivenToward {
-	return { total: { 'needed-most': 0, 'books-for-nations': 0, 'large-format': 0, hosting: 0, ...total }, siteLastYear, monthly: { cents: 0, sponsors: 0 } };
+	return { total: { 'needed-most': 0, 'books-for-nations': 0, 'large-format': 0, research: 0, hosting: 0, ...total }, siteLastYear, monthly: { cents: 0, sponsors: 0 } };
 }
 
 describe('the costs the lead author sets', () => {
@@ -55,10 +55,12 @@ describe('what the Sponsorship page shows', () => {
 
 	it('measures the site against this year and hardcovers against every nation', () => {
 		const goals = sponsorshipGoals(counts, { website: 7000, hardcover: 2500 }, given({ 'books-for-nations': 145_250, hosting: 99_999 }, 3500));
-		expect(goals.cards.map((card) => card.key)).toEqual(['site', 'hardcovers', 'needed-most']);
-		expect(goals.cards[0]).toMatchObject({ earmark: 'hosting', costCents: 7000, share: 0.5 });
-		expect(goals.cards[1]).toMatchObject({ earmark: 'books-for-nations', costCents: 2500 * 581, share: 0.1 });
-		expect(goals.cards[2]).toMatchObject({ earmark: 'needed-most', costCents: null, share: null });
+		expect(goals.cards.map((card) => card.key)).toEqual(['hardcovers', 'accessibility', 'research', 'site', 'discretionary']);
+		expect(goals.cards[0]).toMatchObject({ earmark: 'books-for-nations', costCents: 2500 * 581, share: 0.1 });
+		expect(goals.cards[1]).toMatchObject({ earmark: 'large-format', costCents: null, share: null });
+		expect(goals.cards[2]).toMatchObject({ earmark: 'research', costCents: null, share: null });
+		expect(goals.cards[3]).toMatchObject({ earmark: 'hosting', costCents: 7000, share: 0.5 });
+		expect(goals.cards[4]).toMatchObject({ earmark: 'needed-most', costCents: null, share: null });
 	});
 });
 

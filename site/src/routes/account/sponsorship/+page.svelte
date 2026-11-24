@@ -2,7 +2,7 @@
 	import { page } from '$app/state';
 	import SponsorCard from '#lib/components/SponsorCard.svelte';
 	import { readableDate } from '#lib/readable-date.ts';
-	import { earmarkLabels, earmarks, giftFrequencies, giftFrequencyLabels, listingLabels, listings } from '#lib/sponsorship.ts';
+	import { dollarsAfterTyping, dollarsWhileTyping, earmarkLabels, earmarks, giftFrequencies, giftFrequencyLabels, listingLabels, listings } from '#lib/sponsorship.ts';
 	import type { PageProps } from './$types';
 
 	let { data, form }: PageProps = $props();
@@ -128,7 +128,19 @@
 					<div class="field">
 						<label for="gift-amount">Amount in US dollars</label>
 						<p class="hint">From ${data.gifts.smallest} to ${data.gifts.largest.toLocaleString('en-US')}.</p>
-						<input id="gift-amount" name="amount" type="text" inputmode="decimal" required class="amount" value={data.asked.amount} />
+						<input
+							id="gift-amount"
+							name="amount"
+							type="text"
+							inputmode="decimal"
+							autocomplete="off"
+							maxlength="12"
+							required
+							class="amount"
+							value={data.asked.amount}
+							oninput={(event) => (event.currentTarget.value = dollarsWhileTyping(event.currentTarget.value))}
+							onblur={(event) => (event.currentTarget.value = dollarsAfterTyping(event.currentTarget.value))}
+						/>
 					</div>
 					<div class="field">
 						<label for="gift-earmark">Toward</label>
