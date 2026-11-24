@@ -180,9 +180,10 @@ jobs:
     needs: changes
     if: needs.changes.outputs.site == 'true'
     runs-on: ubuntu-latest
-    # A normal run takes 10 to 15 minutes; this stops a stuck one long before
-    # GitHub's six-hour limit, so the merge queue is not held up.
-    timeout-minutes: 30
+    # A normal run takes 15 to 20 minutes, most of it the build; this stops a
+    # stuck one long before GitHub's six-hour limit, so the merge queue is not
+    # held up.
+    timeout-minutes: 40
     defaults:
       run:
         working-directory: site
@@ -196,6 +197,9 @@ jobs:
       - run: npm ci
       - name: Build
         run: npm run build
+      - name: Check that the patched Worker starts and its handlers answer (tools/check-built-worker.mjs)
+        timeout-minutes: 5
+        run: npm run check:built-worker
       # The browser checks read only the built pages in
       # .svelte-kit/cloudflare/client. One compressed file uploads far faster
       # than its twelve thousand files one by one.
@@ -207,6 +211,17 @@ jobs:
           path: ${{ runner.temp }}/built-pages.tar.zst
           compression-level: 0
           retention-days: 1
+      # After the upload, so the browser and accessibility jobs can start.
+      # The pages the Worker answers, signed out and as the local fixture
+      # accounts, and the menus and dialogs while open, on a local database
+      # (tools/seed-local-database.mjs). The prerendered pages are the
+      # accessibility jobs' below. It needs the whole built Worker, not only
+      # the built pages, so it runs here.
+      - name: Install Chromium for the Worker pages' accessibility check
+        run: npx playwright install --with-deps --only-shell chromium
+      - name: Accessibility check of the Worker's pages and open menus (tools/check-accessibility-live.mjs)
+        timeout-minutes: 10
+        run: npm run check:accessibility:live
 
   site:
     name: Website type check and tests

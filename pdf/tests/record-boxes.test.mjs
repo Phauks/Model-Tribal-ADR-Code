@@ -36,3 +36,17 @@ test("a quotation from a separate opinion keeps its parenthetical", () => {
     "::: quotes\n> Words.\n\n[@a-case, ¶ 58] (Abrahamson, C.J., concurring)\n:::",
   );
 });
+
+test("a record's reading follows its box as an Analysis block", () => {
+  const withReading = new Map([
+    [
+      "indian-removal-act-1830",
+      { key: "indian-removal-act-1830", law_box: { summary: "Authorized removal.", reading: { title: "Indian Removal Act (1830)", text: "A reading." } } },
+    ],
+  ]);
+  assert.equal(
+    fillBoxes("Before.\n\n:::: law indian-removal-act-1830\n::::\n\nAfter.\n", withReading),
+    "Before.\n\n:::: law indian-removal-act-1830\n::: summary\nAuthorized removal.\n:::\n::::\n\n::: analysis Indian Removal Act (1830)\nA reading.\n:::\n\nAfter.\n",
+  );
+  assert.equal(boxMarkdown("law", "indian-removal-act-1830", withReading.get("indian-removal-act-1830").law_box), "::: summary\nAuthorized removal.\n:::");
+});
