@@ -27,3 +27,15 @@ export function storyReviewStatus(reviewStatus: string | undefined): ReviewStatu
 	if (reviewStatus === 'reviewed-by-nation') return { label: 'Reviewed by the nation', verified: true };
 	return { label: 'Unreviewed', verified: false };
 }
+
+/**
+ * A nation page's review status in the nations tables and previews: whether
+ * the nation has reviewed it (Trevor, Nov. 24, 2026: "instead of drafted from
+ * public sources, just put verification"). From the record's review.status
+ * (schemas/tribe.schema.json).
+ */
+export function nationVerification(reviewStatus: string | undefined): ReviewStatus {
+	return reviewStatus === 'reviewed-by-nation' || reviewStatus === 'approved-by-nation'
+		? { label: 'Verified', verified: true }
+		: { label: 'Unverified', verified: false };
+}
