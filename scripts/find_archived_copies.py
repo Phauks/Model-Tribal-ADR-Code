@@ -267,7 +267,9 @@ def main(arguments: list[str]) -> int:
         fixed = on_hosts(link, FIXED_DOCUMENT_HOSTS)
         looked_up_recently = recent(seen.get("looked_up", ""), today, DAYS_BEFORE_LOOKING_AGAIN)
         if reuse_days is None or (looked_up_recently and (not fixed or seen.get("looked_up_any_age"))):
-            needs_save.append((path, record))
+            # Without --save, a record looked up recently has nothing left to try.
+            if save or reuse_days is None:
+                needs_save.append((path, record))
             continue
         if out_of_time():
             stopped = True

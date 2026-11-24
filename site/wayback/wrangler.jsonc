@@ -1,0 +1,49 @@
+// Cloudflare Worker that saves source records' original links in the Wayback
+// Machine with the project's archive.org keys (site/WAYBACK.md, decision
+// record 0006: the keys live only in Cloudflare's Secrets Store, never in
+// GitHub).
+//
+// Workers Builds deploys it from the GitHub repository (root directory:
+// site/wayback, build command: cd .. && npm ci, deploy command:
+// npx wrangler deploy).
+{
+	"$schema": "../node_modules/wrangler/config-schema.json",
+	"name": "model-tribal-adr-code-wayback",
+	"main": "worker.ts",
+	"compatibility_date": "2026-11-20",
+	// A public address for the read-only list of captures it has made, which
+	// the archive workflow writes into the records. Nothing else is served.
+	"workers_dev": true,
+	"preview_urls": false,
+	"observability": {
+		"enabled": true
+	},
+	// Every minute: check on saves already asked for, then ask for a few more.
+	"triggers": {
+		"crons": ["* * * * *"]
+	},
+	// Its progress is one JSON object in the same private bucket as the site,
+	// under wayback/.
+	"r2_buckets": [
+		{
+			"binding": "sourceDocuments",
+			"bucket_name": "model-tribal-adr-code-sources"
+		}
+	],
+	// The archive.org keys, made by the lead author at
+	// https://archive.org/account/s3.php and stored in the account's Secrets
+	// Store. The store's identifier is not a secret. Deploying needs a build
+	// token with the "Account Secrets Store Edit" permission.
+	"secrets_store_secrets": [
+		{
+			"binding": "archiveOrgAccessKey",
+			"store_id": "9ce4ac3eb1774c8c9e46e40edb0efaef",
+			"secret_name": "ARCHIVE_ORG_ACCESS_KEY"
+		},
+		{
+			"binding": "archiveOrgSecretKey",
+			"store_id": "9ce4ac3eb1774c8c9e46e40edb0efaef",
+			"secret_name": "ARCHIVE_ORG_SECRET_KEY"
+		}
+	]
+}
