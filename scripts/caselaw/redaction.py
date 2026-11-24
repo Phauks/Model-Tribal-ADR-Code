@@ -198,7 +198,7 @@ class Redactor:
             if replacement is None:
                 return found
             # One word on its own is a name only when it is capitalized ("Little", not "little"), and not when it
-            # starts someone else's name ("David" in "David Smith" when another David is protected).
+            # starts someone else's name ("David" in "David Example" when another David is protected).
             if replacement.single_word and (not found[:1].isupper() or self._starts_other_name(match.string, match.end())
                                             or follows_title(match.string, match.start())):
                 self.skipped.append(normalize(match.string[match.start():match.end() + 30]))
