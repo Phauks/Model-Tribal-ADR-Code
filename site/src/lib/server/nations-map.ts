@@ -894,3 +894,19 @@ function addShadedViewSources(records: NationRecord[], sources: SourceUses): voi
 		}
 	}
 }
+
+/**
+ * Which of a shaded view's categories a nation falls under, by key, in the view's order: every kind it has for a view of kinds, its one category otherwise. Build a table (src/lib/server/table-builder-datasets.ts) gives each view a column of the nations dataset, so the table and the map sort nations by one rule.
+ */
+export function nationCategoryKeys(view: ShadedMapView, record: NationRecord): string[] {
+	const rule = shadedViewRules[view];
+	if (rule.categoryOf) {
+		const key = rule.categoryOf(record);
+		return key === undefined ? [] : [key];
+	}
+	const has = rule.has?.(record) ?? {};
+	const order = (shadedViewDefinitions[view].categories ?? []).map((category) => category.key);
+	return Object.keys(has)
+		.filter((key) => has[key])
+		.sort((first, second) => order.indexOf(first) - order.indexOf(second));
+}
