@@ -111,7 +111,11 @@ def fetch(url: str, target: Path | None = None) -> bytes:
 
 
 # Short names the Caselaw Access Project abbreviates, written out as the report's running head gives them.
-TITLE_FIXES = {"570 U.S. 1": "Arizona v. Inter Tribal Council of Arizona, Inc."}
+TITLE_FIXES = {
+    "570 U.S. 1": "Arizona v. Inter Tribal Council of Arizona, Inc.",
+    # The Caselaw Access Project joins the two captions of the consolidated cases.
+    "492 U.S. 408": "Brendale v. Confederated Tribes and Bands of Yakima Indian Nation",
+}
 
 
 def end_stop(text: str) -> str:
