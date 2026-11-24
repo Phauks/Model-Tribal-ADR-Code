@@ -1,0 +1,285 @@
+<!--
+	@component
+	The details of the place or nation a reader chose on a map (Trevor, 2026-11-24, mockups 3A and 5). On the Map page they take the side column, with a back arrow to the table; on a nation's page they sit under the map. Each fact is a row of its name and value. A count of nations is a button that opens its nations right under it, each linked to its page or to the part of it that holds the fact and its sources, with a filter box when the list is long. The panel grows with the page rather than scrolling in a box of its own.
+-->
+<script lang="ts">
+	import { tick } from 'svelte';
+	import ArrowLeft from '@lucide/svelte/icons/arrow-left';
+	import ChevronDown from '@lucide/svelte/icons/chevron-down';
+	import Search from '@lucide/svelte/icons/search';
+	import RecognitionBadges from './RecognitionBadges.svelte';
+	import type { MapDetails, MapDetailsContact, MapDetailsLine, MapDetailsNation } from '#lib/map-details.ts';
+
+	let {
+		details,
+		image,
+		contact = [],
+		back
+	}: {
+		details: MapDetails;
+		/** The nation's seal or logo, where it may be shown. */
+		image?: { src: string; alt: string };
+		contact?: MapDetailsContact[];
+		/** The back arrow, on the Map page, which brings back the table. */
+		back?: { label: string; onclick: () => void };
+	} = $props();
+
+	const identifier = $props.id();
+	let heading = $state<HTMLElement | undefined>();
+	let hiddenImage = $state<string | undefined>();
+
+	/** Which counts are open, and what each one's list is filtered by. A new place starts with all closed. */
+	let open = $state<Record<string, boolean>>({});
+	let filters = $state<Record<string, string>>({});
+	let shownFor = '';
+	$effect.pre(() => {
+		const key = `${details.kind}\n${details.title}`;
+		if (key === shownFor) return;
+		shownFor = key;
+		open = {};
+		filters = {};
+	});
+
+	/** A list this long gets a filter box. */
+	const filterFrom = 12;
+	function filtered(line: MapDetailsLine): MapDetailsNation[] {
+		const words = (filters[line.label] ?? '').toLowerCase().split(/\s+/).filter(Boolean);
+		return (line.nations ?? []).filter((nation) => words.every((word) => nation.name.toLowerCase().includes(word)));
+	}
+
+	/** Moves the reader to the details, as when a place is chosen on the map. */
+	export async function focus(): Promise<void> {
+		await tick();
+		heading?.focus({ preventScroll: true });
+		heading?.closest('section')?.scrollIntoView({ block: 'nearest' });
+	}
+</script>
+
+<section class="map-details" aria-labelledby="{identifier}-title">
+	{#if back}
+		<button type="button" class="back" onclick={back.onclick}>
+			<ArrowLeft aria-hidden="true" size={20} />{back.label}
+		</button>
+	{/if}
+	<p class="kind">{details.kind}</p>
+	<div class="head">
+		{#if image && hiddenImage !== image.src}
+			{@const src = image.src}
+			<img class="image" {src} alt={image.alt} width="64" height="64" onerror={() => (hiddenImage = src)} />
+		{/if}
+		<h3 id="{identifier}-title" tabindex="-1" bind:this={heading}>
+			{details.title}{#if details.badges}{' '}<RecognitionBadges badges={details.badges} size="small" />{/if}
+		</h3>
+	</div>
+	{#each details.lines as line, index (line.label)}
+		<div class="fact">
+			{#if line.nations && line.nations.length > 0}
+				{@const listId = `${identifier}-list-${index}`}
+				<div class="row">
+					<span id="{listId}-label">{line.label}</span>
+					<button
+						type="button"
+						class="count"
+						aria-expanded={open[line.label] ? 'true' : 'false'}
+						aria-controls={listId}
+						aria-label="{line.label}: {line.value} {line.nations.length === 1 ? 'nation' : 'nations'}"
+						onclick={() => (open[line.label] = !open[line.label])}
+					>
+						{line.value}<ChevronDown aria-hidden="true" size={16} />
+					</button>
+				</div>
+				<div class="list" id={listId} hidden={!open[line.label]}>
+					{#if open[line.label]}
+						{#if line.nations.length >= filterFrom}
+							<div class="filter">
+							<Search aria-hidden="true" size={18} />
+							<input
+								type="search"
+								autocomplete="off"
+								placeholder="Filter {line.nations.length.toLocaleString('en-US')} nations"
+								aria-label="Filter the {line.nations.length.toLocaleString('en-US')} nations: {line.label}"
+								bind:value={filters[line.label]}
+							/>
+							</div>
+						{/if}
+						{@const shown = filtered(line)}
+						<ul aria-labelledby="{listId}-label">
+							{#each shown as nation (nation.id)}
+								<li><a href={nation.href}>{nation.name}</a></li>
+							{/each}
+						</ul>
+						{#if shown.length === 0}
+							<p class="small muted">No nation’s name has these words.</p>
+						{/if}
+					{/if}
+				</div>
+			{:else}
+				<div class="row">
+					<span>{line.label}</span>
+					<span class="value">{line.value}</span>
+				</div>
+			{/if}
+		</div>
+	{/each}
+	{#each contact as entry (entry.label)}
+		<div class="fact">
+			<div class="row">
+				<span>{entry.label}</span>
+				<span class="value contact">
+					{#if entry.link}
+						<a href={entry.link} target={entry.external ? '_blank' : undefined} rel={entry.external ? 'noopener noreferrer' : undefined}>{#each entry.lines as text, lineIndex (lineIndex)}{#if lineIndex > 0}<br />{/if}{text}{/each}</a>
+					{:else}
+						{#each entry.lines as text, lineIndex (lineIndex)}{#if lineIndex > 0}<br />{/if}{text}{/each}
+					{/if}
+				</span>
+			</div>
+		</div>
+	{/each}
+	{#if details.page}
+		<p class="actions"><a class="button" href={details.page.href}>{details.page.label}</a></p>
+	{/if}
+</section>
+
+<style>
+	.map-details {
+		margin: 0 0 var(--space-4);
+		padding: var(--space-4);
+		border: 1px solid var(--color-line);
+		border-radius: var(--radius-panel);
+		background: var(--color-paper);
+	}
+
+	/* The back arrow reads as a link, like the sidebar's back control. */
+	.back {
+		display: inline-flex;
+		align-items: center;
+		gap: var(--space-1);
+		min-height: var(--layout-target-minimum);
+		margin: calc(-1 * var(--space-2)) 0 var(--space-1);
+		padding: 0;
+		border: 0;
+		background: none;
+		color: var(--color-link);
+		font: inherit;
+		font-weight: var(--font-weight-bold);
+		cursor: pointer;
+	}
+
+	.kind {
+		margin: 0;
+		color: var(--color-ink-muted);
+		font-size: var(--font-size-small);
+	}
+
+	.head {
+		display: flex;
+		align-items: center;
+		gap: var(--space-3);
+		margin: var(--space-1) 0 var(--space-3);
+	}
+
+	.image {
+		flex: none;
+		width: 64px;
+		height: 64px;
+		object-fit: contain;
+	}
+
+	h3 {
+		margin: 0;
+		font-size: var(--font-size-heading-2);
+	}
+
+	.fact {
+		padding: var(--space-2) 0;
+		border-top: 1px solid var(--color-line);
+	}
+
+	.row {
+		display: flex;
+		align-items: baseline;
+		justify-content: space-between;
+		gap: var(--space-3);
+	}
+
+	.value {
+		text-align: right;
+	}
+
+	.contact a {
+		overflow-wrap: anywhere;
+	}
+
+	/* A count is a button that reads as a link, with an arrow that turns when its list is open. */
+	.count {
+		display: inline-flex;
+		flex: none;
+		align-items: center;
+		gap: var(--space-1);
+		min-height: 24px;
+		padding: 0;
+		border: 0;
+		background: none;
+		color: var(--color-link);
+		font: inherit;
+		font-weight: var(--font-weight-bold);
+		font-variant-numeric: tabular-nums;
+		text-decoration: underline;
+		text-decoration-thickness: 1px;
+		text-underline-offset: 0.18em;
+		white-space: nowrap;
+		cursor: pointer;
+	}
+
+	.count :global(svg) {
+		transition: transform var(--motion-duration-short) var(--motion-easing-standard);
+	}
+
+	.count[aria-expanded='true'] :global(svg) {
+		transform: rotate(180deg);
+	}
+
+	.list {
+		margin: var(--space-2) 0 var(--space-1);
+		padding: var(--space-2) var(--space-3);
+		border-radius: var(--radius-control);
+		background: var(--color-surface);
+	}
+
+	/* The filter box, with a magnifying glass inside it. */
+	.filter {
+		position: relative;
+		margin-bottom: var(--space-2);
+	}
+
+	.filter :global(svg) {
+		position: absolute;
+		top: 50%;
+		left: var(--space-3);
+		transform: translateY(-50%);
+		color: var(--color-ink-muted);
+		pointer-events: none;
+	}
+
+	.filter input {
+		padding-left: calc(var(--space-3) + 18px + var(--space-2));
+	}
+
+	.list ul {
+		margin: 0;
+		padding: 0;
+		list-style: none;
+	}
+
+	.list li {
+		padding: var(--space-1) 0;
+	}
+
+	.list p {
+		margin: 0;
+	}
+
+	.actions {
+		margin: var(--space-3) 0 0;
+	}
+</style>

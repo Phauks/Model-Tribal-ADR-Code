@@ -1048,7 +1048,7 @@ function nationMap(record: NationRecord, sources: SourceUses): NationMapData | u
 		views: views.map((view, index) => ({ key: view.key, label: view.label, layout: shared.layouts[index], layers: view.layers })),
 		stateNames: [...present].map(stateName).sort((first, second) => first.localeCompare(second, 'en')),
 		region: region ? { name: `${region.name} Region`, link: `/nations/map#${regionAnchor(region.name)}` } : undefined,
-		landAreas: areas.map((area) => ({ name: area.name, kind: landAreaKindLabels[area.kind] })),
+		landAreas: areas.map((area) => ({ code: area.identifier, name: area.name, kind: landAreaKindLabels[area.kind] })),
 		tileMap: areas.length > 0 ? nationTileMapData(areas.map((area) => area.identifier)) : undefined
 	};
 }

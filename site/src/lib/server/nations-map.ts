@@ -254,7 +254,10 @@ export function tileMapData() {
 	const page = nationsMapPage();
 	const rowStates = new Set(page.stateRows.map((row) => row.code));
 	const states = Object.fromEntries(
-		page.counts.states.map((state) => [state.code, { countClass: state.countClass, anchor: rowStates.has(state.code) ? `state-${state.code}` : undefined }])
+		page.counts.states.map((state) => [
+			state.code,
+			{ countClass: state.countClass, anchor: rowStates.has(state.code) ? `state-${state.code}` : undefined, name: state.name, count: state.count, point: geometry.statePoints[state.code] as [number, number] | undefined, bounds: geometry.stateBounds[state.code] as [number, number, number, number] | undefined }
+		])
 	);
 	const topology = regionsTopology as unknown as Topology<{ regions: GeometryCollection<{ name: string }> }>;
 	const regions = feature(topology, topology.objects.regions) as FeatureCollection<Polygon | MultiPolygon, { name: string }>;

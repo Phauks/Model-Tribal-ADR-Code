@@ -13,11 +13,14 @@
 	way to them.
 -->
 <script lang="ts">
+	import { tick } from 'svelte';
 	import type { NationMapData } from '#lib/presence-map.ts';
 	import ZoomableMap from './ZoomableMap.svelte';
 	import TileMap from './TileMap.svelte';
 	import SearchableDropdown from './SearchableDropdown.svelte';
 	import { nationMapViewChoices, type NationMapView } from '#lib/map-views.ts';
+	import MapDetails from './MapDetails.svelte';
+	import type { MapDetails as MapDetailsType } from '#lib/map-details.ts';
 
 	let { map, nationName }: { map: NationMapData; nationName: string } = $props();
 
@@ -32,6 +35,31 @@
 	function choose(key: NationMapView): void {
 		tileMapReady = false;
 		chosen = key;
+	}
+
+	/**
+	 * Choosing a land area on the tiled map shows its details under the map, as on the Map page, with a way to it there (Trevor, 2026-11-24, mockup 5). The Census Bureau's outlines carry no states, so the details give the outline's size instead.
+	 */
+	let chosenArea = $state<string | undefined>();
+	let detailsPanel = $state<MapDetails | undefined>();
+	const areaDetails = $derived.by((): MapDetailsType | undefined => {
+		if (!chosenArea) return undefined;
+		const area = map.landAreas.find((entry) => entry.code === chosenArea);
+		if (!area) return undefined;
+		const tiled = map.tileMap?.areas.find((entry) => entry.code === area.code);
+		const squareMiles = tiled ? tiled.squareKilometers / 2.589988 : undefined;
+		return {
+			kind: area.kind,
+			title: area.name,
+			lines: squareMiles === undefined ? [] : [{ label: 'Size of the outline', value: `${squareMiles.toLocaleString('en-US', { maximumFractionDigits: squareMiles < 10 ? 1 : 0 })} square miles` }],
+			page: { href: `/nations/map#land-area-${area.code.toLowerCase()}`, label: 'Open on the Map page' }
+		};
+	});
+	async function chooseArea(anchor: string): Promise<void> {
+		const code = anchor.replace(/^land-area-/, '');
+		chosenArea = map.landAreas.find((entry) => entry.code.toLowerCase() === code)?.code;
+		await tick();
+		await detailsPanel?.focus();
 	}
 
 	const titles = $derived({
@@ -85,6 +113,7 @@
 						view="lands"
 						label="Land Areas map of {nationName}"
 						data={map.tileMap}
+						onselect={(anchor) => void chooseArea(anchor)}
 						onready={() => (tileMapReady = true)}
 						onfail={() => {
 							tileMapWanted = false;
@@ -155,6 +184,9 @@
 					</p>
 				{:else}
 					<p class="key"><span class="swatch land" aria-hidden="true"></span>Census land areas named in this entry</p>
+					{#if tiled && areaDetails}
+						<div class="details"><MapDetails bind:this={detailsPanel} details={areaDetails} /></div>
+					{/if}
 					<ul class="small land-area-list">
 						{#each map.landAreas as area (area.name)}
 							<li>{area.name} <span class="muted">({area.kind})</span></li>
@@ -320,6 +352,10 @@
 
 	figcaption .small {
 		margin: 0;
+	}
+
+	.details {
+		margin: var(--space-3) 0;
 	}
 
 	.land-area-list {
