@@ -1,7 +1,7 @@
 profile: content/tribes/g/grindstone-indian-rancheria-of-wintun-wailaki-indians-of-california.yaml
 topic: governance
 status: found
-last_searched: '2026-11-23'
+last_searched: '2026-11-24'
 searches:
 - date: '2026-11-23'
   searched_by: Claude (AI assistant)
@@ -31,4 +31,15 @@ searches:
   query: Government, council, election, court and constitution pages linked from the home page (scripts/governance/crawl_websites.py, website-brief.md)
   outcome: blocked
   reason: 'The website could not be read: no page could be fetched.'
+- date: '2026-11-24'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: national-indian-law-library
+  address: https://narf.org/nill/tribes/grindstone_rancheria.html
+  query: Tribal Code, Tribal Constitution, Tribal Court Opinions and Contact Info blocks (scripts/review/nill_gateway_apply.py)
+  outcome: found
+  reason: The page lists 1 link (constitution); the profile already had it.
+  records:
+  - content/tribes/g/grindstone-indian-rancheria-of-wintun-wailaki-indians-of-california.yaml
+  - national-indian-law-library-grindstone-rancheria
 next_steps: The nation's website refused an automated reader; read its government pages by hand.

@@ -1,0 +1,73 @@
+profile: content/tribes/j/jena-band-of-choctaw-indians.yaml
+topic: legal-help
+status: found
+last_searched: '2026-11-24'
+searches:
+- date: '2026-11-24'
+  searched_by: Claude (AI assistant)
+  method: browser
+  place_kind: web-search
+  address: Web search (search engine)
+  query: Jena Band of Choctaw Indians legal aid
+  outcome: not-found
+  reason: Results were the tribe's Legal page (site policy only) and Choctaw Nation of Oklahoma legal services, which is a different nation.
+- date: '2026-11-24'
+  searched_by: Claude (AI assistant)
+  method: browser
+  place_kind: nation-website
+  address: https://www.jenachoctaw.org/
+  outcome: not-found
+  reason: Home page Legal section covers site and SMS policies only; no legal aid text.
+- date: '2026-11-24'
+  searched_by: Claude (AI assistant)
+  method: browser
+  place_kind: nation-website
+  address: https://www.jenachoctaw.org/members/social-services
+  outcome: found
+  reason: Social services page describes a tribal legal advocate for victims in court matters; this is victim advocacy rather than general legal advice, so it is recorded as other.
+- date: '2026-11-24'
+  searched_by: Claude (AI assistant)
+  method: browser
+  place_kind: web-search
+  address: Web search (search engine)
+  query: Jena Band Choctaw tribal court public defender self-help
+  outcome: not-found
+  reason: No Jena Band court, public defender, or self-help result appeared; hits were other tribes' programs.
+- date: '2026-11-24'
+  searched_by: Claude (AI assistant)
+  method: browser
+  place_kind: web-search
+  address: Web search (search engine)
+  query: Louisiana legal aid Native American program
+  outcome: not-found
+  reason: 'Statewide search: Results were Louisiana tribal history, grant listings, and directories; no Native legal aid program found.'
+- date: '2026-11-24'
+  searched_by: Claude (AI assistant)
+  method: browser
+  place_kind: web-search
+  address: Web search (search engine)
+  query: louisianalawhelp.org Native American Indian law tribal legal issues
+  outcome: not-found
+  reason: 'Statewide search: Returned only national Native law research guides; no LawHelp Louisiana Native topic page surfaced. The site itself was not fetched.'
+- date: '2026-11-24'
+  searched_by: Claude (AI assistant)
+  method: browser
+  place_kind: web-search
+  address: Web search (search engine)
+  query: Louisiana Native American tribal legal aid Pointe-au-Chien Houma Chitimacha legal services
+  outcome: not-found
+  reason: 'Statewide search: Returned state tribal list and Chitimacha pages; no legal aid program for tribal members.'
+- date: '2026-11-24'
+  searched_by: Claude (AI assistant)
+  method: browser
+  place_kind: nation-website
+  address: https://unitedhoumanation.org/community-programs/
+  outcome: not-found
+  reason: 'Statewide search: Read the page; it describes employment, diabetes, and youth programs and no legal aid.'
+- date: '2026-11-24'
+  searched_by: Claude (AI assistant)
+  method: browser
+  place_kind: nation-website
+  address: https://www.chitimacha.gov/departments-services/human-services
+  outcome: not-found
+  reason: 'Statewide search: Read the Chitimacha human services page; it lists mediation counseling but no legal aid.'

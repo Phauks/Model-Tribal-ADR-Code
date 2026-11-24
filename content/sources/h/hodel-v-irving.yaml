@@ -1,0 +1,153 @@
+key: hodel-v-irving
+kind: federal-case
+citation:
+  type: legal_case
+  title: Hodel v. Irving
+  authority: Supreme Court of the United States
+  container-title: U.S.
+  volume: '481'
+  page: '704'
+  issued:
+    date-parts:
+    - - 1987
+      - 5
+      - 18
+  URL: https://www.loc.gov/item/usrep481704/
+  accessed:
+    date-parts:
+    - - 2026
+      - 11
+      - 24
+caption:
+  printed: HODEL, SECRETARY OF THE INTERIOR v. IRVING et al.
+  source: https://tile.loc.gov/storage-services/service/ll/usrep/usrep481/usrep481704/usrep481704.pdf
+  checked: '2026-11-24'
+opinions:
+  source: https://tile.loc.gov/storage-services/service/ll/usrep/usrep481/usrep481704/usrep481704.pdf
+  checked: '2026-11-24'
+  list:
+  - kind: majority
+    justice: Sandra Day O'Connor
+    page: 706
+  - kind: concurrence
+    justice: William J. Brennan, Jr.
+    page: 718
+  - kind: concurrence
+    justice: Antonin Scalia
+    page: 719
+  - kind: special concurrence
+    justice: John Paul Stevens
+    page: 719
+original_link: https://www.loc.gov/item/usrep481704/
+retrieved: '2026-11-24'
+history:
+  status: live
+  last_checked: '2026-11-24'
+court_dates:
+  argued:
+  - '1986-10-06'
+  - '1986-05-18'
+  printed: Argued October 6, 1986 Decided May 18, 1987
+  source: https://tile.loc.gov/storage-services/service/ll/usrep/usrep481/usrep481704/usrep481704.pdf
+  checked: '2026-11-24'
+supreme_court:
+  court: Rehnquist Court
+  natural_court: Rehnquist Court (1986-1987)
+  decision_type: majority opinion
+  vote:
+    majority: 9
+    minority: 0
+  justices:
+  - name: Thurgood Marshall
+    vote: majority
+  - name: William J. Brennan, Jr.
+    vote: majority
+    opinion: concurrence
+  - name: Byron R. White
+    vote: majority
+  - name: Harry A. Blackmun
+    vote: majority
+  - name: Lewis F. Powell, Jr.
+    vote: majority
+  - name: William H. Rehnquist
+    vote: majority
+  - name: John Paul Stevens
+    vote: majority
+    opinion: special concurrence
+  - name: Sandra Day O'Connor
+    vote: majority
+    opinion: majority
+  - name: Antonin Scalia
+    vote: majority
+    opinion: concurrence
+  source: https://api.oyez.org/cases/1986/85-637
+  checked: '2026-11-24'
+reading_links:
+  checked: '2026-11-24'
+  links:
+  - site: library-of-congress
+    label: Library of Congress
+    access: official
+    link: https://www.loc.gov/item/usrep481704/
+  - site: justia
+    label: Justia
+    access: free
+    link: https://supreme.justia.com/cases/federal/us/481/704/
+    unchecked: true
+  - site: oyez
+    label: Oyez
+    access: free
+    link: https://www.oyez.org/cases/1986/85-637
+  - site: google-scholar
+    label: Google Scholar
+    access: free
+    link: https://scholar.google.com/scholar?hl=en&as_sdt=2006&q=%22481%20U.S.%20704%22
+    unchecked: true
+  - site: westlaw
+    label: Westlaw
+    access: subscription
+    link: https://1.next.westlaw.com/Link/Document/FullText?findType=Y&cite=481%20U.S.%20704
+    unchecked: true
+  - site: lexis
+    label: Lexis
+    access: subscription
+    link: https://advance.lexis.com/api/search?q=481%20U.S.%20704
+    unchecked: true
+rights:
+  status: no-permission-needed
+  basis: us-government-work
+  basis_note: Opinions of federal courts are works of the U.S. government (17 U.S.C. § 105); the host site's own additions are not reproduced.
+  redistribution: true
+found_in:
+- 2026-11-24-supreme-court-native-cases
+notes: 'Full citation: 481 U.S. 704 (1987). Official report scan: https://tile.loc.gov/storage-services/service/ll/usrep/usrep481/usrep481704/usrep481704.pdf. Written by scripts/caselaw/supreme_court_native_cases.py from the Supreme Court Database (case 1986-098), the Caselaw Access Project''s text of the report and the Library of Congress scan; not yet read by a person.'
+tribes: []
+nations_in_case:
+  checked: '2026-11-24'
+  named: []
+review:
+  status: verified
+  by: scripts/caselaw/supreme_court_native_cases.py
+  date: '2026-11-24'
+  checks:
+  - check: cite
+    result: agree
+    detail: Caselaw Access Project 481 U.S. 704 "Hodel v. Irving"; Database 481 U.S. 704 "HODEL, SECRETARY OF THE INTERIOR v. IRVING et al."
+  - check: scan
+    result: agree
+    detail: Scan has 31 pages; the report runs 704 to 734
+  - check: caption
+    result: agree
+    detail: Caption found in the scan's text at 1.00
+  - check: printed dates
+    result: agree
+    detail: Caselaw Access Project "Argued October 6, 1986 Decided May 18, 1987"; scan "Argued October 6, 1986-Decided May 18, 1987"
+  - check: decided
+    result: agree
+    detail: 'Printed and Database: 1987-05-18'
+  - check: opinions
+    result: agree
+    detail: 'Report: majority O Connor p. 706, concurrence Brennan p. 718, concurrence Scalia p. 719, special concurrence Stevens p. 719; Database writers: Brennan, O Connor, Scalia, Stevens'
+  - check: bench
+    result: agree
+    detail: Oyez and the Database give the same Justices and votes

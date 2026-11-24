@@ -13,7 +13,7 @@ import {
 	readUploadedForm,
 	setFilingIdentifier
 } from '#lib/server/form-submissions.ts';
-import { eventsFor } from '#lib/server/events.ts';
+import { activityHistoryFor } from '#lib/server/activity-log.ts';
 import { matchSignIn, type SignedInPerson } from '#lib/server/people.ts';
 import { deleteExpiredPersonalDetails, requestByReference, resolveRequest, saveRequest } from '#lib/server/request-store.ts';
 import { testDatabase } from './database.ts';
@@ -275,7 +275,7 @@ describe('forms sent to the project', () => {
 		expect(await nextFilingIdentifier(database, new Date('2026-11-22T00:00:00Z'))).toBe('filing-2026-0001');
 		await setFilingIdentifier(database, found!.request, 'filing-2026-0001', editor);
 		expect(await nextFilingIdentifier(database, new Date('2026-11-22T00:00:00Z'))).toBe('filing-2026-0002');
-		const history = await eventsFor(database, 'request', found!.request.identifier);
+		const history = await activityHistoryFor(database, 'request', found!.request.identifier);
 		expect(history.map((event) => event.action)).toEqual([
 			'Form received through the website: Contributor statement, version 0.2.0, signed online',
 			'Forms filed under filing-2026-0001'

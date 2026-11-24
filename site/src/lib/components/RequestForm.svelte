@@ -8,6 +8,7 @@
 	// 2026): the material, the details and a way to reply, with the optional
 	// questions about the reader and the files folded away.
 	import { applyAction, enhance } from '$app/forms';
+	import Dropdown from '#lib/components/Dropdown.svelte';
 	import {
 		authorityStatementLabels,
 		authorityStatements,
@@ -85,6 +86,8 @@
 	}
 
 	/** Links each field to its error message, for screen readers. */
+	const sourceKindChoices = [{ value: '', label: 'Choose…' }, ...sourceKinds.map((kind) => ({ value: kind as string, label: sourceKindLabels[kind] }))];
+
 	function describedBy(name: string, hint = false): string | undefined {
 		const ids = [hint ? `${prefix}${name}-hint` : '', errors[name] ? `${prefix}${name}-error` : ''].filter(Boolean);
 		return ids.length > 0 ? ids.join(' ') : undefined;
@@ -107,21 +110,17 @@
 	<fieldset class="source">
 		<legend><svelte:element this={subheading}>Source {slot}{slot > 1 ? ' (optional)' : ''}</svelte:element></legend>
 		<div class="field">
-			<label for="{prefix}source{slot}Kind">Kind of source</label>
-			{@render fieldError(`source${slot}Kind`)}
-			<select
+			<Dropdown
+				label="Kind of source"
 				id="{prefix}source{slot}Kind"
 				name="source{slot}Kind"
-				aria-invalid={errors[`source${slot}Kind`] ? 'true' : undefined}
-				aria-describedby={describedBy(`source${slot}Kind`)}
+				choices={sourceKindChoices}
+				value={value(`source${slot}Kind`)}
+				invalid={Boolean(errors[`source${slot}Kind`])}
+				describedBy={describedBy(`source${slot}Kind`)}
 			>
-				<option value="">Choose…</option>
-				{#each sourceKinds as option (option)}
-					<option value={option} selected={value(`source${slot}Kind`) === option}
-						>{sourceKindLabels[option]}</option
-					>
-				{/each}
-			</select>
+				{#snippet message()}{@render fieldError(`source${slot}Kind`)}{/snippet}
+			</Dropdown>
 		</div>
 		<div class="field">
 			<label for="{prefix}source{slot}Title">Title</label>

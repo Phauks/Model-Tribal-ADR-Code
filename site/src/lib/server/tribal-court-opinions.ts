@@ -39,6 +39,8 @@ export interface TribalCourtOpinion {
 	removal: string;
 	/** Protected people's names are replaced by initials (research/tribal-court-opinions/redacted.csv). */
 	namesReplaced: boolean;
+	/** The Caselaw Access Project's own page of the opinion, which an opinion the nation asked to cite only links to. Empty for a redacted opinion, whose original still has the names. */
+	original: string;
 }
 
 let opinionCache: TribalCourtOpinion[] | undefined;
@@ -66,7 +68,8 @@ export function tribalCourtOpinions(): TribalCourtOpinion[] {
 					key: row.copy_key,
 					path: copyPagePath({ key: row.copy_key }),
 					removal: removalRequestPath({ key: row.copy_key }),
-					namesReplaced: redacted.has(row.copy_key)
+					namesReplaced: redacted.has(row.copy_key),
+					original: redacted.has(row.copy_key) ? '' : row.link
 				};
 			})
 			.sort((first, second) => second.decided.localeCompare(first.decided) || first.name.localeCompare(second.name));

@@ -1,0 +1,140 @@
+key: lane-v-morrison
+kind: federal-case
+citation:
+  type: legal_case
+  title: Lane v. Morrison
+  authority: Supreme Court of the United States
+  container-title: U.S.
+  volume: '246'
+  page: '214'
+  issued:
+    date-parts:
+    - - 1918
+      - 3
+      - 4
+  URL: https://www.loc.gov/item/usrep246214/
+  accessed:
+    date-parts:
+    - - 2026
+      - 11
+      - 24
+caption:
+  printed: LANE, SECRETARY OF THE INTERIOR, ET AL. v. MORRISON, FOR AND ON BEHALF OF HIMSELF AND ALL OTHER MEMBERS OF THE CHIPPEWA TRIBE OF INDIANS IN MINNESOTA SIMILARLY SITUATED
+  source: https://tile.loc.gov/storage-services/service/ll/usrep/usrep246/usrep246214/usrep246214.pdf
+  checked: '2026-11-24'
+opinions:
+  source: https://tile.loc.gov/storage-services/service/ll/usrep/usrep246/usrep246214/usrep246214.pdf
+  checked: '2026-11-24'
+  list:
+  - kind: majority
+    justice: James Clark McReynolds
+    page: 215
+original_link: https://www.loc.gov/item/usrep246214/
+retrieved: '2026-11-24'
+history:
+  status: live
+  last_checked: '2026-11-24'
+court_dates:
+  argued:
+  - '1918-01-30'
+  printed: Argued January 30, 1918. Decided March 4, 1918.
+  source: https://tile.loc.gov/storage-services/service/ll/usrep/usrep246/usrep246214/usrep246214.pdf
+  checked: '2026-11-24'
+supreme_court:
+  court: White Court
+  natural_court: White Court (1916-1921)
+  decision_type: majority opinion
+  vote:
+    majority: 8
+    minority: 1
+  justices:
+  - name: Edward Douglass White
+    vote: majority
+  - name: Joseph McKenna
+    vote: minority
+  - name: Oliver Wendell Holmes
+    vote: majority
+  - name: William Rufus Day
+    vote: majority
+  - name: Willis Van Devanter
+    vote: majority
+  - name: Mahlon Pitney
+    vote: majority
+  - name: James Clark McReynolds
+    vote: majority
+    opinion: majority
+  - name: Louis Dembitz Brandeis
+    vote: majority
+  - name: John Hessin Clarke
+    vote: majority
+  source: http://scdb.wustl.edu/_brickFiles/Legacy_07/SCDB_Legacy_07_justiceCentered_Citation.csv.zip
+  note: From the Supreme Court Database, case 1917-072; Oyez has no votes for this case.
+  checked: '2026-11-24'
+reading_links:
+  checked: '2026-11-24'
+  links:
+  - site: library-of-congress
+    label: Library of Congress
+    access: official
+    link: https://www.loc.gov/item/usrep246214/
+  - site: justia
+    label: Justia
+    access: free
+    link: https://supreme.justia.com/cases/federal/us/246/214/
+    unchecked: true
+  - site: google-scholar
+    label: Google Scholar
+    access: free
+    link: https://scholar.google.com/scholar?hl=en&as_sdt=2006&q=%22246%20U.S.%20214%22
+    unchecked: true
+  - site: westlaw
+    label: Westlaw
+    access: subscription
+    link: https://1.next.westlaw.com/Link/Document/FullText?findType=Y&cite=246%20U.S.%20214
+    unchecked: true
+  - site: lexis
+    label: Lexis
+    access: subscription
+    link: https://advance.lexis.com/api/search?q=246%20U.S.%20214
+    unchecked: true
+rights:
+  status: no-permission-needed
+  basis: us-government-work
+  basis_note: Opinions of federal courts are works of the U.S. government (17 U.S.C. § 105); the host site's own additions are not reproduced.
+  redistribution: true
+found_in:
+- 2026-11-24-supreme-court-native-cases
+notes: 'Full citation: 246 U.S. 214 (1918). Official report scan: https://tile.loc.gov/storage-services/service/ll/usrep/usrep246/usrep246214/usrep246214.pdf. Written by scripts/caselaw/supreme_court_native_cases.py from the Supreme Court Database (case 1917-072), the Caselaw Access Project''s text of the report and the Library of Congress scan; not yet read by a person.'
+tribes: []
+nations_in_case:
+  checked: '2026-11-24'
+  named: []
+  not_linked:
+  - named_as: Chippewa Tribe of Indians
+    reason: More than one of today's nations shares this name (bad-river-band-of-the-lake-superior-tribe-of-chippewa-indians-of-the-bad-river-reservation, burt-lake-band-of-ottawa-and-chippewa-indians, chippewa-cree-indians-of-the-rocky-boys-reservation, christian-pembina-chippewa-indians, grand-traverse-band-of-ottawa-and-chippewa-indians, kah-bay-kah-nong and 15 more); which the case concerns has not been checked.
+review:
+  status: verified
+  by: scripts/caselaw/supreme_court_native_cases.py
+  date: '2026-11-24'
+  checks:
+  - check: cite
+    result: agree
+    detail: Caselaw Access Project 246 U.S. 214 "Lane v. Morrison"; Database 246 U.S. 214 "LANE, SECRETARY OF THE INTERIOR, et al. v. MORRISON, FOR AND ON BEHALF OF HIMSELF AND ALL OTHER MEMBERS OF THE CHIPPEWA TRIBE OF INDIANS IN MINNESOTA SIMILARLY SITUATED"
+  - check: scan
+    result: agree
+    detail: Scan has 6 pages; the report runs 214 to 219
+  - check: caption
+    result: agree
+    detail: Caption found in the scan's text at 1.00
+  - check: printed dates
+    result: agree
+    detail: Caselaw Access Project "Argued January 30, 1918. Decided March 4, 1918."; scan "Argued January 30, 1918.--Decided March 4, 1918."
+  - check: decided
+    result: agree
+    detail: 'Printed and Database: 1918-03-04'
+  - check: opinions
+    result: agree
+    detail: 'Report: majority Mcreynolds p. 215; Database writers: Mcreynolds'
+  - check: bench
+    result: agree
+    detail: No Oyez votes; each opinion writer in the report sits on the Database's bench on the side the opinion takes

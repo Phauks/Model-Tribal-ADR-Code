@@ -63,11 +63,11 @@
 	} = $props();
 
 	const ownIdentifier = $props.id();
-	const exampleId = `${ownIdentifier}-example`;
-	const readBackId = `${ownIdentifier}-read-back`;
-	const problemId = `${ownIdentifier}-problem`;
-	const keysId = `${ownIdentifier}-keys`;
-	const gridLabelId = `${ownIdentifier}-month`;
+	const exampleIdentifier = `${ownIdentifier}-example`;
+	const readBackIdentifier = `${ownIdentifier}-read-back`;
+	const problemIdentifier = `${ownIdentifier}-problem`;
+	const keysIdentifier = `${ownIdentifier}-keys`;
+	const gridLabelIdentifier = `${ownIdentifier}-month`;
 
 	let ready = $state(false);
 	let today = $state(localToday());
@@ -252,13 +252,13 @@
 	});
 
 	const showProblem = $derived(touched && !!problem);
-	const describedBy = $derived([describedby, hint ? exampleId : '', showProblem ? problemId : readBackId].filter(Boolean).join(' ') || undefined);
+	const describedBy = $derived([describedby, hint ? exampleIdentifier : '', showProblem ? problemIdentifier : readBackIdentifier].filter(Boolean).join(' ') || undefined);
 </script>
 
-{#if hint}<p class="hint date-example" id={exampleId}>{hint}</p>{/if}
+{#if hint}<p class="hint date-example" id={exampleIdentifier}>{hint}</p>{/if}
 <div class="date-field" class:full={size === 'full'}>
 	<!-- The message sits above the box, after the label and hint, as the site's other field errors do (DESIGN.md, "Form errors"). -->
-	{#if showProblem}<p class="date-problem" id={problemId}><CircleAlert size={16} aria-hidden="true" /><span>{problem}</span></p>{/if}
+	{#if showProblem}<p class="date-problem" id={problemIdentifier}><CircleAlert size={16} aria-hidden="true" /><span>{problem}</span></p>{/if}
 	{#if ready}
 		<div class="date-box">
 			<input
@@ -296,7 +296,7 @@
 	{:else}
 		<input {id} {name} type="date" {value} {min} {max} {required} aria-describedby={describedby} aria-invalid={invalid ? 'true' : undefined} />
 	{/if}
-	<p class="read-back" id={readBackId}>
+	<p class="read-back" id={readBackIdentifier}>
 		{#if !showProblem && readBack}
 			<Check size={16} aria-hidden="true" /><span>{readBack}</span>
 		{/if}
@@ -337,8 +337,8 @@
 					<ChevronRight size={20} aria-hidden="true" />
 				</button>
 			</div>
-			<div class="visually-hidden" id={gridLabelId} aria-live="polite">{monthNames[shown.month - 1]} {shown.year}</div>
-			<table role="grid" aria-labelledby={gridLabelId} aria-describedby={keysId} onkeydown={onGridKey}>
+			<div class="visually-hidden" id={gridLabelIdentifier} aria-live="polite">{monthNames[shown.month - 1]} {shown.year}</div>
+			<table role="grid" aria-labelledby={gridLabelIdentifier} aria-describedby={keysIdentifier} onkeydown={onGridKey}>
 				<thead>
 					<tr>
 						{#each weekdayNames as name (name)}<th scope="col" abbr={name}>{name.slice(0, 2)}</th>{/each}
@@ -373,7 +373,7 @@
 					{/each}
 				</tbody>
 			</table>
-			<p class="visually-hidden" id={keysId}>Arrow keys move a day or a week. Page Up and Page Down move a month.</p>
+			<p class="visually-hidden" id={keysIdentifier}>Arrow keys move a day or a week. Page Up and Page Down move a month.</p>
 			<!-- Today and Clear are quiet text buttons beside an outlined Close; on a phone all three fill the row and Close becomes a solid Done, as in the approved mockups. -->
 			<div class="calendar-foot">
 				<button type="button" class="button button-quiet quiet-action" disabled={!inRange(today)} onclick={() => pick(today)}>Today</button>

@@ -1,0 +1,57 @@
+profile: content/tribes/o/oneida-indian-nation.yaml
+topic: legal-help
+status: partly-searched
+last_searched: '2026-11-24'
+searches:
+- date: '2026-11-24'
+  searched_by: Claude (AI assistant)
+  method: browser
+  place_kind: web-search
+  address: Web search (search engine)
+  query: Oneida Indian Nation legal aid members legal services
+  outcome: not-found
+  reason: Results were for the Oneida Nation of Wisconsin (oneida-nsn.gov), a different nation; none for the Oneida Indian Nation of New York.
+- date: '2026-11-24'
+  searched_by: Claude (AI assistant)
+  method: browser
+  place_kind: nation-website
+  address: https://www.oneidaindiannation.org/
+  outcome: not-found
+  reason: 'Home page read after redirect from oneidaindiannation.com: the word ''legal'' does not appear; links to Programs & Member Services, Member Outreach & Advocacy and Court pages, which were not read.'
+- date: '2026-11-24'
+  searched_by: Claude (AI assistant)
+  method: browser
+  place_kind: tribal-court-site
+  address: https://www.oneidaindiannation.org/nation-court
+  outcome: error
+  reason: Court page linked from the home page but not fetched; the WebFetch budget ran out.
+- date: '2026-11-24'
+  searched_by: Claude (AI assistant)
+  method: browser
+  place_kind: legal-aid-site
+  address: https://www.aila.ngo/services
+  outcome: blocked
+  reason: American Indian Law Alliance services page could not be read (robots.txt disallowed); no nation named in any snippet.
+- date: '2026-11-24'
+  searched_by: Claude (AI assistant)
+  method: browser
+  place_kind: web-search
+  address: Web search (search engine)
+  query: New York legal aid Native American program
+  outcome: not-found
+  reason: 'Statewide search, nothing for this nation: Returned the American Indian Law Alliance listings (NYC) and LawHelpNY Native law page.'
+- date: '2026-11-24'
+  searched_by: Claude (AI assistant)
+  method: browser
+  place_kind: legal-aid-site
+  address: https://www.lawhelpny.org/issues/discrimination-and-civil-rights/native-american-law-issues
+  outcome: not-found
+  reason: 'Statewide search: Read the LawHelpNY Native American law page; it names no organization and links only to a generic find-legal-help search.'
+- date: '2026-11-24'
+  searched_by: Claude (AI assistant)
+  method: browser
+  place_kind: legal-aid-site
+  address: https://www.probono.net/oppsguide/organization.53858?print=1
+  outcome: not-found
+  reason: 'Statewide search, nothing for this nation: Read the American Indian Law Alliance listing; it describes free legal services for the NYC Native American community.'
+next_steps: 'A person could open the pages that refused or timed out: https://www.aila.ngo/services; https://www.oneidaindiannation.org/nation-court.'

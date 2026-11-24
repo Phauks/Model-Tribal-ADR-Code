@@ -1,0 +1,24 @@
+key: simeon-hallowell
+name: Simeon Hallowell
+lead: Omaha Indian allottee prosecuted for bringing whiskey onto his allotment, in Hallowell v. United States (1908) on a certified question.
+living: false
+nations:
+- nation: omaha-tribe-of-nebraska
+  named_as: Omaha Indian
+  source: hallowell-v-united-states
+  where: 209 U.S. at 102
+cases:
+- case: hallowell-v-united-states
+  role: Defendant
+  where: 209 U.S. at 101, 107
+  result: Certificate dismissed without an answer to the certified questions.
+- case: hallowell-v-united-states-1911
+  role: Plaintiff in error
+  where: 221 U.S. at 318, 324
+  result: Certified question answered in the affirmative; federal liquor law reached the allotment.
+events:
+- when: Nov. 16, 1905
+  text: Indicted in the District of Nebraska for introducing whiskey into the Omaha Indian Reservation.
+  source: hallowell-v-united-states
+  where: 209 U.S. at 101
+checked: '2026-11-24'

@@ -57,6 +57,13 @@ async function picture(page, name) {
 	if (screenshots) await page.screenshot({ path: path.join(screenshots, `${name}.png`) });
 }
 
+/** Picks a choice by its label in one of the builder's dropdowns (src/lib/components/Dropdown.svelte), as a reader would. */
+async function choose(page, box, label) {
+	await page.locator(box).click();
+	const list = await page.locator(box).getAttribute('aria-controls');
+	await page.locator(`[id="${list}"]`).getByRole('option', { name: label, exact: true }).click();
+}
+
 /** The open menu's box, or undefined when none is open. */
 const openMenu = (page) =>
 	page.evaluate(() => {
@@ -217,7 +224,7 @@ for (const viewport of viewports) {
 	check(kinds.every((kind) => kind === 'Peacemaking program' || kind === 'Tribal court'), at(`/nations/data/build: kinds left after filtering: ${kinds.join(', ')}`));
 
 	// Grouped: the filter carries over, and the one funnel opens the same menus.
-	await page.selectOption('#builder-group', 'states');
+	await choose(page, '#builder-group', 'States');
 	await page.locator('figure.chart').first().waitFor();
 	check((await page.getByRole('button', { name: 'Filters, filtered', exact: true }).count()) === 1, at('/nations/data/build: grouped, the funnel does not show the Kind filter'));
 	await page.getByRole('button', { name: 'Filters, filtered', exact: true }).click();
@@ -228,8 +235,8 @@ for (const viewport of viewports) {
 	checkInside(at('/nations/data/build, grouped Kind filter'), await openMenu(page));
 	await picture(page, `${viewport.name}-8-builder-grouped-filter`);
 	await page.keyboard.press('Escape');
-	await page.selectOption('#builder-group', 'kind');
-	await page.selectOption('#builder-across', 'category');
+	await choose(page, '#builder-group', 'Kind');
+	await choose(page, '#builder-across', 'Group');
 	const cross = page.locator('.data-table').first();
 	await cross.locator('tfoot.sum-row').waitFor({ timeout: 3000 }).catch(() => {});
 	check((await cross.locator('tfoot.sum-row').count()) === 1, at('/nations/data/build: the two-way table has no Sum row'));
@@ -239,7 +246,7 @@ for (const viewport of viewports) {
 	await picture(page, `${viewport.name}-9-builder-sum-row`);
 
 	// Back to the rows: the filter is still on its header.
-	await page.selectOption('#builder-group', '');
+	await choose(page, '#builder-group', 'None');
 	await built.locator('.filter-button').first().waitFor();
 	check((await built.getByRole('button', { name: 'Filter Kind, filtered', exact: true }).count()) === 1, at('/nations/data/build: ungrouped again, the Kind filter is gone'));
 

@@ -1,0 +1,141 @@
+key: united-states-v-dion
+kind: federal-case
+citation:
+  type: legal_case
+  title: United States v. Dion
+  authority: Supreme Court of the United States
+  container-title: U.S.
+  volume: '476'
+  page: '734'
+  issued:
+    date-parts:
+    - - 1986
+      - 6
+      - 11
+  URL: https://www.loc.gov/item/usrep476734/
+  accessed:
+    date-parts:
+    - - 2026
+      - 11
+      - 24
+caption:
+  printed: UNITED STATES v. DION
+  source: https://tile.loc.gov/storage-services/service/ll/usrep/usrep476/usrep476734/usrep476734.pdf
+  checked: '2026-11-24'
+opinions:
+  source: https://tile.loc.gov/storage-services/service/ll/usrep/usrep476/usrep476734/usrep476734.pdf
+  checked: '2026-11-24'
+  list:
+  - kind: majority
+    justice: Thurgood Marshall
+    page: 735
+original_link: https://www.loc.gov/item/usrep476734/
+retrieved: '2026-11-24'
+history:
+  status: live
+  last_checked: '2026-11-24'
+court_dates:
+  argued:
+  - '1986-03-25'
+  - '1986-06-11'
+  printed: Argued March 25, 1986 Decided June 11, 1986
+  source: https://tile.loc.gov/storage-services/service/ll/usrep/usrep476/usrep476734/usrep476734.pdf
+  checked: '2026-11-24'
+supreme_court:
+  court: Burger Court
+  natural_court: Burger Court (1981-1986)
+  decision_type: majority opinion
+  vote:
+    majority: 9
+    minority: 0
+  justices:
+  - name: Thurgood Marshall
+    vote: majority
+    opinion: majority
+  - name: William J. Brennan, Jr.
+    vote: majority
+  - name: Byron R. White
+    vote: majority
+  - name: Warren E. Burger
+    vote: majority
+  - name: Harry A. Blackmun
+    vote: majority
+  - name: Lewis F. Powell, Jr.
+    vote: majority
+  - name: William H. Rehnquist
+    vote: majority
+  - name: John Paul Stevens
+    vote: majority
+  - name: Sandra Day O'Connor
+    vote: majority
+  source: https://api.oyez.org/cases/1985/85-246
+  checked: '2026-11-24'
+reading_links:
+  checked: '2026-11-24'
+  links:
+  - site: library-of-congress
+    label: Library of Congress
+    access: official
+    link: https://www.loc.gov/item/usrep476734/
+  - site: justia
+    label: Justia
+    access: free
+    link: https://supreme.justia.com/cases/federal/us/476/734/
+    unchecked: true
+  - site: oyez
+    label: Oyez
+    access: free
+    link: https://www.oyez.org/cases/1985/85-246
+  - site: google-scholar
+    label: Google Scholar
+    access: free
+    link: https://scholar.google.com/scholar?hl=en&as_sdt=2006&q=%22476%20U.S.%20734%22
+    unchecked: true
+  - site: westlaw
+    label: Westlaw
+    access: subscription
+    link: https://1.next.westlaw.com/Link/Document/FullText?findType=Y&cite=476%20U.S.%20734
+    unchecked: true
+  - site: lexis
+    label: Lexis
+    access: subscription
+    link: https://advance.lexis.com/api/search?q=476%20U.S.%20734
+    unchecked: true
+rights:
+  status: no-permission-needed
+  basis: us-government-work
+  basis_note: Opinions of federal courts are works of the U.S. government (17 U.S.C. § 105); the host site's own additions are not reproduced.
+  redistribution: true
+found_in:
+- 2026-11-24-supreme-court-native-cases
+notes: 'Full citation: 476 U.S. 734 (1986). Official report scan: https://tile.loc.gov/storage-services/service/ll/usrep/usrep476/usrep476734/usrep476734.pdf. Written by scripts/caselaw/supreme_court_native_cases.py from the Supreme Court Database (case 1985-105), the Caselaw Access Project''s text of the report and the Library of Congress scan; not yet read by a person.'
+tribes: []
+nations_in_case:
+  checked: '2026-11-24'
+  named: []
+review:
+  status: verified
+  by: scripts/caselaw/supreme_court_native_cases.py
+  date: '2026-11-24'
+  checks:
+  - check: cite
+    result: agree
+    detail: Caselaw Access Project 476 U.S. 734 "United States v. Dion"; Database 476 U.S. 734 "UNITED STATES v. DION"
+  - check: scan
+    result: agree
+    detail: Scan has 13 pages; the report runs 734 to 746
+  - check: caption
+    result: agree
+    detail: Caption found in the scan's text at 1.00
+  - check: printed dates
+    result: agree
+    detail: Caselaw Access Project "Argued March 25, 1986 Decided June 11, 1986"; scan "Argued March 25, 1986-Decided June 11, 1986"
+  - check: decided
+    result: agree
+    detail: 'Printed and Database: 1986-06-11'
+  - check: opinions
+    result: agree
+    detail: 'Report: majority Marshall p. 735; Database writers: Marshall'
+  - check: bench
+    result: agree
+    detail: Oyez and the Database give the same Justices and votes

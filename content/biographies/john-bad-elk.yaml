@@ -1,0 +1,20 @@
+key: john-bad-elk
+name: John Bad Elk
+lead: Plaintiff in error in John Bad Elk v. United States (1900), convicted of murdering a policeman; the case concerned the legality of an arrest.
+living: false
+nations: []
+cases:
+- case: bad-elk-v-united-states
+  role: Plaintiff in error
+  where: 177 U.S. at 530, 538
+  result: Judgment reversed; new trial ordered.
+events:
+- when: March 13, 1899
+  text: The Court's account says he shot and killed John Kills Back on that date at Pine Ridge.
+  source: bad-elk-v-united-states
+  where: 177 U.S. at 530
+- when: April 1899
+  text: Convicted of murder in the U.S. Circuit Court in South Dakota and sentenced to be hanged.
+  source: bad-elk-v-united-states
+  where: 177 U.S. at 530
+checked: '2026-11-24'

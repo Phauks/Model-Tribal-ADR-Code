@@ -179,6 +179,8 @@ export interface CitedFact {
 
 export interface NationRecord {
 	id: string;
+	/** Ids of profiles merged into this one; their old page addresses redirect here. */
+	former_ids?: string[];
 	entity_type: string;
 	names: {
 		official: string;
@@ -351,6 +353,21 @@ function isPublishable(record: NationRecord): boolean {
 	return true;
 }
 
+let nationFileCache: { file: string; record: NationRecord }[] | undefined;
+
+/**
+ * Every record in content/tribes/ with the file it comes from, read and parsed
+ * once per build. The functions below all start from it. Each used to read
+ * and parse all 946 files itself, and the case pages call
+ * nationNamesAndKinds() for every case and nation, so on Nov. 24, 2026 the
+ * prerender spent 805 of its 1,153 seconds parsing the same YAML again
+ * (a CPU profile of the build).
+ */
+function nationFiles(): { file: string; record: NationRecord }[] {
+	nationFileCache ??= yamlFilesUnder('content/tribes').map((file) => ({ file, record: readYaml<NationRecord>(file) }));
+	return nationFileCache;
+}
+
 let nationCache: NationRecord[] | undefined;
 
 /**
@@ -360,7 +377,7 @@ let nationCache: NationRecord[] | undefined;
  */
 export function nations(): NationRecord[] {
 	if (!nationCache) {
-		const records = yamlFilesUnder('content/tribes').map((file) => readYaml<NationRecord>(file));
+		const records = nationFiles().map(({ record }) => record);
 		if (records.length > 0) {
 			nationCache = records.filter(isPublishable);
 		} else {
@@ -380,8 +397,7 @@ export function nations(): NationRecord[] {
  * reviewer must see in the co-author workspace. Used by vite.config.ts.
  */
 export function nationsForReview(): { id: string; name: string; published: boolean; file: string }[] {
-	return yamlFilesUnder('content/tribes')
-		.map((file) => ({ file, record: readYaml<NationRecord>(file) }))
+	return nationFiles()
 		.filter(({ record }) => !record.sensitivity?.restricted)
 		.map(({ file, record }) => ({
 			id: record.id,
@@ -397,21 +413,24 @@ export function nationsForReview(): { id: string; name: string; published: boole
  * lines under a case or law box that name the nations or peoples a source
  * concerns (src/lib/server/case-facts.ts), as the print build reads them.
  */
-export function nationNamesAndKinds(): Map<string, { name: string; entityType: string }> {
-	const found = new Map<string, { name: string; entityType: string }>();
-	for (const file of yamlFilesUnder('content/tribes')) {
-		const record = readYaml<NationRecord>(file);
-		if (record.sensitivity?.restricted) continue;
-		found.set(record.id, { name: record.names.official, entityType: record.entity_type });
+let nationNamesCache: ReadonlyMap<string, { name: string; entityType: string }> | undefined;
+
+export function nationNamesAndKinds(): ReadonlyMap<string, { name: string; entityType: string }> {
+	if (!nationNamesCache) {
+		const found = new Map<string, { name: string; entityType: string }>();
+		for (const { record } of nationFiles()) {
+			if (record.sensitivity?.restricted) continue;
+			found.set(record.id, { name: record.names.official, entityType: record.entity_type });
+		}
+		nationNamesCache = found;
 	}
-	return found;
+	return nationNamesCache;
 }
 
 /** Every name of every listed nation: official, self-designations and former names. */
 export function nationNameVariants(): string[] {
 	const names: string[] = [];
-	for (const file of yamlFilesUnder('content/tribes')) {
-		const record = readYaml<NationRecord>(file);
+	for (const { record } of nationFiles()) {
 		if (record.sensitivity?.restricted) continue;
 		names.push(record.names.official, ...(record.names.self_designation ?? []).map((entry) => entry.name), ...(record.names.former ?? []).map((entry) => entry.name));
 	}

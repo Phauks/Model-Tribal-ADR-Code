@@ -252,7 +252,7 @@ describe('mail going out', () => {
 		await addContact(context.database, { identifier: 'c1', name: 'Example Office', nation: 'example-nation', email: 'office@nation.example' });
 		const queued = await queueMessage(context, { personIdentifier: 'lead', threadIdentifier: null, from: 'contact@example.org', to: [{ email: 'office@nation.example' }], subject: 'Hi', text: 'Hi' });
 		await sendMessage(context, { replies: carrier, outreach: null }, queued.messageIdentifier);
-		const messageId = carrier.sent[0].messageId;
+		const sentMessageIdentifier = carrier.sent[0].messageId;
 		const report = [
 			'From: Mail Delivery System <MAILER-DAEMON@mx.example.net>',
 			'To: contact@example.org',
@@ -276,7 +276,7 @@ describe('mail going out', () => {
 			'--r',
 			'Content-Type: text/rfc822-headers',
 			'',
-			`Message-ID: <${messageId}>`,
+			`Message-ID: <${sentMessageIdentifier}>`,
 			'Subject: Hi',
 			'--r--',
 			''

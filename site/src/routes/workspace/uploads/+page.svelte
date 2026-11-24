@@ -9,6 +9,10 @@
 	import ShieldCheck from '@lucide/svelte/icons/shield-check';
 	import Upload from '@lucide/svelte/icons/upload';
 	import { onMount } from 'svelte';
+	import DataTable from '#lib/components/DataTable.svelte';
+	import Dropdown from '#lib/components/Dropdown.svelte';
+	import SearchableDropdown from '#lib/components/SearchableDropdown.svelte';
+	import type { TableColumn, TableRow } from '#lib/tables/table-definition.ts';
 	import { nationNames } from '#lib/nation-names.ts';
 	import { readableSize, reviewerStatusLabels, uploadKindLabels, uploadKinds } from '#lib/uploads.ts';
 	import type { PageProps } from './$types';
@@ -48,6 +52,39 @@
 		'waiting-for-nation': 'Waiting for the nation',
 		checking: 'Being checked'
 	};
+
+	const nationChoices = $derived([{ value: '', label: 'All nations' }, ...data.nations.map((nation) => ({ value: nation, label: names.get(nation) ?? nation }))]);
+	const kindChoices = [{ value: '', label: 'All kinds' }, ...uploadKinds.map((kind) => ({ value: kind as string, label: uploadKindLabels[kind] }))];
+
+	const checkLabels: Partial<Record<string, string>> = { 'careful-look': 'Needs a careful look', refused: 'Refused', passed: 'Passed' };
+	const showsDecision = $derived(data.view === 'decided' || data.view === 'not-accepted' || data.view === 'all');
+
+	// Oldest first, as the server sends them.
+	const columns: TableColumn[] = [
+		{ key: 'file', header: 'File', isRowHeader: true, sortable: true, searchable: true, custom: true },
+		{ key: 'from', header: 'From', sortable: true, searchable: true },
+		{ key: 'about', header: 'About', sortable: true, searchable: true },
+		{ key: 'checks', header: 'Checks', sortable: true, custom: true },
+		{ key: 'waiting', header: 'Waiting', sortable: true },
+		{ key: 'reviewer', header: 'Reviewer', sortable: true, custom: true }
+	];
+	const rows: TableRow[] = $derived(
+		data.uploads.map((upload) => ({
+			key: upload.reference,
+			cells: {
+				file: { text: upload.name, href: `/workspace/uploads/${upload.reference}` },
+				from: { text: upload.senderName ?? upload.senderEmail ?? 'Account deleted' },
+				about: { text: upload.nations.length > 0 ? upload.nations.map((id) => names.get(id) ?? id).join(', ') : 'No nation named' },
+				checks: { text: checkLabels[upload.checkResult ?? ''] ?? '' },
+				// Longest waiting first when sorted down: the oldest file.
+				waiting: { text: since(upload.receivedAt), sortValue: -new Date(upload.receivedAt).getTime() },
+				reviewer: {
+					text: [upload.reviewerName ?? waitingLabels[upload.status] ?? 'None', showsDecision ? reviewerStatusLabels[upload.status] : ''].filter(Boolean).join(', ')
+				}
+			}
+		}))
+	);
+	const uploadsByReference = $derived(new Map(data.uploads.map((upload) => [upload.reference, upload])));
 </script>
 
 <svelte:head>
@@ -72,26 +109,11 @@
 				</a>
 			{/each}
 		</nav>
-		<form class="kind-filter" method="get">
+		<!-- A pick sends the form, so the filter applies at once; without scripts, Show sends it. -->
+		<form class="kind-filter" method="get" onchange={(event) => event.currentTarget.requestSubmit()}>
 			<input type="hidden" name="show" value={data.view} />
-			<label class="small">
-				Nation
-				<select name="nation" onchange={(event) => event.currentTarget.form?.requestSubmit()}>
-					<option value="">All nations</option>
-					{#each data.nations as nation (nation)}
-						<option value={nation} selected={data.nation === nation}>{names.get(nation) ?? nation}</option>
-					{/each}
-				</select>
-			</label>
-			<label class="small">
-				Kind
-				<select name="kind" onchange={(event) => event.currentTarget.form?.requestSubmit()}>
-					<option value="">All kinds</option>
-					{#each uploadKinds as kind (kind)}
-						<option value={kind} selected={data.kind === kind}>{uploadKindLabels[kind]}</option>
-					{/each}
-				</select>
-			</label>
+			<SearchableDropdown label="Nation" name="nation" choices={nationChoices} value={data.nation ?? ''} />
+			<Dropdown label="Kind" name="kind" choices={kindChoices} value={data.kind ?? ''} />
 			<noscript><button class="button button-quiet" type="submit">Show</button></noscript>
 		</form>
 	</div>
@@ -99,57 +121,39 @@
 	{#if data.uploads.length === 0}
 		<p>Nothing here.</p>
 	{:else}
-		<div class="table-scroll">
-			<table class="queue">
-				<thead>
-					<tr>
-						<th scope="col">File</th>
-						<th scope="col">From</th>
-						<th scope="col">About</th>
-						<th scope="col">Checks</th>
-						<th scope="col">Waiting</th>
-						<th scope="col">Reviewer</th>
-					</tr>
-				</thead>
-				<tbody>
-					{#each data.uploads as upload (upload.reference)}
-						{@const Icon = upload.kind ? icons[upload.kind] : FileText}
-						<tr>
-							<th scope="row">
-								<a href="/workspace/uploads/{upload.reference}" class="name"><Icon size={18} aria-hidden="true" /> <span>{upload.name}</span></a>
-								<span class="small muted">
-									{[
-										upload.source === 'youtube' ? 'YouTube video' : upload.kind ? uploadKindLabels[upload.kind] : 'File',
-										readableSize(upload.sizeBytes),
-										upload.reference
-									]
-										.filter(Boolean)
-										.join(' · ')}
-								</span>
-							</th>
-							<td class="small">{upload.senderName ?? upload.senderEmail ?? 'Account deleted'}</td>
-							<td class="small">{upload.nations.length > 0 ? upload.nations.map((id) => names.get(id) ?? id).join(', ') : 'No nation named'}</td>
-							<td class="small">
-								{#if upload.checkResult === 'careful-look'}
-									<span class="warn"><ShieldAlert size={16} aria-hidden="true" /> Needs a careful look</span>
-								{:else if upload.checkResult === 'refused'}
-									<span class="warn"><ShieldAlert size={16} aria-hidden="true" /> Refused</span>
-								{:else if upload.checkResult === 'passed'}
-									<span class="ok"><ShieldCheck size={16} aria-hidden="true" /> Passed</span>
-								{/if}
-							</td>
-							<td class="small nowrap">{since(upload.receivedAt)}</td>
-							<td class="small">
-								{upload.reviewerName ?? waitingLabels[upload.status] ?? 'None'}
-								{#if data.view === 'decided' || data.view === 'not-accepted' || data.view === 'all'}
-									<br /><span class="muted">{reviewerStatusLabels[upload.status]}</span>
-								{/if}
-							</td>
-						</tr>
-					{/each}
-				</tbody>
-			</table>
-		</div>
+		<DataTable identifier="uploads" label="Table: uploads" {columns} {rows} rowName={['file', 'files']}>
+			{#snippet cell(row, column)}
+				{@const upload = uploadsByReference.get(row.key)}
+				{#if !upload}
+					<!-- Every row is an upload. -->
+				{:else if column.key === 'file'}
+					{@const Icon = upload.kind ? icons[upload.kind] : FileText}
+					<a href="/workspace/uploads/{upload.reference}" class="name"><Icon size={18} aria-hidden="true" /> <span>{upload.name}</span></a>
+					<span class="small muted file-details">
+						{[
+							upload.source === 'youtube' ? 'YouTube video' : upload.kind ? uploadKindLabels[upload.kind] : 'File',
+							readableSize(upload.sizeBytes),
+							upload.reference
+						]
+							.filter(Boolean)
+							.join(' · ')}
+					</span>
+				{:else if column.key === 'checks'}
+					{#if upload.checkResult === 'careful-look'}
+						<span class="warn"><ShieldAlert size={16} aria-hidden="true" /> Needs a careful look</span>
+					{:else if upload.checkResult === 'refused'}
+						<span class="warn"><ShieldAlert size={16} aria-hidden="true" /> Refused</span>
+					{:else if upload.checkResult === 'passed'}
+						<span class="ok"><ShieldCheck size={16} aria-hidden="true" /> Passed</span>
+					{/if}
+				{:else}
+					{upload.reviewerName ?? waitingLabels[upload.status] ?? 'None'}
+					{#if showsDecision}
+						<br /><span class="muted">{reviewerStatusLabels[upload.status]}</span>
+					{/if}
+				{/if}
+			{/snippet}
+		</DataTable>
 	{/if}
 	{#if data.deleted > 0}
 		<p class="small muted">{data.deleted} declined or unfinished file{data.deleted === 1 ? ' was' : 's were'} removed from storage just now, as planned.</p>
@@ -185,32 +189,8 @@
 		flex-wrap: wrap;
 		gap: var(--space-2) var(--space-4);
 	}
-	.kind-filter label {
-		display: inline-flex;
-		gap: var(--space-2);
-		align-items: center;
-	}
-	.table-scroll {
-		overflow-x: auto;
-	}
-	.queue {
-		width: 100%;
-		border-collapse: collapse;
-	}
-	.queue thead th {
-		text-align: left;
-		font-size: var(--font-size-small);
-		color: var(--color-ink-muted);
-		border-bottom: 2px solid var(--color-line);
-		padding: var(--space-2);
-	}
-	.queue td,
-	.queue tbody th {
-		text-align: left;
-		font-weight: normal;
-		vertical-align: top;
-		padding: var(--space-3) var(--space-2);
-		border-bottom: 1px solid var(--color-line);
+	.kind-filter :global(.dropdown) {
+		margin: 0;
 	}
 	.name {
 		display: flex;
@@ -219,11 +199,9 @@
 		font-weight: var(--font-weight-semibold);
 		overflow-wrap: anywhere;
 	}
-	th > .small.muted {
+	.file-details {
 		display: block;
-	}
-	.nowrap {
-		white-space: nowrap;
+		font-weight: normal;
 	}
 	.ok,
 	.warn {

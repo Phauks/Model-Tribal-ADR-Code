@@ -10,9 +10,9 @@
 	import { noteBlock, noteCopy } from '#lib/note-copies.ts';
 
 	function toggle(marker: HTMLAnchorElement): void {
-		const openId = marker.getAttribute('aria-controls');
-		if (openId) {
-			document.getElementById(openId)?.remove();
+		const openIdentifier = marker.getAttribute('aria-controls');
+		if (openIdentifier) {
+			document.getElementById(openIdentifier)?.remove();
 			marker.removeAttribute('aria-controls');
 			marker.setAttribute('aria-expanded', 'false');
 			return;

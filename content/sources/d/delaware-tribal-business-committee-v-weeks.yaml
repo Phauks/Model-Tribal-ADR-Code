@@ -1,0 +1,149 @@
+key: delaware-tribal-business-committee-v-weeks
+kind: federal-case
+citation:
+  type: legal_case
+  title: Delaware Tribal Business Committee v. Weeks
+  authority: Supreme Court of the United States
+  container-title: U.S.
+  volume: '430'
+  page: '73'
+  issued:
+    date-parts:
+    - - 1977
+      - 2
+      - 23
+  URL: https://www.loc.gov/item/usrep430073/
+  accessed:
+    date-parts:
+    - - 2026
+      - 11
+      - 24
+caption:
+  printed: DELAWARE TRIBAL BUSINESS COMMITTEE et al. v. WEEKS et al.
+  source: https://tile.loc.gov/storage-services/service/ll/usrep/usrep430/usrep430073/usrep430073.pdf
+  checked: '2026-11-24'
+opinions:
+  source: https://tile.loc.gov/storage-services/service/ll/usrep/usrep430/usrep430073/usrep430073.pdf
+  checked: '2026-11-24'
+  list:
+  - kind: majority
+    justice: William J. Brennan, Jr.
+    page: 75
+  - kind: concurrence in the result
+    justice: Harry A. Blackmun
+    page: 90
+  - kind: dissent
+    justice: John Paul Stevens
+    page: 91
+original_link: https://www.loc.gov/item/usrep430073/
+retrieved: '2026-11-24'
+history:
+  status: live
+  last_checked: '2026-11-24'
+court_dates:
+  argued:
+  - '1976-11-10'
+  - '1976-02-23'
+  printed: Argued November 10, 1976 Decided February 23, 1977
+  source: https://tile.loc.gov/storage-services/service/ll/usrep/usrep430/usrep430073/usrep430073.pdf
+  checked: '2026-11-24'
+supreme_court:
+  court: Burger Court
+  natural_court: Burger Court (1975-1981)
+  decision_type: majority opinion
+  vote:
+    majority: 8
+    minority: 1
+  justices:
+  - name: Potter Stewart
+    vote: majority
+  - name: Thurgood Marshall
+    vote: majority
+  - name: William J. Brennan, Jr.
+    vote: majority
+    opinion: majority
+  - name: Byron R. White
+    vote: majority
+  - name: Warren E. Burger
+    vote: majority
+  - name: Harry A. Blackmun
+    vote: majority
+    opinion: special concurrence
+  - name: Lewis F. Powell, Jr.
+    vote: majority
+  - name: William H. Rehnquist
+    vote: majority
+  - name: John Paul Stevens
+    vote: minority
+    opinion: dissent
+  source: https://api.oyez.org/cases/1976/75-1301
+  checked: '2026-11-24'
+reading_links:
+  checked: '2026-11-24'
+  links:
+  - site: library-of-congress
+    label: Library of Congress
+    access: official
+    link: https://www.loc.gov/item/usrep430073/
+  - site: justia
+    label: Justia
+    access: free
+    link: https://supreme.justia.com/cases/federal/us/430/73/
+    unchecked: true
+  - site: oyez
+    label: Oyez
+    access: free
+    link: https://www.oyez.org/cases/1976/75-1301
+  - site: google-scholar
+    label: Google Scholar
+    access: free
+    link: https://scholar.google.com/scholar?hl=en&as_sdt=2006&q=%22430%20U.S.%2073%22
+    unchecked: true
+  - site: westlaw
+    label: Westlaw
+    access: subscription
+    link: https://1.next.westlaw.com/Link/Document/FullText?findType=Y&cite=430%20U.S.%2073
+    unchecked: true
+  - site: lexis
+    label: Lexis
+    access: subscription
+    link: https://advance.lexis.com/api/search?q=430%20U.S.%2073
+    unchecked: true
+rights:
+  status: no-permission-needed
+  basis: us-government-work
+  basis_note: Opinions of federal courts are works of the U.S. government (17 U.S.C. § 105); the host site's own additions are not reproduced.
+  redistribution: true
+found_in:
+- 2026-11-24-supreme-court-native-cases
+notes: 'Full citation: 430 U.S. 73 (1977). Official report scan: https://tile.loc.gov/storage-services/service/ll/usrep/usrep430/usrep430073/usrep430073.pdf. Written by scripts/caselaw/supreme_court_native_cases.py from the Supreme Court Database (case 1976-054), the Caselaw Access Project''s text of the report and the Library of Congress scan; not yet read by a person.'
+tribes: []
+nations_in_case:
+  checked: '2026-11-24'
+  named: []
+review:
+  status: verified
+  by: scripts/caselaw/supreme_court_native_cases.py
+  date: '2026-11-24'
+  checks:
+  - check: cite
+    result: agree
+    detail: Caselaw Access Project 430 U.S. 73 "Delaware Tribal Business Committee v. Weeks"; Database 430 U.S. 73 "DELAWARE TRIBAL BUSINESS COMMITTEE et al. v. WEEKS et al."
+  - check: scan
+    result: agree
+    detail: Scan has 26 pages; the report runs 73 to 98
+  - check: caption
+    result: agree
+    detail: Caption found in the scan's text at 1.00
+  - check: printed dates
+    result: agree
+    detail: Caselaw Access Project "Argued November 10, 1976 Decided February 23, 1977"; scan "Argued November 10, 1976-Decided February 23, 1977"
+  - check: decided
+    result: agree
+    detail: 'Printed and Database: 1977-02-23'
+  - check: opinions
+    result: agree
+    detail: 'Report: majority Brennan p. 75, concurrence in the result Blackmun p. 90, dissent Stevens p. 91; Database writers: Blackmun, Brennan, Stevens'
+  - check: bench
+    result: agree
+    detail: Oyez and the Database give the same Justices and votes

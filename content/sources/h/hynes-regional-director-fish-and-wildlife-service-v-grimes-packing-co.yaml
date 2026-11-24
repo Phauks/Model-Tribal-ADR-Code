@@ -1,0 +1,141 @@
+key: hynes-regional-director-fish-and-wildlife-service-v-grimes-packing-co
+kind: federal-case
+citation:
+  type: legal_case
+  title: Hynes, Regional Director, Fish & Wildlife Service v. Grimes Packing Co.
+  authority: Supreme Court of the United States
+  container-title: U.S.
+  volume: '337'
+  page: '86'
+  issued:
+    date-parts:
+    - - 1949
+      - 5
+      - 31
+  URL: https://www.loc.gov/item/usrep337086/
+  accessed:
+    date-parts:
+    - - 2026
+      - 11
+      - 24
+caption:
+  printed: HYNES, REGIONAL DIRECTOR, FISH AND WILDLIFE SERVICE, DEPARTMENT OF THE INTERIOR, v. GRIMES PACKING CO. et al.
+  source: https://tile.loc.gov/storage-services/service/ll/usrep/usrep337/usrep337086/usrep337086.pdf
+  checked: '2026-11-24'
+opinions:
+  source: https://tile.loc.gov/storage-services/service/ll/usrep/usrep337/usrep337086/usrep337086.pdf
+  checked: '2026-11-24'
+  list:
+  - kind: majority
+    justice: Stanley Forman Reed
+    page: 89
+  - kind: dissent in part
+    justice: Wiley Blount Rutledge
+    page: 129
+original_link: https://www.loc.gov/item/usrep337086/
+retrieved: '2026-11-24'
+history:
+  status: live
+  last_checked: '2026-11-24'
+court_dates:
+  argued:
+  - '1948-10-21'
+  printed: Argued October 21, 1948. Decided May 31, 1949.
+  source: https://tile.loc.gov/storage-services/service/ll/usrep/usrep337/usrep337086/usrep337086.pdf
+  checked: '2026-11-24'
+supreme_court:
+  court: Vinson Court
+  natural_court: Vinson Court (1946-1949)
+  decision_type: majority opinion
+  vote:
+    majority: 5
+    minority: 4
+  justices:
+  - name: Fred Moore Vinson
+    vote: majority
+  - name: Hugo Lafayette Black
+    vote: minority
+  - name: Stanley Forman Reed
+    vote: majority
+    opinion: majority
+  - name: Felix Frankfurter
+    vote: majority
+  - name: William Orville Douglas
+    vote: minority
+  - name: Frank Murphy
+    vote: minority
+  - name: Robert Houghwout Jackson
+    vote: majority
+  - name: Wiley Blount Rutledge
+    vote: minority
+    opinion: dissent
+  - name: Harold Hitz Burton
+    vote: majority
+  source: http://scdb.wustl.edu/_brickFiles/2026_01/SCDB_2026_01_justiceCentered_Citation.csv.zip
+  note: From the Supreme Court Database, case 1948-080; Oyez has no votes for this case.
+  checked: '2026-11-24'
+reading_links:
+  checked: '2026-11-24'
+  links:
+  - site: library-of-congress
+    label: Library of Congress
+    access: official
+    link: https://www.loc.gov/item/usrep337086/
+  - site: justia
+    label: Justia
+    access: free
+    link: https://supreme.justia.com/cases/federal/us/337/86/
+    unchecked: true
+  - site: google-scholar
+    label: Google Scholar
+    access: free
+    link: https://scholar.google.com/scholar?hl=en&as_sdt=2006&q=%22337%20U.S.%2086%22
+    unchecked: true
+  - site: westlaw
+    label: Westlaw
+    access: subscription
+    link: https://1.next.westlaw.com/Link/Document/FullText?findType=Y&cite=337%20U.S.%2086
+    unchecked: true
+  - site: lexis
+    label: Lexis
+    access: subscription
+    link: https://advance.lexis.com/api/search?q=337%20U.S.%2086
+    unchecked: true
+rights:
+  status: no-permission-needed
+  basis: us-government-work
+  basis_note: Opinions of federal courts are works of the U.S. government (17 U.S.C. § 105); the host site's own additions are not reproduced.
+  redistribution: true
+found_in:
+- 2026-11-24-supreme-court-native-cases
+notes: 'Full citation: 337 U.S. 86 (1949). Official report scan: https://tile.loc.gov/storage-services/service/ll/usrep/usrep337/usrep337086/usrep337086.pdf. Written by scripts/caselaw/supreme_court_native_cases.py from the Supreme Court Database (case 1948-080), the Caselaw Access Project''s text of the report and the Library of Congress scan; not yet read by a person.'
+tribes: []
+nations_in_case:
+  checked: '2026-11-24'
+  named: []
+review:
+  status: unverified
+  by: scripts/caselaw/supreme_court_native_cases.py
+  date: '2026-11-24'
+  checks:
+  - check: cite
+    result: agree
+    detail: Caselaw Access Project 337 U.S. 86 "Hynes, Regional Director, Fish & Wildlife Service v. Grimes Packing Co."; Database 337 U.S. 86 "HYNES, REGIONAL DIRECTOR, FISH AND WILDLIFE SERVICE, DEPARTMENT OF THE INTERIOR, v. GRIMES PACKING CO. ET AL."
+  - check: scan
+    result: differs
+    detail: Scan has 53 pages; the report runs 86 to 136
+  - check: caption
+    result: agree
+    detail: Caption found in the scan's text at 1.00
+  - check: printed dates
+    result: agree
+    detail: Caselaw Access Project "Argued October 21, 1948. Decided May 31, 1949."; scan "Argued October 21, 1948.-Decided May 31, 1949."
+  - check: decided
+    result: agree
+    detail: 'Printed and Database: 1949-05-31'
+  - check: opinions
+    result: settled
+    detail: 'Report: majority Reed p. 89, dissent in part Rutledge p. 127; Database writers: Reed, Rutledge; scan pages [(127, 129)]. Read from the scan by an AI reader (corrected): p. 89: MR. JUSTICE REED delivered the opinion of the Court. p. 129: MR. JUSTICE RUTLEDGE, with whom MR. JUSTICE BLACK and MR. JUSTICE MURPHY agree, dissenting in part. (The record''s page 127 is not where the dissent begins.)'
+  - check: bench
+    result: agree
+    detail: No Oyez votes; each opinion writer in the report sits on the Database's bench on the side the opinion takes

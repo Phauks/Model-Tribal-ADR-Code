@@ -27,7 +27,7 @@
 	} = $props();
 
 	const ownIdentifier = $props.id();
-	const problemId = `${ownIdentifier}-problem`;
+	const problemIdentifier = `${ownIdentifier}-problem`;
 	let ready = $state(false);
 	let text = $state(value ? spokenTime(value) : '');
 	let problem = $state('');
@@ -88,11 +88,11 @@
 			onblur={leave}
 			{required}
 			aria-label={label}
-			aria-describedby={[describedby, problem ? problemId : ''].filter(Boolean).join(' ') || undefined}
+			aria-describedby={[describedby, problem ? problemIdentifier : ''].filter(Boolean).join(' ') || undefined}
 			aria-invalid={invalid || problem ? 'true' : undefined}
 		/>
 		{#if name}<input type="hidden" {name} {value} />{/if}
-		{#if problem}<p class="time-problem" id={problemId}>{problem}</p>{/if}
+		{#if problem}<p class="time-problem" id={problemIdentifier}>{problem}</p>{/if}
 	{:else}
 		<input {id} {name} type="time" {value} {required} aria-label={label} aria-describedby={describedby} aria-invalid={invalid ? 'true' : undefined} />
 	{/if}

@@ -11,7 +11,7 @@ import {
 	setRemoved
 } from '#lib/server/people.ts';
 import { codeLifetimeMinutes, issueCode } from '#lib/server/accounts.ts';
-import { eventStatement } from '#lib/server/events.ts';
+import { activityStatement } from '#lib/server/activity-log.ts';
 import { formText, requirePermission, storage } from '#lib/server/workspace.ts';
 import type { Actions, PageServerLoad } from './$types';
 
@@ -70,7 +70,7 @@ async function invitationLink(
 	madeBy: string
 ): Promise<string> {
 	const issued = await issueCode(database, email, 'invitation', madeBy);
-	await eventStatement(database, {
+	await activityStatement(database, {
 		personIdentifier: madeBy,
 		action: 'Made a sign-in link for an invited person',
 		targetKind: 'person',

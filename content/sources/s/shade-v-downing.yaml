@@ -1,0 +1,140 @@
+key: shade-v-downing
+kind: federal-case
+citation:
+  type: legal_case
+  title: Shade v. Downing
+  authority: Supreme Court of the United States
+  container-title: U.S.
+  volume: '333'
+  page: '586'
+  issued:
+    date-parts:
+    - - 1948
+      - 4
+      - 5
+  URL: https://www.loc.gov/item/usrep333586/
+  accessed:
+    date-parts:
+    - - 2026
+      - 11
+      - 24
+caption:
+  printed: SHADE v. DOWNING et al.
+  source: https://tile.loc.gov/storage-services/service/ll/usrep/usrep333/usrep333586/usrep333586.pdf
+  checked: '2026-11-24'
+opinions:
+  source: https://tile.loc.gov/storage-services/service/ll/usrep/usrep333/usrep333586/usrep333586.pdf
+  checked: '2026-11-24'
+  list:
+  - kind: majority
+    justice: William Orville Douglas
+    page: 586
+original_link: https://www.loc.gov/item/usrep333586/
+retrieved: '2026-11-24'
+history:
+  status: live
+  last_checked: '2026-11-24'
+court_dates:
+  argued:
+  - '1948-02-11'
+  printed: Argued February 11, 1948. Decided April 5, 1948.
+  source: https://tile.loc.gov/storage-services/service/ll/usrep/usrep333/usrep333586/usrep333586.pdf
+  checked: '2026-11-24'
+supreme_court:
+  court: Vinson Court
+  natural_court: Vinson Court (1946-1949)
+  decision_type: majority opinion
+  vote:
+    majority: 6
+    minority: 3
+  justices:
+  - name: Fred Moore Vinson
+    vote: majority
+  - name: Hugo Lafayette Black
+    vote: majority
+  - name: Stanley Forman Reed
+    vote: minority
+    opinion: dissent
+  - name: Felix Frankfurter
+    vote: minority
+    opinion: dissent
+  - name: William Orville Douglas
+    vote: majority
+    opinion: majority
+  - name: Frank Murphy
+    vote: majority
+  - name: Robert Houghwout Jackson
+    vote: minority
+    opinion: dissent
+  - name: Wiley Blount Rutledge
+    vote: majority
+  - name: Harold Hitz Burton
+    vote: majority
+  source: http://scdb.wustl.edu/_brickFiles/2026_01/SCDB_2026_01_justiceCentered_Citation.csv.zip
+  note: From the Supreme Court Database, case 1947-063; Oyez has no votes for this case.
+  checked: '2026-11-24'
+reading_links:
+  checked: '2026-11-24'
+  links:
+  - site: library-of-congress
+    label: Library of Congress
+    access: official
+    link: https://www.loc.gov/item/usrep333586/
+  - site: justia
+    label: Justia
+    access: free
+    link: https://supreme.justia.com/cases/federal/us/333/586/
+    unchecked: true
+  - site: google-scholar
+    label: Google Scholar
+    access: free
+    link: https://scholar.google.com/scholar?hl=en&as_sdt=2006&q=%22333%20U.S.%20586%22
+    unchecked: true
+  - site: westlaw
+    label: Westlaw
+    access: subscription
+    link: https://1.next.westlaw.com/Link/Document/FullText?findType=Y&cite=333%20U.S.%20586
+    unchecked: true
+  - site: lexis
+    label: Lexis
+    access: subscription
+    link: https://advance.lexis.com/api/search?q=333%20U.S.%20586
+    unchecked: true
+rights:
+  status: no-permission-needed
+  basis: us-government-work
+  basis_note: Opinions of federal courts are works of the U.S. government (17 U.S.C. § 105); the host site's own additions are not reproduced.
+  redistribution: true
+found_in:
+- 2026-11-24-supreme-court-native-cases
+notes: 'Full citation: 333 U.S. 586 (1948). Official report scan: https://tile.loc.gov/storage-services/service/ll/usrep/usrep333/usrep333586/usrep333586.pdf. Written by scripts/caselaw/supreme_court_native_cases.py from the Supreme Court Database (case 1947-063), the Caselaw Access Project''s text of the report and the Library of Congress scan; not yet read by a person.'
+tribes: []
+nations_in_case:
+  checked: '2026-11-24'
+  named: []
+review:
+  status: unverified
+  by: scripts/caselaw/supreme_court_native_cases.py
+  date: '2026-11-24'
+  checks:
+  - check: cite
+    result: agree
+    detail: Caselaw Access Project 333 U.S. 586 "Shade v. Downing"; Database 333 U.S. 586 "SHADE v. DOWNING ET AL."
+  - check: scan
+    result: agree
+    detail: Scan has 6 pages; the report runs 586 to 591
+  - check: caption
+    result: agree
+    detail: Caption found in the scan's text at 1.00
+  - check: printed dates
+    result: agree
+    detail: Caselaw Access Project "Argued February 11, 1948. Decided April 5, 1948."; scan "Argued February 11, 1948.-Decided April 5, 1948."
+  - check: decided
+    result: agree
+    detail: 'Printed and Database: 1948-04-05'
+  - check: opinions
+    result: differs
+    detail: 'Report: majority Douglas p. 586; Database writers: Douglas, Frankfurter, Jackson, Reed'
+  - check: bench
+    result: agree
+    detail: No Oyez votes; each opinion writer in the report sits on the Database's bench on the side the opinion takes

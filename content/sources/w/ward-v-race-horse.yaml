@@ -1,0 +1,142 @@
+key: ward-v-race-horse
+kind: federal-case
+citation:
+  type: legal_case
+  title: Ward v. Race Horse
+  authority: Supreme Court of the United States
+  container-title: U.S.
+  volume: '163'
+  page: '504'
+  issued:
+    date-parts:
+    - - 1896
+      - 5
+      - 25
+  URL: https://www.loc.gov/item/usrep163504/
+  accessed:
+    date-parts:
+    - - 2026
+      - 11
+      - 24
+caption:
+  printed: WARD v. RACE HORSE
+  source: https://tile.loc.gov/storage-services/service/ll/usrep/usrep163/usrep163504/usrep163504.pdf
+  checked: '2026-11-24'
+opinions:
+  source: https://tile.loc.gov/storage-services/service/ll/usrep/usrep163/usrep163504/usrep163504.pdf
+  checked: '2026-11-24'
+  list:
+  - kind: majority
+    justice: Edward Douglass White
+    page: 507
+  - kind: dissent
+    justice: Henry Billings Brown
+    page: 516
+original_link: https://www.loc.gov/item/usrep163504/
+retrieved: '2026-11-24'
+history:
+  status: live
+  last_checked: '2026-11-24'
+court_dates:
+  argued:
+  - '1896-03-11'
+  - '1896-03-12'
+  printed: Argued March 11, 12, 1896. Decided May 25, 1896.
+  source: https://tile.loc.gov/storage-services/service/ll/usrep/usrep163/usrep163504/usrep163504.pdf
+  checked: '2026-11-24'
+supreme_court:
+  court: Fuller Court
+  natural_court: Fuller Court (1896-1897)
+  decision_type: majority opinion
+  vote:
+    majority: 7
+    minority: 1
+  justices:
+  - name: Melville Weston Fuller
+    vote: majority
+  - name: Edward Douglass White
+    vote: majority
+    opinion: majority
+  - name: Stephen Johnson Field
+    vote: majority
+  - name: John Marshall Harlan
+    vote: majority
+  - name: Horace Gray
+    vote: majority
+  - name: David Josiah Brewer
+    vote: not recorded
+  - name: Henry Billings Brown
+    vote: minority
+    opinion: dissent
+  - name: George Shiras, Jr.
+    vote: majority
+  - name: Rufus Wheeler Peckham
+    vote: majority
+  source: http://scdb.wustl.edu/_brickFiles/Legacy_07/SCDB_Legacy_07_justiceCentered_Citation.csv.zip
+  note: From the Supreme Court Database, case 1895-261; Oyez has no votes for this case.
+  checked: '2026-11-24'
+reading_links:
+  checked: '2026-11-24'
+  links:
+  - site: library-of-congress
+    label: Library of Congress
+    access: official
+    link: https://www.loc.gov/item/usrep163504/
+  - site: justia
+    label: Justia
+    access: free
+    link: https://supreme.justia.com/cases/federal/us/163/504/
+    unchecked: true
+  - site: google-scholar
+    label: Google Scholar
+    access: free
+    link: https://scholar.google.com/scholar?hl=en&as_sdt=2006&q=%22163%20U.S.%20504%22
+    unchecked: true
+  - site: westlaw
+    label: Westlaw
+    access: subscription
+    link: https://1.next.westlaw.com/Link/Document/FullText?findType=Y&cite=163%20U.S.%20504
+    unchecked: true
+  - site: lexis
+    label: Lexis
+    access: subscription
+    link: https://advance.lexis.com/api/search?q=163%20U.S.%20504
+    unchecked: true
+rights:
+  status: no-permission-needed
+  basis: us-government-work
+  basis_note: Opinions of federal courts are works of the U.S. government (17 U.S.C. § 105); the host site's own additions are not reproduced.
+  redistribution: true
+found_in:
+- 2026-11-24-supreme-court-native-cases
+notes: 'Full citation: 163 U.S. 504 (1896). Official report scan: https://tile.loc.gov/storage-services/service/ll/usrep/usrep163/usrep163504/usrep163504.pdf. Written by scripts/caselaw/supreme_court_native_cases.py from the Supreme Court Database (case 1895-261), the Caselaw Access Project''s text of the report and the Library of Congress scan; not yet read by a person.'
+tribes: []
+nations_in_case:
+  checked: '2026-11-24'
+  named: []
+review:
+  status: verified
+  by: scripts/caselaw/supreme_court_native_cases.py
+  date: '2026-11-24'
+  checks:
+  - check: cite
+    result: agree
+    detail: Caselaw Access Project 163 U.S. 504 "Ward v. Race Horse"; Database 163 U.S. 504 "WARD v. RACE HORSE"
+  - check: scan
+    result: agree
+    detail: Scan has 17 pages; the report runs 504 to 520
+  - check: caption
+    result: agree
+    detail: Caption found in the scan's text at 1.00
+  - check: printed dates
+    result: agree
+    detail: Caselaw Access Project "Argued March 11, 12, 1896. Decided May 25, 1896."; scan "not found"
+  - check: decided
+    result: agree
+    detail: 'Printed and Database: 1896-05-25'
+  - check: opinions
+    result: agree
+    detail: 'Report: majority White p. 507, dissent Brown p. 516; Database writers: Brown, White'
+  - check: bench
+    result: agree
+    detail: No Oyez votes; each opinion writer in the report sits on the Database's bench on the side the opinion takes

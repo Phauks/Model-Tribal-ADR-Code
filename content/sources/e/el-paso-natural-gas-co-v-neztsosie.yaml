@@ -1,0 +1,141 @@
+key: el-paso-natural-gas-co-v-neztsosie
+kind: federal-case
+citation:
+  type: legal_case
+  title: El Paso Natural Gas Co. v. Neztsosie
+  authority: Supreme Court of the United States
+  container-title: U.S.
+  volume: '526'
+  page: '473'
+  issued:
+    date-parts:
+    - - 1999
+      - 5
+      - 3
+  URL: https://www.loc.gov/item/usrep526473/
+  accessed:
+    date-parts:
+    - - 2026
+      - 11
+      - 24
+caption:
+  printed: EL PASO NATURAL GAS CO. et al. v. NEZTSOSIE et al.
+  source: https://tile.loc.gov/storage-services/service/ll/usrep/usrep526/usrep526473/usrep526473.pdf
+  checked: '2026-11-24'
+opinions:
+  source: https://tile.loc.gov/storage-services/service/ll/usrep/usrep526/usrep526473/usrep526473.pdf
+  checked: '2026-11-24'
+  list:
+  - kind: majority
+    justice: David H. Souter
+    page: 476
+original_link: https://www.loc.gov/item/usrep526473/
+retrieved: '2026-11-24'
+history:
+  status: live
+  last_checked: '2026-11-24'
+court_dates:
+  argued:
+  - '1999-03-02'
+  - '1999-05-03'
+  printed: Argued March 2, 1999 Decided May 3, 1999
+  source: https://tile.loc.gov/storage-services/service/ll/usrep/usrep526/usrep526473/usrep526473.pdf
+  checked: '2026-11-24'
+supreme_court:
+  court: Rehnquist Court
+  natural_court: Rehnquist Court (1994-2005)
+  decision_type: majority opinion
+  vote:
+    majority: 9
+    minority: 0
+  justices:
+  - name: William H. Rehnquist
+    vote: majority
+  - name: John Paul Stevens
+    vote: majority
+  - name: Sandra Day O'Connor
+    vote: majority
+  - name: Antonin Scalia
+    vote: majority
+  - name: Anthony M. Kennedy
+    vote: majority
+  - name: David H. Souter
+    vote: majority
+    opinion: majority
+  - name: Clarence Thomas
+    vote: majority
+  - name: Ruth Bader Ginsburg
+    vote: majority
+  - name: Stephen G. Breyer
+    vote: majority
+  source: https://api.oyez.org/cases/1998/98-6
+  checked: '2026-11-24'
+reading_links:
+  checked: '2026-11-24'
+  links:
+  - site: library-of-congress
+    label: Library of Congress
+    access: official
+    link: https://www.loc.gov/item/usrep526473/
+  - site: justia
+    label: Justia
+    access: free
+    link: https://supreme.justia.com/cases/federal/us/526/473/
+    unchecked: true
+  - site: oyez
+    label: Oyez
+    access: free
+    link: https://www.oyez.org/cases/1998/98-6
+  - site: google-scholar
+    label: Google Scholar
+    access: free
+    link: https://scholar.google.com/scholar?hl=en&as_sdt=2006&q=%22526%20U.S.%20473%22
+    unchecked: true
+  - site: westlaw
+    label: Westlaw
+    access: subscription
+    link: https://1.next.westlaw.com/Link/Document/FullText?findType=Y&cite=526%20U.S.%20473
+    unchecked: true
+  - site: lexis
+    label: Lexis
+    access: subscription
+    link: https://advance.lexis.com/api/search?q=526%20U.S.%20473
+    unchecked: true
+rights:
+  status: no-permission-needed
+  basis: us-government-work
+  basis_note: Opinions of federal courts are works of the U.S. government (17 U.S.C. § 105); the host site's own additions are not reproduced.
+  redistribution: true
+found_in:
+- 2026-11-24-supreme-court-native-cases
+notes: 'Full citation: 526 U.S. 473 (1999). Official report scan: https://tile.loc.gov/storage-services/service/ll/usrep/usrep526/usrep526473/usrep526473.pdf. Written by scripts/caselaw/supreme_court_native_cases.py from the Supreme Court Database (case 1998-051), the Caselaw Access Project''s text of the report and the Library of Congress scan; not yet read by a person.'
+tribes: []
+nations_in_case:
+  checked: '2026-11-24'
+  named: []
+review:
+  status: verified
+  by: scripts/caselaw/supreme_court_native_cases.py
+  date: '2026-11-24'
+  checks:
+  - check: cite
+    result: agree
+    detail: Caselaw Access Project 526 U.S. 473 "El Paso Natural Gas Co. v. Neztsosie"; Database 526 U.S. 473 "EL PASO NATURAL GAS COMPANY, et al. v. LAURA NEZTSOSIE et al."
+  - check: scan
+    result: agree
+    detail: Scan has 16 pages; the report runs 473 to 488
+  - check: caption
+    result: agree
+    detail: Caption found in the scan's text at 1.00
+  - check: printed dates
+    result: agree
+    detail: Caselaw Access Project "Argued March 2, 1999 Decided May 3, 1999"; scan "Argued March 2, 1999-Decided May 3,1999"
+  - check: decided
+    result: agree
+    detail: 'Printed and Database: 1999-05-03'
+  - check: opinions
+    result: agree
+    detail: 'Report: majority Souter p. 476; Database writers: Souter'
+  - check: bench
+    result: agree
+    detail: Oyez and the Database give the same Justices and votes

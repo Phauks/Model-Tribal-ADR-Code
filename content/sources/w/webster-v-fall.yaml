@@ -1,0 +1,137 @@
+key: webster-v-fall
+kind: federal-case
+citation:
+  type: legal_case
+  title: Webster v. Fall
+  authority: Supreme Court of the United States
+  container-title: U.S.
+  volume: '266'
+  page: '507'
+  issued:
+    date-parts:
+    - - 1925
+      - 1
+      - 5
+  URL: https://www.loc.gov/item/usrep266507/
+  accessed:
+    date-parts:
+    - - 2026
+      - 11
+      - 24
+caption:
+  printed: WEBSTER v. FALL, SECRETARY OF THE INTERIOR, ET AL
+  source: https://tile.loc.gov/storage-services/service/ll/usrep/usrep266/usrep266507/usrep266507.pdf
+  checked: '2026-11-24'
+opinions:
+  source: https://tile.loc.gov/storage-services/service/ll/usrep/usrep266/usrep266507/usrep266507.pdf
+  checked: '2026-11-24'
+  list:
+  - kind: majority
+    justice: George Sutherland
+    page: 509
+original_link: https://www.loc.gov/item/usrep266507/
+retrieved: '2026-11-24'
+history:
+  status: live
+  last_checked: '2026-11-24'
+court_dates:
+  argued:
+  - '1924-12-11'
+  printed: Argued December 11, 1924. Decided January 5, 1925.
+  source: https://tile.loc.gov/storage-services/service/ll/usrep/usrep266/usrep266507/usrep266507.pdf
+  checked: '2026-11-24'
+supreme_court:
+  court: Taft Court
+  natural_court: Taft Court (1925-1925)
+  decision_type: majority opinion
+  vote:
+    majority: 9
+    minority: 0
+  justices:
+  - name: William Howard Taft
+    vote: majority
+  - name: Joseph McKenna
+    vote: majority
+  - name: Oliver Wendell Holmes
+    vote: majority
+  - name: Willis Van Devanter
+    vote: majority
+  - name: James Clark McReynolds
+    vote: majority
+  - name: Louis Dembitz Brandeis
+    vote: majority
+  - name: George Sutherland
+    vote: majority
+    opinion: majority
+  - name: Pierce Butler
+    vote: majority
+  - name: Edward Terry Sanford
+    vote: majority
+  source: http://scdb.wustl.edu/_brickFiles/Legacy_07/SCDB_Legacy_07_justiceCentered_Citation.csv.zip
+  note: From the Supreme Court Database, case 1924-066; Oyez has no votes for this case.
+  checked: '2026-11-24'
+reading_links:
+  checked: '2026-11-24'
+  links:
+  - site: library-of-congress
+    label: Library of Congress
+    access: official
+    link: https://www.loc.gov/item/usrep266507/
+  - site: justia
+    label: Justia
+    access: free
+    link: https://supreme.justia.com/cases/federal/us/266/507/
+    unchecked: true
+  - site: google-scholar
+    label: Google Scholar
+    access: free
+    link: https://scholar.google.com/scholar?hl=en&as_sdt=2006&q=%22266%20U.S.%20507%22
+    unchecked: true
+  - site: westlaw
+    label: Westlaw
+    access: subscription
+    link: https://1.next.westlaw.com/Link/Document/FullText?findType=Y&cite=266%20U.S.%20507
+    unchecked: true
+  - site: lexis
+    label: Lexis
+    access: subscription
+    link: https://advance.lexis.com/api/search?q=266%20U.S.%20507
+    unchecked: true
+rights:
+  status: no-permission-needed
+  basis: us-government-work
+  basis_note: Opinions of federal courts are works of the U.S. government (17 U.S.C. § 105); the host site's own additions are not reproduced.
+  redistribution: true
+found_in:
+- 2026-11-24-supreme-court-native-cases
+notes: 'Full citation: 266 U.S. 507 (1925). Official report scan: https://tile.loc.gov/storage-services/service/ll/usrep/usrep266/usrep266507/usrep266507.pdf. Written by scripts/caselaw/supreme_court_native_cases.py from the Supreme Court Database (case 1924-066), the Caselaw Access Project''s text of the report and the Library of Congress scan; not yet read by a person.'
+tribes: []
+nations_in_case:
+  checked: '2026-11-24'
+  named: []
+review:
+  status: verified
+  by: scripts/caselaw/supreme_court_native_cases.py
+  date: '2026-11-24'
+  checks:
+  - check: cite
+    result: agree
+    detail: Caselaw Access Project 266 U.S. 507 "Webster v. Fall"; Database 266 U.S. 507 "WEBSTER v. FALL, SECRETARY OF THE INTERIOR, et al."
+  - check: scan
+    result: agree
+    detail: Scan has 5 pages; the report runs 507 to 511
+  - check: caption
+    result: agree
+    detail: Caption found in the scan's text at 1.00
+  - check: printed dates
+    result: agree
+    detail: Caselaw Access Project "Argued December 11, 1924. Decided January 5, 1925."; scan "Argued December 11, 1924. Decided January 5, 1925."
+  - check: decided
+    result: agree
+    detail: 'Printed and Database: 1925-01-05'
+  - check: opinions
+    result: agree
+    detail: 'Report: majority Sutherland p. 509; Database writers: Sutherland'
+  - check: bench
+    result: agree
+    detail: No Oyez votes; each opinion writer in the report sits on the Database's bench on the side the opinion takes

@@ -213,6 +213,16 @@ describe('column filters', () => {
 				'"Zuni Tribe, ""Pueblo""",,New Mexico\r\n'
 		);
 	});
+
+	it('leaves the columns kept out of downloads out of the CSV', () => {
+		const kept: TableColumn[] = [
+			{ key: 'name', header: 'Name', isRowHeader: true },
+			{ key: 'needs', header: 'Access needs', keepOutOfDownload: true },
+			{ key: 'action', header: 'Action', hiddenHeader: true, keepOutOfDownload: true }
+		];
+		const keptRows: TableRow[] = [{ key: 'a', cells: { name: { text: 'Test Person' }, needs: { text: 'Private' }, action: { text: 'Cancel' } } }];
+		expect(rowsToCsv(kept, keptRows)).toBe('Name\r\nTest Person\r\n');
+	});
 });
 
 describe('the Sum row and the columns shown', () => {

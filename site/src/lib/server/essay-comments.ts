@@ -7,7 +7,7 @@
  * activity log in the same batch.
  */
 import type { D1Database } from '@cloudflare/workers-types/index.ts';
-import { eventStatement } from './events.ts';
+import { activityStatement } from './activity-log.ts';
 import { newIdentifier, now } from './identifiers.ts';
 import { askSentence, commentHelpers, isCommentAsk, isCommentHelper, type CommentAsk, type CommentAssignee, type CommentHelper, type EssayComment } from '../essays/comments.ts';
 import { essayPath, type EssayPart } from './essays.ts';
@@ -109,7 +109,7 @@ export async function assignThread(
 				 VALUES (?, ?, ?, ?, ?, ?)`
 			)
 			.bind(newIdentifier(), input.thread, person, helper, input.personIdentifier, now()),
-		eventStatement(database, {
+		activityStatement(database, {
 			personIdentifier: input.personIdentifier,
 			action: name ? `Assigned the comment on "${short}" to ${name}` : `Took back the assignment of the comment on "${short}"`,
 			targetKind: 'document',
@@ -179,7 +179,7 @@ export async function addComment(database: D1Database, input: NewComment): Promi
 			.map((person) =>
 				database.prepare('INSERT INTO essay_comment_mentions (comment_identifier, person_identifier) VALUES (?, ?)').bind(identifier, person)
 			),
-		eventStatement(database, {
+		activityStatement(database, {
 			personIdentifier: input.personIdentifier,
 			action: input.thread ? `Replied to a comment on "${short}"` : `Commented on "${short}"`,
 			targetKind: 'document',
@@ -212,7 +212,7 @@ export async function setThreadResolved(
 		database
 			.prepare('UPDATE essay_comments SET resolved_at = ?, resolved_by = ? WHERE identifier = ?')
 			.bind(input.resolved ? now() : null, input.resolved ? input.personIdentifier : null, input.thread),
-		eventStatement(database, {
+		activityStatement(database, {
 			personIdentifier: input.personIdentifier,
 			action: input.resolved ? `Marked the comment on "${short}" done` : `Reopened the comment on "${short}"`,
 			targetKind: 'document',

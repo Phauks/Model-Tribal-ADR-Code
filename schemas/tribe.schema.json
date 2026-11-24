@@ -54,6 +54,12 @@
   },
   "properties": {
     "id": { "$ref": "common.schema.json#/$defs/slug" },
+    "former_ids": {
+      "type": "array",
+      "uniqueItems": true,
+      "items": { "$ref": "common.schema.json#/$defs/slug" },
+      "description": "Ids of profiles merged into this one. Their old page addresses redirect here, so no live profile may use one."
+    },
     "entity_type": {
       "type": "string",
       "enum": ["native-nation", "native-hawaiian", "territorial-indigenous-people", "alaska-native-corporation"],

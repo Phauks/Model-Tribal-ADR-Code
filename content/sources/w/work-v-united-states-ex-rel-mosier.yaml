@@ -1,0 +1,137 @@
+key: work-v-united-states-ex-rel-mosier
+kind: federal-case
+citation:
+  type: legal_case
+  title: Work v. United States ex rel. Mosier
+  authority: Supreme Court of the United States
+  container-title: U.S.
+  volume: '261'
+  page: '352'
+  issued:
+    date-parts:
+    - - 1923
+      - 3
+      - 19
+  URL: https://www.loc.gov/item/usrep261352/
+  accessed:
+    date-parts:
+    - - 2026
+      - 11
+      - 24
+caption:
+  printed: WORK, SECRETARY OF THE INTERIOR, v. UNITED STATES EX REL. MOSIER ET AL
+  source: https://tile.loc.gov/storage-services/service/ll/usrep/usrep261/usrep261352/usrep261352.pdf
+  checked: '2026-11-24'
+opinions:
+  source: https://tile.loc.gov/storage-services/service/ll/usrep/usrep261/usrep261352/usrep261352.pdf
+  checked: '2026-11-24'
+  list:
+  - kind: majority
+    justice: William Howard Taft
+    page: 357
+original_link: https://www.loc.gov/item/usrep261352/
+retrieved: '2026-11-24'
+history:
+  status: live
+  last_checked: '2026-11-24'
+court_dates:
+  argued:
+  - '1922-04-20'
+  printed: Argued April 20, 1922; restored to docket for reargument May 29, 1922; reargued February 27, 28, 1923. Decided March 19, 1923.
+  source: https://tile.loc.gov/storage-services/service/ll/usrep/usrep261/usrep261352/usrep261352.pdf
+  checked: '2026-11-24'
+supreme_court:
+  court: Taft Court
+  natural_court: Taft Court (1923-1925)
+  decision_type: majority opinion
+  vote:
+    majority: 9
+    minority: 0
+  justices:
+  - name: William Howard Taft
+    vote: majority
+    opinion: majority
+  - name: Joseph McKenna
+    vote: majority
+  - name: Oliver Wendell Holmes
+    vote: majority
+  - name: Willis Van Devanter
+    vote: majority
+  - name: James Clark McReynolds
+    vote: majority
+  - name: Louis Dembitz Brandeis
+    vote: majority
+  - name: George Sutherland
+    vote: majority
+  - name: Pierce Butler
+    vote: majority
+  - name: Edward Terry Sanford
+    vote: majority
+  source: http://scdb.wustl.edu/_brickFiles/Legacy_07/SCDB_Legacy_07_justiceCentered_Citation.csv.zip
+  note: From the Supreme Court Database, case 1922-128; Oyez has no votes for this case.
+  checked: '2026-11-24'
+reading_links:
+  checked: '2026-11-24'
+  links:
+  - site: library-of-congress
+    label: Library of Congress
+    access: official
+    link: https://www.loc.gov/item/usrep261352/
+  - site: justia
+    label: Justia
+    access: free
+    link: https://supreme.justia.com/cases/federal/us/261/352/
+    unchecked: true
+  - site: google-scholar
+    label: Google Scholar
+    access: free
+    link: https://scholar.google.com/scholar?hl=en&as_sdt=2006&q=%22261%20U.S.%20352%22
+    unchecked: true
+  - site: westlaw
+    label: Westlaw
+    access: subscription
+    link: https://1.next.westlaw.com/Link/Document/FullText?findType=Y&cite=261%20U.S.%20352
+    unchecked: true
+  - site: lexis
+    label: Lexis
+    access: subscription
+    link: https://advance.lexis.com/api/search?q=261%20U.S.%20352
+    unchecked: true
+rights:
+  status: no-permission-needed
+  basis: us-government-work
+  basis_note: Opinions of federal courts are works of the U.S. government (17 U.S.C. § 105); the host site's own additions are not reproduced.
+  redistribution: true
+found_in:
+- 2026-11-24-supreme-court-native-cases
+notes: 'Full citation: 261 U.S. 352 (1923). Official report scan: https://tile.loc.gov/storage-services/service/ll/usrep/usrep261/usrep261352/usrep261352.pdf. Written by scripts/caselaw/supreme_court_native_cases.py from the Supreme Court Database (case 1922-128), the Caselaw Access Project''s text of the report and the Library of Congress scan; not yet read by a person.'
+tribes: []
+nations_in_case:
+  checked: '2026-11-24'
+  named: []
+review:
+  status: verified
+  by: scripts/caselaw/supreme_court_native_cases.py
+  date: '2026-11-24'
+  checks:
+  - check: cite
+    result: agree
+    detail: Caselaw Access Project 261 U.S. 352 "Work v. United States ex rel. Mosier"; Database 261 U.S. 352 "WORK, SECRETARY OF THE INTERIOR, v. UNITED STATES EX REL. MOSIER et al."
+  - check: scan
+    result: agree
+    detail: Scan has 12 pages; the report runs 352 to 363
+  - check: caption
+    result: agree
+    detail: Caption found in the scan's text at 1.00
+  - check: printed dates
+    result: agree
+    detail: Caselaw Access Project "Argued April 20, 1922; restored to docket for reargument May 29, 1922; reargued February 27, 28, 1923. Decided March 19, 1923."; scan "Argued April 20, 1922; restored to docket for rea'rgument May 29, 1922; reargued February 27, 28, 1923.-Decided March 19, 1923."
+  - check: decided
+    result: agree
+    detail: 'Printed and Database: 1923-03-19'
+  - check: opinions
+    result: agree
+    detail: 'Report: majority Taft p. 357; Database writers: Taft'
+  - check: bench
+    result: agree
+    detail: No Oyez votes; each opinion writer in the report sits on the Database's bench on the side the opinion takes

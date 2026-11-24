@@ -12,10 +12,22 @@
 	} from '#lib/address-book.ts';
 	import type { PageProps } from './$types';
 	import DateField from '#lib/components/DateField.svelte';
+	import Dropdown from '#lib/components/Dropdown.svelte';
+	import SearchableDropdown from '#lib/components/SearchableDropdown.svelte';
 	import { mediumDateAndTime } from '#lib/readable-date.ts';
 
 	let { data, form }: PageProps = $props();
 	const contact = $derived(data.contact);
+
+	const statusChoices = Object.entries(methodStatusNames).map(([value, name]) => ({ value, label: name }));
+	const labelChoices = methodLabels.map((label) => ({ value: label as string, label: methodLabelNames[label] }));
+	const sourceKindChoices = sourceKinds.map((kind) => ({ value: kind as string, label: sourceKindNames[kind] }));
+	const methodChoices = contactMethods.map((kind) => ({ value: kind as string, label: kind === 'email' ? 'Email' : 'Phone' }));
+	const organizationChoices = $derived([
+		{ value: '', label: 'None' },
+		...data.organizations.map((organization) => ({ value: organization.identifier, label: organization.name }))
+	]);
+	const nationChoices = $derived([{ value: '', label: 'None' }, ...data.nations.map((nation) => ({ value: nation.identifier, label: nation.title }))]);
 
 </script>
 
@@ -104,12 +116,7 @@
 			<form method="post" action="?/status">
 				<input type="hidden" name="method" value={method.identifier} />
 				<div class="field">
-					<label for="status-{method.identifier}">Status</label>
-					<select id="status-{method.identifier}" name="status">
-						{#each Object.entries(methodStatusNames) as [value, name] (value)}
-							<option {value} selected={value === method.status}>{name}</option>
-						{/each}
-					</select>
+					<Dropdown label="Status" id="status-{method.identifier}" name="status" choices={statusChoices} value={method.status} />
 				</div>
 				<div class="field">
 					<label for="status-note-{method.identifier}">Why (added to the note)</label>
@@ -127,20 +134,10 @@
 					<input id="value-{method.identifier}" name="value" type="text" value={method.value} required />
 				</div>
 				<div class="field">
-					<label for="label-{method.identifier}">Kind</label>
-					<select id="label-{method.identifier}" name="label">
-						{#each methodLabels as label (label)}
-							<option value={label} selected={label === method.label}>{methodLabelNames[label]}</option>
-						{/each}
-					</select>
+					<Dropdown label="Kind" id="label-{method.identifier}" name="label" choices={labelChoices} value={method.label} />
 				</div>
 				<div class="field">
-					<label for="source-kind-{method.identifier}">Where it was found</label>
-					<select id="source-kind-{method.identifier}" name="sourceKind">
-						{#each sourceKinds as kind (kind)}
-							<option value={kind} selected={kind === method.sourceKind}>{sourceKindNames[kind]}</option>
-						{/each}
-					</select>
+					<Dropdown label="Where it was found" id="source-kind-{method.identifier}" name="sourceKind" choices={sourceKindChoices} value={method.sourceKind} />
 				</div>
 				<div class="field">
 					<label for="source-label-{method.identifier}">Source, in words</label>
@@ -172,34 +169,17 @@
 	<summary>Add an email or phone</summary>
 	<form method="post" action="?/addMethod">
 		<div class="field">
-			<label for="new-kind">Email or phone</label>
-			<select id="new-kind" name="kind">
-				{#each contactMethods as kind (kind)}
-					<option value={kind}>{kind === 'email' ? 'Email' : 'Phone'}</option>
-				{/each}
-			</select>
+			<Dropdown label="Email or phone" id="new-kind" name="kind" choices={methodChoices} value={contactMethods[0]} />
 		</div>
 		<div class="field">
 			<label for="new-value">Address or number</label>
 			<input id="new-value" name="value" type="text" required />
 		</div>
 		<div class="field">
-			<label for="new-label">Kind</label>
-			<select id="new-label" name="label">
-				{#each methodLabels as label (label)}
-					<option value={label} selected={label === (contact.kind === 'organization' ? 'general-office' : 'work')}
-						>{methodLabelNames[label]}</option
-					>
-				{/each}
-			</select>
+			<Dropdown label="Kind" id="new-label" name="label" choices={labelChoices} value={contact.kind === 'organization' ? 'general-office' : 'work'} />
 		</div>
 		<div class="field">
-			<label for="new-source-kind">Where it was found</label>
-			<select id="new-source-kind" name="sourceKind">
-				{#each sourceKinds as kind (kind)}
-					<option value={kind} selected={kind === 'told-us'}>{sourceKindNames[kind]}</option>
-				{/each}
-			</select>
+			<Dropdown label="Where it was found" id="new-source-kind" name="sourceKind" choices={sourceKindChoices} value="told-us" />
 		</div>
 		<div class="field">
 			<label for="new-source-label">Source, in words</label>
@@ -240,24 +220,16 @@
 			<input id="role" name="role" type="text" value={contact.role ?? ''} maxlength="300" />
 		</div>
 		<div class="field">
-			<label for="organization">Acts for</label>
-			<select id="organization" name="organizationIdentifier">
-				<option value="">None</option>
-				{#each data.organizations as organization (organization.identifier)}
-					<option value={organization.identifier} selected={organization.identifier === contact.organizationIdentifier}
-						>{organization.name}</option
-					>
-				{/each}
-			</select>
+			<SearchableDropdown
+				label="Acts for"
+				id="organization"
+				name="organizationIdentifier"
+				choices={organizationChoices}
+				value={contact.organizationIdentifier ?? ''}
+			/>
 		</div>
 		<div class="field">
-			<label for="nation">Nation</label>
-			<select id="nation" name="nationIdentifier">
-				<option value="">None</option>
-				{#each data.nations as nation (nation.identifier)}
-					<option value={nation.identifier} selected={nation.identifier === contact.nationIdentifier}>{nation.title}</option>
-				{/each}
-			</select>
+			<SearchableDropdown label="Nation" id="nation" name="nationIdentifier" choices={nationChoices} value={contact.nationIdentifier ?? ''} />
 		</div>
 		<div class="field">
 			<label for="tags">Tags (separated by commas)</label>

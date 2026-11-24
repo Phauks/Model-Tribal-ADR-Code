@@ -6,7 +6,7 @@
  */
 import type { D1Database } from '@cloudflare/workers-types/index.ts';
 import { atLeast, documentAccess, everyDocument, type AccessGrant, type AccessLevel, type AccessSource, type Role } from '../permissions.ts';
-import { eventStatement } from './events.ts';
+import { activityStatement } from './activity-log.ts';
 import { newIdentifier, now } from './identifiers.ts';
 import type { Reviewer, ReviewRequest } from '../essays/review-requests.ts';
 import { essayPath, type EssayPart } from './essays.ts';
@@ -199,7 +199,7 @@ export async function requestReview(database: D1Database, input: NewReviewReques
 				.prepare('INSERT INTO essay_review_reviewers (request_identifier, person_identifier) VALUES (?, ?)')
 				.bind(identifier, person)
 		),
-		eventStatement(database, {
+		activityStatement(database, {
 			personIdentifier: input.requestedBy,
 			action: `Asked ${reviewers.length === 1 ? 'one person' : `${reviewers.length} people`} to review ${what}`,
 			targetKind: 'document',
@@ -244,7 +244,7 @@ export async function finishReview(database: D1Database, input: { essay: string;
 		...(last
 			? [database.prepare('UPDATE essay_review_requests SET closed_at = ?, closed_by = ? WHERE identifier = ?').bind(time, input.person, request.identifier)]
 			: []),
-		eventStatement(database, {
+		activityStatement(database, {
 			personIdentifier: input.person,
 			action: `Finished reviewing ${describe(request)}`,
 			targetKind: 'document',
@@ -268,7 +268,7 @@ export async function closeReviewRequest(
 	if (request.closedAt !== null) return true;
 	await database.batch([
 		database.prepare('UPDATE essay_review_requests SET closed_at = ?, closed_by = ? WHERE identifier = ?').bind(now(), input.person, request.identifier),
-		eventStatement(database, {
+		activityStatement(database, {
 			personIdentifier: input.person,
 			action: `Closed the request to review ${describe(request)}`,
 			targetKind: 'document',

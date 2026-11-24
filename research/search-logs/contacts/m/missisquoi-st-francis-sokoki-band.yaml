@@ -27,3 +27,12 @@ searches:
   query: official website, contact page, general email
   outcome: found
   reason: Claude found the site by web search; a script opened it and found each value on the page named.
+- date: '2026-11-22'
+  searched_by: Claude (AI assistant)
+  method: ai-review
+  place_kind: web-search
+  address: WebSearch
+  query: St. Francis/Sokoki Band of Abenakis of Vermont Abenaki Tribal Council official website contact
+  outcome: not-found
+  reason: Results were NARF, Wikipedia and BIA decision pages; no own site surfaced. (Searched for the
+    profile st-francis-sokoki-band-of-abenakis-of-vermont, merged into this one on 2026-11-24.)

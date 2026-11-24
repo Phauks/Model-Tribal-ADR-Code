@@ -1,5 +1,7 @@
 <script lang="ts">
-	import { keyboardScroll } from '#lib/keyboard-scroll.ts';
+	import DataTable from '#lib/components/DataTable.svelte';
+	import Dropdown from '#lib/components/Dropdown.svelte';
+	import type { TableColumn, TableRow } from '#lib/tables/table-definition.ts';
 	import type { PageProps } from './$types';
 	import { mediumDateAndTime } from '#lib/readable-date.ts';
 
@@ -19,6 +21,30 @@
 		'missing-entry': 'is missing',
 		'missing-seal': 'has lost its seal'
 	};
+
+	const kindChoices = [{ value: '', label: 'Everything' }, ...Object.entries(kindLabels).map(([value, label]) => ({ value, label }))];
+	const personChoices = $derived([{ value: '', label: 'Anyone' }, ...data.people.map((listed) => ({ value: listed.identifier, label: listed.displayName }))]);
+
+	const columns: TableColumn[] = [
+		{ key: 'entry', header: 'Entry', type: 'number', sortable: true },
+		{ key: 'when', header: 'When', type: 'date', sortable: true },
+		{ key: 'who', header: 'Who', sortable: true, searchable: true },
+		{ key: 'what', header: 'What', searchable: true, custom: true },
+		{ key: 'about', header: 'About', sortable: true, searchable: true, custom: true }
+	];
+	const entries = $derived(new Map(data.entries.map((entry) => [String(entry.sequence), entry])));
+	const rows: TableRow[] = $derived(
+		data.entries.map((entry) => ({
+			key: String(entry.sequence),
+			cells: {
+				entry: { text: String(entry.sequence), sortValue: entry.sequence },
+				when: { text: mediumDateAndTime(entry.createdAt), sortValue: entry.createdAt },
+				who: { text: entry.actorName ?? 'The site or a requester' },
+				what: { text: [entry.action, entry.note].filter(Boolean).join(' ') },
+				about: { text: `${kindLabels[entry.targetKind] ?? entry.targetKind} ${entry.targetName ?? entry.targetIdentifier}` }
+			}
+		}))
+	);
 
 	function olderLink(sequence: number): string {
 		const search = new URLSearchParams();
@@ -66,22 +92,10 @@
 
 <form method="get" class="filters">
 	<div class="field">
-		<label for="activity-kind">About</label>
-		<select id="activity-kind" name="kind">
-			<option value="">Everything</option>
-			{#each Object.entries(kindLabels) as [value, label] (value)}
-				<option {value} selected={value === data.targetKind}>{label}</option>
-			{/each}
-		</select>
+		<Dropdown label="About" id="activity-kind" name="kind" choices={kindChoices} value={data.targetKind ?? ''} />
 	</div>
 	<div class="field">
-		<label for="activity-person">Person</label>
-		<select id="activity-person" name="person">
-			<option value="">Anyone</option>
-			{#each data.people as listed (listed.identifier)}
-				<option value={listed.identifier} selected={listed.identifier === data.personIdentifier}>{listed.displayName}</option>
-			{/each}
-		</select>
+		<Dropdown label="Person" id="activity-person" name="person" choices={personChoices} value={data.personIdentifier ?? ''} />
 	</div>
 	<button class="button button-quiet" type="submit">Show</button>
 </form>
@@ -89,36 +103,27 @@
 {#if data.entries.length === 0}
 	<p>Nothing recorded{data.targetKind || data.personIdentifier ? ' that matches' : ' yet'}.</p>
 {:else}
-	<div class="table-scroll" role="region" aria-label="Table: activity" {@attach keyboardScroll}>
-		<table>
-			<thead>
-				<tr>
-					<th scope="col">Entry</th>
-					<th scope="col">When</th>
-					<th scope="col">Who</th>
-					<th scope="col">What</th>
-					<th scope="col">About</th>
-				</tr>
-			</thead>
-			<tbody>
-				{#each data.entries as entry (entry.sequence)}
-					<tr class:refused={entry.action.startsWith('Refused')}>
-						<td>{entry.sequence}</td>
-						<td>{mediumDateAndTime(entry.createdAt)}</td>
-						<td>{entry.actorName ?? 'The site or a requester'}</td>
-						<td>
-							{entry.action}
-							{#if entry.note}<div class="small">{entry.note}</div>{/if}
-						</td>
-						<td>
-							{kindLabels[entry.targetKind] ?? entry.targetKind}
-							<div class="small muted">{entry.targetName ?? entry.targetIdentifier}</div>
-						</td>
-					</tr>
-				{/each}
-			</tbody>
-		</table>
-	</div>
+	<DataTable
+		identifier="activity"
+		label="Table: activity"
+		{columns}
+		{rows}
+		defaultSort={{ key: 'entry', direction: 'descending' }}
+		rowName={['entry', 'entries']}
+		download="activity-log"
+	>
+		{#snippet cell(row, column)}
+			{@const entry = entries.get(row.key)}
+			{#if entry && column.key === 'what'}
+				<!-- A refused attempt stands out in bold. -->
+				<span class:refused={entry.action.startsWith('Refused')}>{entry.action}</span>
+				{#if entry.note}<div class="small">{entry.note}</div>{/if}
+			{:else if entry}
+				{kindLabels[entry.targetKind] ?? entry.targetKind}
+				<div class="small muted">{entry.targetName ?? entry.targetIdentifier}</div>
+			{/if}
+		{/snippet}
+	</DataTable>
 	{#if data.older}
 		<p><a href={olderLink(data.older)}>Older entries</a></p>
 	{/if}
@@ -132,11 +137,16 @@
 		gap: var(--space-3);
 	}
 
+	/* Level with the dropdowns, which keep a field's space below them. */
+	.filters .button {
+		margin-bottom: var(--space-4);
+	}
+
 	.seal {
 		overflow-wrap: anywhere;
 	}
 
-	tr.refused td {
+	.refused {
 		font-weight: var(--font-weight-semibold);
 	}
 </style>

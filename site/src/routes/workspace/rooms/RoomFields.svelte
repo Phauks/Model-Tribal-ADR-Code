@@ -1,5 +1,6 @@
 <script lang="ts">
 	// The fields of a room of its own in the workspace (src/routes/workspace/rooms/room-form.ts).
+	import Dropdown from '#lib/components/Dropdown.svelte';
 	import { eventTimeZones } from '#lib/event-calendar.ts';
 	import {
 		longestRoomHours,
@@ -15,6 +16,7 @@
 	let { values, invalid, problem }: { values: RoomFormValues; invalid?: string; problem?: string } = $props();
 
 	const bad = (name: string) => (invalid === name ? 'true' : undefined);
+	const zoneChoices = eventTimeZones.map((entry) => ({ value: entry.zone as string, label: entry.label }));
 </script>
 
 {#snippet error(name: string)}
@@ -65,13 +67,17 @@
 <fieldset class="group">
 	<legend>When</legend>
 	<div class="field">
-		<label for="time-zone">Time zone</label>
-		{@render error('timeZone')}
-		<select id="time-zone" name="time-zone" aria-invalid={bad('timeZone')}>
-			{#each eventTimeZones as entry (entry.zone)}
-				<option value={entry.zone} selected={values.timeZone === entry.zone}>{entry.label}</option>
-			{/each}
-		</select>
+		<Dropdown
+			label="Time zone"
+			id="time-zone"
+			name="time-zone"
+			choices={zoneChoices}
+			value={values.timeZone}
+			invalid={Boolean(bad('timeZone'))}
+			describedBy={invalid === 'timeZone' && problem ? 'timeZone-error' : undefined}
+		>
+			{#snippet message()}{@render error('timeZone')}{/snippet}
+		</Dropdown>
 	</div>
 	{@render error('startDate')}
 	<div class="pair">

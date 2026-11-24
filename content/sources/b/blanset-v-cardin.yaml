@@ -1,0 +1,137 @@
+key: blanset-v-cardin
+kind: federal-case
+citation:
+  type: legal_case
+  title: Blanset v. Cardin
+  authority: Supreme Court of the United States
+  container-title: U.S.
+  volume: '256'
+  page: '319'
+  issued:
+    date-parts:
+    - - 1921
+      - 5
+      - 16
+  URL: https://www.loc.gov/item/usrep256319/
+  accessed:
+    date-parts:
+    - - 2026
+      - 11
+      - 24
+caption:
+  printed: BLANSET v. CARDIN, AS GUARDIAN OF DAYLIGHT, A MINOR, ET AL
+  source: https://tile.loc.gov/storage-services/service/ll/usrep/usrep256/usrep256319/usrep256319.pdf
+  checked: '2026-11-24'
+opinions:
+  source: https://tile.loc.gov/storage-services/service/ll/usrep/usrep256/usrep256319/usrep256319.pdf
+  checked: '2026-11-24'
+  list:
+  - kind: majority
+    justice: Joseph McKenna
+    page: 320
+original_link: https://www.loc.gov/item/usrep256319/
+retrieved: '2026-11-24'
+history:
+  status: live
+  last_checked: '2026-11-24'
+court_dates:
+  argued:
+  - '1921-04-20'
+  printed: Argued April 20, 1921. Decided May 16, 1921.
+  source: https://tile.loc.gov/storage-services/service/ll/usrep/usrep256/usrep256319/usrep256319.pdf
+  checked: '2026-11-24'
+supreme_court:
+  court: White Court
+  natural_court: White Court (1916-1921)
+  decision_type: majority opinion
+  vote:
+    majority: 9
+    minority: 0
+  justices:
+  - name: Edward Douglass White
+    vote: majority
+  - name: Joseph McKenna
+    vote: majority
+    opinion: majority
+  - name: Oliver Wendell Holmes
+    vote: majority
+  - name: William Rufus Day
+    vote: majority
+  - name: Willis Van Devanter
+    vote: majority
+  - name: Mahlon Pitney
+    vote: majority
+  - name: James Clark McReynolds
+    vote: majority
+  - name: Louis Dembitz Brandeis
+    vote: majority
+  - name: John Hessin Clarke
+    vote: majority
+  source: http://scdb.wustl.edu/_brickFiles/Legacy_07/SCDB_Legacy_07_justiceCentered_Citation.csv.zip
+  note: From the Supreme Court Database, case 1920-091; Oyez has no votes for this case.
+  checked: '2026-11-24'
+reading_links:
+  checked: '2026-11-24'
+  links:
+  - site: library-of-congress
+    label: Library of Congress
+    access: official
+    link: https://www.loc.gov/item/usrep256319/
+  - site: justia
+    label: Justia
+    access: free
+    link: https://supreme.justia.com/cases/federal/us/256/319/
+    unchecked: true
+  - site: google-scholar
+    label: Google Scholar
+    access: free
+    link: https://scholar.google.com/scholar?hl=en&as_sdt=2006&q=%22256%20U.S.%20319%22
+    unchecked: true
+  - site: westlaw
+    label: Westlaw
+    access: subscription
+    link: https://1.next.westlaw.com/Link/Document/FullText?findType=Y&cite=256%20U.S.%20319
+    unchecked: true
+  - site: lexis
+    label: Lexis
+    access: subscription
+    link: https://advance.lexis.com/api/search?q=256%20U.S.%20319
+    unchecked: true
+rights:
+  status: no-permission-needed
+  basis: us-government-work
+  basis_note: Opinions of federal courts are works of the U.S. government (17 U.S.C. § 105); the host site's own additions are not reproduced.
+  redistribution: true
+found_in:
+- 2026-11-24-supreme-court-native-cases
+notes: 'Full citation: 256 U.S. 319 (1921). Official report scan: https://tile.loc.gov/storage-services/service/ll/usrep/usrep256/usrep256319/usrep256319.pdf. Written by scripts/caselaw/supreme_court_native_cases.py from the Supreme Court Database (case 1920-091), the Caselaw Access Project''s text of the report and the Library of Congress scan; not yet read by a person.'
+tribes: []
+nations_in_case:
+  checked: '2026-11-24'
+  named: []
+review:
+  status: verified
+  by: scripts/caselaw/supreme_court_native_cases.py
+  date: '2026-11-24'
+  checks:
+  - check: cite
+    result: agree
+    detail: Caselaw Access Project 256 U.S. 319 "Blanset v. Cardin"; Database 256 U.S. 319 "BLANSET v. CARDIN, AS GUARDIAN OF DAY-LIGHT, A MINOR, et al."
+  - check: scan
+    result: agree
+    detail: Scan has 9 pages; the report runs 319 to 327
+  - check: caption
+    result: agree
+    detail: Caption found in the scan's text at 1.00
+  - check: printed dates
+    result: agree
+    detail: Caselaw Access Project "Argued April 20, 1921. Decided May 16, 1921."; scan "Argued April 20, 1921.-Decided May 16, 1921."
+  - check: decided
+    result: agree
+    detail: 'Printed and Database: 1921-05-16'
+  - check: opinions
+    result: agree
+    detail: 'Report: majority Mckenna p. 320; Database writers: Mckenna'
+  - check: bench
+    result: agree
+    detail: No Oyez votes; each opinion writer in the report sits on the Database's bench on the side the opinion takes

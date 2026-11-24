@@ -37,10 +37,14 @@ describe('legal help for a nation', () => {
 		});
 	});
 
-	it('leaves out records that wait to be classified', () => {
-		const groups = legalHelpFor('poarch-band-of-creek-indians', new SourceUses((key) => key));
-		const names = groups.flatMap((group) => group.items.map((item) => item.text));
-		expect(names.some((name) => /Poarch Band/.test(name))).toBe(false);
+	it('shows a record once it is classified, and leaves out law school clinics', () => {
+		const poarch = legalHelpFor('poarch-band-of-creek-indians', new SourceUses((key) => key));
+		expect(poarch.flatMap((group) => group.items.map((item) => item.text))).toContain(
+			'Legal Services Alabama, Poarch Band of Creek Indians partnership'
+		);
+		const pascuaYaqui = legalHelpFor('pascua-yaqui-tribe-of-arizona', new SourceUses((key) => key));
+		const names = pascuaYaqui.flatMap((group) => group.items.map((item) => item.text));
+		expect(names.some((name) => /Tribal Justice Clinic/.test(name))).toBe(false);
 	});
 
 	it('cites a provider record’s source with its publisher, title and link', () => {

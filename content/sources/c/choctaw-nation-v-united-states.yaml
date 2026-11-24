@@ -1,0 +1,146 @@
+key: choctaw-nation-v-united-states
+kind: federal-case
+citation:
+  type: legal_case
+  title: Choctaw Nation v. United States
+  authority: Supreme Court of the United States
+  container-title: U.S.
+  volume: '119'
+  page: '1'
+  issued:
+    date-parts:
+    - - 1886
+      - 11
+      - 15
+  URL: https://www.loc.gov/item/usrep119001/
+  accessed:
+    date-parts:
+    - - 2026
+      - 11
+      - 24
+caption:
+  printed: CHOCTAW NATION v. UNITED STATES; UNITED STATES v. CHOCTAW NATION
+  source: https://tile.loc.gov/storage-services/service/ll/usrep/usrep119/usrep119001/usrep119001.pdf
+  checked: '2026-11-24'
+opinions:
+  source: https://tile.loc.gov/storage-services/service/ll/usrep/usrep119/usrep119001/usrep119001.pdf
+  checked: '2026-11-24'
+  list:
+  - kind: majority
+    justice: Stanley Matthews
+    page: 25
+  - kind: dissent
+    justice: Morrison Remick Waite
+    page: 41
+original_link: https://www.loc.gov/item/usrep119001/
+retrieved: '2026-11-24'
+history:
+  status: live
+  last_checked: '2026-11-24'
+court_dates:
+  argued:
+  - '1886-10-19'
+  - '1886-10-20'
+  - '1886-10-21'
+  printed: Argued October 19, 20, 21, 1886. Decided November 15, 1886.
+  source: https://tile.loc.gov/storage-services/service/ll/usrep/usrep119/usrep119001/usrep119001.pdf
+  checked: '2026-11-24'
+supreme_court:
+  court: Waite Court
+  natural_court: Waite Court (1882-1887)
+  decision_type: majority opinion
+  vote:
+    majority: 7
+    minority: 1
+  justices:
+  - name: Morrison Remick Waite
+    vote: minority
+    opinion: dissent
+  - name: Samuel Freeman Miller
+    vote: majority
+  - name: Stephen Johnson Field
+    vote: majority
+  - name: Joseph P. Bradley
+    vote: majority
+  - name: John Marshall Harlan
+    vote: majority
+  - name: William Burnham Woods
+    vote: not recorded
+  - name: Stanley Matthews
+    vote: majority
+    opinion: majority
+  - name: Horace Gray
+    vote: majority
+  - name: Samuel Blatchford
+    vote: majority
+  source: http://scdb.wustl.edu/_brickFiles/Legacy_07/SCDB_Legacy_07_justiceCentered_Citation.csv.zip
+  note: From the Supreme Court Database, case 1886-014; Oyez has no votes for this case.
+  checked: '2026-11-24'
+reading_links:
+  checked: '2026-11-24'
+  links:
+  - site: library-of-congress
+    label: Library of Congress
+    access: official
+    link: https://www.loc.gov/item/usrep119001/
+  - site: justia
+    label: Justia
+    access: free
+    link: https://supreme.justia.com/cases/federal/us/119/1/
+    unchecked: true
+  - site: google-scholar
+    label: Google Scholar
+    access: free
+    link: https://scholar.google.com/scholar?hl=en&as_sdt=2006&q=%22119%20U.S.%201%22
+    unchecked: true
+  - site: westlaw
+    label: Westlaw
+    access: subscription
+    link: https://1.next.westlaw.com/Link/Document/FullText?findType=Y&cite=119%20U.S.%201
+    unchecked: true
+  - site: lexis
+    label: Lexis
+    access: subscription
+    link: https://advance.lexis.com/api/search?q=119%20U.S.%201
+    unchecked: true
+rights:
+  status: no-permission-needed
+  basis: us-government-work
+  basis_note: Opinions of federal courts are works of the U.S. government (17 U.S.C. § 105); the host site's own additions are not reproduced.
+  redistribution: true
+found_in:
+- 2026-11-24-supreme-court-native-cases
+notes: 'Full citation: 119 U.S. 1 (1886). Official report scan: https://tile.loc.gov/storage-services/service/ll/usrep/usrep119/usrep119001/usrep119001.pdf. Written by scripts/caselaw/supreme_court_native_cases.py from the Supreme Court Database (case 1886-014), the Caselaw Access Project''s text of the report and the Library of Congress scan; not yet read by a person.'
+tribes: []
+nations_in_case:
+  checked: '2026-11-24'
+  named: []
+  not_linked:
+  - named_as: Choctaw Nation
+    reason: More than one of today's nations shares this name (bayou-lafourche-band-of-biloxi-chitimacha-choctaw, callattakapa-choctaw-tribe, cherokee-choctaw-nation-of-st-francis-and-black-rivers, choctaw-allen-tribe, choctaw-apache-tribe-of-ebarb, choctaw-nation-of-florida and 9 more); which the case concerns has not been checked.
+review:
+  status: verified
+  by: scripts/caselaw/supreme_court_native_cases.py
+  date: '2026-11-24'
+  checks:
+  - check: cite
+    result: agree
+    detail: Caselaw Access Project 119 U.S. 1 "Choctaw Nation v. United States"; Database 119 U.S. 1 "CHOCTAW NATION v. UNITED STATES"
+  - check: scan
+    result: agree
+    detail: Scan has 44 pages; the report runs 1 to 44
+  - check: caption
+    result: agree
+    detail: Caption found in the scan's text at 1.00
+  - check: printed dates
+    result: agree
+    detail: Caselaw Access Project "Argued October 19, 20, 21, 1886. Decided November 15, 1886."; scan "not found"
+  - check: decided
+    result: agree
+    detail: 'Printed and Database: 1886-11-15'
+  - check: opinions
+    result: agree
+    detail: 'Report: majority Matthews p. 25, dissent Waite p. 41; Database writers: Matthews, Waite'
+  - check: bench
+    result: agree
+    detail: No Oyez votes; each opinion writer in the report sits on the Database's bench on the side the opinion takes

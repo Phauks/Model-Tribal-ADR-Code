@@ -130,21 +130,26 @@ def save_capture(link: str):
 
 
 def save_with_retry(link: str):
-    """Ask Save Page Now once; when it refuses or says too many requests, pause before the next record.
+    """Ask Save Page Now once; when it says too many requests or refuses the connection, pause before the next record.
 
-    The service refuses connections or answers 429 when it is busy. Trying the
-    same record again at once rarely works and doubles the wait, so the record
-    is left for a later run instead."""
+    Trying the same record again at once rarely works and doubles the wait, so
+    a failed record is left for a later run instead. Only a 429 or a refused
+    connection means the service wants us to slow down. A timeout or a 5xx
+    answer is about that one page (the save already waited up to
+    SAVE_TIMEOUT), so the next record follows after the usual
+    SECONDS_BETWEEN_SAVES."""
     try:
         return save_capture(link)
     except RedirectedCapture:
         raise
     except urllib.error.HTTPError as error:
-        if error.code == 429 or error.code >= 500:
+        if error.code == 429:
             time.sleep(SECONDS_BEFORE_RETRY)
         raise
-    except OSError:
-        time.sleep(SECONDS_BEFORE_RETRY)
+    except OSError as error:
+        reason = getattr(error, "reason", error)
+        if isinstance(reason, ConnectionRefusedError):
+            time.sleep(SECONDS_BEFORE_RETRY)
         raise
 
 

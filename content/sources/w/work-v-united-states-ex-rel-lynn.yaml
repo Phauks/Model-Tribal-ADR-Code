@@ -1,0 +1,138 @@
+key: work-v-united-states-ex-rel-lynn
+kind: federal-case
+citation:
+  type: legal_case
+  title: Work v. United States ex rel. Lynn
+  authority: Supreme Court of the United States
+  container-title: U.S.
+  volume: '266'
+  page: '161'
+  issued:
+    date-parts:
+    - - 1924
+      - 11
+      - 17
+  URL: https://www.loc.gov/item/usrep266161/
+  accessed:
+    date-parts:
+    - - 2026
+      - 11
+      - 24
+caption:
+  printed: WORK, SECRETARY OF THE INTERIOR, v. UNITED STATES EX REL. LYNN, GUARDIAN OF LASLEY, AN INCOMPETENT OSAGE INDIAN ALLOTTEE
+  source: https://tile.loc.gov/storage-services/service/ll/usrep/usrep266/usrep266161/usrep266161.pdf
+  checked: '2026-11-24'
+opinions:
+  source: https://tile.loc.gov/storage-services/service/ll/usrep/usrep266/usrep266161/usrep266161.pdf
+  checked: '2026-11-24'
+  list:
+  - kind: majority
+    justice: Willis Van Devanter
+    page: 162
+original_link: https://www.loc.gov/item/usrep266161/
+retrieved: '2026-11-24'
+history:
+  status: live
+  last_checked: '2026-11-24'
+court_dates:
+  argued:
+  - '1924-01-16'
+  - '1924-01-17'
+  printed: Argued January 16, 17, 1924. Decided November 17, 1924.
+  source: https://tile.loc.gov/storage-services/service/ll/usrep/usrep266/usrep266161/usrep266161.pdf
+  checked: '2026-11-24'
+supreme_court:
+  court: Taft Court
+  natural_court: Taft Court (1923-1925)
+  decision_type: majority opinion
+  vote:
+    majority: 9
+    minority: 0
+  justices:
+  - name: William Howard Taft
+    vote: majority
+  - name: Joseph McKenna
+    vote: majority
+  - name: Oliver Wendell Holmes
+    vote: majority
+  - name: Willis Van Devanter
+    vote: majority
+    opinion: majority
+  - name: James Clark McReynolds
+    vote: majority
+  - name: Louis Dembitz Brandeis
+    vote: majority
+  - name: George Sutherland
+    vote: majority
+  - name: Pierce Butler
+    vote: majority
+  - name: Edward Terry Sanford
+    vote: majority
+  source: http://scdb.wustl.edu/_brickFiles/Legacy_07/SCDB_Legacy_07_justiceCentered_Citation.csv.zip
+  note: From the Supreme Court Database, case 1924-002; Oyez has no votes for this case.
+  checked: '2026-11-24'
+reading_links:
+  checked: '2026-11-24'
+  links:
+  - site: library-of-congress
+    label: Library of Congress
+    access: official
+    link: https://www.loc.gov/item/usrep266161/
+  - site: justia
+    label: Justia
+    access: free
+    link: https://supreme.justia.com/cases/federal/us/266/161/
+    unchecked: true
+  - site: google-scholar
+    label: Google Scholar
+    access: free
+    link: https://scholar.google.com/scholar?hl=en&as_sdt=2006&q=%22266%20U.S.%20161%22
+    unchecked: true
+  - site: westlaw
+    label: Westlaw
+    access: subscription
+    link: https://1.next.westlaw.com/Link/Document/FullText?findType=Y&cite=266%20U.S.%20161
+    unchecked: true
+  - site: lexis
+    label: Lexis
+    access: subscription
+    link: https://advance.lexis.com/api/search?q=266%20U.S.%20161
+    unchecked: true
+rights:
+  status: no-permission-needed
+  basis: us-government-work
+  basis_note: Opinions of federal courts are works of the U.S. government (17 U.S.C. § 105); the host site's own additions are not reproduced.
+  redistribution: true
+found_in:
+- 2026-11-24-supreme-court-native-cases
+notes: 'Full citation: 266 U.S. 161 (1924). Official report scan: https://tile.loc.gov/storage-services/service/ll/usrep/usrep266/usrep266161/usrep266161.pdf. Written by scripts/caselaw/supreme_court_native_cases.py from the Supreme Court Database (case 1924-002), the Caselaw Access Project''s text of the report and the Library of Congress scan; not yet read by a person.'
+tribes: []
+nations_in_case:
+  checked: '2026-11-24'
+  named: []
+review:
+  status: verified
+  by: scripts/caselaw/supreme_court_native_cases.py
+  date: '2026-11-24'
+  checks:
+  - check: cite
+    result: agree
+    detail: Caselaw Access Project 266 U.S. 161 "Work v. United States ex rel. Lynn"; Database 266 U.S. 161 "WORK, SECRETARY OF THE INTERIOR, v. UNITED STATES ex rel. LYNN, GUARDIAN OF LASLEY, AN INCOMPETENT OSAGE INDIAN ALLOTTEE"
+  - check: scan
+    result: agree
+    detail: Scan has 11 pages; the report runs 161 to 171
+  - check: caption
+    result: agree
+    detail: Caption found in the scan's text at 1.00
+  - check: printed dates
+    result: agree
+    detail: Caselaw Access Project "Argued January 16, 17, 1924. Decided November 17, 1924."; scan "Argued January 16, 17, 1924.-Decided November 17, 1924."
+  - check: decided
+    result: agree
+    detail: 'Printed and Database: 1924-11-17'
+  - check: opinions
+    result: agree
+    detail: 'Report: majority Devanter p. 162; Database writers: Devanter'
+  - check: bench
+    result: agree
+    detail: No Oyez votes; each opinion writer in the report sits on the Database's bench on the side the opinion takes

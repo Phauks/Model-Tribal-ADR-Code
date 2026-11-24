@@ -1,0 +1,137 @@
+key: fellows-v-blacksmith
+kind: federal-case
+citation:
+  type: legal_case
+  title: Fellows v. Blacksmith
+  authority: Supreme Court of the United States
+  container-title: U.S.
+  volume: '60'
+  page: '366'
+  issued:
+    date-parts:
+    - - 1857
+      - 3
+      - 5
+  URL: https://www.loc.gov/item/usrep060366/
+  accessed:
+    date-parts:
+    - - 2026
+      - 11
+      - 24
+caption:
+  printed: Joseph Fellows, Survivor of Robert Kendle, Plaintiff in Error, v. Susan Blacksmith and Ely S. Parker, Administrators of John Blacksmith, Deceased
+  source: https://tile.loc.gov/storage-services/service/ll/usrep/usrep060/usrep060366/usrep060366.pdf
+  checked: '2026-11-24'
+opinions:
+  source: https://tile.loc.gov/storage-services/service/ll/usrep/usrep060/usrep060366/usrep060366.pdf
+  checked: '2026-11-24'
+  list:
+  - kind: majority
+    justice: Samuel Nelson
+    page: 366
+original_link: https://www.loc.gov/item/usrep060366/
+retrieved: '2026-11-24'
+history:
+  status: live
+  last_checked: '2026-11-24'
+court_dates:
+  argued:
+  - '1857-01-15'
+  - '1857-01-16'
+  - '1857-01-19'
+  printed: Argued Jan. 15-16, 19, 1857; decided Mar. 5, 1857
+  source: https://www.supremecourt.gov/opinions/datesofdecisions.pdf
+  note: The report prints only the term. These dates are from the Supreme Court Library's table of decision and argument dates, which takes them from the Court's Engrossed Minutes.
+  checked: '2026-11-24'
+supreme_court:
+  court: Taney Court
+  natural_court: Taney Court (1853-1857)
+  decision_type: majority opinion
+  vote:
+    majority: 9
+    minority: 0
+  justices:
+  - name: Roger Brooke Taney
+    vote: majority
+  - name: John McLean
+    vote: majority
+  - name: James Moore Wayne
+    vote: majority
+  - name: John Catron
+    vote: majority
+  - name: Peter Vivian Daniel
+    vote: majority
+  - name: Samuel Nelson
+    vote: majority
+    opinion: majority
+  - name: Robert Cooper Grier
+    vote: majority
+  - name: Benjamin Robbins Curtis
+    vote: majority
+  - name: John Archibald Campbell
+    vote: majority
+  source: http://scdb.wustl.edu/_brickFiles/Legacy_07/SCDB_Legacy_07_justiceCentered_Citation.csv.zip
+  note: From the Supreme Court Database, case 1856-056; Oyez has no votes for this case.
+  checked: '2026-11-24'
+reading_links:
+  checked: '2026-11-24'
+  links:
+  - site: library-of-congress
+    label: Library of Congress
+    access: official
+    link: https://www.loc.gov/item/usrep060366/
+  - site: justia
+    label: Justia
+    access: free
+    link: https://supreme.justia.com/cases/federal/us/60/366/
+    unchecked: true
+  - site: google-scholar
+    label: Google Scholar
+    access: free
+    link: https://scholar.google.com/scholar?hl=en&as_sdt=2006&q=%2260%20U.S.%20366%22
+    unchecked: true
+  - site: westlaw
+    label: Westlaw
+    access: subscription
+    link: https://1.next.westlaw.com/Link/Document/FullText?findType=Y&cite=60%20U.S.%20366
+    unchecked: true
+  - site: lexis
+    label: Lexis
+    access: subscription
+    link: https://advance.lexis.com/api/search?q=60%20U.S.%20366
+    unchecked: true
+rights:
+  status: no-permission-needed
+  basis: us-government-work
+  basis_note: Opinions of federal courts are works of the U.S. government (17 U.S.C. § 105); the host site's own additions are not reproduced.
+  redistribution: true
+found_in:
+- 2026-11-24-supreme-court-native-cases
+notes: 'Full citation: 60 U.S. (19 How. 366) 366 (1857). Official report scan: https://tile.loc.gov/storage-services/service/ll/usrep/usrep060/usrep060366/usrep060366.pdf. Written by scripts/caselaw/supreme_court_native_cases.py from the Supreme Court Database (case 1856-056), the Caselaw Access Project''s text of the report and the Library of Congress scan; not yet read by a person.'
+tribes: []
+nations_in_case:
+  checked: '2026-11-24'
+  named: []
+review:
+  status: verified
+  by: scripts/caselaw/supreme_court_native_cases.py
+  date: '2026-11-24'
+  checks:
+  - check: cite
+    result: agree
+    detail: Caselaw Access Project 60 U.S. 366 "Fellows v. Blacksmith"; Database 60 U.S. 366 "JOSEPH FELLOWS, SURVIVOR OF ROBERT KENDLE, PLAINTIFF IN ERROR, v. SUSAN BLACKSMITH AND ELY S. PARKER, ADMINISTRATORS OF JOHN BLACKSMITH, DECEASED"
+  - check: scan
+    result: agree
+    detail: Scan has 8 pages; the report runs 366 to 373
+  - check: caption
+    result: agree
+    detail: Caption found in the scan's text at 0.99
+  - check: decided
+    result: agree
+    detail: Supreme Court Library's table (from the Court's minutes) Mar. 5, 1857; Database 1857-03-05
+  - check: opinions
+    result: agree
+    detail: 'Report: majority Nelson p. 366; Database writers: Nelson'
+  - check: bench
+    result: agree
+    detail: No Oyez votes; each opinion writer in the report sits on the Database's bench on the side the opinion takes

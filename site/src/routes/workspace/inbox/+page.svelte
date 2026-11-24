@@ -15,6 +15,7 @@
 	import Trash2 from '@lucide/svelte/icons/trash-2';
 	import UserCheck from '@lucide/svelte/icons/user-check';
 	import X from '@lucide/svelte/icons/x';
+	import Dropdown from '#lib/components/Dropdown.svelte';
 	import Avatar from './Avatar.svelte';
 	import TagChip from './TagChip.svelte';
 	import { listDate } from './dates.ts';
@@ -58,6 +59,16 @@
 	onMount(() => (ready = true));
 	const allTicked = $derived(data.threads.length > 0 && selected.length === data.threads.length);
 	const none = $derived(ready && selected.length === 0);
+	const moveChoices = $derived([
+		{ value: '', label: 'Move to…' },
+		...data.mailFolders.map((folder) => ({ value: folder.identifier, label: `${'\u2003'.repeat(folder.depth)}${folder.name}` })),
+		{ value: 'archive', label: 'Archive' }
+	]);
+	const tagChoices = $derived([
+		{ value: '', label: 'Tag…' },
+		...data.tags.map((tag) => ({ value: `tag:${tag.identifier}`, label: tag.name, group: 'Add' })),
+		...data.tags.map((tag) => ({ value: `untag:${tag.identifier}`, label: tag.name, group: 'Take off' }))
+	]);
 
 	function tickAll(event: Event): void {
 		selected = (event.currentTarget as HTMLInputElement).checked ? data.threads.map((thread) => thread.identifier) : [];
@@ -140,26 +151,10 @@
 				<button class="tool" type="submit" name="do" value="unread" disabled={none}><Mail size={18} aria-hidden="true" /><span>Unread</span></button>
 			</span>
 			<span class="tool-group">
-				<label for="move-to" class="visually-hidden">Move the ticked conversations to</label>
-				<select id="move-to" name="moveTo" disabled={none}>
-					<option value="">Move to…</option>
-					{#each data.mailFolders as folder (folder.identifier)}
-						<option value={folder.identifier}>{' '.repeat(folder.depth)}{folder.name}</option>
-					{/each}
-					<option value="archive">Archive</option>
-				</select>
+				<Dropdown label="Move the ticked conversations to" hideLabel id="move-to" name="moveTo" disabled={none} choices={moveChoices} value="" />
 				<button class="tool" type="submit" name="do" value="move" disabled={none}><FolderInput size={18} aria-hidden="true" /><span>Move</span></button>
 				{#if data.tags.length}
-					<label for="tag-with" class="visually-hidden">Tag the ticked conversations</label>
-					<select id="tag-with" name="tagWith" disabled={none}>
-						<option value="">Tag…</option>
-						<optgroup label="Add">
-							{#each data.tags as tag (tag.identifier)}<option value="tag:{tag.identifier}">{tag.name}</option>{/each}
-						</optgroup>
-						<optgroup label="Take off">
-							{#each data.tags as tag (tag.identifier)}<option value="untag:{tag.identifier}">{tag.name}</option>{/each}
-						</optgroup>
-					</select>
+					<Dropdown label="Tag the ticked conversations" hideLabel id="tag-with" name="tagWith" disabled={none} choices={tagChoices} value="" />
 					<button class="tool" type="submit" name="do" value="tag" disabled={none}><Tag size={18} aria-hidden="true" /><span>Tag</span></button>
 				{/if}
 			</span>
@@ -337,8 +332,11 @@
 		cursor: default;
 		opacity: 0.6;
 	}
-	.toolbar select {
-		min-height: 2.25rem;
+	.toolbar :global(.dropdown) {
+		margin: 0;
+	}
+	.toolbar :global(.dropdown-control) {
+		width: 11rem;
 	}
 	.threads {
 		list-style: none;

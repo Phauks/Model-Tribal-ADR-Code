@@ -1,0 +1,128 @@
+key: united-states-v-carpenter
+kind: federal-case
+citation:
+  type: legal_case
+  title: United States v. Carpenter
+  authority: Supreme Court of the United States
+  container-title: U.S.
+  volume: '111'
+  page: '347'
+  issued:
+    date-parts:
+    - - 1884
+      - 4
+      - 14
+  URL: https://www.loc.gov/item/usrep111347/
+  accessed:
+    date-parts:
+    - - 2026
+      - 11
+      - 24
+caption:
+  printed: UNITED STATES v. CARPENTER
+  source: https://tile.loc.gov/storage-services/service/ll/usrep/usrep111/usrep111347/usrep111347.pdf
+  checked: '2026-11-24'
+opinions:
+  source: https://tile.loc.gov/storage-services/service/ll/usrep/usrep111/usrep111347/usrep111347.pdf
+  checked: '2026-11-24'
+  list:
+  - kind: majority
+    justice: Stephen Johnson Field
+    page: 349
+original_link: https://www.loc.gov/item/usrep111347/
+retrieved: '2026-11-24'
+history:
+  status: live
+  last_checked: '2026-11-24'
+supreme_court:
+  court: Waite Court
+  natural_court: Waite Court (1882-1887)
+  decision_type: majority opinion
+  vote:
+    majority: 9
+    minority: 0
+  justices:
+  - name: Morrison Remick Waite
+    vote: majority
+  - name: Samuel Freeman Miller
+    vote: majority
+  - name: Stephen Johnson Field
+    vote: majority
+    opinion: majority
+  - name: Joseph P. Bradley
+    vote: majority
+  - name: John Marshall Harlan
+    vote: majority
+  - name: William Burnham Woods
+    vote: majority
+  - name: Stanley Matthews
+    vote: majority
+  - name: Horace Gray
+    vote: majority
+  - name: Samuel Blatchford
+    vote: majority
+  source: http://scdb.wustl.edu/_brickFiles/Legacy_07/SCDB_Legacy_07_justiceCentered_Citation.csv.zip
+  note: From the Supreme Court Database, case 1883-224; Oyez has no votes for this case.
+  checked: '2026-11-24'
+reading_links:
+  checked: '2026-11-24'
+  links:
+  - site: library-of-congress
+    label: Library of Congress
+    access: official
+    link: https://www.loc.gov/item/usrep111347/
+  - site: justia
+    label: Justia
+    access: free
+    link: https://supreme.justia.com/cases/federal/us/111/347/
+    unchecked: true
+  - site: google-scholar
+    label: Google Scholar
+    access: free
+    link: https://scholar.google.com/scholar?hl=en&as_sdt=2006&q=%22111%20U.S.%20347%22
+    unchecked: true
+  - site: westlaw
+    label: Westlaw
+    access: subscription
+    link: https://1.next.westlaw.com/Link/Document/FullText?findType=Y&cite=111%20U.S.%20347
+    unchecked: true
+  - site: lexis
+    label: Lexis
+    access: subscription
+    link: https://advance.lexis.com/api/search?q=111%20U.S.%20347
+    unchecked: true
+rights:
+  status: no-permission-needed
+  basis: us-government-work
+  basis_note: Opinions of federal courts are works of the U.S. government (17 U.S.C. § 105); the host site's own additions are not reproduced.
+  redistribution: true
+found_in:
+- 2026-11-24-supreme-court-native-cases
+notes: 'Full citation: 111 U.S. 347 (1884). Official report scan: https://tile.loc.gov/storage-services/service/ll/usrep/usrep111/usrep111347/usrep111347.pdf. Written by scripts/caselaw/supreme_court_native_cases.py from the Supreme Court Database (case 1883-224), the Caselaw Access Project''s text of the report and the Library of Congress scan; not yet read by a person.'
+tribes: []
+nations_in_case:
+  checked: '2026-11-24'
+  named: []
+review:
+  status: verified
+  by: scripts/caselaw/supreme_court_native_cases.py
+  date: '2026-11-24'
+  checks:
+  - check: cite
+    result: agree
+    detail: Caselaw Access Project 111 U.S. 347 "United States v. Carpenter"; Database 111 U.S. 347 "UNITED STATES v. CARPENTER"
+  - check: scan
+    result: agree
+    detail: Scan has 4 pages; the report runs 347 to 350
+  - check: caption
+    result: agree
+    detail: Caption found in the scan's text at 1.00
+  - check: decided
+    result: agree
+    detail: Caselaw Access Project 1884-04-14; Database 1884-04-14
+  - check: opinions
+    result: agree
+    detail: 'Report: majority Field p. 349; Database writers: Field'
+  - check: bench
+    result: agree
+    detail: No Oyez votes; each opinion writer in the report sits on the Database's bench on the side the opinion takes

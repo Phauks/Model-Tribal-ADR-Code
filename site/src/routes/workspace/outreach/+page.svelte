@@ -1,11 +1,63 @@
 <script lang="ts">
+	import DataTable from '#lib/components/DataTable.svelte';
 	import { batchStatusLabels } from '#lib/mail.ts';
+	import type { TableColumn, TableRow } from '#lib/tables/table-definition.ts';
 	import { fullDate } from '../inbox/dates.ts';
 	import type { PageProps } from './$types';
 
 	let { data, form }: PageProps = $props();
 	const liveTemplates = $derived(data.templates.filter((template) => !template.archived));
+
+	const batchColumns: TableColumn[] = [
+		{ key: 'batch', header: 'Batch', isRowHeader: true, sortable: true },
+		{ key: 'status', header: 'Status', sortable: true },
+		{ key: 'sent', header: 'Sent', type: 'number', sortable: true },
+		{ key: 'waiting', header: 'Waiting', type: 'number', sortable: true },
+		{ key: 'replied', header: 'Replied', type: 'number', sortable: true },
+		{ key: 'made', header: 'Made', type: 'date', sortable: true }
+	];
+	const batchRows: TableRow[] = $derived(
+		data.batches.map((batch) => {
+			const sent = (batch.counts.sent ?? 0) + (batch.counts.replied ?? 0);
+			return {
+				key: batch.identifier,
+				cells: {
+					batch: { text: batch.name, href: `/workspace/outreach/${batch.identifier}` },
+					status: { text: batchStatusLabels[batch.status] ?? batch.status },
+					sent: { text: String(sent), sortValue: sent },
+					waiting: { text: String(batch.counts.queued ?? 0), sortValue: batch.counts.queued ?? 0 },
+					replied: { text: String(batch.counts.replied ?? 0), sortValue: batch.counts.replied ?? 0 },
+					made: { text: fullDate(batch.createdAt), sortValue: batch.createdAt }
+				}
+			};
+		})
+	);
+
+	const suppressionColumns: TableColumn[] = $derived([
+		{ key: 'address', header: 'Address', isRowHeader: true, sortable: true },
+		{ key: 'why', header: 'Why', sortable: true },
+		{ key: 'since', header: 'Since', type: 'date', sortable: true },
+		...(data.canManage ? [{ key: 'change', header: 'Change', custom: true, keepOutOfDownload: true }] : [])
+	]);
+	const suppressionRows: TableRow[] = $derived(
+		data.suppressions.map((item) => ({
+			key: item.email,
+			cells: {
+				address: { text: item.email },
+				why: { text: `${data.suppressionLabels[item.reason]}${item.note ? ` (${item.note})` : ''}` },
+				since: { text: fullDate(item.createdAt), sortValue: item.createdAt },
+				change: { text: '' }
+			}
+		}))
+	);
 </script>
+
+{#snippet liftCell(row: TableRow)}
+	<form method="post" action="?/lift">
+		<input type="hidden" name="email" value={row.key} />
+		<button class="button-quiet small" type="submit">Take off the list</button>
+	</form>
+{/snippet}
 
 <svelte:head>
 	<title>Outreach · Workspace · Model Tribal ADR Code</title>
@@ -36,21 +88,14 @@
 {#if data.batches.length === 0}
 	<p class="muted">No batches yet.</p>
 {:else}
-	<table>
-		<thead><tr><th scope="col">Batch</th><th scope="col">Status</th><th scope="col">Sent</th><th scope="col">Waiting</th><th scope="col">Replied</th><th scope="col">Made</th></tr></thead>
-		<tbody>
-			{#each data.batches as batch (batch.identifier)}
-				<tr>
-					<td><a href="/workspace/outreach/{batch.identifier}">{batch.name}</a></td>
-					<td>{batchStatusLabels[batch.status] ?? batch.status}</td>
-					<td>{(batch.counts.sent ?? 0) + (batch.counts.replied ?? 0)}</td>
-					<td>{batch.counts.queued ?? 0}</td>
-					<td>{batch.counts.replied ?? 0}</td>
-					<td>{fullDate(batch.createdAt)}</td>
-				</tr>
-			{/each}
-		</tbody>
-	</table>
+	<DataTable
+		identifier="outreach-batches"
+		label="Table: outreach batches"
+		columns={batchColumns}
+		rows={batchRows}
+		defaultSort={{ key: 'made', direction: 'descending' }}
+		rowName={['batch', 'batches']}
+	/>
 {/if}
 
 {#if liveTemplates.length === 0}
@@ -85,40 +130,18 @@
 {#if data.suppressions.length === 0}
 	<p class="muted">Nobody yet.</p>
 {:else}
-	<table>
-		<thead><tr><th scope="col">Address</th><th scope="col">Why</th><th scope="col">Since</th>{#if data.canManage}<th scope="col"><span class="visually-hidden">Change</span></th>{/if}</tr></thead>
-		<tbody>
-			{#each data.suppressions as item (item.email)}
-				<tr>
-					<td>{item.email}</td>
-					<td>{data.suppressionLabels[item.reason]}{#if item.note} ({item.note}){/if}</td>
-					<td>{fullDate(item.createdAt)}</td>
-					{#if data.canManage}
-						<td>
-							<form method="post" action="?/lift">
-								<input type="hidden" name="email" value={item.email} />
-								<button class="button-quiet small" type="submit">Take off the list</button>
-							</form>
-						</td>
-					{/if}
-				</tr>
-			{/each}
-		</tbody>
-	</table>
+	<DataTable
+		identifier="do-not-email"
+		label="Table: do-not-email list"
+		columns={suppressionColumns}
+		rows={suppressionRows}
+		defaultSort={{ key: 'since', direction: 'descending' }}
+		rowName={['address', 'addresses']}
+		cell={liftCell}
+	/>
 {/if}
 
 <style>
-	table {
-		width: 100%;
-		border-collapse: collapse;
-		margin-block: var(--space-3);
-	}
-	th,
-	td {
-		text-align: left;
-		padding: var(--space-1) var(--space-2);
-		border-bottom: 1px solid var(--color-line);
-	}
 	.inline-form {
 		display: flex;
 		flex-wrap: wrap;
