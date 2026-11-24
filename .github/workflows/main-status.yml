@@ -1,0 +1,46 @@
+# Keeps one issue, "main is red", open while the checks fail on main and
+# closes it when they pass again. Two pull requests can each pass on their own
+# and still break main together, because the ruleset does not require a branch
+# to be up to date; this makes that visible before more pull requests merge on
+# top of it. Uses only the workflow's own token.
+name: main status
+
+on:
+  workflow_run:
+    workflows: [checks]
+    types: [completed]
+    branches: [main]
+
+permissions:
+  issues: write
+
+concurrency:
+  group: main-status
+  cancel-in-progress: false
+
+jobs:
+  report:
+    name: Report main's checks
+    if: github.event.workflow_run.event == 'push'
+    runs-on: ubuntu-latest
+    steps:
+      - name: Open, update or close the "main is red" issue
+        env:
+          GH_TOKEN: ${{ github.token }}
+          REPOSITORY: ${{ github.repository }}
+          CONCLUSION: ${{ github.event.workflow_run.conclusion }}
+          RUN_ADDRESS: ${{ github.event.workflow_run.html_url }}
+          COMMIT: ${{ github.event.workflow_run.head_sha }}
+        run: |
+          title="main is red"
+          open_issue=$(gh issue list --repo "$REPOSITORY" --state open --search "\"$title\" in:title" --json number,title --jq ".[] | select(.title == \"$title\") | .number" | head -n 1)
+          if [ "$CONCLUSION" = "failure" ]; then
+            body="The checks failed on main at $COMMIT: $RUN_ADDRESS"$'\n\n'"Hold merges until main passes again, and fix main first."
+            if [ -n "$open_issue" ]; then
+              gh issue comment "$open_issue" --repo "$REPOSITORY" --body "$body"
+            else
+              gh issue create --repo "$REPOSITORY" --title "$title" --body "$body"
+            fi
+          elif [ "$CONCLUSION" = "success" ] && [ -n "$open_issue" ]; then
+            gh issue close "$open_issue" --repo "$REPOSITORY" --comment "The checks pass on main again at $COMMIT: $RUN_ADDRESS"
+          fi

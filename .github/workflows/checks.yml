@@ -36,6 +36,7 @@ jobs:
     outputs:
       site: ${{ steps.decide.outputs.site }}
       every_size: ${{ steps.decide.outputs.every_size }}
+      print: ${{ steps.decide.outputs.print }}
       scan_engine: ${{ steps.decide.outputs.scan_engine }}
     steps:
       - uses: actions/checkout@v5
@@ -49,6 +50,7 @@ jobs:
             echo "site=true" >> "$GITHUB_OUTPUT"
             echo "every_size=true" >> "$GITHUB_OUTPUT"
             echo "scan_engine=true" >> "$GITHUB_OUTPUT"
+            echo "print=true" >> "$GITHUB_OUTPUT"
             exit 0
           fi
           files=$(git diff --name-only "$BASE"...HEAD)
@@ -82,9 +84,14 @@ jobs:
           # or this workflow changes.
           scan_engine=false
           if grep -q -e '^site/scanner/engine/' -e '^\.github/workflows/checks\.yml$' <<< "$files"; then scan_engine=true; fi
+          # The print edition reads nothing in site/, so a pull request that
+          # changes only site/ skips the print build.
+          print=false
+          if grep -q -v '^site/' <<< "$files"; then print=true; fi
           echo "site=$site" >> "$GITHUB_OUTPUT"
           echo "every_size=$every_size" >> "$GITHUB_OUTPUT"
           echo "scan_engine=$scan_engine" >> "$GITHUB_OUTPUT"
+          echo "print=$print" >> "$GITHUB_OUTPUT"
 
   text:
     name: Text encoding
@@ -165,15 +172,62 @@ jobs:
             coverage.json
           if-no-files-found: ignore
 
-  site:
+  site-build:
+    # Builds the site once and hands the built pages to the browser checks
+    # and the four accessibility jobs, which used to build it again each.
     name: Website build
     needs: changes
     if: needs.changes.outputs.site == 'true'
     runs-on: ubuntu-latest
-    # A normal run takes 20 to 25 minutes, most of it the build; this stops a
+    # A normal run takes 15 to 20 minutes, most of it the build; this stops a
     # stuck one long before GitHub's six-hour limit, so the merge queue is not
     # held up.
     timeout-minutes: 40
+    defaults:
+      run:
+        working-directory: site
+    steps:
+      - uses: actions/checkout@v5
+      - uses: actions/setup-node@v5
+        with:
+          node-version: "22"
+          cache: npm
+          cache-dependency-path: site/package-lock.json
+      - run: npm ci
+      - name: Build
+        run: npm run build
+      - name: Check that the patched Worker starts and its handlers answer (tools/check-built-worker.mjs)
+        timeout-minutes: 5
+        run: npm run check:built-worker
+      # The browser checks read only the built pages in
+      # .svelte-kit/cloudflare/client. One compressed file uploads far faster
+      # than its twelve thousand files one by one.
+      - name: Pack the built pages
+        run: tar --zstd -cf "$RUNNER_TEMP/built-pages.tar.zst" .svelte-kit/cloudflare/client
+      - uses: actions/upload-artifact@v4
+        with:
+          name: built-pages
+          path: ${{ runner.temp }}/built-pages.tar.zst
+          compression-level: 0
+          retention-days: 1
+      # After the upload, so the browser and accessibility jobs can start.
+      # The pages the Worker answers, signed out and as the local fixture
+      # accounts, and the menus and dialogs while open, on a local database
+      # (tools/seed-local-database.mjs). The prerendered pages are the
+      # accessibility jobs' below. It needs the whole built Worker, not only
+      # the built pages, so it runs here.
+      - name: Install Chromium for the Worker pages' accessibility check
+        run: npx playwright install --with-deps --only-shell chromium
+      - name: Accessibility check of the Worker's pages and open menus (tools/check-accessibility-live.mjs)
+        timeout-minutes: 10
+        run: npm run check:accessibility:live
+
+  site:
+    name: Website type check and tests
+    needs: changes
+    if: needs.changes.outputs.site == 'true'
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
     defaults:
       run:
         working-directory: site
@@ -189,20 +243,41 @@ jobs:
         run: npm run check
       - name: Type check the scanner Worker (scanner/worker.ts)
         run: npx tsc -p scanner/tsconfig.json
+      - name: Type check the live editing Worker (live/worker.ts)
+        run: npx tsc -p live/tsconfig.json
       - name: Unit tests
         run: npm test
       - name: Colors come only from design-tokens.json
         run: npm run check:colors
       - name: Motion timing comes only from design-tokens.json
         run: npm run check:motion
-      - name: Build
-        run: npm run build
-      - name: Check that the patched Worker starts and its handlers answer (tools/check-built-worker.mjs)
-        timeout-minutes: 5
-        run: npm run check:built-worker
+
+  site-browser:
+    name: Website browser checks
+    needs: [changes, site-build]
+    if: needs.changes.outputs.site == 'true'
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    defaults:
+      run:
+        working-directory: site
+    steps:
+      - uses: actions/checkout@v5
+      - uses: actions/setup-node@v5
+        with:
+          node-version: "22"
+          cache: npm
+          cache-dependency-path: site/package-lock.json
+      - run: npm ci
+      - uses: actions/download-artifact@v4
+        with:
+          name: built-pages
+          path: ${{ runner.temp }}
+      - name: Unpack the built pages
+        run: tar --zstd -xf "$RUNNER_TEMP/built-pages.tar.zst"
       - name: Check the built pages, manifest and service worker
         run: npm run check:built-site
-      - name: Install Chromium for the sidebar check
+      - name: Install Chromium for the browser checks
         run: npx playwright install --with-deps --only-shell chromium
       - name: Check the sidebar in a browser (tools/check-sidebar.mjs)
         run: npm run check:sidebar
@@ -212,24 +287,15 @@ jobs:
         run: npm run check:wide-tables
       - name: Check the tables' filters, columns and Sum row in a browser (tools/check-table-tools.mjs)
         run: npm run check:table-tools
-      # The pages the Worker answers, signed out and as the local fixture
-      # accounts, and the menus and dialogs while open, on a local database
-      # (tools/seed-local-database.mjs). The prerendered pages are the
-      # accessibility jobs' below.
-      - name: Accessibility check of the Worker's pages and open menus (tools/check-accessibility-live.mjs)
-        timeout-minutes: 10
-        run: npm run check:accessibility:live
 
   accessibility:
     # Every page in both themes, split between four jobs that run at once.
-    # Each job builds the site (18 to 20 minutes) and then checks its pages
-    # (10 to 12 minutes), so 30 minutes was too tight and cancelled shards on
-    # slow runners. Building once for all four shards would shorten this.
+    # Each checks its pages (10 to 12 minutes) from the one build above.
     name: Accessibility ${{ matrix.shard }}/4
-    needs: changes
+    needs: [changes, site-build]
     if: needs.changes.outputs.site == 'true'
     runs-on: ubuntu-latest
-    timeout-minutes: 45
+    timeout-minutes: 30
     strategy:
       fail-fast: false
       matrix:
@@ -245,8 +311,12 @@ jobs:
           cache: npm
           cache-dependency-path: site/package-lock.json
       - run: npm ci
-      - name: Build
-        run: npm run build
+      - uses: actions/download-artifact@v4
+        with:
+          name: built-pages
+          path: ${{ runner.temp }}
+      - name: Unpack the built pages
+        run: tar --zstd -xf "$RUNNER_TEMP/built-pages.tar.zst"
       - name: Install Chromium for the accessibility check
         run: npx playwright install --with-deps --only-shell chromium
       - name: Accessibility check (axe-core, this shard's pages, both themes)
@@ -258,6 +328,7 @@ jobs:
   print:
     name: Print build
     needs: changes
+    if: needs.changes.outputs.print == 'true'
     runs-on: ubuntu-latest
     env:
       TYPST_VERSION: "0.15.1"
@@ -361,7 +432,7 @@ jobs:
   all-checks:
     name: All checks
     if: always()
-    needs: [changes, text, migrations, records, lint, prose, site, accessibility, print, scan-engine]
+    needs: [changes, text, migrations, records, lint, prose, site-build, site, site-browser, accessibility, print, scan-engine]
     runs-on: ubuntu-latest
     permissions:
       statuses: write

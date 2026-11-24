@@ -43,7 +43,7 @@
 	import { readSignedInHint } from '#lib/signed-in-hint.ts';
 	import { withSharedLists } from '#lib/section-lists.ts';
 	import { composeSectionContents, currentLinkIn, type SectionContents } from '#lib/sidebar-outline.ts';
-	import { sectionOf, siteSections, type OutlineItem, type PageOutline } from '#lib/site-sections.ts';
+	import { sectionOf, siteSections, type OutlineItem, type PageOutline, type SiteSection } from '#lib/site-sections.ts';
 	import {
 		isCurrentWorkspacePage,
 		workspacePagesFor,
@@ -51,6 +51,7 @@
 		type WorkspacePage
 	} from '#lib/workspace-menu.ts';
 	import FoldButton from './sidebar/FoldButton.svelte';
+	import FoldGroup from './sidebar/FoldGroup.svelte';
 	import SectionColumn from './sidebar/SectionColumn.svelte';
 	import SidebarGroups from './sidebar/SidebarGroups.svelte';
 	import YourWork from './sidebar/YourWork.svelte';
@@ -148,6 +149,10 @@
 	// open (Trevor, Nov. 23, 2026). A shut list stays shut from the first
 	// paint: the script in app.html marks the page, and global.css hides it.
 	const sectionsOpen = $derived(sidebar.isOpen(sectionsKey, true));
+
+	// Each section's own pages start open in the section being read, and then as the reader last left them.
+	const sectionPagesKey = (section: SiteSection) => `section-${section.link}`;
+	const sectionPagesOpen = (section: SiteSection) => sidebar.isOpen(sectionPagesKey(section), section === currentSection);
 
 	function toggleSections(): void {
 		const open = !sectionsOpen;
@@ -300,42 +305,53 @@
 {#snippet sections(idSuffix: string)}
 	<!-- On phones the menu's "All sections" switch shows them, so they do not fold there. -->
 	{@const folds = idSuffix === 'wide'}
-	{#if folds}
-		<div class="group-heading">
-			<FoldButton
-				controls="sidebar-sections-list-{idSuffix}"
-				expanded={sectionsOpen}
-				name="Sections"
-				onclick={toggleSections}
-			/>
-			<p class="group-title" id="sidebar-sections-{idSuffix}">Sections</p>
-		</div>
-	{/if}
-	<ul
-		class="sections"
-		id="sidebar-sections-list-{idSuffix}"
-		aria-labelledby={folds ? `sidebar-sections-${idSuffix}` : undefined}
-		hidden={folds && !sectionsOpen}
+	<FoldGroup
+		id="sidebar-sections-{idSuffix}"
+		title="Sections"
+		open={sectionsOpen}
+		{folds}
+		listClass="sections"
+		ontoggle={toggleSections}
 	>
-		{#each siteSections as section (section.link)}
+		{#each siteSections as section, sectionIndex (section.link)}
 			{@const current = section === currentSection}
-			<li class:current>
-				{#if section.built}
-					<a href={section.link} aria-current={current && currentLink === section.link ? 'page' : undefined}>
-						{section.label}
-					</a>
-					{#if current && hasColumn && idSuffix === 'wide'}
-						<button type="button" class="drill needs-scripts" title="Pages in {section.label}" onclick={showSection}>
-							<ChevronRight size={18} aria-hidden="true" />
-							<span class="visually-hidden">Pages in {section.label}</span>
-						</button>
+			{@const pagesId = `sidebar-section-pages-${idSuffix}-${sectionIndex}`}
+			{@const pagesOpen = sectionPagesOpen(section)}
+			<li class="section" class:current>
+				<div class="section-row">
+					<!-- A section's own pages fold open under it, as the Workspace's categories do (Trevor, Nov. 24, 2026). -->
+					<FoldButton
+						controls={section.built && section.pages?.length ? pagesId : undefined}
+						expanded={pagesOpen}
+						name="Pages in {section.label}"
+						onclick={() => sidebar.setOpen(sectionPagesKey(section), !pagesOpen)}
+					/>
+					{#if section.built}
+						<a href={section.link} aria-current={current && currentLink === section.link ? 'page' : undefined}>
+							{section.label}
+						</a>
+						{#if current && hasColumn && idSuffix === 'wide'}
+							<button type="button" class="drill needs-scripts" title="Everything in {section.label}" onclick={showSection}>
+								<ChevronRight size={18} aria-hidden="true" />
+								<span class="visually-hidden">Everything in {section.label}</span>
+							</button>
+						{/if}
+					{:else}
+						<span class="unbuilt">{section.label}<span class="visually-hidden"> (not yet published)</span></span>
 					{/if}
-				{:else}
-					<span class="unbuilt">{section.label}<span class="visually-hidden"> (not yet published)</span></span>
+				</div>
+				{#if section.built && section.pages?.length}
+					<ul class="section-pages" id={pagesId} hidden={!pagesOpen}>
+						{#each section.pages as item (item.link)}
+							<li>
+								<a href={item.link} aria-current={current && currentLink === item.link ? 'page' : undefined}>{item.label}</a>
+							</li>
+						{/each}
+					</ul>
 				{/if}
 			</li>
 		{/each}
-	</ul>
+	</FoldGroup>
 	<SidebarGroups
 		{idSuffix}
 		{path}
@@ -440,61 +456,97 @@
 </details>
 
 <style>
-	nav ul {
-		list-style: none;
-		margin: 0;
-		padding: 0;
-	}
-
 	/* ---- The sections ---- */
-	/* Their heading matches the Workspace and Your account groups' (sidebar/SidebarGroups.svelte). */
-	.group-heading {
-		display: flex;
-		align-items: center;
-		margin-bottom: var(--space-1);
-	}
-
-	.group-title {
-		margin: 0;
-		padding: 0 var(--space-3) 0 var(--space-1);
-		font-size: var(--font-size-small);
-		font-weight: var(--font-weight-semibold);
-		color: var(--color-ink-muted);
-	}
-
-	/* Without scripts nothing folds: no caret, and the list shows. */
-	:global(:root:not([data-scripts='on'])) .group-title {
-		padding-left: var(--space-3);
-	}
-
-	:global(:root:not([data-scripts='on'])) .sections[hidden] {
-		display: block;
-	}
+	/* Their heading and links are the shared folding group's (sidebar/FoldGroup.svelte). */
 
 	/* Shut by the reader on an earlier page, before the script takes over. */
-	:global(:root[data-sidebar-sections-shut='true']) .sections-column .sections {
+	:global(:root[data-sidebar-sections-shut='true']) .sections-column :global(.sections) {
 		display: none;
 	}
-	.sections > li > a,
-	.sections > li > .unbuilt {
+
+	/* A section's row: its caret, its link and, in the section being read, the way into its panel. */
+	.section-row {
+		display: flex;
+		align-items: center;
+	}
+
+	.section-row :global(.fold) {
+		margin-top: 0;
+	}
+
+	.section-row > a,
+	.section-row > .unbuilt {
+		flex: 1;
 		display: flex;
 		align-items: center;
 		min-height: 2.5rem;
-		padding: 0 var(--space-3);
-		border-radius: var(--radius-control);
+		padding: 0 var(--space-3) 0 var(--space-1);
 		color: var(--color-ink);
 		font-weight: var(--font-weight-semibold);
 		text-decoration: none;
 	}
 
-	.sections > li {
-		display: flex;
-		align-items: center;
+	/* Sections whose pages are not published yet: named, not linked. */
+	.section-row > .unbuilt {
+		color: var(--color-ink-muted);
+		font-weight: var(--font-weight-regular);
 	}
 
-	.sections > li > a,
-	.sections > li > .unbuilt {
-		flex: 1;
+	.section-row > a:hover,
+	.section-pages a:hover {
+		background: var(--color-surface);
+		text-decoration: underline;
+	}
+
+	/* The section being read: an orange bar across its row, and the link color. */
+	.section.current > .section-row {
+		border-left: 3px solid var(--color-action);
+		background: var(--color-surface);
+	}
+
+	.section.current > .section-row > a {
+		color: var(--color-link);
+		font-weight: var(--font-weight-bold);
+	}
+
+	/* A section's own pages: smaller and muted, under its name. */
+	.section-pages {
+		list-style: none;
+		margin: 0 0 var(--space-1) 1.75rem;
+		padding: 0;
+	}
+
+	.section-pages a {
+		display: flex;
+		align-items: center;
+		min-height: 2.25rem;
+		padding: 0 var(--space-3) 0 var(--space-1);
+		color: var(--color-ink-muted);
+		font-size: var(--font-size-small);
+		text-decoration: none;
+	}
+
+	.section-pages a[aria-current='page'] {
+		border-left: 3px solid var(--color-action);
+		background: var(--color-surface);
+		color: var(--color-link);
+		font-weight: var(--font-weight-bold);
+	}
+
+	/* Without scripts nothing folds, so every section's pages show. */
+	:global(:root:not([data-scripts='on'])) .section-pages[hidden] {
+		display: block;
+	}
+
+	:global(:root:not([data-scripts='on'])) .section-row > a,
+	:global(:root:not([data-scripts='on'])) .section-row > .unbuilt {
+		padding-left: var(--space-3);
+	}
+
+	:global(.sidebar-narrow) .section-row > a,
+	:global(.sidebar-narrow) .section-row > .unbuilt,
+	:global(.sidebar-narrow) .section-pages a {
+		min-height: var(--layout-target-minimum);
 	}
 
 	/* Back into the section's panel, from the list of sections, and back out of it. */
@@ -530,26 +582,6 @@
 	.back:hover {
 		background: var(--color-surface);
 		color: var(--color-ink);
-	}
-
-	/* Sections whose pages are not published yet: named, not linked. */
-	.sections > li > .unbuilt {
-		color: var(--color-ink-muted);
-		font-weight: var(--font-weight-regular);
-	}
-
-	.sections > li > a:hover {
-		background: var(--color-surface);
-		text-decoration: underline;
-	}
-
-	/* The section being read: an orange bar and the link color, like the entry being read. */
-	.sections > li.current > a {
-		border-left: 3px solid var(--color-action);
-		border-radius: 0;
-		background: var(--color-surface);
-		color: var(--color-link);
-		font-weight: var(--font-weight-bold);
 	}
 
 	summary {
@@ -700,11 +732,6 @@
 		padding: 0 clamp(var(--space-4), 3vw, var(--space-7)) var(--space-4);
 		background: var(--color-paper);
 		border-top: 1px solid var(--color-line);
-	}
-
-	.sidebar-narrow .sections > li > a,
-	.sidebar-narrow .sections > li > .unbuilt {
-		min-height: var(--layout-target-minimum);
 	}
 
 	/* In a section the menu shows its pages or all the sections, one at a time. */
