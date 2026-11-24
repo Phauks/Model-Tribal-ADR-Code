@@ -68,5 +68,23 @@
 		],
 		"sprite_license": "MIT (derived from tangrams/icons)",
 		"files": 776
+	},
+	"worldBasemap": {
+		"set": "world-basemap-20261122",
+		"key": "map-tiles/world-basemap-20261122.pmtiles",
+		"bytes": 562205008,
+		"sha256": "16a2a515e8928fd4968372f223caaf1413f0f4cf9f8d7b65d7d3d0a8e45f2833",
+		"minZoom": 0,
+		"maxZoom": 8,
+		"bounds": [
+			-180,
+			-85.0511,
+			180,
+			85.0511
+		],
+		"source": "https://build.protomaps.com/20261122.pmtiles",
+		"license": "Open Database License produced work; OpenStreetMap attribution required",
+		"attribution": "© OpenStreetMap contributors",
+		"retrieved": "2026-11-24"
 	}
 }
