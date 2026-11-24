@@ -166,7 +166,7 @@ function basisWords(row: MatchRow): string {
  * `ownLegalAid` holds the legal aid the nation's own record lists
  * (court_practice, kind legal-aid), which goes first under Legal aid.
  */
-export function legalHelpFor<Own>(
+export function legalHelpFor<Own = LegalHelpItem>(
 	nation: string,
 	sources: SourceUses,
 	ownLegalAid: Own[] = []
