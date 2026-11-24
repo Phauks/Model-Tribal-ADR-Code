@@ -1,6 +1,6 @@
 /**
  * The case previews and citation index (src/lib/case-links.ts), built with
- * the site from the source records and the case boxes in the essays. Every
+ * the site from the source records, which keep each case's box. Every
  * case links to its own page, /cases/<key> (src/lib/server/case-pages.ts),
  * which holds its summary, opinions and the places to read it.
  */
@@ -9,20 +9,32 @@ import { formatCaptureDate } from './markdown.ts';
 import { sources, type SourceRecord } from './content.ts';
 import { essaysInGit } from './essay-library.ts';
 
-/** The holding part of each case box, as plain text, by source key. */
-export function boxHoldings(texts: Record<string, string>): Record<string, string> {
+/** A holding as plain text: citations dropped, glossary links and emphasis reduced to their words. */
+function plainHolding(holding: string): string {
+	return holding
+		.replace(/\s*\[@[^\]]*\]/g, '')
+		.replace(/\[\[([a-z0-9-]+)\|([^\]]+)\]\]/g, '$2')
+		.replace(/\[\[([a-z0-9-]+)\]\]/g, '$1')
+		.replace(/[*_]/g, '')
+		.replace(/\s+/g, ' ')
+		.trim();
+}
+
+/**
+ * The holding of each case, as plain text, by source key: from the case's
+ * record (`case_box`, src/lib/essays/record-boxes.ts), or from a box an
+ * essay still writes out in full.
+ */
+export function boxHoldings(texts: Record<string, string>, records: SourceRecord[] = []): Record<string, string> {
 	const holdings: Record<string, string> = {};
+	for (const record of records) {
+		if (record.case_box?.holding?.trim()) holdings[record.key] = plainHolding(record.case_box.holding);
+	}
 	for (const text of Object.values(texts)) {
 		for (const box of text.matchAll(/^:{4,}[ \t]*case[ \t]+([a-z0-9-]+)[ \t]*\n([\s\S]*?)^:{4,}[ \t]*$/gm)) {
 			const holding = /^:::[ \t]*holding[ \t]*\n([\s\S]*?)^:::[ \t]*$/m.exec(box[2])?.[1];
 			if (!holding || holdings[box[1]]) continue;
-			holdings[box[1]] = holding
-				.replace(/\s*\[@[^\]]*\]/g, '')
-				.replace(/\[\[([a-z0-9-]+)\|([^\]]+)\]\]/g, '$2')
-				.replace(/\[\[([a-z0-9-]+)\]\]/g, '$1')
-				.replace(/[*_]/g, '')
-				.replace(/\s+/g, ' ')
-				.trim();
+			holdings[box[1]] = plainHolding(holding);
 		}
 	}
 	return holdings;
@@ -61,7 +73,7 @@ export function casePreviewList(
 	records: SourceRecord[] = [...sources().values()],
 	texts: Record<string, string> = essaysInGit()
 ): CasePreviewList {
-	const holdings = boxHoldings(texts);
+	const holdings = boxHoldings(texts, records);
 	const cases: CasePreview[] = [];
 	const citations: Record<string, string> = {};
 	for (const record of records) {

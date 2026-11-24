@@ -2,7 +2,8 @@
  * A page for each court case the project has a record of, at /cases/<key>
  * (Trevor, Nov. 24, 2026: a page for each case "instead of what we do now as
  * forcing the link inside the book"). Built with the site from the case's
- * source record and its box in an essay:
+ * source record, which also keeps the case's box (`case_box`,
+ * record-boxes.ts):
  *
  * - the name, the citation and, beside them, the box's facts (dates, the
  *   Court linked to its page, the vote and the bench, case-facts.ts);
@@ -21,8 +22,9 @@
 import { error } from '@sveltejs/kit';
 import { essayBoxFacts, essaysInGit } from 'virtual:essay-library';
 import { renderEssay } from '../essays/render.ts';
-import { splitFrontMatter, topicsIn } from '../essays/syntax.ts';
-import { essayLibrary } from './essay-pages.ts';
+import { splitFrontMatter } from '../essays/syntax.ts';
+import { boxPartMarkdown, type RecordBox } from '../essays/record-boxes.ts';
+import { essayLibrary, withRecordBoxes } from './essay-pages.ts';
 import { essayPath, partOf, titleOf } from './essays.ts';
 import { nationNamesAndKinds, publicCopyFor, sources, type SourceRecord } from './content.ts';
 import { courtPath } from './supreme-courts.ts';
@@ -93,7 +95,7 @@ interface CaseRecordParts {
 
 const roles: Record<string, string> = { party: 'Party', government: 'Party through its officials or agency', subject: 'Not a party' };
 
-const boxParts: [kind: string, heading: string][] = [
+const boxParts: [part: 'background' | 'question' | 'holding' | 'quotes' | 'treatment', heading: string][] = [
 	['background', 'Background'],
 	['question', 'Question'],
 	['holding', 'Holding'],
@@ -123,22 +125,16 @@ function escapeRegExp(text: string): string {
  * The box's parts as the page's sections, each under its own heading, with
  * the number of quotations and Treatment paragraphs in a badge.
  */
-function boxSections(key: string, title: string): { html: string; topics: string[]; sources: SourceEntry[] } {
-	let inner = Object.values(essaysInGit).map((text) => caseBox(text, key)).find(Boolean)?.inner ?? '';
-	let topics: string[] = [];
-	const topicPart = /^:::[ \t]*topics[ \t]*\n([\s\S]*?)^:::[ \t]*$/m.exec(inner);
-	if (topicPart) {
-		topics = topicsIn(topicPart[1]);
-		inner = inner.replace(topicPart[0], '');
-	}
+function boxSections(key: string, title: string, box: RecordBox | undefined): { html: string; topics: string[]; sources: SourceEntry[] } {
+	const topics = box?.topics ?? [];
 	let markdown = '';
 	const counts: Record<string, number> = {};
-	for (const [kind, heading] of boxParts) {
-		const part = new RegExp(`^:::[ \\t]*${kind}[ \\t]*\\n([\\s\\S]*?)^:::[ \\t]*$`, 'm').exec(inner);
-		if (!part) continue;
-		if (kind === 'quotes') counts.quotes = (part[1].match(/^>/gm) ?? []).length;
-		if (kind === 'treatment') counts.treatment = part[1].split(/\n\s*\n/).filter((paragraph) => paragraph.trim()).length;
-		markdown += `## ${heading}\n\n${part[0]}\n\n`;
+	for (const [part, heading] of boxParts) {
+		const written = box ? boxPartMarkdown(key, box, part) : '';
+		if (!written) continue;
+		if (part === 'quotes') counts.quotes = box!.quotes!.length;
+		if (part === 'treatment') counts.treatment = box!.treatment!.split(/\n\s*\n/).filter((paragraph) => paragraph.trim()).length;
+		markdown += `## ${heading}\n\n${written}\n\n`;
 	}
 	if (!markdown) return { html: '', topics, sources: [] };
 	const rendered = renderEssay(`# ${title}\n\n${markdown}`, essayLibrary);
@@ -202,7 +198,9 @@ function caseNations(record: SourceRecord & CaseRecordParts): { nations: CaseNat
 function essaysCiting(key: string, title: string): CaseMention[] {
 	const found: CaseMention[] = [];
 	const mention = new RegExp(`\\[@${escapeRegExp(key)}[\\],]|\\*${escapeRegExp(title)}\\*`);
-	for (const [identifier, text] of Object.entries(essaysInGit)) {
+	for (const [identifier, written] of Object.entries(essaysInGit)) {
+		// The essay as read, with each box it places filled from the record, so a case cited inside another case's box counts.
+		const text = withRecordBoxes(written);
 		const path = essayPath(identifier, partOf(identifier, splitFrontMatter(text).frontMatter));
 		const box = caseBox(text, key);
 		if (box) {
@@ -227,7 +225,7 @@ export function casePage(key: string): CasePage {
 	const record = sources().get(key) as (SourceRecord & CaseRecordParts) | undefined;
 	if (!record || (record.citation as { type?: string }).type !== 'legal_case' || !record.citation.title) error(404, 'No case has this address.');
 	const name = record.citation.title;
-	const box = boxSections(key, name);
+	const box = boxSections(key, name, record.case_box);
 	const { nations, shared } = caseNations(record);
 	const saved = savedCopyLink(record);
 	const bench = record.supreme_court;

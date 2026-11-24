@@ -11,7 +11,7 @@
 	import { followingState } from '#lib/following-state.svelte.ts';
 	import { unreadLabel } from '#lib/following.ts';
 	import { groupWorkspacePages, type WorkspaceGroup, type WorkspacePage } from '#lib/workspace-menu.ts';
-	import FoldButton from './FoldButton.svelte';
+	import FoldGroup from './FoldGroup.svelte';
 	import type { SidebarState } from './sidebar-state.svelte.ts';
 
 	let {
@@ -52,21 +52,19 @@
 {#if accountPages.length > 0}
 	<!-- The Account pages and Following, for someone signed in (site/DESIGN.md, section 6, "Settings and Account"). -->
 	<div class="group">
-		<div class="group-heading">
-			<FoldButton
-				controls="sidebar-account-list-{idSuffix}"
-				expanded={accountOpen}
-				name="Pages in Your account"
-				onclick={() => sidebar.setOpen('account', !accountOpen)}
-			/>
-			<p class="group-title" id="sidebar-account-{idSuffix}">Your account</p>
-			{#if unread > 0 && !accountOpen}
-				<span class="unread-count" title="{unread} new {unread === 1 ? 'update' : 'updates'} to pages you follow"
-					>{unreadLabel(unread)}<span class="visually-hidden"> new</span></span
-				>
-			{/if}
-		</div>
-		<ul id="sidebar-account-list-{idSuffix}" aria-labelledby="sidebar-account-{idSuffix}" hidden={!accountOpen}>
+		<FoldGroup
+			id="sidebar-account-{idSuffix}"
+			title="Your account"
+			open={accountOpen}
+			ontoggle={() => sidebar.setOpen('account', !accountOpen)}
+		>
+			{#snippet after()}
+				{#if unread > 0 && !accountOpen}
+					<span class="unread-count" title="{unread} new {unread === 1 ? 'update' : 'updates'} to pages you follow"
+						>{unreadLabel(unread)}<span class="visually-hidden"> new</span></span
+					>
+				{/if}
+			{/snippet}
 			{#each accountPages as item (item.link)}
 				<li>
 					<a href={item.link} aria-current={item === currentAccount ? 'page' : undefined}>
@@ -75,52 +73,45 @@
 					</a>
 				</li>
 			{/each}
-		</ul>
+		</FoldGroup>
 	</div>
 {/if}
 {#if workspaceMenu.length > 0}
 	<!-- The workspace, for people signed in with access to it (site/COLLABORATION.md). -->
+	{#snippet workspaceLinks(pages: WorkspacePage[])}
+		{#each pages as item (item.link)}
+			<li>
+				<a href={item.link} aria-current={item === currentWorkspacePage ? 'page' : undefined}>{item.label}</a>
+			</li>
+		{/each}
+	{/snippet}
 	<div class="group">
-		<div class="group-heading">
-			<FoldButton
-				controls="sidebar-workspace-list-{idSuffix}"
-				expanded={workspaceOpen}
-				name="Pages in Workspace"
-				onclick={() => sidebar.setOpen('workspace', !workspaceOpen)}
-			/>
-			<p class="group-title" id="sidebar-workspace-{idSuffix}">Workspace</p>
-		</div>
-		{#snippet workspaceLinks(pages: WorkspacePage[])}
-			{#each pages as item (item.link)}
-				<li>
-					<a href={item.link} aria-current={item === currentWorkspacePage ? 'page' : undefined}>{item.label}</a>
-				</li>
-			{/each}
-		{/snippet}
-		<ul id="sidebar-workspace-list-{idSuffix}" aria-labelledby="sidebar-workspace-{idSuffix}" hidden={!workspaceOpen}>
+		<FoldGroup
+			id="sidebar-workspace-{idSuffix}"
+			title="Workspace"
+			open={workspaceOpen}
+			ontoggle={() => sidebar.setOpen('workspace', !workspaceOpen)}
+		>
 			{#each workspaceGroups as group, index (group.category ?? index)}
 				{#if group.category}
-					{@const titleId = `sidebar-workspace-${idSuffix}-${index}`}
 					{@const open = categoryOpen(group)}
-					<li class="category">
-						<div class="category-heading">
-							<FoldButton
-								controls="{titleId}-list"
-								expanded={open}
-								name="Pages in {group.category}"
-								onclick={() => sidebar.setOpen(categoryKey(group), !open)}
-							/>
-							<p class="category-title" id={titleId}>{group.category}</p>
-						</div>
-						<ul class="category-pages" id="{titleId}-list" aria-labelledby={titleId} hidden={!open}>
+					<!-- Each category folds the same way as the groups around it. -->
+					<li>
+						<FoldGroup
+							id="sidebar-workspace-{idSuffix}-{index}"
+							title={group.category}
+							{open}
+							nested
+							ontoggle={() => sidebar.setOpen(categoryKey(group), !open)}
+						>
 							{@render workspaceLinks(group.pages)}
-						</ul>
+						</FoldGroup>
 					</li>
 				{:else}
 					{@render workspaceLinks(group.pages)}
 				{/if}
 			{/each}
-		</ul>
+		</FoldGroup>
 	</div>
 {/if}
 <!-- Every change to the site's pages, like a wiki's (site/COLLABORATION.md, "Recent changes"),
@@ -162,52 +153,6 @@
 		border-top: 1px solid var(--color-line);
 	}
 
-	.group-heading {
-		display: flex;
-		align-items: center;
-	}
-
-	.group-title {
-		margin: 0 0 var(--space-1);
-		padding: 0 var(--space-3);
-		font-size: var(--font-size-small);
-		font-weight: var(--font-weight-semibold);
-		color: var(--color-ink-muted);
-	}
-
-	.group-heading .group-title {
-		margin: 0;
-		padding-left: var(--space-1);
-	}
-
-	/*
-	 * A category of workspace pages: a heading in ink with a caret that folds
-	 * it, its pages indented along a line below it (Trevor, Nov. 23, 2026:
-	 * "still hard to see sub-sections and they should be collapsible").
-	 */
-	.category-heading {
-		display: flex;
-		align-items: center;
-		margin-top: var(--space-1);
-	}
-
-	.category-title {
-		margin: 0;
-		padding: 0.35rem var(--space-1);
-		font-weight: var(--font-weight-semibold);
-		color: var(--color-ink);
-	}
-
-	.category-pages {
-		margin: 0 0 var(--space-1) 0.85rem;
-		padding-left: 0.65rem;
-		border-left: 1px solid var(--color-control-border);
-	}
-
-	:global(:root:not([data-scripts='on'])) .category-title {
-		padding-left: var(--space-3);
-	}
-
 	/* The number of updates not yet seen, in the action color. */
 	.unread-count {
 		margin-left: auto;
@@ -217,16 +162,8 @@
 		color: var(--color-action);
 	}
 
-	/* Without scripts the groups cannot fold, so they show. */
-	:global(:root:not([data-scripts='on'])) ul[hidden] {
-		display: block;
-	}
-
-	:global(:root:not([data-scripts='on'])) .group-heading .group-title {
-		padding-left: var(--space-3);
-	}
-
-	a {
+	/* The reader's own links look like the groups' (sidebar/FoldGroup.svelte). */
+	.reader-links a {
 		display: flex;
 		align-items: center;
 		gap: var(--space-2);
@@ -237,16 +174,9 @@
 		text-decoration: none;
 	}
 
-	a:hover {
+	.reader-links a:hover {
 		background: var(--color-surface);
 		text-decoration: underline;
-	}
-
-	.group:not(.reader-links) a[aria-current='page'] {
-		border-left: 3px solid var(--color-action);
-		border-radius: 0;
-		background: var(--color-surface);
-		font-weight: var(--font-weight-semibold);
 	}
 
 	.reader-links a {
@@ -258,7 +188,7 @@
 		font-weight: var(--font-weight-bold);
 	}
 
-	:global(.sidebar-narrow) a {
+	:global(.sidebar-narrow) .reader-links a {
 		min-height: var(--layout-target-minimum);
 	}
 </style>
