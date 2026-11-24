@@ -18,6 +18,7 @@
  * A case with no box shows only what its record holds; a section with
  * nothing in it is left out.
  */
+import { peopleInCase } from './biographies.ts';
 import { error } from '@sveltejs/kit';
 import { essayBoxFacts, essaysInGit } from 'virtual:essay-library';
 import { renderEssay } from '../essays/render.ts';
@@ -70,6 +71,8 @@ export interface CasePage {
 	bodyHtml: string;
 	opinions: CaseOpinion[];
 	nations: CaseNation[];
+	/** Native people in the case who have a page (content/biographies/). */
+	people: { name: string; link: string; role: string }[];
 	/** A note every nation shares, shown once under the list instead of on each line. */
 	nationNote?: string;
 	/** The same lines as the list behind a citation's book icon (reading-links.ts), shown open. */
@@ -240,6 +243,7 @@ export function casePage(key: string): CasePage {
 		bodyHtml: box.html,
 		opinions: caseOpinions(record),
 		nations,
+		people: peopleInCase(key),
 		nationNote: shared,
 		// The list a citation's book icon opens, shown open here, without the icon.
 		readingHtml: readingLinksHtml(record.reading_links, saved).replace(/<button[\s\S]*?<\/button>/, ''),

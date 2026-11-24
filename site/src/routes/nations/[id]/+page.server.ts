@@ -1,3 +1,4 @@
+import { peopleOfNation } from '#lib/server/biographies.ts';
 import { error } from '@sveltejs/kit';
 import type { OutlineItem, PageOutline } from '#lib/site-sections.ts';
 import geometry from 'virtual:map-geometry';
@@ -1117,6 +1118,7 @@ export const load: PageServerLoad = ({ params }) => {
 			practice: [],
 			opinions: undefined,
 			cases: [] as NationCase[],
+			people: [] as ReturnType<typeof peopleOfNation>,
 			law: [],
 			documents: [],
 			jurisdiction: [],
@@ -1283,6 +1285,7 @@ export const load: PageServerLoad = ({ params }) => {
 		practice,
 		opinions,
 		cases,
+		people: peopleOfNation(record.id),
 		law,
 		documents,
 		jurisdiction,
