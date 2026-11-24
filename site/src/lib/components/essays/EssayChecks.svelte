@@ -428,12 +428,13 @@
 	/* A panel in the right margin, as in essay-editor-mockups/v2-3. */
 	.checks {
 		position: sticky;
-		top: calc(var(--layout-target-minimum) + var(--space-4));
+		/* Below the masthead and its tools, which stay at the top of the screen while editing. */
+		top: calc(var(--masthead-stuck, 0px) + var(--space-4));
 		border: 1px solid var(--color-line);
 		border-radius: var(--radius-panel);
 		padding: var(--space-2) var(--space-3);
 		margin: 0 0 var(--space-3);
-		max-height: calc(100vh - 8rem);
+		max-height: calc(100vh - var(--masthead-stuck, 0px) - 2 * var(--space-4));
 		overflow-y: auto;
 		background: var(--color-surface-raised);
 		box-shadow: 0 1px 3px color-mix(in srgb, var(--color-ink) 10%, transparent);

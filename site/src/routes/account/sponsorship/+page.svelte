@@ -1,5 +1,6 @@
 <script lang="ts">
 	import { page } from '$app/state';
+	import Dropdown from '#lib/components/Dropdown.svelte';
 	import SponsorCard from '#lib/components/SponsorCard.svelte';
 	import { readableDate } from '#lib/readable-date.ts';
 	import { earmarkLabels, earmarks, giftFrequencies, giftFrequencyLabels, listingLabels, listings } from '#lib/sponsorship.ts';
@@ -7,6 +8,7 @@
 
 	let { data, form }: PageProps = $props();
 
+	const earmarkChoices = earmarks.map((earmark) => ({ value: earmark, label: earmarkLabels[earmark] }));
 	const thanked = $derived(page.url.searchParams.get('gift') === 'thanks');
 	const day = (time: string | null) => (time ? readableDate(time.slice(0, 10)) : '');
 	const month = (time: string | null) => (time ? readableDate(time.slice(0, 7)) : '');
@@ -131,12 +133,7 @@
 						<input id="gift-amount" name="amount" type="text" inputmode="decimal" required class="amount" value={data.asked.amount} />
 					</div>
 					<div class="field">
-						<label for="gift-earmark">Toward</label>
-						<select id="gift-earmark" name="earmark">
-							{#each earmarks as earmark (earmark)}
-								<option value={earmark} selected={earmark === (data.asked.toward ?? sponsor.earmark)}>{earmarkLabels[earmark]}</option>
-							{/each}
-						</select>
+						<Dropdown label="Toward" name="earmark" choices={earmarkChoices} value={data.asked.toward ?? sponsor.earmark} />
 					</div>
 					<fieldset class="choices">
 						<legend>How often</legend>
@@ -286,6 +283,11 @@
 <p class="small muted">Sponsors sign in with the same account as everyone else. The amount you give is never shown in public.</p>
 
 <style>
+	/* The field around the dropdown already spaces it. */
+	.field :global(.dropdown) {
+		margin-top: 0;
+	}
+
 	.whole {
 		border: 0;
 		margin: 0;
