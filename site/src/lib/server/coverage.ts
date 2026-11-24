@@ -7,6 +7,7 @@
 import { nations, type NationRecord } from './content.ts';
 import { nationDocumentHistories } from './document-history.ts';
 import { nationIndexRows } from './nation-index.ts';
+import { governanceGroups } from '#lib/governance-groups.ts';
 import { humanize } from '#lib/nation-labels.ts';
 
 /** The sections a nation page marks "None Identified" when nothing is on record, in the page's order. */
@@ -21,23 +22,33 @@ export const coverageSections = [
 
 export type CoverageSection = (typeof coverageSections)[number]['key'];
 
-/** The governance aspects the Government section shows. */
-const governmentAspects = new Set([
-	'form', 'governing-body', 'governing-body-size', 'governing-body-selection', 'governing-body-term', 'general-council',
-	'head-of-government', 'head-of-government-selection', 'head-of-government-term', 'other-officers', 'voting-age',
-	'election-authority', 'separation-of-powers', 'judicial-selection', 'judicial-term', 'judicial-independence',
-	'secretarial-approval', 'recall-and-removal', 'indian-reorganization-act', 'oklahoma-indian-welfare-act',
-	'alaska-indian-reorganization-act', 'written-constitution-other'
-]);
+/** Every aspect of `governance` the Government section shows. */
+const governmentAspects = new Set(governanceGroups.flatMap((group) => Object.keys(group.aspects)));
 
-function found(record: NationRecord): Record<CoverageSection, boolean> {
+/** Articles of association are some nations' governing document in place of a constitution. A corporate charter governs a business, so it is neither. */
+const governingKinds = ['constitution', 'articles-of-association'];
+
+/**
+ * Whether the nation's constitution is on record: listed among its governing
+ * documents, or with a history of its own (`historyKinds`, the humanized kinds
+ * of the document histories, as the nation page has them).
+ */
+export function hasConstitution(record: NationRecord, historyKinds: string[]): boolean {
 	const kinds = new Set((record.governing_documents ?? []).map((fact) => fact.kind));
-	const histories = nationDocumentHistories(record.id).map((history) => history.kind);
-	const governing = ['constitution', 'articles-of-association'];
-	const contacts = record.contacts as { websites?: unknown[]; offices?: unknown[] } | unknown[] | undefined;
-	const hasContacts = Array.isArray(contacts) ? contacts.length > 0 : Boolean(contacts && ((contacts.websites?.length ?? 0) > 0 || (contacts.offices?.length ?? 0) > 0));
+	return governingKinds.some((kind) => kinds.has(kind)) || historyKinds.some((kind) => governingKinds.map(humanize).includes(kind));
+}
+
+/** Whether any of the nation's published laws is on record: a law code, court rules or another law. */
+export function hasPublishedLaws(record: NationRecord): boolean {
+	const kinds = new Set((record.governing_documents ?? []).map((fact) => fact.kind));
+	return ['law-code', 'court-rules', 'other'].some((kind) => kinds.has(kind)) || (record.dispute_resolution_law ?? []).length > 0;
+}
+
+/** What each section of the nation's page has, by the page's own tests. */
+export function sectionsFound(record: NationRecord): Record<CoverageSection, boolean> {
+	const histories = nationDocumentHistories(record.id).map((history) => humanize(history.kind));
 	return {
-		contacts: hasContacts,
+		contacts: (record.contacts ?? []).length > 0,
 		government:
 			(record.government_structure ?? []).length > 0 ||
 			(record.governance ?? []).some((fact) => governmentAspects.has(fact.aspect)),
@@ -45,11 +56,8 @@ function found(record: NationRecord): Record<CoverageSection, boolean> {
 			(record.justice_institutions ?? []).length > 0 ||
 			(record.dispute_resolution?.forums ?? []).length > 0 ||
 			(record.court_practice ?? []).length > 0,
-		constitution:
-			governing.some((kind) => kinds.has(kind)) ||
-			histories.some((kind) => governing.map(humanize).includes(kind) || governing.includes(kind)),
-		laws:
-			['law-code', 'court-rules', 'other'].some((kind) => kinds.has(kind)) || (record.dispute_resolution_law ?? []).length > 0,
+		constitution: hasConstitution(record, histories),
+		laws: hasPublishedLaws(record),
 		jurisdiction:
 			(record.jurisdiction ?? []).some((fact) => Boolean(fact.detail ?? fact.value)) ||
 			(record.jurisdiction_agreements ?? []).length > 0 ||
@@ -73,7 +81,7 @@ export function coverageRows(): CoverageRow[] {
 		.map((row) => ({ row, record: records.get(row.id) }))
 		.filter(({ record }) => record && record.example !== true && record.review?.status !== 'withdrawn-at-request')
 		.map(({ row, record }) => {
-			const sections = found(record!);
+			const sections = sectionsFound(record!);
 			return {
 				id: row.id,
 				name: row.name,
