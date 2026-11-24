@@ -1,0 +1,141 @@
+key: morton-v-ruiz
+kind: federal-case
+citation:
+  type: legal_case
+  title: Morton v. Ruiz
+  authority: Supreme Court of the United States
+  container-title: U.S.
+  volume: '415'
+  page: '199'
+  issued:
+    date-parts:
+    - - 1974
+      - 2
+      - 20
+  URL: https://www.loc.gov/item/usrep415199/
+  accessed:
+    date-parts:
+    - - 2026
+      - 11
+      - 24
+caption:
+  printed: MORTON, SECRETARY OF THE INTERIOR v. RUIZ et ux
+  source: https://tile.loc.gov/storage-services/service/ll/usrep/usrep415/usrep415199/usrep415199.pdf
+  checked: '2026-11-24'
+opinions:
+  source: https://tile.loc.gov/storage-services/service/ll/usrep/usrep415/usrep415199/usrep415199.pdf
+  checked: '2026-11-24'
+  list:
+  - kind: majority
+    justice: Harry A. Blackmun
+    page: 201
+original_link: https://www.loc.gov/item/usrep415199/
+retrieved: '2026-11-24'
+history:
+  status: live
+  last_checked: '2026-11-24'
+court_dates:
+  argued:
+  - '1973-11-05'
+  - '1973-11-06'
+  printed: Argued November 5-6, 1973— Decided February 20, 1974
+  source: https://tile.loc.gov/storage-services/service/ll/usrep/usrep415/usrep415199/usrep415199.pdf
+  checked: '2026-11-24'
+supreme_court:
+  court: Burger Court
+  natural_court: Burger Court (1972-1975)
+  decision_type: majority opinion
+  vote:
+    majority: 9
+    minority: 0
+  justices:
+  - name: William O. Douglas
+    vote: majority
+  - name: Potter Stewart
+    vote: majority
+  - name: Thurgood Marshall
+    vote: majority
+  - name: William J. Brennan, Jr.
+    vote: majority
+  - name: Byron R. White
+    vote: majority
+  - name: Warren E. Burger
+    vote: majority
+  - name: Harry A. Blackmun
+    vote: majority
+    opinion: majority
+  - name: Lewis F. Powell, Jr.
+    vote: majority
+  - name: William H. Rehnquist
+    vote: majority
+  source: https://api.oyez.org/cases/1973/72-1052
+  checked: '2026-11-24'
+reading_links:
+  checked: '2026-11-24'
+  links:
+  - site: library-of-congress
+    label: Library of Congress
+    access: official
+    link: https://www.loc.gov/item/usrep415199/
+  - site: justia
+    label: Justia
+    access: free
+    link: https://supreme.justia.com/cases/federal/us/415/199/
+    unchecked: true
+  - site: oyez
+    label: Oyez
+    access: free
+    link: https://www.oyez.org/cases/1973/72-1052
+  - site: google-scholar
+    label: Google Scholar
+    access: free
+    link: https://scholar.google.com/scholar?hl=en&as_sdt=2006&q=%22415%20U.S.%20199%22
+    unchecked: true
+  - site: westlaw
+    label: Westlaw
+    access: subscription
+    link: https://1.next.westlaw.com/Link/Document/FullText?findType=Y&cite=415%20U.S.%20199
+    unchecked: true
+  - site: lexis
+    label: Lexis
+    access: subscription
+    link: https://advance.lexis.com/api/search?q=415%20U.S.%20199
+    unchecked: true
+rights:
+  status: no-permission-needed
+  basis: us-government-work
+  basis_note: Opinions of federal courts are works of the U.S. government (17 U.S.C. § 105); the host site's own additions are not reproduced.
+  redistribution: true
+found_in:
+- 2026-11-24-supreme-court-native-cases
+notes: 'Full citation: 415 U.S. 199 (1974). Official report scan: https://tile.loc.gov/storage-services/service/ll/usrep/usrep415/usrep415199/usrep415199.pdf. Written by scripts/caselaw/supreme_court_native_cases.py from the Supreme Court Database (case 1973-056), the Caselaw Access Project''s text of the report and the Library of Congress scan; not yet read by a person.'
+tribes: []
+nations_in_case:
+  checked: '2026-11-24'
+  named: []
+review:
+  status: verified
+  by: scripts/caselaw/supreme_court_native_cases.py
+  date: '2026-11-24'
+  checks:
+  - check: cite
+    result: agree
+    detail: Caselaw Access Project 415 U.S. 199 "Morton v. Ruiz"; Database 415 U.S. 199 "MORTON, SECRETARY OF THE INTERIOR v. RUIZ ET UX."
+  - check: scan
+    result: agree
+    detail: Scan has 40 pages; the report runs 199 to 238
+  - check: caption
+    result: agree
+    detail: Caption found in the scan's text at 0.98
+  - check: printed dates
+    result: agree
+    detail: Caselaw Access Project "Argued November 5-6, 1973— Decided February 20, 1974"; scan "Argued November 5-6, 1973Decided February 20, 1974"
+  - check: decided
+    result: agree
+    detail: 'Printed and Database: 1974-02-20'
+  - check: opinions
+    result: agree
+    detail: 'Report: majority Blackmun p. 201; Database writers: Blackmun'
+  - check: bench
+    result: agree
+    detail: Oyez and the Database give the same Justices and votes

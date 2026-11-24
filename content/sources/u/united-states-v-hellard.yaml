@@ -1,0 +1,137 @@
+key: united-states-v-hellard
+kind: federal-case
+citation:
+  type: legal_case
+  title: United States v. Hellard
+  authority: Supreme Court of the United States
+  container-title: U.S.
+  volume: '322'
+  page: '363'
+  issued:
+    date-parts:
+    - - 1944
+      - 5
+      - 15
+  URL: https://www.loc.gov/item/usrep322363/
+  accessed:
+    date-parts:
+    - - 2026
+      - 11
+      - 24
+caption:
+  printed: UNITED STATES v. HELLARD
+  source: https://tile.loc.gov/storage-services/service/ll/usrep/usrep322/usrep322363/usrep322363.pdf
+  checked: '2026-11-24'
+opinions:
+  source: https://tile.loc.gov/storage-services/service/ll/usrep/usrep322/usrep322363/usrep322363.pdf
+  checked: '2026-11-24'
+  list:
+  - kind: majority
+    justice: William Orville Douglas
+    page: 363
+original_link: https://www.loc.gov/item/usrep322363/
+retrieved: '2026-11-24'
+history:
+  status: live
+  last_checked: '2026-11-24'
+court_dates:
+  argued:
+  - '1944-04-28'
+  printed: Argued April 28, 1944. Decided May 15, 1944.
+  source: https://tile.loc.gov/storage-services/service/ll/usrep/usrep322/usrep322363/usrep322363.pdf
+  checked: '2026-11-24'
+supreme_court:
+  court: Stone Court
+  natural_court: Stone Court (1943-1945)
+  decision_type: majority opinion
+  vote:
+    majority: 9
+    minority: 0
+  justices:
+  - name: Harlan Fiske Stone
+    vote: majority
+  - name: Owen Josephus Roberts
+    vote: majority
+  - name: Hugo Lafayette Black
+    vote: majority
+  - name: Stanley Forman Reed
+    vote: majority
+  - name: Felix Frankfurter
+    vote: majority
+  - name: William Orville Douglas
+    vote: majority
+    opinion: majority
+  - name: Frank Murphy
+    vote: majority
+  - name: Robert Houghwout Jackson
+    vote: majority
+  - name: Wiley Blount Rutledge
+    vote: majority
+  source: http://scdb.wustl.edu/_brickFiles/Legacy_07/SCDB_Legacy_07_justiceCentered_Citation.csv.zip
+  note: From the Supreme Court Database, case 1943-059; Oyez has no votes for this case.
+  checked: '2026-11-24'
+reading_links:
+  checked: '2026-11-24'
+  links:
+  - site: library-of-congress
+    label: Library of Congress
+    access: official
+    link: https://www.loc.gov/item/usrep322363/
+  - site: justia
+    label: Justia
+    access: free
+    link: https://supreme.justia.com/cases/federal/us/322/363/
+    unchecked: true
+  - site: google-scholar
+    label: Google Scholar
+    access: free
+    link: https://scholar.google.com/scholar?hl=en&as_sdt=2006&q=%22322%20U.S.%20363%22
+    unchecked: true
+  - site: westlaw
+    label: Westlaw
+    access: subscription
+    link: https://1.next.westlaw.com/Link/Document/FullText?findType=Y&cite=322%20U.S.%20363
+    unchecked: true
+  - site: lexis
+    label: Lexis
+    access: subscription
+    link: https://advance.lexis.com/api/search?q=322%20U.S.%20363
+    unchecked: true
+rights:
+  status: no-permission-needed
+  basis: us-government-work
+  basis_note: Opinions of federal courts are works of the U.S. government (17 U.S.C. § 105); the host site's own additions are not reproduced.
+  redistribution: true
+found_in:
+- 2026-11-24-supreme-court-native-cases
+notes: 'Full citation: 322 U.S. 363 (1944). Official report scan: https://tile.loc.gov/storage-services/service/ll/usrep/usrep322/usrep322363/usrep322363.pdf. Written by scripts/caselaw/supreme_court_native_cases.py from the Supreme Court Database (case 1943-059), the Caselaw Access Project''s text of the report and the Library of Congress scan; not yet read by a person.'
+tribes: []
+nations_in_case:
+  checked: '2026-11-24'
+  named: []
+review:
+  status: verified
+  by: scripts/caselaw/supreme_court_native_cases.py
+  date: '2026-11-24'
+  checks:
+  - check: cite
+    result: agree
+    detail: Caselaw Access Project 322 U.S. 363 "United States v. Hellard"; Database 322 U.S. 363 "UNITED STATES v. HELLARD"
+  - check: scan
+    result: agree
+    detail: Scan has 7 pages; the report runs 363 to 369
+  - check: caption
+    result: agree
+    detail: Caption found in the scan's text at 1.00
+  - check: printed dates
+    result: agree
+    detail: Caselaw Access Project "Argued April 28, 1944. Decided May 15, 1944."; scan "Argued April 28, 1944.-Decided May 15, 1944."
+  - check: decided
+    result: agree
+    detail: 'Printed and Database: 1944-05-15'
+  - check: opinions
+    result: agree
+    detail: 'Report: majority Douglas p. 363; Database writers: Douglas'
+  - check: bench
+    result: agree
+    detail: No Oyez votes; each opinion writer in the report sits on the Database's bench on the side the opinion takes

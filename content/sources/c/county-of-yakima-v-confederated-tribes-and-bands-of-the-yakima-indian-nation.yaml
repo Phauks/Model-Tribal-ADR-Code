@@ -1,0 +1,148 @@
+key: county-of-yakima-v-confederated-tribes-and-bands-of-the-yakima-indian-nation
+kind: federal-case
+citation:
+  type: legal_case
+  title: County of Yakima v. Confederated Tribes & Bands of the Yakima Indian Nation
+  authority: Supreme Court of the United States
+  container-title: U.S.
+  volume: '502'
+  page: '251'
+  issued:
+    date-parts:
+    - - 1992
+      - 1
+      - 14
+  URL: https://www.loc.gov/item/usrep502251/
+  accessed:
+    date-parts:
+    - - 2026
+      - 11
+      - 24
+caption:
+  printed: COUNTY OF YAKIMA et al. v. CONFEDERATED TRIBES AND BANDS OF THE YAKIMA INDIAN NATION
+  source: https://tile.loc.gov/storage-services/service/ll/usrep/usrep502/usrep502251/usrep502251.pdf
+  checked: '2026-11-24'
+opinions:
+  source: https://tile.loc.gov/storage-services/service/ll/usrep/usrep502/usrep502251/usrep502251.pdf
+  checked: '2026-11-24'
+  list:
+  - kind: majority
+    justice: Antonin Scalia
+    page: 253
+  - kind: concurrence in part and dissent in part
+    justice: Harry A. Blackmun
+    page: 270
+original_link: https://www.loc.gov/item/usrep502251/
+retrieved: '2026-11-24'
+history:
+  status: live
+  last_checked: '2026-11-24'
+court_dates:
+  argued:
+  - '1991-11-05'
+  - '1991-01-14'
+  printed: Argued November 5, 1991 Decided January 14, 1992
+  source: https://tile.loc.gov/storage-services/service/ll/usrep/usrep502/usrep502251/usrep502251.pdf
+  checked: '2026-11-24'
+supreme_court:
+  court: Rehnquist Court
+  natural_court: Rehnquist Court (1991-1993)
+  decision_type: majority opinion
+  vote:
+    majority: 9
+    minority: 0
+  justices:
+  - name: Byron R. White
+    vote: majority
+  - name: Harry A. Blackmun
+    vote: majority
+    opinion: special concurrence
+  - name: William H. Rehnquist
+    vote: majority
+  - name: John Paul Stevens
+    vote: majority
+  - name: Sandra Day O'Connor
+    vote: majority
+  - name: Antonin Scalia
+    vote: majority
+    opinion: majority
+  - name: Anthony M. Kennedy
+    vote: majority
+  - name: David H. Souter
+    vote: majority
+  - name: Clarence Thomas
+    vote: majority
+  source: https://api.oyez.org/cases/1991/90-408
+  checked: '2026-11-24'
+reading_links:
+  checked: '2026-11-24'
+  links:
+  - site: library-of-congress
+    label: Library of Congress
+    access: official
+    link: https://www.loc.gov/item/usrep502251/
+  - site: justia
+    label: Justia
+    access: free
+    link: https://supreme.justia.com/cases/federal/us/502/251/
+    unchecked: true
+  - site: oyez
+    label: Oyez
+    access: free
+    link: https://www.oyez.org/cases/1991/90-408
+  - site: google-scholar
+    label: Google Scholar
+    access: free
+    link: https://scholar.google.com/scholar?hl=en&as_sdt=2006&q=%22502%20U.S.%20251%22
+    unchecked: true
+  - site: westlaw
+    label: Westlaw
+    access: subscription
+    link: https://1.next.westlaw.com/Link/Document/FullText?findType=Y&cite=502%20U.S.%20251
+    unchecked: true
+  - site: lexis
+    label: Lexis
+    access: subscription
+    link: https://advance.lexis.com/api/search?q=502%20U.S.%20251
+    unchecked: true
+rights:
+  status: no-permission-needed
+  basis: us-government-work
+  basis_note: Opinions of federal courts are works of the U.S. government (17 U.S.C. § 105); the host site's own additions are not reproduced.
+  redistribution: true
+found_in:
+- 2026-11-24-supreme-court-native-cases
+notes: 'Full citation: 502 U.S. 251 (1992). Official report scan: https://tile.loc.gov/storage-services/service/ll/usrep/usrep502/usrep502251/usrep502251.pdf. Written by scripts/caselaw/supreme_court_native_cases.py from the Supreme Court Database (case 1991-021), the Caselaw Access Project''s text of the report and the Library of Congress scan; not yet read by a person.'
+tribes: []
+nations_in_case:
+  checked: '2026-11-24'
+  named: []
+  not_linked:
+  - named_as: Bands of the Yakima Indian Nation
+    reason: No nation record matches this name; it may be a historical name or a group that is not a recognized nation today.
+review:
+  status: verified
+  by: scripts/caselaw/supreme_court_native_cases.py
+  date: '2026-11-24'
+  checks:
+  - check: cite
+    result: agree
+    detail: Caselaw Access Project 502 U.S. 251 "County of Yakima v. Confederated Tribes & Bands of the Yakima Indian Nation"; Database 502 U.S. 251 "COUNTY OF YAKIMA, et al. v. CONFEDERATED TRIBES AND BANDS OF THE YAKIMA INDIAN NATION"
+  - check: scan
+    result: agree
+    detail: Scan has 28 pages; the report runs 251 to 278
+  - check: caption
+    result: agree
+    detail: Caption found in the scan's text at 1.00
+  - check: printed dates
+    result: agree
+    detail: Caselaw Access Project "Argued November 5, 1991 Decided January 14, 1992"; scan "Argued November 5, 1991-Decided January 14, 1992"
+  - check: decided
+    result: agree
+    detail: 'Printed and Database: 1992-01-14'
+  - check: opinions
+    result: agree
+    detail: 'Report: majority Scalia p. 253, concurrence in part and dissent in part Blackmun p. 270; Database writers: Blackmun, Scalia'
+  - check: bench
+    result: agree
+    detail: Oyez and the Database give the same Justices and votes

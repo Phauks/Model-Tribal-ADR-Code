@@ -1,0 +1,129 @@
+key: pennock-v-commissioners
+kind: federal-case
+citation:
+  type: legal_case
+  title: Pennock v. Commissioners
+  authority: Supreme Court of the United States
+  container-title: U.S.
+  volume: '103'
+  page: '44'
+  issued:
+    date-parts:
+    - - 1881
+      - 2
+      - 28
+  URL: https://www.loc.gov/item/usrep103044/
+  accessed:
+    date-parts:
+    - - 2026
+      - 11
+      - 24
+caption:
+  printed: Pennock v Commissioners
+  source: https://tile.loc.gov/storage-services/service/ll/usrep/usrep103/usrep103044/usrep103044.pdf
+  checked: '2026-11-24'
+opinions:
+  source: https://tile.loc.gov/storage-services/service/ll/usrep/usrep103/usrep103044/usrep103044.pdf
+  checked: '2026-11-24'
+  list:
+  - kind: majority
+    justice: Stephen Johnson Field
+    page: 44
+original_link: https://www.loc.gov/item/usrep103044/
+retrieved: '2026-11-24'
+history:
+  status: live
+  last_checked: '2026-11-24'
+court_dates:
+  printed: Decided Oct. 31, 1881
+  source: https://www.supremecourt.gov/opinions/datesofdecisions.pdf
+  note: The report prints only the term. These dates are from the Supreme Court Library's table of decision and argument dates, which takes them from the Court's Engrossed Minutes.
+  checked: '2026-11-24'
+supreme_court:
+  court: Waite Court
+  natural_court: Waite Court (1881-1881)
+  decision_type: majority opinion
+  vote:
+    majority: 7
+    minority: 0
+  justices:
+  - name: Morrison Remick Waite
+    vote: majority
+  - name: Nathan Clifford
+    vote: not recorded
+  - name: Samuel Freeman Miller
+    vote: majority
+  - name: Stephen Johnson Field
+    vote: majority
+    opinion: majority
+  - name: Joseph P. Bradley
+    vote: majority
+  - name: Ward Hunt
+    vote: not recorded
+  - name: John Marshall Harlan
+    vote: majority
+  source: http://scdb.wustl.edu/_brickFiles/Legacy_07/SCDB_Legacy_07_justiceCentered_Citation.csv.zip
+  note: From the Supreme Court Database, case 1880-099; Oyez has no votes for this case.
+  checked: '2026-11-24'
+reading_links:
+  checked: '2026-11-24'
+  links:
+  - site: library-of-congress
+    label: Library of Congress
+    access: official
+    link: https://www.loc.gov/item/usrep103044/
+  - site: justia
+    label: Justia
+    access: free
+    link: https://supreme.justia.com/cases/federal/us/103/44/
+    unchecked: true
+  - site: google-scholar
+    label: Google Scholar
+    access: free
+    link: https://scholar.google.com/scholar?hl=en&as_sdt=2006&q=%22103%20U.S.%2044%22
+    unchecked: true
+  - site: westlaw
+    label: Westlaw
+    access: subscription
+    link: https://1.next.westlaw.com/Link/Document/FullText?findType=Y&cite=103%20U.S.%2044
+    unchecked: true
+  - site: lexis
+    label: Lexis
+    access: subscription
+    link: https://advance.lexis.com/api/search?q=103%20U.S.%2044
+    unchecked: true
+rights:
+  status: no-permission-needed
+  basis: us-government-work
+  basis_note: Opinions of federal courts are works of the U.S. government (17 U.S.C. § 105); the host site's own additions are not reproduced.
+  redistribution: true
+found_in:
+- 2026-11-24-supreme-court-native-cases
+notes: 'Full citation: 103 U.S. 44 (1881). Official report scan: https://tile.loc.gov/storage-services/service/ll/usrep/usrep103/usrep103044/usrep103044.pdf. Written by scripts/caselaw/supreme_court_native_cases.py from the Supreme Court Database (case 1880-099), the Caselaw Access Project''s text of the report and the Library of Congress scan; not yet read by a person.'
+tribes: []
+nations_in_case:
+  checked: '2026-11-24'
+  named: []
+review:
+  status: unverified
+  by: scripts/caselaw/supreme_court_native_cases.py
+  date: '2026-11-24'
+  checks:
+  - check: cite
+    result: agree
+    detail: Caselaw Access Project 103 U.S. 44 "Pennock v. Commissioners"; Database 103 U.S. 44 "PENNOCK v. COMMISSIONERS"
+  - check: scan
+    result: agree
+    detail: Scan has 6 pages; the report runs 44 to 49
+  - check: caption
+    result: agree
+    detail: Caption found in the scan's text at 0.98
+  - check: decided
+    result: differs
+    detail: Supreme Court Library's table (from the Court's minutes) Oct. 31, 1881; Database 1881-02-28
+  - check: opinions
+    result: agree
+    detail: 'Report: majority Field p. 44; Database writers: Field'
+  - check: bench
+    result: differs
+    detail: The Database lists Noah Haynes Swayne, William Strong, not serving on the day of decision; left out of the bench

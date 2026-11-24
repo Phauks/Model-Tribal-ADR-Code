@@ -1,0 +1,145 @@
+key: cotton-petroleum-corp-v-new-mexico
+kind: federal-case
+citation:
+  type: legal_case
+  title: Cotton Petroleum Corp. v. New Mexico
+  authority: Supreme Court of the United States
+  container-title: U.S.
+  volume: '490'
+  page: '163'
+  issued:
+    date-parts:
+    - - 1989
+      - 4
+      - 25
+  URL: https://www.loc.gov/item/usrep490163/
+  accessed:
+    date-parts:
+    - - 2026
+      - 11
+      - 24
+caption:
+  printed: COTTON PETROLEUM CORP. et al. v. NEW MEXICO et al.
+  source: https://tile.loc.gov/storage-services/service/ll/usrep/usrep490/usrep490163/usrep490163.pdf
+  checked: '2026-11-24'
+opinions:
+  source: https://tile.loc.gov/storage-services/service/ll/usrep/usrep490/usrep490163/usrep490163.pdf
+  checked: '2026-11-24'
+  list:
+  - kind: majority
+    justice: John Paul Stevens
+    page: 166
+  - kind: dissent
+    justice: Harry A. Blackmun
+    page: 193
+original_link: https://www.loc.gov/item/usrep490163/
+retrieved: '2026-11-24'
+history:
+  status: live
+  last_checked: '2026-11-24'
+court_dates:
+  argued:
+  - '1988-11-30'
+  - '1988-04-25'
+  printed: Argued November 30, 1988 Decided April 25, 1989
+  source: https://tile.loc.gov/storage-services/service/ll/usrep/usrep490/usrep490163/usrep490163.pdf
+  checked: '2026-11-24'
+supreme_court:
+  court: Rehnquist Court
+  natural_court: Rehnquist Court (1988-1990)
+  decision_type: majority opinion
+  vote:
+    majority: 6
+    minority: 3
+  justices:
+  - name: Thurgood Marshall
+    vote: minority
+  - name: William J. Brennan, Jr.
+    vote: minority
+  - name: Byron R. White
+    vote: majority
+  - name: Harry A. Blackmun
+    vote: minority
+    opinion: dissent
+  - name: William H. Rehnquist
+    vote: majority
+  - name: John Paul Stevens
+    vote: majority
+    opinion: majority
+  - name: Sandra Day O'Connor
+    vote: majority
+  - name: Antonin Scalia
+    vote: majority
+  - name: Anthony M. Kennedy
+    vote: majority
+  source: https://api.oyez.org/cases/1988/87-1327
+  checked: '2026-11-24'
+reading_links:
+  checked: '2026-11-24'
+  links:
+  - site: library-of-congress
+    label: Library of Congress
+    access: official
+    link: https://www.loc.gov/item/usrep490163/
+  - site: justia
+    label: Justia
+    access: free
+    link: https://supreme.justia.com/cases/federal/us/490/163/
+    unchecked: true
+  - site: oyez
+    label: Oyez
+    access: free
+    link: https://www.oyez.org/cases/1988/87-1327
+  - site: google-scholar
+    label: Google Scholar
+    access: free
+    link: https://scholar.google.com/scholar?hl=en&as_sdt=2006&q=%22490%20U.S.%20163%22
+    unchecked: true
+  - site: westlaw
+    label: Westlaw
+    access: subscription
+    link: https://1.next.westlaw.com/Link/Document/FullText?findType=Y&cite=490%20U.S.%20163
+    unchecked: true
+  - site: lexis
+    label: Lexis
+    access: subscription
+    link: https://advance.lexis.com/api/search?q=490%20U.S.%20163
+    unchecked: true
+rights:
+  status: no-permission-needed
+  basis: us-government-work
+  basis_note: Opinions of federal courts are works of the U.S. government (17 U.S.C. § 105); the host site's own additions are not reproduced.
+  redistribution: true
+found_in:
+- 2026-11-24-supreme-court-native-cases
+notes: 'Full citation: 490 U.S. 163 (1989). Official report scan: https://tile.loc.gov/storage-services/service/ll/usrep/usrep490/usrep490163/usrep490163.pdf. Written by scripts/caselaw/supreme_court_native_cases.py from the Supreme Court Database (case 1988-076), the Caselaw Access Project''s text of the report and the Library of Congress scan; not yet read by a person.'
+tribes: []
+nations_in_case:
+  checked: '2026-11-24'
+  named: []
+review:
+  status: verified
+  by: scripts/caselaw/supreme_court_native_cases.py
+  date: '2026-11-24'
+  checks:
+  - check: cite
+    result: agree
+    detail: Caselaw Access Project 490 U.S. 163 "Cotton Petroleum Corp. v. New Mexico"; Database 490 U.S. 163 "COTTON PETROLEUM CORP. et al. v. NEW MEXICO et al."
+  - check: scan
+    result: agree
+    detail: Scan has 49 pages; the report runs 163 to 211
+  - check: caption
+    result: agree
+    detail: Caption found in the scan's text at 1.00
+  - check: printed dates
+    result: agree
+    detail: Caselaw Access Project "Argued November 30, 1988 Decided April 25, 1989"; scan "Argued November 30, 1988-Decided April 25, 1989"
+  - check: decided
+    result: agree
+    detail: 'Printed and Database: 1989-04-25'
+  - check: opinions
+    result: agree
+    detail: 'Report: majority Stevens p. 166, dissent Blackmun p. 193; Database writers: Blackmun, Stevens'
+  - check: bench
+    result: agree
+    detail: Oyez and the Database give the same Justices and votes

@@ -1,0 +1,138 @@
+key: montoya-v-united-states
+kind: federal-case
+citation:
+  type: legal_case
+  title: Montoya v. United States
+  authority: Supreme Court of the United States
+  container-title: U.S.
+  volume: '180'
+  page: '261'
+  issued:
+    date-parts:
+    - - 1901
+      - 2
+      - 11
+  URL: https://www.loc.gov/item/usrep180261/
+  accessed:
+    date-parts:
+    - - 2026
+      - 11
+      - 24
+caption:
+  printed: MONTOYA v. UNITED STATES
+  source: https://tile.loc.gov/storage-services/service/ll/usrep/usrep180/usrep180261/usrep180261.pdf
+  checked: '2026-11-24'
+opinions:
+  source: https://tile.loc.gov/storage-services/service/ll/usrep/usrep180/usrep180261/usrep180261.pdf
+  checked: '2026-11-24'
+  list:
+  - kind: majority
+    justice: Henry Billings Brown
+    page: 263
+original_link: https://www.loc.gov/item/usrep180261/
+retrieved: '2026-11-24'
+history:
+  status: live
+  last_checked: '2026-11-24'
+court_dates:
+  argued:
+  - '1000-12-14'
+  - '1000-12-17'
+  printed: Argued December 14,17,1000. Decided February 11, 1901.
+  source: https://tile.loc.gov/storage-services/service/ll/usrep/usrep180/usrep180261/usrep180261.pdf
+  checked: '2026-11-24'
+supreme_court:
+  court: Fuller Court
+  natural_court: Fuller Court (1898-1902)
+  decision_type: majority opinion
+  vote:
+    majority: 9
+    minority: 0
+  justices:
+  - name: Melville Weston Fuller
+    vote: majority
+  - name: Edward Douglass White
+    vote: majority
+  - name: John Marshall Harlan
+    vote: majority
+  - name: Horace Gray
+    vote: majority
+  - name: David Josiah Brewer
+    vote: majority
+  - name: Henry Billings Brown
+    vote: majority
+    opinion: majority
+  - name: George Shiras, Jr.
+    vote: majority
+  - name: Rufus Wheeler Peckham
+    vote: majority
+  - name: Joseph McKenna
+    vote: majority
+  source: http://scdb.wustl.edu/_brickFiles/Legacy_07/SCDB_Legacy_07_justiceCentered_Citation.csv.zip
+  note: From the Supreme Court Database, case 1900-109; Oyez has no votes for this case.
+  checked: '2026-11-24'
+reading_links:
+  checked: '2026-11-24'
+  links:
+  - site: library-of-congress
+    label: Library of Congress
+    access: official
+    link: https://www.loc.gov/item/usrep180261/
+  - site: justia
+    label: Justia
+    access: free
+    link: https://supreme.justia.com/cases/federal/us/180/261/
+    unchecked: true
+  - site: google-scholar
+    label: Google Scholar
+    access: free
+    link: https://scholar.google.com/scholar?hl=en&as_sdt=2006&q=%22180%20U.S.%20261%22
+    unchecked: true
+  - site: westlaw
+    label: Westlaw
+    access: subscription
+    link: https://1.next.westlaw.com/Link/Document/FullText?findType=Y&cite=180%20U.S.%20261
+    unchecked: true
+  - site: lexis
+    label: Lexis
+    access: subscription
+    link: https://advance.lexis.com/api/search?q=180%20U.S.%20261
+    unchecked: true
+rights:
+  status: no-permission-needed
+  basis: us-government-work
+  basis_note: Opinions of federal courts are works of the U.S. government (17 U.S.C. § 105); the host site's own additions are not reproduced.
+  redistribution: true
+found_in:
+- 2026-11-24-supreme-court-native-cases
+notes: 'Full citation: 180 U.S. 261 (1901). Official report scan: https://tile.loc.gov/storage-services/service/ll/usrep/usrep180/usrep180261/usrep180261.pdf. Written by scripts/caselaw/supreme_court_native_cases.py from the Supreme Court Database (case 1900-109), the Caselaw Access Project''s text of the report and the Library of Congress scan; not yet read by a person.'
+tribes: []
+nations_in_case:
+  checked: '2026-11-24'
+  named: []
+review:
+  status: unverified
+  by: scripts/caselaw/supreme_court_native_cases.py
+  date: '2026-11-24'
+  checks:
+  - check: cite
+    result: agree
+    detail: Caselaw Access Project 180 U.S. 261 "Montoya v. United States"; Database 180 U.S. 261 "MONTOYA v. UNITED STATES"
+  - check: scan
+    result: agree
+    detail: Scan has 10 pages; the report runs 261 to 270
+  - check: caption
+    result: agree
+    detail: Caption found in the scan's text at 1.00
+  - check: printed dates
+    result: agree
+    detail: Caselaw Access Project "Argued December 14,17,1000. Decided February 11, 1901."; scan "Argued Deceiber 14, 17, 1900. -Decided February 11, 1901."
+  - check: decided
+    result: agree
+    detail: 'Printed and Database: 1901-02-11'
+  - check: opinions
+    result: settled
+    detail: 'Report: majority Brown p. 264; Database writers: Brown; scan pages [(264, 263)]. Read from the scan by an AI reader (corrected): p. 263: "MR. JUSTICE BROWN delivered the opinion of the court." (OCR: "MR. JUSTICE BRowN delivered the opinion of the court."). The record''s page 264 is not the start of the opinion; the scan line places it at p. 263.'
+  - check: bench
+    result: agree
+    detail: No Oyez votes; each opinion writer in the report sits on the Database's bench on the side the opinion takes

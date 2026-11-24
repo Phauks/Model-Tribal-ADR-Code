@@ -1,0 +1,141 @@
+key: donnelly-v-united-states
+kind: federal-case
+citation:
+  type: legal_case
+  title: Donnelly v. United States
+  authority: Supreme Court of the United States
+  container-title: U.S.
+  volume: '228'
+  page: '243'
+  issued:
+    date-parts:
+    - - 1913
+      - 4
+      - 7
+  URL: https://www.loc.gov/item/usrep228243/
+  accessed:
+    date-parts:
+    - - 2026
+      - 11
+      - 24
+caption:
+  printed: DONNELLY v. UNITED STATES
+  source: https://tile.loc.gov/storage-services/service/ll/usrep/usrep228/usrep228243/usrep228243.pdf
+  checked: '2026-11-24'
+opinions:
+  source: https://tile.loc.gov/storage-services/service/ll/usrep/usrep228/usrep228243/usrep228243.pdf
+  checked: '2026-11-24'
+  list:
+  - kind: majority
+    justice: Mahlon Pitney
+    page: 252
+  - kind: dissent
+    justice: Oliver Wendell Holmes
+    page: 277
+original_link: https://www.loc.gov/item/usrep228243/
+retrieved: '2026-11-24'
+history:
+  status: live
+  last_checked: '2026-11-24'
+court_dates:
+  argued:
+  - '1912-12-18'
+  printed: Argued December 18, 1912. Decided April 7, 1913.
+  source: https://tile.loc.gov/storage-services/service/ll/usrep/usrep228/usrep228243/usrep228243.pdf
+  checked: '2026-11-24'
+supreme_court:
+  court: White Court
+  natural_court: White Court (1912-1914)
+  decision_type: majority opinion
+  vote:
+    majority: 6
+    minority: 3
+  justices:
+  - name: Edward Douglass White
+    vote: majority
+  - name: Charles Evans Hughes
+    vote: minority
+  - name: Joseph McKenna
+    vote: majority
+  - name: Oliver Wendell Holmes
+    vote: minority
+    opinion: dissent
+  - name: William Rufus Day
+    vote: majority
+  - name: Horace Harmon Lurton
+    vote: minority
+  - name: Willis Van Devanter
+    vote: majority
+  - name: Joseph Rucker Lamar
+    vote: majority
+  - name: Mahlon Pitney
+    vote: majority
+    opinion: majority
+  source: http://scdb.wustl.edu/_brickFiles/Legacy_07/SCDB_Legacy_07_justiceCentered_Citation.csv.zip
+  note: From the Supreme Court Database, case 1912-161; Oyez has no votes for this case.
+  checked: '2026-11-24'
+reading_links:
+  checked: '2026-11-24'
+  links:
+  - site: library-of-congress
+    label: Library of Congress
+    access: official
+    link: https://www.loc.gov/item/usrep228243/
+  - site: justia
+    label: Justia
+    access: free
+    link: https://supreme.justia.com/cases/federal/us/228/243/
+    unchecked: true
+  - site: google-scholar
+    label: Google Scholar
+    access: free
+    link: https://scholar.google.com/scholar?hl=en&as_sdt=2006&q=%22228%20U.S.%20243%22
+    unchecked: true
+  - site: westlaw
+    label: Westlaw
+    access: subscription
+    link: https://1.next.westlaw.com/Link/Document/FullText?findType=Y&cite=228%20U.S.%20243
+    unchecked: true
+  - site: lexis
+    label: Lexis
+    access: subscription
+    link: https://advance.lexis.com/api/search?q=228%20U.S.%20243
+    unchecked: true
+rights:
+  status: no-permission-needed
+  basis: us-government-work
+  basis_note: Opinions of federal courts are works of the U.S. government (17 U.S.C. § 105); the host site's own additions are not reproduced.
+  redistribution: true
+found_in:
+- 2026-11-24-supreme-court-native-cases
+notes: 'Full citation: 228 U.S. 243 (1913). Official report scan: https://tile.loc.gov/storage-services/service/ll/usrep/usrep228/usrep228243/usrep228243.pdf. Written by scripts/caselaw/supreme_court_native_cases.py from the Supreme Court Database (case 1912-161), the Caselaw Access Project''s text of the report and the Library of Congress scan; not yet read by a person.'
+tribes: []
+nations_in_case:
+  checked: '2026-11-24'
+  named: []
+review:
+  status: unverified
+  by: scripts/caselaw/supreme_court_native_cases.py
+  date: '2026-11-24'
+  checks:
+  - check: cite
+    result: agree
+    detail: Caselaw Access Project 228 U.S. 243 "Donnelly v. United States"; Database 228 U.S. 243 "DONNELLY v. UNITED STATES"
+  - check: scan
+    result: agree
+    detail: Scan has 36 pages; the report runs 243 to 278
+  - check: caption
+    result: agree
+    detail: Caption found in the scan's text at 1.00
+  - check: printed dates
+    result: agree
+    detail: Caselaw Access Project "Argued December 18, 1912. Decided April 7, 1913."; scan "Argued December 18, 1912.-Decided April 7, 1913."
+  - check: decided
+    result: agree
+    detail: 'Printed and Database: 1913-04-07'
+  - check: opinions
+    result: settled
+    detail: 'Report: majority Pitney p. 252; Database writers: Holmes, Pitney. Read from the scan by an AI reader (corrected): p. 252: MR. JUSTICE PITNEY delivered the opinion of the court. p. 277: Dissenting Opinion: Holmes, Lurton, Hughes., JJ. (dissent text follows: The confession of Joe Dick, since deceased...); p. 277: MR. JUSTICE VAN DEVANTER concurs in the result. (no opinion text, not listed)'
+  - check: bench
+    result: agree
+    detail: No Oyez votes; each opinion writer in the report sits on the Database's bench on the side the opinion takes

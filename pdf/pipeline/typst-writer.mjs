@@ -68,9 +68,10 @@ const OPINION_LABELS = {
   "dissent in part": "opinion dissenting in part",
   judgment: "opinion announcing the judgment",
   dissent: "dissenting opinion",
+  "coauthored dissent": "joint dissenting opinion",
 };
 // Decisions with no signed opinion of the Court, shown as their own line.
-const DECISION_LABELS = { "per curiam": "Per curiam", "equally divided Court": "Affirmed by an equally divided Court", "judgment of the Court": "No opinion for a majority" };
+const DECISION_LABELS = { "per curiam": "Per curiam", "equally divided Court": "Affirmed by an equally divided Court", "judgment of the Court": "No opinion for a majority", seriatim: "Each Justice gave an opinion (seriatim)", decree: "Decree" };
 const MONTHS = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
 function surname(name) {
   const plain = name.replace(/,?\s+(?:Jr\.|Sr\.|II|III)$/, "").trim();

@@ -45,7 +45,9 @@ export interface CaseRecord {
 const decisionLabels: Record<string, string> = {
 	'per curiam': 'Per curiam',
 	'equally divided Court': 'Affirmed by an equally divided Court',
-	'judgment of the Court': 'No opinion for a majority'
+	'judgment of the Court': 'No opinion for a majority',
+	seriatim: 'Each Justice gave an opinion (seriatim)',
+	decree: 'Decree'
 };
 
 // Each kind of date and its label, in the order used when two fall on the same day.

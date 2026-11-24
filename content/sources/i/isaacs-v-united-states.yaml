@@ -1,0 +1,135 @@
+key: isaacs-v-united-states
+kind: federal-case
+citation:
+  type: legal_case
+  title: Isaacs v. United States
+  authority: Supreme Court of the United States
+  container-title: U.S.
+  volume: '159'
+  page: '487'
+  issued:
+    date-parts:
+    - - 1895
+      - 11
+      - 11
+  URL: https://www.loc.gov/item/usrep159487/
+  accessed:
+    date-parts:
+    - - 2026
+      - 11
+      - 24
+caption:
+  printed: ISAACS v. UNITED STATES
+  source: https://tile.loc.gov/storage-services/service/ll/usrep/usrep159/usrep159487/usrep159487.pdf
+  checked: '2026-11-24'
+opinions:
+  source: https://tile.loc.gov/storage-services/service/ll/usrep/usrep159/usrep159487/usrep159487.pdf
+  checked: '2026-11-24'
+  list:
+  - kind: majority
+    justice: Henry Billings Brown
+    page: 488
+original_link: https://www.loc.gov/item/usrep159487/
+retrieved: '2026-11-24'
+history:
+  status: live
+  last_checked: '2026-11-24'
+court_dates:
+  submitted:
+  - '1895-10-23'
+  printed: Submitted October 23, 1895. Decided November 11, 1895.
+  source: https://tile.loc.gov/storage-services/service/ll/usrep/usrep159/usrep159487/usrep159487.pdf
+  checked: '2026-11-24'
+supreme_court:
+  court: Fuller Court
+  natural_court: Fuller Court (1895-1896)
+  decision_type: majority opinion
+  vote:
+    majority: 8
+    minority: 0
+  justices:
+  - name: Melville Weston Fuller
+    vote: majority
+  - name: Edward Douglass White
+    vote: majority
+  - name: Stephen Johnson Field
+    vote: majority
+  - name: John Marshall Harlan
+    vote: majority
+  - name: Horace Gray
+    vote: majority
+  - name: David Josiah Brewer
+    vote: majority
+  - name: Henry Billings Brown
+    vote: majority
+    opinion: majority
+  - name: George Shiras, Jr.
+    vote: majority
+  source: http://scdb.wustl.edu/_brickFiles/Legacy_07/SCDB_Legacy_07_justiceCentered_Citation.csv.zip
+  note: From the Supreme Court Database, case 1895-018; Oyez has no votes for this case.
+  checked: '2026-11-24'
+reading_links:
+  checked: '2026-11-24'
+  links:
+  - site: library-of-congress
+    label: Library of Congress
+    access: official
+    link: https://www.loc.gov/item/usrep159487/
+  - site: justia
+    label: Justia
+    access: free
+    link: https://supreme.justia.com/cases/federal/us/159/487/
+    unchecked: true
+  - site: google-scholar
+    label: Google Scholar
+    access: free
+    link: https://scholar.google.com/scholar?hl=en&as_sdt=2006&q=%22159%20U.S.%20487%22
+    unchecked: true
+  - site: westlaw
+    label: Westlaw
+    access: subscription
+    link: https://1.next.westlaw.com/Link/Document/FullText?findType=Y&cite=159%20U.S.%20487
+    unchecked: true
+  - site: lexis
+    label: Lexis
+    access: subscription
+    link: https://advance.lexis.com/api/search?q=159%20U.S.%20487
+    unchecked: true
+rights:
+  status: no-permission-needed
+  basis: us-government-work
+  basis_note: Opinions of federal courts are works of the U.S. government (17 U.S.C. § 105); the host site's own additions are not reproduced.
+  redistribution: true
+found_in:
+- 2026-11-24-supreme-court-native-cases
+notes: 'Full citation: 159 U.S. 487 (1895). Official report scan: https://tile.loc.gov/storage-services/service/ll/usrep/usrep159/usrep159487/usrep159487.pdf. Written by scripts/caselaw/supreme_court_native_cases.py from the Supreme Court Database (case 1895-018), the Caselaw Access Project''s text of the report and the Library of Congress scan; not yet read by a person.'
+tribes: []
+nations_in_case:
+  checked: '2026-11-24'
+  named: []
+review:
+  status: unverified
+  by: scripts/caselaw/supreme_court_native_cases.py
+  date: '2026-11-24'
+  checks:
+  - check: cite
+    result: agree
+    detail: Caselaw Access Project 159 U.S. 487 "Isaacs v. United States"; Database 159 U.S. 487 "ISAACS v. UNITED STATES"
+  - check: scan
+    result: agree
+    detail: Scan has 5 pages; the report runs 487 to 491
+  - check: caption
+    result: agree
+    detail: Caption found in the scan's text at 1.00
+  - check: printed dates
+    result: agree
+    detail: Caselaw Access Project "Submitted October 23, 1895. Decided November 11, 1895."; scan "Submitted October 28, 1S95. Decided November 11, 1895."
+  - check: decided
+    result: agree
+    detail: 'Printed and Database: 1895-11-11'
+  - check: opinions
+    result: settled
+    detail: 'Report: majority Brown p. 488; Database writers: Brown; scan pages [(488, 489)]. Read from the scan by an AI reader (record right): p. 488: "MR. JUSTICE BROWN, after stating the case, delivered the opinion of the court."'
+  - check: bench
+    result: agree
+    detail: No Oyez votes; each opinion writer in the report sits on the Database's bench on the side the opinion takes

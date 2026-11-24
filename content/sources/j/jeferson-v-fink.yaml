@@ -1,0 +1,138 @@
+key: jeferson-v-fink
+kind: federal-case
+citation:
+  type: legal_case
+  title: Jeferson v. Fink
+  authority: Supreme Court of the United States
+  container-title: U.S.
+  volume: '247'
+  page: '288'
+  issued:
+    date-parts:
+    - - 1918
+      - 6
+      - 3
+  URL: https://www.loc.gov/item/usrep247288/
+  accessed:
+    date-parts:
+    - - 2026
+      - 11
+      - 24
+caption:
+  printed: JEFERSON ET AL. v. FINK ET AL., ADMINISTRATORS OF SEVERS, ET AL
+  source: https://tile.loc.gov/storage-services/service/ll/usrep/usrep247/usrep247288/usrep247288.pdf
+  checked: '2026-11-24'
+opinions:
+  source: https://tile.loc.gov/storage-services/service/ll/usrep/usrep247/usrep247288/usrep247288.pdf
+  checked: '2026-11-24'
+  list:
+  - kind: majority
+    justice: Willis Van Devanter
+    page: 289
+original_link: https://www.loc.gov/item/usrep247288/
+retrieved: '2026-11-24'
+history:
+  status: live
+  last_checked: '2026-11-24'
+court_dates:
+  argued:
+  - '1918-03-22'
+  - '1918-03-25'
+  printed: Argued March 22, 25, 1918. Decided June 3, 1918.
+  source: https://tile.loc.gov/storage-services/service/ll/usrep/usrep247/usrep247288/usrep247288.pdf
+  checked: '2026-11-24'
+supreme_court:
+  court: White Court
+  natural_court: White Court (1916-1921)
+  decision_type: majority opinion
+  vote:
+    majority: 9
+    minority: 0
+  justices:
+  - name: Edward Douglass White
+    vote: majority
+  - name: Joseph McKenna
+    vote: majority
+  - name: Oliver Wendell Holmes
+    vote: majority
+  - name: William Rufus Day
+    vote: majority
+  - name: Willis Van Devanter
+    vote: majority
+    opinion: majority
+  - name: Mahlon Pitney
+    vote: majority
+  - name: James Clark McReynolds
+    vote: majority
+  - name: Louis Dembitz Brandeis
+    vote: majority
+  - name: John Hessin Clarke
+    vote: majority
+  source: http://scdb.wustl.edu/_brickFiles/Legacy_07/SCDB_Legacy_07_justiceCentered_Citation.csv.zip
+  note: From the Supreme Court Database, case 1917-139; Oyez has no votes for this case.
+  checked: '2026-11-24'
+reading_links:
+  checked: '2026-11-24'
+  links:
+  - site: library-of-congress
+    label: Library of Congress
+    access: official
+    link: https://www.loc.gov/item/usrep247288/
+  - site: justia
+    label: Justia
+    access: free
+    link: https://supreme.justia.com/cases/federal/us/247/288/
+    unchecked: true
+  - site: google-scholar
+    label: Google Scholar
+    access: free
+    link: https://scholar.google.com/scholar?hl=en&as_sdt=2006&q=%22247%20U.S.%20288%22
+    unchecked: true
+  - site: westlaw
+    label: Westlaw
+    access: subscription
+    link: https://1.next.westlaw.com/Link/Document/FullText?findType=Y&cite=247%20U.S.%20288
+    unchecked: true
+  - site: lexis
+    label: Lexis
+    access: subscription
+    link: https://advance.lexis.com/api/search?q=247%20U.S.%20288
+    unchecked: true
+rights:
+  status: no-permission-needed
+  basis: us-government-work
+  basis_note: Opinions of federal courts are works of the U.S. government (17 U.S.C. § 105); the host site's own additions are not reproduced.
+  redistribution: true
+found_in:
+- 2026-11-24-supreme-court-native-cases
+notes: 'Full citation: 247 U.S. 288 (1918). Official report scan: https://tile.loc.gov/storage-services/service/ll/usrep/usrep247/usrep247288/usrep247288.pdf. Written by scripts/caselaw/supreme_court_native_cases.py from the Supreme Court Database (case 1917-139), the Caselaw Access Project''s text of the report and the Library of Congress scan; not yet read by a person.'
+tribes: []
+nations_in_case:
+  checked: '2026-11-24'
+  named: []
+review:
+  status: unverified
+  by: scripts/caselaw/supreme_court_native_cases.py
+  date: '2026-11-24'
+  checks:
+  - check: cite
+    result: agree
+    detail: Caselaw Access Project 247 U.S. 288 "Jeferson v. Fink"; Database 247 U.S. 288 "JEFERSON et al. v. FINK et al., ADMINISTRATORS OF SEVERS, et al."
+  - check: scan
+    result: differs
+    detail: Scan has 7 pages; the report runs 288 to 295
+  - check: caption
+    result: agree
+    detail: Caption found in the scan's text at 1.00
+  - check: printed dates
+    result: agree
+    detail: Caselaw Access Project "Argued March 22, 25, 1918. Decided June 3, 1918."; scan "Argued March 22, 25, 1918.-Decided June 3, 1918."
+  - check: decided
+    result: agree
+    detail: 'Printed and Database: 1918-06-03'
+  - check: opinions
+    result: agree
+    detail: 'Report: majority Devanter p. 289; Database writers: Devanter'
+  - check: bench
+    result: agree
+    detail: No Oyez votes; each opinion writer in the report sits on the Database's bench on the side the opinion takes

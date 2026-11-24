@@ -1,0 +1,137 @@
+key: british-american-oil-producing-co-v-board-of-equalization
+kind: federal-case
+citation:
+  type: legal_case
+  title: British-American Oil Producing Co. v. Board of Equalization
+  authority: Supreme Court of the United States
+  container-title: U.S.
+  volume: '299'
+  page: '159'
+  issued:
+    date-parts:
+    - - 1936
+      - 12
+      - 7
+  URL: https://www.loc.gov/item/usrep299159/
+  accessed:
+    date-parts:
+    - - 2026
+      - 11
+      - 24
+caption:
+  printed: BRITISH-AMERICAN OIL PRODUCING CO. v. BOARD OF EQUALIZATION OF MONTANA et al.
+  source: https://tile.loc.gov/storage-services/service/ll/usrep/usrep299/usrep299159/usrep299159.pdf
+  checked: '2026-11-24'
+opinions:
+  source: https://tile.loc.gov/storage-services/service/ll/usrep/usrep299/usrep299159/usrep299159.pdf
+  checked: '2026-11-24'
+  list:
+  - kind: majority
+    justice: Willis Van Devanter
+    page: 160
+original_link: https://www.loc.gov/item/usrep299159/
+retrieved: '2026-11-24'
+history:
+  status: live
+  last_checked: '2026-11-24'
+court_dates:
+  argued:
+  - '1936-11-11'
+  printed: Argued November 11, 1936. Decided December 7, 1936.
+  source: https://tile.loc.gov/storage-services/service/ll/usrep/usrep299/usrep299159/usrep299159.pdf
+  checked: '2026-11-24'
+supreme_court:
+  court: Hughes Court
+  natural_court: Hughes Court (1932-1937)
+  decision_type: majority opinion
+  vote:
+    majority: 8
+    minority: 0
+  justices:
+  - name: Charles Evans Hughes
+    vote: majority
+  - name: Harlan Fiske Stone
+    vote: not recorded
+  - name: Willis Van Devanter
+    vote: majority
+    opinion: majority
+  - name: James Clark McReynolds
+    vote: majority
+  - name: Louis Dembitz Brandeis
+    vote: majority
+  - name: George Sutherland
+    vote: majority
+  - name: Pierce Butler
+    vote: majority
+  - name: Owen Josephus Roberts
+    vote: majority
+  - name: Benjamin Nathan Cardozo
+    vote: majority
+  source: http://scdb.wustl.edu/_brickFiles/Legacy_07/SCDB_Legacy_07_justiceCentered_Citation.csv.zip
+  note: From the Supreme Court Database, case 1936-036; Oyez has no votes for this case.
+  checked: '2026-11-24'
+reading_links:
+  checked: '2026-11-24'
+  links:
+  - site: library-of-congress
+    label: Library of Congress
+    access: official
+    link: https://www.loc.gov/item/usrep299159/
+  - site: justia
+    label: Justia
+    access: free
+    link: https://supreme.justia.com/cases/federal/us/299/159/
+    unchecked: true
+  - site: google-scholar
+    label: Google Scholar
+    access: free
+    link: https://scholar.google.com/scholar?hl=en&as_sdt=2006&q=%22299%20U.S.%20159%22
+    unchecked: true
+  - site: westlaw
+    label: Westlaw
+    access: subscription
+    link: https://1.next.westlaw.com/Link/Document/FullText?findType=Y&cite=299%20U.S.%20159
+    unchecked: true
+  - site: lexis
+    label: Lexis
+    access: subscription
+    link: https://advance.lexis.com/api/search?q=299%20U.S.%20159
+    unchecked: true
+rights:
+  status: no-permission-needed
+  basis: us-government-work
+  basis_note: Opinions of federal courts are works of the U.S. government (17 U.S.C. § 105); the host site's own additions are not reproduced.
+  redistribution: true
+found_in:
+- 2026-11-24-supreme-court-native-cases
+notes: 'Full citation: 299 U.S. 159 (1936). Official report scan: https://tile.loc.gov/storage-services/service/ll/usrep/usrep299/usrep299159/usrep299159.pdf. Written by scripts/caselaw/supreme_court_native_cases.py from the Supreme Court Database (case 1936-036), the Caselaw Access Project''s text of the report and the Library of Congress scan; not yet read by a person.'
+tribes: []
+nations_in_case:
+  checked: '2026-11-24'
+  named: []
+review:
+  status: unverified
+  by: scripts/caselaw/supreme_court_native_cases.py
+  date: '2026-11-24'
+  checks:
+  - check: cite
+    result: agree
+    detail: Caselaw Access Project 299 U.S. 159 "British-American Oil Producing Co. v. Board of Equalization"; Database 299 U.S. 159 "BRITISH-AMERICAN OIL PRODUCING CO. v. BOARD OF EQUALIZATION OF MONTANA et al."
+  - check: scan
+    result: agree
+    detail: Scan has 8 pages; the report runs 159 to 166
+  - check: caption
+    result: settled
+    detail: 'Caption found in the scan''s text at 0.81. Read from the scan by an AI reader (record right): p. 159: BRITISH-AMERICAN / OIL PRODUCING CO. v. / BOARD OF EQUALIZATION OF MONTANA / ET AL.'
+  - check: printed dates
+    result: agree
+    detail: Caselaw Access Project "Argued November 11, 1936. Decided December 7, 1936."; scan "Argued November 11, 1936.-Decided December 7, 1936."
+  - check: decided
+    result: agree
+    detail: 'Printed and Database: 1936-12-07'
+  - check: opinions
+    result: agree
+    detail: 'Report: majority Devanter p. 160; Database writers: Devanter'
+  - check: bench
+    result: agree
+    detail: No Oyez votes; each opinion writer in the report sits on the Database's bench on the side the opinion takes

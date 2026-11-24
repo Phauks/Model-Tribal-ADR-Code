@@ -1,0 +1,140 @@
+key: creek-nation-v-united-states
+kind: federal-case
+citation:
+  type: legal_case
+  title: Creek Nation v. United States
+  authority: Supreme Court of the United States
+  container-title: U.S.
+  volume: '302'
+  page: '620'
+  issued:
+    date-parts:
+    - - 1938
+      - 1
+      - 17
+  URL: https://www.loc.gov/item/usrep302620/
+  accessed:
+    date-parts:
+    - - 2026
+      - 11
+      - 24
+caption:
+  printed: THE CREEK NATION v. UNITED STATES
+  source: https://tile.loc.gov/storage-services/service/ll/usrep/usrep302/usrep302620/usrep302620.pdf
+  checked: '2026-11-24'
+opinions:
+  source: https://tile.loc.gov/storage-services/service/ll/usrep/usrep302/usrep302620/usrep302620.pdf
+  checked: '2026-11-24'
+  list:
+  - kind: majority
+    justice: Owen Josephus Roberts
+    page: 621
+original_link: https://www.loc.gov/item/usrep302620/
+retrieved: '2026-11-24'
+history:
+  status: live
+  last_checked: '2026-11-24'
+court_dates:
+  argued:
+  - '1938-01-03'
+  printed: Argued January 3, 1938. Decided January 17, 1938.
+  source: https://tile.loc.gov/storage-services/service/ll/usrep/usrep302/usrep302620/usrep302620.pdf
+  checked: '2026-11-24'
+supreme_court:
+  court: Hughes Court
+  natural_court: Hughes Court (1938-1938)
+  decision_type: majority opinion
+  vote:
+    majority: 8
+    minority: 0
+  justices:
+  - name: Charles Evans Hughes
+    vote: majority
+  - name: Harlan Fiske Stone
+    vote: majority
+  - name: James Clark McReynolds
+    vote: majority
+  - name: Louis Dembitz Brandeis
+    vote: majority
+  - name: George Sutherland
+    vote: majority
+  - name: Pierce Butler
+    vote: majority
+  - name: Owen Josephus Roberts
+    vote: majority
+    opinion: majority
+  - name: Benjamin Nathan Cardozo
+    vote: not recorded
+  - name: Hugo Lafayette Black
+    vote: majority
+  source: http://scdb.wustl.edu/_brickFiles/Legacy_07/SCDB_Legacy_07_justiceCentered_Citation.csv.zip
+  note: From the Supreme Court Database, case 1937-039; Oyez has no votes for this case.
+  checked: '2026-11-24'
+reading_links:
+  checked: '2026-11-24'
+  links:
+  - site: library-of-congress
+    label: Library of Congress
+    access: official
+    link: https://www.loc.gov/item/usrep302620/
+  - site: justia
+    label: Justia
+    access: free
+    link: https://supreme.justia.com/cases/federal/us/302/620/
+    unchecked: true
+  - site: google-scholar
+    label: Google Scholar
+    access: free
+    link: https://scholar.google.com/scholar?hl=en&as_sdt=2006&q=%22302%20U.S.%20620%22
+    unchecked: true
+  - site: westlaw
+    label: Westlaw
+    access: subscription
+    link: https://1.next.westlaw.com/Link/Document/FullText?findType=Y&cite=302%20U.S.%20620
+    unchecked: true
+  - site: lexis
+    label: Lexis
+    access: subscription
+    link: https://advance.lexis.com/api/search?q=302%20U.S.%20620
+    unchecked: true
+rights:
+  status: no-permission-needed
+  basis: us-government-work
+  basis_note: Opinions of federal courts are works of the U.S. government (17 U.S.C. § 105); the host site's own additions are not reproduced.
+  redistribution: true
+found_in:
+- 2026-11-24-supreme-court-native-cases
+notes: 'Full citation: 302 U.S. 620 (1938). Official report scan: https://tile.loc.gov/storage-services/service/ll/usrep/usrep302/usrep302620/usrep302620.pdf. Written by scripts/caselaw/supreme_court_native_cases.py from the Supreme Court Database (case 1937-039), the Caselaw Access Project''s text of the report and the Library of Congress scan; not yet read by a person.'
+tribes: []
+nations_in_case:
+  checked: '2026-11-24'
+  named: []
+  not_linked:
+  - named_as: Creek Nation
+    reason: More than one of today's nations shares this name (apalachicola-band-of-creek-indians, beaver-creek-indians, berry-creek-rancheria-of-maidu-indians-of-california, birch-creek-tribe, cache-creek-rancheria, cher-o-creek-intratribal-indians and 19 more); which the case concerns has not been checked.
+review:
+  status: verified
+  by: scripts/caselaw/supreme_court_native_cases.py
+  date: '2026-11-24'
+  checks:
+  - check: cite
+    result: agree
+    detail: Caselaw Access Project 302 U.S. 620 "Creek Nation v. United States"; Database 302 U.S. 620 "THE CREEK NATION v. UNITED STATES"
+  - check: scan
+    result: agree
+    detail: Scan has 3 pages; the report runs 620 to 622
+  - check: caption
+    result: agree
+    detail: Caption found in the scan's text at 1.00
+  - check: printed dates
+    result: agree
+    detail: Caselaw Access Project "Argued January 3, 1938. Decided January 17, 1938."; scan "Argued January 3, 1938.-Decided January 17, 1938."
+  - check: decided
+    result: agree
+    detail: 'Printed and Database: 1938-01-17'
+  - check: opinions
+    result: agree
+    detail: 'Report: majority Roberts p. 621; Database writers: Roberts'
+  - check: bench
+    result: agree
+    detail: No Oyez votes; each opinion writer in the report sits on the Database's bench on the side the opinion takes

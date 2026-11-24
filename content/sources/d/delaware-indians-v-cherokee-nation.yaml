@@ -1,0 +1,146 @@
+key: delaware-indians-v-cherokee-nation
+kind: federal-case
+citation:
+  type: legal_case
+  title: Delaware Indians v. Cherokee Nation
+  authority: Supreme Court of the United States
+  container-title: U.S.
+  volume: '193'
+  page: '127'
+  issued:
+    date-parts:
+    - - 1904
+      - 2
+      - 23
+  URL: https://www.loc.gov/item/usrep193127/
+  accessed:
+    date-parts:
+    - - 2026
+      - 11
+      - 24
+caption:
+  printed: DELAWARE INDIANS v. CHEROKEE NATION
+  source: https://tile.loc.gov/storage-services/service/ll/usrep/usrep193/usrep193127/usrep193127.pdf
+  checked: '2026-11-24'
+opinions:
+  source: https://tile.loc.gov/storage-services/service/ll/usrep/usrep193/usrep193127/usrep193127.pdf
+  checked: '2026-11-24'
+  list:
+  - kind: majority
+    justice: William Rufus Day
+    page: 128
+original_link: https://www.loc.gov/item/usrep193127/
+retrieved: '2026-11-24'
+history:
+  status: live
+  last_checked: '2026-11-24'
+court_dates:
+  argued:
+  - '1903-12-01'
+  - '1903-12-02'
+  printed: Argued December 1, 2,1903. Decided February 23, 1904.
+  source: https://tile.loc.gov/storage-services/service/ll/usrep/usrep193/usrep193127/usrep193127.pdf
+  checked: '2026-11-24'
+supreme_court:
+  court: Fuller Court
+  natural_court: Fuller Court (1903-1906)
+  decision_type: majority opinion
+  vote:
+    majority: 9
+    minority: 0
+  justices:
+  - name: Melville Weston Fuller
+    vote: majority
+  - name: Edward Douglass White
+    vote: majority
+  - name: John Marshall Harlan
+    vote: majority
+  - name: David Josiah Brewer
+    vote: majority
+  - name: Henry Billings Brown
+    vote: majority
+  - name: Rufus Wheeler Peckham
+    vote: majority
+  - name: Joseph McKenna
+    vote: majority
+  - name: Oliver Wendell Holmes
+    vote: majority
+  - name: William Rufus Day
+    vote: majority
+    opinion: majority
+  source: http://scdb.wustl.edu/_brickFiles/Legacy_07/SCDB_Legacy_07_justiceCentered_Citation.csv.zip
+  note: From the Supreme Court Database, case 1903-208; Oyez has no votes for this case.
+  checked: '2026-11-24'
+reading_links:
+  checked: '2026-11-24'
+  links:
+  - site: library-of-congress
+    label: Library of Congress
+    access: official
+    link: https://www.loc.gov/item/usrep193127/
+  - site: justia
+    label: Justia
+    access: free
+    link: https://supreme.justia.com/cases/federal/us/193/127/
+    unchecked: true
+  - site: google-scholar
+    label: Google Scholar
+    access: free
+    link: https://scholar.google.com/scholar?hl=en&as_sdt=2006&q=%22193%20U.S.%20127%22
+    unchecked: true
+  - site: westlaw
+    label: Westlaw
+    access: subscription
+    link: https://1.next.westlaw.com/Link/Document/FullText?findType=Y&cite=193%20U.S.%20127
+    unchecked: true
+  - site: lexis
+    label: Lexis
+    access: subscription
+    link: https://advance.lexis.com/api/search?q=193%20U.S.%20127
+    unchecked: true
+rights:
+  status: no-permission-needed
+  basis: us-government-work
+  basis_note: Opinions of federal courts are works of the U.S. government (17 U.S.C. § 105); the host site's own additions are not reproduced.
+  redistribution: true
+found_in:
+- 2026-11-24-supreme-court-native-cases
+notes: 'Full citation: 193 U.S. 127 (1904). Official report scan: https://tile.loc.gov/storage-services/service/ll/usrep/usrep193/usrep193127/usrep193127.pdf. Written by scripts/caselaw/supreme_court_native_cases.py from the Supreme Court Database (case 1903-208), the Caselaw Access Project''s text of the report and the Library of Congress scan; not yet read by a person.'
+tribes:
+- cherokee-nation
+nations_in_case:
+  checked: '2026-11-24'
+  named:
+  - nation: cherokee-nation
+    named_as: Cherokee Nation
+    role: party
+    note: Matched by the script to the nation record of the same name; not yet checked.
+  not_linked:
+  - named_as: Delaware Indians
+    reason: More than one of today's nations shares this name (chickamauga-keetoowah-unami-wolf-band-of-cherokee-delaware-shawnee-of-ohio-west-virginia-and-virginia, delaware-muncie, delaware-nation, delaware-tribe-of-indians, lenape-indian-tribe-of-delaware, munsee-thames-river-delaware-indian-nation and 1 more); which the case concerns has not been checked.
+review:
+  status: unverified
+  by: scripts/caselaw/supreme_court_native_cases.py
+  date: '2026-11-24'
+  checks:
+  - check: cite
+    result: agree
+    detail: Caselaw Access Project 193 U.S. 127 "Delaware Indians v. Cherokee Nation"; Database 193 U.S. 127 "DELAWARE INDIANS v. CHEROKEE NATION"
+  - check: scan
+    result: differs
+    detail: Scan has 19 pages; the report runs 127 to 146
+  - check: caption
+    result: agree
+    detail: Caption found in the scan's text at 1.00
+  - check: printed dates
+    result: agree
+    detail: Caselaw Access Project "Argued December 1, 2,1903. Decided February 23, 1904."; scan "Argued December 1, 2, 1903.-Decided February 23, 1904."
+  - check: decided
+    result: agree
+    detail: 'Printed and Database: 1904-02-23'
+  - check: opinions
+    result: agree
+    detail: 'Report: majority Day p. 128; Database writers: Day'
+  - check: bench
+    result: agree
+    detail: No Oyez votes; each opinion writer in the report sits on the Database's bench on the side the opinion takes
