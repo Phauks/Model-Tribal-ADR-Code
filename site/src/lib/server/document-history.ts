@@ -151,7 +151,7 @@ export function documentHeading(title: string, names: string[]): string {
 }
 
 /** The earliest of a version's recorded dates, leaving out the date it ended. */
-function earliestDate(version: DocumentVersion): string | undefined {
+export function earliestDate(version: DocumentVersion): string | undefined {
 	const dates = DATE_LABELS.filter(([field]) => field !== 'ended')
 		.map(([field]) => version.dates?.[field])
 		.filter((date): date is string => typeof date === 'string' && /^\d{4}(-\d{2}){0,2}$/.test(date))
@@ -218,7 +218,7 @@ function relatedDocuments(record: DocumentHistoryRecord, relation: string, names
  * and then by its source's address, else the source's own address, else its
  * first archived copy.
  */
-function textLink(version: DocumentVersion): string | undefined {
+export function textLink(version: DocumentVersion): string | undefined {
 	const capture = publicCopyWithDigest(version.capture?.sha256);
 	if (capture) return copyPagePath(capture);
 	if (!version.source) return undefined;

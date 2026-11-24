@@ -2,6 +2,7 @@
 	import { daysBetween, dueStateLabels, longDay, monthNames, stageLabels } from '#lib/nonprofit.ts';
 	import type { PageProps } from './$types';
 	import DateField from '#lib/components/DateField.svelte';
+	import Dropdown from '#lib/components/Dropdown.svelte';
 
 	let { data, form }: PageProps = $props();
 
@@ -225,16 +226,25 @@
 	<form method="post" action="?/facts" class="panel">
 		{#each data.factFields as field (field.name)}
 			<div class="field">
-				<label for="fact-{field.name}">{field.label}</label>
-				{#if field.hint}<p class="small muted" id="hint-{field.name}">{field.hint}</p>{/if}
+				{#snippet hint()}
+					{#if field.hint}<p class="small muted" id="hint-{field.name}">{field.hint}</p>{/if}
+				{/snippet}
+				{#if field.kind !== 'month'}
+					<label for="fact-{field.name}">{field.label}</label>
+					{@render hint()}
+				{/if}
 				{#if field.kind === 'date'}
 					<DateField id="fact-{field.name}" name={field.name} value={data.facts[field.name] ?? ''} describedby={field.hint ? `hint-${field.name}` : undefined} />
 				{:else if field.kind === 'month'}
-					<select id="fact-{field.name}" name={field.name} aria-describedby={field.hint ? `hint-${field.name}` : undefined}>
-						{#each monthNames as month, index (month)}
-							<option value={String(index + 1)} selected={(data.facts[field.name] ?? '12') === String(index + 1)}>{month}</option>
-						{/each}
-					</select>
+					<Dropdown
+						label={field.label}
+						id="fact-{field.name}"
+						name={field.name}
+						choices={monthNames.map((month, index) => ({ value: String(index + 1), label: month }))}
+						value={data.facts[field.name] ?? '12'}
+						describedBy={field.hint ? `hint-${field.name}` : undefined}
+						message={hint}
+					/>
 				{:else if field.kind === 'lines'}
 					<textarea id="fact-{field.name}" name={field.name} rows="4" maxlength="4000" aria-describedby={field.hint ? `hint-${field.name}` : undefined}>{data.facts[field.name] ?? ''}</textarea>
 				{:else}

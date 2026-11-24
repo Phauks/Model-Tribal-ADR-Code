@@ -15,6 +15,7 @@ import {
 	reviewQueue,
 	undoChange
 } from '#lib/server/nation-page-review.ts';
+import { askTeam, markSaveRead, saveByIdentifier, unreadSaves } from '#lib/server/nation-restrictions.ts';
 import { suspendWithEveryoneAdded, teamOf, teamsOf } from '#lib/server/nation-teams.ts';
 import { formText, refuse, requirePermission, storage } from '#lib/server/workspace.ts';
 import type { Actions, PageServerLoad } from './$types';
@@ -61,10 +62,12 @@ export const load: PageServerLoad = async (event) => {
 	const { database } = storage(event);
 	const time = new Date();
 	const queue = await reviewQueue(database);
+	// What nations chose the site shows of their laws and cases, read in the same queue.
+	const restrictionSaves = await unreadSaves(database);
 	// Each nation's team, to name the publisher's level and, for the lead author, who could be suspended;
 	// and each nation's history, to show each change beside the version before it.
 	// One query each for every nation in the queue, instead of two for each nation.
-	const nations = [...new Set(queue.map((change) => change.nationIdentifier))];
+	const nations = [...new Set([...queue.map((change) => change.nationIdentifier), ...restrictionSaves.map((save) => save.nationIdentifier)])];
 	const [teams, histories] = await Promise.all([teamsOf(database, nations), historiesOf(database, nations)]);
 	/** The version of the same part published before this change, if any. */
 	const before = (change: ChangeRow): ChangeContent | null => {
@@ -83,6 +86,21 @@ export const load: PageServerLoad = async (event) => {
 			canSuspend:
 				isAdministrator(person) &&
 				Boolean(teams.get(change.nationIdentifier)?.some((place) => place.personIdentifier === change.publishedBy))
+		})),
+		restrictions: restrictionSaves.map((save) => ({
+			identifier: save.identifier,
+			nation: nationOf(save.nationIdentifier),
+			changes: save.changes,
+			note: save.note,
+			madeByName: save.madeByName,
+			madeByLevel: teams.get(save.nationIdentifier)?.find((place) => place.personIdentifier === save.madeBy)?.level ?? null,
+			madeAt: save.madeAt,
+			due: reviewDue(save.madeAt),
+			overdue: isOverdue(save.madeAt, time),
+			question: save.question,
+			answer: save.answer,
+			answeredByName: save.answeredByName,
+			canSuspend: isAdministrator(person) && Boolean(teams.get(save.nationIdentifier)?.some((place) => place.personIdentifier === save.madeBy))
 		})),
 		pauses: pauses.map((pause) => ({ ...pause, nation: nationOf(pause.nationIdentifier) })),
 		recent: (await recentReviews(database)).map((review) => ({
@@ -149,6 +167,39 @@ export const actions: Actions = {
 		if (!pause) return fail(404, { problem: `Publishing for ${the(nation.title)} is not paused.` });
 		await resumePublishing(database, pause, person);
 		return { done: `Publishing for ${the(nation.title)} has resumed.` };
+	},
+
+	readRestrictions: async (event) => {
+		const person = requirePermission(event, 'review-nation-pages');
+		const { database } = storage(event);
+		const form = await event.request.formData();
+		const save = await saveByIdentifier(database, formText(form, 'save', 40) ?? '');
+		if (!save || save.readAt) return fail(404, { problem: 'Someone has already read that change.' });
+		await markSaveRead(database, save, person, formText(form, 'note', longestPauseText));
+		return { done: `Marked read: laws and cases of ${the(nationOf(save.nationIdentifier).title)}.` };
+	},
+
+	askRestrictions: async (event) => {
+		const person = requirePermission(event, 'review-nation-pages');
+		const { database } = storage(event);
+		const form = await event.request.formData();
+		const save = await saveByIdentifier(database, formText(form, 'save', 40) ?? '');
+		if (!save) return fail(404, { problem: 'That change is gone.' });
+		const question = formText(form, 'question', longestPauseText);
+		if (!question) return fail(400, { problem: 'Write the question the nation’s team should answer.' });
+		await askTeam(database, save, question, person);
+		return { done: `Asked. The team of ${the(nationOf(save.nationIdentifier).title)} sees your question on its Laws and cases page.` };
+	},
+
+	suspendRestrictions: async (event) => {
+		const person = requirePermission(event, 'review-nation-pages');
+		if (!isAdministrator(person)) refuse(event, 'only the lead author suspends people from a nation’s team');
+		const { database } = storage(event);
+		const save = await saveByIdentifier(database, formText(await event.request.formData(), 'save', 40) ?? '');
+		const place = save ? (await teamOf(database, save.nationIdentifier)).find((candidate) => candidate.personIdentifier === save.madeBy) : undefined;
+		if (!save || !place) return fail(404, { problem: 'That person is no longer on the nation’s team.' });
+		const names = await suspendWithEveryoneAdded(database, place, person);
+		return { done: `Suspended: ${names.join(', ')}.` };
 	},
 
 	suspend: async (event) => {

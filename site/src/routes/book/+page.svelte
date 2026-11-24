@@ -22,11 +22,15 @@
 	} from '#lib/book-order.ts';
 	import type { GiftChoice } from '#lib/checkout-gift.ts';
 	import CheckoutGift from '#lib/components/CheckoutGift.svelte';
+	import Dropdown from '#lib/components/Dropdown.svelte';
 
 	/** Until the first edition exists, estimates use this page count. */
 	const estimatePages = 300;
 
 	let choice = $state<PrintChoice>({ ...defaultPrintChoice });
+	const sizeChoices = bookSizes.map((size) => ({ value: size.identifier, label: `${size.name} (${size.width} × ${size.height} in)` }));
+	const linenChoices = linenColors.map((color) => ({ value: color, label: color }));
+	const foilChoices = foilColors.map((color) => ({ value: color, label: color }));
 	let shippingLevel = $state<ShippingLevel>('MAIL');
 	let address = $state({ name: '', street1: '', street2: '', city: '', stateCode: '', postcode: '', countryCode: 'US', phone: '' });
 	let email = $state('');
@@ -115,14 +119,7 @@
 	<form onsubmit={order}>
 		<fieldset>
 			<legend>Size</legend>
-			<div class="field">
-				<label for="book-size">Book size</label>
-				<select id="book-size" bind:value={choice.size}>
-					{#each bookSizes as size (size.identifier)}
-						<option value={size.identifier}>{size.name} ({size.width} × {size.height} in)</option>
-					{/each}
-				</select>
-			</div>
+			<Dropdown label="Book size" choices={sizeChoices} bind:value={choice.size} />
 		</fieldset>
 
 		<fieldset>
@@ -134,18 +131,8 @@
 				</label>
 			{/each}
 			{#if choice.binding === 'linenWrap'}
-				<div class="field">
-					<label for="linen-color">Linen color</label>
-					<select id="linen-color" bind:value={choice.linenColor}>
-						{#each linenColors as color (color)}<option value={color}>{color}</option>{/each}
-					</select>
-				</div>
-				<div class="field">
-					<label for="foil-color">Foil on the spine</label>
-					<select id="foil-color" bind:value={choice.foilColor}>
-						{#each foilColors as color (color)}<option value={color}>{color}</option>{/each}
-					</select>
-				</div>
+				<Dropdown label="Linen color" choices={linenChoices} bind:value={() => choice.linenColor ?? linenColors[0], (color) => (choice.linenColor = color)} />
+				<Dropdown label="Foil on the spine" choices={foilChoices} bind:value={() => choice.foilColor ?? foilColors[0], (color) => (choice.foilColor = color)} />
 			{/if}
 		</fieldset>
 

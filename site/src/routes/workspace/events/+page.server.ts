@@ -15,6 +15,7 @@ export const load: PageServerLoad = async (event) => {
 			slug: item.slug,
 			title: item.title,
 			when: eventWhen(item.startsAt, item.endsAt, item.timeZone),
+			startsAt: item.startsAt,
 			status: eventStatusLabels[item.status],
 			over: new Date(item.endsAt).getTime() <= now,
 			registered: item.registered,

@@ -1,5 +1,7 @@
 <script lang="ts">
 	import Breadcrumbs from '#lib/components/Breadcrumbs.svelte';
+	import Dropdown from '#lib/components/Dropdown.svelte';
+	import SearchableDropdown from '#lib/components/SearchableDropdown.svelte';
 	import ProfileSummary from '#lib/components/ProfileSummary.svelte';
 	import { creditSectionLabels, creditSections, fullName, profileStatusLabels } from '#lib/contributors.ts';
 	import { roleLabels, roles } from '#lib/permissions.ts';
@@ -10,6 +12,9 @@
 
 	const profile = $derived(data.profile);
 	let role = $state('co-author');
+	const sectionChoices = [{ value: '', label: 'Not placed' }, ...creditSections.map((section) => ({ value: section as string, label: creditSectionLabels[section] }))];
+	const roleChoices = roles.map((option) => ({ value: option as string, label: roleLabels[option] }));
+	const nationChoices = $derived(data.nations.map((nation) => ({ value: nation.identifier, label: nation.title })));
 
 </script>
 
@@ -97,13 +102,7 @@
 		<h2>Place the credit</h2>
 		<form method="post" action="?/section">
 			<div class="field">
-				<label for="section">Section of the book</label>
-				<select id="section" name="section">
-					<option value="">Not placed</option>
-					{#each creditSections as section (section)}
-						<option value={section} selected={profile.creditSection === section}>{creditSectionLabels[section]}</option>
-					{/each}
-				</select>
+				<Dropdown label="Section of the book" id="section" name="section" choices={sectionChoices} value={profile.creditSection ?? ''} />
 			</div>
 			<p><button class="button button-quiet" type="submit">Save the section</button></p>
 		</form>
@@ -134,19 +133,11 @@
 			</p>
 			<form method="post" action="?/access">
 				<div class="field">
-					<label for="role">Role</label>
-					<select id="role" name="role" bind:value={role}>
-						{#each roles as option (option)}<option value={option}>{roleLabels[option]}</option>{/each}
-					</select>
+					<Dropdown label="Role" id="role" name="role" choices={roleChoices} bind:value={role} />
 				</div>
 				{#if role === 'nation-reviewer'}
 					<div class="field">
-						<label for="nationIdentifier">Nation they review for</label>
-						<select id="nationIdentifier" name="nationIdentifier">
-							{#each data.nations as nation (nation.identifier)}
-								<option value={nation.identifier}>{nation.title}</option>
-							{/each}
-						</select>
+						<SearchableDropdown label="Nation they review for" id="nationIdentifier" name="nationIdentifier" choices={nationChoices} value={nationChoices[0]?.value ?? ''} />
 					</div>
 				{/if}
 				<p><button class="button button-quiet" type="submit">Give access</button></p>

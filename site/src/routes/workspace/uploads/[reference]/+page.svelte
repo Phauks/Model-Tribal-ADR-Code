@@ -25,6 +25,7 @@
 	import { youtubeEmbedAddress, youtubeWatchAddress } from '#lib/video-links.ts';
 	import type { PageProps } from './$types';
 	import DateField from '#lib/components/DateField.svelte';
+	import Dropdown from '#lib/components/Dropdown.svelte';
 	import { mediumDateAndTime } from '#lib/readable-date.ts';
 
 	let { data, form }: PageProps = $props();
@@ -58,6 +59,13 @@
 	// Writable derived values (Svelte 5.25+): they follow the page's data and the reviewer's choice.
 	let destination = $derived<Destination>(upload.destination ?? defaultDestination());
 	let accessLevel = $derived<FiledAccessLevel>(upload.access_level ?? defaultAccess());
+	const destinationChoices = destinations.map((value) => ({ value, label: destinationLabels[value] }));
+	// A file sent for background only cannot be made public, so that choice is left out.
+	const accessChoices = $derived(
+		filedAccessLevels
+			.filter((value) => !(value === 'public' && upload.permitted_use === 'background-only'))
+			.map((value) => ({ value, label: filedAccessLevelLabels[value] }))
+	);
 
 </script>
 
@@ -267,13 +275,11 @@
 						<input type="hidden" name="nations" value={link.target_identifier} />
 					{/each}
 					<div class="field">
-						<label for="destination">Where it goes</label>
-						{#if filingErrors.destination}<p class="field-error">{filingErrors.destination}</p>{/if}
-						<select id="destination" name="destination" bind:value={destination}>
-							{#each destinations as value (value)}
-								<option {value}>{destinationLabels[value]}</option>
-							{/each}
-						</select>
+						<Dropdown label="Where it goes" id="destination" name="destination" choices={destinationChoices} bind:value={destination} invalid={Boolean(filingErrors.destination)}>
+							{#snippet message()}
+								{#if filingErrors.destination}<p class="field-error">{filingErrors.destination}</p>{/if}
+							{/snippet}
+						</Dropdown>
 					</div>
 					<div class="field">
 						<label for="filed-page">Which page</label>
@@ -305,13 +311,11 @@
 						<input id="credit" name="credit" type="text" value={upload.credit ?? ''} />
 					</div>
 					<div class="field">
-						<label for="access">Who can see it</label>
-						{#if filingErrors.accessLevel}<p class="field-error">{filingErrors.accessLevel}</p>{/if}
-						<select id="access" name="accessLevel" bind:value={accessLevel}>
-							{#each filedAccessLevels as value (value)}
-								<option {value} disabled={value === 'public' && upload.permitted_use === 'background-only'}>{filedAccessLevelLabels[value]}</option>
-							{/each}
-						</select>
+						<Dropdown label="Who can see it" id="access" name="accessLevel" choices={accessChoices} bind:value={accessLevel} invalid={Boolean(filingErrors.accessLevel)}>
+							{#snippet message()}
+								{#if filingErrors.accessLevel}<p class="field-error">{filingErrors.accessLevel}</p>{/if}
+							{/snippet}
+						</Dropdown>
 					</div>
 					{#if accessLevel === 'embargoed'}
 						<div class="field">
@@ -456,7 +460,7 @@
 	.history {
 		padding-left: var(--space-5);
 	}
-	.file-it select {
+	.file-it :global(.dropdown-control) {
 		width: 100%;
 	}
 	.row {

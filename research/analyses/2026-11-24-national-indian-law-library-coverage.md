@@ -1,6 +1,6 @@
 # National Indian Law Library: how much of it we cover, which model codes nations adopted, and what to collect next
 
-**Status:** research spike, written Nov. 24, 2026, in answer to Trevor's question "How much of NILL do we cover?" and his two follow-ups: what other subjects we could benefit from collecting, and how many nations adopted each of the model codes the library holds. No site or content was changed. Numbers in brackets point to the Sources list in section 7, which marks what I read or counted directly and what I inferred. "Project analysis" marks my own reasoning from those numbers.
+**Status:** research spike, written Nov. 24, 2026, in answer to Trevor's question "How much of NILL do we cover?" and his two follow-ups: what other subjects we could benefit from collecting, and how many nations adopted each of the model codes the library holds. No site or content was changed. Updated the same day after a later thread read the last 138 Gateway pages (sections 1, 2 and 5). Numbers in brackets point to the Sources list in section 7, which marks what I read or counted directly and what I inferred. "Project analysis" marks my own reasoning from those numbers.
 
 ## 1. Short answer
 
@@ -8,10 +8,10 @@ The National Indian Law Library (NILL) is the Native American Rights Fund's law 
 
 | NILL collection | NILL's size | What we hold | Coverage |
 | --- | --- | --- | --- |
-| Tribal Law Gateway: nations listed | 596 nation pages [1] | 589 matched to a nation profile; 458 pages read and recorded as source records by earlier threads | 99% matched; 77% read |
-| Gateway: constitutions | NILL says "400+ constitutions" searchable [4]; 314 of the 458 pages we read list one | 305 of those 314 nations have documents in our governing documents index (1,279 documents for 396 nations, 922 read in full) | 97% of nations |
-| Gateway: codes | NILL says "240+ tribal codes" [4]; 280 of the 458 pages we read list a code (on NILL's site or elsewhere) | 257 of those 280 nations have code text captured in our tribal law index; private research copies of 189 code folders (2,005 files) hosted by NILL | 92% of nations; about 79% of NILL's own code folders |
-| Gateway: pages never read | 138 pages (49 California, 42 Alaska, 47 other; 9 state recognized or not recognized) | 58 of these nations still have governing documents from other sources | The main Gateway gap |
+| Tribal Law Gateway: nations listed | 596 nation pages [1] | All 596 matched to a nation profile (7 by hand on Nov. 24) and read: 458 recorded as source records on Nov. 21, the last 138 on Nov. 24 | 100% matched; 100% read |
+| Gateway: constitutions | NILL says "400+ constitutions" searchable [4]; 343 of the 596 pages list one | 305 of those 343 nations have documents in our governing documents index (1,279 documents for 396 nations, 922 read in full) | 89% of nations |
+| Gateway: codes | NILL says "240+ tribal codes" [4]; 294 of the 596 pages list a code (on NILL's site or elsewhere) | 271 of those 294 nations have code text captured in our tribal law index; private research copies of 189 code folders (2,005 files) hosted by NILL | 92% of nations; about 79% of NILL's own code folders |
+| Gateway: the last 138 pages (read Nov. 24) | 34 list a constitution or code with a link (42 of the 47 links go to NILL's own tables of contents); 104 list nothing with a link, 27 of them only pointing to NILL's catalog | 11 links new to the profiles of 9 nations; the other 35 were already on profiles from NILL's table of contents pages | Done |
 | Tribal Courts Bulletin (selected opinions, 2016 to now, plus 40 older cases of note) | 407 cases from 52 nations [5] | 37 are in our 2,368-opinion Caselaw Access Project index; every bulletin case with an *American Tribal Law Reporter* citation in volumes 1-13 is there | 9% of cases; 20 of 52 nations have any opinions with us |
 | Supreme Court Bulletin (1997-98 term to now) | 30 terms plus a 1988-98 summary [6] | Of 69 cases my parser read with a U.S. Reports citation, 28 are on our list of Supreme Court Native cases and 13 have records | Covered by the separate thread "Cover every Supreme Court Native case" |
 | Federal Courts, State Courts, Legislation, Regulatory, Law Review and News Bulletins | About 210 federal court cases, 58 state court cases and 63 Federal Register documents in 2025 alone; archives back to 2001-2003 [6] | None as records | Not covered (tiers 2 and 3) |
@@ -25,9 +25,11 @@ On Nov. 21, 2026, an earlier thread read 458 of the Gateway's nation pages and r
 
 Most of what the Gateway lists is not on NILL's own site. Of the code and constitution entries on our profiles that came from NILL, most say "At tribe's website" or point to the University of Oklahoma Law Library or the Library of Congress (counted from profile notes). Only 46 nations have a code entry whose note says "At NILL website" (counted), while 186 nations have NILL-hosted code files in our crawl, so the profile notes undercount what NILL hosts (project analysis).
 
-The 138 pages never read are mostly small California rancherias and Alaska villages (counted from names). The 93 pages we did read that list nothing suggest many of the 138 also list little, but that is a guess (project analysis). Reading them is a one-time job of 138 page views, which a person or a slow, one-at-a-time session can do without the "frequent or systematic" use NILL refuses [1].
+The 138 pages this note first counted as never read had in fact been fetched on Nov. 21; that session dropped their source records because 126 of them listed nothing usable on their own and their table-of-contents listings were recorded under separate source records (research/sessions/2026/2026-11-21-justice-and-law.md). A Nov. 24 thread read the 138 again, one page at a time and six seconds apart, and recorded each as a source record (`scripts/review/nill_gateway_fetch.py`, `scripts/review/nill_gateway_apply.py`, research/reviews/2026-11-24-nill-gateway-remaining.json). Only 34 list a constitution or code with a link, and 42 of their 47 links go to NILL's own table-of-contents pages, which profiles already held; the 11 links new to profiles went to 9 nations, all of them state-recognized or not federally recognized groups (counted). The governance search log of every matched nation now records what its page listed.
 
-Matching is good: 7 Gateway entries have no profile (Duwamish Tribe, Eastern Pequot Indian Tribe, Haliwa-Saponi Indian Tribe, Iqugmuit Traditional Council, Los Coyotes Band of Cahuilla and Cupeño Indians, St. Francis/Sokoki Band of the Abenaki Nation of Missisquoi, Snoqualmoo Nation). The rest matched by source record (458) or by name (131), and name matches have not been checked by hand (counted).
+The constitution share fell from the 97% first reported to 89% because the first count set 305 indexed nations, which included nations whose pages had not been read, against the 314 read pages that list a constitution; counted the same way over all 596 pages it is 305 of 343 (project analysis, from the counts file).
+
+Matching is complete: every Gateway entry now has a profile. Seven entries the name match missed were matched by hand on Nov. 24 (Duwamish Tribe to the Duwamish Tribal Organization, Eastern Pequot Indian Tribe to the Eastern Pequot Tribal Nation, Haliwa-Saponi, Iqugmiut, Los Coyotes, the St. Francis/Sokoki Band to the Missisquoi, St. Francis-Sokoki Band, and the Snoqualmoo Nation to the Snoqualmoo Tribe of Whidbey Island), and four name matches that found two profiles were narrowed to one (Tuscarora, Northfork, Mission Creek) or split by link (Nipmuc). The reasons are in `MATCHES` in `scripts/review/nill_gateway_apply.py`. The other name matches have not been checked by hand (counted).
 
 ## 3. Court opinions
 
@@ -60,7 +62,7 @@ The pattern matters for our own model code. The federal models with high uptake 
 
 From NILL itself, without copying its documents:
 
-1. **Read the 138 unread Gateway pages** one at a time and add their listings to profiles, as the Nov. 21 thread did for the other 458. Facts and links only.
+1. ~~**Read the 138 unread Gateway pages**~~ Done Nov. 24, 2026 (section 2). The 27 pages that point only to NILL's catalog name print copies (mostly constitutions) that a person could ask NILL about.
 2. **Link each nation page to its NILL Gateway page**, which we already do for nations whose copies came from NILL (decision record 0043).
 3. **Use the Tribal Courts Bulletin as a collection list.** Record its 407 cases as leads (name, court, date, citation, topics: facts), and ask each nation's court for its opinions, starting with the 32 nations we have none for. Mashantucket Pequot, Mohegan, Muscogee, Sault Ste. Marie, Tohono O'odham and Hoopa Valley publish opinions on their own court sites (memory; check each).
 4. **Ask NILL.** The Ask NILL service will answer a limited number of requests [1]. Two useful asks: the list of model codes in its catalog, and whether NARF would agree to our linking to or listing its catalog records.

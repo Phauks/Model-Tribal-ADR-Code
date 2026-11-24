@@ -671,6 +671,18 @@ def main() -> int:
                 errors.append(f"{path}: cites a missing source record '{key}'")
         check_official_images(path, record, errors)
 
+    # A merged profile's old id redirects to the profile that absorbed it, so no live profile may use it
+    # and no two profiles may claim it.
+    live_ids = {record.get("id") for _, record in records.get("tribe.schema.json", [])}
+    former_owner: dict[str, pathlib.Path] = {}
+    for path, record in records.get("tribe.schema.json", []):
+        for former in record.get("former_ids", []):
+            if former in live_ids:
+                errors.append(f"{path}: former id '{former}' is still a live profile id")
+            if former in former_owner:
+                errors.append(f"{path}: former id '{former}' is also claimed by {former_owner[former]}")
+            former_owner[former] = path
+
     check_outreach(records.get("outreach-organization.schema.json", []), errors)
     check_supreme_court(
         records.get("supreme-court-courts.schema.json", []), records.get("supreme-court-justices.schema.json", []),

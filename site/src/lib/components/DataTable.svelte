@@ -34,6 +34,12 @@
 	`shownColumns` (column keys) to set which columns start shown and to hear
 	when the reader changes them; undefined means the default.
 
+	A column of buttons (Cancel, Undo, Restore) can mark its header
+	hiddenHeader, so the header is read by screen readers but not shown, and
+	keepOutOfDownload, so the .csv and .xlsx files leave it out. A column of
+	private details, such as the access needs people gave when they
+	registered for an event, is kept out of downloads too.
+
 	A column marked sum gets a Sum row at the bottom of the table (Trevor,
 	Nov. 24, 2026: "If you have a total, just put a Sum Row at the bottom of
 	the table, separate it separately"): "Total" under the row headers and the
@@ -418,6 +424,8 @@
 										<ArrowUpDown aria-hidden="true" size="1em" class="muted" />
 									{/if}
 								</button>
+							{:else if column.hiddenHeader}
+								<span class="visually-hidden">{column.header}</span>
 							{:else}
 								{column.header}
 							{/if}

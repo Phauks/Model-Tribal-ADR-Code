@@ -11,6 +11,8 @@
 	import { accessLevelLabels, roleLabels, type AccessLevel, type Role } from '#lib/permissions.ts';
 	import { inReviewText, isOpen, type ReviewRequest } from '#lib/essays/review-requests.ts';
 	import DateField from '#lib/components/DateField.svelte';
+	import Dropdown from '#lib/components/Dropdown.svelte';
+	import SearchableDropdown from '#lib/components/SearchableDropdown.svelte';
 	import { copyText } from '#lib/clipboard.ts';
 	import { sendJson } from '#lib/send-json.ts';
 
@@ -61,6 +63,7 @@
 	const open = $derived(requests.filter(isOpen));
 	const askable = $derived(people.filter((person) => person.identifier !== you));
 	const changeableLevels: AccessLevel[] = ['no-access', 'comment', 'contribute', 'full'];
+	const levelChoices = changeableLevels.map((level) => ({ value: level, label: accessLevelLabels[level] }));
 
 	/** Opens the dialog, with the essay's sections as they stand and, optionally, one chosen to review. */
 	export async function show(options: { sections: Section[]; version: number; section?: string }): Promise<void> {
@@ -175,30 +178,34 @@
 		<section aria-labelledby="share-people-heading">
 			<h3 id="share-people-heading" class="small">Who can open the draft</h3>
 			{#if mayManage && others.length}
-				<p class="row">
-					<label class="visually-hidden" for="share-add">Add someone</label>
-					<select id="share-add" bind:value={adding} disabled={sending}>
-						<option value="">Add someone from the workspace…</option>
-						{#each others as person (person.identifier)}
-							<option value={person.identifier}>{person.name} ({roleLabels[person.role]})</option>
-						{/each}
-					</select>
-					<label class="visually-hidden" for="share-add-level">Their level</label>
-					<select id="share-add-level" bind:value={addingLevel} disabled={sending}>
-						{#each changeableLevels.slice(1) as level (level)}<option value={level}>{accessLevelLabels[level]}</option>{/each}
-					</select>
+				<div class="row add">
+					<SearchableDropdown
+						label="Add someone"
+						hideLabel
+						id="share-add"
+						placeholder="Add someone from the workspace…"
+						choices={others.map((person) => ({ value: person.identifier, label: `${person.name} (${roleLabels[person.role]})` }))}
+						bind:value={adding}
+						disabled={sending}
+					/>
+					<Dropdown label="Their level" hideLabel id="share-add-level" choices={levelChoices.slice(1)} bind:value={addingLevel} disabled={sending} />
 					<button class="button" type="button" disabled={sending || !adding} onclick={add}>Add</button>
-				</p>
+				</div>
 			{/if}
 			<ul class="people">
 				{#each people as person (person.identifier)}
 					<li>
 						<span><strong>{person.name}</strong> <span class="small muted">{roleLabels[person.role]}</span></span>
 						{#if mayManage && person.role !== 'lead-author'}
-							<label class="visually-hidden" for="level-{person.identifier}">Level for {person.name}</label>
-							<select id="level-{person.identifier}" value={person.level} disabled={sending} onchange={(event) => setLevel(person.identifier, event.currentTarget.value as AccessLevel)}>
-								{#each changeableLevels as level (level)}<option value={level}>{accessLevelLabels[level]}</option>{/each}
-							</select>
+							<Dropdown
+								label="Level for {person.name}"
+								hideLabel
+								id="level-{person.identifier}"
+								choices={levelChoices}
+								value={person.level}
+								disabled={sending}
+								onchange={(level) => setLevel(person.identifier, level)}
+							/>
 						{:else}
 							<span class="small">{accessLevelLabels[person.level]}</span>
 						{/if}
@@ -239,13 +246,15 @@
 					</div>
 					<div class="pair">
 						<div class="field">
-							<label for="share-what">What to review</label>
-							<select id="share-what" bind:value={what}>
-								<option value="">The whole draft</option>
-								{#each sections as section (section.slug)}
-									<option value={section.slug}>{section.level === 3 ? ' ' : ''}{section.title}</option>
-								{/each}
-							</select>
+							<Dropdown
+								label="What to review"
+								id="share-what"
+								choices={[
+									{ value: '', label: 'The whole draft' },
+									...sections.map((section) => ({ value: section.slug, label: `${section.level === 3 ? ' ' : ''}${section.title}` }))
+								]}
+								bind:value={what}
+							/>
 						</div>
 						<div class="field">
 							<label for="share-due">By (optional)</label>
@@ -380,18 +389,29 @@
 		}
 	}
 
-	select,
 	textarea {
 		width: 100%;
 		max-width: 100%;
 	}
 
-	.row select {
-		width: auto;
-		flex: 1;
+	.add {
+		margin: 0 0 var(--space-2);
 	}
 
-	.people select {
-		width: auto;
+	.add :global(.searchable-dropdown) {
+		flex: 1 1 14rem;
+	}
+
+	.row :global(.dropdown),
+	.people :global(.dropdown) {
+		margin: 0;
+	}
+
+	.field :global(.dropdown) {
+		margin: 0;
+	}
+
+	.field :global(.dropdown-control) {
+		width: 100%;
 	}
 </style>

@@ -22,6 +22,8 @@ This page specifies how a Native nation, or anyone connected to one, asks the pr
 
 Each link opens `/requests` with the page and record already filled in.
 
+A nation that has claimed its page can also choose, without a request, how the site shows its own laws and its courts' opinions: shown, cited only or hidden, by kind or item by item. Its editors and stewards do this on the team's "Laws and cases" page; it takes effect at once, and the project reads each change afterwards ([decision record 0056](decisions/0056-let-nations-restrict-their-laws-and-opinions.md)).
+
 ## The form, step by step
 
 1. **What would you like to do?** Correct something; Restrict or remove something; Add a nation that is missing; Contribute (sources, review, terms, writing); Ask a question. Adding a nation follows its own steps, described [below](#adding-a-nation-that-is-missing).

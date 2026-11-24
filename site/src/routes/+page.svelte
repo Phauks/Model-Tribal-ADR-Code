@@ -1,8 +1,22 @@
 <script lang="ts">
 	import { siteName } from '#lib';
+	import { nationNames } from 'virtual:section-lists';
+	import Search from '@lucide/svelte/icons/search';
+	import Dropdown from '#lib/components/Dropdown.svelte';
+	import SearchableDropdown from '#lib/components/SearchableDropdown.svelte';
+	import { lawSubjects, type LawSubjectChoice } from '#lib/find-the-law.ts';
 	import type { PageProps } from './$types';
 
 	let { data }: PageProps = $props();
+
+	// Find the law, from the home page: the two pickers send the reader to /nations/law with both in the address.
+	const nationChoices = nationNames.map(([label, id]) => ({ value: id, label }));
+	const subjectChoices: { value: LawSubjectChoice; label: string }[] = [
+		{ value: 'all', label: 'All subjects' },
+		...lawSubjects.map((subject) => ({ value: subject.key, label: subject.label }))
+	];
+	let lawNation = $state('');
+	let lawSubject = $state<LawSubjectChoice>('all');
 </script>
 
 <svelte:head>
@@ -25,6 +39,19 @@
 		<p>Space reserved for the logo.</p>
 	</div>
 </div>
+
+<section class="panel panel-filled find-law" aria-labelledby="find-law-heading">
+	<h2 id="find-law-heading"><a href="/nations/law">Find the law</a></h2>
+	<form class="find-law-form" method="get" action="/nations/law">
+		<div class="find-law-nation">
+			<SearchableDropdown label="Native nation" name="nation" choices={nationChoices} value={lawNation} onchange={(value) => (lawNation = value)} placeholder="Type a nation’s name" />
+		</div>
+		<div class="find-law-subject">
+			<Dropdown label="Subject" name="subject" choices={subjectChoices} bind:value={lawSubject} />
+		</div>
+		<button type="submit" class="button"><Search aria-hidden="true" size="1.1em" strokeWidth={1.75} />Find</button>
+	</form>
+</section>
 
 <!-- The cards give no counts of what the pages hold, since those change with every update (Trevor, Nov. 22, 2026). -->
 <h2>Contents</h2>
@@ -73,6 +100,34 @@
 </section>
 
 <style>
+	.find-law {
+		margin: 0 0 var(--space-6);
+	}
+
+	.find-law h2 {
+		margin-top: 0;
+	}
+
+	.find-law-form {
+		display: grid;
+		grid-template-columns: minmax(0, 24rem) minmax(0, 16rem) auto;
+		gap: var(--space-3) var(--space-4);
+		align-items: end;
+	}
+
+	.find-law-form .button {
+		display: inline-flex;
+		align-items: center;
+		justify-self: start;
+		gap: var(--space-2);
+	}
+
+	@media (max-width: 48rem) {
+		.find-law-form {
+			grid-template-columns: minmax(0, 1fr);
+		}
+	}
+
 	.contents-band {
 		display: grid;
 		grid-template-columns: repeat(auto-fit, minmax(min(15rem, 100%), 1fr));

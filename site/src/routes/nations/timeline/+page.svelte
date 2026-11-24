@@ -11,6 +11,7 @@
 	import Search from '@lucide/svelte/icons/search';
 	import SlidersHorizontal from '@lucide/svelte/icons/sliders-horizontal';
 	import X from '@lucide/svelte/icons/x';
+	import SearchableDropdown from '#lib/components/SearchableDropdown.svelte';
 	import Timeline from '#lib/components/Timeline.svelte';
 	import { kindIcons } from '#lib/timeline-icons.ts';
 	import { mentionWordList } from '#lib/opinion-mentions.ts';
@@ -55,6 +56,7 @@
 
 	let nation = $state('');
 	let stateCode = $state('');
+	const stateChoices = $derived([{ value: '', label: 'All states' }, ...data.states.map((state) => ({ value: state.code, label: state.name }))]);
 	let shown = $state<TimelineKind[] | undefined>();
 	let range = $state<TimelineRange | undefined>();
 	let nationText = $state('');
@@ -233,13 +235,7 @@
 		</fieldset>
 
 		<div class="filter">
-			<label for="timeline-state">State</label>
-			<select id="timeline-state" bind:value={stateCode}>
-				<option value="">All states</option>
-				{#each data.states as state (state.code)}
-					<option value={state.code}>{state.name}</option>
-				{/each}
-			</select>
+			<SearchableDropdown label="State" id="timeline-state" choices={stateChoices} bind:value={stateCode} />
 		</div>
 
 		<fieldset class="filter">
@@ -312,8 +308,7 @@
 		padding-top: 0;
 	}
 
-	legend,
-	label[for='timeline-state'] {
+	legend {
 		display: block;
 		font-weight: var(--font-weight-bold);
 		margin-bottom: var(--space-1);
@@ -345,7 +340,7 @@
 		font: inherit;
 	}
 
-	select {
+	.filter :global(.searchable-dropdown-control) {
 		width: 100%;
 	}
 

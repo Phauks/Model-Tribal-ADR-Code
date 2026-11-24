@@ -292,7 +292,7 @@ The tables are created by the files in `migrations/`. Workers Builds does not ru
 npm run database:migrate:remote   # wrangler d1 migrations apply database --remote
 ```
 
-Wrangler records which migrations ran, so running it again is safe. For the copy used by `npm run preview`, use `npm run database:migrate:local`. To write a new migration, run `npm run database:new-migration -- "what it does"`; new files are named for the UTC time and what they do, such as `20261123T0430_add_file_scans.sql` ([migrations/README.md](migrations/README.md)).
+Wrangler records which migrations ran, so running it again is safe. For the local copy that `npm run preview` uses, see [First run](README.md#first-run): `npm run database:seed:local` applies the migrations there and adds made-up people and records. To write a new migration, run `npm run database:new-migration -- "what it does"`; new files are named for the UTC time and what they do, such as `20261123T0430_add_file_scans.sql` ([migrations/README.md](migrations/README.md)).
 
 ### First sign-in
 
@@ -305,20 +305,6 @@ npm run sign-in-link -- lead@example.org   # works once, for one hour
 The same command helps anyone who has lost both their password and access to their email.
 
 The Workspace group in the left sidebar has a People page, where co-authors, advisors, editors, contributors and nation reviewers are added by email address, and an Access page, where their level on each document is raised or lowered. Each person signs in at `/sign-in` with that address, or with the link the People page gives you for them. Their access starts at their first sign-in.
-
-## Database
-
-The tables are created by the files in `migrations/`. Workers Builds does not run them, because its automatically created API token does not include D1 permission (Cloudflare, ["Workers Builds configuration: API token"](https://developers.cloudflare.com/workers/ci-cd/builds/configuration/#api-token)). Apply them once per new migration, from `site/` (migration 0002 adds access levels and the sealed activity log; apply it before deploying the code that uses it):
-
-```sh
-npm run database:migrate:remote   # wrangler d1 migrations apply database --remote
-```
-
-Wrangler records which migrations ran, so running it again is safe. For the copy used by `npm run preview`, use `npm run database:migrate:local`. To write a new migration, run `npm run database:new-migration -- "what it does"`; new files are named for the UTC time and what they do, such as `20261123T0430_add_file_scans.sql` ([migrations/README.md](migrations/README.md)).
-
-### First sign-in
-
-Open `/sign-in` and sign in with the `LEAD_AUTHOR_EMAIL` address. The Workspace group in the left sidebar has a People page, where co-authors, advisors, editors, contributors and nation reviewers are added by email address, and an Access page, where their level on each document is raised or lowered. Tell each person to sign in at `/sign-in` with that address; their access starts at their first sign-in.
 
 ## Database
 

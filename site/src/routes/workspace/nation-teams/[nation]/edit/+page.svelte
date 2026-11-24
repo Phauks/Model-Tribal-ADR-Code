@@ -8,6 +8,7 @@
 	import Clock from '@lucide/svelte/icons/clock';
 	import Landmark from '@lucide/svelte/icons/landmark';
 	import Plus from '@lucide/svelte/icons/plus';
+	import Dropdown from '#lib/components/Dropdown.svelte';
 	import FileDropField from '#lib/components/FileDropField.svelte';
 	import NationChangeContent from '#lib/components/NationChangeContent.svelte';
 	import {
@@ -51,6 +52,8 @@
 	// svelte-ignore state_referenced_locally
 	let credit = $state(data.starting.about.credit ?? data.credits[0] ?? data.nation.title);
 	let otherCredit = $state('');
+	const contactKindChoices = contactKinds.map((kind) => ({ value: kind, label: contactKindLabels[kind] }));
+	const creditChoices = $derived([...data.credits.map((option) => ({ value: option, label: option })), { value: 'other', label: 'Another name' }]);
 	let addingStatement = $state<Record<StatementSection, boolean>>({ recognition: false, law: false, jurisdiction: false });
 	let scripted = $state(false);
 
@@ -131,7 +134,8 @@
 
 <p class="small page-links">
 	<a href="/workspace/nation-teams/{data.nation.identifier}">Your nation’s team</a> ·
-	<a href="/workspace/nation-teams/{data.nation.identifier}/changes">Changes and history</a>
+	<a href="/workspace/nation-teams/{data.nation.identifier}/changes">Changes and history</a> ·
+	<a href="/workspace/nation-teams/{data.nation.identifier}/laws-and-cases">Laws and cases</a>
 	{#if data.nation.page}· <a href={data.nation.page}>View the page</a>{/if}
 </p>
 <h1>Edit {the(data.nation.title)}’s page</h1>
@@ -258,12 +262,7 @@
 							<input type="text" id="contact-office-{index}" name="contact-office-{index}" bind:value={row.office} />
 						</div>
 						<div>
-							<label for="contact-kind-{index}" class="small">Kind</label>
-							<select id="contact-kind-{index}" name="contact-kind-{index}" bind:value={row.kind}>
-								{#each contactKinds as kind (kind)}
-									<option value={kind}>{contactKindLabels[kind]}</option>
-								{/each}
-							</select>
+							<Dropdown label="Kind" id="contact-kind-{index}" name="contact-kind-{index}" choices={contactKindChoices} bind:value={row.kind} />
 						</div>
 						<div>
 							<label for="contact-value-{index}" class="small">Email, number or address</label>
@@ -277,10 +276,7 @@
 						<legend class="visually-hidden">Contact {contactRows.length + 1}</legend>
 						<div><label for="contact-office-{contactRows.length}" class="small">Office</label><input type="text" id="contact-office-{contactRows.length}" name="contact-office-{contactRows.length}" /></div>
 						<div>
-							<label for="contact-kind-{contactRows.length}" class="small">Kind</label>
-							<select id="contact-kind-{contactRows.length}" name="contact-kind-{contactRows.length}">
-								{#each contactKinds as kind (kind)}<option value={kind}>{contactKindLabels[kind]}</option>{/each}
-							</select>
+							<Dropdown label="Kind" id="contact-kind-{contactRows.length}" name="contact-kind-{contactRows.length}" choices={contactKindChoices} value={contactKinds[0]} />
 						</div>
 						<div><label for="contact-value-{contactRows.length}" class="small">Email, number or address</label><input type="text" id="contact-value-{contactRows.length}" name="contact-value-{contactRows.length}" /></div>
 					</fieldset>
@@ -391,11 +387,16 @@
 			{#if data.starting.about.fromDraft || data.starting.courts.fromDraft || data.starting.contacts.fromDraft || data.starting.statements.fromDraft}
 				<p class="small muted">The form shows your saved draft.</p>
 			{/if}
-			<label for="credit">Credit the change to</label>
-			<select id="credit" name={credit === 'other' ? undefined : 'credit'} form="edit-form" bind:value={credit} aria-describedby="credit-hint">
-				{#each data.credits as option (option)}<option value={option}>{option}</option>{/each}
-				<option value="other">Another name</option>
-			</select>
+			<!-- With "Another name", the box beside it sends the credit instead. -->
+			<Dropdown
+				label="Credit the change to"
+				id="credit"
+				name={credit === 'other' ? undefined : 'credit'}
+				form="edit-form"
+				choices={creditChoices}
+				bind:value={credit}
+				describedBy="credit-hint"
+			/>
 			{#if credit === 'other'}
 				<label for="credit-other" class="visually-hidden">Credit the change to</label>
 				<input type="text" id="credit-other" name="credit" form="edit-form" bind:value={otherCredit} required />
@@ -654,10 +655,33 @@
 	}
 
 	textarea,
-	input[type='text'],
-	select {
+	input[type='text'] {
 		width: 100%;
 		font: inherit;
+	}
+
+	.contact-row :global(.dropdown) {
+		margin: 0;
+	}
+
+	.contact-row :global(.dropdown-control) {
+		width: 100%;
+	}
+
+	/* As small as the row's other labels. */
+	.contact-row :global(.dropdown-label) {
+		margin: 0;
+		font-size: var(--font-size-small);
+		font-weight: normal;
+	}
+
+	.edit-side :global(.dropdown-label) {
+		margin: var(--space-3) 0 var(--space-1);
+		font-weight: var(--font-weight-semibold);
+	}
+
+	.edit-side :global(.dropdown-control) {
+		width: 100%;
 	}
 
 	fieldset {
@@ -678,7 +702,8 @@
 
 	/* On a wide screen the rows line up under the first row's labels. */
 	@media (min-width: 40rem) {
-		.contact-row + .contact-row label {
+		.contact-row + .contact-row label,
+		.contact-row + .contact-row :global(.dropdown-label) {
 			position: absolute;
 			width: 1px;
 			height: 1px;

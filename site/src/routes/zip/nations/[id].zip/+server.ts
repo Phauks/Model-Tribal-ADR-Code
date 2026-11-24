@@ -1,20 +1,22 @@
 /**
  * One nation's constitutions, laws and court opinions that this site holds, as a ZIP file, streamed from the
  * private bucket (src/lib/server/document-zips.ts). Offered on the nation's page. Trevor asked for
- * it on Nov. 23, 2026.
+ * it on Nov. 23, 2026. Copies the nation chose to cite only are listed in documents.csv without the file, and
+ * copies it chose to hide are left out altogether (src/lib/nation-restrictions.ts).
  */
 import { error } from '@sveltejs/kit';
 import { publicCopies } from 'virtual:public-copies';
 import { datedName } from '#lib/download-names.ts';
 import { citationDate } from '#lib/page-downloads.ts';
-import { documentsReadme, documentsZip } from '#lib/server/document-zips.ts';
+import { documentsReadme, documentsZip, keyOfCopyPath } from '#lib/server/document-zips.ts';
 import { workerEnvironment } from '#lib/server/environment.ts';
+import { copyLevels } from '#lib/server/nation-restrictions.ts';
 import type { DocumentSetList } from '#lib/offline-documents.ts';
 import type { RequestHandler } from './$types';
 
 export const prerender = false;
 
-const served = new Set(publicCopies.map((copy) => copy.key));
+const byKey = new Map(publicCopies.map((copy) => [copy.key, copy]));
 
 export const GET: RequestHandler = async ({ params, url }) => {
 	if (!/^[a-z0-9-]+$/.test(params.id)) error(404, 'No nation has that identifier.');
@@ -22,7 +24,11 @@ export const GET: RequestHandler = async ({ params, url }) => {
 	const response = await environment.ASSETS?.fetch(new URL(`/copies/offline/nations/${params.id}.json`, url).toString());
 	if (response?.status === 404) error(404, 'This site holds no copies of that nation’s documents.');
 	if (!environment.sourceDocuments || !response?.ok) error(503, 'The documents cannot be gathered right now.');
-	const list = (await response.json()) as DocumentSetList;
+	const full = (await response.json()) as DocumentSetList;
+	const copies = full.files.map(([path]) => byKey.get(keyOfCopyPath(path))).filter((copy) => copy !== undefined);
+	const levels = await copyLevels(environment.database, copies);
+	const list: DocumentSetList = { ...full, files: full.files.filter(([path]) => levels.get(keyOfCopyPath(path)) !== 'hide') };
+	const served = new Set(copies.filter((copy) => !levels.has(copy.key)).map((copy) => copy.key));
 	const now = new Date();
 	const readme = documentsReadme(`${list.title}: constitutions, laws and court opinions`, url.origin, citationDate(now));
 	return new Response(documentsZip(list, environment.sourceDocuments, served, readme), {

@@ -1,5 +1,6 @@
 <script lang="ts">
 	import Breadcrumbs from '#lib/components/Breadcrumbs.svelte';
+	import Dropdown from '#lib/components/Dropdown.svelte';
 	import { accessLevelLabels } from '#lib/permissions.ts';
 	import { sectionOf } from '#lib/site-sections.ts';
 	import type { PageProps } from './$types';
@@ -24,12 +25,9 @@
 		}
 		return result;
 	});
-	let compareFrom = $state<number | undefined>(undefined);
-	let compareTo = $state<number | undefined>(undefined);
-	$effect.pre(() => {
-		compareTo ??= data.versions[0]?.number;
-		compareFrom ??= data.versions[1]?.number ?? data.versions[0]?.number;
-	});
+	const versionChoices = $derived(data.versions.map((row) => ({ value: String(row.number), label: `Version ${row.number}` })));
+	let compareFrom = $state<string | undefined>(undefined);
+	let compareTo = $state<string | undefined>(undefined);
 </script>
 
 <svelte:head>
@@ -76,16 +74,22 @@
 	<form method="get" action="/workspace/essays/{data.identifier}/compare" class="panel compare">
 		<h2>Compare two versions</h2>
 		<div class="field">
-			<label for="compare-from">From</label>
-			<select id="compare-from" name="from" bind:value={compareFrom}>
-				{#each data.versions as row (row.number)}<option value={row.number}>Version {row.number}</option>{/each}
-			</select>
+			<Dropdown
+				label="From"
+				id="compare-from"
+				name="from"
+				choices={versionChoices}
+				bind:value={() => compareFrom ?? String(data.versions[1]?.number ?? data.versions[0]?.number), (number) => (compareFrom = number)}
+			/>
 		</div>
 		<div class="field">
-			<label for="compare-to">To</label>
-			<select id="compare-to" name="to" bind:value={compareTo}>
-				{#each data.versions as row (row.number)}<option value={row.number}>Version {row.number}</option>{/each}
-			</select>
+			<Dropdown
+				label="To"
+				id="compare-to"
+				name="to"
+				choices={versionChoices}
+				bind:value={() => compareTo ?? String(data.versions[0]?.number), (number) => (compareTo = number)}
+			/>
 		</div>
 		<button class="button button-quiet" type="submit">Compare</button>
 	</form>

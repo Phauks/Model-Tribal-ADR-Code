@@ -21,7 +21,7 @@ import { answersFor, teamReportState } from '#lib/nation-team-reports.ts';
 import { answerReport, reportsForTeam, teamAnswersFor } from '#lib/server/nation-team-reports.ts';
 import { addPlace, claimOf, claimedNations } from '#lib/server/nation-teams.ts';
 import { matchSignIn, type SignedInPerson } from '#lib/server/people.ts';
-import { wrappedConfig, entrySource } from '../tools/add-nation-page-changes.mjs';
+import { wrappedConfig, entrySource, workerFirstPaths } from '../tools/add-nation-page-changes.mjs';
 import { withNationPageChanges } from '../tools/nation-page-changes-worker.js';
 import { testDatabase } from './database.ts';
 
@@ -315,14 +315,14 @@ describe('the Worker that adds the changes to the page', () => {
 		};
 	}
 
-	it('leaves other pages and nations with no changes alone', async () => {
+	it('leaves other pages alone, and sends nation pages with no changes on as built unless something on them is restricted', async () => {
 		const { worker, seen } = fakeWorker({ stamp: null, slots: {} });
 		const wrapped = withNationPageChanges(worker, FakeRewriter);
 		expect((wrapped.scheduled as () => string)()).toBe('kept');
 		await wrapped.fetch(new Request('https://site.example/stories'), {}, {});
 		const response = await wrapped.fetch(new Request('https://site.example/nations/navajo-nation', { headers: { 'if-none-match': '"built"' } }), {}, {});
 		expect(response.status).toBe(304);
-		expect(seen).toEqual(['/stories', '/nations/navajo-nation/changes.json', '/nations/navajo-nation (conditional)']);
+		expect(seen).toEqual(['/stories', '/nations/navajo-nation/changes.json', '/restricted-pages/nations/navajo-nation (conditional)']);
 	});
 
 	it('fills the slots and gives the page an ETag that changes with the nation’s changes', async () => {
@@ -339,8 +339,9 @@ describe('the Worker that adds the changes to the page', () => {
 	it('runs the Worker first for nation pages and wraps whatever entry the build made', () => {
 		expect(wrappedConfig({ main: 'scheduled-entry.js', assets: { binding: 'ASSETS', directory: '../client' } })).toEqual({
 			main: 'nation-pages-entry.js',
-			assets: { binding: 'ASSETS', directory: '../client', run_worker_first: ['/nations/*'] }
+			assets: { binding: 'ASSETS', directory: '../client', run_worker_first: workerFirstPaths }
 		});
+		expect(workerFirstPaths).toContain('/search/records.json');
 		expect(entrySource('scheduled-entry.js')).toContain(`import worker from './scheduled-entry.js';`);
 	});
 });

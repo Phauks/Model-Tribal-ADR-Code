@@ -47,10 +47,10 @@ declare module 'virtual:portraits' {
 
 declare module 'virtual:public-copies' {
 	/** The copies of public documents the Worker may serve at /copies/, listed at build time. */
-	export const publicCopies: Pick<
-		import('#lib/public-copies.ts').PublicCopy,
-		'key' | 'mediaType' | 'sha256' | 'bytes' | 'links'
-	>[];
+	export const publicCopies: (Pick<import('#lib/public-copies.ts').PublicCopy, 'key' | 'mediaType' | 'sha256' | 'bytes' | 'links'> & {
+		/** For a nation's law or court opinion, the choices it follows (src/lib/nation-restrictions.ts). */
+		restrict?: import('#lib/nation-restrictions.ts').CopyRestriction;
+	})[];
 }
 
 declare module 'virtual:source-citations' {
