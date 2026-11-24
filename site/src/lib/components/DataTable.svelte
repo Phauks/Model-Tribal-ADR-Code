@@ -265,8 +265,12 @@
 
 	// Keeps the page address in step with the table, without adding to the
 	// browser's history at each keystroke.
+	// It waits until the table has read the address once (onMount), or a table
+	// reached by a link within the site, which starts interactive, would wipe
+	// the filters in the link before reading them.
+	let addressRead = $state(false);
 	$effect(() => {
-		if (!interactive || !shareable) return;
+		if (!interactive || !shareable || !addressRead) return;
 		const parameters = writeTableState(
 			identifier,
 			{ query, sort: chosenSort, filters: columnFilters },
@@ -289,6 +293,7 @@
 			columnFilters = state.filters;
 			addedFilters = filterColumns.filter((column) => state.filters[column.key]).map((column) => column.key);
 		}
+		addressRead = true;
 		interactive = true;
 		const onChange = () => {
 			fullScreen = document.fullscreenElement === frame;

@@ -23,6 +23,7 @@
 	import Clock from '@lucide/svelte/icons/clock';
 	import History from '@lucide/svelte/icons/history';
 	import TopicBadges from '#lib/components/TopicBadges.svelte';
+	import { opinionsMentioning } from '#lib/opinion-mentions.ts';
 	import Timeline from '#lib/components/Timeline.svelte';
 	import { unclaimedPage } from '#lib/review-status.ts';
 	import { afterNavigate } from '$app/navigation';
@@ -259,14 +260,11 @@
 					{opinions.count === 1 ? 'One opinion' : `${opinions.count.toLocaleString('en-US')} opinions`} of courts serving the nation {opinions.count === 1 ? 'is' : 'are'} published in the American Tribal Law Reporter or the Navajo Reporter{opinions.from === opinions.to ? `, from ${opinions.from}` : `, from ${opinions.from} to ${opinions.to}`}.<CitationMarks
 						marks={opinions.citations}
 					/>
-					{#if opinions.disputeResolutionCount > 0}
-						{opinions.disputeResolutionCount === opinions.count ? 'All of them' : `Of these, ${opinions.disputeResolutionCount.toLocaleString('en-US')}`} mention peacemaking, mediation, arbitration or another way of settling a dispute outside a trial; they are listed first.
-					{/if}
 				</p>
 				<ul class="opinions stacked-list">
 					{#each opinions.shown as opinion (opinion.path)}
 						<li>
-							<a href={opinion.path}><i>{opinion.name}</i></a>, {opinion.citation} ({opinion.court} {opinion.year}){#if opinion.topics.length > 0}<span class="small mentions"><span class="muted">Mentions</span>{' '}<TopicBadges topics={opinion.topics.map((topic) => ({ text: topic }))} /></span>{/if}
+							<a href={opinion.path}><i>{opinion.name}</i></a>, {opinion.citation} ({opinion.court} {opinion.year}){#if opinion.topics.length > 0}<span class="small mentions"><span class="muted">Mentions</span>{' '}<TopicBadges topics={opinion.topics.map((topic) => ({ text: topic, link: opinionsMentioning(data.page.id, topic) }))} /></span>{/if}
 						</li>
 					{/each}
 				</ul>
@@ -459,8 +457,8 @@
 {/snippet}
 
 <!-- A legal section with nothing to show: the short answer, then how far the search went once one is finished. -->
-{#snippet emptySection(empty: { text: string; note: string })}
-	<p class="empty-section"><strong>{empty.text}.</strong>{#if empty.note}{' '}{empty.note}{/if}</p>
+{#snippet emptySection(empty: { text: string })}
+	<p class="empty-section">{empty.text}</p>
 {/snippet}
 
 <!-- 3. At a glance, with the seal and the map, then the contacts. -->
