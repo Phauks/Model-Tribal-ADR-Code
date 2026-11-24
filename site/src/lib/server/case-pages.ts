@@ -9,8 +9,8 @@
  *   Court linked to its page, the vote and the bench, case-facts.ts);
  * - the box's Background, Question, Holding, Quotes and Treatment, each
  *   quotation naming the opinion it comes from (case-opinions.ts);
- * - the opinions, each linked to its first page in the saved copy of the
- *   official report;
+ * - the opinions, each writer linked to the Justice's page and each opinion
+ *   to its first page in the saved copy of the official report;
  * - the caption and the nations the case names, each linked to its page;
  * - where to read it, the same list a citation's book icon opens
  *   (reading-links.ts), shown open;
@@ -28,6 +28,7 @@ import { essayLibrary, withRecordBoxes } from './essay-pages.ts';
 import { essayPath, partOf, titleOf } from './essays.ts';
 import { nationNamesAndKinds, publicCopyFor, sources, type SourceRecord } from './content.ts';
 import { courtPath } from './supreme-courts.ts';
+import { decidedDay, justiceLinkFor } from './supreme-court-people.ts';
 import { savedCopyLink } from './markdown.ts';
 import { displayName } from '../nation-labels.ts';
 import { officialReportLinks, readingLinksHtml } from '../reading-links.ts';
@@ -49,6 +50,8 @@ export interface CaseOpinion {
 	title: string;
 	/** The writer's surname. */
 	justice: string;
+	/** The writer's page (src/routes/supreme-court/justices), for a Supreme Court case. */
+	justiceLink?: string;
 	/** The report page where it starts. */
 	page?: number;
 	/** That page in the saved copy of the official report. */
@@ -157,7 +160,10 @@ export function boxSections(key: string, title: string, box: RecordBox | undefin
  * page in the saved scan of the official report, which starts at the case's
  * first page. Without that block, the writers the bench names, unlinked.
  */
-function caseOpinions(record: SourceRecord & CaseRecordParts): CaseOpinion[] {
+export function caseOpinions(record: SourceRecord & CaseRecordParts): CaseOpinion[] {
+	// The Justices' pages, as the bench in At a glance links them (case-facts.ts).
+	const decided = decidedDay(record.citation.issued);
+	const writerLink = (name: string) => (record.supreme_court ? justiceLinkFor(name, decided, record.key) : undefined);
 	const list = record.opinions?.list;
 	if (list?.length) {
 		const scan = officialReportLinks(record.reading_links).find((link) => /tile\.loc\.gov\/.+\/usrep\d+\.pdf$/.test(link));
@@ -168,6 +174,7 @@ function caseOpinions(record: SourceRecord & CaseRecordParts): CaseOpinion[] {
 			.map((opinion) => ({
 				title: opinionTitle(opinion.kind),
 				justice: opinion.kind === 'per curiam' ? '' : surname(opinion.justice),
+				justiceLink: opinion.kind === 'per curiam' ? undefined : writerLink(opinion.justice),
 				page: opinion.page,
 				link: copy && Number.isInteger(first) && opinion.page >= first ? `${copyPagePath(copy)}#page=${opinion.page - first + 1}` : undefined,
 				note: opinion.note
@@ -175,7 +182,7 @@ function caseOpinions(record: SourceRecord & CaseRecordParts): CaseOpinion[] {
 	}
 	return (record.supreme_court?.justices ?? [])
 		.filter((justice) => justice.opinion)
-		.map((justice) => ({ title: opinionTitle(justice.opinion!), justice: surname(justice.name) }));
+		.map((justice) => ({ title: opinionTitle(justice.opinion!), justice: surname(justice.name), justiceLink: writerLink(justice.name) }));
 }
 
 function caseNations(record: SourceRecord & CaseRecordParts): { nations: CaseNation[]; shared?: string } {

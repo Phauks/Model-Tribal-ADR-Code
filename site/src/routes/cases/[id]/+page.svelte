@@ -60,7 +60,7 @@
 					<div>
 						<dt>{opinion.title}</dt>
 						<dd>
-							{opinion.justice}{#if opinion.page}{opinion.justice ? ', ' : ''}{#if opinion.link}<a href={opinion.link}>starting at page {opinion.page}</a>{:else}starting at page {opinion.page}{/if}{/if}
+							{#if opinion.justiceLink}<a href={opinion.justiceLink}>{opinion.justice}</a>{:else}{opinion.justice}{/if}{#if opinion.page}{opinion.justice ? ', ' : ''}{#if opinion.link}<a href={opinion.link}>starting at page {opinion.page}</a>{:else}starting at page {opinion.page}{/if}{/if}
 							{#if opinion.note}<span class="fact-detail muted small">{opinion.note}</span>{/if}
 						</dd>
 					</div>
