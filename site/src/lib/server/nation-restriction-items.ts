@@ -72,6 +72,8 @@ export function restrictableItems(nationId: string): RestrictableList {
 			bytes: copies.get(opinion.key)?.bytes
 		});
 	}
-	return { nation: nationId, items };
+	// Counted as the nation's page lists them: its treaties, and the court cases that name it.
+	const cases = [...sourceRecords().values()].filter((source) => source.kind.endsWith('-case') && source.tribes?.includes(nationId) && source.citation.title).length;
+	return { nation: nationId, items, alwaysShown: { treaties: record?.treaties?.length ?? 0, cases } };
 }
 

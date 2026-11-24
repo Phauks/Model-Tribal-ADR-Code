@@ -1,5 +1,5 @@
 import { fail } from '@sveltejs/kit';
-import { readSettings, restrictionProblem, settingsChanges, tidySettings } from '#lib/nation-restrictions.ts';
+import { alwaysShownCount, readSettings, restrictionProblem, settingsChanges, tidySettings } from '#lib/nation-restrictions.ts';
 import { workerEnvironment } from '#lib/server/environment.ts';
 import { answerProject, currentSettings, restrictableList, saveByIdentifier, saveSettings, savesOf } from '#lib/server/nation-restrictions.ts';
 import { nationAndGranter } from '#lib/server/nation-team-access.ts';
@@ -22,6 +22,7 @@ export const load: PageServerLoad = async (event) => {
 	return {
 		nation: { identifier: nation.identifier, title: nation.title, page: nation.page },
 		items: list.items,
+		alwaysShown: alwaysShownCount(list.alwaysShown),
 		settings,
 		canChange: !restrictionProblem(granter),
 		question: asked ? { save: asked.identifier, text: asked.question ?? '', askedAt: asked.askedAt ?? '' } : null,

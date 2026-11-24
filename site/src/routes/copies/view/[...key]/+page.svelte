@@ -45,7 +45,7 @@
 
 	{#if data.citeOnly}
 		<p class="restricted">
-			At the nation’s request, this site does not show the text of this {opinion ? 'opinion' : 'document'}. Read it at <a href={data.original} rel="noopener noreferrer">{opinion ? 'the Caselaw Access Project' : publishedAt}<ExternalLink size={14} aria-hidden="true" /></a>.
+			At the nation’s request, this site does not show the text of this {opinion ? 'opinion' : 'document'}. <a href={data.original} rel="noopener noreferrer">Read it at {opinion ? 'the Caselaw Access Project' : publishedAt}<ExternalLink size={14} aria-hidden="true" /></a>.
 		</p>
 	{:else}
 		<p class="actions">

@@ -204,7 +204,7 @@
 								{/if}
 							{/if}
 							<span class="grow"></span>
-							<span class="small muted">{#if save.overdue}Was due {day(save.due)}{:else}Read by {day(save.due)}{/if} · {#if save.nation.page}<a href={save.nation.page}>View the page</a> · {/if}<a href="/workspace/nation-teams/{save.nation.identifier}/laws-and-cases">The team’s choices</a></span>
+							<span class="small muted">{#if save.overdue}Was due {day(save.due)}{:else}Read by {day(save.due)}{/if} · {#if save.nation.page}<a href={save.nation.page}>View the page</a>{' · '}{/if}<a href="/workspace/nation-teams/{save.nation.identifier}/laws-and-cases">The team’s choices</a></span>
 						</div>
 						{#if shows(save.identifier, 'ask')}
 							<form method="post" action="?/askRestrictions" class="more">

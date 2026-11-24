@@ -86,6 +86,19 @@ export interface RestrictableItem {
 export interface RestrictableList {
 	nation: string;
 	items: RestrictableItem[];
+	/** The federal and state law and cases on the nation's page, which are always shown, counted for the team's page. */
+	alwaysShown?: { treaties: number; cases: number };
+}
+
+/** "19 treaties, 6 cases", leaving out a part with none. */
+export function alwaysShownCount(counts: RestrictableList['alwaysShown']): string {
+	if (!counts) return '';
+	return [
+		counts.treaties > 0 ? plural(counts.treaties, 'treaty', 'treaties') : '',
+		counts.cases > 0 ? plural(counts.cases, 'case', 'cases') : ''
+	]
+		.filter(Boolean)
+		.join(', ');
 }
 
 export function isLevel(value: unknown): value is RestrictionLevel {

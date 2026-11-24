@@ -41,7 +41,7 @@
 	});
 	let find = $state('');
 	let shownKind = $state<RestrictionKind | 'all'>('all');
-	let onlyApart = $state(true);
+	let onlyApart = $state(false);
 
 	const draft: RestrictionSettings = $derived(tidySettings({ kinds, items: apart }, data.items));
 	const changes = $derived(settingsChanges(data.settings, draft, data.items));
@@ -144,7 +144,7 @@
 				{/each}
 				<tr>
 					<td><strong>Federal and state law</strong><br /><span class="small muted">Treaties, statutes, and federal and state court cases</span></td>
-					<td></td>
+					<td>{data.alwaysShown}</td>
 					<td>
 						<span class="always small muted"><Lock size={16} aria-hidden="true" /> Always shown</span><br />
 						<a class="small" href="/workspace/nation-teams/{data.nation.identifier}/edit#statement-law-heading">Add the nation’s statement beside one</a>
@@ -308,7 +308,7 @@
 	}
 
 	.level-meanings {
-		margin: var(--space-2) 0 var(--space-5);
+		margin: 0 0 var(--space-5);
 		padding: 0;
 		list-style: none;
 		max-width: var(--layout-measure);
