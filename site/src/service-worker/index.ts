@@ -1,8 +1,11 @@
 /**
  * Service worker: lets the site be read offline (site/DESIGN.md, section 10).
  *
- * - On install, saves the app shell (scripts and styles), the Atkinson
- *   Hyperlegible Next fonts, the static files and the core pages.
+ * - On install, saves the core pages with the scripts and styles they load,
+ *   the reader tools they open on demand, the Atkinson Hyperlegible Next
+ *   fonts and the static files (src/lib/offline-shell.ts). Other scripts and
+ *   styles are saved the first time a page uses them, and those a saved
+ *   collection's pages load are saved with the collection.
  * - Other pages are saved as they are read and refreshed in the background
  *   the next time they are opened online (stale while revalidate).
  * - Noto fallback fonts, and the fonts a reader can pick in Settings, are
@@ -12,6 +15,8 @@
  * - A reader can save a whole collection at once from Settings ("Saved for
  *   offline", src/lib/offline-collections.ts). The worker remembers which
  *   collections the reader keeps, so it saves them again after an update.
+ *   The list of every built page is a separate file, read only for saving
+ *   and showing collections (builtPaths below), not part of this script.
  * - Each build has its own cache, named after the build version. A page from
  *   a newer build is not saved into an older build's cache, because its
  *   scripts would be missing offline.
@@ -32,8 +37,9 @@
  * Worker for one person at a time, so they are never cached either.
  */
 import { version } from '$app/env';
-import { assets, immutable, prerendered } from '$app/manifest';
+import { assets, immutable } from '$app/manifest';
 import { self } from '$app/service-worker';
+import { builtPathsAddress, installFiles } from 'virtual:offline-files';
 import { copyPagePrefix } from '#lib/public-copies.ts';
 import {
 	collectionOf,
@@ -65,12 +71,9 @@ import {
 	withoutBuild,
 	type Fingerprints
 } from '#lib/offline-fingerprints.ts';
+import { corePages, offlinePage, scriptsIn } from '#lib/offline-shell.ts';
 
 const cacheName = cacheNameOf(version);
-const offlinePage = '/offline';
-// The search page and its index are kept too, so the masthead's search box works offline,
-// and so is the Starred page, since stars and notes live on the device.
-const corePages = ['/', '/glossary', '/changelog', '/search', '/starred', '/starred/shared', offlinePage];
 // edition.json, the fingerprints and SvelteKit's version.json say what the server has now, so
 // they always come from the network; a saved version.json would hide a new build from open tabs.
 // Copies of public documents (/copies/) can be large and are read in parts, so the browser fetches them itself,
@@ -100,7 +103,9 @@ const keptCollectionsKey = '/__kept-collections';
 const fingerprintsKey = savedFingerprintsKey;
 /** Not a real address: saved pages that changed in this build, to download again. */
 const changedKey = '/__changed';
-const internalKeys = new Set([keptCollectionsKey, fingerprintsKey, changedKey]);
+/** Not a real address: this build's list of prerendered files, once read (builtPaths). */
+const builtPathsKey = '/__built-paths';
+const internalKeys = new Set([keptCollectionsKey, fingerprintsKey, changedKey, builtPathsKey]);
 
 /**
  * A nation's seal or logo is never saved for offline use, so that an image a
@@ -144,38 +149,87 @@ function absolute(path: string): string {
 
 // Only the woff2 files are used by current browsers; the woff copies are a fallback for old ones.
 // The spelling checker's WebAssembly (about 20 MB, src/lib/essays/harper.ts) is for editors only and is not saved for offline.
+// Each of these is saved the first time it is used, if not on install.
 const shell = immutable
 	.map((file) => absolute(file.path))
 	.filter((path) => !isFallbackFont(path) && !path.endsWith('.woff') && !path.endsWith('.wasm'));
 const staticFiles = assets.map((file) => absolute(file.path));
-const builtPaths = new Set(prerendered.map((page) => absolute(page.path)));
-const corePageFiles = corePages.flatMap((page) => [
-	page,
-	page === '/' ? '/__data.json' : `${page}/__data.json`
-]);
-const precached = [
-	...shell,
-	...staticFiles,
-	...[
-		'/manifest.webmanifest',
-		'/icon.svg',
-		'/glossary/terms.json',
-		'/nations/previews.json',
-		'/search/index.json',
-		'/search/records.json',
-		...corePageFiles
-	].filter((path) => builtPaths.has(path))
-];
+const staticFileSet = new Set(staticFiles);
+// On install: the Atkinson Hyperlegible Next fonts (the only woff2 files in the shell), the static files,
+// and the core pages and reader tools this build has (src/lib/offline-shell.ts). The scripts and styles
+// the core pages load are added from the saved pages themselves (saveScriptsOf).
+const precached = [...shell.filter((path) => path.endsWith('.woff2')), ...staticFiles, ...installFiles];
 const precachedSet = new Set(precached);
 const shellSet = new Set(shell);
 
+let builtPathsRead: Promise<Set<string>> | undefined;
+
+/**
+ * Every prerendered file of this build. The list is a separate file (the offline-files plugin in vite.config.ts), read the first time it is needed and kept in this build's cache, so the worker's own script stays small and a reader who never saves a collection never downloads it.
+ */
+function builtPaths(): Promise<Set<string>> {
+	builtPathsRead ??= readBuiltPaths().catch((error: unknown) => {
+		builtPathsRead = undefined;
+		throw error;
+	});
+	return builtPathsRead;
+}
+
+async function readBuiltPaths(): Promise<Set<string>> {
+	if (!builtPathsAddress) return new Set();
+	const cache = await caches.open(cacheName);
+	const saved = await cache.match(builtPathsKey);
+	if (saved) return new Set((await saved.json()) as string[]);
+	const response = await fetch(builtPathsAddress).catch(() => undefined);
+	if (response?.ok) {
+		await cache.put(builtPathsKey, response.clone());
+		return new Set((await response.json()) as string[]);
+	}
+	// Offline before the list was ever read: the fingerprints kept on install name the same files a reader may
+	// save (tools/write-offline-sizes.mjs), which is all the collections need. They are not kept as the list.
+	const fingerprints = await cache.match(fingerprintsKey);
+	if (fingerprints) {
+		const files = Object.keys(((await fingerprints.json()) as Fingerprints).files);
+		builtPathsRead = undefined;
+		return new Set(files.filter((path) => !staticFileSet.has(path) && !path.split('/').pop()?.startsWith('.')));
+	}
+	throw new Error('The list of this build’s pages could not be read.');
+}
+
 /** Every page and page data file of this build, by collection, that may be saved. */
-const collectionFiles = new Map<CollectionIdentifier, string[]>(
-	collections.map((collection) => [collection.id, []])
-);
-for (const path of builtPaths) {
-	if (isNeverCached(path) || path === '/manifest.webmanifest' || path === '/icon.svg') continue;
-	collectionFiles.get(collectionOf(path))?.push(path);
+async function collectionFiles(): Promise<Map<CollectionIdentifier, string[]>> {
+	const lists = new Map<CollectionIdentifier, string[]>(collections.map((collection) => [collection.id, []]));
+	for (const path of await builtPaths()) {
+		if (isNeverCached(path) || path === '/manifest.webmanifest' || path === '/icon.svg') continue;
+		lists.get(collectionOf(path))?.push(path);
+	}
+	return lists;
+}
+
+/** Saves those of these built scripts and styles that are not saved yet. */
+async function saveMissing(cache: Cache, paths: Iterable<string>): Promise<void> {
+	const missing: string[] = [];
+	for (const path of paths) {
+		if (shellSet.has(path) && !(await cache.match(path))) missing.push(path);
+	}
+	await cache.addAll(missing);
+}
+
+/** Saves the scripts and styles these saved pages load, as their HTML names them. */
+async function saveScriptsOf(cache: Cache, pages: Iterable<string>): Promise<void> {
+	const wanted = new Set<string>();
+	for (const page of pages) {
+		const saved = await cache.match(page);
+		if (!saved || !(saved.headers.get('content-type') ?? '').includes('text/html')) continue;
+		for (const path of scriptsIn(await saved.text())) wanted.add(path);
+	}
+	await saveMissing(cache, wanted);
+}
+
+/** Adds the scripts and styles a page about to be saved loads to `wanted`. */
+async function noteScriptsOf(response: Response, wanted: Set<string>): Promise<void> {
+	if (!(response.headers.get('content-type') ?? '').includes('text/html')) return;
+	for (const path of scriptsIn(await response.clone().text())) wanted.add(path);
 }
 
 function pagesIn(files: string[]): Set<string> {
@@ -187,14 +241,16 @@ self.addEventListener('install', (event) => {
 	event.waitUntil(
 		(async () => {
 			const cache = await caches.open(cacheName);
-			await removeWithdrawnPages();
+			const fingerprints = await thisBuildFingerprints(cache);
+			await removeWithdrawnPages(fingerprints);
 			await removeWithdrawnDocuments();
-			await carryForward(cache, await thisBuildFingerprints(cache));
+			await carryForward(cache, fingerprints);
 			const missing: string[] = [];
 			for (const path of precached) {
 				if (!(await cache.match(path))) missing.push(path);
 			}
 			await cache.addAll(missing);
+			await saveScriptsOf(cache, corePages);
 			// No skipWaiting here: the new version waits for the reader (see above).
 		})()
 	);
@@ -295,21 +351,28 @@ async function setChangedPages(cache: Cache, paths: string[]): Promise<void> {
 	await cache.put(changedKey, new Response(JSON.stringify(paths), { headers: { 'content-type': 'application/json' } }));
 }
 
-/** Saves again, from this build, the saved pages that changed in it. */
+/**
+ * Saves again, from this build, the saved pages that changed in it, with the scripts and styles they load. Every page listed has a fingerprint in this build (carryForward), so it is a page of this build.
+ */
 async function saveChangedPages(): Promise<void> {
 	const cache = await caches.open(cacheName);
 	const left: string[] = [];
+	const scripts = new Set<string>();
 	for (const path of await changedPages(cache)) {
-		if (!builtPaths.has(path) || (await cache.match(path))) continue;
+		if (await cache.match(path)) continue;
 		try {
 			const response = await fetch(path);
-			if (await isFromThisBuild(response)) await cache.put(path, response);
-			else left.push(path);
+			if (await isFromThisBuild(response)) {
+				await noteScriptsOf(response, scripts);
+				await cache.put(path, response);
+			} else left.push(path);
 		} catch {
 			left.push(path);
 		}
 	}
 	await setChangedPages(cache, left);
+	// A script that cannot be saved now is saved the first time the page is read online.
+	await saveMissing(cache, scripts).catch(() => undefined);
 }
 
 /**
@@ -320,16 +383,28 @@ async function saveChangedPages(): Promise<void> {
  * commitment 6). Scripts, styles and fonts are left alone, because the old
  * version still uses them until the reader updates.
  */
-async function removeWithdrawnPages(): Promise<void> {
+async function removeWithdrawnPages(fingerprints: Fingerprints | undefined): Promise<void> {
+	let isBuilt: ((path: string) => boolean) | undefined;
 	for (const name of await caches.keys()) {
 		if (name === cacheName || name === documentsCacheName) continue;
 		const oldCache = await caches.open(name);
 		for (const request of await oldCache.keys()) {
 			const path = new URL(request.url).pathname;
 			const isPage = !path.startsWith('/_app/') && !/\.[a-z0-9]+$/.test(path.replace(/\/__data\.json$/, ''));
-			if (isPage && !internalKeys.has(path) && !builtPaths.has(path)) await oldCache.delete(request);
+			if (!isPage || internalKeys.has(path)) continue;
+			isBuilt ??= await builtPageCheck(fingerprints);
+			if (!isBuilt(path)) await oldCache.delete(request);
 		}
 	}
+}
+
+/**
+ * Whether a saved page is in this build. The fingerprints, which install reads anyway, name every page a reader may save, which is every page a cache can hold (tools/write-offline-sizes.mjs), so the list of built files is read only when they could not be had. When neither can be read, installing fails and the browser tries again later, so no withdrawn page is kept.
+ */
+async function builtPageCheck(fingerprints: Fingerprints | undefined): Promise<(path: string) => boolean> {
+	if (fingerprints) return (path) => Object.hasOwn(fingerprints.files, path);
+	const built = await builtPaths();
+	return (path) => built.has(path);
 }
 
 /**
@@ -487,11 +562,13 @@ async function setKept(cache: Cache, id: CollectionIdentifier, kept: boolean): P
 async function status(): Promise<OfflineStatus> {
 	const cache = await caches.open(cacheName);
 	const kept = await keptCollections(cache);
+	const built = await builtPaths();
+	const collectionFileLists = await collectionFiles();
 	const savedPages = new Map<CollectionIdentifier, Set<string>>();
 	const bytes = new Map<CollectionIdentifier, number>();
 	for (const request of await cache.keys()) {
 		const path = new URL(request.url).pathname;
-		if (!builtPaths.has(path) || isNeverCached(path)) continue;
+		if (!built.has(path) || isNeverCached(path)) continue;
 		const id = collectionOf(path);
 		if (!path.endsWith('__data.json')) {
 			savedPages.set(id, (savedPages.get(id) ?? new Set()).add(pageOf(path)));
@@ -500,7 +577,7 @@ async function status(): Promise<OfflineStatus> {
 		if (response) bytes.set(id, (bytes.get(id) ?? 0) + (await response.blob()).size);
 	}
 	const list: CollectionStatus[] = collections.map(({ id }) => {
-		const pages = pagesIn(collectionFiles.get(id) ?? []);
+		const pages = pagesIn(collectionFileLists.get(id) ?? []);
 		return {
 			id,
 			total: pages.size,
@@ -522,7 +599,7 @@ function tell(port: MessagePort | undefined, reply: WorkerReply): void {
 
 async function saveCollection(id: CollectionIdentifier): Promise<void> {
 	const cache = await caches.open(cacheName);
-	const files = collectionFiles.get(id) ?? [];
+	const files = (await collectionFiles()).get(id) ?? [];
 	const missing: string[] = [];
 	for (const path of files) {
 		if (!(await cache.match(path))) missing.push(path);
@@ -536,6 +613,8 @@ async function saveCollection(id: CollectionIdentifier): Promise<void> {
 	report();
 	// A few at a time, so reading the site stays quick while this runs.
 	const queue = [...missing];
+	// The scripts and styles the saved pages load, so they also work offline (src/lib/offline-shell.ts).
+	const scripts = new Set<string>();
 	async function next(): Promise<void> {
 		const path = queue.shift();
 		if (!path) return;
@@ -543,12 +622,14 @@ async function saveCollection(id: CollectionIdentifier): Promise<void> {
 		if (!(await isFromThisBuild(response))) {
 			throw new Error(newerBuildSeen ? 'newer-build' : `Could not save ${path}`);
 		}
+		await noteScriptsOf(response, scripts);
 		await cache.put(path, response);
 		done += 1;
 		if (done % 10 === 0 || queue.length === 0) report();
 		return next();
 	}
 	await Promise.all(Array.from({ length: 6 }, next));
+	await saveMissing(cache, scripts);
 	report();
 }
 
@@ -569,9 +650,10 @@ async function removeCollection(id: CollectionIdentifier): Promise<void> {
 	const cache = await caches.open(cacheName);
 	await setKept(cache, id, false);
 	await setChangedPages(cache, (await changedPages(cache)).filter((path) => collectionOf(path) !== id));
+	const built = await builtPaths();
 	for (const request of await cache.keys()) {
 		const path = new URL(request.url).pathname;
-		if (builtPaths.has(path) && collectionOf(path) === id && !precachedSet.has(path)) {
+		if (built.has(path) && collectionOf(path) === id && !precachedSet.has(path)) {
 			await cache.delete(request);
 		}
 	}
@@ -825,7 +907,9 @@ async function answer(request: WorkerRequest, port: MessagePort | undefined): Pr
 				for (const id of kept) await runSave(id, port);
 				// Copies of documents are large, so only sets left unfinished are saved again here.
 				for (const set of await pendingSets()) await runDocumentSave(set, undefined).catch(() => undefined);
-				break;
+				// The page does not need the status here, which would read the list of every built page.
+				tell(port, { type: 'resumed' });
+				return;
 			}
 			case 'documents-status':
 			case 'documents-save':

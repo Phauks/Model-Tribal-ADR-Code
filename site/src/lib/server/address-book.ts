@@ -134,6 +134,19 @@ export async function listContacts(database: D1Database): Promise<ContactEntry[]
 	return [...byContact.values()];
 }
 
+/** Every contact's name, kind, role and organization, by name, without emails, phones or tags: what a contact's page needs to name the others. */
+export async function contactNames(
+	database: D1Database
+): Promise<Pick<Contact, 'identifier' | 'kind' | 'name' | 'role' | 'organizationIdentifier'>[]> {
+	const { results } = await database
+		.prepare(
+			`SELECT identifier, kind, name, role, organization_identifier AS organizationIdentifier
+			 FROM contacts ORDER BY name COLLATE NOCASE, identifier`
+		)
+		.all<Pick<Contact, 'identifier' | 'kind' | 'name' | 'role' | 'organizationIdentifier'>>();
+	return results;
+}
+
 export async function contactEntry(database: D1Database, identifier: string): Promise<ContactEntry | null> {
 	const record = await database
 		.prepare('SELECT * FROM contacts WHERE identifier = ?')

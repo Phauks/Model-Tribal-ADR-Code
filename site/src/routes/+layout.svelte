@@ -5,6 +5,7 @@
 	// each file's unicode-range. Noto Serif and OpenDyslexic are the other
 	// fonts a reader can pick in Settings; a browser downloads them only when
 	// a reader picks one, and the service worker then keeps them for offline use.
+	// OpenDyslexic's faces are a style sheet of their own, read only when a reader picks it or opens Settings (src/routes/opendyslexic.css, src/lib/reading-settings.ts).
 	import '@fontsource/atkinson-hyperlegible-next/400.css';
 	import '@fontsource/atkinson-hyperlegible-next/400-italic.css';
 	import '@fontsource/atkinson-hyperlegible-next/600.css';
@@ -20,10 +21,6 @@
 	import '@fontsource/noto-serif/400-italic.css';
 	import '@fontsource/noto-serif/600.css';
 	import '@fontsource/noto-serif/700.css';
-	import '@fontsource/opendyslexic/400.css';
-	import '@fontsource/opendyslexic/400-italic.css';
-	import '@fontsource/opendyslexic/700.css';
-	import '@fontsource/opendyslexic/700-italic.css';
 	import 'virtual:design-tokens.css';
 	import '#lib/styles/global.css';
 	import { siteName } from '#lib';

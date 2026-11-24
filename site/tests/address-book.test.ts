@@ -7,6 +7,7 @@ import {
 	addContactMethod,
 	contactChanges,
 	contactEntry,
+	contactNames,
 	editContactMethod,
 	listContacts,
 	mailingList,
@@ -194,6 +195,24 @@ describe('the address book', () => {
 		expect(changes[0].change).toBe('Marked mail came back');
 		expect(JSON.parse(changes[0].before ?? '{}').status).toBe('current');
 		expect(first).not.toBe(second);
+	});
+});
+
+describe('naming the other contacts on a contact’s page', () => {
+	it('gives the same names, kinds, roles and organizations as the whole address book, in the same order', async () => {
+		const office = await added(addContact(database, { kind: 'organization', name: 'Sample Nation', nationIdentifier: 'sample-nation' }, null));
+		await added(addContact(database, { kind: 'person', name: 'jo Smith', role: 'Chair', organizationIdentifier: office }, null));
+		await added(addContact(database, { kind: 'person', name: 'Al Jones' }, null));
+		const whole = await listContacts(database);
+		expect(await contactNames(database)).toEqual(
+			whole.map((contact) => ({
+				identifier: contact.identifier,
+				kind: contact.kind,
+				name: contact.name,
+				role: contact.role,
+				organizationIdentifier: contact.organizationIdentifier
+			}))
+		);
 	});
 });
 
