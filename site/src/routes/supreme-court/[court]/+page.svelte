@@ -9,11 +9,10 @@
 -->
 <script lang="ts">
 	import BenchChart from '#lib/components/BenchChart.svelte';
-	import Breadcrumbs from '#lib/components/Breadcrumbs.svelte';
 	import CitationMarks from '#lib/components/CitationMarks.svelte';
 	import CountBadge from '#lib/components/CountBadge.svelte';
 	import DataTable from '#lib/components/DataTable.svelte';
-	import SourceList from '#lib/components/SourceList.svelte';
+	import InfoPage from '#lib/components/InfoPage.svelte';
 	import { readableDate } from '#lib/readable-date.ts';
 	import type { TableColumn, TableRow } from '#lib/tables/table-definition.ts';
 	import type { PageProps } from './$types';
@@ -87,27 +86,22 @@
 	<meta name="description" content="{data.name} of the Supreme Court of the United States, {data.years}: its Justices, its history and the cases on this site it decided." />
 </svelte:head>
 
-<Breadcrumbs
+<InfoPage
+	title={data.name}
+	lead={data.years}
+	picture={data.picture}
+	glance={data.glance}
+	sources={data.sources}
 	trail={[
 		{ label: 'Library', href: '/library' },
 		{ label: 'Supreme Court', href: '/supreme-court' }
 	]}
-/>
-
-<div class="reading">
-	<h1>{data.name}</h1>
-	<dl class="summary-list">
-		{#each data.facts as fact (fact.label)}
-			<div>
-				<dt>{fact.label}</dt>
-				<dd>{fact.text}<CitationMarks marks={fact.marks} /></dd>
-			</div>
-		{/each}
-	</dl>
-
+>
+<section aria-labelledby="history" class="reading">
+	<h2 id="history">History</h2>
 	<!-- eslint-disable-next-line svelte/no-at-html-tags -- built from the repository's own Markdown -->
 	{@html data.historyHtml}
-</div>
+</section>
 
 <section aria-labelledby="justices">
 	<h2 id="justices">Justices <CountBadge count={data.bench.length} /></h2>
@@ -157,7 +151,7 @@
 	</DataTable>
 </section>
 
-<SourceList sources={data.sources} />
+</InfoPage>
 
 <style>
 	.changes {

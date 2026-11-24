@@ -5,7 +5,7 @@
  */
 import type { D1Database } from '@cloudflare/workers-types/index.ts';
 import type { Role } from '#lib/permissions.ts';
-import { checkSeals, sealNewEntries, type SealCheck } from './activity-seals.ts';
+import { checkSealsSinceCheckpoint, sealNewEntries, type SealCheck } from './activity-seals.ts';
 import { refusedAction } from './events.ts';
 
 export interface AdministrationSummary {
@@ -51,7 +51,8 @@ export async function administrationSummary(
 			)
 			.bind(refusedAction)
 			.first<AdministrationSummary['lastRefused']>(),
-		checkSeals(database)
+		// Only the entries after the last checkpoint; the hourly run checks the whole chain.
+		checkSealsSinceCheckpoint(database)
 	]);
 	return {
 		people: people.results,

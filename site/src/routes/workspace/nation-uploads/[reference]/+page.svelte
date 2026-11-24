@@ -62,6 +62,7 @@
 	{:else if upload.kind === 'picture'}
 		<img class="preview" src="{fileAddress}?show" alt={upload.description ?? name} />
 	{:else if upload.kind === 'video'}
+		<!-- A video as sent has no captions yet; a reviewer writes its transcript when filing it. -->
 		<!-- svelte-ignore a11y_media_has_caption -->
 		<video class="preview" controls preload="metadata" src="{fileAddress}?show"></video>
 	{:else if upload.kind === 'sound'}

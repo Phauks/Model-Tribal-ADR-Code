@@ -1,0 +1,51 @@
+id: judicare-legal-aid-indian-law-office
+name: Indian Law Office, Judicare Legal Aid
+also_known_as:
+- Legal Action of Wisconsin - Indian Law Office
+- Wisconsin Judicare
+kind: legal-aid
+operator: nonprofit
+link: https://wislawhelp.org/node/132
+link_label: Directory entry on Wisconsin Law Help
+services:
+- legal-advice
+- representation
+who_can_use: Income-eligible Native Americans in the service area (Legal Services Corporation Native American grant).
+lsc:
+- service_area: NWI-1
+  grantee_as_lsc_names_it: Judicare Legal Aid
+  grant_2026: 233875
+  next_competition: 2027
+serves:
+- states:
+  - WI
+  scope: statewide
+  text: Serves Native Americans living in all counties in Wisconsin, including the Indian Country of the Menominee, Stockbridge-Munsee, Ho-Chunk, Potawatomi, Lac du Flambeau, Oneida, Mole Lake, Lac Courte Oreilles, St.Croix, Bad River, and Red Cliff
+  source: lsc-service-area-nwi-1
+  nations:
+  - menominee-indian-tribe-of-wisconsin
+note: LSC lists the grantee as Judicare Legal Aid; Wisconsin Law Help now lists the office under Legal Action of Wisconsin. Which name is current was not confirmed.
+sources:
+- id: lsc-service-area-nwi-1
+  title: Service area NWI-1
+  publisher: Legal Services Corporation
+  link: https://www.lsc.gov/grants/basic-field-grant/lsc-service-areas/map-lsc-service-areas?area=NWI-1
+  data_link: https://api.lscdataease.org/public/lsc/service_areas/NWI-1/about.json
+  accessed: '2026-11-24'
+  verification: data-read
+  supports: Service area type, current grantee, and the area description quoted in serves.
+- id: lsc-2026-notice-of-intent-to-award
+  title: 'Notice of Intent to Award: Grant Awards for the Delivery of Civil Legal Services to Eligible Low-Income Clients Beginning January 1, 2026'
+  publisher: Legal Services Corporation
+  link: https://lsc-live.app.box.com/s/fleq8j26yivz3potdw5hvpclth90icmp
+  accessed: '2026-11-24'
+  verification: page-read
+  supports: The applicant LSC intended to fund for each Native American service area in 2026, and the grant amount.
+- id: wisconsin-law-help-indian-law-office
+  title: Legal Action of Wisconsin - Indian Law Office
+  publisher: Wisconsin Law Help
+  link: https://wislawhelp.org/node/132
+  accessed: '2026-11-24'
+  verification: page-read
+  supports: Directory entry, now under the name Legal Action of Wisconsin, Wausau office; statewide; legal information, advice, representation and referrals.
+checked: '2026-11-24'

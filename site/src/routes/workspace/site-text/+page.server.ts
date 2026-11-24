@@ -27,7 +27,7 @@ const filters = ['all', 'edited', 'drafts', 'gone'] as const;
 type Filter = (typeof filters)[number];
 
 export const load: PageServerLoad = async (event) => {
-	const person = requirePerson(event);
+	requirePerson(event);
 	const { database } = storage(event);
 	const access = await requireDocumentLevel(event, database, siteTextSubject, 'comment');
 	const catalog = catalogByKey();
@@ -84,7 +84,6 @@ export const load: PageServerLoad = async (event) => {
 		level: access.level,
 		canPublish: atLeast(access.level, 'full'),
 		canEdit: atLeast(access.level, 'contribute'),
-		person: person.identifier,
 		query,
 		filter,
 		total: matching.length,

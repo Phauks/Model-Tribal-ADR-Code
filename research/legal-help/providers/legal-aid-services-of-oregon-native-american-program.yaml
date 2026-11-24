@@ -1,0 +1,61 @@
+id: legal-aid-services-of-oregon-native-american-program
+name: Native American Program of Legal Aid Services of Oregon
+also_known_as:
+- NAPOLS
+kind: legal-aid
+operator: nonprofit
+link: https://oregonlawhelp.org/node/67
+link_label: Directory entry on Oregon Law Help
+services:
+- legal-advice
+- representation
+who_can_use: Income-eligible Native Americans in the service area (Legal Services Corporation Native American grant).
+lsc:
+- service_area: NOR-1
+  grantee_as_lsc_names_it: Legal Aid Services of Oregon
+  grant_2026: 278321
+  next_competition: 2027
+serves:
+- states:
+  - OR
+  scope: statewide
+  text: Serves Native Americans living in all counties in Oregon, including those who live on all reservations in Oregon
+  source: lsc-service-area-nor-1
+- states:
+  - OR
+  scope: members
+  nations:
+  - confederated-tribes-of-the-umatilla-indian-reservation
+  text: Under a contract approved Jan. 8, the Confederated Tribes of the Umatilla Indian Reservation pay Legal Aid Services of Oregon to give free civil legal help to tribal members above its usual income limits.
+  source: umatilla-contracts-with-legal-aid-services-of-oregon
+sources:
+- id: lsc-service-area-nor-1
+  title: Service area NOR-1
+  publisher: Legal Services Corporation
+  link: https://www.lsc.gov/grants/basic-field-grant/lsc-service-areas/map-lsc-service-areas?area=NOR-1
+  data_link: https://api.lscdataease.org/public/lsc/service_areas/NOR-1/about.json
+  accessed: '2026-11-24'
+  verification: data-read
+  supports: Service area type, current grantee, and the area description quoted in serves.
+- id: lsc-2026-notice-of-intent-to-award
+  title: 'Notice of Intent to Award: Grant Awards for the Delivery of Civil Legal Services to Eligible Low-Income Clients Beginning January 1, 2026'
+  publisher: Legal Services Corporation
+  link: https://lsc-live.app.box.com/s/fleq8j26yivz3potdw5hvpclth90icmp
+  accessed: '2026-11-24'
+  verification: page-read
+  supports: The applicant LSC intended to fund for each Native American service area in 2026, and the grant amount.
+- id: oregon-law-help-native-american-program
+  title: Native American Program of Legal Aid Services of Oregon (NAPOLS)
+  publisher: Oregon Law Help
+  link: https://oregonlawhelp.org/node/67
+  accessed: '2026-11-24'
+  verification: page-read
+  supports: Free legal services to income-eligible tribes, Native organizations and individuals; priorities youth, elders and tribal courts; statewide.
+- id: umatilla-contracts-with-legal-aid-services-of-oregon
+  title: CTUIR Contracts with LASO for Expanded Legal Services
+  publisher: Confederated Tribes of the Umatilla Indian Reservation
+  link: https://ctuir.org/news/ctuir-contracts-with-laso-for-expanded-legal-services/
+  accessed: '2026-11-24'
+  verification: page-read
+  supports: Contract for LASO to serve tribal members above LASO’s income limits; the article gives no year.
+checked: '2026-11-24'

@@ -105,10 +105,13 @@ export const essaySchema = new Schema({
 			toDOM: () => ['td', 0]
 		},
 		// A court case. Its heading is the full citation of the source record
-		// named by `source`; inside, a short summary and the Question,
-		// Holding, Quotes and Treatment parts.
+		// named by `source`. Its parts are kept on that record (record-boxes.ts),
+		// so the box is usually empty and the editor shows it read-only
+		// (record-box-view.ts); a box written out in full, as older essays
+		// have them, holds its Background, Question, Holding, Quotes and
+		// Treatment parts.
 		case_block: {
-			content: '(block | case_part)+',
+			content: '(block | case_part)*',
 			group: 'block',
 			defining: true,
 			isolating: true,
@@ -121,10 +124,11 @@ export const essaySchema = new Schema({
 			]
 		},
 		// An act, statute, regulation or tribal law, headed by the full
-		// citation of its source record; inside, What it does, Quotes and
-		// Treatment parts.
+		// citation of its source record. Like a case, its What it does, Quotes
+		// and Treatment parts are kept on the record, or, in an older essay,
+		// written out inside.
 		law_block: {
-			content: '(block | case_part)+',
+			content: '(block | case_part)*',
 			group: 'block',
 			defining: true,
 			isolating: true,
@@ -340,7 +344,9 @@ function fenceFor(node: EditorNode): string {
 		});
 	};
 	measure(node, 0);
-	return ':'.repeat(3 + deepest);
+	// A case or law box always opens with four colons, even with nothing written inside it, because its parts, filled in from its record, are blocks of three (record-boxes.ts).
+	const least = node.type.name === 'case_block' || node.type.name === 'law_block' ? 1 : 0;
+	return ':'.repeat(3 + Math.max(deepest, least));
 }
 
 function writeContainer(state: MarkdownSerializerState, node: EditorNode, info: string): void {

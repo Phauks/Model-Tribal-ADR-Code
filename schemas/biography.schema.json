@@ -1,0 +1,87 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/Phauks/Model-Tribal-ADR-Code/schemas/biography.schema.json",
+  "title": "Biography of a Native person",
+  "description": "content/biographies/<key>.yaml: a Native person in a case on the site or a leader in a nation's history (docs/biographies.md). Every fact names its source record and the place in it.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["key", "name", "lead", "living", "checked"],
+  "$defs": {
+    "cited": {
+      "type": "object",
+      "required": ["source"],
+      "properties": {
+        "source": { "type": "string", "description": "The key of a source record in content/sources/." },
+        "where": { "type": "string", "description": "The pinpoint in Indigo Book form, such as \"109 U.S. at 557\"." }
+      }
+    }
+  },
+  "properties": {
+    "key": { "type": "string", "pattern": "^[a-z0-9-]+$", "description": "Equals the file name without .yaml." },
+    "name": { "type": "string", "description": "The name the case or the main sources use." },
+    "lead": { "type": "string", "description": "One sentence under the title, drawn from the cited facts below." },
+    "living": { "type": "boolean", "description": "True for a living person or one who died within the last 25 years: the page gives the public role only." },
+    "names": {
+      "type": "array",
+      "items": {
+        "allOf": [{ "$ref": "#/$defs/cited" }],
+        "type": "object",
+        "unevaluatedProperties": false,
+        "required": ["name"],
+        "properties": { "name": { "type": "string" }, "note": { "type": "string", "description": "Whose spelling it is, such as \"as the Supreme Court Reporter prints it\"." }, "source": true, "where": true }
+      }
+    },
+    "nations": {
+      "type": "array",
+      "items": {
+        "allOf": [{ "$ref": "#/$defs/cited" }],
+        "type": "object",
+        "unevaluatedProperties": false,
+        "required": ["nation"],
+        "properties": { "nation": { "type": "string", "description": "A nation id in content/tribes/." }, "named_as": { "type": "string" }, "note": { "type": "string" }, "source": true, "where": true }
+      }
+    },
+    "cases": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["case", "role"],
+        "properties": {
+          "case": { "type": "string", "description": "The case's source record key; it is also the source of the role and result." },
+          "role": { "type": "string" },
+          "result": { "type": "string" },
+          "where": { "type": "string" }
+        }
+      }
+    },
+    "events": {
+      "type": "array",
+      "items": {
+        "allOf": [{ "$ref": "#/$defs/cited" }],
+        "type": "object",
+        "unevaluatedProperties": false,
+        "required": ["when", "text"],
+        "properties": { "when": { "type": "string" }, "text": { "type": "string" }, "source": true, "where": true }
+      }
+    },
+    "portrait": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["file", "title", "credit", "page", "basis", "alt", "width", "height", "sha256"],
+      "properties": {
+        "file": { "type": "string", "description": "The file in site/static/biographies/portraits/." },
+        "title": { "type": "string", "description": "The archive's title for the picture." },
+        "credit": { "type": "string" },
+        "page": { "type": "string", "format": "uri", "description": "The archive's own record of the picture." },
+        "basis": { "type": "string", "description": "Why the picture is in the public domain." },
+        "alt": { "type": "string" },
+        "width": { "type": "integer" },
+        "height": { "type": "integer" },
+        "sha256": { "type": "string", "pattern": "^[0-9a-f]{64}$" }
+      }
+    },
+    "portrait_released": { "type": "boolean", "description": "A living person's picture that the person or the family published for this use." },
+    "checked": { "$ref": "common.schema.json#/$defs/calendarDate" }
+  }
+}

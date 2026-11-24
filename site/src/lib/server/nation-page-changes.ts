@@ -136,6 +136,26 @@ export async function historyOf(database: D1Database, nationIdentifier: string):
 	return result.results.map(fromStored);
 }
 
+/** The histories of several nations, read in one query: each nation's history in the order historyOf gives it. */
+export async function historiesOf(database: D1Database, nationIdentifiers: readonly string[]): Promise<Map<string, ChangeRow[]>> {
+	const histories = new Map<string, ChangeRow[]>(nationIdentifiers.map((nationIdentifier) => [nationIdentifier, []]));
+	if (nationIdentifiers.length === 0) return histories;
+	const result = await database
+		.prepare(
+			`SELECT ${changeColumns} FROM ${changeTables}
+			 WHERE nation_page_changes.nation_identifier IN (SELECT value FROM json_each(?)) AND nation_page_changes.status != 'draft'
+			 ORDER BY COALESCE(nation_page_changes.published_at, nation_page_changes.discarded_at, nation_page_changes.written_at) DESC,
+			          nation_page_changes.rowid DESC`
+		)
+		.bind(JSON.stringify(nationIdentifiers))
+		.all<StoredChange>();
+	for (const row of result.results) {
+		const change = fromStored(row);
+		histories.get(change.nationIdentifier)?.push(change);
+	}
+	return histories;
+}
+
 export async function changeByIdentifier(database: D1Database, identifier: string): Promise<ChangeRow | undefined> {
 	const row = await database
 		.prepare(`SELECT ${changeColumns} FROM ${changeTables} WHERE nation_page_changes.identifier = ?`)

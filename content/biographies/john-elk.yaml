@@ -1,0 +1,23 @@
+key: john-elk
+name: John Elk
+lead: Plaintiff in Elk v. Wilkins (1884), who was refused registration as a voter in Omaha because he was an Indian; the Supreme Court held that he was not a citizen of the United States under the Fourteenth Amendment.
+living: false
+cases:
+- case: elk-v-wilkins
+  role: Plaintiff
+  result: Judgment for Wilkins affirmed; Elk, not being a citizen of the United States under the Fourteenth Amendment, could not maintain the action.
+  where: 112 U.S. at 109
+events:
+- when: Apr. 5, 1880
+  text: Asked Charles Wilkins, registrar of a ward of Omaha, to register him as a voter; by his petition, Wilkins refused for the sole reason that he was an Indian. The petition said he was born in the United States and had severed his tribal relation more than a year before.
+  source: elk-v-wilkins
+  where: 112 U.S. at 95–96
+- when: Apr. 6, 1880
+  text: By his petition, presented a ballot at the election and was refused because he was not registered.
+  source: elk-v-wilkins
+  where: 112 U.S. at 96
+- when: Nov. 3, 1884
+  text: The Supreme Court affirmed the dismissal of his suit for $6,000 in damages, holding that he was not a citizen of the United States under the Fourteenth Amendment.
+  source: elk-v-wilkins
+  where: 112 U.S. at 94, 96–97, 109
+checked: '2026-11-24'

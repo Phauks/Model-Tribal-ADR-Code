@@ -31,6 +31,7 @@ import {
 import { isoDate, storyIsShown, storySourceKeys } from './src/lib/story-visibility.ts';
 import { directoryNameOf, sourceKindOf } from './src/lib/address-book-sync.ts';
 import { markSiteText } from './src/lib/site-text-markers.ts';
+import { installCandidates, readerToolFiles, type ManifestChunk } from './src/lib/offline-shell.ts';
 import { loadPublishedSiteText, siteTextCatalog } from './src/lib/server/site-text-build.ts';
 
 const designTokensPath = fileURLToPath(new URL('./design-tokens.json', import.meta.url));
@@ -564,6 +565,36 @@ function buildInformation(): Plugin {
 	};
 }
 
+const offlineFilesModule = 'virtual:offline-files';
+const resolvedOfflineFilesModule = `\0${offlineFilesModule}`;
+
+/**
+ * What the service worker needs to know about the build without carrying the list of every built page in its own script (src/lib/offline-shell.ts). The list of prerendered files goes into a separate file, /_app/immutable/offline-paths.<hash>.json, which the worker reads only when a reader saves or looks at collections for offline reading; the module gives its address, and the files saved on install: the core pages this build has and the reader tools. Only the service worker's own build has the prerendered list (SvelteKit's $app/manifest reads it from the define used here); in development there is none, as $app/manifest has none then either.
+ */
+function offlineFiles(): Plugin {
+	return {
+		name: 'model-tribal-adr-code:offline-files',
+		resolveId(identifier) {
+			return identifier === offlineFilesModule ? resolvedOfflineFilesModule : undefined;
+		},
+		load(identifier) {
+			if (identifier !== resolvedOfflineFilesModule) return undefined;
+			if (this.environment.name !== 'serviceWorker') return 'export const builtPathsAddress = "";\nexport const installFiles = [];\n';
+			const prerendered = this.environment.config.define?.__SVELTEKIT_MANIFEST_PRERENDERED__;
+			if (typeof prerendered !== 'string') this.error('The list of prerendered pages was not given to the service worker build (__SVELTEKIT_MANIFEST_PRERENDERED__).');
+			const built = (JSON.parse(prerendered) as { path: string }[]).map((page) => `/${page.path}`);
+			const list = `${JSON.stringify(built)}\n`;
+			const fileName = `_app/immutable/offline-paths.${createHash('sha256').update(list).digest('hex').slice(0, 12)}.json`;
+			this.emitFile({ type: 'asset', fileName, source: list });
+			const manifestPath = path.resolve(this.environment.config.root, this.environment.config.build.outDir, '.vite/manifest.json');
+			const manifest = JSON.parse(readFileSync(manifestPath, 'utf8')) as Record<string, ManifestChunk>;
+			const builtSet = new Set(built);
+			const installFiles = [...installCandidates.filter((address) => builtSet.has(address)), ...readerToolFiles(manifest)];
+			return [`export const builtPathsAddress = ${JSON.stringify(`/${fileName}`)};`, `export const installFiles = ${JSON.stringify(installFiles)};`, ''].join('\n');
+		}
+	};
+}
+
 export default defineConfig({
 	plugins: [
 		designTokens(),
@@ -583,6 +614,7 @@ export default defineConfig({
 		sponsorshipCounts(),
 		pageHistory(),
 		siteText(),
+		offlineFiles(),
 		sveltekit({
 			preprocess: [siteTextMarkers],
 			compilerOptions: {

@@ -1,0 +1,88 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/Phauks/Model-Tribal-ADR-Code/schemas/legal-help-provider.schema.json",
+  "title": "Legal help provider",
+  "description": "One place a person can get legal help or legal information about tribal law or Indian law: Native legal aid, a tribal government's legal aid office, a tribal court or state court self-help center, a state legal help website's tribal pages, or a law school clinic. Records which states and Native nations it serves, each with a source. Stored as research/legal-help/providers/<id>.yaml. scripts/legal-help/match_nations.py matches records to nation pages.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["id", "name", "kind", "operator", "serves", "sources", "checked"],
+  "properties": {
+    "id": { "$ref": "common.schema.json#/$defs/slug", "description": "Equals the file name. Spelled out, no acronyms." },
+    "name": { "type": "string" },
+    "also_known_as": { "type": "array", "items": { "type": "string" }, "uniqueItems": true },
+    "kind": {
+      "type": "string",
+      "enum": ["legal-aid", "tribal-legal-aid", "self-help-center", "legal-information-site", "law-school-clinic"],
+      "description": "legal-aid: a nonprofit that gives advice or representation. tribal-legal-aid: a legal aid office a nation runs for its own members. self-help-center: a court's or government's center that helps people represent themselves. legal-information-site: web pages with information or forms, no staff help. law-school-clinic: students supervised by faculty."
+    },
+    "operator": { "type": "string", "enum": ["nonprofit", "tribal-government", "tribal-court", "state-court", "federal", "law-school"] },
+    "status": { "type": "string", "enum": ["open", "opening", "suspended", "to-classify"], "description": "Omitted means open as of 'checked'. to-classify: grabbed but not yet read closely enough to rely on." },
+    "link": { "type": "string", "description": "The provider's own page about this service; where none was found, the best official page, explained in 'note'." },
+    "link_label": { "type": "string" },
+    "services": { "type": "array", "items": { "type": "string" }, "uniqueItems": true },
+    "who_can_use": { "type": "string" },
+    "location": { "type": "string" },
+    "lsc": {
+      "type": "array",
+      "description": "Legal Services Corporation Native American service areas this provider holds.",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["service_area", "grantee_as_lsc_names_it"],
+        "properties": {
+          "service_area": { "type": "string", "pattern": "^N[A-Z]{2}-[0-9]+$" },
+          "grantee_as_lsc_names_it": { "type": "string" },
+          "grant_2026": { "type": "integer", "description": "Dollars, from LSC's notice of intent to award 2026 grants." },
+          "next_competition": { "type": "integer" }
+        }
+      }
+    },
+    "serves": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["states", "scope", "text", "source"],
+        "properties": {
+          "states": { "type": "array", "minItems": 1, "items": { "$ref": "common.schema.json#/$defs/stateCode" } },
+          "scope": {
+            "type": "string",
+            "enum": ["statewide", "named-nations", "members", "region", "topic", "unclassified"],
+            "description": "statewide: Native people in every county of the states. named-nations: the source names the nations or their reservations. members: a nation's own members. region, topic, unclassified: not matched to nations."
+          },
+          "nations": { "type": "array", "items": { "$ref": "common.schema.json#/$defs/slug" }, "uniqueItems": true, "description": "Nation page ids the source names (for statewide, the ones it names as examples)." },
+          "except_nations": { "type": "array", "items": { "$ref": "common.schema.json#/$defs/slug" }, "uniqueItems": true },
+          "counties": { "type": "array", "items": { "type": "string" } },
+          "link": { "type": "string", "description": "A page for this part of the service, when it has its own." },
+          "match": { "type": "string", "enum": ["stated", "inferred"], "description": "inferred: the source does not name the nations; the note says how they were chosen." },
+          "text": { "type": "string", "description": "What the source says, quoted or closely paraphrased." },
+          "source": { "type": "string", "description": "Id of an item in 'sources'." },
+          "note": { "type": "string" }
+        }
+      }
+    },
+    "outreach_record": { "$ref": "common.schema.json#/$defs/slug", "description": "Id of the same organization's outreach record, if any." },
+    "note": { "type": "string" },
+    "sources": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["id", "title", "publisher", "link", "accessed", "verification", "supports"],
+        "properties": {
+          "id": { "$ref": "common.schema.json#/$defs/slug" },
+          "title": { "type": "string" },
+          "publisher": { "type": "string" },
+          "link": { "type": "string" },
+          "data_link": { "type": "string" },
+          "accessed": { "type": "string", "format": "date" },
+          "verification": { "type": "string", "enum": ["page-read", "data-read", "record", "search-result"] },
+          "supports": { "type": "string" }
+        }
+      }
+    },
+    "checked": { "type": "string", "format": "date" }
+  }
+}

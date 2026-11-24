@@ -99,8 +99,8 @@
         "senate_vote": { "type": "string", "enum": ["Voice", "Roll Call", "Unknown"] },
         "ayes_nays": {
           "type": "string",
-          "pattern": "^[0-9]+//?[0-9]+$",
-          "description": "The roll call, ayes/nays, as the Directory gives it. The Directory gives John Rutledge's 1795 vote as 10//14, so a doubled slash is allowed; the site shows only the single-slash form."
+          "pattern": "^[0-9]+/[0-9]+$",
+          "description": "The roll call, ayes/nays. The Directory gives John Rutledge's 1795 vote as 10//14; the generator reads a doubled slash as one (the Senate's record has 10-14)."
         },
         "commissioned": { "$ref": "common.schema.json#/$defs/calendarDate" },
         "party_of_president": { "type": "string" }

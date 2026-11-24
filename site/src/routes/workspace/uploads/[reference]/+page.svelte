@@ -120,6 +120,7 @@
 			{:else if upload.kind === 'picture'}
 				<img class="preview" src="{fileAddress}?show" alt="As sent: {upload.description ?? name}" />
 			{:else if upload.kind === 'video'}
+				<!-- A video as sent has no captions yet; a reviewer writes its transcript when filing it. -->
 				<!-- svelte-ignore a11y_media_has_caption -->
 				<video class="preview" controls preload="metadata" src="{fileAddress}?show"></video>
 				<p class="small muted">Played from our storage. Some browsers cannot play every kind of video; download it if it does not play.</p>
