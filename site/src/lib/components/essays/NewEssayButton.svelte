@@ -5,6 +5,7 @@
 	// Workspace › Essays, which was removed (lead author, Nov. 23, 2026).
 	import Plus from '@lucide/svelte/icons/plus';
 	import Modal from '#lib/components/Modal.svelte';
+	import { sendJson } from '#lib/send-json.ts';
 
 	let { part, sectionLabel, size = 20, compact = false }: { part: string; sectionLabel: string; size?: number; /** Smaller, beside the section's name in the sidebar, as in the mockups. */ compact?: boolean } = $props();
 
@@ -31,18 +32,18 @@
 		event.preventDefault();
 		busy = true;
 		problem = '';
-		const response = await fetch('/workspace/essays/new', {
-			method: 'POST',
-			headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
-			body: JSON.stringify({ title, part, identifier: address })
-		}).catch(() => null);
-		const body = (await response?.json().catch(() => null)) as { link?: string; message?: string } | null;
+		const sent = await sendJson<{ link: string }>(
+			'/workspace/essays/new',
+			'POST',
+			{ title, part, identifier: address },
+			{ complete: (answer) => !!answer.link, headers: { accept: 'application/json' } }
+		);
 		busy = false;
-		if (!response?.ok || !body?.link) {
-			problem = body?.message || 'That did not go through. Try again.';
+		if (!sent.ok) {
+			problem = sent.problem;
 			return;
 		}
-		location.href = `${body.link}?edit`;
+		location.href = `${sent.answer.link}?edit`;
 	}
 </script>
 

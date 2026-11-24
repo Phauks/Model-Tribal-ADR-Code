@@ -12,6 +12,7 @@
 	import { inReviewText, isOpen, type ReviewRequest } from '#lib/essays/review-requests.ts';
 	import DateField from '#lib/components/DateField.svelte';
 	import { copyText } from '#lib/clipboard.ts';
+	import { sendJson } from '#lib/send-json.ts';
 
 	interface Person {
 		identifier: string;
@@ -100,18 +101,13 @@
 		sending = true;
 		problem = '';
 		notice = '';
-		const response = await fetch(`/workspace/essays/${essay}/sharing${query}`, {
-			method,
-			headers: { 'content-type': 'application/json' },
-			body: JSON.stringify(payload)
-		}).catch(() => null);
-		const body = (await response?.json().catch(() => null)) as Record<string, unknown> | null;
+		const sent = await sendJson<Record<string, unknown>>(`/workspace/essays/${essay}/sharing${query}`, method, payload);
 		sending = false;
-		if (!response?.ok || !body) {
-			problem = (body?.message as string) || 'That did not go through. Try again.';
+		if (!sent.ok) {
+			problem = sent.problem;
 			return null;
 		}
-		return body;
+		return sent.answer;
 	}
 
 	async function setLevel(person: string, level: AccessLevel): Promise<void> {
