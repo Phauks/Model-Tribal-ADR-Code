@@ -163,6 +163,16 @@ a:visited:focus-visible {
 	outline: none;
 }
 
+/*
+ * A piece of the site's own wording, marked by the build so it can be edited
+ * from the website (docs/site-text.md). It makes no box of its own, so the
+ * page lays out as if the words stood alone. While text is being edited the
+ * editing box shows it as text (src/lib/components/SiteTextEditor.svelte).
+ */
+site-text {
+	display: contents !important;
+}
+
 .visually-hidden {
 	position: absolute !important;
 	width: 1px !important;

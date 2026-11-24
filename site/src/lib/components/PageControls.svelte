@@ -66,6 +66,11 @@
 						{#if (publish.count ?? 0) > 1}<span class="count" aria-hidden="true">{publish.count}</span>{/if}
 					</button>
 				</form>
+			{:else if publish.onclick}
+				<button type="button" class="icon-button publish" title={publish.title} aria-label={publish.title} onclick={publish.onclick}>
+					<Send size={22} aria-hidden="true" />
+					{#if (publish.count ?? 0) > 0}<span class="count" aria-hidden="true">{publish.count}</span>{/if}
+				</button>
 			{:else if publish.href}
 				<a class="icon-button publish" href={publish.href} title={publish.title} aria-label={publish.title}>
 					<Send size={22} aria-hidden="true" />

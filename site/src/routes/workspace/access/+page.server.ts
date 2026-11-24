@@ -5,9 +5,9 @@ import {
 	documentAccess,
 	everyDocument,
 	roleDefaultLevels,
-	subjectKinds,
-	type AccessLevel,
-	type SubjectKind
+	accessKinds,
+	type AccessKind,
+	type AccessLevel
 } from '#lib/permissions.ts';
 import { endGrant, grantByIdentifier, grantsOf, listGrants, setGrant } from '#lib/server/access.ts';
 import { administrationSummary } from '#lib/server/administration.ts';
@@ -35,7 +35,7 @@ export const load: PageServerLoad = async (event) => {
 	const effective = chosen
 		? await (async () => {
 				const grants = await grantsOf(database, chosen.identifier);
-				return subjectKinds.map((kind) => ({
+				return accessKinds.map((kind) => ({
 					kind,
 					count: documents.filter((document) => document.kind === kind).length,
 					general: documentAccess(chosen, { kind, identifier: everyDocument }, grants),
@@ -80,12 +80,13 @@ export const actions: Actions = {
 			});
 		}
 
-		const kind = formText(form, 'kind') as SubjectKind | null;
-		if (!kind || !subjectKinds.includes(kind)) return fail(400, { problem: 'Choose a kind of document.' });
+		const kind = formText(form, 'kind') as AccessKind | null;
+		if (!kind || !accessKinds.includes(kind)) return fail(400, { problem: 'Choose a kind of document.' });
 
 		const scope = formText(form, 'scope');
 		let identifier: string;
-		if (scope === 'every') {
+		// The site text is one document for every page.
+		if (scope === 'every' || kind === 'site-text') {
 			identifier = everyDocument;
 		} else {
 			identifier = (formText(form, 'document', 200) ?? '').toLocaleLowerCase('en-US');

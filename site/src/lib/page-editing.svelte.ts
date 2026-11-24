@@ -10,11 +10,12 @@
  * A page offers its controls with offerPageControls() when it knows what the
  * person may do, and the masthead shows the newest offer
  * (PageControls.svelte). Offers stack, so a layout can offer a fallback for
- * every page and a page's own offer covers it while the page is open. Pass
+ * every page, which joins the page's own offer while the page is open. Pass
  * getters for values that change, such as the mode, so the masthead follows
  * them.
  */
 import { untrack, type Snippet } from 'svelte';
+import { joinPageControls } from './join-page-controls.ts';
 
 export type PageMode = 'reading' | 'commenting' | 'editing';
 
@@ -26,7 +27,9 @@ export interface PagePublish {
 	/** Or a form to post, with its hidden fields. */
 	action?: string;
 	fields?: Record<string, string>;
-	/** How many drafts wait to be published, shown on the button when more than one. */
+	/** Or something to do on the page, such as opening a list of the changes to publish. */
+	onclick?: () => void;
+	/** How many drafts wait to be published, shown on the button when more than one (or one, with onclick). */
 	count?: number;
 }
 
@@ -50,16 +53,24 @@ export interface PageControls {
 }
 
 // Raw, so the getters a page passes are kept as they are, not copied into state.
-let offers = $state.raw<{ controls: PageControls }[]>([]);
+let offers = $state.raw<{ controls: PageControls; fallback: boolean }[]>([]);
 
 /** The controls the masthead shows now, or null on a page that offers none. */
 export function currentPageControls(): PageControls | null {
-	return offers.at(-1)?.controls ?? null;
+	const own = offers.findLast((offer) => !offer.fallback)?.controls;
+	const fallback = offers.findLast((offer) => offer.fallback)?.controls;
+	if (own && fallback) return joinPageControls(own, fallback);
+	return own ?? fallback ?? null;
 }
 
-/** Offers the page's controls to the masthead; call the returned function to take them back. */
-export function offerPageControls(controls: PageControls): () => void {
-	const offer = { controls };
+/**
+ * Offers the page's controls to the masthead; call the returned function to
+ * take them back. A fallback, such as the site text's controls that every
+ * page has (src/lib/components/SiteTextEditor.svelte), is joined to the
+ * page's own offer (joinPageControls), whenever either was offered.
+ */
+export function offerPageControls(controls: PageControls, { fallback = false }: { fallback?: boolean } = {}): () => void {
+	const offer = { controls, fallback };
 	// Read without tracking, so a page can offer from an effect without that effect depending on the list.
 	offers = [...untrack(() => offers), offer];
 	return () => {

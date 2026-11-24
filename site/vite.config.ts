@@ -1,5 +1,6 @@
 import { execFileSync } from 'node:child_process';
 import { readFileSync } from 'node:fs';
+import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 import adapter from '@sveltejs/adapter-cloudflare';
 import { sveltekit } from '@sveltejs/kit/vite';
@@ -27,8 +28,16 @@ import {
 } from './src/lib/server/content.ts';
 import { isoDate, storyIsShown, storySourceKeys } from './src/lib/story-visibility.ts';
 import { directoryNameOf, sourceKindOf } from './src/lib/address-book-sync.ts';
+import { markSiteText } from './src/lib/site-text-markers.ts';
+import { loadPublishedSiteText, siteTextCatalog } from './src/lib/server/site-text-build.ts';
 
 const designTokensPath = fileURLToPath(new URL('./design-tokens.json', import.meta.url));
+const siteFolder = fileURLToPath(new URL('.', import.meta.url));
+
+// The site's wording as published from the website (docs/site-text.md), read
+// once before anything is built.
+const publishedSiteText = await loadPublishedSiteText(siteFolder);
+const publishedSiteTextWords = new Map(Object.entries(publishedSiteText.texts));
 const designTokensModule = 'virtual:design-tokens.css';
 const resolvedDesignTokensModule = `\0${designTokensModule}`;
 
@@ -475,6 +484,43 @@ function pageHistory(): Plugin {
 	};
 }
 
+const siteTextCatalogModule = 'virtual:site-text-catalog';
+const resolvedSiteTextCatalogModule = `\0${siteTextCatalogModule}`;
+
+/**
+ * Editable site text (docs/site-text.md). The catalog lists every piece of
+ * fixed text in the components, for the workspace's Site text page and the
+ * editing box; builtPublication says which publication this build carries,
+ * so the hourly run can tell when a rebuild was missed.
+ */
+function siteText(): Plugin {
+	return {
+		name: 'model-tribal-adr-code:site-text',
+		resolveId(identifier) {
+			return identifier === siteTextCatalogModule ? resolvedSiteTextCatalogModule : undefined;
+		},
+		load(identifier) {
+			if (identifier !== resolvedSiteTextCatalogModule) return undefined;
+			return [
+				`export const siteTextCatalog = ${JSON.stringify(siteTextCatalog(siteFolder))};`,
+				`export const builtPublication = ${publishedSiteText.publication};`
+			].join('\n');
+		}
+	};
+}
+
+/** Marks each component's fixed text and writes in its published edits, before Svelte compiles it. */
+const siteTextMarkers = {
+	name: 'site-text',
+	markup({ content, filename }: { content: string; filename?: string }) {
+		if (!filename) return undefined;
+		const file = path.relative(siteFolder, filename).split(path.sep).join('/');
+		if (!file.startsWith('src/')) return undefined;
+		const { code, map } = markSiteText(content, file, publishedSiteTextWords);
+		return { code, map };
+	}
+};
+
 function buildInformation(): Plugin {
 	return {
 		name: 'model-tribal-adr-code:build',
@@ -509,7 +555,9 @@ export default defineConfig({
 		followablePages(),
 		sponsorshipCounts(),
 		pageHistory(),
+		siteText(),
 		sveltekit({
+			preprocess: [siteTextMarkers],
 			compilerOptions: {
 				// Runes mode for the project's own components. Can be removed in Svelte 6.
 				runes: ({ filename }) =>

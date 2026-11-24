@@ -72,6 +72,11 @@ declare global {
 		UPDATE_EMAIL_FROM?: string;
 		/** The site's public address, for links in emails, such as https://example.org. */
 		SITE_ADDRESS?: string;
+		/**
+		 * Secret: a Workers Builds deploy hook for this Worker. Publishing site
+		 * text calls it, so the site rebuilds with the new words (docs/site-text.md).
+		 */
+		SITE_REBUILD_HOOK_URL?: string;
 		/** The first lead author's email address (site/COLLABORATION.md, "First sign-in"). */
 		LEAD_AUTHOR_EMAIL?: string;
 		/** Cloudflare Email Service, for replies from the project inbox (site/MAIL.md). */
