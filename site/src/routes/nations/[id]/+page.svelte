@@ -127,7 +127,6 @@
 				{#if page.badges.length > 0}<RecognitionBadges badges={page.badges} explanations={page.badgeExplanations} />{/if}
 				<span data-build-status data-print-part="reviewStatus">
 					<ReviewStatus status={unclaimedPage} description="Who keeps this page:">
-						<p><strong>Unclaimed.</strong> No one from the nation keeps this page yet.</p>
 						<p class="no-print"><a href="/profile/nation-team?nation={page.id}">Work for this nation? Claim this page</a></p>
 					</ReviewStatus>
 				</span>
