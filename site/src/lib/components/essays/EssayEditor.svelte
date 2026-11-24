@@ -39,7 +39,9 @@
 	} from 'y-prosemirror';
 	import * as Y from 'yjs';
 	import { personColor, personTone, type PersonTone } from '#lib/essays/person-look.ts';
-	import { draftMarksKey, draftMarksPlugin } from '#lib/essays/draft-marks.ts';
+	import { draftMarks, draftMarksKey, draftMarksPlugin } from '#lib/essays/draft-marks.ts';
+	import { editorOutline, outlineAnchors } from '#lib/essays/editor-outline.ts';
+	import type { OutlineItem } from '#lib/site-sections.ts';
 	import { caseHeadings } from '#lib/essays/case-headings.ts';
 	import { agoText, nextSteps, type UndoStep } from '#lib/essays/undo-steps.ts';
 	import { components as componentList } from '#lib/essays/components.ts';
@@ -111,7 +113,8 @@
 		barStart,
 		barEnd,
 		titleExtras,
-		onsaved
+		onsaved,
+		onoutline
 	}: {
 		identifier: string;
 		text: string;
@@ -138,6 +141,8 @@
 		titleExtras?: Snippet<[TitleExtras]>;
 		/** Called with the version number after each save. */
 		onsaved?: (version: number) => void;
+		/** Called with the essay's outline as the draft stands, for the sidebar (editor-outline.ts). */
+		onoutline?: (items: OutlineItem[]) => void;
 	} = $props();
 
 	// The file as last saved, split so the editor shows only the body. The
@@ -363,7 +368,21 @@
 		clearTimeout(draftTimer);
 		draftTimer = setTimeout(() => {
 			if (!closed && view) view.dispatch(view.state.tr.setMeta(draftMarksKey, true).setMeta('addToHistory', false));
+			refreshOutline();
 		}, 500);
+	}
+
+	/** Gives the sidebar the essay's outline as the draft stands (editor-outline.ts). */
+	function refreshOutline(): void {
+		if (closed || !view || !onoutline) return;
+		const doc = view.state.doc;
+		onoutline(
+			editorOutline(doc, {
+				marks: publishedDoc ? draftMarks(doc, publishedDoc) : new Map(),
+				inReview: reviewedSections(),
+				citations: citationsByKey
+			})
+		);
 	}
 
 	/** The element under the title that holds `titleExtras`; the editor shows it after the title heading. */
@@ -729,6 +748,7 @@
 		untrack(() => {
 			citationsByKey = new Map(loaded.sources);
 			view?.dispatch(view.state.tr.setMeta('addToHistory', false));
+			refreshOutline();
 		});
 	});
 
@@ -1185,6 +1205,7 @@
 				titleExtrasPlugin(),
 				attestationLines({ attest: (slug) => void openAttest(slug), finishReview: (request) => void finishReview(request) }),
 				caseHeadings({ citations: () => citationsByKey, change: canEdit ? changeBoxSource : undefined }),
+				outlineAnchors(),
 				tracker
 			]
 		});
@@ -1221,6 +1242,7 @@
 		refreshHashesSoon();
 		placeComments();
 		mounts += 1;
+		refreshOutline();
 	}
 
 	/** The body as Markdown, written so untouched paragraphs keep their exact text. */
@@ -2492,6 +2514,11 @@
 
 	.editor-area :global(.ProseMirror > .section-in-review::after) {
 		background: var(--color-status-review-rule);
+	}
+
+	/* The headings and boxes the sidebar links to (editor-outline.ts) land below the sticky bar. */
+	.editor-area :global(.ProseMirror > [id]) {
+		scroll-margin-top: calc(var(--space-6) * 3);
 	}
 
 	/* The citation heading a case or law box (case-headings.ts), selectable and copyable, as in essay-editor-mockups/v2-1. */

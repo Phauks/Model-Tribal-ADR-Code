@@ -1,11 +1,9 @@
 <script lang="ts">
-	// On a nation's page, under "Laws and agreements": the copies this site holds of the nation's
-	// constitutions, laws and court opinions, to download as a ZIP or to save for offline reading and remove again
-	// (site/DESIGN.md, section 10; src/lib/offline-documents.ts). Shows nothing when the site holds
-	// no copies for the nation. Saving shows only while offline saving is running.
+	// On a nation's page, on the "Laws and agreements" heading: how many of the nation's constitutions, laws and court opinions this site holds, with icon buttons to download them as a ZIP and to save them for offline reading or remove them again (Trevor picked this layout, mockup A, on Nov. 24, 2026; site/DESIGN.md, section 10; src/lib/offline-documents.ts). The page passes it only when the site holds copies for the nation. The save button shows once the site's worker runs the page, since the worker does the saving.
 	import { onMount } from 'svelte';
 	import Download from '@lucide/svelte/icons/download';
-	import { verifyAddress } from '#lib/checksums.ts';
+	import HardDriveDownload from '@lucide/svelte/icons/hard-drive-download';
+	import Trash2 from '@lucide/svelte/icons/trash-2';
 	import { formatBytes } from '#lib/offline-collections.ts';
 	import { nationSet, type DocumentSetStatus } from '#lib/offline-documents.ts';
 	import {
@@ -25,6 +23,14 @@
 	let online = $state(true);
 	const numbers = new Intl.NumberFormat('en-US');
 
+	const documents = $derived(`${numbers.format(held.count)} ${held.count === 1 ? 'document' : 'documents'}`);
+	const size = $derived(formatBytes(held.bytes));
+	const allSaved = $derived(saved !== undefined && saved.total > 0 && saved.saved === saved.total);
+	const missing = $derived(saved ? saved.total - saved.saved : 0);
+	const saveLabel = $derived(
+		saved && saved.saved > 0 ? `Save the other ${numbers.format(missing)} on this device` : `Save the ${documents} on this device`
+	);
+
 	async function refresh(): Promise<void> {
 		if (!controllingWorker()) return;
 		try {
@@ -39,11 +45,9 @@
 		try {
 			const status = await saveDocuments(set, (update) => (progress = update));
 			saved = status.sets.find((item) => item.set === set);
-			if (saved && saved.saved < saved.total) {
-				problem = `${saved.total - saved.saved} files could not be saved. Press the button again to try them once more.`;
-			}
+			if (saved && saved.saved < saved.total) problem = `${numbers.format(saved.total - saved.saved)} not saved. Try again.`;
 		} catch {
-			problem = 'Saving stopped, perhaps because the connection dropped. Press the button again to continue.';
+			problem = 'Saving stopped. Try again.';
 			await refresh();
 		} finally {
 			progress = undefined;
@@ -61,92 +65,81 @@
 		update();
 		window.addEventListener('online', update);
 		window.addEventListener('offline', update);
+		// On a first visit the worker takes over the page a moment after it loads.
+		const takeover = () => void refresh();
+		navigator.serviceWorker?.addEventListener('controllerchange', takeover);
 		void refresh();
 		return () => {
 			window.removeEventListener('online', update);
 			window.removeEventListener('offline', update);
+			navigator.serviceWorker?.removeEventListener('controllerchange', takeover);
 		};
 	});
 </script>
 
-{#if held.count > 0}
-	<div class="documents-offline no-print">
-		<p>
-			{#if saved && saved.total > 0 && saved.saved === saved.total}
-				<strong>All {numbers.format(saved.total)} of this nation’s documents are saved on this device</strong>, {formatBytes(saved.bytes)}.
-			{:else if saved && saved.saved > 0}
-				<strong>{numbers.format(saved.saved)} of this nation’s {numbers.format(saved.total)} documents are saved on this device.</strong>
-			{:else}
-				This site holds {numbers.format(held.count)} of this nation’s documents, about {formatBytes(held.bytes)}. Download them, or save them to read without a connection.
-			{/if}
-		</p>
+<span class="documents-offline">
+	{#if problem}
+		<span class="state small field-error" role="alert">{problem}</span>
+	{/if}
+	<span class="state small muted" role="status">
 		{#if progress}
-			<p role="status">
-				<label>
-					Saving: {numbers.format(progress.done)} of {numbers.format(progress.total)} files
-					<progress max={progress.total} value={progress.done}></progress>
-				</label>
-			</p>
+			Saving {numbers.format(progress.done)} of {numbers.format(progress.total)}
+		{:else if allSaved && saved}
+			{numbers.format(saved.total)} saved · {formatBytes(saved.bytes)}
+		{:else if saved && saved.saved > 0}
+			{numbers.format(saved.saved)} of {numbers.format(saved.total)} saved
+		{:else if !online}
+			Needs a connection
 		{:else}
-			<p class="actions">
-				<a class="button button-quiet" href="/zip/nations/{nation}.zip" download>
-					<Download size={18} aria-hidden="true" />
-					Download as a ZIP
-				</a>
-				{#if saved && saved.saved < saved.total}
-					<button class="button" type="button" disabled={!online} onclick={save}>
-						{saved.saved === 0 ? 'Save on this device' : `Save the other ${numbers.format(saved.total - saved.saved)}`}
-					</button>
-				{/if}
-				{#if saved && (saved.saved > 0 || saved.kept)}
-					<button class="button button-quiet" type="button" onclick={remove}>Remove from this device</button>
-				{/if}
-			</p>
-			{#if !online}<p class="hint">Downloading and saving need a connection.</p>{/if}
+			{documents} · {size}
 		{/if}
-		<p class="hint checking">The ZIP lists each document’s SHA-256, so you can <a href={verifyAddress}>verify the files</a>.</p>
-		{#if problem}<p class="field-error" role="alert">{problem}</p>{/if}
-	</div>
-{/if}
+	</span>
+	<a class="icon-button" href="/zip/nations/{nation}.zip" download aria-label="Download the {documents} (.zip, {size})" title="Download the {documents} (.zip, {size})">
+		<Download size={24} aria-hidden="true" />
+	</a>
+	{#if saved && !allSaved}
+		<button class="icon-button" type="button" disabled={!online || progress !== undefined} onclick={save} aria-label={saveLabel} title={saveLabel}>
+			<HardDriveDownload size={24} aria-hidden="true" />
+		</button>
+	{/if}
+	{#if saved && (saved.saved > 0 || saved.kept) && !progress}
+		<button class="icon-button" type="button" onclick={remove} aria-label="Remove from this device" title="Remove from this device">
+			<Trash2 size={24} aria-hidden="true" />
+		</button>
+	{/if}
+</span>
 
 <style>
 	.documents-offline {
 		display: flex;
-		flex-wrap: wrap;
-		align-items: center;
-		gap: var(--space-2) var(--space-4);
-		padding: var(--space-3);
-		margin: var(--space-3) 0;
-		border-radius: var(--radius-panel);
-		background: var(--color-surface);
-	}
-
-	.documents-offline > p {
-		margin: 0;
-		flex: 1 1 18rem;
-	}
-
-	.documents-offline > .actions {
-		flex: 0 1 auto;
-		display: flex;
-		flex-wrap: wrap;
-		gap: var(--space-2);
-	}
-
-	.documents-offline > .checking {
-		flex: 1 1 100%;
-	}
-
-	.actions a {
-		display: inline-flex;
 		align-items: center;
 		gap: var(--space-1);
+		color: var(--color-ink);
 	}
 
-	progress {
-		display: block;
-		width: 100%;
-		max-width: 20rem;
-		accent-color: var(--color-action);
+	.state {
+		margin-inline-end: var(--space-2);
+		white-space: nowrap;
+	}
+
+	.state:empty {
+		display: none;
+	}
+
+	/* On a phone the heading needs the room; the buttons still say what they hold. */
+	@media (max-width: 30rem) {
+		.state.muted {
+			position: absolute;
+			width: 1px;
+			height: 1px;
+			overflow: hidden;
+			clip-path: inset(50%);
+			white-space: nowrap;
+		}
+	}
+
+	.icon-button:disabled {
+		cursor: not-allowed;
+		opacity: 0.5;
 	}
 </style>

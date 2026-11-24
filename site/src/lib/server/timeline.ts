@@ -43,6 +43,7 @@ import {
 import { documentHeading, documentHistoryView, nationDocumentHistories, type DocumentHistoryView } from './document-history.ts';
 import { SourceUses, whereInSource, type CitationMark } from './source-uses.ts';
 import { opinionsSourceKey, tribalCourtOpinions } from './tribal-court-opinions.ts';
+import { lawNames } from '../law-names.ts';
 
 /** The heading the timeline's sources are filed under in a page's References list. */
 export const timelineHeading = 'Timeline';
@@ -54,21 +55,7 @@ export const timelineHeading = 'Timeline';
  * gaming and Tribal courts that the legal history essay treats as the
  * framework for Tribal justice (content/essays/i-legal-history-timeline.md).
  */
-export const contextLaws: Record<string, string> = {
-	'indian-removal-act-1830': 'Indian Removal Act',
-	'major-crimes-act-1885': 'Major Crimes Act',
-	'general-allotment-act-1887': 'General Allotment Act',
-	'indian-reorganization-act-1934': 'Indian Reorganization Act',
-	'public-law-83-280': 'Public Law 280',
-	'indian-civil-rights-act-1968': 'Indian Civil Rights Act of 1968',
-	'indian-self-determination-and-education-assistance-act-1975': 'Indian Self-Determination and Education Assistance Act',
-	'indian-child-welfare-act-1978': 'Indian Child Welfare Act of 1978',
-	'indian-gaming-regulatory-act-1988': 'Indian Gaming Regulatory Act',
-	'indian-tribal-justice-act-1993': 'Indian Tribal Justice Act',
-	'tribal-law-and-order-act-2010': 'Tribal Law and Order Act of 2010',
-	'violence-against-women-reauthorization-act-2013-title-ix': 'Violence Against Women Reauthorization Act of 2013, title IX',
-	'violence-against-women-act-reauthorization-act-2022-title-viii': 'Violence Against Women Act Reauthorization Act of 2022, title VIII'
-};
+export const contextLaws: Record<string, string> = lawNames;
 
 const caseKinds = new Set(['federal-case', 'state-case', 'territorial-case']);
 const federalKinds = new Set(['federal-statute', 'executive-order']);
