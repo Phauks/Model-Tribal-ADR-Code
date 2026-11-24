@@ -14,16 +14,31 @@
 
 	Three more tools, each turned on by the page (Trevor chose filterable,
 	downloadable tables on Nov. 23, 2026):
-	- filters: a menu for each column marked filterable, listing its values
-	  with how many rows each leaves. With addFilter, no menu shows until the
-	  reader picks its column from "Add filter", and each added menu has a
-	  button to take it away (Trevor, Nov. 23, 2026: "don't state the
-	  filters, just have an add filter button").
+	- filters: a funnel at the right of each column header that can filter,
+	  as in a spreadsheet (Trevor, Nov. 24, 2026: "filters should be on the
+	  top of the columns of tables, not in a separate area"). A column marked
+	  filterable opens a list of its values to tick, each with how many rows
+	  it leaves, and a "Find a value" box when the list is long; a searchable
+	  column opens a "Contains" box. A column being filtered shows a filled
+	  funnel. The menus are popovers (HTML popover attribute), so they sit
+	  above the table's scrolling box instead of being cut off by it.
 	- download: names the downloaded files <download>.csv and .xlsx.
-	- shareable: the search, sort and filters go into the page address as the
-	  reader changes them, and "Copy link" copies it, so the link opens the
-	  table the same way.
+	- shareable: the search, sort, filters and columns shown go into the page
+	  address as the reader changes them, and "Copy link" copies it, so the
+	  link opens the table the same way.
 	The tools appear only once scripts run; without them the full table shows.
+
+	Readers can hide columns and add the ones marked optional (Trevor, Nov. 24,
+	2026: "add ability to hide or add columns to tables"), from the columns
+	icon in the control row. The row header always stays. A page can bind
+	`shownColumns` (column keys) to set which columns start shown and to hear
+	when the reader changes them; undefined means the default.
+
+	A column marked sum gets a Sum row at the bottom of the table (Trevor,
+	Nov. 24, 2026: "If you have a total, just put a Sum Row at the bottom of
+	the table, separate it separately"): "Total" under the row headers and the
+	column's sum under it, over the rows shown. It sits in the table's footer,
+	below a heavy rule, and stays at the bottom however the table is sorted.
 
 	Every table also has one control row (Trevor, Nov. 23, 2026: a .csv
 	download "should always be available", any table can go full screen, and
@@ -49,23 +64,32 @@
 	import ArrowDown from '@lucide/svelte/icons/arrow-down';
 	import ArrowUp from '@lucide/svelte/icons/arrow-up';
 	import ArrowUpDown from '@lucide/svelte/icons/arrow-up-down';
+	import Columns3Cog from '@lucide/svelte/icons/columns-3-cog';
 	import EyeOff from '@lucide/svelte/icons/eye-off';
+	import Funnel from '@lucide/svelte/icons/funnel';
 	import Link from '@lucide/svelte/icons/link';
-	import ListFilterPlus from '@lucide/svelte/icons/list-filter-plus';
 	import Maximize from '@lucide/svelte/icons/maximize';
 	import Minimize from '@lucide/svelte/icons/minimize';
 	import RotateCcw from '@lucide/svelte/icons/rotate-ccw';
 	import X from '@lucide/svelte/icons/x';
+	import ColumnFilterMenu from '#lib/components/ColumnFilterMenu.svelte';
 	import TableDownload from '#lib/components/TableDownload.svelte';
 	import { keyboardScroll } from '#lib/keyboard-scroll.ts';
 	import { pageStarted } from '#lib/page-started.ts';
+	import { keepPlaced, type PopoverEdge } from '#lib/popover-place.ts';
 	import {
 		applyColumnFilters,
+		columnTotal,
+		defaultColumnKeys,
 		filterChoices,
+		filterIsActive,
+		filterKind,
 		filterRows,
 		readTableState,
+		shownColumnsOf,
 		sortRows,
 		writeTableState,
+		type ColumnFilter,
 		type ColumnFilters,
 		type TableColumn,
 		type TableRow,
@@ -91,10 +115,8 @@
 		cell?: Snippet<[TableRow, TableColumn]>;
 		/** Shown in place of the default message when a search finds nothing; gets the search text. */
 		empty?: Snippet<[string]>;
-		/** Shows a menu for each filterable column. */
+		/** Puts a filter on the header of each column marked filterable or searchable. */
 		filters?: boolean;
-		/** Shows the filter menus only once the reader adds them with an "Add filter" button. */
-		addFilter?: boolean;
 		/** Names the downloaded files: this, plus .csv or .xlsx. */
 		download?: string;
 		/** Keeps the search, sort and filters in the page address and shows "Copy link". */
@@ -109,6 +131,10 @@
 		leaveOut?: boolean;
 		/** How many rows there are in all, when the page passes only the first of them (with its own "Show all"), so the count reads "Showing 50 of 52". */
 		total?: number;
+		/** The keys of the columns shown; undefined shows every column not marked optional. Bind it to set or follow the reader's choice. */
+		shownColumns?: string[];
+		/** Each column's filter. A page can bind it to set the filters and to hear when the reader changes them, as Build a table does to carry them into a grouped table. */
+		columnFilters?: ColumnFilters;
 	}
 
 	let {
@@ -123,21 +149,21 @@
 		cell,
 		empty,
 		filters = false,
-		addFilter = false,
 		download,
 		shareable = false,
 		count: showCount = true,
 		tools = true,
 		leftOut = $bindable([]),
 		leaveOut = false,
-		total
+		total,
+		shownColumns = $bindable(undefined),
+		columnFilters = $bindable({})
 	}: Props = $props();
 
 	// A table drawn on the server gets its buttons once the browser has it; one made later in the browser, such as a map view's table, starts with them, so it is drawn once and does not jump (src/lib/page-started.ts).
 	let interactive = $state(pageStarted());
 	let chosenSort = $state<TableSort | undefined>(undefined);
 	let query = $state('');
-	let columnFilters = $state<ColumnFilters>({});
 	let copyStatus = $state('');
 
 	let frame = $state<HTMLElement | undefined>();
@@ -145,19 +171,10 @@
 	let fillingWindow = $state(false);
 
 	const sort = $derived(chosenSort ?? defaultSort);
-	const filterColumns = $derived(filters ? columns.filter((column) => column.filterable) : []);
-	/** The filters the reader added, in the order added; a filter set from the page address counts as added. */
-	let addedFilters = $state<string[]>([]);
-	let addMenuOpen = $state(false);
-	let addMenu = $state<HTMLElement | undefined>();
-	const shownFilterColumns = $derived(
-		addFilter
-			? addedFilters
-					.map((key) => filterColumns.find((column) => column.key === key))
-					.filter((column): column is TableColumn => column !== undefined)
-			: filterColumns
-	);
-	const addableColumns = $derived(filterColumns.filter((column) => !addedFilters.includes(column.key)));
+	/** The columns drawn: the reader's choice, or every column not marked optional. */
+	const visibleColumns = $derived(shownColumnsOf(columns, shownColumns));
+	const filterColumns = $derived(filters ? visibleColumns.filter((column) => filterKind(column) !== undefined) : []);
+	const sumColumns = $derived(visibleColumns.filter((column) => column.sum));
 	const shownRows = $derived.by(() => {
 		const found = applyColumnFilters(filterRows(columns, rows, query), columnFilters).filter((row) => !leftOut.includes(row.key));
 		return sort ? sortRows(columns, found, sort) : found;
@@ -181,9 +198,10 @@
 		return () => cancel(handle);
 	});
 	const leftOutRows = $derived(rows.filter((row) => leftOut.includes(row.key)));
-	const narrowed = $derived(query.trim() !== '' || Object.values(columnFilters).some(Boolean) || leftOut.length > 0);
+	const narrowed = $derived(query.trim() !== '' || Object.values(columnFilters).some(filterIsActive) || leftOut.length > 0);
 	const hasTools = $derived(tools || Boolean(searchLabel) || filterColumns.length > 0 || Boolean(download) || shareable);
 	const rowHeader = $derived(columns.find((column) => column.isRowHeader) ?? columns[0]);
+	const firstVisible = $derived(visibleColumns[0]);
 	/** A row's name, for its leave-out button and its chip: its row header's text. */
 	const rowLabel = (row: TableRow) => row.cells[rowHeader?.key ?? '']?.text || row.key;
 	const allRows = $derived(Math.max(total ?? 0, rows.length));
@@ -198,35 +216,61 @@
 		chosenSort = { key: column.key, direction: ascending ? 'ascending' : 'descending' };
 	}
 
-	/** The choices a column's menu offers, counted among the rows the other filters and the search leave. */
+	/** The choices a column's menu offers, counted among the rows the other filters and the search leave, with any value ticked that no row has left. */
 	function choicesFor(column: TableColumn) {
 		const others = Object.fromEntries(Object.entries(columnFilters).filter(([key]) => key !== column.key));
-		return filterChoices(column, applyColumnFilters(filterRows(columns, rows, query), others));
+		const choices = filterChoices(column, applyColumnFilters(filterRows(columns, rows, query), others).filter((row) => !leftOut.includes(row.key)));
+		const missing = (columnFilters[column.key]?.values ?? []).filter((value) => !choices.some((choice) => choice.value === value));
+		return [...choices, ...missing.map((value) => ({ value, count: 0 }))];
+	}
+
+	function setFilter(column: TableColumn, filter: ColumnFilter | undefined) {
+		const { [column.key]: _old, ...rest } = columnFilters;
+		columnFilters = filter && filterIsActive(filter) ? { ...rest, [column.key]: filter } : rest;
 	}
 
 	function clearFilters() {
 		query = '';
 		columnFilters = {};
-		addedFilters = [];
 		leftOut = [];
 	}
 
-	function addFilterFor(column: TableColumn) {
-		addedFilters = [...addedFilters, column.key];
-		addMenuOpen = false;
-		// The new menu takes the focus, so the reader can pick a value at once.
-		queueMicrotask(() => document.getElementById(`${identifier}-filter-${column.key}`)?.focus());
+	/** Shows or hides a column; a column hidden stops filtering, so no filter is left out of sight. */
+	function showColumn(column: TableColumn, shown: boolean) {
+		const now = visibleColumns.map((other) => other.key);
+		const next = columns.filter((other) => (other === column ? shown : now.includes(other.key))).map((other) => other.key);
+		shownColumns = next;
+		if (!shown) setFilter(column, undefined);
 	}
 
-	function removeFilter(column: TableColumn) {
-		addedFilters = addedFilters.filter((key) => key !== column.key);
-		const { [column.key]: _removed, ...rest } = columnFilters;
-		columnFilters = rest;
+	function resetColumns() {
+		const defaults = defaultColumnKeys(columns);
+		for (const column of columns) if (!defaults.includes(column.key) && column !== rowHeader) setFilter(column, undefined);
+		shownColumns = undefined;
 	}
 
-	function onWindowClick(event: MouseEvent) {
-		if (addMenuOpen && addMenu && !addMenu.contains(event.target as Node)) addMenuOpen = false;
+	/* The filter menus and the list of columns, as popovers placed under the button that opens them. */
+
+	/** The popover open now, the button that opened it, and which edge they line up on. */
+	let openPopover = $state.raw<{ key: string; popover: HTMLElement; anchor: HTMLElement; edge: PopoverEdge } | undefined>();
+
+	function onPopoverToggle(event: Event, key: string, edge: PopoverEdge) {
+		const popover = event.currentTarget as HTMLElement;
+		if ((event as ToggleEvent).newState === 'open') {
+			const anchor = document.querySelector<HTMLElement>(`[popovertarget="${popover.id}"]`);
+			if (!anchor) return;
+			openPopover = { key, popover, anchor, edge };
+		} else if (openPopover?.popover === popover) {
+			openPopover = undefined;
+		}
 	}
+
+	// Placed under its button once its content is drawn, and again as the page or the table scrolls under it; the rows and the control row above them change as the reader ticks values, which moves the button.
+	$effect(() => {
+		if (!openPopover) return;
+		const { popover, anchor, edge } = openPopover;
+		return keepPlaced(popover, anchor, edge, frame ? [frame, document.body] : [document.body]);
+	});
 
 	/** The table filling the screen, with the browser's full screen, or filling the window where the browser has none (as on an iPhone) or refuses. */
 	async function toggleFullScreen() {
@@ -247,11 +291,8 @@
 	}
 
 	function onKeydown(event: KeyboardEvent) {
-		if (addMenuOpen && event.key === 'Escape') {
-			addMenuOpen = false;
-			return;
-		}
-		if (fillingWindow && event.key === 'Escape') fillingWindow = false;
+		// Escape closes an open menu first (the browser does that); the next one leaves the window.
+		if (fillingWindow && event.key === 'Escape' && !openPopover) fillingWindow = false;
 	}
 
 	async function copyLink() {
@@ -271,9 +312,10 @@
 	let addressRead = $state(false);
 	$effect(() => {
 		if (!interactive || !shareable || !addressRead) return;
+		const changedColumns = shownColumns && shownColumns.join(',') !== defaultColumnKeys(columns).join(',') ? shownColumns : undefined;
 		const parameters = writeTableState(
 			identifier,
-			{ query, sort: chosenSort, filters: columnFilters },
+			{ query, sort: chosenSort, filters: columnFilters, columns: changedColumns },
 			new URLSearchParams(location.search),
 			defaultSort
 		);
@@ -291,7 +333,7 @@
 			query = state.query;
 			chosenSort = state.sort;
 			columnFilters = state.filters;
-			addedFilters = filterColumns.filter((column) => state.filters[column.key]).map((column) => column.key);
+			if (state.columns) shownColumns = state.columns;
 		}
 		addressRead = true;
 		interactive = true;
@@ -314,69 +356,37 @@
 	});
 </script>
 
-<svelte:window onkeydown={onKeydown} onclick={onWindowClick} />
+<svelte:window onkeydown={onKeydown} />
 
 <div class="data-table" class:filling-window={fillingWindow} bind:this={frame}>
 
 {#if interactive && hasTools}
-	{#if searchLabel || filterColumns.length > 0}
+	{#if searchLabel}
 	<div class="table-tools no-print">
-		{#if searchLabel}
-			<div class="field">
-				<label for="{identifier}-search">{searchLabel}</label>
-				<input id="{identifier}-search" type="search" autocomplete="off" bind:value={query} />
-			</div>
-		{/if}
-		{#each shownFilterColumns as column (column.key)}
-			<div class="field filter-field">
-				{#if addFilter}
-					<div class="filter-label">
-						<label for="{identifier}-filter-{column.key}">{column.header}</label>
-						<button type="button" class="icon-tool remove-filter" aria-label="Remove the {column.header} filter" title="Remove filter" onclick={() => removeFilter(column)}>
-							<X aria-hidden="true" size="1.1em" strokeWidth={1.75} />
-						</button>
-					</div>
-				{:else}
-					<label for="{identifier}-filter-{column.key}">{column.header}</label>
-				{/if}
-				<select id="{identifier}-filter-{column.key}" bind:value={columnFilters[column.key]}>
-					<option value="">All</option>
-					{#each choicesFor(column) as choice (choice.value)}
-						<option value={choice.value}>{choice.value} ({choice.count.toLocaleString('en-US')})</option>
-					{/each}
-					{#if columnFilters[column.key] && !choicesFor(column).some((choice) => choice.value === columnFilters[column.key])}
-						<option value={columnFilters[column.key]}>{columnFilters[column.key]} (0)</option>
-					{/if}
-				</select>
-			</div>
-		{/each}
-		{#if addFilter && addableColumns.length > 0}
-			<div class="add-filter" bind:this={addMenu}>
-				<button
-					type="button"
-					class="button button-quiet small-button"
-					aria-expanded={addMenuOpen}
-					aria-controls="{identifier}-add-filter"
-					onclick={() => (addMenuOpen = !addMenuOpen)}
-				>
-					<ListFilterPlus aria-hidden="true" size="1.1em" strokeWidth={1.75} />Add filter
-				</button>
-				{#if addMenuOpen}
-					<ul id="{identifier}-add-filter" class="add-filter-menu" aria-label="Filter by">
-						{#each addableColumns as column (column.key)}
-							<li><button type="button" onclick={() => addFilterFor(column)}>{column.header}</button></li>
-						{/each}
-					</ul>
-				{/if}
-			</div>
-		{/if}
+		<div class="field">
+			<label for="{identifier}-search">{searchLabel}</label>
+			<input id="{identifier}-search" type="search" autocomplete="off" bind:value={query} />
+		</div>
 	</div>
 	{/if}
 	<div class="table-status no-print">
 		<p class="small muted table-count" role="status">{showCount || narrowed ? count : ''}</p>
-		{#if narrowed && (filterColumns.length > 0 || searchLabel || leftOut.length > 0)}
+		{#if narrowed}
 			<button type="button" class="button button-quiet small-button" onclick={clearFilters}>
 				<RotateCcw aria-hidden="true" size="1.1em" strokeWidth={1.75} />Show all
+			</button>
+		{/if}
+		{#if tools && columns.length > 1}
+			<button
+				type="button"
+				class="icon-tool"
+				class:open={openPopover?.key === '#columns'}
+				aria-label="Columns"
+				title="Show or hide columns"
+				aria-expanded={openPopover?.key === '#columns'}
+				popovertarget="{identifier}-columns"
+			>
+				<Columns3Cog aria-hidden="true" size="1.25em" strokeWidth={1.75} />
 			</button>
 		{/if}
 		{#if shareable}
@@ -385,7 +395,7 @@
 			</button>
 		{/if}
 		{#if tools || download}
-			<TableDownload name={download ?? identifier} title={caption ?? download ?? identifier} table={() => ({ columns, rows: shownRows })} />
+			<TableDownload name={download ?? identifier} title={caption ?? download ?? identifier} table={() => ({ columns: visibleColumns, rows: shownRows })} />
 		{/if}
 		{#if tools}
 			<button type="button" class="icon-tool" aria-label={fullScreen || fillingWindow ? 'Leave full screen' : 'Full screen'} title={fullScreen || fillingWindow ? 'Leave full screen' : 'Full screen'} onclick={toggleFullScreen}>
@@ -417,25 +427,48 @@
 		{#if caption}<caption>{caption}</caption>{/if}
 		<thead>
 			<tr>
-				{#each columns as column (column.key)}
+				{#each visibleColumns as column (column.key)}
+					{@const filtering = interactive && filterColumns.includes(column)}
+					{@const active = filterIsActive(columnFilters[column.key])}
 					<th
 						scope="col"
 						class:number={column.type === 'number'}
 						aria-sort={sort?.key === column.key ? sort.direction : undefined}
 					>
-						{#if interactive && column.sortable}
-							<button type="button" class="sort-button" onclick={() => sortBy(column)}>
+						{#snippet heading()}
+							{#if interactive && column.sortable}
+								<button type="button" class="sort-button" onclick={() => sortBy(column)}>
+									{column.header}
+									{#if sort?.key === column.key && sort.direction === 'ascending'}
+										<ArrowUp aria-hidden="true" size="1em" />
+									{:else if sort?.key === column.key}
+										<ArrowDown aria-hidden="true" size="1em" />
+									{:else}
+										<ArrowUpDown aria-hidden="true" size="1em" class="muted" />
+									{/if}
+								</button>
+							{:else}
 								{column.header}
-								{#if sort?.key === column.key && sort.direction === 'ascending'}
-									<ArrowUp aria-hidden="true" size="1em" />
-								{:else if sort?.key === column.key}
-									<ArrowDown aria-hidden="true" size="1em" />
-								{:else}
-									<ArrowUpDown aria-hidden="true" size="1em" class="muted" />
-								{/if}
-							</button>
+							{/if}
+						{/snippet}
+						{#if filtering}
+							<span class="header-cell">
+								{@render heading()}
+								<button
+									type="button"
+									class="filter-button no-print"
+									class:active
+									class:open={openPopover?.key === column.key}
+									aria-label={active ? `Filter ${column.header}, filtered` : `Filter ${column.header}`}
+									title="Filter {column.header}"
+									aria-expanded={openPopover?.key === column.key}
+									popovertarget="{identifier}-filter-{column.key}"
+								>
+									<Funnel aria-hidden="true" size="1em" strokeWidth={1.75} fill={active ? 'currentColor' : 'none'} />
+								</button>
+							</span>
 						{:else}
-							{column.header}
+							{@render heading()}
 						{/if}
 					</th>
 				{/each}
@@ -444,7 +477,7 @@
 		<tbody>
 			{#each visibleRows as row (row.key)}
 				<tr id={row.anchor}>
-					{#each columns as column (column.key)}
+					{#each visibleColumns as column (column.key)}
 						{@const value = row.cells[column.key]}
 						{#snippet content()}
 							{#if column.custom && cell}
@@ -455,7 +488,7 @@
 								{value?.text ?? ''}
 							{/if}
 						{/snippet}
-						{#if column.isRowHeader || (column === columns[0] && !columns.some((other) => other.isRowHeader))}
+						{#if column.isRowHeader || (column === firstVisible && !columns.some((other) => other.isRowHeader))}
 							{@const Cell = column.isRowHeader ? 'th' : 'td'}
 							<svelte:element this={Cell} scope={column.isRowHeader ? 'row' : undefined} class:number={column.type === 'number'}>
 								{#if interactive && leaveOut}
@@ -476,6 +509,21 @@
 				</tr>
 			{/each}
 		</tbody>
+		{#if sumColumns.length > 0}
+			<tfoot class="sum-row">
+				<tr>
+					{#each visibleColumns as column (column.key)}
+						{#if column.sum}
+							<td class="number">{columnTotal(column, shownRows).toLocaleString('en-US')}</td>
+						{:else if column === firstVisible}
+							<th scope="row">Total</th>
+						{:else}
+							<td></td>
+						{/if}
+					{/each}
+				</tr>
+			</tfoot>
+		{/if}
 	</table>
 </div>
 {#if shownRows.length === 0 && query.trim() !== ''}
@@ -490,6 +538,62 @@
 	<div class="table-empty">
 		<p>No rows match these filters.</p>
 	</div>
+{/if}
+
+{#if interactive}
+	{#each filterColumns as column (column.key)}
+		<div
+			id="{identifier}-filter-{column.key}"
+			class="table-popover no-print"
+			popover="auto"
+			role="dialog"
+			aria-label="Filter {column.header}"
+			ontoggle={(event) => onPopoverToggle(event, column.key, 'left')}
+		>
+			{#if openPopover?.key === column.key}
+				<ColumnFilterMenu
+					identifier="{identifier}-{column.key}"
+					title={column.header}
+					kind={filterKind(column) ?? 'contains'}
+					choices={filterKind(column) === 'values' ? choicesFor(column) : []}
+					filter={columnFilters[column.key]}
+					onchange={(filter) => setFilter(column, filter)}
+				/>
+			{/if}
+		</div>
+	{/each}
+	{#if tools && columns.length > 1}
+		<div
+			id="{identifier}-columns"
+			class="table-popover no-print"
+			popover="auto"
+			role="dialog"
+			aria-label="Columns"
+			ontoggle={(event) => onPopoverToggle(event, '#columns', 'right')}
+		>
+			{#if openPopover?.key === '#columns'}
+				<p class="popover-title">Columns</p>
+				<ul class="popover-list popover-list-full">
+					{#each columns as column (column.key)}
+						<li class:locked={column === rowHeader}>
+							<label>
+								<input
+									type="checkbox"
+									checked={visibleColumns.includes(column)}
+									disabled={column === rowHeader}
+									onchange={(event) => showColumn(column, event.currentTarget.checked)}
+								/>
+								{column.header}
+							</label>
+						</li>
+					{/each}
+				</ul>
+				<div class="popover-foot">
+					<button type="button" class="popover-button" onclick={resetColumns}>Reset columns</button>
+				</div>
+			{/if}
+		</div>
+	{/if}
 {/if}
 </div>
 
@@ -508,68 +612,56 @@
 		margin: 0;
 	}
 
-	.table-tools .filter-field {
-		flex: 0 1 14rem;
-	}
-
-	.filter-field select {
-		width: 100%;
-	}
-
-	/* An added filter's name, with the button that takes it away at its right. */
-	.filter-label {
+	/* A header with a filter: its name and sort arrows, then the funnel at the right. */
+	.header-cell {
 		display: flex;
 		align-items: center;
 		justify-content: space-between;
-		gap: var(--space-2);
-		margin-bottom: var(--space-1);
+		gap: var(--space-1);
 	}
 
-	.filter-label label {
-		font-weight: var(--font-weight-semibold);
+	th.number .header-cell {
+		justify-content: flex-end;
 	}
 
-	.remove-filter {
-		min-width: 2rem;
-		min-height: 2rem;
-		margin: calc(-1 * var(--space-1)) 0;
-	}
-
-	.add-filter {
-		position: relative;
-	}
-
-	.add-filter-menu {
-		position: absolute;
-		z-index: 20;
-		top: calc(100% + var(--space-1));
-		left: 0;
-		min-width: 12rem;
-		margin: 0;
-		padding: var(--space-1) 0;
-		list-style: none;
-		border: 1px solid var(--color-control-border);
-		border-radius: var(--radius-control);
-		background: var(--color-surface-raised);
-		box-shadow: 0 var(--space-1) var(--space-3) color-mix(in srgb, var(--color-ink) 20%, transparent);
-	}
-
-	.add-filter-menu button {
-		display: block;
-		width: 100%;
-		min-height: var(--layout-target-minimum);
-		padding: 0 var(--space-3);
+	.filter-button {
+		flex: none;
+		display: inline-flex;
+		align-items: center;
+		justify-content: center;
+		width: 2rem;
+		height: 2rem;
+		margin: calc(-1 * var(--space-2)) calc(-1 * var(--space-1)) calc(-1 * var(--space-2)) 0;
+		padding: 0;
 		border: 0;
+		border-radius: var(--radius-control);
 		background: transparent;
-		color: var(--color-ink);
-		font: inherit;
-		text-align: left;
+		color: var(--color-ink-muted);
 		cursor: pointer;
 	}
 
-	.add-filter-menu button:hover,
-	.add-filter-menu button:focus-visible {
+	.filter-button:hover {
+		color: var(--color-ink);
+	}
+
+	/* A column being filtered: a filled funnel in the link color. */
+	.filter-button.active {
+		color: var(--color-link);
+	}
+
+	.filter-button.open,
+	.icon-tool.open {
+		color: var(--color-ink);
+		background: var(--color-surface-raised);
+		box-shadow: inset 0 0 0 1px var(--color-control-border);
+	}
+
+	/* The Sum row: below a heavy rule, in bold, and outside the sorted rows. */
+	.sum-row :is(th, td) {
+		border-top: 2px solid var(--color-ink);
+		border-bottom: 0;
 		background: var(--color-surface);
+		font-weight: var(--font-weight-bold);
 	}
 
 	.table-status {

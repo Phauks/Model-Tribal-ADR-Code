@@ -3,7 +3,7 @@ import { workerEnvironment } from '#lib/server/environment.ts';
 import { allSponsors, giftSettingChecks, giftState, publicMode } from '#lib/server/sponsors.ts';
 import { saveSponsorshipCosts, sponsorshipCosts } from '#lib/server/sponsorship-goals.ts';
 import { formText, requirePermission, storage } from '#lib/server/workspace.ts';
-import { costItems, dollars, largestGift, type CostItem } from '#lib/sponsorship.ts';
+import { centsFromDollars, costItems, dollars, largestGift, type CostItem } from '#lib/sponsorship.ts';
 import type { Actions, PageServerLoad } from './$types';
 
 // Every sponsor, and whether gifts work and why not (docs/sponsorship.md,
@@ -57,15 +57,15 @@ export const actions: Actions = {
 		const form = await event.request.formData();
 		const costs = {} as Record<CostItem, number | null>;
 		for (const item of costItems) {
-			const text = formText(form, item, 20)?.replace(/[$,\s]/g, '');
+			const text = formText(form, item, 20)?.trim();
 			if (!text) {
 				costs[item] = null;
 				continue;
 			}
-			const amount = Number(text);
-			if (!Number.isFinite(amount) || amount <= 0 || amount > largestGift || Math.round(amount * 100) !== amount * 100)
+			const cents = centsFromDollars(text);
+			if (cents === null || cents <= 0 || cents > largestGift * 100)
 				return fail(400, { problem: `Write each cost in dollars and cents, up to ${dollars(largestGift * 100)}, or leave it blank.` });
-			costs[item] = Math.round(amount * 100);
+			costs[item] = cents;
 		}
 		await saveSponsorshipCosts(storage(event).database, costs, `The project (${person.displayName})`);
 		return { done: 'Saved. The Sponsorship page shows the new costs.' };

@@ -24,7 +24,9 @@
 		value,
 		onchange,
 		onhighlight,
-		placeholder = 'Type to search'
+		placeholder = 'Type to search',
+		hideLabel = false,
+		name
 	}: {
 		label: string;
 		choices: SearchableChoice<Value>[];
@@ -33,6 +35,10 @@
 		/** Called with the choice the reader is on in the open list, before picking it, so a page can start fetching what that choice shows. */
 		onhighlight?: (value: Value) => void;
 		placeholder?: string;
+		/** Keeps the label for screen readers only, as in a table row whose column header already names the box. */
+		hideLabel?: boolean;
+		/** Sends the picked value with the form around the dropdown under this name. */
+		name?: string;
 	} = $props();
 
 	const identifier = $props.id();
@@ -43,7 +49,8 @@
 	let input: HTMLInputElement | undefined = $state();
 	let list: HTMLUListElement | undefined = $state();
 
-	const selected = $derived(choices.find((choice) => choice.value === value) ?? choices[0]);
+	// An empty value shows the placeholder, for a box where nothing is picked yet.
+	const selected = $derived(choices.find((choice) => choice.value === value) ?? (value === '' ? undefined : choices[0]));
 
 	/** Every word typed must start a word of the choice's label, group, description or keywords, so "law 280" finds "Public Law 280" and "bia" finds the Bureau of Indian Affairs by its keyword. */
 	function matches(choice: SearchableChoice<Value>, words: string[]): boolean {
@@ -143,7 +150,8 @@
 </script>
 
 <div class="searchable-dropdown">
-	<label class="searchable-dropdown-label" for="{identifier}-input">{label}</label>
+	<label class="searchable-dropdown-label" class:visually-hidden={hideLabel} for="{identifier}-input">{label}</label>
+	{#if name}<input type="hidden" {name} {value} />{/if}
 	<div class="searchable-dropdown-control" class:expanded>
 		<input
 			bind:this={input}
@@ -157,7 +165,7 @@
 			aria-controls="{identifier}-list"
 			aria-activedescendant={expanded && shown.length > 0 ? optionId(active) : undefined}
 			value={typing ? query : (selected?.label ?? '')}
-			placeholder={expanded ? placeholder : undefined}
+			placeholder={expanded || !selected ? placeholder : undefined}
 			oninput={onInput}
 			onkeydown={onKeydown}
 			onclick={() => {

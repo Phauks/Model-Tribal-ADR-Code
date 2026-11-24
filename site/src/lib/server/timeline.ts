@@ -27,7 +27,8 @@ import { displayName, stateName } from '../nation-labels.ts';
 import { webLink } from '../contact-links.ts';
 import { copyPagePath } from '../public-copies.ts';
 import type { CitationItem } from '../citation-formats.ts';
-import { isTimelineDate, timelineRows, type OpinionYear, type TimelineEntry, type TimelineRow } from '../timeline.ts';
+import { isTimelineDate, mentionBits, timelineRows, type OpinionYear, type TimelineEntry, type TimelineRow } from '../timeline.ts';
+import { mentionWordList } from '../opinion-mentions.ts';
 import { courtAbbreviation } from './case-citations.ts';
 import { casePreviewList } from './case-previews.ts';
 import {
@@ -189,9 +190,6 @@ function caseLinks(): Map<string, string> {
 	return caseLinkCache;
 }
 
-/** The topics of an opinion, as words, that the full timeline's "Mediation or arbitration" filter finds. */
-const mediationTopics = new Set(['mediation', 'arbitration', 'alternative dispute resolution']);
-
 /** The opinions of one nation, or of every nation, counted by year (and by nation on the full timeline). */
 function opinionYears(nationId?: string): OpinionYear[] {
 	const counts = new Map<string, OpinionYear>();
@@ -201,13 +199,11 @@ function opinionYears(nationId?: string): OpinionYear[] {
 		const owners = nationId ? (opinion.nations.includes(nationId) ? [undefined] : []) : opinion.nations;
 		for (const nation of owners) {
 			const key = `${year}|${nation ?? ''}`;
-			const entry = counts.get(key) ?? { year, count: 0, peacemaking: 0, mediation: 0, both: 0, ...(nation ? { nation } : {}) };
-			const peacemaking = opinion.topics.includes('peacemaking');
-			const mediation = opinion.topics.some((topic) => mediationTopics.has(topic));
+			const entry = counts.get(key) ?? { year, count: 0, ...(nation ? { nation } : {}) };
 			entry.count += 1;
-			if (peacemaking) entry.peacemaking += 1;
-			if (mediation) entry.mediation = (entry.mediation ?? 0) + 1;
-			if (peacemaking && mediation) entry.both = (entry.both ?? 0) + 1;
+			// Only the full timeline filters by word, so a nation's own timeline leaves the words out.
+			const bits = nationId ? 0 : mentionBits(opinion.topics, mentionWordList);
+			if (bits !== 0) entry.mentions = [...(entry.mentions ?? []), bits];
 			counts.set(key, entry);
 		}
 	}

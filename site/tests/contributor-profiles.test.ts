@@ -1,6 +1,6 @@
 import { beforeEach, describe, expect, it } from 'vitest';
 import type { D1Database } from '@cloudflare/workers-types/index.ts';
-import { emptyAnswers, type ProfileAnswers } from '#lib/contributors.ts';
+import { emptyAnswers, emptyPlacements, type ProfileAnswers } from '#lib/contributors.ts';
 import {
 	confirmProfile,
 	confirmedCredits,
@@ -25,14 +25,24 @@ const ready: ProfileAnswers = {
 	...emptyAnswers,
 	givenName: 'Ada',
 	familyName: 'Lovelace',
-	nativeName: 'Sample Name',
-	ageGroup: '18-or-older',
+	names: [{ name: 'Sample Name', kind: 'native', book: false, website: false }],
+	pronouns: ['she', 'other'],
+	pronounOther: 'ze/zir',
+	birthYear: 1985,
+	contacts: [
+		{ kind: 'email', value: 'helper@example.org', country: null, signIn: true, mayEmail: true, mayCall: false, mayText: false, preferred: false },
+		{ kind: 'phone', value: '+17025550134', country: 'US', signIn: false, mayEmail: false, mayCall: true, mayText: true, preferred: true }
+	],
 	interests: ['write', 'review'],
-	creditForm: 'name-and-nation',
 	nationAnswer: 'listed',
-	nations: [{ nationIdentifier: 'sample-nation', nationName: 'Sample Nation', connection: 'citizen', showInCredit: true }],
+	nations: [
+		{ nationIdentifier: 'sample-nation', nationName: 'Sample Nation', relationships: ['citizen', 'works-for'], relationshipOther: null, book: true, website: true }
+	],
+	languages: [{ code: 'nav', otherName: null, speaks: true, reads: true, writes: false, website: true }],
+	specialties: ['peacemaking'],
+	specialtyOthers: ['Weaving'],
 	biography: 'Writes about mediation.',
-	biographyInCredits: true
+	placements: { ...emptyPlacements(), 'full-name': { book: true, website: true }, biography: { book: true, website: true }, specialties: { book: false, website: true } }
 };
 
 beforeEach(async () => {
@@ -66,22 +76,39 @@ describe('contributor profiles', () => {
 		expect(profile).toMatchObject({ status: 'welcomed', confirmedVersion: 1, hasUnconfirmedChanges: false });
 		// A writer's credit goes under Contributors until the lead author moves it.
 		expect(profile.creditSection).toBe('contributors');
-		expect(profile.answers.nativeName).toBe('Sample Name');
-		expect(profile.answers.nations[0].nationName).toBe('Sample Nation');
+		// Every repeatable answer comes back as it was saved, in the person's order.
+		expect(profile.answers).toMatchObject({
+			names: ready.names,
+			pronouns: ['she', 'other'],
+			pronounOther: 'ze/zir',
+			birthYear: 1985,
+			ageGroup: '18-or-older',
+			contacts: ready.contacts,
+			nations: ready.nations,
+			languages: ready.languages,
+			specialties: ['peacemaking'],
+			specialtyOthers: ['Weaving'],
+			placements: ready.placements
+		});
 		expect(profile.answers.interests).toEqual(['review', 'write']);
 		const [listing] = await listProfiles(database);
-		expect(listing).toMatchObject({ name: 'Ada Lovelace', nations: ['Sample Nation'], confirmedCreditLine: 'Ada Lovelace (Sample Nation)' });
+		expect(listing).toMatchObject({ name: 'Ada Lovelace', nations: ['Sample Nation'], confirmedCreditLine: 'Ada Lovelace, Sample Nation' });
 		const [version] = await profileVersions(database, profile.identifier);
-		expect(version).toMatchObject({ version: 1, creditLine: 'Ada Lovelace (Sample Nation)' });
+		expect(version).toMatchObject({ version: 1, creditLine: 'Ada Lovelace, Sample Nation' });
 		expect(version.answers.email).toBe('helper@example.org');
 	});
 
 	it('prints credits only from the confirmed version, never from unconfirmed edits', async () => {
 		const profile = await confirmed();
-		await saveAnswers(database, account, { ...ready, creditForm: 'pseudonym', creditPseudonym: 'Changed Mind' });
+		await saveAnswers(database, account, {
+			...ready,
+			names: [{ name: 'Changed Mind', kind: 'pen-name', book: true, website: true }],
+			nations: [],
+			placements: { ...ready.placements, 'full-name': { book: false, website: false } }
+		});
 
 		const [credit] = await confirmedCredits(database);
-		expect(credit).toMatchObject({ section: 'contributors', line: 'Ada Lovelace (Sample Nation)', biography: 'Writes about mediation.' });
+		expect(credit).toMatchObject({ section: 'contributors', line: 'Ada Lovelace, Sample Nation', biography: 'Writes about mediation.' });
 
 		await confirmProfile(database, (await profileBySubject(database, account.subject))!);
 		expect((await confirmedCredits(database))[0].line).toBe('Changed Mind');

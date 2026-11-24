@@ -241,7 +241,7 @@
 			<section class="part" aria-labelledby="courts-heading">
 				<input type="hidden" name="kind" value="courts" />
 				{@render partHeading('courts', 'courts-heading', 'now')}
-				<p class="hint" id="courts-hint">A note shown at the end of “Courts and dispute resolution”, such as where peacemaking sessions are held.</p>
+				<p class="hint" id="courts-hint">A note shown at the end of “Courts”, such as where peacemaking sessions are held.</p>
 				<label for="courts-text" class="visually-hidden">Note on courts and dispute resolution</label>
 				<textarea id="courts-text" name="courts-text" rows="3" bind:value={courtsText} aria-describedby="courts-hint"></textarea>
 			</section>

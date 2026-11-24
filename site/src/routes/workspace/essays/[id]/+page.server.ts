@@ -14,7 +14,8 @@ import {
 	version,
 	versions
 } from '#lib/server/essays.ts';
-import { essayAccess } from '#lib/server/essay-workspace.ts';
+import { essayAccess, gitText } from '#lib/server/essay-workspace.ts';
+import { syncEssaysFromGitOnce } from '#lib/server/essay-git-sync.ts';
 import { renderedVersion } from '#lib/server/essay-pages.ts';
 import { formText } from '#lib/server/workspace.ts';
 import { checkNow } from '#lib/server/following-run.ts';
@@ -22,7 +23,9 @@ import type { Actions, PageServerLoad } from './$types';
 import { notifyLiveRoom } from '#lib/server/live-editing.ts';
 
 export const load: PageServerLoad = async (event) => {
-	const { identifier, database, level } = await essayAccess(event, 'comment');
+	const { identifier, database, bucket, level } = await essayAccess(event, 'comment');
+	// Paragraphs git changed that were also edited here wait on this page (the essay page's red label links here).
+	const outcome = (await syncEssaysFromGitOnce(database, bucket)).find((candidate) => candidate.identifier === identifier);
 	const essay = await essayRow(database, identifier);
 	if (!essay) error(404, 'No essay has this address yet.');
 	const saved = await versions(database, identifier);
@@ -34,6 +37,7 @@ export const load: PageServerLoad = async (event) => {
 		canEdit: atLeast(level, 'contribute'),
 		title: saved[0]?.title ?? identifier,
 		page: essayPath(identifier, essay.part),
+		gitConflict: outcome?.state === 'conflict' ? { conflicts: outcome.conflicts, latestVersion: outcome.latestVersion } : null,
 		versions: saved.map((row) => ({
 			number: row.number,
 			title: row.title,
@@ -61,6 +65,32 @@ function versionNumber(form: FormData): number | null {
 }
 
 export const actions: Actions = {
+	// Saves the git text as a new version, over paragraphs also edited here (moved from Workspace › Essays, now removed).
+	bringIn: async (event) => {
+		const { identifier, database, bucket, person } = await essayAccess(event, 'full');
+		const text = gitText(identifier);
+		if (!text) return fail(400, { problem: 'Git has no essay with this id.' });
+		const latest = await latestVersion(database, identifier);
+		try {
+			const saved = await saveVersion(database, bucket, {
+				identifier,
+				text,
+				basedOn: latest?.number ?? null,
+				personIdentifier: person.identifier,
+				origin: 'git',
+				note: 'From git, chosen over the edits made here'
+			});
+			if (!saved.unchanged) await notifyLiveRoom(identifier);
+			return {
+				done: saved.unchanged
+					? 'The text is already the same as git.'
+					: `Saved the git text as version ${saved.version.number}. Version ${latest?.number} stays in the history.`
+			};
+		} catch (problem) {
+			if (problem instanceof SaveConflict) return fail(409, { problem: problem.message });
+			throw problem;
+		}
+	},
 	publish: async (event) => {
 		const { identifier, database, bucket, person } = await essayAccess(event, 'full');
 		const form = await event.request.formData();

@@ -1,89 +1,340 @@
 <script lang="ts">
+	import { untrack } from 'svelte';
+	import { parsePhoneNumberFromString } from 'libphonenumber-js/min';
+	import FileText from '@lucide/svelte/icons/file-text';
+	import FileUp from '@lucide/svelte/icons/file-up';
+	import ImagePlus from '@lucide/svelte/icons/image-plus';
+	import Plus from '@lucide/svelte/icons/plus';
+	import Trash2 from '@lucide/svelte/icons/trash-2';
+	import UserRound from '@lucide/svelte/icons/user-round';
+	import X from '@lucide/svelte/icons/x';
+	import SearchableDropdown, { type SearchableChoice } from '#lib/components/SearchableDropdown.svelte';
+	import CheckDropdown from '#lib/components/profile/CheckDropdown.svelte';
+	import PhoneField from '#lib/components/profile/PhoneField.svelte';
+	import PrivateMark from '#lib/components/profile/PrivateMark.svelte';
 	import {
-		ageGroupLabels,
-		ageGroups,
+		ageGroupOf,
 		availabilities,
 		availabilityLabels,
-		contactMethodLabels,
-		contactMethods,
-		creditFormLabels,
-		creditForms,
+		birthdayQuestionAge,
+		creditIn,
 		emptyAnswers,
 		interestLabels,
 		interestNextSteps,
 		interests,
+		nameKindLabels,
+		nameKinds,
 		nationAnswerLabels,
 		nationAnswers,
+		nationRelationshipLabels,
+		nationRelationships,
+		oldestAge,
+		placedAnswers,
+		pronounChoices,
+		pronounLabels,
 		specialties,
 		specialtyLabels,
-		type ProfileAnswers
+		youngestAge,
+		type Availability,
+		type Interest,
+		type NameKind,
+		type NationAnswer,
+		type NationRelationship,
+		type PlacedAnswer,
+		type Placement,
+		type ProfileAnswers,
+		type PronounChoice,
+		type Specialty
 	} from '#lib/contributors.ts';
+	import { languageGroupLabels, languageOf, languages } from '#lib/languages.ts';
+	import { canSquarePictures, squarePicture } from '#lib/square-picture.ts';
 	import type { PageProps } from './$types';
 
 	let { data, form }: PageProps = $props();
 
-	/** The saved answers as form values, so the form opens as the person left it. */
-	function valuesOf(answers: ProfileAnswers): Record<string, string> {
-		const values: Record<string, string> = {};
-		const set = (name: string, value: string | null | boolean) => {
-			if (typeof value === 'boolean') {
-				if (value) values[name] = 'yes';
-			} else if (value) values[name] = value;
-		};
-		set('givenName', answers.givenName);
-		set('familyName', answers.familyName);
-		set('nativeName', answers.nativeName);
-		set('phone', answers.phone);
-		set('preferredContact', answers.preferredContact);
-		set('ageGroup', answers.ageGroup);
-		set('nationAnswer', answers.nationAnswer);
-		answers.nations.forEach((nation, index) => {
-			set(`nation${index + 1}Name`, nation.nationName);
-			set(`nation${index + 1}Connection`, nation.connection);
-			set(`nation${index + 1}Credit`, nation.showInCredit);
-		});
-		set('background', answers.background);
-		set('languages', answers.languages);
-		set('organization', answers.organization);
-		values.interests = answers.interests.join('\n');
-		values.specialties = (answers.specialties ?? []).join('\n');
-		set('specialtyOther', answers.specialtyOther);
-		set('availability', answers.availability);
-		set('creditForm', answers.creditForm);
-		set('creditName', answers.creditName);
-		set('creditRole', answers.creditRole);
-		set('creditPseudonym', answers.creditPseudonym);
-		set('creditInBook', answers.creditInBook);
-		set('creditOnWebsite', answers.creditOnWebsite);
-		set('biography', answers.biography);
-		set('biographyInCredits', answers.biographyInCredits);
-		return values;
-	}
-
-	const values: Record<string, string> = $derived(
-		form?.values ?? valuesOf(data.profile?.answers ?? emptyAnswers)
-	);
+	/** The answers the form starts from: those just sent when they came back with a problem, else those saved. The page is drawn again after each save, so these are read once. */
+	const start: ProfileAnswers = untrack(() => form?.answers ?? data.profile?.answers ?? emptyAnswers);
+	const year = untrack(() => data.year);
 	const errors: Record<string, string> = $derived(form?.errors ?? {});
 	const errorCount = $derived(Object.keys(errors).length);
-	const slots = $derived(Array.from({ length: data.nationSlots }, (_, index) => index + 1));
 
-	function value(name: string): string {
-		return values[name] ?? '';
-	}
-
-	function chosen(name: string, option: string): boolean {
-		return (values[name] ?? '').split('\n').includes(option);
-	}
-
-	/** Moves focus to the error summary when the form comes back with problems (WCAG 3.3.1). */
+	/** Moves focus to the message at the top when the form comes back with problems (WCAG 3.3.1). */
 	function focusOnArrival(node: HTMLElement) {
 		node.focus();
 	}
 
-	function describedBy(name: string, hint = false): string | undefined {
-		const ids = [hint ? `${name}-hint` : '', errors[name] ? `${name}-error` : ''].filter(Boolean);
-		return ids.length > 0 ? ids.join(' ') : undefined;
+	/**
+	 * Each repeatable row has a short key. The form sends the keys in order
+	 * under "…Row" and each field as "<field>-<key>"
+	 * (src/lib/server/contributor-form.ts).
+	 */
+	let nextKey = 0;
+	const key = () => `r${nextKey++}`;
+
+	/**
+	 * Where each answer may appear (Trevor, Nov. 24, 2026: "Shown" did not say
+	 * whether that meant online or in anything published). Book means the
+	 * printed book and ebook; Website means the person's contributor page and
+	 * the credits on the website. Anything not ticked is never published.
+	 */
+	const uses = $state<Record<string, Placement>>(
+		Object.fromEntries(placedAnswers.map((item) => [item, { ...(start.placements?.[item] ?? { book: false, website: false }) }]))
+	);
+
+	/** Adds a row's Book and Website choices, unticked unless given, so nothing new is published until the person ticks it. */
+	function addUse(id: string, placement: Placement = { book: false, website: false }): void {
+		uses[id] = { book: placement.book, website: placement.website };
 	}
+
+	let givenName = $state(start.givenName ?? '');
+	let familyName = $state(start.familyName ?? '');
+	let otherNames = $state(
+		start.names.map((name) => {
+			const rowKey = key();
+			addUse(`name-${rowKey}`, name);
+			return { key: rowKey, name: name.name, kind: name.kind as NameKind };
+		})
+	);
+	function addName(): void {
+		const rowKey = key();
+		addUse(`name-${rowKey}`);
+		otherNames.push({ key: rowKey, name: '', kind: 'native' });
+	}
+
+	let pronouns = $state<PronounChoice[]>([...start.pronouns]);
+	let pronounOther = $state(start.pronounOther ?? '');
+
+	let birthYear = $state(start.birthYear === null ? '' : String(start.birthYear));
+	let birthdayAnswer = $state(start.birthdayAnswerYear === year ? (start.birthdayAnswer ?? '') : '');
+	/** Years from 13 to 110 years ago, newest first. Signing up is for people 13 or older. */
+	const birthYears = Array.from({ length: oldestAge - youngestAge + 1 }, (_, index) => String(year - youngestAge - index));
+	/** In the year someone turns 13 or 18, the year alone cannot say which side of the line they are on, so only then is a birthday asked. */
+	const turning = $derived(birthdayQuestionAge(birthYear ? Number(birthYear) : null, year));
+	const ageGroup = $derived(
+		ageGroupOf(
+			{ birthYear: birthYear ? Number(birthYear) : null, birthdayAnswer: birthdayAnswer === 'yes' || birthdayAnswer === 'no' ? birthdayAnswer : null, birthdayAnswerYear: year },
+			year
+		)
+	);
+	/** Under 18, or not yet known: only a pen name may be published, and nothing that could identify the person. */
+	const minor = $derived(ageGroup !== '18-or-older');
+	/** Known to be under 18, so no picture may be added. With the age not yet given, a picture may be sent with the birth year. */
+	const youngerThanEighteen = $derived(ageGroup === '13-to-17' || ageGroup === 'under-13');
+
+	/** The national digits of a saved number, such as 7025550134 for +17025550134. */
+	function nationalDigits(value: string): string {
+		if (!value.startsWith('+')) return value.replace(/\D/g, '');
+		return parsePhoneNumberFromString(value)?.nationalNumber ?? value.replace(/\D/g, '');
+	}
+
+	type ContactRow = { key: string; kind: 'sign-in' | 'email' | 'phone'; value: string; country: string; mayEmail: boolean; mayCall: boolean; mayText: boolean };
+	const startContacts = [...start.contacts].sort((first, second) => Number(second.signIn) - Number(first.signIn));
+	if (!startContacts.some((contact) => contact.signIn)) {
+		startContacts.unshift({ kind: 'email', value: untrack(() => data.email), country: null, signIn: true, mayEmail: true, mayCall: false, mayText: false, preferred: !startContacts.some((contact) => contact.preferred) });
+	}
+	const startRows: ContactRow[] = startContacts.map((contact) => ({
+		key: key(),
+		kind: contact.signIn ? 'sign-in' : contact.kind,
+		value: contact.kind === 'phone' ? nationalDigits(contact.value) : contact.value,
+		country: contact.country ?? 'US',
+		mayEmail: contact.mayEmail,
+		mayCall: contact.mayCall,
+		mayText: contact.mayText
+	}));
+	let contacts = $state<ContactRow[]>(startRows);
+	let preferred = $state(startRows[Math.max(0, startContacts.findIndex((contact) => contact.preferred))].key);
+	function addContact(kind: 'email' | 'phone'): void {
+		contacts.push({ key: key(), kind, value: '', country: 'US', mayEmail: kind === 'email', mayCall: kind === 'phone', mayText: false });
+	}
+
+	let nationAnswer = $state<NationAnswer | ''>(start.nationAnswer ?? '');
+	type NationRow = { key: string; identifier: string; name: string; relationships: NationRelationship[]; other: string };
+	/** A nation from the project's list by its identifier, so the person's page can link to it; "other" is written in. */
+	let nations = $state<NationRow[]>(
+		start.nations.map((nation) => {
+			const rowKey = key();
+			addUse(`nation-${rowKey}`, nation);
+			return {
+				key: rowKey,
+				identifier: nation.nationIdentifier ?? 'other',
+				name: nation.nationIdentifier ? '' : nation.nationName,
+				relationships: [...nation.relationships],
+				other: nation.relationshipOther ?? ''
+			};
+		})
+	);
+	function addNation(): void {
+		const rowKey = key();
+		addUse(`nation-${rowKey}`);
+		nations.push({ key: rowKey, identifier: '', name: '', relationships: [], other: '' });
+	}
+	const nationChoices: SearchableChoice<string>[] = $derived([
+		...data.nationChoices,
+		{ value: 'other', label: 'Not on the list', keywords: ['other', 'First Nations', 'state recognized'] }
+	]);
+	const nationTitle = (identifier: string, written: string) =>
+		identifier === 'other' ? written : (data.nationChoices.find((choice) => choice.value === identifier)?.label ?? '');
+
+	let background = $state(start.background ?? '');
+
+	type LanguageRow = { key: string; code: string; other: string; speaks: boolean; reads: boolean; writes: boolean };
+	let spoken = $state<LanguageRow[]>(
+		start.languages.map((language) => {
+			const rowKey = key();
+			addUse(`language-${rowKey}`, { book: false, website: language.website });
+			return { key: rowKey, code: language.code ?? 'other', other: language.otherName ?? '', speaks: language.speaks, reads: language.reads, writes: language.writes };
+		})
+	);
+	function addLanguage(): void {
+		const rowKey = key();
+		addUse(`language-${rowKey}`);
+		spoken.push({ key: rowKey, code: '', other: '', speaks: true, reads: false, writes: false });
+	}
+	const languageChoices: SearchableChoice<string>[] = [
+		...languages.map((language) => ({
+			value: language.code,
+			label: language.name,
+			group: languageGroupLabels[language.group],
+			keywords: [language.code, ...(language.keywords ?? [])]
+		})),
+		{ value: 'other', label: 'Other', group: languageGroupLabels.other }
+	];
+
+	let organization = $state(start.organization ?? '');
+	let chosenSpecialties = $state<Specialty[]>([...start.specialties]);
+	let specialtyOthers = $state<string[]>([...start.specialtyOthers]);
+	let specialtyOtherDraft = $state('');
+	let specialtyPick = $state('');
+	/** Choices not yet picked, then "Other" for one in the person's own words. */
+	const specialtyChoices: SearchableChoice<string>[] = $derived([
+		...specialties.filter((option) => !chosenSpecialties.includes(option)).map((option) => ({ value: option as string, label: specialtyLabels[option] })),
+		{ value: 'other', label: 'Other, in your own words' }
+	]);
+	function addSpecialty(value: string): void {
+		if (value === 'other') specialtyPick = 'other';
+		else {
+			chosenSpecialties.push(value as Specialty);
+			specialtyPick = '';
+		}
+	}
+	function addSpecialtyOther(): void {
+		const written = specialtyOtherDraft.trim();
+		if (written && !specialtyOthers.includes(written)) specialtyOthers.push(written);
+		specialtyOtherDraft = '';
+		specialtyPick = '';
+	}
+
+	let chosenInterests = $state<Interest[]>([...start.interests]);
+	let availability = $state<Availability | ''>(start.availability ?? '');
+	let description = $state(start.description ?? '');
+	let biography = $state(start.biography ?? '');
+
+	// The "Add" buttons without scripts save the form and come back with one more empty row.
+	untrack(() => {
+		if (data.add === 'name') addName();
+		else if (data.add === 'email' || data.add === 'phone') addContact(data.add);
+		else if (data.add === 'nation') addNation();
+		else if (data.add === 'language') addLanguage();
+		if (start.nationAnswer === 'listed' && nations.length === 0 && data.add !== 'nation') addNation();
+	});
+
+	function chooseNationAnswer(event: Event): void {
+		if ((event.currentTarget as HTMLSelectElement).value === 'listed' && nations.length === 0) addNation();
+	}
+
+	/** With scripts an Add or Remove button changes the form in place; without them it saves and comes back. */
+	function inPlace(change: () => void) {
+		return (event: MouseEvent) => {
+			event.preventDefault();
+			change();
+		};
+	}
+
+	// The picture: the one saved, or the one just chosen, which the browser makes square before it is sent.
+	const savedPicture = $derived(
+		data.profile?.pictureKey ? `/profile/picture?v=${encodeURIComponent(data.profile.pictureUpdatedAt ?? '')}` : null
+	);
+	let pictureInput: HTMLInputElement | undefined = $state();
+	let picturePreview = $state<string | null>(null);
+	let pictureProblem = $state<string | null>(null);
+	let removingPicture = $state(false);
+	const shownPicture = $derived(picturePreview ?? (removingPicture ? null : savedPicture));
+
+	async function choosePicture(): Promise<void> {
+		const file = pictureInput?.files?.[0];
+		pictureProblem = null;
+		if (!pictureInput || !file || !canSquarePictures()) return;
+		const square = await squarePicture(file, data.pictureSide);
+		if (!square) {
+			pictureInput.value = '';
+			pictureProblem = 'This file could not be opened as a picture. Choose a photo or picture file.';
+			return;
+		}
+		const transfer = new DataTransfer();
+		transfer.items.add(square);
+		pictureInput.files = transfer.files;
+		if (picturePreview) URL.revokeObjectURL(picturePreview);
+		picturePreview = URL.createObjectURL(square);
+		removingPicture = false;
+	}
+
+	function removeChosenPicture(): void {
+		if (picturePreview) {
+			URL.revokeObjectURL(picturePreview);
+			picturePreview = null;
+			if (pictureInput) pictureInput.value = '';
+		} else removingPicture = true;
+	}
+
+	// The CV or résumé: the one saved, or the one just chosen.
+	const savedDocument = $derived(data.profile?.curriculumVitaeName ?? null);
+	let documentInput: HTMLInputElement | undefined = $state();
+	let chosenDocument = $state<string | null>(null);
+	let removingDocument = $state(false);
+	function chooseDocument(): void {
+		chosenDocument = documentInput?.files?.[0]?.name ?? null;
+		if (chosenDocument) removingDocument = false;
+	}
+	function removeDocument(): void {
+		if (chosenDocument) {
+			chosenDocument = null;
+			if (documentInput) documentInput.value = '';
+		} else removingDocument = true;
+	}
+	const shownDocument = $derived(chosenDocument ?? (removingDocument ? null : savedDocument));
+
+	/** The answers as they stand, for the credit preview, built the same way the server builds them. */
+	const current: ProfileAnswers = $derived({
+		...emptyAnswers,
+		givenName: givenName.trim() || null,
+		familyName: familyName.trim() || null,
+		names: otherNames.map((name) => ({ name: name.name.trim(), kind: name.kind, ...(uses[`name-${name.key}`] ?? { book: false, website: false }) })),
+		ageGroup: ageGroup === '13-to-17' || ageGroup === '18-or-older' ? ageGroup : null,
+		nations: nations
+			.filter((nation) => nationTitle(nation.identifier, nation.name))
+			.map((nation) => ({
+				nationIdentifier: nation.identifier === 'other' ? null : nation.identifier,
+				nationName: nationTitle(nation.identifier, nation.name),
+				relationships: nation.relationships,
+				relationshipOther: null,
+				...(uses[`nation-${nation.key}`] ?? { book: false, website: false })
+			})),
+		organization: organization.trim() || null,
+		description: description.trim() || null,
+		biography: biography.trim() || null,
+		placements: Object.fromEntries(placedAnswers.map((item) => [item, uses[item]])) as Record<PlacedAnswer, Placement>
+	});
+	const bookCredit = $derived(nationAnswer === 'listed' ? creditIn(current, 'book')?.line : creditIn({ ...current, nations: [] }, 'book')?.line);
+	const websiteCredit = $derived(nationAnswer === 'listed' ? creditIn(current, 'website')?.line : creditIn({ ...current, nations: [] }, 'website')?.line);
+	/** What the contributor page adds to the website credit. */
+	const websiteExtras = $derived(
+		[
+			!minor && uses.picture?.website && shownPicture ? 'picture' : '',
+			spoken.some((language) => (language.code && language.code !== 'other' ? languageOf(language.code) : language.other.trim()) && uses[`language-${language.key}`]?.website) ? 'languages' : '',
+			uses.specialties?.website && chosenSpecialties.length + specialtyOthers.length > 0 ? 'specialties' : '',
+			!minor && uses.biography?.website && biography.trim() ? 'biography' : ''
+		].filter(Boolean)
+	);
 </script>
 
 <svelte:head>
@@ -96,466 +347,805 @@
 	{/if}
 {/snippet}
 
-<h1>{data.profile ? 'Edit your profile' : 'Help write the code'}</h1>
-<p class="lead">
-	Everything except your name is optional until you confirm. Only the lead author and editors see your
-	answers; only the credit you choose is ever published.
-</p>
+{#snippet useCells(id: string, what: string, printable = true, restricted = false)}
+	{#if restricted && minor}
+		<td class="use-private" colspan="2"><PrivateMark /></td>
+	{:else}
+		<td data-label="Book" class="mark">
+			{#if printable}<input type="checkbox" name="book" value={id} aria-label="Print {what} in the book" bind:checked={uses[id].book} />{:else}<span class="not-applicable" aria-label="Never printed">–</span>{/if}
+		</td>
+		<td data-label="Website" class="mark"><input type="checkbox" name="website" value={id} aria-label="Show {what} on the website" bind:checked={uses[id].website} /></td>
+	{/if}
+{/snippet}
+
+{#snippet privateCells()}
+	<td class="use-private" colspan="2"><PrivateMark /></td>
+{/snippet}
+
+{#snippet useBoxes(id: string, what: string, printable = true, restricted = false)}
+	{#if restricted && minor}
+		<div class="use-private"><PrivateMark /></div>
+	{:else}
+		<label class="use-box">
+			<span>Book</span>
+			{#if printable}<input type="checkbox" name="book" value={id} aria-label="Print {what} in the book" bind:checked={uses[id].book} />{:else}<span class="not-applicable" aria-label="Never printed">–</span>{/if}
+		</label>
+		<label class="use-box">
+			<span>Website</span>
+			<input type="checkbox" name="website" value={id} aria-label="Show {what} on the website" bind:checked={uses[id].website} />
+		</label>
+	{/if}
+{/snippet}
+
+{#snippet removeButton(row: string, what: string, change: () => void)}
+	<button type="submit" name="remove" value={row} class="icon-button" aria-label="Remove {what}" title="Remove" formnovalidate onclick={inPlace(change)}>
+		<Trash2 size={20} strokeWidth={1.75} />
+	</button>
+{/snippet}
+
+<h1>Edit your profile</h1>
+<p class="lead">Only the lead author and editors see your answers. Tick Book or Website for anything that may appear there; nothing else is published.</p>
 
 {#if errorCount > 0}
 	<div class="notice notice-problem" role="alert" tabindex="-1" {@attach focusOnArrival}>
 		<p>
-			<strong>Please check {errorCount === 1 ? 'one answer' : `${errorCount} answers`}.</strong> The messages
-			are next to the questions below.
+			<strong>Please check {errorCount === 1 ? 'one answer' : `${errorCount} answers`}.</strong> The messages are next to the questions below.
 		</p>
 	</div>
 {/if}
 
-<form method="post" novalidate>
-	<fieldset id="about">
-		<legend><h2>About you</h2></legend>
-		<p class="hint">
-			If your name does not have a first and last name, put your whole name in the first box. The last
-			name is used only to sort the list of credits.
-		</p>
-		<div class="field-row">
-			<div class="field">
-				<label for="givenName">First name</label>
-				{@render fieldError('givenName')}
-				<input
-					type="text"
-					id="givenName"
-					name="givenName"
-					autocomplete="given-name"
-					value={value('givenName')}
-					aria-invalid={errors.givenName ? 'true' : undefined}
-					aria-describedby={describedBy('givenName')}
-				/>
-			</div>
-			<div class="field">
-				<label for="familyName">Last name (optional)</label>
-				{@render fieldError('familyName')}
-				<input
-					type="text"
-					id="familyName"
-					name="familyName"
-					autocomplete="family-name"
-					value={value('familyName')}
-				/>
-			</div>
-		</div>
-		<div class="field">
-			<label for="nativeName">A Native name, or another name you go by (optional)</label>
-			<p class="hint" id="nativeName-hint">
-				For example, a name in your nation’s language. It is printed only if you write it in your credit
-				below.
-			</p>
-			<input
-				type="text"
-				id="nativeName"
-				name="nativeName"
-				value={value('nativeName')}
-				aria-describedby="nativeName-hint"
-			/>
-		</div>
-		<fieldset aria-describedby="ageGroup-hint">
-			<legend>How old are you?</legend>
-			<p class="hint" id="ageGroup-hint">
-				Signing up is for people 13 or older. Someone younger can still help, with a parent or guardian,
-				through the <a href="/requests?kind=contribute">request form</a>. People under 18 are credited by a
-				description or a name they choose.
-			</p>
-			{@render fieldError('ageGroup')}
-			{#each ageGroups as option (option)}
-				<div class="choice">
-					<input type="radio" id="ageGroup-{option}" name="ageGroup" value={option} checked={value('ageGroup') === option} />
-					<label for="ageGroup-{option}">{ageGroupLabels[option]}</label>
-				</div>
-			{/each}
-		</fieldset>
-	</fieldset>
+<form method="post" enctype="multipart/form-data" novalidate class="profile-form">
+	<!-- Pressing Enter in a box saves a draft, rather than pressing the first Add or Remove button. -->
+	<button type="submit" name="next" value="later" class="visually-hidden" tabindex="-1" aria-hidden="true">Save draft</button>
 
-	<fieldset id="contact">
-		<legend><h2>How to reach you</h2></legend>
-		<p class="hint">
-			Your email address is <strong>{data.email}</strong>, the one you signed in with. Add a phone number
-			only if you would like us to call or text you. Neither is ever printed or published.
-		</p>
-		<div class="field">
-			<label for="phone">Phone number (optional)</label>
-			<p class="hint" id="phone-hint">In any format, with the country or area code.</p>
-			{@render fieldError('phone')}
-			<input
-				type="text"
-				id="phone"
-				name="phone"
-				class="short"
-				inputmode="tel"
-				autocomplete="tel"
-				value={value('phone')}
-				aria-invalid={errors.phone ? 'true' : undefined}
-				aria-describedby={describedBy('phone', true)}
-			/>
-		</div>
-		<fieldset>
-			<legend>Best way to reach you</legend>
-			{#each contactMethods as option (option)}
-				<div class="choice">
-					<input
-						type="radio"
-						id="preferredContact-{option}"
-						name="preferredContact"
-						value={option}
-						checked={value('preferredContact') === option || (option === 'email' && !value('preferredContact'))}
-					/>
-					<label for="preferredContact-{option}">{contactMethodLabels[option]}</label>
-				</div>
-			{/each}
-		</fieldset>
-	</fieldset>
+	<section aria-labelledby="about-heading" id="about">
+		<h2 id="about-heading">About you</h2>
 
-	<fieldset id="nations">
-		<legend><h2>Native nations</h2></legend>
-		<p class="hint" id="nations-hint">
-			This is optional and is never checked: we do not ask for enrollment numbers, cards or other proof.
-			Listing a nation does not mean you speak for it, and we will never say you do. It
-			appears in a credit only if you tick it below and choose “My name and nation”.
-		</p>
-		<fieldset>
-			<legend>Are you a citizen of, or connected to, a Native nation?</legend>
-			{#each nationAnswers as option (option)}
-				<div class="choice">
-					<input
-						type="radio"
-						id="nationAnswer-{option}"
-						name="nationAnswer"
-						value={option}
-						checked={value('nationAnswer') === option}
-					/>
-					<label for="nationAnswer-{option}">{nationAnswerLabels[option]}</label>
+		<div class="picture-row" id="picture">
+			<div class="avatar" class:has-picture={shownPicture && !youngerThanEighteen} aria-hidden="true">
+				{#if shownPicture && !youngerThanEighteen}<img src={shownPicture} alt="" width="96" height="96" />{:else}<UserRound size={44} strokeWidth={1.5} />{/if}
+			</div>
+			<div class="picture-actions">
+				{#if youngerThanEighteen}
+					<p class="hint">Pictures are for people 18 or older.</p>
+				{:else}
+					<div class="file-actions">
+						<label class="button button-quiet file-button">
+							<ImagePlus size={20} strokeWidth={1.75} aria-hidden="true" />
+							{shownPicture ? 'Change picture' : 'Add picture'}
+							<input bind:this={pictureInput} type="file" name="picture" accept="image/*" class="visually-hidden" aria-describedby="picture-hint" onchange={choosePicture} />
+						</label>
+						{#if shownPicture}
+							<button type="button" class="button button-quiet" onclick={removeChosenPicture}>Remove</button>
+						{/if}
+					</div>
+					{#if removingPicture}<input type="hidden" name="removePicture" value="yes" />{/if}
+					<p class="hint" id="picture-hint">Square, from the middle. Checked for viruses; camera details removed.</p>
+					{#if pictureProblem}<p class="field-error" role="alert"><span class="visually-hidden">Error:</span> {pictureProblem}</p>{/if}
+					{@render fieldError('picture')}
+				{/if}
+			</div>
+			{@render useBoxes('picture', 'your picture', false, true)}
+		</div>
+
+		<table class="rows" id="name-rows">
+			<caption class="visually-hidden">Your names</caption>
+			<thead>
+				<tr><th scope="col">Name</th><th scope="col">Kind</th><th scope="col" class="mark">Book</th><th scope="col" class="mark">Website</th><th scope="col"><span class="visually-hidden">Remove</span></th></tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td data-label="Name">
+						<div class="name-pair">
+							<input type="text" name="givenName" aria-label="First name" placeholder="First name" autocomplete="given-name" aria-invalid={errors.givenName ? 'true' : undefined} aria-describedby={errors.givenName ? 'givenName-error' : undefined} bind:value={givenName} />
+							<input type="text" name="familyName" aria-label="Last name" placeholder="Last name" autocomplete="family-name" aria-invalid={errors.familyName ? 'true' : undefined} aria-describedby={errors.familyName ? 'familyName-error' : undefined} bind:value={familyName} />
+						</div>
+						{@render fieldError('givenName')}
+						{@render fieldError('familyName')}
+					</td>
+					<td data-label="Kind" class="fixed-kind">First and last name</td>
+					{@render useCells('full-name', 'your first and last name', true, true)}
+					<td></td>
+				</tr>
+				{#each otherNames as other, index (other.key)}
+					<tr>
+						<td data-label="Name">
+							<input type="hidden" name="nameRow" value={other.key} />
+							<input type="text" name="name-{other.key}" aria-label="Name {index + 2}" aria-invalid={errors[`name-${index}`] ? 'true' : undefined} aria-describedby={errors[`name-${index}`] ? `name-${index}-error` : undefined} bind:value={other.name} />
+							{@render fieldError(`name-${index}`)}
+						</td>
+						<td data-label="Kind">
+							<select name="nameKind-{other.key}" aria-label="Kind of name {index + 2}" bind:value={other.kind}>
+								{#each nameKinds as kind (kind)}<option value={kind}>{nameKindLabels[kind]}</option>{/each}
+							</select>
+						</td>
+						{@render useCells(`name-${other.key}`, other.name || 'this name', true, other.kind !== 'pen-name')}
+						<td class="remove">{@render removeButton(`name-${other.key}`, other.name || 'this name', () => (otherNames = otherNames.filter((item) => item.key !== other.key)))}</td>
+					</tr>
+				{/each}
+			</tbody>
+		</table>
+		<p class="add"><button type="submit" name="add" value="name" class="button button-quiet" formnovalidate onclick={inPlace(addName)}><Plus size={20} strokeWidth={1.75} aria-hidden="true" /> Add a name</button></p>
+
+		<div class="field-with-use">
+			<div class="field">
+				<span class="field-label" id="pronouns-label">Pronouns</span>
+				<div class="short-control">
+					<CheckDropdown name="pronouns" label="Pronouns" choices={pronounChoices} labels={pronounLabels} bind:chosen={pronouns} />
 				</div>
-			{/each}
-		</fieldset>
-		<p class="hint">
-			To list nations, start typing to pick from our list, or write any name, including First Nations,
-			state-recognized nations and nations not on our list.
+				{#if pronouns.includes('other')}
+					<input type="text" class="other-text short-control" name="pronounOther" aria-label="Your pronouns" placeholder="Your pronouns" bind:value={pronounOther} />
+				{/if}
+				{@render fieldError('pronounOther')}
+			</div>
+			{@render useBoxes('pronouns', 'your pronouns', false)}
+		</div>
+
+		<div class="field-with-use">
+			<div class="field">
+				<label for="birthYear">Birth year</label>
+				{@render fieldError('birthYear')}
+				<select id="birthYear" name="birthYear" aria-invalid={errors.birthYear ? 'true' : undefined} aria-describedby={errors.birthYear ? 'birthYear-error' : undefined} bind:value={birthYear}>
+					<option value="" disabled>Choose</option>
+					{#each birthYears as option (option)}<option value={option}>{option}</option>{/each}
+				</select>
+				{#if turning}
+					<fieldset class="birthday">
+						<legend>Have you had your {turning}th birthday yet?</legend>
+						<label class="choice"><input type="radio" name="birthdayAnswer" value="yes" bind:group={birthdayAnswer} /> Yes</label>
+						<label class="choice"><input type="radio" name="birthdayAnswer" value="no" bind:group={birthdayAnswer} /> Not yet</label>
+					</fieldset>
+				{/if}
+			</div>
+			<div class="use-private"><PrivateMark /></div>
+		</div>
+	</section>
+
+	<section aria-labelledby="contact-heading" id="contact">
+		<h2 id="contact-heading">How to reach you</h2>
+		<table class="rows contacts" id="contact-rows">
+			<caption class="visually-hidden">Ways to reach you, and what each may be used for</caption>
+			<thead>
+				<tr>
+					<th scope="col">Contact</th>
+					<th scope="col" class="mark">Email</th>
+					<th scope="col" class="mark">Call</th>
+					<th scope="col" class="mark">Text</th>
+					<th scope="col" class="mark">Preferred</th>
+					<th scope="col" class="mark" colspan="2">Published</th>
+					<th scope="col"><span class="visually-hidden">Remove</span></th>
+				</tr>
+			</thead>
+			<tbody>
+				{#each contacts as contact, index (contact.key)}
+					{@const what = contact.kind === 'phone' ? 'this number' : contact.kind === 'sign-in' ? data.email : 'this address'}
+					<tr>
+						<td data-label="Contact">
+							<input type="hidden" name="contactRow" value={contact.key} />
+							<input type="hidden" name="contactKind-{contact.key}" value={contact.kind} />
+							{#if contact.kind === 'sign-in'}
+								<span class="sign-in-email">{data.email}</span> <span class="small muted">Signed in with</span>
+							{:else if contact.kind === 'email'}
+								<input type="email" name="email-{contact.key}" aria-label="Email address {index + 1}" autocomplete="email" aria-invalid={errors[`contact-${index}`] ? 'true' : undefined} aria-describedby={errors[`contact-${index}`] ? `contact-${index}-error` : undefined} bind:value={contact.value} />
+							{:else}
+								<PhoneField name="phone-{contact.key}" label="Phone {index + 1}" invalid={Boolean(errors[`contact-${index}`])} describedBy={errors[`contact-${index}`] ? `contact-${index}-error` : undefined} bind:country={contact.country} bind:digits={contact.value} />
+							{/if}
+							{@render fieldError(`contact-${index}`)}
+						</td>
+						<td data-label="Email" class="mark">
+							{#if contact.kind === 'phone'}<span class="not-applicable" aria-label="Not an email address">–</span>{:else}<input type="checkbox" name="mayEmail" value={contact.key} aria-label="Email {what}" bind:checked={contact.mayEmail} />{/if}
+						</td>
+						<td data-label="Call" class="mark">
+							{#if contact.kind === 'phone'}<input type="checkbox" name="mayCall" value={contact.key} aria-label="Call this number" bind:checked={contact.mayCall} />{:else}<span class="not-applicable" aria-label="Not a phone">–</span>{/if}
+						</td>
+						<td data-label="Text" class="mark">
+							{#if contact.kind === 'phone'}<input type="checkbox" name="mayText" value={contact.key} aria-label="Text this number" bind:checked={contact.mayText} />{:else}<span class="not-applicable" aria-label="Not a phone">–</span>{/if}
+						</td>
+						<td data-label="Preferred" class="mark"><input type="radio" name="preferred" value={contact.key} aria-label="Preferred: {what}" bind:group={preferred} /></td>
+						{@render privateCells()}
+						<td class:remove={contact.kind !== 'sign-in'}>
+							{#if contact.kind !== 'sign-in'}
+								{@render removeButton(`contact-${contact.key}`, what, () => {
+									contacts = contacts.filter((item) => item.key !== contact.key);
+									if (preferred === contact.key) preferred = contacts[0].key;
+								})}
+							{/if}
+						</td>
+					</tr>
+				{/each}
+			</tbody>
+		</table>
+		{@render fieldError('contacts')}
+		<p class="add">
+			<button type="submit" name="add" value="email" class="button button-quiet" formnovalidate onclick={inPlace(() => addContact('email'))}><Plus size={20} strokeWidth={1.75} aria-hidden="true" /> Add email</button>
+			<button type="submit" name="add" value="phone" class="button button-quiet" formnovalidate onclick={inPlace(() => addContact('phone'))}><Plus size={20} strokeWidth={1.75} aria-hidden="true" /> Add phone</button>
 		</p>
-		{#each slots as slot (slot)}
-			<fieldset class="nation">
-				<legend class="visually-hidden">Nation {slot}</legend>
-				<div class="field-row">
-					<div class="field">
-						<label for="nation{slot}Name">Nation {slot}{slot > 1 ? ' (optional)' : ''}</label>
-						{@render fieldError(`nation${slot}Name`)}
+	</section>
+
+	<section aria-labelledby="nations-heading" id="nations">
+		<h2 id="nations-heading">Native nations</h2>
+		<div class="field">
+			<label for="nationAnswer">Are you a citizen of, or connected to, a Native nation?</label>
+			<select id="nationAnswer" name="nationAnswer" bind:value={nationAnswer} onchange={chooseNationAnswer}>
+				<option value="" disabled>Choose</option>
+				{#each nationAnswers as option (option)}<option value={option}>{nationAnswerLabels[option]}</option>{/each}
+			</select>
+		</div>
+		{#if nationAnswer === 'listed'}
+			<table class="rows" id="nation-rows">
+				<caption class="visually-hidden">Nations you are connected to</caption>
+				<thead>
+					<tr><th scope="col">Nation</th><th scope="col">Relationship</th><th scope="col" class="mark">Book</th><th scope="col" class="mark">Website</th><th scope="col"><span class="visually-hidden">Remove</span></th></tr>
+				</thead>
+				<tbody>
+					{#each nations as nation, index (nation.key)}
+						{@const title = nationTitle(nation.identifier, nation.name)}
+						<tr>
+							<td data-label="Nation">
+								<input type="hidden" name="nationRow" value={nation.key} />
+								<SearchableDropdown label="Nation {index + 1}" hideLabel name="nation-{nation.key}" choices={nationChoices} value={nation.identifier} onchange={(value) => (nation.identifier = value)} />
+								{#if nation.identifier === 'other'}
+									<input type="text" class="other-text" name="nationOther-{nation.key}" aria-label="The nation’s name" placeholder="The nation’s name" bind:value={nation.name} />
+								{/if}
+								{@render fieldError(`nation-${index}`)}
+							</td>
+							<td data-label="Relationship">
+								<CheckDropdown
+									name="relationship-{nation.key}"
+									label="Your relationship to {title || `nation ${index + 1}`}"
+									choices={nationRelationships}
+									labels={nationRelationshipLabels}
+									bind:chosen={nation.relationships}
+								/>
+								{#if nation.relationships.includes('other')}
+									<input type="text" class="other-text" name="relationshipOther-{nation.key}" aria-label="Other relationship, in your own words" placeholder="In your own words" bind:value={nation.other} />
+								{/if}
+							</td>
+							{@render useCells(`nation-${nation.key}`, title || 'this nation')}
+							<td class="remove">{@render removeButton(`nation-${nation.key}`, title || 'this nation', () => (nations = nations.filter((item) => item.key !== nation.key)))}</td>
+						</tr>
+					{/each}
+				</tbody>
+			</table>
+			{@render fieldError('nations')}
+			<p class="add"><button type="submit" name="add" value="nation" class="button button-quiet" formnovalidate onclick={inPlace(addNation)}><Plus size={20} strokeWidth={1.75} aria-hidden="true" /> Add a nation</button></p>
+		{/if}
+	</section>
+
+	<section aria-labelledby="background-heading" id="your-background">
+		<h2 id="background-heading">Your background</h2>
+		<div class="field-with-use">
+			<div class="field">
+				<label for="background">Tell us about yourself</label>
+				<p class="hint" id="background-hint">For example: peacemaking, mediation, Tribal courts or law, community roles, writing or research.</p>
+				{@render fieldError('background')}
+				<textarea id="background" name="background" rows="4" aria-describedby="background-hint" aria-invalid={errors.background ? 'true' : undefined} bind:value={background}></textarea>
+				<div class="cv-row" id="curriculum-vitae">
+					{#if shownDocument}
+						<span class="document-name">
+							<FileText size={20} strokeWidth={1.75} aria-hidden="true" />
+							{#if chosenDocument}{chosenDocument}{:else}<a href="/profile/curriculum-vitae">{shownDocument}</a>{/if}
+						</span>
+						<button type="button" class="button button-quiet" onclick={removeDocument}>Remove</button>
+					{/if}
+					<label class="button button-quiet file-button" class:visually-hidden={shownDocument}>
+						<FileUp size={20} strokeWidth={1.75} aria-hidden="true" />
+						Add CV or résumé
+						<input bind:this={documentInput} type="file" name="curriculumVitae" accept=".pdf,.docx,.doc,.odt,.rtf,.txt" class="visually-hidden" onchange={chooseDocument} />
+					</label>
+					{#if !shownDocument}<span class="hint">.pdf, .docx, .odt. Checked for viruses.</span>{/if}
+					{#if removingDocument}<input type="hidden" name="removeCurriculumVitae" value="yes" />{/if}
+				</div>
+				{@render fieldError('curriculumVitae')}
+			</div>
+			<div class="use-private"><PrivateMark /></div>
+		</div>
+
+		<h3 id="languages-heading">Languages</h3>
+		<table class="rows languages" id="language-rows">
+			<caption class="visually-hidden">Languages you speak or read</caption>
+			<thead>
+				<tr>
+					<th scope="col">Language</th>
+					<th scope="col" class="mark">Speak</th>
+					<th scope="col" class="mark">Read</th>
+					<th scope="col" class="mark">Write</th>
+					<th scope="col" class="mark">Book</th>
+					<th scope="col" class="mark">Website</th>
+					<th scope="col"><span class="visually-hidden">Remove</span></th>
+				</tr>
+			</thead>
+			<tbody>
+				{#each spoken as language, index (language.key)}
+					<tr>
+						<td data-label="Language">
+							<input type="hidden" name="languageRow" value={language.key} />
+							<SearchableDropdown label="Language {index + 1}" hideLabel name="language-{language.key}" choices={languageChoices} value={language.code} onchange={(value) => (language.code = value)} />
+							{#if language.code === 'other'}
+								<input type="text" class="other-text" name="languageOther-{language.key}" aria-label="Language name" placeholder="Language name" bind:value={language.other} />
+							{/if}
+							{@render fieldError(`language-${index}`)}
+						</td>
+						<td data-label="Speak" class="mark"><input type="checkbox" name="speaks" value={language.key} aria-label="Speak" bind:checked={language.speaks} /></td>
+						<td data-label="Read" class="mark"><input type="checkbox" name="reads" value={language.key} aria-label="Read" bind:checked={language.reads} /></td>
+						<td data-label="Write" class="mark"><input type="checkbox" name="writes" value={language.key} aria-label="Write" bind:checked={language.writes} /></td>
+						{@render useCells(`language-${language.key}`, 'this language', false)}
+						<td class="remove">{@render removeButton(`language-${language.key}`, 'this language', () => (spoken = spoken.filter((item) => item.key !== language.key)))}</td>
+					</tr>
+				{/each}
+			</tbody>
+		</table>
+		<p class="add"><button type="submit" name="add" value="language" class="button button-quiet" formnovalidate onclick={inPlace(addLanguage)}><Plus size={20} strokeWidth={1.75} aria-hidden="true" /> Add a language</button></p>
+
+		<div class="field-with-use">
+			<div class="field">
+				<label for="organization">Organization, office or school</label>
+				{@render fieldError('organization')}
+				<input type="text" id="organization" name="organization" autocomplete="organization" aria-invalid={errors.organization ? 'true' : undefined} bind:value={organization} />
+			</div>
+			{@render useBoxes('organization', 'your organization')}
+		</div>
+
+		<fieldset class="field-with-use">
+			<div>
+				<legend>Your specialties</legend>
+				{#if chosenSpecialties.length + specialtyOthers.length > 0}
+					<ul class="chips">
+						{#each chosenSpecialties as option (option)}
+							<li>
+								<input type="hidden" name="specialties" value={option} />
+								{specialtyLabels[option]}
+								<button type="button" class="chip-remove" aria-label="Remove {specialtyLabels[option]}" title="Remove" onclick={() => (chosenSpecialties = chosenSpecialties.filter((item) => item !== option))}><X size={16} strokeWidth={2} /></button>
+							</li>
+						{/each}
+						{#each specialtyOthers as other (other)}
+							<li>
+								<input type="hidden" name="specialtyOther" value={other} />
+								{other}
+								<button type="button" class="chip-remove" aria-label="Remove {other}" title="Remove" onclick={() => (specialtyOthers = specialtyOthers.filter((item) => item !== other))}><X size={16} strokeWidth={2} /></button>
+							</li>
+						{/each}
+					</ul>
+				{/if}
+				<div class="short-control">
+					<SearchableDropdown label="Add a specialty" hideLabel choices={specialtyChoices} value={specialtyPick} onchange={addSpecialty} placeholder="Type to search, or pick" />
+				</div>
+				{#if specialtyPick === 'other'}
+					<div class="other-row short-control">
 						<input
 							type="text"
-							id="nation{slot}Name"
-							name="nation{slot}Name"
-							list="nation-titles"
-							value={value(`nation${slot}Name`)}
+							aria-label="Specialty, in your own words"
+							placeholder="In your own words"
+							maxlength="100"
+							bind:value={specialtyOtherDraft}
+							onkeydown={(event) => {
+								if (event.key === 'Enter') {
+									event.preventDefault();
+									addSpecialtyOther();
+								}
+							}}
 						/>
+						<button type="button" class="button button-quiet" onclick={addSpecialtyOther}>Add</button>
 					</div>
-					<div class="field">
-						<label for="nation{slot}Connection">Your connection, in your own words (optional)</label>
-						<input
-							type="text"
-							id="nation{slot}Connection"
-							name="nation{slot}Connection"
-							placeholder="For example: citizen, descendant, I work for the nation"
-							value={value(`nation${slot}Connection`)}
-						/>
-					</div>
-				</div>
-				<div class="choice">
-					<input
-						type="checkbox"
-						id="nation{slot}Credit"
-						name="nation{slot}Credit"
-						value="yes"
-						checked={value(`nation${slot}Credit`) === 'yes'}
-					/>
-					<label for="nation{slot}Credit">Show this nation with my name in credits</label>
-				</div>
-			</fieldset>
-		{/each}
-		{@render fieldError('nations')}
-		<datalist id="nation-titles">
-			{#each data.nationTitles as title (title)}<option value={title}></option>{/each}
-		</datalist>
-	</fieldset>
+				{/if}
+			</div>
+			{@render useBoxes('specialties', 'your specialties', false)}
+		</fieldset>
+	</section>
 
-	<fieldset id="your-background">
-		<legend><h2>Your background</h2></legend>
-		<div class="field">
-			<label for="background">Tell us about yourself (optional)</label>
-			<p class="hint" id="background-hint">
-				For example: experience with peacemaking, mediation, Tribal courts or law; community roles;
-				writing or research you have done. Share only what you are comfortable with.
-			</p>
-			{@render fieldError('background')}
-			<textarea
-				id="background"
-				name="background"
-				rows="6"
-				aria-invalid={errors.background ? 'true' : undefined}
-				aria-describedby={describedBy('background', true)}>{value('background')}</textarea
-			>
-		</div>
-		<div class="field">
-			<label for="languages">Languages you speak or read (optional)</label>
-			<input type="text" id="languages" name="languages" value={value('languages')} />
-		</div>
-		<div class="field">
-			<label for="organization">Organization, office or school (optional)</label>
-			<input
-				type="text"
-				id="organization"
-				name="organization"
-				autocomplete="organization"
-				value={value('organization')}
-			/>
-		</div>
-		<fieldset aria-describedby="specialties-hint">
-			<legend>Your specialties (optional)</legend>
-			<p class="hint" id="specialties-hint">
-				If you have a page on this website, these are shown with your name there and on the People page.
-			</p>
-			{#each specialties as option (option)}
-				<div class="choice">
-					<input
-						type="checkbox"
-						id="specialties-{option}"
-						name="specialties"
-						value={option}
-						checked={chosen('specialties', option)}
-					/>
-					<label for="specialties-{option}">{specialtyLabels[option]}</label>
-				</div>
-			{/each}
+	<section aria-labelledby="help-heading" id="help">
+		<h2 id="help-heading">How you would like to help</h2>
+		<fieldset class="field-with-use">
+			<div>
+				<legend class="visually-hidden">How you would like to help</legend>
+				{@render fieldError('interests')}
+				{#each interests as option (option)}
+					<label class="choice">
+						<input type="checkbox" name="interests" value={option} bind:group={chosenInterests} />
+						<span>{interestLabels[option]} <span class="hint">{interestNextSteps[option]}</span></span>
+					</label>
+				{/each}
+			</div>
+			<div class="use-private"><PrivateMark /></div>
+		</fieldset>
+		<div class="field-with-use">
 			<div class="field">
-				<label for="specialtyOther">Other, in your own words</label>
-				{@render fieldError('specialtyOther')}
-				<input
-					type="text"
-					id="specialtyOther"
-					name="specialtyOther"
-					maxlength="100"
-					value={value('specialtyOther')}
-					aria-invalid={errors.specialtyOther ? 'true' : undefined}
-				/>
+				<label for="availability">How much time you have</label>
+				<select id="availability" name="availability" bind:value={availability}>
+					<option value="">Choose</option>
+					{#each availabilities as option (option)}<option value={option}>{availabilityLabels[option]}</option>{/each}
+				</select>
 			</div>
-		</fieldset>
-	</fieldset>
+			<div class="use-private"><PrivateMark /></div>
+		</div>
+	</section>
 
-	<fieldset id="help">
-		<legend><h2>How you would like to help</h2></legend>
-		{@render fieldError('interests')}
-		{#each interests as option (option)}
-			<div class="choice">
-				<input
-					type="checkbox"
-					id="interests-{option}"
-					name="interests"
-					value={option}
-					checked={chosen('interests', option)}
-					aria-describedby="interests-{option}-hint"
-				/>
-				<label for="interests-{option}">
-					{interestLabels[option]}
-					<span class="hint" id="interests-{option}-hint">{interestNextSteps[option]}</span>
-				</label>
+	<section aria-labelledby="credit-heading" id="credit">
+		<h2 id="credit-heading">Credit</h2>
+		<div class="field-with-use">
+			<div class="field">
+				<label for="description">A description, to use in place of a name</label>
+				{@render fieldError('description')}
+				<input type="text" id="description" name="description" placeholder="For example: a peacemaker from the nation" aria-invalid={errors.description ? 'true' : undefined} bind:value={description} />
 			</div>
-		{/each}
-		<fieldset>
-			<legend>How much time you have (optional)</legend>
-			{#each availabilities as option (option)}
-				<div class="choice">
-					<input
-						type="radio"
-						id="availability-{option}"
-						name="availability"
-						value={option}
-						checked={value('availability') === option}
-					/>
-					<label for="availability-{option}">{availabilityLabels[option]}</label>
-				</div>
-			{/each}
-		</fieldset>
-	</fieldset>
-
-	<fieldset id="credit">
-		<legend><h2>Credit</h2></legend>
-		<p class="hint">
-			People who help may be credited in the book and on the website. The lead author decides where a
-			credit goes (for example the acknowledgments or the list of contributors); you decide how it
-			reads. You will see it exactly as it will be printed before you confirm.
-		</p>
-		<fieldset>
-			<legend>How would you like to be credited?</legend>
-			{@render fieldError('creditForm')}
-			{#each creditForms as option (option)}
-				<div class="choice">
-					<input
-						type="radio"
-						id="creditForm-{option}"
-						name="creditForm"
-						value={option}
-						checked={value('creditForm') === option}
-					/>
-					<label for="creditForm-{option}">{creditFormLabels[option]}</label>
-				</div>
-			{/each}
-		</fieldset>
-		<div class="field">
-			<label for="creditName">Your name as it should be printed, if different (optional)</label>
-			<p class="hint" id="creditName-hint">
-				For example with your Native name, a middle initial, or diacritics. Left empty, we print your
-				first and last names.
-			</p>
-			<input
-				type="text"
-				id="creditName"
-				name="creditName"
-				value={value('creditName')}
-				aria-describedby="creditName-hint"
-			/>
+			{@render useBoxes('description', 'this description')}
 		</div>
-		<div class="field">
-			<label for="creditRole">The description to print, if you chose a description</label>
-			{@render fieldError('creditRole')}
-			<input
-				type="text"
-				id="creditRole"
-				name="creditRole"
-				placeholder="For example: a peacemaker from the nation"
-				value={value('creditRole')}
-				aria-invalid={errors.creditRole ? 'true' : undefined}
-				aria-describedby={describedBy('creditRole')}
-			/>
-		</div>
-		<div class="field">
-			<label for="creditPseudonym">The name to print, if you chose a name</label>
-			{@render fieldError('creditPseudonym')}
-			<input
-				type="text"
-				id="creditPseudonym"
-				name="creditPseudonym"
-				value={value('creditPseudonym')}
-				aria-invalid={errors.creditPseudonym ? 'true' : undefined}
-				aria-describedby={describedBy('creditPseudonym')}
-			/>
-		</div>
-		<fieldset>
-			<legend>Where</legend>
-			<div class="choice">
-				<input
-					type="checkbox"
-					id="creditInBook"
-					name="creditInBook"
-					value="yes"
-					checked={value('creditInBook') === 'yes'}
-				/>
-				<label for="creditInBook">In the book (print and ebook)</label>
+		<div class="field-with-use">
+			<div class="field">
+				<label for="biography">A short biography</label>
+				<p class="hint" id="biography-hint">Two or three sentences. Asked of writers.</p>
+				{@render fieldError('biography')}
+				<textarea id="biography" name="biography" rows="3" aria-describedby="biography-hint" aria-invalid={errors.biography ? 'true' : undefined} bind:value={biography}></textarea>
 			</div>
-			<div class="choice">
-				<input
-					type="checkbox"
-					id="creditOnWebsite"
-					name="creditOnWebsite"
-					value="yes"
-					checked={value('creditOnWebsite') === 'yes'}
-				/>
-				<label for="creditOnWebsite">On the website</label>
+			{@render useBoxes('biography', 'your biography', true, true)}
+		</div>
+		<dl class="credit-preview" aria-live="polite">
+			<div>
+				<dt>In the book</dt>
+				<dd class="credit-line" class:muted={!bookCredit}>{bookCredit || 'No credit'}</dd>
 			</div>
-		</fieldset>
-		<div class="field">
-			<label for="biography">A short biography (optional; asked of writers)</label>
-			<p class="hint" id="biography-hint">
-				Two or three sentences, written as you would like them printed in the list of contributors.
-			</p>
-			{@render fieldError('biography')}
-			<textarea
-				id="biography"
-				name="biography"
-				rows="4"
-				aria-invalid={errors.biography ? 'true' : undefined}
-				aria-describedby={describedBy('biography', true)}>{value('biography')}</textarea
-			>
-		</div>
-		<div class="choice">
-			<input
-				type="checkbox"
-				id="biographyInCredits"
-				name="biographyInCredits"
-				value="yes"
-				checked={value('biographyInCredits') === 'yes'}
-			/>
-			<label for="biographyInCredits">
-				Print my biography with my credit
-				<span class="hint">Not used with a description-only credit, because it could identify you.</span>
-			</label>
-		</div>
-	</fieldset>
+			<div>
+				<dt>On the website</dt>
+				<dd class="credit-line" class:muted={!websiteCredit}>{websiteCredit || 'No credit'}</dd>
+				{#if websiteCredit && websiteExtras.length > 0}<dd class="small muted">With your {websiteExtras.join(', ')}</dd>{/if}
+			</div>
+		</dl>
+	</section>
 
 	<div class="actions">
-		<button class="button" type="submit" name="next" value="review">Continue to check your answers</button>
-		<button class="button button-quiet" type="submit" name="next" value="later">Save and finish later</button>
+		<button class="button" type="submit" name="next" value="review">Review and confirm</button>
+		<button class="button button-quiet" type="submit" name="next" value="later">Save draft</button>
 	</div>
 </form>
 
 <style>
+	.profile-form section {
+		margin: 0 0 var(--space-6);
+	}
+
+	.profile-form h2 {
+		margin-bottom: var(--space-3);
+		padding-bottom: var(--space-2);
+		border-bottom: 1px solid var(--color-line);
+	}
+
+	.profile-form h3 {
+		margin: var(--space-4) 0 var(--space-2);
+	}
+
 	fieldset {
 		border: 0;
-		margin: 0 0 var(--space-5);
+		margin: 0;
 		padding: 0;
 		min-width: 0;
 	}
 
 	legend {
 		padding: 0;
-	}
-
-	legend h2 {
-		margin-bottom: var(--space-2);
-	}
-
-	fieldset > fieldset > legend {
 		font-weight: var(--font-weight-semibold);
 		margin-bottom: var(--space-1);
 	}
 
-	fieldset.nation {
-		border-left: 4px solid var(--color-line);
-		padding-left: var(--space-4);
-		margin-bottom: var(--space-4);
+	/* A field, or a group of choices, with where it may appear on the right, lined up with the Book and Website columns of the tables. */
+	.field-with-use {
+		--mark-width: 5rem;
+		display: grid;
+		/* The last track matches the tables' Remove column, so every Book, Website and Private mark lines up. */
+		grid-template-columns: minmax(0, 1fr) var(--mark-width) var(--mark-width) var(--layout-target-minimum);
+		gap: 0;
+		align-items: end;
+		margin: 0 0 var(--space-4);
+	}
+
+	.profile-form select {
+		font-size: inherit;
+		padding: 0 var(--space-3);
+		min-width: 12rem;
+	}
+
+	.field-with-use > :first-child {
+		min-width: 0;
+	}
+
+	.field-with-use .field {
+		margin: 0;
+	}
+
+	/* Outside a table each box carries its own small Book or Website label, centered over the box as the column header is in a table. */
+	.use-box {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		gap: var(--space-1);
+		font-size: var(--font-size-small);
+		color: var(--color-ink-muted);
+		cursor: pointer;
+	}
+
+	.use-box input {
+		width: 1.25rem;
+		height: 1.25rem;
+		margin: 0 0 0.6rem;
+	}
+
+	.use-box .not-applicable {
+		line-height: 1.25rem;
+		margin-bottom: 0.6rem;
+	}
+
+	div.use-private {
+		grid-column: span 2;
+		display: flex;
+		justify-content: center;
+	}
+
+	.picture-row {
+		--mark-width: 5rem;
+		display: grid;
+		grid-template-columns: auto minmax(0, 1fr) var(--mark-width) var(--mark-width) var(--layout-target-minimum);
+		column-gap: 0;
+		align-items: center;
+		margin: 0 0 var(--space-4);
+	}
+
+	.avatar {
+		overflow: hidden;
+		margin-right: var(--space-4);
+		display: grid;
+		place-items: center;
+		width: 6rem;
+		height: 6rem;
+		border-radius: 50%;
+		background: var(--color-surface);
+		border: 2px dashed var(--color-control-border);
+		color: var(--color-ink-muted);
+	}
+
+	.avatar.has-picture {
+		border-style: solid;
+	}
+
+	.avatar img {
+		width: 100%;
+		height: 100%;
+		object-fit: cover;
+	}
+
+	.file-actions {
+		display: flex;
+		flex-wrap: wrap;
+		gap: var(--space-2);
+	}
+
+	.document-name {
+		display: inline-flex;
+		align-items: center;
+		gap: var(--space-2);
+		overflow-wrap: anywhere;
+	}
+
+	.cv-row {
+		display: flex;
+		flex-wrap: wrap;
+		align-items: center;
+		gap: var(--space-2) var(--space-3);
+		margin-top: var(--space-2);
+	}
+
+	.cv-row .hint {
+		margin: 0;
+	}
+
+	.field-label {
+		display: block;
+		font-weight: var(--font-weight-semibold);
+		margin-bottom: var(--space-1);
+	}
+
+	.short-control {
+		max-width: 20rem;
+	}
+
+	.picture-actions .hint {
+		margin: var(--space-1) 0 0;
+	}
+
+	.file-button {
+		gap: var(--space-2);
+		position: relative;
+	}
+
+	.file-button:focus-within {
+		outline: 3px solid var(--color-focus-ring);
+		box-shadow: 0 0 0 6px var(--color-focus);
+	}
+
+	table.rows {
+		margin: 0;
+		font-size: var(--font-size-base, 1rem);
+	}
+
+	table.rows th {
+		font-size: var(--font-size-small);
+		white-space: nowrap;
+	}
+
+	table.rows td {
+		vertical-align: middle;
+		padding: var(--space-2);
+	}
+
+	table.rows th {
+		padding: var(--space-2);
+	}
+
+	table.rows .mark {
+		width: 5rem;
+		box-sizing: border-box;
+		text-align: center;
+	}
+
+	table.rows td.use-private {
+		text-align: center;
+	}
+
+	table.rows .mark input {
+		width: 1.25rem;
+		height: 1.25rem;
+		margin: 0;
+	}
+
+	table.rows .remove,
+	table.rows th:last-child {
+		width: var(--layout-target-minimum);
+		padding-left: 0;
+		padding-right: 0;
+	}
+
+	table.rows input[type='text'],
+	table.rows input[type='email'],
+	table.rows select {
+		width: 100%;
+		max-width: none;
+	}
+
+	.name-pair {
+		display: grid;
+		grid-template-columns: 1fr 1fr;
+		gap: var(--space-2);
+	}
+
+	.fixed-kind {
+		color: var(--color-ink-muted);
+		font-size: var(--font-size-small);
+	}
+
+	.sign-in-email {
+		font-weight: var(--font-weight-semibold);
+		overflow-wrap: anywhere;
+	}
+
+	.not-applicable {
+		color: var(--color-ink-muted);
+	}
+
+	.other-text {
+		margin-top: var(--space-2);
+	}
+
+	.add {
+		display: flex;
+		flex-wrap: wrap;
+		gap: var(--space-2);
+		margin: var(--space-2) 0 var(--space-4);
+	}
+
+	.add .button {
+		gap: var(--space-2);
 	}
 
 	.choice {
 		display: flex;
-		gap: var(--space-3);
+		gap: var(--space-2);
 		align-items: flex-start;
-		margin: var(--space-3) 0;
+		margin: var(--space-2) 0;
 	}
 
 	.choice input {
-		margin-top: 0.3em;
 		width: 1.25rem;
 		height: 1.25rem;
+		margin-top: 0.15em;
 		flex: none;
 	}
 
 	.choice .hint {
 		display: block;
+		margin: 0;
 	}
 
-	.field-row {
+	.chips {
+		display: flex;
+		flex-wrap: wrap;
+		gap: var(--space-2);
+		margin: 0 0 var(--space-2);
+		padding: 0;
+		list-style: none;
+	}
+
+	.chips li {
+		display: inline-flex;
+		align-items: center;
+		gap: var(--space-1);
+		padding: 0 0 0 var(--space-3);
+		border: 1px solid var(--color-line);
+		border-radius: 999px;
+		background: var(--color-surface);
+	}
+
+	.chip-remove {
+		display: inline-grid;
+		place-items: center;
+		width: 2.25rem;
+		height: 2.25rem;
+		border: 0;
+		border-radius: 50%;
+		background: transparent;
+		color: inherit;
+		cursor: pointer;
+	}
+
+	.chip-remove:hover {
+		background: color-mix(in srgb, currentColor 14%, transparent);
+	}
+
+	.other-row {
+		display: flex;
+		gap: var(--space-2);
+		margin-top: var(--space-2);
+	}
+
+
+	.birthday {
 		display: flex;
 		flex-wrap: wrap;
 		gap: 0 var(--space-4);
+		align-items: center;
+		margin-top: var(--space-3);
 	}
 
-	.field-row .field {
-		flex: 1 1 14rem;
+	.birthday legend {
+		width: 100%;
+		font-weight: normal;
+	}
+
+
+
+	.credit-preview {
+		padding: var(--space-3) var(--space-4);
+		border-left: 4px solid var(--color-link);
+		background: var(--color-surface);
+		border-radius: var(--radius-control);
+	}
+
+
+	.credit-preview {
+		display: grid;
+		gap: var(--space-3);
+		margin: 0;
+	}
+
+	.credit-preview dt {
+		font-size: var(--font-size-small);
+		color: var(--color-ink-muted);
+	}
+
+	.credit-preview dd {
+		margin: 0;
+	}
+
+	.credit-line {
+		font-family: var(--font-family-reading);
+		font-size: var(--font-size-lead);
 	}
 
 	.actions {
@@ -563,5 +1153,110 @@
 		flex-wrap: wrap;
 		gap: var(--space-3);
 		margin-top: var(--space-5);
+	}
+
+	/* On a phone each row becomes a card, with the column names written beside the boxes. */
+	@container (max-width: 40rem) {
+		table.rows,
+		table.rows tbody,
+		table.rows tr,
+		table.rows td {
+			display: block;
+			width: auto;
+		}
+
+		table.rows thead {
+			position: absolute;
+			width: 1px;
+			height: 1px;
+			overflow: hidden;
+			clip-path: inset(50%);
+		}
+
+		table.rows tr {
+			position: relative;
+			margin: 0 0 var(--space-3);
+			padding: var(--space-2) var(--space-2) var(--space-2) var(--space-3);
+			border: 1px solid var(--color-line);
+			border-radius: var(--radius-control);
+		}
+
+		table.rows td {
+			border: 0;
+			padding: var(--space-1) 0;
+		}
+
+		table.rows td.mark,
+		table.rows td.use-private {
+			display: inline-flex;
+			align-items: center;
+			gap: var(--space-2);
+			width: auto;
+			margin-right: var(--space-3);
+		}
+
+		table.rows td.mark::before {
+			content: attr(data-label);
+			font-size: var(--font-size-small);
+		}
+
+		table.rows td.mark:has(.not-applicable) {
+			display: none;
+		}
+
+		table.rows td.remove {
+			position: absolute;
+			top: var(--space-1);
+			right: var(--space-1);
+			width: auto;
+		}
+
+		table.rows td.remove:empty {
+			display: none;
+		}
+
+		table.rows tr:has(td.remove:not(:empty)) td:first-child {
+			padding-right: calc(var(--layout-target-minimum) + var(--space-1));
+		}
+
+		.fixed-kind {
+			display: none !important;
+		}
+
+		.name-pair {
+			grid-template-columns: 1fr;
+		}
+
+		.field-with-use {
+			grid-template-columns: auto auto 1fr;
+			align-items: center;
+		}
+
+		.field-with-use > :first-child {
+			grid-column: 1 / -1;
+		}
+
+		.picture-row {
+			grid-template-columns: auto auto 1fr;
+		}
+
+		.picture-row > .picture-actions {
+			grid-column: 2 / -1;
+		}
+
+		.use-box {
+			flex-direction: row-reverse;
+			margin: var(--space-2) var(--space-4) 0 0;
+		}
+
+		.use-box input,
+		.use-box .not-applicable {
+			margin: 0;
+		}
+
+		div.use-private {
+			justify-content: flex-start;
+			margin-top: var(--space-1);
+		}
 	}
 </style>

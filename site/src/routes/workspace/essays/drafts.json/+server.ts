@@ -1,28 +1,49 @@
 /**
- * The essays in one part (?part=foundations, essays or back-matter) that
- * are not published yet and that this person can open, so the part's index
- * page can list them for the people working on them (EssayIndex.svelte).
- * Readers never see these; a page not published yet shows them only that.
+ * What a part's index page (?part=foundations, essays or back-matter) shows
+ * the people working on its essays (EssayIndex.svelte): the essays not
+ * published yet that this person can open, where each essay they can open
+ * stands (a draft newer than the published version, sections in review), and
+ * whether they may start a new essay there. Readers never see any of this.
+ * Workspace › Essays, which listed the same, was removed (lead author,
+ * Nov. 23, 2026).
  */
 import { error, json } from '@sveltejs/kit';
 import { atLeast } from '#lib/permissions.ts';
-import { essayParts, essayPath, listEssays, type EssayPart } from '#lib/server/essays.ts';
-import { levelOn } from '#lib/server/essay-workspace.ts';
+import { essayParts, essayPath, listEssays, startableEssayParts, type EssayPart } from '#lib/server/essays.ts';
+import { canStartEssays, levelOn } from '#lib/server/essay-workspace.ts';
+import { openReviewCounts } from '#lib/server/essay-review-requests.ts';
 import { requirePersonForData, storage } from '#lib/server/workspace.ts';
 import type { RequestHandler } from './$types';
 
 export const prerender = false;
+
+/** Where an essay stands, for its badges on the index page. */
+export interface EssayStanding {
+	/** A saved version newer than the published one. */
+	draft: boolean;
+	/** Open review requests. */
+	inReview: number;
+}
 
 export const GET: RequestHandler = async (event) => {
 	const person = requirePersonForData(event);
 	const part = event.url.searchParams.get('part') as EssayPart | null;
 	if (!part || !(essayParts as readonly string[]).includes(part)) error(400, 'Say which part.');
 	const { database } = storage(event);
-	const unpublished = (await listEssays(database)).filter((essay) => essay.part === part && !essay.published);
+	const [essays, reviews, canStart] = await Promise.all([listEssays(database), openReviewCounts(database), canStartEssays(database, person)]);
 	const drafts = [];
-	for (const essay of unpublished) {
+	const standing: Record<string, EssayStanding> = {};
+	for (const essay of essays.filter((candidate) => candidate.part === part)) {
 		const level = await levelOn(database, person, essay.identifier);
-		if (atLeast(level, 'comment')) drafts.push({ identifier: essay.identifier, title: essay.title, link: essayPath(essay.identifier, essay.part), canEdit: atLeast(level, 'contribute') });
+		if (!atLeast(level, 'comment')) continue;
+		if (!essay.published) drafts.push({ identifier: essay.identifier, title: essay.title, link: essayPath(essay.identifier, essay.part), canEdit: atLeast(level, 'contribute') });
+		standing[essay.identifier] = {
+			draft: essay.published !== null && essay.latestVersion !== null && essay.latestVersion > essay.published.versionNumber,
+			inReview: reviews.get(essay.identifier) ?? 0
+		};
 	}
-	return json({ drafts }, { headers: { 'Cache-Control': 'private, no-store' } });
+	return json(
+		{ drafts, standing, canStart: canStart && startableEssayParts.includes(part) },
+		{ headers: { 'Cache-Control': 'private, no-store' } }
+	);
 };

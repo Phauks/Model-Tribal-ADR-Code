@@ -40,6 +40,8 @@ export interface EssayPageState {
 	you: { identifier: string; name: string } | null;
 	/** The person's own work, for "Your work" in the sidebar while editing; set by the page's route. */
 	work?: YourWork;
+	/** Whether the person may start a new essay, for "New essay" beside the section in the sidebar; set by the page's route. */
+	canStart?: boolean;
 }
 
 export async function essayPageState(

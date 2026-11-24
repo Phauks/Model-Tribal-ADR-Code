@@ -32,6 +32,15 @@
  */
 
 const marker = 'data-resizable-columns';
+/** The header cells each table had when its handles were made: when a reader hides or adds a column, the handles are made again. */
+const attachedCells = new WeakMap<HTMLTableElement, HTMLTableCellElement[]>();
+
+/** Whether a table's header cells are no longer the ones its handles were made for. */
+function headerChanged(table: HTMLTableElement): boolean {
+	const now = table.tHead?.rows[0]?.cells;
+	const then = attachedCells.get(table);
+	return !now || !then || now.length !== then.length || then.some((cell, index) => now[index] !== cell);
+}
 const storagePrefix = 'table-column-widths:';
 /** Narrowest a column can be made, in em. */
 const narrowest = 3;
@@ -137,10 +146,13 @@ function writeWidths(key: string, widths: number[] | undefined) {
  * Gives one table resizable columns. Returns a function that takes the
  * handles away again and puts the table back as it was.
  */
-export function resizableColumns(table: HTMLTableElement, key: string): () => void {
+export function resizableColumns(table: HTMLTableElement, place: string): () => void {
 	const header = table.tHead!.rows[0];
 	const cells = [...header.cells];
+	attachedCells.set(table, cells);
 	const names = cells.map((cell, index) => cell.textContent?.replace(/\s+/g, ' ').trim() || `Column ${index + 1}`);
+	// Widths are kept for each set of columns, so a reader who hides or adds a column and later puts it back finds the widths they had.
+	const key = `${place}:${names.join('|')}`;
 	let widths: number[] | undefined;
 
 	const columnGroup = document.createElement('colgroup');
@@ -326,7 +338,7 @@ export function resizableTables(root: HTMLElement): () => void {
 
 	const scan = () => {
 		for (const [table, remove] of undo) {
-			if (!table.isConnected) {
+			if (!table.isConnected || headerChanged(table)) {
 				remove();
 				undo.delete(table);
 			}

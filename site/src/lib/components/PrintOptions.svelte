@@ -1,7 +1,7 @@
 <script lang="ts">
 	// Print button and dialog (site/DESIGN.md, section 6, "Print"). The
-	// button is an icon in the masthead, beside Download, Report a
-	// problem and Contribute (Trevor, Nov. 22, 2026), and acts on the page
+	// button is an icon in the masthead, beside Download and Report a
+	// problem (Trevor, Nov. 22, 2026), and acts on the page
 	// the reader is on. Like the
 	// delivery dialogs of legal research services, it lets a reader choose
 	// what prints (the parts this page has) and how it is laid out, then opens

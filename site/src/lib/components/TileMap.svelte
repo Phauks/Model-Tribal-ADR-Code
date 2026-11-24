@@ -4,6 +4,15 @@
 	/** The views of the map on /nations/map; each is a set of layers over the same basemap. The shaded views color the land areas by a fact about their nations (src/lib/shaded-map-views.ts). */
 	export type TileMapView = 'states' | 'regions' | 'lands' | ShadedMapView;
 
+	/** The base maps under the project's layers (Trevor, 2026-11-24, mockup 1A): the site's own map of towns, roads and water, or a picture from the U.S. Geological Survey's National Map, fetched through the site (src/lib/server/map-imagery.ts). */
+	export type TileMapBase = 'map' | 'satellite' | 'terrain' | 'topographic';
+	export const tileMapBases: { value: TileMapBase; label: string; credit?: string }[] = [
+		{ value: 'map', label: 'Map' },
+		{ value: 'satellite', label: 'Satellite', credit: 'USGS The National Map: Orthoimagery' },
+		{ value: 'terrain', label: 'Terrain', credit: 'USGS The National Map: Shaded Relief' },
+		{ value: 'topographic', label: 'Topographic', credit: 'USGS The National Map' }
+	];
+
 	/** Where the map is looking, kept by the page so that changing views keeps the reader's place. */
 	export interface TileMapCamera {
 		center: [number, number];
@@ -33,7 +42,7 @@
 	// Ways to zoom and move: the + and - buttons, the keyboard once the map has focus (arrows move, + and - zoom), the scroll wheel over the map, a trackpad pinch, and two fingers on a touch screen. On a touch screen one finger still scrolls the page, and MapLibre says to use two, so the map never traps a reader scrolling past it.
 	//
 	// Small land areas get a dot until their outline is big enough to see, and nearby dots are grouped into numbered circles when zoomed out. Selecting a place goes to its row in the table.
-	import { onMount } from 'svelte';
+	import { onMount, tick } from 'svelte';
 	import type { Map as MapLibreMap, StyleSpecification, LayerSpecification, ExpressionSpecification, FilterSpecification } from 'maplibre-gl';
 	import type { TileMapData } from '#lib/server/nations-map.ts';
 	import { motionDuration, motionEasing } from '#lib/motion.ts';
@@ -47,7 +56,8 @@
 		shape = $bindable('flat'),
 		onready,
 		onfail,
-		onselect
+		onselect,
+		opening: openingBox
 	}: {
 		view: TileMapView;
 		/** For a shaded view: shade each nation's land areas, or each state by the category most of its nations have. */
@@ -63,6 +73,8 @@
 		onfail?: () => void;
 		/** Called with what a selected place goes to: a row's id, or a nation's page (/nations/<id>) for an office with no row. Without it, a row is reached through the address and a page is opened. */
 		onselect?: (anchor: string) => void;
+		/** Where the map opens, and where its reset button goes back to, [west, south, east, north] in degrees: a state's page opens on the state (Trevor, 2026-11-24). Without it the map opens on the 48 contiguous states, or on a nation's lands. */
+		opening?: [number, number, number, number];
 	} = $props();
 
 	const oneNation = $derived(given !== undefined);
@@ -75,6 +87,10 @@
 	};
 	/** Lucide's rotate-ccw icon, for the button that puts the map back as it opened. */
 	const resetIcon = lucide('<path d="M3 12a9 9 0 1 0 9-9 9.75 9.75 0 0 0-6.74 2.74L3 8"/><path d="M3 3v5h5"/>');
+	/** Lucide's layers icon, for the base map button. */
+	const layersIcon = lucide('<path d="m12.83 2.18a2 2 0 0 0-1.66 0L2.6 6.08a1 1 0 0 0 0 1.83l8.58 3.91a2 2 0 0 0 1.66 0l8.58-3.9a1 1 0 0 0 0-1.83Z"/><path d="m22 17.65-9.17 4.16a2 2 0 0 1-1.66 0L2 17.65"/><path d="m22 12.65-9.17 4.16a2 2 0 0 1-1.66 0L2 12.65"/>');
+	const layersIdentifier = $props.id();
+	const layersMenuId = `map-layers-${layersIdentifier}`;
 	/** Lucide's maximize and minimize icons, for the full screen button. */
 	const fullScreenIcons = {
 		enter: lucide('<path d="M8 3H5a2 2 0 0 0-2 2v3"/><path d="M21 8V5a2 2 0 0 0-2-2h-3"/><path d="M3 16v3a2 2 0 0 0 2 2h3"/><path d="M16 21h3a2 2 0 0 0 2-2v-3"/>'),
@@ -102,6 +118,86 @@
 	/** Redraws the map's layers for the view, the theme and the shape, keeping the map, its place and its tiles. */
 	let restyleMap: (() => Promise<void>) | undefined;
 	let ready = $state(false);
+
+	/**
+	 * The base map and what is drawn on it, chosen from the Layers button (mockup 1A) and remembered on the device, as the key's open or closed state is. Every map on the site shares them.
+	 */
+	const baseStorage = 'map-base';
+	const placeNamesStorage = 'map-place-names';
+	const outlinesStorage = 'map-land-outlines';
+	function stored(key: string): string | null {
+		try {
+			return localStorage.getItem(key);
+		} catch {
+			return null;
+		}
+	}
+	function store(key: string, value: string): void {
+		try {
+			localStorage.setItem(key, value);
+		} catch {
+			// Storage can be off, as in a private window; the choice then lasts for this page.
+		}
+	}
+	const storedBase = typeof window === 'undefined' ? null : stored(baseStorage);
+	let baseMap = $state<TileMapBase>(tileMapBases.some((entry) => entry.value === storedBase) ? (storedBase as TileMapBase) : 'map');
+	let placeNames = $state(typeof window === 'undefined' || stored(placeNamesStorage) !== 'off');
+	let outlines = $state(typeof window === 'undefined' || stored(outlinesStorage) !== 'off');
+	let layersOpen = $state(false);
+	let layersButton: HTMLButtonElement | undefined;
+	let layersMenu: HTMLElement | undefined = $state();
+	let layersMenuBottom = $state(0);
+	/** Whether the view draws land areas, so the outline switch has something to turn off. */
+	const hasLandAreas = $derived(oneNation || view === 'lands' || (isShadedMapView(view) && by === 'nation'));
+
+	$effect(() => {
+		store(baseStorage, baseMap);
+		store(placeNamesStorage, placeNames ? 'on' : 'off');
+		store(outlinesStorage, outlines ? 'on' : 'off');
+	});
+	// A new base map or switch redraws the map's layers on the same map, as changing the view does.
+	let styledWith = '';
+	$effect(() => {
+		const wanted = `${baseMap} ${placeNames} ${outlines}`;
+		if (!ready || !map) return;
+		if (styledWith === '') styledWith = wanted;
+		if (wanted === styledWith) return;
+		styledWith = wanted;
+		void restyleMap?.();
+	});
+
+	/**
+	 * Places the menu beside the Layers button where it fits. On a short map, or when choosing a picture adds a row, it moves down so it never reaches past the map's top.
+	 */
+	function placeLayers(): void {
+		if (!layersOpen || !layersButton || !container || !layersMenu) return;
+		const box = container.getBoundingClientRect();
+		const besideButton = Math.max(8, box.bottom - layersButton.getBoundingClientRect().bottom);
+		layersMenuBottom = Math.max(8, Math.min(besideButton, box.height - 8 - layersMenu.offsetHeight));
+	}
+	$effect(() => {
+		if (!layersMenu) return;
+		const watcher = new ResizeObserver(placeLayers);
+		watcher.observe(layersMenu);
+		return () => watcher.disconnect();
+	});
+
+	function toggleLayers(): void {
+		layersOpen = !layersOpen;
+		if (layersOpen) {
+			void tick().then(() => {
+				placeLayers();
+				layersMenu?.querySelector<HTMLElement>('input:checked')?.focus();
+			});
+		}
+		layersButton?.setAttribute('aria-expanded', String(layersOpen));
+	}
+	function closeLayers(returnFocus: boolean): void {
+		if (!layersOpen) return;
+		layersOpen = false;
+		layersButton?.setAttribute('aria-expanded', 'false');
+		if (returnFocus) layersButton?.focus();
+	}
 
 	let dataLoading: Promise<TileMapData> | undefined;
 	/** The map's data is the same for every view, so it is fetched once a page. */
@@ -163,6 +259,8 @@
 			line: token('control-border'),
 			focus: token('focus'),
 			surface: token('surface'),
+			action: token('action'),
+			actionText: token('action-text'),
 			classes: [0, 1, 2, 3, 4].map((step) => token(`map-class-${step}`))
 		};
 		// Where there are no basemap tiles, the background reads as water, with the world's land drawn on it from the basemap's one whole-world tile (see the "world" source below).
@@ -198,6 +296,15 @@
 		if (view === 'states') {
 			fills.push({ id: 'states', type: 'fill', source: 'places', 'source-layer': 'states', paint: { 'fill-color': hovered(stateShade), 'fill-opacity': 0.85 } });
 			tops.push({ id: 'states-lines', type: 'line', source: 'places', 'source-layer': 'states', paint: { 'line-color': colors.line, 'line-width': 0.8 } });
+			// Each state's name and its number of nations, as on the approved States view (map engine mockup 4). On the two darkest shades the words are paper with an ink halo, so they keep their contrast, as on the drawn map.
+			const onDark: ExpressionSpecification = ['>=', ['get', 'countClass'], 3];
+			tops.push({
+				id: 'states-names',
+				type: 'symbol',
+				source: 'state-names',
+				layout: { 'text-field': ['concat', ['get', 'name'], '\n', ['to-string', ['get', 'count']]], 'text-font': ['Noto Sans Medium'], 'text-size': 12, 'text-max-width': 8, 'text-padding': 2 },
+				paint: { 'text-color': ['case', onDark, colors.paper, colors.ink], 'text-halo-color': ['case', onDark, colors.ink, colors.paper], 'text-halo-width': 1.5 }
+			});
 		} else if (view === 'regions') {
 			fills.push({ id: 'regions', type: 'fill', source: 'regions', paint: { 'fill-color': hovered(colors.classes[1]), 'fill-opacity': 0.75 } });
 			tops.push({ id: 'regions-lines', type: 'line', source: 'regions', paint: { 'line-color': colors.classes[4], 'line-width': 1.4 } });
@@ -281,7 +388,8 @@
 					source: 'area-points',
 					filter: ['has', 'point_count'],
 					paint: {
-						'circle-color': colors.classes[3],
+						// Orange, the action color, so the numbered circles stand out from the teal areas (map engine mockup).
+						'circle-color': colors.action,
 						'circle-radius': ['step', ['get', 'point_count'], 12, 10, 16, 40, 21],
 						'circle-stroke-color': colors.paper,
 						'circle-stroke-width': 1.5
@@ -293,7 +401,7 @@
 					source: 'area-points',
 					filter: ['has', 'point_count'],
 					layout: { 'text-field': ['get', 'point_count_abbreviated'], 'text-font': ['Noto Sans Medium'], 'text-size': 12, 'text-allow-overlap': true },
-					paint: { 'text-color': colors.paper }
+					paint: { 'text-color': colors.actionText }
 				},
 				{
 					id: 'area-dots',
@@ -351,6 +459,30 @@
 			);
 		}
 
+		// On a picture base map the shades let the picture show through, and land areas are outlined in a light orange that reads on photos (mockup 1A). The reader can also turn the land area outlines off, and on a picture keep or drop the place names and roads.
+		const picture = baseMap !== 'map';
+		const landLayers = new Set(['land-areas', 'land-areas-lines']);
+		const shownFills = fills.filter((layer) => outlines || !landLayers.has(layer.id));
+		const shownTops = tops.filter((layer) => outlines || !landLayers.has(layer.id));
+		if (picture) {
+			const onPictureLine = token('band-progress');
+			for (const layer of shownFills) {
+				if (layer.type === 'fill' && layer.paint) layer.paint['fill-opacity'] = layer.id === 'land-areas' && !isShadedMapView(view) ? 0.2 : 0.6;
+			}
+			for (const layer of shownTops) {
+				if (layer.id === 'land-areas-lines' && layer.type === 'line' && layer.paint) {
+					layer.paint['line-color'] = isShadedMapView(view) ? colors.paper : onPictureLine;
+					layer.paint['line-width'] = ['interpolate', ['linear'], ['zoom'], 3, 1, 10, 2];
+				}
+			}
+		}
+		const imagery: LayerSpecification[] = picture
+			? [
+					{ id: 'background', type: 'background', paint: { 'background-color': colors.surface } },
+					{ id: 'imagery', type: 'raster', source: `imagery-${baseMap}` }
+				]
+			: [];
+
 		const origin = location.origin;
 		return {
 			version: 8,
@@ -364,6 +496,18 @@
 					maxzoom: data.tiles.maximumZoom,
 					attribution: '<a href="https://www.openstreetmap.org/copyright">© OpenStreetMap contributors</a>, <a href="https://protomaps.com">Protomaps</a>'
 				},
+				// The picture base maps, each a source only while it is shown.
+				...(picture
+					? {
+							[`imagery-${baseMap}`]: {
+								type: 'raster' as const,
+								tiles: [`${origin}/map-tiles/imagery/${baseMap}/{z}/{x}/{y}`],
+								tileSize: 256,
+								maxzoom: 16,
+								attribution: tileMapBases.find((entry) => entry.value === baseMap)?.credit ?? ''
+							}
+						}
+					: {}),
 				/**
 				 * The basemap is cut to the United States and its territories (geography/map-tile-region.json), so elsewhere, such as across the Pacific or in Europe, it has no tiles past the first zoom levels and the map was blank there (Trevor, 2026-11-23). This source reads only the basemap's zoom 0 tile, which holds the whole world in outline, and MapLibre enlarges it at every zoom: the rest of the world's land shows in rough outline, while the United States and its territories keep their full detail on top.
 				 */
@@ -402,6 +546,15 @@
 						features: (shadingIn(data)?.labels ?? []).map((label) => ({ type: 'Feature', properties: { name: label.name }, geometry: { type: 'Point', coordinates: label.point } }))
 					}
 				},
+				'state-names': {
+					type: 'geojson',
+					data: {
+						type: 'FeatureCollection',
+						features: Object.values(data.states).flatMap((state) =>
+							'point' in state && state.point ? [{ type: 'Feature' as const, properties: { name: state.name, count: state.count, countClass: state.countClass }, geometry: { type: 'Point' as const, coordinates: state.point } }] : []
+						)
+					}
+				},
 				'region-names': {
 					type: 'geojson',
 					data: {
@@ -421,7 +574,7 @@
 					clusterRadius: 40
 				}
 			},
-			layers: [...under, ...fills, ...over, ...tops]
+			layers: picture ? [...imagery, ...shownFills, ...(placeNames ? over : []), ...shownTops] : [...under, ...shownFills, ...over, ...shownTops]
 		};
 	}
 
@@ -467,8 +620,19 @@
 	export function showPlace(name: string): void {
 		const place = tileMapPlaces.find((entry) => entry.name === name);
 		// The move takes its time from the motion tokens, so Reduce motion makes it a jump (src/lib/motion.ts).
-		if (place) map?.fitBounds(place.bounds, { padding: 24, maxZoom: 10, duration: motionDuration('long'), easing: motionEasing('standard') });
+		if (place) {
+			map?.fitBounds(place.bounds, { padding: 24, maxZoom: 10, duration: motionDuration('long'), easing: motionEasing('standard') });
+			return;
+		}
+		// Every state is a place too, from the map's data.
+		void loadData().then((data) => {
+			const state = Object.values(data.states).find((entry) => 'name' in entry && entry.name === name);
+			if (state && 'bounds' in state && state.bounds) map?.fitBounds(state.bounds, { padding: 24, maxZoom: 10, duration: motionDuration('long'), easing: motionEasing('standard') });
+		});
 	}
+
+	/** How close a nation's map opens: close enough to see the smallest rancheria, rather than stopping at zoom 12 (Trevor, 2026-11-24, mockup 5). */
+	const nationClosestZoom = 15;
 
 	/** The box around a nation's areas. An area across the 180th meridian (west greater than east) is boxed by its dot alone. */
 	function boundsOfAreas(areas: TileMapData['areas']): [number, number, number, number] {
@@ -499,7 +663,9 @@
 				const style = await styleFor(data);
 				const start = camera ?? undefined;
 				const opening = oneNation
-					? { bounds: boundsOfAreas(data.areas), fitBoundsOptions: { padding: 32, maxZoom: 12 } }
+					? { bounds: boundsOfAreas(data.areas), fitBoundsOptions: { padding: 32, maxZoom: nationClosestZoom } }
+					: openingBox
+						? { bounds: openingBox, fitBoundsOptions: { padding: 16, maxZoom: 10 } }
 					: start
 						? { center: start.center, zoom: start.zoom }
 						: { bounds: tileMapPlaces[0].bounds, fitBoundsOptions: { padding: 16 } };
@@ -531,8 +697,8 @@
 				resetButton.setAttribute('aria-label', 'Reset the map');
 				resetButton.innerHTML = resetIcon;
 				resetButton.addEventListener('click', () => {
-					const bounds = oneNation ? boundsOfAreas(data.areas) : tileMapPlaces[0].bounds;
-					map?.fitBounds(bounds, { padding: oneNation ? 32 : 16, maxZoom: oneNation ? 12 : 10, duration: motionDuration('long'), easing: motionEasing('standard') });
+					const bounds = oneNation ? boundsOfAreas(data.areas) : (openingBox ?? tileMapPlaces[0].bounds);
+					map?.fitBounds(bounds, { padding: oneNation ? 32 : 16, maxZoom: oneNation ? nationClosestZoom : 10, duration: motionDuration('long'), easing: motionEasing('standard') });
 				});
 				viewGroup.append(resetButton);
 				if (document.fullscreenEnabled) {
@@ -583,6 +749,27 @@
 				pressed();
 				map.addControl({ onAdd: () => shapeButtons, onRemove: () => shapeButtons.remove() }, 'bottom-right');
 				map.addControl(new maplibre.NavigationControl({ showCompass: false }), 'bottom-right');
+				// The Layers button, at the top of the stack (mockup 1A): it opens the menu of base maps drawn below in this component.
+				const layersGroup = document.createElement('div');
+				layersGroup.className = 'maplibregl-ctrl maplibregl-ctrl-group map-buttons map-layers';
+				const layersToggle = document.createElement('button');
+				layersToggle.type = 'button';
+				layersToggle.title = 'Base map and layers';
+				layersToggle.setAttribute('aria-label', 'Base map and layers');
+				layersToggle.setAttribute('aria-expanded', 'false');
+				layersToggle.setAttribute('aria-controls', layersMenuId);
+				layersToggle.innerHTML = layersIcon;
+				layersToggle.addEventListener('click', toggleLayers);
+				layersButton = layersToggle;
+				layersGroup.append(layersToggle);
+				map.addControl({ onAdd: () => layersGroup, onRemove: () => layersGroup.remove() }, 'bottom-right');
+				// The menu closes when the reader clicks elsewhere or presses Escape.
+				const onOutside = (event: PointerEvent) => {
+					const target = event.target as Node | null;
+					if (layersOpen && target && !layersMenu?.contains(target) && !layersGroup.contains(target)) closeLayers(false);
+				};
+				document.addEventListener('pointerdown', onOutside);
+				cleanups.push(() => document.removeEventListener('pointerdown', onOutside));
 				// The distance scale sits at the bottom of the map (Trevor, 2026-11-23).
 				map.addControl(new maplibre.ScaleControl({ unit: 'imperial' }), 'bottom-left');
 				const sameInWords = oneNation ? 'The list under the map names the same areas.' : 'The table beside the map lists the same places.';
@@ -623,8 +810,9 @@
 					if (hover && map) map.setFeatureState(hover, { hover: false });
 					hover = undefined;
 				};
-				// A nation's page has no table to go to, so its map has nothing to select.
-				for (const entry of oneNation ? [] : interactive) {
+				// On a nation's page only its land areas can be chosen, and only where the page shows their details under the map (mockup 5).
+				const chosenLayers = oneNation ? (onselect ? interactive.filter((entry) => entry.layer === 'land-areas' || entry.layer === 'area-dots') : []) : interactive;
+				for (const entry of chosenLayers) {
 					// Every layer a view may have is listened to, since changing the view swaps the layers on the same map.
 					map.on('click', entry.layer, (event) => {
 						const found = event.features?.[0];
@@ -677,10 +865,49 @@
 	});
 </script>
 
-<div class="tile-map" class:ready bind:this={container} role="region" aria-label="Map: {label}"></div>
+<div class="tile-map" class:ready bind:this={container} role="region" aria-label="Map: {label}">
+	<!-- The base map menu (mockup 1A), opened by the Layers button in the map's corner stack. Escape closes it and returns to the button. -->
+	<!-- svelte-ignore a11y_no_noninteractive_element_interactions -->
+	<div
+		class="layers-menu"
+		id={layersMenuId}
+		role="group"
+		aria-label="Base map and layers"
+		hidden={!layersOpen}
+		style:bottom="{layersMenuBottom}px"
+		bind:this={layersMenu}
+		onkeydown={(event) => {
+			if (event.key === 'Escape') {
+				event.preventDefault();
+				event.stopPropagation();
+				closeLayers(true);
+			}
+		}}
+	>
+		<fieldset class="layers-bases">
+			<legend>Base map</legend>
+			<div class="layers-choices">
+				{#each tileMapBases as choice (choice.value)}
+					<label class="layers-base" class:chosen={baseMap === choice.value}>
+						<input class="visually-hidden" type="radio" name="{layersMenuId}-base" value={choice.value} checked={baseMap === choice.value} onchange={() => (baseMap = choice.value)} />
+						<img src="/map-bases/{choice.value}.png" alt="" width="96" height="72" />
+						<span>{choice.label}</span>
+					</label>
+				{/each}
+			</div>
+		</fieldset>
+		{#if baseMap !== 'map'}
+			<label class="layers-switch"><input type="checkbox" bind:checked={placeNames} />Place names and roads</label>
+		{/if}
+		{#if hasLandAreas}
+			<label class="layers-switch"><input type="checkbox" bind:checked={outlines} />Land area outlines</label>
+		{/if}
+	</div>
+</div>
 
 <style>
 	.tile-map {
+		container: tile-map / inline-size;
 		width: 100%;
 		aspect-ratio: 975 / 883;
 		border: 1px solid var(--color-line);
@@ -752,6 +979,101 @@
 		outline-offset: -3px;
 	}
 
+	/* The base map menu opens to the left of the corner stack (mockup 1A). */
+	.layers-menu {
+		position: absolute;
+		max-height: calc(100% - 1rem);
+		overflow-y: auto;
+		right: calc(var(--layout-target-minimum) + 1.25rem);
+		z-index: 3;
+		width: min(18rem, calc(100% - var(--layout-target-minimum) - 2rem));
+		padding: var(--space-3);
+		border: 1px solid var(--color-control-border);
+		border-radius: var(--radius-panel);
+		background: var(--color-paper);
+		box-shadow: 0 var(--space-2) var(--space-5) color-mix(in srgb, var(--color-ink) 25%, transparent);
+		color: var(--color-ink);
+	}
+
+	.layers-menu[hidden] {
+		display: none;
+	}
+
+	.layers-bases {
+		margin: 0;
+		padding: 0;
+		border: 0;
+	}
+
+	.layers-bases legend {
+		margin-bottom: var(--space-2);
+		padding: 0;
+		font-weight: var(--font-weight-bold);
+	}
+
+	.layers-choices {
+		display: grid;
+		grid-template-columns: 1fr 1fr;
+		gap: var(--space-2);
+	}
+
+	.layers-base {
+		display: flex;
+		flex-direction: column;
+		align-items: stretch;
+		gap: var(--space-1);
+		padding: var(--space-1);
+		border: 2px solid var(--color-line);
+		border-radius: var(--radius-control);
+		text-align: center;
+		cursor: pointer;
+	}
+
+	.layers-base img {
+		width: 100%;
+		height: auto;
+		/* Wide and short, as in the mockup, so the menu fits on a short map. */
+		aspect-ratio: 16 / 9;
+		object-fit: cover;
+		border-radius: 3px;
+	}
+
+	.layers-base.chosen {
+		border-color: var(--color-action);
+		box-shadow: inset 0 -3px 0 var(--color-action);
+	}
+
+	.layers-base.chosen span::before {
+		content: '✓ ';
+		color: var(--color-action);
+		font-weight: var(--font-weight-bold);
+	}
+
+	.layers-base:has(input:focus-visible) {
+		outline: 3px solid var(--color-focus-ring);
+		outline-offset: 1px;
+	}
+
+	.layers-switch {
+		display: flex;
+		align-items: center;
+		gap: var(--space-2);
+		min-height: 2rem;
+		margin-top: var(--space-1);
+	}
+
+	.layers-switch input {
+		width: 1.15rem;
+		height: 1.15rem;
+		accent-color: var(--color-action);
+	}
+
+	/* The Layers button is marked while its menu is open. */
+	.tile-map :global(.map-layers button[aria-expanded='true']) {
+		background: var(--color-focus);
+		color: var(--focus-text, var(--color-ink));
+	}
+
 	/* MapLibre's control icons are dark; in the dark theme they are turned light. */
 	:global(:root[data-theme='dark']) .tile-map :global(.maplibregl-ctrl-icon) {
 		filter: invert(1);
@@ -760,6 +1082,48 @@
 	@media (prefers-color-scheme: dark) {
 		:global(:root:not([data-theme='light'])) .tile-map :global(.maplibregl-ctrl-icon) {
 			filter: invert(1);
+		}
+	}
+
+	/* On a narrow map the button groups sit side by side along the bottom, each laid out across, so the stack is never taller than the map and "+" is never cut off (mockup audit, 2026-11-23). The credit line keeps its own row under them. */
+	@container tile-map (max-width: 27rem) {
+		.tile-map :global(.maplibregl-ctrl-bottom-right) {
+			display: flex;
+			flex-wrap: wrap-reverse;
+			flex-direction: row-reverse;
+			align-items: flex-end;
+			left: 0;
+		}
+
+		.tile-map :global(.maplibregl-ctrl-bottom-right .maplibregl-ctrl) {
+			float: none;
+			margin: 0 var(--space-2) var(--space-2) 0;
+		}
+
+		.tile-map :global(.maplibregl-ctrl-bottom-right .maplibregl-ctrl-group) {
+			display: flex;
+		}
+
+		.tile-map :global(.maplibregl-ctrl-bottom-right .maplibregl-ctrl-group button + button) {
+			border-top: 0;
+			border-left: 1px solid var(--color-control-border);
+		}
+
+		/* The credit line comes first, so it is the bottom row, under the buttons. */
+		.tile-map :global(.maplibregl-ctrl-bottom-right .maplibregl-ctrl-attrib) {
+			order: -1;
+			flex-basis: 100%;
+			margin: 0;
+		}
+
+		/* The distance scale moves to the top corner, out of the buttons' way. */
+		.tile-map :global(.maplibregl-ctrl-bottom-left) {
+			top: 0;
+			bottom: auto;
+		}
+
+		.tile-map :global(.maplibregl-ctrl-bottom-left .maplibregl-ctrl) {
+			margin: var(--space-2) 0 0 var(--space-2);
 		}
 	}
 

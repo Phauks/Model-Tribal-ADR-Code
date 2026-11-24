@@ -7,20 +7,27 @@
  */
 import type { D1Database, D1PreparedStatement, R2Bucket } from '@cloudflare/workers-types/index.ts';
 import {
+	ageGroupOf,
+	answersFromSnapshot,
 	creditOf,
+	creditsOf,
 	defaultCreditSection,
+	emptyPlacements,
 	pageNameOf,
+	placedAnswers,
+	pronounChoices,
 	slugOf,
-	specialties,
 	type AgeGroup,
 	type Availability,
-	type ContactMethod,
-	type CreditForm,
 	type CreditSection,
 	type Interest,
+	type NameKind,
 	type NationAnswer,
+	type NationRelationship,
+	type PlacedAnswer,
 	type ProfileAnswers,
 	type ProfileStatus,
+	type PronounChoice,
 	type Specialty
 } from '#lib/contributors.ts';
 import { roleLabels, type Role } from '#lib/permissions.ts';
@@ -58,6 +65,10 @@ export interface Profile {
 	/** The person's picture in the private bucket. */
 	pictureKey: string | null;
 	pictureUpdatedAt: string | null;
+	/** The person's CV or resume in the private bucket, with the file name they sent. Never published. */
+	curriculumVitaeKey: string | null;
+	curriculumVitaeName: string | null;
+	curriculumVitaeUpdatedAt: string | null;
 	/** On the nonprofit's board, as the lead author marks it; shown first on the People page. */
 	boardMember: boolean;
 	/** The board office, such as President, once the lead author sets it. */
@@ -73,23 +84,17 @@ interface ProfileRow {
 	status: ProfileStatus;
 	given_name: string | null;
 	family_name: string | null;
-	native_name: string | null;
-	phone: string | null;
-	preferred_contact: ContactMethod | null;
+	pronoun_other: string | null;
+	birth_year: number | null;
+	birthday_answer: 'yes' | 'no' | null;
+	birthday_answer_year: number | null;
 	age_group: AgeGroup | null;
 	nation_answer: NationAnswer | null;
 	background: string | null;
-	languages: string | null;
 	organization: string | null;
 	availability: Availability | null;
-	credit_form: CreditForm | null;
-	credit_name: string | null;
-	credit_role: string | null;
-	credit_pseudonym: string | null;
-	credit_in_book: number;
-	credit_on_website: number;
+	description: string | null;
 	biography: string | null;
-	biography_in_credits: number;
 	credit_section: CreditSection | null;
 	created_at: string;
 	updated_at: string;
@@ -101,59 +106,112 @@ interface ProfileRow {
 	public_slug: string | null;
 	picture_key: string | null;
 	picture_updated_at: string | null;
-	specialties: string;
-	specialty_other: string | null;
+	curriculum_vitae_key: string | null;
+	curriculum_vitae_name: string | null;
+	curriculum_vitae_updated_at: string | null;
 	board_member: number;
 	board_office: string | null;
 }
 
+/** The current year in UTC, which birth years are measured against. */
+export function currentYear(today: Date = new Date()): number {
+	return today.getUTCFullYear();
+}
+
 async function completeProfile(database: D1Database, row: ProfileRow): Promise<Profile> {
-	const [nations, chosen] = await Promise.all([
-		database
-			.prepare(
-				`SELECT nation_identifier AS nationIdentifier, nation_name AS nationName, connection,
-				        show_in_credit AS showInCredit
-				 FROM contributor_nations WHERE profile_identifier = ? ORDER BY position`
-			)
-			.bind(row.identifier)
-			.all<{ nationIdentifier: string | null; nationName: string; connection: string | null; showInCredit: number }>(),
-		database
-			.prepare('SELECT interest FROM contributor_interests WHERE profile_identifier = ? ORDER BY interest')
-			.bind(row.identifier)
-			.all<{ interest: Interest }>()
+	const id = row.identifier;
+	const all = <T>(sql: string) => database.prepare(sql).bind(id).all<T>();
+	const [names, pronouns, contacts, nations, relationships, languages, chosenSpecialties, placements, chosen] = await Promise.all([
+		all<{ name: string; kind: NameKind; book: number; website: number }>(
+			'SELECT name, kind, in_book AS book, on_website AS website FROM contributor_names WHERE profile_identifier = ? ORDER BY position'
+		),
+		all<{ pronoun: PronounChoice }>('SELECT pronoun FROM contributor_pronouns WHERE profile_identifier = ?'),
+		all<{ kind: 'email' | 'phone'; value: string; country: string | null; signIn: number; mayEmail: number; mayCall: number; mayText: number; preferred: number }>(
+			`SELECT kind, value, country, sign_in AS signIn, may_email AS mayEmail, may_call AS mayCall, may_text AS mayText, preferred
+			 FROM contributor_contacts WHERE profile_identifier = ? ORDER BY position`
+		),
+		all<{ identifier: string; nationIdentifier: string | null; nationName: string; relationshipOther: string | null; book: number; website: number }>(
+			`SELECT identifier, nation_identifier AS nationIdentifier, nation_name AS nationName, relationship_other AS relationshipOther,
+			        in_book AS book, on_website AS website
+			 FROM contributor_nations WHERE profile_identifier = ? ORDER BY position`
+		),
+		all<{ nation: string; relationship: NationRelationship }>(
+			`SELECT relationships.nation_row_identifier AS nation, relationships.relationship
+			 FROM contributor_nation_relationships AS relationships
+			 JOIN contributor_nations AS nations ON nations.identifier = relationships.nation_row_identifier
+			 WHERE nations.profile_identifier = ?`
+		),
+		all<{ code: string | null; otherName: string | null; speaks: number; reads: number; writes: number; website: number }>(
+			`SELECT language_code AS code, other_name AS otherName, speaks, reads, writes, on_website AS website
+			 FROM contributor_languages WHERE profile_identifier = ? ORDER BY position`
+		),
+		all<{ specialty: Specialty | null; otherName: string | null }>(
+			'SELECT specialty, other_name AS otherName FROM contributor_specialties WHERE profile_identifier = ? ORDER BY position'
+		),
+		all<{ item: PlacedAnswer; book: number; website: number }>(
+			'SELECT item, in_book AS book, on_website AS website FROM contributor_placements WHERE profile_identifier = ?'
+		),
+		all<{ interest: Interest }>('SELECT interest FROM contributor_interests WHERE profile_identifier = ? ORDER BY interest')
 	]);
+	const placed = emptyPlacements();
+	for (const placement of placements.results) placed[placement.item] = { book: Boolean(placement.book), website: Boolean(placement.website) };
+	const answers: ProfileAnswers = {
+		givenName: row.given_name,
+		familyName: row.family_name,
+		names: names.results.map((name) => ({ name: name.name, kind: name.kind, book: Boolean(name.book), website: Boolean(name.website) })),
+		pronouns: pronounChoices.filter((choice) => pronouns.results.some((item) => item.pronoun === choice)),
+		pronounOther: row.pronoun_other,
+		birthYear: row.birth_year,
+		birthdayAnswer: row.birthday_answer,
+		birthdayAnswerYear: row.birthday_answer_year,
+		ageGroup: null,
+		// The sign-in row always shows the address the person signs in with now.
+		contacts: contacts.results.map((contact) => ({
+			kind: contact.kind,
+			value: contact.signIn ? row.email : contact.value,
+			country: contact.country,
+			signIn: Boolean(contact.signIn),
+			mayEmail: Boolean(contact.mayEmail),
+			mayCall: Boolean(contact.mayCall),
+			mayText: Boolean(contact.mayText),
+			preferred: Boolean(contact.preferred)
+		})),
+		nationAnswer: row.nation_answer,
+		nations: nations.results.map((nation) => ({
+			nationIdentifier: nation.nationIdentifier,
+			nationName: nation.nationName,
+			relationships: relationships.results.filter((item) => item.nation === nation.identifier).map((item) => item.relationship),
+			relationshipOther: nation.relationshipOther,
+			book: Boolean(nation.book),
+			website: Boolean(nation.website)
+		})),
+		background: row.background,
+		languages: languages.results.map((language) => ({
+			code: language.code,
+			otherName: language.otherName,
+			speaks: Boolean(language.speaks),
+			reads: Boolean(language.reads),
+			writes: Boolean(language.writes),
+			website: Boolean(language.website)
+		})),
+		organization: row.organization,
+		interests: chosen.results.map((item) => item.interest),
+		specialties: chosenSpecialties.results.flatMap((item) => (item.specialty ? [item.specialty] : [])),
+		specialtyOthers: chosenSpecialties.results.flatMap((item) => (item.otherName ? [item.otherName] : [])),
+		availability: row.availability,
+		description: row.description,
+		biography: row.biography,
+		placements: placed
+	};
+	// Someone who answered before birth years were asked keeps the age group they chose until they give a year.
+	const age = row.birth_year === null ? row.age_group : ageGroupOf(answers, currentYear());
+	answers.ageGroup = age === 'under-13' ? null : age;
 	return {
 		identifier: row.identifier,
 		email: row.email,
 		personIdentifier: row.person_identifier,
 		status: row.status,
-		answers: {
-			givenName: row.given_name,
-			familyName: row.family_name,
-			nativeName: row.native_name,
-			phone: row.phone,
-			preferredContact: row.preferred_contact,
-			ageGroup: row.age_group,
-			nationAnswer: row.nation_answer,
-			nations: nations.results.map((nation) => ({ ...nation, showInCredit: Boolean(nation.showInCredit) })),
-			background: row.background,
-			languages: row.languages,
-			organization: row.organization,
-			interests: chosen.results.map((item) => item.interest),
-			specialties: (JSON.parse(row.specialties) as string[]).filter((value): value is Specialty =>
-				(specialties as readonly string[]).includes(value)
-			),
-			specialtyOther: row.specialty_other,
-			availability: row.availability,
-			creditForm: row.credit_form,
-			creditName: row.credit_name,
-			creditRole: row.credit_role,
-			creditPseudonym: row.credit_pseudonym,
-			creditInBook: Boolean(row.credit_in_book),
-			creditOnWebsite: Boolean(row.credit_on_website),
-			biography: row.biography,
-			biographyInCredits: Boolean(row.biography_in_credits)
-		},
+		answers,
 		creditSection: row.credit_section,
 		createdAt: row.created_at,
 		updatedAt: row.updated_at,
@@ -165,6 +223,9 @@ async function completeProfile(database: D1Database, row: ProfileRow): Promise<P
 		publicSlug: row.public_slug,
 		pictureKey: row.picture_key,
 		pictureUpdatedAt: row.picture_updated_at,
+		curriculumVitaeKey: row.curriculum_vitae_key,
+		curriculumVitaeName: row.curriculum_vitae_name,
+		curriculumVitaeUpdatedAt: row.curriculum_vitae_updated_at,
 		boardMember: Boolean(row.board_member),
 		boardOffice: row.board_office,
 		hasUnconfirmedChanges: row.confirmed_at === null || row.updated_at > row.confirmed_at
@@ -196,31 +257,71 @@ export async function profileOfPerson(database: D1Database, personIdentifier: st
 	return row ? completeProfile(database, row) : undefined;
 }
 
-function answerStatements(database: D1Database, identifier: string, answers: ProfileAnswers): D1PreparedStatement[] {
+/** Rewrites every repeatable answer of a profile: each kind in its own table, one row per entry. */
+function answerStatements(database: D1Database, identifier: string, answers: ProfileAnswers, email: string): D1PreparedStatement[] {
+	const statement = (sql: string, ...values: unknown[]) => database.prepare(sql).bind(...values);
+	const flag = (value: boolean) => (value ? 1 : 0);
+	const tables = ['contributor_names', 'contributor_pronouns', 'contributor_contacts', 'contributor_nations', 'contributor_languages', 'contributor_specialties', 'contributor_placements', 'contributor_interests'];
+	const contacts = answers.contacts.some((contact) => contact.signIn)
+		? answers.contacts
+		: [{ kind: 'email' as const, value: email, country: null, signIn: true, mayEmail: true, mayCall: false, mayText: false, preferred: !answers.contacts.some((contact) => contact.preferred) }, ...answers.contacts];
 	return [
-		database.prepare('DELETE FROM contributor_nations WHERE profile_identifier = ?').bind(identifier),
-		...answers.nations.map((nation, position) =>
-			database
-				.prepare(
-					`INSERT INTO contributor_nations
-					   (identifier, profile_identifier, nation_identifier, nation_name, connection, show_in_credit, position)
-					 VALUES (?, ?, ?, ?, ?, ?, ?)`
+		// Removing a nation row removes its relationships too (ON DELETE CASCADE).
+		...tables.map((table) => statement(`DELETE FROM ${table} WHERE profile_identifier = ?`, identifier)),
+		...answers.names.map((name, position) =>
+			statement(
+				'INSERT INTO contributor_names (identifier, profile_identifier, position, name, kind, in_book, on_website) VALUES (?, ?, ?, ?, ?, ?, ?)',
+				newIdentifier(), identifier, position, name.name, name.kind, flag(name.book), flag(name.website)
+			)
+		),
+		...answers.pronouns.map((pronoun) => statement('INSERT INTO contributor_pronouns (profile_identifier, pronoun) VALUES (?, ?)', identifier, pronoun)),
+		...contacts.map((contact, position) =>
+			statement(
+				`INSERT INTO contributor_contacts (identifier, profile_identifier, position, kind, value, country, sign_in, may_email, may_call, may_text, preferred)
+				 VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)`,
+				newIdentifier(), identifier, position, contact.kind, contact.signIn ? email : contact.value, contact.country,
+				flag(contact.signIn), flag(contact.mayEmail), flag(contact.mayCall), flag(contact.mayText), flag(contact.preferred)
+			)
+		),
+		...answers.nations.flatMap((nation, position) => {
+			const row = newIdentifier();
+			return [
+				statement(
+					`INSERT INTO contributor_nations (identifier, profile_identifier, nation_identifier, nation_name, relationship_other, in_book, on_website, show_in_credit, position)
+					 VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)`,
+					row, identifier, nation.nationIdentifier, nation.nationName, nation.relationshipOther, flag(nation.book), flag(nation.website),
+					flag(nation.book || nation.website), position
+				),
+				...nation.relationships.map((relationship) =>
+					statement('INSERT INTO contributor_nation_relationships (nation_row_identifier, relationship) VALUES (?, ?)', row, relationship)
 				)
-				.bind(
-					newIdentifier(),
-					identifier,
-					nation.nationIdentifier,
-					nation.nationName,
-					nation.connection,
-					nation.showInCredit ? 1 : 0,
-					position
+			];
+		}),
+		...answers.languages.map((language, position) =>
+			statement(
+				`INSERT INTO contributor_languages (identifier, profile_identifier, position, language_code, other_name, speaks, reads, writes, on_website)
+				 VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)`,
+				newIdentifier(), identifier, position, language.code, language.otherName, flag(language.speaks), flag(language.reads),
+				flag(language.writes), flag(language.website)
+			)
+		),
+		...[...answers.specialties.map((specialty) => ({ specialty, otherName: null })), ...answers.specialtyOthers.map((otherName) => ({ specialty: null, otherName }))].map(
+			(item, position) =>
+				statement(
+					'INSERT INTO contributor_specialties (identifier, profile_identifier, position, specialty, other_name) VALUES (?, ?, ?, ?, ?)',
+					newIdentifier(), identifier, position, item.specialty, item.otherName
 				)
 		),
-		database.prepare('DELETE FROM contributor_interests WHERE profile_identifier = ?').bind(identifier),
+		...placedAnswers
+			.filter((item) => answers.placements[item]?.book || answers.placements[item]?.website)
+			.map((item) =>
+				statement(
+					'INSERT INTO contributor_placements (profile_identifier, item, in_book, on_website) VALUES (?, ?, ?, ?)',
+					identifier, item, flag(answers.placements[item].book), flag(answers.placements[item].website)
+				)
+			),
 		...answers.interests.map((interest) =>
-			database
-				.prepare('INSERT INTO contributor_interests (profile_identifier, interest) VALUES (?, ?)')
-				.bind(identifier, interest)
+			statement('INSERT INTO contributor_interests (profile_identifier, interest) VALUES (?, ?)', identifier, interest)
 		)
 	];
 }
@@ -246,33 +347,25 @@ export async function saveAnswers(
 		.bind(account.subject)
 		.first<{ identifier: string }>();
 
+	const age = ageGroupOf(answers, currentYear());
 	const values = [
 		answers.givenName,
 		answers.familyName,
-		answers.nativeName,
-		answers.phone,
-		answers.preferredContact,
-		answers.ageGroup ? 1 : 0,
-		answers.ageGroup,
+		answers.pronounOther,
+		answers.birthYear,
+		answers.birthdayAnswer,
+		answers.birthdayAnswerYear,
+		age === '13-to-17' || age === '18-or-older' ? 1 : 0,
+		age === '13-to-17' || age === '18-or-older' ? age : null,
 		answers.nationAnswer,
 		answers.background,
-		answers.languages,
 		answers.organization,
 		answers.availability,
-		JSON.stringify(answers.specialties),
-		answers.specialtyOther,
-		answers.creditForm,
-		answers.creditName,
-		answers.creditRole,
-		answers.creditPseudonym,
-		answers.creditInBook ? 1 : 0,
-		answers.creditOnWebsite ? 1 : 0,
-		answers.biography,
-		answers.biographyInCredits ? 1 : 0
+		answers.description,
+		answers.biography
 	];
-	const columns = `given_name, family_name, native_name, phone, preferred_contact, thirteen_or_older, age_group, nation_answer,
-		background, languages, organization, availability, specialties, specialty_other, credit_form, credit_name, credit_role,
-		credit_pseudonym, credit_in_book, credit_on_website, biography, biography_in_credits`;
+	const columns = `given_name, family_name, pronoun_other, birth_year, birthday_answer, birthday_answer_year, thirteen_or_older, age_group,
+		nation_answer, background, organization, availability, description, biography`;
 
 	const write = existing
 		? database
@@ -292,7 +385,7 @@ export async function saveAnswers(
 
 	await database.batch([
 		write,
-		...answerStatements(database, identifier, answers),
+		...answerStatements(database, identifier, answers, account.email),
 		...(existing
 			? []
 			: [
@@ -318,6 +411,7 @@ export async function confirmProfile(database: D1Database, profile: Profile): Pr
 	const time = now();
 	const credit = creditOf(profile.answers);
 	const slug = await freeSlug(database, profile.identifier, pageNameOf(profile.answers));
+	// The snapshot keeps the age group worked out today, so a credit confirmed by someone under 18 stays as it was until they confirm again.
 	const snapshot = JSON.stringify({ email: profile.email, ...profile.answers });
 	const firstSend = profile.status === 'draft';
 	await database.batch([
@@ -378,7 +472,8 @@ export async function deleteProfile(database: D1Database, profile: Profile, buck
 			targetIdentifier: profile.identifier
 		})
 	]);
-	if (bucket && profile.pictureKey) await bucket.delete(profile.pictureKey);
+	const files = [profile.pictureKey, profile.curriculumVitaeKey].filter((key): key is string => Boolean(key));
+	if (bucket && files.length > 0) await bucket.delete(files);
 }
 
 /** How long a declined registration is kept before it is deleted. */
@@ -398,9 +493,12 @@ export async function deleteExpiredDeclinedProfiles(
 	const cutoff = new Date(today);
 	cutoff.setUTCMonth(cutoff.getUTCMonth() - declinedRetentionMonths);
 	const expired = await database
-		.prepare(`SELECT identifier, picture_key AS pictureKey FROM contributor_profiles WHERE status = 'declined' AND decided_at < ?`)
+		.prepare(
+			`SELECT identifier, picture_key AS pictureKey, curriculum_vitae_key AS curriculumVitaeKey
+			 FROM contributor_profiles WHERE status = 'declined' AND decided_at < ?`
+		)
 		.bind(cutoff.toISOString())
-		.all<{ identifier: string; pictureKey: string | null }>();
+		.all<{ identifier: string; pictureKey: string | null; curriculumVitaeKey: string | null }>();
 	if (expired.results.length === 0) return 0;
 	await database.batch(
 		expired.results.flatMap(({ identifier }) => [
@@ -413,7 +511,7 @@ export async function deleteExpiredDeclinedProfiles(
 			})
 		])
 	);
-	const pictures = expired.results.flatMap((profile) => (profile.pictureKey ? [profile.pictureKey] : []));
+	const pictures = expired.results.flatMap((profile) => [profile.pictureKey, profile.curriculumVitaeKey].filter((key): key is string => Boolean(key)));
 	if (bucket && pictures.length > 0) await bucket.delete(pictures);
 	return expired.results.length;
 }
@@ -433,7 +531,7 @@ export async function profileVersions(database: D1Database, identifier: string):
 		)
 		.bind(identifier)
 		.all<{ version: number; creditLine: string | null; confirmedAt: string; snapshot: string }>();
-	return result.results.map(({ snapshot, ...version }) => ({ ...version, answers: JSON.parse(snapshot) }));
+	return result.results.map(({ snapshot, ...version }) => ({ ...version, answers: { email: (JSON.parse(snapshot) as { email: string }).email, ...answersFromSnapshot(snapshot) } }));
 }
 
 export interface ProfileListing {
@@ -523,9 +621,9 @@ export async function confirmedCredits(database: D1Database): Promise<CreditEntr
 		.all<{ section: CreditSection; slug: string | null; snapshot: string }>();
 	const entries: CreditEntry[] = [];
 	for (const row of rows.results) {
-		const answers = JSON.parse(row.snapshot) as ProfileAnswers;
-		const credit = creditOf(answers);
-		if (credit) entries.push({ section: row.section, ...credit, slug: pageNameOf(answers) ? row.slug : null });
+		const answers = answersFromSnapshot(row.snapshot);
+		// One entry when the book and the website read the same, otherwise one for each.
+		for (const credit of creditsOf(answers)) entries.push({ section: row.section, ...credit, slug: credit.onWebsite && pageNameOf(answers) ? row.slug : null });
 	}
 	// Credits of people who deleted their account and chose to keep their name (src/lib/server/account-deletion.ts).
 	const retained = await database

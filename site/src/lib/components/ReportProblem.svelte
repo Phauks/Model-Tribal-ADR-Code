@@ -22,7 +22,7 @@
 	/** The request page's address for this page, used without scripts. */
 	let { link }: { link: string } = $props();
 
-	/** The kinds of request that report a problem; Contribute has its own button. */
+	/** The kinds of request that report a problem; Contribute has its own link in the sidebar. */
 	const reportKinds: RequestKind[] = ['correct', 'add-nation', 'restrict', 'remove', 'question'];
 	const kindChoices = reportKinds.map((value) => ({
 		value,

@@ -31,7 +31,7 @@ export const load: PageServerLoad = () => {
 				] as const
 		),
 		opinions: timeline.opinions.map(
-			(year) => [year.year, year.count, year.peacemaking, year.nation ? (place.get(year.nation) ?? -1) : -1, year.mediation ?? 0, year.both ?? 0] as const
+			(year) => [year.year, year.count, year.nation ? (place.get(year.nation) ?? -1) : -1, year.mentions ?? []] as const
 		)
 	};
 };

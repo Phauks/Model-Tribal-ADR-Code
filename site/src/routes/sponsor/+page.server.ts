@@ -12,7 +12,7 @@ import type { PageServerLoad } from './$types';
 export const prerender = false;
 
 const nothingGiven: GivenToward = {
-	total: { 'needed-most': 0, 'books-for-nations': 0, 'large-format': 0, hosting: 0 },
+	total: { 'needed-most': 0, 'books-for-nations': 0, 'large-format': 0, research: 0, hosting: 0 },
 	siteLastYear: 0,
 	monthly: { cents: 0, sponsors: 0 }
 };

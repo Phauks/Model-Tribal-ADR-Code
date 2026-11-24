@@ -46,7 +46,7 @@ Without `--file` it only downloads and writes `plan.json` in the download folder
 
 ## How pages show a copy
 
-- In a Sources list, the citation is unchanged and still links the original address. A link "Saved Resource, <date>, PDF" follows it, then "SHA-256", which opens Checking a file on the Downloads page set to that copy's hash.
+- In a Sources list, the citation is unchanged and still links the original address. A link "Saved Resource, <date>, PDF" follows it, then "SHA-256", which opens the Verify File page (/verify) set to that copy’s hash.
 - In a nation's recognition status, a linked citation such as "108 Stat. 4791" opens the copy.
 - In a nation's document history, a version's name opens the copy of that version's text, matched by the SHA-256 of its capture.
 - The page [/copies](https://model-tribal-adr-code.trevordgoldsmith.workers.dev/copies) lists every copy with its nation, the address it was published at, the date it was made, its SHA-256 and a link to ask for its removal.

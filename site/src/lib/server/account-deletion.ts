@@ -17,7 +17,7 @@
  * are cleared 90 days after shipping (docs/book-orders.md).
  */
 import type { D1Database, D1PreparedStatement, R2Bucket } from '@cloudflare/workers-types/index.ts';
-import { creditOf } from '#lib/contributors.ts';
+import { answersFromSnapshot, creditsOf } from '#lib/contributors.ts';
 import type { SignedInAccount } from './contributor-profiles.ts';
 import { profileBySubject } from './contributor-profiles.ts';
 import { eventStatement } from './events.ts';
@@ -58,8 +58,9 @@ export async function deleteAccount(
 					.bind(profile.identifier, profile.confirmedVersion)
 					.first<{ snapshot: string }>()
 			: null;
-		const credit = confirmed ? creditOf(JSON.parse(confirmed.snapshot)) : null;
-		if (keepName && credit && profile.status === 'welcomed' && profile.creditSection) {
+		// The book and the website may read differently, so each keeps its own line.
+		const credits = confirmed ? creditsOf(answersFromSnapshot(confirmed.snapshot)) : [];
+		for (const credit of keepName && profile.status === 'welcomed' && profile.creditSection ? credits : []) {
 			statements.push(
 				database
 					.prepare(
@@ -68,7 +69,7 @@ export async function deleteAccount(
 					)
 					.bind(
 						newIdentifier(),
-						profile.creditSection,
+						profile.creditSection!,
 						credit.line,
 						credit.sortKey,
 						credit.biography,

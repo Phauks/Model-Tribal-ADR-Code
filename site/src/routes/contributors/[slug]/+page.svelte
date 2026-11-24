@@ -20,6 +20,7 @@
 		{/if}
 		<div>
 			<h1>{data.name}</h1>
+			{#if data.pronouns}<p class="pronouns small muted">{data.pronouns}</p>{/if}
 			{#if data.nations.length > 0}
 				<p class="nations">
 					{#each data.nations as nation, position (position)}
@@ -28,12 +29,14 @@
 					{/each}
 				</p>
 			{/if}
+			{#if data.organization}<p class="organization">{data.organization}</p>{/if}
 			{#if data.board}<p class="board">{data.board}</p>{/if}
 			{#if data.specialties.length > 0}
 				<ul class="specialties" aria-label="Specialties">
 					{#each data.specialties as specialty (specialty)}<li>{specialty}</li>{/each}
 				</ul>
 			{/if}
+			{#if data.languages.length > 0}<p class="languages small">Languages: {data.languages.join('; ')}</p>{/if}
 			<p class="small muted">
 				Credited under {data.sectionHeading}{#if data.since}, since {data.since}{/if}.
 			</p>
@@ -81,6 +84,12 @@
 	}
 
 	.nations {
+		margin: var(--space-1) 0 0;
+	}
+
+	.pronouns,
+	.organization,
+	.languages {
 		margin: var(--space-1) 0 0;
 	}
 
