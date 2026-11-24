@@ -210,13 +210,15 @@ jobs:
         run: npm run check:table-tools
 
   accessibility:
-    # Every page in both themes, split between four jobs that run at once
-    # (about two minutes of checking each instead of eight in one job).
+    # Every page in both themes, split between four jobs that run at once.
+    # Each job builds the site (18 to 20 minutes) and then checks its pages
+    # (10 to 12 minutes), so 30 minutes was too tight and cancelled shards on
+    # slow runners. Building once for all four shards would shorten this.
     name: Accessibility ${{ matrix.shard }}/4
     needs: changes
     if: needs.changes.outputs.site == 'true'
     runs-on: ubuntu-latest
-    timeout-minutes: 30
+    timeout-minutes: 45
     strategy:
       fail-fast: false
       matrix:
