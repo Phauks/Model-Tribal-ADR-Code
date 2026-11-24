@@ -7,13 +7,15 @@ describe('source document links', () => {
 		const html =
 			'<cite>Worcester v. Georgia</cite> (1832). <span class="source-links has-archive"><a class="source-original" href="https://www.law.cornell.edu/a?b=1&amp;c=2">www.law.cornell.edu</a>' +
 			'<span class="source-archived"><span class="source-separator">; </span><a href="https://web.archive.org/web/2026/x">archived copy, Nov. 21, 2026</a></span></span>' +
-			' <span class="source-saved">(<a href="/copies/govinfo/worcester.pdf">Saved Resource, Nov. 21, 2026, PDF</a>)</span>';
+			' <span class="reading-links"><button type="button" class="reading-toggle">2</button><span class="reading-list"><span class="source-saved"><a href="/copies/govinfo/worcester.pdf">Saved copy</a> (official report, PDF, Nov. 21, 2026; <a class="source-verify" href="/downloads">SHA-256</a>)</span> · <a href="https://www.courtlistener.com/x" data-reading-site="courtlistener">CourtListener</a></span></span>';
 		expect(sourceDocuments(html)).toEqual({
-			copy: { href: '/copies/govinfo/worcester.pdf', label: 'Saved Resource, Nov. 21, 2026, PDF' },
+			copy: { href: '/copies/govinfo/worcester.pdf', label: 'Saved copy (official report, PDF, Nov. 21, 2026)' },
 			original: { href: 'https://www.law.cornell.edu/a?b=1&c=2', label: 'www.law.cornell.edu' },
 			archived: { href: 'https://web.archive.org/web/2026/x', label: 'archived copy, Nov. 21, 2026' }
 		});
 		expect(sourceDocuments('<cite>A book</cite> (1990)')).toEqual({});
+		// A place to read it is not the address the citation names.
+		expect(sourceDocuments('<cite>A v. B</cite> (1990). <span class="reading-links"><span class="reading-list"><a href="https://www.courtlistener.com/x">CourtListener</a></span></span>')).toEqual({});
 		// The essays' citations link the address itself.
 		expect(
 			sourceDocuments('Melton, 79 Judicature (1995), <a href="https://www.tribal-institute.org/articles/melton1.htm">https://www.tribal-institute.org/articles/melton1.htm</a>.')
