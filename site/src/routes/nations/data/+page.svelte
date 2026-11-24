@@ -21,7 +21,7 @@
 				<h2><a href={topic.href}>{topic.title}</a> <CountBadge count={topic.charts.length} label="charts" /></h2>
 				<p>{topic.description}</p>
 				<ul class="chart-links">
-					{#each topic.charts as chart (chart.title)}
+					{#each topic.charts as chart (chart.href)}
 						<li><a href={chart.href}>{chart.title}</a></li>
 					{/each}
 				</ul>

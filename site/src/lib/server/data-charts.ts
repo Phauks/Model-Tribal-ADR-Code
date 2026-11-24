@@ -17,7 +17,7 @@ import path from 'node:path';
 import { parseCsv } from '../csv.ts';
 import type { BarChartData } from '../bar-chart.ts';
 import type { CitationMark } from '../citation-marks.ts';
-import { displayName, stateName } from '../nation-labels.ts';
+import { stateName } from '../nation-labels.ts';
 import { categoryOf } from '../nation-services.ts';
 import { copyPagePath } from '../public-copies.ts';
 import { recourseLink } from '../recourse.ts';
@@ -26,6 +26,9 @@ import type { TableColumn, TableRow } from '../tables/table-definition.ts';
 import { nations, publicCopyFor, repositoryRoot, type CitedFact, type NationRecord } from './content.ts';
 import { recourseRows } from './recourse.ts';
 import { SourceUses, type SourceEntry } from './source-uses.ts';
+import { byName, chartRecordsPath, webLink, nationCells, nationColumn, nationLink, nationName, statesColumn, topicChartRecords, topicCharts } from './data-topic-charts.ts';
+
+export { chartRecordsPath };
 
 function readCsv(relativePath: string): Record<string, string>[] {
 	return parseCsv(readFileSync(path.join(repositoryRoot, relativePath), 'utf8').normalize('NFC'));
@@ -101,7 +104,7 @@ const disputeSteps: [string, string][] = [
 ];
 
 /** A record's link, when it is a web address; a few list rows hold a name in the link column instead. */
-const webLink = (link: unknown): string | undefined => (typeof link === 'string' && /^https?:\/\/[^\s]+$/.test(link) ? link : undefined);
+
 
 /** The five-year period a listed date falls in, such as "1990–1994", from 1985; the current period ends with this year. */
 function periodOf(date: string): string {
@@ -110,8 +113,6 @@ function periodOf(date: string): string {
 	return `${start}–${Math.min(start + 4, new Date().getFullYear())}`;
 }
 
-/** The address of the page that lists what one bar counts. */
-export const chartRecordsPath = (chart: string, bar: string): string => `/nations/data/${chart}/${bar}`;
 
 /** The data the charts and their record pages share, read once per build. */
 interface ChartInputs {
@@ -300,7 +301,8 @@ function chartDefinitions(): BarChartData[] {
 			bars: disputeSteps
 				.map(([slug, label]) => ({ label, value: compacts.filter((row) => row['dispute_resolution.steps'].split(';').includes(slug)).length, href: chartRecordsPath('compacts-by-dispute-step', slug) }))
 				.filter((bar) => bar.value > 0)
-		}
+		},
+		...topicCharts()
 	];
 }
 
@@ -328,21 +330,6 @@ export interface ChartRecords {
 	sources: SourceEntry[];
 }
 
-const nationLink = (record: NationRecord, section: string) => `/nations/${record.id}#${section}`;
-const statesOf = (record: NationRecord) => [...new Set((record.states ?? []).map((fact) => fact.state))].map(stateName);
-const nationName = (record: NationRecord) => displayName(record.names.official);
-const byName = (first: { name: string }, second: { name: string }) => first.name.localeCompare(second.name, 'en', { sensitivity: 'base' });
-
-const nationColumn: TableColumn = { key: 'nation', header: 'Nation', isRowHeader: true, sortable: true };
-const statesColumn: TableColumn = { key: 'states', header: 'States', sortable: true, filterable: true };
-
-function nationCells(record: NationRecord, section: string): TableRow['cells'] {
-	const states = statesOf(record);
-	return {
-		nation: { text: nationName(record), href: nationLink(record, section) },
-		states: { text: states.join(', '), values: states }
-	};
-}
 
 /** Every bar that has a record page, for prerendering: [chart, bar]. */
 export function chartRecordEntries(): { chart: string; bar: string }[] {
@@ -570,7 +557,7 @@ export function chartRecords(chartKey: string, barKey: string, uses = new Source
 		};
 	}
 
-	return undefined;
+	return topicChartRecords(chart, bar, barKey, uses);
 }
 
 /** The page that shows where a chart's numbers come from, for a chart whose bars open record pages. */

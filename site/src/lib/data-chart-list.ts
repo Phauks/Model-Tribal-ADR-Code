@@ -1,21 +1,43 @@
 /**
- * The charts on the Data and charts page (/nations/data), by identifier and title, in page order.
+ * The charts on the Data and charts topic pages (/nations/data/<topic>), by identifier and title, in the order of the topics and their pages.
  * The counts are worked out at build time (src/lib/server/data-charts.ts); this list is what the
  * browser needs to offer each chart's table on its own in the Download menu, as Trevor asked on
  * Nov. 23, 2026 ("every data and charts table should be separately exportable").
  */
 export const dataChartList = [
+	{ identifier: 'supreme-court-cases-by-court', title: 'Supreme Court cases by Court' },
+	{ identifier: 'supreme-court-cases-by-vote', title: 'Supreme Court cases by vote' },
+	{ identifier: 'tribal-opinions-by-decade', title: 'Tribal court opinions by decade' },
+	{ identifier: 'tribal-opinions-by-topic', title: 'Tribal court opinions by topic' },
+	{ identifier: 'tribal-opinions-by-nation', title: 'Tribal court opinions by nation' },
+	{ identifier: 'constitutions-by-status', title: 'Constitutions found' },
+	{ identifier: 'constitutions-by-federal-act', title: 'Constitutions adopted under a federal act' },
+	{ identifier: 'governing-documents-by-kind', title: 'Governing documents on record' },
+	{ identifier: 'constitutions-by-voting-age', title: 'Voting age in constitutions' },
+	{ identifier: 'constitutions-by-council-term', title: 'Council terms in constitutions' },
+	{ identifier: 'forums-by-kind', title: 'Courts and forums by kind' },
+	{ identifier: 'court-practice-by-kind', title: 'What nations’ courts publish' },
+	{ identifier: 'courts-by-state', title: 'Nations with a court, by state' },
 	{ identifier: 'provisions-by-method', title: 'Provisions by method' },
 	{ identifier: 'provisions-by-dispute', title: 'Provisions by kind of dispute' },
 	{ identifier: 'provisions-by-state', title: 'Provisions by state' },
-	{ identifier: 'forums-by-kind', title: 'Courts and forums by kind' },
-	{ identifier: 'constitutions-by-status', title: 'Constitutions found' },
-	{ identifier: 'compacts-by-arbitration', title: 'Gaming compacts: does a dispute with the state go to binding arbitration?' },
+	{ identifier: 'opinions-on-dispute-resolution-by-decade', title: 'Tribal court opinions on peacemaking, mediation and arbitration, by decade' },
 	{ identifier: 'gaming-records-by-kind', title: 'Nations with each kind of federal gaming record' },
 	{ identifier: 'compacts-by-decision', title: 'What the Department of the Interior did with each compact document' },
 	{ identifier: 'compacts-by-period', title: 'Compact documents listed, by five-year period' },
 	{ identifier: 'compacts-by-state', title: 'Compact documents by state' },
-	{ identifier: 'compacts-by-dispute-step', title: 'Gaming compacts: steps in the dispute clause' }
+	{ identifier: 'compacts-by-dispute-step', title: 'Gaming compacts: steps in the dispute clause' },
+	{ identifier: 'compacts-by-arbitration', title: 'Gaming compacts: does a dispute with the state go to binding arbitration?' },
+	{ identifier: 'public-law-280-status', title: 'Public Law 280' },
+	{ identifier: 'expanded-jurisdiction', title: 'Expanded tribal jurisdiction' },
+	{ identifier: 'agreements-by-kind', title: 'Agreements with states' },
+	{ identifier: 'nations-by-recognition', title: 'Nations by recognition' },
+	{ identifier: 'federally-recognized-by-state', title: 'Federally recognized nations by state' },
+	{ identifier: 'state-recognized-by-state', title: 'State-recognized nations by state' },
+	{ identifier: 'nations-by-bureau-region', title: 'Nations by Bureau of Indian Affairs region' },
+	{ identifier: 'nations-by-health-service-area', title: 'Nations by Indian Health Service Area' },
+	{ identifier: 'treaties-by-decade', title: 'Treaties by decade signed' },
+	{ identifier: 'land-by-method', title: 'How land was first set aside' }
 ] as const;
 
 export type DataChartIdentifier = (typeof dataChartList)[number]['identifier'];
@@ -26,7 +48,7 @@ export type DataChartIdentifier = (typeof dataChartList)[number]['identifier'];
  * alphabetical order so no one topic leads. Each topic has its own page, /nations/data/<topic>,
  * listing its charts in the order given.
  */
-export const dataTopicList: { identifier: string; title: string; description: string; charts: readonly string[] }[] = [
+export const dataTopicList: { identifier: string; title: string; description: string; charts: readonly DataChartIdentifier[] }[] = [
 	{
 		identifier: 'cases',
 		title: 'Cases',
@@ -60,7 +82,7 @@ export const dataTopicList: { identifier: string; title: string; description: st
 	{
 		identifier: 'jurisdiction',
 		title: 'Jurisdiction',
-		description: 'Public Law 280, expanded tribal criminal jurisdiction and agreements with states.',
+		description: 'Public Law 280, expanded tribal jurisdiction and agreements with states.',
 		charts: ['public-law-280-status', 'expanded-jurisdiction', 'agreements-by-kind']
 	},
 	{
@@ -78,37 +100,12 @@ export const dataTopicList: { identifier: string; title: string; description: st
 ];
 
 /** The titles of charts proposed for a topic but not drawn yet, for the mockup of the Data and charts index (Nov. 24, 2026). */
-export const proposedChartTitles: Record<string, string> = {
-	'supreme-court-cases-by-court': 'Supreme Court cases by Court',
-	'supreme-court-cases-by-vote': 'Supreme Court cases by vote',
-	'tribal-opinions-by-decade': 'Tribal court opinions by decade',
-	'tribal-opinions-by-topic': 'Tribal court opinions by topic',
-	'tribal-opinions-by-nation': 'Tribal court opinions by nation',
-	'constitutions-by-federal-act': 'Constitutions adopted under a federal act',
-	'governing-documents-by-kind': 'Governing documents on record',
-	'constitutions-by-voting-age': 'Voting age in constitutions',
-	'constitutions-by-council-term': 'Council terms in constitutions',
-	'court-practice-by-kind': 'What nations’ courts publish',
-	'courts-by-state': 'Nations with a court, by state',
-	'opinions-on-dispute-resolution-by-decade': 'Tribal court opinions on peacemaking, mediation and arbitration, by decade',
-	'public-law-280-status': 'Public Law 280',
-	'expanded-jurisdiction': 'Expanded tribal criminal jurisdiction',
-	'agreements-by-kind': 'Agreements with states',
-	'nations-by-recognition': 'Nations by recognition',
-	'federally-recognized-by-state': 'Federally recognized nations by state',
-	'state-recognized-by-state': 'State-recognized nations by state',
-	'nations-by-bureau-region': 'Nations by Bureau of Indian Affairs region',
-	'nations-by-health-service-area': 'Nations by Indian Health Service Area',
-	'treaties-by-decade': 'Treaties by decade signed',
-	'land-by-method': 'How land was first set aside'
-};
-
 /** The address of a topic's page. */
 export const dataTopicLink = (identifier: string): string => `/nations/data/${identifier}`;
 
 /** The topic a chart is filed under. */
 export function dataTopicOf(chartIdentifier: string): { identifier: string; title: string } {
-	const topic = dataTopicList.find((candidate) => candidate.charts.includes(chartIdentifier));
+	const topic = dataTopicList.find((candidate) => (candidate.charts as readonly string[]).includes(chartIdentifier));
 	if (!topic) throw new Error(`No topic lists the chart ${chartIdentifier}`);
 	return { identifier: topic.identifier, title: topic.title };
 }
