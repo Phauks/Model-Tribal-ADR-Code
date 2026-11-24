@@ -163,8 +163,8 @@
 <div class="offline-saving">
 	<p>
 		Pages you open are saved on this device as you read them. You can also save a whole part of the
-		site now, to read later without a connection. Parts you save are saved again, from the new
-		version, each time the site is updated.
+		site now, to read later without a connection. Parts you save are kept up to date with each
+		update. When a part gains many new pages, they wait here until you save them.
 	</p>
 
 	{#if !online}
