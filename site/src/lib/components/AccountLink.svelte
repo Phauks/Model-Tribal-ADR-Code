@@ -167,6 +167,7 @@
 <svelte:document onclick={closeOnOutside} />
 
 {#if signedIn}
+	<!-- Escape and leaving the menu close it from anywhere inside; the button and links are the controls. -->
 	<!-- svelte-ignore a11y_no_static_element_interactions -->
 	<div class="account" bind:this={container} onfocusout={closeOnOutside} onkeydown={closeOnEscape}>
 		<button

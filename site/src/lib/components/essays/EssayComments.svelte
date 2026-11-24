@@ -394,6 +394,7 @@
 
 {#snippet threadCard(thread: CommentThread, placement: 'beside' | 'moved' | 'done')}
 	{@const id = thread.first.identifier}
+	<!-- Choosing a card shows its words in the text, a pointer shortcut for now; a "Show in text" button for the keyboard is planned separately. -->
 	<!-- svelte-ignore a11y_click_events_have_key_events, a11y_no_noninteractive_element_interactions -->
 	<article
 		id="comment-thread-{id}"
@@ -424,6 +425,7 @@
 		{#if replying === id}
 			<form class="reply-form" onsubmit={(event) => reply(event, id)}>
 				<label class="visually-hidden" for="reply-{id}">Your reply</label>
+				<!-- The box opens only when the reader presses Reply, so focus goes where they asked, never on page load. -->
 				<!-- svelte-ignore a11y_autofocus -->
 				<textarea id="reply-{id}" rows="2" maxlength="5000" bind:value={replies[id]} autofocus onkeydown={(event) => event.key === 'Escape' && (replying = null)}></textarea>
 				<p class="row">

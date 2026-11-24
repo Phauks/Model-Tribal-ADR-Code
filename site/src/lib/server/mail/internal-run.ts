@@ -6,11 +6,13 @@
  * key below. Nothing outside can know the token, and without the handlers
  * (on a computer, in tests) there is no token and every request is refused.
  */
+import { sameSecret } from '../same-secret.ts';
+
 export const mailRunTokenKey = 'model-tribal-adr-code.mail-run-token';
 export const mailRunHeader = 'x-mail-run';
 
 export function isMailRun(request: Request): boolean {
 	const expected = (globalThis as Record<string, unknown>)[mailRunTokenKey];
 	const given = request.headers.get(mailRunHeader);
-	return typeof expected === 'string' && expected.length >= 32 && given === expected;
+	return typeof expected === 'string' && expected.length >= 32 && sameSecret(given, expected);
 }

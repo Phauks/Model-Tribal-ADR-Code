@@ -40,6 +40,15 @@
 						var value = settings && settings[name];
 						if (typeof value === 'string' && /^[a-z0-9.-]+$/.test(value)) root.dataset[name] = value;
 					});
+					// OpenDyslexic's faces are a style sheet of their own (openDyslexicStylesheet in src/lib/reading-settings.ts), added here for a reader who picked the font, so the first paint already knows them, as it did when every page loaded them.
+					if (root.dataset.font === 'opendyslexic') {
+						var faces = document.createElement('link');
+						faces.id = 'opendyslexic-faces';
+						faces.rel = 'stylesheet';
+						faces.href = '/opendyslexic.css';
+						faces.setAttribute('blocking', 'render');
+						document.head.appendChild(faces);
+					}
 					// Print options (src/lib/print-options.ts) apply only on paper.
 					var print = JSON.parse(localStorage.getItem('print-options') || '{}');
 					[

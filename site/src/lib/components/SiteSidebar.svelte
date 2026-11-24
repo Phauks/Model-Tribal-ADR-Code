@@ -429,6 +429,7 @@
 		<span class="menu-word">Menu</span>
 		{#if whereLabel}<span class="where">{whereLabel}</span>{/if}
 	</summary>
+	<!-- Closes the menu once a link inside is followed; Enter on a link fires the same click, so keys need nothing more. -->
 	<!-- svelte-ignore a11y_click_events_have_key_events, a11y_no_noninteractive_element_interactions -->
 	<nav aria-label="Site" onclick={closeOnLink}>
 		{#if hasColumn}

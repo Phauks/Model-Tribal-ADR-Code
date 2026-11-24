@@ -32,6 +32,7 @@
 	import {
 		contrastChoices,
 		defaultSettings,
+		addOpenDyslexicFaces,
 		downloadFont,
 		fontChoices,
 		fontFamilyTokens,
@@ -107,6 +108,8 @@
 		hasWorkspace = hint.workspacePageNames.length > 0;
 		everywhere = signedIn && readEverywhere().on;
 		everywhereProblem = '';
+		// The font choice shows OpenDyslexic in its own typeface, whose faces are read only when needed.
+		void addOpenDyslexicFaces();
 		modal?.open();
 	}
 

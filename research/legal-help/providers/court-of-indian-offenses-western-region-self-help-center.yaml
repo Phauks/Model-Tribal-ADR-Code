@@ -1,0 +1,47 @@
+id: court-of-indian-offenses-western-region-self-help-center
+name: Self-Help Center, Court of Indian Offenses of the Western Region
+kind: self-help-center
+operator: federal
+link: https://www.bia.gov/regional-offices/western/court-indian-offenses/self-help-center
+link_label: Self-Help Center
+services:
+- forms-help
+- legal-information
+who_can_use: People with cases in the Court of Indian Offenses of the Western Region.
+serves:
+- states:
+  - NV
+  - UT
+  scope: named-nations
+  nations:
+  - skull-valley-band-of-goshute-indians-of-utah
+  - summit-lake-paiute-tribe-of-nevada
+  - yomba-shoshone-tribe-of-the-yomba-reservation
+  - te-moak-tribe-of-western-shoshone-indians-of-nevada
+  - winnemucca-indian-colony-of-nevada
+  text: Self-help packets (custody, child support, civil complaint, divorce, guardianship, name change, paternity, protective orders) and steps for answering or filing a civil suit.
+  source: bia-western-region-self-help-center
+  note: 'Bureau of Indian Affairs pages disagree on which tribes the court serves: one lists Skull Valley, Summit Lake and Yomba, another Skull Valley, Te-Moak and Winnemucca. All five are matched until checked.'
+sources:
+- id: bia-western-region-self-help-center
+  title: Self-Help Center
+  publisher: Bureau of Indian Affairs, Western Region
+  link: https://www.bia.gov/regional-offices/western/court-indian-offenses/self-help-center
+  accessed: '2026-11-24'
+  verification: page-read
+  supports: Packets, forms and steps; refers to Nevada Indian Legal Services.
+- id: bia-western-region-cfr-court
+  title: Court of Indian Offenses of the Western Region
+  publisher: Bureau of Indian Affairs
+  link: https://bia.gov/CFRCourts/western-region-cfr-court
+  accessed: '2026-11-24'
+  verification: page-read
+  supports: 'Tribes served: Skull Valley Band of Goshute Indians, Summit Lake Paiute Tribe, Yomba Shoshone Tribe (dockets dated 2020); read through a fetch service.'
+- id: bia-western-region-cfr-court-tribes
+  title: Western Region CFR Court
+  publisher: Bureau of Indian Affairs
+  link: https://www.bia.gov/node/15007
+  accessed: '2026-11-24'
+  verification: page-read
+  supports: 'Tribes located in the court: Skull Valley, Te-Moak, Winnemucca; read through a fetch service.'
+checked: '2026-11-24'

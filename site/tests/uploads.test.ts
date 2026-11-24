@@ -38,6 +38,7 @@ import {
 	intakeFilesOf,
 	isCaptureKey,
 	scanBadgeFor,
+	UploadProblem,
 	type Filing,
 	type SenderAnswers
 } from '#lib/server/uploads.ts';
@@ -130,13 +131,13 @@ const filing: Filing = {
 	nations: []
 };
 
-// A small PNG with a text chunk that should not survive into the copy.
-function png(): Uint8Array {
+// A small PNG with a text chunk that should not survive into the copy. A different text makes a different file.
+function png(text = 'GPS'): Uint8Array {
 	const chunk = (type: string, data: number[]) => [0, 0, 0, data.length, ...new TextEncoder().encode(type), ...data, 0, 0, 0, 0];
 	return new Uint8Array([
 		0x89, 0x50, 0x4e, 0x47, 0x0d, 0x0a, 0x1a, 0x0a,
 		...chunk('IHDR', [0, 0, 0, 1, 0, 0, 0, 1, 8, 2, 0, 0, 0]),
-		...chunk('tEXt', [0x47, 0x50, 0x53]),
+		...chunk('tEXt', [...new TextEncoder().encode(text)]),
 		...chunk('IEND', [])
 	]);
 }
@@ -162,11 +163,17 @@ beforeEach(async () => {
 	reviewer = result.person;
 });
 
-async function sendWhole(bytes: Uint8Array, fileName: string, extra: Partial<SenderAnswers> = {}, passScan = true) {
+async function sendWhole(
+	bytes: Uint8Array,
+	fileName: string,
+	extra: Partial<SenderAnswers> = {},
+	passScan = true,
+	accountIdentifier = sender
+) {
 	const started = await startUpload(
 		database,
 		fake.bucket,
-		{ accountIdentifier: sender, groupIdentifier: crypto.randomUUID(), fileName, sizeBytes: bytes.length, wayIn: 'send-files', answers: { ...answers, ...extra } },
+		{ accountIdentifier, groupIdentifier: crypto.randomUUID(), fileName, sizeBytes: bytes.length, wayIn: 'send-files', answers: { ...answers, ...extra } },
 		allowances.unlimited
 	);
 	for (let number = 1; number <= started.pieceCount; number++) {
@@ -174,7 +181,12 @@ async function sendWhole(bytes: Uint8Array, fileName: string, extra: Partial<Sen
 		const outcome = await receivePiece(database, fake.bucket, (await uploadByReference(database, started.reference))!, number, piece);
 		if (!outcome.accepted) return { reference: started.reference, refused: outcome.reason };
 	}
-	await finishUpload(database, fake.bucket, (await uploadByReference(database, started.reference))!);
+	try {
+		await finishUpload(database, fake.bucket, (await uploadByReference(database, started.reference))!);
+	} catch (problem) {
+		if (problem instanceof UploadProblem) return { reference: started.reference, refused: problem.message };
+		throw problem;
+	}
 	if (passScan) await scanned(started.reference, 'clean');
 	return { reference: started.reference, refused: null };
 }
@@ -293,6 +305,48 @@ describe('sending files', () => {
 		await expect(
 			addYoutubeLink(database, { accountIdentifier: sender, link: 'https://vimeo.com/1', wayIn: 'send-files', answers }, allowances.unlimited)
 		).rejects.toThrow(/YouTube/);
+	});
+
+	it('refuses a second copy of a file the sender already sent, naming the first, and keeps none of it', async () => {
+		const { reference: first } = await sendWhole(png(), 'chapter-house.png');
+		const { reference: second, refused } = await sendWhole(png(), 'chapter-house (1).png');
+		expect(refused).toBe(`This file was already sent as ${first}.`);
+		const copy = (await uploadByReference(database, second))!;
+		expect(copy).toMatchObject({ status: 'not-accepted', decision_reason: refused, fingerprint: null });
+		expect(fake.stored.has(copy.original_key!)).toBe(false);
+		expect(fake.unfinished.size).toBe(0);
+		const history = await eventsFor(database, 'upload', copy.identifier);
+		expect(history.map((event) => event.action)).toEqual(['Upload started', 'Upload not accepted']);
+		expect((await uploadsOfAccount(database, sender)).find((upload) => upload.reference === second)).toMatchObject({
+			status: 'not-accepted',
+			reason: refused
+		});
+	});
+
+	it('refuses a second copy of a large file sent in pieces', async () => {
+		const bytes = new Uint8Array(pieceBytes + 1000);
+		bytes.set([0, 0, 0, 0x20, ...new TextEncoder().encode('ftypisom')]);
+		const { reference: first } = await sendWhole(bytes, 'talk.mp4');
+		const { refused } = await sendWhole(bytes, 'talk-copy.mp4');
+		expect(refused).toBe(`This file was already sent as ${first}.`);
+	});
+
+	it('takes the same file again once the first copy was withdrawn or not accepted', async () => {
+		const { reference: first } = await sendWhole(png(), 'photo.png');
+		await withdrawUpload(database, fake.bucket, (await uploadByReference(database, first))!);
+		const { refused } = await sendWhole(png(), 'photo.png');
+		expect(refused).toBeNull();
+	});
+
+	it('does not tell one sender what another sent', async () => {
+		const other = 'account-other';
+		await database
+			.prepare(`INSERT INTO accounts (identifier, email, email_verified_at, created_at) VALUES (?, ?, ?, ?)`)
+			.bind(other, 'other@example.org', '2026-11-23T00:00:00Z', '2026-11-23T00:00:00Z')
+			.run();
+		await sendWhole(png(), 'photo.png');
+		const { refused } = await sendWhole(png(), 'photo.png', {}, true, other);
+		expect(refused).toBeNull();
 	});
 });
 
@@ -479,7 +533,7 @@ describe('comments from the nation', () => {
 	it('hides withdrawn files, and pauses when the lead author lowers the access', async () => {
 		const navajo = await nationReviewer('navajo-reviewer', 'navajo-nation');
 		const kept = await sendWhole(png(), 'kept.png');
-		const taken = await sendWhole(png(), 'taken.png');
+		const taken = await sendWhole(png('another'), 'taken.png');
 		await withdrawUpload(database, fake.bucket, (await uploadByReference(database, taken.reference))!);
 		expect((await nationUploads(database, navajo)).map((item) => item.reference)).toEqual([kept.reference]);
 		await setGrant(
@@ -543,7 +597,7 @@ describe('essay figures', () => {
 describe('pulled files', () => {
 	const pdf = new TextEncoder().encode('%PDF-1.4\n1 0 obj << /Type /Catalog >> endobj\ntrailer << /Root 1 0 R >>\n%%EOF\n');
 
-	async function sendPulled(note: string | null = 'Sealaska page was spam') {
+	async function sendPulled(note: string | null = 'Sealaska page was spam', bytes = pdf) {
 		const started = await startUpload(
 			database,
 			fake.bucket,
@@ -551,14 +605,14 @@ describe('pulled files', () => {
 				accountIdentifier: sender,
 				groupIdentifier: crypto.randomUUID(),
 				fileName: 'viewcontent.pdf',
-				sizeBytes: pdf.length,
+				sizeBytes: bytes.length,
 				wayIn: 'send-files',
 				fromPullList: true,
 				note
 			},
 			allowances.unlimited
 		);
-		await receivePiece(database, fake.bucket, (await uploadByReference(database, started.reference))!, 1, pdf);
+		await receivePiece(database, fake.bucket, (await uploadByReference(database, started.reference))!, 1, bytes);
 		await finishUpload(database, fake.bucket, (await uploadByReference(database, started.reference))!);
 		await scanned(started.reference, 'clean');
 		return (await uploadByReference(database, started.reference))!;
@@ -590,8 +644,9 @@ describe('pulled files', () => {
 	});
 
 	it('file a second copy of a file already filed without breaking the page', async () => {
+		// Two copies the intake script matched to one capture, as from before second copies were refused.
 		const first = await sendPulled();
-		const second = await sendPulled();
+		const second = await sendPulled(null, pdf.map((byte, index) => (index === pdf.length - 2 ? 0x20 : byte)));
 		fake.stored.set('articles/court-review-2009.pdf', pdf);
 		await fake.bucket.put(`intake/filed/${first.reference}.json`, JSON.stringify({ captureKey: 'articles/court-review-2009.pdf' }));
 		expect(await settlePulledFiles(database, fake.bucket)).toBe(1);
@@ -610,6 +665,35 @@ describe('pulled files', () => {
 		const intake = await intakeFilesOf(database, sender);
 		expect(intake.find((file) => file.reference === second.reference)?.filedAs).toBe('Already held as articles/court-review-2009.pdf');
 		expect([...fake.stored.keys()].filter((key) => key.startsWith('intake/'))).toEqual([]);
+	});
+
+	it('refuse a second copy of a file any editor pulled, before or after it was filed', async () => {
+		const first = await sendPulled();
+		const editor = 'account-editor';
+		await database
+			.prepare(`INSERT INTO accounts (identifier, email, email_verified_at, created_at) VALUES (?, ?, ?, ?)`)
+			.bind(editor, 'editor@example.org', '2026-11-23T00:00:00Z', '2026-11-23T00:00:00Z')
+			.run();
+		const again = async () => {
+			const started = await startUpload(
+				database,
+				fake.bucket,
+				{ accountIdentifier: editor, groupIdentifier: crypto.randomUUID(), fileName: 'copy.pdf', sizeBytes: pdf.length, wayIn: 'send-files', fromPullList: true },
+				allowances.unlimited
+			);
+			await receivePiece(database, fake.bucket, (await uploadByReference(database, started.reference))!, 1, pdf);
+			return finishUpload(database, fake.bucket, (await uploadByReference(database, started.reference))!);
+		};
+		await expect(again()).rejects.toThrow(`This file was already sent as ${first.reference}.`);
+		fake.stored.set('articles/vance-2016.pdf', pdf);
+		await fake.bucket.put(`intake/filed/${first.reference}.json`, JSON.stringify({ captureKey: 'articles/vance-2016.pdf' }));
+		await settlePulledFiles(database, fake.bucket);
+		await expect(again()).rejects.toThrow(`This file was already sent as ${first.reference}.`);
+		const intake = await intakeFilesOf(database, editor);
+		expect(intake.map((file) => file.statusText)).toEqual([
+			`Not filed: This file was already sent as ${first.reference}.`,
+			`Not filed: This file was already sent as ${first.reference}.`
+		]);
 	});
 
 	it('are marked not used when the intake declines them', async () => {

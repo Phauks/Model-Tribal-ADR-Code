@@ -90,15 +90,30 @@ export type SealCheck =
 			problem: 'changed' | 'missing-entry' | 'missing-seal';
 	  };
 
+/** A point in the chain already checked: an entry and its seal. */
+interface ChainPoint {
+	sequence: number;
+	hash: string;
+}
+
+const startOfChain: ChainPoint = { sequence: 0, hash: chainStart };
+
 /**
  * Recomputes the whole chain and compares it with the stored seals. Reads in
  * pages, so a long log does not need to fit in memory at once.
  */
-export async function checkSeals(database: D1Database, pageSize = 1000): Promise<SealCheck> {
-	let previous = chainStart;
-	let expectedSequence = 0;
-	let checked = 0;
-	let latestSeal: string | null = null;
+export function checkSeals(database: D1Database, pageSize = 1000): Promise<SealCheck> {
+	return checkSealsFrom(database, startOfChain, pageSize);
+}
+
+/**
+ * Checks the chain after `start`, an entry whose seal is already known to be right. Every sealed entry up to `start` counts as checked, so the result is the one checking the whole chain would give when nothing up to `start` has changed.
+ */
+async function checkSealsFrom(database: D1Database, start: ChainPoint, pageSize: number): Promise<SealCheck> {
+	let previous = start.hash;
+	let expectedSequence = start.sequence;
+	let checked = start.sequence;
+	let latestSeal: string | null = start.sequence > 0 ? start.hash : null;
 	for (;;) {
 		const page = await database
 			.prepare(
@@ -144,4 +159,82 @@ export async function checkSeals(database: D1Database, pageSize = 1000): Promise
 		latestSeal,
 		latestSequence: expectedSequence
 	};
+}
+
+interface CheckpointRow {
+	sequence: number;
+	hash: string;
+	brokenAt: number | null;
+	problem: Extract<SealCheck, { intact: false }>['problem'] | null;
+}
+
+/**
+ * Checks the whole chain from the start, as `checkSeals` does, and records the result as the checkpoint pages start from: how far the chain is intact, or the problem found. The hourly scheduled run (/activity-log/scheduled) and the Activity page call this, so a change to an entry before the checkpoint is found within the hour and then shown wherever the seals are shown.
+ */
+export async function checkSealsAndRecord(database: D1Database, pageSize = 1000): Promise<SealCheck> {
+	const check = await checkSeals(database, pageSize);
+	const time = now();
+	const point = check.intact
+		? { sequence: check.latestSequence, hash: check.latestSeal ?? chainStart }
+		: await checkedPointBefore(database, check);
+	await database
+		.prepare(
+			`INSERT INTO event_seal_checkpoint (identifier, sequence, hash, broken_at, problem, checked_at, whole_chain_checked_at)
+			 VALUES (1, ?1, ?2, ?3, ?4, ?5, ?5)
+			 ON CONFLICT (identifier) DO UPDATE SET sequence = excluded.sequence, hash = excluded.hash,
+			   broken_at = excluded.broken_at, problem = excluded.problem, checked_at = excluded.checked_at,
+			   whole_chain_checked_at = excluded.whole_chain_checked_at`
+		)
+		.bind(point.sequence, point.hash, check.intact ? null : check.brokenAt, check.intact ? null : check.problem, time)
+		.run();
+	return check;
+}
+
+/** The last intact point before a broken entry: the stored seal of the entry before it. */
+async function checkedPointBefore(
+	database: D1Database,
+	check: Extract<SealCheck, { intact: false }>
+): Promise<ChainPoint> {
+	if (check.checked === 0) return startOfChain;
+	const row = await database
+		.prepare('SELECT hash FROM event_seals WHERE sequence = ?')
+		.bind(check.checked)
+		.first<{ hash: string }>();
+	return { sequence: check.checked, hash: row?.hash ?? chainStart };
+}
+
+/**
+ * The seal check for pages that show it on every load (the workspace Overview and the Access page). It checks only the entries after the checkpoint the last check recorded, and moves the checkpoint forward.
+ *
+ * When the last check of the whole chain found a problem, it returns that problem. When anything looks wrong from the checkpoint on, or the checkpoint's own seal no longer matches, it checks the whole chain instead. So the result is always the one `checkSeals` would give, except that a change to an entry at or before the checkpoint shows once the next hourly check of the whole chain finds it.
+ */
+export async function checkSealsSinceCheckpoint(database: D1Database, pageSize = 1000): Promise<SealCheck> {
+	const checkpoint = await database
+		.prepare(
+			`SELECT event_seal_checkpoint.sequence, event_seal_checkpoint.hash, event_seal_checkpoint.broken_at AS brokenAt,
+			        event_seal_checkpoint.problem, event_seals.hash AS storedHash
+			 FROM event_seal_checkpoint LEFT JOIN event_seals ON event_seals.sequence = event_seal_checkpoint.sequence
+			 WHERE event_seal_checkpoint.identifier = 1`
+		)
+		.first<CheckpointRow & { storedHash: string | null }>();
+	if (checkpoint && checkpoint.brokenAt !== null && checkpoint.problem !== null) {
+		return { intact: false, checked: checkpoint.brokenAt - 1, brokenAt: checkpoint.brokenAt, problem: checkpoint.problem };
+	}
+	const start = checkpoint ?? startOfChain;
+	const startStillSealed = start.sequence === 0 || checkpoint?.storedHash === start.hash;
+	if (!startStillSealed) return checkSealsAndRecord(database, pageSize);
+	const check = await checkSealsFrom(database, start, pageSize);
+	if (!check.intact) return checkSealsAndRecord(database, pageSize);
+	if (check.latestSequence > start.sequence) {
+		// Only moves forward, and never over a problem the whole-chain check recorded in the meantime.
+		await database
+			.prepare(
+				`INSERT INTO event_seal_checkpoint (identifier, sequence, hash, checked_at) VALUES (1, ?1, ?2, ?3)
+				 ON CONFLICT (identifier) DO UPDATE SET sequence = excluded.sequence, hash = excluded.hash, checked_at = excluded.checked_at
+				 WHERE event_seal_checkpoint.broken_at IS NULL AND event_seal_checkpoint.sequence < excluded.sequence`
+			)
+			.bind(check.latestSequence, check.latestSeal ?? chainStart, now())
+			.run();
+	}
+	return check;
 }
