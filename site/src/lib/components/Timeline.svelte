@@ -788,14 +788,33 @@
 		margin: 0 auto 0 0;
 	}
 
-	/* On a nation's page the buttons sit on the line of the section's heading, as in the approved mockup. */
-	.toolbar.beside {
+	/*
+	 * On a nation's page the buttons sit on the line of the section's heading, as in the approved
+	 * mockup. The folding section clips its contents to animate their height (Collapsible.svelte), so
+	 * a toolbar pulled up over the heading was clipped away and the heading took its clicks: once
+	 * across, the timeline could not be turned back (Trevor, Nov. 24, 2026). The toolbar is placed
+	 * from the section itself instead, which the clip does not reach. On narrow screens, where the
+	 * heading and the buttons do not fit on one line, it keeps its own line.
+	 */
+	:global(details:has(.toolbar.beside)) {
 		position: relative;
+	}
+
+	.toolbar.beside {
+		position: absolute;
 		z-index: 1;
-		margin-top: calc(-1 * var(--timeline-heading-height, 3.9rem));
-		margin-left: auto;
+		top: var(--space-1);
+		right: 0;
 		width: max-content;
 		border-bottom: 0;
+	}
+
+	@media (max-width: 40rem) {
+		.toolbar.beside {
+			position: static;
+			width: auto;
+			border-bottom: 1px solid var(--color-line);
+		}
 	}
 
 	.key-ring {

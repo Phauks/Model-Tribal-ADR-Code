@@ -317,6 +317,75 @@ blockquote > footer {
 	padding-left: var(--space-5);
 }
 
+/* Two label and value lists in a row, such as a nation's courts and then who may practice before them, read as one list with no gap or double rule. */
+.summary-list:has(+ .summary-list) {
+	margin-bottom: 0;
+}
+
+.summary-list + .summary-list {
+	border-top: 0;
+}
+
+/*
+ * No bullets unless it is a real list (Trevor, Nov. 23, 2026: nation pages
+ * used "so many bullet points"; he chose "label rows"). Several values of one
+ * fact stack, each on its own line, with a thin dashed rule between them; the
+ * list stays a <ul> for screen readers. Mockups:
+ * design/nation-page-lists/a-label-rows-*.png in the project files.
+ */
+.stacked-list,
+.summary-list dd > ul.stacked-list {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+
+.stacked-list > li + li {
+	margin-top: var(--space-2);
+	padding-top: var(--space-2);
+	border-top: 1px dashed var(--color-line);
+}
+
+/* Label rows: a fact whose values each have a label, such as a governing
+   body's name, members, how it is chosen and term, as a small two-column list
+   inside the value, the labels in small muted type. */
+.label-rows {
+	display: grid;
+	grid-template-columns: fit-content(40%) 1fr;
+	column-gap: var(--space-4);
+	row-gap: var(--space-1);
+	margin: 0;
+}
+
+.label-rows > div {
+	display: contents;
+}
+
+.label-rows dt,
+.summary-list .label-rows dt,
+.summary-list .label-rows dd {
+	min-width: 0;
+	margin: 0;
+	padding: 0;
+	border: 0;
+}
+
+.label-rows dt,
+.summary-list .label-rows dt {
+	font-weight: var(--font-weight-regular);
+	font-size: var(--font-size-small);
+	color: var(--color-ink-muted);
+	/* The small label sits on the same line as the value's first line. */
+	line-height: 1.75;
+}
+
+/* A note every value of a fact shares, such as "Law code", said once under the fact's label. */
+.summary-list .group-note {
+	display: block;
+	margin-top: 2px;
+	font-weight: var(--font-weight-regular);
+}
+
 @media (max-width: 40rem) {
 	.summary-list {
 		grid-template-columns: 1fr;
@@ -331,9 +400,17 @@ blockquote > footer {
 /*
  * Tables. Data tables that readers sort or search use DataTable.svelte
  * (spikes/tables/REPORT.md); its rules are in lib/tables/table-definition.ts.
- * Wide tables scroll in their own box.
+ * Wide tables scroll in their own box, and the box ends at the edge of the
+ * column, so a table never pushes the page sideways (Trevor, Nov. 24, 2026:
+ * "it should always keep the end of the table locked, so you cannot go over
+ * the side"). The box is positioned so that it also holds anything placed
+ * inside a cell, such as the hidden "Recognition:" label of the badges: placed
+ * against the page, that text sat out past a widened column and made the
+ * whole page scroll sideways.
  */
 .table-scroll {
+	position: relative;
+	max-width: 100%;
 	overflow-x: auto;
 	margin: 0 0 var(--space-5);
 }
@@ -1789,6 +1866,50 @@ sup.citation {
 .nation-contacts dd {
 	margin: 0 0 var(--space-2);
 	overflow-wrap: anywhere;
+}
+
+/*
+ * "Edit" on a part of a nation's page, for someone on the nation's team
+ * whose place covers that part (design/nation-editors, screen 2). Every page
+ * has the links, hidden; NationEditorBanner.svelte names the person's parts
+ * on the root, which shows theirs at the top right of the part.
+ */
+.nation-edit-link {
+	display: none;
+}
+
+:root[data-nation-edit~='about'] .nation-edit-link[data-edit-part='about'],
+:root[data-nation-edit~='courts-and-dispute-resolution'] .nation-edit-link[data-edit-part='courts-and-dispute-resolution'],
+:root[data-nation-edit~='statements'] .nation-edit-link[data-edit-part='statements'],
+:root[data-nation-edit~='contacts'] .nation-edit-link[data-edit-part='contacts'] {
+	position: absolute;
+	z-index: 1;
+	display: inline-flex;
+	align-items: center;
+	gap: var(--space-1);
+	color: var(--color-link);
+	font-size: var(--font-size-small);
+	font-weight: var(--font-weight-semibold);
+	text-decoration: none;
+}
+
+.nation-edit-link:hover {
+	text-decoration: underline;
+}
+
+.nation-words,
+details:has(> .nation-edit-link) {
+	position: relative;
+}
+
+.nation-words > .nation-edit-link {
+	top: var(--space-3);
+	right: var(--space-4);
+}
+
+details > .nation-edit-link {
+	top: var(--space-2);
+	right: 0;
 }
 
 .nation-hidden-note {

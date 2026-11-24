@@ -376,7 +376,7 @@
 						<span class="fold-mark"><ChevronDown size={24} /></span>
 						<h2 id="results-nation">
 							{showLabels.nation}
-							<span class="muted small">{nations.length.toLocaleString('en-US')}</span>
+							<CountBadge count={nations.length} />
 						</h2>
 					</summary>
 					<DataTable
@@ -385,6 +385,7 @@
 						columns={nationColumns}
 						rows={nationRows}
 						rowName={['nation', 'nations']}
+						total={nations.length}
 					>
 						{#snippet cell(row, column)}
 							{#if column.key === 'recognition'}
@@ -406,7 +407,7 @@
 						<span class="fold-mark"><ChevronDown size={24} /></span>
 						<h2 id="results-document">
 							{showLabels.document}
-							<span class="muted small">{documents.length.toLocaleString('en-US')}</span>
+							<CountBadge count={documents.length} />
 						</h2>
 					</summary>
 					<ol class="results" aria-labelledby="results-document">
@@ -434,7 +435,7 @@
 							<span class="fold-mark"><ChevronDown size={24} /></span>
 							<h2 id="results-{group}">
 								{showLabels[group]}
-								<span class="muted small">{items.length.toLocaleString('en-US')}</span>
+								<CountBadge count={items.length} />
 							</h2>
 						</summary>
 						<ol class="results" aria-labelledby="results-{group}">

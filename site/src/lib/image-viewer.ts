@@ -34,10 +34,8 @@ export interface ImageViewerDetails {
 	credit?: string;
 	/** Where the picture is published, such as the nation's own website. */
 	original?: string;
-	/** The picture's entry in the page's Sources list, such as "#source-1". */
+	/** The picture's entry in the page's References list, such as "#source-1". */
 	source?: string;
-	/** Where to ask for the picture to be taken down. */
-	removal?: string;
 }
 
 /** One picture as the viewer shows it. */
@@ -54,8 +52,7 @@ const dataNames: Record<keyof ImageViewerDetails, string> = {
 	title: 'data-viewer-title',
 	credit: 'data-viewer-credit',
 	original: 'data-viewer-original',
-	source: 'data-viewer-source',
-	removal: 'data-viewer-removal'
+	source: 'data-viewer-source'
 };
 
 /**
@@ -118,15 +115,13 @@ export function readImageViewerItem(link: HTMLAnchorElement): ImageViewerItem {
 		const value = link.getAttribute(name)?.trim();
 		if (value) item[key] = value;
 	}
-	// An essay figure's caption ends with its own link to ask for removal.
-	const removal = link.closest('figure')?.querySelector<HTMLAnchorElement>('.essay-figure-removal a');
-	if (!item.removal && removal) item.removal = removal.getAttribute('href') ?? undefined;
 	return item;
 }
 
 /**
- * A copy of the caption under the picture, without the removal link (the
- * viewer has its own) and without ids, which must stay unique on the page.
+ * A copy of the caption under the picture, without the link to ask for its
+ * removal (Report a problem is always at hand, Trevor, Nov. 23, 2026) and
+ * without ids, which must stay unique on the page.
  */
 function captionHtml(link: HTMLAnchorElement): string {
 	const caption = link.closest('figure')?.querySelector('figcaption');
@@ -163,4 +158,36 @@ export function originalHost(address: string): string | undefined {
 	if (!URL.canParse(address)) return undefined;
 	const host = new URL(address).hostname;
 	return host.replace(/^www\./, '') || undefined;
+}
+
+const extensions: Record<string, string> = {
+	'image/png': 'png',
+	'image/jpeg': 'jpg',
+	'image/gif': 'gif',
+	'image/webp': 'webp',
+	'image/avif': 'avif',
+	'image/svg+xml': 'svg'
+};
+
+/**
+ * The name a downloaded picture is saved under: its title in lowercase words
+ * joined by hyphens ("seal-of-navajo-nation.png"), with the extension its
+ * media type calls for, or else the one its address ends in. Addresses such
+ * as /nations/<id>/image end in no extension, so the title gives the name.
+ */
+export function downloadName(title: string, file: string, mediaType = ''): string {
+	const base =
+		title
+			.normalize('NFKD')
+			.replace(/[\u0300-\u036f]/g, '')
+			.toLowerCase()
+			.replace(/[^a-z0-9]+/g, '-')
+			.replace(/^-+|-+$/g, '')
+			.slice(0, 80)
+			.replace(/-+$/, '') || 'picture';
+	const fromType = extensions[mediaType.split(';')[0].trim().toLowerCase()];
+	const path = URL.canParse(file, 'https://example.org') ? new URL(file, 'https://example.org').pathname : '';
+	const fromAddress = /\.([a-z0-9]{2,5})$/i.exec(path)?.[1]?.toLowerCase();
+	const extension = fromType ?? fromAddress;
+	return extension ? `${base}.${extension}` : base;
 }

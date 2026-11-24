@@ -116,8 +116,9 @@
 	 * does, so the sections run beside it and, once they pass its bottom, use
 	 * the whole width under it instead of leaving an empty column (Trevor,
 	 * Nov. 23, 2026). Blocks that draw a box or a rule keep clear of it, so
-	 * nothing runs underneath; grids, flex rows, lists set in columns and
-	 * scrolling tables do this by themselves.
+	 * nothing runs underneath, such as the References list's groups and
+	 * rows, whose rules showed through the contact card; grids, flex rows,
+	 * lists set in columns and scrolling tables do this by themselves.
 	 */
 	@container page (min-width: 52rem) {
 		.record-page.has-glance {
@@ -138,7 +139,7 @@
 			margin-top: 0;
 		}
 
-		.has-glance :global(:is(.record-details, .record-sources) :is(.notice, .panel, .timeline, figure, hr)) {
+		.has-glance :global(:is(.record-details, .record-sources) :is(.notice, .panel, .timeline, figure, hr, .source-group, .source-list > li)) {
 			display: flow-root;
 		}
 	}

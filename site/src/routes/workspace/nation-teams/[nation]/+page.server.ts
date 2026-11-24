@@ -37,6 +37,12 @@ export const load: PageServerLoad = async (event) => {
 		canManage: canManageTeam(granter),
 		isAdministrator: granter.isAdministrator,
 		usualEnds: Object.fromEntries(teamLevels.map((level) => [level, termEnd(usualTerm[level]).slice(0, 10)])),
+		// The terms offered in the Until list; "Another date" opens a date field.
+		terms: [
+			{ label: '6 months', end: termEnd(183).slice(0, 10) },
+			{ label: '1 year', end: termEnd(365).slice(0, 10) },
+			{ label: '2 years', end: termEnd(731).slice(0, 10) }
+		],
 		// The latest end date any level allows; the server checks each level's own limit.
 		latestEnd: termEnd(Math.max(...Object.values(longestTerm))).slice(0, 10)
 	};
@@ -53,8 +59,11 @@ export const actions: Actions = {
 		if (!displayName) return fail(400, { problem: 'Give their name.' });
 		const level = formText(form, 'level') as TeamLevel | null;
 		if (!level || !teamLevels.includes(level)) return fail(400, { problem: 'Choose a level.' });
-		const parts =
-			formText(form, 'scope') === 'parts'
+		// "whole", one part as "part:<part>", or "parts" with the parts ticked.
+		const scope = formText(form, 'scope') ?? 'whole';
+		const parts = scope.startsWith('part:')
+			? [scope.slice('part:'.length)].filter((part): part is PagePart => pageParts.includes(part as PagePart))
+			: scope === 'parts'
 				? form.getAll('parts').filter((part): part is PagePart => pageParts.includes(part as PagePart))
 				: null;
 		const expiresAt = dateAsTermEnd(formText(form, 'expires', 10));

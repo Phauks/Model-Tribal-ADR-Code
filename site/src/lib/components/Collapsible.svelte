@@ -2,7 +2,8 @@
 	@component
 	A page section that a reader can fold away, with its heading as the
 	control (Trevor asked for collapsible sections on Nov. 22, 2026). It is the
-	browser's own <details> element, so it works without scripts, starts open,
+	browser's own <details> element, so it works without scripts, starts open (or folded, with
+	open={false}),
 	and find-in-page still reaches folded text in current browsers. Every
 	folded section is opened before printing (PrintOptions.svelte), so paper
 	always has the whole page.
@@ -23,13 +24,15 @@
 		class?: string;
 		/** A count shown small after the heading, such as the number of sources. */
 		count?: number;
+		/** False for a section that starts folded, such as Nearby Nations. */
+		open?: boolean;
 		children: Snippet;
 	}
 
-	let { heading, identifier, class: extraClass = '', count, children }: Props = $props();
+	let { heading, identifier, class: extraClass = '', count, open = true, children }: Props = $props();
 </script>
 
-<details class="collapsible {extraClass}" data-section={identifier} open>
+<details class="collapsible {extraClass}" data-section={identifier} {open}>
 	<summary>
 		<span class="fold-mark no-print"><ChevronDown size={24} /></span>
 		<h2 id={identifier}>{heading}{#if count !== undefined}<CountBadge {count} />{/if}</h2>

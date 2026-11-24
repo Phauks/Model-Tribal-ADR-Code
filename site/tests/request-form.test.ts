@@ -15,6 +15,17 @@ describe('request form', () => {
 		expect(result.ok).toBe(true);
 	});
 
+	it('shares the sender with the nation’s team only when ticked, and never for a removal', async () => {
+		const read = async (fields: Record<string, string>) => {
+			const result = await readRequestForm(form({ contact: 'sample@example.org', details: 'Hello', material: 'tribes/sample-nation', nationIdentifier: 'sample-nation', ...fields }));
+			return result.ok ? result.request.sharedWithTeam : undefined;
+		};
+		expect(await read({ kind: 'question', shareWithTeam: 'yes' })).toBe(true);
+		expect(await read({ kind: 'question' })).toBe(false);
+		expect(await read({ kind: 'remove', shareWithTeam: 'yes' })).toBe(false);
+		expect(await read({ kind: 'question', shareWithTeam: 'yes', nationIdentifier: '' })).toBe(false);
+	});
+
 	it('asks where the material is for a request to restrict it', async () => {
 		const result = await readRequestForm(form({ kind: 'restrict', contact: '555-0100', details: 'Please hide it' }));
 		expect(result.ok).toBe(false);

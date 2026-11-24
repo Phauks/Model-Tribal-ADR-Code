@@ -1,4 +1,5 @@
 import { fail } from '@sveltejs/kit';
+import { reviewSubjects } from 'virtual:review-subjects';
 import { isRequestKind } from '#lib/requests.ts';
 import { workerEnvironment } from '#lib/server/environment.ts';
 import { readRequestForm } from '#lib/server/request-form.ts';
@@ -19,7 +20,12 @@ export const load: PageServerLoad = ({ url }) => {
 	const field = (url.searchParams.get('field') ?? '').slice(0, 200);
 	const material = record ? (field ? `${record} (${field})` : record) : '';
 	const nationIdentifier = record.startsWith('tribes/') ? record.slice('tribes/'.length) : '';
+	// From a claimed nation page's badge: a message to the nation's team.
+	const nation = reviewSubjects.find((subject) => subject.kind === 'nation' && subject.identifier === nationIdentifier);
+	const toTeam = url.searchParams.get('to') === 'team' && nation !== undefined && kind === 'question';
 	return {
+		toTeam,
+		teamPage: toTeam && nation?.page ? { title: nation.title, link: nation.page } : undefined,
 		kind: isRequestKind(kind) ? kind : undefined,
 		record,
 		field,

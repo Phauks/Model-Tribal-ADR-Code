@@ -2,17 +2,16 @@ import { error } from '@sveltejs/kit';
 import type { OutlineItem, PageOutline } from '#lib/site-sections.ts';
 import geometry from 'virtual:map-geometry';
 import { webLink } from '#lib/contact-links.ts';
-import { contactCards, contactsHeading, type ContactCards } from '#lib/contact-card.ts';
+import { contactCards, contactsHeading, defaultOfficeFor, type ContactCards } from '#lib/contact-card.ts';
 import { imageMayBeShown, imagePath } from '#lib/official-images.ts';
 import {
 	nations,
-	searchSummary,
 	sources as sourceRecords,
 	type CitedFact,
 	type NationRecord,
 	type SourceRecord
 } from '#lib/server/content.ts';
-import { emptySectionNote, type EmptyNote } from '#lib/search-status.ts';
+import { noneIdentified, type EmptyNote } from '#lib/search-status.ts';
 import { layoutPresenceMap, pointInBox, shapeInBox, shareStateShapes, type BoxLayers, type NationMapData, type PresenceMapLayout } from '#lib/presence-map.ts';
 import { landAreaKindLabels } from '#lib/nations-map-drawing.ts';
 import { readableDate } from '#lib/readable-date.ts';
@@ -32,7 +31,7 @@ import { issuedDate, nationTimeline, timelineHeading } from '#lib/server/timelin
 import { casePreviewList } from '#lib/server/case-previews.ts';
 import { courtAbbreviation } from '#lib/server/case-citations.ts';
 import { bureauRegionPage, healthAreaPage } from '#lib/federal-offices.ts';
-import { displayName, humanize, regionAnchor, reviewStatusLabels, stateName } from '#lib/nation-labels.ts';
+import { displayName, humanize, regionAnchor, presenceNote, reviewStatusLabels, stateName } from '#lib/nation-labels.ts';
 import type { EntryGenerator, PageServerLoad } from './$types';
 
 export const entries: EntryGenerator = () => nations().map((record) => ({ id: record.id }));
@@ -63,8 +62,6 @@ const opinionsShown = 5;
 
 interface CourtOpinions {
 	count: number;
-	/** How many mention peacemaking, mediation, arbitration or another way of settling a dispute outside a trial. */
-	disputeResolutionCount: number;
 	shown: TribalCourtOpinion[];
 	/** The years of the oldest and newest opinion. */
 	from: string;
@@ -75,20 +72,16 @@ interface CourtOpinions {
 
 /**
  * The nation's court opinions in the Caselaw Access Project's tribal
- * reporters (decision record 0047): how many there are, and the newest few,
- * those that mention a way of settling a dispute outside a trial first.
+ * reporters (decision record 0047): how many there are, and the newest few.
  */
 function courtOpinions(nationId: string, sources: SourceUses): CourtOpinions | undefined {
 	const all = opinionsOf(nationId);
 	if (all.length === 0) return undefined;
 	const citations: CitationMark[] = [];
 	sources.cite(opinionsSourceKey, { section: opinionsHeading, text: `${all.length} published opinions` }, citations);
-	const mentioning = all.filter((opinion) => opinion.mentionsDisputeResolution);
-	const shown = [...mentioning, ...all.filter((opinion) => !opinion.mentionsDisputeResolution)].slice(0, opinionsShown);
 	return {
 		count: all.length,
-		disputeResolutionCount: mentioning.length,
-		shown,
+		shown: all.slice(0, opinionsShown),
 		from: all.at(-1)!.year,
 		to: all[0].year,
 		citations,
@@ -101,13 +94,10 @@ function courtOpinions(nationId: string, sources: SourceUses): CourtOpinions | u
 interface NationImage {
 	src: string;
 	kind: string;
-	credit: string;
 	/** Where the image is published, such as the nation's website. */
 	original: string;
-	/** The image's entry in the Sources list, as a link within the page. */
+	/** The image's entry in the References list, as a link within the page. */
 	source?: string;
-	/** Where the nation asks for the image to be taken down. */
-	removal: string;
 }
 
 interface EmptySections {
@@ -121,10 +111,12 @@ interface FactGroup {
 	field: string;
 	label: string;
 	items: FactItem[];
+	/** The note every value shares, said once under the label (FactGroups.svelte). */
+	note?: string;
 }
 
-function group(field: string, label: string, items: FactItem[]): FactGroup[] {
-	return items.length > 0 ? [{ field, label, items }] : [];
+function group(field: string, label: string, items: FactItem[], note?: string): FactGroup[] {
+	return items.length > 0 ? [{ field, label, items, ...(note ? { note } : {}) }] : [];
 }
 
 /** Shows a fact with the marker of its source, and records the source under the group's label. */
@@ -143,11 +135,15 @@ function contactCard(record: NationRecord, sources: SourceUses): ContactCards {
 	const facts = record.contacts ?? [];
 	const describe = (fact: (typeof facts)[number]) => `${humanize(fact.kind)}: ${fact.value}`;
 	for (const fact of facts) sources.use(fact, contactsHeading, describe(fact));
-	return contactCards(facts, (fact) => {
-		const citations: CitationMark[] = [];
-		sources.citeFact(fact, contactsHeading, describe(fact), citations);
-		return citations;
-	});
+	return contactCards(
+		facts,
+		(fact) => {
+			const citations: CitationMark[] = [];
+			sources.citeFact(fact, contactsHeading, describe(fact), citations);
+			return citations;
+		},
+		defaultOfficeFor(record.entity_type)
+	);
 }
 
 /** How the page words each kind of presence a source records in a state. */
@@ -159,8 +155,8 @@ const presenceWords: Record<string, string> = {
 
 /**
  * The states with a presence as one line, "Arizona, New Mexico, Utah", and
- * under it what sources record in each, grouped by kind: "Land: Arizona, New
- * Mexico, Utah. Government office: Arizona." Every state fact keeps its marker.
+ * under it what sources record in each, grouped by kind: "Land in all three;
+ * government office in Arizona" (presenceNote). Every state fact keeps its marker.
  */
 function statesItem(record: NationRecord, sources: SourceUses, label: string): FactItem[] {
 	const facts = record.states ?? [];
@@ -179,10 +175,11 @@ function statesItem(record: NationRecord, sources: SourceUses, label: string): F
 		sources.citeFact(fact, label, `${stateName(fact.state)}${kind ? ` (${kind})` : ''}`, citations);
 	}
 	const names = (list: string[]) => list.map(stateName).sort((first, second) => first.localeCompare(second, 'en'));
-	const detail = [...byKind.entries()]
-		.map(([kind, list]) => `${kind.charAt(0).toLocaleUpperCase('en-US')}${kind.slice(1)}: ${names(list).join(', ')}.`)
-		.join(' ');
-	return [{ text: names(codes).join(', '), note: detail || undefined, citations }];
+	const detail = presenceNote(
+		[...byKind.entries()].map(([kind, list]) => [kind, names(list)]),
+		names(codes)
+	);
+	return [{ text: names(codes).join(', '), note: detail, citations }];
 }
 
 function atAGlance(record: NationRecord, sources: SourceUses): FactGroup[] {
@@ -615,34 +612,15 @@ const establishmentWords: Record<string, string> = {
 };
 
 /**
- * The nation's relationship with the United States: its treaties, each linked
- * to its text in Kappler's Indian Affairs: Laws and Treaties; how its land was
- * set aside; and the Indian Health Service Area and service unit that serve it.
- * The Bureau of Indian Affairs region stays in At a glance. The Gaming
- * Commission's enforcement actions follow as a table (enforcementActions).
+ * The nation's relationship with the United States after its treaties (a
+ * table of their own, treatyRows): how its land was set aside, and the Indian
+ * Health Service Area and service unit that serve it. The Bureau of Indian
+ * Affairs region stays in At a glance. The Gaming Commission's enforcement
+ * actions follow as a table (enforcementActions).
  */
 function federalTies(record: NationRecord, sources: SourceUses): FactGroup[] {
 	const section = 'Treaties and federal ties';
-	const treaties = [...(record.treaties ?? [])].sort((first, second) => first.signed.localeCompare(second.signed));
 	return [
-		...group(
-			'treaties',
-			'Treaties',
-			treaties.map((fact) =>
-				cited(sources, section, fact, {
-					text: fact.title,
-					link: fact.kappler?.link ? webLink(fact.kappler.link) : undefined,
-					detail: [
-						readableDate(fact.signed),
-						fact.statutes_at_large,
-						fact.kappler?.page ? `${fact.kappler.volume ?? 2} Kappler ${fact.kappler.page}` : undefined
-					]
-						.filter(Boolean)
-						.join(', '),
-					note: fact.signatory ? `Signed as “${fact.signatory}”.` : undefined
-				})
-			)
-		),
 		...group(
 			'land_establishment',
 			'How the land was set aside',
@@ -672,6 +650,47 @@ function federalTies(record: NationRecord, sources: SourceUses): FactGroup[] {
 				)
 		)
 	];
+}
+
+/** One treaty, a row of the Treaties table on the nation page. */
+interface TreatyRow {
+	key: string;
+	title: string;
+	/** YYYY-MM-DD, which sorts the table. */
+	signed: string;
+	statutesAtLarge?: string;
+	kappler?: string;
+	/** Kappler's text of the treaty. */
+	link?: string;
+	/** The name the nation, or the people it descends from, signed under. */
+	signedAs?: string;
+	citations: CitationMark[];
+}
+
+/**
+ * The nation's treaties, oldest first, as rows of a table with Signed,
+ * Treaty, Statutes at Large, Kappler and Signed as columns (Trevor, Nov. 23,
+ * 2026, "label rows": records with dates and citations go in the shared data
+ * table). Cited first in the section, as the table comes first.
+ */
+function treatyRows(record: NationRecord, sources: SourceUses): TreatyRow[] {
+	const section = 'Treaties and federal ties';
+	return [...(record.treaties ?? [])]
+		.sort((first, second) => first.signed.localeCompare(second.signed))
+		.map((fact, index) => {
+			const citations: CitationMark[] = [];
+			sources.citeFact(fact, section, fact.title, citations);
+			return {
+				key: `${fact.signed}-${index}`,
+				title: fact.title,
+				signed: fact.signed,
+				statutesAtLarge: fact.statutes_at_large,
+				kappler: fact.kappler?.page ? `${fact.kappler.volume ?? 2} Kappler ${fact.kappler.page}` : undefined,
+				link: fact.kappler?.link ? webLink(fact.kappler.link) : undefined,
+				signedAs: fact.signatory,
+				citations
+			};
+		});
 }
 
 /** One National Indian Gaming Commission enforcement action, a row of its table on the nation page. */
@@ -708,6 +727,11 @@ function enforcementActions(record: NationRecord, sources: SourceUses): Enforcem
 				citations
 			};
 		});
+}
+
+/** A kind of document said of several, such as "Law codes"; words already plural, such as "Court rules", stay. */
+function plural(words: string): string {
+	return /s$/.test(words) ? words : `${words}s`;
 }
 
 /** The first letter in capitals, the rest as given. */
@@ -853,6 +877,11 @@ function publishedLaw(
 			lines.push({ title, link, facts: [fact] });
 		}
 	}
+	// When every document is the same kind, such as four law codes, the kind
+	// is said once under the label ("Law codes") instead of under each one.
+	const kindOf = (line: (typeof lines)[number]) => line.facts.find((fact) => fact.title && fact.kind !== 'other')?.kind;
+	const kinds = new Set(lines.map(kindOf));
+	const sharedKind = lines.length > 1 && kinds.size === 1 ? [...kinds][0] : undefined;
 	return [
 		...group(
 			'dispute_resolution_law',
@@ -876,10 +905,11 @@ function publishedLaw(
 				return {
 					text: site ? `${line.title} (${site})` : line.title,
 					link: line.link,
-					detail: kind ? humanize(kind) : undefined,
+					detail: kind && !sharedKind ? humanize(kind) : undefined,
 					citations
 				};
-			})
+			}),
+			sharedKind ? plural(humanize(sharedKind)) : undefined
 		)
 	];
 }
@@ -887,8 +917,7 @@ function publishedLaw(
 /**
  * The rows "Laws and agreements" shows when the nation's constitution or its
  * published laws are not on record, so the section always says whether they
- * were found. The project keeps no search log for laws yet, so the note says
- * how far the sources go rather than how far a search went.
+ * were found: "None Identified".
  */
 function missingLaw(record: NationRecord, documents: { kind: string }[]): FactGroup[] {
 	const kinds = new Set((record.governing_documents ?? []).map((fact) => fact.kind));
@@ -901,14 +930,8 @@ function missingLaw(record: NationRecord, documents: { kind: string }[]): FactGr
 	const hasLaws =
 		['law-code', 'court-rules', 'other'].some((kind) => kinds.has(kind)) ||
 		(record.dispute_resolution_law ?? []).length > 0;
-	const row = (field: string, label: string, what: string): FactGroup => {
-		const { text, note } = emptySectionNote(what, '', searchSummary(field, record.id));
-		return { field: `missing-${field}`, label, items: [{ text, note }] };
-	};
-	return [
-		...(hasConstitution ? [] : [row('constitution', 'Constitution', 'a constitution or other governing document')]),
-		...(hasLaws ? [] : [row('laws', 'Published laws', 'a law code or other published law')])
-	];
+	const row = (field: string, label: string): FactGroup => ({ field: `missing-${field}`, label, items: [{ text: noneIdentified.text }] });
+	return [...(hasConstitution ? [] : [row('constitution', 'Constitution')]), ...(hasLaws ? [] : [row('laws', 'Published laws')])];
 }
 
 /** Another nation that sources record in one of the same states. */
@@ -1098,6 +1121,7 @@ export const load: PageServerLoad = ({ params }) => {
 			law: [],
 			documents: [],
 			jurisdiction: [],
+			treaties: [],
 			ties: [],
 			enforcement: [],
 			stories: [],
@@ -1127,9 +1151,10 @@ export const load: PageServerLoad = ({ params }) => {
 	// It has no caption (Trevor, Nov. 22, 2026): the credit, and the statement
 	// that the nation does not endorse the site, go in its Sources entry,
 	// and a removal request goes through Report a problem.
-	// Selecting it opens it larger in the image viewer, which shows the same
-	// credit and links to its Sources entry, to where it is published and to
-	// a removal request (src/lib/image-viewer.ts).
+	// Selecting it opens it larger in the image viewer, with a download button
+	// and links to its References entry and to where it is published
+	// (src/lib/image-viewer.ts). The viewer leaves out the credit line, which
+	// the References entry keeps (Trevor, Nov. 23, 2026).
 	let image: NationImage | undefined;
 	if (shownImage) {
 		const kind = humanize(shownImage.kind);
@@ -1143,10 +1168,8 @@ export const load: PageServerLoad = ({ params }) => {
 		image = {
 			src: imagePath(record.id),
 			kind,
-			credit,
 			original: shownImage.image_link,
-			source: sourceNumber ? `#${sourceAnchor(sourceNumber)}` : undefined,
-			removal: `/requests?${new URLSearchParams({ kind: 'remove', record: `nation-images/${record.id}` }).toString().replaceAll('%2F', '/')}`
+			source: sourceNumber ? `#${sourceAnchor(sourceNumber)}` : undefined
 		};
 	}
 
@@ -1230,6 +1253,7 @@ export const load: PageServerLoad = ({ params }) => {
 	sources.part('Jurisdiction');
 	const jurisdiction = jurisdictionFacts(record, sources);
 	sources.part('Treaties and federal ties');
+	const treaties = treatyRows(record, sources);
 	const ties = federalTies(record, sources);
 	const enforcement = enforcementActions(record, sources);
 	// Every dated record on the page on one line, after the sections it
@@ -1242,30 +1266,9 @@ export const load: PageServerLoad = ({ params }) => {
 	// The legal sections always show, and say plainly when nothing was found,
 	// so a reader can see whether recourse may be available (Trevor, Nov. 22, 2026).
 	const empty: EmptySections = {
-		government:
-			government.length > 0
-				? undefined
-				: emptySectionNote(
-						'how the nation’s government is set up',
-						'A nation can govern itself under a constitution or by tradition that is not published online; its government office can say.',
-						searchSummary('governance', record.id)
-					),
-		courts:
-			courts.length > 0 || practice.length > 0
-				? undefined
-				: emptySectionNote(
-						'a court or other forum',
-						'A nation can settle disputes through its council or a court that is not listed online; its government office can say.',
-						searchSummary('courts', record.id) ?? searchSummary('dispute-resolution', record.id)
-					),
-		jurisdiction:
-			jurisdiction.length > 0
-				? undefined
-				: emptySectionNote(
-						'the nation’s Public Law 280 status or an Indian Child Welfare Act agent',
-						'',
-						searchSummary('jurisdiction', record.id)
-					)
+		government: government.length > 0 ? undefined : noneIdentified,
+		courts: courts.length > 0 || practice.length > 0 ? undefined : noneIdentified,
+		jurisdiction: jurisdiction.length > 0 ? undefined : noneIdentified
 	};
 	const result = {
 		page,
@@ -1284,6 +1287,7 @@ export const load: PageServerLoad = ({ params }) => {
 		law,
 		documents,
 		jurisdiction,
+		treaties,
 		ties,
 		enforcement,
 		timeline: hasTimeline ? timeline : undefined,
@@ -1308,7 +1312,7 @@ export const load: PageServerLoad = ({ params }) => {
 		children: documents.map((document) => ({ label: document.heading, link: `#document-${document.id}` }))
 	});
 	items.push({ label: 'Jurisdiction', link: '#jurisdiction-heading' });
-	if (ties.length > 0 || enforcement.length > 0) items.push({ label: 'Treaties and federal ties', link: '#ties-heading' });
+	if (treaties.length > 0 || ties.length > 0 || enforcement.length > 0) items.push({ label: 'Treaties and federal ties', link: '#ties-heading' });
 	if (hasTimeline) items.push({ label: timelineHeading, link: '#timeline-heading' });
 	if (stories.length > 0) items.push({ label: 'Stories', link: '#stories-heading' });
 	if (result.neighbors.length > 0) {

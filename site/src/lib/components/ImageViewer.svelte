@@ -19,9 +19,11 @@
 	import { afterNavigate } from '$app/navigation';
 	import ChevronLeft from '@lucide/svelte/icons/chevron-left';
 	import ChevronRight from '@lucide/svelte/icons/chevron-right';
+	import Download from '@lucide/svelte/icons/download';
 	import X from '@lucide/svelte/icons/x';
 	import { onMount, tick } from 'svelte';
 	import {
+		downloadName,
 		imageViewerLinkFrom,
 		imageViewerLinksIn,
 		imageViewerTitle,
@@ -39,6 +41,8 @@
 	let index = $state(0);
 	let item = $state.raw<ImageViewerItem | undefined>();
 	let failed = $state(false);
+	/** The shown picture's width and its width divided by its height, once it has loaded. */
+	let size = $state<{ width: number; ratio: number } | undefined>();
 	/** Said aloud when the reader steps to another picture; the dialog's own name covers the first. */
 	let announcement = $state('');
 	let swipeStart: { x: number; y: number } | undefined;
@@ -53,6 +57,7 @@
 		index = at;
 		item = readImageViewerItem(link);
 		failed = false;
+		size = undefined;
 		preloadNeighbors();
 	}
 
@@ -88,12 +93,48 @@
 		if (dialog?.open) dialog.close();
 	}
 
-	/** After the dialog closes, focus goes back to the link of the picture last shown. */
+	/**
+	 * After the dialog closes, focus goes back to the link of the picture last
+	 * shown. The picture is left in place until the next one opens: emptying
+	 * the dialog as it closed showed a blank dark page for a moment (Trevor,
+	 * Nov. 23, 2026).
+	 */
 	function closed(): void {
 		const link = links[index];
-		item = undefined;
-		links = [];
 		if (link?.isConnected) link.focus({ preventScroll: false });
+	}
+
+	function measure(event: Event): void {
+		const image = event.currentTarget as HTMLImageElement;
+		size = image.naturalWidth > 0 && image.naturalHeight > 0 ? { width: image.naturalWidth, ratio: image.naturalWidth / image.naturalHeight } : undefined;
+	}
+
+	/**
+	 * Saves the picture under a name made from its title, with the right
+	 * extension: addresses such as /nations/<id>/image end in none, so the
+	 * link's own download name would have none either. If the file cannot be
+	 * fetched, the link opens it instead.
+	 */
+	async function download(event: MouseEvent): Promise<void> {
+		if (!item || event.metaKey || event.ctrlKey || event.shiftKey || event.altKey) return;
+		event.preventDefault();
+		const file = item.file;
+		try {
+			const answer = await fetch(file);
+			if (!answer.ok) throw new Error(`${answer.status}`);
+			const blob = await answer.blob();
+			const address = URL.createObjectURL(blob);
+			const save = document.createElement('a');
+			save.href = address;
+			save.download = downloadName(title, file, blob.type);
+			// Inside the dialog, since the page behind it is inert.
+			(dialog ?? document.body).append(save);
+			save.click();
+			save.remove();
+			setTimeout(() => URL.revokeObjectURL(address), 10_000);
+		} catch {
+			location.href = file;
+		}
 	}
 
 	function onKey(event: KeyboardEvent): void {
@@ -166,6 +207,9 @@
 					</button>
 				</div>
 			{/if}
+			<a class="icon-button viewer-download" href={item.file} download={downloadName(title, item.file)} aria-label="Download" title="Download" onclick={download}>
+				<Download size={24} />
+			</a>
 			<button bind:this={closeButton} class="icon-button viewer-close" type="button" aria-label="Close" title="Close" onclick={close}>
 				<X size={24} />
 			</button>
@@ -177,7 +221,17 @@
 				<p class="viewer-failed">This picture could not be loaded.</p>
 			{:else}
 				{#key item.file}
-					<img class="viewer-image" src={item.file} alt={item.description} onerror={() => (failed = true)} />
+					<!-- Once loaded, it grows to fit the window, at least 16 rem wide, keeping its shape, so a small seal is not left tiny. -->
+					<img
+						class="viewer-image"
+						class:measured={size}
+						style:--picture-width={size ? `${size.width}px` : undefined}
+						style:--picture-ratio={size?.ratio}
+						src={item.file}
+						alt={item.description}
+						onload={measure}
+						onerror={() => (failed = true)}
+					/>
 				{/key}
 			{/if}
 		</div>
@@ -200,10 +254,6 @@
 							>Where it is published{#if host}{' '}({host}){/if}<span class="visually-hidden"> (opens in a new tab)</span></a
 						>
 					</li>
-				{/if}
-				<li><a href={item.file}>Open the file by itself</a></li>
-				{#if item.removal}
-					<li><a href={item.removal} onclick={close}>Ask to have it removed</a></li>
 				{/if}
 			</ul>
 		</div>
@@ -228,23 +278,21 @@
 		border: 0;
 		background: var(--color-viewer-background);
 		color: var(--color-viewer-text);
-		transition:
-			opacity var(--motion-duration-medium) var(--motion-easing-enter),
-			display var(--motion-duration-medium) allow-discrete,
-			overlay var(--motion-duration-medium) allow-discrete;
 	}
 
+	/*
+	 * It fades in when it opens and is gone at once when it closes: fading it
+	 * out left the dark ground on screen with nothing on it for a moment
+	 * (Trevor, Nov. 23, 2026).
+	 */
 	.image-viewer[open] {
 		display: grid;
 		grid-template-rows: auto minmax(0, 1fr) auto;
+		transition: opacity var(--motion-duration-medium) var(--motion-easing-enter);
 
 		@starting-style {
 			opacity: 0;
 		}
-	}
-
-	.image-viewer:not([open]) {
-		opacity: 0;
 	}
 
 	.image-viewer::backdrop {
@@ -298,8 +346,18 @@
 		font-variant-numeric: tabular-nums;
 	}
 
-	.viewer-close {
+	.viewer-download {
 		margin-left: auto;
+	}
+
+	.viewer-steps + .viewer-download {
+		margin-left: 0;
+	}
+
+	/* An icon button, so it takes the text color and no underline, like Close. */
+	.image-viewer a.viewer-download {
+		color: inherit;
+		text-decoration: none;
 	}
 
 	.viewer-stage {
@@ -308,17 +366,30 @@
 		min-height: 0;
 		padding: var(--space-2) var(--space-4);
 		touch-action: pan-y pinch-zoom;
+		/* The picture's size is worked out from the room this box has. */
+		container-type: size;
 	}
 
-	/* The whole picture shows, as large as the window allows. */
+	/*
+	 * The whole picture shows, as large as the window allows. Behind it is a
+	 * gray and white checkerboard, as on Wikimedia Commons, so the clear parts
+	 * of a seal or logo show as clear rather than as the dark ground (Trevor,
+	 * Nov. 23, 2026). The box is the picture's own size, so the checkerboard
+	 * never shows beyond its edges.
+	 */
 	.viewer-image {
 		display: block;
 		width: auto;
 		height: auto;
 		max-width: 100%;
 		max-height: 100%;
-		min-width: min(16rem, 100%);
-		object-fit: contain;
+		background: repeating-conic-gradient(var(--color-viewer-checker-dark) 0 25%, var(--color-viewer-checker-light) 0 50%) 0 0 / 1rem 1rem;
+	}
+
+	.viewer-image.measured {
+		width: min(100cqw, 100cqh * var(--picture-ratio), max(var(--picture-width), 16rem));
+		max-height: none;
+		aspect-ratio: var(--picture-ratio);
 	}
 
 	.viewer-failed {

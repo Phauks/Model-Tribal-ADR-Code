@@ -2,8 +2,11 @@
 	/**
 	 * What one version of a nation's change says, for the team's history and the
 	 * project's review. Pictures come from a private address given by the page.
+	 * Given the version before, it shows what changed: words taken out struck
+	 * through beside the new words (design/nation-editors, screens 3 and 5).
 	 */
 	import {
+		contactChanges,
 		contactKindLabels,
 		hideableSectionLabels,
 		statementSectionLabels,
@@ -13,10 +16,44 @@
 		type StatementSection
 	} from '#lib/nation-page-changes.ts';
 
-	let { kind, content, pictureBase }: { kind: ChangeKind; content: ChangeContent; pictureBase: string } = $props();
+	let {
+		kind,
+		content,
+		pictureBase,
+		before
+	}: { kind: ChangeKind; content: ChangeContent; pictureBase: string; before?: ChangeContent } = $props();
+
+	const sections = $derived(
+		[
+			...new Set([
+				...Object.keys((before as ChangeContents['statements'] | undefined)?.statements ?? {}),
+				...Object.keys((content as ChangeContents['statements']).statements ?? {})
+			])
+		] as StatementSection[]
+	);
 </script>
 
-{#if kind === 'about' || kind === 'courts'}
+{#snippet compared(old: string | undefined, now: string | undefined)}
+	{#if old && old !== now}<del class="change-text">{old}</del>{' '}{/if}{#if now && old !== now}<ins class="change-text">{now}</ins>{:else if now}<span class="change-text">{now}</span>{/if}
+{/snippet}
+
+{#if before && (kind === 'about' || kind === 'courts')}
+	<p>{@render compared((before as ChangeContents['about']).text, (content as ChangeContents['about']).text)}{#if !(content as ChangeContents['about']).text} (removed){/if}</p>
+{:else if before && kind === 'statements'}
+	{#each sections as section (section)}
+		{@const old = (before as ChangeContents['statements']).statements[section]}
+		{@const now = (content as ChangeContents['statements']).statements[section]}
+		{#if old !== now}
+			<p><strong>{statementSectionLabels[section].replace(/ \(.*\)$/, '')}:</strong> {@render compared(old, now)}{#if !now} (removed){/if}</p>
+		{/if}
+	{/each}
+{:else if before && kind === 'contacts'}
+	{#each contactChanges((before as ChangeContents['contacts']).contacts, (content as ChangeContents['contacts']).contacts) as change, index (index)}
+		<p class="contact-change">{change.label}: {@render compared(change.before, change.after)}{#if !change.after} (removed){/if}</p>
+	{:else}
+		<p>(no change to the contacts)</p>
+	{/each}
+{:else if kind === 'about' || kind === 'courts'}
 	<p class="change-text">{(content as ChangeContents['about']).text || '(empty)'}</p>
 {:else if kind === 'statements'}
 	{#each Object.entries((content as ChangeContents['statements']).statements) as [section, text] (section)}
@@ -54,6 +91,23 @@
 <style>
 	.change-text {
 		white-space: pre-wrap;
+	}
+
+	del {
+		padding: 0 0.15em;
+		background: var(--color-removed-background);
+		color: var(--color-ink);
+	}
+
+	ins {
+		padding: 0 0.15em;
+		background: var(--color-added-background);
+		color: var(--color-ink);
+		text-decoration: none;
+	}
+
+	.contact-change {
+		margin: 0 0 var(--space-1);
 	}
 
 	.change-pictures {

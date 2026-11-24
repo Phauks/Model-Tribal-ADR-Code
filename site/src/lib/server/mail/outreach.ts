@@ -11,9 +11,11 @@
  * again just before sending, and nothing hidden tracks whether a message was
  * opened. A batch can instead ask, visibly, "let us know you got this".
  */
-import { fillTemplate, missingFields, normalizeSubject, snippetOf, unknownFields, type MergeValues } from '#lib/mail.ts';
+import { fillTemplate, missingFields, normalizeSubject, outreachText, snippetOf, unknownFields, type MergeValues } from '#lib/mail.ts';
+import { freshDays, stalenessOf, type MethodLabel } from '#lib/address-book.ts';
 import { actionStatement, currentTime, type MailCarriers, type MailContext } from './context.ts';
 import { inboxForArrival } from './inboxes.ts';
+import { newMessageId } from './mime.ts';
 import { sendMessage } from './outbound.ts';
 import { suppress, suppressedAmong } from './suppressions.ts';
 import { makeToken, readToken } from './tokens.ts';
@@ -163,6 +165,7 @@ export interface AddressBookRecipient {
 	email: string;
 	label: string;
 	verifiedOn: string;
+	nextElectionOn: string | null;
 	tags: string[];
 }
 
@@ -185,7 +188,7 @@ export async function addressBookRecipients(context: MailContext): Promise<Addre
 			.prepare(
 				`SELECT c.identifier AS contactIdentifier, c.name, c.kind, c.role, o.name AS organizationName,
 				 COALESCE(c.nation_identifier, o.nation_identifier) AS nationIdentifier,
-				 m.value AS email, m.label, m.verified_on AS verifiedOn, m.preferred,
+				 m.value AS email, m.label, m.verified_on AS verifiedOn, m.next_election_on AS nextElectionOn, m.preferred,
 				 (SELECT group_concat(tag, ' ') FROM contact_tags t WHERE t.contact_identifier = c.identifier) AS tags
 				 FROM contacts c JOIN contact_methods m ON m.contact_identifier = c.identifier
 				 LEFT JOIN contacts o ON o.identifier = c.organization_identifier
@@ -244,6 +247,9 @@ export interface BatchSettings {
 	weekdaysOnly: boolean;
 	followUpDays: number | null;
 	askAcknowledgment: boolean;
+	/** The subject and body as changed on the New outreach batch page, in place of the template's. */
+	subject?: string;
+	body?: string;
 }
 
 export async function createBatch(context: MailContext, personIdentifier: string, settings: BatchSettings): Promise<string> {
@@ -252,6 +258,11 @@ export async function createBatch(context: MailContext, personIdentifier: string
 		.bind(settings.templateIdentifier)
 		.first<{ subject: string; body: string; version: number }>();
 	if (!template) throw new OutreachError('Choose a template.');
+	if (settings.subject !== undefined) template.subject = settings.subject;
+	if (settings.body !== undefined) template.body = settings.body;
+	if (!template.subject.trim() || !template.body.trim()) throw new OutreachError('Write a subject and a message.');
+	const unknown = unknownFields(`${template.subject}\n${template.body}`);
+	if (unknown.length) throw new OutreachError(`The message uses fields the site does not know: ${unknown.map((key) => `{{${key}}}`).join(', ')}.`);
 	if (settings.windowEndHour <= settings.windowStartHour) throw new OutreachError('The sending hours must end after they start.');
 	const identifier = crypto.randomUUID();
 	await context.database.batch([
@@ -341,6 +352,142 @@ export async function removeRecipient(context: MailContext, batchIdentifier: str
 		.prepare(`DELETE FROM outreach_recipients WHERE identifier = ? AND batch_identifier = ? AND status IN ('queued', 'skipped')`)
 		.bind(recipientIdentifier, batchIdentifier)
 		.run();
+}
+
+// ---------------------------------------------------------------------------
+// Who a new batch goes to (the New outreach batch page)
+// ---------------------------------------------------------------------------
+
+export interface AudienceFilter {
+	tag: string | null;
+	label: string | null;
+	nationsOnly: boolean;
+}
+
+export interface LeftOutGroup {
+	reason: string;
+	count: number;
+	why: string;
+	/** Where to look at them, such as the address book. */
+	review: string | null;
+}
+
+export interface Audience {
+	recipients: AddressBookRecipient[];
+	leftOut: LeftOutGroup[];
+}
+
+function matchesFilter(contact: { tags: string[]; label: string; nationIdentifier: string | null }, filter: AudienceFilter): boolean {
+	return (!filter.tag || contact.tags.includes(filter.tag)) && (!filter.label || contact.label === filter.label) && (!filter.nationsOnly || contact.nationIdentifier !== null);
+}
+
+const shortDay = new Intl.DateTimeFormat('en-US', { month: 'short', day: 'numeric', timeZone: 'UTC' });
+
+/**
+ * Who a new batch would go to from the address book, and who is left out and
+ * why (design/email-inbox, mockup 3): addresses on the do-not-email list,
+ * contacts whose only address bounced, addresses already in another batch
+ * that is not cancelled, and addresses that may be out of date
+ * (src/lib/address-book.ts, stalenessOf).
+ */
+export async function outreachAudience(context: MailContext, filter: AudienceFilter, today: string): Promise<Audience> {
+	const everyone = (await addressBookRecipients(context)).filter((contact) => matchesFilter(contact, filter));
+	const suppressed = await suppressedAmong(context, everyone.map((contact) => contact.email));
+	const inBatches = new Map<string, Set<string>>();
+	if (everyone.length) {
+		const emails = everyone.map((contact) => contact.email.toLowerCase());
+		for (let start = 0; start < emails.length; start += 90) {
+			const slice = emails.slice(start, start + 90);
+			const { results } = await context.database
+				.prepare(
+					`SELECT r.email, b.name, b.created_at AS createdAt FROM outreach_recipients r JOIN outreach_batches b ON b.identifier = r.batch_identifier
+					 WHERE b.status <> 'cancelled' AND r.status IN ('queued', 'sent', 'replied') AND r.email IN (${slice.map(() => '?').join(', ')})`
+				)
+				.bind(...slice)
+				.all<{ email: string; name: string; createdAt: string }>();
+			for (const row of results) {
+				const label = `${row.name}, ${shortDay.format(new Date(row.createdAt))}`;
+				inBatches.set(row.email, (inBatches.get(row.email) ?? new Set()).add(label));
+			}
+		}
+	}
+	const recipients: AddressBookRecipient[] = [];
+	const asked: AddressBookRecipient[] = [];
+	const already: AddressBookRecipient[] = [];
+	const stale: AddressBookRecipient[] = [];
+	for (const contact of everyone) {
+		const email = contact.email.toLowerCase();
+		if (suppressed.has(email)) asked.push(contact);
+		else if (inBatches.has(email)) already.push(contact);
+		else if (
+			stalenessOf({ label: contact.label as MethodLabel, verifiedOn: contact.verifiedOn, nextElectionOn: contact.nextElectionOn, status: 'current' }, today).stale
+		)
+			stale.push(contact);
+		else recipients.push(contact);
+	}
+
+	// Contacts with no address in use because theirs bounced.
+	let bounced = 0;
+	try {
+		const { results } = await context.database
+			.prepare(
+				`SELECT c.identifier, COALESCE(c.nation_identifier, o.nation_identifier) AS nationIdentifier, m.label,
+				 (SELECT group_concat(tag, ' ') FROM contact_tags t WHERE t.contact_identifier = c.identifier) AS tags
+				 FROM contacts c JOIN contact_methods m ON m.contact_identifier = c.identifier
+				 LEFT JOIN contacts o ON o.identifier = c.organization_identifier
+				 WHERE m.method = 'email' AND m.status = 'bounced'
+				 AND NOT EXISTS (SELECT 1 FROM contact_methods n WHERE n.contact_identifier = c.identifier AND n.method = 'email' AND n.status = 'current')`
+			)
+			.all<{ identifier: string; nationIdentifier: string | null; label: string; tags: string | null }>();
+		const counted = new Set<string>();
+		for (const row of results) {
+			if (counted.has(row.identifier)) continue;
+			if (!matchesFilter({ tags: row.tags ? row.tags.split(' ') : [], label: row.label, nationIdentifier: row.nationIdentifier }, filter)) continue;
+			counted.add(row.identifier);
+			bounced += 1;
+		}
+	} catch (problem) {
+		if (!/no such table/i.test(String(problem))) throw problem;
+	}
+
+	const batchNames = [...new Set(already.flatMap((contact) => [...(inBatches.get(contact.email.toLowerCase()) ?? [])]))];
+	const leftOut: LeftOutGroup[] = [
+		{ reason: 'Asked not to be emailed', count: asked.length, why: 'Unsubscribed or asked in a reply. Never emailed again.', review: null },
+		{ reason: 'Address bounced', count: bounced, why: 'Marked bounced in the address book', review: null },
+		{ reason: 'Already in another batch', count: already.length, why: batchNames.slice(0, 3).join('; ') + (batchNames.length > 3 ? '; and others' : ''), review: null },
+		{
+			reason: 'Address may be out of date',
+			count: stale.length,
+			why: `Leader email older than ${freshDays.leader} days, or an election since.`,
+			review: '/workspace/address-book'
+		}
+	];
+	return { recipients, leftOut: leftOut.filter((group) => group.count > 0) };
+}
+
+/**
+ * Sends one message, as a recipient would get it, to the person preparing the
+ * batch ("Send a test to me"), through the outreach mailbox. Like a batch, it
+ * goes only once outreach is set up (outreachReadiness); on a copy without the
+ * outreach settings, such as one running on a computer, nothing is sent.
+ */
+export async function sendOutreachTest(
+	context: MailContext,
+	carriers: MailCarriers,
+	test: { to: string; subject: string; text: string }
+): Promise<void> {
+	const problems = outreachReadiness(context, carriers);
+	if (problems.length) throw new OutreachError(`Not ready to send: ${problems.join(' ')}`);
+	const outreach = context.settings.outreach!;
+	await carriers.outreach!.send({
+		from: { email: outreach.from, name: context.settings.senderName },
+		to: [{ email: test.to }],
+		replyTo: outreach.replyTo ? { email: outreach.replyTo } : null,
+		subject: `Test: ${test.subject}`,
+		text: test.text,
+		messageId: newMessageId(outreach.from.split('@')[1] ?? context.settings.domain ?? 'example.org'),
+		date: currentTime(context)
+	});
 }
 
 /** What must be set up before a batch can start, in words; empty when ready. */
@@ -488,24 +635,8 @@ export async function getBatch(context: MailContext, identifier: string) {
 	};
 }
 
-/** The message one recipient will get, as text, with the footer. */
-export function outreachText(
-	body: string,
-	fields: MergeValues,
-	links: { unsubscribeLink: string | null; unsubscribeAddress: string | null; acknowledgeLink: string | null }
-): string {
-	const lines = [fillTemplate(body, fields).trim(), '', '--'];
-	if (links.acknowledgeLink) {
-		lines.push(`If you would like to let us know this reached you, open this link. It records only that you opened it: ${links.acknowledgeLink}`, '');
-	}
-	const ways = [
-		links.unsubscribeLink ? `open ${links.unsubscribeLink}` : null,
-		links.unsubscribeAddress ? `write to ${links.unsubscribeAddress}` : null,
-		'reply "stop"'
-	].filter(Boolean);
-	lines.push(`If you would rather not hear from the project again, ${ways.join(', or ')}, and we will not write again.`);
-	return lines.join('\n');
-}
+/** The message one recipient will get, as text, with the footer (now in #lib/mail.ts, so the page's preview uses it too). */
+export { outreachText };
 
 /**
  * Sends the next few messages of every running batch: no more than the
