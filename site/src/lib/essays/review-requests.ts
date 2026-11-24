@@ -5,7 +5,7 @@
  * approved the "Share and review" mockup on Nov. 22, 2026. Used by the
  * editor and the server alike.
  */
-import { joinNames } from './attestations.ts';
+import { joinNames } from './credits.ts';
 
 export interface Reviewer {
 	personIdentifier: string;

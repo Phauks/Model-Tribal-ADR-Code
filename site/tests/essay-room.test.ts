@@ -17,6 +17,7 @@ import { bodyFragment, closeCodes, frontMatterText, messageTypes, type RoomFacts
 import { splitFrontMatter } from '#lib/essays/syntax.ts';
 import { latestVersion, readVersionText, saveVersion, versions } from '#lib/server/essays.ts';
 import { EssayRoom, quietBeforeSaving, type RoomLevel, type Visitor } from '#lib/server/live/essay-room.ts';
+import { versionBlame } from '#lib/server/essay-credits.ts';
 import { testDatabase } from './database.ts';
 
 function memoryBucket(): R2Bucket {
@@ -32,7 +33,10 @@ function memoryBucket(): R2Bucket {
 		},
 		async get(key: string) {
 			const value = files.get(key);
-			return value === undefined ? null : { text: async () => value };
+			return value === undefined ? null : { text: async () => value, json: async () => JSON.parse(value) };
+		},
+		async list({ prefix }: { prefix: string }) {
+			return { objects: [...files.keys()].filter((key) => key.startsWith(prefix)).map((key) => ({ key })), truncated: false };
 		}
 	} as unknown as R2Bucket;
 }
@@ -334,6 +338,14 @@ describe('editing together', () => {
 		// Nothing new: no second version.
 		await room.save();
 		expect(await versions(database, 'tribal-courts')).toHaveLength(2);
+
+		// Each is credited for the words they typed, though the version names only Lee.
+		const blame = await versionBlame(database, bucket, 'tribal-courts', 2);
+		const who = blame!.blame.paragraphs.map((paragraph) =>
+			paragraph.words.flatMap(([person, , count]) => new Array(count).fill(blame!.blame.people[person]))
+		);
+		expect(who[1]).toEqual([null, null, null, 'dana', 'dana', 'dana']);
+		expect(who[3]).toEqual([null, null, null, 'lee', 'lee', 'lee']);
 	});
 
 	it('lets people with comment access read along but keeps none of their changes', async () => {

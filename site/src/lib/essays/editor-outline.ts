@@ -20,7 +20,7 @@ import { Plugin, PluginKey } from 'prosemirror-state';
 import { Decoration, DecorationSet } from 'prosemirror-view';
 import type { Node as EditorNode } from 'prosemirror-model';
 import type { OutlineItem, OutlineMark } from '#lib/site-sections.ts';
-import { essaySections } from './attestations.ts';
+import { essaySections } from './sections.ts';
 import { citationOnly, splitCaseName } from './case-headings.ts';
 import type { DraftMark } from './draft-marks.ts';
 import { lawNames } from '#lib/law-names.ts';
