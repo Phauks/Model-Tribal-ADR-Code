@@ -30,7 +30,8 @@ export const nationsPages: OutlineItem[] = [
 			{ label: 'Build a table', link: '/nations/data/build' }
 		]
 	},
-	{ label: 'Federal offices', link: '/nations/federal-offices' }
+	{ label: 'Federal offices', link: '/nations/federal-offices' },
+	{ label: 'Coverage', link: '/nations/coverage' }
 ];
 
 /** The contents of each section built with the site, by the section's name (its address without the slash). */

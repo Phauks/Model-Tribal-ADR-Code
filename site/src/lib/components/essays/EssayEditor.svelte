@@ -662,7 +662,8 @@
 	}
 
 	/** Goes to a thread's words in the editor. */
-	function goToThread(thread: string): void {
+	/** Shows a thread's words in the text; from the thread's "Show in text" button the cursor goes there too, for a keyboard (improvements report, Nov. 24, 2026, A2). */
+	function goToThread(thread: string, focus = false): void {
 		currentThread = thread;
 		placeComments();
 		if (!view) return;
@@ -672,7 +673,11 @@
 		if (!found) return;
 		// The highlight shows the words; the cursor goes to them without selecting, so no menu opens.
 		view.dispatch(view.state.tr.setSelection(TextSelection.create(view.state.doc, found.from)).setMeta('addToHistory', false));
-		(view.domAtPos(found.from).node as Element | null)?.parentElement?.scrollIntoView({ block: 'center', behavior: 'smooth' });
+		// The words' own place on screen: domAtPos at the start of a block names the block's parent, which for the first words of a
+		// paragraph is the whole essay, so centring that element scrolled to the middle of the essay.
+		const place = view.coordsAtPos(found.from);
+		window.scrollBy({ top: place.top - window.innerHeight / 2, behavior: 'smooth' });
+		if (focus) (view.dom as HTMLElement).focus({ preventScroll: true });
 	}
 
 	// The comment being written, or the one chosen, moves the highlight.
