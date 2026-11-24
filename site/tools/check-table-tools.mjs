@@ -165,21 +165,21 @@ for (const viewport of viewports) {
 	await page.keyboard.press('Escape');
 
 	// The Sum row on a chart's table: at the bottom however it is sorted, and the total line gives way to it.
-	await page.goto(`${base}/nations/data`, { waitUntil: 'load' });
+	await page.goto(`${base}/nations/data/dispute-resolution`, { waitUntil: 'load' });
 	const chart = page.locator('figure.chart').filter({ hasText: 'Provisions by method' }).first();
 	await chart.getByRole('button', { name: 'Table', exact: true }).click();
 	const sum = chart.locator('tfoot.sum-row');
-	check((await sum.count()) === 1, at('/nations/data: the table has no Sum row'));
-	check((await chart.locator('.chart-total').count()) === 0, at('/nations/data: the "Total:" line still shows under the table'));
+	check((await sum.count()) === 1, at('/nations/data/dispute-resolution: the table has no Sum row'));
+	check((await chart.locator('.chart-total').count()) === 0, at('/nations/data/dispute-resolution: the "Total:" line still shows under the table'));
 	const values = await chart.locator('tbody tr').evaluateAll((rows) => rows.map((row) => Number(row.cells[row.cells.length - 1].textContent.replaceAll(',', ''))));
 	const total = values.reduce((sum, value) => sum + value, 0);
-	check((await sum.locator('td').last().textContent())?.trim() === total.toLocaleString('en-US'), at(`/nations/data: the Sum row does not read ${total.toLocaleString('en-US')}`));
+	check((await sum.locator('td').last().textContent())?.trim() === total.toLocaleString('en-US'), at(`/nations/data/dispute-resolution: the Sum row does not read ${total.toLocaleString('en-US')}`));
 	await chart.locator('thead th').last().locator('button.sort-button').click();
-	check(await chart.evaluate((figure) => figure.querySelector('table').lastElementChild?.matches('tfoot.sum-row')), at('/nations/data: after sorting, the Sum row is not at the bottom'));
+	check(await chart.evaluate((figure) => figure.querySelector('table').lastElementChild?.matches('tfoot.sum-row')), at('/nations/data/dispute-resolution: after sorting, the Sum row is not at the bottom'));
 	await chart.scrollIntoViewIfNeeded();
 	await picture(page, `${viewport.name}-5-sum-row`);
 	await chart.getByRole('button', { name: 'Bars', exact: true }).click();
-	check((await chart.locator('.chart-total').count()) === 1, at('/nations/data: the bars lost their "Total:" line'));
+	check((await chart.locator('.chart-total').count()) === 1, at('/nations/data/dispute-resolution: the bars lost their "Total:" line'));
 
 	// The Supreme Court tables filter from their headers too.
 	await page.goto(`${base}/supreme-court/roberts-court`, { waitUntil: 'load' });
