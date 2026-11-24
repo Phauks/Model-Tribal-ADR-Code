@@ -150,6 +150,7 @@ Run by hand, never in continuous integration.
 | Script | Does | Needs |
 | --- | --- | --- |
 | `law/supreme_court_people.py` | Writes `content/supreme-court/people.yaml`, one entry per Justice and per appointing President, from the Federal Judicial Center's Biographical Directory, the Library of Congress list of Presidents and the inaugural committee's list of ceremonies, with a portrait from Wikimedia Commons where its license is free. Downloads each portrait at the size the website shows, records its SHA-256 and, with the R2 keys, puts it in the bucket under `supreme-court/portraits/`. Commons limits requests hard, so it waits between files; `--cache` keeps what it fetched for a re-run | `scripts/requirements.txt`, `boto3` and the R2 keys to upload |
+| `law/small_sets.py` | The data roadmap's small sets (`docs/data-roadmap.md`): reads `research/data-roadmap/small-sets.yaml`, one entry per document (federal reports, land, international); `fetch` downloads and checks each file, `file` stores it in the bucket (served for U.S. government and public domain works, private otherwise) and `records` writes or updates the source records, all Unverified. Add a document by adding an entry and re-running | `scripts/requirements.txt`, `curl`, `pdfinfo`; `boto3` and the R2 keys to store |
 
 ## Free case law sources
 
