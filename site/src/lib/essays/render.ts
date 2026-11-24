@@ -531,7 +531,7 @@ function configure(markdown: MarkdownIt, state: RenderState): MarkdownIt {
 			const factList = facts.length
 				? `<dl class="essay-case-facts">\n${facts.map(([name, value]) => `<div><dt>${escapeHtml(name)}</dt><dd>${value}</dd></div>`).join('\n')}\n</dl>\n`
 				: '';
-			return `<section class="${classes}"${id}>\n${label(box === 'law' ? 'Law' : 'Case')}<p class="essay-case-citation">${readingLinksAfter(citation, marksHtml([mark]))}</p>\n${factList}`;
+			return `<section class="${classes}"${id} data-source="${escapeHtml(key)}">\n${label(box === 'law' ? 'Law' : 'Case')}<p class="essay-case-citation">${readingLinksAfter(citation, marksHtml([mark]))}</p>\n${factList}`;
 		};
 		rules[`container_${box}_close`] = () => '</section>\n';
 	}
