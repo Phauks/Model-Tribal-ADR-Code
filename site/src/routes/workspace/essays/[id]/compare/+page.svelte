@@ -1,4 +1,5 @@
 <script lang="ts">
+	import Breadcrumbs from '#lib/components/Breadcrumbs.svelte';
 	import type { PageProps } from './$types';
 
 	let { data }: PageProps = $props();
@@ -9,9 +10,13 @@
 	<title>Compare versions · {data.title} · Workspace · Model Tribal ADR Code</title>
 </svelte:head>
 
-<nav aria-label="Breadcrumb" class="small">
-	<a href="/workspace/essays">Essays</a> › <a href="/workspace/essays/{data.identifier}">{data.title}</a> › Compare
-</nav>
+<Breadcrumbs
+	trail={[
+		{ label: 'Workspace', href: '/workspace' },
+		{ label: 'Essays', href: '/workspace/essays' },
+		{ label: data.title, href: `/workspace/essays/${data.identifier}` }
+	]}
+/>
 
 <h1>Version {data.from.number} to version {data.to.number}</h1>
 <p class="small muted">

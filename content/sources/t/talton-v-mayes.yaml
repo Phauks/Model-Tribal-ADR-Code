@@ -27,6 +27,11 @@ archives:
 history:
   status: live
   last_checked: '2026-11-21'
+court_dates:
+  argued: ['1896-04-16', '1896-04-17']
+  printed: "Argued April 16, 17, 1896.—Decided May 18, 1896."
+  source: https://tile.loc.gov/storage-services/service/ll/usrep/usrep163/usrep163376/usrep163376.pdf
+  checked: '2026-11-23'
 supreme_court:
   court: Fuller Court
   natural_court: Fuller Court (1896-1897)
@@ -88,8 +93,6 @@ rights:
     Opinions of federal courts are works of the U.S. government (17 U.S.C. § 105); the host site's own
     additions are not reproduced.
   redistribution: true
-tribes:
-- cherokee-nation
 found_in:
 - 2026-11-21-legal-history-and-key-cases
 notes: >-
@@ -97,3 +100,11 @@ notes: >-
   Parallel citations: 16 S. Ct. 986; 41 L. Ed. 196. The LII text prints the passage in lower case ("fifth
   amendment"); the official scan should be checked for capitalization before quoting. Citator check (KeyCite)
   pending; see research/pull-lists/2026-11-21-legal-history-westlaw.md.
+tribes:
+- cherokee-nation
+nations_in_case:
+  checked: '2026-11-23'
+  named:
+  - nation: cherokee-nation
+    named_as: Cherokee Nation
+    role: subject

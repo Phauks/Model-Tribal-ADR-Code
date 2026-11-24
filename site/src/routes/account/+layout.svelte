@@ -16,3 +16,32 @@
 <div class="reading">
 	{@render children()}
 </div>
+
+<style>
+	/* Each section of an account page is a card (design/settings-and-account). */
+	.reading :global(.account-card) {
+		border: 1px solid var(--color-line);
+		border-radius: var(--radius-panel);
+		background: var(--color-surface-raised);
+		padding: var(--space-4) var(--space-5);
+		margin: 0 0 var(--space-4);
+	}
+
+	.reading :global(.account-card > h2) {
+		margin-top: 0;
+	}
+
+	.reading :global(.account-card > :last-child) {
+		margin-bottom: 0;
+	}
+
+	/* A card whose action cannot be undone. */
+	.reading :global(.account-card.danger-card) {
+		border: 1px dashed var(--color-danger);
+	}
+
+	.reading :global(.button-quiet.danger) {
+		color: var(--color-danger);
+		border-color: var(--color-danger);
+	}
+</style>

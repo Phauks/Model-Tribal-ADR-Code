@@ -53,13 +53,15 @@ export function wordingIsShown(kind: string): boolean {
 	return kind !== 'nation' && kind !== 'story';
 }
 
-export const changeKinds = ['edit', 'new', 'published', 'removed'] as const;
+export const changeKinds = ['edit', 'new', 'published', 'restored', 'removed'] as const;
 export type ChangeKind = (typeof changeKinds)[number];
 
 export const changeKindLabels: Record<ChangeKind, string> = {
 	edit: 'Edits',
 	new: 'New pages',
 	published: 'Published versions',
+	// An essay publication of a version restored from an earlier one in the workspace.
+	restored: 'Restored versions',
 	removed: 'Removed pages'
 };
 
@@ -152,6 +154,8 @@ export const limitChoices = [50, 100, 250, 500] as const;
 export interface ChangeFilters {
 	/** One page's address, for its history. */
 	page: string | undefined;
+	/** Words from a page's title, for the "Page" filter: only pages whose title has them. */
+	title: string | undefined;
 	kinds: PageKind[];
 	/** A person's identifier, or "site" for site releases. */
 	who: string | undefined;
@@ -160,6 +164,10 @@ export interface ChangeFilters {
 	/** The least change in size, in bytes; 0 for any. */
 	size: number;
 	changes: ChangeKind[];
+	/** Only changes with something hidden (the "Hidden changes" chip). */
+	hidden: boolean;
+	/** Only pages the signed-in reader follows. */
+	following: boolean;
 	showBulk: boolean;
 	group: boolean;
 	limit: number;
@@ -167,11 +175,14 @@ export interface ChangeFilters {
 
 export const defaultFilters: ChangeFilters = {
 	page: undefined,
+	title: undefined,
 	kinds: [],
 	who: undefined,
 	days: 30,
 	size: 0,
 	changes: [...changeKinds],
+	hidden: false,
+	following: false,
 	showBulk: false,
 	group: true,
 	limit: 100
@@ -194,15 +205,21 @@ export function readFilters(query: URLSearchParams): ChangeFilters {
 	const chosenChanges = query.getAll('change').filter((kind): kind is ChangeKind => (changeKinds as readonly string[]).includes(kind));
 	const who = query.get('who') ?? '';
 	const page = cleanAddress(query.get('page'));
+	const title = (query.get('title') ?? '').replace(/\s+/g, ' ').trim().slice(0, 100);
+	const bulk = query.getAll('bulk');
 	return {
 		page,
+		title: title && !page ? title : undefined,
 		kinds,
 		who: /^(site|[A-Za-z0-9_-]{1,80})$/.test(who) ? who : undefined,
 		// A page's history reaches back to its first change unless the reader chose otherwise.
 		days: choice(query.get('days'), dayChoices, page ? 0 : defaultFilters.days),
 		size: choice(query.get('size'), sizeChoices, 0),
 		changes: chosenChanges.length > 0 ? chosenChanges : [...changeKinds],
-		showBulk: query.get('bulk') === '1' || Boolean(page),
+		hidden: query.get('hidden') === '1',
+		following: query.get('follow') === '1' && !page,
+		// The form's "Hide bulk updates" switch sends bulk=0 when on, after a hidden bulk=1; a link sends bulk=1 alone.
+		showBulk: (bulk.includes('1') && !bulk.includes('0')) || Boolean(page),
 		// The form sends group=0 from a hidden field and group=1 from the box when it is ticked.
 		group: !(query.getAll('group').includes('0') && !query.getAll('group').includes('1')) && !page,
 		limit: choice(query.get('limit'), limitChoices, page ? 500 : defaultFilters.limit)
@@ -222,6 +239,9 @@ export function filterQuery(filters: ChangeFilters, changes: Partial<ChangeFilte
 	if (chosen.showBulk && !chosen.page) query.set('bulk', '1');
 	if (!chosen.group && !chosen.page) query.set('group', '0');
 	if (chosen.limit !== (chosen.page ? 500 : defaultFilters.limit)) query.set('limit', String(chosen.limit));
+	if (chosen.title && !chosen.page) query.set('title', chosen.title);
+	if (chosen.hidden) query.set('hidden', '1');
+	if (chosen.following && !chosen.page) query.set('follow', '1');
 	const text = query.toString();
 	return text ? `?${text}` : '';
 }
@@ -273,6 +293,36 @@ export function byPage<Item extends { address: string }>(items: Item[]): PageGro
 }
 
 /** The page a file in the repository is built into, for files named after the page. */
+/** The words on a page's history badge: "2 changes", "1 change" or "No changes yet". */
+export function historyBadgeLabel(count: number): string {
+	if (count === 0) return 'No changes yet';
+	return count === 1 ? '1 change' : `${count.toLocaleString('en-US')} changes`;
+}
+
+/** "Courts", "Courts and Contacts", "Courts, Contacts, and Gaming". */
+function listOf(names: string[]): string {
+	if (names.length <= 2) return names.join(' and ');
+	return `${names.slice(0, -1).join(', ')}, and ${names[names.length - 1]}`;
+}
+
+/**
+ * What the newest change did, in a sentence, for the history badge's panel:
+ * "Dispute resolution was updated in a site release." Never earlier wording.
+ */
+export function lastChangeSentence(change: Pick<ChangeView, 'change' | 'parts' | 'who' | 'textHidden'>): string {
+	const parts = change.textHidden ? [] : (change.parts ?? []);
+	const what =
+		change.change === 'new'
+			? 'The page was added'
+			: change.change === 'removed'
+				? 'The page was taken off the site'
+				: parts.length > 0
+					? `${listOf(parts)} ${parts.length === 1 ? 'was' : 'were'} updated`
+					: 'The page was updated';
+	if (!change.who) return `${what}.`;
+	return change.who === siteReleaseName ? `${what} in a site release.` : `${what} by ${change.who}.`;
+}
+
 /** Pages under /nations/ that list nations rather than being one nation's page. */
 const nationListings = new Set(['data', 'map', 'recourse', 'timeline', 'federal-offices']);
 

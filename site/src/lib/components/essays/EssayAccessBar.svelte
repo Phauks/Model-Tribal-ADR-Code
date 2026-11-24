@@ -11,6 +11,7 @@
 	import Pencil from '@lucide/svelte/icons/pencil';
 	import Send from '@lucide/svelte/icons/send';
 	import EssayModePicker from './EssayModePicker.svelte';
+	import EssayViewPicker from './EssayViewPicker.svelte';
 	import type { EssayPageState } from '#lib/server/essay-page-state.ts';
 
 	let {
@@ -27,11 +28,7 @@
 <div class="access-bar no-print" role="region" aria-label="Draft and editing">
 	<EssayModePicker bind:mode canEdit={state.canEdit} />
 	{#if state.draft && state.publishedVersion !== null}
-		<label class="visually-hidden" for="essay-view">Show</label>
-		<select id="essay-view" bind:value={view}>
-			<option value="published">Published only</option>
-			<option value="drafts">With drafts</option>
-		</select>
+		<EssayViewPicker bind:view bind:mode />
 	{/if}
 	<div class="end">
 		{#if state.canEdit}
@@ -91,9 +88,5 @@
 
 	.icon-link:hover {
 		background: var(--color-surface);
-	}
-
-	#essay-view {
-		min-height: var(--layout-target-minimum);
 	}
 </style>

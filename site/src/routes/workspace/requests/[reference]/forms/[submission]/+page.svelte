@@ -1,4 +1,5 @@
 <script lang="ts">
+	import Breadcrumbs from '#lib/components/Breadcrumbs.svelte';
 	import FormDocument from '#lib/components/FormDocument.svelte';
 	import type { PageProps } from './$types';
 
@@ -9,7 +10,13 @@
 	<title>{data.title} · Request {data.reference} · Workspace · Model Tribal ADR Code</title>
 </svelte:head>
 
-<p class="small no-print"><a href="/workspace/requests/{data.reference}">Request {data.reference}</a></p>
+<Breadcrumbs
+	trail={[
+		{ label: 'Workspace', href: '/workspace' },
+		{ label: 'Requests', href: '/workspace/requests' },
+		{ label: `Request ${data.reference}`, href: `/workspace/requests/${data.reference}` }
+	]}
+/>
 <h1>{data.title}</h1>
 <p class="small muted">
 	Version {data.version}. Signed online as “{data.signedName}”{#if data.signedAt}

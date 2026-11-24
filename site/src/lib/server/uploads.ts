@@ -1136,12 +1136,17 @@ export async function answerQuestion(database: D1Database, upload: UploadRow, bo
 	]);
 }
 
-export const queueViews = ['open', 'waiting', 'decided', 'not-accepted', 'all'] as const;
+export const queueViews = ['open', 'waiting', 'careful-look', 'decided', 'not-accepted', 'all'] as const;
 export type QueueView = (typeof queueViews)[number];
+
+/** Files still being worked on: to review, or waiting on someone. */
+const undecidedStatuses: readonly UploadStatus[] = ['waiting-for-review', 'in-review', 'checking', 'needs-answer', 'waiting-for-nation'];
 
 const viewStatuses: Record<QueueView, readonly UploadStatus[] | null> = {
 	open: ['waiting-for-review', 'in-review'],
 	waiting: ['checking', 'needs-answer', 'waiting-for-nation'],
+	// Undecided files whose checks asked for a careful look (design/uploads, mockup 3).
+	'careful-look': undecidedStatuses,
 	decided: decidedStatuses,
 	'not-accepted': ['not-accepted', 'withdrawn'],
 	all: null
@@ -1168,7 +1173,8 @@ export interface QueueRow {
 export async function uploadQueue(
 	database: D1Database,
 	view: QueueView,
-	kind: UploadKind | null = null
+	kind: UploadKind | null = null,
+	nation: string | null = null
 ): Promise<QueueRow[]> {
 	const statuses = viewStatuses[view];
 	const conditions = [`uploads.way_in = 'send-files'`, 'uploads.from_pull_list = 0', `uploads.status <> 'sending'`];
@@ -1177,11 +1183,18 @@ export async function uploadQueue(
 		conditions.push(`uploads.status IN (${statuses.map(() => '?').join(', ')})`);
 		values.push(...statuses);
 	}
+	if (view === 'careful-look') conditions.push(`uploads.check_result = 'careful-look'`);
 	if (kind) {
 		conditions.push('uploads.kind = ?');
 		values.push(kind);
 	}
-	const order = view === 'open' || view === 'waiting' ? 'ASC' : 'DESC';
+	if (nation) {
+		conditions.push(
+			`EXISTS (SELECT 1 FROM upload_links WHERE upload_identifier = uploads.identifier AND target_kind = 'nation' AND target_identifier = ?)`
+		);
+		values.push(nation);
+	}
+	const order = view === 'open' || view === 'waiting' || view === 'careful-look' ? 'ASC' : 'DESC';
 	const rows = await database
 		.prepare(
 			`SELECT uploads.reference, uploads.group_identifier AS groupIdentifier, uploads.kind, uploads.source,
@@ -1211,18 +1224,32 @@ export async function uploadQueue(
 export async function queueCounts(database: D1Database): Promise<Record<QueueView, number>> {
 	const rows = await database
 		.prepare(
-			`SELECT status, COUNT(*) AS count FROM uploads
-			 WHERE way_in = 'send-files' AND from_pull_list = 0 AND status <> 'sending' GROUP BY status`
+			`SELECT status, check_result AS checkResult, COUNT(*) AS count FROM uploads
+			 WHERE way_in = 'send-files' AND from_pull_list = 0 AND status <> 'sending' GROUP BY status, check_result`
 		)
-		.all<{ status: UploadStatus; count: number }>();
-	const counts = { open: 0, waiting: 0, decided: 0, 'not-accepted': 0, all: 0 } as Record<QueueView, number>;
+		.all<{ status: UploadStatus; checkResult: CheckResult | null; count: number }>();
+	const counts = { open: 0, waiting: 0, 'careful-look': 0, decided: 0, 'not-accepted': 0, all: 0 } as Record<QueueView, number>;
 	for (const row of rows.results) {
 		counts.all += row.count;
 		for (const view of ['open', 'waiting', 'decided', 'not-accepted'] as const) {
 			if (viewStatuses[view]!.includes(row.status)) counts[view] += row.count;
 		}
+		if (row.checkResult === 'careful-look' && undecidedStatuses.includes(row.status)) counts['careful-look'] += row.count;
 	}
 	return counts;
+}
+
+/** The nations named on files in the queue, for its Nation filter. */
+export async function queueNations(database: D1Database): Promise<string[]> {
+	const rows = await database
+		.prepare(
+			`SELECT DISTINCT upload_links.target_identifier AS nation FROM upload_links
+			 JOIN uploads ON uploads.identifier = upload_links.upload_identifier
+			 WHERE upload_links.target_kind = 'nation' AND uploads.way_in = 'send-files' AND uploads.from_pull_list = 0
+			 ORDER BY upload_links.target_identifier`
+		)
+		.all<{ nation: string }>();
+	return rows.results.map((row) => row.nation);
 }
 
 export interface UploadDetail {

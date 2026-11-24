@@ -24,6 +24,11 @@ archives: []   # Wayback capture pending: the shared archive workflow fills this
 history:
   status: live
   last_checked: '2026-11-21'
+court_dates:
+  argued: ['1974-04-24']
+  printed: "Argued April 24, 1974—Decided June 17, 1974"
+  source: https://tile.loc.gov/storage-services/service/ll/usrep/usrep417/usrep417535/usrep417535.pdf
+  checked: '2026-11-23'
 supreme_court:
   court: Burger Court
   natural_court: Burger Court (1972-1975)
@@ -98,3 +103,6 @@ notes: >-
   Full citation: 417 U.S. 535 (1974). Official report scan or slip opinion: https://tile.loc.gov/storage-services/service/ll/usrep/usrep417/usrep417535/usrep417535.pdf.
   Nations left blank: the case concerned BIA employment generally. Citator check (KeyCite) pending; see
   research/pull-lists/2026-11-21-legal-history-westlaw.md.
+nations_in_case:
+  checked: '2026-11-23'
+  named: []

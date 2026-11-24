@@ -1,4 +1,5 @@
 <script lang="ts">
+	import Breadcrumbs from '#lib/components/Breadcrumbs.svelte';
 	import { copyAddress, documentHeading, placeLabel } from '#lib/source-library-text.ts';
 	import type { PageProps } from './$types';
 
@@ -42,7 +43,12 @@
 	<title>{document.title} · Source library · Workspace · Model Tribal ADR Code</title>
 </svelte:head>
 
-<p class="small"><a href="/workspace/library{data.query ? `?q=${encodeURIComponent(data.query)}` : ''}">Source library</a></p>
+<Breadcrumbs
+	trail={[
+		{ label: 'Workspace', href: '/workspace' },
+		{ label: 'Source library', href: `/workspace/library${data.query ? `?q=${encodeURIComponent(data.query)}` : ''}` }
+	]}
+/>
 <h1>{documentHeading(document)}</h1>
 
 <dl class="details">

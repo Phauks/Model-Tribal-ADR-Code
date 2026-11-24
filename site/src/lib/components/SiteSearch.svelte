@@ -8,7 +8,10 @@
 	(src/lib/site-search.ts), grouped by kind, each group foldable. Arrow keys
 	move between the box and the results, Escape or the X closes the panel and
 	returns focus to the icon, and Enter in the box opens the search page with
-	every match. A nation with a seal its page may show has the seal beside
+	every match. The panel searches what the search page searches, with the
+	same words (src/lib/search-everything.ts), so its counts are the search
+	page's counts; each group lists its first few and says how many more the
+	search page has. A nation with a seal its page may show has the seal beside
 	its name. The / key opens the panel from anywhere on the page
 	(SiteHeader.svelte). Without scripts the icon is a link to /search.
 -->
@@ -21,24 +24,37 @@
 	import ChevronDown from '@lucide/svelte/icons/chevron-down';
 	import Search from '@lucide/svelte/icons/search';
 	import X from '@lucide/svelte/icons/x';
+	import type { RecognitionBadge } from '#lib/recognition-badges.ts';
 	import {
-		loadSearchIndex,
-		searchEntries,
-		searchKindLabels,
-		type SearchEntry,
-		type SearchKind
-	} from '#lib/site-search.ts';
+		countMatches,
+		matchEverything,
+		resultGroupLabels,
+		resultGroups,
+		type ResultGroup
+	} from '#lib/search-everything.ts';
+	import { loadSearchRecords, type SearchRecords } from '#lib/search-records.ts';
+	import { loadSearchIndex, type SearchEntry } from '#lib/site-search.ts';
 
 	let { identifier = 'site-search' }: { identifier?: string } = $props();
 
-	const kinds: SearchKind[] = ['nation', 'term', 'page'];
 	/** Results shown per group in the panel; the search page shows them all. */
 	const perGroup = 5;
+
+	/** One line in the panel, whatever group it is in. */
+	interface PanelResult {
+		title: string;
+		link: string;
+		matchedName?: string;
+		badges?: RecognitionBadge[];
+		image?: string;
+		detail?: string;
+	}
 
 	let scripted = $state(false);
 	let expanded = $state(false);
 	let query = $state('');
 	let entries = $state<SearchEntry[] | undefined>();
+	let records = $state<SearchRecords | undefined>();
 	let failed = $state(false);
 	let input: HTMLInputElement | undefined = $state();
 	let opener: HTMLButtonElement | undefined = $state();
@@ -57,19 +73,32 @@
 	});
 
 	const trimmed = $derived(query.trim());
-	const results = $derived(entries && trimmed ? searchEntries(entries, trimmed) : []);
-	const groups = $derived(
-		kinds
-			.map((kind) => ({ kind, results: results.filter((result) => result.kind === kind) }))
-			.filter((group) => group.results.length > 0)
-	);
+	const ready = $derived(entries !== undefined && records !== undefined);
+	const matches = $derived(entries && records && trimmed ? matchEverything(entries, records, trimmed) : undefined);
+	const total = $derived(matches ? countMatches(matches) : 0);
+	const groups = $derived.by(() => {
+		if (!matches) return [];
+		const lists: Record<ResultGroup, PanelResult[]> = {
+			nation: matches.nation.map((match) => match.result),
+			document: matches.document.map((row) => ({
+				title: row.title,
+				link: row.link,
+				detail: [row.kindLabel, row.year, row.nationName].filter(Boolean).join(' · ')
+			})),
+			story: matches.story,
+			term: matches.term,
+			page: matches.page
+		};
+		return resultGroups.map((group) => ({ group, results: lists[group] })).filter((entry) => entry.results.length > 0);
+	});
 	const allLink = $derived(`/search?q=${encodeURIComponent(trimmed)}`);
+	const groupLink = (group: ResultGroup) => `${allLink}&type=${group}`;
 	const status = $derived(
-		!trimmed || !entries
+		!trimmed || !ready
 			? ''
-			: results.length === 0
+			: total === 0
 				? `Nothing matches “${trimmed}”.`
-				: `${results.length.toLocaleString('en-US')} ${results.length === 1 ? 'result' : 'results'}`
+				: `${total.toLocaleString('en-US')} ${total === 1 ? 'result' : 'results'}`
 	);
 
 	/** Opens the panel with focus in the box; exported so a keyboard shortcut can call it. */
@@ -80,9 +109,9 @@
 		const masthead = opener?.closest('header');
 		if (masthead && panel) panel.style.setProperty('--search-panel-top', `${Math.max(masthead.getBoundingClientRect().bottom, 0) + 8}px`);
 		input?.focus();
-		if (!entries && !failed) {
+		if (!ready && !failed) {
 			try {
-				entries = await loadSearchIndex();
+				[entries, records] = await Promise.all([loadSearchIndex(), loadSearchRecords()]);
 			} catch {
 				failed = true;
 			}
@@ -154,7 +183,7 @@
 		<!-- svelte-ignore a11y_no_static_element_interactions -->
 		<div bind:this={panel} class="search-panel" id="{identifier}-panel" onkeydown={onKey} onfocusout={closeWhenLeft}>
 			<form role="search" action="/search" method="get">
-				<label class="visually-hidden" for={identifier}>Search nations, glossary and pages</label>
+				<label class="visually-hidden" for={identifier}>Search nations, laws, stories and terms</label>
 				<Search size={20} strokeWidth={1.75} aria-hidden="true" />
 				<input
 					bind:this={input}
@@ -163,7 +192,7 @@
 					name="q"
 					autocomplete="off"
 					enterkeyhint="search"
-					placeholder="Search nations, terms and pages"
+					placeholder="Search nations, laws, stories and terms"
 					aria-describedby="{identifier}-hint"
 					bind:value={query}
 				/>
@@ -176,20 +205,20 @@
 
 			{#if failed}
 				<p class="message">The search index could not be loaded. Press Enter to open the search page.</p>
-			{:else if trimmed && entries}
-				{#if results.length === 0}
+			{:else if trimmed && ready}
+				{#if total === 0}
 					<p class="message">Nothing matches “{trimmed}”. Check the spelling or try fewer words.</p>
 				{:else}
 					<div class="results">
-						{#each groups as group (group.kind)}
+						{#each groups as { group, results } (group)}
 							<details open>
 								<summary>
 									<span class="fold-mark"><ChevronDown size={18} /></span>
-									<span>{searchKindLabels[group.kind]}</span>
-									<CountBadge count={group.results.length} />
+									<span>{resultGroupLabels[group]}</span>
+									<CountBadge count={results.length} />
 								</summary>
 								<ul>
-									{#each group.results.slice(0, perGroup) as result (result.link)}
+									{#each results.slice(0, perGroup) as result (`${result.link} ${result.title}`)}
 										<li>
 											{#if result.image && !failedImages.has(result.image)}<img
 													class="seal"
@@ -207,12 +236,15 @@
 											{#if result.detail}<span class="detail">{result.detail}</span>{/if}
 										</li>
 									{/each}
+									{#if results.length > perGroup}
+										<li><a class="more" href={groupLink(group)}>{(results.length - perGroup).toLocaleString('en-US')} more</a></li>
+									{/if}
 								</ul>
 							</details>
 						{/each}
 					</div>
 					<a class="all-results" href={allLink}
-						>{results.length === 1 ? 'Open the search page' : `See all ${results.length.toLocaleString('en-US')} results`} for “{trimmed}”</a
+						>{total === 1 ? 'Open the search page' : `See all ${total.toLocaleString('en-US')} results`} for “{trimmed}”</a
 					>
 				{/if}
 			{/if}
@@ -344,6 +376,11 @@
 		font-weight: var(--font-weight-semibold);
 	}
 
+	li a.more {
+		font-weight: normal;
+		font-size: var(--font-size-small);
+	}
+
 	.detail {
 		display: block;
 		padding: 0 var(--space-4) var(--space-1) calc(var(--space-4) + 26px);
@@ -351,10 +388,14 @@
 		font-size: var(--font-size-small);
 	}
 
+	/* Pinned to the panel's bottom edge, as the search box is to its top, so it shows however long the results run. */
 	.all-results {
+		position: sticky;
+		bottom: 0;
 		display: block;
 		padding: var(--space-3) var(--space-4);
 		border-top: 1px solid var(--color-line);
+		background: var(--color-paper);
 		font-weight: var(--font-weight-semibold);
 	}
 

@@ -23,6 +23,11 @@ archives:
 history:
   status: live
   last_checked: 2026-11-21
+court_dates:
+  argued: ['1983-10-04']
+  printed: "Argued October 4, 1983—Decided January 23, 1984"
+  source: https://tile.loc.gov/storage-services/service/ll/usrep/usrep465/usrep465001/usrep465001.pdf
+  checked: '2026-11-23'
 courtlistener:
   cluster: 111091
   citation: "465 U.S. 1"
@@ -95,3 +100,6 @@ access:
 found_in:
 - 2026-11-21-united-states-dispute-resolution
 notes: Read on the original page. Citator check not yet run.
+nations_in_case:
+  checked: '2026-11-23'
+  named: []

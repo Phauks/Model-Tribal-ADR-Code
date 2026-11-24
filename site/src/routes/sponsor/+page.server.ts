@@ -2,7 +2,7 @@ import { sponsorshipCounts } from 'virtual:sponsorship-counts';
 import { aboutPage } from '#lib/server/about-pages.ts';
 import { workerEnvironment } from '#lib/server/environment.ts';
 import { giftState, publicMode, publicSponsors, type PublicSponsor } from '#lib/server/sponsors.ts';
-import { givenToward, sponsorshipCosts, sponsorshipGoals, type SponsorshipCosts, type GivenToward } from '#lib/server/sponsorship-goals.ts';
+import { givenToward, publicMonthly, sponsorshipCosts, sponsorshipGoals, type SponsorshipCosts, type GivenToward } from '#lib/server/sponsorship-goals.ts';
 import type { PageServerLoad } from './$types';
 
 // Edited on the website like the essays (content/about/README.md), so the
@@ -13,7 +13,8 @@ export const prerender = false;
 
 const nothingGiven: GivenToward = {
 	total: { 'needed-most': 0, 'books-for-nations': 0, 'large-format': 0, hosting: 0 },
-	siteLastYear: 0
+	siteLastYear: 0,
+	monthly: { cents: 0, sponsors: 0 }
 };
 
 export const load: PageServerLoad = async () => {
@@ -49,6 +50,8 @@ export const load: PageServerLoad = async () => {
 		giftsOpen: state.open,
 		receiver: state.open ? state.receiver : null,
 		counts: sponsorshipCounts,
-		goals: sponsorshipGoals(sponsorshipCounts, costs, given)
+		goals: sponsorshipGoals(sponsorshipCounts, costs, given),
+		// Left out of the page's data, not only hidden, while too few sponsors give monthly.
+		monthly: publicMonthly(given.monthly)
 	};
 };

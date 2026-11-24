@@ -23,12 +23,15 @@
 		choices,
 		value,
 		onchange,
+		onhighlight,
 		placeholder = 'Type to search'
 	}: {
 		label: string;
 		choices: SearchableChoice<Value>[];
 		value: Value;
 		onchange: (value: Value) => void;
+		/** Called with the choice the reader is on in the open list, before picking it, so a page can start fetching what that choice shows. */
+		onhighlight?: (value: Value) => void;
 		placeholder?: string;
 	} = $props();
 
@@ -63,6 +66,11 @@
 			found.get(name)?.push({ choice, index });
 		});
 		return [...found.entries()].map(([name, entries]) => ({ name, entries }));
+	});
+
+	$effect(() => {
+		const highlighted = expanded ? shown[active]?.value : undefined;
+		if (highlighted !== undefined && highlighted !== value) onhighlight?.(highlighted);
 	});
 
 	const status = $derived(

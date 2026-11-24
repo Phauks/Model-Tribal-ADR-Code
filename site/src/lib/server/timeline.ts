@@ -26,6 +26,7 @@
 import { displayName, stateName } from '../nation-labels.ts';
 import { webLink } from '../contact-links.ts';
 import { copyPagePath } from '../public-copies.ts';
+import type { CitationItem } from '../citation-formats.ts';
 import { isTimelineDate, timelineRows, type OpinionYear, type TimelineEntry, type TimelineRow } from '../timeline.ts';
 import { courtAbbreviation } from './case-citations.ts';
 import { casePreviewList } from './case-previews.ts';
@@ -103,15 +104,18 @@ export function caseCitation(record: SourceRecord): string {
 		.join(' ');
 }
 
-/** A statute's or order's citation after its name: "82 Stat. 77 (1968)", "61 Fed. Reg. 4729 (1996)". Empty when its title already holds one. */
+/**
+ * A statute's or order's citation after its name, as the approved mockups show it beside the
+ * entry's date: "82 Stat. 77", "61 Fed. Reg. 4729". Copying the citation adds the year
+ * (entryCitation in src/lib/timeline.ts). Empty when its title already holds one.
+ */
 export function lawCitation(record: SourceRecord, title: string): string {
 	const citation = record.citation;
 	if (/\bStat\.|Pub\. L\./.test(title)) return '';
 	const container = citation['container-title'] ?? '';
 	const reporter = /Statutes at Large/i.test(container) ? 'Stat.' : /Federal Register/i.test(container) ? 'Fed. Reg.' : undefined;
 	if (!reporter || !citation.volume || !citation.page) return '';
-	const year = citation.issued?.['date-parts']?.[0]?.[0];
-	return `${citation.volume} ${reporter} ${citation.page}${year ? ` (${year})` : ''}`;
+	return `${citation.volume} ${reporter} ${citation.page}`;
 }
 
 /** A law's name without its citation, to find two records of the same law: "Menominee Restoration Act". */
@@ -203,6 +207,9 @@ function caseLinks(): Map<string, string> {
 	return caseLinkCache;
 }
 
+/** The topics of an opinion, as words, that the full timeline's "Mediation or arbitration" filter finds. */
+const mediationTopics = new Set(['mediation', 'arbitration', 'alternative dispute resolution']);
+
 /** The opinions of one nation, or of every nation, counted by year (and by nation on the full timeline). */
 function opinionYears(nationId?: string): OpinionYear[] {
 	const counts = new Map<string, OpinionYear>();
@@ -212,9 +219,13 @@ function opinionYears(nationId?: string): OpinionYear[] {
 		const owners = nationId ? (opinion.nations.includes(nationId) ? [undefined] : []) : opinion.nations;
 		for (const nation of owners) {
 			const key = `${year}|${nation ?? ''}`;
-			const entry = counts.get(key) ?? { year, count: 0, peacemaking: 0, ...(nation ? { nation } : {}) };
+			const entry = counts.get(key) ?? { year, count: 0, peacemaking: 0, mediation: 0, both: 0, ...(nation ? { nation } : {}) };
+			const peacemaking = opinion.topics.includes('peacemaking');
+			const mediation = opinion.topics.some((topic) => mediationTopics.has(topic));
 			entry.count += 1;
-			if (opinion.topics.includes('peacemaking')) entry.peacemaking += 1;
+			if (peacemaking) entry.peacemaking += 1;
+			if (mediation) entry.mediation = (entry.mediation ?? 0) + 1;
+			if (peacemaking && mediation) entry.both = (entry.both ?? 0) + 1;
 			counts.set(key, entry);
 		}
 	}
@@ -418,6 +429,8 @@ export interface SiteTimeline {
 	entries: TimelineEntry[];
 	opinions: OpinionYear[];
 	nations: Record<string, TimelineNation>;
+	/** The keys of the source records the entries come from, for the "Sources of the entries" files. */
+	sources: string[];
 }
 
 let siteCache: SiteTimeline | undefined;
@@ -428,7 +441,12 @@ export function siteTimeline(): SiteTimeline {
 	const published = nations().filter((record) => record.review?.status !== 'withdrawn-at-request' && !record.example);
 	const byId = new Map(published.map((record) => [record.id, record]));
 	const histories = documentHistories();
-	const noMarks: Marker = () => undefined;
+	// The full timeline shows no markers; it only notes each entry's sources for its download files.
+	const used = new Set<string>();
+	const noMarks: Marker = (key) => {
+		if (key) used.add(key);
+		return undefined;
+	};
 	const stub = { cite: () => ({ number: 0, anchor: '' }), citeFact: () => undefined };
 
 	const entries: TimelineEntry[] = [];
@@ -460,6 +478,7 @@ export function siteTimeline(): SiteTimeline {
 	for (const source of sourceRecords().values()) {
 		const entry = caseKinds.has(source.kind) ? caseEntry(source) : federalKinds.has(source.kind) ? lawEntry(source, false) : undefined;
 		if (!entry) continue;
+		used.add(source.key);
 		const named = { ...entry, nations: entry.nations?.filter((id) => byId.has(id)) };
 		if (entry.kind !== 'federal') {
 			entries.push(named);
@@ -487,10 +506,12 @@ export function siteTimeline(): SiteTimeline {
 		const codes = [...new Set((record.states ?? []).map((fact) => fact.state))].sort();
 		nationsNamed[id] = { name: displayName(record.names.official), states: codes.map((code) => ({ code, name: stateName(code) })) };
 	}
+	if (opinions.length > 0) used.add(opinionsSourceKey);
 	siteCache = {
 		entries: entries.map((entry) => (entry.nations?.length ? entry : { ...entry, nations: undefined })),
 		opinions,
-		nations: nationsNamed
+		nations: nationsNamed,
+		sources: [...used].filter((key) => sourceRecords().has(key)).sort()
 	};
 	return siteCache;
 }
@@ -509,4 +530,13 @@ export function nationTimelineFile(nationId: string): TimelineRow[] | undefined 
 	const pageLink = `/nations/${nationId}`;
 	const entries = timeline.entries.map((entry) => ({ ...entry, link: entry.link?.startsWith('#') ? `${pageLink}${entry.link}` : entry.link }));
 	return timelineRows(entries, timeline.opinions);
+}
+
+/** The sources of the full timeline's entries as citation data, for its CSL JSON, RIS and BibTeX files. */
+export function siteTimelineCitationItems(): CitationItem[] {
+	const records = sourceRecords();
+	return siteTimeline().sources.flatMap((key) => {
+		const source = records.get(key);
+		return source ? [{ ...(source.citation as Omit<CitationItem, 'id'>), id: key }] : [];
+	});
 }

@@ -23,6 +23,11 @@ archives:
 history:
   status: live
   last_checked: 2026-11-21
+court_dates:
+  argued_and_submitted: ['1997-07-22']
+  printed: "Argued and Submitted July 22, 1997. Decided Sept. 23, 1997."
+  source: https://static.case.law/f3d/127/cases/0805-01.json
+  checked: '2026-11-23'
 courtlistener:
   cluster: 747228
   citation: "127 F.3d 805"
@@ -83,8 +88,6 @@ access:
     Full opinion text read from the Caselaw Access Project (static.case.law/f3d/127/cases/0805-01.json).
     Pinpoints checked against a Federal Reporter copy that the lead author pulled
     on 2026-11-20. The copy is kept privately for the project and is not redistributed.
-tribes:
-- blackfeet-tribe-of-the-blackfeet-indian-reservation-of-montana
 found_in:
 - 2026-11-21-united-states-dispute-resolution
 - 2026-11-21-legal-history-and-key-cases
@@ -95,3 +98,11 @@ notes: >-
   first came from later Ninth Circuit opinions citing Wilson and a CourtListener summary; confirm
   them against the Federal Reporter copy. Citator check (KeyCite) pending; see
   research/pull-lists/2026-11-21-legal-history-westlaw.md.
+tribes:
+- blackfeet-tribe-of-the-blackfeet-indian-reservation-of-montana
+nations_in_case:
+  checked: '2026-11-23'
+  named:
+  - nation: blackfeet-tribe-of-the-blackfeet-indian-reservation-of-montana
+    named_as: Blackfeet Tribe
+    role: subject

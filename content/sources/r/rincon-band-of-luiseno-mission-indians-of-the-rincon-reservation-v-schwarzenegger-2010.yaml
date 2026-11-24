@@ -28,6 +28,11 @@ archives:
 history:
   status: live
   last_checked: '2026-11-21'
+court_dates:
+  argued_and_submitted: ['2009-11-04']
+  printed: "Argued and Submitted Nov. 4, 2009. Filed April 20, 2010."
+  source: https://static.case.law/f3d/602/cases/1019-01.json
+  checked: '2026-11-23'
 courtlistener:
   cluster: 2102
   citation: "602 F.3d 1019"
@@ -84,3 +89,11 @@ notes: Rincon Band of Luiseno Mission Indians v. Schwarzenegger, 602 F.3d 1019 (
   2710(d)(3)(C)(vii) and that the offered exclusivity was not a meaningful concession. The district court order
   to conclude a compact or submit last best offers to a mediator was made effective. Read on the original link.
   Citator check (KeyCite) pending; see the project's Westlaw list.
+tribes:
+- rincon-band-of-luiseno-indians
+nations_in_case:
+  checked: '2026-11-23'
+  named:
+  - nation: rincon-band-of-luiseno-indians
+    named_as: Rincon Band of Luiseno Mission Indians of the Rincon Reservation
+    role: party

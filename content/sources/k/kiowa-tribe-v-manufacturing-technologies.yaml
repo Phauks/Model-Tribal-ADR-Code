@@ -27,6 +27,11 @@ archives:
 history:
   status: live
   last_checked: '2026-11-21'
+court_dates:
+  argued: ['1998-01-12']
+  printed: "Argued January 12, 1998—Decided May 26, 1998"
+  source: https://tile.loc.gov/storage-services/service/ll/usrep/usrep523/usrep523751/usrep523751.pdf
+  checked: '2026-11-23'
 supreme_court:
   court: Rehnquist Court
   natural_court: Rehnquist Court (1994-2005)
@@ -95,10 +100,16 @@ rights:
     Opinions of federal courts are works of the U.S. government (17 U.S.C. § 105); the host site's own
     additions are not reproduced.
   redistribution: true
-tribes:
-- kiowa-tribe
 found_in:
 - 2026-11-21-legal-history-and-key-cases
 notes: >-
   Full citation: 523 U.S. 751 (1998). Official report scan or slip opinion: https://tile.loc.gov/storage-services/service/ll/usrep/usrep523/usrep523751/usrep523751.pdf.
   Citator check (KeyCite) pending; see research/pull-lists/2026-11-21-legal-history-westlaw.md.
+tribes:
+- kiowa-tribe
+nations_in_case:
+  checked: '2026-11-23'
+  named:
+  - nation: kiowa-tribe
+    named_as: Kiowa Tribe of Oklahoma
+    role: party

@@ -32,6 +32,7 @@ import {
 	directoryOf,
 	hideChange,
 	listChanges,
+	pageHistorySummary,
 	pageRecordedSince,
 	recordBuildChanges,
 	showChange,
@@ -128,6 +129,17 @@ describe('shared rules', () => {
 		// The form sends group=0 from a hidden field and group=1 when the box is ticked.
 		expect(readFilters(new URLSearchParams('group=0&group=1')).group).toBe(true);
 		expect(readFilters(new URLSearchParams('days=13&size=-5&limit=9999')).days).toBe(30);
+	});
+
+	it('reads the Page, Hidden changes and Only pages I follow filters, and the Hide bulk updates switch', () => {
+		const filters = readFilters(new URLSearchParams('title=%20Navajo%20%20Nation%20&hidden=1&follow=1'));
+		expect(filters).toMatchObject({ title: 'Navajo Nation', hidden: true, following: true });
+		expect(filterQuery(filters)).toBe('?title=Navajo+Nation&hidden=1&follow=1');
+		// The switch sends bulk=0 after a hidden bulk=1 when on; off, only bulk=1 arrives.
+		expect(readFilters(new URLSearchParams('bulk=1&bulk=0')).showBulk).toBe(false);
+		expect(readFilters(new URLSearchParams('bulk=1')).showBulk).toBe(true);
+		// One page's history has no title or following filter.
+		expect(readFilters(new URLSearchParams('page=/glossary/adr&title=x&follow=1'))).toMatchObject({ title: undefined, following: false });
 	});
 
 	it('takes only addresses on this site as a page filter', () => {
@@ -239,6 +251,12 @@ describe('recording the changes a build brings', () => {
 		const third = build('2026-11-23T08:00:00Z', [glossaryPage('adr', 'One. Two.', [0]), glossaryPage('arbitration', 'New.')], commits);
 		await recordBuildChanges(database, bucket, third);
 		const removed = (await listChanges(database, { ...all, changes: ['removed'] }, directoryOf(third))).changes;
+		// The Page filter finds pages by words in their title, and a page that is gone by the title its change kept.
+		const titled = await listChanges(database, { ...all, title: 'ARBITR' }, directoryOf(third));
+		expect(titled.changes.map((change) => change.address)).toEqual(['/glossary/arbitration']);
+		expect(titled.total).toBe(1);
+		// Only pages I follow: none for a reader who is not signed in.
+		expect((await listChanges(database, { ...all, following: true }, directoryOf(third))).changes).toEqual([]);
 		// A nation page that is gone keeps no title of its own.
 		expect(removed).toMatchObject([{ address: '/nations/navajo-nation', change: 'removed', title: undefined, parts: [] }]);
 	});
@@ -250,6 +268,18 @@ describe('recording the changes a build brings', () => {
 		expect(await pageRecordedSince(database, '/nations/hopi-tribe')).toBe('2026-11-23T03:49:00Z');
 		// A page the history does not follow has no start.
 		expect(await pageRecordedSince(database, '/about')).toBeUndefined();
+	});
+
+	it('sums up a page’s history for its badge: how many changes and the newest', async () => {
+		const first = build('2026-11-23T00:00:00Z', [nationPage('navajo-nation', { Contacts: 'a', Courts: 'b' })]);
+		await recordBuildChanges(database, bucket, first, '2026-11-23T03:49:00Z');
+		expect(await pageHistorySummary(database, '/nations/navajo-nation')).toEqual({ count: 0, latest: undefined, recordedSince: '2026-11-23T03:49:00Z' });
+
+		const commits = [{ title: 'Update the courts', merged: '2026-11-23T05:00:00Z', bulk: false }];
+		const second = build('2026-11-23T06:00:00Z', [nationPage('navajo-nation', { Contacts: 'a', Courts: 'c' }, [0])], commits);
+		await recordBuildChanges(database, bucket, second, '2026-11-23T06:01:00Z');
+		const summary = await pageHistorySummary(database, '/nations/navajo-nation');
+		expect(summary).toMatchObject({ count: 1, recordedSince: undefined, latest: { change: 'edit', parts: ['Courts'], who: 'Site release' } });
 	});
 
 	it('compares two versions of a page, and refuses to show hidden text', async () => {

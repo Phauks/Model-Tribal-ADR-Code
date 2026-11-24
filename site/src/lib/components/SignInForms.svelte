@@ -10,6 +10,12 @@
 	once signed in, the browser goes where the server says, which is usually
 	the page it was on. Every form posts to /sign-in, so both work without
 	scripts the same way.
+
+	The panel follows its approved mockup (design/sign-in-popover): a problem
+	shows as a short note at the top with a short error at the field, rather
+	than the page's error summary; there is no hint under Password; and the
+	confirm step has no "Keep me signed in" box, because the choice made on
+	the step before it is carried along.
 -->
 <script lang="ts">
 	import { enhance } from '$app/forms';
@@ -17,6 +23,8 @@
 	import Mail from '@lucide/svelte/icons/mail';
 	import Check from '@lucide/svelte/icons/check';
 	import Circle from '@lucide/svelte/icons/circle';
+	import CircleAlert from '@lucide/svelte/icons/circle-alert';
+	import ArrowLeft from '@lucide/svelte/icons/arrow-left';
 	import X from '@lucide/svelte/icons/x';
 	import type { SignInState } from '#lib/sign-in-state.ts';
 	import CodeInput from './CodeInput.svelte';
@@ -44,13 +52,21 @@
 	let { answer, codesAvailable, returnTo, creating = false, prefix = '', level = 1, onchange, onclose }: Props = $props();
 
 	const minimum = 15;
+	const inPanel = $derived(Boolean(onchange));
 	const step = $derived(answer?.step ?? (creating && codesAvailable ? 'create' : 'email'));
 	const email = $derived(answer?.email ?? '');
 	const keep = $derived(Boolean(answer?.keep));
 	const problem = $derived(answer?.problem);
 	const field = $derived(answer?.field);
 	const paused = $derived(answer?.paused);
-	const problems = $derived(problem ? [{ field: field ? `${prefix}${field}` : undefined, message: problem }] : []);
+	const problems = $derived(problem && !inPanel ? [{ field: field ? `${prefix}${field}` : undefined, message: problem }] : []);
+	/** In the panel, the field's own error is short; the note at the top says the rest. */
+	const shortErrors: Record<string, string> = {
+		email: 'Check your email address',
+		password: 'Check your password',
+		'new-password': 'Choose another password',
+		code: 'Check the code'
+	};
 	const heading = $derived(
 		step === 'code' ? 'Check your email' : step === 'create' ? 'Create an account' : 'Sign in'
 	);
@@ -58,8 +74,40 @@
 
 	// The new password's length so far, counted as the server counts it: each Unicode code point once.
 	let typedLength = $state(0);
+	// Whether the new password is in Have I Been Pwned's list of leaked passwords, checked as it is typed (src/routes/sign-in/leaks/+server.ts). Only the first five characters of its SHA-1 hash leave the browser. The server checks again when the form is sent.
+	let leaks = $state<'unchecked' | 'checking' | 'clear' | 'found' | 'unavailable'>('unchecked');
+	let leakTimer: ReturnType<typeof setTimeout> | undefined;
+	let leakAsked = 0;
+
+	async function checkLeaks(password: string) {
+		const asked = ++leakAsked;
+		try {
+			const digest = await crypto.subtle.digest('SHA-1', new TextEncoder().encode(password.normalize('NFC')));
+			const hash = Array.from(new Uint8Array(digest), (byte) => byte.toString(16).padStart(2, '0')).join('').toUpperCase();
+			const response = await fetch(`/sign-in/leaks?prefix=${hash.slice(0, 5)}`);
+			if (!response.ok) throw new Error(`The leak check answered ${response.status}`);
+			const suffix = hash.slice(5);
+			const found = (await response.text()).split('\n').some((line) => {
+				const [ending, count] = line.trim().split(':');
+				return ending === suffix && Number(count) > 0;
+			});
+			if (asked === leakAsked) leaks = found ? 'found' : 'clear';
+		} catch {
+			if (asked === leakAsked) leaks = 'unavailable';
+		}
+	}
+
 	function measure(event: Event) {
-		typedLength = [...(event.currentTarget as HTMLInputElement).value.normalize('NFC')].length;
+		const password = (event.currentTarget as HTMLInputElement).value;
+		typedLength = [...password.normalize('NFC')].length;
+		clearTimeout(leakTimer);
+		leakAsked++;
+		if (typedLength < minimum) {
+			leaks = 'unchecked';
+			return;
+		}
+		leaks = 'checking';
+		leakTimer = setTimeout(() => void checkLeaks(password), 400);
 	}
 
 	/** The ids that describe a field: its hint, and its error when it has one. */
@@ -80,6 +128,7 @@
 			// A password is never left in the field after it was sent.
 			for (const input of formElement.querySelectorAll<HTMLInputElement>('input[name="password"]')) input.value = '';
 			typedLength = 0;
+			leaks = 'unchecked';
 		};
 	};
 
@@ -102,7 +151,11 @@
 
 {#snippet fieldError(name: string)}
 	{#if field === name && problem}
-		<p class="field-error" id="{prefix}{name}-error"><span class="visually-hidden">Error:</span> {problem}</p>
+		<p class="field-error" id="{prefix}{name}-error">
+			{#if inPanel}<CircleAlert size={18} strokeWidth={2} aria-hidden="true" />{/if}
+			<span class="visually-hidden">Error:</span>
+			{inPanel ? (shortErrors[name] ?? problem) : problem}
+		</p>
 	{/if}
 {/snippet}
 
@@ -122,11 +175,25 @@
 
 <ErrorSummary {problems} />
 
+{#if inPanel && problem}
+	<div class="notice notice-problem panel-note" role="alert">
+		{#if answer?.reason === 'no-match'}
+			<p>
+				<strong>That email address and password do not match.</strong>
+				{codesAvailable ? 'Check both, or email yourself a code instead.' : 'Check both, or ask the lead author for a sign-in link.'}
+			</p>
+		{:else}
+			<p>{problem}</p>
+		{/if}
+	</div>
+{/if}
+
 {#if step === 'code'}
-	<p>
+	<p class:intro={inPanel}>
 		We sent a six-digit code to <strong>{email}</strong>.
 		{#if answer?.creating}Your account is made when you type it.{/if}
-		It works once, for {answer?.minutes ?? 15} minutes. You can also open the link in the email instead.
+		It works once, for {answer?.minutes ?? 15} minutes.{#if !inPanel}
+			You can also open the link in the email instead.{/if}
 	</p>
 	{#if answer?.shownCode}
 		<div class="notice" role="note">
@@ -146,27 +213,45 @@
 			{@render fieldError('code')}
 			<CodeInput id="{prefix}code" name="code" describedBy={describedBy('code', 'code-hint')} invalid={field === 'code' && Boolean(problem)} />
 		</div>
-		{@render keepSignedIn('keep-code')}
+		{#if inPanel}
+			{#if keep}<input type="hidden" name="keep" value="yes" />{/if}
+		{:else}
+			{@render keepSignedIn('keep-code')}
+		{/if}
 		<button class="button wide" type="submit">{answer?.creating ? 'Confirm and create account' : 'Sign in'}</button>
-		{#if answer?.creating}
+		{#if answer?.creating && !inPanel}
 			<p class="small after">If this address already has an account, the code signs you in and its password stays as it was.</p>
 		{/if}
 	</form>
-	<form method="post" action="/sign-in?/{answer?.creating ? 'create' : 'send'}" {@attach sentHere}>
+	<form method="post" action="/sign-in?/{answer?.creating ? 'resend' : 'send'}" {@attach sentHere}>
 		<input type="hidden" name="email" value={email} />
 		<input type="hidden" name="returnTo" value={returnTo} />
-		<p class="small">
-			No email after a minute? Check your spam or junk folder.
-			{#if !answer?.creating}
+		{#if keep}<input type="hidden" name="keep" value="yes" />{/if}
+		{#if inPanel}
+			<p class="small">No email after a minute? Check spam, or <button class="button-link" type="submit">send a new code</button>.</p>
+		{:else}
+			<p class="small">
+				No email after a minute? Check your spam or junk folder.
 				Or <button class="button-link" type="submit">send a new code</button>.
-			{/if}
+				<a
+					href="/sign-in?{answer?.creating ? 'create&' : ''}returnTo={back}"
+					data-sveltekit-reload
+					onclick={goTo({ step: answer?.creating ? 'create' : 'email', email, keep })}>Use a different email address</a
+				>.
+			</p>
+		{/if}
+	</form>
+	{#if inPanel}
+		<p class="switch small">
 			<a
+				class="back"
 				href="/sign-in?{answer?.creating ? 'create&' : ''}returnTo={back}"
 				data-sveltekit-reload
-				onclick={goTo({ step: answer?.creating ? 'create' : 'email', email, keep })}>Use a different email address</a
-			>.
+				onclick={goTo({ step: answer?.creating ? 'create' : 'email', email, keep })}
+				><ArrowLeft size={16} strokeWidth={2} aria-hidden="true" /> Use a different email address</a
+			>
 		</p>
-	</form>
+	{/if}
 {:else if paused}
 	<div class="notice notice-problem" role="alert">
 		{#if paused.off}
@@ -203,15 +288,16 @@
 		a new password on Sign-in and security.
 	</p>
 {:else if step === 'create'}
-	<p class="intro">
-		An account lets you keep a contributor profile, follow pages and upload documents. Reading the site and
-		sending a request never need one.
-	</p>
+	{#if !(inPanel && problem)}
+		<p class="intro">
+			An account lets you keep a contributor profile, follow pages and upload documents. Reading the site never
+			needs one.
+		</p>
+	{/if}
 	<form method="post" action="/sign-in?/create" class="panel" {@attach sentHere}>
 		<input type="hidden" name="returnTo" value={returnTo} />
 		<div class="field">
 			<label for="{prefix}email">Email address</label>
-			<p class="hint" id="{prefix}email-hint">We send a code to this address. Your account is made when you type it.</p>
 			{@render fieldError('email')}
 			<input
 				id="{prefix}email"
@@ -219,35 +305,45 @@
 				type="email"
 				autocomplete="username"
 				value={email}
-				aria-describedby={describedBy('email', 'email-hint')}
+				aria-describedby={describedBy('email')}
 				aria-invalid={field === 'email' && problem ? 'true' : undefined}
 				required
 			/>
 		</div>
 		<div class="field">
 			<label for="{prefix}new-password">Choose a password</label>
-			<p class="hint" id="{prefix}new-password-hint">
-				Use {minimum} characters or more. Three or four unrelated words work well. It is also checked against
-				passwords leaked in data breaches.
-			</p>
 			{@render fieldError('new-password')}
 			<PasswordInput
 				id="{prefix}new-password"
 				name="password"
 				autocomplete="new-password"
-				aria-describedby={describedBy('new-password', 'new-password-hint')}
+				aria-describedby={describedBy('new-password', 'new-password-checks')}
 				aria-invalid={field === 'new-password' && problem ? 'true' : undefined}
 				oninput={measure}
 				required
 			/>
-			<p class="length small" class:met={typedLength >= minimum}>
-				{#if typedLength >= minimum}
-					<Check size={18} strokeWidth={2} aria-hidden="true" />
-				{:else}
-					<Circle size={18} strokeWidth={1.75} aria-hidden="true" />
-				{/if}
-				{minimum} characters or more ({typedLength} so far)
-			</p>
+			<ul class="checks small" id="{prefix}new-password-checks">
+				<li class:met={typedLength >= minimum}>
+					{#if typedLength >= minimum}
+						<Check size={18} strokeWidth={2} aria-hidden="true" />
+					{:else}
+						<Circle size={18} strokeWidth={1.75} aria-hidden="true" />
+					{/if}
+					At least {minimum} characters
+				</li>
+				<li class:met={leaks === 'clear'} class:refused={leaks === 'found'} aria-live="polite">
+					{#if leaks === 'clear'}
+						<Check size={18} strokeWidth={2} aria-hidden="true" />
+						Not found in known password leaks
+					{:else if leaks === 'found'}
+						<X size={18} strokeWidth={2} aria-hidden="true" />
+						Found in known password leaks. Choose another.
+					{:else}
+						<Circle size={18} strokeWidth={1.75} aria-hidden="true" />
+						Not found in known password leaks
+					{/if}
+				</li>
+			</ul>
 		</div>
 		{@render keepSignedIn('keep')}
 		<button class="button wide" type="submit">Create account</button>
@@ -257,14 +353,14 @@
 		<a href="/sign-in?returnTo={back}" data-sveltekit-reload onclick={goTo({ step: 'email', email })}><strong>Sign in</strong></a>
 	</p>
 {:else}
-	<p class="intro">
-		{#if onchange}
-			You do not need an account to read the site or to send a request.
-		{:else}
+	{#if inPanel}
+		{#if !problem}<p class="intro">You do not need an account to read the site or send a request.</p>{/if}
+	{:else}
+		<p class="intro">
 			Sign in to keep a contributor profile, or to work in the workspace if the lead author has given you
 			access. You do not need an account to read the site or to send a request.
-		{/if}
-	</p>
+		</p>
+	{/if}
 	<form method="post" action="/sign-in?/password" class="panel" {@attach sentHere}>
 		<input type="hidden" name="returnTo" value={returnTo} />
 		<div class="field">
@@ -283,17 +379,19 @@
 		</div>
 		<div class="field">
 			<label for="{prefix}password">Password</label>
-			<p class="hint" id="{prefix}password-hint">
-				{codesAvailable
-					? 'Only if you chose one. Otherwise, email yourself a code below.'
-					: 'Only if you chose one. Otherwise, ask the lead author for a sign-in link.'}
-			</p>
+			{#if !inPanel}
+				<p class="hint" id="{prefix}password-hint">
+					{codesAvailable
+						? 'Only if you chose one. Otherwise, email yourself a code below.'
+						: 'Only if you chose one. Otherwise, ask the lead author for a sign-in link.'}
+				</p>
+			{/if}
 			{@render fieldError('password')}
 			<PasswordInput
 				id="{prefix}password"
 				name="password"
 				autocomplete="current-password"
-				aria-describedby={describedBy('password', 'password-hint')}
+				aria-describedby={describedBy('password', inPanel ? undefined : 'password-hint')}
 				aria-invalid={field === 'password' && problem ? 'true' : undefined}
 			/>
 			<!-- After the field, so Tab goes from the email address straight to the password. -->
@@ -377,20 +475,47 @@
 		font-size: var(--font-size-small);
 	}
 
-	.length {
+	.checks {
+		list-style: none;
+		margin: var(--space-2) 0 0;
+		padding: 0;
+	}
+
+	.checks li {
 		display: flex;
 		align-items: center;
 		gap: var(--space-2);
-		margin: var(--space-2) 0 0;
+		margin: var(--space-1) 0 0;
 		color: var(--color-ink-muted);
 	}
 
-	.length.met {
+	.checks li.met {
 		color: var(--color-ink);
 	}
 
-	.length.met :global(svg) {
+	.checks li.met :global(svg) {
 		color: var(--color-link);
+	}
+
+	.checks li.refused {
+		color: var(--color-danger);
+	}
+
+	.panel-note {
+		margin: var(--space-3) 0;
+		font-size: var(--font-size-small);
+	}
+
+	.field-error {
+		display: flex;
+		align-items: center;
+		gap: var(--space-1);
+	}
+
+	.back {
+		display: inline-flex;
+		align-items: center;
+		gap: var(--space-1);
 	}
 
 	.after {

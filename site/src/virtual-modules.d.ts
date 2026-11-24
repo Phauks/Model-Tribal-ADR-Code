@@ -31,6 +31,8 @@ declare module 'virtual:mail-nations' {
 declare module 'virtual:section-lists' {
 	/** Every nation's name and page id, A to Z, for the sidebar (src/lib/section-lists.ts). */
 	export const nationNames: [name: string, id: string][];
+	/** How many of them are Native nations, leaving out the Native Hawaiian community and the territories' peoples. */
+	export const nationCount: number;
 }
 
 declare module 'virtual:nation-images' {

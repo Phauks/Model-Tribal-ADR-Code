@@ -2,7 +2,7 @@ import { error } from '@sveltejs/kit';
 import type { OutlineItem, PageOutline } from '#lib/site-sections.ts';
 import geometry from 'virtual:map-geometry';
 import { webLink } from '#lib/contact-links.ts';
-import { contactCards, contactsHeading, type ContactCards } from '#lib/contact-card.ts';
+import { contactCards, contactsHeading, defaultOfficeFor, type ContactCards } from '#lib/contact-card.ts';
 import { imageMayBeShown, imagePath } from '#lib/official-images.ts';
 import {
 	nations,
@@ -28,9 +28,11 @@ import { nationTileMapData } from '#lib/server/nations-map.ts';
 import { offlineSets } from '#lib/server/copy-lists.ts';
 import { nationStorySummaries } from '#lib/server/stories.ts';
 import { opinionsOf, opinionsSourceKey, type TribalCourtOpinion } from '#lib/server/tribal-court-opinions.ts';
-import { nationTimeline, timelineHeading } from '#lib/server/timeline.ts';
+import { issuedDate, nationTimeline, timelineHeading } from '#lib/server/timeline.ts';
+import { casePreviewList } from '#lib/server/case-previews.ts';
+import { courtAbbreviation } from '#lib/server/case-citations.ts';
 import { bureauRegionPage, healthAreaPage } from '#lib/federal-offices.ts';
-import { displayName, humanize, regionAnchor, reviewStatusLabels, stateName } from '#lib/nation-labels.ts';
+import { displayName, humanize, regionAnchor, presenceNote, reviewStatusLabels, stateName } from '#lib/nation-labels.ts';
 import type { EntryGenerator, PageServerLoad } from './$types';
 
 export const entries: EntryGenerator = () => nations().map((record) => ({ id: record.id }));
@@ -54,6 +56,7 @@ interface FactItem {
 }
 
 const opinionsHeading = 'Court opinions';
+const casesHeading = 'Cases involving the nation';
 
 /** The opinions the section names before linking to the full list. */
 const opinionsShown = 5;
@@ -98,13 +101,10 @@ function courtOpinions(nationId: string, sources: SourceUses): CourtOpinions | u
 interface NationImage {
 	src: string;
 	kind: string;
-	credit: string;
 	/** Where the image is published, such as the nation's website. */
 	original: string;
-	/** The image's entry in the Sources list, as a link within the page. */
+	/** The image's entry in the References list, as a link within the page. */
 	source?: string;
-	/** Where the nation asks for the image to be taken down. */
-	removal: string;
 }
 
 interface EmptySections {
@@ -118,10 +118,12 @@ interface FactGroup {
 	field: string;
 	label: string;
 	items: FactItem[];
+	/** The note every value shares, said once under the label (FactGroups.svelte). */
+	note?: string;
 }
 
-function group(field: string, label: string, items: FactItem[]): FactGroup[] {
-	return items.length > 0 ? [{ field, label, items }] : [];
+function group(field: string, label: string, items: FactItem[], note?: string): FactGroup[] {
+	return items.length > 0 ? [{ field, label, items, ...(note ? { note } : {}) }] : [];
 }
 
 /** Shows a fact with the marker of its source, and records the source under the group's label. */
@@ -140,11 +142,15 @@ function contactCard(record: NationRecord, sources: SourceUses): ContactCards {
 	const facts = record.contacts ?? [];
 	const describe = (fact: (typeof facts)[number]) => `${humanize(fact.kind)}: ${fact.value}`;
 	for (const fact of facts) sources.use(fact, contactsHeading, describe(fact));
-	return contactCards(facts, (fact) => {
-		const citations: CitationMark[] = [];
-		sources.citeFact(fact, contactsHeading, describe(fact), citations);
-		return citations;
-	});
+	return contactCards(
+		facts,
+		(fact) => {
+			const citations: CitationMark[] = [];
+			sources.citeFact(fact, contactsHeading, describe(fact), citations);
+			return citations;
+		},
+		defaultOfficeFor(record.entity_type)
+	);
 }
 
 /** How the page words each kind of presence a source records in a state. */
@@ -156,8 +162,8 @@ const presenceWords: Record<string, string> = {
 
 /**
  * The states with a presence as one line, "Arizona, New Mexico, Utah", and
- * under it what sources record in each, grouped by kind: "Land: Arizona, New
- * Mexico, Utah. Government office: Arizona." Every state fact keeps its marker.
+ * under it what sources record in each, grouped by kind: "Land in all three;
+ * government office in Arizona" (presenceNote). Every state fact keeps its marker.
  */
 function statesItem(record: NationRecord, sources: SourceUses, label: string): FactItem[] {
 	const facts = record.states ?? [];
@@ -176,10 +182,11 @@ function statesItem(record: NationRecord, sources: SourceUses, label: string): F
 		sources.citeFact(fact, label, `${stateName(fact.state)}${kind ? ` (${kind})` : ''}`, citations);
 	}
 	const names = (list: string[]) => list.map(stateName).sort((first, second) => first.localeCompare(second, 'en'));
-	const detail = [...byKind.entries()]
-		.map(([kind, list]) => `${kind.charAt(0).toLocaleUpperCase('en-US')}${kind.slice(1)}: ${names(list).join(', ')}.`)
-		.join(' ');
-	return [{ text: names(codes).join(', '), note: detail || undefined, citations }];
+	const detail = presenceNote(
+		[...byKind.entries()].map(([kind, list]) => [kind, names(list)]),
+		names(codes)
+	);
+	return [{ text: names(codes).join(', '), note: detail, citations }];
 }
 
 function atAGlance(record: NationRecord, sources: SourceUses): FactGroup[] {
@@ -456,8 +463,7 @@ function jurisdictionFacts(record: NationRecord, sources: SourceUses): FactGroup
 	return [
 		...[...byTopic.entries()].map(([label, items]) => ({ field: `jurisdiction-${label}`, label, items })),
 		...agreementGroups(record, sources, section),
-		...group('nearby-state-courts', 'State trial courts for the same counties', nearbyStateCourts(record, sources, section)),
-		...group('court-cases', 'Court cases about the nation', courtCases(record, sources, section))
+		...group('nearby-state-courts', 'State trial courts for the same counties', nearbyStateCourts(record, sources, section))
 	];
 }
 
@@ -479,30 +485,81 @@ function nearbyStateCourts(record: NationRecord, sources: SourceUses, section: s
 /** Reporter names written out in some records, in their short form. */
 const reporterShortNames: Record<string, string> = { 'United States Reports': 'U.S.' };
 
+/** What the nation was in a case, as the table's Role column says it (schemas/source.schema.json). */
+const caseRoles: Record<string, string> = {
+	party: 'Party',
+	government: 'Party through its officials or agency',
+	subject: 'Not a party'
+};
+
 /**
- * The court cases in the project's sources that are about the nation (the
- * source record lists it), oldest first: the case name, where it is reported
- * and the year, with the court under it. Each links the opinion the record
- * cites and is listed under Sources like any other fact.
+ * A court's name short enough for a table column: "U.S. Supreme Court", and
+ * the Indigo Book abbreviation for a federal court of appeals, district court
+ * or claims court ("9th Cir.", "W.D. Okla.", "Fed. Cl."). Other courts keep
+ * the name the record gives, since a state's abbreviation alone ("Alaska")
+ * would not say it is a court.
  */
-function courtCases(record: NationRecord, sources: SourceUses, section: string): FactItem[] {
-	const year = (source: SourceRecord) => source.citation.issued?.['date-parts']?.[0]?.[0];
-	const cases = [...sourceRecords().values()]
+function shortCourtName(authority: string | undefined): string | undefined {
+	if (!authority) return undefined;
+	if (/^Supreme Court of the United States$/.test(authority.trim())) return 'U.S. Supreme Court';
+	const short = courtAbbreviation(authority);
+	return typeof short === 'string' && /Cir\.|\bD\. |\.D\. |Cl\.$/.test(short) ? short : authority;
+}
+
+/** One court case that names the nation, a row of the nation page's cases table. */
+export interface NationCase {
+	key: string;
+	/** YYYY, YYYY-MM or YYYY-MM-DD. */
+	decided?: string;
+	name: string;
+	/** "358 U.S. 217", or the docket number when the case is not reported. */
+	citation?: string;
+	court?: string;
+	role: string;
+	/** The name the case gives the nation, when it is not the nation's name today. */
+	namedAs?: string;
+	note?: string;
+	link?: string;
+	citations: CitationMark[];
+}
+
+/**
+ * The court cases in the project's sources that name the nation, as a party
+ * or as what the case is about, oldest first (Trevor, Nov. 23, 2026: "nations
+ * in cases should be linkable to the nation, and vice versa from the nation
+ * page"). The case's own record says how it names the nation
+ * (nations_in_case); each case links its box in an essay, the copy of the
+ * opinion on this site or the opinion where it was published, the same as a
+ * case preview, and is listed under References like any other fact.
+ */
+function nationCases(record: NationRecord, sources: SourceUses): NationCase[] {
+	const section = casesHeading;
+	const previews = new Map(casePreviewList().cases.map((preview) => [preview.id, preview]));
+	const ownName = displayName(record.names.official).toLocaleLowerCase('en-US');
+	return [...sourceRecords().values()]
 		.filter((source) => source.kind.endsWith('-case') && source.tribes?.includes(record.id) && source.citation.title)
-		.sort((first, second) => (year(first) ?? 0) - (year(second) ?? 0));
-	return cases.map((source) => {
-		const { volume, page, number, authority } = source.citation;
-		const reporter = source.citation['container-title'];
-		const reported = volume && reporter && page ? `${volume} ${reporterShortNames[reporter] ?? reporter} ${page}` : number;
-		const when = year(source);
-		const address = source.citation.URL ?? source.original_link;
-		return cited(sources, section, { source: source.key, confidence: 'high' }, {
-			text: source.citation.title ?? source.key,
-			link: address && URL.canParse(address) ? webLink(address) : undefined,
-			detail: [reported, when ? `(${when})` : undefined].filter(Boolean).join(' ') || undefined,
-			note: authority
-		});
-	});
+		.map((source) => {
+			const { volume, page, number, authority } = source.citation;
+			const reporter = source.citation['container-title'];
+			const named = source.nations_in_case?.named.find((entry) => entry.nation === record.id);
+			const citations: CitationMark[] = [];
+			sources.cite(source.key, { section, text: source.citation.title ?? source.key }, citations);
+			const address = source.citation.URL ?? source.original_link;
+			const namedAs = named?.named_as.replace(/^the\s+/i, '');
+			return {
+				key: source.key,
+				decided: issuedDate(source),
+				name: source.citation.title ?? source.key,
+				citation: volume && reporter && page ? `${volume} ${reporterShortNames[reporter] ?? reporter} ${page}` : number,
+				court: shortCourtName(authority),
+				role: caseRoles[named?.role ?? 'subject'],
+				namedAs: namedAs && namedAs.toLocaleLowerCase('en-US') !== ownName ? namedAs : undefined,
+				note: named?.note,
+				link: previews.get(source.key)?.link ?? (address && URL.canParse(address) ? webLink(address) : undefined),
+				citations
+			};
+		})
+		.sort((first, second) => (first.decided ?? '').localeCompare(second.decided ?? '') || first.name.localeCompare(second.name));
 }
 
 /** The names the page gives each kind of jurisdiction agreement, in the order the page shows them. */
@@ -562,34 +619,15 @@ const establishmentWords: Record<string, string> = {
 };
 
 /**
- * The nation's relationship with the United States: its treaties, each linked
- * to its text in Kappler's Indian Affairs: Laws and Treaties; how its land was
- * set aside; and the Indian Health Service Area and service unit that serve it.
- * The Bureau of Indian Affairs region stays in At a glance. The Gaming
- * Commission's enforcement actions follow as a table (enforcementActions).
+ * The nation's relationship with the United States after its treaties (a
+ * table of their own, treatyRows): how its land was set aside, and the Indian
+ * Health Service Area and service unit that serve it. The Bureau of Indian
+ * Affairs region stays in At a glance. The Gaming Commission's enforcement
+ * actions follow as a table (enforcementActions).
  */
 function federalTies(record: NationRecord, sources: SourceUses): FactGroup[] {
 	const section = 'Treaties and federal ties';
-	const treaties = [...(record.treaties ?? [])].sort((first, second) => first.signed.localeCompare(second.signed));
 	return [
-		...group(
-			'treaties',
-			'Treaties',
-			treaties.map((fact) =>
-				cited(sources, section, fact, {
-					text: fact.title,
-					link: fact.kappler?.link ? webLink(fact.kappler.link) : undefined,
-					detail: [
-						readableDate(fact.signed),
-						fact.statutes_at_large,
-						fact.kappler?.page ? `${fact.kappler.volume ?? 2} Kappler ${fact.kappler.page}` : undefined
-					]
-						.filter(Boolean)
-						.join(', '),
-					note: fact.signatory ? `Signed as “${fact.signatory}”.` : undefined
-				})
-			)
-		),
 		...group(
 			'land_establishment',
 			'How the land was set aside',
@@ -619,6 +657,47 @@ function federalTies(record: NationRecord, sources: SourceUses): FactGroup[] {
 				)
 		)
 	];
+}
+
+/** One treaty, a row of the Treaties table on the nation page. */
+interface TreatyRow {
+	key: string;
+	title: string;
+	/** YYYY-MM-DD, which sorts the table. */
+	signed: string;
+	statutesAtLarge?: string;
+	kappler?: string;
+	/** Kappler's text of the treaty. */
+	link?: string;
+	/** The name the nation, or the people it descends from, signed under. */
+	signedAs?: string;
+	citations: CitationMark[];
+}
+
+/**
+ * The nation's treaties, oldest first, as rows of a table with Signed,
+ * Treaty, Statutes at Large, Kappler and Signed as columns (Trevor, Nov. 23,
+ * 2026, "label rows": records with dates and citations go in the shared data
+ * table). Cited first in the section, as the table comes first.
+ */
+function treatyRows(record: NationRecord, sources: SourceUses): TreatyRow[] {
+	const section = 'Treaties and federal ties';
+	return [...(record.treaties ?? [])]
+		.sort((first, second) => first.signed.localeCompare(second.signed))
+		.map((fact, index) => {
+			const citations: CitationMark[] = [];
+			sources.citeFact(fact, section, fact.title, citations);
+			return {
+				key: `${fact.signed}-${index}`,
+				title: fact.title,
+				signed: fact.signed,
+				statutesAtLarge: fact.statutes_at_large,
+				kappler: fact.kappler?.page ? `${fact.kappler.volume ?? 2} Kappler ${fact.kappler.page}` : undefined,
+				link: fact.kappler?.link ? webLink(fact.kappler.link) : undefined,
+				signedAs: fact.signatory,
+				citations
+			};
+		});
 }
 
 /** One National Indian Gaming Commission enforcement action, a row of its table on the nation page. */
@@ -655,6 +734,11 @@ function enforcementActions(record: NationRecord, sources: SourceUses): Enforcem
 				citations
 			};
 		});
+}
+
+/** A kind of document said of several, such as "Law codes"; words already plural, such as "Court rules", stay. */
+function plural(words: string): string {
+	return /s$/.test(words) ? words : `${words}s`;
 }
 
 /** The first letter in capitals, the rest as given. */
@@ -800,6 +884,11 @@ function publishedLaw(
 			lines.push({ title, link, facts: [fact] });
 		}
 	}
+	// When every document is the same kind, such as four law codes, the kind
+	// is said once under the label ("Law codes") instead of under each one.
+	const kindOf = (line: (typeof lines)[number]) => line.facts.find((fact) => fact.title && fact.kind !== 'other')?.kind;
+	const kinds = new Set(lines.map(kindOf));
+	const sharedKind = lines.length > 1 && kinds.size === 1 ? [...kinds][0] : undefined;
 	return [
 		...group(
 			'dispute_resolution_law',
@@ -823,10 +912,11 @@ function publishedLaw(
 				return {
 					text: site ? `${line.title} (${site})` : line.title,
 					link: line.link,
-					detail: kind ? humanize(kind) : undefined,
+					detail: kind && !sharedKind ? humanize(kind) : undefined,
 					citations
 				};
-			})
+			}),
+			sharedKind ? plural(humanize(sharedKind)) : undefined
 		)
 	];
 }
@@ -1041,9 +1131,11 @@ export const load: PageServerLoad = ({ params }) => {
 			courts: [],
 			practice: [],
 			opinions: undefined,
+			cases: [] as NationCase[],
 			law: [],
 			documents: [],
 			jurisdiction: [],
+			treaties: [],
 			ties: [],
 			enforcement: [],
 			stories: [],
@@ -1073,9 +1165,10 @@ export const load: PageServerLoad = ({ params }) => {
 	// It has no caption (Trevor, Nov. 22, 2026): the credit, and the statement
 	// that the nation does not endorse the site, go in its Sources entry,
 	// and a removal request goes through Report a problem.
-	// Selecting it opens it larger in the image viewer, which shows the same
-	// credit and links to its Sources entry, to where it is published and to
-	// a removal request (src/lib/image-viewer.ts).
+	// Selecting it opens it larger in the image viewer, with a download button
+	// and links to its References entry and to where it is published
+	// (src/lib/image-viewer.ts). The viewer leaves out the credit line, which
+	// the References entry keeps (Trevor, Nov. 23, 2026).
 	let image: NationImage | undefined;
 	if (shownImage) {
 		const kind = humanize(shownImage.kind);
@@ -1089,10 +1182,8 @@ export const load: PageServerLoad = ({ params }) => {
 		image = {
 			src: imagePath(record.id),
 			kind,
-			credit,
 			original: shownImage.image_link,
-			source: sourceNumber ? `#${sourceAnchor(sourceNumber)}` : undefined,
-			removal: `/requests?${new URLSearchParams({ kind: 'remove', record: `nation-images/${record.id}` }).toString().replaceAll('%2F', '/')}`
+			source: sourceNumber ? `#${sourceAnchor(sourceNumber)}` : undefined
 		};
 	}
 
@@ -1163,6 +1254,8 @@ export const load: PageServerLoad = ({ params }) => {
 	const practice = courtPractice(record, sources);
 	sources.part(opinionsHeading);
 	const opinions = courtOpinions(record.id, sources);
+	sources.part(casesHeading);
+	const cases = nationCases(record, sources);
 	// Within Laws and agreements, each document's sources go under its heading.
 	const documents = histories.map((history) => {
 		const heading = documentHeading(history.title, names);
@@ -1174,6 +1267,7 @@ export const load: PageServerLoad = ({ params }) => {
 	sources.part('Jurisdiction');
 	const jurisdiction = jurisdictionFacts(record, sources);
 	sources.part('Treaties and federal ties');
+	const treaties = treatyRows(record, sources);
 	const ties = federalTies(record, sources);
 	const enforcement = enforcementActions(record, sources);
 	// Every dated record on the page on one line, after the sections it
@@ -1224,9 +1318,11 @@ export const load: PageServerLoad = ({ params }) => {
 		courts,
 		practice,
 		opinions,
+		cases,
 		law,
 		documents,
 		jurisdiction,
+		treaties,
 		ties,
 		enforcement,
 		timeline: hasTimeline ? timeline : undefined,
@@ -1244,13 +1340,14 @@ export const load: PageServerLoad = ({ params }) => {
 	items.push({ label: governmentHeading, link: '#government-heading' });
 	items.push({ label: 'Courts and dispute resolution', link: '#courts-heading' });
 	if (opinions) items.push({ label: opinionsHeading, link: '#opinions-heading' });
+	if (cases.length > 0) items.push({ label: casesHeading, link: '#cases-heading' });
 	items.push({
 		label: lawHeading,
 		link: '#law-heading',
 		children: documents.map((document) => ({ label: document.heading, link: `#document-${document.id}` }))
 	});
 	items.push({ label: 'Jurisdiction', link: '#jurisdiction-heading' });
-	if (ties.length > 0 || enforcement.length > 0) items.push({ label: 'Treaties and federal ties', link: '#ties-heading' });
+	if (treaties.length > 0 || ties.length > 0 || enforcement.length > 0) items.push({ label: 'Treaties and federal ties', link: '#ties-heading' });
 	if (hasTimeline) items.push({ label: timelineHeading, link: '#timeline-heading' });
 	if (stories.length > 0) items.push({ label: 'Stories', link: '#stories-heading' });
 	if (result.neighbors.length > 0) {

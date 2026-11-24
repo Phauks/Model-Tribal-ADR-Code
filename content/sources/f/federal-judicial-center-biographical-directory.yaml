@@ -1,0 +1,30 @@
+key: federal-judicial-center-biographical-directory
+kind: dataset
+citation:
+  type: dataset
+  title: Biographical Directory of Article III Federal Judges, 1789–present (federal judicial service export)
+  author:
+  - literal: Federal Judicial Center
+  URL: https://www.fjc.gov/history/judges/biographical-directory-article-iii-federal-judges-export
+  accessed:
+    date-parts:
+    - - 2026
+      - 11
+      - 23
+original_link: https://www.fjc.gov/sites/default/files/history/federal-judicial-service.csv
+retrieved: '2026-11-23'
+archives: []  # capture pending
+history:
+  status: live
+  last_checked: '2026-11-23'
+rights:
+  status: no-permission-needed
+  basis: us-government-work
+  basis_note: Published by the Federal Judicial Center, an agency of the federal judiciary.
+  redistribution: true
+topics:
+- legal-history
+- supreme-court
+found_in:
+- 2026-11-23-supreme-court-pages
+notes: 'One row per judicial appointment. For the 121 Supreme Court appointments it gives the appointing President, the seat (Seat ID, such as SCT0603 for the third holder of seat 6), the statute that created a new seat, and how service ended (Termination, Senior Status Date). Where Termination is death but a senior status date matches the Court''s end of service, the Justice retired first.'

@@ -15,6 +15,7 @@ describe('the workspace pages in the left sidebar', () => {
 			'overview',
 			'essays',
 			'review-requests',
+			'comments',
 			'requests',
 			'inbox',
 			'outreach',
@@ -44,6 +45,7 @@ describe('the workspace pages in the left sidebar', () => {
 			'overview',
 			'essays',
 			'review-requests',
+			'comments',
 			'requests',
 			'uploads',
 			'intake',
@@ -54,7 +56,7 @@ describe('the workspace pages in the left sidebar', () => {
 			'rooms',
 			'nation-pages'
 		]);
-		expect(names(workspacePagesFor(permissionsOf('co-author')))).toEqual(['overview', 'essays', 'review-requests', 'reviews', 'library', 'rooms']);
+		expect(names(workspacePagesFor(permissionsOf('co-author')))).toEqual(['overview', 'essays', 'review-requests', 'comments', 'reviews', 'library', 'rooms']);
 		expect(names(workspacePagesFor(permissionsOf('nation-reviewer')))).toEqual(['overview', 'essays', 'nation-uploads', 'reviews']);
 	});
 

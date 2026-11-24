@@ -1,10 +1,15 @@
 import type { D1Database } from '@cloudflare/workers-types/index.ts';
 import { beforeEach, describe, expect, it } from 'vitest';
 import {
+	dateTile,
+	eventClock,
 	eventWhen,
 	isEventSlug,
 	isWebLink,
 	paragraphsOf,
+	readAccessNeeds,
+	seatStatus,
+	sessionTimes,
 	slugFromTitle,
 	wallClock,
 	zonedToUtc
@@ -12,6 +17,7 @@ import {
 import { verifiedAccount } from '#lib/server/accounts.ts';
 import {
 	acceptOffer,
+	addMaterial,
 	cancelRegistration,
 	changeEventStatus,
 	claimMessage,
@@ -22,12 +28,19 @@ import {
 	eventsForAccount,
 	expireOffers,
 	listedEvents,
+	materialObjectKey,
+	materialsOf,
 	register,
 	registrationFor,
 	registrationsOf,
 	releaseMessage,
+	removeMaterial,
+	removeSession,
 	removeTicketType,
+	saveSession,
 	saveTicketType,
+	seatCountsByEvent,
+	sessionsOf,
 	ticketTypesOf,
 	updateEvent,
 	type CalendarEvent,
@@ -368,5 +381,79 @@ describe('calendar files', () => {
 		expect(file).toContain('STATUS:CONFIRMED');
 		expect(file).not.toContain('example.org/join');
 		expect(file.endsWith('END:VCALENDAR\r\n')).toBe(true);
+	});
+});
+
+describe('the list of events and the event page, as in the approved mockups', () => {
+	it('makes a date tile and the times without the day in the event’s own zone', () => {
+		expect(dateTile('2027-03-11T17:00:00.000Z', 'America/Los_Angeles')).toEqual({ month: 'MAR', day: '11', weekday: 'Thursday' });
+		// Late in the evening in Los Angeles is already the next day in UTC.
+		expect(dateTile('2027-03-12T05:30:00.000Z', 'America/Los_Angeles').day).toBe('11');
+		expect(eventClock('2027-03-11T17:00:00.000Z', '2027-03-11T20:15:00.000Z', 'America/Los_Angeles')).toBe('9:00 AM to 12:15 PM Pacific time');
+		expect(sessionTimes('2027-03-11T17:00:00.000Z', '2027-03-11T18:00:00.000Z', 'America/Los_Angeles')).toBe('9:00 AM to 10:00 AM');
+		expect(sessionTimes('2027-03-11T17:00:00.000Z', null, 'America/Los_Angeles')).toBe('9:00 AM');
+	});
+
+	it('says how many seats are left, or that it is full and how many wait', () => {
+		expect(seatStatus([])).toBeNull();
+		expect(seatStatus([{ attendance: 'online', capacity: null, taken: 4, waiting: 0 }])).toEqual({ words: 'Open seats', full: false });
+		expect(
+			seatStatus([
+				{ attendance: 'online', capacity: null, taken: 4, waiting: 0 },
+				{ attendance: 'in-person', capacity: 120, taken: 82, waiting: 0 }
+			])?.words
+		).toBe('38 of 120 in-person seats left');
+		expect(seatStatus([{ attendance: 'in-person', capacity: 40, taken: 39, waiting: 0 }])?.words).toBe('1 of 40 seats left');
+		expect(seatStatus([{ attendance: 'in-person', capacity: 40, taken: 40, waiting: 6 }])).toEqual({ words: 'Full. 6 on the waitlist', full: true });
+		// People waiting means a freed seat is theirs, so it counts as full.
+		expect(seatStatus([{ attendance: 'in-person', capacity: 40, taken: 39, waiting: 1 }])?.full).toBe(true);
+	});
+
+	it('turns the access-need boxes into one line for the people running the event', () => {
+		const form = new FormData();
+		form.append('need', 'Live captions');
+		form.append('need', 'ASL interpreting');
+		form.append('need', 'Not a choice');
+		form.set('need-other', '  A quiet room  ');
+		expect(readAccessNeeds(form)).toEqual({
+			chosen: ['Live captions', 'ASL interpreting'],
+			other: 'A quiet room',
+			text: 'Live captions; ASL interpreting; Also: A quiet room'
+		});
+		expect(readAccessNeeds(new FormData()).text).toBeNull();
+	});
+
+	it('counts each event’s seats for the list', async () => {
+		const { event, ticket } = await publishedEvent({}, 2);
+		await register(database, registration(event, ticket, accounts[0]), today);
+		const counts = await seatCountsByEvent(database, [event.identifier, 'none']);
+		expect(counts.get(event.identifier)).toEqual([{ attendance: 'in-person', capacity: 2, taken: 1, waiting: 0 }]);
+		expect(counts.has('none')).toBe(false);
+	});
+
+	it('keeps an event’s sessions in time order, and removes one', async () => {
+		const { event } = await publishedEvent();
+		const second = await saveSession(database, event.identifier, null, { startsAt: later(241), endsAt: later(242), title: 'Inside the model code', about: '' });
+		await saveSession(database, event.identifier, null, { startsAt: later(240), endsAt: null, title: 'Where tribal ADR comes from', about: 'History and practice' });
+		expect((await sessionsOf(database, event.identifier)).map((session) => session.title)).toEqual(['Where tribal ADR comes from', 'Inside the model code']);
+		await removeSession(database, event.identifier, second);
+		expect(await sessionsOf(database, event.identifier)).toHaveLength(1);
+		// A session must end after it starts.
+		await expect(
+			saveSession(database, event.identifier, null, { startsAt: later(242), endsAt: later(241), title: 'Backward', about: '' })
+		).rejects.toThrow();
+	});
+
+	it('notes a material with its fingerprint and takes it off again', async () => {
+		const { event } = await publishedEvent();
+		await addMaterial(
+			database,
+			{ identifier: 'm1', eventIdentifier: event.identifier, title: 'Slides', fileName: 'slides.pdf', contentType: 'application/pdf', sizeBytes: 2048, sha256: 'a'.repeat(64), createdBy: accounts[0] },
+			today
+		);
+		const [material] = await materialsOf(database, event.identifier);
+		expect(material).toMatchObject({ title: 'Slides', objectKey: materialObjectKey(event.identifier, 'm1'), sha256: 'a'.repeat(64) });
+		expect((await removeMaterial(database, event.identifier, 'm1'))?.objectKey).toBe(`event-materials/${event.identifier}/m1`);
+		expect(await removeMaterial(database, event.identifier, 'm1')).toBeUndefined();
 	});
 });

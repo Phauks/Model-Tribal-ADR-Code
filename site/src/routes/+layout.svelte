@@ -43,6 +43,7 @@
 	import { crossFadePages, startMotion } from '#lib/motion.ts';
 	import { toggleReadingLinks } from '#lib/reading-links.ts';
 	import { resizableTables } from '#lib/tables/resizable-columns.ts';
+	import { markPageStarted } from '#lib/page-started.ts';
 	import type { LayoutProps } from './$types';
 
 	let { children, data }: LayoutProps = $props();
@@ -55,6 +56,8 @@
 		document.addEventListener('click', toggleReadingLinks);
 		return () => document.removeEventListener('click', toggleReadingLinks);
 	});
+	// The layout's own start comes after every part inside it has started (src/lib/page-started.ts).
+	onMount(markPageStarted);
 
 	// A video call has the whole window: no header, sidebar or footer
 	// (Trevor, Nov. 23, 2026). Links to these pages open them in a new tab.
@@ -132,19 +135,16 @@
 		   first screen and the Hide sidebar button keeps its place at the bottom. */
 		.site-body {
 			display: grid;
-			grid-template-columns: 15rem minmax(0, 1fr);
+			/* One width on every page, so the page never moves when the sidebar
+			   changes from the sections to a section's panel (SiteSidebar.svelte). */
+			grid-template-columns: 17rem minmax(0, 1fr);
 			align-items: start;
 			min-height: 100dvh;
 		}
 
-		/* In a section the sidebar has a second column for its pages (SiteSidebar.svelte). */
-		.site-body:has(> :global(.sidebar-wide.two-columns)) {
-			grid-template-columns: 32rem minmax(0, 1fr);
-		}
-
-		.site-body:has(> :global(.sidebar-wide:not([open]))),
+		/* Hidden with the masthead's button, the sidebar is gone and the page takes the whole width. */
 		:global(:root[data-sidebar-hidden='true']) .site-body {
-			grid-template-columns: 3.5rem minmax(0, 1fr);
+			grid-template-columns: minmax(0, 1fr);
 		}
 	}
 

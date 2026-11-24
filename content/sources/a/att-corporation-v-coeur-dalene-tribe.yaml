@@ -10,8 +10,8 @@ citation:
   issued:
     date-parts:
     - - 2002
-      - 7
-      - 17
+      - 3
+      - 19
   URL: https://law.resource.org/pub/us/case/reporter/F3/295/295.F3d.899.99-35088.html
   accessed:
     date-parts:
@@ -27,6 +27,13 @@ archives:
 history:
   status: live
   last_checked: '2026-11-21'
+court_dates:
+  argued_and_submitted: ['2000-03-07']
+  amended: ['2002-07-17']
+  printed: "Argued and Submitted March 7, 2000. Filed March 19, 2002. Amended July 17, 2002."
+  source: https://static.case.law/f3d/295/cases/0899-01.json
+  note: "The opinion was filed March 19, 2002 and amended July 17, 2002; the decision date was corrected from the amendment date to the filing date."
+  checked: '2026-11-23'
 courtlistener:
   cluster: 778254
   citation: "295 F.3d 899"
@@ -61,10 +68,16 @@ rights:
     Opinions of federal courts are works of the U.S. government (17 U.S.C. § 105); the host site's own
     additions are not reproduced.
   redistribution: true
-tribes:
-- coeur-dalene-tribe
 found_in:
 - 2026-11-21-legal-history-and-key-cases
 notes: >-
   Full citation: 295 F.3d 899 (9th Cir. 2002). The decided date given is the amendment date reported at
   295 F.3d 899; the original opinion was filed March 19, 2002. Citator check (KeyCite) pending; see research/pull-lists/2026-11-21-legal-history-westlaw.md.
+tribes:
+- coeur-dalene-tribe
+nations_in_case:
+  checked: '2026-11-23'
+  named:
+  - nation: coeur-dalene-tribe
+    named_as: Coeur d'Alene Tribe
+    role: party

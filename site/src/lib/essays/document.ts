@@ -116,7 +116,7 @@ export const essaySchema = new Schema({
 			toDOM: (node) => [
 				'section',
 				{ class: 'essay-case', 'data-source': node.attrs.source },
-				['div', { class: 'essay-block-label', contenteditable: 'false' }, `Case: ${node.attrs.source}`],
+				['div', { class: 'essay-block-label', contenteditable: 'false' }, 'Case'],
 				['div', 0]
 			]
 		},
@@ -132,7 +132,7 @@ export const essaySchema = new Schema({
 			toDOM: (node) => [
 				'section',
 				{ class: 'essay-case essay-law', 'data-source': node.attrs.source },
-				['div', { class: 'essay-block-label', contenteditable: 'false' }, `Law: ${node.attrs.source}`],
+				['div', { class: 'essay-block-label', contenteditable: 'false' }, 'Law'],
 				['div', 0]
 			]
 		},

@@ -27,6 +27,11 @@ archives:
 history:
   status: live
   last_checked: '2026-11-21'
+court_dates:
+  argued: ['2001-03-21']
+  printed: "Argued March 21, 2001—Decided June 25, 2001"
+  source: https://tile.loc.gov/storage-services/service/ll/usrep/usrep533/usrep533353/usrep533353.pdf
+  checked: '2026-11-23'
 supreme_court:
   court: Rehnquist Court
   natural_court: Rehnquist Court (1994-2005)
@@ -95,10 +100,16 @@ rights:
     Opinions of federal courts are works of the U.S. government (17 U.S.C. § 105); the host site's own
     additions are not reproduced.
   redistribution: true
-tribes:
-- paiute-shoshone-tribe-of-the-fallon-reservation-and-colony
 found_in:
 - 2026-11-21-legal-history-and-key-cases
 notes: >-
   Full citation: 533 U.S. 353 (2001). Official report scan or slip opinion: https://tile.loc.gov/storage-services/service/ll/usrep/usrep533/usrep533353/usrep533353.pdf.
   Citator check (KeyCite) pending; see research/pull-lists/2026-11-21-legal-history-westlaw.md.
+tribes:
+- paiute-shoshone-tribe-of-the-fallon-reservation-and-colony
+nations_in_case:
+  checked: '2026-11-23'
+  named:
+  - nation: paiute-shoshone-tribe-of-the-fallon-reservation-and-colony
+    named_as: Fallon Paiute-Shoshone Tribes
+    role: subject

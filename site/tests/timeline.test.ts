@@ -10,6 +10,7 @@ import {
 	extentOf,
 	isPartialDate,
 	isTimelineDate,
+	mentioning,
 	timelineCsv,
 	timelineDate,
 	timelineRows,
@@ -98,6 +99,20 @@ describe('zooming', () => {
 	});
 });
 
+describe('the Mentions filter', () => {
+	const years = [
+		{ year: 1982, count: 64, peacemaking: 3, mediation: 2, both: 1 },
+		{ year: 1983, count: 81, peacemaking: 0, mediation: 0, both: 0 }
+	];
+
+	it('counts the opinions that mention what is checked, each once', () => {
+		expect(mentioning(years, { peacemaking: false, mediation: false })).toBe(years);
+		expect(mentioning(years, { peacemaking: true, mediation: false })).toEqual([{ ...years[0], count: 3 }]);
+		expect(mentioning(years, { peacemaking: false, mediation: true })).toEqual([{ ...years[0], count: 2, peacemaking: 1 }]);
+		expect(mentioning(years, { peacemaking: true, mediation: true })).toEqual([{ ...years[0], count: 4 }]);
+	});
+});
+
 describe('downloads', () => {
 	it('lists entries and opinion counts oldest first, with nations by name and links from the site root', () => {
 		const rows = timelineRows(
@@ -119,6 +134,7 @@ describe('downloads', () => {
 
 	it('copies an entry as its title and citation', () => {
 		expect(entryCitation({ ...entry('1959-01-12', 'case', 'Williams v. Lee'), citation: '358 U.S. 217 (1959)' })).toBe('Williams v. Lee, 358 U.S. 217 (1959)');
+		expect(entryCitation({ ...entry('1968-04-11', 'federal', 'Indian Civil Rights Act of 1968'), citation: '82 Stat. 77' })).toBe('Indian Civil Rights Act of 1968, 82 Stat. 77 (1968)');
 	});
 });
 
@@ -131,9 +147,9 @@ describe('citations of cases and laws', () => {
 		expect(caseCitation(record({ title: 'Native American Church v. Navajo Tribal Council', authority: '10th Cir.', 'container-title': 'F.2d', volume: '272', page: '131', issued: { 'date-parts': [[1959, 11, 17]] } }))).toBe('272 F.2d 131 (10th Cir. 1959)');
 	});
 
-	it('cites a statute by the Statutes at Large, unless its title already does', () => {
+	it('cites a statute by the Statutes at Large beside its date, unless its title already does', () => {
 		const statute = record({ title: 'Indian Civil Rights Act of 1968', 'container-title': 'United States Statutes at Large', volume: '82', page: '77', issued: { 'date-parts': [[1968, 4, 11]] } }, 'federal-statute');
-		expect(lawCitation(statute, 'Indian Civil Rights Act of 1968')).toBe('82 Stat. 77 (1968)');
+		expect(lawCitation(statute, 'Indian Civil Rights Act of 1968')).toBe('82 Stat. 77');
 		expect(lawCitation(statute, 'Siletz Indian Tribe Restoration Act, Pub. L. No. 95-195, 91 Stat. 1415 (1977)')).toBe('');
 	});
 

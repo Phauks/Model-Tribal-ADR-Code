@@ -6,6 +6,7 @@
 	nation page opens a page about the office).
 -->
 <script lang="ts">
+	import Breadcrumbs from '#lib/components/Breadcrumbs.svelte';
 	import CountBadge from '#lib/components/CountBadge.svelte';
 	import type { PageProps } from './$types';
 
@@ -16,9 +17,7 @@
 	<title>Federal offices · Nations · Model Tribal ADR Code</title>
 </svelte:head>
 
-<nav aria-label="Breadcrumb" class="small">
-	<a href="/nations">Nations</a> › Federal offices
-</nav>
+<Breadcrumbs trail={[{ label: 'Nations', href: '/nations' }]} />
 
 <h1>Federal offices that serve Native nations</h1>
 

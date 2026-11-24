@@ -60,8 +60,36 @@ export interface OpinionYear {
 	count: number;
 	/** How many of them mention peacemaking. */
 	peacemaking: number;
+	/** How many mention mediation or arbitration, for the full timeline's Mentions filter. */
+	mediation?: number;
+	/** How many mention both peacemaking and mediation or arbitration. */
+	both?: number;
 	/** The nation, on the full timeline. */
 	nation?: string;
+}
+
+/** What the opinions are narrowed to on the full timeline: those that mention peacemaking, mediation or arbitration, or either. */
+export interface Mentions {
+	peacemaking: boolean;
+	mediation: boolean;
+}
+
+/**
+ * The opinion counts narrowed to the opinions that mention what is chosen. With both chosen, an
+ * opinion that mentions either is counted once. The peacemaking mark under a bar keeps counting the
+ * opinions among them that mention peacemaking.
+ */
+export function mentioning(years: OpinionYear[], mentions: Mentions): OpinionYear[] {
+	if (!mentions.peacemaking && !mentions.mediation) return years;
+	return years
+		.map((year) => {
+			const mediation = year.mediation ?? 0;
+			const both = year.both ?? 0;
+			if (mentions.peacemaking && mentions.mediation) return { ...year, count: year.peacemaking + mediation - both };
+			if (mentions.peacemaking) return { ...year, count: year.peacemaking };
+			return { ...year, count: mediation, peacemaking: both };
+		})
+		.filter((year) => year.count > 0);
 }
 
 /**
@@ -214,7 +242,9 @@ export const mostMarks = 60;
 
 /** The citation a reader copies from an entry: its title, then its citation. */
 export function entryCitation(entry: TimelineEntry): string {
-	return [entry.title, entry.citation].filter(Boolean).join(', ');
+	// A statute or order is listed beside its date without a year; a citation copied on its own needs one, as the Indigo Book cites session laws.
+	const citation = entry.citation && /^\d+ (Stat\.|Fed\. Reg\.) \d+$/.test(entry.citation) ? `${entry.citation} (${entry.date.slice(0, 4)})` : entry.citation;
+	return [entry.title, citation].filter(Boolean).join(', ');
 }
 
 /** One row of the timeline downloads. */

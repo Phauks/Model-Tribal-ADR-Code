@@ -27,6 +27,11 @@ archives:
 history:
   status: live
   last_checked: '2026-11-21'
+court_dates:
+  argued: ['2022-11-09']
+  printed: "Argued November 9, 2022—Decided June 15, 2023"
+  source: https://www.supremecourt.gov/opinions/22pdf/599us1r38_khmp.pdf
+  checked: '2026-11-23'
 supreme_court:
   court: Roberts Court
   natural_court: Roberts Court (2022-)
@@ -99,12 +104,6 @@ citator:
     references, including In re Marriage of Quijada and Dominguez, United States v. Harjo and Texas v.
     United States.
   checked: 2026-11-20
-tribes:
-- cherokee-nation
-- oneida-nation
-- quinault-indian-nation
-- morongo-band-of-mission-indians
-- navajo-nation
 found_in:
 - 2026-11-21-legal-history-and-key-cases
 notes: >-
@@ -115,3 +114,27 @@ notes: >-
   264 and 273. Write-up of the Westlaw pull:
   research/pull-results/2026-11-21-legal-history-confirm-first-cases.md in the project's working files;
   the lead author's copy is kept privately and is not redistributed.
+tribes:
+- cherokee-nation
+- oneida-nation
+- quinault-indian-nation
+- morongo-band-of-mission-indians
+- navajo-nation
+nations_in_case:
+  checked: '2026-11-23'
+  named:
+  - nation: cherokee-nation
+    named_as: Cherokee Nation
+    role: party
+  - nation: oneida-nation
+    named_as: Oneida Nation
+    role: party
+  - nation: quinault-indian-nation
+    named_as: Quinault Indian Nation
+    role: party
+  - nation: morongo-band-of-mission-indians
+    named_as: Morongo Band of Mission Indians
+    role: party
+  - nation: navajo-nation
+    named_as: Navajo Nation
+    role: subject

@@ -27,6 +27,11 @@ archives:
 history:
   status: live
   last_checked: '2026-11-21'
+court_dates:
+  argued: ['2008-04-14']
+  printed: "Argued April 14, 2008—Decided June 25, 2008"
+  source: https://tile.loc.gov/storage-services/service/ll/usrep/usrep554/usrep554316/usrep554316.pdf
+  checked: '2026-11-23'
 supreme_court:
   court: Roberts Court
   natural_court: Roberts Court (2006-2009)
@@ -91,11 +96,17 @@ rights:
     Opinions of federal courts are works of the U.S. government (17 U.S.C. § 105); the host site's own
     additions are not reproduced.
   redistribution: true
-tribes:
-- cheyenne-river-sioux-tribe-of-the-cheyenne-river-reservation
 found_in:
 - 2026-11-21-legal-history-and-key-cases
 notes: >-
   Full citation: 554 U.S. 316 (2008). Official report scan or slip opinion: https://tile.loc.gov/storage-services/service/ll/usrep/usrep554/usrep554316/usrep554316.pdf.
   Quotes checked against the official U.S. Reports PDF text (LOC) because the LII page showed only the
   syllabus. Note the soft hyphens in the PDF text were removed. Citator check (KeyCite) pending; see research/pull-lists/2026-11-21-legal-history-westlaw.md.
+tribes:
+- cheyenne-river-sioux-tribe-of-the-cheyenne-river-reservation
+nations_in_case:
+  checked: '2026-11-23'
+  named:
+  - nation: cheyenne-river-sioux-tribe-of-the-cheyenne-river-reservation
+    named_as: Cheyenne River Sioux Tribe
+    role: subject
