@@ -1,8 +1,12 @@
+import { readFileSync } from 'node:fs';
+import path from 'node:path';
 import { describe, expect, it } from 'vitest';
+import { repositoryRoot } from '#lib/server/content.ts';
 import {
 	addressOfFile,
 	projectDocumentPage,
 	resolveDocumentLink,
+	unwrapLines,
 	withNumberedBackLinks,
 	withoutRepositoryOnlyText,
 	withScrollingTables
@@ -92,5 +96,20 @@ describe('tables in project documents', () => {
 		expect(withScrollingTables('<p>x</p><table><tr><td>a</td></tr></table>')).toBe(
 			'<p>x</p><div class="table-scroll" tabindex="0"><table><tr><td>a</td></tr></table></div>'
 		);
+	});
+});
+
+describe('unwrapLines', () => {
+	it('joins the hard-wrapped lines of a paragraph and keeps every word', () => {
+		const text = readFileSync(path.join(repositoryRoot, 'LICENSES/MIT.txt'), 'utf8').trim();
+		const unwrapped = unwrapLines(text);
+		expect(unwrapped.replace(/\s+/g, ' ')).toBe(text.replace(/\s+/g, ' '));
+		expect(unwrapped).toContain('obtaining a copy of this software and associated documentation files');
+		expect(unwrapped.split('\n\n')).toHaveLength(text.split('\n\n').length);
+	});
+
+	it('keeps list items, indented lines and new sentences on their own lines', () => {
+		expect(unwrapLines('Terms:\n1. one\n   more\n- two;\nEnd.\nNext one')).toBe('Terms:\n1. one\n   more\n- two;\nEnd.\nNext one');
+		expect(unwrapLines('a long line that\nwraps here')).toBe('a long line that wraps here');
 	});
 });
