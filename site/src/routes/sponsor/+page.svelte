@@ -21,6 +21,7 @@
 	import Microscope from '@lucide/svelte/icons/microscope';
 	import Repeat from '@lucide/svelte/icons/repeat';
 	import Server from '@lucide/svelte/icons/server';
+	import Dropdown from '#lib/components/Dropdown.svelte';
 	import EssayArticle from '#lib/components/essays/EssayArticle.svelte';
 	import {
 		dollars,
@@ -51,6 +52,8 @@
 		'federal-and-state': 'federally and state-recognized',
 		identified: 'all Identified Native Nations'
 	} as const;
+
+	const earmarkChoices = earmarks.map((earmark) => ({ value: earmark, label: earmarkLabels[earmark] }));
 
 	const number = (value: number) => value.toLocaleString('en-US');
 	const percent = (share: number) => Math.round(share * 100);
@@ -149,14 +152,7 @@
 				<input type="radio" id="give-monthly" name="frequency" value="monthly" checked />
 				<label for="give-monthly"><Repeat aria-hidden="true" />Every month</label>
 			</fieldset>
-			<label class="toward">
-				<span>Toward</span>
-				<select name="toward">
-					{#each earmarks as earmark (earmark)}
-						<option value={earmark} selected={earmark === 'needed-most'}>{earmarkLabels[earmark]}</option>
-					{/each}
-				</select>
-			</label>
+			<Dropdown label="Toward" name="toward" labelInside choices={earmarkChoices} value="needed-most" />
 			<fieldset class="amounts">
 				<legend class="visually-hidden">Amount</legend>
 				{#each copyAmounts as choice (choice.copies)}
@@ -463,33 +459,6 @@
 	.segmented :global(svg) {
 		width: 1.125rem;
 		height: 1.125rem;
-	}
-
-	.toward {
-		display: flex;
-		align-items: center;
-		gap: var(--space-2);
-		min-height: var(--layout-target-minimum);
-		padding: 0 var(--space-3);
-		border: 1px solid var(--color-control-border);
-		border-radius: var(--radius-control);
-		background: var(--color-paper);
-	}
-
-	.toward span {
-		color: var(--color-ink-muted);
-	}
-
-	.toward select {
-		flex: 1;
-		width: 100%;
-		min-width: 0;
-		text-overflow: ellipsis;
-		border: 0;
-		background: transparent;
-		color: inherit;
-		font: inherit;
-		font-weight: var(--font-weight-semibold);
 	}
 
 	.amounts {
