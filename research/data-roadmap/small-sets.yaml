@@ -1,0 +1,544 @@
+# The first small sets on the data roadmap (docs/data-roadmap.md): federal reports, land, and international documents.
+# scripts/law/small_sets.py reads this file. To add a document, add an entry and run the script's three steps again;
+# entries already filed or written are skipped. Fields:
+#   key: the source record's key. existing: true when the record is already in content/sources (the script then only adds the stored copy).
+#   set: reports | land | international (the roadmap section).    kind: the source record kind (schemas/source.schema.json).
+#   title, author (an office as text; a person as {family, given}), number, publisher, place, issued [year, month, day]: the citation. container: a series the work appears in.
+#   link: the page a reader is sent to. download: the file the script stores (blank = link only, nothing stored).
+#   topic: the bucket folder. name: the file name in the bucket (default <key> plus the download's extension).
+#   rights: government (a U.S. government work, served), public-domain (term expired, served), or link-only (a private copy at most).
+#   indigo: the Indigo Book citation.    about: one sentence on what the document is.    copy_note: where the stored copy comes from.
+
+- key: joint-special-committee-1867-condition-of-the-indian-tribes
+  set: reports
+  kind: report
+  title: 'Condition of the Indian Tribes: Report of the Joint Special Committee, Appointed under Joint Resolution of March 3, 1865, with an Appendix'
+  author: U.S. Congress, Joint Special Committee on the Condition of the Indian Tribes
+  number: S. Rep. No. 39-156
+  publisher: Government Printing Office
+  place: Washington, DC
+  issued: [1867]
+  link: https://archive.org/details/conditionindian00tribgoog
+  download: https://archive.org/download/conditionindian00tribgoog/conditionindian00tribgoog.pdf
+  topic: federal-reports
+  rights: government
+  indigo: 'Joint Special Comm., Condition of the Indian Tribes, S. Rep. No. 39-156 (1867)'
+  about: The Doolittle Committee's report on the condition of the tribes after the Civil War and the Sand Creek massacre, with the testimony it gathered.
+  copy_note: Harvard University's copy, scanned by Google and held on the Internet Archive (555 pages, with Google's usage page first).
+
+- key: indian-peace-commission-1868-report
+  set: reports
+  kind: report
+  title: 'Report of Indian Peace Commissioners: Message from the President of the United States, Transmitting Report of the Indian Peace Commissioners'
+  author: Indian Peace Commission
+  number: H.R. Exec. Doc. No. 40-97
+  publisher: Government Printing Office
+  place: Washington, DC
+  issued: [1868, 1, 14]
+  link: https://archive.org/details/bp_631773
+  download: https://archive.org/download/bp_631773/bp_631773.pdf
+  topic: federal-reports
+  rights: government
+  indigo: 'Report of Indian Peace Commissioners, H.R. Exec. Doc. No. 40-97 (1868)'
+  about: The Peace Commission's report to the President after the Medicine Lodge and other treaty councils of 1867, recommending the reservation policy.
+  copy_note: The Internet Archive's scan (22 pages).
+
+- key: meriam-report-1928
+  existing: true
+  set: reports
+  link: https://eric.ed.gov/?id=ED087573
+  download: https://files.eric.ed.gov/fulltext/ED087573.pdf
+  topic: federal-reports
+  rights: public-domain
+  rights_note: Published in 1928; its United States copyright term ended on Dec. 31, 2023 (17 U.S.C. § 304(b)), so the whole report may be copied and served.
+  copy_note: The Education Resources Information Center's scan, ED087573 (453 pages, with the ERIC résumé first).
+
+- key: cohen-handbook-of-federal-indian-law-1942
+  existing: true
+  set: reports
+  link: https://archive.org/details/in.ernet.dli.2015.74149
+  download: https://archive.org/download/in.ernet.dli.2015.74149/2015.74149.Handbook-Of-Federal-Indian-Law-With-Reference-Tables-And-Index.pdf
+  topic: federal-reports
+  rights: government
+  copy_note: The Digital Library of India's scan on the Internet Archive (703 page images, no text layer).
+
+- key: senate-1969-indian-education-a-national-tragedy
+  set: reports
+  kind: report
+  title: 'Indian Education: A National Tragedy, a National Challenge'
+  author: U.S. Senate, Committee on Labor and Public Welfare, Special Subcommittee on Indian Education
+  number: S. Rep. No. 91-501
+  publisher: Government Printing Office
+  place: Washington, DC
+  issued: [1969, 11, 3]
+  link: https://eric.ed.gov/?id=ED034625
+  download: https://files.eric.ed.gov/fulltext/ED034625.pdf
+  topic: federal-reports
+  rights: government
+  indigo: 'Special Subcomm. on Indian Educ. of the S. Comm. on Lab. & Pub. Welfare, Indian Education: A National Tragedy—A National Challenge, S. Rep. No. 91-501 (1969)'
+  about: The Kennedy Report, which found federal Indian education a failure; it is commonly credited with shaping the Indian Education Act of 1972.
+  copy_note: The Education Resources Information Center's scan, ED034625 (232 pages).
+
+- key: american-indian-policy-review-commission-1977-final-report-volume-1
+  set: reports
+  kind: report
+  title: 'Final Report Submitted to Congress May 17, 1977, Volume One'
+  author: American Indian Policy Review Commission
+  publisher: Government Printing Office
+  place: Washington, DC
+  issued: [1977, 5, 17]
+  link: https://eric.ed.gov/?id=ED164229
+  download: https://files.eric.ed.gov/fulltext/ED164229.pdf
+  topic: federal-reports
+  rights: government
+  indigo: "1 Am. Indian Pol'y Rev. Comm'n, Final Report (1977)"
+  about: The Commission's findings and recommendations on tribal sovereignty, the trust relationship, jurisdiction, terminated and unrecognized tribes, and federal administration.
+  copy_note: The Education Resources Information Center's scan, ED164229 (591 pages).
+
+- key: american-indian-policy-review-commission-1977-final-report-volume-2
+  set: reports
+  kind: report
+  title: 'Final Report, Appendixes, and Index Submitted to Congress May 17, 1977, Volume Two'
+  author: American Indian Policy Review Commission
+  publisher: Government Printing Office
+  place: Washington, DC
+  issued: [1977, 5, 17]
+  link: https://eric.ed.gov/?id=ED190335
+  download: https://files.eric.ed.gov/fulltext/ED190335.pdf
+  topic: federal-reports
+  rights: government
+  indigo: "2 Am. Indian Pol'y Rev. Comm'n, Final Report (1977)"
+  about: The second volume of the Commission's final report, with the separate views, appendixes and index.
+  copy_note: The Education Resources Information Center's scan, ED190335 (915 pages).
+
+- key: us-commission-on-civil-rights-1981-indian-tribes-a-continuing-quest-for-survival
+  set: reports
+  kind: report
+  title: 'Indian Tribes: A Continuing Quest for Survival'
+  author: U.S. Commission on Civil Rights
+  publisher: Government Printing Office
+  place: Washington, DC
+  issued: [1981, 6]
+  link: https://eric.ed.gov/?id=ED214711
+  download: https://files.eric.ed.gov/fulltext/ED214711.pdf
+  topic: federal-reports
+  rights: government
+  indigo: "U.S. Comm'n on C.R., Indian Tribes: A Continuing Quest for Survival (1981)"
+  about: The Commission's report, from its 1977-1979 hearings, on the backlash against tribal rights and the federal government's duty to protect them.
+  copy_note: The Education Resources Information Center's scan, ED214711 (204 pages).
+
+- key: senate-1989-special-committee-on-investigations-final-report
+  set: reports
+  kind: report
+  title: 'A Report of the Special Committee on Investigations of the Select Committee on Indian Affairs: Final Report and Legislative Recommendations'
+  author: U.S. Senate, Select Committee on Indian Affairs, Special Committee on Investigations
+  number: S. Rep. No. 101-216
+  publisher: Government Printing Office
+  place: Washington, DC
+  issued: [1989, 11, 6]
+  link: https://eric.ed.gov/?id=ED325263
+  download: https://files.eric.ed.gov/fulltext/ED325263.pdf
+  topic: federal-reports
+  rights: government
+  indigo: "Special Comm. on Investigations of the S. Select Comm. on Indian Affs., Final Report and Legislative Recommendations, S. Rep. No. 101-216 (1989)"
+  about: The Senate investigation of fraud and mismanagement in federal Indian programs, which proposed a new federalism of self-governance compacts.
+  copy_note: The Education Resources Information Center's scan, ED325263 (242 pages).
+
+- key: us-commission-on-civil-rights-2003-a-quiet-crisis
+  set: reports
+  kind: report
+  title: 'A Quiet Crisis: Federal Funding and Unmet Needs in Indian Country'
+  author: U.S. Commission on Civil Rights
+  place: Washington, DC
+  issued: [2003, 7]
+  link: https://eric.ed.gov/?id=ED480450
+  download: https://files.eric.ed.gov/fulltext/ED480450.pdf
+  topic: federal-reports
+  rights: government
+  indigo: "U.S. Comm'n on C.R., A Quiet Crisis: Federal Funding and Unmet Needs in Indian Country (2003)"
+  about: The Commission's study of federal spending on Native Americans across six agencies, finding it far below need.
+  copy_note: The Education Resources Information Center's copy, ED480450 (141 pages).
+
+- key: indian-law-and-order-commission-2013-roadmap
+  existing: true
+  set: reports
+  download: https://www.aisc.ucla.edu/iloc/report/files/A_Roadmap_For_Making_Native_America_Safer-Full.pdf
+  topic: federal-reports
+  rights: government
+  copy_note: The full report from the Commission's site, kept by the UCLA American Indian Studies Center (326 pages).
+
+- key: us-commission-on-civil-rights-2018-broken-promises
+  set: reports
+  kind: report
+  title: 'Broken Promises: Continuing Federal Funding Shortfall for Native Americans'
+  author: U.S. Commission on Civil Rights
+  place: Washington, DC
+  issued: [2018, 12]
+  link: https://www.usccr.gov/files/pubs/2018/12-20-Broken-Promises.pdf
+  download: https://www.usccr.gov/files/pubs/2018/12-20-Broken-Promises.pdf
+  topic: federal-reports
+  rights: government
+  indigo: "U.S. Comm'n on C.R., Broken Promises: Continuing Federal Funding Shortfall for Native Americans (2018)"
+  about: The Commission's briefing report updating A Quiet Crisis, on federal funding for public safety, health care, education, housing and economic development in Native communities.
+  copy_note: The Commission's PDF (314 pages).
+
+- key: interior-2022-federal-indian-boarding-school-initiative-report-volume-1
+  set: reports
+  kind: report
+  title: Federal Indian Boarding School Initiative Investigative Report
+  author: U.S. Department of the Interior, Assistant Secretary–Indian Affairs
+  place: Washington, DC
+  issued: [2022, 5]
+  link: https://www.bia.gov/sites/default/files/dup/inline-files/bsi_investigative_report_may_2022_508.pdf
+  download: https://www.bia.gov/sites/default/files/dup/inline-files/bsi_investigative_report_may_2022_508.pdf
+  topic: federal-reports
+  rights: government
+  indigo: "U.S. Dep't of the Interior, Federal Indian Boarding School Initiative Investigative Report (2022)"
+  about: Volume I of the Interior Department's investigation of the federal Indian boarding school system, 1819-1969, listing 408 federal schools.
+  copy_note: The Bureau of Indian Affairs' PDF (106 pages).
+
+- key: interior-2024-federal-indian-boarding-school-initiative-report-volume-2
+  set: reports
+  kind: report
+  title: 'Federal Indian Boarding School Initiative Investigative Report, Vol. II'
+  author: U.S. Department of the Interior, Assistant Secretary for Indian Affairs
+  place: Washington, DC
+  issued: [2024, 7]
+  link: https://www.bia.gov/sites/default/files/media_document/doi_federal_indian_boarding_school_initiative_investigative_report_vii_final_508_compliant.pdf
+  download: https://www.bia.gov/sites/default/files/media_document/doi_federal_indian_boarding_school_initiative_investigative_report_vii_final_508_compliant.pdf
+  topic: federal-reports
+  rights: government
+  indigo: "2 U.S. Dep't of the Interior, Federal Indian Boarding School Initiative Investigative Report (2024)"
+  about: Volume II of the Interior Department's boarding school investigation, with the count of deaths and burial sites and the Assistant Secretary's recommendations.
+  copy_note: The Bureau of Indian Affairs' PDF (105 pages).
+
+- key: not-invisible-act-commission-2023-not-one-more
+  set: reports
+  kind: report
+  title: 'Not One More: Findings and Recommendations of the Not Invisible Act Commission'
+  author: Not Invisible Act Commission
+  place: Washington, DC
+  issued: [2023, 11, 1]
+  link: https://www.govinfo.gov/content/pkg/GOVPUB-J-PURL-gpo220266/pdf/GOVPUB-J-PURL-gpo220266.pdf
+  download: https://www.govinfo.gov/content/pkg/GOVPUB-J-PURL-gpo220266/pdf/GOVPUB-J-PURL-gpo220266.pdf
+  topic: federal-reports
+  rights: government
+  indigo: "Not Invisible Act Comm'n, Not One More: Findings and Recommendations of the Not Invisible Act Commission (2023)"
+  about: The report of the commission created by the Not Invisible Act of 2019 (Pub. L. No. 116-166) on missing and murdered Indigenous people and human trafficking.
+  copy_note: The copy GovInfo keeps for the Government Publishing Office's catalog (212 pages).
+
+- key: justice-and-interior-2024-response-to-not-one-more
+  set: reports
+  kind: report
+  title: 'Section 4(c)(2)(C) Response of the Departments of Justice and the Interior to Not One More: Findings and Recommendations of the Not Invisible Act Commission'
+  author: U.S. Department of Justice and U.S. Department of the Interior
+  place: Washington, DC
+  issued: [2024, 3]
+  link: https://www.justice.gov/tribal/not-invisible-act
+  download: https://justice.gov/tribal/media/1341181/dl
+  name: justice-and-interior-2024-response-to-not-one-more.pdf
+  topic: federal-reports
+  rights: government
+  indigo: "U.S. Dep't of Just. & U.S. Dep't of the Interior, Section 4(c)(2)(C) Response to Not One More (2024)"
+  about: The two Departments' answer to each recommendation of the Not Invisible Act Commission, as the Act requires.
+  copy_note: The Justice Department's PDF (231 pages).
+
+- key: royce-1899-indian-land-cessions-in-the-united-states
+  set: land
+  kind: report
+  title: Indian Land Cessions in the United States
+  author: {family: Royce, given: Charles C.}
+  container: 'Eighteenth Annual Report of the Bureau of American Ethnology to the Secretary of the Smithsonian Institution, 1896-97, Part 2'
+  publisher: Government Printing Office
+  place: Washington, DC
+  issued: [1899]
+  link: https://archive.org/details/annualreportofbu182smit
+  download: https://archive.org/download/annualreportofbu182smit/annualreportofbu182smit.pdf
+  topic: land-cessions
+  rights: government
+  indigo: 'Charles C. Royce, Indian Land Cessions in the United States, in 18 Bureau of Am. Ethnology, Annual Report pt. 2 (1899)'
+  about: Royce's schedule of every land cession by treaty, Act and executive order from 1784 to 1894, numbered and drawn on 67 maps, with Cyrus Thomas's introduction on the federal treatment of Indian title.
+  copy_note: The Smithsonian Libraries' scan on the Internet Archive (870 pages, maps included); the Boston Public Library's scan (annualreportofbu1818smit) is a second copy.
+
+- key: census-tiger-2025-aiannh
+  set: land
+  kind: dataset
+  title: 'TIGER/Line Shapefiles 2025: American Indian/Alaska Native/Native Hawaiian Areas (tl_2025_us_aiannh)'
+  author: U.S. Census Bureau
+  issued: [2025, 9, 22]
+  link: https://www2.census.gov/geo/tiger/TIGER2025/AIANNH/
+  download: https://www2.census.gov/geo/tiger/TIGER2025/AIANNH/tl_2025_us_aiannh.zip
+  topic: census-boundaries
+  rights: government
+  indigo: 'U.S. Census Bureau, TIGER/Line Shapefiles 2025: American Indian/Alaska Native/Native Hawaiian Areas (2025)'
+  about: The Census Bureau's current boundaries of reservations, off-reservation trust land, Oklahoma tribal statistical areas, Alaska Native village statistical areas, state reservations, statistical areas and Hawaiian home lands (867 areas).
+  copy_note: The zipped shapefile from the Census Bureau's TIGER/Line site.
+
+- key: census-tiger-2025-aitsn
+  set: land
+  kind: dataset
+  title: 'TIGER/Line Shapefiles 2025: American Indian Tribal Subdivisions (tl_2025_us_aitsn)'
+  author: U.S. Census Bureau
+  issued: [2025]
+  link: https://www2.census.gov/geo/tiger/TIGER2025/AITSN/
+  download: https://www2.census.gov/geo/tiger/TIGER2025/AITSN/tl_2025_us_aitsn.zip
+  topic: census-boundaries
+  rights: government
+  indigo: 'U.S. Census Bureau, TIGER/Line Shapefiles 2025: American Indian Tribal Subdivisions (2025)'
+  about: The districts, chapters, communities and other subdivisions that nations use inside their areas, as the Census Bureau records them (484 subdivisions).
+  copy_note: The zipped shapefile from the Census Bureau's TIGER/Line site.
+
+- key: census-tiger-2025-anrc
+  set: land
+  kind: dataset
+  title: 'TIGER/Line Shapefiles 2025: Alaska Native Regional Corporations (tl_2025_02_anrc)'
+  author: U.S. Census Bureau
+  issued: [2025]
+  link: https://www2.census.gov/geo/tiger/TIGER2025/ANRC/
+  download: https://www2.census.gov/geo/tiger/TIGER2025/ANRC/tl_2025_02_anrc.zip
+  topic: census-boundaries
+  rights: government
+  indigo: 'U.S. Census Bureau, TIGER/Line Shapefiles 2025: Alaska Native Regional Corporations (2025)'
+  about: The twelve regions of the Alaska Native regional corporations formed under the Alaska Native Claims Settlement Act.
+  copy_note: The zipped shapefile from the Census Bureau's TIGER/Line site.
+
+- key: census-tiger-2025-tribal-block-groups
+  set: land
+  kind: dataset
+  title: 'TIGER/Line Shapefiles 2025: Tribal Block Groups (tl_2025_us_tbg)'
+  author: U.S. Census Bureau
+  issued: [2025]
+  link: https://www2.census.gov/geo/tiger/TIGER2025/TBG/
+  download: https://www2.census.gov/geo/tiger/TIGER2025/TBG/tl_2025_us_tbg.zip
+  topic: census-boundaries
+  rights: government
+  indigo: 'U.S. Census Bureau, TIGER/Line Shapefiles 2025: Tribal Block Groups (2025)'
+  about: The statistical block groups the Census Bureau draws within reservations and off-reservation trust land, used to report data by tribal area (935 block groups).
+  copy_note: The zipped shapefile from the Census Bureau's TIGER/Line site.
+
+- key: census-tiger-2025-tribal-census-tracts
+  set: land
+  kind: dataset
+  title: 'TIGER/Line Shapefiles 2025: Tribal Census Tracts (tl_2025_us_ttract)'
+  author: U.S. Census Bureau
+  issued: [2025]
+  link: https://www2.census.gov/geo/tiger/TIGER2025/TTRACT/
+  download: https://www2.census.gov/geo/tiger/TIGER2025/TTRACT/tl_2025_us_ttract.zip
+  topic: census-boundaries
+  rights: government
+  indigo: 'U.S. Census Bureau, TIGER/Line Shapefiles 2025: Tribal Census Tracts (2025)'
+  about: The statistical tracts the Census Bureau draws within reservations and off-reservation trust land (493 tracts).
+  copy_note: The zipped shapefile from the Census Bureau's TIGER/Line site.
+
+- key: census-tiger-2020-aiannh
+  existing: true
+  set: land
+  download: https://www2.census.gov/geo/tiger/TIGER2020/AIANNH/tl_2020_us_aiannh.zip
+  topic: census-boundaries
+  rights: government
+  copy_note: The zipped shapefile from the Census Bureau's TIGER/Line site (859 areas), the vintage of the 2020 Census.
+
+- key: census-cartographic-boundary-aiannh-2020
+  existing: true
+  set: land
+  download: https://www2.census.gov/geo/tiger/GENZ2020/shp/cb_2020_us_aiannh_500k.zip
+  topic: census-boundaries
+  rights: government
+  copy_note: The zipped shapefile from the Census Bureau's cartographic boundary site (704 areas).
+
+- key: census-tiger-2010-aiannh
+  set: land
+  kind: dataset
+  title: 'TIGER/Line Shapefiles 2010: American Indian/Alaska Native/Native Hawaiian Areas, 2010 Census (tl_2010_us_aiannh10)'
+  author: U.S. Census Bureau
+  issued: [2010]
+  link: https://www2.census.gov/geo/tiger/TIGER2010/AIANNH/2010/
+  download: https://www2.census.gov/geo/tiger/TIGER2010/AIANNH/2010/tl_2010_us_aiannh10.zip
+  topic: census-boundaries
+  rights: government
+  indigo: 'U.S. Census Bureau, TIGER/Line Shapefiles 2010: American Indian/Alaska Native/Native Hawaiian Areas (2010)'
+  about: The tribal areas as drawn for the 2010 Census (813 areas), for comparing boundaries over time.
+  copy_note: The zipped shapefile from the Census Bureau's TIGER/Line site.
+
+- key: census-tiger-2010-aiannh-2000
+  set: land
+  kind: dataset
+  title: 'TIGER/Line Shapefiles 2010: American Indian/Alaska Native/Native Hawaiian Areas, Census 2000 (tl_2010_us_aiannh00)'
+  author: U.S. Census Bureau
+  issued: [2010]
+  link: https://www2.census.gov/geo/tiger/TIGER2010/AIANNH/2000/
+  download: https://www2.census.gov/geo/tiger/TIGER2010/AIANNH/2000/tl_2010_us_aiannh00.zip
+  topic: census-boundaries
+  rights: government
+  indigo: 'U.S. Census Bureau, TIGER/Line Shapefiles 2010: American Indian/Alaska Native/Native Hawaiian Areas, Census 2000 (2010)'
+  about: The tribal areas as drawn for Census 2000 (734 areas), redrawn on the 2010 base map.
+  copy_note: The zipped shapefile from the Census Bureau's TIGER/Line site.
+
+- key: un-general-assembly-2007-declaration-rights-indigenous-peoples
+  existing: true
+  set: international
+  download: https://documents.un.org/api/symbol/access?s=A/RES/61/295&l=en&t=pdf
+  name: un-general-assembly-2007-declaration-rights-indigenous-peoples-a-res-61-295.pdf
+  topic: international
+  rights: link-only
+  copy_note: The official resolution, U.N. Doc. A/RES/61/295, from the United Nations' Official Document System (11 pages). The record's booklet was filed earlier under cited-pages/.
+
+- key: un-special-rapporteur-2012-indigenous-peoples-in-the-united-states
+  set: international
+  kind: report
+  title: 'Report of the Special Rapporteur on the Rights of Indigenous Peoples, James Anaya: Addendum, The Situation of Indigenous Peoples in the United States of America'
+  author: U.N. Human Rights Council, Special Rapporteur on the Rights of Indigenous Peoples
+  number: U.N. Doc. A/HRC/21/47/Add.1
+  publisher: United Nations
+  issued: [2012, 8, 30]
+  link: https://docs.un.org/en/A/HRC/21/47/Add.1
+  download: https://documents.un.org/api/symbol/access?s=A/HRC/21/47/Add.1&l=en&t=pdf
+  topic: international
+  rights: link-only
+  indigo: 'Special Rapporteur on the Rts. of Indigenous Peoples, The Situation of Indigenous Peoples in the United States of America, U.N. Doc. A/HRC/21/47/Add.1 (Aug. 30, 2012) (by James Anaya)'
+  about: The Special Rapporteur's report on his 2012 visit to the United States, on federal recognition, land, sacred places, violence against women and the Declaration.
+  copy_note: The official document from the United Nations' Official Document System (50 pages).
+
+- key: cerd-2006-decision-1-68-western-shoshone
+  set: international
+  kind: other
+  csl_type: legal_case
+  title: 'Early Warning and Urgent Action Procedure, Decision 1 (68): United States of America'
+  author: U.N. Committee on the Elimination of Racial Discrimination
+  number: U.N. Doc. CERD/C/USA/DEC/1
+  publisher: United Nations
+  issued: [2006, 4, 11]
+  link: https://docs.un.org/en/CERD/C/USA/DEC/1
+  download: https://documents.un.org/api/symbol/access?s=CERD/C/USA/DEC/1&l=en&t=pdf
+  topic: international
+  rights: link-only
+  indigo: "Comm. on the Elimination of Racial Discrimination, Decision 1 (68), United States of America, U.N. Doc. CERD/C/USA/DEC/1 (Apr. 11, 2006)"
+  about: The Committee's urgent-action decision on the Western Shoshone, urging the United States to stop actions on Western Shoshone ancestral lands and to reopen the land question.
+  copy_note: The official document from the United Nations' Official Document System (3 pages).
+
+- key: cerd-2008-concluding-observations-united-states
+  set: international
+  kind: other
+  title: 'Concluding Observations of the Committee on the Elimination of Racial Discrimination: United States of America'
+  author: U.N. Committee on the Elimination of Racial Discrimination
+  number: U.N. Doc. CERD/C/USA/CO/6
+  publisher: United Nations
+  issued: [2008, 5, 8]
+  link: https://docs.un.org/en/CERD/C/USA/CO/6
+  download: https://documents.un.org/api/symbol/access?s=CERD/C/USA/CO/6&l=en&t=pdf
+  topic: international
+  rights: link-only
+  indigo: "Comm. on the Elimination of Racial Discrimination, Concluding Observations: United States of America, U.N. Doc. CERD/C/USA/CO/6 (May 8, 2008)"
+  about: The Committee's review of the United States' sixth periodic report, with its observations on places of spiritual and cultural significance to Native Americans, the Western Shoshone, and Native American women.
+  copy_note: The official document from the United Nations' Official Document System (14 pages).
+
+- key: cerd-2014-concluding-observations-united-states
+  set: international
+  kind: other
+  title: 'Concluding Observations on the Combined Seventh to Ninth Periodic Reports of the United States of America'
+  author: U.N. Committee on the Elimination of Racial Discrimination
+  number: U.N. Doc. CERD/C/USA/CO/7-9
+  publisher: United Nations
+  issued: [2014, 9, 25]
+  link: https://docs.un.org/en/CERD/C/USA/CO/7-9
+  download: https://documents.un.org/api/symbol/access?s=CERD/C/USA/CO/7-9&l=en&t=pdf
+  topic: international
+  rights: link-only
+  indigo: "Comm. on the Elimination of Racial Discrimination, Concluding Observations on the Combined Seventh to Ninth Periodic Reports of the United States of America, U.N. Doc. CERD/C/USA/CO/7-9 (Sept. 25, 2014)"
+  about: The Committee's 2014 review of the United States, including its observations on the rights of Indigenous peoples.
+  copy_note: The official document from the United Nations' Official Document System.
+
+- key: cerd-2022-concluding-observations-united-states
+  set: international
+  kind: other
+  title: 'Concluding Observations on the Combined Tenth to Twelfth Reports of the United States of America'
+  author: U.N. Committee on the Elimination of Racial Discrimination
+  number: U.N. Doc. CERD/C/USA/CO/10-12
+  publisher: United Nations
+  issued: [2022, 9, 21]
+  link: https://docs.un.org/en/CERD/C/USA/CO/10-12
+  download: https://documents.un.org/api/symbol/access?s=CERD/C/USA/CO/10-12&l=en&t=pdf
+  topic: international
+  rights: link-only
+  indigo: "Comm. on the Elimination of Racial Discrimination, Concluding Observations on the Combined Tenth to Twelfth Reports of the United States of America, U.N. Doc. CERD/C/USA/CO/10-12 (Sept. 21, 2022)"
+  about: The Committee's 2022 review of the United States, including its observations on the rights of Indigenous peoples.
+  copy_note: The official document from the United Nations' Official Document System (17 pages).
+
+- key: iachr-1999-dann-v-united-states-admissibility
+  set: international
+  kind: other
+  csl_type: legal_case
+  title: 'Mary and Carrie Dann v. United States'
+  author: Inter-American Commission on Human Rights
+  number: 'Case 11.140, Report No. 99/99, OEA/Ser.L/V/II.106, doc. 3 rev. at 286'
+  publisher: Organization of American States
+  issued: [1999, 9, 27]
+  link: https://hrlibrary.umn.edu/cases/99-99.html
+  download: https://hrlibrary.umn.edu/cases/99-99.html
+  topic: international
+  rights: link-only
+  indigo: 'Mary & Carrie Dann v. United States, Case 11.140, Inter-Am. Comm’n H.R., Report No. 99/99, OEA/Ser.L/V/II.106, doc. 3 rev. at 286 (1999)'
+  about: The Commission's admissibility report in the Western Shoshone sisters' petition over their ancestral lands.
+  copy_note: The University of Minnesota Human Rights Library's copy (archived Feb. 1, 2023); the Commission's own site turns away automated requests.
+
+- key: iachr-2002-dann-v-united-states-merits
+  set: international
+  kind: other
+  csl_type: legal_case
+  title: 'Mary and Carrie Dann v. United States'
+  author: Inter-American Commission on Human Rights
+  number: 'Case 11.140, Report No. 75/02, Merits'
+  publisher: Organization of American States
+  issued: [2002, 12, 27]
+  link: https://www.cidh.oas.org/annualrep/2002eng/USA.11140.htm
+  download: https://hrlibrary.umn.edu/cases/75-02a.html
+  name: iachr-2002-dann-v-united-states-merits.html
+  topic: international
+  rights: link-only
+  indigo: 'Mary & Carrie Dann v. United States, Case 11.140, Inter-Am. Comm’n H.R., Report No. 75/02 (2002)'
+  about: The Commission's merits report finding that the United States violated the Danns' rights to equality, property and a fair trial in extinguishing Western Shoshone title through the Indian Claims Commission.
+  copy_note: The University of Minnesota Human Rights Library's copy (archived Feb. 1, 2023); the Commission's own page turns away automated requests.
+
+- key: iachr-2023-onondaga-nation-v-united-states-admissibility
+  set: international
+  kind: other
+  csl_type: legal_case
+  title: 'Onondaga Nation v. United States'
+  author: Inter-American Commission on Human Rights
+  number: Petition P-624-14, Admissibility
+  publisher: Organization of American States
+  issued: [2023]
+  link: https://www.oas.org/en/iachr/decisions/2023/USAD_624-14_EN.PDF
+  topic: international
+  rights: link-only
+  indigo: 'Onondaga Nation v. United States, Petition P-624-14, Inter-Am. Comm’n H.R., Admissibility (2023)'
+  about: The Commission's 2023 decision admitting the Onondaga Nation's petition over its ancestral lands in New York (not yet read; the Commission's site turns away automated requests).
+  copy_note: ''
+
+- key: iachr-2021-right-to-self-determination-of-indigenous-and-tribal-peoples
+  set: international
+  kind: report
+  title: Right to Self-Determination of Indigenous and Tribal Peoples
+  author: Inter-American Commission on Human Rights
+  publisher: Organization of American States
+  issued: [2021]
+  link: https://www.oas.org/en/iachr/reports/pdfs/self-determination-en.pdf
+  topic: international
+  rights: link-only
+  indigo: 'Inter-Am. Comm’n H.R., Right to Self-Determination of Indigenous and Tribal Peoples (2021)'
+  about: The Commission's thematic report on self-determination, self-government and free, prior and informed consent in the Americas.
+  copy_note: ''
+
+- key: iachr-2015-indigenous-peoples-afro-descendent-communities-and-natural-resources
+  set: international
+  kind: report
+  title: 'Indigenous Peoples, Afro-Descendent Communities, and Natural Resources: Human Rights Protection in the Context of Extraction, Exploitation, and Development Activities'
+  author: Inter-American Commission on Human Rights
+  publisher: Organization of American States
+  issued: [2015]
+  link: https://www.oas.org/en/iachr/reports/pdfs/extractiveindustries2016.docx
+  topic: international
+  rights: link-only
+  indigo: 'Inter-Am. Comm’n H.R., Indigenous Peoples, Afro-Descendent Communities, and Natural Resources (2015)'
+  about: The Commission's thematic report on states' duties when extraction and development projects reach Indigenous lands.
+  copy_note: ''
