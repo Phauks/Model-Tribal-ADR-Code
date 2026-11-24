@@ -122,9 +122,9 @@
 			<div><dt>Native nations with their own page</dt><dd>{number(counts.nationPages)}</dd></div>
 			<div><dt>sources recorded and cited</dt><dd>{number(counts.sources)}</dd></div>
 			<div><dt>to read, download or print</dt><dd>$0</dd></div>
-			{#if giftsOpen || monthly.sponsors > 0}
+			{#if monthly}
 				<div>
-					<dt>a month from {number(monthly.sponsors)} monthly {monthly.sponsors === 1 ? 'sponsor' : 'sponsors'}</dt>
+					<dt>a month from {number(monthly.sponsors)} monthly sponsors</dt>
 					<dd>{wholeDollars(monthly.cents)}</dd>
 				</div>
 			{/if}

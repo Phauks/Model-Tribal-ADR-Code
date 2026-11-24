@@ -94,6 +94,18 @@ export async function givenToward(database: D1Database, mode: GiftMode, at = new
 	return { total, siteLastYear: site?.cents ?? 0, monthly: { cents: monthly?.cents ?? 0, sponsors: monthly?.sponsors ?? 0 } };
 }
 
+/**
+ * Fewest monthly sponsors before the monthly total is shown. With fewer, the
+ * total could tell anyone what one sponsor gives, and no sponsor's amount is
+ * ever shown in public (docs/sponsorship.md).
+ */
+export const fewestMonthlySponsorsShown = 3;
+
+/** The monthly total for the public page, or null while too few sponsors give monthly. */
+export function publicMonthly(monthly: GivenToward['monthly']): GivenToward['monthly'] | null {
+	return monthly.sponsors >= fewestMonthlySponsorsShown ? monthly : null;
+}
+
 /** The paperback goal, once the cost of a paperback is set. */
 export interface CopyGoal {
 	costCents: number;

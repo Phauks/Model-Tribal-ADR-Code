@@ -53,7 +53,7 @@
 			<dd>{data.capturedText}</dd>
 		{/if}
 		<dt>SHA-256</dt>
-		<dd><code class="hash">{data.sha256}</code> · <a href={data.verify}>Verify a download</a></dd>
+		<dd><code class="hash">{data.sha256}</code> · <a href={data.verify}>Verify File</a></dd>
 		<dt>Take it down</dt>
 		<dd><a href={data.removal}>Ask to remove or redact this copy</a></dd>
 	</dl>

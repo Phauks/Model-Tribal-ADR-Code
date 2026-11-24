@@ -21,12 +21,15 @@ import {
 	type StatementSection
 } from '../nation-page-changes.ts';
 import { imageViewerAttributeText } from '../image-viewer.ts';
+import { pacificDay } from '../change-dates.ts';
+import { historyBadgeLabel, lastChangeSentence } from '../page-history.ts';
 import { readableDate } from '../readable-date.ts';
 import { claimedPage } from '../review-status.ts';
 import type { ChangeRow, LiveChanges } from './nation-page-changes.ts';
+import type { PageHistorySummary } from './page-history.ts';
 
 /** The empty places on a nation's page that changes can fill. */
-export const pageSlots = ['status', 'top', 'courts', 'law', 'jurisdiction', 'glance', 'contacts'] as const;
+export const pageSlots = ['status', 'history', 'top', 'courts', 'law', 'jurisdiction', 'glance', 'contacts'] as const;
 export type PageSlot = (typeof pageSlots)[number];
 
 export interface PageOverlay {
@@ -119,16 +122,45 @@ function claimedBadge(nationIdentifier: string, claim: PageClaim): string {
 			? `<p>Kept by people the nation chose:</p><ul>${offices.map((office) => `<li>${escapeHtml(office)}</li>`).join('')}</ul>`
 			: '<p>Kept by people the nation chose.</p>';
 	const page = encodeURIComponent(nationIdentifier);
-	return `<style>[data-build-status]{display:none!important}</style><span data-print-part="reviewStatus"><details class="status-popover"><summary class="review-badge review-badge-verified"><span class="visually-hidden">Who keeps this page:</span>${check}${claimedPage.label}${chevron}</summary><div class="status-panel">${who}<p>Confirmed with the nation’s office on ${readableDate(claim.claimedSince.slice(0, 10))}.</p><p class="no-print"><a href="/profile/nation-team?nation=${page}">Work for this nation? Ask to join its team</a></p><p class="no-print"><a href="/changes?page=${encodeURIComponent(`/nations/${nationIdentifier}`)}">Changes to this page</a></p></div></details></span>`;
+	return `<style>[data-build-status]{display:none!important}</style><span data-print-part="reviewStatus"><details class="status-popover"><summary class="review-badge review-badge-verified"><span class="visually-hidden">Who keeps this page:</span>${check}${claimedPage.label}${chevron}</summary><div class="status-panel">${who}<p>Confirmed with the nation’s office on ${readableDate(claim.claimedSince.slice(0, 10))}.</p><p class="no-print"><a href="/profile/nation-team?nation=${page}">Work for this nation? Ask to join its team</a></p></div></details></span>`;
 }
 
-function slotsFor(nationIdentifier: string, live: LiveChanges, claim: PageClaim | undefined): Partial<Record<PageSlot, string>> {
+/**
+ * The page's history as its own badge beside who keeps the page, apart from
+ * it (Trevor, Nov. 23, 2026, option A of design/page-history-badge/): how
+ * many changes, and a panel with the newest change and a link to them all.
+ * It takes the place of the build's "History" badge (data-build-history),
+ * which cannot know the count. Like every nation page change, it names
+ * parts of the page, never their earlier wording.
+ */
+export function historyBadge(nationIdentifier: string, history: PageHistorySummary): string {
+	const icon =
+		'<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 12a9 9 0 1 0 9-9 9.75 9.75 0 0 0-6.74 2.74L3 8"/><path d="M3 3v5h5"/><path d="M12 7v5l4 2"/></svg>';
+	const chevron =
+		'<svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" class="status-popover-mark"><path d="m6 9 6 6 6-6"/></svg>';
+	const latest = history.latest;
+	const last = latest
+		? `<p><strong>Last changed ${readableDate(pacificDay(latest.madeAt))}.</strong> ${escapeHtml(lastChangeSentence(latest))}</p>`
+		: history.recordedSince
+			? `<p><strong>No changes since ${readableDate(pacificDay(history.recordedSince))},</strong> when the site began recording changes.</p>`
+			: '<p>No changes have been recorded yet.</p>';
+	const link = `/changes?page=${encodeURIComponent(`/nations/${nationIdentifier}`)}`;
+	return `<style>[data-build-history]{display:none!important}</style><span class="no-print"><details class="status-popover"><summary class="review-badge"><span class="visually-hidden">Page history:</span>${icon}${historyBadgeLabel(history.count)}${chevron}</summary><div class="status-panel">${last}<p class="muted">Nation pages show when they changed and which parts, never earlier wording.</p><p><a href="${link}">See all changes to this page</a></p></div></details></span>`;
+}
+
+function slotsFor(
+	nationIdentifier: string,
+	live: LiveChanges,
+	claim: PageClaim | undefined,
+	history: PageHistorySummary | undefined
+): Partial<Record<PageSlot, string>> {
 	const slots: Partial<Record<PageSlot, string>> = {};
 	const add = (slot: PageSlot, html: string) => {
 		slots[slot] = (slots[slot] ?? '') + html;
 	};
 
 	if (claim) add('status', claimedBadge(nationIdentifier, claim));
+	if (history) add('history', historyBadge(nationIdentifier, history));
 
 	const hidden = live.hidden?.content.sections ?? [];
 	if (live.hidden && hidden.length > 0) {
@@ -204,10 +236,11 @@ function slotsFor(nationIdentifier: string, live: LiveChanges, claim: PageClaim 
 }
 
 /** A short, stable fingerprint of which versions are live and whether the page is claimed. */
-function stampOf(live: LiveChanges, claim: PageClaim | undefined): string {
+function stampOf(live: LiveChanges, claim: PageClaim | undefined, history: PageHistorySummary | undefined): string {
 	const text = [
 		...(Object.values(live) as ChangeRow[]).map((change) => `${change.identifier}@${change.liveAt}`).sort(),
-		claim ? `claimed@${claim.claimedSince}:${(claim.offices ?? []).join('|')}` : ''
+		claim ? `claimed@${claim.claimedSince}:${(claim.offices ?? []).join('|')}` : '',
+		history ? `history@${history.count}:${history.latest?.id ?? ''}:${history.recordedSince ?? ''}` : ''
 	].join('|');
 	let hash = 2166136261;
 	for (let index = 0; index < text.length; index += 1) {
@@ -217,8 +250,16 @@ function stampOf(live: LiveChanges, claim: PageClaim | undefined): string {
 	return (hash >>> 0).toString(36);
 }
 
-/** The overlay for a nation's page, or undefined for an unclaimed page with nothing the nation published live. */
-export function pageOverlay(nationIdentifier: string, live: LiveChanges, claim?: PageClaim): PageOverlay | undefined {
-	if (Object.keys(live).length === 0 && !claim) return undefined;
-	return { stamp: stampOf(live, claim), slots: slotsFor(nationIdentifier, live, claim) };
+/**
+ * The overlay for a nation's page, or undefined for an unclaimed page with
+ * nothing the nation published live and no history to show.
+ */
+export function pageOverlay(
+	nationIdentifier: string,
+	live: LiveChanges,
+	claim?: PageClaim,
+	history?: PageHistorySummary
+): PageOverlay | undefined {
+	if (Object.keys(live).length === 0 && !claim && !history) return undefined;
+	return { stamp: stampOf(live, claim, history), slots: slotsFor(nationIdentifier, live, claim, history) };
 }

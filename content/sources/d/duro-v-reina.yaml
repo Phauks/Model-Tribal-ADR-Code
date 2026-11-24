@@ -96,11 +96,22 @@ rights:
     Opinions of federal courts are works of the U.S. government (17 U.S.C. § 105); the host site's own
     additions are not reproduced.
   redistribution: true
-tribes:
-- salt-river-pima-maricopa-indian-community-of-the-salt-river-reservation
-- torres-martinez-desert-cahuilla-indians
 found_in:
 - 2026-11-21-legal-history-and-key-cases
 notes: >-
   Full citation: 495 U.S. 676 (1990). Official report scan or slip opinion: https://tile.loc.gov/storage-services/service/ll/usrep/usrep495/usrep495676/usrep495676.pdf.
   Citator check (KeyCite) pending; see research/pull-lists/2026-11-21-legal-history-westlaw.md.
+tribes:
+- salt-river-pima-maricopa-indian-community-of-the-salt-river-reservation
+- torres-martinez-desert-cahuilla-indians
+nations_in_case:
+  checked: '2026-11-23'
+  named:
+  - nation: salt-river-pima-maricopa-indian-community-of-the-salt-river-reservation
+    named_as: Salt River Pima-Maricopa Indian Community
+    role: government
+    note: Reina was the chief of the community's police.
+  - nation: torres-martinez-desert-cahuilla-indians
+    named_as: Torres-Martinez Band of Cahuilla Mission Indians
+    role: subject
+    note: Duro was a member.

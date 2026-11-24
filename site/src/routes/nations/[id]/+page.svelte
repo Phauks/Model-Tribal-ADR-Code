@@ -17,7 +17,9 @@
 	import RecordPage from '#lib/components/RecordPage.svelte';
 	import { contactsHeading } from '#lib/contact-card.ts';
 	import ReviewStatus from '#lib/components/ReviewStatus.svelte';
+	import ChevronDown from '@lucide/svelte/icons/chevron-down';
 	import Clock from '@lucide/svelte/icons/clock';
+	import History from '@lucide/svelte/icons/history';
 	import TopicBadges from '#lib/components/TopicBadges.svelte';
 	import Timeline from '#lib/components/Timeline.svelte';
 	import { unclaimedPage } from '#lib/review-status.ts';
@@ -79,6 +81,29 @@
 		}))
 	);
 	const treatyMarks = $derived(new Map(data.treaties.map((treaty) => [treaty.key, treaty.citations])));
+
+	// The court cases that name the nation, as a party or as what the case is
+	// about (Trevor, Nov. 23, 2026). Four short columns; under the case's name,
+	// its citation and source marker, then the name the case gives the nation
+	// when it is not today's name, such as a former name or a historical nation.
+	const caseColumns: TableColumn[] = [
+		{ key: 'year', header: 'Year', type: 'date', sortable: true },
+		{ key: 'name', header: 'Case', isRowHeader: true, sortable: true, searchable: true, custom: true },
+		{ key: 'court', header: 'Court', sortable: true },
+		{ key: 'role', header: 'Role', sortable: true }
+	];
+	const caseRows: TableRow[] = $derived(
+		data.cases.map((entry) => ({
+			key: entry.key,
+			cells: {
+				year: { text: entry.decided?.slice(0, 4) ?? '', sortValue: entry.decided },
+				name: { text: [entry.name, entry.citation].filter(Boolean).join(', '), sortValue: entry.name, href: entry.link },
+				court: { text: entry.court ?? '' },
+				role: { text: entry.role }
+			}
+		}))
+	);
+	const casesByKey = $derived(new Map(data.cases.map((entry) => [entry.key, entry])));
 	// Set when the image cannot be loaded, for example once the nation's website
 	// no longer publishes the reviewed copy; the figure is then hidden.
 	let imageFailed = $state(false);
@@ -129,10 +154,30 @@
 					<ReviewStatus status={unclaimedPage} description="Who keeps this page:">
 						<p><strong>Unclaimed.</strong> No one from the nation keeps this page yet.</p>
 						<p class="no-print"><a href="/profile/nation-team?nation={page.id}">Work for this nation? Claim this page</a></p>
-						<p class="no-print"><a href="/changes?page={encodeURIComponent(`/nations/${page.id}`)}">Changes to this page</a></p>
 					</ReviewStatus>
 				</span>
 				<span class="nation-slot-status" data-nation-slot="status"></span>
+				<!-- The page's history, its own badge apart from who keeps the page (Trevor, Nov. 23, 2026,
+				     option A of design/page-history-badge/). The build cannot know how many changes there
+				     are, so it says "History"; the Worker puts the count and the newest change in its place
+				     (historyBadge in src/lib/server/nation-page-overlay.ts). Same markup as ReviewStatus. -->
+				<span class="no-print" data-build-history>
+					<details class="status-popover">
+						<summary class="review-badge"
+							><span class="visually-hidden">Page history:</span><History size={16} strokeWidth={2} aria-hidden="true" />History<ChevronDown
+								class="status-popover-mark"
+								size={14}
+								strokeWidth={2}
+								aria-hidden="true"
+							/></summary
+						>
+						<div class="status-panel">
+							<p class="muted">Nation pages show when they changed and which parts, never earlier wording.</p>
+							<p><a href="/changes?page={encodeURIComponent(`/nations/${page.id}`)}">See all changes to this page</a></p>
+						</div>
+					</details>
+				</span>
+				<span data-nation-slot="history"></span>
 			</div>
 			{#if page.listedName !== page.officialName}
 				<p class="small muted">
@@ -228,6 +273,36 @@
 				<p class="small muted">
 					Each opinion is a copy of the Caselaw Access Project’s text, with the publisher’s headnotes removed. A word listed means only that it appears in the opinion, not what the court decided.
 				</p>
+			</Collapsible>
+		{/if}
+
+		<!-- 5b. Cases involving the nation: court cases in the project's sources
+		     that name the nation, as a party or as what the case is about; each
+		     case's record says how (nations_in_case). -->
+		{#if data.cases.length > 0}
+			<Collapsible heading="Cases involving the nation" identifier="cases-heading">
+				<DataTable
+					identifier="nation-cases"
+					label="Table: cases involving the nation"
+					columns={caseColumns}
+					rows={caseRows}
+					defaultSort={{ key: 'year', direction: 'ascending' }}
+					rowName={['case', 'cases']}
+					count={false}
+					download="{data.page.id}-cases"
+				>
+					{#snippet cell(row: TableRow, column: TableColumn)}
+						{@const entry = casesByKey.get(row.key)}
+						{#if entry && column.key === 'name'}
+							<span class="case-name">{#if entry.link}<a href={entry.link}><i>{entry.name}</i></a>{:else}<i>{entry.name}</i>{/if}</span>
+							<span class="case-detail small muted">{#if entry.citation}{entry.citation}{/if}<CitationMarks marks={entry.citations} /></span>
+							<span class="case-detail case-phone small muted">{[entry.court, entry.role].filter(Boolean).join(' · ')}</span>
+							{#if entry.namedAs || entry.note}
+								<span class="case-detail small muted">{#if entry.namedAs}Named as “{entry.namedAs}.”{/if}{#if entry.namedAs && entry.note}{' '}{/if}{#if entry.note}{entry.note}{/if}</span>
+							{/if}
+						{/if}
+					{/snippet}
+				</DataTable>
 			</Collapsible>
 		{/if}
 
@@ -422,6 +497,32 @@
 {/snippet}
 
 <style>
+	.case-name,
+	.case-detail {
+		display: block;
+	}
+	.case-detail {
+		font-weight: normal;
+	}
+	/* Room between the case's link and the source marker under it, so each
+	   is a touch target of its own (WCAG 2.2, 2.5.8). */
+	.case-name {
+		margin-bottom: var(--space-2);
+	}
+	/* On a phone the Court and Role columns fold into a line under the case's
+	   name, so the name keeps the width it needs. */
+	.case-detail.case-phone {
+		display: none;
+	}
+	@media (max-width: 40rem) {
+		.case-detail.case-phone {
+			display: block;
+		}
+		:global(#nation-cases th:nth-child(n + 3)),
+		:global(#nation-cases td:nth-child(n + 3)) {
+			display: none;
+		}
+	}
 	/*
 	 * A treaty's markers follow its title with no text around them, so each
 	 * gets a full 24 by 24 pixel target, as in FactGroups (WCAG 2.2, 2.5.8),

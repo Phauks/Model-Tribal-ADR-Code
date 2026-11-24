@@ -100,12 +100,21 @@ rights:
     Opinions of federal courts are works of the U.S. government (17 U.S.C. § 105); the host site's own
     additions are not reproduced.
   redistribution: true
-tribes:
-- navajo-nation
-- ute-mountain-ute-tribe
 found_in:
 - 2026-11-21-legal-history-and-key-cases
 notes: >-
   Full citation: 596 U.S. 591 (2022). Official report scan or slip opinion: https://www.supremecourt.gov/opinions/21pdf/596us2r41_2924.pdf.
   Quote verified against the supremecourt.gov reporter-paginated PDF text only (LII text not retrieved).
   Citator check (KeyCite) pending; see research/pull-lists/2026-11-21-legal-history-westlaw.md.
+tribes:
+- navajo-nation
+- ute-mountain-ute-tribe
+nations_in_case:
+  checked: '2026-11-23'
+  named:
+  - nation: navajo-nation
+    named_as: Navajo Nation
+    role: subject
+  - nation: ute-mountain-ute-tribe
+    named_as: Ute Mountain Ute Reservation
+    role: subject

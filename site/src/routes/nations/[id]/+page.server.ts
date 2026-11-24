@@ -28,7 +28,9 @@ import { nationTileMapData } from '#lib/server/nations-map.ts';
 import { offlineSets } from '#lib/server/copy-lists.ts';
 import { nationStorySummaries } from '#lib/server/stories.ts';
 import { opinionsOf, opinionsSourceKey, type TribalCourtOpinion } from '#lib/server/tribal-court-opinions.ts';
-import { nationTimeline, timelineHeading } from '#lib/server/timeline.ts';
+import { issuedDate, nationTimeline, timelineHeading } from '#lib/server/timeline.ts';
+import { casePreviewList } from '#lib/server/case-previews.ts';
+import { courtAbbreviation } from '#lib/server/case-citations.ts';
 import { bureauRegionPage, healthAreaPage } from '#lib/federal-offices.ts';
 import { displayName, humanize, regionAnchor, reviewStatusLabels, stateName } from '#lib/nation-labels.ts';
 import type { EntryGenerator, PageServerLoad } from './$types';
@@ -54,6 +56,7 @@ interface FactItem {
 }
 
 const opinionsHeading = 'Court opinions';
+const casesHeading = 'Cases involving the nation';
 
 /** The opinions the section names before linking to the full list. */
 const opinionsShown = 5;
@@ -458,8 +461,7 @@ function jurisdictionFacts(record: NationRecord, sources: SourceUses): FactGroup
 	return [
 		...[...byTopic.entries()].map(([label, items]) => ({ field: `jurisdiction-${label}`, label, items })),
 		...agreementGroups(record, sources, section),
-		...group('nearby-state-courts', 'State trial courts for the same counties', nearbyStateCourts(record, sources, section)),
-		...group('court-cases', 'Court cases about the nation', courtCases(record, sources, section))
+		...group('nearby-state-courts', 'State trial courts for the same counties', nearbyStateCourts(record, sources, section))
 	];
 }
 
@@ -481,30 +483,81 @@ function nearbyStateCourts(record: NationRecord, sources: SourceUses, section: s
 /** Reporter names written out in some records, in their short form. */
 const reporterShortNames: Record<string, string> = { 'United States Reports': 'U.S.' };
 
+/** What the nation was in a case, as the table's Role column says it (schemas/source.schema.json). */
+const caseRoles: Record<string, string> = {
+	party: 'Party',
+	government: 'Party through its officials or agency',
+	subject: 'Not a party'
+};
+
 /**
- * The court cases in the project's sources that are about the nation (the
- * source record lists it), oldest first: the case name, where it is reported
- * and the year, with the court under it. Each links the opinion the record
- * cites and is listed under Sources like any other fact.
+ * A court's name short enough for a table column: "U.S. Supreme Court", and
+ * the Indigo Book abbreviation for a federal court of appeals, district court
+ * or claims court ("9th Cir.", "W.D. Okla.", "Fed. Cl."). Other courts keep
+ * the name the record gives, since a state's abbreviation alone ("Alaska")
+ * would not say it is a court.
  */
-function courtCases(record: NationRecord, sources: SourceUses, section: string): FactItem[] {
-	const year = (source: SourceRecord) => source.citation.issued?.['date-parts']?.[0]?.[0];
-	const cases = [...sourceRecords().values()]
+function shortCourtName(authority: string | undefined): string | undefined {
+	if (!authority) return undefined;
+	if (/^Supreme Court of the United States$/.test(authority.trim())) return 'U.S. Supreme Court';
+	const short = courtAbbreviation(authority);
+	return typeof short === 'string' && /Cir\.|\bD\. |\.D\. |Cl\.$/.test(short) ? short : authority;
+}
+
+/** One court case that names the nation, a row of the nation page's cases table. */
+export interface NationCase {
+	key: string;
+	/** YYYY, YYYY-MM or YYYY-MM-DD. */
+	decided?: string;
+	name: string;
+	/** "358 U.S. 217", or the docket number when the case is not reported. */
+	citation?: string;
+	court?: string;
+	role: string;
+	/** The name the case gives the nation, when it is not the nation's name today. */
+	namedAs?: string;
+	note?: string;
+	link?: string;
+	citations: CitationMark[];
+}
+
+/**
+ * The court cases in the project's sources that name the nation, as a party
+ * or as what the case is about, oldest first (Trevor, Nov. 23, 2026: "nations
+ * in cases should be linkable to the nation, and vice versa from the nation
+ * page"). The case's own record says how it names the nation
+ * (nations_in_case); each case links its box in an essay, the copy of the
+ * opinion on this site or the opinion where it was published, the same as a
+ * case preview, and is listed under References like any other fact.
+ */
+function nationCases(record: NationRecord, sources: SourceUses): NationCase[] {
+	const section = casesHeading;
+	const previews = new Map(casePreviewList().cases.map((preview) => [preview.id, preview]));
+	const ownName = displayName(record.names.official).toLocaleLowerCase('en-US');
+	return [...sourceRecords().values()]
 		.filter((source) => source.kind.endsWith('-case') && source.tribes?.includes(record.id) && source.citation.title)
-		.sort((first, second) => (year(first) ?? 0) - (year(second) ?? 0));
-	return cases.map((source) => {
-		const { volume, page, number, authority } = source.citation;
-		const reporter = source.citation['container-title'];
-		const reported = volume && reporter && page ? `${volume} ${reporterShortNames[reporter] ?? reporter} ${page}` : number;
-		const when = year(source);
-		const address = source.citation.URL ?? source.original_link;
-		return cited(sources, section, { source: source.key, confidence: 'high' }, {
-			text: source.citation.title ?? source.key,
-			link: address && URL.canParse(address) ? webLink(address) : undefined,
-			detail: [reported, when ? `(${when})` : undefined].filter(Boolean).join(' ') || undefined,
-			note: authority
-		});
-	});
+		.map((source) => {
+			const { volume, page, number, authority } = source.citation;
+			const reporter = source.citation['container-title'];
+			const named = source.nations_in_case?.named.find((entry) => entry.nation === record.id);
+			const citations: CitationMark[] = [];
+			sources.cite(source.key, { section, text: source.citation.title ?? source.key }, citations);
+			const address = source.citation.URL ?? source.original_link;
+			const namedAs = named?.named_as.replace(/^the\s+/i, '');
+			return {
+				key: source.key,
+				decided: issuedDate(source),
+				name: source.citation.title ?? source.key,
+				citation: volume && reporter && page ? `${volume} ${reporterShortNames[reporter] ?? reporter} ${page}` : number,
+				court: shortCourtName(authority),
+				role: caseRoles[named?.role ?? 'subject'],
+				namedAs: namedAs && namedAs.toLocaleLowerCase('en-US') !== ownName ? namedAs : undefined,
+				note: named?.note,
+				link: previews.get(source.key)?.link ?? (address && URL.canParse(address) ? webLink(address) : undefined),
+				citations
+			};
+		})
+		.sort((first, second) => (first.decided ?? '').localeCompare(second.decided ?? '') || first.name.localeCompare(second.name));
 }
 
 /** The names the page gives each kind of jurisdiction agreement, in the order the page shows them. */
@@ -1076,6 +1129,7 @@ export const load: PageServerLoad = ({ params }) => {
 			courts: [],
 			practice: [],
 			opinions: undefined,
+			cases: [] as NationCase[],
 			law: [],
 			documents: [],
 			jurisdiction: [],
@@ -1199,6 +1253,8 @@ export const load: PageServerLoad = ({ params }) => {
 	const practice = courtPractice(record, sources);
 	sources.part(opinionsHeading);
 	const opinions = courtOpinions(record.id, sources);
+	sources.part(casesHeading);
+	const cases = nationCases(record, sources);
 	// Within Laws and agreements, each document's sources go under its heading.
 	const documents = histories.map((history) => {
 		const heading = documentHeading(history.title, names);
@@ -1261,6 +1317,7 @@ export const load: PageServerLoad = ({ params }) => {
 		courts,
 		practice,
 		opinions,
+		cases,
 		law,
 		documents,
 		jurisdiction,
@@ -1282,6 +1339,7 @@ export const load: PageServerLoad = ({ params }) => {
 	items.push({ label: governmentHeading, link: '#government-heading' });
 	items.push({ label: 'Courts and dispute resolution', link: '#courts-heading' });
 	if (opinions) items.push({ label: opinionsHeading, link: '#opinions-heading' });
+	if (cases.length > 0) items.push({ label: casesHeading, link: '#cases-heading' });
 	items.push({
 		label: lawHeading,
 		link: '#law-heading',

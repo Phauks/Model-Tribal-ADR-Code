@@ -2,20 +2,32 @@ import { error, fail, redirect } from '@sveltejs/kit';
 import {
 	attendanceKinds,
 	attendanceLabels,
+	eventDay,
 	eventMoment,
 	eventWhen,
 	registrationStatusLabels,
+	sessionTimes,
+	wallClock,
+	zonedToUtc,
 	type Attendance
 } from '#lib/event-calendar.ts';
 import { confirmedCredits } from '#lib/server/contributor-profiles.ts';
 import { workerEnvironment } from '#lib/server/environment.ts';
 import {
+	addMaterial,
 	changeEventStatus,
 	eventByIdentifier,
+	largestMaterialBytes,
+	materialObjectKey,
+	materialsOf,
 	registrationsOf,
+	removeMaterial,
+	removeSession,
 	removeSpeaker,
 	removeTicketType,
+	saveSession,
 	saveSpeaker,
+	sessionsOf,
 	saveTicketType,
 	speakersOf,
 	ticketTypesOf,
@@ -26,7 +38,10 @@ import { eventEmailDelivery } from '#lib/server/event-calendar-email.ts';
 import { defaultRoomStyle, eventRecordingWatchers, roomStyles, type RecordingWatchers, type RoomStyle } from '#lib/video-rooms.ts';
 import { removeRoom, roomOfEvent, roomRecordsForHosts, saveEventRoom, setRecordingHidden } from '#lib/server/video-rooms.ts';
 import { videoRoomSettings } from '#lib/server/realtime-kit.ts';
-import { formText, requirePermission, storage } from '#lib/server/workspace.ts';
+import { fileScans, forgetScan, scanStatusWords, storeSentFile } from '#lib/server/file-scans.ts';
+import { newIdentifier } from '#lib/server/identifiers.ts';
+import { safeFileName } from '#lib/server/uploads.ts';
+import { formText, requireAccount, requirePermission, storage } from '#lib/server/workspace.ts';
 import { formValuesOf, readCapacity, readEventForm } from '../event-form.ts';
 import type { Actions, PageServerLoad, RequestEvent } from './$types';
 
@@ -40,13 +55,16 @@ async function findEvent(event: RequestEvent | Parameters<PageServerLoad>[0]) {
 
 export const load: PageServerLoad = async (event) => {
 	const { database, found } = await findEvent(event);
-	const [tickets, speakers, registrations, credits, room] = await Promise.all([
+	const [tickets, speakers, registrations, credits, room, sessions, materials] = await Promise.all([
 		ticketTypesOf(database, found.identifier),
 		speakersOf(database, found.identifier),
 		registrationsOf(database, found.identifier),
 		confirmedCredits(database),
-		roomOfEvent(database, found.identifier)
+		roomOfEvent(database, found.identifier),
+		sessionsOf(database, found.identifier),
+		materialsOf(database, found.identifier)
 	]);
+	const scans = await fileScans(database, materials.map((material) => material.objectKey));
 	const records = room
 		? await roomRecordsForHosts(database, room, (recording) => `/events/${found.slug}/recordings/${recording}`)
 		: { recordings: [], visitors: [] };
@@ -57,6 +75,7 @@ export const load: PageServerLoad = async (event) => {
 			title: found.title,
 			status: found.status,
 			when: eventWhen(found.startsAt, found.endsAt, found.timeZone),
+			day: eventDay(found.startsAt, found.timeZone),
 			cancelNote: found.cancelNote,
 			sequence: found.sequence
 		},
@@ -64,6 +83,15 @@ export const load: PageServerLoad = async (event) => {
 		added: event.url.searchParams.has('added'),
 		tickets: tickets.map((ticket) => ({ ...ticket, attendanceLabel: attendanceLabels[ticket.attendance] })),
 		speakers,
+		sessions: sessions.map((session) => ({ ...session, times: sessionTimes(session.startsAt, session.endsAt, found.timeZone) })),
+		materials: materials.map((material) => ({
+			identifier: material.identifier,
+			title: material.title,
+			fileName: material.fileName,
+			size: `${Math.max(1, Math.round(material.sizeBytes / 1024))} KB`,
+			check: scanStatusWords(scans.get(material.objectKey) ?? null).label
+		})),
+		largestMaterial: `${largestMaterialBytes / (1024 * 1024)} MB`,
 		contributors: credits
 			.filter((credit) => credit.onWebsite && credit.slug)
 			.map((credit) => ({ slug: credit.slug as string, line: credit.line })),
@@ -196,6 +224,68 @@ export const actions: Actions = {
 			sortOrder: Number(formText(form, 'sort-order', 4) ?? '0') || 0
 		});
 		return { done: 'Speaker saved.' };
+	},
+
+	saveSession: async (event) => {
+		const { database, found } = await findEvent(event);
+		const form = await event.request.formData();
+		const title = formText(form, 'title', 200);
+		if (!title) return fail(400, { problem: 'Give the session a title.' });
+		// Sessions are on the event's first day, in its own zone.
+		const day = wallClock(new Date(found.startsAt), found.timeZone).slice(0, 10);
+		const starts = zonedToUtc(`${day}T${formText(form, 'starts', 5) ?? ''}`, found.timeZone);
+		const endsText = formText(form, 'ends', 5);
+		const ends = endsText ? zonedToUtc(`${day}T${endsText}`, found.timeZone) : null;
+		if (!starts) return fail(400, { problem: 'Enter the time the session starts.' });
+		if (endsText && (!ends || ends.getTime() <= starts.getTime())) return fail(400, { problem: 'A session has to end after it starts.' });
+		await saveSession(database, found.identifier, null, { startsAt: starts, endsAt: ends ?? null, title, about: formText(form, 'about', 500) ?? '' });
+		return { done: 'Session added.' };
+	},
+
+	removeSession: async (event) => {
+		const { database, found } = await findEvent(event);
+		await removeSession(database, found.identifier, formText(await event.request.formData(), 'session', 60) ?? '');
+		return { done: 'Session removed.' };
+	},
+
+	addMaterial: async (event) => {
+		const { database, found } = await findEvent(event);
+		const account = requireAccount(event);
+		const bucket = workerEnvironment().sourceDocuments;
+		if (!bucket) return fail(503, { problem: 'File storage is not connected.' });
+		const form = await event.request.formData();
+		const title = formText(form, 'title', 200);
+		const file = form.get('file');
+		if (!title) return fail(400, { problem: 'Name the file, such as "Slides".' });
+		if (!(file instanceof File) || file.size === 0) return fail(400, { problem: 'Choose a file to add.' });
+		if (file.size > largestMaterialBytes) return fail(400, { problem: `The file is larger than ${largestMaterialBytes / (1024 * 1024)} MB.` });
+		const bytes = await file.arrayBuffer();
+		const hash = [...new Uint8Array(await crypto.subtle.digest('SHA-256', bytes))].map((byte) => byte.toString(16).padStart(2, '0')).join('');
+		const identifier = newIdentifier();
+		const fileName = safeFileName(file.name || 'file');
+		const contentType = file.type || 'application/octet-stream';
+		const objectKey = materialObjectKey(found.identifier, identifier);
+		// Stored and put in line for the scanner in one step; nobody can download it until the scan passes (site/SCANNING.md).
+		await storeSentFile(database, bucket, {
+			objectKey,
+			purpose: 'event-material',
+			subject: found.identifier,
+			bytes,
+			httpMetadata: { contentType },
+			customMetadata: { sha256: hash }
+		});
+		await addMaterial(database, { identifier, eventIdentifier: found.identifier, title, fileName, contentType, sizeBytes: file.size, sha256: hash, createdBy: account.subject });
+		return { done: 'File added. It appears on the event page once the virus check passes, usually within a few minutes.' };
+	},
+
+	removeMaterial: async (event) => {
+		const { database, found } = await findEvent(event);
+		const removed = await removeMaterial(database, found.identifier, formText(await event.request.formData(), 'material', 60) ?? '');
+		if (removed) {
+			await workerEnvironment().sourceDocuments?.delete(removed.objectKey);
+			await forgetScan(database, removed.objectKey);
+		}
+		return { done: 'File removed.' };
 	},
 
 	removeSpeaker: async (event) => {

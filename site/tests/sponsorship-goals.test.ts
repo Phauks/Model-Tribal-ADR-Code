@@ -4,6 +4,7 @@ import { verifiedAccount } from '#lib/server/accounts.ts';
 import { createSponsor } from '#lib/server/sponsors.ts';
 import {
 	givenToward,
+	publicMonthly,
 	saveSponsorshipCosts,
 	sponsorshipCosts,
 	sponsorshipGoals,
@@ -108,5 +109,13 @@ describe('totals of gifts', () => {
 		await gift(ended.identifier, 'e1', 'monthly', 7000, '2026-09-01T00:00:00.000Z');
 		const totals = await givenToward(database, 'test', new Date('2026-11-23T00:00:00.000Z'));
 		expect(totals.monthly).toEqual({ cents: 6000, sponsors: 2 });
+	});
+});
+
+describe('the monthly total in public', () => {
+	it('stays off the page until three sponsors give monthly', () => {
+		expect(publicMonthly({ cents: 5000, sponsors: 1 })).toBeNull();
+		expect(publicMonthly({ cents: 7500, sponsors: 2 })).toBeNull();
+		expect(publicMonthly({ cents: 9000, sponsors: 3 })).toEqual({ cents: 9000, sponsors: 3 });
 	});
 });

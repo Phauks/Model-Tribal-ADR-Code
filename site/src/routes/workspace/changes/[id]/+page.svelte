@@ -2,7 +2,9 @@
 	import Breadcrumbs from '#lib/components/Breadcrumbs.svelte';
 	import { enhance } from '$app/forms';
 	import { dateTime } from '#lib/change-dates.ts';
-	import { hideReasons, pageKindLabels } from '#lib/page-history.ts';
+	import EyeOff from '@lucide/svelte/icons/eye-off';
+	import HideChangeFields from '#lib/components/changes/HideChangeFields.svelte';
+	import { pageKindLabels } from '#lib/page-history.ts';
 	import type { PageProps } from './$types';
 
 	let { data, form }: PageProps = $props();
@@ -32,38 +34,11 @@
 {#if form?.done}<p class="notice" role="status">{form.done}</p>{/if}
 
 <form method="post" action="?/hide" use:enhance class="hide-form">
-	<fieldset>
-		<legend>What to hide</legend>
-		<label class="check">
-			<input type="checkbox" name="text" checked={hidden ? hidden.hideText : true} />
-			<span><strong>The text of this version</strong><br /><span class="small muted">No one can read it or compare it with another version, here or in Recent changes. Its size is hidden too.</span></span>
-		</label>
-		<label class="check">
-			<input type="checkbox" name="summary" checked={hidden?.hideSummary ?? false} />
-			<span><strong>The summary</strong><br /><span class="small muted">Use this when the summary itself names what was removed.</span></span>
-		</label>
-		<label class="check">
-			<input type="checkbox" name="person" checked={hidden?.hidePerson ?? false} />
-			<span><strong>Who made it</strong><br /><span class="small muted">Readers see “name hidden”.</span></span>
-		</label>
-	</fieldset>
-	<div class="field">
-		<label for="hide-reason">Reason readers see</label>
-		<select id="hide-reason" name="reason">
-			{#each Object.entries(hideReasons) as [value, label] (value)}
-				<option {value} selected={hidden ? hidden.reason === value : value === 'nation-request'}>{label}</option>
-			{/each}
-		</select>
-	</div>
-	<div class="field">
-		<label for="hide-note">Private note for the activity log (optional)</label>
-		<input id="hide-note" name="note" maxlength="500" placeholder="For example, the request this answers" />
-	</div>
-	<p class="small muted">
-		The change stays in the list with a line through what is hidden. The activity log records who hid it and why, and it
-		can be shown again here.
+	<HideChangeFields prefix="hide" {hidden} requests={data.requests} />
+	<p class="actions">
+		<a class="button button-quiet" href="/changes/{change.id}">Cancel</a>
+		<button type="submit" class="button hide-button"><EyeOff size={18} aria-hidden="true" />{hidden ? 'Change what is hidden' : 'Hide'}</button>
 	</p>
-	<button type="submit" class="button">{hidden ? 'Change what is hidden' : 'Hide'}</button>
 </form>
 
 {#if hidden}
@@ -76,33 +51,21 @@
 {/if}
 
 <style>
-	fieldset {
-		border: 0;
-		padding: 0;
+	.hide-form {
+		max-width: var(--layout-popover);
 	}
 
-	legend {
-		font-weight: var(--font-weight-semibold);
-	}
-
-	.check {
+	.actions {
 		display: flex;
+		justify-content: flex-end;
 		gap: var(--space-2);
-		align-items: flex-start;
-		border: 1px solid var(--color-line);
-		border-radius: var(--radius-panel);
-		padding: var(--space-2) var(--space-3);
-		margin-block: var(--space-2);
-		max-width: var(--layout-measure);
+		margin-top: var(--space-4);
 	}
 
-	.field {
-		margin-block: var(--space-3);
-	}
-
-	.field label {
-		display: block;
-		font-weight: var(--font-weight-semibold);
+	.hide-button {
+		gap: var(--space-2);
+		background: transparent;
+		color: var(--color-action);
 	}
 
 	.show-form {
