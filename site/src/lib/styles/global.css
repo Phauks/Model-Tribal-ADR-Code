@@ -1943,7 +1943,7 @@ sup.citation {
 /*
  * "Edit" on a part of a nation's page, for someone on the nation's team
  * whose place covers that part (design/nation-editors, screen 2). Every page
- * has the links, hidden; NationEditorBanner.svelte names the person's parts
+ * has the links, hidden; NationPageControls.svelte names the person's parts
  * on the root, which shows theirs at the top right of the part.
  */
 .nation-edit-link {
