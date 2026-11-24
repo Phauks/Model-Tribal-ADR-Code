@@ -342,6 +342,23 @@ function toWaitingPassword(row: WaitingPasswordRow): WaitingPassword | undefined
 	return { hash: row.newPasswordHash, salt: row.newPasswordSalt, iterations: row.newPasswordIterations, keyed: Boolean(row.newPasswordKeyed) };
 }
 
+/**
+ * The password still waiting with the newest code for an address, if that code
+ * was sent by Create an account and has not run out. "Send a new code" on the
+ * confirm step keeps it, so the new code still makes the account with it.
+ */
+export async function waitingPasswordFor(database: D1Database, email: string): Promise<WaitingPassword | undefined> {
+	const row = await database
+		.prepare(
+			`SELECT expires_at AS expiresAt, ${waitingPasswordColumns}
+			 FROM sign_in_codes WHERE email = ? AND origin = 'email' ORDER BY created_at DESC LIMIT 1`
+		)
+		.bind(cleanEmail(email))
+		.first<{ expiresAt: string } & WaitingPasswordRow>();
+	if (!row || row.expiresAt < now()) return undefined;
+	return toWaitingPassword(row);
+}
+
 /** Hashes a password chosen on Create an account, to keep with its code until the code is used. */
 export async function waitingPassword(password: string, key: string | undefined): Promise<WaitingPassword> {
 	const salt = randomToken(16);

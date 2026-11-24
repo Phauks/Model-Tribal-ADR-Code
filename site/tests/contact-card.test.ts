@@ -3,6 +3,8 @@ import {
 	addressLines,
 	contactCards,
 	defaultOfficeName,
+	defaultOfficeFor,
+	otherContactsName,
 	displayWebAddress,
 	officeAndNote,
 	titleCase
@@ -98,6 +100,45 @@ describe('contact card', () => {
 		expect(offices.map((office) => office.name)).toEqual([
 			'Office of Hawaiian Affairs (state agency)'
 		]);
+	});
+
+	it('puts a contact page with no office in its label under the office whose website it is on', () => {
+		const { offices } = contactCards(
+			[
+				{
+					kind: 'website',
+					value: 'https://dhhl.hawaii.gov',
+					label: 'Department of Hawaiian Home Lands (state agency)'
+				},
+				{
+					kind: 'phone',
+					value: '(808) 620-9500',
+					label: 'Department of Hawaiian Home Lands (state agency) main line'
+				},
+				{
+					kind: 'contact-page',
+					value: 'https://dhhl.hawaii.gov/contact/',
+					label: "Contact page on the nation's website"
+				}
+			],
+			undefined,
+			defaultOfficeFor('native-hawaiian')
+		);
+		expect(offices.map((office) => office.name)).toEqual([
+			'Department of Hawaiian Home Lands (state agency)'
+		]);
+		expect(offices[0].rows.map((row) => row.kind)).toEqual(['phone', 'contact-page']);
+	});
+
+	it('never calls the contacts of a record that is not a tribe’s a tribal office', () => {
+		expect(defaultOfficeFor('native-nation')).toBe(defaultOfficeName);
+		expect(defaultOfficeFor('native-hawaiian')).toBe(otherContactsName);
+		const { offices } = contactCards(
+			[{ kind: 'phone', value: '(670) 664-2664' }],
+			undefined,
+			defaultOfficeFor('territorial-indigenous-people')
+		);
+		expect(offices[0].name).toBe('Other Contacts');
 	});
 
 	it('gives named offices and agencies their own cards', () => {

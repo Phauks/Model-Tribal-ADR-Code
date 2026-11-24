@@ -1,5 +1,5 @@
 import { error, json } from '@sveltejs/kit';
-import { contactCards, type ContactRow } from '#lib/contact-card.ts';
+import { contactCards, defaultOfficeFor, type ContactRow } from '#lib/contact-card.ts';
 import { humanize } from '#lib/nation-labels.ts';
 import { imageMayBeShown, imagePath } from '#lib/official-images.ts';
 import { nations } from '#lib/server/content.ts';
@@ -22,7 +22,7 @@ export const GET: RequestHandler = ({ params }) => {
 	const record = nations().find((entry) => entry.id === params.id);
 	if (!record || !shown().has(record.id)) error(404, 'There is no nation page by that name');
 	const image = (record.official_images ?? []).find((entry) => entry.private_copy && imageMayBeShown(entry));
-	const cards = contactCards(record.contacts ?? []);
+	const cards = contactCards(record.contacts ?? [], undefined, defaultOfficeFor(record.entity_type));
 	const office = cards.offices[0];
 	const first = (...kinds: ContactRow['kind'][]) => office?.rows.find((row) => kinds.includes(row.kind));
 	return json({

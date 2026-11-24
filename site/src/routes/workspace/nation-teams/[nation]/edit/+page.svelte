@@ -1,4 +1,15 @@
 <script lang="ts">
+	// Editing a nation's page: one form with a card for each part, each saying
+	// when a change appears, and beside it one "Ready to publish" summary with
+	// one credit and one Publish button, and "Hide something now"
+	// (design/nation-editors, screen 3, approved by Trevor on Nov. 23, 2026).
+	import { onMount } from 'svelte';
+	import Check from '@lucide/svelte/icons/check';
+	import Clock from '@lucide/svelte/icons/clock';
+	import Landmark from '@lucide/svelte/icons/landmark';
+	import Plus from '@lucide/svelte/icons/plus';
+	import FileDropField from '#lib/components/FileDropField.svelte';
+	import NationChangeContent from '#lib/components/NationChangeContent.svelte';
 	import {
 		changeKindLabels,
 		contactHoldDays,
@@ -10,29 +21,101 @@
 		statementSectionLabels,
 		statementSections,
 		type ChangeContents,
-		type ChangeKind
+		type ChangeKind,
+		type ContactKind,
+		type StatementSection
 	} from '#lib/nation-page-changes.ts';
 	import { answersFor, teamAnswerDays, teamAnswerLabels } from '#lib/nation-team-reports.ts';
+	import { readableDate } from '#lib/readable-date.ts';
 	import { requestKindLabels } from '#lib/requests.ts';
 	import type { PageProps } from './$types';
 
 	let { data, form }: PageProps = $props();
 
-	const about = $derived(data.starting.about.content as ChangeContents['about']);
-	const courts = $derived(data.starting.courts.content as ChangeContents['courts']);
-	const statements = $derived(data.starting.statements.content as ChangeContents['statements']);
-	const contacts = $derived(data.starting.contacts.content as ChangeContents['contacts']);
+	// The form's fields, starting from the person's draft or from the page.
+	// svelte-ignore state_referenced_locally
+	const starting = data.starting;
+	let aboutText = $state((starting.about.content as ChangeContents['about']).text);
+	let courtsText = $state((starting.courts.content as ChangeContents['courts']).text);
+	let statementTexts = $state<Record<StatementSection, string>>(
+		Object.fromEntries(
+			statementSections.map((section) => [section, (starting.statements.content as ChangeContents['statements']).statements[section] ?? ''])
+		) as Record<StatementSection, string>
+	);
+	// The contacts already given, or one empty row; "Add a contact" adds rows.
+	const givenContacts = (starting.contacts.content as ChangeContents['contacts']).contacts;
+	let contactRows = $state(givenContacts.length > 0 ? [...givenContacts] : [{ office: '', kind: 'email' as ContactKind, value: '' }]);
 	const pictures = $derived(data.starting.pictures.content as ChangeContents['pictures']);
+	let pictureTouched = $state(false);
 	const hidden = $derived(data.starting.hidden.content as ChangeContents['hidden']);
-	// A few empty rows after the contacts already given.
-	const contactRows = $derived(Math.min(data.contactRows, contacts.contacts.length + 2));
+	// svelte-ignore state_referenced_locally
+	let credit = $state(data.starting.about.credit ?? data.credits[0] ?? data.nation.title);
+	let otherCredit = $state('');
+	let addingStatement = $state<Record<StatementSection, boolean>>({ recognition: false, law: false, jurisdiction: false });
+	let scripted = $state(false);
+
+	onMount(() => {
+		scripted = true;
+	});
+
+	const onPage = $derived(data.onPage);
+	const canPublish = $derived(
+		(['about', 'courts', 'statements', 'contacts', 'pictures'] as const).some((kind) => data.allowed[kind].draft && data.allowed[kind].publish)
+	);
+
+	function cleaned(text: string): string {
+		return text.replace(/\r\n?/g, '\n').trim();
+	}
+
+	const contactsNow = $derived(
+		contactRows
+			.map((row) => ({ office: cleaned(row.office), kind: row.kind, value: cleaned(row.value) }))
+			.filter((row) => row.office || row.value)
+	);
+
+	/** One line for each part that differs from the page, for "Ready to publish". */
+	const ready = $derived.by(() => {
+		const lines: { kind: ChangeKind; text: string }[] = [];
+		const goesLive = (kind: ChangeKind) =>
+			!canPublish ? 'a draft' : kind === 'contacts' ? `live ${readableDate(data.contactsGoLive).replace(/, \d{4}$/, '')}` : 'live now';
+		const text = (kind: 'about' | 'courts', now: string) => {
+			const was = (onPage[kind] as ChangeContents['about']).text;
+			if (cleaned(now) === was || !data.allowed[kind].draft) return;
+			const what = !was ? 'added' : !cleaned(now) ? 'removed' : kind === 'about' ? 'rewritten' : 'changed';
+			lines.push({ kind, text: `${changeKindLabels[kind]}: ${what} (${goesLive(kind)})` });
+		};
+		text('about', aboutText);
+		text('courts', courtsText);
+		if (data.allowed.contacts.draft) {
+			const was = (onPage.contacts as ChangeContents['contacts']).contacts;
+			if (JSON.stringify(was) !== JSON.stringify(contactsNow)) {
+				const added = contactsNow.filter((contact) => !was.some((old) => old.office === contact.office && old.kind === contact.kind && old.value === contact.value));
+				const what =
+					added.length === 1 && contactsNow.length >= was.length
+						? `new ${contactKindLabels[added[0].kind].toLocaleLowerCase('en-US')}`
+						: 'changed';
+				lines.push({ kind: 'contacts', text: `Contact: ${what} (${goesLive('contacts')})` });
+			}
+		}
+		if (data.allowed.statements.draft) {
+			const was = (onPage.statements as ChangeContents['statements']).statements;
+			for (const section of statementSections) {
+				const now = cleaned(statementTexts[section]);
+				if (now === (was[section] ?? '')) continue;
+				const what = !was[section] ? 'statement added' : !now ? 'statement removed' : 'statement changed';
+				lines.push({ kind: 'statements', text: `${statementSectionLabels[section].replace(/ \(.*\)$/, '')}: ${what} (${goesLive('statements')})` });
+			}
+		}
+		if (data.allowed.pictures.draft && pictureTouched) lines.push({ kind: 'pictures', text: `Pictures: changed (${goesLive('pictures')})` });
+		return lines;
+	});
 
 	function when(value: string | null): string {
 		return value ? new Date(value).toLocaleString('en-US', { dateStyle: 'medium', timeStyle: 'short' }) : '';
 	}
 
-	function credit(kind: ChangeKind): string {
-		return data.starting[kind].credit ?? data.nation.title;
+	function the(title: string): string {
+		return /^the\s/i.test(title) ? title : `the ${title}`;
 	}
 
 	function messageFor(kind: ChangeKind): { problem?: string; done?: string } | undefined {
@@ -42,23 +125,22 @@
 
 	const generalMessage = $derived(form && !('kind' in form) ? (form as { problem?: string; done?: string }) : undefined);
 	const pictureBase = $derived(`/workspace/nation-teams/${data.nation.identifier}/pictures`);
+	const correctionLink = (section: StatementSection) =>
+		`/requests?kind=correct&record=${encodeURIComponent(`tribes/${data.nation.identifier}`)}&field=${section}`;
 </script>
 
 <svelte:head>
-	<title>Edit the page of {data.nation.title} · Workspace · Model Tribal ADR Code</title>
+	<title>Edit {the(data.nation.title)}’s page · Workspace · Model Tribal ADR Code</title>
 </svelte:head>
 
-<p class="small">
+<p class="small page-links">
 	<a href="/workspace/nation-teams/{data.nation.identifier}">Your nation’s team</a> ·
 	<a href="/workspace/nation-teams/{data.nation.identifier}/changes">Changes and history</a>
 	{#if data.nation.page}· <a href={data.nation.page}>View the page</a>{/if}
 </p>
-<h1>Edit the page of {data.nation.title}</h1>
-<p>
-	Each part says when your change appears. The project reads every change after it is live and steps in only
-	for safety problems, which it tells you about. Facts the project cites to government records stay cited to
-	them; you can add your nation’s statement beside them, or ask for a correction through Report a problem on
-	the page.
+<h1>Edit {the(data.nation.title)}’s page</h1>
+<p class="lede">
+	Each part says when your change appears. The project reads every change after it is live and only steps in for safety problems, which it tells you about.
 </p>
 
 {#if generalMessage?.problem}
@@ -142,6 +224,222 @@
 	</section>
 {/if}
 
+<div class="edit-layout">
+	<form method="post" action="?/save" enctype="multipart/form-data" id="edit-form" class="edit-parts" onchange={(event) => { if ((event.target as HTMLElement).closest('.pictures-part')) pictureTouched = true; }}>
+		<input type="hidden" name="intent" value={canPublish ? 'publish' : 'draft'} />
+		{#if data.allowed.about.draft}
+			<section class="part" aria-labelledby="about-heading">
+				<input type="hidden" name="kind" value="about" />
+				{@render partHeading('about', 'about-heading', 'now')}
+				<p class="hint" id="about-hint">In your nation’s own words. The project does not rewrite it.</p>
+				<label for="about-text" class="visually-hidden">About your nation</label>
+				<textarea id="about-text" name="about-text" rows="4" bind:value={aboutText} aria-describedby="about-hint"></textarea>
+			</section>
+		{/if}
+
+		{#if data.allowed.courts.draft}
+			<section class="part" aria-labelledby="courts-heading">
+				<input type="hidden" name="kind" value="courts" />
+				{@render partHeading('courts', 'courts-heading', 'now')}
+				<p class="hint" id="courts-hint">A note shown at the end of “Courts and dispute resolution”, such as where peacemaking sessions are held.</p>
+				<label for="courts-text" class="visually-hidden">Note on courts and dispute resolution</label>
+				<textarea id="courts-text" name="courts-text" rows="3" bind:value={courtsText} aria-describedby="courts-hint"></textarea>
+			</section>
+		{/if}
+
+		{#if data.allowed.contacts.draft}
+			<section class="part" aria-labelledby="contacts-heading">
+				<input type="hidden" name="kind" value="contacts" />
+				{@render partHeading('contacts', 'contacts-heading', 'held')}
+				<p class="hint">
+					New emails, phone numbers and links wait {contactHoldDays} days, and the office already listed is told. This stops anyone from quietly sending your nation’s mail somewhere else. Another editor for your nation can approve it sooner.
+				</p>
+				{#each contactRows as row, index (index)}
+					<fieldset class="contact-row">
+						<legend class="visually-hidden">Contact {index + 1}</legend>
+						<div>
+							<label for="contact-office-{index}" class="small">Office</label>
+							<input type="text" id="contact-office-{index}" name="contact-office-{index}" bind:value={row.office} />
+						</div>
+						<div>
+							<label for="contact-kind-{index}" class="small">Kind</label>
+							<select id="contact-kind-{index}" name="contact-kind-{index}" bind:value={row.kind}>
+								{#each contactKinds as kind (kind)}
+									<option value={kind}>{contactKindLabels[kind]}</option>
+								{/each}
+							</select>
+						</div>
+						<div>
+							<label for="contact-value-{index}" class="small">Email, number or address</label>
+							<input type="text" id="contact-value-{index}" name="contact-value-{index}" bind:value={row.value} />
+						</div>
+					</fieldset>
+				{/each}
+				{#if !scripted && contactRows.length < data.contactRows}
+					<!-- Without scripts, one empty row to add a contact. -->
+					<fieldset class="contact-row">
+						<legend class="visually-hidden">Contact {contactRows.length + 1}</legend>
+						<div><label for="contact-office-{contactRows.length}" class="small">Office</label><input type="text" id="contact-office-{contactRows.length}" name="contact-office-{contactRows.length}" /></div>
+						<div>
+							<label for="contact-kind-{contactRows.length}" class="small">Kind</label>
+							<select id="contact-kind-{contactRows.length}" name="contact-kind-{contactRows.length}">
+								{#each contactKinds as kind (kind)}<option value={kind}>{contactKindLabels[kind]}</option>{/each}
+							</select>
+						</div>
+						<div><label for="contact-value-{contactRows.length}" class="small">Email, number or address</label><input type="text" id="contact-value-{contactRows.length}" name="contact-value-{contactRows.length}" /></div>
+					</fieldset>
+				{/if}
+				{#if contactRows.length < data.contactRows && scripted}
+					<button class="button button-quiet small-button" type="button" onclick={() => contactRows.push({ office: '', kind: 'email', value: '' })}>
+						<Plus size={16} aria-hidden="true" />Add a contact
+					</button>
+				{/if}
+				{#if ready.some((line) => line.kind === 'contacts')}
+					<div class="compared" aria-live="polite">
+						<NationChangeContent kind="contacts" content={{ contacts: contactsNow }} before={onPage.contacts} {pictureBase} />
+					</div>
+				{/if}
+			</section>
+		{/if}
+
+		{#if data.allowed.statements.draft}
+			<input type="hidden" name="kind" value="statements" />
+			{#each statementSections as section (section)}
+				{@const open = !scripted || addingStatement[section] || Boolean(statementTexts[section])}
+				<section class="part" aria-labelledby="statement-{section}-heading">
+					<div class="part-heading">
+						<h2 id="statement-{section}-heading">{statementSectionLabels[section].replace(/ \(.*\)$/, '')}</h2>
+						<span class="timing timing-record"><Landmark size={14} aria-hidden="true" />Government record</span>
+					</div>
+					<p class="hint">
+						{section === 'recognition' ? 'This fact comes' : 'These facts come'} from government records and {section === 'recognition' ? 'stays' : 'stay'} cited to them. You can add your nation’s statement beside {section === 'recognition' ? 'it' : 'them'}, which goes live when you publish, or ask the project to correct {section === 'recognition' ? 'it' : 'them'}.
+					</p>
+					{#if open}
+						<label for="statement-{section}">Your nation’s statement</label>
+						<textarea id="statement-{section}" name="statement-{section}" rows="3" bind:value={statementTexts[section]}></textarea>
+					{:else}
+						<input type="hidden" name="statement-{section}" value={statementTexts[section]} />
+					{/if}
+					<div class="button-row">
+						{#if !open}
+							<button class="button button-quiet small-button" type="button" onclick={() => (addingStatement[section] = true)}>
+								<Plus size={16} aria-hidden="true" />Add the nation’s statement
+							</button>
+						{/if}
+						<a class="button button-quiet small-button" href={correctionLink(section)}>Ask for a correction</a>
+					</div>
+				</section>
+			{/each}
+		{/if}
+
+		{#if data.allowed.pictures.draft}
+			<section class="part pictures-part" aria-labelledby="pictures-heading">
+				<input type="hidden" name="kind" value="pictures" />
+				{@render partHeading('pictures', 'pictures-heading', 'now')}
+				<p class="hint">Your nation’s page has no pictures unless your team adds them. Add only pictures your nation may share.</p>
+				{#each pictures.pictures as picture (picture.identifier)}
+					<fieldset class="picture-row">
+						<legend class="visually-hidden">Picture: {picture.alt}</legend>
+						<input type="hidden" name="picture" value={picture.identifier} />
+						<img src="{pictureBase}/{picture.identifier}" alt="" />
+						<div>
+							<div class="choice">
+								<input type="checkbox" id="keep-{picture.identifier}" name="keep-{picture.identifier}" value="yes" checked />
+								<label for="keep-{picture.identifier}">Keep this picture</label>
+							</div>
+							<div class="field">
+								<label for="alt-{picture.identifier}">What it shows, for people who cannot see it</label>
+								<input type="text" id="alt-{picture.identifier}" name="alt-{picture.identifier}" value={picture.alt} required />
+							</div>
+							<div class="field">
+								<label for="caption-{picture.identifier}">Caption</label>
+								<input type="text" id="caption-{picture.identifier}" name="caption-{picture.identifier}" value={picture.caption ?? ''} />
+							</div>
+							<div class="field">
+								<label for="credit-{picture.identifier}">Credit</label>
+								<input type="text" id="credit-{picture.identifier}" name="credit-{picture.identifier}" value={picture.credit ?? ''} />
+							</div>
+						</div>
+					</fieldset>
+				{/each}
+				<label for="new-picture">Add a picture</label>
+				<FileDropField id="new-picture" name="new-picture" accept="image/png,image/jpeg,image/webp" what="a PNG, JPEG or WebP picture" hint="Up to 5 MB." />
+				{#if pictureTouched || !scripted}
+					<div class="field">
+						<label for="new-alt">What it shows, for people who cannot see it</label>
+						<input type="text" id="new-alt" name="new-alt" />
+					</div>
+					<div class="field">
+						<label for="new-caption">Caption <span class="muted">(optional)</span></label>
+						<input type="text" id="new-caption" name="new-caption" />
+					</div>
+					<div class="field">
+						<label for="new-credit">Credit <span class="muted">(optional)</span></label>
+						<input type="text" id="new-credit" name="new-credit" />
+					</div>
+				{/if}
+			</section>
+		{/if}
+	</form>
+
+	<aside class="edit-side">
+		<section class="part" aria-labelledby="ready-heading">
+			<h2 id="ready-heading">{canPublish ? 'Ready to publish' : 'Ready to save'}</h2>
+			{#if ready.length > 0}
+				<ul class="ready">
+					{#each ready as line (line.text)}<li>{line.text}</li>{/each}
+				</ul>
+			{:else if scripted}
+				<p class="small muted">Nothing changed yet.</p>
+			{/if}
+			{#if data.starting.about.fromDraft || data.starting.courts.fromDraft || data.starting.contacts.fromDraft || data.starting.statements.fromDraft}
+				<p class="small muted">The form shows your saved draft.</p>
+			{/if}
+			<label for="credit">Credit the change to</label>
+			<select id="credit" name={credit === 'other' ? undefined : 'credit'} form="edit-form" bind:value={credit} aria-describedby="credit-hint">
+				{#each data.credits as option (option)}<option value={option}>{option}</option>{/each}
+				<option value="other">Another name</option>
+			</select>
+			{#if credit === 'other'}
+				<label for="credit-other" class="visually-hidden">Credit the change to</label>
+				<input type="text" id="credit-other" name="credit" form="edit-form" bind:value={otherCredit} required />
+			{/if}
+			<p class="hint" id="credit-hint">Shown on the page and in the citation. Your own name is not shown unless you choose it.</p>
+			<button class="button publish" type="submit" form="edit-form">{canPublish ? 'Publish' : 'Save as a draft'}</button>
+			{#if !canPublish}
+				<p class="small muted">An editor or steward for your nation publishes it{data.pause ? ' once the project resumes publishing' : ''}.</p>
+			{/if}
+		</section>
+
+		{#if data.allowed.hidden.publish}
+			<section class="part" aria-labelledby="hide-heading">
+				<h2 id="hide-heading">Hide something now</h2>
+				<p class="small muted">If anything on the page should not be public, hide it. It disappears at once and the project follows up.</p>
+				{@render message('hidden')}
+				{#if hidden.sections.length > 0}
+					<p class="small">Hidden now: {hidden.sections.map((section) => hideableSectionLabels[section]).join(', ')}.</p>
+				{/if}
+				<details class="hide" open={hidden.sections.length > 0 || undefined}>
+					<summary class="button button-quiet small-button warn">Hide a part of the page</summary>
+					<form method="post" action="?/save">
+						<input type="hidden" name="kind" value="hidden" />
+						<fieldset>
+							<legend class="visually-hidden">Parts of the page to hide</legend>
+							{#each hideableSections as section (section)}
+								<div class="choice">
+									<input type="checkbox" id="hide-{section}" name="hide" value={section} checked={hidden.sections.includes(section)} />
+									<label for="hide-{section}">{hideableSectionLabels[section]}</label>
+								</div>
+							{/each}
+						</fieldset>
+						<button class="button button-danger" type="submit">Save what is hidden</button>
+					</form>
+				</details>
+			</section>
+		{/if}
+	</aside>
+</div>
+
 {#if data.waiting.length > 0}
 	<section class="panel panel-filled" aria-labelledby="waiting-heading">
 		<h2 id="waiting-heading">Waiting to go live</h2>
@@ -202,183 +500,15 @@
 	</section>
 {/if}
 
-<div class="edit-layout">
-	<div class="edit-parts">
-		{#if data.allowed.about.draft}
-			<form method="post" action="?/save" class="panel" aria-labelledby="about-heading">
-				<input type="hidden" name="kind" value="about" />
-				{@render partHeading('about', 'about-heading', 'now')}
-				<p class="hint">In your nation’s own words. The project does not rewrite it. Leave it empty to remove it.</p>
-				<label for="about-text" class="visually-hidden">About your nation</label>
-				<textarea id="about-text" name="text" rows="8">{about.text}</textarea>
-				{@render actions('about')}
-			</form>
-		{/if}
-
-		{#if data.allowed.courts.draft}
-			<form method="post" action="?/save" class="panel" aria-labelledby="courts-heading">
-				<input type="hidden" name="kind" value="courts" />
-				{@render partHeading('courts', 'courts-heading', 'now')}
-				<p class="hint">
-					A note shown at the end of “Courts and dispute resolution”, beside what the project cites, such as where
-					peacemaking sessions are held.
-				</p>
-				<label for="courts-text" class="visually-hidden">Note on courts and dispute resolution</label>
-				<textarea id="courts-text" name="text" rows="5">{courts.text}</textarea>
-				{@render actions('courts')}
-			</form>
-		{/if}
-
-		{#if data.allowed.contacts.draft}
-			<form method="post" action="?/save" class="panel" aria-labelledby="contacts-heading">
-				<input type="hidden" name="kind" value="contacts" />
-				{@render partHeading('contacts', 'contacts-heading', 'held')}
-				<p class="hint">
-					Shown as “Contacts from the nation” beside the contacts the project cites. New emails, phone numbers and
-					links wait {contactHoldDays} days, and another editor for your nation can approve them sooner. Empty a row to
-					remove it.
-				</p>
-				{#each { length: contactRows } as _, index (index)}
-					{@const contact = contacts.contacts[index]}
-					<fieldset class="contact-row">
-						<legend class="visually-hidden">Contact {index + 1}</legend>
-						<div class="field">
-							<label for="contact-office-{index}">Office</label>
-							<input type="text" id="contact-office-{index}" name="contact-office-{index}" value={contact?.office ?? ''} />
-						</div>
-						<div class="field">
-							<label for="contact-kind-{index}">Kind</label>
-							<select id="contact-kind-{index}" name="contact-kind-{index}">
-								{#each contactKinds as kind (kind)}
-									<option value={kind} selected={(contact?.kind ?? 'email') === kind}>{contactKindLabels[kind]}</option>
-								{/each}
-							</select>
-						</div>
-						<div class="field">
-							<label for="contact-value-{index}">Email, number or address</label>
-							<input type="text" id="contact-value-{index}" name="contact-value-{index}" value={contact?.value ?? ''} />
-						</div>
-					</fieldset>
-				{/each}
-				{@render actions('contacts')}
-			</form>
-		{/if}
-
-		{#if data.allowed.statements.draft}
-			<form method="post" action="?/save" class="panel" aria-labelledby="statements-heading">
-				<input type="hidden" name="kind" value="statements" />
-				{@render partHeading('statements', 'statements-heading', 'now')}
-				<p class="hint">
-					These facts come from government records and stay cited to them. Your nation’s statement is shown beside
-					them, labeled as the nation’s.
-				</p>
-				{#each statementSections as section (section)}
-					<div class="field">
-						<label for="statement-{section}">Beside {statementSectionLabels[section]}</label>
-						<textarea id="statement-{section}" name="statement-{section}" rows="3">{statements.statements[section] ?? ''}</textarea>
-					</div>
-				{/each}
-				{@render actions('statements')}
-			</form>
-		{/if}
-
-		{#if data.allowed.pictures.draft}
-			<form method="post" action="?/save" enctype="multipart/form-data" class="panel" aria-labelledby="pictures-heading">
-				<input type="hidden" name="kind" value="pictures" />
-				{@render partHeading('pictures', 'pictures-heading', 'now')}
-				<p class="hint">
-					Your nation’s page has no pictures unless your team adds them. Add only pictures your nation may share.
-				</p>
-				{#each pictures.pictures as picture (picture.identifier)}
-					<fieldset class="picture-row">
-						<legend class="visually-hidden">Picture: {picture.alt}</legend>
-						<input type="hidden" name="picture" value={picture.identifier} />
-						<img src="{pictureBase}/{picture.identifier}" alt="" />
-						<div>
-							<div class="choice">
-								<input type="checkbox" id="keep-{picture.identifier}" name="keep-{picture.identifier}" value="yes" checked />
-								<label for="keep-{picture.identifier}">Keep this picture</label>
-							</div>
-							<div class="field">
-								<label for="alt-{picture.identifier}">What it shows, for people who cannot see it</label>
-								<input type="text" id="alt-{picture.identifier}" name="alt-{picture.identifier}" value={picture.alt} required />
-							</div>
-							<div class="field">
-								<label for="caption-{picture.identifier}">Caption</label>
-								<input type="text" id="caption-{picture.identifier}" name="caption-{picture.identifier}" value={picture.caption ?? ''} />
-							</div>
-							<div class="field">
-								<label for="credit-{picture.identifier}">Credit</label>
-								<input type="text" id="credit-{picture.identifier}" name="credit-{picture.identifier}" value={picture.credit ?? ''} />
-							</div>
-						</div>
-					</fieldset>
-				{/each}
-				<fieldset>
-					<legend>Add a picture</legend>
-					<div class="field">
-						<label for="new-picture">Picture</label>
-						<p class="hint" id="new-picture-hint">A PNG, JPEG or WebP file, up to 5 MB.</p>
-						<input type="file" id="new-picture" name="new-picture" accept="image/png,image/jpeg,image/webp" aria-describedby="new-picture-hint" />
-					</div>
-					<div class="field">
-						<label for="new-alt">What it shows, for people who cannot see it</label>
-						<input type="text" id="new-alt" name="new-alt" />
-					</div>
-					<div class="field">
-						<label for="new-caption">Caption <span class="muted">(optional)</span></label>
-						<input type="text" id="new-caption" name="new-caption" />
-					</div>
-					<div class="field">
-						<label for="new-credit">Credit <span class="muted">(optional)</span></label>
-						<input type="text" id="new-credit" name="new-credit" />
-					</div>
-				</fieldset>
-				{@render actions('pictures')}
-			</form>
-		{/if}
-	</div>
-
-	<aside class="edit-side">
-		{#if data.allowed.hidden.publish}
-			<form method="post" action="?/save" class="panel panel-filled" aria-labelledby="hide-heading">
-				<input type="hidden" name="kind" value="hidden" />
-				<h2 id="hide-heading">Hide something now</h2>
-				<p>If anything on the page should not be public, hide it. It disappears at once and the project follows up.</p>
-				{@render message('hidden')}
-				<fieldset>
-					<legend class="visually-hidden">Parts of the page to hide</legend>
-					{#each hideableSections as section (section)}
-						<div class="choice">
-							<input type="checkbox" id="hide-{section}" name="hide" value={section} checked={hidden.sections.includes(section)} />
-							<label for="hide-{section}">{hideableSectionLabels[section]}</label>
-						</div>
-					{/each}
-				</fieldset>
-				<button class="button button-danger" type="submit">Save what is hidden</button>
-			</form>
-		{/if}
-		<section class="panel" aria-labelledby="live-heading">
-			<h2 id="live-heading">On the page now</h2>
-			{#if Object.keys(data.live).length === 0}
-				<p>Nothing from your nation yet. The page shows only what the project cites.</p>
-			{:else}
-				<ul>
-					{#each Object.values(data.live) as change (change.identifier)}
-						<li>{describeChange(change.kind, change.content)} <span class="small muted">({when(change.liveAt)})</span></li>
-					{/each}
-				</ul>
-			{/if}
-		</section>
-	</aside>
-</div>
 
 {#snippet partHeading(kind: ChangeKind, identifier: string, timing: 'now' | 'held')}
 	<div class="part-heading">
-		<h2 id={identifier}>{changeKindLabels[kind]}</h2>
-		<span class="timing" class:timing-held={timing === 'held'}>
-			{timing === 'held' ? `Goes live in ${contactHoldDays} days` : 'Goes live when you publish'}
-		</span>
+		<h2 id={identifier}>{kind === 'contacts' ? 'Contact' : changeKindLabels[kind]}</h2>
+		{#if timing === 'held'}
+			<span class="timing timing-held"><Clock size={14} aria-hidden="true" />Goes live in {contactHoldDays} days</span>
+		{:else}
+			<span class="timing timing-now"><Check size={14} aria-hidden="true" />Goes live when you publish</span>
+		{/if}
 	</div>
 	{@render message(kind)}
 {/snippet}
@@ -392,23 +522,6 @@
 	{/if}
 {/snippet}
 
-{#snippet actions(kind: ChangeKind)}
-	{#if data.starting[kind].fromDraft}
-		<p class="small muted">This form shows your saved draft.</p>
-	{/if}
-	<div class="field">
-		<label for="credit-{kind}">Credit the change to</label>
-		<p class="hint" id="credit-{kind}-hint">Shown on the page. Your own name is not shown unless you type it here.</p>
-		<input type="text" id="credit-{kind}" name="credit" value={credit(kind)} aria-describedby="credit-{kind}-hint" />
-	</div>
-	<div class="button-row">
-		{#if data.allowed[kind].publish}
-			<button class="button" type="submit" name="intent" value="publish">Publish</button>
-		{/if}
-		<button class="button button-quiet" type="submit" name="intent" value="draft">Save as a draft</button>
-	</div>
-{/snippet}
-
 <style>
 	.edit-layout {
 		display: grid;
@@ -417,14 +530,94 @@
 
 	@media (min-width: 60rem) {
 		.edit-layout {
-			grid-template-columns: minmax(0, 2fr) minmax(16rem, 1fr);
+			grid-template-columns: minmax(0, 1fr) minmax(16rem, 22rem);
 			align-items: start;
 		}
 	}
 
-	.edit-parts > :global(.panel:first-child),
-	.edit-side > :global(.panel:first-child) {
+	.lede {
+		color: var(--color-ink-muted);
+	}
+
+	.edit-parts,
+	.edit-side {
+		display: grid;
+		gap: var(--space-4);
+		min-width: 0;
+	}
+
+	/* One card for each part, as in the approved mockup. */
+	.part {
+		padding: var(--space-4) var(--space-5);
+		border: 1px solid var(--color-line);
+		border-radius: var(--radius-panel);
+		background: var(--color-surface-raised);
+	}
+
+	.part > :last-child {
+		margin-bottom: 0;
+	}
+
+	.part h2 {
 		margin-top: 0;
+		font-size: var(--font-size-large);
+	}
+
+	.part .hint {
+		margin: var(--space-1) 0 var(--space-3);
+	}
+
+	.compared {
+		margin-top: var(--space-3);
+	}
+
+	.ready {
+		margin: var(--space-2) 0 var(--space-4);
+		padding-left: var(--space-5);
+	}
+
+	.edit-side label {
+		display: block;
+		margin: var(--space-3) 0 var(--space-1);
+		font-weight: var(--font-weight-semibold);
+	}
+
+	.edit-side .hint {
+		margin: var(--space-1) 0 var(--space-3);
+	}
+
+	.publish {
+		width: 100%;
+		justify-content: center;
+	}
+
+	.small-button {
+		display: inline-flex;
+		gap: var(--space-2);
+		align-items: center;
+		min-height: auto;
+		padding: var(--space-1) var(--space-3);
+		border-color: var(--color-link);
+		color: var(--color-link);
+		font-size: var(--font-size-small);
+	}
+
+	.warn {
+		border-color: var(--color-action);
+		color: var(--color-action);
+	}
+
+	.hide > summary {
+		list-style: none;
+		cursor: pointer;
+	}
+
+	.hide > summary::-webkit-details-marker {
+		display: none;
+	}
+
+	.hide form {
+		margin-top: var(--space-3);
 	}
 
 	.part-heading {
@@ -440,17 +633,28 @@
 	}
 
 	.timing {
+		display: inline-flex;
+		gap: var(--space-1);
+		align-items: center;
 		padding: 0 var(--space-2);
 		border: 1px solid var(--color-link);
 		border-radius: 999px;
+		background: var(--color-notice-background);
 		color: var(--color-link);
 		font-size: var(--font-size-small);
 		font-weight: var(--font-weight-semibold);
 	}
 
+	.timing-now {
+		border-color: var(--color-line);
+		background: var(--color-added-background);
+		color: var(--color-ink);
+	}
+
 	.timing-held {
-		border-color: var(--color-danger);
-		color: var(--color-danger);
+		border-color: var(--color-action);
+		background: var(--color-removed-background);
+		color: var(--color-action);
 	}
 
 	textarea,
@@ -469,18 +673,29 @@
 	.contact-row {
 		display: grid;
 		gap: var(--space-2) var(--space-3);
-		padding-bottom: var(--space-3);
-		border-bottom: 1px solid var(--color-line);
+		margin-bottom: var(--space-2);
+	}
+
+	.contact-row label {
+		display: block;
+	}
+
+	/* On a wide screen the rows line up under the first row's labels. */
+	@media (min-width: 40rem) {
+		.contact-row + .contact-row label {
+			position: absolute;
+			width: 1px;
+			height: 1px;
+			overflow: hidden;
+			clip-path: inset(50%);
+			white-space: nowrap;
+		}
 	}
 
 	@media (min-width: 40rem) {
 		.contact-row {
 			grid-template-columns: 2fr 1fr 2fr;
 		}
-	}
-
-	.contact-row .field {
-		margin: 0;
 	}
 
 	.picture-row {

@@ -72,6 +72,18 @@ function byline(change: ChangeRow): string {
 	return `<p class="nation-byline small">Written by ${escapeHtml(creditPhrase(change.credit))} · Updated ${changeDate(change)}</p>`;
 }
 
+/**
+ * An "Edit" link for a part of the page. Every reader gets it, hidden; the
+ * page shows it only to someone on the nation's team whose place covers that
+ * part (src/lib/components/NationEditorBanner.svelte), and the edit page
+ * checks their place again.
+ */
+export function editLink(nationIdentifier: string, part: string, anchor: string, name: string): string {
+	const pen =
+		'<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21.174 6.812a1 1 0 0 0-3.986-3.987L3.842 16.174a2 2 0 0 0-.5.83l-1.321 4.352a.5.5 0 0 0 .623.622l4.353-1.32a2 2 0 0 0 .83-.497z"/><path d="m15 5 4 4"/></svg>';
+	return `<a class="nation-edit-link no-print" data-edit-part="${part}" href="/workspace/nation-teams/${encodeURIComponent(nationIdentifier)}/edit#${anchor}">${pen}Edit<span class="visually-hidden"> ${escapeHtml(name)}</span></a>`;
+}
+
 /** Selectors of the parts of the page an editor can hide. */
 const hiddenSelectors: Record<HideableSection, string> = {
 	courts: 'details[data-section="courts-heading"]',
@@ -179,7 +191,7 @@ function slotsFor(
 	if (live.about && live.about.content.text) {
 		add(
 			'top',
-			`<section class="nation-words" aria-labelledby="nation-words-heading"><h2 id="nation-words-heading">About</h2>${byline(live.about)}<div class="nation-words-text">${paragraphs(live.about.content.text)}</div></section>`
+			`<section class="nation-words" aria-labelledby="nation-words-heading">${editLink(nationIdentifier, 'about', 'about-heading', 'About')}<h2 id="nation-words-heading">About</h2>${byline(live.about)}<div class="nation-words-text">${paragraphs(live.about.content.text)}</div></section>`
 		);
 	}
 

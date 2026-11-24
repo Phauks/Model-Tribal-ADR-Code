@@ -4,11 +4,13 @@ import { pageParts, proofRoutes, type PagePart, type ProofRoute } from '#lib/nat
 import { applicationsOf, placesOf, saveApplication, withdrawApplication } from '#lib/server/nation-teams.ts';
 import { readFile } from '#lib/server/request-form.ts';
 import { formText, requireAccount, storage } from '#lib/server/workspace.ts';
+import { displayName } from '#lib/nation-labels.ts';
 import type { Actions, PageServerLoad } from './$types';
 
 const nations = reviewSubjects
 	.filter((subject) => subject.kind === 'nation')
-	.map((subject) => ({ identifier: subject.identifier, title: subject.title }))
+	// The name as the nation's page shows it, without the states the federal list adds.
+	.map((subject) => ({ identifier: subject.identifier, title: displayName(subject.title) }))
 	.sort((first, second) => first.title.localeCompare(second.title, 'en-US'));
 
 /** At most this many requests can wait at once, so the form cannot be used to flood the project. */
@@ -41,9 +43,10 @@ export const actions: Actions = {
 		if (!office) errors.office = 'Give your title or office at the nation.';
 		const route = formText(form, 'route') as ProofRoute | null;
 		if (!route || !proofRoutes.includes(route)) errors.route = 'Choose how your nation chose you.';
-		const whole = formText(form, 'scope') !== 'parts';
-		const chosenParts = form.getAll('parts').filter((part): part is PagePart => pageParts.includes(part as PagePart));
-		if (!whole && chosenParts.length === 0) errors.parts = 'Choose at least one part of the page, or the whole page.';
+		// "All of the page", or one part such as "Contacts only"; the nation can widen or narrow it later.
+		const scope = formText(form, 'scope') ?? 'whole';
+		const whole = !pageParts.includes(scope as PagePart);
+		const chosenParts: PagePart[] = whole ? [] : [scope as PagePart];
 		const details = formText(form, 'details', 4000);
 		const proof = await readFile(form, 'proof', errors);
 		if ((route === 'letter' || route === 'resolution') && !proof && !errors.proof) {
