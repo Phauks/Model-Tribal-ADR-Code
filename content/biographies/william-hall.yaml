@@ -1,0 +1,28 @@
+key: william-hall
+name: William Hall
+lead: Choctaw head of a family whose 1841 patent and 1836 sale of treaty land were disputed in Wilson v. Wall (1867).
+living: false
+nations:
+- nation: the-choctaw-nation-of-oklahoma
+  named_as: Choctaw
+  source: wilson-v-wall
+  where: 73 U.S. at 86
+cases:
+- case: wilson-v-wall
+  role: Allottee
+  where: 73 U.S. at 84, 91
+  result: Judgment reversed; the sale to Wilson was not subject to the children's claimed trust.
+events:
+- when: '1836'
+  text: Sold the three and a half sections of land to Wilson for $750.
+  source: wilson-v-wall
+  where: 73 U.S. at 84
+- when: '1841'
+  text: A patent issued to him directly for the whole three and a half sections.
+  source: wilson-v-wall
+  where: 73 U.S. at 84
+- when: Apr. 1849
+  text: Dead when his children sued Wilson to recover two and a half sections.
+  source: wilson-v-wall
+  where: 73 U.S. at 84
+checked: '2026-11-24'

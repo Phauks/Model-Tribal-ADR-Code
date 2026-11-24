@@ -59,7 +59,7 @@
 		<h1>{title}</h1>
 		{#if names.length > 0}
 			<p class="other-names">
-				{#each names as other, index (other.name)}{#if index > 0}; {/if}<span lang="und"><strong>{other.name}</strong></span>{#if other.note}<span class="muted">, {other.note}</span>{/if}<CitationMarks marks={other.citations ?? []} />{/each}
+				{#each names as other, index (other.name)}{#if index > 0}{'; '}{/if}<span lang="und"><strong>{other.name}</strong></span>{#if other.note}<span class="muted">, {other.note}</span>{/if}<CitationMarks marks={other.citations ?? []} />{/each}
 			</p>
 		{/if}
 		{#if lead}<p class="lead">{lead}</p>{/if}
