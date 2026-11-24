@@ -22,8 +22,7 @@
 	import { datedFileName, datedName } from '#lib/download-names.ts';
 	import { mapTableOnScreen } from '#lib/map-table-on-screen.svelte.ts';
 	import { buildTime } from '#lib/offline-collections.ts';
-	import { fileExtension, groupedFiles, pageCitation, pageDownloads, pageFormats, type PageFile, type PageFormat } from '#lib/page-downloads.ts';
-	import Check from '@lucide/svelte/icons/check';
+	import { fileExtension, groupedFiles, pageDownloads, pageFormats, type PageFile, type PageFormat } from '#lib/page-downloads.ts';
 	import Download from '@lucide/svelte/icons/download';
 	import FileBraces from '@lucide/svelte/icons/file-braces';
 	import FileSpreadsheet from '@lucide/svelte/icons/file-spreadsheet';
@@ -33,8 +32,6 @@
 			import ContactRound from '@lucide/svelte/icons/contact-round';
 	import MapIcon from '@lucide/svelte/icons/map';
 	import LibraryBig from '@lucide/svelte/icons/library-big';
-	import Quote from '@lucide/svelte/icons/quote';
-	import { copyRichText } from '#lib/clipboard.ts';
 	import { saveFile } from '#lib/save-file.ts';
 
 	let { onpdf }: { onpdf: () => void } = $props();
@@ -52,18 +49,15 @@
 	};
 
 	let open = $state(false);
-	let copied = $state(false);
 	let message = $state('');
 	let container: HTMLDivElement | undefined = $state();
 	let button: HTMLButtonElement | undefined = $state();
 	let panel: HTMLDivElement | undefined = $state();
-	let copiedTimer: ReturnType<typeof setTimeout> | undefined;
 
 	// A new page starts closed, with no message.
 	$effect(() => {
 		void page.url.pathname;
 		open = false;
-		copied = false;
 		message = '';
 	});
 
@@ -146,20 +140,6 @@
 		const heading = document.querySelector('#main-content h1')?.textContent?.replace(/\s+/g, ' ').trim();
 		return heading || document.title.split(' · ')[0];
 	}
-
-	async function copyCitation() {
-		const versions = page.data.versions as { content?: string } | undefined;
-		const citation = pageCitation(pageTitle(), siteName, versions?.content, location.href.split('#')[0], new Date());
-		try {
-			await copyRichText(citation.text, citation.html);
-			copied = true;
-			message = `Citation copied: ${citation.text}`;
-			clearTimeout(copiedTimer);
-			copiedTimer = setTimeout(() => (copied = false), 4000);
-		} catch {
-			message = `Your browser did not allow copying. The citation is: ${citation.text}`;
-		}
-	}
 </script>
 
 <svelte:document onclick={closeOnOutside} />
@@ -200,17 +180,6 @@
 					</span>
 				</span>
 			</li>
-			{#if offers.citable}
-				<li>
-					<button type="button" class="row" onclick={copyCitation}>
-						{#if copied}<Check size={20} strokeWidth={1.75} />{:else}<Quote size={20} strokeWidth={1.75} />{/if}
-						<span class="choice">
-							<span class="choice-name">{copied ? 'Citation copied' : 'Copy a citation'}</span>
-							<span class="choice-hint">An Indigo Book citation to this page, to paste into your own writing</span>
-						</span>
-					</button>
-				</li>
-			{/if}
 		</ul>
 		{#each groups as group, index (group.heading)}
 			<p class="group-heading" id="download-group-{index}">{group.heading}</p>

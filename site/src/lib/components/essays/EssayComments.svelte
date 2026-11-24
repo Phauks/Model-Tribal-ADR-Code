@@ -43,6 +43,7 @@
 	import Scissors from '@lucide/svelte/icons/scissors';
 	import SearchCheck from '@lucide/svelte/icons/search-check';
 	import { sendJson } from '#lib/send-json.ts';
+	import TextSearch from '@lucide/svelte/icons/text-search';
 
 	let {
 		essay,
@@ -75,7 +76,7 @@
 		pending: CommentDraft | null;
 		current: string | null;
 		onchange: (comments: EssayComment[]) => void;
-		ongo: (thread: string) => void;
+		ongo: (thread: string, focus?: boolean) => void;
 	} = $props();
 
 	const askIcons = {
@@ -437,6 +438,9 @@
 		{:else}
 			{#if assigning === id}{@render assignList(id, thread.first.assignee)}{/if}
 			<p class="row actions">
+				{#if placement !== 'moved'}
+					<button class="quiet" type="button" onclick={() => ongo(id, true)}><TextSearch size={16} aria-hidden="true" /> Show in text</button>
+				{/if}
 				<button class="quiet" type="button" onclick={() => (replying = id)}><CornerUpLeft size={16} aria-hidden="true" /> Reply</button>
 				{#if !thread.first.resolvedAt && (mayResolveAny || thread.first.personIdentifier === you)}
 					<button class="quiet" type="button" aria-expanded={assigning === id} onclick={() => startAssign(id)}><UserRoundPlus size={16} aria-hidden="true" /> Assign</button>
