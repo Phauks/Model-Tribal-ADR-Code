@@ -100,21 +100,18 @@ export interface Era {
 	end: number;
 	/** The years as the essay's heading gives them. */
 	years: string;
-	/** The era's heading in the legal history essay. */
-	anchor: string;
+	/** The era's own chapter of the legal history timeline (content/essays/i-legal-history-timeline-*.md). */
+	page: string;
 }
 
 export const eras: Era[] = [
-	{ name: 'Treaty era', start: 1492, end: 1871, years: '1492 to 1871', anchor: 'treaty-era-1492-to-1871' },
-	{ name: 'Reservations and allotment', start: 1871, end: 1934, years: '1871 to 1934', anchor: 'reservations-and-allotment-1871-to-1934' },
-	{ name: 'Reorganization', start: 1934, end: 1946, years: '1934 to 1946', anchor: 'reorganization-1934-to-1946' },
-	{ name: 'Termination', start: 1946, end: 1968, years: '1946 to 1968', anchor: 'termination-1946-to-1968' },
-	{ name: 'Self-determination', start: 1968, end: 1988, years: '1968 to 1987', anchor: 'self-determination-1968-to-1987' },
-	{ name: 'Modern era', start: 1988, end: 10000, years: '1988 to the present', anchor: 'modern-era-1988-to-the-present' }
+	{ name: 'Treaty era', start: 1492, end: 1871, years: '1492 to 1871', page: '/foundations/legal-history-timeline-01-treaty-era' },
+	{ name: 'Reservations and allotment', start: 1871, end: 1934, years: '1871 to 1934', page: '/foundations/legal-history-timeline-03-reservations-and-allotment' },
+	{ name: 'Reorganization', start: 1934, end: 1946, years: '1934 to 1946', page: '/foundations/legal-history-timeline-04-reorganization' },
+	{ name: 'Termination', start: 1946, end: 1968, years: '1946 to 1968', page: '/foundations/legal-history-timeline-05-termination' },
+	{ name: 'Self-determination', start: 1968, end: 1988, years: '1968 to 1987', page: '/foundations/legal-history-timeline-06-self-determination' },
+	{ name: 'Modern era', start: 1988, end: 10000, years: '1988 to the present', page: '/foundations/legal-history-timeline-07-modern-era' }
 ];
-
-/** The legal history essay, whose era headings the timeline links to once it is published. */
-export const historyEssayPath = '/foundations/legal-history-timeline';
 
 /** The era a year falls in. */
 export function eraOf(year: number): Era {
