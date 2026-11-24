@@ -3,16 +3,13 @@
  * Indian Health Service Area and each Bureau of Indian Affairs region with
  * its agencies, listing the nations whose records name the office. Which
  * nations an office serves comes from the nations' own records, so the page
- * lists the sources those records cite.
+ * lists the sources those records cite, as References with the fact each
+ * one supports (site/DESIGN.md, "Info pages").
  */
 import { agencyLink, bureauRegions, healthAreas, officeKey, type FederalOffice } from '../federal-offices.ts';
-import { nations, sources, type NationRecord } from './content.ts';
+import { nations, type NationRecord } from './content.ts';
 import { groupsOf, nationIndexRows, type NationGroup, type NationIndexRow } from './nation-index.ts';
-
-export interface OfficeSource {
-	title: string;
-	link?: string;
-}
+import { SourceUses, type SourceEntry } from './source-uses.ts';
 
 export interface OfficeSummary extends FederalOffice {
 	count: number;
@@ -20,19 +17,6 @@ export interface OfficeSummary extends FederalOffice {
 
 function rowsFor(ids: Set<string>): NationIndexRow[] {
 	return nationIndexRows().filter((row) => ids.has(row.id));
-}
-
-function sourceList(keys: Set<string>): OfficeSource[] {
-	return [...keys]
-		.flatMap((key) => {
-			const record = sources().get(key);
-			if (!record) return [];
-			const link = record.citation.URL ?? record.original_link;
-			const author = record.citation.author?.[0]?.literal;
-			const title = [author, record.citation.title ?? record.key].filter(Boolean).join(', ');
-			return [{ title, link: link && URL.canParse(link) ? link : undefined }];
-		})
-		.sort((first, second) => first.title.localeCompare(second.title, 'en'));
 }
 
 function servedByArea(area: string): NationRecord[] {
@@ -60,7 +44,7 @@ export interface HealthAreaView {
 	groups: NationGroup[];
 	count: number;
 	serviceUnits: ServiceUnit[];
-	sources: OfficeSource[];
+	sources: SourceEntry[];
 }
 
 export function healthAreaView(key: string): HealthAreaView | undefined {
@@ -68,18 +52,19 @@ export function healthAreaView(key: string): HealthAreaView | undefined {
 	if (!office) return undefined;
 	const records = servedByArea(office.name);
 	const names = new Map(nationIndexRows().map((row) => [row.id, row.name]));
-	const keys = new Set<string>();
+	const uses = new SourceUses();
 	const units = new Map<string, ServiceUnit>();
 	for (const record of records) {
+		const name = names.get(record.id) ?? record.names.official;
 		for (const fact of record.indian_health_service ?? []) {
 			if (fact.area !== office.name) continue;
-			if (fact.source) keys.add(fact.source);
+			uses.use(fact, 'Nations served', fact.service_unit ? `${name}: ${fact.service_unit}` : name);
 			if (!fact.service_unit) continue;
 			const unit = units.get(fact.service_unit) ?? { name: fact.service_unit, nations: [] };
 			if (!unit.nations.some((nation) => nation.id === record.id)) {
 				unit.nations.push({
 					id: record.id,
-					name: names.get(record.id) ?? record.names.official,
+					name,
 					runBy:
 						fact.operator === 'tribal'
 							? 'run by the nation or a Tribal organization'
@@ -97,7 +82,7 @@ export function healthAreaView(key: string): HealthAreaView | undefined {
 		groups: groupsOf(rows),
 		count: rows.length,
 		serviceUnits: [...units.values()].sort((first, second) => first.name.localeCompare(second.name, 'en')),
-		sources: sourceList(keys)
+		sources: uses.list
 	};
 }
 
@@ -113,7 +98,7 @@ export interface BureauRegionView {
 	agencies: AgencyView[];
 	unassigned: NationIndexRow[];
 	count: number;
-	sources: OfficeSource[];
+	sources: SourceEntry[];
 }
 
 export function bureauRegionView(key: string): BureauRegionView | undefined {
@@ -121,15 +106,16 @@ export function bureauRegionView(key: string): BureauRegionView | undefined {
 	if (!office) return undefined;
 	const records = servedByRegion(office.name);
 	const rows = new Map(nationIndexRows().map((row) => [row.id, row]));
-	const keys = new Set<string>();
+	const uses = new SourceUses();
 	const agencies = new Map<string, AgencyView>();
 	const unassigned: NationIndexRow[] = [];
-	for (const record of records) {
+	const byRowName = (record: NationRecord) => rows.get(record.id)?.name ?? '';
+	for (const record of [...records].sort((first, second) => byRowName(first).localeCompare(byRowName(second), 'en'))) {
 		const administration = record.federal_administration;
 		const row = rows.get(record.id);
 		if (!administration || !row) continue;
-		if (administration.source) keys.add(administration.source);
 		const agency = administration.bureau_of_indian_affairs_agency;
+		uses.use(administration, 'Nations served', agency ? `${row.name}: ${agency}` : row.name);
 		if (!agency) {
 			unassigned.push(row);
 			continue;
@@ -145,6 +131,6 @@ export function bureauRegionView(key: string): BureauRegionView | undefined {
 		agencies: [...agencies.values()].sort(byName),
 		unassigned: unassigned.sort(byName),
 		count: records.length,
-		sources: sourceList(keys)
+		sources: uses.list
 	};
 }

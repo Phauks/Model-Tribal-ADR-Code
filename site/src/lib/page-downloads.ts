@@ -106,7 +106,7 @@ export interface PageDownloads {
 /** On the map page, the view on screen, whose table the menu offers first. */
 export function pageDownloads(path: string, mapTable?: { file: string; label: string }): PageDownloads {
 	const nation = /^\/nations\/([^/]+)$/.exec(path)?.[1];
-	if (nation && nation !== 'map' && nation !== 'recourse' && nation !== 'data' && nation !== 'timeline' && nation !== 'federal-offices') {
+	if (nation && nation !== 'map' && nation !== 'recourse' && nation !== 'law' && nation !== 'data' && nation !== 'timeline' && nation !== 'federal-offices' && nation !== 'coverage') {
 		return {
 			citable: true,
 			files: [
@@ -242,7 +242,7 @@ export function pageDownloads(path: string, mapTable?: { file: string; label: st
 			]
 		};
 	}
-	return { citable: /^\/stories\/[^/]+$/.test(path), files: [] };
+	return { citable: /^\/(stories|cases)\/[^/]+$/.test(path) || /^\/supreme-court\/(justices|presidents)\/[^/]+$/.test(path) || /^\/supreme-court\/(?!justices$|presidents$|portraits$)[^/]+$/.test(path), files: [] };
 }
 
 /** The map's layers as GeoJSON (RFC 7946), for mapping programs; also listed on the Downloads page. */

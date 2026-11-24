@@ -339,7 +339,7 @@ describe('the Worker that adds the changes to the page', () => {
 	it('runs the Worker first for nation pages and wraps whatever entry the build made', () => {
 		expect(wrappedConfig({ main: 'scheduled-entry.js', assets: { binding: 'ASSETS', directory: '../client' } })).toEqual({
 			main: 'nation-pages-entry.js',
-			assets: { binding: 'ASSETS', directory: '../client', run_worker_first: ['/nations/*'] }
+			assets: { binding: 'ASSETS', directory: '../client', run_worker_first: ['/nations/*', '/copies/offline/nations/*'] }
 		});
 		expect(entrySource('scheduled-entry.js')).toContain(`import worker from './scheduled-entry.js';`);
 	});

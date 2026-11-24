@@ -113,12 +113,16 @@
 		]}
 	/>
 {/if}
+<!-- The title comes right after the breadcrumbs, which pull it up to meet them
+	(Breadcrumbs.svelte), so the page links go under the title, as on other
+	pages with a trail. -->
+<h1>{the(data.nation.title).replace(/^the /, 'The ')}’s team</h1>
 <p class="small page-links">
 	<a href="/workspace/nation-teams/{data.nation.identifier}/edit">Edit the page</a> ·
-	<a href="/workspace/nation-teams/{data.nation.identifier}/changes">Changes and history</a>
+	<a href="/workspace/nation-teams/{data.nation.identifier}/changes">Changes and history</a> ·
+	<a href="/workspace/nation-teams/{data.nation.identifier}/laws-and-cases">Laws and cases</a>
 	{#if data.nation.page}· <a href={data.nation.page}>View the page</a>{/if}
 </p>
-<h1>{the(data.nation.title).replace(/^the /, 'The ')}’s team</h1>
 <p class="lede">
 	{#if data.isAdministrator}
 		As the lead author you can add, change and end any place on this team, and suspend a person together with everyone they added.

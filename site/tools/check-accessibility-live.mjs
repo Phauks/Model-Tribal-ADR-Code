@@ -47,11 +47,7 @@ const phone = { width: 390, height: 844 };
 const allowed = [
 	// The small "Document access" link in each row sits 2 px above the row's
 	// "Remove access" button. Making it a 24 px target moves the buttons.
-	{ where: '/workspace/people as leadAuthor', rule: 'target-size', reason: 'link and button stacked in the Actions column' },
-	// The breadcrumbs pull the next element up to meet the title
-	// (Breadcrumbs.svelte), but here a line of links comes between them, so
-	// that line is drawn over the breadcrumbs. Fixing it changes the layout.
-	{ where: `/workspace/nation-teams/${fixtureNation} as leadAuthor`, rule: 'target-size', reason: 'the page links overlap the breadcrumbs' }
+	{ where: '/workspace/people as leadAuthor', rule: 'target-size', reason: 'link and button stacked in the Actions column' }
 ];
 
 /* Opening menus and dialogs ------------------------------------------------ */
