@@ -1,0 +1,138 @@
+key: united-states-v-waller
+kind: federal-case
+citation:
+  type: legal_case
+  title: United States v. Waller
+  authority: Supreme Court of the United States
+  container-title: U.S.
+  volume: '243'
+  page: '452'
+  issued:
+    date-parts:
+    - - 1917
+      - 4
+      - 9
+  URL: https://www.loc.gov/item/usrep243452/
+  accessed:
+    date-parts:
+    - - 2026
+      - 11
+      - 24
+caption:
+  printed: UNITED STATES v. WALLER ET AL
+  source: https://tile.loc.gov/storage-services/service/ll/usrep/usrep243/usrep243452/usrep243452.pdf
+  checked: '2026-11-24'
+opinions:
+  source: https://tile.loc.gov/storage-services/service/ll/usrep/usrep243/usrep243452/usrep243452.pdf
+  checked: '2026-11-24'
+  list:
+  - kind: majority
+    justice: William Rufus Day
+    page: 455
+original_link: https://www.loc.gov/item/usrep243452/
+retrieved: '2026-11-24'
+history:
+  status: live
+  last_checked: '2026-11-24'
+court_dates:
+  argued:
+  - '1917-03-14'
+  - '1917-03-15'
+  printed: Argued March 14, 15, 1917. — Decided April 9, 1917.
+  source: https://tile.loc.gov/storage-services/service/ll/usrep/usrep243/usrep243452/usrep243452.pdf
+  checked: '2026-11-24'
+supreme_court:
+  court: White Court
+  natural_court: White Court (1916-1921)
+  decision_type: majority opinion
+  vote:
+    majority: 9
+    minority: 0
+  justices:
+  - name: Edward Douglass White
+    vote: majority
+  - name: Joseph McKenna
+    vote: majority
+  - name: Oliver Wendell Holmes
+    vote: majority
+  - name: William Rufus Day
+    vote: majority
+    opinion: majority
+  - name: Willis Van Devanter
+    vote: majority
+  - name: Mahlon Pitney
+    vote: majority
+  - name: James Clark McReynolds
+    vote: majority
+  - name: Louis Dembitz Brandeis
+    vote: majority
+  - name: John Hessin Clarke
+    vote: majority
+  source: http://scdb.wustl.edu/_brickFiles/Legacy_07/SCDB_Legacy_07_justiceCentered_Citation.csv.zip
+  note: From the Supreme Court Database, case 1916-134; Oyez has no votes for this case.
+  checked: '2026-11-24'
+reading_links:
+  checked: '2026-11-24'
+  links:
+  - site: library-of-congress
+    label: Library of Congress
+    access: official
+    link: https://www.loc.gov/item/usrep243452/
+  - site: justia
+    label: Justia
+    access: free
+    link: https://supreme.justia.com/cases/federal/us/243/452/
+    unchecked: true
+  - site: google-scholar
+    label: Google Scholar
+    access: free
+    link: https://scholar.google.com/scholar?hl=en&as_sdt=2006&q=%22243%20U.S.%20452%22
+    unchecked: true
+  - site: westlaw
+    label: Westlaw
+    access: subscription
+    link: https://1.next.westlaw.com/Link/Document/FullText?findType=Y&cite=243%20U.S.%20452
+    unchecked: true
+  - site: lexis
+    label: Lexis
+    access: subscription
+    link: https://advance.lexis.com/api/search?q=243%20U.S.%20452
+    unchecked: true
+rights:
+  status: no-permission-needed
+  basis: us-government-work
+  basis_note: Opinions of federal courts are works of the U.S. government (17 U.S.C. § 105); the host site's own additions are not reproduced.
+  redistribution: true
+found_in:
+- 2026-11-24-supreme-court-native-cases
+notes: 'Full citation: 243 U.S. 452 (1917). Official report scan: https://tile.loc.gov/storage-services/service/ll/usrep/usrep243/usrep243452/usrep243452.pdf. Written by scripts/caselaw/supreme_court_native_cases.py from the Supreme Court Database (case 1916-134), the Caselaw Access Project''s text of the report and the Library of Congress scan; not yet read by a person.'
+tribes: []
+nations_in_case:
+  checked: '2026-11-24'
+  named: []
+review:
+  status: verified
+  by: scripts/caselaw/supreme_court_native_cases.py
+  date: '2026-11-24'
+  checks:
+  - check: cite
+    result: agree
+    detail: Caselaw Access Project 243 U.S. 452 "United States v. Waller"; Database 243 U.S. 452 "UNITED STATES v. WALLER et al."
+  - check: scan
+    result: agree
+    detail: Scan has 13 pages; the report runs 452 to 464
+  - check: caption
+    result: agree
+    detail: Caption found in the scan's text at 1.00
+  - check: printed dates
+    result: agree
+    detail: Caselaw Access Project "Argued March 14, 15, 1917. — Decided April 9, 1917."; scan "Argued March 14, 15, 1917.-Decided April 9, 1917."
+  - check: decided
+    result: agree
+    detail: 'Printed and Database: 1917-04-09'
+  - check: opinions
+    result: agree
+    detail: 'Report: majority Day p. 455; Database writers: Day'
+  - check: bench
+    result: agree
+    detail: No Oyez votes; each opinion writer in the report sits on the Database's bench on the side the opinion takes

@@ -1,0 +1,124 @@
+profile: content/tribes/p/poarch-band-of-creek-indians.yaml
+topic: legal-help
+status: found
+last_searched: '2026-11-24'
+searches:
+- date: '2026-11-24'
+  searched_by: Claude (AI assistant)
+  method: browser
+  place_kind: web-search
+  address: Web search (search engine)
+  query: Poarch Band of Creek Indians legal aid members
+  outcome: found
+  reason: Returned the LSA partnership announcement on pci-nsn.gov, which led to the Poarch-only wills clinic.
+  records:
+  - research/legal-help/providers/poarch-band-legal-services-alabama-partnership.yaml
+- date: '2026-11-24'
+  searched_by: Claude (AI assistant)
+  method: browser
+  place_kind: web-search
+  address: Web search (search engine)
+  query: Poarch Creek Indians Legal Services Alabama partnership legal aid
+  outcome: found
+  reason: Confirmed the partnership page; the $50,000 donation funds a John Lewis Fellow for South Alabama legal aid, with no nation-specific eligibility in that paragraph.
+  records:
+  - research/legal-help/providers/poarch-band-legal-services-alabama-partnership.yaml
+- date: '2026-11-24'
+  searched_by: Claude (AI assistant)
+  method: browser
+  place_kind: nation-website
+  address: https://pci-nsn.gov/?p=19744
+  outcome: found
+  reason: Read the partnership announcement; it names a Poarch-only Wills Clinic run by LSA Mobile staff.
+  records:
+  - research/legal-help/providers/poarch-band-legal-services-alabama-partnership.yaml
+- date: '2026-11-24'
+  searched_by: Claude (AI assistant)
+  method: browser
+  place_kind: nation-website
+  address: https://pci-nsn.gov/
+  outcome: not-found
+  reason: Homepage lists only bill-pay and Roundhouse login help; no legal aid, legal services or court help for members.
+- date: '2026-11-24'
+  searched_by: Claude (AI assistant)
+  method: browser
+  place_kind: nation-website
+  address: https://pci-nsn.gov/our-government/legal/
+  outcome: not-found
+  reason: Describes the Legal Department as serving the Tribal Council and enterprises and the tribal court as serving citizens; no individual legal help described.
+- date: '2026-11-24'
+  searched_by: Claude (AI assistant)
+  method: browser
+  place_kind: web-search
+  address: Web search (search engine)
+  query: Alabama legal aid Native American program
+  outcome: found
+  reason: 'Statewide search: Results were mostly directories; the Poarch Creek page describing a Legal Services Alabama partnership and a wills clinic for Poarch Creek citizens was a lead.'
+- date: '2026-11-24'
+  searched_by: Claude (AI assistant)
+  method: browser
+  place_kind: web-search
+  address: Web search (search engine)
+  query: Legal Services Alabama Native American tribal members legal help
+  outcome: found
+  reason: 'Statewide search: Returned the same Poarch Creek page and directory listings; no other Alabama program naming Native people.'
+- date: '2026-11-24'
+  searched_by: Claude (AI assistant)
+  method: browser
+  place_kind: nation-website
+  address: https://pci-nsn.gov/?p=19744
+  outcome: found
+  reason: 'Statewide search: Read the Poarch Creek page; it names Legal Services Alabama and a wills clinic exclusively for Poarch Creek Tribal Citizens.'
+- date: '2026-11-24'
+  searched_by: Claude (AI assistant)
+  method: browser
+  place_kind: legal-aid-site
+  address: https://www.lawhelp.org/al
+  outcome: error
+  reason: 'Statewide search: Not fetched: WebFetch budget for the session was exhausted before this state''s LawHelp page could be read.'
+- date: '2026-11-24'
+  searched_by: Claude (AI assistant)
+  method: browser
+  place_kind: web-search
+  address: Web search (search engine)
+  query: Florida legal aid Native American program
+  outcome: not-found
+  reason: 'Statewide search: Results were private-lawyer directories and general Florida legal aid news; no Native-specific legal aid program named.'
+- date: '2026-11-24'
+  searched_by: Claude (AI assistant)
+  method: browser
+  place_kind: web-search
+  address: Web search (search engine)
+  query: Florida Rural Legal Services OR Legal Aid Society tribal members Seminole Miccosukee legal help
+  outcome: not-found
+  reason: 'Statewide search: Results were general legal aid listings and a Seminole veterans legal aid item, not a program for tribal members.'
+- date: '2026-11-24'
+  searched_by: Claude (AI assistant)
+  method: browser
+  place_kind: web-search
+  address: Web search (search engine)
+  query: Florida Seminole Miccosukee tribal members free legal aid nonprofit Native American legal services
+  outcome: not-found
+  reason: 'Statewide search: Results were private lawyers and tribal pages; no nonprofit legal aid unit for Native people found in snippets.'
+- date: '2026-11-24'
+  searched_by: Claude (AI assistant)
+  method: browser
+  place_kind: legal-aid-site
+  address: https://www.floridalawhelp.org/find-provider
+  outcome: not-found
+  reason: 'Statewide search: Read the provider finder; it has no Native American, American Indian, or tribal program text.'
+- date: '2026-11-24'
+  searched_by: Claude (AI assistant)
+  method: browser
+  place_kind: nation-website
+  address: https://www.semtribe.com/services/health-and-human-services/advocacy-guardianship.html
+  outcome: dead-link
+  reason: 'Statewide search: Seminole Tribe advocacy page returned a 404 error page.'
+- date: '2026-11-24'
+  searched_by: Claude (AI assistant)
+  method: browser
+  place_kind: legal-aid-site
+  address: https://indianlaw.org/node/71
+  outcome: error
+  reason: 'Statewide search: Not read: WebFetch budget for the session was exhausted.'
+next_steps: 'A person could open the pages that refused or timed out: https://indianlaw.org/node/71; https://www.lawhelp.org/al.'

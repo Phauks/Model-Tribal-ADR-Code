@@ -1,0 +1,86 @@
+profile: content/tribes/p/prairie-band-potawatomi-nation.yaml
+topic: legal-help
+status: found
+last_searched: '2026-11-24'
+searches:
+- date: '2026-11-24'
+  searched_by: Claude (AI assistant)
+  method: browser
+  place_kind: web-search
+  address: Web search (search engine)
+  query: Prairie Band Potawatomi legal aid members
+  outcome: found
+  reason: Returned the PBPN will and estate planning page, which led to the Kansas Legal Services arrangement.
+  records:
+  - research/legal-help/providers/prairie-band-potawatomi-nation-will-and-estate-planning.yaml
+- date: '2026-11-24'
+  searched_by: Claude (AI assistant)
+  method: browser
+  place_kind: web-search
+  address: Web search (search engine)
+  query: Kansas Legal Services Prairie Band Potawatomi Kickapoo wills estate planning
+  outcome: found
+  reason: Returned the PBPN will page and a Kansas Legal Services estate planning page; the KLS page was not read.
+  records:
+  - research/legal-help/providers/prairie-band-potawatomi-nation-will-and-estate-planning.yaml
+- date: '2026-11-24'
+  searched_by: Claude (AI assistant)
+  method: browser
+  place_kind: nation-website
+  address: https://pbpindiantribe.com/will-estate-planning
+  outcome: found
+  reason: Read the page stating the free will and estate planning service for enrolled members.
+  records:
+  - research/legal-help/providers/prairie-band-potawatomi-nation-will-and-estate-planning.yaml
+- date: '2026-11-24'
+  searched_by: Claude (AI assistant)
+  method: browser
+  place_kind: tribal-court-site
+  address: https://pbpindiantribe.com/tribal-court
+  outcome: not-found
+  reason: Tribal court page describes the court divisions and programs with no legal aid, self-help or public defender.
+- date: '2026-11-24'
+  searched_by: Claude (AI assistant)
+  method: browser
+  place_kind: legal-aid-site
+  address: https://www.kansaslegalservices.org/node/161/estate-planning
+  outcome: error
+  reason: WebFetch budget for the session was exhausted before this page could be read.
+- date: '2026-11-24'
+  searched_by: Claude (AI assistant)
+  method: browser
+  place_kind: web-search
+  address: Web search (search engine)
+  query: Kansas legal aid Native American program
+  outcome: not-found
+  reason: 'Statewide search: Results were directories, the KU Tribal Law & Government Center, and Kansas Legal Services annual report; no Native-serving legal aid program in snippets.'
+- date: '2026-11-24'
+  searched_by: Claude (AI assistant)
+  method: browser
+  place_kind: web-search
+  address: Web search (search engine)
+  query: Kansas Legal Services Native American tribal members Kickapoo Prairie Band legal help
+  outcome: not-found
+  reason: 'Statewide search: Returned the Kickapoo Legal Department page and Kansas Legal Services pages; neither offers individual Native legal aid.'
+- date: '2026-11-24'
+  searched_by: Claude (AI assistant)
+  method: browser
+  place_kind: legal-aid-site
+  address: https://law.ku.edu/node/370
+  outcome: not-found
+  reason: 'Statewide search: KU Tribal Law & Government Center page says it serves tribes and tribal courts and does not say it gives free help to individuals.'
+- date: '2026-11-24'
+  searched_by: Claude (AI assistant)
+  method: browser
+  place_kind: nation-website
+  address: https://www.ktik-nsn.gov/legal-department
+  outcome: not-found
+  reason: 'Statewide search: Kickapoo Legal Department page says it provides legal services to the Kickapoo Tribal Government and its departments only.'
+- date: '2026-11-24'
+  searched_by: Claude (AI assistant)
+  method: browser
+  place_kind: legal-aid-site
+  address: https://www.kansaslegalservices.org/node/41/types-assistance
+  outcome: not-found
+  reason: 'Statewide search: Kansas Legal Services lists an Indian Law practice area with a tribal membership subtopic but no sentence naming Native people as served.'
+next_steps: 'A person could open the pages that refused or timed out: https://www.kansaslegalservices.org/node/161/estate-planning.'

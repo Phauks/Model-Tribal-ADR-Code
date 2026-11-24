@@ -1,0 +1,78 @@
+profile: content/tribes/s/sac-and-fox-tribe-of-the-mississippi-in-iowa.yaml
+topic: legal-help
+status: found
+last_searched: '2026-11-24'
+searches:
+- date: '2026-11-24'
+  searched_by: Claude (AI assistant)
+  method: browser
+  place_kind: web-search
+  address: Web search (search engine)
+  query: Sac and Fox Tribe Mesquakie legal aid members
+  outcome: found
+  reason: Returned the Office of the Attorney General page, the Tribal Court page and a Meskwaki free legal clinic page.
+  records:
+  - research/legal-help/providers/iowa-legal-aid-meskwaki-tribal-court-clinics.yaml
+- date: '2026-11-24'
+  searched_by: Claude (AI assistant)
+  method: browser
+  place_kind: web-search
+  address: Web search (search engine)
+  query: Iowa Legal Aid Meskwaki Settlement legal help
+  outcome: found
+  reason: Returned the joint Meskwaki Tribal Court and Iowa Legal Aid free legal clinic page.
+  records:
+  - research/legal-help/providers/iowa-legal-aid-meskwaki-tribal-court-clinics.yaml
+- date: '2026-11-24'
+  searched_by: Claude (AI assistant)
+  method: browser
+  place_kind: nation-website
+  address: https://www.meskwaki.org/attorney-general/
+  outcome: not-found
+  reason: The AG's office is counsel to the Tribal Council and works for departments; it does not serve individual members.
+- date: '2026-11-24'
+  searched_by: Claude (AI assistant)
+  method: browser
+  place_kind: tribal-court-site
+  address: https://www.meskwaki.org/tribal-court/
+  outcome: not-found
+  reason: Court staff, hours and contacts only; no self-help center, public defender or free legal help.
+- date: '2026-11-24'
+  searched_by: Claude (AI assistant)
+  method: browser
+  place_kind: nation-website
+  address: https://www.meskwaki.org/meskwaki-tribal-court-and-iowa-legal-aid-present-a-free-legal-clinic/
+  outcome: found
+  reason: Read the joint free legal clinic announcement (January 27, 2023, Meskwaki Justice Center).
+  records:
+  - research/legal-help/providers/iowa-legal-aid-meskwaki-tribal-court-clinics.yaml
+- date: '2026-11-24'
+  searched_by: Claude (AI assistant)
+  method: browser
+  place_kind: web-search
+  address: Web search (search engine)
+  query: Iowa legal aid Native American program
+  outcome: not-found
+  reason: 'Statewide search: Results were Iowa Legal Aid county pages and Medicaid/ICWA pages; no Native-specific legal aid program in snippets.'
+- date: '2026-11-24'
+  searched_by: Claude (AI assistant)
+  method: browser
+  place_kind: web-search
+  address: Web search (search engine)
+  query: Iowa Legal Aid Meskwaki Sac and Fox tribal members legal help
+  outcome: found
+  reason: 'Statewide search: Returned Meskwaki pages announcing a free legal clinic run by Meskwaki Tribal Court with Iowa Legal Aid.'
+- date: '2026-11-24'
+  searched_by: Claude (AI assistant)
+  method: browser
+  place_kind: nation-website
+  address: https://www.meskwaki.org/meskwaki-tribal-court-and-iowa-legal-aid-present-a-free-legal-clinic/
+  outcome: found
+  reason: 'Statewide search: Read the page; it describes a free clinic with Iowa Legal Aid attorneys at the Meskwaki Justice Center. The event listed is dated January 27, 2023, so current availability is unconfirmed.'
+- date: '2026-11-24'
+  searched_by: Claude (AI assistant)
+  method: browser
+  place_kind: legal-aid-site
+  address: https://www.johnsoncountyiowa.gov/service-directory/advocacy-support/legal-assistance
+  outcome: not-found
+  reason: 'Statewide search: Read the Iowa Legal Aid description; it names only low-income and vulnerable Iowans, no Native population.'

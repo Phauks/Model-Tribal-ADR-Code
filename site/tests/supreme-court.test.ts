@@ -26,7 +26,7 @@ describe('Supreme Court pages', () => {
 		expect(page.facts.find((fact) => fact.label === 'Seats')?.text).toBe('6; 7 from Feb. 24, 1807');
 		expect(page.changes.find((change) => change.date === '1807-05-04')?.events).toEqual(['Thomas Todd took a new seat (2 Stat. 420).']);
 		expect(page.changes.at(-1)?.events).toEqual(['Chief Justice John Marshall died.']);
-		expect(page.cases.map((item) => item.key)).toEqual(['johnson-v-mintosh', 'cherokee-nation-v-georgia', 'worcester-v-georgia']);
+		expect(page.cases.map((item) => item.key)).toEqual(['fletcher-v-peck', 'new-jersey-v-wilson', 'meigs-v-mclungs-lessee', 'preston-v-browder', 'danforths-lessee-v-thomas', 'johnson-v-mintosh', 'patterson-v-jenks', 'sundry-goods-wares-and-merchandises-v-united-states', 'cherokee-nation-v-georgia', 'worcester-v-georgia']);
 		expect(page.sources.map((source) => source.key)).toContain('supreme-court-historical-society-marshall-court');
 	});
 
@@ -89,8 +89,10 @@ describe('Justice and President pages', () => {
 		const { justicePage } = await import('#lib/server/justice-pages.ts');
 		const page = justicePage('john-marshall')!;
 		expect(page.summary).toBe('Chief Justice, 1801–1835');
-		expect(page.cases.map((item) => item.key)).toEqual(['johnson-v-mintosh', 'cherokee-nation-v-georgia', 'worcester-v-georgia']);
-		expect(page.cases.every((item) => item.parts[0].part === 'Opinion of the Court')).toBe(true);
+		// The Marshall Court cases on the site, oldest first, including those written by script from the Supreme Court Database (2026-11-24).
+		expect(page.cases.map((item) => item.key)).toEqual(['fletcher-v-peck', 'new-jersey-v-wilson', 'meigs-v-mclungs-lessee', 'preston-v-browder', 'danforths-lessee-v-thomas', 'johnson-v-mintosh', 'patterson-v-jenks', 'sundry-goods-wares-and-merchandises-v-united-states', 'cherokee-nation-v-georgia', 'worcester-v-georgia']);
+		const wrote = ['johnson-v-mintosh', 'cherokee-nation-v-georgia', 'worcester-v-georgia'];
+		expect(page.cases.filter((item) => wrote.includes(item.key)).every((item) => item.parts[0].part === 'Opinion of the Court')).toBe(true);
 		const facts = page.glance.flatMap((group) => group.items.map((item) => ({ ...item, label: group.label })));
 		expect(facts.find((item) => item.label === "Appointed by")).toMatchObject({ text: 'John Adams', link: '/supreme-court/presidents/john-adams' });
 		expect(facts.find((item) => item.label === "Followed by")).toMatchObject({ text: 'Roger Brooke Taney' });
@@ -100,6 +102,6 @@ describe('Justice and President pages', () => {
 		const { presidentPage } = await import('#lib/server/justice-pages.ts');
 		const page = presidentPage('john-adams')!;
 		expect(page.appointees.map((justice) => justice.name)).toEqual(['Bushrod Washington', 'Alfred Moore', 'John Marshall']);
-		expect(page.cases.map((item) => item.key)).toEqual(['johnson-v-mintosh', 'cherokee-nation-v-georgia', 'worcester-v-georgia']);
+		expect(page.cases.map((item) => item.key)).toEqual(['fletcher-v-peck', 'new-jersey-v-wilson', 'meigs-v-mclungs-lessee', 'preston-v-browder', 'danforths-lessee-v-thomas', 'johnson-v-mintosh', 'patterson-v-jenks', 'sundry-goods-wares-and-merchandises-v-united-states', 'cherokee-nation-v-georgia', 'worcester-v-georgia']);
 	});
 });

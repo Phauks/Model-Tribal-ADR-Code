@@ -1,0 +1,138 @@
+key: united-states-v-old-settlers
+kind: federal-case
+citation:
+  type: legal_case
+  title: United States v. Old Settlers
+  authority: Supreme Court of the United States
+  container-title: U.S.
+  volume: '148'
+  page: '427'
+  issued:
+    date-parts:
+    - - 1893
+      - 4
+      - 3
+  URL: https://www.loc.gov/item/usrep148427/
+  accessed:
+    date-parts:
+    - - 2026
+      - 11
+      - 24
+caption:
+  printed: UNITED STATES v. OLD SETTLERS; OLD SETTLERS v. UNITED STATES
+  source: https://tile.loc.gov/storage-services/service/ll/usrep/usrep148/usrep148427/usrep148427.pdf
+  checked: '2026-11-24'
+opinions:
+  source: https://tile.loc.gov/storage-services/service/ll/usrep/usrep148/usrep148427/usrep148427.pdf
+  checked: '2026-11-24'
+  list:
+  - kind: majority
+    justice: Melville Weston Fuller
+    page: 463
+original_link: https://www.loc.gov/item/usrep148427/
+retrieved: '2026-11-24'
+history:
+  status: live
+  last_checked: '2026-11-24'
+court_dates:
+  argued:
+  - '1892-12-13'
+  - '1892-12-14'
+  printed: Argued December 13, 14, 1892. Decided April 3, 1893.
+  source: https://tile.loc.gov/storage-services/service/ll/usrep/usrep148/usrep148427/usrep148427.pdf
+  checked: '2026-11-24'
+supreme_court:
+  court: Fuller Court
+  natural_court: Fuller Court (1893-1893)
+  decision_type: majority opinion
+  vote:
+    majority: 7
+    minority: 0
+  justices:
+  - name: Melville Weston Fuller
+    vote: majority
+    opinion: majority
+  - name: Stephen Johnson Field
+    vote: majority
+  - name: John Marshall Harlan
+    vote: not recorded
+  - name: Horace Gray
+    vote: majority
+  - name: Samuel Blatchford
+    vote: majority
+  - name: David Josiah Brewer
+    vote: majority
+  - name: Henry Billings Brown
+    vote: majority
+  - name: George Shiras, Jr.
+    vote: majority
+  - name: Howell Edmunds Jackson
+    vote: not recorded
+  source: http://scdb.wustl.edu/_brickFiles/Legacy_07/SCDB_Legacy_07_justiceCentered_Citation.csv.zip
+  note: From the Supreme Court Database, case 1892-161; Oyez has no votes for this case.
+  checked: '2026-11-24'
+reading_links:
+  checked: '2026-11-24'
+  links:
+  - site: library-of-congress
+    label: Library of Congress
+    access: official
+    link: https://www.loc.gov/item/usrep148427/
+  - site: justia
+    label: Justia
+    access: free
+    link: https://supreme.justia.com/cases/federal/us/148/427/
+    unchecked: true
+  - site: google-scholar
+    label: Google Scholar
+    access: free
+    link: https://scholar.google.com/scholar?hl=en&as_sdt=2006&q=%22148%20U.S.%20427%22
+    unchecked: true
+  - site: westlaw
+    label: Westlaw
+    access: subscription
+    link: https://1.next.westlaw.com/Link/Document/FullText?findType=Y&cite=148%20U.S.%20427
+    unchecked: true
+  - site: lexis
+    label: Lexis
+    access: subscription
+    link: https://advance.lexis.com/api/search?q=148%20U.S.%20427
+    unchecked: true
+rights:
+  status: no-permission-needed
+  basis: us-government-work
+  basis_note: Opinions of federal courts are works of the U.S. government (17 U.S.C. § 105); the host site's own additions are not reproduced.
+  redistribution: true
+found_in:
+- 2026-11-24-supreme-court-native-cases
+notes: 'Full citation: 148 U.S. 427 (1893). Official report scan: https://tile.loc.gov/storage-services/service/ll/usrep/usrep148/usrep148427/usrep148427.pdf. Written by scripts/caselaw/supreme_court_native_cases.py from the Supreme Court Database (case 1892-161), the Caselaw Access Project''s text of the report and the Library of Congress scan; not yet read by a person.'
+tribes: []
+nations_in_case:
+  checked: '2026-11-24'
+  named: []
+review:
+  status: unverified
+  by: scripts/caselaw/supreme_court_native_cases.py
+  date: '2026-11-24'
+  checks:
+  - check: cite
+    result: agree
+    detail: Caselaw Access Project 148 U.S. 427 "United States v. Old Settlers"; Database 148 U.S. 427 "UNITED STATES v. OLD SETTLERS."
+  - check: scan
+    result: agree
+    detail: Scan has 55 pages; the report runs 427 to 481
+  - check: caption
+    result: agree
+    detail: Caption found in the scan's text at 1.00
+  - check: printed dates
+    result: agree
+    detail: Caselaw Access Project "Argued December 13, 14, 1892. Decided April 3, 1893."; scan "Argued December 13,14, 1S92. -Decided April 3, 1893."
+  - check: decided
+    result: agree
+    detail: 'Printed and Database: 1893-04-03'
+  - check: opinions
+    result: settled
+    detail: 'Report: majority Fuller p. 463; Database writers: Fuller; scan pages [(463, 464)]. Read from the scan by an AI reader (record right): p. 463: "MR. CHIEF JUSTICE FULLER delivered the opinon of the court." (OCR: "MR. CHIEF JusTicE FULLER delivered the opinon of the / court.")'
+  - check: bench
+    result: agree
+    detail: No Oyez votes; each opinion writer in the report sits on the Database's bench on the side the opinion takes

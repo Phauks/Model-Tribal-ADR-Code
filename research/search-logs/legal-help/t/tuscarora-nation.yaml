@@ -1,0 +1,79 @@
+profile: content/tribes/t/tuscarora-nation.yaml
+topic: legal-help
+status: found
+last_searched: '2026-11-24'
+searches:
+- date: '2026-11-24'
+  searched_by: Claude (AI assistant)
+  method: browser
+  place_kind: web-search
+  address: Web search (search engine)
+  query: Tuscarora Nation legal aid members legal services
+  outcome: found
+  reason: Results surfaced the Buffalo Native American legal clinic article; no Tuscarora-specific legal service appeared.
+  records:
+  - research/legal-help/providers/native-american-legal-assistance-clinic-buffalo.yaml
+- date: '2026-11-24'
+  searched_by: Claude (AI assistant)
+  method: browser
+  place_kind: web-search
+  address: Web search (search engine)
+  query: Tuscarora Nation official website Lewiston New York
+  outcome: no-site
+  reason: No Tuscarora Nation website was listed or found; results were archive, encyclopedia and NARF pages only.
+- date: '2026-11-24'
+  searched_by: Claude (AI assistant)
+  method: browser
+  place_kind: legal-aid-site
+  address: https://city-data.com/forum/new-york/2486480-native-american-culture-ny-state-13.html
+  outcome: found
+  reason: The 2019 article says the clinic is open to Native Americans of any descent, which covers Tuscarora members; the article lists Tuscarora among NY tribes with a Buffalo-area presence, but does not name it as a specific service population.
+  records:
+  - research/legal-help/providers/native-american-legal-assistance-clinic-buffalo.yaml
+- date: '2026-11-24'
+  searched_by: Claude (AI assistant)
+  method: browser
+  place_kind: web-search
+  address: Web search (search engine)
+  query: Native American Community Services Buffalo legal aid clinic Volunteer Lawyers Project Lippes
+  outcome: found
+  reason: Lippes Mathias page (Nov 13, 2019) confirms the clinic but names no tribes.
+  records:
+  - research/legal-help/providers/native-american-legal-assistance-clinic-buffalo.yaml
+- date: '2026-11-24'
+  searched_by: Claude (AI assistant)
+  method: browser
+  place_kind: legal-aid-site
+  address: https://www.lawny.org/print/pdf/node/145
+  outcome: not-found
+  reason: Legal Assistance of Western New York's Community Development Project names no tribe or Native American service.
+- date: '2026-11-24'
+  searched_by: Claude (AI assistant)
+  method: browser
+  place_kind: web-search
+  address: Web search (search engine)
+  query: Neighborhood Legal Services Buffalo Native American Indian law project Seneca
+  outcome: not-found
+  reason: No Neighborhood Legal Services Native American or Tuscarora program turned up.
+- date: '2026-11-24'
+  searched_by: Claude (AI assistant)
+  method: browser
+  place_kind: web-search
+  address: Web search (search engine)
+  query: New York legal aid Native American program
+  outcome: not-found
+  reason: 'Statewide search, nothing for this nation: Returned the American Indian Law Alliance listings (NYC) and LawHelpNY Native law page.'
+- date: '2026-11-24'
+  searched_by: Claude (AI assistant)
+  method: browser
+  place_kind: legal-aid-site
+  address: https://www.lawhelpny.org/issues/discrimination-and-civil-rights/native-american-law-issues
+  outcome: not-found
+  reason: 'Statewide search: Read the LawHelpNY Native American law page; it names no organization and links only to a generic find-legal-help search.'
+- date: '2026-11-24'
+  searched_by: Claude (AI assistant)
+  method: browser
+  place_kind: legal-aid-site
+  address: https://www.probono.net/oppsguide/organization.53858?print=1
+  outcome: not-found
+  reason: 'Statewide search, nothing for this nation: Read the American Indian Law Alliance listing; it describes free legal services for the NYC Native American community.'

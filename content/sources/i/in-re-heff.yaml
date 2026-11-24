@@ -1,0 +1,138 @@
+key: in-re-heff
+kind: federal-case
+citation:
+  type: legal_case
+  title: In re Heff
+  authority: Supreme Court of the United States
+  container-title: U.S.
+  volume: '197'
+  page: '488'
+  issued:
+    date-parts:
+    - - 1905
+      - 4
+      - 10
+  URL: https://www.loc.gov/item/usrep197488/
+  accessed:
+    date-parts:
+    - - 2026
+      - 11
+      - 24
+caption:
+  printed: MATTER OF HEFF
+  source: https://tile.loc.gov/storage-services/service/ll/usrep/usrep197/usrep197488/usrep197488.pdf
+  checked: '2026-11-24'
+opinions:
+  source: https://tile.loc.gov/storage-services/service/ll/usrep/usrep197/usrep197488/usrep197488.pdf
+  checked: '2026-11-24'
+  list:
+  - kind: majority
+    justice: David Josiah Brewer
+    page: 497
+original_link: https://www.loc.gov/item/usrep197488/
+retrieved: '2026-11-24'
+history:
+  status: live
+  last_checked: '2026-11-24'
+court_dates:
+  argued:
+  - '1905-01-09'
+  - '1905-01-10'
+  printed: Argued January 9, 10, 1905. Decided April 10, 1905.
+  source: https://tile.loc.gov/storage-services/service/ll/usrep/usrep197/usrep197488/usrep197488.pdf
+  checked: '2026-11-24'
+supreme_court:
+  court: Fuller Court
+  natural_court: Fuller Court (1903-1906)
+  decision_type: majority opinion
+  vote:
+    majority: 8
+    minority: 1
+  justices:
+  - name: Melville Weston Fuller
+    vote: majority
+  - name: Edward Douglass White
+    vote: majority
+  - name: John Marshall Harlan
+    vote: minority
+  - name: David Josiah Brewer
+    vote: majority
+    opinion: majority
+  - name: Henry Billings Brown
+    vote: majority
+  - name: Rufus Wheeler Peckham
+    vote: majority
+  - name: Joseph McKenna
+    vote: majority
+  - name: Oliver Wendell Holmes
+    vote: majority
+  - name: William Rufus Day
+    vote: majority
+  source: http://scdb.wustl.edu/_brickFiles/Legacy_07/SCDB_Legacy_07_justiceCentered_Citation.csv.zip
+  note: From the Supreme Court Database, case 1904-102; Oyez has no votes for this case.
+  checked: '2026-11-24'
+reading_links:
+  checked: '2026-11-24'
+  links:
+  - site: library-of-congress
+    label: Library of Congress
+    access: official
+    link: https://www.loc.gov/item/usrep197488/
+  - site: justia
+    label: Justia
+    access: free
+    link: https://supreme.justia.com/cases/federal/us/197/488/
+    unchecked: true
+  - site: google-scholar
+    label: Google Scholar
+    access: free
+    link: https://scholar.google.com/scholar?hl=en&as_sdt=2006&q=%22197%20U.S.%20488%22
+    unchecked: true
+  - site: westlaw
+    label: Westlaw
+    access: subscription
+    link: https://1.next.westlaw.com/Link/Document/FullText?findType=Y&cite=197%20U.S.%20488
+    unchecked: true
+  - site: lexis
+    label: Lexis
+    access: subscription
+    link: https://advance.lexis.com/api/search?q=197%20U.S.%20488
+    unchecked: true
+rights:
+  status: no-permission-needed
+  basis: us-government-work
+  basis_note: Opinions of federal courts are works of the U.S. government (17 U.S.C. § 105); the host site's own additions are not reproduced.
+  redistribution: true
+found_in:
+- 2026-11-24-supreme-court-native-cases
+notes: 'Full citation: 197 U.S. 488 (1905). Official report scan: https://tile.loc.gov/storage-services/service/ll/usrep/usrep197/usrep197488/usrep197488.pdf. Written by scripts/caselaw/supreme_court_native_cases.py from the Supreme Court Database (case 1904-102), the Caselaw Access Project''s text of the report and the Library of Congress scan; not yet read by a person.'
+tribes: []
+nations_in_case:
+  checked: '2026-11-24'
+  named: []
+review:
+  status: unverified
+  by: scripts/caselaw/supreme_court_native_cases.py
+  date: '2026-11-24'
+  checks:
+  - check: cite
+    result: differs
+    detail: Caselaw Access Project 197 U.S. 488 "In re Heff"; Database 197 U.S. 488 "MATTER OF HEFF"
+  - check: scan
+    result: agree
+    detail: Scan has 22 pages; the report runs 488 to 509
+  - check: caption
+    result: agree
+    detail: Caption found in the scan's text at 1.00
+  - check: printed dates
+    result: agree
+    detail: Caselaw Access Project "Argued January 9, 10, 1905. Decided April 10, 1905."; scan "not found"
+  - check: decided
+    result: agree
+    detail: 'Printed and Database: 1905-04-10'
+  - check: opinions
+    result: agree
+    detail: 'Report: majority Brewer p. 497; Database writers: Brewer'
+  - check: bench
+    result: agree
+    detail: No Oyez votes; each opinion writer in the report sits on the Database's bench on the side the opinion takes

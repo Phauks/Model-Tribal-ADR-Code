@@ -1,0 +1,150 @@
+key: wilson-v-omaha-indian-tribe
+kind: federal-case
+citation:
+  type: legal_case
+  title: Wilson v. Omaha Indian Tribe
+  authority: Supreme Court of the United States
+  container-title: U.S.
+  volume: '442'
+  page: '653'
+  issued:
+    date-parts:
+    - - 1979
+      - 6
+      - 20
+  URL: https://www.loc.gov/item/usrep442653/
+  accessed:
+    date-parts:
+    - - 2026
+      - 11
+      - 24
+caption:
+  printed: WILSON et al. v. OMAHA INDIAN TRIBE et al.
+  source: https://tile.loc.gov/storage-services/service/ll/usrep/usrep442/usrep442653/usrep442653.pdf
+  checked: '2026-11-24'
+opinions:
+  source: https://tile.loc.gov/storage-services/service/ll/usrep/usrep442/usrep442653/usrep442653.pdf
+  checked: '2026-11-24'
+  list:
+  - kind: majority
+    justice: Byron Raymond White
+    page: 656
+  - kind: concurrence
+    justice: Harry A. Blackmun
+    page: 679
+original_link: https://www.loc.gov/item/usrep442653/
+retrieved: '2026-11-24'
+history:
+  status: live
+  last_checked: '2026-11-24'
+court_dates:
+  argued:
+  - '1979-03-21'
+  printed: Argued March 21, 1979 — Decided June 20, 1979
+  source: https://tile.loc.gov/storage-services/service/ll/usrep/usrep442/usrep442653/usrep442653.pdf
+  checked: '2026-11-24'
+supreme_court:
+  court: Burger Court
+  natural_court: Burger Court (1975-1981)
+  decision_type: majority opinion
+  vote:
+    majority: 8
+    minority: 0
+  justices:
+  - name: Potter Stewart
+    vote: majority
+  - name: Thurgood Marshall
+    vote: majority
+  - name: William J. Brennan, Jr.
+    vote: majority
+  - name: Byron R. White
+    vote: majority
+    opinion: majority
+  - name: Warren E. Burger
+    vote: majority
+  - name: Harry A. Blackmun
+    vote: majority
+    opinion: concurrence
+  - name: Lewis F. Powell, Jr.
+    vote: none
+  - name: William H. Rehnquist
+    vote: majority
+  - name: John Paul Stevens
+    vote: majority
+  source: https://api.oyez.org/cases/1978/78-160
+  checked: '2026-11-24'
+reading_links:
+  checked: '2026-11-24'
+  links:
+  - site: library-of-congress
+    label: Library of Congress
+    access: official
+    link: https://www.loc.gov/item/usrep442653/
+  - site: justia
+    label: Justia
+    access: free
+    link: https://supreme.justia.com/cases/federal/us/442/653/
+    unchecked: true
+  - site: oyez
+    label: Oyez
+    access: free
+    link: https://www.oyez.org/cases/1978/78-160
+  - site: google-scholar
+    label: Google Scholar
+    access: free
+    link: https://scholar.google.com/scholar?hl=en&as_sdt=2006&q=%22442%20U.S.%20653%22
+    unchecked: true
+  - site: westlaw
+    label: Westlaw
+    access: subscription
+    link: https://1.next.westlaw.com/Link/Document/FullText?findType=Y&cite=442%20U.S.%20653
+    unchecked: true
+  - site: lexis
+    label: Lexis
+    access: subscription
+    link: https://advance.lexis.com/api/search?q=442%20U.S.%20653
+    unchecked: true
+rights:
+  status: no-permission-needed
+  basis: us-government-work
+  basis_note: Opinions of federal courts are works of the U.S. government (17 U.S.C. § 105); the host site's own additions are not reproduced.
+  redistribution: true
+found_in:
+- 2026-11-24-supreme-court-native-cases
+notes: 'Full citation: 442 U.S. 653 (1979). Official report scan: https://tile.loc.gov/storage-services/service/ll/usrep/usrep442/usrep442653/usrep442653.pdf. Written by scripts/caselaw/supreme_court_native_cases.py from the Supreme Court Database (case 1978-131), the Caselaw Access Project''s text of the report and the Library of Congress scan; not yet read by a person.'
+tribes:
+- omaha-tribe-of-nebraska
+nations_in_case:
+  checked: '2026-11-24'
+  named:
+  - nation: omaha-tribe-of-nebraska
+    named_as: Omaha Indian Tribe
+    role: party
+    historical: true
+    note: Matched by the script to the only nation record sharing this name; not yet checked against the case's history.
+review:
+  status: verified
+  by: scripts/caselaw/supreme_court_native_cases.py
+  date: '2026-11-24'
+  checks:
+  - check: cite
+    result: agree
+    detail: Caselaw Access Project 442 U.S. 653 "Wilson v. Omaha Indian Tribe"; Database 442 U.S. 653 "WILSON et al. v. OMAHA INDIAN TRIBE et al."
+  - check: scan
+    result: agree
+    detail: Scan has 29 pages; the report runs 653 to 681
+  - check: caption
+    result: agree
+    detail: Caption found in the scan's text at 1.00
+  - check: printed dates
+    result: agree
+    detail: Caselaw Access Project "Argued March 21, 1979 — Decided June 20, 1979"; scan "Argued March 21, 1979-Decided June 20, 1979"
+  - check: decided
+    result: agree
+    detail: 'Printed and Database: 1979-06-20'
+  - check: opinions
+    result: agree
+    detail: 'Report: majority White p. 656, concurrence Blackmun p. 679; Database writers: Blackmun, White'
+  - check: bench
+    result: agree
+    detail: Oyez and the Database give the same Justices and votes

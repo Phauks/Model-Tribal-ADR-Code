@@ -1,0 +1,141 @@
+key: united-states-v-mille-lac-band-of-chippewa-indians
+kind: federal-case
+citation:
+  type: legal_case
+  title: United States v. Mille Lac Band of Chippewa Indians
+  authority: Supreme Court of the United States
+  container-title: U.S.
+  volume: '229'
+  page: '498'
+  issued:
+    date-parts:
+    - - 1913
+      - 6
+      - 9
+  URL: https://www.loc.gov/item/usrep229498/
+  accessed:
+    date-parts:
+    - - 2026
+      - 11
+      - 24
+caption:
+  printed: UNITED STATES v. MILLE LAC BAND OF CHIPPEWA INDIANS IN THE STATE OF MINNESOTA
+  source: https://tile.loc.gov/storage-services/service/ll/usrep/usrep229/usrep229498/usrep229498.pdf
+  checked: '2026-11-24'
+opinions:
+  source: https://tile.loc.gov/storage-services/service/ll/usrep/usrep229/usrep229498/usrep229498.pdf
+  checked: '2026-11-24'
+  list:
+  - kind: majority
+    justice: Willis Van Devanter
+    page: 499
+original_link: https://www.loc.gov/item/usrep229498/
+retrieved: '2026-11-24'
+history:
+  status: live
+  last_checked: '2026-11-24'
+court_dates:
+  argued:
+  - '1913-04-08'
+  - '1913-04-09'
+  printed: Argued April 8, 9, 1913. Decided June 9, 1913.
+  source: https://tile.loc.gov/storage-services/service/ll/usrep/usrep229/usrep229498/usrep229498.pdf
+  checked: '2026-11-24'
+supreme_court:
+  court: White Court
+  natural_court: White Court (1912-1914)
+  decision_type: majority opinion
+  vote:
+    majority: 7
+    minority: 2
+  justices:
+  - name: Edward Douglass White
+    vote: majority
+  - name: Charles Evans Hughes
+    vote: majority
+  - name: Joseph McKenna
+    vote: minority
+  - name: Oliver Wendell Holmes
+    vote: majority
+  - name: William Rufus Day
+    vote: minority
+  - name: Horace Harmon Lurton
+    vote: majority
+  - name: Willis Van Devanter
+    vote: majority
+    opinion: majority
+  - name: Joseph Rucker Lamar
+    vote: majority
+  - name: Mahlon Pitney
+    vote: majority
+  source: http://scdb.wustl.edu/_brickFiles/Legacy_07/SCDB_Legacy_07_justiceCentered_Citation.csv.zip
+  note: From the Supreme Court Database, case 1912-255; Oyez has no votes for this case.
+  checked: '2026-11-24'
+reading_links:
+  checked: '2026-11-24'
+  links:
+  - site: library-of-congress
+    label: Library of Congress
+    access: official
+    link: https://www.loc.gov/item/usrep229498/
+  - site: justia
+    label: Justia
+    access: free
+    link: https://supreme.justia.com/cases/federal/us/229/498/
+    unchecked: true
+  - site: google-scholar
+    label: Google Scholar
+    access: free
+    link: https://scholar.google.com/scholar?hl=en&as_sdt=2006&q=%22229%20U.S.%20498%22
+    unchecked: true
+  - site: westlaw
+    label: Westlaw
+    access: subscription
+    link: https://1.next.westlaw.com/Link/Document/FullText?findType=Y&cite=229%20U.S.%20498
+    unchecked: true
+  - site: lexis
+    label: Lexis
+    access: subscription
+    link: https://advance.lexis.com/api/search?q=229%20U.S.%20498
+    unchecked: true
+rights:
+  status: no-permission-needed
+  basis: us-government-work
+  basis_note: Opinions of federal courts are works of the U.S. government (17 U.S.C. § 105); the host site's own additions are not reproduced.
+  redistribution: true
+found_in:
+- 2026-11-24-supreme-court-native-cases
+notes: 'Full citation: 229 U.S. 498 (1913). Official report scan: https://tile.loc.gov/storage-services/service/ll/usrep/usrep229/usrep229498/usrep229498.pdf. Written by scripts/caselaw/supreme_court_native_cases.py from the Supreme Court Database (case 1912-255), the Caselaw Access Project''s text of the report and the Library of Congress scan; not yet read by a person.'
+tribes: []
+nations_in_case:
+  checked: '2026-11-24'
+  named: []
+  not_linked:
+  - named_as: Mille Lac Band of Chippewa Indians
+    reason: No nation record matches this name; it may be a historical name or a group that is not a recognized nation today.
+review:
+  status: verified
+  by: scripts/caselaw/supreme_court_native_cases.py
+  date: '2026-11-24'
+  checks:
+  - check: cite
+    result: agree
+    detail: Caselaw Access Project 229 U.S. 498 "United States v. Mille Lac Band of Chippewa Indians"; Database 229 U.S. 498 "UNITED STATES v. MILLE LAC BAND OF CHIPPEWA INDIANS IN THE STATE OF MINNESOTA"
+  - check: scan
+    result: agree
+    detail: Scan has 13 pages; the report runs 498 to 510
+  - check: caption
+    result: agree
+    detail: Caption found in the scan's text at 0.95
+  - check: printed dates
+    result: agree
+    detail: Caselaw Access Project "Argued April 8, 9, 1913. Decided June 9, 1913."; scan "Argued April 8, 9, 1913.-Decided June 9, 1913."
+  - check: decided
+    result: agree
+    detail: 'Printed and Database: 1913-06-09'
+  - check: opinions
+    result: agree
+    detail: 'Report: majority Devanter p. 499; Database writers: Devanter'
+  - check: bench
+    result: agree
+    detail: No Oyez votes; each opinion writer in the report sits on the Database's bench on the side the opinion takes

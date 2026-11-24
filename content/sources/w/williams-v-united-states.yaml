@@ -1,0 +1,137 @@
+key: williams-v-united-states
+kind: federal-case
+citation:
+  type: legal_case
+  title: Williams v. United States
+  authority: Supreme Court of the United States
+  container-title: U.S.
+  volume: '327'
+  page: '711'
+  issued:
+    date-parts:
+    - - 1946
+      - 4
+      - 1
+  URL: https://www.loc.gov/item/usrep327711/
+  accessed:
+    date-parts:
+    - - 2026
+      - 11
+      - 24
+caption:
+  printed: WILLIAMS v. UNITED STATES
+  source: https://tile.loc.gov/storage-services/service/ll/usrep/usrep327/usrep327711/usrep327711.pdf
+  checked: '2026-11-24'
+opinions:
+  source: https://tile.loc.gov/storage-services/service/ll/usrep/usrep327/usrep327711/usrep327711.pdf
+  checked: '2026-11-24'
+  list:
+  - kind: majority
+    justice: Harold Hitz Burton
+    page: 712
+original_link: https://www.loc.gov/item/usrep327711/
+retrieved: '2026-11-24'
+history:
+  status: live
+  last_checked: '2026-11-24'
+court_dates:
+  argued:
+  - '1945-12-10'
+  printed: Argued December 10, 1945. Decided April 1, 1946.
+  source: https://tile.loc.gov/storage-services/service/ll/usrep/usrep327/usrep327711/usrep327711.pdf
+  checked: '2026-11-24'
+supreme_court:
+  court: Stone Court
+  natural_court: Stone Court (1945-1946)
+  decision_type: majority opinion
+  vote:
+    majority: 8
+    minority: 0
+  justices:
+  - name: Harlan Fiske Stone
+    vote: majority
+  - name: Hugo Lafayette Black
+    vote: majority
+  - name: Stanley Forman Reed
+    vote: majority
+  - name: Felix Frankfurter
+    vote: majority
+  - name: William Orville Douglas
+    vote: majority
+  - name: Frank Murphy
+    vote: majority
+  - name: Robert Houghwout Jackson
+    vote: not recorded
+  - name: Wiley Blount Rutledge
+    vote: majority
+  - name: Harold Hitz Burton
+    vote: majority
+    opinion: majority
+  source: http://scdb.wustl.edu/_brickFiles/2026_01/SCDB_2026_01_justiceCentered_Citation.csv.zip
+  note: From the Supreme Court Database, case 1945-043; Oyez has no votes for this case.
+  checked: '2026-11-24'
+reading_links:
+  checked: '2026-11-24'
+  links:
+  - site: library-of-congress
+    label: Library of Congress
+    access: official
+    link: https://www.loc.gov/item/usrep327711/
+  - site: justia
+    label: Justia
+    access: free
+    link: https://supreme.justia.com/cases/federal/us/327/711/
+    unchecked: true
+  - site: google-scholar
+    label: Google Scholar
+    access: free
+    link: https://scholar.google.com/scholar?hl=en&as_sdt=2006&q=%22327%20U.S.%20711%22
+    unchecked: true
+  - site: westlaw
+    label: Westlaw
+    access: subscription
+    link: https://1.next.westlaw.com/Link/Document/FullText?findType=Y&cite=327%20U.S.%20711
+    unchecked: true
+  - site: lexis
+    label: Lexis
+    access: subscription
+    link: https://advance.lexis.com/api/search?q=327%20U.S.%20711
+    unchecked: true
+rights:
+  status: no-permission-needed
+  basis: us-government-work
+  basis_note: Opinions of federal courts are works of the U.S. government (17 U.S.C. § 105); the host site's own additions are not reproduced.
+  redistribution: true
+found_in:
+- 2026-11-24-supreme-court-native-cases
+notes: 'Full citation: 327 U.S. 711 (1946). Official report scan: https://tile.loc.gov/storage-services/service/ll/usrep/usrep327/usrep327711/usrep327711.pdf. Written by scripts/caselaw/supreme_court_native_cases.py from the Supreme Court Database (case 1945-043), the Caselaw Access Project''s text of the report and the Library of Congress scan; not yet read by a person.'
+tribes: []
+nations_in_case:
+  checked: '2026-11-24'
+  named: []
+review:
+  status: verified
+  by: scripts/caselaw/supreme_court_native_cases.py
+  date: '2026-11-24'
+  checks:
+  - check: cite
+    result: agree
+    detail: Caselaw Access Project 327 U.S. 711 "Williams v. United States"; Database 327 U.S. 711 "WILLIAMS v. UNITED STATES"
+  - check: scan
+    result: agree
+    detail: Scan has 15 pages; the report runs 711 to 725
+  - check: caption
+    result: agree
+    detail: Caption found in the scan's text at 1.00
+  - check: printed dates
+    result: agree
+    detail: Caselaw Access Project "Argued December 10, 1945. Decided April 1, 1946."; scan "Argued December 10, 1945.-Decided April 1, 1946."
+  - check: decided
+    result: agree
+    detail: 'Printed and Database: 1946-04-01'
+  - check: opinions
+    result: agree
+    detail: 'Report: majority Burton p. 712; Database writers: Burton'
+  - check: bench
+    result: agree
+    detail: No Oyez votes; each opinion writer in the report sits on the Database's bench on the side the opinion takes

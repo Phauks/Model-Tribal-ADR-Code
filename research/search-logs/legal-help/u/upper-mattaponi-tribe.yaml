@@ -1,0 +1,119 @@
+profile: content/tribes/u/upper-mattaponi-tribe.yaml
+topic: legal-help
+status: partly-searched
+last_searched: '2026-11-24'
+searches:
+- date: '2026-11-24'
+  searched_by: Claude (AI assistant)
+  method: browser
+  place_kind: web-search
+  address: Web search (search engine)
+  query: Upper Mattaponi Tribe legal aid
+  outcome: not-found
+  reason: Results were the WHRO and Indianz articles on the tribal court and general TCCLA grant pages; no legal aid service for members.
+- date: '2026-11-24'
+  searched_by: Claude (AI assistant)
+  method: browser
+  place_kind: nation-website
+  address: https://umitribe.org/
+  outcome: not-found
+  reason: Home page lists Programs & Services (Housing, Enrollment, Elder Care, Health Care, Food Sovereignty), Scholarship and Employment; the only law item is the UMT Law Library, with no stated member legal help.
+- date: '2026-11-24'
+  searched_by: Claude (AI assistant)
+  method: browser
+  place_kind: tribal-court-site
+  address: https://www.whro.org/2024-01-04/upper-mattaponi-establishes-tribal-court-a-historic-first-for-virginia
+  outcome: not-found
+  reason: Article (Jan 4, 2024) says the tribal court will hear civil matters including divorce and child custody, and misdemeanors. It does not say whether members get representation, public defenders or legal aid. A tribal court is not itself a free legal aid service.
+- date: '2026-11-24'
+  searched_by: Claude (AI assistant)
+  method: browser
+  place_kind: web-search
+  address: Web search (search engine)
+  query: Upper Mattaponi tribal court self-help legal representation members
+  outcome: not-found
+  reason: Results were general tribal court self-help guides from other nations; none described a self-help center at the Upper Mattaponi court.
+- date: '2026-11-24'
+  searched_by: Claude (AI assistant)
+  method: browser
+  place_kind: tribal-court-site
+  address: https://www.culturalheritagepartners.com/?p=9230
+  outcome: not-found
+  reason: Article (Dec 30, 2023) on swearing in the tribal court officers says the court handles 'most of the legal issues facing our tribal members' and lists civil matters; it mentions no public defender, attorneys or legal aid.
+- date: '2026-11-24'
+  searched_by: Claude (AI assistant)
+  method: browser
+  place_kind: web-search
+  address: Web search (search engine)
+  query: Upper Mattaponi Tribe law library members legal assistance court
+  outcome: not-found
+  reason: Results were news on the tribal court and federal TCCLA pages; nothing described free legal help for members. The law library's member services are not described.
+- date: '2026-11-24'
+  searched_by: Claude (AI assistant)
+  method: browser
+  place_kind: nation-website
+  address: https://www.upper-mattaponi.org/
+  outcome: error
+  reason: Guessed domain, not from any result; the fetch was refused because robots.txt could not be read. Not a verified site.
+- date: '2026-11-24'
+  searched_by: Claude (AI assistant)
+  method: browser
+  place_kind: web-search
+  address: Web search (search engine)
+  query: Virginia Legal Aid Society Virginia tribes Native American legal services
+  outcome: not-found
+  reason: Virginia-wide lead check, not specific to this nation. No result named Upper Mattaponi or a Virginia tribe as a served group.
+- date: '2026-11-24'
+  searched_by: Claude (AI assistant)
+  method: browser
+  place_kind: web-search
+  address: Web search (search engine)
+  query: Virginia Poverty Law Center Virginia Indian tribes legal help
+  outcome: not-found
+  reason: Virginia-wide lead check. Results named no Virginia tribe as a served group.
+- date: '2026-11-24'
+  searched_by: Claude (AI assistant)
+  method: browser
+  place_kind: web-search
+  address: Web search (search engine)
+  query: Central Virginia Legal Aid Society Native American tribe members
+  outcome: not-found
+  reason: Virginia-wide lead check. Results named no Virginia tribe as a served group.
+- date: '2026-11-24'
+  searched_by: Claude (AI assistant)
+  method: browser
+  place_kind: legal-aid-site
+  address: https://www.vplc.org/news/honoring-heritage-upholding-rights/
+  outcome: not-found
+  reason: Virginia-wide lead check. Article (Nov 1, 2025) describes advocacy for ICWA protections for children of 'all Virginia's Native American tribes'; it names no tribe and describes no individual service.
+- date: '2026-11-24'
+  searched_by: Claude (AI assistant)
+  method: browser
+  place_kind: legal-aid-site
+  address: https://narf.org/nill/documents/icwa/state/virginia/index.html
+  outcome: not-found
+  reason: Virginia-wide lead check. Page lists only the Virginia State Bar and ABA directory; names no legal aid provider or tribe.
+- date: '2026-11-24'
+  searched_by: Claude (AI assistant)
+  method: browser
+  place_kind: web-search
+  address: Web search (search engine)
+  query: Virginia legal aid Native American program
+  outcome: not-found
+  reason: 'Statewide search: Results were directories, Virginia Poverty Law Center Indian Child Welfare Act item, and general legal help pages.'
+- date: '2026-11-24'
+  searched_by: Claude (AI assistant)
+  method: browser
+  place_kind: web-search
+  address: Web search (search engine)
+  query: valegalaid.org Native American Indian tribal legal assistance Virginia Legal Aid Justice Center
+  outcome: not-found
+  reason: 'Statewide search: Returned general Virginia legal aid listings and directories; no Native-specific program. valegalaid.org itself was not fetched.'
+- date: '2026-11-24'
+  searched_by: Claude (AI assistant)
+  method: browser
+  place_kind: legal-aid-site
+  address: https://www.vplc.org/news/honoring-heritage-upholding-rights/
+  outcome: not-found
+  reason: 'Statewide search: Read the Virginia Poverty Law Center page; it describes a policy effort to change state ICWA law for Virginia tribal children, not individual legal help.'
+next_steps: 'A person could open the pages that refused or timed out: https://www.upper-mattaponi.org/.'

@@ -1,0 +1,148 @@
+key: united-states-v-california-and-oregon-land-co
+kind: federal-case
+citation:
+  type: legal_case
+  title: United States v. California & Oregon Land Co.
+  authority: Supreme Court of the United States
+  container-title: U.S.
+  volume: '192'
+  page: '355'
+  issued:
+    date-parts:
+    - - 1904
+      - 2
+      - 1
+  URL: https://www.loc.gov/item/usrep192355/
+  accessed:
+    date-parts:
+    - - 2026
+      - 11
+      - 24
+caption:
+  printed: UNITED STATES v. CALIFORNIA AND OREGON LAND COMPANY; CALIFORNIA AND OREGON LAND COMPANY v. UNITED STATES
+  source: https://tile.loc.gov/storage-services/service/ll/usrep/usrep192/usrep192355/usrep192355.pdf
+  checked: '2026-11-24'
+opinions:
+  source: https://tile.loc.gov/storage-services/service/ll/usrep/usrep192/usrep192355/usrep192355.pdf
+  checked: '2026-11-24'
+  list:
+  - kind: majority
+    justice: Oliver Wendell Holmes
+    page: 355
+  - kind: dissent
+    justice: Melville Weston Fuller
+    page: 360
+original_link: https://www.loc.gov/item/usrep192355/
+retrieved: '2026-11-24'
+history:
+  status: live
+  last_checked: '2026-11-24'
+court_dates:
+  argued:
+  - '1902-03-14'
+  - '1902-03-17'
+  reargued:
+  - '1902-12-09'
+  - '1902-12-10'
+  - '1904-01-05'
+  - '1904-01-06'
+  - '1904-01-07'
+  printed: Argued March 14, 17, 1902. Reargued December 9, 10, 1902. Reargued January 5, 6, 7, 1904. Decided February 1, 1904.
+  source: https://tile.loc.gov/storage-services/service/ll/usrep/usrep192/usrep192355/usrep192355.pdf
+  checked: '2026-11-24'
+supreme_court:
+  court: Fuller Court
+  natural_court: Fuller Court (1903-1906)
+  decision_type: majority opinion
+  vote:
+    majority: 6
+    minority: 3
+  justices:
+  - name: Melville Weston Fuller
+    vote: minority
+    opinion: dissent
+  - name: Edward Douglass White
+    vote: majority
+  - name: John Marshall Harlan
+    vote: minority
+  - name: David Josiah Brewer
+    vote: majority
+  - name: Henry Billings Brown
+    vote: minority
+  - name: Rufus Wheeler Peckham
+    vote: majority
+  - name: Joseph McKenna
+    vote: majority
+  - name: Oliver Wendell Holmes
+    vote: majority
+    opinion: majority
+  - name: William Rufus Day
+    vote: majority
+  source: http://scdb.wustl.edu/_brickFiles/Legacy_07/SCDB_Legacy_07_justiceCentered_Citation.csv.zip
+  note: From the Supreme Court Database, case 1903-212; Oyez has no votes for this case.
+  checked: '2026-11-24'
+reading_links:
+  checked: '2026-11-24'
+  links:
+  - site: library-of-congress
+    label: Library of Congress
+    access: official
+    link: https://www.loc.gov/item/usrep192355/
+  - site: justia
+    label: Justia
+    access: free
+    link: https://supreme.justia.com/cases/federal/us/192/355/
+    unchecked: true
+  - site: google-scholar
+    label: Google Scholar
+    access: free
+    link: https://scholar.google.com/scholar?hl=en&as_sdt=2006&q=%22192%20U.S.%20355%22
+    unchecked: true
+  - site: westlaw
+    label: Westlaw
+    access: subscription
+    link: https://1.next.westlaw.com/Link/Document/FullText?findType=Y&cite=192%20U.S.%20355
+    unchecked: true
+  - site: lexis
+    label: Lexis
+    access: subscription
+    link: https://advance.lexis.com/api/search?q=192%20U.S.%20355
+    unchecked: true
+rights:
+  status: no-permission-needed
+  basis: us-government-work
+  basis_note: Opinions of federal courts are works of the U.S. government (17 U.S.C. § 105); the host site's own additions are not reproduced.
+  redistribution: true
+found_in:
+- 2026-11-24-supreme-court-native-cases
+notes: 'Full citation: 192 U.S. 355 (1904). Official report scan: https://tile.loc.gov/storage-services/service/ll/usrep/usrep192/usrep192355/usrep192355.pdf. Written by scripts/caselaw/supreme_court_native_cases.py from the Supreme Court Database (case 1903-212), the Caselaw Access Project''s text of the report and the Library of Congress scan; not yet read by a person.'
+tribes: []
+nations_in_case:
+  checked: '2026-11-24'
+  named: []
+review:
+  status: unverified
+  by: scripts/caselaw/supreme_court_native_cases.py
+  date: '2026-11-24'
+  checks:
+  - check: cite
+    result: agree
+    detail: Caselaw Access Project 192 U.S. 355 "United States v. California & Oregon Land Co."; Database 192 U.S. 355 "UNITED STATES v. CALIFORNIA AND OREGON LAND COMPANY"
+  - check: scan
+    result: agree
+    detail: Scan has 8 pages; the report runs 355 to 362
+  - check: caption
+    result: settled
+    detail: 'Caption found in the scan''s text at 0.82. Read from the scan by an AI reader (record right): p. 355: UNITED STATES v. CALIFORNIA AND OREGON LAND COMPANY. / CALIFORNIA AND OREGON LAND COMPANY v. UNITED STATES. (caption block, OCR split across lines)'
+  - check: printed dates
+    result: agree
+    detail: Caselaw Access Project "Argued March 14, 17, 1902. Reargued December 9, 10, 1902. Reargued January 5, 6, 7, 1904. Decided February 1, 1904."; scan "Argued MIarch 14,17, 1902. Reargued December 9,10,1902. 5, 6, 7,1904. Decided February 1, 1904."
+  - check: decided
+    result: agree
+    detail: 'Printed and Database: 1904-02-01'
+  - check: opinions
+    result: agree
+    detail: 'Report: majority Holmes p. 355, dissent Fuller p. 360; Database writers: Fuller, Holmes'
+  - check: bench
+    result: agree
+    detail: No Oyez votes; each opinion writer in the report sits on the Database's bench on the side the opinion takes

@@ -1,0 +1,148 @@
+key: amoco-production-co-v-southern-ute-indian-tribe
+kind: federal-case
+citation:
+  type: legal_case
+  title: Amoco Production Co. v. Southern Ute Indian Tribe
+  authority: Supreme Court of the United States
+  container-title: U.S.
+  volume: '526'
+  page: '865'
+  issued:
+    date-parts:
+    - - 1999
+      - 6
+      - 7
+  URL: https://www.loc.gov/item/usrep526865/
+  accessed:
+    date-parts:
+    - - 2026
+      - 11
+      - 24
+caption:
+  printed: AMOCO PRODUCTION CO., on behalf of itself and the class it represents v. SOUTHERN UTE INDIAN TRIBE et al.
+  source: https://tile.loc.gov/storage-services/service/ll/usrep/usrep526/usrep526865/usrep526865.pdf
+  checked: '2026-11-24'
+opinions:
+  source: https://tile.loc.gov/storage-services/service/ll/usrep/usrep526/usrep526865/usrep526865.pdf
+  checked: '2026-11-24'
+  list:
+  - kind: majority
+    justice: Anthony M. Kennedy
+    page: 867
+  - kind: dissent
+    justice: Ruth Bader Ginsburg
+    page: 880
+original_link: https://www.loc.gov/item/usrep526865/
+retrieved: '2026-11-24'
+history:
+  status: live
+  last_checked: '2026-11-24'
+court_dates:
+  argued:
+  - '1999-04-19'
+  - '1999-06-07'
+  printed: Argued April 19, 1999 Decided June 7, 1999
+  source: https://tile.loc.gov/storage-services/service/ll/usrep/usrep526/usrep526865/usrep526865.pdf
+  checked: '2026-11-24'
+supreme_court:
+  court: Rehnquist Court
+  natural_court: Rehnquist Court (1994-2005)
+  decision_type: majority opinion
+  vote:
+    majority: 7
+    minority: 1
+  justices:
+  - name: William H. Rehnquist
+    vote: majority
+  - name: John Paul Stevens
+    vote: majority
+  - name: Sandra Day O'Connor
+    vote: majority
+  - name: Antonin Scalia
+    vote: majority
+  - name: Anthony M. Kennedy
+    vote: majority
+    opinion: majority
+  - name: David H. Souter
+    vote: majority
+  - name: Clarence Thomas
+    vote: majority
+  - name: Ruth Bader Ginsburg
+    vote: minority
+    opinion: dissent
+  - name: Stephen G. Breyer
+    vote: none
+  source: https://api.oyez.org/cases/1998/98-830
+  checked: '2026-11-24'
+reading_links:
+  checked: '2026-11-24'
+  links:
+  - site: library-of-congress
+    label: Library of Congress
+    access: official
+    link: https://www.loc.gov/item/usrep526865/
+  - site: justia
+    label: Justia
+    access: free
+    link: https://supreme.justia.com/cases/federal/us/526/865/
+    unchecked: true
+  - site: oyez
+    label: Oyez
+    access: free
+    link: https://www.oyez.org/cases/1998/98-830
+  - site: google-scholar
+    label: Google Scholar
+    access: free
+    link: https://scholar.google.com/scholar?hl=en&as_sdt=2006&q=%22526%20U.S.%20865%22
+    unchecked: true
+  - site: westlaw
+    label: Westlaw
+    access: subscription
+    link: https://1.next.westlaw.com/Link/Document/FullText?findType=Y&cite=526%20U.S.%20865
+    unchecked: true
+  - site: lexis
+    label: Lexis
+    access: subscription
+    link: https://advance.lexis.com/api/search?q=526%20U.S.%20865
+    unchecked: true
+rights:
+  status: no-permission-needed
+  basis: us-government-work
+  basis_note: Opinions of federal courts are works of the U.S. government (17 U.S.C. § 105); the host site's own additions are not reproduced.
+  redistribution: true
+found_in:
+- 2026-11-24-supreme-court-native-cases
+notes: 'Full citation: 526 U.S. 865 (1999). Official report scan: https://tile.loc.gov/storage-services/service/ll/usrep/usrep526/usrep526865/usrep526865.pdf. Written by scripts/caselaw/supreme_court_native_cases.py from the Supreme Court Database (case 1998-067), the Caselaw Access Project''s text of the report and the Library of Congress scan; not yet read by a person.'
+tribes: []
+nations_in_case:
+  checked: '2026-11-24'
+  named: []
+  not_linked:
+  - named_as: Southern Ute Indian Tribe
+    reason: More than one of today's nations shares this name (american-indian-council-of-mariposa-county, cherokee-nation-west-of-missouri-and-arkansas, san-juan-southern-paiute-tribe-of-arizona, southern-cherokee-indian-tribe, southern-cherokee-nation-of-kentucky, southern-cherokee-treaty-tribe and 4 more); which the case concerns has not been checked.
+review:
+  status: verified
+  by: scripts/caselaw/supreme_court_native_cases.py
+  date: '2026-11-24'
+  checks:
+  - check: cite
+    result: agree
+    detail: Caselaw Access Project 526 U.S. 865 "Amoco Production Co. v. Southern Ute Indian Tribe"; Database 526 U.S. 865 "AMOCO PRODUCTION COMPANY, ON BEHALF OF ITSELF AND THE CLASS IT REPRESENTS v. SOUTHERN UTE INDIAN TRIBE et al."
+  - check: scan
+    result: agree
+    detail: Scan has 17 pages; the report runs 865 to 881
+  - check: caption
+    result: agree
+    detail: Caption found in the scan's text at 1.00
+  - check: printed dates
+    result: agree
+    detail: Caselaw Access Project "Argued April 19, 1999 Decided June 7, 1999"; scan "Argued April 19, 1999-Decided June 7, 1999"
+  - check: decided
+    result: agree
+    detail: 'Printed and Database: 1999-06-07'
+  - check: opinions
+    result: agree
+    detail: 'Report: majority Kennedy p. 867, dissent Ginsburg p. 880; Database writers: Ginsburg, Kennedy'
+  - check: bench
+    result: agree
+    detail: Oyez and the Database give the same Justices and votes
