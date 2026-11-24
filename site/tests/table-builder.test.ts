@@ -103,3 +103,25 @@ describe('Build a table', () => {
 		expect(settings).toEqual({ ...startingSettings(dataset), columns: ['kind'] });
 	});
 });
+
+describe('Placing a built table elsewhere', () => {
+	it('reads a Build a table address and gives the chart it shows', async () => {
+		const { builderAddressParts, builtResult, essayChartOf, essayChartFrom } = await import('../src/lib/table-builder.ts');
+		const parts = builderAddressParts('/nations/data/build?data=courts&group=kind');
+		expect(parts?.dataset).toBe('courts');
+		expect(builderAddressParts('/nations/data?data=courts')).toBeUndefined();
+		const result = builtResult(dataset, parts?.parameters ?? new URLSearchParams());
+		expect(result.kind).toBe('chart');
+		expect(builtResult(dataset, new URLSearchParams('data=courts')).kind).toBe('table');
+		expect(essayChartOf(dataset, parts?.parameters ?? new URLSearchParams(), 'Nov. 24, 2026')).toEqual({
+			caption: 'Courts by kind',
+			labelHeader: 'Kind',
+			valueHeader: 'Courts',
+			rows: [['Tribal court', 2], ['Court of appeals', 1], ['Peacemaking', 1]],
+			credit: 'Courts and forums, as of Nov. 24, 2026: [Build a table](/nations/data/build?data=courts&group=kind)'
+		});
+		const fetched = await essayChartFrom('/nations/data/build?data=courts&group=kind', (async () => new Response(JSON.stringify(dataset))) as typeof fetch);
+		expect(fetched?.rows[0]).toEqual(['Tribal court', 2]);
+		expect(await essayChartFrom('/nations/data', (async () => new Response('{}')) as typeof fetch)).toBeNull();
+	});
+});

@@ -15,6 +15,7 @@
  * that group's filter added and the grouping taken off.
  */
 import type { BarChartData } from './bar-chart.ts';
+import { readableDate } from './readable-date.ts';
 import type { TableColumn, TableRow } from './tables/table-definition.ts';
 
 export type BuilderColumnType = 'text' | 'number' | 'date' | 'list';
@@ -322,4 +323,76 @@ export function crossTable(dataset: BuilderDataset, settings: BuilderSettings): 
 		return { key: label, cells };
 	});
 	return { columns, rows };
+}
+
+/* Placing a built table elsewhere --------------------------------------- */
+
+/** The dataset a Build a table address names, and the address's parameters; undefined when it isn't one. */
+export function builderAddressParts(link: string): { dataset: string; parameters: URLSearchParams } | undefined {
+	let url: URL;
+	try {
+		url = new URL(link, 'https://site.invalid');
+	} catch {
+		return undefined;
+	}
+	if (url.pathname !== builderPath) return undefined;
+	const dataset = url.searchParams.get('data');
+	return dataset ? { dataset, parameters: url.searchParams } : undefined;
+}
+
+/** What a built table is, wherever it is placed: a chart for one grouping, a table otherwise, with the address that rebuilds it. */
+export type BuiltResult =
+	| { kind: 'chart'; title: string; chart: BarChartData; link: string }
+	| { kind: 'table'; title: string; columns: TableColumn[]; rows: TableRow[]; link: string };
+
+/** Works out what a Build a table address shows, from its dataset. */
+export function builtResult(dataset: BuilderDataset, parameters: URLSearchParams): BuiltResult {
+	const settings = settingsFromAddress(parameters, dataset);
+	const link = builderLink(settings, dataset);
+	const title = resultTitle(dataset, settings);
+	const chart = groupedChart(dataset, settings);
+	if (chart) return { kind: 'chart', title, chart, link };
+	const table = crossTable(dataset, settings) ?? recordTable(dataset, settings);
+	return { kind: 'table', title, columns: table.columns, rows: table.rows, link };
+}
+
+/** A built chart as an essay's chart figure takes it (src/lib/essays/figures.ts). */
+export interface EssayChart {
+	caption: string;
+	labelHeader: string;
+	valueHeader: string;
+	rows: [string, number][];
+	/** Names the data and the day, and links back to the builder. */
+	credit: string;
+}
+
+/** A built chart as an essay chart, with its numbers as they are on the given day; null when the result is not a chart of one grouping. */
+export function essayChartOf(dataset: BuilderDataset, parameters: URLSearchParams, today: string): EssayChart | null {
+	const result = builtResult(dataset, parameters);
+	if (result.kind !== 'chart') return null;
+	return {
+		caption: result.title,
+		labelHeader: result.chart.labelHeader,
+		valueHeader: result.chart.valueHeader,
+		rows: result.chart.bars.map((bar) => [bar.label, bar.value]),
+		credit: `${dataset.title}, as of ${today}: [Build a table](${result.link})`
+	};
+}
+
+/**
+ * The essay editor's "Add to essay" (Trevor, Nov. 24, 2026: making our own charts should be "the same flow"): reads a
+ * Build a table address, fetches its dataset and gives the chart to place, dated today. Null for an address it can't
+ * read or a result that isn't a chart. Runs in the browser.
+ */
+export async function essayChartFrom(link: string, fetcher: typeof fetch = fetch): Promise<EssayChart | null> {
+	const parts = builderAddressParts(link);
+	if (!parts) return null;
+	try {
+		const response = await fetcher(builderDatasetPath(parts.dataset));
+		if (!response.ok) return null;
+		const dataset = (await response.json()) as BuilderDataset;
+		return essayChartOf(dataset, parts.parameters, readableDate(new Date().toISOString().slice(0, 10)));
+	} catch {
+		return null;
+	}
 }

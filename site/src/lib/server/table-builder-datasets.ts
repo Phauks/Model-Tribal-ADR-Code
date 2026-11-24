@@ -14,7 +14,7 @@ import { displayName, stateName } from '../nation-labels.ts';
 import { categoryOf } from '../nation-services.ts';
 import { copyPagePath } from '../public-copies.ts';
 import { shadedViewDefinitions, type ShadedMapView } from '../shaded-map-views.ts';
-import type { BuilderColumn, BuilderDataset, BuilderDatasetSummary, BuilderValue } from '../table-builder.ts';
+import { builderAddressParts, builtResult, type BuilderColumn, type BuilderDataset, type BuilderDatasetSummary, type BuilderValue, type BuiltResult } from '../table-builder.ts';
 import { nations, publicCopyFor, repositoryRoot, type NationRecord } from './content.ts';
 import { nationCategoryKeys } from './nations-map.ts';
 import { recourseRows } from './recourse.ts';
@@ -316,4 +316,16 @@ export function builderDatasetSummaries(): BuilderDatasetSummary[] {
 		const dataset = builderDataset(identifier) as BuilderDataset;
 		return { identifier, title: dataset.title, rowCount: dataset.rows.length };
 	});
+}
+
+/**
+ * A table or chart for one of the site's own pages, defined by its Build a table address, worked out at build time.
+ * The team makes charts with the same page readers use (Trevor, Nov. 24, 2026: "it should be the same flow"), so a
+ * topic page names a chart by the link that builds it, and readers can open that link to change it.
+ */
+export function builtChart(link: string): BuiltResult {
+	const parts = builderAddressParts(link);
+	const dataset = parts ? builderDataset(parts.dataset) : undefined;
+	if (!parts || !dataset) throw new Error(`Not a Build a table address with a known dataset: ${link}`);
+	return builtResult(dataset, parts.parameters);
 }

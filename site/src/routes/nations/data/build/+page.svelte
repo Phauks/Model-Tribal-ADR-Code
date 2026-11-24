@@ -11,6 +11,7 @@
 <script lang="ts">
 	import { onMount } from 'svelte';
 	import Columns3 from '@lucide/svelte/icons/columns-3';
+	import FilePlus from '@lucide/svelte/icons/file-plus';
 	import Link from '@lucide/svelte/icons/link';
 	import ListFilterPlus from '@lucide/svelte/icons/list-filter-plus';
 	import X from '@lucide/svelte/icons/x';
@@ -43,6 +44,9 @@
 	let columnsOpen = $state(false);
 	let addOpen = $state(false);
 	let copyStatus = $state('');
+	let essaysOpen = $state(false);
+	/** The essays the signed-in person can edit, for "Add to essay"; empty for everyone else (src/routes/workspace/essays/editable.json). */
+	let editableEssays = $state<{ identifier: string; title: string; editLink: string }[]>([]);
 
 	const dataset = $derived(settings ? loaded[settings.dataset] : undefined);
 	const groupable = $derived(dataset?.columns.filter((column) => column.type !== 'number') ?? []);
@@ -112,6 +116,7 @@
 		const target = event.target as Element | null;
 		if (!target?.closest('.columns-menu')) columnsOpen = false;
 		if (!target?.closest('.add-menu')) addOpen = false;
+		if (!target?.closest('.essay-menu')) essaysOpen = false;
 	}
 
 	$effect(() => {
@@ -125,7 +130,17 @@
 		const requested = parameters.get('data') ?? '';
 		const identifier = data.datasets.some((summary) => summary.identifier === requested) ? requested : data.datasets[0].identifier;
 		open(identifier, parameters).catch(() => (loadFailed = true));
+		// The team makes essay charts here too (Trevor, Nov. 24, 2026: "it should be the same flow"); the list is empty unless someone who can edit an essay is signed in.
+		fetch('/workspace/essays/editable.json')
+			.then((response) => (response.ok ? response.json() : { essays: [] }))
+			.then((body: { essays?: { identifier: string; title: string; editLink: string }[] }) => (editableEssays = body.essays ?? []))
+			.catch(() => (editableEssays = []));
 	});
+
+	/** Where "Add to essay" takes the editor: the essay in Editing, which places this chart at its end (src/lib/table-builder.ts, essayChartFrom). */
+	function addToEssayLink(editLink: string): string {
+		return `${editLink}${editLink.includes('?') ? '&' : '?'}add-chart=${encodeURIComponent(`${location.pathname}${location.search}`)}`;
+	}
 </script>
 
 <svelte:window onclick={onWindowClick} />
@@ -232,7 +247,21 @@
 					{/if}
 				</div>
 			{/if}
-			<button type="button" class="icon-tool copy-link" aria-label="Copy link" title="Copy a link to this table" onclick={copyLink}>
+			{#if chart && editableEssays.length > 0}
+				<div class="essay-menu copy-link">
+					<button type="button" class="icon-tool" aria-label="Add to essay" title="Add this chart to an essay" aria-expanded={essaysOpen} aria-controls="builder-essays" onclick={() => (essaysOpen = !essaysOpen)}>
+						<FilePlus aria-hidden="true" size="1.25em" strokeWidth={1.75} />
+					</button>
+					{#if essaysOpen}
+						<ul id="builder-essays" class="menu menu-end" aria-label="Add to essay">
+							{#each editableEssays as essay (essay.identifier)}
+								<li><a href={addToEssayLink(essay.editLink)}>{essay.title}</a></li>
+							{/each}
+						</ul>
+					{/if}
+				</div>
+			{/if}
+			<button type="button" class="icon-tool" class:copy-link={!(chart && editableEssays.length > 0)} aria-label="Copy link" title="Copy a link to this table" onclick={copyLink}>
 				<Link aria-hidden="true" size="1.25em" strokeWidth={1.75} />
 			</button>
 			<span class="small muted" role="status">{copyStatus}</span>
@@ -310,7 +339,8 @@
 	}
 
 	.add-menu,
-	.columns-menu {
+	.columns-menu,
+	.essay-menu {
 		position: relative;
 	}
 
@@ -331,7 +361,13 @@
 		box-shadow: 0 var(--space-1) var(--space-3) color-mix(in srgb, var(--color-ink) 20%, transparent);
 	}
 
+	.menu-end {
+		left: auto;
+		right: 0;
+	}
+
 	.menu button,
+	.menu a,
 	.menu label {
 		display: flex;
 		align-items: center;
@@ -350,6 +386,8 @@
 
 	.menu button:hover,
 	.menu button:focus-visible,
+	.menu a:hover,
+	.menu a:focus-visible,
 	.menu label:hover {
 		background: var(--color-surface);
 	}
