@@ -34,6 +34,7 @@ court_dates:
   checked: '2026-11-23'
 supreme_court:
   court: Roberts Court
+  short_name: "Plains Commerce Bank"
   natural_court: Roberts Court (2006-2009)
   decision_type: majority opinion
   vote: {majority: 5, minority: 4}
@@ -43,12 +44,13 @@ supreme_court:
   - {name: "Anthony M. Kennedy", vote: majority}
   - {name: "David H. Souter", vote: minority}
   - {name: "Clarence Thomas", vote: majority}
-  - {name: "Ruth Bader Ginsburg", vote: minority, opinion: dissent}
+  - {name: "Ruth Bader Ginsburg", vote: minority, opinion: "concurrence in part, concurrence in the judgment in part, and dissent in part"}
   - {name: "Stephen G. Breyer", vote: minority}
   - {name: "John G. Roberts, Jr.", vote: majority, opinion: majority}
   - {name: "Samuel A. Alito, Jr.", vote: majority}
   source: https://api.oyez.org/cases/2007/07-411
-  checked: '2026-11-22'
+  note: "The report says Ginsburg filed an opinion concurring in part, concurring in the judgment in part, and dissenting in part."
+  checked: '2026-11-24'
 courtlistener:
   cluster: 145782
   citation: "554 U.S. 316"

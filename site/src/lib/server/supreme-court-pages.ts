@@ -12,11 +12,15 @@ import { sources } from './content.ts';
 import { renderMarkdown } from './markdown.ts';
 import { SourceUses, type SourceEntry } from './source-uses.ts';
 import { associatesOf, courts, justicesFile, seatLaws, seatLawsSource, surname, type Court, type Justice } from './supreme-courts.ts';
+import { decidedDay, justicePath, personForCase, personOf, presidentNamed, presidentPath } from './supreme-court-people.ts';
 
 export interface BenchRow {
 	name: string;
 	role: Justice['role'];
+	/** The Justice's page. */
+	link: string;
 	appointedBy: string;
+	appointedByLink?: string;
 	state: string;
 	/** Oath and end of service, whole career. */
 	joined: string;
@@ -35,15 +39,35 @@ export interface Change {
 	events: string[];
 }
 
+/** Where an opinion goes in the cases table. */
+export type OpinionColumn = 'court' | 'concurring' | 'dissenting';
+
+export interface CaseOpinion {
+	/** The Justice's surname, as the tables show it. */
+	justice: string;
+	/** The Justice's name as the case record gives it. */
+	fullName: string;
+	/** The Justice's page; none for a per curiam opinion. */
+	link?: string;
+	column: OpinionColumn;
+	/** What kind of opinion, when the column alone does not say: "plurality", "in the judgment". */
+	qualifier?: string;
+	/** A vote the report notes with no opinion written, such as "Mr. Justice Harlan dissented." Not counted as an opinion. */
+	unwritten?: true;
+}
+
 export interface CourtCase {
 	key: string;
 	name: string;
+	/** The short name that labels the case on charts: "Worcester". */
+	shortName: string;
 	citation: string;
 	link?: string;
 	decided?: string;
 	decidedText?: string;
 	vote?: string;
-	writer?: string;
+	/** Every opinion a Justice wrote in the case, in the table's order. */
+	opinions: CaseOpinion[];
 }
 
 export interface CourtPage {
@@ -67,8 +91,67 @@ export interface CourtPage {
 
 interface CaseBench {
 	court: string;
+	short_name: string;
+	decision_type?: string;
 	vote?: { majority?: number | null; minority?: number | null };
 	justices?: { name: string; vote: string; opinion?: string }[];
+}
+
+/**
+ * Each kind of opinion the case records give (from Oyez's opinion types or
+ * the official report), with its column and the words that say what it is
+ * when the column does not. "joining the dissent in part" is a vote, not an
+ * opinion the Justice wrote, so it is left out of the opinions.
+ */
+const opinionKinds: Record<string, { column: OpinionColumn; qualifier?: string; unwritten?: true } | null> = {
+	majority: { column: 'court' },
+	plurality: { column: 'court', qualifier: 'plurality' },
+	judgment: { column: 'court', qualifier: 'announcing the judgment' },
+	concurrence: { column: 'concurring' },
+	'special concurrence': { column: 'concurring', qualifier: 'in the judgment' },
+	'concurrence in the result': { column: 'concurring', qualifier: 'in the result' },
+	'concurrence in the result without opinion': { column: 'concurring', qualifier: 'in the result, without an opinion', unwritten: true },
+	'concurrence in part and in the judgment': { column: 'concurring', qualifier: 'in part and in the judgment' },
+	'concurrence in part and dissent in part': { column: 'dissenting', qualifier: 'concurring in part' },
+	'concurrence in part, concurrence in the judgment in part, and dissent in part': {
+		column: 'dissenting',
+		qualifier: 'concurring in part and in the judgment in part'
+	},
+	dissent: { column: 'dissenting' },
+	'dissent in part': { column: 'dissenting', qualifier: 'in part' },
+	'joining the dissent in part': null
+};
+
+const columnOrder: OpinionColumn[] = ['court', 'concurring', 'dissenting'];
+
+/**
+ * The opinions in one case, the opinion of the Court first, then
+ * concurrences, then dissents. A Justice who dissented where no one in the
+ * minority wrote ("Mr. Justice Brewer dissents.") is listed as dissenting
+ * without an opinion; a per curiam opinion of the Court is listed as such.
+ */
+export function caseOpinions(key: string, bench: CaseBench, decided?: string): CaseOpinion[] {
+	const link = (name: string) => justicePath(personForCase(name, decided, key));
+	const justices = bench.justices ?? [];
+	const opinions: CaseOpinion[] = [];
+	if (bench.decision_type === 'per curiam' && !justices.some((justice) => opinionKinds[justice.opinion ?? '']?.column === 'court')) {
+		opinions.push({ justice: 'Per curiam', fullName: 'Per curiam', column: 'court' });
+	}
+	for (const justice of justices) {
+		if (!justice.opinion) continue;
+		if (!(justice.opinion in opinionKinds)) {
+			throw new Error(`content/sources ${key}: no column for the opinion type "${justice.opinion}"; add it to opinionKinds`);
+		}
+		const kind = opinionKinds[justice.opinion];
+		if (kind) opinions.push({ justice: surname(justice.name), fullName: justice.name, link: link(justice.name), ...kind });
+	}
+	const minority = justices.filter((justice) => justice.vote === 'minority');
+	if (bench.decision_type !== 'equally divided Court' && !minority.some((justice) => justice.opinion)) {
+		for (const justice of minority) {
+			opinions.push({ justice: surname(justice.name), fullName: justice.name, link: link(justice.name), column: 'dissenting', qualifier: 'without an opinion', unwritten: true });
+		}
+	}
+	return opinions.sort((first, second) => columnOrder.indexOf(first.column) - columnOrder.indexOf(second.column));
 }
 
 const endingWords: Record<string, string> = {
@@ -102,13 +185,20 @@ function seatText(court: Court, sourceUses: SourceUses, marks: CitationMark[]): 
 	return text;
 }
 
+function presidentLink(name: string): string | undefined {
+	const president = presidentNamed(name);
+	return president ? presidentPath(president) : undefined;
+}
+
 function benchRows(court: Court): BenchRow[] {
 	const end = court.end ?? today();
 	const members = [court.chief, ...associatesOf(court)];
 	return members.map((justice) => ({
 		name: justice.name,
 		role: justice.role,
+		link: justicePath(personOf(justice)),
 		appointedBy: justice.appointed_by,
+		appointedByLink: presidentLink(justice.appointed_by),
 		state: justice.state,
 		joined: justice.oath,
 		left: justice.left,
@@ -150,19 +240,18 @@ function courtCases(court: Court): CourtCase[] {
 		const bench = (record as { supreme_court?: CaseBench }).supreme_court;
 		if (bench?.court !== court.name) continue;
 		const preview = previews.get(record.key);
-		const parts = record.citation.issued?.['date-parts']?.[0] ?? [];
-		const decided = parts.length >= 3 ? `${parts[0]}-${String(parts[1]).padStart(2, '0')}-${String(parts[2]).padStart(2, '0')}` : undefined;
+		const decided = decidedDay(record.citation.issued);
 		const { majority, minority } = bench.vote ?? {};
-		const writer = bench.justices?.find((justice) => ['majority', 'plurality', 'judgment'].includes(justice.opinion ?? ''));
 		found.push({
 			key: record.key,
 			name: record.citation.title ?? record.key,
+			shortName: bench.short_name,
 			citation: preview?.citation ?? [record.citation.volume, 'U.S.', record.citation.page].filter(Boolean).join(' '),
 			link: preview?.link,
 			decided,
 			decidedText: decided ? readableDate(decided) : undefined,
 			vote: Number.isInteger(majority) && Number.isInteger(minority) ? `${majority}–${minority}` : undefined,
-			writer: writer ? surname(writer.name) : undefined
+			opinions: caseOpinions(record.key, bench, decided)
 		});
 	}
 	return found.sort((first, second) => (first.decided ?? '').localeCompare(second.decided ?? ''));

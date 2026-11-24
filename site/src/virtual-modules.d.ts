@@ -40,6 +40,11 @@ declare module 'virtual:nation-images' {
 	export const nationImages: import('#lib/official-images.ts').ServableImage[];
 }
 
+declare module 'virtual:portraits' {
+	/** The portraits of Justices and Presidents the Worker may serve, listed at build time. */
+	export const portraits: { person: string; key: string; mediaType: string; sha256: string; link: string }[];
+}
+
 declare module 'virtual:public-copies' {
 	/** The copies of public documents the Worker may serve at /copies/, listed at build time. */
 	export const publicCopies: Pick<

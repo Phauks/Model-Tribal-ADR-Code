@@ -1,0 +1,30 @@
+key: federal-judicial-center-biographical-directory-judges
+kind: dataset
+citation:
+  type: dataset
+  title: Biographical Directory of Article III Federal Judges, 1789–present (judges, education and professional career exports)
+  author:
+  - literal: Federal Judicial Center
+  URL: https://www.fjc.gov/history/judges/biographical-directory-article-iii-federal-judges-export
+  accessed:
+    date-parts:
+    - - 2026
+      - 11
+      - 24
+original_link: https://www.fjc.gov/sites/default/files/history/judges.csv
+retrieved: '2026-11-24'
+archives: []  # capture pending
+history:
+  status: live
+  last_checked: '2026-11-24'
+rights:
+  status: no-permission-needed
+  basis: us-government-work
+  basis_note: Published by the Federal Judicial Center, an agency of the federal judiciary.
+  redistribution: true
+topics:
+- legal-history
+- supreme-court
+found_in:
+- 2026-11-24-justice-and-president-pages
+notes: 'One row per judge in judges.csv, with birth and death dates and places, each judicial appointment (nomination, hearing, confirmation, Senate vote, commission and the party of the appointing President) and other federal judicial service; education.csv and professional-career.csv give schooling and career before the bench, one row each. Read for the 116 Justices on Nov. 24, 2026; content/supreme-court/people.yaml is built from it.'

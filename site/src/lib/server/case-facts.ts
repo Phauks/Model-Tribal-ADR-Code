@@ -13,6 +13,7 @@
 import { displayName } from '../nation-labels.ts';
 import { escapeHtml } from './markdown.ts';
 import { courtPath } from './supreme-courts.ts';
+import { decidedDay, justicePath, personForCase } from './supreme-court-people.ts';
 
 export type FactLine = [label: string, html: string];
 
@@ -44,7 +45,12 @@ const opinionLabels: Record<string, string> = {
 	plurality: 'plurality opinion',
 	concurrence: 'concurring opinion',
 	'special concurrence': 'opinion concurring in the judgment',
-	'concurrence in the result': 'concurring in the result',
+	'concurrence in the result': 'opinion concurring in the result',
+	'concurrence in the result without opinion': 'concurring in the result, without an opinion',
+	'concurrence in part and in the judgment': 'opinion concurring in part and concurring in the judgment',
+	'concurrence in part and dissent in part': 'opinion concurring in part and dissenting in part',
+	'concurrence in part, concurrence in the judgment in part, and dissent in part': 'opinion concurring in part, concurring in the judgment in part, and dissenting in part',
+	'dissent in part': 'opinion dissenting in part',
 	judgment: 'opinion announcing the judgment',
 	dissent: 'dissenting opinion'
 };
@@ -76,11 +82,13 @@ function surname(name: string): string {
 	return name.replace(/,?\s+(?:Jr\.|Sr\.|II|III)$/, '').trim().split(/\s+/).pop() ?? name;
 }
 
-function justiceList(justices: Justice[]): string {
+/** The Justices' names, each linked to the Justice's page (src/routes/supreme-court/justices), writers in bold with the opinion named. */
+function justiceList(justices: Justice[], decided: string | undefined): string {
 	return justices
 		.map((justice) => {
 			const label = justice.opinion ? (opinionLabels[justice.opinion] ?? justice.opinion) : null;
-			const name = escapeHtml(surname(justice.name));
+			const path = justicePath(personForCase(justice.name, decided, surname(justice.name)));
+			const name = `<a href="${path}">${escapeHtml(surname(justice.name))}</a>`;
 			return label ? `<strong>${name}</strong> (${escapeHtml(label)})` : name;
 		})
 		.join(', ');
@@ -173,10 +181,11 @@ export function caseFacts(record: CaseRecord, nations: Map<string, { name: strin
 			...list.filter((justice) => justice.opinion && !leads(justice)),
 			...list.filter((justice) => !justice.opinion)
 		];
-		if (inMajority.length) facts.push(['Majority', justiceList(writersFirst(inMajority))]);
-		if (inMinority.length) facts.push(['Dissent', justiceList(writersFirst(inMinority))]);
-		if (unrecorded.length) facts.push(['Vote not recorded', justiceList(unrecorded)]);
-		if (absent.length) facts.push(['Did not participate', justiceList(absent)]);
+		const decided = decidedDay(record.citation?.issued);
+		if (inMajority.length) facts.push(['Majority', justiceList(writersFirst(inMajority), decided)]);
+		if (inMinority.length) facts.push(['Dissent', justiceList(writersFirst(inMinority), decided)]);
+		if (unrecorded.length) facts.push(['Vote not recorded', justiceList(unrecorded, decided)]);
+		if (absent.length) facts.push(['Did not participate', justiceList(absent, decided)]);
 	}
 	return facts;
 }

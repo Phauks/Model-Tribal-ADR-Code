@@ -34,9 +34,9 @@
 		data.bench.map((justice) => ({
 			key: `${justice.name}-${justice.role}`,
 			cells: {
-				name: { text: justice.name },
+				name: { text: justice.name, href: justice.link },
 				role: { text: justice.role },
-				appointedBy: { text: justice.appointedBy },
+				appointedBy: { text: justice.appointedBy, href: justice.appointedByLink },
 				joined: { text: readableDate(justice.joined), sortValue: justice.joined },
 				left: { text: justice.left ? readableDate(justice.left) : 'Serving', sortValue: justice.left ?? '9999' },
 				ending: { text: justice.ending ? justice.ending[0].toUpperCase() + justice.ending.slice(1) : '' },
@@ -49,8 +49,21 @@
 		{ key: 'name', header: 'Case', isRowHeader: true, sortable: true, custom: true },
 		{ key: 'decided', header: 'Decided', type: 'date', sortable: true },
 		{ key: 'vote', header: 'Vote', sortable: true },
-		{ key: 'writer', header: 'Opinion of the Court', sortable: true }
+		{ key: 'opinions', header: 'Opinions', type: 'number', sortable: true },
+		{ key: 'court', header: 'Opinion of the Court', sortable: true, custom: true },
+		{ key: 'concurring', header: 'Concurring', sortable: true, custom: true },
+		{ key: 'dissenting', header: 'Dissenting', sortable: true, custom: true }
 	];
+
+	/** The opinions the Justices wrote, leaving out votes noted without one. */
+	const writtenCount = (item: (typeof data.cases)[number]) => item.opinions.filter((opinion) => !opinion.unwritten).length;
+
+	/** "Brown (announcing the judgment)", for the download and for sorting. */
+	const opinionText = (item: (typeof data.cases)[number], column: string) =>
+		item.opinions
+			.filter((opinion) => opinion.column === column)
+			.map((opinion) => (opinion.qualifier ? `${opinion.justice} (${opinion.qualifier})` : opinion.justice))
+			.join('; ');
 
 	const caseRows: TableRow[] = $derived(
 		data.cases.map((item) => ({
@@ -59,7 +72,10 @@
 				name: { text: `${item.name}, ${item.citation}`, href: item.link, sortValue: item.name },
 				decided: { text: item.decidedText ?? '', sortValue: item.decided ?? '' },
 				vote: { text: item.vote ?? '' },
-				writer: { text: item.writer ?? '' }
+				opinions: { text: String(writtenCount(item)), sortValue: writtenCount(item) },
+				court: { text: opinionText(item, 'court') },
+				concurring: { text: opinionText(item, 'concurring') },
+				dissenting: { text: opinionText(item, 'dissenting') }
 			}
 		}))
 	);
@@ -125,9 +141,17 @@
 <section aria-labelledby="cases">
 	<h2 id="cases">Cases on this site <CountBadge count={data.cases.length} /></h2>
 	<DataTable identifier="cases-{data.key}" label="Table: cases decided by the {data.name}" columns={caseColumns} rows={caseRows} rowName={['case', 'cases']} download="{data.key}-cases">
-		{#snippet cell(row)}
+		{#snippet cell(row, column)}
 			{@const item = caseByKey.get(row.key)}
-			{#if item}{#if item.link}<a href={item.link}><i>{item.name}</i></a>{:else}<i>{item.name}</i>{/if}, {item.citation}{/if}
+			{#if item && column.key === 'name'}
+				{#if item.link}<a href={item.link}><i>{item.name}</i></a>{:else}<i>{item.name}</i>{/if}, {item.citation}
+			{:else if item}
+				<ul class="opinions">
+					{#each item.opinions.filter((opinion) => opinion.column === column.key) as opinion (opinion.fullName)}
+						<li>{#if opinion.link}<a href={opinion.link}>{opinion.justice}</a>{:else}{opinion.justice}{/if}{#if opinion.qualifier}{' '}<span class="muted">({opinion.qualifier})</span>{/if}</li>
+					{/each}
+				</ul>
+			{/if}
 		{/snippet}
 	</DataTable>
 </section>
@@ -151,6 +175,12 @@
 	.changes time {
 		color: var(--color-ink-muted);
 		font-variant-numeric: tabular-nums;
+	}
+
+	.opinions {
+		margin: 0;
+		padding: 0;
+		list-style: none;
 	}
 
 	.source-line {

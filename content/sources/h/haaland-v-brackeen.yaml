@@ -34,6 +34,7 @@ court_dates:
   checked: '2026-11-23'
 supreme_court:
   court: Roberts Court
+  short_name: "Brackeen"
   natural_court: Roberts Court (2022-)
   decision_type: majority opinion
   vote: {majority: 7, minority: 2}
@@ -45,10 +46,11 @@ supreme_court:
   - {name: "Sonia Sotomayor", vote: majority}
   - {name: "Elena Kagan", vote: majority}
   - {name: "Neil Gorsuch", vote: majority, opinion: concurrence}
-  - {name: "Brett M. Kavanaugh", vote: majority}
+  - {name: "Brett M. Kavanaugh", vote: majority, opinion: concurrence}
   - {name: "Ketanji Brown Jackson", vote: majority}
   source: https://api.oyez.org/cases/2022/21-376
-  checked: '2026-11-22'
+  note: "The report lists Kavanaugh's concurring opinion, which Oyez leaves out."
+  checked: '2026-11-24'
 courtlistener:
   cluster: 9406660
   citation: "599 U.S. 255"

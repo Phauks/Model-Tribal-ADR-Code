@@ -34,6 +34,7 @@ court_dates:
   checked: '2026-11-23'
 supreme_court:
   court: Roberts Court
+  short_name: "Lewis"
   natural_court: Roberts Court (2016-2017)
   decision_type: majority opinion
   vote: {majority: 8, minority: 0}
@@ -44,11 +45,12 @@ supreme_court:
   - {name: "Samuel A. Alito, Jr.", vote: majority}
   - {name: "Elena Kagan", vote: majority}
   - {name: "Stephen G. Breyer", vote: majority}
-  - {name: "Clarence Thomas", vote: majority, opinion: concurrence}
-  - {name: "Ruth Bader Ginsburg", vote: majority, opinion: concurrence}
+  - {name: "Clarence Thomas", vote: majority, opinion: special concurrence}
+  - {name: "Ruth Bader Ginsburg", vote: majority, opinion: special concurrence}
   - {name: "Neil Gorsuch", vote: none}
   source: https://api.oyez.org/cases/2016/15-1500
-  checked: '2026-11-22'
+  note: "The report says Thomas and Ginsburg filed opinions concurring in the judgment."
+  checked: '2026-11-24'
 courtlistener:
   cluster: 4385683
   citation: "581 U.S. 155"
