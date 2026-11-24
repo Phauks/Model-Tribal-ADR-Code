@@ -10,7 +10,7 @@
 <script lang="ts">
 	import BenchChart from '#lib/components/BenchChart.svelte';
 	import CitationMarks from '#lib/components/CitationMarks.svelte';
-	import CountBadge from '#lib/components/CountBadge.svelte';
+	import Collapsible from '#lib/components/Collapsible.svelte';
 	import DataTable from '#lib/components/DataTable.svelte';
 	import InfoPage from '#lib/components/InfoPage.svelte';
 	import { readableDate } from '#lib/readable-date.ts';
@@ -97,14 +97,12 @@
 		{ label: 'Supreme Court', href: '/supreme-court' }
 	]}
 >
-<section aria-labelledby="history" class="reading">
-	<h2 id="history">History</h2>
+<Collapsible heading="History" identifier="history" class="reading">
 	<!-- eslint-disable-next-line svelte/no-at-html-tags -- built from the repository's own Markdown -->
 	{@html data.historyHtml}
-</section>
+</Collapsible>
 
-<section aria-labelledby="justices">
-	<h2 id="justices">Justices <CountBadge count={data.bench.length} /></h2>
+<Collapsible heading="Justices" identifier="justices" count={data.bench.length}>
 	<BenchChart rows={data.bench} start={data.start} end={data.end} cases={data.cases} />
 	<DataTable
 		identifier="justices-{data.key}"
@@ -116,11 +114,10 @@
 		filters
 	/>
 	<p class="small muted source-line">Source<CitationMarks marks={data.benchMarks} /></p>
-</section>
+</Collapsible>
 
 {#if data.changes.length > 0}
-	<section aria-labelledby="changes" class="reading">
-		<h2 id="changes">Changes <CountBadge count={data.changes.length} /></h2>
+	<Collapsible heading="Changes" identifier="changes" count={data.changes.length} class="reading">
 		<ol class="changes">
 			{#each data.changes as change (change.date)}
 				<li>
@@ -130,11 +127,10 @@
 			{/each}
 		</ol>
 		<p class="small muted source-line">Source<CitationMarks marks={data.changeMarks} /></p>
-	</section>
+	</Collapsible>
 {/if}
 
-<section aria-labelledby="cases">
-	<h2 id="cases">Cases on this site <CountBadge count={data.cases.length} /></h2>
+<Collapsible heading="Cases on this site" identifier="cases" count={data.cases.length}>
 	<DataTable identifier="cases-{data.key}" label="Table: cases decided by the {data.name}" columns={caseColumns} rows={caseRows} rowName={['case', 'cases']} download="{data.key}-cases" filters>
 		{#snippet cell(row, column)}
 			{@const item = caseByKey.get(row.key)}
@@ -149,7 +145,7 @@
 			{/if}
 		{/snippet}
 	</DataTable>
-</section>
+</Collapsible>
 
 </InfoPage>
 

@@ -10,7 +10,7 @@
 <script lang="ts">
 	import BenchChart from '#lib/components/BenchChart.svelte';
 	import CitationMarks from '#lib/components/CitationMarks.svelte';
-	import CountBadge from '#lib/components/CountBadge.svelte';
+	import Collapsible from '#lib/components/Collapsible.svelte';
 	import DataTable from '#lib/components/DataTable.svelte';
 	import InfoPage from '#lib/components/InfoPage.svelte';
 	import type { TableColumn, TableRow } from '#lib/tables/table-definition.ts';
@@ -57,13 +57,11 @@
 		{ label: 'Supreme Court', href: '/supreme-court' }
 	]}
 >
-	<section aria-labelledby="service">
-		<h2 id="service">On the Court</h2>
+	<Collapsible heading="On the Court" identifier="service">
 		<BenchChart rows={data.rows} start={data.start} end={data.end} cases={data.cases} width={560} labelWidth={110} />
-	</section>
+	</Collapsible>
 
-	<section aria-labelledby="cases">
-		<h2 id="cases">Cases on this site <CountBadge count={data.cases.length} /></h2>
+	<Collapsible heading="Cases on this site" identifier="cases" count={data.cases.length}>
 		{#if data.cases.length > 0}
 			<DataTable
 				identifier="cases-{data.key}"
@@ -79,18 +77,17 @@
 				{/snippet}
 			</DataTable>
 		{/if}
-	</section>
+	</Collapsible>
 
 	{#if data.career.length > 0}
-		<section aria-labelledby="career">
-			<h2 id="career">Career</h2>
+		<Collapsible heading="Career" identifier="career">
 			<ul class="career">
 				{#each data.career as line, index (index)}
 					<li><span class="years">{line.years}</span><span>{line.text}</span></li>
 				{/each}
 			</ul>
 			<p class="small muted source-line">Source<CitationMarks marks={data.careerMarks} /></p>
-		</section>
+		</Collapsible>
 	{/if}
 </InfoPage>
 
