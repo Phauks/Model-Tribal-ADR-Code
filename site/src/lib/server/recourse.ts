@@ -68,6 +68,7 @@ export function recourseRows(): RecourseRow[] {
 				provision.citation ||
 				[provision.document, provision.locator].filter(Boolean).join(', ') ||
 				'Section not identified in the published text',
+			document: provision.document || undefined,
 			summary: provision.summary,
 			link: copy ? copyPagePath(copy) : provision.url || undefined,
 			original: provision.url || undefined,

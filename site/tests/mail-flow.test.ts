@@ -10,7 +10,9 @@ import {
 	createBatch,
 	fieldsFor,
 	insideWindow,
+	outreachAudience,
 	runOutreach,
+	sendOutreachTest,
 	saveTemplate,
 	setBatchStatus,
 	templateVersions,
@@ -527,6 +529,40 @@ describe('outreach', () => {
 		const skipped = await context.database.prepare(`SELECT skip_reason AS reason FROM outreach_recipients WHERE email = 'gone@other.example'`).first();
 		expect(skipped).toEqual({ reason: 'On the do-not-email list' });
 		return { context, batch };
+	});
+
+	it('shows who a new batch reaches and who is left out, and why', async () => {
+		const { context, templateIdentifier } = await setUp();
+		await addContact(context.database, { identifier: 'c-old', name: 'Old Office', nation: 'old-nation', email: 'old@old.example', label: 'leader' });
+		await context.database.prepare(`UPDATE contact_methods SET verified_on = '2026-01-01' WHERE identifier = 'c-old-email'`).run();
+		await addContact(context.database, { identifier: 'c-bounced', name: 'Bounced Office', nation: 'b-nation', email: 'b@b.example' });
+		await context.database.prepare(`UPDATE contact_methods SET status = 'bounced' WHERE identifier = 'c-bounced-email'`).run();
+		const earlier = await createBatch(context, 'lead', { name: 'Round 1', templateIdentifier, perDay: 40, windowStartHour: 9, windowEndHour: 15, weekdaysOnly: true, followUpDays: null, askAcknowledgment: false });
+		await addRecipients(context, earlier, [{ contactIdentifier: 'c-chair', nationIdentifier: 'example-nation', email: 'chair@nation.example', name: 'Ada Begay', fields: { 'nation.name': 'Example Nation', 'contact.greeting': 'Chairman Begay', 'nation.page': 'x', 'sender.name': 'Lead' }, timeZone: 'America/Phoenix' }]);
+
+		const audience = await outreachAudience(context, { tag: null, label: null, nationsOnly: true }, '2026-11-24');
+		expect(audience.recipients.map((item) => item.email)).toEqual(['secretary@nation.example']);
+		expect(audience.leftOut).toEqual([
+			{ reason: 'Asked not to be emailed', count: 1, why: 'Unsubscribed or asked in a reply. Never emailed again.', review: null },
+			{ reason: 'Address bounced', count: 1, why: 'Marked bounced in the address book', review: null },
+			{ reason: 'Already in another batch', count: 1, why: 'Round 1, Nov 24', review: null },
+			{ reason: 'Address may be out of date', count: 1, why: 'Leader email older than 180 days, or an election since.', review: '/workspace/address-book' }
+		]);
+		const tagged = await outreachAudience(context, { tag: 'nation-government', label: null, nationsOnly: true }, '2026-11-24');
+		expect(tagged.leftOut.map((group) => group.reason)).toEqual(['Already in another batch']);
+	});
+
+	it('makes a batch with the message as changed on the page, and sends a test only once outreach is set up', async () => {
+		const { context, templateIdentifier } = await setUp();
+		const batch = await createBatch(context, 'lead', { name: 'Changed', templateIdentifier, subject: 'About {{nation.name}}', body: 'Hello {{contact.greeting}}', perDay: 40, windowStartHour: 9, windowEndHour: 15, weekdaysOnly: true, followUpDays: 10, askAcknowledgment: false });
+		expect(await context.database.prepare('SELECT subject, body FROM outreach_batches WHERE identifier = ?').bind(batch).first()).toEqual({ subject: 'About {{nation.name}}', body: 'Hello {{contact.greeting}}' });
+		await expect(createBatch(context, 'lead', { name: 'Bad', templateIdentifier, body: '{{nation.motto}}', perDay: 40, windowStartHour: 9, windowEndHour: 15, weekdaysOnly: true, followUpDays: null, askAcknowledgment: false })).rejects.toThrow(/nation\.motto/);
+
+		const outreach = recordingCarrier('smtp');
+		await sendOutreachTest(context, { replies: recordingCarrier(), outreach }, { to: 'lead@example.org', subject: 'About Example Nation', text: 'Hello' });
+		expect(outreach.sent[0]).toMatchObject({ to: [{ email: 'lead@example.org' }], subject: 'Test: About Example Nation', from: { email: 'outreach@outreach.example.org' } });
+		const switchedOff = { ...context, settings: testSettings({ outreach: null }) };
+		await expect(sendOutreachTest(switchedOff, { replies: recordingCarrier(), outreach: null }, { to: 'lead@example.org', subject: 'x', text: 'y' })).rejects.toThrow(/Not ready to send/);
 	});
 
 	it('sends slowly, in working hours in the nation’s time zone, with unsubscribe links, and notes replies', async () => {

@@ -1,13 +1,13 @@
 <script lang="ts">
 	// Intake (docs/uploads.md, "Intake"): files for the research library. No
 	// questions; the intake run matches each to its pull-list item by its
-	// contents and files the rest by topic.
+	// contents and files the rest by topic. A note goes with chosen files
+	// through the table's pencil button (design/upload-table, mockup 1).
 	import { invalidateAll } from '$app/navigation';
 	import FileSender from '#lib/components/FileSender.svelte';
 	import type { PageProps } from './$types';
 
 	let { data }: PageProps = $props();
-	let note = $state('');
 </script>
 
 <svelte:head>
@@ -18,18 +18,10 @@
 	<h1>Intake</h1>
 	<p class="lead">Files for the research library. Pull-list items are matched by contents; everything else is filed by topic.</p>
 
-	<div class="field note">
-		<label for="note">Note</label>
-		<p class="hint">Optional. Goes with the files you send next, such as items you could not get.</p>
-		<textarea id="note" rows="2" bind:value={note}></textarea>
-	</div>
-
 	<FileSender
-		extra={() => ({ pulled: true, note })}
-		finished={() => {
-			note = '';
-			void invalidateAll();
-		}}
+		extra={() => ({ pulled: true })}
+		finished={() => void invalidateAll()}
+		notes
 		earlier={data.earlier}
 		refresh={invalidateAll}
 		filedColumn
@@ -40,8 +32,5 @@
 	.intake-page {
 		max-width: 72rem;
 		min-width: 0;
-	}
-	.note {
-		max-width: 40rem;
 	}
 </style>

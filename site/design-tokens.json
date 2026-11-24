@@ -705,6 +705,13 @@
       },
       "$description": "Widest a small box that opens over the page gets: menus, link previews, citation popups, the search panel, notices. Always held inside the screen."
     },
+    "popover-form": {
+      "$value": {
+        "value": 24,
+        "unit": "rem"
+      },
+      "$description": "Width of a short form that opens over the page, such as the masthead's sign-in panel (design/sign-in-popover). Always held inside the screen."
+    },
     "panel": {
       "$value": {
         "value": 40,

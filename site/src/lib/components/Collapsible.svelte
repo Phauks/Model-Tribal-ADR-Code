@@ -2,7 +2,8 @@
 	@component
 	A page section that a reader can fold away, with its heading as the
 	control (Trevor asked for collapsible sections on Nov. 22, 2026). It is the
-	browser's own <details> element, so it works without scripts, starts open,
+	browser's own <details> element, so it works without scripts, starts open (or folded, with
+	open={false}),
 	and find-in-page still reaches folded text in current browsers. Every
 	folded section is opened before printing (PrintOptions.svelte), so paper
 	always has the whole page.
@@ -30,10 +31,12 @@
 		count?: number;
 		/** Icon buttons shown at the end of the heading row. */
 		actions?: Snippet;
+		/** False for a section that starts folded, such as Nearby Nations. */
+		open?: boolean;
 		children: Snippet;
 	}
 
-	let { heading, identifier, class: extraClass = '', count, actions, children }: Props = $props();
+	let { heading, identifier, class: extraClass = '', count, actions, open = true, children }: Props = $props();
 
 	// The heading leaves room for the buttons, and the buttons sit at the end of the heading row with its height. Both are measured once the page runs, because the row can be narrower than the section: a heading beside a floated map ends where the map begins.
 	let actionsWidth = $state(0);
@@ -64,7 +67,7 @@
 </script>
 
 {#snippet section(summaryRoom: number | undefined)}
-	<details class="collapsible {extraClass}" data-section={identifier} open>
+	<details class="collapsible {extraClass}" data-section={identifier} {open}>
 		<summary style:padding-inline-end={summaryRoom ? `${summaryRoom}px` : undefined} bind:this={summary}>
 			<span class="fold-mark no-print"><ChevronDown size={24} /></span>
 			<h2 id={identifier}>{heading}{#if count !== undefined}<CountBadge {count} />{/if}</h2>

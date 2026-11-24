@@ -12,6 +12,8 @@
 	import NationServices from '#lib/components/NationServices.svelte';
 	import SourceList from '#lib/components/SourceList.svelte';
 	import NationMap from '#lib/components/NationMap.svelte';
+	import NationEditorBanner from '#lib/components/NationEditorBanner.svelte';
+	import Pencil from '@lucide/svelte/icons/pencil';
 	import NationDocumentsOffline from '#lib/components/NationDocumentsOffline.svelte';
 	import RecognitionBadges from '#lib/components/RecognitionBadges.svelte';
 	import RecordPage from '#lib/components/RecordPage.svelte';
@@ -120,6 +122,9 @@
 <svelte:head>
 	<title>{page.officialName} · Nations · Model Tribal ADR Code</title>
 </svelte:head>
+
+<!-- For someone on the nation's team: "You can edit this page" (decision record 0041). -->
+{#if !page.withdrawn}<NationEditorBanner nation={page.id} />{/if}
 
 <Breadcrumbs trail={[{ label: 'Nations', href: '/nations' }]} />
 
@@ -234,6 +239,7 @@
 
 		<!-- 5. Courts and dispute resolution -->
 		<Collapsible heading="Courts and dispute resolution" identifier="courts-heading">
+			{@render editLink('courts-and-dispute-resolution', 'courts-heading', 'Courts and dispute resolution')}
 			{#if data.empty.courts}
 				{@render emptySection(data.empty.courts)}
 			{:else}
@@ -310,6 +316,7 @@
 		     (decision record 0018). -->
 		<div data-print-part="documentHistory">
 			<Collapsible heading="Laws and agreements" identifier="law-heading" actions={data.page.heldCopies.count > 0 ? documentTools : undefined}>
+				{@render editLink('statements', 'statement-law-heading', 'Laws and agreements')}
 				{#if data.law.length > 0}
 					<FactGroups groups={data.law} />
 				{/if}
@@ -323,6 +330,7 @@
 
 		<!-- 7. Jurisdiction: Public Law 280, Indian Child Welfare Act agents and the like -->
 		<Collapsible heading="Jurisdiction" identifier="jurisdiction-heading">
+			{@render editLink('statements', 'statement-jurisdiction-heading', 'Jurisdiction')}
 			{#if data.empty.jurisdiction}
 				{@render emptySection(data.empty.jurisdiction)}
 			{:else}
@@ -414,10 +422,10 @@
 			</Collapsible>
 		{/if}
 
-		<!-- 8. Nearby Nations, the other nations in the same states: plain lists, never a ranking -->
+		<!-- 8. Nearby Nations, the other nations in the same states: plain lists, never a ranking. It starts folded (nation page review, layout A). -->
 		{#if data.neighbors.length > 0}
 			<div class="no-print">
-				<Collapsible heading="Nearby Nations" identifier="neighbors-heading">
+				<Collapsible heading="Nearby Nations" identifier="neighbors-heading" open={false}>
 					{#each data.neighbors as entry (entry.state)}
 						<h3 class="neighbors-state">{entry.stateName}</h3>
 						{#if entry.nations.length > 0}
@@ -444,6 +452,13 @@
 		{/if}
 	{/snippet}
 </RecordPage>
+
+<!-- "Edit" on a part of the page, shown only to someone on the nation's team whose place covers it (NationEditorBanner.svelte). -->
+{#snippet editLink(part: string, anchor: string, name: string)}
+	<a class="nation-edit-link no-print" data-edit-part={part} href="/workspace/nation-teams/{page.id}/edit#{anchor}"
+		><Pencil size={16} aria-hidden="true" />Edit<span class="visually-hidden"> {name}</span></a
+	>
+{/snippet}
 
 <!-- A legal section with nothing to show: the short answer, then how far the search went once one is finished. -->
 {#snippet emptySection(empty: { text: string; note: string })}
@@ -489,6 +504,7 @@
 	{/if}
 	{#if hasContacts}
 		<Collapsible heading={contactsHeading} identifier="contacts-heading">
+			{@render editLink('contacts', 'contacts-heading', contactsHeading)}
 			<ContactCard cards={data.contacts} headingLevel={3} />
 		</Collapsible>
 	{/if}
@@ -549,7 +565,9 @@
 		display: block;
 	}
 
+	/* Its rules keep clear of the floated At a glance column and contacts (RecordPage.svelte). */
 	.empty-section {
+		display: flow-root;
 		margin: 0 0 var(--space-5);
 		padding: var(--space-3) 0;
 		border-top: 1px solid var(--color-line);
