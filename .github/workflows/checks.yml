@@ -293,9 +293,11 @@ jobs:
         run: npm run check:table-tools
 
   accessibility:
-    # Every page in both themes, split between four jobs that run at once.
-    # Each checks its pages (10 to 12 minutes) from the one build above.
-    name: Accessibility ${{ matrix.shard }}/4
+    # Every page in both themes, split between six jobs that run at once.
+    # Each checks its pages (about 13 minutes) from the one build above. With
+    # four jobs, each took 19 minutes once the law pages were added (#491),
+    # too close to the step's 20-minute limit.
+    name: Accessibility ${{ matrix.shard }}/6
     needs: [changes, site-build]
     if: needs.changes.outputs.site == 'true'
     runs-on: ubuntu-latest
@@ -303,7 +305,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        shard: [1, 2, 3, 4]
+        shard: [1, 2, 3, 4, 5, 6]
     defaults:
       run:
         working-directory: site
@@ -327,7 +329,7 @@ jobs:
         # The script limits each page and stops itself when nothing finishes for
         # five minutes; this is the last guard if the browser itself stalls.
         timeout-minutes: 20
-        run: npm run check:accessibility -- --shard ${{ matrix.shard }}/4
+        run: npm run check:accessibility -- --shard ${{ matrix.shard }}/6
 
   print:
     name: Print build
