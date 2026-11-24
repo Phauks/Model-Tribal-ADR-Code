@@ -33,6 +33,7 @@
 		swipeStep,
 		type ImageViewerItem
 	} from '#lib/image-viewer.ts';
+	import { saveFile } from '#lib/save-file.ts';
 
 	const identifier = $props.id();
 	let dialog: HTMLDialogElement | undefined = $state();
@@ -123,15 +124,8 @@
 			const answer = await fetch(file);
 			if (!answer.ok) throw new Error(`${answer.status}`);
 			const blob = await answer.blob();
-			const address = URL.createObjectURL(blob);
-			const save = document.createElement('a');
-			save.href = address;
-			save.download = downloadName(title, file, blob.type);
 			// Inside the dialog, since the page behind it is inert.
-			(dialog ?? document.body).append(save);
-			save.click();
-			save.remove();
-			setTimeout(() => URL.revokeObjectURL(address), 10_000);
+			saveFile(blob, downloadName(title, file, blob.type), dialog ?? document.body);
 		} catch {
 			location.href = file;
 		}

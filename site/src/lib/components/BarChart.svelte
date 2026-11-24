@@ -48,6 +48,7 @@
 	import TableDownload from '#lib/components/TableDownload.svelte';
 	import DataTable from './DataTable.svelte';
 	import ViewSwitch from './ViewSwitch.svelte';
+	import { FullScreen } from '#lib/full-screen.svelte.ts';
 
 	let { chart, headingLevel = 2 }: { chart: BarChartData; headingLevel?: 2 | 3 } = $props();
 
@@ -79,28 +80,10 @@
 
 	/** The chart filling the screen (Trevor, Nov. 23, 2026), with the browser's full screen where it has one, or filling the window where it does not, as on an iPhone. */
 	let figure = $state<HTMLElement | undefined>();
-	let fullScreen = $state(false);
-	let fillingWindow = $state(false);
-
-	async function toggleFullScreen() {
-		if (fullScreen || fillingWindow) {
-			if (document.fullscreenElement) await document.exitFullscreen();
-			fillingWindow = false;
-			return;
-		}
-		if (figure?.requestFullscreen) {
-			try {
-				await figure.requestFullscreen();
-				return;
-			} catch {
-				// Refused, as in a frame without permission: fill the window instead.
-			}
-		}
-		fillingWindow = true;
-	}
+	const fullScreen = new FullScreen(() => figure);
 
 	function onKeydown(event: KeyboardEvent) {
-		if (fillingWindow && event.key === 'Escape') fillingWindow = false;
+		fullScreen.leaveOnEscape(event);
 	}
 
 	function leaveOut(...labels: string[]) {
@@ -113,17 +96,13 @@
 
 	onMount(() => {
 		interactive = true;
-		const onChange = () => {
-			fullScreen = document.fullscreenElement === figure;
-		};
-		document.addEventListener('fullscreenchange', onChange);
-		return () => document.removeEventListener('fullscreenchange', onChange);
+		return fullScreen.follow();
 	});
 </script>
 
 <svelte:window onkeydown={onKeydown} />
 
-<figure class="chart" class:filling-window={fillingWindow} id={chart.identifier} aria-labelledby="{chart.identifier}-title" data-print-part="tables" bind:this={figure}>
+<figure class="chart" class:filling-window={fullScreen.fillingWindow} id={chart.identifier} aria-labelledby="{chart.identifier}-title" data-print-part="tables" bind:this={figure}>
 	<div class="chart-head">
 		<svelte:element this={`h${headingLevel}`} id="{chart.identifier}-title" class="chart-title">{chart.title}</svelte:element>
 		<div class="chart-tools no-print">
@@ -141,8 +120,8 @@
 			{/if}
 			<TableDownload name={chart.identifier} title={chart.title} table={() => table} csvHref={chart.csvHref} xlsxHref={chart.xlsxHref} published={left.length === 0} {interactive} label="Download the numbers" />
 			{#if interactive}
-				<button type="button" class="view-button" aria-label={fullScreen || fillingWindow ? 'Leave full screen' : 'Full screen'} title={fullScreen || fillingWindow ? 'Leave full screen' : 'Full screen'} onclick={toggleFullScreen}>
-					{#if fullScreen || fillingWindow}<Minimize aria-hidden="true" size="1.25em" strokeWidth={1.75} />{:else}<Maximize aria-hidden="true" size="1.25em" strokeWidth={1.75} />{/if}
+				<button type="button" class="view-button" aria-label={fullScreen.shown ? 'Leave full screen' : 'Full screen'} title={fullScreen.shown ? 'Leave full screen' : 'Full screen'} onclick={fullScreen.toggle}>
+					{#if fullScreen.shown}<Minimize aria-hidden="true" size="1.25em" strokeWidth={1.75} />{:else}<Maximize aria-hidden="true" size="1.25em" strokeWidth={1.75} />{/if}
 				</button>
 			{/if}
 		</div>

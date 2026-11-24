@@ -1,6 +1,7 @@
 import { beforeEach, describe, expect, it } from 'vitest';
 import type { D1Database } from '@cloudflare/workers-types/index.ts';
-import { cleanEmail, cleanPhone, cleanTag, csvText, stalenessOf } from '#lib/address-book.ts';
+import { cleanEmail, cleanPhone, cleanTag, stalenessOf } from '#lib/address-book.ts';
+import { csvField } from '#lib/csv.ts';
 import {
 	addContact,
 	addContactMethod,
@@ -72,6 +73,7 @@ describe('cleaning what is typed', () => {
 	});
 
 	it('writes CSV fields a spreadsheet will not run', () => {
+		const csvText = (value: string | null) => csvField(value, { guardFormulas: true });
 		expect(csvText('Smith, Jo')).toBe('"Smith, Jo"');
 		expect(csvText('=HYPERLINK("x")')).toBe(`"'=HYPERLINK(""x"")"`);
 		expect(csvText(null)).toBe('');
