@@ -1,7 +1,7 @@
 profile: content/tribes/s/santa-rosa-band-of-cahuilla-indians.yaml
 topic: governance
 status: found
-last_searched: '2026-11-23'
+last_searched: '2026-11-24'
 searches:
 - date: '2026-11-23'
   searched_by: Claude (AI assistant)
@@ -31,4 +31,14 @@ searches:
   reason: Read 10 pages (home, government, council, election, court and constitution pages); kept 7 facts whose quoted words were found on the page.
   records:
   - santa-rosa-band-of-cahuilla-indians-website-tribal-government
+- date: '2026-11-24'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: national-indian-law-library
+  address: https://narf.org/nill/tribes/santa_rosa_cahuilla.html
+  query: Tribal Code, Tribal Constitution, Tribal Court Opinions and Contact Info blocks (scripts/review/nill_gateway_apply.py)
+  outcome: not-found
+  reason: The page lists no constitution or code with a link (both blocks say none available).
+  records:
+  - national-indian-law-library-santa-rosa-cahuilla
 next_steps: A newer constitution text from the nation, a law library or the Bureau of Indian Affairs; the government office can say which version is in effect.

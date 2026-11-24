@@ -26,6 +26,10 @@ Outputs (facts only: names, places, dates, citations; no NILL text):
 
 Run from the repository root:
     python3 scripts/analysis/national_indian_law_library_coverage.py <folder of saved NILL pages>
+
+or, to refresh only the Gateway rows and totals after profiles or source records change (no saved
+pages needed; the bulletin files are kept as they are):
+    python3 scripts/analysis/national_indian_law_library_coverage.py --gateway-only
 """
 
 import collections
@@ -36,6 +40,7 @@ import json
 import pathlib
 import re
 import sys
+import urllib.parse
 
 import yaml
 
@@ -125,14 +130,31 @@ def nill_tribe_page_sources():
         link = data.get("original_link") or data["citation"].get("URL", "")
         match = re.search(r"nill/tribes/([^/]+)\.html", link)
         if match:
-            pages.setdefault(match.group(1), {"source": data["key"], "nations": set()})
-            pages[match.group(1)]["nations"].update(data.get("tribes") or [])
+            slug = urllib.parse.unquote(match.group(1))  # a few slugs hold spaces or apostrophes
+            pages.setdefault(slug, {"source": data["key"], "nations": set()})
+            pages[slug]["nations"].update(data.get("tribes") or [])
     return pages
 
 
-def gateway(pages_dir, profiles):
+def gateway_entries(pages_dir):
+    """(slug, name, status) for each Tribal Law Gateway entry, from the saved index page, or, with no
+    saved pages, from the last gateway-nations.csv (the list of entries does not change between runs)."""
+    if pages_dir is None:
+        with open(OUT / "gateway-nations.csv", encoding="utf-8") as handle:
+            return [(r["slug"], r["name"], r["status"]) for r in csv.DictReader(handle)]
     lines = (pages_dir / "triballaw_index.html").read_text(encoding="utf-8", errors="replace")
     entries = re.findall(r'<li>([^<]*)(?:<a name="[^"]*" id="[^"]*"></a>)?\s*<a href="\.\./tribes/([^"]+)\.html"[^>]*>(.*?)</a>(.*?)</li>', lines, flags=re.S)
+    result = []
+    for before, slug, name, after in entries:
+        name = before.strip().rstrip("-").strip() + " - " + name if before.strip() else name
+        name = re.sub(r"\s+", " ", html.unescape(re.sub(r"<[^>]+>", "", name))).strip()
+        status = "state recognized" if "state recognized" in after else "not recognized" if "not recognized" in after else ""
+        result.append((slug, name, status))
+    return result
+
+
+def gateway(pages_dir, profiles):
+    entries = gateway_entries(pages_dir)
     read = nill_tribe_page_sources()
     by_name = collections.defaultdict(set)
     for key, data in profiles.items():
@@ -140,10 +162,7 @@ def gateway(pages_dir, profiles):
             if isinstance(value, str):
                 by_name[norm(value)].add(key)
     rows, seen = [], set()
-    for before, slug, name, after in entries:
-        name = before.strip().rstrip("-").strip() + " - " + name if before.strip() else name
-        name = re.sub(r"\s+", " ", html.unescape(re.sub(r"<[^>]+>", "", name))).strip()
-        status = "state recognized" if "state recognized" in after else "not recognized" if "not recognized" in after else ""
+    for slug, name, status in entries:
         if slug in seen:
             continue
         seen.add(slug)
@@ -256,75 +275,9 @@ def supreme_court_bulletin(pages_dir):
     return list(rows.values())
 
 
-def main():
-    pages_dir = pathlib.Path(sys.argv[1])
-    OUT.mkdir(parents=True, exist_ok=True)
-    profiles = load_profiles()
-    held = governing_documents(profiles)
-    codes, constitutions, indexed = nill_copies()
-
-    gateway_rows = gateway(pages_dir, profiles)
-    for row in gateway_rows:
-        nations = [n for n in row["nations"].split(";") if n]
-        totals = collections.Counter()
-        for nation in nations:
-            totals.update(held.get(nation, {}))
-        row.update({
-            "profile": "yes" if nations else "no",
-            "constitutions_listed": totals["constitution"],
-            "codes_listed": totals["law-code"],
-            "nill_page_lists_constitution": totals["nill-listed:constitution"] + totals["nill-listed:corporate-charter"] + totals["nill-listed:articles-of-association"],
-            "nill_page_lists_code": totals["nill-listed:law-code"],
-            "constitutions_read_in_full": totals["read:constitution"],
-            "nill_hosted_code_listed": totals["nill-hosted:law-code"],
-            "nill_code_files_copied": sum(codes[n]["files"] for n in nations),
-            "law_texts_captured": sum(codes[n]["texts"] for n in nations),
-            "nill_constitution_copies": sum(constitutions[n] for n in nations),
-            "governing_documents_indexed": sum(indexed[n] for n in nations),
-        })
-    with open(OUT / "gateway-nations.csv", "w", newline="", encoding="utf-8") as handle:
-        writer = csv.DictWriter(handle, fieldnames=list(gateway_rows[0]))
-        writer.writeheader()
-        writer.writerows(gateway_rows)
-
-    rules = [(r["court"], r["nations"]) for r in yaml.safe_load(open("research/tribal-court-opinions/sources.yaml"))["courts"]]
-    rules = [(p, n) for p, n in rules] + [(p, [n]) for p, n in EXTRA_COURTS]
-    opinions = list(csv.DictReader(open("research/tribal-court-opinions/opinions.csv", encoding="utf-8")))
-    ours_by_cite = {o["citation"] for o in opinions} | {c.strip() for o in opinions for c in (o["other_citations"] or "").split(";") if c.strip()}
-    ours_by_name = {re.sub(r"[^a-z]", "", o["name"].lower())[:30] for o in opinions}
-    bulletin_rows = tribal_bulletin(pages_dir)
-    for row in bulletin_rows:
-        row["nations"] = ";".join(court_nation(row["court"], rules))
-        in_cap = (row["american_tribal_law"] and row["american_tribal_law"] in ours_by_cite) or \
-            re.sub(r"[^a-z]", "", row["name"].lower())[:30] in ours_by_name
-        row["in_caselaw_access_project_index"] = "yes" if in_cap else "no"
-    with open(OUT / "tribal-bulletin.csv", "w", newline="", encoding="utf-8") as handle:
-        writer = csv.DictWriter(handle, fieldnames=list(bulletin_rows[0]))
-        writer.writeheader()
-        writer.writerows(bulletin_rows)
-
-    def case_key(name):
-        parties = re.split(r" v\.? ", name.lower())
-        return tuple(re.sub(r"[^a-z]", "", part)[:12] for part in parties[:2])
-    native_case_rows = list(csv.DictReader(open("research/supreme-court-coverage/native-cases-scdb.csv", encoding="utf-8")))
-    native_cases = {r["citation"]: r for r in native_case_rows if r["citation"]}
-    native_case_names = {}
-    for r in native_case_rows:
-        if int(r["term"] or 0) >= 1996:
-            native_case_names.setdefault(case_key(r["case_name"]), r)
-    supreme_court_rows = supreme_court_bulletin(pages_dir)
-    for row in supreme_court_rows:
-        match = native_cases.get(row["citation"]) or native_case_names.get(case_key(row["name"]))
-        row["on_native_cases_list"] = "yes" if match else "no"
-        row["our_record"] = (match or {}).get("our_record", "")
-    with open(OUT / "supreme-court-bulletin.csv", "w", newline="", encoding="utf-8") as handle:
-        writer = csv.DictWriter(handle, fieldnames=["term", "name", "citation", "on_native_cases_list", "our_record"])
-        writer.writeheader()
-        writer.writerows(supreme_court_rows)
-
+def gateway_counts(gateway_rows, codes, constitutions, profiles, held):
     federal = [r for r in gateway_rows if not r["status"]]
-    counts = {
-        "generated": "2026-11-24",
+    return {
         "gateway": {
             "entries": len(gateway_rows),
             "federally_recognized_or_unmarked": len(federal),
@@ -363,6 +316,85 @@ def main():
             "with_constitution_read": sum(h["read:constitution"] > 0 for h in held.values()),
             "with_code_read": sum(h["read:law-code"] > 0 for h in held.values()),
         },
+    }
+
+
+def main():
+    # --gateway-only: refresh the Gateway rows and the totals that depend on profiles, keeping the
+    # bulletin files; needs no saved pages (used after reading the remaining Gateway pages, Nov. 24, 2026).
+    gateway_only = sys.argv[1] == "--gateway-only"
+    pages_dir = None if gateway_only else pathlib.Path(sys.argv[1])
+    OUT.mkdir(parents=True, exist_ok=True)
+    profiles = load_profiles()
+    held = governing_documents(profiles)
+    codes, constitutions, indexed = nill_copies()
+
+    gateway_rows = gateway(pages_dir, profiles)
+    for row in gateway_rows:
+        nations = [n for n in row["nations"].split(";") if n]
+        totals = collections.Counter()
+        for nation in nations:
+            totals.update(held.get(nation, {}))
+        row.update({
+            "profile": "yes" if nations else "no",
+            "constitutions_listed": totals["constitution"],
+            "codes_listed": totals["law-code"],
+            "nill_page_lists_constitution": totals["nill-listed:constitution"] + totals["nill-listed:corporate-charter"] + totals["nill-listed:articles-of-association"],
+            "nill_page_lists_code": totals["nill-listed:law-code"],
+            "constitutions_read_in_full": totals["read:constitution"],
+            "nill_hosted_code_listed": totals["nill-hosted:law-code"],
+            "nill_code_files_copied": sum(codes[n]["files"] for n in nations),
+            "law_texts_captured": sum(codes[n]["texts"] for n in nations),
+            "nill_constitution_copies": sum(constitutions[n] for n in nations),
+            "governing_documents_indexed": sum(indexed[n] for n in nations),
+        })
+    with open(OUT / "gateway-nations.csv", "w", newline="", encoding="utf-8") as handle:
+        writer = csv.DictWriter(handle, fieldnames=list(gateway_rows[0]))
+        writer.writeheader()
+        writer.writerows(gateway_rows)
+    if gateway_only:
+        counts = json.loads((OUT / "counts.json").read_text(encoding="utf-8"))
+        counts.update(gateway_counts(gateway_rows, codes, constitutions, profiles, held))
+        (OUT / "counts.json").write_text(json.dumps(counts, indent=1, ensure_ascii=False) + "\n", encoding="utf-8")
+        print(json.dumps(counts["gateway"], indent=1))
+        return
+
+    rules = [(r["court"], r["nations"]) for r in yaml.safe_load(open("research/tribal-court-opinions/sources.yaml"))["courts"]]
+    rules = [(p, n) for p, n in rules] + [(p, [n]) for p, n in EXTRA_COURTS]
+    opinions = list(csv.DictReader(open("research/tribal-court-opinions/opinions.csv", encoding="utf-8")))
+    ours_by_cite = {o["citation"] for o in opinions} | {c.strip() for o in opinions for c in (o["other_citations"] or "").split(";") if c.strip()}
+    ours_by_name = {re.sub(r"[^a-z]", "", o["name"].lower())[:30] for o in opinions}
+    bulletin_rows = tribal_bulletin(pages_dir)
+    for row in bulletin_rows:
+        row["nations"] = ";".join(court_nation(row["court"], rules))
+        in_cap = (row["american_tribal_law"] and row["american_tribal_law"] in ours_by_cite) or \
+            re.sub(r"[^a-z]", "", row["name"].lower())[:30] in ours_by_name
+        row["in_caselaw_access_project_index"] = "yes" if in_cap else "no"
+    with open(OUT / "tribal-bulletin.csv", "w", newline="", encoding="utf-8") as handle:
+        writer = csv.DictWriter(handle, fieldnames=list(bulletin_rows[0]))
+        writer.writeheader()
+        writer.writerows(bulletin_rows)
+
+    def case_key(name):
+        parties = re.split(r" v\.? ", name.lower())
+        return tuple(re.sub(r"[^a-z]", "", part)[:12] for part in parties[:2])
+    native_case_rows = list(csv.DictReader(open("research/supreme-court-coverage/native-cases-scdb.csv", encoding="utf-8")))
+    native_cases = {r["citation"]: r for r in native_case_rows if r["citation"]}
+    native_case_names = {}
+    for r in native_case_rows:
+        if int(r["term"] or 0) >= 1996:
+            native_case_names.setdefault(case_key(r["case_name"]), r)
+    supreme_court_rows = supreme_court_bulletin(pages_dir)
+    for row in supreme_court_rows:
+        match = native_cases.get(row["citation"]) or native_case_names.get(case_key(row["name"]))
+        row["on_native_cases_list"] = "yes" if match else "no"
+        row["our_record"] = (match or {}).get("our_record", "")
+    with open(OUT / "supreme-court-bulletin.csv", "w", newline="", encoding="utf-8") as handle:
+        writer = csv.DictWriter(handle, fieldnames=["term", "name", "citation", "on_native_cases_list", "our_record"])
+        writer.writeheader()
+        writer.writerows(supreme_court_rows)
+
+    counts = {"generated": "2026-11-24", **gateway_counts(gateway_rows, codes, constitutions, profiles, held),
         "tribal_bulletin": {
             "cases": len(bulletin_rows),
             "by_year": dict(sorted(collections.Counter(r["bulletin_year"] for r in bulletin_rows).items())),
