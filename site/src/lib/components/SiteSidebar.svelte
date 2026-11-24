@@ -574,9 +574,10 @@
 		.sidebar-wide {
 			display: block;
 			position: sticky;
-			top: 0;
+			/* Below the masthead while it stays at the top of the screen for editing (SiteHeader.svelte). */
+			top: var(--masthead-stuck, 0px);
 			align-self: start;
-			height: 100dvh;
+			height: calc(100dvh - var(--masthead-stuck, 0px));
 			overflow: hidden;
 			border-right: 1px solid var(--color-line);
 			box-sizing: border-box;
@@ -663,14 +664,14 @@
 	/* The menu bar stays at the top of the screen as the page scrolls. */
 	.sidebar-narrow {
 		position: sticky;
-		top: 0;
+		top: var(--masthead-stuck, 0px);
 		z-index: 5;
 		border-bottom: 1px solid var(--color-line);
 		background: var(--color-surface);
 	}
 
 	.sidebar-narrow[open] > nav {
-		max-height: calc(100dvh - var(--layout-target-minimum));
+		max-height: calc(100dvh - var(--layout-target-minimum) - var(--masthead-stuck, 0px));
 		overflow-y: auto;
 		overscroll-behavior: contain;
 	}

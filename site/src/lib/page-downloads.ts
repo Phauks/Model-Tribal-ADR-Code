@@ -13,7 +13,7 @@
  * (src/lib/page-document.ts).
  */
 
-import { dataChartList, dataChartTableLink } from './data-chart-list.ts';
+import { dataChartList, dataChartTableLink, dataTopicLink, dataTopicList } from './data-chart-list.ts';
 
 /**
  * A file's extension as readers see it on a format button, ".docx" from "/a/b.docx". Trevor asked on
@@ -170,11 +170,12 @@ export function pageDownloads(path: string, mapTable?: { file: string; label: st
 			: [];
 		return { citable: false, files: [...table, ...mapFiles] };
 	}
-	if (path === '/nations/data') {
-		// Each chart's table on its own (Trevor, Nov. 23, 2026).
+	const topic = dataTopicList.find((candidate) => path === dataTopicLink(candidate.identifier));
+	if (path === '/nations/data' || topic) {
+		// Each chart's table on its own (Trevor, Nov. 23, 2026); a topic's page offers its own charts.
 		return {
 			citable: false,
-			files: dataChartList.map((chart) => ({
+			files: dataChartList.filter((chart) => !topic || (topic.charts as readonly string[]).includes(chart.identifier)).map((chart) => ({
 				label: chart.title,
 				description: 'This chart’s table: CSV or Excel for a spreadsheet, JSON for programs',
 				kind: 'table' as const,

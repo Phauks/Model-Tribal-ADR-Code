@@ -69,7 +69,10 @@
 	</div>
 </dl>
 
-<ProfileSummary answers={profile.answers} email={profile.email} />
+<ProfileSummary
+	answers={profile.answers}
+	curriculumVitae={profile.curriculumVitaeName ? { name: profile.curriculumVitaeName, href: `/workspace/contributors/${profile.identifier}/curriculum-vitae` } : null}
+/>
 
 {#if data.canManage}
 	<section>

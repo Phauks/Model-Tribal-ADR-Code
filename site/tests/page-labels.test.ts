@@ -1,4 +1,5 @@
 import { describe, expect, it } from 'vitest';
+import { dataChartList, dataTopicList } from '../src/lib/data-chart-list.ts';
 import { displayName } from '../src/lib/nation-labels.ts';
 import { citationDate, fileExtension, pageCitation, pageDownloads } from '../src/lib/page-downloads.ts';
 import { sourceKeys } from '../src/lib/server/source-keys.ts';
@@ -38,13 +39,19 @@ describe('pageDownloads', () => {
 
 	it('offers every Data and charts table on its own, as CSV, Excel and JSON', () => {
 		const files = pageDownloads('/nations/data').files;
-		expect(files).toHaveLength(6);
-		expect(files[0].label).toBe('Provisions by method');
+		expect(files).toHaveLength(dataChartList.length);
+		expect(files[0].label).toBe('Supreme Court cases by Court');
 		expect(files[0].links.map((link) => link.link)).toEqual([
-			'/nations/data/tables/provisions-by-method.csv',
-			'/nations/data/tables/provisions-by-method.xlsx',
-			'/nations/data/tables/provisions-by-method.json'
+			'/nations/data/tables/supreme-court-cases-by-court.csv',
+			'/nations/data/tables/supreme-court-cases-by-court.xlsx',
+			'/nations/data/tables/supreme-court-cases-by-court.json'
 		]);
+	});
+
+	it('offers a topic page only its own charts’ tables', () => {
+		const files = pageDownloads('/nations/data/gaming').files;
+		expect(files.map((file) => file.label)).toEqual(dataChartList.filter((chart) => dataTopicList.find((topic) => topic.identifier === 'gaming')!.charts.includes(chart.identifier)).map((chart) => chart.title));
+		expect(files[0].label).toBe('Nations with each kind of federal gaming record');
 	});
 
 	it('names a file by its extension, as the format buttons show it', () => {

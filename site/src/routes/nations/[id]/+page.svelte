@@ -12,7 +12,7 @@
 	import NationServices from '#lib/components/NationServices.svelte';
 	import SourceList from '#lib/components/SourceList.svelte';
 	import NationMap from '#lib/components/NationMap.svelte';
-	import NationEditorBanner from '#lib/components/NationEditorBanner.svelte';
+	import NationPageControls from '#lib/components/NationPageControls.svelte';
 	import Pencil from '@lucide/svelte/icons/pencil';
 	import NationDocumentsOffline from '#lib/components/NationDocumentsOffline.svelte';
 	import RecognitionBadges from '#lib/components/RecognitionBadges.svelte';
@@ -124,8 +124,8 @@
 	<title>{page.officialName} · Nations · Model Tribal ADR Code</title>
 </svelte:head>
 
-<!-- For someone on the nation's team: "You can edit this page" (decision record 0041). -->
-{#if !page.withdrawn}<NationEditorBanner nation={page.id} />{/if}
+<!-- For someone on the nation's team: Edit, History and Your nation's team in the masthead (decision record 0041). -->
+{#if !page.withdrawn}<NationPageControls nation={page.id} />{/if}
 
 <Breadcrumbs trail={[{ label: 'Nations', href: '/nations' }]} />
 
@@ -451,7 +451,7 @@
 	{/snippet}
 </RecordPage>
 
-<!-- "Edit" on a part of the page, shown only to someone on the nation's team whose place covers it (NationEditorBanner.svelte). -->
+<!-- "Edit" on a part of the page, shown only to someone on the nation's team whose place covers it (NationPageControls.svelte). -->
 {#snippet editLink(part: string, anchor: string, name: string)}
 	<a class="nation-edit-link no-print" data-edit-part={part} href="/workspace/nation-teams/{page.id}/edit#{anchor}"
 		><Pencil size={16} aria-hidden="true" />Edit<span class="visually-hidden"> {name}</span></a

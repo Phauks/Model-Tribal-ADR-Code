@@ -1,22 +1,38 @@
 /**
  * Public contributor pages, /contributors/<slug> (docs/contributor-profiles.md,
  * "Contributor pages"). A page exists only for someone welcomed whose last
- * confirmed credit is shown on the website by their name or a name they
- * chose. It shows only what that credit allows: the name, the nations they
- * chose to show with it, the biography if they chose to print it, the
- * picture (never for someone under 18), and the published work they helped
- * with. Everything else in the profile stays private.
+ * confirmed answers tick a name for the website. It shows only what is ticked
+ * for the website: the names, nations, organization, pronouns, languages,
+ * specialties, biography and picture (never a picture for someone under 18),
+ * and the published work they helped with. Everything else in the profile
+ * stays private.
  */
 import type { D1Database } from '@cloudflare/workers-types/index.ts';
-import { creditOf, pageNameOf, specialtiesShown, specialties, type CreditSection, type ProfileAnswers, type Specialty } from '#lib/contributors.ts';
+import {
+	answersFromSnapshot,
+	creditIn,
+	pageNameOf,
+	placementOf,
+	pronounLabels,
+	specialtiesShown,
+	specialties,
+	type CreditSection,
+	type ProfileAnswers,
+	type Specialty
+} from '#lib/contributors.ts';
+import { languageOf } from '#lib/languages.ts';
 import { listEssays, essayPath } from './essays.ts';
 
 export interface ContributorPageData {
 	slug: string;
 	name: string;
 	section: CreditSection;
-	/** Nations the person chose to show with their name. */
+	/** Nations the person ticked for the website. */
 	nations: { name: string; identifier: string | null }[];
+	organization: string | null;
+	pronouns: string | null;
+	/** Languages ticked for the website, each with what the person does in it, such as "Navajo (speaks, reads)". */
+	languages: string[];
 	biography: string | null;
 	/** Specialties the person chose to show, in their words for "Other". */
 	specialties: string[];
@@ -60,27 +76,42 @@ async function pageRow(database: D1Database, slug: string): Promise<{ row: PageR
 		.bind(slug)
 		.first<PageRow>();
 	if (!row) return undefined;
-	const answers = JSON.parse(row.snapshot) as ProfileAnswers;
+	const answers = answersFromSnapshot(row.snapshot);
 	if (!pageNameOf(answers)) return undefined;
 	return { row, answers };
 }
 
-/** Whether the picture may be shown: never for someone under 18, by the confirmed answers or the current ones. */
+/** Whether the picture may be shown: only when ticked for the website, and never for someone under 18, by the confirmed answers or the current ones. */
 function pictureAllowed(row: PageRow, answers: ProfileAnswers): boolean {
-	return Boolean(row.picture_key) && answers.ageGroup === '18-or-older' && row.age_group !== '13-to-17';
+	return Boolean(row.picture_key) && placementOf(answers, 'picture').website && row.age_group !== '13-to-17';
+}
+
+/** Specialties ticked for the website, in the person's words for their own. */
+function specialtiesOnWebsite(answers: ProfileAnswers): string[] {
+	return placementOf(answers, 'specialties').website ? specialtiesShown(answers) : [];
 }
 
 export async function contributorPage(database: D1Database, slug: string): Promise<ContributorPageData | undefined> {
 	const found = await pageRow(database, slug);
 	if (!found) return undefined;
 	const { row, answers } = found;
-	const credit = creditOf(answers);
-	const nations =
-		answers.creditForm === 'name-and-nation'
-			? answers.nations
-					.filter((nation) => nation.showInCredit)
-					.map((nation) => ({ name: nation.nationName, identifier: nation.nationIdentifier }))
-			: [];
+	const credit = creditIn(answers, 'website');
+	const nations = answers.nations.filter((nation) => nation.website).map((nation) => ({ name: nation.nationName, identifier: nation.nationIdentifier }));
+	const pronouns = placementOf(answers, 'pronouns').website
+		? answers.pronouns
+				.filter((choice) => choice !== 'not-saying')
+				.map((choice) => (choice === 'other' ? answers.pronounOther : pronounLabels[choice]))
+				.filter(Boolean)
+				.join(', ')
+		: '';
+	const languages = answers.languages
+		.filter((language) => language.website)
+		.map((language) => {
+			const name = (language.code ? languageOf(language.code)?.name : null) ?? language.otherName ?? '';
+			const skills = [language.speaks ? 'speaks' : '', language.reads ? 'reads' : '', language.writes ? 'writes' : ''].filter(Boolean).join(', ');
+			return skills ? `${name} (${skills})` : name;
+		})
+		.filter(Boolean);
 
 	let essays: ContributorPageData['essays'] = [];
 	let reviewedEssays: ContributorPageData['reviewedEssays'] = [];
@@ -126,8 +157,11 @@ export async function contributorPage(database: D1Database, slug: string): Promi
 		name: pageNameOf(answers)!,
 		section: row.credit_section!,
 		nations,
+		organization: placementOf(answers, 'organization').website ? answers.organization : null,
+		pronouns: pronouns || null,
+		languages,
 		biography: credit?.biography ?? null,
-		specialties: specialtiesShown(answers),
+		specialties: specialtiesOnWebsite(answers),
 		boardMember: Boolean(row.board_member),
 		boardOffice: row.board_office,
 		pictureVersion: pictureAllowed(row, answers) ? (row.picture_updated_at ?? 'picture') : null,
@@ -152,7 +186,8 @@ export interface DirectoryEntry {
 	boardMember: boolean;
 	boardOffice: string | null;
 	specialties: Specialty[];
-	specialtyOther: string | null;
+	/** Specialties in the person's own words. */
+	specialtyOthers: string[];
 	pictureVersion: string | null;
 	/** Published essays the person helped write. */
 	essayCount: number;
@@ -199,19 +234,20 @@ export async function peopleDirectory(database: D1Database): Promise<DirectoryEn
 	const publishedEssays = new Set(published.results.map((row) => row.identifier));
 	const entries: (DirectoryEntry & { sortKey: string })[] = [];
 	for (const row of rows.results) {
-		const answers = JSON.parse(row.snapshot) as ProfileAnswers;
+		const answers = answersFromSnapshot(row.snapshot);
 		const name = pageNameOf(answers);
+		const showSpecialties = placementOf(answers, 'specialties').website;
 		if (!name) continue;
 		const person = row.person_identifier;
 		entries.push({
-			sortKey: creditOf(answers)?.sortKey ?? name.toLocaleLowerCase('en-US'),
+			sortKey: creditIn(answers, 'website')?.sortKey ?? name.toLocaleLowerCase('en-US'),
 			slug: row.slug,
 			name,
 			section: row.credit_section!,
 			boardMember: Boolean(row.board_member),
 			boardOffice: row.board_office,
-			specialties: (answers.specialties ?? []).filter((value) => (specialties as readonly string[]).includes(value)),
-			specialtyOther: answers.specialtyOther ?? null,
+			specialties: showSpecialties ? answers.specialties.filter((value) => (specialties as readonly string[]).includes(value)) : [],
+			specialtyOthers: showSpecialties ? answers.specialtyOthers : [],
 			pictureVersion: pictureAllowed(row, answers) ? (row.picture_updated_at ?? 'picture') : null,
 			essayCount: person ? (essayCounts.get(person) ?? 0) : 0,
 			reviewed: person
