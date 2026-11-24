@@ -12,13 +12,11 @@
 	} from '#lib/address-book.ts';
 	import type { PageProps } from './$types';
 	import DateField from '#lib/components/DateField.svelte';
+	import { mediumDateAndTime } from '#lib/readable-date.ts';
 
 	let { data, form }: PageProps = $props();
 	const contact = $derived(data.contact);
 
-	function when(value: string): string {
-		return new Date(value).toLocaleString('en-US', { dateStyle: 'medium', timeStyle: 'short' });
-	}
 </script>
 
 <svelte:head>
@@ -277,7 +275,7 @@
 <ul class="history">
 	{#each data.changes as change (change.identifier)}
 		<li>
-			{when(change.createdAt)}: {change.change}{#if change.methodIdentifier}
+			{mediumDateAndTime(change.createdAt)}: {change.change}{#if change.methodIdentifier}
 				({contact.methods.find((method) => method.identifier === change.methodIdentifier)?.value ?? 'an email or phone'}){/if},
 			by {change.personName ?? 'the site'}
 		</li>

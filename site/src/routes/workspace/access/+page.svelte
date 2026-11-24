@@ -13,6 +13,7 @@
 	} from '#lib/permissions.ts';
 	import type { PageProps } from './$types';
 	import DateField from '#lib/components/DateField.svelte';
+	import { mediumDate } from '#lib/readable-date.ts';
 
 	let { data, form }: PageProps = $props();
 
@@ -26,10 +27,6 @@
 		'kind-grant': 'grant for every document of this kind',
 		role: 'role default'
 	};
-
-	function date(value: string | null): string {
-		return value ? new Date(value).toLocaleDateString('en-US', { dateStyle: 'medium' }) : '';
-	}
 
 	function documentTitle(grantKind: string, identifier: string): string {
 		if (identifier === everyDocument) {
@@ -99,7 +96,7 @@
 				{data.summary.refusedLastThirtyDays}
 				{#if data.summary.lastRefused}
 					<div class="small muted">
-						Latest: {data.summary.lastRefused.personName ?? 'someone'}, {date(data.summary.lastRefused.createdAt)}
+						Latest: {data.summary.lastRefused.personName ?? 'someone'}, {mediumDate(data.summary.lastRefused.createdAt)}
 						({data.summary.lastRefused.note})
 					</div>
 				{/if}
@@ -204,9 +201,9 @@
 								<div class="small muted">{subjectKindLabels[grant.subjectKind]}</div>
 							</td>
 							<td>{accessLevelLabels[grant.level]}</td>
-							<td>{grant.expiresAt ? date(grant.expiresAt) : 'No end date'}</td>
+							<td>{grant.expiresAt ? mediumDate(grant.expiresAt) : 'No end date'}</td>
 							<td>
-								{date(grant.grantedAt)}{#if grant.grantedByName}<div class="small muted">by {grant.grantedByName}</div>{/if}
+								{mediumDate(grant.grantedAt)}{#if grant.grantedByName}<div class="small muted">by {grant.grantedByName}</div>{/if}
 								{#if grant.note}<div class="small">{grant.note}</div>{/if}
 							</td>
 							<td>

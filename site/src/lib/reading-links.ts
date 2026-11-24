@@ -12,6 +12,7 @@
  * readingLinksHtml() after the citation, so a case reads the same wherever it
  * is cited.
  */
+import { escapeHtml } from './escape-html.ts';
 
 export type ReadingAccess = 'official' | 'free' | 'subscription' | 'background';
 
@@ -51,10 +52,6 @@ export function officialReportLinks(readingLinks: ReadingLinks | undefined): str
 		}
 	}
 	return found;
-}
-
-function escapeHtml(text: string): string {
-	return text.replaceAll('&', '&amp;').replaceAll('<', '&lt;').replaceAll('>', '&gt;').replaceAll('"', '&quot;');
 }
 
 /** The links in reading order, grouped: official and free texts, then subscription services, then background. */

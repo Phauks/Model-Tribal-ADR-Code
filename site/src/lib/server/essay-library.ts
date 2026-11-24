@@ -10,7 +10,8 @@
 import { readFileSync, readdirSync, existsSync } from 'node:fs';
 import path from 'node:path';
 import CSL from 'citeproc';
-import { escapeHtml, savedCopyLink } from './markdown.ts';
+import { escapeHtml } from '../escape-html.ts';
+import { savedCopyLink } from './markdown.ts';
 import { readingLinksHtml } from '../reading-links.ts';
 import { glossary, nationNameVariants, nationNamesAndKinds, repositoryRoot, sources, type SourceRecord } from './content.ts';
 import { sectionWithSymbol } from './citations.ts';

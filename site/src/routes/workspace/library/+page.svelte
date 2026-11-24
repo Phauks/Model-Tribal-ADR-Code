@@ -4,6 +4,7 @@
 	import TriangleAlert from '@lucide/svelte/icons/triangle-alert';
 	import { copyAddress, documentHeading, excerptPieces, placeLabel } from '#lib/source-library-text.ts';
 	import type { PageProps } from './$types';
+	import { mediumDateAndTime } from '#lib/readable-date.ts';
 
 	let { data }: PageProps = $props();
 
@@ -44,9 +45,6 @@
 		none: 'The library could not read this file’s text'
 	};
 
-	function built(value: string): string {
-		return new Date(value).toLocaleString('en-US', { dateStyle: 'medium', timeStyle: 'short' });
-	}
 </script>
 
 <svelte:head>
@@ -196,7 +194,7 @@
 	</div>
 
 	<p class="small muted status">
-		{data.status.documents.toLocaleString('en-US')} documents, as of {built(data.status.build)}.
+		{data.status.documents.toLocaleString('en-US')} documents, as of {mediumDateAndTime(data.status.build)}.
 		{#if data.status.newest && data.status.newest !== data.status.build}A newer build is being loaded.{/if}
 	</p>
 {/if}

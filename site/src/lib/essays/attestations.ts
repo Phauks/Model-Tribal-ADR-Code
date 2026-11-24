@@ -12,6 +12,7 @@ import type { Node as EditorNode } from 'prosemirror-model';
 import { headingSlug } from './render.ts';
 import { serializeEssay } from './document.ts';
 import { unitEnd } from './placement.ts';
+import { escapeHtml } from '../escape-html.ts';
 
 export const attestationRoles = ['wrote', 'edited', 'reviewed'] as const;
 export type AttestationRole = (typeof attestationRoles)[number];
@@ -161,10 +162,6 @@ export function readerCredits(attestations: Attestation[], hashes: Record<string
 	return credits;
 }
 
-function escapeText(text: string): string {
-	return text.replaceAll('&', '&amp;').replaceAll('<', '&lt;').replaceAll('>', '&gt;').replaceAll('"', '&quot;');
-}
-
 /** "Ann", "Ann and Ben", "Ann, Ben, and Cal" (the style guide uses the serial comma). */
 export function joinNames(names: string[]): string {
 	if (names.length < 3) return names.join(' and ');
@@ -177,7 +174,7 @@ export function withReaderCredits(html: string, credits: ReaderCredits): string 
 	return html.replace(/(<h([23])\b[^>]*\bid="([^"]+)"[^>]*>[\s\S]*?<\/h\2>)/g, (heading: string, _all: string, _level: string, slug: string) => {
 		const lines = credits[slug];
 		if (!lines) return heading;
-		const text = lines.map((line) => `${attestationRoleLabels[line.role]} ${escapeText(joinNames(line.names))}.`).join(' ');
+		const text = lines.map((line) => `${attestationRoleLabels[line.role]} ${escapeHtml(joinNames(line.names))}.`).join(' ');
 		return `${heading}\n<p class="essay-section-credit">${text}</p>`;
 	});
 }

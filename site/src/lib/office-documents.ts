@@ -12,6 +12,7 @@ import { strToU8, zipSync, type Zippable } from 'fflate';
 import tokens from '../../design-tokens.json';
 import { themeColors, type TokenGroup } from './design-tokens.ts';
 import { provenance, type Block, type PageDocument, type Run } from './page-document.ts';
+import { escapeHtml } from './escape-html.ts';
 
 /** The light theme's colors from site/design-tokens.json, the ones a printed page uses. */
 const colors = themeColors(tokens as TokenGroup, 'light');
@@ -20,10 +21,6 @@ const palette = { heading: colors.band, muted: colors['ink-muted'], link: colors
 const wordPalette = Object.fromEntries(
 	Object.entries(palette).map(([name, value]) => [name, value.replace(/^#/, '').toUpperCase()])
 ) as typeof palette;
-
-function xml(text: string): string {
-	return text.replaceAll('&', '&amp;').replaceAll('<', '&lt;').replaceAll('>', '&gt;').replaceAll('"', '&quot;');
-}
 
 /** Groups runs that share a link, so each link is written once around its runs. */
 function linkGroups(runs: Run[]): { link?: string; runs: Run[] }[] {
@@ -68,7 +65,7 @@ class WordWriter {
 							run.italic ? '<w:i/>' : '',
 							extra
 						].join('');
-						return `<w:r>${properties ? `<w:rPr>${properties}</w:rPr>` : ''}<w:t xml:space="preserve">${xml(run.text)}</w:t></w:r>`;
+						return `<w:r>${properties ? `<w:rPr>${properties}</w:rPr>` : ''}<w:t xml:space="preserve">${escapeHtml(run.text)}</w:t></w:r>`;
 					})
 					.join('');
 				return group.link ? `<w:hyperlink r:id="${this.linkId(group.link)}" w:history="1">${body}</w:hyperlink>` : body;
@@ -155,7 +152,7 @@ class WordWriter {
 		const links = this.links
 			.map(
 				(target, index) =>
-					`<Relationship Id="rIdLink${index + 1}" Type="http://schemas.openxmlformats.org/officeDocument/2006/relationships/hyperlink" Target="${xml(target)}" TargetMode="External"/>`
+					`<Relationship Id="rIdLink${index + 1}" Type="http://schemas.openxmlformats.org/officeDocument/2006/relationships/hyperlink" Target="${escapeHtml(target)}" TargetMode="External"/>`
 			)
 			.join('');
 		return `<?xml version="1.0" encoding="UTF-8" standalone="yes"?><Relationships xmlns="http://schemas.openxmlformats.org/package/2006/relationships"><Relationship Id="rIdStyles" Type="http://schemas.openxmlformats.org/officeDocument/2006/relationships/styles" Target="styles.xml"/><Relationship Id="rIdNumbering" Type="http://schemas.openxmlformats.org/officeDocument/2006/relationships/numbering" Target="numbering.xml"/>${links}</Relationships>`;
@@ -196,7 +193,7 @@ function wordStyles(): string {
 
 function coreProperties(document: PageDocument): string {
 	const made = document.made.toISOString().replace(/\.\d{3}Z$/, 'Z');
-	return `<?xml version="1.0" encoding="UTF-8" standalone="yes"?><cp:coreProperties xmlns:cp="http://schemas.openxmlformats.org/package/2006/metadata/core-properties" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:dcterms="http://purl.org/dc/terms/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><dc:title>${xml(document.title)}</dc:title><dc:creator>${xml(document.siteName)}</dc:creator><dc:identifier>${xml(document.address)}</dc:identifier><dcterms:created xsi:type="dcterms:W3CDTF">${made}</dcterms:created></cp:coreProperties>`;
+	return `<?xml version="1.0" encoding="UTF-8" standalone="yes"?><cp:coreProperties xmlns:cp="http://schemas.openxmlformats.org/package/2006/metadata/core-properties" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:dcterms="http://purl.org/dc/terms/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><dc:title>${escapeHtml(document.title)}</dc:title><dc:creator>${escapeHtml(document.siteName)}</dc:creator><dc:identifier>${escapeHtml(document.address)}</dc:identifier><dcterms:created xsi:type="dcterms:W3CDTF">${made}</dcterms:created></cp:coreProperties>`;
 }
 
 /** The page as a Word document. */
@@ -250,10 +247,10 @@ function openRuns(runs: Run[], bold = false): string {
 				.map((run) => {
 					if (run.lineBreak) return '<text:line-break/>';
 					const style = textStyle({ ...run, bold: run.bold || bold });
-					return style ? `<text:span text:style-name="${style}">${xml(run.text)}</text:span>` : xml(run.text);
+					return style ? `<text:span text:style-name="${style}">${escapeHtml(run.text)}</text:span>` : escapeHtml(run.text);
 				})
 				.join('');
-			return group.link ? `<text:a xlink:type="simple" xlink:href="${xml(group.link)}">${body}</text:a>` : body;
+			return group.link ? `<text:a xlink:type="simple" xlink:href="${escapeHtml(group.link)}">${body}</text:a>` : body;
 		})
 		.join('');
 }
@@ -271,7 +268,7 @@ function openBlocks(blocks: Block[], quote = false): string {
 				case 'code':
 					return block.text
 						.split('\n')
-						.map((line) => `<text:p text:style-name="Preformatted_20_Text">${xml(line)}</text:p>`)
+						.map((line) => `<text:p text:style-name="Preformatted_20_Text">${escapeHtml(line)}</text:p>`)
 						.join('');
 				case 'quote':
 					return openBlocks(block.blocks, true);
@@ -354,8 +351,8 @@ function openContent(document: PageDocument): string {
 	const top = provenance(document)
 		.map((line, index) =>
 			index === 0
-				? `<text:p text:style-name="Provenance">${xml(line.split(': ')[0])}: <text:a xlink:type="simple" xlink:href="${xml(document.address)}">${xml(document.address)}</text:a></text:p>`
-				: `<text:p text:style-name="Provenance">${xml(line)}</text:p>`
+				? `<text:p text:style-name="Provenance">${escapeHtml(line.split(': ')[0])}: <text:a xlink:type="simple" xlink:href="${escapeHtml(document.address)}">${escapeHtml(document.address)}</text:a></text:p>`
+				: `<text:p text:style-name="Provenance">${escapeHtml(line)}</text:p>`
 		)
 		.join('');
 	return `<?xml version="1.0" encoding="UTF-8"?><office:document-content ${openDocumentNamespaces} office:version="1.3"><office:automatic-styles>${automatic}</office:automatic-styles><office:body><office:text>${top}${openBlocks(document.blocks)}</office:text></office:body></office:document-content>`;
@@ -371,7 +368,7 @@ export function pageOpenDocument(document: PageDocument): Uint8Array {
 			'<?xml version="1.0" encoding="UTF-8"?><manifest:manifest xmlns:manifest="urn:oasis:names:tc:opendocument:xmlns:manifest:1.0" manifest:version="1.3"><manifest:file-entry manifest:full-path="/" manifest:version="1.3" manifest:media-type="application/vnd.oasis.opendocument.text"/><manifest:file-entry manifest:full-path="content.xml" manifest:media-type="text/xml"/><manifest:file-entry manifest:full-path="styles.xml" manifest:media-type="text/xml"/><manifest:file-entry manifest:full-path="meta.xml" manifest:media-type="text/xml"/></manifest:manifest>'
 		),
 		'meta.xml': strToU8(
-			`<?xml version="1.0" encoding="UTF-8"?><office:document-meta ${openDocumentNamespaces} office:version="1.3"><office:meta><dc:title>${xml(document.title)}</dc:title><meta:initial-creator>${xml(document.siteName)}</meta:initial-creator><meta:creation-date>${made}</meta:creation-date><dc:description>${xml(`From ${document.address}`)}</dc:description></office:meta></office:document-meta>`
+			`<?xml version="1.0" encoding="UTF-8"?><office:document-meta ${openDocumentNamespaces} office:version="1.3"><office:meta><dc:title>${escapeHtml(document.title)}</dc:title><meta:initial-creator>${escapeHtml(document.siteName)}</meta:initial-creator><meta:creation-date>${made}</meta:creation-date><dc:description>${escapeHtml(`From ${document.address}`)}</dc:description></office:meta></office:document-meta>`
 		),
 		'styles.xml': strToU8(openStyles()),
 		'content.xml': strToU8(openContent(document))

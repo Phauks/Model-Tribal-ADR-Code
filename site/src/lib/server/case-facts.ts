@@ -11,7 +11,7 @@
  * Runs at build time (vite.config.ts, "virtual:essay-library").
  */
 import { displayName } from '../nation-labels.ts';
-import { escapeHtml } from './markdown.ts';
+import { escapeHtml } from '../escape-html.ts';
 import { courtPath } from './supreme-courts.ts';
 
 export type FactLine = [label: string, html: string];
