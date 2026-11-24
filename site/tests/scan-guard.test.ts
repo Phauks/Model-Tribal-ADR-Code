@@ -213,6 +213,14 @@ const bucketCalls: Record<string, BucketUse> = {
     kind: "project-file",
     why: "Nation seals and images the project collected from official sources.",
   },
+  "src/routes/supreme-court/portraits/[person]/+server.ts GET get(portrait.key)": {
+    kind: "project-file",
+    why: "Justices' and Presidents' portraits the project chose from Wikimedia Commons, each served only if it matches the SHA-256 recorded in content/supreme-court/people.yaml.",
+  },
+  "src/routes/supreme-court/portraits/[person]/+server.ts GET put(portrait.key)": {
+    kind: "project-file",
+    why: "Justices' and Presidents' portraits the project chose from Wikimedia Commons, kept only if the fetched copy matches the SHA-256 recorded in content/supreme-court/people.yaml.",
+  },
   "src/lib/server/source-library.ts applyLibraryChanges get(`${changesPrefix}latest.json`)":
     {
       kind: "project-file",

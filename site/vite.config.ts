@@ -15,6 +15,7 @@ import { buildFormCatalog } from './src/lib/server/form-catalog.ts';
 import { nationIndexRows } from './src/lib/server/nation-index.ts';
 import { followableBuild } from './src/lib/server/followable-build.ts';
 import { historyBuild } from './src/lib/server/page-history-build.ts';
+import { servablePortraits } from './src/lib/server/supreme-court-people.ts';
 import {
 	essaysForReview,
 	glossary,
@@ -263,6 +264,28 @@ function nationImages(): Plugin {
 		load(identifier) {
 			if (identifier !== resolvedNationImagesModule) return undefined;
 			return `export const nationImages = ${JSON.stringify(servableImages())};`;
+		}
+	};
+}
+
+const portraitsModule = 'virtual:portraits';
+const resolvedPortraitsModule = `\0${portraitsModule}`;
+
+/**
+ * Lists the portraits of Justices and Presidents the Worker may serve
+ * (src/routes/supreme-court/portraits), as a small module bundled into the
+ * Worker: only portraits whose license allows showing them, each with the
+ * SHA-256 of the reviewed copy.
+ */
+function portraitList(): Plugin {
+	return {
+		name: 'model-tribal-adr-code:portraits',
+		resolveId(identifier) {
+			return identifier === portraitsModule ? resolvedPortraitsModule : undefined;
+		},
+		load(identifier) {
+			if (identifier !== resolvedPortraitsModule) return undefined;
+			return `export const portraits = ${JSON.stringify(servablePortraits())};`;
 		}
 	};
 }
@@ -547,6 +570,7 @@ export default defineConfig({
 		publicContactsList(),
 		mailNations(),
 		nationImages(),
+		portraitList(),
 		sectionLists(),
 		publicCopiesList(),
 		sourceCitations(),
