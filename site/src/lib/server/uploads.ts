@@ -984,49 +984,12 @@ export async function settlePulledFiles(database: D1Database, bucket: R2Bucket):
 		const listed = await bucket.list({ prefix: `intake/${stage}/`, limit: 100 });
 		for (const object of listed.objects) {
 			const reference = object.key.slice(`intake/${stage}/`.length).replace(/\.json$/, '');
-			const upload = await uploadByReference(database, reference);
-			if (!upload || upload.from_pull_list !== 1 || !(['waiting-for-review', 'in-review'] as UploadStatus[]).includes(upload.status)) {
-				// Already settled, withdrawn, or not a pulled file: the note has nothing left to do.
-				await bucket.delete(intakeKeys(reference));
-				continue;
+			try {
+				if (await settleOnePulledFile(database, bucket, reference, stage, object.key)) settled += 1;
+			} catch (problem) {
+				// One note that cannot be settled must not take Your uploads or Intake down with it.
+				console.error(`Could not settle the intake note for ${reference}`, problem);
 			}
-			const note = await readNote(bucket, object.key);
-			if (!note) continue;
-			const at = now();
-			if (stage === 'declined') {
-				const reason = typeof note.reason === 'string' && note.reason.trim() ? note.reason.trim().slice(0, 1000) : 'Not needed.';
-				await database.batch([
-					database
-						.prepare(`UPDATE uploads SET status = 'not-used', decision_reason = ?, decided_at = ? WHERE identifier = ?`)
-						.bind(reason, at, upload.identifier),
-					uploadEvent(database, upload, 'Not used at intake', null, reason)
-				]);
-			} else {
-				const captureKey = note.captureKey;
-				if (!isCaptureKey(captureKey)) {
-					console.error(`Intake note for ${reference} names a key outside the captures`);
-					continue;
-				}
-				// The script copies first and writes the note after; the copy must be there, whole, before ours goes.
-				const copy = await bucket.head(captureKey);
-				if (!copy || copy.size !== upload.size_bytes) {
-					console.error(`Intake note for ${reference} names ${captureKey}, which is missing or a different size`);
-					continue;
-				}
-				await deleteBytes(database, bucket, upload);
-				const held = note.alreadyHeld === true;
-				await database.batch([
-					database
-						.prepare(
-							`UPDATE uploads SET status = 'filed', destination = 'research-library', access_level = 'restricted',
-							 filed_key = ?, decided_at = ?, deleted_at = ? WHERE identifier = ?`
-						)
-						.bind(captureKey, at, at, upload.identifier),
-					uploadEvent(database, upload, held ? 'Already held; matched at intake' : 'Filed at intake', null, captureKey)
-				]);
-			}
-			await bucket.delete(intakeKeys(reference));
-			settled += 1;
 		}
 	}
 	const waiting = await database
@@ -1036,6 +999,65 @@ export async function settlePulledFiles(database: D1Database, bucket: R2Bucket):
 		if (!(await bucket.head(`intake/waiting/${upload.reference}.json`))) await offerForIntake(bucket, upload);
 	}
 	return settled;
+}
+
+/** Settles one intake note. False while it must wait: the filed copy is not there yet, or the note cannot be read. */
+async function settleOnePulledFile(
+	database: D1Database,
+	bucket: R2Bucket,
+	reference: string,
+	stage: 'filed' | 'declined',
+	noteKey: string
+): Promise<boolean> {
+	const upload = await uploadByReference(database, reference);
+	if (!upload || upload.from_pull_list !== 1 || !(['waiting-for-review', 'in-review'] as UploadStatus[]).includes(upload.status)) {
+		// Already settled, withdrawn, or not a pulled file: the note has nothing left to do.
+		await bucket.delete(intakeKeys(reference));
+		return false;
+	}
+	const note = await readNote(bucket, noteKey);
+	if (!note) return false;
+	const at = now();
+	if (stage === 'declined') {
+		const reason = typeof note.reason === 'string' && note.reason.trim() ? note.reason.trim().slice(0, 1000) : 'Not needed.';
+		await database.batch([
+			database
+				.prepare(`UPDATE uploads SET status = 'not-used', decision_reason = ?, decided_at = ? WHERE identifier = ?`)
+				.bind(reason, at, upload.identifier),
+			uploadEvent(database, upload, 'Not used at intake', null, reason)
+		]);
+	} else {
+		const captureKey = note.captureKey;
+		if (!isCaptureKey(captureKey)) {
+			console.error(`Intake note for ${reference} names a key outside the captures`);
+			return false;
+		}
+		// The script copies first and writes the note after; the copy must be there, whole, before ours goes.
+		const copy = await bucket.head(captureKey);
+		if (!copy || copy.size !== upload.size_bytes) {
+			console.error(`Intake note for ${reference} names ${captureKey}, which is missing or a different size`);
+			return false;
+		}
+		// The same file sent twice matches the copy an earlier upload already filed. filed_key is unique, so only that
+		// earlier upload holds the key; this one keeps it as its reason, which Intake shows in the Filed column.
+		const holder = await database
+			.prepare(`SELECT reference FROM uploads WHERE filed_key = ? AND identifier <> ?`)
+			.bind(captureKey, upload.identifier)
+			.first<{ reference: string }>();
+		await deleteBytes(database, bucket, upload);
+		const held = note.alreadyHeld === true || holder !== null;
+		await database.batch([
+			database
+				.prepare(
+					`UPDATE uploads SET status = 'filed', destination = 'research-library', access_level = 'restricted',
+					 filed_key = ?, decision_reason = ?, decided_at = ?, deleted_at = ? WHERE identifier = ?`
+				)
+				.bind(holder ? null : captureKey, holder ? `Already held as ${captureKey}` : null, at, at, upload.identifier),
+			uploadEvent(database, upload, held ? 'Already held; matched at intake' : 'Filed at intake', null, captureKey)
+		]);
+	}
+	await bucket.delete(intakeKeys(reference));
+	return true;
 }
 
 /** A file one account sent on Intake, for the table there. */
@@ -1096,7 +1118,7 @@ export async function intakeFilesOf(database: D1Database, accountIdentifier: str
 			statusText,
 			problem,
 			done: row.status === 'filed',
-			filedAs: row.status === 'filed' ? row.filed_key : null,
+			filedAs: row.status === 'filed' ? (row.filed_key ?? row.decision_reason) : null,
 			scan: scanBadgeFor(row.status, row.scan_status, row.decision_reason)
 		};
 	});

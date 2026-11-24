@@ -1,11 +1,11 @@
 ---
-title: "Sponsor a printed copy for every Native nation"
+title: "Every Nation Initiative"
 part: about
 status: draft
-updated: 2026-11-23
-description: "Organizations can help fund this work."
+updated: 2026-11-24
+description: "A printed copy of the book for every federally recognized Native nation."
 ---
 
-# Sponsor a printed copy for every Native nation
+# Every Nation Initiative
 
-The code and its research are free to read. Sponsors pay to print the book, mail it to each nation’s office and keep the site online.
+A printed copy of the book, mailed at no cost to the government of every federally recognized Native nation, then every state-recognized nation, then every Native nation this site identifies. Everything here stays free to read.
