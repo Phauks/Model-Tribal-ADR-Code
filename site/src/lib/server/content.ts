@@ -179,6 +179,8 @@ export interface CitedFact {
 
 export interface NationRecord {
 	id: string;
+	/** Ids of profiles merged into this one; their old page addresses redirect here. */
+	former_ids?: string[];
 	entity_type: string;
 	names: {
 		official: string;

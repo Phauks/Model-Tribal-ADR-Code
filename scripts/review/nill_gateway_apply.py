@@ -38,7 +38,7 @@ MATCHES = {
     "haliwa_saponi": (["haliwa-saponi-indian-tribe"], "the profile's other name is Haliwa-Saponi Indian Tribe, Inc."),
     "iqurmuit": (["iqugmiut-traditional-council"], "same name, spelled Iqugmuit on the page"),
     "los_coyotes_band": (["los-coyotes-band-of-cahuilla-and-cupeno-indians"], "same name, Cahuilla misspelled on the page"),
-    "saint_francis_abenaki": (["missisquoi-st-francis-sokoki-band"], "the state-recognized Missisquoi, St. Francis-Sokoki Band; the profile st-francis-sokoki-band-of-abenakis-of-vermont may be the same group"),
+    "saint_francis_abenaki": (["missisquoi-st-francis-sokoki-band"], "the state-recognized Missisquoi, St. Francis-Sokoki Band; the profile st-francis-sokoki-band-of-abenakis-of-vermont, the same group, was merged into it"),
     "snoqualmoo": (["snoqualmoo-tribe-of-whidbey-island"], "the only Snoqualmoo profile"),
     "tuscarora": (["tuscarora-nation"], "the page gives a Lewiston, New York address, so not the Tuscarora Nation of North Carolina"),
     "northfork_rancheria": (["northfork-rancheria-of-mono-indians-of-california"], "the page names Northfork Rancheria, the federally recognized nation, not the North Fork Band petitioner"),
