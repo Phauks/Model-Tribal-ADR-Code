@@ -99,11 +99,14 @@
 		let stopped = false;
 		void (async () => {
 			try {
-				const [{ default: RealtimeKitClient }, { defineCustomElement }] = await Promise.all([
+				// The loader registers every part of the call (setup screen, grid,
+				// controls). Registering rtk-meeting alone leaves the parts it draws
+				// undefined, so the call showed a blank page (Nov. 23, 2026).
+				const [{ default: RealtimeKitClient }, { defineCustomElements }] = await Promise.all([
 					import('@cloudflare/realtimekit'),
-					import('@cloudflare/realtimekit-ui/components/rtk-meeting')
+					import('@cloudflare/realtimekit-ui/loader')
 				]);
-				defineCustomElement();
+				await defineCustomElements();
 				if (stopped || !container) return;
 				const client = (await RealtimeKitClient.init({ authToken: token, defaults: { audio: false, video: false } })) as unknown as RoomMeeting;
 				if (stopped) {
@@ -111,8 +114,11 @@
 					return;
 				}
 				meeting = client;
-				const element = document.createElement('rtk-meeting') as HTMLElement & { meeting: unknown; showSetupScreen: boolean };
+				const element = document.createElement('rtk-meeting') as HTMLElement & { meeting: unknown; showSetupScreen: boolean; mode: 'fixed' | 'fill' };
 				element.showSetupScreen = true;
+				// "fill" keeps the call inside the stage; the default covers the whole
+				// window, hiding the room's bar, the recording banner and the host's controls.
+				element.mode = 'fill';
 				element.meeting = client;
 				container.append(element);
 				recording = client.recording.recordingState === 'RECORDING';
@@ -196,11 +202,18 @@
 	}
 
 	.stage {
+		position: relative;
 		flex: 1 1 auto;
 		min-height: 20rem;
 		border: 1px solid var(--color-line);
 		border-radius: var(--radius-panel);
 		overflow: hidden;
+	}
+
+	/* A definite size, so the call's own screens can fill it. */
+	.stage :global(rtk-meeting) {
+		position: absolute;
+		inset: 0;
 	}
 
 	.stage:empty {

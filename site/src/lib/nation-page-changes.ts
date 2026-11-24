@@ -21,7 +21,7 @@ export type ChangeKind = (typeof changeKinds)[number];
 
 export const changeKindLabels: Record<ChangeKind, string> = {
 	about: 'About',
-	courts: 'Courts and dispute resolution',
+	courts: 'Courts',
 	statements: 'Statements beside government records',
 	contacts: 'Contacts',
 	pictures: 'Pictures',
@@ -56,7 +56,7 @@ export const hideableSections = ['courts', 'law', 'jurisdiction', 'contacts', 's
 export type HideableSection = (typeof hideableSections)[number];
 
 export const hideableSectionLabels: Record<HideableSection, string> = {
-	courts: 'Courts and dispute resolution',
+	courts: 'Courts',
 	law: 'Laws and agreements',
 	jurisdiction: 'Jurisdiction',
 	contacts: 'Contacts',

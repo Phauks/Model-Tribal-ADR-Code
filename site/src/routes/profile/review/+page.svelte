@@ -8,16 +8,13 @@
 	const missing = $derived(Object.entries(data.missing));
 	const sections: Record<string, string> = {
 		givenName: 'about',
-		ageGroup: 'about',
-		phone: 'contact',
+		birthYear: 'about',
+		contacts: 'contact',
 		nations: 'nations',
 		interests: 'help',
-		creditForm: 'credit',
-		creditRole: 'credit',
-		creditPseudonym: 'credit',
+		description: 'credit',
 		biography: 'credit'
-	};
-</script>
+	};</script>
 
 <svelte:head>
 	<title>Check your answers · Model Tribal ADR Code</title>
@@ -40,7 +37,12 @@
 	</div>
 {/if}
 
-<ProfileSummary answers={profile.answers} email={profile.email} changeLinks />
+<ProfileSummary
+	answers={profile.answers}
+	changeLinks
+	picture={profile.pictureKey ? `/profile/picture?v=${encodeURIComponent(profile.pictureUpdatedAt ?? '')}` : null}
+	curriculumVitae={profile.curriculumVitaeName ? { name: profile.curriculumVitaeName, href: '/profile/curriculum-vitae' } : null}
+/>
 
 <section aria-labelledby="confirm-heading">
 	<h2 id="confirm-heading">Confirm</h2>

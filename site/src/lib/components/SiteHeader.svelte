@@ -22,11 +22,20 @@
 	// button. The other controls move, in the same order, into a panel that
 	// More opens. The panel is a native popover, so it opens without scripts;
 	// on wider screens CSS shows its contents in the row, and More is hidden.
+	//
+	// For a person who can work on the page, the page's own controls (Reading,
+	// Commenting, Editing, draft changes, History and Publish) follow the
+	// site's name, and while editing the editor's tools fill a second row that
+	// stays at the top of the screen, so the page starts where it does for
+	// readers (PageControls.svelte, src/lib/page-editing.svelte.ts; Trevor,
+	// Nov. 23, 2026). On phones the page's controls lead the More panel.
 	import { page } from '$app/state';
 	import { siteName } from '#lib';
 	import Ellipsis from '@lucide/svelte/icons/ellipsis';
 	import Menu from '@lucide/svelte/icons/menu';
 	import { sidebarVisibility, toggleSidebar } from './sidebar/sidebar-visibility.svelte.ts';
+	import { currentPageTools } from '#lib/page-editing.svelte.ts';
+	import PageControls from './PageControls.svelte';
 	import AccountLink from './AccountLink.svelte';
 	import DownloadMenu from './DownloadMenu.svelte';
 	import PrintOptions from './PrintOptions.svelte';
@@ -67,6 +76,17 @@
 	});
 
 	let search: SiteSearch | undefined = $state();
+
+	const tools = $derived(currentPageTools());
+	let mastheadHeight = $state(0);
+
+	// While the masthead stays at the top of the screen, the sidebar and the editor's panels start below it.
+	$effect(() => {
+		const root = document.documentElement.style;
+		if (tools) root.setProperty('--masthead-stuck', `${mastheadHeight}px`);
+		else root.removeProperty('--masthead-stuck');
+		return () => root.removeProperty('--masthead-stuck');
+	});
 	let printOptions: PrintOptions | undefined = $state();
 
 	/**
@@ -88,7 +108,7 @@
 <svelte:window onkeydown={openSearchFromKey} />
 
 <a class="skip-link" href="#main-content">Skip to main content</a>
-<header class="masthead">
+<header class="masthead" class:is-stuck={tools !== null} bind:offsetHeight={mastheadHeight}>
 	<div class="page-width masthead-row">
 		<div class="masthead-start">
 			<button
@@ -106,6 +126,7 @@
 				<a href="/">{siteName}</a>
 				<span class="edition print-only">Draft, content {contentVersion}</span>
 			</p>
+			<span class="page-controls-row no-print"><PageControls place="row" /></span>
 		</div>
 		<div class="masthead-controls no-print">
 			<SiteSearch bind:this={search} />
@@ -118,6 +139,7 @@
 				<Ellipsis size={24} /><span aria-hidden="true">More</span>
 			</button>
 			<div class="masthead-more" id="masthead-more" popover>
+				<span class="page-controls-panel"><PageControls place="panel" /></span>
 				<ReportProblem link={reportLink} />
 				<StarButton />
 				<FollowButton />
@@ -129,6 +151,9 @@
 			</div>
 		</div>
 	</div>
+	{#if tools}
+		<div class="page-width masthead-tools no-print">{@render tools()}</div>
+	{/if}
 </header>
 
 <style>
@@ -150,6 +175,25 @@
 	.masthead {
 		background: var(--color-band);
 		color: var(--color-band-text);
+	}
+
+	/* While editing, the masthead and its row of tools stay at the top of the screen. */
+	.masthead.is-stuck {
+		position: sticky;
+		top: 0;
+		z-index: 6;
+	}
+
+	.masthead-tools {
+		border-top: 1px solid color-mix(in srgb, var(--color-band-text) 22%, transparent);
+	}
+
+	.page-controls-row {
+		display: contents;
+	}
+
+	.page-controls-panel {
+		display: none;
 	}
 
 	.masthead-row {
@@ -274,6 +318,14 @@
 		.more-button:focus-visible {
 			background-color: var(--color-focus);
 			color: var(--focus-text);
+		}
+
+		.page-controls-row {
+			display: none;
+		}
+
+		.page-controls-panel {
+			display: contents;
 		}
 
 		.masthead-more:not(:popover-open) {
