@@ -156,12 +156,26 @@
 		}
 		// The workspace's Edit button opens the page with ?edit.
 		openToEdit = asked.has('edit');
+		// Build a table's "Add to essay" opens the page with ?add-chart=<the builder's address>, in Editing.
+		if (asked.get('add-chart')) {
+			chartToAdd = asked.get('add-chart');
+			openToEdit = true;
+		}
 		void loadAccess();
 	});
 
 	let reviewAt = $state<string | null | undefined>(undefined);
 	let commentAt = $state<string | null>(null);
 	let openToEdit = false;
+	let chartToAdd = $state<string | null>(null);
+
+	/** Takes ?add-chart= off the address once the chart is in, so a reload does not add it again. */
+	function chartAdded(): void {
+		chartToAdd = null;
+		const address = new URL(location.href);
+		address.searchParams.delete('add-chart');
+		history.replaceState(history.state, '', address);
+	}
 	let openedForReview = false;
 	$effect(() => {
 		if (access && (reviewAt !== undefined || openToEdit) && !openedForReview) {
@@ -239,7 +253,7 @@
 		{:then { default: EssayEditor }}
 			{#key mode}
 				<!-- Commenting opens the same draft without editing it, so comments land on the words the authors see. -->
-				<EssayEditor {identifier} text={access.text} version={access.latest.number} canEdit={access.canEdit && mode === 'editing'} autoSave={mode === 'editing'} live startAt={reviewAt ?? null} startThread={commentAt} publishedText={access.publishedText} publishedVersion={access.publishedVersion} yourName={access.you?.name ?? null} onsaved={saved} onoutline={showOutline} toolsInMasthead>
+				<EssayEditor {identifier} text={access.text} version={access.latest.number} canEdit={access.canEdit && mode === 'editing'} autoSave={mode === 'editing'} live startAt={reviewAt ?? null} startThread={commentAt} publishedText={access.publishedText} publishedVersion={access.publishedVersion} yourName={access.you?.name ?? null} onsaved={saved} onoutline={showOutline} addChart={mode === 'editing' ? chartToAdd : null} onchartadded={chartAdded} toolsInMasthead>
 					{#snippet titleExtras(extras)}
 						<EssayStatusPills state={access!} inReview={extras.inReview} />
 						{#if mode === 'commenting'}<p class="small muted essay-size">{extras.lines.toLocaleString('en-US')} lines · {extras.words.toLocaleString('en-US')} words</p>{/if}
