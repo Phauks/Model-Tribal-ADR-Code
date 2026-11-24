@@ -109,19 +109,19 @@ nations_in_case:
   checked: '2026-11-24'
   named: []
 review:
-  status: unverified
+  status: verified
   by: scripts/caselaw/supreme_court_native_cases.py
   date: '2026-11-24'
   checks:
   - check: cite
-    result: differs
-    detail: Caselaw Access Project 48 U.S. 573 "Tyler v. Hand"; Database 48 U.S. 573 "JOHN TYLER, WHO IS A CITIZEN OF VIRGINIA, PRESIDENT OF THE UNITED STATES, AND SUCCESSOR IN OFFICE OF MARTIN VAN BUREN, AND TRUSTEE FOR THE USE OF THE ORPHAN CHILDREN PROVIDED FOR IN THE NINETEENTH ARTICLE OF THE TREATY WITH THE CHOCTAWS, OF SE"
+    result: confirmed
+    detail: 'Caselaw Access Project 48 U.S. 573 "Tyler v. Hand"; Database 48 U.S. 573 "JOHN TYLER, WHO IS A CITIZEN OF VIRGINIA, PRESIDENT OF THE UNITED STATES, AND SUCCESSOR IN OFFICE OF MARTIN VAN BUREN, AND TRUSTEE FOR THE USE OF THE ORPHAN CHILDREN PROVIDED FOR IN THE NINETEENTH ARTICLE OF THE TREATY WITH THE CHOCTAWS, OF SE". Confirmed: both sources put the case at 48 U.S. 573, the report prints its caption there (the caption check), and the two names differ only in form'
   - check: scan
     result: agree
     detail: Scan has 14 pages; the report runs 573 to 586
   - check: caption
-    result: settled
-    detail: 'Caption found in the scan''s text at 0.67. Read from the scan by an AI reader (record right): p.573: JOHN TYLER, WHO IS A CITIZEN OF VIRGINIA, PRESIDENT OF THE UNITED STATES, AND SUCCESSOR IN OFFICE OF MARTIN VAN BUREN, AND TRUSTEE FOR THE USE OF THE ORPHAN CHILDREN ... PLAINTIFF IN ERROR, V. JOHN H. HAND, JOHN HUDDLESTON, AND THOMAS G. BLEWETT, DEFENDANTS IN ERROR (OCR: ToxA s G. BLEwETT).'
+    result: confirmed
+    detail: 'Caption found in the scan''s text at 0.67. Read from the scan by an AI reader (record right): p.573: JOHN TYLER, WHO IS A CITIZEN OF VIRGINIA, PRESIDENT OF THE UNITED STATES, AND SUCCESSOR IN OFFICE OF MARTIN VAN BUREN, AND TRUSTEE FOR THE USE OF THE ORPHAN CHILDREN ... PLAINTIFF IN ERROR, V. JOHN H. HAND, JOHN HUDDLESTON, AND THOMAS G. BLEWETT, DEFENDANTS IN ERROR (OCR: ToxA s G. BLEwETT).. Confirmed: the report prints the caption "John Tyler, who is a Citizen of Virginia, President of the United States, and Successor in Office of Martin Van Buren, and Trustee for the Use of the Orphan Children provided for in. the Nineteenth Article of the Treaty with the Choctaws, of September, 1830, Plaintiff in error, v. John H. Hand, John Huddleston, and Thomas G. Blewett, Defendants in Error" on p. 573 (text layer, 0.97)'
   - check: decided
     result: agree
     detail: Supreme Court Library's table (from the Court's minutes) Jan. 18, 1849; Database 1849-01-18

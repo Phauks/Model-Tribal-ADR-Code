@@ -111,7 +111,7 @@ nations_in_case:
   checked: '2026-11-24'
   named: []
 review:
-  status: unverified
+  status: verified
   by: scripts/caselaw/supreme_court_native_cases.py
   date: '2026-11-24'
   checks:
@@ -119,14 +119,14 @@ review:
     result: agree
     detail: Caselaw Access Project 193 U.S. 614 "Sloan v. United States"; Database 193 U.S. 614 "SLOAN v. UNITED STATES"
   - check: scan
-    result: differs
-    detail: Scan has 7 pages; the report runs 614 to 621
+    result: confirmed
+    detail: 'Scan has 7 pages; the report runs 614 to 621. Confirmed: the scan''s pages are the report''s pp. 614-620 (6 of 7 pages show their page number or running head); p. 621 is also the first page of Pope v. Williams, and is in that case''s scan'
   - check: caption
     result: agree
     detail: Caption found in the scan's text at 1.00
   - check: printed dates
-    result: settled
-    detail: 'Caselaw Access Project "Argued Marcli 16,17,1904. Decided April 4, 1904."; scan "Argued M[arch 16, 17, 1904.-Decided April 4, 1904.". Read from the scan by an AI reader (corrected): p. 614: No. 453. Argued M[arch 16, 17, 1904.-Decided April 4, 1904.'
+    result: confirmed
+    detail: 'Caselaw Access Project "Argued Marcli 16,17,1904. Decided April 4, 1904."; scan "Argued M[arch 16, 17, 1904.-Decided April 4, 1904.". Read from the scan by an AI reader (corrected): p. 614: No. 453. Argued M[arch 16, 17, 1904.-Decided April 4, 1904.. Confirmed: the report prints "Argued March 16, 17, 1904. Decided April 4, 1904." on p. 614 (fresh OCR, 1.00)'
   - check: decided
     result: agree
     detail: 'Printed and Database: 1904-04-04'

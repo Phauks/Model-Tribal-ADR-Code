@@ -110,7 +110,7 @@ nations_in_case:
   checked: '2026-11-24'
   named: []
 review:
-  status: unverified
+  status: verified
   by: scripts/caselaw/supreme_court_native_cases.py
   date: '2026-11-24'
   checks:
@@ -121,8 +121,8 @@ review:
     result: agree
     detail: Scan has 8 pages; the report runs 159 to 166
   - check: caption
-    result: settled
-    detail: 'Caption found in the scan''s text at 0.81. Read from the scan by an AI reader (record right): p. 159: BRITISH-AMERICAN / OIL PRODUCING CO. v. / BOARD OF EQUALIZATION OF MONTANA / ET AL.'
+    result: confirmed
+    detail: 'Caption found in the scan''s text at 0.81. Read from the scan by an AI reader (record right): p. 159: BRITISH-AMERICAN / OIL PRODUCING CO. v. / BOARD OF EQUALIZATION OF MONTANA / ET AL.. Confirmed: the report prints the caption "BRITISH-AMERICAN OIL PRODUCING CO. v. BOARD OF EQUALIZATION OF MONTANA et al." on p. 159 (fresh OCR, 1.00)'
   - check: printed dates
     result: agree
     detail: Caselaw Access Project "Argued November 11, 1936. Decided December 7, 1936."; scan "Argued November 11, 1936.-Decided December 7, 1936."

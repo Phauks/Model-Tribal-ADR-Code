@@ -40,7 +40,6 @@ history:
 court_dates:
   argued:
   - '2009-02-23'
-  - '2009-04-06'
   printed: Argued February 23, 2009 Decided April 6, 2009
   source: https://www.supremecourt.gov/opinions/boundvolumes/556bv.pdf
   checked: '2026-11-24'
@@ -120,7 +119,7 @@ nations_in_case:
     role: party
     note: Matched by the script to the nation record of the same name; not yet checked.
 review:
-  status: unverified
+  status: verified
   by: scripts/caselaw/supreme_court_native_cases.py
   date: '2026-11-24'
   checks:
@@ -140,8 +139,8 @@ review:
     result: agree
     detail: 'Printed and Database: 2009-04-06'
   - check: opinions
-    result: settled
-    detail: 'Report: majority Scalia p. 289; Database writers: Scalia, Souter. Read from the scan by an AI reader (corrected): p. 289: Justice Scalia delivered the opinion of the Court. p. 302: Justice Souter, with whom Justice Stevens joins, concurring.'
+    result: confirmed
+    detail: 'Report: majority Scalia p. 289; Database writers: Scalia, Souter. Read from the scan by an AI reader (corrected): p. 289: Justice Scalia delivered the opinion of the Court. p. 302: Justice Souter, with whom Justice Stevens joins, concurring.. Confirmed: The report prints p. 289: "Justice Scalia delivered the opinion of the Court"; p. 302: "Justice Souter, with whom Justice Stevens joins, concurring"'
   - check: bench
     result: agree
     detail: No Oyez votes; each opinion writer in the report sits on the Database's bench on the side the opinion takes

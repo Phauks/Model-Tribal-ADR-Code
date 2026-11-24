@@ -122,14 +122,14 @@ review:
     result: agree
     detail: Caption found in the scan's text at 1.00
   - check: printed dates
-    result: agree
+    result: differs
     detail: Caselaw Access Project "Submitted October 23, 1895. Decided November 11, 1895."; scan "Submitted October 28, 1S95. Decided November 11, 1895."
   - check: decided
     result: agree
     detail: 'Printed and Database: 1895-11-11'
   - check: opinions
-    result: settled
-    detail: 'Report: majority Brown p. 488; Database writers: Brown; scan pages [(488, 489)]. Read from the scan by an AI reader (record right): p. 488: "MR. JUSTICE BROWN, after stating the case, delivered the opinion of the court."'
+    result: confirmed
+    detail: 'Report: majority Brown p. 488; Database writers: Brown; scan pages [(488, 489)]. Read from the scan by an AI reader (record right): p. 488: "MR. JUSTICE BROWN, after stating the case, delivered the opinion of the court.". Confirmed: The report prints p. 488: "MR. JUSTICE BROWN, after stating the case, delivered the opinion of the court"'
   - check: bench
     result: agree
     detail: No Oyez votes; each opinion writer in the report sits on the Database's bench on the side the opinion takes

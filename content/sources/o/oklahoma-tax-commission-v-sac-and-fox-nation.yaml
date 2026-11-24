@@ -36,8 +36,8 @@ history:
   last_checked: '2026-11-24'
 court_dates:
   argued:
-  - '1993-03-28'
-  printed: Argued March 28, 1993 — Decided May 17, 1993
+  - '1993-03-23'
+  printed: Argued March 23, 1993—Decided May 17, 1993
   source: https://tile.loc.gov/storage-services/service/ll/usrep/usrep508/usrep508114/usrep508114.pdf
   checked: '2026-11-24'
 supreme_court:
@@ -130,8 +130,8 @@ review:
     result: agree
     detail: Caption found in the scan's text at 1.00
   - check: printed dates
-    result: agree
-    detail: Caselaw Access Project "Argued March 28, 1993 — Decided May 17, 1993"; scan "Argued March 23, 1993-Decided May 17, 1993"
+    result: confirmed
+    detail: 'Caselaw Access Project "Argued March 28, 1993 — Decided May 17, 1993"; scan "Argued March 23, 1993-Decided May 17, 1993". Confirmed: the report prints "Argued March 23, 1993—Decided May 17, 1993" on p. 114 (fresh OCR, 0.99)'
   - check: decided
     result: agree
     detail: 'Printed and Database: 1993-05-17'

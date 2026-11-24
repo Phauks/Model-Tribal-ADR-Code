@@ -212,8 +212,10 @@
                   "special concurrence",
                   "concurrence in the result",
                   "concurrence in part and in the judgment",
+                  "concurrence in part and in the result",
                   "concurrence in part and dissent in part",
                   "concurrence in part, concurrence in the judgment in part, and dissent in part",
+                  "concurrence in part, concurrence in the result in part, and dissent in part",
                   "dissent",
                   "dissent in part",
                   "per curiam"
@@ -227,6 +229,11 @@
                 "type": "integer",
                 "minimum": 1,
                 "description": "The report page where the opinion starts."
+              },
+              "scan_page": {
+                "type": "integer",
+                "minimum": 1,
+                "description": "The page of the saved scan that holds the opinion's first page, given only where counting from the case's first page would miss it (the scan has an inserted map or blank leaf before it)."
               },
               "note": {
                 "type": "string",
@@ -483,7 +490,7 @@
     "notes": { "type": "string" },
     "review": {
       "type": "object",
-      "description": "For a record a script wrote: the cross-checks the script ran between independent sources and what each found (scripts/caselaw/supreme_court_native_cases.py). \"verified\" means every check agreed, not that a person has read the record; a person who reads it records that with status \"reviewed\". The record's other `checked` dates are the day the script read the sources.",
+      "description": "For a record a script wrote: the cross-checks the script ran between independent sources and what each found (scripts/caselaw/supreme_court_native_cases.py). \"verified\" means every check agreed or was confirmed in the official report itself, not that a person has read the record; a person who reads it records that with status \"reviewed\". The record's other `checked` dates are the day the script read the sources.",
       "additionalProperties": false,
       "required": ["status", "by", "date", "checks"],
       "properties": {
@@ -498,7 +505,7 @@
             "required": ["check", "result"],
             "properties": {
               "check": { "type": "string" },
-              "result": { "type": "string", "enum": ["agree", "differs", "missing", "settled"] },
+              "result": { "type": "string", "enum": ["agree", "differs", "missing", "settled", "confirmed"], "description": "agree: the sources agree. confirmed: they differ or one is missing, and the official report prints what the record says (the words it prints are in detail). settled: an AI reader read the scan, but the report's text has not confirmed the reading. differs, missing: unsettled." },
               "detail": { "type": "string" }
             }
           }

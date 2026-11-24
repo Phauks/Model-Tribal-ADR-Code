@@ -23,10 +23,18 @@ writes content/sources/<letter>/<key>.yaml:
   names go under not_linked for a person to settle.
 
 Each record gets a `review` block listing the cross-checks and their results.
-Its status stays "unverified" unless every check agreed; even then it means
-the sources agree, not that a person has read the record. A record whose
-review status a person has changed, or that has no review block, is never
-written over.
+Where the sources disagree, the official report settles it (official_report.py):
+the scan's pages are mapped to the report's printed pages, the opinion
+headings, caption and date line are looked for on those pages (in the scan's
+text layer, then in a fresh OCR of the page image), and a check the report
+bears out becomes "confirmed", with the words it prints. Facts no script can
+read are read from the page images into research/supreme-court-coverage/
+report-readings.json, each with the lines it rests on; a reading counts only
+when every one of its lines is found on its printed page. The status stays
+"unverified" unless every check agreed or was confirmed; even then it means
+the sources and the report agree, not that a person has read the record. A
+record whose review status a person has changed, or that has no review block,
+is never written over.
 
 Outputs research/reviews/2026-11-24-supreme-court-native-cases.csv (one row
 per case, each check's result) and, with --disagreements FILE, a JSON list of
@@ -60,6 +68,9 @@ from pathlib import Path
 
 import yaml
 
+sys.path.insert(0, str(Path(__file__).resolve().parent))
+import official_report  # noqa: E402
+
 ROOT = Path(__file__).resolve().parents[2]
 SOURCES = ROOT / "content" / "sources"
 TRIBES = ROOT / "content" / "tribes"
@@ -67,6 +78,9 @@ CASE_LIST = ROOT / "research" / "supreme-court-coverage" / "native-cases-scdb.cs
 # Where the sources disagreed, an AI reader read the scan for the disputed facts only; its readings, with the
 # line each relies on, by Database case ID. The record keeps status "unverified": a reading is not a check.
 SETTLED = ROOT / "research" / "supreme-court-coverage" / "settled.json"
+# Lines read from the official report's page images where the scripts could not settle a fact, by Database case ID:
+# each line, with its printed page, is checked against the report's text before it confirms anything.
+READINGS = ROOT / "research" / "supreme-court-coverage" / "report-readings.json"
 TODAY = datetime.date.today().isoformat()
 REPORT = ROOT / "research" / "reviews" / f"{TODAY}-supreme-court-native-cases.csv"
 SESSION = "2026-11-24-supreme-court-native-cases"
@@ -297,7 +311,7 @@ def scdb_bench(rows: list[dict], day: str, justices: Justices) -> dict:
     members = chief + [m for m in members if m not in chief]
     count = lambda value: int(value) if value and value.isdigit() else None
     return {"decision_type": decision, "vote": {"majority": count(rows[0]["majVotes"]), "minority": count(rows[0]["minVotes"])},
-            "justices": members, "unmatched": unmatched, "outside": outside, "writer_code": writer,
+            "justices": members, "unmatched": unmatched, "outside": outside, "writer_code": writer, "us_cite": rows[0].get("usCite", ""),
             "writers": {justices.from_scdb(r["justiceName"], day)["name"] for r in rows
                         if r["opinion"] in ("2", "3") and justices.from_scdb(r["justiceName"], day)}}
 
@@ -425,7 +439,9 @@ def opinion_pages(page_html: str, first: int, last: int | None = None, unmarked_
 KIND_PATTERNS = [
     (r"concurring in part,? concurring in the judgment in part,? and dissenting in part", "concurrence in part, concurrence in the judgment in part, and dissent in part"),
     (r"concurring in part and dissenting in part", "concurrence in part and dissent in part"),
+    (r"concurring in part,? concurring in the result in part,? and dissenting in part", "concurrence in part, concurrence in the result in part, and dissent in part"),
     (r"concurring in part and concurring in the judgment", "concurrence in part and in the judgment"),
+    (r"concurring in part and concurring in the result", "concurrence in part and in the result"),
     (r"dissenting in part", "dissent in part"),
     (r"concurring in the judgment", "special concurrence"),
     (r"concurring in the result", "concurrence in the result"),
@@ -488,9 +504,16 @@ def parse_days(text: str) -> list[str]:
     return days
 
 
+def plausible_dates(block: dict | None, day: str) -> bool:
+    """Argument dates fall on or before the decision and within a few years of it."""
+    earlier = [d for key in ("argued", "submitted", "reargued") for d in (block or {}).get(key, [])]
+    return all(f"{int(day[:4]) - 5}" <= d <= day for d in earlier)
+
+
 def court_dates_block(line: str, source: str) -> dict | None:
-    parts = re.split(r"\s*[—–-]{1,2}\s*(?=Decided)|\.\s+(?=Decided)", line)
+    parts = re.split(r"\s*[—–-]{1,2}\s*(?=Decided)|\.?\s+(?=Decided)", line)
     block: dict = {}
+    decided_year = re.search(r"Decided\s.*?(\d{4})", line)
     for part in parts:
         label = re.match(r"(Argued|Submitted|Reargued|Re-argued|Decided)", part.strip())
         if not label:
@@ -502,7 +525,13 @@ def court_dates_block(line: str, source: str) -> dict | None:
             if not inner:
                 continue
             key = {"Argued": "argued", "Submitted": "submitted", "Reargued": "reargued", "Re-argued": "reargued"}[inner[1]]
-            days = parse_days(inner[2])
+            words = inner[2]
+            if not re.search(r"\d{4}", words) and decided_year:  # "Argued October 19.—Decided November 9, 1903."
+                words = f"{words.rstrip(' .')}, {decided_year[1]}"
+                decided_days = parse_days(re.search(r"Decided\s+(.*)", line)[1])
+                if decided_days and any(d > decided_days[0] for d in parse_days(words)):  # argued the year before
+                    words = f"{words.rsplit(',', 1)[0]}, {int(decided_year[1]) - 1}"
+            days = parse_days(words)
             if not days:
                 return None
             block.setdefault(key, []).extend(days)
@@ -520,7 +549,7 @@ def dates_table(cache: Path) -> dict[tuple[str, str], dict]:
     table, volume = {}, None
     date = r"\[?(?:[A-Z][a-z]{2,4}\.?\s+\d[\d,\s\-–]*\d{4}|[A-Z][a-z]+\.? term \d{4})\]?[*#]?"
     for line in text.splitlines():
-        heading = re.match(r"\s{10,}(\d+) U\.S\. Reports", line)
+        heading = re.match(r"\s{10,}(\d+) U\.\s?S\. Reports", line)
         if heading:
             volume = heading[1]
             continue
@@ -795,6 +824,8 @@ def build(row: dict, scdb_rows: dict, volumes: Volumes, oyez: Oyez, justices: Ju
             decided_check = {"check": "decided", "result": "differs", "detail": f"Printed \"{line}\"; Database {day}"}
         court_dates = court_dates_block(line, official_pdf(volume, page) if pages else f"https://static.case.law/us/{volume}/html/{cap['file_name']}.html")
         same = bool(pages) and contains_fuzzy(line, " ".join(pages[:3])) >= (0.75 if decided and decided[0] == day else 0.9)
+        # the words may match while a figure is misread ("Argued December 14, 17, 1000."): the figures must match too
+        same = same and (scan_line is None or official_report.numbers(line) == official_report.numbers(scan_line)) and plausible_dates(court_dates, day)
         checks.append({"check": "printed dates", "result": "agree" if same and court_dates else "differs",
                        "detail": f"Caselaw Access Project \"{line}\"; scan \"{scan_line or 'not found'}\""})
     elif (volume, page) in TABLE:
@@ -908,6 +939,16 @@ def build(row: dict, scdb_rows: dict, volumes: Volumes, oyez: Oyez, justices: Ju
                 if check["check"] == verdict["check"] and check["result"] != "agree" and verdict["result"] in ("record right", "corrected"):
                     check["result"] = "settled"
                     check["detail"] += f". Read from the scan by an AI reader ({verdict['result']}): {verdict.get('evidence', '')}"
+    scan_pages: dict[int, int] = {}
+    if status == "unverified":
+        listing, caption, court_dates, day, scan_pages = confirm_in_report(
+            row, checks, listing, caption, court_dates, day, pages, first, last, volume, page, cap, volumes, scdb, oyez_bench, justices, cache)
+        status = "verified" if all(c["result"] in ("agree", "confirmed") for c in checks) else "unverified"
+    elif pages and int(volume) <= 542:
+        scan_pages = scan_page_numbers(pages, first, last, listing)
+    for entry in listing:
+        if entry["page"] in scan_pages:
+            entry["scan_page"] = scan_pages[entry["page"]]
     record: dict = {
         "key": "",
         "kind": "federal-case",
@@ -938,6 +979,152 @@ def build(row: dict, scdb_rows: dict, volumes: Volumes, oyez: Oyez, justices: Ju
         record["nations_in_case"]["not_linked"] = not_linked
     record["review"] = {"status": status, "by": SCRIPT, "date": TODAY, "checks": checks}
     return record, checks, ""
+
+
+# ---------------------------------------------------------------- confirming disputed facts in the official report
+
+
+def bound_volume_start(volume: str, pages: list[str], cache: Path) -> int:
+    """Where the case's pages begin in the Court's bound volume (0-based), for reading a page image."""
+    every = json.loads((cache / "bound" / f"{volume}.json").read_text())
+    return next((i for i in range(len(every)) if every[i:i + len(pages)] == pages), 0)
+
+
+def scan_page_numbers(pages: list[str], first: int, last: int | None, listing: list[dict]) -> dict[int, int]:
+    """For opinions whose page is not where counting from the scan's first page puts it (an inserted map or blank
+    leaf before it), the scan page (1-based) that holds it."""
+    mapping, _ = official_report.page_map(pages, first, last)
+    found = {}
+    for entry in listing:
+        if entry["page"] in mapping and mapping.index(entry["page"]) + 1 != entry["page"] - first + 1:
+            found[entry["page"]] = mapping.index(entry["page"]) + 1
+    return found
+
+
+def confirm_in_report(row, checks, listing, caption, court_dates, day, pages, first, last, volume, page, cap, volumes, scdb, oyez_bench, justices, cache):
+    """Settle each check the sources disagree on by what the official report prints.
+
+    A check the report confirms becomes "confirmed", with the words it prints. Corrections read from the report's
+    page images (READINGS) are applied first; each line they rest on must be found on its printed page of the
+    report's text (its text layer or a fresh OCR of the page image), or nothing in that reading is used.
+    """
+    reading = READING_LINES.get(row["scdb_case_id"]) or {}
+    facts = reading.get("facts") or {}
+    scan_pages: dict[int, int] = {}
+    if not pages:
+        if facts:
+            print(f"{row['scdb_case_id']}: no scan to check the reading against", file=sys.stderr)
+        return listing, caption, court_dates, day, scan_pages
+    bound = int(volume) > 542
+    pdf = cache / "bound" / f"{volume}bv.pdf" if bound else cache / "loc" / f"{loc_name(volume, page)}.pdf"
+    base = bound_volume_start(volume, pages, cache) if bound else 0
+    mapping, map_notes = official_report.page_map(pages, first, last)
+    index_of = {printed: index for index, printed in enumerate(mapping) if printed is not None}
+
+    def printed_on(line: str, printed: int) -> tuple[float, str]:
+        index = index_of.get(printed)
+        if index is None:
+            return 0.0, "not in the scan"
+        layer = official_report.best_run(line, pages[index])
+        if layer >= 0.9:
+            return layer, "text layer"
+        fresh = official_report.best_run(line, official_report.ocr_page(pdf, base + index, cache))
+        return (fresh, "fresh OCR") if fresh > layer else (layer, "text layer")
+
+    def lines_hold(fact: dict) -> tuple[bool, str]:
+        quoted = []
+        for item in fact.get("lines") or []:
+            score, how = printed_on(item["text"], item["page"])
+            # a line in ornamental or small-capital type that no OCR reads well, checked by eye on the page image
+            if score < (0.75 if item.get("ocr_poor") else 0.85):
+                return False, f"p. {item['page']}: \"{item['text']}\" not found ({how}, {score:.2f})"
+            quoted.append(f"p. {item['page']}: \"{item['text']}\"" + (" (the OCR reads this line poorly; checked on the page image)" if item.get("ocr_poor") else ""))
+        return bool(quoted), "; ".join(quoted)
+
+    # corrections read from the page images, used only when every line they rest on is printed where they say
+    held = {}
+    for name, fact in facts.items():
+        held[name] = lines_hold(fact)
+        if not held[name][0]:
+            print(f"{row['scdb_case_id']} {name}: reading not confirmed: {held[name][1]}", file=sys.stderr)
+            continue
+        fix = fact.get("correct") or {}
+        if "opinions" in fix:
+            listing = fix["opinions"]
+        if "caption" in fix:
+            caption = fix["caption"]
+        if "court_dates_printed" in fix:
+            court_dates = court_dates_block(fix["court_dates_printed"], official_pdf(volume, page)) or court_dates
+        if "court_dates" in fix:  # a heading the date parser can't read, such as a chain of decrees
+            court_dates = {**fix["court_dates"], "source": official_pdf(volume, page), "checked": TODAY}
+        if "decided" in fix:
+            day = fix["decided"]
+
+    def confirm(check: dict, how: str) -> None:
+        check["result"] = "confirmed"
+        check["detail"] = f"{check['detail']}. Confirmed: {how}"
+
+    by_name = {c["check"]: c for c in checks}
+    # the cite and bench checks rest on the caption and the decision date, so they come last
+    for check in sorted(checks, key=lambda c: c["check"] in ("cite", "bench")):
+        if check["result"] == "agree":
+            continue
+        name = check["check"]
+        auto = None
+        if name == "caption":
+            score, how, index = official_report.find_text(caption, pages, [0, 1], pdf if not bound else None, cache)
+            if score >= 0.9:
+                auto = f"the report prints the caption \"{caption}\" on p. {mapping[index] if index is not None else first} ({how}, {score:.2f})"
+        elif name in ("printed dates", "decided") and court_dates and court_dates.get("source", "").startswith(("https://tile.loc.gov", "https://www.supremecourt.gov/opinions/bound")):
+            line = court_dates["printed"]
+            decided = parse_days(re.search(r"Decided\s+(.*)", line)[1]) if re.search(r"Decided\s+(.*)", line) else []
+            score, how, index = official_report.find_text(line, pages, [0, 1, 2], pdf if not bound else None, cache)
+            same_day = bool(decided) and decided[0] == day
+            figures = index is not None and (official_report.has_numbers(line, pages[index]) or (not bound and official_report.has_numbers(line, official_report.ocr_page(pdf, index, cache))))
+            if score >= 0.9 and figures and plausible_dates(court_dates, day) and (name == "printed dates" or same_day):
+                auto = f"the report prints \"{line}\" on p. {mapping[index] if index is not None else first} ({how}, {score:.2f})"
+        elif name == "scan":
+            shown, total, wrong = official_report.map_checks(pages, mapping)
+            wanted = [e["page"] for e in listing]
+            end = last or max(wanted + [first])
+            missing = [p for p in range(first, end + 1) if p not in index_of]
+            shared = None
+            if missing == [end] and last:
+                shared = next((c for c, _ in volumes.cases(volume) if str(c.get("first_page")) == str(last) and c["first_page"] != cap["first_page"]), None)
+            if not wrong and total and shown >= 0.6 * total and all(p in index_of for p in wanted) and (not missing or shared):
+                pieces = [f"the scan's pages are the report's pp. {first}-{max(index_of)} ({shown} of {total} pages show their page number or running head)"]
+                pieces += map_notes
+                if shared:
+                    pieces.append(f"p. {last} is also the first page of {end_stop(shared['name_abbreviation'])}, and is in that case's scan")
+                auto = "; ".join(pieces)
+        elif name == "opinions":
+            ok, how = official_report.confirm_opinions(listing, pages, mapping, day, justices, pdf, cache, last, base)
+            if ok:
+                auto = how or "the report prints no opinion"
+        elif name == "cite":
+            official = next((c["cite"] for c in cap["citations"] if c["type"] == "official"), "")
+            if official == f"{volume} U.S. {page}" == scdb.get("us_cite") and by_name.get("caption", {}).get("result") in ("agree", "confirmed"):
+                auto = f"both sources put the case at {official}, the report prints its caption there (the caption check), and the two names differ only in form"
+        elif name == "bench":
+            result, detail = bench_agreement(oyez_bench, scdb, listing, justices, day)
+            if result == "agree":
+                check.update(result="agree", detail=detail)
+                continue
+            if scdb["outside"] and not scdb["unmatched"] and by_name.get("decided", {}).get("result") in ("agree", "confirmed"):
+                served = []
+                for name_out in scdb["outside"]:
+                    person = next((j for j in justices.list if j["name"] == name_out), None)
+                    if person:
+                        served.append(f"{name_out} served {person['oath']} to {person.get('left') or 'now'}")
+                if len(served) == len(scdb["outside"]):
+                    auto = f"the Court's list of Justices: {'; '.join(served)}, so not on the bench on {day}"
+        if auto:
+            confirm(check, auto)
+        elif name in facts and held.get(name, (False,))[0]:
+            confirm(check, f"the report prints (read from the page images) {held[name][1]}" + (f" ({facts[name]['note']})" if facts[name].get("note") else ""))
+    if not bound:
+        scan_pages = scan_page_numbers(pages, first, last, listing)
+    return listing, caption, court_dates, day, scan_pages
 
 
 # ---------------------------------------------------------------- writing
@@ -974,9 +1161,10 @@ def main() -> int:
         file_captures(cache, args.file_captures)
         return 0
 
-    global TABLE, SETTLED_READINGS
+    global TABLE, SETTLED_READINGS, READING_LINES
     TABLE = dates_table(cache)
     SETTLED_READINGS = json.loads(SETTLED.read_text(encoding="utf-8")) if SETTLED.exists() else {}
+    READING_LINES = json.loads(READINGS.read_text(encoding="utf-8")) if READINGS.exists() else {}
     justices, nations = Justices(), Nations()
     scdb_rows = load_scdb(cache)
     volumes, oyez = Volumes(cache), Oyez(cache)
@@ -1044,6 +1232,9 @@ def main() -> int:
         path.write_text(dump(order(record)), encoding="utf-8")
         written += 1
     fields = ["scdb_case_id", "citation", "key", "status", "reason", "cite", "scan", "caption", "printed dates", "decided", "opinions", "bench"]
+    if args.only and REPORT.exists():  # a partial run updates its rows of the full report
+        rerun = {r["scdb_case_id"]: r for r in report_rows}
+        report_rows = [rerun.pop(r["scdb_case_id"], r) for r in csv.DictReader(REPORT.open(encoding="utf-8"))] + list(rerun.values())
     with REPORT.open("w", encoding="utf-8", newline="") as handle:
         writer = csv.DictWriter(handle, fieldnames=fields, extrasaction="ignore")
         writer.writeheader()
@@ -1110,6 +1301,7 @@ def file_captures(cache: Path, captures: Path) -> None:
 
 TABLE: dict = {}
 SETTLED_READINGS: dict = {}
+READING_LINES: dict = {}
 
 ORDER = ["key", "kind", "citation", "caption", "opinions", "original_link", "shares_link_with", "retrieved", "archives", "history", "court_dates",
          "supreme_court", "courtlistener", "reading_links", "rights", "citator", "found_in", "notes", "tribes", "nations_in_case", "review"]

@@ -113,7 +113,7 @@ nations_in_case:
     role: party
     note: Matched by the script to the nation record of the same name; not yet checked.
 review:
-  status: unverified
+  status: verified
   by: scripts/caselaw/supreme_court_native_cases.py
   date: '2026-11-24'
   checks:
@@ -136,5 +136,5 @@ review:
     result: agree
     detail: 'Report: majority White p. 299; Database writers: White'
   - check: bench
-    result: differs
-    detail: The Database lists Oliver Wendell Holmes, not serving on the day of decision; left out of the bench
+    result: confirmed
+    detail: 'The Database lists Oliver Wendell Holmes, not serving on the day of decision; left out of the bench. Confirmed: the Court''s list of Justices: Oliver Wendell Holmes served 1902-12-08 to 1932-01-12, so not on the bench on 1902-12-01'

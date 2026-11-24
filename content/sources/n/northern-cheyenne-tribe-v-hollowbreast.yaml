@@ -40,7 +40,6 @@ history:
 court_dates:
   argued:
   - '1976-03-29'
-  - '1976-05-19'
   printed: Argued March 29, 1976 Decided May 19, 1976
   source: https://tile.loc.gov/storage-services/service/ll/usrep/usrep425/usrep425649/usrep425649.pdf
   checked: '2026-11-24'
@@ -124,7 +123,7 @@ nations_in_case:
     historical: true
     note: Matched by the script to the only nation record sharing this name; not yet checked against the case's history.
 review:
-  status: unverified
+  status: verified
   by: scripts/caselaw/supreme_court_native_cases.py
   date: '2026-11-24'
   checks:
@@ -144,8 +143,8 @@ review:
     result: agree
     detail: 'Printed and Database: 1976-05-19'
   - check: opinions
-    result: settled
-    detail: 'Report: majority Brennan p. 650, concurrence Blackmun p. 661; Database writers: Blackmun, Brennan; scan pages [(661, 660)]. Read from the scan by an AI reader (corrected): p. 650: MR. JUSTIcE BRENNAN delivered the opinion of the Court. p. 660: MR. JUSTIcE BLACKMUN, concurring. (The p. 650 table note reads ''J., filed a concurring opinion, post, p. 660''; the p. 661 line is only a running head.)'
+    result: confirmed
+    detail: 'Report: majority Brennan p. 650, concurrence Blackmun p. 661; Database writers: Blackmun, Brennan; scan pages [(661, 660)]. Read from the scan by an AI reader (corrected): p. 650: MR. JUSTIcE BRENNAN delivered the opinion of the Court. p. 660: MR. JUSTIcE BLACKMUN, concurring. (The p. 650 table note reads ''J., filed a concurring opinion, post, p. 660''; the p. 661 line is only a running head.). Confirmed: The report prints p. 650: "MR. JUSTIcE BRENNAN delivered the opinion of the Court"; p. 660: "MR. JUSTIcE BLACKMUN, concurring"'
   - check: bench
     result: agree
     detail: Oyez and the Database give the same Justices and votes

@@ -125,8 +125,8 @@ review:
     result: agree
     detail: Caption found in the scan's text at 1.00
   - check: printed dates
-    result: agree
-    detail: Caselaw Access Project "Argued January 20, 21,1915. Decided April 5, 1915."; scan "Decided April 5, 1915."
+    result: confirmed
+    detail: 'Caselaw Access Project "Argued January 20, 21,1915. Decided April 5, 1915."; scan "Decided April 5, 1915.". Confirmed: the report prints "Argued January 20, 21,1915. Decided April 5, 1915." on p. 43 (text layer, 0.98)'
   - check: decided
     result: agree
     detail: 'Printed and Database: 1915-04-05'

@@ -129,8 +129,8 @@ review:
     result: agree
     detail: Caption found in the scan's text at 1.00
   - check: printed dates
-    result: agree
-    detail: Caselaw Access Project "Argued and submitted October 18, 1894. Decided November 19, 1894."; scan "Argued and submitted October 1$, 1894.-Decided November 19, 1894."
+    result: confirmed
+    detail: 'Caselaw Access Project "Argued and submitted October 18, 1894. Decided November 19, 1894."; scan "Argued and submitted October 1$, 1894.-Decided November 19, 1894.". Confirmed: the report prints (read from the page images) p. 196: "Argued and submitted October 18, 1894. Decided November 19, 1894." (the OCR reads this line poorly; checked on the page image) (the scan''s OCR reads the day as "1$" or "48"; the page shows 18)'
   - check: decided
     result: agree
     detail: 'Printed and Database: 1894-11-19'

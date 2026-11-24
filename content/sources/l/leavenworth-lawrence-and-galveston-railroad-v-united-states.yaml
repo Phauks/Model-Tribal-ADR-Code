@@ -117,7 +117,7 @@ nations_in_case:
   checked: '2026-11-24'
   named: []
 review:
-  status: unverified
+  status: verified
   by: scripts/caselaw/supreme_court_native_cases.py
   date: '2026-11-24'
   checks:
@@ -128,14 +128,14 @@ review:
     result: agree
     detail: Scan has 28 pages; the report runs 733 to 760
   - check: caption
-    result: settled
-    detail: 'Caption found in the scan''s text at 0.87. Read from the scan by an AI reader (record right): p.733-734: LEAVENWORTH, LAWRENCE, AND GALVESTON RAILROAD COMPANY v. UNITED STATES (OCR: LEA.VENWORTH, LAWRENCE, AND GALVESTON COMPANY v. UMTED STATES. RAILROAD).'
+    result: confirmed
+    detail: 'Caption found in the scan''s text at 0.87. Read from the scan by an AI reader (record right): p.733-734: LEAVENWORTH, LAWRENCE, AND GALVESTON RAILROAD COMPANY v. UNITED STATES (OCR: LEA.VENWORTH, LAWRENCE, AND GALVESTON COMPANY v. UMTED STATES. RAILROAD).. Confirmed: the report prints the caption "Leavenworth, Lawrence, and Galveston Railroad Company v. United States" on p. 733 (fresh OCR, 0.98)'
   - check: decided
     result: agree
     detail: Supreme Court Library's table (from the Court's minutes) Apr. 10, 1876; Database 1876-04-10
   - check: opinions
-    result: settled
-    detail: 'Report: majority Davis p. 739; Database writers: Davis, Field. Read from the scan by an AI reader (corrected): p.739: MR. JUSTICE DAVIS delivered the opinion of the court. p.753: JUSTICE FIELD, with whom concurred MR. JUSTICE SWAYNE and MR. JUSTICE STRONG, dissenting. p.760: I am of opinion that the decree should be reversed.'
+    result: confirmed
+    detail: 'Report: majority Davis p. 739; Database writers: Davis, Field. Read from the scan by an AI reader (corrected): p.739: MR. JUSTICE DAVIS delivered the opinion of the court. p.753: JUSTICE FIELD, with whom concurred MR. JUSTICE SWAYNE and MR. JUSTICE STRONG, dissenting. p.760: I am of opinion that the decree should be reversed.. Confirmed: the report prints (read from the page images) p. 739: "MR. JUSTICE DAVIS delivered the opinion of the court."; p. 753: "MR. JUSTICE FIELD, with whom concurred MR. JUSTICE SWAYNE and MR. JUSTICE STRONG, dissenting." (the heading on p. 760 belongs to the next case, which begins on that page)'
   - check: bench
     result: agree
     detail: No Oyez votes; each opinion writer in the report sits on the Database's bench on the side the opinion takes

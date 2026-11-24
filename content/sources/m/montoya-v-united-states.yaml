@@ -36,9 +36,9 @@ history:
   last_checked: '2026-11-24'
 court_dates:
   argued:
-  - '1000-12-14'
-  - '1000-12-17'
-  printed: Argued December 14,17,1000. Decided February 11, 1901.
+  - '1900-12-14'
+  - '1900-12-17'
+  printed: Argued December 14, 17, 1900. Decided February 11, 1901.
   source: https://tile.loc.gov/storage-services/service/ll/usrep/usrep180/usrep180261/usrep180261.pdf
   checked: '2026-11-24'
 supreme_court:
@@ -111,7 +111,7 @@ nations_in_case:
   checked: '2026-11-24'
   named: []
 review:
-  status: unverified
+  status: verified
   by: scripts/caselaw/supreme_court_native_cases.py
   date: '2026-11-24'
   checks:
@@ -125,14 +125,14 @@ review:
     result: agree
     detail: Caption found in the scan's text at 1.00
   - check: printed dates
-    result: agree
-    detail: Caselaw Access Project "Argued December 14,17,1000. Decided February 11, 1901."; scan "Argued Deceiber 14, 17, 1900. -Decided February 11, 1901."
+    result: confirmed
+    detail: 'Caselaw Access Project "Argued December 14,17,1000. Decided February 11, 1901."; scan "Argued Deceiber 14, 17, 1900. -Decided February 11, 1901.". Confirmed: the report prints "Argued December 14, 17, 1900. Decided February 11, 1901." on p. 261 (text layer, 0.98)'
   - check: decided
     result: agree
     detail: 'Printed and Database: 1901-02-11'
   - check: opinions
-    result: settled
-    detail: 'Report: majority Brown p. 264; Database writers: Brown; scan pages [(264, 263)]. Read from the scan by an AI reader (corrected): p. 263: "MR. JUSTICE BROWN delivered the opinion of the court." (OCR: "MR. JUSTICE BRowN delivered the opinion of the court."). The record''s page 264 is not the start of the opinion; the scan line places it at p. 263.'
+    result: confirmed
+    detail: 'Report: majority Brown p. 264; Database writers: Brown; scan pages [(264, 263)]. Read from the scan by an AI reader (corrected): p. 263: "MR. JUSTICE BROWN delivered the opinion of the court." (OCR: "MR. JUSTICE BRowN delivered the opinion of the court."). The record''s page 264 is not the start of the opinion; the scan line places it at p. 263.. Confirmed: The report prints p. 263: "MR. JUSTICE BRowN delivered the opinion of the court"'
   - check: bench
     result: agree
     detail: No Oyez votes; each opinion writer in the report sits on the Database's bench on the side the opinion takes

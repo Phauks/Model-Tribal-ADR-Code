@@ -111,7 +111,7 @@ nations_in_case:
   checked: '2026-11-24'
   named: []
 review:
-  status: unverified
+  status: verified
   by: scripts/caselaw/supreme_court_native_cases.py
   date: '2026-11-24'
   checks:
@@ -119,14 +119,14 @@ review:
     result: agree
     detail: Caselaw Access Project 161 U.S. 291 "Leighton v. United States"; Database 161 U.S. 291 "LEIGHTON v. UNITED STATES"
   - check: scan
-    result: differs
-    detail: Scan has 6 pages; the report runs 291 to 297
+    result: confirmed
+    detail: 'Scan has 6 pages; the report runs 291 to 297. Confirmed: the scan''s pages are the report''s pp. 291-296 (6 of 6 pages show their page number or running head); p. 297 is also the first page of Marks v. United States, and is in that case''s scan'
   - check: caption
     result: agree
     detail: Caption found in the scan's text at 1.00
   - check: printed dates
-    result: agree
-    detail: Caselaw Access Project "Argued November 12, 13, 1895. Decided March 2, 1896."; scan "Argued November 12, 18, 1895.-Decided March 2, 1896."
+    result: confirmed
+    detail: 'Caselaw Access Project "Argued November 12, 13, 1895. Decided March 2, 1896."; scan "Argued November 12, 18, 1895.-Decided March 2, 1896.". Confirmed: the report prints (read from the page images) p. 291: "Argued November 12, 13, 1895. Decided March 2, 1896." (the OCR reads this line poorly; checked on the page image) (the OCR reads 13 as 18; the page image shows 13)'
   - check: decided
     result: agree
     detail: 'Printed and Database: 1896-03-02'

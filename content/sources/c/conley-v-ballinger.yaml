@@ -110,7 +110,7 @@ nations_in_case:
   checked: '2026-11-24'
   named: []
 review:
-  status: unverified
+  status: verified
   by: scripts/caselaw/supreme_court_native_cases.py
   date: '2026-11-24'
   checks:
@@ -121,11 +121,11 @@ review:
     result: agree
     detail: Scan has 8 pages; the report runs 84 to 91
   - check: caption
-    result: settled
-    detail: 'Caption found in the scan''s text at 0.66. Read from the scan by an AI reader (record right): p. 84: C(ONLEY v. BAIIANGIKH, SI''E:I''i1TAKY OF TIE INR.1 (OCR of CONLEY v. BALLINGER, SECRETARY OF THE INTERIOR)'
+    result: confirmed
+    detail: 'Caption found in the scan''s text at 0.66. Read from the scan by an AI reader (record right): p. 84: C(ONLEY v. BAIIANGIKH, SI''E:I''i1TAKY OF TIE INR.1 (OCR of CONLEY v. BALLINGER, SECRETARY OF THE INTERIOR). Confirmed: the report prints the caption "CONLEY v. BALLINGER, SECRETARY OF THE INTERIOR" on p. 84 (fresh OCR, 0.91)'
   - check: printed dates
-    result: settled
-    detail: 'Caselaw Access Project "Argued January 14, 1910. Decided January 31, 1910."; scan "not found". Read from the scan by an AI reader (record right): p. 84: Argued i.aualry 1I4, 110.-]1)ccihld ,Ianuary 31, 1910. (read as Argued January 14, 1910.-Decided January 31, 1910.)'
+    result: confirmed
+    detail: 'Caselaw Access Project "Argued January 14, 1910. Decided January 31, 1910."; scan "not found". Read from the scan by an AI reader (record right): p. 84: Argued i.aualry 1I4, 110.-]1)ccihld ,Ianuary 31, 1910. (read as Argued January 14, 1910.-Decided January 31, 1910.). Confirmed: the report prints "Argued January 14, 1910. Decided January 31, 1910." on p. 84 (fresh OCR, 1.00)'
   - check: decided
     result: agree
     detail: 'Printed and Database: 1910-01-31'

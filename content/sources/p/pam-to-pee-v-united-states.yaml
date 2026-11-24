@@ -114,7 +114,7 @@ nations_in_case:
   - named_as: Pottawatomie Indians of Michigan
     reason: No nation record matches this name; it may be a historical name or a group that is not a recognized nation today.
 review:
-  status: unverified
+  status: verified
   by: scripts/caselaw/supreme_court_native_cases.py
   date: '2026-11-24'
   checks:
@@ -122,8 +122,8 @@ review:
     result: agree
     detail: Caselaw Access Project 148 U.S. 691 "Pam-To-Pee v. United States"; Database 148 U.S. 691 "PHINEAS PAM-TO-PEE v. UNITED STATES."
   - check: scan
-    result: differs
-    detail: Scan has 16 pages; the report runs 691 to 705
+    result: confirmed
+    detail: 'Scan has 16 pages; the report runs 691 to 705. Confirmed: the scan''s pages are the report''s pp. 691-705 (15 of 15 pages show their page number or running head); scan page 16 is not a report page'
   - check: caption
     result: agree
     detail: Caption found in the scan's text at 0.98

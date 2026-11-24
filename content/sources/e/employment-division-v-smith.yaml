@@ -43,7 +43,6 @@ history:
 court_dates:
   argued:
   - '1989-11-06'
-  - '1989-04-17'
   printed: Argued November 6, 1989 Decided April 17, 1990
   source: https://tile.loc.gov/storage-services/service/ll/usrep/usrep494/usrep494872/usrep494872.pdf
   checked: '2026-11-24'
@@ -122,7 +121,7 @@ nations_in_case:
   checked: '2026-11-24'
   named: []
 review:
-  status: unverified
+  status: verified
   by: scripts/caselaw/supreme_court_native_cases.py
   date: '2026-11-24'
   checks:
@@ -142,8 +141,8 @@ review:
     result: agree
     detail: 'Printed and Database: 1990-04-17'
   - check: opinions
-    result: settled
-    detail: 'Report: majority Blackmun p. 874; Database writers: Blackmun, O Connor, Scalia. Read from the scan by an AI reader (corrected): p. 874: JUSTICE SCALIA delivered the opinion of the Court. p. 873: O''CONNOR, J., filed an opinion concurring in the judgment ... post, p. 891. BLACKMUN, J., filed a dissenting opinion ... post, p. 907. p. 891: JUSTICE O''CONNOR, with whom JUSTICE BRENNAN, JUSTICE MARSHALL, and JUSTICE BLACKMUN join as to Parts I and II, concurring in the judgment. p. 907: JUSTICE BLACKMUN, with whom JUSTICE BRENNAN and JUSTICE MARSHALL join, dissenting.'
+    result: confirmed
+    detail: 'Report: majority Blackmun p. 874; Database writers: Blackmun, O Connor, Scalia. Read from the scan by an AI reader (corrected): p. 874: JUSTICE SCALIA delivered the opinion of the Court. p. 873: O''CONNOR, J., filed an opinion concurring in the judgment ... post, p. 891. BLACKMUN, J., filed a dissenting opinion ... post, p. 907. p. 891: JUSTICE O''CONNOR, with whom JUSTICE BRENNAN, JUSTICE MARSHALL, and JUSTICE BLACKMUN join as to Parts I and II, concurring in the judgment. p. 907: JUSTICE BLACKMUN, with whom JUSTICE BRENNAN and JUSTICE MARSHALL join, dissenting.. Confirmed: The report prints p. 874: "JUSTICE SCALIA delivered the opinion of the Court"; p. 891: "JUSTICE O''CONNOR, with whom JUSTICE BRENNAN, JUSTICE MARSHALL, and JUSTICE BLACKMUN join as to Parts I and II, concurring in the judgment"; p. 907: "JUSTICE BLACKMUN, with whom JUSTICE BRENNAN and JUSTICE MARSHALL join, dissenting"'
   - check: bench
     result: agree
     detail: Oyez and the Database give the same Justices and votes

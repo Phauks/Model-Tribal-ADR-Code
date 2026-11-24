@@ -127,19 +127,19 @@ nations_in_case:
   checked: '2026-11-24'
   named: []
 review:
-  status: unverified
+  status: verified
   by: scripts/caselaw/supreme_court_native_cases.py
   date: '2026-11-24'
   checks:
   - check: cite
-    result: differs
-    detail: Caselaw Access Project 570 U.S. 1 "Ariz. v. Inter Tribal Council of Ariz., Inc."; Database 570 U.S. 1 "ARIZONA, et al., PETITIONERS v. THE INTER TRIBAL COUNCIL OF ARIZONA, INC., et al."
+    result: confirmed
+    detail: 'Caselaw Access Project 570 U.S. 1 "Ariz. v. Inter Tribal Council of Ariz., Inc."; Database 570 U.S. 1 "ARIZONA, et al., PETITIONERS v. THE INTER TRIBAL COUNCIL OF ARIZONA, INC., et al.". Confirmed: both sources put the case at 570 U.S. 1, the report prints its caption there (the caption check), and the two names differ only in form'
   - check: scan
     result: agree
     detail: Scan has 47 pages; the report runs 1 to 47
   - check: caption
-    result: settled
-    detail: 'Caption found in the scan''s text at 0.79. Read from the scan by an AI reader (corrected): p. 1: ARIZONA et al. v. INTER TRIBAL COUNCIL OF ARIZONA, INC., et al. (the record''s ''Petitioners'' and ''The'' are not in the printed caption).'
+    result: confirmed
+    detail: 'Caption found in the scan''s text at 0.79. Read from the scan by an AI reader (corrected): p. 1: ARIZONA et al. v. INTER TRIBAL COUNCIL OF ARIZONA, INC., et al. (the record''s ''Petitioners'' and ''The'' are not in the printed caption).. Confirmed: the report prints the caption "ARIZONA et al. v. INTER TRIBAL COUNCIL OF ARIZONA, INC., et al." on p. 1 (text layer, 1.00)'
   - check: printed dates
     result: agree
     detail: Caselaw Access Project "Argued March 18, 2013. Decided June 17, 2013."; scan "Argued March 18, 2013—Decided June 17, 2013"
@@ -147,8 +147,8 @@ review:
     result: agree
     detail: 'Printed and Database: 2013-06-17'
   - check: opinions
-    result: settled
-    detail: 'Report: majority Scalia p. 4, dissent Thomas p. 22, dissent Alito p. 38; Database writers: Alito, Kennedy, Scalia, Thomas. Read from the scan by an AI reader (corrected): p. 4: Justice Scalia delivered the opinion of the Court. p. 20: Justice Kennedy, concurring in part and concurring in the judgment. p. 22: Justice Thomas, dissenting. p. 38: Justice Alito, dissenting.'
+    result: confirmed
+    detail: 'Report: majority Scalia p. 4, dissent Thomas p. 22, dissent Alito p. 38; Database writers: Alito, Kennedy, Scalia, Thomas. Read from the scan by an AI reader (corrected): p. 4: Justice Scalia delivered the opinion of the Court. p. 20: Justice Kennedy, concurring in part and concurring in the judgment. p. 22: Justice Thomas, dissenting. p. 38: Justice Alito, dissenting.. Confirmed: The report prints p. 4: "Justice Scalia delivered the opinion of the Court"; p. 20: "Justice Kennedy, concurring in part and concurring in the judgment"; p. 22: "Justice Thomas, dissenting"; p. 38: "Justice Alito, dissenting"'
   - check: bench
     result: agree
     detail: Oyez and the Database give the same Justices and votes
