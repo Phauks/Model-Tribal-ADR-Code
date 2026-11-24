@@ -12,7 +12,7 @@
  */
 import { accountTypeLabels, eventLabels, labelFor } from '../story-labels.ts';
 import { isoDate, shownExcerpts, shownFullText, shownTellings, type StoryAffectedBy, type StoryRecord } from '../story-visibility.ts';
-import { recordName, recordPageLink } from './law-names.ts';
+import { recordName, recordPageLink } from './law-records.ts';
 import { creditText, partialDate, publishedStories } from './stories.ts';
 
 /** A law, case or event an account is linked to, as a link where it has a page. */

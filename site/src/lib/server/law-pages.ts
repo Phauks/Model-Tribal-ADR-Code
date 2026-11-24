@@ -18,7 +18,7 @@ import { boxSections, citationLine, essaysCiting, type CaseMention } from './cas
 import { sources, type SourceRecord } from './content.ts';
 import type { FactGroup } from './justice-pages.ts';
 import { accountsOf, type AccountEntry } from './impact-accounts.ts';
-import { isLawRecord, recordName } from './law-names.ts';
+import { isLawRecord, recordName } from './law-records.ts';
 import { savedCopyLink } from './markdown.ts';
 import { partialDate } from './stories.ts';
 import type { SourceEntry } from './source-uses.ts';
@@ -63,7 +63,8 @@ export function lawKeys(): string[] {
 
 /** The citation the record's notes give ("Indigo Book citation: …" or "Citations: …"), else one built from its parts. */
 function lawCitation(record: SourceRecord): string {
-	const written = /(?:Indigo Book citation|Citations):\s*(.+?)(?:\.\s+[A-Z]|\.?$)/.exec(record.notes ?? '')?.[1];
+	const notes = (record as SourceRecord & { notes?: string }).notes ?? '';
+	const written = /(?:Indigo Book citation|Citations):\s*(.+?)(?:\.\s+[A-Z]|\.?$)/.exec(notes)?.[1];
 	if (written) return written.trim();
 	const { volume, page } = record.citation;
 	const year = record.citation.issued?.['date-parts']?.[0]?.[0];
@@ -93,11 +94,12 @@ export function lawPage(key: string): LawPage {
 		{ field: 'citation', label: 'Citation', items: citation ? [{ text: citation }] : [] }
 	].filter((group) => group.items.length > 0);
 	const saved = savedCopyLink(record);
+	const title = record.citation.title;
 	return {
 		key,
 		name: named.what === 'Treaty' ? named.name : named.name.replace(/ \(\d{4}\)$/, ''),
 		citation,
-		fullTitle: named.name.startsWith(record.citation.title) || citation.includes(record.citation.title) ? undefined : record.citation.title,
+		fullTitle: !title || named.name.startsWith(title) || citation.includes(title) ? undefined : title,
 		glance,
 		bodyHtml: box.html,
 		topics: box.topics,
