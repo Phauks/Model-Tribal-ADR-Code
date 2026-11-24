@@ -34,6 +34,7 @@ npm test                  # unit tests (Vitest), including the database code
 npm run check:colors      # no color is written anywhere but design-tokens.json
 npm run build
 npm run check:built-site  # every page has a language, a title, one h1 and a skip link
+npm run check:built-worker   # the built Worker starts, and its scheduled and email handlers answer
 npm run check:accessibility  # axe-core on every built page, light and dark themes
 ```
 
@@ -52,7 +53,7 @@ Cloudflare Workers Builds deploys the site from GitHub ([decision record 0006](.
 | Deploy command | `npx wrangler deploy` |
 | Preview command | `npx wrangler preview` |
 
-Each merge to `main` deploys to `https://model-tribal-adr-code.trevordgoldsmith.workers.dev` until a domain is chosen ([what waits on the domain](../docs/domain-to-do.md)). `wrangler.jsonc` has no `main` or `assets` setting because `@sveltejs/adapter-cloudflare` sets both when it builds.
+Each merge to `main` deploys to `https://model-tribal-adr-code.trevordgoldsmith.workers.dev` until a domain is chosen ([what waits on the domain](../docs/domain-to-do.md)). `wrangler.jsonc` has no `main` or `assets` setting because `@sveltejs/adapter-cloudflare` sets both when it builds. The last three steps of `npm run build` (`tools/add-scheduled-run.mjs`, `tools/add-nation-page-changes.mjs` and `tools/add-mail-handlers.mjs`) wrap the Worker the adapter makes, so the adapter is pinned to one version in `package.json`; after changing it, run `npm run build` and `npm run check:built-worker`.
 
 ## Cloudflare resources
 

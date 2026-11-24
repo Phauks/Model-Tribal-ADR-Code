@@ -196,6 +196,9 @@ jobs:
         run: npm run check:motion
       - name: Build
         run: npm run build
+      - name: Check that the patched Worker starts and its handlers answer (tools/check-built-worker.mjs)
+        timeout-minutes: 5
+        run: npm run check:built-worker
       - name: Check the built pages, manifest and service worker
         run: npm run check:built-site
       - name: Install Chromium for the sidebar check
