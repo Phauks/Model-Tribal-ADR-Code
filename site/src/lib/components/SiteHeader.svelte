@@ -37,6 +37,7 @@
 	import { currentPageTools } from '#lib/page-editing.svelte.ts';
 	import PageControls from './PageControls.svelte';
 	import AccountLink from './AccountLink.svelte';
+	import CiteMenu from './CiteMenu.svelte';
 	import DownloadMenu from './DownloadMenu.svelte';
 	import PrintOptions from './PrintOptions.svelte';
 	import ReportProblem from './ReportProblem.svelte';
@@ -134,7 +135,7 @@
 				class="more-button"
 				type="button"
 				popovertarget="masthead-more"
-				aria-label="More: report a problem, star, follow, print, download, theme, settings and sign in"
+				aria-label="More: report a problem, star, follow, print, cite, download, theme, settings and sign in"
 			>
 				<Ellipsis size={24} /><span aria-hidden="true">More</span>
 			</button>
@@ -144,6 +145,7 @@
 				<StarButton />
 				<FollowButton />
 				<PrintOptions bind:this={printOptions} />
+				<CiteMenu />
 				<DownloadMenu onpdf={() => printOptions?.open()} />
 				<ThemeSetting />
 				<SettingsPanel />

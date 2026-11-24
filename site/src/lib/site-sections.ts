@@ -75,7 +75,8 @@ export const nationsPages: OutlineItem[] = [
 			{ label: 'Build a table', link: '/nations/data/build' }
 		]
 	},
-	{ label: 'Federal offices', link: '/nations/federal-offices' }
+	{ label: 'Federal offices', link: '/nations/federal-offices' },
+	{ label: 'Coverage', link: '/nations/coverage' }
 ];
 
 export const eventsPages: OutlineItem[] = [
