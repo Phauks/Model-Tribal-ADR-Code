@@ -111,3 +111,10 @@ declare module 'virtual:page-history' {
 	/** The pages built with the site, for Recent changes and page histories (src/lib/server/page-history-build.ts). */
 	export const historyBuild: import('#lib/page-history.ts').HistoryBuild;
 }
+
+declare module 'virtual:site-text-catalog' {
+	/** Every piece of fixed text in the site's components (src/lib/site-text-markers.ts, docs/site-text.md). */
+	export const siteTextCatalog: import('#lib/site-text-markers.ts').SiteTextEntry[];
+	/** The publication of edited site text this build carries; 0 for none. */
+	export const builtPublication: number;
+}

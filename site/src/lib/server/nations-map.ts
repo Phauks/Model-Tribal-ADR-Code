@@ -281,7 +281,14 @@ export function tileMapData() {
 }
 
 /** The tile sets' names, which change whenever their files do. */
-const tileSetNames = { landAreas: tileManifest.landAreas.set, basemap: tileManifest.basemap.set, maximumZoom: tileManifest.basemap.maxZoom };
+const tileSetNames = {
+	landAreas: tileManifest.landAreas.set,
+	basemap: tileManifest.basemap.set,
+	maximumZoom: tileManifest.basemap.maxZoom,
+	/** The whole world, to zoom 8, where the basemap above (cut to the United States and its territories) has nothing. */
+	worldBasemap: tileManifest.worldBasemap.set,
+	worldMaximumZoom: tileManifest.worldBasemap.maxZoom
+};
 
 /** Each land area's dot, box and label for the tiled map, for the areas the test keeps. */
 function tileMapAreas(byArea: Map<string, ListedNation[]>, keep: (code: string) => boolean) {

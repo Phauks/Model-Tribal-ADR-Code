@@ -64,7 +64,7 @@ export const siteSections: SiteSection[] = [
 	{ label: 'Peacemaking', link: '/peacemaking', built: false },
 	{ label: 'Events', link: '/events', built: true, opens: true },
 	{ label: 'About', link: '/about', built: true, opens: true },
-	{ label: 'Sponsorship', link: '/sponsor', built: true },
+	{ label: 'Sponsorship', link: '/sponsor', built: true, opens: true },
 	// Contribute moved here from the masthead, which keeps only its buttons (Trevor, Nov. 24, 2026).
 	{ label: 'Contribute', link: '/requests?kind=contribute', built: true },
 	// The Store gathers the special-order page for books, which keeps its address (Trevor, Nov. 23, 2026).

@@ -147,6 +147,22 @@ const bucketCalls: Record<string, BucketUse> = {
     kind: "project-file",
     why: "Essay text written in the site editor.",
   },
+  "src/lib/server/live/essay-room.ts saveNow put(overlayKey(essay, saved.version.number))": {
+    kind: "project-file",
+    why: "Who typed each word of a version the live room saved, worked out by the room.",
+  },
+  "src/lib/server/essay-credits.ts versionBlame get(blameKey(essay, rows[start].number))": {
+    kind: "project-file",
+    why: "Who wrote each word of an essay version, worked out by the site.",
+  },
+  "src/lib/server/essay-credits.ts versionBlame get(overlayKey(essay, row.number))": {
+    kind: "project-file",
+    why: "Who typed each word of a version the live room saved, worked out by the room.",
+  },
+  "src/lib/server/essay-credits.ts versionBlame put(blameKey(essay, row.number))": {
+    kind: "project-file",
+    why: "Who wrote each word of an essay version, worked out by the site.",
+  },
   "src/lib/server/essay-git-sync.ts syncOne put(gitSnapshotKey(identifier, essay.sha256))":
     {
       kind: "project-file",

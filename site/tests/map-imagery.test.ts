@@ -33,11 +33,37 @@ describe('map pictures', () => {
 		expect(asked).toEqual([]);
 	});
 
-	it('answers an empty place or a page that is not a picture with nothing to draw', async () => {
-		for (const answer of [() => new Response('missing', { status: 404 }), () => new Response('<html>', { headers: { 'content-type': 'text/html' } })]) {
+	it('answers a place the survey has no picture for with nothing to draw, for a day', async () => {
+		const { fetcher } = survey(() => new Response('missing', { status: 404, headers: { 'content-type': 'text/html' } }));
+		const response = await serveMapImagery('satellite', 10, 474, 512, fetcher);
+		expect(response.status).toBe(204);
+		expect(response.headers.get('cache-control')).toBe('public, max-age=86400');
+	});
+
+	it('keeps no failure, so the next reader asks again', async () => {
+		for (const answer of [() => new Response('busy', { status: 503 }), () => new Response('<html>', { headers: { 'content-type': 'text/html' } })]) {
 			const { fetcher } = survey(answer);
-			const response = await serveMapImagery('topographic', 5, 3, 3, fetcher);
-			expect(response.status).toBe(204);
+			const response = await serveMapImagery('terrain', 5, 3, 3, fetcher);
+			expect(response.status).toBe(502);
+			expect(response.headers.get('cache-control')).toBe('no-store');
 		}
+	});
+
+	it('asks for contour lines without their labels by the tile box, and not far out', async () => {
+		const address = new URL(imageryAddress('contours', 1, 1, 0));
+		expect(address.origin + address.pathname).toBe('https://carto.nationalmap.gov/arcgis/rest/services/contours/MapServer/export');
+		expect(address.searchParams.get('bbox')).toBe('0.00,0.00,20037508.34,20037508.34');
+		expect(address.searchParams.get('transparent')).toBe('true');
+		expect(address.searchParams.get('layers')).toBe('show:2,4,6,8,11,13,16,18,25,26,27,33,34,35');
+		const { fetcher, asked } = survey(() => new Response(new Uint8Array([137, 80]), { headers: { 'content-type': 'image/png' } }));
+		expect((await serveMapImagery('contours', 9, 0, 0, fetcher)).status).toBe(204);
+		expect(asked).toEqual([]);
+		expect((await serveMapImagery('contours', 12, 700, 1600, fetcher)).status).toBe(200);
+		expect(asked).toHaveLength(1);
+	});
+
+	it('no longer offers the survey topographic map, which has place names drawn in', async () => {
+		const { fetcher } = survey(() => new Response('x'));
+		expect((await serveMapImagery('topographic', 5, 3, 3, fetcher)).status).toBe(404);
 	});
 });

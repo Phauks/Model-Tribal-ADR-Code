@@ -1,5 +1,6 @@
 <script lang="ts">
 	import { costItemQuestions, costItemUnits, costItems } from '#lib/sponsorship.ts';
+	import { levelNames, levels, monthsInAYear } from '#lib/sponsorship-levels.ts';
 	import type { PageProps } from './$types';
 
 	let { data, form }: PageProps = $props();
@@ -67,6 +68,29 @@
 			</div>
 		{/each}
 		<button class="button" type="submit">Save costs</button>
+	</form>
+</section>
+
+<section class="panel" aria-labelledby="levels-heading">
+	<h2 id="levels-heading">Sponsorship levels</h2>
+	<p>
+		What each level on the <a href="/sponsor/levels">Sponsorship levels page</a> costs a month. A year costs {monthsInAYear}
+		months. Each level must cost more than the one before it.
+	</p>
+	{#if form && 'levelProblem' in form}
+		<div class="notice notice-problem" role="alert"><p>{form.levelProblem}</p></div>
+	{:else if form && 'levelsDone' in form}
+		<div class="notice" role="status"><p>{form.levelsDone}</p></div>
+	{/if}
+	<form method="post" action="?/levels">
+		{#each levels as level (level)}
+			<div class="field">
+				<label for="level-{level}">{levelNames[level]}</label>
+				<p class="hint">US dollars a month.</p>
+				<input id="level-{level}" name="level-{level}" type="text" inputmode="decimal" required value={data.levelAmounts[level]} class="amount" />
+			</div>
+		{/each}
+		<button class="button" type="submit">Save levels</button>
 	</form>
 </section>
 
