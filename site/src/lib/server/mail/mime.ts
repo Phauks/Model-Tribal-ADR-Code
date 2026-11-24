@@ -4,7 +4,7 @@
  * and headers. Used for mail sent over SMTP, and for the copy of every sent
  * message kept in the bucket.
  */
-import { formatAddress, type MailAddress } from '#lib/mail.ts';
+import type { MailAddress } from '#lib/mail.ts';
 
 export interface OutgoingAttachment {
 	filename: string;
@@ -158,9 +158,4 @@ export function buildRawMessage(mail: OutgoingMail): string {
 /** A new Message-ID on the sending domain, without angle brackets. */
 export function newMessageId(domain: string): string {
 	return `${crypto.randomUUID()}@${domain}`;
-}
-
-/** The headers as a mail program would show them, for the archived copy's summary. */
-export function describeAddresses(addresses: MailAddress[]): string {
-	return addresses.map(formatAddress).join(', ');
 }

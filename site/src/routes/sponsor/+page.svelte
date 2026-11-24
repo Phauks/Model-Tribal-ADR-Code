@@ -325,7 +325,7 @@
 	}
 
 	/* Editors open the text here (EssayArticle.svelte); their tools keep the page's own colors. */
-	.hero-text :global(:is(.access-bar, .essay-editor)) {
+	.hero-text :global(.essay-editor) {
 		padding: var(--space-3);
 		border-radius: var(--radius-panel);
 		background: var(--color-paper);

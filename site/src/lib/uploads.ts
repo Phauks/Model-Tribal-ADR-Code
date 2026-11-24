@@ -134,23 +134,11 @@ export const withdrawableStatuses: readonly UploadStatus[] = [
 	'waiting-for-nation'
 ];
 
-/** Statuses a reviewer still has to act on. */
-export const openStatuses: readonly UploadStatus[] = ['waiting-for-review', 'in-review'];
-
-/** Statuses waiting on someone outside the team. */
-export const waitingStatuses: readonly UploadStatus[] = ['needs-answer', 'waiting-for-nation'];
-
 /** Statuses after a decision. */
 export const decidedStatuses: readonly UploadStatus[] = ['filed', 'kept-for-reference', 'not-used'];
 
 export const checkResults = ['passed', 'careful-look', 'refused'] as const;
 export type CheckResult = (typeof checkResults)[number];
-
-export const checkResultLabels: Record<CheckResult, string> = {
-	passed: 'Passed',
-	'careful-look': 'Needs a careful look',
-	refused: 'Refused'
-};
 
 /** "Where did they come from?" */
 export const origins = ['own-work', 'with-permission', 'published', 'government', 'not-sure'] as const;

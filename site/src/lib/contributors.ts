@@ -176,11 +176,6 @@ export function defaultCreditSection(chosen: readonly Interest[]): CreditSection
 export const ageGroups = ['13-to-17', '18-or-older'] as const;
 export type AgeGroup = (typeof ageGroups)[number];
 
-export const ageGroupLabels: Record<AgeGroup, string> = {
-	'13-to-17': '13 to 17',
-	'18-or-older': '18 or older'
-};
-
 /** The youngest and oldest ages the birth year list offers. */
 export const youngestAge = 13;
 export const oldestAge = 110;
