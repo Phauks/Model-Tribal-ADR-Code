@@ -17,7 +17,7 @@ import type { LineChange } from '../essays/merge.ts';
 import { syncEssaysFromGitOnce } from './essay-git-sync.ts';
 import { casesByTopicMarkdown, taggedCases } from '../essays/case-topics.ts';
 import { frontMatterField, splitFrontMatter } from '../essays/syntax.ts';
-import { boxMarkdown, fillBoxes } from '../essays/record-boxes.ts';
+import { boxMarkdown, fillBoxes, readingMarkdown } from '../essays/record-boxes.ts';
 import { workerEnvironment } from './environment.ts';
 import { sessionCookie } from '#lib/server/accounts.ts';
 import { signedInHintCookie } from '#lib/signed-in-hint.ts';
@@ -48,12 +48,17 @@ export const essayLibrary: EssayLibrary = {
 	caseNames: () => (caseTitles ??= Object.fromEntries(Object.entries(essayCaseNames).map(([key, name]) => [key, name.title]))),
 	caseLink: (key) => essayCaseLinks[key],
 	opinions: (key) => essayOpinions[key],
-	box: (kind, key) => boxMarkdown(kind, key, essayRecordBoxes[kind === 'law' ? 'laws' : 'cases'][key]) || undefined
+	box: (kind, key) => boxMarkdown(kind, key, essayRecordBoxes[kind === 'law' ? 'laws' : 'cases'][key]) || undefined,
+	boxReading: (kind, key) => readingMarkdown(essayRecordBoxes[kind === 'law' ? 'laws' : 'cases'][key]) || undefined
 };
 
 /** An essay's text with the boxes it leaves empty filled from their records (record-boxes.ts). */
 export function withRecordBoxes(text: string): string {
-	return fillBoxes(text, (kind, key) => essayLibrary.box?.(kind, key)).text;
+	return fillBoxes(
+		text,
+		(kind, key) => essayLibrary.box?.(kind, key),
+		(kind, key) => essayLibrary.boxReading?.(kind, key)
+	).text;
 }
 
 export function storageForPages(): { database: D1Database; bucket: R2Bucket } {

@@ -35,21 +35,37 @@ export function boxMarkdown(kind, key, box) {
     .join("\n\n");
 }
 
+/** A box's reading as the Analysis block that follows the box ("::: analysis Title" ... ":::"), or "". */
+export function readingMarkdown(box) {
+  const title = box?.reading?.title?.trim();
+  const text = box?.reading?.text?.trim();
+  return title && text ? `::: analysis ${title}\n${text}\n:::` : "";
+}
+
 const BOX_OPENING = /^(:{4,})[ \t]*(case|law)[ \t]+([a-z0-9]+(?:-[a-z0-9]+)*)[ \t]*$/;
 
-/** Markdown with each empty case or law box filled from its record, found by key in `records` (a Map of source records). */
+/**
+ * Markdown with each empty case or law box filled from its record, found by
+ * key in `records` (a Map of source records), and the record's reading, if
+ * any, placed right after the box as an Analysis block.
+ */
 export function fillBoxes(text, records) {
   const lines = text.split("\n");
   const filled = [];
+  const after = new Map();
   for (let index = 0; index < lines.length; index += 1) {
     filled.push(lines[index]);
+    if (after.has(index)) filled.push("", ...after.get(index).split("\n"));
     const opening = BOX_OPENING.exec(lines[index]);
     if (!opening) continue;
     let next = index + 1;
     while (next < lines.length && !lines[next].trim()) next += 1;
     if (next >= lines.length || lines[next].trim() !== opening[1]) continue;
     const [, , kind, key] = opening;
-    const inside = boxMarkdown(kind, key, records.get(key)?.[`${kind}_box`]);
+    const box = records.get(key)?.[`${kind}_box`];
+    const reading = readingMarkdown(box);
+    if (reading) after.set(next, reading);
+    const inside = boxMarkdown(kind, key, box);
     if (inside) filled.push(...inside.split("\n"));
   }
   return filled.join("\n");
