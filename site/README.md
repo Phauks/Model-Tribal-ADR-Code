@@ -13,6 +13,19 @@ npm run build     # build the site into .svelte-kit/cloudflare
 npm run preview   # build, then serve the built Worker locally with Wrangler
 ```
 
+### First run
+
+The workspace, account, events, uploads and request pages are answered by the Worker and read the database. To try them on your computer, fill the local copy of the database with made-up people and records, then serve the built Worker:
+
+```sh
+npm run database:seed:local   # apply the migrations to the local database and add the fixtures
+npm run preview               # build, then serve it at http://localhost:8787
+```
+
+The seed writes only to the local copy in `.wrangler/state`, never the live database, and running it again is safe. It adds one account for each role at example.org, such as `lead-author@example.org`, `co-author@example.org` and `nation-reviewer@example.org`, and `reader@example.org`, who signed up but has no workspace access; with them come a draft essay, a nation team, two sent files, an upcoming event, a request and a test book order. Every fixture account's password is `local fixture password`. The roles that need two-step sign-in have it set up already: `npm run database:seed:local -- --code` prints the code to type, and the seed also prints a link an authenticator app can read. If `site/.dev.vars` does not exist, the seed writes it with `LEAD_AUTHOR_EMAIL=lead-author@example.org`. For a one-time link instead of the password, run `npm run sign-in-link -- reader@example.org --local`.
+
+### Checks
+
 Checks that also run on every pull request (the "Website" and "Accessibility" jobs in `.github/workflows/checks.yml`):
 
 ```sh
@@ -21,10 +34,12 @@ npm test                  # unit tests (Vitest), including the database code
 npm run check:colors      # no color is written anywhere but design-tokens.json
 npm run build
 npm run check:built-site  # every page has a language, a title, one h1 and a skip link
+npm run check:built-worker   # the built Worker starts, and its scheduled and email handlers answer
 npm run check:accessibility  # axe-core on every built page, light and dark themes
+npm run check:accessibility:live  # axe-core on the Worker's pages and on open menus and dialogs
 ```
 
-The accessibility check opens each page in Chromium through Playwright. Install the browser once with `npx playwright install chromium`, or set `CHROMIUM_PATH` to a Chromium that is already installed. Pass `--pages /,/nations/map` to check only some pages. It covers the prerendered pages; the request form and sign-in pages are answered by the Worker and are checked by hand.
+The accessibility checks open each page in Chromium through Playwright. Install the browser once with `npx playwright install chromium`, or set `CHROMIUM_PATH` to a Chromium that is already installed. `check:accessibility` covers the prerendered pages as first loaded; pass `--pages /,/nations/map` to check only some. `check:accessibility:live` serves the built Worker with Wrangler on the local database, which it fills with the fixtures of First run, and covers what the other cannot reach: the sign-in, request, account, profile, events, uploads and workspace pages, signed out and as the fixture accounts, and the header's menus and dialogs, the sidebar and dropdowns while open. Pass `--only /workspace,/sign-in` to check only some pages. Problems it may not fail on for now are listed, with the reason, at the top of `tools/check-accessibility-live.mjs`.
 
 ## How it is deployed
 
@@ -39,7 +54,7 @@ Cloudflare Workers Builds deploys the site from GitHub ([decision record 0006](.
 | Deploy command | `npx wrangler deploy` |
 | Preview command | `npx wrangler preview` |
 
-Each merge to `main` deploys to `https://model-tribal-adr-code.trevordgoldsmith.workers.dev` until a domain is chosen ([what waits on the domain](../docs/domain-to-do.md)). `wrangler.jsonc` has no `main` or `assets` setting because `@sveltejs/adapter-cloudflare` sets both when it builds.
+Each merge to `main` deploys to `https://model-tribal-adr-code.trevordgoldsmith.workers.dev` until a domain is chosen ([what waits on the domain](../docs/domain-to-do.md)). `wrangler.jsonc` has no `main` or `assets` setting because `@sveltejs/adapter-cloudflare` sets both when it builds. The last three steps of `npm run build` (`tools/add-scheduled-run.mjs`, `tools/add-nation-page-changes.mjs` and `tools/add-mail-handlers.mjs`) wrap the Worker the adapter makes, so the adapter is pinned to one version in `package.json`; after changing it, run `npm run build` and `npm run check:built-worker`.
 
 ## Cloudflare resources
 

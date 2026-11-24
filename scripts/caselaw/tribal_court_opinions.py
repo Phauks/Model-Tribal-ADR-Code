@@ -204,6 +204,10 @@ class CaptureFiler:
         self.bucket = os.environ.get("R2_BUCKET", mirror_captures.DEFAULT_BUCKET)
         self.rows = mirror_captures.load_index()
         self.by_key = {row["key"]: row for row in self.rows}
+        # A removal or hold in research/capture-index-overrides.json wins over
+        # the "yes" these pages are filed with (decision record 0047).
+        overrides_path = ROOT / "research" / "capture-index-overrides.json"
+        self.overrides = json.loads(overrides_path.read_text(encoding="utf-8")) if overrides_path.exists() else {}
         self.added = 0
 
     def file(self, key: str, data: bytes, row: dict) -> None:
@@ -224,6 +228,10 @@ class CaptureFiler:
         new.update(row, key=key, bytes=len(data), sha256=digest, media_type="text/html",
                    captured=today, obtained=f"built from the Caselaw Access Project's files, {today}",
                    keep_local="no", orphan="no")
+        override = self.overrides.get(key, {})
+        for field in ("redistribution", "rights"):
+            if override.get(field):
+                new[field] = override[field]
         if existing:
             existing.update(new)
         else:
