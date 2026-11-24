@@ -24,7 +24,7 @@
 		{ key: 'nation', header: 'Nation', sortable: true },
 		{ key: 'status', header: 'Status', sortable: true, custom: true },
 		{ key: 'delivery', header: 'Delivery', sortable: true, custom: true },
-		{ key: 'change', header: 'Change', custom: true }
+		{ key: 'change', header: 'Change', custom: true, keepOutOfDownload: true }
 	];
 	const recipientsByKey = $derived(new Map(data.recipients.map((recipient) => [recipient.identifier, recipient])));
 	const rows: TableRow[] = $derived(

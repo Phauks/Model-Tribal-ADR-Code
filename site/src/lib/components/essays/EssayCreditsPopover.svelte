@@ -8,6 +8,8 @@
 -->
 <script lang="ts">
 	import Plus from '@lucide/svelte/icons/plus';
+	import Dropdown from '#lib/components/Dropdown.svelte';
+	import SearchableDropdown from '#lib/components/SearchableDropdown.svelte';
 	import PersonAvatar from '#lib/components/essays/PersonAvatar.svelte';
 	import { creditRoleChoices, creditRoleDoings, creditRoles, type CreditRole, type EssayCredits, type HistoryCredit } from '#lib/essays/credits.ts';
 	import { essayDateRange, essayShortDate } from '#lib/essays/dates.ts';
@@ -32,6 +34,7 @@
 	let place = $state({ top: 0, left: 0 });
 	let person = $state('');
 	let role = $state<CreditRole>('researched');
+	const roleChoices = creditRoles.map((choice) => ({ value: choice, label: creditRoleChoices[choice] }));
 	let busy = $state(false);
 	let problem = $state('');
 	/** When the popover last closed, and for which section, so a click on its own button closes it rather than opening it again. */
@@ -183,17 +186,15 @@
 							if (person) void change({ person, role, action: 'add' });
 						}}
 					>
-						<select bind:value={person} aria-label="Person" required>
-							<option value="" disabled>Choose a person…</option>
-							{#each credits.people as candidate (candidate.identifier)}
-								<option value={candidate.identifier}>{candidate.name}</option>
-							{/each}
-						</select>
-						<select bind:value={role} aria-label="What they did">
-							{#each creditRoles as choice (choice)}
-								<option value={choice}>{creditRoleChoices[choice]}</option>
-							{/each}
-						</select>
+						<SearchableDropdown
+							label="Person"
+							hideLabel
+							required
+							placeholder="Choose a person…"
+							choices={credits.people.map((candidate) => ({ value: candidate.identifier, label: candidate.name }))}
+							bind:value={person}
+						/>
+						<Dropdown label="What they did" hideLabel choices={roleChoices} bind:value={role} />
 						<button type="submit" class="button add-button" disabled={busy || !person}><Plus size={15} aria-hidden="true" /> Add</button>
 					</form>
 				{/if}
@@ -290,15 +291,11 @@
 		margin-top: var(--space-2);
 	}
 
-	/* Compact, as in the approved mockup; a full-size target where the pointer is a finger. */
-	select {
-		min-height: 2.25rem;
-		font: inherit;
-		padding: 0.25rem var(--space-2);
-		border: 1px solid var(--color-line);
-		border-radius: var(--radius-control);
-		background: var(--color-paper);
-		color: var(--color-ink);
+	/* The person and what they did share the row with Add, and wrap under each other in a narrow popover. */
+	.add :global(.searchable-dropdown),
+	.add :global(.dropdown) {
+		flex: 1 1 11rem;
+		margin: 0;
 	}
 
 	.add-button {
@@ -310,7 +307,6 @@
 	}
 
 	@media (pointer: coarse) {
-		select,
 		.add-button {
 			min-height: var(--layout-target-minimum);
 		}

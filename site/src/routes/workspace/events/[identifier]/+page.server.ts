@@ -105,6 +105,7 @@ export const load: PageServerLoad = async (event) => {
 			live: ['registered', 'offered', 'waitlisted'].includes(registration.status),
 			accessNeeds: registration.accessNeeds,
 			registeredAt: eventMoment(registration.registeredAt, found.timeZone),
+			registeredOn: registration.registeredAt,
 			offerEnds:
 				registration.status === 'offered' && registration.offerExpiresAt ? eventMoment(registration.offerExpiresAt, found.timeZone) : null
 		})),

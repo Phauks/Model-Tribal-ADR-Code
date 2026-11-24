@@ -2,6 +2,7 @@
 	// The fields of an event in the workspace (src/routes/workspace/events).
 	import { eventKindLabels, eventKinds, eventTimeZones, recordingChoiceLabels, recordingChoices } from '#lib/event-calendar.ts';
 	import DateField from '#lib/components/DateField.svelte';
+	import Dropdown from '#lib/components/Dropdown.svelte';
 	import TimeField from '#lib/components/TimeField.svelte';
 
 	interface Values {
@@ -28,6 +29,11 @@
 	let { values, invalid, problem }: { values: Values; invalid?: string; problem?: string } = $props();
 
 	const bad = (name: string) => (invalid === name ? 'true' : undefined);
+	const errorId = (name: string) => (invalid === name && problem ? `${name}-error` : undefined);
+
+	const kindChoices = eventKinds.map((kind) => ({ value: kind as string, label: eventKindLabels[kind] }));
+	const zoneChoices = eventTimeZones.map((entry) => ({ value: entry.zone as string, label: entry.label }));
+	const recordingChoiceList = recordingChoices.map((choice) => ({ value: choice as string, label: recordingChoiceLabels[choice] }));
 </script>
 
 {#snippet error(name: string)}
@@ -48,13 +54,9 @@
 </div>
 
 <div class="field">
-	<label for="kind">Kind of event</label>
-	{@render error('kind')}
-	<select id="kind" name="kind" aria-invalid={bad('kind')}>
-		{#each eventKinds as kind (kind)}
-			<option value={kind} selected={values.kind === kind}>{eventKindLabels[kind]}</option>
-		{/each}
-	</select>
+	<Dropdown label="Kind of event" id="kind" name="kind" choices={kindChoices} value={values.kind} invalid={Boolean(bad('kind'))} describedBy={errorId('kind')}>
+		{#snippet message()}{@render error('kind')}{/snippet}
+	</Dropdown>
 </div>
 
 <div class="field">
@@ -74,14 +76,20 @@
 <fieldset class="group">
 	<legend>When</legend>
 	<div class="field">
-		<label for="time-zone">Time zone</label>
-		<p class="hint" id="zone-hint">The zone where the event is held. The Navajo Nation keeps daylight saving time, so use Mountain there.</p>
-		{@render error('timeZone')}
-		<select id="time-zone" name="time-zone" aria-describedby="zone-hint" aria-invalid={bad('timeZone')}>
-			{#each eventTimeZones as entry (entry.zone)}
-				<option value={entry.zone} selected={values.timeZone === entry.zone}>{entry.label}</option>
-			{/each}
-		</select>
+		<Dropdown
+			label="Time zone"
+			id="time-zone"
+			name="time-zone"
+			choices={zoneChoices}
+			value={values.timeZone}
+			invalid={Boolean(bad('timeZone'))}
+			describedBy={['zone-hint', errorId('timeZone')].filter(Boolean).join(' ')}
+		>
+			{#snippet message()}
+				<p class="hint" id="zone-hint">The zone where the event is held. The Navajo Nation keeps daylight saving time, so use Mountain there.</p>
+				{@render error('timeZone')}
+			{/snippet}
+		</Dropdown>
 	</div>
 	{@render error('startDate')}
 	<div class="pair">
@@ -147,13 +155,17 @@
 		<textarea id="access-notes" name="access-notes" rows="3" maxlength="2000" aria-describedby="access-notes-hint">{values.accessNotes}</textarea>
 	</div>
 	<div class="field">
-		<label for="recording">Recording</label>
-		{@render error('recording')}
-		<select id="recording" name="recording" aria-invalid={bad('recording')}>
-			{#each recordingChoices as choice (choice)}
-				<option value={choice} selected={values.recording === choice}>{recordingChoiceLabels[choice]}</option>
-			{/each}
-		</select>
+		<Dropdown
+			label="Recording"
+			id="recording"
+			name="recording"
+			choices={recordingChoiceList}
+			value={values.recording}
+			invalid={Boolean(bad('recording'))}
+			describedBy={errorId('recording')}
+		>
+			{#snippet message()}{@render error('recording')}{/snippet}
+		</Dropdown>
 	</div>
 	<div class="field">
 		<label for="recording-link">Link to the recording</label>

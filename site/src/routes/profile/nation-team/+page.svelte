@@ -5,6 +5,7 @@
 	import { onMount } from 'svelte';
 	import ShieldCheck from '@lucide/svelte/icons/shield-check';
 	import FileDropField from '#lib/components/FileDropField.svelte';
+	import SearchableDropdown from '#lib/components/SearchableDropdown.svelte';
 	import {
 		applicationStatusLabels,
 		describeParts,
@@ -176,14 +177,21 @@
 		<fieldset class="step-panel" hidden={scripted && step !== 0}>
 			<legend class:visually-hidden={scripted}>1. Your nation</legend>
 			<div class="field">
-				<label for="nation">Your nation</label>
-				{#if errors.nation}<p class="field-error" id="nation-error">{errors.nation}</p>{/if}
-				<select id="nation" name="nation" required bind:value={nation} aria-invalid={Boolean(errors.nation)} aria-describedby={errors.nation ? 'nation-error' : undefined}>
-					<option value="">Choose your nation</option>
-					{#each data.nations as option (option.identifier)}
-						<option value={option.identifier}>{option.title}</option>
-					{/each}
-				</select>
+				<SearchableDropdown
+					label="Your nation"
+					id="nation"
+					name="nation"
+					required
+					placeholder="Choose your nation"
+					choices={[{ value: '', label: 'Choose your nation' }, ...data.nations.map((option) => ({ value: option.identifier, label: option.title }))]}
+					bind:value={nation}
+					invalid={Boolean(errors.nation)}
+					describedBy={errors.nation ? 'nation-error' : undefined}
+				>
+					{#snippet message()}
+						{#if errors.nation}<p class="field-error" id="nation-error">{errors.nation}</p>{/if}
+					{/snippet}
+				</SearchableDropdown>
 			</div>
 			<div class="field">
 				<label for="name">Your name</label>
@@ -381,10 +389,6 @@
 
 	[hidden] {
 		display: none !important;
-	}
-
-	select {
-		min-width: min(100%, 22rem);
 	}
 
 	.choice-card {

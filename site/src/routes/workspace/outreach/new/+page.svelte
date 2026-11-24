@@ -2,6 +2,7 @@
 	// New outreach batch (design/email-inbox, mockup 3): 1 Who, 2 Message,
 	// 3 Pace and send. Without scripts every step shows at once.
 	import { onMount } from 'svelte';
+	import Dropdown from '#lib/components/Dropdown.svelte';
 	import { fillTemplate, outreachText } from '#lib/mail.ts';
 	import type { PageProps } from './$types';
 
@@ -38,6 +39,19 @@
 	let followUp = $state(true);
 	let followUpDays = $state(10);
 	let askAcknowledgment = $state(false);
+
+	const tagChoices = $derived([{ value: '', label: 'Any tag' }, ...data.tags.map((tag) => ({ value: tag, label: tag }))]);
+	const labelChoices = [
+		{ value: '', label: 'Any' },
+		{ value: 'general-office', label: 'A general office address' },
+		{ value: 'leader', label: 'A leader’s own address' },
+		{ value: 'state-listed', label: 'Listed by a state government' }
+	];
+	const nationsChoices = [
+		{ value: 'linked', label: 'Linked to a nation' },
+		{ value: 'any', label: 'Every contact' }
+	];
+	const templateChoices = $derived(data.templates.map((template) => ({ value: template.identifier, label: `${template.name} (v${template.version})` })));
 
 	function chooseTemplate(identifier: string) {
 		const template = data.templates.find((item) => item.identifier === identifier);
@@ -118,27 +132,13 @@
 				<h2 id="who-heading">Who</h2>
 				<div class="who">
 					<div class="field">
-						<label for="tag">With the tag</label>
-						<select id="tag" name="tag" form="who-form">
-							<option value="">Any tag</option>
-							{#each data.tags as tag (tag)}<option value={tag} selected={data.filter.tag === tag}>{tag}</option>{/each}
-						</select>
+						<Dropdown label="With the tag" id="tag" name="tag" form="who-form" choices={tagChoices} value={data.filter.tag ?? ''} />
 					</div>
 					<div class="field">
-						<label for="label">Kind of address</label>
-						<select id="label" name="label" form="who-form">
-							<option value="">Any</option>
-							<option value="general-office" selected={data.filter.label === 'general-office'}>A general office address</option>
-							<option value="leader" selected={data.filter.label === 'leader'}>A leader’s own address</option>
-							<option value="state-listed" selected={data.filter.label === 'state-listed'}>Listed by a state government</option>
-						</select>
+						<Dropdown label="Kind of address" id="label" name="label" form="who-form" choices={labelChoices} value={data.filter.label ?? ''} />
 					</div>
 					<div class="field">
-						<label for="nations">Contacts</label>
-						<select id="nations" name="nations" form="who-form">
-							<option value="linked" selected={data.filter.nationsOnly}>Linked to a nation</option>
-							<option value="any" selected={!data.filter.nationsOnly}>Every contact</option>
-						</select>
+						<Dropdown label="Contacts" id="nations" name="nations" form="who-form" choices={nationsChoices} value={data.filter.nationsOnly ? 'linked' : 'any'} />
 					</div>
 				</div>
 				<button class="button button-quiet" type="submit" form="who-form">Show who this reaches</button>
@@ -178,12 +178,7 @@
 					<p>Write a template first. <a href="/workspace/outreach/templates/new">Write a template</a></p>
 				{:else}
 					<div class="field">
-						<label for="template">Template</label>
-						<select id="template" name="template" bind:value={templateIdentifier} onchange={() => chooseTemplate(templateIdentifier)}>
-							{#each data.templates as template (template.identifier)}
-								<option value={template.identifier}>{template.name} (v{template.version})</option>
-							{/each}
-						</select>
+						<Dropdown label="Template" id="template" name="template" choices={templateChoices} bind:value={templateIdentifier} onchange={chooseTemplate} />
 					</div>
 					<div class="field wide">
 						<label for="subject">Subject</label>

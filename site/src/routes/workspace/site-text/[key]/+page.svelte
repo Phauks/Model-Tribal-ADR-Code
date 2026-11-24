@@ -4,9 +4,32 @@
 	import Undo2 from '@lucide/svelte/icons/undo-2';
 	import { enhance } from '$app/forms';
 	import { dateTime } from '#lib/change-dates.ts';
+	import DataTable from '#lib/components/DataTable.svelte';
+	import type { TableColumn, TableRow } from '#lib/tables/table-definition.ts';
 	import type { PageProps } from './$types';
 
 	let { data, form }: PageProps = $props();
+
+	const columns: TableColumn[] = $derived([
+		{ key: 'text', header: 'Text', isRowHeader: true, sortable: true, custom: true },
+		{ key: 'by', header: 'By', sortable: true },
+		{ key: 'when', header: 'When', type: 'date', sortable: true },
+		{ key: 'published', header: 'Published', sortable: true },
+		...(data.canEdit ? [{ key: 'restore', header: 'Restore', custom: true, hiddenHeader: true, keepOutOfDownload: true }] : [])
+	]);
+	const rows: TableRow[] = $derived(
+		data.versions.map((version) => ({
+			key: String(version.identifier),
+			cells: {
+				text: { text: version.words ?? `${version.builtInWords} · built-in` },
+				by: { text: version.personName ?? '' },
+				when: { text: dateTime(version.createdAt), sortValue: version.createdAt },
+				published: { text: version.publications.join(', ') },
+				restore: { text: '' }
+			}
+		}))
+	);
+	const versions = $derived(new Map(data.versions.map((version) => [String(version.identifier), version])));
 </script>
 
 <svelte:head>
@@ -45,33 +68,30 @@
 {#if data.versions.length === 0}
 	<p class="muted">None</p>
 {:else}
-	<div class="table-scroll">
-		<table>
-			<thead><tr><th scope="col">Text</th><th scope="col">By</th><th scope="col">When</th><th scope="col">Published</th><th scope="col"><span class="visually-hidden">Restore</span></th></tr></thead>
-			<tbody>
-				{#each data.versions as version (version.identifier)}
-					<tr>
-						<td>{version.words ?? version.builtInWords}{#if version.words === null}<span class="muted small"> · built-in</span>{/if}</td>
-						<td>{version.personName ?? ''}</td>
-						<td>{dateTime(version.createdAt)}</td>
-						<td>{version.publications.join(', ')}</td>
-						<td>
-							{#if data.canEdit}
-								<form method="POST" action="?/save" use:enhance>
-									{#if version.words === null}
-										<input type="hidden" name="reset" value="yes" />
-									{:else}
-										<input type="hidden" name="words" value={version.words} />
-									{/if}
-									<button class="icon-button" type="submit" title="Restore as a draft"><Undo2 size={20} aria-hidden="true" /><span class="visually-hidden">Restore as a draft</span></button>
-								</form>
-							{/if}
-						</td>
-					</tr>
-				{/each}
-			</tbody>
-		</table>
-	</div>
+	<DataTable
+		identifier="versions"
+		label="Table: versions of this text"
+		{columns}
+		{rows}
+		defaultSort={{ key: 'when', direction: 'descending' }}
+		rowName={['version', 'versions']}
+	>
+		{#snippet cell(row, column)}
+			{@const version = versions.get(row.key)}
+			{#if version && column.key === 'text'}
+				{version.words ?? version.builtInWords}{#if version.words === null}<span class="muted small"> · built-in</span>{/if}
+			{:else if version}
+				<form method="POST" action="?/save" use:enhance>
+					{#if version.words === null}
+						<input type="hidden" name="reset" value="yes" />
+					{:else}
+						<input type="hidden" name="words" value={version.words} />
+					{/if}
+					<button class="icon-button" type="submit" title="Restore as a draft"><Undo2 size={20} aria-hidden="true" /><span class="visually-hidden">Restore as a draft</span></button>
+				</form>
+			{/if}
+		{/snippet}
+	</DataTable>
 {/if}
 
 <style>

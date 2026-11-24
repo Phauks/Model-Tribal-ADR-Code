@@ -2,6 +2,8 @@
 	import Breadcrumbs from '#lib/components/Breadcrumbs.svelte';
 	import Video from '@lucide/svelte/icons/video';
 	import CopyLink from '#lib/components/CopyLink.svelte';
+	import DataTable from '#lib/components/DataTable.svelte';
+	import type { TableColumn, TableRow } from '#lib/tables/table-definition.ts';
 	import RoomRecords from '#lib/components/RoomRecords.svelte';
 	import RoomFields from '../RoomFields.svelte';
 	import type { PageProps } from './$types';
@@ -14,6 +16,28 @@
 	const done = $derived(form && 'done' in form ? form.done : undefined);
 	const invite = $derived(form && 'invite' in form ? form.invite : undefined);
 	const formField = $derived(typeof field === 'string' && field !== 'invite-name' ? field : undefined);
+
+	// The times come formatted, so the table keeps the order it is given in rather than sorting by them.
+	const inviteColumns: TableColumn[] = [
+		{ key: 'for', header: 'For', isRowHeader: true, sortable: true, searchable: true },
+		{ key: 'as', header: 'As', sortable: true },
+		{ key: 'made', header: 'Made' },
+		{ key: 'used', header: 'Last used' },
+		{ key: 'state', header: 'On or off', custom: true, hiddenHeader: true }
+	];
+	const inviteRows: TableRow[] = $derived(
+		data.invites.map((item) => ({
+			key: item.identifier,
+			cells: {
+				for: { text: item.name },
+				as: { text: item.role },
+				made: { text: item.made },
+				used: { text: item.used ?? 'Not yet' },
+				state: { text: item.revoked ? 'Off' : 'On' }
+			}
+		}))
+	);
+	const invites = $derived(new Map(data.invites.map((item) => [item.identifier, item])));
 </script>
 
 <svelte:head>
@@ -87,33 +111,19 @@
 	<button class="button" type="submit">Make a link</button>
 </form>
 {#if data.invites.length > 0}
-	<div class="table-scroll">
-		<table>
-			<thead>
-				<tr><th scope="col">For</th><th scope="col">As</th><th scope="col">Made</th><th scope="col">Last used</th><th scope="col"></th></tr>
-			</thead>
-			<tbody>
-				{#each data.invites as item (item.identifier)}
-					<tr>
-						<td>{item.name}</td>
-						<td>{item.role}</td>
-						<td>{item.made}</td>
-						<td>{item.used ?? 'Not yet'}</td>
-						<td>
-							{#if item.revoked}
-								Off
-							{:else}
-								<form method="post" action="?/revoke">
-									<input type="hidden" name="invite" value={item.identifier} />
-									<button class="button button-quiet" type="submit">Turn it off</button>
-								</form>
-							{/if}
-						</td>
-					</tr>
-				{/each}
-			</tbody>
-		</table>
-	</div>
+	<DataTable identifier="invites" label="Table: invite links" columns={inviteColumns} rows={inviteRows} rowName={['link', 'links']}>
+		{#snippet cell(row)}
+			{@const item = invites.get(row.key)}
+			{#if item?.revoked}
+				Off
+			{:else if item}
+				<form method="post" action="?/revoke">
+					<input type="hidden" name="invite" value={item.identifier} />
+					<button class="button button-quiet" type="submit">Turn it off</button>
+				</form>
+			{/if}
+		{/snippet}
+	</DataTable>
 {/if}
 
 <RoomRecords recordings={data.recordings} visitors={data.visitors} level={2} />

@@ -4,6 +4,10 @@
 	// screen 4, approved by Trevor on Nov. 23, 2026).
 	import { tick } from 'svelte';
 	import Breadcrumbs from '#lib/components/Breadcrumbs.svelte';
+	import DataTable from '#lib/components/DataTable.svelte';
+	import Dropdown from '#lib/components/Dropdown.svelte';
+	import { keepPlaced } from '#lib/popover-place.ts';
+	import type { TableColumn, TableRow } from '#lib/tables/table-definition.ts';
 	import {
 		atLeastTeamLevel,
 		describeParts,
@@ -50,6 +54,13 @@
 
 	// A new level offers its usual term, unless the person picked another date.
 	const untilChoice = $derived(until || data.usualEnds[level]);
+	const levelChoices = $derived(givableLevels.map((option) => ({ value: option, label: `${teamLevelLabels[option]}: ${levelSummaries[option]}` })));
+	const scopeChoices = $derived([
+		...(wholePageAllowed ? [{ value: 'whole', label: 'All of the page' }] : []),
+		...givableParts.map((part) => ({ value: `part:${part}`, label: partName(part) })),
+		...(givableParts.length > 1 ? [{ value: 'parts', label: 'Some parts…' }] : [])
+	]);
+	const untilChoices = $derived([...data.terms.map((term) => ({ value: term.end, label: `${term.label} (${month(term.end)})` })), { value: 'other', label: 'Another date' }]);
 
 	function partName(part: PagePart): string {
 		return pagePartLabels[part].replace(/ \(.*\)$/, '');
@@ -91,6 +102,44 @@
 		emailField?.focus();
 	}
 
+	const teamColumns: TableColumn[] = [
+		{ key: 'person', header: 'Person', isRowHeader: true, sortable: true, searchable: true, custom: true },
+		{ key: 'level', header: 'Level', sortable: true, filterable: true, custom: true },
+		{ key: 'parts', header: 'Parts', sortable: true },
+		{ key: 'until', header: 'Until', type: 'date', sortable: true },
+		{ key: 'added', header: 'Added by', sortable: true },
+		{ key: 'change', header: 'Change', custom: true, hiddenHeader: true, keepOutOfDownload: true }
+	];
+	const teamRows: TableRow[] = $derived(
+		data.team.map((place) => ({
+			key: place.identifier,
+			cells: {
+				person: { text: [place.personName, place.office ?? '', place.personStatus === 'invited' ? 'Has not signed in yet' : ''].filter(Boolean).join(', ') },
+				level: { text: teamLevelLabels[place.level], sortValue: teamLevels.indexOf(place.level) },
+				parts: { text: partsCell(place.parts) },
+				until: { text: month(place.expiresAt), sortValue: place.expiresAt },
+				added: { text: place.addedByProject ? 'The project, after the nation confirmed' : (place.grantedByName ?? '') },
+				change: { text: '' }
+			}
+		}))
+	);
+	const places = $derived(new Map(data.team.map((place) => [place.identifier, place])));
+
+	// The open row menu, kept under its Change button as the page scrolls.
+	let openMenu = $state.raw<{ popover: HTMLElement; anchor: HTMLElement } | undefined>();
+	function onMenuToggle(event: Event): void {
+		const popover = event.currentTarget as HTMLElement;
+		if ((event as ToggleEvent).newState === 'open') {
+			const anchor = document.querySelector<HTMLElement>(`[popovertarget="${popover.id}"]`);
+			if (anchor) openMenu = { popover, anchor };
+		} else if (openMenu?.popover === popover) {
+			openMenu = undefined;
+		}
+	}
+	$effect(() => {
+		if (openMenu) return keepPlaced(openMenu.popover, openMenu.anchor, 'right', [document.body]);
+	});
+
 	function cancelChange(): void {
 		changing = null;
 		email = name = office = '';
@@ -100,6 +149,49 @@
 		until = '';
 	}
 </script>
+
+{#snippet teamCell(place: Place, key: string)}
+	{@const own = place.personIdentifier === data.own.personIdentifier}
+	{@const canChange = !own && (data.isAdministrator || (data.canManage && !place.addedByProject))}
+	{#if key === 'person'}
+		<strong>{place.personName}</strong>
+		{#if place.office}<br /><span class="small muted">{place.office}</span>{/if}
+		{#if place.personStatus === 'invited'}<br /><span class="small muted">Has not signed in yet</span>{/if}
+	{:else if key === 'level'}
+		<span class="level level-{place.level}">{teamLevelLabels[place.level]}</span>
+	{:else if own}
+		<div class="actions">
+			<form method="post" action="?/end">
+				<input type="hidden" name="place" value={place.identifier} />
+				<button class="button button-quiet small-button" type="submit">Leave</button>
+			</form>
+		</div>
+	{:else if canChange || data.isAdministrator}
+		<!-- A popover, so the table's scrolling box does not cut the menu off. -->
+		<div class="actions">
+			<button class="button button-quiet small-button" type="button" popovertarget="change-{place.identifier}">
+				Change<span class="visually-hidden"> {place.personName}’s place</span>
+			</button>
+		</div>
+		<div id="change-{place.identifier}" class="table-popover row-menu-panel" popover="auto" ontoggle={(event) => onMenuToggle(event)}>
+			{#if canChange && data.canManage}
+				<button class="link-button needs-scripts" type="button" onclick={(event) => { (event.currentTarget as HTMLElement).closest<HTMLElement>('[popover]')?.hidePopover(); void change(place); }}>Change level, parts or date</button>
+			{/if}
+			{#if canChange}
+				<form method="post" action="?/end">
+					<input type="hidden" name="place" value={place.identifier} />
+					<button class="link-button danger" type="submit">End {place.personName}’s place</button>
+				</form>
+			{/if}
+			{#if data.isAdministrator}
+				<form method="post" action="?/suspend">
+					<input type="hidden" name="place" value={place.identifier} />
+					<button class="link-button danger" type="submit">Suspend {place.personName} and everyone they added</button>
+				</form>
+			{/if}
+		</div>
+	{/if}
+{/snippet}
 
 <svelte:head>
 	<title>{data.nation.title}’s team · Workspace · Model Tribal ADR Code</title>
@@ -142,63 +234,25 @@
 <div class="columns">
 	<div class="team">
 		<h2 class="visually-hidden" id="team-heading">Who is on the team</h2>
-		<div class="table-scroll" tabindex="-1">
-			<table aria-labelledby="team-heading" data-fixed-columns>
-				<thead>
-					<tr><th scope="col">Person</th><th scope="col">Level</th><th scope="col">Parts</th><th scope="col">Until</th><th scope="col">Added by</th><th scope="col"><span class="visually-hidden">Change</span></th></tr>
-				</thead>
-				<tbody>
-					{#each data.team as place (place.identifier)}
-						{@const own = place.personIdentifier === data.own.personIdentifier}
-						{@const canChange = !own && (data.isAdministrator || (data.canManage && !place.addedByProject))}
-						<tr class:changing={changing?.identifier === place.identifier}>
-							<td>
-								<strong>{place.personName}</strong>
-								{#if place.office}<br /><span class="small muted">{place.office}</span>{/if}
-								{#if place.personStatus === 'invited'}<br /><span class="small muted">Has not signed in yet</span>{/if}
-							</td>
-							<td><span class="level level-{place.level}">{teamLevelLabels[place.level]}</span></td>
-							<td>{partsCell(place.parts)}</td>
-							<td>{month(place.expiresAt)}</td>
-							<td>
-								{#if place.addedByProject}The project, after the nation confirmed{:else}{place.grantedByName ?? ''}{/if}
-							</td>
-							<td class="actions">
-								{#if own}
-									<form method="post" action="?/end">
-										<input type="hidden" name="place" value={place.identifier} />
-										<button class="button button-quiet small-button" type="submit">Leave</button>
-									</form>
-								{:else if canChange || data.isAdministrator}
-									<details class="row-menu">
-										<summary class="button button-quiet small-button">Change<span class="visually-hidden"> {place.personName}’s place</span></summary>
-										<div class="row-menu-panel">
-											{#if canChange && data.canManage}
-												<button class="link-button needs-scripts" type="button" onclick={(event) => { (event.currentTarget as HTMLElement).closest('details')?.removeAttribute('open'); void change(place); }}>Change level, parts or date</button>
-											{/if}
-											{#if canChange}
-												<form method="post" action="?/end">
-													<input type="hidden" name="place" value={place.identifier} />
-													<button class="link-button danger" type="submit">End {place.personName}’s place</button>
-												</form>
-											{/if}
-											{#if data.isAdministrator}
-												<form method="post" action="?/suspend">
-													<input type="hidden" name="place" value={place.identifier} />
-													<button class="link-button danger" type="submit">Suspend {place.personName} and everyone they added</button>
-												</form>
-											{/if}
-										</div>
-									</details>
-								{/if}
-							</td>
-						</tr>
-					{:else}
-						<tr><td colspan="6" class="muted">Nobody yet.</td></tr>
-					{/each}
-				</tbody>
-			</table>
-		</div>
+		{#if data.team.length === 0}
+			<p class="muted">Nobody yet.</p>
+		{:else}
+			<DataTable
+				identifier="team"
+				label="Table: who is on the team"
+				columns={teamColumns}
+				rows={teamRows}
+				rowName={['person', 'people']}
+				download="{data.nation.identifier}-team"
+			>
+				{#snippet cell(row, column)}
+					{@const place = places.get(row.key)}
+					{#if place}
+						{@render teamCell(place, column.key)}
+					{/if}
+				{/snippet}
+			</DataTable>
+		{/if}
 
 		{#if data.canManage}
 			<form method="post" action="?/add" class="panel add" aria-labelledby="add-heading">
@@ -213,22 +267,10 @@
 						<input type="text" id="name" name="name" autocomplete="off" required bind:value={name} />
 					</div>
 					<div class="field">
-						<label for="level">Level</label>
-						<select id="level" name="level" bind:value={level}>
-							{#each givableLevels as option (option)}
-								<option value={option}>{teamLevelLabels[option]}: {levelSummaries[option]}</option>
-							{/each}
-						</select>
+						<Dropdown label="Level" id="level" name="level" choices={levelChoices} bind:value={level} />
 					</div>
 					<div class="field">
-						<label for="scope">Parts of the page</label>
-						<select id="scope" name="scope" bind:value={scope}>
-							{#if wholePageAllowed}<option value="whole">All of the page</option>{/if}
-							{#each givableParts as part (part)}
-								<option value="part:{part}">{partName(part)}</option>
-							{/each}
-							{#if givableParts.length > 1}<option value="parts">Some parts…</option>{/if}
-						</select>
+						<Dropdown label="Parts of the page" id="scope" name="scope" choices={scopeChoices} bind:value={scope} />
 					</div>
 					{#if scope === 'parts'}
 						<fieldset class="field wide">
@@ -241,13 +283,15 @@
 						</fieldset>
 					{/if}
 					<div class="field">
-						<label for="until">Until</label>
-						<select id="until" name={untilChoice === 'other' ? undefined : 'expires'} value={untilChoice} onchange={(event) => (until = (event.currentTarget as HTMLSelectElement).value)}>
-							{#each data.terms as term (term.end)}
-								<option value={term.end}>{term.label} ({month(term.end)})</option>
-							{/each}
-							<option value="other">Another date</option>
-						</select>
+						<!-- With "Another date", the date field below sends the end instead. -->
+						<Dropdown
+							label="Until"
+							id="until"
+							name={untilChoice === 'other' ? undefined : 'expires'}
+							choices={untilChoices}
+							value={untilChoice}
+							onchange={(chosen) => (until = chosen)}
+						/>
 					</div>
 					<div class="field">
 						<label for="office">Their title or office <span class="muted">(optional)</span></label>
@@ -311,33 +355,6 @@
 		min-width: 0;
 	}
 
-	.table-scroll {
-		overflow: visible;
-	}
-
-	table {
-		width: 100%;
-		border-collapse: collapse;
-	}
-
-	th {
-		background: none;
-		text-align: start;
-		color: var(--color-ink-muted);
-		font-size: var(--font-size-small);
-	}
-
-	th,
-	td {
-		padding: var(--space-2) var(--space-2);
-		border-bottom: 1px solid var(--color-line);
-		vertical-align: top;
-	}
-
-	tr.changing td {
-		background: var(--color-notice-background);
-	}
-
 	.level {
 		display: inline-block;
 		padding: 0 var(--space-2);
@@ -378,35 +395,12 @@
 		white-space: nowrap;
 	}
 
-	.row-menu {
-		position: relative;
-		display: inline-block;
-	}
-
-	.row-menu > summary {
-		list-style: none;
-		cursor: pointer;
-	}
-
-	.row-menu > summary::-webkit-details-marker {
-		display: none;
-	}
-
-	.row-menu-panel {
-		position: absolute;
-		z-index: 20;
-		right: 0;
-		top: calc(100% + var(--space-1));
+	/* The row menu: a popover (global.css, .table-popover), its choices one under another. */
+	.row-menu-panel:popover-open {
 		display: grid;
 		gap: var(--space-2);
-		width: max-content;
 		max-width: min(20rem, calc(100vw - 2 * var(--space-4)));
-		padding: var(--space-3);
-		border: 1px solid var(--color-line);
-		border-radius: var(--radius-panel);
-		background: var(--color-surface-raised);
-		box-shadow: 0 var(--space-1) var(--space-3) color-mix(in srgb, var(--color-ink) 20%, transparent);
-		text-align: start;
+		font-size: inherit;
 	}
 
 	.link-button {
@@ -451,6 +445,14 @@
 	.add-grid :global(:is(input[type='text'], input[type='email'], select)) {
 		width: 100%;
 		max-width: none;
+	}
+
+	.add-grid :global(.dropdown) {
+		margin: 0;
+	}
+
+	.add-grid :global(.dropdown-control) {
+		width: 100%;
 	}
 
 	.wide {

@@ -380,6 +380,12 @@
 
 	/** The states the Go to menu lists after the places that are always there. */
 	const goToStates = $derived(data.stateRows.map((row) => row.name).filter((name) => !tileMapPlaces.some((place) => place.name === name)).sort((first, second) => first.localeCompare(second, 'en')));
+	// The places the tiled map draws on their own, then every other state with a nation, under "States".
+	const goToChoices = $derived([
+		...tileMapPlaces.map((place) => ({ value: place.name, label: place.name })),
+		...goToStates.map((name) => ({ value: name, label: name, group: 'States' }))
+	]);
+	let goToPlace = $state('');
 
 	let tileHolder = $state<HTMLElement | undefined>();
 
@@ -491,21 +497,10 @@
 		{/if}
 		{#if view.key === current && tileMapReady}
 			<!-- The states and territories are where they really are on the map, so the map goes to each by name (Trevor, 2026-11-22: every territory shown and named on its own). A menu rather than a row of buttons, so the row does not push the key out of sight (Trevor, 2026-11-23). -->
-			<label class="go-to">
-				<span class="go-to-label">Go to</span>
-				<select onchange={(event) => tileMap?.showPlace(event.currentTarget.value)}>
-					<option value="" disabled selected>Choose a place</option>
-					{#each tileMapPlaces as place (place.name)}
-						<option value={place.name}>{place.name}</option>
-					{/each}
-					<!-- Every state with a nation, by name (Trevor, 2026-11-24: "any state ... zoom into that state"). -->
-					<optgroup label="States">
-						{#each goToStates as name (name)}
-							<option value={name}>{name}</option>
-						{/each}
-					</optgroup>
-				</select>
-			</label>
+			<!-- Every state with a nation, by name (Trevor, 2026-11-24: "any state ... zoom into that state"). -->
+			<div class="go-to">
+				<SearchableDropdown label="Go to" placeholder="Choose a place" choices={goToChoices} bind:value={goToPlace} onchange={(place) => tileMap?.showPlace(place)} />
+			</div>
 		{/if}
 		</div>
 			<div class="map-drawing" {@attach placeTileMap(view.key)} class:tiled={tileMapReady && view.key === current} class:waiting={tileMapWanted && !tileMapReady && view.key === current} data-nations-map={view.key === 'states' ? '' : undefined}>
@@ -1214,12 +1209,6 @@
 
 	/* The Go to menu, beside the view picker. */
 	.go-to {
-		display: flex;
-		flex-direction: column;
-		gap: var(--space-1);
-	}
-
-	.go-to-label {
-		font-weight: var(--font-weight-bold);
+		min-width: 0;
 	}
 </style>

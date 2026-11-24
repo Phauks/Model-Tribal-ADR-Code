@@ -27,6 +27,7 @@
 	import Breadcrumbs from '#lib/components/Breadcrumbs.svelte';
 	import ColumnFilterMenu from '#lib/components/ColumnFilterMenu.svelte';
 	import DataTable from '#lib/components/DataTable.svelte';
+	import Dropdown from '#lib/components/Dropdown.svelte';
 	import { keepPlaced } from '#lib/popover-place.ts';
 	import { filterIsActive, type ColumnFilter, type ColumnFilters } from '#lib/tables/table-definition.ts';
 	import {
@@ -67,6 +68,14 @@
 
 	const dataset = $derived(settings ? loaded[settings.dataset] : undefined);
 	const groupable = $derived(dataset?.columns.filter((column) => column.type !== 'number') ?? []);
+	const datasetChoices = $derived(
+		data.datasets.map((summary) => ({ value: summary.identifier, label: `${summary.title} (${summary.rowCount.toLocaleString('en-US')})` }))
+	);
+	const groupChoices = $derived([{ value: '', label: 'None' }, ...groupable.map((column) => ({ value: column.key, label: column.header }))]);
+	const acrossChoices = $derived([
+		{ value: '', label: 'None' },
+		...groupable.filter((column) => column.key !== settings?.groupBy).map((column) => ({ value: column.key, label: column.header }))
+	]);
 	const numberColumns = $derived(dataset?.columns.filter((column) => column.type === 'number') ?? []);
 	const filtering = $derived(settings ? Object.values(settings.filters).some(filterIsActive) : false);
 
@@ -187,39 +196,29 @@
 	{:else}
 		<div class="builder-controls no-print">
 			<div class="field">
-				<label for="builder-data">Data</label>
-				<select id="builder-data" value={settings.dataset} onchange={(event) => open(event.currentTarget.value).catch(() => (loadFailed = true))}>
-					{#each data.datasets as summary (summary.identifier)}
-						<option value={summary.identifier}>{summary.title} ({summary.rowCount.toLocaleString('en-US')})</option>
-					{/each}
-				</select>
+				<Dropdown label="Data" id="builder-data" choices={datasetChoices} value={settings.dataset} onchange={(chosen) => open(chosen).catch(() => (loadFailed = true))} />
 			</div>
 			<div class="field">
-				<label for="builder-group">Group by</label>
-				<select id="builder-group" value={settings.groupBy ?? ''} onchange={(event) => update({ groupBy: event.currentTarget.value || undefined, across: settings?.across === event.currentTarget.value ? undefined : settings?.across })}>
-					<option value="">None</option>
-					{#each groupable as column (column.key)}
-						<option value={column.key}>{column.header}</option>
-					{/each}
-				</select>
+				<Dropdown
+					label="Group by"
+					id="builder-group"
+					choices={groupChoices}
+					value={settings.groupBy ?? ''}
+					onchange={(chosen) => update({ groupBy: chosen || undefined, across: settings?.across === chosen ? undefined : settings?.across })}
+				/>
 			</div>
 			{#if settings.groupBy}
 				<div class="field">
-					<label for="builder-across">Across</label>
-					<select id="builder-across" value={settings.across ?? ''} onchange={(event) => update({ across: event.currentTarget.value || undefined })}>
-						<option value="">None</option>
-						{#each groupable.filter((column) => column.key !== settings?.groupBy) as column (column.key)}
-							<option value={column.key}>{column.header}</option>
-						{/each}
-					</select>
+					<Dropdown label="Across" id="builder-across" choices={acrossChoices} value={settings.across ?? ''} onchange={(chosen) => update({ across: chosen || undefined })} />
 				</div>
 				<div class="field">
-					<label for="builder-value">Value</label>
-					<select id="builder-value" value={measureValue} onchange={(event) => update({ measure: measures.find((option) => option.value === event.currentTarget.value)?.measure ?? { kind: 'rows' } })}>
-						{#each measures as option (option.value)}
-							<option value={option.value}>{option.label}</option>
-						{/each}
-					</select>
+					<Dropdown
+						label="Value"
+						id="builder-value"
+						choices={measures}
+						value={measureValue}
+						onchange={(chosen) => update({ measure: measures.find((option) => option.value === chosen)?.measure ?? { kind: 'rows' } })}
+					/>
 				</div>
 				<button
 					type="button"
@@ -338,7 +337,11 @@
 		flex-basis: 18rem;
 	}
 
-	.builder-controls select {
+	.builder-controls :global(.dropdown) {
+		margin: 0;
+	}
+
+	.builder-controls :global(.dropdown-control) {
 		width: 100%;
 	}
 

@@ -37,7 +37,7 @@
 		{ key: 'address', header: 'Address', isRowHeader: true, sortable: true },
 		{ key: 'why', header: 'Why', sortable: true },
 		{ key: 'since', header: 'Since', type: 'date', sortable: true },
-		...(data.canManage ? [{ key: 'change', header: 'Change', custom: true }] : [])
+		...(data.canManage ? [{ key: 'change', header: 'Change', custom: true, keepOutOfDownload: true }] : [])
 	]);
 	const suppressionRows: TableRow[] = $derived(
 		data.suppressions.map((item) => ({

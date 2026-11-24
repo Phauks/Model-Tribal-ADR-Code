@@ -3,6 +3,8 @@
 	import Plus from '@lucide/svelte/icons/plus';
 	import Video from '@lucide/svelte/icons/video';
 	import CopyLink from '#lib/components/CopyLink.svelte';
+	import DataTable from '#lib/components/DataTable.svelte';
+	import type { TableColumn, TableRow } from '#lib/tables/table-definition.ts';
 	import { instantRoomHours } from '#lib/video-rooms.ts';
 	import type { PageProps } from './$types';
 
@@ -12,6 +14,27 @@
 	const problem = $derived(form && 'problem' in form ? form.problem : undefined);
 	// The browser's own zone, when it is one an event can use, so an instant room's times read right.
 	let zone = $state('');
+
+	// The times come formatted, so the tables keep the order they are given in rather than sorting by them.
+	const columns: TableColumn[] = [
+		{ key: 'room', header: 'Room', isRowHeader: true, sortable: true, searchable: true, custom: true },
+		{ key: 'visibility', header: 'Who may join', sortable: true },
+		{ key: 'when', header: 'When' },
+		{ key: 'visitors', header: 'People', type: 'number', sortable: true },
+		{ key: 'recordings', header: 'Recordings', type: 'number', sortable: true }
+	];
+	const rowsOf = (rooms: typeof data.current): TableRow[] =>
+		rooms.map((room) => ({
+			key: room.identifier,
+			cells: {
+				room: { text: `${room.title}${room.open ? ' (open now)' : ''}`, href: `/workspace/rooms/${room.identifier}` },
+				visibility: { text: room.visibility },
+				when: { text: room.when },
+				visitors: { text: String(room.visitors), sortValue: Number(room.visitors) },
+				recordings: { text: String(room.recordings), sortValue: Number(room.recordings) }
+			}
+		}));
+	const roomsByKey = $derived(new Map([...data.current, ...data.past].map((room) => [room.identifier, room])));
 	onMount(() => {
 		zone = Intl.DateTimeFormat().resolvedOptions().timeZone;
 	});
@@ -67,33 +90,21 @@
 {#if data.current.length === 0}
 	<p class="muted">No rooms are open or planned.</p>
 {:else}
-	{@render table(data.current)}
+	{@render table(data.current, 'rooms-open', 'Table: rooms open and coming up')}
 {/if}
 
 {#if data.past.length > 0}
 	<h2>Closed</h2>
-	{@render table(data.past)}
+	{@render table(data.past, 'rooms-closed', 'Table: closed rooms')}
 {/if}
 
-{#snippet table(rooms: typeof data.current)}
-	<div class="table-scroll">
-		<table>
-			<thead>
-				<tr><th scope="col">Room</th><th scope="col">Who may join</th><th scope="col">When</th><th scope="col">People</th><th scope="col">Recordings</th></tr>
-			</thead>
-			<tbody>
-				{#each rooms as room (room.identifier)}
-					<tr>
-						<td><a href="/workspace/rooms/{room.identifier}">{room.title}</a>{#if room.open}<span class="chip">Open now</span>{/if}</td>
-						<td>{room.visibility}</td>
-						<td>{room.when}</td>
-						<td>{room.visitors}</td>
-						<td>{room.recordings}</td>
-					</tr>
-				{/each}
-			</tbody>
-		</table>
-	</div>
+{#snippet table(rooms: typeof data.current, identifier: string, label: string)}
+	<DataTable {identifier} {label} {columns} rows={rowsOf(rooms)} rowName={['room', 'rooms']}>
+		{#snippet cell(row)}
+			{@const room = roomsByKey.get(row.key)}
+			{#if room}<a href="/workspace/rooms/{room.identifier}">{room.title}</a>{#if room.open}<span class="chip">Open now</span>{/if}{/if}
+		{/snippet}
+	</DataTable>
 {/snippet}
 
 <style>
