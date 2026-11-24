@@ -29,16 +29,18 @@
 
 	.mode-picker :global(svg) {
 		position: absolute;
-		left: var(--space-2);
+		left: calc(var(--space-1) + 2px);
 		pointer-events: none;
 	}
 
+	/* As wide as the choice shown, as on the mockups, where the browser can. */
 	select {
 		width: auto;
 		min-width: 0;
-		min-height: var(--layout-target-minimum);
+		field-sizing: content;
+		min-height: var(--bar-target, var(--layout-target-minimum));
 		font-size: var(--font-size-small);
-		padding-left: calc(var(--space-2) + 1.5rem);
+		padding-left: calc(var(--space-1) + 1.5rem);
 		font-weight: var(--font-weight-semibold);
 	}
 </style>
