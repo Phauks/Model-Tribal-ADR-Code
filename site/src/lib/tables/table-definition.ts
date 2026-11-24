@@ -32,8 +32,16 @@ export interface TableColumn {
 	searchable?: boolean;
 	/** The page draws this column's cells itself, through the cell snippet. */
 	custom?: boolean;
-	/** Readers can narrow the table to one of this column's values. */
+	/**
+	 * Readers can narrow the table to some of this column's values, ticked in
+	 * a list under the column's header. A searchable column that is not
+	 * filterable gets a "Contains" box there instead.
+	 */
 	filterable?: boolean;
+	/** The column starts hidden; a reader can add it from the list of columns. */
+	optional?: boolean;
+	/** A number column that the table's Sum row adds up. */
+	sum?: boolean;
 }
 
 export interface TableCell {
@@ -128,8 +136,30 @@ export function filterRows(columns: TableColumn[], rows: TableRow[], query: stri
 
 /* Column filters --------------------------------------------------------- */
 
-/** The value each filterable column is narrowed to, by column key. A column left out is not filtered. */
-export type ColumnFilters = Record<string, string>;
+/**
+ * How one column narrows the table (Trevor, Nov. 24, 2026: filters sit on
+ * the column headers, as in a spreadsheet). `values`: the rows whose cell has
+ * any of these values. `contains`: the rows whose cell holds every word typed.
+ */
+export interface ColumnFilter {
+	values?: string[];
+	contains?: string;
+}
+
+/** Each column's filter, by column key. A column left out is not filtered. */
+export type ColumnFilters = Record<string, ColumnFilter>;
+
+/** What kind of filter a column offers under its header, if any. */
+export function filterKind(column: TableColumn): 'values' | 'contains' | undefined {
+	if (column.filterable) return 'values';
+	if (column.searchable) return 'contains';
+	return undefined;
+}
+
+/** Whether a filter narrows anything. */
+export function filterIsActive(filter: ColumnFilter | undefined): boolean {
+	return Boolean(filter && ((filter.values?.length ?? 0) > 0 || (filter.contains ?? '').trim() !== ''));
+}
 
 export interface FilterChoice {
 	value: string;
@@ -158,26 +188,77 @@ export function filterChoices(column: TableColumn, rows: TableRow[]): FilterChoi
 
 /** Keeps the rows that match every column filter. */
 export function applyColumnFilters(rows: TableRow[], filters: ColumnFilters): TableRow[] {
-	const active = Object.entries(filters).filter(([, value]) => Boolean(value));
+	const active = Object.entries(filters).filter(([, filter]) => filterIsActive(filter));
 	if (active.length === 0) return rows;
-	return rows.filter((row) => active.every(([key, value]) => valuesOf(row.cells[key]).includes(value)));
+	const tests = active.map(([key, filter]) => {
+		const wanted = new Set(filter.values ?? []);
+		const words = foldForSearch(filter.contains ?? '').split(/\s+/).filter(Boolean);
+		return (row: TableRow) => {
+			const cell = row.cells[key];
+			if (wanted.size > 0 && !valuesOf(cell).some((value) => wanted.has(value))) return false;
+			if (words.length > 0) {
+				const text = foldForSearch(cell?.text ?? '');
+				if (!words.every((word) => text.includes(word))) return false;
+			}
+			return true;
+		};
+	});
+	return rows.filter((row) => tests.every((test) => test(row)));
+}
+
+/* The Sum row ------------------------------------------------------------- */
+
+/** A cell's number, from its sort value or else its text ("1,467" is 1467); undefined when it has none. */
+function numberOf(cell: TableCell | undefined): number | undefined {
+	const value = cell?.sortValue ?? cell?.text;
+	if (typeof value === 'number') return Number.isFinite(value) ? value : undefined;
+	if (value === undefined) return undefined;
+	const parsed = Number(String(value).replaceAll(',', '').trim());
+	return String(value).trim() !== '' && Number.isFinite(parsed) ? parsed : undefined;
+}
+
+/** What a column adds up to over the rows given, for the table's Sum row. */
+export function columnTotal(column: TableColumn, rows: TableRow[]): number {
+	return rows.reduce((total, row) => total + (numberOf(row.cells[column.key]) ?? 0), 0);
+}
+
+/* Columns a reader shows and hides ---------------------------------------- */
+
+/** The columns a table shows before a reader changes them: all but the optional ones. */
+export function defaultColumnKeys(columns: TableColumn[]): string[] {
+	return columns.filter((column) => !column.optional).map((column) => column.key);
+}
+
+/**
+ * The columns to draw, in the table's own order: the ones chosen, and always
+ * the row header, which names each row. With nothing chosen, the default.
+ */
+export function shownColumnsOf(columns: TableColumn[], chosen: string[] | undefined): TableColumn[] {
+	const keys = new Set(chosen ?? defaultColumnKeys(columns));
+	const rowHeader = columns.find((column) => column.isRowHeader) ?? columns[0];
+	return columns.filter((column) => column === rowHeader || keys.has(column.key));
 }
 
 /* A table's state in the page address ------------------------------------ */
 
-/** What a reader has done to a table: the search text, the sort and the column filters. */
+/** What a reader has done to a table: the search text, the sort, the column filters and the columns shown. */
 export interface TableState {
 	query: string;
 	sort?: TableSort;
 	filters: ColumnFilters;
+	/** The keys of the columns shown, when the reader changed them. */
+	columns?: string[];
 }
 
 /**
  * Writes a table's state into the page address, so a copied link opens the
  * table the same way. Each parameter starts with the table's identifier, so
  * two tables on one page keep apart: "nations-a.q=paiute",
- * "nations-a.sort=-states" (a minus sign for descending) and
- * "nations-a.states=Nevada". The default sort and empty values are left out.
+ * "nations-a.sort=-states" (a minus sign for descending),
+ * "nations-a.states=Nevada&nations-a.states=Utah" (one for each value
+ * ticked), "nations-a.name.contains=paiute" and
+ * "nations-a.columns=name,states". The default sort and columns and empty
+ * values are left out.
  */
 export function writeTableState(
 	identifier: string,
@@ -194,9 +275,11 @@ export function writeTableState(
 	if (sort && (sort.key !== defaultSort?.key || sort.direction !== defaultSort?.direction)) {
 		next.set(`${identifier}.sort`, `${sort.direction === 'descending' ? '-' : ''}${sort.key}`);
 	}
-	for (const [key, value] of Object.entries(state.filters)) {
-		if (value) next.set(`${identifier}.${key}`, value);
+	for (const [key, filter] of Object.entries(state.filters)) {
+		for (const value of filter.values ?? []) if (value) next.append(`${identifier}.${key}`, value);
+		if ((filter.contains ?? '').trim() !== '') next.set(`${identifier}.${key}.contains`, filter.contains!.trim());
 	}
+	if (state.columns) next.set(`${identifier}.columns`, state.columns.join(','));
 	return next;
 }
 
@@ -212,8 +295,19 @@ export function readTableState(identifier: string, columns: TableColumn[], param
 		}
 	}
 	for (const column of columns) {
-		const value = column.filterable ? parameters.get(`${identifier}.${column.key}`) : null;
-		if (value) state.filters[column.key] = value;
+		const kind = filterKind(column);
+		if (kind === 'values') {
+			const values = parameters.getAll(`${identifier}.${column.key}`).filter(Boolean);
+			if (values.length > 0) state.filters[column.key] = { values: [...new Set(values)] };
+		} else if (kind === 'contains') {
+			const contains = parameters.get(`${identifier}.${column.key}.contains`)?.trim();
+			if (contains) state.filters[column.key] = { contains };
+		}
+	}
+	const shown = parameters.get(`${identifier}.columns`);
+	if (shown !== null) {
+		const known = new Set(columns.map((column) => column.key));
+		state.columns = [...new Set(shown.split(','))].filter((key) => known.has(key));
 	}
 	return state;
 }

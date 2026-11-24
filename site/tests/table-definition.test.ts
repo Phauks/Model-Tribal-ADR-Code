@@ -1,7 +1,12 @@
 import { describe, expect, it } from 'vitest';
 import {
 	applyColumnFilters,
+	columnTotal,
+	defaultColumnKeys,
 	filterChoices,
+	filterIsActive,
+	filterKind,
+	shownColumnsOf,
 	filterRows,
 	readTableState,
 	rowsToCsv,
@@ -144,24 +149,51 @@ describe('column filters', () => {
 		]);
 	});
 
-	it('keeps rows whose values include the chosen one, and every row without filters', () => {
-		expect(keys(applyColumnFilters(stateRows, { states: 'New Mexico' }))).toEqual(['navajo', 'zuni']);
-		expect(keys(applyColumnFilters(stateRows, { states: '' }))).toEqual(keys(stateRows));
+	it('keeps rows whose values include any value ticked, and every row without filters', () => {
+		expect(keys(applyColumnFilters(stateRows, { states: { values: ['New Mexico'] } }))).toEqual(['navajo', 'zuni']);
+		expect(keys(applyColumnFilters(stateRows, { states: { values: ['Utah', 'New Mexico'] } }))).toEqual(['navajo', 'zuni']);
+		expect(keys(applyColumnFilters(stateRows, { states: { values: [] } }))).toEqual(keys(stateRows));
+	});
+
+	it('keeps rows whose cell contains every word typed, ignoring accents and case', () => {
+		expect(keys(applyColumnFilters(stateRows, { name: { contains: 'TRIBE' } }))).toEqual(['hopi', 'zuni']);
+		expect(keys(applyColumnFilters(stateRows, { name: { contains: 'zuñi pueblo' } }))).toEqual(['zuni']);
+		expect(keys(applyColumnFilters(stateRows, { name: { contains: '  ' } }))).toEqual(keys(stateRows));
+	});
+
+	it('gives a filterable column a list of values and a searchable one a "Contains" box', () => {
+		expect(filterKind({ key: 'a', header: 'A', filterable: true, searchable: true })).toBe('values');
+		expect(filterKind({ key: 'a', header: 'A', searchable: true })).toBe('contains');
+		expect(filterKind({ key: 'a', header: 'A' })).toBeUndefined();
+		expect(filterIsActive({ values: [], contains: ' ' })).toBe(false);
+		expect(filterIsActive({ contains: 'x' })).toBe(true);
 	});
 
 	it('writes the state into the address and reads it back', () => {
 		const written = writeTableState(
 			'nations-a',
-			{ query: ' paiute ', sort: { key: 'states', direction: 'descending' }, filters: { states: 'Utah' } },
+			{ query: ' paiute ', sort: { key: 'states', direction: 'descending' }, filters: { states: { values: ['Utah', 'Arizona'] } } },
 			new URLSearchParams('other=1&nations-a.q=old'),
 			{ key: 'name', direction: 'ascending' }
 		);
-		expect(written.toString()).toBe('other=1&nations-a.q=paiute&nations-a.sort=-states&nations-a.states=Utah');
+		expect(written.toString()).toBe('other=1&nations-a.q=paiute&nations-a.sort=-states&nations-a.states=Utah&nations-a.states=Arizona');
 		expect(readTableState('nations-a', stateColumns, written)).toEqual({
 			query: 'paiute',
 			sort: { key: 'states', direction: 'descending' },
-			filters: { states: 'Utah' }
+			filters: { states: { values: ['Utah', 'Arizona'] } }
 		});
+	});
+
+	it('writes a "Contains" filter and the columns shown, and reads them back', () => {
+		const columns: TableColumn[] = [{ ...stateColumns[0], searchable: true }, stateColumns[1], { key: 'region', header: 'Region', optional: true }];
+		const written = writeTableState('t', { query: '', filters: { name: { contains: ' paiute ' } }, columns: ['name', 'region'] }, new URLSearchParams());
+		expect(written.toString()).toBe('t.name.contains=paiute&t.columns=name%2Cregion');
+		expect(readTableState('t', columns, written)).toEqual({ query: '', filters: { name: { contains: 'paiute' } }, columns: ['name', 'region'] });
+		expect(readTableState('t', columns, new URLSearchParams('t.columns=nope,states')).columns).toEqual(['states']);
+	});
+
+	it('reads a link made before filters took several values', () => {
+		expect(readTableState('t', stateColumns, new URLSearchParams('t.states=Utah')).filters).toEqual({ states: { values: ['Utah'] } });
 	});
 
 	it('leaves the default sort out of the address and ignores unknown columns', () => {
@@ -180,5 +212,28 @@ describe('column filters', () => {
 				'Hopi Tribe,,Arizona\r\n' +
 				'"Zuni Tribe, ""Pueblo""",,New Mexico\r\n'
 		);
+	});
+});
+
+describe('the Sum row and the columns shown', () => {
+	const numberColumns: TableColumn[] = [
+		{ key: 'label', header: 'Method', isRowHeader: true },
+		{ key: 'value', header: 'Provisions', type: 'number', sum: true },
+		{ key: 'note', header: 'Note', optional: true }
+	];
+	const numberRows: TableRow[] = [
+		{ key: 'a', cells: { label: { text: 'Peacemaking' }, value: { text: '1,503', sortValue: 1503 }, note: { text: '' } } },
+		{ key: 'b', cells: { label: { text: 'Arbitration' }, value: { text: '385' }, note: { text: '' } } },
+		{ key: 'c', cells: { label: { text: 'Unknown' }, value: { text: '' }, note: { text: '' } } }
+	];
+
+	it('adds up a column from its sort values, or else its text, skipping empty cells', () => {
+		expect(columnTotal(numberColumns[1], numberRows)).toBe(1888);
+	});
+
+	it('shows every column but the optional ones until a reader chooses, and always the row header', () => {
+		expect(defaultColumnKeys(numberColumns)).toEqual(['label', 'value']);
+		expect(shownColumnsOf(numberColumns, undefined).map((column) => column.key)).toEqual(['label', 'value']);
+		expect(shownColumnsOf(numberColumns, ['note']).map((column) => column.key)).toEqual(['label', 'note']);
 	});
 });
