@@ -312,9 +312,35 @@ export function loadTheme(): Theme {
 	}
 }
 
+/**
+ * Where OpenDyslexic's font faces are (src/routes/opendyslexic.css). Every other font's faces come with the style sheet every page loads; these are read only by a reader who picks the font, or opens Settings, where each font choice is shown in its own typeface. src/app.html adds them before the first paint for a reader who picked the font, with the same element identifier.
+ */
+export const openDyslexicStylesheet = '/opendyslexic.css';
+const openDyslexicElementIdentifier = 'opendyslexic-faces';
+
+/** Adds OpenDyslexic's font faces to the page, once. Resolves when the style sheet has been read, or could not be. */
+export function addOpenDyslexicFaces(): Promise<void> {
+	if (typeof document === 'undefined') return Promise.resolve();
+	let link = document.getElementById(openDyslexicElementIdentifier) as HTMLLinkElement | null;
+	if (link?.sheet) return Promise.resolve();
+	if (!link) {
+		link = document.createElement('link');
+		link.id = openDyslexicElementIdentifier;
+		link.rel = 'stylesheet';
+		link.href = openDyslexicStylesheet;
+		document.head.append(link);
+	}
+	const added = link;
+	return new Promise((resolve) => {
+		added.addEventListener('load', () => resolve(), { once: true });
+		added.addEventListener('error', () => resolve(), { once: true });
+	});
+}
+
 /** Applies the settings to the page and saves them on this device. */
 export function saveSettings(settings: ReadingSettings): void {
 	const root = document.documentElement;
+	if (settings.font === 'opendyslexic') void addOpenDyslexicFaces();
 	for (const [name, value] of Object.entries(settingsAttributes(settings))) {
 		if (value === undefined) delete root.dataset[name];
 		else root.dataset[name] = value;
@@ -347,11 +373,15 @@ const fontFamilyNames: Partial<Record<Font, string>> = {
 export function downloadFont(font: Font): void {
 	const family = fontFamilyNames[font];
 	if (!family || !('fonts' in document)) return;
-	for (const face of ['400', 'italic 400', '600', '700', 'italic 700']) {
-		document.fonts.load(`${face} 1em "${family}"`).catch(() => {
-			// Offline or blocked: the next font in the token's list is used.
-		});
-	}
+	// The browser knows OpenDyslexic's faces only once their style sheet is read.
+	const facesKnown = font === 'opendyslexic' ? addOpenDyslexicFaces() : Promise.resolve();
+	void facesKnown.then(() => {
+		for (const face of ['400', 'italic 400', '600', '700', 'italic 700']) {
+			document.fonts.load(`${face} 1em "${family}"`).catch(() => {
+				// Offline or blocked: the next font in the token's list is used.
+			});
+		}
+	});
 }
 
 /** Applies the theme and saves it. "device" removes the choice, so the device decides again. */
