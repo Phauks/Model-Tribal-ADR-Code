@@ -3,7 +3,14 @@
 	// (SiteSidebar.svelte): a section's pages, a page's headings. Each entry
 	// with entries under it has a caret to its left; the entry that is the page
 	// or heading being read is marked with a bar across its whole row.
-	import type { OutlineItem } from '#lib/site-sections.ts';
+	// While an essay is edited, its case, law and analysis boxes show their
+	// icons, and a dot after an entry marks a draft change (amber), something
+	// new (an amber ring) or a section in review (purple), as in
+	// essay-editor-mockups/4 and v2-1 (src/lib/essays/editor-outline.ts).
+	import Landmark from '@lucide/svelte/icons/landmark';
+	import Lightbulb from '@lucide/svelte/icons/lightbulb';
+	import Scale from '@lucide/svelte/icons/scale';
+	import type { OutlineItem, OutlineMark } from '#lib/site-sections.ts';
 	import FoldButton from './FoldButton.svelte';
 	import Self from './SidebarTree.svelte';
 
@@ -32,6 +39,15 @@
 		ontoggle: (item: OutlineItem) => void;
 	} = $props();
 
+	const kindIcons = { case: Scale, law: Landmark, analysis: Lightbulb };
+	const markWords: Record<OutlineMark, string> = { changed: 'Changed in the draft', new: 'New in the draft', review: 'In review' };
+
+	/** A case's name and its year: "Worcester v. Georgia" and " (1832)". */
+	function caseParts(label: string): [string, string] {
+		const at = label.search(/\s\(\d{4}\)$/);
+		return at > 0 ? [label.slice(0, at), label.slice(at)] : [label, ''];
+	}
+
 	function ariaCurrent(item: OutlineItem): 'page' | 'location' | undefined {
 		if (isCurrent(item)) return 'page';
 		return item.link.startsWith('#') && isActive(item) ? 'location' : undefined;
@@ -53,9 +69,16 @@
 				/>
 				<a href={item.link} class:active aria-current={ariaCurrent(item)}>
 					{#if item.number}<span class="number">{item.number}</span>{/if}
+					{#if item.kind}
+						{@const Icon = kindIcons[item.kind]}
+						<span class="kind kind-{item.kind}"><Icon size={15} aria-hidden="true" /></span>
+					{/if}
 					<span class="label"
-						>{item.label}{#if item.note}{' '}<span class="note">({item.note})</span>{/if}</span
+						>{#if item.kind === 'case'}{@const [name, year] = caseParts(item.label)}<em>{name}</em>{year}{:else}{item.label}{/if}{#if item.note}{' '}<span
+								class="note">({item.note})</span
+							>{/if}</span
 					>
+					{#if item.mark}<span class="mark mark-{item.mark}" title={markWords[item.mark]}><span class="visually-hidden">({markWords[item.mark]})</span></span>{/if}
 				</a>
 			</div>
 			{#if branch && item.children}
@@ -134,6 +157,47 @@
 
 	.note {
 		font-style: italic;
+	}
+
+	.label {
+		flex: 1;
+		min-width: 0;
+	}
+
+	.kind {
+		flex: none;
+		display: inline-flex;
+		align-self: center;
+	}
+
+	.kind-case,
+	.kind-analysis {
+		color: var(--color-link);
+	}
+
+	.kind-law {
+		color: var(--color-action);
+	}
+
+	/* The dots, in the status colors of the essay's pills (EssayStatusPills.svelte). */
+	.mark {
+		flex: none;
+		align-self: center;
+		width: 0.55rem;
+		height: 0.55rem;
+		border-radius: 50%;
+	}
+
+	.mark-changed {
+		background: var(--color-status-draft-rule);
+	}
+
+	.mark-new {
+		border: 2px solid var(--color-status-draft-rule);
+	}
+
+	.mark-review {
+		background: var(--color-status-review-rule);
 	}
 
 	/* The page or heading being read: an orange bar and ink text. */
