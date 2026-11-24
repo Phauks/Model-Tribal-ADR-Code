@@ -64,7 +64,7 @@ const personIdentifier = (key) => `fixture-person-${key}`;
  * A value written into SQL: text in single quotes, with quotes doubled.
  * @param {string | number | null | undefined} value
  */
-function sql(value) {
+function literal(value) {
 	if (value === null || value === undefined) return 'NULL';
 	if (typeof value === 'number') return String(value);
 	return `'${String(value).replaceAll("'", "''")}'`;
@@ -76,7 +76,7 @@ function sql(value) {
  */
 function insert(table, row, conflict = 'ON CONFLICT DO NOTHING') {
 	const columns = Object.keys(row);
-	return `INSERT INTO ${table} (${columns.join(', ')}) VALUES (${columns.map((column) => sql(row[column])).join(', ')}) ${conflict};`;
+	return `INSERT INTO ${table} (${columns.join(', ')}) VALUES (${columns.map((column) => literal(row[column])).join(', ')}) ${conflict};`;
 }
 
 /**
