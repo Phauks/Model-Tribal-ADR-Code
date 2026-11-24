@@ -85,6 +85,7 @@ RECORD_FOLDERS = [
     ("content/commentary/*.md", "commentary.schema.json"),
     ("research/sessions/*/*.md", "research-session.schema.json"),
     ("research/outreach/*.yaml", "outreach-organization.schema.json"),
+    ("research/legal-help/providers/*.yaml", "legal-help-provider.schema.json"),
     ("research/search-logs/*/*/*.yaml", "search-log.schema.json"),
 ]
 

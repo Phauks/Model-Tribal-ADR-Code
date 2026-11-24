@@ -23,6 +23,12 @@ The workflow's final job, `All checks`, passes only when every other check passe
 | --- | --- | --- |
 | `analysis/dispute_resolution_practice.py` | Counts the dispute resolution records in the profiles by kind, evidence tier, recognition and region, and lists data quality flags, as JSON for `research/analyses/` | `scripts/requirements.txt` |
 
+## Legal help
+
+| Script | Does | Needs |
+| --- | --- | --- |
+| `legal-help/match_nations.py` | Matches each legal help provider in `research/legal-help/providers/` to the nation pages it serves (named in its source, a nation's own members, or every nation in a state its source covers statewide) and writes `research/legal-help/nation-matches.csv`. Fails if a record names a nation page that does not exist or a source it does not list. `--check` validates without writing | `scripts/requirements.txt` |
+
 ## Model forms
 
 | Script | Does | Needs |
