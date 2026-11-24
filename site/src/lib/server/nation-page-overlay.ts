@@ -23,6 +23,7 @@ import {
 import { imageViewerAttributeText } from '../image-viewer.ts';
 import { pacificDay } from '../change-dates.ts';
 import { historyBadgeLabel, lastChangeSentence } from '../page-history.ts';
+import { writeToTeamLink } from '../nation-team-reports.ts';
 import { readableDate } from '../readable-date.ts';
 import { claimedPage } from '../review-status.ts';
 import type { ChangeRow, LiveChanges } from './nation-page-changes.ts';
@@ -122,7 +123,7 @@ function claimedBadge(nationIdentifier: string, claim: PageClaim): string {
 			? `<p>Kept by people the nation chose:</p><ul>${offices.map((office) => `<li>${escapeHtml(office)}</li>`).join('')}</ul>`
 			: '<p>Kept by people the nation chose.</p>';
 	const page = encodeURIComponent(nationIdentifier);
-	return `<style>[data-build-status]{display:none!important}</style><span data-print-part="reviewStatus"><details class="status-popover"><summary class="review-badge review-badge-verified"><span class="visually-hidden">Who keeps this page:</span>${check}${claimedPage.label}${chevron}</summary><div class="status-panel">${who}<p>Confirmed with the nation’s office on ${readableDate(claim.claimedSince.slice(0, 10))}.</p><p class="no-print"><a href="/profile/nation-team?nation=${page}">Work for this nation? Ask to join its team</a></p></div></details></span>`;
+	return `<style>[data-build-status]{display:none!important}</style><span data-print-part="reviewStatus"><details class="status-popover"><summary class="review-badge review-badge-verified"><span class="visually-hidden">Who keeps this page:</span>${check}${claimedPage.label}${chevron}</summary><div class="status-panel">${who}<p>Confirmed with the nation’s office on ${readableDate(claim.claimedSince.slice(0, 10))}.</p><p class="no-print"><a href="${escapeHtml(writeToTeamLink(nationIdentifier))}">Write to the team</a></p><p class="no-print"><a href="/profile/nation-team?nation=${page}">Work for this nation? Ask to join its team</a></p></div></details></span>`;
 }
 
 /**

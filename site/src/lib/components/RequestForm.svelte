@@ -27,7 +27,8 @@
 		prefix = '',
 		action,
 		onresult,
-		compact = false
+		compact = false,
+		toTeam = false
 	}: {
 		kind: RequestKind;
 		nationIdentifier?: string;
@@ -46,6 +47,8 @@
 		onresult?: (result: ActionResult) => void;
 		/** One short page, for the dialog: no section headings, optional questions folded. */
 		compact?: boolean;
+		/** Written to the nation's team from its page's badge: sharing who sent it starts ticked. */
+		toTeam?: boolean;
 	} = $props();
 
 	type ActionResult = Parameters<typeof applyAction>[0];
@@ -185,7 +188,7 @@
 {#snippet detailsField()}
 	<div class="field">
 		<label for="{prefix}details">
-			{#if kind === 'correct'}What is wrong, and what should it say?{:else if kind === 'restrict' || kind === 'remove'}What should happen to the material?{:else if kind === 'contribute'}What would you like to offer?{:else if kind === 'add-nation'}Anything else we should know{compact ? ' (optional)' : ''}{:else}Your question{/if}
+			{#if kind === 'correct'}What is wrong, and what should it say?{:else if kind === 'restrict' || kind === 'remove'}What should happen to the material?{:else if kind === 'contribute'}What would you like to offer?{:else if kind === 'add-nation'}Anything else we should know{compact ? ' (optional)' : ''}{:else if toTeam}Your message{:else}Your question{/if}
 		</label>
 		{@render fieldError('details')}
 		<textarea
@@ -198,10 +201,16 @@
 	</div>
 	{#if value('nationIdentifier', nationIdentifier) && (kind === 'correct' || kind === 'question' || kind === 'contribute')}
 		<!-- Reports about a claimed page also go to the nation's team (src/lib/nation-team-reports.ts). -->
-		<p class="hint">
-			If people the nation chose keep this page, they see where and what you wrote here as well as the
-			project, but never your name or contact details.
-		</p>
+		<div class="choice">
+			<input
+				type="checkbox"
+				id="{prefix}shareWithTeam"
+				name="shareWithTeam"
+				value="yes"
+				checked={values.kind ? value('shareWithTeam') === 'yes' : toTeam}
+			/>
+			<label for="{prefix}shareWithTeam">Share my name and contact details with the nation’s team so they can write back</label>
+		</div>
 	{/if}
 {/snippet}
 
@@ -361,6 +370,9 @@
 					{/each}
 				{/if}
 			</fieldset>
+		{:else if toTeam}
+			<!-- A message to the nation's team is about its page as a whole. -->
+			<input type="hidden" name="material" value={value('material', material)} />
 		{:else if compact}
 			{@render materialField()}
 		{:else}
@@ -449,7 +461,7 @@
 			Your contact details are never published. Your name, role and contact details are deleted 12
 			months after the request is resolved, unless you asked to be credited.
 		</p>
-		<p><button class="button" type="submit">Send the request</button></p>
+		<p><button class="button" type="submit">{toTeam ? 'Send the message' : 'Send the request'}</button></p>
 	</form>
 
 <style>

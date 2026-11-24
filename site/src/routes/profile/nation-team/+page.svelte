@@ -8,6 +8,7 @@
 		proofRoutes,
 		teamLevelLabels
 	} from '#lib/nation-teams.ts';
+	import { teamAnswerDays } from '#lib/nation-team-reports.ts';
 	import type { PageProps } from './$types';
 
 	let { data, form }: PageProps = $props();
@@ -43,7 +44,8 @@
 <p>
 	A nation’s page can be kept up to date by the people the nation chooses. Once your nation confirms you,
 	your changes go live right away, labeled as coming from the nation. The project reads changes after they
-	are live.
+	are live. Your team also answers readers who write to it about the page; if nobody answers within
+	{teamAnswerDays} days, the project steps in.
 </p>
 
 {#if form && 'sent' in form}
