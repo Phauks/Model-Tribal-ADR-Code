@@ -2,6 +2,7 @@
 	import Download from '@lucide/svelte/icons/download';
 	import ExternalLink from '@lucide/svelte/icons/external-link';
 	import Breadcrumbs from '#lib/components/Breadcrumbs.svelte';
+	import CopyHash from '#lib/components/CopyHash.svelte';
 	import type { PageProps } from './$types';
 
 	let { data }: PageProps = $props();
@@ -53,7 +54,7 @@
 			<dd>{data.capturedText}</dd>
 		{/if}
 		<dt>SHA-256</dt>
-		<dd><code class="hash">{data.sha256}</code> · <a href={data.verify}>Verify File</a></dd>
+		<dd><CopyHash sha256={data.sha256} label="this document" /> · <a href={data.verify}>Verify File</a></dd>
 		<dt>Take it down</dt>
 		<dd><a href={data.removal}>Ask to remove or redact this copy</a></dd>
 	</dl>
@@ -102,10 +103,6 @@
 
 	.details dd {
 		margin: 0;
-	}
-
-	.hash {
-		word-break: break-all;
 	}
 
 	.frame {

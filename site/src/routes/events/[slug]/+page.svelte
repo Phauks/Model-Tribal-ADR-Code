@@ -1,6 +1,7 @@
 <script lang="ts">
 	// An event's page (site/COLLABORATION.md, "Events").
 	import Breadcrumbs from '#lib/components/Breadcrumbs.svelte';
+	import CopyHash from '#lib/components/CopyHash.svelte';
 	import CalendarDays from '@lucide/svelte/icons/calendar-days';
 	import CalendarPlus from '@lucide/svelte/icons/calendar-plus';
 	import Download from '@lucide/svelte/icons/download';
@@ -200,7 +201,7 @@
 					<p class="small">Each file's SHA-256 fingerprint. <a href="/verify">Verify a file</a> to see that your copy matches.</p>
 					<ul class="small">
 						{#each data.materials.filter((material) => material.ready) as material (material.address)}
-							<li>{material.title}: <code>{material.sha256}</code></li>
+							<li>{material.title}: <CopyHash sha256={material.sha256} label={material.title} /></li>
 						{/each}
 					</ul>
 				</details>
@@ -461,10 +462,6 @@
 		display: flex;
 		flex-wrap: wrap;
 		gap: var(--space-3);
-	}
-
-	.hashes code {
-		overflow-wrap: anywhere;
 	}
 
 	.description {
