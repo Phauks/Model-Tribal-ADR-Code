@@ -76,7 +76,8 @@ const column = `${wide} .pages-column .pages-scroll`;
 	});
 	await page.goto(`${base}/nations/navajo-nation`, { waitUntil: 'networkidle' });
 	check((await page.locator(`${wide} .sections-column .outline`).count()) === 0, 'The list of sections lists pages inside a section');
-	check((await page.locator(`${wide} .sections-column .sections button.fold`).count()) === 0, 'The list of sections has carets');
+	// The list of sections folds open only each section's own few pages, never its long list (Trevor, Nov. 24, 2026).
+	check((await page.locator(`${wide} .sections-column .section-pages a[href^="/nations/navajo"]`).count()) === 0, 'The list of sections lists the nations');
 	check(!(await page.locator(`${wide} .sections-column`).isVisible()), 'The list of sections shows beside the section\'s panel');
 	check(await page.locator(column).isVisible(), 'The section\'s panel does not show');
 	const pages = await page.locator(`${column} > ul.outline > li > .entry > a`).evaluateAll((list) => list.map((a) => a.getAttribute('href')));
@@ -126,7 +127,7 @@ const column = `${wide} .pages-column .pages-scroll`;
 	check(!(await menu.evaluate((element) => element.open)), 'Escape did not close the phone menu');
 	await menu.locator('summary').click();
 	await menu.getByRole('button', { name: 'All sections' }).click();
-	await menu.locator('.sections > li > a[href="/nations"]').click();
+	await menu.locator('.sections .section-row > a[href="/nations"]').click();
 	await page.waitForURL(`${base}/nations`);
 	await page.waitForTimeout(300);
 	check(!(await menu.evaluate((element) => element.open)), 'The phone menu stayed open after choosing a page');
@@ -198,6 +199,20 @@ const column = `${wide} .pages-column .pages-scroll`;
 	check((await caret.getAttribute('aria-expanded')) === 'false', 'The sections did not stay shut on the next page');
 	await caret.click();
 	check(await list.isVisible(), 'The caret does not open the sections again');
+	// A section's caret opens its own pages under it, and shuts them again.
+	const nations = page.locator(`${wide} .sections-column button[title="Pages in Nations"]`);
+	const nationsPages = page.locator(`${wide} .sections-column .section-pages a[href="/nations/map"]`);
+	check(!(await nationsPages.isVisible()), "Nations' pages show outside the section");
+	await nations.click();
+	check(await nationsPages.isVisible(), "Nations' caret does not open its pages");
+	await nations.click();
+	check(!(await nationsPages.isVisible()), "Nations' caret does not shut its pages");
+	// The heading's name opens and shuts the list too (Trevor, Nov. 24, 2026).
+	const name = page.locator(`${wide} .sections-column .group-heading label.group-title`);
+	await name.click();
+	check(!(await list.isVisible()) && (await caret.getAttribute('aria-expanded')) === 'false', 'Clicking "Sections" does not shut the sections');
+	await name.click();
+	check(await list.isVisible(), 'Clicking "Sections" does not open the sections again');
 	await context.close();
 }
 
