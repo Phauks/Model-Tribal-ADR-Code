@@ -37,6 +37,17 @@ serves:
   source: lsc-service-area-nnm-2
   nations:
   - jicarilla-apache-nation
+- states:
+  - AZ
+  scope: named-nations
+  nations:
+  - havasupai-tribe-of-the-havasupai-reservation
+  - hualapai-indian-tribe-of-the-hualapai-indian-reservation
+  - kaibab-band-of-paiute-indians-of-the-kaibab-indian-reservation
+  text: The Window Rock listing serves “members of the Navajo Nation, Hopi, Hualapai, Havasupai, and Kaibab-Paiute tribes with low incomes”; the Flagstaff office’s Welfare Rights Assistance serves “Havasupai, Hualapai, Kaibab Paiute tribal members with low income” and “Provides a full range of legal services in civil matters including landlord/tenant, foreclosure, domestic relations.”
+  source: arizona-211-dna-window-rock
+  link: https://search.211arizona.org/search/65aa779c-035d-56b7-b5af-a9b89be9cefd
+  note: Found Nov. 24, 2026 in the sweep of nations with no legal help match. Both 211 Arizona listings say “Last Assured 07/01/2026.” The Flagstaff listing is source arizona-211-dna-flagstaff-welfare-rights.
 note: The home page asks visitors to pass a bot check, so it was not read; the link was confirmed by New Mexico Courts’ resource list.
 sources:
 - id: lsc-service-area-naz-5
@@ -69,4 +80,18 @@ sources:
   accessed: '2026-11-24'
   verification: page-read
   supports: DNA serves people on the Navajo, Hopi and Jicarilla Apache Reservations; offices in Window Rock, Fort Defiance, Chinle, Tuba City, Flagstaff, Keams Canyon (Hopi) and Farmington; centralized intake 1-833-362-1102.
+- id: arizona-211-dna-window-rock
+  title: DNA - People’s Legal Services
+  publisher: 211 Arizona (Solari Crisis and Human Services)
+  link: https://search.211arizona.org/search/eb431b4b-2147-59fb-b35e-a2592504e611
+  accessed: '2026-11-24'
+  verification: page-read
+  supports: Eligibility naming the Hualapai, Havasupai and Kaibab-Paiute tribes; no fees; last assured July 1, 2026. Read through an AI fetch tool, which returns the page’s text; the quoted words were checked by a second read.
+- id: arizona-211-dna-flagstaff-welfare-rights
+  title: Welfare Rights Assistance | DNA - People’s Legal Services - Flagstaff
+  publisher: 211 Arizona (Solari Crisis and Human Services)
+  link: https://search.211arizona.org/search/65aa779c-035d-56b7-b5af-a9b89be9cefd
+  accessed: '2026-11-24'
+  verification: page-read
+  supports: Eligibility naming Havasupai, Hualapai and Kaibab Paiute tribal members; civil services; Tuesday intake hours. Read through an AI fetch tool, which returns the page’s text; the quoted words were checked by a second read.
 checked: '2026-11-24'

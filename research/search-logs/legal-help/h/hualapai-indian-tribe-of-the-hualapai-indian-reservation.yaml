@@ -1,0 +1,56 @@
+profile: content/tribes/h/hualapai-indian-tribe-of-the-hualapai-indian-reservation.yaml
+topic: legal-help
+status: found
+last_searched: '2026-11-24'
+searches:
+- date: '2026-11-24'
+  searched_by: Claude (AI assistant)
+  method: browser
+  place_kind: web-search
+  address: Web search (search engine)
+  query: Hualapai Tribe legal aid members legal services
+  outcome: found
+  reason: Results included a Hualapai public-defenders page, but that page returned a 404 when read.
+  records:
+  - research/legal-help/providers/dna-peoples-legal-services.yaml
+- date: '2026-11-24'
+  searched_by: Claude (AI assistant)
+  method: browser
+  place_kind: tribal-court-site
+  address: https://hualapai-nsn.gov/government/tribal-court/public-defenders
+  outcome: dead-link
+  reason: The public-defenders page returned a 404 error page with no description of any office.
+- date: '2026-11-24'
+  searched_by: Claude (AI assistant)
+  method: browser
+  place_kind: nation-website
+  address: https://www.hualapai-nsn.gov/
+  outcome: not-found
+  reason: Home page lists only navigation labels (Tribal Court, Public Defenders, Prosecutor) with no service description.
+- date: '2026-11-24'
+  searched_by: Claude (AI assistant)
+  method: browser
+  place_kind: web-search
+  address: Web search (search engine)
+  query: Hualapai Tribal Court public defender office members
+  outcome: not-found
+  reason: Returned only the dead public-defenders page and unrelated job listings.
+- date: '2026-11-24'
+  searched_by: Claude (AI assistant)
+  method: browser
+  place_kind: web-search
+  address: Web search (search engine)
+  query: DNA People's Legal Services Native American tribes Hualapai Havasupai Kaibab-Paiute eligibility
+  outcome: found
+  reason: Returned DNA listings naming Hualapai members with low income.
+  records:
+  - research/legal-help/providers/dna-peoples-legal-services.yaml
+- date: '2026-11-24'
+  searched_by: Claude (AI assistant)
+  method: browser
+  place_kind: legal-aid-site
+  address: https://search.211arizona.org/search/eb431b4b-2147-59fb-b35e-a2592504e611
+  outcome: found
+  reason: DNA listing names Hualapai tribal members with low income.
+  records:
+  - research/legal-help/providers/dna-peoples-legal-services.yaml

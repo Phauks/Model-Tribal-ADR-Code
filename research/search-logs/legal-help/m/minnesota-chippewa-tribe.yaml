@@ -1,0 +1,61 @@
+profile: content/tribes/m/minnesota-chippewa-tribe.yaml
+topic: legal-help
+status: found
+last_searched: '2026-11-24'
+searches:
+- date: '2026-11-24'
+  searched_by: Claude (AI assistant)
+  method: browser
+  place_kind: web-search
+  address: Web search (search engine)
+  query: Minnesota Chippewa Tribe legal aid members legal services
+  outcome: found
+  reason: Results surfaced the Leech Lake Legal Department page, Anishinabe Legal Services listings, and the State Law Library MCT guide.
+  records:
+  - research/legal-help/providers/anishinabe-legal-services.yaml
+  - research/legal-help/providers/indian-legal-assistance-program-duluth.yaml
+  - research/legal-help/providers/mille-lacs-band-member-legal-aid.yaml
+- date: '2026-11-24'
+  searched_by: Claude (AI assistant)
+  method: browser
+  place_kind: nation-website
+  address: https://mnchippewatribe.org/
+  outcome: not-found
+  reason: 'Umbrella tribe home page read: no legal aid, legal services, or member legal help; only Court and Legal links are absent, governance and member services pages listed.'
+- date: '2026-11-24'
+  searched_by: Claude (AI assistant)
+  method: browser
+  place_kind: nation-website
+  address: https://llojibwe.org/admin/legal.html
+  outcome: found
+  reason: Leech Lake Band page (a band of the MCT, not the umbrella's own site) names Anishinaabe Legal Services for band members and describes RNPDC criminal defense for Leech Lake and White Earth enrollees.
+  records:
+  - research/legal-help/providers/anishinabe-legal-services.yaml
+  - research/legal-help/providers/indian-legal-assistance-program-duluth.yaml
+  - research/legal-help/providers/mille-lacs-band-member-legal-aid.yaml
+- date: '2026-11-24'
+  searched_by: Claude (AI assistant)
+  method: browser
+  place_kind: legal-aid-site
+  address: https://helpmeconnect.web.health.state.mn.us/HelpMeConnect/Providers/Anishinabe_Legal_Services,_Inc./Legal_Assistance/1
+  outcome: found
+  reason: 'State directory listing read: Anishinabe Legal Services serves Leech Lake, Red Lake and White Earth reservations, free for income below 125% FPG.'
+  records:
+  - research/legal-help/providers/anishinabe-legal-services.yaml
+  - research/legal-help/providers/indian-legal-assistance-program-duluth.yaml
+  - research/legal-help/providers/mille-lacs-band-member-legal-aid.yaml
+- date: '2026-11-24'
+  searched_by: Claude (AI assistant)
+  method: browser
+  place_kind: legal-aid-site
+  address: https://www.anishinaabelegal.org/
+  outcome: blocked
+  reason: 'Provider''s own site could not be read: robots.txt unreachable, so its page was not fetched.'
+- date: '2026-11-24'
+  searched_by: Claude (AI assistant)
+  method: browser
+  place_kind: legal-aid-site
+  address: https://mncourts.libguides.com/american-indian-law/minnesota-chippewa-tribe
+  outcome: not-found
+  reason: 'State Law Library MCT research guide read: names no legal aid, legal services, or self-help provider for the MCT or its bands.'
+next_steps: 'A person could open the pages that refused or timed out: https://www.anishinaabelegal.org/.'

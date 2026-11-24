@@ -1,0 +1,99 @@
+profile: content/tribes/s/seneca-nation-of-indians.yaml
+topic: legal-help
+status: found
+last_searched: '2026-11-24'
+searches:
+- date: '2026-11-24'
+  searched_by: Claude (AI assistant)
+  method: browser
+  place_kind: web-search
+  address: Web search (search engine)
+  query: Seneca Nation of Indians legal aid members legal services
+  outcome: found
+  reason: Results surfaced the Buffalo Native American legal clinic article and sni.org court pages, which were then read.
+  records:
+  - research/legal-help/providers/seneca-nation-surrogates-court-wills-assistance.yaml
+  - research/legal-help/providers/native-american-legal-assistance-clinic-buffalo.yaml
+- date: '2026-11-24'
+  searched_by: Claude (AI assistant)
+  method: browser
+  place_kind: nation-website
+  address: https://sni.org/about-our-government/judicial/
+  outcome: found
+  reason: Surrogate's Court page lists wills and power of attorney assistance for Seneca Nation members; no legal aid office for individuals was described.
+  records:
+  - research/legal-help/providers/seneca-nation-surrogates-court-wills-assistance.yaml
+  - research/legal-help/providers/native-american-legal-assistance-clinic-buffalo.yaml
+- date: '2026-11-24'
+  searched_by: Claude (AI assistant)
+  method: browser
+  place_kind: nation-website
+  address: https://sni.org/app/uploads/2022/03/FINAL-Legal-Advisor-Description-COA.pdf
+  outcome: not-found
+  reason: The Legal Advisor position provides legal advice to Court of Appeals judges, not to individual members, and bars representing individuals in the judiciary.
+- date: '2026-11-24'
+  searched_by: Claude (AI assistant)
+  method: browser
+  place_kind: legal-aid-site
+  address: https://city-data.com/forum/new-york/2486480-native-american-culture-ny-state-13.html
+  outcome: found
+  reason: A 2019 post describes a Native American legal aid clinic in Buffalo open to Native Americans of any descent; the page is dated 2019 and I could not confirm the clinic still operates.
+  records:
+  - research/legal-help/providers/seneca-nation-surrogates-court-wills-assistance.yaml
+  - research/legal-help/providers/native-american-legal-assistance-clinic-buffalo.yaml
+- date: '2026-11-24'
+  searched_by: Claude (AI assistant)
+  method: browser
+  place_kind: web-search
+  address: Web search (search engine)
+  query: Native American Community Services Buffalo legal aid clinic Volunteer Lawyers Project Lippes
+  outcome: found
+  reason: Lippes Mathias page (Nov 13, 2019) confirms the Native American Legal Assistance Clinic at Native American Community Services with the ECBA Volunteer Lawyers Project, but names no tribes and gives no eligibility.
+  records:
+  - research/legal-help/providers/seneca-nation-surrogates-court-wills-assistance.yaml
+  - research/legal-help/providers/native-american-legal-assistance-clinic-buffalo.yaml
+- date: '2026-11-24'
+  searched_by: Claude (AI assistant)
+  method: browser
+  place_kind: web-search
+  address: Web search (search engine)
+  query: Legal Assistance of Western New York Native American tribal members Seneca Tuscarora
+  outcome: not-found
+  reason: No LawNY page about Native American or tribal services turned up.
+- date: '2026-11-24'
+  searched_by: Claude (AI assistant)
+  method: browser
+  place_kind: legal-aid-site
+  address: https://www.lawny.org/print/pdf/node/145
+  outcome: not-found
+  reason: Legal Assistance of Western New York's Community Development Project describes services for community groups only; it names no tribe or Native American service; Seneca appears only as a county name.
+- date: '2026-11-24'
+  searched_by: Claude (AI assistant)
+  method: browser
+  place_kind: web-search
+  address: Web search (search engine)
+  query: Neighborhood Legal Services Buffalo Native American Indian law project Seneca
+  outcome: not-found
+  reason: Results were generic NLS and Justia pages with no Native American or Seneca-specific service.
+- date: '2026-11-24'
+  searched_by: Claude (AI assistant)
+  method: browser
+  place_kind: web-search
+  address: Web search (search engine)
+  query: New York legal aid Native American program
+  outcome: not-found
+  reason: 'Statewide search, nothing for this nation: Returned the American Indian Law Alliance listings (NYC) and LawHelpNY Native law page.'
+- date: '2026-11-24'
+  searched_by: Claude (AI assistant)
+  method: browser
+  place_kind: legal-aid-site
+  address: https://www.lawhelpny.org/issues/discrimination-and-civil-rights/native-american-law-issues
+  outcome: not-found
+  reason: 'Statewide search: Read the LawHelpNY Native American law page; it names no organization and links only to a generic find-legal-help search.'
+- date: '2026-11-24'
+  searched_by: Claude (AI assistant)
+  method: browser
+  place_kind: legal-aid-site
+  address: https://www.probono.net/oppsguide/organization.53858?print=1
+  outcome: not-found
+  reason: 'Statewide search, nothing for this nation: Read the American Indian Law Alliance listing; it describes free legal services for the NYC Native American community.'

@@ -3,14 +3,29 @@ name: Indian Legal Clinic, Arizona State University
 kind: law-school-clinic
 operator: law-school
 outreach_record: arizona-state-university-indian-legal-program
-status: to-classify
+link: https://law.asu.edu/index.php/experiences/clinics/indian-legal
+link_label: Indian Legal Clinic
+services:
+- representation
+- wills
+who_can_use: Tribal Nations and individuals; estate planning clinics for Tribal members who own trust or restricted property.
+location: Sandra Day O’Connor College of Law, Phoenix, Arizona
 serves:
 - states:
   - AZ
-  scope: unclassified
-  text: Grabbed from the outreach list; who the clinic serves is in its outreach record and not yet classified here.
-  source: outreach-record
+  scope: region
+  text: “The Indian Legal Clinic provides law students with the unique opportunity to represent clients in various civil and criminal matters in Tribal, state and federal courts.” “Additionally, the Clinic frequently represents individual Tribal members in civil actions.” Its estate planning course ends with “a two-day (all day) estate planning clinic for a Tribal Nation that takes place on the Tribal Nation’s reservation.”
+  source: asu-indian-legal-clinic-page
+  note: The page names no nation it serves, so the clinic is not matched to nations.
+note: Classified Nov. 24, 2026 from the clinic’s own page. Law school clinics are not shown on nation pages.
 sources:
+- id: asu-indian-legal-clinic-page
+  title: Indian Legal Clinic
+  publisher: Sandra Day O’Connor College of Law, Arizona State University
+  link: https://law.asu.edu/index.php/experiences/clinics/indian-legal
+  accessed: '2026-11-24'
+  verification: page-read
+  supports: Who the clinic represents, the estate planning clinics, and where it practices.
 - id: outreach-record
   title: Outreach record
   publisher: This project

@@ -1,0 +1,43 @@
+profile: content/tribes/l/little-shell-tribe-of-chippewa-indians-of-montana.yaml
+topic: legal-help
+status: found
+last_searched: '2026-11-24'
+searches:
+- date: '2026-11-24'
+  searched_by: Claude (AI assistant)
+  method: browser
+  place_kind: web-search
+  address: Web search (search engine)
+  query: Little Shell Tribe of Chippewa Indians legal aid members
+  outcome: not-found
+  reason: Results were history, tribal council, BIA petition, and health clinic pages; no legal aid text. The MontanaLawHelp page surfaced in a later search.
+- date: '2026-11-24'
+  searched_by: Claude (AI assistant)
+  method: browser
+  place_kind: nation-website
+  address: https://montanalittleshelltribe.org/
+  outcome: error
+  reason: Two WebFetch attempts were refused because the session's WebFetch budget was exhausted; the nation's own home page was not read.
+- date: '2026-11-24'
+  searched_by: Claude (AI assistant)
+  method: browser
+  place_kind: web-search
+  address: Web search (search engine)
+  query: Montana Legal Services Association Native American Indian law unit Little Shell
+  outcome: found
+  reason: 'Lead search: results include mtlsa.org and montanalawhelp.org pages naming Little Shell, but snippets carried no page text, so MLSA''s Native American or Indian law unit scope was not confirmed.'
+- date: '2026-11-24'
+  searched_by: Claude (AI assistant)
+  method: browser
+  place_kind: legal-aid-site
+  address: https://montanalawhelp.org/issues/native-american/little-shell-tribe
+  outcome: found
+  reason: Page is a Little Shell resource page on MontanaLawHelp, maintained by Montana Legal Services Association; it is an information page and does not state who is eligible for representation.
+- date: '2026-11-24'
+  searched_by: Claude (AI assistant)
+  method: browser
+  place_kind: legal-aid-site
+  address: https://mtlsa.org/?p=13907
+  outcome: error
+  reason: Lead page for MLSA's Native American work; not read because the WebFetch budget was exhausted, so whether it serves all Native Montanans or only Little Shell members is unresolved.
+next_steps: 'A person could open the pages that refused or timed out: https://montanalittleshelltribe.org/; https://mtlsa.org/?p=13907.'

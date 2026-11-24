@@ -3,14 +3,28 @@ name: Southwest Indian Law Clinic, University of New Mexico School of Law
 kind: law-school-clinic
 operator: law-school
 outreach_record: university-of-new-mexico-southwest-indian-law-clinic
-status: to-classify
+link: https://lawschool.unm.edu/indian/indian-clinic.html
+link_label: Southwest Indian Law Clinic
+services:
+- representation
+who_can_use: Native clients; also tribes, pueblos and organizations serving the Native American community.
+location: UNM School of Law, 1117 Stanford NE, Albuquerque, New Mexico
 serves:
 - states:
   - NM
-  scope: unclassified
-  text: Grabbed from the outreach list; who the clinic serves is in its outreach record and not yet classified here.
-  source: outreach-record
+  scope: region
+  text: “In the Southwest Indian Law Clinic (SILC), student attorneys represent Native clients in state, federal, and tribal courts and in governmental agency hearings. Students also have the opportunity to work with tribes, pueblos, and organizations serving the Native American community.”
+  source: unm-southwest-indian-law-clinic-page
+  note: The page names no nation it serves, so the clinic is not matched to nations.
+note: Classified Nov. 24, 2026 from the clinic’s own page. Law school clinics are not shown on nation pages.
 sources:
+- id: unm-southwest-indian-law-clinic-page
+  title: Southwest Indian Law Clinic
+  publisher: University of New Mexico School of Law
+  link: https://lawschool.unm.edu/indian/indian-clinic.html
+  accessed: '2026-11-24'
+  verification: page-read
+  supports: Who the clinic represents and its address.
 - id: outreach-record
   title: Outreach record
   publisher: This project

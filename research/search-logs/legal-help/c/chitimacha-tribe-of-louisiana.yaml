@@ -1,0 +1,80 @@
+profile: content/tribes/c/chitimacha-tribe-of-louisiana.yaml
+topic: legal-help
+status: found
+last_searched: '2026-11-24'
+searches:
+- date: '2026-11-24'
+  searched_by: Claude (AI assistant)
+  method: browser
+  place_kind: web-search
+  address: Web search (search engine)
+  query: Chitimacha Tribe of Louisiana legal aid
+  outcome: not-found
+  reason: Results were tribal court code PDFs and directory listings; no legal aid or self-help office named.
+- date: '2026-11-24'
+  searched_by: Claude (AI assistant)
+  method: browser
+  place_kind: web-search
+  address: Web search (search engine)
+  query: Chitimacha tribal court self-help legal services members
+  outcome: not-found
+  reason: Results were court titles and codes; no self-help center or legal services for members.
+- date: '2026-11-24'
+  searched_by: Claude (AI assistant)
+  method: browser
+  place_kind: nation-website
+  address: https://www.chitimacha.gov/
+  outcome: not-found
+  reason: Home page links to Tribal Courts and Enrollment only; no legal aid or legal services text.
+- date: '2026-11-24'
+  searched_by: Claude (AI assistant)
+  method: browser
+  place_kind: tribal-court-site
+  address: https://chitimacha.gov/departments-services/tribal-courts
+  outcome: not-found
+  reason: Court page covers filing rules and fee waiver form No. 4 only; no public defender or self-help text.
+- date: '2026-11-24'
+  searched_by: Claude (AI assistant)
+  method: browser
+  place_kind: tribal-court-site
+  address: https://chitimacha.gov/sites/default/files/JOB%20Contractual%20Juvenile%20%26%20Criminal%20Public%20Defender.pdf
+  outcome: found
+  reason: Posting describes the Tribal Court public defender role within the Chitimacha Tribal Courts department; it does not say whom the defender represents, and it is a contract job posting, so current availability is unknown.
+- date: '2026-11-24'
+  searched_by: Claude (AI assistant)
+  method: browser
+  place_kind: web-search
+  address: Web search (search engine)
+  query: Louisiana legal aid Native American program
+  outcome: not-found
+  reason: 'Statewide search: Results were Louisiana tribal history, grant listings, and directories; no Native legal aid program found.'
+- date: '2026-11-24'
+  searched_by: Claude (AI assistant)
+  method: browser
+  place_kind: web-search
+  address: Web search (search engine)
+  query: louisianalawhelp.org Native American Indian law tribal legal issues
+  outcome: not-found
+  reason: 'Statewide search: Returned only national Native law research guides; no LawHelp Louisiana Native topic page surfaced. The site itself was not fetched.'
+- date: '2026-11-24'
+  searched_by: Claude (AI assistant)
+  method: browser
+  place_kind: web-search
+  address: Web search (search engine)
+  query: Louisiana Native American tribal legal aid Pointe-au-Chien Houma Chitimacha legal services
+  outcome: not-found
+  reason: 'Statewide search: Returned state tribal list and Chitimacha pages; no legal aid program for tribal members.'
+- date: '2026-11-24'
+  searched_by: Claude (AI assistant)
+  method: browser
+  place_kind: nation-website
+  address: https://unitedhoumanation.org/community-programs/
+  outcome: not-found
+  reason: 'Statewide search: Read the page; it describes employment, diabetes, and youth programs and no legal aid.'
+- date: '2026-11-24'
+  searched_by: Claude (AI assistant)
+  method: browser
+  place_kind: nation-website
+  address: https://www.chitimacha.gov/departments-services/human-services
+  outcome: not-found
+  reason: 'Statewide search: Read the Chitimacha human services page; it lists mediation counseling but no legal aid.'

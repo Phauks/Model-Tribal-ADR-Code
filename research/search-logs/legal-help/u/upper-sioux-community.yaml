@@ -1,0 +1,42 @@
+profile: content/tribes/u/upper-sioux-community.yaml
+topic: legal-help
+status: partly-searched
+last_searched: '2026-11-24'
+searches:
+- date: '2026-11-24'
+  searched_by: Claude (AI assistant)
+  method: browser
+  place_kind: web-search
+  address: Web search (search engine)
+  query: Upper Sioux Community legal aid members legal services
+  outcome: not-found
+  reason: Results were the tribal court and social service pages and general referral lists; no member legal aid found.
+- date: '2026-11-24'
+  searched_by: Claude (AI assistant)
+  method: browser
+  place_kind: tribal-court-site
+  address: https://www.uppersiouxcommunity-nsn.gov/tribal-court
+  outcome: not-found
+  reason: 'Tribal Court page read: judicial services, forms and fees; no self-help center, legal aid or public defender described and no eligibility stated.'
+- date: '2026-11-24'
+  searched_by: Claude (AI assistant)
+  method: browser
+  place_kind: nation-website
+  address: https://www.uppersiouxcommunity-nsn.gov/
+  outcome: error
+  reason: Home page not read; the WebFetch budget ran out before it could be fetched.
+- date: '2026-11-24'
+  searched_by: Claude (AI assistant)
+  method: browser
+  place_kind: legal-aid-site
+  address: https://mn.gov/law-library/research-links/legal-referrals/yellowmedicine.jsp
+  outcome: not-found
+  reason: 'Yellow Medicine County referral page read: lists SMRLS, VLN and general providers with no Native American or tribal program named.'
+- date: '2026-11-24'
+  searched_by: Claude (AI assistant)
+  method: browser
+  place_kind: legal-aid-site
+  address: https://minnesotahelp.info/Providers/Southern_Minnesota_Regional_Legal_Services_SMRLS/Legal_Assistance/1
+  outcome: not-found
+  reason: 'SMRLS listing read: Yellow Medicine County is in its service area, but no mention of American Indian, tribal members, or reservations.'
+next_steps: 'A person could open the pages that refused or timed out: https://www.uppersiouxcommunity-nsn.gov/.'
