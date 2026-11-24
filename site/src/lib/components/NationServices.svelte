@@ -46,7 +46,7 @@
 			>{entry.location}</span
 		>{/if}
 	{#if entry.members && entry.members.length > 0}
-		<ul class="members" aria-label={`The ${entry.members.length} courts of ${entry.text}`}>
+		<ul class="members stacked-list" aria-label={`The ${entry.members.length} courts of ${entry.text}`}>
 			{#each entry.members as member, index (index)}
 				<li>{@render service(member)}</li>
 			{/each}
@@ -55,7 +55,7 @@
 {/snippet}
 
 {#snippet entries(category: ServiceCategory)}
-	<ul>
+	<ul class="stacked-list">
 		{#each category.entries as entry, index (index)}
 			<li>{@render service(entry)}</li>
 		{/each}
@@ -249,8 +249,8 @@
 		margin: var(--space-3) 0 var(--space-1);
 	}
 
-	dd > ul,
-	.court-flow ul:not(.beside, .members) {
+	dd > ul:not(.stacked-list),
+	.court-flow ul:not(.beside, .members, .stacked-list) {
 		margin: 0;
 		padding-left: var(--space-5);
 	}

@@ -233,6 +233,42 @@
       "items": { "$ref": "common.schema.json#/$defs/slug" },
       "uniqueItems": true
     },
+    "nations_in_case": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["checked", "named"],
+      "description": "For a court case: each Native nation or people the case names, as a party or as what the case is about, matched to its nation record. 'tribes' lists the same nation ids. A name that does not match one nation today is listed under not_linked with the reason, rather than guessed.",
+      "properties": {
+        "checked": { "type": "string", "format": "date", "description": "When the names were checked against the opinion." },
+        "named": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": ["nation", "named_as", "role"],
+            "properties": {
+              "nation": { "$ref": "common.schema.json#/$defs/slug", "description": "The nation record id." },
+              "named_as": { "type": "string", "description": "The name the case gives, which may be a former name, an older spelling, a reservation or a historical nation." },
+              "role": {
+                "enum": ["party", "government", "subject"],
+                "description": "party: the nation itself is a party (plaintiff, defendant, petitioner, respondent or intervenor). government: its officials, council, court, agency or business arm is a party. subject: the case concerns the nation, its land, its court or its members, but the nation is not a party."
+              },
+              "historical": { "type": "boolean", "description": "True when the case names a historical nation or band whose people are today part of the linked nation, or of several nations." },
+              "note": { "type": "string" }
+            }
+          }
+        },
+        "not_linked": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": ["named_as", "reason"],
+            "properties": { "named_as": { "type": "string" }, "reason": { "type": "string" } }
+          }
+        }
+      }
+    },
     "jurisdictions": {
       "type": "array",
       "description": "The governments or legal orders the source concerns.",

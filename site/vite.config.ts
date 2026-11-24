@@ -228,7 +228,10 @@ function sectionLists(): Plugin {
 			const list = [...nationIndexRows()]
 				.sort((first, second) => first.name.localeCompare(second.name, 'en-US'))
 				.map((row) => [row.name, row.id]);
-			return `export const nationNames = ${JSON.stringify(list)};`;
+			// The list also holds the Native Hawaiian community and the Indigenous
+			// peoples of the territories; the count beside "Native nations" leaves them out.
+			const nationCount = nationIndexRows().filter((row) => row.entityType === 'native-nation').length;
+			return `export const nationNames = ${JSON.stringify(list)};\nexport const nationCount = ${nationCount};`;
 		}
 	};
 }

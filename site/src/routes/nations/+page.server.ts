@@ -1,15 +1,16 @@
 import { nations } from '#lib/server/content.ts';
-import { groupsOf, letterLinks, nationIndexRows, stateLinks } from '#lib/server/nation-index.ts';
+import { groupsOf, nationIndexRows } from '#lib/server/nation-index.ts';
 import type { PageServerLoad } from './$types';
 
 export const load: PageServerLoad = () => {
-	const rows = nationIndexRows();
+	const groups = groupsOf(nationIndexRows());
 	return {
-		letters: letterLinks(),
-		states: stateLinks(),
-		// The small groups are listed here in full; the Native nations are browsed by letter or state.
-		otherGroups: groupsOf(rows.filter((row) => row.entityType !== 'native-nation')),
-		nationCount: rows.filter((row) => row.entityType === 'native-nation').length,
+		// Every Native nation in one table (Trevor, Nov. 23, 2026: "why not just
+		// one big table?"). The Native Hawaiian community and the Indigenous
+		// peoples of the territories keep tables of their own, never listed as
+		// tribes (docs/terms).
+		nationGroup: groups.find((group) => group.entityType === 'native-nation'),
+		otherGroups: groups.filter((group) => group.entityType !== 'native-nation'),
 		example: nations().some((record) => record.example)
 	};
 };

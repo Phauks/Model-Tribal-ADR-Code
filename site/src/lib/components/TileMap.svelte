@@ -165,8 +165,11 @@
 			surface: token('surface'),
 			classes: [0, 1, 2, 3, 4].map((step) => token(`map-class-${step}`))
 		};
-		const flavor = { ...basemaps.namedFlavor(dark ? 'black' : 'white'), background: colors.paper, earth: colors.paper, water: colors.surface };
+		// Where there are no basemap tiles, the background reads as water, with the world's land drawn on it from the basemap's one whole-world tile (see the "world" source below).
+		const flavor = { ...basemaps.namedFlavor(dark ? 'black' : 'white'), background: colors.surface, earth: colors.paper, water: colors.surface };
 		const base = basemaps.layers('basemap', flavor, { lang: 'en' }) as LayerSpecification[];
+		const worldLand: LayerSpecification = { id: 'world-land', type: 'fill', source: 'world', 'source-layer': 'earth', paint: { 'fill-color': colors.paper } };
+		base.splice(base.findIndex((layer) => layer.type === 'background') + 1, 0, worldLand);
 		// The project's layers go above the land and water and below the roads and names, so towns and roads still show through.
 		const firstRoad = base.findIndex((layer) => layer.id.startsWith('roads_'));
 		const under = base.slice(0, firstRoad);
@@ -360,6 +363,14 @@
 					tiles: [`${origin}/map-tiles/${data.tiles.basemap}/{z}/{x}/{y}.mvt`],
 					maxzoom: data.tiles.maximumZoom,
 					attribution: '<a href="https://www.openstreetmap.org/copyright">© OpenStreetMap contributors</a>, <a href="https://protomaps.com">Protomaps</a>'
+				},
+				/**
+				 * The basemap is cut to the United States and its territories (geography/map-tile-region.json), so elsewhere, such as across the Pacific or in Europe, it has no tiles past the first zoom levels and the map was blank there (Trevor, 2026-11-23). This source reads only the basemap's zoom 0 tile, which holds the whole world in outline, and MapLibre enlarges it at every zoom: the rest of the world's land shows in rough outline, while the United States and its territories keep their full detail on top.
+				 */
+				world: {
+					type: 'vector',
+					tiles: [`${origin}/map-tiles/${data.tiles.basemap}/{z}/{x}/{y}.mvt`],
+					maxzoom: 0
 				},
 				places: {
 					type: 'vector',

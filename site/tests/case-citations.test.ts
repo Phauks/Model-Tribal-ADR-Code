@@ -39,6 +39,9 @@ describe('case box facts', () => {
 		expect(facts.Dissent).toBe('<strong>Baldwin</strong> (dissenting opinion)');
 		expect(facts['Vote not recorded']).toBe('Johnson');
 		expect(Object.keys(facts)[0]).toBe('Decided');
+		expect(facts.Nations).toBe(
+			'<a href="/nations/cherokee-nation">Cherokee Nation</a>; <a href="/nations/eastern-band-of-cherokee-indians">Eastern Band of Cherokee Indians</a>; <a href="/nations/united-keetoowah-band-of-cherokee-indians-in-oklahoma">United Keetoowah Band of Cherokee Indians in Oklahoma</a>'
+		);
 	});
 
 	it('gives each court date its own line, in the order they happened', () => {

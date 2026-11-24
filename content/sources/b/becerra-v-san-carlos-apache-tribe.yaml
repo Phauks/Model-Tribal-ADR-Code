@@ -100,12 +100,22 @@ rights:
     Opinions of federal courts are works of the U.S. government (17 U.S.C. § 105); the host site's own
     additions are not reproduced.
   redistribution: true
-tribes:
-- san-carlos-apache-tribe-of-the-san-carlos-reservation
-- northern-arapaho-tribe-of-the-wind-river-reservation
 found_in:
 - 2026-11-21-legal-history-and-key-cases
 notes: >-
   Full citation: 602 U.S. 222 (2024). Official report scan or slip opinion: https://www.supremecourt.gov/opinions/23pdf/602us1r30_g3bi.pdf.
   Pinpoint from the preliminary-print PDF (602 U.S. Part 1) on supremecourt.gov. Citator check (KeyCite)
   pending; see research/pull-lists/2026-11-21-legal-history-westlaw.md.
+tribes:
+- san-carlos-apache-tribe-of-the-san-carlos-reservation
+- northern-arapaho-tribe-of-the-wind-river-reservation
+nations_in_case:
+  checked: '2026-11-23'
+  named:
+  - nation: san-carlos-apache-tribe-of-the-san-carlos-reservation
+    named_as: San Carlos Apache Tribe
+    role: party
+  - nation: northern-arapaho-tribe-of-the-wind-river-reservation
+    named_as: Northern Arapaho Tribe
+    role: party
+    note: Party to the case decided with it, Becerra v. Northern Arapaho Tribe.

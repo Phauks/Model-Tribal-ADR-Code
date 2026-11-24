@@ -58,6 +58,54 @@
 		}))
 	);
 	const enforcementMarks = $derived(new Map(data.enforcement.map((action) => [action.key, action.citations])));
+
+	// The Treaties table: Signed, Treaty, Statutes at Large, Kappler and Signed
+	// as (Trevor chose "label rows", Nov. 23, 2026: records with dates and
+	// citations go in the shared data table). The treaty's markers follow its
+	// title, as in the mockup.
+	const treatyColumns: TableColumn[] = [
+		{ key: 'signed', header: 'Signed', type: 'date', sortable: true },
+		{ key: 'treaty', header: 'Treaty', isRowHeader: true, sortable: true, searchable: true, custom: true },
+		{ key: 'statutes', header: 'Statutes at Large', sortable: true, searchable: true },
+		{ key: 'kappler', header: 'Kappler', sortable: true, searchable: true },
+		{ key: 'signedAs', header: 'Signed as', sortable: true, searchable: true, filterable: true }
+	];
+	const treatyRows: TableRow[] = $derived(
+		data.treaties.map((treaty) => ({
+			key: treaty.key,
+			cells: {
+				signed: { text: readableDate(treaty.signed), sortValue: treaty.signed },
+				treaty: { text: treaty.title, href: treaty.link },
+				statutes: { text: treaty.statutesAtLarge ?? '' },
+				kappler: { text: treaty.kappler ?? '' },
+				signedAs: { text: treaty.signedAs ?? '' }
+			}
+		}))
+	);
+	const treatyMarks = $derived(new Map(data.treaties.map((treaty) => [treaty.key, treaty.citations])));
+
+	// The court cases that name the nation, as a party or as what the case is
+	// about (Trevor, Nov. 23, 2026). Four short columns; under the case's name,
+	// its citation and source marker, then the name the case gives the nation
+	// when it is not today's name, such as a former name or a historical nation.
+	const caseColumns: TableColumn[] = [
+		{ key: 'year', header: 'Year', type: 'date', sortable: true },
+		{ key: 'name', header: 'Case', isRowHeader: true, sortable: true, searchable: true, custom: true },
+		{ key: 'court', header: 'Court', sortable: true },
+		{ key: 'role', header: 'Role', sortable: true }
+	];
+	const caseRows: TableRow[] = $derived(
+		data.cases.map((entry) => ({
+			key: entry.key,
+			cells: {
+				year: { text: entry.decided?.slice(0, 4) ?? '', sortValue: entry.decided },
+				name: { text: [entry.name, entry.citation].filter(Boolean).join(', '), sortValue: entry.name, href: entry.link },
+				court: { text: entry.court ?? '' },
+				role: { text: entry.role }
+			}
+		}))
+	);
+	const casesByKey = $derived(new Map(data.cases.map((entry) => [entry.key, entry])));
 	// Set when the image cannot be loaded, for example once the nation's website
 	// no longer publishes the reviewed copy; the figure is then hidden.
 	let imageFailed = $state(false);
@@ -109,7 +157,6 @@
 				{#if page.badges.length > 0}<RecognitionBadges badges={page.badges} explanations={page.badgeExplanations} />{/if}
 				<span data-build-status data-print-part="reviewStatus">
 					<ReviewStatus status={unclaimedPage} description="Who keeps this page:">
-						<p><strong>Unclaimed.</strong> No one from the nation keeps this page yet.</p>
 						<p class="no-print"><a href="/profile/nation-team?nation={page.id}">Work for this nation? Claim this page</a></p>
 					</ReviewStatus>
 				</span>
@@ -216,7 +263,7 @@
 						{opinions.disputeResolutionCount === opinions.count ? 'All of them' : `Of these, ${opinions.disputeResolutionCount.toLocaleString('en-US')}`} mention peacemaking, mediation, arbitration or another way of settling a dispute outside a trial; they are listed first.
 					{/if}
 				</p>
-				<ul class="opinions">
+				<ul class="opinions stacked-list">
 					{#each opinions.shown as opinion (opinion.path)}
 						<li>
 							<a href={opinion.path}><i>{opinion.name}</i></a>, {opinion.citation} ({opinion.court} {opinion.year}){#if opinion.topics.length > 0}<span class="small mentions"><span class="muted">Mentions</span>{' '}<TopicBadges topics={opinion.topics.map((topic) => ({ text: topic }))} /></span>{/if}
@@ -231,6 +278,36 @@
 				<p class="small muted">
 					Each opinion is a copy of the Caselaw Access Project’s text, with the publisher’s headnotes removed. A word listed means only that it appears in the opinion, not what the court decided.
 				</p>
+			</Collapsible>
+		{/if}
+
+		<!-- 5b. Cases involving the nation: court cases in the project's sources
+		     that name the nation, as a party or as what the case is about; each
+		     case's record says how (nations_in_case). -->
+		{#if data.cases.length > 0}
+			<Collapsible heading="Cases involving the nation" identifier="cases-heading">
+				<DataTable
+					identifier="nation-cases"
+					label="Table: cases involving the nation"
+					columns={caseColumns}
+					rows={caseRows}
+					defaultSort={{ key: 'year', direction: 'ascending' }}
+					rowName={['case', 'cases']}
+					count={false}
+					download="{data.page.id}-cases"
+				>
+					{#snippet cell(row: TableRow, column: TableColumn)}
+						{@const entry = casesByKey.get(row.key)}
+						{#if entry && column.key === 'name'}
+							<span class="case-name">{#if entry.link}<a href={entry.link}><i>{entry.name}</i></a>{:else}<i>{entry.name}</i>{/if}</span>
+							<span class="case-detail small muted">{#if entry.citation}{entry.citation}{/if}<CitationMarks marks={entry.citations} /></span>
+							<span class="case-detail case-phone small muted">{[entry.court, entry.role].filter(Boolean).join(' · ')}</span>
+							{#if entry.namedAs || entry.note}
+								<span class="case-detail small muted">{#if entry.namedAs}Named as “{entry.namedAs}.”{/if}{#if entry.namedAs && entry.note}{' '}{/if}{#if entry.note}{entry.note}{/if}</span>
+							{/if}
+						{/if}
+					{/snippet}
+				</DataTable>
 			</Collapsible>
 		{/if}
 
@@ -261,8 +338,29 @@
 		</Collapsible>
 
 		<!-- 7a. Treaties and federal ties: treaties with links to Kappler, how the land was set aside, Indian Health Service -->
-		{#if data.ties.length > 0 || data.enforcement.length > 0}
+		{#if data.treaties.length > 0 || data.ties.length > 0 || data.enforcement.length > 0}
 			<Collapsible heading="Treaties and federal ties" identifier="ties-heading">
+				{#if data.treaties.length > 0}
+					<h3 id="treaties-heading">Treaties</h3>
+					<DataTable
+						identifier="treaties"
+						label="Table: treaties"
+						columns={treatyColumns}
+						rows={treatyRows}
+						defaultSort={{ key: 'signed', direction: 'ascending' }}
+						rowName={['treaty', 'treaties']}
+						download="{data.page.id}-treaties"
+					>
+						{#snippet cell(row: TableRow, column: TableColumn)}
+							{#if column.key === 'treaty'}
+								<span class="treaty-cell"
+									>{#if row.cells.treaty.href}<a href={row.cells.treaty.href}>{row.cells.treaty.text}</a
+										>{:else}{row.cells.treaty.text}{/if}<CitationMarks marks={treatyMarks.get(row.key)} /></span
+								>
+							{/if}
+						{/snippet}
+					</DataTable>
+				{/if}
 				{#if data.ties.length > 0}<FactGroups groups={data.ties} />{/if}
 				{#if data.enforcement.length > 0}
 					<!-- The Gaming Commission's enforcement actions, as a table (Trevor, Nov. 23, 2026). -->
@@ -310,7 +408,7 @@
 		     restricted or withdrawn story is never listed (decision record 0029). -->
 		{#if data.stories.length > 0}
 			<Collapsible heading="Stories" identifier="stories-heading">
-				<ul class="stories">
+				<ul class="stories stacked-list">
 					{#each data.stories as story (story.id)}
 						{@const shared = story.nations.filter((nation) => nation.id !== data.page.id)}
 						<li>
@@ -378,10 +476,8 @@
 							href={data.image.src}
 							{...imageViewerAttributes(description, {
 								title: description,
-								credit: data.image.credit,
 								original: data.image.original,
-								source: data.image.source,
-								removal: data.image.removal
+								source: data.image.source
 							})}
 						>
 							<img
@@ -414,15 +510,54 @@
 {/snippet}
 
 <style>
-	.opinions li + li {
-		margin-top: var(--space-2);
+	.case-name,
+	.case-detail {
+		display: block;
 	}
+	.case-detail {
+		font-weight: normal;
+	}
+	/* Room between the case's link and the source marker under it, so each
+	   is a touch target of its own (WCAG 2.2, 2.5.8). */
+	.case-name {
+		margin-bottom: var(--space-2);
+	}
+	/* On a phone the Court and Role columns fold into a line under the case's
+	   name, so the name keeps the width it needs. */
+	.case-detail.case-phone {
+		display: none;
+	}
+	@media (max-width: 40rem) {
+		.case-detail.case-phone {
+			display: block;
+		}
+		:global(#nation-cases th:nth-child(n + 3)),
+		:global(#nation-cases td:nth-child(n + 3)) {
+			display: none;
+		}
+	}
+	/*
+	 * A treaty's markers follow its title with no text around them, so each
+	 * gets a full 24 by 24 pixel target, as in FactGroups (WCAG 2.2, 2.5.8),
+	 * and the title link gets two pixels above and below.
+	 */
+	.treaty-cell :global(.note-marker) {
+		padding: 5px 9px 5px 0.05em;
+	}
+
+	.treaty-cell > a {
+		padding-block: 2px;
+	}
+
+	/* Room before the line that follows a list, such as "All 949 opinions". */
+	.opinions,
+	.stories {
+		margin-bottom: var(--space-4);
+	}
+
 	.mentions {
 		display: block;
 		margin-top: var(--space-1);
-	}
-	.stories li + li {
-		margin-top: var(--space-2);
 	}
 	.story-kind {
 		display: block;
@@ -472,6 +607,9 @@
 		columns: var(--layout-card-min);
 		column-gap: var(--space-5);
 		max-width: none;
+		/* Names in columns need no bullets (Trevor, Nov. 23, 2026). */
+		list-style: none;
+		padding-left: 0;
 	}
 
 	.neighbors li {
