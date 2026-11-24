@@ -1,6 +1,6 @@
 import { beforeEach, describe, expect, it } from 'vitest';
 import type { D1Database } from '@cloudflare/workers-types/index.ts';
-import { emptyAnswers, type ProfileAnswers } from '#lib/contributors.ts';
+import { emptyAnswers, emptyPlacements, type ProfileAnswers } from '#lib/contributors.ts';
 import { deleteAccount, formerContributorName } from '#lib/server/account-deletion.ts';
 import { sessionAccount, startSession, verifiedAccount } from '#lib/server/accounts.ts';
 import {
@@ -22,12 +22,10 @@ const ready: ProfileAnswers = {
 	...emptyAnswers,
 	givenName: 'Ada',
 	familyName: 'Lovelace',
-	phone: '+1 702 555 0100',
-	ageGroup: '18-or-older',
+	birthYear: 1985,
 	interests: ['write'],
-	creditForm: 'name',
 	biography: 'Writes about mediation.',
-	biographyInCredits: true
+	placements: { ...emptyPlacements(), 'full-name': { book: true, website: true }, biography: { book: true, website: true } }
 };
 
 beforeEach(async () => {

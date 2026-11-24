@@ -1,6 +1,6 @@
 import { beforeEach, describe, expect, it } from 'vitest';
 import type { D1Database, R2Bucket } from '@cloudflare/workers-types/index.ts';
-import { emptyAnswers, pageNameOf, slugOf, type ProfileAnswers } from '#lib/contributors.ts';
+import { emptyAnswers, emptyPlacements, pageNameOf, slugOf, type Placement, type ProfileAnswers } from '#lib/contributors.ts';
 import { contributorPage, contributorPictureKey, peopleDirectory } from '#lib/server/contributor-pages.ts';
 import {
 	confirmProfile,
@@ -20,23 +20,42 @@ import { testDatabase } from './database.ts';
 let database: D1Database;
 let lead: SignedInPerson;
 const account: SignedInAccount = { subject: 'account-helper', email: 'helper@example.org', name: 'Helper' };
+const both: Placement = { book: true, website: true };
+const neither: Placement = { book: false, website: false };
 const adult: ProfileAnswers = {
 	...emptyAnswers,
 	givenName: 'Ada',
 	familyName: 'Lovelace',
+	birthYear: 1985,
 	ageGroup: '18-or-older',
+	pronouns: ['she'],
 	interests: ['write'],
-	creditForm: 'name-and-nation',
 	nationAnswer: 'listed',
 	nations: [
-		{ nationIdentifier: 'sample-nation', nationName: 'Sample Nation', connection: 'citizen', showInCredit: true },
-		{ nationIdentifier: null, nationName: 'Private Nation', connection: null, showInCredit: false }
+		{ nationIdentifier: 'sample-nation', nationName: 'Sample Nation, Arizona', relationships: ['citizen'], relationshipOther: null, ...both },
+		{ nationIdentifier: null, nationName: 'Private Nation', relationships: [], relationshipOther: null, ...neither }
 	],
-	phone: '+1 702 555 0123',
+	contacts: [{ kind: 'phone', value: '+17025550123', country: 'US', signIn: false, mayEmail: false, mayCall: true, mayText: false, preferred: true }],
+	languages: [
+		{ code: 'nav', otherName: null, speaks: true, reads: true, writes: false, website: true },
+		{ code: null, otherName: 'Private Language', speaks: true, reads: false, writes: false, website: false }
+	],
+	organization: 'Private Organization',
 	background: 'Private background.',
 	biography: 'Writes about mediation.',
-	biographyInCredits: true
+	placements: { ...emptyPlacements(), 'full-name': both, biography: both, pronouns: both, picture: both, specialties: both }
 };
+
+/** The same answers with a chosen name in place of the full name. */
+const penName = (name: string, changes: Partial<ProfileAnswers> = {}): ProfileAnswers => ({
+	...adult,
+	names: [{ name, kind: 'pen-name', ...both }],
+	...changes,
+	placements: { ...adult.placements, 'full-name': neither }
+});
+
+/** The same answers credited by a description only. */
+const described: ProfileAnswers = { ...adult, description: 'A tribal court clerk', placements: { ...adult.placements, 'full-name': neither, description: both } };
 
 function memoryBucket(): R2Bucket & { files: Map<string, Uint8Array> } {
 	const files = new Map<string, Uint8Array>();
@@ -97,10 +116,10 @@ describe('page addresses', () => {
 
 	it('gives a page only for a credit on the website by name or chosen name', () => {
 		expect(pageNameOf(adult)).toBe('Ada Lovelace');
-		expect(pageNameOf({ ...adult, creditForm: 'pseudonym', creditPseudonym: 'River Voice' })).toBe('River Voice');
-		expect(pageNameOf({ ...adult, creditForm: 'role', creditRole: 'A tribal court clerk' })).toBeNull();
-		expect(pageNameOf({ ...adult, creditForm: 'none' })).toBeNull();
-		expect(pageNameOf({ ...adult, creditOnWebsite: false })).toBeNull();
+		expect(pageNameOf(penName('River Voice'))).toBe('River Voice');
+		expect(pageNameOf(described)).toBeNull();
+		expect(pageNameOf({ ...adult, placements: emptyPlacements() })).toBeNull();
+		expect(pageNameOf({ ...adult, placements: { ...adult.placements, 'full-name': { book: true, website: false } } })).toBeNull();
 	});
 });
 
@@ -112,7 +131,10 @@ describe('contributor pages', () => {
 		expect(page).toMatchObject({
 			name: 'Ada Lovelace',
 			section: 'contributors',
-			nations: [{ name: 'Sample Nation', identifier: 'sample-nation' }],
+			nations: [{ name: 'Sample Nation, Arizona', identifier: 'sample-nation' }],
+			pronouns: 'she/her',
+			languages: ['Navajo (speaks, reads)'],
+			organization: null,
 			biography: 'Writes about mediation.',
 			pictureVersion: null,
 			essays: [],
@@ -124,7 +146,7 @@ describe('contributor pages', () => {
 	});
 
 	it('has no page for a description, no credit, or an unconfirmed change', async () => {
-		await confirmed({ ...adult, creditForm: 'role', creditRole: 'A tribal court clerk' });
+		await confirmed(described);
 		expect(await contributorPage(database, 'ada-lovelace')).toBeUndefined();
 		const [credit] = await confirmedCredits(database);
 		expect(credit.slug).toBeNull();
@@ -139,7 +161,7 @@ describe('contributor pages', () => {
 	});
 
 	it('gives a name with no Latin letters a neutral address', async () => {
-		const profile = await confirmed({ ...adult, creditForm: 'pseudonym', creditPseudonym: 'ᏣᎳᎩ' });
+		const profile = await confirmed(penName('ᏣᎳᎩ'));
 		expect(profile.publicSlug).toMatch(/^contributor-[0-9a-f]{8}$/);
 		expect((await contributorPage(database, profile.publicSlug!))?.name).toBe('ᏣᎳᎩ');
 	});
@@ -207,7 +229,7 @@ describe('profile pictures', () => {
 		expect((await contributorPage(database, 'ada-lovelace'))?.pictureVersion).toBe(withPicture.pictureUpdatedAt);
 
 		// A change of answer to under 18 hides it at once, before it is confirmed.
-		await saveAnswers(database, account, { ...adult, ageGroup: '13-to-17', creditForm: 'pseudonym', creditPseudonym: 'River Voice' });
+		await saveAnswers(database, account, penName('River Voice', { birthYear: 2011 }));
 		expect(await contributorPictureKey(database, 'ada-lovelace')).toBeUndefined();
 
 		await removePicture(database, bucket, withPicture);
@@ -221,9 +243,9 @@ describe('profile pictures', () => {
 
 describe('the People page', () => {
 	it('lists people with a public page, with the board marked and specialties from the confirmed version', async () => {
-		const profile = await confirmed({ ...adult, specialties: ['peacemaking', 'tribal-courts'], specialtyOther: 'Gaming law' });
+		const profile = await confirmed({ ...adult, specialties: ['peacemaking', 'tribal-courts'], specialtyOthers: ['Gaming law'] });
 		const other: SignedInAccount = { subject: 'account-other', email: 'other@example.org', name: 'Other' };
-		await saveAnswers(database, other, { ...adult, givenName: 'Grace', familyName: 'Hopper', creditForm: 'role', creditRole: 'A court clerk' });
+		await saveAnswers(database, other, { ...described, givenName: 'Grace', familyName: 'Hopper' });
 		await confirmProfile(database, (await profileBySubject(database, other.subject))!);
 		await setBoardMembership(database, profile, true, null, lead);
 
@@ -235,7 +257,7 @@ describe('the People page', () => {
 			boardMember: true,
 			boardOffice: null,
 			specialties: ['peacemaking', 'tribal-courts'],
-			specialtyOther: 'Gaming law',
+			specialtyOthers: ['Gaming law'],
 			essayCount: 0
 		});
 
@@ -245,14 +267,20 @@ describe('the People page', () => {
 		expect((await contributorPage(database, 'ada-lovelace'))?.specialties).toEqual(['Peacemaking', 'Tribal courts', 'Gaming law']);
 	});
 
+	it('shows specialties and the picture only when ticked for the website', async () => {
+		await confirmed({ ...adult, specialties: ['peacemaking'], placements: { ...adult.placements, specialties: neither } });
+		expect((await peopleDirectory(database))[0].specialties).toEqual([]);
+		expect((await contributorPage(database, 'ada-lovelace'))?.specialties).toEqual([]);
+	});
+
 	it('reads specialties from the form, keeping only the listed ones', () => {
 		const form = new FormData();
 		form.append('specialties', 'peacemaking');
 		form.append('specialties', 'not-a-specialty');
 		form.append('specialtyOther', '  Gaming law ');
-		const result = readProfileForm(form, []);
+		const result = readProfileForm(form, [], 'helper@example.org', 2026);
 		if (!result.ok) throw new Error('The form was refused.');
 		expect(result.answers.specialties).toEqual(['peacemaking']);
-		expect(result.answers.specialtyOther).toBe('Gaming law');
+		expect(result.answers.specialtyOthers).toEqual(['Gaming law']);
 	});
 });
