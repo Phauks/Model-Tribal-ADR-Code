@@ -35,10 +35,17 @@ export interface BenchRow {
 	to: string;
 }
 
+/** A run of words in a change, linked when it names a Justice. */
+export interface ChangePart {
+	text: string;
+	link?: string;
+}
+
 export interface Change {
 	date: string;
 	dateText: string;
-	events: string[];
+	/** Each thing that happened that day, as words and the Justices it names (Trevor, Nov. 24, 2026: the changes link the people they mention). */
+	events: ChangePart[][];
 }
 
 /** Where an opinion goes in the cases table. */
@@ -212,25 +219,44 @@ function benchRows(court: Court): BenchRow[] {
 	}));
 }
 
+/** The appointment held before this one in the same seat: seat SCTnnmm follows SCTnn(mm-1). */
+function predecessorOf(justice: Justice): Justice | undefined {
+	const number = Number(justice.seat.slice(5));
+	if (!justice.follows || !(number > 1)) return undefined;
+	const seat = `${justice.seat.slice(0, 5)}${String(number - 1).padStart(2, '0')}`;
+	return justicesFile().justices.find((candidate) => candidate.seat === seat && candidate.name === justice.follows);
+}
+
+/** A Justice's name, linked to the Justice's page. */
+function named(justice: Justice): ChangePart {
+	return { text: justice.name, link: justicePath(personOf(justice)) };
+}
+
+/** "Lewis F. Powell, Jr." ends the sentence with its own period, not "Jr..". */
+function endOnce(parts: ChangePart[]): ChangePart[] {
+	const last = parts.at(-1);
+	const before = parts.at(-2);
+	return last?.text === '.' && before?.text.endsWith('.') ? parts.slice(0, -1) : parts;
+}
+
 /** Each day the membership changed while the Court sat: who left, and who joined and in whose seat. */
 function changes(court: Court): Change[] {
 	const end = court.end ?? '9999-12-31';
-	const byDate = new Map<string, string[]>();
-	const add = (date: string, text: string) => byDate.set(date, [...(byDate.get(date) ?? []), text]);
+	const byDate = new Map<string, ChangePart[][]>();
+	const add = (date: string, parts: ChangePart[]) => byDate.set(date, [...(byDate.get(date) ?? []), endOnce(parts)]);
 	for (const justice of associatesOf(court)) {
 		if (justice.left && justice.left > court.start && justice.left < end) {
-			add(justice.left, `${justice.name} ${endingWords[justice.ending ?? ''] ?? 'left'}.`);
+			add(justice.left, [named(justice), { text: ` ${endingWords[justice.ending ?? ''] ?? 'left'}.` }]);
 		}
 		if (justice.oath > court.start && justice.oath < end) {
-			const seat = justice.follows
-				? `took the seat of ${justice.follows}`
-				: justice.new_seat
-					? `took a new seat (${justice.new_seat})`
-					: 'joined';
-			add(justice.oath, `${justice.name} ${seat}.`);
+			const predecessor = predecessorOf(justice);
+			const seat: ChangePart[] = justice.follows
+				? [{ text: ' took the seat of ' }, predecessor ? named(predecessor) : { text: justice.follows }, { text: '.' }]
+				: [{ text: justice.new_seat ? ` took a new seat (${justice.new_seat}).` : ' joined.' }];
+			add(justice.oath, [named(justice), ...seat]);
 		}
 	}
-	if (court.end) add(court.end, `Chief Justice ${court.chief.name} ${endingWords[court.chief.ending ?? ''] ?? 'left'}.`);
+	if (court.end) add(court.end, [{ text: 'Chief Justice ' }, named(court.chief), { text: ` ${endingWords[court.chief.ending ?? ''] ?? 'left'}.` }]);
 	return [...byDate.entries()]
 		.sort(([first], [second]) => first.localeCompare(second))
 		.map(([date, events]) => ({ date, dateText: readableDate(date), events }));

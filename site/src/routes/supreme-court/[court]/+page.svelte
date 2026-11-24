@@ -122,7 +122,11 @@
 			{#each data.changes as change (change.date)}
 				<li>
 					<time datetime={change.date}>{change.dateText}</time>
-					<span>{change.events.join(' ')}</span>
+					<span>
+						{#each change.events as parts, index (index)}
+							{#if index > 0}{' '}{/if}{#each parts as part, partIndex (partIndex)}{#if part.link}<a href={part.link}>{part.text}</a>{:else}{part.text}{/if}{/each}
+						{/each}
+					</span>
 				</li>
 			{/each}
 		</ol>
