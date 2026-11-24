@@ -54,7 +54,6 @@
 		eraOf,
 		eras,
 		extentOf,
-		historyEssayPath,
 		inRange,
 		isPartialDate,
 		kindLabels,
@@ -143,7 +142,7 @@
 	let newestFirst = $state(false);
 	let chipsOpen = $state(true);
 	let width = $state(760);
-	let historyPublished = $state(false);
+	let publishedHistory = $state<string[]>([]);
 
 	/* The layout ------------------------------------------------------------- */
 
@@ -172,11 +171,11 @@
 			saved = null;
 		}
 		layout = saved === 'across' ? 'across' : 'down';
-		// The era headings link to the legal history essay once it is published.
+		// Each era heading links to its chapter of the legal history timeline once that chapter is published.
 		fetch('/foundations/published.json')
 			.then((response) => (response.ok ? response.json() : []))
 			.then((items: { link?: string }[]) => {
-				historyPublished = Array.isArray(items) && items.some((item) => item.link === historyEssayPath);
+				publishedHistory = Array.isArray(items) ? items.flatMap((item) => (item.link ? [item.link] : [])) : [];
 			})
 			.catch(() => {});
 	});
@@ -658,8 +657,8 @@
 			<div class="era-heading">
 				<svelte:element this={`h${headingLevel}`}>{group.era.name}</svelte:element>
 				<span class="muted small">{group.era.years}</span>
-				{#if historyPublished}
-					<a class="small history" href="{historyEssayPath}#{group.era.anchor}">The history of this era</a>
+				{#if publishedHistory.includes(group.era.page)}
+					<a class="small history" href={group.era.page}>The history of this era</a>
 				{/if}
 			</div>
 			<ol class="entries">

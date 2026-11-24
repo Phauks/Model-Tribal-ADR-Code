@@ -82,7 +82,14 @@ export function loadContent(contentDirectory) {
       .filter((record) => publishable(record.data))
       .map((record) => [record.data.provision, record]),
   );
+  // Essays print in the order of their names without ".md", as the website
+  // lists them, so "i-legal-history-timeline" comes before its chapters
+  // "i-legal-history-timeline-01-treaty-era" and so on.
   const essays = listFiles(path.join(contentDirectory, "essays"), ".md")
+    .sort((first, second) => {
+      const [a, b] = [first, second].map((file) => file.slice(0, -".md".length));
+      return a < b ? -1 : a > b ? 1 : 0;
+    })
     .map(readMarkdownRecord)
     .filter((record) => publishable(record.data));
   // Front matter pages the website shows too, such as the acknowledgments.
