@@ -72,9 +72,11 @@
 	import Minimize from '@lucide/svelte/icons/minimize';
 	import RotateCcw from '@lucide/svelte/icons/rotate-ccw';
 	import X from '@lucide/svelte/icons/x';
+	import ColumnFilterMenu from '#lib/components/ColumnFilterMenu.svelte';
 	import TableDownload from '#lib/components/TableDownload.svelte';
 	import { keyboardScroll } from '#lib/keyboard-scroll.ts';
 	import { pageStarted } from '#lib/page-started.ts';
+	import { keepPlaced, type PopoverEdge } from '#lib/popover-place.ts';
 	import {
 		applyColumnFilters,
 		columnTotal,
@@ -131,6 +133,8 @@
 		total?: number;
 		/** The keys of the columns shown; undefined shows every column not marked optional. Bind it to set or follow the reader's choice. */
 		shownColumns?: string[];
+		/** Each column's filter. A page can bind it to set the filters and to hear when the reader changes them, as Build a table does to carry them into a grouped table. */
+		columnFilters?: ColumnFilters;
 	}
 
 	let {
@@ -152,14 +156,14 @@
 		leftOut = $bindable([]),
 		leaveOut = false,
 		total,
-		shownColumns = $bindable(undefined)
+		shownColumns = $bindable(undefined),
+		columnFilters = $bindable({})
 	}: Props = $props();
 
 	// A table drawn on the server gets its buttons once the browser has it; one made later in the browser, such as a map view's table, starts with them, so it is drawn once and does not jump (src/lib/page-started.ts).
 	let interactive = $state(pageStarted());
 	let chosenSort = $state<TableSort | undefined>(undefined);
 	let query = $state('');
-	let columnFilters = $state<ColumnFilters>({});
 	let copyStatus = $state('');
 
 	let frame = $state<HTMLElement | undefined>();
@@ -225,11 +229,6 @@
 		columnFilters = filter && filterIsActive(filter) ? { ...rest, [column.key]: filter } : rest;
 	}
 
-	function tickValue(column: TableColumn, value: string, ticked: boolean) {
-		const now = columnFilters[column.key]?.values ?? [];
-		setFilter(column, { values: ticked ? [...now, value] : now.filter((other) => other !== value) });
-	}
-
 	function clearFilters() {
 		query = '';
 		columnFilters = {};
@@ -253,53 +252,24 @@
 	/* The filter menus and the list of columns, as popovers placed under the button that opens them. */
 
 	/** The popover open now, the button that opened it, and which edge they line up on. */
-	let openPopover = $state.raw<{ key: string; popover: HTMLElement; anchor: HTMLElement; edge: 'left' | 'right' } | undefined>();
-	/** What the reader typed in "Find a value". */
-	let findText = $state('');
+	let openPopover = $state.raw<{ key: string; popover: HTMLElement; anchor: HTMLElement; edge: PopoverEdge } | undefined>();
 
-	function onPopoverToggle(event: Event, key: string, edge: 'left' | 'right') {
+	function onPopoverToggle(event: Event, key: string, edge: PopoverEdge) {
 		const popover = event.currentTarget as HTMLElement;
 		if ((event as ToggleEvent).newState === 'open') {
 			const anchor = document.querySelector<HTMLElement>(`[popovertarget="${popover.id}"]`);
 			if (!anchor) return;
-			findText = '';
 			openPopover = { key, popover, anchor, edge };
 		} else if (openPopover?.popover === popover) {
 			openPopover = undefined;
 		}
 	}
 
-	/** Under its button, inside the window, no taller than the room below. */
-	function placePopover() {
-		if (!openPopover) return;
-		const { popover, anchor, edge } = openPopover;
-		const box = anchor.getBoundingClientRect();
-		const room = document.documentElement.clientWidth;
-		const margin = 16;
-		const width = popover.offsetWidth;
-		const left = edge === 'right' ? box.right - width : box.left - 8;
-		popover.style.left = `${Math.max(margin, Math.min(left, room - width - margin))}px`;
-		popover.style.top = `${box.bottom + 6}px`;
-		popover.style.maxHeight = `${Math.max(160, window.innerHeight - box.bottom - 6 - margin)}px`;
-	}
-
-	// Placed once its content is drawn, and again as the page or the table scrolls under it.
+	// Placed under its button once its content is drawn, and again as the page or the table scrolls under it; the rows and the control row above them change as the reader ticks values, which moves the button.
 	$effect(() => {
 		if (!openPopover) return;
-		const { popover } = openPopover;
-		placePopover();
-		popover.querySelector<HTMLElement>('input:not([type="checkbox"]), input[type="checkbox"]:not(:disabled)')?.focus();
-		window.addEventListener('scroll', placePopover, true);
-		window.addEventListener('resize', placePopover);
-		// The rows and the control row above them change as the reader ticks values, which moves the button.
-		const resized = new ResizeObserver(placePopover);
-		if (frame) resized.observe(frame);
-		resized.observe(document.body);
-		return () => {
-			window.removeEventListener('scroll', placePopover, true);
-			window.removeEventListener('resize', placePopover);
-			resized.disconnect();
-		};
+		const { popover, anchor, edge } = openPopover;
+		return keepPlaced(popover, anchor, edge, frame ? [frame, document.body] : [document.body]);
 	});
 
 	/** The table filling the screen, with the browser's full screen, or filling the window where the browser has none (as on an iPhone) or refuses. */
@@ -572,7 +542,6 @@
 
 {#if interactive}
 	{#each filterColumns as column (column.key)}
-		{@const kind = filterKind(column)}
 		<div
 			id="{identifier}-filter-{column.key}"
 			class="table-popover no-print"
@@ -582,56 +551,14 @@
 			ontoggle={(event) => onPopoverToggle(event, column.key, 'left')}
 		>
 			{#if openPopover?.key === column.key}
-				<p class="popover-title">{column.header}</p>
-				{#if kind === 'values'}
-					{@const choices = choicesFor(column)}
-					{@const ticked = columnFilters[column.key]?.values ?? []}
-					{@const found = findText.trim() === '' ? choices : choices.filter((choice) => choice.value.toLocaleLowerCase('en-US').includes(findText.trim().toLocaleLowerCase('en-US')))}
-					{#if choices.length > 8}
-						<input type="search" class="popover-find" aria-label="Find a value" placeholder="Find a value" autocomplete="off" bind:value={findText} />
-					{/if}
-					<ul class="popover-list">
-						{#if findText.trim() === ''}
-							<li class="all">
-								<label>
-									<input
-										type="checkbox"
-										checked={ticked.length === 0}
-										onchange={(event) => {
-											event.currentTarget.checked = true;
-											setFilter(column, undefined);
-										}}
-									/>
-									All
-								</label>
-							</li>
-						{/if}
-						{#each found as choice (choice.value)}
-							<li>
-								<label>
-									<input type="checkbox" checked={ticked.includes(choice.value)} onchange={(event) => tickValue(column, choice.value, event.currentTarget.checked)} />
-									<span class="choice-value">{choice.value}</span>
-									<span class="choice-count">{choice.count.toLocaleString('en-US')}</span>
-								</label>
-							</li>
-						{:else}
-							<li class="none">Nothing matches.</li>
-						{/each}
-					</ul>
-				{:else}
-					<label class="popover-label" for="{identifier}-contains-{column.key}">Contains</label>
-					<input
-						id="{identifier}-contains-{column.key}"
-						type="text"
-						class="popover-find"
-						autocomplete="off"
-						value={columnFilters[column.key]?.contains ?? ''}
-						oninput={(event) => setFilter(column, { contains: event.currentTarget.value })}
-					/>
-				{/if}
-				<div class="popover-foot">
-					<button type="button" class="popover-button" onclick={() => setFilter(column, undefined)}>Clear</button>
-				</div>
+				<ColumnFilterMenu
+					identifier="{identifier}-{column.key}"
+					title={column.header}
+					kind={filterKind(column) ?? 'contains'}
+					choices={filterKind(column) === 'values' ? choicesFor(column) : []}
+					filter={columnFilters[column.key]}
+					onchange={(filter) => setFilter(column, filter)}
+				/>
 			{/if}
 		</div>
 	{/each}
@@ -727,125 +654,6 @@
 		color: var(--color-ink);
 		background: var(--color-surface-raised);
 		box-shadow: inset 0 0 0 1px var(--color-control-border);
-	}
-
-	/* A filter's menu and the list of columns: a popover under the button that opens it, placed by placePopover. */
-	.table-popover {
-		position: fixed;
-		inset: auto;
-		margin: 0;
-		box-sizing: border-box;
-		width: max-content;
-		min-width: min(var(--layout-card-min), calc(100vw - 2 * var(--space-4)));
-		max-width: min(var(--layout-popover), calc(100vw - 2 * var(--space-4)));
-		overflow: auto;
-		padding: var(--space-3);
-		border: 1px solid var(--color-control-border);
-		border-radius: var(--radius-control);
-		background: var(--color-surface-raised);
-		color: var(--color-ink);
-		box-shadow: 0 var(--space-1) var(--space-4) color-mix(in srgb, var(--color-ink) 22%, transparent);
-		font-size: var(--font-size-small);
-		text-align: left;
-	}
-
-	.popover-title {
-		margin: 0 0 var(--space-2);
-		font-weight: var(--font-weight-semibold);
-	}
-
-	.popover-label {
-		display: block;
-		margin-bottom: var(--space-1);
-	}
-
-	.popover-find {
-		box-sizing: border-box;
-		width: 100%;
-		min-height: var(--layout-target-minimum);
-		margin: 0;
-		padding: 0 var(--space-2);
-		border: 1px solid var(--color-control-border);
-		border-radius: var(--radius-control);
-		background: var(--color-paper);
-		color: var(--color-ink);
-		font: inherit;
-	}
-
-	.popover-list {
-		max-height: 15rem;
-		overflow: auto;
-		margin: var(--space-2) 0 0;
-		padding: 0;
-		list-style: none;
-	}
-
-	.popover-list-full {
-		max-height: none;
-	}
-
-	.popover-list label {
-		display: flex;
-		align-items: center;
-		gap: var(--space-2);
-		min-height: 2rem;
-		cursor: pointer;
-	}
-
-	.popover-list input[type='checkbox'] {
-		flex: none;
-		width: 1.1rem;
-		height: 1.1rem;
-		margin: 0;
-		accent-color: var(--color-action);
-	}
-
-	.popover-list .all {
-		margin-bottom: var(--space-1);
-		border-bottom: 1px solid var(--color-line);
-	}
-
-	.popover-list .locked label {
-		color: var(--color-ink-muted);
-		cursor: default;
-	}
-
-	.popover-list .none {
-		color: var(--color-ink-muted);
-		padding: var(--space-1) 0;
-	}
-
-	.choice-count {
-		margin-left: auto;
-		padding-left: var(--space-3);
-		color: var(--color-ink-muted);
-		font-variant-numeric: tabular-nums;
-	}
-
-	.popover-foot {
-		display: flex;
-		justify-content: flex-end;
-		margin-top: var(--space-2);
-		padding-top: var(--space-2);
-		border-top: 1px solid var(--color-line);
-	}
-
-	.popover-button {
-		display: inline-flex;
-		align-items: center;
-		min-height: 2.25rem;
-		padding: 0 var(--space-3);
-		border: 1px solid var(--color-control-border);
-		border-radius: var(--radius-control);
-		background: transparent;
-		color: var(--color-ink);
-		font: inherit;
-		font-weight: var(--font-weight-semibold);
-		cursor: pointer;
-	}
-
-	.popover-button:hover {
-		background: var(--color-surface);
 	}
 
 	/* The Sum row: below a heavy rule, in bold, and outside the sorted rows. */
