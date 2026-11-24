@@ -70,6 +70,20 @@ def indigo_date(iso):
     return f"{MONTHS[day.month - 1]} {day.day}, {day.year}"
 
 
+# Rows the list gets wrong, corrected against their own source. The list's Tribe
+# column is kept as printed.
+CORRECTIONS = {
+    # The list links no file and its Tribe column names the Navajo Nation, but the
+    # linked notice, 67 Fed. Reg. 58633 (Sept. 17, 2002), approves Amendment VI to
+    # the Burns Paiute Tribe's compact with Oregon.
+    "burns-paiute-tribe-tribal-state-gaming-compact": {
+        "nations": ["burns-paiute-tribe"],
+        "document_kind": "amendment",
+        "flags": ["Amendment VI to the Burns Paiute Tribe's compact, from the Federal Register notice; the list links no file and its Tribe column names the Navajo Nation"],
+    },
+}
+
+
 def fr_citation(notice):
     return f"{notice['volume']} Fed. Reg. {notice['start_page']} ({indigo_date(notice['publication_date'])})"
 
@@ -223,6 +237,8 @@ def build_compacts(work, notices, compact_documents):
             catalog.append(record)
             if notice_number:
                 matched.setdefault(notice_number, []).append(record)
+    for record in catalog:
+        record.update(CORRECTIONS.get(record["id"], {}))
     seen = {}
     for record in catalog:  # file names repeat across states now and then
         seen[record["id"]] = seen.get(record["id"], 0) + 1
