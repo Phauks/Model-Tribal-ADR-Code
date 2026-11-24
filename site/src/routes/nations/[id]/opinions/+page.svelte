@@ -70,7 +70,7 @@
 	/>
 	<h1>Court opinions: {data.nation.name}</h1>
 	<p>
-		These are the opinions of courts serving the nation that are published in the American Tribal Law Reporter or the Navajo Reporter, as the Caselaw Access Project at Harvard Law School Library released them in 2024. Each opens as its own page, with the publisher’s headnotes removed.
+		These are the opinions of courts serving the nation that are published in the American Tribal Law Reporter or the Navajo Reporter, as the Caselaw Access Project at Harvard Law School Library released them in 2024.{#if restrictions.opinions.cited === 0} Each opens as its own page, with the publisher’s headnotes removed.{/if}
 	</p>
 	{#if allCited}
 		<p>{opinionsNote(restrictions.opinions.kind, restrictions.opinions.cited, 0)}</p>
@@ -115,3 +115,12 @@
 	{/snippet}
 </DataTable>
 {/key}
+
+<style>
+	/* An opinion the nation chose to cite only links to the Caselaw Access Project. */
+	.original {
+		display: inline-flex;
+		align-items: center;
+		gap: var(--space-1);
+	}
+</style>
