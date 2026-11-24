@@ -2,7 +2,7 @@
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "$id": "https://github.com/Phauks/Model-Tribal-ADR-Code/schemas/story.schema.json",
   "title": "Story",
-  "description": "One story, account or teaching about resolving disputes, making peace or restoring relationships, as a Native nation or its people tell it, with every known telling. A telling cites its own published source record directly, or a private contributor filing. The project never retells a story in its own words: the record quotes the telling exactly, as far as the rights allow, and otherwise points to it. Stored as content/stories/<first letter of id, or _other>/<id>.yaml (decision record 0019).",
+  "description": "One story, account or teaching, as a Native nation or its people tell it, with every known telling: about resolving disputes, making peace or restoring relationships, or about how a law, treaty, court case or federal policy affected the people who lived under it. A telling cites its own published source record directly, or a private contributor filing. The project never retells a story in its own words: the record quotes the telling exactly, as far as the rights allow, and otherwise points to it. Stored as content/stories/<first letter of id, or _other>/<id>.yaml (decision record 0019).",
   "type": "object",
   "additionalProperties": false,
   "required": ["id", "title", "nations", "kind", "tellings", "access", "found_in"],
@@ -115,6 +115,57 @@
       "items": { "$ref": "common.schema.json#/$defs/slug" },
       "uniqueItems": true,
       "description": "Free tags, e.g. peace-between-nations, making-amends, family-dispute, role-of-elders, origin-of-a-court."
+    },
+    "account": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["type"],
+      "description": "For an account of events the teller lived through or knows of: whose account it is, in what form, and when and by whom it was recorded. Shown as a label wherever the account is listed.",
+      "properties": {
+        "type": {
+          "type": "string",
+          "enum": ["firsthand", "descendant", "period-record", "published-history"],
+          "description": "firsthand: told by someone who lived through it, in any form (testimony, letter, memoir, interview). descendant: told by a descendant or relative from what the family passed down. period-record: made at the time by someone who did not live through it as one of the people affected, such as an agent's report, a soldier's or missionary's letter or a committee's findings. published-history: a later history, including a nation's own published history."
+        },
+        "form": { "$ref": "common.schema.json#/$defs/slug", "description": "Open vocabulary. Suggested: testimony, letter, memoir, interview, oral-history, report, petition, history, speech." },
+        "recorded": { "$ref": "common.schema.json#/$defs/partialDate", "description": "When the account was given or written down." },
+        "recorded_by": { "type": "string", "description": "Who recorded or first published it, such as a committee, an interview program or a publisher." },
+        "place": { "type": "string", "description": "Where it was given, where the source says." }
+      }
+    },
+    "affected_by": {
+      "type": "array",
+      "uniqueItems": true,
+      "description": "The laws, treaties, court cases, executive orders and events the account is about. Many to many: an account may name several, and each one's page lists every account linked to it. Link only what the telling itself names or a cited source ties to it; never infer a link.",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["named_in"],
+        "oneOf": [
+          { "required": ["record"], "not": { "required": ["event"] } },
+          { "required": ["event"], "not": { "required": ["record"] } }
+        ],
+        "properties": {
+          "record": { "$ref": "common.schema.json#/$defs/slug", "description": "Key of the source record for the law, treaty, case or order, in content/sources/." },
+          "event": {
+            "type": "string",
+            "enum": ["removal", "allotment", "boarding-schools", "termination", "relocation"],
+            "description": "A federal policy or event the account is about, such as removal and the Trail of Tears."
+          },
+          "named_in": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": ["locator"],
+            "description": "Where the account names it, so the link can be checked: a telling of this story and a pinpoint, or another source record that ties the account to it.",
+            "properties": {
+              "telling": { "type": "string", "description": "Id of the telling that names it." },
+              "source": { "$ref": "common.schema.json#/$defs/slug", "description": "A source record that ties the account to it, when the telling does not name it." },
+              "locator": { "type": "string", "description": "Page, paragraph or section." },
+              "words": { "type": "string", "description": "The words the telling uses for it, exactly, such as 'the Curtis law'." }
+            }
+          }
+        }
+      }
     },
     "tellings": {
       "type": "array",

@@ -30,6 +30,23 @@ export const authorityLabels: Record<string, string> = {
 	'outside-recorder': 'An outside writer or recorder'
 };
 
+/** What kind of account a story is (schemas/story.schema.json, account.type). */
+export const accountTypeLabels: Record<string, string> = {
+	firsthand: 'Firsthand',
+	descendant: 'Descendant’s account',
+	'period-record': 'Period record',
+	'published-history': 'Published history'
+};
+
+/** The federal policies and events an account can be about, where no single law is named (account affected_by). */
+export const eventLabels: Record<string, string> = {
+	removal: 'Removal',
+	allotment: 'Allotment',
+	'boarding-schools': 'Boarding schools',
+	termination: 'Termination',
+	relocation: 'Relocation'
+};
+
 export const lengthLabels: Record<string, string> = {
 	paragraph: 'A paragraph',
 	short: 'Short (under about 1,500 words)',

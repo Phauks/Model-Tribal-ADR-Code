@@ -1,0 +1,82 @@
+id: cherokee-duncan-allotment-testimony-1906
+title: '[Statement of D. W. C. Duncan on the allotment of the Cherokee Nation]'
+nations:
+- cherokee-nation
+kind: historical-account
+length: long
+excerpts:
+- telling: senate-hearing-1906
+  locator: page 186, his words to the neighbor who filed on his farm
+  text: Of course the Dawes Commission and the Curtis law will give you the land, although I have subdued it, and I have fenced it, and cultivated it. But for God's sake, my friend, don't take my crop.
+  words: 37
+  sha256: a2380ae08e94d44acf2b04513de540b0b636d8bc6a20250ad4a3c22c189e01f1
+- telling: senate-hearing-1906
+  locator: page 184, on the cessions of the 1860s
+  text: After those years of conflict we were compelled to do it under the treaty of 1866.
+  words: 16
+  sha256: db66ff504b8167ad675ee4fa19d2e7988a110d51e1d545333c5f4803e9db4a7c
+- telling: senate-hearing-1906
+  locator: page 186, paragraph beginning "Before this allotment scheme"
+  text: Before this allotment scheme was put in effect in the Cherokee Nation we were a prosperous people.
+  words: 17
+  sha256: 0cacd037c017caad3bd9588dcdfe4455cb08ce5adb0e32a31f8d7bbb1266e202
+methods: []
+topics:
+- allotment
+- land-loss
+account:
+  type: firsthand
+  form: testimony
+  recorded: '1906-11-14'
+  recorded_by: Senate Select Committee to Investigate Matters Connected with Affairs in the Indian Territory
+  place: Vinita, Indian Territory
+affected_by:
+- record: curtis-act-1898
+  named_in:
+    telling: senate-hearing-1906
+    locator: pages 184, 186 and 187
+    words: the Curtis law
+- record: treaty-with-the-cherokee-1866
+  named_in:
+    telling: senate-hearing-1906
+    locator: page 184
+    words: the treaty of 1866
+- event: allotment
+  named_in:
+    telling: senate-hearing-1906
+    locator: pages 182-187
+    words: this allotment scheme
+tellings:
+- id: senate-hearing-1906
+  source: senate-report-5013-indian-territory-1907
+  locator: pages 180-189
+  as_of: '1906-11-14'
+  teller:
+    form: name-and-nation
+    name: D. W. C. Duncan
+    nation: cherokee-nation
+    role: witness, of Vinita; a Cherokee citizen, aged 76
+  published_by: United States Senate
+  authority: member-author
+  verification: read-in-full
+  permitted_uses:
+    level: quote
+    scope:
+    - web
+    - print
+    - ebook
+    - offline-pack
+  access:
+    level: nation-review-first
+  note: The text is read from the scan's recognized text; each quotation is to be checked against the page image before it is published.
+access:
+  level: nation-review-first
+anthology:
+  candidate: false
+  reason: Sworn testimony printed by the Senate; cite and quote it (project analysis).
+sensitivity:
+  tribal_review_required: true
+review_status: drafted-from-public-sources
+found_in:
+- 2026-11-24-impact-accounts
+notes: DeWitt Clinton Duncan (Too-qua-stee), a Cherokee writer and teacher. His statement opens with resolutions of the Vinita Commercial Club that he read into the record but says are not his own; only his own words are quoted here.
