@@ -1,0 +1,138 @@
+key: madison-county-v-oneida-indian-nation
+kind: federal-case
+citation:
+  type: legal_case
+  title: Madison County v. Oneida Indian Nation
+  authority: Supreme Court of the United States
+  container-title: U.S.
+  volume: '562'
+  page: '42'
+  issued:
+    date-parts:
+    - - 2011
+      - 1
+      - 10
+  URL: https://www.supremecourt.gov/opinions/boundvolumes/562bv.pdf
+  accessed:
+    date-parts:
+    - - 2026
+      - 11
+      - 24
+caption:
+  printed: MADISON COUNTY, NEW YORK, et al. v. ONEIDA INDIAN NATION OF NEW YORK
+  source: https://www.supremecourt.gov/opinions/boundvolumes/562bv.pdf
+  checked: '2026-11-24'
+opinions:
+  source: https://www.supremecourt.gov/opinions/boundvolumes/562bv.pdf
+  checked: '2026-11-24'
+  list:
+  - kind: per curiam
+    justice: The Court
+    page: 42
+original_link: https://www.supremecourt.gov/opinions/boundvolumes/562bv.pdf
+retrieved: '2026-11-24'
+history:
+  status: live
+  last_checked: '2026-11-24'
+court_dates:
+  printed: Decided January 10, 2011
+  source: https://www.supremecourt.gov/opinions/boundvolumes/562bv.pdf
+  checked: '2026-11-24'
+supreme_court:
+  court: Roberts Court
+  natural_court: Roberts Court (2010-2016)
+  decision_type: per curiam
+  vote:
+    majority: 8
+    minority: 0
+  justices:
+  - name: John G. Roberts, Jr.
+    vote: majority
+  - name: Antonin Scalia
+    vote: majority
+  - name: Anthony M. Kennedy
+    vote: majority
+  - name: Clarence Thomas
+    vote: majority
+  - name: Ruth Bader Ginsburg
+    vote: majority
+  - name: Stephen G. Breyer
+    vote: majority
+  - name: Samuel A. Alito, Jr.
+    vote: majority
+  - name: Sonia Sotomayor
+    vote: not recorded
+  - name: Elena Kagan
+    vote: majority
+  source: http://scdb.wustl.edu/_brickFiles/2026_01/SCDB_2026_01_justiceCentered_Citation.csv.zip
+  note: From the Supreme Court Database, case 2010-005; Oyez has no votes for this case.
+  checked: '2026-11-24'
+reading_links:
+  checked: '2026-11-24'
+  links:
+  - site: supremecourt
+    label: Supreme Court of the United States
+    access: official
+    link: https://www.supremecourt.gov/opinions/boundvolumes/562bv.pdf
+  - site: justia
+    label: Justia
+    access: free
+    link: https://supreme.justia.com/cases/federal/us/562/42/
+    unchecked: true
+  - site: oyez
+    label: Oyez
+    access: free
+    link: https://www.oyez.org/cases/2010/10-72
+  - site: google-scholar
+    label: Google Scholar
+    access: free
+    link: https://scholar.google.com/scholar?hl=en&as_sdt=2006&q=%22562%20U.S.%2042%22
+    unchecked: true
+  - site: westlaw
+    label: Westlaw
+    access: subscription
+    link: https://1.next.westlaw.com/Link/Document/FullText?findType=Y&cite=562%20U.S.%2042
+    unchecked: true
+  - site: lexis
+    label: Lexis
+    access: subscription
+    link: https://advance.lexis.com/api/search?q=562%20U.S.%2042
+    unchecked: true
+rights:
+  status: no-permission-needed
+  basis: us-government-work
+  basis_note: Opinions of federal courts are works of the U.S. government (17 U.S.C. § 105); the host site's own additions are not reproduced.
+  redistribution: true
+found_in:
+- 2026-11-24-supreme-court-native-cases
+notes: 'Full citation: 562 U.S. 42 (2011). Official report scan: https://www.supremecourt.gov/opinions/boundvolumes/562bv.pdf. Written by scripts/caselaw/supreme_court_native_cases.py from the Supreme Court Database (case 2010-005), the Caselaw Access Project''s text of the report and the Court''s bound volume; not yet read by a person.'
+tribes: []
+nations_in_case:
+  checked: '2026-11-24'
+  named: []
+review:
+  status: verified
+  by: scripts/caselaw/supreme_court_native_cases.py
+  date: '2026-11-24'
+  checks:
+  - check: cite
+    result: agree
+    detail: Caselaw Access Project 562 U.S. 42 "Madison County v. Oneida Indian Nation"; Database 562 U.S. 42 "MADISON COUNTY, NEW YORK et al.v. ONEIDA INDIAN NATION OF NEW YORK"
+  - check: scan
+    result: agree
+    detail: Scan has 2 pages; the report runs 42 to 43
+  - check: caption
+    result: agree
+    detail: Caption found in the scan's text at 1.00
+  - check: printed dates
+    result: agree
+    detail: Caselaw Access Project "Decided January 10, 2011"; scan "Decided January 10, 2011"
+  - check: decided
+    result: agree
+    detail: 'Printed and Database: 2011-01-10'
+  - check: opinions
+    result: agree
+    detail: 'Report: per curiam Court p. 42; Database writers: none'
+  - check: bench
+    result: agree
+    detail: No Oyez votes; each opinion writer in the report sits on the Database's bench on the side the opinion takes

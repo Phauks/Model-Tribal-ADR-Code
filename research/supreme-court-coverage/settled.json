@@ -895,5 +895,159 @@
    }
   ],
   "corrections": {}
+ },
+ "2008-042": {
+  "key": "united-states-v-navajo-nation-2009",
+  "read": "2026-11-24",
+  "verdicts": [
+   {
+    "check": "opinions",
+    "result": "corrected",
+    "evidence": "p. 289: Justice Scalia delivered the opinion of the Court. p. 302: Justice Souter, with whom Justice Stevens joins, concurring."
+   }
+  ],
+  "corrections": {
+   "opinions": [
+    {
+     "kind": "majority",
+     "justice": "Antonin Scalia",
+     "page": 289
+    },
+    {
+     "kind": "concurrence",
+     "justice": "David H. Souter",
+     "page": 302
+    }
+   ]
+  }
+ },
+ "2010-041": {
+  "key": "united-states-v-tohono-oodham-nation",
+  "read": "2026-11-24",
+  "verdicts": [
+   {
+    "check": "caption",
+    "result": "record right",
+    "evidence": "p. 307: UNITED STATES v. TOHONO O’ODHAM NATION (the record's straight apostrophe differs only by extraction noise)."
+   }
+  ],
+  "corrections": {}
+ },
+ "2010-062": {
+  "key": "united-states-v-jicarilla-apache-nation",
+  "read": "2026-11-24",
+  "verdicts": [
+   {
+    "check": "opinions",
+    "result": "corrected",
+    "evidence": "p. 165: Justice Alito delivered the opinion of the Court. p. 187: Justice Ginsburg, with whom Justice Breyer joins, concurring in the judgment. p. 188: Justice Sotomayor, dissenting."
+   }
+  ],
+  "corrections": {
+   "opinions": [
+    {
+     "kind": "majority",
+     "justice": "Samuel A. Alito, Jr.",
+     "page": 165
+    },
+    {
+     "kind": "special concurrence",
+     "justice": "Ruth Bader Ginsburg",
+     "page": 187
+    },
+    {
+     "kind": "dissent",
+     "justice": "Sonia Sotomayor",
+     "page": 188
+    }
+   ]
+  }
+ },
+ "2012-064": {
+  "key": "arizona-v-inter-tribal-council-of-arizona-inc",
+  "read": "2026-11-24",
+  "verdicts": [
+   {
+    "check": "caption",
+    "result": "corrected",
+    "evidence": "p. 1: ARIZONA et al. v. INTER TRIBAL COUNCIL OF ARIZONA, INC., et al. (the record's 'Petitioners' and 'The' are not in the printed caption)."
+   },
+   {
+    "check": "opinions",
+    "result": "corrected",
+    "evidence": "p. 4: Justice Scalia delivered the opinion of the Court. p. 20: Justice Kennedy, concurring in part and concurring in the judgment. p. 22: Justice Thomas, dissenting. p. 38: Justice Alito, dissenting."
+   }
+  ],
+  "corrections": {
+   "caption": "ARIZONA et al. v. INTER TRIBAL COUNCIL OF ARIZONA, INC., et al.",
+   "opinions": [
+    {
+     "kind": "majority",
+     "justice": "Antonin Scalia",
+     "page": 4
+    },
+    {
+     "kind": "concurrence in part and in the judgment",
+     "justice": "Anthony M. Kennedy",
+     "page": 20
+    },
+    {
+     "kind": "dissent",
+     "justice": "Clarence Thomas",
+     "page": 22
+    },
+    {
+     "kind": "dissent",
+     "justice": "Samuel A. Alito, Jr.",
+     "page": 38
+    }
+   ]
+  }
+ },
+ "2012-075": {
+  "key": "adoptive-couple-v-baby-girl",
+  "read": "2026-11-24",
+  "verdicts": [
+   {
+    "check": "caption",
+    "result": "corrected",
+    "evidence": "p. 637: ADOPTIVE COUPLE v. BABY GIRL, a minor child under the age of fourteen years, et al. (the record's 'Petitioners' is not in the printed caption)."
+   },
+   {
+    "check": "opinions",
+    "result": "corrected",
+    "evidence": "p. 641: Justice Alito delivered the opinion of the Court. p. 656: Justice Thomas, concurring. p. 666: Justice Breyer, concurring. p. 667: Justice Scalia, dissenting. p. 668: Justice Sotomayor, with whom Justice Ginsburg and Justice Kagan join, and with whom Justice Scalia joins in part, dissenting."
+   }
+  ],
+  "corrections": {
+   "caption": "ADOPTIVE COUPLE v. BABY GIRL, a minor child under the age of fourteen years, et al.",
+   "opinions": [
+    {
+     "kind": "majority",
+     "justice": "Samuel A. Alito, Jr.",
+     "page": 641
+    },
+    {
+     "kind": "concurrence",
+     "justice": "Clarence Thomas",
+     "page": 656
+    },
+    {
+     "kind": "concurrence",
+     "justice": "Stephen G. Breyer",
+     "page": 666
+    },
+    {
+     "kind": "dissent",
+     "justice": "Antonin Scalia",
+     "page": 667
+    },
+    {
+     "kind": "dissent",
+     "justice": "Sonia Sotomayor",
+     "page": 668
+    }
+   ]
+  }
  }
 }

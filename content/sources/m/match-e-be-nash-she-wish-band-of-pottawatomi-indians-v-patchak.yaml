@@ -1,0 +1,144 @@
+key: match-e-be-nash-she-wish-band-of-pottawatomi-indians-v-patchak
+kind: federal-case
+citation:
+  type: legal_case
+  title: Match-E-Be-Nash-She-Wish Band of Pottawatomi Indians v. Patchak
+  authority: Supreme Court of the United States
+  container-title: U.S.
+  volume: '567'
+  page: '209'
+  issued:
+    date-parts:
+    - - 2012
+      - 6
+      - 18
+  URL: https://www.supremecourt.gov/opinions/boundvolumes/567bv.pdf
+  accessed:
+    date-parts:
+    - - 2026
+      - 11
+      - 24
+caption:
+  printed: MATCH-E-BE-NASH-SHE-WISH BAND OF POTTAWATOMI INDIANS v. PATCHAK et al.
+  source: https://www.supremecourt.gov/opinions/boundvolumes/567bv.pdf
+  checked: '2026-11-24'
+opinions:
+  source: https://www.supremecourt.gov/opinions/boundvolumes/567bv.pdf
+  checked: '2026-11-24'
+  list:
+  - kind: majority
+    justice: Elena Kagan
+    page: 211
+  - kind: dissent
+    justice: Sonia Sotomayor
+    page: 228
+original_link: https://www.supremecourt.gov/opinions/boundvolumes/567bv.pdf
+shares_link_with:
+- salazar-v-ramah-navajo-chapter
+retrieved: '2026-11-24'
+history:
+  status: live
+  last_checked: '2026-11-24'
+court_dates:
+  argued:
+  - '2012-04-24'
+  - '2012-06-18'
+  printed: Argued April 24, 2012 Decided June 18, 2012
+  source: https://www.supremecourt.gov/opinions/boundvolumes/567bv.pdf
+  checked: '2026-11-24'
+supreme_court:
+  court: Roberts Court
+  natural_court: Roberts Court (2010-2016)
+  decision_type: majority opinion
+  vote:
+    majority: 8
+    minority: 1
+  justices:
+  - name: John G. Roberts, Jr.
+    vote: majority
+  - name: Antonin Scalia
+    vote: majority
+  - name: Anthony M. Kennedy
+    vote: majority
+  - name: Clarence Thomas
+    vote: majority
+  - name: Ruth Bader Ginsburg
+    vote: majority
+  - name: Stephen G. Breyer
+    vote: majority
+  - name: Samuel A. Alito, Jr.
+    vote: majority
+  - name: Sonia Sotomayor
+    vote: minority
+    opinion: dissent
+  - name: Elena Kagan
+    vote: majority
+    opinion: majority
+  source: http://scdb.wustl.edu/_brickFiles/2026_01/SCDB_2026_01_justiceCentered_Citation.csv.zip
+  note: From the Supreme Court Database, case 2011-065; Oyez has no votes for this case.
+  checked: '2026-11-24'
+reading_links:
+  checked: '2026-11-24'
+  links:
+  - site: supremecourt
+    label: Supreme Court of the United States
+    access: official
+    link: https://www.supremecourt.gov/opinions/boundvolumes/567bv.pdf
+  - site: justia
+    label: Justia
+    access: free
+    link: https://supreme.justia.com/cases/federal/us/567/209/
+    unchecked: true
+  - site: google-scholar
+    label: Google Scholar
+    access: free
+    link: https://scholar.google.com/scholar?hl=en&as_sdt=2006&q=%22567%20U.S.%20209%22
+    unchecked: true
+  - site: westlaw
+    label: Westlaw
+    access: subscription
+    link: https://1.next.westlaw.com/Link/Document/FullText?findType=Y&cite=567%20U.S.%20209
+    unchecked: true
+  - site: lexis
+    label: Lexis
+    access: subscription
+    link: https://advance.lexis.com/api/search?q=567%20U.S.%20209
+    unchecked: true
+rights:
+  status: no-permission-needed
+  basis: us-government-work
+  basis_note: Opinions of federal courts are works of the U.S. government (17 U.S.C. § 105); the host site's own additions are not reproduced.
+  redistribution: true
+found_in:
+- 2026-11-24-supreme-court-native-cases
+notes: 'Full citation: 567 U.S. 209 (2012). Official report scan: https://www.supremecourt.gov/opinions/boundvolumes/567bv.pdf. Written by scripts/caselaw/supreme_court_native_cases.py from the Supreme Court Database (case 2011-065), the Caselaw Access Project''s text of the report and the Court''s bound volume; not yet read by a person.'
+tribes: []
+nations_in_case:
+  checked: '2026-11-24'
+  named: []
+review:
+  status: verified
+  by: scripts/caselaw/supreme_court_native_cases.py
+  date: '2026-11-24'
+  checks:
+  - check: cite
+    result: agree
+    detail: Caselaw Access Project 567 U.S. 209 "Match-E-Be-Nash-She-Wish Band of Pottawatomi Indians v. Patchak"; Database 567 U.S. 209 "MATCH-E-BE-NASH-SHE-WISH BAND OF POTTAWATOMI INDIANS v. PATCHAK"
+  - check: scan
+    result: agree
+    detail: Scan has 30 pages; the report runs 209 to 238
+  - check: caption
+    result: agree
+    detail: Caption found in the scan's text at 0.97
+  - check: printed dates
+    result: agree
+    detail: Caselaw Access Project "Argued April 24, 2012 Decided June 18, 2012"; scan "Argued April 24, 2012—Decided June 18, 2012"
+  - check: decided
+    result: agree
+    detail: 'Printed and Database: 2012-06-18'
+  - check: opinions
+    result: agree
+    detail: 'Report: majority Kagan p. 211, dissent Sotomayor p. 228; Database writers: Kagan, Sotomayor'
+  - check: bench
+    result: agree
+    detail: No Oyez votes; each opinion writer in the report sits on the Database's bench on the side the opinion takes

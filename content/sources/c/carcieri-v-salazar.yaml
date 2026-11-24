@@ -1,0 +1,150 @@
+key: carcieri-v-salazar
+kind: federal-case
+citation:
+  type: legal_case
+  title: Carcieri v. Salazar
+  authority: Supreme Court of the United States
+  container-title: U.S.
+  volume: '555'
+  page: '379'
+  issued:
+    date-parts:
+    - - 2009
+      - 2
+      - 24
+  URL: https://www.supremecourt.gov/opinions/boundvolumes/555bv.pdf
+  accessed:
+    date-parts:
+    - - 2026
+      - 11
+      - 24
+caption:
+  printed: CARCIERI, GOVERNOR OF RHODE ISLAND, et al. v. SALAZAR, SECRETARY OF THE INTERIOR, et al.
+  source: https://www.supremecourt.gov/opinions/boundvolumes/555bv.pdf
+  checked: '2026-11-24'
+opinions:
+  source: https://www.supremecourt.gov/opinions/boundvolumes/555bv.pdf
+  checked: '2026-11-24'
+  list:
+  - kind: majority
+    justice: Clarence Thomas
+    page: 381
+  - kind: concurrence
+    justice: Stephen G. Breyer
+    page: 396
+  - kind: concurrence in part and dissent in part
+    justice: David H. Souter
+    page: 400
+  - kind: dissent
+    justice: John Paul Stevens
+    page: 401
+original_link: https://www.supremecourt.gov/opinions/boundvolumes/555bv.pdf
+retrieved: '2026-11-24'
+history:
+  status: live
+  last_checked: '2026-11-24'
+court_dates:
+  argued:
+  - '2008-11-03'
+  - '2008-02-24'
+  printed: Argued November 3, 2008 Decided February 24, 2009
+  source: https://www.supremecourt.gov/opinions/boundvolumes/555bv.pdf
+  checked: '2026-11-24'
+supreme_court:
+  court: Roberts Court
+  natural_court: Roberts Court (2006-2009)
+  decision_type: majority opinion
+  vote:
+    majority: 6
+    minority: 3
+  justices:
+  - name: John G. Roberts, Jr.
+    vote: majority
+  - name: John Paul Stevens
+    vote: minority
+    opinion: dissent
+  - name: Antonin Scalia
+    vote: majority
+  - name: Anthony M. Kennedy
+    vote: majority
+  - name: David H. Souter
+    vote: minority
+    opinion: dissent
+  - name: Clarence Thomas
+    vote: majority
+    opinion: majority
+  - name: Ruth Bader Ginsburg
+    vote: minority
+  - name: Stephen G. Breyer
+    vote: majority
+    opinion: concurrence
+  - name: Samuel A. Alito, Jr.
+    vote: majority
+  source: http://scdb.wustl.edu/_brickFiles/2026_01/SCDB_2026_01_justiceCentered_Citation.csv.zip
+  note: From the Supreme Court Database, case 2008-023; Oyez has no votes for this case.
+  checked: '2026-11-24'
+reading_links:
+  checked: '2026-11-24'
+  links:
+  - site: supremecourt
+    label: Supreme Court of the United States
+    access: official
+    link: https://www.supremecourt.gov/opinions/boundvolumes/555bv.pdf
+  - site: justia
+    label: Justia
+    access: free
+    link: https://supreme.justia.com/cases/federal/us/555/379/
+    unchecked: true
+  - site: google-scholar
+    label: Google Scholar
+    access: free
+    link: https://scholar.google.com/scholar?hl=en&as_sdt=2006&q=%22555%20U.S.%20379%22
+    unchecked: true
+  - site: westlaw
+    label: Westlaw
+    access: subscription
+    link: https://1.next.westlaw.com/Link/Document/FullText?findType=Y&cite=555%20U.S.%20379
+    unchecked: true
+  - site: lexis
+    label: Lexis
+    access: subscription
+    link: https://advance.lexis.com/api/search?q=555%20U.S.%20379
+    unchecked: true
+rights:
+  status: no-permission-needed
+  basis: us-government-work
+  basis_note: Opinions of federal courts are works of the U.S. government (17 U.S.C. § 105); the host site's own additions are not reproduced.
+  redistribution: true
+found_in:
+- 2026-11-24-supreme-court-native-cases
+notes: 'Full citation: 555 U.S. 379 (2009). Official report scan: https://www.supremecourt.gov/opinions/boundvolumes/555bv.pdf. Written by scripts/caselaw/supreme_court_native_cases.py from the Supreme Court Database (case 2008-023), the Caselaw Access Project''s text of the report and the Court''s bound volume; not yet read by a person.'
+tribes: []
+nations_in_case:
+  checked: '2026-11-24'
+  named: []
+review:
+  status: verified
+  by: scripts/caselaw/supreme_court_native_cases.py
+  date: '2026-11-24'
+  checks:
+  - check: cite
+    result: agree
+    detail: Caselaw Access Project 555 U.S. 379 "Carcieri v. Salazar"; Database 555 U.S. 379 "DONALD L. CARCIERI, GOVERNOR OF RHODE ISLAND, et al. v. KEN L. SALAZAR, SECRETARY OF THE INTERIOR, et al."
+  - check: scan
+    result: agree
+    detail: Scan has 36 pages; the report runs 379 to 414
+  - check: caption
+    result: agree
+    detail: Caption found in the scan's text at 1.00
+  - check: printed dates
+    result: agree
+    detail: Caselaw Access Project "Argued November 3, 2008 Decided February 24, 2009"; scan "Argued November 3, 2008—Decided February 24, 2009"
+  - check: decided
+    result: agree
+    detail: 'Printed and Database: 2009-02-24'
+  - check: opinions
+    result: agree
+    detail: 'Report: majority Thomas p. 381, concurrence Breyer p. 396, concurrence in part and dissent in part Souter p. 400, dissent Stevens p. 401; Database writers: Breyer, Souter, Stevens, Thomas'
+  - check: bench
+    result: agree
+    detail: No Oyez votes; each opinion writer in the report sits on the Database's bench on the side the opinion takes

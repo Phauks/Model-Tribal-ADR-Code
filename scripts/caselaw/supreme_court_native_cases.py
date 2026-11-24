@@ -110,6 +110,16 @@ def fetch(url: str, target: Path | None = None) -> bytes:
     return subprocess.run(command, capture_output=True, check=True).stdout
 
 
+# Short names the Caselaw Access Project abbreviates, written out as the report's running head gives them.
+TITLE_FIXES = {"570 U.S. 1": "Arizona v. Inter Tribal Council of Arizona, Inc."}
+
+
+def end_stop(text: str) -> str:
+    """Spaces evened and a closing full stop dropped, unless it ends an abbreviation ("Inc.", "Co.")."""
+    text = re.sub(r"\s+", " ", text).strip()
+    return text if re.search(r"\b(Inc|Co|Corp|Ltd|Jr|Sr|Bros|al)\.$", text) else text.rstrip(".")
+
+
 def mdy(text: str) -> str | None:
     match = re.match(r"(\d+)/(\d+)/(\d{4})", text or "")
     return f"{match[3]}-{int(match[1]):02d}-{int(match[2]):02d}" if match else None
@@ -376,7 +386,7 @@ class Volumes:
         return None
 
 
-def opinion_pages(page_html: str, first: int, last: int | None = None) -> list[int]:
+def opinion_pages(page_html: str, first: int, last: int | None = None, unmarked_head: bool = False) -> list[int]:
     """The report page where each opinion starts: the highest page mark before it (footnotes repeat earlier marks)."""
     starts = []
     for match in re.finditer(r'<article class="opinion"', page_html):
@@ -384,7 +394,15 @@ def opinion_pages(page_html: str, first: int, last: int | None = None) -> list[i
                  if first <= int(m) <= (last or 10 ** 6)]
         # an opinion that opens a page carries that page's mark just inside the article, before its first words
         after = re.match(r'<article class="opinion"[^>]*>\s*<p[^>]*>\s*<a [^>]*data-label="(\d+)"[^>]*class="page-label"', page_html[match.start():])
-        starts.append(int(after[1]) if after else max(marks) if marks else first)
+        inside = int(after[1]) if after and first <= int(after[1]) <= (last or 10 ** 6) else None
+        if inside is None and not marks and unmarked_head:
+            # Head matter without page marks (the Court's own volumes): the first mark inside the opinion says where it is.
+            for mark in re.finditer(r'data-label="(\d+)"[^>]*class="page-label"', page_html[match.start():]):
+                if first <= int(mark[1]) <= (last or 10 ** 6):
+                    words_before = re.sub(r"<[^>]+>", " ", page_html[match.start():match.start() + mark.start()])
+                    inside = int(mark[1]) if len(words_before.split()) < 40 else int(mark[1]) - 1
+                    break
+        starts.append(inside or (max(marks) if marks else first))
     return starts
 
 
@@ -737,7 +755,7 @@ def build(row: dict, scdb_rows: dict, volumes: Volumes, oyez: Oyez, justices: Ju
                        "detail": f"Scan has {len(pages)} pages; the report runs {first} to {last}"})
 
     # caption
-    caption = re.sub(r"\s+", " ", cap["name"]).strip().rstrip(".")
+    caption = end_stop(cap["name"])
     if pages:
         ratio = contains_fuzzy(caption, " ".join(pages[:2]))
         checks.append({"check": "caption", "result": "agree" if ratio >= 0.9 else "differs", "detail": f"Caption found in the scan's text at {ratio:.2f}"})
@@ -778,7 +796,7 @@ def build(row: dict, scdb_rows: dict, volumes: Volumes, oyez: Oyez, justices: Ju
     # opinions
     scdb_writers_early = scdb_bench(rows, day, justices)["writers"]
     opinions = cap["casebody"].get("opinions", [])
-    starts = opinion_pages(page_html, first, last)
+    starts = opinion_pages(page_html, first, last, unmarked_head=int(volume) > 542)
     listing, writers, unknown = [], set(), []
     for opinion, start in zip(opinions, starts):
         if opinion["type"] in ("rehearing", "on-motion-to-strike-cost-bill", "on-the-merits"):
@@ -832,7 +850,7 @@ def build(row: dict, scdb_rows: dict, volumes: Volumes, oyez: Oyez, justices: Ju
     named, not_linked = nations.propose(cap["name"])
 
     # the record
-    title = re.sub(r"\s+", " ", cap["name_abbreviation"]).strip().rstrip(".")
+    title = TITLE_FIXES.get(f"{volume} U.S. {page}") or end_stop(cap["name_abbreviation"])
     nominative = next((c["cite"] for c in cap["citations"] if c["type"] == "nominative"), None)
     year = day[:4]
     full = f"{volume} U.S. ({nominative}) {page} ({year})" if nominative else f"{volume} U.S. {page} ({year})"
@@ -945,6 +963,7 @@ def main() -> int:
     report_rows, disagreements, written = [], [], 0
     cases = list(csv.DictReader(CASE_LIST.open(encoding="utf-8")))
     claimed: dict[str, str] = {}
+    pending: list[tuple[Path, dict]] = []
     generated = {k for k, r in records.items() if (r.get("review") or {}).get("by") == SCRIPT}
     for row in cases:
         if args.only and row["scdb_case_id"] not in args.only:
@@ -991,9 +1010,18 @@ def main() -> int:
                 for kept in ("courtlistener", "archives", "citator"):
                     if kept in old:
                         record[kept] = old[kept]
-            path.parent.mkdir(parents=True, exist_ok=True)
-            path.write_text(dump(order(record)), encoding="utf-8")
-            written += 1
+            pending.append((path, record))
+    # Cases in one of the Court's bound volumes share its address.
+    by_link: dict[str, list[str]] = {}
+    for _, record in pending:
+        by_link.setdefault(record["original_link"], []).append(record["key"])
+    for path, record in pending:
+        others = [key for key in by_link[record["original_link"]] if key != record["key"]]
+        if others and "boundvolumes" in record["original_link"]:
+            record["shares_link_with"] = sorted(others)
+        path.parent.mkdir(parents=True, exist_ok=True)
+        path.write_text(dump(order(record)), encoding="utf-8")
+        written += 1
     fields = ["scdb_case_id", "citation", "key", "status", "reason", "cite", "scan", "caption", "printed dates", "decided", "opinions", "bench"]
     with REPORT.open("w", encoding="utf-8", newline="") as handle:
         writer = csv.DictWriter(handle, fieldnames=fields, extrasaction="ignore")
@@ -1034,6 +1062,15 @@ def file_captures(cache: Path, captures: Path) -> None:
                                  "--link", f"{SCDB}/{release}/{path.name}", "--redistribution", "no",
                                  "--rights", "Supreme Court Database (Washington University in St. Louis). Private research copy; not redistributed.",
                                  str(path)], check=True)
+    for path in sorted((cache / "bound").glob("*bv.pdf")):
+        if opinions.hashlib.sha256(path.read_bytes()).hexdigest() in filed:
+            continue
+        volume = path.name[:-6]
+        subprocess.run(mirror + ["--topic", "supremecourt.gov", "--name", f"opinions/boundvolumes/{path.name}",
+                                 "--title", f"United States Reports, volume {volume} (the Court's bound volume)",
+                                 "--obtained", f"downloaded by {SCRIPT}", "--redistribution", "yes", "--link", bound_volume(volume),
+                                 "--rights", "Official report of the Supreme Court of the United States; a work of the U.S. government (17 U.S.C. § 105).",
+                                 str(path)], check=True)
     for row in csv.DictReader(REPORT.open(encoding="utf-8")):
         if not row["key"] or " U.S. " not in row["citation"]:
             continue
@@ -1053,7 +1090,7 @@ def file_captures(cache: Path, captures: Path) -> None:
 TABLE: dict = {}
 SETTLED_READINGS: dict = {}
 
-ORDER = ["key", "kind", "citation", "caption", "opinions", "original_link", "retrieved", "archives", "history", "court_dates",
+ORDER = ["key", "kind", "citation", "caption", "opinions", "original_link", "shares_link_with", "retrieved", "archives", "history", "court_dates",
          "supreme_court", "courtlistener", "reading_links", "rights", "citator", "found_in", "notes", "tribes", "nations_in_case", "review"]
 
 
