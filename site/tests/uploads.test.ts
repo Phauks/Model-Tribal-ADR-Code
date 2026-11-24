@@ -1,7 +1,7 @@
 import { beforeEach, describe, expect, it } from 'vitest';
 import type { D1Database, R2Bucket } from '@cloudflare/workers-types/index.ts';
 import { deleteAccount } from '#lib/server/account-deletion.ts';
-import { allowances, pieceBytes } from '#lib/uploads.ts';
+import { allowances, pieceBytes, refusedByName } from '#lib/uploads.ts';
 import { eventsFor } from '#lib/server/events.ts';
 import { matchSignIn, type SignedInPerson } from '#lib/server/people.ts';
 import { fileFingerprint, sha256Hex } from '#lib/server/upload-checks.ts';
@@ -22,6 +22,8 @@ import {
 	startUpload,
 	uploadByReference,
 	uploadQueue,
+	queueCounts,
+	queueNations,
 	uploadsOfAccount,
 	withdrawUpload,
 	addNationComment,
@@ -248,6 +250,16 @@ describe('sending files', () => {
 	it('marks a PDF with a script for a careful look', async () => {
 		const { reference } = await sendWhole(new TextEncoder().encode('%PDF-1.7\n<< /S /JavaScript /JS (x) >>'), 'rules.pdf');
 		expect(await uploadByReference(database, reference)).toMatchObject({ status: 'waiting-for-review', check_result: 'careful-look' });
+	});
+
+	it('pulls out the files that need a careful look, and the files about one nation', async () => {
+		const { reference: careful } = await sendWhole(new TextEncoder().encode('%PDF-1.7\n<< /S /JavaScript /JS (x) >>'), 'rules.pdf');
+		const { reference: plain } = await sendWhole(png(), 'hall.png', { nations: ['hopi-tribe'] });
+		expect((await uploadQueue(database, 'careful-look')).map((row) => row.reference)).toEqual([careful]);
+		expect((await queueCounts(database))['careful-look']).toBe(1);
+		expect(await queueNations(database)).toEqual(['hopi-tribe', 'navajo-nation']);
+		expect((await uploadQueue(database, 'open', null, 'hopi-tribe')).map((row) => row.reference)).toEqual([plain]);
+		expect((await uploadQueue(database, 'all', null, 'navajo-nation')).map((row) => row.reference)).toEqual([careful]);
 	});
 
 	it('holds each account to its daily allowance', async () => {
@@ -617,5 +629,15 @@ describe('scanBadgeFor', () => {
 		expect(scanBadgeFor('not-accepted', null, 'The virus check found “Eicar-Signature”, so the file was deleted.')).toBe('flagged');
 		expect(scanBadgeFor('not-accepted', null, 'Archives such as ZIP files can’t be sent.')).toBeNull();
 		expect(scanBadgeFor('sending', null, null)).toBeNull();
+	});
+});
+
+describe('refusedByName', () => {
+	it('marks kinds of file that are never accepted as soon as they are added', () => {
+		expect(refusedByName('salt-river-code.html')).toBe('Web pages can’t be sent. Save it as a PDF.');
+		expect(refusedByName('minutes.docm')).toBe('Office files with macros can’t be accepted.');
+		expect(refusedByName('setup.EXE')).toMatch(/Programs/);
+		expect(refusedByName('Vance - A Pretty Smart Answer.pdf')).toBeUndefined();
+		expect(refusedByName('notes')).toBeUndefined();
 	});
 });

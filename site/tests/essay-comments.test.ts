@@ -3,7 +3,7 @@ import { beforeEach, describe, expect, it } from 'vitest';
 import { parseEssay } from '../src/lib/essays/document.ts';
 import { findQuote, quoteAt } from '../src/lib/essays/comment-anchors.ts';
 import { askSentence, commentThreads } from '../src/lib/essays/comments.ts';
-import { addComment, commentsForYou, commentsForYouCount, essayComments, setThreadResolved } from '#lib/server/essay-comments.ts';
+import { addComment, assignThread, commentsForYou, commentsForYouCount, essayComments, readAssignTo, setThreadResolved } from '#lib/server/essay-comments.ts';
 import { testDatabase } from './database.ts';
 
 const body = 'In 1832 the Court treats the Cherokee Nation as a distinct political community.\n\nLater the Court treats the Cherokee Nation differently.\n';
@@ -124,5 +124,39 @@ describe('comments in the database', () => {
 		await setThreadResolved(database, { essay: 'i-timeline', thread: first, personIdentifier: 'reader', mayResolveAny: false, resolved: true });
 		expect(await commentsForYouCount(database, 'reader')).toBe(0);
 		await expect(database.prepare('DELETE FROM essay_comment_mentions').run()).rejects.toThrow(/cannot be deleted/);
+	});
+
+	it('assigns a thread to a person or an AI helper, keeps each assignment, and lists it for the person assigned', async () => {
+		const first = await addComment(database, { essay: 'i-timeline', personIdentifier: 'reader', body: 'Lead with the civil cases.', quote: { quote: 'words', prefix: '', suffix: '' } });
+		expect(await assignThread(database, { essay: 'i-timeline', thread: first, personIdentifier: 'lead', mayAssignAny: false, to: { helper: 'claude' } })).toBe(false);
+		expect(await assignThread(database, { essay: 'i-timeline', thread: first, personIdentifier: 'reader', mayAssignAny: false, to: { helper: 'nemesis' } })).toBe(true);
+		expect((await essayComments(database, 'i-timeline'))[0].assignee).toEqual({ kind: 'helper', helper: 'nemesis', name: 'Nemesis' });
+
+		await assignThread(database, { essay: 'i-timeline', thread: first, personIdentifier: 'reader', mayAssignAny: false, to: { person: 'lead' } });
+		expect((await essayComments(database, 'i-timeline'))[0].assignee).toEqual({ kind: 'person', identifier: 'lead', name: 'Lead' });
+		expect((await commentsForYou(database, 'lead'))[0]).toMatchObject({ reason: 'assigned' });
+		// Still waiting on the person assigned after they reply, until it is done or assigned away.
+		await addComment(database, { essay: 'i-timeline', personIdentifier: 'lead', body: 'Will do.', thread: first });
+		expect(await commentsForYouCount(database, 'lead')).toBe(1);
+
+		await assignThread(database, { essay: 'i-timeline', thread: first, personIdentifier: 'lead', mayAssignAny: true, to: null });
+		expect((await essayComments(database, 'i-timeline'))[0].assignee).toBeNull();
+		expect(await commentsForYouCount(database, 'lead')).toBe(0);
+		const logged = await database.prepare(`SELECT action FROM events WHERE action LIKE '%assign%' ORDER BY sequence`).all<{ action: string }>();
+		expect(logged.results.map((entry) => entry.action)).toEqual([
+			'Assigned the comment on "words" to Nemesis',
+			'Assigned the comment on "words" to Lead',
+			'Took back the assignment of the comment on "words"'
+		]);
+		await expect(database.prepare('DELETE FROM essay_comment_assignments').run()).rejects.toThrow(/cannot be deleted/);
+	});
+
+	it('reads who to assign to as the editor sends it', () => {
+		expect(readAssignTo('person:abc')).toEqual({ person: 'abc' });
+		expect(readAssignTo('helper:claude')).toEqual({ helper: 'claude' });
+		expect(readAssignTo(null)).toBeNull();
+		expect(readAssignTo('helper:someone')).toBeUndefined();
+		expect(readAssignTo('person:')).toBeUndefined();
+		expect(readAssignTo(3)).toBeUndefined();
 	});
 });

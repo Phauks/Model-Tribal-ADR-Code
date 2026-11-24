@@ -13,7 +13,7 @@ import { marked } from 'marked';
 import { marksHtml, type CitationMark } from '../citation-marks.ts';
 import { verifyLink, fileName } from '../checksums.ts';
 import { copyPagePath, copyPath, mediaLabel } from '../public-copies.ts';
-import { readingLinksHtml } from '../reading-links.ts';
+import { officialReportLinks, readingLinksHtml } from '../reading-links.ts';
 import { glossary, publicCopyFor, type SourceRecord } from './content.ts';
 
 export function escapeHtml(text: string): string {
@@ -67,25 +67,31 @@ export function formatSource(
 			text += `. <span class="source-links">${original}</span>`;
 		}
 	}
-	return text + savedCopyLink(source) + readingLinksHtml(source.reading_links);
+	return text + readingLinksHtml(source.reading_links, savedCopyLink(source));
 }
 
 /**
- * A link to the copy this site keeps of the source's document, when it keeps
- * one (src/lib/public-copies.ts), with the date the copy was made. The
- * original address stays in the citation as the source cited.
+ * The first entry of a source's reading links (src/lib/reading-links.ts): the
+ * copy this site keeps of its document (src/lib/public-copies.ts), with what
+ * it is, the date the copy was made and a link to check it against its
+ * SHA-256, such as "Saved copy (official report, PDF, Nov. 23, 2026; SHA-256)".
+ * For a case the official report comes first, since quotations follow the
+ * official report (Trevor, Nov. 23, 2026); otherwise it is the copy of the
+ * page the citation names. The original address stays in the citation as the
+ * source cited. Empty when the site keeps no copy.
  */
 export function savedCopyLink(source: SourceRecord | undefined): string {
 	if (!source) return '';
-	const copy = publicCopyFor(source.original_link) ?? publicCopyFor(source.citation.URL);
+	const official = officialReportLinks(source.reading_links).map(publicCopyFor).find(Boolean);
+	const copy = official ?? publicCopyFor(source.original_link) ?? publicCopyFor(source.citation.URL);
 	if (!copy) return '';
+	const kind = official ? `official report, ${mediaLabel(copy.mediaType)}` : copy.mediaType === 'text/html' ? 'web page' : mediaLabel(copy.mediaType);
 	const saved = copy.captured ? `, ${escapeHtml(formatCaptureDate(copy.captured))}` : '';
-	// A link to check a downloaded copy against its SHA-256 (src/lib/checksums.ts), as Trevor asked on Nov. 23, 2026.
-	// Trevor named the two links on Nov. 23, 2026: "Saved Resource" for the copy and "SHA-256" for the check.
+	// Trevor asked on Nov. 23, 2026 for a link to check a downloaded copy against its SHA-256 (src/lib/checksums.ts).
 	// The copy's link opens its page, inside the site's masthead and sidebar; the SHA-256 link names the file itself.
 	const page = copyPagePath(copy);
 	const verify = escapeHtml(verifyLink(copy.sha256, fileName(copyPath(copy))));
-	return ` <span class="source-saved">(<a href="${escapeHtml(page)}">Saved Resource${saved}, ${mediaLabel(copy.mediaType)}</a>; <a class="source-verify" href="${verify}">SHA-256</a>)</span>`;
+	return `<span class="source-saved"><a href="${escapeHtml(page)}">Saved copy</a> (${kind}${saved}; <a class="source-verify" href="${verify}">SHA-256</a>)</span>`;
 }
 
 function webAddress(link: string | undefined): URL | undefined {

@@ -33,51 +33,93 @@ export type WorkspacePageName =
 	| 'orders'
 	| 'activity';
 
+/**
+ * The groups the sidebar lists the workspace pages under (Trevor asked on
+ * Nov. 23, 2026 for the pages to be organized into categories). Overview has
+ * none and stays first, on its own.
+ */
+export const workspaceCategories = [
+	'Writing and review',
+	'Messages',
+	'Files and sources',
+	'Nations',
+	'Events',
+	'People and access',
+	'Money',
+	'Site'
+] as const;
+
+export type WorkspaceCategory = (typeof workspaceCategories)[number];
+
 export interface WorkspacePage {
 	name: WorkspacePageName;
 	label: string;
 	link: string;
+	/** The group the sidebar lists it under; none for Overview. */
+	category?: WorkspaceCategory;
 	/** The permission a person needs to see the page listed; none means everyone with workspace access. */
 	needs?: Permission;
 }
 
+/** In menu order: Overview, then each category's pages in the order of the categories. */
 export const workspacePages: readonly WorkspacePage[] = [
 	{ name: 'overview', label: 'Overview', link: '/workspace' },
 	// Everyone sees the essays they can open, by role or by grant.
-	{ name: 'essays', label: 'Essays', link: '/workspace/essays' },
+	{ name: 'essays', label: 'Essays', link: '/workspace/essays', category: 'Writing and review' },
 	// Drafts and sections people asked this person to review (src/lib/server/essay-review-requests.ts).
-	{ name: 'review-requests', label: 'Review requests', link: '/workspace/review-requests', needs: 'comment' },
+	{ name: 'review-requests', label: 'Review requests', link: '/workspace/review-requests', category: 'Writing and review', needs: 'comment' },
 	// Comments that mention this person or answer them (src/lib/server/essay-comments.ts).
-	{ name: 'comments', label: 'Comments for you', link: '/workspace/comments', needs: 'comment' },
-	{ name: 'requests', label: 'Requests', link: '/workspace/requests', needs: 'read-requests' },
-	{ name: 'inbox', label: 'Inbox', link: '/workspace/inbox', needs: 'read-mail' },
-	{ name: 'outreach', label: 'Outreach', link: '/workspace/outreach', needs: 'send-outreach' },
-	{ name: 'uploads', label: 'Uploads', link: '/workspace/uploads', needs: 'review-uploads' },
-	// Files for the research library, filed by the intake script (docs/uploads.md, "Intake").
-	{ name: 'intake', label: 'Intake', link: '/workspace/intake', needs: 'review-uploads' },
-	// A nation reviewer reads and comments on files sent about their nation.
-	{ name: 'nation-uploads', label: 'Files about your nation', link: '/workspace/nation-uploads', needs: 'comment-on-nation-uploads' },
+	{ name: 'comments', label: 'Comments for you', link: '/workspace/comments', category: 'Writing and review', needs: 'comment' },
 	// Everyone sees the documents they can open, by role or by grant.
-	{ name: 'reviews', label: 'Reviews', link: '/workspace/reviews' },
-	{ name: 'library', label: 'Source library', link: '/workspace/library', needs: 'search-source-library' },
-	{ name: 'contributors', label: 'Contributors', link: '/workspace/contributors', needs: 'read-contributors' },
-	{ name: 'events', label: 'Events', link: '/workspace/events', needs: 'manage-events' },
-	// Video rooms of their own: instant, planned, public or private (src/lib/server/video-rooms.ts).
-	{ name: 'rooms', label: 'Video rooms', link: '/workspace/rooms', needs: 'host-video-rooms' },
-	{ name: 'people', label: 'People', link: '/workspace/people', needs: 'manage-people' },
-	{ name: 'nation-teams', label: 'Nation teams', link: '/workspace/nation-teams', needs: 'manage-people' },
+	{ name: 'reviews', label: 'Reviews', link: '/workspace/reviews', category: 'Writing and review' },
+	{ name: 'inbox', label: 'Inbox', link: '/workspace/inbox', category: 'Messages', needs: 'read-mail' },
+	{ name: 'requests', label: 'Requests', link: '/workspace/requests', category: 'Messages', needs: 'read-requests' },
+	{ name: 'outreach', label: 'Outreach', link: '/workspace/outreach', category: 'Messages', needs: 'send-outreach' },
+	{ name: 'address-book', label: 'Address book', link: '/workspace/address-book', category: 'Messages', needs: 'manage-address-book' },
+	{ name: 'uploads', label: 'Uploads', link: '/workspace/uploads', category: 'Files and sources', needs: 'review-uploads' },
+	// Files for the research library, filed by the intake script (docs/uploads.md, "Intake").
+	{ name: 'intake', label: 'Intake', link: '/workspace/intake', category: 'Files and sources', needs: 'review-uploads' },
+	// A nation reviewer reads and comments on files sent about their nation.
+	{ name: 'nation-uploads', label: 'Files about your nation', link: '/workspace/nation-uploads', category: 'Files and sources', needs: 'comment-on-nation-uploads' },
+	{ name: 'library', label: 'Source library', link: '/workspace/library', category: 'Files and sources', needs: 'search-source-library' },
+	{ name: 'nation-teams', label: 'Nation teams', link: '/workspace/nation-teams', category: 'Nations', needs: 'manage-people' },
 	// What nations published on their own pages, for the project to read afterwards.
-	{ name: 'nation-pages', label: 'Nations’ changes', link: '/workspace/nation-pages', needs: 'review-nation-pages' },
-	{ name: 'access', label: 'Access', link: '/workspace/access', needs: 'manage-people' },
-	{ name: 'address-book', label: 'Address book', link: '/workspace/address-book', needs: 'manage-address-book' },
-	{ name: 'changes', label: 'Hidden changes', link: '/workspace/changes', needs: 'hide-changes' },
-	{ name: 'nonprofit', label: 'Nonprofit', link: '/workspace/nonprofit', needs: 'manage-nonprofit' },
-	{ name: 'service-checks', label: 'Service checks', link: '/workspace/service-checks', needs: 'check-services' },
-	{ name: 'sponsors', label: 'Sponsors', link: '/workspace/sponsors', needs: 'manage-sponsors' },
+	{ name: 'nation-pages', label: 'Nations’ changes', link: '/workspace/nation-pages', category: 'Nations', needs: 'review-nation-pages' },
+	{ name: 'events', label: 'Events', link: '/workspace/events', category: 'Events', needs: 'manage-events' },
+	// Video rooms of their own: instant, planned, public or private (src/lib/server/video-rooms.ts).
+	{ name: 'rooms', label: 'Video rooms', link: '/workspace/rooms', category: 'Events', needs: 'host-video-rooms' },
+	{ name: 'people', label: 'People', link: '/workspace/people', category: 'People and access', needs: 'manage-people' },
+	{ name: 'contributors', label: 'Contributors', link: '/workspace/contributors', category: 'People and access', needs: 'read-contributors' },
+	{ name: 'access', label: 'Access', link: '/workspace/access', category: 'People and access', needs: 'manage-people' },
+	{ name: 'activity', label: 'Activity log', link: '/workspace/activity', category: 'People and access', needs: 'manage-people' },
+	{ name: 'sponsors', label: 'Sponsors', link: '/workspace/sponsors', category: 'Money', needs: 'manage-sponsors' },
 	// Orders from the Store, problems buyers report, and refunds (docs/store.md, docs/book-orders.md).
-	{ name: 'orders', label: 'Orders', link: '/workspace/orders', needs: 'manage-orders' },
-	{ name: 'activity', label: 'Activity log', link: '/workspace/activity', needs: 'manage-people' }
+	{ name: 'orders', label: 'Orders', link: '/workspace/orders', category: 'Money', needs: 'manage-orders' },
+	{ name: 'nonprofit', label: 'Nonprofit', link: '/workspace/nonprofit', category: 'Money', needs: 'manage-nonprofit' },
+	{ name: 'changes', label: 'Hidden changes', link: '/workspace/changes', category: 'Site', needs: 'hide-changes' },
+	{ name: 'service-checks', label: 'Service checks', link: '/workspace/service-checks', category: 'Site', needs: 'check-services' }
 ];
+
+export interface WorkspaceGroup {
+	/** None for the pages that stand on their own, such as Overview. */
+	category?: WorkspaceCategory;
+	pages: WorkspacePage[];
+}
+
+/**
+ * Splits a person's workspace pages into the sidebar's groups, in order. A
+ * category none of their pages is in is left out.
+ */
+export function groupWorkspacePages(pages: readonly WorkspacePage[]): WorkspaceGroup[] {
+	const groups: WorkspaceGroup[] = [];
+	const loose = pages.filter((item) => !item.category);
+	if (loose.length > 0) groups.push({ pages: loose });
+	for (const category of workspaceCategories) {
+		const inside = pages.filter((item) => item.category === category);
+		if (inside.length > 0) groups.push({ category, pages: inside });
+	}
+	return groups;
+}
 
 /** The workspace pages listed for someone holding these permissions, in menu order. */
 export function workspacePagesFor(permissions: readonly Permission[]): WorkspacePage[] {

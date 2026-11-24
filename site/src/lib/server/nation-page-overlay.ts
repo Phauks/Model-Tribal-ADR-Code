@@ -23,6 +23,7 @@ import {
 import { imageViewerAttributeText } from '../image-viewer.ts';
 import { pacificDay } from '../change-dates.ts';
 import { historyBadgeLabel, lastChangeSentence } from '../page-history.ts';
+import { writeToTeamLink } from '../nation-team-reports.ts';
 import { readableDate } from '../readable-date.ts';
 import { claimedPage } from '../review-status.ts';
 import type { ChangeRow, LiveChanges } from './nation-page-changes.ts';
@@ -69,6 +70,18 @@ function changeDate(change: ChangeRow): string {
 /** The line under each addition: who wrote it and when. Doubles as its citation. */
 function byline(change: ChangeRow): string {
 	return `<p class="nation-byline small">Written by ${escapeHtml(creditPhrase(change.credit))} · Updated ${changeDate(change)}</p>`;
+}
+
+/**
+ * An "Edit" link for a part of the page. Every reader gets it, hidden; the
+ * page shows it only to someone on the nation's team whose place covers that
+ * part (src/lib/components/NationEditorBanner.svelte), and the edit page
+ * checks their place again.
+ */
+export function editLink(nationIdentifier: string, part: string, anchor: string, name: string): string {
+	const pen =
+		'<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21.174 6.812a1 1 0 0 0-3.986-3.987L3.842 16.174a2 2 0 0 0-.5.83l-1.321 4.352a.5.5 0 0 0 .623.622l4.353-1.32a2 2 0 0 0 .83-.497z"/><path d="m15 5 4 4"/></svg>';
+	return `<a class="nation-edit-link no-print" data-edit-part="${part}" href="/workspace/nation-teams/${encodeURIComponent(nationIdentifier)}/edit#${anchor}">${pen}Edit<span class="visually-hidden"> ${escapeHtml(name)}</span></a>`;
 }
 
 /** Selectors of the parts of the page an editor can hide. */
@@ -122,7 +135,7 @@ function claimedBadge(nationIdentifier: string, claim: PageClaim): string {
 			? `<p>Kept by people the nation chose:</p><ul>${offices.map((office) => `<li>${escapeHtml(office)}</li>`).join('')}</ul>`
 			: '<p>Kept by people the nation chose.</p>';
 	const page = encodeURIComponent(nationIdentifier);
-	return `<style>[data-build-status]{display:none!important}</style><span data-print-part="reviewStatus"><details class="status-popover"><summary class="review-badge review-badge-verified"><span class="visually-hidden">Who keeps this page:</span>${check}${claimedPage.label}${chevron}</summary><div class="status-panel">${who}<p>Confirmed with the nation’s office on ${readableDate(claim.claimedSince.slice(0, 10))}.</p><p class="no-print"><a href="/profile/nation-team?nation=${page}">Work for this nation? Ask to join its team</a></p></div></details></span>`;
+	return `<style>[data-build-status]{display:none!important}</style><span data-print-part="reviewStatus"><details class="status-popover"><summary class="review-badge review-badge-verified"><span class="visually-hidden">Who keeps this page:</span>${check}${claimedPage.label}${chevron}</summary><div class="status-panel">${who}<p>Confirmed with the nation’s office on ${readableDate(claim.claimedSince.slice(0, 10))}.</p><p class="no-print"><a href="${escapeHtml(writeToTeamLink(nationIdentifier))}">Write to the team</a></p><p class="no-print"><a href="/profile/nation-team?nation=${page}">Work for this nation? Ask to join its team</a></p></div></details></span>`;
 }
 
 /**
@@ -178,7 +191,7 @@ function slotsFor(
 	if (live.about && live.about.content.text) {
 		add(
 			'top',
-			`<section class="nation-words" aria-labelledby="nation-words-heading"><h2 id="nation-words-heading">About</h2>${byline(live.about)}<div class="nation-words-text">${paragraphs(live.about.content.text)}</div></section>`
+			`<section class="nation-words" aria-labelledby="nation-words-heading">${editLink(nationIdentifier, 'about', 'about-heading', 'About')}<h2 id="nation-words-heading">About</h2>${byline(live.about)}<div class="nation-words-text">${paragraphs(live.about.content.text)}</div></section>`
 		);
 	}
 

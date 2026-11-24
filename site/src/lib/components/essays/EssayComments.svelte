@@ -3,23 +3,40 @@
 	(essay-editor-mockups/4-commenting.png; comments.ts). Each card sits beside
 	the words it is about: the comment being written, with the words quoted,
 	quick asks, an @ mention, Cancel and Send; and each open thread, with who
-	wrote it, its asks as tags, the replies, Reply and Done. Cards push each
+	wrote it, its asks as tags, who it is assigned to (a person, or the AI
+	helpers Claude and Nemesis), the replies, Reply, Assign and Done. Cards push each
 	other down rather than overlap. Threads whose words have since changed,
 	and threads marked done, follow below. On a narrow window the cards stack
 	in the order their words come.
 -->
 <script lang="ts">
 	import { tick } from 'svelte';
-	import { askSentence, commentAskLabels, commentAsks, commentThreads, type CommentAsk, type CommentDraft, type CommentThread, type EssayComment } from '#lib/essays/comments.ts';
+	import {
+		assigneeKey,
+		askSentence,
+		commentAskLabels,
+		commentAsks,
+		commentHelpers,
+		commentThreads,
+		type CommentAsk,
+		type CommentAssignee,
+		type CommentDraft,
+		type CommentHelper,
+		type CommentThread,
+		type EssayComment
+	} from '#lib/essays/comments.ts';
 	import { essayDate } from '#lib/essays/dates.ts';
 	import PersonAvatar from '#lib/components/essays/PersonAvatar.svelte';
 	import AtSign from '@lucide/svelte/icons/at-sign';
+	import Bot from '@lucide/svelte/icons/bot';
+	import UserRoundPlus from '@lucide/svelte/icons/user-round-plus';
 	import Check from '@lucide/svelte/icons/check';
 	import CircleQuestionMark from '@lucide/svelte/icons/circle-question-mark';
 	import CornerUpLeft from '@lucide/svelte/icons/corner-up-left';
 	import LibraryBig from '@lucide/svelte/icons/library-big';
 	import PenLine from '@lucide/svelte/icons/pen-line';
 	import Plus from '@lucide/svelte/icons/plus';
+	import Minus from '@lucide/svelte/icons/minus';
 	import Quote from '@lucide/svelte/icons/quote';
 	import RotateCcw from '@lucide/svelte/icons/rotate-ccw';
 	import Scale from '@lucide/svelte/icons/scale';
@@ -34,6 +51,7 @@
 		mayResolveAny,
 		positions,
 		tops,
+		lines,
 		aligned,
 		pending = $bindable(),
 		current = $bindable(),
@@ -49,6 +67,8 @@
 		positions: Map<string, number | null>;
 		/** How far down the text each thread's words are, in pixels, and `new` for the comment being written. */
 		tops: Map<string, number>;
+		/** The line each thread's words start on, and `new` for the comment being written, when the lines are numbered. */
+		lines: Map<string, number>;
 		/** Whether the cards sit beside their words (a wide window). */
 		aligned: boolean;
 		pending: CommentDraft | null;
@@ -76,11 +96,22 @@
 	let problem = $state('');
 	let sending = $state(false);
 	let showDone = $state(false);
+	/** Whether every ask is offered; until then only the chosen ones show, beside a "+" (Trevor, Nov. 23, 2026). */
+	let showAsks = $state(false);
 	let newBox: HTMLTextAreaElement | undefined = $state();
 
 	/* @ mention: anyone who can open the essay (EssayShareDialog lists the same people). */
 	let mentioning = $state(false);
-	let people = $state<{ identifier: string; name: string }[] | null>(null);
+	/** Everyone who can open the essay, you included. */
+	let everyone = $state<{ identifier: string; name: string }[] | null>(null);
+	const people = $derived(everyone?.filter((person) => person.identifier !== you) ?? null);
+
+	/* Assigning a thread: to a person who can open the essay, or to Claude or Nemesis (Trevor, Nov. 23, 2026). */
+	/** The card whose Assign list is open: a thread, or `new` for the comment being written. */
+	let assigning = $state<string | null>(null);
+	/** Who the comment being written will be assigned to. */
+	let newAssignee = $state<CommentAssignee | null>(null);
+	const helpers = Object.entries(commentHelpers) as [CommentHelper, string][];
 
 	const threads = $derived(commentThreads(comments));
 	const open = $derived(threads.filter((thread) => !thread.first.resolvedAt));
@@ -112,6 +143,9 @@
 			asks = [...pending.asks];
 			mentioned = [];
 			mentioning = false;
+			showAsks = false;
+			newAssignee = null;
+			assigning = null;
 			problem = '';
 			void tick().then(() => {
 				newBox?.focus();
@@ -192,7 +226,7 @@
 		if (!pending || (!body.trim() && asks.length === 0)) return;
 		const text = pending.suggest && body.trim() ? `Suggested wording: “${body.trim()}”` : body;
 		const mentions = mentioned.filter((person) => text.includes(`@${person.name}`)).map((person) => person.identifier);
-		if (await send({ body: text, asks, quote: pending.quote, version, mentions })) {
+		if (await send({ body: text, asks, quote: pending.quote, version, mentions, ...(newAssignee ? { assign: assigneeKey(newAssignee) } : {}) })) {
 			pending = null;
 			body = '';
 			asks = [];
@@ -213,12 +247,31 @@
 		asks = asks.includes(ask) ? asks.filter((chosen) => chosen !== ask) : [...asks, ask];
 	}
 
-	async function startMention(): Promise<void> {
-		mentioning = !mentioning;
-		if (!mentioning || people) return;
+	async function loadPeople(): Promise<void> {
+		if (everyone) return;
 		const response = await fetch(`/workspace/essays/${essay}/sharing`).catch(() => null);
 		const answer = (await response?.json().catch(() => null)) as { people?: { identifier: string; name: string }[] } | null;
-		people = (answer?.people ?? []).filter((person) => person.identifier !== you);
+		everyone = answer?.people ?? [];
+	}
+
+	async function startMention(): Promise<void> {
+		mentioning = !mentioning;
+		if (mentioning) await loadPeople();
+	}
+
+	async function startAssign(card: string): Promise<void> {
+		assigning = assigning === card ? null : card;
+		if (assigning) await loadPeople();
+	}
+
+	/** Assigns the comment being written, or a thread, to someone, or to no one. */
+	function assign(card: string, to: CommentAssignee | null): void {
+		assigning = null;
+		if (card === 'new') {
+			newAssignee = to;
+			return;
+		}
+		void send({ assign: to ? assigneeKey(to) : null }, 'PATCH', `?thread=${encodeURIComponent(card)}`);
 	}
 
 	function mention(person: { identifier: string; name: string }): void {
@@ -261,14 +314,50 @@
 	<span class="tag"><Icon size={14} aria-hidden="true" /> {commentAskLabels[ask]}</span>
 {/snippet}
 
+{#snippet assignee(to: CommentAssignee)}
+	<span class="assigned" title="Assigned to {to.name}{to.kind === 'helper' ? ' (AI)' : ''}">
+		{#if to.kind === 'person'}<PersonAvatar name={to.name} size="small" />{:else}<Bot size={16} aria-hidden="true" />{/if}
+		<span class="visually-hidden">Assigned to</span>
+		{to.name}
+	</span>
+{/snippet}
+
+{#snippet assignList(card: string, current: CommentAssignee | null)}
+	<ul class="mention-list assign-list" aria-label="Assign to">
+		{#if everyone === null}<li class="small muted">Loading…</li>{/if}
+		{#each everyone ?? [] as person (person.identifier)}
+			<li>
+				<button type="button" aria-pressed={current?.kind === 'person' && current.identifier === person.identifier} onclick={() => assign(card, { kind: 'person', identifier: person.identifier, name: person.name })}>
+					<PersonAvatar name={person.name} size="small" />
+					{person.name}{person.identifier === you ? ' (you)' : ''}
+				</button>
+			</li>
+		{/each}
+		{#each helpers as [helper, name] (helper)}
+			<li>
+				<button type="button" aria-pressed={current?.kind === 'helper' && current.helper === helper} onclick={() => assign(card, { kind: 'helper', helper, name })}>
+					<Bot size={18} aria-hidden="true" />
+					{name} <span class="muted small">AI</span>
+				</button>
+			</li>
+		{/each}
+		{#if current}
+			<li><button type="button" onclick={() => assign(card, null)}>No one</button></li>
+		{/if}
+	</ul>
+{/snippet}
+
 {#snippet newCard()}
 	<form class="card new-card" data-card="new" style:top={aligned ? `${at.new ?? tops.get('new') ?? 0}px` : null} onsubmit={comment} aria-label="New comment">
-		{#if pending}<p class="quote small">“{short(pending.quote.quote)}”</p>{/if}
+		{#if pending}<p class="quote small">{#if lines.has('new')}<span class="line">Line {lines.get('new')}:</span>{' '}{/if}<em>“{short(pending.quote.quote)}”</em></p>{/if}
 		<div class="asks" role="group" aria-label="Quick asks">
-			{#each commentAsks as ask (ask)}
+			{#each commentAsks.filter((ask) => showAsks || asks.includes(ask)) as ask (ask)}
 				{@const Icon = askIcons[ask]}
 				<button type="button" class="ask" aria-pressed={asks.includes(ask)} onclick={() => toggleAsk(ask)}><Icon size={14} aria-hidden="true" /> {commentAskLabels[ask]}</button>
 			{/each}
+			<button type="button" class="ask more" aria-expanded={showAsks} aria-label={showAsks ? 'Hide the asks' : 'Add an ask'} title={showAsks ? 'Hide the asks' : 'Add an ask'} onclick={() => (showAsks = !showAsks)}>
+				{#if showAsks}<Minus size={14} aria-hidden="true" />{:else}<Plus size={14} aria-hidden="true" />{/if}
+			</button>
 		</div>
 		<label class="visually-hidden" for="new-comment-text">{pending?.suggest ? 'Suggested wording' : 'Your comment'}</label>
 		<textarea
@@ -291,8 +380,11 @@
 				{/each}
 			</ul>
 		{/if}
+		{#if assigning === 'new'}{@render assignList('new', newAssignee)}{/if}
+		{#if newAssignee}<p class="row">{@render assignee(newAssignee)}</p>{/if}
 		<p class="row">
 			<button type="button" class="quiet mention" aria-expanded={mentioning} onclick={startMention}><AtSign size={16} aria-hidden="true" /> mention</button>
+			<button type="button" class="quiet mention" aria-expanded={assigning === 'new'} title="Assign" aria-label="Assign" onclick={() => startAssign('new')}><UserRoundPlus size={16} aria-hidden="true" /></button>
 			<span class="push"></span>
 			<button class="quiet" type="button" onclick={() => (pending = null)}>Cancel</button>
 			<button class="button send" type="submit" disabled={sending || (!body.trim() && asks.length === 0)}>{sending ? 'Sending…' : 'Send'}</button>
@@ -322,6 +414,7 @@
 					<PersonAvatar name={entry.personName} size="small" />
 					<strong title={essayDate(entry.createdAt)}>{entry.personName}</strong>
 					{#if index === 0}{#each entry.asks as ask (ask)}{@render askTag(ask)}{/each}{/if}
+					{#if index === 0 && thread.first.assignee}<span class="push"></span>{@render assignee(thread.first.assignee)}{/if}
 				</p>
 				{#if text}<p class="body">{text}</p>{/if}
 			</div>
@@ -341,8 +434,12 @@
 				</p>
 			</form>
 		{:else}
+			{#if assigning === id}{@render assignList(id, thread.first.assignee)}{/if}
 			<p class="row actions">
 				<button class="quiet" type="button" onclick={() => (replying = id)}><CornerUpLeft size={16} aria-hidden="true" /> Reply</button>
+				{#if !thread.first.resolvedAt && (mayResolveAny || thread.first.personIdentifier === you)}
+					<button class="quiet" type="button" aria-expanded={assigning === id} onclick={() => startAssign(id)}><UserRoundPlus size={16} aria-hidden="true" /> Assign</button>
+				{/if}
 				{#if mayResolveAny || thread.first.personIdentifier === you}
 					<button class="quiet" type="button" disabled={sending} onclick={() => resolve(thread)}>
 						{#if thread.first.resolvedAt}<RotateCcw size={16} aria-hidden="true" /> Reopen{:else}<Check size={16} aria-hidden="true" /> Done{/if}
@@ -432,6 +529,15 @@
 		color: var(--color-ink);
 	}
 
+	.quote .line {
+		font-style: normal;
+		color: var(--color-ink-muted);
+	}
+
+	.quote em {
+		font-style: italic;
+	}
+
 	.quote.changed {
 		border-left-color: var(--color-line);
 	}
@@ -459,6 +565,11 @@
 
 	.ask {
 		cursor: pointer;
+	}
+
+	.ask.more {
+		padding: 0.15rem 0.35rem;
+		color: var(--color-ink-muted);
 	}
 
 	.ask[aria-pressed='true'] {
@@ -569,6 +680,10 @@
 		overflow-y: auto;
 	}
 
+	.assign-list {
+		max-height: 18rem;
+	}
+
 	.mention-list button {
 		display: flex;
 		align-items: center;
@@ -583,8 +698,18 @@
 		cursor: pointer;
 	}
 
-	.mention-list button:hover {
+	.mention-list button:hover,
+	.mention-list button[aria-pressed='true'] {
 		background: var(--color-surface);
+	}
+
+	.assigned {
+		display: inline-flex;
+		align-items: center;
+		gap: var(--space-1);
+		color: var(--color-ink-muted);
+		font-size: 0.8rem;
+		font-weight: var(--font-weight-semibold);
 	}
 
 	.done-toggle {

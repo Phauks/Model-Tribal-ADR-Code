@@ -115,14 +115,16 @@
 		askForOptions();
 		await asking;
 		await tick();
-		signInPanel?.querySelector<HTMLElement>('.error-summary, input:not([type="hidden"])')?.focus();
+		// The panel itself takes focus, as a dialog does, so it opens as drawn (design/sign-in-popover), without a focus ring on the first field; Tab goes on to Close and the fields.
+		signInPanel?.focus();
 	}
 
 	async function panelChanged(answer: SignInState) {
 		signInAnswer = answer;
 		await tick();
-		// A new step starts at its first field; a problem is read out by the error summary, which takes focus itself.
-		if (!answer.problem) signInPanel?.querySelector<HTMLElement>('input:not([type="hidden"])')?.focus();
+		// A new step starts at its first field; with a problem, focus goes to the field it is about, and the note at the top is read out.
+		const target = answer.problem ? signInPanel?.querySelector<HTMLElement>('[aria-invalid="true"]') : undefined;
+		(target ?? signInPanel?.querySelector<HTMLElement>('input:not([type="hidden"])'))?.focus();
 	}
 
 	onMount(() => {
@@ -223,6 +225,7 @@
 		id="sign-in-panel"
 		class="sign-in-panel"
 		popover="auto"
+		tabindex="-1"
 		role="dialog"
 		aria-labelledby="sign-in-panel-heading"
 		ontoggle={panelToggled}
@@ -283,7 +286,7 @@
 	.sign-in-panel {
 		position: fixed;
 		inset: var(--panel-top, 3.5rem) var(--panel-right, var(--space-2)) auto auto;
-		width: min(var(--layout-popover), calc(100vw - 2 * var(--space-2)));
+		width: min(var(--layout-popover-form), calc(100vw - 2 * var(--space-2)));
 		max-height: calc(100dvh - var(--panel-top, 3.5rem) - var(--space-3));
 		overflow-y: auto;
 		box-sizing: border-box;
@@ -299,6 +302,10 @@
 
 	.sign-in-panel:not(:popover-open) {
 		display: none;
+	}
+
+	.sign-in-panel:focus:not(:focus-visible) {
+		outline: none;
 	}
 
 	/* The panel is already the box, so its forms are not drawn as boxes inside it. */

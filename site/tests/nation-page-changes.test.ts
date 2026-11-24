@@ -17,7 +17,7 @@ import {
 } from '#lib/server/nation-page-changes.ts';
 import { fileScan } from '#lib/server/file-scans.ts';
 import { escapeHtml, pageOverlay } from '#lib/server/nation-page-overlay.ts';
-import { teamReportState } from '#lib/nation-team-reports.ts';
+import { answersFor, teamReportState } from '#lib/nation-team-reports.ts';
 import { answerReport, reportsForTeam, teamAnswersFor } from '#lib/server/nation-team-reports.ts';
 import { addPlace, claimOf, claimedNations } from '#lib/server/nation-teams.ts';
 import { matchSignIn, type SignedInPerson } from '#lib/server/people.ts';
@@ -148,6 +148,9 @@ describe('changes in the database', () => {
 		const overlay = pageOverlay(navajo, {}, await claimOf(database, navajo))!;
 		expect(overlay.slots.status).toContain('Claimed by the nation');
 		expect(overlay.slots.status).toContain('[data-build-status]{display:none!important}');
+		expect(overlay.slots.status).toContain(
+			'<a href="/requests?kind=question&amp;record=tribes%2Fnavajo-nation&amp;to=team">Write to the team</a>'
+		);
 	});
 
 	it('shows the team reports about its page without who sent them, and records its answer', async () => {
@@ -170,6 +173,23 @@ describe('changes in the database', () => {
 		expect(teamReportState(answers.get('aaaaaa'), time.toISOString())).toBe('Team: fixed on the page');
 		expect(teamReportState(undefined, '2026-11-01T00:00:00Z', time)).toBe('Team: no answer in 7 days');
 		expect(teamReportState(undefined, time.toISOString(), time)).toBe('With the nation’s team');
+	});
+
+	it('shows the team who wrote only when the sender shared it, and lets it answer that it wrote back', async () => {
+		await database
+			.prepare(
+				`INSERT INTO requests (identifier, reference, kind, material, nation_identifier, requester_name, contact, details, received_at, shared_with_team)
+				 VALUES ('cccccc', '20261123-CCCCCC', 'question', 'tribes/navajo-nation', ?, 'Sample Name', 'sample@example.org', 'Who runs the peacemaking program?', ?, 1)`
+			)
+			.bind(navajo, time.toISOString())
+			.run();
+		const [message] = await reportsForTeam(database, navajo);
+		expect(message.sender).toEqual({ name: 'Sample Name', contact: 'sample@example.org' });
+		expect(answersFor(true)).toContain('wrote-back');
+		expect(answersFor(false)).not.toContain('wrote-back');
+		await answerReport(database, { identifier: 'cccccc', nationIdentifier: navajo }, 'wrote-back', null, editor);
+		const answers = await teamAnswersFor(database, ['cccccc']);
+		expect(teamReportState(answers.get('cccccc'), time.toISOString())).toBe('Team: wrote back to the sender');
 	});
 
 	it('starts with nothing, so pages have no pictures until a nation adds them', async () => {

@@ -19,16 +19,6 @@ import { publicCopies, repositoryRoot } from './content.ts';
 /** The key of the dataset's source record (content/sources/c/). */
 export const opinionsSourceKey = 'caselaw-access-project-tribal-reporters';
 
-/** Topic tags that mean an opinion mentions a way of resolving disputes outside a trial. */
-export const disputeResolutionTopics = new Set([
-	'peacemaking',
-	'mediation',
-	'arbitration',
-	'alternative-dispute-resolution',
-	'talking-things-out',
-	'restorative-justice'
-]);
-
 const topicLabels: Record<string, string> = {
 	peacemaking: 'peacemaking',
 	mediation: 'mediation',
@@ -53,7 +43,6 @@ export interface TribalCourtOpinion {
 	nations: string[];
 	/** Topic tags, as words: they mean the words appear in the opinion, not what it decides. */
 	topics: string[];
-	mentionsDisputeResolution: boolean;
 	/** The opinion's key in the bucket (src/lib/public-copies.ts). */
 	key: string;
 	/** Its page on this site, with the site's masthead and sidebar around it. */
@@ -82,7 +71,6 @@ export function tribalCourtOpinions(): TribalCourtOpinion[] {
 					docket: row.docket_number,
 					nations: row.nations.split(';').map((nation) => nation.trim()).filter(Boolean),
 					topics: tags.map((tag) => topicLabels[tag] ?? tag.replaceAll('-', ' ')),
-					mentionsDisputeResolution: tags.some((tag) => disputeResolutionTopics.has(tag)),
 					key: row.copy_key,
 					path: copyPagePath({ key: row.copy_key }),
 					removal: removalRequestPath({ key: row.copy_key })

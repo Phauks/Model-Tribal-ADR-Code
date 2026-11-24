@@ -5,19 +5,12 @@
 	person keeps the same color.
 -->
 <script lang="ts">
+	import { personInitials, personTone } from '#lib/essays/person-look.ts';
+
 	let { name, size = 'normal' }: { name: string; size?: 'normal' | 'small' } = $props();
 
-	const tones = ['document', 'treaty', 'case', 'opinion', 'federal'] as const;
-
-	const letters = $derived(
-		name
-			.split(/\s+/)
-			.filter(Boolean)
-			.slice(0, 2)
-			.map((part) => part[0]?.toUpperCase() ?? '')
-			.join('')
-	);
-	const tone = $derived(tones[[...name].reduce((sum, character) => sum + character.charCodeAt(0), 0) % tones.length]);
+	const letters = $derived(personInitials(name));
+	const tone = $derived(personTone(name));
 </script>
 
 <span class="avatar tone-{tone}" class:small={size === 'small'} aria-hidden="true">{letters}</span>
