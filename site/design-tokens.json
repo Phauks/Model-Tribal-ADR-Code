@@ -79,6 +79,46 @@
         "$value": "#8A6A00",
         "$description": "Underline of commented words, and the edge of the comment being written. 5.3:1 on paper."
       },
+      "status-published": {
+        "$value": "#1E5C2E",
+        "$description": "Text of the Published label in the essay editor (essay-editor-mockups/4). 7.2:1 on its background."
+      },
+      "status-published-rule": {
+        "$value": "#328053",
+        "$description": "Edge of the Published label."
+      },
+      "status-published-background": {
+        "$value": "#EAF5EE",
+        "$description": "Fill of the Published label."
+      },
+      "status-draft": {
+        "$value": "#6B4A00",
+        "$description": "Text of draft labels: draft changes, new components, DRAFT beside the line numbers. 7.5:1 on its background."
+      },
+      "status-draft-rule": {
+        "$value": "#B98000",
+        "$description": "Bar beside a changed or new component, and the edge of draft labels. 3.2:1 on paper."
+      },
+      "status-draft-background": {
+        "$value": "#FFF6DA",
+        "$description": "Fill of the draft changes label."
+      },
+      "status-review": {
+        "$value": "#40357F",
+        "$description": "Text of In review labels and the In review band. 8.9:1 on its background."
+      },
+      "status-review-rule": {
+        "$value": "#5B4FA0",
+        "$description": "Bar beside a section in review, and the edge of the in-review label. 6.6:1 on paper."
+      },
+      "status-review-background": {
+        "$value": "#EFEDF9",
+        "$description": "Fill of the in-review label and band."
+      },
+      "status-review-border": {
+        "$value": "#CFC8EE",
+        "$description": "Edge of the In review band."
+      },
       "focus": {
         "$value": "#FFD34D",
         "$description": "Keyboard focus fill."
@@ -288,6 +328,46 @@
       "comment-rule": {
         "$value": "#E0B83A",
         "$description": "Underline of commented words, and the edge of the comment being written."
+      },
+      "status-published": {
+        "$value": "#8FD3A0",
+        "$description": "Text of the Published label in the essay editor. 7.6:1 on its background."
+      },
+      "status-published-rule": {
+        "$value": "#5FB476",
+        "$description": "Edge of the Published label."
+      },
+      "status-published-background": {
+        "$value": "#17352A",
+        "$description": "Fill of the Published label."
+      },
+      "status-draft": {
+        "$value": "#F2C25A",
+        "$description": "Text of draft labels. 8.0:1 on its background."
+      },
+      "status-draft-rule": {
+        "$value": "#E0A82E",
+        "$description": "Bar beside a changed or new component, and the edge of draft labels. 8.0:1 on paper."
+      },
+      "status-draft-background": {
+        "$value": "#3A2E0A",
+        "$description": "Fill of the draft changes label."
+      },
+      "status-review": {
+        "$value": "#C9C2F2",
+        "$description": "Text of In review labels and the In review band. 8.9:1 on its background."
+      },
+      "status-review-rule": {
+        "$value": "#9F94E0",
+        "$description": "Bar beside a section in review, and the edge of the in-review label. 6.3:1 on paper."
+      },
+      "status-review-background": {
+        "$value": "#26224A",
+        "$description": "Fill of the in-review label and band."
+      },
+      "status-review-border": {
+        "$value": "#4A4380",
+        "$description": "Edge of the In review band."
       },
       "focus": {
         "$value": "#FFD34D",
