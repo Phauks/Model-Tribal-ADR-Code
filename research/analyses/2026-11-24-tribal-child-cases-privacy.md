@@ -1,6 +1,8 @@
 # Children, families and protection orders in the hosted Tribal court opinions
 
-**Status:** research spike, written Nov. 24, 2026, at Trevor's request ("do a spike for child related ones"). Nothing published was changed. Nothing here is legal advice. Numbers in brackets point to the Sources list in section 7. Statements marked "project analysis" are my reading, not a source's words.
+**Status:** research spike, written Nov. 24, 2026, at Trevor's request ("do a spike for child related ones"). Nothing here is legal advice.
+
+**Decision (Nov. 24, 2026):** asked whether to hide the 46 worst cases now, Trevor chose "Hide all 477 for now": every opinion involving a child, a protection order or a vulnerable adult is held back until it is reviewed and redacted. They are set to `"redistribution": "no"` in `research/capture-index-overrides.json` and the capture index, so the site shows 1,891 of the 2,368 opinions. Each returns when its redacted page is filed (section 6). Numbers in brackets point to the Sources list in section 7. Statements marked "project analysis" are my reading, not a source's words.
 
 This note names no child, parent or protected person. The per-opinion list, with the quotes the classification rests on, is kept privately in the project files at `research/tribal-court-opinions/privacy-review-2026-11-24.csv`, because a public list of children's names next to the words "juvenile" or "child welfare" would itself be the harm (project analysis, following a point raised by the thread "Let nations restrict their laws and cases").
 
