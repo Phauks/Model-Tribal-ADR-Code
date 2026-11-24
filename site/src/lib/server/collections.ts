@@ -14,7 +14,7 @@
  * listed. The count is the number of items, so the card and its list agree.
  * Where items are held back, `heldBack` gives only how many, never which.
  */
-import { documentHistories, glossary, methods, nations, publicCopies, publicCopyFor, sources, type SourceRecord } from './content.ts';
+import { documentHistories, glossary, nations, publicCopies, publicCopyFor, sources, type SourceRecord } from './content.ts';
 import { biographies, biographyPath } from './biographies.ts';
 import { peopleIndex } from './justice-pages.ts';
 import { courtsWithPages } from './supreme-court-pages.ts';
@@ -52,6 +52,8 @@ export interface Collection {
 	detailHeader?: string;
 	/** An existing page that lists exactly these items; the card links there instead of /stats/<identifier>. */
 	list?: string;
+	/** Another page about the same items, linked from the list, such as Coverage for the nations. */
+	related?: { label: string; href: string };
 	/** The years covered, when the items' own years don't say it, such as each Court's whole tenure. */
 	years?: () => string;
 	/** The source record kinds it counts (schemas/source.schema.json), so a test can catch a new kind nobody counts. */
@@ -73,12 +75,17 @@ function sourceItem(record: SourceRecord, detail?: string): CollectionItem {
 	return { title: record.citation.title ?? record.key, href, year: record.citation.issued?.['date-parts']?.[0]?.[0], detail };
 }
 
-/** Source records of some kinds, or cited as that type where no kind is set yet, as some treaties are. */
+/** Source records of some kinds (schemas/source.schema.json), less treaties, which are their own collection. */
 function sourcesOfKind(kinds: string[], detail?: (record: SourceRecord) => string | undefined): () => CollectionItem[] {
 	return () =>
 		[...sources().values()]
-			.filter((record) => kinds.includes(kindOf(record)) || kinds.includes(typeOf(record)))
+			.filter((record) => kinds.includes(kindOf(record)) && typeOf(record) !== 'treaty')
 			.map((record) => sourceItem(record, detail?.(record)));
+}
+
+/** Treaties and the agreements ratified like them, cited as treaties whatever their kind. */
+function treaties(): CollectionItem[] {
+	return [...sources().values()].filter((record) => typeOf(record) === 'treaty').map((record) => sourceItem(record, tribesOf(record)));
 }
 
 /** Court cases with a name, by the citation's authority. */
@@ -108,6 +115,7 @@ export const collections: Collection[] = [
 		title: 'Native Nations',
 		group: 'Native nations',
 		detailHeader: 'States',
+		related: { label: 'Coverage', href: '/nations/coverage' },
 		items: () =>
 			nations()
 				.filter((nation) => nation.entity_type === 'native-nation')
@@ -122,7 +130,7 @@ export const collections: Collection[] = [
 			const name = nationNameOf();
 			return documentHistories().map((history) => ({
 				title: history.title,
-				href: history.nations?.[0] ? `/nations/${history.nations[0]}#governing-documents` : undefined,
+				href: history.nations?.[0] ? `/nations/${history.nations[0]}#document-${history.id}` : undefined,
 				detail: history.nations?.map(name).join('; ')
 			}));
 		}
@@ -139,7 +147,7 @@ export const collections: Collection[] = [
 	},
 
 	// Federal law
-	{ identifier: 'treaties', title: 'Treaties', group: 'Federal law', detailHeader: 'Nation', sourceKinds: ['treaty'], items: sourcesOfKind(['treaty'], tribesOf) },
+	{ identifier: 'treaties', title: 'Treaties and Agreements', group: 'Federal law', detailHeader: 'Nation', items: treaties },
 	{ identifier: 'federal-statutes', title: 'Statutes', group: 'Federal law', sourceKinds: ['federal-statute'], items: sourcesOfKind(['federal-statute']) },
 	{ identifier: 'federal-regulations', title: 'Regulations', group: 'Federal law', sourceKinds: ['federal-regulation'], items: sourcesOfKind(['federal-regulation']) },
 	{ identifier: 'executive-orders', title: 'Executive Orders', group: 'Federal law', sourceKinds: ['executive-order'], items: sourcesOfKind(['executive-order']) },
@@ -162,7 +170,7 @@ export const collections: Collection[] = [
 		title: 'U.S. Supreme Courts',
 		group: 'Courts and cases',
 		detailHeader: 'Years',
-		items: () => courtsWithPages().map((court) => ({ title: court.name, href: courtPath(court.name) ?? undefined, year: Number(court.years.slice(0, 4)), detail: court.years })),
+		items: () => courtsWithPages().map((court) => ({ title: court.name, href: courtPath(court.name) ?? undefined, year: Number(court.years.slice(0, 4)), detail: court.years.endsWith('–') ? `${court.years}today` : court.years })),
 		years: () => {
 			const courts = courtsWithPages();
 			const last = courts.at(-1)?.years.split('–')[1];
@@ -177,7 +185,7 @@ export const collections: Collection[] = [
 		title: 'U.S. Supreme Court Justices',
 		group: 'People',
 		detailHeader: 'Years',
-		items: () => peopleIndex().justices.map((justice) => ({ title: justice.name, href: justice.link, year: Number(justice.start.slice(0, 4)), detail: justice.years })),
+		items: () => peopleIndex().justices.map((justice) => ({ title: justice.name, href: justice.link, year: Number(justice.start.slice(0, 4)), detail: justice.years.endsWith('–') ? `${justice.years}today` : justice.years })),
 		years: () => {
 			const years = peopleIndex().justices.map((justice) => Number(justice.start.slice(0, 4)));
 			return years.length ? `${Math.min(...years)}–today` : '';
@@ -188,7 +196,7 @@ export const collections: Collection[] = [
 		title: 'U.S. Presidents',
 		group: 'People',
 		detailHeader: 'Years',
-		items: () => peopleIndex().presidents.map((president) => ({ title: president.name, href: president.link, year: president.start, detail: president.years })),
+		items: () => peopleIndex().presidents.map((president) => ({ title: president.name, href: president.link, year: president.start, detail: president.years.endsWith('–') ? `${president.years}today` : president.years })),
 		years: () => {
 			const years = peopleIndex().presidents.map((president) => president.start);
 			return years.length ? `${Math.min(...years)}–today` : '';
@@ -199,7 +207,6 @@ export const collections: Collection[] = [
 	{ identifier: 'source-copies', title: 'Source Documents', group: 'Reference', list: '/copies', items: () => publicCopies().map((copy) => ({ title: copy.title ?? copy.key, href: copyPagePath(copy) })) },
 	{ identifier: 'charts', title: 'Charts', group: 'Reference', items: () => dataChartList.map((chart) => ({ title: chart.title, href: dataChartTrail(chart).at(-1)?.href })) },
 	{ identifier: 'glossary-terms', title: 'Glossary Terms', group: 'Reference', items: () => glossary().map((entry) => ({ title: entry.term, href: `/glossary/${entry.id}` })) },
-	{ identifier: 'methods', title: 'Methods', group: 'Reference', items: () => [...methods().values()].map((method) => ({ title: method.name, href: `/stories/methods/${method.id}` })) },
 	{ identifier: 'forms', title: 'Forms', group: 'Reference', items: () => buildFormCatalog().map((form) => ({ title: form.title, href: `/forms/${form.slug}` })) }
 ];
 

@@ -43,6 +43,8 @@ function paramsOf(view: RestrictedPageView, match: RegExpExecArray): Record<stri
 			return { chart: match[1], bar: match[2] };
 		case 'timeline':
 			return {};
+		case 'collection':
+			return { collection: match[1] };
 	}
 }
 

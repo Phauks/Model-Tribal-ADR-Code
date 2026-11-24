@@ -14,6 +14,7 @@ export const load: PageServerLoad = ({ params }) => {
 		title: collection.title,
 		group: collection.group,
 		detailHeader: collection.detailHeader,
+		related: collection.related,
 		years: counted?.years,
 		heldBack: counted?.heldBack,
 		heldBackReason: counted?.heldBackReason,

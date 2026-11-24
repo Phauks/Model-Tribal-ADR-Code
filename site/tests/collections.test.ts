@@ -27,3 +27,28 @@ describe('the collections the Statistics page counts', () => {
 		}
 	});
 });
+
+describe('the list behind a Statistics card, as a reader may see it', () => {
+	it('leaves out an item linked to a copy a nation hid, and links a cited one to its original', async () => {
+		const { filterCollectionPage } = await import('#lib/restricted-pages.ts');
+		const restrictions = {
+			stamp: 'stamp',
+			levels: new Map<string, 'cite' | 'hide'>([
+				['copy:constitutions/example/1975.pdf', 'hide'],
+				['copy:constitutions/example/1999.pdf', 'cite']
+			]),
+			items: new Map([['copy:constitutions/example/1999.pdf', { id: 'copy:constitutions/example/1999.pdf', kind: 'laws', title: '1999', original: 'https://example.org/1999.pdf' }]]),
+			hiddenDocuments: new Set<string>()
+		} as unknown as Parameters<typeof filterCollectionPage>[1];
+		const data = {
+			items: [
+				{ title: 'Hidden', href: '/copies/view/constitutions/example/1975.pdf' },
+				{ title: 'Cited', href: '/copies/view/constitutions/example/1999.pdf' },
+				{ title: 'Elsewhere', href: 'https://example.org/law' }
+			]
+		};
+		const filtered = filterCollectionPage(data, restrictions) as typeof data;
+		expect(filtered.items.map((item) => item.title)).toEqual(['Cited', 'Elsewhere']);
+		expect(filtered.items[0].href).toBe('https://example.org/1999.pdf');
+	});
+});

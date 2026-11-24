@@ -110,7 +110,6 @@
 		gap: var(--space-1) var(--space-2);
 		text-decoration: none;
 		color: var(--color-ink);
-		flex: 1;
 	}
 
 	.cards a::after {
@@ -125,6 +124,8 @@
 		font-size: var(--font-size-large);
 		font-weight: 700;
 		line-height: 1.25;
+		/* Two lines, so the numbers in a row line up. */
+		min-height: 2.5em;
 	}
 
 	.cards a:hover .title,

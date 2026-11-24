@@ -26,7 +26,6 @@ import ScrollText from '@lucide/svelte/icons/scroll-text';
 import User from '@lucide/svelte/icons/user';
 import UserRound from '@lucide/svelte/icons/user-round';
 import Users from '@lucide/svelte/icons/users';
-import Workflow from '@lucide/svelte/icons/workflow';
 
 export const groupIcons: Record<string, Component> = {
 	'Native nations': MapIcon,
@@ -58,7 +57,6 @@ const collectionIcons: Record<string, Component> = {
 	'source-copies': Files,
 	charts: ChartColumn,
 	'glossary-terms': BookA,
-	methods: Workflow,
 	forms: ClipboardList
 };
 

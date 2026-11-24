@@ -13,6 +13,7 @@
 import { versionItemIdentifier } from './nation-restrictions.ts';
 import {
 	filterCopyRows,
+	filterLawItems,
 	filterCopyTableRows,
 	filterOpinionYears,
 	filterOpinions,
@@ -31,7 +32,8 @@ export const restrictedPageViews = [
 	{ view: 'nation', pattern: /^\/nations\/(?!(?:coverage|data|federal-offices|law|letter|map|recourse|state|timeline)$)([a-z0-9-]+)$/ },
 	{ view: 'opinions', pattern: /^\/nations\/([a-z0-9-]+)\/opinions$/ },
 	{ view: 'copies', pattern: /^\/copies\/list\/([a-z0-9-]+)$/ },
-	{ view: 'chart-bar', pattern: /^\/nations\/data\/(?!(?:build|tables)\/)([a-z0-9-]+)\/(?!sources$)([^/]+)$/ }
+	{ view: 'chart-bar', pattern: /^\/nations\/data\/(?!(?:build|tables)\/)([a-z0-9-]+)\/(?!sources$)([^/]+)$/ },
+	{ view: 'collection', pattern: /^\/stats\/([a-z0-9-]+)$/ }
 ] as const;
 
 export type RestrictedPageView = (typeof restrictedPageViews)[number]['view'];
@@ -141,6 +143,17 @@ export function filterChartBarPage(data: Data, restrictions: SiteRestrictions): 
 	return { ...data, rows: kept, bar: { ...bar, value }, description };
 }
 
+/** The list behind one card of the Statistics page: items linked to a hidden copy left out, cited ones linked to their originals. */
+export function filterCollectionPage(data: Data, restrictions: SiteRestrictions): Data {
+	const items = (data.items as { href?: string }[]) ?? [];
+	const kept = filterLawItems(
+		items.map((item) => ({ ...item, link: item.href })),
+		restrictions
+	).map(({ link, ...item }) => ({ ...item, href: link }));
+	const changed = kept.length !== items.length || kept.some((item, index) => item.href !== items[index].href);
+	return changed ? { ...data, items: kept } : data;
+}
+
 /**
  * The full timeline, whose entries and counts are short arrays (src/routes/nations/timeline):
  * [kind, date, title, citation, detail, link, nations, italic] and [year, count, nation, mentions].
@@ -179,5 +192,7 @@ export function filterPageData(view: RestrictedPageView, match: RegExpExecArray,
 			return filterChartBarPage(data, restrictions);
 		case 'timeline':
 			return filterTimelinePage(data, restrictions, timelineKinds);
+		case 'collection':
+			return filterCollectionPage(data, restrictions);
 	}
 }

@@ -6,11 +6,13 @@
 	import CopiesPage from '../../copies/list/[group]/+page.svelte';
 	import ChartBarPage from '../../nations/data/[chart]/[bar]/+page.svelte';
 	import TimelinePage from '../../nations/timeline/+page.svelte';
+	import CollectionPage from '../../stats/[collection]/+page.svelte';
 	import type { PageProps as NationProps } from '../../nations/[id]/$types';
 	import type { PageProps as OpinionsProps } from '../../nations/[id]/opinions/$types';
 	import type { PageProps as CopiesProps } from '../../copies/list/[group]/$types';
 	import type { PageProps as ChartBarProps } from '../../nations/data/[chart]/[bar]/$types';
 	import type { PageProps as TimelineProps } from '../../nations/timeline/$types';
+	import type { PageProps as CollectionProps } from '../../stats/[collection]/$types';
 	import type { PageProps } from './$types';
 
 	let { data }: PageProps = $props();
@@ -31,4 +33,6 @@
 	<ChartBarPage {...pageProps<ChartBarProps>()} />
 {:else if data.restrictedView === 'timeline'}
 	<TimelinePage {...pageProps<TimelineProps>()} />
+{:else if data.restrictedView === 'collection'}
+	<CollectionPage {...pageProps<CollectionProps>()} />
 {/if}
