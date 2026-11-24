@@ -47,6 +47,9 @@ export const load: PageServerLoad = async ({ params, setHeaders }) => {
 			name: nation.name,
 			path: nation.identifier ? (nationPages.get(nation.identifier) ?? null) : null
 		})),
+		organization: page.organization,
+		pronouns: page.pronouns,
+		languages: page.languages,
 		biography: page.biography,
 		specialties: page.specialties,
 		board: page.boardMember ? (page.boardOffice ? `Board of directors, ${page.boardOffice}` : 'Board of directors') : null,

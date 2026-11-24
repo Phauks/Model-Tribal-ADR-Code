@@ -221,8 +221,10 @@ const bucketCalls: Record<string, BucketUse> = {
 const fileIntakes: Record<string, string> = {
   "src/lib/server/request-form.ts readFile File.arrayBuffer":
     "Files sent with requests and forms, proof for a nation team, nation page pictures, and photos sent with a problem about a printed-copy order. Stored with storeSentFile by saveRequest, saveApplication, savePicture and reportProblem.",
-  "src/routes/profile/+page.server.ts picture File.arrayBuffer":
-    "Profile pictures. Stored with storeSentFile by savePicture (profile-pictures.ts).",
+  "src/routes/profile/edit/+page.server.ts default File.arrayBuffer":
+    "Profile pictures, sent with the profile form. Stored with storeSentFile by savePicture (profile-pictures.ts).",
+  "src/lib/server/profile-documents.ts saveDocument File.arrayBuffer":
+    "A contributor's CV or résumé. Stored with storeSentFile (purpose profile-document) and served only after the scan passes, at /profile/curriculum-vitae and to editors at /workspace/contributors/<identifier>/curriculum-vitae.",
   "src/routes/workspace/events/[identifier]/+page.server.ts addMaterial File.arrayBuffer":
     "An event's materials, such as written materials or slides. Stored with storeSentFile (purpose event-material) and served with serveUploadFile, which checks the scan, at /events/<slug>/materials/<material>.",
   "src/routes/account/sponsorship/+page.server.ts save File.arrayBuffer":

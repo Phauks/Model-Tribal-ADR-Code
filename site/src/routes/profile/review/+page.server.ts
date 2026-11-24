@@ -1,13 +1,13 @@
 import { fail, redirect } from '@sveltejs/kit';
 import { missingAnswers } from '#lib/contributors.ts';
-import { confirmProfile, profileBySubject } from '#lib/server/contributor-profiles.ts';
+import { confirmProfile, currentYear, profileBySubject } from '#lib/server/contributor-profiles.ts';
 import { requireAccount, storage } from '#lib/server/workspace.ts';
 import type { Actions, PageServerLoad } from './$types';
 
 export const load: PageServerLoad = async ({ parent }) => {
 	const { profile } = await parent();
 	if (!profile) redirect(303, '/profile/edit');
-	return { missing: missingAnswers(profile.answers) };
+	return { missing: missingAnswers(profile.answers, currentYear()) };
 };
 
 export const actions: Actions = {
@@ -17,7 +17,7 @@ export const actions: Actions = {
 		const { database } = storage(event);
 		const profile = await profileBySubject(database, account.subject);
 		if (!profile) redirect(303, '/profile/edit');
-		if (Object.keys(missingAnswers(profile.answers)).length > 0) {
+		if (Object.keys(missingAnswers(profile.answers, currentYear())).length > 0) {
 			return fail(400, { problem: 'Some answers are still needed. They are listed at the top of the page.' });
 		}
 		const form = await event.request.formData();
