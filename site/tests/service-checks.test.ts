@@ -252,6 +252,7 @@ describe('service checks', () => {
 		const fetcher: typeof fetch = async (input) => {
 			const address = String(input);
 			asked.push(address);
+			if (address.includes('carto.nationalmap.gov')) return Response.json({ layers: [] });
 			if (address.includes('nationalmap.gov')) return new Response('jpeg', { headers: { 'content-type': 'image/jpeg' } });
 			if (address.includes('pwnedpasswords')) return new Response('0018A45C4D1DEF81644B54AB7F969B88D65:1');
 			return Response.json({ count: 574 });
@@ -260,7 +261,7 @@ describe('service checks', () => {
 			expect((await check(key, environment(), fetcher)).state, key).toBe('working');
 		}
 		expect(asked.filter((address) => address.includes('/tile/0/0/0'))).toHaveLength(2);
-		expect(asked.filter((address) => address.includes('carto.nationalmap.gov/arcgis/rest/services/contours/MapServer/export'))).toHaveLength(1);
+		expect(asked.filter((address) => address === 'https://carto.nationalmap.gov/arcgis/rest/services/contours/MapServer?f=json')).toHaveLength(1);
 		expect(asked.filter((address) => address.includes('returnCountOnly=true'))).toHaveLength(2);
 	});
 

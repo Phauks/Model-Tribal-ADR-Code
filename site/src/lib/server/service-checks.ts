@@ -629,13 +629,19 @@ function imageryCheck(name: MapImageryName): Check {
 		group: 'Outside services',
 		name: imageryNames[name],
 		async run({ fetcher }) {
-			// The one picture of the whole world at zoom 0, or, for a service that starts further in, one zoom 12 tile over Las Vegas, Nevada.
 			const source = mapImagery[name];
-			const [z, x, y] = source.minimumZoom === 0 ? [0, 0, 0] : [12, 737, 1606];
-			const response = await fetcher(imageryAddress(name, z, x, y), { headers: { 'cache-control': 'no-cache' } });
+			const details = [`U.S. Geological Survey, The National Map: ${source.kind === 'tiles' ? source.service : new URL(source.address).pathname.split('/').at(-3)}`];
+			if (source.kind === 'drawn') {
+				// A drawn picture can take the survey longer than the check's ten seconds, so this asks for the service's description, which proves it is up.
+				const response = await fetcher(`${source.address.replace(/\/export$/, '')}?f=json`, { headers: { 'cache-control': 'no-cache' } });
+				const body = response.ok ? ((await readJson(response)) as { error?: { message?: string }; layers?: unknown[] } | undefined) : (await response.body?.cancel(), undefined);
+				if (!response.ok || !body || body.error) return { state: 'problem', summary: `The National Map answered ${body?.error?.message ?? response.status}, so the ${name} layer shows nothing.`, details, fix: 'Usually brief; check https://www.usgs.gov/the-national-map-data-delivery if it lasts.' };
+				return { state: 'working', summary: 'The U.S. Geological Survey’s contour service answers.', details };
+			}
+			// The one picture of the whole world, at zoom 0.
+			const response = await fetcher(imageryAddress(name, 0, 0, 0), { headers: { 'cache-control': 'no-cache' } });
 			const type = (response.headers.get('content-type') ?? '').split(';')[0].trim();
 			await response.body?.cancel();
-			const details = [`U.S. Geological Survey, The National Map: ${source.kind === 'tiles' ? source.service : new URL(source.address).pathname.split('/').at(-3)}`];
 			if (!response.ok) return { state: 'problem', summary: `The National Map answered ${response.status}, so the ${name} base map shows nothing.`, details, fix: 'Usually brief; check https://www.usgs.gov/the-national-map-data-delivery if it lasts.' };
 			if (!type.startsWith('image/')) return { state: 'warning', summary: `The National Map answered with ${type || 'no type'} instead of a picture.`, details };
 			return { state: 'working', summary: 'The U.S. Geological Survey sent a picture.', details };
