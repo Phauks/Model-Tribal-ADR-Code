@@ -2070,3 +2070,23 @@ a.topic-badge:hover {
 	vertical-align: middle;
 	white-space: nowrap;
 }
+
+/*
+ * A nation's seal or logo is drawn for light paper, and many are black lines
+ * on a clear ground, which vanish on the dark theme's paper. In dark mode the
+ * image sits on a light plate (Trevor, Nov. 23, 2026: "yes, standard"), the
+ * same wherever a seal shows: search, At a glance, link previews and the map.
+ */
+@media (prefers-color-scheme: dark) {
+	:root:not([data-theme='light']) .image-backing {
+		padding: 2px;
+		border-radius: var(--radius-control);
+		background: var(--color-image-backing);
+	}
+}
+
+:root[data-theme='dark'] .image-backing {
+	padding: 2px;
+	border-radius: var(--radius-control);
+	background: var(--color-image-backing);
+}

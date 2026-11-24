@@ -221,7 +221,7 @@
 									{#each results.slice(0, perGroup) as result (`${result.link} ${result.title}`)}
 										<li>
 											{#if result.image && !failedImages.has(result.image)}<img
-													class="seal"
+													class="seal image-backing"
 													src={result.image}
 													alt=""
 													width="24"
