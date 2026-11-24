@@ -3,7 +3,7 @@ import { error, json } from '@sveltejs/kit';
 import { followKindOf, signedOutState, type FollowState } from '#lib/following.ts';
 import { workerEnvironment } from '#lib/server/environment.ts';
 import { follow, isFollowing, unfollow, unreadCount } from '#lib/server/following.ts';
-import { checkThisBuildOnce, currentDirectory } from '#lib/server/following-run.ts';
+import { checkThisBuildOnce, currentDirectory, isFollowableNow } from '#lib/server/following-run.ts';
 import type { RequestHandler } from './$types';
 
 // What the masthead's Follow button and account menu ask, from pages built
@@ -14,8 +14,7 @@ const headers = { 'cache-control': 'no-store' };
 
 async function stateFor(database: D1Database, subject: string, address: string | null): Promise<FollowState> {
 	await checkThisBuildOnce(database);
-	const directory = address && followKindOf(address) ? await currentDirectory(database) : undefined;
-	const followable = Boolean(address && directory?.has(address));
+	const followable = Boolean(address && followKindOf(address) && (await isFollowableNow(database, address)));
 	return {
 		signedIn: true,
 		followable,

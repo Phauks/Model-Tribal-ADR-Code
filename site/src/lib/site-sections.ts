@@ -2,6 +2,7 @@
 // docs/outline.md, "The website"). The sidebar lists them on every page, and
 // its second column lists the pages of the one being read.
 
+import { dataTopicLink, dataTopicList } from '#lib/data-chart-list.ts';
 import { libraryOutline } from '#lib/library-pages.ts';
 
 /**
@@ -65,13 +66,27 @@ export const nationsPages: OutlineItem[] = [
 	{ label: 'Map', link: '/nations/map' },
 	{ label: 'Timeline', link: '/nations/timeline' },
 	{ label: 'Find recourse', link: '/nations/recourse' },
-	{ label: 'Data and charts', link: '/nations/data' },
+	{
+		label: 'Data and charts',
+		link: '/nations/data',
+		// Its topic pages (Trevor, Nov. 24, 2026), then Build a table; the section's panel lists them.
+		children: [
+			...dataTopicList.map((topic) => ({ label: topic.title, link: dataTopicLink(topic.identifier) })),
+			{ label: 'Build a table', link: '/nations/data/build' }
+		]
+	},
 	{ label: 'Federal offices', link: '/nations/federal-offices' }
 ];
 
 export const eventsPages: OutlineItem[] = [
 	{ label: 'Current and upcoming events', link: '/events' },
 	{ label: 'Past events', link: '/events?when=past' }
+];
+
+// The Sponsorship levels page sits under Sponsorship (docs/sponsorship.md, "Levels").
+export const sponsorPages: OutlineItem[] = [
+	{ label: 'Sponsorship', link: '/sponsor' },
+	{ label: 'Sponsorship levels', link: '/sponsor/levels' }
 ];
 
 export const storePages: OutlineItem[] = [
@@ -99,7 +114,7 @@ export const siteSections: SiteSection[] = [
 	{ label: 'Peacemaking', link: '/peacemaking', built: false },
 	{ label: 'Events', link: '/events', built: true, opens: true, pages: eventsPages },
 	{ label: 'About', link: '/about', built: true, opens: true, pages: aboutPages },
-	{ label: 'Sponsorship', link: '/sponsor', built: true },
+	{ label: 'Sponsorship', link: '/sponsor', built: true, opens: true, pages: sponsorPages },
 	// Contribute moved here from the masthead, which keeps only its buttons (Trevor, Nov. 24, 2026).
 	{ label: 'Contribute', link: '/requests?kind=contribute', built: true },
 	// The Store gathers the special-order page for books, which keeps its address (Trevor, Nov. 23, 2026).

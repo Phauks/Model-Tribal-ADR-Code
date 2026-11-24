@@ -18,8 +18,11 @@ export interface TileSet {
 
 /** The tile sets the website serves, by the name in their address. */
 export const tileSets: ReadonlyMap<string, TileSet> = new Map(
-	[manifest.landAreas, manifest.basemap].map((entry) => [entry.set, entry])
+	[manifest.landAreas, manifest.basemap, manifest.worldBasemap].map((entry) => [entry.set, entry])
 );
+
+/** The world basemap, served in place of a basemap tile outside the United States and its territories (tools/build-map-tiles.mjs). */
+const worldFallback: ReadonlyMap<string, TileSet> = new Map([[manifest.basemap.set, manifest.worldBasemap]]);
 
 /** Reads byte ranges of one file in the bucket. */
 export class BucketSource implements Source {
@@ -77,7 +80,10 @@ export async function serveMapTile(bucket: R2Bucket, setName: string, z: number,
 	const tileSet = tileSets.get(setName);
 	if (!tileSet || !isTileAddress(z, x, y)) return new Response('No such map tile.', { status: 404, headers: { 'Cache-Control': 'no-store' } });
 	if (z < tileSet.minZoom || z > tileSet.maxZoom) return new Response(null, { status: 204, headers: tileHeaders });
-	const tile = await archiveFor(bucket, tileSet).getZxy(z, x, y);
+	let tile = await archiveFor(bucket, tileSet).getZxy(z, x, y);
+	// The basemap holds only the tiles around the United States and its territories; elsewhere the world basemap, cut from the same build, has the tile, so a reader can move the map anywhere without a blank (Trevor, 2026-11-24).
+	const world = worldFallback.get(setName);
+	if ((!tile || tile.data.byteLength === 0) && world && z <= world.maxZoom) tile = await archiveFor(bucket, world).getZxy(z, x, y);
 	if (!tile || tile.data.byteLength === 0) return new Response(null, { status: 204, headers: tileHeaders });
 	return new Response(tile.data, { status: 200, headers: tileHeaders });
 }

@@ -12,15 +12,13 @@
 	} from '#lib/nation-teams.ts';
 	import type { PageProps } from './$types';
 	import DateField from '#lib/components/DateField.svelte';
+	import { mediumDate } from '#lib/readable-date.ts';
 
 	let { data, form }: PageProps = $props();
 	const application = $derived(data.application);
 	const isOpen = $derived(application.status === 'received' || application.status === 'confirming-with-nation');
 	let scope = $state<'whole' | 'parts'>('whole');
 
-	function date(value: string | null): string {
-		return value ? new Date(value).toLocaleDateString('en-US', { dateStyle: 'medium' }) : '';
-	}
 </script>
 
 <svelte:head>
@@ -59,13 +57,13 @@
 	</div>
 	<div><dt>Parts asked for</dt><dd>{describeParts(application.parts)}</dd></div>
 	{#if application.details}<div><dt>Anything else</dt><dd>{application.details}</dd></div>{/if}
-	<div><dt>Sent</dt><dd>{date(application.submittedAt)}</dd></div>
+	<div><dt>Sent</dt><dd>{mediumDate(application.submittedAt)}</dd></div>
 	<div>
 		<dt>Status</dt>
 		<dd>
 			{applicationStatusLabels[application.status]}
-			{#if application.officeContact}<p class="small">Wrote to {application.officeContact} on {date(application.officeContactedAt)}.</p>{/if}
-			{#if application.decidedAt}<p class="small">{application.decidedByName ?? 'The person'}, {date(application.decidedAt)}{#if application.decisionNote}: {application.decisionNote}{/if}</p>{/if}
+			{#if application.officeContact}<p class="small">Wrote to {application.officeContact} on {mediumDate(application.officeContactedAt)}.</p>{/if}
+			{#if application.decidedAt}<p class="small">{application.decidedByName ?? 'The person'}, {mediumDate(application.decidedAt)}{#if application.decisionNote}: {application.decisionNote}{/if}</p>{/if}
 		</dd>
 	</div>
 	<div>

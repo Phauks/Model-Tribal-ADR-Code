@@ -1,4 +1,4 @@
-// Checks the shared table's tools in a browser (src/lib/components/DataTable.svelte), as Trevor approved them on Nov. 24, 2026: filters on the column headers instead of a separate area, no search box on the Native nations table, a list of columns to hide and add, a Sum row at the bottom of a table that has a total, and recognition badges that open their source. At desktop and phone widths it uses each tool as a reader would and checks what the table shows, that each menu opens inside the screen, and that the page address keeps the choices. Run from site/ after `npm run build`:
+// Checks the shared table's tools in a browser (src/lib/components/DataTable.svelte), as Trevor approved them on Nov. 24, 2026: filters on the column headers instead of a separate area, no search box on the Native nations table, a list of columns to hide and add, a Sum row at the bottom of a table that has a total, and recognition badges that open their source. Build a table uses the same tools. At desktop and phone widths it uses each tool as a reader would and checks what the table shows, that each menu opens inside the screen, and that the page address keeps the choices. Run from site/ after `npm run build`:
 //   node tools/check-table-tools.mjs
 //
 // The prerendered pages are served from the build output, as Cloudflare serves them, and opened in Chromium through Playwright. Set CHROMIUM_PATH to use a Chromium that is already installed. Set SCREENSHOTS to a folder to save a picture of each step there.
@@ -115,7 +115,9 @@ for (const viewport of viewports) {
 
 	// The Name column's "Contains" box.
 	await nations.getByRole('button', { name: 'Filter Name', exact: true }).click();
-	await page.keyboard.type('Paiute');
+	// Typed into the box itself: the menu puts the focus there a moment after it opens, and on a slow machine keys pressed straight after the click would land before it (main went red this way on Nov. 24, 2026).
+	await page.locator('.table-popover:popover-open input[type="text"]').fill('Paiute');
+	await page.waitForFunction((text) => document.querySelector('.table-count')?.textContent !== text, federal, { timeout: 3000 }).catch(() => {});
 	const paiute = await nations.locator('tbody tr').evaluateAll((rows) => rows.map((row) => row.cells[0].textContent ?? ''));
 	check(paiute.length > 0 && paiute.every((name) => /paiute/i.test(name)), at(`/nations: "Contains Paiute" left names without it: ${paiute.filter((name) => !/paiute/i.test(name)).slice(0, 3).join('; ')}`));
 	checkInside(at('/nations, Name filter'), await openMenu(page));
@@ -165,21 +167,21 @@ for (const viewport of viewports) {
 	await page.keyboard.press('Escape');
 
 	// The Sum row on a chart's table: at the bottom however it is sorted, and the total line gives way to it.
-	await page.goto(`${base}/nations/data`, { waitUntil: 'load' });
+	await page.goto(`${base}/nations/data/dispute-resolution`, { waitUntil: 'load' });
 	const chart = page.locator('figure.chart').filter({ hasText: 'Provisions by method' }).first();
 	await chart.getByRole('button', { name: 'Table', exact: true }).click();
 	const sum = chart.locator('tfoot.sum-row');
-	check((await sum.count()) === 1, at('/nations/data: the table has no Sum row'));
-	check((await chart.locator('.chart-total').count()) === 0, at('/nations/data: the "Total:" line still shows under the table'));
+	check((await sum.count()) === 1, at('/nations/data/dispute-resolution: the table has no Sum row'));
+	check((await chart.locator('.chart-total').count()) === 0, at('/nations/data/dispute-resolution: the "Total:" line still shows under the table'));
 	const values = await chart.locator('tbody tr').evaluateAll((rows) => rows.map((row) => Number(row.cells[row.cells.length - 1].textContent.replaceAll(',', ''))));
 	const total = values.reduce((sum, value) => sum + value, 0);
-	check((await sum.locator('td').last().textContent())?.trim() === total.toLocaleString('en-US'), at(`/nations/data: the Sum row does not read ${total.toLocaleString('en-US')}`));
+	check((await sum.locator('td').last().textContent())?.trim() === total.toLocaleString('en-US'), at(`/nations/data/dispute-resolution: the Sum row does not read ${total.toLocaleString('en-US')}`));
 	await chart.locator('thead th').last().locator('button.sort-button').click();
-	check(await chart.evaluate((figure) => figure.querySelector('table').lastElementChild?.matches('tfoot.sum-row')), at('/nations/data: after sorting, the Sum row is not at the bottom'));
+	check(await chart.evaluate((figure) => figure.querySelector('table').lastElementChild?.matches('tfoot.sum-row')), at('/nations/data/dispute-resolution: after sorting, the Sum row is not at the bottom'));
 	await chart.scrollIntoViewIfNeeded();
 	await picture(page, `${viewport.name}-5-sum-row`);
 	await chart.getByRole('button', { name: 'Bars', exact: true }).click();
-	check((await chart.locator('.chart-total').count()) === 1, at('/nations/data: the bars lost their "Total:" line'));
+	check((await chart.locator('.chart-total').count()) === 1, at('/nations/data/dispute-resolution: the bars lost their "Total:" line'));
 
 	// The Supreme Court tables filter from their headers too.
 	await page.goto(`${base}/supreme-court/roberts-court`, { waitUntil: 'load' });
@@ -188,6 +190,58 @@ for (const viewport of viewports) {
 	await justices.getByRole('button', { name: 'Filter Appointed by', exact: true }).click();
 	checkInside(at('/supreme-court/roberts-court, Appointed by filter'), await openMenu(page));
 	await picture(page, `${viewport.name}-6-supreme-court`);
+
+	// Build a table uses the same tools (Trevor, Nov. 24, 2026: one flow for readers and the team): the shared table's list of columns and header filters ungrouped, the same filter menus from one funnel when grouped, and the Sum row under a two-way table.
+	await page.goto(`${base}/nations/data/build?data=courts`, { waitUntil: 'load' });
+	const built = page.locator('.data-table').first();
+	await built.locator('.filter-button').first().waitFor();
+	check((await page.getByRole('button', { name: 'Add filter' }).count()) === 0, at('/nations/data/build: the "Add filter" bar is still there'));
+	check((await page.getByRole('button', { name: 'Columns', exact: true }).count()) === 1, at('/nations/data/build: there is a second list of columns beside the table\'s own'));
+	const builtAll = await count(page);
+	await built.getByRole('button', { name: 'Columns', exact: true }).click();
+	checkInside(at('/nations/data/build, Columns'), await openMenu(page));
+	await page.locator('.table-popover:popover-open label', { hasText: 'Region' }).click();
+	await page.keyboard.press('Escape');
+	check((await built.locator('thead th').allTextContents()).some((text) => text.includes('Region')), at('/nations/data/build: adding Region did not show it'));
+	check((new URL(page.url()).searchParams.get('columns') ?? '').split(',').includes('region'), at(`/nations/data/build: the address keeps the columns as ${new URL(page.url()).searchParams.get('columns')}`));
+	await built.getByRole('button', { name: 'Filter Kind', exact: true }).click();
+	checkInside(at('/nations/data/build, Kind filter'), await openMenu(page));
+	await page.locator('.table-popover:popover-open label', { hasText: /^\s*Peacemaking program\s*\d/ }).click();
+	await page.locator('.table-popover:popover-open label', { hasText: /^\s*Tribal court\s*\d/ }).click();
+	await picture(page, `${viewport.name}-7-builder-filter`);
+	await page.keyboard.press('Escape');
+	const builtFiltered = await count(page);
+	check(builtFiltered !== builtAll, at(`/nations/data/build: ticking two kinds did not narrow the table (${builtAll} then ${builtFiltered})`));
+	check(new URL(page.url()).searchParams.getAll('where.kind').join('|') === 'Peacemaking program|Tribal court', at(`/nations/data/build: the address keeps the kinds as ${new URL(page.url()).searchParams.getAll('where.kind').join('|')}`));
+	const kinds = await built.locator('tbody tr').evaluateAll((rows, column) => [...new Set(rows.map((row) => row.cells[column].textContent.trim()))], 2);
+	check(kinds.every((kind) => kind === 'Peacemaking program' || kind === 'Tribal court'), at(`/nations/data/build: kinds left after filtering: ${kinds.join(', ')}`));
+
+	// Grouped: the filter carries over, and the one funnel opens the same menus.
+	await page.selectOption('#builder-group', 'states');
+	await page.locator('figure.chart').first().waitFor();
+	check((await page.getByRole('button', { name: 'Filters, filtered', exact: true }).count()) === 1, at('/nations/data/build: grouped, the funnel does not show the Kind filter'));
+	await page.getByRole('button', { name: 'Filters, filtered', exact: true }).click();
+	checkInside(at('/nations/data/build, grouped Filters'), await openMenu(page));
+	await page.locator('.table-popover:popover-open').getByRole('button', { name: /^Kind/ }).click();
+	const ticked = await page.locator('.table-popover:popover-open input[type="checkbox"]:checked').count();
+	check(ticked === 2, at(`/nations/data/build: grouped, the Kind menu shows ${ticked} values ticked`));
+	checkInside(at('/nations/data/build, grouped Kind filter'), await openMenu(page));
+	await picture(page, `${viewport.name}-8-builder-grouped-filter`);
+	await page.keyboard.press('Escape');
+	await page.selectOption('#builder-group', 'kind');
+	await page.selectOption('#builder-across', 'category');
+	const cross = page.locator('.data-table').first();
+	await cross.locator('tfoot.sum-row').waitFor({ timeout: 3000 }).catch(() => {});
+	check((await cross.locator('tfoot.sum-row').count()) === 1, at('/nations/data/build: the two-way table has no Sum row'));
+	const crossTotals = await cross.locator('tbody tr').evaluateAll((rows) => rows.reduce((sum, row) => sum + Number(row.cells[row.cells.length - 1].textContent.replaceAll(',', '') || 0), 0));
+	check((await cross.locator('tfoot.sum-row td').last().textContent())?.trim() === crossTotals.toLocaleString('en-US'), at(`/nations/data/build: the two-way table's Sum row does not read ${crossTotals}`));
+	await cross.scrollIntoViewIfNeeded();
+	await picture(page, `${viewport.name}-9-builder-sum-row`);
+
+	// Back to the rows: the filter is still on its header.
+	await page.selectOption('#builder-group', '');
+	await built.locator('.filter-button').first().waitFor();
+	check((await built.getByRole('button', { name: 'Filter Kind, filtered', exact: true }).count()) === 1, at('/nations/data/build: ungrouped again, the Kind filter is gone'));
 
 	check(errors.length === 0, at(`script errors: ${errors.join('; ')}`));
 	await context.close();

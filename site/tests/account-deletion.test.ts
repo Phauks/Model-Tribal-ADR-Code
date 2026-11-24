@@ -1,6 +1,6 @@
 import { beforeEach, describe, expect, it } from 'vitest';
 import type { D1Database } from '@cloudflare/workers-types/index.ts';
-import { emptyAnswers, type ProfileAnswers } from '#lib/contributors.ts';
+import { emptyAnswers, emptyPlacements, type ProfileAnswers } from '#lib/contributors.ts';
 import { deleteAccount, formerContributorName } from '#lib/server/account-deletion.ts';
 import { sessionAccount, startSession, verifiedAccount } from '#lib/server/accounts.ts';
 import {
@@ -22,12 +22,10 @@ const ready: ProfileAnswers = {
 	...emptyAnswers,
 	givenName: 'Ada',
 	familyName: 'Lovelace',
-	phone: '+1 702 555 0100',
-	ageGroup: '18-or-older',
+	birthYear: 1985,
 	interests: ['write'],
-	creditForm: 'name',
 	biography: 'Writes about mediation.',
-	biographyInCredits: true
+	placements: { ...emptyPlacements(), 'full-name': { book: true, website: true }, biography: { book: true, website: true } }
 };
 
 beforeEach(async () => {
@@ -62,7 +60,12 @@ describe('deleting an account', () => {
 		const [credit] = await confirmedCredits(database);
 		expect(credit).toMatchObject({ section: 'contributors', line: 'Ada Lovelace', biography: 'Writes about mediation.' });
 		const kept = await database.prepare('SELECT * FROM retained_credits').first<Record<string, unknown>>();
-		expect(JSON.stringify(kept)).not.toContain('555');
+		// Only the public credit is kept. The row's random identifier and time are left out of the
+		// check, since a random identifier could contain any digits.
+		expect(Object.keys(kept ?? {}).sort()).toEqual(['biography', 'identifier', 'in_book', 'line', 'on_website', 'retained_at', 'section', 'sort_key']);
+		const { identifier: _identifier, retained_at: _retainedAt, ...keptCredit } = kept ?? {};
+		expect(JSON.stringify(keptCredit)).not.toContain('helper@example.org');
+		expect(JSON.stringify(keptCredit)).not.toContain('1985');
 	});
 
 	it('removes the credit and renames workspace work when the person removes their name', async () => {

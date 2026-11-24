@@ -11,6 +11,7 @@
 	// The list is a <details> element, so it opens without scripts too, and
 	// then its links go to the published files. Escape closes it and a click
 	// elsewhere closes it.
+	import { datedName } from '#lib/download-names.ts';
 	import { rowsToCsv, type TableColumn, type TableRow } from '#lib/tables/table-definition.ts';
 	import Download from '@lucide/svelte/icons/download';
 
@@ -42,11 +43,14 @@
 
 	let details: HTMLDetailsElement | undefined = $state();
 
+	// The rows shown, saved with the day they were saved, as nations-2026-11-23.csv (src/lib/download-names.ts).
+	const savedName = (extension: string) => datedName(`${name}.${extension}`, new Date());
+
 	function save(contents: BlobPart, type: string, extension: string) {
 		const address = URL.createObjectURL(new Blob([contents], { type }));
 		const link = document.createElement('a');
 		link.href = address;
-		link.download = `${name}.${extension}`;
+		link.download = savedName(extension);
 		link.click();
 		setTimeout(() => URL.revokeObjectURL(address), 0);
 	}
@@ -94,10 +98,10 @@
 		</summary>
 		<ul class="download-list">
 			{#if interactive || csvHref}
-				<li><a href={csvHref ?? '#'} download="{name}.csv" title="{label} as a .csv file" onclick={saveCsv}>.csv</a></li>
+				<li><a href={csvHref ?? '#'} download={savedName('csv')} title="{label} as a .csv file" onclick={saveCsv}>.csv</a></li>
 			{/if}
 			{#if interactive || xlsxHref}
-				<li><a href={xlsxHref ?? '#'} download="{name}.xlsx" title="{label} as an Excel workbook (.xlsx)" onclick={saveSpreadsheet}>.xlsx</a></li>
+				<li><a href={xlsxHref ?? '#'} download={savedName('xlsx')} title="{label} as an Excel workbook (.xlsx)" onclick={saveSpreadsheet}>.xlsx</a></li>
 			{/if}
 		</ul>
 	</details>

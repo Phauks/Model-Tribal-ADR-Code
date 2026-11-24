@@ -4,15 +4,13 @@
 	import { creditSectionLabels, creditSections, fullName, profileStatusLabels } from '#lib/contributors.ts';
 	import { roleLabels, roles } from '#lib/permissions.ts';
 	import type { PageProps } from './$types';
+	import { mediumDateAndTime } from '#lib/readable-date.ts';
 
 	let { data, form }: PageProps = $props();
 
 	const profile = $derived(data.profile);
 	let role = $state('co-author');
 
-	function date(value: string | null): string {
-		return value ? new Date(value).toLocaleString('en-US', { dateStyle: 'medium', timeStyle: 'short' }) : '';
-	}
 </script>
 
 <svelte:head>
@@ -39,7 +37,7 @@
 		<dt>Status</dt>
 		<dd>
 			{profileStatusLabels[profile.status]}
-			{#if profile.decidedAt}<span class="small muted">({date(profile.decidedAt)})</span>{/if}
+			{#if profile.decidedAt}<span class="small muted">({mediumDateAndTime(profile.decidedAt)})</span>{/if}
 			{#if profile.decisionNote}<p class="small">{profile.decisionNote}</p>{/if}
 		</dd>
 	</div>
@@ -59,7 +57,7 @@
 		<dt>Confirmed</dt>
 		<dd>
 			{#if profile.confirmedVersion}
-				Version {profile.confirmedVersion}, {date(profile.confirmedAt)}{profile.hasUnconfirmedChanges
+				Version {profile.confirmedVersion}, {mediumDateAndTime(profile.confirmedAt)}{profile.hasUnconfirmedChanges
 					? '. The person has changes they have not confirmed; this page shows them, credits do not use them.'
 					: ''}
 			{:else}
@@ -69,7 +67,10 @@
 	</div>
 </dl>
 
-<ProfileSummary answers={profile.answers} email={profile.email} />
+<ProfileSummary
+	answers={profile.answers}
+	curriculumVitae={profile.curriculumVitaeName ? { name: profile.curriculumVitaeName, href: `/workspace/contributors/${profile.identifier}/curriculum-vitae` } : null}
+/>
 
 {#if data.canManage}
 	<section>
@@ -161,7 +162,7 @@
 	{:else}
 		<ul>
 			{#each data.versions as version (version.version)}
-				<li>Version {version.version}, {date(version.confirmedAt)}: credit “{version.creditLine ?? 'no credit'}”</li>
+				<li>Version {version.version}, {mediumDateAndTime(version.confirmedAt)}: credit “{version.creditLine ?? 'no credit'}”</li>
 			{/each}
 		</ul>
 	{/if}
@@ -170,7 +171,7 @@
 	<ul>
 		{#each data.history as event (event.identifier)}
 			<li>
-				{date(event.createdAt)}: {event.action}{event.personName ? `, by ${event.personName}` : ''}{event.note
+				{mediumDateAndTime(event.createdAt)}: {event.action}{event.personName ? `, by ${event.personName}` : ''}{event.note
 					? `. ${event.note}`
 					: ''}
 			</li>

@@ -172,10 +172,9 @@ function lawEntry(record: SourceRecord, context: boolean): TimelineEntry | undef
 }
 
 /**
- * Where a case's name links: the copy of the opinion this site keeps, else
- * where it was published, with a Caselaw Access Project data file read as
- * its web page. Not the case's box in the legal history essay, which is
- * published from the database and may not be published yet.
+ * Where a case's name links: the case's own page (/cases/<key>), else, for
+ * a case with no name in its record, where it was published, with a Caselaw
+ * Access Project data file read as its web page.
  */
 function caseLink(record: SourceRecord): string | undefined {
 	const preview = caseLinks().get(record.key);
@@ -185,13 +184,9 @@ function caseLink(record: SourceRecord): string | undefined {
 
 let caseLinkCache: Map<string, string> | undefined;
 
-/** The links case previews use for cases with no box in an essay: the copy on this site or the published opinion. */
+/** The case pages, by source key, as case previews link them. */
 function caseLinks(): Map<string, string> {
-	caseLinkCache ??= new Map(
-		casePreviewList()
-			.cases.filter((preview) => preview.opens !== 'box')
-			.map((preview) => [preview.id, preview.link])
-	);
+	caseLinkCache ??= new Map(casePreviewList().cases.map((preview) => [preview.id, preview.link]));
 	return caseLinkCache;
 }
 

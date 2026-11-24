@@ -111,9 +111,6 @@ const recourseFacetRules: RecourseFacetRule[] = [
 	}
 ];
 
-/** The address parameter of each filter, for links from elsewhere on the site. */
-export const recourseFacetKeys = recourseFacetRules.map((rule) => rule.key);
-
 const textCollator = new Intl.Collator('en', { numeric: true, sensitivity: 'base' });
 
 /**

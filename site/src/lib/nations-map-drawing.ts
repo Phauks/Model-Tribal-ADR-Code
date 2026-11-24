@@ -14,6 +14,7 @@
  */
 import type { LandAreaKind, MapGeometry, ScaleBar } from './map-geometry.ts';
 import type { ShadedMapView } from './shaded-map-views.ts';
+import { escapeHtml } from './escape-html.ts';
 
 /** A state or territory, with how many nations have a recorded presence there. */
 export interface StateCount {
@@ -98,13 +99,6 @@ const groupOf = (kind: LandAreaKind) =>
 export const landAreaAnchor = (identifier: string) => `land-area-${identifier.toLowerCase()}`;
 
 
-const escape = (text: string): string =>
-	text
-		.replace(/&/g, '&amp;')
-		.replace(/</g, '&lt;')
-		.replace(/>/g, '&gt;')
-		.replace(/"/g, '&quot;');
-
 const nations = (count: number) => `${count} ${count === 1 ? 'nation' : 'nations'}`;
 
 /**
@@ -128,15 +122,15 @@ const labelLines = (name: string) => (name === 'Eastern Oklahoma' ? ['Eastern', 
 
 /** An SVG shape with a tooltip, such as a path or a circle. */
 const titled = (tag: 'path' | 'circle', attributes: string, title: string) =>
-	`<${tag} ${attributes}><title>${escape(title)}</title></${tag}>`;
+	`<${tag} ${attributes}><title>${escapeHtml(title)}</title></${tag}>`;
 
 const link = (anchor: string, label: string, content: string) =>
-	`<a href="#${escape(anchor)}" aria-label="${escape(label)}">${content}</a>`;
+	`<a href="#${escapeHtml(anchor)}" aria-label="${escapeHtml(label)}">${content}</a>`;
 
 /** A scale bar: a line with end ticks, and the distance it stands for. */
 const drawScaleBar = (bar: ScaleBar) =>
 	`<path class="scale-bar" d="M${bar.x},${bar.y - 5}V${bar.y}H${bar.x + bar.length}V${bar.y - 5}"/>` +
-	`<text class="map-label scale-label" x="${bar.x + bar.length + 6}" y="${bar.y + 1}">${escape(bar.label)}</text>`;
+	`<text class="map-label scale-label" x="${bar.x + bar.length + 6}" y="${bar.y + 1}">${escapeHtml(bar.label)}</text>`;
 
 /** The map's frames, drawn behind the shapes. */
 const drawFrames = (geometry: MapGeometry) =>
@@ -160,7 +154,7 @@ const drawFrameLabels = (geometry: MapGeometry) =>
 			const lines = frame.label
 				.map(
 					(line, index) =>
-						`<tspan x="${frame.x + 10}" dy="${index === 0 ? 0 : '1.15em'}">${escape(line)}</tspan>`
+						`<tspan x="${frame.x + 10}" dy="${index === 0 ? 0 : '1.15em'}">${escapeHtml(line)}</tspan>`
 				)
 				.join('');
 			return (
@@ -199,7 +193,7 @@ function drawStates(geometry: MapGeometry, counts: Map<string, StateCount>): str
 		const line = `<line class="marker-line" x1="${marker.fromX}" y1="${marker.fromY}" x2="${marker.x}" y2="${marker.y}"/>`;
 		const dot = titled('circle', `class="${fill}" cx="${marker.x}" cy="${marker.y}" r="9"`, description);
 		const onLeft = marker.labelSide === 'left';
-		const code = `<text class="map-label marker-label${onLeft ? ' label-on-left' : ''}" x="${marker.x + (onLeft ? -12 : 12)}" y="${marker.y + 5}">${escape(shape.code)}</text>`;
+		const code = `<text class="map-label marker-label${onLeft ? ' label-on-left' : ''}" x="${marker.x + (onLeft ? -12 : 12)}" y="${marker.y + 5}">${escapeHtml(shape.code)}</text>`;
 		markers.push(linkOrPlace(`state-${shape.code}`, description, hitArea + outline + line + dot + code, state.count > 0));
 	}
 	return (
@@ -228,7 +222,7 @@ function drawRegions(geometry: MapGeometry, counts: Map<string, RegionCount>): s
 		const lines = labelLines(shape.name)
 			.map(
 				(line, index) =>
-					`<tspan x="${shape.label.x}" dy="${index === 0 ? 0 : '1.1em'}">${escape(line)}</tspan>`
+					`<tspan x="${shape.label.x}" dy="${index === 0 ? 0 : '1.1em'}">${escapeHtml(line)}</tspan>`
 			)
 			.join('');
 		labels.push(
@@ -299,7 +293,7 @@ function drawOffices(geometry: MapGeometry, offices: DrawnOffice[]): string {
 		const office = byNation.get(place.nation);
 		if (!office) return [];
 		const dot = titled('circle', `class="office count-${office.shade}" cx="${place.x}" cy="${place.y}" r="4"`, office.description);
-		return [office.href ? `<a href="${escape(office.href)}" aria-label="${escape(office.description)}">${dot}</a>` : `<g class="unlinked">${dot}</g>`];
+		return [office.href ? `<a href="${escapeHtml(office.href)}" aria-label="${escapeHtml(office.description)}">${dot}</a>` : `<g class="unlinked">${dot}</g>`];
 	});
 	return drawn.length > 0 ? `<g class="offices">${drawn.join('')}</g>` : '';
 }
@@ -344,13 +338,13 @@ export function drawShadedStatesMap(geometry: MapGeometry, view: { key: string; 
 		const line = `<line class="marker-line" x1="${marker.fromX}" y1="${marker.fromY}" x2="${marker.x}" y2="${marker.y}"/>`;
 		const dot = titled('circle', `class="${fill}" cx="${marker.x}" cy="${marker.y}" r="9"`, description);
 		const onLeft = marker.labelSide === 'left';
-		const code = `<text class="map-label marker-label${onLeft ? ' label-on-left' : ''}" x="${marker.x + (onLeft ? -12 : 12)}" y="${marker.y + 5}">${escape(shape.code)}</text>`;
+		const code = `<text class="map-label marker-label${onLeft ? ' label-on-left' : ''}" x="${marker.x + (onLeft ? -12 : 12)}" y="${marker.y + 5}">${escapeHtml(shape.code)}</text>`;
 		markers.push(linkOrPlace(state.anchor ?? '', description, hitArea + outline + line + dot + code, Boolean(state.anchor)));
 	}
 	const titleId = `${view.key}-by-state-title`;
 	return (
 		`<svg class="map" viewBox="0 0 ${geometry.width} ${geometry.height}" role="group" aria-labelledby="${titleId}">` +
-		`<title id="${titleId}">${escape(view.title)}, by state</title>` +
+		`<title id="${titleId}">${escapeHtml(view.title)}, by state</title>` +
 		drawFrames(geometry) +
 		`<g class="states">${shapes.join('')}</g>` +
 		`<path class="state-borders" d="${geometry.stateBorders}"/>` +
@@ -388,12 +382,12 @@ export function drawShadedLandAreasMap(
 		if (points.length === 0) return [];
 		const x = median(points.map((point) => point.x));
 		const y = median(points.map((point) => point.y));
-		return [`<text class="map-label region-label" x="${x.toFixed(1)}" y="${y.toFixed(1)}">${escape(label.name)}</text>`];
+		return [`<text class="map-label region-label" x="${x.toFixed(1)}" y="${y.toFixed(1)}">${escapeHtml(label.name)}</text>`];
 	});
 	const titleId = `${view.key}-title`;
 	return (
 		`<svg class="map" viewBox="0 0 ${geometry.width} ${geometry.height}" role="group" aria-labelledby="${titleId}">` +
-		`<title id="${titleId}">${escape(view.title)}</title>` +
+		`<title id="${titleId}">${escapeHtml(view.title)}</title>` +
 		drawFrames(geometry) +
 		`<path class="land" d="${geometry.land}"/>` +
 		`<path class="state-borders faint" d="${geometry.stateBorders}"/>` +

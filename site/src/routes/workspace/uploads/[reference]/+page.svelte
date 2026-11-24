@@ -25,6 +25,7 @@
 	import { youtubeEmbedAddress, youtubeWatchAddress } from '#lib/video-links.ts';
 	import type { PageProps } from './$types';
 	import DateField from '#lib/components/DateField.svelte';
+	import { mediumDateAndTime } from '#lib/readable-date.ts';
 
 	let { data, form }: PageProps = $props();
 
@@ -58,9 +59,6 @@
 	let destination = $derived<Destination>(upload.destination ?? defaultDestination());
 	let accessLevel = $derived<FiledAccessLevel>(upload.access_level ?? defaultAccess());
 
-	function when(value: string): string {
-		return new Date(value).toLocaleString('en-US', { dateStyle: 'medium', timeStyle: 'short' });
-	}
 </script>
 
 <svelte:head>
@@ -76,7 +74,7 @@
 	/>
 	<h1>{name}</h1>
 	<p class="muted">
-		{upload.reference} · sent {when(upload.received_at)}{data.group.length > 0
+		{upload.reference} · sent {mediumDateAndTime(upload.received_at)}{data.group.length > 0
 			? ` · sent with ${data.group.length} other file${data.group.length === 1 ? '' : 's'}`
 			: ''}
 	</p>
@@ -102,7 +100,7 @@
 		<div>
 			<h2 class="visually-hidden">The file</h2>
 			{#if upload.deleted_at}
-				<p class="notice">The file was deleted on {when(upload.deleted_at)}. This record stays.</p>
+				<p class="notice">The file was deleted on {mediumDateAndTime(upload.deleted_at)}. This record stays.</p>
 			{:else if upload.source === 'youtube' && upload.youtube_identifier}
 				<div class="frame">
 					<iframe
@@ -233,7 +231,7 @@
 						<strong>
 							{message.kind === 'question' ? `${message.person_name ?? 'A reviewer'} asked the sender` : message.kind === 'answer' ? 'The sender answered' : message.kind === 'nation-comment' ? `${message.person_name ?? 'A nation reviewer'} commented for the nation` : `${message.person_name ?? 'A reviewer'} noted (reviewers only)`}
 						</strong>
-						· {when(message.created_at)}
+						· {mediumDateAndTime(message.created_at)}
 					</p>
 					<p>{message.body}</p>
 				</div>
@@ -255,7 +253,7 @@
 			<h2>History</h2>
 			<ol class="history small">
 				{#each data.history as entry (entry.identifier)}
-					<li>{when(entry.createdAt)}: {entry.action}{entry.personName ? `, by ${entry.personName}` : ''}</li>
+					<li>{mediumDateAndTime(entry.createdAt)}: {entry.action}{entry.personName ? `, by ${entry.personName}` : ''}</li>
 				{/each}
 			</ol>
 		</div>
@@ -348,7 +346,7 @@
 				</form>
 			{:else}
 				<h2 id="file-heading">Decision</h2>
-				<p>{reviewerStatusLabels[upload.status]}{upload.decided_at ? ` on ${when(upload.decided_at)}` : ''}.</p>
+				<p>{reviewerStatusLabels[upload.status]}{upload.decided_at ? ` on ${mediumDateAndTime(upload.decided_at)}` : ''}.</p>
 				{#if upload.status === 'filed'}
 					<dl class="summary-list">
 						<div><dt>Where</dt><dd>{upload.destination ? destinationLabels[upload.destination] : ''}{upload.filed_page ? `, ${upload.filed_page}` : ''}</dd></div>

@@ -237,15 +237,6 @@ export function unsubscribeWays(header: string | null, post: string | null): Uns
 	return ways;
 }
 
-/** The unsubscribe ways of one received message, or null when it is not a received message. */
-export async function messageUnsubscribeWays(context: MailContext, messageIdentifier: string): Promise<UnsubscribeWays | null> {
-	const row = await context.database
-		.prepare(`SELECT list_unsubscribe, list_unsubscribe_post FROM mail_messages WHERE identifier = ? AND direction = 'in'`)
-		.bind(messageIdentifier)
-		.first<{ list_unsubscribe: string | null; list_unsubscribe_post: string | null }>();
-	return row ? unsubscribeWays(row.list_unsubscribe, row.list_unsubscribe_post) : null;
-}
-
 /**
  * Unsubscribes the project from the list a message came from: by the
  * one-click address when there is one, else by writing to the list's

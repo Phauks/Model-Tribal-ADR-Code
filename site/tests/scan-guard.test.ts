@@ -147,6 +147,22 @@ const bucketCalls: Record<string, BucketUse> = {
     kind: "project-file",
     why: "Essay text written in the site editor.",
   },
+  "src/lib/server/live/essay-room.ts saveNow put(overlayKey(essay, saved.version.number))": {
+    kind: "project-file",
+    why: "Who typed each word of a version the live room saved, worked out by the room.",
+  },
+  "src/lib/server/essay-credits.ts versionBlame get(blameKey(essay, rows[start].number))": {
+    kind: "project-file",
+    why: "Who wrote each word of an essay version, worked out by the site.",
+  },
+  "src/lib/server/essay-credits.ts versionBlame get(overlayKey(essay, row.number))": {
+    kind: "project-file",
+    why: "Who typed each word of a version the live room saved, worked out by the room.",
+  },
+  "src/lib/server/essay-credits.ts versionBlame put(blameKey(essay, row.number))": {
+    kind: "project-file",
+    why: "Who wrote each word of an essay version, worked out by the site.",
+  },
   "src/lib/server/essay-git-sync.ts syncOne put(gitSnapshotKey(identifier, essay.sha256))":
     {
       kind: "project-file",
@@ -197,6 +213,14 @@ const bucketCalls: Record<string, BucketUse> = {
     kind: "project-file",
     why: "Nation seals and images the project collected from official sources.",
   },
+  "src/routes/supreme-court/portraits/[person]/+server.ts GET get(portrait.key)": {
+    kind: "project-file",
+    why: "Justices' and Presidents' portraits the project chose from Wikimedia Commons, each served only if it matches the SHA-256 recorded in content/supreme-court/people.yaml.",
+  },
+  "src/routes/supreme-court/portraits/[person]/+server.ts GET put(portrait.key)": {
+    kind: "project-file",
+    why: "Justices' and Presidents' portraits the project chose from Wikimedia Commons, kept only if the fetched copy matches the SHA-256 recorded in content/supreme-court/people.yaml.",
+  },
   "src/lib/server/source-library.ts applyLibraryChanges get(`${changesPrefix}latest.json`)":
     {
       kind: "project-file",
@@ -221,8 +245,10 @@ const bucketCalls: Record<string, BucketUse> = {
 const fileIntakes: Record<string, string> = {
   "src/lib/server/request-form.ts readFile File.arrayBuffer":
     "Files sent with requests and forms, proof for a nation team, nation page pictures, and photos sent with a problem about a printed-copy order. Stored with storeSentFile by saveRequest, saveApplication, savePicture and reportProblem.",
-  "src/routes/profile/+page.server.ts picture File.arrayBuffer":
-    "Profile pictures. Stored with storeSentFile by savePicture (profile-pictures.ts).",
+  "src/routes/profile/edit/+page.server.ts default File.arrayBuffer":
+    "Profile pictures, sent with the profile form. Stored with storeSentFile by savePicture (profile-pictures.ts).",
+  "src/lib/server/profile-documents.ts saveDocument File.arrayBuffer":
+    "A contributor's CV or résumé. Stored with storeSentFile (purpose profile-document) and served only after the scan passes, at /profile/curriculum-vitae and to editors at /workspace/contributors/<identifier>/curriculum-vitae.",
   "src/routes/workspace/events/[identifier]/+page.server.ts addMaterial File.arrayBuffer":
     "An event's materials, such as written materials or slides. Stored with storeSentFile (purpose event-material) and served with serveUploadFile, which checks the scan, at /events/<slug>/materials/<material>.",
   "src/routes/account/sponsorship/+page.server.ts save File.arrayBuffer":

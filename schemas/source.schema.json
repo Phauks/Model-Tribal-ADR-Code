@@ -149,6 +149,90 @@
         "checked": { "$ref": "common.schema.json#/$defs/calendarDate" }
       }
     },
+    "caption": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "printed",
+        "source",
+        "checked"
+      ],
+      "description": "A case's caption as the official report prints it, naming the parties and their roles (\"Samuel A. Worcester, Plaintiff in Error v. The State of Georgia\"). Shown under Parties and nations on the case's page (site/src/lib/server/case-pages.ts). Letter case may be changed from small capitals; the words may not.",
+      "properties": {
+        "printed": {
+          "type": "string",
+          "minLength": 1
+        },
+        "source": {
+          "type": "string",
+          "format": "uri",
+          "description": "The official report or court print the caption comes from."
+        },
+        "checked": {
+          "$ref": "common.schema.json#/$defs/calendarDate"
+        }
+      }
+    },
+    "opinions": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "source",
+        "checked",
+        "list"
+      ],
+      "description": "Each opinion in a case and the page of the official report where it starts, read from the report itself. The case's page lists them, each linked to its first page in the saved copy of the official report, and says which opinion each quotation comes from (site/src/lib/case-opinions.ts). Checked by hand.",
+      "properties": {
+        "source": {
+          "type": "string",
+          "format": "uri",
+          "description": "The official report the pages come from."
+        },
+        "checked": {
+          "$ref": "common.schema.json#/$defs/calendarDate"
+        },
+        "list": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "kind",
+              "justice",
+              "page"
+            ],
+            "properties": {
+              "kind": {
+                "enum": [
+                  "majority",
+                  "plurality",
+                  "judgment",
+                  "concurrence",
+                  "special concurrence",
+                  "concurrence in the result",
+                  "dissent",
+                  "per curiam"
+                ]
+              },
+              "justice": {
+                "type": "string",
+                "description": "The writer, as the record's supreme_court.justices names them, or the judge's name for other courts. \"The Court\" for a per curiam opinion."
+              },
+              "page": {
+                "type": "integer",
+                "minimum": 1,
+                "description": "The report page where the opinion starts."
+              },
+              "note": {
+                "type": "string",
+                "description": "Anything a reader should know, such as an opinion the report does not print in full."
+              }
+            }
+          }
+        }
+      }
+    },
     "reading_links": {
       "type": "object",
       "description": "Other places a reader can read this case or law, found and checked by scripts/caselaw/reading_links.py from the settings in research/reading-links/sites.yaml. The website shows them beside the citation.",

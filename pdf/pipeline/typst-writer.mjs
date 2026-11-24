@@ -60,7 +60,12 @@ const OPINION_LABELS = {
   plurality: "plurality opinion",
   concurrence: "concurring opinion",
   "special concurrence": "opinion concurring in the judgment",
-  "concurrence in the result": "concurring in the result",
+  "concurrence in the result": "opinion concurring in the result",
+  "concurrence in the result without opinion": "concurring in the result, without an opinion",
+  "concurrence in part and in the judgment": "opinion concurring in part and concurring in the judgment",
+  "concurrence in part and dissent in part": "opinion concurring in part and dissenting in part",
+  "concurrence in part, concurrence in the judgment in part, and dissent in part": "opinion concurring in part, concurring in the judgment in part, and dissenting in part",
+  "dissent in part": "opinion dissenting in part",
   judgment: "opinion announcing the judgment",
   dissent: "dissenting opinion",
 };

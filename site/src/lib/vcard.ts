@@ -7,22 +7,13 @@
  * Version 3.0 rather than 4.0, because phones and desktop address books read it most widely.
  */
 import type { ContactCards, ContactRow } from './contact-card.ts';
+import { escapeContentText, foldContentLine } from './content-lines.ts';
 
 /** Escapes a text value: backslash, comma, semicolon and line breaks. */
-export function vcardText(text: string): string {
-	return text.replace(/\\/g, '\\\\').replace(/,/g, '\\,').replace(/;/g, '\;').replace(/\r?\n/g, '\\n');
-}
+export const vcardText = escapeContentText;
 
-/** Folds a line longer than 75 characters onto continuation lines, which start with a space. */
-export function foldLine(line: string): string {
-	const characters = Array.from(line);
-	if (characters.length <= 75) return line;
-	const parts: string[] = [];
-	for (let index = 0; index < characters.length; index += index === 0 ? 75 : 74) {
-		parts.push(characters.slice(index, index + (index === 0 ? 75 : 74)).join(''));
-	}
-	return parts.join('\r\n ');
-}
+/** Folds a line longer than 75 octets onto continuation lines, which start with a space. */
+export const foldLine = foldContentLine;
 
 /** "100 Parkway, Window Rock, AZ 86515" as the address parts: street, town, state, postal code. */
 export function addressParts(value: string): { street: string; town: string; region: string; code: string } {

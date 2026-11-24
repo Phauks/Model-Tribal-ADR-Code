@@ -10,7 +10,7 @@
  */
 import { libraryOutline } from '#lib/library-pages.ts';
 import type { SectionContents } from '#lib/sidebar-outline.ts';
-import { aboutPages, eventsPages, nationsPages, storePages, type OutlineItem } from '#lib/site-sections.ts';
+import { aboutPages, eventsPages, nationsPages, sponsorPages, storePages, type OutlineItem } from '#lib/site-sections.ts';
 import { publishedGlossary } from './glossary-entries.ts';
 import { storySummaries } from './stories.ts';
 
@@ -44,6 +44,8 @@ const builtContents: Record<string, () => SectionContents> = {
 	}),
 	library: () => ({ pages: libraryOutline() }),
 	events: () => ({ pages: eventsPages }),
+	// The Sponsorship levels page sits under Sponsorship (docs/sponsorship.md, "Levels").
+	sponsor: () => ({ pages: sponsorPages }),
 	store: () => ({ pages: storePages }),
 	about: () => ({ pages: aboutPages })
 };

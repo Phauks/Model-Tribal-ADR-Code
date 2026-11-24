@@ -11,12 +11,12 @@ import {
 	atLeast,
 	documentAccess,
 	everyDocument,
-	subjectKindLabels,
+	accessKindLabels,
 	type AccessGrant,
+	type AccessKind,
+	type AccessSubject,
 	type AccessLevel,
-	type DocumentAccess,
-	type Subject,
-	type SubjectKind
+	type DocumentAccess
 } from '#lib/permissions.ts';
 import { placeAsGrant, type TeamLevel } from '#lib/nation-teams.ts';
 import { eventStatement } from './events.ts';
@@ -71,9 +71,23 @@ export async function grantsOf(database: D1Database, personIdentifier: string): 
 export async function accessTo(
 	database: D1Database,
 	person: SignedInPerson,
-	subject: Subject
+	subject: AccessSubject
 ): Promise<DocumentAccess> {
 	return documentAccess(person, subject, await grantsOf(database, person.identifier));
+}
+
+/**
+ * The person's level on any document of one kind, from one read of their
+ * grants. A list of documents uses it instead of asking accessTo for each one,
+ * which reads the grants again every time.
+ */
+export async function levelsFor(
+	database: D1Database,
+	person: SignedInPerson,
+	kind: AccessKind
+): Promise<(identifier: string) => AccessLevel> {
+	const grants = await grantsOf(database, person.identifier);
+	return (identifier) => documentAccess(person, { kind, identifier } as AccessSubject, grants).level;
 }
 
 /** Every current grant, for the Access page, optionally for one person. */
@@ -114,14 +128,15 @@ export async function grantByIdentifier(
 }
 
 /** "Essay i-key-cases-digest" or "every essay", for the activity log. */
-export function describeScope(kind: SubjectKind, identifier: string): string {
-	const label = subjectKindLabels[kind].toLocaleLowerCase('en-US');
+export function describeScope(kind: AccessKind, identifier: string): string {
+	if (kind === 'site-text') return 'the site text';
+	const label = accessKindLabels[kind].toLocaleLowerCase('en-US');
 	return identifier === everyDocument ? `every ${label}` : `${label} ${identifier}`;
 }
 
 export interface GrantInput {
 	personIdentifier: string;
-	subjectKind: SubjectKind;
+	subjectKind: AccessKind;
 	subjectIdentifier: string;
 	level: AccessLevel;
 	expiresAt: string | null;
@@ -200,7 +215,7 @@ export async function endGrant(
 	notifyAccessChanged(grant.personIdentifier, { kind: grant.subjectKind, identifier: grant.subjectIdentifier });
 }
 
-type AccessChangeListener = (personIdentifier: string, subject: Subject) => void;
+type AccessChangeListener = (personIdentifier: string, subject: AccessSubject) => void;
 const accessChangeListeners = new Set<AccessChangeListener>();
 
 /**
@@ -214,7 +229,7 @@ export function onAccessChanged(listener: AccessChangeListener): () => void {
 	return () => accessChangeListeners.delete(listener);
 }
 
-export function notifyAccessChanged(personIdentifier: string, subject: Subject): void {
+export function notifyAccessChanged(personIdentifier: string, subject: AccessSubject): void {
 	for (const listener of accessChangeListeners) listener(personIdentifier, subject);
 }
 
@@ -233,7 +248,7 @@ interface DocumentEvent {
 export async function requireDocumentLevel(
 	event: DocumentEvent,
 	database: D1Database,
-	subject: Subject,
+	subject: AccessSubject,
 	minimum: AccessLevel
 ): Promise<DocumentAccess> {
 	const person = event.locals.person;

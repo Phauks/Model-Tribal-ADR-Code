@@ -4,6 +4,7 @@
  */
 import { error } from '@sveltejs/kit';
 import { publicCopies } from 'virtual:public-copies';
+import { datedName } from '#lib/download-names.ts';
 import { citationDate } from '#lib/page-downloads.ts';
 import { documentsReadme, documentsZip } from '#lib/server/document-zips.ts';
 import { workerEnvironment } from '#lib/server/environment.ts';
@@ -19,11 +20,13 @@ export const GET: RequestHandler = async ({ url }) => {
 	const response = await environment.ASSETS?.fetch(new URL('/copies/offline/federal.json', url).toString());
 	if (!environment.sourceDocuments || !response?.ok) error(503, 'The documents cannot be gathered right now.');
 	const list = (await response.json()) as DocumentSetList;
-	const readme = documentsReadme(list.title, url.origin, citationDate(new Date()));
+	const now = new Date();
+	const readme = documentsReadme(list.title, url.origin, citationDate(now));
 	return new Response(documentsZip(list, environment.sourceDocuments, served, readme), {
 		headers: {
 			'content-type': 'application/zip',
-			'content-disposition': 'attachment; filename="united-states-documents.zip"',
+			// Named for the day it was put together (src/lib/download-names.ts).
+			'content-disposition': `attachment; filename="${datedName('united-states-documents.zip', now)}"`,
 			'cache-control': 'no-store'
 		}
 	});

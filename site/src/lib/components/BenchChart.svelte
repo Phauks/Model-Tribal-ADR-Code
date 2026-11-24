@@ -3,8 +3,11 @@
 	Who sat on one Court of the Supreme Court, and when: a row for each
 	Justice, the Chief Justice first, with a bar for the part of their service
 	that fell within the Court, and a line at the date of each case on this
-	site that the Court decided. Hidden from screen readers, since the table
-	of Justices and the list of cases under it say the same.
+	site that the Court decided, linked to the case. Pointing at a case shows
+	its name and date; the names are not written on the chart, where many
+	cases would stack (Trevor, Nov. 23, 2026: "remove names there"). Hidden
+	from screen readers, and its links kept out of the keyboard order, since
+	the table of Justices and the table of cases under it say the same.
 
 	Use:
 	<BenchChart rows={data.bench} start={data.start} end={data.end} cases={data.cases} />
@@ -15,21 +18,33 @@
 		role: string;
 		from: string;
 		to: string;
+		/** The Justice's page, when the name should open it. */
+		link?: string;
 	}
 
 	interface Marked {
 		key: string;
 		name: string;
 		decided?: string;
+		decidedText?: string;
 		link?: string;
 	}
 
-	let { rows, start, end, cases = [] }: { rows: Row[]; start: string; end: string; cases?: Marked[] } = $props();
+	interface Props {
+		rows: Row[];
+		start: string;
+		end: string;
+		cases?: Marked[];
+		/** The drawing's width in its own units: smaller draws the type larger in a narrow column. */
+		width?: number;
+		/** Room for the names on the left. */
+		labelWidth?: number;
+	}
 
-	const width = 760;
-	const labelWidth = 170;
+	let { rows, start, end, cases = [], width = 760, labelWidth = 170 }: Props = $props();
+
 	const rowHeight = 24;
-	const top = 26;
+	const tickRow = 26;
 	const right = 12;
 
 	/** A date as a fractional year, so bars start and stop on the day. */
@@ -39,12 +54,14 @@
 	}
 
 	function surname(name: string): string {
-		return name.replace(/,\s*(?:Jr\.|Sr\.)$/, '').trim().split(/\s+/).pop() ?? name;
+		return name.replace(/,?\s+(?:Jr\.|Sr\.|II|III)$/, '').trim().split(/\s+/).pop() ?? name;
 	}
 
 	const first = $derived(yearValue(start));
 	const last = $derived(yearValue(end));
 	const x = (date: string) => labelWidth + ((yearValue(date) - first) / Math.max(last - first, 0.1)) * (width - labelWidth - right);
+	const marked = $derived(cases.filter((item) => item.decided).sort((one, two) => one.decided!.localeCompare(two.decided!)));
+	const top = $derived(tickRow + (marked.length ? 14 : 0));
 	const height = $derived(top + rows.length * rowHeight + 8);
 
 	/** Tick years: every 5, 10 or 2 years, whichever gives 4 to 10 ticks. */
@@ -56,21 +73,29 @@
 		return years;
 	});
 	const tickX = (year: number) => labelWidth + ((year - first) / Math.max(last - first, 0.1)) * (width - labelWidth - right);
-	const marked = $derived(cases.filter((item) => item.decided));
 </script>
 
 <figure class="bench-chart" aria-hidden="true">
 	<div class="frame">
-		<svg viewBox="0 0 {width} {height}" width="100%" role="presentation">
+		<!-- Narrow drawings may shrink as far as wide ones, scale for scale, before the frame scrolls. -->
+		<svg viewBox="0 0 {width} {height}" width="100%" role="presentation" style:min-width="{(width * 34) / 760}rem">
 			{#each ticks as year (year)}
 				<line class="grid" x1={tickX(year)} x2={tickX(year)} y1={top - 6} y2={height - 4} />
-				<text class="tick" x={tickX(year)} y={top - 12} text-anchor="middle">{year}</text>
+				<text class="tick" x={tickX(year)} y={tickRow - 12} text-anchor={tickX(year) > width - right - 16 ? 'end' : 'middle'}>{year}</text>
 			{/each}
-			{#each rows as row, index (row.name + row.role)}
+			{#each rows as row, index (row.name + row.role + row.from)}
 				{@const y = top + index * rowHeight}
-				<text class="name" class:chief={row.role === 'Chief Justice'} x={labelWidth - 10} y={y + rowHeight / 2 + 4} text-anchor="end"
-					>{surname(row.name)}</text
-				>
+				{#if row.link}
+					<a href={row.link} tabindex="-1" class="name-link">
+						<text class="name" class:chief={row.role === 'Chief Justice'} x={labelWidth - 10} y={y + rowHeight / 2 + 4} text-anchor="end"
+							>{surname(row.name)}</text
+						>
+					</a>
+				{:else}
+					<text class="name" class:chief={row.role === 'Chief Justice'} x={labelWidth - 10} y={y + rowHeight / 2 + 4} text-anchor="end"
+						>{surname(row.name)}</text
+					>
+				{/if}
 				<rect
 					class="bar"
 					class:chief={row.role === 'Chief Justice'}
@@ -82,8 +107,23 @@
 				/>
 			{/each}
 			{#each marked as item (item.key)}
-				<line class="case" x1={x(item.decided!)} x2={x(item.decided!)} y1={top - 4} y2={height - 4} />
-				<path class="case-mark" d="M {x(item.decided!)} {top - 9} l 4 4 l -4 4 l -4 -4 z" />
+				{@const at = x(item.decided!)}
+				{#if item.link}
+					<a class="case" href={item.link} tabindex="-1">
+						<title>{item.name}, {item.decidedText ?? item.decided}</title>
+						<line x1={at} x2={at} y1={top - 5} y2={height - 4} />
+						<path d="M {at} {top - 13} l 4 4 l -4 4 l -4 -4 z" />
+						<!-- A wider strip to point at than the thin line. -->
+						<rect class="hit" x={at - 5} y={top - 14} width="10" height={height - top + 10} />
+					</a>
+				{:else}
+					<g class="case">
+						<title>{item.name}, {item.decidedText ?? item.decided}</title>
+						<line x1={at} x2={at} y1={top - 5} y2={height - 4} />
+						<path d="M {at} {top - 13} l 4 4 l -4 4 l -4 -4 z" />
+						<rect class="hit" x={at - 5} y={top - 14} width="10" height={height - top + 10} />
+					</g>
+				{/if}
 			{/each}
 		</svg>
 	</div>
@@ -103,7 +143,6 @@
 
 	svg {
 		display: block;
-		min-width: 34rem;
 		font-family: inherit;
 	}
 
@@ -126,6 +165,10 @@
 		font-weight: 700;
 	}
 
+	.name-link:hover .name {
+		text-decoration: underline;
+	}
+
 	.bar {
 		fill: var(--color-link);
 		opacity: 0.75;
@@ -136,14 +179,23 @@
 		opacity: 1;
 	}
 
-	.case {
+	.case line {
 		stroke: var(--color-timeline-case);
 		stroke-width: 1.5;
 		stroke-dasharray: 3 3;
 	}
 
-	.case-mark {
+	.case path {
 		fill: var(--color-timeline-case);
+	}
+
+	.case .hit {
+		fill: transparent;
+	}
+
+	a.case:hover line {
+		stroke-dasharray: none;
+		stroke-width: 2.5;
 	}
 
 	figcaption {
@@ -163,11 +215,11 @@
 	@media (forced-colors: active) {
 		.bar,
 		.bar.chief,
-		.case-mark {
+		.case path {
 			fill: CanvasText;
 		}
 
-		.case,
+		.case line,
 		.grid {
 			stroke: CanvasText;
 		}

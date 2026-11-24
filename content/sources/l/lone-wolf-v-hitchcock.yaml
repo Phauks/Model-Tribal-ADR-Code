@@ -41,7 +41,7 @@ supreme_court:
   vote: {majority: 9, minority: 0}
   justices:
   - {name: "Melville W. Fuller", vote: majority}
-  - {name: "John M. Harlan", vote: majority, opinion: concurrence in the result}
+  - {name: "John M. Harlan", vote: majority, opinion: concurrence in the result without opinion}
   - {name: "David J. Brewer", vote: majority}
   - {name: "Henry B. Brown", vote: majority}
   - {name: "George Shiras, Jr.", vote: majority}
@@ -50,8 +50,8 @@ supreme_court:
   - {name: "Joseph McKenna", vote: majority}
   - {name: "Oliver W. Holmes, Jr.", vote: majority}
   source: https://tile.loc.gov/storage-services/service/ll/usrep/usrep187/usrep187553/usrep187553.pdf
-  note: "The report names the author and any dissenter or separate opinion; the other justices are counted in the majority because the report notes no one as not participating."
-  checked: '2026-11-22'
+  note: "The report names the author and any dissenter or separate opinion; the other justices are counted in the majority because the report notes no one as not participating. The report says only that Harlan concurs in the result; he wrote no opinion."
+  checked: '2026-11-24'
 courtlistener:
   cluster: 95758
   citation: "187 U.S. 553"
@@ -79,6 +79,10 @@ reading_links:
     label: "Cornell LII"
     access: free
     link: https://www.law.cornell.edu/supremecourt/text/187/553
+  - site: oyez
+    label: "Oyez"
+    access: free
+    link: https://www.oyez.org/cases/1900-1940/187us553
   - site: google-scholar
     label: "Google Scholar"
     access: free

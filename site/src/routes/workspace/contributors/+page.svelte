@@ -7,13 +7,11 @@
 		profileStatusLabels
 	} from '#lib/contributors.ts';
 	import type { PageProps } from './$types';
+	import { mediumDate } from '#lib/readable-date.ts';
 
 	let { data }: PageProps = $props();
 
 
-	function date(value: string | null): string {
-		return value ? new Date(value).toLocaleDateString('en-US', { dateStyle: 'medium' }) : '';
-	}
 </script>
 
 <svelte:head>
@@ -49,7 +47,7 @@
 						</td>
 						<td>{profile.interests.map((interest) => interestLabels[interest]).join('; ')}</td>
 						<td>{profile.nations.join('; ')}</td>
-						<td>{date(profile.submittedAt)}</td>
+						<td>{mediumDate(profile.submittedAt)}</td>
 					</tr>
 				{/each}
 			</tbody>

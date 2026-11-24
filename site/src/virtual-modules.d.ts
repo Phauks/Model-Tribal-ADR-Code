@@ -40,6 +40,11 @@ declare module 'virtual:nation-images' {
 	export const nationImages: import('#lib/official-images.ts').ServableImage[];
 }
 
+declare module 'virtual:portraits' {
+	/** The portraits of Justices and Presidents the Worker may serve, listed at build time. */
+	export const portraits: { person: string; key: string; mediaType: string; sha256: string; link: string }[];
+}
+
 declare module 'virtual:public-copies' {
 	/** The copies of public documents the Worker may serve at /copies/, listed at build time. */
 	export const publicCopies: Pick<
@@ -66,6 +71,8 @@ declare module 'virtual:essay-library' {
 	export const essayCaseNames: Record<string, { title: string; date: number[] }>;
 	/** Where a case's name links when no essay has a box for it (the copy of the opinion on this site, or where it was published), by source key. */
 	export const essayCaseLinks: Record<string, string>;
+	/** Each court case's opinions and the report page each starts on, by source key (src/lib/case-opinions.ts). */
+	export const essayOpinions: Record<string, import('#lib/case-opinions.ts').OpinionEntry[]>;
 	/** Words the spelling check should accept: names of nations, glossary terms and court cases. */
 	export const essaySpellingWords: string[];
 }
@@ -110,4 +117,11 @@ declare module 'cloudflare:sockets' {
 declare module 'virtual:page-history' {
 	/** The pages built with the site, for Recent changes and page histories (src/lib/server/page-history-build.ts). */
 	export const historyBuild: import('#lib/page-history.ts').HistoryBuild;
+}
+
+declare module 'virtual:site-text-catalog' {
+	/** Every piece of fixed text in the site's components (src/lib/site-text-markers.ts, docs/site-text.md). */
+	export const siteTextCatalog: import('#lib/site-text-markers.ts').SiteTextEntry[];
+	/** The publication of edited site text this build carries; 0 for none. */
+	export const builtPublication: number;
 }

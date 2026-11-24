@@ -1,39 +1,86 @@
 <!--
 	A contributor's answers as a check-answers list (docs/contributor-profiles.md):
-	each answer with who can see it, and, on the person's own review page, a
-	"Change" link to the part of the form that holds it.
+	each answer with where it may appear (Book, Website, or Private), and, on
+	the person's own review page, a "Change" link to the part of the form that
+	holds it.
 -->
 <script lang="ts">
 	import {
-		ageGroupLabels,
 		availabilityLabels,
-		contactMethodLabels,
-		creditFormLabels,
-		creditOf,
+		creditsOf,
 		fullName,
 		interestLabels,
+		nameKindLabels,
 		nationAnswerLabels,
+		nationRelationshipLabels,
+		placementOf,
+		pronounLabels,
 		specialtiesShown,
+		type Placement,
 		type ProfileAnswers
 	} from '#lib/contributors.ts';
+	import { parsePhoneNumberFromString } from 'libphonenumber-js/min';
+	import { languageOf } from '#lib/languages.ts';
 
 	let {
 		answers,
-		email,
 		changeLinks = false,
-		showContact = true
+		showContact = true,
+		picture = null,
+		curriculumVitae = null
 	}: {
 		answers: ProfileAnswers;
-		email: string;
 		/** Show "Change" links to the profile form. */
 		changeLinks?: boolean;
-		/** Show the email address and phone number. Off for anyone without permission to read contact details. */
+		/** Show email addresses and phone numbers. Off for anyone without permission to read contact details. */
 		showContact?: boolean;
+		/** The address of the person's picture, when they have one. */
+		picture?: string | null;
+		/** The person's CV or résumé, by its file name and where to download it. */
+		curriculumVitae?: { name: string; href: string } | null;
 	} = $props();
 
-	const credit = $derived(creditOf(answers));
-	const team = 'The lead author and editors';
+	const credits = $derived(creditsOf(answers));
 	const notGiven = 'Not given';
+	const adult = $derived(answers.ageGroup === '18-or-older');
+
+	/** Where an answer may appear, in words. */
+	function where(placement: Placement): string {
+		if (placement.book && placement.website) return 'Book and website';
+		if (placement.book) return 'Book';
+		if (placement.website) return 'Website';
+		return 'Private';
+	}
+
+	/** Under 18 only a pen name may be published. */
+	function nameWhere(name: ProfileAnswers['names'][number]): string {
+		return adult || name.kind === 'pen-name' ? where(name) : 'Private';
+	}
+
+	/** A phone number written the usual way for reading, such as +1 702 555 0134. */
+	function contactText(contact: ProfileAnswers['contacts'][number]): string {
+		if (contact.kind !== 'phone') return contact.value;
+		return parsePhoneNumberFromString(contact.value)?.formatInternational() ?? contact.value;
+	}
+
+	function uses(contact: ProfileAnswers['contacts'][number]): string {
+		const ways = [contact.mayEmail ? 'Email' : '', contact.mayCall ? 'Call' : '', contact.mayText ? 'Text' : ''].filter(Boolean);
+		return ways.length > 0 ? ways.join(', ') : 'Not to be used';
+	}
+
+	function languageName(language: ProfileAnswers['languages'][number]): string {
+		return (language.code ? languageOf(language.code)?.name : null) ?? language.otherName ?? language.code ?? '';
+	}
+
+	function skills(language: ProfileAnswers['languages'][number]): string {
+		return [language.speaks ? 'speak' : '', language.reads ? 'read' : '', language.writes ? 'write' : ''].filter(Boolean).join(', ');
+	}
+
+	const pronounText = $derived(
+		answers.pronouns
+			.map((choice) => (choice === 'other' ? (answers.pronounOther ?? pronounLabels.other) : pronounLabels[choice]))
+			.join(', ')
+	);
 </script>
 
 {#snippet change(section: string, what: string)}
@@ -45,42 +92,56 @@
 <section aria-labelledby="summary-about">
 	<h2 id="summary-about">About you</h2>
 	<dl class="summary-list profile-summary">
+		{#if picture}
+			<div>
+				<dt>Picture</dt>
+				<dd>
+					<img class="summary-picture" src={picture} alt="On the profile" width="96" height="96" />
+					<span class="who">{where(placementOf(answers, 'picture'))}</span>
+				</dd>
+				<dd class="action">{@render change('about', 'picture')}</dd>
+			</div>
+		{/if}
 		<div>
 			<dt>Name</dt>
-			<dd>{fullName(answers) || notGiven} <span class="who">{team}</span></dd>
+			<dd>{fullName(answers) || notGiven} <span class="who">{where(placementOf(answers, 'full-name'))}</span></dd>
 			<dd class="action">{@render change('about', 'name')}</dd>
 		</div>
-		{#if answers.nativeName}
+		{#each answers.names as name, position (position)}
 			<div>
-				<dt>Native name or other name</dt>
-				<dd>{answers.nativeName} <span class="who">{team}</span></dd>
-				<dd class="action">{@render change('about', 'Native name or other name')}</dd>
+				<dt>{nameKindLabels[name.kind]}</dt>
+				<dd>{name.name} <span class="who">{nameWhere(name)}</span></dd>
+				<dd class="action">{@render change('about', nameKindLabels[name.kind])}</dd>
 			</div>
-		{/if}
+		{/each}
 		<div>
-			<dt>Age</dt>
-			<dd>{answers.ageGroup ? ageGroupLabels[answers.ageGroup] : 'Not answered'}</dd>
-			<dd class="action">{@render change('about', 'age')}</dd>
+			<dt>Pronouns</dt>
+			<dd>{pronounText || notGiven} {#if pronounText}<span class="who">{where(placementOf(answers, 'pronouns'))}</span>{/if}</dd>
+			<dd class="action">{@render change('about', 'pronouns')}</dd>
 		</div>
-		{#if showContact}
-			<div>
-				<dt>Email</dt>
-				<dd>{email} <span class="who">{team}. Never printed or published.</span></dd>
-				<dd class="action">
-					{#if changeLinks}<span class="small muted">Comes from sign-in</span>{/if}
-				</dd>
-			</div>
-			<div>
-				<dt>Phone</dt>
-				<dd>{answers.phone ?? notGiven} <span class="who">{team}. Never printed or published.</span></dd>
-				<dd class="action">{@render change('contact', 'phone')}</dd>
-			</div>
-		{/if}
 		<div>
-			<dt>Best way to reach you</dt>
-			<dd>{answers.preferredContact ? contactMethodLabels[answers.preferredContact] : 'Email'}</dd>
-			<dd class="action">{@render change('contact', 'how to reach you')}</dd>
+			<dt>Birth year</dt>
+			<dd>{answers.birthYear ?? 'Not answered'} <span class="who">Private</span></dd>
+			<dd class="action">{@render change('about', 'birth year')}</dd>
 		</div>
+	</dl>
+</section>
+
+<section aria-labelledby="summary-contact">
+	<h2 id="summary-contact">How to reach you</h2>
+	<dl class="summary-list profile-summary">
+		{#each answers.contacts as contact, position (position)}
+			{#if showContact || contact.preferred}
+				<div>
+					<dt>{contact.kind === 'phone' ? 'Phone' : 'Email'}{contact.preferred ? ' (preferred)' : ''}</dt>
+					<dd>
+						{showContact ? contactText(contact) : contact.kind === 'phone' ? 'A phone number' : 'An email address'}
+						<span class="who">{uses(contact)}. Private{contact.signIn ? '; signed in with' : ''}.</span>
+					</dd>
+					<dd class="action">{@render change('contact', 'how to reach you')}</dd>
+				</div>
+			{/if}
+		{/each}
 	</dl>
 </section>
 
@@ -88,14 +149,17 @@
 	<h2 id="summary-nations">Native nations</h2>
 	<dl class="summary-list profile-summary">
 		<div>
-			<dt>Connection to a Native nation</dt>
+			<dt>Nations</dt>
 			<dd>
 				{#if answers.nationAnswer === 'listed' && answers.nations.length > 0}
 					<ul>
 						{#each answers.nations as nation, position (position)}
 							<li>
-								{nation.nationName}{nation.connection ? `: ${nation.connection}` : ''}
-								{#if nation.showInCredit}<span class="who">Shown with your name in credits</span>{/if}
+								{nation.nationName}{#if nation.relationships.length > 0}:
+									{nation.relationships
+										.map((relationship) => (relationship === 'other' ? (nation.relationshipOther ?? nationRelationshipLabels.other) : nationRelationshipLabels[relationship]))
+										.join(', ')}{/if}
+								<span class="who">{where(nation)}</span>
 							</li>
 						{/each}
 					</ul>
@@ -104,7 +168,6 @@
 				{:else}
 					{notGiven}
 				{/if}
-				<span class="who">{team}, unless shown with your name</span>
 			</dd>
 			<dd class="action">{@render change('nations', 'Native nations')}</dd>
 		</div>
@@ -116,24 +179,44 @@
 	<dl class="summary-list profile-summary">
 		<div>
 			<dt>Background</dt>
-			<dd class="preserve">{answers.background ?? notGiven} <span class="who">{team}</span></dd>
+			<dd class="preserve">{answers.background ?? notGiven} <span class="who">Private</span></dd>
 			<dd class="action">{@render change('your-background', 'background')}</dd>
 		</div>
+		{#if curriculumVitae}
+			<div>
+				<dt>CV or résumé</dt>
+				<dd><a href={curriculumVitae.href}>{curriculumVitae.name}</a> <span class="who">Private</span></dd>
+				<dd class="action">{@render change('your-background', 'CV or résumé')}</dd>
+			</div>
+		{/if}
 		<div>
 			<dt>Languages</dt>
-			<dd>{answers.languages ?? notGiven}</dd>
+			<dd>
+				{#if answers.languages.length > 0}
+					<ul>
+						{#each answers.languages as language, position (position)}
+							<li>
+								{languageName(language)}{#if skills(language)}: {skills(language)}{/if}
+								<span class="who">{language.website ? 'Website' : 'Private'}</span>
+							</li>
+						{/each}
+					</ul>
+				{:else}
+					{notGiven}
+				{/if}
+			</dd>
 			<dd class="action">{@render change('your-background', 'languages')}</dd>
 		</div>
 		<div>
-			<dt>Organization or school</dt>
-			<dd>{answers.organization ?? notGiven}</dd>
+			<dt>Organization, office or school</dt>
+			<dd>{answers.organization ?? notGiven} {#if answers.organization}<span class="who">{where(placementOf(answers, 'organization'))}</span>{/if}</dd>
 			<dd class="action">{@render change('your-background', 'organization')}</dd>
 		</div>
 		<div>
 			<dt>Specialties</dt>
 			<dd>
 				{specialtiesShown(answers).join(', ') || notGiven}
-				{#if specialtiesShown(answers).length > 0}<span class="who">Shown with your name if you have a page on the website</span>{/if}
+				{#if specialtiesShown(answers).length > 0}<span class="who">{where(placementOf(answers, 'specialties'))}</span>{/if}
 			</dd>
 			<dd class="action">{@render change('your-background', 'specialties')}</dd>
 		</div>
@@ -162,39 +245,26 @@
 	<h2 id="summary-credit">Credit</h2>
 	<dl class="summary-list profile-summary">
 		<div>
-			<dt>Kind of credit</dt>
-			<dd>{answers.creditForm ? creditFormLabels[answers.creditForm] : notGiven}</dd>
-			<dd class="action">{@render change('credit', 'kind of credit')}</dd>
-		</div>
-		<div>
-			<dt>Where</dt>
-			<dd>
-				{#if !credit}
-					Nowhere
-				{:else}
-					{[credit.inBook ? 'The book' : '', credit.onWebsite ? 'the website' : ''].filter(Boolean).join(' and ')}
-				{/if}
-			</dd>
-			<dd class="action">{@render change('credit', 'where you are credited')}</dd>
+			<dt>Description</dt>
+			<dd>{answers.description ?? notGiven} {#if answers.description}<span class="who">{where(placementOf(answers, 'description'))}</span>{/if}</dd>
+			<dd class="action">{@render change('credit', 'description')}</dd>
 		</div>
 		<div>
 			<dt>Biography</dt>
-			<dd class="preserve">
-				{answers.biography ?? notGiven}
-				<span class="who">
-					{credit?.biography ? 'Printed with your credit' : team}
-				</span>
-			</dd>
+			<dd class="preserve">{answers.biography ?? notGiven} {#if answers.biography}<span class="who">{where(placementOf(answers, 'biography'))}</span>{/if}</dd>
 			<dd class="action">{@render change('credit', 'biography')}</dd>
 		</div>
 	</dl>
 	<div class="panel panel-filled credit-preview">
-		<p class="small muted">Your credit will read:</p>
-		{#if credit}
-			<p class="credit-line">{credit.line}</p>
-			{#if credit.biography}<p class="small preserve">{credit.biography}</p>{/if}
+		{#if credits.length === 0}
+			<p class="small muted">Your credit will read:</p>
+			<p class="credit-line">You will not be credited.</p>
 		{:else}
-			<p class="credit-line">You will not be credited by name.</p>
+			{#each credits as credit, position (position)}
+				<p class="small muted">{credit.inBook && credit.onWebsite ? 'In the book and on the website' : credit.inBook ? 'In the book' : 'On the website'}:</p>
+				<p class="credit-line">{credit.line}</p>
+				{#if credit.biography}<p class="small preserve">{credit.biography}</p>{/if}
+			{/each}
 		{/if}
 	</div>
 </section>
@@ -220,6 +290,13 @@
 
 	.preserve {
 		white-space: pre-line;
+	}
+
+	.summary-picture {
+		width: 6rem;
+		height: 6rem;
+		border-radius: 50%;
+		object-fit: cover;
 	}
 
 	.credit-line {

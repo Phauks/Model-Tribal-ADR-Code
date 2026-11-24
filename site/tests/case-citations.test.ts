@@ -35,9 +35,12 @@ describe('case box facts', () => {
 		expect(facts.Decided).toMatch(/^March \d+, 1832$/);
 		expect(facts.Court).toBe('<a href="/supreme-court/marshall-court">Marshall Court</a>');
 		expect(facts.Vote).toBe('5–1');
-		expect(facts.Majority).toMatch(/^<strong>Marshall<\/strong> \(opinion of the Court\), <strong>McLean<\/strong> \(concurring opinion\), /);
-		expect(facts.Dissent).toBe('<strong>Baldwin</strong> (dissenting opinion)');
-		expect(facts['Vote not recorded']).toBe('Johnson');
+		// Each name opens the Justice's page (src/routes/supreme-court/justices).
+		expect(facts.Majority).toMatch(
+			/^<strong><a href="\/supreme-court\/justices\/john-marshall">Marshall<\/a><\/strong> \(opinion of the Court\), <strong><a href="\/supreme-court\/justices\/john-mclean">McLean<\/a><\/strong> \(concurring opinion\), /
+		);
+		expect(facts.Dissent).toBe('<strong><a href="/supreme-court/justices/henry-baldwin">Baldwin</a></strong> (dissenting opinion)');
+		expect(facts['Vote not recorded']).toBe('<a href="/supreme-court/justices/william-johnson">Johnson</a>');
 		expect(Object.keys(facts)[0]).toBe('Decided');
 		expect(facts.Nations).toBe(
 			'<a href="/nations/cherokee-nation">Cherokee Nation</a>; <a href="/nations/eastern-band-of-cherokee-indians">Eastern Band of Cherokee Indians</a>; <a href="/nations/united-keetoowah-band-of-cherokee-indians-in-oklahoma">United Keetoowah Band of Cherokee Indians in Oklahoma</a>'

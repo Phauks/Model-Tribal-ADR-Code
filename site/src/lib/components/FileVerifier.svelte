@@ -4,6 +4,7 @@
 	// browser and never sent anywhere. Used on the Downloads page and beside the model court forms. With an
 	// expected hash it compares the file with that hash; otherwise it looks the file up in the list of
 	// every file the site publishes.
+	import CopyHash from '#lib/components/CopyHash.svelte';
 	import { allChecksums, fileName, pathsWithHash } from '#lib/checksums.ts';
 	import { formatBytes } from '#lib/offline-collections.ts';
 	import { hashFile, isSha256 } from '#lib/sha256.ts';
@@ -141,7 +142,7 @@
 							<progress max={result.bytes || 1} value={result.done}></progress>
 						</label>
 					{:else}
-						<p class="hash">SHA-256 <code>{result.sha256}</code></p>
+						<p class="hash">SHA-256 <CopyHash sha256={result.sha256} label={result.file} /></p>
 						{#if compared === true}
 							<p class="verdict">It matches. This is the file that was published, unchanged.</p>
 						{:else if compared === false}
@@ -230,10 +231,6 @@
 
 	.results p {
 		margin: 0 0 var(--space-1);
-	}
-
-	.hash code {
-		overflow-wrap: anywhere;
 	}
 
 	.working progress {

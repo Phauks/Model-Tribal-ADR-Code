@@ -4,13 +4,13 @@
 	/** The views of the map on /nations/map; each is a set of layers over the same basemap. The shaded views color the land areas by a fact about their nations (src/lib/shaded-map-views.ts). */
 	export type TileMapView = 'states' | 'regions' | 'lands' | ShadedMapView;
 
-	/** The base maps under the project's layers (Trevor, 2026-11-24, mockup 1A): the site's own map of towns, roads and water, or a picture from the U.S. Geological Survey's National Map, fetched through the site (src/lib/server/map-imagery.ts). */
+	/** The base maps under the project's layers (Trevor, 2026-11-24, mockup 1A): the site's own map of towns, roads and water, a picture from the U.S. Geological Survey's National Map fetched through the site (src/lib/server/map-imagery.ts), or the site's own map with the survey's shaded relief and contour lines over it. */
 	export type TileMapBase = 'map' | 'satellite' | 'terrain' | 'topographic';
 	export const tileMapBases: { value: TileMapBase; label: string; credit?: string }[] = [
 		{ value: 'map', label: 'Map' },
 		{ value: 'satellite', label: 'Satellite', credit: 'USGS The National Map: Orthoimagery' },
 		{ value: 'terrain', label: 'Terrain', credit: 'USGS The National Map: Shaded Relief' },
-		{ value: 'topographic', label: 'Topographic', credit: 'USGS The National Map' }
+		{ value: 'topographic', label: 'Topographic', credit: 'USGS The National Map: Shaded Relief and Contours' }
 	];
 
 	/** Where the map is looking, kept by the page so that changing views keeps the reader's place. */
@@ -43,7 +43,7 @@
 	//
 	// Small land areas get a dot until their outline is big enough to see, and nearby dots are grouped into numbered circles when zoomed out. Selecting a place goes to its row in the table.
 	import { onMount, tick } from 'svelte';
-	import type { Map as MapLibreMap, StyleSpecification, LayerSpecification, ExpressionSpecification, FilterSpecification } from 'maplibre-gl';
+	import type { Map as MapLibreMap, StyleSpecification, LayerSpecification, SourceSpecification, ExpressionSpecification, FilterSpecification } from 'maplibre-gl';
 	import type { TileMapData } from '#lib/server/nations-map.ts';
 	import { motionDuration, motionEasing } from '#lib/motion.ts';
 
@@ -476,14 +476,47 @@
 				}
 			}
 		}
-		const imagery: LayerSpecification[] = picture
-			? [
-					{ id: 'background', type: 'background', paint: { 'background-color': colors.surface } },
-					{ id: 'imagery', type: 'raster', source: `imagery-${baseMap}` }
-				]
-			: [];
-
+		/**
+		 * The survey's pictures cover the whole world only to zoom 8, and the United States and its territories closer in. Under each picture is the same picture from zoom 8 or further out, enlarged, so closer in elsewhere, or where a picture fails to arrive, the reader sees a softer picture rather than a dark square (Trevor, 2026-11-24, panning to West Africa). Under that is the world's land from the site's own map.
+		 */
+		const pictureLayers = (name: 'satellite' | 'terrain', paint: { 'raster-opacity'?: number; 'raster-brightness-max'?: number } = {}): LayerSpecification[] => [
+			{ id: `imagery-${name}-far`, type: 'raster', source: `imagery-${name}-far`, paint: { ...paint } },
+			{ id: `imagery-${name}`, type: 'raster', source: `imagery-${name}`, paint: { ...paint } }
+		];
+		let layers: LayerSpecification[];
+		if (baseMap === 'satellite' || baseMap === 'terrain') {
+			layers = [
+				{ id: 'background', type: 'background', paint: { 'background-color': colors.surface } },
+				worldLand,
+				...pictureLayers(baseMap),
+				...shownFills,
+				...(placeNames ? over : []),
+				...shownTops
+			];
+		} else if (baseMap === 'topographic') {
+			// The site's own land, water and parks, with the survey's shaded relief laid over the land and its contour lines over that. Neither carries names, so the only names are the site's own, which the reader can turn off.
+			const water = under.findIndex((layer) => layer.id.startsWith('water'));
+			const firstWater = water === -1 ? under.length : water;
+			const relief = pictureLayers('terrain', dark ? { 'raster-opacity': 0.55, 'raster-brightness-max': 0.45 } : { 'raster-opacity': 0.7 });
+			const contours: LayerSpecification = { id: 'contours', type: 'raster', source: 'imagery-contours', minzoom: 10, paint: { 'raster-opacity': dark ? 1 : 0.85 } };
+			layers = [...under.slice(0, firstWater), ...relief, ...under.slice(firstWater), contours, ...shownFills, ...(placeNames ? over : []), ...shownTops];
+		} else {
+			layers = [...under, ...shownFills, ...over, ...shownTops];
+		}
+		const credit = tileMapBases.find((entry) => entry.value === baseMap)?.credit ?? '';
 		const origin = location.origin;
+		const imageryTiles = (name: string) => [`${origin}/map-tiles/imagery/${name}/{z}/{x}/{y}`];
+		const pictureSources = (name: 'satellite' | 'terrain'): Record<string, SourceSpecification> => ({
+			[`imagery-${name}-far`]: { type: 'raster', tiles: imageryTiles(name), tileSize: 256, maxzoom: 8 },
+			[`imagery-${name}`]: { type: 'raster', tiles: imageryTiles(name), tileSize: 256, maxzoom: 16, attribution: credit }
+		});
+		const pictures: Record<string, SourceSpecification> =
+			baseMap === 'satellite' || baseMap === 'terrain'
+				? pictureSources(baseMap)
+				: baseMap === 'topographic'
+					? { ...pictureSources('terrain'), 'imagery-contours': { type: 'raster', tiles: imageryTiles('contours'), tileSize: 256, minzoom: 10, maxzoom: 16 } }
+					: {};
+
 		return {
 			version: 8,
 			projection: { type: shape === 'globe' ? 'globe' : 'mercator' },
@@ -497,24 +530,14 @@
 					attribution: '<a href="https://www.openstreetmap.org/copyright">© OpenStreetMap contributors</a>, <a href="https://protomaps.com">Protomaps</a>'
 				},
 				// The picture base maps, each a source only while it is shown.
-				...(picture
-					? {
-							[`imagery-${baseMap}`]: {
-								type: 'raster' as const,
-								tiles: [`${origin}/map-tiles/imagery/${baseMap}/{z}/{x}/{y}`],
-								tileSize: 256,
-								maxzoom: 16,
-								attribution: tileMapBases.find((entry) => entry.value === baseMap)?.credit ?? ''
-							}
-						}
-					: {}),
+				...pictures,
 				/**
-				 * The basemap is cut to the United States and its territories (geography/map-tile-region.json), so elsewhere, such as across the Pacific or in Europe, it has no tiles past the first zoom levels and the map was blank there (Trevor, 2026-11-23). This source reads only the basemap's zoom 0 tile, which holds the whole world in outline, and MapLibre enlarges it at every zoom: the rest of the world's land shows in rough outline, while the United States and its territories keep their full detail on top.
+				 * The basemap is cut to the United States and its territories (geography/map-tile-region.json). Elsewhere the site serves a copy of the whole world's map to zoom 8 in its place (src/lib/server/map-tile-serving.ts), so the reader can move anywhere (Trevor, 2026-11-24). Closer in than zoom 8 outside the United States, this source enlarges the world copy's land, so it never goes blank.
 				 */
 				world: {
 					type: 'vector',
-					tiles: [`${origin}/map-tiles/${data.tiles.basemap}/{z}/{x}/{y}.mvt`],
-					maxzoom: 0
+					tiles: [`${origin}/map-tiles/${data.tiles.worldBasemap}/{z}/{x}/{y}.mvt`],
+					maxzoom: data.tiles.worldMaximumZoom
 				},
 				places: {
 					type: 'vector',
@@ -574,7 +597,7 @@
 					clusterRadius: 40
 				}
 			},
-			layers: picture ? [...imagery, ...shownFills, ...(placeNames ? over : []), ...shownTops] : [...under, ...shownFills, ...over, ...shownTops]
+			layers
 		};
 	}
 

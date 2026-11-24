@@ -229,7 +229,8 @@ export async function accountDataExport(database: D1Database, account: SignedInA
 					updatedAt: profile.updatedAt,
 					confirmedVersion: profile.confirmedVersion,
 					publicPage: profile.publicSlug ? `/contributors/${profile.publicSlug}` : null,
-					hasPicture: Boolean(profile.pictureKey)
+					hasPicture: Boolean(profile.pictureKey),
+					curriculumVitae: profile.curriculumVitaeName
 				}
 			: null,
 		confirmedProfileVersions: versions.results.map((row) => ({

@@ -43,7 +43,7 @@ describe('office contacts as vCards', () => {
 	it('splits an address and escapes text', () => {
 		expect(addressParts('100 Parkway, Window Rock, AZ 86515')).toEqual({ street: '100 Parkway', town: 'Window Rock', region: 'AZ', code: '86515' });
 		expect(addressParts('Somewhere odd')).toEqual({ street: 'Somewhere odd', town: '', region: '', code: '' });
-		expect(vcardText('a,b;c\\d')).toBe('a\\,b\;c\\\\d');
+		expect(vcardText('a,b;c\\d')).toBe('a\\,b\\;c\\\\d');
 	});
 
 	it('folds long lines and writes one card per office', () => {

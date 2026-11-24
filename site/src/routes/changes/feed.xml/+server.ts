@@ -3,14 +3,11 @@ import { storageForPages } from '#lib/server/essay-pages.ts';
 import { listChanges } from '#lib/server/page-history.ts';
 import { builtPages, recordThisBuildOnce } from '#lib/server/page-history-run.ts';
 import type { RequestHandler } from './$types';
+import { escapeHtml } from '#lib/escape-html.ts';
 
 // Recent changes as an Atom feed (RFC 4287), with the same filters as the
 // page, for feed readers.
 export const prerender = false;
-
-function escape(text: string): string {
-	return text.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
-}
 
 function entryTitle(change: ChangeView): string {
 	const page = change.title ?? 'A page no longer on this site';
@@ -41,22 +38,22 @@ export const GET: RequestHandler = async ({ url }) => {
 	const entries = changes
 		.map(
 			(change) => `  <entry>
-    <id>${escape(`${origin}/changes/${change.id}`)}</id>
-    <title>${escape(entryTitle(change))}</title>
-    <link rel="alternate" href="${escape(`${origin}/changes/${change.id}`)}"/>
-    <updated>${escape(change.madeAt)}</updated>
-    <author><name>${escape(change.whoHidden ? 'Name hidden' : (change.who ?? ''))}</name></author>
-    <summary>${escape(entrySummary(change))}</summary>
+    <id>${escapeHtml(`${origin}/changes/${change.id}`)}</id>
+    <title>${escapeHtml(entryTitle(change))}</title>
+    <link rel="alternate" href="${escapeHtml(`${origin}/changes/${change.id}`)}"/>
+    <updated>${escapeHtml(change.madeAt)}</updated>
+    <author><name>${escapeHtml(change.whoHidden ? 'Name hidden' : (change.who ?? ''))}</name></author>
+    <summary>${escapeHtml(entrySummary(change))}</summary>
   </entry>`
 		)
 		.join('\n');
 	const body = `<?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
-  <id>${escape(self)}</id>
+  <id>${escapeHtml(self)}</id>
   <title>Recent changes · Model Tribal ADR Code</title>
-  <link rel="self" href="${escape(self)}"/>
-  <link rel="alternate" href="${escape(`${origin}/changes${url.search}`)}"/>
-  <updated>${escape(updated)}</updated>
+  <link rel="self" href="${escapeHtml(self)}"/>
+  <link rel="alternate" href="${escapeHtml(`${origin}/changes${url.search}`)}"/>
+  <updated>${escapeHtml(updated)}</updated>
 ${entries}
 </feed>
 `;

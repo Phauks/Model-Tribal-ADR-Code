@@ -17,13 +17,6 @@ import { frontMatterField, splitFrontMatter } from '../essays/syntax.ts';
 export const essayParts = ['foundations', 'essays', 'back-matter', 'about'] as const;
 export type EssayPart = (typeof essayParts)[number];
 
-export const essayPartLabels: Record<EssayPart, string> = {
-	foundations: 'Foundations',
-	essays: 'Essays',
-	'back-matter': 'Back Matter',
-	about: 'About the Site'
-};
-
 /**
  * The pages about the site that are edited like the essays, such as the
  * About page, by id, with the address each has always had. Each needs its

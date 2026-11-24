@@ -7,9 +7,10 @@
 	//
 	// The page is the same for every reader. When the browser holds the
 	// signed-in hint, the newest publication also asks the workspace what
-	// this person may do with the essay; a person with access gets the bar
-	// above the text (EssayAccessBar.svelte), the draft with its changes
-	// marked, and the editor in place of the text, loaded only then.
+	// this person may do with the essay; a person with access gets the
+	// page's controls in the masthead (PageControls.svelte), the draft with
+	// its changes marked, and the editor in place of the text, loaded only
+	// then, with its tools in the masthead's second row.
 	//
 	// A page about the site, such as the About page (src/lib/server/about-pages.ts),
 	// has no section, and shows the text from git until it is first published.
@@ -21,11 +22,8 @@
 	import { figurePlayers } from '#lib/essays/figure-players.ts';
 	import { quoteContext } from '#lib/essays/quote-context-view.ts';
 	import SourceList from '#lib/components/SourceList.svelte';
-	import EssayAccessBar from '#lib/components/essays/EssayAccessBar.svelte';
-	import EssayModePicker from '#lib/components/essays/EssayModePicker.svelte';
-	import EssayViewPicker from '#lib/components/essays/EssayViewPicker.svelte';
 	import EssayStatusPills from '#lib/components/essays/EssayStatusPills.svelte';
-	import History from '@lucide/svelte/icons/history';
+	import { offerPageControls, type PageControls, type PageMode } from '#lib/page-editing.svelte.ts';
 	import { readSignedInHint } from '#lib/signed-in-hint.ts';
 	import type { SourceEntry } from '#lib/server/source-uses.ts';
 	import type { EssayPageState } from '#lib/server/essay-page-state.ts';
@@ -88,6 +86,54 @@
 	}
 
 	// The editor's last save lands after it closes: show that text, and open the editor on it next time.
+	/*
+	 * The page's controls in the masthead, after the site's name
+	 * (PageControls.svelte; design/header-page-controls, approved by Trevor on
+	 * Nov. 23, 2026): Reading, Commenting and Editing; whether draft changes
+	 * show, where something is published to compare them with; History; and
+	 * Publish. Reading, Publish sends the newest version to readers; editing,
+	 * it opens the list of versions to choose one.
+	 */
+	$effect(() => {
+		if (!access) return;
+		const state = access;
+		const controls: PageControls = {
+			modes: state.canEdit ? ['reading', 'commenting', 'editing'] : ['reading', 'commenting'],
+			get mode() {
+				return mode;
+			},
+			setMode: (chosen: PageMode) => {
+				mode = chosen;
+			},
+			get drafts() {
+				const offered = mode === 'reading' ? state.draft !== null && state.publishedVersion !== null : state.publishedVersion !== null;
+				if (!offered) return null;
+				return {
+					// Commenting and editing always show the draft with its changes marked.
+					shown: mode === 'reading' ? view === 'drafts' : true,
+					set: (shown: boolean) => {
+						view = shown ? 'drafts' : 'published';
+						if (!shown) mode = 'reading';
+					}
+				};
+			},
+			history: { title: 'History: every saved version', href: `/workspace/essays/${identifier}` },
+			get publish() {
+				if (!state.canPublish) return null;
+				if (mode === 'editing') return { title: 'Choose a saved version to publish', href: `/workspace/essays/${identifier}` };
+				if (mode === 'reading' && state.draft) {
+					return {
+						title: `Publish version ${state.latest.number} for readers`,
+						action: `/workspace/essays/${identifier}?/publish`,
+						fields: { version: String(state.latest.number) }
+					};
+				}
+				return null;
+			}
+		};
+		return offerPageControls(controls);
+	});
+
 	function saved(): void {
 		if (mode === 'reading') void loadAccess();
 	}
@@ -110,12 +156,26 @@
 		}
 		// The workspace's Edit button opens the page with ?edit.
 		openToEdit = asked.has('edit');
+		// Build a table's "Add to essay" opens the page with ?add-chart=<the builder's address>, in Editing.
+		if (asked.get('add-chart')) {
+			chartToAdd = asked.get('add-chart');
+			openToEdit = true;
+		}
 		void loadAccess();
 	});
 
 	let reviewAt = $state<string | null | undefined>(undefined);
 	let commentAt = $state<string | null>(null);
 	let openToEdit = false;
+	let chartToAdd = $state<string | null>(null);
+
+	/** Takes ?add-chart= off the address once the chart is in, so a reload does not add it again. */
+	function chartAdded(): void {
+		chartToAdd = null;
+		const address = new URL(location.href);
+		address.searchParams.delete('add-chart');
+		history.replaceState(history.state, '', address);
+	}
 	let openedForReview = false;
 	$effect(() => {
 		if (access && (reviewAt !== undefined || openToEdit) && !openedForReview) {
@@ -168,13 +228,9 @@
 	{#if unpublished}<meta name="robots" content="noindex" />{/if}
 </svelte:head>
 
-<!-- In Commenting and Editing the bar comes first, as in the approved mockups (essay-editor-mockups/4 and v2-1). -->
-{#if section && sectionLink && mode === 'reading'}
+<!-- The page's controls are in the masthead, so in every mode the page starts as it does for readers. -->
+{#if section && sectionLink}
 	<Breadcrumbs trail={[{ label: section, href: sectionLink }]} />
-{/if}
-
-{#if access && mode === 'reading'}
-	<EssayAccessBar state={access} bind:view bind:mode />
 {/if}
 
 <article class="reading essay">
@@ -197,15 +253,7 @@
 		{:then { default: EssayEditor }}
 			{#key mode}
 				<!-- Commenting opens the same draft without editing it, so comments land on the words the authors see. -->
-				<EssayEditor {identifier} text={access.text} version={access.latest.number} canEdit={access.canEdit && mode === 'editing'} autoSave={mode === 'editing'} live startAt={reviewAt ?? null} startThread={commentAt} publishedText={access.publishedText} publishedVersion={access.publishedVersion} yourName={access.you?.name ?? null} onsaved={saved} onoutline={showOutline}>
-					{#snippet barStart()}
-						<EssayModePicker bind:mode canEdit={access!.canEdit} />
-						{#if access!.publishedVersion !== null}<EssayViewPicker bind:view bind:mode />{/if}
-					{/snippet}
-					{#snippet barEnd()}
-						<a class="bar-link" href="/workspace/essays/{identifier}" title="History: every saved version, and publishing" aria-label="History"><History size={18} aria-hidden="true" /></a>
-						{#if access!.canPublish && mode === 'editing'}<a class="button bar-publish" href="/workspace/essays/{identifier}" title="Choose a saved version to publish">Publish…</a>{/if}
-					{/snippet}
+				<EssayEditor {identifier} text={access.text} version={access.latest.number} canEdit={access.canEdit && mode === 'editing'} autoSave={mode === 'editing'} live startAt={reviewAt ?? null} startThread={commentAt} publishedText={access.publishedText} publishedVersion={access.publishedVersion} yourName={access.you?.name ?? null} onsaved={saved} onoutline={showOutline} addChart={mode === 'editing' ? chartToAdd : null} onchartadded={chartAdded} toolsInMasthead>
 					{#snippet titleExtras(extras)}
 						<EssayStatusPills state={access!} inReview={extras.inReview} />
 						{#if mode === 'commenting'}<p class="small muted essay-size">{extras.lines.toLocaleString('en-US')} lines · {extras.words.toLocaleString('en-US')} words</p>{/if}
@@ -230,28 +278,6 @@
 </article>
 
 <style>
-	.bar-link {
-		display: inline-grid;
-		place-items: center;
-		min-width: calc(var(--bar-target, var(--layout-target-minimum)) - 4px);
-		min-height: var(--bar-target, var(--layout-target-minimum));
-		border-radius: var(--radius-control);
-		color: var(--color-ink);
-	}
-
-	.bar-link:hover {
-		background: var(--color-surface);
-	}
-
-	.bar-publish {
-		display: inline-flex;
-		align-items: center;
-		gap: var(--space-1);
-		min-height: var(--bar-target, var(--layout-target-minimum));
-		padding: 0 var(--space-2);
-		font-size: var(--font-size-small);
-	}
-
 	/* Marks on the draft view, shown only to people with access (src/lib/essays/render.ts). */
 	.essay-text :global(.essay-draft-mark) {
 		position: relative;

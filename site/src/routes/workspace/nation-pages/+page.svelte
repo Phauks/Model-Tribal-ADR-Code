@@ -14,7 +14,7 @@
 	import { changeKindLabels } from '#lib/nation-page-changes.ts';
 	import { reviewDays, reviewOutcomeLabels } from '#lib/nation-page-review.ts';
 	import { teamLevelLabels } from '#lib/nation-teams.ts';
-	import { readableDate } from '#lib/readable-date.ts';
+	import { mediumDateAndTime, readableDate } from '#lib/readable-date.ts';
 	import type { PageProps } from './$types';
 
 	let { data, form }: PageProps = $props();
@@ -43,10 +43,6 @@
 
 	function shows(identifier: string, what: Opened): boolean {
 		return !scripted || opened[identifier] === what;
-	}
-
-	function when(value: string | null): string {
-		return value ? new Date(value).toLocaleString('en-US', { dateStyle: 'medium', timeStyle: 'short' }) : '';
 	}
 
 	function day(value: string | null): string {
@@ -174,7 +170,7 @@
 					<div class="card-top">
 						<h2>{review.nation.title} · {changeKindLabels[review.kind]}</h2>
 						<span class="grow"></span>
-						<span class="small muted">{reviewOutcomeLabels[review.outcome]}, {review.reviewedByName ?? 'the project'}, {when(review.reviewedAt)}</span>
+						<span class="small muted">{reviewOutcomeLabels[review.outcome]}, {review.reviewedByName ?? 'the project'}, {mediumDateAndTime(review.reviewedAt)}</span>
 					</div>
 					<p class="small">{sentence(review.summary)}{#if review.note} “{review.note}”{/if}</p>
 				</li>
@@ -191,12 +187,12 @@
 					<div class="card-top">
 						<h2>{pause.nation.title}</h2>
 						<span class="grow"></span>
-						<span class="small muted">Paused {when(pause.pausedAt)}{pause.pausedByName ? ` by ${pause.pausedByName}` : ''}</span>
+						<span class="small muted">Paused {mediumDateAndTime(pause.pausedAt)}{pause.pausedByName ? ` by ${pause.pausedByName}` : ''}</span>
 					</div>
 					<p class="small"><span class="muted">The project asked:</span></p>
 					<blockquote class="quote">{pause.question}</blockquote>
 					{#if pause.answer}
-						<p class="small"><span class="muted">The team answered</span> ({pause.answeredByName ?? 'the team'}, {when(pause.answeredAt)}):</p>
+						<p class="small"><span class="muted">The team answered</span> ({pause.answeredByName ?? 'the team'}, {mediumDateAndTime(pause.answeredAt)}):</p>
 						<blockquote class="quote">{pause.answer}</blockquote>
 					{:else}
 						<p class="small muted">No answer from the team yet.</p>
