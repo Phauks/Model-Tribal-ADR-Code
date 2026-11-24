@@ -11,6 +11,7 @@
 	import Search from '@lucide/svelte/icons/search';
 	import SlidersHorizontal from '@lucide/svelte/icons/sliders-horizontal';
 	import X from '@lucide/svelte/icons/x';
+	import SearchableDropdown from '#lib/components/SearchableDropdown.svelte';
 	import Timeline from '#lib/components/Timeline.svelte';
 	import { kindIcons } from '#lib/timeline-icons.ts';
 	import { mentionWordList } from '#lib/opinion-mentions.ts';
@@ -50,11 +51,12 @@
 			([year, count, place, mentions]): OpinionYear => ({ year, count, mentions, nation: place >= 0 ? data.nations[place].id : undefined })
 		)
 	);
-	const nationsById = $derived(Object.fromEntries(data.nations.map((nation) => [nation.id, nation])));
+	const nationsByIdentifier = $derived(Object.fromEntries(data.nations.map((nation) => [nation.id, nation])));
 	const extent = $derived(extentOf(allEntries, allOpinions));
 
 	let nation = $state('');
 	let stateCode = $state('');
+	const stateChoices = $derived([{ value: '', label: 'All states' }, ...data.states.map((state) => ({ value: state.code, label: state.name }))]);
 	let shown = $state<TimelineKind[] | undefined>();
 	let range = $state<TimelineRange | undefined>();
 	let nationText = $state('');
@@ -67,7 +69,7 @@
 
 	const filtered = $derived(nation !== '' || stateCode !== '');
 	const belongs = (ids: string[] | undefined) =>
-		!!ids?.some((id) => (nation === '' || id === nation) && (stateCode === '' || nationsById[id]?.states.includes(stateCode)));
+		!!ids?.some((id) => (nation === '' || id === nation) && (stateCode === '' || nationsByIdentifier[id]?.states.includes(stateCode)));
 
 	// Under a nation or state filter, federal laws about no nation in particular stay, drawn faintly for context.
 	const entries = $derived(
@@ -121,9 +123,9 @@
 	onMount(() => {
 		const params = new URLSearchParams(location.search);
 		const asked = params.get('nation') ?? '';
-		if (nationsById[asked]) {
+		if (nationsByIdentifier[asked]) {
 			nation = asked;
-			nationText = nationsById[asked].name;
+			nationText = nationsByIdentifier[asked].name;
 		}
 		const askedState = params.get('state') ?? '';
 		if (data.states.some((state) => state.code === askedState)) stateCode = askedState;
@@ -191,7 +193,7 @@
 			<label for="timeline-nation" class="visually-hidden">Find a nation</label>
 			{#if nation}
 				<p class="chosen">
-					<strong>{nationsById[nation]?.name}</strong>
+					<strong>{nationsByIdentifier[nation]?.name}</strong>
 					<button type="button" class="icon-button" aria-label="Show every nation" title="Show every nation" onclick={() => ((nation = ''), (nationText = ''))}>
 						<X size={18} aria-hidden="true" />
 					</button>
@@ -233,13 +235,7 @@
 		</fieldset>
 
 		<div class="filter">
-			<label for="timeline-state">State</label>
-			<select id="timeline-state" bind:value={stateCode}>
-				<option value="">All states</option>
-				{#each data.states as state (state.code)}
-					<option value={state.code}>{state.name}</option>
-				{/each}
-			</select>
+			<SearchableDropdown label="State" id="timeline-state" choices={stateChoices} bind:value={stateCode} />
 		</div>
 
 		<fieldset class="filter">
@@ -254,7 +250,7 @@
 		<Timeline
 			{entries}
 			{opinions}
-			nations={nationsById}
+			nations={nationsByIdentifier}
 			bind:shown
 			bind:range
 			{extent}
@@ -312,8 +308,7 @@
 		padding-top: 0;
 	}
 
-	legend,
-	label[for='timeline-state'] {
+	legend {
 		display: block;
 		font-weight: var(--font-weight-bold);
 		margin-bottom: var(--space-1);
@@ -345,7 +340,7 @@
 		font: inherit;
 	}
 
-	select {
+	.filter :global(.searchable-dropdown-control) {
 		width: 100%;
 	}
 

@@ -7,10 +7,11 @@ import { building, dev } from '$app/env';
 import type { Handle } from '@sveltejs/kit/hooks';
 import { sealNewEntries } from '#lib/server/activity-seals.ts';
 import { afterResponse, workerEnvironment } from '#lib/server/environment.ts';
-import { eventStatement, refusedAction } from '#lib/server/events.ts';
+import { activityStatement, refusedAction } from '#lib/server/activity-log.ts';
 import { endSession, pastWorkspaceLimits, sessionAccount, sessionCookie } from '#lib/server/accounts.ts';
 import { activePersonBySubject } from '#lib/server/people.ts';
 import { isLiveEditingRequest, openLiveEditing } from '#lib/server/live-editing.ts';
+import { restrictedPageAnswer, restrictedPagePrefix } from '#lib/server/restricted-pages.ts';
 import { changesSomething, isCrossSite, isGuardedPath } from '#lib/server/request-guard.ts';
 import { framePolicy, publicSecurityHeaders } from '#lib/server/security-headers.ts';
 import { clearSessionCookie } from '#lib/server/sign-in.ts';
@@ -42,6 +43,13 @@ const piecePrefix = '/uploads/pieces/';
 const draftSavePath = '/workspace/inbox/drafts/save';
 
 export const handle: Handle = async ({ event, resolve }) => {
+	// A prerendered page the Worker sent here because a nation restricts
+	// something it may show (src/lib/server/restricted-pages.ts): the page as
+	// built, or it goes on under its own address to be drawn again.
+	if (event.url.pathname.startsWith(`${restrictedPagePrefix}/`)) {
+		const answer = await restrictedPageAnswer(event);
+		if (answer) return answer;
+	}
 	event.locals.person = undefined;
 	event.locals.account = undefined;
 	event.locals.refused = undefined;
@@ -193,7 +201,7 @@ async function recordAndSeal(
 			!limiter ||
 			(await limiter.limit({ key: personIdentifier })).success;
 		if (refused && withinLimit) {
-			await eventStatement(database, {
+			await activityStatement(database, {
 				personIdentifier,
 				action: refusedAction,
 				targetKind: 'person',

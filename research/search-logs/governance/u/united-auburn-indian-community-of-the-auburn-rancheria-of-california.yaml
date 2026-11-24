@@ -1,7 +1,7 @@
 profile: content/tribes/u/united-auburn-indian-community-of-the-auburn-rancheria-of-california.yaml
 topic: governance
 status: found
-last_searched: '2026-11-23'
+last_searched: '2026-11-24'
 searches:
 - date: '2026-11-23'
   searched_by: Claude (AI assistant)
@@ -32,4 +32,14 @@ searches:
   records:
   - united-auburn-indian-community-of-the-auburn-rancheria-of-california-website-about-us-tribal-council-gabe-cayton
   - united-auburn-indian-community-of-the-auburn-rancheria-of-california-website-about-us-tribal-council-john-williams
+- date: '2026-11-24'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: national-indian-law-library
+  address: https://narf.org/nill/tribes/united_auburn.html
+  query: Tribal Code, Tribal Constitution, Tribal Court Opinions and Contact Info blocks (scripts/review/nill_gateway_apply.py)
+  outcome: not-found
+  reason: The page lists no constitution or code with a link (both blocks say none available).
+  records:
+  - national-indian-law-library-united-auburn
 next_steps: A newer constitution text from the nation, a law library or the Bureau of Indian Affairs; the government office can say which version is in effect.

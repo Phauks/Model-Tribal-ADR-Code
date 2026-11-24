@@ -14,7 +14,7 @@
  * - Mail that fails the sender's own DMARC policy goes to Spam.
  */
 import PostalMime, { type Email } from 'postal-mime';
-import { cleanAddress, messageIds, normalizeSubject, snippetOf, asksToStop, type MailAddress } from '#lib/mail.ts';
+import { cleanAddress, messageIdentifiers, normalizeSubject, snippetOf, asksToStop, type MailAddress } from '#lib/mail.ts';
 import { bucketKeys, currentTime, type MailContext } from './context.ts';
 import { inboxForArrival } from './inboxes.ts';
 import { isProjectAddress } from './settings.ts';
@@ -118,7 +118,7 @@ export interface DeliveryReport {
 	recipients: string[];
 	detail: string;
 	/** Message-IDs of the message the report is about. */
-	originalIds: string[];
+	originalMessageIdentifiers: string[];
 }
 
 function attachmentText(content: ArrayBuffer | string | Uint8Array): string {
@@ -151,12 +151,12 @@ export function deliveryReport(email: Email, envelopeFrom: string): DeliveryRepo
 		.filter((part) => /message\/(rfc822|global)|text\/rfc822-headers|message\/global-headers/i.test(part.mimeType))
 		.map((part) => attachmentText(part.content))
 		.join('\n');
-	const originalIds = [...`${original}\n${email.text ?? ''}`.matchAll(/^Message-ID:\s*<([^<>\s]+)>/gim)].map((match) => match[1]);
+	const originalMessageIdentifiers = [...`${original}\n${email.text ?? ''}`.matchAll(/^Message-ID:\s*<([^<>\s]+)>/gim)].map((match) => match[1]);
 	return {
 		status: permanent || !delayed ? 'bounced' : 'deferred',
 		recipients,
 		detail: diagnostic ?? (codes[0] ? `Status ${codes[0]}` : (email.subject ?? 'Delivery failure')),
-		originalIds: [...new Set(originalIds)]
+		originalMessageIdentifiers: [...new Set(originalMessageIdentifiers)]
 	};
 }
 
@@ -272,14 +272,14 @@ export async function receiveMail(context: MailContext, arriving: ArrivingMail):
 	if (!inbox) return { outcome: 'rejected', reason: 'No inbox takes this mail.' };
 	// The same message filed again (a sender's server trying twice, or a try again after filing failed half way) is
 	// not filed twice: it is the one already in this inbox.
-	const ownId = messageIds(email.messageId)[0] ?? null;
-	if (ownId) {
+	const ownMessageIdentifier = messageIdentifiers(email.messageId)[0] ?? null;
+	if (ownMessageIdentifier) {
 		const already = await context.database
 			.prepare(
 				`SELECT m.identifier, m.thread_identifier FROM mail_messages m JOIN mail_threads t ON t.identifier = m.thread_identifier
 				 WHERE m.message_id = ? AND m.direction = 'in' AND t.inbox_identifier = ? LIMIT 1`
 			)
-			.bind(ownId, inbox.identifier)
+			.bind(ownMessageIdentifier, inbox.identifier)
 			.first<{ identifier: string; thread_identifier: string }>();
 		if (already) {
 			return { outcome: 'filed', threadIdentifier: already.thread_identifier, messageIdentifier: already.identifier, spam: false, automatic: false, notify: false, answerable: false, sortedBy: [] };
@@ -298,7 +298,7 @@ export async function receiveMail(context: MailContext, arriving: ArrivingMail):
 	// A blocked sender's mail is kept, in Spam, in a conversation of its own (src/lib/server/mail/senders.ts).
 	const blocked = report ? null : await blockedPattern(context, from.email);
 	const spam = report ? null : blocked ? `You blocked ${blocked.startsWith('@') ? `mail from ${blocked}` : 'this sender'}.` : spamReason(email);
-	const references = [...messageIds(email.references), ...messageIds(email.inReplyTo), ...(report?.originalIds ?? [])];
+	const references = [...messageIdentifiers(email.references), ...messageIdentifiers(email.inReplyTo), ...(report?.originalMessageIdentifiers ?? [])];
 	const projectAddress = cleanAddress(arriving.to) ?? inbox.address;
 	// The other side of the conversation: whoever wrote, or, for a copy of our own mail, whoever it went to.
 	const counterpart = isProjectAddress(settings, (replyTo ?? from).email) ? (to.find((item) => !isProjectAddress(settings, item.email)) ?? from) : (replyTo ?? from);
@@ -389,9 +389,9 @@ export async function receiveMail(context: MailContext, arriving: ArrivingMail):
 			.bind(
 				identifier,
 				threadIdentifier,
-				messageIds(email.messageId)[0] ?? null,
-				messageIds(email.inReplyTo)[0] ?? null,
-				messageIds(email.references).join(' ') || null,
+				messageIdentifiers(email.messageId)[0] ?? null,
+				messageIdentifiers(email.inReplyTo)[0] ?? null,
+				messageIdentifiers(email.references).join(' ') || null,
 				from.email,
 				from.name ?? null,
 				JSON.stringify(to),
@@ -482,7 +482,7 @@ export async function receiveMail(context: MailContext, arriving: ArrivingMail):
 async function applyDeliveryReport(context: MailContext, report: DeliveryReport, reportIdentifier: string): Promise<void> {
 	const at = currentTime(context).toISOString();
 	let messageIdentifier: string | null = null;
-	for (const id of report.originalIds) {
+	for (const id of report.originalMessageIdentifiers) {
 		const row = await context.database
 			.prepare('SELECT identifier FROM mail_messages WHERE (message_id = ?1 OR provider_message_id = ?1) AND direction = ? LIMIT 1')
 			.bind(id, 'out')

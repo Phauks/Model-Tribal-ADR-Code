@@ -1,4 +1,6 @@
 id: missisquoi-st-francis-sokoki-band
+former_ids:
+- st-francis-sokoki-band-of-abenakis-of-vermont
 entity_type: native-nation
 names:
   official: Missisquoi, St. Francis-Sokoki Band
@@ -8,6 +10,31 @@ names:
     confidence: low
     verification: bulk-import
     as_of: '2001'
+  - name: Abenaki Nation of Missisquoi
+    source: abenakination-home-page
+    confidence: high
+    verification: read-in-full
+    as_of: '2026-11-24'
+    note: The name the nation's own website uses.
+  - name: Abenaki Nation at Missisquoi
+    source: vermont-commission-on-native-american-affairs-recognized-tribes
+    confidence: high
+    verification: read-in-full
+    as_of: '2026-11-24'
+    note: The name the Vermont Commission on Native American Affairs uses for the band recognized under 1 V.S.A. § 856.
+  - name: St. Francis/Sokoki Band of Abenakis of Vermont
+    source: federal-register-e7-12727
+    confidence: high
+    verification: read-in-full
+    as_of: '2007-07-02'
+    locator: 'Petitioner #68'
+    note: 'Name of the federal acknowledgment petitioner. Merged on 2026-11-24 from the profile st-francis-sokoki-band-of-abenakis-of-vermont: the federal petitioner #68 gave its address as Swanton, Vermont, in care of April Merrill (72 FR 36022), whom the nation''s own list of chiefs names as its chief from 1996 to 2012 (missisquoi-st-francis-sokoki-band-website-abenaki-chiefs), and the Vermont Commission on Native American Affairs calls the band Vermont recognized on May 7, 2012 the Abenaki Nation at Missisquoi (vermont-commission-on-native-american-affairs-recognized-tribes).'
+  - name: St. Francis/Sokoki Band of Abenakis of Vermont Abenaki Tribal Council
+    source: gao-12-348-federal-funding-non-federally-recognized-tribes
+    confidence: medium
+    verification: bulk-import
+    as_of: 2012-04
+    note: Name used for this group in the cited source; matched to this record by name and state.
   official_source: vermont-statutes-title-1-chapter-23
 recognition:
 - type: state
@@ -19,6 +46,23 @@ recognition:
   verification: read-in-full
   as_of: '2026'
   locator: Section 856
+- type: unrecognized
+  source: gao-12-348-federal-funding-non-federally-recognized-tribes
+  confidence: medium
+  verification: bulk-import
+  as_of: 2012-04
+  locator: Table 1; Table 3
+  note: 'GAO Table 1 lists "St. Francis/Sokoki Band of Abenakis of Vermont Abenaki Tribal Council" among 26 non-federally recognized tribes that received direct federal funding in FY2007-2010 (total $314,000, Table 3). GAO-reported nonprofit status: Yes; state recognition per state officials: No (as of GAO''s 2011 inquiry). Not on the 2026 federal list (bia-recognized-entities-2026). Vermont recognized the band on May 7, 2012, after GAO''s inquiry. Moved here when the two profiles were merged on 2026-11-24.'
+- type: unrecognized
+  legal_basis: 25 C.F.R. Part 83; final determination 72 FR 36022 (2007-07-02)
+  petition_number: '68'
+  petition_stage: Denied (Petitions Resolved page); Denied acknowledgment through 25 CFR 83 (eff. 10/1/07)
+  source: federal-register-e7-12727
+  confidence: high
+  verification: bulk-import
+  as_of: '2007-07-02'
+  locator: 'Petitioner #68'
+  note: 'Petitions Resolved page lists decision: Denied. Office of Federal Acknowledgment list status: Denied acknowledgment through 25 CFR 83 (eff. 10/1/07). Other Federal Register history: Proposed Finding Against Federal Acknowledgment of the St. Francis/Sokoki Band of Abenakis of Vermont, 70 FR 69776 (2005-11-17). Moved here when the two profiles were merged on 2026-11-24.'
 states:
 - state: VT
   presence: other
@@ -107,3 +151,22 @@ review:
 sensitivity:
   tribal_review_required: false
   restricted: false
+governing_documents:
+- kind: constitution
+  title: Constitution
+  link: http://tribal.abenakination.com/the-abenaki-constitution
+  source: national-indian-law-library-saint-francis-abenaki
+  confidence: medium
+  verification: title-only
+  as_of: '2026-11-24'
+  locator: Tribal Constitution section
+  note: 'Listed on the National Indian Law Library page under ''Tribal Constitution'' as: "At tribe''s website.".'
+- kind: constitution
+  title: Constitution
+  link: https://narf.org/nill/constitutions/st_francis_abenaki/index.html
+  source: national-indian-law-library-saint-francis-abenaki
+  confidence: medium
+  verification: title-only
+  as_of: '2026-11-24'
+  locator: Tribal Constitution section
+  note: 'Listed on the National Indian Law Library page under ''Tribal Constitution'' as: "At NILL website . Table of contents only.". The National Indian Law Library page gives the table of contents (and may link to the nation''s own copy); it is linked, not copied (decision record 0043).'

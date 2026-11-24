@@ -80,6 +80,14 @@ export interface RestrictableItem {
 	bytes?: number;
 	/** Whether the nation's downloads and offline copies hold this site's copy. */
 	offline?: boolean;
+	/** For a version of one of the nation's documents: the document, the version and the date that places it on the timeline. */
+	document?: string;
+	version?: string;
+	date?: string;
+	/** For a court opinion: its citation alone, its year and every nation it belongs to, so lists and counts across the site can leave it out. */
+	cite?: string;
+	year?: string;
+	nations?: string[];
 }
 
 /** What the team's page and the overlay read for a nation: its items, built with the site. */
@@ -249,7 +257,7 @@ const kindNouns: Record<RestrictionKind, [string, string]> = {
 };
 
 export function savingLines(changes: readonly RestrictionChange[], items: readonly RestrictableItem[]): SavingLine[] {
-	const byId = new Map(items.map((item) => [item.id, item]));
+	const byIdentifier = new Map(items.map((item) => [item.id, item]));
 	return changes.flatMap((change): SavingLine[] => {
 		if (change.target.startsWith('kind:')) {
 			const kind = change.target.slice(5) as RestrictionKind;
@@ -261,7 +269,7 @@ export function savingLines(changes: readonly RestrictionChange[], items: readon
 			if (change.to === 'hide') return [{ before: `stop listing ${noun}`, after: '' }];
 			return [{ before: `show ${noun} in full`, after: '' }];
 		}
-		const item = byId.get(change.target);
+		const item = byIdentifier.get(change.target);
 		const caseName = item?.kind === 'opinions';
 		const name = caseName ? change.label : `the ${change.label}`;
 		if (change.to === 'show') return [{ before: change.from === 'show' ? 'keep ' : 'show ', name, caseName, after: ' in full' }];
@@ -320,8 +328,8 @@ export function copyItemId(path: string): string {
 }
 
 /** The id of a document's version: its copy's, when this site keeps one, or else the document's and version's. */
-export function versionItemId(link: string | undefined, documentId: string, versionId: string): string {
-	return link?.startsWith('/copies/') ? copyItemId(link) : `version:${documentId}/${versionId}`;
+export function versionItemIdentifier(link: string | undefined, documentIdentifier: string, versionIdentifier: string): string {
+	return link?.startsWith('/copies/') ? copyItemId(link) : `version:${documentIdentifier}/${versionIdentifier}`;
 }
 
 /**

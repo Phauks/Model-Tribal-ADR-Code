@@ -24,6 +24,7 @@
 	import Undo2 from '@lucide/svelte/icons/undo-2';
 	import X from '@lucide/svelte/icons/x';
 	import { deliveryLabels, formatAddress, heldForVirusCheck, messageStatusLabels, replyAllReach } from '#lib/mail.ts';
+	import Dropdown from '#lib/components/Dropdown.svelte';
 	import Avatar from '../Avatar.svelte';
 	import Composer from '../Composer.svelte';
 	import TagChip from '../TagChip.svelte';
@@ -35,6 +36,14 @@
 
 	const thread = $derived(data.thread);
 	const tagged = $derived(new Set(thread.tags.map((tag) => tag.identifier)));
+	// The folder it is in already is left out; nested folders are set in under their parent.
+	const folderChoices = $derived([
+		{ value: '', label: 'Move to…' },
+		...data.mailFolders
+			.filter((folder) => folder.identifier !== thread.folderIdentifier)
+			.map((folder) => ({ value: folder.identifier, label: `${'\u2003'.repeat(folder.depth)}${folder.name}` }))
+	]);
+	const assigneeChoices = $derived([{ value: '', label: 'Nobody' }, ...data.people.map((person) => ({ value: person.identifier, label: person.name }))]);
 	const untagged = $derived(data.tags.filter((tag) => !tagged.has(tag.identifier)));
 	const home = $derived(thread.folder === 'folder' ? data.mailFolders.find((item) => item.identifier === thread.folderIdentifier) : undefined);
 	const placeName = $derived(
@@ -123,13 +132,7 @@
 	<a class="tool" href="/workspace/inbox/{thread.identifier}/export" download title="Save the whole conversation as an .mbox file, which mail programs import"><Download size={18} aria-hidden="true" /><span>Export</span></a>
 	{#if data.mailFolders.length}
 		<form method="post" action="?/move" class="tools move">
-			<label for="move-folder" class="visually-hidden">Move to a folder</label>
-			<select id="move-folder" name="folder" required>
-				<option value="">Move to…</option>
-				{#each data.mailFolders as folder (folder.identifier)}
-					<option value={folder.identifier} disabled={folder.identifier === thread.folderIdentifier}>{' '.repeat(folder.depth)}{folder.name}</option>
-				{/each}
-			</select>
+			<Dropdown label="Move to a folder" hideLabel id="move-folder" name="folder" required choices={folderChoices} value="" />
 			<button class="tool" type="submit"><FolderInput size={18} aria-hidden="true" /><span>Move</span></button>
 		</form>
 	{/if}
@@ -431,13 +434,7 @@
 		<section class="card">
 			<h2>Assigned to</h2>
 			<form method="post" action="?/assign" class="inline-form">
-				<label for="assignee" class="visually-hidden">Assigned to</label>
-				<select id="assignee" name="assignee">
-					<option value="">Nobody</option>
-					{#each data.people as person (person.identifier)}
-						<option value={person.identifier} selected={person.identifier === thread.assigneeIdentifier}>{person.name}</option>
-					{/each}
-				</select>
+				<Dropdown label="Assigned to" hideLabel id="assignee" name="assignee" choices={assigneeChoices} value={thread.assigneeIdentifier ?? ''} />
 				<button class="button button-quiet small" type="submit">Save</button>
 			</form>
 		</section>
@@ -504,8 +501,11 @@
 		align-items: center;
 		gap: var(--space-1);
 	}
-	.move select {
-		min-height: 2.25rem;
+	.move :global(.dropdown) {
+		margin: 0;
+	}
+	.move :global(.dropdown-control) {
+		width: 14rem;
 	}
 	a.tool {
 		text-decoration: none;
@@ -978,9 +978,10 @@
 		display: flex;
 		gap: var(--space-2);
 	}
-	.inline-form select {
+	.inline-form :global(.dropdown) {
 		flex: 1;
 		min-width: 0;
+		margin: 0;
 	}
 	.stack {
 		display: grid;

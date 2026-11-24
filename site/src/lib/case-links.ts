@@ -65,11 +65,11 @@ function firstWordOfName(name: string): string | undefined {
  * without a citation ("Williams v. Lee, supra").
  */
 export function caseMentions(text: string, list: CasePreviewList): CaseMention[] {
-	const byId = new Map(list.cases.map((entry) => [entry.id, entry]));
+	const byIdentifier = new Map(list.cases.map((entry) => [entry.id, entry]));
 	const mentions: CaseMention[] = [];
 	for (const match of text.matchAll(citationPattern)) {
 		const id = list.citations[citationKey(match[1], match[2], match[3])];
-		const entry = id ? byId.get(id) : undefined;
+		const entry = id ? byIdentifier.get(id) : undefined;
 		if (!entry) continue;
 		let start = match.index;
 		const end = match.index + match[0].length;

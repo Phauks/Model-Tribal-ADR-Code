@@ -151,7 +151,7 @@ export function documentHeading(title: string, names: string[]): string {
 }
 
 /** The earliest of a version's recorded dates, leaving out the date it ended. */
-function earliestDate(version: DocumentVersion): string | undefined {
+export function earliestDate(version: DocumentVersion): string | undefined {
 	const dates = DATE_LABELS.filter(([field]) => field !== 'ended')
 		.map(([field]) => version.dates?.[field])
 		.filter((date): date is string => typeof date === 'string' && /^\d{4}(-\d{2}){0,2}$/.test(date))
@@ -163,8 +163,8 @@ export function labelOf(version: DocumentVersion | undefined, fallback: string):
 	return version?.label ?? fallback;
 }
 
-function relationPhrase(version: DocumentVersion, byId: Map<string, DocumentVersion>): string | undefined {
-	const names = (ids: string[] | undefined) => (ids ?? []).map((id) => labelOf(byId.get(id), id));
+function relationPhrase(version: DocumentVersion, byIdentifier: Map<string, DocumentVersion>): string | undefined {
+	const names = (ids: string[] | undefined) => (ids ?? []).map((id) => labelOf(byIdentifier.get(id), id));
 	const parts: string[] = [];
 	const amended = names(version.amends);
 	const replaced = names(version.supersedes);
@@ -203,9 +203,9 @@ function endedPhrase(versions: DocumentVersion[]): string | undefined {
 function relatedDocuments(record: DocumentHistoryRecord, relation: string, names: string[]): RelatedDocumentView[] {
 	const wanted = (record.related ?? []).filter((link) => link.relation === relation).map((link) => link.document);
 	if (wanted.length === 0) return [];
-	const byId = new Map(documentHistories().map((other) => [other.id, other]));
+	const byIdentifier = new Map(documentHistories().map((other) => [other.id, other]));
 	return wanted.flatMap((id) => {
-		const other = byId.get(id);
+		const other = byIdentifier.get(id);
 		if (!other) return [];
 		return [{ id, heading: documentHeading(other.title, names), inEffect: inEffectPhrase(other.versions) }];
 	});
@@ -239,7 +239,7 @@ export function documentHistoryView(
 	/** The nation's names, which related documents' headings leave out. */
 	names: string[] = []
 ): DocumentHistoryView {
-	const byId = new Map(record.versions.map((version) => [version.id, version]));
+	const byIdentifier = new Map(record.versions.map((version) => [version.id, version]));
 	const versions = record.versions.map((version): VersionView => {
 		const label = labelOf(version, version.id);
 		const citations: CitationMark[] = [];
@@ -263,7 +263,7 @@ export function documentHistoryView(
 			inEffect: version.status === 'in-effect',
 			link: textLink(version),
 			dates: datesPhrase(version),
-			relation: relationPhrase(version, byId),
+			relation: relationPhrase(version, byIdentifier),
 			date: earliestDate(version),
 			citations
 		};
@@ -282,6 +282,6 @@ export function documentHistoryView(
 
 /** The document histories that name this nation, each recording its sources. */
 /** The document histories that name a nation, such as its gaming compacts. */
-export function nationDocumentHistories(nationId: string): DocumentHistoryRecord[] {
-	return documentHistories().filter((record) => record.nations?.includes(nationId));
+export function nationDocumentHistories(nationIdentifier: string): DocumentHistoryRecord[] {
+	return documentHistories().filter((record) => record.nations?.includes(nationIdentifier));
 }

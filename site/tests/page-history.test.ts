@@ -2,12 +2,12 @@ import type { D1Database, R2Bucket } from '@cloudflare/workers-types/index.ts';
 import { beforeEach, describe, expect, it } from 'vitest';
 import {
 	byPage,
-	changeId,
+	changeIdentifier,
 	defaultFilters,
 	filterQuery,
 	followedPageAddress,
 	pageAddressOfFile,
-	parseChangeId,
+	parseChangeIdentifier,
 	readFilters,
 	sizeChangeText,
 	wordingIsShown,
@@ -107,11 +107,11 @@ beforeEach(async () => {
 
 describe('shared rules', () => {
 	it('names changes and reads the names back, including essays whose names end in a number', () => {
-		expect(changeId({ source: 'page', identifier: 12 })).toBe('page-12');
-		expect(parseChangeId('page-12')).toEqual({ source: 'page', identifier: 12 });
-		expect(parseChangeId('essay-i-legal-history-timeline-14')).toEqual({ source: 'essay', essay: 'i-legal-history-timeline', number: 14 });
-		expect(parseChangeId('essay-part-2-3')).toEqual({ source: 'essay', essay: 'part-2', number: 3 });
-		for (const bad of ['page-0', 'page-x', 'essay--1', "page-1' OR 1=1", '', null]) expect(parseChangeId(bad)).toBeUndefined();
+		expect(changeIdentifier({ source: 'page', identifier: 12 })).toBe('page-12');
+		expect(parseChangeIdentifier('page-12')).toEqual({ source: 'page', identifier: 12 });
+		expect(parseChangeIdentifier('essay-i-legal-history-timeline-14')).toEqual({ source: 'essay', essay: 'i-legal-history-timeline', number: 14 });
+		expect(parseChangeIdentifier('essay-part-2-3')).toEqual({ source: 'essay', essay: 'part-2', number: 3 });
+		for (const bad of ['page-0', 'page-x', 'essay--1', "page-1' OR 1=1", '', null]) expect(parseChangeIdentifier(bad)).toBeUndefined();
 	});
 
 	it('never shows earlier wording of nation pages or stories', () => {

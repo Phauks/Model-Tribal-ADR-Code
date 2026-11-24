@@ -31,7 +31,7 @@ export interface Fetcher {
  * again. Above the engine's own limit (ClamAV stops at five minutes), so a
  * slow but honest scan of a large video is not cut off.
  */
-export const scanRequestTimeoutMs = 8 * 60 * 1000;
+export const scanRequestTimeoutMilliseconds = 8 * 60 * 1000;
 
 /** Sends the body to an engine that speaks the project's JSON and reads the answer. */
 async function postForFacts(
@@ -40,7 +40,7 @@ async function postForFacts(
 	body: ReadableStream<Uint8Array>,
 	facts: { sizeBytes: number; mediaType: string | null },
 	headers: Record<string, string>,
-	timeoutMs: number
+	timeoutMilliseconds: number
 ) {
 	const url = new URL(address);
 	url.searchParams.set('size', String(facts.sizeBytes));
@@ -54,7 +54,7 @@ async function postForFacts(
 				headers,
 				// A streamed body needs the half-duplex hint in the Workers runtime.
 				duplex: 'half',
-				signal: AbortSignal.timeout(timeoutMs)
+				signal: AbortSignal.timeout(timeoutMilliseconds)
 			} as RequestInit & { duplex: 'half' })
 		);
 	} catch (problem) {
@@ -85,7 +85,7 @@ export class TooLargeForProviderError extends Error {
 /** The project's own engine in a Cloudflare Container. */
 export function containerProvider(
 	container: Fetcher,
-	options: { wake?: () => Promise<void>; timeoutMs?: number } = {}
+	options: { wake?: () => Promise<void>; timeoutMilliseconds?: number } = {}
 ): ScanProvider {
 	return {
 		name: 'container',
@@ -97,18 +97,18 @@ export function containerProvider(
 				await body.cancel();
 				throw new ScanFaultError(`The scan engine did not start: ${problem instanceof Error ? problem.message : String(problem)}`);
 			}
-			return postForFacts(container, 'http://engine/scan', body, facts, {}, options.timeoutMs ?? scanRequestTimeoutMs);
+			return postForFacts(container, 'http://engine/scan', body, facts, {}, options.timeoutMilliseconds ?? scanRequestTimeoutMilliseconds);
 		}
 	};
 }
 
 /** Any engine at an address that speaks the same JSON. */
-export function httpProvider(settings: { address: string; token?: string; fetcher?: Fetcher; timeoutMs?: number }): ScanProvider {
+export function httpProvider(settings: { address: string; token?: string; fetcher?: Fetcher; timeoutMilliseconds?: number }): ScanProvider {
 	const fetcher = settings.fetcher ?? { fetch: (request: Request) => fetch(request) };
 	const headers: Record<string, string> = settings.token ? { authorization: `Bearer ${settings.token}` } : {};
 	return {
 		name: 'http',
-		scan: (body, facts) => postForFacts(fetcher, settings.address, body, facts, headers, settings.timeoutMs ?? scanRequestTimeoutMs)
+		scan: (body, facts) => postForFacts(fetcher, settings.address, body, facts, headers, settings.timeoutMilliseconds ?? scanRequestTimeoutMilliseconds)
 	};
 }
 

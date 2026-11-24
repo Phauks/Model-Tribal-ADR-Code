@@ -28,7 +28,7 @@ import type { Actions, PageServerLoad } from './$types';
 // outreach mailbox is set up.
 export const prerender = false;
 
-const nationsById = new Map(mailNations.map((nation) => [nation.identifier, nation]));
+const nationsByIdentifier = new Map(mailNations.map((nation) => [nation.identifier, nation]));
 const labels = ['general-office', 'leader', 'state-listed'] as const;
 
 function filterOf(values: URLSearchParams | FormData): AudienceFilter {
@@ -57,7 +57,7 @@ export const load: PageServerLoad = async (event) => {
 		tags: [...new Set(everyone.flatMap((contact) => contact.tags))].sort(),
 		templates: (await listTemplates(context)).map(({ identifier, name, version, subject, body }) => ({ identifier, name, version, subject, body })),
 		recipients: audience.recipients.map((contact) => {
-			const nation = contact.nationIdentifier ? (nationsById.get(contact.nationIdentifier) ?? null) : null;
+			const nation = contact.nationIdentifier ? (nationsByIdentifier.get(contact.nationIdentifier) ?? null) : null;
 			return {
 				name: contact.name,
 				nationName: nation?.name ?? null,
@@ -94,7 +94,7 @@ export const actions: Actions = {
 		const audience = await outreachAudience(context, filter, today());
 		const showing = whole(form, 'showing', 0, 0, Math.max(0, audience.recipients.length - 1));
 		const contact = audience.recipients[showing];
-		const nation = contact?.nationIdentifier ? (nationsById.get(contact.nationIdentifier) ?? null) : null;
+		const nation = contact?.nationIdentifier ? (nationsByIdentifier.get(contact.nationIdentifier) ?? null) : null;
 		const fields = contact
 			? fieldsFor(contact, nation, context.settings.siteAddress, person.displayName)
 			: { 'sender.name': person.displayName };
@@ -153,7 +153,7 @@ export const actions: Actions = {
 					context,
 					identifier,
 					audience.recipients.map((contact) => {
-						const nation = contact.nationIdentifier ? (nationsById.get(contact.nationIdentifier) ?? null) : null;
+						const nation = contact.nationIdentifier ? (nationsByIdentifier.get(contact.nationIdentifier) ?? null) : null;
 						return {
 							contactIdentifier: contact.contactIdentifier,
 							nationIdentifier: contact.nationIdentifier,

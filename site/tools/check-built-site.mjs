@@ -2,7 +2,8 @@
 //   node tools/check-built-site.mjs
 //
 // - Every page declares its language, has a title, exactly one h1 and a
-//   main landmark to skip to (site/DESIGN.md, section 9).
+//   main landmark to skip to (site/DESIGN.md, section 9). A prerendered
+//   redirect is checked only for a built target.
 // - The core pages, the web app manifest, the icon and the service worker
 //   exist, so the site stays installable and readable offline (section 10).
 // - The manifest is valid JSON with the fields browsers need to install it.
@@ -78,6 +79,16 @@ if (existsSync(path.join(output, 'offline-fingerprints.json'))) {
 for (const file of pages) {
 	const html = readFileSync(file, 'utf8');
 	const name = path.relative(output, file);
+	// A prerendered redirect (the old address of a merged nation profile) is only a script and a
+	// meta refresh; check that the page it sends readers to was built instead.
+	const refresh = /^<script>location\.href=[^<]*<\/script><meta http-equiv="refresh" content="0;url=([^"]+)">$/.exec(html.trim());
+	if (refresh) {
+		const target = refresh[1].replace(/^\//, '');
+		if (!existsSync(path.join(output, `${target}.html`)) && !existsSync(path.join(output, target, 'index.html'))) {
+			problem(`${name}: redirects to ${refresh[1]}, which was not built`);
+		}
+		continue;
+	}
 	if (!/<html lang="[a-z]{2,3}(-[A-Za-z0-9]+)*"/.test(html)) problem(`${name}: <html> has no lang`);
 	if (!/<title>[^<]+<\/title>/.test(html)) problem(`${name}: no <title>`);
 	const headings = html.match(/<h1[\s>]/g) ?? [];

@@ -16,7 +16,7 @@
 
 	let {
 		items,
-		listId,
+		listIdentifier,
 		depth = 1,
 		shut = false,
 		flush = false,
@@ -26,7 +26,7 @@
 		ontoggle
 	}: {
 		items: OutlineItem[];
-		listId: string;
+		listIdentifier: string;
 		depth?: number;
 		shut?: boolean;
 		/** A top-level list in the second column, with no rule or indent of its own. */
@@ -54,7 +54,7 @@
 	}
 </script>
 
-<ul class="outline" class:flush data-depth={depth} id={listId} hidden={shut}>
+<ul class="outline" class:flush data-depth={depth} id={listIdentifier} hidden={shut}>
 	{#each items as item, index (item.link)}
 		{@const branch = Boolean(item.children?.length)}
 		{@const open = branch && isOpen(item)}
@@ -62,7 +62,7 @@
 		<li>
 			<div class="entry" class:active>
 				<FoldButton
-					controls={branch ? `${listId}-${index}` : undefined}
+					controls={branch ? `${listIdentifier}-${index}` : undefined}
 					expanded={open}
 					name="Contents of {item.label}"
 					onclick={() => ontoggle(item)}
@@ -84,7 +84,7 @@
 			{#if branch && item.children}
 				<Self
 					items={item.children}
-					listId="{listId}-{index}"
+					listIdentifier="{listIdentifier}-{index}"
 					depth={depth + 1}
 					shut={!open}
 					{isActive}

@@ -20,7 +20,7 @@ import {
 	type TeamLevel
 } from '#lib/nation-teams.ts';
 import { isAdministrator } from '#lib/permissions.ts';
-import { eventStatement, eventsFor, type EventRow } from './events.ts';
+import { activityStatement, activityHistoryFor, type ActivityHistoryRow } from './activity-log.ts';
 import { forgetScan, storeSentFile } from './file-scans.ts';
 import { newIdentifier, newRequestReference, now } from './identifiers.ts';
 import type { SignedInPerson } from './people.ts';
@@ -221,7 +221,7 @@ export async function addPlace(
 					grantedBy.identifier,
 					time
 				),
-			eventStatement(database, {
+			activityStatement(database, {
 				personIdentifier: grantedBy.identifier,
 				action: account ? 'Added for a nation’s team' : 'Invited for a nation’s team',
 				targetKind: 'person',
@@ -258,7 +258,7 @@ export async function addPlace(
 				grantedBy.identifier,
 				time
 			),
-		eventStatement(database, {
+		activityStatement(database, {
 			personIdentifier: grantedBy.identifier,
 			action: `${place.displayName} given the place of ${teamLevelLabels[place.level].toLocaleLowerCase('en-US')} for ${describeParts(place.parts)}`,
 			targetKind: 'grant',
@@ -292,7 +292,7 @@ function endStatements(
 				 WHERE identifier = ? AND ended_at IS NULL`
 			)
 			.bind(now(), endedBy.identifier, reason, place.identifier),
-		eventStatement(database, {
+		activityStatement(database, {
 			personIdentifier: endedBy.identifier,
 			action: `${place.personName}: ${endActions[reason]}`,
 			targetKind: 'grant',
@@ -339,8 +339,8 @@ export async function suspendWithEveryoneAdded(
 }
 
 /** Every recorded change to a nation's team, newest first. */
-export async function teamActivity(database: D1Database, nationIdentifier: string): Promise<EventRow[]> {
-	return (await eventsFor(database, 'grant', teamLogTarget(nationIdentifier))).reverse();
+export async function teamActivity(database: D1Database, nationIdentifier: string): Promise<ActivityHistoryRow[]> {
+	return (await activityHistoryFor(database, 'grant', teamLogTarget(nationIdentifier))).reverse();
 }
 
 // ---------------------------------------------------------------------------
@@ -454,7 +454,7 @@ export async function saveApplication(
 					application.proof?.type ?? null,
 					now()
 				),
-			eventStatement(database, {
+			activityStatement(database, {
 				personIdentifier: null,
 				action: `Request ${reference} to join the team received`,
 				targetKind: 'grant',
@@ -554,7 +554,7 @@ function statusStatement(
 				note,
 				application.identifier
 			),
-		eventStatement(database, {
+		activityStatement(database, {
 			personIdentifier: by?.identifier ?? null,
 			action: `Request ${application.reference}: ${applicationStatusLabels[status].toLocaleLowerCase('en-US')}`,
 			targetKind: 'grant',

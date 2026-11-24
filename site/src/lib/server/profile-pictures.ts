@@ -8,7 +8,7 @@
  */
 import type { D1Database, R2Bucket } from '@cloudflare/workers-types/index.ts';
 import type { Profile } from './contributor-profiles.ts';
-import { eventStatement } from './events.ts';
+import { activityStatement } from './activity-log.ts';
 import { forgetScan, storeSentFile } from './file-scans.ts';
 import { newIdentifier, now } from './identifiers.ts';
 
@@ -113,7 +113,7 @@ export async function savePicture(
 		database
 			.prepare('UPDATE contributor_profiles SET picture_key = ?, picture_updated_at = ?, updated_at = ? WHERE identifier = ?')
 			.bind(key, time, time, profile.identifier),
-		eventStatement(database, {
+		activityStatement(database, {
 			personIdentifier: profile.personIdentifier,
 			action: profile.pictureKey ? 'Changed the profile picture' : 'Added a profile picture',
 			targetKind: 'profile',
@@ -138,7 +138,7 @@ export async function removePicture(
 		database
 			.prepare('UPDATE contributor_profiles SET picture_key = NULL, picture_updated_at = NULL, updated_at = ? WHERE identifier = ?')
 			.bind(time, profile.identifier),
-		eventStatement(database, {
+		activityStatement(database, {
 			personIdentifier: profile.personIdentifier,
 			action: 'Removed the profile picture',
 			targetKind: 'profile',

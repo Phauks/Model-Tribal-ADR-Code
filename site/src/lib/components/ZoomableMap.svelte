@@ -52,7 +52,7 @@
 	let surface: HTMLDivElement | undefined = $state();
 	let hasMap = $state(false);
 	let zoom = $state(1);
-	const hintId = `map-keys-${Math.random().toString(36).slice(2, 8)}`;
+	const hintIdentifier = `map-keys-${Math.random().toString(36).slice(2, 8)}`;
 
 	/** The drawing, and the whole of it as it was built, read once from its viewBox. */
 	function drawing(): { svg: SVGSVGElement; full: MapView; view: MapView } | undefined {
@@ -278,7 +278,7 @@
 <!-- svelte-ignore a11y_no_static_element_interactions -->
 <div class="zoomable-map" onkeydown={onKey} onfocusin={onFocusIn}>
 	{#if hasMap}
-		<div class="map-zoom-controls needs-scripts no-print" role="group" aria-label="Zoom: {label}" aria-describedby={hintId}>
+		<div class="map-zoom-controls needs-scripts no-print" role="group" aria-label="Zoom: {label}" aria-describedby={hintIdentifier}>
 			<button class="icon-button" type="button" aria-label="Zoom in" title="Zoom in (+)" disabled={zoom >= maximum - 0.001} onclick={zoomIn}>
 				<Plus aria-hidden="true" />
 			</button>
@@ -289,7 +289,7 @@
 				<RotateCcw aria-hidden="true" />
 			</button>
 		</div>
-		<p id={hintId} class="visually-hidden">
+		<p id={hintIdentifier} class="visually-hidden">
 			Plus and minus zoom the map, the arrow keys move it once zoomed in, and 0 shows the whole map.
 		</p>
 	{/if}
@@ -301,7 +301,7 @@
 		bind:this={surface}
 		role={zoom > 1.001 ? 'group' : undefined}
 		aria-label={zoom > 1.001 ? `${label}, zoomed in` : undefined}
-		aria-describedby={zoom > 1.001 ? hintId : undefined}
+		aria-describedby={zoom > 1.001 ? hintIdentifier : undefined}
 		tabindex={zoom > 1.001 ? 0 : undefined}
 		onpointerdown={onPointerDown}
 		onpointermove={onPointerMove}

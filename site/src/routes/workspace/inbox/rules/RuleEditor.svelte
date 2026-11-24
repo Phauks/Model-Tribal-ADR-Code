@@ -6,6 +6,8 @@
 	import Plus from '@lucide/svelte/icons/plus';
 	import Save from '@lucide/svelte/icons/save';
 	import X from '@lucide/svelte/icons/x';
+	import Dropdown from '#lib/components/Dropdown.svelte';
+	import SearchableDropdown from '#lib/components/SearchableDropdown.svelte';
 	import { ruleActionKinds, ruleFields, ruleOperators, type RuleAction, type RuleCondition } from '#lib/mail.ts';
 
 	interface Draft {
@@ -39,6 +41,29 @@
 	if (rule.conditions.length === 0) rule.conditions.push({ field: 'from', operator: 'contains', value: '' });
 	if (rule.actions.length === 0) rule.actions.push({ action: 'move', value: '' });
 
+	const fieldChoices = ruleFields.map((field) => ({ value: field.key as string, label: field.label }));
+	const yesNoChoices = [
+		{ value: 'yes', label: 'Yes' },
+		{ value: 'no', label: 'No' }
+	];
+	const operatorChoices = ruleOperators.map((operator) => ({ value: operator.key as string, label: operator.label }));
+	const actionChoices = ruleActionKinds.map((kind) => ({ value: kind.key as string, label: kind.label }));
+	/** What an action can be applied with: a folder (shown by its path), a tag or a person. */
+	function valueChoices(action: string): { value: string; label: string }[] {
+		const listed =
+			action === 'move'
+				? [
+						...folders.map((folder) => ({ value: folder.identifier, label: folder.path })),
+						{ value: 'archive', label: 'Archive' },
+						{ value: 'trash', label: 'Deleted' },
+						{ value: 'spam', label: 'Spam' }
+					]
+				: action === 'tag'
+					? tags.map((tag) => ({ value: tag.identifier, label: tag.name }))
+					: people.map((person) => ({ value: person.identifier, label: person.name }));
+		return [{ value: '', label: 'Choose…' }, ...listed];
+	}
+
 	const kindOf = (field: string) => ruleFields.find((item) => item.key === field)?.kind ?? 'text';
 	const placeholders: Record<string, string> = {
 		from: 'such as @navajo-nsn.gov',
@@ -68,22 +93,19 @@
 		<ol class="rows">
 			{#each rule.conditions as condition, index (index)}
 				<li class="row">
-					<label for="condition-field-{index}" class="visually-hidden">Condition {index + 1}: what to look at</label>
-					<select id="condition-field-{index}" name="condition-field" bind:value={condition.field}>
-						{#each ruleFields as field (field.key)}<option value={field.key}>{field.label}</option>{/each}
-					</select>
+					<Dropdown label="Condition {index + 1}: what to look at" hideLabel id="condition-field-{index}" name="condition-field" choices={fieldChoices} bind:value={condition.field} />
 					{#if kindOf(condition.field) === 'yes-no'}
 						<input type="hidden" name="condition-operator" value="is" />
-						<label for="condition-value-{index}" class="visually-hidden">Condition {index + 1}: yes or no</label>
-						<select id="condition-value-{index}" name="condition-value" bind:value={condition.value}>
-							<option value="yes">Yes</option>
-							<option value="no">No</option>
-						</select>
+						<Dropdown label="Condition {index + 1}: yes or no" hideLabel id="condition-value-{index}" name="condition-value" choices={yesNoChoices} bind:value={condition.value} />
 					{:else}
-						<label for="condition-operator-{index}" class="visually-hidden">Condition {index + 1}: how to compare</label>
-						<select id="condition-operator-{index}" name="condition-operator" bind:value={condition.operator}>
-							{#each ruleOperators as operator (operator.key)}<option value={operator.key}>{operator.label}</option>{/each}
-						</select>
+						<Dropdown
+							label="Condition {index + 1}: how to compare"
+							hideLabel
+							id="condition-operator-{index}"
+							name="condition-operator"
+							choices={operatorChoices}
+							bind:value={condition.operator}
+						/>
 						<label for="condition-value-{index}" class="visually-hidden">Condition {index + 1}: words</label>
 						<input type="text" id="condition-value-{index}" name="condition-value" bind:value={condition.value} maxlength="200" placeholder={placeholders[condition.field] ?? ''} />
 					{/if}
@@ -104,27 +126,28 @@
 		<ol class="rows">
 			{#each rule.actions as action, index (index)}
 				<li class="row">
-					<label for="action-kind-{index}" class="visually-hidden">Action {index + 1}</label>
-					<select id="action-kind-{index}" name="action-kind" bind:value={action.action} onchange={() => (action.value = '')}>
-						{#each ruleActionKinds as kind (kind.key)}<option value={kind.key}>{kind.label}</option>{/each}
-					</select>
+					<Dropdown
+						label="Action {index + 1}"
+						hideLabel
+						id="action-kind-{index}"
+						name="action-kind"
+						choices={actionChoices}
+						bind:value={action.action}
+						onchange={() => (action.value = '')}
+					/>
 					{#if action.action === 'read'}
 						<input type="hidden" name="action-value" value="" />
 					{:else}
-						<label for="action-value-{index}" class="visually-hidden">Action {index + 1}: which</label>
-						<select id="action-value-{index}" name="action-value" bind:value={action.value} required>
-							<option value="">Choose…</option>
-							{#if action.action === 'move'}
-								{#each folders as folder (folder.identifier)}<option value={folder.identifier}>{' '.repeat(folder.depth)}{folder.name}</option>{/each}
-								<option value="archive">Archive</option>
-								<option value="trash">Deleted</option>
-								<option value="spam">Spam</option>
-							{:else if action.action === 'tag'}
-								{#each tags as tag (tag.identifier)}<option value={tag.identifier}>{tag.name}</option>{/each}
-							{:else}
-								{#each people as person (person.identifier)}<option value={person.identifier}>{person.name}</option>{/each}
-							{/if}
-						</select>
+						<SearchableDropdown
+							label="Action {index + 1}: which"
+							hideLabel
+							id="action-value-{index}"
+							name="action-value"
+							required
+							placeholder="Choose…"
+							choices={valueChoices(action.action)}
+							bind:value={action.value}
+						/>
 					{/if}
 					{#if rule.actions.length > 1}
 						<button type="button" class="icon-button" aria-label="Remove action {index + 1}" title="Remove" onclick={() => rule.actions.splice(index, 1)}><X size={18} aria-hidden="true" /></button>
@@ -245,8 +268,15 @@
 		align-items: center;
 		gap: var(--space-2);
 	}
-	.row select {
-		flex: 0 1 auto;
+	.row :global(.dropdown) {
+		flex: 0 1 13rem;
+		margin: 0;
+	}
+	.row :global(.dropdown-control) {
+		width: 100%;
+	}
+	.row :global(.searchable-dropdown) {
+		flex: 1 1 12rem;
 	}
 	.row input[type='text'] {
 		flex: 1 1 12rem;

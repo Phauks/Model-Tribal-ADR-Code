@@ -4,6 +4,7 @@
 	// do, and the team's recent saves (design/nation-restrictions/, screens 1
 	// and 2, approved by Trevor on Nov. 24, 2026; src/lib/nation-restrictions.ts).
 	import Lock from '@lucide/svelte/icons/lock';
+	import Dropdown from '#lib/components/Dropdown.svelte';
 	import {
 		allowedLevels,
 		describeRestrictionChange,
@@ -48,6 +49,7 @@
 	const lines = $derived(savingLines(changes, data.items));
 	const counts = $derived(Object.fromEntries(restrictionKinds.map((kind) => [kind, data.items.filter((item) => item.kind === kind).length])) as Record<RestrictionKind, number>);
 	const presentKinds = $derived(restrictionKinds.filter((kind) => counts[kind] > 0));
+	const kindChoices = $derived([{ value: 'all' as const, label: 'All kinds' }, ...presentKinds.map((kind) => ({ value: kind, label: restrictionKindLabels[kind] }))]);
 
 	const matching = $derived.by(() => {
 		const words = find.trim().toLocaleLowerCase('en-US');
@@ -162,13 +164,7 @@
 	<h2>Each item</h2>
 	<div class="tools">
 		<div class="field"><label for="find">Find</label><input id="find" type="search" placeholder="Name or citation" bind:value={find} /></div>
-		<div class="field">
-			<label for="kind">Kind</label>
-			<select id="kind" bind:value={shownKind}>
-				<option value="all">All kinds</option>
-				{#each presentKinds as kind (kind)}<option value={kind}>{restrictionKindLabels[kind]}</option>{/each}
-			</select>
-		</div>
+		<div class="field"><Dropdown label="Kind" id="kind" choices={kindChoices} bind:value={shownKind} /></div>
 		<label class="small"><input type="checkbox" bind:checked={onlyApart} /> Only items set apart from their kind</label>
 	</div>
 	{#if matching.length > 0}
@@ -183,14 +179,14 @@
 							<td>{#if item.kind === 'opinions'}<i>{item.title}</i>{#if item.citation}, {item.citation}{/if}{:else}{item.title}{/if}</td>
 							<td>{restrictionItemKindLabels[item.kind]}</td>
 							<td>
-								<select
-									aria-label="Shown as: {item.title}"
+								<Dropdown
+									label="Shown as: {item.title}"
+									hideLabel
+									choices={allowedLevels[item.kind].map((option) => ({ value: option, label: restrictionLevelLabels[option] }))}
 									value={level}
 									disabled={!data.canChange}
-									onchange={(event) => setItem(item, (event.currentTarget as HTMLSelectElement).value as RestrictionLevel)}
-								>
-									{#each allowedLevels[item.kind] as option (option)}<option value={option}>{restrictionLevelLabels[option]}</option>{/each}
-								</select>
+									onchange={(option) => setItem(item, option)}
+								/>
 								{#if level !== ofKind}<span class="apart">Kind: {restrictionLevelLabels[ofKind]}</span>{/if}
 							</td>
 						</tr>
@@ -212,7 +208,7 @@
 						<li>{line.before}{#if line.name}{#if line.caseName}<i>{line.name}</i>{:else}{line.name}{/if}{/if}{line.after}{index === lines.length - 1 ? '.' : ';'}</li>
 					{/each}
 				</ul>
-				<p class="small">Downloads and offline copies follow at once. Search and data sets follow at a later site update. Books already printed cannot change; the next edition follows.</p>
+				<p class="small">Search, downloads, offline copies and data sets follow at once. Books already printed cannot change; the next edition follows.</p>
 			</div>
 		{/if}
 		<div class="field note">
@@ -332,16 +328,6 @@
 
 	.tools input[type='search'] {
 		min-width: 280px;
-	}
-
-	.items select {
-		font: inherit;
-		font-size: var(--font-size-small);
-		padding: 4px 8px;
-		border: 1px solid var(--color-control-border);
-		border-radius: var(--radius-control);
-		background: var(--color-paper);
-		color: var(--color-ink);
 	}
 
 	.apart {

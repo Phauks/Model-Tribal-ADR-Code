@@ -17,8 +17,11 @@
 	import { fullDate } from '../dates.ts';
 	import type { PageProps } from './$types';
 	import DateTimeField from '#lib/components/DateTimeField.svelte';
+	import Dropdown from '#lib/components/Dropdown.svelte';
 
 	let { data, form }: PageProps = $props();
+
+	const personChoices = (people: { identifier: string; name: string }[]) => people.map((person) => ({ value: person.identifier, label: person.name }));
 
 	// Times are kept as UTC and shown in the browser's own time zone once the page has loaded.
 	let zone = $state('America/Denver');
@@ -106,12 +109,7 @@
 						{#if others.length}
 							<form method="post" action="?/addMember" class="inline-form">
 								<input type="hidden" name="inbox" value={inbox.identifier} />
-								<label class="visually-hidden" for="add-{inbox.identifier}">Person to add to {inbox.name}</label>
-								<select id="add-{inbox.identifier}" name="member" required>
-									{#each others as person (person.identifier)}
-										<option value={person.identifier}>{person.name}</option>
-									{/each}
-								</select>
+								<Dropdown label="Person to add to {inbox.name}" hideLabel id="add-{inbox.identifier}" name="member" required choices={personChoices(others)} value={others[0].identifier} />
 								<button class="button button-quiet small" type="submit"><Plus size={16} aria-hidden="true" />Add</button>
 							</form>
 						{/if}
@@ -163,12 +161,7 @@
 				</div>
 				{#if newKind === 'personal'}
 					<div class="field">
-						<label for="new-inbox-owner">Whose inbox</label>
-						<select id="new-inbox-owner" name="owner" required>
-							{#each data.candidates as person (person.identifier)}
-								<option value={person.identifier}>{person.name}</option>
-							{/each}
-						</select>
+						<Dropdown label="Whose inbox" id="new-inbox-owner" name="owner" required choices={personChoices(data.candidates)} value={data.candidates[0]?.identifier ?? ''} />
 					</div>
 				{/if}
 			</div>
@@ -541,6 +534,9 @@
 	.icon-button:hover {
 		color: var(--color-ink);
 		background: var(--color-surface);
+	}
+	.inline-form :global(.dropdown) {
+		margin: 0;
 	}
 	.inline-form {
 		display: flex;

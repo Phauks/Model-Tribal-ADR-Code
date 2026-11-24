@@ -11,7 +11,7 @@ import {
 	savingLines,
 	settingsChanges,
 	tidySettings,
-	versionItemId,
+	versionItemIdentifier,
 	type RestrictableItem,
 	type RestrictionSettings
 } from '#lib/nation-restrictions.ts';
@@ -75,8 +75,8 @@ describe('which items a copy and a page follow', () => {
 	it('names copies and versions the same way the page, the copy and the downloads do', () => {
 		expect(copyItemId('/copies/view/caselaw-access-project/am-tribal-law/1/0001-01.html')).toBe(items[3].id);
 		expect(copyItemId('/copies/a/b%20c.pdf')).toBe('copy:a/b c.pdf');
-		expect(versionItemId('/copies/view/constitutions/cherokee-nation/1999.pdf', 'constitution', '1999')).toBe(items[0].id);
-		expect(versionItemId('https://bia.example/compact.pdf', 'compact', '2005')).toBe('version:compact/2005');
+		expect(versionItemIdentifier('/copies/view/constitutions/cherokee-nation/1999.pdf', 'constitution', '1999')).toBe(items[0].id);
+		expect(versionItemIdentifier('https://bia.example/compact.pdf', 'compact', '2005')).toBe('version:compact/2005');
 	});
 
 	it('lets nations restrict only their own laws and courts’ opinions', () => {
@@ -102,27 +102,28 @@ describe('which items a copy and a page follow', () => {
 });
 
 describe('what the page is sent', () => {
-	it('hides items with a style before the page runs, and nothing in an id can end the style or the script', () => {
+	it('names only cited items, and nothing in an id can end the style or the script', () => {
 		const html = restrictionsSlot({
-			levels: { 'copy:a/"</style><script>x</script>.pdf': 'hide', 'copy:b.html': 'cite' },
+			levels: { 'copy:a/hidden.pdf': 'hide', 'copy:b/"</style><script>x</script>.html': 'cite' },
 			originals: {},
 			opinions: { kind: 'show', total: 0, cited: 0, hidden: 0 },
 			lawsWithheld: true,
 			withheldCopies: { count: 2, bytes: 3 }
 		});
-		expect(html).toContain('tr:has([data-restrict-item="copy:b.html"])'.replace('b.html', 'a/\\22 \\3c /style\\3e \\3c script\\3e x\\3c /script\\3e .pdf'));
-		expect(html).toContain('[data-restrict-item="copy:b.html"] [data-restrict-text]');
+		expect(html).not.toContain('hidden.pdf');
+		expect(html).toContain('[data-restrict-item="copy:b/\\22 \\3c /style\\3e \\3c script\\3e x\\3c /script\\3e .html"] [data-restrict-text]');
 		expect(html.match(/<\/style>/g)).toHaveLength(1);
 		expect(html.match(/<\/script>/g)).toHaveLength(1);
 	});
 
-	it('sends an overlay for an unclaimed page only when something is restricted, and lists the withheld copies', () => {
+	it('sends an overlay for an unclaimed page only when something is restricted, and never names hidden copies', () => {
 		const none = pageRestrictions(items, () => 'show', 'show');
 		expect(pageOverlay(cherokee, {}, undefined, undefined, none)).toBeUndefined();
 		const some = pageRestrictions(items, (item) => (item.kind === 'laws' ? 'hide' : 'show'), 'show');
 		const overlay = pageOverlay(cherokee, {}, undefined, undefined, some);
 		expect(overlay?.slots.restrict).toContain('data-nation-restrictions');
-		expect(overlay?.withheld).toEqual(['constitutions/cherokee-nation/1999.pdf', 'constitutions/cherokee-nation/1975.pdf']);
+		expect(JSON.stringify(overlay)).not.toContain('1975.pdf');
+		expect(JSON.stringify(overlay)).toContain('lawsWithheld');
 	});
 });
 
@@ -174,19 +175,43 @@ describe('saving a nation’s choices', () => {
 	});
 });
 
-describe('the nation’s offline list', () => {
-	it('leaves out the copies the nation withholds', async () => {
-		const list = { title: 'Cherokee Nation', files: [['/copies/constitutions/cherokee-nation/1999.pdf', 100, 'aa'], ['/copies/caselaw-access-project/x%20y.html', 10, 'bb']] };
-		const worker = {
-			async fetch(request: Request) {
-				const url = new URL(request.url);
-				if (url.pathname.endsWith('/changes.json')) return Response.json({ stamp: 'a', slots: {}, withheld: ['caselaw-access-project/x y.html'] });
-				return Response.json(list, { headers: { etag: '"built"' } });
-			}
-		};
-		const wrapped = withNationPageChanges(worker);
-		const response = await wrapped.fetch(new Request('https://site.example/copies/offline/nations/cherokee-nation.json'), {}, {});
-		expect(response.headers.get('cache-control')).toBe('no-store');
-		expect((await response.json()).files).toEqual([list.files[0]]);
+describe('what the Worker sends to the site first', () => {
+	const seen: string[] = [];
+	const worker = {
+		async fetch(request: Request) {
+			const url = new URL(request.url);
+			seen.push(`${url.pathname}${url.search}`);
+			if (url.pathname.endsWith('/changes.json')) return new Response('Not found', { status: 404 });
+			return new Response('built', { headers: { 'content-type': 'text/html' } });
+		}
+	};
+	const wrapped = withNationPageChanges(worker);
+	const ask = async (path: string) => {
+		seen.length = 0;
+		const response = await wrapped.fetch(new Request(`https://site.example${path}`), {}, {});
+		return { response, seen: [...seen] };
+	};
+
+	it('sends built files that name laws and opinions to be filtered', async () => {
+		for (const path of ['/search/records.json', '/copies/list.csv', '/copies/details/0f.json', '/copies/offline/nations/cherokee-nation.json', '/nations/cherokee-nation/timeline.csv', '/nations/timeline/entries.json', '/nations/law/cherokee-nation.json', '/nations/data/build/opinions.json', '/zip/data.zip']) {
+			expect((await ask(path)).seen).toEqual([`/restricted-files${path}`]);
+		}
+	});
+
+	it('sends pages and their data to be drawn again, keeping the query', async () => {
+		expect((await ask('/nations/cherokee-nation/__data.json?x-sveltekit-invalidated=01')).seen).toEqual(['/restricted-pages/nations/cherokee-nation/__data.json?x-sveltekit-invalidated=01']);
+		expect((await ask('/nations/cherokee-nation')).seen).toEqual(['/nations/cherokee-nation/changes.json', '/restricted-pages/nations/cherokee-nation']);
+		for (const path of ['/nations/timeline', '/copies/list/c', '/nations/data/tribal-opinions-by-decade/2010s']) {
+			expect((await ask(path)).seen).toEqual([`/restricted-pages${path}`]);
+		}
+	});
+
+	it('leaves other pages alone and never serves the list of restrictable items', async () => {
+		for (const path of ['/nations/map', '/nations/data/gaming', '/nations/data/tribal-opinions-by-decade/sources', '/copies/view/a.pdf', '/about']) {
+			expect((await ask(path)).seen).toEqual([path]);
+		}
+		const list = await ask('/nations/cherokee-nation/restrictable.json');
+		expect(list.response.status).toBe(404);
+		expect(list.seen).toEqual([]);
 	});
 });

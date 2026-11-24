@@ -2,6 +2,7 @@
 	import { navigating, page } from '$app/state';
 	import SearchIcon from '@lucide/svelte/icons/search';
 	import TriangleAlert from '@lucide/svelte/icons/triangle-alert';
+	import Dropdown from '#lib/components/Dropdown.svelte';
 	import { copyAddress, documentHeading, excerptPieces, placeLabel } from '#lib/source-library-text.ts';
 	import type { PageProps } from './$types';
 	import { mediumDateAndTime } from '#lib/readable-date.ts';
@@ -10,6 +11,15 @@
 
 	// A search is a page load: while the next one is on its way, say so.
 	const searching = $derived(navigating.to?.url.pathname === page.url.pathname);
+
+	const modeChoices = [
+		{ value: '', label: 'The text' },
+		{ value: 'titles', label: 'Titles and citations' }
+	];
+	const topicChoices = $derived([
+		{ value: '', label: 'Any' },
+		...data.topics.map((topic) => ({ value: topic.topic, label: `${topic.topic} (${topic.documents.toLocaleString('en-US')})` }))
+	]);
 	const pendingQuery = $derived(navigating.to?.url.searchParams.get('q')?.trim() ?? '');
 
 	function count(value: number, one: string, many: string): string {
@@ -76,22 +86,10 @@
 			</p>
 		</div>
 		<div class="field">
-			<label for="library-mode">Search in</label>
-			<select id="library-mode" name="mode">
-				<option value="">The text</option>
-				<option value="titles" selected={data.mode === 'titles'}>Titles and citations</option>
-			</select>
+			<Dropdown label="Search in" id="library-mode" name="mode" choices={modeChoices} value={data.mode === 'titles' ? 'titles' : ''} />
 		</div>
 		<div class="field">
-			<label for="library-topic">Kind of source</label>
-			<select id="library-topic" name="topic">
-				<option value="">Any</option>
-				{#each data.topics as topic (topic.topic)}
-					<option value={topic.topic} selected={data.filters.topic === topic.topic}>
-						{topic.topic} ({topic.documents.toLocaleString('en-US')})
-					</option>
-				{/each}
-			</select>
+			<Dropdown label="Kind of source" id="library-topic" name="topic" choices={topicChoices} value={data.filters.topic ?? ''} />
 		</div>
 		<div class="field">
 			<label for="library-nation">Nation’s identifier</label>

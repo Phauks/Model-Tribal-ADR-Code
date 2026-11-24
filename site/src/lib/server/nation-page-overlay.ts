@@ -38,8 +38,6 @@ export interface PageOverlay {
 	/** Changes whenever what the page shows changes; part of the page's ETag. */
 	stamp: string;
 	slots: Partial<Record<PageSlot, string>>;
-	/** The bucket keys of copies the nation chose to cite only or hide, which its offline list leaves out (tools/nation-page-changes-worker.js). */
-	withheld?: string[];
 }
 
 export function escapeHtml(text: string): string {
@@ -171,23 +169,25 @@ function cssString(text: string): string {
 
 /**
  * What the page needs to follow the nation's choices about its laws and
- * opinions (src/lib/nation-restrictions.ts): a style that takes hidden items
- * off and drops the words drawn from cited items' text before the page runs,
- * and the choices themselves, which the page reads to link cited items to
- * their originals and correct its counts.
+ * opinions (src/lib/nation-restrictions.ts): a style that drops the words
+ * drawn from cited items' text before the page runs, and the choices
+ * themselves, which the page reads to link cited items to their originals
+ * and correct its counts. Hidden items are never named here, since anyone
+ * can read this: the Worker draws a page that holds any of them again
+ * without them (src/lib/restricted-pages.ts), so the page has nothing to hide.
  */
 export function restrictionsSlot(restrictions: PageRestrictions): string {
-	const hidden: string[] = [];
-	const cited: string[] = [];
+	const rules: string[] = [];
+	const levels: PageRestrictions['levels'] = {};
 	for (const [id, level] of Object.entries(restrictions.levels)) {
-		const selector = `[${restrictItemAttribute}="${cssString(id)}"]`;
-		if (level === 'hide') hidden.push(selector, `tr:has(${selector})`);
-		else cited.push(`${selector} [data-restrict-text]`);
+		if (level !== 'cite') continue;
+		levels[id] = level;
+		rules.push(`[${restrictItemAttribute}="${cssString(id)}"] [data-restrict-text]`);
 	}
-	if (restrictions.opinions.total > 0 && restrictions.opinions.hidden === restrictions.opinions.total) hidden.push('[data-section="opinions-heading"]');
-	const style = [...hidden, ...cited].length > 0 ? `<style>${[...hidden, ...cited].join(',')}{display:none!important}</style>` : '';
+	if (restrictions.opinions.total > 0 && restrictions.opinions.hidden === restrictions.opinions.total) rules.push('[data-section="opinions-heading"]');
+	const style = rules.length > 0 ? `<style>${rules.join(',')}{display:none!important}</style>` : '';
 	// JSON inside a script element: "<" written as an escape, so no text can end the element.
-	const data = JSON.stringify(restrictions).replaceAll('<', '\\u003c');
+	const data = JSON.stringify({ ...restrictions, levels }).replaceAll('<', '\\u003c');
 	return `${style}<script type="application/json" data-nation-restrictions>${data}</script>`;
 }
 
@@ -314,14 +314,8 @@ export function pageOverlay(
 ): PageOverlay | undefined {
 	const restricts = restrictions !== undefined && pageRestricts(restrictions);
 	if (Object.keys(live).length === 0 && !claim && !history && !restricts) return undefined;
-	const withheld = restricts
-		? Object.keys(restrictions.levels)
-				.filter((id) => id.startsWith('copy:'))
-				.map((id) => id.slice('copy:'.length))
-		: [];
 	return {
 		stamp: stampOf(live, claim, history, restrictions),
-		slots: slotsFor(nationIdentifier, live, claim, history, restrictions),
-		...(withheld.length > 0 ? { withheld } : {})
+		slots: slotsFor(nationIdentifier, live, claim, history, restrictions)
 	};
 }

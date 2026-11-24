@@ -1,5 +1,5 @@
 import { peopleOfNation } from '#lib/server/biographies.ts';
-import { error } from '@sveltejs/kit';
+import { error, redirect } from '@sveltejs/kit';
 import type { OutlineItem, PageOutline } from '#lib/site-sections.ts';
 import geometry from 'virtual:map-geometry';
 import { webLink } from '#lib/contact-links.ts';
@@ -39,7 +39,11 @@ import { legalHelpCitation, legalHelpFor, legalHelpHeading } from '#lib/server/l
 import { formatSource } from '#lib/server/markdown.ts';
 import type { EntryGenerator, PageServerLoad } from './$types';
 
-export const entries: EntryGenerator = () => nations().map((record) => ({ id: record.id }));
+export const entries: EntryGenerator = () => [
+	...nations().map((record) => ({ id: record.id })),
+	// The old address of a merged profile, which redirects to the profile that absorbed it.
+	...nations().flatMap((record) => (record.former_ids ?? []).map((id) => ({ id })))
+];
 
 /**
  * One fact as the page shows it: an optional label, the words, an optional
@@ -79,8 +83,8 @@ interface CourtOpinions {
  * The nation's court opinions in the Caselaw Access Project's tribal
  * reporters (decision record 0047): how many there are, and the newest few.
  */
-function courtOpinions(nationId: string, sources: SourceUses): CourtOpinions | undefined {
-	const all = opinionsOf(nationId);
+function courtOpinions(nationIdentifier: string, sources: SourceUses): CourtOpinions | undefined {
+	const all = opinionsOf(nationIdentifier);
 	if (all.length === 0) return undefined;
 	const citations: CitationMark[] = [];
 	sources.cite(opinionsSourceKey, { section: opinionsHeading, text: `${all.length} published opinions` }, citations);
@@ -90,7 +94,7 @@ function courtOpinions(nationId: string, sources: SourceUses): CourtOpinions | u
 		from: all.at(-1)!.year,
 		to: all[0].year,
 		citations,
-		link: `/nations/${nationId}/opinions`
+		link: `/nations/${nationIdentifier}/opinions`
 	};
 }
 
@@ -1043,7 +1047,11 @@ function heldCopies(id: string): { count: number; bytes: number } {
 
 export const load: PageServerLoad = ({ params }) => {
 	const record = nations().find((candidate) => candidate.id === params.id);
-	if (!record) error(404, 'No nation page has this address.');
+	if (!record) {
+		const merged = nations().find((candidate) => candidate.former_ids?.includes(params.id));
+		if (merged) redirect(308, `/nations/${merged.id}`);
+		error(404, 'No nation page has this address.');
+	}
 
 	const status = reviewStatusLabels[record.review?.status] ?? {
 		label: humanize(record.review?.status ?? 'unknown'),

@@ -7,7 +7,7 @@
  */
 import type { D1Database, R2Bucket } from '@cloudflare/workers-types/index.ts';
 import type { Profile } from './contributor-profiles.ts';
-import { eventStatement } from './events.ts';
+import { activityStatement } from './activity-log.ts';
 import { forgetScan, storeSentFile } from './file-scans.ts';
 import { newIdentifier, now } from './identifiers.ts';
 
@@ -60,7 +60,7 @@ export async function saveDocument(
 				 WHERE identifier = ?`
 			)
 			.bind(key, checked.name, time, time, profile.identifier),
-		eventStatement(database, {
+		activityStatement(database, {
 			personIdentifier: profile.personIdentifier,
 			action: profile.curriculumVitaeKey ? 'Changed the CV' : 'Added a CV',
 			targetKind: 'profile',
@@ -88,7 +88,7 @@ export async function removeDocument(
 				 WHERE identifier = ?`
 			)
 			.bind(time, profile.identifier),
-		eventStatement(database, {
+		activityStatement(database, {
 			personIdentifier: profile.personIdentifier,
 			action: 'Removed the CV',
 			targetKind: 'profile',

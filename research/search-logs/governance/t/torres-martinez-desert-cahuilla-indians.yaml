@@ -1,7 +1,7 @@
 profile: content/tribes/t/torres-martinez-desert-cahuilla-indians.yaml
 topic: governance
 status: found
-last_searched: '2026-11-23'
+last_searched: '2026-11-24'
 searches:
 - date: '2026-11-23'
   searched_by: Claude (AI assistant)
@@ -32,4 +32,15 @@ searches:
   records:
   - torres-martinez-desert-cahuilla-indians-website-about-us
   - torres-martinez-desert-cahuilla-indians-website-tribal-council
+- date: '2026-11-24'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: national-indian-law-library
+  address: https://narf.org/nill/tribes/torres_martinez.html
+  query: Tribal Code, Tribal Constitution, Tribal Court Opinions and Contact Info blocks (scripts/review/nill_gateway_apply.py)
+  outcome: found
+  reason: The page lists 2 links (constitution, law code); the profile already had them.
+  records:
+  - content/tribes/t/torres-martinez-desert-cahuilla-indians.yaml
+  - national-indian-law-library-torres-martinez
 next_steps: A newer constitution text from the nation, a law library or the Bureau of Indian Affairs; the government office can say which version is in effect.

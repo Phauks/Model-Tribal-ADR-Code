@@ -117,7 +117,7 @@ function periodOf(date: string): string {
 /** The data the charts and their record pages share, read once per build. */
 interface ChartInputs {
 	records: NationRecord[];
-	byId: Map<string, NationRecord>;
+	byIdentifier: Map<string, NationRecord>;
 	constitutionRows: Record<string, string>[];
 	compacts: Record<string, string>[];
 	/** Every document on the Office of Indian Gaming list: compacts, amendments, extensions, disapprovals and Secretarial Procedures. */
@@ -131,7 +131,7 @@ function inputs(): ChartInputs {
 		const records = nations();
 		inputCache = {
 			records,
-			byId: new Map(records.map((record) => [record.id, record])),
+			byIdentifier: new Map(records.map((record) => [record.id, record])),
 			constitutionRows: readCsv('research/constitutions/coverage.csv'),
 			compacts: readCsv('research/gaming/compact-clauses.csv').filter((row) => row.document_is === 'full-compact'),
 			compactDocuments: readCsv('research/gaming/compact-documents.csv').filter((row) => row.decision !== '')
@@ -349,7 +349,7 @@ export function chartRecords(chartKey: string, barKey: string, uses = new Source
 	const bar = chart?.bars.find((candidate) => candidate.href === chartRecordsPath(chartKey, barKey));
 	if (!chart || !bar) return undefined;
 	const base = { chart: { identifier: chart.identifier, title: chart.title }, bar: { slug: barKey, label: bar.label, value: bar.value } };
-	const { records, byId, constitutionRows, compacts } = inputs();
+	const { records, byIdentifier, constitutionRows, compacts } = inputs();
 	const items: ChartRecords['items'] = {};
 
 	if (chartKey === 'forums-by-kind') {
@@ -384,7 +384,7 @@ export function chartRecords(chartKey: string, barKey: string, uses = new Source
 		const members = constitutionRows.filter((row) => row.status === barKey);
 		uses.part('Constitutions on record');
 		const rows = members.flatMap((row) => {
-			const record = byId.get(row.nation);
+			const record = byIdentifier.get(row.nation);
 			if (!record) return [];
 			const name = nationName(record);
 			const documents = (record.governing_documents ?? [])
@@ -435,7 +435,7 @@ export function chartRecords(chartKey: string, barKey: string, uses = new Source
 				const copy = publicCopyFor(row.document_link);
 				const linked = row.nations
 					.split(/[;,]\s*/)
-					.map((id) => byId.get(id.trim()))
+					.map((id) => byIdentifier.get(id.trim()))
 					.filter((record): record is NationRecord => record !== undefined)
 					.map((record) => ({ text: nationName(record), href: nationLink(record, 'law-heading'), citations: [] }));
 				const clause: RecordItem = {
@@ -522,7 +522,7 @@ export function chartRecords(chartKey: string, barKey: string, uses = new Source
 				const copy = publicCopyFor(row.document_link);
 				const linked = row.nations
 					.split(/[;,]\s*/)
-					.map((id) => byId.get(id.trim()))
+					.map((id) => byIdentifier.get(id.trim()))
 					.filter((record): record is NationRecord => record !== undefined)
 					.map((record) => ({ text: nationName(record), href: nationLink(record, 'ties-heading'), citations: [] }));
 				items[row.id] = { nations: linked };

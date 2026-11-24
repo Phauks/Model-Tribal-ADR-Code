@@ -133,9 +133,9 @@ export function peopleInCase(caseKey: string): { name: string; link: string; rol
 }
 
 /** The people with a page who belong to a nation, for the nation's page. */
-export function peopleOfNation(nationId: string): { name: string; link: string; lead: string; cases: number }[] {
+export function peopleOfNation(nationIdentifier: string): { name: string; link: string; lead: string; cases: number }[] {
 	return biographies()
-		.filter((person) => (person.nations ?? []).some((entry) => entry.nation === nationId))
+		.filter((person) => (person.nations ?? []).some((entry) => entry.nation === nationIdentifier))
 		.map((person) => ({
 			name: person.name,
 			link: biographyPath(person.key),

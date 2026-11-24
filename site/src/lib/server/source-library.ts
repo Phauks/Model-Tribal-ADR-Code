@@ -286,13 +286,13 @@ export async function findLibraryDocuments(database: D1Database, query: string, 
 	}
 }
 
-export async function libraryDocument(database: D1Database, documentId: number): Promise<LibraryDocument | null> {
+export async function libraryDocument(database: D1Database, documentIdentifier: number): Promise<LibraryDocument | null> {
 	const row = await database
 		.prepare(
 			`SELECT d.*, (SELECT COUNT(*) FROM pages WHERE document_id = d.document_id) AS passage_count
 			 FROM documents d WHERE d.document_id = ?`
 		)
-		.bind(documentId)
+		.bind(documentIdentifier)
 		.first<
 			DocumentRow & {
 				other_keys: string | null;
@@ -334,7 +334,7 @@ export async function libraryDocument(database: D1Database, documentId: number):
 /** A run of a document's passages, from the given place in the document (1 is the first). */
 export async function libraryPages(
 	database: D1Database,
-	documentId: number,
+	documentIdentifier: number,
 	from: number,
 	count = passagesPerScreen
 ): Promise<LibraryPage[]> {
@@ -343,7 +343,7 @@ export async function libraryPages(
 			`SELECT passage_id, sequence, page, label, part, method, text FROM pages
 			 WHERE document_id = ? AND sequence >= ? ORDER BY sequence LIMIT ?`
 		)
-		.bind(documentId, Math.max(1, from), count)
+		.bind(documentIdentifier, Math.max(1, from), count)
 		.all<{ passage_id: number; sequence: number; page: number | null; label: string | null; part: number; method: string | null; text: string }>();
 	return rows.results.map((row) => ({
 		passageId: row.passage_id,
@@ -357,10 +357,10 @@ export async function libraryPages(
 }
 
 /** Where a passage sits in its document, to open the reading page there. */
-export async function passagePlace(database: D1Database, passageId: number): Promise<{ documentId: number; sequence: number } | null> {
+export async function passagePlace(database: D1Database, passageIdentifier: number): Promise<{ documentId: number; sequence: number } | null> {
 	const row = await database
 		.prepare('SELECT document_id, sequence FROM pages WHERE passage_id = ?')
-		.bind(passageId)
+		.bind(passageIdentifier)
 		.first<{ document_id: number; sequence: number }>();
 	return row ? { documentId: row.document_id, sequence: row.sequence } : null;
 }
@@ -368,18 +368,18 @@ export async function passagePlace(database: D1Database, passageId: number): Pro
 /** The first passage on a PDF page or a printed or star page. */
 export async function pagePlace(
 	database: D1Database,
-	documentId: number,
+	documentIdentifier: number,
 	page: { number?: number; label?: string }
 ): Promise<number | null> {
 	const row =
 		page.number !== undefined
 			? await database
 					.prepare('SELECT MIN(sequence) AS sequence FROM pages WHERE document_id = ? AND page = ?')
-					.bind(documentId, page.number)
+					.bind(documentIdentifier, page.number)
 					.first<{ sequence: number | null }>()
 			: await database
 					.prepare('SELECT MIN(sequence) AS sequence FROM pages WHERE document_id = ? AND label = ?')
-					.bind(documentId, page.label ?? '')
+					.bind(documentIdentifier, page.label ?? '')
 					.first<{ sequence: number | null }>();
 	return row?.sequence ?? null;
 }

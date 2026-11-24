@@ -1,7 +1,7 @@
 profile: content/tribes/n/native-village-of-marys-igloo.yaml
 topic: governance
 status: found
-last_searched: '2026-11-23'
+last_searched: '2026-11-24'
 searches:
 - date: '2026-11-23'
   searched_by: Claude (AI assistant)
@@ -29,4 +29,15 @@ searches:
   query: Government, council, election, court and constitution pages linked from the home page (scripts/governance/crawl_websites.py, website-brief.md)
   outcome: not-found
   reason: 'The pages saved are not the nation''s own government site: Pages are regional nonprofit Kawerak, Inc.''s pages on kawerak.org, not the Native Village of Mary''s Igloo''s own site..'
+- date: '2026-11-24'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: national-indian-law-library
+  address: https://narf.org/nill/tribes/native_mary%27s%20igloo.html
+  query: Tribal Code, Tribal Constitution, Tribal Court Opinions and Contact Info blocks (scripts/review/nill_gateway_apply.py)
+  outcome: found
+  reason: The page lists 1 link (law code); the profile already had it.
+  records:
+  - content/tribes/n/native-village-of-marys-igloo.yaml
+  - national-indian-law-library-native-marys-igloo
 next_steps: Find the nation's own government website; the address listed leads elsewhere.

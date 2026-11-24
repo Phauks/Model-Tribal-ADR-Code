@@ -54,7 +54,7 @@
 
 	type Preview = Term | Nation | Case;
 
-	const cardId = 'link-preview';
+	const cardIdentifier = 'link-preview';
 	const showDelay = 400;
 	const hideDelay = 250;
 	// Links where a preview would get in the way: navigation, long lists and
@@ -158,7 +158,7 @@
 		anchor = link;
 		shown = entry;
 		imageFailed = false;
-		link.setAttribute('aria-describedby', cardId);
+		link.setAttribute('aria-describedby', cardIdentifier);
 		await tick();
 		place(link);
 	}
@@ -246,7 +246,7 @@
 {#if shown}
 	<div
 		bind:this={card}
-		id={cardId}
+		id={cardIdentifier}
 		class="link-preview"
 		role="tooltip"
 		style:top="{position.top}px"

@@ -15,6 +15,7 @@ import {
 	noRestrictions,
 	pageRestrictions,
 	readSettings,
+	restrictsAnything,
 	type PageRestrictions,
 	type RestrictableItem,
 	type RestrictableList,
@@ -23,7 +24,8 @@ import {
 	type RestrictionLevel,
 	type RestrictionSettings
 } from '../nation-restrictions.ts';
-import { eventStatement } from './events.ts';
+import type { SiteRestrictions } from '../restricted-files.ts';
+import { activityStatement } from './activity-log.ts';
 import { newIdentifier, now } from './identifiers.ts';
 import type { SignedInPerson } from './people.ts';
 
@@ -131,7 +133,7 @@ export async function saveByIdentifier(database: D1Database, identifier: string)
 }
 
 function logStatement(database: D1Database, person: SignedInPerson, nationIdentifier: string, action: string, note: string | null) {
-	return eventStatement(database, {
+	return activityStatement(database, {
 		personIdentifier: person.identifier,
 		action,
 		targetKind: 'document',
@@ -278,6 +280,52 @@ export async function nationPageRestrictions(
 		return level;
 	};
 	return pageRestrictions(list.items, levelOf, own.kinds.opinions ?? 'show');
+}
+
+/**
+ * Works out the level of every item any nation restricts, the strictest of
+ * the nations it belongs to winning, from each nation's setting in force,
+ * each restricting nation's list of items (built with the site) and the
+ * copies the site serves (virtual:public-copies), for the files made at
+ * build time (src/lib/server/site-restrictions.ts).
+ */
+export async function gatherRestrictions(
+	settings: ReadonlyMap<string, RestrictionSettings>,
+	listOf: (nation: string) => Promise<{ items: RestrictableItem[] }>,
+	copies: readonly CopyFacts[],
+	stamp: string
+): Promise<SiteRestrictions | undefined> {
+	const restricting = [...settings].filter(([, chosen]) => restrictsAnything(chosen));
+	if (restricting.length === 0) return undefined;
+	const levels = new Map<string, 'cite' | 'hide'>();
+	const items = new Map<string, RestrictableItem>();
+	const raise = (id: string, level: RestrictionLevel) => {
+		if (level !== 'show') levels.set(id, stricter(levels.get(id) ?? 'show', level) as 'cite' | 'hide');
+	};
+	// Each document of each restricting nation, with its versions' items.
+	const documents = new Map<string, string[]>();
+	const lists = await Promise.all(restricting.map(async ([nation, chosen]) => ({ nation, chosen, list: await listOf(nation) })));
+	for (const { nation, chosen, list } of lists) {
+		for (const item of list.items) {
+			if (!items.has(item.id)) items.set(item.id, item);
+			raise(item.id, itemLevel(chosen, item));
+			if (item.document) {
+				const key = `${nation}#${item.document}`;
+				documents.set(key, [...(documents.get(key) ?? []), item.id]);
+			}
+		}
+	}
+	// A copy that belongs to a restricting nation but is not on its list still follows its kind.
+	for (const copy of copies) {
+		if (!copy.restrict) continue;
+		for (const nation of copy.restrict.nations) {
+			const chosen = settings.get(nation);
+			if (chosen) raise(`copy:${copy.key}`, itemLevel(chosen, { id: `copy:${copy.key}`, kind: copy.restrict.kind }));
+		}
+	}
+	if (levels.size === 0) return undefined;
+	const hiddenDocuments = new Set([...documents].filter(([, ids]) => ids.every((id) => levels.get(id) === 'hide')).map(([key]) => key));
+	return { stamp, levels, items, hiddenDocuments };
 }
 
 /** A nation's restrictable items, built with the site (src/routes/nations/[id]/restrictable.json). */
