@@ -95,7 +95,9 @@ const neverCached = [
 	// ZIP downloads (/zip/) are files to keep, not pages to read offline.
 	'/zip',
 	// A quotation's paragraph depends on the words asked about, which saved pages match without (ignoreSearch).
-	'/quote-context'
+	'/quote-context',
+	// The data the Worker draws case, law, biography and Supreme Court pages from (src/lib/server/page-data.ts); the pages themselves are saved as they are read.
+	'/page-data'
 ];
 /** Not a real address: the list of collections the reader keeps, stored in the cache. */
 const keptCollectionsKey = '/__kept-collections';

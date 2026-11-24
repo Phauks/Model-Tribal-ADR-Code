@@ -62,5 +62,6 @@ A record is never rewritten after it is accepted. A later record supersedes it a
 | [0054](0054-edit-the-site-text-from-the-website.md) | Edit the site text from the website, and rebuild the site to publish it | Accepted |
 | [0055](0055-limit-scripts-and-framing-with-security-headers.md) | Limit scripts and framing with a Content Security Policy and security headers | Accepted |
 | [0056](0056-let-nations-restrict-their-laws-and-opinions.md) | Let a nation choose how the site shows its own laws and court opinions | Accepted |
+| [0057](0057-draw-item-pages-on-request.md) | Draw the large families of item pages when a reader opens them | Accepted |
 
 Template: Status, Date, Context, Decision, Consequences, Sources.
