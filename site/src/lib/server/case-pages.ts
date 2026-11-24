@@ -95,7 +95,9 @@ interface CaseRecordParts {
 
 const roles: Record<string, string> = { party: 'Party', government: 'Party through its officials or agency', subject: 'Not a party' };
 
-const boxParts: [part: 'background' | 'question' | 'holding' | 'quotes' | 'treatment', heading: string][] = [
+type BoxPartHeading = [part: 'background' | 'question' | 'holding' | 'summary' | 'quotes' | 'treatment', heading: string];
+
+const boxParts: BoxPartHeading[] = [
 	['background', 'Background'],
 	['question', 'Question'],
 	['holding', 'Holding'],
@@ -125,11 +127,11 @@ function escapeRegExp(text: string): string {
  * The box's parts as the page's sections, each under its own heading, with
  * the number of quotations and Treatment paragraphs in a badge.
  */
-function boxSections(key: string, title: string, box: RecordBox | undefined): { html: string; topics: string[]; sources: SourceEntry[] } {
+export function boxSections(key: string, title: string, box: RecordBox | undefined, parts: BoxPartHeading[] = boxParts): { html: string; topics: string[]; sources: SourceEntry[] } {
 	const topics = box?.topics ?? [];
 	let markdown = '';
 	const counts: Record<string, number> = {};
-	for (const [part, heading] of boxParts) {
+	for (const [part, heading] of parts) {
 		const written = box ? boxPartMarkdown(key, box, part) : '';
 		if (!written) continue;
 		if (part === 'quotes') counts.quotes = box!.quotes!.length;
@@ -195,7 +197,7 @@ function caseNations(record: SourceRecord & CaseRecordParts): { nations: CaseNat
 	return { nations };
 }
 
-function essaysCiting(key: string, title: string): CaseMention[] {
+export function essaysCiting(key: string, title: string): CaseMention[] {
 	const found: CaseMention[] = [];
 	const mention = new RegExp(`\\[@${escapeRegExp(key)}[\\],]|\\*${escapeRegExp(title)}\\*`);
 	for (const [identifier, written] of Object.entries(essaysInGit)) {
@@ -213,7 +215,7 @@ function essaysCiting(key: string, title: string): CaseMention[] {
 	return found.sort((one, other) => one.title.localeCompare(other.title));
 }
 
-function citationLine(record: SourceRecord): string {
+export function citationLine(record: SourceRecord): string {
 	const { volume, page, number, authority } = record.citation;
 	const reporter = [volume, record.citation['container-title'], page].filter(Boolean).join(' ');
 	const year = record.citation.issued?.['date-parts']?.[0]?.[0];
