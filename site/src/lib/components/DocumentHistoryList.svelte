@@ -10,13 +10,28 @@
 	// A document none of whose versions is in effect says how and when it
 	// ended, and names what took its place, such as Secretarial Procedures, so
 	// a reader can find what governs now (Trevor, Nov. 23, 2026).
+	// On a nation's page, a version the nation chose to cite only links to
+	// where the original is kept, and one it chose to hide is left out, with
+	// a document none of whose versions is left (src/lib/nation-restrictions.ts).
+	import ExternalLink from '@lucide/svelte/icons/external-link';
 	import type { DocumentHistoryView } from '#lib/server/document-history.ts';
+	import { noPageRestrictions, versionItemId, type PageRestrictions } from '#lib/nation-restrictions.ts';
 	import CitationMarks from './CitationMarks.svelte';
 
-	let { documents }: { documents: (DocumentHistoryView & { heading?: string })[] } = $props();
+	let {
+		documents,
+		restrictions = noPageRestrictions
+	}: { documents: (DocumentHistoryView & { heading?: string })[]; restrictions?: PageRestrictions } = $props();
+
+	const idOf = (document: DocumentHistoryView, version: DocumentHistoryView['versions'][number]) => versionItemId(version.link, document.id, version.id);
+	const shown = $derived(
+		documents
+			.map((document) => ({ ...document, versions: document.versions.filter((version) => restrictions.levels[idOf(document, version)] !== 'hide') }))
+			.filter((document) => document.versions.length > 0)
+	);
 </script>
 
-{#each documents as document (document.id)}
+{#each shown as document (document.id)}
 	<section class="document-history" aria-labelledby="document-{document.id}">
 		<h3 id="document-{document.id}">{document.heading ?? document.title}</h3>
 		{#if document.heading}
@@ -43,9 +58,14 @@
 		{/if}
 		<ol class="version-list" class:single={document.versions.length === 1}>
 			{#each document.versions as version (version.id)}
-				<li>
+				{@const id = idOf(document, version)}
+				{@const cited = restrictions.levels[id] === 'cite'}
+				<li data-restrict-item={id}>
 					<p class="version-heading">
-						<strong>{#if version.link}<a href={version.link}>{version.label}</a>{:else}{version.label}{/if}</strong
+						<strong
+							>{#if cited}{#if restrictions.originals[id]}<a class="original" href={restrictions.originals[id]} rel="noopener noreferrer"
+										>{version.label}<ExternalLink size={14} aria-hidden="true" /></a
+									>{:else}{version.label}{/if}{:else if version.link}<a href={version.link}>{version.label}</a>{:else}{version.label}{/if}</strong
 						><CitationMarks marks={version.citations} />
 						{#if version.inEffect || version.status !== 'Unknown'}
 							<span class="version-status" class:in-effect={version.inEffect}
@@ -65,6 +85,12 @@
 <style>
 	.version-list {
 		padding-left: var(--space-5);
+	}
+
+	.original {
+		display: inline-flex;
+		align-items: center;
+		gap: var(--space-1);
 	}
 
 	/* One version needs no number (Trevor, Nov. 23, 2026: no list marks unless it is a real list). */

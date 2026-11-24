@@ -5,7 +5,7 @@ The website keeps its own copy of many documents it cites and serves them at `/c
 ## Which documents are copied
 
 - Works of the United States government, which have no copyright (17 U.S.C. § 105): the Statutes at Large, Public Laws, Federal Register documents and other federal PDFs. A source record qualifies when its `rights.basis` is `us-government-work` or `public-domain` and its `rights.redistribution` is `true`. So do the Statutes at Large, Public Law and Federal Register citations that nation pages link to GovInfo ([src/lib/legal-citations.ts](../site/src/lib/legal-citations.ts)).
-- Nations' constitutions and laws (capture index topics `constitutions` and `tribal-law`), since decision record 0031. A nation can ask for any copy to be removed or redacted, with the "Ask to remove" link beside it on the [/copies](https://model-tribal-adr-code.trevordgoldsmith.workers.dev/copies) page.
+- Nations' constitutions and laws (capture index topics `constitutions` and `tribal-law`), since decision record 0031. A nation can ask for any copy to be removed or redacted, with the "Ask to remove" link beside it on the [/copies](https://model-tribal-adr-code.trevordgoldsmith.workers.dev/copies) page. A nation that has claimed its page can also choose to have its laws and its courts' opinions cited only or hidden; the Worker then stops serving those copies ([decision record 0056](decisions/0056-let-nations-restrict-their-laws-and-opinions.md)).
 
 Never copied or served:
 

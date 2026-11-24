@@ -119,7 +119,8 @@
 <h1>{the(data.nation.title).replace(/^the /, 'The ')}’s team</h1>
 <p class="small page-links">
 	<a href="/workspace/nation-teams/{data.nation.identifier}/edit">Edit the page</a> ·
-	<a href="/workspace/nation-teams/{data.nation.identifier}/changes">Changes and history</a>
+	<a href="/workspace/nation-teams/{data.nation.identifier}/changes">Changes and history</a> ·
+	<a href="/workspace/nation-teams/{data.nation.identifier}/laws-and-cases">Laws and cases</a>
 	{#if data.nation.page}· <a href={data.nation.page}>View the page</a>{/if}
 </p>
 <p class="lede">
