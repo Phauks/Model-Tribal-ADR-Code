@@ -27,7 +27,9 @@
 	import Timeline from '#lib/components/Timeline.svelte';
 	import { unclaimedPage } from '#lib/review-status.ts';
 	import { afterNavigate } from '$app/navigation';
-	import { fillNationSlots } from '#lib/nation-page-slots.ts';
+	import ExternalLink from '@lucide/svelte/icons/external-link';
+	import { fillNationSlots, restrictionsInPage } from '#lib/nation-page-slots.ts';
+	import { noPageRestrictions, opinionsNote, withheldLine, type PageRestrictions } from '#lib/nation-restrictions.ts';
 	import { imageViewerAttributes } from '#lib/image-viewer.ts';
 	import type { PageProps } from './$types';
 
@@ -115,8 +117,24 @@
 	// The Worker fills the nation's own changes into the page before it is
 	// sent. After a move within the site the page came from the build, so it
 	// asks for them itself (src/lib/nation-page-slots.ts).
-	afterNavigate((navigation) => {
-		if (navigation.type !== 'enter') void fillNationSlots(data.page.id);
+	// What the nation chose the site shows of its laws and court opinions
+	// comes the same way (src/lib/nation-restrictions.ts). Until the page has
+	// read it, the Worker's style has already taken hidden items off.
+	let restrictions = $state<PageRestrictions>(noPageRestrictions);
+	afterNavigate(async (navigation) => {
+		if (navigation.type !== 'enter') {
+			restrictions = noPageRestrictions;
+			await fillNationSlots(data.page.id);
+		}
+		restrictions = restrictionsInPage();
+	});
+	const levelOf = (key: string) => restrictions.levels[`copy:${key}`] ?? 'show';
+	const opinionsCount = $derived((data.opinions?.count ?? 0) - restrictions.opinions.hidden);
+	const opinionsShown = $derived((data.opinions?.shown ?? []).filter((opinion) => levelOf(opinion.key) !== 'hide'));
+	const opinionsCited = $derived(restrictions.opinions.kind === 'cite');
+	const heldCopies = $derived({
+		count: data.page.heldCopies.count - restrictions.withheldCopies.count,
+		bytes: data.page.heldCopies.bytes - restrictions.withheldCopies.bytes
 	});
 </script>
 
@@ -220,7 +238,7 @@
 			</p>
 		{/if}
 		<!-- The nation's own words and pictures, filled in by the Worker from what its team published (decision record 0041). -->
-		{#if !page.withdrawn}<div class="nation-slot" data-nation-slot="top"></div>{/if}
+		{#if !page.withdrawn}<div class="nation-slot" data-nation-slot="top"></div><div data-nation-slot="restrict" hidden></div>{/if}
 	{/snippet}
 
 	{#if !page.withdrawn}
@@ -264,29 +282,38 @@
 		<!-- 5a. Court opinions: the nation's opinions in the Caselaw Access Project's
 		     tribal reporters, each served as its own page with a removal link
 		     (decision record 0047). -->
-		{#if data.opinions}
+		{#if data.opinions && opinionsCount > 0}
 			{@const opinions = data.opinions}
 			<Collapsible heading="Court opinions" identifier="opinions-heading">
 				<p>
-					{opinions.count === 1 ? 'One opinion' : `${opinions.count.toLocaleString('en-US')} opinions`} of courts serving the nation {opinions.count === 1 ? 'is' : 'are'} published in the American Tribal Law Reporter or the Navajo Reporter{opinions.from === opinions.to ? `, from ${opinions.from}` : `, from ${opinions.from} to ${opinions.to}`}.<CitationMarks
+					{opinionsCount === 1 ? 'One opinion' : `${opinionsCount.toLocaleString('en-US')} opinions`} of courts serving the nation {opinionsCount === 1 ? 'is' : 'are'} published in the American Tribal Law Reporter or the Navajo Reporter{opinions.from === opinions.to ? `, from ${opinions.from}` : `, from ${opinions.from} to ${opinions.to}`}.<CitationMarks
 						marks={opinions.citations}
 					/>
 				</p>
 				<ul class="opinions stacked-list">
-					{#each opinions.shown as opinion (opinion.path)}
-						<li>
-							<a href={opinion.path}><i>{opinion.name}</i></a>, {opinion.citation} ({opinion.court} {opinion.year}){#if opinion.topics.length > 0}<span class="small mentions"><span class="muted">Mentions</span>{' '}<TopicBadges topics={opinion.topics.map((topic) => ({ text: topic, link: opinionsMentioning(data.page.id, topic) }))} /></span>{/if}
+					{#each opinionsShown as opinion (opinion.path)}
+						{@const cited = levelOf(opinion.key) === 'cite'}
+						<li data-restrict-item="copy:{opinion.key}">
+							{#if cited}<a class="original" href={opinion.original} rel="noopener noreferrer"><i>{opinion.name}</i><ExternalLink size={14} aria-hidden="true" /></a
+								>{:else}<a href={opinion.path}><i>{opinion.name}</i></a>{/if}, {opinion.citation} ({opinion.court} {opinion.year}){#if opinion.topics.length > 0 && !cited}<span class="small mentions" data-restrict-text><span class="muted">Mentions</span>{' '}<TopicBadges topics={opinion.topics.map((topic) => ({ text: topic, link: opinionsMentioning(data.page.id, topic) }))} /></span>{/if}
 						</li>
 					{/each}
 				</ul>
-				{#if opinions.count > opinions.shown.length}
-					<p><a href={opinions.link}>All {opinions.count.toLocaleString('en-US')} opinions</a>, with their courts, dates and the words they mention.</p>
+				{#if opinionsCount > opinionsShown.length}
+					<p><a href={opinions.link}>All {opinionsCount.toLocaleString('en-US')} opinions</a>, {opinionsCited ? 'with their courts and dates.' : 'with their courts, dates and the words they mention.'}</p>
 				{:else}
-					<p><a href={opinions.link}>The opinions as a table</a>, with their courts, dates and the words they mention.</p>
+					<p><a href={opinions.link}>The opinions as a table</a>, {opinionsCited ? 'with their courts and dates.' : 'with their courts, dates and the words they mention.'}</p>
 				{/if}
-				<p class="small muted">
-					Each opinion is a copy of the Caselaw Access Project’s text, with the publisher’s headnotes removed. A word listed means only that it appears in the opinion, not what the court decided.
-				</p>
+				{#if restrictions.opinions.cited > 0}
+					<p class="small muted">
+						{opinionsNote(restrictions.opinions.kind, restrictions.opinions.cited, restrictions.opinions.total - restrictions.opinions.cited - restrictions.opinions.hidden)}
+					</p>
+				{:else}
+					<p class="small muted">
+						Each opinion is a copy of the Caselaw Access Project’s text, with the publisher’s headnotes removed. A word listed means only that it appears in the opinion, not what the court decided.
+					</p>
+				{/if}
+				{#if restrictions.opinions.hidden > 0}<p class="small muted">{withheldLine}</p>{/if}
 			</Collapsible>
 		{/if}
 
@@ -339,16 +366,19 @@
 		     reproduced, and each document with recorded versions, oldest first
 		     (decision record 0018). -->
 		<div data-print-part="documentHistory">
-			<Collapsible heading="Laws and agreements" identifier="law-heading" actions={data.page.heldCopies.count > 0 ? documentTools : undefined}>
+			<Collapsible heading="Laws and agreements" identifier="law-heading" actions={heldCopies.count > 0 ? documentTools : undefined}>
 				{@render editLink('statements', 'statement-law-heading', 'Laws and agreements')}
 				{#if data.law.length > 0}
 					<FactGroups groups={data.law} />
 				{/if}
-				<DocumentHistoryList documents={data.documents} />
+				<DocumentHistoryList documents={data.documents} {restrictions} />
 				<div class="nation-slot" data-nation-slot="law"></div>
+				{#if restrictions.lawsWithheld || (restrictions.opinions.total > 0 && restrictions.opinions.hidden === restrictions.opinions.total)}
+					<p class="small muted">{withheldLine}</p>
+				{/if}
 			</Collapsible>
 			{#snippet documentTools()}
-				<NationDocumentsOffline nation={data.page.id} held={data.page.heldCopies} />
+				<NationDocumentsOffline nation={data.page.id} held={heldCopies} />
 			{/snippet}
 		</div>
 
@@ -585,6 +615,13 @@
 	.mentions {
 		display: block;
 		margin-top: var(--space-1);
+	}
+
+	/* An opinion the nation chose to cite only links to the Caselaw Access Project. */
+	.original {
+		display: inline-flex;
+		align-items: center;
+		gap: var(--space-1);
 	}
 	.story-kind {
 		display: block;
