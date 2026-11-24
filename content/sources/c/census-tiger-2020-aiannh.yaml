@@ -26,12 +26,18 @@ archives:
 history:
   status: live
   last_checked: '2026-11-21'
+file:
+  storage_key: cited-pages/c/census-tiger-2020-aiannh.zip
+  checksum: f58e00ff9df3c9d5371fd1c9e1e6419c09d69f37a7e2f1b8d2f45c196c692d60
+  media_type: application/zip
+  bytes: 8890886
 rights:
   status: no-permission-needed
-  basis: fact-only
-  basis_note: Only facts are recorded from this source; it is cited and linked, not quoted or reproduced.
-  redistribution: false
+  basis: us-government-work
+  basis_note: A work of the United States government, not subject to copyright (17 U.S.C. § 105).
+  redistribution: true
 found_in:
 - 2026-11-21-other-nonfederal-groups
+- 2026-11-24-data-roadmap-first-sets
 notes: 'DBF attributes read: AIANNHCE, GEOID, NAMELSAD, CLASSFP (D4 = state American Indian reservation,
   D9 = State Designated Tribal Statistical Area), AIANNHR (S = state).'
