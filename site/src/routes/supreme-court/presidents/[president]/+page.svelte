@@ -144,7 +144,7 @@
 				</figure>
 			{/if}
 		{/snippet}
-		<FactGroups groups={data.glance} />
+		<div class="facts"><FactGroups groups={data.glance} /></div>
 	</GlancePanel>
 {/snippet}
 
@@ -181,7 +181,17 @@
 		list-style: none;
 	}
 
+	/* Stacked names a full touch target apart. */
+	.parts li + li {
+		margin-top: var(--space-1);
+	}
+
 	.source-line {
 		margin-top: var(--space-2);
+	}
+
+	/* A name that wraps stays one box, so the source mark after it never sits inside the link's area. */
+	.facts :global(dd > a:not(.note-marker)) {
+		display: inline-block;
 	}
 </style>

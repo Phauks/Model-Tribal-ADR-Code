@@ -184,6 +184,11 @@
 		list-style: none;
 	}
 
+	/* Stacked names a full touch target apart. */
+	.opinions li + li {
+		margin-top: var(--space-1);
+	}
+
 	.source-line {
 		margin-top: var(--space-2);
 	}
