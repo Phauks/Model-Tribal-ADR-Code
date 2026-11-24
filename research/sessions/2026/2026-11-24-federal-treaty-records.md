@@ -39,8 +39,17 @@ The run wrote 343 new records for ratified treaties and gave the 27 existing tre
 
 `check` read the first pages of each downloaded granule and looked for the treaty's first party (in the spellings the Statutes at Large use, such as "Pottawatamie", "Sac" and "Ioway") and the year signed. 355 passed and were stored in the bucket (337 under `treaties/`, 18 already filed under `jurisdiction/` by the Nov. 23 session). The other 15 have no stored copy and say so in their notes; [the check file](../../reviews/2026-11-24-treaty-text-check.csv) lists them:
 
-1. GovInfo returned no granule for six citations: the Cherokee treaty of 1804 (7 Stat. 288), the Menominee treaty of Feb. 17, 1831 (7 Stat. 346), the Utah treaty of 1849, the Fort Laramie treaty of 1851 (11 Stat. 749), and the Eastern and Western Shoshoni treaties of 1863 (18 Stat. 685 and 689).
-2. Three pairs of treaties carry the same citation in the data, so one of each pair has the wrong page: Kickapoo of the Vermilion and Choctaw (1820, 7 Stat. 210), Potawatomi of Dec. 4 and Dec. 10, 1834 (7 Stat. 467), and Iowa and Chippewa (1837, 7 Stat. 547).
-3. Three granules did not show the treaty's party: Potawatomi 1815, Potawatomi Apr. 22, 1836 (7 Stat. 500) and the Chippewa of Saginaw, Swan Creek and Black River, 1864, whose citation leads to an 1867 private law.
+Trevor asked for further research into these (Nov. 24, 2026); the hand check follows.
 
-Each of the 15 needs a person to look up the citation in the Statutes at Large index or Kappler and correct the raw data, then rerun `fetch`, `check`, `file` and `records`.
+## Hand check of the 15
+
+I read the Statutes at Large pages on GovInfo for each one. All 15 are now settled, and the script records each finding (`CITATION_FIXES`, `GRANULES`, `HAND_CHECKED`, `SHARED_COPY` and `NOT_PRINTED` in `scripts/law/treaty_records.py`), so a rerun keeps them.
+
+1. **Two misprinted citations.** The Cherokee treaty of Oct. 24, 1804 is at 7 Stat. 228, not 288: it was proclaimed in 1824 and printed among that year's treaties. The Chippewa of Saginaw, Swan Creek and Black River treaty of Oct. 18, 1864 is at 14 Stat. 657, not 637, which is an 1867 private law. Both records now carry the right citation and say the database misprinted it.
+2. **Three pairs that begin on one page.** Each pair really does share a starting page, and both citations are right: GovInfo files the first treaty as `Pg210`, `Pg467` or `Pg547` and the second as `Pg210-2`, `Pg467-2` or `Pg547-2`. Kickapoo of the Vermilion and Choctaw (1820), Potawatomi of Dec. 4 and Dec. 10 (1834), and Iowa and Saginaw Chippewa (1837) each now have their own text.
+3. **Older spellings.** The Potawatomi treaties of 1815 and Apr. 22, 1836 were right all along: the pages spell the nation "Poutawatamie" and "Patawattimie".
+4. **One shared text.** The Menominee supplementary articles of Feb. 17, 1831 are at 7 Stat. 346, inside the granule GovInfo files for the Feb. 8 treaty (`Pg342`), so both records point to the same stored copy.
+5. **One failed download.** The Utah treaty of 1849 (9 Stat. 984) downloaded on the second try.
+6. **Three treaties not printed in the Statutes at Large.** At 11 Stat. 749, where the Fort Laramie treaty of 1851 is cited, the volume prints only a note that the treaty is "not yet in a proper form for publication" because the tribes had not all assented to the Senate's amendments. The Eastern and Western Shoshoni treaties of 1863 are placed by Kappler in 18 Stat., part 3, which GovInfo does not hold: its links for 18 Stat. 685 and 689 open the Revised Statutes in part 1 instead. These three records now link Kappler's text in the Oklahoma State University database and have no stored copy. A copy could come from the Library of Congress scan of 18 Stat., part 3, or from Kappler's printed volume.
+
+After the hand check, 367 of the 370 ratified treaties have a stored copy of the official text.
