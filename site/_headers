@@ -1,0 +1,10 @@
+# Security headers for the pages and files built ahead of time, which
+# Cloudflare serves without running the Worker. They match
+# src/lib/server/security-headers.ts (tests/security-headers.test.ts checks).
+# The policy that limits scripts is in each page's own <meta> tag, from
+# SvelteKit (vite.config.ts, "csp"); a browser applies both.
+/*
+  Content-Security-Policy: frame-ancestors 'self'; object-src 'none'; base-uri 'self'
+  X-Content-Type-Options: nosniff
+  Referrer-Policy: strict-origin-when-cross-origin
+  X-Frame-Options: SAMEORIGIN

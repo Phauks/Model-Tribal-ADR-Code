@@ -1,0 +1,39 @@
+id: legal-aid-society-of-hawaii
+name: Legal Aid Society of Hawaiʻi
+kind: legal-aid
+operator: nonprofit
+link: https://www.legalaidhawaii.org/
+link_label: Home page
+services:
+- legal-advice
+- representation
+who_can_use: Income-eligible Native Americans in the service area (Legal Services Corporation Native American grant).
+lsc:
+- service_area: NHI-1
+  grantee_as_lsc_names_it: Legal Aid Society of Hawaii
+  grant_2026: 345365
+  next_competition: 2028
+serves:
+- states:
+  - HI
+  scope: statewide
+  text: Serves Native Americans living in all counties in Hawaiian Islands
+  source: lsc-service-area-nhi-1
+  note: LSC calls this a Native American service area; in Hawaiʻi it serves Native Hawaiians, who are not organized as tribes.
+sources:
+- id: lsc-service-area-nhi-1
+  title: Service area NHI-1
+  publisher: Legal Services Corporation
+  link: https://www.lsc.gov/grants/basic-field-grant/lsc-service-areas/map-lsc-service-areas?area=NHI-1
+  data_link: https://api.lscdataease.org/public/lsc/service_areas/NHI-1/about.json
+  accessed: '2026-11-24'
+  verification: data-read
+  supports: Service area type, current grantee, and the area description quoted in serves.
+- id: lsc-2026-notice-of-intent-to-award
+  title: 'Notice of Intent to Award: Grant Awards for the Delivery of Civil Legal Services to Eligible Low-Income Clients Beginning January 1, 2026'
+  publisher: Legal Services Corporation
+  link: https://lsc-live.app.box.com/s/fleq8j26yivz3potdw5hvpclth90icmp
+  accessed: '2026-11-24'
+  verification: page-read
+  supports: The applicant LSC intended to fund for each Native American service area in 2026, and the grant amount.
+checked: '2026-11-24'

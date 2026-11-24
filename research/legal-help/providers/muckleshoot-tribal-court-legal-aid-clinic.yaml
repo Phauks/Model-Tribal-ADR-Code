@@ -1,0 +1,27 @@
+id: muckleshoot-tribal-court-legal-aid-clinic
+name: Legal Aid Clinic, Muckleshoot Tribal Court
+kind: tribal-legal-aid
+operator: tribal-court
+link: https://www.muckleshoot.nsn.us/depts/tribal-court
+link_label: Muckleshoot Tribal Court
+services:
+- legal-advice
+who_can_use: Muckleshoot tribal members and community members.
+serves:
+- states:
+  - WA
+  scope: members
+  nations:
+  - muckleshoot-indian-tribe
+  text: 'Advice-only services: document review, civil and criminal litigation advice, probate, family law, the scope of Tribal Court jurisdiction and access to Tribal Court; clinic on Wednesdays.'
+  source: washington-211-muckleshoot-legal-aid-clinic
+sources:
+- id: washington-211-muckleshoot-legal-aid-clinic
+  title: Legal Aid Clinic offered at Muckleshoot Tribal Court
+  publisher: Washington 211
+  link: https://search.wa211.org/search/ff7f9458-1265-537d-96af-e20d3aeba721
+  accessed: '2026-11-24'
+  verification: page-read
+  supports: Eligibility, hours, services; links the court page.
+note: The court’s own page was not read; the link comes from Washington 211.
+checked: '2026-11-24'

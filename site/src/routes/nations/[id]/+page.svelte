@@ -250,6 +250,17 @@
 			<div class="nation-slot" data-nation-slot="courts"></div>
 		</Collapsible>
 
+		<!-- 5b. Legal help: the nation's own legal aid office, Native legal aid,
+		     self-help centers and legal information sites that serve the nation
+		     (src/lib/server/legal-help.ts; Trevor chose its own section, Nov. 24, 2026). -->
+		<Collapsible heading="Legal help" identifier="legal-help-heading">
+			{#if data.empty.legalHelp}
+				{@render emptySection(data.empty.legalHelp)}
+			{:else}
+				<FactGroups groups={data.legalHelp} />
+			{/if}
+		</Collapsible>
+
 		<!-- 5a. Court opinions: the nation's opinions in the Caselaw Access Project's
 		     tribal reporters, each served as its own page with a removal link
 		     (decision record 0047). -->

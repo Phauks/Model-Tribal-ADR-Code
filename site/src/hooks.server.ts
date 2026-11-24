@@ -12,6 +12,7 @@ import { endSession, pastWorkspaceLimits, sessionAccount, sessionCookie } from '
 import { activePersonBySubject } from '#lib/server/people.ts';
 import { isLiveEditingRequest, openLiveEditing } from '#lib/server/live-editing.ts';
 import { changesSomething, isCrossSite, isGuardedPath } from '#lib/server/request-guard.ts';
+import { framePolicy, publicSecurityHeaders } from '#lib/server/security-headers.ts';
 import { clearSessionCookie } from '#lib/server/sign-in.ts';
 import { clearSignedIn, markSignedIn } from '#lib/server/signed-in-hint.ts';
 import { needsTwoStep, permissionsOf } from '#lib/permissions.ts';
@@ -134,15 +135,40 @@ export const handle: Handle = async ({ event, resolve }) => {
 		afterResponse(recordAndSeal(event.locals.person.identifier, event.locals.refused, changing, event.request.method, path));
 	}
 
+	return withSecurityHeaders(response, path);
+};
+
+/**
+ * Adds the security headers every answer carries (src/lib/server/security-headers.ts).
+ * Private pages are never cached or framed, and send no address to other sites.
+ */
+function withSecurityHeaders(given: Response, path: string): Response {
+	// A WebSocket answer carries no page and takes no added headers.
+	if (given.status === 101) return given;
+	let response = given;
+	try {
+		response.headers.set('x-content-type-options', 'nosniff');
+	} catch {
+		// A response passed on as it came, such as one fetched from elsewhere, has headers that cannot change; a copy's can.
+		response = new Response(given.body, given);
+	}
+	for (const [name, value] of Object.entries(publicSecurityHeaders)) {
+		// SvelteKit's own policy, which limits scripts, stays; this one is added beside it.
+		if (name === 'content-security-policy') continue;
+		response.headers.set(name, value);
+	}
+	let frameAncestors = "'self'";
 	if (privatePrefixes.some((prefix) => path === prefix || path.startsWith(`${prefix}/`))) {
 		response.headers.set('cache-control', 'no-store');
 		// A message's HTML is shown in a sandboxed frame on the conversation page (src/routes/workspace/inbox/messages).
-		response.headers.set('x-frame-options', /^\/workspace\/inbox\/messages\/[^/]+\/html$/.test(path) ? 'SAMEORIGIN' : 'DENY');
+		const framedHere = /^\/workspace\/inbox\/messages\/[^/]+\/html$/.test(path);
+		frameAncestors = framedHere ? "'self'" : "'none'";
+		response.headers.set('x-frame-options', framedHere ? 'SAMEORIGIN' : 'DENY');
 		response.headers.set('referrer-policy', 'same-origin');
-		response.headers.set('x-content-type-options', 'nosniff');
 	}
+	response.headers.append('content-security-policy', framePolicy(frameAncestors));
 	return response;
-};
+}
 
 /**
  * After a workspace request: records a refused attempt in the activity log,
