@@ -63,6 +63,7 @@ export type SiteSection = {
 };
 
 export const nationsPages: OutlineItem[] = [
+	{ label: 'Find the law', link: '/nations/law' },
 	{ label: 'Map', link: '/nations/map' },
 	{ label: 'Timeline', link: '/nations/timeline' },
 	{ label: 'Find recourse', link: '/nations/recourse' },

@@ -64,7 +64,7 @@
 		const term = /^\/glossary\/([^/]+)$/.exec(path)?.[1];
 		const story = /^\/stories\/([^/]+)$/.exec(path)?.[1];
 		const record =
-			nation && nation !== 'map' && nation !== 'recourse' && nation !== 'data' && nation !== 'timeline' && nation !== 'federal-offices'
+			nation && nation !== 'map' && nation !== 'recourse' && nation !== 'law' && nation !== 'data' && nation !== 'timeline' && nation !== 'federal-offices' && nation !== 'coverage'
 				? `tribes/${nation}`
 				: term
 					? `glossary/${term}`
