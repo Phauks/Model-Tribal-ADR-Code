@@ -445,7 +445,9 @@ function supremeCourtCases(): SupremeCourtCase[] {
 }
 
 const opinionTopicsShown = (opinion: TribalCourtOpinion) => opinion.topics;
-const resolutionWords = (opinion: TribalCourtOpinion) => opinion.mentionsDisputeResolution;
+/** The topic words that name a way of resolving a dispute outside a trial, for the Dispute resolution topic's chart of opinions. */
+const resolutionTopics = new Set(['peacemaking', 'mediation', 'arbitration', 'alternative dispute resolution', 'talking things out', 'restorative justice']);
+const resolutionWords = (opinion: TribalCourtOpinion) => opinion.topics.some((topic) => resolutionTopics.has(topic));
 
 /* The charts --------------------------------------------------------------- */
 
@@ -684,7 +686,7 @@ export function topicChartRecords(
 		'tribal-opinions-by-decade': (opinion) => decadeOf(opinion.decided) === barKey,
 		'tribal-opinions-by-topic': (opinion) => opinion.topics.some((topic) => slugOf(topic) === barKey),
 		'tribal-opinions-by-nation': (opinion) => opinion.nations.includes(barKey),
-		'opinions-on-dispute-resolution-by-decade': (opinion) => opinion.mentionsDisputeResolution && decadeOf(opinion.decided) === barKey
+		'opinions-on-dispute-resolution-by-decade': (opinion) => resolutionWords(opinion) && decadeOf(opinion.decided) === barKey
 	};
 	const keep = opinionFilters[chart.identifier];
 	if (keep) {

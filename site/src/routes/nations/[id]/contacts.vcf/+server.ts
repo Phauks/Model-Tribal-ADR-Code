@@ -1,5 +1,5 @@
 import { error } from '@sveltejs/kit';
-import { contactCards } from '#lib/contact-card.ts';
+import { contactCards, defaultOfficeFor } from '#lib/contact-card.ts';
 import { displayName } from '#lib/nation-labels.ts';
 import { nations } from '#lib/server/content.ts';
 import { nationVcards } from '#lib/vcard.ts';
@@ -16,7 +16,7 @@ export const GET: RequestHandler = ({ params }) => {
 	const record = nations().find((candidate) => candidate.id === params.id);
 	if (!record) error(404, 'No published record has that identifier.');
 	const withdrawn = record.review?.status === 'withdrawn-at-request';
-	const cards = withdrawn ? { websites: [], offices: [] } : contactCards(record.contacts ?? []);
+	const cards = withdrawn ? { websites: [], offices: [] } : contactCards(record.contacts ?? [], undefined, defaultOfficeFor(record.entity_type));
 	return new Response(nationVcards(displayName(record.names.official), cards, `/nations/${record.id}`), {
 		headers: {
 			'content-type': 'text/vcard; charset=utf-8',

@@ -35,9 +35,11 @@ function link(html: string, pattern: RegExp): { href: string; label: string } | 
 /** The document links in a source's full citation, as HTML. */
 export function sourceDocuments(citationHtml: string): SourceDocuments {
 	const documents: SourceDocuments = {};
-	const copy = link(citationHtml, /<span class="source-saved">\(<a href="([^"]+)">([\s\S]*?)<\/a>/);
+	// The saved copy leads the reading links after the citation: "Saved copy (official report, PDF, Nov. 23, 2026; SHA-256)".
+	const saved = /<span class="source-saved"><a href="([^"]+)">([\s\S]*?)<\/a>\s*\(([^;<)]*)/.exec(citationHtml);
+	const copy = saved ? { href: decode(saved[1]), label: decode(`${saved[2]} (${saved[3].trim()})`) } : undefined;
 	// The essays' citations (src/lib/server/essay-library.ts) link the address as written; the site's other pages mark it "source-original".
-	const citation = citationHtml.replace(/<span class="source-(?:saved|archived)">[\s\S]*?<\/a>\)?<\/span>/g, '');
+	const citation = citationHtml.replace(/ ?<span class="reading-links">[\s\S]*$/, '').replace(/<span class="source-archived">[\s\S]*?<\/a><\/span>/g, '');
 	const original = link(citation, /<a (?:class="source-original" )?href="(https?:\/\/[^"]+)">([\s\S]*?)<\/a>/);
 	if (original && URL.canParse(original.href)) original.label = new URL(original.href).hostname;
 	const archived = link(citationHtml, /<span class="source-archived">[\s\S]*?<a href="([^"]+)">([\s\S]*?)<\/a>/);

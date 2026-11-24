@@ -41,6 +41,7 @@
 	import { onNavigate } from '$app/navigation';
 	import { page } from '$app/state';
 	import { crossFadePages, startMotion } from '#lib/motion.ts';
+	import { toggleReadingLinks } from '#lib/reading-links.ts';
 	import { resizableTables } from '#lib/tables/resizable-columns.ts';
 	import { markPageStarted } from '#lib/page-started.ts';
 	import type { LayoutProps } from './$types';
@@ -50,6 +51,11 @@
 	// Pages cross-fade, and printing finishes any movement first (src/lib/motion.ts).
 	onNavigate(crossFadePages);
 	onMount(startMotion);
+	// The book icon after a citation opens the list of places to read it, on any page (src/lib/reading-links.ts).
+	onMount(() => {
+		document.addEventListener('click', toggleReadingLinks);
+		return () => document.removeEventListener('click', toggleReadingLinks);
+	});
 	// The layout's own start comes after every part inside it has started (src/lib/page-started.ts).
 	onMount(markPageStarted);
 

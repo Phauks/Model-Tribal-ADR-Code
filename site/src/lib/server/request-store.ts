@@ -93,8 +93,8 @@ export async function saveRequest(
 					   requester_name, requester_nation, requester_role, writing_for_government, contact, details,
 					   credit_preference, publication_permission, missing_nation_official_name,
 					   missing_nation_own_name, missing_nation_states, authority_statement, earlier_reference,
-					   received_at)
-					 VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)`
+					   received_at, shared_with_team)
+					 VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)`
 				)
 				.bind(
 					identifier,
@@ -115,7 +115,8 @@ export async function saveRequest(
 					request.missingNationStates,
 					request.authorityStatement,
 					request.earlierReference,
-					receivedAt
+					receivedAt,
+					request.sharedWithTeam ? 1 : 0
 				),
 			...sources.map((source) =>
 				database

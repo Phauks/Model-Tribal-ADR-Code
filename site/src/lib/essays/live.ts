@@ -77,7 +77,7 @@ export interface JoinOptions {
 	/** The version the editor opened with, to tell whether the room is newer. */
 	basedOn?: number | null;
 	/** Shown to others on this person's cursor until the room puts the website's name on it. */
-	user?: { name: string; color: string };
+	user?: { name: string; tone?: string; color?: string };
 	/** The site's origin; defaults to the page's. */
 	origin?: string;
 }

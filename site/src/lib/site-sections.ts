@@ -4,6 +4,13 @@
 
 import { libraryOutline } from '#lib/library-pages.ts';
 
+/**
+ * A dot after an entry in an essay's outline while it is edited
+ * (src/lib/essays/editor-outline.ts): changed in the draft, new since the
+ * published version, or in a section someone was asked to review.
+ */
+export type OutlineMark = 'changed' | 'new' | 'review';
+
 /** One entry in a page's outline: a heading on the page, or a page within a section. */
 export type OutlineItem = {
 	label: string;
@@ -14,6 +21,9 @@ export type OutlineItem = {
 	current?: boolean;
 	/** A quieter note after the label, such as "tentative". */
 	note?: string;
+	/** A case, law or analysis box in an essay being edited, shown with its icon; a case's name is in italics. */
+	kind?: 'case' | 'law' | 'analysis';
+	mark?: OutlineMark;
 	children?: OutlineItem[];
 };
 
@@ -52,6 +62,8 @@ export const siteSections: SiteSection[] = [
 	{ label: 'Events', link: '/events', built: true, opens: true },
 	{ label: 'About', link: '/about', built: true, opens: true },
 	{ label: 'Sponsorship', link: '/sponsor', built: true },
+	// Contribute moved here from the masthead, which keeps only its buttons (Trevor, Nov. 24, 2026).
+	{ label: 'Contribute', link: '/requests?kind=contribute', built: true },
 	// The Store gathers the special-order page for books, which keeps its address (Trevor, Nov. 23, 2026).
 	{ label: 'Store', link: '/store', built: true, gathers: [{ label: 'Special order', link: '/book' }], opens: true }
 ];

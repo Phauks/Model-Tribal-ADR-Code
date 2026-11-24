@@ -111,3 +111,38 @@ export function regionAnchor(regionName: string): string {
 		.replace(/[^a-z0-9]+/g, '-')
 		.replace(/^-|-$/g, '')}`;
 }
+
+const countWords = ['', 'one', 'both', 'three', 'four', 'five', 'six', 'seven', 'eight', 'nine', 'ten'];
+
+/**
+ * What sources record in each state, in one line under the states, worded as
+ * in the approved nation page (layout A, Nov. 22, 2026): "Land in all three;
+ * government office in Arizona". Land comes first, then a government office,
+ * then anything else; kinds recorded in the same states share one phrase.
+ * `kinds` holds each kind's words ("land", "government office") with its
+ * state names; `states` is every state on the line.
+ */
+export function presenceNote(kinds: [kind: string, states: string[]][], states: string[]): string | undefined {
+	const rank = (kind: string) => {
+		const index = ['land', 'government office'].indexOf(kind);
+		return index === -1 ? 2 : index;
+	};
+	const groups = new Map<string, { kinds: string[]; states: string[] }>();
+	for (const [kind, list] of [...kinds].sort((first, second) => rank(first[0]) - rank(second[0]))) {
+		const key = [...list].sort().join('|');
+		const group = groups.get(key) ?? { kinds: [], states: list };
+		group.kinds.push(kind);
+		groups.set(key, group);
+	}
+	const where = (list: string[]) => {
+		if (list.length > 1 && list.length === states.length) {
+			const word = countWords[list.length];
+			return word === 'both' ? 'both' : `all ${word ?? list.length}`;
+		}
+		return list.length > 2 ? `${list.slice(0, -1).join(', ')} and ${list.at(-1)}` : list.join(' and ');
+	};
+	const text = [...groups.values()]
+		.map((group) => `${group.kinds.join(' and ')} in ${where(group.states)}`)
+		.join('; ');
+	return text ? `${text.charAt(0).toLocaleUpperCase('en-US')}${text.slice(1)}` : undefined;
+}

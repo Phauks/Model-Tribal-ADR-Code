@@ -20,7 +20,8 @@ import {
 	useCode,
 	useLink,
 	verifiedAccount,
-	waitingPassword
+	waitingPassword,
+	waitingPasswordFor
 } from '#lib/server/accounts.ts';
 import { activePersonBySubject } from '#lib/server/people.ts';
 import { emailDelivery, signInMessage } from '#lib/server/sign-in-email.ts';
@@ -442,6 +443,17 @@ describe('creating an account', () => {
 		expect(await adoptWaitingPassword(database, account.identifier, chosen)).toBe(false);
 		expect(await checkPassword(database, 'person@example.org', 'the old password stays')).toBeDefined();
 		expect(await checkPassword(database, 'person@example.org', 'kettle river paper moon')).toBeUndefined();
+	});
+
+	it('keeps the chosen password when a new code is sent from the confirm step', async () => {
+		const chosen = await waitingPassword('kettle river paper moon', undefined);
+		await issueCode(database, 'new@example.org', 'email', null, chosen);
+		const kept = await waitingPasswordFor(database, 'New@example.org');
+		expect(kept).toEqual(chosen);
+		const again = await issueCode(database, 'new@example.org', 'email', null, kept);
+		const result = await useCode(database, 'new@example.org', again.code!);
+		expect(result).toEqual({ outcome: 'accepted', email: 'new@example.org', newPassword: chosen });
+		expect(await waitingPasswordFor(database, 'other@example.org')).toBeUndefined();
 	});
 
 	it('drops a waiting password when a plain code is asked for after it', async () => {

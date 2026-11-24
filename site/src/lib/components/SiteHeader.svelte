@@ -3,7 +3,9 @@
 	// sidebar button and the site's name at the left; at the right one evenly
 	// spaced row of icon buttons (search, Report a problem as a flag, Star,
 	// Follow, Print, Download, theme, Settings), then sign-in or the account
-	// menu, and Contribute at the far right (Trevor, Nov. 23, 2026). Star and
+	// menu at the far right (Trevor, Nov. 23, 2026). Contribute left the
+	// masthead for the sidebar's list of sections, so the row holds only the
+	// buttons (Trevor, Nov. 24, 2026; src/lib/site-sections.ts). Star and
 	// Follow show only where the page can be starred or followed; Star, Print
 	// and Download act on the page the reader is on, and Download opens a list
 	// of what the page offers (DownloadMenu.svelte). The site's sections are in
@@ -111,7 +113,7 @@
 				class="more-button"
 				type="button"
 				popovertarget="masthead-more"
-				aria-label="More: report a problem, star, follow, print, download, theme, settings, sign in and contribute"
+				aria-label="More: report a problem, star, follow, print, download, theme, settings and sign in"
 			>
 				<Ellipsis size={24} /><span aria-hidden="true">More</span>
 			</button>
@@ -124,7 +126,6 @@
 				<ThemeSetting />
 				<SettingsPanel />
 				<AccountLink />
-				<a class="button contribute" href="/requests?kind=contribute">Contribute</a>
 			</div>
 		</div>
 	</div>
@@ -207,7 +208,7 @@
 	}
 
 	/*
-	 * Every control at the right, search through Contribute, sits in one row
+	 * Every control at the right, search through sign-in, sits in one row
 	 * with one gap between each pair (Trevor, Nov. 23, 2026). The More panel's
 	 * contents join that row on wide screens (display: contents overrides the
 	 * popover's hidden state), and the More button is not shown.

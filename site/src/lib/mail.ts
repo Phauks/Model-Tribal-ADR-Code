@@ -425,6 +425,25 @@ export function fillTemplate(template: string, values: MergeValues, options: { k
 	return template.replace(fieldPattern, (whole, key: string) => values[key as MergeFieldKey]?.trim() || (options.keepMissing ? whole : ''));
 }
 
+/** The message one outreach recipient will get, as text, with the footer (shared by the batch pages' previews and sending). */
+export function outreachText(
+	body: string,
+	fields: MergeValues,
+	links: { unsubscribeLink: string | null; unsubscribeAddress: string | null; acknowledgeLink: string | null }
+): string {
+	const lines = [fillTemplate(body, fields).trim(), '', '--'];
+	if (links.acknowledgeLink) {
+		lines.push(`If you would like to let us know this reached you, open this link. It records only that you opened it: ${links.acknowledgeLink}`, '');
+	}
+	const ways = [
+		links.unsubscribeLink ? `open ${links.unsubscribeLink}` : null,
+		links.unsubscribeAddress ? `write to ${links.unsubscribeAddress}` : null,
+		'reply "stop"'
+	].filter(Boolean);
+	lines.push(`If you would rather not hear from the project again, ${ways.join(', or ')}, and we will not write again.`);
+	return lines.join('\n');
+}
+
 // ---------------------------------------------------------------------------
 // Signatures
 // ---------------------------------------------------------------------------

@@ -14,15 +14,17 @@
 	// A page about the site, such as the About page (src/lib/server/about-pages.ts),
 	// has no section, and shows the text from git until it is first published.
 	import Breadcrumbs from '../Breadcrumbs.svelte';
-	import { onMount } from 'svelte';
+	import { onDestroy, onMount } from 'svelte';
+	import { editingOutline } from '#lib/essays/editing-outline.svelte.ts';
+	import type { OutlineItem } from '#lib/site-sections.ts';
 	import { figurePlayers } from '#lib/essays/figure-players.ts';
 	import { quoteContext } from '#lib/essays/quote-context-view.ts';
 	import SourceList from '#lib/components/SourceList.svelte';
 	import EssayAccessBar from '#lib/components/essays/EssayAccessBar.svelte';
 	import EssayModePicker from '#lib/components/essays/EssayModePicker.svelte';
+	import EssayViewPicker from '#lib/components/essays/EssayViewPicker.svelte';
 	import EssayStatusPills from '#lib/components/essays/EssayStatusPills.svelte';
 	import History from '@lucide/svelte/icons/history';
-	import Send from '@lucide/svelte/icons/send';
 	import { readSignedInHint } from '#lib/signed-in-hint.ts';
 	import type { SourceEntry } from '#lib/server/source-uses.ts';
 	import type { EssayPageState } from '#lib/server/essay-page-state.ts';
@@ -134,6 +136,18 @@
 		if (access) rememberView();
 	});
 
+	// While editing or commenting, the sidebar lists the essay as the draft stands, with Your work under it
+	// (essay-editor-mockups/4 and v2-1); reading, it lists the published headings again.
+	function showOutline(items: OutlineItem[]): void {
+		editingOutline.current = { path, items, work: access?.work ?? null };
+	}
+	$effect(() => {
+		if (mode === 'reading') editingOutline.current = null;
+	});
+	onDestroy(() => {
+		if (editingOutline.current?.path === path) editingOutline.current = null;
+	});
+
 	// Back to reading: show what was just saved.
 	let previousMode: typeof mode = 'reading';
 	$effect(() => {
@@ -147,7 +161,8 @@
 	{#if unpublished}<meta name="robots" content="noindex" />{/if}
 </svelte:head>
 
-{#if section && sectionLink}
+<!-- In Commenting and Editing the bar comes first, as in the approved mockups (essay-editor-mockups/4 and v2-1). -->
+{#if section && sectionLink && mode === 'reading'}
 	<Breadcrumbs trail={[{ label: section, href: sectionLink }]} />
 {/if}
 
@@ -175,13 +190,19 @@
 		{:then { default: EssayEditor }}
 			{#key mode}
 				<!-- Commenting opens the same draft without editing it, so comments land on the words the authors see. -->
-				<EssayEditor {identifier} text={access.text} version={access.latest.number} canEdit={access.canEdit && mode === 'editing'} autoSave={mode === 'editing'} live startAt={reviewAt ?? null} startThread={commentAt} onsaved={saved}>
-					{#snippet barStart()}<EssayModePicker bind:mode canEdit={access!.canEdit} />{/snippet}
+				<EssayEditor {identifier} text={access.text} version={access.latest.number} canEdit={access.canEdit && mode === 'editing'} autoSave={mode === 'editing'} live startAt={reviewAt ?? null} startThread={commentAt} publishedText={access.publishedText} publishedVersion={access.publishedVersion} yourName={access.you?.name ?? null} onsaved={saved} onoutline={showOutline}>
+					{#snippet barStart()}
+						<EssayModePicker bind:mode canEdit={access!.canEdit} />
+						{#if access!.publishedVersion !== null}<EssayViewPicker bind:view bind:mode />{/if}
+					{/snippet}
 					{#snippet barEnd()}
 						<a class="bar-link" href="/workspace/essays/{identifier}" title="History: every saved version, and publishing" aria-label="History"><History size={18} aria-hidden="true" /></a>
-						{#if access!.canPublish && mode === 'editing'}<a class="button bar-publish" href="/workspace/essays/{identifier}" title="Choose a saved version to publish"><Send size={16} aria-hidden="true" /> Publish…</a>{/if}
+						{#if access!.canPublish && mode === 'editing'}<a class="button bar-publish" href="/workspace/essays/{identifier}" title="Choose a saved version to publish">Publish…</a>{/if}
 					{/snippet}
-					{#snippet belowBar()}<EssayStatusPills state={access!} />{/snippet}
+					{#snippet titleExtras(extras)}
+						<EssayStatusPills state={access!} inReview={extras.inReview} />
+						{#if mode === 'commenting'}<p class="small muted essay-size">{extras.lines.toLocaleString('en-US')} lines · {extras.words.toLocaleString('en-US')} words</p>{/if}
+					{/snippet}
 				</EssayEditor>
 			{/key}
 		{:catch}
@@ -205,8 +226,8 @@
 	.bar-link {
 		display: inline-grid;
 		place-items: center;
-		min-width: var(--layout-target-minimum);
-		min-height: var(--layout-target-minimum);
+		min-width: calc(var(--bar-target, var(--layout-target-minimum)) - 4px);
+		min-height: var(--bar-target, var(--layout-target-minimum));
 		border-radius: var(--radius-control);
 		color: var(--color-ink);
 	}
@@ -219,6 +240,9 @@
 		display: inline-flex;
 		align-items: center;
 		gap: var(--space-1);
+		min-height: var(--bar-target, var(--layout-target-minimum));
+		padding: 0 var(--space-2);
+		font-size: var(--font-size-small);
 	}
 
 	/* Marks on the draft view, shown only to people with access (src/lib/essays/render.ts). */

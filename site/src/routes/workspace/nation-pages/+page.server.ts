@@ -4,7 +4,7 @@ import { changeKindLabels, describeChange, type ChangeContent } from '#lib/natio
 import { isOverdue, longestPauseText, reviewDue } from '#lib/nation-page-review.ts';
 import { displayName } from '#lib/nation-labels.ts';
 import { isAdministrator } from '#lib/permissions.ts';
-import { changeByIdentifier, type ChangeRow } from '#lib/server/nation-page-changes.ts';
+import { changeByIdentifier, historyOf, type ChangeRow } from '#lib/server/nation-page-changes.ts';
 import {
 	currentPause,
 	currentPauses,
@@ -61,19 +61,31 @@ export const load: PageServerLoad = async (event) => {
 	const { database } = storage(event);
 	const time = new Date();
 	const queue = await reviewQueue(database);
-	// Who could be suspended from each nation's team, for the lead author.
+	// Each nation's team, to name the publisher's level and, for the lead author, who could be suspended;
+	// and each nation's history, to show each change beside the version before it.
 	const teams = new Map<string, Awaited<ReturnType<typeof teamOf>>>();
-	if (isAdministrator(person)) {
-		for (const nationIdentifier of new Set(queue.map((change) => change.nationIdentifier))) {
-			teams.set(nationIdentifier, await teamOf(database, nationIdentifier));
-		}
+	const histories = new Map<string, ChangeRow[]>();
+	for (const nationIdentifier of new Set(queue.map((change) => change.nationIdentifier))) {
+		teams.set(nationIdentifier, await teamOf(database, nationIdentifier));
+		histories.set(nationIdentifier, await historyOf(database, nationIdentifier));
 	}
+	/** The version of the same part published before this change, if any. */
+	const before = (change: ChangeRow): ChangeContent | null => {
+		const history = histories.get(change.nationIdentifier) ?? [];
+		const index = history.findIndex((candidate) => candidate.identifier === change.identifier);
+		const earlier = history.slice(index + 1).find((candidate) => candidate.kind === change.kind && candidate.status === 'published');
+		return earlier ? (earlier.content as ChangeContent) : null;
+	};
 	const pauses = await currentPauses(database);
 	return {
 		queue: queue.map((change) => ({
 			...shown(change, time),
+			before: before(change),
+			publishedByLevel: teams.get(change.nationIdentifier)?.find((place) => place.personIdentifier === change.publishedBy)?.level ?? null,
 			paused: pauses.some((pause) => pause.nationIdentifier === change.nationIdentifier),
-			canSuspend: Boolean(teams.get(change.nationIdentifier)?.some((place) => place.personIdentifier === change.publishedBy))
+			canSuspend:
+				isAdministrator(person) &&
+				Boolean(teams.get(change.nationIdentifier)?.some((place) => place.personIdentifier === change.publishedBy))
 		})),
 		pauses: pauses.map((pause) => ({ ...pause, nation: nationOf(pause.nationIdentifier) })),
 		recent: (await recentReviews(database)).map((review) => ({

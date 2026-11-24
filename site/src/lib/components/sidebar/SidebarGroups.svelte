@@ -10,7 +10,7 @@
 	import type { AccountPage } from '#lib/account-menu.ts';
 	import { followingState } from '#lib/following-state.svelte.ts';
 	import { unreadLabel } from '#lib/following.ts';
-	import type { WorkspacePage } from '#lib/workspace-menu.ts';
+	import { groupWorkspacePages, type WorkspaceGroup, type WorkspacePage } from '#lib/workspace-menu.ts';
 	import FoldButton from './FoldButton.svelte';
 	import type { SidebarState } from './sidebar-state.svelte.ts';
 
@@ -36,6 +36,13 @@
 		followedPage: string | undefined;
 	} = $props();
 
+	// The workspace pages under their categories, Overview first on its own (src/lib/workspace-menu.ts).
+	const workspaceGroups = $derived(groupWorkspacePages(workspaceMenu));
+	// Each category folds; it starts open only around the page being read, and
+	// then as the reader last left it (Trevor, Nov. 23, 2026).
+	const categoryKey = (group: WorkspaceGroup) => `workspace-${group.category}`;
+	const categoryOpen = (group: WorkspaceGroup) =>
+		sidebar.isOpen(categoryKey(group), currentWorkspacePage !== undefined && group.pages.includes(currentWorkspacePage));
 	const workspaceOpen = $derived(sidebar.isOpen('workspace', Boolean(currentWorkspacePage)));
 	const accountOpen = $derived(sidebar.isOpen('account', Boolean(currentAccount)));
 	// Updates to followed pages not yet seen, beside Following (site/DESIGN.md, section 6, "Follow").
@@ -83,11 +90,35 @@
 			/>
 			<p class="group-title" id="sidebar-workspace-{idSuffix}">Workspace</p>
 		</div>
-		<ul id="sidebar-workspace-list-{idSuffix}" aria-labelledby="sidebar-workspace-{idSuffix}" hidden={!workspaceOpen}>
-			{#each workspaceMenu as item (item.link)}
+		{#snippet workspaceLinks(pages: WorkspacePage[])}
+			{#each pages as item (item.link)}
 				<li>
 					<a href={item.link} aria-current={item === currentWorkspacePage ? 'page' : undefined}>{item.label}</a>
 				</li>
+			{/each}
+		{/snippet}
+		<ul id="sidebar-workspace-list-{idSuffix}" aria-labelledby="sidebar-workspace-{idSuffix}" hidden={!workspaceOpen}>
+			{#each workspaceGroups as group, index (group.category ?? index)}
+				{#if group.category}
+					{@const titleId = `sidebar-workspace-${idSuffix}-${index}`}
+					{@const open = categoryOpen(group)}
+					<li class="category">
+						<div class="category-heading">
+							<FoldButton
+								controls="{titleId}-list"
+								expanded={open}
+								name="Pages in {group.category}"
+								onclick={() => sidebar.setOpen(categoryKey(group), !open)}
+							/>
+							<p class="category-title" id={titleId}>{group.category}</p>
+						</div>
+						<ul class="category-pages" id="{titleId}-list" aria-labelledby={titleId} hidden={!open}>
+							{@render workspaceLinks(group.pages)}
+						</ul>
+					</li>
+				{:else}
+					{@render workspaceLinks(group.pages)}
+				{/if}
 			{/each}
 		</ul>
 	</div>
@@ -147,6 +178,34 @@
 	.group-heading .group-title {
 		margin: 0;
 		padding-left: var(--space-1);
+	}
+
+	/*
+	 * A category of workspace pages: a heading in ink with a caret that folds
+	 * it, its pages indented along a line below it (Trevor, Nov. 23, 2026:
+	 * "still hard to see sub-sections and they should be collapsible").
+	 */
+	.category-heading {
+		display: flex;
+		align-items: center;
+		margin-top: var(--space-1);
+	}
+
+	.category-title {
+		margin: 0;
+		padding: 0.35rem var(--space-1);
+		font-weight: var(--font-weight-semibold);
+		color: var(--color-ink);
+	}
+
+	.category-pages {
+		margin: 0 0 var(--space-1) 0.85rem;
+		padding-left: 0.65rem;
+		border-left: 1px solid var(--color-control-border);
+	}
+
+	:global(:root:not([data-scripts='on'])) .category-title {
+		padding-left: var(--space-3);
 	}
 
 	/* The number of updates not yet seen, in the action color. */

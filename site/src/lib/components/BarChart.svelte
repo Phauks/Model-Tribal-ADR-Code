@@ -149,7 +149,7 @@
 			{/if}
 		</div>
 	</div>
-	<p class="chart-description">{chart.description}</p>
+	{#if chart.description}<p class="chart-description">{chart.description}</p>{/if}
 	{#if leftOut.length > 0}
 		<div class="left-out no-print">
 			<p class="small" role="status">
@@ -187,7 +187,7 @@
 					</li>
 				{/each}
 			</ol>
-			<div class="axis-row" class:with-tools={interactive} aria-hidden="true">
+			<div class="axis-row" class:with-tools={interactive} class:crowded={ticks.length > 5} aria-hidden="true">
 				<span></span>
 				<span class="axis">
 					{#each ticks as tick (tick)}
@@ -653,9 +653,15 @@
 			gap: var(--space-2);
 		}
 
-		/* Every other number on the scale, so they do not run together. */
-		.axis span:nth-child(even) {
+		/* A scale of more than five numbers shows every other one, so they do not run together; a shorter one shows them all. */
+		.crowded .axis span:nth-child(even) {
 			visibility: hidden;
+		}
+
+		/* The icon row starts under the title, at the left, as the approved mockup has its controls, rather than leaving a gap beside the title. */
+		.chart-tools {
+			flex-basis: 100%;
+			margin-left: calc(-1 * var(--space-2));
 		}
 	}
 </style>

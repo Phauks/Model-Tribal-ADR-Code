@@ -7,7 +7,10 @@
 	// other values stack, one per line, with a thin rule between them. A note
 	// that every value shares, such as "Law code", is said once under the
 	// fact's label. A value's legal basis or note sits on its own line under
-	// it, in smaller type.
+	// it, in smaller type. A link to another website shows the external-link
+	// icon (nation page review, Nov. 22, 2026); it opens in a new tab
+	// (src/lib/new-tab-links.ts).
+	import ExternalLink from '@lucide/svelte/icons/external-link';
 	import type { CitationMark } from '#lib/citation-marks.ts';
 	import CitationMarks from './CitationMarks.svelte';
 	import TopicBadges from './TopicBadges.svelte';
@@ -36,6 +39,12 @@
 
 	let { groups }: { groups: FactGroup[] } = $props();
 
+	const outside = (link: string) => /^https?:\/\//i.test(link);
+	// The icon and the markers after it never wrap apart: a browser may break
+	// a line after an icon, so they share one unbreakable span, and a word
+	// joiner keeps that span on the line of the link's last word.
+	const joiner = '\u2060';
+
 	/** Every value has its own label, so they show as label rows. */
 	const labeled = (group: FactGroup) => group.items.every((item) => item.label);
 
@@ -61,9 +70,15 @@
 </script>
 
 {#snippet value(item: FactItem)}
-	{#if item.badges}<TopicBadges topics={item.badges} />{:else if item.link}<a href={item.link}>{item.text}</a>{:else}{item.text}{/if}<CitationMarks
-		marks={item.citations}
-	/>
+	{#if item.badges}<TopicBadges topics={item.badges} /><CitationMarks marks={item.citations} />{:else if item.link && outside(item.link)}<a
+			href={item.link}>{item.text}</a
+		><span class="link-tail"
+			>{joiner}<ExternalLink class="external-icon" size={14} strokeWidth={1.75} aria-hidden="true" /><CitationMarks
+				marks={item.citations}
+			/></span
+		>{:else if item.link}<a href={item.link}>{item.text}</a><CitationMarks marks={item.citations} />{:else}{item.text}<CitationMarks
+			marks={item.citations}
+		/>{/if}
 	{#if item.detailParts}
 		<span class="fact-detail muted small"
 			>{#each item.detailParts as part, partIndex (partIndex)}{#if part.link}<a href={part.link}>{part.text}</a
@@ -134,6 +149,17 @@
 	.summary-list dd > a,
 	.summary-list li > a {
 		padding-block: 2px;
+	}
+
+	.link-tail {
+		white-space: nowrap;
+	}
+
+	.summary-list :global(.external-icon),
+	.label-rows :global(.external-icon) {
+		display: inline;
+		margin-left: 0.2em;
+		vertical-align: -0.1em;
 	}
 
 	.fact-detail {
