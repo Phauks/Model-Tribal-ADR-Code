@@ -1,13 +1,12 @@
 <script lang="ts">
 	import { onMount } from 'svelte';
 	import { version } from '$app/env';
-	import { page } from '$app/state';
-	import FileVerifier from '#lib/components/FileVerifier.svelte';
-	import { isSha256 } from '#lib/sha256.ts';
 	import Download from '@lucide/svelte/icons/download';
+	import FileCheck from '@lucide/svelte/icons/file-check';
+	import Fingerprint from '@lucide/svelte/icons/fingerprint';
 	import { buildTime, formatBytes } from '#lib/offline-collections.ts';
 	import { citationDate, fileExtension, mapFiles, pageFormats } from '#lib/page-downloads.ts';
-	import { checksumsAddress, checksumsTextAddress, downloadChecksums, fileName, verifyLink, verifySection, type ChecksumEntry } from '#lib/checksums.ts';
+	import { downloadChecksums, fileName, verifyAddress, verifyLink, type ChecksumEntry } from '#lib/checksums.ts';
 	import type { PageProps } from './$types';
 
 	let { data }: PageProps = $props();
@@ -127,24 +126,23 @@
 		{ id: 'documents', label: 'Documents' },
 		{ id: 'from-a-page', label: 'From a page' },
 		{ id: 'book-heading', label: 'The book' },
-		{ id: 'checking', label: 'Checking a file' },
 		{ id: 'never', label: 'Never in a download' }
 	];
 
-	// A "Verify File" link carries the file's hash as ?sha256=<hash>&name=<file>#checking, so the
-	// checker below starts set to compare with it (Trevor asked on Nov. 23, 2026 that verifying a file
-	// be part of this page). Read from the address in the browser, since the page is built ahead of
-	// time, and again whenever a link on this page changes it.
-	let expected = $state('');
-	let expectedName = $state('');
-	$effect(() => {
-		const query = page.url.searchParams;
-		const hash = query.get('sha256')?.trim().toLowerCase() ?? '';
-		expected = isSha256(hash) ? hash : '';
-		expectedName = expected ? (query.get('name') ?? '').slice(0, 200) : '';
-	});
+	// Each file's SHA-256 shows only when the reader asks for it (Trevor, Nov. 24, 2026: the hashes read as clutter).
+	let shown = $state<Record<string, boolean>>({});
+
+	// A file's .sha256, one line in the form sha256sum -c reads.
+	function checksumFile(sha256: string, href: string): string {
+		return `data:text/plain;charset=utf-8,${encodeURIComponent(`${sha256}  ${fileName(href)}\n`)}`;
+	}
 
 	onMount(() => {
+		// Checking a file was a section of this page until Nov. 24, 2026; its links now open Verify File.
+		if (location.hash === '#checking') {
+			location.replace(`${verifyAddress}${location.search}`);
+			return;
+		}
 		void downloadChecksums().then((list) => (hashes = list?.files ?? {}));
 		const edition = new URLSearchParams(location.search).get('edition')?.trim();
 		if (edition && /^\d+\.\d+\.\d+$/.test(edition)) readerEdition = edition;
@@ -187,7 +185,7 @@
 
 	<p class="muted">
 		{#if built}Made {citationDate(built)}, content version {data.versions.content}.{:else}Content version {data.versions.content}.{/if}
-		To read the site without a connection instead, see <a href="/offline">Read offline</a>.
+		To read the site without a connection instead, see <a href="/offline">Read offline</a>. To check a file you downloaded, see <a href={verifyAddress}>Verify File</a>.
 	</p>
 	<nav class="contents" aria-label="On this page">
 		<ul>
@@ -214,17 +212,32 @@
 								{fileExtension(link.href)}<span class="visually-hidden"> ({link.format}), {file.label}</span>
 							</a>
 						{/each}
+						{#if !file.checking && file.links.some((link) => hashes[link.href])}
+							<button
+								class="icon-button"
+								type="button"
+								aria-expanded={shown[file.label] ?? false}
+								aria-label="SHA-256, {file.label}"
+								title="SHA-256"
+								onclick={() => (shown[file.label] = !shown[file.label])}
+							>
+								<Fingerprint size={20} aria-hidden="true" />
+							</button>
+						{/if}
 					</p>
 					{#if file.checking}
 						<p class="hint file-hashes">{file.checking}</p>
-					{:else if file.links.some((link) => hashes[link.href])}
+					{:else if shown[file.label]}
 						<ul class="file-hashes">
 							{#each file.links as link (link.href)}
 								{#if hashes[link.href]}
 									<li>
 										<span class="hint">SHA-256{file.links.length > 1 ? ` (${fileExtension(link.href)})` : ''}</span>
-										<a href={verifyLink(hashes[link.href].sha256, fileName(link.href))}>Verify File<span class="visually-hidden"> of the {fileExtension(link.href)} file, {file.label}</span></a>
 										<code>{hashes[link.href].sha256}</code>
+										<a class="hash-file" href={checksumFile(hashes[link.href].sha256, link.href)} download="{fileName(link.href)}.sha256">.sha256<span class="visually-hidden"> file for the {fileExtension(link.href)} file, {file.label}</span></a>
+										<a class="icon-button" href={verifyLink(hashes[link.href].sha256, fileName(link.href))} aria-label="Verify File: the {fileExtension(link.href)} file, {file.label}" title="Verify File">
+											<FileCheck size={18} aria-hidden="true" />
+										</a>
 									</li>
 								{/if}
 							{/each}
@@ -262,34 +275,6 @@
 			each with its edition number and the date it was made.
 		</p>
 	</section>
-
-	<h2 id={verifySection} class="group-heading">Checking a file</h2>
-	<p>
-		Check that a file you downloaded from this site, or a copy of a document someone gave you, is the file this site published, with nothing changed or missing. Every file has a SHA-256, a string of 64 letters and digits worked out from every byte in it; change one byte and the SHA-256 changes. Each download above shows its SHA-256, and “Verify File” sets the checker below to compare with it.
-	</p>
-
-	{#key expected}
-		<FileVerifier {expected} name={expectedName} />
-	{/key}
-
-	<h3>Files inside a ZIP of documents</h3>
-	<p>
-		A ZIP of documents is put together when you ask for it, so the ZIP has no SHA-256 of its own. Open it and check the files inside: documents.csv lists the SHA-256 of each one, and you can choose them all above at once.
-	</p>
-
-	<h3>Check on your own computer</h3>
-	<p>You can also work out a file’s SHA-256 without this site:</p>
-	<ul>
-		<li>Windows, in PowerShell: <code>Get-FileHash file.pdf -Algorithm SHA256</code></li>
-		<li>Mac, in Terminal: <code>shasum -a 256 file.pdf</code></li>
-		<li>Linux: <code>sha256sum file.pdf</code></li>
-	</ul>
-	<p>
-		Compare the result with the SHA-256 shown beside the download, or with the full lists: <a href={checksumsTextAddress} download>checksums.txt</a>, in the form <code>sha256sum -c</code> reads, and <a href={checksumsAddress} download>checksums.json</a>. Both list every download and every copy of a document this site holds today.
-	</p>
-	<p class="hint">
-		A match shows the file is the one published here. It does not show that what the file says is current: a nation may have amended a law since its copy was made. <a href="/copies">Source documents</a> gives the date each copy was made and where it was published. A file you already downloaded does not change, so check this page for the current version.
-	</p>
 
 	<h2 id="never" class="group-heading">Never in a download</h2>
 	<ul>
@@ -385,18 +370,21 @@
 	}
 
 	.files .file-hashes li {
-		display: block;
+		display: flex;
+		flex-wrap: wrap;
+		align-items: center;
+		gap: 0 var(--space-2);
 		padding: 0;
 		border: 0;
 	}
 
 	.file-hashes code {
-		display: block;
 		overflow-wrap: anywhere;
+		min-width: 0;
 	}
 
-	.file-hashes .hint {
-		margin-right: var(--space-2);
+	.file-links .icon-button {
+		align-self: center;
 	}
 
 	.empty-state {

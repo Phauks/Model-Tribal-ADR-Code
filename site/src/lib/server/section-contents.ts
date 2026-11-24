@@ -24,8 +24,11 @@ export const nationsPages: OutlineItem[] = [
 	{
 		label: 'Data and charts',
 		link: '/nations/data',
-		// Its topic pages (Trevor, Nov. 24, 2026).
-		children: dataTopicList.map((topic) => ({ label: topic.title, link: dataTopicLink(topic.identifier) }))
+		// Its topic pages (Trevor, Nov. 24, 2026), then Build a table.
+		children: [
+			...dataTopicList.map((topic) => ({ label: topic.title, link: dataTopicLink(topic.identifier) })),
+			{ label: 'Build a table', link: '/nations/data/build' }
+		]
 	},
 	{ label: 'Federal offices', link: '/nations/federal-offices' }
 ];

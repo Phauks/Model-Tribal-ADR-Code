@@ -28,6 +28,10 @@
 			</li>
 		{/each}
 	</ul>
+	<div class="build">
+		<h2><a href="/nations/data/build">Build a table</a></h2>
+		<p>Pick a data set, choose its columns, filter, group and count, and see it as a table or a chart.</p>
+	</div>
 </div>
 
 <style>
@@ -45,7 +49,12 @@
 		border-bottom: 1px solid var(--color-line);
 	}
 
-	.topic-list h2 {
+	.build {
+		padding: var(--space-3) 0;
+	}
+
+	.topic-list h2,
+	.build h2 {
 		margin: 0 0 var(--space-1);
 		font-size: var(--font-size-heading-3);
 		display: flex;
@@ -53,7 +62,8 @@
 		gap: var(--space-2);
 	}
 
-	.topic-list p {
+	.topic-list p,
+	.build p {
 		margin: 0 0 var(--space-1);
 	}
 

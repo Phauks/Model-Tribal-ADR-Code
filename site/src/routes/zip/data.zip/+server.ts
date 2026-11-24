@@ -61,7 +61,7 @@ export const GET: RequestHandler = async ({ fetch }) => {
 			'',
 			'nations.csv lists every nation and community. nations/ holds each nation’s record, with a source for every fact, and its sources as Citation Style Language JSON. dispute-resolution-provisions.csv and .json are the provisions behind Find recourse. timeline.csv holds every dated entry of the timeline with its citation. glossary.json holds the glossary. document-copies.csv lists the copies of documents the website holds. stories.json holds the stories; a story’s full text is included where it is in the public domain or a nation’s law, and for the others the story’s page on the website has it.',
 			'',
-			'SHA256SUMS.txt gives the SHA-256 of every file here, in the form sha256sum -c reads, and Checking a file on the website’s Data sets page (/downloads) checks this ZIP file itself.',
+			'SHA256SUMS.txt gives the SHA-256 of every file here, in the form sha256sum -c reads, and Verify File on the website (/verify) checks this ZIP file itself.',
 			'',
 			'Material a nation has asked the project to restrict is never included. This file cannot be changed after you download it, so check the website for the current version.',
 			''
