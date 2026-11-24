@@ -357,7 +357,7 @@ export interface NationMapData {
 	}[];
 	stateNames: string[];
 	region?: { name: string; link: string };
-	landAreas: { name: string; kind: string }[];
+	landAreas: { code: string; name: string; kind: string }[];
 	/** The Land Areas view drawn with MapLibre over the site's own tiles, at the Census Bureau's full detail (TileMap.svelte). */
 	tileMap?: TileMapData;
 }

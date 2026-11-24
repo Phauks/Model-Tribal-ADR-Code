@@ -32,11 +32,12 @@
  */
 import { readFileSync } from 'node:fs';
 import { createRequire } from 'node:module';
-import { geoAlbers, geoArea, geoCentroid, geoConicEqualArea, geoDistance, geoPath, type GeoPath, type GeoProjection } from 'd3-geo';
+import { geoAlbers, geoArea, geoBounds, geoCentroid, geoConicEqualArea, geoDistance, geoPath, type GeoPath, type GeoProjection } from 'd3-geo';
 import { feature, merge, mesh } from 'topojson-client';
 import { presimplify, quantile, simplify, sphericalTriangleArea } from 'topojson-simplify';
 import type { Feature, FeatureCollection, Geometry, MultiPolygon, Polygon, Position } from 'geojson';
 import type { GeometryCollection, Topology } from 'topojson-specification';
+import polylabel from 'polylabel';
 
 export const mapWidth = 975;
 
@@ -255,6 +256,10 @@ export interface MapGeometry {
 	 * Only the places in view go into that page.
 	 */
 	zoomedStates: { code: string; path: string }[];
+	/** Where each state's name and count go on the tiled map, in degrees, by postal code: inside its largest piece, as far from its edges as can be (polylabel). */
+	statePoints: Record<string, [number, number]>;
+	/** The box around each state, [west, south, east, north] in degrees, by postal code, for opening a map on the state. A state across the 180th meridian (Alaska's Aleutians) is cut at it. */
+	stateBounds: Record<string, [number, number, number, number]>;
 }
 
 /**
@@ -621,6 +626,22 @@ export async function buildMapGeometry(regionsFile: string, landAreasFile: strin
 		},
 		frames,
 		smallStates,
-		zoomedStates
+		zoomedStates,
+		statePoints: Object.fromEntries(
+			states.flatMap((state) => {
+				const code = codeOf(state);
+				const piece = largestPiece(state, geoArea).geometry as Polygon;
+				const [longitude, latitude] = polylabel(piece.coordinates, 0.01);
+				return code ? [[code, [Math.round(longitude * 1000) / 1000, Math.round(latitude * 1000) / 1000] as [number, number]]] : [];
+			})
+		),
+		stateBounds: Object.fromEntries(
+			states.flatMap((state) => {
+				const code = codeOf(state);
+				const [[west, south], [east, north]] = geoBounds(state);
+				const box = [west > east ? -179.9 : west, south, east, north].map((value) => Math.round(value * 100) / 100) as [number, number, number, number];
+				return code ? [[code, box]] : [];
+			})
+		)
 	};
 }
