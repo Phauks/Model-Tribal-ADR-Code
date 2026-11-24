@@ -13,6 +13,19 @@ npm run build     # build the site into .svelte-kit/cloudflare
 npm run preview   # build, then serve the built Worker locally with Wrangler
 ```
 
+### First run
+
+The workspace, account, events, uploads and request pages are answered by the Worker and read the database. To try them on your computer, fill the local copy of the database with made-up people and records, then serve the built Worker:
+
+```sh
+npm run database:seed:local   # apply the migrations to the local database and add the fixtures
+npm run preview               # build, then serve it at http://localhost:8787
+```
+
+The seed writes only to the local copy in `.wrangler/state`, never the live database, and running it again is safe. It adds one account for each role at example.org, such as `lead-author@example.org`, `co-author@example.org` and `nation-reviewer@example.org`, and `reader@example.org`, who signed up but has no workspace access; with them come a draft essay, a nation team, two sent files, an upcoming event, a request and a test book order. Every fixture account's password is `local fixture password`. The roles that need two-step sign-in have it set up already: `npm run database:seed:local -- --code` prints the code to type, and the seed also prints a link an authenticator app can read. If `site/.dev.vars` does not exist, the seed writes it with `LEAD_AUTHOR_EMAIL=lead-author@example.org`. For a one-time link instead of the password, run `npm run sign-in-link -- reader@example.org --local`.
+
+### Checks
+
 Checks that also run on every pull request (the "Website build" job in `.github/workflows/checks.yml`):
 
 ```sh
