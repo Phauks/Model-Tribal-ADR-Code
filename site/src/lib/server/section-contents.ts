@@ -17,11 +17,11 @@ import { storySummaries } from './stories.ts';
 const byLabel = (first: OutlineItem, second: OutlineItem) => first.label.localeCompare(second.label, 'en-US');
 
 export const nationsPages: OutlineItem[] = [
-	{ label: 'Directory', link: '/nations' },
 	{ label: 'Map', link: '/nations/map' },
 	{ label: 'Timeline', link: '/nations/timeline' },
 	{ label: 'Find recourse', link: '/nations/recourse' },
-	{ label: 'Data and charts', link: '/nations/data' }
+	{ label: 'Data and charts', link: '/nations/data' },
+	{ label: 'Federal offices', link: '/nations/federal-offices' }
 ];
 
 /** The contents of each section built with the site, by the section's name (its address without the slash). */
@@ -29,7 +29,8 @@ const builtContents: Record<string, () => SectionContents> = {
 	nations: () => ({
 		pages: nationsPages,
 		// The nations come from a module the browser keeps (src/lib/section-lists.ts).
-		entries: { noun: 'nations', items: [], list: 'nations' }
+		// "View all" opens the one table of every nation (Trevor, Nov. 23, 2026).
+		entries: { noun: 'nations', items: [], list: 'nations', title: 'Native nations', viewAll: '/nations' }
 	}),
 	stories: () => ({
 		pages: [{ label: 'All stories', link: '/stories' }],

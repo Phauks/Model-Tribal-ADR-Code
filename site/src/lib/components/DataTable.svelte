@@ -15,7 +15,10 @@
 	Three more tools, each turned on by the page (Trevor chose filterable,
 	downloadable tables on Nov. 23, 2026):
 	- filters: a menu for each column marked filterable, listing its values
-	  with how many rows each leaves.
+	  with how many rows each leaves. With addFilter, no menu shows until the
+	  reader picks its column from "Add filter", and each added menu has a
+	  button to take it away (Trevor, Nov. 23, 2026: "don't state the
+	  filters, just have an add filter button").
 	- download: names the downloaded files <download>.csv and .xlsx.
 	- shareable: the search, sort and filters go into the page address as the
 	  reader changes them, and "Copy link" copies it, so the link opens the
@@ -48,6 +51,7 @@
 	import ArrowUpDown from '@lucide/svelte/icons/arrow-up-down';
 	import EyeOff from '@lucide/svelte/icons/eye-off';
 	import Link from '@lucide/svelte/icons/link';
+	import ListFilterPlus from '@lucide/svelte/icons/list-filter-plus';
 	import Maximize from '@lucide/svelte/icons/maximize';
 	import Minimize from '@lucide/svelte/icons/minimize';
 	import RotateCcw from '@lucide/svelte/icons/rotate-ccw';
@@ -89,6 +93,8 @@
 		empty?: Snippet<[string]>;
 		/** Shows a menu for each filterable column. */
 		filters?: boolean;
+		/** Shows the filter menus only once the reader adds them with an "Add filter" button. */
+		addFilter?: boolean;
 		/** Names the downloaded files: this, plus .csv or .xlsx. */
 		download?: string;
 		/** Keeps the search, sort and filters in the page address and shows "Copy link". */
@@ -115,6 +121,7 @@
 		cell,
 		empty,
 		filters = false,
+		addFilter = false,
 		download,
 		shareable = false,
 		count: showCount = true,
@@ -136,6 +143,18 @@
 
 	const sort = $derived(chosenSort ?? defaultSort);
 	const filterColumns = $derived(filters ? columns.filter((column) => column.filterable) : []);
+	/** The filters the reader added, in the order added; a filter set from the page address counts as added. */
+	let addedFilters = $state<string[]>([]);
+	let addMenuOpen = $state(false);
+	let addMenu = $state<HTMLElement | undefined>();
+	const shownFilterColumns = $derived(
+		addFilter
+			? addedFilters
+					.map((key) => filterColumns.find((column) => column.key === key))
+					.filter((column): column is TableColumn => column !== undefined)
+			: filterColumns
+	);
+	const addableColumns = $derived(filterColumns.filter((column) => !addedFilters.includes(column.key)));
 	const shownRows = $derived.by(() => {
 		const found = applyColumnFilters(filterRows(columns, rows, query), columnFilters).filter((row) => !leftOut.includes(row.key));
 		return sort ? sortRows(columns, found, sort) : found;
@@ -184,7 +203,25 @@
 	function clearFilters() {
 		query = '';
 		columnFilters = {};
+		addedFilters = [];
 		leftOut = [];
+	}
+
+	function addFilterFor(column: TableColumn) {
+		addedFilters = [...addedFilters, column.key];
+		addMenuOpen = false;
+		// The new menu takes the focus, so the reader can pick a value at once.
+		queueMicrotask(() => document.getElementById(`${identifier}-filter-${column.key}`)?.focus());
+	}
+
+	function removeFilter(column: TableColumn) {
+		addedFilters = addedFilters.filter((key) => key !== column.key);
+		const { [column.key]: _removed, ...rest } = columnFilters;
+		columnFilters = rest;
+	}
+
+	function onWindowClick(event: MouseEvent) {
+		if (addMenuOpen && addMenu && !addMenu.contains(event.target as Node)) addMenuOpen = false;
 	}
 
 	/** The table filling the screen, with the browser's full screen, or filling the window where the browser has none (as on an iPhone) or refuses. */
@@ -206,6 +243,10 @@
 	}
 
 	function onKeydown(event: KeyboardEvent) {
+		if (addMenuOpen && event.key === 'Escape') {
+			addMenuOpen = false;
+			return;
+		}
 		if (fillingWindow && event.key === 'Escape') fillingWindow = false;
 	}
 
@@ -242,6 +283,7 @@
 			query = state.query;
 			chosenSort = state.sort;
 			columnFilters = state.filters;
+			addedFilters = filterColumns.filter((column) => state.filters[column.key]).map((column) => column.key);
 		}
 		interactive = true;
 		const onChange = () => {
@@ -263,7 +305,7 @@
 	});
 </script>
 
-<svelte:window onkeydown={onKeydown} />
+<svelte:window onkeydown={onKeydown} onclick={onWindowClick} />
 
 <div class="data-table" class:filling-window={fillingWindow} bind:this={frame}>
 
@@ -276,9 +318,18 @@
 				<input id="{identifier}-search" type="search" autocomplete="off" bind:value={query} />
 			</div>
 		{/if}
-		{#each filterColumns as column (column.key)}
+		{#each shownFilterColumns as column (column.key)}
 			<div class="field filter-field">
-				<label for="{identifier}-filter-{column.key}">{column.header}</label>
+				{#if addFilter}
+					<div class="filter-label">
+						<label for="{identifier}-filter-{column.key}">{column.header}</label>
+						<button type="button" class="icon-tool remove-filter" aria-label="Remove the {column.header} filter" title="Remove filter" onclick={() => removeFilter(column)}>
+							<X aria-hidden="true" size="1.1em" strokeWidth={1.75} />
+						</button>
+					</div>
+				{:else}
+					<label for="{identifier}-filter-{column.key}">{column.header}</label>
+				{/if}
 				<select id="{identifier}-filter-{column.key}" bind:value={columnFilters[column.key]}>
 					<option value="">All</option>
 					{#each choicesFor(column) as choice (choice.value)}
@@ -290,6 +341,26 @@
 				</select>
 			</div>
 		{/each}
+		{#if addFilter && addableColumns.length > 0}
+			<div class="add-filter" bind:this={addMenu}>
+				<button
+					type="button"
+					class="button button-quiet small-button"
+					aria-expanded={addMenuOpen}
+					aria-controls="{identifier}-add-filter"
+					onclick={() => (addMenuOpen = !addMenuOpen)}
+				>
+					<ListFilterPlus aria-hidden="true" size="1.1em" strokeWidth={1.75} />Add filter
+				</button>
+				{#if addMenuOpen}
+					<ul id="{identifier}-add-filter" class="add-filter-menu" aria-label="Filter by">
+						{#each addableColumns as column (column.key)}
+							<li><button type="button" onclick={() => addFilterFor(column)}>{column.header}</button></li>
+						{/each}
+					</ul>
+				{/if}
+			</div>
+		{/if}
 	</div>
 	{/if}
 	<div class="table-status no-print">
@@ -434,6 +505,62 @@
 
 	.filter-field select {
 		width: 100%;
+	}
+
+	/* An added filter's name, with the button that takes it away at its right. */
+	.filter-label {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		gap: var(--space-2);
+		margin-bottom: var(--space-1);
+	}
+
+	.filter-label label {
+		font-weight: var(--font-weight-semibold);
+	}
+
+	.remove-filter {
+		min-width: 2rem;
+		min-height: 2rem;
+		margin: calc(-1 * var(--space-1)) 0;
+	}
+
+	.add-filter {
+		position: relative;
+	}
+
+	.add-filter-menu {
+		position: absolute;
+		z-index: 20;
+		top: calc(100% + var(--space-1));
+		left: 0;
+		min-width: 12rem;
+		margin: 0;
+		padding: var(--space-1) 0;
+		list-style: none;
+		border: 1px solid var(--color-control-border);
+		border-radius: var(--radius-control);
+		background: var(--color-surface-raised);
+		box-shadow: 0 var(--space-1) var(--space-3) color-mix(in srgb, var(--color-ink) 20%, transparent);
+	}
+
+	.add-filter-menu button {
+		display: block;
+		width: 100%;
+		min-height: var(--layout-target-minimum);
+		padding: 0 var(--space-3);
+		border: 0;
+		background: transparent;
+		color: var(--color-ink);
+		font: inherit;
+		text-align: left;
+		cursor: pointer;
+	}
+
+	.add-filter-menu button:hover,
+	.add-filter-menu button:focus-visible {
+		background: var(--color-surface);
 	}
 
 	.table-status {

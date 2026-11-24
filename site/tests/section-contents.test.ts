@@ -6,7 +6,8 @@ vi.mock('virtual:source-citations', () => ({ sourceCitations: {} }));
 // The nations' list is built by vite.config.ts the same way.
 vi.mock('virtual:section-lists', async () => {
 	const { nationIndexRows } = await import('../src/lib/server/nation-index.ts');
-	return { nationNames: nationIndexRows().map((row) => [row.name, row.id]) };
+	const rows = nationIndexRows();
+	return { nationNames: rows.map((row) => [row.name, row.id]), nationCount: rows.filter((row) => row.entityType === 'native-nation').length };
 });
 
 const { builtSections, sectionContents } = await import('#lib/server/section-contents.ts');
@@ -20,10 +21,14 @@ describe('the pages of each section, for the sidebar’s second column', () => {
 
 	it('lists each section’s own pages and its long list with working addresses', async () => {
 		const nations = await sectionContents('nations');
-		expect(nations?.pages.map((item) => item.link)).toEqual(['/nations', '/nations/map', '/nations/timeline', '/nations/recourse', '/nations/data']);
-		expect(nations?.entries).toEqual({ noun: 'nations', items: [], list: 'nations' });
+		expect(nations?.pages.map((item) => item.link)).toEqual(['/nations/map', '/nations/timeline', '/nations/recourse', '/nations/data', '/nations/federal-offices']);
+		// "View all" beside the list opens the table of every nation.
+		expect(nations?.entries).toEqual({ noun: 'nations', items: [], list: 'nations', title: 'Native nations', viewAll: '/nations' });
 		const { withSharedLists } = await import('#lib/section-lists.ts');
-		const filled = withSharedLists(nations)?.entries?.items ?? [];
+		const shared = withSharedLists(nations)?.entries;
+		const filled = shared?.items ?? [];
+		expect(shared?.count).toBeGreaterThan(500);
+		expect(shared?.count).toBeLessThan(filled.length);
 		expect(filled.length).toBeGreaterThan(500);
 		expect(filled.some((item) => item.link === '/nations/navajo-nation')).toBe(true);
 		expect((await sectionContents('library'))?.pages[0]?.link).toBe('/copies');
