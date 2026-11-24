@@ -98,13 +98,10 @@ function courtOpinions(nationId: string, sources: SourceUses): CourtOpinions | u
 interface NationImage {
 	src: string;
 	kind: string;
-	credit: string;
 	/** Where the image is published, such as the nation's website. */
 	original: string;
-	/** The image's entry in the Sources list, as a link within the page. */
+	/** The image's entry in the References list, as a link within the page. */
 	source?: string;
-	/** Where the nation asks for the image to be taken down. */
-	removal: string;
 }
 
 interface EmptySections {
@@ -1073,9 +1070,10 @@ export const load: PageServerLoad = ({ params }) => {
 	// It has no caption (Trevor, Nov. 22, 2026): the credit, and the statement
 	// that the nation does not endorse the site, go in its Sources entry,
 	// and a removal request goes through Report a problem.
-	// Selecting it opens it larger in the image viewer, which shows the same
-	// credit and links to its Sources entry, to where it is published and to
-	// a removal request (src/lib/image-viewer.ts).
+	// Selecting it opens it larger in the image viewer, with a download button
+	// and links to its References entry and to where it is published
+	// (src/lib/image-viewer.ts). The viewer leaves out the credit line, which
+	// the References entry keeps (Trevor, Nov. 23, 2026).
 	let image: NationImage | undefined;
 	if (shownImage) {
 		const kind = humanize(shownImage.kind);
@@ -1089,10 +1087,8 @@ export const load: PageServerLoad = ({ params }) => {
 		image = {
 			src: imagePath(record.id),
 			kind,
-			credit,
 			original: shownImage.image_link,
-			source: sourceNumber ? `#${sourceAnchor(sourceNumber)}` : undefined,
-			removal: `/requests?${new URLSearchParams({ kind: 'remove', record: `nation-images/${record.id}` }).toString().replaceAll('%2F', '/')}`
+			source: sourceNumber ? `#${sourceAnchor(sourceNumber)}` : undefined
 		};
 	}
 
