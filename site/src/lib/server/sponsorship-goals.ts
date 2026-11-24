@@ -1,8 +1,10 @@
 /**
  * What the Sponsorship page shows about each thing a gift can fund
  * (docs/sponsorship.md, "The Sponsorship page"), as in mockup A, which
- * Trevor approved on Nov. 23, 2026: a paperback for every nation, the site
- * for a year, hardcovers for every nation, and wherever it is needed most.
+ * Trevor approved on Nov. 23, 2026, with the choices he named on Nov. 24:
+ * a paperback for every nation (the initiative), hardcovers for every
+ * nation, Accessibility Formats, Research, Digital Infrastructure (the site
+ * for a year) and Discretionary.
  * Each cost is set by the lead author on the workspace Sponsors page once it
  * is known, and only totals across every sponsor are used; no sponsor's own
  * amount is ever shown.
@@ -16,8 +18,10 @@ import type { GiftMode } from './sponsors.ts';
 export interface SponsorshipCounts {
 	/** Native nations with a page on the site. */
 	nationPages: number;
-	/** The nations the printed-copy goal counts: one copy for each federally recognized nation. */
+	/** The initiative's first level: one copy for each federally recognized nation. */
 	federallyRecognized: number;
+	/** Its second level: one copy for each nation recognized by the United States or by a state (a nation recognized by both counts once). */
+	federallyOrStateRecognized: number;
 	/** Source records in the repository. */
 	sources: number;
 }
@@ -114,7 +118,7 @@ export interface CopyGoal {
 
 /** One of the cards under "More you can fund". */
 export interface FundingCard {
-	key: 'site' | 'hardcovers' | 'needed-most';
+	key: 'hardcovers' | 'accessibility' | 'research' | 'site' | 'discretionary';
 	/** What a gift from this card goes toward. */
 	earmark: Earmark;
 	/** The figure on the card in cents (a year of the site, or hardcovers for every nation), or null when not set or when there is none. */
@@ -123,8 +127,25 @@ export interface FundingCard {
 	share: number | null;
 }
 
-export interface SponsorshipGoals {
+/**
+ * The initiative's three levels (Trevor, Nov. 24, 2026): a copy for every
+ * federally recognized nation, then for every nation recognized by the
+ * United States or a state, then for every Native nation the site
+ * identifies (every nation page). Copies paid for fill the first level
+ * first, and each later level counts them too, since it includes the ones
+ * before it.
+ */
+export interface InitiativeLevel {
+	key: 'federal' | 'federal-and-state' | 'identified';
 	nations: number;
+	/** Copies paid for toward this level, never more than its nations; null while the cost of a copy is not set. */
+	paid: number | null;
+}
+
+export interface SponsorshipGoals {
+	/** Federally recognized nations: the first level, and the hardcovers card. */
+	nations: number;
+	levels: InitiativeLevel[];
 	copies: CopyGoal | null;
 	cards: FundingCard[];
 }
@@ -133,17 +154,24 @@ export function sponsorshipGoals(counts: SponsorshipCounts, costs: SponsorshipCo
 	const nations = counts.federallyRecognized;
 	const books = given.total['books-for-nations'];
 	const paperback = costs.paperback;
-	const copies = paperback && nations > 0 ? { costCents: paperback, paid: Math.min(nations, Math.floor(books / paperback)) } : null;
+	const recognized = Math.max(nations, counts.federallyOrStateRecognized);
+	const allNations = Math.max(recognized, counts.nationPages);
+	const copies = paperback && allNations > 0 ? { costCents: paperback, paid: Math.min(allNations, Math.floor(books / paperback)) } : null;
+	const level = (key: InitiativeLevel['key'], count: number): InitiativeLevel => ({ key, nations: count, paid: copies ? Math.min(count, copies.paid) : null });
+	const levels = [level('federal', nations), level('federal-and-state', recognized), level('identified', allNations)];
 	const site = costs.website ?? null;
 	const hardcovers = costs.hardcover && nations > 0 ? costs.hardcover * nations : null;
 	return {
 		nations,
+		levels,
 		copies,
 		cards: [
-			{ key: 'site', earmark: 'hosting', costCents: site, share: site ? Math.min(1, given.siteLastYear / site) : null },
 			// Hardcovers take the place of paperbacks, so every gift toward copies counts toward them.
 			{ key: 'hardcovers', earmark: 'books-for-nations', costCents: hardcovers, share: hardcovers ? Math.min(1, books / hardcovers) : null },
-			{ key: 'needed-most', earmark: 'needed-most', costCents: null, share: null }
+			{ key: 'accessibility', earmark: 'large-format', costCents: null, share: null },
+			{ key: 'research', earmark: 'research', costCents: null, share: null },
+			{ key: 'site', earmark: 'hosting', costCents: site, share: site ? Math.min(1, given.siteLastYear / site) : null },
+			{ key: 'discretionary', earmark: 'needed-most', costCents: null, share: null }
 		]
 	};
 }

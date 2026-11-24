@@ -4,7 +4,7 @@ import { allSponsors, giftSettingChecks, giftState, publicMode } from '#lib/serv
 import { saveSponsorshipCosts, sponsorshipCosts } from '#lib/server/sponsorship-goals.ts';
 import { levelAmounts, saveLevelAmounts } from '#lib/server/sponsorship-levels.ts';
 import { formText, requirePermission, storage } from '#lib/server/workspace.ts';
-import { costItems, dollars, largestGift, type CostItem } from '#lib/sponsorship.ts';
+import { centsFromDollars, costItems, dollars, largestGift, type CostItem } from '#lib/sponsorship.ts';
 import { levelAmountsProblem, levels, type Level, type LevelAmounts } from '#lib/sponsorship-levels.ts';
 import type { Actions, PageServerLoad } from './$types';
 
@@ -60,15 +60,15 @@ export const actions: Actions = {
 		const form = await event.request.formData();
 		const costs = {} as Record<CostItem, number | null>;
 		for (const item of costItems) {
-			const text = formText(form, item, 20)?.replace(/[$,\s]/g, '');
+			const text = formText(form, item, 20)?.trim();
 			if (!text) {
 				costs[item] = null;
 				continue;
 			}
-			const amount = Number(text);
-			if (!Number.isFinite(amount) || amount <= 0 || amount > largestGift || Math.round(amount * 100) !== amount * 100)
+			const cents = centsFromDollars(text);
+			if (cents === null || cents <= 0 || cents > largestGift * 100)
 				return fail(400, { problem: `Write each cost in dollars and cents, up to ${dollars(largestGift * 100)}, or leave it blank.` });
-			costs[item] = Math.round(amount * 100);
+			costs[item] = cents;
 		}
 		await saveSponsorshipCosts(storage(event).database, costs, `The project (${person.displayName})`);
 		return { done: 'Saved. The Sponsorship page shows the new costs.' };
@@ -83,10 +83,10 @@ export const actions: Actions = {
 		const form = await event.request.formData();
 		const amounts = {} as LevelAmounts;
 		for (const level of levels) {
-			const amount = Number(formText(form, `level-${level}`, 20)?.replace(/[$,\s]/g, '') || Number.NaN);
-			if (!Number.isFinite(amount) || amount <= 0 || amount > largestGift || Math.round(amount * 100) !== amount * 100)
+			const cents = centsFromDollars(formText(form, `level-${level}`, 20)?.trim() ?? '');
+			if (cents === null || cents <= 0 || cents > largestGift * 100)
 				return fail(400, { levelProblem: `Write each level's amount in dollars and cents, up to ${dollars(largestGift * 100)} a month.` });
-			amounts[level] = Math.round(amount * 100);
+			amounts[level] = cents;
 		}
 		const problem = levelAmountsProblem(amounts);
 		if (problem) return fail(400, { levelProblem: problem });
