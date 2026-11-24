@@ -26,6 +26,7 @@ import { firstPage, opinionAt, quoteOpinionLabel, type OpinionEntry } from '../c
 import { readingLinksAfter } from '../reading-links.ts';
 import { boxParts, essayBlocks, essayMarkdown, frontMatterField, isAttribution, missingEllipses, splitFrontMatter, topicsIn, type CitationReference } from './syntax.ts';
 import { escapeHtml } from '../escape-html.ts';
+import { fillBoxes, type BoxKind } from './record-boxes.ts';
 
 export interface EssayLibrary {
 	/** The full citation of a source, as HTML in the project's Indigo Book style. */
@@ -53,6 +54,11 @@ export interface EssayLibrary {
 	caseLink?(key: string): string | undefined;
 	/** A court case's opinions and the report page each starts on, so a quotation can say which opinion it comes from (case-opinions.ts). */
 	opinions?(key: string): OpinionEntry[] | undefined;
+	/**
+	 * The parts of a case or law box as its source's record keeps them, in
+	 * the essay syntax, to fill a box the essay leaves empty (record-boxes.ts).
+	 */
+	box?(kind: BoxKind, key: string): string | undefined;
 }
 
 /** One heading in the essay, for the page's outline. */
@@ -525,7 +531,7 @@ function configure(markdown: MarkdownIt, state: RenderState): MarkdownIt {
 			const factList = facts.length
 				? `<dl class="essay-case-facts">\n${facts.map(([name, value]) => `<div><dt>${escapeHtml(name)}</dt><dd>${value}</dd></div>`).join('\n')}\n</dl>\n`
 				: '';
-			return `<section class="${classes}"${id}>\n${label(box === 'law' ? 'Law' : 'Case')}<p class="essay-case-citation">${readingLinksAfter(citation, marksHtml([mark]))}</p>\n${factList}`;
+			return `<section class="${classes}"${id} data-source="${escapeHtml(key)}">\n${label(box === 'law' ? 'Law' : 'Case')}<p class="essay-case-citation">${readingLinksAfter(citation, marksHtml([mark]))}</p>\n${factList}`;
 		};
 		rules[`container_${box}_close`] = () => '</section>\n';
 	}
@@ -654,7 +660,10 @@ function markChangedBlocks(tokens: Token[], lines: LineChange[]): Token[] {
  * marks the blocks that changed (lineChanges in merge.ts).
  */
 export function renderEssay(text: string, library: EssayLibrary, { lines }: { lines?: LineChange[] } = {}): RenderedEssay {
-	const { frontMatter, body } = splitFrontMatter(text.normalize('NFC'));
+	const { frontMatter, body: written } = splitFrontMatter(text.normalize('NFC'));
+	// A case or law box the essay leaves empty is filled from its record; marks made against the essay's own lines follow.
+	const { text: body, origin } = fillBoxes(written, (kind, key) => library.box?.(kind, key));
+	if (lines) lines = origin.map((line) => lines![line]);
 	const sources = new EssaySources(library);
 	const state: RenderState = { sources, library, problems: [], warnings: [], slugs: new Set(['sources-heading']) };
 	const markdown = configure(essayMarkdown(), state);

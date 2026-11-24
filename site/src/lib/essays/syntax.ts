@@ -41,6 +41,10 @@
  *   ::: transcript ... :::       what is said in a video or recording
  *   ::::
  *
+ * A case's or law's parts are kept on its source record (`case_box`,
+ * `law_box`), and an essay places the box with its two fence lines and
+ * nothing between; record-boxes.ts fills them in before an essay is read.
+ *
  * A block that holds another block opens with more colons than the block
  * inside it, because markdown-it-container closes a block at the first bare
  * fence at least as long as its opening.

@@ -15,6 +15,7 @@
  */
 import type { D1Database, R2Bucket, R2HTTPMetadata, R2ObjectBody } from '@cloudflare/workers-types/index.ts';
 import { readableDate } from '#lib/readable-date.ts';
+import { inGroupsOf, placeholdersFor } from '#lib/server/database-groups.ts';
 
 export const scanStatuses = ['waiting', 'scanning', 'retrying', 'clean', 'flagged', 'cannot-scan', 'failed', 'released-by-hand'] as const;
 export type ScanStatus = (typeof scanStatuses)[number];
@@ -134,10 +135,9 @@ export async function fileScans(database: D1Database, objectKeys: readonly strin
 	const found = new Map<string, FileScan>();
 	const unique = [...new Set(objectKeys)];
 	// D1 takes up to 100 bound values in one statement.
-	for (let start = 0; start < unique.length; start += 90) {
-		const keys = unique.slice(start, start + 90);
+	for (const keys of inGroupsOf(unique, 90)) {
 		const { results } = await database
-			.prepare(`SELECT * FROM file_scans WHERE object_key IN (${keys.map(() => '?').join(', ')})`)
+			.prepare(`SELECT * FROM file_scans WHERE object_key IN (${placeholdersFor(keys)})`)
 			.bind(...keys)
 			.all<FileScanRow>();
 		for (const row of results) found.set(row.object_key, fileScanFromRow(row));

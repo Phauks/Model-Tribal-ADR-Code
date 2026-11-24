@@ -165,6 +165,18 @@ async function call<T>(settings: VideoRoomSettings, fetcher: Fetcher, method: st
 	return (await request(fetcher, settings.token, method, address, body)).data as T;
 }
 
+/**
+ * Asks RealtimeKit for one page of one meeting, for the Service checks page:
+ * proves the token, the account and the app without making or changing
+ * anything. Returns how many meetings the app has, when RealtimeKit says.
+ */
+export async function readMeetingTotal(settings: VideoRoomSettings, fetcher: Fetcher = fetch): Promise<{ place: VideoRoomPlace; total: number | null }> {
+	const place = await videoRoomPlace(settings, fetcher);
+	const address = `${apiRoot}/accounts/${encodeURIComponent(place.account)}/realtime/kit/${encodeURIComponent(place.application)}/meetings?per_page=1&page_no=1`;
+	const answer = (await request(fetcher, settings.token, 'GET', address)) as Answer & { paging?: { total_count?: number } };
+	return { place, total: typeof answer.paging?.total_count === 'number' ? answer.paging.total_count : null };
+}
+
 /** Makes the meeting for one event's room and returns its id. */
 export async function createMeeting(settings: VideoRoomSettings, title: string, fetcher: Fetcher = fetch): Promise<string> {
 	const data = await call<{ id?: string }>(settings, fetcher, 'POST', '/meetings', { title: title.slice(0, 200) });

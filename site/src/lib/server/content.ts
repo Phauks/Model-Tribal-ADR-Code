@@ -17,6 +17,7 @@ import type { StoryRecord } from '../story-visibility.ts';
 import { imageMayBeShown, type OfficialImageRecord, type ServableImage } from '../official-images.ts';
 import { parseCsv } from '../csv.ts';
 import { copiesByLink, linkForMatching, servedMediaTypes, type PublicCopy } from '../public-copies.ts';
+import type { RecordBox } from '../essays/record-boxes.ts';
 
 export const repositoryRoot = path.resolve(process.cwd(), '..');
 
@@ -107,6 +108,10 @@ export interface SourceRecord {
 	archives?: { link?: string; url?: string; captured?: string }[];
 	/** Other places to read a case or law (src/lib/reading-links.ts). */
 	reading_links?: ReadingLinks;
+	/** A court case's box: background, question, holding, quotations, treatment and topics (src/lib/essays/record-boxes.ts). */
+	case_box?: RecordBox;
+	/** A law's box: what it does, quotations and treatment (src/lib/essays/record-boxes.ts). */
+	law_box?: RecordBox;
 }
 
 let sourceCache: Map<string, SourceRecord> | undefined;

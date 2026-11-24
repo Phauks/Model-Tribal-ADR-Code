@@ -1,4 +1,4 @@
-import { checkSeals, sealNewEntries } from '#lib/server/activity-seals.ts';
+import { checkSealsAndRecord, sealNewEntries } from '#lib/server/activity-seals.ts';
 import { activityPage, eventTargets, type EventTarget } from '#lib/server/events.ts';
 import { listPeople } from '#lib/server/people.ts';
 import { requirePermission, storage } from '#lib/server/workspace.ts';
@@ -28,7 +28,8 @@ export const load: PageServerLoad = async (event) => {
 	});
 
 	return {
-		seals: await checkSeals(database),
+		// The Activity page checks the whole chain, and records the result for the pages that check only newer entries.
+		seals: await checkSealsAndRecord(database),
 		entries: entries.slice(0, pageSize),
 		older: entries.length > pageSize ? entries[pageSize - 1].sequence : undefined,
 		targetKind,

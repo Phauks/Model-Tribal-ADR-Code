@@ -1,11 +1,13 @@
 import { beforeEach, describe, expect, it } from 'vitest';
 import type { D1Database } from '@cloudflare/workers-types/index.ts';
-import { cleanEmail, cleanPhone, cleanTag, csvText, stalenessOf } from '#lib/address-book.ts';
+import { cleanEmail, cleanPhone, cleanTag, stalenessOf } from '#lib/address-book.ts';
+import { csvField } from '#lib/csv.ts';
 import {
 	addContact,
 	addContactMethod,
 	contactChanges,
 	contactEntry,
+	contactNames,
 	editContactMethod,
 	listContacts,
 	mailingList,
@@ -72,6 +74,7 @@ describe('cleaning what is typed', () => {
 	});
 
 	it('writes CSV fields a spreadsheet will not run', () => {
+		const csvText = (value: string | null) => csvField(value, { guardFormulas: true });
 		expect(csvText('Smith, Jo')).toBe('"Smith, Jo"');
 		expect(csvText('=HYPERLINK("x")')).toBe(`"'=HYPERLINK(""x"")"`);
 		expect(csvText(null)).toBe('');
@@ -192,6 +195,24 @@ describe('the address book', () => {
 		expect(changes[0].change).toBe('Marked mail came back');
 		expect(JSON.parse(changes[0].before ?? '{}').status).toBe('current');
 		expect(first).not.toBe(second);
+	});
+});
+
+describe('naming the other contacts on a contact’s page', () => {
+	it('gives the same names, kinds, roles and organizations as the whole address book, in the same order', async () => {
+		const office = await added(addContact(database, { kind: 'organization', name: 'Sample Nation', nationIdentifier: 'sample-nation' }, null));
+		await added(addContact(database, { kind: 'person', name: 'jo Smith', role: 'Chair', organizationIdentifier: office }, null));
+		await added(addContact(database, { kind: 'person', name: 'Al Jones' }, null));
+		const whole = await listContacts(database);
+		expect(await contactNames(database)).toEqual(
+			whole.map((contact) => ({
+				identifier: contact.identifier,
+				kind: contact.kind,
+				name: contact.name,
+				role: contact.role,
+				organizationIdentifier: contact.organizationIdentifier
+			}))
+		);
 	});
 });
 

@@ -27,6 +27,7 @@ import {
 	type ReadingSettings,
 	type Theme
 } from './reading-settings.ts';
+import { readStored, readStoredJson, writeStored, writeStoredJson } from '#lib/browser-storage.ts';
 
 export const everywhereStorageKey = 'settings-everywhere';
 const checkedStorageKey = 'settings-everywhere-checked';
@@ -49,31 +50,20 @@ interface AccountCopy {
 
 /** Whether this device last heard that the switch is on. */
 export function readEverywhere(): EverywhereState {
-	try {
-		const stored = JSON.parse(localStorage.getItem(everywhereStorageKey) ?? 'null') as Partial<EverywhereState> | null;
-		return { on: stored?.on === true, updatedAt: typeof stored?.updatedAt === 'string' ? stored.updatedAt : undefined };
-	} catch {
-		return { on: false, updatedAt: undefined };
-	}
+	const stored = readStoredJson(everywhereStorageKey) as Partial<EverywhereState> | null;
+	return { on: stored?.on === true, updatedAt: typeof stored?.updatedAt === 'string' ? stored.updatedAt : undefined };
 }
 
 function remember(state: EverywhereState): void {
-	try {
-		if (state.on) localStorage.setItem(everywhereStorageKey, JSON.stringify(state));
-		else localStorage.removeItem(everywhereStorageKey);
-	} catch {
-		// Storage blocked: the account still holds the copy.
-	}
+	// With storage blocked, the account still holds the copy.
+	if (state.on) writeStoredJson(everywhereStorageKey, state);
+	else writeStored(everywhereStorageKey, null);
 }
 
 /** Forgets the switch on this device, at sign-out. The account keeps its copy. */
 export function forgetEverywhere(): void {
 	remember({ on: false, updatedAt: undefined });
-	try {
-		sessionStorage.removeItem(checkedStorageKey);
-	} catch {
-		// Nothing was kept.
-	}
+	writeStored(checkedStorageKey, null, 'session');
 }
 
 let applying = false;
@@ -107,13 +97,10 @@ export async function turnEverywhereOff(): Promise<boolean> {
 /** Asks the account for its copy and applies it when it is newer than what this device last saw. */
 export async function checkAccountCopy(force = false): Promise<EverywhereState> {
 	if (!force) {
-		try {
-			const last = Number(sessionStorage.getItem(checkedStorageKey) ?? '0');
-			if (Date.now() - last < checkEveryMinutes * 60 * 1000) return readEverywhere();
-			sessionStorage.setItem(checkedStorageKey, String(Date.now()));
-		} catch {
-			// Without storage it asks each time a page loads, which still works.
-		}
+		// Without storage it asks each time a page loads, which still works.
+		const last = Number(readStored(checkedStorageKey, 'session') ?? '0');
+		if (Date.now() - last < checkEveryMinutes * 60 * 1000) return readEverywhere();
+		writeStored(checkedStorageKey, String(Date.now()), 'session');
 	}
 	const response = await fetch(address, { headers: { accept: 'application/json' } }).catch(() => undefined);
 	if (!response?.ok) return readEverywhere();

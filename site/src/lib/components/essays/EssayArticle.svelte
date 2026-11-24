@@ -27,6 +27,7 @@
 	import { readSignedInHint } from '#lib/signed-in-hint.ts';
 	import type { SourceEntry } from '#lib/server/source-uses.ts';
 	import type { EssayPageState } from '#lib/server/essay-page-state.ts';
+	import { readStored, writeStored } from '#lib/browser-storage.ts';
 
 	interface Publication {
 		number: number;
@@ -141,11 +142,7 @@
 	onMount(() => {
 		if (!isNewest) return;
 		if (!readSignedInHint(document.cookie).signedIn) return;
-		try {
-			if (localStorage.getItem(viewKey) === 'published') view = 'published';
-		} catch {
-			// Storage can be blocked; the choice is then not remembered.
-		}
+		if (readStored(viewKey) === 'published') view = 'published';
 		// A review request's link opens the draft for commenting at its section: ?review=<section>, or ?review for the whole draft.
 		const asked = new URL(location.href).searchParams;
 		if (asked.has('review')) reviewAt = asked.get('review') || null;
@@ -186,11 +183,7 @@
 	});
 
 	function rememberView(): void {
-		try {
-			localStorage.setItem(viewKey, view);
-		} catch {
-			// As above.
-		}
+		writeStored(viewKey, view);
 	}
 
 	$effect(() => {

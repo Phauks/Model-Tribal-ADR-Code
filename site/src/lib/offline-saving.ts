@@ -24,7 +24,8 @@ export function controllingWorker(): ServiceWorker | null {
 	return navigator.serviceWorker.controller;
 }
 
-function ask(request: WorkerRequest, onProgress?: (progress: Progress) => void): Promise<OfflineStatus> {
+/** Asks the worker; the answer is the status, or nothing when the worker says it has resumed saving. */
+function ask(request: WorkerRequest, onProgress?: (progress: Progress) => void): Promise<OfflineStatus | undefined> {
 	const worker = controllingWorker();
 	if (!worker) return Promise.reject(new Error('no-worker'));
 	return new Promise((resolve, reject) => {
@@ -35,6 +36,7 @@ function ask(request: WorkerRequest, onProgress?: (progress: Progress) => void):
 			else {
 				channel.port1.close();
 				if (reply.type === 'status') resolve(reply.status);
+				else if (reply.type === 'resumed') resolve(undefined);
 				else reject(new Error(reply.type === 'failed' ? reply.message : 'unexpected-reply'));
 			}
 		};
@@ -42,24 +44,32 @@ function ask(request: WorkerRequest, onProgress?: (progress: Progress) => void):
 	});
 }
 
+async function askStatus(request: WorkerRequest, onProgress?: (progress: Progress) => void): Promise<OfflineStatus> {
+	const status = await ask(request, onProgress);
+	if (!status) throw new Error('unexpected-reply');
+	return status;
+}
+
 export function offlineStatus(): Promise<OfflineStatus> {
-	return ask({ type: 'offline-status' });
+	return askStatus({ type: 'offline-status' });
 }
 
 export function saveCollection(
 	collection: CollectionIdentifier,
 	onProgress?: (progress: Progress) => void
 ): Promise<OfflineStatus> {
-	return ask({ type: 'offline-save', collection }, onProgress);
+	return askStatus({ type: 'offline-save', collection }, onProgress);
 }
 
 export function removeCollection(collection: CollectionIdentifier): Promise<OfflineStatus> {
-	return ask({ type: 'offline-remove', collection });
+	return askStatus({ type: 'offline-remove', collection });
 }
 
-/** Saves the kept collections from this build: after an update, or after an interrupted save. */
-export function resumeSaving(onProgress?: (progress: Progress) => void): Promise<OfflineStatus> {
-	return ask({ type: 'offline-resume' }, onProgress);
+/**
+ * Saves the kept collections from this build: after an update, or after an interrupted save. Asked on every visit, so the worker answers without the status, which would read the list of every built page (src/service-worker/index.ts); a worker from an earlier build answers with it.
+ */
+export async function resumeSaving(onProgress?: (progress: Progress) => void): Promise<void> {
+	await ask({ type: 'offline-resume' }, onProgress);
 }
 
 export interface DocumentsProgress {

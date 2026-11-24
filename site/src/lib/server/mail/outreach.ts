@@ -19,6 +19,7 @@ import { newMessageId } from './mime.ts';
 import { sendMessage } from './outbound.ts';
 import { suppress, suppressedAmong } from './suppressions.ts';
 import { makeToken, readToken } from './tokens.ts';
+import { inGroupsOf, placeholdersFor } from '#lib/server/database-groups.ts';
 
 // ---------------------------------------------------------------------------
 // Time zones
@@ -343,7 +344,7 @@ export async function addRecipients(context: MailContext, batchIdentifier: strin
 				reason
 			);
 	});
-	for (let start = 0; start < statements.length; start += 100) await context.database.batch(statements.slice(start, start + 100));
+	for (const group of inGroupsOf(statements, 100)) await context.database.batch(group);
 	return { added, leftOut };
 }
 
@@ -396,14 +397,13 @@ export async function outreachAudience(context: MailContext, filter: AudienceFil
 	const inBatches = new Map<string, Set<string>>();
 	if (everyone.length) {
 		const emails = everyone.map((contact) => contact.email.toLowerCase());
-		for (let start = 0; start < emails.length; start += 90) {
-			const slice = emails.slice(start, start + 90);
+		for (const group of inGroupsOf(emails, 90)) {
 			const { results } = await context.database
 				.prepare(
 					`SELECT r.email, b.name, b.created_at AS createdAt FROM outreach_recipients r JOIN outreach_batches b ON b.identifier = r.batch_identifier
-					 WHERE b.status <> 'cancelled' AND r.status IN ('queued', 'sent', 'replied') AND r.email IN (${slice.map(() => '?').join(', ')})`
+					 WHERE b.status <> 'cancelled' AND r.status IN ('queued', 'sent', 'replied') AND r.email IN (${placeholdersFor(group)})`
 				)
-				.bind(...slice)
+				.bind(...group)
 				.all<{ email: string; name: string; createdAt: string }>();
 			for (const row of results) {
 				const label = `${row.name}, ${shortDay.format(new Date(row.createdAt))}`;

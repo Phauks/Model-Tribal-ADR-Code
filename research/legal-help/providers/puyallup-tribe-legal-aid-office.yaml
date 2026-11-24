@@ -1,0 +1,33 @@
+id: puyallup-tribe-legal-aid-office
+name: Legal Aid Office, Puyallup Tribe
+kind: tribal-legal-aid
+operator: tribal-government
+link: https://www.puyalluptribe-nsn.gov/member-services/tribal-justice-safety/legal-aid-office/
+link_label: Legal Aid Office
+services:
+- legal-advice
+- representation
+- referrals
+- wills
+who_can_use: Puyallup tribal members, civil matters only.
+serves:
+- states:
+  - WA
+  scope: members
+  nations:
+  - puyallup-tribe-of-the-puyallup-reservation
+  counties:
+  - King
+  - Pierce
+  - Thurston
+  text: Free legal services to members, advice about legal options, and referrals; three attorneys; tribal, county and federal courts in King, Pierce and Thurston counties.
+  source: puyallup-legal-aid-office
+sources:
+- id: puyallup-legal-aid-office
+  title: Legal Aid Office
+  publisher: Puyallup Tribe
+  link: https://www.puyalluptribe-nsn.gov/member-services/tribal-justice-safety/legal-aid-office/
+  accessed: '2026-11-24'
+  verification: page-read
+  supports: Services, eligibility and counties.
+checked: '2026-11-24'

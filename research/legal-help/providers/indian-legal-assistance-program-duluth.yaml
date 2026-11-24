@@ -1,0 +1,31 @@
+id: indian-legal-assistance-program-duluth
+name: Indian Legal Assistance Program
+kind: legal-aid
+operator: nonprofit
+link: https://mn.gov/law-library/research-links/legal-referrals/carlton.jsp
+link_label: Listing in the Minnesota State Law Library’s Carlton County referrals
+services:
+- representation
+who_can_use: The Indian population and low-income people in the five-county region of Northeastern Minnesota.
+serves:
+- states:
+  - MN
+  scope: named-nations
+  nations:
+  - fond-du-lac-band
+  - bois-forte-band
+  - grand-portage-band
+  text: Civil and criminal representation to the Indian population and low-income individuals throughout the five county region and four Indian Reservations in Northeastern Minnesota.
+  source: minnesota-state-law-library-carlton-county-referrals
+  match: inferred
+  note: The source does not name the four reservations; the three bands with reservations in Northeastern Minnesota are matched (Bois Forte has two reservation areas).
+sources:
+- id: minnesota-state-law-library-carlton-county-referrals
+  title: Carlton County Legal Referrals
+  publisher: Minnesota State Law Library
+  link: https://mn.gov/law-library/research-links/legal-referrals/carlton.jsp
+  accessed: '2026-11-24'
+  verification: page-read
+  supports: Duluth address and phones (218) 727-2881 / 1-888-249-3205; description quoted in serves.
+note: No website of its own was found.
+checked: '2026-11-24'

@@ -1,5 +1,6 @@
 <script lang="ts" module>
 	import { isShadedMapView, type ShadedMapView } from '#lib/shaded-map-views.ts';
+	import { readStored, writeStored } from '#lib/browser-storage.ts';
 
 	/** The views of the map on /nations/map; each is a set of layers over the same basemap. The shaded views color the land areas by a fact about their nations (src/lib/shaded-map-views.ts). */
 	export type TileMapView = 'states' | 'regions' | 'lands' | ShadedMapView;
@@ -125,24 +126,10 @@
 	const baseStorage = 'map-base';
 	const placeNamesStorage = 'map-place-names';
 	const outlinesStorage = 'map-land-outlines';
-	function stored(key: string): string | null {
-		try {
-			return localStorage.getItem(key);
-		} catch {
-			return null;
-		}
-	}
-	function store(key: string, value: string): void {
-		try {
-			localStorage.setItem(key, value);
-		} catch {
-			// Storage can be off, as in a private window; the choice then lasts for this page.
-		}
-	}
-	const storedBase = typeof window === 'undefined' ? null : stored(baseStorage);
+	const storedBase = typeof window === 'undefined' ? null : readStored(baseStorage);
 	let baseMap = $state<TileMapBase>(tileMapBases.some((entry) => entry.value === storedBase) ? (storedBase as TileMapBase) : 'map');
-	let placeNames = $state(typeof window === 'undefined' || stored(placeNamesStorage) !== 'off');
-	let outlines = $state(typeof window === 'undefined' || stored(outlinesStorage) !== 'off');
+	let placeNames = $state(typeof window === 'undefined' || readStored(placeNamesStorage) !== 'off');
+	let outlines = $state(typeof window === 'undefined' || readStored(outlinesStorage) !== 'off');
 	let layersOpen = $state(false);
 	let layersButton: HTMLButtonElement | undefined;
 	let layersMenu: HTMLElement | undefined = $state();
@@ -151,9 +138,9 @@
 	const hasLandAreas = $derived(oneNation || view === 'lands' || (isShadedMapView(view) && by === 'nation'));
 
 	$effect(() => {
-		store(baseStorage, baseMap);
-		store(placeNamesStorage, placeNames ? 'on' : 'off');
-		store(outlinesStorage, outlines ? 'on' : 'off');
+		writeStored(baseStorage, baseMap);
+		writeStored(placeNamesStorage, placeNames ? 'on' : 'off');
+		writeStored(outlinesStorage, outlines ? 'on' : 'off');
 	});
 	// A new base map or switch redraws the map's layers on the same map, as changing the view does.
 	let styledWith = '';

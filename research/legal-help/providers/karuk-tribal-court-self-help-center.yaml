@@ -1,0 +1,28 @@
+id: karuk-tribal-court-self-help-center
+name: Karuk Tribal Court Self Help Center
+kind: self-help-center
+operator: tribal-court
+link: https://www.karuktribalcourt.org/self-help-center
+link_label: Self Help Center
+services:
+- forms-help
+- legal-information
+- referrals
+who_can_use: Karuk tribal members and their families, for civil matters.
+serves:
+- states:
+  - CA
+  scope: members
+  nations:
+  - karuk-tribe
+  text: 'Help filling out paperwork for the Karuk Tribal Court or California Superior Court: custody and visitation, divorce, protection orders, evictions, name changes, guardianship, adoption; no legal advice.'
+  source: karuk-tribal-court-self-help-center
+sources:
+- id: karuk-tribal-court-self-help-center
+  title: Self Help Center
+  publisher: Karuk Tribal Court
+  link: https://www.karuktribalcourt.org/self-help-center
+  accessed: '2026-11-24'
+  verification: page-read
+  supports: Who it helps, case types, no legal advice.
+checked: '2026-11-24'

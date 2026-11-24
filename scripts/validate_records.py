@@ -33,12 +33,23 @@ Checks:
     <topic>/<letter>/<profile id>.yaml, names an existing Tribe profile, and
     its last_searched date is the latest search date, and its status is
     'found' exactly when one of its searches found something
+  - each data table the website or the scripts read (TABLES: the tribal law
+    provisions, the gaming compact tables and the tribal court opinions) has the
+    columns its schema lists, each row validates against it with empty cells
+    left out, its key columns are unique, and the nations and source records it
+    names exist
+  - the Supreme Court files (content/supreme-court/): each Court's chief is a
+    Chief Justice in justices.yaml, every seat and appointing President there
+    is in people.yaml, and every source they name exists
   - (warning only) every tribe profile forum 'kind' names a method record
+  - (warning only) every record pattern and data table matches at least one
+    file, so a folder that is missing or renamed is not skipped in silence
 
 Run from the repository root:  python3 scripts/validate_records.py
 Requires the packages in scripts/requirements.txt.
 """
 
+import csv
 import datetime
 import hashlib
 import json
@@ -46,6 +57,7 @@ import pathlib
 import re
 import sys
 import unicodedata
+from typing import NamedTuple
 
 import yaml
 from jsonschema import Draft202012Validator
@@ -80,12 +92,45 @@ RECORD_FOLDERS = [
     ("content/methods/*.yaml", "method.schema.json"),
     ("content/documents/*/*.yaml", "document-history.schema.json"),
     ("content/stories/*/*.yaml", "story.schema.json"),
+    ("content/biographies/*.yaml", "biography.schema.json"),
     ("content/variables/*.yaml", "variable.schema.json"),
+    # No provision or commentary files exist yet. The patterns stay for the model
+    # code's text; until it is written, the run warns that they match nothing.
     ("content/provisions/*.md", "provision.schema.json"),
     ("content/commentary/*.md", "commentary.schema.json"),
+    ("content/supreme-court/courts.yaml", "supreme-court-courts.schema.json"),
+    ("content/supreme-court/justices.yaml", "supreme-court-justices.schema.json"),
+    ("content/supreme-court/people.yaml", "supreme-court-people.schema.json"),
     ("research/sessions/*/*.md", "research-session.schema.json"),
     ("research/outreach/*.yaml", "outreach-organization.schema.json"),
+    ("research/legal-help/providers/*.yaml", "legal-help-provider.schema.json"),
     ("research/search-logs/*/*/*.yaml", "search-log.schema.json"),
+    ("research/reading-links/sites.yaml", "reading-link-sites.schema.json"),
+]
+
+
+class Table(NamedTuple):
+    """A CSV data table, whose schema describes one row. 'key' is the columns that
+    together tell rows apart; 'nations' and 'sources' are the columns that name
+    Tribe profiles (several separated by ';') and source records."""
+    path: str
+    schema: str
+    key: tuple[str, ...]
+    nations: tuple[str, ...] = ()
+    sources: tuple[str, ...] = ()
+
+
+TABLES = [
+    Table("research/tribal-law/provisions.csv", "tribal-law-provisions.schema.json", ("id",), nations=("nation",)),
+    Table("research/gaming/compact-documents.csv", "compact-documents.schema.json", ("id",),
+          nations=("nations",), sources=("federal_register.source",)),
+    Table("research/gaming/compact-clauses.csv", "compact-clauses.schema.json", ("id",), nations=("nations",)),
+    # A document two nations share is listed once for each.
+    Table("research/gaming/compact-history-versions.csv", "compact-history-versions.schema.json", ("nation", "id"),
+          nations=("nation",), sources=("source",)),
+    Table("research/gaming/compact-context.csv", "compact-context.schema.json", ("id",), sources=("source",)),
+    Table("research/tribal-court-opinions/opinions.csv", "tribal-court-opinions.schema.json", ("case_id",),
+          nations=("nations",)),
 ]
 
 
@@ -97,6 +142,22 @@ def load_record(path: pathlib.Path):
             raise ValueError("has no YAML front matter")
         text = match.group(1)
     return dates_as_text(yaml.safe_load(text))
+
+
+def load_table(path: pathlib.Path) -> tuple[list[str], list[dict]]:
+    """A CSV table's columns and its rows. Empty cells are left out of each row, so
+    a schema's 'required' means the cell may not be empty."""
+    with path.open(encoding="utf-8", newline="") as handle:
+        reader = csv.DictReader(handle)
+        columns = list(reader.fieldnames or [])
+        rows = []
+        for number, row in enumerate(reader, 1):
+            if None in row:
+                raise ValueError(f"row {number} has more cells than the header")
+            if None in row.values():
+                raise ValueError(f"row {number} has fewer cells than the header")
+            rows.append({column: value for column, value in row.items() if value != ""})
+    return columns, rows
 
 
 def dates_as_text(value):
@@ -365,6 +426,69 @@ def check_search_logs(logs: list, errors: list[str]) -> None:
             errors.append(f"{path}: last_searched is {record.get('last_searched')} but the latest search is {max(dates)}")
 
 
+def check_table(table: Table, columns: list[str], rows: list[dict], schema: dict, validator,
+                nation_ids: set, sources: set, errors: list[str]) -> None:
+    """One data table: its columns, each row against the schema, unique keys, and
+    the nations and source records it names."""
+    path = table.path
+    expected = list(schema.get("properties", {}))
+    missing = [column for column in expected if column not in columns]
+    extra = [column for column in columns if column not in expected]
+    if missing:
+        errors.append(f"{path}: the header lacks the column(s) {', '.join(missing)} that {table.schema} lists")
+    if extra:
+        errors.append(f"{path}: the column(s) {', '.join(extra)} are not in {table.schema}")
+    if missing or extra:
+        return
+    seen: dict[tuple, int] = {}
+    for number, row in enumerate(rows, 1):
+        key = tuple(row.get(column, "") for column in table.key)
+        name = f"{path}: row {number} ({' '.join(key)})"
+        for error in validator.iter_errors(row):
+            location = "/".join(str(part) for part in error.absolute_path) or "(row)"
+            errors.append(f"{name}: {location}: {error.message}")
+        if key in seen:
+            errors.append(f"{name}: {', '.join(table.key)} repeats row {seen[key]}")
+        else:
+            seen[key] = number
+        for column in table.nations:
+            for nation in (part.strip() for part in row.get(column, "").split(";")):
+                if nation and nation not in nation_ids:
+                    errors.append(f"{name}: {column} names a missing Tribe profile '{nation}'")
+        for column in table.sources:
+            if row.get(column) and row[column] not in sources:
+                errors.append(f"{name}: {column} names a missing source record '{row[column]}'")
+
+
+def check_supreme_court(courts: list, justices: list, people: list, sources: set, errors: list[str]) -> None:
+    """Links between the files in content/supreme-court/ that the site's Court,
+    Justice and President pages join (site/src/lib/server/supreme-courts.ts,
+    supreme-court-people.ts), and the source records they name."""
+    for path, record in courts + justices + people:
+        for key in (record.get("sources") or {}).values():
+            if key not in sources:
+                errors.append(f"{path}: sources names a missing source record '{key}'")
+    appointments = [entry for _, record in justices for entry in record.get("justices", [])]
+    chiefs = {entry.get("name") for entry in appointments if entry.get("role") == "Chief Justice"}
+    names = {entry.get("name") for entry in appointments}
+    for path, record in courts:
+        for court in record.get("courts", []):
+            if court.get("chief") not in chiefs:
+                errors.append(f"{path}: {court.get('key')}: chief '{court.get('chief')}' is not a Chief Justice in justices.yaml")
+    for path, record in justices:
+        for entry in record.get("justices", []):
+            if entry.get("follows") and entry["follows"] not in names:
+                errors.append(f"{path}: {entry.get('name')}: follows names no one in justices.yaml ('{entry['follows']}')")
+    for path, record in people:
+        seats = {appointment.get("seat") for person in record.get("justices", []) for appointment in person.get("appointments", [])}
+        presidents = {president.get("name") for president in record.get("presidents", [])}
+        for entry in appointments:
+            if entry.get("seat") not in seats:
+                errors.append(f"{path}: no one holds seat {entry.get('seat')} ({entry.get('name')} in justices.yaml)")
+            if entry.get("appointed_by") not in presidents:
+                errors.append(f"{path}: no President named '{entry.get('appointed_by')}', who appointed {entry.get('name')} in justices.yaml")
+
+
 def check_outreach(outreach: list, errors: list[str]) -> None:
     """Links inside and between outreach records (research/outreach/)."""
     outreach_ids = {path.stem for path, _ in outreach}
@@ -419,9 +543,13 @@ def main() -> int:
     for example_name, schema_name in EXAMPLES.items():
         validate(SCHEMA_DIRECTORY / "examples" / example_name, schema_name)
 
+    warnings: list[str] = []
     records: dict[str, list[tuple[pathlib.Path, dict]]] = {}
     for pattern, schema_name in RECORD_FOLDERS:
-        for path in sorted(ROOT.glob(pattern)):
+        paths = sorted(ROOT.glob(pattern))
+        if not paths:
+            warnings.append(f"{pattern} matches no files, so nothing there is checked against {schema_name}")
+        for path in paths:
             record = validate(path, schema_name)
             if isinstance(record, dict):
                 records.setdefault(schema_name, []).append((path, record))
@@ -430,6 +558,16 @@ def main() -> int:
     glossary = {path.stem for path, _ in records.get("glossary.schema.json", [])}
     provisions = {path.stem for path, _ in records.get("provision.schema.json", [])}
     sessions = {path.stem for path, _ in records.get("research-session.schema.json", [])}
+    for path, record in records.get("biography.schema.json", []):
+        if record.get("key") != path.stem:
+            errors.append(f"{path}: key does not match the file name")
+        cited = [*record.get("names", []), *record.get("nations", []), *record.get("events", [])]
+        for fact in cited:
+            if fact.get("source") not in sources:
+                errors.append(f"{path}: names a missing source record '{fact.get('source')}'")
+        for entry in record.get("cases", []):
+            if entry.get("case") not in sources:
+                errors.append(f"{path}: cases names a missing source record '{entry.get('case')}'")
     methods = {path.stem: record for path, record in records.get("method.schema.json", [])}
 
     def check_methods(path: pathlib.Path, field: str, identifiers) -> None:
@@ -460,9 +598,19 @@ def main() -> int:
         if list(dict.fromkeys(named)) != list(record.get("tribes", [])):
             errors.append(f"{path}: tribes must list the nations in nations_in_case, in the same order")
 
+    def check_record_box(path: pathlib.Path, record: dict) -> None:
+        """A case or law box on the record cites only sources that have records, and a case box only on a case."""
+        if record.get("case_box") and record.get("citation", {}).get("type") != "legal_case":
+            errors.append(f"{path}: case_box is only for court cases; a law uses law_box")
+        for field in ("case_box", "law_box"):
+            for key in re.findall(r"@([a-z0-9]+(?:-[a-z0-9]+)*)", json.dumps(record.get(field) or {}, ensure_ascii=False)):
+                if key not in sources:
+                    errors.append(f"{path}: {field} cites a missing source record '{key}'")
+
     for path, record in records.get("source.schema.json", []):
         if record.get("key") != path.stem:
             errors.append(f"{path}: key does not match the file name")
+        check_record_box(path, record)
         for session in record.get("found_in", []):
             if session not in sessions:
                 errors.append(f"{path}: found_in names a missing research session '{session}'")
@@ -524,6 +672,25 @@ def main() -> int:
         check_official_images(path, record, errors)
 
     check_outreach(records.get("outreach-organization.schema.json", []), errors)
+    check_supreme_court(
+        records.get("supreme-court-courts.schema.json", []), records.get("supreme-court-justices.schema.json", []),
+        records.get("supreme-court-people.schema.json", []), sources, errors,
+    )
+
+    table_rows = 0
+    for table in TABLES:
+        path = ROOT / table.path
+        if not path.exists():
+            warnings.append(f"{table.path} does not exist, so it is not checked against {table.schema}")
+            continue
+        try:
+            columns, rows = load_table(path)
+        except (ValueError, csv.Error, UnicodeDecodeError) as problem:
+            errors.append(f"{table.path}: {problem}")
+            continue
+        validator = Draft202012Validator(schemas[table.schema], registry=registry)
+        check_table(table, columns, rows, schemas[table.schema], validator, nation_ids, sources, errors)
+        table_rows += len(rows)
     check_search_logs(records.get("search-log.schema.json", []), errors)
 
     tribe_ids = {record.get("id") for _, record in records.get("tribe.schema.json", [])}
@@ -583,6 +750,9 @@ def main() -> int:
     # In source records only the annotation is prose; citation data such as
     # date-parts: [[2021]] would look like a term link.
     texts += [(path, record["annotation"]) for path, record in records.get("source.schema.json", []) if record.get("annotation")]
+    # Each Court's history on the Supreme Court pages cites source records.
+    texts += [(path, court.get("history", "")) for path, record in records.get("supreme-court-courts.schema.json", [])
+              for court in record.get("courts", [])]
     for path, raw_text in texts:
         text = CODE.sub("", raw_text)  # ignore code examples
         for key in CITATION_KEY.findall(text):
@@ -596,13 +766,17 @@ def main() -> int:
         # A warning, not an error: forum kinds are an open vocabulary, so an
         # unknown method still passes (decision record 0012).
         print(f"warning: forum kind '{kind}' ({count} profile(s)) has no method record in content/methods/")
+    for warning in warnings:
+        # A warning, not an error: a pattern may wait for content not written yet.
+        print(f"warning: {warning}")
     for error in errors:
         print(error)
     if errors:
         print(f"\n{len(errors)} problem(s).")
         return 1
     counted = sum(len(items) for items in records.values())
-    print(f"All {len(schemas)} schemas, {len(EXAMPLES)} examples and {counted} records are valid; all links resolve.")
+    print(f"All {len(schemas)} schemas, {len(EXAMPLES)} examples, {counted} records and {table_rows} rows "
+          f"in {len(TABLES)} data tables are valid; all links resolve.")
     return 0
 
 

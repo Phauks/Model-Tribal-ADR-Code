@@ -30,6 +30,8 @@
 	const current = $derived(Math.max(0, map.views.findIndex((view) => view.key === currentKey)));
 	/** The Land Areas view is drawn with MapLibre over the site's tiles when the browser can (TileMap.svelte); the drawn map stays for print, offline reading and old devices. */
 	let tileMapWanted = $state(true);
+	/** Said to screen readers when the tiled map cannot start and the drawn map takes its place. */
+	let tileMapProblem = $state('');
 	let tileMapReady = $state(false);
 
 	function choose(key: NationMapView): void {
@@ -91,6 +93,7 @@
 			{/each}
 		</defs>
 	</svg>
+	<p class="visually-hidden" role="status">{tileMapProblem}</p>
 
 	{#if map.views.length > 1}
 		<div class="nation-map-picker">
@@ -118,6 +121,7 @@
 						onfail={() => {
 							tileMapWanted = false;
 							tileMapReady = false;
+							tileMapProblem = 'The interactive map could not be loaded, so the drawn map is shown.';
 						}}
 					/>
 				</div>

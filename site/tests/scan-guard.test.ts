@@ -261,6 +261,8 @@ const fileIntakes: Record<string, string> = {
     "Pieces of a big file sent from the inbox as a link, written into its multipart object; finishLinkedFile puts the file in line, and the message and the link wait until it passes.",
   "src/routes/uploads/pieces/[reference]/[number]/+server.ts PUT Request.arrayBuffer":
     "Upload pieces, written into the upload’s multipart object; finishUpload puts the file in line.",
+  "src/lib/server/limited-body.ts formWithin Request.body":
+    "The public request form's body, read with a size limit and only turned back into form data. Its files are then read by readFile (request-form.ts) and stored with storeSentFile by saveRequest.",
   "src/lib/sha256.ts hashFile Blob.arrayBuffer":
     "Verify a file: hashes a file the reader picks, in their own browser. It is never sent or stored.",
   "src/lib/sha256.ts hashFile Blob.stream":

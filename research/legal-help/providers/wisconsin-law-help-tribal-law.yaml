@@ -1,0 +1,28 @@
+id: wisconsin-law-help-tribal-law
+name: Native American Issues & Tribal Law, Wisconsin Law Help
+kind: legal-information-site
+operator: nonprofit
+link: https://www.wislawhelp.org/page/635/menominee-tribal-court-pro-se-forms-packet
+link_label: Menominee Tribal Court Pro Se Forms Packet
+services:
+- forms
+- legal-information
+who_can_use: Anyone.
+serves:
+- states:
+  - WI
+  scope: named-nations
+  nations:
+  - menominee-indian-tribe-of-wisconsin
+  text: Menominee Tribal Court Pro Se Forms Packet (PDF), last updated October 8, 2025.
+  source: wisconsin-law-help-menominee-packet
+sources:
+- id: wisconsin-law-help-menominee-packet
+  title: Menominee Tribal Court Pro Se Forms Packet
+  publisher: Wisconsin Law Help
+  link: https://www.wislawhelp.org/page/635/menominee-tribal-court-pro-se-forms-packet
+  accessed: '2026-11-24'
+  verification: page-read
+  supports: Packet and date.
+note: The site also has a model tribal court forms PDF not yet read.
+checked: '2026-11-24'
