@@ -1,7 +1,7 @@
 import { beforeEach, describe, expect, it } from 'vitest';
 import type { D1Database } from '@cloudflare/workers-types/index.ts';
 import { everyDocument } from '#lib/permissions.ts';
-import { accessTo, endGrant, grantByIdentifier, grantsOf, listGrants, onAccessChanged, setGrant } from '#lib/server/access.ts';
+import { accessTo, endGrant, levelsFor, grantByIdentifier, grantsOf, listGrants, onAccessChanged, setGrant } from '#lib/server/access.ts';
 import { checkSeals, sealNewEntries } from '#lib/server/activity-seals.ts';
 import { activityPage } from '#lib/server/events.ts';
 import { invitePerson, matchSignIn, type SignedInPerson } from '#lib/server/people.ts';
@@ -38,6 +38,22 @@ describe('grants', () => {
 			lead
 		);
 		expect(await accessTo(database, writer, essay)).toEqual({ level: 'contribute', source: 'document-grant' });
+	});
+
+	it('gives lists of essays the same levels as asking one essay at a time', async () => {
+		await setGrant(
+			database,
+			{ personIdentifier: writer.identifier, subjectKind: 'essay', subjectIdentifier: essay.identifier, level: 'contribute', expiresAt: null, note: null },
+			lead
+		);
+		const other = 'i-legal-history-timeline';
+		for (const person of [lead, writer]) {
+			const levelFor = await levelsFor(database, person, 'essay');
+			for (const identifier of [essay.identifier, other]) {
+				expect(levelFor(identifier)).toBe((await accessTo(database, person, { kind: 'essay', identifier })).level);
+			}
+		}
+		expect((await levelsFor(database, writer, 'essay'))(essay.identifier)).toBe('contribute');
 	});
 
 	it('replaces a grant for the same document and keeps the old one in history', async () => {

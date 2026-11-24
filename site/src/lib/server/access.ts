@@ -76,6 +76,20 @@ export async function accessTo(
 	return documentAccess(person, subject, await grantsOf(database, person.identifier));
 }
 
+/**
+ * The person's level on any document of one kind, from one read of their
+ * grants. A list of documents uses it instead of asking accessTo for each one,
+ * which reads the grants again every time.
+ */
+export async function levelsFor(
+	database: D1Database,
+	person: SignedInPerson,
+	kind: AccessKind
+): Promise<(identifier: string) => AccessLevel> {
+	const grants = await grantsOf(database, person.identifier);
+	return (identifier) => documentAccess(person, { kind, identifier } as AccessSubject, grants).level;
+}
+
 /** Every current grant, for the Access page, optionally for one person. */
 export async function listGrants(
 	database: D1Database,
