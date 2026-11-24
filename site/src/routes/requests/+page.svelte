@@ -16,7 +16,7 @@
 </script>
 
 <svelte:head>
-	<title>Make a request · Model Tribal ADR Code</title>
+	<title>{data.toTeam ? 'Write to the nation’s team' : 'Make a request'} · Model Tribal ADR Code</title>
 </svelte:head>
 
 <div class="reading">
@@ -25,11 +25,12 @@
 		<RequestSent {sent} />
 		<p><a href="/">Return to the home page</a></p>
 	{:else}
-		<h1>Make a request</h1>
-		<p class="lead">
+		{#if data.teamPage}<p class="small"><a href={data.teamPage.link}>{data.teamPage.title}</a></p>{/if}
+		<h1>{data.toTeam ? 'Write to the nation’s team' : 'Make a request'}</h1>
+		{#if !data.toTeam}<p class="lead">
 			Ask us to correct, restrict or remove material about a Native nation, ask to add a
 			nation that is missing, offer to contribute, or ask a question. No account is needed.
-		</p>
+		</p>{/if}
 
 		{#if !kind}
 			<form method="get" action="/requests">
@@ -52,6 +53,16 @@
 			<p class="small muted">
 				Please do not use public GitHub issues for a request about a nation.
 			</p>
+		{:else if data.toTeam}
+			<RequestForm
+				{kind}
+				nationIdentifier={data.nationIdentifier}
+				material={data.material}
+				{values}
+				{errors}
+				{problem}
+				toTeam
+			/>
 		{:else}
 			<p>
 				<strong>{requestKindLabels[kind]}.</strong>

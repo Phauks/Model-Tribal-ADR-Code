@@ -32,7 +32,7 @@ import {
 	type ChangeRow
 } from '#lib/server/nation-page-changes.ts';
 import { longestPauseText, pauseProblem } from '#lib/nation-page-review.ts';
-import { teamAnswerOutcomes, type TeamAnswerOutcome } from '#lib/nation-team-reports.ts';
+import { answersFor, type TeamAnswerOutcome } from '#lib/nation-team-reports.ts';
 import { atLeastTeamLevel } from '#lib/nation-teams.ts';
 import { answerPause, currentPause } from '#lib/server/nation-page-review.ts';
 import { answerReport, reportsForTeam } from '#lib/server/nation-team-reports.ts';
@@ -331,7 +331,7 @@ export const actions: Actions = {
 		);
 		if (!report) return fail(404, { problem: 'That report is already closed.' });
 		const outcome = formText(form, 'outcome') as TeamAnswerOutcome | null;
-		if (!outcome || !teamAnswerOutcomes.includes(outcome)) return fail(400, { problem: 'Say whether you fixed it.' });
+		if (!outcome || !answersFor(report.sender !== null).includes(outcome)) return fail(400, { problem: 'Choose an answer.' });
 		await answerReport(database, { identifier: report.identifier, nationIdentifier: nation.identifier }, outcome, formText(form, 'note', 2000), person);
 		return { done: `Thank you. The project sees your answer to report ${report.reference}.` };
 	},
