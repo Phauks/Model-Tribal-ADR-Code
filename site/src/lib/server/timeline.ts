@@ -44,6 +44,7 @@ import { documentHeading, documentHistoryView, nationDocumentHistories, type Doc
 import { SourceUses, whereInSource, type CitationMark } from './source-uses.ts';
 import { opinionsSourceKey, tribalCourtOpinions } from './tribal-court-opinions.ts';
 import { lawNames } from '../law-names.ts';
+import { isLawRecord } from './law-records.ts';
 
 /** The heading the timeline's sources are filed under in a page's References list. */
 export const timelineHeading = 'Timeline';
@@ -165,7 +166,8 @@ function lawEntry(record: SourceRecord, context: boolean): TimelineEntry | undef
 		date,
 		title,
 		citation: lawCitation(record, title) || undefined,
-		link: recordLink(record),
+		// The law's own page (law-pages.ts), else its text.
+		link: isLawRecord(record) ? `/laws/${record.key}` : recordLink(record),
 		nations: record.tribes,
 		context: context || undefined
 	};

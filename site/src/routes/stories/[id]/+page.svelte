@@ -32,6 +32,9 @@
 			},
 			{ field: 'community', label: 'Community', items: story.community ? [{ text: story.community }] : [] },
 			{ field: 'kind', label: 'Kind', items: [{ text: story.kind }] },
+			{ field: 'account', label: 'Account', items: story.account ? [{ text: story.account.type, badges: [{ text: story.account.type }] }] : [] },
+			{ field: 'recorded', label: 'Given', items: story.account?.recorded ? [{ text: story.account.recorded }] : [] },
+			{ field: 'recordedBy', label: 'Recorded by', items: story.account?.recordedBy ? [{ text: story.account.recordedBy }] : [] },
 			{ field: 'length', label: 'Length', items: length ? [{ text: length }] : [] },
 			{
 				field: 'methods',
@@ -117,6 +120,19 @@
 		</Collapsible>
 	{/if}
 
+	{#if story.affectedBy.length > 0}
+		<Collapsible heading="Affected by" identifier="affected-by-heading">
+			<dl class="summary-list affected-by">
+				{#each story.affectedBy as item (item.name)}
+					<div>
+						<dt>{#if item.link}<a href={item.link}>{#if item.italic}<i>{item.name}</i>{:else}{item.name}{/if}</a>{:else}{item.name}{/if}<span class="small muted affected-kind">{item.what}</span></dt>
+						<dd>Named at {item.where}</dd>
+					</div>
+				{/each}
+			</dl>
+		</Collapsible>
+	{/if}
+
 	<Collapsible heading="Source" identifier="tellings-heading">
 		{#if story.tellings.length > 1}
 			<p>The nation’s own telling is listed first, where there is one.</p>
@@ -178,6 +194,11 @@
 
 	.full-text .omission {
 		font-style: italic;
+	}
+
+	.affected-kind {
+		display: block;
+		font-weight: normal;
 	}
 
 	.tellings {

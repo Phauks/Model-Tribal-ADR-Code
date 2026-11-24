@@ -1,0 +1,71 @@
+id: oglala-standing-bear-first-days-at-carlisle
+title: First Days at Carlisle
+nations:
+- oglala-sioux-tribe
+kind: historical-account
+length: short
+excerpts:
+- telling: my-people-the-sioux-1928
+  locator: page 137, the interpreter's words to the first class
+  text: Do you see all these marks on the blackboard? Well, each word is a white man’s name. They are going to give each one of you one of these names by which you will hereafter be known.
+  words: 37
+  sha256: 386e6d44dabf92e282c521cb63096f82416270a9cf0d850be7e428367e7d5c50
+- telling: my-people-the-sioux-1928
+  locator: page 137
+  text: Soon we all had the names of white men sewed on our backs.
+  words: 13
+  sha256: c2776a9d929e1a8bde7d04cb15eb30a8a66b595ff1202edd0ab0a8e5af45af3a
+methods: []
+topics:
+- boarding-schools
+- names
+account:
+  type: firsthand
+  form: memoir
+  recorded: '1928'
+  recorded_by: Houghton Mifflin Company
+affected_by:
+- event: boarding-schools
+  named_in:
+    telling: my-people-the-sioux-1928
+    locator: chapter XIV, pages 133-147
+    words: the Carlisle Indian School
+tellings:
+- id: my-people-the-sioux-1928
+  source: standing-bear-1928-my-people-the-sioux
+  locator: chapter XIV, pages 133-147
+  as_of: '1928'
+  teller:
+    form: name-and-nation
+    name: Luther Standing Bear
+    nation: oglala-sioux-tribe
+    role: author; a member of the first class at Carlisle, 1879
+  published_by: Houghton Mifflin Company
+  authority: member-author
+  verification: read-in-full
+  permitted_uses:
+    level: quote
+    scope:
+    - web
+    - print
+    - ebook
+    - offline-pack
+  access:
+    level: nation-review-first
+  note: Both quotations were checked word for word against the page image of page 137 in the Internet Archive scan.
+access:
+  level: nation-review-first
+anthology:
+  candidate: true
+  reason: A short, complete chapter in the author's own words, in the public domain (project analysis).
+  telling: my-people-the-sioux-1928
+  permission_from:
+  - holder: Oglala Sioux Tribe
+    for: cultural-authority
+    nation: oglala-sioux-tribe
+  status: not-asked
+sensitivity:
+  tribal_review_required: true
+review_status: drafted-from-public-sources
+found_in:
+- 2026-11-24-impact-accounts

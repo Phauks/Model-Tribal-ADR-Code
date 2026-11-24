@@ -29,6 +29,21 @@ topics:
 - internal-conflict
 - reunification
 - constitution
+account:
+  type: published-history
+  form: history
+  recorded_by: Cherokee Nation
+affected_by:
+- record: treaty-with-the-cherokee-1835
+  named_in:
+    telling: cherokee-history-page
+    locator: section “Forced Removal, Internal Conflict, and Reunification,” first paragraph
+    words: the Treaty of New Echota
+- event: removal
+  named_in:
+    telling: cherokee-history-page
+    locator: section “Forced Removal, Internal Conflict, and Reunification,” first paragraph
+    words: the Trail of Tears
 tellings:
 - id: cherokee-history-page
   source: cherokee-nation-history-page

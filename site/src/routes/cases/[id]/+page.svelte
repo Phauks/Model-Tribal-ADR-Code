@@ -10,6 +10,7 @@
 	import Breadcrumbs from '#lib/components/Breadcrumbs.svelte';
 	import CountBadge from '#lib/components/CountBadge.svelte';
 	import GlancePanel from '#lib/components/GlancePanel.svelte';
+	import ImpactAccounts from '#lib/components/ImpactAccounts.svelte';
 	import RecordPage from '#lib/components/RecordPage.svelte';
 	import SourceList from '#lib/components/SourceList.svelte';
 	import TopicBadges from '#lib/components/TopicBadges.svelte';
@@ -97,6 +98,8 @@
 			{#if data.nationNote}<p class="small muted">{data.nationNote}</p>{/if}
 		</section>
 	{/if}
+
+	<ImpactAccounts accounts={data.accounts} />
 
 	{#if data.readingHtml}
 		<section aria-labelledby="where-to-read">

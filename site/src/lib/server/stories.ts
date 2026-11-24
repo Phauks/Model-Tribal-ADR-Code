@@ -13,7 +13,9 @@
  * listed in one Sources section at the end of the page, as on nation pages.
  */
 import { sourceCitations } from 'virtual:source-citations';
+import { affectedByView, type AffectedByView } from './impact-accounts.ts';
 import {
+	accountTypeLabels,
 	authorityLabels,
 	labelFor,
 	lengthLabels,
@@ -156,6 +158,10 @@ export interface StoryView extends StorySummary {
 	excerpts: ExcerptView[];
 	tellings: TellingView[];
 	protocols: ProtocolView[];
+	/** Whose account it is, and when and by whom it was recorded. */
+	account?: { type: string; recorded?: string; recordedBy?: string };
+	/** The laws, treaties, cases and events the account names (impact-accounts.ts). */
+	affectedBy: AffectedByView[];
 	sources: SourceEntry[];
 }
 
@@ -381,6 +387,14 @@ export function storyView(record: StoryRecord): StoryView {
 		excerpts,
 		tellings: tellingViews,
 		protocols,
+		account: record.account
+			? {
+					type: labelFor(accountTypeLabels, record.account.type),
+					recorded: [record.account.form ? spaced(record.account.form).replace(/^./, (letter) => letter.toLocaleUpperCase('en-US')) : '', record.account.place, partialDate(record.account.recorded)].filter(Boolean).join(', ') || undefined,
+					recordedBy: record.account.recorded_by
+				}
+			: undefined,
+		affectedBy: (record.affected_by ?? []).map(affectedByView),
 		sources: uses.list
 	};
 }
