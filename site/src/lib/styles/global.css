@@ -391,9 +391,17 @@ blockquote > footer {
 /*
  * Tables. Data tables that readers sort or search use DataTable.svelte
  * (spikes/tables/REPORT.md); its rules are in lib/tables/table-definition.ts.
- * Wide tables scroll in their own box.
+ * Wide tables scroll in their own box, and the box ends at the edge of the
+ * column, so a table never pushes the page sideways (Trevor, Nov. 24, 2026:
+ * "it should always keep the end of the table locked, so you cannot go over
+ * the side"). The box is positioned so that it also holds anything placed
+ * inside a cell, such as the hidden "Recognition:" label of the badges: placed
+ * against the page, that text sat out past a widened column and made the
+ * whole page scroll sideways.
  */
 .table-scroll {
+	position: relative;
+	max-width: 100%;
 	overflow-x: auto;
 	margin: 0 0 var(--space-5);
 }

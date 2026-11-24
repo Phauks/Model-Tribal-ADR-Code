@@ -707,18 +707,55 @@
 		background: var(--color-surface);
 	}
 
-	/* Full screen: the table fills the screen and scrolls inside it. */
+	/*
+	 * Full screen: the table fills the screen under its controls and scrolls
+	 * inside its own box, both ways, so its end stays at the edge of the screen
+	 * and the sideways scroll bar is always in view (Trevor, Nov. 24, 2026:
+	 * "it should always keep the end of the table locked, so you cannot go over
+	 * the side"). The frame itself never scrolls sideways; it scrolls down only
+	 * when the controls are taller than the screen. The header row stays at the
+	 * top as the rows scroll under it.
+	 */
 	.data-table:fullscreen,
 	.data-table.filling-window {
-		overflow: auto;
+		display: flex;
+		flex-direction: column;
+		overflow: hidden auto;
 		padding: var(--space-6);
 		background: var(--color-paper);
+	}
+
+	.data-table:fullscreen > *,
+	.data-table.filling-window > * {
+		flex: none;
+	}
+
+	.data-table:fullscreen > .table-scroll,
+	.data-table.filling-window > .table-scroll {
+		flex: 1 1 auto;
+		min-height: 12rem;
+		overflow: auto;
+		margin-bottom: 0;
+	}
+
+	.data-table:fullscreen thead th,
+	.data-table.filling-window thead th {
+		position: sticky;
+		top: 0;
+		z-index: 2;
+		box-shadow: inset 0 -1px 0 var(--color-line);
 	}
 
 	.data-table.filling-window {
 		position: fixed;
 		inset: 0;
 		z-index: 1000;
+	}
+
+	/* The table and its controls end at the edge of the column, however wide the table is. */
+	.data-table {
+		min-width: 0;
+		max-width: 100%;
 	}
 
 	.table-empty {
