@@ -77,3 +77,23 @@ nations_in_case:
   - nation: rosebud-sioux-tribe-of-the-rosebud-indian-reservation
     named_as: Rosebud Sioux Tribe
     role: party
+case_box:
+  background: |-
+    In 1989 the Rosebud Sioux Tribe contracted with Val-U Construction to build housing on the Rosebud Reservation, under a contract with an arbitration clause. The Tribe ended the contract in 1990, refused on sovereign immunity grounds to take part in the arbitration Val-U demanded, and sued in federal court instead. The American Arbitration Association heard the case without the Tribe and awarded Val-U $793,943.58, and the Eighth Circuit later held that the arbitration clause waived the Tribe's immunity for claims under the contract [@val-u-construction-company-v-rosebud-sioux-tribe, pp. 575-576].
+  question: |-
+    Is an arbitration award entered against a Tribe that refused to participate in the arbitration valid and preclusive, given the Tribe's sovereign-immunity objection?
+  holding: |-
+    Yes. Relying on its earlier ruling in the same dispute that the contract's arbitration clause waived the Tribe's immunity, the court held that the award was valid. The Tribe's contract claims were barred by the award because it chose not to take part. The court affirmed summary judgment for the contractor (and the denial of prejudgment interest).
+  quotes:
+  - text: "We conclude that the Tribe's breach of contract claims are barred by the arbitration award. The Tribe was given a full and fair opportunity to litigate the issues at the arbitration hearing, but chose not to participate in the hearing, knowing full well that an award would be entered against it by the arbitrator."
+  treatment: |-
+    Cited by the First Circuit in *Ninigret* (2000) as finding waiver at 146 F.3d at 577-78. [@ninigret-development-corporation-v-narragansett-indian-wetuomuck-housing-authority]
+  topics:
+  - "Dispute resolution and arbitration"
+  - "Enforcement of awards, orders and judgments"
+  - "Sovereign immunity"
+  reading:
+    title: "*Val-U Construction Co. v. Rosebud Sioux Tribe* (1998)"
+    text: |-
+      A nation that has agreed to arbitrate may be bound by an award even if it refuses to participate.
+subjects: [sovereign-immunity, dispute-resolution]

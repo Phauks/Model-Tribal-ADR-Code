@@ -237,6 +237,80 @@
         }
       }
     },
+    "case_box": {
+      "type": "object",
+      "additionalProperties": false,
+      "minProperties": 1,
+      "description": "The case's box: its summary, quotations and treatment, which every essay that places the case (\":::: case <key>\" and \"::::\" with nothing between) and the case's page show, and the print book prints (site/src/lib/essays/record-boxes.ts, pdf/pipeline/record-boxes.mjs; Trevor, Nov. 24, 2026). Each text is Markdown in the essay syntax and may cite sources as [@key, at 5]. Its reading, if any, follows the box as an Analysis block.",
+      "properties": {
+        "background": {
+          "type": "string",
+          "minLength": 1,
+          "description": "The law and events behind the case."
+        },
+        "question": {
+          "type": "string",
+          "minLength": 1,
+          "description": "The question the court decided."
+        },
+        "holding": {
+          "type": "string",
+          "minLength": 1,
+          "description": "What the court held. The case's preview shows it (site/src/lib/server/case-previews.ts)."
+        },
+        "quotes": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "$ref": "#/$defs/boxQuote"
+          },
+          "description": "The court's words, each cited to the case at its pinpoint."
+        },
+        "treatment": {
+          "type": "string",
+          "minLength": 1,
+          "description": "How later courts treated the case. Paragraphs are separated by a blank line."
+        },
+        "topics": {
+          "type": "array",
+          "minItems": 1,
+          "uniqueItems": true,
+          "items": {
+            "type": "string",
+            "minLength": 1
+          },
+          "description": "The topics the index of cases by topic lists the case under, as shown: \"Sovereign immunity\" (site/src/lib/essays/case-topics.ts)."
+        },
+        "reading": { "$ref": "#/$defs/boxReading" }
+      }
+    },
+    "law_box": {
+      "type": "object",
+      "additionalProperties": false,
+      "minProperties": 1,
+      "description": "The law's box: what it does, quotations from it and how it was treated, which every essay that places the law (\":::: law <key>\" and \"::::\" with nothing between) shows and the print book prints (site/src/lib/essays/record-boxes.ts, pdf/pipeline/record-boxes.mjs). Each text is Markdown in the essay syntax and may cite sources as [@key, sec. 3].",
+      "properties": {
+        "summary": {
+          "type": "string",
+          "minLength": 1,
+          "description": "What the law does."
+        },
+        "quotes": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "$ref": "#/$defs/boxQuote"
+          },
+          "description": "The law's words, each cited to the law at its section."
+        },
+        "treatment": {
+          "type": "string",
+          "minLength": 1,
+          "description": "Amendments, court readings, repeal. Paragraphs are separated by a blank line."
+        },
+        "reading": { "$ref": "#/$defs/boxReading" }
+      }
+    },
     "reading_links": {
       "type": "object",
       "description": "Other places a reader can read this case or law, found and checked by scripts/caselaw/reading_links.py from the settings in research/reading-links/sites.yaml. The website shows them beside the citation.",
@@ -372,6 +446,15 @@
       "uniqueItems": true,
       "description": "Free tags for grouping in bibliographies, e.g. history, treatise, court-connected-program, full-faith-and-credit. Not a fixed list."
     },
+    "subjects": {
+      "type": "array",
+      "minItems": 1,
+      "uniqueItems": true,
+      "items": {
+        "enum": ["land", "treaties", "jurisdiction", "criminal", "family", "gaming", "environment", "religion", "culture", "government", "citizenship", "taxation", "trust", "sovereign-immunity", "tribal-courts", "dispute-resolution"]
+      },
+      "description": "The subjects of Indian law a case or law belongs to, from a closed list, so the legal history essay and the timeline can be read by subject (refactor and improvements report, Nov. 24, 2026, section 9.3, step 4). Dispute resolution stays one of them (Trevor, Nov. 24, 2026). Shown as: Land; Treaties; Jurisdiction; Criminal law; Family and children; Gaming; Environment and natural resources; Religion; Culture; Government; Citizenship and status; Taxation; Trust responsibility; Sovereign immunity; Tribal courts; Dispute resolution. Unlike `topics`, which are free tags, these are a fixed list."
+    },
     "annotation": {
       "type": "string",
       "description": "Markdown. The annotated-bibliography entry: what the source is and why it matters to the project. Quotations carry pinpoints; the project's own judgments are labeled (project analysis)."
@@ -424,6 +507,38 @@
     }
   },
   "$defs": {
+    "boxReading": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["title", "text"],
+      "description": "A short, neutral reading of the entry's place in the law. An essay that places the box shows it right after the box as an \"Analysis\" block (record-boxes.ts, readingMarkdown); the case's own page does not. It is the site's interpretation, not a statement of the sources. Readings written for the model code belong in its commentary, not here (Trevor, Nov. 24, 2026).",
+      "properties": {
+        "title": { "type": "string", "minLength": 1, "description": "The Analysis block's title, naming what it reads: \"*Worcester v. Georgia* (1832)\" or \"Indian Citizenship Act (1924)\"." },
+        "text": { "type": "string", "minLength": 1, "description": "The reading, in the essay syntax's Markdown." }
+      }
+    },
+    "boxQuote": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["text"],
+      "properties": {
+        "text": {
+          "type": "string",
+          "minLength": 1,
+          "description": "The words quoted, verbatim from the official report or the enacted text, with \"...\" where words are left out (docs/style-guide.md). Markdown."
+        },
+        "pinpoint": {
+          "type": "string",
+          "minLength": 1,
+          "description": "Where the words are, as a citation's locator: \"p. 561\", \"pp. 536-538\", \"¶ 58\", \"sec. 3\". For a case, the page tells which opinion the words come from (site/src/lib/case-opinions.ts)."
+        },
+        "parenthetical": {
+          "type": "string",
+          "minLength": 1,
+          "description": "An Indigo Book parenthetical after the citation, without its parentheses, for words from a separate opinion: \"White, J., concurring\"."
+        }
+      }
+    },
     "courtDays": {
       "type": "array",
       "minItems": 1,

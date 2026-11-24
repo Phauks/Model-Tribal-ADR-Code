@@ -1,3 +1,4 @@
+import { peopleOfNation } from '#lib/server/biographies.ts';
 import { error } from '@sveltejs/kit';
 import type { OutlineItem, PageOutline } from '#lib/site-sections.ts';
 import geometry from 'virtual:map-geometry';
@@ -32,6 +33,8 @@ import { casePreviewList } from '#lib/server/case-previews.ts';
 import { courtAbbreviation } from '#lib/server/case-citations.ts';
 import { bureauRegionPage, healthAreaPage } from '#lib/federal-offices.ts';
 import { displayName, humanize, regionAnchor, presenceNote, reviewStatusLabels, stateName } from '#lib/nation-labels.ts';
+import { legalHelpCitation, legalHelpFor, legalHelpHeading } from '#lib/server/legal-help.ts';
+import { formatSource } from '#lib/server/markdown.ts';
 import type { EntryGenerator, PageServerLoad } from './$types';
 
 export const entries: EntryGenerator = () => nations().map((record) => ({ id: record.id }));
@@ -103,6 +106,7 @@ interface NationImage {
 interface EmptySections {
 	government?: EmptyNote;
 	courts?: EmptyNote;
+	legalHelp?: EmptyNote;
 	jurisdiction?: EmptyNote;
 }
 
@@ -794,8 +798,7 @@ const practiceKinds: Record<string, string> = {
 	'court-rules': 'Court rules',
 	'filing-fees': 'Filing fees',
 	forms: 'Court forms',
-	'public-defender': 'Public defender',
-	'legal-aid': 'Legal aid'
+	'public-defender': 'Public defender'
 };
 
 /**
@@ -807,7 +810,10 @@ function courtPractice(record: NationRecord, sources: SourceUses): FactGroup[] {
 	const section = 'Courts';
 	const order = Object.keys(practiceKinds);
 	const rank = (kind: string) => (order.includes(kind) ? order.indexOf(kind) : order.length);
-	const facts = [...(record.court_practice ?? [])].sort((first, second) => rank(first.kind) - rank(second.kind));
+	// Legal aid is listed under Legal help (ownLegalAid).
+	const facts = [...(record.court_practice ?? [])]
+		.filter((fact) => fact.kind !== 'legal-aid')
+		.sort((first, second) => rank(first.kind) - rank(second.kind));
 	const byKind = new Map<string, FactItem[]>();
 	for (const fact of facts) {
 		const label = practiceKinds[fact.kind] ?? humanize(fact.kind);
@@ -823,6 +829,23 @@ function courtPractice(record: NationRecord, sources: SourceUses): FactGroup[] {
 		byKind.set(label, list);
 	}
 	return [...byKind.entries()].map(([label, items]) => ({ field: `court-practice-${label}`, label, items }));
+}
+
+/**
+ * The legal aid office the nation's own record lists (court_practice, kind
+ * legal-aid), first under Legal help's "Legal aid".
+ */
+function ownLegalAid(record: NationRecord, sources: SourceUses): FactItem[] {
+	return (record.court_practice ?? [])
+		.filter((fact) => fact.kind === 'legal-aid')
+		.map((fact) =>
+			cited(sources, legalHelpHeading, fact, {
+				text: fact.title,
+				link: fact.link && URL.canParse(fact.link) ? webLink(fact.link) : undefined,
+				detail: fact.court,
+				note: fact.detail
+			})
+		);
 }
 
 /** The section that joins the nation's published law and its documents' histories. */
@@ -1115,8 +1138,10 @@ export const load: PageServerLoad = ({ params }) => {
 			government: [],
 			courts: [],
 			practice: [],
+			legalHelp: [] as ReturnType<typeof legalHelpFor<FactItem>>,
 			opinions: undefined,
 			cases: [] as NationCase[],
+			people: [] as ReturnType<typeof peopleOfNation>,
 			law: [],
 			documents: [],
 			jurisdiction: [],
@@ -1136,7 +1161,8 @@ export const load: PageServerLoad = ({ params }) => {
 		};
 	}
 
-	const sources = new SourceUses();
+	// Legal help cites sources kept in its provider records (src/lib/server/legal-help.ts).
+	const sources = new SourceUses((key) => legalHelpCitation(key) ?? formatSource(sourceRecords().get(key), key));
 	// Each source is filed under the part of the page that first cites it, so a
 	// long Sources list folds into groups that follow the page (Trevor, Nov. 23,
 	// 2026). The name and seal at the top go with At a glance.
@@ -1237,6 +1263,8 @@ export const load: PageServerLoad = ({ params }) => {
 	sources.part('Courts');
 	const courts = courtsAndDisputeResolution(record, sources);
 	const practice = courtPractice(record, sources);
+	sources.part(legalHelpHeading);
+	const legalHelp = legalHelpFor(record.id, sources, ownLegalAid(record, sources));
 	sources.part(opinionsHeading);
 	const opinions = courtOpinions(record.id, sources);
 	sources.part(casesHeading);
@@ -1267,6 +1295,7 @@ export const load: PageServerLoad = ({ params }) => {
 	const empty: EmptySections = {
 		government: government.length > 0 ? undefined : noneIdentified,
 		courts: courts.length > 0 || practice.length > 0 ? undefined : noneIdentified,
+		legalHelp: legalHelp.length > 0 ? undefined : noneIdentified,
 		jurisdiction: jurisdiction.length > 0 ? undefined : noneIdentified
 	};
 	const result = {
@@ -1281,8 +1310,10 @@ export const load: PageServerLoad = ({ params }) => {
 		government,
 		courts,
 		practice,
+		legalHelp,
 		opinions,
 		cases,
+		people: peopleOfNation(record.id),
 		law,
 		documents,
 		jurisdiction,
@@ -1303,8 +1334,10 @@ export const load: PageServerLoad = ({ params }) => {
 	if (hasContacts) items.push({ label: contactsHeading, link: '#contacts-heading' });
 	items.push({ label: governmentHeading, link: '#government-heading' });
 	items.push({ label: 'Courts', link: '#courts-heading' });
+	items.push({ label: legalHelpHeading, link: '#legal-help-heading' });
 	if (opinions) items.push({ label: opinionsHeading, link: '#opinions-heading' });
 	if (cases.length > 0) items.push({ label: casesHeading, link: '#cases-heading' });
+	if (result.people.length > 0) items.push({ label: 'People', link: '#people-heading' });
 	items.push({
 		label: lawHeading,
 		link: '#law-heading',

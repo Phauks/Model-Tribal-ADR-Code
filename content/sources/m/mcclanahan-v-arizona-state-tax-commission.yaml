@@ -109,3 +109,18 @@ nations_in_case:
   - nation: navajo-nation
     named_as: Navajo Reservation
     role: subject
+case_box:
+  background: |-
+    McClanahan, an enrolled Navajo citizen, lived on the Arizona part of the Navajo Reservation and earned all of her 1967 income there. Arizona withheld $16.20 in state income tax from her wages. She sued for a refund on behalf of herself and others in her position, and the Arizona courts dismissed the case [@mcclanahan-v-arizona-state-tax-commission, pp. 165-166].
+  question: |-
+    May Arizona impose its personal income tax on a Navajo citizen whose income came wholly from reservation sources?
+  holding: |-
+    No. The Court held that the state tax was preempted by the Navajo treaty and federal statutes, read against the backdrop of Navajo sovereignty, so Arizona had no authority to tax a reservation Navajo's on-reservation income.
+  quotes:
+  - text: "The Indian sovereignty doctrine is relevant, then, not because it provides a definitive resolution of the issues in this suit, but because it provides a backdrop against which the applicable treaties and federal statutes must be read ..."
+    pinpoint: "p. 172"
+  reading:
+    title: "*McClanahan v. State Tax Commission of Arizona* (1973)"
+    text: |-
+      States the modern "backdrop" approach to sovereignty and preemption, which sorts Tribal, state and federal authority over reservation activity.
+subjects: [jurisdiction, taxation]

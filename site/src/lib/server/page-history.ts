@@ -40,6 +40,7 @@ import {
 	type PageKind
 } from '#lib/page-history.ts';
 import { eventStatement } from './events.ts';
+import { inGroupsOf } from '#lib/server/database-groups.ts';
 
 function now(): string {
 	return new Date().toISOString();
@@ -170,13 +171,6 @@ export function changesBetween(
 	return changes;
 }
 
-/** Keeps each JSON list bound to a statement well under D1's size limits. */
-function chunks<Item>(items: Item[], size: number): Item[][] {
-	const out: Item[][] = [];
-	for (let start = 0; start < items.length; start += size) out.push(items.slice(start, start + size));
-	return out;
-}
-
 /**
  * Compares this build's pages with the last build's and records each change.
  * The first comparison, or one after the fingerprints were worked out
@@ -233,7 +227,8 @@ export async function recordBuildChanges(
 			)
 			.bind(build.builtAt, build.buildHash, build.fingerprintVersion, token, at)
 	];
-	for (const group of chunks(changes, 200)) {
+	// Each JSON list bound to a statement stays well under D1's size limits.
+	for (const group of inGroupsOf(changes, 200)) {
 		statements.push(
 			database
 				.prepare(
@@ -249,7 +244,7 @@ export async function recordBuildChanges(
 				.bind(at, JSON.stringify(changes.length > 0 ? group : []), token)
 		);
 	}
-	for (const group of chunks(written, 200)) {
+	for (const group of inGroupsOf(written, 200)) {
 		const rows = group.map((page) => ({
 			address: page.address,
 			kind: page.kind,

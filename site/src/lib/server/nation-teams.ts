@@ -83,6 +83,23 @@ export async function teamOf(database: D1Database, nationIdentifier: string, tim
 	return result.results.map(fromStored);
 }
 
+/** Everyone currently on each of several nations' teams, read in one query: each nation's team in the order teamOf gives it. */
+export async function teamsOf(database: D1Database, nationIdentifiers: readonly string[], time = now()): Promise<Map<string, PlaceRow[]>> {
+	const teams = new Map<string, PlaceRow[]>(nationIdentifiers.map((nationIdentifier) => [nationIdentifier, []]));
+	if (nationIdentifiers.length === 0) return teams;
+	const result = await database
+		.prepare(
+			`SELECT ${placeColumns} FROM ${placeTables}
+			 WHERE nation_team_members.nation_identifier IN (SELECT value FROM json_each(?)) AND ${current} AND people.status != 'removed'
+			 ORDER BY CASE nation_team_members.level WHEN 'steward' THEN 0 WHEN 'editor' THEN 1
+			          WHEN 'drafter' THEN 2 ELSE 3 END, people.display_name COLLATE NOCASE`
+		)
+		.bind(JSON.stringify(nationIdentifiers), time)
+		.all<StoredPlace>();
+	for (const row of result.results) teams.get(row.nationIdentifier)?.push(fromStored(row));
+	return teams;
+}
+
 /** Every current place on every nation's team, for the project's overview. */
 export async function allPlaces(database: D1Database, time = now()): Promise<PlaceRow[]> {
 	const result = await database

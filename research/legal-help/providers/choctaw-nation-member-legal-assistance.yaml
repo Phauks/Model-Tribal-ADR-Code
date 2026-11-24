@@ -1,0 +1,26 @@
+id: choctaw-nation-member-legal-assistance
+name: Member Legal Assistance, Choctaw Nation of Oklahoma
+kind: tribal-legal-aid
+operator: tribal-government
+link: https://www.choctawnation.com/services/member-legal-assistance/
+link_label: Member Legal Assistance
+services:
+- document-preparation
+who_can_use: Choctaw Nation tribal members who cannot otherwise afford legal help, in uncontested cases.
+serves:
+- states:
+  - OK
+  scope: members
+  nations:
+  - the-choctaw-nation-of-oklahoma
+  text: Prepares legal documents for filing to those who cannot otherwise afford legal assistance; uncontested cases filed in Choctaw Nation or Oklahoma district courts.
+  source: choctaw-nation-member-legal-assistance
+sources:
+- id: choctaw-nation-member-legal-assistance
+  title: Member Legal Assistance
+  publisher: Choctaw Nation of Oklahoma
+  link: https://www.choctawnation.com/services/member-legal-assistance/
+  accessed: '2026-11-24'
+  verification: page-read
+  supports: Members only; uncontested cases; read through a fetch service (the site blocks automated readers).
+checked: '2026-11-24'

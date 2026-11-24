@@ -25,8 +25,8 @@ Writers have asked for underline, italics, bold, images, tables and "other rich 
 | Headings, lists, quotations | standard Markdown | yes | yes | yes |
 | Tables | pipe tables | yes; on paper no row is split across pages | yes; rows never split across pages | yes |
 | Citations, glossary links | the project's syntax (docs/citation-style.md, docs/terminology.md) | yes, as numbered markers with the Sources list | yes | yes |
-| Case box | `:::: case <source key>` with `::: background`, `::: question`, `::: holding`, `::: quotes` and `::: treatment` inside, in that order, closed by `::::` | yes | yes (Foundations work) | to be added |
-| Law box | `:::: law <source key>` with `::: summary` (shown as "What it does"), `::: quotes` and `::: treatment` inside, closed by `::::` | yes | yes (Foundations work) | to be added |
+| Case box | `:::: case <source key>` then `::::`, with the parts (background, question, holding, quotes, treatment, topics) kept on the case's source record as `case_box` | yes | yes (Foundations work) | to be added |
+| Law box | `:::: law <source key>` then `::::`, with the parts (summary, shown as "What it does", quotes, treatment) kept on the law's source record as `law_box` | yes | yes (Foundations work) | to be added |
 | Quotation box | `::: quote`, with a last paragraph that is only the citation, such as `[@key, p. 17]` or `[@key, p. 17] (Gorsuch, J., dissenting)`, as the attribution | yes | being added | to be added |
 | Analysis box | `::: analysis [title]` | yes | being added | to be added |
 | Figures | `::: figure <media id>` with the caption inside | to be added | to be added | to be added |
@@ -88,6 +88,31 @@ Peacemaking is not alternative dispute resolution.
 The essay's own reading, set apart from what the sources say.
 :::
 ```
+
+Since Nov. 24, 2026 a case's or law's parts are kept on its source record, not in the essay (Trevor chose this so that a case reads the same in every essay, on its own page and in print). An essay places the box with its two fence lines and nothing between them:
+
+```markdown
+:::: case worcester-v-georgia
+::::
+```
+
+and the record holds the parts, each in the syntax above (schemas/source.schema.json, `case_box` and `law_box`):
+
+```yaml
+case_box:
+  holding: |-
+    No. The Court held that the Cherokee Nation is a distinct political community ...
+  quotes:
+  - text: "The Cherokee nation, then, is a distinct community ..."
+    pinpoint: "p. 561"
+  - text: "..."
+    pinpoint: "p. 595"
+    parenthetical: "McLean, J., concurring"
+  topics:
+  - "Sovereign immunity"
+```
+
+The website and the print build fill each empty box from its record before they read the essay (`site/src/lib/essays/record-boxes.ts`, mirrored in `pdf/pipeline/record-boxes.mjs`), so the essay page, the case's page, its preview and the index of cases by topic all read the same parts. A box still written out in full in an essay, as every essay version published before the move has it, is shown as written. `scripts/move_record_boxes.py` moves written-out boxes onto their records. The essay's own Analysis boxes stay in the essay.
 
 A case or law box is headed by the full citation of its source record, so the writer types only the key; under the heading come the lines the book prints too, from the same record: when the case was decided, the nations or peoples it concerns, and for the Supreme Court of the United States the Court, the vote, and who wrote and joined each opinion (src/lib/server/case-facts.ts). Each box also carries an anchor (`#case-<key>`, `#law-<key>`) that other pages, such as the cases by topic list, link to. Quoted words are set in italics on the website and in print. A quotation that starts with a lowercase letter (or a bracketed change such as "[w]e") needs a leading "... ", and one that does not end in ".", "?" or "!" needs a trailing " ..."; the editor's preview and the version page list quotations that break this rule, and publishing still goes ahead, because the writer may be quoting a whole fragment on purpose. A box that holds another box opens with more colons than the box inside it, because markdown-it-container ends a block at the first bare fence at least as long as its opening; the editor counts the colons itself. On the website a case box is outlined, a quotation has a bar at its left, and analysis is filled, and each box is labeled, so color is never the only cue ([site/DESIGN.md](../site/DESIGN.md)). Body paragraphs have a first-line indent except after a heading or a box (lead author, Nov. 22, 2026: "Use proper tabbing please").
 
@@ -215,7 +240,7 @@ The first version of this design kept drafts in Cloudflare and sent each finishe
 - **Saving** writes the whole file as a new object, `essays/<id>/versions/<number>-<first 12 characters of its SHA-256>.md`, with `If-None-Match: *` so an existing object is never replaced; R2 evaluates that condition atomically, so "two concurrent conditional writes cannot both observe success" (Cloudflare, "Consistency model"). D1 records the version in `essay_versions` (who, when, the writer's note, the SHA-256, the version it was based on) with an activity log entry in the same transaction. Triggers refuse any change to or deletion of a saved version.
 - **Conflicts.** A save names the version the writer started from. If the essay has a newer version, the save is refused and the editor shows the writer's text next to a link to the newer version, with a choice to keep theirs as the next version or switch to the newer one. Nothing is overwritten either way.
 - **Publishing** is one button for someone with full access. The website renders the chosen version first and refuses it if any citation key or glossary link points to nothing, the same rule the print build's reader applies (`pdf/pipeline/markdown.mjs`). It then adds a row to `essay_publications`, which can later only be held back or listed again, never changed or deleted.
-- **Website pages.** Essay pages are rendered by the Worker from the bucket on request and cached per file and site build. Part I chapters are at `/foundations/<id>`, back matter pages such as the index of cases by topic at `/back-matter/<id>`, and the rest at `/essays/<id>`. Sources and glossary entries still come from git with each site build: the build bundles the full citation of every source record (about 5,350, formatted in about 3 seconds by one citation processor) and the glossary terms, so an essay can cite any source that is merged. Earlier publications stay readable from each page's list of versions. A link to a case or law box on another page, such as `[*Worcester v. Georgia* (1832)](#case-worcester-v-georgia)` in the index of cases by topic, goes to the page that holds the box, as the essays in git place it. A back matter page says `part: back-matter` in its front matter. A page that also says `generated: cases-by-topic` shows its own text followed by the index of cases by topic, built when the page is shown from the Topics parts of every essay's case boxes: the newest published versions on the public page, the newest saved versions in the workspace (`site/src/lib/essays/case-topics.ts`, mirrored for print in `pdf/pipeline/case-topics.mjs`).
+- **Website pages.** Essay pages are rendered by the Worker from the bucket on request and cached per file and site build. Part I chapters are at `/foundations/<id>`, back matter pages such as the index of cases by topic at `/back-matter/<id>`, and the rest at `/essays/<id>`. Sources and glossary entries still come from git with each site build: the build bundles the full citation of every source record (about 5,350, formatted in about 3 seconds by one citation processor) and the glossary terms, so an essay can cite any source that is merged. Earlier publications stay readable from each page's list of versions. A link to a case or law box on another page, such as `[*Worcester v. Georgia* (1832)](#case-worcester-v-georgia)` in the index of cases by topic, goes to the page that holds the box, as the essays in git place it. A back matter page says `part: back-matter` in its front matter. A page that also says `generated: cases-by-topic` shows its own text followed by the index of cases by topic, built when the page is shown from the Topics of the cases every essay places (each case's record holds them): the newest published versions on the public page, the newest saved versions in the workspace (`site/src/lib/essays/case-topics.ts`, mirrored for print in `pdf/pipeline/case-topics.mjs`).
 - **Pages about the site.** The About page (`/about`) and the Sponsorship page (`/sponsor`) are edited the same way, under the part "About the Site" (front matter `part: about`, migration `20261123T0435_add_essay_about_pages.sql`). Their text starts in `content/about/` in git, and each keeps the address it has always had, so a new page about the site needs its own route and an entry in `aboutPageAddresses` (`site/src/lib/server/essays.ts`) and cannot be started from the workspace. Until a page is first published, or when the database cannot be read, readers see the git text (`site/src/lib/server/about-pages.ts`), so the page is never missing. The Timeline to public review (`/about/timeline`) stays in code, because it is a list of steps with statuses rather than prose. The Acknowledgments page stays in git, because the book prints it from there; it can move once the print build reads the published copies (Trevor, Nov. 23, 2026: "Continue with page editing").
 - **Public copy.** `/published-essays.json` lists every listed publication with its SHA-256, and `/published-essays/<id>/<number>.md` serves each as Markdown, exactly as saved. Held-back publications are not listed.
 - **Git copy.** A scheduled GitHub workflow (hourly, and on demand) reads that list, downloads new versions, checks their SHA-256 and commits each to a separate `published-essays` branch, one commit per version (`scripts/copy_published_essays.py`). It is a branch of its own, not `main`, because `main` accepts changes only by pull request with checks ([decision record 0008](decisions/0008-pull-requests-without-required-approval.md)) and a pull request opened by a workflow's own token does not start other workflows (GitHub Docs, "Triggering a workflow"). A copy branch can also be rewritten for a removal request without touching `main`'s history.

@@ -182,7 +182,7 @@ function today(): string {
 	return justicesFile().checked;
 }
 
-function portraitView(portrait: Portrait | undefined, key: string, name: string): PortraitView | undefined {
+export function portraitView(portrait: Portrait | undefined, key: string, name: string): PortraitView | undefined {
 	if (!portrait?.sha256) return undefined;
 	return {
 		src: `/supreme-court/portraits/${key}`,

@@ -12,7 +12,11 @@
 	"name": "model-tribal-adr-code",
 	"compatibility_date": "2026-11-20",
 	"workers_dev": true,
-	"preview_urls": true,
+	// No version (preview) addresses. Each one runs that version's code
+	// against the live database, buckets and email bindings, and every past
+	// version keeps its address, so code with a problem fixed since would
+	// still answer there. Nothing uses them: Workers Builds deploys only main.
+	"preview_urls": false,
 	"observability": {
 		"enabled": true
 	},

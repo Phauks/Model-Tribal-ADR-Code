@@ -126,3 +126,18 @@ nations_in_case:
   - nation: native-hawaiian-community
     named_as: Native Hawaiians
     role: subject
+case_box:
+  background: |-
+    Hawaiʻi's constitution created the Office of Hawaiian Affairs to run programs for "native Hawaiians" and "Hawaiians", both defined by descent from the people living in the islands in 1778. Only Hawaiians could vote for its nine trustees [@rice-v-cayetano, pp. 498-499]. Harold Rice, a citizen of Hawaiʻi whose ancestors lived there before annexation but who is not descended from the 1778 population, applied in 1996 to vote in a trustee election. The State denied his application, and he sued the governor [@rice-v-cayetano, p. 510].
+  question: |-
+    May Hawaiʻi limit voting for trustees of the Office of Hawaiian Affairs to "Hawaiians" defined by ancestry?
+  holding: |-
+    No. The Court held that the ancestry-based voter qualification was a racial classification that violated the Fifteenth Amendment, distinguishing *Morton v. Mancari* because the Office of Hawaiian Affairs election is a state election.
+  quotes:
+  - text: "Ancestry can be a proxy for race. It is that proxy here ..."
+    pinpoint: "p. 514"
+  reading:
+    title: "*Rice v. Cayetano* (2000)"
+    text: |-
+      For Native Hawaiian institutions, this limits ancestry-based eligibility in state-run bodies.
+subjects: [citizenship, government]

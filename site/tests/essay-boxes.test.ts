@@ -65,8 +65,8 @@ describe('case and law boxes', () => {
 	it('renders each part with its label and gives each box an anchor', () => {
 		const rendered = renderEssay(body, library);
 		expect(rendered.problems).toEqual([]);
-		expect(rendered.html).toContain('<section class="essay-case" id="case-worcester-v-georgia">');
-		expect(rendered.html).toContain('<section class="essay-case essay-law" id="law-usc-25-1301">');
+		expect(rendered.html).toContain('<section class="essay-case" id="case-worcester-v-georgia" data-source="worcester-v-georgia">');
+		expect(rendered.html).toContain('<section class="essay-case essay-law" id="law-usc-25-1301" data-source="usc-25-1301">');
 		for (const text of ['Case', 'Background', 'Question', 'Holding', 'Quotes', 'Treatment', 'Law', 'What it does']) {
 			expect(rendered.html).toContain(`<p class="essay-block-label">${text}</p>`);
 		}

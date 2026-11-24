@@ -114,3 +114,22 @@ nations_in_case:
   not_linked:
   - named_as: San Juan pueblo
     reason: The record had also linked Ohkay Owingeh (San Juan Pueblo), but the opinion names only Santa Clara and the New Mexico pueblos as a group, so that link was taken off.
+case_box:
+  background: |-
+    When Congress authorized New Mexico's admission as a state, the Enabling Act required the state to forbid bringing liquor into Indian country, which it defined to include "all lands now owned or occupied by the Pueblo Indians of New Mexico". Sandoval was indicted under a federal liquor law for taking liquor into Santa Clara Pueblo. The trial court dismissed the indictment, holding that Congress could not intrude in this way on the police power of a new state over lands the Pueblos owned [@united-states-v-sandoval, pp. 36-37].
+  question: |-
+    May Congress prohibit bringing liquor into Pueblo lands in New Mexico, even though the Pueblos held fee title?
+  holding: |-
+    Yes. The Court held that the Pueblos are dependent Indian communities under federal guardianship and that Congress could bring them and their lands within federal Indian liquor laws, but that Congress may not arbitrarily label a group an Indian Tribe.
+  quotes:
+  - text: "... the power and the duty of exercising a fostering care and protection over all dependent Indian communities within its borders ..."
+    pinpoint: "p. 46"
+  - text: "... it is not meant by this that Congress may bring a community or body of people within the range of this power by arbitrarily calling them an Indian tribe ..."
+    pinpoint: "p. 46"
+  treatment: |-
+    The "dependent Indian communities" concept was codified in 18 U.S.C. § 1151(b) and construed in *Alaska v. Native Village of Venetie Tribal Government* (1998). [@alaska-v-native-village-of-venetie-tribal-government]
+  reading:
+    title: "*United States v. Sandoval* (1913)"
+    text: |-
+      Defines the federal relationship with the Pueblos and the "dependent Indian community" category of Indian country. The opinion contains openly racist descriptions of Pueblo people.
+subjects: [jurisdiction, land]

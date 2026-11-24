@@ -68,9 +68,9 @@
 		</section>
 	{/if}
 
-	{#if data.caption || data.nations.length > 0}
+	{#if data.caption || data.nations.length > 0 || data.people.length > 0}
 		<section aria-labelledby="parties">
-			<h2 id="parties">Parties and nations</h2>
+			<h2 id="parties">{data.people.length > 0 ? 'Parties, people and nations' : 'Parties and nations'}</h2>
 			<dl class="summary-list">
 				{#if data.caption}
 					<div>
@@ -78,6 +78,12 @@
 						<dd>{data.caption}</dd>
 					</div>
 				{/if}
+				{#each data.people as person (person.link)}
+					<div>
+						<dt><a href={person.link}>{person.name}</a></dt>
+						<dd>{person.role}</dd>
+					</div>
+				{/each}
 				{#each data.nations as nation (nation.id)}
 					<div>
 						<dt>{#if nationPageLinks.has(`/nations/${nation.id}`)}<a href="/nations/{nation.id}">{nation.name}</a>{:else}{nation.name}{/if}</dt>

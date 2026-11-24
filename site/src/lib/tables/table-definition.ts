@@ -13,6 +13,7 @@
  *   shown as "Mar 4, 2026" sorts by "2026-03-04", a count by its number.
  * - "href" makes the cell a link.
  */
+import { csvDocument } from '#lib/csv.ts';
 
 export type ColumnType = 'text' | 'number' | 'date';
 export type SortDirection = 'ascending' | 'descending';
@@ -314,11 +315,6 @@ export function readTableState(identifier: string, columns: TableColumn[], param
 
 /* Download ---------------------------------------------------------------- */
 
-/** Quotes a value for CSV (RFC 4180, section 2). */
-function csvField(value: string): string {
-	return /[",\r\n]/.test(value) ? `"${value.replaceAll('"', '""')}"` : value;
-}
-
 /** A downloaded table's cell: its text and, for a linked column's own cell, the address it links to. */
 export interface DownloadCell {
 	text: string;
@@ -358,8 +354,7 @@ export function downloadCells(columns: TableColumn[], rows: TableRow[], origin =
  */
 export function rowsToCsv(columns: TableColumn[], rows: TableRow[], origin = ''): string {
 	const { header, lines } = downloadCells(columns, rows, origin);
-	const text = lines.map((fields) => fields.map((field) => csvField(field.text)).join(','));
-	return `${[header.map(csvField).join(','), ...text].join('\r\n')}\r\n`;
+	return csvDocument([header, ...lines.map((fields) => fields.map((field) => field.text))]);
 }
 
 /** The problems in a table, for tests and builds. An empty list means none. */

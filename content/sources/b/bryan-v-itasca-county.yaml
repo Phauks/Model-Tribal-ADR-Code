@@ -114,3 +114,24 @@ nations_in_case:
   - nation: minnesota-chippewa-tribe
     named_as: Minnesota Chippewa Tribe
     role: subject
+case_box:
+  background: |-
+    Russell Bryan, an enrolled member of the Minnesota Chippewa Tribe, lived in a mobile home on trust land on the Leech Lake Reservation. Itasca County assessed a personal property tax of $147.95 on the home, and Bryan sued, arguing that the county had no power to tax a reservation Indian's property there. The Minnesota courts upheld the tax, reading Public Law 280's grant of civil jurisdiction to include the power to tax [@bryan-v-itasca-county, pp. 375-377].
+  question: |-
+    Does Public Law 280 authorize a State to impose a personal property tax on a Native person's mobile home on trust land within a reservation?
+  holding: |-
+    No. The Court held that Public Law 280's civil provision gave States jurisdiction over private civil litigation involving reservation Indians in state court, not general civil regulatory or taxing power over reservations.
+  quotes:
+  - text: "... nothing in its legislative history remotely suggests that Congress meant the Act's extension of civil jurisdiction to the States should result in the undermining or destruction of such tribal governments as did exist ..."
+    pinpoint: "p. 388"
+  - text: "... are to be liberally construed, doubtful expressions being resolved in favor of the Indians ..."
+    pinpoint: "p. 392"
+  treatment: |-
+    *California v. Cabazon Band* (1987) builds on *Bryan*'s reading of Public Law 280 to draw the criminal/prohibitory versus civil/regulatory line. [@california-v-cabazon-band-of-mission-indians]
+  topics:
+  - "Civil jurisdiction"
+  reading:
+    title: "*Bryan v. Itasca County* (1976)"
+    text: |-
+      Essential for nations in Public Law 280 States (including Alaska and California): state courts may hear private civil suits, but Tribal governments and their courts are not displaced.
+subjects: [jurisdiction, taxation]

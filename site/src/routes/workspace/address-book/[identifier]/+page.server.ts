@@ -19,7 +19,7 @@ import {
 	contactMethod,
 	editContact,
 	editContactMethod,
-	listContacts,
+	contactNames,
 	type MethodEdit
 } from '#lib/server/address-book.ts';
 import { formText, requirePermission, storage } from '#lib/server/workspace.ts';
@@ -34,7 +34,8 @@ export const load: PageServerLoad = async (event) => {
 	const contact = await contactEntry(database, event.params.identifier);
 	if (!contact) error(404, 'That contact is not in the address book.');
 	const day = today();
-	const everyone = await listContacts(database);
+	// Only names and organizations: reading every contact's emails, phones and tags here was not needed.
+	const everyone = await contactNames(database);
 	return {
 		contact: {
 			...contact,

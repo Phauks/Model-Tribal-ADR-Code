@@ -113,3 +113,23 @@ nations_in_case:
   - nation: mississippi-band-of-choctaw-indians
     named_as: Mississippi Band of Choctaw Indians
     role: party
+case_box:
+  background: |-
+    Congress passed the Indian Child Welfare Act of 1978 after hearings showed that 25 to 35 percent of Indian children had been separated from their families, mostly into non-Indian homes. The Act gives Tribal courts exclusive jurisdiction over custody proceedings for an Indian child domiciled on the reservation [@mississippi-band-of-choctaw-indians-v-holyfield, pp. 32-36]. In 1985 twins were born 200 miles from the Choctaw Reservation to parents who were enrolled members living there. The parents consented to adoption, and a Mississippi court granted an adoption to Orrey and Vivian Holyfield [@mississippi-band-of-choctaw-indians-v-holyfield, pp. 37-38].
+  question: |-
+    Under the Indian Child Welfare Act, were twin children born off the reservation to parents domiciled on it "domiciled" on the reservation, so that the Tribal court had exclusive jurisdiction over their adoption?
+  holding: |-
+    Yes. The Court held that "domicile" under the Indian Child Welfare Act is a matter of federal law, and that the children took their mother's reservation domicile. The Tribe's exclusive jurisdiction under 25 U.S.C. § 1911(a) could not be defeated by the parents' deliberate off-reservation birth and consent to adoption.
+  quotes:
+  - text: "Tribal jurisdiction under § 1911(a) was not meant to be defeated by the actions of individual members of the tribe, for Congress was concerned not solely about the interests of Indian children and families, but also about the impact on the tribes themselves of the large numbers of Indian children adopted by non-Indians ..."
+    pinpoint: "p. 49"
+  treatment: |-
+    *Haaland v. Brackeen* (2023) rejected constitutional challenges to the Indian Child Welfare Act on the merits or for lack of standing. [@haaland-v-brackeen]
+  topics:
+  - "Tribal courts"
+  - "Child welfare"
+  reading:
+    title: "*Mississippi Band of Choctaw Indians v. Holyfield* (1989)"
+    text: |-
+      Shows that a nation's jurisdiction over family matters protects collective as well as individual interests.
+subjects: [family, jurisdiction]

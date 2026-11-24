@@ -133,3 +133,26 @@ nations_in_case:
   - nation: seminole-tribe-of-florida
     named_as: Seminole Tribe of Florida
     role: party
+case_box:
+  background: |-
+    The Indian Gaming Regulatory Act of 1988 allows casino-style (class III) gaming only under a Tribal-State compact. It requires States to negotiate compacts in good faith and lets a Tribe sue a State in federal court to enforce that duty [@seminole-tribe-v-florida-1996, p. 47; @indian-gaming-regulatory-act-1988]. In 1991 the Seminole Tribe of Florida sued Florida and its governor, Lawton Chiles, alleging that the State had refused to negotiate, and the State moved to dismiss on the ground of its sovereign immunity [@seminole-tribe-v-florida-1996, pp. 51-52].
+  question: |-
+    May Congress, under the Indian Commerce Clause, authorize a Tribe to sue a State in federal court to compel good-faith negotiation of a gaming compact under the Indian Gaming Regulatory Act?
+  holding: |-
+    No. The Court held that the Eleventh Amendment bars Congress from abrogating state sovereign immunity under its Article I powers, including the Indian Commerce Clause, overruled Pennsylvania v. Union Gas, and held that Ex parte Young could not be used to enforce the Indian Gaming Regulatory Act's remedial scheme against the Governor.
+  quotes:
+  - text: "Even when the Constitution vests in Congress complete lawmaking authority over a particular area, the Eleventh Amendment prevents congressional authorization of suits by private parties against unconsenting States ..."
+    pinpoint: "p. 72"
+  - text: "Article I cannot be used to circumvent the constitutional limitations placed upon federal jurisdiction ..."
+    pinpoint: "p. 73"
+  treatment: |-
+    The opinion itself overrules Pennsylvania v. Union Gas Co. (1989). [@seminole-tribe-v-florida-1996]
+  topics:
+  - "Dispute resolution and arbitration"
+  - "Sovereign immunity"
+  - "Gaming"
+  reading:
+    title: "*Seminole Tribe of Florida v. Florida* (1996)"
+    text: |-
+      Removes the federal-court remedy against a State that will not negotiate a gaming compact in good faith.
+subjects: [gaming, sovereign-immunity]

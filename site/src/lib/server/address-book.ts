@@ -31,6 +31,7 @@ import {
 } from '#lib/address-book.ts';
 import { differences, type BookOfficeMethod, type PublicNationContacts } from '#lib/address-book-sync.ts';
 import { newIdentifier, now } from './identifiers.ts';
+import { inGroupsOf } from '#lib/server/database-groups.ts';
 
 export const federalDirectoryLink =
 	'https://services1.arcgis.com/UxqqIfhng71wUT9x/arcgis/rest/services/TribalLeadership_Directory/FeatureServer/0';
@@ -131,6 +132,19 @@ export async function listContacts(database: D1Database): Promise<ContactEntry[]
 	for (const record of methods.results) byContact.get(record.contact_identifier)?.methods.push(methodFrom(record));
 	for (const record of tags.results) byContact.get(record.contact_identifier)?.tags.push(record.tag);
 	return [...byContact.values()];
+}
+
+/** Every contact's name, kind, role and organization, by name, without emails, phones or tags: what a contact's page needs to name the others. */
+export async function contactNames(
+	database: D1Database
+): Promise<Pick<Contact, 'identifier' | 'kind' | 'name' | 'role' | 'organizationIdentifier'>[]> {
+	const { results } = await database
+		.prepare(
+			`SELECT identifier, kind, name, role, organization_identifier AS organizationIdentifier
+			 FROM contacts ORDER BY name COLLATE NOCASE, identifier`
+		)
+		.all<Pick<Contact, 'identifier' | 'kind' | 'name' | 'role' | 'organizationIdentifier'>>();
+	return results;
 }
 
 export async function contactEntry(database: D1Database, identifier: string): Promise<ContactEntry | null> {
@@ -746,8 +760,8 @@ export async function refreshFromDirectories(
 		}
 	}
 	// Send the changes in groups, well under D1's limit on statements in one batch.
-	for (let start = 0; start < statements.length; start += 90) {
-		await database.batch(statements.slice(start, start + 90));
+	for (const group of inGroupsOf(statements, 90)) {
+		await database.batch(group);
 	}
 	return summary;
 }

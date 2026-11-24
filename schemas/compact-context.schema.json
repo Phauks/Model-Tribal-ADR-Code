@@ -1,0 +1,35 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/Phauks/Model-Tribal-ADR-Code/schemas/compact-context.schema.json",
+  "title": "Gaming compact context (table row)",
+  "description": "One row of research/gaming/compact-context.csv: a cited fact on compact negotiation, good-faith litigation, Secretarial Procedures, compact review rules, revenue sharing, or a state's negotiating authority and current talks (research/gaming/README.md). Built by scripts/gaming/build_context.py and scripts/gaming/check_quotes.py. Every cell is text and an empty cell is left out before checking, so 'required' means the cell may not be empty.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["id", "topic", "statement", "title", "link", "confidence", "verification", "needs_westlaw"],
+  "properties": {
+    "id": { "type": "string", "pattern": "^[a-z]+(-[a-z]+)*-[0-9]{3}$", "description": "A word for the kind of fact and a three-digit number, for example litigation-001." },
+    "topic": {
+      "type": "string",
+      "enum": [
+        "good-faith-litigation", "mediation-under-igra", "secretarial-procedures", "compact-review-regulation",
+        "revenue-sharing", "negotiation-status", "renewal-or-expiration", "negotiating-authority",
+        "sports-betting-or-online", "dispute-or-litigation", "other"
+      ]
+    },
+    "states": { "type": "string", "pattern": "^[A-Z]{2}(;[A-Z]{2})*$", "description": "Two-letter codes of the states the fact concerns, separated by semicolons." },
+    "nations_as_named": { "type": "string", "description": "The nations as the source names them." },
+    "statement": { "type": "string" },
+    "citation": { "type": "string", "description": "Indigo Book citation, when the source is a case, rule or notice." },
+    "title": { "type": "string" },
+    "publisher": { "type": "string" },
+    "as_of": { "$ref": "common.schema.json#/$defs/calendarDate" },
+    "link": { "$ref": "common.schema.json#/$defs/link" },
+    "source": { "$ref": "common.schema.json#/$defs/slug", "description": "Key of a source record in content/sources/ (scripts/validate_records.py checks it exists)." },
+    "confidence": { "$ref": "common.schema.json#/$defs/confidence" },
+    "verification": { "$ref": "common.schema.json#/$defs/verification" },
+    "needs_westlaw": { "$ref": "common.schema.json#/$defs/yesOrNo" },
+    "quote": { "type": "string", "description": "The quotation a script looked for on the cited page." }
+  },
+  "if": { "properties": { "verification": { "const": "read-in-full" } } },
+  "then": { "required": ["quote"] }
+}

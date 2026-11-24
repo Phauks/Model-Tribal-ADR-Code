@@ -22,6 +22,7 @@
 		starredKindOf,
 		type StarredItem
 	} from '#lib/starred-items.ts';
+	import { copyText } from '#lib/clipboard.ts';
 
 	let items = $state<StarredItem[]>([]);
 	let loaded = $state(false);
@@ -134,7 +135,7 @@
 
 	async function copyLink(): Promise<void> {
 		try {
-			await navigator.clipboard.writeText(shareLink);
+			await copyText(shareLink);
 			copied = true;
 		} catch {
 			linkField?.select();

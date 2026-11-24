@@ -9,12 +9,15 @@
 
 	let {
 		expanded = false,
+		id,
 		controls,
 		name = '',
 		size = 'item',
 		onclick
 	}: {
 		expanded?: boolean;
+		/** Its own id, for a heading's label that opens it too (SidebarGroups.svelte). */
+		id?: string;
 		/** The id of what it opens; leave it out for the empty space. */
 		controls?: string;
 		name?: string;
@@ -27,6 +30,7 @@
 {#if controls}
 	<button
 		type="button"
+		{id}
 		class="fold needs-scripts {size}"
 		aria-expanded={expanded}
 		aria-controls={controls}

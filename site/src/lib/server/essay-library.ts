@@ -14,6 +14,7 @@ import { escapeHtml } from '../escape-html.ts';
 import { savedCopyLink } from './markdown.ts';
 import { readingLinksHtml } from '../reading-links.ts';
 import type { OpinionEntry } from '../case-opinions.ts';
+import type { RecordBox } from '../essays/record-boxes.ts';
 import { glossary, nationNameVariants, nationNamesAndKinds, repositoryRoot, sources, type SourceRecord } from './content.ts';
 import { sectionWithSymbol } from './citations.ts';
 import { caseItem } from './case-citations.ts';
@@ -184,4 +185,19 @@ export function everyOpinionList(records: SourceRecord[] = [...sources().values(
 		if (list?.length) lists[record.key] = list;
 	}
 	return lists;
+}
+
+/**
+ * The parts of each case and law box its source's record keeps (`case_box`,
+ * `law_box`), by key, which fill the boxes an essay leaves empty
+ * (src/lib/essays/record-boxes.ts).
+ */
+export function everyRecordBox(records: SourceRecord[] = [...sources().values()]): { cases: Record<string, RecordBox>; laws: Record<string, RecordBox> } {
+	const cases: Record<string, RecordBox> = {};
+	const laws: Record<string, RecordBox> = {};
+	for (const record of records) {
+		if (record.case_box) cases[record.key] = record.case_box;
+		if (record.law_box) laws[record.key] = record.law_box;
+	}
+	return { cases, laws };
 }

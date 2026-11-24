@@ -124,3 +124,24 @@ nations_in_case:
     role: subject
     historical: true
     note: The opinion names the reservation where the killing happened but not the nation Kagama belonged to.
+case_box:
+  background: |-
+    Congress answered *Crow Dog* in section 9 of the Indian Appropriation Act of March 3, 1885, the Major Crimes Act, which made seven crimes, murder among them, federal offenses when committed by Indians [@major-crimes-act-1885]. Kagama and Mahawaha were indicted under it for killing another Indian on the Hoopa Valley Reservation in California, and the two judges of the circuit court divided on whether the law was constitutional [@united-states-v-kagama, pp. 375-376].
+  question: |-
+    Does Congress have power to make crimes by one Indian against another within a reservation federal offenses (the Major Crimes Act)?
+  holding: |-
+    Yes. The Court rejected the Commerce Clause as the source of power. It upheld the Major Crimes Act as an exercise of federal power arising from the Native nations' dependence on, and the duty of protection owed by, the federal government. State courts were not the proper forum.
+  quotes:
+  - text: "These Indian tribes are the wards of the nation. They are communities dependent on the United States ..."
+    pinpoint: "p. 383-384"
+  - text: "Because of the local ill feeling, the people of the States where they are found are often their deadliest enemies. From their very weakness and helplessness, so largely due to the course of dealing of the Federal Government with them and the treaties in which it has been promised, there arises the duty of protection, and with it the power ..."
+    pinpoint: "p. 384"
+  treatment: |-
+    *Haaland v. Brackeen* (2023) reviews the sources of congressional power over Indian affairs and does not rely on the free-standing "protection" rationale in the form *Kagama* stated it. [@haaland-v-brackeen]
+  topics:
+  - "Criminal jurisdiction"
+  reading:
+    title: "*United States v. Kagama* (1886)"
+    text: |-
+      The doctrinal root of federal "plenary power" and of federal criminal jurisdiction in Indian country, which limits how far a nation's own criminal jurisdiction can reach for major crimes.
+subjects: [criminal, jurisdiction, government]

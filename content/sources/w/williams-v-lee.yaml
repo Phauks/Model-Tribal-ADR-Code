@@ -113,3 +113,25 @@ nations_in_case:
   - nation: navajo-nation
     named_as: Navajo Reservation
     role: subject
+case_box:
+  background: |-
+    Lee, a non-Indian, ran the Ganado Trading Post on the Navajo Reservation in Arizona under a federal license. He sued the Williamses, a Navajo couple living on the reservation, in Arizona state court to collect for goods sold to them on credit. The Arizona courts rejected their argument that only the Navajo courts could hear the case [@williams-v-lee, pp. 217-218].
+  question: |-
+    May an Arizona state court hear a non-Indian trader's suit to collect a debt from Navajo citizens for goods sold on the Navajo Reservation?
+  holding: |-
+    No. The Court held that state-court jurisdiction would infringe on the right of reservation Indians to make their own laws and be ruled by them. It would also undermine the authority of the Navajo courts. The claim therefore belonged in the Navajo courts.
+  quotes:
+  - text: "Essentially, absent governing Acts of Congress, the question has always been whether the state action infringed on the right of reservation Indians to make their own laws and be ruled by them ..."
+    pinpoint: "p. 220"
+  - text: "There can be no doubt that to allow the exercise of state jurisdiction here would undermine the authority of the tribal courts over Reservation affairs and hence would infringe on the right of the Indians to govern themselves ..."
+    pinpoint: "p. 223"
+  treatment: |-
+    The "infringement" test is applied in *Fisher v. District Court* (1976) and in *White Mountain Apache Tribe v. Bracker* (1980), which treats it as one of two independent barriers to state authority. [@white-mountain-apache-tribe-v-bracker]
+  topics:
+  - "Tribal courts"
+  - "Civil jurisdiction"
+  reading:
+    title: "*Williams v. Lee* (1959)"
+    text: |-
+      The leading case protecting Tribal courts from state-court encroachment over on-reservation claims against citizens of the nation.
+subjects: [tribal-courts, jurisdiction]

@@ -114,3 +114,26 @@ nations_in_case:
   - nation: paiute-shoshone-tribe-of-the-fallon-reservation-and-colony
     named_as: Fallon Paiute-Shoshone Tribes
     role: subject
+case_box:
+  background: |-
+    Hicks, a member of the Fallon Paiute-Shoshone Tribes, lived on the Tribes' reservation in western Nevada. Nevada game wardens suspected him of killing a California bighorn sheep off the reservation, a state crime. With warrants from both the state court and the Tribal court, they searched his home twice, a year apart. Hicks then sued the wardens in Tribal court, claiming among other things that they had violated his civil rights [@nevada-v-hicks, pp. 355-357].
+  question: |-
+    Does a Tribal court have jurisdiction over a member's civil-rights and tort claims against state game wardens for executing a search warrant on his trust land on the reservation?
+  holding: |-
+    No. The Court held that the Tribe lacked regulatory (and therefore adjudicative) authority over state officers enforcing state law for off-reservation crimes. Tribal courts are not courts of general jurisdiction able to hear 42 U.S.C. § 1983 claims. Exhaustion was not required.
+  quotes:
+  - text: "State sovereignty does not end at a reservation's border ..."
+    pinpoint: "p. 361"
+  - text: "Respondents' contention that tribal courts are courts of \"general jurisdiction\" is also quite wrong ..."
+    pinpoint: "p. 367"
+  treatment: |-
+    *Plains Commerce Bank* (2008) relies on *Hicks* in limiting Tribal adjudicative authority over nonmembers. [@plains-commerce-bank-v-long-family-land-and-cattle-company]
+  topics:
+  - "Exhaustion of Tribal remedies"
+  - "Tribal courts"
+  - "Civil jurisdiction"
+  reading:
+    title: "*Nevada v. Hicks* (2001)"
+    text: |-
+      Limits Tribal-court jurisdiction over state officials and federal claims.
+subjects: [jurisdiction, tribal-courts]

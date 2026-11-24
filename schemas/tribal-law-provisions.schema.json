@@ -1,0 +1,100 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/Phauks/Model-Tribal-ADR-Code/schemas/tribal-law-provisions.schema.json",
+  "title": "Tribal law provision (table row)",
+  "description": "One row of research/tribal-law/provisions.csv: a dispute resolution provision found in a Native nation's own law code, court rules or ordinance, as the first machine reader recorded it, with the second reader's verdict beside it (research/tribal-law/README.md). Built by scripts/law/collect_law_texts.py and scripts/law/second_pass.py; the site's Find recourse page reads it (site/src/lib/server/recourse.ts). Every cell is text and an empty cell is left out before checking, so 'required' means the cell may not be empty. The vocabularies are those of the parsing brief (research/tribal-law/briefs/2026-11-21-parse-passages.md).",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["id", "nation", "method", "setting", "subject_area", "entry", "outcome", "confidentiality", "immunity_waiver", "summary", "quote_check", "scope", "confidence", "url", "capture", "sha256", "passages", "verification", "reviewer"],
+  "properties": {
+    "id": {
+      "type": "string",
+      "pattern": "^[a-z0-9]+(-[a-z0-9]+)*#[1-9][0-9]*$",
+      "description": "The nation's profile id, '#', and the provision's number for that nation."
+    },
+    "nation": { "$ref": "common.schema.json#/$defs/slug", "description": "Id of a Tribe profile in content/tribes/ (scripts/validate_records.py checks it exists)." },
+    "document": { "type": "string", "description": "Title of the law code, court rules or ordinance, when the passage shows it." },
+    "locator": { "type": "string", "description": "Section, rule or chapter, as the document gives it." },
+    "citation": { "type": "string", "description": "Indigo Book citation of the provision." },
+    "method": {
+      "type": "string",
+      "enum": [
+        "administrative-adjudication", "arbitration", "case-evaluation", "circle-process", "collaborative-law",
+        "conciliation", "council-hearing", "customary-dispute-resolution", "early-neutral-evaluation", "elders-council",
+        "facilitation", "fact-finding", "family-group-conference", "mediation", "negotiation", "nonbinding-arbitration",
+        "ombuds", "peacemaking", "restorative-justice", "settlement-conference", "other"
+      ],
+      "description": "The closest method record id (content/methods/) from the brief's list, or other."
+    },
+    "setting": {
+      "type": "string",
+      "enum": ["court-annexed", "court-referral", "pre-filing", "contract-or-compact", "agency-or-government", "community-program", "other"]
+    },
+    "subject_area": {
+      "type": "string",
+      "enum": ["civil", "family", "child-welfare", "juvenile", "criminal", "probate", "employment", "housing", "gaming", "commercial", "land-or-resources", "elections", "tribal-government", "general", "other"]
+    },
+    "entry": { "type": "string", "enum": ["mandatory", "voluntary", "consent-of-parties", "court-discretion", "not-stated"], "description": "How a case enters the process." },
+    "outcome": { "type": "string", "enum": ["binding", "non-binding", "binding-if-agreed", "recommendation", "not-stated"] },
+    "enforcement": { "type": "string", "description": "How an agreement or award is enforced, when the provision says." },
+    "confidentiality": { "type": "string", "enum": ["stated", "not-stated"] },
+    "immunity_waiver": { "$ref": "common.schema.json#/$defs/yesOrNo" },
+    "summary": { "type": "string", "description": "One sentence in the project's own words; the quotation is kept privately." },
+    "quote_check": {
+      "type": "string",
+      "enum": ["exact", "whitespace", "case"],
+      "description": "How the script found the reader's quotation in the fetched text: word for word, differing only in spacing, or only in letter case. A quotation that was missing or not found is not a provision."
+    },
+    "scope": { "type": "string", "enum": ["dispute-resolution", "borderline"] },
+    "confidence": { "$ref": "common.schema.json#/$defs/confidence" },
+    "peacemaking_features": {
+      "type": "string",
+      "pattern": "^(forum-placement|peacemaker-selection|peacemaker-qualifications-or-training|matters-covered|matters-excluded|entry|non-member-participation|confidentiality|agreement-entered-as-judgment|return-to-court|peacemaker-decides-with-consent|appeal-or-review|fees)( (forum-placement|peacemaker-selection|peacemaker-qualifications-or-training|matters-covered|matters-excluded|entry|non-member-participation|confidentiality|agreement-entered-as-judgment|return-to-court|peacemaker-decides-with-consent|appeal-or-review|fees))*$",
+      "description": "Tags the text supports, separated by spaces; only for peacemaking (or a circle or elders' council run as peacemaking)."
+    },
+    "note": { "type": "string" },
+    "duplicate_of": {
+      "type": "string",
+      "pattern": "^[a-z0-9]+(-[a-z0-9]+)*#[1-9][0-9]*$",
+      "description": "Id of the row this one repeats (the same quotation for the same nation, for example from two editions of one code)."
+    },
+    "url": { "$ref": "common.schema.json#/$defs/link", "description": "The document as fetched." },
+    "capture": {
+      "type": "string",
+      "pattern": "^research/captures/tribal-law/documents/[0-9a-f]+\\.[a-z]+$",
+      "description": "Path of the private copy under /mnt/project-files/."
+    },
+    "sha256": { "$ref": "common.schema.json#/$defs/sha256" },
+    "passages": {
+      "type": "string",
+      "pattern": "^[0-9a-f]+-[0-9]+( [0-9a-f]+-[0-9]+)*$",
+      "description": "The passages the reader read, separated by spaces: each the capture's name and the passage number."
+    },
+    "verification": { "$ref": "common.schema.json#/$defs/verification" },
+    "reviewer": { "type": "string" },
+    "second_pass_verdict": { "type": "string", "enum": ["confirm", "change", "drop", "cannot-tell"] },
+    "second_pass_changes": {
+      "type": "string",
+      "pattern": "^\\{.*\\}$",
+      "description": "The second reader's changes, as a JSON object of column and new value; not applied to the other columns."
+    },
+    "second_pass_reason": { "type": "string" },
+    "lead_author_decision": { "type": "string", "description": "Left empty for the lead author." }
+  },
+  "dependentRequired": {
+    "second_pass_verdict": ["second_pass_reason"],
+    "second_pass_reason": ["second_pass_verdict"],
+    "second_pass_changes": ["second_pass_verdict"]
+  },
+  "allOf": [
+    {
+      "if": { "required": ["second_pass_verdict"], "properties": { "second_pass_verdict": { "const": "change" } } },
+      "then": { "required": ["second_pass_changes"] },
+      "else": { "not": { "required": ["second_pass_changes"] } }
+    },
+    {
+      "if": { "required": ["peacemaking_features"] },
+      "then": { "properties": { "method": { "enum": ["peacemaking", "circle-process", "elders-council"] } } }
+    }
+  ]
+}

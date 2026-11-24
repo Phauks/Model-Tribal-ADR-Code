@@ -3,6 +3,7 @@ import { describe, expect, it } from 'vitest';
 import {
 	defaultSettings,
 	fonts,
+	openDyslexicStylesheet,
 	parseSettings,
 	parseTheme,
 	serializeSettings,
@@ -100,5 +101,32 @@ describe('global.css', () => {
 			expect(styles).toContain(`var(--font-family-${font})`);
 			expect(tokens.font.family[font]).toBeDefined();
 		}
+	});
+});
+
+describe('OpenDyslexic, loaded only when a reader picks it', () => {
+	it('is not part of the style sheet every page loads', () => {
+		expect(readFileSync('src/routes/+layout.svelte', 'utf8')).not.toContain('@fontsource/opendyslexic');
+	});
+
+	it('has its four faces, as Fontsource gives them, at an address that does not change', async () => {
+		const { GET } = await import('../src/routes/opendyslexic.css/+server.ts');
+		const response = await GET({} as never);
+		expect(response.headers.get('content-type')).toBe('text/css; charset=utf-8');
+		const styles = await response.text();
+		expect(styles.match(/@font-face/g)).toHaveLength(4);
+		for (const [style, weight] of [['normal', 400], ['italic', 400], ['normal', 700], ['italic', 700]]) {
+			const name = `opendyslexic-latin-${weight}-${style}`;
+			expect(styles).toContain(`font-style: ${style};\n\tfont-display: swap;\n\tfont-weight: ${weight};`);
+			expect(styles).toMatch(new RegExp(String.raw`url\([^)]*${name}[^)]*\.woff2\) format\('woff2'\), url\([^)]*${name}[^)]*\.woff\) format\('woff'\)`));
+		}
+		expect(openDyslexicStylesheet).toBe('/opendyslexic.css');
+	});
+
+	it('is added before the first paint for a reader who picked it', () => {
+		const template = readFileSync('src/app.html', 'utf8');
+		expect(template).toContain(`faces.href = '${openDyslexicStylesheet}';`);
+		expect(template).toContain("faces.id = 'opendyslexic-faces';");
+		expect(readFileSync('src/lib/reading-settings.ts', 'utf8')).toContain("const openDyslexicElementIdentifier = 'opendyslexic-faces';");
 	});
 });

@@ -80,6 +80,8 @@ export type WorkerRequest =
 
 export type WorkerReply =
 	| { type: 'status'; status: OfflineStatus }
+	/** The kept collections were saved again after an update (offline-resume); the page needs no status then. */
+	| { type: 'resumed' }
 	| { type: 'progress'; collection: CollectionIdentifier; done: number; total: number }
 	| { type: 'documents'; status: DocumentsStatus }
 	| { type: 'documents-progress'; set: DocumentSet; done: number; total: number }

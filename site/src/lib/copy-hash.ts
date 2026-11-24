@@ -11,6 +11,7 @@
  * it, such as "SHA-256" in a citation's saved copy line, the button is the copy icon alone.
  */
 import { escapeHtml } from './escape-html.ts';
+import { copyText } from '#lib/clipboard.ts';
 
 /** How long the check and "Copied" show. */
 export const copiedFor = 2000;
@@ -45,7 +46,7 @@ const timers = new WeakMap<Element, ReturnType<typeof setTimeout>>();
 /** Writes text to the clipboard, falling back to a hidden text box where the Clipboard API is missing. */
 async function writeText(text: string): Promise<boolean> {
 	try {
-		await navigator.clipboard.writeText(text);
+		await copyText(text);
 		return true;
 	} catch {
 		const field = document.createElement('textarea');

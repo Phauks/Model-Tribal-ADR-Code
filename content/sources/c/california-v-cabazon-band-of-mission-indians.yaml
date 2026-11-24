@@ -118,3 +118,25 @@ nations_in_case:
   - nation: morongo-band-of-mission-indians
     named_as: Morongo Band of Mission Indians
     role: party
+case_box:
+  background: |-
+    The Cabazon and Morongo Bands of Mission Indians, in Riverside County, California, ran bingo games under Tribal ordinances approved by the Secretary of the Interior, and the Cabazon Band also ran a card club. The games, played mostly by non-Indians, were the Bands' main source of revenue and of jobs for their members. California sought to apply its law allowing bingo only for charities and capping prizes, and the county its ordinances on bingo and card games, and the Bands sued to stop enforcement [@california-v-cabazon-band-of-mission-indians, pp. 204-206].
+  question: |-
+    May California and Riverside County enforce their bingo and card-game laws on the Cabazon and Morongo reservations?
+  holding: |-
+    No. The Court held that California's gaming laws were civil/regulatory rather than criminal/prohibitory, so Public Law 280 did not authorize their enforcement. State regulation was also preempted given the strong federal and Tribal interests in Tribal gaming as a source of revenue.
+  quotes:
+  - text: "... if the intent of a state law is generally to prohibit certain conduct, it falls within Pub. L. 280's grant of criminal jurisdiction, but if the state law generally permits the conduct at issue, subject to regulation, it must be classified as civil/regulatory ..."
+    pinpoint: "p. 209"
+  treatment: |-
+    Congress adopted the Indian Gaming Regulatory Act (1988) in response to *Cabazon*, as described in *Michigan v. Bay Mills Indian Community* (2014). [@michigan-v-bay-mills-indian-community]
+
+    *Ysleta del Sur Pueblo v. Texas* (2022) applied *Cabazon*'s prohibitory/regulatory distinction to the Restoration Act. [@ysleta-del-sur-pueblo-v-texas]
+  topics:
+  - "Civil jurisdiction"
+  - "Gaming"
+  reading:
+    title: "*California v. Cabazon Band of Mission Indians* (1987)"
+    text: |-
+      The origin of the Indian Gaming Regulatory Act and of Tribal-state compacting.
+subjects: [gaming, jurisdiction]

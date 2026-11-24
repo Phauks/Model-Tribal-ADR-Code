@@ -473,7 +473,8 @@
 		}
 		const done = await post(`/uploads/pieces/${reference}/finish`, {});
 		if (!done.ok) {
-			stop(row, String(done.data.message ?? 'It could not be finished.'));
+			// 422: refused, such as a second copy of a file already sent, so sending it again would not help.
+			stop(row, String(done.data.message ?? 'It could not be finished.'), done.status !== 422);
 			return true;
 		}
 		row.state = 'sent';

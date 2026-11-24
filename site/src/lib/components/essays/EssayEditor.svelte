@@ -42,7 +42,8 @@
 	import { draftMarks, draftMarksKey, draftMarksPlugin } from '#lib/essays/draft-marks.ts';
 	import { editorOutline, outlineAnchors } from '#lib/essays/editor-outline.ts';
 	import type { OutlineItem } from '#lib/site-sections.ts';
-	import { caseHeadings } from '#lib/essays/case-headings.ts';
+	import { caseHeadings, citationOnly } from '#lib/essays/case-headings.ts';
+	import { isRecordBox, RecordBoxes, shownBoxes } from '#lib/essays/record-box-view.ts';
 	import { agoText, nextSteps, type UndoStep } from '#lib/essays/undo-steps.ts';
 	import { components as componentList } from '#lib/essays/components.ts';
 	import { counts as countWords, textBlocks } from '#lib/essays/checks.ts';
@@ -100,6 +101,8 @@
 	import { essayChartFrom } from '#lib/table-builder.ts';
 	import { addAfterCurrent, addSection, moveCurrent } from '#lib/essays/placement.ts';
 	import { dropLocalDraft, isSaveAnswer, keepaliveLimit, keepLocalDraft, localDraft, type LocalDraft } from '#lib/essays/local-draft.ts';
+	import { writeStored } from '#lib/browser-storage.ts';
+	import { sendJson } from '#lib/send-json.ts';
 
 	let {
 		identifier,
@@ -184,6 +187,8 @@
 		inside: Set<string>;
 		box: Box | null;
 		boxSource: string | null;
+		/** Whether the box leaves its parts to its source's record, so they show read-only (record-box-view.ts). */
+		boxFromRecord: boolean;
 		boxParts: Set<string>;
 		analysisTitle: string | null;
 		figureParts: Set<string>;
@@ -197,6 +202,7 @@
 		inside: new Set(),
 		box: null,
 		boxSource: null,
+		boxFromRecord: false,
 		boxParts: new Set(),
 		analysisTitle: null,
 		figureParts: new Set(),
@@ -206,7 +212,7 @@
 	});
 	/** The parts the box around the cursor can take and does not have yet. */
 	const missingParts = $derived(
-		active.box ? (active.box === 'law_block' ? lawPartOrder : casePartOrder).filter((kind) => !active.boxParts.has(kind)) : []
+		active.box && !active.boxFromRecord ? (active.box === 'law_block' ? lawPartOrder : casePartOrder).filter((kind) => !active.boxParts.has(kind)) : []
 	);
 
 	/** The parts the figure around the cursor does not have yet. */
@@ -305,17 +311,17 @@
 
 	async function finishReview(request: string): Promise<void> {
 		reviewProblem = '';
-		const response = await fetch(`/workspace/essays/${identifier}/sharing?request=${encodeURIComponent(request)}`, {
-			method: 'PATCH',
-			headers: { 'content-type': 'application/json' },
-			body: JSON.stringify({ done: true })
-		}).catch(() => null);
-		const body = (await response?.json().catch(() => null)) as { requests?: ReviewRequest[]; message?: string } | null;
-		if (!response?.ok || !body?.requests) {
-			reviewProblem = body?.message || 'That did not go through. Try again.';
+		const sent = await sendJson<{ requests: ReviewRequest[] }>(
+			`/workspace/essays/${identifier}/sharing?request=${encodeURIComponent(request)}`,
+			'PATCH',
+			{ done: true },
+			{ complete: (answer) => !!answer.requests }
+		);
+		if (!sent.ok) {
+			reviewProblem = sent.problem;
 			return;
 		}
-		reviewRequestsChanged(body.requests);
+		reviewRequestsChanged(sent.answer.requests);
 	}
 
 	function openShare(): void {
@@ -617,16 +623,17 @@
 		if (!quote) return;
 		collapseSelection();
 		commentProblem = '';
-		const response = await fetch(`/workspace/essays/${identifier}/comments`, {
-			method: 'POST',
-			headers: { 'content-type': 'application/json' },
-			body: JSON.stringify({ body: '', asks: [ask], quote, version })
-		}).catch(() => null);
-		const answer = (await response?.json().catch(() => null)) as { comments?: EssayComment[]; message?: string } | null;
-		if (!response?.ok || !answer?.comments) {
-			commentProblem = answer?.message || 'That did not go through. Try again.';
+		const sent = await sendJson<{ comments: EssayComment[] }>(
+			`/workspace/essays/${identifier}/comments`,
+			'POST',
+			{ body: '', asks: [ask], quote, version },
+			{ complete: (answer) => !!answer.comments }
+		);
+		if (!sent.ok) {
+			commentProblem = sent.problem;
 			return;
 		}
+		const { answer } = sent;
 		const before = new Set(comments.map((comment) => comment.identifier));
 		const added = answer.comments.find((comment) => !before.has(comment.identifier) && comment.threadIdentifier === null);
 		if (added) currentThread = added.identifier;
@@ -713,15 +720,67 @@
 	function toggleChecks(): void {
 		showChecks = !showChecks;
 		if (showChecks) void loadLibrary();
-		try {
-			localStorage.setItem(checksKey, showChecks ? 'on' : 'off');
-		} catch {
-			// Storage can be blocked; the choice is then not remembered.
-		}
+		writeStored(checksKey, showChecks ? 'on' : 'off');
 	}
 	let libraryProblem = $state('');
 	/** Each source's citation as plain text, by key, for the headings of case and law boxes (case-headings.ts). */
 	let citationsByKey: Map<string, string> | null = null;
+
+	/**
+	 * The case and law boxes whose parts are kept on their records, shown
+	 * read-only as the essay page shows them (record-box-view.ts). The page's
+	 * rendering comes from the preview, asked for when the editor opens and
+	 * again a few seconds after the text changes, so the citation numbers in
+	 * the boxes follow the citations written before them.
+	 */
+	const recordBoxes = new RecordBoxes((key) => {
+		const found = citationsByKey?.get(key);
+		return found ? citationOnly(found) : undefined;
+	});
+	let boxesTimer: ReturnType<typeof setTimeout> | undefined;
+	let boxesShownFor = '';
+	let boxesAsking: AbortController | null = null;
+
+	function hasRecordBoxes(): boolean {
+		let found = false;
+		view?.state.doc.descendants((node) => {
+			if (isRecordBox(node)) found = true;
+			return !found && !node.isTextblock;
+		});
+		return found;
+	}
+
+	function showBoxesSoon(wait = 3000): void {
+		clearTimeout(boxesTimer);
+		boxesTimer = setTimeout(() => void showBoxes(), wait);
+	}
+
+	/** Renders the essay as it stands, as the page would, and redraws the read-only boxes from it. */
+	async function showBoxes(): Promise<void> {
+		if (closed || !view || mode !== 'rich' || !hasRecordBoxes()) return;
+		const file = currentFile();
+		if (file === boxesShownFor) return;
+		boxesAsking?.abort();
+		const asking = new AbortController();
+		boxesAsking = asking;
+		try {
+			const response = await fetch(`/workspace/essays/${identifier}/preview`, {
+				method: 'POST',
+				headers: { 'Content-Type': 'application/json' },
+				body: JSON.stringify({ text: file }),
+				signal: asking.signal
+			});
+			if (!response.ok) return;
+			const rendered = (await response.json()) as RenderedEssay;
+			if (closed || asking.signal.aborted) return;
+			boxesShownFor = file;
+			recordBoxes.update(shownBoxes(rendered.html));
+		} catch {
+			// Offline or replaced by a newer request: the boxes keep what they show.
+		} finally {
+			if (boxesAsking === asking) boxesAsking = null;
+		}
+	}
 
 	// Once the sources are in, the case and law boxes show their citations.
 	$effect(() => {
@@ -729,6 +788,7 @@
 		if (!loaded) return;
 		untrack(() => {
 			citationsByKey = new Map(loaded.sources);
+			recordBoxes.refresh();
 			view?.dispatch(view.state.tr.setMeta('addToHistory', false));
 			refreshOutline();
 		});
@@ -834,21 +894,15 @@
 		return schema.node('case_part', { kind }, [kind === 'quotes' ? schema.node('blockquote', null, paragraph) : paragraph]);
 	}
 
-	function newCase(source: string): EditorNode {
-		return schema.node('case_block', { source }, [
-			newPart('question', 'The question the court decided.'),
-			newPart('holding'),
-			newPart('quotes'),
-			newPart('treatment')
-		]);
-	}
-
-	function newLaw(source: string): EditorNode {
-		return schema.node('law_block', { source }, [newPart('summary', 'What the law does.'), newPart('quotes'), newPart('treatment')]);
+	/** A case or law box holds only its place; its parts come from the source's record (record-boxes.ts). */
+	function newBox(box: Box, source: string): EditorNode {
+		return schema.node(box, { source });
 	}
 
 	/** The nearest enclosing node of a type, and its position. */
 	function enclosing(state: EditorState, name: string): { node: EditorNode; position: number } | null {
+		// A box shown read-only is selected whole (record-box-view.ts).
+		if (state.selection instanceof NodeSelection && state.selection.node.type.name === name) return { node: state.selection.node, position: state.selection.from };
 		const start = state.selection.$from;
 		for (let depth = start.depth; depth > 0; depth -= 1) {
 			const node = start.node(depth);
@@ -1050,11 +1104,7 @@
 			const key = chosenKey.trim().replace(/^@/, '');
 			if (!key) return;
 			const box: Box = picker === 'law' ? 'law_block' : 'case_block';
-			run(
-				active.box === box
-					? setAttributes(box, { source: key })
-					: insertBlock(schema.nodes[box], { source: key }, () => (box === 'law_block' ? newLaw(key) : newCase(key)))
-			);
+			run(active.box === box ? setAttributes(box, { source: key }) : addAfterCurrent(newBox(box, key)));
 		} else if (picker === 'term') {
 			const id = chosenKey.trim();
 			if (!id) return;
@@ -1127,6 +1177,7 @@
 			inside,
 			box: boxFound ? (boxFound.node.type.name as Box) : null,
 			boxSource: boxFound?.node.attrs.source ?? null,
+			boxFromRecord: isRecordBox(boxFound?.node),
 			boxParts: partsOf(boxFound?.node),
 			analysisTitle: enclosing(state, 'analysis_block')?.node.attrs.title ?? null,
 			figureParts: partsOf(enclosing(state, 'figure_block')?.node, 'figure_part'),
@@ -1157,6 +1208,7 @@
 						revision += 1;
 						placeCommentsSoon();
 						refreshDraftMarksSoon();
+						showBoxesSoon();
 					}
 					describe(editorView.state);
 					placeSelectionMenu(editorView);
@@ -1230,6 +1282,16 @@
 		view = new EditorView(host, {
 			state: createState(body),
 			editable,
+			nodeViews: recordBoxes.nodeViews(),
+			// A click on a read-only box selects the whole box, so Change case and its record's links show above the text.
+			handleClickOn: (editorView, _position, node, nodePosition) => {
+				if (!isRecordBox(node)) return false;
+				editorView.dispatch(editorView.state.tr.setSelection(NodeSelection.create(editorView.state.doc, nodePosition)));
+				return true;
+			},
+			// Typing with a read-only box selected would replace the whole box; it is removed only on purpose, with Delete or Backspace.
+			handleTextInput: (editorView) =>
+				editorView.state.selection instanceof NodeSelection && isRecordBox(editorView.state.selection.node),
 			attributes: { class: 'essay-editor-text essay-text', 'aria-label': 'Essay text', role: 'textbox', 'aria-multiline': 'true' },
 			handleClick: (editorView, position) => {
 				const issue = issueAt(editorView, position);
@@ -1254,6 +1316,7 @@
 		placeComments();
 		mounts += 1;
 		refreshOutline();
+		showBoxesSoon(0);
 	}
 
 	/** The body as Markdown, written so untouched paragraphs keep their exact text. */
@@ -1695,7 +1758,7 @@
 			if (canEdit && localStorage.getItem(checksKey) === 'on') toggleChecks();
 			else void loadLibrary();
 		} catch {
-			// As above.
+			// Storage can be blocked; the choice is then not remembered.
 		}
 	});
 
@@ -1707,6 +1770,8 @@
 		clearTimeout(commentTimer);
 		clearTimeout(draftTimer);
 		clearTimeout(readingTimer);
+		clearTimeout(boxesTimer);
+		boxesAsking?.abort();
 		if (room) {
 			// The room saves 5 seconds after the last person leaves; only text it never received needs a copy.
 			if (inRoom && liveStatus?.state !== 'live' && unsaved()) keepLocalDraft(identifier, currentFile(), basedOn);
@@ -1773,7 +1838,7 @@
 		const link = (event.target as Element | null)?.closest?.('a[href]') as HTMLAnchorElement | null;
 		if (!link || link.closest('.editor-bar') || link.target === '_blank') return;
 		// While editing, a click in the text places the cursor; it never follows a link.
-		if (canEdit && link.closest('.ProseMirror')) return;
+		if (canEdit && link.closest('.ProseMirror') && !link.closest('[data-record-box]')) return;
 		const href = link.getAttribute('href') ?? '';
 		if (href.startsWith('#') || href.startsWith('javascript:')) return;
 		event.preventDefault();
@@ -1947,6 +2012,7 @@
 	{/if}
 {/snippet}
 
+<!-- Opens a followed link in a new tab; Enter on a link fires the same click, so keys need nothing more. -->
 <!-- svelte-ignore a11y_click_events_have_key_events, a11y_no_static_element_interactions -->
 <div class="essay-editor" class:is-commenting={!canEdit} onclickcapture={openReferencesApart}>
 	{#if !toolsInMasthead}{@render toolbar()}{/if}
@@ -1981,7 +2047,11 @@
 		{/each}
 	{:else if active.boxSource && mode === 'rich'}
 		<p class="small context">
-			<span class="muted">In a {active.box === 'law_block' ? 'law' : 'case'}: <code>{active.boxSource}</code>. Its heading on the page is this source’s full citation.</span>
+			{#if active.boxFromRecord}
+				<span class="muted">A {active.box === 'law_block' ? 'law' : 'case'}: <code>{active.boxSource}</code>. Its parts are kept on the {active.box === 'law_block' ? 'law' : 'case'}’s record and show here as readers see them.</span>
+			{:else}
+				<span class="muted">In a {active.box === 'law_block' ? 'law' : 'case'}: <code>{active.boxSource}</code>. Its heading on the page is this source’s full citation.</span>
+			{/if}
 			{#if asked.has(active.boxSource)}<EssaySourceLinks documents={documents[active.boxSource]} loading={!(active.boxSource in documents)} />{/if}
 		</p>
 	{/if}
@@ -2602,6 +2672,13 @@
 	/* The headings and boxes the sidebar links to (editor-outline.ts) land below the masthead and its tools. */
 	.editor-area :global(.ProseMirror > [id]) {
 		scroll-margin-top: calc(var(--masthead-stuck, calc(var(--space-6) * 3)) + var(--space-4));
+	}
+
+	/* A case or law box whose parts are kept on its record, shown as the essay page shows it (record-box-view.ts): the page's own line breaks between blocks are not text, and its words can be selected and copied. */
+	.editor-area :global([data-record-box]) {
+		white-space: normal;
+		user-select: text;
+		cursor: default;
 	}
 
 	/* The citation heading a case or law box (case-headings.ts), selectable and copyable, as in essay-editor-mockups/v2-1. */

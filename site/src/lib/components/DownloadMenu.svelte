@@ -34,6 +34,8 @@
 	import MapIcon from '@lucide/svelte/icons/map';
 	import LibraryBig from '@lucide/svelte/icons/library-big';
 	import Quote from '@lucide/svelte/icons/quote';
+	import { copyRichText } from '#lib/clipboard.ts';
+	import { saveFile } from '#lib/save-file.ts';
 
 	let { onpdf }: { onpdf: () => void } = $props();
 
@@ -131,15 +133,10 @@
 				const office = await import('#lib/office-documents.ts');
 				body = (format.id === 'word' ? office.pageWord(read) : office.pageOpenDocument(read)) as Uint8Array<ArrayBuffer>;
 			}
-			const link = document.createElement('a');
-			link.href = URL.createObjectURL(new Blob([body], { type: format.mediaType }));
-			link.download = datedName(pageFileName(location.pathname, format.extension), built);
-			document.body.append(link);
-			link.click();
-			link.remove();
-			setTimeout(() => URL.revokeObjectURL(link.href), 10_000);
+			const fileName = datedName(pageFileName(location.pathname, format.extension), built);
+			saveFile(new Blob([body], { type: format.mediaType }), fileName);
 			close(true);
-			message = `Saved ${link.download}.`;
+			message = `Saved ${fileName}.`;
 		} catch {
 			message = `The page could not be saved as ${format.format}. Please try again.`;
 		}
@@ -154,16 +151,7 @@
 		const versions = page.data.versions as { content?: string } | undefined;
 		const citation = pageCitation(pageTitle(), siteName, versions?.content, location.href.split('#')[0], new Date());
 		try {
-			if (typeof ClipboardItem === 'function' && navigator.clipboard?.write) {
-				await navigator.clipboard.write([
-					new ClipboardItem({
-						'text/plain': new Blob([citation.text], { type: 'text/plain' }),
-						'text/html': new Blob([citation.html], { type: 'text/html' })
-					})
-				]);
-			} else {
-				await navigator.clipboard.writeText(citation.text);
-			}
+			await copyRichText(citation.text, citation.html);
 			copied = true;
 			message = `Citation copied: ${citation.text}`;
 			clearTimeout(copiedTimer);
@@ -180,6 +168,7 @@
 	<Download size={24} />
 </a>
 
+<!-- Escape and leaving the menu close it from anywhere inside; the button and links are the controls. -->
 <!-- svelte-ignore a11y_no_static_element_interactions -->
 <div class="download needs-scripts" bind:this={container} onfocusout={closeOnOutside} {onkeydown}>
 	<button

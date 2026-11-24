@@ -7,9 +7,9 @@
  * A rendered page is kept in the Worker's cache, keyed by the file's SHA-256
  * and the site build, so rendering runs once per published version.
  */
-import { error } from '@sveltejs/kit';
+import { error, type Cookies } from '@sveltejs/kit';
 import { version as siteBuild } from '$app/env';
-import { essayBoxFacts, essayCaseLinks, essayCaseNames, essayCitations, essayOpinions, essayTerms, essaysInGit } from 'virtual:essay-library';
+import { essayBoxFacts, essayCaseLinks, essayCaseNames, essayCitations, essayOpinions, essayRecordBoxes, essayTerms, essaysInGit } from 'virtual:essay-library';
 import type { D1Database, R2Bucket } from '@cloudflare/workers-types/index.ts';
 import { renderEssay, type EssayHeading, type EssayLibrary, type RenderedEssay } from '../essays/render.ts';
 import { essayDateTime } from '../essays/dates.ts';
@@ -17,7 +17,10 @@ import type { LineChange } from '../essays/merge.ts';
 import { syncEssaysFromGitOnce } from './essay-git-sync.ts';
 import { casesByTopicMarkdown, taggedCases } from '../essays/case-topics.ts';
 import { frontMatterField, splitFrontMatter } from '../essays/syntax.ts';
+import { boxMarkdown, fillBoxes, readingMarkdown } from '../essays/record-boxes.ts';
 import { workerEnvironment } from './environment.ts';
+import { sessionCookie } from '#lib/server/accounts.ts';
+import { signedInHintCookie } from '#lib/signed-in-hint.ts';
 import { handCredits, readerNames, sectionCredits } from './essay-credits.ts';
 import { essayReviewRequests } from './essay-review-requests.ts';
 import { creditLine, finishedReviewers, withReaderCredits, type ReaderCredits } from '../essays/credits.ts';
@@ -26,7 +29,6 @@ import {
 	essayPath,
 	essayRow,
 	identifierFromPath,
-	latestVersion,
 	allListedPublications,
 	listEssays,
 	publications,
@@ -45,8 +47,19 @@ export const essayLibrary: EssayLibrary = {
 	boxPage: (anchor) => (boxPageList ??= boxPages(essaysInGit))[anchor],
 	caseNames: () => (caseTitles ??= Object.fromEntries(Object.entries(essayCaseNames).map(([key, name]) => [key, name.title]))),
 	caseLink: (key) => essayCaseLinks[key],
-	opinions: (key) => essayOpinions[key]
+	opinions: (key) => essayOpinions[key],
+	box: (kind, key) => boxMarkdown(kind, key, essayRecordBoxes[kind === 'law' ? 'laws' : 'cases'][key]) || undefined,
+	boxReading: (kind, key) => readingMarkdown(essayRecordBoxes[kind === 'law' ? 'laws' : 'cases'][key]) || undefined
 };
+
+/** An essay's text with the boxes it leaves empty filled from their records (record-boxes.ts). */
+export function withRecordBoxes(text: string): string {
+	return fillBoxes(
+		text,
+		(kind, key) => essayLibrary.box?.(kind, key),
+		(kind, key) => essayLibrary.boxReading?.(kind, key)
+	).text;
+}
 
 export function storageForPages(): { database: D1Database; bucket: R2Bucket } {
 	const environment = workerEnvironment();
@@ -61,19 +74,47 @@ export function storageForPages(): { database: D1Database; bucket: R2Bucket } {
  */
 export type EssayTexts = 'published' | 'saved';
 
-async function currentTexts(which: EssayTexts): Promise<Record<string, string>> {
+/** How many essay files are read from the bucket at once: a Worker keeps at most six connections open at a time. */
+const readsAtOnce = 6;
+
+/** Reads each file from the bucket, a few at a time, and gives the texts in the order of `files`. */
+async function readTexts(bucket: R2Bucket, files: { identifier: string; object_key: string }[]): Promise<[string, string][]> {
+	const texts: [string, string][] = [];
+	for (let start = 0; start < files.length; start += readsAtOnce) {
+		const group = files.slice(start, start + readsAtOnce);
+		const read = await Promise.all(group.map((file) => readVersionText(bucket, file)));
+		group.forEach((file, index) => texts.push([file.identifier, read[index]]));
+	}
+	return texts;
+}
+
+/** The file of the newest saved version of every essay, in the order listEssays gives them, in one query. */
+async function newestSavedFiles(database: D1Database): Promise<{ identifier: string; object_key: string }[]> {
+	const { results } = await database
+		.prepare(
+			`SELECT e.identifier, v.object_key
+			 FROM essays e
+			 JOIN essay_versions v ON v.essay_identifier = e.identifier
+				AND v.number = (SELECT MAX(number) FROM essay_versions WHERE essay_identifier = e.identifier)
+			 ORDER BY e.part, e.identifier`
+		)
+		.all<{ identifier: string; object_key: string }>();
+	return results;
+}
+
+export async function currentTexts(which: EssayTexts): Promise<Record<string, string>> {
 	const texts: Record<string, string> = { ...essaysInGit };
 	const { database, bucket } = storageForPages();
+	let files: { identifier: string; object_key: string }[];
 	if (which === 'published') {
 		const newest = new Map<string, PublicationRow>();
 		for (const row of await allListedPublications(database)) newest.set(row.essay_identifier, row);
-		for (const [identifier, row] of newest) if (row.object_key) texts[identifier] = await readVersionText(bucket, { object_key: row.object_key });
+		files = [...newest].flatMap(([identifier, row]) => (row.object_key ? [{ identifier, object_key: row.object_key }] : []));
 	} else {
-		for (const essay of await listEssays(database)) {
-			const row = await latestVersion(database, essay.identifier);
-			if (row) texts[essay.identifier] = await readVersionText(bucket, row);
-		}
+		files = await newestSavedFiles(database);
 	}
+	// Added in the same order as before, since the order of the texts is the order of the generated index.
+	for (const [identifier, text] of await readTexts(bucket, files)) texts[identifier] = text;
 	return texts;
 }
 
@@ -90,7 +131,7 @@ export function generatedKind(text: string): string | undefined {
 export async function renderWithGenerated(text: string, which: EssayTexts, options: { lines?: LineChange[] } = {}): Promise<RenderedEssay> {
 	if (generatedKind(text) !== 'cases-by-topic') return renderEssay(text, essayLibrary, options);
 	const texts = Object.fromEntries(Object.entries(await currentTexts(which)).filter(([, other]) => !generatedKind(other)));
-	const tagged = Object.values(texts).flatMap((other) => taggedCases(other));
+	const tagged = Object.values(texts).flatMap((other) => taggedCases(withRecordBoxes(other)));
 	const index = casesByTopicMarkdown(tagged, (key) => essayCaseNames[key]);
 	const pages = boxPages(texts);
 	return renderEssay(`${text.trimEnd()}\n\n${index}\n`, { ...essayLibrary, boxPage: (anchor) => pages[anchor] }, options);
@@ -102,14 +143,15 @@ export async function renderWithGenerated(text: string, which: EssayTexts, optio
  * essays it is built from change without it.
  */
 export async function renderedVersion(bucket: R2Bucket, row: { object_key: string; sha256: string }, which: EssayTexts = 'published'): Promise<RenderedEssay> {
-	const text = await readVersionText(bucket, row);
-	if (generatedKind(text)) return renderWithGenerated(text, which);
+	// The cache is checked before the text is read from the bucket. Only pages that are not generated are ever kept in it, so a page found there needs no text.
 	const cache = (globalThis as { caches?: { default?: Cache } }).caches?.default;
 	const cacheKey = `https://essay-cache.invalid/${encodeURIComponent(siteBuild)}/${row.sha256}`;
 	if (cache) {
 		const cached = await cache.match(cacheKey).catch(() => undefined);
 		if (cached) return (await cached.json()) as RenderedEssay;
 	}
+	const text = await readVersionText(bucket, row);
+	if (generatedKind(text)) return renderWithGenerated(text, which);
 	const rendered = renderEssay(text, essayLibrary);
 	if (cache) {
 		await cache
@@ -186,10 +228,19 @@ function outlineOf(title: string, headings: EssayHeading[]) {
 	return { title, items: headings };
 }
 
+/**
+ * Lets browsers and shared caches keep a public essay page for a minute. The page is the same for every reader: what people with access see on it (the draft, comments, the editor) is fetched by the page itself from the workspace (EssayArticle.svelte). A request from someone who is or may be signed in gets no caching header, as before, so an author who has just published sees the new publication at once. Called only once the page has loaded, so an error page is never kept.
+ */
+export function cacheForReaders(event: { cookies: Pick<Cookies, 'get'>; setHeaders: (headers: Record<string, string>) => void }): void {
+	if (event.cookies.get(sessionCookie) !== undefined || event.cookies.get(signedInHintCookie) !== undefined) return;
+	event.setHeaders({ 'cache-control': 'public, max-age=60' });
+}
+
 export async function essayPage(part: EssayPart, slug: string, publicationNumber?: number) {
 	const identifier = identifierFromPath(part, slug);
 	const { database, bucket } = storageForPages();
 	// Text merged in git since the build is saved as a draft version; readers see it once published.
+	// It stays here rather than in the scheduled run: an essay new in git has no row until the sync saves it, so without it readers would get "No essay has this address" instead of "Not published yet" until the next run. After the first view in each Worker copy this is a promise already settled.
 	await syncEssaysFromGitOnce(database, bucket);
 	const essay = await essayRow(database, identifier);
 	if (!essay || essay.part !== part) error(404, 'No essay has this address.');

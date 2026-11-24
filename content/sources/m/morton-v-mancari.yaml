@@ -106,3 +106,24 @@ notes: >-
 nations_in_case:
   checked: '2026-11-23'
   named: []
+case_box:
+  background: |-
+    Section 12 of the Indian Reorganization Act of 1934 gives qualified Indians a preference for appointment to positions in the Bureau of Indian Affairs. In 1972 the Bureau extended the preference to promotions. Non-Indian employees sued, arguing that the Equal Employment Opportunity Act of 1972 had repealed the preference by implication and that it was discrimination forbidden by the Fifth Amendment [@morton-v-mancari, pp. 537-538].
+  question: |-
+    Does the Bureau of Indian Affairs' statutory employment preference for Indians violate the Equal Employment Opportunity Act of 1972 or due process?
+  holding: |-
+    No. The Court held that the 1972 Act did not implicitly repeal the preference and that the preference is political rather than racial, being granted to members of federally recognized Tribes. It survives because it is rationally tied to Congress's unique obligation toward Native nations.
+  quotes:
+  - text: "The preference, as applied, is granted to Indians not as a discrete racial group, but, rather, as members of quasi-sovereign tribal entities ..."
+    pinpoint: "p. 554"
+  - text: "As long as the special treatment can be tied rationally to the fulfillment of Congress' unique obligation toward the Indians, such legislative judgments will not be disturbed ..."
+    pinpoint: "p. 555"
+  treatment: |-
+    *Rice v. Cayetano* (2000) distinguished *Mancari* in holding Hawaiʻi's ancestry-based voting limit unconstitutional. [@rice-v-cayetano]
+
+    *Haaland v. Brackeen* (2023) did not reach the equal-protection challenge to the Indian Child Welfare Act, finding no standing. [@haaland-v-brackeen]
+  reading:
+    title: "*Morton v. Mancari* (1974)"
+    text: |-
+      The political-classification principle supports membership-based eligibility rules.
+subjects: [citizenship, government]

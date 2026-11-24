@@ -33,6 +33,7 @@ import {
 } from './offline-fingerprints.ts';
 import { controllingWorker, resumeSaving, type Progress } from './offline-saving.ts';
 import type { Change } from './recent-changes.ts';
+import { readStored, writeStored } from '#lib/browser-storage.ts';
 
 export interface Edition {
 	build: string;
@@ -67,11 +68,8 @@ class SiteUpdates {
 	async start(): Promise<void> {
 		if (this.#started || !('serviceWorker' in navigator)) return;
 		this.#started = true;
-		try {
-			this.dismissed = sessionStorage.getItem(dismissedKey) === 'yes';
-		} catch {
-			// Storage blocked: the notice shows again on each page.
-		}
+		// With storage blocked, the notice shows again on each page.
+		this.dismissed = readStored(dismissedKey, 'session') === 'yes';
 		navigator.serviceWorker.addEventListener('controllerchange', () => {
 			if (this.#reloadWhenReplaced) location.reload();
 		});
@@ -169,11 +167,8 @@ class SiteUpdates {
 
 	later(): void {
 		this.dismissed = true;
-		try {
-			sessionStorage.setItem(dismissedKey, 'yes');
-		} catch {
-			// Storage blocked: hidden until the next page load only.
-		}
+		// With storage blocked, it is hidden until the next page load only.
+		writeStored(dismissedKey, 'yes', 'session');
 	}
 }
 

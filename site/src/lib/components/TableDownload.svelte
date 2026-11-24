@@ -14,6 +14,7 @@
 	import { datedName } from '#lib/download-names.ts';
 	import { rowsToCsv, type TableColumn, type TableRow } from '#lib/tables/table-definition.ts';
 	import Download from '@lucide/svelte/icons/download';
+	import { saveFile } from '#lib/save-file.ts';
 
 	let {
 		name,
@@ -47,12 +48,7 @@
 	const savedName = (extension: string) => datedName(`${name}.${extension}`, new Date());
 
 	function save(contents: BlobPart, type: string, extension: string) {
-		const address = URL.createObjectURL(new Blob([contents], { type }));
-		const link = document.createElement('a');
-		link.href = address;
-		link.download = savedName(extension);
-		link.click();
-		setTimeout(() => URL.revokeObjectURL(address), 0);
+		saveFile(new Blob([contents], { type }), savedName(extension));
 	}
 
 	function close() {
@@ -91,6 +87,7 @@
 <svelte:window onclick={onWindowClick} />
 
 {#if interactive || csvHref || xlsxHref}
+	<!-- Escape closes the open list from anywhere inside; the <summary> and links are the controls. -->
 	<!-- svelte-ignore a11y_no_noninteractive_element_interactions -->
 	<details class="table-download no-print" bind:this={details} onkeydown={onKeydown}>
 		<summary aria-label="Download" title={label}>

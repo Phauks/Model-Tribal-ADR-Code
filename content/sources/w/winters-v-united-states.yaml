@@ -110,3 +110,22 @@ nations_in_case:
   - nation: fort-belknap-indian-community-of-the-fort-belknap-reservation-of-montana
     named_as: Fort Belknap Indian Reservation
     role: subject
+case_box:
+  background: |-
+    Under an agreement of May 1888, the Gros Ventre and other bands ceded a large tract in northern Montana and kept the smaller Fort Belknap Reservation along the Milk River [@winters-v-united-states, pp. 575-576]. The land was arid and nearly worthless without irrigation, and the agreement made no reservation of the water. Settlers and irrigation companies upstream then built dams and diverted the river, and the United States sued to keep the water flowing to the reservation [@winters-v-united-states, pp. 565-566].
+  question: |-
+    Did the agreement creating the Fort Belknap Reservation impliedly reserve water from the Milk River for the reservation, as against later upstream settlers?
+  holding: |-
+    Yes. The Court held that the agreement impliedly reserved the water needed to make the reservation lands valuable. The federal government had power to reserve the water and exempt it from state appropriation. The reservation's rights prevailed over later appropriators.
+  quotes:
+  - text: "... command of all their beneficial use ..."
+    pinpoint: "p. 576"
+  - text: "The power of the Government to reserve the waters and exempt them from appropriation under the state laws is not denied, and could not be ..."
+    pinpoint: "p. 577"
+  treatment: |-
+    *Arizona v. Navajo Nation* (2023) reaffirms that reservations carry implied water rights under *Winters* but holds that the 1868 Navajo treaty imposed no affirmative federal duty to secure water. [@arizona-v-navajo-nation]
+  reading:
+    title: "*Winters v. United States* (1908)"
+    text: |-
+      Basis of reserved water rights.
+subjects: [land, environment, treaties]

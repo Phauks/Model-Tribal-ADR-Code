@@ -108,3 +108,23 @@ nations_in_case:
   - nation: cherokee-nation
     named_as: Cherokee Nation
     role: subject
+case_box:
+  background: |-
+    Talton, a Cherokee citizen, was indicted in the courts of the Cherokee Nation for murdering another Cherokee citizen in Cherokee territory. The grand jury had five members, chosen under a Cherokee law. Held by the Nation's sheriff, Talton sought federal habeas corpus, arguing that the Fifth Amendment required a proper grand jury [@talton-v-mayes, pp. 378-379].
+  question: |-
+    Does the Fifth Amendment's grand jury requirement apply to a murder prosecution under Cherokee Nation law in Cherokee courts?
+  holding: |-
+    No. The Court held that the Cherokee Nation's powers of local self-government existed before the Constitution and are not limited by the Fifth Amendment, so a Cherokee grand jury of five persons did not violate the Constitution.
+  quotes:
+  - text: "... as the powers of local self government enjoyed by the Cherokee nation existed prior to the Constitution, they are not operated upon by the Fifth Amendment ..."
+    pinpoint: "p. 384"
+  treatment: |-
+    *Santa Clara Pueblo v. Martinez* (1978) describes *Talton* as the source of the rule that the Bill of Rights does not constrain Tribes and notes that Congress responded with the Indian Civil Rights Act of 1968. [@santa-clara-pueblo-v-martinez]
+  topics:
+  - "Tribal courts"
+  - "Criminal jurisdiction"
+  reading:
+    title: "*Talton v. Mayes* (1896)"
+    text: |-
+      Establishes that Tribal courts and processes are not bound by the federal Bill of Rights as such. That is why the Indian Civil Rights Act and each nation's own law, not the Constitution, set procedural protections in Tribal courts.
+subjects: [tribal-courts, criminal, government]

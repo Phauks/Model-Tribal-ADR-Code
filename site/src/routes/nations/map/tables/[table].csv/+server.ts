@@ -4,6 +4,7 @@ import { landAreasView, nationsMapPage, shadedView } from '#lib/server/nations-m
 import { shadedMapViews } from '#lib/shaded-map-views.ts';
 import { rowsToCsv, type TableColumn, type TableRow } from '#lib/tables/table-definition.ts';
 import type { EntryGenerator, RequestHandler } from './$types';
+import { csvResponse } from '#lib/csv.ts';
 
 // Each map view's table as a CSV file, for the masthead's Download menu (src/lib/page-downloads.ts), which offers the one for the view on screen. Built with the site, from the same columns and rows as the tables on /nations/map.
 export const prerender = true;
@@ -28,10 +29,5 @@ export const GET: RequestHandler = ({ params }) => {
 	if (!build) error(404, 'There is no map table by that name');
 	const { columns, rows } = build();
 	// Addresses are written from the site's root, since the file is built before the site has a domain.
-	return new Response(rowsToCsv(columns, rows), {
-		headers: {
-			'content-type': 'text/csv; charset=utf-8',
-			'content-disposition': `attachment; filename="${params.table}.csv"`
-		}
-	});
+	return csvResponse(rowsToCsv(columns, rows), { fileName: `${params.table}.csv` });
 };

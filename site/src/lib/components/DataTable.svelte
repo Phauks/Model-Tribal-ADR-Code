@@ -95,6 +95,8 @@
 		type TableRow,
 		type TableSort
 	} from '#lib/tables/table-definition.ts';
+	import { copyPageLink, replaceAddressSearch } from '#lib/clipboard.ts';
+	import { FullScreen } from '#lib/full-screen.svelte.ts';
 
 	interface Props {
 		/** Unique on the page; used for element ids. */
@@ -167,8 +169,7 @@
 	let copyStatus = $state('');
 
 	let frame = $state<HTMLElement | undefined>();
-	let fullScreen = $state(false);
-	let fillingWindow = $state(false);
+	const fullScreen = new FullScreen(() => frame);
 
 	const sort = $derived(chosenSort ?? defaultSort);
 	/** The columns drawn: the reader's choice, or every column not marked optional. */
@@ -272,36 +273,13 @@
 		return keepPlaced(popover, anchor, edge, frame ? [frame, document.body] : [document.body]);
 	});
 
-	/** The table filling the screen, with the browser's full screen, or filling the window where the browser has none (as on an iPhone) or refuses. */
-	async function toggleFullScreen() {
-		if (fullScreen || fillingWindow) {
-			if (document.fullscreenElement) await document.exitFullscreen();
-			fillingWindow = false;
-			return;
-		}
-		if (frame?.requestFullscreen) {
-			try {
-				await frame.requestFullscreen();
-				return;
-			} catch {
-				// Refused: fill the window instead.
-			}
-		}
-		fillingWindow = true;
-	}
-
 	function onKeydown(event: KeyboardEvent) {
 		// Escape closes an open menu first (the browser does that); the next one leaves the window.
-		if (fillingWindow && event.key === 'Escape' && !openPopover) fillingWindow = false;
+		if (!openPopover) fullScreen.leaveOnEscape(event);
 	}
 
 	async function copyLink() {
-		try {
-			await navigator.clipboard.writeText(location.href);
-			copyStatus = 'Link copied.';
-		} catch {
-			copyStatus = `Copy this link: ${location.href}`;
-		}
+		copyStatus = await copyPageLink();
 	}
 
 	// Keeps the page address in step with the table, without adding to the
@@ -319,11 +297,7 @@
 			new URLSearchParams(location.search),
 			defaultSort
 		);
-		const search = parameters.toString();
-		const next = `${location.pathname}${search ? `?${search}` : ''}${location.hash}`;
-		if (next !== `${location.pathname}${location.search}${location.hash}`) {
-			history.replaceState(history.state, '', next);
-		}
+		replaceAddressSearch(parameters.toString());
 		copyStatus = '';
 	});
 
@@ -337,10 +311,7 @@
 		}
 		addressRead = true;
 		interactive = true;
-		const onChange = () => {
-			fullScreen = document.fullscreenElement === frame;
-		};
-		document.addEventListener('fullscreenchange', onChange);
+		const stopFollowingFullScreen = fullScreen.follow();
 		// Every row is printed.
 		const beforePrint = () => {
 			if (drawnRows < Infinity) {
@@ -350,7 +321,7 @@
 		};
 		window.addEventListener('beforeprint', beforePrint);
 		return () => {
-			document.removeEventListener('fullscreenchange', onChange);
+			stopFollowingFullScreen();
 			window.removeEventListener('beforeprint', beforePrint);
 		};
 	});
@@ -358,7 +329,7 @@
 
 <svelte:window onkeydown={onKeydown} />
 
-<div class="data-table" class:filling-window={fillingWindow} bind:this={frame}>
+<div class="data-table" class:filling-window={fullScreen.fillingWindow} bind:this={frame}>
 
 {#if interactive && hasTools}
 	{#if searchLabel}
@@ -398,8 +369,8 @@
 			<TableDownload name={download ?? identifier} title={caption ?? download ?? identifier} table={() => ({ columns: visibleColumns, rows: shownRows })} />
 		{/if}
 		{#if tools}
-			<button type="button" class="icon-tool" aria-label={fullScreen || fillingWindow ? 'Leave full screen' : 'Full screen'} title={fullScreen || fillingWindow ? 'Leave full screen' : 'Full screen'} onclick={toggleFullScreen}>
-				{#if fullScreen || fillingWindow}<Minimize aria-hidden="true" size="1.25em" strokeWidth={1.75} />{:else}<Maximize aria-hidden="true" size="1.25em" strokeWidth={1.75} />{/if}
+			<button type="button" class="icon-tool" aria-label={fullScreen.shown ? 'Leave full screen' : 'Full screen'} title={fullScreen.shown ? 'Leave full screen' : 'Full screen'} onclick={fullScreen.toggle}>
+				{#if fullScreen.shown}<Minimize aria-hidden="true" size="1.25em" strokeWidth={1.75} />{:else}<Maximize aria-hidden="true" size="1.25em" strokeWidth={1.75} />{/if}
 			</button>
 		{/if}
 		{#if copyStatus}<p class="small table-copied" role="status">{copyStatus}</p>{/if}

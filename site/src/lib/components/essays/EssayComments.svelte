@@ -42,6 +42,7 @@
 	import Scale from '@lucide/svelte/icons/scale';
 	import Scissors from '@lucide/svelte/icons/scissors';
 	import SearchCheck from '@lucide/svelte/icons/search-check';
+	import { sendJson } from '#lib/send-json.ts';
 
 	let {
 		essay,
@@ -202,17 +203,15 @@
 	async function send(payload: Record<string, unknown>, method = 'POST', query = ''): Promise<boolean> {
 		sending = true;
 		problem = '';
-		const response = await fetch(`/workspace/essays/${essay}/comments${query}`, {
-			method,
-			headers: { 'content-type': 'application/json' },
-			body: JSON.stringify(payload)
-		}).catch(() => null);
-		const answer = (await response?.json().catch(() => null)) as { comments?: EssayComment[]; message?: string } | null;
+		const sent = await sendJson<{ comments: EssayComment[] }>(`/workspace/essays/${essay}/comments${query}`, method, payload, {
+			complete: (answer) => !!answer.comments
+		});
 		sending = false;
-		if (!response?.ok || !answer?.comments) {
-			problem = answer?.message || 'That did not go through. Try again.';
+		if (!sent.ok) {
+			problem = sent.problem;
 			return false;
 		}
+		const { answer } = sent;
 		const before = new Set(comments.map((comment) => comment.identifier));
 		onchange(answer.comments);
 		const added = answer.comments.find((comment) => !before.has(comment.identifier) && comment.threadIdentifier === null);
@@ -395,6 +394,7 @@
 
 {#snippet threadCard(thread: CommentThread, placement: 'beside' | 'moved' | 'done')}
 	{@const id = thread.first.identifier}
+	<!-- Choosing a card shows its words in the text, a pointer shortcut for now; a "Show in text" button for the keyboard is planned separately. -->
 	<!-- svelte-ignore a11y_click_events_have_key_events, a11y_no_noninteractive_element_interactions -->
 	<article
 		id="comment-thread-{id}"
@@ -425,6 +425,7 @@
 		{#if replying === id}
 			<form class="reply-form" onsubmit={(event) => reply(event, id)}>
 				<label class="visually-hidden" for="reply-{id}">Your reply</label>
+				<!-- The box opens only when the reader presses Reply, so focus goes where they asked, never on page load. -->
 				<!-- svelte-ignore a11y_autofocus -->
 				<textarea id="reply-{id}" rows="2" maxlength="5000" bind:value={replies[id]} autofocus onkeydown={(event) => event.key === 'Escape' && (replying = null)}></textarea>
 				<p class="row">

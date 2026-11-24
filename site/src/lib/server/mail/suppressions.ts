@@ -10,6 +10,7 @@
  * and skipped when its tables are missing.
  */
 import { actionStatement, currentTime, type MailContext } from './context.ts';
+import { inGroupsOf, placeholdersFor } from '#lib/server/database-groups.ts';
 
 export type SuppressionReason = 'unsubscribed' | 'asked' | 'complaint' | 'hard-bounce' | 'manual';
 
@@ -33,10 +34,9 @@ export async function isSuppressed(context: MailContext, email: string): Promise
 export async function suppressedAmong(context: MailContext, emails: string[]): Promise<Set<string>> {
 	const found = new Set<string>();
 	const lower = [...new Set(emails.map((email) => email.toLowerCase()))];
-	for (let start = 0; start < lower.length; start += 50) {
-		const part = lower.slice(start, start + 50);
+	for (const part of inGroupsOf(lower, 50)) {
 		const { results } = await context.database
-			.prepare(`SELECT email FROM mail_suppressions WHERE email IN (${part.map(() => '?').join(', ')})`)
+			.prepare(`SELECT email FROM mail_suppressions WHERE email IN (${placeholdersFor(part)})`)
 			.bind(...part)
 			.all<{ email: string }>();
 		for (const row of results) found.add(row.email);
