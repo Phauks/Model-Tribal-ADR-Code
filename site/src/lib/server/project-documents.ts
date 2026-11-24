@@ -210,3 +210,16 @@ export function projectDocumentPage(address: string) {
 		historyLink: `${repositoryLink}/commits/main/${document.file}`
 	};
 }
+
+/**
+ * The material a license text covers, from the "Material" column of the
+ * table in LICENSE.md whose "Full text" links to it, for the license's info
+ * page (site/DESIGN.md, "Info pages").
+ */
+export function licenseMaterials(file: string): string[] {
+	const table = withoutRepositoryOnlyText(readFileSync(path.join(repositoryRoot, 'LICENSE.md'), 'utf8'));
+	return table
+		.split('\n')
+		.filter((line) => line.startsWith('|') && line.includes(`(${file})`))
+		.map((line) => line.split('|')[1].trim().replace(/`/g, ''));
+}

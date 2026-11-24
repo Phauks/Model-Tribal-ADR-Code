@@ -18,9 +18,12 @@
 		entry,
 		headingLevel = 2,
 		onGlossaryPage = false,
+		headword = true,
 		children
 	}: {
 		entry: GlossaryEntryView;
+		/** False on the entry's own page, where the page's title is the headword (InfoPage). */
+		headword?: boolean;
 		/** Shown under the headword, such as the page's tools. */
 		children?: Snippet;
 		/** The level of the headword's heading; the entry's own subheadings sit one below. */
@@ -40,9 +43,10 @@
 	class="glossary-entry"
 	class:on-glossary-page={onGlossaryPage}
 	id={onGlossaryPage ? entry.id : undefined}
-	aria-labelledby="term-{entry.id}"
+	aria-labelledby={headword ? `term-${entry.id}` : undefined}
+	aria-label={headword ? undefined : entry.term}
 >
-	<div class="entry-head">
+	{#if headword}<div class="entry-head">
 		<svelte:element this={termHeading} id="term-{entry.id}" class="headword">{entry.term}</svelte:element>
 		{#if onGlossaryPage}
 			<a class="permalink no-print" href="#{entry.id}">
@@ -50,7 +54,7 @@
 				<span class="visually-hidden">Link to {entry.term}</span>
 			</a>
 		{/if}
-	</div>
+	</div>{/if}
 	<p class="labels">
 		<i class="functional-label">{entry.functionalLabel}</i>
 		{#if entry.expansion}<span class="expansion">of <b>{entry.expansion}</b></span>{/if}
