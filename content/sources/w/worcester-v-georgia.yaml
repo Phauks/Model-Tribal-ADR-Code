@@ -18,6 +18,20 @@ citation:
     - - 2026
       - 11
       - 21
+caption:
+  printed: "Samuel A. Worcester, Plaintiff in Error v. The State of Georgia"
+  source: https://tile.loc.gov/storage-services/service/ll/usrep/usrep031/usrep031515/usrep031515.pdf
+  checked: '2026-11-24'
+opinions:
+  source: https://tile.loc.gov/storage-services/service/ll/usrep/usrep031/usrep031515/usrep031515.pdf
+  checked: '2026-11-24'
+  list:
+  - {kind: majority, justice: John Marshall, page: 536}
+  - {kind: concurrence, justice: John McLean, page: 563}
+  - kind: dissent
+    justice: Henry Baldwin
+    page: 596
+    note: The report gives his grounds in one paragraph and says his opinion "was not delivered to the reporter."
 original_link: https://www.law.cornell.edu/supremecourt/text/31/515
 retrieved: '2026-11-21'
 archives:
@@ -66,6 +80,10 @@ reading_links:
     access: free
     link: https://supreme.justia.com/cases/federal/us/31/515/
     unchecked: true
+  - site: oyez
+    label: "Oyez"
+    access: free
+    link: https://www.oyez.org/cases/1789-1850/31us515
   - site: google-scholar
     label: "Google Scholar"
     access: free

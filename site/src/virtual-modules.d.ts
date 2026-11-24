@@ -66,6 +66,8 @@ declare module 'virtual:essay-library' {
 	export const essayCaseNames: Record<string, { title: string; date: number[] }>;
 	/** Where a case's name links when no essay has a box for it (the copy of the opinion on this site, or where it was published), by source key. */
 	export const essayCaseLinks: Record<string, string>;
+	/** Each court case's opinions and the report page each starts on, by source key (src/lib/case-opinions.ts). */
+	export const essayOpinions: Record<string, import('#lib/case-opinions.ts').OpinionEntry[]>;
 	/** Words the spelling check should accept: names of nations, glossary terms and court cases. */
 	export const essaySpellingWords: string[];
 }

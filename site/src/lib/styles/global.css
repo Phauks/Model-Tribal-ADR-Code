@@ -1122,6 +1122,11 @@ sup.citation {
 	margin-top: 0 !important;
 }
 
+/* The opinion a quotation from a court case comes from, before its marker (src/lib/case-opinions.ts). */
+.essay-quote-opinion {
+	color: var(--color-ink-muted);
+}
+
 /*
  * A quotation in its paragraph (src/lib/essays/quote-context-view.ts): the
  * "Show the paragraph" button sits on the attribution's line, at the left,
@@ -1606,7 +1611,9 @@ sup.citation {
 	display: block;
 }
 
-.reading-line + .reading-line {
+/* One site to a line (Trevor, Nov. 24, 2026); a small gap sets off the saved copy above and further reading below. */
+.reading-saved + .reading-line,
+.reading-line:not(.reading-further) + .reading-further {
 	margin-top: var(--space-1);
 }
 

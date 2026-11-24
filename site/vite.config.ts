@@ -9,7 +9,7 @@ import { designTokensToCss } from './src/lib/design-tokens.ts';
 import { buildMapGeometry } from './src/lib/map-geometry.ts';
 import { parseGitLog, type Change } from './src/lib/recent-changes.ts';
 import { fullCitations } from './src/lib/server/citations.ts';
-import { caseNames, essaysInGit, everyBoxFact, everyFullCitation, glossaryTerms, spellingWords } from './src/lib/server/essay-library.ts';
+import { caseNames, essaysInGit, everyBoxFact, everyFullCitation, everyOpinionList, glossaryTerms, spellingWords } from './src/lib/server/essay-library.ts';
 import { caseLinks } from './src/lib/server/case-previews.ts';
 import { buildFormCatalog } from './src/lib/server/form-catalog.ts';
 import { nationIndexRows } from './src/lib/server/nation-index.ts';
@@ -357,6 +357,7 @@ function essayLibrary(): Plugin {
 				`export const essaysInGit = ${JSON.stringify(essaysInGit())};`,
 				`export const essayCaseNames = ${JSON.stringify(caseNames())};`,
 				`export const essayCaseLinks = ${JSON.stringify(caseLinks())};`,
+				`export const essayOpinions = ${JSON.stringify(everyOpinionList())};`,
 				`export const essaySpellingWords = ${JSON.stringify(spellingWords())};`
 			].join('\n');
 		}

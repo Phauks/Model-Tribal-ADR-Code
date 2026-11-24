@@ -112,7 +112,8 @@ function paragraphElement(paragraph: ContextParagraph, cases: CasePreviewList | 
 				link.href = links.get(mention.id)!;
 				link.dataset.case = mention.id;
 				linkId = `${mention.id}@${mention.start}`;
-				if (!link.href.includes('#case-')) toOpinions.push(link);
+				// A case's page or box is part of the site and opens in the same tab; an opinion elsewhere opens in a new one.
+				if (!/#case-|\/cases\//.test(new URL(link.href).hash + new URL(link.href).pathname)) toOpinions.push(link);
 				element.append(link);
 			}
 			link.append(piece);

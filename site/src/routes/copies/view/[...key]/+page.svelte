@@ -9,6 +9,14 @@
 	const details = $derived(data.details);
 	const opinion = $derived(details?.opinion);
 	const publishedAt = $derived(URL.canParse(data.original) ? new URL(data.original).hostname : data.original);
+	// A link to one page of a PDF, such as where an opinion starts on a case's page ("#page=22"), opens the file at that page.
+	let pdfPage = $state('');
+	$effect(() => {
+		const read = () => (pdfPage = /^#page=\d{1,5}$/.test(location.hash) ? location.hash : '');
+		read();
+		addEventListener('hashchange', read);
+		return () => removeEventListener('hashchange', read);
+	});
 </script>
 
 <svelte:head>
@@ -62,7 +70,7 @@
 
 <section class="document" aria-label="The document">
 	{#if data.isPdf}
-		<iframe class="frame" src={data.file} title="{data.title} ({data.kind})"></iframe>
+		{#key pdfPage}<iframe class="frame" src={data.file + pdfPage} title="{data.title} ({data.kind})"></iframe>{/key}
 	{:else}
 		<!-- A saved web page runs nothing and loads nothing: its own response says so too (src/lib/server/public-copy-serving.ts). -->
 		<iframe class="frame" src={data.file} title="{data.title} ({data.kind})" sandbox="" referrerpolicy="no-referrer"></iframe>
