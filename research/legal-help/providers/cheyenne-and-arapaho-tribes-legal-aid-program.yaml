@@ -1,0 +1,38 @@
+id: cheyenne-and-arapaho-tribes-legal-aid-program
+name: Legal Aid Program, Cheyenne and Arapaho Tribes
+kind: tribal-legal-aid
+operator: tribal-government
+link: https://www.cheyenneandarapaho-nsn.gov/judicial/legal-aid-program
+link_label: Legal Aid Program
+services:
+- representation
+who_can_use: Enrolled Cheyenne and Arapaho tribal members, in specified circumstances.
+serves:
+- states:
+  - OK
+  scope: members
+  nations:
+  - cheyenne-and-arapaho-tribes
+  counties:
+  - Beckham
+  - Blaine
+  - Canadian
+  - Custer
+  - Dewey
+  - Ellis
+  - Grady
+  - Kingfisher
+  - Oklahoma
+  - Roger Mills
+  - Washita
+  text: Legal assistance and representation to tribal members in specified circumstances, in the Cheyenne and Arapaho Tribal Court and Oklahoma state courts in 11 counties.
+  source: cheyenne-and-arapaho-legal-aid-program
+sources:
+- id: cheyenne-and-arapaho-legal-aid-program
+  title: Legal Aid Program
+  publisher: Cheyenne and Arapaho Tribes
+  link: https://www.cheyenneandarapaho-nsn.gov/judicial/legal-aid-program
+  accessed: '2026-11-24'
+  verification: page-read
+  supports: Eligibility and the 11 counties; read through a fetch service (the page renders with scripts).
+checked: '2026-11-24'

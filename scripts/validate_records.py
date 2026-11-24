@@ -102,6 +102,7 @@ RECORD_FOLDERS = [
     ("content/supreme-court/people.yaml", "supreme-court-people.schema.json"),
     ("research/sessions/*/*.md", "research-session.schema.json"),
     ("research/outreach/*.yaml", "outreach-organization.schema.json"),
+    ("research/legal-help/providers/*.yaml", "legal-help-provider.schema.json"),
     ("research/search-logs/*/*/*.yaml", "search-log.schema.json"),
     ("research/reading-links/sites.yaml", "reading-link-sites.schema.json"),
 ]
