@@ -167,7 +167,7 @@ describe('formText', () => {
 
 	it('cuts long text to the maximum and composes accents into single characters', () => {
 		const form = new FormData();
-		form.set('name', 'Café society');
+		form.set('name', 'Cafe\u0301 society');
 		form.set('long', 'abcdef');
 		expect(formText(form, 'name')).toBe('Café society');
 		expect(formText(form, 'long', 3)).toBe('abc');
