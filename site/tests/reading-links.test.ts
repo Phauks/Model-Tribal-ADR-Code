@@ -18,12 +18,16 @@ function list(html: string): string {
 }
 
 describe('where to read a cited case', () => {
-	it('lists the saved copy, then free and official texts, then subscription services with a $, then further reading', () => {
+	it('gives the saved copy, the other sites and further reading a line each, with no mark for a subscription on the page', () => {
 		const saved = '<span class="source-saved"><a href="/copies/x">Saved copy</a> (official report, PDF, Nov. 23, 2026; <a class="source-verify" href="/downloads">SHA-256</a>)</span>';
 		const html = readingLinksHtml(links, saved);
-		expect(list(html)).toBe(
-			'Saved copy (official report, PDF, Nov. 23, 2026; SHA-256) · CourtListener · Library of Congress · Westlaw$ · Lexis$ · Further reading: Wikipedia'
-		);
+		const lines = [...html.matchAll(/<span class="reading-line[^"]*">([\s\S]*?)<\/span>(?=<span class="reading-line|<\/span><\/span>$)/g)].map((line) => list(`<span class="reading-list">${line[1]}</span></span>`));
+		expect(lines).toEqual([
+			'Saved copy (official report, PDF, Nov. 23, 2026; SHA-256)',
+			'CourtListener · Library of Congress · Westlaw · Lexis',
+			'Further reading: Wikipedia'
+		]);
+		expect(html).not.toContain('$');
 		expect(html).toContain('aria-label="Where to read it, 6 places"');
 		expect(html).toContain('aria-expanded="false"');
 		expect(html).toContain('<span class="visually-hidden"> (subscription)</span>');

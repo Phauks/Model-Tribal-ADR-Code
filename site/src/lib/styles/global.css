@@ -1479,17 +1479,28 @@ sup.citation {
 	transform: rotate(180deg);
 }
 
+/* Set apart from the citation by a rule down its left side, one line for each kind of place (Trevor asked for "better delineation" on Nov. 23, 2026). */
 .reading-list {
 	display: block;
 	margin: var(--space-1) 0 var(--space-2);
+	padding-left: var(--space-3);
+	border-left: 2px solid var(--color-line);
 	font-size: 0.9em;
 	font-weight: var(--font-weight-regular);
 	line-height: 1.6;
 }
 
-/* At the head of a case or law box the list sits a full gap under the citation and right above the facts, as in the approved mockup. */
+.reading-line {
+	display: block;
+}
+
+.reading-line + .reading-line {
+	margin-top: var(--space-1);
+}
+
+/* At the head of a case or law box the list sits a full gap under the citation and above the facts. */
 .essay-case-citation .reading-list {
-	margin: var(--space-3) 0 0;
+	margin: var(--space-3) 0;
 }
 
 :root:not([data-scripts='on']) .essay-case-citation:has(.reading-list),
@@ -1499,12 +1510,6 @@ sup.citation {
 
 :root[data-scripts='on'] .reading-toggle[aria-expanded='false'] + .reading-list {
 	display: none;
-}
-
-.reading-paid {
-	margin-left: 0.15em;
-	color: var(--color-ink-muted);
-	font-weight: 600;
 }
 
 @media print {

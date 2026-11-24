@@ -80,33 +80,42 @@ function linkHtml(link: ReadingLink): string {
 /**
  * Where else a cited case or law can be read, as HTML to follow its
  * citation: a small book icon with the number of places and an arrow, which
- * opens the list on the line below (Trevor chose this design on Nov. 23,
- * 2026). The list starts with the site's own saved copy, when there is one
- * (`saved`, from savedCopyLink in src/lib/server/markdown.ts), then the
- * official and free texts, then Westlaw and Lexis, each with "$" for a
- * subscription, then "Further reading: Wikipedia". Without scripts the
- * button is hidden and the list shows. Empty when there is nothing to list.
+ * opens the list below (Trevor chose this design on Nov. 23, 2026). The list
+ * has a line for the site's own saved copy, when there is one (`saved`, from
+ * savedCopyLink in src/lib/server/markdown.ts), a line for the official and
+ * free texts followed by Westlaw and Lexis, which need a subscription, and a
+ * line "Further reading: Wikipedia". Without scripts the button is
+ * hidden and the list shows. Empty when there is nothing to list.
  */
 export function readingLinksHtml(readingLinks: ReadingLinks | undefined, saved = ''): string {
-	const items: string[] = saved ? [saved] : [];
+	const sites: string[] = [];
+	const further: string[] = [];
 	for (const group of readingLinkGroups(readingLinks?.links)) {
 		for (const link of group.links) {
 			if (group.access === 'subscription') {
-				items.push(`<span class="reading-item">${linkHtml(link)}<span class="reading-paid" aria-hidden="true">$</span><span class="visually-hidden"> (subscription)</span></span>`);
+				// No "$" on the page (Trevor, Nov. 23, 2026: "assume people understand"); screen readers still hear it needs a subscription.
+				sites.push(`<span class="reading-item">${linkHtml(link)}<span class="visually-hidden"> (subscription)</span></span>`);
 			} else if (group.access === 'background') {
-				items.push(`<span class="reading-item">Further reading: ${linkHtml(link)}</span>`);
+				further.push(linkHtml(link));
 			} else {
-				items.push(linkHtml(link));
+				sites.push(linkHtml(link));
 			}
 		}
 	}
-	if (items.length === 0) return '';
-	const places = `${items.length} ${items.length === 1 ? 'place' : 'places'}`;
+	const count = (saved ? 1 : 0) + sites.length + further.length;
+	if (count === 0) return '';
+	// One line each: the saved copy, the other sites, then further reading (Trevor, Nov. 23, 2026: "our saved copy should get its own line and further reading as well").
+	const lines = [
+		saved && `<span class="reading-line reading-saved">${saved}</span>`,
+		sites.length > 0 && `<span class="reading-line">${sites.join(' · ')}</span>`,
+		further.length > 0 && `<span class="reading-line reading-further">Further reading: ${further.join(' · ')}</span>`
+	].filter(Boolean);
+	const places = `${count} ${count === 1 ? 'place' : 'places'}`;
 	// The list follows the button straight after, so the button needs no id to point to it: copies of a citation (a preview, a note under its paragraph) drop ids.
 	const button =
 		`<button type="button" class="reading-toggle needs-scripts" aria-expanded="false" aria-label="Where to read it, ${places}" title="Where to read it">` +
-		`${bookIcon}<span class="reading-count" aria-hidden="true">${items.length}</span>${chevronIcon}</button>`;
-	return ` <span class="reading-links">${button}<span class="reading-list">${items.join(' · ')}</span></span>`;
+		`${bookIcon}<span class="reading-count" aria-hidden="true">${count}</span>${chevronIcon}</button>`;
+	return ` <span class="reading-links">${button}<span class="reading-list">${lines.join('')}</span></span>`;
 }
 
 /** Opens or closes the list after a reading links button; the site's layout listens for clicks on any page. */
