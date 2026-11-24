@@ -66,7 +66,6 @@ export interface ServiceRow {
 export interface PersonCase {
 	key: string;
 	name: string;
-	shortName: string;
 	citation: string;
 	link?: string;
 	decided?: string;
@@ -89,8 +88,8 @@ export interface JusticePage {
 	start: string;
 	end: string;
 	cases: PersonCase[];
-	career: string[];
-	otherService: string[];
+	/** Every post before and beside the Court, oldest first. */
+	career: CareerLine[];
 	careerMarks: CitationMark[];
 	sources: SourceEntry[];
 }
@@ -128,7 +127,6 @@ interface BenchEntry {
 
 interface CaseBench {
 	court: string;
-	short_name: string;
 	decision_type?: string;
 	vote?: { majority?: number | null; minority?: number | null };
 	justices?: BenchEntry[];
@@ -224,7 +222,6 @@ function casesOf(people: JusticePerson[]): PersonCase[] {
 		found.push({
 			key,
 			name: record.citation.title ?? key,
-			shortName: bench.short_name,
 			citation: preview?.citation ?? [record.citation.volume, 'U.S.', record.citation.page].filter(Boolean).join(' '),
 			link: preview?.link,
 			decided,
@@ -248,6 +245,43 @@ function confirmedText(appointment: JusticePerson['appointments'][number]): stri
 
 function yearsOf(appointment: Justice): string {
 	return `${appointment.oath.slice(0, 4)}–${appointment.left ? appointment.left.slice(0, 4) : ''}`;
+}
+
+export interface CareerLine {
+	/** "1776–1780", "1782, 1784–1785", or empty where the Directory gives none. */
+	years: string;
+	text: string;
+}
+
+/** Years at the end of a Directory line: "1782, 1784-1785", "1817-", "1990-present". */
+const trailingYears = /^(.*?)[,\s]+((?:\d{4}(?:-(?:\d{4}|present))?-?(?:,\s*)?)+)$/i;
+
+/**
+ * A line of the Directory's career list with its years taken out to stand on
+ * their own (Trevor, Nov. 23, 2026: "segment by year rather than putting years
+ * at the end"). In "Continental Army, Eleventh Virginia Regiment, 1776-1780;
+ * lieutenant, 1776-1777; captain, 1777-1780" the first part's years lead and
+ * the ranks keep theirs.
+ */
+export function careerLine(line: string): CareerLine {
+	const [head, ...rest] = line.split(/;\s*/);
+	const match = trailingYears.exec(head.trim());
+	const dash = (text: string) => text.replace(/(\d{4})-(?=\d{4}|present)/gi, '$1–').replace(/(\d{4})-(?=$|,)/g, '$1–');
+	if (!match) return { years: '', text: dash(line) };
+	return { years: dash(match[2].replace(/,\s*$/, '')), text: dash([match[1], ...rest].join('; ')) };
+}
+
+/** Oldest first by the first year; a line without years stays after the one before it. */
+function sortedCareer(lines: CareerLine[]): CareerLine[] {
+	let previous = 0;
+	return lines
+		.map((line, index) => {
+			const year = Number(/\d{4}/.exec(line.years)?.[0] ?? previous);
+			previous = year;
+			return { line, year, index };
+		})
+		.sort((one, two) => one.year - two.year || one.index - two.index)
+		.map(({ line }) => line);
 }
 
 export function justicePage(key: string): JusticePage | null {
@@ -358,9 +392,10 @@ export function justicePage(key: string): JusticePage | null {
 	}
 	const otherService = person.other_federal_service.map((entry) =>
 		'text' in entry
-			? entry.text
-			: `${entry.title}, ${entry.court}, ${[entry.commissioned?.slice(0, 4), entry.ended?.slice(0, 4)].filter(Boolean).join('–')}`
+			? careerLine(entry.text)
+			: careerLine(`${entry.title}, ${entry.court}, ${entry.commissioned?.slice(0, 4) ?? ''}-${entry.ended?.slice(0, 4) ?? 'present'}`)
 	);
+	const career = sortedCareer([...person.career.map(careerLine), ...otherService]);
 
 	const roles = appointments.map((appointment) => `${appointment.role}, ${yearsOf(appointment)}`);
 	return {
@@ -373,8 +408,7 @@ export function justicePage(key: string): JusticePage | null {
 		start: appointments[0].oath,
 		end: appointments.at(-1)!.left ?? today(),
 		cases,
-		career: person.career,
-		otherService,
+		career,
 		careerMarks,
 		sources: sourceUses.list
 	};

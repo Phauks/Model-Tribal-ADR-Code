@@ -62,11 +62,24 @@ describe('opinions in the cases tables', () => {
 		const fuller = courtPage('fuller-court')!;
 		const winters = fuller.cases.find((item) => item.key === 'winters-v-united-states')!;
 		expect(winters.opinions.find((opinion) => opinion.column === 'dissenting')).toMatchObject({ justice: 'Brewer', unwritten: true });
-		expect(winters.shortName).toBe('Winters');
 	});
 });
 
 describe('Justice and President pages', () => {
+	it('puts the years of each career line first, oldest first', async () => {
+		const { careerLine, justicePage } = await import('#lib/server/justice-pages.ts');
+		expect(careerLine('State delegate, Virginia, 1782, 1784-1785, 1787-1788')).toEqual({ years: '1782, 1784–1785, 1787–1788', text: 'State delegate, Virginia' });
+		expect(careerLine('Continental Army, Eleventh Virginia Regiment, 1776-1780; lieutenant, 1776-1777; captain, 1777-1780')).toEqual({
+			years: '1776–1780',
+			text: 'Continental Army, Eleventh Virginia Regiment; lieutenant, 1776–1777; captain, 1777–1780'
+		});
+		expect(careerLine('Private practice, Cortland, New York, 1817-')).toEqual({ years: '1817–', text: 'Private practice, Cortland, New York' });
+		expect(careerLine('Legislative correspondent')).toEqual({ years: '', text: 'Legislative correspondent' });
+		const career = justicePage('john-marshall')!.career;
+		expect(career[0]).toEqual({ years: '1775–1776', text: 'Culpeper County [Virginia] Minutemen lieutenant' });
+		expect(career.at(-1)?.text).toBe('Secretary of State');
+	});
+
 	it('matches every Justice a case names to one person', () => {
 		const everyName = courtsWithPages().flatMap((court) => courtPage(court.key)!.cases.flatMap((item) => item.opinions));
 		expect(everyName.every((opinion) => opinion.justice === 'Per curiam' || opinion.link?.startsWith('/supreme-court/justices/'))).toBe(true);

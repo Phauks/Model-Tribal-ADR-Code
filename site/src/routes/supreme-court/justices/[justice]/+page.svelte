@@ -88,12 +88,12 @@
 		{/if}
 	</section>
 
-	{#if data.career.length > 0 || data.otherService.length > 0}
+	{#if data.career.length > 0}
 		<section aria-labelledby="career">
 			<h2 id="career">Career</h2>
 			<ul class="career">
-				{#each [...data.career, ...data.otherService] as line, index (index)}
-					<li>{line}</li>
+				{#each data.career as line, index (index)}
+					<li><span class="years">{line.years}</span><span>{line.text}</span></li>
 				{/each}
 			</ul>
 			<p class="small muted source-line">Source<CitationMarks marks={data.careerMarks} /></p>
@@ -148,7 +148,7 @@
 		margin-top: var(--space-2);
 	}
 
-	/* One line each, with a thin rule between, as At a glance stacks values: no bullets (Trevor, Nov. 23, 2026). */
+	/* One line each, with a thin rule between, as At a glance stacks values: no bullets (Trevor, Nov. 23, 2026). The years stand first, in their own column ("segment by year"). */
 	.career {
 		display: flow-root;
 		padding: 0;
@@ -156,8 +156,23 @@
 	}
 
 	.career li {
+		display: grid;
+		grid-template-columns: 9rem 1fr;
+		gap: var(--space-3);
 		padding: var(--space-2) 0;
 		border-bottom: 1px solid var(--color-line);
+	}
+
+	.years {
+		font-weight: 700;
+		font-variant-numeric: tabular-nums;
+	}
+
+	@media (max-width: 30rem) {
+		.career li {
+			grid-template-columns: 1fr;
+			gap: var(--space-1);
+		}
 	}
 
 	.source-line {

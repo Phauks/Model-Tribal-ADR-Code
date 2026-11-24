@@ -6,7 +6,6 @@ and writes a `supreme_court` block into the record:
 
     supreme_court:
       court: Warren Court                       # named for the Chief Justice
-      short_name: "Williams"                    # the short citation's name, for chart labels
       natural_court: Warren Court (1958-1962)   # the bench as Oyez names it
       decision_type: majority opinion
       vote: {majority: 9, minority: 0}
@@ -21,10 +20,7 @@ link back to Oyez. Where Oyez has no vote data (some nineteenth-century cases
 and cases decided since about 2022), the block was filled by hand from the
 official report, its source is the report, and a note says what the report
 leaves unsettled; --refresh would replace those blocks only if Oyez now has
-the votes. The short name is a first guess (the first party's name, or the other
-party's when the first is the United States or a state); check it against
-the Indigo Book's short-form rule, and a refresh keeps the one recorded.
-A record that already has the block is skipped unless
+the votes. A record that already has the block is skipped unless
 --refresh is given. Run from the repository root:
 
     python3 scripts/law/supreme_court_benches.py [--refresh] [--key KEY ...]
@@ -125,28 +121,9 @@ def bench(case_url: str) -> dict | None:
     return block
 
 
-STATES = {
-    "Alabama", "Alaska", "Arizona", "Arkansas", "California", "Colorado", "Connecticut", "Delaware", "Florida", "Georgia",
-    "Hawaii", "Idaho", "Illinois", "Indiana", "Iowa", "Kansas", "Kentucky", "Louisiana", "Maine", "Maryland",
-    "Massachusetts", "Michigan", "Minnesota", "Mississippi", "Missouri", "Montana", "Nebraska", "Nevada", "New Hampshire",
-    "New Jersey", "New Mexico", "New York", "North Carolina", "North Dakota", "Ohio", "Oklahoma", "Oregon",
-    "Pennsylvania", "Rhode Island", "South Carolina", "South Dakota", "Tennessee", "Texas", "Utah", "Vermont",
-    "Virginia", "Washington", "West Virginia", "Wisconsin", "Wyoming", "United States",
-}
-
-
-def short_name(title: str) -> str:
-    """A first guess at the case's short name: "United States v. Lara" -> "Lara"; "Ex parte Crow Dog" -> "Crow Dog"."""
-    title = re.sub(r"^(?:Ex parte|In re)\s+", "", title)
-    parties = [party.strip() for party in title.split(" v. ", 1)]
-    name = parties[1] if len(parties) == 2 and parties[0] in STATES else parties[0]
-    return re.sub(r",?\s+(?:Inc\.|Co\.|Corp\.)$", "", name)
-
-
 def block_yaml(block: dict) -> str:
     lines = ["supreme_court:"]
     lines.append(f"  court: {block['court']}")
-    lines.append(f"  short_name: {json.dumps(block['short_name'], ensure_ascii=False)}")
     lines.append(f"  natural_court: {block['natural_court']}")
     lines.append(f"  decision_type: {block['decision_type']}")
     vote = block["vote"]
@@ -191,7 +168,6 @@ def main() -> int:
             missing += 1
             print(f"not found or no votes: {record['key']} ({citation.get('volume')} U.S. {citation.get('page')}, {year})")
             continue
-        block["short_name"] = (record.get("supreme_court") or {}).get("short_name") or short_name(citation.get("title", ""))
         text = re.sub(r"(?m)^supreme_court:\n(?:  .*\n)*", "", text)
         text = text.replace("\nrights:\n", "\n" + block_yaml(block) + "rights:\n", 1)
         path.write_text(text, encoding="utf-8")

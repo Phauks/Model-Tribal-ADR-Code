@@ -3,12 +3,11 @@
 	Who sat on one Court of the Supreme Court, and when: a row for each
 	Justice, the Chief Justice first, with a bar for the part of their service
 	that fell within the Court, and a line at the date of each case on this
-	site that the Court decided, labeled with the case's short name and linked
-	to the case (Trevor, Nov. 24, 2026: "should be clearer which case").
-	Pointing at a label shows the full name and the date. Labels that would
-	overlap go on separate lines. Hidden from screen readers, and its links
-	kept out of the keyboard order, since the table of Justices and the
-	table of cases under it say the same.
+	site that the Court decided, linked to the case. Pointing at a case shows
+	its name and date; the names are not written on the chart, where many
+	cases would stack (Trevor, Nov. 23, 2026: "remove names there"). Hidden
+	from screen readers, and its links kept out of the keyboard order, since
+	the table of Justices and the table of cases under it say the same.
 
 	Use:
 	<BenchChart rows={data.bench} start={data.start} end={data.end} cases={data.cases} />
@@ -26,8 +25,6 @@
 	interface Marked {
 		key: string;
 		name: string;
-		/** The label: "Worcester". */
-		shortName: string;
 		decided?: string;
 		decidedText?: string;
 		link?: string;
@@ -48,10 +45,7 @@
 
 	const rowHeight = 24;
 	const tickRow = 26;
-	const laneHeight = 17;
 	const right = 12;
-	/** About how wide a label of 12-pixel type is drawn, to keep labels apart. */
-	const labelSpan = (text: string) => text.length * 7.4 + 12;
 
 	/** A date as a fractional year, so bars start and stop on the day. */
 	function yearValue(date: string): number {
@@ -67,22 +61,7 @@
 	const last = $derived(yearValue(end));
 	const x = (date: string) => labelWidth + ((yearValue(date) - first) / Math.max(last - first, 0.1)) * (width - labelWidth - right);
 	const marked = $derived(cases.filter((item) => item.decided).sort((one, two) => one.decided!.localeCompare(two.decided!)));
-
-	/** Each case's label: centered on its line where it fits, on the first line of labels where it overlaps none. */
-	const labels = $derived.by(() => {
-		const laneEnds: number[] = [];
-		return marked.map((item) => {
-			const span = labelSpan(item.shortName);
-			const at = x(item.decided!);
-			const left = Math.min(Math.max(at - span / 2, labelWidth - 40), width - right - span);
-			let lane = laneEnds.findIndex((end) => end <= left);
-			if (lane === -1) lane = laneEnds.push(0) - 1;
-			laneEnds[lane] = left + span + 6;
-			return { item, at, center: left + span / 2, lane };
-		});
-	});
-	const lanes = $derived(labels.reduce((most, label) => Math.max(most, label.lane + 1), 0));
-	const top = $derived(tickRow + lanes * laneHeight + (lanes ? 4 : 0));
+	const top = $derived(tickRow + (marked.length ? 14 : 0));
 	const height = $derived(top + rows.length * rowHeight + 8);
 
 	/** Tick years: every 5, 10 or 2 years, whichever gives 4 to 10 ticks. */
@@ -94,7 +73,6 @@
 		return years;
 	});
 	const tickX = (year: number) => labelWidth + ((year - first) / Math.max(last - first, 0.1)) * (width - labelWidth - right);
-	const laneY = (lane: number) => tickRow + 4 + lane * laneHeight + 12;
 </script>
 
 <figure class="bench-chart" aria-hidden="true">
@@ -128,22 +106,22 @@
 					rx="3"
 				/>
 			{/each}
-			{#each labels as { item, at, lane } (item.key)}
-				<line class="case" x1={at} x2={at} y1={laneY(lane) + 4} y2={height - 4} />
-				<path class="case-mark" d="M {at} {top - 9} l 4 4 l -4 4 l -4 -4 z" />
-			{/each}
-			<!-- Labels last, so no case's line is drawn over another's label. -->
-			{#each labels as { item, center, lane } (item.key)}
-				{@const y = laneY(lane)}
+			{#each marked as item (item.key)}
+				{@const at = x(item.decided!)}
 				{#if item.link}
-					<a class="case-label" href={item.link} tabindex="-1">
+					<a class="case" href={item.link} tabindex="-1">
 						<title>{item.name}, {item.decidedText ?? item.decided}</title>
-						<text x={center} y={y} text-anchor="middle">{item.shortName}</text>
+						<line x1={at} x2={at} y1={top - 5} y2={height - 4} />
+						<path d="M {at} {top - 13} l 4 4 l -4 4 l -4 -4 z" />
+						<!-- A wider strip to point at than the thin line. -->
+						<rect class="hit" x={at - 5} y={top - 14} width="10" height={height - top + 10} />
 					</a>
 				{:else}
-					<g class="case-label">
+					<g class="case">
 						<title>{item.name}, {item.decidedText ?? item.decided}</title>
-						<text x={center} y={y} text-anchor="middle">{item.shortName}</text>
+						<line x1={at} x2={at} y1={top - 5} y2={height - 4} />
+						<path d="M {at} {top - 13} l 4 4 l -4 4 l -4 -4 z" />
+						<rect class="hit" x={at - 5} y={top - 14} width="10" height={height - top + 10} />
 					</g>
 				{/if}
 			{/each}
@@ -201,28 +179,23 @@
 		opacity: 1;
 	}
 
-	.case {
+	.case line {
 		stroke: var(--color-timeline-case);
 		stroke-width: 1.5;
 		stroke-dasharray: 3 3;
 	}
 
-	.case-mark {
+	.case path {
 		fill: var(--color-timeline-case);
 	}
 
-	.case-label text {
-		fill: var(--color-timeline-case);
-		font-size: 12px;
-		font-weight: 700;
-		paint-order: stroke;
-		stroke: var(--color-paper);
-		stroke-width: 5px;
-		stroke-linejoin: round;
+	.case .hit {
+		fill: transparent;
 	}
 
-	a.case-label:hover text {
-		text-decoration: underline;
+	a.case:hover line {
+		stroke-dasharray: none;
+		stroke-width: 2.5;
 	}
 
 	figcaption {
@@ -242,15 +215,11 @@
 	@media (forced-colors: active) {
 		.bar,
 		.bar.chief,
-		.case-mark {
+		.case path {
 			fill: CanvasText;
 		}
 
-		.case-label text {
-			fill: LinkText;
-		}
-
-		.case,
+		.case line,
 		.grid {
 			stroke: CanvasText;
 		}

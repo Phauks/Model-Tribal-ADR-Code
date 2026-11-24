@@ -59,8 +59,6 @@ export interface CaseOpinion {
 export interface CourtCase {
 	key: string;
 	name: string;
-	/** The short name that labels the case on charts: "Worcester". */
-	shortName: string;
 	citation: string;
 	link?: string;
 	decided?: string;
@@ -91,7 +89,6 @@ export interface CourtPage {
 
 interface CaseBench {
 	court: string;
-	short_name: string;
 	decision_type?: string;
 	vote?: { majority?: number | null; minority?: number | null };
 	justices?: { name: string; vote: string; opinion?: string }[];
@@ -245,7 +242,6 @@ function courtCases(court: Court): CourtCase[] {
 		found.push({
 			key: record.key,
 			name: record.citation.title ?? record.key,
-			shortName: bench.short_name,
 			citation: preview?.citation ?? [record.citation.volume, 'U.S.', record.citation.page].filter(Boolean).join(' '),
 			link: preview?.link,
 			decided,
