@@ -9,35 +9,13 @@
  */
 import { attendanceLabels, eventKindLabels, zoneName } from '#lib/event-calendar.ts';
 import type { CalendarEvent } from './event-calendar.ts';
+import { escapeContentText, foldContentLine } from '#lib/content-lines.ts';
 
 /** Text escaped for a property value (RFC 5545, section 3.3.11). */
-export function escapeText(text: string): string {
-	return text.replace(/\\/g, '\\\\').replace(/;/g, '\\;').replace(/,/g, '\\,').replace(/\r?\n/g, '\\n');
-}
+export const escapeText = escapeContentText;
 
-/**
- * A content line folded to at most 75 octets, each further line starting
- * with a space (RFC 5545, section 3.1). Characters are never split.
- */
-export function foldLine(line: string): string {
-	const encoder = new TextEncoder();
-	const pieces: string[] = [];
-	let current = '';
-	let size = 0;
-	for (const character of line) {
-		const width = encoder.encode(character).length;
-		const limit = pieces.length === 0 ? 75 : 74;
-		if (size + width > limit) {
-			pieces.push(current);
-			current = '';
-			size = 0;
-		}
-		current += character;
-		size += width;
-	}
-	pieces.push(current);
-	return pieces.join('\r\n ');
-}
+/** A content line folded to at most 75 octets (RFC 5545, section 3.1). */
+export const foldLine = foldContentLine;
 
 /** A UTC time as RFC 5545 writes it, such as 20270311T170000Z. */
 export function calendarTime(iso: string): string {
