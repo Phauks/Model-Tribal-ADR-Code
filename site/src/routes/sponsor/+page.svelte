@@ -46,7 +46,11 @@
 		discretionary: { title: earmarkLabels['needed-most'], text: 'Spent where the project decides.', icon: HandCoins }
 	} as const;
 
-	const levelNames = { federal: 'federally recognized', 'federal-and-state': 'federally and state-recognized' } as const;
+	const levelNames = {
+		federal: 'federally recognized',
+		'federal-and-state': 'federally and state-recognized',
+		identified: 'all Identified Native Nations'
+	} as const;
 
 	const number = (value: number) => value.toLocaleString('en-US');
 	const percent = (share: number) => Math.round(share * 100);

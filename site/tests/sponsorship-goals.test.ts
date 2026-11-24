@@ -50,17 +50,18 @@ describe('what the Sponsorship page shows', () => {
 			costCents: 1600,
 			paid: 64
 		});
-		expect(sponsorshipGoals(counts, { paperback: 1600 }, given({ 'books-for-nations': 5_000_000 })).copies?.paid).toBe(650);
+		expect(sponsorshipGoals(counts, { paperback: 1600 }, given({ 'books-for-nations': 5_000_000 })).copies?.paid).toBe(947);
 	});
 
-	it('fills the federal level first, and counts the same copies toward federal and state', () => {
+	it('fills the federal level first, and counts the same copies toward each later level', () => {
 		const level = (cents: number) => sponsorshipGoals(counts, { paperback: 1600 }, given({ 'books-for-nations': cents })).levels;
 		expect(level(102_500)).toEqual([
 			{ key: 'federal', nations: 581, paid: 64 },
-			{ key: 'federal-and-state', nations: 650, paid: 64 }
+			{ key: 'federal-and-state', nations: 650, paid: 64 },
+			{ key: 'identified', nations: 947, paid: 64 }
 		]);
-		expect(level(600 * 1600).map((each) => each.paid)).toEqual([581, 600]);
-		expect(sponsorshipGoals(counts, {}, given({})).levels.map((each) => each.paid)).toEqual([null, null]);
+		expect(level(700 * 1600).map((each) => each.paid)).toEqual([581, 650, 700]);
+		expect(sponsorshipGoals(counts, {}, given({})).levels.map((each) => each.paid)).toEqual([null, null, null]);
 	});
 
 	it('measures the site against this year and hardcovers against every nation', () => {

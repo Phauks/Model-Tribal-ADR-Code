@@ -128,13 +128,15 @@ export interface FundingCard {
 }
 
 /**
- * The initiative's two levels (Trevor, Nov. 24, 2026): a copy for every
+ * The initiative's three levels (Trevor, Nov. 24, 2026): a copy for every
  * federally recognized nation, then for every nation recognized by the
- * United States or a state. Copies paid for fill the first level, and the
- * second counts them too, since it includes the first.
+ * United States or a state, then for every Native nation the site
+ * identifies (every nation page). Copies paid for fill the first level
+ * first, and each later level counts them too, since it includes the ones
+ * before it.
  */
 export interface InitiativeLevel {
-	key: 'federal' | 'federal-and-state';
+	key: 'federal' | 'federal-and-state' | 'identified';
 	nations: number;
 	/** Copies paid for toward this level, never more than its nations; null while the cost of a copy is not set. */
 	paid: number | null;
@@ -152,12 +154,11 @@ export function sponsorshipGoals(counts: SponsorshipCounts, costs: SponsorshipCo
 	const nations = counts.federallyRecognized;
 	const books = given.total['books-for-nations'];
 	const paperback = costs.paperback;
-	const allNations = Math.max(nations, counts.federallyOrStateRecognized);
+	const recognized = Math.max(nations, counts.federallyOrStateRecognized);
+	const allNations = Math.max(recognized, counts.nationPages);
 	const copies = paperback && allNations > 0 ? { costCents: paperback, paid: Math.min(allNations, Math.floor(books / paperback)) } : null;
-	const levels: InitiativeLevel[] = [
-		{ key: 'federal', nations, paid: copies ? Math.min(nations, copies.paid) : null },
-		{ key: 'federal-and-state', nations: allNations, paid: copies ? copies.paid : null }
-	];
+	const level = (key: InitiativeLevel['key'], count: number): InitiativeLevel => ({ key, nations: count, paid: copies ? Math.min(count, copies.paid) : null });
+	const levels = [level('federal', nations), level('federal-and-state', recognized), level('identified', allNations)];
 	const site = costs.website ?? null;
 	const hardcovers = costs.hardcover && nations > 0 ? costs.hardcover * nations : null;
 	return {
