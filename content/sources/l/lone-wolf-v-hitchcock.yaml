@@ -113,10 +113,6 @@ citator:
     Indians v. United States, 601 F.2d 1157 (Ct. Cl. 1979), and Oneida Nation v. Village of Hobart, 968 F.3d
     664 (7th Cir. 2020).
   checked: 2026-11-20
-tribes:
-- kiowa-tribe
-- comanche-nation
-- apache-tribe-of-oklahoma
 found_in:
 - 2026-11-21-legal-history-and-key-cases
 notes: >-
@@ -129,3 +125,20 @@ notes: >-
   directly, and they have not been opened. Write-up of the Westlaw pull:
   research/pull-results/2026-11-21-legal-history-confirm-first-cases.md in the project's working files;
   the lead author's copy is kept privately and is not redistributed.
+tribes:
+- kiowa-tribe
+- comanche-nation
+- apache-tribe-of-oklahoma
+nations_in_case:
+  checked: '2026-11-23'
+  named:
+  - nation: kiowa-tribe
+    named_as: Kiowa
+    role: subject
+  - nation: comanche-nation
+    named_as: Comanche
+    role: subject
+  - nation: apache-tribe-of-oklahoma
+    named_as: Apache
+    role: subject
+    note: The Apache of the Kiowa, Comanche and Apache Reservation, today the Apache Tribe of Oklahoma.

@@ -77,6 +77,13 @@ export interface CitationName {
 	given?: string;
 }
 
+/** The nations a court case names, matched to nation records (schemas/source.schema.json). */
+export interface NationsInCase {
+	checked: string;
+	named: { nation: string; named_as: string; role: 'party' | 'government' | 'subject'; historical?: boolean; note?: string }[];
+	not_linked?: { named_as: string; reason: string }[];
+}
+
 export interface SourceRecord {
 	key: string;
 	kind: string;
@@ -96,6 +103,8 @@ export interface SourceRecord {
 	original_link?: string;
 	/** The nations a source is about, by profile id. */
 	tribes?: string[];
+	/** For a court case: each nation it names, how, and in what role (schemas/source.schema.json). */
+	nations_in_case?: NationsInCase;
 	archives?: { link?: string; url?: string; captured?: string }[];
 	/** Other places to read a case or law (src/lib/reading-links.ts). */
 	reading_links?: ReadingLinks;

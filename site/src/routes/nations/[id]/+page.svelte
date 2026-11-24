@@ -56,6 +56,29 @@
 		}))
 	);
 	const enforcementMarks = $derived(new Map(data.enforcement.map((action) => [action.key, action.citations])));
+
+	// The court cases that name the nation, as a party or as what the case is
+	// about (Trevor, Nov. 23, 2026). Four short columns; under the case's name,
+	// its citation and source marker, then the name the case gives the nation
+	// when it is not today's name, such as a former name or a historical nation.
+	const caseColumns: TableColumn[] = [
+		{ key: 'year', header: 'Year', type: 'date', sortable: true },
+		{ key: 'name', header: 'Case', isRowHeader: true, sortable: true, searchable: true, custom: true },
+		{ key: 'court', header: 'Court', sortable: true },
+		{ key: 'role', header: 'Role', sortable: true }
+	];
+	const caseRows: TableRow[] = $derived(
+		data.cases.map((entry) => ({
+			key: entry.key,
+			cells: {
+				year: { text: entry.decided?.slice(0, 4) ?? '', sortValue: entry.decided },
+				name: { text: [entry.name, entry.citation].filter(Boolean).join(', '), sortValue: entry.name, href: entry.link },
+				court: { text: entry.court ?? '' },
+				role: { text: entry.role }
+			}
+		}))
+	);
+	const casesByKey = $derived(new Map(data.cases.map((entry) => [entry.key, entry])));
 	// Set when the image cannot be loaded, for example once the nation's website
 	// no longer publishes the reviewed copy; the figure is then hidden.
 	let imageFailed = $state(false);
@@ -225,6 +248,36 @@
 				<p class="small muted">
 					Each opinion is a copy of the Caselaw Access Project’s text, with the publisher’s headnotes removed. A word listed means only that it appears in the opinion, not what the court decided.
 				</p>
+			</Collapsible>
+		{/if}
+
+		<!-- 5b. Cases involving the nation: court cases in the project's sources
+		     that name the nation, as a party or as what the case is about; each
+		     case's record says how (nations_in_case). -->
+		{#if data.cases.length > 0}
+			<Collapsible heading="Cases involving the nation" identifier="cases-heading">
+				<DataTable
+					identifier="nation-cases"
+					label="Table: cases involving the nation"
+					columns={caseColumns}
+					rows={caseRows}
+					defaultSort={{ key: 'year', direction: 'ascending' }}
+					rowName={['case', 'cases']}
+					count={false}
+					download="{data.page.id}-cases"
+				>
+					{#snippet cell(row: TableRow, column: TableColumn)}
+						{@const entry = casesByKey.get(row.key)}
+						{#if entry && column.key === 'name'}
+							<span class="case-name">{#if entry.link}<a href={entry.link}><i>{entry.name}</i></a>{:else}<i>{entry.name}</i>{/if}</span>
+							<span class="case-detail small muted">{#if entry.citation}{entry.citation}{/if}<CitationMarks marks={entry.citations} /></span>
+							<span class="case-detail case-phone small muted">{[entry.court, entry.role].filter(Boolean).join(' · ')}</span>
+							{#if entry.namedAs || entry.note}
+								<span class="case-detail small muted">{#if entry.namedAs}Named as “{entry.namedAs}.”{/if}{#if entry.namedAs && entry.note}{' '}{/if}{#if entry.note}{entry.note}{/if}</span>
+							{/if}
+						{/if}
+					{/snippet}
+				</DataTable>
 			</Collapsible>
 		{/if}
 
@@ -398,6 +451,32 @@
 {/snippet}
 
 <style>
+	.case-name,
+	.case-detail {
+		display: block;
+	}
+	.case-detail {
+		font-weight: normal;
+	}
+	/* Room between the case's link and the source marker under it, so each
+	   is a touch target of its own (WCAG 2.2, 2.5.8). */
+	.case-name {
+		margin-bottom: var(--space-2);
+	}
+	/* On a phone the Court and Role columns fold into a line under the case's
+	   name, so the name keeps the width it needs. */
+	.case-detail.case-phone {
+		display: none;
+	}
+	@media (max-width: 40rem) {
+		.case-detail.case-phone {
+			display: block;
+		}
+		:global(#nation-cases th:nth-child(n + 3)),
+		:global(#nation-cases td:nth-child(n + 3)) {
+			display: none;
+		}
+	}
 	.opinions li + li {
 		margin-top: var(--space-2);
 	}

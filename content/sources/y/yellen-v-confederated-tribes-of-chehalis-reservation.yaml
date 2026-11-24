@@ -100,11 +100,20 @@ rights:
     Opinions of federal courts are works of the U.S. government (17 U.S.C. § 105); the host site's own
     additions are not reproduced.
   redistribution: true
-tribes:
-- confederated-tribes-of-the-chehalis-reservation
 found_in:
 - 2026-11-21-legal-history-and-key-cases
 notes: >-
   Full citation: 594 U.S. 338 (2021). Official report scan or slip opinion: https://www.supremecourt.gov/opinions/20pdf/594us2r57_4357.pdf.
   Added beyond the requested list because of its importance for Alaska. Citator check (KeyCite) pending;
   see research/pull-lists/2026-11-21-legal-history-westlaw.md.
+tribes:
+- confederated-tribes-of-the-chehalis-reservation
+nations_in_case:
+  checked: '2026-11-23'
+  named:
+  - nation: confederated-tribes-of-the-chehalis-reservation
+    named_as: Confederated Tribes of the Chehalis Reservation
+    role: party
+  not_linked:
+  - named_as: et al.
+    reason: The caption names only the Chehalis tribes and "et al."; the other respondent nations are not named in the opinion.
