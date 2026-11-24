@@ -143,11 +143,6 @@ export async function unsettledProblems(database: D1Database): Promise<OrderProb
 	return results.map(problemFromRow);
 }
 
-export async function openProblemCount(database: D1Database): Promise<number> {
-	const row = await database.prepare(`SELECT count(*) AS count FROM book_order_problems WHERE status = 'open'`).first<{ count: number }>();
-	return row?.count ?? 0;
-}
-
 export interface NewProblem {
 	kind: ProblemKind;
 	details: string;

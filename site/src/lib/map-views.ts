@@ -22,9 +22,6 @@ export interface MapViewEntry {
 	nationPage?: { key: NationMapView; label: string; description: string };
 }
 
-/** Groups in the order they are listed. */
-export const mapViewGroups = ['Where nations are', 'Recognition', 'Courts', 'Jurisdiction', 'Government', 'Gaming', 'Treaties and land', 'People and languages', 'Federal administration'] as const;
-
 export const mapViews: MapViewEntry[] = [
 	{
 		key: 'states',

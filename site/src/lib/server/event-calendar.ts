@@ -197,21 +197,6 @@ export async function ticketTypesOf(database: D1Database, eventIdentifier: strin
 	return result.results;
 }
 
-/** The kinds of seat each event offers, for the list of events. */
-export async function attendanceByEvent(database: D1Database, eventIdentifiers: readonly string[]): Promise<Map<string, Attendance[]>> {
-	const found = new Map<string, Attendance[]>();
-	if (eventIdentifiers.length === 0) return found;
-	const result = await database
-		.prepare(
-			`SELECT DISTINCT event_identifier AS event, attendance FROM calendar_ticket_types
-			 WHERE event_identifier IN (SELECT value FROM json_each(?)) ORDER BY attendance`
-		)
-		.bind(JSON.stringify(eventIdentifiers))
-		.all<{ event: string; attendance: Attendance }>();
-	for (const row of result.results) found.set(row.event, [...(found.get(row.event) ?? []), row.attendance]);
-	return found;
-}
-
 /** Each event's kinds of seat with their counts, for the seat status on the list of events. */
 export async function seatCountsByEvent(database: D1Database, eventIdentifiers: readonly string[]): Promise<Map<string, SeatCount[]>> {
 	const found = new Map<string, SeatCount[]>();

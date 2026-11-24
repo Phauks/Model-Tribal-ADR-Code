@@ -59,11 +59,6 @@ export function allChecksums(): Promise<ChecksumManifest | undefined> {
 	return load(checksumsAddress);
 }
 
-/** The hash of one file on this site, such as "/zip/data.zip", or undefined if none is listed. */
-export async function checksumFor(path: string): Promise<ChecksumEntry | undefined> {
-	return (await downloadChecksums())?.files[path] ?? (await allChecksums())?.files[path];
-}
-
 /** The files on this site with this hash. */
 export function pathsWithHash(manifest: ChecksumManifest, sha256: string): string[] {
 	const wanted = sha256.trim().toLowerCase();
