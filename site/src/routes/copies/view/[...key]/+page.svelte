@@ -1,6 +1,7 @@
 <script lang="ts">
 	import Download from '@lucide/svelte/icons/download';
 	import ExternalLink from '@lucide/svelte/icons/external-link';
+	import Shield from '@lucide/svelte/icons/shield';
 	import Breadcrumbs from '#lib/components/Breadcrumbs.svelte';
 	import CopyHash from '#lib/components/CopyHash.svelte';
 	import type { PageProps } from './$types';
@@ -9,6 +10,7 @@
 	const details = $derived(data.details);
 	const opinion = $derived(details?.opinion);
 	const publishedAt = $derived(URL.canParse(data.original) ? new URL(data.original).hostname : data.original);
+	const sourceName = 'Caselaw Access Project';
 	// A link to one page of a PDF, such as where an opinion starts on a case's page ("#page=22"), opens the file at that page.
 	let pdfPage = $state('');
 	$effect(() => {
@@ -43,9 +45,19 @@
 		</p>
 	{/if}
 
+	{#if data.namesReplaced}
+		<!-- Policy: research/analyses/2026-11-24-redaction-practices-for-opinions.md, section 1. -->
+		<p class="names-replaced">
+			<Shield size={18} aria-hidden="true" /><span
+				>Names replaced to protect privacy. Our changes are in [brackets]. <a href={data.nameRequest}>Ask to replace a name</a>.</span
+			>
+		</p>
+	{/if}
+
 	{#if data.citeOnly}
 		<p class="restricted">
-			At the nation’s request, this site does not show the text of this {opinion ? 'opinion' : 'document'}. <a href={data.original} rel="noopener noreferrer">Read it at {opinion ? 'the Caselaw Access Project' : publishedAt}<ExternalLink size={14} aria-hidden="true" /></a>.
+			At the nation’s request, this site does not show the text of this {opinion ? 'opinion' : 'document'}.{#if data.original}
+				<a href={data.original} rel="noopener noreferrer">Read it at {opinion ? 'the Caselaw Access Project' : publishedAt}<ExternalLink size={14} aria-hidden="true" /></a>.{/if}
 		</p>
 	{:else}
 		<p class="actions">
@@ -61,7 +73,7 @@
 				</dd>
 			{/if}
 			<dt>Published at</dt>
-			<dd><a href={data.original} rel="noopener noreferrer">{publishedAt}</a></dd>
+			<dd>{#if data.original}<a href={data.original} rel="noopener noreferrer">{publishedAt}</a>{:else}{sourceName}{/if}</dd>
 			{#if data.capturedText}
 				<dt>Copy made</dt>
 				<dd>{data.capturedText}</dd>
@@ -85,13 +97,28 @@
 		<p class="small muted fallback">
 			If the document does not show above, as on some phones, <a href={data.file}>open the file alone</a> or <a href={data.file} download={data.fileName}>download it</a>.
 		</p>
-		<p class="print-only">This copy is at {data.file} on this site, and was published at {data.original}.</p>
+		<p class="print-only">This copy is at {data.file} on this site{#if data.original}, and was published at {data.original}{/if}.</p>
 	</section>
 {/if}
 
 <style>
 	h1 {
 		overflow-wrap: anywhere;
+	}
+
+	.names-replaced {
+		display: flex;
+		gap: var(--space-2);
+		align-items: flex-start;
+		margin: var(--space-3) 0;
+		padding: var(--space-2) var(--space-3);
+		border-left: 3px solid var(--color-link);
+		background: var(--color-surface-raised);
+	}
+
+	.names-replaced :global(svg) {
+		flex: none;
+		margin-top: 0.2em;
 	}
 
 	.actions {

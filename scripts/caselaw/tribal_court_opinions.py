@@ -61,6 +61,7 @@ import yaml
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 from caselaw_sources import cap_case_link, cap_volume_zip, cap_volumes, record_citations  # noqa: E402
+from redaction import Redactor  # noqa: E402
 
 ROOT = Path(__file__).resolve().parents[2]
 FOLDER = ROOT / "research" / "tribal-court-opinions"
@@ -78,6 +79,10 @@ VOLUME_RIGHTS = ("Released by the Harvard Library Innovation Lab without restric
                  "Private archive of the volume; each opinion is filed and served as its own page.")
 CITE_FIELDS = ["case_id", "citation", "name", "decision_date", "nations", "cites", "record", "times"]
 SNIPPET_CHARS = 240
+# Redacted opinions (scripts/caselaw/redaction.py; policy in
+# research/analyses/2026-11-24-redaction-practices-for-opinions.md).
+REDACTED_NOTICE = "Names and some details are replaced to protect privacy. Our changes are in [brackets]."
+NAME_REQUEST = "/requests?kind=replace-name&record=copies/"
 
 
 def load_settings() -> dict:
@@ -153,9 +158,10 @@ PAGE_STYLE = (
     "header{padding-top:1.5rem;padding-bottom:1rem;border-bottom:1px solid #c9bfb5;font:0.9375rem/1.5 system-ui,sans-serif}"
     "header h1{font:600 1.375rem/1.3 system-ui,sans-serif;margin:0 0 .25rem;color:#0F4C54}"
     "header p{margin:.25rem 0}a{color:#1A6D76}"
+    ".notice{padding:.5rem .75rem;border-left:3px solid #1A6D76;background:#F3ECE4}"
     "main{padding-bottom:3rem}.head-matter{margin:1.5rem 0;font-style:italic}.opinion{margin-top:1.5rem}"
     "@media (prefers-color-scheme:dark){body{background:#151413;color:#ece7e1}header h1{color:#7cc4cc}"
-    "header{border-color:#4a443e}a{color:#7cc4cc}}"
+    "header{border-color:#4a443e}a{color:#7cc4cc}.notice{background:#23201d;border-color:#7cc4cc}}"
 )
 
 
@@ -168,25 +174,40 @@ def readable(date: str) -> str:
     return f"{day:%B} {day.day}, {day.year}"
 
 
-def opinion_page(case: dict, fragment: str, key: str, source_link: str) -> bytes:
-    """A standalone page for one opinion. Built the same way each run, so its SHA-256 only changes with the source."""
+def opinion_page(case: dict, fragment: str, key: str, source_link: str, redactor: Redactor | None = None) -> bytes:
+    """A standalone page for one opinion. Built the same way each run, so its SHA-256 only changes with the source.
+
+    With a redactor (scripts/caselaw/redaction.py), protected people's names are replaced: in brackets in the
+    text, without brackets in the heading. The page then says so and does not link to the unredacted original."""
     citations = ", ".join(c["cite"] for c in case.get("citations", []))
     name = case.get("name_abbreviation") or case.get("name") or "Opinion"
     court = case["court"]["name"]
     date = case.get("decision_date", "")
     body = re.sub(r"\s+data-(blocks|firstpage|lastpage|case-id)='[^']*'", "", fragment)
     body = re.sub(r'\s+data-(blocks|firstpage|lastpage|case-id)="[^"]*"', "", body)
+    redacted = redactor is not None and bool(redactor.replacements)
+    if redacted:
+        name = redactor.caption(name, case.get("name") or "")
+        body = redactor.html(body)
     removal = "/requests?kind=remove&record=copies/" + key
     title = f"{name}, {citations} ({court} {date[:4]})" if citations else f"{name} ({court} {date[:4]})"
+    if redacted:
+        source = ("<p>Text from the Caselaw Access Project, Harvard Law School Library, with the publisher's headnotes removed. "
+                  f"The nation can have this copy taken down: <a href=\"{html.escape(removal)}\">Ask to remove it</a>.</p>\n"
+                  f"<p class=\"notice\">{REDACTED_NOTICE} "
+                  f"<a href=\"{html.escape(NAME_REQUEST + key)}\">Ask to replace a name</a>.</p>\n")
+    else:
+        source = ("<p>Text from the Caselaw Access Project, Harvard Law School Library, with the publisher's headnotes removed. "
+                  f"<a href=\"{html.escape(source_link)}\">Original</a>. "
+                  f"The nation can have this copy taken down: <a href=\"{html.escape(removal)}\">Ask to remove it</a>.</p>\n")
     return (
         "<!doctype html>\n<html lang=\"en\">\n<head>\n<meta charset=\"utf-8\">\n"
         "<meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n"
+        + ("<meta name=\"robots\" content=\"noindex\">\n" if redacted else "") +
         f"<title>{html.escape(title)}</title>\n<style>{PAGE_STYLE}</style>\n</head>\n<body>\n<header>\n"
         f"<h1>{html.escape(name)}</h1>\n"
         f"<p>{html.escape(citations)}{' · ' if citations else ''}{html.escape(court)}{', decided ' + readable(date) if date else ''}</p>\n"
-        "<p>Text from the Caselaw Access Project, Harvard Law School Library, with the publisher's headnotes removed. "
-        f"<a href=\"{html.escape(source_link)}\">Original</a>. "
-        f"The nation can have this copy taken down: <a href=\"{html.escape(removal)}\">Ask to remove it</a>.</p>\n"
+        + source +
         "</header>\n<main>\n" + body.strip() + "\n</main>\n</body>\n</html>\n"
     ).encode("utf-8")
 

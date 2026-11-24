@@ -140,6 +140,8 @@ export async function servePublicCopy(
 	const original = await fetchOriginal(copy, fetcher);
 	if (!original) {
 		const fallback = copy.links[0];
+		// A redacted opinion has no address to fall back to: its original still has the names in it.
+		if (!fallback) return new Response('This copy is not available right now.', { status: 503, headers: { 'Cache-Control': 'no-store' } });
 		return new Response(null, {
 			status: 302,
 			headers: { Location: fallback, 'Cache-Control': 'no-store' }
