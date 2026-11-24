@@ -211,7 +211,11 @@
                   "concurrence",
                   "special concurrence",
                   "concurrence in the result",
+                  "concurrence in part and in the judgment",
+                  "concurrence in part and dissent in part",
+                  "concurrence in part, concurrence in the judgment in part, and dissent in part",
                   "dissent",
+                  "dissent in part",
                   "per curiam"
                 ]
               },
@@ -237,7 +241,7 @@
       "type": "object",
       "additionalProperties": false,
       "minProperties": 1,
-      "description": "The case's box: its summary, quotations and treatment, which every essay that places the case (\":::: case <key>\" and \"::::\" with nothing between) and the case's page show, and the print book prints (site/src/lib/essays/record-boxes.ts, pdf/pipeline/record-boxes.mjs; Trevor, Nov. 24, 2026). Each text is Markdown in the essay syntax and may cite sources as [@key, at 5]. The essay's own analysis stays in the essay.",
+      "description": "The case's box: its summary, quotations and treatment, which every essay that places the case (\":::: case <key>\" and \"::::\" with nothing between) and the case's page show, and the print book prints (site/src/lib/essays/record-boxes.ts, pdf/pipeline/record-boxes.mjs; Trevor, Nov. 24, 2026). Each text is Markdown in the essay syntax and may cite sources as [@key, at 5]. Its reading, if any, follows the box as an Analysis block.",
       "properties": {
         "background": {
           "type": "string",
@@ -276,7 +280,8 @@
             "minLength": 1
           },
           "description": "The topics the index of cases by topic lists the case under, as shown: \"Sovereign immunity\" (site/src/lib/essays/case-topics.ts)."
-        }
+        },
+        "reading": { "$ref": "#/$defs/boxReading" }
       }
     },
     "law_box": {
@@ -302,7 +307,8 @@
           "type": "string",
           "minLength": 1,
           "description": "Amendments, court readings, repeal. Paragraphs are separated by a blank line."
-        }
+        },
+        "reading": { "$ref": "#/$defs/boxReading" }
       }
     },
     "reading_links": {
@@ -440,6 +446,15 @@
       "uniqueItems": true,
       "description": "Free tags for grouping in bibliographies, e.g. history, treatise, court-connected-program, full-faith-and-credit. Not a fixed list."
     },
+    "subjects": {
+      "type": "array",
+      "minItems": 1,
+      "uniqueItems": true,
+      "items": {
+        "enum": ["land", "treaties", "jurisdiction", "criminal", "family", "gaming", "environment", "religion", "culture", "government", "citizenship", "taxation", "trust", "sovereign-immunity", "tribal-courts", "dispute-resolution"]
+      },
+      "description": "The subjects of Indian law a case or law belongs to, from a closed list, so the legal history essay and the timeline can be read by subject (refactor and improvements report, Nov. 24, 2026, section 9.3, step 4). Dispute resolution stays one of them (Trevor, Nov. 24, 2026). Shown as: Land; Treaties; Jurisdiction; Criminal law; Family and children; Gaming; Environment and natural resources; Religion; Culture; Government; Citizenship and status; Taxation; Trust responsibility; Sovereign immunity; Tribal courts; Dispute resolution. Unlike `topics`, which are free tags, these are a fixed list."
+    },
     "annotation": {
       "type": "string",
       "description": "Markdown. The annotated-bibliography entry: what the source is and why it matters to the project. Quotations carry pinpoints; the project's own judgments are labeled (project analysis)."
@@ -465,9 +480,43 @@
       "description": "Research session ids (file names without .md) that found or updated this source.",
       "items": { "type": "string", "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2}-[a-z0-9-]+$" }
     },
-    "notes": { "type": "string" }
+    "notes": { "type": "string" },
+    "review": {
+      "type": "object",
+      "description": "For a record a script wrote: the cross-checks the script ran between independent sources and what each found (scripts/caselaw/supreme_court_native_cases.py). \"verified\" means every check agreed, not that a person has read the record; a person who reads it records that with status \"reviewed\". The record's other `checked` dates are the day the script read the sources.",
+      "additionalProperties": false,
+      "required": ["status", "by", "date", "checks"],
+      "properties": {
+        "status": { "type": "string", "enum": ["unverified", "verified", "reviewed"] },
+        "by": { "type": "string", "description": "The script, or the person who reviewed it." },
+        "date": { "$ref": "common.schema.json#/$defs/calendarDate" },
+        "checks": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": ["check", "result"],
+            "properties": {
+              "check": { "type": "string" },
+              "result": { "type": "string", "enum": ["agree", "differs", "missing", "settled"] },
+              "detail": { "type": "string" }
+            }
+          }
+        }
+      }
+    }
   },
   "$defs": {
+    "boxReading": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["title", "text"],
+      "description": "A short, neutral reading of the entry's place in the law. An essay that places the box shows it right after the box as an \"Analysis\" block (record-boxes.ts, readingMarkdown); the case's own page does not. It is the site's interpretation, not a statement of the sources. Readings written for the model code belong in its commentary, not here (Trevor, Nov. 24, 2026).",
+      "properties": {
+        "title": { "type": "string", "minLength": 1, "description": "The Analysis block's title, naming what it reads: \"*Worcester v. Georgia* (1832)\" or \"Indian Citizenship Act (1924)\"." },
+        "text": { "type": "string", "minLength": 1, "description": "The reading, in the essay syntax's Markdown." }
+      }
+    },
     "boxQuote": {
       "type": "object",
       "additionalProperties": false,

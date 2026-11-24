@@ -1,0 +1,151 @@
+key: rosebud-sioux-tribe-v-kneip
+kind: federal-case
+citation:
+  type: legal_case
+  title: Rosebud Sioux Tribe v. Kneip
+  authority: Supreme Court of the United States
+  container-title: U.S.
+  volume: '430'
+  page: '584'
+  issued:
+    date-parts:
+    - - 1977
+      - 4
+      - 4
+  URL: https://www.loc.gov/item/usrep430584/
+  accessed:
+    date-parts:
+    - - 2026
+      - 11
+      - 24
+caption:
+  printed: ROSEBUD SIOUX TRIBE v. KNEIP, GOVERNOR OF SOUTH DAKOTA, et al.
+  source: https://tile.loc.gov/storage-services/service/ll/usrep/usrep430/usrep430584/usrep430584.pdf
+  checked: '2026-11-24'
+opinions:
+  source: https://tile.loc.gov/storage-services/service/ll/usrep/usrep430/usrep430584/usrep430584.pdf
+  checked: '2026-11-24'
+  list:
+  - kind: majority
+    justice: William H. Rehnquist
+    page: 585
+  - kind: dissent
+    justice: Thurgood Marshall
+    page: 615
+original_link: https://www.loc.gov/item/usrep430584/
+retrieved: '2026-11-24'
+history:
+  status: live
+  last_checked: '2026-11-24'
+court_dates:
+  argued:
+  - '1977-01-12'
+  - '1977-04-04'
+  printed: Argued January 12, 1977 Decided April 4, 1977
+  source: https://tile.loc.gov/storage-services/service/ll/usrep/usrep430/usrep430584/usrep430584.pdf
+  checked: '2026-11-24'
+supreme_court:
+  court: Burger Court
+  natural_court: Burger Court (1975-1981)
+  decision_type: majority opinion
+  vote:
+    majority: 6
+    minority: 3
+  justices:
+  - name: Potter Stewart
+    vote: minority
+  - name: Thurgood Marshall
+    vote: minority
+    opinion: dissent
+  - name: William J. Brennan, Jr.
+    vote: minority
+  - name: Byron R. White
+    vote: majority
+  - name: Warren E. Burger
+    vote: majority
+  - name: Harry A. Blackmun
+    vote: majority
+  - name: Lewis F. Powell, Jr.
+    vote: majority
+  - name: William H. Rehnquist
+    vote: majority
+    opinion: majority
+  - name: John Paul Stevens
+    vote: majority
+  source: https://api.oyez.org/cases/1976/75-562
+  checked: '2026-11-24'
+reading_links:
+  checked: '2026-11-24'
+  links:
+  - site: library-of-congress
+    label: Library of Congress
+    access: official
+    link: https://www.loc.gov/item/usrep430584/
+  - site: justia
+    label: Justia
+    access: free
+    link: https://supreme.justia.com/cases/federal/us/430/584/
+    unchecked: true
+  - site: oyez
+    label: Oyez
+    access: free
+    link: https://www.oyez.org/cases/1976/75-562
+  - site: google-scholar
+    label: Google Scholar
+    access: free
+    link: https://scholar.google.com/scholar?hl=en&as_sdt=2006&q=%22430%20U.S.%20584%22
+    unchecked: true
+  - site: westlaw
+    label: Westlaw
+    access: subscription
+    link: https://1.next.westlaw.com/Link/Document/FullText?findType=Y&cite=430%20U.S.%20584
+    unchecked: true
+  - site: lexis
+    label: Lexis
+    access: subscription
+    link: https://advance.lexis.com/api/search?q=430%20U.S.%20584
+    unchecked: true
+rights:
+  status: no-permission-needed
+  basis: us-government-work
+  basis_note: Opinions of federal courts are works of the U.S. government (17 U.S.C. § 105); the host site's own additions are not reproduced.
+  redistribution: true
+found_in:
+- 2026-11-24-supreme-court-native-cases
+notes: 'Full citation: 430 U.S. 584 (1977). Official report scan: https://tile.loc.gov/storage-services/service/ll/usrep/usrep430/usrep430584/usrep430584.pdf. Written by scripts/caselaw/supreme_court_native_cases.py from the Supreme Court Database (case 1976-082), the Caselaw Access Project''s text of the report and the Library of Congress scan; not yet read by a person.'
+tribes:
+- rosebud-sioux-tribe-of-the-rosebud-indian-reservation
+nations_in_case:
+  checked: '2026-11-24'
+  named:
+  - nation: rosebud-sioux-tribe-of-the-rosebud-indian-reservation
+    named_as: Rosebud Sioux Tribe
+    role: party
+    historical: true
+    note: Matched by the script to the only nation record sharing this name; not yet checked against the case's history.
+review:
+  status: unverified
+  by: scripts/caselaw/supreme_court_native_cases.py
+  date: '2026-11-24'
+  checks:
+  - check: cite
+    result: agree
+    detail: Caselaw Access Project 430 U.S. 584 "Rosebud Sioux Tribe v. Kneip"; Database 430 U.S. 584 "ROSEBUD SIOUX TRIBE v. KNEIP, GOVERNOR OF SOUTH DAKOTA, et al."
+  - check: scan
+    result: agree
+    detail: Scan has 50 pages; the report runs 584 to 633
+  - check: caption
+    result: agree
+    detail: Caption found in the scan's text at 1.00
+  - check: printed dates
+    result: agree
+    detail: Caselaw Access Project "Argued January 12, 1977 Decided April 4, 1977"; scan "Argued January 12, 1977-Decided April 4, 1977"
+  - check: decided
+    result: agree
+    detail: 'Printed and Database: 1977-04-04'
+  - check: opinions
+    result: settled
+    detail: 'Report: majority Rehnquist p. 585, dissent Marshall p. 616; Database writers: Marshall, Rehnquist; scan pages [(616, 615)]. Read from the scan by an AI reader (corrected): p. 585: MR. JUSTICE REHNQUIST delivered the opinion of the Court. p. 615: MR. JUSTICE MARSHALL, with whom MR. JUSTICE BRENNAN and MR. JUSTICE STEWART join, dissenting. (The record''s page 616 is a running head, not the start.)'
+  - check: bench
+    result: agree
+    detail: Oyez and the Database give the same Justices and votes

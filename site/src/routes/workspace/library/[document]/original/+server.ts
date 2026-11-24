@@ -16,8 +16,8 @@ export const GET: RequestHandler = async (event) => {
 	requirePermission(event, 'search-source-library');
 	const { sourceLibrary, sourceDocuments } = workerEnvironment();
 	if (!sourceLibrary || !sourceDocuments) error(503, 'The source library is not connected.');
-	const documentId = Number.parseInt(event.params.document, 10);
-	const document = Number.isSafeInteger(documentId) ? await libraryDocument(sourceLibrary, documentId) : null;
+	const documentIdentifier = Number.parseInt(event.params.document, 10);
+	const document = Number.isSafeInteger(documentIdentifier) ? await libraryDocument(sourceLibrary, documentIdentifier) : null;
 	if (!document) error(404, 'There is no such document in the library.');
 
 	const object = await sourceDocuments.get(document.key);

@@ -11,7 +11,7 @@
 import type { MailAddress } from '#lib/mail.ts';
 import { actionStatement, currentTime, type MailCarriers, type MailContext } from './context.ts';
 import { reachableCondition, threadInboxAddress } from './inboxes.ts';
-import { newMessageId } from './mime.ts';
+import { newMessageIdentifier } from './mime.ts';
 
 export class SenderError extends Error {}
 
@@ -284,7 +284,7 @@ export async function unsubscribe(
 			subject: ways.mail.subject,
 			text: ways.mail.body,
 			headers: { 'Auto-Submitted': 'auto-generated' },
-			messageId: newMessageId(context.settings.domain)
+			messageId: newMessageIdentifier(context.settings.domain)
 		});
 		how = 'mail';
 	} else if (ways.page) {

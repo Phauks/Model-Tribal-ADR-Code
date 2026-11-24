@@ -16,7 +16,7 @@
 	import Users from '@lucide/svelte/icons/users';
 	import type { ServiceCategory, ServiceEntry } from '#lib/nation-services.ts';
 	// The page's one hidden "Opens in a new tab" note (RecordPage.svelte).
-	import { newTabNoteId } from '#lib/new-tab-links.ts';
+	import { newTabNoteIdentifier } from '#lib/new-tab-links.ts';
 	import CitationMarks from './CitationMarks.svelte';
 
 	let { categories }: { categories: ServiceCategory[] } = $props();
@@ -34,7 +34,7 @@
 </script>
 
 {#snippet service(entry: ServiceEntry)}
-	{#if entry.link}<a href={entry.link} target="_blank" rel="noopener noreferrer" aria-describedby={newTabNoteId}
+	{#if entry.link}<a href={entry.link} target="_blank" rel="noopener noreferrer" aria-describedby={newTabNoteIdentifier}
 			>{entry.text}</a
 		><span class="link-tail"
 			>{joiner}<ExternalLink class="external-icon" size={14} strokeWidth={iconStroke} aria-hidden="true" />{#if !entry.detail}<CitationMarks

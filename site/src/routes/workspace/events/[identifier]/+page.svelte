@@ -1,5 +1,9 @@
 <script lang="ts">
 	import Breadcrumbs from '#lib/components/Breadcrumbs.svelte';
+	import DataTable from '#lib/components/DataTable.svelte';
+	import Dropdown from '#lib/components/Dropdown.svelte';
+	import SearchableDropdown from '#lib/components/SearchableDropdown.svelte';
+	import type { TableColumn, TableRow } from '#lib/tables/table-definition.ts';
 	import Download from '@lucide/svelte/icons/download';
 	import EventFields from '#lib/components/EventFields.svelte';
 	import { attendanceKinds, attendanceLabels } from '#lib/event-calendar.ts';
@@ -13,6 +17,32 @@
 	const field = $derived(form && 'field' in form ? form.field : undefined);
 	const problem = $derived(form && 'problem' in form ? form.problem : undefined);
 	const live = $derived(data.registrations.filter((registration) => registration.live));
+
+	const attendanceChoices = attendanceKinds.map((kind) => ({ value: kind as string, label: attendanceLabels[kind] }));
+	const contributorChoices = $derived([{ value: '', label: 'None' }, ...data.contributors.map((contributor) => ({ value: contributor.slug, label: contributor.line }))]);
+
+	// Access needs are private: they show here but stay out of the table's downloads.
+	const registrationColumns: TableColumn[] = [
+		{ key: 'name', header: 'Name', isRowHeader: true, sortable: true, searchable: true },
+		{ key: 'email', header: 'Email', sortable: true, searchable: true },
+		{ key: 'seat', header: 'Seat', sortable: true, filterable: true },
+		{ key: 'status', header: 'Status', sortable: true, filterable: true },
+		{ key: 'access', header: 'Access needs', keepOutOfDownload: true },
+		{ key: 'signed', header: 'Signed up', type: 'date', sortable: true }
+	];
+	const registrationRows: TableRow[] = $derived(
+		data.registrations.map((registration) => ({
+			key: registration.identifier,
+			cells: {
+				name: { text: registration.name },
+				email: { text: registration.email },
+				seat: { text: registration.ticketName },
+				status: { text: `${registration.status}${registration.offerEnds ? `, until ${registration.offerEnds}` : ''}`, values: [registration.status] },
+				access: { text: registration.accessNeeds ?? '' },
+				signed: { text: registration.registeredAt, sortValue: registration.registeredOn }
+			}
+		}))
+	);
 </script>
 
 <svelte:head>
@@ -82,10 +112,7 @@
 			<input type="text" id="ticket-name-{ticket.identifier}" name="name" maxlength="100" value={ticket.name} required />
 		</div>
 		<div class="field">
-			<label for="ticket-attendance-{ticket.identifier}">Taking part</label>
-			<select id="ticket-attendance-{ticket.identifier}" name="attendance">
-				{#each attendanceKinds as kind (kind)}<option value={kind} selected={ticket.attendance === kind}>{attendanceLabels[kind]}</option>{/each}
-			</select>
+			<Dropdown label="Taking part" id="ticket-attendance-{ticket.identifier}" name="attendance" choices={attendanceChoices} value={ticket.attendance} />
 		</div>
 		<div class="field">
 			<label for="ticket-capacity-{ticket.identifier}">Limit</label>
@@ -108,10 +135,7 @@
 		<input type="text" id="new-ticket-name" name="name" maxlength="100" placeholder="In person" required />
 	</div>
 	<div class="field">
-		<label for="new-ticket-attendance">Taking part</label>
-		<select id="new-ticket-attendance" name="attendance">
-			{#each attendanceKinds as kind (kind)}<option value={kind}>{attendanceLabels[kind]}</option>{/each}
-		</select>
+		<Dropdown label="Taking part" id="new-ticket-attendance" name="attendance" choices={attendanceChoices} value={attendanceKinds[0]} />
 	</div>
 	<div class="field">
 		<label for="new-ticket-capacity">Limit</label>
@@ -142,12 +166,18 @@
 		<input type="text" id="speaker-about" name="about" maxlength="300" aria-describedby="speaker-about-hint" />
 	</div>
 	<div class="field">
-		<label for="speaker-contributor">Contributor page</label>
-		<p class="hint" id="speaker-contributor-hint">If the speaker is credited on the website, their name links to their page.</p>
-		<select id="speaker-contributor" name="contributor" aria-describedby="speaker-contributor-hint">
-			<option value="">None</option>
-			{#each data.contributors as contributor (contributor.slug)}<option value={contributor.slug}>{contributor.line}</option>{/each}
-		</select>
+		<SearchableDropdown
+			label="Contributor page"
+			id="speaker-contributor"
+			name="contributor"
+			choices={contributorChoices}
+			value=""
+			describedBy="speaker-contributor-hint"
+		>
+			{#snippet message()}
+				<p class="hint" id="speaker-contributor-hint">If the speaker is credited on the website, their name links to their page.</p>
+			{/snippet}
+		</SearchableDropdown>
 	</div>
 	<input type="hidden" name="sort-order" value={data.speakers.length} />
 	<button class="button" type="submit">Add the speaker</button>
@@ -296,25 +326,15 @@
 		</a>
 	</p>
 	<p class="hint">Access needs are private to the people running events, and are deleted 30 days after the event.</p>
-	<div class="table-scroll">
-		<table>
-			<thead>
-				<tr><th scope="col">Name</th><th scope="col">Email</th><th scope="col">Seat</th><th scope="col">Status</th><th scope="col">Access needs</th><th scope="col">Signed up</th></tr>
-			</thead>
-			<tbody>
-				{#each data.registrations as registration (registration.identifier)}
-					<tr>
-						<td>{registration.name}</td>
-						<td>{registration.email}</td>
-						<td>{registration.ticketName}</td>
-						<td>{registration.status}{registration.offerEnds ? `, until ${registration.offerEnds}` : ''}</td>
-						<td>{registration.accessNeeds ?? ''}</td>
-						<td>{registration.registeredAt}</td>
-					</tr>
-				{/each}
-			</tbody>
-		</table>
-	</div>
+	<DataTable
+		identifier="registrations"
+		label="Table: who is coming"
+		columns={registrationColumns}
+		rows={registrationRows}
+		defaultSort={{ key: 'signed', direction: 'ascending' }}
+		rowName={['person', 'people']}
+		filters
+	/>
 {/if}
 
 <style>

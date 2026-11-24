@@ -1,0 +1,140 @@
+key: poafpybitty-v-skelly-oil-co
+kind: federal-case
+citation:
+  type: legal_case
+  title: Poafpybitty v. Skelly Oil Co.
+  authority: Supreme Court of the United States
+  container-title: U.S.
+  volume: '390'
+  page: '365'
+  issued:
+    date-parts:
+    - - 1968
+      - 3
+      - 18
+  URL: https://www.loc.gov/item/usrep390365/
+  accessed:
+    date-parts:
+    - - 2026
+      - 11
+      - 24
+caption:
+  printed: POAFPYBITTY et al. v. SKELLY OIL CO
+  source: https://tile.loc.gov/storage-services/service/ll/usrep/usrep390/usrep390365/usrep390365.pdf
+  checked: '2026-11-24'
+opinions:
+  source: https://tile.loc.gov/storage-services/service/ll/usrep/usrep390/usrep390365/usrep390365.pdf
+  checked: '2026-11-24'
+  list:
+  - kind: majority
+    justice: Earl Warren
+    page: 366
+original_link: https://www.loc.gov/item/usrep390365/
+retrieved: '2026-11-24'
+history:
+  status: live
+  last_checked: '2026-11-24'
+court_dates:
+  argued:
+  - '1968-01-24'
+  printed: Argued January 24, 1968. Decided March 18, 1968.
+  source: https://tile.loc.gov/storage-services/service/ll/usrep/usrep390/usrep390365/usrep390365.pdf
+  checked: '2026-11-24'
+supreme_court:
+  court: Warren Court
+  natural_court: Warren Court (1967-1969)
+  decision_type: majority opinion
+  vote:
+    majority: 8
+    minority: 0
+  justices:
+  - name: John M. Harlan II
+    vote: majority
+  - name: Hugo L. Black
+    vote: majority
+  - name: William O. Douglas
+    vote: majority
+  - name: Potter Stewart
+    vote: majority
+  - name: Thurgood Marshall
+    vote: none
+  - name: William J. Brennan, Jr.
+    vote: majority
+  - name: Byron R. White
+    vote: majority
+  - name: Earl Warren
+    vote: majority
+    opinion: majority
+  - name: Abe Fortas
+    vote: majority
+  source: https://api.oyez.org/cases/1967/65
+  checked: '2026-11-24'
+reading_links:
+  checked: '2026-11-24'
+  links:
+  - site: library-of-congress
+    label: Library of Congress
+    access: official
+    link: https://www.loc.gov/item/usrep390365/
+  - site: justia
+    label: Justia
+    access: free
+    link: https://supreme.justia.com/cases/federal/us/390/365/
+    unchecked: true
+  - site: oyez
+    label: Oyez
+    access: free
+    link: https://www.oyez.org/cases/1967/65
+  - site: google-scholar
+    label: Google Scholar
+    access: free
+    link: https://scholar.google.com/scholar?hl=en&as_sdt=2006&q=%22390%20U.S.%20365%22
+    unchecked: true
+  - site: westlaw
+    label: Westlaw
+    access: subscription
+    link: https://1.next.westlaw.com/Link/Document/FullText?findType=Y&cite=390%20U.S.%20365
+    unchecked: true
+  - site: lexis
+    label: Lexis
+    access: subscription
+    link: https://advance.lexis.com/api/search?q=390%20U.S.%20365
+    unchecked: true
+rights:
+  status: no-permission-needed
+  basis: us-government-work
+  basis_note: Opinions of federal courts are works of the U.S. government (17 U.S.C. § 105); the host site's own additions are not reproduced.
+  redistribution: true
+found_in:
+- 2026-11-24-supreme-court-native-cases
+notes: 'Full citation: 390 U.S. 365 (1968). Official report scan: https://tile.loc.gov/storage-services/service/ll/usrep/usrep390/usrep390365/usrep390365.pdf. Written by scripts/caselaw/supreme_court_native_cases.py from the Supreme Court Database (case 1967-082), the Caselaw Access Project''s text of the report and the Library of Congress scan; not yet read by a person.'
+tribes: []
+nations_in_case:
+  checked: '2026-11-24'
+  named: []
+review:
+  status: verified
+  by: scripts/caselaw/supreme_court_native_cases.py
+  date: '2026-11-24'
+  checks:
+  - check: cite
+    result: agree
+    detail: Caselaw Access Project 390 U.S. 365 "Poafpybitty v. Skelly Oil Co."; Database 390 U.S. 365 "POAFPYBITTY et al. v. SKELLY OIL CO."
+  - check: scan
+    result: agree
+    detail: Scan has 12 pages; the report runs 365 to 376
+  - check: caption
+    result: agree
+    detail: Caption found in the scan's text at 1.00
+  - check: printed dates
+    result: agree
+    detail: Caselaw Access Project "Argued January 24, 1968. Decided March 18, 1968."; scan "Argued January 24, 1968.-Decided March 18, 1968."
+  - check: decided
+    result: agree
+    detail: 'Printed and Database: 1968-03-18'
+  - check: opinions
+    result: agree
+    detail: 'Report: majority Warren p. 366; Database writers: Warren'
+  - check: bench
+    result: agree
+    detail: Oyez and the Database give the same Justices and votes

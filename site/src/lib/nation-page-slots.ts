@@ -6,7 +6,9 @@
  * it asks the Worker for the same HTML. The HTML is written and escaped by
  * the server (src/lib/server/nation-page-overlay.ts).
  */
-export async function fillNationSlots(nationIdentifier: string): Promise<void> {
+import { readPageRestrictions, type PageRestrictions } from './nation-restrictions.ts';
+
+export async function fillNationSlots(nationIdentifier: string, pagePath = `/nations/${encodeURIComponent(nationIdentifier)}`): Promise<void> {
 	const slots = [...document.querySelectorAll<HTMLElement>('[data-nation-slot]')];
 	// The page may reuse the places of the nation shown before.
 	for (const slot of slots) slot.replaceChildren();
@@ -16,7 +18,7 @@ export async function fillNationSlots(nationIdentifier: string): Promise<void> {
 		if (!response.ok) return;
 		const overlay = (await response.json()) as { slots?: Record<string, string> };
 		// The reader may have moved on while the answer came.
-		if (location.pathname.replace(/\/$/, '') !== path) return;
+		if (location.pathname.replace(/\/$/, '') !== pagePath) return;
 		for (const slot of slots) {
 			const html = overlay.slots?.[slot.dataset.nationSlot ?? ''];
 			if (html) slot.innerHTML = html;
@@ -24,4 +26,12 @@ export async function fillNationSlots(nationIdentifier: string): Promise<void> {
 	} catch {
 		// Offline or the Worker is busy: the page shows what the project cites.
 	}
+}
+
+/**
+ * What the nation chose the page shows of its laws and opinions, as the
+ * Worker or fillNationSlots put it in the page (src/lib/nation-restrictions.ts).
+ */
+export function restrictionsInPage(): PageRestrictions {
+	return readPageRestrictions(document.querySelector('script[data-nation-restrictions]')?.textContent);
 }

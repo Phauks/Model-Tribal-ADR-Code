@@ -1,5 +1,5 @@
 import { peopleOfNation } from '#lib/server/biographies.ts';
-import { error } from '@sveltejs/kit';
+import { error, redirect } from '@sveltejs/kit';
 import type { OutlineItem, PageOutline } from '#lib/site-sections.ts';
 import geometry from 'virtual:map-geometry';
 import { webLink } from '#lib/contact-links.ts';
@@ -13,6 +13,8 @@ import {
 	type SourceRecord
 } from '#lib/server/content.ts';
 import { noneIdentified, type EmptyNote } from '#lib/search-status.ts';
+import { governanceGroups } from '#lib/governance-groups.ts';
+import { hasConstitution, hasPublishedLaws } from '#lib/server/coverage.ts';
 import { layoutPresenceMap, pointInBox, shapeInBox, shareStateShapes, type BoxLayers, type NationMapData, type PresenceMapLayout } from '#lib/presence-map.ts';
 import { landAreaKindLabels } from '#lib/nations-map-drawing.ts';
 import { readableDate } from '#lib/readable-date.ts';
@@ -37,7 +39,11 @@ import { legalHelpCitation, legalHelpFor, legalHelpHeading } from '#lib/server/l
 import { formatSource } from '#lib/server/markdown.ts';
 import type { EntryGenerator, PageServerLoad } from './$types';
 
-export const entries: EntryGenerator = () => nations().map((record) => ({ id: record.id }));
+export const entries: EntryGenerator = () => [
+	...nations().map((record) => ({ id: record.id })),
+	// The old address of a merged profile, which redirects to the profile that absorbed it.
+	...nations().flatMap((record) => (record.former_ids ?? []).map((id) => ({ id })))
+];
 
 /**
  * One fact as the page shows it: an optional label, the words, an optional
@@ -77,8 +83,8 @@ interface CourtOpinions {
  * The nation's court opinions in the Caselaw Access Project's tribal
  * reporters (decision record 0047): how many there are, and the newest few.
  */
-function courtOpinions(nationId: string, sources: SourceUses): CourtOpinions | undefined {
-	const all = opinionsOf(nationId);
+function courtOpinions(nationIdentifier: string, sources: SourceUses): CourtOpinions | undefined {
+	const all = opinionsOf(nationIdentifier);
 	if (all.length === 0) return undefined;
 	const citations: CitationMark[] = [];
 	sources.cite(opinionsSourceKey, { section: opinionsHeading, text: `${all.length} published opinions` }, citations);
@@ -88,7 +94,7 @@ function courtOpinions(nationId: string, sources: SourceUses): CourtOpinions | u
 		from: all.at(-1)!.year,
 		to: all[0].year,
 		citations,
-		link: `/nations/${nationId}/opinions`
+		link: `/nations/${nationIdentifier}/opinions`
 	};
 }
 
@@ -283,63 +289,6 @@ function recognitionItems(record: NationRecord, sources: SourceUses, label: stri
 
 /** The section that shows how the nation's government is set up. */
 const governmentHeading = 'Government';
-
-/**
- * The groups of the Government section, in the order the page shows them,
- * and the label each aspect of `governance` gets in its group
- * (schemas/tribe.schema.json; decision record 0042).
- */
-const governanceGroups: { field: string; label: string; aspects: Record<string, string | undefined> }[] = [
-	{ field: 'governance-form', label: 'Form of government', aspects: { form: undefined } },
-	{
-		field: 'governance-body',
-		label: 'Governing body',
-		aspects: {
-			'governing-body': 'Name',
-			'governing-body-size': 'Members',
-			'governing-body-selection': 'How chosen',
-			'governing-body-term': 'Term'
-		}
-	},
-	{ field: 'governance-general-council', label: 'General council', aspects: { 'general-council': undefined } },
-	{
-		field: 'governance-head',
-		label: 'Head of government',
-		aspects: {
-			'head-of-government': 'Title',
-			'head-of-government-selection': 'How chosen',
-			'head-of-government-term': 'Term',
-			'other-officers': 'Other officers'
-		}
-	},
-	{
-		field: 'governance-elections',
-		label: 'Elections',
-		aspects: { elections: 'When', 'voting-age': 'Voting age', 'election-authority': 'Run by' }
-	},
-	{
-		field: 'governance-branches',
-		label: 'Branches of government',
-		aspects: { branches: undefined, 'separation-of-powers': 'Separation of powers' }
-	},
-	{
-		field: 'governance-judiciary',
-		label: 'Courts and judges',
-		aspects: {
-			judiciary: 'Courts',
-			'judicial-selection': 'How judges are chosen',
-			'judicial-term': 'Judges’ term',
-			'judicial-independence': 'Protection'
-		}
-	},
-	{
-		field: 'governance-amendment',
-		label: 'Changing the governing document',
-		aspects: { amendment: 'How', 'secretarial-approval': 'Secretary of the Interior’s approval' }
-	},
-	{ field: 'governance-removal', label: 'Recall and removal', aspects: { 'recall-and-removal': undefined } },
-	{ field: 'governance-other', label: 'Other', aspects: { other: undefined } }
-];
 
 /** The legal form a federal source records, in the page's words. */
 const governmentStructureKinds: Record<string, string> = {
@@ -942,18 +891,11 @@ function publishedLaw(
  * were found: "None Identified".
  */
 function missingLaw(record: NationRecord, documents: { kind: string }[]): FactGroup[] {
-	const kinds = new Set((record.governing_documents ?? []).map((fact) => fact.kind));
-	// Articles of association are some nations' governing document in place of
-	// a constitution. A corporate charter governs a business, so it is neither.
-	const governing = ['constitution', 'articles-of-association'];
-	const hasConstitution =
-		governing.some((kind) => kinds.has(kind)) ||
-		documents.some((document) => governing.map(humanize).includes(document.kind));
-	const hasLaws =
-		['law-code', 'court-rules', 'other'].some((kind) => kinds.has(kind)) ||
-		(record.dispute_resolution_law ?? []).length > 0;
+	// The same tests decide the Coverage page's Constitution and Published laws columns (src/lib/server/coverage.ts).
+	const constitution = hasConstitution(record, documents.map((document) => document.kind));
+	const laws = hasPublishedLaws(record);
 	const row = (field: string, label: string): FactGroup => ({ field: `missing-${field}`, label, items: [{ text: noneIdentified.text }] });
-	return [...(hasConstitution ? [] : [row('constitution', 'Constitution')]), ...(hasLaws ? [] : [row('laws', 'Published laws')])];
+	return [...(constitution ? [] : [row('constitution', 'Constitution')]), ...(laws ? [] : [row('laws', 'Published laws')])];
 }
 
 /** Another nation that sources record in one of the same states. */
@@ -1105,7 +1047,11 @@ function heldCopies(id: string): { count: number; bytes: number } {
 
 export const load: PageServerLoad = ({ params }) => {
 	const record = nations().find((candidate) => candidate.id === params.id);
-	if (!record) error(404, 'No nation page has this address.');
+	if (!record) {
+		const merged = nations().find((candidate) => candidate.former_ids?.includes(params.id));
+		if (merged) redirect(308, `/nations/${merged.id}`);
+		error(404, 'No nation page has this address.');
+	}
 
 	const status = reviewStatusLabels[record.review?.status] ?? {
 		label: humanize(record.review?.status ?? 'unknown'),

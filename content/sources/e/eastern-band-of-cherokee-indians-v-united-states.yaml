@@ -1,0 +1,154 @@
+key: eastern-band-of-cherokee-indians-v-united-states
+kind: federal-case
+citation:
+  type: legal_case
+  title: Eastern Band of Cherokee Indians v. United States
+  authority: Supreme Court of the United States
+  container-title: U.S.
+  volume: '117'
+  page: '288'
+  issued:
+    date-parts:
+    - - 1886
+      - 3
+      - 1
+  URL: https://www.loc.gov/item/usrep117288/
+  accessed:
+    date-parts:
+    - - 2026
+      - 11
+      - 24
+caption:
+  printed: THE CHEROKEE TRUST FUNDS. EASTERN BAND OF CHEROKEE INDIANS v. UNITED STATES AND CHEROKEE NATION, COMMONLY CALLED CHEROKEE NATION WEST
+  source: https://tile.loc.gov/storage-services/service/ll/usrep/usrep117/usrep117288/usrep117288.pdf
+  checked: '2026-11-24'
+opinions:
+  source: https://tile.loc.gov/storage-services/service/ll/usrep/usrep117/usrep117288/usrep117288.pdf
+  checked: '2026-11-24'
+  list:
+  - kind: majority
+    justice: Stephen Johnson Field
+    page: 293
+original_link: https://www.loc.gov/item/usrep117288/
+retrieved: '2026-11-24'
+history:
+  status: live
+  last_checked: '2026-11-24'
+court_dates:
+  argued:
+  - '1886-01-04'
+  - '1886-01-05'
+  - '1886-01-06'
+  printed: Argued January 4, 5, 6, 1886. Decided March 1, 1886.
+  source: https://tile.loc.gov/storage-services/service/ll/usrep/usrep117/usrep117288/usrep117288.pdf
+  checked: '2026-11-24'
+supreme_court:
+  court: Waite Court
+  natural_court: Waite Court (1882-1887)
+  decision_type: majority opinion
+  vote:
+    majority: 9
+    minority: 0
+  justices:
+  - name: Morrison Remick Waite
+    vote: majority
+  - name: Samuel Freeman Miller
+    vote: majority
+  - name: Stephen Johnson Field
+    vote: majority
+    opinion: majority
+  - name: Joseph P. Bradley
+    vote: majority
+  - name: John Marshall Harlan
+    vote: majority
+  - name: William Burnham Woods
+    vote: majority
+  - name: Stanley Matthews
+    vote: majority
+  - name: Horace Gray
+    vote: majority
+  - name: Samuel Blatchford
+    vote: majority
+  source: http://scdb.wustl.edu/_brickFiles/Legacy_07/SCDB_Legacy_07_justiceCentered_Citation.csv.zip
+  note: From the Supreme Court Database, case 1885-161; Oyez has no votes for this case.
+  checked: '2026-11-24'
+reading_links:
+  checked: '2026-11-24'
+  links:
+  - site: library-of-congress
+    label: Library of Congress
+    access: official
+    link: https://www.loc.gov/item/usrep117288/
+  - site: justia
+    label: Justia
+    access: free
+    link: https://supreme.justia.com/cases/federal/us/117/288/
+    unchecked: true
+  - site: google-scholar
+    label: Google Scholar
+    access: free
+    link: https://scholar.google.com/scholar?hl=en&as_sdt=2006&q=%22117%20U.S.%20288%22
+    unchecked: true
+  - site: westlaw
+    label: Westlaw
+    access: subscription
+    link: https://1.next.westlaw.com/Link/Document/FullText?findType=Y&cite=117%20U.S.%20288
+    unchecked: true
+  - site: lexis
+    label: Lexis
+    access: subscription
+    link: https://advance.lexis.com/api/search?q=117%20U.S.%20288
+    unchecked: true
+rights:
+  status: no-permission-needed
+  basis: us-government-work
+  basis_note: Opinions of federal courts are works of the U.S. government (17 U.S.C. § 105); the host site's own additions are not reproduced.
+  redistribution: true
+found_in:
+- 2026-11-24-supreme-court-native-cases
+notes: 'Full citation: 117 U.S. 288 (1886). Official report scan: https://tile.loc.gov/storage-services/service/ll/usrep/usrep117/usrep117288/usrep117288.pdf. Written by scripts/caselaw/supreme_court_native_cases.py from the Supreme Court Database (case 1885-161), the Caselaw Access Project''s text of the report and the Library of Congress scan; not yet read by a person.'
+tribes:
+- cherokee-nation
+- eastern-band-of-cherokee-indians
+nations_in_case:
+  checked: '2026-11-24'
+  named:
+  - nation: cherokee-nation
+    named_as: Cherokee Nation
+    role: party
+    note: Matched by the script to the nation record of the same name; not yet checked.
+  - nation: eastern-band-of-cherokee-indians
+    named_as: Eastern Band of Cherokee Indians
+    role: party
+    note: Matched by the script to the nation record of the same name; not yet checked.
+  not_linked:
+  - named_as: Cherokee Trust Funds. Eastern Band of Cherokee Indians
+    reason: More than one of today's nations shares this name (cherokee-nation-west-of-missouri-and-arkansas, eastern-band-of-cherokee-indians, eastern-cherokee-southern-iroquois-and-united-tribes-of-south-carolina, georgia-tribe-of-eastern-cherokee, piedmont-american-indian-association-lower-eastern-cherokee-nation-of-south-carolina); which the case concerns has not been checked.
+  - named_as: Commonly Called Cherokee Nation
+    reason: More than one of today's nations shares this name (amonsoquath-tribe-of-cherokee, arkansas-cherokee, arkansas-white-river-cherokee, cherokee-choctaw-nation-of-st-francis-and-black-rivers, cherokee-indians-of-georgia-inc, cherokee-indians-of-hoke-county-inc and 42 more); which the case concerns has not been checked.
+review:
+  status: verified
+  by: scripts/caselaw/supreme_court_native_cases.py
+  date: '2026-11-24'
+  checks:
+  - check: cite
+    result: agree
+    detail: Caselaw Access Project 117 U.S. 288 "Eastern Band of Cherokee Indians v. United States"; Database 117 U.S. 288 "THE CHEROKEE TRUST FUNDS.; EASTERN BAND OF CHEROKEE INDIANS v. UNITED STATES AND CHEROKEE NATION, COMMONLY CALLED CHEROKEE NATION WEST"
+  - check: scan
+    result: agree
+    detail: Scan has 25 pages; the report runs 288 to 312
+  - check: caption
+    result: agree
+    detail: Caption found in the scan's text at 1.00
+  - check: printed dates
+    result: agree
+    detail: Caselaw Access Project "Argued January 4, 5, 6, 1886. Decided March 1, 1886."; scan "not found"
+  - check: decided
+    result: agree
+    detail: 'Printed and Database: 1886-03-01'
+  - check: opinions
+    result: agree
+    detail: 'Report: majority Field p. 293; Database writers: Field'
+  - check: bench
+    result: agree
+    detail: No Oyez votes; each opinion writer in the report sits on the Database's bench on the side the opinion takes

@@ -1,0 +1,152 @@
+key: montana-v-blackfeet-tribe-of-indians
+kind: federal-case
+citation:
+  type: legal_case
+  title: Montana v. Blackfeet Tribe of Indians
+  authority: Supreme Court of the United States
+  container-title: U.S.
+  volume: '471'
+  page: '759'
+  issued:
+    date-parts:
+    - - 1985
+      - 6
+      - 3
+  URL: https://www.loc.gov/item/usrep471759/
+  accessed:
+    date-parts:
+    - - 2026
+      - 11
+      - 24
+caption:
+  printed: MONTANA et al. v. BLACKFEET TRIBE OF INDIANS
+  source: https://tile.loc.gov/storage-services/service/ll/usrep/usrep471/usrep471759/usrep471759.pdf
+  checked: '2026-11-24'
+opinions:
+  source: https://tile.loc.gov/storage-services/service/ll/usrep/usrep471/usrep471759/usrep471759.pdf
+  checked: '2026-11-24'
+  list:
+  - kind: majority
+    justice: Lewis F. Powell, Jr.
+    page: 761
+  - kind: dissent
+    justice: Byron Raymond White
+    page: 768
+original_link: https://www.loc.gov/item/usrep471759/
+retrieved: '2026-11-24'
+history:
+  status: live
+  last_checked: '2026-11-24'
+court_dates:
+  argued:
+  - '1985-01-15'
+  reargued:
+  - '1985-04-23'
+  printed: Argued January 15, 1985 — Reargued April 23, 1985— Decided June 3, 1985
+  source: https://tile.loc.gov/storage-services/service/ll/usrep/usrep471/usrep471759/usrep471759.pdf
+  checked: '2026-11-24'
+supreme_court:
+  court: Burger Court
+  natural_court: Burger Court (1981-1986)
+  decision_type: majority opinion
+  vote:
+    majority: 6
+    minority: 3
+  justices:
+  - name: Thurgood Marshall
+    vote: majority
+  - name: William J. Brennan, Jr.
+    vote: majority
+  - name: Byron R. White
+    vote: minority
+    opinion: dissent
+  - name: Warren E. Burger
+    vote: majority
+  - name: Harry A. Blackmun
+    vote: majority
+  - name: Lewis F. Powell, Jr.
+    vote: majority
+    opinion: majority
+  - name: William H. Rehnquist
+    vote: minority
+  - name: John Paul Stevens
+    vote: minority
+  - name: Sandra Day O'Connor
+    vote: majority
+  source: https://api.oyez.org/cases/1984/83-2161
+  checked: '2026-11-24'
+reading_links:
+  checked: '2026-11-24'
+  links:
+  - site: library-of-congress
+    label: Library of Congress
+    access: official
+    link: https://www.loc.gov/item/usrep471759/
+  - site: justia
+    label: Justia
+    access: free
+    link: https://supreme.justia.com/cases/federal/us/471/759/
+    unchecked: true
+  - site: oyez
+    label: Oyez
+    access: free
+    link: https://www.oyez.org/cases/1984/83-2161
+  - site: google-scholar
+    label: Google Scholar
+    access: free
+    link: https://scholar.google.com/scholar?hl=en&as_sdt=2006&q=%22471%20U.S.%20759%22
+    unchecked: true
+  - site: westlaw
+    label: Westlaw
+    access: subscription
+    link: https://1.next.westlaw.com/Link/Document/FullText?findType=Y&cite=471%20U.S.%20759
+    unchecked: true
+  - site: lexis
+    label: Lexis
+    access: subscription
+    link: https://advance.lexis.com/api/search?q=471%20U.S.%20759
+    unchecked: true
+rights:
+  status: no-permission-needed
+  basis: us-government-work
+  basis_note: Opinions of federal courts are works of the U.S. government (17 U.S.C. § 105); the host site's own additions are not reproduced.
+  redistribution: true
+found_in:
+- 2026-11-24-supreme-court-native-cases
+notes: 'Full citation: 471 U.S. 759 (1985). Official report scan: https://tile.loc.gov/storage-services/service/ll/usrep/usrep471/usrep471759/usrep471759.pdf. Written by scripts/caselaw/supreme_court_native_cases.py from the Supreme Court Database (case 1984-108), the Caselaw Access Project''s text of the report and the Library of Congress scan; not yet read by a person.'
+tribes:
+- blackfeet-tribe-of-the-blackfeet-indian-reservation-of-montana
+nations_in_case:
+  checked: '2026-11-24'
+  named:
+  - nation: blackfeet-tribe-of-the-blackfeet-indian-reservation-of-montana
+    named_as: Blackfeet Tribe of Indians
+    role: party
+    historical: true
+    note: Matched by the script to the only nation record sharing this name; not yet checked against the case's history.
+review:
+  status: verified
+  by: scripts/caselaw/supreme_court_native_cases.py
+  date: '2026-11-24'
+  checks:
+  - check: cite
+    result: agree
+    detail: Caselaw Access Project 471 U.S. 759 "Montana v. Blackfeet Tribe of Indians"; Database 471 U.S. 759 "MONTANA et al. v. BLACKFEET TRIBE OF INDIANS"
+  - check: scan
+    result: agree
+    detail: Scan has 14 pages; the report runs 759 to 772
+  - check: caption
+    result: agree
+    detail: Caption found in the scan's text at 1.00
+  - check: printed dates
+    result: agree
+    detail: Caselaw Access Project "Argued January 15, 1985 — Reargued April 23, 1985— Decided June 3, 1985"; scan "Argued January 15, 1985-Reargued April 23, 1985Decided June 3, 1985"
+  - check: decided
+    result: agree
+    detail: 'Printed and Database: 1985-06-03'
+  - check: opinions
+    result: agree
+    detail: 'Report: majority Powell p. 761, dissent White p. 768; Database writers: Powell, White'
+  - check: bench
+    result: agree
+    detail: Oyez and the Database give the same Justices and votes

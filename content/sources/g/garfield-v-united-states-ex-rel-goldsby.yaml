@@ -1,0 +1,138 @@
+key: garfield-v-united-states-ex-rel-goldsby
+kind: federal-case
+citation:
+  type: legal_case
+  title: Garfield v. United States ex rel. Goldsby
+  authority: Supreme Court of the United States
+  container-title: U.S.
+  volume: '211'
+  page: '249'
+  issued:
+    date-parts:
+    - - 1908
+      - 11
+      - 30
+  URL: https://www.loc.gov/item/usrep211249/
+  accessed:
+    date-parts:
+    - - 2026
+      - 11
+      - 24
+caption:
+  printed: GARFIELD, SECRETARY OF THE INTERIOR, v. UNITED STATES ex rel. GOLDSBY
+  source: https://tile.loc.gov/storage-services/service/ll/usrep/usrep211/usrep211249/usrep211249.pdf
+  checked: '2026-11-24'
+opinions:
+  source: https://tile.loc.gov/storage-services/service/ll/usrep/usrep211/usrep211249/usrep211249.pdf
+  checked: '2026-11-24'
+  list:
+  - kind: majority
+    justice: William Rufus Day
+    page: 255
+original_link: https://www.loc.gov/item/usrep211249/
+retrieved: '2026-11-24'
+history:
+  status: live
+  last_checked: '2026-11-24'
+court_dates:
+  argued:
+  - '1908-10-15'
+  - '1908-10-18'
+  printed: Argued October 15, 18, 1908. Decided November 30, 1908.
+  source: https://tile.loc.gov/storage-services/service/ll/usrep/usrep211/usrep211249/usrep211249.pdf
+  checked: '2026-11-24'
+supreme_court:
+  court: Fuller Court
+  natural_court: Fuller Court (1906-1909)
+  decision_type: majority opinion
+  vote:
+    majority: 9
+    minority: 0
+  justices:
+  - name: Melville Weston Fuller
+    vote: majority
+  - name: Edward Douglass White
+    vote: majority
+  - name: John Marshall Harlan
+    vote: majority
+  - name: David Josiah Brewer
+    vote: majority
+  - name: Rufus Wheeler Peckham
+    vote: majority
+  - name: Joseph McKenna
+    vote: majority
+  - name: Oliver Wendell Holmes
+    vote: majority
+  - name: William Rufus Day
+    vote: majority
+    opinion: majority
+  - name: William Henry Moody
+    vote: majority
+  source: http://scdb.wustl.edu/_brickFiles/Legacy_07/SCDB_Legacy_07_justiceCentered_Citation.csv.zip
+  note: From the Supreme Court Database, case 1908-020; Oyez has no votes for this case.
+  checked: '2026-11-24'
+reading_links:
+  checked: '2026-11-24'
+  links:
+  - site: library-of-congress
+    label: Library of Congress
+    access: official
+    link: https://www.loc.gov/item/usrep211249/
+  - site: justia
+    label: Justia
+    access: free
+    link: https://supreme.justia.com/cases/federal/us/211/249/
+    unchecked: true
+  - site: google-scholar
+    label: Google Scholar
+    access: free
+    link: https://scholar.google.com/scholar?hl=en&as_sdt=2006&q=%22211%20U.S.%20249%22
+    unchecked: true
+  - site: westlaw
+    label: Westlaw
+    access: subscription
+    link: https://1.next.westlaw.com/Link/Document/FullText?findType=Y&cite=211%20U.S.%20249
+    unchecked: true
+  - site: lexis
+    label: Lexis
+    access: subscription
+    link: https://advance.lexis.com/api/search?q=211%20U.S.%20249
+    unchecked: true
+rights:
+  status: no-permission-needed
+  basis: us-government-work
+  basis_note: Opinions of federal courts are works of the U.S. government (17 U.S.C. § 105); the host site's own additions are not reproduced.
+  redistribution: true
+found_in:
+- 2026-11-24-supreme-court-native-cases
+notes: 'Full citation: 211 U.S. 249 (1908). Official report scan: https://tile.loc.gov/storage-services/service/ll/usrep/usrep211/usrep211249/usrep211249.pdf. Written by scripts/caselaw/supreme_court_native_cases.py from the Supreme Court Database (case 1908-020), the Caselaw Access Project''s text of the report and the Library of Congress scan; not yet read by a person.'
+tribes: []
+nations_in_case:
+  checked: '2026-11-24'
+  named: []
+review:
+  status: verified
+  by: scripts/caselaw/supreme_court_native_cases.py
+  date: '2026-11-24'
+  checks:
+  - check: cite
+    result: agree
+    detail: Caselaw Access Project 211 U.S. 249 "Garfield v. United States ex rel. Goldsby"; Database 211 U.S. 249 "GARFIELD, SECRETARY OF THE INTERIOR, v. UNITED STATES EX REL. GOLDSBY"
+  - check: scan
+    result: agree
+    detail: Scan has 16 pages; the report runs 249 to 264
+  - check: caption
+    result: agree
+    detail: Caption found in the scan's text at 1.00
+  - check: printed dates
+    result: agree
+    detail: Caselaw Access Project "Argued October 15, 18, 1908. Decided November 30, 1908."; scan "Argued October 15, 18, 1908.-Decided November 30, 1908."
+  - check: decided
+    result: agree
+    detail: 'Printed and Database: 1908-11-30'
+  - check: opinions
+    result: agree
+    detail: 'Report: majority Day p. 255; Database writers: Day'
+  - check: bench
+    result: agree
+    detail: No Oyez votes; each opinion writer in the report sits on the Database's bench on the side the opinion takes

@@ -1,9 +1,35 @@
 <script lang="ts">
+	import DataTable from '#lib/components/DataTable.svelte';
 	import { costItemQuestions, costItemUnits, costItems } from '#lib/sponsorship.ts';
+	import type { TableColumn, TableRow } from '#lib/tables/table-definition.ts';
 	import { levelNames, levels, monthsInAYear } from '#lib/sponsorship-levels.ts';
 	import type { PageProps } from './$types';
 
 	let { data, form }: PageProps = $props();
+
+	const sponsorColumns: TableColumn[] = [
+		{ key: 'sponsor', header: 'Sponsor', isRowHeader: true, sortable: true, searchable: true },
+		{ key: 'public', header: 'In public', sortable: true, custom: true },
+		{ key: 'managers', header: 'Managers', sortable: true },
+		{ key: 'test', header: 'Test gifts', type: 'number', sortable: true },
+		{ key: 'live', header: 'Live gifts', type: 'number', sortable: true },
+		{ key: 'page', header: 'Their page', keepOutOfDownload: true }
+	];
+	const gifts = (side: { count: number; total: string }, customer: unknown) => `${side.count} (${side.total})${customer ? '' : ' · no Stripe customer'}`;
+	const sponsorRows: TableRow[] = $derived(
+		data.sponsors.map((sponsor) => ({
+			key: sponsor.identifier,
+			cells: {
+				sponsor: { text: sponsor.name, href: `/workspace/sponsors/${sponsor.identifier}` },
+				public: { text: sponsor.shown && sponsor.listing !== 'anonymous' ? 'Shown' : sponsor.reason },
+				managers: { text: String(sponsor.managers) },
+				test: { text: gifts(sponsor.test, sponsor.stripeTest), sortValue: sponsor.test.count },
+				live: { text: gifts(sponsor.live, sponsor.stripeLive), sortValue: sponsor.live.count },
+				page: { text: 'See as they do', href: `/account/sponsorship?sponsor=${sponsor.identifier}` }
+			}
+		}))
+	);
+	const sponsors = $derived(new Map(data.sponsors.map((sponsor) => [sponsor.identifier, sponsor])));
 </script>
 
 <svelte:head>
@@ -98,34 +124,12 @@
 {#if data.sponsors.length === 0}
 	<p>No one has started a sponsorship yet. To see the page a new sponsor sees, open <a href="/account/sponsorship">your own Sponsorship page</a>.</p>
 {:else}
-	<div class="table-scroll">
-		<table>
-			<thead>
-				<tr>
-					<th scope="col">Sponsor</th>
-					<th scope="col">In public</th>
-					<th scope="col">Managers</th>
-					<th scope="col">Test gifts</th>
-					<th scope="col">Live gifts</th>
-					<th scope="col">Their page</th>
-				</tr>
-			</thead>
-			<tbody>
-				{#each data.sponsors as sponsor (sponsor.identifier)}
-					<tr>
-						<td><a href="/workspace/sponsors/{sponsor.identifier}">{sponsor.name}</a></td>
-						<td>
-							{#if sponsor.shown && sponsor.listing !== 'anonymous'}<a href="/sponsors/{sponsor.slug}">Shown</a>{:else}{sponsor.reason}{/if}
-						</td>
-						<td>{sponsor.managers}</td>
-						<td>{sponsor.test.count} ({sponsor.test.total}){sponsor.stripeTest ? '' : ' · no Stripe customer'}</td>
-						<td>{sponsor.live.count} ({sponsor.live.total}){sponsor.stripeLive ? '' : ' · no Stripe customer'}</td>
-						<td><a href="/account/sponsorship?sponsor={sponsor.identifier}">See as they do</a></td>
-					</tr>
-				{/each}
-			</tbody>
-		</table>
-	</div>
+	<DataTable identifier="sponsors" label="Table: every sponsor" columns={sponsorColumns} rows={sponsorRows} rowName={['sponsor', 'sponsors']}>
+		{#snippet cell(row)}
+			{@const sponsor = sponsors.get(row.key)}
+			{#if sponsor?.shown && sponsor.listing !== 'anonymous'}<a href="/sponsors/{sponsor.slug}">Shown</a>{:else if sponsor}{sponsor.reason}{/if}
+		{/snippet}
+	</DataTable>
 {/if}
 
 <style>

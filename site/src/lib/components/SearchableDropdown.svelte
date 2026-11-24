@@ -15,23 +15,37 @@
 	// A dropdown a reader can type into to narrow a long list (site/DESIGN.md, section 6, "Searchable dropdown"). Trevor asked for it on 2026-11-23 for the map's views, which will grow (Public Law 280 and more), in place of a row of tabs. It follows the WAI-ARIA editable combobox pattern with list autocomplete (https://www.w3.org/WAI/ARIA/apg/patterns/combobox/examples/combobox-autocomplete-list/).
 	//
 	// Keys: typing filters the list by label, group, description and keywords; Down and Up open the list and move through it; Enter picks; Escape closes the list, and a second Escape clears what was typed; Tab leaves without changing the choice. A screen reader hears how many choices match.
+	//
+	// Given a name, it is a form field, as the plain Dropdown is: a hidden input sends the picked value, a pick sends a change event from it, and without scripts the browser's own <select> stands in for it, so the form still works. Like the Dropdown, it can be required, disabled, invalid with the error it is described by, or a field of another form.
+	//
+	// Typed text lists the choices whose label starts with it first, then those with a label word that starts with it, then the rest that match, so "hop" puts Hopi before Bishop Paiute.
+	//
+	// The text typed into the box sends no change event of its own (only a pick does), so a form that sends itself on change does not go off when the reader leaves the box after typing.
+	import { onMount, tick, type Snippet } from 'svelte';
 	import Check from '@lucide/svelte/icons/check';
 	import ChevronDown from '@lucide/svelte/icons/chevron-down';
 
 	let {
 		label,
 		choices,
-		value,
+		value = $bindable(),
 		onchange,
 		onhighlight,
 		placeholder = 'Type to search',
 		hideLabel = false,
-		name
+		name,
+		id,
+		required = false,
+		disabled = false,
+		invalid = false,
+		describedBy,
+		form,
+		message
 	}: {
 		label: string;
 		choices: SearchableChoice<Value>[];
 		value: Value;
-		onchange: (value: Value) => void;
+		onchange?: (value: Value) => void;
 		/** Called with the choice the reader is on in the open list, before picking it, so a page can start fetching what that choice shows. */
 		onhighlight?: (value: Value) => void;
 		placeholder?: string;
@@ -39,9 +53,46 @@
 		hideLabel?: boolean;
 		/** Sends the picked value with the form around the dropdown under this name. */
 		name?: string;
+		/** The box's id, so an error summary or a link can move to it. */
+		id?: string;
+		/** An empty choice ('') stops the form from being sent, as a required <select> does. */
+		required?: boolean;
+		/** Not sent with the form and not usable, as a disabled <select>. */
+		disabled?: boolean;
+		/** Marks the box as having an error (aria-invalid and the danger border). */
+		invalid?: boolean;
+		/** The ids of the elements that describe the box, such as its hint and error. */
+		describedBy?: string;
+		/** The id of the form the field belongs to, when it sits outside it. */
+		form?: string;
+		/** The field's hint or error, drawn between the label and the box, where other fields show theirs. */
+		message?: Snippet;
 	} = $props();
 
+	// The <select> sends the value until scripts run; then the hidden input does.
+	let scripted = $state(false);
+	let field: HTMLInputElement | undefined = $state();
+	let missing = $state(false);
+
 	const identifier = $props.id();
+	const inputIdentifier = $derived(id ?? `${identifier}-input`);
+
+	onMount(() => {
+		scripted = true;
+		if (!required || !name) return;
+		// A required box with nothing picked stops its form, as a required <select> would; the browser's own check cannot see a hidden input. A form that checks its own answers (novalidate) is left to do so.
+		const owner = form ? document.getElementById(form) : input?.closest('form');
+		if (!(owner instanceof HTMLFormElement)) return;
+		const check = (event: SubmitEvent) => {
+			if (disabled || owner.noValidate || event.submitter?.hasAttribute('formnovalidate') || value !== '') return;
+			event.preventDefault();
+			event.stopImmediatePropagation();
+			missing = true;
+			input?.focus();
+		};
+		owner.addEventListener('submit', check, { capture: true });
+		return () => owner.removeEventListener('submit', check, { capture: true });
+	});
 	let expanded = $state(false);
 	let query = $state('');
 	let typing = $state(false);
@@ -59,9 +110,24 @@
 		return words.every((word) => textWords.some((textWord) => textWord.startsWith(word)) || text.includes(word));
 	}
 
+	/** How well a matching choice fits what was typed: 0 when its label starts with it, 1 when every word typed starts a word of the label, 2 otherwise. */
+	function rank(choice: SearchableChoice<Value>, typed: string, words: string[]): number {
+		const label = choice.label.toLowerCase();
+		if (label.startsWith(typed)) return 0;
+		const labelWords = label.split(/[^\p{L}\p{N}]+/u).filter(Boolean);
+		return words.every((word) => labelWords.some((labelWord) => labelWord.startsWith(word))) ? 1 : 2;
+	}
+
 	const shown = $derived.by(() => {
-		const words = typing ? query.toLowerCase().split(/[^\p{L}\p{N}]+/u).filter(Boolean) : [];
-		return words.length === 0 ? choices : choices.filter((choice) => matches(choice, words));
+		const typed = typing ? query.trim().toLowerCase() : '';
+		const words = typed.split(/[^\p{L}\p{N}]+/u).filter(Boolean);
+		if (words.length === 0) return choices;
+		// The sort is stable, so choices that fit as well keep the order they were given in.
+		return choices
+			.filter((choice) => matches(choice, words))
+			.map((choice) => ({ choice, fit: rank(choice, typed, words) }))
+			.sort((first, second) => first.fit - second.fit)
+			.map(({ choice }) => choice);
 	});
 
 	/** The shown choices in their groups, keeping the order the groups first appear in. */
@@ -84,11 +150,12 @@
 		!expanded ? '' : shown.length === 0 ? 'Nothing matches.' : shown.length === 1 ? '1 choice. Press Enter to show it.' : `${shown.length} choices.`
 	);
 
-	function optionId(index: number): string {
+	function optionIdentifier(index: number): string {
 		return `${identifier}-option-${index}`;
 	}
 
 	function show(): void {
+		if (disabled) return;
 		expanded = true;
 		const current = shown.findIndex((choice) => choice.value === value);
 		active = current >= 0 ? current : 0;
@@ -104,7 +171,12 @@
 	function pick(index: number): void {
 		const choice = shown[index];
 		hide();
-		if (choice && choice.value !== value) onchange(choice.value);
+		if (choice && choice.value !== value) {
+			value = choice.value;
+			missing = false;
+			onchange?.(choice.value);
+			void tick().then(() => field?.dispatchEvent(new Event('change', { bubbles: true })));
+		}
 	}
 
 	function move(index: number): void {
@@ -114,8 +186,19 @@
 	}
 
 	function scrollActiveIntoView(): void {
-		list?.querySelector(`#${CSS.escape(optionId(active))}`)?.scrollIntoView({ block: 'nearest' });
+		list?.querySelector(`#${CSS.escape(optionIdentifier(active))}`)?.scrollIntoView({ block: 'nearest' });
 	}
+
+	/** Every choice in its group, for the <select> that stands in without scripts. */
+	const allGroups = $derived.by(() => {
+		const found = new Map<string, SearchableChoice<Value>[]>();
+		for (const choice of choices) {
+			const group = choice.group ?? '';
+			if (!found.has(group)) found.set(group, []);
+			found.get(group)?.push(choice);
+		}
+		return [...found.entries()].map(([group, entries]) => ({ group, entries }));
+	});
 
 	function onInput(event: Event): void {
 		query = (event.currentTarget as HTMLInputElement).value;
@@ -150,12 +233,44 @@
 </script>
 
 <div class="searchable-dropdown">
-	<label class="searchable-dropdown-label" class:visually-hidden={hideLabel} for="{identifier}-input">{label}</label>
-	{#if name}<input type="hidden" {name} {value} />{/if}
-	<div class="searchable-dropdown-control" class:expanded>
+	{#if name}
+		<input bind:this={field} type="hidden" name={scripted ? name : undefined} value={selected?.value ?? value} {disabled} {form} />
+		<label class="searchable-dropdown-fallback">
+			<span class:visually-hidden={hideLabel}>{label}</span>
+			<select
+				name={scripted ? undefined : name}
+				{required}
+				{disabled}
+				{form}
+				aria-invalid={invalid ? 'true' : undefined}
+				aria-describedby={describedBy}
+			>
+				{#if value === '' && !choices.some((choice) => choice.value === '')}
+					<!-- Nothing picked yet: the placeholder, which cannot be picked back. -->
+					<option value="" disabled selected>{placeholder}</option>
+				{/if}
+				{#each allGroups as { group, entries } (group)}
+					{#if group}
+						<optgroup label={group}>
+							{#each entries as choice (choice.value)}
+								<option value={choice.value} selected={choice.value === value}>{choice.label}</option>
+							{/each}
+						</optgroup>
+					{:else}
+						{#each entries as choice (choice.value)}
+							<option value={choice.value} selected={choice.value === value}>{choice.label}</option>
+						{/each}
+					{/if}
+				{/each}
+			</select>
+		</label>
+	{/if}
+	<label class="searchable-dropdown-label" class:visually-hidden={hideLabel} class:needs-scripts={Boolean(name)} for={inputIdentifier}>{label}</label>
+	{@render message?.()}
+	<div class="searchable-dropdown-control" class:expanded class:needs-scripts={Boolean(name)}>
 		<input
 			bind:this={input}
-			id="{identifier}-input"
+			id={inputIdentifier}
 			type="text"
 			role="combobox"
 			autocomplete="off"
@@ -163,10 +278,15 @@
 			aria-autocomplete="list"
 			aria-expanded={expanded}
 			aria-controls="{identifier}-list"
-			aria-activedescendant={expanded && shown.length > 0 ? optionId(active) : undefined}
+			aria-activedescendant={expanded && shown.length > 0 ? optionIdentifier(active) : undefined}
+			aria-describedby={describedBy}
+			aria-invalid={invalid || missing ? 'true' : undefined}
+			aria-required={required ? 'true' : undefined}
+			{disabled}
 			value={typing ? query : (selected?.label ?? '')}
 			placeholder={expanded || !selected ? placeholder : undefined}
 			oninput={onInput}
+			onchange={(event) => event.stopPropagation()}
 			onkeydown={onKeydown}
 			onclick={() => {
 				if (!expanded) {
@@ -184,6 +304,7 @@
 			aria-label="Show all choices"
 			aria-controls="{identifier}-list"
 			aria-expanded={expanded}
+			{disabled}
 			onmousedown={(event) => event.preventDefault()}
 			onclick={() => {
 				if (expanded) hide();
@@ -231,7 +352,7 @@
 	<!-- Keys move through the choices from the box, which keeps focus (aria-activedescendant); the click is for the pointer. -->
 	<!-- svelte-ignore a11y_click_events_have_key_events -->
 	<li
-		id={optionId(index)}
+		id={optionIdentifier(index)}
 		class="searchable-dropdown-option"
 		class:active={index === active}
 		role="option"
@@ -248,6 +369,23 @@
 {/snippet}
 
 <style>
+	/* The browser's own <select>, for readers without scripts. */
+	.searchable-dropdown-fallback {
+		display: flex;
+		flex-direction: column;
+		gap: var(--space-1);
+		font-weight: var(--font-weight-bold);
+	}
+
+	.searchable-dropdown-fallback select {
+		width: min(100%, var(--layout-field));
+		font-weight: normal;
+	}
+
+	:global(:root[data-scripts='on']) .searchable-dropdown-fallback {
+		display: none;
+	}
+
 	.searchable-dropdown-label {
 		display: block;
 		font-weight: var(--font-weight-bold);
@@ -272,6 +410,23 @@
 		text-overflow: ellipsis;
 	}
 
+	/* An error, as on the browser's own <select> (global.css). */
+	.searchable-dropdown-control input[aria-invalid='true'] {
+		border-color: var(--color-danger);
+	}
+
+	/* Not usable now: muted, with a dashed border, so the state does not rest on color alone. */
+	.searchable-dropdown-control input:disabled {
+		border-style: dashed;
+		color: var(--color-ink-muted);
+		cursor: not-allowed;
+	}
+
+	.searchable-dropdown-toggle:disabled {
+		color: var(--color-ink-muted);
+		cursor: not-allowed;
+	}
+
 	.searchable-dropdown-toggle {
 		position: absolute;
 		top: 0;
@@ -291,9 +446,10 @@
 		transform: rotate(180deg);
 	}
 
+	/* Above a chart's bars and a table's sticky headers, as the browser's own list would be. */
 	.searchable-dropdown-list {
 		position: absolute;
-		z-index: 2;
+		z-index: 20;
 		top: calc(100% + var(--space-1));
 		left: 0;
 		right: 0;

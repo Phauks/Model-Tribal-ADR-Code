@@ -11,7 +11,7 @@
  * kept in the bucket like received mail.
  */
 import { attachmentLimitBytes, snippetOf, textToHtml, type MailAddress, normalizeSubject } from '#lib/mail.ts';
-import { buildRawMessage, newMessageId, type OutgoingAttachment, type OutgoingMail } from './mime.ts';
+import { buildRawMessage, newMessageIdentifier, type OutgoingAttachment, type OutgoingMail } from './mime.ts';
 import { actionStatement, bucketKeys, currentTime, type MailCarriers, type MailContext } from './context.ts';
 import { noticeHeader } from './inbound.ts';
 import { catchAllInbox, inboxForAddress, mayOpenThread, sendingAddresses } from './inboxes.ts';
@@ -394,13 +394,13 @@ export async function sendMessage(
 		html: textToHtml(row.text_body),
 		headers,
 		attachments,
-		messageId: newMessageId(fromDomain),
+		messageId: newMessageIdentifier(fromDomain),
 		date: at
 	};
 
-	let sentId: { messageId: string; providerMessageId: string | null };
+	let sentIdentifiers: { messageId: string; providerMessageId: string | null };
 	try {
-		sentId = await carrier.send(mail);
+		sentIdentifiers = await carrier.send(mail);
 	} catch (problem) {
 		const reason = problem instanceof Error ? problem.message : String(problem);
 		// A reply that failed for a reason that may pass waits and is tried again by the mail run (site/MAIL.md, "When something fails").
@@ -419,7 +419,7 @@ export async function sendMessage(
 	}
 
 	// Keep a copy as sent, with the Message-ID the other side sees.
-	const copy = buildRawMessage({ ...mail, messageId: sentId.messageId });
+	const copy = buildRawMessage({ ...mail, messageId: sentIdentifiers.messageId });
 	const rawKey = bucketKeys.raw(messageIdentifier, at);
 	await context.bucket.put(rawKey, copy, { httpMetadata: { contentType: 'message/rfc822' } });
 	const stamp = at.toISOString();
@@ -429,7 +429,7 @@ export async function sendMessage(
 				`UPDATE mail_messages SET status = 'sent', sent_at = ?, message_id = ?, provider_message_id = ?, carrier = ?, raw_key = ?, size = ?, reply_to = ?
 				 WHERE identifier = ?`
 			)
-			.bind(stamp, sentId.messageId, sentId.providerMessageId, carrier.name, rawKey, copy.length, options.replyTo ?? null, messageIdentifier),
+			.bind(stamp, sentIdentifiers.messageId, sentIdentifiers.providerMessageId, carrier.name, rawKey, copy.length, options.replyTo ?? null, messageIdentifier),
 		database
 			.prepare(
 				`UPDATE mail_threads SET message_count = message_count + 1, last_message_at = ?1, last_outbound_at = ?1, updated_at = ?1 WHERE identifier = ?2`
@@ -526,10 +526,10 @@ export async function recordDeliveryEvent(context: MailContext, event: unknown):
 	};
 	const kind = /message\.(delivered|deferred|bounced|failed|rejected|complained)$/.exec(type ?? '')?.[1];
 	if (!kind || !payload?.messageId) return false;
-	const providerId = payload.messageId.replace(/^<|>$/g, '');
+	const providerMessageIdentifier = payload.messageId.replace(/^<|>$/g, '');
 	const message = await context.database
 		.prepare('SELECT identifier, delivery_status FROM mail_messages WHERE provider_message_id = ?1 OR message_id = ?1 LIMIT 1')
-		.bind(providerId)
+		.bind(providerMessageIdentifier)
 		.first<{ identifier: string; delivery_status: string | null }>();
 	const detail =
 		payload.delivery?.smtpResponse ?? payload.bounce?.reason ?? payload.rejection?.detail ?? payload.failure?.reason ?? payload.complaint?.type ?? null;
@@ -541,7 +541,7 @@ export async function recordDeliveryEvent(context: MailContext, event: unknown):
 				`INSERT INTO mail_delivery_events (identifier, message_identifier, provider_message_id, recipient, event_type, detail, occurred_at, received_at)
 				 VALUES (?, ?, ?, ?, ?, ?, ?, ?)`
 			)
-			.bind(crypto.randomUUID(), message?.identifier ?? null, providerId, payload.recipient?.toLowerCase() ?? null, kind, detail, occurred, received)
+			.bind(crypto.randomUUID(), message?.identifier ?? null, providerMessageIdentifier, payload.recipient?.toLowerCase() ?? null, kind, detail, occurred, received)
 	];
 	// A later, weaker event (a delay after delivery) does not replace a stronger one.
 	if (message && deliveryOrder.indexOf(kind) >= deliveryOrder.indexOf(message.delivery_status ?? 'deferred')) {
@@ -577,7 +577,7 @@ export async function sendNewMailNotice(context: MailContext, carriers: MailCarr
 		subject: 'New mail in the project inbox',
 		text: `New mail has arrived in the project inbox. Read it at ${link}.\n\nThis notice does not quote the message, so it stays in the project's own storage. At most one notice is sent every 30 minutes.`,
 		headers: { [noticeHeader]: 'yes', 'X-Auto-Response-Suppress': 'All' },
-		messageId: newMessageId(settings.domain ?? 'invalid')
+		messageId: newMessageIdentifier(settings.domain ?? 'invalid')
 	});
 	return true;
 }

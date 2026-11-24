@@ -31,7 +31,7 @@ import {
 	type Specialty
 } from '#lib/contributors.ts';
 import { roleLabels, type Role } from '#lib/permissions.ts';
-import { eventStatement } from './events.ts';
+import { activityStatement } from './activity-log.ts';
 import { newIdentifier, now } from './identifiers.ts';
 import type { SignedInPerson } from './people.ts';
 
@@ -389,7 +389,7 @@ export async function saveAnswers(
 		...(existing
 			? []
 			: [
-					eventStatement(database, {
+					activityStatement(database, {
 						personIdentifier: person?.identifier ?? null,
 						action: 'Started a contributor profile',
 						targetKind: 'profile',
@@ -433,7 +433,7 @@ export async function confirmProfile(database: D1Database, profile: Profile): Pr
 				 WHERE identifier = ?`
 			)
 			.bind(version, time, time, time, time, defaultCreditSection(profile.answers.interests), slug, profile.identifier),
-		eventStatement(database, {
+		activityStatement(database, {
 			personIdentifier: profile.personIdentifier,
 			action: firstSend ? 'Confirmed the profile and signed up' : `Confirmed version ${version} of the profile`,
 			targetKind: 'profile',
@@ -465,7 +465,7 @@ async function freeSlug(database: D1Database, profileIdentifier: string, name: s
 export async function deleteProfile(database: D1Database, profile: Profile, bucket?: R2Bucket): Promise<void> {
 	await database.batch([
 		database.prepare('DELETE FROM contributor_profiles WHERE identifier = ?').bind(profile.identifier),
-		eventStatement(database, {
+		activityStatement(database, {
 			personIdentifier: profile.personIdentifier,
 			action: 'Deleted the contributor profile at the person’s request',
 			targetKind: 'profile',
@@ -503,7 +503,7 @@ export async function deleteExpiredDeclinedProfiles(
 	await database.batch(
 		expired.results.flatMap(({ identifier }) => [
 			database.prepare('DELETE FROM contributor_profiles WHERE identifier = ?').bind(identifier),
-			eventStatement(database, {
+			activityStatement(database, {
 				personIdentifier: null,
 				action: `Deleted ${declinedRetentionMonths} months after the registration was declined`,
 				targetKind: 'profile',
@@ -657,7 +657,7 @@ export async function decideProfile(
 				 WHERE identifier = ?`
 			)
 			.bind(decision, time, decidedBy.identifier, note, profile.identifier),
-		eventStatement(database, {
+		activityStatement(database, {
 			personIdentifier: decidedBy.identifier,
 			action: decision === 'welcomed' ? 'Welcomed the contributor' : 'Declined the registration',
 			targetKind: 'profile',
@@ -677,7 +677,7 @@ export async function setCreditSection(
 		database
 			.prepare('UPDATE contributor_profiles SET credit_section = ? WHERE identifier = ?')
 			.bind(section, profile.identifier),
-		eventStatement(database, {
+		activityStatement(database, {
 			personIdentifier: changedBy.identifier,
 			action: section ? `Credit placed in ${section}` : 'Credit section cleared',
 			targetKind: 'profile',
@@ -698,7 +698,7 @@ export async function setBoardMembership(
 		database
 			.prepare('UPDATE contributor_profiles SET board_member = ?, board_office = ? WHERE identifier = ?')
 			.bind(member ? 1 : 0, member ? office : null, profile.identifier),
-		eventStatement(database, {
+		activityStatement(database, {
 			personIdentifier: changedBy.identifier,
 			action: member ? `Marked as a board member${office ? ` (${office})` : ''}` : 'Marked as not on the board',
 			targetKind: 'profile',
@@ -749,14 +749,14 @@ export async function giveWorkspaceAccess(
 		database
 			.prepare('UPDATE contributor_profiles SET person_identifier = ? WHERE identifier = ?')
 			.bind(identifier, profile.identifier),
-		eventStatement(database, {
+		activityStatement(database, {
 			personIdentifier: givenBy.identifier,
 			action: `Given workspace access as ${roleLabels[subject.role].toLocaleLowerCase('en-US')}, from a contributor profile`,
 			targetKind: 'person',
 			targetIdentifier: identifier,
 			note: subject.nationIdentifier ? `For nation ${subject.nationIdentifier}` : null
 		}),
-		eventStatement(database, {
+		activityStatement(database, {
 			personIdentifier: givenBy.identifier,
 			action: `Given workspace access as ${roleLabels[subject.role].toLocaleLowerCase('en-US')}`,
 			targetKind: 'profile',

@@ -637,9 +637,9 @@ function buildShadedView(view: ShadedMapView) {
 		});
 
 	// Each placed office takes its own nation's category.
-	const byId = new Map(records.map((record) => [record.id, record]));
+	const byIdentifier = new Map(records.map((record) => [record.id, record]));
 	const offices: ShadedOffice[] = placedOffices().flatMap((office) => {
-		const record = byId.get(office.nation);
+		const record = byIdentifier.get(office.nation);
 		if (!record) return [];
 		const key = categoryOf(record);
 		const category = key === undefined ? undefined : categories[rank(key)];
@@ -826,10 +826,10 @@ export function shadedView(view: ShadedMapView) {
 		.map((state) => ({ anchor: state.anchor as string, code: state.code, name: stateName(state.code), total: state.total, counts: state.counts, members: state.members }))
 		.sort((first, second) => first.name.localeCompare(second.name, 'en'));
 	// The names of the nations the by-state counts are made of, once each, so a count opens to its nations' names and pages.
-	const recordsById = new Map(built.records.map((record) => [record.id, record]));
+	const recordsByIdentifier = new Map(built.records.map((record) => [record.id, record]));
 	const stateNations = Object.fromEntries(
 		[...new Set(stateRows.flatMap((row) => Object.values(row.members).flat()))].flatMap((id) => {
-			const record = recordsById.get(id);
+			const record = recordsByIdentifier.get(id);
 			return record ? [[id, displayName(record.names.official)]] : [];
 		})
 	);

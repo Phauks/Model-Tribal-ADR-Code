@@ -156,6 +156,6 @@ export function buildRawMessage(mail: OutgoingMail): string {
 }
 
 /** A new Message-ID on the sending domain, without angle brackets. */
-export function newMessageId(domain: string): string {
+export function newMessageIdentifier(domain: string): string {
 	return `${crypto.randomUUID()}@${domain}`;
 }

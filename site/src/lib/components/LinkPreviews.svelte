@@ -54,14 +54,14 @@
 
 	type Preview = Term | Nation | Case;
 
-	const cardId = 'link-preview';
+	const cardIdentifier = 'link-preview';
 	const showDelay = 400;
 	const hideDelay = 250;
 	// Links where a preview would get in the way: navigation, long lists and
 	// tables, search results, and anything that asks for none.
 	const noPreview = 'nav, header, table, dialog, [role="dialog"], .sidebar-wide, .sidebar-narrow, [data-no-preview]';
 	// Addresses under /nations/ that are lists or maps, not a nation's page.
-	const nationLists = new Set(['map', 'letter', 'state', 'previews.json', 'recourse', 'data', 'timeline', 'federal-offices']);
+	const nationLists = new Set(['map', 'letter', 'state', 'previews.json', 'recourse', 'law', 'data', 'timeline', 'federal-offices', 'coverage']);
 
 	let terms: Promise<Map<string, Term>> | undefined;
 	let nations: Promise<Map<string, Nation>> | undefined;
@@ -158,7 +158,7 @@
 		anchor = link;
 		shown = entry;
 		imageFailed = false;
-		link.setAttribute('aria-describedby', cardId);
+		link.setAttribute('aria-describedby', cardIdentifier);
 		await tick();
 		place(link);
 	}
@@ -246,7 +246,7 @@
 {#if shown}
 	<div
 		bind:this={card}
-		id={cardId}
+		id={cardIdentifier}
 		class="link-preview"
 		role="tooltip"
 		style:top="{position.top}px"

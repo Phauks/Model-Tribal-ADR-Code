@@ -4,7 +4,7 @@
  */
 import type { D1Database } from '@cloudflare/workers-types/index.ts';
 import { roleLabels, type Role } from '#lib/permissions.ts';
-import { eventStatement } from './events.ts';
+import { activityStatement } from './activity-log.ts';
 import { newIdentifier, now } from './identifiers.ts';
 
 export interface SignedInPerson {
@@ -102,7 +102,7 @@ export async function matchSignIn(
 					 WHERE sign_in_subject = ? AND person_identifier IS NULL`
 				)
 				.bind(invited.identifier, claims.subject),
-			eventStatement(database, {
+			activityStatement(database, {
 				personIdentifier: invited.identifier,
 				action: 'Accepted the invitation and signed in for the first time',
 				targetKind: 'person',
@@ -132,7 +132,7 @@ export async function matchSignIn(
 					 VALUES (?, ?, ?, ?, 'lead-author', 'active', ?, ?)`
 				)
 				.bind(person.identifier, claims.subject, person.email, person.displayName, time, time),
-			eventStatement(database, {
+			activityStatement(database, {
 				personIdentifier: person.identifier,
 				action: 'Signed in as the lead author named in the site settings',
 				targetKind: 'person',
@@ -220,7 +220,7 @@ export async function invitePerson(
 				addedBy.identifier,
 				now()
 			),
-		eventStatement(database, {
+		activityStatement(database, {
 			personIdentifier: addedBy.identifier,
 			action: `Invited as ${roleLabels[invitation.role].toLocaleLowerCase('en-US')}`,
 			targetKind: 'person',
@@ -241,7 +241,7 @@ export async function changeRole(
 		database
 			.prepare('UPDATE people SET role = ?, nation_identifier = ? WHERE identifier = ?')
 			.bind(role, nationIdentifier, identifier),
-		eventStatement(database, {
+		activityStatement(database, {
 			personIdentifier: changedBy.identifier,
 			action: `Role changed to ${roleLabels[role].toLocaleLowerCase('en-US')}`,
 			targetKind: 'person',
@@ -272,7 +272,7 @@ export async function setRemoved(
 				 WHERE identifier = ?`
 			)
 			.bind(removed ? 1 : 0, identifier),
-		eventStatement(database, {
+		activityStatement(database, {
 			personIdentifier: changedBy.identifier,
 			action: removed ? 'Access removed' : 'Access restored',
 			targetKind: 'person',

@@ -18,17 +18,17 @@ export const load: PageServerLoad = async (event) => {
 	requirePermission(event, 'search-source-library');
 	const database = workerEnvironment().sourceLibrary;
 	if (!database) error(503, 'The source library is not connected.');
-	const documentId = Number.parseInt(event.params.document, 10);
-	if (!Number.isSafeInteger(documentId) || documentId < 1) error(404, 'There is no such document in the library.');
+	const documentIdentifier = Number.parseInt(event.params.document, 10);
+	if (!Number.isSafeInteger(documentIdentifier) || documentIdentifier < 1) error(404, 'There is no such document in the library.');
 
 	const parameters = event.url.searchParams;
 	const passage = Number.parseInt(parameters.get('passage') ?? '', 10);
 	if (Number.isSafeInteger(passage)) {
 		const place = await passagePlace(database, passage);
-		if (place && place.documentId !== documentId) redirect(303, `/workspace/library/${place.documentId}?passage=${passage}`);
+		if (place && place.documentId !== documentIdentifier) redirect(303, `/workspace/library/${place.documentId}?passage=${passage}`);
 	}
 
-	const document = await libraryDocument(database, documentId);
+	const document = await libraryDocument(database, documentIdentifier);
 	if (!document) error(404, 'There is no such document in the library.');
 
 	let from = Math.max(1, Number.parseInt(parameters.get('from') ?? '1', 10) || 1);
@@ -43,12 +43,12 @@ export const load: PageServerLoad = async (event) => {
 		const pageNumber = Number.parseInt(parameters.get('page') ?? '', 10);
 		const sequence = await pagePlace(
 			database,
-			documentId,
+			documentIdentifier,
 			Number.isSafeInteger(pageNumber) ? { number: pageNumber } : { label: (parameters.get('label') ?? '').slice(0, 40) }
 		);
 		if (sequence !== null) from = sequence;
 	}
-	const pages = await libraryPages(database, documentId, from);
+	const pages = await libraryPages(database, documentIdentifier, from);
 	const query = (parameters.get('q') ?? '').slice(0, 500);
 	return { document, pages, from, highlight, query, perScreen: passagesPerScreen };
 };

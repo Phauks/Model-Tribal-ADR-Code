@@ -37,6 +37,8 @@ export interface TribalCourtOpinion {
 	/** Its page on this site, with the site's masthead and sidebar around it. */
 	path: string;
 	removal: string;
+	/** The Caselaw Access Project's own page of the opinion, which an opinion the nation asked to cite only links to. */
+	original: string;
 }
 
 let opinionCache: TribalCourtOpinion[] | undefined;
@@ -62,7 +64,8 @@ export function tribalCourtOpinions(): TribalCourtOpinion[] {
 					topics: tags.map((tag) => mentionWords[tag] ?? tag.replaceAll('-', ' ')),
 					key: row.copy_key,
 					path: copyPagePath({ key: row.copy_key }),
-					removal: removalRequestPath({ key: row.copy_key })
+					removal: removalRequestPath({ key: row.copy_key }),
+					original: row.link
 				};
 			})
 			.sort((first, second) => second.decided.localeCompare(first.decided) || first.name.localeCompare(second.name));

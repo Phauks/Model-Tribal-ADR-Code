@@ -1,0 +1,27 @@
+id: american-indian-law-alliance
+name: American Indian Law Alliance
+kind: legal-aid
+operator: nonprofit
+status: to-classify
+link: https://aila.ngo/services
+link_label: Our services
+services:
+- legal-advice
+who_can_use: Reported as the New York City Native American community.
+location: New York City
+serves:
+- states:
+  - NY
+  scope: region
+  text: A Pro Bono Net listing says it “provides free, culturally sensitive legal services for the New York City Native American community.”
+  source: probono-net-american-indian-law-alliance
+note: Grabbed Nov. 24, 2026 in the sweep of nations with no legal help match. Its own site asks automated readers to stay away, so it was not read; a person should read aila.ngo before relying on this.
+sources:
+- id: probono-net-american-indian-law-alliance
+  title: American Indian Law Alliance
+  publisher: Pro Bono Net
+  link: https://www.probono.net/oppsguide/organization.53858?print=1
+  accessed: '2026-11-24'
+  verification: page-read
+  supports: The description quoted in serves. Read through an AI fetch tool, which returns the page’s text; not checked by a second read.
+checked: '2026-11-24'

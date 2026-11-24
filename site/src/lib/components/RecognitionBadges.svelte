@@ -34,7 +34,7 @@
 	const panels: Record<string, HTMLElement | undefined> = $state({});
 	const buttons: Record<string, HTMLElement | undefined> = $state({});
 
-	function panelId(index: number): string {
+	function panelIdentifier(index: number): string {
 		return `recognition-explanation-${own}-${index}`;
 	}
 
@@ -70,7 +70,7 @@
 					bind:this={buttons[badge.label]}
 					type="button"
 					class="recognition-badge recognition-badge-{badge.kind} recognition-badge-button"
-					popovertarget={panelId(index)}
+					popovertarget={panelIdentifier(index)}
 					onclick={() => place(badge.label)}
 				>
 					<Icon size={size === 'small' ? 14 : 16} strokeWidth={2} aria-hidden="true" />
@@ -80,7 +80,7 @@
 				</button>
 				<div
 					bind:this={panels[badge.label]}
-					id={panelId(index)}
+					id={panelIdentifier(index)}
 					class="recognition-explanation"
 					popover="auto"
 					role="dialog"

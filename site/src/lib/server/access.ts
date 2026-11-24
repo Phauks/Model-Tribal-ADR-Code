@@ -19,7 +19,7 @@ import {
 	type DocumentAccess
 } from '#lib/permissions.ts';
 import { placeAsGrant, type TeamLevel } from '#lib/nation-teams.ts';
-import { eventStatement } from './events.ts';
+import { activityStatement } from './activity-log.ts';
 import { newIdentifier, now } from './identifiers.ts';
 import type { SignedInPerson } from './people.ts';
 
@@ -180,7 +180,7 @@ export async function setGrant(
 				grantedBy.identifier,
 				time
 			),
-		eventStatement(database, {
+		activityStatement(database, {
 			personIdentifier: grantedBy.identifier,
 			action: `Access to ${scope} set to ${accessLevelLabels[input.level].toLocaleLowerCase('en-US')}`,
 			targetKind: 'person',
@@ -205,7 +205,7 @@ export async function endGrant(
 				`UPDATE access_grants SET ended_at = ?, ended_by = ? WHERE identifier = ? AND ended_at IS NULL`
 			)
 			.bind(now(), endedBy.identifier, grant.identifier),
-		eventStatement(database, {
+		activityStatement(database, {
 			personIdentifier: endedBy.identifier,
 			action: `Grant for ${describeScope(grant.subjectKind, grant.subjectIdentifier)} ended; role default applies`,
 			targetKind: 'person',

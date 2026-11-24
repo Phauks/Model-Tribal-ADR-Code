@@ -1,0 +1,141 @@
+key: solem-v-bartlett
+kind: federal-case
+citation:
+  type: legal_case
+  title: Solem v. Bartlett
+  authority: Supreme Court of the United States
+  container-title: U.S.
+  volume: '465'
+  page: '463'
+  issued:
+    date-parts:
+    - - 1984
+      - 2
+      - 22
+  URL: https://www.loc.gov/item/usrep465463/
+  accessed:
+    date-parts:
+    - - 2026
+      - 11
+      - 24
+caption:
+  printed: SOLEM, WARDEN, SOUTH DAKOTA STATE PENITENTIARY, et al. v. BARTLETT
+  source: https://tile.loc.gov/storage-services/service/ll/usrep/usrep465/usrep465463/usrep465463.pdf
+  checked: '2026-11-24'
+opinions:
+  source: https://tile.loc.gov/storage-services/service/ll/usrep/usrep465/usrep465463/usrep465463.pdf
+  checked: '2026-11-24'
+  list:
+  - kind: majority
+    justice: Thurgood Marshall
+    page: 464
+original_link: https://www.loc.gov/item/usrep465463/
+retrieved: '2026-11-24'
+history:
+  status: live
+  last_checked: '2026-11-24'
+court_dates:
+  argued:
+  - '1983-12-07'
+  - '1983-02-22'
+  printed: Argued December 7, 1983 Decided February 22, 1984
+  source: https://tile.loc.gov/storage-services/service/ll/usrep/usrep465/usrep465463/usrep465463.pdf
+  checked: '2026-11-24'
+supreme_court:
+  court: Burger Court
+  natural_court: Burger Court (1981-1986)
+  decision_type: majority opinion
+  vote:
+    majority: 9
+    minority: 0
+  justices:
+  - name: Thurgood Marshall
+    vote: majority
+    opinion: majority
+  - name: William J. Brennan, Jr.
+    vote: majority
+  - name: Byron R. White
+    vote: majority
+  - name: Warren E. Burger
+    vote: majority
+  - name: Harry A. Blackmun
+    vote: majority
+  - name: Lewis F. Powell, Jr.
+    vote: majority
+  - name: William H. Rehnquist
+    vote: majority
+  - name: John Paul Stevens
+    vote: majority
+  - name: Sandra Day O'Connor
+    vote: majority
+  source: https://api.oyez.org/cases/1983/82-1253
+  checked: '2026-11-24'
+reading_links:
+  checked: '2026-11-24'
+  links:
+  - site: library-of-congress
+    label: Library of Congress
+    access: official
+    link: https://www.loc.gov/item/usrep465463/
+  - site: justia
+    label: Justia
+    access: free
+    link: https://supreme.justia.com/cases/federal/us/465/463/
+    unchecked: true
+  - site: oyez
+    label: Oyez
+    access: free
+    link: https://www.oyez.org/cases/1983/82-1253
+  - site: google-scholar
+    label: Google Scholar
+    access: free
+    link: https://scholar.google.com/scholar?hl=en&as_sdt=2006&q=%22465%20U.S.%20463%22
+    unchecked: true
+  - site: westlaw
+    label: Westlaw
+    access: subscription
+    link: https://1.next.westlaw.com/Link/Document/FullText?findType=Y&cite=465%20U.S.%20463
+    unchecked: true
+  - site: lexis
+    label: Lexis
+    access: subscription
+    link: https://advance.lexis.com/api/search?q=465%20U.S.%20463
+    unchecked: true
+rights:
+  status: no-permission-needed
+  basis: us-government-work
+  basis_note: Opinions of federal courts are works of the U.S. government (17 U.S.C. § 105); the host site's own additions are not reproduced.
+  redistribution: true
+found_in:
+- 2026-11-24-supreme-court-native-cases
+notes: 'Full citation: 465 U.S. 463 (1984). Official report scan: https://tile.loc.gov/storage-services/service/ll/usrep/usrep465/usrep465463/usrep465463.pdf. Written by scripts/caselaw/supreme_court_native_cases.py from the Supreme Court Database (case 1983-041), the Caselaw Access Project''s text of the report and the Library of Congress scan; not yet read by a person.'
+tribes: []
+nations_in_case:
+  checked: '2026-11-24'
+  named: []
+review:
+  status: verified
+  by: scripts/caselaw/supreme_court_native_cases.py
+  date: '2026-11-24'
+  checks:
+  - check: cite
+    result: agree
+    detail: Caselaw Access Project 465 U.S. 463 "Solem v. Bartlett"; Database 465 U.S. 463 "SOLEM, WARDEN, SOUTH DAKOTA STATE PENITENTIARY, et al. v. BARTLETT"
+  - check: scan
+    result: agree
+    detail: Scan has 19 pages; the report runs 463 to 481
+  - check: caption
+    result: agree
+    detail: Caption found in the scan's text at 1.00
+  - check: printed dates
+    result: agree
+    detail: Caselaw Access Project "Argued December 7, 1983 Decided February 22, 1984"; scan "Argued December 7, 1983-Decided February 22, 1984"
+  - check: decided
+    result: agree
+    detail: 'Printed and Database: 1984-02-22'
+  - check: opinions
+    result: agree
+    detail: 'Report: majority Marshall p. 464; Database writers: Marshall'
+  - check: bench
+    result: agree
+    detail: Oyez and the Database give the same Justices and votes

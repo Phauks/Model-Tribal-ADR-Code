@@ -135,9 +135,9 @@ export function legalHelpSourceKey(provider: string, source: string): string {
 
 /** A provider record's source as a citation, in the short form of formatSource (src/lib/server/markdown.ts); undefined for other keys. */
 export function legalHelpCitation(key: string): string | undefined {
-	const [prefix, providerId, sourceId] = key.split('/');
-	if (prefix !== 'legal-help' || !providerId || !sourceId) return undefined;
-	const source = providers().get(providerId)?.sources.find((candidate) => candidate.id === sourceId);
+	const [prefix, providerIdentifier, sourceIdentifier] = key.split('/');
+	if (prefix !== 'legal-help' || !providerIdentifier || !sourceIdentifier) return undefined;
+	const source = providers().get(providerIdentifier)?.sources.find((candidate) => candidate.id === sourceIdentifier);
 	if (!source) return undefined;
 	let text = [source.publisher ? escapeHtml(source.publisher) : undefined, `<cite>${escapeHtml(source.title)}</cite>`]
 		.filter(Boolean)

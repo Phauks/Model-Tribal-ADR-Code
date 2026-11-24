@@ -1,0 +1,20 @@
+key: john-blacksmith
+name: John Blacksmith
+lead: Decedent, a Tonawanda Seneca whose trespass suit over an Indian sawmill and yard was affirmed in Fellows v. Blacksmith (1857).
+living: false
+nations:
+- nation: tonawanda-band-of-seneca
+  named_as: Tonawanda band of the Seneca Indians
+  source: fellows-v-blacksmith
+  where: 60 U.S. at 367
+cases:
+- case: fellows-v-blacksmith
+  role: Decedent
+  where: 60 U.S. at 367, 373
+  result: Judgment for the plaintiff affirmed; forcible entry under the Seneca treaties was not sustained.
+events:
+- when: July 13, 1846
+  text: Defendants entered his Tonawanda improvement and turned him out of possession, committing trespass.
+  source: fellows-v-blacksmith
+  where: 60 U.S. at 367
+checked: '2026-11-24'

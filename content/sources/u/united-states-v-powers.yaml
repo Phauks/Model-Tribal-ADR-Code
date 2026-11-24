@@ -1,0 +1,135 @@
+key: united-states-v-powers
+kind: federal-case
+citation:
+  type: legal_case
+  title: United States v. Powers
+  authority: Supreme Court of the United States
+  container-title: U.S.
+  volume: '305'
+  page: '527'
+  issued:
+    date-parts:
+    - - 1939
+      - 1
+      - 9
+  URL: https://www.loc.gov/item/usrep305527/
+  accessed:
+    date-parts:
+    - - 2026
+      - 11
+      - 24
+caption:
+  printed: UNITED STATES v. POWERS et al.
+  source: https://tile.loc.gov/storage-services/service/ll/usrep/usrep305/usrep305527/usrep305527.pdf
+  checked: '2026-11-24'
+opinions:
+  source: https://tile.loc.gov/storage-services/service/ll/usrep/usrep305/usrep305527/usrep305527.pdf
+  checked: '2026-11-24'
+  list:
+  - kind: majority
+    justice: James Clark McReynolds
+    page: 528
+original_link: https://www.loc.gov/item/usrep305527/
+retrieved: '2026-11-24'
+history:
+  status: live
+  last_checked: '2026-11-24'
+court_dates:
+  argued:
+  - '1938-11-18'
+  printed: Argued November 18, 1938. Decided January 9, 1939.
+  source: https://tile.loc.gov/storage-services/service/ll/usrep/usrep305/usrep305527/usrep305527.pdf
+  checked: '2026-11-24'
+supreme_court:
+  court: Hughes Court
+  natural_court: Hughes Court (1938-1939)
+  decision_type: majority opinion
+  vote:
+    majority: 7
+    minority: 0
+  justices:
+  - name: Charles Evans Hughes
+    vote: majority
+  - name: Harlan Fiske Stone
+    vote: majority
+  - name: James Clark McReynolds
+    vote: majority
+    opinion: majority
+  - name: Louis Dembitz Brandeis
+    vote: majority
+  - name: Pierce Butler
+    vote: majority
+  - name: Owen Josephus Roberts
+    vote: majority
+  - name: Hugo Lafayette Black
+    vote: majority
+  - name: Stanley Forman Reed
+    vote: not recorded
+  source: http://scdb.wustl.edu/_brickFiles/Legacy_07/SCDB_Legacy_07_justiceCentered_Citation.csv.zip
+  note: From the Supreme Court Database, case 1938-115; Oyez has no votes for this case.
+  checked: '2026-11-24'
+reading_links:
+  checked: '2026-11-24'
+  links:
+  - site: library-of-congress
+    label: Library of Congress
+    access: official
+    link: https://www.loc.gov/item/usrep305527/
+  - site: justia
+    label: Justia
+    access: free
+    link: https://supreme.justia.com/cases/federal/us/305/527/
+    unchecked: true
+  - site: google-scholar
+    label: Google Scholar
+    access: free
+    link: https://scholar.google.com/scholar?hl=en&as_sdt=2006&q=%22305%20U.S.%20527%22
+    unchecked: true
+  - site: westlaw
+    label: Westlaw
+    access: subscription
+    link: https://1.next.westlaw.com/Link/Document/FullText?findType=Y&cite=305%20U.S.%20527
+    unchecked: true
+  - site: lexis
+    label: Lexis
+    access: subscription
+    link: https://advance.lexis.com/api/search?q=305%20U.S.%20527
+    unchecked: true
+rights:
+  status: no-permission-needed
+  basis: us-government-work
+  basis_note: Opinions of federal courts are works of the U.S. government (17 U.S.C. § 105); the host site's own additions are not reproduced.
+  redistribution: true
+found_in:
+- 2026-11-24-supreme-court-native-cases
+notes: 'Full citation: 305 U.S. 527 (1939). Official report scan: https://tile.loc.gov/storage-services/service/ll/usrep/usrep305/usrep305527/usrep305527.pdf. Written by scripts/caselaw/supreme_court_native_cases.py from the Supreme Court Database (case 1938-115), the Caselaw Access Project''s text of the report and the Library of Congress scan; not yet read by a person.'
+tribes: []
+nations_in_case:
+  checked: '2026-11-24'
+  named: []
+review:
+  status: verified
+  by: scripts/caselaw/supreme_court_native_cases.py
+  date: '2026-11-24'
+  checks:
+  - check: cite
+    result: agree
+    detail: Caselaw Access Project 305 U.S. 527 "United States v. Powers"; Database 305 U.S. 527 "UNITED STATES v. POWERS et al."
+  - check: scan
+    result: agree
+    detail: Scan has 7 pages; the report runs 527 to 533
+  - check: caption
+    result: agree
+    detail: Caption found in the scan's text at 0.98
+  - check: printed dates
+    result: agree
+    detail: Caselaw Access Project "Argued November 18, 1938. Decided January 9, 1939."; scan "Argued November 18, 1938.-Decided January 9, 1939."
+  - check: decided
+    result: agree
+    detail: 'Printed and Database: 1939-01-09'
+  - check: opinions
+    result: agree
+    detail: 'Report: majority Mcreynolds p. 528; Database writers: Mcreynolds'
+  - check: bench
+    result: agree
+    detail: No Oyez votes; each opinion writer in the report sits on the Database's bench on the side the opinion takes

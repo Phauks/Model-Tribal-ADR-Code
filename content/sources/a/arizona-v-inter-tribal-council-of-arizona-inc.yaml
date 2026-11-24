@@ -1,0 +1,154 @@
+key: arizona-v-inter-tribal-council-of-arizona-inc
+kind: federal-case
+citation:
+  type: legal_case
+  title: Arizona v. Inter Tribal Council of Arizona, Inc.
+  authority: Supreme Court of the United States
+  container-title: U.S.
+  volume: '570'
+  page: '1'
+  issued:
+    date-parts:
+    - - 2013
+      - 6
+      - 17
+  URL: https://www.supremecourt.gov/opinions/boundvolumes/570bv.pdf
+  accessed:
+    date-parts:
+    - - 2026
+      - 11
+      - 24
+caption:
+  printed: ARIZONA et al. v. INTER TRIBAL COUNCIL OF ARIZONA, INC., et al.
+  source: https://www.supremecourt.gov/opinions/boundvolumes/570bv.pdf
+  checked: '2026-11-24'
+opinions:
+  source: https://www.supremecourt.gov/opinions/boundvolumes/570bv.pdf
+  checked: '2026-11-24'
+  list:
+  - kind: majority
+    justice: Antonin Scalia
+    page: 4
+  - kind: concurrence in part and in the judgment
+    justice: Anthony M. Kennedy
+    page: 20
+  - kind: dissent
+    justice: Clarence Thomas
+    page: 22
+  - kind: dissent
+    justice: Samuel A. Alito, Jr.
+    page: 38
+original_link: https://www.supremecourt.gov/opinions/boundvolumes/570bv.pdf
+shares_link_with:
+- adoptive-couple-v-baby-girl
+retrieved: '2026-11-24'
+history:
+  status: live
+  last_checked: '2026-11-24'
+court_dates:
+  argued:
+  - '2013-03-18'
+  printed: Argued March 18, 2013. Decided June 17, 2013.
+  source: https://www.supremecourt.gov/opinions/boundvolumes/570bv.pdf
+  checked: '2026-11-24'
+supreme_court:
+  court: Roberts Court
+  natural_court: Roberts Court (2010-2016)
+  decision_type: majority opinion
+  vote:
+    majority: 7
+    minority: 2
+  justices:
+  - name: John G. Roberts, Jr.
+    vote: majority
+  - name: Antonin Scalia
+    vote: majority
+    opinion: majority
+  - name: Anthony M. Kennedy
+    vote: majority
+    opinion: concurrence
+  - name: Clarence Thomas
+    vote: minority
+    opinion: dissent
+  - name: Ruth Bader Ginsburg
+    vote: majority
+  - name: Stephen G. Breyer
+    vote: majority
+  - name: Samuel A. Alito, Jr.
+    vote: minority
+    opinion: dissent
+  - name: Sonia Sotomayor
+    vote: majority
+  - name: Elena Kagan
+    vote: majority
+  source: https://api.oyez.org/cases/2012/12-71
+  checked: '2026-11-24'
+reading_links:
+  checked: '2026-11-24'
+  links:
+  - site: supremecourt
+    label: Supreme Court of the United States
+    access: official
+    link: https://www.supremecourt.gov/opinions/boundvolumes/570bv.pdf
+  - site: justia
+    label: Justia
+    access: free
+    link: https://supreme.justia.com/cases/federal/us/570/1/
+    unchecked: true
+  - site: oyez
+    label: Oyez
+    access: free
+    link: https://www.oyez.org/cases/2012/12-71
+  - site: google-scholar
+    label: Google Scholar
+    access: free
+    link: https://scholar.google.com/scholar?hl=en&as_sdt=2006&q=%22570%20U.S.%201%22
+    unchecked: true
+  - site: westlaw
+    label: Westlaw
+    access: subscription
+    link: https://1.next.westlaw.com/Link/Document/FullText?findType=Y&cite=570%20U.S.%201
+    unchecked: true
+  - site: lexis
+    label: Lexis
+    access: subscription
+    link: https://advance.lexis.com/api/search?q=570%20U.S.%201
+    unchecked: true
+rights:
+  status: no-permission-needed
+  basis: us-government-work
+  basis_note: Opinions of federal courts are works of the U.S. government (17 U.S.C. § 105); the host site's own additions are not reproduced.
+  redistribution: true
+found_in:
+- 2026-11-24-supreme-court-native-cases
+notes: 'Full citation: 570 U.S. 1 (2013). Official report scan: https://www.supremecourt.gov/opinions/boundvolumes/570bv.pdf. Written by scripts/caselaw/supreme_court_native_cases.py from the Supreme Court Database (case 2012-064), the Caselaw Access Project''s text of the report and the Court''s bound volume; not yet read by a person.'
+tribes: []
+nations_in_case:
+  checked: '2026-11-24'
+  named: []
+review:
+  status: unverified
+  by: scripts/caselaw/supreme_court_native_cases.py
+  date: '2026-11-24'
+  checks:
+  - check: cite
+    result: differs
+    detail: Caselaw Access Project 570 U.S. 1 "Ariz. v. Inter Tribal Council of Ariz., Inc."; Database 570 U.S. 1 "ARIZONA, et al., PETITIONERS v. THE INTER TRIBAL COUNCIL OF ARIZONA, INC., et al."
+  - check: scan
+    result: agree
+    detail: Scan has 47 pages; the report runs 1 to 47
+  - check: caption
+    result: settled
+    detail: 'Caption found in the scan''s text at 0.79. Read from the scan by an AI reader (corrected): p. 1: ARIZONA et al. v. INTER TRIBAL COUNCIL OF ARIZONA, INC., et al. (the record''s ''Petitioners'' and ''The'' are not in the printed caption).'
+  - check: printed dates
+    result: agree
+    detail: Caselaw Access Project "Argued March 18, 2013. Decided June 17, 2013."; scan "Argued March 18, 2013—Decided June 17, 2013"
+  - check: decided
+    result: agree
+    detail: 'Printed and Database: 2013-06-17'
+  - check: opinions
+    result: settled
+    detail: 'Report: majority Scalia p. 4, dissent Thomas p. 22, dissent Alito p. 38; Database writers: Alito, Kennedy, Scalia, Thomas. Read from the scan by an AI reader (corrected): p. 4: Justice Scalia delivered the opinion of the Court. p. 20: Justice Kennedy, concurring in part and concurring in the judgment. p. 22: Justice Thomas, dissenting. p. 38: Justice Alito, dissenting.'
+  - check: bench
+    result: agree
+    detail: Oyez and the Database give the same Justices and votes

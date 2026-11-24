@@ -74,21 +74,21 @@
 	{#each details.lines as line, index (line.label)}
 		<div class="fact">
 			{#if line.nations && line.nations.length > 0}
-				{@const listId = `${identifier}-list-${index}`}
+				{@const listIdentifier = `${identifier}-list-${index}`}
 				<div class="row">
-					<span id="{listId}-label">{line.label}</span>
+					<span id="{listIdentifier}-label">{line.label}</span>
 					<button
 						type="button"
 						class="count"
 						aria-expanded={open[line.label] ? 'true' : 'false'}
-						aria-controls={listId}
+						aria-controls={listIdentifier}
 						aria-label="{line.label}: {line.value} {line.nations.length === 1 ? 'nation' : 'nations'}"
 						onclick={() => (open[line.label] = !open[line.label])}
 					>
 						{line.value}<ChevronDown aria-hidden="true" size={16} />
 					</button>
 				</div>
-				<div class="list" id={listId} hidden={!open[line.label]}>
+				<div class="list" id={listIdentifier} hidden={!open[line.label]}>
 					{#if open[line.label]}
 						{#if line.nations.length >= filterFrom}
 							<div class="filter">
@@ -103,7 +103,7 @@
 							</div>
 						{/if}
 						{@const shown = filtered(line)}
-						<ul aria-labelledby="{listId}-label">
+						<ul aria-labelledby="{listIdentifier}-label">
 							{#each shown as nation (nation.id)}
 								<li><a href={nation.href}>{nation.name}</a></li>
 							{/each}

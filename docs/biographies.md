@@ -38,6 +38,14 @@ Following the CARE Principles for Indigenous Data Governance (Global Indigenous 
 
 Every item page (people, Courts, cases, nations, stories, and next glossary terms, federal offices, forms and licenses) uses one shared layout, InfoPage: title, other names, one-line lead and status badge; At a glance with the picture and key facts, each with its source markers; the page's own sections; References.
 
+## How the first thousand pages were made
+
+On Nov. 24, 2026 Trevor asked for many more pages than the first seven. They were made by script, with small AI readers for the reading, and every page starts Unverified. The scripts are in `scripts/biographies/` and their working data in `research/biographies/2026-11-24/`.
+
+- **People in the Supreme Court cases.** The opinions of the 533 cases in `research/supreme-court-coverage/native-cases-scdb.csv` were read from the Library of Congress scans of the United States Reports. A reader listed each person the opinion itself says is Native, named with at least two words, and not a minor, with a word-for-word quote for each fact. `verify_drafts.py` finds every quote on its page and drops what it can't find. A person whose only tie is citizenship in a nation (which also covered adopted and intermarried citizens and freedmen) was left out. A case decided in 1945 or later is treated as possibly about a living person, so the page gives the public role only.
+- **Treaty leaders.** The signature pages of the 370 ratified treaties were read from the Statutes at Large on GovInfo, and every Native signer was listed as printed (`treaty-signers.json`, 9,250 names, each found on its page by `verify_treaties.py`). A signer gets a page when the treaty prints a title such as chief, head man or principal chief beside the name, or when the same printed name signs two or more treaties for the same nation with no more than 30 years between signings. The treaties print names, not identities: two signings under one name may be two people, and one person may appear under two spellings. The page says only what each treaty prints.
+- **Nations.** A page links a nation only where the case names it and its successor is clear (`nation-map.json`), or where the treaty records link the signing nation to today's nation with high confidence.
+
 ## Records
 
 Each person is one file, `content/biographies/<key>.yaml`, checked by `schemas/biography.schema.json`. Every name, nation, case role and life event carries the key of its source record and the pinpoint (`where`), such as "109 U.S. at 557"; the page shows the marker and the References list gives the citation. A picture sits in `site/static/biographies/portraits/` with its archive record, the legal basis for public domain and its SHA-256, and the build fails if the file differs. The build also fails if a living person's record has life events, or a picture without `portrait_released` (`src/lib/server/biographies.ts`).

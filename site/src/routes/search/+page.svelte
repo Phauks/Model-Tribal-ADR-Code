@@ -89,7 +89,7 @@
 	/** What the words find, the same matches the masthead's search panel counts (src/lib/search-everything.ts). */
 	const matches = $derived(entries && records && trimmed ? matchEverything(entries, records, trimmed) : undefined);
 
-	const nationsById = $derived(new Map((records?.nations ?? []).map((row) => [row.id, row])));
+	const nationsByIdentifier = $derived(new Map((records?.nations ?? []).map((row) => [row.id, row])));
 	/** Each nation's recognition badges, from the search index, by the nation's address. */
 	const badgesByLink = $derived(
 		new Map((entries ?? []).filter((entry) => entry.badges).map((entry) => [entry.link, entry.badges ?? []]))
@@ -151,7 +151,7 @@
 	 */
 	function throughNations(nationLists: string[][]): NationSearchRow[] {
 		return nationLists.flatMap((ids) => {
-			const rows = ids.map((id) => nationsById.get(id)).filter((row): row is NationSearchRow => row !== undefined);
+			const rows = ids.map((id) => nationsByIdentifier.get(id)).filter((row): row is NationSearchRow => row !== undefined);
 			if (rows.length === 0) return [];
 			if (rows.length === 1) return rows;
 			const merged = { ...rows[0] };

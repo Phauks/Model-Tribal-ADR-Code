@@ -80,7 +80,7 @@ export interface CheckIssue {
 	/** Replacement texts, for spelling and grammar. */
 	suggestions: string[];
 	/** For a definition issue: the glossary entry to link. */
-	termId?: string;
+	termIdentifier?: string;
 }
 
 const escapeRegExp = (text: string) => text.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
@@ -115,7 +115,7 @@ export function definitionIssues(blocks: TextBlock[], terms: [string, string][],
 				problem: match[0],
 				message: `“${term}” has a glossary entry. Link the first use so readers can open the definition.`,
 				suggestions: [],
-				termId: id
+				termIdentifier: id
 			});
 			break;
 		}

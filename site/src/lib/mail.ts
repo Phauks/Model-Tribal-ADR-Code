@@ -334,7 +334,7 @@ export function snippetOf(text: string, length = 160): string {
 }
 
 /** A Message-ID or a list of them, without angle brackets. */
-export function messageIds(header: string | null | undefined): string[] {
+export function messageIdentifiers(header: string | null | undefined): string[] {
 	if (!header) return [];
 	const found = header.match(/<[^<>\s]+>/g);
 	if (found) return found.map((id) => id.slice(1, -1));

@@ -1,0 +1,137 @@
+key: united-states-v-united-states-fidelity-and-guaranty-co
+kind: federal-case
+citation:
+  type: legal_case
+  title: United States v. United States Fidelity & Guaranty Co.
+  authority: Supreme Court of the United States
+  container-title: U.S.
+  volume: '309'
+  page: '506'
+  issued:
+    date-parts:
+    - - 1940
+      - 3
+      - 25
+  URL: https://www.loc.gov/item/usrep309506/
+  accessed:
+    date-parts:
+    - - 2026
+      - 11
+      - 24
+caption:
+  printed: UNITED STATES v. UNITED STATES FIDELITY & GUARANTY CO. et al.
+  source: https://tile.loc.gov/storage-services/service/ll/usrep/usrep309/usrep309506/usrep309506.pdf
+  checked: '2026-11-24'
+opinions:
+  source: https://tile.loc.gov/storage-services/service/ll/usrep/usrep309/usrep309506/usrep309506.pdf
+  checked: '2026-11-24'
+  list:
+  - kind: majority
+    justice: Stanley Forman Reed
+    page: 509
+original_link: https://www.loc.gov/item/usrep309506/
+retrieved: '2026-11-24'
+history:
+  status: live
+  last_checked: '2026-11-24'
+court_dates:
+  argued:
+  - '1940-02-27'
+  printed: Argued February 27, 1940. Decided March 25, 1940.
+  source: https://tile.loc.gov/storage-services/service/ll/usrep/usrep309/usrep309506/usrep309506.pdf
+  checked: '2026-11-24'
+supreme_court:
+  court: Hughes Court
+  natural_court: Hughes Court (1940-1941)
+  decision_type: majority opinion
+  vote:
+    majority: 8
+    minority: 0
+  justices:
+  - name: Charles Evans Hughes
+    vote: majority
+  - name: Harlan Fiske Stone
+    vote: majority
+  - name: James Clark McReynolds
+    vote: not recorded
+  - name: Owen Josephus Roberts
+    vote: majority
+  - name: Hugo Lafayette Black
+    vote: majority
+  - name: Stanley Forman Reed
+    vote: majority
+    opinion: majority
+  - name: Felix Frankfurter
+    vote: majority
+  - name: William Orville Douglas
+    vote: majority
+  - name: Frank Murphy
+    vote: majority
+  source: http://scdb.wustl.edu/_brickFiles/Legacy_07/SCDB_Legacy_07_justiceCentered_Citation.csv.zip
+  note: From the Supreme Court Database, case 1939-047; Oyez has no votes for this case.
+  checked: '2026-11-24'
+reading_links:
+  checked: '2026-11-24'
+  links:
+  - site: library-of-congress
+    label: Library of Congress
+    access: official
+    link: https://www.loc.gov/item/usrep309506/
+  - site: justia
+    label: Justia
+    access: free
+    link: https://supreme.justia.com/cases/federal/us/309/506/
+    unchecked: true
+  - site: google-scholar
+    label: Google Scholar
+    access: free
+    link: https://scholar.google.com/scholar?hl=en&as_sdt=2006&q=%22309%20U.S.%20506%22
+    unchecked: true
+  - site: westlaw
+    label: Westlaw
+    access: subscription
+    link: https://1.next.westlaw.com/Link/Document/FullText?findType=Y&cite=309%20U.S.%20506
+    unchecked: true
+  - site: lexis
+    label: Lexis
+    access: subscription
+    link: https://advance.lexis.com/api/search?q=309%20U.S.%20506
+    unchecked: true
+rights:
+  status: no-permission-needed
+  basis: us-government-work
+  basis_note: Opinions of federal courts are works of the U.S. government (17 U.S.C. § 105); the host site's own additions are not reproduced.
+  redistribution: true
+found_in:
+- 2026-11-24-supreme-court-native-cases
+notes: 'Full citation: 309 U.S. 506 (1940). Official report scan: https://tile.loc.gov/storage-services/service/ll/usrep/usrep309/usrep309506/usrep309506.pdf. Written by scripts/caselaw/supreme_court_native_cases.py from the Supreme Court Database (case 1939-047), the Caselaw Access Project''s text of the report and the Library of Congress scan; not yet read by a person.'
+tribes: []
+nations_in_case:
+  checked: '2026-11-24'
+  named: []
+review:
+  status: verified
+  by: scripts/caselaw/supreme_court_native_cases.py
+  date: '2026-11-24'
+  checks:
+  - check: cite
+    result: agree
+    detail: Caselaw Access Project 309 U.S. 506 "United States v. United States Fidelity & Guaranty Co."; Database 309 U.S. 506 "UNITED STATES v. UNITED STATES FIDELITY & GUARANTY CO. et al."
+  - check: scan
+    result: agree
+    detail: Scan has 11 pages; the report runs 506 to 516
+  - check: caption
+    result: agree
+    detail: Caption found in the scan's text at 1.00
+  - check: printed dates
+    result: agree
+    detail: Caselaw Access Project "Argued February 27, 1940. Decided March 25, 1940."; scan "Argued February 27, 1940.-Decided March 25, 1940."
+  - check: decided
+    result: agree
+    detail: 'Printed and Database: 1940-03-25'
+  - check: opinions
+    result: agree
+    detail: 'Report: majority Reed p. 509; Database writers: Reed'
+  - check: bench
+    result: agree
+    detail: No Oyez votes; each opinion writer in the report sits on the Database's bench on the side the opinion takes

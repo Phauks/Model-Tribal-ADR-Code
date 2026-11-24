@@ -1,5 +1,5 @@
 import { error, fail } from '@sveltejs/kit';
-import { isHideReason, parseChangeId } from '#lib/page-history.ts';
+import { isHideReason, parseChangeIdentifier } from '#lib/page-history.ts';
 import { changeForHiding, hideChange, requestsToAnswer, showChange } from '#lib/server/page-history.ts';
 import { builtPages } from '#lib/server/page-history-run.ts';
 import { formText, requirePermission, storage } from '#lib/server/workspace.ts';
@@ -26,7 +26,7 @@ export const actions: Actions = {
 	hide: async (event) => {
 		const person = requirePermission(event, 'hide-changes');
 		const { database } = storage(event);
-		if (!parseChangeId(event.params.id)) error(404, 'No change has this address.');
+		if (!parseChangeIdentifier(event.params.id)) error(404, 'No change has this address.');
 		const form = await event.request.formData();
 		const choice = {
 			text: form.get('text') === 'on',
@@ -51,7 +51,7 @@ export const actions: Actions = {
 	show: async (event) => {
 		const person = requirePermission(event, 'hide-changes');
 		const { database } = storage(event);
-		if (!parseChangeId(event.params.id)) error(404, 'No change has this address.');
+		if (!parseChangeIdentifier(event.params.id)) error(404, 'No change has this address.');
 		const form = await event.request.formData();
 		await showChange(database, person.identifier, event.params.id, formText(form, 'note', 500));
 		return { done: 'Shown again.' };

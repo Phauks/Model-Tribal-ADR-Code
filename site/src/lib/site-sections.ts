@@ -63,6 +63,7 @@ export type SiteSection = {
 };
 
 export const nationsPages: OutlineItem[] = [
+	{ label: 'Find the law', link: '/nations/law' },
 	{ label: 'Map', link: '/nations/map' },
 	{ label: 'Timeline', link: '/nations/timeline' },
 	{ label: 'Find recourse', link: '/nations/recourse' },
@@ -75,7 +76,8 @@ export const nationsPages: OutlineItem[] = [
 			{ label: 'Build a table', link: '/nations/data/build' }
 		]
 	},
-	{ label: 'Federal offices', link: '/nations/federal-offices' }
+	{ label: 'Federal offices', link: '/nations/federal-offices' },
+	{ label: 'Coverage', link: '/nations/coverage' }
 ];
 
 export const eventsPages: OutlineItem[] = [

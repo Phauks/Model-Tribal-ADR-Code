@@ -1,7 +1,7 @@
 profile: content/tribes/s/scotts-valley-band-of-pomo-indians-of-california.yaml
 topic: governance
 status: found
-last_searched: '2026-11-23'
+last_searched: '2026-11-24'
 searches:
 - date: '2026-11-23'
   searched_by: Claude (AI assistant)
@@ -31,4 +31,14 @@ searches:
   query: Government, council, election, court and constitution pages linked from the home page (scripts/governance/crawl_websites.py, website-brief.md)
   outcome: blocked
   reason: 'The website could not be read: no page could be fetched.'
+- date: '2026-11-24'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: national-indian-law-library
+  address: https://narf.org/nill/tribes/scotts_valley.html
+  query: Tribal Code, Tribal Constitution, Tribal Court Opinions and Contact Info blocks (scripts/review/nill_gateway_apply.py)
+  outcome: not-found
+  reason: 'The page lists no constitution or code with a link (it says Tribal Code: See NILL catalog records for all available versions of the tribal code.; Tribal Constitution: See NILL catalog record for all available versions of the constitution.).'
+  records:
+  - national-indian-law-library-scotts-valley
 next_steps: The nation's website refused an automated reader; read its government pages by hand.

@@ -45,7 +45,9 @@ export interface CaseRecord {
 const decisionLabels: Record<string, string> = {
 	'per curiam': 'Per curiam',
 	'equally divided Court': 'Affirmed by an equally divided Court',
-	'judgment of the Court': 'No opinion for a majority'
+	'judgment of the Court': 'No opinion for a majority',
+	seriatim: 'Each Justice gave an opinion (seriatim)',
+	decree: 'Decree'
 };
 
 // Each kind of date and its label, in the order used when two fall on the same day.
@@ -120,7 +122,7 @@ export function dateLines(record: CaseRecord): FactLine[] {
  * (Trevor, Nov. 23, 2026: "nations in cases should be linkable to the
  * nation"). A nation with no page here is named without a link.
  */
-function nationLine(record: CaseRecord, nations: Map<string, { name: string; entityType: string }>): FactLine | null {
+function nationLine(record: CaseRecord, nations: ReadonlyMap<string, { name: string; entityType: string }>): FactLine | null {
 	if (!Array.isArray(record.tribes) || record.tribes.length === 0) return null;
 	const names = record.tribes.map((id) => {
 		const nation = nations.get(id);
@@ -137,7 +139,7 @@ function nationLine(record: CaseRecord, nations: Map<string, { name: string; ent
 }
 
 /** The lines under a case box's heading. */
-export function caseFacts(record: CaseRecord, nations: Map<string, { name: string; entityType: string }>): FactLine[] {
+export function caseFacts(record: CaseRecord, nations: ReadonlyMap<string, { name: string; entityType: string }>): FactLine[] {
 	const facts: FactLine[] = dateLines(record);
 	const nationFact = nationLine(record, nations);
 	if (nationFact) facts.push(nationFact);
@@ -173,7 +175,7 @@ export function caseFacts(record: CaseRecord, nations: Map<string, { name: strin
 }
 
 /** The lines under a law box's heading: the nations or peoples it names. */
-export function lawFacts(record: CaseRecord, nations: Map<string, { name: string; entityType: string }>): FactLine[] {
+export function lawFacts(record: CaseRecord, nations: ReadonlyMap<string, { name: string; entityType: string }>): FactLine[] {
 	const nationFact = nationLine(record, nations);
 	return nationFact ? [nationFact] : [];
 }

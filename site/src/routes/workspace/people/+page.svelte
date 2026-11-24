@@ -1,5 +1,7 @@
 <script lang="ts">
 	import DataTable from '#lib/components/DataTable.svelte';
+	import Dropdown from '#lib/components/Dropdown.svelte';
+	import SearchableDropdown from '#lib/components/SearchableDropdown.svelte';
 	import { roleDescriptions, roleLabels, roles } from '#lib/permissions.ts';
 	import type { TableColumn, TableRow } from '#lib/tables/table-definition.ts';
 	import type { PageProps } from './$types';
@@ -13,6 +15,14 @@
 	function nationTitle(identifier: string | null): string {
 		return data.nations.find((nation) => nation.identifier === identifier)?.title ?? identifier ?? '';
 	}
+
+	const personChoices = $derived(
+		data.people
+			.filter((listed) => listed.status !== 'removed')
+			.map((listed) => ({ value: listed.identifier, label: `${listed.displayName} (${roleLabels[listed.role].toLocaleLowerCase('en-US')})` }))
+	);
+	const roleChoices = roles.map((role) => ({ value: role, label: roleLabels[role] }));
+	const nationChoices = $derived([{ value: '', label: 'Choose…' }, ...data.nations.map((nation) => ({ value: nation.identifier, label: nation.title }))]);
 
 	const columns: TableColumn[] = [
 		{ key: 'name', header: 'Name', sortable: true, custom: true },
@@ -109,29 +119,13 @@
 <form method="post" action="?/role" class="panel">
 	<h2>Change a role</h2>
 	<div class="field">
-		<label for="role-person">Person</label>
-		<select id="role-person" name="identifier">
-			{#each data.people.filter((listed) => listed.status !== 'removed') as listed (listed.identifier)}
-				<option value={listed.identifier}>{listed.displayName} ({roleLabels[listed.role].toLocaleLowerCase('en-US')})</option>
-			{/each}
-		</select>
+		<Dropdown label="Person" name="identifier" choices={personChoices} value={personChoices[0]?.value ?? ''} />
 	</div>
 	<div class="field">
-		<label for="role-role">New role</label>
-		<select id="role-role" name="role">
-			{#each roles as role (role)}
-				<option value={role}>{roleLabels[role]}</option>
-			{/each}
-		</select>
+		<Dropdown label="New role" name="role" choices={roleChoices} value={roles[0]} />
 	</div>
 	<div class="field">
-		<label for="role-nation">Nation (nation reviewers only)</label>
-		<select id="role-nation" name="nationIdentifier">
-			<option value="">Choose…</option>
-			{#each data.nations as nation (nation.identifier)}
-				<option value={nation.identifier}>{nation.title}</option>
-			{/each}
-		</select>
+		<SearchableDropdown label="Nation (nation reviewers only)" name="nationIdentifier" choices={nationChoices} value="" />
 	</div>
 	<button class="button" type="submit">Change the role</button>
 </form>
@@ -151,22 +145,11 @@
 		<input type="email" id="email" name="email" value={values?.email ?? ''} autocomplete="off" />
 	</div>
 	<div class="field">
-		<label for="invite-role">Role</label>
-		<select id="invite-role" name="role">
-			{#each roles as role (role)}
-				<option value={role}>{roleLabels[role]}</option>
-			{/each}
-		</select>
+		<Dropdown label="Role" name="role" choices={roleChoices} value={roles[0]} />
 	</div>
 	<div class="field">
-		<label for="invite-nation">Nation (nation reviewers only)</label>
+		<SearchableDropdown label="Nation (nation reviewers only)" name="nationIdentifier" choices={nationChoices} value="" />
 		<p class="hint">A nation reviewer sees and reviews only this nation’s record, unless you open more to them on the Access page.</p>
-		<select id="invite-nation" name="nationIdentifier">
-			<option value="">Choose…</option>
-			{#each data.nations as nation (nation.identifier)}
-				<option value={nation.identifier}>{nation.title}</option>
-			{/each}
-		</select>
 	</div>
 	<button class="button" type="submit">Add the person</button>
 </form>

@@ -7,9 +7,10 @@ import type { CitationMark } from './citation-marks.ts';
 export interface InfoPicture {
 	src: string;
 	alt: string;
-	credit: string;
+	/** Who made the picture; none for a picture a person gave of themselves. */
+	credit?: string;
 	/** The picture's page at its source, with its date and rights. */
-	original: string;
+	original?: string;
 	width: number;
 	height: number;
 }
@@ -17,6 +18,8 @@ export interface InfoPicture {
 /** Another name for the item, shown under the title: "Kan-gi-shun-ca, as the Supreme Court Reporter prints it". */
 export interface InfoName {
 	name: string;
+	/** The name's language tag, such as a story's title in the nation's language. */
+	language?: string;
 	note?: string;
 	citations?: CitationMark[];
 }

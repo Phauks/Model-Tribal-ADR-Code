@@ -43,6 +43,10 @@ export interface TableColumn {
 	optional?: boolean;
 	/** A number column that the table's Sum row adds up. */
 	sum?: boolean;
+	/** The header is for screen readers only, as over a column of buttons whose labels already say what they do. */
+	hiddenHeader?: boolean;
+	/** The .csv and .xlsx downloads leave this column out: a column of buttons, or private details such as a person's access needs. */
+	keepOutOfDownload?: boolean;
 }
 
 export interface TableCell {
@@ -325,9 +329,11 @@ export interface DownloadCell {
  * The rows laid out for a download, the same for the .csv and the .xlsx file:
  * a header row of column headers, then one line per row with each cell's text,
  * and a link's address in a column of its own after the cell, so a spreadsheet
- * keeps both. An address on this site is made whole with `origin`.
+ * keeps both. An address on this site is made whole with `origin`. Columns
+ * marked keepOutOfDownload are left out.
  */
-export function downloadCells(columns: TableColumn[], rows: TableRow[], origin = ''): { header: string[]; lines: DownloadCell[][] } {
+export function downloadCells(allColumns: TableColumn[], rows: TableRow[], origin = ''): { header: string[]; lines: DownloadCell[][] } {
+	const columns = allColumns.filter((column) => !column.keepOutOfDownload);
 	const linked = columns.filter((column) => rows.some((row) => row.cells[column.key]?.href));
 	const header: string[] = [];
 	for (const column of columns) {

@@ -6,6 +6,7 @@
 	parties and nations, where to read it, and where this site cites it.
 -->
 <script lang="ts">
+	import Clock from '@lucide/svelte/icons/clock';
 	import Breadcrumbs from '#lib/components/Breadcrumbs.svelte';
 	import CountBadge from '#lib/components/CountBadge.svelte';
 	import GlancePanel from '#lib/components/GlancePanel.svelte';
@@ -40,7 +41,7 @@
 	{#snippet introduction()}
 		<h1><i>{data.name}</i></h1>
 		{#if data.citation}<p class="lead case-citation">{data.citation}</p>{/if}
-		{#if data.topics.length > 0}<div class="badge-line"><TopicBadges topics={data.topics.map((text) => ({ text }))} /></div>{/if}
+		{#if data.topics.length > 0 || data.unverified}<div class="badge-line">{#if data.unverified}<span class="review-badge"><Clock size={16} strokeWidth={2} aria-hidden="true" />Unverified</span>{/if}{#if data.topics.length > 0}<TopicBadges topics={data.topics.map((text) => ({ text }))} />{/if}</div>{/if}
 	{/snippet}
 
 	{#if data.bodyHtml}

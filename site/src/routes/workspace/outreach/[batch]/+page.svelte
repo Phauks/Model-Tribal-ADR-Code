@@ -1,13 +1,66 @@
 <script lang="ts">
 	import Breadcrumbs from '#lib/components/Breadcrumbs.svelte';
+	import DataTable from '#lib/components/DataTable.svelte';
+	import Dropdown from '#lib/components/Dropdown.svelte';
 	import { batchStatusLabels, deliveryLabels, recipientStatusLabels } from '#lib/mail.ts';
+	import type { TableColumn, TableRow } from '#lib/tables/table-definition.ts';
 	import { fullDate } from '../../inbox/dates.ts';
 	import type { PageProps } from './$types';
 
 	let { data, form }: PageProps = $props();
 	const batch = $derived(data.batch);
 	const open = $derived(batch.status !== 'done' && batch.status !== 'cancelled');
+
+	const tagChoices = $derived([{ value: '', label: 'Any tag' }, ...data.tags.map((tag) => ({ value: tag, label: tag }))]);
+	const addressKindChoices = [
+		{ value: '', label: 'Any' },
+		{ value: 'general-office', label: 'A general office address' },
+		{ value: 'leader', label: 'A leader’s own address' },
+		{ value: 'state-listed', label: 'Listed by a state government' }
+	];
+
+	const columns: TableColumn[] = [
+		{ key: 'recipient', header: 'Recipient', isRowHeader: true, sortable: true, custom: true },
+		{ key: 'nation', header: 'Nation', sortable: true },
+		{ key: 'status', header: 'Status', sortable: true, custom: true },
+		{ key: 'delivery', header: 'Delivery', sortable: true, custom: true },
+		{ key: 'change', header: 'Change', custom: true, keepOutOfDownload: true }
+	];
+	const recipientsByKey = $derived(new Map(data.recipients.map((recipient) => [recipient.identifier, recipient])));
+	const rows: TableRow[] = $derived(
+		data.recipients.map((recipient) => ({
+			key: recipient.identifier,
+			cells: {
+				recipient: { text: `${recipient.name} ${recipient.email}`, sortValue: recipient.name },
+				nation: { text: recipient.nationIdentifier ? (data.nationNames[recipient.nationIdentifier] ?? recipient.nationIdentifier) : '' },
+				status: { text: recipientStatusLabels[recipient.status] ?? recipient.status },
+				delivery: { text: recipient.deliveryStatus ? deliveryLabels[recipient.deliveryStatus] : '' },
+				change: { text: '' }
+			}
+		}))
+	);
 </script>
+
+{#snippet cell(row: TableRow, column: TableColumn)}
+	{@const recipient = recipientsByKey.get(row.key)}
+	{#if recipient}
+		{#if column.key === 'recipient'}
+			{recipient.name}<br /><span class="small muted">{recipient.email}</span>
+		{:else if column.key === 'status'}
+			{recipientStatusLabels[recipient.status] ?? recipient.status}
+			{#if recipient.skipReason}<br /><span class="small muted">{recipient.skipReason}</span>{/if}
+			{#if recipient.sentAt}<br /><span class="small muted">{fullDate(recipient.sentAt)}</span>{/if}
+		{:else if column.key === 'delivery'}
+			{recipient.deliveryStatus ? deliveryLabels[recipient.deliveryStatus] : ''}
+			{#if recipient.acknowledgedAt}<br /><span class="small">Said they got it</span>{/if}
+			{#if recipient.threadIdentifier}<br /><a class="small" href="/workspace/inbox/{recipient.threadIdentifier}">Conversation</a>{/if}
+		{:else if recipient.status === 'queued' || recipient.status === 'skipped'}
+			<form method="post" action="?/remove"><input type="hidden" name="recipient" value={recipient.identifier} /><button class="button-quiet small" type="submit">Remove</button></form>
+		{:else if recipient.status === 'failed'}
+			<form method="post" action="?/retry"><input type="hidden" name="recipient" value={recipient.identifier} /><button class="button-quiet small" type="submit">Try again</button></form>
+		{/if}
+	{/if}
+{/snippet}
 
 <svelte:head>
 	<title>{batch.name} · Outreach · Workspace · Model Tribal ADR Code</title>
@@ -74,20 +127,10 @@
 			{data.addressBookSize} contacts have an email in use. Each gets the preferred email, once. Addresses on the do-not-email list are left out.
 		</p>
 		<div class="field">
-			<label for="tag">With the tag</label>
-			<select id="tag" name="tag">
-				<option value="">Any tag</option>
-				{#each data.tags as tag (tag)}<option value={tag}>{tag}</option>{/each}
-			</select>
+			<Dropdown label="With the tag" name="tag" choices={tagChoices} value="" />
 		</div>
 		<div class="field">
-			<label for="label">Kind of address</label>
-			<select id="label" name="label">
-				<option value="">Any</option>
-				<option value="general-office">A general office address</option>
-				<option value="leader">A leader’s own address</option>
-				<option value="state-listed">Listed by a state government</option>
-			</select>
+			<Dropdown label="Kind of address" name="label" choices={addressKindChoices} value="" />
 		</div>
 		<p><label><input type="checkbox" name="nationsOnly" value="yes" checked /> Only contacts linked to a nation</label></p>
 		<button class="button-quiet" type="submit">Add the matching contacts</button>
@@ -106,36 +149,7 @@
 {#if data.recipients.length === 0}
 	<p class="muted">None yet.</p>
 {:else}
-	<table>
-		<thead>
-			<tr><th scope="col">Recipient</th><th scope="col">Nation</th><th scope="col">Status</th><th scope="col">Delivery</th><th scope="col"><span class="visually-hidden">Change</span></th></tr>
-		</thead>
-		<tbody>
-			{#each data.recipients as recipient (recipient.identifier)}
-				<tr>
-					<td>{recipient.name}<br /><span class="small muted">{recipient.email}</span></td>
-					<td>{recipient.nationIdentifier ? (data.nationNames[recipient.nationIdentifier] ?? recipient.nationIdentifier) : ''}</td>
-					<td>
-						{recipientStatusLabels[recipient.status] ?? recipient.status}
-						{#if recipient.skipReason}<br /><span class="small muted">{recipient.skipReason}</span>{/if}
-						{#if recipient.sentAt}<br /><span class="small muted">{fullDate(recipient.sentAt)}</span>{/if}
-					</td>
-					<td>
-						{recipient.deliveryStatus ? deliveryLabels[recipient.deliveryStatus] : ''}
-						{#if recipient.acknowledgedAt}<br /><span class="small">Said they got it</span>{/if}
-						{#if recipient.threadIdentifier}<br /><a class="small" href="/workspace/inbox/{recipient.threadIdentifier}">Conversation</a>{/if}
-					</td>
-					<td>
-						{#if recipient.status === 'queued' || recipient.status === 'skipped'}
-							<form method="post" action="?/remove"><input type="hidden" name="recipient" value={recipient.identifier} /><button class="button-quiet small" type="submit">Remove</button></form>
-						{:else if recipient.status === 'failed'}
-							<form method="post" action="?/retry"><input type="hidden" name="recipient" value={recipient.identifier} /><button class="button-quiet small" type="submit">Try again</button></form>
-						{/if}
-					</td>
-				</tr>
-			{/each}
-		</tbody>
-	</table>
+	<DataTable identifier="recipients" label="Table: recipients" {columns} {rows} rowName={['recipient', 'recipients']} {cell} />
 {/if}
 
 <style>
@@ -151,16 +165,5 @@
 	.text {
 		white-space: pre-wrap;
 		overflow-wrap: anywhere;
-	}
-	table {
-		width: 100%;
-		border-collapse: collapse;
-	}
-	th,
-	td {
-		text-align: left;
-		vertical-align: top;
-		padding: var(--space-1) var(--space-2);
-		border-bottom: 1px solid var(--color-line);
 	}
 </style>

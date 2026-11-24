@@ -1,0 +1,35 @@
+profile: content/tribes/p/prairie-island-indian-community-in-the-state-of-minnesota.yaml
+topic: legal-help
+status: partly-searched
+last_searched: '2026-11-24'
+searches:
+- date: '2026-11-24'
+  searched_by: Claude (AI assistant)
+  method: browser
+  place_kind: web-search
+  address: Web search (search engine)
+  query: Prairie Island Indian Community legal aid members
+  outcome: not-found
+  reason: Results were RFPs for election and guardian ad litem legal services and the tribal court page; none offered member legal aid.
+- date: '2026-11-24'
+  searched_by: Claude (AI assistant)
+  method: browser
+  place_kind: tribal-court-site
+  address: https://prairieisland.org/our-government/tribal-court
+  outcome: not-found
+  reason: 'Tribal Court page read: covers attorney licensing and privately practicing attorneys; no self-help center, legal aid, or public defender described.'
+- date: '2026-11-24'
+  searched_by: Claude (AI assistant)
+  method: browser
+  place_kind: nation-website
+  address: https://prairieisland.org/
+  outcome: error
+  reason: Home page not read; the WebFetch budget ran out before it could be fetched.
+- date: '2026-11-24'
+  searched_by: Claude (AI assistant)
+  method: browser
+  place_kind: legal-aid-site
+  address: https://mn.gov/law-library/research-links/legal-referrals/goodhue.jsp
+  outcome: not-found
+  reason: 'Goodhue County referral page read: lists general legal providers (SMRLS not in Goodhue service area) and Red Wing public defender; no Native American program named.'
+next_steps: 'A person could open the pages that refused or timed out: https://prairieisland.org/.'

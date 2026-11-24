@@ -3,14 +3,36 @@ name: Tribal Justice Clinic, University of Arizona
 kind: law-school-clinic
 operator: law-school
 outreach_record: university-of-arizona-tribal-justice-clinic
-status: to-classify
+link: https://law.arizona.edu/tribal-justice-clinic
+link_label: Tribal Justice Clinic
+services:
+- representation
+- tribal-government-projects
+who_can_use: Tribes, and Pascua Yaqui community members in Pascua Yaqui Tribal Court.
+location: James E. Rogers College of Law, Tucson, Arizona
 serves:
 - states:
   - AZ
-  scope: unclassified
-  text: Grabbed from the outreach list; who the clinic serves is in its outreach record and not yet classified here.
-  source: outreach-record
+  scope: named-nations
+  nations:
+  - pascua-yaqui-tribe-of-arizona
+  text: “A new student practice rule adopted by the Pascua Yaqui Tribal Court allows students enrolled in the Tribal Justice Clinic to appear in court under the supervision of a licensed attorney.” The clinic aims to “increase access to justice for Yaqui community members.”
+  source: arizona-tribal-justice-clinic-page
+- states:
+  - AZ
+  scope: region
+  text: “Students enrolled in the Indigenous Peoples Law and Policy program’s Tribal Justice Clinic provide legal assistance to tribes throughout the Southwest, North America, and the world.”
+  source: arizona-tribal-justice-clinic-page
+  note: Work for tribal governments; not matched to nations.
+note: Classified Nov. 24, 2026 from the clinic’s own page. Mostly projects for tribal governments; individual representation is in Pascua Yaqui Tribal Court. Law school clinics are not shown on nation pages.
 sources:
+- id: arizona-tribal-justice-clinic-page
+  title: Tribal Justice Clinic
+  publisher: James E. Rogers College of Law, University of Arizona
+  link: https://law.arizona.edu/tribal-justice-clinic
+  accessed: '2026-11-24'
+  verification: page-read
+  supports: The clinic’s work for tribes and its student practice in Pascua Yaqui Tribal Court.
 - id: outreach-record
   title: Outreach record
   publisher: This project

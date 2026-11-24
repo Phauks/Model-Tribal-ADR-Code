@@ -154,8 +154,8 @@ export function storyIsShown(record: StoryRecord, today: string): boolean {
  * nation among their nations, in the order given. A restricted, withdrawn or
  * not-yet-released story is left out here as it is everywhere else.
  */
-export function storiesOfNation<T extends StoryRecord>(records: T[], nationId: string, today: string): T[] {
-	return records.filter((record) => record.nations.includes(nationId) && storyIsShown(record, today));
+export function storiesOfNation<T extends StoryRecord>(records: T[], nationIdentifier: string, today: string): T[] {
+	return records.filter((record) => record.nations.includes(nationIdentifier) && storyIsShown(record, today));
 }
 
 /** The excerpts that may be shown, quoted or as a pinpoint only. */

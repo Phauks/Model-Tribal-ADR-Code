@@ -1,7 +1,7 @@
 profile: content/tribes/c/chignik-bay-tribal-council.yaml
 topic: governance
 status: found
-last_searched: '2026-11-23'
+last_searched: '2026-11-24'
 searches:
 - date: '2026-11-23'
   searched_by: Claude (AI assistant)
@@ -29,4 +29,14 @@ searches:
   query: Government, council, election, court and constitution pages linked from the home page (scripts/governance/crawl_websites.py, website-brief.md)
   outcome: not-found
   reason: 'The pages saved are not the nation''s own government site: Pages belong to the Bristol Bay Native Association, a regional non-profit, not to the Chignik Bay Tribal Council''s own website; no facts given..'
+- date: '2026-11-24'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: national-indian-law-library
+  address: https://narf.org/nill/tribes/chignik_bay.html
+  query: Tribal Code, Tribal Constitution, Tribal Court Opinions and Contact Info blocks (scripts/review/nill_gateway_apply.py)
+  outcome: not-found
+  reason: The page lists no constitution or code with a link (both blocks say none available).
+  records:
+  - national-indian-law-library-chignik-bay
 next_steps: Find the nation's own government website; the address listed leads elsewhere.

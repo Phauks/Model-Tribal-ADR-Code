@@ -1,0 +1,60 @@
+profile: content/tribes/a/alabama-coushatta-tribe-of-texas.yaml
+topic: legal-help
+status: partly-searched
+last_searched: '2026-11-24'
+searches:
+- date: '2026-11-24'
+  searched_by: Claude (AI assistant)
+  method: browser
+  place_kind: web-search
+  address: Web search (search engine)
+  query: Alabama-Coushatta Tribe of Texas legal aid members legal services
+  outcome: not-found
+  reason: Results named the Kickapoo Tribe legal department and other nations' legal services, not the Alabama-Coushatta.
+- date: '2026-11-24'
+  searched_by: Claude (AI assistant)
+  method: browser
+  place_kind: nation-website
+  address: https://www.alabama-coushatta.com/
+  outcome: not-found
+  reason: Home page has no legal aid, legal services, tribal court, or legal assistance language.
+- date: '2026-11-24'
+  searched_by: Claude (AI assistant)
+  method: browser
+  place_kind: web-search
+  address: Web search (search engine)
+  query: Alabama-Coushatta tribal court legal services members attorney
+  outcome: not-found
+  reason: Results were news and other nations' legal services pages; nothing names the Alabama-Coushatta for member legal help.
+- date: '2026-11-24'
+  searched_by: Claude (AI assistant)
+  method: browser
+  place_kind: web-search
+  address: Web search (search engine)
+  query: Texas RioGrande Legal Aid Native American program tribes Alabama-Coushatta Ysleta del Sur
+  outcome: not-found
+  reason: Results were Justia directory pages and TRLA profile pages; no TRLA Native American program page surfaced.
+- date: '2026-11-24'
+  searched_by: Claude (AI assistant)
+  method: browser
+  place_kind: web-search
+  address: Web search (search engine)
+  query: trla.org Native American program tribal members Texas RioGrande Legal Aid
+  outcome: not-found
+  reason: Results were TRLA about and history pages; no Native American program page found.
+- date: '2026-11-24'
+  searched_by: Claude (AI assistant)
+  method: browser
+  place_kind: web-search
+  address: Web search (search engine)
+  query: Lone Star Legal Aid tribal members Alabama-Coushatta Tribe Polk San Jacinto county legal services
+  outcome: not-found
+  reason: Results were general Lone Star Legal Aid directory pages that do not mention the Alabama-Coushatta or Native programs.
+- date: '2026-11-24'
+  searched_by: Claude (AI assistant)
+  method: browser
+  place_kind: web-search
+  address: https://nrcnaa.org/service-locator/center/75
+  outcome: error
+  reason: WebFetch proxy budget for the session was exhausted before this listing could be read; it appeared only as a search result.
+next_steps: 'A person could open the pages that refused or timed out: https://nrcnaa.org/service-locator/center/75.'

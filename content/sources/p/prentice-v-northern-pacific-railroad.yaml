@@ -1,0 +1,137 @@
+key: prentice-v-northern-pacific-railroad
+kind: federal-case
+citation:
+  type: legal_case
+  title: Prentice v. Northern Pacific Railroad
+  authority: Supreme Court of the United States
+  container-title: U.S.
+  volume: '154'
+  page: '163'
+  issued:
+    date-parts:
+    - - 1894
+      - 5
+      - 26
+  URL: https://www.loc.gov/item/usrep154163/
+  accessed:
+    date-parts:
+    - - 2026
+      - 11
+      - 24
+caption:
+  printed: PRENTICE v. NORTHERN PACIFIC RAILROAD COMPANY
+  source: https://tile.loc.gov/storage-services/service/ll/usrep/usrep154/usrep154163/usrep154163.pdf
+  checked: '2026-11-24'
+opinions:
+  source: https://tile.loc.gov/storage-services/service/ll/usrep/usrep154/usrep154163/usrep154163.pdf
+  checked: '2026-11-24'
+  list:
+  - kind: majority
+    justice: John Marshall Harlan
+    page: 172
+original_link: https://www.loc.gov/item/usrep154163/
+retrieved: '2026-11-24'
+history:
+  status: live
+  last_checked: '2026-11-24'
+court_dates:
+  argued:
+  - '1894-03-22'
+  printed: Argued and submitted March 22, 1894. Decided May 26, 1894.
+  source: https://tile.loc.gov/storage-services/service/ll/usrep/usrep154/usrep154163/usrep154163.pdf
+  checked: '2026-11-24'
+supreme_court:
+  court: Fuller Court
+  natural_court: Fuller Court (1894-1895)
+  decision_type: majority opinion
+  vote:
+    majority: 9
+    minority: 0
+  justices:
+  - name: Melville Weston Fuller
+    vote: majority
+  - name: Edward Douglass White
+    vote: majority
+  - name: Stephen Johnson Field
+    vote: majority
+  - name: John Marshall Harlan
+    vote: majority
+    opinion: majority
+  - name: Horace Gray
+    vote: majority
+  - name: David Josiah Brewer
+    vote: majority
+  - name: Henry Billings Brown
+    vote: majority
+  - name: George Shiras, Jr.
+    vote: majority
+  - name: Howell Edmunds Jackson
+    vote: majority
+  source: http://scdb.wustl.edu/_brickFiles/Legacy_07/SCDB_Legacy_07_justiceCentered_Citation.csv.zip
+  note: From the Supreme Court Database, case 1893-276; Oyez has no votes for this case.
+  checked: '2026-11-24'
+reading_links:
+  checked: '2026-11-24'
+  links:
+  - site: library-of-congress
+    label: Library of Congress
+    access: official
+    link: https://www.loc.gov/item/usrep154163/
+  - site: justia
+    label: Justia
+    access: free
+    link: https://supreme.justia.com/cases/federal/us/154/163/
+    unchecked: true
+  - site: google-scholar
+    label: Google Scholar
+    access: free
+    link: https://scholar.google.com/scholar?hl=en&as_sdt=2006&q=%22154%20U.S.%20163%22
+    unchecked: true
+  - site: westlaw
+    label: Westlaw
+    access: subscription
+    link: https://1.next.westlaw.com/Link/Document/FullText?findType=Y&cite=154%20U.S.%20163
+    unchecked: true
+  - site: lexis
+    label: Lexis
+    access: subscription
+    link: https://advance.lexis.com/api/search?q=154%20U.S.%20163
+    unchecked: true
+rights:
+  status: no-permission-needed
+  basis: us-government-work
+  basis_note: Opinions of federal courts are works of the U.S. government (17 U.S.C. § 105); the host site's own additions are not reproduced.
+  redistribution: true
+found_in:
+- 2026-11-24-supreme-court-native-cases
+notes: 'Full citation: 154 U.S. 163 (1894). Official report scan: https://tile.loc.gov/storage-services/service/ll/usrep/usrep154/usrep154163/usrep154163.pdf. Written by scripts/caselaw/supreme_court_native_cases.py from the Supreme Court Database (case 1893-276), the Caselaw Access Project''s text of the report and the Library of Congress scan; not yet read by a person.'
+tribes: []
+nations_in_case:
+  checked: '2026-11-24'
+  named: []
+review:
+  status: unverified
+  by: scripts/caselaw/supreme_court_native_cases.py
+  date: '2026-11-24'
+  checks:
+  - check: cite
+    result: agree
+    detail: Caselaw Access Project 154 U.S. 163 "Prentice v. Northern Pacific Railroad"; Database 154 U.S. 163 "PRENTICE v. NORTHERN PACIFIC RAILROAD COMPANY"
+  - check: scan
+    result: agree
+    detail: Scan has 15 pages; the report runs 163 to 177
+  - check: caption
+    result: agree
+    detail: Caption found in the scan's text at 1.00
+  - check: printed dates
+    result: agree
+    detail: Caselaw Access Project "Argued and submitted March 22, 1894. Decided May 26, 1894."; scan "Argued and submitted March 22, 1894.-Decided May 26, 1894."
+  - check: decided
+    result: agree
+    detail: 'Printed and Database: 1894-05-26'
+  - check: opinions
+    result: settled
+    detail: 'Report: majority Harlan p. 172; Database writers: Harlan; scan pages [(172, 173)]. Read from the scan by an AI reader (record right): p. 172: "MR. JUSTICE HARLAN, after stating the case, delivered the opinion of the court." (OCR: "MnR. Jusrion- TI&LAN, after stating the case, delivered the / opinion of the court.")'
+  - check: bench
+    result: agree
+    detail: No Oyez votes; each opinion writer in the report sits on the Database's bench on the side the opinion takes

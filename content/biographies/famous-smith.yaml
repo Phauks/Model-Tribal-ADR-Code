@@ -1,0 +1,24 @@
+key: famous-smith
+name: Famous Smith
+lead: Cherokee convicted of a murder in Arkansas federal court; Famous Smith v. United States (1894) reversed for lack of jurisdiction.
+living: false
+nations:
+- nation: cherokee-nation
+  named_as: Cherokee Nation
+  source: smith-v-united-states
+  where: 151 U.S. at 50
+cases:
+- case: smith-v-united-states
+  role: Plaintiff in error
+  where: 151 U.S. at 50, 56
+  result: Conviction reversed; the defendant was entitled to an instruction that the court had no jurisdiction.
+events:
+- when: Aug. 1, 1883
+  text: Charged in the indictment with the murder of James Gentry in the Cherokee Nation on this date.
+  source: smith-v-united-states
+  where: 151 U.S. at 50
+- when: May 1893
+  text: Tried in the Circuit Court for the Western District of Arkansas, convicted and sentenced to death.
+  source: smith-v-united-states
+  where: 151 U.S. at 51
+checked: '2026-11-24'

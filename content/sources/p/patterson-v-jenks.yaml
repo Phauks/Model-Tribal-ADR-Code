@@ -1,0 +1,127 @@
+key: patterson-v-jenks
+kind: federal-case
+citation:
+  type: legal_case
+  title: Patterson v. Jenks
+  authority: Supreme Court of the United States
+  container-title: U.S.
+  volume: '27'
+  page: '216'
+  issued:
+    date-parts:
+    - - 1829
+      - 2
+      - 13
+  URL: https://www.loc.gov/item/usrep027216/
+  accessed:
+    date-parts:
+    - - 2026
+      - 11
+      - 24
+caption:
+  printed: William Patterson, Plaintiff in error vs. The Rev. Willis Jenks et al. Defendants in error
+  source: https://tile.loc.gov/storage-services/service/ll/usrep/usrep027/usrep027216/usrep027216.pdf
+  checked: '2026-11-24'
+opinions:
+  source: https://tile.loc.gov/storage-services/service/ll/usrep/usrep027/usrep027216/usrep027216.pdf
+  checked: '2026-11-24'
+  list:
+  - kind: majority
+    justice: John Marshall
+    page: 225
+original_link: https://www.loc.gov/item/usrep027216/
+retrieved: '2026-11-24'
+history:
+  status: live
+  last_checked: '2026-11-24'
+court_dates:
+  printed: Decided Feb. 13, 1829
+  source: https://www.supremecourt.gov/opinions/datesofdecisions.pdf
+  note: The report prints only the term. These dates are from the Supreme Court Library's table of decision and argument dates, which takes them from the Court's Engrossed Minutes.
+  checked: '2026-11-24'
+supreme_court:
+  court: Marshall Court
+  natural_court: Marshall Court (1828-1829)
+  decision_type: majority opinion
+  vote:
+    majority: 6
+    minority: 0
+  justices:
+  - name: John Marshall
+    vote: majority
+    opinion: majority
+  - name: Bushrod Washington
+    vote: majority
+  - name: William Johnson
+    vote: majority
+  - name: Gabriel Duvall
+    vote: majority
+  - name: Joseph Story
+    vote: majority
+  - name: Smith Thompson
+    vote: majority
+  source: http://scdb.wustl.edu/_brickFiles/Legacy_07/SCDB_Legacy_07_justiceCentered_Citation.csv.zip
+  note: From the Supreme Court Database, case 1829-014; Oyez has no votes for this case.
+  checked: '2026-11-24'
+reading_links:
+  checked: '2026-11-24'
+  links:
+  - site: library-of-congress
+    label: Library of Congress
+    access: official
+    link: https://www.loc.gov/item/usrep027216/
+  - site: justia
+    label: Justia
+    access: free
+    link: https://supreme.justia.com/cases/federal/us/27/216/
+    unchecked: true
+  - site: google-scholar
+    label: Google Scholar
+    access: free
+    link: https://scholar.google.com/scholar?hl=en&as_sdt=2006&q=%2227%20U.S.%20216%22
+    unchecked: true
+  - site: westlaw
+    label: Westlaw
+    access: subscription
+    link: https://1.next.westlaw.com/Link/Document/FullText?findType=Y&cite=27%20U.S.%20216
+    unchecked: true
+  - site: lexis
+    label: Lexis
+    access: subscription
+    link: https://advance.lexis.com/api/search?q=27%20U.S.%20216
+    unchecked: true
+rights:
+  status: no-permission-needed
+  basis: us-government-work
+  basis_note: Opinions of federal courts are works of the U.S. government (17 U.S.C. § 105); the host site's own additions are not reproduced.
+  redistribution: true
+found_in:
+- 2026-11-24-supreme-court-native-cases
+notes: 'Full citation: 27 U.S. (2 Pet. 216) 216 (1829). Official report scan: https://tile.loc.gov/storage-services/service/ll/usrep/usrep027/usrep027216/usrep027216.pdf. Written by scripts/caselaw/supreme_court_native_cases.py from the Supreme Court Database (case 1829-014), the Caselaw Access Project''s text of the report and the Library of Congress scan; not yet read by a person.'
+tribes: []
+nations_in_case:
+  checked: '2026-11-24'
+  named: []
+review:
+  status: unverified
+  by: scripts/caselaw/supreme_court_native_cases.py
+  date: '2026-11-24'
+  checks:
+  - check: cite
+    result: agree
+    detail: Caselaw Access Project 27 U.S. 216 "Patterson v. Jenks"; Database 27 U.S. 216 "WILLIAM PATTERSON, PLAINTIFF IN ERROR VS. THE REv. WILLIS JENKS et al. DEFENDANTS IN ERROR"
+  - check: scan
+    result: agree
+    detail: Scan has 23 pages; the report runs 216 to 238
+  - check: caption
+    result: settled
+    detail: 'Caption found in the scan''s text at 0.88. Read from the scan by an AI reader (record right): p.216: WM. PATTERSON, PLAINTIFF IN ERROR -vs. THE REV. WILLIS JENKS ET AL. DEFENDANTS IN ERROR (Wm. is William; the record''s expansion is consistent with it).'
+  - check: decided
+    result: agree
+    detail: Supreme Court Library's table (from the Court's minutes) Feb. 13, 1829; Database 1829-02-13
+  - check: opinions
+    result: agree
+    detail: 'Report: majority Marshall p. 225; Database writers: Marshall'
+  - check: bench
+    result: agree
+    detail: No Oyez votes; each opinion writer in the report sits on the Database's bench on the side the opinion takes

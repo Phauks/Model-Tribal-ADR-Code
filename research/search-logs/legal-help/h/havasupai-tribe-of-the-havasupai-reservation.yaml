@@ -1,0 +1,60 @@
+profile: content/tribes/h/havasupai-tribe-of-the-havasupai-reservation.yaml
+topic: legal-help
+status: found
+last_searched: '2026-11-24'
+searches:
+- date: '2026-11-24'
+  searched_by: Claude (AI assistant)
+  method: browser
+  place_kind: web-search
+  address: Web search (search engine)
+  query: Havasupai Tribe legal aid members legal services
+  outcome: found
+  reason: Results included the 2019 Havasupai public defender job announcement PDF and the DNA legal services listings.
+  records:
+  - research/legal-help/providers/dna-peoples-legal-services.yaml
+- date: '2026-11-24'
+  searched_by: Claude (AI assistant)
+  method: browser
+  place_kind: web-search
+  address: Web search (search engine)
+  query: Havasupai Tribe public defender tribal court attorney
+  outcome: found
+  reason: Surfaced the Havasupai Tribal Public Defender job announcement (2019), which was read.
+  records:
+  - research/legal-help/providers/dna-peoples-legal-services.yaml
+- date: '2026-11-24'
+  searched_by: Claude (AI assistant)
+  method: browser
+  place_kind: nation-website
+  address: https://theofficialhavasupaitribe.com/
+  outcome: not-found
+  reason: Home page has no legal aid, legal services, public defender, or tribal court language.
+- date: '2026-11-24'
+  searched_by: Claude (AI assistant)
+  method: browser
+  place_kind: web-search
+  address: Web search (search engine)
+  query: DNA People's Legal Services Native American tribes Hualapai Havasupai Kaibab-Paiute eligibility
+  outcome: found
+  reason: Returned DNA listings naming Havasupai, Hualapai and Kaibab-Paiute members.
+  records:
+  - research/legal-help/providers/dna-peoples-legal-services.yaml
+- date: '2026-11-24'
+  searched_by: Claude (AI assistant)
+  method: browser
+  place_kind: legal-aid-site
+  address: https://search.211arizona.org/search/eb431b4b-2147-59fb-b35e-a2592504e611
+  outcome: found
+  reason: DNA listing names the Havasupai tribe as eligible with low income.
+  records:
+  - research/legal-help/providers/dna-peoples-legal-services.yaml
+- date: '2026-11-24'
+  searched_by: Claude (AI assistant)
+  method: browser
+  place_kind: legal-aid-site
+  address: https://search.211arizona.org/search/65aa779c-035d-56b7-b5af-a9b89be9cefd
+  outcome: found
+  reason: DNA Flagstaff listing names Havasupai tribal members with low income.
+  records:
+  - research/legal-help/providers/dna-peoples-legal-services.yaml

@@ -9,7 +9,7 @@ import {
 	resolveRequest,
 	saveRequest
 } from '#lib/server/request-store.ts';
-import { eventsFor } from '#lib/server/events.ts';
+import { activityHistoryFor } from '#lib/server/activity-log.ts';
 import { fileScan } from '#lib/server/file-scans.ts';
 import { testDatabase } from './database.ts';
 
@@ -59,7 +59,7 @@ describe('request store', () => {
 		expect(stored.has(found!.sources[0]!.fileKey!)).toBe(true);
 		// Held for the virus check from the moment it is stored.
 		expect(await fileScan(database, found!.sources[0]!.fileKey!)).toMatchObject({ status: 'waiting', purpose: 'request-file', subject: reference });
-		const history = await eventsFor(database, 'request', found!.request.identifier);
+		const history = await activityHistoryFor(database, 'request', found!.request.identifier);
 		expect(history.map((event) => event.action)).toEqual(['Request received through the website']);
 	});
 
@@ -70,7 +70,7 @@ describe('request store', () => {
 		found = (await requestByReference(database, reference))!;
 		expect(found.request.acknowledgedAt).not.toBeNull();
 		expect(found.request.materialHiddenAt).not.toBeNull();
-		const history = await eventsFor(database, 'request', found.request.identifier);
+		const history = await activityHistoryFor(database, 'request', found.request.identifier);
 		expect(history.at(-1)).toMatchObject({
 			action: 'Status changed from “Received” to “Hidden, pending review”',
 			note: 'Hidden by pull request',

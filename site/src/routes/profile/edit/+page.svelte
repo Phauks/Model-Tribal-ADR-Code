@@ -8,6 +8,7 @@
 	import Trash2 from '@lucide/svelte/icons/trash-2';
 	import UserRound from '@lucide/svelte/icons/user-round';
 	import X from '@lucide/svelte/icons/x';
+	import Dropdown from '#lib/components/Dropdown.svelte';
 	import SearchableDropdown, { type SearchableChoice } from '#lib/components/SearchableDropdown.svelte';
 	import CheckDropdown from '#lib/components/profile/CheckDropdown.svelte';
 	import PhoneField from '#lib/components/profile/PhoneField.svelte';
@@ -238,9 +239,14 @@
 		if (start.nationAnswer === 'listed' && nations.length === 0 && data.add !== 'nation') addNation();
 	});
 
-	function chooseNationAnswer(event: Event): void {
-		if ((event.currentTarget as HTMLSelectElement).value === 'listed' && nations.length === 0) addNation();
+	function chooseNationAnswer(answer: string): void {
+		if (answer === 'listed' && nations.length === 0) addNation();
 	}
+
+	const nameKindChoices = nameKinds.map((kind) => ({ value: kind, label: nameKindLabels[kind] }));
+	const birthYearChoices = birthYears.map((option) => ({ value: option, label: option }));
+	const nationAnswerChoices = [{ value: '' as const, label: 'Choose' }, ...nationAnswers.map((option) => ({ value: option, label: nationAnswerLabels[option] }))];
+	const availabilityChoices = [{ value: '' as const, label: 'Choose' }, ...availabilities.map((option) => ({ value: option, label: availabilityLabels[option] }))];
 
 	/** With scripts an Add or Remove button changes the form in place; without them it saves and comes back. */
 	function inPlace(change: () => void) {
@@ -455,9 +461,7 @@
 							{@render fieldError(`name-${index}`)}
 						</td>
 						<td data-label="Kind">
-							<select name="nameKind-{other.key}" aria-label="Kind of name {index + 2}" bind:value={other.kind}>
-								{#each nameKinds as kind (kind)}<option value={kind}>{nameKindLabels[kind]}</option>{/each}
-							</select>
+							<Dropdown label="Kind of name {index + 2}" hideLabel name="nameKind-{other.key}" choices={nameKindChoices} bind:value={other.kind} />
 						</td>
 						{@render useCells(`name-${other.key}`, other.name || 'this name', true, other.kind !== 'pen-name')}
 						<td class="remove">{@render removeButton(`name-${other.key}`, other.name || 'this name', () => (otherNames = otherNames.filter((item) => item.key !== other.key)))}</td>
@@ -483,12 +487,18 @@
 
 		<div class="field-with-use">
 			<div class="field">
-				<label for="birthYear">Birth year</label>
-				{@render fieldError('birthYear')}
-				<select id="birthYear" name="birthYear" aria-invalid={errors.birthYear ? 'true' : undefined} aria-describedby={errors.birthYear ? 'birthYear-error' : undefined} bind:value={birthYear}>
-					<option value="" disabled>Choose</option>
-					{#each birthYears as option (option)}<option value={option}>{option}</option>{/each}
-				</select>
+				<SearchableDropdown
+					label="Birth year"
+					id="birthYear"
+					name="birthYear"
+					placeholder="Choose"
+					choices={birthYearChoices}
+					bind:value={birthYear}
+					invalid={Boolean(errors.birthYear)}
+					describedBy={errors.birthYear ? 'birthYear-error' : undefined}
+				>
+					{#snippet message()}{@render fieldError('birthYear')}{/snippet}
+				</SearchableDropdown>
 				{#if turning}
 					<fieldset class="birthday">
 						<legend>Have you had your {turning}th birthday yet?</legend>
@@ -565,11 +575,14 @@
 	<section aria-labelledby="nations-heading" id="nations">
 		<h2 id="nations-heading">Native nations</h2>
 		<div class="field">
-			<label for="nationAnswer">Are you a citizen of, or connected to, a Native nation?</label>
-			<select id="nationAnswer" name="nationAnswer" bind:value={nationAnswer} onchange={chooseNationAnswer}>
-				<option value="" disabled>Choose</option>
-				{#each nationAnswers as option (option)}<option value={option}>{nationAnswerLabels[option]}</option>{/each}
-			</select>
+			<Dropdown
+				label="Are you a citizen of, or connected to, a Native nation?"
+				id="nationAnswer"
+				name="nationAnswer"
+				choices={nationAnswerChoices}
+				bind:value={nationAnswer}
+				onchange={chooseNationAnswer}
+			/>
 		</div>
 		{#if nationAnswer === 'listed'}
 			<table class="rows" id="nation-rows">
@@ -750,11 +763,7 @@
 		</fieldset>
 		<div class="field-with-use">
 			<div class="field">
-				<label for="availability">How much time you have</label>
-				<select id="availability" name="availability" bind:value={availability}>
-					<option value="">Choose</option>
-					{#each availabilities as option (option)}<option value={option}>{availabilityLabels[option]}</option>{/each}
-				</select>
+				<Dropdown label="How much time you have" id="availability" name="availability" choices={availabilityChoices} bind:value={availability} />
 			</div>
 			<div class="use-private"><PrivateMark /></div>
 		</div>
@@ -835,12 +844,6 @@
 		gap: 0;
 		align-items: end;
 		margin: 0 0 var(--space-4);
-	}
-
-	.profile-form select {
-		font-size: inherit;
-		padding: 0 var(--space-3);
-		min-width: 12rem;
 	}
 
 	.field-with-use > :first-child {
@@ -1003,10 +1006,17 @@
 	}
 
 	table.rows input[type='text'],
-	table.rows input[type='email'],
-	table.rows select {
+	table.rows input[type='email'] {
 		width: 100%;
 		max-width: none;
+	}
+
+	table.rows :global(.dropdown) {
+		margin: 0;
+	}
+
+	table.rows :global(.dropdown-control) {
+		width: 100%;
 	}
 
 	.name-pair {
