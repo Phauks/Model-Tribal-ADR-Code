@@ -2012,6 +2012,7 @@
 	{/if}
 {/snippet}
 
+<!-- Opens a followed link in a new tab; Enter on a link fires the same click, so keys need nothing more. -->
 <!-- svelte-ignore a11y_click_events_have_key_events, a11y_no_static_element_interactions -->
 <div class="essay-editor" class:is-commenting={!canEdit} onclickcapture={openReferencesApart}>
 	{#if !toolsInMasthead}{@render toolbar()}{/if}
