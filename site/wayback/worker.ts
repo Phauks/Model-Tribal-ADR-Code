@@ -44,6 +44,15 @@ interface Entry {
 	tries?: number;
 }
 
+// The lead author's marks on links the Worker could not save, set on the
+// workspace's Wayback captures page (site/src/lib/server/wayback.ts).
+interface Mark {
+	kind: 'saved-by-hand' | 'failed-by-hand' | 'file-sent';
+	at: string;
+	link?: string;
+	capture?: Capture;
+}
+
 interface Progress {
 	queue: [string, string][];
 	queueRead?: string;
@@ -52,10 +61,12 @@ interface Progress {
 	lastRun?: string;
 	lastError?: string;
 	lastErrorAt?: string;
+	keysRefused?: string;
 }
 
 const QUEUE_LINK = 'https://raw.githubusercontent.com/Phauks/Model-Tribal-ADR-Code/main/research/wayback-queue.tsv';
 const PROGRESS_OBJECT = 'wayback/progress.json';
+const MARKS_OBJECT = 'wayback/marks.json';
 const SAVE_SERVICE = 'https://web.archive.org/save';
 const SAVES_EACH_MINUTE = 6;
 const STATUS_CHECKS_EACH_MINUTE = 30;
@@ -91,6 +102,11 @@ async function readProgress(env: Env): Promise<Progress> {
 	const object = await env.sourceDocuments.get(PROGRESS_OBJECT);
 	if (!object) return { queue: [], records: {} };
 	return (await object.json()) as Progress;
+}
+
+async function readMarks(env: Env): Promise<Record<string, Mark>> {
+	const object = await env.sourceDocuments.get(MARKS_OBJECT);
+	return object ? ((await object.json()) as Record<string, Mark>) : {};
 }
 
 async function writeProgress(env: Env, progress: Progress): Promise<void> {
@@ -222,6 +238,7 @@ async function work(env: Env): Promise<void> {
 				problems.push(message(problem));
 			}
 		}
+		const marks = await readMarks(env);
 		const signIn = await authorization(env);
 
 		let checks = 0;
@@ -239,6 +256,7 @@ async function work(env: Env): Promise<void> {
 			let saves = 0;
 			for (const [key, link] of progress.queue) {
 				if (saves >= SAVES_EACH_MINUTE) break;
+				if (marks[key]) continue;
 				const entry = (progress.records[key] ??= { link });
 				if (entry.link !== link) Object.assign(entry, { link, tries: 0, failed: undefined, problem: undefined, capture: undefined });
 				if (entry.capture || entry.job || (entry.tries ?? 0) >= MOST_TRIES) continue;
@@ -258,7 +276,9 @@ async function work(env: Env): Promise<void> {
 		}
 	} catch (problem) {
 		problems.push(message(problem));
+		if (/refused the archive\.org keys/.test(message(problem))) progress.keysRefused = now.toISOString();
 	}
+	if (!problems.some((problem) => /refused the archive\.org keys/.test(problem))) progress.keysRefused = undefined;
 	if (problems.length) {
 		progress.lastError = problems.join('; ');
 		progress.lastErrorAt = now.toISOString();
@@ -266,8 +286,19 @@ async function work(env: Env): Promise<void> {
 	await writeProgress(env, progress);
 }
 
-function summary(progress: Progress, now: Date) {
-	const queued = new Set(progress.queue.map(([key]) => key));
+type WorkerState = 'not-running' | 'keys-refused' | 'paused-daily-limit' | 'saving' | 'waiting-to-retry' | 'idle';
+
+const stateWords: Record<WorkerState, string> = {
+	'not-running': 'Not running',
+	'keys-refused': 'Stopped: the Archive refused the keys',
+	'paused-daily-limit': 'Paused: daily limit reached',
+	saving: 'Saving',
+	'waiting-to-retry': 'Waiting to try failed links again',
+	idle: 'Idle: nothing left to save'
+};
+
+function summary(progress: Progress, marks: Record<string, Mark>, now: Date) {
+	const queued = new Set(progress.queue.map(([key]) => key).filter((key) => !marks[key]));
 	const entries = Object.entries(progress.records);
 	const captured = entries.filter(([, entry]) => entry.capture);
 	const waiting = entries.filter(([, entry]) => entry.job).length;
@@ -278,9 +309,30 @@ function summary(progress: Progress, now: Date) {
 		return !entry || (!entry.capture && (entry.tries ?? 0) < MOST_TRIES);
 	}).length;
 	const capturedToday = captured.filter(([, entry]) => hoursSince(entry.capturedAt, now) < 24).length;
+	const dueNow = [...queued].filter((key) => {
+		const entry = progress.records[key];
+		return !entry || (!entry.capture && !entry.job && (entry.tries ?? 0) < MOST_TRIES && hoursSince(entry.failed, now) >= HOURS_BEFORE_SAVING_AGAIN);
+	}).length;
+	const minutesSinceLastRun = progress.lastRun ? Math.round(hoursSince(progress.lastRun, now) * 60) : null;
+	// The cron runs every minute even with nothing to do, so a stale last run means the schedule stopped, never that the list is empty.
+	const state: WorkerState =
+		minutesSinceLastRun === null || minutesSinceLastRun > 5
+			? 'not-running'
+			: progress.keysRefused
+				? 'keys-refused'
+				: hoursSince(progress.dailyLimitReached, now) < 1
+					? 'paused-daily-limit'
+					: waiting > 0 || dueNow > 0
+						? 'saving'
+						: left > 0
+							? 'waiting-to-retry'
+							: 'idle';
 	return {
+		state,
+		stateWords: stateWords[state],
+		markedByHand: Object.keys(marks).length,
 		lastRun: progress.lastRun ?? null,
-		minutesSinceLastRun: progress.lastRun ? Math.round(hoursSince(progress.lastRun, now) * 60) : null,
+		minutesSinceLastRun,
 		lastError: progress.lastError ?? null,
 		lastErrorAt: progress.lastErrorAt ?? null,
 		dailyLimitReached: hoursSince(progress.dailyLimitReached, now) < 1,
@@ -297,7 +349,7 @@ function summary(progress: Progress, now: Date) {
 			.slice(0, RECENT_ROWS)
 			.map(([key, entry]) => ({ key, link: entry.capture!.link, at: entry.capturedAt ?? null })),
 		recentProblems: entries
-			.filter(([, entry]) => !entry.capture && entry.problem)
+			.filter(([key, entry]) => !entry.capture && entry.problem && !marks[key])
 			.sort(([, a], [, b]) => (b.failed ?? '').localeCompare(a.failed ?? ''))
 			.slice(0, RECENT_ROWS)
 			.map(([key, entry]) => ({ key, link: entry.link, problem: entry.problem!, tries: entry.tries ?? 0, at: entry.failed ?? null }))
@@ -313,15 +365,16 @@ function page(status: ReturnType<typeof summary>): string {
 		status.minutesSinceLastRun === null
 			? 'It has not run yet.'
 			: status.minutesSinceLastRun > 5
-				? `It last ran ${status.minutesSinceLastRun} minutes ago, so its schedule may have stopped.`
-				: `It last ran ${status.minutesSinceLastRun === 0 ? 'this minute' : `${status.minutesSinceLastRun} minute${status.minutesSinceLastRun === 1 ? '' : 's'} ago`}.`;
+				? `It last ran ${status.minutesSinceLastRun} minutes ago, but it runs every minute even with nothing to do, so its schedule has stopped.`
+				: `It runs every minute and last ran ${status.minutesSinceLastRun === 0 ? 'this minute' : `${status.minutesSinceLastRun} minute${status.minutesSinceLastRun === 1 ? '' : 's'} ago`}.`;
 	const numbers: [string, number][] = [
 		['Left to save', status.left],
 		['Captured', status.captured],
 		['Captured in the last 24 hours', status.capturedLast24Hours],
 		['Being saved now', status.waiting],
 		['Failed, will try again', status.failedWillRetry],
-		['Gave up after three tries', status.gaveUp]
+		['Gave up after three tries', status.gaveUp],
+		['Marked by hand', status.markedByHand]
 	];
 	const rows = (items: { key: string; link: string; note: string }[]) =>
 		items.length
@@ -344,6 +397,8 @@ h1 { font-size: 1.5rem; margin: 0 0 4px; }
 h2 { font-size: 1.1rem; margin: 32px 0 8px; }
 .quiet { color: var(--quiet); }
 .error { color: var(--error); }
+.state { display: inline-block; margin: 8px 0; padding: 4px 10px; border: 1px solid var(--line); border-radius: 999px; font-weight: 600; }
+.state-not-running, .state-keys-refused { color: var(--error); border-color: currentColor; }
 dl { display: grid; grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); gap: 12px; margin: 24px 0 0; }
 dl div { border: 1px solid var(--line); border-radius: 8px; padding: 12px; }
 dt { color: var(--quiet); font-size: 0.875rem; }
@@ -356,6 +411,7 @@ a { color: inherit; }
 <body>
 <main>
 <h1>Wayback captures</h1>
+<p class="state state-${status.state}">${escape(status.stateWords)}</p>
 <p class="quiet">Source library links saved in the Wayback Machine with the project's archive.org keys. ${escape(health)} This page refreshes every minute.</p>
 ${status.lastError ? `<p class="error">Last problem (${escape(status.lastErrorAt ?? '')}): ${escape(status.lastError)}</p>` : ''}
 ${status.dailyLimitReached ? '<p class="error">The Archive’s daily limit was reached; saving starts again within the hour.</p>' : ''}
@@ -364,6 +420,7 @@ ${status.dailyLimitReached ? '<p class="error">The Archive’s daily limit was r
 <h2>Latest captures</h2>
 ${rows(status.recentCaptures.map((item) => ({ key: item.key, link: item.link, note: item.at ?? '' })))}
 <h2>Latest problems</h2>
+<p class="quiet">To open, save or mark these by hand, or send a file, use Wayback captures in the site's workspace.</p>
 ${rows(status.recentProblems.map((item) => ({ key: item.key, link: item.link, note: `${item.problem} (try ${item.tries} of ${MOST_TRIES})` })))}
 </main>
 </body>
@@ -380,20 +437,24 @@ export default {
 		if (request.method !== 'GET' || !['/', '/status.json', '/captures.json'].includes(path)) {
 			return new Response('Not found', { status: 404 });
 		}
-		const progress = await readProgress(env);
+		const [progress, marks] = await Promise.all([readProgress(env), readMarks(env)]);
 		const now = new Date();
 		if (path === '/') {
-			return new Response(page(summary(progress, now)), {
+			return new Response(page(summary(progress, marks, now)), {
 				headers: { 'Content-Type': 'text/html; charset=utf-8', 'Cache-Control': 'no-store', 'Content-Security-Policy': "default-src 'none'; style-src 'unsafe-inline'" }
 			});
 		}
 		if (path === '/status.json') {
-			return Response.json(summary(progress, now), { headers: { 'Cache-Control': 'no-store' } });
+			return Response.json(summary(progress, marks, now), { headers: { 'Cache-Control': 'no-store' } });
 		}
 		const records = Object.entries(progress.records);
-		const captures = records
-			.filter(([, entry]) => entry.capture)
-			.map(([key, entry]) => ({ key, original_link: entry.link, capture: entry.capture }));
+		const captures = [
+			...records.filter(([, entry]) => entry.capture).map(([key, entry]) => ({ key, original_link: entry.link, capture: entry.capture })),
+			// Captures the lead author made by hand and pasted on the workspace page.
+			...Object.entries(marks)
+				.filter(([key, mark]) => mark.kind === 'saved-by-hand' && mark.capture && !progress.records[key]?.capture)
+				.map(([key, mark]) => ({ key, original_link: mark.link ?? progress.records[key]?.link ?? progress.queue.find(([queued]) => queued === key)?.[1] ?? '', capture: mark.capture }))
+		];
 		const problems = records
 			.filter(([, entry]) => !entry.capture && entry.problem)
 			.map(([key, entry]) => ({ key, original_link: entry.link, problem: entry.problem, tries: entry.tries ?? 0 }));

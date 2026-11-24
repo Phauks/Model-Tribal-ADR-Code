@@ -76,6 +76,22 @@ const bucketCalls: Record<string, BucketUse> = {
   },
   // The Wayback Worker's own progress (site/WAYBACK.md): which links it has
   // asked the Wayback Machine to save, and what came back.
+  "wayback/worker.ts readMarks get(MARKS_OBJECT)": {
+    kind: "project-file",
+    why: "The lead author's marks on links the Wayback Worker could not save, written by the workspace's Wayback captures page.",
+  },
+  "src/lib/server/wayback.ts readWaybackProgress get(progressObject)": {
+    kind: "project-file",
+    why: "The Wayback Worker's progress record, read for the workspace's Wayback captures page.",
+  },
+  "src/lib/server/wayback.ts readWaybackMarks get(marksObject)": {
+    kind: "project-file",
+    why: "The lead author's marks on failed Wayback links; only that page writes them.",
+  },
+  "src/lib/server/wayback.ts writeWaybackMarks put(marksObject)": {
+    kind: "project-file",
+    why: "The lead author's marks on failed Wayback links, written from a form a signed-in lead author sends; it holds only links, dates and a name.",
+  },
   "wayback/worker.ts readProgress get(PROGRESS_OBJECT)": {
     kind: "project-file",
     why: "The Wayback Worker's own progress record, which only it writes.",

@@ -10,6 +10,31 @@ The Wayback Worker saves the source library's original links in the Internet Arc
 - **When something goes wrong.** Each call to the Archive gives up after 20 seconds. A link whose save fails is tried again a day later. If the list can't be read, the Worker keeps working from the last copy. If the Archive refuses the keys, the Worker stops saving, the progress page and Service checks show the problem, and the Worker's logs are in the Cloudflare dashboard (observability is on).
 - **Into the records.** The catch-up job reads `/captures.json`, writes each capture into its record with `scripts/apply_archive_report.py`, and commits to the captures pull request, so every change to a record is still reviewed. While the Worker answers, the job only looks up copies the Archive already holds and leaves the saving to the Worker.
 
+## Is it working?
+
+The progress page names one of six states. The cron runs every minute even when there is nothing to save, so a last run more than five minutes old always means the schedule has stopped, never that the list is empty.
+
+- **Saving**: links are being saved, or are due to be.
+- **Waiting to try failed links again**: every link left failed in the last day, and each is tried again a day after its failure.
+- **Idle: nothing left to save**: every link on the list is captured, given up on, or marked by hand.
+- **Paused: daily limit reached**: the Archive's daily limit was reached; saving starts again within the hour.
+- **Stopped: the Archive refused the keys**: make new keys and update them in Secrets Store.
+- **Not running**: the Worker hasn't run in over five minutes; check its cron trigger and logs in the Cloudflare dashboard.
+
+The site's Service checks page shows the same state as its "Wayback captures" row.
+
+## Links that fail
+
+The workspace page Wayback captures (`/workspace/wayback`, lead author only) lists every link the Worker could not save, newest first, with the reason and the number of tries. For each link you can:
+
+- open the page, to see whether it still loads;
+- **Save it yourself**, which opens Save Page Now for that link in your own browser;
+- paste the Wayback link if your save worked, marking it **Saved by hand**. The capture must be of the same site, and the archive workflow then writes it into the record like any other capture;
+- mark **It failed for me too**;
+- **Send a file**, which opens the site's upload page with the description and source already filled in, so the file goes through the usual virus scan and review; then mark **I sent a file**.
+
+A marked link is not tried again. The marks are kept beside the Worker's progress at `wayback/marks.json`, and Clear the mark undoes one.
+
 ## Setting it up
 
 1. Make a free account at archive.org and open https://archive.org/account/s3.php for the access key and secret key.
