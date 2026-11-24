@@ -29,7 +29,6 @@ import {
 	essayPath,
 	essayRow,
 	identifierFromPath,
-	latestVersion,
 	allListedPublications,
 	listEssays,
 	publications,
@@ -70,19 +69,47 @@ export function storageForPages(): { database: D1Database; bucket: R2Bucket } {
  */
 export type EssayTexts = 'published' | 'saved';
 
-async function currentTexts(which: EssayTexts): Promise<Record<string, string>> {
+/** How many essay files are read from the bucket at once: a Worker keeps at most six connections open at a time. */
+const readsAtOnce = 6;
+
+/** Reads each file from the bucket, a few at a time, and gives the texts in the order of `files`. */
+async function readTexts(bucket: R2Bucket, files: { identifier: string; object_key: string }[]): Promise<[string, string][]> {
+	const texts: [string, string][] = [];
+	for (let start = 0; start < files.length; start += readsAtOnce) {
+		const group = files.slice(start, start + readsAtOnce);
+		const read = await Promise.all(group.map((file) => readVersionText(bucket, file)));
+		group.forEach((file, index) => texts.push([file.identifier, read[index]]));
+	}
+	return texts;
+}
+
+/** The file of the newest saved version of every essay, in the order listEssays gives them, in one query. */
+async function newestSavedFiles(database: D1Database): Promise<{ identifier: string; object_key: string }[]> {
+	const { results } = await database
+		.prepare(
+			`SELECT e.identifier, v.object_key
+			 FROM essays e
+			 JOIN essay_versions v ON v.essay_identifier = e.identifier
+				AND v.number = (SELECT MAX(number) FROM essay_versions WHERE essay_identifier = e.identifier)
+			 ORDER BY e.part, e.identifier`
+		)
+		.all<{ identifier: string; object_key: string }>();
+	return results;
+}
+
+export async function currentTexts(which: EssayTexts): Promise<Record<string, string>> {
 	const texts: Record<string, string> = { ...essaysInGit };
 	const { database, bucket } = storageForPages();
+	let files: { identifier: string; object_key: string }[];
 	if (which === 'published') {
 		const newest = new Map<string, PublicationRow>();
 		for (const row of await allListedPublications(database)) newest.set(row.essay_identifier, row);
-		for (const [identifier, row] of newest) if (row.object_key) texts[identifier] = await readVersionText(bucket, { object_key: row.object_key });
+		files = [...newest].flatMap(([identifier, row]) => (row.object_key ? [{ identifier, object_key: row.object_key }] : []));
 	} else {
-		for (const essay of await listEssays(database)) {
-			const row = await latestVersion(database, essay.identifier);
-			if (row) texts[essay.identifier] = await readVersionText(bucket, row);
-		}
+		files = await newestSavedFiles(database);
 	}
+	// Added in the same order as before, since the order of the texts is the order of the generated index.
+	for (const [identifier, text] of await readTexts(bucket, files)) texts[identifier] = text;
 	return texts;
 }
 
