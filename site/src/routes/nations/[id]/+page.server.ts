@@ -1158,10 +1158,15 @@ export const load: PageServerLoad = ({ params }) => {
 			sources.add(record.names.official_source, nameUse);
 		}
 	}
+	// Each own name is labeled, with the language it is in where the nation's
+	// own record names a language with the same tag, so a reader can tell what
+	// the name is (Trevor, Nov. 24, 2026). No language is worked out from the tag
+	// alone, since tags are shared by languages with different names.
 	const selfDesignations = (record.names.self_designation ?? []).map((fact) => {
 		const citations: CitationMark[] = [];
-		sources.citeFact(fact, 'The nation’s own name', fact.name, citations);
-		return { name: fact.name, languageTag: fact.language_tag, citations };
+		sources.citeFact(fact, 'Own name', fact.name, citations);
+		const language = fact.language_tag ? record.languages?.find((entry) => entry.language_tag === fact.language_tag && entry.name)?.name : undefined;
+		return { name: fact.name, languageTag: fact.language_tag, language, citations };
 	});
 
 	// Copied only from an authoritative source, never worked out from the

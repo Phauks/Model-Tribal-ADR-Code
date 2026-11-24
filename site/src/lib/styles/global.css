@@ -2200,6 +2200,11 @@ details > .nation-edit-link {
 	font-size: var(--font-size-small);
 }
 
+/* A place the Worker fills only for some pages takes no gap while it is empty, so the badges stay evenly spaced. */
+.badge-line > :empty {
+	display: none;
+}
+
 .badge-line .review-badge {
 	margin-right: 0;
 }
