@@ -1,50 +1,44 @@
+<!--
+	@component
+	One glossary entry on its own page: the dictionary entry, its status and
+	basis At a glance, the other entries that use the term, and References. An
+	info page (site/DESIGN.md, "Info pages").
+-->
 <script lang="ts">
-	import Breadcrumbs from '#lib/components/Breadcrumbs.svelte';
+	import CountBadge from '#lib/components/CountBadge.svelte';
 	import GlossaryEntry from '#lib/components/GlossaryEntry.svelte';
-	import SourceList from '#lib/components/SourceList.svelte';
+	import InfoPage from '#lib/components/InfoPage.svelte';
 	import { basisLabels, statusLabels } from '#lib/glossary-labels.ts';
 	import type { PageProps } from './$types';
 
 	let { data }: PageProps = $props();
 	const entry = $derived(data.entry);
+	const glance = $derived(
+		[
+			{ field: 'status', label: 'Status', items: [{ text: statusLabels[entry.status] ?? entry.status }] },
+			{ field: 'basis', label: 'Basis', items: entry.basis ? [{ text: basisLabels[entry.basis] ?? entry.basis }] : [] },
+			{ field: 'code', label: 'Model code', items: entry.codeDefinition ? [{ text: `Defined in ${entry.codeDefinition}` }] : [] },
+			{ field: 'glossary', label: 'Glossary', items: [{ text: `${entry.term} among all the terms`, link: `/glossary#${entry.id}` }] }
+		].filter((group) => group.items.length > 0)
+	);
 </script>
 
 <svelte:head>
 	<title>{entry.term} · Glossary · Model Tribal ADR Code</title>
 </svelte:head>
 
-<Breadcrumbs trail={[{ label: 'Glossary', href: '/glossary' }]} />
-
-<div class="reading">
-	<GlossaryEntry {entry} headingLevel={1} />
-
-	<h2>About this entry</h2>
-	<dl class="summary-list">
-		{#if entry.basis}
-			<div>
-				<dt>Basis</dt>
-				<dd>{basisLabels[entry.basis] ?? entry.basis}</dd>
-			</div>
-		{/if}
-		<div>
-			<dt>Status</dt>
-			<dd>{statusLabels[entry.status] ?? entry.status}</dd>
-		</div>
-		<div>
-			<dt>In the glossary</dt>
-			<dd><a href="/glossary#{entry.id}">See {entry.term} among all the terms</a></dd>
-		</div>
-	</dl>
+<InfoPage title={entry.term} {glance} sources={data.sources} trail={[{ label: 'Glossary', href: '/glossary' }]}>
+	{#snippet status()}<GlossaryEntry {entry} part="head" />{/snippet}
+	<GlossaryEntry {entry} headingLevel={1} part="body" />
 
 	{#if data.linkedFrom.length > 0}
-		<h2>Other entries that use this term</h2>
-		<ul>
-			{#each data.linkedFrom as other (other.id)}
-				<li><a class="term-link" href="/glossary/{other.id}">{other.term}</a></li>
-			{/each}
-		</ul>
+		<section aria-labelledby="linked-from">
+			<h2 id="linked-from">Other entries that use this term <CountBadge count={data.linkedFrom.length} /></h2>
+			<ul>
+				{#each data.linkedFrom as other (other.id)}
+					<li><a class="term-link" href="/glossary/{other.id}">{other.term}</a></li>
+				{/each}
+			</ul>
+		</section>
 	{/if}
-
-	<SourceList sources={data.sources} />
-</div>
-
+</InfoPage>

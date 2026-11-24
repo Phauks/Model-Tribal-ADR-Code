@@ -1,8 +1,8 @@
 <script lang="ts">
-	import Breadcrumbs from '#lib/components/Breadcrumbs.svelte';
 	import CopyHash from '#lib/components/CopyHash.svelte';
 	import FileVerifier from '#lib/components/FileVerifier.svelte';
 	import FormDocument from '#lib/components/FormDocument.svelte';
+	import InfoPage from '#lib/components/InfoPage.svelte';
 	import { verifyLink } from '#lib/checksums.ts';
 	import { formHtml } from '#lib/forms.ts';
 	import type { PageProps } from './$types';
@@ -31,6 +31,25 @@
 		}))
 	);
 	const accepted = 'application/pdf,image/png,image/jpeg,image/webp';
+	/** The form's key facts, At a glance (site/DESIGN.md, "Info pages"). */
+	const glance = $derived(
+		[
+			{ field: 'use', label: 'When to use it', items: [{ text: template.summary }] },
+			{
+				field: 'send',
+				label: 'Ways to send it',
+				items: data.sendable
+					? [{ text: 'Online, signed by typing your name' }, { text: 'A signed paper copy, as a photo or scan', link: '#upload' }]
+					: [{ text: 'Print it or save it as a PDF; nothing is sent' }]
+			},
+			{
+				field: 'formats',
+				label: 'Formats',
+				items: (template.downloads ?? []).map((download) => ({ text: download.href.slice(download.href.lastIndexOf('.')), link: '#form-downloads-heading' }))
+			},
+			{ field: 'blank', label: 'Blank copy', items: [{ text: 'Print a blank copy', link: `/forms/${template.slug}/print` }] }
+		].filter((group) => group.items.length > 0)
+	);
 
 	function focusOnArrival(node: HTMLElement) {
 		node.focus();
@@ -91,10 +110,7 @@
 	</div>
 {/snippet}
 
-<div class="reading">
-	<Breadcrumbs trail={[{ label: 'Forms', href: '/forms' }]} />
-	<h1>{template.title}</h1>
-	<p class="small no-print"><a href="/forms/{template.slug}/print">Print a blank copy</a></p>
+<InfoPage title={template.title} {glance} trail={[{ label: 'Forms', href: '/forms' }]}>
 
 	{#if sent}
 		<div class="panel panel-filled" role="status" tabindex="-1" {@attach focusOnArrival}>
@@ -231,7 +247,7 @@
 			</section>
 		{/if}
 	{/if}
-</div>
+</InfoPage>
 
 <style>
 	fieldset {

@@ -184,12 +184,26 @@ export function withScrollingTables(html: string): string {
 		.replace(/<\/table>/g, '</table></div>');
 }
 
+/**
+ * A license text with its hard line breaks inside paragraphs taken out, so it
+ * wraps to the column it sits in, beside At a glance on a license's page,
+ * rather than breaking twice. Blank lines, indented lines, list items, lines in
+ * capitals that read as headings and a new sentence after a full stop keep
+ * their own line.
+ */
+export function unwrapLines(text: string): string {
+	return text.replace(/([^\n])\n(?![\s\n]|\d+[.)]|[-*•(]|[A-Z][A-Z ]+:?$)/gm, (whole, last: string, offset: number) => {
+		const next = text.charAt(offset + 2);
+		return /[.:;]/.test(last) && /[A-Z]/.test(next) ? whole : `${last} `;
+	});
+}
+
 /** A project document as a title and HTML, as the website shows it. */
 export function renderProjectDocument(document: ProjectDocument): RenderedDocument {
 	const text = readFileSync(path.join(repositoryRoot, document.file), 'utf8').normalize('NFC');
 	const title = titleOf(document);
 	if (document.file.endsWith('.txt')) {
-		return { title, html: `<pre class="license-text">${escapeHtml(text.trim())}</pre>` };
+		return { title, html: `<pre class="license-text">${escapeHtml(unwrapLines(text.trim()))}</pre>` };
 	}
 	const heading = /^#\s+(.+)$/m.exec(text);
 	const body = heading ? text.slice(0, heading.index) + text.slice(heading.index + heading[0].length) : text;
@@ -209,4 +223,17 @@ export function projectDocumentPage(address: string) {
 		sourceLink: `${repositoryLink}/blob/main/${document.file}`,
 		historyLink: `${repositoryLink}/commits/main/${document.file}`
 	};
+}
+
+/**
+ * The material a license text covers, from the "Material" column of the
+ * table in LICENSE.md whose "Full text" links to it, for the license's info
+ * page (site/DESIGN.md, "Info pages").
+ */
+export function licenseMaterials(file: string): string[] {
+	const table = withoutRepositoryOnlyText(readFileSync(path.join(repositoryRoot, 'LICENSE.md'), 'utf8'));
+	return table
+		.split('\n')
+		.filter((line) => line.startsWith('|') && line.includes(`(${file})`))
+		.map((line) => line.split('|')[1].trim().replace(/`/g, ''));
 }
