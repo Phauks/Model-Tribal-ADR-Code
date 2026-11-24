@@ -90,8 +90,8 @@ describe('essay documents', () => {
 	});
 
 	it('lists the sources and glossary entries an essay uses', () => {
-		const { sourceKeys, termIds } = referencesIn(sample);
+		const { sourceKeys, termIdentifiers } = referencesIn(sample);
 		expect([...sourceKeys].sort()).toEqual(['narf-ipi-home', 'worcester-v-georgia']);
-		expect([...termIds]).toEqual(['tribal-court']);
+		expect([...termIdentifiers]).toEqual(['tribal-court']);
 	});
 });

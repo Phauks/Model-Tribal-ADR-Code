@@ -90,7 +90,7 @@
 	let scripted = $state(false);
 
 	const identifier = $props.id();
-	const boxId = $derived(id ?? `${identifier}-combobox`);
+	const boxIdentifier = $derived(id ?? `${identifier}-combobox`);
 	let expanded = $state(false);
 	let active = $state(0);
 	let missing = $state(false);
@@ -132,7 +132,7 @@
 		return () => owner.removeEventListener('submit', check, { capture: true });
 	});
 
-	function optionId(index: number): string {
+	function optionIdentifier(index: number): string {
 		return `${identifier}-option-${index}`;
 	}
 
@@ -169,7 +169,7 @@
 	}
 
 	function scrollActiveIntoView(): void {
-		list?.querySelector(`#${CSS.escape(optionId(active))}`)?.scrollIntoView({ block: 'nearest' });
+		list?.querySelector(`#${CSS.escape(optionIdentifier(active))}`)?.scrollIntoView({ block: 'nearest' });
 	}
 
 	/** Type-ahead: letters typed within half a second find the next choice that starts with them. */
@@ -275,7 +275,7 @@
 		<div
 			bind:this={combobox}
 			class="dropdown-button"
-			id={boxId}
+			id={boxIdentifier}
 			role="combobox"
 			tabindex={disabled ? -1 : 0}
 			aria-controls="{identifier}-list"
@@ -283,7 +283,7 @@
 			aria-haspopup="listbox"
 			aria-labelledby="{identifier}-label {identifier}-value"
 			aria-describedby={describers}
-			aria-activedescendant={expanded ? optionId(active) : undefined}
+			aria-activedescendant={expanded ? optionIdentifier(active) : undefined}
 			aria-disabled={disabled ? 'true' : undefined}
 			aria-invalid={invalid || missing ? 'true' : undefined}
 			aria-required={required ? 'true' : undefined}
@@ -337,7 +337,7 @@
 	<!-- Keys move through the choices from the combobox, which keeps focus (aria-activedescendant); the click is for the pointer. -->
 	<!-- svelte-ignore a11y_click_events_have_key_events -->
 	<li
-		id={optionId(index)}
+		id={optionIdentifier(index)}
 		class="dropdown-option"
 		class:active={index === active}
 		role="option"

@@ -10,7 +10,7 @@
  * Counts the nation's own page already corrects from its live changes
  * (src/lib/nation-restrictions.ts, PageRestrictions) are left alone here.
  */
-import { versionItemId } from './nation-restrictions.ts';
+import { versionItemIdentifier } from './nation-restrictions.ts';
 import {
 	filterCopyRows,
 	filterCopyTableRows,
@@ -74,7 +74,7 @@ export function filterNationPage(data: Data, restrictions: SiteRestrictions, nat
 	const documents = (data.documents as DocumentLike[] | undefined) ?? [];
 	result.documents = documents.flatMap((document) => {
 		const versions = document.versions.filter((version) => {
-			const hidden = levelOf(restrictions, versionItemId(version.link, document.id, version.id)) === 'hide';
+			const hidden = levelOf(restrictions, versionItemIdentifier(version.link, document.id, version.id)) === 'hide';
 			// The References name the section by the document's title or its heading.
 			if (hidden) for (const section of [document.title, document.heading]) if (section) gone.add(`${section}\u0000${version.label ?? ''}`);
 			return !hidden;

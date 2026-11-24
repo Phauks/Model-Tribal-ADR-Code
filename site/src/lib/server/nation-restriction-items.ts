@@ -11,7 +11,7 @@
  * document and version.
  */
 import { displayName } from '../nation-labels.ts';
-import { versionItemId, type RestrictableItem, type RestrictableList, type RestrictionKind } from '../nation-restrictions.ts';
+import { versionItemIdentifier, type RestrictableItem, type RestrictableList, type RestrictionKind } from '../nation-restrictions.ts';
 import { keyOfCopyPath } from './document-zips.ts';
 import { documentHeading, earliestDate, labelOf, nationDocumentHistories, textLink } from './document-history.ts';
 import { offlineSets } from './copy-lists.ts';
@@ -23,11 +23,11 @@ export function documentKind(kind: string): RestrictionKind {
 	return /compact|secretarial-procedures|agreement/.test(kind) ? 'agreements' : 'laws';
 }
 
-export function restrictableItems(nationId: string): RestrictableList {
-	const record = nations().find((candidate) => candidate.id === nationId);
+export function restrictableItems(nationIdentifier: string): RestrictableList {
+	const record = nations().find((candidate) => candidate.id === nationIdentifier);
 	const names = record ? [record.names.official, displayName(record.names.official)] : [];
 	const copies = new Map(publicCopies().map((copy) => [copy.key, copy]));
-	const offline = new Set((offlineSets().nations.get(nationId)?.files ?? []).map(([path]) => `copy:${keyOfCopyPath(path)}`));
+	const offline = new Set((offlineSets().nations.get(nationIdentifier)?.files ?? []).map(([path]) => `copy:${keyOfCopyPath(path)}`));
 	const items: RestrictableItem[] = [];
 	const seen = new Set<string>();
 	const add = (item: RestrictableItem) => {
@@ -36,12 +36,12 @@ export function restrictableItems(nationId: string): RestrictableList {
 		items.push(offline.has(item.id) ? { ...item, offline: true } : item);
 	};
 
-	for (const history of nationDocumentHistories(nationId)) {
+	for (const history of nationDocumentHistories(nationIdentifier)) {
 		const kind = documentKind(history.kind);
 		const heading = documentHeading(history.title, names);
 		for (const version of history.versions) {
 			const link = textLink(version);
-			const id = versionItemId(link, history.id, version.id);
+			const id = versionItemIdentifier(link, history.id, version.id);
 			const label = labelOf(version, version.id);
 			const copy = id.startsWith('copy:') ? copies.get(id.slice(5)) : undefined;
 			const source = version.source ? sourceRecords().get(version.source) : undefined;
@@ -59,13 +59,13 @@ export function restrictableItems(nationId: string): RestrictableList {
 	}
 
 	// The other copies of the nation's laws this site keeps, which its downloads hold.
-	for (const [path, bytes, , title = '', original = ''] of offlineSets().nations.get(nationId)?.files ?? []) {
+	for (const [path, bytes, , title = '', original = ''] of offlineSets().nations.get(nationIdentifier)?.files ?? []) {
 		const key = keyOfCopyPath(path);
 		if (key.startsWith('caselaw-access-project/')) continue;
 		add({ id: `copy:${key}`, kind: 'laws', title: title || key.split('/').at(-1) || key, original: original || undefined, bytes });
 	}
 
-	for (const opinion of opinionsOf(nationId)) {
+	for (const opinion of opinionsOf(nationIdentifier)) {
 		add({
 			id: `copy:${opinion.key}`,
 			kind: 'opinions',
@@ -79,7 +79,7 @@ export function restrictableItems(nationId: string): RestrictableList {
 		});
 	}
 	// Counted as the nation's page lists them: its treaties, and the court cases that name it.
-	const cases = [...sourceRecords().values()].filter((source) => source.kind.endsWith('-case') && source.tribes?.includes(nationId) && source.citation.title).length;
-	return { nation: nationId, items, alwaysShown: { treaties: record?.treaties?.length ?? 0, cases } };
+	const cases = [...sourceRecords().values()].filter((source) => source.kind.endsWith('-case') && source.tribes?.includes(nationIdentifier) && source.citation.title).length;
+	return { nation: nationIdentifier, items, alwaysShown: { treaties: record?.treaties?.length ?? 0, cases } };
 }
 

@@ -25,7 +25,7 @@
 	import { citationHtml, noteEntry } from '#lib/note-copies.ts';
 	import { copyRichText } from '#lib/clipboard.ts';
 
-	const previewId = 'citation-preview';
+	const previewIdentifier = 'citation-preview';
 	const showDelay = 250;
 	// Long enough to move the pointer from the marker onto the window.
 	const hideDelay = 400;
@@ -129,7 +129,7 @@
 		marker = link;
 		shown = content;
 		copyState = 'idle';
-		link.setAttribute('aria-describedby', previewId);
+		link.setAttribute('aria-describedby', previewIdentifier);
 		await tick();
 		place(link);
 	}
@@ -287,7 +287,7 @@
 	-->
 	<div
 		bind:this={popup}
-		id={previewId}
+		id={previewIdentifier}
 		class="citation-popup no-print"
 		role="group"
 		aria-labelledby="citation-popup-title"

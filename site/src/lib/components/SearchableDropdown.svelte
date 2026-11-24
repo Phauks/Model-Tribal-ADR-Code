@@ -75,7 +75,7 @@
 	let missing = $state(false);
 
 	const identifier = $props.id();
-	const inputId = $derived(id ?? `${identifier}-input`);
+	const inputIdentifier = $derived(id ?? `${identifier}-input`);
 
 	onMount(() => {
 		scripted = true;
@@ -150,7 +150,7 @@
 		!expanded ? '' : shown.length === 0 ? 'Nothing matches.' : shown.length === 1 ? '1 choice. Press Enter to show it.' : `${shown.length} choices.`
 	);
 
-	function optionId(index: number): string {
+	function optionIdentifier(index: number): string {
 		return `${identifier}-option-${index}`;
 	}
 
@@ -186,7 +186,7 @@
 	}
 
 	function scrollActiveIntoView(): void {
-		list?.querySelector(`#${CSS.escape(optionId(active))}`)?.scrollIntoView({ block: 'nearest' });
+		list?.querySelector(`#${CSS.escape(optionIdentifier(active))}`)?.scrollIntoView({ block: 'nearest' });
 	}
 
 	/** Every choice in its group, for the <select> that stands in without scripts. */
@@ -265,12 +265,12 @@
 			</select>
 		</label>
 	{/if}
-	<label class="searchable-dropdown-label" class:visually-hidden={hideLabel} class:needs-scripts={Boolean(name)} for={inputId}>{label}</label>
+	<label class="searchable-dropdown-label" class:visually-hidden={hideLabel} class:needs-scripts={Boolean(name)} for={inputIdentifier}>{label}</label>
 	{@render message?.()}
 	<div class="searchable-dropdown-control" class:expanded class:needs-scripts={Boolean(name)}>
 		<input
 			bind:this={input}
-			id={inputId}
+			id={inputIdentifier}
 			type="text"
 			role="combobox"
 			autocomplete="off"
@@ -278,7 +278,7 @@
 			aria-autocomplete="list"
 			aria-expanded={expanded}
 			aria-controls="{identifier}-list"
-			aria-activedescendant={expanded && shown.length > 0 ? optionId(active) : undefined}
+			aria-activedescendant={expanded && shown.length > 0 ? optionIdentifier(active) : undefined}
 			aria-describedby={describedBy}
 			aria-invalid={invalid || missing ? 'true' : undefined}
 			aria-required={required ? 'true' : undefined}
@@ -352,7 +352,7 @@
 	<!-- Keys move through the choices from the box, which keeps focus (aria-activedescendant); the click is for the pointer. -->
 	<!-- svelte-ignore a11y_click_events_have_key_events -->
 	<li
-		id={optionId(index)}
+		id={optionIdentifier(index)}
 		class="searchable-dropdown-option"
 		class:active={index === active}
 		role="option"

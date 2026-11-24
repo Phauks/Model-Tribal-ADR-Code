@@ -83,8 +83,8 @@ interface CourtOpinions {
  * The nation's court opinions in the Caselaw Access Project's tribal
  * reporters (decision record 0047): how many there are, and the newest few.
  */
-function courtOpinions(nationId: string, sources: SourceUses): CourtOpinions | undefined {
-	const all = opinionsOf(nationId);
+function courtOpinions(nationIdentifier: string, sources: SourceUses): CourtOpinions | undefined {
+	const all = opinionsOf(nationIdentifier);
 	if (all.length === 0) return undefined;
 	const citations: CitationMark[] = [];
 	sources.cite(opinionsSourceKey, { section: opinionsHeading, text: `${all.length} published opinions` }, citations);
@@ -94,7 +94,7 @@ function courtOpinions(nationId: string, sources: SourceUses): CourtOpinions | u
 		from: all.at(-1)!.year,
 		to: all[0].year,
 		citations,
-		link: `/nations/${nationId}/opinions`
+		link: `/nations/${nationIdentifier}/opinions`
 	};
 }
 

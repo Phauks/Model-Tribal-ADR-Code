@@ -11,7 +11,7 @@ import {
 	savingLines,
 	settingsChanges,
 	tidySettings,
-	versionItemId,
+	versionItemIdentifier,
 	type RestrictableItem,
 	type RestrictionSettings
 } from '#lib/nation-restrictions.ts';
@@ -75,8 +75,8 @@ describe('which items a copy and a page follow', () => {
 	it('names copies and versions the same way the page, the copy and the downloads do', () => {
 		expect(copyItemId('/copies/view/caselaw-access-project/am-tribal-law/1/0001-01.html')).toBe(items[3].id);
 		expect(copyItemId('/copies/a/b%20c.pdf')).toBe('copy:a/b c.pdf');
-		expect(versionItemId('/copies/view/constitutions/cherokee-nation/1999.pdf', 'constitution', '1999')).toBe(items[0].id);
-		expect(versionItemId('https://bia.example/compact.pdf', 'compact', '2005')).toBe('version:compact/2005');
+		expect(versionItemIdentifier('/copies/view/constitutions/cherokee-nation/1999.pdf', 'constitution', '1999')).toBe(items[0].id);
+		expect(versionItemIdentifier('https://bia.example/compact.pdf', 'compact', '2005')).toBe('version:compact/2005');
 	});
 
 	it('lets nations restrict only their own laws and courts’ opinions', () => {

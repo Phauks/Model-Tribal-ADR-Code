@@ -31,7 +31,7 @@ describe('checks', () => {
 		];
 		const issues = definitionIssues(blocks, terms, new Set(['tribal-court']));
 		expect(issues).toHaveLength(1);
-		expect(issues[0]).toMatchObject({ kind: 'definition', termId: 'peacemaking', problem: 'Peacemaking' });
+		expect(issues[0]).toMatchObject({ kind: 'definition', termIdentifier: 'peacemaking', problem: 'Peacemaking' });
 		expect(doc.textBetween(issues[0].from, issues[0].to)).toBe('Peacemaking');
 	});
 

@@ -191,18 +191,18 @@ function caseLinks(): Map<string, string> {
 }
 
 /** The opinions of one nation, or of every nation, counted by year (and by nation on the full timeline). */
-function opinionYears(nationId?: string): OpinionYear[] {
+function opinionYears(nationIdentifier?: string): OpinionYear[] {
 	const counts = new Map<string, OpinionYear>();
 	for (const opinion of tribalCourtOpinions()) {
 		const year = Number(opinion.year);
 		if (!Number.isFinite(year)) continue;
-		const owners = nationId ? (opinion.nations.includes(nationId) ? [undefined] : []) : opinion.nations;
+		const owners = nationIdentifier ? (opinion.nations.includes(nationIdentifier) ? [undefined] : []) : opinion.nations;
 		for (const nation of owners) {
 			const key = `${year}|${nation ?? ''}`;
 			const entry = counts.get(key) ?? { year, count: 0, ...(nation ? { nation } : {}) };
 			entry.count += 1;
 			// Only the full timeline filters by word, so a nation's own timeline leaves the words out.
-			const bits = nationId ? 0 : mentionBits(opinion.topics, mentionWordList);
+			const bits = nationIdentifier ? 0 : mentionBits(opinion.topics, mentionWordList);
 			if (bits !== 0) entry.mentions = [...(entry.mentions ?? []), bits];
 			counts.set(key, entry);
 		}
@@ -417,7 +417,7 @@ let siteCache: SiteTimeline | undefined;
 export function siteTimeline(): SiteTimeline {
 	if (siteCache) return siteCache;
 	const published = nations().filter((record) => record.review?.status !== 'withdrawn-at-request' && !record.example);
-	const byId = new Map(published.map((record) => [record.id, record]));
+	const byIdentifier = new Map(published.map((record) => [record.id, record]));
 	const histories = documentHistories();
 	// The full timeline shows no markers; it only notes each entry's sources for its download files.
 	const used = new Set<string>();
@@ -457,7 +457,7 @@ export function siteTimeline(): SiteTimeline {
 		const entry = caseKinds.has(source.kind) ? caseEntry(source) : federalKinds.has(source.kind) ? lawEntry(source, false) : undefined;
 		if (!entry) continue;
 		used.add(source.key);
-		const named = { ...entry, nations: entry.nations?.filter((id) => byId.has(id)) };
+		const named = { ...entry, nations: entry.nations?.filter((id) => byIdentifier.has(id)) };
 		if (entry.kind !== 'federal') {
 			entries.push(named);
 			continue;
@@ -475,11 +475,11 @@ export function siteTimeline(): SiteTimeline {
 		}
 	}
 
-	const opinions = opinionYears().filter((year) => !year.nation || byId.has(year.nation));
+	const opinions = opinionYears().filter((year) => !year.nation || byIdentifier.has(year.nation));
 	const named = new Set([...entries.flatMap((entry) => entry.nations ?? []), ...opinions.flatMap((year) => (year.nation ? [year.nation] : []))]);
 	const nationsNamed: Record<string, TimelineNation> = {};
 	for (const id of [...named].sort()) {
-		const record = byId.get(id);
+		const record = byIdentifier.get(id);
 		if (!record) continue;
 		const codes = [...new Set((record.states ?? []).map((fact) => fact.state))].sort();
 		nationsNamed[id] = { name: displayName(record.names.official), states: codes.map((code) => ({ code, name: stateName(code) })) };
@@ -495,17 +495,17 @@ export function siteTimeline(): SiteTimeline {
 }
 
 /** One nation's timeline as rows for its download files; undefined for a nation with no published page. */
-export function nationTimelineFile(nationId: string): TimelineRow[] | undefined {
-	const record = nations().find((candidate) => candidate.id === nationId);
+export function nationTimelineFile(nationIdentifier: string): TimelineRow[] | undefined {
+	const record = nations().find((candidate) => candidate.id === nationIdentifier);
 	if (!record || record.review?.status === 'withdrawn-at-request') return undefined;
 	const names = [record.names.official, displayName(record.names.official)];
 	const stub = { cite: () => ({ number: 0, anchor: '' }), citeFact: () => undefined };
-	const documents = nationDocumentHistories(nationId).map((history) => ({
+	const documents = nationDocumentHistories(nationIdentifier).map((history) => ({
 		...documentHistoryView(history, stub),
 		heading: documentHeading(history.title, names)
 	}));
 	const timeline = nationTimeline(record, new SourceUses(), documents);
-	const pageLink = `/nations/${nationId}`;
+	const pageLink = `/nations/${nationIdentifier}`;
 	const entries = timeline.entries.map((entry) => ({ ...entry, link: entry.link?.startsWith('#') ? `${pageLink}${entry.link}` : entry.link }));
 	return timelineRows(entries, timeline.opinions);
 }

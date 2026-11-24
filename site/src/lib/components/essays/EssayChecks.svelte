@@ -314,9 +314,9 @@
 	function linkTerm(issue: CheckIssue): void {
 		const editor = view();
 		const place = placeOf(issue);
-		if (!editor || !place || !canEdit || !issue.termId) return;
+		if (!editor || !place || !canEdit || !issue.termIdentifier) return;
 		editor.dispatch(
-			editor.state.tr.replaceWith(place.from, place.to, schema.node('term_link', { id: issue.termId, text: issue.problem })).scrollIntoView()
+			editor.state.tr.replaceWith(place.from, place.to, schema.node('term_link', { id: issue.termIdentifier, text: issue.problem })).scrollIntoView()
 		);
 		issues = issues.filter((other) => other.id !== issue.id);
 		editor.focus();

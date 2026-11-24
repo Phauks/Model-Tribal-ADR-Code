@@ -91,7 +91,7 @@
 	/** Lucide's layers icon, for the base map button. */
 	const layersIcon = lucide('<path d="m12.83 2.18a2 2 0 0 0-1.66 0L2.6 6.08a1 1 0 0 0 0 1.83l8.58 3.91a2 2 0 0 0 1.66 0l8.58-3.9a1 1 0 0 0 0-1.83Z"/><path d="m22 17.65-9.17 4.16a2 2 0 0 1-1.66 0L2 17.65"/><path d="m22 12.65-9.17 4.16a2 2 0 0 1-1.66 0L2 12.65"/>');
 	const layersIdentifier = $props.id();
-	const layersMenuId = `map-layers-${layersIdentifier}`;
+	const layersMenuIdentifier = `map-layers-${layersIdentifier}`;
 	/** Lucide's maximize and minimize icons, for the full screen button. */
 	const fullScreenIcons = {
 		enter: lucide('<path d="M8 3H5a2 2 0 0 0-2 2v3"/><path d="M21 8V5a2 2 0 0 0-2-2h-3"/><path d="M3 16v3a2 2 0 0 0 2 2h3"/><path d="M16 21h3a2 2 0 0 0 2-2v-3"/>'),
@@ -767,7 +767,7 @@
 				layersToggle.title = 'Base map and layers';
 				layersToggle.setAttribute('aria-label', 'Base map and layers');
 				layersToggle.setAttribute('aria-expanded', 'false');
-				layersToggle.setAttribute('aria-controls', layersMenuId);
+				layersToggle.setAttribute('aria-controls', layersMenuIdentifier);
 				layersToggle.innerHTML = layersIcon;
 				layersToggle.addEventListener('click', toggleLayers);
 				layersButton = layersToggle;
@@ -880,7 +880,7 @@
 	<!-- svelte-ignore a11y_no_noninteractive_element_interactions -->
 	<div
 		class="layers-menu"
-		id={layersMenuId}
+		id={layersMenuIdentifier}
 		role="group"
 		aria-label="Base map and layers"
 		hidden={!layersOpen}
@@ -899,7 +899,7 @@
 			<div class="layers-choices">
 				{#each tileMapBases as choice (choice.value)}
 					<label class="layers-base" class:chosen={baseMap === choice.value}>
-						<input class="visually-hidden" type="radio" name="{layersMenuId}-base" value={choice.value} checked={baseMap === choice.value} onchange={() => (baseMap = choice.value)} />
+						<input class="visually-hidden" type="radio" name="{layersMenuIdentifier}-base" value={choice.value} checked={baseMap === choice.value} onchange={() => (baseMap = choice.value)} />
 						<img src="/map-bases/{choice.value}.png" alt="" width="96" height="72" />
 						<span>{choice.label}</span>
 					</label>

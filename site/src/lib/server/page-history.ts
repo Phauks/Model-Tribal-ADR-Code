@@ -22,10 +22,10 @@
 import type { D1Database, D1PreparedStatement, R2Bucket, R2Conditional } from '@cloudflare/workers-types/index.ts';
 import { compareTexts, type BlockChange } from '#lib/essays/compare.ts';
 import {
-	changeId,
+	changeIdentifier,
 	hideReasons,
 	isHideReason,
-	parseChangeId,
+	parseChangeIdentifier,
 	nationTeamName,
 	nationTeamsKey,
 	siteReleaseName,
@@ -609,11 +609,11 @@ async function pageRows(database: D1Database, address: string): Promise<ChangeRo
 }
 
 async function changeRow(database: D1Database, id: string): Promise<ChangeRow | undefined> {
-	const reference = parseChangeId(id);
+	const reference = parseChangeIdentifier(id);
 	if (!reference) return undefined;
 	const row = await database
 		.prepare(`${everyChange} WHERE c.id = ?`)
-		.bind(changeId(reference))
+		.bind(changeIdentifier(reference))
 		.first<ChangeRow>();
 	return row ?? undefined;
 }
@@ -697,11 +697,11 @@ export interface VersionComparison {
 export async function compareVersions(
 	database: D1Database,
 	bucket: R2Bucket,
-	fromId: string,
-	toId: string,
+	fromIdentifier: string,
+	toIdentifier: string,
 	directory: PageDirectory
 ): Promise<VersionComparison | undefined> {
-	const [first, second] = await Promise.all([changeRow(database, fromId), changeRow(database, toId)]);
+	const [first, second] = await Promise.all([changeRow(database, fromIdentifier), changeRow(database, toIdentifier)]);
 	if (!first || !second || first.address !== second.address) return undefined;
 	// The older version is compared with the newer, whichever way round they were chosen.
 	const [fromRow, toRow] = first.made_at <= second.made_at ? [first, second] : [second, first];

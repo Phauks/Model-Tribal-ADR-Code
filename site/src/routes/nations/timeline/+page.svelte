@@ -51,7 +51,7 @@
 			([year, count, place, mentions]): OpinionYear => ({ year, count, mentions, nation: place >= 0 ? data.nations[place].id : undefined })
 		)
 	);
-	const nationsById = $derived(Object.fromEntries(data.nations.map((nation) => [nation.id, nation])));
+	const nationsByIdentifier = $derived(Object.fromEntries(data.nations.map((nation) => [nation.id, nation])));
 	const extent = $derived(extentOf(allEntries, allOpinions));
 
 	let nation = $state('');
@@ -69,7 +69,7 @@
 
 	const filtered = $derived(nation !== '' || stateCode !== '');
 	const belongs = (ids: string[] | undefined) =>
-		!!ids?.some((id) => (nation === '' || id === nation) && (stateCode === '' || nationsById[id]?.states.includes(stateCode)));
+		!!ids?.some((id) => (nation === '' || id === nation) && (stateCode === '' || nationsByIdentifier[id]?.states.includes(stateCode)));
 
 	// Under a nation or state filter, federal laws about no nation in particular stay, drawn faintly for context.
 	const entries = $derived(
@@ -123,9 +123,9 @@
 	onMount(() => {
 		const params = new URLSearchParams(location.search);
 		const asked = params.get('nation') ?? '';
-		if (nationsById[asked]) {
+		if (nationsByIdentifier[asked]) {
 			nation = asked;
-			nationText = nationsById[asked].name;
+			nationText = nationsByIdentifier[asked].name;
 		}
 		const askedState = params.get('state') ?? '';
 		if (data.states.some((state) => state.code === askedState)) stateCode = askedState;
@@ -193,7 +193,7 @@
 			<label for="timeline-nation" class="visually-hidden">Find a nation</label>
 			{#if nation}
 				<p class="chosen">
-					<strong>{nationsById[nation]?.name}</strong>
+					<strong>{nationsByIdentifier[nation]?.name}</strong>
 					<button type="button" class="icon-button" aria-label="Show every nation" title="Show every nation" onclick={() => ((nation = ''), (nationText = ''))}>
 						<X size={18} aria-hidden="true" />
 					</button>
@@ -250,7 +250,7 @@
 		<Timeline
 			{entries}
 			{opinions}
-			nations={nationsById}
+			nations={nationsByIdentifier}
 			bind:shown
 			bind:range
 			{extent}

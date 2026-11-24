@@ -23,7 +23,7 @@ export function incomingKey(identifier: string): string {
 export const arrivalRetryMinutes = [5, 15, 60, 240, 720] as const;
 
 /** A message is left to the email handler this long before the mail run picks it up, so the two do not file it at once. */
-const handlerGraceMs = 2 * 60_000;
+const handlerGraceMilliseconds = 2 * 60_000;
 
 /** Keeps an arriving message whole, with its envelope, before anything else is done with it. */
 export async function keepArrival(context: MailContext, arriving: { from: string; to: string; raw: ArrayBuffer | Uint8Array }): Promise<string> {
@@ -90,7 +90,7 @@ async function recordProblem(context: MailContext, key: string, problem: unknown
 export async function fileWaitingArrivals(context: MailContext, carriers: MailCarriers, limit = 20): Promise<{ filed: number; failed: number }> {
 	const now = currentTime(context);
 	const listed = await context.bucket.list({ prefix: incomingPrefix, limit: 100, include: ['customMetadata'] });
-	const old = listed.objects.filter((object) => now.getTime() - new Date(object.uploaded).getTime() >= handlerGraceMs);
+	const old = listed.objects.filter((object) => now.getTime() - new Date(object.uploaded).getTime() >= handlerGraceMilliseconds);
 	if (old.length === 0) return { filed: 0, failed: 0 };
 	const { results: problems } = await context.database
 		.prepare(`SELECT object_key, next_try_at, gave_up_at FROM mail_arrival_problems WHERE object_key LIKE ?`)

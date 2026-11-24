@@ -15,7 +15,7 @@
 	// a document none of whose versions is left (src/lib/nation-restrictions.ts).
 	import ExternalLink from '@lucide/svelte/icons/external-link';
 	import type { DocumentHistoryView } from '#lib/server/document-history.ts';
-	import { noPageRestrictions, versionItemId, type PageRestrictions } from '#lib/nation-restrictions.ts';
+	import { noPageRestrictions, versionItemIdentifier, type PageRestrictions } from '#lib/nation-restrictions.ts';
 	import CitationMarks from './CitationMarks.svelte';
 
 	let {
@@ -23,7 +23,7 @@
 		restrictions = noPageRestrictions
 	}: { documents: (DocumentHistoryView & { heading?: string })[]; restrictions?: PageRestrictions } = $props();
 
-	const idOf = (document: DocumentHistoryView, version: DocumentHistoryView['versions'][number]) => versionItemId(version.link, document.id, version.id);
+	const idOf = (document: DocumentHistoryView, version: DocumentHistoryView['versions'][number]) => versionItemIdentifier(version.link, document.id, version.id);
 	const shown = $derived(
 		documents
 			.map((document) => ({ ...document, versions: document.versions.filter((version) => restrictions.levels[idOf(document, version)] !== 'hide') }))

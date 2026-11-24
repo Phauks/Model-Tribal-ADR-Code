@@ -23,7 +23,7 @@ import type { Actions, PageServerLoad } from './$types';
 // One outreach batch: who it goes to, how fast, and how far it has got.
 export const prerender = false;
 
-const nationsById = new Map(mailNations.map((nation) => [nation.identifier, nation]));
+const nationsByIdentifier = new Map(mailNations.map((nation) => [nation.identifier, nation]));
 
 export const load: PageServerLoad = async (event) => {
 	requirePermission(event, 'send-outreach');
@@ -34,7 +34,7 @@ export const load: PageServerLoad = async (event) => {
 	const first = found.recipients.find((recipient) => recipient.status === 'queued') ?? found.recipients[0];
 	return {
 		...found,
-		nationNames: Object.fromEntries(found.recipients.filter((item) => item.nationIdentifier).map((item) => [item.nationIdentifier!, nationsById.get(item.nationIdentifier!)?.name ?? item.nationIdentifier!])),
+		nationNames: Object.fromEntries(found.recipients.filter((item) => item.nationIdentifier).map((item) => [item.nationIdentifier!, nationsByIdentifier.get(item.nationIdentifier!)?.name ?? item.nationIdentifier!])),
 		tags: [...new Set(contacts.flatMap((contact) => contact.tags))].sort(),
 		addressBookSize: contacts.length,
 		problems: outreachReadiness(context, mailCarriers(context)),
@@ -53,7 +53,7 @@ export const load: PageServerLoad = async (event) => {
 };
 
 function recipientOf(contact: AddressBookRecipient, siteAddress: string | null, senderName: string): NewRecipient {
-	const nation = contact.nationIdentifier ? (nationsById.get(contact.nationIdentifier) ?? null) : null;
+	const nation = contact.nationIdentifier ? (nationsByIdentifier.get(contact.nationIdentifier) ?? null) : null;
 	return {
 		contactIdentifier: contact.contactIdentifier,
 		nationIdentifier: contact.nationIdentifier,
@@ -96,7 +96,7 @@ export const actions: Actions = {
 		const name = formText(form, 'name', 200);
 		const nationIdentifier = formText(form, 'nation', 200);
 		if (!email || !name) return fail(400, { problem: 'Give an email address and a name.' });
-		const nation = nationIdentifier ? (nationsById.get(nationIdentifier) ?? null) : null;
+		const nation = nationIdentifier ? (nationsByIdentifier.get(nationIdentifier) ?? null) : null;
 		if (nationIdentifier && !nation) return fail(400, { problem: 'That nation is not on the site.' });
 		const contact = { name, kind: 'organization' as const, role: formText(form, 'role', 200), organizationName: null };
 		try {

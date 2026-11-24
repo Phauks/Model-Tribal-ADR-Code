@@ -92,7 +92,7 @@ function paragraphElement(paragraph: ContextParagraph, cases: CasePreviewList | 
 	for (const mention of mentions) cuts.add(mention.start).add(mention.end);
 	const points = [...cuts].filter((point) => point >= 0 && point <= text.length).sort((a, b) => a - b);
 	let link: HTMLAnchorElement | undefined;
-	let linkId: string | undefined;
+	let linkIdentifier: string | undefined;
 	const toOpinions: HTMLAnchorElement[] = [];
 	for (let index = 0; index < points.length - 1; index += 1) {
 		const [start, end] = [points[index], points[index + 1]];
@@ -106,12 +106,12 @@ function paragraphElement(paragraph: ContextParagraph, cases: CasePreviewList | 
 			piece = mark;
 		}
 		if (mention && links.get(mention.id)) {
-			if (!link || linkId !== `${mention.id}@${mention.start}`) {
+			if (!link || linkIdentifier !== `${mention.id}@${mention.start}`) {
 				link = document.createElement('a');
 				link.className = 'case-link';
 				link.href = links.get(mention.id)!;
 				link.dataset.case = mention.id;
-				linkId = `${mention.id}@${mention.start}`;
+				linkIdentifier = `${mention.id}@${mention.start}`;
 				// A case's page or box is part of the site and opens in the same tab; an opinion elsewhere opens in a new one.
 				if (!/#case-|\/cases\//.test(new URL(link.href).hash + new URL(link.href).pathname)) toOpinions.push(link);
 				element.append(link);
@@ -119,7 +119,7 @@ function paragraphElement(paragraph: ContextParagraph, cases: CasePreviewList | 
 			link.append(piece);
 		} else {
 			link = undefined;
-			linkId = undefined;
+			linkIdentifier = undefined;
 			element.append(piece);
 		}
 	}
