@@ -484,22 +484,27 @@ gaming:
       Federal Register citation converted from the linked document number through the Federal Register
       API (source federal-register-api-gaming-notices).'
   - state: NC
-    status: approved
-    approved: '2021-03-25'
+    status: deemed-approved
+    approved: '2025-12-15'
     dispute_resolution_summary: After written notice the parties meet within 30 days, and if the dispute
       is unresolved within 90 days either party may pursue any remedy otherwise available under federal
       or state law, with mediation or arbitration only by mutual agreement; a separate procedure lets
       the State notify the Tribe to cease an activity it considers non-compliant, with a written response
       due within 20 days.
     dispute_resolution_locator: Section 13 (Dispute Resolution)
-    source: compact-nc-catawba-indian-nation-2021
+    source: compact-nc-catawba-indian-nation-2025-12-15
     confidence: medium
     verification: read-in-full
-    as_of: '2021-03-25'
+    as_of: '2025-12-15'
     locator: Section 13 (Dispute Resolution)
-    note: Dispute-resolution clause read from this nation's own compact document. Document is older than
-      five years; later amendments may have changed the clause. Read from the 2021 Catawba Indian Nation
-      compact with North Carolina; the Eastern Band of Cherokee Indians compact was not checked.
+    document_version:
+      document: catawba-indian-nation-north-carolina-gaming-compact
+      version: 2025-replacement
+    note: Dispute-resolution clause read from this nation's own compact document. First read from the 2021
+      Catawba Indian Nation compact with North Carolina; Section 13 of the 2025 compact that replaced it,
+      the version in effect, has the same terms (read in full and compared on 2026-11-24; see the document
+      history), so the fact cites the 2025 compact. The Eastern Band of Cherokee Indians compact was not
+      checked.
   ordinances:
   - approved: '2020-05-22'
     link: https://www.nigc.gov?wpdmdl=9452&ind=9464
