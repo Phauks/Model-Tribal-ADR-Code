@@ -101,6 +101,12 @@ NOT_PRINTED = {
     "treaty-with-the-western-shoshoni-1863": "GovInfo has no copy of 18 Stat., pt. 3, where Kappler places this treaty: its link for 18 Stat. 689 opens the Revised Statutes (pt. 1). The text is Kappler's.",
 }
 
+# Kappler and the database title these "Makah", but the texts name the Mahas, that is the Omaha, not the Makah of Washington (read on GovInfo, Nov. 24, 2026).
+PARTY_NOTES = {
+    "treaty-with-the-makah-1815": "The title is Kappler's, but the text names the \"Mahas\" (7 Stat. 129, read on GovInfo), that is the Omaha, not the Makah of Washington; the treaty is linked to the Omaha Tribe of Nebraska.",
+    "treaty-with-the-makah-tribe-1825": "The title is Kappler's, but the text is headed \"Treaty with the Maha Tribe\" (7 Stat. 282, read on GovInfo), that is the Omaha, not the Makah of Washington; the treaty is linked to the Omaha Tribe of Nebraska.",
+}
+
 
 def dump(value) -> str:
     return yaml.safe_dump(value, allow_unicode=True, sort_keys=False, width=float("inf"))
@@ -313,6 +319,8 @@ def records(args) -> None:
                 if result == "check by hand" else "")
         if treaty["data_citation"] != treaty["statutes_at_large"]:
             flag += f" The database gives {treaty['data_citation']}, a misprint."
+        if treaty["key"] in PARTY_NOTES:
+            flag += " " + PARTY_NOTES[treaty["key"]]
         record = ratified_record(treaty, copy, flag)
         twins = sorted(other["key"] for other in ratified() if other["statutes_at_large"] == treaty["statutes_at_large"] and other is not treaty
                        and other["key"] != treaty["key"])
