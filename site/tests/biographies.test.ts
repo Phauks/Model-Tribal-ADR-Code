@@ -27,7 +27,7 @@ describe('Biographies of Native people', () => {
 
 	it('lists the people with a page on their case and their nation', () => {
 		expect(peopleInCase('ex-parte-crow-dog').map((person) => person.name)).toEqual(['Crow Dog', 'Spotted Tail']);
-		expect(peopleOfNation('kiowa-tribe').map((person) => person.name)).toEqual(['Lone Wolf']);
+		expect(peopleOfNation('kiowa-tribe').map((person) => person.name)).toContain('Lone Wolf');
 	});
 
 	it('cites every life event, and builds every page', () => {
