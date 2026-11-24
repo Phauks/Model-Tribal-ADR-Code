@@ -14,7 +14,7 @@
  */
 import { error } from '@sveltejs/kit';
 import { readingLinksHtml } from '../reading-links.ts';
-import { boxSections, citationLine, essaysCiting, type CaseMention } from './case-pages.ts';
+import { boxSections, citationLine, type BoxSection, essaysCiting, type CaseMention } from './case-pages.ts';
 import { sources, type SourceRecord } from './content.ts';
 import type { FactGroup } from './justice-pages.ts';
 import { accountsOf, type AccountEntry } from './impact-accounts.ts';
@@ -31,7 +31,8 @@ export interface LawPage {
 	/** The law's full title, when its name is a short one. */
 	fullTitle?: string;
 	glance: FactGroup[];
-	bodyHtml: string;
+	/** The box's parts, each a folding section. */
+	boxSections: BoxSection[];
 	topics: string[];
 	accounts: AccountEntry[];
 	readingHtml: string;
@@ -101,7 +102,7 @@ export function lawPage(key: string): LawPage {
 		citation,
 		fullTitle: !title || named.name.startsWith(title) || citation.includes(title) ? undefined : title,
 		glance,
-		bodyHtml: box.html,
+		boxSections: box.sections,
 		topics: box.topics,
 		accounts: accountsOf({ record: key }),
 		readingHtml: readingLinksHtml(record.reading_links, saved).replace(/<button[\s\S]*?<\/button>/, ''),
