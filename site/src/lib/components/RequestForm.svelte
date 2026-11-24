@@ -162,7 +162,7 @@
 	</fieldset>
 {/snippet}
 {#snippet materialField()}
-	{@const sensitive = kind === 'restrict' || kind === 'remove'}
+	{@const sensitive = kind === 'restrict' || kind === 'remove' || kind === 'replace-name'}
 	<div class="field">
 		<label for="{prefix}material">Page, record or passage</label>
 		{#if sensitive}
@@ -188,7 +188,7 @@
 {#snippet detailsField()}
 	<div class="field">
 		<label for="{prefix}details">
-			{#if kind === 'correct'}What is wrong, and what should it say?{:else if kind === 'restrict' || kind === 'remove'}What should happen to the material?{:else if kind === 'contribute'}What would you like to offer?{:else if kind === 'add-nation'}Anything else we should know{compact ? ' (optional)' : ''}{:else if toTeam}Your message{:else}Your question{/if}
+			{#if kind === 'correct'}What is wrong, and what should it say?{:else if kind === 'replace-name'}Whose name should be replaced? Say how they appear, such as “the mother”, not their full name.{:else if kind === 'restrict' || kind === 'remove'}What should happen to the material?{:else if kind === 'contribute'}What would you like to offer?{:else if kind === 'add-nation'}Anything else we should know{compact ? ' (optional)' : ''}{:else if toTeam}Your message{:else}Your question{/if}
 		</label>
 		{@render fieldError('details')}
 		<textarea
@@ -453,7 +453,7 @@
 		{/if}
 
 		<p class="small">
-			{#if kind === 'restrict' || kind === 'remove'}
+			{#if kind === 'restrict' || kind === 'remove' || kind === 'replace-name'}
 				We never publish the material you ask us to make private or delete.
 			{:else}
 				Files and sources you send may be cited or published, because the work shows its sources.

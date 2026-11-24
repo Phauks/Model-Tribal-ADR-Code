@@ -548,6 +548,7 @@ function indexedCopies(): PublicCopy[] {
 	if (!indexedCopyCache) {
 		const indexPath = 'research/capture-index.csv';
 		const rows = existsSync(path.join(repositoryRoot, indexPath)) ? parseCsv(readText(indexPath)) : [];
+		const namesReplaced = redactedOpinionKeys();
 		indexedCopyCache = rows
 			.filter(
 				(row) =>
@@ -570,12 +571,31 @@ function indexedCopies(): PublicCopy[] {
 				title: row.title || row.key,
 				topic: row.topic || row.key.split('/')[0],
 				nations: row.nations.split(';').filter(Boolean),
-				rights: row.rights
+				rights: row.rights,
+				...(namesReplaced.has(row.key) ? { namesReplaced: true } : {})
 			}))
-			.filter((copy) => copy.links.length > 0)
+			// A redacted opinion never points to the original, which still has the names in it.
+			.map((copy) => (copy.namesReplaced ? { ...copy, links: [] } : copy))
+			.filter((copy) => copy.links.length > 0 || copy.namesReplaced)
 			.sort((first, second) => first.title.localeCompare(second.title));
 	}
 	return indexedCopyCache;
+}
+
+/**
+ * The Tribal court opinions served with protected people's names replaced by
+ * initials (research/tribal-court-opinions/redacted.csv, written by
+ * scripts/caselaw/redact_opinions.py; policy in
+ * research/analyses/2026-11-24-redaction-practices-for-opinions.md).
+ */
+export function redactedOpinionKeys(): Set<string> {
+	const file = 'research/tribal-court-opinions/redacted.csv';
+	if (!existsSync(path.join(repositoryRoot, file))) return new Set();
+	return new Set(
+		parseCsv(readText(file))
+			.filter((row) => row.status === 'redacted')
+			.map((row) => row.key)
+	);
 }
 
 /**

@@ -1,4 +1,5 @@
 <script lang="ts">
+	import Shield from '@lucide/svelte/icons/shield';
 	import Breadcrumbs from '#lib/components/Breadcrumbs.svelte';
 	import DataTable from '#lib/components/DataTable.svelte';
 	import TopicBadges from '#lib/components/TopicBadges.svelte';
@@ -11,7 +12,7 @@
 	let { data }: PageProps = $props();
 
 	const columns: TableColumn[] = [
-		{ key: 'name', header: 'Case', isRowHeader: true, sortable: true, searchable: true },
+		{ key: 'name', header: 'Case', isRowHeader: true, sortable: true, searchable: true, custom: true },
 		{ key: 'court', header: 'Court', sortable: true, searchable: true, filterable: true },
 		{ key: 'decided', header: 'Decided', type: 'date', sortable: true },
 		{ key: 'citation', header: 'Citation', sortable: true, searchable: true },
@@ -23,7 +24,7 @@
 		data.opinions.map((opinion) => ({
 			key: opinion.path,
 			cells: {
-				name: { text: opinion.name, href: opinion.path },
+				name: { text: opinion.name, href: opinion.path, values: opinion.namesReplaced ? ['names-replaced'] : [] },
 				court: { text: opinion.court },
 				decided: { text: readableDate(opinion.decided), sortValue: opinion.decided },
 				citation: { text: opinion.docket ? `${opinion.citation} (${opinion.docket})` : opinion.citation },
@@ -68,6 +69,8 @@
 	shareable
 >
 	{#snippet cell(row: TableRow, column: TableColumn)}
+		{#if column.key === 'name'}<a href={row.cells.name.href}>{row.cells.name.text}</a>{#if row.cells.name.values?.length}
+				<span class="review-badge review-badge-verified names-replaced"><Shield size={14} strokeWidth={2} aria-hidden="true" />Names replaced</span>{/if}{/if}
 		{#if column.key === 'removal'}<a href={row.cells.removal.href}>Ask to remove</a>{/if}
 		{#if column.key === mentionsColumn}<TopicBadges
 				topics={(row.cells[mentionsColumn].values ?? []).map((word) => ({ text: word, link: opinionsMentioning(data.nation.id, word) }))}
@@ -75,3 +78,11 @@
 	{/snippet}
 </DataTable>
 {/key}
+
+<style>
+	.names-replaced {
+		margin-left: var(--space-1);
+		font-size: var(--font-size-small);
+		white-space: nowrap;
+	}
+</style>
