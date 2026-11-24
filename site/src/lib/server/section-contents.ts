@@ -10,19 +10,11 @@
  */
 import { libraryOutline } from '#lib/library-pages.ts';
 import type { SectionContents } from '#lib/sidebar-outline.ts';
-import type { OutlineItem } from '#lib/site-sections.ts';
+import { aboutPages, eventsPages, nationsPages, storePages, type OutlineItem } from '#lib/site-sections.ts';
 import { publishedGlossary } from './glossary-entries.ts';
 import { storySummaries } from './stories.ts';
 
 const byLabel = (first: OutlineItem, second: OutlineItem) => first.label.localeCompare(second.label, 'en-US');
-
-export const nationsPages: OutlineItem[] = [
-	{ label: 'Map', link: '/nations/map' },
-	{ label: 'Timeline', link: '/nations/timeline' },
-	{ label: 'Find recourse', link: '/nations/recourse' },
-	{ label: 'Data and charts', link: '/nations/data' },
-	{ label: 'Federal offices', link: '/nations/federal-offices' }
-];
 
 /** The contents of each section built with the site, by the section's name (its address without the slash). */
 const builtContents: Record<string, () => SectionContents> = {
@@ -51,24 +43,9 @@ const builtContents: Record<string, () => SectionContents> = {
 		}
 	}),
 	library: () => ({ pages: libraryOutline() }),
-	events: () => ({
-		pages: [
-			{ label: 'Current and upcoming events', link: '/events' },
-			{ label: 'Past events', link: '/events?when=past' }
-		]
-	}),
-	store: () => ({
-		pages: [
-			{ label: 'Books', link: '/store#books' },
-			{ label: 'Special order', link: '/book' }
-		]
-	}),
-	about: () => ({
-		pages: [
-			{ label: 'About the project', link: '/about' },
-			{ label: 'Timeline to public review', link: '/about/timeline' }
-		]
-	})
+	events: () => ({ pages: eventsPages }),
+	store: () => ({ pages: storePages }),
+	about: () => ({ pages: aboutPages })
 };
 
 /** The sections whose essays are read from the database. */

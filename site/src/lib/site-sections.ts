@@ -46,15 +46,50 @@ export type PageOutline = {
  *
  * `opens` marks a section with pages of its own to list in the sidebar's
  * second column (src/lib/server/section-contents.ts).
+ *
+ * `pages` are a section's own few pages, known when the site is built. The
+ * list of sections folds each one open to show them, as the Workspace's
+ * categories fold (Trevor, Nov. 24, 2026); long lists, such as the nations,
+ * stay in the section's panel.
  */
-export type SiteSection = { label: string; link: string; built: boolean; gathers?: OutlineItem[]; opens?: boolean };
+export type SiteSection = {
+	label: string;
+	link: string;
+	built: boolean;
+	gathers?: OutlineItem[];
+	opens?: boolean;
+	pages?: OutlineItem[];
+};
+
+export const nationsPages: OutlineItem[] = [
+	{ label: 'Map', link: '/nations/map' },
+	{ label: 'Timeline', link: '/nations/timeline' },
+	{ label: 'Find recourse', link: '/nations/recourse' },
+	{ label: 'Data and charts', link: '/nations/data' },
+	{ label: 'Federal offices', link: '/nations/federal-offices' }
+];
+
+export const eventsPages: OutlineItem[] = [
+	{ label: 'Current and upcoming events', link: '/events' },
+	{ label: 'Past events', link: '/events?when=past' }
+];
+
+export const storePages: OutlineItem[] = [
+	{ label: 'Books', link: '/store#books' },
+	{ label: 'Special order', link: '/book' }
+];
+
+export const aboutPages: OutlineItem[] = [
+	{ label: 'About the project', link: '/about' },
+	{ label: 'Timeline to public review', link: '/about/timeline' }
+];
 
 // The site is a repository of Native legal information first, so the
 // nations, the library and the glossary lead, and the model code follows the
 // writing about it (Trevor, Nov. 24, 2026).
 export const siteSections: SiteSection[] = [
-	{ label: 'Nations', link: '/nations', built: true, opens: true },
-	{ label: 'Library', link: '/library', built: true, gathers: libraryOutline(), opens: true },
+	{ label: 'Nations', link: '/nations', built: true, opens: true, pages: nationsPages },
+	{ label: 'Library', link: '/library', built: true, gathers: libraryOutline(), opens: true, pages: libraryOutline() },
 	{ label: 'Glossary', link: '/glossary', built: true, opens: true },
 	{ label: 'Foundations', link: '/foundations', built: true, opens: true },
 	{ label: 'Essays', link: '/essays', built: true, opens: true },
@@ -62,13 +97,13 @@ export const siteSections: SiteSection[] = [
 	{ label: 'Methods and stories', link: '/stories', built: true, opens: true },
 	{ label: 'Model code', link: '/code', built: false },
 	{ label: 'Peacemaking', link: '/peacemaking', built: false },
-	{ label: 'Events', link: '/events', built: true, opens: true },
-	{ label: 'About', link: '/about', built: true, opens: true },
+	{ label: 'Events', link: '/events', built: true, opens: true, pages: eventsPages },
+	{ label: 'About', link: '/about', built: true, opens: true, pages: aboutPages },
 	{ label: 'Sponsorship', link: '/sponsor', built: true },
 	// Contribute moved here from the masthead, which keeps only its buttons (Trevor, Nov. 24, 2026).
 	{ label: 'Contribute', link: '/requests?kind=contribute', built: true },
 	// The Store gathers the special-order page for books, which keeps its address (Trevor, Nov. 23, 2026).
-	{ label: 'Store', link: '/store', built: true, gathers: [{ label: 'Special order', link: '/book' }], opens: true }
+	{ label: 'Store', link: '/store', built: true, gathers: [{ label: 'Special order', link: '/book' }], opens: true, pages: storePages }
 ];
 
 /** The section a path belongs to, if any. */
