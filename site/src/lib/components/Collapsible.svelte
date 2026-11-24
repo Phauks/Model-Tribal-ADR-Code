@@ -9,6 +9,11 @@
 
 	Use:
 	<Collapsible heading="Published law" identifier="law-heading">…</Collapsible>
+
+	A section can put a few icon buttons on its heading row with the actions
+	snippet, such as a nation's documents to download or save (Trevor picked
+	this on Nov. 24, 2026). They sit beside the summary, not inside it, because
+	a control inside the heading's own button could not be reached on its own.
 -->
 <script lang="ts">
 	import type { Snippet } from 'svelte';
@@ -23,19 +28,39 @@
 		class?: string;
 		/** A count shown small after the heading, such as the number of sources. */
 		count?: number;
+		/** Icon buttons shown at the end of the heading row. */
+		actions?: Snippet;
 		children: Snippet;
 	}
 
-	let { heading, identifier, class: extraClass = '', count, children }: Props = $props();
+	let { heading, identifier, class: extraClass = '', count, actions, children }: Props = $props();
+
+	// The heading leaves room for the buttons, and the buttons take the
+	// heading row's height, both measured once the page runs.
+	let actionsWidth = $state(0);
+	let summaryHeight = $state(0);
 </script>
 
-<details class="collapsible {extraClass}" data-section={identifier} open>
-	<summary>
-		<span class="fold-mark no-print"><ChevronDown size={24} /></span>
-		<h2 id={identifier}>{heading}{#if count !== undefined}<CountBadge {count} />{/if}</h2>
-	</summary>
-	{@render children()}
-</details>
+{#snippet section(summaryRoom: number | undefined)}
+	<details class="collapsible {extraClass}" data-section={identifier} open>
+		<summary style:padding-inline-end={summaryRoom ? `${summaryRoom}px` : undefined} bind:clientHeight={summaryHeight}>
+			<span class="fold-mark no-print"><ChevronDown size={24} /></span>
+			<h2 id={identifier}>{heading}{#if count !== undefined}<CountBadge {count} />{/if}</h2>
+		</summary>
+		{@render children()}
+	</details>
+{/snippet}
+
+{#if actions}
+	<div class="with-actions">
+		{@render section(actionsWidth)}
+		<div class="heading-actions no-print" style:height={summaryHeight ? `${summaryHeight}px` : undefined} bind:clientWidth={actionsWidth}>
+			{@render actions()}
+		</div>
+	</div>
+{:else}
+	{@render section(undefined)}
+{/if}
 
 <style>
 	/*
@@ -76,6 +101,25 @@
 
 	summary h2 {
 		margin: var(--space-3) 0;
+	}
+
+	.with-actions {
+		position: relative;
+		margin-top: var(--space-5);
+	}
+
+	.with-actions > .collapsible {
+		margin-top: 0;
+	}
+
+	.heading-actions {
+		position: absolute;
+		inset-block-start: 0;
+		inset-inline-end: 0;
+		display: flex;
+		align-items: center;
+		gap: var(--space-1);
+		height: calc(var(--layout-target-minimum) + 2 * var(--space-3));
 	}
 
 	.fold-mark {

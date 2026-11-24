@@ -285,14 +285,16 @@
 		     reproduced, and each document with recorded versions, oldest first
 		     (decision record 0018). -->
 		<div data-print-part="documentHistory">
-			<Collapsible heading="Laws and agreements" identifier="law-heading">
+			<Collapsible heading="Laws and agreements" identifier="law-heading" actions={data.page.heldCopies.count > 0 ? documentTools : undefined}>
 				{#if data.law.length > 0}
 					<FactGroups groups={data.law} />
 				{/if}
 				<DocumentHistoryList documents={data.documents} />
 				<div class="nation-slot" data-nation-slot="law"></div>
-				<NationDocumentsOffline nation={data.page.id} held={data.page.heldCopies} />
 			</Collapsible>
+			{#snippet documentTools()}
+				<NationDocumentsOffline nation={data.page.id} held={data.page.heldCopies} />
+			{/snippet}
 		</div>
 
 		<!-- 7. Jurisdiction: Public Law 280, Indian Child Welfare Act agents and the like -->
