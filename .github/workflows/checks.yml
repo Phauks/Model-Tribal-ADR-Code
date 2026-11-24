@@ -195,6 +195,9 @@ jobs:
           cache: npm
           cache-dependency-path: site/package-lock.json
       - run: npm ci
+      # Reads only the source, so it runs before the build and fails fast.
+      - name: Pick-one fields and data tables use the shared components
+        run: npm run check:shared-components
       - name: Build
         run: npm run build
       - name: Check that the patched Worker starts and its handlers answer (tools/check-built-worker.mjs)

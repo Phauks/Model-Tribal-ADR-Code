@@ -8,6 +8,7 @@
 	/workspace/changes/<change>?/hide.
 -->
 <script lang="ts">
+	import Dropdown from '#lib/components/Dropdown.svelte';
 	import { hideReasons } from '#lib/page-history.ts';
 	import { requestKindLabels, isRequestKind } from '#lib/requests.ts';
 
@@ -34,6 +35,15 @@
 		const rest = label.replace(/^Hidden:? /, '');
 		return rest.charAt(0).toLocaleUpperCase('en-US') + rest.slice(1);
 	}
+
+	const reasonChoices = Object.entries(hideReasons).map(([value, label]) => ({ value, label: choiceLabel(label) }));
+	const requestChoices = $derived([
+		{ value: '', label: 'None' },
+		...requests.map((request) => ({
+			value: request.reference,
+			label: `${request.reference} · ${isRequestKind(request.kind) ? requestKindLabels[request.kind] : request.kind}`
+		}))
+	]);
 </script>
 
 <div class="hide-fields">
@@ -50,21 +60,10 @@
 		<span><strong>Hide who made it</strong><span class="check-hint">Shows “name hidden” instead.</span></span>
 	</label>
 	<div class="field">
-		<label for="{prefix}-reason">Reason readers see</label>
-		<select id="{prefix}-reason" name="reason">
-			{#each Object.entries(hideReasons) as [value, label] (value)}
-				<option {value} selected={hidden ? hidden.reason === value : value === 'nation-request'}>{choiceLabel(label)}</option>
-			{/each}
-		</select>
+		<Dropdown label="Reason readers see" id="{prefix}-reason" name="reason" choices={reasonChoices} value={hidden ? hidden.reason : 'nation-request'} />
 	</div>
 	<div class="field">
-		<label for="{prefix}-request">Request it answers (private)</label>
-		<select id="{prefix}-request" name="request">
-			<option value="">None</option>
-			{#each requests as request (request.reference)}
-				<option value={request.reference}>{request.reference} · {isRequestKind(request.kind) ? requestKindLabels[request.kind] : request.kind}</option>
-			{/each}
-		</select>
+		<Dropdown label="Request it answers (private)" id="{prefix}-request" name="request" choices={requestChoices} value="" />
 	</div>
 	<p class="hide-note">
 		The change stays in the list with a line through it, the way a removed version shows on wikis. The private activity log
@@ -102,17 +101,6 @@
 
 	.field {
 		margin-block: var(--space-3);
-	}
-
-	.field label {
-		display: block;
-		font-weight: var(--font-weight-semibold);
-		margin-bottom: var(--space-1);
-	}
-
-	.field select {
-		width: 100%;
-		max-width: none;
 	}
 
 	.hide-note {

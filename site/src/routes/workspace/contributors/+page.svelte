@@ -1,5 +1,6 @@
 <script lang="ts">
-	import { keyboardScroll } from '#lib/keyboard-scroll.ts';
+	import DataTable from '#lib/components/DataTable.svelte';
+	import type { TableColumn, TableRow } from '#lib/tables/table-definition.ts';
 	import {
 		creditSectionLabels,
 		creditSections,
@@ -11,7 +12,31 @@
 
 	let { data }: PageProps = $props();
 
-
+	const columns: TableColumn[] = [
+		{ key: 'name', header: 'Name', isRowHeader: true, sortable: true, searchable: true },
+		{ key: 'status', header: 'Status', sortable: true, filterable: true },
+		{ key: 'interests', header: 'Would like to', searchable: true, filterable: true },
+		{ key: 'nations', header: 'Native nations', searchable: true },
+		{ key: 'sent', header: 'Sent', type: 'date', sortable: true }
+	];
+	const rows: TableRow[] = $derived(
+		data.profiles.map((profile) => {
+			const interests = profile.interests.map((interest) => interestLabels[interest]);
+			return {
+				key: profile.identifier,
+				cells: {
+					name: { text: profile.name, href: `/workspace/contributors/${profile.identifier}` },
+					status: {
+						text: `${profileStatusLabels[profile.status]}${profile.hasWorkspaceAccess ? '; has workspace access' : ''}`,
+						values: [profileStatusLabels[profile.status]]
+					},
+					interests: { text: interests.join('; '), values: interests },
+					nations: { text: profile.nations.join('; ') },
+					sent: { text: mediumDate(profile.submittedAt), sortValue: profile.submittedAt ?? undefined }
+				}
+			};
+		})
+	);
 </script>
 
 <svelte:head>
@@ -27,32 +52,7 @@
 {#if data.profiles.length === 0}
 	<p>Nobody has signed up yet. People sign up at <a href="/join">/join</a>.</p>
 {:else}
-	<div class="table-scroll" role="region" aria-label="Table: contributors" {@attach keyboardScroll}>
-		<table>
-			<thead>
-				<tr>
-					<th scope="col">Name</th>
-					<th scope="col">Status</th>
-					<th scope="col">Would like to</th>
-					<th scope="col">Native nations</th>
-					<th scope="col">Sent</th>
-				</tr>
-			</thead>
-			<tbody>
-				{#each data.profiles as profile (profile.identifier)}
-					<tr>
-						<td><a href="/workspace/contributors/{profile.identifier}">{profile.name}</a></td>
-						<td>
-							{profileStatusLabels[profile.status]}{profile.hasWorkspaceAccess ? '; has workspace access' : ''}
-						</td>
-						<td>{profile.interests.map((interest) => interestLabels[interest]).join('; ')}</td>
-						<td>{profile.nations.join('; ')}</td>
-						<td>{mediumDate(profile.submittedAt)}</td>
-					</tr>
-				{/each}
-			</tbody>
-		</table>
-	</div>
+	<DataTable identifier="contributors" label="Table: contributors" {columns} {rows} rowName={['person', 'people']} filters />
 {/if}
 
 <section>

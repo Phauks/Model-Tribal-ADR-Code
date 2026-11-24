@@ -7,6 +7,7 @@
 	import CalendarIcon from '@lucide/svelte/icons/calendar';
 	import Check from '@lucide/svelte/icons/check';
 	import Breadcrumbs from '#lib/components/Breadcrumbs.svelte';
+	import Dropdown from '#lib/components/Dropdown.svelte';
 	import ChevronRight from '@lucide/svelte/icons/chevron-right';
 	import EyeOff from '@lucide/svelte/icons/eye-off';
 	import Lock from '@lucide/svelte/icons/lock';
@@ -107,6 +108,11 @@
 	function sizeLabel(size: number): string {
 		return size === 0 ? 'Any size' : `At least ${size.toLocaleString('en-US')} bytes`;
 	}
+
+	const kindChoices = [{ value: '', label: 'All kinds' }, ...pageKinds.map((kind) => ({ value: kind, label: pageKindFilterLabels[kind] }))];
+	const whoChoices = $derived([{ value: '', label: 'Anyone' }, ...data.people.map((person) => ({ value: person.key, label: person.name }))]);
+	const dateChoices = dayChoices.map((choice) => ({ value: String(choice), label: dayLabels[choice] }));
+	const changeSizeChoices = sizeChoices.map((choice) => ({ value: String(choice), label: sizeLabel(choice) }));
 
 	/** Changes to one page in a day are gathered; so are the pages one bulk update touched. */
 	function groupsOf(items: ChangeView[]) {
@@ -364,44 +370,16 @@
 				</span>
 			</div>
 			<div class="field">
-				<label for="changes-kind">Kind of page</label>
-				<select id="changes-kind" name="kind">
-					<option value="">All kinds</option>
-					{#each pageKinds as kind (kind)}
-						<option value={kind} selected={filters.kinds.length === 1 && filters.kinds[0] === kind}>{pageKindFilterLabels[kind]}</option>
-					{/each}
-				</select>
+				<Dropdown label="Kind of page" name="kind" choices={kindChoices} value={filters.kinds.length === 1 ? filters.kinds[0] : ''} />
 			</div>
 			<div class="field">
-				<label for="changes-who">Who</label>
-				<span class="with-icon">
-					<User size={16} aria-hidden="true" />
-					<select id="changes-who" name="who">
-						<option value="">Anyone</option>
-						{#each data.people as person (person.key)}
-							<option value={person.key} selected={filters.who === person.key}>{person.name}</option>
-						{/each}
-					</select>
-				</span>
+				<Dropdown label="Who" name="who" icon={User} choices={whoChoices} value={filters.who ?? ''} />
 			</div>
 			<div class="field">
-				<label for="changes-days">Dates</label>
-				<span class="with-icon">
-					<CalendarIcon size={16} aria-hidden="true" />
-					<select id="changes-days" name="days">
-						{#each dayChoices as choice (choice)}
-							<option value={choice} selected={filters.days === choice}>{dayLabels[choice]}</option>
-						{/each}
-					</select>
-				</span>
+				<Dropdown label="Dates" name="days" icon={CalendarIcon} choices={dateChoices} value={String(filters.days)} />
 			</div>
 			<div class="field">
-				<label for="changes-size">Size of change</label>
-				<select id="changes-size" name="size">
-					{#each sizeChoices as choice (choice)}
-						<option value={choice} selected={filters.size === choice}>{sizeLabel(choice)}</option>
-					{/each}
-				</select>
+				<Dropdown label="Size of change" name="size" choices={changeSizeChoices} value={String(filters.size)} />
 			</div>
 		</div>
 		<fieldset class="choices">
@@ -568,10 +546,25 @@
 		margin-bottom: var(--space-1);
 	}
 
-	.field select,
 	.field input {
 		width: 100%;
 		margin: 0;
+	}
+
+	/* The shared dropdowns sit in the row as the other filters do: no space above, the small label, the full cell. */
+	.field :global(.dropdown) {
+		margin: 0;
+	}
+
+	.field :global(.dropdown-label) {
+		font-weight: var(--font-weight-semibold);
+		font-size: var(--font-size-small);
+		color: var(--color-ink-muted);
+	}
+
+	.field :global(.dropdown-control),
+	.field :global(.dropdown-fallback select) {
+		width: 100%;
 	}
 
 	/* A Lucide icon inside the box's left edge: search, person, calendar. */
@@ -589,7 +582,6 @@
 		pointer-events: none;
 	}
 
-	.with-icon select,
 	.with-icon input {
 		padding-inline-start: calc(var(--space-2) + 16px + var(--space-2));
 	}

@@ -1,5 +1,6 @@
 <script lang="ts">
 	import DataTable from '#lib/components/DataTable.svelte';
+	import Dropdown from '#lib/components/Dropdown.svelte';
 	import { decisionLabels, subjectKindLabels, subjectKinds } from '#lib/permissions.ts';
 	import type { TableColumn, TableRow } from '#lib/tables/table-definition.ts';
 	import type { PageProps } from './$types';
@@ -7,6 +8,10 @@
 
 	let { data }: PageProps = $props();
 	const searching = $derived(data.query !== '' || data.kind !== undefined);
+	const kindChoices = $derived([
+		{ value: '', label: 'Any' },
+		...subjectKinds.filter((kind) => data.counts[kind] > 0).map((kind) => ({ value: kind as string, label: `${subjectKindLabels[kind]} (${data.counts[kind]})` }))
+	]);
 
 	const columns: TableColumn[] = [
 		{ key: 'name', header: 'Name', isRowHeader: true, sortable: true },
@@ -51,15 +56,7 @@
 		<input type="search" id="search" name="search" value={data.query} />
 	</div>
 	<div class="field">
-		<label for="kind">Kind</label>
-		<select id="kind" name="kind">
-			<option value="">Any</option>
-			{#each subjectKinds as kind (kind)}
-				{#if data.counts[kind] > 0}
-					<option value={kind} selected={data.kind === kind}>{subjectKindLabels[kind]} ({data.counts[kind]})</option>
-				{/if}
-			{/each}
-		</select>
+		<Dropdown label="Kind" id="kind" name="kind" choices={kindChoices} value={data.kind ?? ''} />
 	</div>
 	<button class="button" type="submit">Search</button>
 </form>

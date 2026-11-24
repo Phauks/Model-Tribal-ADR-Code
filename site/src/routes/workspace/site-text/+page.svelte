@@ -7,6 +7,9 @@
 	import { enhance } from '$app/forms';
 	import { dateTime } from '#lib/change-dates.ts';
 	import CountBadge from '#lib/components/CountBadge.svelte';
+	import DataTable from '#lib/components/DataTable.svelte';
+	import Dropdown from '#lib/components/Dropdown.svelte';
+	import type { TableColumn, TableRow } from '#lib/tables/table-definition.ts';
 	import type { PageProps } from './$types';
 
 	let { data, form }: PageProps = $props();
@@ -14,6 +17,48 @@
 	const filterLabels = { all: 'All', edited: 'Edited', drafts: 'Drafts', gone: 'No longer on the site' } as const;
 
 	const live = $derived(data.built >= data.latest);
+
+	const filterChoices = Object.entries(filterLabels).map(([value, label]) => ({ value, label }));
+
+	const publicationColumns: TableColumn[] = [
+		{ key: 'publication', header: 'Publication', type: 'number', sortable: true, custom: true },
+		{ key: 'changes', header: 'Changes', type: 'number', sortable: true },
+		{ key: 'by', header: 'By', sortable: true },
+		{ key: 'when', header: 'When', type: 'date', sortable: true },
+		{ key: 'undo', header: 'Undo', custom: true, hiddenHeader: true, keepOutOfDownload: true }
+	];
+	const publicationRows: TableRow[] = $derived(
+		data.publications.map((publication) => ({
+			key: String(publication.number),
+			cells: {
+				publication: { text: `${publication.number}${publication.undoes ? ` · undid ${publication.undoes}` : ''}`, sortValue: publication.number },
+				changes: { text: String(publication.changes), sortValue: publication.changes },
+				by: { text: publication.personName ?? '' },
+				when: { text: dateTime(publication.publishedAt), sortValue: publication.publishedAt },
+				undo: { text: '' }
+			}
+		}))
+	);
+	const publications = $derived(new Map(data.publications.map((publication) => [String(publication.number), publication])));
+
+	const textColumns: TableColumn[] = [
+		{ key: 'text', header: 'Text', isRowHeader: true, sortable: true, custom: true },
+		{ key: 'where', header: 'Where', sortable: true },
+		{ key: 'status', header: 'Status', sortable: true, custom: true }
+	];
+	const statusOf = (row: (typeof data.rows)[number]) =>
+		[row.gone ? 'No longer on the site' : '', row.draft !== null ? 'Draft' : '', row.edited ? 'Edited' : ''].filter(Boolean);
+	const textRows: TableRow[] = $derived(
+		data.rows.map((row) => ({
+			key: row.key,
+			cells: {
+				text: { text: row.attribute ? `${row.words} · ${row.attribute}` : row.words, sortValue: row.words, href: `/workspace/site-text/${row.key}` },
+				where: { text: row.place },
+				status: { text: statusOf(row).join(', ') }
+			}
+		}))
+	);
+	const texts = $derived(new Map(data.rows.map((row) => [row.key, row])));
 </script>
 
 <svelte:head>
@@ -81,29 +126,27 @@
 	{#if data.publications.length === 0}
 		<p class="muted">None</p>
 	{:else}
-		<div class="table-scroll">
-			<table>
-				<thead><tr><th scope="col">Publication</th><th scope="col">Changes</th><th scope="col">By</th><th scope="col">When</th><th scope="col"><span class="visually-hidden">Undo</span></th></tr></thead>
-				<tbody>
-					{#each data.publications as publication, index (publication.number)}
-						<tr>
-							<td>{publication.number}{#if publication.undoes}<span class="muted"> · undid {publication.undoes}</span>{/if}</td>
-							<td>{publication.changes}</td>
-							<td>{publication.personName ?? ''}</td>
-							<td>{dateTime(publication.publishedAt)}</td>
-							<td>
-								{#if index === 0 && data.canPublish}
-									<form method="POST" action="?/undo" use:enhance>
-										<input type="hidden" name="publication" value={publication.number} />
-										<button class="icon-button" type="submit" title="Undo publication {publication.number}"><Undo2 size={20} aria-hidden="true" /><span class="visually-hidden">Undo publication {publication.number}</span></button>
-									</form>
-								{/if}
-							</td>
-						</tr>
-					{/each}
-				</tbody>
-			</table>
-		</div>
+		<DataTable
+			identifier="publications"
+			label="Table: publications"
+			columns={publicationColumns}
+			rows={publicationRows}
+			defaultSort={{ key: 'publication', direction: 'descending' }}
+			rowName={['publication', 'publications']}
+		>
+			{#snippet cell(row, column)}
+				{@const publication = publications.get(row.key)}
+				{#if publication && column.key === 'publication'}
+					{publication.number}{#if publication.undoes}<span class="muted"> · undid {publication.undoes}</span>{/if}
+				{:else if publication && publication.number === data.publications[0]?.number && data.canPublish}
+					<!-- Only the latest publication can be undone. -->
+					<form method="POST" action="?/undo" use:enhance>
+						<input type="hidden" name="publication" value={publication.number} />
+						<button class="icon-button" type="submit" title="Undo publication {publication.number}"><Undo2 size={20} aria-hidden="true" /><span class="visually-hidden">Undo publication {publication.number}</span></button>
+					</form>
+				{/if}
+			{/snippet}
+		</DataTable>
 	{/if}
 </section>
 
@@ -112,33 +155,28 @@
 	<form class="search" method="GET" role="search">
 		<label class="visually-hidden" for="text-search">Search the site text</label>
 		<input id="text-search" type="search" name="q" value={data.query} />
-		<label class="visually-hidden" for="text-filter">Show</label>
-		<select id="text-filter" name="show" value={data.filter}>
-			{#each Object.entries(filterLabels) as [value, label] (value)}
-				<option {value}>{label}</option>
-			{/each}
-		</select>
+		<Dropdown label="Show" hideLabel id="text-filter" name="show" choices={filterChoices} value={data.filter} />
 		<button class="icon-button" type="submit" title="Search"><Search size={20} aria-hidden="true" /><span class="visually-hidden">Search</span></button>
 	</form>
-	<p class="muted small">{data.rows.length < data.total ? `${data.rows.length.toLocaleString('en-US')} of ${data.total.toLocaleString('en-US')}` : data.total.toLocaleString('en-US')}</p>
-	<div class="table-scroll">
-		<table>
-			<thead><tr><th scope="col">Text</th><th scope="col">Where</th><th scope="col">Status</th></tr></thead>
-			<tbody>
-				{#each data.rows as row (row.key)}
-					<tr>
-						<td><a href="/workspace/site-text/{row.key}">{row.words}</a>{#if row.attribute}<span class="muted small"> · {row.attribute}</span>{/if}</td>
-						<td>{row.place}</td>
-						<td>
-							{#if row.gone}<span class="tag">No longer on the site</span>{/if}
-							{#if row.draft !== null}<span class="tag draft">Draft</span>{/if}
-							{#if row.edited}<span class="tag">Edited</span>{/if}
-						</td>
-					</tr>
-				{/each}
-			</tbody>
-		</table>
-	</div>
+	<DataTable
+		identifier="site-text"
+		label="Table: site text"
+		columns={textColumns}
+		rows={textRows}
+		total={data.total}
+		rowName={['text', 'texts']}
+	>
+		{#snippet cell(row, column)}
+			{@const text = texts.get(row.key)}
+			{#if text && column.key === 'text'}
+				<a href="/workspace/site-text/{text.key}">{text.words}</a>{#if text.attribute}<span class="muted small"> · {text.attribute}</span>{/if}
+			{:else if text}
+				{#if text.gone}<span class="tag">No longer on the site</span>{/if}
+				{#if text.draft !== null}<span class="tag draft">Draft</span>{/if}
+				{#if text.edited}<span class="tag">Edited</span>{/if}
+			{/if}
+		{/snippet}
+	</DataTable>
 </section>
 
 <style>
@@ -199,6 +237,9 @@
 	}
 	.search input {
 		flex: 1 1 16rem;
+	}
+	.search :global(.dropdown) {
+		margin: 0;
 	}
 	.tag {
 		display: inline-block;

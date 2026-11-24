@@ -1,5 +1,6 @@
 <script lang="ts">
-	import { keyboardScroll } from '#lib/keyboard-scroll.ts';
+	import DataTable from '#lib/components/DataTable.svelte';
+	import type { TableColumn, TableRow } from '#lib/tables/table-definition.ts';
 	import { teamLevelLabels } from '#lib/nation-teams.ts';
 	import { decisionLabels, roleDescriptions, roleLabels, subjectKindLabels } from '#lib/permissions.ts';
 	import { requestKindLabels, requestStatusLabels } from '#lib/requests.ts';
@@ -8,9 +9,31 @@
 
 	let { data }: PageProps = $props();
 
+	const overdueColumns: TableColumn[] = [
+		{ key: 'reference', header: 'Reference', isRowHeader: true, sortable: true },
+		{ key: 'kind', header: 'Kind', sortable: true },
+		{ key: 'status', header: 'Status', sortable: true },
+		{ key: 'past', header: 'Past target', type: 'date', sortable: true, custom: true }
+	];
+
 	const overdue = $derived(
 		(data.openRequests ?? []).filter((request) => request.deadlines.some((deadline) => deadline.overdue))
 	);
+	const overdueRows: TableRow[] = $derived(
+		overdue.map((request) => {
+			const past = request.deadlines.filter((deadline) => deadline.overdue);
+			return {
+				key: request.identifier,
+				cells: {
+					reference: { text: request.reference, href: `/workspace/requests/${request.reference}` },
+					kind: { text: requestKindLabels[request.kind] },
+					status: { text: requestStatusLabels[request.status] },
+					past: { text: past.map((deadline) => `${deadline.label} ${mediumDate(deadline.due)}`).join('; '), sortValue: past[0]?.due }
+				}
+			};
+		})
+	);
+	const overdueByKey = $derived(new Map(overdue.map((request) => [request.identifier, request])));
 
 </script>
 
@@ -141,27 +164,20 @@
 				{overdue.length} past a target date. <a href="/workspace/requests">See all requests</a>
 			</p>
 			{#if overdue.length > 0}
-				<div class="table-scroll" role="region" aria-label="Table: requests past a target date" {@attach keyboardScroll}>
-					<table>
-						<thead>
-							<tr><th scope="col">Reference</th><th scope="col">Kind</th><th scope="col">Status</th><th scope="col">Past target</th></tr>
-						</thead>
-						<tbody>
-							{#each overdue as request (request.identifier)}
-								<tr>
-									<td><a href="/workspace/requests/{request.reference}">{request.reference}</a></td>
-									<td>{requestKindLabels[request.kind]}</td>
-									<td>{requestStatusLabels[request.status]}</td>
-									<td>
-										{#each request.deadlines.filter((deadline) => deadline.overdue) as deadline (deadline.label)}
-											<div>{deadline.label} {mediumDate(deadline.due)}</div>
-										{/each}
-									</td>
-								</tr>
-							{/each}
-						</tbody>
-					</table>
-				</div>
+				<DataTable
+					identifier="overdue-requests"
+					label="Table: requests past a target date"
+					columns={overdueColumns}
+					rows={overdueRows}
+					rowName={['request', 'requests']}
+				>
+					{#snippet cell(row)}
+						{@const request = overdueByKey.get(row.key)}
+						{#each request?.deadlines.filter((deadline) => deadline.overdue) ?? [] as deadline (deadline.label)}
+							<div>{deadline.label} {mediumDate(deadline.due)}</div>
+						{/each}
+					{/snippet}
+				</DataTable>
 			{/if}
 		{/if}
 	</section>
