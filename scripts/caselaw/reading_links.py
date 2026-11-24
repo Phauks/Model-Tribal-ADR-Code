@@ -220,7 +220,24 @@ def oyez_link(found: dict) -> str | None:
             same_docket = found.get("docket") and case.get("docket_number") == found["docket"]
             if same_cite or same_docket:
                 return f"https://www.oyez.org/cases/{case['term']}/{case['docket_number']}"
+    # Oyez files cases decided before 1955 under a span of terms ("1789-1850"),
+    # some with no docket number; their pages are at the address the record's
+    # own "href" gives ("cases/1789-1850/31us515").
+    if found.get("reporter") == "U.S.":
+        for span in oyez_spans:
+            if span not in oyez_span_cases:
+                oyez_span_cases[span] = get_json(f"https://api.oyez.org/cases?per_page=0&filter=term:{span}") or []
+            for case in oyez_span_cases[span]:
+                cited = case.get("citation") or {}
+                if str(cited.get("volume")) == found.get("volume") and str(cited.get("page")) == found.get("page"):
+                    path = urllib.parse.urlsplit(case.get("href") or "").path
+                    if path.startswith("/cases/"):
+                        return f"https://www.oyez.org{path}"
     return None
+
+
+oyez_spans = ("1789-1850", "1850-1900", "1900-1940", "1940-1955")
+oyez_span_cases: dict[str, list] = {}
 
 
 def ecfr_exists(found: dict) -> bool:

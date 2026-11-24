@@ -521,9 +521,8 @@ export interface NationCase {
  * or as what the case is about, oldest first (Trevor, Nov. 23, 2026: "nations
  * in cases should be linkable to the nation, and vice versa from the nation
  * page"). The case's own record says how it names the nation
- * (nations_in_case); each case links its box in an essay, the copy of the
- * opinion on this site or the opinion where it was published, the same as a
- * case preview, and is listed under References like any other fact.
+ * (nations_in_case); each case links its own page (/cases/<key>), the same
+ * as a case preview, and is listed under References like any other fact.
  */
 function nationCases(record: NationRecord, sources: SourceUses): NationCase[] {
 	const section = casesHeading;

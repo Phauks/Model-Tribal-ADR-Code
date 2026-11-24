@@ -13,6 +13,7 @@
 import { displayName } from '../nation-labels.ts';
 import { escapeHtml } from './markdown.ts';
 import { courtPath } from './supreme-courts.ts';
+import { opinionLabels, surname } from '../case-opinions.ts';
 
 export type FactLine = [label: string, html: string];
 
@@ -39,16 +40,6 @@ export interface CaseRecord {
 	};
 }
 
-const opinionLabels: Record<string, string> = {
-	majority: 'opinion of the Court',
-	plurality: 'plurality opinion',
-	concurrence: 'concurring opinion',
-	'special concurrence': 'opinion concurring in the judgment',
-	'concurrence in the result': 'concurring in the result',
-	judgment: 'opinion announcing the judgment',
-	dissent: 'dissenting opinion'
-};
-
 // Decisions with no signed opinion of the Court, shown as their own line.
 const decisionLabels: Record<string, string> = {
 	'per curiam': 'Per curiam',
@@ -71,10 +62,6 @@ const courtDateLabels = [
 ] as const;
 
 const months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
-
-function surname(name: string): string {
-	return name.replace(/,?\s+(?:Jr\.|Sr\.|II|III)$/, '').trim().split(/\s+/).pop() ?? name;
-}
 
 function justiceList(justices: Justice[]): string {
 	return justices

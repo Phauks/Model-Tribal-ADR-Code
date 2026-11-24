@@ -1,6 +1,9 @@
 <!--
-	MOCKUP (thread "Give every case its own page", Nov. 24, 2026): a page for
-	one court case (src/lib/server/case-pages.ts). Not for merging as it stands.
+	@component
+	One court case's page (src/lib/server/case-pages.ts; Trevor approved the
+	mockup on Nov. 24, 2026, design/case-pages/). A record page: the case's
+	facts in At a glance, its box's parts as sections, then its opinions, the
+	parties and nations, where to read it, and where this site cites it.
 -->
 <script lang="ts">
 	import Breadcrumbs from '#lib/components/Breadcrumbs.svelte';
@@ -13,35 +16,56 @@
 	import type { PageProps } from './$types';
 
 	let { data }: PageProps = $props();
-	const trail = $derived(
-		data.court
+	const trail = $derived([
+		{ label: 'Library', href: '/library' },
+		...(data.court
 			? [
-					{ label: 'Library', href: '/library' },
 					{ label: 'Supreme Court', href: '/supreme-court' },
 					{ label: data.court.name, href: data.court.link }
 				]
-			: [{ label: 'Library', href: '/library' }]
-	);
+			: [])
+	]);
+	const nationPageLinks = $derived(new Set(data.nationPages.map((nation) => nation.link)));
 	const citedCount = $derived(data.essays.length + data.nationPages.length + (data.court ? 1 : 0));
 </script>
 
 <svelte:head>
 	<title>{data.name} · Cases · Model Tribal ADR Code</title>
+	<meta name="description" content="{data.name}, {data.citation}: what the court decided, its opinions, the nations it names and where to read it." />
 </svelte:head>
 
 <Breadcrumbs {trail} />
 
-<RecordPage {glance}>
+<RecordPage glance={data.facts.length > 0 ? glance : undefined}>
 	{#snippet introduction()}
 		<h1><i>{data.name}</i></h1>
-		<p class="lead case-citation">{data.citation}</p>
+		{#if data.citation}<p class="lead case-citation">{data.citation}</p>{/if}
 		{#if data.topics.length > 0}<div class="badge-line"><TopicBadges topics={data.topics.map((text) => ({ text }))} /></div>{/if}
 	{/snippet}
 
-	<div class="essay-text case-body" use:quoteContext={data.bodyHtml}>
-		<!-- eslint-disable-next-line svelte/no-at-html-tags -- built from the repository's own Markdown -->
-		{@html data.bodyHtml}
-	</div>
+	{#if data.bodyHtml}
+		<div class="essay-text case-body" use:quoteContext={data.bodyHtml}>
+			<!-- eslint-disable-next-line svelte/no-at-html-tags -- built from the repository's own Markdown -->
+			{@html data.bodyHtml}
+		</div>
+	{/if}
+
+	{#if data.opinions.length > 0}
+		<section aria-labelledby="opinions">
+			<h2 id="opinions">Opinions <CountBadge count={data.opinions.length} /></h2>
+			<dl class="summary-list">
+				{#each data.opinions as opinion, index (index)}
+					<div>
+						<dt>{opinion.title}</dt>
+						<dd>
+							{opinion.justice}{#if opinion.page}{opinion.justice ? ', ' : ''}{#if opinion.link}<a href={opinion.link}>starting at page {opinion.page}</a>{:else}starting at page {opinion.page}{/if}{/if}
+							{#if opinion.note}<span class="fact-detail muted small">{opinion.note}</span>{/if}
+						</dd>
+					</div>
+				{/each}
+			</dl>
+		</section>
+	{/if}
 
 	{#if data.caption || data.nations.length > 0}
 		<section aria-labelledby="parties">
@@ -55,8 +79,11 @@
 				{/if}
 				{#each data.nations as nation (nation.id)}
 					<div>
-						<dt><a href="/nations/{nation.id}">{nation.name}</a></dt>
-						<dd>{nation.role}{#if nation.namedAs}<span class="muted">, named as {nation.namedAs}</span>{/if}</dd>
+						<dt>{#if nationPageLinks.has(`/nations/${nation.id}`)}<a href="/nations/{nation.id}">{nation.name}</a>{:else}{nation.name}{/if}</dt>
+						<dd>
+							{nation.role}{#if nation.namedAs}<span class="muted">, named as {nation.namedAs}</span>{/if}
+							{#if nation.note}<span class="fact-detail muted small">{nation.note}</span>{/if}
+						</dd>
 					</div>
 				{/each}
 			</dl>
@@ -64,56 +91,45 @@
 		</section>
 	{/if}
 
-	<section aria-labelledby="where-to-read">
-		<h2 id="where-to-read">Where to read it <CountBadge count={data.readingCount} /></h2>
-		<dl class="summary-list">
-			{#if data.savedCopy}
-				<div>
-					<dt>Saved copy</dt>
-					<dd><a href={data.savedCopy.page}>{data.savedCopy.what}</a> <span class="muted">·</span> <a href={data.savedCopy.verify}>SHA-256</a></dd>
-				</div>
-			{/if}
-			{#each data.readingGroups as group (group.label)}
-				<div>
-					<dt>{group.label}</dt>
-					<dd>
-						{#each group.links as link, index (link.link)}{#if index > 0}<span class="muted">&nbsp;· </span>{/if}<a href={link.link}>{link.label}</a
-							>{#if link.access === 'subscription'}<span class="muted" title="Subscription">&nbsp;$</span>{/if}{/each}
-					</dd>
-				</div>
-			{/each}
-		</dl>
-	</section>
+	{#if data.readingHtml}
+		<section aria-labelledby="where-to-read">
+			<h2 id="where-to-read">Where to read it <CountBadge count={data.readingCount} /></h2>
+			<!-- eslint-disable-next-line svelte/no-at-html-tags -- built from the case's own record -->
+			<p class="case-reading">{@html data.readingHtml}</p>
+		</section>
+	{/if}
 
-	<section aria-labelledby="on-this-site">
-		<h2 id="on-this-site">On this site <CountBadge count={citedCount} /></h2>
-		<dl class="summary-list">
-			{#if data.essays.length > 0}
-				<div>
-					<dt>Essays</dt>
-					<dd>
-						{#each data.essays as essay (essay.link)}
-							<p><a href={essay.link}>{essay.title}</a>{#if essay.where}<span class="muted">&nbsp;› {essay.where}</span>{/if}</p>
-						{/each}
-					</dd>
-				</div>
-			{/if}
-			{#if data.nationPages.length > 0}
-				<div>
-					<dt>Nation pages</dt>
-					<dd>
-						{#each data.nationPages as nation (nation.link)}<p><a href={nation.link}>{nation.name}</a></p>{/each}
-					</dd>
-				</div>
-			{/if}
-			{#if data.court}
-				<div>
-					<dt>Supreme Court</dt>
-					<dd><a href="{data.court.link}#cases">{data.court.name}</a></dd>
-				</div>
-			{/if}
-		</dl>
-	</section>
+	{#if citedCount > 0}
+		<section aria-labelledby="on-this-site">
+			<h2 id="on-this-site">On this site <CountBadge count={citedCount} /></h2>
+			<dl class="summary-list">
+				{#if data.essays.length > 0}
+					<div>
+						<dt>Essays</dt>
+						<dd>
+							{#each data.essays as essay (essay.link)}
+								<p><a href={essay.link}>{essay.title}</a>{#if essay.where}<span class="muted">&nbsp;› {essay.where}</span>{/if}</p>
+							{/each}
+						</dd>
+					</div>
+				{/if}
+				{#if data.nationPages.length > 0}
+					<div>
+						<dt>Nation pages</dt>
+						<dd>
+							{#each data.nationPages as nation (nation.link)}<p><a href={nation.link}>{nation.name}</a></p>{/each}
+						</dd>
+					</div>
+				{/if}
+				{#if data.court}
+					<div>
+						<dt>Supreme Court</dt>
+						<dd><a href="{data.court.link}#cases">{data.court.name}</a></dd>
+					</div>
+				{/if}
+			</dl>
+		</section>
+	{/if}
 
 	{#snippet sources()}<SourceList sources={data.sources} />{/snippet}
 </RecordPage>
@@ -124,7 +140,7 @@
 			{#each data.facts as [label, html] (label)}
 				<div>
 					<dt>{label}</dt>
-					<!-- eslint-disable-next-line svelte/no-at-html-tags -- built from the case's own record -->
+					<!-- eslint-disable-next-line svelte/no-at-html-tags -- built from the case's own record (case-facts.ts) -->
 					<dd>{@html html}</dd>
 				</div>
 			{/each}
@@ -137,6 +153,7 @@
 		margin-top: calc(-1 * var(--space-2));
 	}
 
+	/* Each part of the box is a section with its own heading here, so the part's small label is not repeated. */
 	.case-body :global(.essay-case-part > .essay-block-label) {
 		display: none;
 	}
@@ -151,8 +168,18 @@
 		max-width: var(--layout-measure);
 	}
 
+	/* The places to read it, open, with the rule down their left side as under a citation. */
+	.case-reading :global(.reading-list) {
+		margin-top: 0;
+		font-size: inherit;
+	}
+
 	.summary-list dd :global(p) {
 		margin: 0;
+	}
+
+	.summary-list .fact-detail {
+		display: block;
 	}
 
 	.glance-facts {
