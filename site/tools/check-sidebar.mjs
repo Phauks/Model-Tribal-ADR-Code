@@ -198,6 +198,12 @@ const column = `${wide} .pages-column .pages-scroll`;
 	check((await caret.getAttribute('aria-expanded')) === 'false', 'The sections did not stay shut on the next page');
 	await caret.click();
 	check(await list.isVisible(), 'The caret does not open the sections again');
+	// The heading's name opens and shuts the list too (Trevor, Nov. 24, 2026).
+	const name = page.locator(`${wide} .sections-column .group-heading label.group-title`);
+	await name.click();
+	check(!(await list.isVisible()) && (await caret.getAttribute('aria-expanded')) === 'false', 'Clicking "Sections" does not shut the sections');
+	await name.click();
+	check(await list.isVisible(), 'Clicking "Sections" does not open the sections again');
 	await context.close();
 }
 

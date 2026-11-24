@@ -50,7 +50,7 @@
 		workspacePagesNamed,
 		type WorkspacePage
 	} from '#lib/workspace-menu.ts';
-	import FoldButton from './sidebar/FoldButton.svelte';
+	import FoldGroup from './sidebar/FoldGroup.svelte';
 	import SectionColumn from './sidebar/SectionColumn.svelte';
 	import SidebarGroups from './sidebar/SidebarGroups.svelte';
 	import YourWork from './sidebar/YourWork.svelte';
@@ -300,26 +300,17 @@
 {#snippet sections(idSuffix: string)}
 	<!-- On phones the menu's "All sections" switch shows them, so they do not fold there. -->
 	{@const folds = idSuffix === 'wide'}
-	{#if folds}
-		<div class="group-heading">
-			<FoldButton
-				controls="sidebar-sections-list-{idSuffix}"
-				expanded={sectionsOpen}
-				name="Sections"
-				onclick={toggleSections}
-			/>
-			<p class="group-title" id="sidebar-sections-{idSuffix}">Sections</p>
-		</div>
-	{/if}
-	<ul
-		class="sections"
-		id="sidebar-sections-list-{idSuffix}"
-		aria-labelledby={folds ? `sidebar-sections-${idSuffix}` : undefined}
-		hidden={folds && !sectionsOpen}
+	<FoldGroup
+		id="sidebar-sections-{idSuffix}"
+		title="Sections"
+		open={sectionsOpen}
+		{folds}
+		listClass="sections"
+		ontoggle={toggleSections}
 	>
 		{#each siteSections as section (section.link)}
 			{@const current = section === currentSection}
-			<li class:current>
+			<li class="section" class:current>
 				{#if section.built}
 					<a href={section.link} aria-current={current && currentLink === section.link ? 'page' : undefined}>
 						{section.label}
@@ -335,7 +326,7 @@
 				{/if}
 			</li>
 		{/each}
-	</ul>
+	</FoldGroup>
 	<SidebarGroups
 		{idSuffix}
 		{path}
@@ -440,60 +431,21 @@
 </details>
 
 <style>
-	nav ul {
-		list-style: none;
-		margin: 0;
-		padding: 0;
-	}
-
 	/* ---- The sections ---- */
-	/* Their heading matches the Workspace and Your account groups' (sidebar/SidebarGroups.svelte). */
-	.group-heading {
-		display: flex;
-		align-items: center;
-		margin-bottom: var(--space-1);
-	}
-
-	.group-title {
-		margin: 0;
-		padding: 0 var(--space-3) 0 var(--space-1);
-		font-size: var(--font-size-small);
-		font-weight: var(--font-weight-semibold);
-		color: var(--color-ink-muted);
-	}
-
-	/* Without scripts nothing folds: no caret, and the list shows. */
-	:global(:root:not([data-scripts='on'])) .group-title {
-		padding-left: var(--space-3);
-	}
-
-	:global(:root:not([data-scripts='on'])) .sections[hidden] {
-		display: block;
-	}
+	/* Their heading and links are the shared folding group's (sidebar/FoldGroup.svelte). */
 
 	/* Shut by the reader on an earlier page, before the script takes over. */
-	:global(:root[data-sidebar-sections-shut='true']) .sections-column .sections {
+	:global(:root[data-sidebar-sections-shut='true']) .sections-column :global(.sections) {
 		display: none;
 	}
-	.sections > li > a,
-	.sections > li > .unbuilt {
-		display: flex;
-		align-items: center;
-		min-height: 2.5rem;
-		padding: 0 var(--space-3);
-		border-radius: var(--radius-control);
-		color: var(--color-ink);
-		font-weight: var(--font-weight-semibold);
-		text-decoration: none;
-	}
 
-	.sections > li {
+	.section {
 		display: flex;
 		align-items: center;
 	}
 
-	.sections > li > a,
-	.sections > li > .unbuilt {
+	.section > a,
+	.section > .unbuilt {
 		flex: 1;
 	}
 
@@ -530,26 +482,6 @@
 	.back:hover {
 		background: var(--color-surface);
 		color: var(--color-ink);
-	}
-
-	/* Sections whose pages are not published yet: named, not linked. */
-	.sections > li > .unbuilt {
-		color: var(--color-ink-muted);
-		font-weight: var(--font-weight-regular);
-	}
-
-	.sections > li > a:hover {
-		background: var(--color-surface);
-		text-decoration: underline;
-	}
-
-	/* The section being read: an orange bar and the link color, like the entry being read. */
-	.sections > li.current > a {
-		border-left: 3px solid var(--color-action);
-		border-radius: 0;
-		background: var(--color-surface);
-		color: var(--color-link);
-		font-weight: var(--font-weight-bold);
 	}
 
 	summary {
@@ -699,11 +631,6 @@
 		padding: 0 clamp(var(--space-4), 3vw, var(--space-7)) var(--space-4);
 		background: var(--color-paper);
 		border-top: 1px solid var(--color-line);
-	}
-
-	.sidebar-narrow .sections > li > a,
-	.sidebar-narrow .sections > li > .unbuilt {
-		min-height: var(--layout-target-minimum);
 	}
 
 	/* In a section the menu shows its pages or all the sections, one at a time. */
