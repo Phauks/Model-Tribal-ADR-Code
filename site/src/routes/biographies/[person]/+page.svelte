@@ -57,7 +57,11 @@
 >
 	{#snippet status()}
 		<ReviewStatus status={{ label: 'Unreviewed', verified: false }} description="Review by the nation:">
-			<p><strong>Unreviewed.</strong> {nationNames} {data.nations.length === 1 ? 'has' : 'have'} not reviewed this page yet.</p>
+			{#if data.nations.length > 0}
+				<p><strong>Unreviewed.</strong> {nationNames} {data.nations.length === 1 ? 'has' : 'have'} not reviewed this page yet.</p>
+			{:else}
+				<p><strong>Unreviewed.</strong> No nation has reviewed this page yet.</p>
+			{/if}
 			<p class="no-print"><a href={request}>Request a change or removal</a></p>
 		</ReviewStatus>
 	{/snippet}
