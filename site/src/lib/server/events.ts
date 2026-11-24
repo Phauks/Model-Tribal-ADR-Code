@@ -112,3 +112,45 @@ export async function activityPage(
 
 /** The action recorded when someone tries a change they are not allowed to make. */
 export const refusedAction = 'Refused: tried a change without permission';
+
+const exportColumns = `events.sequence, events.identifier, events.person_identifier AS personIdentifier,
+	        events.action, events.target_kind AS targetKind, events.target_identifier AS targetIdentifier,
+	        events.note, events.created_at AS createdAt, event_seals.hash AS seal`;
+
+/**
+ * The whole activity log with its seals as JSON Lines, one entry per line, oldest first. It is read and sent a page at a time, so a long log never has to fit in memory as one string. It covers the entries there when it starts; entries added while it is being sent wait for the next copy. An empty log is a single empty line, as it always was.
+ */
+export function activityLogLines(database: D1Database, pageSize = 500): ReadableStream<Uint8Array> {
+	const encoder = new TextEncoder();
+	let last: number | undefined;
+	let newest = 0;
+	let sentAny = false;
+	return new ReadableStream<Uint8Array>({
+		async pull(controller) {
+			if (last === undefined) {
+				const top = await database
+					.prepare('SELECT MAX(sequence) AS newest FROM events')
+					.first<{ newest: number | null }>();
+				newest = top?.newest ?? 0;
+				last = 0;
+			}
+			const page = await database
+				.prepare(
+					`SELECT ${exportColumns}
+					 FROM events LEFT JOIN event_seals ON event_seals.sequence = events.sequence
+					 WHERE events.sequence > ? AND events.sequence <= ?
+					 ORDER BY events.sequence LIMIT ?`
+				)
+				.bind(last, newest, pageSize)
+				.all<{ sequence: number }>();
+			if (page.results.length === 0) {
+				if (!sentAny) controller.enqueue(encoder.encode('\n'));
+				controller.close();
+				return;
+			}
+			sentAny = true;
+			last = page.results[page.results.length - 1].sequence;
+			controller.enqueue(encoder.encode(page.results.map((row) => JSON.stringify(row) + '\n').join('')));
+		}
+	});
+}

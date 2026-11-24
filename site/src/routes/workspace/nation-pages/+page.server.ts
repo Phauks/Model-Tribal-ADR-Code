@@ -4,7 +4,7 @@ import { changeKindLabels, describeChange, type ChangeContent } from '#lib/natio
 import { isOverdue, longestPauseText, reviewDue } from '#lib/nation-page-review.ts';
 import { displayName } from '#lib/nation-labels.ts';
 import { isAdministrator } from '#lib/permissions.ts';
-import { changeByIdentifier, historyOf, type ChangeRow } from '#lib/server/nation-page-changes.ts';
+import { changeByIdentifier, historiesOf, type ChangeRow } from '#lib/server/nation-page-changes.ts';
 import {
 	currentPause,
 	currentPauses,
@@ -15,7 +15,7 @@ import {
 	reviewQueue,
 	undoChange
 } from '#lib/server/nation-page-review.ts';
-import { suspendWithEveryoneAdded, teamOf } from '#lib/server/nation-teams.ts';
+import { suspendWithEveryoneAdded, teamOf, teamsOf } from '#lib/server/nation-teams.ts';
 import { formText, refuse, requirePermission, storage } from '#lib/server/workspace.ts';
 import type { Actions, PageServerLoad } from './$types';
 
@@ -63,12 +63,9 @@ export const load: PageServerLoad = async (event) => {
 	const queue = await reviewQueue(database);
 	// Each nation's team, to name the publisher's level and, for the lead author, who could be suspended;
 	// and each nation's history, to show each change beside the version before it.
-	const teams = new Map<string, Awaited<ReturnType<typeof teamOf>>>();
-	const histories = new Map<string, ChangeRow[]>();
-	for (const nationIdentifier of new Set(queue.map((change) => change.nationIdentifier))) {
-		teams.set(nationIdentifier, await teamOf(database, nationIdentifier));
-		histories.set(nationIdentifier, await historyOf(database, nationIdentifier));
-	}
+	// One query each for every nation in the queue, instead of two for each nation.
+	const nations = [...new Set(queue.map((change) => change.nationIdentifier))];
+	const [teams, histories] = await Promise.all([teamsOf(database, nations), historiesOf(database, nations)]);
 	/** The version of the same part published before this change, if any. */
 	const before = (change: ChangeRow): ChangeContent | null => {
 		const history = histories.get(change.nationIdentifier) ?? [];

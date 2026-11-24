@@ -41,6 +41,19 @@ export interface RecordBox {
 	quotes?: BoxQuote[];
 	treatment?: string;
 	topics?: string[];
+	/**
+	 * A short, neutral reading of the entry's place in the law, shown as an
+	 * "Analysis" block right after the box wherever an essay places it
+	 * (Trevor, Nov. 24, 2026: the history essay is built from the records,
+	 * with little writing between them). The case's own page does not show it.
+	 */
+	reading?: BoxReading;
+}
+
+/** A box's reading: the Analysis block's title and its text, in the essay syntax's Markdown. */
+export interface BoxReading {
+	title: string;
+	text: string;
 }
 
 /** A quotation's attribution: a citation of the source at its pinpoint, and any parenthetical. */
@@ -67,26 +80,49 @@ export function boxMarkdown(kind: BoxKind, key: string, box: RecordBox | undefin
 		.join('\n\n');
 }
 
+/** A box's reading as the Analysis block that follows the box ("::: analysis Title" ... ":::"), or nothing. */
+export function readingMarkdown(box: RecordBox | undefined): string {
+	const title = box?.reading?.title.trim();
+	const text = box?.reading?.text.trim();
+	return title && text ? `::: analysis ${title}\n${text}\n:::` : '';
+}
+
 const boxOpening = /^(:{4,})[ \t]*(case|law)[ \t]+([a-z0-9]+(?:-[a-z0-9]+)*)[ \t]*$/;
 
 /**
- * An essay's text with each empty case or law box filled from its record.
+ * An essay's text with each empty case or law box filled from its record,
+ * and the record's reading, if any, placed right after the box.
  * `origin` gives, for each line of the filled text, the line of the original
- * it came from (a filled-in line counts as the box's opening line), so marks
- * made against the original's lines, such as draft changes, still land.
+ * it came from (a filled-in line counts as the box's opening line, and a
+ * reading's line as the box's closing line), so marks made against the
+ * original's lines, such as draft changes, still land.
  */
-export function fillBoxes(text: string, boxText: (kind: BoxKind, key: string) => string | undefined): { text: string; origin: number[] } {
+export function fillBoxes(
+	text: string,
+	boxText: (kind: BoxKind, key: string) => string | undefined,
+	readingText: (kind: BoxKind, key: string) => string | undefined = () => undefined
+): { text: string; origin: number[] } {
 	const lines = text.split('\n');
 	const filled: string[] = [];
 	const origin: number[] = [];
+	const after = new Map<number, string>();
 	for (let index = 0; index < lines.length; index += 1) {
 		filled.push(lines[index]);
 		origin.push(index);
+		const reading = after.get(index);
+		if (reading) {
+			for (const line of ['', ...reading.split('\n')]) {
+				filled.push(line);
+				origin.push(index);
+			}
+		}
 		const opening = boxOpening.exec(lines[index]);
 		if (!opening) continue;
 		let next = index + 1;
 		while (next < lines.length && !lines[next].trim()) next += 1;
 		if (next >= lines.length || lines[next].trim() !== opening[1]) continue;
+		const closing = readingText(opening[2] as BoxKind, opening[3]);
+		if (closing) after.set(next, closing);
 		const inside = boxText(opening[2] as BoxKind, opening[3]);
 		if (!inside) continue;
 		for (const line of inside.split('\n')) {

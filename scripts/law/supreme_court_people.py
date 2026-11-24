@@ -341,7 +341,10 @@ def main() -> int:
                 continue
             seat = clean(judge.get(f"Seat ID ({number})"))
             if seat.startswith("SCT"):
-                ayes = clean(judge.get(f"Ayes/Nays ({number})"))
+                # The Directory gives John Rutledge's 1795 vote as "10//14"; the Senate's
+                # record of Supreme Court nominations has the roll call as 10-14
+                # (rejected Dec. 15, 1795), so a doubled slash is read as one.
+                ayes = re.sub(r"/+", "/", clean(judge.get(f"Ayes/Nays ({number})")))
                 appointments.append({
                     "seat": seat,
                     "title": clean(judge.get(f"Appointment Title ({number})")),

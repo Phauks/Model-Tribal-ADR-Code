@@ -87,6 +87,7 @@
 <svelte:window onclick={onWindowClick} />
 
 {#if interactive || csvHref || xlsxHref}
+	<!-- Escape closes the open list from anywhere inside; the <summary> and links are the controls. -->
 	<!-- svelte-ignore a11y_no_noninteractive_element_interactions -->
 	<details class="table-download no-print" bind:this={details} onkeydown={onKeydown}>
 		<summary aria-label="Download" title={label}>

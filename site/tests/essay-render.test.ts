@@ -71,7 +71,7 @@ describe('rendering an essay', () => {
 	});
 
 	it('draws the case, quotation and analysis boxes', () => {
-		expect(rendered.html).toContain('<section class="essay-case" id="case-worcester-v-georgia">');
+		expect(rendered.html).toContain('<section class="essay-case" id="case-worcester-v-georgia" data-source="worcester-v-georgia">');
 		expect(rendered.html).toContain('<p class="essay-case-citation"><i>Worcester v. Georgia</i>, 31 U.S. (6 Pet.) 515 (1832).');
 		expect(rendered.html).toContain('<p class="essay-block-label">Quotes</p>');
 		expect(rendered.html).toContain('<p class="essay-block-label">Treatment</p>');

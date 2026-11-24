@@ -35,6 +35,8 @@
 	 * The map is drawn with MapLibre from the project's own tiles where the device can (decision record 0039). The drawn map underneath stays for printing, and takes over if MapLibre cannot start, so a reader always has a map. Changing views keeps the reader's place.
 	 */
 	let tileMapWanted = $state(true);
+	/** Said to screen readers when the tiled map cannot start and the drawn map takes its place. */
+	let tileMapProblem = $state('');
 	let tileMapReady = $state(false);
 	let tileMap = $state<TileMap | undefined>();
 
@@ -689,11 +691,13 @@
 				onfail={() => {
 					tileMapWanted = false;
 					tileMapReady = false;
+					tileMapProblem = 'The interactive map could not be loaded, so the drawn map is shown.';
 				}}
 			/>
 		</div>
 	{/if}
 </div>
+<p class="visually-hidden" role="status">{tileMapProblem}</p>
 
 {#snippet officeKey()}
 	<li><span class="swatch office" aria-hidden="true"></span>Office of a nation with no Census land area</li>

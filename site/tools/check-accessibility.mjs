@@ -18,6 +18,9 @@
 // so the page's load event depends only on the build. If no page finishes for
 // several minutes the check stops with the pages it was working on.
 //
+// The pages the Worker answers, and menus and dialogs while open, are checked
+// by tools/check-accessibility-live.mjs.
+//
 // --shard K/N (or ACCESSIBILITY_SHARD) checks every Nth page starting at the
 // Kth, so N CI jobs can split the pages between them and finish sooner.
 //
@@ -26,18 +29,14 @@
 // checked at once; the default leaves one processor for the browser and server.
 
 import { createServer } from 'node:http';
-import { existsSync, readdirSync, readFileSync, statSync } from 'node:fs';
+import { existsSync, readdirSync, statSync } from 'node:fs';
 import { readFile } from 'node:fs/promises';
-import { createRequire } from 'node:module';
 import { availableParallelism } from 'node:os';
 import path from 'node:path';
 import { chromium } from 'playwright';
+import { axeViolations, describeViolation, themes, waitUntilSettled } from './accessibility-rules.mjs';
 
-const require = createRequire(import.meta.url);
-const axeSource = readFileSync(require.resolve('axe-core/axe.min.js'), 'utf8');
 const output = path.resolve('.svelte-kit/cloudflare/client');
-const tags = ['wcag2a', 'wcag2aa', 'wcag21a', 'wcag21aa', 'wcag22aa'];
-const themes = ['light', 'dark'];
 
 /** Time limits, in milliseconds. */
 const limits = {
@@ -191,53 +190,8 @@ async function checkPage(page, pathname) {
 	// Some controls (Report a problem, the map's zoom buttons) are added by the
 	// page's script just after the load event. Wait until the page stops
 	// changing so axe-core sees them, and sees the same page in both themes.
-	await page.evaluate(
-		({ quiet, longest }) =>
-			new Promise((resolve) => {
-				let timer;
-				const observer = new MutationObserver(() => {
-					clearTimeout(timer);
-					timer = setTimeout(done, quiet);
-				});
-				const done = () => {
-					observer.disconnect();
-					clearTimeout(cap);
-					resolve();
-				};
-				const cap = setTimeout(done, longest);
-				observer.observe(document, { subtree: true, childList: true, attributes: true });
-				timer = setTimeout(done, quiet);
-			}),
-		{ quiet: limits.settle, longest: limits.settleAtMost }
-	);
-	// Run axe from the testing side rather than as a <script> in the page: the site's
-	// Content Security Policy refuses inline scripts it has no hash for (decision record 0055).
-	await page.evaluate(axeSource);
-	const found = [];
-	for (const theme of themes) {
-		await page.emulateMedia({ colorScheme: theme });
-		const violations = await page.evaluate(
-			async (runOnly) =>
-				(
-					await window.axe.run(document, {
-						runOnly: { type: 'tag', values: runOnly },
-						// Only failures are reported, so axe-core need not
-						// describe every element that passed.
-						resultTypes: ['violations']
-					})
-				).violations,
-			tags
-		);
-		for (const violation of violations) {
-			const where = violation.nodes
-				.slice(0, 3)
-				.map((node) => node.target.join(' '))
-				.join('; ');
-			found.push(
-				`${pathname} (${theme}): ${violation.id}, ${violation.help} [${violation.nodes.length}] ${where}`
-			);
-		}
-	}
+	await waitUntilSettled(page, { quiet: limits.settle, longest: limits.settleAtMost });
+	const found = (await axeViolations(page)).map((violation) => describeViolation(pathname, violation));
 	return found;
 }
 

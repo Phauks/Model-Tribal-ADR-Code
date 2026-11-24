@@ -1,0 +1,37 @@
+id: native-american-disability-law-center
+name: Native American Disability Law Center
+kind: legal-aid
+operator: nonprofit
+link: https://nativedisabilitylaw.org/about-us/what-we-do
+link_label: Services
+services:
+- legal-information
+- referrals
+- representation
+who_can_use: Native Americans with a disability in the Four Corners area.
+serves:
+- states:
+  - AZ
+  - CO
+  - NM
+  - UT
+  scope: region
+  text: Advocacy, referral information and educational resources to all Native Americans with a disability living anywhere in the Four Corners area.
+  source: native-american-disability-law-center-services
+  note: The Four Corners area is not defined by county on the page; matched to nations with land in the four states only when a later reviewer narrows it.
+sources:
+- id: native-american-disability-law-center-services
+  title: Services
+  publisher: Native American Disability Law Center
+  link: https://nativedisabilitylaw.org/about-us/what-we-do
+  accessed: '2026-11-24'
+  verification: page-read
+  supports: Who it serves and its types of service; toll-free (800) 862-7271.
+- id: new-mexico-courts-native-american-legal-services-resources
+  title: Native American Legal Services Resources (June 2026)
+  publisher: New Mexico Courts
+  link: https://selfrepresentation.nmcourts.gov/wp-content/uploads/sites/62/2026/08/Native-American-Legal-Services-Resources-Jun2026.pdf
+  accessed: '2026-11-24'
+  verification: page-read
+  supports: Farmington office, 905 W. Apache Street.
+checked: '2026-11-24'

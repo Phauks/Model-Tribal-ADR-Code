@@ -1,0 +1,72 @@
+id: dna-peoples-legal-services
+name: DNA-People’s Legal Services
+kind: legal-aid
+operator: nonprofit
+link: https://dnalegalservices.org/
+link_label: Home page
+services:
+- legal-advice
+- representation
+- community-education
+who_can_use: Income-eligible Native Americans in the service area (Legal Services Corporation Native American grant).
+lsc:
+- service_area: NAZ-5
+  grantee_as_lsc_names_it: DNA-Peoples Legal Services, Inc.
+  grant_2026: 3934252
+  next_competition: 2027
+- service_area: NNM-2
+  grantee_as_lsc_names_it: DNA-Peoples Legal Services, Inc.
+  grant_2026: 34254
+  next_competition: 2027
+serves:
+- states:
+  - AZ
+  - NM
+  - UT
+  scope: named-nations
+  text: Serves Native Americans living on or near the Navajo Reservation in Arizona, New Mexico and Utah, and the Hopi Reservation in Arizona, and members living off reservation who have cases which require litigation in tribal court
+  source: lsc-service-area-naz-5
+  nations:
+  - navajo-nation
+  - hopi-tribe-of-arizona
+  note: Also members living off reservation whose cases must be litigated in tribal court.
+- states:
+  - NM
+  scope: named-nations
+  text: Serves Native Americans living on or near the Jicarilla Indian Reservation
+  source: lsc-service-area-nnm-2
+  nations:
+  - jicarilla-apache-nation
+note: The home page asks visitors to pass a bot check, so it was not read; the link was confirmed by New Mexico Courts’ resource list.
+sources:
+- id: lsc-service-area-naz-5
+  title: Service area NAZ-5
+  publisher: Legal Services Corporation
+  link: https://www.lsc.gov/grants/basic-field-grant/lsc-service-areas/map-lsc-service-areas?area=NAZ-5
+  data_link: https://api.lscdataease.org/public/lsc/service_areas/NAZ-5/about.json
+  accessed: '2026-11-24'
+  verification: data-read
+  supports: Service area type, current grantee, and the area description quoted in serves.
+- id: lsc-service-area-nnm-2
+  title: Service area NNM-2
+  publisher: Legal Services Corporation
+  link: https://www.lsc.gov/grants/basic-field-grant/lsc-service-areas/map-lsc-service-areas?area=NNM-2
+  data_link: https://api.lscdataease.org/public/lsc/service_areas/NNM-2/about.json
+  accessed: '2026-11-24'
+  verification: data-read
+  supports: Service area type, current grantee, and the area description quoted in serves.
+- id: lsc-2026-notice-of-intent-to-award
+  title: 'Notice of Intent to Award: Grant Awards for the Delivery of Civil Legal Services to Eligible Low-Income Clients Beginning January 1, 2026'
+  publisher: Legal Services Corporation
+  link: https://lsc-live.app.box.com/s/fleq8j26yivz3potdw5hvpclth90icmp
+  accessed: '2026-11-24'
+  verification: page-read
+  supports: The applicant LSC intended to fund for each Native American service area in 2026, and the grant amount.
+- id: new-mexico-courts-native-american-legal-services-resources
+  title: Native American Legal Services Resources (June 2026)
+  publisher: New Mexico Courts
+  link: https://selfrepresentation.nmcourts.gov/wp-content/uploads/sites/62/2026/08/Native-American-Legal-Services-Resources-Jun2026.pdf
+  accessed: '2026-11-24'
+  verification: page-read
+  supports: DNA serves people on the Navajo, Hopi and Jicarilla Apache Reservations; offices in Window Rock, Fort Defiance, Chinle, Tuba City, Flagstaff, Keams Canyon (Hopi) and Farmington; centralized intake 1-833-362-1102.
+checked: '2026-11-24'
