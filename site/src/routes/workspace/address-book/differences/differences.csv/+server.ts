@@ -4,7 +4,7 @@
  * emails and phones only, which are public on the nation pages or meant to be.
  */
 import { publicNationContacts } from 'virtual:public-contacts';
-import { csvText } from '#lib/address-book.ts';
+import { csvDocument, csvResponse } from '#lib/csv.ts';
 import { differences } from '#lib/address-book-sync.ts';
 import { bookOfficeMethods } from '#lib/server/address-book.ts';
 import { requirePermission, storage } from '#lib/server/workspace.ts';
@@ -36,15 +36,9 @@ export const GET: RequestHandler = async (event) => {
 			item.sourceLink,
 			item.status ?? null,
 			item.note ?? null
-		].map(csvText)
+		]
 	);
-	const body = [header, ...lines].map((line) => line.join(',')).join('\r\n') + '\r\n';
+	const body = csvDocument([header, ...lines], { guardFormulas: true });
 	const day = new Date().toISOString().slice(0, 10);
-	return new Response(body, {
-		headers: {
-			'content-type': 'text/csv; charset=utf-8',
-			'content-disposition': `attachment; filename="address-book-differences-${day}.csv"`,
-			'cache-control': 'no-store'
-		}
-	});
+	return csvResponse(body, { fileName: `address-book-differences-${day}.csv`, private: true });
 };

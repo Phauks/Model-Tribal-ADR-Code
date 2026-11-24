@@ -9,6 +9,10 @@ import type { R2Bucket } from '@cloudflare/workers-types/index.ts';
 import { strToU8 } from 'fflate';
 import type { DocumentSetList } from '../offline-documents.ts';
 import { safeName, zipStream, type ZipEntry } from './zip-stream.ts';
+import { csvLine, type CsvOptions } from '#lib/csv.ts';
+
+/** documents.csv has always ended its lines with a carriage return and line feed but quoted only fields that hold a line feed, so it keeps those rules. */
+const onlyLineFeedsQuoted: CsvOptions = { quoteCarriageReturns: false };
 
 /** The bucket key of a copy from its address on this site, "/copies/a/b%20c.pdf" -> "a/b c.pdf". */
 export function keyOfCopyPath(path: string): string {
@@ -17,11 +21,6 @@ export function keyOfCopyPath(path: string): string {
 		.split('/')
 		.map((part) => decodeURIComponent(part))
 		.join('/');
-}
-
-function csvField(value: string | number): string {
-	const text = String(value);
-	return /[",\n]/.test(text) ? `"${text.replaceAll('"', '""')}"` : text;
 }
 
 export function documentsReadme(title: string, siteAddress: string, made: string): string {
@@ -47,7 +46,7 @@ export function documentsZip(
 ): ReadableStream<Uint8Array> {
 	const used = new Set<string>();
 	const sums: string[] = [];
-	const rows: string[] = [['file', 'title', 'published_at', 'copy_on_website', 'bytes', 'sha256', 'in_this_zip'].join(',')];
+	const rows: string[] = [csvLine(['file', 'title', 'published_at', 'copy_on_website', 'bytes', 'sha256', 'in_this_zip'], onlyLineFeedsQuoted)];
 	function nameFor(key: string): string {
 		const base = safeName(key.split('/').at(-1) ?? 'file');
 		let name = `documents/${base}`;
@@ -62,7 +61,7 @@ export function documentsZip(
 			const name = nameFor(key);
 			const object = served.has(key) ? await bucket.get(key) : null;
 			rows.push(
-				[name.replace(/^documents\//, ''), title, original, path, bytes, sha256, object ? 'yes' : 'no'].map(csvField).join(',')
+				csvLine([name.replace(/^documents\//, ''), title, original, path, bytes, sha256, object ? 'yes' : 'no'], onlyLineFeedsQuoted)
 			);
 			if (!object) continue;
 			sums.push(`${sha256}  ${name}`);
