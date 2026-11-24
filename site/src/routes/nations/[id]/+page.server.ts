@@ -118,10 +118,12 @@ interface FactGroup {
 	field: string;
 	label: string;
 	items: FactItem[];
+	/** The note every value shares, said once under the label (FactGroups.svelte). */
+	note?: string;
 }
 
-function group(field: string, label: string, items: FactItem[]): FactGroup[] {
-	return items.length > 0 ? [{ field, label, items }] : [];
+function group(field: string, label: string, items: FactItem[], note?: string): FactGroup[] {
+	return items.length > 0 ? [{ field, label, items, ...(note ? { note } : {}) }] : [];
 }
 
 /** Shows a fact with the marker of its source, and records the source under the group's label. */
@@ -612,34 +614,15 @@ const establishmentWords: Record<string, string> = {
 };
 
 /**
- * The nation's relationship with the United States: its treaties, each linked
- * to its text in Kappler's Indian Affairs: Laws and Treaties; how its land was
- * set aside; and the Indian Health Service Area and service unit that serve it.
- * The Bureau of Indian Affairs region stays in At a glance. The Gaming
- * Commission's enforcement actions follow as a table (enforcementActions).
+ * The nation's relationship with the United States after its treaties (a
+ * table of their own, treatyRows): how its land was set aside, and the Indian
+ * Health Service Area and service unit that serve it. The Bureau of Indian
+ * Affairs region stays in At a glance. The Gaming Commission's enforcement
+ * actions follow as a table (enforcementActions).
  */
 function federalTies(record: NationRecord, sources: SourceUses): FactGroup[] {
 	const section = 'Treaties and federal ties';
-	const treaties = [...(record.treaties ?? [])].sort((first, second) => first.signed.localeCompare(second.signed));
 	return [
-		...group(
-			'treaties',
-			'Treaties',
-			treaties.map((fact) =>
-				cited(sources, section, fact, {
-					text: fact.title,
-					link: fact.kappler?.link ? webLink(fact.kappler.link) : undefined,
-					detail: [
-						readableDate(fact.signed),
-						fact.statutes_at_large,
-						fact.kappler?.page ? `${fact.kappler.volume ?? 2} Kappler ${fact.kappler.page}` : undefined
-					]
-						.filter(Boolean)
-						.join(', '),
-					note: fact.signatory ? `Signed as “${fact.signatory}”.` : undefined
-				})
-			)
-		),
 		...group(
 			'land_establishment',
 			'How the land was set aside',
@@ -669,6 +652,47 @@ function federalTies(record: NationRecord, sources: SourceUses): FactGroup[] {
 				)
 		)
 	];
+}
+
+/** One treaty, a row of the Treaties table on the nation page. */
+interface TreatyRow {
+	key: string;
+	title: string;
+	/** YYYY-MM-DD, which sorts the table. */
+	signed: string;
+	statutesAtLarge?: string;
+	kappler?: string;
+	/** Kappler's text of the treaty. */
+	link?: string;
+	/** The name the nation, or the people it descends from, signed under. */
+	signedAs?: string;
+	citations: CitationMark[];
+}
+
+/**
+ * The nation's treaties, oldest first, as rows of a table with Signed,
+ * Treaty, Statutes at Large, Kappler and Signed as columns (Trevor, Nov. 23,
+ * 2026, "label rows": records with dates and citations go in the shared data
+ * table). Cited first in the section, as the table comes first.
+ */
+function treatyRows(record: NationRecord, sources: SourceUses): TreatyRow[] {
+	const section = 'Treaties and federal ties';
+	return [...(record.treaties ?? [])]
+		.sort((first, second) => first.signed.localeCompare(second.signed))
+		.map((fact, index) => {
+			const citations: CitationMark[] = [];
+			sources.citeFact(fact, section, fact.title, citations);
+			return {
+				key: `${fact.signed}-${index}`,
+				title: fact.title,
+				signed: fact.signed,
+				statutesAtLarge: fact.statutes_at_large,
+				kappler: fact.kappler?.page ? `${fact.kappler.volume ?? 2} Kappler ${fact.kappler.page}` : undefined,
+				link: fact.kappler?.link ? webLink(fact.kappler.link) : undefined,
+				signedAs: fact.signatory,
+				citations
+			};
+		});
 }
 
 /** One National Indian Gaming Commission enforcement action, a row of its table on the nation page. */
@@ -705,6 +729,11 @@ function enforcementActions(record: NationRecord, sources: SourceUses): Enforcem
 				citations
 			};
 		});
+}
+
+/** A kind of document said of several, such as "Law codes"; words already plural, such as "Court rules", stay. */
+function plural(words: string): string {
+	return /s$/.test(words) ? words : `${words}s`;
 }
 
 /** The first letter in capitals, the rest as given. */
@@ -850,6 +879,11 @@ function publishedLaw(
 			lines.push({ title, link, facts: [fact] });
 		}
 	}
+	// When every document is the same kind, such as four law codes, the kind
+	// is said once under the label ("Law codes") instead of under each one.
+	const kindOf = (line: (typeof lines)[number]) => line.facts.find((fact) => fact.title && fact.kind !== 'other')?.kind;
+	const kinds = new Set(lines.map(kindOf));
+	const sharedKind = lines.length > 1 && kinds.size === 1 ? [...kinds][0] : undefined;
 	return [
 		...group(
 			'dispute_resolution_law',
@@ -873,10 +907,11 @@ function publishedLaw(
 				return {
 					text: site ? `${line.title} (${site})` : line.title,
 					link: line.link,
-					detail: kind ? humanize(kind) : undefined,
+					detail: kind && !sharedKind ? humanize(kind) : undefined,
 					citations
 				};
-			})
+			}),
+			sharedKind ? plural(humanize(sharedKind)) : undefined
 		)
 	];
 }
@@ -1095,6 +1130,7 @@ export const load: PageServerLoad = ({ params }) => {
 			law: [],
 			documents: [],
 			jurisdiction: [],
+			treaties: [],
 			ties: [],
 			enforcement: [],
 			stories: [],
@@ -1226,6 +1262,7 @@ export const load: PageServerLoad = ({ params }) => {
 	sources.part('Jurisdiction');
 	const jurisdiction = jurisdictionFacts(record, sources);
 	sources.part('Treaties and federal ties');
+	const treaties = treatyRows(record, sources);
 	const ties = federalTies(record, sources);
 	const enforcement = enforcementActions(record, sources);
 	// Every dated record on the page on one line, after the sections it
@@ -1280,6 +1317,7 @@ export const load: PageServerLoad = ({ params }) => {
 		law,
 		documents,
 		jurisdiction,
+		treaties,
 		ties,
 		enforcement,
 		timeline: hasTimeline ? timeline : undefined,
@@ -1304,7 +1342,7 @@ export const load: PageServerLoad = ({ params }) => {
 		children: documents.map((document) => ({ label: document.heading, link: `#document-${document.id}` }))
 	});
 	items.push({ label: 'Jurisdiction', link: '#jurisdiction-heading' });
-	if (ties.length > 0 || enforcement.length > 0) items.push({ label: 'Treaties and federal ties', link: '#ties-heading' });
+	if (treaties.length > 0 || ties.length > 0 || enforcement.length > 0) items.push({ label: 'Treaties and federal ties', link: '#ties-heading' });
 	if (hasTimeline) items.push({ label: timelineHeading, link: '#timeline-heading' });
 	if (stories.length > 0) items.push({ label: 'Stories', link: '#stories-heading' });
 	if (result.neighbors.length > 0) {

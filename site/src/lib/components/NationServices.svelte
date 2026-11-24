@@ -23,7 +23,7 @@
 			>{entry.location}</span
 		>{/if}
 	{#if entry.members && entry.members.length > 0}
-		<ul class="members" aria-label={`The ${entry.members.length} courts of ${entry.text}`}>
+		<ul class="members stacked-list" aria-label={`The ${entry.members.length} courts of ${entry.text}`}>
 			{#each entry.members as member, index (index)}
 				<li>{@render service(member)}</li>
 			{/each}
@@ -43,7 +43,7 @@
 							{#if path.first.length === 1}
 								{@render service(path.first[0])}
 							{:else}
-								<ul class="first-courts">
+								<ul class="first-courts stacked-list">
 									{#each path.first as entry, index (index)}
 										<li>{@render service(entry)}</li>
 									{/each}
@@ -66,7 +66,7 @@
 					{#if category.appealPaths.length > 0}
 						<p class="small muted other">Other courts</p>
 					{/if}
-					<ul>
+					<ul class="stacked-list">
 						{#each category.entries as entry, index (index)}
 							<li>{@render service(entry)}</li>
 						{/each}
@@ -117,16 +117,16 @@
 
 	.first-courts {
 		margin: 0;
-		padding-left: var(--space-5);
 	}
 
 	.location::before {
 		content: '· ';
 	}
 
+	/* A group's courts sit indented under it, without bullets (Trevor, Nov. 23, 2026). */
 	.members {
 		margin: var(--space-1) 0 0;
-		padding-left: var(--space-5);
+		padding-left: var(--space-4);
 	}
 
 	/* A long list of courts takes two columns where each can be 16rem wide. */
