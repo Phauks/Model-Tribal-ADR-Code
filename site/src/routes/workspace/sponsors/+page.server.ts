@@ -2,8 +2,10 @@ import { fail } from '@sveltejs/kit';
 import { workerEnvironment } from '#lib/server/environment.ts';
 import { allSponsors, giftSettingChecks, giftState, publicMode } from '#lib/server/sponsors.ts';
 import { saveSponsorshipCosts, sponsorshipCosts } from '#lib/server/sponsorship-goals.ts';
+import { levelAmounts, saveLevelAmounts } from '#lib/server/sponsorship-levels.ts';
 import { formText, requirePermission, storage } from '#lib/server/workspace.ts';
 import { costItems, dollars, largestGift, type CostItem } from '#lib/sponsorship.ts';
+import { levelAmountsProblem, levels, type Level, type LevelAmounts } from '#lib/sponsorship-levels.ts';
 import type { Actions, PageServerLoad } from './$types';
 
 // Every sponsor, and whether gifts work and why not (docs/sponsorship.md,
@@ -15,9 +17,10 @@ export const load: PageServerLoad = async (event) => {
 	const state = giftState(environment);
 	const mode = publicMode(state);
 	const { database } = storage(event);
-	const [sponsors, costs] = await Promise.all([allSponsors(database, mode), sponsorshipCosts(database)]);
+	const [sponsors, costs, amounts] = await Promise.all([allSponsors(database, mode), sponsorshipCosts(database), levelAmounts(database)]);
 	return {
 		costs: Object.fromEntries(costItems.map((item) => [item, costs[item] ? (costs[item] / 100).toFixed(2) : ''])) as Record<CostItem, string>,
+		levelAmounts: Object.fromEntries(levels.map((level) => [level, (amounts[level] / 100).toFixed(2)])) as Record<Level, string>,
 		checks: giftSettingChecks(environment),
 		open: state.open,
 		mode: state.open ? state.mode : null,
@@ -69,5 +72,25 @@ export const actions: Actions = {
 		}
 		await saveSponsorshipCosts(storage(event).database, costs, `The project (${person.displayName})`);
 		return { done: 'Saved. The Sponsorship page shows the new costs.' };
+	},
+
+	/**
+	 * Sets what each sponsorship level costs a month, for the Sponsorship
+	 * levels page (docs/sponsorship.md, "Levels"). A year costs ten months.
+	 */
+	levels: async (event) => {
+		const person = requirePermission(event, 'manage-sponsors');
+		const form = await event.request.formData();
+		const amounts = {} as LevelAmounts;
+		for (const level of levels) {
+			const amount = Number(formText(form, `level-${level}`, 20)?.replace(/[$,\s]/g, '') || Number.NaN);
+			if (!Number.isFinite(amount) || amount <= 0 || amount > largestGift || Math.round(amount * 100) !== amount * 100)
+				return fail(400, { levelProblem: `Write each level's amount in dollars and cents, up to ${dollars(largestGift * 100)} a month.` });
+			amounts[level] = Math.round(amount * 100);
+		}
+		const problem = levelAmountsProblem(amounts);
+		if (problem) return fail(400, { levelProblem: problem });
+		await saveLevelAmounts(storage(event).database, amounts, `The project (${person.displayName})`);
+		return { levelsDone: 'Saved. The Sponsorship levels page shows the new amounts.' };
 	}
 };
