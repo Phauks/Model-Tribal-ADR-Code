@@ -16,6 +16,7 @@ import type { D1Database } from '@cloudflare/workers-types/index.ts';
 import { latestScan, readableScanTime, readScannerVersion, scannerName, scannerVersionWords } from './file-scans.ts';
 import { forgetLuluToken, luluAccessToken, luluSettings } from './lulu.ts';
 import { isTestKey, stripeSettings } from './stripe.ts';
+import { latestPublication, latestRebuild } from './site-text.ts';
 
 export type CheckState = 'working' | 'warning' | 'problem' | 'off';
 
@@ -453,12 +454,41 @@ const scanner: Check = {
 	}
 };
 
+const siteTextRebuilds: Check = {
+	key: 'site-text',
+	group: 'Cloudflare',
+	name: 'Site text rebuilds',
+	async run({ environment }) {
+		const fix = `Create a deploy hook for the website (Workers & Pages > model-tribal-adr-code > Settings > Builds > Deploy Hooks) and save its address as the secret SITE_REBUILD_HOOK_URL (${settingsPlace}).`;
+		let publication: number;
+		let last: Awaited<ReturnType<typeof latestRebuild>>;
+		try {
+			publication = await latestPublication(environment.database);
+			last = await latestRebuild(environment.database);
+		} catch {
+			return { state: 'off', summary: 'The site text tables are missing.', details: [], fix: 'Apply migration 20261124T0119_add_site_text.sql.' };
+		}
+		const details = [
+			publication ? `Newest publication: ${publication}.` : 'Nothing published yet.',
+			...(last ? [`Last rebuild asked for publication ${last.publication} at ${last.requestedAt}: ${last.outcome}.`] : [])
+		];
+		if (!text(environment, 'SITE_REBUILD_HOOK_URL')) {
+			return { state: 'off', summary: 'No deploy hook, so published site text goes live with the next code change.', details, fix };
+		}
+		if (last && last.outcome !== 'asked') {
+			return { state: 'warning', summary: 'The last rebuild could not be asked for.', details, fix: `Check the deploy hook. ${fix}` };
+		}
+		return { state: 'working', summary: 'Publishing site text rebuilds the site.', details };
+	}
+};
+
 export const serviceChecks: readonly Check[] = [
 	database,
 	bucket,
 	liveEditing,
 	rateLimits,
 	scanner,
+	siteTextRebuilds,
 	siteAddress,
 	leadAuthor,
 	emailCheck('sign-in-email', 'Sign-in codes', 'signInEmail', 'SIGN_IN_EMAIL_FROM', 'sign-in codes'),

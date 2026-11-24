@@ -184,6 +184,13 @@
 		z-index: 6;
 	}
 
+	/* So do the masthead's controls while editing the site text (SiteTextEditor.svelte). */
+	:global(html.site-text-editing) .masthead {
+		position: sticky;
+		top: 0;
+		z-index: 6;
+	}
+
 	.masthead-tools {
 		border-top: 1px solid color-mix(in srgb, var(--color-band-text) 22%, transparent);
 	}

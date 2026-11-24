@@ -1,16 +1,12 @@
 /**
  * The case previews and citation index (src/lib/case-links.ts), built with
- * the site from the source records and the case boxes in the essays. A case
- * links to its box in an essay when it has one, so the reader lands on the
- * project's summary with its reading links; otherwise to the copy of the
- * opinion on this site, or to where the opinion was published.
+ * the site from the source records and the case boxes in the essays. Every
+ * case links to its own page, /cases/<key> (src/lib/server/case-pages.ts),
+ * which holds its summary, opinions and the places to read it.
  */
 import { citationKey, parseCitation, type CasePreview, type CasePreviewList } from '../case-links.ts';
 import { formatCaptureDate } from './markdown.ts';
-import { publicCopyFor, sources, type SourceRecord } from './content.ts';
-import { copyPath } from '../public-copies.ts';
-import { officialReportLinks } from '../reading-links.ts';
-import { boxPages } from './essays.ts';
+import { sources, type SourceRecord } from './content.ts';
 import { essaysInGit } from './essay-library.ts';
 
 /** The holding part of each case box, as plain text, by source key. */
@@ -61,20 +57,10 @@ function citationsOf(record: SourceRecord): string[] {
 	return keys;
 }
 
-/**
- * The Caselaw Access Project's opinion as a page a reader can read: a record
- * may cite the data file ("/cases/0393-01.json"), which has the same
- * opinion as a web page beside it ("/html/0393-01.html").
- */
-function readableOriginal(link: string | undefined): string | undefined {
-	return link?.replace(/^(https:\/\/static\.case\.law\/.+)\/cases\/([^/]+)\.json$/, '$1/html/$2.html');
-}
-
 export function casePreviewList(
 	records: SourceRecord[] = [...sources().values()],
 	texts: Record<string, string> = essaysInGit()
 ): CasePreviewList {
-	const pages = boxPages(texts);
 	const holdings = boxHoldings(texts);
 	const cases: CasePreview[] = [];
 	const citations: Record<string, string> = {};
@@ -83,11 +69,8 @@ export function casePreviewList(
 		if (citation.type !== 'legal_case' || !citation.title) continue;
 		const parts = citation.issued?.['date-parts']?.[0];
 		const reporter = [citation.volume, citation['container-title'], citation.page].filter(Boolean).join(' ');
-		const box = pages[`case-${record.key}`];
-		const copy = [record.original_link, citation.URL, ...officialReportLinks(record.reading_links)].map(publicCopyFor).find(Boolean);
-		const original = readableOriginal(record.original_link ?? citation.URL);
-		const link = box ? `${box}#case-${record.key}` : copy ? copyPath(copy) : original;
-		if (!link) continue;
+		// Every case links its own page (src/routes/cases/[id]), Trevor, Nov. 24, 2026.
+		const link = `/cases/${record.key}`;
 		cases.push({
 			id: record.key,
 			name: citation.title,
@@ -95,8 +78,7 @@ export function casePreviewList(
 			court: citation.authority ?? '',
 			decided: decidedText(parts),
 			holding: shortHolding(holdings[record.key]),
-			link,
-			opens: box ? 'box' : copy ? 'copy' : 'original'
+			link
 		});
 		for (const key of citationsOf(record)) citations[key] ??= record.key;
 	}
@@ -105,10 +87,9 @@ export function casePreviewList(
 }
 
 /**
- * Where a case's name in an essay links when no essay has a box for it (the
- * copy of the opinion on this site, or where it was published), by source
- * key, for the essay renderer in the Worker (src/lib/essays/render.ts).
+ * Where a case's name in an essay links, its own page, by source key, for
+ * the essay renderer in the Worker (src/lib/essays/render.ts).
  */
 export function caseLinks(list: CasePreviewList = casePreviewList()): Record<string, string> {
-	return Object.fromEntries(list.cases.filter((preview) => preview.opens !== 'box').map((preview) => [preview.id, preview.link]));
+	return Object.fromEntries(list.cases.map((preview) => [preview.id, preview.link]));
 }

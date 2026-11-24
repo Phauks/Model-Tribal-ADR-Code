@@ -65,6 +65,19 @@ describe('serving map tiles from the bucket', () => {
 		expect((await serveMapTile(bucket, landAreas.set, 25, 0, 0)).status).toBe(404);
 	});
 
+	it('looks in the world basemap where the basemap has no tile', async () => {
+		const basemap = [...tileSets.values()].find((tileSet) => tileSet.set.startsWith('basemap-'));
+		const world = [...tileSets.values()].find((tileSet) => tileSet.set.startsWith('world-basemap-'));
+		if (!basemap || !world) throw new Error('geography/map-tiles.json names no basemap or world basemap');
+		// The fixture stands in for both files. A tile the basemap holds is served from it alone.
+		const { bucket, reads } = memoryBucket({ [basemap.key]: fixture, [world.key]: fixture });
+		expect((await serveMapTile(bucket, basemap.set, 4, 2, 6)).status).toBe(200);
+		expect(reads.some((read) => read.startsWith(world.key))).toBe(false);
+		// A tile the basemap lacks is looked for in the world basemap.
+		expect((await serveMapTile(bucket, basemap.set, 4, 0, 0)).status).toBe(204);
+		expect(reads.some((read) => read.startsWith(world.key))).toBe(true);
+	});
+
 	it('serves only the tile sets the site names', async () => {
 		const { bucket, reads } = memoryBucket({ 'map-tiles/other.pmtiles': fixture });
 		expect((await serveMapTile(bucket, 'other', 0, 0, 0)).status).toBe(404);

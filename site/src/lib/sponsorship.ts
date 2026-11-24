@@ -70,11 +70,13 @@ export function isEarmark(value: unknown): value is Earmark {
 	return typeof value === 'string' && (earmarks as readonly string[]).includes(value);
 }
 
-export const giftFrequencies = ['monthly', 'one-time'] as const;
+// Yearly gifts cost ten months at each level (src/lib/sponsorship-levels.ts).
+export const giftFrequencies = ['monthly', 'yearly', 'one-time'] as const;
 export type GiftFrequency = (typeof giftFrequencies)[number];
 
 export const giftFrequencyLabels: Record<GiftFrequency, string> = {
 	monthly: 'Every month',
+	yearly: 'Every year',
 	'one-time': 'Once'
 };
 

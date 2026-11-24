@@ -13,6 +13,7 @@
 import { displayName } from '../nation-labels.ts';
 import { escapeHtml } from './markdown.ts';
 import { courtPath } from './supreme-courts.ts';
+import { opinionLabels, surname } from '../case-opinions.ts';
 import { decidedDay, justicePath, personForCase } from './supreme-court-people.ts';
 
 export type FactLine = [label: string, html: string];
@@ -40,21 +41,6 @@ export interface CaseRecord {
 	};
 }
 
-const opinionLabels: Record<string, string> = {
-	majority: 'opinion of the Court',
-	plurality: 'plurality opinion',
-	concurrence: 'concurring opinion',
-	'special concurrence': 'opinion concurring in the judgment',
-	'concurrence in the result': 'opinion concurring in the result',
-	'concurrence in the result without opinion': 'concurring in the result, without an opinion',
-	'concurrence in part and in the judgment': 'opinion concurring in part and concurring in the judgment',
-	'concurrence in part and dissent in part': 'opinion concurring in part and dissenting in part',
-	'concurrence in part, concurrence in the judgment in part, and dissent in part': 'opinion concurring in part, concurring in the judgment in part, and dissenting in part',
-	'dissent in part': 'opinion dissenting in part',
-	judgment: 'opinion announcing the judgment',
-	dissent: 'dissenting opinion'
-};
-
 // Decisions with no signed opinion of the Court, shown as their own line.
 const decisionLabels: Record<string, string> = {
 	'per curiam': 'Per curiam',
@@ -77,10 +63,6 @@ const courtDateLabels = [
 ] as const;
 
 const months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
-
-function surname(name: string): string {
-	return name.replace(/,?\s+(?:Jr\.|Sr\.|II|III)$/, '').trim().split(/\s+/).pop() ?? name;
-}
 
 /** The Justices' names, each linked to the Justice's page (src/routes/supreme-court/justices), writers in bold with the opinion named. */
 function justiceList(justices: Justice[], decided: string | undefined): string {

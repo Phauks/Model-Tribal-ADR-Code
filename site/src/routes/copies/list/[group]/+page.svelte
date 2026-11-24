@@ -1,5 +1,6 @@
 <script lang="ts">
 	import Breadcrumbs from '#lib/components/Breadcrumbs.svelte';
+	import CopyHash from '#lib/components/CopyHash.svelte';
 	import DataTable from '#lib/components/DataTable.svelte';
 	import { fileName, verifyLink } from '#lib/checksums.ts';
 	import type { TableColumn, TableRow } from '#lib/tables/table-definition.ts';
@@ -31,6 +32,9 @@
 			}
 		}))
 	);
+
+	// Each copy's SHA-256, copied from the icon after its Verify link (src/lib/copy-hash.ts).
+	const hashes = $derived(new Map(data.copies.map((copy) => [copy.key, copy.sha256])));
 </script>
 
 <svelte:head>
@@ -53,6 +57,6 @@
 >
 	{#snippet cell(row: TableRow, column: TableColumn)}
 		{#if column.key === 'removal'}<a href={row.cells.removal.href}>Ask to remove</a>{/if}
-		{#if column.key === 'verify'}<a href={row.cells.verify.href}>SHA-256<span class="visually-hidden">: check a download of {row.cells.title.text}</span></a>{/if}
+		{#if column.key === 'verify'}<a href={row.cells.verify.href}>SHA-256<span class="visually-hidden">: check a download of {row.cells.title.text}</span></a> <CopyHash sha256={hashes.get(row.key) ?? ''} label={row.cells.title.text} iconOnly />{/if}
 	{/snippet}
 </DataTable>

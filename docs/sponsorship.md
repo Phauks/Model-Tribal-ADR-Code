@@ -10,8 +10,9 @@ Organizations, and people, can sponsor the project: give once or every month, ch
 | `/account/sponsorship?sponsor=<identifier>` | The sponsorship's managers, and the lead author | One sponsorship, when an account manages more than one; for the lead author, any sponsor's page as its managers see it, read only |
 | `/sponsorship/invite/<link>` | Anyone signed in | Accepts an invitation to manage a sponsorship |
 | `/sponsor` | Everyone | The Sponsorship page's own text (edited on the website), the goal of a copy for every nation, what else a gift can fund, then every sponsor shown in public; a link to give only while gifts are open |
+| `/sponsor/levels` | Everyone | What everyone gets free and what each sponsorship level adds, monthly or yearly, with a heart to give at each level, and a note on taxes |
 | `/sponsors/<name>` | Everyone | One sponsor listed by name, once they have given |
-| `/workspace/sponsors` | The lead author | Whether gifts work, setting by setting, and every sponsor |
+| `/workspace/sponsors` | The lead author | Whether gifts work, setting by setting, the costs and level amounts the public pages show, and every sponsor |
 | `/workspace/sponsors/<identifier>` | The lead author | One sponsor's details, managers, gifts with amounts and history; take off or put back on the public pages; ask Stripe about them |
 | `/sponsorship/payment-webhook` | Stripe | Records paid gifts |
 
@@ -29,6 +30,26 @@ A gift can go toward five choices: Discretionary (spent where the project decide
 The gift form chooses how often, where the gift goes (Discretionary, unless the sponsor picks another), and an amount: amounts for 1, 10 and 100 copies once the cost of a paperback is set, or any other amount. An amount is US dollars as people write them ("25", "$1,250", "12.50"): digits, commas only between groups of three, and at most two digits of cents, from $5 to $10,000 (`centsFromDollars` and `giftCents` in `src/lib/sponsorship.ts`). The amount box keeps only what can be money as it is typed, and flags an amount outside that range before it is sent; the Account page and the workspace's costs check every amount again with the same rule, so "1e3" or "12.345" is refused however it arrives. Nothing is chosen ahead of time but how often (every month, as on the Account page) and where the gift goes. Pressing Sponsor opens the Account page's gift form with those choices filled in; a new sponsorship starts with that choice of where its gifts go. While gifts are off, the button is greyed out and a note says who receives gifts goes there once chosen.
 
 The lead author sets each cost under "Costs on the Sponsorship page" on the workspace Sponsors page: a paperback printed and mailed to one nation, a hardcover the same way, and the website for a year. A blank box keeps that figure and its progress bar off the page. Progress counts gifts in the mode the public pages use. Copies paid for are the gifts toward the initiative divided by the cost of a paperback, never more than level 3's nations; each level shows them up to its own nations. The site's share is its gifts in the last 365 days over a year's cost; at the whole cost the card says "Paid for". The hardcovers' share is the gifts toward copies over a hardcover for every nation, since hardcovers take the place of paperbacks.
+
+## Levels
+
+Monthly and yearly sponsors reach a level by what they give. Trevor approved the levels and the Sponsorship levels page on Nov. 23, 2026 (project files, `design/sponsorship-levels/`, screens 4 to 7). The levels, their default amounts and what each gives are in `site/src/lib/sponsorship-levels.ts`:
+
+| Level | Default a month | A year | Adds |
+| --- | --- | --- | --- |
+| Free | $0 | $0 | Every page, source and case; data sets as .csv and .xlsx; forms as .docx and PDF; saving pages to read offline; starring and following pages; events |
+| Friend | $5 | $50 | Listed among sponsors, as they choose; a sponsor mark on their profile; a discount on CLE programs, once there are any |
+| Supporter | $25 | $250 | Their name in the next printed edition |
+| Patron | $100 | $1,000 | A paperback of each new edition; listed first on the Sponsorship page |
+| Benefactor | $500 | $5,000 | Their logo in the next printed edition; their logo and one line about them first on the Sponsorship page; five hardcovers of each new edition; CLE programs free for five of their staff, once there are any; 10 paperbacks a year sent to the nations, courts or libraries they choose |
+
+Each level includes everything the levels before it give. A year costs ten months (Trevor, Nov. 23, 2026), and a yearly gift reaches the level its amount over ten months reaches. No benefit gives a say in what the site or the code says.
+
+The lead author sets each level's amount a month under "Sponsorship levels" on the workspace Sponsors page; each must cost more than the one before it. A level with no saved amount uses its default.
+
+The page's note on taxes says gifts are not tax-deductible yet. Once the IRS recognizes the nonprofit, the note should name it and give its EIN, and say that a gift is deductible less the value of any books received (26 U.S.C. §§ 170(c), 6115).
+
+Still to build: each sponsor's level on their Account page and, if they choose, in public, Patrons and Benefactors first on the Sponsorship page, and the sponsor mark on profiles.
 
 ## Managers
 
@@ -53,9 +74,9 @@ Logos are PNG, JPEG or WebP up to 512 KB, checked by their first bytes, stored i
 
 ## Gifts and Stripe
 
-A gift is paid on Stripe Checkout, Stripe's own page, so card details never reach this site. A monthly gift is a Stripe subscription. The amount, card, billing address, cancelling and receipts are on Stripe's billing page (the customer portal), which the Account page opens. The site makes one Stripe customer for each sponsor in each mode, the first time a manager presses "Continue to payment", and matches every gift to the sponsor by that customer.
+A gift is paid on Stripe Checkout, Stripe's own page, so card details never reach this site. A monthly or yearly gift is a Stripe subscription that repeats each month or each year; the Account page's gift form offers every month, every year or once. The amount, card, billing address, cancelling and receipts are on Stripe's billing page (the customer portal), which the Account page opens. The site makes one Stripe customer for each sponsor in each mode, the first time a manager presses "Continue to payment", and matches every gift to the sponsor by that customer.
 
-Gifts are recorded from Stripe's webhook: a one-time gift when its Checkout page is paid (`checkout.session.completed`, or `checkout.session.async_payment_succeeded` for a bank payment that clears later) and a monthly gift each time its invoice is paid (`invoice.paid`). Each Checkout Session or invoice is recorded once, with what the sponsor chose the gift to go toward at that moment.
+Gifts are recorded from Stripe's webhook: a one-time gift when its Checkout page is paid (`checkout.session.completed`, or `checkout.session.async_payment_succeeded` for a bank payment that clears later) and a monthly or yearly gift each time its invoice is paid (`invoice.paid`). An invoice whose price repeats each year, or which pays for more than two months, is recorded as yearly. The monthly total on the Sponsorship page counts monthly gifts only. Each Checkout Session or invoice is recorded once, with what the sponsor chose the gift to go toward at that moment.
 
 ## Settings
 

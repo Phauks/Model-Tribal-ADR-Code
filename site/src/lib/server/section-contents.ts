@@ -66,6 +66,13 @@ const builtContents: Record<string, () => SectionContents> = {
 			{ label: 'Past events', link: '/events?when=past' }
 		]
 	}),
+	// The Sponsorship levels page sits under Sponsorship (docs/sponsorship.md, "Levels").
+	sponsor: () => ({
+		pages: [
+			{ label: 'Sponsorship', link: '/sponsor' },
+			{ label: 'Sponsorship levels', link: '/sponsor/levels' }
+		]
+	}),
 	store: () => ({
 		pages: [
 			{ label: 'Books', link: '/store#books' },

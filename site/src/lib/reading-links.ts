@@ -104,11 +104,12 @@ export function readingLinksHtml(readingLinks: ReadingLinks | undefined, saved =
 	}
 	const count = (saved ? 1 : 0) + sites.length + further.length;
 	if (count === 0) return '';
-	// One line each: the saved copy, the other sites, then further reading (Trevor, Nov. 23, 2026: "our saved copy should get its own line and further reading as well").
+	// One line for each place, with no dots between them: the saved copy, each other site, then further reading (Trevor, Nov. 23,
+	// 2026: "our saved copy should get its own line and further reading as well"; Nov. 24: "new line each where to read. Don't use dot to separate").
 	const lines = [
 		saved && `<span class="reading-line reading-saved">${saved}</span>`,
-		sites.length > 0 && `<span class="reading-line">${sites.join(' · ')}</span>`,
-		further.length > 0 && `<span class="reading-line reading-further">Further reading: ${further.join(' · ')}</span>`
+		...sites.map((site) => `<span class="reading-line">${site}</span>`),
+		...further.map((link) => `<span class="reading-line reading-further">Further reading: ${link}</span>`)
 	].filter(Boolean);
 	const places = `${count} ${count === 1 ? 'place' : 'places'}`;
 	// The list follows the button straight after, so the button needs no id to point to it: copies of a citation (a preview, a note under its paragraph) drop ids.

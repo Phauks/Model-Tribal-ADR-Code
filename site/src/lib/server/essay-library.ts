@@ -12,6 +12,7 @@ import path from 'node:path';
 import CSL from 'citeproc';
 import { escapeHtml, savedCopyLink } from './markdown.ts';
 import { readingLinksHtml } from '../reading-links.ts';
+import type { OpinionEntry } from '../case-opinions.ts';
 import { glossary, nationNameVariants, nationNamesAndKinds, repositoryRoot, sources, type SourceRecord } from './content.ts';
 import { sectionWithSymbol } from './citations.ts';
 import { caseItem } from './case-citations.ts';
@@ -169,4 +170,17 @@ export function everyBoxFact(records: SourceRecord[] = [...sources().values()]):
 		}
 	}
 	return { cases, laws };
+}
+
+/**
+ * Each court case's opinions and the report page each starts on, by source
+ * key, for the label a quotation from the case gets (case-opinions.ts).
+ */
+export function everyOpinionList(records: SourceRecord[] = [...sources().values()]): Record<string, OpinionEntry[]> {
+	const lists: Record<string, OpinionEntry[]> = {};
+	for (const record of records) {
+		const list = (record as { opinions?: { list: OpinionEntry[] } }).opinions?.list;
+		if (list?.length) lists[record.key] = list;
+	}
+	return lists;
 }

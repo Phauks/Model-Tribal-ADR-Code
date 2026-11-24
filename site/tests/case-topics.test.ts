@@ -44,8 +44,8 @@ describe('the index of cases by topic', () => {
 	it('lists each topic in alphabetical order with its cases from the oldest', () => {
 		expect(casesByTopicMarkdown(taggedCases(essay), (key) => names[key])).toBe(
 			[
-				'**Civil jurisdiction.** [*Worcester v. Georgia* (1832)](#case-worcester-v-georgia).',
-				'**Sovereignty.** [*Cherokee Nation v. Georgia* (1831)](#case-cherokee-nation-v-georgia); [*Worcester v. Georgia* (1832)](#case-worcester-v-georgia).'
+				'**Civil jurisdiction.** [*Worcester v. Georgia* (1832)](/cases/worcester-v-georgia).',
+				'**Sovereignty.** [*Cherokee Nation v. Georgia* (1831)](/cases/cherokee-nation-v-georgia); [*Worcester v. Georgia* (1832)](/cases/worcester-v-georgia).'
 			].join('\n\n')
 		);
 	});

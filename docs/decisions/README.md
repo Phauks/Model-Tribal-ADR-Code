@@ -59,5 +59,6 @@ A record is never rewritten after it is accepted. A later record supersedes it a
 | [0049](0049-draft-model-court-forms-before-gate-2.md) | Draft model court forms for people using Tribal courts before Gate 2 | Accepted |
 | [0050](0050-sponsor-accounts-on-the-account-pages.md) | Give sponsors an account page, with billing on Stripe's own pages | Proposed |
 | [0051](0051-search-the-source-documents-through-a-private-full-text-library.md) | Search the source documents through a private full-text library | Accepted |
+| [0054](0054-edit-the-site-text-from-the-website.md) | Edit the site text from the website, and rebuild the site to publish it | Accepted |
 
 Template: Status, Date, Context, Decision, Consequences, Sources.

@@ -102,13 +102,18 @@ def host_of(link: str) -> str:
     return host.removeprefix("www.")
 
 
+def as_request_link(link: str) -> str:
+    """Percent-encode spaces and other characters a request line cannot carry, leaving the link's own encoding alone."""
+    return urllib.parse.quote(link.strip(), safe=":/?#[]@!$&'()*+,;=%~")
+
+
 def save_capture(link: str):
     """Request a new capture. Returns it when the service names one, otherwise None.
 
     Raises RedirectedCapture when the page redirected to another site, because
     that capture may be a block page or a signed link that should not be
     published; a person checks those by hand."""
-    request = urllib.request.Request(SAVE_SERVICE + link, headers=HEADERS)
+    request = urllib.request.Request(SAVE_SERVICE + as_request_link(link), headers=HEADERS)
     with urllib.request.urlopen(request, timeout=SAVE_TIMEOUT) as response:
         final_link = response.geturl()
         location = response.headers.get("Content-Location", "")
@@ -275,7 +280,7 @@ def main(arguments: list[str]) -> int:
                 capture = save_with_retry(link)
             except RedirectedCapture as error:
                 problem = str(error)
-            except OSError as error:
+            except Exception as error:  # one bad link must not end the run
                 problem = f"save failed ({error})"
             if capture is None:
                 state.setdefault(path.stem, {})["save_failed"] = today
