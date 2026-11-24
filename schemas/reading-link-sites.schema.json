@@ -1,0 +1,62 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/Phauks/Model-Tribal-ADR-Code/schemas/reading-link-sites.schema.json",
+  "title": "Reading link sites",
+  "description": "research/reading-links/sites.yaml: the places a reader can read a case or law the site cites, in the order the links show in. scripts/caselaw/reading_links.py reads these settings, checks each link and writes a reading_links block into each source record, which the site shows (site/src/lib/reading-links.ts).",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["sites"],
+  "properties": {
+    "sites": {
+      "type": "object",
+      "minProperties": 1,
+      "propertyNames": { "$ref": "common.schema.json#/$defs/slug" },
+      "additionalProperties": { "$ref": "#/$defs/site" },
+      "description": "Each site by its id, which the site's pages use as data-reading-site."
+    }
+  },
+  "$defs": {
+    "citationKind": {
+      "type": "string",
+      "enum": ["case", "supreme-court", "us-reports", "usc", "statute", "public-law", "cfr-section", "cfr-part", "state-statute"],
+      "description": "A kind of citation the script recognizes in a source record."
+    },
+    "site": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["label", "access", "for", "check"],
+      "properties": {
+        "label": { "type": "string", "minLength": 1 },
+        "short": { "type": "string", "minLength": 1, "description": "A shorter label the link shows instead of label." },
+        "access": {
+          "type": "string",
+          "enum": ["official", "free", "subscription", "background"],
+          "description": "official: the government's own text. free. subscription: needs an account (Westlaw, Lexis). background: not legal authority (Wikipedia)."
+        },
+        "for": { "type": "array", "minItems": 1, "uniqueItems": true, "items": { "$ref": "#/$defs/citationKind" } },
+        "check": {
+          "type": "string",
+          "enum": ["get", "redirect", "api", "none"],
+          "description": "How the script checks a link before it is shown: get (answers 200 after redirects), redirect (answers with a redirect), api (the site's own data service confirms the item) or none (the site turns away automated checks; the link is marked unchecked)."
+        },
+        "note": { "type": "string" },
+        "links": {
+          "type": "object",
+          "minProperties": 1,
+          "propertyNames": {
+            "anyOf": [
+              { "$ref": "#/$defs/citationKind" },
+              { "enum": ["supreme-court-docket", "any"] }
+            ]
+          },
+          "additionalProperties": {
+            "type": "string",
+            "pattern": "^https://[^\\s]+$",
+            "description": "An address pattern with placeholders such as {volume} and {page}."
+          },
+          "description": "The address pattern for each kind of citation; 'any' serves every kind in 'for', and 'supreme-court-docket' is the pattern by docket number."
+        }
+      }
+    }
+  }
+}

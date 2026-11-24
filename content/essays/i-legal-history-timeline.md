@@ -1,15 +1,15 @@
 ---
-title: "Federal Indian Law and Tribal Justice: A Timeline"
+title: "Federal Indian Law and Native Nations: A Timeline"
 part: i
 status: draft
 review_status: drafted-from-public-sources
-updated: 2026-11-22
+updated: 2026-11-24
 research_session: 2026-11-21-legal-history-and-key-cases
 ---
 
-# Federal Indian Law and Tribal Justice: A Timeline
+# Federal Indian Law and Native Nations: A Timeline
 
-The statutes, regulations, executive acts and court decisions below shaped how [[native-nations|Native nations]] resolve disputes today, and how far other governments respect the results. They run by era, from before contact to the present. The leading court decisions sit in their place in each era, in boxes that give the question, the holding, the court's own words and what later courts made of them. Thematic sections follow the eras. One traces the development of [[tribal-court|Tribal courts]] and [[peacemaking]]. One covers Hawaiʻi, Puerto Rico, American Samoa, the Northern Mariana Islands and Guam. The last sets out the state rules that decide whether a Tribal judgment is enforced off the [[reservation]]. An index of the cases by topic is at the back of the book.
+The statutes, regulations, executive acts and court decisions below shaped the law that applies to [[native-nations|Native nations]], their citizens and their lands today, and how far other governments respect Tribal law and Tribal courts. They run by era, from before contact to the present. The leading court decisions sit in their place in each era, in boxes that give the question, the holding, the court's own words and what later courts made of them. Thematic sections follow the eras. One traces the development of [[tribal-court|Tribal courts]], including [[peacemaking]]. One covers Hawaiʻi, Puerto Rico, American Samoa, the Northern Mariana Islands and Guam. The last sets out the state rules that decide whether a Tribal judgment is enforced off the [[reservation]]. An index of the cases by topic is at the back of the book.
 
 ## How to Read the Entries
 
@@ -17,7 +17,7 @@ The statutes, regulations, executive acts and court decisions below shaped how [
 
 Each entry opens with its year. A court decision of lasting importance has a box of its own. The box heading gives the full citation. Beneath it are the nations involved, named as the Bureau of Indian Affairs list or the nation itself writes its name today. For a decision of the Supreme Court of the United States, the box also names the Court as it sat (the Marshall Court, the Warren Court and so on), gives the vote and lists each justice's part. These come from Oyez's case data or, where Oyez has none, from the official report [@oyez-supreme-court-case-data]. The box then states the question and the holding. Under "Quotes" it gives the court's own words, and under "Treatment" it gives later decisions or statutes that applied, limited, distinguished or declined to extend the case.
 
-Boxes labeled "Analysis" give a reading of what an entry means for a model code. They are interpretation, not statements of the sources and not legal advice. A holding stated here is a starting point for research, not a statement of current law.
+Boxes labeled "Analysis" give a short reading of an entry's place in the law. They are interpretation, not statements of the sources and not legal advice. A holding stated here is a starting point for research, not a statement of current law.
 
 ### Sources and Words
 
@@ -50,7 +50,7 @@ The NCAI guide states: "In the thousands of years preceding the arrival of the E
 
 Those systems are not only history. Writing in *Judicature*, Ada Pecos Melton observes that "In many contemporary tribal communities, dual justice systems exist. One is based on what can be called an American paradigm of justice, and the other is based on what can be called an indigenous paradigm" [@melton-indigenous-justice-systems-and-tribal-society-1995]. Robert Yazzie, then Chief Justice of the Navajo Nation, set out Navajo justice concepts in 1994 [@yazzie-1994-life-comes-from-it]. The Navajo Nation's judiciary describes peacemaking in its own public guide as grounded in Navajo fundamental law [@navajo-nation-judicial-branch-courts-and-peacemaking].
 
-How a particular nation resolves disputes is described in that nation's own published sources, and only with its agreement where the material is community-held.
+A particular nation's justice system is described from that nation's own published sources, and only with its agreement where the material is community-held.
 
 ## Treaty Era (1492 to 1871)
 
@@ -61,29 +61,25 @@ NCAI summarizes the colonial period: "These colonies acquired Indian lands under
 :::: law northwest-ordinance-1787
 ::::
 
-::: analysis Northwest Ordinance (1787)
-A duty of good faith and consent is a theme a code can draw on for dispute resolution between governments.
-:::
-
 :::: law trade-and-intercourse-act-1790
 ::::
 
 ::: analysis Trade and Intercourse Act (1790)
-This is the origin of the federal restraint on selling Tribal land, which still limits how a land dispute can be settled by private agreement.
+This is the origin of the federal restraint on selling Tribal land.
 :::
 
 :::: law general-crimes-act-1817
 ::::
 
 ::: analysis General Crimes Act (1817)
-That exception leaves room for a nation's own justice system, including restorative processes, to handle offenses among its own people.
+That exception leaves room for a nation's own justice system to handle offenses among its own people.
 :::
 
 :::: case johnson-v-mintosh
 ::::
 
 ::: analysis *Johnson v. M'Intosh* (1823)
-Foundational to how U.S. law describes Native land title and the limits it places on nations' power to sell land. Useful background for any commentary on property-related disputes and on why federal law, not state law, governs Native title.
+Foundational to how U.S. law describes Native land title and the limits it places on nations' power to sell land, and to why federal law, not state law, governs Native title.
 :::
 
 :::: law trade-and-intercourse-act-1834
@@ -93,14 +89,14 @@ Foundational to how U.S. law describes Native land title and the limits it place
 ::::
 
 ::: analysis End of treaty making in the Indian Appropriation Act (1871)
-After 1871, terms between governments, including terms for resolving disputes, take the form of statutes, compacts and agreements rather than treaties.
+After 1871, terms between governments take the form of statutes, compacts and agreements rather than treaties.
 :::
 
-### Dispute Clauses in the Treaties
+### Treaty Clauses on Crimes and Injuries
 
 Many treaties said how the parties would handle a wrong done by one side's people to the other's.
 
-::: analysis How the treaty dispute clauses changed
+::: analysis How the treaty clauses on crimes and injuries changed
 Read together, the clauses show a change in who decides: from joint trials, to surrender of offenders, to complaint between governments, to the federal forum alone.
 :::
 
@@ -109,10 +105,6 @@ Read together, the clauses show a change in who decides: from joint trials, to s
 **1785 and 1791. Surrender and no retaliation.** The Hopewell treaty bound the Cherokee Nation to "deliver up" a person who committed a capital crime against a citizen, "to be punished according to the ordinances of the United States," and declared that "the punishment of the innocent under the idea of retaliation, is unjust" [@treaty-with-the-cherokee-1785, arts. VI, VIII]. The Holston treaty repeated both terms and added that neither side would retaliate "until satisfaction shall have been demanded of the party of which the aggressor is, and shall have been refused" [@treaty-with-the-cherokee-1791, arts. X, XII].
 
 **1794 and 1795. Complaint between governments.** The Canandaigua treaty with the Six Nations provided that "for injuries done by individuals on either side, no private revenge or retaliation shall take place; but, instead thereof, complaint shall be made by the party injured, to the other," with the injured side's complaint going to the President or to "the principal chiefs of the Six Nations, or of the nation to which the offender belongs" [@treaty-with-the-six-nations-1794, art. VII]. The Greenville treaty used nearly the same words [@treaty-with-the-wyandot-etc-1795, art. IX].
-
-::: analysis Complaint between governments in the Canandaigua treaty
-A complaint from one government to the other, and "prudent measures" to keep the peace, is a negotiation step between governments, much like the notice-and-meet clauses of modern gaming compacts.
-:::
 
 **1867 and 1868. The "bad men" clauses.** The peace treaties of 1867 and 1868 used one formula. If "bad men among the whites" wronged a Native person, the United States would, "upon proof made to the agent," arrest and punish the offender "and also re-imburse the injured person for the loss sustained." If "bad men among the Indians" did wrong, the nation would "deliver up the wrong-doer to the United States, to be tried and punished according to its laws" [@treaty-with-the-sioux-and-arapaho-1868, art. 1]. The same clause appears in the treaties with the Kiowa and Comanche, the Ute and the Navajo [@treaty-with-the-kiowa-and-comanche-1867, art. 1; @treaty-with-the-ute-1868, art. 6; @treaty-with-the-navaho-1868, art. 1]. By then the forum was the federal one alone.
 
@@ -134,14 +126,14 @@ NCAI describes "pressure on eastern tribal nations to move west, resulting in fo
 ::::
 
 ::: analysis *Cherokee Nation v. Georgia* (1831)
-Source of the "domestic dependent nations" and trust ("ward") framing that still shapes federal-court access for Native nations and the trust relationship; relevant to commentary on which forums are open to nations as litigants.
+Source of the "domestic dependent nations" and trust ("ward") framing that still shapes federal-court access for Native nations and the trust relationship.
 :::
 
 :::: case worcester-v-georgia
 ::::
 
 ::: analysis *Worcester v. Georgia* (1832)
-The core statement of inherent Native sovereignty and of the federal-Tribal relationship excluding state law; the starting point for any model code provision asserting a nation's territorial jurisdiction and its own dispute-resolution forums.
+The core statement of inherent Native sovereignty and of the federal-Tribal relationship excluding state law.
 :::
 
 ## Reservations and Allotment (1871 to 1934)
@@ -154,14 +146,14 @@ NCAI writes that "Settlers' increasing desire for the land within reservations a
 ::::
 
 ::: analysis Rules Governing the Court of Indian Offenses (1883)
-The first federal courts on reservations were built to suppress traditional practice. A code that restores traditional dispute resolution answers that history in part.
+The first federal courts on reservations were built to suppress traditional practice.
 :::
 
 :::: case ex-parte-crow-dog
 ::::
 
 ::: analysis *Ex parte Crow Dog* (1883)
-Recognizes a nation's own process for resolving even a homicide as law the federal courts must respect absent clear congressional action; a key historical anchor for commentary on traditional and restorative dispute resolution.
+Recognizes a nation's own process for resolving even a homicide as law the federal courts must respect absent clear congressional action.
 :::
 
 :::: law major-crimes-act-1885
@@ -171,7 +163,7 @@ Recognizes a nation's own process for resolving even a homicide as law the feder
 ::::
 
 ::: analysis *United States v. Kagama* (1886)
-The doctrinal root of federal "plenary power" and of federal criminal jurisdiction in Indian country, which limits how far a nation's own criminal or restorative forums can reach for major crimes.
+The doctrinal root of federal "plenary power" and of federal criminal jurisdiction in Indian country, which limits how far a nation's own criminal jurisdiction can reach for major crimes.
 :::
 
 ### Allotment and the Plenary Power
@@ -180,14 +172,14 @@ The doctrinal root of federal "plenary power" and of federal criminal jurisdicti
 ::::
 
 ::: analysis General Allotment Act (1887)
-Allotment left checkerboard land ownership and fractionated heirship, the source of many disputes over jurisdiction, land and probate that a nation's forums are asked to resolve today.
+Allotment left checkerboard land ownership and fractionated heirship, the source of many disputes over jurisdiction, land and probate today.
 :::
 
 :::: case talton-v-mayes
 ::::
 
 ::: analysis *Talton v. Mayes* (1896)
-Establishes that Tribal courts and processes are not bound by the federal Bill of Rights as such. That is why the Indian Civil Rights Act and each nation's own law, not the Constitution, set procedural protections in Tribal forums.
+Establishes that Tribal courts and processes are not bound by the federal Bill of Rights as such. That is why the Indian Civil Rights Act and each nation's own law, not the Constitution, set procedural protections in Tribal courts.
 :::
 
 :::: law curtis-act-1898
@@ -197,7 +189,7 @@ Establishes that Tribal courts and processes are not bound by the federal Bill o
 ::::
 
 ::: analysis *Lone Wolf v. Hitchcock* (1903)
-The high-water mark of "plenary power"; commentary on treaty-based dispute provisions and on the stability of agreements with the United States should account for Congress's asserted power to abrogate treaties.
+The high-water mark of "plenary power," including Congress's asserted power to abrogate treaties.
 :::
 
 ### Treaty Rights, Citizenship and Status
@@ -206,28 +198,28 @@ The high-water mark of "plenary power"; commentary on treaty-based dispute provi
 ::::
 
 ::: analysis *Elk v. Wilkins* (1884)
-Background for the dual political status of citizens of Native nations, which affects who may be parties before Tribal forums and how membership-based jurisdiction is framed.
+Background for the dual political status of citizens of Native nations.
 :::
 
 :::: case united-states-v-winans
 ::::
 
 ::: analysis *United States v. Winans* (1905)
-Source of the reserved-rights doctrine: rights not expressly ceded are retained by the nation. Commentary on inherent authority to create dispute-resolution forums can use it as an interpretive anchor.
+Source of the reserved-rights doctrine: rights not expressly ceded are retained by the nation.
 :::
 
 :::: case winters-v-united-states
 ::::
 
 ::: analysis *Winters v. United States* (1908)
-Basis of reserved water rights; water disputes are a likely subject for intergovernmental Alternative Dispute Resolution (ADR) (water settlements, adjudications), so the code's commentary on intergovernmental agreements should cite it.
+Basis of reserved water rights.
 :::
 
 :::: case united-states-v-sandoval
 ::::
 
 ::: analysis *United States v. Sandoval* (1913)
-Defines the federal relationship with the Pueblos and the "dependent Indian community" category of Indian country, which matters for the territorial reach of a nation's forums. The opinion contains openly racist descriptions of Pueblo people; any quotation in the book should be chosen and framed with care.
+Defines the federal relationship with the Pueblos and the "dependent Indian community" category of Indian country. The opinion contains openly racist descriptions of Pueblo people.
 :::
 
 :::: law indian-citizenship-act-1924
@@ -245,10 +237,6 @@ NCAI: "The federal government, under the Indian Reorganization Act of 1934, ende
 
 :::: law indian-reorganization-act-1934
 ::::
-
-::: analysis Indian Reorganization Act (1934)
-A code may need to fit within, or work around, a constitution of the IRA era.
-:::
 
 **1934. Solicitor's opinion, Powers of Indian Tribes.** Written to guide the drafting of constitutions under the IRA, the opinion stated that "The decisions of Indian tribal courts, rendered within their jurisdiction and according to the forms of law or custom recognized by the tribe, are entitled to full faith and credit in the courts of the several States" [@solicitor-opinion-powers-of-indian-tribes-1934].
 
@@ -289,14 +277,14 @@ In these states Tribal and state courts generally have concurrent jurisdiction, 
 ::::
 
 ::: analysis *Tee-Hit-Ton Indians v. United States* (1955)
-Explains why Alaska Native land claims were settled by statute rather than litigation. That shapes the distinctive Alaska setting (few reservations, the Alaska Native Claims Settlement Act corporations) in which Alaska Native Tribal forums operate.
+Explains why Alaska Native land claims were settled by statute rather than litigation, which shaped the distinctive Alaska setting (few reservations, the Alaska Native Claims Settlement Act corporations).
 :::
 
 :::: law indian-vocational-training-act-1956
 ::::
 
 ::: analysis Relocation under the Indian Vocational Training Act (1956)
-Relocation helped create large urban Native populations living outside any nation's territory, which a code may reach only by consent or citizenship.
+Relocation helped create large urban Native populations living outside any nation's territory.
 :::
 
 ### Tribal Courts and the Constitution
@@ -305,7 +293,7 @@ Relocation helped create large urban Native populations living outside any natio
 ::::
 
 ::: analysis *Williams v. Lee* (1959)
-The leading case protecting Tribal forums from state-court encroachment over on-reservation claims against citizens of the nation; central to any code provision on exclusive or primary Tribal jurisdiction over contract and debt disputes.
+The leading case protecting Tribal courts from state-court encroachment over on-reservation claims against citizens of the nation.
 :::
 
 **1959. Navajo Nation Courts.** The same year, the Navajo Nation Council "did away with the Courts of Indian Offenses and in its place created the Navajo Nation Courts on April 1, 1959" [@navajo-nation-judicial-branch-history-of-the-courts].
@@ -314,7 +302,7 @@ The leading case protecting Tribal forums from state-court encroachment over on-
 ::::
 
 ::: analysis *Native American Church v. Navajo Tribal Council* (1959)
-Confirms that federal constitutional limits do not apply directly to Tribal governments, so procedural guarantees in Tribal forums come from the Indian Civil Rights Act and each nation's own law. A model code should state its own due-process guarantees.
+Confirms that federal constitutional limits do not apply directly to Tribal governments, so procedural guarantees in Tribal courts come from the Indian Civil Rights Act and each nation's own law.
 :::
 
 ## Self-Determination (1968 to 1987)
@@ -337,7 +325,7 @@ That is a federal instruction that state courts apply Tribal custom.
 ::::
 
 ::: analysis *Menominee Tribe of Indians v. United States* (1968)
-A clear-statement rule protecting treaty rights from implied abrogation; supports interpretive provisions in the model code requiring clear language before a nation's rights or immunities are treated as surrendered.
+A clear-statement rule protecting treaty rights from implied abrogation.
 :::
 
 ### Self-Determination as Federal Policy
@@ -355,7 +343,7 @@ Because land went to corporations, most Alaska Native Tribal courts work without
 ::::
 
 ::: analysis *McClanahan v. State Tax Commission of Arizona* (1973)
-States the modern "backdrop" approach to sovereignty and preemption, which commentary can use to explain how Tribal, state and federal authority are sorted in disputes involving reservation activity.
+States the modern "backdrop" approach to sovereignty and preemption, which sorts Tribal, state and federal authority over reservation activity.
 :::
 
 :::: law menominee-restoration-act-1973
@@ -365,7 +353,7 @@ States the modern "backdrop" approach to sovereignty and preemption, which comme
 ::::
 
 ::: analysis *Morton v. Mancari* (1974)
-The political-classification principle supports membership-based eligibility rules (for example, for panels of elders, peacemakers or Tribal-court bar admission) in a model code.
+The political-classification principle supports membership-based eligibility rules.
 :::
 
 :::: law indian-self-determination-and-education-assistance-act-1975
@@ -377,43 +365,39 @@ The political-classification principle supports membership-based eligibility rul
 ::::
 
 ::: analysis *Fisher v. District Court* (1976)
-Shows that a nation's own ordinance allocating jurisdiction to its forum can displace state courts; directly relevant to drafting jurisdiction clauses for family and community dispute-resolution forums.
+Shows that a nation's own ordinance allocating jurisdiction to its courts can displace state courts.
 :::
 
 :::: case bryan-v-itasca-county
 ::::
 
 ::: analysis *Bryan v. Itasca County* (1976)
-Essential for nations in Public Law 280 States (including Alaska and California): state courts may hear private civil suits, but Tribal governments and their forums are not displaced. A model code should explain concurrent jurisdiction in Public Law 280 settings.
+Essential for nations in Public Law 280 States (including Alaska and California): state courts may hear private civil suits, but Tribal governments and their courts are not displaced.
 :::
 
 :::: case oliphant-v-suquamish-indian-tribe
 ::::
 
 ::: analysis *Oliphant v. Suquamish Indian Tribe* (1978)
-Defines the main limit on Tribal criminal forums; restorative or diversion programs involving non-Indians generally need consent or a statutory basis, which the model code should address.
+Defines the main limit on Tribal criminal jurisdiction.
 :::
 
 :::: case united-states-v-wheeler
 ::::
 
 ::: analysis *United States v. Wheeler* (1978)
-Confirms that Tribal justice systems exercise inherent, not delegated, authority; this is the legal basis for a nation's own courts and peacemaking forums.
+Confirms that Tribal justice systems exercise inherent, not delegated, authority; this is the legal basis for a nation's own courts.
 :::
 
 :::: case santa-clara-pueblo-v-martinez
 ::::
 
 ::: analysis *Santa Clara Pueblo v. Martinez* (1978)
-The most important Supreme Court authority for Tribal ADR. It recognizes Tribal courts and nonjudicial Tribal institutions as competent forums for enforcing civil rights and resolving disputes, and leaves the Indian Civil Rights Act enforcement (except habeas) to them. A model ADR code should cite it for the legitimacy of non-court forums.
+Recognizes Tribal courts and nonjudicial Tribal institutions as competent forums for enforcing civil rights and resolving disputes, and leaves the Indian Civil Rights Act enforcement (except habeas) to them.
 :::
 
 :::: law indian-child-welfare-act-1978
 ::::
-
-::: analysis Indian Child Welfare Act (1978)
-Agreements under section 109 are a ready model for terms on transfer and dispute resolution between governments.
-:::
 
 :::: law american-indian-religious-freedom-act-1978
 ::::
@@ -428,42 +412,42 @@ The act reversed the official hostility of the 1883 rules.
 ::::
 
 ::: analysis *White Mountain Apache Tribe v. Bracker* (1980)
-Supplies the balancing test for state authority over non-Indians on reservations; relevant to choice-of-law and forum provisions in contracts between nations and non-Indian businesses.
+Supplies the balancing test for state authority over non-Indians on reservations.
 :::
 
 :::: case montana-v-united-states
 ::::
 
 ::: analysis *Montana v. United States* (1981)
-The governing test for Tribal civil jurisdiction over nonmembers. Its consensual-relationship exception is why express consent clauses (forum selection, arbitration, choice of Tribal law) in contracts with nonmembers are central to a Tribal ADR code.
+The governing test for Tribal civil jurisdiction over nonmembers.
 :::
 
 :::: case merrion-v-jicarilla-apache-tribe
 ::::
 
 ::: analysis *Merrion v. Jicarilla Apache Tribe* (1982)
-Teaches that commercial agreements do not silently waive sovereign powers; a drafting point for any dispute clause that a nation signs (reserve powers expressly; waive only expressly).
+Teaches that commercial agreements do not silently waive sovereign powers.
 :::
 
 :::: case national-farmers-union-insurance-companies-v-crow-tribe
 ::::
 
 ::: analysis *National Farmers Union Insurance Cos. v. Crow Tribe of Indians* (1985)
-Creates the Tribal-exhaustion doctrine: Tribal forums get the first opportunity to decide their own jurisdiction. A model code should provide a clear, prompt procedure for jurisdictional rulings so exhaustion works in practice.
+Creates the Tribal-exhaustion doctrine: Tribal courts get the first opportunity to decide their own jurisdiction.
 :::
 
 :::: case iowa-mutual-insurance-company-v-laplante
 ::::
 
 ::: analysis *Iowa Mutual Insurance Co. v. LaPlante* (1987)
-Supports finality of Tribal-forum decisions: once a Tribal forum with jurisdiction decides issues, federal courts defer. This is a foundation for code provisions on the preclusive effect of Tribal ADR outcomes.
+Supports finality of Tribal-court decisions: once a Tribal court with jurisdiction decides issues, federal courts defer.
 :::
 
 :::: case california-v-cabazon-band-of-mission-indians
 ::::
 
 ::: analysis *California v. Cabazon Band of Mission Indians* (1987)
-The origin of the Indian Gaming Regulatory Act and of Tribal-state compacting, whose dispute-resolution clauses are a major real-world example of intergovernmental ADR.
+The origin of the Indian Gaming Regulatory Act and of Tribal-state compacting.
 :::
 
 ## Modern Era (1988 to the Present)
@@ -490,48 +474,48 @@ This is the clearest federal statutory endorsement found of a nation's own court
 ::::
 
 ::: analysis *Seminole Tribe of Florida v. Florida* (1996)
-Removes the federal-court remedy against a State that will not negotiate a gaming compact in good faith, which increases the importance of negotiated dispute-resolution and waiver clauses in Tribal-state compacts.
+Removes the federal-court remedy against a State that will not negotiate a gaming compact in good faith.
 :::
 
 :::: case yellen-v-confederated-tribes-of-chehalis-reservation
 ::::
 
 ::: analysis *Yellen v. Confederated Tribes of the Chehalis Reservation* (2021)
-Clarifies the distinct legal status of Alaska Native corporations versus federally recognized Tribes; an Alaska-specific chapter of the model code should distinguish Tribal forums from ANC corporate dispute processes.
+Clarifies the distinct legal status of Alaska Native corporations versus federally recognized Tribes.
 :::
 
 :::: case ysleta-del-sur-pueblo-v-texas
 ::::
 
 ::: analysis *Ysleta del Sur Pueblo v. Texas* (2022)
-Shows how statute-specific gaming regimes for particular nations work, which matters for compacts and dispute clauses for nations outside the Indian Gaming Regulatory Act's ordinary framework.
+Shows how statute-specific gaming regimes for particular nations work outside the Indian Gaming Regulatory Act's ordinary framework.
 :::
 
 :::: case arizona-v-navajo-nation
 ::::
 
 ::: analysis *Arizona v. Navajo Nation* (2023)
-Limits judicial enforcement of trust duties unless specific duties are written into treaties or statutes; nations negotiating settlements and agreements should write enforceable duties and dispute processes into the text.
+Limits judicial enforcement of trust duties unless specific duties are written into treaties or statutes.
 :::
 
 :::: case becerra-v-san-carlos-apache-tribe
 ::::
 
 ::: analysis *Becerra v. San Carlos Apache Tribe* (2024)
-The only Indian-law merits decision of October Terms 2023-2025. It arose from contract disputes under the Indian Self-Determination and Education Assistance Act, whose Contract Disputes Act procedures are a federal ADR model the commentary can compare with Tribal ADR.
+The only Indian-law merits decision of October Terms 2023-2025. It arose from contract disputes under the Indian Self-Determination and Education Assistance Act.
 :::
 
-### Sovereign Immunity and Arbitration
+### Sovereign Immunity
 
-::: analysis Sovereign immunity and arbitration cases (1991 to 2023)
-From 1991 to 2023 the Supreme Court repeatedly held that a nation is immune from suit unless Congress or the nation waives immunity, including for commercial conduct, and that an arbitration clause can be such a waiver. For a model code, these cases make the drafting of waiver, forum and enforcement clauses one of the most important practical subjects.
+::: analysis Sovereign immunity cases (1991 to 2023)
+From 1991 to 2023 the Supreme Court repeatedly held that a nation is immune from suit unless Congress or the nation waives immunity, including for commercial conduct, and that an arbitration clause can be such a waiver.
 :::
 
 :::: case oklahoma-tax-commission-v-citizen-band-potawatomi-indian-tribe
 ::::
 
 ::: analysis *Oklahoma Tax Commission v. Citizen Band Potawatomi Indian Tribe of Oklahoma* (1991)
-Sets the "clear waiver" standard that any ADR clause must meet, and expressly points to negotiated Tribal-state agreements as the alternative to litigation, which supports intergovernmental ADR provisions.
+Sets the "clear waiver" standard, and expressly points to negotiated Tribal-state agreements as the alternative to litigation.
 :::
 
 :::: case sokaogon-gaming-enterprise-corporation-v-tushie-montgomery-associates
@@ -544,57 +528,53 @@ An early, influential holding (by Judge Posner) that an ordinary arbitration cla
 :::: case kiowa-tribe-v-manufacturing-technologies
 ::::
 
-::: analysis *Kiowa Tribe of Oklahoma v. Manufacturing Technologies, Inc.* (1998)
-Because immunity covers commercial contracts, the only path to binding ADR with a nation is an express waiver; this makes waiver drafting a core subject of the model code.
-:::
-
 :::: case val-u-construction-company-v-rosebud-sioux-tribe
 ::::
 
 ::: analysis *Val-U Construction Co. v. Rosebud Sioux Tribe* (1998)
-A nation that has agreed to arbitrate may be bound by an award even if it refuses to participate; a model code should advise on participation and on clear limits in waiver clauses.
+A nation that has agreed to arbitrate may be bound by an award even if it refuses to participate.
 :::
 
 :::: case ninigret-development-corporation-v-narragansett-indian-wetuomuck-housing-authority
 ::::
 
 ::: analysis *Ninigret Development Corp. v. Narragansett Indian Wetuomuck Housing Authority* (2000)
-A real tiered clause (Tribal Council, then a Tribal Court-appointed arbitration board, then federal court only by written agreement) and a clear test for when arbitration language waives immunity. An excellent model for drafting multi-step Tribal ADR clauses.
+A clear test for when arbitration language waives immunity, applied to a tiered clause (Tribal Council, then a Tribal Court-appointed arbitration board, then federal court only by written agreement).
 :::
 
 :::: case c-and-l-enterprises-v-citizen-band-potawatomi-2001
 ::::
 
 ::: analysis *C & L Enterprises, Inc. v. Citizen Band Potawatomi Indian Tribe of Oklahoma* (2001)
-The key Supreme Court case for Tribal ADR drafting: an arbitration clause plus enforcement and choice-of-law language can waive immunity for enforcement of awards. A model code should offer clauses that state exactly which forum may confirm or enforce an award, what relief is available, and what is not waived.
+An arbitration clause plus enforcement and choice-of-law language can waive immunity for enforcement of awards.
 :::
 
 :::: case smith-v-hopland-band-of-pomo-indians
 ::::
 
 ::: analysis *Smith v. Hopland Band of Pomo Indians* (2002)
-A state appellate application of reasoning like that in *C & L Enterprises*; shows how state courts read arbitration clauses in Tribal contracts, relevant to model clauses specifying the enforcing forum.
+A state appellate application of reasoning like that in *C & L Enterprises*; shows how state courts read arbitration clauses in Tribal contracts.
 :::
 
 :::: case michigan-v-bay-mills-indian-community
 ::::
 
 ::: analysis *Michigan v. Bay Mills Indian Community* (2014)
-Reaffirms broad Tribal immunity and expressly points to negotiated waivers in compacts and contracts as the route to remedies; this directly supports model waiver and dispute clauses for intergovernmental agreements.
+Reaffirms broad Tribal immunity and expressly points to negotiated waivers in compacts and contracts as the route to remedies.
 :::
 
 :::: case lewis-v-clarke
 ::::
 
 ::: analysis *Lewis v. Clarke* (2017)
-Tribal immunity does not shield employees sued personally; a Tribal claims or ADR process for injuries involving Tribal enterprises (for example, casino tort claims procedures) can channel such claims.
+Tribal immunity does not shield employees sued personally.
 :::
 
 :::: case lac-du-flambeau-band-v-coughlin
 ::::
 
 ::: analysis *Lac du Flambeau Band of Lake Superior Chippewa Indians v. Coughlin* (2023)
-A congressional abrogation that applies to Tribal enterprises in bankruptcy; a model code on commercial ADR should flag statutes like this where immunity does not apply regardless of contract language.
+A congressional abrogation that applies to Tribal enterprises in bankruptcy regardless of contract language.
 :::
 
 ### Civil Jurisdiction over Nonmembers
@@ -603,42 +583,42 @@ A congressional abrogation that applies to Tribal enterprises in bankruptcy; a m
 ::::
 
 ::: analysis *Strate v. A-1 Contractors* (1997)
-Limits Tribal adjudication of disputes between nonmembers absent consent; a Tribal ADR code should provide for express written consent to Tribal forums by nonmembers to fit the *Montana* consensual-relationship exception.
+Limits Tribal adjudication of disputes between nonmembers absent consent.
 :::
 
 :::: case alaska-v-native-village-of-venetie-tribal-government
 ::::
 
 ::: analysis *Alaska v. Native Village of Venetie Tribal Government* (1998)
-Central for Alaska Native nations. Territorial (Indian country) jurisdiction is largely unavailable on the Alaska Native Claims Settlement Act lands, so Alaska Tribal forums rely on membership-based jurisdiction and consent, which the model code must accommodate.
+Central for Alaska Native nations. Territorial (Indian country) jurisdiction is largely unavailable on the Alaska Native Claims Settlement Act lands, so Alaska Tribal courts rely on membership-based jurisdiction and consent.
 :::
 
 :::: case atkinson-trading-company-v-shirley
 ::::
 
 ::: analysis *Atkinson Trading Co. v. Shirley* (2001)
-Shows that services alone do not create consent; ADR provisions binding nonmembers should rest on express agreements.
+Shows that services alone do not create consent.
 :::
 
 :::: case nevada-v-hicks
 ::::
 
 ::: analysis *Nevada v. Hicks* (2001)
-Limits Tribal-forum jurisdiction over state officials and federal claims; intergovernmental (Tribal-state) disputes may need negotiated forums, such as cross-deputization or cooperative agreements with dispute clauses.
+Limits Tribal-court jurisdiction over state officials and federal claims.
 :::
 
 :::: case plains-commerce-bank-v-long-family-land-and-cattle-company
 ::::
 
 ::: analysis *Plains Commerce Bank v. Long Family Land & Cattle Co.* (2008)
-Even where a nonmember has consensual dealings with members, Tribal jurisdiction must relate to those dealings and to Tribal sovereign interests; ADR consent clauses should describe the disputes covered precisely.
+Even where a nonmember has consensual dealings with members, Tribal jurisdiction must relate to those dealings and to Tribal sovereign interests.
 :::
 
 :::: case dollar-general-corporation-v-mississippi-band-of-choctaw-indians
 ::::
 
 ::: analysis *Dollar General Corp. v. Mississippi Band of Choctaw Indians* (2016)
-Leaves open whether Tribal courts may hear tort claims against nonmembers who consent to commercial relationships; ADR clauses that expressly cover torts related to the relationship reduce this uncertainty.
+Leaves open whether Tribal courts may hear tort claims against nonmembers who consent to commercial relationships.
 :::
 
 ### Recognition, Enforcement and Full Faith and Credit
@@ -647,7 +627,7 @@ Leaves open whether Tribal courts may hear tort claims against nonmembers who co
 ::::
 
 ::: analysis Federal recognition under the Federally Recognized Indian Tribe List Act (1994)
-Most state rules for enforcing Tribal judgments apply only to courts of federally recognized nations, so list status can decide whether an outcome is enforceable off the reservation.
+Most state rules for enforcing Tribal judgments apply only to courts of federally recognized nations, so list status can decide whether a judgment is enforceable off the reservation.
 :::
 
 :::: law usc-18-2265
@@ -660,42 +640,42 @@ Most state rules for enforcing Tribal judgments apply only to courts of federall
 ::::
 
 ::: analysis *Wilson v. Marchington* (1997)
-The leading federal framework for recognizing Tribal judgments. The equitable grounds include inconsistency with the parties' contractual choice of forum, so Tribal ADR outcomes and forum clauses should be drafted with these factors in mind.
+The leading federal framework for recognizing Tribal judgments. The equitable grounds include inconsistency with the parties' contractual choice of forum.
 :::
 
 :::: case john-v-baker
 ::::
 
 ::: analysis *John v. Baker* (1999)
-The leading authority that Alaska Native Tribal forums operate on membership-based jurisdiction even without Indian country, and that state courts extend comity to them; essential for any Alaska chapter of the model code.
+The leading authority that Alaska Native Tribal courts operate on membership-based jurisdiction even without Indian country, and that state courts extend comity to them.
 :::
 
 :::: case teague-v-bad-river-band-2000
 ::::
 
 ::: analysis *Teague v. Bad River Band of the Lake Superior Tribe of Chippewa Indians* (2000)
-A model of court-to-court communication (judicial conferencing) to resolve concurrent Tribal-state jurisdiction; relevant to code provisions on cooperation and transfer between Tribal and state forums.
+An example of court-to-court communication (judicial conferencing) to resolve concurrent Tribal-state jurisdiction.
 :::
 
 :::: case bird-v-glacier-electric-cooperative
 ::::
 
 ::: analysis *Bird v. Glacier Electric Cooperative, Inc.* (2001)
-Shows the due-process ground for refusing recognition in practice; a model code's rules of procedure and conduct for advocates and neutrals (including bias safeguards) protect the enforceability of Tribal outcomes.
+Shows the due-process ground for refusing recognition in practice.
 :::
 
 :::: case att-corporation-v-coeur-dalene-tribe
 ::::
 
 ::: analysis *AT&T Corp. v. Coeur d'Alene Tribe* (2002)
-Combines a strong statement of comity with a reminder that subject-matter limits (here, a federal statute's exclusive forum provisions) can defeat recognition; a model code should identify claims that Tribal forums cannot finally resolve.
+Combines a strong statement of comity with a reminder that subject-matter limits (here, a federal statute's exclusive forum provisions) can defeat recognition.
 :::
 
 :::: case teague-v-bad-river-band-2003
 ::::
 
 ::: analysis *Teague v. Bad River Band of the Lake Superior Tribe of Chippewa Indians* (2003)
-Illustrates the costs of uncoordinated parallel proceedings and the fractured approaches (full faith and credit vs. comity) state courts take. Supports code provisions for early coordination with state courts and for recognition of Tribal judgments.
+Illustrates the costs of uncoordinated parallel proceedings and the fractured approaches (full faith and credit vs. comity) state courts take.
 :::
 
 **Enforcement under federal law today.** Federal statutes require full faith and credit for Tribal orders in three areas: child custody (the Indian Child Welfare Act), protection orders and child support [@indian-child-welfare-act-1978; @usc-18-2265; @usc-28-1738b].
@@ -710,14 +690,14 @@ Outside those three areas, recognition depends on comity and on state rules.
 ::::
 
 ::: analysis *Mississippi Band of Choctaw Indians v. Holyfield* (1989)
-Shows that a nation's jurisdiction over family matters protects collective as well as individual interests, which supports Tribal family-group conferencing and other family ADR provisions.
+Shows that a nation's jurisdiction over family matters protects collective as well as individual interests.
 :::
 
 :::: case haaland-v-brackeen
 ::::
 
 ::: analysis *Haaland v. Brackeen* (2023)
-Upholds the Indian Child Welfare Act, including the role of Tribal courts and Tribal placement preferences; relevant to family dispute-resolution and child-welfare provisions in the model code.
+Upholds the Indian Child Welfare Act, including the role of Tribal courts and Tribal placement preferences.
 :::
 
 ### Tribal Justice Systems
@@ -735,10 +715,6 @@ This is the core federal statutory recognition that traditional and alternative 
 :::: law tribal-law-and-order-act-2010
 ::::
 
-::: analysis Tribal Law and Order Act (2010)
-Diversion or restorative options in serious cases have to be designed around those conditions.
-:::
-
 :::: law violence-against-women-reauthorization-act-2013-title-ix
 ::::
 
@@ -748,7 +724,7 @@ Diversion or restorative options in serious cases have to be designed around tho
 ::::
 
 ::: analysis *Duro v. Reina* (1990)
-Historical example of Congress restoring Tribal jurisdiction after an adverse decision; relevant to how a code defines who is subject to a nation's criminal or restorative forums.
+Historical example of Congress restoring Tribal jurisdiction after an adverse decision.
 :::
 
 **1990 and 1991. The "Duro fix."** After *Duro*, Congress amended the Indian Civil Rights Act to recognize "the inherent power of Indian tribes, hereby recognized and affirmed, to exercise criminal jurisdiction over all Indians" [@usc-25-1301].
@@ -757,42 +733,42 @@ Historical example of Congress restoring Tribal jurisdiction after an adverse de
 ::::
 
 ::: analysis *United States v. Lara* (2004)
-Confirms Congress can restore (recognize) inherent jurisdiction; supports code commentary on the scope of Tribal criminal and restorative forums over nonmember Indians.
+Confirms Congress can restore (recognize) inherent jurisdiction.
 :::
 
 :::: case united-states-v-bryant
 ::::
 
 ::: analysis *United States v. Bryant* (2016)
-Federal law gives effect to Tribal-court judgments that comply with the Indian Civil Rights Act; supports code commentary that the Indian Civil Rights Act-compliant Tribal procedures produce judgments other systems will respect.
+Federal law gives effect to Tribal-court judgments that comply with the Indian Civil Rights Act.
 :::
 
 :::: case mcgirt-v-oklahoma
 ::::
 
 ::: analysis *McGirt v. Oklahoma* (2020)
-Reservation status determines the territorial scope of a nation's forums; after *McGirt*, eastern Oklahoma nations expanded court systems and intergovernmental agreements, a practical context for intergovernmental Alternative Dispute Resolution (ADR).
+Reservation status determines the territorial scope of a nation's jurisdiction; after *McGirt*, eastern Oklahoma nations expanded court systems and intergovernmental agreements.
 :::
 
 :::: case united-states-v-cooley
 ::::
 
 ::: analysis *United States v. Cooley* (2021)
-First modern Supreme Court application of *Montana*'s second exception in favor of Tribal authority; supports code provisions on Tribal police and peacekeeping powers over all persons pending referral.
+First modern Supreme Court application of *Montana*'s second exception in favor of Tribal authority.
 :::
 
 :::: case denezpi-v-united-states
 ::::
 
 ::: analysis *Denezpi v. United States* (2022)
-Concerns Courts of Indian Offenses, which still serve some nations [@cfr-25-part-11-courts-of-indian-offenses]; relevant if the model code addresses a nation's move from a Court of Indian Offenses to its own forums.
+Concerns Courts of Indian Offenses, which still serve some nations [@cfr-25-part-11-courts-of-indian-offenses].
 :::
 
 :::: case oklahoma-v-castro-huerta
 ::::
 
 ::: analysis *Oklahoma v. Castro-Huerta* (2022)
-Increases state criminal authority in Indian country, making Tribal-state cooperative agreements (and their dispute clauses) more important.
+Increases state criminal authority in Indian country, making Tribal-state cooperative agreements more important.
 :::
 
 ### Recent Statutes (2024 to 2026)
@@ -810,7 +786,7 @@ Increases state criminal authority in Indian country, making Tribal-state cooper
 The Miami claim continues a pattern of Congress resolving land disputes by assigning them to a chosen forum.
 :::
 
-## Tribal Courts and Peacemaking
+## Tribal Courts
 
 This thread runs across the eras above.
 
@@ -834,13 +810,9 @@ Federal regulations at 25 C.F.R. Part 11 still provide Courts of Indian Offenses
 
 The National American Indian Court Judges Association was established in 1969 [@national-american-indian-court-judges-association-history] and published a long-range planning report on Indian courts in 1978 [@national-american-indian-court-judges-association-indian-courts-and-the-future-1978]. The Tribal Law and Policy Institute's Tribal Court Clearinghouse was "established in June 1997" [@tribal-court-clearinghouse-tribal-law-and-policy-institute].
 
-### Peacemaking Is Not Alternative Dispute Resolution
+### Peacemaking
 
 The Native American Rights Fund's Indigenous Peacemaking Initiative, founded in 1992, states: "PEACEMAKING IS NOT ALTERNATIVE DISPUTE RESOLUTION" and "THE TERM REFERS TO TRADITIONAL WAYS OF RESOLVING CONFLICT IN INDIGENOUS COMMUNITIES" [@narf-ipi-home]. Writing about outside courts borrowing peacemaking, Carole Goldberg asks: "But has the rhetoric merely shifted from condescension to impractical romanticizing?" [@goldberg-overextended-borrowing-tribal-peacemaking-1997].
-
-::: analysis Peacemaking and an Alternative Dispute Resolution (ADR) code
-A code titled as an ADR code needs to keep each nation's traditional processes distinct from its mediation and arbitration modules, and describe them only in the nation's own terms.
-:::
 
 ### Custom in Tribal Courts
 
@@ -865,7 +837,7 @@ Native Hawaiians, the CHamoru people of Guam and the Northern Mariana Islands, t
 ::::
 
 ::: analysis *Rice v. Cayetano* (2000)
-For Native Hawaiian institutions, this limits ancestry-based eligibility in state-run bodies; any Hawaiian dispute-resolution body (for example, hoʻoponopono-based programs) should consider whether it is state, private or community-based.
+For Native Hawaiian institutions, this limits ancestry-based eligibility in state-run bodies.
 :::
 
 **2011 and 2016. Recognition by the State, a path offered by Interior.** Hawaiʻi's Act 195 states that "The Native Hawaiian people are hereby recognized as the only indigenous, aboriginal, maoli people of Hawaii" [@hawaii-revised-statutes-10h-1]. In 2016 the Interior Department adopted procedures for reestablishing a formal government-to-government relationship with a Native Hawaiian government, if the community forms one and asks [@interior-native-hawaiian-final-rule-2016; @cfr-43-part-50]. Neither step makes Native Hawaiians a Tribe, and many Kānaka Maoli reject the federal-recognition model itself [@kauanui-paradoxes-of-hawaiian-sovereignty-2018].
@@ -908,7 +880,7 @@ That is a required, non-binding step run by American Samoa's own customary offic
 ::::
 
 ::: analysis Island governments and custom in American Samoa and Hawaiʻi
-Two patterns here matter for a model code. American Samoa shows a court system built around customary officials and a required meeting before litigation. Hawaiʻi shows a family practice that its own scholars ask outsiders not to turn into a commercial process. Both are context for the code, not templates for it.
+American Samoa shows a court system built around customary officials and a required meeting before litigation. Hawaiʻi shows a family practice that its own scholars ask outsiders not to turn into a commercial process.
 :::
 
 ## How States Recognize Tribal Judgments
@@ -929,32 +901,15 @@ Robert Laurence's primer explains the choice. "When a state court is asked to en
 
 Most of these rules apply only to courts of federally recognized nations, several turn on reciprocity, and several test due process by the Indian Civil Rights Act.
 
-::: analysis State recognition of Tribal judgments
-A nation that wants mediated or peacemaking outcomes enforced elsewhere may therefore enter them as judgments with findings on jurisdiction, notice and hearing, and enact reciprocity provisions.
-:::
-
-## Threads for the Model Code
-
-::: analysis Threads the timeline offers the model code
-**Forums and their legitimacy.** *Santa Clara Pueblo*, *Williams v. Lee*, *Fisher*, *Wheeler*, the Indian Tribal Justice Act and the 2000 act treat nonjudicial and traditional forums as part of a nation's justice system. The code can rely on that recognition.
-
-**Jurisdiction and consent.** *Montana*'s exception for consensual relationships, the exhaustion cases and Public Law 280 decide when a nation's forum can hear a dispute involving people who are not its citizens. *Strate*, *Hicks*, *Atkinson* and *Plains Commerce Bank* narrow the other routes. Written consent to a Tribal forum is therefore the most reliable basis.
-
-**Immunity and arbitration.** *Kiowa*, *Bay Mills*, *C & L Enterprises*, *Ninigret*, *Val-U*, *Sokaogon* and *Smith v. Hopland Band* make the wording of waivers in arbitration and forum clauses decisive.
-
-**Enforcement.** Outside the three federal statutes requiring full faith and credit, enforcement depends on state comity rules, which reward written findings, due process under the Indian Civil Rights Act and reciprocity. *Wilson*, *Bird*, *AT&T*, *John v. Baker* and the two *Teague* decisions show how courts apply comity, and *Iowa Mutual* shows the weight of a Tribal court's finality.
-
-**Peacemaking.** The leading national program says peacemaking is not ADR, so the code should treat it as each nation's own process.
-:::
-
 ## Gaps and Open Questions
 
-- The treaty clauses above are a sample of nine treaties. A full survey of dispute and injury clauses across Kappler's volume 2 has not been done, and each treaty's Kappler page is taken from the treaty database rather than a page image.
+- The treaty clauses above are a sample of nine treaties. A full survey of clauses on crimes and injuries across Kappler's volume 2 has not been done, and each treaty's Kappler page is taken from the treaty database rather than a page image.
 - The Hawaiʻi entries rely on one treatise current to about 2014 and on primary records; the treatise's print page numbers are not yet available, so it is cited by chapter and section.
 - The U.S. Virgin Islands are not yet covered. For the Northern Mariana Islands, Guam and American Samoa, the Commonwealth Constitution's own text, the Chamorro Land Trust Act's 1975 enactment date, and the official text of the American Samoa and Guam codes (read here from mirrors) still need confirming.
 - Several state rules (Arizona, Michigan's adoption date, California's sunset clause) need their official text confirmed.
 - The quotations from federal courts of appeals read from unofficial copies need their reporter pages, and later treatment has been confirmed in a citator for only some of the cases.
 - For some nineteenth-century Supreme Court cases, the official report names only the author and any dissenter; the other justices are counted in the majority because the report notes no one as not participating. For *Cherokee Nation v. Georgia* the report does not say how Justices McLean and Duvall voted.
 - Self-governance compact dispute clauses have not been collected; gaming compact clauses are compared in *Comparing model codes and dispute frameworks*.
+- Several subjects of general Indian law are covered briefly or not yet: taking land into trust and *Carcieri v. Salazar*, repatriation under the Native American Graves Protection and Repatriation Act, environmental regulation (including "treatment as a state"), religious freedom, the trust responsibility and *Cobell*, and the Tribal jurisdiction the Violence Against Women Act restored in 2013 and 2022.
 - No Indian law merits decision of the Supreme Court after *Becerra* (2024) was found through Nov. 21, 2026.
 - The era quotations from the NCAI guide were read from page images and should be checked against the PDF before publication. Several Statutes at Large quotations were matched only against scanned text, which is too noisy to confirm word for word.

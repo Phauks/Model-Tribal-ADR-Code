@@ -1,0 +1,52 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/Phauks/Model-Tribal-ADR-Code/schemas/compact-documents.schema.json",
+  "title": "Gaming compact document (table row)",
+  "description": "One row of research/gaming/compact-documents.csv: a document on the Office of Indian Gaming list of Class III compacts, with its Federal Register notice and the private capture of the file (research/gaming/README.md). Built by scripts/gaming/build_catalog.py; the site's data charts and table builder read it (site/src/lib/server/data-charts.ts, table-builder-datasets.ts). Every cell is text and an empty cell is left out before checking, so 'required' means the cell may not be empty.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["id", "state", "list_tribes_column", "title", "document_kind", "listed_date", "confidence", "verification"],
+  "properties": {
+    "id": { "$ref": "common.schema.json#/$defs/slug" },
+    "state": { "$ref": "common.schema.json#/$defs/stateCode" },
+    "nations": { "$ref": "common.schema.json#/$defs/slugList", "description": "Ids of Tribe profiles in content/tribes/, taken from the profile fact that cites the same list row; empty when no profile cites it (flagged)." },
+    "list_tribes_column": { "type": "string", "description": "The list's Tribe column as printed, which is sometimes out of line with the title." },
+    "title": { "type": "string" },
+    "decision": {
+      "type": "string",
+      "enum": ["approved", "deemed-approved", "disapproved", "extension", "secretarial-procedures"],
+      "description": "The list's decision column; empty when the list gives none."
+    },
+    "document_kind": { "type": "string", "enum": ["compact", "amendment", "extension", "letter", "secretarial-procedures"] },
+    "listed_date": { "$ref": "common.schema.json#/$defs/calendarDate", "description": "The date the list shows, often the Federal Register publication or effective date rather than the signing date." },
+    "document_link": { "$ref": "common.schema.json#/$defs/link", "description": "The list's link to the file; empty when the list links none." },
+    "federal_register.citation": {
+      "type": "string",
+      "pattern": "^[0-9]+ Fed\\. Reg\\. [0-9]+ \\((Jan|Feb|Mar|Apr|May|June|July|Aug|Sept|Oct|Nov|Dec)\\.? [0-9]{1,2}, [0-9]{4}\\)$",
+      "description": "Indigo Book citation of the notice, for example '87 Fed. Reg. 35992 (June 14, 2022)'."
+    },
+    "federal_register.source": { "$ref": "common.schema.json#/$defs/slug", "description": "Key of the notice's source record in content/sources/ (scripts/validate_records.py checks it exists)." },
+    "federal_register.match": {
+      "type": "string",
+      "enum": ["linked-from-list", "nation-named-in-notice-within-150-days", "only-gaming-notice-that-day"],
+      "description": "How the notice was matched to the list row."
+    },
+    "capture.capture": { "type": "string", "pattern": "^[a-z]+(-[a-z]+)*/[^/]+\\.pdf$", "description": "Path of the private copy under research/captures/gaming/: the state's folder and the file name." },
+    "capture.pages": { "$ref": "common.schema.json#/$defs/wholeNumber" },
+    "capture.text_characters": { "$ref": "common.schema.json#/$defs/wholeNumber" },
+    "capture.sha256": { "$ref": "common.schema.json#/$defs/sha256" },
+    "confidence": { "$ref": "common.schema.json#/$defs/confidence" },
+    "verification": { "$ref": "common.schema.json#/$defs/verification" },
+    "flags": { "type": "string", "description": "What a reader should check, separated by semicolons." }
+  },
+  "dependentRequired": {
+    "federal_register.citation": ["federal_register.source", "federal_register.match"],
+    "federal_register.source": ["federal_register.citation", "federal_register.match"],
+    "federal_register.match": ["federal_register.citation", "federal_register.source"],
+    "capture.capture": ["document_link", "capture.pages", "capture.text_characters", "capture.sha256"],
+    "capture.pages": ["capture.capture"],
+    "capture.text_characters": ["capture.capture"],
+    "capture.sha256": ["capture.capture"],
+    "document_link": ["capture.capture"]
+  }
+}
