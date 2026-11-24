@@ -10,7 +10,7 @@
 import { error, json } from '@sveltejs/kit';
 import { atLeast } from '#lib/permissions.ts';
 import { essayParts, essayPath, listEssays, startableEssayParts, type EssayPart } from '#lib/server/essays.ts';
-import { canStartEssays, levelOn } from '#lib/server/essay-workspace.ts';
+import { canStartEssays, essayLevels } from '#lib/server/essay-workspace.ts';
 import { openReviewCounts } from '#lib/server/essay-review-requests.ts';
 import { requirePersonForData, storage } from '#lib/server/workspace.ts';
 import type { RequestHandler } from './$types';
@@ -30,11 +30,11 @@ export const GET: RequestHandler = async (event) => {
 	const part = event.url.searchParams.get('part') as EssayPart | null;
 	if (!part || !(essayParts as readonly string[]).includes(part)) error(400, 'Say which part.');
 	const { database } = storage(event);
-	const [essays, reviews, canStart] = await Promise.all([listEssays(database), openReviewCounts(database), canStartEssays(database, person)]);
+	const [essays, reviews, canStart, levelFor] = await Promise.all([listEssays(database), openReviewCounts(database), canStartEssays(database, person), essayLevels(database, person)]);
 	const drafts = [];
 	const standing: Record<string, EssayStanding> = {};
 	for (const essay of essays.filter((candidate) => candidate.part === part)) {
-		const level = await levelOn(database, person, essay.identifier);
+		const level = levelFor(essay.identifier);
 		if (!atLeast(level, 'comment')) continue;
 		if (!essay.published) drafts.push({ identifier: essay.identifier, title: essay.title, link: essayPath(essay.identifier, essay.part), canEdit: atLeast(level, 'contribute') });
 		standing[essay.identifier] = {

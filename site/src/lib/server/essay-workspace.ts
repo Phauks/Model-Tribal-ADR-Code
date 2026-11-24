@@ -7,7 +7,7 @@
 import { error } from '@sveltejs/kit';
 import { essaysInGit } from 'virtual:essay-library';
 import { atLeast, everyDocument, type AccessLevel } from '#lib/permissions.ts';
-import { accessTo, requireDocumentLevel } from './access.ts';
+import { accessTo, levelsFor, requireDocumentLevel } from './access.ts';
 import { isEssayIdentifier } from './essays.ts';
 import { requirePerson, requirePersonForData, storage } from './workspace.ts';
 import type { SignedInPerson } from './people.ts';
@@ -35,6 +35,14 @@ export async function essayAccess(event: WorkspaceEvent, minimum: AccessLevel, {
 
 export async function levelOn(database: D1Database, person: SignedInPerson, identifier: string): Promise<AccessLevel> {
 	return (await accessTo(database, person, { kind: 'essay', identifier })).level;
+}
+
+/**
+ * The person's level on any essay, from one read of their grants. Lists of
+ * essays use it instead of levelOn, which reads the grants again for each essay.
+ */
+export function essayLevels(database: D1Database, person: SignedInPerson): Promise<(identifier: string) => AccessLevel> {
+	return levelsFor(database, person, 'essay');
 }
 
 /** Whether the person may start a new essay: full access to every essay. */

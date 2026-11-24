@@ -9,4 +9,7 @@ import type { RequestHandler } from './$types';
 // is built.
 export const prerender = false;
 
-export const GET: RequestHandler = async () => json((await sectionContents('foundations'))?.pages ?? []);
+// Every timeline view asks for it, and it changes only when an essay is
+// published, so browsers may keep it for a minute.
+export const GET: RequestHandler = async () =>
+	json((await sectionContents('foundations'))?.pages ?? [], { headers: { 'cache-control': 'public, max-age=60' } });

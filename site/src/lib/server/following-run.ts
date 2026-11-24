@@ -6,6 +6,7 @@
  */
 import type { D1Database } from '@cloudflare/workers-types/index.ts';
 import { followableBuild } from 'virtual:followable-pages';
+import { followKindOf } from '#lib/following.ts';
 import {
 	checkForUpdates,
 	dueDigests,
@@ -23,6 +24,21 @@ export { followableBuild };
 /** Every page that can be followed now: the built pages and the published essays. */
 export async function currentDirectory(database: D1Database): Promise<PageDirectory> {
 	return pageDirectory(followableBuild, await essayPages(database));
+}
+
+/** The built pages that can be followed, by address, made once per copy of the Worker. */
+let builtAddresses: Set<string> | undefined;
+
+/**
+ * Whether a page can be followed now. Built pages are looked up without the
+ * database; published essays are read only when the address is an essay's.
+ * Answers as currentDirectory(database).has(address) does.
+ */
+export async function isFollowableNow(database: D1Database, address: string): Promise<boolean> {
+	builtAddresses ??= new Set(followableBuild.pages.map((page) => page.address));
+	if (builtAddresses.has(address)) return true;
+	if (followKindOf(address) !== 'essay') return false;
+	return (await essayPages(database)).some((page) => page.address === address);
 }
 
 /** The build this copy of the Worker has already compared, so it compares only once. */

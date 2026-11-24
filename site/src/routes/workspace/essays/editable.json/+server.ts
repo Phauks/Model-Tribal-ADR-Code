@@ -8,7 +8,7 @@
 import { json } from '@sveltejs/kit';
 import { atLeast } from '#lib/permissions.ts';
 import { essayPath, listEssays } from '#lib/server/essays.ts';
-import { levelOn } from '#lib/server/essay-workspace.ts';
+import { essayLevels } from '#lib/server/essay-workspace.ts';
 import { requirePersonForData, storage } from '#lib/server/workspace.ts';
 import type { RequestHandler } from './$types';
 
@@ -17,9 +17,10 @@ export const prerender = false;
 export const GET: RequestHandler = async (event) => {
 	const person = requirePersonForData(event);
 	const { database } = storage(event);
+	const [all, levelFor] = await Promise.all([listEssays(database), essayLevels(database, person)]);
 	const essays = [];
-	for (const essay of await listEssays(database)) {
-		if (!atLeast(await levelOn(database, person, essay.identifier), 'contribute')) continue;
+	for (const essay of all) {
+		if (!atLeast(levelFor(essay.identifier), 'contribute')) continue;
 		const link = essayPath(essay.identifier, essay.part);
 		essays.push({ identifier: essay.identifier, title: essay.title, part: essay.part, link, editLink: `${link}?edit`, savedAt: essay.latestSavedAt });
 	}
