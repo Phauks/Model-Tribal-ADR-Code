@@ -43,7 +43,7 @@ class WordWriter {
 	/** Each ordered list gets its own numbering, so it starts at its own number. */
 	private readonly orderedLists: number[] = [];
 
-	linkId(target: string): string {
+	linkIdentifier(target: string): string {
 		let index = this.links.indexOf(target);
 		if (index < 0) {
 			this.links.push(target);
@@ -68,7 +68,7 @@ class WordWriter {
 						return `<w:r>${properties ? `<w:rPr>${properties}</w:rPr>` : ''}<w:t xml:space="preserve">${escapeHtml(run.text)}</w:t></w:r>`;
 					})
 					.join('');
-				return group.link ? `<w:hyperlink r:id="${this.linkId(group.link)}" w:history="1">${body}</w:hyperlink>` : body;
+				return group.link ? `<w:hyperlink r:id="${this.linkIdentifier(group.link)}" w:history="1">${body}</w:hyperlink>` : body;
 			})
 			.join('');
 	}

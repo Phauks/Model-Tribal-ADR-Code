@@ -209,12 +209,12 @@ function documentRows(records: NationRecord[], names: Map<string, string>): Docu
 
 export function searchRecords(): SearchRecordsFile {
 	const records = nations();
-	const byId = new Map(records.map((record) => [record.id, record]));
+	const byIdentifier = new Map(records.map((record) => [record.id, record]));
 	const histories = historiesByNation();
 	const index = nationIndexRows();
 	const nationRows = index
 		.map((row) => {
-			const record = byId.get(row.id);
+			const record = byIdentifier.get(row.id);
 			return record ? nationRow(record, row, histories.get(row.id) ?? []) : undefined;
 		})
 		.filter((row): row is NationFile => row !== undefined);

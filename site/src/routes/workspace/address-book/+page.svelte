@@ -1,5 +1,7 @@
 <script lang="ts">
 	import DataTable from '#lib/components/DataTable.svelte';
+	import Dropdown from '#lib/components/Dropdown.svelte';
+	import SearchableDropdown from '#lib/components/SearchableDropdown.svelte';
 	import {
 		contactKindLabels,
 		contactKinds,
@@ -13,6 +15,15 @@
 	import type { PageProps } from './$types';
 
 	let { data, form }: PageProps = $props();
+
+	const kindChoices = contactKinds.map((kind) => ({ value: kind as string, label: contactKindLabels[kind] }));
+	const organizationChoices = $derived([
+		{ value: '', label: 'None' },
+		...data.organizations.map((organization) => ({ value: organization.identifier, label: organization.name }))
+	]);
+	const nationChoices = $derived([{ value: '', label: 'None' }, ...data.nations.map((nation) => ({ value: nation.identifier, label: nation.title }))]);
+	const labelChoices = methodLabels.map((label) => ({ value: label as string, label: methodLabelNames[label] }));
+	const sourceKindChoices = sourceKinds.map((kind) => ({ value: kind as string, label: sourceKindNames[kind] }));
 
 	const views = [
 		{ value: 'all', label: 'All' },
@@ -143,12 +154,7 @@
 <form method="post" action="?/add" class="panel">
 	<h2>Add a contact</h2>
 	<div class="field">
-		<label for="kind">Kind</label>
-		<select id="kind" name="kind">
-			{#each contactKinds as kind (kind)}
-				<option value={kind}>{contactKindLabels[kind]}</option>
-			{/each}
-		</select>
+		<Dropdown label="Kind" id="kind" name="kind" choices={kindChoices} value={contactKinds[0]} />
 	</div>
 	<div class="field">
 		<label for="name">Name</label>
@@ -159,22 +165,10 @@
 		<input id="role" name="role" type="text" maxlength="300" />
 	</div>
 	<div class="field">
-		<label for="organization">Acts for (optional)</label>
-		<select id="organization" name="organizationIdentifier">
-			<option value="">None</option>
-			{#each data.organizations as organization (organization.identifier)}
-				<option value={organization.identifier}>{organization.name}</option>
-			{/each}
-		</select>
+		<SearchableDropdown label="Acts for (optional)" id="organization" name="organizationIdentifier" choices={organizationChoices} value="" />
 	</div>
 	<div class="field">
-		<label for="nation">Nation (optional)</label>
-		<select id="nation" name="nationIdentifier">
-			<option value="">None</option>
-			{#each data.nations as nation (nation.identifier)}
-				<option value={nation.identifier}>{nation.title}</option>
-			{/each}
-		</select>
+		<SearchableDropdown label="Nation (optional)" id="nation" name="nationIdentifier" choices={nationChoices} value="" />
 	</div>
 	<div class="field">
 		<label for="tags">Tags (optional, separated by commas)</label>
@@ -185,20 +179,10 @@
 		<input id="email" name="email" type="email" maxlength="320" />
 	</div>
 	<div class="field">
-		<label for="label">Kind of email</label>
-		<select id="label" name="label">
-			{#each methodLabels as label (label)}
-				<option value={label} selected={label === 'work'}>{methodLabelNames[label]}</option>
-			{/each}
-		</select>
+		<Dropdown label="Kind of email" id="label" name="label" choices={labelChoices} value="work" />
 	</div>
 	<div class="field">
-		<label for="source-kind">Where it was found</label>
-		<select id="source-kind" name="sourceKind">
-			{#each sourceKinds as kind (kind)}
-				<option value={kind} selected={kind === 'told-us'}>{sourceKindNames[kind]}</option>
-			{/each}
-		</select>
+		<Dropdown label="Where it was found" id="source-kind" name="sourceKind" choices={sourceKindChoices} value="told-us" />
 	</div>
 	<div class="field">
 		<label for="source-label">Source, in words (optional)</label>

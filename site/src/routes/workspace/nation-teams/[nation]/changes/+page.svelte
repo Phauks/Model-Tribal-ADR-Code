@@ -16,7 +16,8 @@
 
 <p class="small">
 	<a href="/workspace/nation-teams/{data.nation.identifier}/edit">Edit the page</a> ·
-	<a href="/workspace/nation-teams/{data.nation.identifier}">Your nation’s team</a>
+	<a href="/workspace/nation-teams/{data.nation.identifier}">Your nation’s team</a> ·
+	<a href="/workspace/nation-teams/{data.nation.identifier}/laws-and-cases">Laws and cases</a>
 	{#if data.nation.page}· <a href={data.nation.page}>View the page</a>{/if}
 </p>
 <h1>Changes to the page of {data.nation.title}</h1>

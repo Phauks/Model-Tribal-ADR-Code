@@ -72,6 +72,15 @@ describe('pageDownloads', () => {
 		expect(pageDownloads('/changelog')).toEqual({ files: [], citable: false });
 		expect(pageDownloads('/stories/coyote-and-the-river').citable).toBe(true);
 	});
+
+	it('offers the Cite button on pages about one record, and not on lists', () => {
+		for (const path of ['/cases/worcester-v-georgia', '/supreme-court/marshall-court', '/supreme-court/justices/john-marshall', '/supreme-court/presidents/andrew-jackson']) {
+			expect(pageDownloads(path).citable, path).toBe(true);
+		}
+		for (const path of ['/supreme-court', '/supreme-court/justices', '/supreme-court/presidents', '/nations/coverage']) {
+			expect(pageDownloads(path).citable, path).toBe(false);
+		}
+	});
 });
 
 describe('pageCitation', () => {

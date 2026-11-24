@@ -3,7 +3,7 @@
  */
 import type { D1Database } from '@cloudflare/workers-types/index.ts';
 import { teamAnswerLabels, teamReportKinds, type TeamAnswerOutcome, type TeamReportKind } from '../nation-team-reports.ts';
-import { eventStatement } from './events.ts';
+import { activityStatement } from './activity-log.ts';
 import { now } from './identifiers.ts';
 import type { SignedInPerson } from './people.ts';
 
@@ -84,7 +84,7 @@ export async function answerReport(
 				   answered_by = excluded.answered_by, answered_at = excluded.answered_at`
 			)
 			.bind(report.identifier, report.nationIdentifier, outcome, note, person.identifier, time),
-		eventStatement(database, {
+		activityStatement(database, {
 			personIdentifier: person.identifier,
 			action: `The nation’s team answered: ${teamAnswerLabels[outcome].toLocaleLowerCase('en-US')}`,
 			targetKind: 'request',

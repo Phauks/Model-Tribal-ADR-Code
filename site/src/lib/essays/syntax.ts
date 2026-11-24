@@ -222,15 +222,15 @@ export function frontMatterField(frontMatter: string, name: string): string | un
 }
 
 /** Every source key and glossary id an essay uses, to check that each exists before it is saved or published. */
-export function referencesIn(body: string): { sourceKeys: Set<string>; termIds: Set<string> } {
+export function referencesIn(body: string): { sourceKeys: Set<string>; termIdentifiers: Set<string> } {
 	const sourceKeys = new Set<string>();
-	const termIds = new Set<string>();
+	const termIdentifiers = new Set<string>();
 	const walk = (tokens: ReturnType<MarkdownIt['parse']>) => {
 		for (const token of tokens) {
 			if (token.type === 'citation') {
 				for (const reference of token.meta.references as CitationReference[]) sourceKeys.add(reference.key);
 			} else if (token.type === 'term_link') {
-				termIds.add(token.meta.id as string);
+				termIdentifiers.add(token.meta.id as string);
 			} else if (token.type === 'container_case_open' || token.type === 'container_law_open') {
 				const key = (essayBlocks.case.exec(token.info.trim()) ?? essayBlocks.law.exec(token.info.trim()))?.[1];
 				if (key) sourceKeys.add(key);
@@ -239,5 +239,5 @@ export function referencesIn(body: string): { sourceKeys: Set<string>; termIds: 
 		}
 	};
 	walk(essayMarkdown({ forEditing: true }).parse(body, {}));
-	return { sourceKeys, termIds };
+	return { sourceKeys, termIdentifiers };
 }

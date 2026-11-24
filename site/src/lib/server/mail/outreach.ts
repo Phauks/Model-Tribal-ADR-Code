@@ -15,7 +15,7 @@ import { fillTemplate, missingFields, normalizeSubject, outreachText, snippetOf,
 import { freshDays, stalenessOf, type MethodLabel } from '#lib/address-book.ts';
 import { actionStatement, currentTime, type MailCarriers, type MailContext } from './context.ts';
 import { inboxForArrival } from './inboxes.ts';
-import { newMessageId } from './mime.ts';
+import { newMessageIdentifier } from './mime.ts';
 import { sendMessage } from './outbound.ts';
 import { suppress, suppressedAmong } from './suppressions.ts';
 import { makeToken, readToken } from './tokens.ts';
@@ -485,7 +485,7 @@ export async function sendOutreachTest(
 		replyTo: outreach.replyTo ? { email: outreach.replyTo } : null,
 		subject: `Test: ${test.subject}`,
 		text: test.text,
-		messageId: newMessageId(outreach.from.split('@')[1] ?? context.settings.domain ?? 'example.org'),
+		messageId: newMessageIdentifier(outreach.from.split('@')[1] ?? context.settings.domain ?? 'example.org'),
 		date: currentTime(context)
 	});
 }

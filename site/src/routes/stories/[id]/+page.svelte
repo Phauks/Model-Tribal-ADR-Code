@@ -1,13 +1,9 @@
 <script lang="ts">
-	import Breadcrumbs from '#lib/components/Breadcrumbs.svelte';
 	import ExternalLink from '@lucide/svelte/icons/external-link';
 	import CitationMarks from '#lib/components/CitationMarks.svelte';
 	import Collapsible from '#lib/components/Collapsible.svelte';
-	import FactGroups from '#lib/components/FactGroups.svelte';
-	import GlancePanel from '#lib/components/GlancePanel.svelte';
-	import RecordPage from '#lib/components/RecordPage.svelte';
+	import InfoPage from '#lib/components/InfoPage.svelte';
 	import ReviewStatus from '#lib/components/ReviewStatus.svelte';
-	import SourceList from '#lib/components/SourceList.svelte';
 	import type { PageProps } from './$types';
 
 	let { data }: PageProps = $props();
@@ -24,6 +20,8 @@
 		story.fullText ? `${story.fullText.words.toLocaleString('en-US')} ${story.fullText.words === 1 ? 'word' : 'words'}` : story.length
 	);
 	const nationNames = $derived(story.nations.map((nation) => nation.name).join(', '));
+	/** The titles in the nation's language, under the title. */
+	const names = $derived(story.titlesInLanguage.map((title) => ({ name: title.text, language: title.language, citations: title.citations })));
 	/** The story's key facts, for At a glance (site/DESIGN.md, "Record pages"). */
 	const glanceFacts = $derived(
 		[
@@ -55,33 +53,24 @@
 	/>
 </svelte:head>
 
-<Breadcrumbs trail={[{ label: 'Stories', href: '/stories' }]} />
-
 <!--
-	A record page (site/DESIGN.md, "Record pages"): the story itself leads the
+	An info page (site/DESIGN.md, "Info pages"): the story itself leads the
 	main column, in the teller's words, and its key facts sit in At a glance.
 -->
-<RecordPage {glance}>
-	{#snippet introduction()}
-		<h1>{story.title}</h1>
-		{#each story.titlesInLanguage as title (title.text)}
-			<p class="lead"><span lang={title.language}>{title.text}</span><CitationMarks marks={title.citations} /></p>
-		{/each}
-
+<InfoPage title={story.title} {names} glance={glanceFacts} sources={story.sources} trail={[{ label: 'Stories', href: '/stories' }]}>
+	{#snippet status()}
 		<!-- Where the story stands with the nation: the same status line as a nation's page (src/lib/review-status.ts). -->
-		<div class="badge-line">
-			<ReviewStatus status={story.review} description="Review by the nation:" data-print-part="reviewStatus">
-				{#if story.review.verified}
-					<p><strong>{story.review.label}.</strong></p>
-				{:else}
-					<p><strong>Unreviewed.</strong> {nationNames} {story.nations.length === 1 ? 'has' : 'have'} not reviewed this story yet.</p>
-					{#each story.nations as nation (nation.id)}
-						<p class="no-print"><a href="/profile/nation-team?nation={nation.id}">Work for {nation.name}? Claim its page</a></p>
-					{/each}
-				{/if}
-				<p class="no-print"><a href={removal}>Request removal</a></p>
-			</ReviewStatus>
-		</div>
+		<ReviewStatus status={story.review} description="Review by the nation:" data-print-part="reviewStatus">
+			{#if story.review.verified}
+				<p><strong>{story.review.label}.</strong></p>
+			{:else}
+				<p><strong>Unreviewed.</strong> {nationNames} {story.nations.length === 1 ? 'has' : 'have'} not reviewed this story yet.</p>
+				{#each story.nations as nation (nation.id)}
+					<p class="no-print"><a href="/profile/nation-team?nation={nation.id}">Work for {nation.name}? Claim its page</a></p>
+				{/each}
+			{/if}
+			<p class="no-print"><a href={removal}>Request removal</a></p>
+		</ReviewStatus>
 	{/snippet}
 
 	{#if story.fullText}
@@ -180,17 +169,7 @@
 			</dl>
 		</Collapsible>
 	{/if}
-
-	{#snippet sources()}
-		<SourceList sources={story.sources} />
-	{/snippet}
-</RecordPage>
-
-{#snippet glance()}
-	<GlancePanel>
-		<FactGroups groups={glanceFacts} />
-	</GlancePanel>
-{/snippet}
+</InfoPage>
 
 <style>
 	.full-text p {

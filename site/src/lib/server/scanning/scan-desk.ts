@@ -28,7 +28,7 @@ export const maximumAttempts = 8;
 const retryMinutes = [1, 5, 15, 60, 180, 360, 720];
 
 /** A file left "scanning" this long was dropped by a desk that stopped; it is taken up again. */
-const abandonedAfterMs = 30 * 60 * 1000;
+const abandonedAfterMilliseconds = 30 * 60 * 1000;
 
 /** The largest file sent to the scanner unless SCAN_SIZE_LIMIT_MB says otherwise: 2 GiB, what the engine's ClamAV is set to take. */
 export const defaultSizeLimitBytes = 2048 * 1024 * 1024;
@@ -61,7 +61,7 @@ export function retryDelayMinutes(attempts: number): number {
 /** The next file to scan, oldest first, or null. */
 async function nextDue(database: D1Database, now: Date): Promise<Pick<FileScan, 'objectKey' | 'attempts'> & { status: string } | null> {
 	const nowText = now.toISOString();
-	const abandoned = new Date(now.getTime() - abandonedAfterMs).toISOString();
+	const abandoned = new Date(now.getTime() - abandonedAfterMilliseconds).toISOString();
 	const row = await database
 		.prepare(
 			`SELECT object_key, attempts, status FROM file_scans
@@ -192,7 +192,7 @@ export async function runScans(setup: DeskSetup, deadline: number): Promise<Desk
 }
 
 /** How long one alarm works before handing over to the next: well inside the 15-minute alarm limit. */
-export const roundMs = 11 * 60 * 1000;
+export const roundMilliseconds = 11 * 60 * 1000;
 
 /** The parts of the Durable Object state the desk uses. */
 export interface DeskState {
@@ -229,7 +229,7 @@ export class DeskObject {
 		try {
 			const setup = this.setup();
 			const started = (setup.now ?? (() => new Date()))().getTime();
-			round = await runScans(setup, started + roundMs);
+			round = await runScans(setup, started + roundMilliseconds);
 		} catch (problem) {
 			// The database or bucket did not answer. Try again in a minute rather
 			// than lean on the platform's own alarm retries, which stop after six.

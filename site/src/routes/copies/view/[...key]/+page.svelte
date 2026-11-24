@@ -43,43 +43,51 @@
 		</p>
 	{/if}
 
-	<p class="actions">
-		<a class="button" href={data.file} download={data.fileName}><Download size={18} aria-hidden="true" />Download ({data.kind}, {data.size})</a>
-		<a class="button button-quiet" href={data.file}><ExternalLink size={18} aria-hidden="true" />Open the file alone</a>
-	</p>
+	{#if data.citeOnly}
+		<p class="restricted">
+			At the nation’s request, this site does not show the text of this {opinion ? 'opinion' : 'document'}. <a href={data.original} rel="noopener noreferrer">Read it at {opinion ? 'the Caselaw Access Project' : publishedAt}<ExternalLink size={14} aria-hidden="true" /></a>.
+		</p>
+	{:else}
+		<p class="actions">
+			<a class="button" href={data.file} download={data.fileName}><Download size={18} aria-hidden="true" />Download ({data.kind}, {data.size})</a>
+			<a class="button button-quiet" href={data.file}><ExternalLink size={18} aria-hidden="true" />Open the file alone</a>
+		</p>
 
-	<dl class="details small">
-		{#if details && details.nations.length > 0}
-			<dt>{details.nations.length === 1 ? 'Nation' : 'Nations'}</dt>
-			<dd>
-				{#each details.nations as nation, index (nation.id)}{index > 0 ? '; ' : ''}<a href="/nations/{nation.id}">{nation.name}</a>{/each}
-			</dd>
-		{/if}
-		<dt>Published at</dt>
-		<dd><a href={data.original} rel="noopener noreferrer">{publishedAt}</a></dd>
-		{#if data.capturedText}
-			<dt>Copy made</dt>
-			<dd>{data.capturedText}</dd>
-		{/if}
-		<dt>SHA-256</dt>
-		<dd><CopyHash sha256={data.sha256} label="this document" /> · <a href={data.verify}>Verify File</a></dd>
-		<dt>Take it down</dt>
-		<dd><a href={data.removal}>Ask to remove or redact this copy</a></dd>
-	</dl>
+		<dl class="details small">
+			{#if details && details.nations.length > 0}
+				<dt>{details.nations.length === 1 ? 'Nation' : 'Nations'}</dt>
+				<dd>
+					{#each details.nations as nation, index (nation.id)}{index > 0 ? '; ' : ''}<a href="/nations/{nation.id}">{nation.name}</a>{/each}
+				</dd>
+			{/if}
+			<dt>Published at</dt>
+			<dd><a href={data.original} rel="noopener noreferrer">{publishedAt}</a></dd>
+			{#if data.capturedText}
+				<dt>Copy made</dt>
+				<dd>{data.capturedText}</dd>
+			{/if}
+			<dt>SHA-256</dt>
+			<dd><CopyHash sha256={data.sha256} label="this document" /> · <a href={data.verify}>Verify File</a></dd>
+			<dt>Take it down</dt>
+			<dd><a href={data.removal}>Ask to remove or redact this copy</a></dd>
+		</dl>
+	{/if}
 </div>
 
-<section class="document" aria-label="The document">
-	{#if data.isPdf}
-		{#key pdfPage}<iframe class="frame" src={data.file + pdfPage} title="{data.title} ({data.kind})"></iframe>{/key}
-	{:else}
-		<!-- A saved web page runs nothing and loads nothing: its own response says so too (src/lib/server/public-copy-serving.ts). -->
-		<iframe class="frame" src={data.file} title="{data.title} ({data.kind})" sandbox="" referrerpolicy="no-referrer"></iframe>
-	{/if}
-	<p class="small muted fallback">
-		If the document does not show above, as on some phones, <a href={data.file}>open the file alone</a> or <a href={data.file} download={data.fileName}>download it</a>.
-	</p>
-	<p class="print-only">This copy is at {data.file} on this site, and was published at {data.original}.</p>
-</section>
+{#if !data.citeOnly}
+	<section class="document" aria-label="The document">
+		{#if data.isPdf}
+			{#key pdfPage}<iframe class="frame" src={data.file + pdfPage} title="{data.title} ({data.kind})"></iframe>{/key}
+		{:else}
+			<!-- A saved web page runs nothing and loads nothing: its own response says so too (src/lib/server/public-copy-serving.ts). -->
+			<iframe class="frame" src={data.file} title="{data.title} ({data.kind})" sandbox="" referrerpolicy="no-referrer"></iframe>
+		{/if}
+		<p class="small muted fallback">
+			If the document does not show above, as on some phones, <a href={data.file}>open the file alone</a> or <a href={data.file} download={data.fileName}>download it</a>.
+		</p>
+		<p class="print-only">This copy is at {data.file} on this site, and was published at {data.original}.</p>
+	</section>
+{/if}
 
 <style>
 	h1 {
@@ -125,6 +133,12 @@
 
 	.fallback {
 		margin-top: var(--space-2);
+	}
+
+	.restricted a {
+		display: inline-flex;
+		align-items: center;
+		gap: var(--space-1);
 	}
 
 	.print-only {

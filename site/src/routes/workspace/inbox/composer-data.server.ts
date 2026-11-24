@@ -8,7 +8,7 @@ import type { MailContext } from '#lib/server/mail/context.ts';
 import { addressBookRecipients, fieldsFor } from '#lib/server/mail/outreach.ts';
 import { listSavedReplies, listSignatures } from '#lib/server/mail/writing.ts';
 
-const nationsById = new Map(mailNations.map((nation) => [nation.identifier, nation]));
+const nationsByIdentifier = new Map(mailNations.map((nation) => [nation.identifier, nation]));
 
 export interface ComposerData {
 	signatures: Record<string, string>;
@@ -28,7 +28,7 @@ export async function composerData(context: MailContext, senderName: string, onl
 	const mergeValues: Record<string, MergeValues> = {};
 	for (const contact of contacts) {
 		if (wanted && !wanted.has(contact.email.toLowerCase())) continue;
-		const nation = contact.nationIdentifier ? (nationsById.get(contact.nationIdentifier) ?? null) : null;
+		const nation = contact.nationIdentifier ? (nationsByIdentifier.get(contact.nationIdentifier) ?? null) : null;
 		mergeValues[contact.email.toLowerCase()] = fieldsFor(contact, nation, context.settings.siteAddress, senderName);
 	}
 	return {

@@ -1,5 +1,6 @@
 <script lang="ts">
 	import Breadcrumbs from '#lib/components/Breadcrumbs.svelte';
+	import Dropdown from '#lib/components/Dropdown.svelte';
 	import {
 		authorityStatementLabels,
 		requestKindLabels,
@@ -14,6 +15,8 @@
 	let { data, form }: PageProps = $props();
 
 	const request = $derived(data.request);
+	const statusChoices = $derived(data.statuses.map((status) => ({ value: status as string, label: requestStatusLabels[status] })));
+	const outcomeChoices = requestOutcomes.map((outcome) => ({ value: outcome as string, label: requestOutcomeLabels[outcome] }));
 
 	function date(value: string | null, withTime = false): string {
 		if (!value) return '';
@@ -205,12 +208,7 @@
 		<form method="post" action="?/status" class="panel">
 			<h3>Change the status</h3>
 			<div class="field">
-				<label for="status">New status</label>
-				<select id="status" name="status">
-					{#each data.statuses as status (status)}
-						<option value={status} selected={status === request.status}>{requestStatusLabels[status]}</option>
-					{/each}
-				</select>
+				<Dropdown label="New status" id="status" name="status" choices={statusChoices} value={request.status} />
 			</div>
 			<div class="field">
 				<label for="status-note">Note for the history (optional)</label>
@@ -222,12 +220,7 @@
 		<form method="post" action="?/resolve" class="panel">
 			<h3>Resolve</h3>
 			<div class="field">
-				<label for="outcome">Outcome</label>
-				<select id="outcome" name="outcome">
-					{#each requestOutcomes as outcome (outcome)}
-						<option value={outcome}>{requestOutcomeLabels[outcome]}</option>
-					{/each}
-				</select>
+				<Dropdown label="Outcome" id="outcome" name="outcome" choices={outcomeChoices} value={requestOutcomes[0]} />
 			</div>
 			<div class="field">
 				<label for="reason">Reasons, as given to the requester (required when declining)</label>

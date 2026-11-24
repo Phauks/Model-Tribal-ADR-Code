@@ -31,6 +31,7 @@ import {
 import { isoDate, storyIsShown, storySourceKeys } from './src/lib/story-visibility.ts';
 import { directoryNameOf, sourceKindOf } from './src/lib/address-book-sync.ts';
 import { markSiteText } from './src/lib/site-text-markers.ts';
+import { copyRestriction } from './src/lib/nation-restrictions.ts';
 import { installCandidates, readerToolFiles, type ManifestChunk } from './src/lib/offline-shell.ts';
 import { loadPublishedSiteText, siteTextCatalog } from './src/lib/server/site-text-build.ts';
 
@@ -309,13 +310,12 @@ function publicCopiesList(): Plugin {
 		},
 		load(identifier) {
 			if (identifier !== resolvedPublicCopiesModule) return undefined;
-			const copies = publicCopies().map(({ key, mediaType, sha256, bytes, links }) => ({
-				key,
-				mediaType,
-				sha256,
-				bytes,
-				links
-			}));
+			const copies = publicCopies().map((copy) => {
+				const { key, mediaType, sha256, bytes, links } = copy;
+				// A nation's law or opinion carries its kind and nations, so the Worker can follow the nation's choices (src/lib/nation-restrictions.ts).
+				const restrict = copyRestriction(copy);
+				return restrict ? { key, mediaType, sha256, bytes, links, restrict } : { key, mediaType, sha256, bytes, links };
+			});
 			return `export const publicCopies = ${JSON.stringify(copies)};`;
 		}
 	};

@@ -1,8 +1,31 @@
 <script lang="ts">
 	import Plus from '@lucide/svelte/icons/plus';
+	import DataTable from '#lib/components/DataTable.svelte';
+	import type { TableColumn, TableRow } from '#lib/tables/table-definition.ts';
 	import type { PageProps } from './$types';
 
 	let { data }: PageProps = $props();
+
+	// In the order the server gives them.
+	const columns: TableColumn[] = [
+		{ key: 'event', header: 'Event', isRowHeader: true, sortable: true, searchable: true },
+		{ key: 'when', header: 'When', type: 'date', sortable: true },
+		{ key: 'status', header: 'Status', sortable: true, filterable: true },
+		{ key: 'registered', header: 'Registered', type: 'number', sortable: true },
+		{ key: 'waiting', header: 'Waitlist', type: 'number', sortable: true }
+	];
+	const rows: TableRow[] = $derived(
+		data.events.map((event) => ({
+			key: event.identifier,
+			cells: {
+				event: { text: event.title, href: `/workspace/events/${event.identifier}` },
+				when: { text: event.when, sortValue: event.startsAt },
+				status: { text: event.over ? `${event.status}, over` : event.status },
+				registered: { text: String(event.registered), sortValue: event.registered },
+				waiting: { text: String(event.waiting), sortValue: event.waiting }
+			}
+		}))
+	);
 </script>
 
 <svelte:head>
@@ -22,24 +45,7 @@
 {#if data.events.length === 0}
 	<p class="muted">No events yet.</p>
 {:else}
-	<div class="table-scroll">
-		<table>
-			<thead>
-				<tr><th scope="col">Event</th><th scope="col">When</th><th scope="col">Status</th><th scope="col">Registered</th><th scope="col">Waitlist</th></tr>
-			</thead>
-			<tbody>
-				{#each data.events as event (event.identifier)}
-					<tr>
-						<td><a href="/workspace/events/{event.identifier}">{event.title}</a></td>
-						<td>{event.when}</td>
-						<td>{event.over ? `${event.status}, over` : event.status}</td>
-						<td>{event.registered}</td>
-						<td>{event.waiting}</td>
-					</tr>
-				{/each}
-			</tbody>
-		</table>
-	</div>
+	<DataTable identifier="events" label="Table: events" {columns} {rows} rowName={['event', 'events']} filters />
 {/if}
 
 <style>

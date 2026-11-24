@@ -5,6 +5,7 @@
 	import { untrack } from 'svelte';
 	import { TextSelection } from 'prosemirror-state';
 	import type { EditorView } from 'prosemirror-view';
+	import Dropdown from '#lib/components/Dropdown.svelte';
 	import { characterPosition, components, counts, textBlocks, wordPosition } from '#lib/essays/checks.ts';
 
 	let { view, onclose }: { view: () => EditorView | undefined; onclose: () => void } = $props();
@@ -14,6 +15,9 @@
 	const blocks = editor ? textBlocks(editor.state.doc) : [];
 	const parts = editor ? components(editor.state.doc) : [];
 	const totals = counts(blocks);
+
+	// Nested components are set in under their parent.
+	const componentChoices = parts.map((part, index) => ({ value: String(index), label: `${'\u2003'.repeat(part.depth)}${part.label}` }));
 
 	let by = $state<'component' | 'word' | 'character'>('component');
 	let component = $state(0);
@@ -48,12 +52,13 @@
 		<label class="small"><input type="radio" bind:group={by} value="character" /> Character</label>
 	</fieldset>
 	{#if by === 'component'}
-		<label class="visually-hidden" for="go-to-component">Component</label>
-		<select id="go-to-component" bind:value={component}>
-			{#each parts as part, index (index)}
-				<option value={index}>{'  '.repeat(part.depth)}{part.label}</option>
-			{/each}
-		</select>
+		<Dropdown
+			label="Component"
+			hideLabel
+			id="go-to-component"
+			choices={componentChoices}
+			bind:value={() => String(component), (index) => (component = Number(index))}
+		/>
 	{:else}
 		<label class="small" for="go-to-number">{by === 'word' ? 'Word number' : 'Character number'}</label>
 		<input id="go-to-number" type="number" min="1" bind:value={number} oninput={() => (problem = '')} />
@@ -94,8 +99,8 @@
 		margin-right: var(--space-2);
 	}
 
-	select {
-		max-width: var(--layout-field);
+	.go-to :global(.dropdown) {
+		margin: 0;
 	}
 
 	input[type='number'] {

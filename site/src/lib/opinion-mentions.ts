@@ -34,7 +34,7 @@ export const opinionsTable = 'opinions';
 export const mentionsColumn = 'topics';
 
 /** The nation's opinions that mention the word. */
-export function opinionsMentioning(nationId: string, word: string): string {
+export function opinionsMentioning(nationIdentifier: string, word: string): string {
 	const parameters = new URLSearchParams({ [`${opinionsTable}.${mentionsColumn}`]: word });
-	return `/nations/${nationId}/opinions?${parameters}`;
+	return `/nations/${nationIdentifier}/opinions?${parameters}`;
 }

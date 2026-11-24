@@ -6,16 +6,24 @@
 	federal tie on a nation page opens a page about the office). Each agency's
 	section has the agency's address segment as its anchor, so a nation page
 	links straight to it. Which nations the region serves comes from the
-	nations' own records, so the Sources list is the sources those records
-	cite.
+	nations' own records, so References lists the sources those records cite.
+	An info page (site/DESIGN.md, "Info pages").
 -->
 <script lang="ts">
-	import Breadcrumbs from '#lib/components/Breadcrumbs.svelte';
+	import CountBadge from '#lib/components/CountBadge.svelte';
+	import InfoPage from '#lib/components/InfoPage.svelte';
 	import type { NationIndexRow } from '#lib/server/nation-index.ts';
 	import type { PageProps } from './$types';
 
 	let { data }: PageProps = $props();
 	const name = $derived(`${data.office.name} Region`);
+	const shortLink = (link: string) => link.replace(/^https:\/\/(www\.)?/, '').replace(/\/$/, '');
+	const glance = $derived([
+		{ field: 'department', label: 'Department', items: [{ text: 'U.S. Department of the Interior' }] },
+		{ field: 'agencies', label: 'Agencies', items: [{ text: data.agencies.length.toLocaleString('en-US') }] },
+		{ field: 'nations', label: 'Nations', items: [{ text: data.count.toLocaleString('en-US') }] },
+		{ field: 'official', label: 'Official page', items: [{ text: shortLink(data.office.link), link: data.office.link }] }
+	]);
 </script>
 
 <svelte:head>
@@ -30,51 +38,28 @@
 	</ul>
 {/snippet}
 
-<Breadcrumbs
+<InfoPage
+	title="Bureau of Indian Affairs {name}"
+	lead="One of the Bureau's 12 regional offices. It oversees the agencies below, which carry out the Bureau's programs for the nations listed under each."
+	{glance}
+	sources={data.sources}
 	trail={[
 		{ label: 'Nations', href: '/nations' },
 		{ label: 'Federal offices', href: '/nations/federal-offices' }
 	]}
-/>
-
-<div class="reading">
-	<h1>Bureau of Indian Affairs {name}</h1>
-	<p>
-		The Bureau of Indian Affairs, part of the U.S. Department of the Interior, works with federally recognized nations through 12 regional offices. The {name} office oversees the agencies below, which carry out the Bureau's programs for the nations listed under each.
-	</p>
-	<p>Official page: <a href={data.office.link}>{data.office.link.replace(/^https:\/\/(www\.)?/, '')}</a></p>
-	<p class="small muted">{data.count.toLocaleString('en-US')} {data.count === 1 ? 'page names' : 'pages name'} this region.</p>
-
+>
 	{#each data.agencies as agency (agency.key)}
 		<section aria-labelledby={agency.key}>
-			<h2 id={agency.key}>{agency.name}</h2>
-			{#if agency.link}<p class="small">Official page: <a href={agency.link}>{agency.link.replace(/^https:\/\/(www\.)?/, '')}</a></p>{/if}
+			<h2 id={agency.key}>{agency.name} <CountBadge count={agency.nations.length} /></h2>
+			{#if agency.link}<p class="small">Official page: <a href={agency.link}>{shortLink(agency.link)}</a></p>{/if}
 			{@render nationList(agency.nations)}
 		</section>
 	{/each}
 
 	{#if data.unassigned.length > 0}
 		<section aria-labelledby="no-agency">
-			<h2 id="no-agency">{data.agencies.length > 0 ? 'No agency named' : 'Nations served'}</h2>
+			<h2 id="no-agency">{data.agencies.length > 0 ? 'No agency named' : 'Nations served'} <CountBadge count={data.unassigned.length} /></h2>
 			{@render nationList(data.unassigned)}
 		</section>
 	{/if}
-
-	{#if data.sources.length > 0}
-		<section aria-labelledby="sources">
-			<h2 id="sources">Sources</h2>
-			<ol class="small sources">
-				{#each data.sources as source (source.title)}
-					<li>{#if source.link}<a href={source.link}>{source.title}</a>{:else}{source.title}{/if}</li>
-				{/each}
-			</ol>
-		</section>
-	{/if}
-</div>
-
-<style>
-	/* Each source is a link on its own line in small type; the space between them keeps each a 24 pixel target (WCAG 2.2, 2.5.8) however its title wraps. */
-	.sources > li + li {
-		margin-top: var(--space-2);
-	}
-</style>
+</InfoPage>

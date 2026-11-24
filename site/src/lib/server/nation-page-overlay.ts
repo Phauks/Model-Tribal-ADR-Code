@@ -24,13 +24,14 @@ import { imageViewerAttributeText } from '../image-viewer.ts';
 import { pacificDay } from '../change-dates.ts';
 import { historyBadgeLabel, lastChangeSentence } from '../page-history.ts';
 import { writeToTeamLink } from '../nation-team-reports.ts';
+import { pageRestricts, restrictItemAttribute, type PageRestrictions } from '../nation-restrictions.ts';
 import { readableDate } from '../readable-date.ts';
 import { claimedPage } from '../review-status.ts';
 import type { ChangeRow, LiveChanges } from './nation-page-changes.ts';
 import type { PageHistorySummary } from './page-history.ts';
 
 /** The empty places on a nation's page that changes can fill. */
-export const pageSlots = ['status', 'history', 'top', 'courts', 'law', 'jurisdiction', 'glance', 'contacts'] as const;
+export const pageSlots = ['status', 'history', 'top', 'courts', 'law', 'jurisdiction', 'glance', 'contacts', 'restrict'] as const;
 export type PageSlot = (typeof pageSlots)[number];
 
 export interface PageOverlay {
@@ -161,11 +162,41 @@ export function historyBadge(nationIdentifier: string, history: PageHistorySumma
 	return `<style>[data-build-history]{display:none!important}</style><span class="no-print"><details class="status-popover"><summary class="review-badge"><span class="visually-hidden">Page history:</span>${icon}${historyBadgeLabel(history.count)}${chevron}</summary><div class="status-panel">${last}<p class="muted">Nation pages show when they changed and which parts, never earlier wording.</p><p><a href="${link}">See all changes to this page</a></p></div></details></span>`;
 }
 
+/** A value inside a CSS attribute selector's quotes, with nothing that could end the string or the style element. */
+function cssString(text: string): string {
+	return text.replace(/[\\"<>\n\r]/g, (character) => `\\${character.charCodeAt(0).toString(16)} `);
+}
+
+/**
+ * What the page needs to follow the nation's choices about its laws and
+ * opinions (src/lib/nation-restrictions.ts): a style that drops the words
+ * drawn from cited items' text before the page runs, and the choices
+ * themselves, which the page reads to link cited items to their originals
+ * and correct its counts. Hidden items are never named here, since anyone
+ * can read this: the Worker draws a page that holds any of them again
+ * without them (src/lib/restricted-pages.ts), so the page has nothing to hide.
+ */
+export function restrictionsSlot(restrictions: PageRestrictions): string {
+	const rules: string[] = [];
+	const levels: PageRestrictions['levels'] = {};
+	for (const [id, level] of Object.entries(restrictions.levels)) {
+		if (level !== 'cite') continue;
+		levels[id] = level;
+		rules.push(`[${restrictItemAttribute}="${cssString(id)}"] [data-restrict-text]`);
+	}
+	if (restrictions.opinions.total > 0 && restrictions.opinions.hidden === restrictions.opinions.total) rules.push('[data-section="opinions-heading"]');
+	const style = rules.length > 0 ? `<style>${rules.join(',')}{display:none!important}</style>` : '';
+	// JSON inside a script element: "<" written as an escape, so no text can end the element.
+	const data = JSON.stringify({ ...restrictions, levels }).replaceAll('<', '\\u003c');
+	return `${style}<script type="application/json" data-nation-restrictions>${data}</script>`;
+}
+
 function slotsFor(
 	nationIdentifier: string,
 	live: LiveChanges,
 	claim: PageClaim | undefined,
-	history: PageHistorySummary | undefined
+	history: PageHistorySummary | undefined,
+	restrictions: PageRestrictions | undefined
 ): Partial<Record<PageSlot, string>> {
 	const slots: Partial<Record<PageSlot, string>> = {};
 	const add = (slot: PageSlot, html: string) => {
@@ -174,6 +205,7 @@ function slotsFor(
 
 	if (claim) add('status', claimedBadge(nationIdentifier, claim));
 	if (history) add('history', historyBadge(nationIdentifier, history));
+	if (restrictions && pageRestricts(restrictions)) add('restrict', restrictionsSlot(restrictions));
 
 	const hidden = live.hidden?.content.sections ?? [];
 	if (live.hidden && hidden.length > 0) {
@@ -249,11 +281,17 @@ function slotsFor(
 }
 
 /** A short, stable fingerprint of which versions are live and whether the page is claimed. */
-function stampOf(live: LiveChanges, claim: PageClaim | undefined, history: PageHistorySummary | undefined): string {
+function stampOf(
+	live: LiveChanges,
+	claim: PageClaim | undefined,
+	history: PageHistorySummary | undefined,
+	restrictions: PageRestrictions | undefined
+): string {
 	const text = [
 		...(Object.values(live) as ChangeRow[]).map((change) => `${change.identifier}@${change.liveAt}`).sort(),
 		claim ? `claimed@${claim.claimedSince}:${(claim.offices ?? []).join('|')}` : '',
-		history ? `history@${history.count}:${history.latest?.id ?? ''}:${history.recordedSince ?? ''}` : ''
+		history ? `history@${history.count}:${history.latest?.id ?? ''}:${history.recordedSince ?? ''}` : '',
+		restrictions && pageRestricts(restrictions) ? `restrict@${JSON.stringify(restrictions.levels)}` : ''
 	].join('|');
 	let hash = 2166136261;
 	for (let index = 0; index < text.length; index += 1) {
@@ -265,14 +303,19 @@ function stampOf(live: LiveChanges, claim: PageClaim | undefined, history: PageH
 
 /**
  * The overlay for a nation's page, or undefined for an unclaimed page with
- * nothing the nation published live and no history to show.
+ * nothing the nation published live, no history to show and nothing restricted.
  */
 export function pageOverlay(
 	nationIdentifier: string,
 	live: LiveChanges,
 	claim?: PageClaim,
-	history?: PageHistorySummary
+	history?: PageHistorySummary,
+	restrictions?: PageRestrictions
 ): PageOverlay | undefined {
-	if (Object.keys(live).length === 0 && !claim && !history) return undefined;
-	return { stamp: stampOf(live, claim, history), slots: slotsFor(nationIdentifier, live, claim, history) };
+	const restricts = restrictions !== undefined && pageRestricts(restrictions);
+	if (Object.keys(live).length === 0 && !claim && !history && !restricts) return undefined;
+	return {
+		stamp: stampOf(live, claim, history, restrictions),
+		slots: slotsFor(nationIdentifier, live, claim, history, restrictions)
+	};
 }

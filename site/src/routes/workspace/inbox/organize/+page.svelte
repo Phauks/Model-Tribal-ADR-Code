@@ -3,12 +3,20 @@
 	import FolderPlus from '@lucide/svelte/icons/folder-plus';
 	import Tag from '@lucide/svelte/icons/tag';
 	import Trash2 from '@lucide/svelte/icons/trash-2';
+	import Dropdown from '#lib/components/Dropdown.svelte';
 	import { folderDepthLimit, tagColors } from '#lib/mail.ts';
 	import type { PageProps } from './$types';
 
 	let { data, form }: PageProps = $props();
 
 	const colorNames: Record<string, string> = { teal: 'Teal', orange: 'Orange', gray: 'Gray', gold: 'Gold', green: 'Green', purple: 'Purple' };
+	const colorChoices = tagColors.map((color) => ({ value: color as string, label: colorNames[color] }));
+	/** Each color's name has a band of the color before it, in the list and in the closed box. */
+	const swatch = (color: string) => `border-left: 0.75rem solid var(--tag-${color}); padding-left: var(--space-2)`;
+	const parentChoices = $derived([
+		{ value: '', label: 'Nothing (top level)' },
+		...data.mailFolders.filter((folder) => folder.depth < folderDepthLimit - 1).map((folder) => ({ value: folder.identifier, label: folder.path }))
+	]);
 </script>
 
 <svelte:head>
@@ -59,13 +67,7 @@
 					<input type="text" id="folder-name" name="name" maxlength="60" required />
 				</div>
 				<div class="field">
-					<label for="folder-parent">Inside</label>
-					<select id="folder-parent" name="parent">
-						<option value="">Nothing (top level)</option>
-						{#each data.mailFolders.filter((folder) => folder.depth < folderDepthLimit - 1) as folder (folder.identifier)}
-							<option value={folder.identifier}>{folder.path}</option>
-						{/each}
-					</select>
+					<Dropdown label="Inside" id="folder-parent" name="parent" choices={parentChoices} value="" />
 				</div>
 				<button class="button" type="submit">Make the folder</button>
 			</div>
@@ -83,10 +85,7 @@
 							<span class="dot" style="--tag-color: var(--tag-{tag.color})" aria-hidden="true"></span>
 							<label for="tag-{tag.identifier}" class="visually-hidden">Name of the tag {tag.name}</label>
 							<input type="text" id="tag-{tag.identifier}" name="name" value={tag.name} maxlength="60" required />
-							<label for="tag-color-{tag.identifier}" class="visually-hidden">Color of the tag {tag.name}</label>
-							<select id="tag-color-{tag.identifier}" name="color">
-								{#each tagColors as color (color)}<option value={color} selected={color === tag.color}>{colorNames[color]}</option>{/each}
-							</select>
+							<Dropdown label="Color of the tag {tag.name}" hideLabel id="tag-color-{tag.identifier}" name="color" choices={colorChoices} value={tag.color} choiceStyle={swatch} />
 							<button class="button button-quiet small" type="submit">Save</button>
 						</form>
 						<form method="post" action="?/deleteTag">
@@ -107,10 +106,7 @@
 					<input type="text" id="tag-name" name="name" maxlength="60" required />
 				</div>
 				<div class="field">
-					<label for="tag-color">Color</label>
-					<select id="tag-color" name="color">
-						{#each tagColors as color (color)}<option value={color}>{colorNames[color]}</option>{/each}
-					</select>
+					<Dropdown label="Color" id="tag-color" name="color" choices={colorChoices} value={tagColors[0]} choiceStyle={swatch} />
 				</div>
 				<button class="button" type="submit">Make the tag</button>
 			</div>
@@ -164,6 +160,15 @@
 		flex-wrap: wrap;
 		align-items: center;
 		gap: var(--space-2);
+	}
+	.item-form :global(.dropdown) {
+		margin: 0;
+	}
+	.item-form :global(.dropdown-control) {
+		width: 10rem;
+	}
+	.new-row :global(.dropdown) {
+		margin: 0;
 	}
 	.item-form input[type='text'] {
 		flex: 1;

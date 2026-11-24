@@ -248,7 +248,7 @@ export class EssayRoom {
 		});
 	}
 
-	private lastChangeId(): number {
+	private lastChangeIdentifier(): number {
 		return this.sql.exec<{ id: number | null }>('SELECT max(id) AS id FROM changes').one().id ?? 0;
 	}
 
@@ -591,7 +591,7 @@ export class EssayRoom {
 					prosemirrorToYXmlFragment(parseEssay(body), this.document.getXmlFragment(bodyFragment));
 					this.document.getText(frontMatterText).insert(0, frontMatter);
 				}, roomOrigin);
-				this.compact(this.lastChangeId());
+				this.compact(this.lastChangeIdentifier());
 				this.setFacts({ essay, seed: crypto.randomUUID(), version: latest.number, savedAt: null, savedBy: null });
 				this.base = { number: latest.number, text };
 			} finally {
@@ -632,7 +632,7 @@ export class EssayRoom {
 		this.base = { number: latest.number, text: theirs };
 		// The room's own changes are kept in the snapshot at once; changes
 		// people made while the version was being read stay unsaved.
-		if (!this.unsaved()) this.compact(this.lastChangeId());
+		if (!this.unsaved()) this.compact(this.lastChangeIdentifier());
 		this.broadcastFacts();
 	}
 
@@ -682,7 +682,7 @@ export class EssayRoom {
 		const baseText = await this.baseText();
 		// Read the changes and the text together, with no waiting between,
 		// so the save covers exactly the changes up to `upTo`.
-		const upTo = this.lastChangeId();
+		const upTo = this.lastChangeIdentifier();
 		const ours = this.currentText(baseText);
 		const editors = this.sql
 			.exec<{ person: string; name: string }>(
@@ -744,7 +744,7 @@ export class EssayRoom {
 				: { version: saved.version.number, savedAt: saved.version.created_at, savedBy: names }
 		);
 		// Changes people made while the version was being saved stay for the next save.
-		this.compact(this.unsaved() ? upTo : this.lastChangeId());
+		this.compact(this.unsaved() ? upTo : this.lastChangeIdentifier());
 		this.broadcastFacts();
 	}
 }

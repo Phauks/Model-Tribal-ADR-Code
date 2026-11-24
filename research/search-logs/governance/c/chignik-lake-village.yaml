@@ -1,7 +1,7 @@
 profile: content/tribes/c/chignik-lake-village.yaml
 topic: governance
 status: found
-last_searched: '2026-11-23'
+last_searched: '2026-11-24'
 searches:
 - date: '2026-11-23'
   searched_by: Claude (AI assistant)
@@ -29,4 +29,14 @@ searches:
   query: A website of the nation's own, to read its government pages
   outcome: no-site
   reason: The profile lists no website of the nation's own; the contacts search (its log is the address) found none.
+- date: '2026-11-24'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: national-indian-law-library
+  address: https://narf.org/nill/tribes/chignik_lake.html
+  query: Tribal Code, Tribal Constitution, Tribal Court Opinions and Contact Info blocks (scripts/review/nill_gateway_apply.py)
+  outcome: not-found
+  reason: 'The page lists no constitution or code with a link (it says Tribal Constitution: See NILL catalog record for the bylaws of Chignik Lake Village Council.).'
+  records:
+  - national-indian-law-library-chignik-lake
 next_steps: Ask the nation's government office for its constitution or a description of its government; a state commission on Indian affairs may also list it.

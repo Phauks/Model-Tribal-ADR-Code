@@ -1,5 +1,7 @@
 <script lang="ts">
-	import { keyboardScroll } from '#lib/keyboard-scroll.ts';
+	import DataTable from '#lib/components/DataTable.svelte';
+	import Dropdown from '#lib/components/Dropdown.svelte';
+	import type { TableColumn, TableRow } from '#lib/tables/table-definition.ts';
 	import {
 		accessLevelDescriptions,
 		accessLevelLabels,
@@ -38,6 +40,37 @@
 				?.title ?? `${identifier} (no file yet)`
 		);
 	}
+
+	const personLabel = (listed: (typeof data.people)[number]) => `${listed.displayName} (${roleLabels[listed.role].toLocaleLowerCase('en-US')})`;
+	const filterChoices = $derived([{ value: '', label: 'Everyone' }, ...data.people.map((listed) => ({ value: listed.identifier, label: personLabel(listed) }))]);
+	const grantPersonChoices = $derived(
+		data.people.filter((listed) => listed.role !== 'lead-author').map((listed) => ({ value: listed.identifier, label: personLabel(listed) }))
+	);
+	const kindChoices = accessKinds.map((option) => ({ value: option, label: accessKindLabels[option] }));
+	const levelChoices = accessLevels.map((level) => ({ value: level as string, label: accessLevelLabels[level] }));
+
+	const grantColumns: TableColumn[] = [
+		{ key: 'person', header: 'Person', isRowHeader: true, sortable: true, searchable: true, custom: true },
+		{ key: 'document', header: 'Document', sortable: true, searchable: true, custom: true },
+		{ key: 'level', header: 'Level', sortable: true },
+		{ key: 'ends', header: 'Ends', type: 'date', sortable: true },
+		{ key: 'granted', header: 'Granted', type: 'date', sortable: true, custom: true },
+		{ key: 'action', header: 'Action', custom: true, hiddenHeader: true, keepOutOfDownload: true }
+	];
+	const grantRows: TableRow[] = $derived(
+		data.grants.map((grant) => ({
+			key: grant.identifier,
+			cells: {
+				person: { text: grant.personName, href: `?person=${grant.personIdentifier}` },
+				document: { text: documentTitle(grant.subjectKind, grant.subjectIdentifier) },
+				level: { text: accessLevelLabels[grant.level] },
+				ends: { text: grant.expiresAt ? mediumDate(grant.expiresAt) : 'No end date', sortValue: grant.expiresAt ?? '9999' },
+				granted: { text: [mediumDate(grant.grantedAt), grant.grantedByName ? `by ${grant.grantedByName}` : '', grant.note ?? ''].filter(Boolean).join(' '), sortValue: grant.grantedAt },
+				action: { text: '' }
+			}
+		}))
+	);
+	const grants = $derived(new Map(data.grants.map((grant) => [grant.identifier, grant])));
 
 	const peopleCounts = $derived(
 		roles
@@ -143,15 +176,7 @@
 	<h2 id="person-heading">One person’s access</h2>
 	<form method="get" class="inline-form">
 		<div class="field">
-			<label for="person-filter">Person</label>
-			<select id="person-filter" name="person">
-				<option value="">Everyone</option>
-				{#each data.people as listed (listed.identifier)}
-					<option value={listed.identifier} selected={listed.identifier === data.chosen?.identifier}>
-						{listed.displayName} ({roleLabels[listed.role].toLocaleLowerCase('en-US')})
-					</option>
-				{/each}
-			</select>
+			<Dropdown label="Person" id="person-filter" name="person" choices={filterChoices} value={data.chosen?.identifier ?? ''} />
 		</div>
 		<button class="button button-quiet" type="submit">Show</button>
 	</form>
@@ -178,46 +203,35 @@
 	{#if data.grants.length === 0}
 		<p>No grants{data.chosen ? ' for this person' : ''}. Everyone has their role’s default.</p>
 	{:else}
-		<div class="table-scroll" role="region" aria-label="Table: grants" {@attach keyboardScroll}>
-			<table>
-				<thead>
-					<tr>
-						<th scope="col">Person</th>
-						<th scope="col">Document</th>
-						<th scope="col">Level</th>
-						<th scope="col">Ends</th>
-						<th scope="col">Granted</th>
-						<th scope="col"><span class="visually-hidden">Action</span></th>
-					</tr>
-				</thead>
-				<tbody>
-					{#each data.grants as grant (grant.identifier)}
-						<tr>
-							<td>
-								<a href="?person={grant.personIdentifier}">{grant.personName}</a>
-								<div class="small muted">{roleLabels[grant.personRole as keyof typeof roleLabels] ?? grant.personRole}</div>
-							</td>
-							<td>
-								{documentTitle(grant.subjectKind, grant.subjectIdentifier)}
-								<div class="small muted">{accessKindLabels[grant.subjectKind]}</div>
-							</td>
-							<td>{accessLevelLabels[grant.level]}</td>
-							<td>{grant.expiresAt ? mediumDate(grant.expiresAt) : 'No end date'}</td>
-							<td>
-								{mediumDate(grant.grantedAt)}{#if grant.grantedByName}<div class="small muted">by {grant.grantedByName}</div>{/if}
-								{#if grant.note}<div class="small">{grant.note}</div>{/if}
-							</td>
-							<td>
-								<form method="post" action="?/end">
-									<input type="hidden" name="grant" value={grant.identifier} />
-									<button class="button button-quiet" type="submit">End grant</button>
-								</form>
-							</td>
-						</tr>
-					{/each}
-				</tbody>
-			</table>
-		</div>
+		<DataTable
+			identifier="grants"
+			label="Table: grants"
+			columns={grantColumns}
+			rows={grantRows}
+			defaultSort={{ key: 'granted', direction: 'descending' }}
+			rowName={['grant', 'grants']}
+		>
+			{#snippet cell(row, column)}
+				{@const grant = grants.get(row.key)}
+				{#if !grant}
+					<!-- Every row is a grant. -->
+				{:else if column.key === 'person'}
+					<a href="?person={grant.personIdentifier}">{grant.personName}</a>
+					<div class="small muted">{roleLabels[grant.personRole as keyof typeof roleLabels] ?? grant.personRole}</div>
+				{:else if column.key === 'document'}
+					{documentTitle(grant.subjectKind, grant.subjectIdentifier)}
+					<div class="small muted">{accessKindLabels[grant.subjectKind]}</div>
+				{:else if column.key === 'granted'}
+					{mediumDate(grant.grantedAt)}{#if grant.grantedByName}<div class="small muted">by {grant.grantedByName}</div>{/if}
+					{#if grant.note}<div class="small">{grant.note}</div>{/if}
+				{:else}
+					<form method="post" action="?/end">
+						<input type="hidden" name="grant" value={grant.identifier} />
+						<button class="button button-quiet" type="submit">End grant</button>
+					</form>
+				{/if}
+			{/snippet}
+		</DataTable>
 	{/if}
 </section>
 
@@ -228,22 +242,10 @@
 		out of a document their role would otherwise open.
 	</p>
 	<div class="field">
-		<label for="grant-person">Person</label>
-		<select id="grant-person" name="person">
-			{#each data.people.filter((listed) => listed.role !== 'lead-author') as listed (listed.identifier)}
-				<option value={listed.identifier} selected={listed.identifier === data.chosen?.identifier}>
-					{listed.displayName} ({roleLabels[listed.role].toLocaleLowerCase('en-US')})
-				</option>
-			{/each}
-		</select>
+		<Dropdown label="Person" id="grant-person" name="person" choices={grantPersonChoices} value={data.chosen?.identifier ?? grantPersonChoices[0]?.value ?? ''} />
 	</div>
 	<div class="field">
-		<label for="grant-kind">Kind of document</label>
-		<select id="grant-kind" name="kind" bind:value={kind}>
-			{#each accessKinds as option (option)}
-				<option value={option}>{accessKindLabels[option]}</option>
-			{/each}
-		</select>
+		<Dropdown label="Kind of document" id="grant-kind" name="kind" choices={kindChoices} bind:value={kind} />
 	</div>
 	{#if kind !== 'site-text'}
 	<fieldset class="field">
@@ -271,12 +273,7 @@
 		</div>
 	{/if}
 	<div class="field">
-		<label for="grant-level">Level</label>
-		<select id="grant-level" name="level">
-			{#each accessLevels as level (level)}
-				<option value={level}>{accessLevelLabels[level]}</option>
-			{/each}
-		</select>
+		<Dropdown label="Level" id="grant-level" name="level" choices={levelChoices} value={accessLevels[0]} />
 	</div>
 	<div class="field">
 		<label for="grant-expires">Ends (optional)</label>
@@ -296,6 +293,11 @@
 		flex-wrap: wrap;
 		align-items: flex-end;
 		gap: var(--space-3);
+	}
+
+	/* Level with the dropdown, which keeps a field's space below it. */
+	.inline-form .button {
+		margin-bottom: var(--space-4);
 	}
 
 	fieldset.field {

@@ -18,9 +18,16 @@
 		entry,
 		headingLevel = 2,
 		onGlossaryPage = false,
+		part = 'whole',
 		children
 	}: {
 		entry: GlossaryEntryView;
+		/**
+		 * The entry's own page shows it on InfoPage, whose title is the headword:
+		 * "head" is the labels and other forms, under the title, and "body" is
+		 * the rest, in the page's main column.
+		 */
+		part?: 'whole' | 'head' | 'body';
 		/** Shown under the headword, such as the page's tools. */
 		children?: Snippet;
 		/** The level of the headword's heading; the entry's own subheadings sit one below. */
@@ -36,21 +43,7 @@
 	const UsageIcon = $derived(usageIcons[entry.usage]);
 </script>
 
-<article
-	class="glossary-entry"
-	class:on-glossary-page={onGlossaryPage}
-	id={onGlossaryPage ? entry.id : undefined}
-	aria-labelledby="term-{entry.id}"
->
-	<div class="entry-head">
-		<svelte:element this={termHeading} id="term-{entry.id}" class="headword">{entry.term}</svelte:element>
-		{#if onGlossaryPage}
-			<a class="permalink no-print" href="#{entry.id}">
-				<Link size={18} strokeWidth={1.75} aria-hidden="true" />
-				<span class="visually-hidden">Link to {entry.term}</span>
-			</a>
-		{/if}
-	</div>
+{#snippet head()}
 	<p class="labels">
 		<i class="functional-label">{entry.functionalLabel}</i>
 		{#if entry.expansion}<span class="expansion">of <b>{entry.expansion}</b></span>{/if}
@@ -65,6 +58,28 @@
 			{#each entry.aliases as form, index (form)}{index > 0 ? ', ' : ' '}<b>{form}</b>{/each}
 		</p>
 	{/if}
+{/snippet}
+
+{#if part === 'head'}
+	{@render head()}
+{:else}
+<article
+	class="glossary-entry"
+	class:on-glossary-page={onGlossaryPage}
+	id={onGlossaryPage ? entry.id : undefined}
+	aria-labelledby={part === 'whole' ? `term-${entry.id}` : undefined}
+	aria-label={part === 'whole' ? undefined : entry.term}
+>
+	{#if part === 'whole'}<div class="entry-head">
+		<svelte:element this={termHeading} id="term-{entry.id}" class="headword">{entry.term}</svelte:element>
+		{#if onGlossaryPage}
+			<a class="permalink no-print" href="#{entry.id}">
+				<Link size={18} strokeWidth={1.75} aria-hidden="true" />
+				<span class="visually-hidden">Link to {entry.term}</span>
+			</a>
+		{/if}
+	</div>
+	{@render head()}{/if}
 	{@render children?.()}
 
 	<ol class="senses">
@@ -123,6 +138,7 @@
 		</p>
 	{/if}
 </article>
+{/if}
 
 <style>
 	.glossary-entry {

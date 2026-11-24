@@ -1,7 +1,7 @@
 profile: content/tribes/l/los-coyotes-band-of-cahuilla-and-cupeno-indians.yaml
 topic: governance
 status: found
-last_searched: '2026-11-23'
+last_searched: '2026-11-24'
 searches:
 - date: '2026-11-23'
   searched_by: Claude (AI assistant)
@@ -29,4 +29,14 @@ searches:
   query: Government, council, election, court and constitution pages linked from the home page (scripts/governance/crawl_websites.py, website-brief.md)
   outcome: not-found
   reason: Read 2 pages (home, government, council, election, court and constitution pages); none states how the government is set up in words that could be quoted.
+- date: '2026-11-24'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: national-indian-law-library
+  address: https://narf.org/nill/tribes/los_coyotes_band.html
+  query: Tribal Code, Tribal Constitution, Tribal Court Opinions and Contact Info blocks (scripts/review/nill_gateway_apply.py)
+  outcome: not-found
+  reason: 'The page lists no constitution or code with a link (it says Tribal Code: See NILL catalog record for the Tribal Labor Relations Ordinance.).'
+  records:
+  - national-indian-law-library-los-coyotes-band
 next_steps: A newer constitution text from the nation, a law library or the Bureau of Indian Affairs; the government office can say which version is in effect.

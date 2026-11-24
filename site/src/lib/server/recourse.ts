@@ -34,8 +34,8 @@ function spaced(slug: string): string {
 let rowCache: RecourseRow[] | undefined;
 
 /** How Find recourse names a method, so a link can tick it there (src/lib/recourse.ts, recourseLink). */
-export function recourseMethodLabel(methodId: string): string {
-	return sentenceCase(methods().get(methodId)?.name ?? spaced(methodId));
+export function recourseMethodLabel(methodIdentifier: string): string {
+	return sentenceCase(methods().get(methodIdentifier)?.name ?? spaced(methodIdentifier));
 }
 
 export function recourseRows(): RecourseRow[] {

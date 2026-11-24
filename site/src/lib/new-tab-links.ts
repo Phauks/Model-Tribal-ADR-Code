@@ -9,13 +9,13 @@
  * one hidden note, "Opens in a new tab", so screen readers announce it
  * (WCAG technique G201). The page must hold that note:
  *
- *   <span id={newTabNoteId} hidden>Opens in a new tab</span>
+ *   <span id={newTabNoteIdentifier} hidden>Opens in a new tab</span>
  *   <article {@attach outsideLinksOpenInNewTab}>…</article>
  *
  * Links added later, for example when the reader moves to another nation's
  * page, are handled as they appear.
  */
-export const newTabNoteId = 'new-tab-note';
+export const newTabNoteIdentifier = 'new-tab-note';
 
 /** Whether a link's address goes to another website than `origin`. */
 export function isOutsideLink(href: string, origin: string): boolean {
@@ -30,7 +30,7 @@ function markOutsideLinks(root: HTMLElement): void {
 		link.target = '_blank';
 		link.rel = 'noopener noreferrer';
 		const described = link.getAttribute('aria-describedby');
-		link.setAttribute('aria-describedby', described ? `${described} ${newTabNoteId}` : newTabNoteId);
+		link.setAttribute('aria-describedby', described ? `${described} ${newTabNoteIdentifier}` : newTabNoteIdentifier);
 	}
 }
 

@@ -26,7 +26,7 @@
 -->
 <script lang="ts">
 	import type { Snippet } from 'svelte';
-	import { newTabNoteId, outsideLinksOpenInNewTab } from '#lib/new-tab-links.ts';
+	import { newTabNoteIdentifier, outsideLinksOpenInNewTab } from '#lib/new-tab-links.ts';
 
 	interface Props {
 		introduction: Snippet;
@@ -40,7 +40,7 @@
 	let { introduction, glance, glanceLabel = 'At a glance', children, sources }: Props = $props();
 </script>
 
-<span id={newTabNoteId} hidden>Opens in a new tab</span>
+<span id={newTabNoteIdentifier} hidden>Opens in a new tab</span>
 <article class="record-page" class:has-glance={glance !== undefined} {@attach outsideLinksOpenInNewTab}>
 	<div class="record-introduction">
 		{@render introduction()}

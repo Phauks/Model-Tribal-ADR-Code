@@ -1,10 +1,34 @@
 <script lang="ts">
 	import Breadcrumbs from '#lib/components/Breadcrumbs.svelte';
+	import DataTable from '#lib/components/DataTable.svelte';
+	import type { TableColumn, TableRow } from '#lib/tables/table-definition.ts';
 	import { readableDate } from '#lib/readable-date.ts';
 	import type { PageProps } from './$types';
 
 	let { data, form }: PageProps = $props();
 	const day = (time: string) => readableDate(time.slice(0, 10));
+
+	const giftColumns: TableColumn[] = [
+		{ key: 'received', header: 'Received', type: 'date', sortable: true },
+		{ key: 'mode', header: 'Mode', sortable: true, filterable: true },
+		{ key: 'kind', header: 'Kind', sortable: true, filterable: true },
+		{ key: 'amount', header: 'Amount', type: 'number', sortable: true },
+		{ key: 'toward', header: 'Toward', sortable: true },
+		{ key: 'stripe', header: 'Stripe', custom: true }
+	];
+	const giftRows: TableRow[] = $derived(
+		data.gifts.map((gift) => ({
+			key: gift.stripeObject,
+			cells: {
+				received: { text: day(gift.receivedAt), sortValue: gift.receivedAt },
+				mode: { text: gift.mode },
+				kind: { text: gift.kind },
+				amount: { text: gift.amount, sortValue: Number(gift.amount.replace(/[^0-9.]/g, '')) },
+				toward: { text: gift.earmark },
+				stripe: { text: gift.stripeObject }
+			}
+		}))
+	);
 </script>
 
 <svelte:head>
@@ -96,25 +120,17 @@
 	{#if data.gifts.length === 0}
 		<p>None yet. A gift shows here when Stripe’s webhook reports it.</p>
 	{:else}
-		<div class="table-scroll">
-			<table>
-				<thead>
-					<tr><th scope="col">Received</th><th scope="col">Mode</th><th scope="col">Kind</th><th scope="col">Amount</th><th scope="col">Toward</th><th scope="col">Stripe</th></tr>
-				</thead>
-				<tbody>
-					{#each data.gifts as gift (gift.stripeObject)}
-						<tr>
-							<td>{day(gift.receivedAt)}</td>
-							<td>{gift.mode}</td>
-							<td>{gift.kind}</td>
-							<td>{gift.amount}</td>
-							<td>{gift.earmark}</td>
-							<td><code>{gift.stripeObject}</code></td>
-						</tr>
-					{/each}
-				</tbody>
-			</table>
-		</div>
+		<DataTable
+			identifier="gifts"
+			label="Table: gifts"
+			columns={giftColumns}
+			rows={giftRows}
+			defaultSort={{ key: 'received', direction: 'descending' }}
+			rowName={['gift', 'gifts']}
+			filters
+		>
+			{#snippet cell(row)}<code>{row.key}</code>{/snippet}
+		</DataTable>
 	{/if}
 </section>
 

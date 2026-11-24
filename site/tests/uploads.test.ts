@@ -2,7 +2,7 @@ import { beforeEach, describe, expect, it } from 'vitest';
 import type { D1Database, R2Bucket } from '@cloudflare/workers-types/index.ts';
 import { deleteAccount } from '#lib/server/account-deletion.ts';
 import { allowances, pieceBytes, refusedByName } from '#lib/uploads.ts';
-import { eventsFor } from '#lib/server/events.ts';
+import { activityHistoryFor } from '#lib/server/activity-log.ts';
 import { matchSignIn, type SignedInPerson } from '#lib/server/people.ts';
 import { fileFingerprint, sha256Hex } from '#lib/server/upload-checks.ts';
 import {
@@ -211,7 +211,7 @@ describe('sending files', () => {
 		expect(fake.stored.get(upload.original_key!)).toEqual(bytes);
 		const preview = fake.stored.get(upload.preview_key!)!;
 		expect(new TextDecoder('latin1').decode(preview)).not.toContain('tEXt');
-		const history = await eventsFor(database, 'upload', upload.identifier);
+		const history = await activityHistoryFor(database, 'upload', upload.identifier);
 		expect(history.map((event) => event.action)).toEqual(['Upload started', 'Upload received', 'Virus check passed']);
 		expect((await uploadQueue(database, 'open')).map((row) => row.reference)).toEqual([reference]);
 	});
@@ -315,7 +315,7 @@ describe('sending files', () => {
 		expect(copy).toMatchObject({ status: 'not-accepted', decision_reason: refused, fingerprint: null });
 		expect(fake.stored.has(copy.original_key!)).toBe(false);
 		expect(fake.unfinished.size).toBe(0);
-		const history = await eventsFor(database, 'upload', copy.identifier);
+		const history = await activityHistoryFor(database, 'upload', copy.identifier);
 		expect(history.map((event) => event.action)).toEqual(['Upload started', 'Upload not accepted']);
 		expect((await uploadsOfAccount(database, sender)).find((upload) => upload.reference === second)).toMatchObject({
 			status: 'not-accepted',
@@ -477,7 +477,7 @@ describe('the virus check', () => {
 		expect(upload.status).toBe('checking');
 		await releaseUnchecked(database, fake.bucket, reviewer, upload, 'From the tribal court clerk, by hand');
 		expect((await uploadByReference(database, reference))!.status).toBe('waiting-for-review');
-		const history = (await eventsFor(database, 'upload', upload.identifier)).map((entry) => entry.action);
+		const history = (await activityHistoryFor(database, 'upload', upload.identifier)).map((entry) => entry.action);
 		expect(history).toContain('Released without a virus check');
 	});
 
@@ -527,7 +527,7 @@ describe('comments from the nation', () => {
 		expect((await uploadDetail(database, reference))!.messages).toMatchObject([{ kind: 'nation-comment' }]);
 		expect((await uploadsOfAccount(database, sender))[0]?.messages).toEqual([]);
 		expect((await nationUploads(database, navajo))[0]?.comments).toBe(1);
-		expect((await eventsFor(database, 'upload', upload.identifier)).map((entry) => entry.action)).toContain('Comment from the nation');
+		expect((await activityHistoryFor(database, 'upload', upload.identifier)).map((entry) => entry.action)).toContain('Comment from the nation');
 	});
 
 	it('hides withdrawn files, and pauses when the lead author lowers the access', async () => {

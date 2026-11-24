@@ -1,6 +1,6 @@
 import { error, fail, type ActionFailure } from '@sveltejs/kit';
 import { isUploadReference } from '#lib/uploads.ts';
-import { eventsFor } from '#lib/server/events.ts';
+import { activityHistoryFor } from '#lib/server/activity-log.ts';
 import { scanStatusWords } from '#lib/server/file-scans.ts';
 import { looksLikeNation } from '#lib/server/upload-requests.ts';
 import {
@@ -41,7 +41,7 @@ export const load: PageServerLoad = async (event) => {
 			status: scan?.status ?? null,
 			...scanStatusWords(scan)
 		})),
-		history: await eventsFor(database, 'upload', detail.upload.identifier)
+		history: await activityHistoryFor(database, 'upload', detail.upload.identifier)
 	};
 };
 

@@ -272,16 +272,16 @@ export function storySummaries(): StorySummary[] {
  * The stories one nation's page lists, each linked to its own page, by title.
  * A story shared by several nations is listed on each of their pages.
  */
-export function nationStorySummaries(nationId: string): StorySummary[] {
+export function nationStorySummaries(nationIdentifier: string): StorySummary[] {
 	const date = today();
-	return storiesOfNation(publishedStories(), nationId, date).map((record) => summaryOf(record, date));
+	return storiesOfNation(publishedStories(), nationIdentifier, date).map((record) => summaryOf(record, date));
 }
 
 /** One story's page. */
 export function storyView(record: StoryRecord): StoryView {
 	const date = today();
 	const tellings = shownTellings(record, date);
-	const byId = new Map(tellings.map((telling) => [telling.id, telling]));
+	const byIdentifier = new Map(tellings.map((telling) => [telling.id, telling]));
 	const uses = new SourceUses(citationOf);
 
 	const titlesInLanguage = (record.titles_in_language ?? []).map((title) => {
@@ -293,7 +293,7 @@ export function storyView(record: StoryRecord): StoryView {
 	const shownFull = shownFullText(record, date);
 	let fullText: FullTextView | undefined;
 	if (shownFull) {
-		const telling = byId.get(shownFull.telling);
+		const telling = byIdentifier.get(shownFull.telling);
 		const citations: CitationMark[] = [];
 		if (telling?.source) {
 			uses.cite(telling.source, { section: 'Content', text: 'the full text', where: shownFull.locator }, citations);
@@ -315,7 +315,7 @@ export function storyView(record: StoryRecord): StoryView {
 	const excerpts = shownExcerpts(record, date)
 		.filter((excerpt) => !shownFull || excerpt.telling !== shownFull.telling)
 		.map((excerpt) => {
-			const telling = byId.get(excerpt.telling);
+			const telling = byIdentifier.get(excerpt.telling);
 			const citations: CitationMark[] = [];
 			if (telling?.source) {
 				uses.cite(

@@ -117,8 +117,8 @@ describe('the page behind each bar', () => {
 
 	it('names each nation as its page does', () => {
 		const records = recordsOf('nations-by-recognition', 0);
-		const byId = new Map(nations().map((record) => [record.id, record]));
-		for (const row of records.rows.slice(0, 20)) expect(row.cells.nation.text).toBe(nationName(byId.get(row.key)!));
+		const byIdentifier = new Map(nations().map((record) => [record.id, record]));
+		for (const row of records.rows.slice(0, 20)) expect(row.cells.nation.text).toBe(nationName(byIdentifier.get(row.key)!));
 	});
 
 	it('lists a decade’s treaties in the order they were signed, with the nations that name each', () => {

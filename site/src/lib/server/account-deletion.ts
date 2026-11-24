@@ -20,7 +20,7 @@ import type { D1Database, D1PreparedStatement, R2Bucket } from '@cloudflare/work
 import { answersFromSnapshot, creditsOf } from '#lib/contributors.ts';
 import type { SignedInAccount } from './contributor-profiles.ts';
 import { profileBySubject } from './contributor-profiles.ts';
-import { eventStatement } from './events.ts';
+import { activityStatement } from './activity-log.ts';
 import { newIdentifier, now } from './identifiers.ts';
 import { forgetAccountUploads } from './uploads.ts';
 
@@ -110,7 +110,7 @@ export async function deleteAccount(
 	// account with neither leaves nothing behind.
 	if (profile || person) {
 		statements.push(
-			eventStatement(database, {
+			activityStatement(database, {
 				personIdentifier: person?.identifier ?? null,
 				action: keepName ? 'Deleted their account and kept their name on their work' : 'Deleted their account and removed their name',
 				targetKind: profile ? 'profile' : 'person',

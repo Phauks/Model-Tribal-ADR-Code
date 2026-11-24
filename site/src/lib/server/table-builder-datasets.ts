@@ -243,13 +243,13 @@ function opinionDataset(): BuilderDataset {
 }
 
 function treatyDataset(): BuilderDataset {
-	const treaties = new Map<string, { title: string; signed: string; statutes?: string; nations: string[]; nationIds: string[] }>();
+	const treaties = new Map<string, { title: string; signed: string; statutes?: string; nations: string[]; nationIdentifiers: string[] }>();
 	for (const record of nations()) {
 		for (const treaty of record.treaties ?? []) {
 			const key = `${treaty.title}|${treaty.signed}`;
-			const entry = treaties.get(key) ?? { title: treaty.title, signed: treaty.signed, statutes: treaty.statutes_at_large, nations: [], nationIds: [] };
+			const entry = treaties.get(key) ?? { title: treaty.title, signed: treaty.signed, statutes: treaty.statutes_at_large, nations: [], nationIdentifiers: [] };
 			entry.nations.push(displayName(record.names.official));
-			entry.nationIds.push(record.id);
+			entry.nationIdentifiers.push(record.id);
 			treaties.set(key, entry);
 		}
 	}
@@ -265,7 +265,7 @@ function treatyDataset(): BuilderDataset {
 			{ key: 'statutes-at-large', header: 'Statutes at Large', type: 'text', starting: true, value: (treaty) => treaty.statutes ?? null },
 			{ key: 'nations', header: 'Nations', type: 'list', starting: true, value: (treaty) => unique(treaty.nations) }
 		],
-		(treaty) => `${nationPath(treaty.nationIds[0])}#treaties-heading`
+		(treaty) => `${nationPath(treaty.nationIdentifiers[0])}#treaties-heading`
 	);
 }
 

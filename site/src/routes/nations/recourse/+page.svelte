@@ -18,7 +18,7 @@
 	import FilterPanel from '#lib/components/FilterPanel.svelte';
 	import TableDownload from '#lib/components/TableDownload.svelte';
 	import { backlinkLetter, sourceAnchor } from '#lib/citation-marks.ts';
-	import { newTabNoteId, outsideLinksOpenInNewTab } from '#lib/new-tab-links.ts';
+	import { newTabNoteIdentifier, outsideLinksOpenInNewTab } from '#lib/new-tab-links.ts';
 	import {
 		entryLabels,
 		outcomeLabels,
@@ -160,7 +160,7 @@
 	/>
 </svelte:head>
 
-<span id={newTabNoteId} hidden>Opens in a new tab</span>
+<span id={newTabNoteIdentifier} hidden>Opens in a new tab</span>
 
 <div class="recourse" {@attach outsideLinksOpenInNewTab}>
 	<Breadcrumbs trail={[{ label: 'Nations', href: '/nations' }]} />

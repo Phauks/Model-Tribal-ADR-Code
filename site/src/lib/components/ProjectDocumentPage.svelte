@@ -7,12 +7,11 @@
 -->
 <script lang="ts">
 	import Breadcrumbs, { type Crumb } from './Breadcrumbs.svelte';
-	import GithubMark from './GithubMark.svelte';
+	import ProjectDocumentText from './ProjectDocumentText.svelte';
 
 	let {
 		title,
 		html,
-		file,
 		sourceLink,
 		historyLink,
 		crumbs = []
@@ -32,36 +31,7 @@
 
 <Breadcrumbs trail={crumbs} />
 
-<div class="reading project-document">
+<div class="reading">
 	<h1>{title}</h1>
-	{@html html}
-
-	<p class="document-source small no-print">
-		<GithubMark size={16} />
-		<span>
-			<a href={sourceLink}>This document’s file on GitHub</a> ·
-			<a href={historyLink}>Every change to it on GitHub</a>
-		</span>
-	</p>
+	<ProjectDocumentText {html} {sourceLink} {historyLink} />
 </div>
-
-<style>
-	.project-document :global(.license-text) {
-		white-space: pre-wrap;
-		overflow-wrap: anywhere;
-		font-size: var(--font-size-small);
-	}
-
-	.project-document :global(.github-note) {
-		white-space: nowrap;
-	}
-
-	.document-source {
-		display: flex;
-		gap: var(--space-2);
-		align-items: center;
-		margin-top: var(--space-6);
-		padding-top: var(--space-4);
-		border-top: 1px solid var(--color-line);
-	}
-</style>

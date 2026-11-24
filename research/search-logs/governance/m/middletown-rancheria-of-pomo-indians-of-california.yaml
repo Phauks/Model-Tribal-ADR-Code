@@ -1,7 +1,7 @@
 profile: content/tribes/m/middletown-rancheria-of-pomo-indians-of-california.yaml
 topic: governance
 status: found
-last_searched: '2026-11-23'
+last_searched: '2026-11-24'
 searches:
 - date: '2026-11-23'
   searched_by: Claude (AI assistant)
@@ -34,4 +34,14 @@ searches:
   records:
   - middletown-rancheria-of-pomo-indians-of-california-website-tribal-council
   - middletown-rancheria-of-pomo-indians-of-history-culture
+- date: '2026-11-24'
+  searched_by: Claude (AI assistant)
+  method: script
+  place_kind: national-indian-law-library
+  address: https://narf.org/nill/tribes/middletown_rancheria.html
+  query: Tribal Code, Tribal Constitution, Tribal Court Opinions and Contact Info blocks (scripts/review/nill_gateway_apply.py)
+  outcome: not-found
+  reason: The page lists no constitution or code with a link (both blocks say none available).
+  records:
+  - national-indian-law-library-middletown-rancheria
 next_steps: A newer constitution text from the nation, a law library or the Bureau of Indian Affairs; the government office can say which version is in effect.

@@ -21,6 +21,7 @@
 	import { readableSize } from '#lib/uploads.ts';
 	import { localInputValue } from './dates.ts';
 	import DateTimeField from '#lib/components/DateTimeField.svelte';
+	import Dropdown from '#lib/components/Dropdown.svelte';
 
 	let {
 		action,
@@ -118,6 +119,7 @@
 		}
 	});
 	const forwarding = $derived(mode === 'forward');
+	const addressChoices = $derived(addresses.map((address) => ({ value: address, label: address })));
 
 	/** When From changes, its signature takes the place of the one before. */
 	function changeSignature(): void {
@@ -135,7 +137,7 @@
 
 	// ----- Drafts that save themselves --------------------------------------
 	const startingDraft = () => draft;
-	let draftId = $state(startingDraft());
+	let draftIdentifier = $state(startingDraft());
 	let saving = $state<'idle' | 'waiting' | 'saving' | 'saved' | 'failed'>('idle');
 	let savedAt = $state('');
 	let sending = false;
@@ -143,7 +145,7 @@
 
 	function draftBody(): string {
 		return JSON.stringify({
-			identifier: draftId,
+			identifier: draftIdentifier,
 			thread,
 			fields: { from: fields.from, to: fields.to, cc, bcc, subject: fields.subject, text: message, mode, message: answering }
 		});
@@ -158,7 +160,7 @@
 			const response = await fetch('/workspace/inbox/drafts/save', { method: 'POST', headers: { 'content-type': 'application/json' }, body: draftBody(), keepalive });
 			if (!response.ok) throw new Error(String(response.status));
 			const saved = (await response.json()) as { identifier: string; updatedAt: string };
-			draftId = saved.identifier;
+			draftIdentifier = saved.identifier;
 			savedAt = new Date(saved.updatedAt).toLocaleTimeString('en-US', { hour: 'numeric', minute: '2-digit' });
 			if (!timer) saving = 'saved';
 		} catch {
@@ -189,7 +191,7 @@
 	async function discardDraft(): Promise<void> {
 		sending = true;
 		clearTimeout(timer);
-		if (draftId) await fetch(`/workspace/inbox/drafts/save?identifier=${encodeURIComponent(draftId)}`, { method: 'DELETE' }).catch(() => undefined);
+		if (draftIdentifier) await fetch(`/workspace/inbox/drafts/save?identifier=${encodeURIComponent(draftIdentifier)}`, { method: 'DELETE' }).catch(() => undefined);
 		window.location.href = discard ?? window.location.pathname;
 	}
 
@@ -328,17 +330,17 @@
 	}}
 >
 	<input type="hidden" name="zone" value={zone} />
-	{#if draftId}<input type="hidden" name="draft" value={draftId} />{/if}
+	{#if draftIdentifier}<input type="hidden" name="draft" value={draftIdentifier} />{/if}
 	{#if mode}<input type="hidden" name="mode" value={mode} />{/if}
 	{#if answering}<input type="hidden" name="message" value={answering} />{/if}
 	<div class="rows">
 		<div class="row">
-			<label for="{idPrefix}-from">From</label>
 			{#if addresses.length > 1}
-				<select id="{idPrefix}-from" name="from" bind:value={fields.from} onchange={changeSignature}>
-					{#each addresses as address (address)}<option value={address}>{address}</option>{/each}
-				</select>
+				<!-- The row's own word for the box; the box carries the same label for screen readers. -->
+				<span class="row-label" aria-hidden="true">From</span>
+				<Dropdown label="From" hideLabel id="{idPrefix}-from" name="from" choices={addressChoices} bind:value={fields.from} onchange={changeSignature} />
 			{:else}
+				<label for="{idPrefix}-from">From</label>
 				<input type="text" id="{idPrefix}-from" name="from" value={fields.from} readonly />
 			{/if}
 		</div>
@@ -495,7 +497,7 @@
 		<span class="draft-state small muted" role="status">
 			{#if saving === 'saving' || saving === 'waiting'}Saving…{:else if saving === 'saved'}<Check size={14} aria-hidden="true" />Draft saved {savedAt}{:else if saving === 'failed'}Draft not saved{/if}
 		</span>
-		{#if ready && draftId}
+		{#if ready && draftIdentifier}
 			<button type="button" class="icon-button discard" title="Discard the draft" aria-label="Discard the draft" onclick={discardDraft}><Trash2 size={20} aria-hidden="true" /></button>
 		{:else if discard}
 			<a class="icon-button discard" href={discard} title="Discard" aria-label="Discard"><Trash2 size={20} aria-hidden="true" /></a>
@@ -519,14 +521,14 @@
 		gap: var(--space-3);
 		border-bottom: 1px solid var(--color-line);
 	}
-	.row label {
+	.row label,
+	.row-label {
 		flex: none;
 		width: 4rem;
 		color: var(--color-ink-muted);
 		font-size: var(--font-size-small);
 	}
-	.row input,
-	.row select {
+	.row input {
 		flex: 1;
 		min-width: 0;
 		border: 0;
@@ -534,8 +536,25 @@
 		background: transparent;
 		padding-inline: 0;
 	}
-	.row input:focus,
-	.row select:focus {
+	.row input:focus {
+		outline: none;
+	}
+	/* The From box sits in its row as the other boxes do: no border of its own, the row's line marks it. */
+	.row :global(.dropdown) {
+		flex: 1;
+		min-width: 0;
+		margin: 0;
+	}
+	.row :global(.dropdown-control) {
+		width: 100%;
+	}
+	.row :global(.dropdown-button) {
+		border: 0;
+		border-radius: 0;
+		background: transparent;
+		padding-inline: 0;
+	}
+	.row :global(.dropdown-button:focus) {
 		outline: none;
 	}
 	.row:focus-within {

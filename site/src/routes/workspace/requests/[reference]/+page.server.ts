@@ -8,7 +8,7 @@ import {
 	type RequestStatus
 } from '#lib/requests.ts';
 import { forms } from 'virtual:forms';
-import { eventsFor } from '#lib/server/events.ts';
+import { activityHistoryFor } from '#lib/server/activity-log.ts';
 import {
 	formSubmissionsFor,
 	isFilingIdentifier,
@@ -58,7 +58,7 @@ export const load: PageServerLoad = async (event) => {
 		submissions,
 		nextFiling: submissions.length > 0 ? await nextFilingIdentifier(database) : null,
 		deadlines: deadlinesOf(request),
-		history: await eventsFor(database, 'request', request.identifier),
+		history: await activityHistoryFor(database, 'request', request.identifier),
 		statuses: statusesFor(request.kind).filter((status) => status !== 'resolved'),
 		canHandle: can(person, 'handle-requests')
 	};
