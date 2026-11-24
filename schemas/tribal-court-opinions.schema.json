@@ -1,0 +1,34 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/Phauks/Model-Tribal-ADR-Code/schemas/tribal-court-opinions.schema.json",
+  "title": "Tribal court opinion (table row)",
+  "description": "One row of research/tribal-court-opinions/opinions.csv: a tribal court opinion in a Caselaw Access Project reporter, with the private copy the site serves as its own page (decision record 0047). Built by scripts/caselaw/tribal_court_opinions.py from the reporters, courts and topics in research/tribal-court-opinions/sources.yaml; the site reads it (site/src/lib/server/tribal-court-opinions.ts). Every cell is text and an empty cell is left out before checking, so 'required' means the cell may not be empty.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["case_id", "citation", "name", "decision_date", "court", "nations", "words", "reporter", "volume", "copy_key", "volume_key", "link"],
+  "properties": {
+    "case_id": { "$ref": "common.schema.json#/$defs/wholeNumber", "description": "The Caselaw Access Project's id for the case." },
+    "citation": { "type": "string", "pattern": "^[0-9]+ .+ [0-9]+$", "description": "Volume, reporter and first page, for example '1 Navajo Rptr. 1'." },
+    "other_citations": { "type": "string", "description": "Other reporters' citations, separated by semicolons." },
+    "name": { "type": "string" },
+    "decision_date": { "$ref": "common.schema.json#/$defs/partialDate", "description": "As the reporter gives it; some give only the year or the year and month." },
+    "court": { "type": "string" },
+    "nations": { "$ref": "common.schema.json#/$defs/slugList", "description": "Ids of Tribe profiles in content/tribes/ (scripts/validate_records.py checks they exist)." },
+    "docket_number": { "type": "string" },
+    "words": { "$ref": "common.schema.json#/$defs/wholeNumber", "description": "Length of the opinion in words." },
+    "topics": { "$ref": "common.schema.json#/$defs/slugList", "description": "Tags from sources.yaml for words the opinion mentions; they say the words appear, not what it decides." },
+    "reporter": { "$ref": "common.schema.json#/$defs/slug", "description": "The reporter's slug in sources.yaml." },
+    "volume": { "$ref": "common.schema.json#/$defs/wholeNumber" },
+    "copy_key": {
+      "type": "string",
+      "pattern": "^caselaw-access-project/[a-z0-9]+(-[a-z0-9]+)*/[^/]+/[^/]+\\.html$",
+      "description": "The opinion's key in the private bucket: reporter, volume and case file."
+    },
+    "volume_key": {
+      "type": "string",
+      "pattern": "^caselaw-access-project/[a-z0-9]+(-[a-z0-9]+)*/[^/]+\\.zip$",
+      "description": "The capture of the whole volume."
+    },
+    "link": { "type": "string", "pattern": "^https://static\\.case\\.law/", "description": "The opinion on the Caselaw Access Project's site." }
+  }
+}
