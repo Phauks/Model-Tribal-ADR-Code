@@ -92,6 +92,7 @@ RECORD_FOLDERS = [
     ("content/methods/*.yaml", "method.schema.json"),
     ("content/documents/*/*.yaml", "document-history.schema.json"),
     ("content/stories/*/*.yaml", "story.schema.json"),
+    ("content/biographies/*.yaml", "biography.schema.json"),
     ("content/variables/*.yaml", "variable.schema.json"),
     # No provision or commentary files exist yet. The patterns stay for the model
     # code's text; until it is written, the run warns that they match nothing.
@@ -557,6 +558,16 @@ def main() -> int:
     glossary = {path.stem for path, _ in records.get("glossary.schema.json", [])}
     provisions = {path.stem for path, _ in records.get("provision.schema.json", [])}
     sessions = {path.stem for path, _ in records.get("research-session.schema.json", [])}
+    for path, record in records.get("biography.schema.json", []):
+        if record.get("key") != path.stem:
+            errors.append(f"{path}: key does not match the file name")
+        cited = [*record.get("names", []), *record.get("nations", []), *record.get("events", [])]
+        for fact in cited:
+            if fact.get("source") not in sources:
+                errors.append(f"{path}: names a missing source record '{fact.get('source')}'")
+        for entry in record.get("cases", []):
+            if entry.get("case") not in sources:
+                errors.append(f"{path}: cases names a missing source record '{entry.get('case')}'")
     methods = {path.stem: record for path, record in records.get("method.schema.json", [])}
 
     def check_methods(path: pathlib.Path, field: str, identifiers) -> None:

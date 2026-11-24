@@ -320,6 +320,21 @@
 			</Collapsible>
 		{/if}
 
+		<!-- 5c. People: Native people of the nation with a page of their own
+		     (content/biographies/), in the cases or the nation's history. -->
+		{#if data.people.length > 0}
+			<Collapsible heading="People" identifier="people-heading">
+				<dl class="summary-list people-list">
+					{#each data.people as person (person.link)}
+						<div>
+							<dt><a href={person.link}>{person.name}</a></dt>
+							<dd>{person.lead}</dd>
+						</div>
+					{/each}
+				</dl>
+			</Collapsible>
+		{/if}
+
 		<!-- 6. Laws and agreements: where the nation publishes its laws, linked, not
 		     reproduced, and each document with recorded versions, oldest first
 		     (decision record 0018). -->

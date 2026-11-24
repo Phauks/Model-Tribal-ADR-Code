@@ -34,6 +34,7 @@ import { officialReportLinks, readingLinksHtml } from '../reading-links.ts';
 import { copyPagePath } from '../public-copies.ts';
 import { opinionTitle, surname, type OpinionEntry } from '../case-opinions.ts';
 import type { SourceEntry } from './source-uses.ts';
+import { peopleInCase } from './biographies.ts';
 
 export interface CaseMention {
 	title: string;
@@ -72,6 +73,8 @@ export interface CasePage {
 	bodyHtml: string;
 	opinions: CaseOpinion[];
 	nations: CaseNation[];
+	/** Native people in the case who have a page (content/biographies/). */
+	people: { name: string; link: string; role: string }[];
 	/** A note every nation shares, shown once under the list instead of on each line. */
 	nationNote?: string;
 	/** The same lines as the list behind a citation's book icon (reading-links.ts), shown open. */
@@ -238,6 +241,7 @@ export function casePage(key: string): CasePage {
 		bodyHtml: box.html,
 		opinions: caseOpinions(record),
 		nations,
+		people: peopleInCase(key),
 		nationNote: shared,
 		// The list a citation's book icon opens, shown open here, without the icon.
 		readingHtml: readingLinksHtml(record.reading_links, saved).replace(/<button[\s\S]*?<\/button>/, ''),

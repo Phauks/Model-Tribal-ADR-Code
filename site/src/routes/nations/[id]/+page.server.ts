@@ -1,3 +1,4 @@
+import { peopleOfNation } from '#lib/server/biographies.ts';
 import { error } from '@sveltejs/kit';
 import type { OutlineItem, PageOutline } from '#lib/site-sections.ts';
 import geometry from 'virtual:map-geometry';
@@ -1140,6 +1141,7 @@ export const load: PageServerLoad = ({ params }) => {
 			legalHelp: [] as ReturnType<typeof legalHelpFor<FactItem>>,
 			opinions: undefined,
 			cases: [] as NationCase[],
+			people: [] as ReturnType<typeof peopleOfNation>,
 			law: [],
 			documents: [],
 			jurisdiction: [],
@@ -1311,6 +1313,7 @@ export const load: PageServerLoad = ({ params }) => {
 		legalHelp,
 		opinions,
 		cases,
+		people: peopleOfNation(record.id),
 		law,
 		documents,
 		jurisdiction,
@@ -1334,6 +1337,7 @@ export const load: PageServerLoad = ({ params }) => {
 	items.push({ label: legalHelpHeading, link: '#legal-help-heading' });
 	if (opinions) items.push({ label: opinionsHeading, link: '#opinions-heading' });
 	if (cases.length > 0) items.push({ label: casesHeading, link: '#cases-heading' });
+	if (result.people.length > 0) items.push({ label: 'People', link: '#people-heading' });
 	items.push({
 		label: lawHeading,
 		link: '#law-heading',

@@ -9,15 +9,10 @@
 -->
 <script lang="ts">
 	import BenchChart from '#lib/components/BenchChart.svelte';
-	import Breadcrumbs from '#lib/components/Breadcrumbs.svelte';
 	import CitationMarks from '#lib/components/CitationMarks.svelte';
 	import CountBadge from '#lib/components/CountBadge.svelte';
 	import DataTable from '#lib/components/DataTable.svelte';
-	import FactGroups from '#lib/components/FactGroups.svelte';
-	import GlancePanel from '#lib/components/GlancePanel.svelte';
-	import RecordPage from '#lib/components/RecordPage.svelte';
-	import SourceList from '#lib/components/SourceList.svelte';
-	import { imageViewerAttributes } from '#lib/image-viewer.ts';
+	import InfoPage from '#lib/components/InfoPage.svelte';
 	import { readableDate } from '#lib/readable-date.ts';
 	import type { TableColumn, TableRow } from '#lib/tables/table-definition.ts';
 	import type { PageProps } from './$types';
@@ -73,19 +68,17 @@
 	<meta name="description" content="{data.name}, {data.summary}: the Justices appointed and their part in the cases on this site." />
 </svelte:head>
 
-<Breadcrumbs
+<InfoPage
+	title={data.name}
+	lead={data.summary}
+	picture={data.portrait}
+	glance={data.glance}
+	sources={data.sources}
 	trail={[
 		{ label: 'Library', href: '/library' },
 		{ label: 'Supreme Court', href: '/supreme-court' }
 	]}
-/>
-
-<RecordPage {glance}>
-	{#snippet introduction()}
-		<h1>{data.name}</h1>
-		<p class="lead">{data.summary}</p>
-	{/snippet}
-
+>
 	<section aria-labelledby="justices">
 		<h2 id="justices">Justices appointed <CountBadge count={data.appointees.length} /></h2>
 		<BenchChart rows={data.rows} start={data.start} end={data.end} cases={data.cases} width={560} labelWidth={110} />
@@ -126,55 +119,9 @@
 			</DataTable>
 		{/if}
 	</section>
-
-	{#snippet sources()}
-		<SourceList sources={data.sources} />
-	{/snippet}
-</RecordPage>
-
-{#snippet glance()}
-	<GlancePanel>
-		{#snippet picture()}
-			{#if data.portrait}
-				<figure class="portrait">
-					<a href={data.portrait.src} {...imageViewerAttributes(data.portrait.alt, { title: data.name, credit: data.portrait.credit, original: data.portrait.original })}>
-						<img src={data.portrait.src} alt={data.portrait.alt} width={data.portrait.width} height={data.portrait.height} loading="lazy" decoding="async" />
-					</a>
-					<figcaption class="small muted"><a href={data.portrait.original}>{data.portrait.credit}</a></figcaption>
-				</figure>
-			{/if}
-		{/snippet}
-		<div class="facts"><FactGroups groups={data.glance} /></div>
-	</GlancePanel>
-{/snippet}
+</InfoPage>
 
 <style>
-	.portrait {
-		margin: 0 0 var(--space-3);
-		text-align: center;
-	}
-
-	.portrait a:has(img) {
-		display: block;
-		width: fit-content;
-		margin: 0 auto;
-		border-radius: var(--radius-control);
-		cursor: zoom-in;
-	}
-
-	.portrait img {
-		display: block;
-		width: auto;
-		height: auto;
-		max-width: min(12rem, 100%);
-		max-height: 15rem;
-		border-radius: var(--radius-control);
-	}
-
-	.portrait figcaption {
-		margin-top: var(--space-2);
-	}
-
 	.parts {
 		margin: 0;
 		padding: 0;
@@ -188,14 +135,5 @@
 
 	.source-line {
 		margin-top: var(--space-2);
-	}
-
-	/*
-	 * A source mark wide enough to be a full target whatever font draws it:
-	 * "[1]" after a name came out under 24 pixels on the build server, so its
-	 * target touched the name's link (axe-core target-size).
-	 */
-	.facts :global(.summary-list .note-marker) {
-		padding-left: 3px;
 	}
 </style>
