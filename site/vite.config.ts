@@ -429,8 +429,9 @@ const resolvedSponsorshipCountsModule = `\0${sponsorshipCountsModule}`;
 
 /**
  * The counts the Sponsorship page shows (src/routes/sponsor/): nations with a
- * page, the federally recognized nations the printed-copy goal counts, and
- * sources recorded. The Worker renders that page, so it cannot read the
+ * page, the nations the Every Nation Initiative's two levels count
+ * (federally recognized, then federally or state-recognized), and sources
+ * recorded. The Worker renders that page, so it cannot read the
  * content files itself.
  */
 function sponsorshipCounts(): Plugin {
@@ -445,6 +446,7 @@ function sponsorshipCounts(): Plugin {
 			const counts = {
 				nationPages: real.length,
 				federallyRecognized: real.filter((record) => (record.recognition ?? []).some((fact) => fact.type === 'federal')).length,
+				federallyOrStateRecognized: real.filter((record) => (record.recognition ?? []).some((fact) => fact.type === 'federal' || fact.type === 'state')).length,
 				sources: sources().size
 			};
 			return `export const sponsorshipCounts = ${JSON.stringify(counts)};`;

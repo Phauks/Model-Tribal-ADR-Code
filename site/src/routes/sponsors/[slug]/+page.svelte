@@ -1,7 +1,7 @@
 <script lang="ts">
 	import Breadcrumbs from '#lib/components/Breadcrumbs.svelte';
 	import SponsorCard from '#lib/components/SponsorCard.svelte';
-	import { earmarkLabels } from '#lib/sponsorship.ts';
+	import { earmarkShortLabels } from '#lib/sponsorship.ts';
 	import type { PageProps } from './$types';
 
 	let { data }: PageProps = $props();
@@ -17,7 +17,7 @@
 	<SponsorCard sponsor={data.sponsor} linkName={false} />
 	<p>
 		{data.sponsor.name} helps keep the project free to read and use. Their gift goes toward
-		{earmarkLabels[data.sponsor.earmark].charAt(0).toLowerCase() + earmarkLabels[data.sponsor.earmark].slice(1)}.
+		{earmarkShortLabels[data.sponsor.earmark]}.
 	</p>
 	<p class="small muted">Amounts are never shown. <a href="/sponsor">See every sponsor, or become one</a>.</p>
 </div>
