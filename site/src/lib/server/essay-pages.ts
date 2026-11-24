@@ -7,7 +7,7 @@
  * A rendered page is kept in the Worker's cache, keyed by the file's SHA-256
  * and the site build, so rendering runs once per published version.
  */
-import { error } from '@sveltejs/kit';
+import { error, type Cookies } from '@sveltejs/kit';
 import { version as siteBuild } from '$app/env';
 import { essayBoxFacts, essayCaseLinks, essayCaseNames, essayCitations, essayOpinions, essayRecordBoxes, essayTerms, essaysInGit } from 'virtual:essay-library';
 import type { D1Database, R2Bucket } from '@cloudflare/workers-types/index.ts';
@@ -19,6 +19,8 @@ import { casesByTopicMarkdown, taggedCases } from '../essays/case-topics.ts';
 import { frontMatterField, splitFrontMatter } from '../essays/syntax.ts';
 import { boxMarkdown, fillBoxes } from '../essays/record-boxes.ts';
 import { workerEnvironment } from './environment.ts';
+import { sessionCookie } from '#lib/server/accounts.ts';
+import { signedInHintCookie } from '#lib/signed-in-hint.ts';
 import { handCredits, readerNames, sectionCredits } from './essay-credits.ts';
 import { essayReviewRequests } from './essay-review-requests.ts';
 import { creditLine, finishedReviewers, withReaderCredits, type ReaderCredits } from '../essays/credits.ts';
@@ -109,14 +111,15 @@ export async function renderWithGenerated(text: string, which: EssayTexts, optio
  * essays it is built from change without it.
  */
 export async function renderedVersion(bucket: R2Bucket, row: { object_key: string; sha256: string }, which: EssayTexts = 'published'): Promise<RenderedEssay> {
-	const text = await readVersionText(bucket, row);
-	if (generatedKind(text)) return renderWithGenerated(text, which);
+	// The cache is checked before the text is read from the bucket. Only pages that are not generated are ever kept in it, so a page found there needs no text.
 	const cache = (globalThis as { caches?: { default?: Cache } }).caches?.default;
 	const cacheKey = `https://essay-cache.invalid/${encodeURIComponent(siteBuild)}/${row.sha256}`;
 	if (cache) {
 		const cached = await cache.match(cacheKey).catch(() => undefined);
 		if (cached) return (await cached.json()) as RenderedEssay;
 	}
+	const text = await readVersionText(bucket, row);
+	if (generatedKind(text)) return renderWithGenerated(text, which);
 	const rendered = renderEssay(text, essayLibrary);
 	if (cache) {
 		await cache
@@ -193,10 +196,19 @@ function outlineOf(title: string, headings: EssayHeading[]) {
 	return { title, items: headings };
 }
 
+/**
+ * Lets browsers and shared caches keep a public essay page for a minute. The page is the same for every reader: what people with access see on it (the draft, comments, the editor) is fetched by the page itself from the workspace (EssayArticle.svelte). A request from someone who is or may be signed in gets no caching header, as before, so an author who has just published sees the new publication at once. Called only once the page has loaded, so an error page is never kept.
+ */
+export function cacheForReaders(event: { cookies: Pick<Cookies, 'get'>; setHeaders: (headers: Record<string, string>) => void }): void {
+	if (event.cookies.get(sessionCookie) !== undefined || event.cookies.get(signedInHintCookie) !== undefined) return;
+	event.setHeaders({ 'cache-control': 'public, max-age=60' });
+}
+
 export async function essayPage(part: EssayPart, slug: string, publicationNumber?: number) {
 	const identifier = identifierFromPath(part, slug);
 	const { database, bucket } = storageForPages();
 	// Text merged in git since the build is saved as a draft version; readers see it once published.
+	// It stays here rather than in the scheduled run: an essay new in git has no row until the sync saves it, so without it readers would get "No essay has this address" instead of "Not published yet" until the next run. After the first view in each Worker copy this is a promise already settled.
 	await syncEssaysFromGitOnce(database, bucket);
 	const essay = await essayRow(database, identifier);
 	if (!essay || essay.part !== part) error(404, 'No essay has this address.');
