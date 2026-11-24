@@ -42,7 +42,7 @@
 		defaultSort={{ key: 'name', direction: 'ascending' }} searchLabel="Search nations" />
 -->
 <script lang="ts">
-	import { onMount, type Snippet } from 'svelte';
+	import { flushSync, onMount, type Snippet } from 'svelte';
 	import ArrowDown from '@lucide/svelte/icons/arrow-down';
 	import ArrowUp from '@lucide/svelte/icons/arrow-up';
 	import ArrowUpDown from '@lucide/svelte/icons/arrow-up-down';
@@ -54,6 +54,7 @@
 	import X from '@lucide/svelte/icons/x';
 	import TableDownload from '#lib/components/TableDownload.svelte';
 	import { keyboardScroll } from '#lib/keyboard-scroll.ts';
+	import { pageStarted } from '#lib/page-started.ts';
 	import {
 		applyColumnFilters,
 		filterChoices,
@@ -122,7 +123,8 @@
 		leaveOut = false
 	}: Props = $props();
 
-	let interactive = $state(false);
+	// A table drawn on the server gets its buttons once the browser has it; one made later in the browser, such as a map view's table, starts with them, so it is drawn once and does not jump (src/lib/page-started.ts).
+	let interactive = $state(pageStarted());
 	let chosenSort = $state<TableSort | undefined>(undefined);
 	let query = $state('');
 	let columnFilters = $state<ColumnFilters>({});
@@ -137,6 +139,24 @@
 	const shownRows = $derived.by(() => {
 		const found = applyColumnFilters(filterRows(columns, rows, query), columnFilters).filter((row) => !leftOut.includes(row.key));
 		return sort ? sortRows(columns, found, sort) : found;
+	});
+	/**
+	 * A long table made in the browser, such as a map view's table fetched when the view is chosen, shows its first rows at once and adds the rest a batch at a time while the browser is otherwise idle. Laying out hundreds of rows at once froze the map page for most of a second (about 1 ms a row); in batches the page keeps answering, and the reader sees the table at once. A table drawn on the server has every row from the start, as do printing and an address that names a row.
+	 */
+	const firstBatch = 60;
+	const laterBatch = 120;
+	let drawnRows = $state(pageStarted() ? firstBatch : Infinity);
+	const visibleRows = $derived(drawnRows >= shownRows.length ? shownRows : shownRows.slice(0, drawnRows));
+	$effect(() => {
+		if (drawnRows >= shownRows.length) return;
+		if (location.hash && rows.some((row) => row.anchor === decodeURIComponent(location.hash.slice(1)))) {
+			drawnRows = Infinity;
+			return;
+		}
+		const idle = window.requestIdleCallback ?? ((callback: () => void) => window.setTimeout(callback, 16));
+		const cancel = window.cancelIdleCallback ?? window.clearTimeout;
+		const handle = idle(() => (drawnRows += laterBatch), { timeout: 250 });
+		return () => cancel(handle);
 	});
 	const leftOutRows = $derived(rows.filter((row) => leftOut.includes(row.key)));
 	const narrowed = $derived(query.trim() !== '' || Object.values(columnFilters).some(Boolean) || leftOut.length > 0);
@@ -228,7 +248,18 @@
 			fullScreen = document.fullscreenElement === frame;
 		};
 		document.addEventListener('fullscreenchange', onChange);
-		return () => document.removeEventListener('fullscreenchange', onChange);
+		// Every row is printed.
+		const beforePrint = () => {
+			if (drawnRows < Infinity) {
+				drawnRows = Infinity;
+				flushSync();
+			}
+		};
+		window.addEventListener('beforeprint', beforePrint);
+		return () => {
+			document.removeEventListener('fullscreenchange', onChange);
+			window.removeEventListener('beforeprint', beforePrint);
+		};
 	});
 </script>
 
@@ -331,7 +362,7 @@
 			</tr>
 		</thead>
 		<tbody>
-			{#each shownRows as row (row.key)}
+			{#each visibleRows as row (row.key)}
 				<tr id={row.anchor}>
 					{#each columns as column (column.key)}
 						{@const value = row.cells[column.key]}

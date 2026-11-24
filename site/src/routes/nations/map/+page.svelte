@@ -1,6 +1,6 @@
 <script lang="ts">
 	import Breadcrumbs from '#lib/components/Breadcrumbs.svelte';
-	import { onMount, tick } from 'svelte';
+	import { flushSync, onMount, tick } from 'svelte';
 	import RecognitionBadges from '#lib/components/RecognitionBadges.svelte';
 	import type { RecognitionBadge } from '#lib/recognition-badges.ts';
 	import { replaceState } from '$app/navigation';
@@ -39,10 +39,9 @@
 	let mapShape = $state<'flat' | 'globe'>('flat');
 
 	/**
-	 * The "Land areas" view is fetched the first time it is shown, because its
-	 * outlines are heavier than the rest of the page together.
+	 * The "Land areas" view's table is fetched the first time the view is chosen, because its rows are heavy. Its drawn copy, the Census Bureau's outlines, is fetched apart and only when it is needed (see loadDrawing).
 	 */
-	let lands = $state<{ drawing: string; rows: LandAreaRow[] } | undefined>();
+	let lands = $state.raw<{ rows: LandAreaRow[] } | undefined>();
 	let landsFailed = $state(false);
 	let landsLoading: Promise<void> | undefined;
 
@@ -52,7 +51,8 @@
 				if (!response.ok) throw new Error(String(response.status));
 				return response.json();
 			})
-			.then((body) => {
+			.then((body: { rows: LandAreaRow[] }) => {
+				for (const row of body.rows) listedNations.set(row.anchor, row.nations);
 				lands = body;
 			})
 			.catch(() => {
@@ -63,10 +63,11 @@
 	}
 
 	/**
-	 * The views that shade the land areas by a fact about their nations, such as Public Law 280 (src/lib/shaded-map-views.ts), are fetched the same way, each the first time it is shown.
+	 * The views that shade the land areas by a fact about their nations, such as Public Law 280 (src/lib/shaded-map-views.ts), are fetched the same way, each the first time it is chosen.
 	 */
-	type ShadedBody = Omit<ShadedViewData, 'drawn' | 'labels' | 'drawnStates'> & { drawing: string; stateDrawing?: string };
-	let shaded = $state<Partial<Record<ShadedMapView, ShadedBody>>>({});
+	type ShadedBody = Omit<ShadedViewData, 'drawn' | 'labels' | 'drawnStates' | 'offices'>;
+	/** Each view's rows are only read, so they are kept as they arrive rather than watched one by one. */
+	let shaded = $state.raw<Partial<Record<ShadedMapView, ShadedBody>>>({});
 	let shadedFailed = $state<Partial<Record<ShadedMapView, boolean>>>({});
 	/** Whether each shaded view shows its nations' land areas or its states (Trevor, Nov. 23, 2026: a by-state variant of each view, since dots are hard to read). */
 	let shownBy = $state<Partial<Record<ShadedMapView, 'nation' | 'state'>>>({});
@@ -83,7 +84,8 @@
 					return response.json();
 				})
 				.then((body: ShadedBody) => {
-					shaded[view] = body;
+					for (const row of body.areaRows) listedNations.set(row.anchor, row.nations);
+					shaded = { ...shaded, [view]: body };
 				})
 				.catch(() => {
 					shadedFailed[view] = true;
@@ -94,13 +96,71 @@
 		return loading;
 	}
 
+	/** Fetches what a view shows beside the map, if it is fetched at all; it settles once the view can be shown, or has failed to load. */
+	function loadView(key: NationsMapView): Promise<void> {
+		if (key === 'lands') return loadLands();
+		if (isShadedMapView(key)) return loadShaded(key);
+		return Promise.resolve();
+	}
+
+	/**
+	 * The drawn copy of a fetched view. The tiled map is what a reader sees, so the drawn copy is needed only for printing, which always uses it, or when the tiled map cannot start. It is fetched for the view on screen once the reader has stayed on it a few seconds, or at once when the tiled map has failed, and put in the page only then or while printing, since thousands of hidden outlines slow every change to the page.
+	 */
+	type ViewDrawing = { drawing: string; stateDrawing?: string };
+	let viewDrawings = $state.raw<Partial<Record<NationsMapView, ViewDrawing>>>({});
+	let drawingsFailed = $state<Partial<Record<NationsMapView, boolean>>>({});
+	const drawingLoading = new Map<NationsMapView, Promise<void>>();
+	function loadDrawing(key: NationsMapView): void {
+		if (key !== 'lands' && !isShadedMapView(key)) return;
+		if (drawingLoading.has(key)) return;
+		drawingsFailed[key] = false;
+		drawingLoading.set(
+			key,
+			fetch(`/nations/map/view-drawings/${key}.json`)
+				.then((response) => {
+					if (!response.ok) throw new Error(String(response.status));
+					return response.json();
+				})
+				.then((body: ViewDrawing) => {
+					viewDrawings = { ...viewDrawings, [key]: body };
+				})
+				.catch(() => {
+					drawingsFailed[key] = true;
+					drawingLoading.delete(key);
+				})
+		);
+	}
+
+	/** While the page prints, every view's drawn copy that has arrived is in the page (src/lib/motion.ts finishes any movement first). */
+	let printing = $state(false);
+	const showDrawn = $derived(!tileMapWanted || printing);
+
 	$effect(() => {
-		if (current === 'lands' && !lands) void loadLands();
-		if (isShadedMapView(current) && !shaded[current]) void loadShaded(current);
+		const key = current;
+		if (!tileMapWanted) {
+			loadDrawing(key);
+			return;
+		}
+		const timer = setTimeout(() => loadDrawing(key), 3000);
+		return () => clearTimeout(timer);
 	});
-	function choose(key: NationsMapView): void {
-		current = key;
+
+	/**
+	 * Choosing a view fetches its table first, if it has not been fetched, and then changes the map and the table together, so the table beside the map never stands empty or belongs to another view. The picker shows the new choice at once.
+	 */
+	let pending = $state<NationsMapView | undefined>();
+	async function choose(key: NationsMapView): Promise<void> {
 		replaceState(key === views[0].key ? location.pathname : `?view=${key}`, {});
+		pending = key;
+		await loadView(key);
+		if (pending !== key) return;
+		pending = undefined;
+		current = key;
+	}
+
+	/** Starts fetching a view's table while the reader is on it in the picker, before choosing it. */
+	function prefetch(key: NationsMapView): void {
+		void loadView(key);
 	}
 
 	/**
@@ -117,9 +177,8 @@
 		const shadedView = shadedMapViews.find((key) => anchor.startsWith(`${key}-`));
 		const view = anchor.startsWith('land-area-') ? 'lands' : (shadedView ?? panel?.dataset.mapView ?? named);
 		if (!view || !views.some((entry) => entry.key === view)) return;
+		await loadView(view as NationsMapView);
 		current = view as NationsMapView;
-		if (view === 'lands') await loadLands();
-		if (isShadedMapView(view)) await loadShaded(view);
 		// A state's row is in the view's by-state table.
 		if (shadedView && anchor.startsWith(`${shadedView}-state-`) && (shaded[shadedView]?.stateRows.length ?? 0) > 0) shownBy[shadedView] = 'state';
 		await tick();
@@ -134,21 +193,33 @@
 		const onHashChange = () => void showAddressedView();
 		window.addEventListener('hashchange', onHashChange);
 		document.addEventListener('click', onDrawnClick);
+		// The drawn copies go into the page before the browser lays out the printed pages, and leave it after.
+		const beforePrint = () => {
+			printing = true;
+			flushSync();
+		};
+		const afterPrint = () => (printing = false);
+		window.addEventListener('beforeprint', beforePrint);
+		window.addEventListener('afterprint', afterPrint);
 		return () => {
+			window.removeEventListener('beforeprint', beforePrint);
+			window.removeEventListener('afterprint', afterPrint);
 			window.removeEventListener('hashchange', onHashChange);
 			document.removeEventListener('click', onDrawnClick);
 		};
 	});
 
 	type ListedNation = { id: string; name: string; badges?: RecognitionBadge[] };
-	const nationsByRow = $derived(
+	/**
+	 * The nations each table row names, by the row's id: the page's own rows, and the rows of fetched views, added when they arrive and before their table is drawn. The second is a plain map, so adding a view's rows does not redraw every other table on the page.
+	 */
+	const pageNations = $derived(
 		new Map<string, ListedNation[]>([
 			...data.stateRows.map((row) => [`state-${row.code}`, row.nations] as const),
-			...data.regionRows.map((row) => [row.anchor, row.nations] as const),
-			...(lands?.rows ?? []).map((row) => [row.anchor, row.nations] as const),
-			...Object.values(shaded).flatMap((body) => body.areaRows.map((row) => [row.anchor, row.nations] as const))
+			...data.regionRows.map((row) => [row.anchor, row.nations] as const)
 		])
 	);
+	const listedNations = new Map<string, ListedNation[]>();
 
 	const stateRows: TableRow[] = $derived(buildStateRows(data.stateRows));
 	const regionRows: TableRow[] = $derived(buildRegionRows(data.regionRows));
@@ -311,7 +382,7 @@
 	name is all the row needs. A row with no nations has nothing to open.
 -->
 {#snippet cell(row: TableRow, column: TableColumn)}
-	{@const nations = nationsByRow.get(row.key) ?? []}
+	{@const nations = pageNations.get(row.key) ?? listedNations.get(row.key) ?? []}
 	{@const name = row.cells[column.key]?.text ?? ''}
 	{#if column.key === 'count'}
 		<!-- The count opens the same list of nations as the row's name. -->
@@ -368,6 +439,7 @@
 		role="region"
 		aria-labelledby={view.heading}
 		hidden={view.key !== current}
+		aria-busy={view.key === current && pending !== undefined ? 'true' : undefined}
 	>
 		<h2 id={view.heading} class="view-heading">{view.label}</h2>
 		<figure class="map-figure" data-print-part="maps">
@@ -375,7 +447,7 @@
 		<div class="map-toolbar no-print">
 		{#if view.key === current}
 			<div class="map-view-picker">
-				<SearchableDropdown label="Map view" choices={mapViewChoices} value={current} onchange={choose} />
+				<SearchableDropdown label="Map view" choices={mapViewChoices} value={pending ?? current} onchange={(key) => void choose(key)} onhighlight={prefetch} />
 			</div>
 		{/if}
 		{#if view.key === current && tileMapReady}
@@ -409,27 +481,18 @@
 				<p class="map-loading small muted" aria-hidden="true">Loading the map…</p>
 				<div class="drawn-map">
 				<ZoomableMap label={view.label} maximum={view.key === 'lands' ? 16 : 8}>
-					{#if isShadedMapView(view.key)}
-						{@const body = shaded[view.key]}
-						{#if body && byOf(view.key) === 'state' && body.stateDrawing}
-							{@html body.stateDrawing}
-						{:else if body}
-							{@html body.drawing}
-						{:else if shadedFailed[view.key]}
+					{#if view.key === 'lands' || isShadedMapView(view.key)}
+						<!-- A fetched view's drawn copy is in the page only when it is what the reader sees: when printing, or when there is no tiled map. -->
+						{@const drawn = viewDrawings[view.key]}
+						{@const failed = drawingsFailed[view.key] || (view.key === 'lands' ? landsFailed : isShadedMapView(view.key) && shadedFailed[view.key])}
+						{#if showDrawn && drawn}
+							{@html byOf(view.key) === 'state' && drawn.stateDrawing ? drawn.stateDrawing : drawn.drawing}
+						{:else if showDrawn && failed}
 							<p class="map-status">This view could not be loaded. Check your connection and choose the view again.</p>
-						{:else}
+						{:else if showDrawn}
 							<p class="map-status">Loading the view…</p>
-							<noscript><p class="map-status">This view needs JavaScript to load its map and table.</p></noscript>
 						{/if}
-					{:else if view.key === 'lands'}
-						{#if lands}
-							{@html lands.drawing}
-						{:else if landsFailed}
-							<p class="map-status">The land areas could not be loaded. Check your connection and choose the view again.</p>
-						{:else}
-							<p class="map-status">Loading the land areas…</p>
-							<noscript><p class="map-status">This view needs JavaScript to load its map and table.</p></noscript>
-						{/if}
+						<noscript><p class="map-status">This view needs JavaScript to load its map and table.</p></noscript>
 					{:else}
 						<!-- svelte-ignore hydration_html_changed -->
 						{@html data.drawings[view.key]}
@@ -657,6 +720,11 @@
 </div>
 
 <style>
+	/* While a chosen view's table is on its way, the pointer says so; the map and the table then change together. */
+	.map-view[aria-busy='true'] {
+		cursor: progress;
+	}
+
 	/* The view picker and the switches sit on top of the map, as part of it. */
 	.map-toolbar {
 		display: flex;
