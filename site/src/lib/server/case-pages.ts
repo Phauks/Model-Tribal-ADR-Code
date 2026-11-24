@@ -24,7 +24,7 @@ import { essayBoxFacts, essaysInGit } from 'virtual:essay-library';
 import { renderEssay } from '../essays/render.ts';
 import { splitFrontMatter } from '../essays/syntax.ts';
 import { boxPartMarkdown, type RecordBox } from '../essays/record-boxes.ts';
-import { essayLibrary } from './essay-pages.ts';
+import { essayLibrary, withRecordBoxes } from './essay-pages.ts';
 import { essayPath, partOf, titleOf } from './essays.ts';
 import { nationNamesAndKinds, publicCopyFor, sources, type SourceRecord } from './content.ts';
 import { courtPath } from './supreme-courts.ts';
@@ -195,7 +195,9 @@ function caseNations(record: SourceRecord & CaseRecordParts): { nations: CaseNat
 function essaysCiting(key: string, title: string): CaseMention[] {
 	const found: CaseMention[] = [];
 	const mention = new RegExp(`\\[@${escapeRegExp(key)}[\\],]|\\*${escapeRegExp(title)}\\*`);
-	for (const [identifier, text] of Object.entries(essaysInGit)) {
+	for (const [identifier, written] of Object.entries(essaysInGit)) {
+		// The essay as read, with each box it places filled from the record, so a case cited inside another case's box counts.
+		const text = withRecordBoxes(written);
 		const path = essayPath(identifier, partOf(identifier, splitFrontMatter(text).frontMatter));
 		const box = caseBox(text, key);
 		if (box) {
