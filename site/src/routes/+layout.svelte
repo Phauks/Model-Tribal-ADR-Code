@@ -41,6 +41,7 @@
 	import { onNavigate } from '$app/navigation';
 	import { page } from '$app/state';
 	import { crossFadePages, startMotion } from '#lib/motion.ts';
+	import { copyHashOnClick } from '#lib/copy-hash.ts';
 	import { toggleReadingLinks } from '#lib/reading-links.ts';
 	import { resizableTables } from '#lib/tables/resizable-columns.ts';
 	import { markPageStarted } from '#lib/page-started.ts';
@@ -55,6 +56,12 @@
 	onMount(() => {
 		document.addEventListener('click', toggleReadingLinks);
 		return () => document.removeEventListener('click', toggleReadingLinks);
+	});
+	// A click on a SHA-256 copies it, on any page (src/lib/copy-hash.ts).
+	onMount(() => {
+		const copy = (event: MouseEvent) => void copyHashOnClick(event);
+		document.addEventListener('click', copy);
+		return () => document.removeEventListener('click', copy);
 	});
 	// The layout's own start comes after every part inside it has started (src/lib/page-started.ts).
 	onMount(markPageStarted);
