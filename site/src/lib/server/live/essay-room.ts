@@ -58,6 +58,7 @@ import {
 	type RoomFacts
 } from '../../essays/live-protocol.ts';
 import { mergeThreeWay } from '../../essays/merge.ts';
+import { compressOverlay, overlayKey, overlayOf } from '../../essays/word-blame.ts';
 import { joinFrontMatter, splitFrontMatter } from '../../essays/syntax.ts';
 import { SaveConflict, isEssayIdentifier, latestVersion, readVersionText, saveVersion, version, type VersionRow } from '../essays.ts';
 
@@ -107,6 +108,16 @@ const mostClientsPerConnection = 8;
 
 /** Marks a change the room made itself (starting the text, or bringing in a saved version), as opposed to one from a person. */
 const roomOrigin = Symbol('room');
+
+/** The most turns between people one save replays to tell who typed what. */
+const mostTurnsReplayed = 400;
+
+/** A room document's text, written the way the editor's Save writes it. */
+function textOf(document: Y.Doc, baseText: string): string {
+	const body = yXmlFragmentToProseMirrorRootNode(document.getXmlFragment(bodyFragment), essaySchema);
+	const frontMatter = document.getText(frontMatterText).toString();
+	return tidy(joinFrontMatter(frontMatter, writeEssay(body, splitFrontMatter(baseText).body)));
+}
 
 /** Text as saveVersion stores it, so that texts can be compared before saving. */
 function tidy(text: string): string {
@@ -489,9 +500,42 @@ export class EssayRoom {
 
 	/** The essay's text as the room holds it now, written the way the editor's Save writes it. */
 	currentText(baseText: string): string {
-		const body = yXmlFragmentToProseMirrorRootNode(this.document.getXmlFragment(bodyFragment), essaySchema);
-		const frontMatter = this.document.getText(frontMatterText).toString();
-		return tidy(joinFrontMatter(frontMatter, writeEssay(body, splitFrontMatter(baseText).body)));
+		return textOf(this.document, baseText);
+	}
+
+	/**
+	 * The room's text as each person left it, from the last snapshot through
+	 * the changes up to `upTo`, for who typed which words (word-blame.ts,
+	 * overlayOf). Undefined when people took turns too often to replay.
+	 */
+	private turns(upTo: number, baseText: string): { start: string; steps: { person: string | null; text: string }[] } | undefined {
+		const document = new Y.Doc();
+		const snapshot = this.sql.exec<{ data: ArrayBuffer }>('SELECT data FROM snapshot ORDER BY piece').toArray();
+		if (snapshot.length > 0) Y.applyUpdate(document, joinPieces(snapshot.map((row) => row.data)), roomOrigin);
+		const start = textOf(document, baseText);
+		const steps: { person: string | null; text: string }[] = [];
+		let person: string | null | undefined;
+		let pieces: ArrayBuffer[] = [];
+		for (const row of this.sql.exec<{ data: ArrayBuffer; continues: number; person: string | null }>(
+			'SELECT data, continues, person FROM changes WHERE id <= ? ORDER BY id',
+			upTo
+		)) {
+			pieces.push(row.data);
+			if (row.continues) continue;
+			if (person !== undefined && row.person !== person) {
+				steps.push({ person, text: textOf(document, baseText) });
+				if (steps.length > mostTurnsReplayed) {
+					document.destroy();
+					return undefined;
+				}
+			}
+			person = row.person;
+			Y.applyUpdate(document, joinPieces(pieces), roomOrigin);
+			pieces = [];
+		}
+		if (person !== undefined) steps.push({ person, text: textOf(document, baseText) });
+		document.destroy();
+		return { start, steps };
 	}
 
 	private async baseText(): Promise<string> {
@@ -648,6 +692,8 @@ export class EssayRoom {
 			)
 			.toArray();
 		const names = joinedNames(editors.map((editor) => editor.name));
+		// With more than one person, who typed what, so each is credited for their own words.
+		const turns = editors.length > 1 ? this.turns(upTo, baseText) : undefined;
 		let note = `Edited live by ${names}`;
 		let basedOn = Number(this.fact('version'));
 		let ancestor = baseText;
@@ -679,6 +725,17 @@ export class EssayRoom {
 			}
 		}
 		const savedText = tidy(text);
+		if (turns && !saved.unchanged) {
+			try {
+				const overlay = compressOverlay(overlayOf(turns.start, turns.steps, savedText));
+				await this.environment.sourceDocuments.put(overlayKey(essay, saved.version.number), JSON.stringify(overlay), {
+					httpMetadata: { contentType: 'application/json' }
+				});
+			} catch (problem) {
+				// The version is saved; its new words are credited to the person who saved last.
+				console.error('Who typed what could not be kept', problem);
+			}
+		}
 		if (savedText !== ours) this.replaceText(ours, savedText, baseText);
 		this.base = { number: saved.version.number, text: savedText };
 		this.setFacts(

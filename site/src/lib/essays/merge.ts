@@ -13,7 +13,7 @@
 export type MergeResult = { merged: true; text: string } | { merged: false; conflicts: number };
 
 /** For each line of `base`, the index of the same line in `other` on a longest common subsequence, or -1. */
-function matches(base: string[], other: string[]): Int32Array {
+export function matches(base: string[], other: string[]): Int32Array {
 	const found = new Int32Array(base.length).fill(-1);
 	// Lines the same at the start and the end need no table.
 	let start = 0;

@@ -56,7 +56,7 @@
 	import EssayChecks from '#lib/components/essays/EssayChecks.svelte';
 	import EssayGoTo from '#lib/components/essays/EssayGoTo.svelte';
 	import EssayFigureDialog from '#lib/components/essays/EssayFigureDialog.svelte';
-	import EssayAttestDialog from '#lib/components/essays/EssayAttestDialog.svelte';
+	import EssayCreditsPopover from '#lib/components/essays/EssayCreditsPopover.svelte';
 	import EssayComments from '#lib/components/essays/EssayComments.svelte';
 	import PersonAvatar from '#lib/components/essays/PersonAvatar.svelte';
 	import EssayShareDialog from '#lib/components/essays/EssayShareDialog.svelte';
@@ -89,8 +89,9 @@
 	import { commentAt, commentMarks, showCommentMarks, type CommentMark } from '#lib/essays/comment-marks.ts';
 	import { findQuote, quoteAt, type TextQuote } from '#lib/essays/comment-anchors.ts';
 	import type { CommentAsk, CommentDraft, EssayComment } from '#lib/essays/comments.ts';
-	import { attestationLines, setAttestationLines } from '#lib/essays/attestation-lines.ts';
-	import { essaySections, sectionText, sha256Hex, type Attestation } from '#lib/essays/attestations.ts';
+	import { creditLines, setCreditLines } from '#lib/essays/credit-lines.ts';
+	import type { EssayCredits } from '#lib/essays/credits.ts';
+	import { essaySections } from '#lib/essays/sections.ts';
 	import EssaySources from '#lib/components/essays/EssaySources.svelte';
 	import EssaySourceLinks from '#lib/components/essays/EssaySourceLinks.svelte';
 	import { citationWithoutAddress, type SourceDocuments } from '#lib/essays/source-documents.ts';
@@ -248,31 +249,30 @@
 	const sourceLabels = $derived(new Map((library?.sources ?? []).map(([key, label]) => [key, citationWithoutAddress(label)])));
 	let showSources = $state(false);
 
-	/* Attesting to sections (attestations.ts) ------------------------------ */
+	/* Credits under each heading (credits.ts) ------------------------------ */
 
-	let attestDialog: ReturnType<typeof EssayAttestDialog> | undefined = $state();
-	let attestations = $state<Attestation[]>([]);
-	let attestationsLoaded = $state(false);
-	let attestingPerson = $state<string | null>(null);
-	let attestingRole = $state('');
-	let canWriteOrEdit = $state(false);
-	let hashTimer: ReturnType<typeof setTimeout> | undefined;
+	let creditsPopover: ReturnType<typeof EssayCreditsPopover> | undefined = $state();
+	let credits = $state<EssayCredits | null>(null);
+	let creditsTimer: ReturnType<typeof setTimeout> | undefined;
 
-	async function loadAttestations(): Promise<void> {
-		const response = await fetch(`/workspace/essays/${identifier}/attestations`).catch(() => null);
+	/** The credits for the newest saved version, and the credits added by hand. */
+	async function loadCredits(): Promise<void> {
+		const response = await fetch(`/workspace/essays/${identifier}/credits`).catch(() => null);
 		if (!response?.ok) return;
-		const body = (await response.json()) as { attestations: Attestation[]; you: string; yourRole: string; canWriteOrEdit: boolean };
-		attestingPerson = body.you;
-		attestingRole = body.yourRole;
-		canWriteOrEdit = body.canWriteOrEdit;
-		attestationsChanged(body.attestations);
+		creditsChanged((await response.json()) as EssayCredits);
 	}
 
-	function attestationsChanged(updated: Attestation[]): void {
-		attestations = updated;
-		attestationsLoaded = true;
-		if (view) setAttestationLines(view, { attestations: updated, loaded: true });
+	function creditsChanged(updated: EssayCredits): void {
+		credits = updated;
+		if (view) setCreditLines(view, { credits: updated });
 	}
+
+	// A new saved version can change who wrote what.
+	$effect(() => {
+		if (!credits || basedOn === credits.version) return;
+		clearTimeout(creditsTimer);
+		creditsTimer = setTimeout(() => void loadCredits(), 1500);
+	});
 
 	/* Sharing and review requests (review-requests.ts) ---------------------- */
 
@@ -292,7 +292,7 @@
 
 	function reviewRequestsChanged(updated: ReviewRequest[]): void {
 		reviewRequests = updated;
-		if (view) setAttestationLines(view, { requests: updated, you: reviewingPerson });
+		if (view) setCreditLines(view, { requests: updated, you: reviewingPerson });
 		refreshDraftMarksSoon();
 	}
 
@@ -332,24 +332,6 @@
 		});
 		view.dispatch(view.state.tr.setSelection(TextSelection.create(doc, start + 1)).scrollIntoView());
 		(view.domAtPos(start + 1).node as HTMLElement | null)?.parentElement?.scrollIntoView({ block: 'center' });
-	}
-
-	/** Each section's SHA-256 as the text stands, so the lines can say when it changed since an attestation. */
-	async function sectionHashes(): Promise<Record<string, string>> {
-		if (!view) return {};
-		const doc = view.state.doc;
-		const hashes: Record<string, string> = {};
-		for (const section of essaySections(doc)) hashes[section.slug] = await sha256Hex(sectionText(doc, section));
-		return hashes;
-	}
-
-	function refreshHashesSoon(): void {
-		clearTimeout(hashTimer);
-		hashTimer = setTimeout(async () => {
-			const doc = view?.state.doc;
-			const hashes = await sectionHashes();
-			if (view && view.state.doc === doc) setAttestationLines(view, { hashes });
-		}, 600);
 	}
 
 	/* With drafts, the title's extras and the undo history ------------------- */
@@ -711,15 +693,6 @@
 		if (host) observer.observe(host);
 		return () => observer.disconnect();
 	});
-
-	async function openAttest(slug: string): Promise<void> {
-		if (!view) return;
-		const doc = view.state.doc;
-		const section = essaySections(doc).find((candidate) => candidate.slug === slug);
-		if (!section) return;
-		const text = sectionText(doc, section);
-		await attestDialog?.show({ slug, title: section.title, level: section.level, text, sha256: await sha256Hex(text) });
-	}
 
 	/* Checks and Go to ------------------------------------------------------- */
 
@@ -1143,7 +1116,6 @@
 					if (!editorView.state.doc.eq(previous.doc)) {
 						markChanged();
 						revision += 1;
-						refreshHashesSoon();
 						placeCommentsSoon();
 						refreshDraftMarksSoon();
 					}
@@ -1205,7 +1177,7 @@
 				componentFrames(),
 				draftMarksPlugin(() => ({ doc: publishedDoc, version: publishedVersion, inReview: reviewedSections() })),
 				titleExtrasPlugin(),
-				attestationLines({ attest: (slug) => void openAttest(slug), finishReview: (request) => void finishReview(request) }),
+				creditLines({ openCredits: (section, button) => creditsPopover?.show(section, button), finishReview: (request) => void finishReview(request) }),
 				caseHeadings({ citations: () => citationsByKey, change: canEdit ? changeBoxSource : undefined }),
 				outlineAnchors(),
 				tracker
@@ -1239,9 +1211,7 @@
 			}
 		});
 		describe(view.state);
-		if (attestationsLoaded) setAttestationLines(view, { attestations, loaded: true });
-		setAttestationLines(view, { requests: reviewRequests, you: reviewingPerson });
-		refreshHashesSoon();
+		setCreditLines(view, { credits, requests: reviewRequests, you: reviewingPerson });
 		placeComments();
 		mounts += 1;
 		refreshOutline();
@@ -1668,7 +1638,7 @@
 	onMount(() => {
 		mountEditor(initial.body);
 		dirty = false;
-		void loadAttestations();
+		void loadCredits();
 		const chosenThread = untrack(() => startThread);
 		void loadComments().then(() => {
 			if (chosenThread) goToThread(chosenThread);
@@ -1692,7 +1662,7 @@
 		closed = true;
 		clearTimeout(autoSaveTimer);
 		clearTimeout(joinTimer);
-		clearTimeout(hashTimer);
+		clearTimeout(creditsTimer);
 		clearTimeout(commentTimer);
 		clearTimeout(draftTimer);
 		clearTimeout(readingTimer);
@@ -2136,7 +2106,7 @@
 
 <EssayFigureDialog bind:this={figureDialog} essay={identifier} onadd={addFigure} />
 <EssayShareDialog bind:this={shareDialog} essay={identifier} onchange={reviewRequestsChanged} />
-<EssayAttestDialog bind:this={attestDialog} essay={identifier} {attestations} you={attestingPerson} yourRole={attestingRole} {canWriteOrEdit} onchange={attestationsChanged} />
+<EssayCreditsPopover bind:this={creditsPopover} essay={identifier} {credits} requests={reviewRequests} onchange={creditsChanged} />
 
 <dialog bind:this={pickerDialog} class="picker" onclose={() => (picker = null)} aria-labelledby="picker-heading">
 	{#if picker}
@@ -2765,8 +2735,8 @@
 		content: none;
 	}
 
-	/* Attesting belongs to editing (essay-editor-mockups/v2-1); commenting shows only what is in review (4). */
-	.is-commenting .editor-area :global(.essay-attestations) {
+	/* Credits belong to editing (attest-proposal-mockup); commenting shows only what is in review (essay-editor-mockups/4). */
+	.is-commenting .editor-area :global(.essay-credits) {
 		display: none;
 	}
 
@@ -2878,7 +2848,7 @@
 		color: var(--color-link);
 	}
 
-	/* Open requests to review a section, above who attested to it (attestation-lines.ts), in the lavender of essay-editor-mockups/4 and v2-1. */
+	/* Open requests to review a section, above its credits (credit-lines.ts), in the lavender of essay-editor-mockups/4 and v2-1. */
 	.editor-area :global(.essay-in-review) {
 		display: flex;
 		flex-wrap: wrap;
@@ -2926,8 +2896,8 @@
 		color: var(--color-status-review);
 	}
 
-	/* Who attested to each section, under its heading (attestation-lines.ts). */
-	.editor-area :global(.essay-attestations) {
+	/* Who is credited for each section, under its heading (credit-lines.ts), as in the approved credits mockup. */
+	.editor-area :global(.essay-credits) {
 		display: flex;
 		flex-wrap: wrap;
 		align-items: center;
@@ -2939,21 +2909,27 @@
 		color: var(--color-ink-muted);
 	}
 
-	.editor-area :global(.essay-attestation strong) {
+	.editor-area :global(.essay-credit) {
+		display: inline-flex;
+		align-items: center;
+		gap: var(--space-1);
+	}
+
+	.editor-area :global(.essay-credit strong) {
 		color: var(--color-ink);
+		font-weight: var(--font-weight-semibold);
 	}
 
-	.editor-area :global(.essay-attestation-date) {
-		color: var(--color-link);
-	}
-
-	.editor-area :global(.essay-attestation.is-changed .essay-attestation-date) {
-		color: var(--color-action);
-	}
-
-	.editor-area :global(.essay-attest-button) {
+	.editor-area :global(.essay-credits-button) {
+		display: inline-flex;
+		align-items: center;
+		gap: var(--space-1);
+		min-height: 0;
+		padding: 0.15rem var(--space-2);
+		border-width: 1px;
+		border-color: var(--color-line);
 		font-size: var(--font-size-small);
-		padding: 0 var(--space-2);
+		font-weight: var(--font-weight-semibold);
 	}
 
 	/* Words someone commented on (comment-marks.ts). */
