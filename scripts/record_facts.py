@@ -38,6 +38,7 @@ CITATOR_KINDS = {
 BULK_SOURCE_PROFILES = 20
 
 CITATION_KEY = re.compile(r"\[@([a-z0-9]+(?:-[a-z0-9]+)*)")
+BOX_PLACE = re.compile(r"^:{4,}[ \t]*(case|law)[ \t]+([a-z0-9]+(?:-[a-z0-9]+)*)[ \t]*$", re.M)
 FRONT_MATTER = re.compile(r"^---\n(.*?)\n---\n", re.DOTALL)
 UNVERIFIED = re.compile(r"\bunverified\b|\bnot verified\b", re.IGNORECASE)
 
@@ -221,8 +222,16 @@ class Tree:
                 front = read_front_matter(text)
                 if front.get("status") == "withdrawn":
                     continue
-                keys = sorted(set(CITATION_KEY.findall(text)))
-                found.append((self.relative(path), str(front.get("status", "draft")), keys))
+                keys = set(CITATION_KEY.findall(text))
+                # A case or law box the essay places cites what its record's case_box or law_box cites
+                # (site/src/lib/essays/record-boxes.ts).
+                for kind, key in BOX_PLACE.findall(text):
+                    box = self.sources.get(key, {}).get(f"{kind}_box")
+                    if box:
+                        keys |= set(CITATION_KEY.findall(json.dumps(box, default=str)))
+                        if box.get("quotes"):
+                            keys.add(key)
+                found.append((self.relative(path), str(front.get("status", "draft")), sorted(keys)))
         for file, record in self.yaml_records("content/glossary/*.yaml"):
             if record.get("status") == "retired" or record.get("redirect_to"):
                 continue

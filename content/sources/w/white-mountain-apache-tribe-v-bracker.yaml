@@ -113,3 +113,19 @@ nations_in_case:
   - nation: white-mountain-apache-tribe-of-the-fort-apache-reservation
     named_as: White Mountain Apache Tribe
     role: party
+case_box:
+  background: |-
+    The White Mountain Apache Tribe lives on the Fort Apache Reservation in Arizona, and its timber operations, run under federal regulation, produced over 90 percent of the Tribe's profits. Pinetop Logging, a non-Indian company, worked only on the reservation under contract with the Tribe's timber enterprise. Arizona assessed its motor carrier license and use fuel taxes against Pinetop, which paid under protest and sued [@white-mountain-apache-tribe-v-bracker, pp. 137-140].
+  question: |-
+    May Arizona impose motor carrier and fuel taxes on a non-Indian logging company working exclusively for a Tribal enterprise on the reservation?
+  holding: |-
+    No. The Court held the state taxes preempted by comprehensive federal regulation of Tribal timber harvesting, applying a particularized inquiry into the federal, Tribal and state interests at stake.
+  quotes:
+  - text: "The two barriers are independent because either, standing alone, can be a sufficient basis for holding state law inapplicable to activity undertaken on the reservation or by tribal members ..."
+    pinpoint: "p. 143"
+  - text: "... particularized inquiry into the nature of the state, federal, and tribal interests at stake ..."
+    pinpoint: "p. 145"
+  treatment: |-
+    *Oklahoma v. Castro-Huerta* (2022) applied *Bracker* balancing to state criminal jurisdiction over non-Indians in Indian country. [@oklahoma-v-castro-huerta]
+  topics:
+  - "Civil jurisdiction"

@@ -9,7 +9,7 @@
  */
 import { error } from '@sveltejs/kit';
 import { version as siteBuild } from '$app/env';
-import { essayBoxFacts, essayCaseLinks, essayCaseNames, essayCitations, essayOpinions, essayTerms, essaysInGit } from 'virtual:essay-library';
+import { essayBoxFacts, essayCaseLinks, essayCaseNames, essayCitations, essayOpinions, essayRecordBoxes, essayTerms, essaysInGit } from 'virtual:essay-library';
 import type { D1Database, R2Bucket } from '@cloudflare/workers-types/index.ts';
 import { renderEssay, type EssayHeading, type EssayLibrary, type RenderedEssay } from '../essays/render.ts';
 import { essayDateTime } from '../essays/dates.ts';
@@ -17,6 +17,7 @@ import type { LineChange } from '../essays/merge.ts';
 import { syncEssaysFromGitOnce } from './essay-git-sync.ts';
 import { casesByTopicMarkdown, taggedCases } from '../essays/case-topics.ts';
 import { frontMatterField, splitFrontMatter } from '../essays/syntax.ts';
+import { boxMarkdown, fillBoxes } from '../essays/record-boxes.ts';
 import { workerEnvironment } from './environment.ts';
 import { handCredits, readerNames, sectionCredits } from './essay-credits.ts';
 import { essayReviewRequests } from './essay-review-requests.ts';
@@ -45,8 +46,14 @@ export const essayLibrary: EssayLibrary = {
 	boxPage: (anchor) => (boxPageList ??= boxPages(essaysInGit))[anchor],
 	caseNames: () => (caseTitles ??= Object.fromEntries(Object.entries(essayCaseNames).map(([key, name]) => [key, name.title]))),
 	caseLink: (key) => essayCaseLinks[key],
-	opinions: (key) => essayOpinions[key]
+	opinions: (key) => essayOpinions[key],
+	box: (kind, key) => boxMarkdown(kind, key, essayRecordBoxes[kind === 'law' ? 'laws' : 'cases'][key]) || undefined
 };
+
+/** An essay's text with the boxes it leaves empty filled from their records (record-boxes.ts). */
+export function withRecordBoxes(text: string): string {
+	return fillBoxes(text, (kind, key) => essayLibrary.box?.(kind, key)).text;
+}
 
 export function storageForPages(): { database: D1Database; bucket: R2Bucket } {
 	const environment = workerEnvironment();
@@ -90,7 +97,7 @@ export function generatedKind(text: string): string | undefined {
 export async function renderWithGenerated(text: string, which: EssayTexts, options: { lines?: LineChange[] } = {}): Promise<RenderedEssay> {
 	if (generatedKind(text) !== 'cases-by-topic') return renderEssay(text, essayLibrary, options);
 	const texts = Object.fromEntries(Object.entries(await currentTexts(which)).filter(([, other]) => !generatedKind(other)));
-	const tagged = Object.values(texts).flatMap((other) => taggedCases(other));
+	const tagged = Object.values(texts).flatMap((other) => taggedCases(withRecordBoxes(other)));
 	const index = casesByTopicMarkdown(tagged, (key) => essayCaseNames[key]);
 	const pages = boxPages(texts);
 	return renderEssay(`${text.trimEnd()}\n\n${index}\n`, { ...essayLibrary, boxPage: (anchor) => pages[anchor] }, options);
