@@ -415,10 +415,8 @@
 							href={data.image.src}
 							{...imageViewerAttributes(description, {
 								title: description,
-								credit: data.image.credit,
 								original: data.image.original,
-								source: data.image.source,
-								removal: data.image.removal
+								source: data.image.source
 							})}
 						>
 							<img
