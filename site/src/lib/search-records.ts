@@ -2,8 +2,9 @@
  * What the advanced search filters on: the facts each nation's record holds,
  * reduced to short codes, and the laws and governing documents the records
  * list. Built with the site as /search/records.json
- * (src/lib/server/search-records.ts) and loaded only by the search page, so
- * the masthead's search stays small.
+ * (src/lib/server/search-records.ts). The search page loads it, and the
+ * masthead's search panel loads it when first opened, so the panel counts the
+ * laws the search page lists (src/lib/search-everything.ts).
  *
  * "Found" in a facet means a source on record shows it. A nation with no
  * court on record may still have one that no source has listed yet, so the

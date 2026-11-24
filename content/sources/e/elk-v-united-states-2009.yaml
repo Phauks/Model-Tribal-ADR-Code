@@ -65,11 +65,17 @@ rights:
   basis: us-government-work
   basis_note: Opinions of federal courts are works of the U.S. government (17 U.S.C. § 105); the host site's own additions are not reproduced.
   redistribution: true
-tribes:
-- oglala-sioux-tribe
 topics:
 - treaties
 - bad-men-clause
 found_in:
 - 2026-11-22-foundations-sources
 notes: Citation, court, decision date and docket confirmed from the Harvard Caselaw Access Project metadata (static.case.law) on Nov. 22, 2026; the quoted holding was read in the same file. No. 05-186L. Fort Laramie Treaty of 1868, art. I. The damages figure reported in a secondary summary was not confirmed and is not used. KeyCite checked Nov. 22, 2026 (see citator).
+tribes:
+- oglala-sioux-tribe
+nations_in_case:
+  checked: '2026-11-23'
+  named:
+  - nation: oglala-sioux-tribe
+    named_as: Oglala Sioux Tribe
+    role: subject

@@ -1,4 +1,5 @@
 <script lang="ts">
+	import Breadcrumbs from '#lib/components/Breadcrumbs.svelte';
 	import SponsorCard from '#lib/components/SponsorCard.svelte';
 	import { earmarkLabels } from '#lib/sponsorship.ts';
 	import type { PageProps } from './$types';
@@ -11,7 +12,7 @@
 </svelte:head>
 
 <div class="reading">
-	<p class="small"><a href="/sponsor">Sponsorship</a></p>
+	<Breadcrumbs trail={[{ label: 'Sponsorship', href: '/sponsor' }]} />
 	<h1>{data.sponsor.name}</h1>
 	<SponsorCard sponsor={data.sponsor} linkName={false} />
 	<p>

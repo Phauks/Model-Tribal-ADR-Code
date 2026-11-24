@@ -27,6 +27,11 @@ archives:
 history:
   status: live
   last_checked: '2026-11-21'
+court_dates:
+  argued: ['1999-10-06']
+  printed: "Argued October 6, 1999—Decided February 23, 2000"
+  source: https://tile.loc.gov/storage-services/service/ll/usrep/usrep528/usrep528495/usrep528495.pdf
+  checked: '2026-11-23'
 supreme_court:
   court: Rehnquist Court
   natural_court: Rehnquist Court (1994-2005)
@@ -112,3 +117,11 @@ notes: >-
   Ginsburg, J., as to Part II; Ginsburg, J., dissenting. Write-up of the Westlaw pull:
   research/pull-results/2026-11-21-legal-history-confirm-first-cases.md in the project's working files;
   the lead author's copy is kept privately and is not redistributed.
+tribes:
+- native-hawaiian-community
+nations_in_case:
+  checked: '2026-11-23'
+  named:
+  - nation: native-hawaiian-community
+    named_as: Native Hawaiians
+    role: subject

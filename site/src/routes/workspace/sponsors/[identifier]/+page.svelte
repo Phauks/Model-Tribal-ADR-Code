@@ -1,4 +1,5 @@
 <script lang="ts">
+	import Breadcrumbs from '#lib/components/Breadcrumbs.svelte';
 	import { readableDate } from '#lib/readable-date.ts';
 	import type { PageProps } from './$types';
 
@@ -10,7 +11,12 @@
 	<title>{data.sponsor.name} · Sponsors · Workspace · Model Tribal ADR Code</title>
 </svelte:head>
 
-<p class="small"><a href="/workspace/sponsors">Sponsors</a></p>
+<Breadcrumbs
+	trail={[
+		{ label: 'Workspace', href: '/workspace' },
+		{ label: 'Sponsors', href: '/workspace/sponsors' }
+	]}
+/>
 <h1>{data.sponsor.name}</h1>
 <p>
 	<a class="button" href="/account/sponsorship?sponsor={data.sponsor.identifier}">See their Sponsorship page as they do</a>

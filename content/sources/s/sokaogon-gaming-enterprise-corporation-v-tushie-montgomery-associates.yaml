@@ -26,6 +26,11 @@ archives: []   # Wayback capture pending: the shared archive workflow fills this
 history:
   status: live
   last_checked: '2026-11-21'
+court_dates:
+  argued: ['1996-04-02']
+  printed: "Argued April 2, 1996. Decided June 5, 1996."
+  source: https://static.case.law/f3d/86/cases/0656-01.json
+  checked: '2026-11-23'
 courtlistener:
   cluster: 719766
   citation: "86 F.3d 656"
@@ -65,8 +70,6 @@ citator:
     Corp. (2015) and Bruguier v. Lac du Flambeau Band (W.D. Wis. 2017). The citing-references list also
     shows one "disagreed with" entry (at 660).
   checked: 2026-11-20
-tribes:
-- sokaogon-chippewa-community
 found_in:
 - 2026-11-21-legal-history-and-key-cases
 notes: >-
@@ -77,3 +80,11 @@ notes: >-
   for the Tribe was reversed. The quote "It waived it in the arbitration clause." is at 661. Write-up of
   the Westlaw pull: research/pull-results/2026-11-21-legal-history-confirm-first-cases.md in the project's
   working files; the lead author's copy is kept privately and is not redistributed.
+tribes:
+- sokaogon-chippewa-community
+nations_in_case:
+  checked: '2026-11-23'
+  named:
+  - nation: sokaogon-chippewa-community
+    named_as: Sokaogon Chippewa Community
+    role: party

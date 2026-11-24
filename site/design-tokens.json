@@ -250,6 +250,14 @@
       "chart-series-7": {
         "$value": "#6250D6",
         "$description": "Chart slice or series 7 (violet), in this fixed order and never cycled. Always shown with its name and number in a legend, and every chart has a table view. Set validated for color vision deficiency (adjacent pairs) on surface-raised."
+      },
+      "viewer-checker-light": {
+        "$value": "#FFFFFF",
+        "$description": "Light squares of the checkerboard behind a picture in the image viewer, which shows through its clear parts, the same in both themes."
+      },
+      "viewer-checker-dark": {
+        "$value": "#D6D6D6",
+        "$description": "Gray squares of that checkerboard, the same in both themes."
       }
     },
     "dark": {
@@ -500,6 +508,14 @@
       "chart-series-7": {
         "$value": "#9085E9",
         "$description": "Chart slice or series 7 (violet), in this fixed order and never cycled. Always shown with its name and number in a legend, and every chart has a table view. Set validated for color vision deficiency (adjacent pairs) on surface-raised."
+      },
+      "viewer-checker-light": {
+        "$value": "#FFFFFF",
+        "$description": "Light squares of the checkerboard behind a picture in the image viewer, which shows through its clear parts, the same in both themes."
+      },
+      "viewer-checker-dark": {
+        "$value": "#D6D6D6",
+        "$description": "Gray squares of that checkerboard, the same in both themes."
       }
     }
   },

@@ -30,24 +30,21 @@
 	<Timeline entries={timeline.entries} opinions={timeline.opinions} fullLink="/nations/timeline?nation=navajo-nation" />
 -->
 <script lang="ts">
-	import { onMount } from 'svelte';
+	import { onMount, type Snippet } from 'svelte';
 	import ArrowDownUp from '@lucide/svelte/icons/arrow-down-up';
 	import Copy from '@lucide/svelte/icons/copy';
 	import ExternalLink from '@lucide/svelte/icons/external-link';
-	import FileText from '@lucide/svelte/icons/file-text';
 	import Funnel from '@lucide/svelte/icons/funnel';
-	import Gavel from '@lucide/svelte/icons/gavel';
-	import Landmark from '@lucide/svelte/icons/landmark';
-		import Maximize2 from '@lucide/svelte/icons/maximize-2';
+	import Maximize2 from '@lucide/svelte/icons/maximize-2';
 	import MoveHorizontal from '@lucide/svelte/icons/move-horizontal';
 	import MoveVertical from '@lucide/svelte/icons/move-vertical';
 	import Quote from '@lucide/svelte/icons/quote';
 	import Scale from '@lucide/svelte/icons/scale';
 	import Scan from '@lucide/svelte/icons/scan';
-	import ScrollText from '@lucide/svelte/icons/scroll-text';
 	import ZoomIn from '@lucide/svelte/icons/zoom-in';
 	import ZoomOut from '@lucide/svelte/icons/zoom-out';
 	import type { CitationMark } from '#lib/citation-marks.ts';
+	import { kindIcons } from '#lib/timeline-icons.ts';
 	import {
 		axisYears,
 		barYears,
@@ -104,6 +101,10 @@
 		summary?: boolean;
 		/** Draw the toolbar on the line of the section heading just above, as on a nation's page. */
 		besideHeading?: boolean;
+		/** Say "in view" after each row's count, as the full timeline does. */
+		countsInView?: boolean;
+		/** Shown in the toolbar after the count, such as the chosen era with a button that clears it. */
+		toolbarStart?: Snippet;
 	}
 
 	let {
@@ -121,10 +122,12 @@
 		chips = true,
 		overview = false,
 		summary = false,
-		besideHeading = false
+		besideHeading = false,
+		countsInView = false,
+		toolbarStart
 	}: Props = $props();
 
-	const icons = { treaty: ScrollText, document: FileText, case: Gavel, opinion: Scale, federal: Landmark };
+	const icons = kindIcons;
 
 	const extent = $derived(givenExtent ?? extentOf(entries, opinions));
 	/** The kinds that have anything to show, in row order. */
@@ -242,11 +245,13 @@
 		return Math.max(3, (Math.sqrt(count) / Math.sqrt(own)) * (rowHeight - 12));
 	};
 
-	const eraBands = $derived(
-		eras
+	// None when the whole view lies in one era: the list's heading names it, as in the approved mockup.
+	const eraBands = $derived.by(() => {
+		const bands = eras
 			.map((era, index) => ({ era, index, from: Math.max(era.start, view.from), to: Math.min(era.end, view.to) }))
-			.filter((band) => band.to > band.from)
-	);
+			.filter((band) => band.to > band.from);
+		return bands.length > 1 ? bands : [];
+	});
 
 	// The era's name in its band: the whole name, else its first word, else nothing, whichever fits (about 7.5 pixels a capital letter).
 	const eraLabel = (name: string, room: number) =>
@@ -439,6 +444,7 @@
 			{#if summary || down}
 				<p class="summary"><strong>{plural(inViewCount, 'entry', 'entries')}, {shownYears}</strong></p>
 			{/if}
+			{@render toolbarStart?.()}
 			{#if chips && !down}
 				<button type="button" class="icon-button" aria-label="Kinds shown" title="Kinds shown" aria-expanded={chipsOpen} onclick={() => (chipsOpen = !chipsOpen)}>
 					<Funnel size={20} aria-hidden="true" />
@@ -532,7 +538,7 @@
 				{/each}
 			{/each}
 			<rect class="overview-window" x={ox(view.from)} y="1" width={Math.max(4, ox(view.to) - ox(view.from))} height="47" rx="3" />
-			{#each axisYears(extent, narrow ? 4 : 7) as year (year)}
+			{#each axisYears(extent, narrow ? 4 : 7) as year}
 				<text class="tick" x={ox(year)} y="62" text-anchor="middle">{year}</text>
 			{/each}
 		</svg>
@@ -556,7 +562,7 @@
 					{#if !narrow}
 						<text class="row-label" x="28" y={middle - 2}>{kindLabels[row.kind]}</text>
 						<text class="row-count" x="28" y={middle + 12}
-								>{row.count.toLocaleString('en-US')}{row.marks.length > 0 && row.marks.every((entry) => entry.context) ? ' for context' : ''}</text
+								>{row.count.toLocaleString('en-US')}{row.marks.length > 0 && row.marks.every((entry) => entry.context) ? ' for context' : countsInView ? ' in view' : ''}</text
 							>
 					{/if}
 					<line class="row-line" x1={labelWidth} x2={width - right} y1={middle} y2={middle} />
@@ -600,7 +606,7 @@
 				</g>
 			{/each}
 			<line class="axis" x1={labelWidth} x2={width - right} y1={chartHeight - axisHeight} y2={chartHeight - axisHeight} />
-			{#each ticks as year (year)}
+			{#each ticks as year}
 				<line class="axis" x1={x(year)} x2={x(year)} y1={chartHeight - axisHeight} y2={chartHeight - axisHeight + 4} />
 				<text class="tick" x={x(year)} y={chartHeight - 5} text-anchor="middle">{year}</text>
 			{/each}
@@ -733,7 +739,7 @@
 	{#if down}
 		<!-- svelte-ignore a11y_click_events_have_key_events, a11y_no_static_element_interactions -->
 		<div class="rail no-print" aria-hidden="true" bind:clientHeight={railHeight} onclick={jumpTo}>
-			{#each railTicks as year (year)}
+			{#each railTicks as year}
 				<span class="rail-tick" style:top="{railYear(year)}px">{year}</span>
 			{/each}
 			{#each railMarks as mark, index (index)}
@@ -782,14 +788,33 @@
 		margin: 0 auto 0 0;
 	}
 
-	/* On a nation's page the buttons sit on the line of the section's heading, as in the approved mockup. */
-	.toolbar.beside {
+	/*
+	 * On a nation's page the buttons sit on the line of the section's heading, as in the approved
+	 * mockup. The folding section clips its contents to animate their height (Collapsible.svelte), so
+	 * a toolbar pulled up over the heading was clipped away and the heading took its clicks: once
+	 * across, the timeline could not be turned back (Trevor, Nov. 24, 2026). The toolbar is placed
+	 * from the section itself instead, which the clip does not reach. On narrow screens, where the
+	 * heading and the buttons do not fit on one line, it keeps its own line.
+	 */
+	:global(details:has(.toolbar.beside)) {
 		position: relative;
+	}
+
+	.toolbar.beside {
+		position: absolute;
 		z-index: 1;
-		margin-top: calc(-1 * var(--timeline-heading-height, 3.9rem));
-		margin-left: auto;
+		top: var(--space-1);
+		right: 0;
 		width: max-content;
 		border-bottom: 0;
+	}
+
+	@media (max-width: 40rem) {
+		.toolbar.beside {
+			position: static;
+			width: auto;
+			border-bottom: 1px solid var(--color-line);
+		}
 	}
 
 	.key-ring {

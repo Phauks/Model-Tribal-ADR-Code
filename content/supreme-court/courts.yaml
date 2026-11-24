@@ -1,0 +1,52 @@
+# Each Court of the Supreme Court of the United States that decided a case the
+# site cites, named for its Chief Justice, with a short history in our own
+# words. Who sat on each Court and when comes from justices.yaml (generated);
+# the cases come from each case record's supreme_court.court. Citations use
+# the source keys in content/sources.
+courts:
+- key: marshall-court
+  chief: John Marshall
+  history: |-
+    John Marshall served as Chief Justice from 1801 until his death in 1835 [@supreme-court-justices-1789-to-present]. In *Marbury v. Madison* (1803), the Court held that a part of the Judiciary Act of 1789 was void because Congress cannot enlarge the original jurisdiction the Constitution gives the Court, and so claimed for the courts the power to declare an Act of Congress unconstitutional [@supreme-court-historical-society-marshall-court]. In 1805 the Senate acquitted Justice Samuel Chase, whom the House had impeached over his partisan conduct, and no Justice was impeached again [@supreme-court-historical-society-marshall-court].
+
+    Congress added a seventh seat in 1807 for a new circuit of Kentucky, Tennessee and Ohio, and Thomas Todd of Kentucky filled it [@federal-judicial-center-supreme-court-legislative-history; @supreme-court-historical-society-marshall-court]. In *McCulloch v. Maryland* (1819), the Court upheld the Bank of the United States and held that Maryland could not tax it; in *Gibbons v. Ogden* (1824), it held that a New York steamboat monopoly gave way to an Act of Congress regulating commerce [@supreme-court-historical-society-marshall-court].
+- key: waite-court
+  chief: Morrison Remick Waite
+  history: |-
+    Morrison R. Waite of Ohio, appointed by Ulysses S. Grant, served as Chief Justice from 1874 until his death in 1888 [@supreme-court-justices-1789-to-present]. In *Munn v. Illinois* (1877), the Court held that a state may regulate a private business that affects the public, such as a grain elevator, and that the states may regulate railroads within their borders until Congress acts [@supreme-court-historical-society-waite-court].
+
+    In 1883 the Court held the Civil Rights Act of 1875 unconstitutional, reasoning that the Fourteenth Amendment reaches only action by the states, not discrimination by private persons; Justice John Marshall Harlan dissented alone [@supreme-court-historical-society-waite-court]. By 1887 the Court was almost four years behind in its work [@supreme-court-historical-society-waite-court].
+- key: fuller-court
+  chief: Melville Weston Fuller
+  history: |-
+    Melville W. Fuller of Illinois, appointed by Grover Cleveland, served as Chief Justice from 1888 until his death in 1910 [@supreme-court-justices-1789-to-present]. In 1891 Congress gave each circuit a court of appeals and ended the Justices' duty to ride circuit [@supreme-court-historical-society-fuller-court].
+
+    In 1895 the Court held the new federal income tax unconstitutional by a vote of five to four, a result the Sixteenth Amendment undid in 1913. In *Plessy v. Ferguson* (1896), it upheld Louisiana's law requiring separate railway cars, over Justice Harlan's dissent. In the Insular Cases it worked out the constitutional status of Puerto Rico and the Philippines, and in *Lochner v. New York* (1905) it struck down New York's limit on bakers' hours [@supreme-court-historical-society-fuller-court].
+- key: white-court
+  chief: Edward Douglass White
+  history: |-
+    Edward Douglass White of Louisiana, an Associate Justice since 1894, was appointed Chief Justice by William H. Taft and served from 1910 until his death in 1921 [@supreme-court-justices-1789-to-present]. In the Standard Oil case, the Court read the Sherman Antitrust Act to forbid only unreasonable restraints of trade [@supreme-court-historical-society-white-court].
+
+    In 1914 the Court held that federal courts may not admit evidence that federal officers seized illegally. It struck down the federal child labor law of 1916, and it upheld convictions under the wartime Espionage Act and Sedition Act, Justices Oliver Wendell Holmes and Louis D. Brandeis dissenting in the Sedition Act case [@supreme-court-historical-society-white-court].
+- key: warren-court
+  chief: Earl Warren
+  history: |-
+    Earl Warren of California, appointed by Dwight D. Eisenhower, served as Chief Justice from 1953 until he retired in 1969 [@supreme-court-justices-1789-to-present]. In *Brown v. Board of Education* (1954), a unanimous Court held that racial segregation in public schools denies the equal protection of the laws, and in 1955 it sent the cases back to the lower courts to end segregation "with all deliberate speed" [@supreme-court-historical-society-warren-court].
+
+    The Court held that discharged service members, and civilians with the armed forces abroad, may not be tried by court-martial. It held that a state must give a poor defendant the trial transcript an appeal requires and, in *Gideon v. Wainwright* (1963), that a state must appoint a lawyer for a person charged with a felony who cannot afford one [@supreme-court-historical-society-warren-court].
+- key: burger-court
+  chief: Warren Earl Burger
+  history: |-
+    Warren E. Burger, a Minnesota native and a judge of the Court of Appeals for the District of Columbia Circuit, was appointed by Richard M. Nixon and served as Chief Justice from 1969 until he retired in 1986 [@supreme-court-justices-1789-to-present; @supreme-court-historical-society-burger-court].
+
+    In 1971 the Court refused to stop the *New York Times* and the *Washington Post* from publishing the Pentagon Papers. In *Roe v. Wade* (1973), it limited the power of the states to prohibit abortion. In *United States v. Nixon* (1974), a unanimous Court held that the President must surrender recordings sought as evidence for a criminal trial, and in 1983 it held the legislative veto unconstitutional [@supreme-court-historical-society-burger-court].
+- key: rehnquist-court
+  chief: William H. Rehnquist
+  history: |-
+    William H. Rehnquist, an Associate Justice since 1972, was appointed Chief Justice by Ronald Reagan and served from 1986 until his death in 2005 [@supreme-court-justices-1789-to-present]. In *Texas v. Johnson* (1989), the Court held that the First Amendment protects burning the flag in protest [@supreme-court-historical-society-rehnquist-court].
+
+    The Court applied stricter review to limits on commercial speech, worked to define when a regulation of private property becomes a taking that requires compensation, and applied the strictest scrutiny to laws that classify people by race, including those meant to benefit minorities [@supreme-court-historical-society-rehnquist-court].
+- key: roberts-court
+  chief: John G. Roberts, Jr.
+  history: |-
+    John G. Roberts, Jr., a judge of the Court of Appeals for the District of Columbia Circuit who had clerked for then-Associate Justice William H. Rehnquist, was appointed Chief Justice by George W. Bush and took office on September 29, 2005 [@supreme-court-biographies-of-current-justices; @supreme-court-justices-1789-to-present].

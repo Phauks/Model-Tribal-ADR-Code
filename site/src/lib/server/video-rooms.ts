@@ -65,6 +65,16 @@ export async function roomOfEvent(database: D1Database, eventIdentifier: string)
 	return (await database.prepare(`SELECT ${roomColumns} FROM video_rooms WHERE event_identifier = ?`).bind(eventIdentifier).first<VideoRoom>()) ?? undefined;
 }
 
+/** Which of these events use the website's video room, for the list of events. */
+export async function roomsOfEvents(database: D1Database, eventIdentifiers: readonly string[]): Promise<Set<string>> {
+	if (eventIdentifiers.length === 0) return new Set();
+	const result = await database
+		.prepare(`SELECT event_identifier AS event FROM video_rooms WHERE event_identifier IN (SELECT value FROM json_each(?))`)
+		.bind(JSON.stringify(eventIdentifiers))
+		.all<{ event: string }>();
+	return new Set(result.results.map((row) => row.event));
+}
+
 /** Turns the room on for an event, or changes its style or who may watch its recordings. */
 export async function saveEventRoom(
 	database: D1Database,

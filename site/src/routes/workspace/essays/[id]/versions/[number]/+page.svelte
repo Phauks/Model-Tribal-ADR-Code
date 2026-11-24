@@ -1,4 +1,5 @@
 <script lang="ts">
+	import Breadcrumbs from '#lib/components/Breadcrumbs.svelte';
 	import SourceList from '#lib/components/SourceList.svelte';
 	import type { PageProps } from './$types';
 
@@ -10,9 +11,13 @@
 	<title>Version {data.number} · {data.title} · Workspace · Model Tribal ADR Code</title>
 </svelte:head>
 
-<nav aria-label="Breadcrumb" class="small">
-	<a href="/workspace/essays">Essays</a> › <a href="/workspace/essays/{data.identifier}">{data.title}</a> › Version {data.number}
-</nav>
+<Breadcrumbs
+	trail={[
+		{ label: 'Workspace', href: '/workspace' },
+		{ label: 'Essays', href: '/workspace/essays' },
+		{ label: data.title, href: `/workspace/essays/${data.identifier}` }
+	]}
+/>
 
 <div class="notice" role="note">
 	<p>

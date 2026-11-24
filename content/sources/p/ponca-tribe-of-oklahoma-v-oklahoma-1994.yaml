@@ -25,6 +25,12 @@ archives: []
 history:
   status: live
   last_checked: '2026-11-21'
+court_dates:
+  amended: ['1994-10-28']
+  printed: "Sept. 2, 1994. Rehearing Denied Sept. 27, 1994 in No. 93-3110. As Amended Oct. 28, 1994."
+  source: https://static.case.law/f3d/37/cases/1422-01.json
+  note: "The rehearing denial of Sept. 27, 1994 is printed for No. 93-3110 only, one of the four consolidated appeals, so it is not shown."
+  checked: '2026-11-23'
 courtlistener:
   cluster: 680033
   citation: "37 F.3d 1422"
@@ -84,3 +90,11 @@ notes: Ponca Tribe of Okla. v. Oklahoma, 37 F.3d 1422 (10th Cir. 1994). Consolid
   the caption, dockets and dates only; the holding on the Eleventh Amendment and good faith was not read. Read on
   the original link through a page-fetch tool only; holding not checked word for word. Citator check (KeyCite) pending;
   see the project's Westlaw list.
+tribes:
+- ponca-tribe-of-indians-of-oklahoma
+nations_in_case:
+  checked: '2026-11-23'
+  named:
+  - nation: ponca-tribe-of-indians-of-oklahoma
+    named_as: Ponca Tribe of Oklahoma
+    role: party

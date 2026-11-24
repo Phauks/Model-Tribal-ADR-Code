@@ -327,7 +327,7 @@ const everyChange = `
 				ELSE '/essays/' || p.essay_identifier
 			END,
 			e.part, v.title,
-			CASE WHEN prior.version_number IS NULL THEN 'new' ELSE 'published' END,
+			CASE WHEN prior.version_number IS NULL THEN 'new' WHEN v.origin = 'restore' THEN 'restored' ELSE 'published' END,
 			v.note, 0, prior_version.bytes, v.bytes, prior_version.object_key, v.object_key, NULL,
 			p.person_identifier, p.published_at, p.listed, p.number, NULL
 		FROM essay_publications p
@@ -430,7 +430,34 @@ interface Where {
 	values: unknown[];
 }
 
-function whereFor(filters: ChangeFilters, at: Date): Where {
+/** What the filters need beyond the address: the pages whose titles match, and who is reading. */
+interface WhereContext {
+	/** For the "Page" filter: the built pages whose title has the words typed. */
+	titleAddresses: string[] | undefined;
+	/** The signed-in reader's account, for "Only pages I follow". */
+	account: string | undefined;
+}
+
+/** Lower case without accents, so "hawaii" finds "Hawaiʻi". */
+function foldTitle(text: string): string {
+	return text
+		.normalize('NFKD')
+		.replace(/[\u0300-\u036f\u02bb\u02bc\u2018\u2019']/g, '')
+		.toLowerCase();
+}
+
+/** The built pages whose title has every word typed in the "Page" filter. */
+export function pagesTitled(directory: PageDirectory, typed: string): string[] {
+	const words = foldTitle(typed).split(/\s+/).filter(Boolean);
+	const found: string[] = [];
+	for (const [address, page] of directory) {
+		const title = foldTitle(page.title);
+		if (words.every((word) => title.includes(word))) found.push(address);
+	}
+	return found;
+}
+
+function whereFor(filters: ChangeFilters, at: Date, context: WhereContext = { titleAddresses: undefined, account: undefined }): Where {
 	const clauses: string[] = [];
 	const values: unknown[] = [];
 	const add = (clause: string, ...bound: unknown[]) => {
@@ -438,6 +465,20 @@ function whereFor(filters: ChangeFilters, at: Date): Where {
 		values.push(...bound);
 	};
 	if (filters.page) add('c.address = ?', filters.page);
+	if (filters.title) {
+		// A page no longer on the site is found by the title its changes kept.
+		const pattern = `%${filters.title.replace(/[\\%_]/g, (character) => `\\${character}`)}%`;
+		add(
+			"(c.address IN (SELECT value FROM json_each(?)) OR c.title LIKE ? ESCAPE '\\')",
+			JSON.stringify(context.titleAddresses ?? []),
+			pattern
+		);
+	}
+	if (filters.following) {
+		if (context.account) add('c.address IN (SELECT address FROM follows WHERE account_identifier = ?)', context.account);
+		else add('0');
+	}
+	if (filters.hidden) add('(h.change IS NOT NULL OR c.listed = 0)');
 	if (filters.kinds.length > 0) add('c.kind IN (SELECT value FROM json_each(?))', JSON.stringify(filters.kinds));
 	if (filters.who === 'site') add("c.person_identifier IS NULL AND c.id NOT LIKE 'nation-%'");
 	else if (filters.who === nationTeamsKey) add("c.id LIKE 'nation-%' AND COALESCE(h.hide_person, 0) = 0");
@@ -462,6 +503,8 @@ function whereText(where: Where, extra: string[] = []): string {
 
 export interface ChangeList {
 	changes: ChangeView[];
+	/** How many changes the filters match, bulk updates included only when shown. */
+	total: number;
 	/** How many bulk updates the filters left out. */
 	hiddenBulk: number;
 	/** Whether there were more changes than the limit. */
@@ -474,15 +517,23 @@ export async function listChanges(
 	database: D1Database,
 	filters: ChangeFilters,
 	directory: PageDirectory,
-	at = new Date()
+	at = new Date(),
+	account?: string
 ): Promise<ChangeList> {
-	const where = whereFor(filters, at);
+	const where = whereFor(filters, at, {
+		titleAddresses: filters.title ? pagesTitled(directory, filters.title) : undefined,
+		account
+	});
 	const bulkClause = filters.showBulk ? [] : ['c.bulk = 0'];
-	const [listed, bulk, people, nationTeams] = await Promise.all([
+	const [listed, total, bulk, people, nationTeams] = await Promise.all([
 		database
 			.prepare(`${everyChange}${whereText(where, bulkClause)} ORDER BY c.made_at DESC, c.sort_key DESC LIMIT ?`)
 			.bind(...where.values, filters.limit + 1)
 			.all<ChangeRow>(),
+		database
+			.prepare(`SELECT COUNT(*) AS count FROM (${everyChange}${whereText(where, bulkClause)})`)
+			.bind(...where.values)
+			.first<{ count: number }>(),
 		filters.showBulk
 			? Promise.resolve(null)
 			: database
@@ -506,6 +557,7 @@ export async function listChanges(
 	const rows = listed.results;
 	return {
 		changes: rows.slice(0, filters.limit).map((row) => changeView(row, directory)),
+		total: total?.count ?? 0,
 		hiddenBulk: bulk?.count ?? 0,
 		more: rows.length > filters.limit,
 		people: [
@@ -528,6 +580,28 @@ export async function pageRecordedSince(database: D1Database, address: string): 
 		.bind(address)
 		.first<{ seen_at: string }>();
 	return row?.seen_at ?? undefined;
+}
+
+/** What a page's history badge shows: how many changes, the newest, and when recording began. */
+export interface PageHistorySummary {
+	count: number;
+	/** The newest change, as readers may see it. */
+	latest: ChangeView | undefined;
+	/** For a page with no changes yet: when its history began. */
+	recordedSince: string | undefined;
+}
+
+export async function pageHistorySummary(database: D1Database, address: string): Promise<PageHistorySummary> {
+	const [counted, newest] = await Promise.all([
+		database.prepare(`SELECT COUNT(*) AS count FROM (${everyChange} WHERE c.address = ?)`).bind(address).first<{ count: number }>(),
+		database.prepare(`${everyChange} WHERE c.address = ? ORDER BY c.made_at DESC, c.sort_key DESC LIMIT 1`).bind(address).first<ChangeRow>()
+	]);
+	const count = counted?.count ?? 0;
+	return {
+		count,
+		latest: newest ? changeView(newest, new Map()) : undefined,
+		recordedSince: count === 0 ? await pageRecordedSince(database, address) : undefined
+	};
 }
 
 /** Every change to one page, oldest first, as stored. */
@@ -782,4 +856,22 @@ export async function showChange(database: D1Database, personIdentifier: string,
 			note: note?.slice(0, 1000) ?? null
 		})
 	]);
+}
+
+/** A request a hiding may answer, for the "Request it answers" list. */
+export interface RequestToAnswer {
+	reference: string;
+	kind: string;
+}
+
+/** Open requests to correct, make private or delete something, newest first: what a hiding usually answers. */
+export async function requestsToAnswer(database: D1Database): Promise<RequestToAnswer[]> {
+	const rows = await database
+		.prepare(
+			`SELECT reference, kind FROM requests
+			 WHERE status <> 'resolved' AND kind IN ('correct', 'restrict', 'remove')
+			 ORDER BY received_at DESC LIMIT 50`
+		)
+		.all<RequestToAnswer>();
+	return rows.results;
 }

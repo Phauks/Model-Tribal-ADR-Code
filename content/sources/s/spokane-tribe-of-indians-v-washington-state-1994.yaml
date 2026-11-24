@@ -25,6 +25,11 @@ archives: []
 history:
   status: live
   last_checked: '2026-11-21'
+court_dates:
+  argued_and_submitted: ['1993-10-05']
+  printed: "Argued and Submitted Oct. 5, 1993. Decided July 6, 1994."
+  source: https://static.case.law/f3d/28/cases/0991-01.json
+  checked: '2026-11-23'
 courtlistener:
   cluster: 673518
   citation: "28 F.3d 991"
@@ -79,3 +84,11 @@ notes: Spokane Tribe of Indians v. Washington, 28 F.3d 991 (9th Cir. 1994). The 
   to negotiate a gaming compact in good faith; per a fetch-tool excerpt, the court reversed the dismissal and held
   the State was not immune from suit under IGRA. Seminole Tribe v. Florida (1996) later held that the Eleventh Amendment
   bars such suits. Read on the original link. Citator check (KeyCite) pending; see the project's Westlaw list.
+tribes:
+- spokane-tribe-of-the-spokane-reservation
+nations_in_case:
+  checked: '2026-11-23'
+  named:
+  - nation: spokane-tribe-of-the-spokane-reservation
+    named_as: Spokane Tribe of Indians
+    role: party

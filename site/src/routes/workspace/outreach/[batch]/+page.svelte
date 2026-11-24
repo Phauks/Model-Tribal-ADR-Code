@@ -1,4 +1,5 @@
 <script lang="ts">
+	import Breadcrumbs from '#lib/components/Breadcrumbs.svelte';
 	import { batchStatusLabels, deliveryLabels, recipientStatusLabels } from '#lib/mail.ts';
 	import { fullDate } from '../../inbox/dates.ts';
 	import type { PageProps } from './$types';
@@ -12,7 +13,12 @@
 	<title>{batch.name} · Outreach · Workspace · Model Tribal ADR Code</title>
 </svelte:head>
 
-<p class="small"><a href="/workspace/outreach">Outreach</a></p>
+<Breadcrumbs
+	trail={[
+		{ label: 'Workspace', href: '/workspace' },
+		{ label: 'Outreach', href: '/workspace/outreach' }
+	]}
+/>
 <h1>{batch.name}</h1>
 
 {#if form && 'problem' in form}

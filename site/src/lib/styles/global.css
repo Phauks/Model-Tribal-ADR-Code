@@ -317,6 +317,66 @@ blockquote > footer {
 	padding-left: var(--space-5);
 }
 
+/*
+ * No bullets unless it is a real list (Trevor, Nov. 23, 2026: nation pages
+ * used "so many bullet points"; he chose "label rows"). Several values of one
+ * fact stack, each on its own line, with a thin dashed rule between them; the
+ * list stays a <ul> for screen readers. Mockups:
+ * design/nation-page-lists/a-label-rows-*.png in the project files.
+ */
+.stacked-list,
+.summary-list dd > ul.stacked-list {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+
+.stacked-list > li + li {
+	margin-top: var(--space-2);
+	padding-top: var(--space-2);
+	border-top: 1px dashed var(--color-line);
+}
+
+/* Label rows: a fact whose values each have a label, such as a governing
+   body's name, members, how it is chosen and term, as a small two-column list
+   inside the value, the labels in small muted type. */
+.label-rows {
+	display: grid;
+	grid-template-columns: fit-content(40%) 1fr;
+	column-gap: var(--space-4);
+	row-gap: var(--space-1);
+	margin: 0;
+}
+
+.label-rows > div {
+	display: contents;
+}
+
+.label-rows dt,
+.summary-list .label-rows dt,
+.summary-list .label-rows dd {
+	min-width: 0;
+	margin: 0;
+	padding: 0;
+	border: 0;
+}
+
+.label-rows dt,
+.summary-list .label-rows dt {
+	font-weight: var(--font-weight-regular);
+	font-size: var(--font-size-small);
+	color: var(--color-ink-muted);
+	/* The small label sits on the same line as the value's first line. */
+	line-height: 1.75;
+}
+
+/* A note every value of a fact shares, such as "Law code", said once under the fact's label. */
+.summary-list .group-note {
+	display: block;
+	margin-top: 2px;
+	font-weight: var(--font-weight-regular);
+}
+
 @media (max-width: 40rem) {
 	.summary-list {
 		grid-template-columns: 1fr;
@@ -509,6 +569,12 @@ select {
 	color: var(--color-ink);
 }
 
+/* A fieldset is as wide as its widest field by default, so one long option
+   in a select pushed a phone's form past the screen. It shrinks like a div. */
+fieldset {
+	min-inline-size: 0;
+}
+
 /* Form fields (request form and co-author workspace). Labels sit above
    their fields; hints and errors sit between the label and the field. */
 .field {
@@ -549,7 +615,8 @@ textarea {
 
 /* A one-line field is as wide as the answer it expects, never wider than the column; a text area and the label, hint and error around it take the text width. */
 .field :is(input[type='text'], input[type='email'], input[type='password'], input[type='search'], select) {
-	max-width: var(--layout-field);
+	/* The 100% keeps a select with a long option, such as an event's time zone, inside a phone's screen. */
+	max-width: min(var(--layout-field), 100%);
 }
 
 .field input.short,

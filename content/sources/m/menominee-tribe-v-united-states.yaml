@@ -27,6 +27,12 @@ archives:
 history:
   status: live
   last_checked: '2026-11-21'
+court_dates:
+  argued: ['1968-01-22']
+  reargued: ['1968-04-25']
+  printed: "Argued January 22, 1968.—Reargued April 25, 1968.—Decided May 27, 1968."
+  source: https://tile.loc.gov/storage-services/service/ll/usrep/usrep391/usrep391404/usrep391404.pdf
+  checked: '2026-11-23'
 supreme_court:
   court: Warren Court
   natural_court: Warren Court (1967-1969)
@@ -91,10 +97,16 @@ rights:
     Opinions of federal courts are works of the U.S. government (17 U.S.C. § 105); the host site's own
     additions are not reproduced.
   redistribution: true
-tribes:
-- menominee-indian-tribe-of-wisconsin
 found_in:
 - 2026-11-21-legal-history-and-key-cases
 notes: >-
   Full citation: 391 U.S. 404 (1968). Official report scan or slip opinion: https://tile.loc.gov/storage-services/service/ll/usrep/usrep391/usrep391404/usrep391404.pdf.
   Quote follows the LOC scan, not LII. Citator check (KeyCite) pending; see research/pull-lists/2026-11-21-legal-history-westlaw.md.
+tribes:
+- menominee-indian-tribe-of-wisconsin
+nations_in_case:
+  checked: '2026-11-23'
+  named:
+  - nation: menominee-indian-tribe-of-wisconsin
+    named_as: Menominee Tribe of Indians
+    role: party

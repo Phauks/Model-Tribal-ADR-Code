@@ -81,24 +81,69 @@ function justiceList(justices) {
     })
     .join(", ");
 }
-/** The full decision date of a case record, such as "March 18, 1831", or null. */
-export function decisionDate(record) {
+// Each kind of date in a record's court_dates block and its label, in the
+// order used when two fall on the same day (schemas/source.schema.json).
+const COURT_DATE_LABELS = [
+  ["argued", "Argued"],
+  ["argued_and_submitted", "Argued and submitted"],
+  ["heard", "Heard"],
+  ["submitted", "Submitted"],
+  ["reargued", "Reargued"],
+  ["decided", "Decided"],
+  ["filed", "Filed"],
+  ["rehearing_denied", "Rehearing denied"],
+  ["rehearing_en_banc_denied", "Rehearing en banc denied"],
+  ["amended", "Amended"],
+];
+
+/**
+ * Days as one date: "May 11, 1988", "February 17–19, 1823", "April 15 and
+ * 17, 1823", or for days in different months "December 30, 1831, and
+ * January 2, 1832". The same as courtDays() in site/src/lib/server/case-facts.ts.
+ */
+export function courtDays(days) {
+  const groups = [];
+  for (const day of [...days].sort()) {
+    const [year, month, date] = day.split("-").map(Number);
+    const last = groups.at(-1);
+    if (last && last.year === year && last.month === month) last.days.push(date);
+    else groups.push({ year, month, days: [date] });
+  }
+  const parts = groups.map(({ year, month, days: dates }) => {
+    const runs = [];
+    for (let index = 0; index < dates.length; ) {
+      let end = index;
+      while (end + 1 < dates.length && dates[end + 1] === dates[end] + 1) end++;
+      runs.push(end > index ? `${dates[index]}–${dates[end]}` : String(dates[index]));
+      index = end + 1;
+    }
+    const joined = runs.length > 1 ? `${runs.slice(0, -1).join(", ")} and ${runs.at(-1)}` : runs[0];
+    return `${MONTHS[month - 1]} ${joined}, ${year}`;
+  });
+  return parts.length > 1 ? `${parts.slice(0, -1).join(", ")}, and ${parts.at(-1)}` : parts[0];
+}
+
+/** The case's dates as [label, text] pairs, each its own line, in the order they happened. */
+export function dateLines(record) {
   const parts = record?.citation?.issued?.["date-parts"]?.[0] || [];
-  if (parts.length < 3) return null;
-  return `${MONTHS[parts[1] - 1]} ${parts[2]}, ${parts[0]}`;
+  const decided = parts.length >= 3 ? [`${parts[0]}-${String(parts[1]).padStart(2, "0")}-${String(parts[2]).padStart(2, "0")}`] : [];
+  const dates = { ...(record?.court_dates || {}), decided };
+  return COURT_DATE_LABELS.map(([kind, label], order) => ({ label, order, days: dates[kind] || [] }))
+    .filter((line) => line.days.length > 0)
+    .sort((first, second) => [...first.days].sort()[0].localeCompare([...second.days].sort()[0]) || first.order - second.order)
+    .map((line) => [line.label, courtDays(line.days)]);
 }
 
 /**
  * The lines under a case box's heading, as a Typst array of (label, [value]):
- * when it was decided, the nations or peoples it concerns, and for the
- * Supreme Court of the United States the Court, the vote and who wrote and
- * joined what.
+ * the case's dates in order (argued, decided, amended and the like), the
+ * nations or peoples it concerns, and for the Supreme Court of the United
+ * States the Court, the vote and who wrote and joined what.
  */
 export function caseFacts(record, nationNames = new Map(), peopleIds = new Set()) {
   const facts = [];
   const text = (label, value) => facts.push([label, escapeTypst(value)]);
-  const decided = decisionDate(record);
-  if (decided) text("Decided", decided);
+  for (const [label, value] of dateLines(record)) text(label, value);
   if (record && Array.isArray(record.tribes) && record.tribes.length) {
     const names = record.tribes.map((id) => nationNames.get(id) || id);
     const peoples = record.tribes.filter((id) => peopleIds.has(id)).length;

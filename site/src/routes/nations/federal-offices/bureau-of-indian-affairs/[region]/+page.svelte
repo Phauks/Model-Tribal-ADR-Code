@@ -10,6 +10,7 @@
 	cite.
 -->
 <script lang="ts">
+	import Breadcrumbs from '#lib/components/Breadcrumbs.svelte';
 	import type { NationIndexRow } from '#lib/server/nation-index.ts';
 	import type { PageProps } from './$types';
 
@@ -29,9 +30,12 @@
 	</ul>
 {/snippet}
 
-<nav aria-label="Breadcrumb" class="small">
-	<a href="/nations">Nations</a> › <a href="/nations/federal-offices">Federal offices</a> › {name}
-</nav>
+<Breadcrumbs
+	trail={[
+		{ label: 'Nations', href: '/nations' },
+		{ label: 'Federal offices', href: '/nations/federal-offices' }
+	]}
+/>
 
 <div class="reading">
 	<h1>Bureau of Indian Affairs {name}</h1>

@@ -30,6 +30,7 @@ export type ScanPurpose =
 	| 'profile-picture'
 	| 'sponsor-logo'
 	| 'room-recording'
+	| 'event-material'
 	| 'book-order-photo';
 
 export interface FileScan {

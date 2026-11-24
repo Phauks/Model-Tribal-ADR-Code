@@ -27,6 +27,11 @@ archives:
 history:
   status: live
   last_checked: '2026-11-21'
+court_dates:
+  argued: ['1972-12-12']
+  printed: "Argued December 12, 1972—Decided March 27, 1973"
+  source: https://tile.loc.gov/storage-services/service/ll/usrep/usrep411/usrep411164/usrep411164.pdf
+  checked: '2026-11-23'
 supreme_court:
   court: Burger Court
   natural_court: Burger Court (1972-1975)
@@ -91,10 +96,16 @@ rights:
     Opinions of federal courts are works of the U.S. government (17 U.S.C. § 105); the host site's own
     additions are not reproduced.
   redistribution: true
-tribes:
-- navajo-nation
 found_in:
 - 2026-11-21-legal-history-and-key-cases
 notes: >-
   Full citation: 411 U.S. 164 (1973). Official report scan or slip opinion: https://tile.loc.gov/storage-services/service/ll/usrep/usrep411/usrep411164/usrep411164.pdf.
   Citator check (KeyCite) pending; see research/pull-lists/2026-11-21-legal-history-westlaw.md.
+tribes:
+- navajo-nation
+nations_in_case:
+  checked: '2026-11-23'
+  named:
+  - nation: navajo-nation
+    named_as: Navajo Reservation
+    role: subject

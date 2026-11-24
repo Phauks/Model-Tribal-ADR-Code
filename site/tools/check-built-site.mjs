@@ -102,8 +102,9 @@ for (const file of pages) {
 
 const tileMapPath = path.join(output, 'nations/map/tile-map.json');
 const landAreasPath = path.join(output, 'nations/map/land-areas.json');
-if (!existsSync(tileMapPath) || !existsSync(landAreasPath)) {
-	problem('nations/map/tile-map.json or land-areas.json is missing from the build');
+const landDrawingPath = path.join(output, 'nations/map/view-drawings/lands.json');
+if (!existsSync(tileMapPath) || !existsSync(landAreasPath) || !existsSync(landDrawingPath)) {
+	problem('nations/map/tile-map.json, land-areas.json or view-drawings/lands.json is missing from the build');
 } else {
 	const tileMap = JSON.parse(readFileSync(tileMapPath, 'utf8'));
 	const rows = new Set(JSON.parse(readFileSync(landAreasPath, 'utf8')).rows.map((row) => row.anchor));
@@ -129,7 +130,10 @@ if (!existsSync(tileMapPath) || !existsSync(landAreasPath)) {
 		const viewRows = new Set(anchors);
 		// Two rows with one id would break the links to them and the table itself.
 		if (viewRows.size !== anchors.length) problem(`views/${view}.json has ${anchors.length - viewRows.size} rows with an id another row has`);
-		if (!body.drawing?.startsWith('<svg')) problem(`views/${view}.json has no drawing`);
+		// The drawn copy is apart from the table (src/routes/nations/map/view-drawings).
+		const drawingPath = path.join(output, `nations/map/view-drawings/${view}.json`);
+		const drawings = existsSync(drawingPath) ? JSON.parse(readFileSync(drawingPath, 'utf8')) : {};
+		if (!drawings.drawing?.startsWith('<svg')) problem(`view-drawings/${view}.json has no drawing`);
 		for (const [code, area] of Object.entries(shading.areas)) {
 			if (!viewRows.has(area.anchor)) problem(`tile-map.json: ${view} sends land area ${code} to ${area.anchor}, which is not a row of its table`);
 		}
@@ -140,7 +144,7 @@ if (!existsSync(tileMapPath) || !existsSync(landAreasPath)) {
 		for (const [state, shaded] of Object.entries(shading.states ?? {})) {
 			if (!viewRows.has(shaded.anchor)) problem(`tile-map.json: ${view} sends the state ${state} to ${shaded.anchor}, which is not a row of its by-state table`);
 		}
-		if ((body.stateRows ?? []).length > 0 && !body.stateDrawing?.startsWith('<svg')) problem(`views/${view}.json has a by-state table but no by-state drawing`);
+		if ((body.stateRows ?? []).length > 0 && !drawings.stateDrawing?.startsWith('<svg')) problem(`views/${view}.json has a by-state table but view-drawings/${view}.json has no by-state drawing`);
 	}
 }
 

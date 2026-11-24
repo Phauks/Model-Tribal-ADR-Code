@@ -24,6 +24,11 @@ archives: []   # Wayback capture pending: the shared archive workflow fills this
 history:
   status: live
   last_checked: '2026-11-21'
+court_dates:
+  heard: ['2000-02-08']
+  printed: "Heard Feb. 8, 2000. Decided March 22, 2000."
+  source: https://static.case.law/f3d/207/cases/0021-01.json
+  checked: '2026-11-23'
 courtlistener:
   cluster: 768058
   citation: "207 F.3d 21"
@@ -58,10 +63,16 @@ rights:
     Opinions of federal courts are works of the U.S. government (17 U.S.C. § 105); the host site's own
     additions are not reproduced.
   redistribution: true
-tribes:
-- narragansett-indian-tribe
 found_in:
 - 2026-11-21-legal-history-and-key-cases
 notes: >-
   Full citation: 207 F.3d 21 (1st Cir. 2000). Read on law.resource.org (paragraph-numbered). Citator check
   (KeyCite) pending; see research/pull-lists/2026-11-21-legal-history-westlaw.md.
+tribes:
+- narragansett-indian-tribe
+nations_in_case:
+  checked: '2026-11-23'
+  named:
+  - nation: narragansett-indian-tribe
+    named_as: Narragansett Indian Wetuomuck Housing Authority
+    role: government

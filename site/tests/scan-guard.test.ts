@@ -223,6 +223,8 @@ const fileIntakes: Record<string, string> = {
     "Files sent with requests and forms, proof for a nation team, nation page pictures, and photos sent with a problem about a printed-copy order. Stored with storeSentFile by saveRequest, saveApplication, savePicture and reportProblem.",
   "src/routes/profile/+page.server.ts picture File.arrayBuffer":
     "Profile pictures. Stored with storeSentFile by savePicture (profile-pictures.ts).",
+  "src/routes/workspace/events/[identifier]/+page.server.ts addMaterial File.arrayBuffer":
+    "An event's materials, such as written materials or slides. Stored with storeSentFile (purpose event-material) and served with serveUploadFile, which checks the scan, at /events/<slug>/materials/<material>.",
   "src/routes/account/sponsorship/+page.server.ts save File.arrayBuffer":
     "Sponsor logos. Stored with storeSentFile by setLogo (sponsors.ts) and served with openScannedFile by logoResponse (sponsor-logos.ts).",
   "src/routes/mail/internal/arrive/+server.ts POST Request.arrayBuffer":

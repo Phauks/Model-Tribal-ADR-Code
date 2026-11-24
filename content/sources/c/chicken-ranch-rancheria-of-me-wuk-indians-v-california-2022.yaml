@@ -28,6 +28,11 @@ archives:
 history:
   status: live
   last_checked: '2026-11-21'
+court_dates:
+  argued_and_submitted: ['2021-12-09']
+  printed: "Argued and Submitted December 9, 2021. Filed July 28, 2022."
+  source: https://cdn.ca9.uscourts.gov/datastore/opinions/2022/07/28/21-15751.pdf
+  checked: '2026-11-23'
 courtlistener:
   cluster: 7453974
   citation: "42 F.4th 1024"
@@ -81,3 +86,27 @@ notes: Chicken Ranch Rancheria of Me-Wuk Indians v. California, 42 F.4th 1024 (9
   it has not acted in good faith, and directed the parties to IGRA's remedial process. It explained that the "meaningful
   concessions" framework applies only to demands for taxes, fees or other revenue sharing. Read on the original
   link. Citator check (KeyCite) pending; see the project's Westlaw list.
+tribes:
+- chicken-ranch-rancheria-of-me-wuk-indians-of-california
+- chemehuevi-indian-tribe-of-the-chemehuevi-reservation
+- blue-lake-rancheria
+- hopland-band-of-pomo-indians
+- robinson-rancheria
+nations_in_case:
+  checked: '2026-11-23'
+  named:
+  - nation: chicken-ranch-rancheria-of-me-wuk-indians-of-california
+    named_as: Chicken Ranch Rancheria of Me-Wuk Indians
+    role: party
+  - nation: chemehuevi-indian-tribe-of-the-chemehuevi-reservation
+    named_as: Chemehuevi Indian Tribe
+    role: party
+  - nation: blue-lake-rancheria
+    named_as: Blue Lake Rancheria
+    role: party
+  - nation: hopland-band-of-pomo-indians
+    named_as: Hopland Band of Pomo Indians
+    role: party
+  - nation: robinson-rancheria
+    named_as: Robinson Rancheria
+    role: party

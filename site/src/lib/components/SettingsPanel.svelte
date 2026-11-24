@@ -314,7 +314,7 @@
 				change('contrast', value)
 			)}
 		{:else if id === 'motion'}
-			{@render choiceGroup('Animation', 'motion', motionChoices, settings.motion, (value) =>
+			{@render choiceGroup('Motion', 'motion', motionChoices, settings.motion, (value) =>
 				change('motion', value)
 			)}
 		{:else if id === 'citations'}

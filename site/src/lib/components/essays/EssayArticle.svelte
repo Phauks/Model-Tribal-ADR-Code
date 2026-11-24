@@ -13,6 +13,7 @@
 	//
 	// A page about the site, such as the About page (src/lib/server/about-pages.ts),
 	// has no section, and shows the text from git until it is first published.
+	import Breadcrumbs from '../Breadcrumbs.svelte';
 	import { onMount } from 'svelte';
 	import { figurePlayers } from '#lib/essays/figure-players.ts';
 	import { quoteContext } from '#lib/essays/quote-context-view.ts';
@@ -147,10 +148,8 @@
 </svelte:head>
 
 <!-- In Commenting and Editing the bar comes first, as in the approved mockups (essay-editor-mockups/4 and v2-1). -->
-{#if section && mode === 'reading'}
-	<nav aria-label="Breadcrumb" class="small no-print">
-		<a href={sectionLink}>{section}</a> › {shownTitle}
-	</nav>
+{#if section && sectionLink && mode === 'reading'}
+	<Breadcrumbs trail={[{ label: section, href: sectionLink }]} />
 {/if}
 
 {#if access && mode === 'reading'}

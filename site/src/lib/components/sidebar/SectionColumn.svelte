@@ -8,6 +8,7 @@
 	// (src/lib/sidebar-outline.ts). Without scripts the filter is hidden and
 	// the whole list shows.
 	import Search from '@lucide/svelte/icons/search';
+	import CountBadge from '#lib/components/CountBadge.svelte';
 	import { filterEntries, letterGroups, type SectionContents } from '#lib/sidebar-outline.ts';
 	import type { OutlineItem, SiteSection } from '#lib/site-sections.ts';
 	import SidebarTree from './SidebarTree.svelte';
@@ -58,6 +59,12 @@
 {/if}
 {#if entries && entries.items.length > 0}
 	<div class="entries" class:after-pages={contents.pages.length > 0}>
+		{#if entries.title}
+			<p class="entries-title">
+				<span>{entries.title} <CountBadge count={entries.count ?? entries.items.length} label={entries.noun} /></span>
+				{#if entries.viewAll}<a href={entries.viewAll} aria-current={sectionIsCurrent && entries.viewAll === section.link ? 'page' : undefined}>View all</a>{/if}
+			</p>
+		{/if}
 		{#if entries.items.length > filterFrom}
 			<label class="filter needs-scripts">
 				<Search size={16} aria-hidden="true" />
@@ -123,6 +130,31 @@
 		margin-top: var(--space-3);
 		padding-top: var(--space-3);
 		border-top: 1px solid var(--color-line);
+	}
+
+	.entries-title {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		gap: var(--space-2);
+		margin: 0 0 var(--space-2);
+		padding: 0 0 0 var(--space-3);
+		font-size: var(--font-size-small);
+		font-weight: var(--font-weight-semibold);
+		color: var(--color-ink-muted);
+	}
+
+	.entries-title a {
+		display: inline-flex;
+		align-items: center;
+		min-height: 2.5rem;
+		padding: 0 var(--space-3);
+		border-radius: var(--radius-control);
+		font-weight: var(--font-weight-semibold);
+	}
+
+	.entries-title a:hover {
+		background: var(--color-surface);
 	}
 
 	.filter {
