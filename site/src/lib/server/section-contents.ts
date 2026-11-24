@@ -8,6 +8,7 @@
  * Most lists are known when the site is built. The essays are published from
  * the database, and their pages are rendered by the Worker, which reads them.
  */
+import { dataTopicList, dataTopicLink } from '#lib/data-chart-list.ts';
 import { libraryOutline } from '#lib/library-pages.ts';
 import type { SectionContents } from '#lib/sidebar-outline.ts';
 import type { OutlineItem } from '#lib/site-sections.ts';
@@ -20,7 +21,12 @@ export const nationsPages: OutlineItem[] = [
 	{ label: 'Map', link: '/nations/map' },
 	{ label: 'Timeline', link: '/nations/timeline' },
 	{ label: 'Find recourse', link: '/nations/recourse' },
-	{ label: 'Data and charts', link: '/nations/data' },
+	{
+		label: 'Data and charts',
+		link: '/nations/data',
+		// Its topic pages (Trevor, Nov. 24, 2026).
+		children: dataTopicList.map((topic) => ({ label: topic.title, link: dataTopicLink(topic.identifier) }))
+	},
 	{ label: 'Federal offices', link: '/nations/federal-offices' }
 ];
 
