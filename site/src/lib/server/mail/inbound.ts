@@ -15,7 +15,7 @@
  */
 import PostalMime, { type Email } from 'postal-mime';
 import { cleanAddress, messageIds, normalizeSubject, snippetOf, asksToStop, type MailAddress } from '#lib/mail.ts';
-import { actionStatement, bucketKeys, currentTime, type MailContext } from './context.ts';
+import { bucketKeys, currentTime, type MailContext } from './context.ts';
 import { inboxForArrival } from './inboxes.ts';
 import { isProjectAddress } from './settings.ts';
 import { factsFor, ruleAddressForms, runRules } from './rules.ts';
@@ -536,9 +536,4 @@ export async function noticeDue(context: MailContext, at: Date): Promise<boolean
 		.bind(at.toISOString())
 		.run();
 	return true;
-}
-
-/** Records that the inbox refused a message, for the activity list. */
-export function refusalStatement(context: MailContext, arriving: ArrivingMail, reason: string) {
-	return actionStatement(context, { personIdentifier: null, action: 'Refused a message', note: `${arriving.from} to ${arriving.to}: ${reason}` });
 }

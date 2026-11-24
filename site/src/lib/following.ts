@@ -15,8 +15,6 @@
 
 export type FollowKind = 'nation' | 'code' | 'essay';
 
-export const followKinds: readonly FollowKind[] = ['nation', 'code', 'essay'];
-
 /** The pages that can be followed, by address. Only lasting addresses count. */
 const followablePages: { kind: FollowKind; pattern: RegExp }[] = [
 	{ kind: 'nation', pattern: /^\/nations\/(?!map$|letter$|state$)[a-z0-9][a-z0-9-]*$/ },

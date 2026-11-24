@@ -26,7 +26,7 @@ import { Marked, type Tokens } from 'marked';
 import markedFootnote from 'marked-footnote';
 import { gfmHeadingId } from 'marked-gfm-heading-id';
 import { repositoryLink } from '#lib';
-import { escapeHtml } from './markdown.ts';
+import { escapeHtml } from '../escape-html.ts';
 import { repositoryRoot } from './content.ts';
 
 export interface ProjectDocument {

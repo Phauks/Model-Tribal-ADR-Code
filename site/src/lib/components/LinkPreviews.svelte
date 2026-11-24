@@ -50,7 +50,6 @@
 		court: string;
 		decided: string;
 		holding?: string;
-		opens: 'box' | 'copy' | 'original';
 	}
 
 	type Preview = Term | Nation | Case;
@@ -112,12 +111,6 @@
 		cases ??= load<Case>('/cases/previews.json', 'cases', 'case', () => (cases = undefined));
 		return cases;
 	}
-
-	const opensText: Record<Case['opens'], string> = {
-		box: 'Opens the case in the essay that discusses it.',
-		copy: 'Opens the copy of the opinion on this site.',
-		original: 'Opens the opinion where it was published.'
-	};
 
 	function enabled(): boolean {
 		return document.documentElement.dataset.glossaryCards !== 'off';
@@ -270,7 +263,6 @@
 			<p class="link-preview-title"><strong><cite>{shown.name}</cite></strong>{#if shown.citation}, {shown.citation}{/if}</p>
 			{#if shown.court || shown.decided}<p class="muted">{[shown.court, shown.decided && `decided ${shown.decided}`].filter(Boolean).join(', ')}</p>{/if}
 			{#if shown.holding}<p><span class="case-preview-label">Held:</span> {shown.holding}</p>{/if}
-			<p class="muted">{opensText[shown.opens]}</p>
 		{:else}
 			<div class="nation-preview">
 				{#if shown.image && !imageFailed}

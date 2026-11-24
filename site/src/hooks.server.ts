@@ -6,7 +6,7 @@
 import { building, dev } from '$app/env';
 import type { Handle } from '@sveltejs/kit/hooks';
 import { sealNewEntries } from '#lib/server/activity-seals.ts';
-import { workerEnvironment } from '#lib/server/environment.ts';
+import { afterResponse, workerEnvironment } from '#lib/server/environment.ts';
 import { eventStatement, refusedAction } from '#lib/server/events.ts';
 import { endSession, pastWorkspaceLimits, sessionAccount, sessionCookie } from '#lib/server/accounts.ts';
 import { activePersonBySubject } from '#lib/server/people.ts';
@@ -126,8 +126,12 @@ export const handle: Handle = async ({ event, resolve }) => {
 
 	const response = await resolve(event);
 
+	// Recording a refusal and sealing the log are at least three database
+	// calls; they run after the answer has gone, so nobody waits for them.
+	// recordAndSeal catches its own problems. Pages that show the log seal
+	// anything still unsealed before they read it (administration.ts).
 	if (!building && event.locals.person && path.startsWith('/workspace')) {
-		await recordAndSeal(event.locals.person.identifier, event.locals.refused, changing, event.request.method, path);
+		afterResponse(recordAndSeal(event.locals.person.identifier, event.locals.refused, changing, event.request.method, path));
 	}
 
 	if (privatePrefixes.some((prefix) => path === prefix || path.startsWith(`${prefix}/`))) {

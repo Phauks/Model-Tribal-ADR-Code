@@ -75,7 +75,7 @@ function byline(change: ChangeRow): string {
 /**
  * An "Edit" link for a part of the page. Every reader gets it, hidden; the
  * page shows it only to someone on the nation's team whose place covers that
- * part (src/lib/components/NationEditorBanner.svelte), and the edit page
+ * part (src/lib/components/NationPageControls.svelte), and the edit page
  * checks their place again.
  */
 export function editLink(nationIdentifier: string, part: string, anchor: string, name: string): string {

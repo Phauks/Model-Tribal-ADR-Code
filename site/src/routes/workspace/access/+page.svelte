@@ -7,16 +7,17 @@
 		everyDocument,
 		roleLabels,
 		roles,
-		subjectKindLabels,
-		subjectKinds,
+		accessKindLabels,
+		accessKinds,
 		type AccessSource
 	} from '#lib/permissions.ts';
 	import type { PageProps } from './$types';
 	import DateField from '#lib/components/DateField.svelte';
+	import { mediumDate } from '#lib/readable-date.ts';
 
 	let { data, form }: PageProps = $props();
 
-	let kind = $state<(typeof subjectKinds)[number]>('essay');
+	let kind = $state<(typeof accessKinds)[number]>('essay');
 	let scope = $state<'one' | 'every'>('one');
 
 	const sourceLabels: Record<AccessSource, string> = {
@@ -27,13 +28,10 @@
 		role: 'role default'
 	};
 
-	function date(value: string | null): string {
-		return value ? new Date(value).toLocaleDateString('en-US', { dateStyle: 'medium' }) : '';
-	}
-
 	function documentTitle(grantKind: string, identifier: string): string {
+		if (grantKind === 'site-text') return 'The site text';
 		if (identifier === everyDocument) {
-			return `Every ${subjectKindLabels[grantKind as keyof typeof subjectKindLabels].toLocaleLowerCase('en-US')}`;
+			return `Every ${accessKindLabels[grantKind as keyof typeof accessKindLabels].toLocaleLowerCase('en-US')}`;
 		}
 		return (
 			data.documents.find((document) => document.kind === grantKind && document.identifier === identifier)
@@ -99,7 +97,7 @@
 				{data.summary.refusedLastThirtyDays}
 				{#if data.summary.lastRefused}
 					<div class="small muted">
-						Latest: {data.summary.lastRefused.personName ?? 'someone'}, {date(data.summary.lastRefused.createdAt)}
+						Latest: {data.summary.lastRefused.personName ?? 'someone'}, {mediumDate(data.summary.lastRefused.createdAt)}
 						({data.summary.lastRefused.note})
 					</div>
 				{/if}
@@ -165,7 +163,7 @@
 		<ul>
 			{#each data.effective as row (row.kind)}
 				<li>
-					{subjectKindLabels[row.kind]}s: {accessLevelLabels[row.general.level].toLocaleLowerCase('en-US')}
+					{accessKindLabels[row.kind]}s: {accessLevelLabels[row.general.level].toLocaleLowerCase('en-US')}
 					({sourceLabels[row.general.source]}); can open {row.opened} of {row.count}
 				</li>
 			{/each}
@@ -201,12 +199,12 @@
 							</td>
 							<td>
 								{documentTitle(grant.subjectKind, grant.subjectIdentifier)}
-								<div class="small muted">{subjectKindLabels[grant.subjectKind]}</div>
+								<div class="small muted">{accessKindLabels[grant.subjectKind]}</div>
 							</td>
 							<td>{accessLevelLabels[grant.level]}</td>
-							<td>{grant.expiresAt ? date(grant.expiresAt) : 'No end date'}</td>
+							<td>{grant.expiresAt ? mediumDate(grant.expiresAt) : 'No end date'}</td>
 							<td>
-								{date(grant.grantedAt)}{#if grant.grantedByName}<div class="small muted">by {grant.grantedByName}</div>{/if}
+								{mediumDate(grant.grantedAt)}{#if grant.grantedByName}<div class="small muted">by {grant.grantedByName}</div>{/if}
 								{#if grant.note}<div class="small">{grant.note}</div>{/if}
 							</td>
 							<td>
@@ -242,20 +240,22 @@
 	<div class="field">
 		<label for="grant-kind">Kind of document</label>
 		<select id="grant-kind" name="kind" bind:value={kind}>
-			{#each subjectKinds as option (option)}
-				<option value={option}>{subjectKindLabels[option]}</option>
+			{#each accessKinds as option (option)}
+				<option value={option}>{accessKindLabels[option]}</option>
 			{/each}
 		</select>
 	</div>
+	{#if kind !== 'site-text'}
 	<fieldset class="field">
 		<legend>Which documents</legend>
 		<label><input type="radio" name="scope" value="one" bind:group={scope} /> One document</label>
 		<label>
 			<input type="radio" name="scope" value="every" bind:group={scope} />
-			Every {subjectKindLabels[kind].toLocaleLowerCase('en-US')}, including drafts not written yet
+			Every {accessKindLabels[kind].toLocaleLowerCase('en-US')}, including drafts not written yet
 		</label>
 	</fieldset>
-	{#if scope === 'one'}
+	{/if}
+	{#if scope === 'one' && kind !== 'site-text'}
 		<div class="field">
 			<label for="grant-document">Document</label>
 			<p class="hint">

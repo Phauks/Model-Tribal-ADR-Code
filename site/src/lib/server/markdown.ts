@@ -12,17 +12,14 @@
 import { marked } from 'marked';
 import { marksHtml, type CitationMark } from '../citation-marks.ts';
 import { verifyLink, fileName } from '../checksums.ts';
+import { copyHashHtml } from '../copy-hash.ts';
 import { copyPagePath, copyPath, mediaLabel } from '../public-copies.ts';
 import { officialReportLinks, readingLinksHtml } from '../reading-links.ts';
 import { glossary, publicCopyFor, type SourceRecord } from './content.ts';
+import { escapeHtml } from '../escape-html.ts';
 
-export function escapeHtml(text: string): string {
-	return text
-		.replaceAll('&', '&amp;')
-		.replaceAll('<', '&lt;')
-		.replaceAll('>', '&gt;')
-		.replaceAll('"', '&quot;');
-}
+/** Still exported here for code written before lib/escape-html.ts; new code imports that module. */
+export { escapeHtml };
 
 /** A short citation in the project's style, as HTML. */
 export function formatSource(
@@ -91,7 +88,9 @@ export function savedCopyLink(source: SourceRecord | undefined): string {
 	// The copy's link opens its page, inside the site's masthead and sidebar; the SHA-256 link names the file itself.
 	const page = copyPagePath(copy);
 	const verify = escapeHtml(verifyLink(copy.sha256, fileName(copyPath(copy))));
-	return `<span class="source-saved"><a href="${escapeHtml(page)}">Saved copy</a> (${kind}${saved}; <a class="source-verify" href="${verify}">SHA-256</a>)</span>`;
+	// A copy icon after "SHA-256" puts the hash itself on the clipboard (src/lib/copy-hash.ts; Trevor, Nov. 24, 2026).
+	const copyButton = copyHashHtml(copy.sha256, { label: 'the saved copy', iconOnly: true });
+	return `<span class="source-saved"><a href="${escapeHtml(page)}">Saved copy</a> (${kind}${saved}; <a class="source-verify" href="${verify}">SHA-256</a>${copyButton})</span>`;
 }
 
 function webAddress(link: string | undefined): URL | undefined {

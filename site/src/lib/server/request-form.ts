@@ -42,8 +42,6 @@ const acceptedFiles: { type: string; extension: string; matches: (bytes: Uint8Ar
 	}
 ];
 
-export const acceptedFileTypes = acceptedFiles.map((file) => file.type).join(',');
-
 function startsWith(bytes: Uint8Array, prefix: number[]): boolean {
 	return prefix.every((value, index) => bytes[index] === value);
 }

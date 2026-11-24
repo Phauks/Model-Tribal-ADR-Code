@@ -171,9 +171,9 @@ describe('quotations in an essay', () => {
 describe('cases cited in a paragraph', () => {
 	const list: CasePreviewList = {
 		cases: [
-			{ id: 'fisher-v-district-court', name: 'Fisher v. District Court', citation: '424 U.S. 382 (1976)', court: '', decided: '', link: '/essays/x#case-fisher-v-district-court', opens: 'box' },
-			{ id: 'williams-v-lee', name: 'Williams v. Lee', citation: '358 U.S. 217 (1959)', court: '', decided: '', link: '/copies/w', opens: 'copy' },
-			{ id: 'ex-parte-crow-dog', name: 'Ex parte Crow Dog', citation: '109 U.S. 556 (1883)', court: '', decided: '', link: '/c', opens: 'box' }
+			{ id: 'fisher-v-district-court', name: 'Fisher v. District Court', citation: '424 U.S. 382 (1976)', court: '', decided: '', link: '/essays/x#case-fisher-v-district-court' },
+			{ id: 'williams-v-lee', name: 'Williams v. Lee', citation: '358 U.S. 217 (1959)', court: '', decided: '', link: '/copies/w' },
+			{ id: 'ex-parte-crow-dog', name: 'Ex parte Crow Dog', citation: '109 U.S. 556 (1883)', court: '', decided: '', link: '/c' }
 		],
 		citations: { [citationKey('424', 'U.S.', '382')]: 'fisher-v-district-court', [citationKey('109', 'U. S.', '556')]: 'ex-parte-crow-dog' }
 	};

@@ -57,8 +57,9 @@ function compareDates(first: number[], second: number[]): number {
 
 /**
  * The index as Markdown: one paragraph for each topic, in alphabetical
- * order, naming its cases from the oldest, each linked to its box
- * ("#case-<key>"). A case without a source record is left out.
+ * order, naming its cases from the oldest, each linked to its own page
+ * ("/cases/<key>", Trevor, Nov. 24, 2026). A case without a source record
+ * is left out.
  */
 export function casesByTopicMarkdown(cases: TaggedCase[], name: (key: string) => CaseName | undefined): string {
 	const byTopic = new Map<string, { label: string; keys: Set<string> }>();
@@ -75,7 +76,7 @@ export function casesByTopicMarkdown(cases: TaggedCase[], name: (key: string) =>
 			.map((key) => ({ key, name: name(key) }))
 			.filter((entry): entry is { key: string; name: CaseName } => entry.name !== undefined)
 			.sort((first, second) => compareDates(first.name.date, second.name.date) || first.name.title.localeCompare(second.name.title))
-			.map(({ key, name }) => `[*${name.title}*${name.date[0] ? ` (${name.date[0]})` : ''}](#case-${key})`);
+			.map(({ key, name }) => `[*${name.title}*${name.date[0] ? ` (${name.date[0]})` : ''}](/cases/${key})`);
 		if (entries.length) paragraphs.push(`**${label}.** ${entries.join('; ')}.`);
 	}
 	return paragraphs.join('\n\n');

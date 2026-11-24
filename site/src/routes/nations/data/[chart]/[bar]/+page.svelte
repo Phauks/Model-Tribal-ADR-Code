@@ -6,6 +6,7 @@
 -->
 <script lang="ts">
 	import Breadcrumbs from '#lib/components/Breadcrumbs.svelte';
+	import { dataChartTrail } from '#lib/data-chart-list.ts';
 	import CitationMarks from '#lib/components/CitationMarks.svelte';
 	import DataTable from '#lib/components/DataTable.svelte';
 	import SourceList from '#lib/components/SourceList.svelte';
@@ -20,13 +21,7 @@
 	<meta name="description" content={data.description} />
 </svelte:head>
 
-<Breadcrumbs
-	trail={[
-		{ label: 'Nations', href: '/nations' },
-		{ label: 'Data and charts', href: '/nations/data' },
-		{ label: data.chart.title, href: `/nations/data#${data.chart.identifier}` }
-	]}
-/>
+<Breadcrumbs trail={dataChartTrail(data.chart)} />
 
 <h1>{data.bar.label}</h1>
 <p class="lead count-line">

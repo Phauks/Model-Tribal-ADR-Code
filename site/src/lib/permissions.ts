@@ -184,6 +184,21 @@ export const subjectKindLabels: Record<SubjectKind, string> = {
 	essay: 'Essay'
 };
 
+/**
+ * What access can be granted on: the reviewable kinds, and the site's own
+ * wording, which is one document for every page (docs/site-text.md).
+ */
+export const accessKinds = [...subjectKinds, 'site-text'] as const;
+export type AccessKind = (typeof accessKinds)[number];
+
+export const accessKindLabels: Record<AccessKind, string> = {
+	...subjectKindLabels,
+	'site-text': 'Site text'
+};
+
+/** The site's wording, as a document for documentAccess: one document, every page ('*', as everyDocument). */
+export const siteTextSubject = { kind: 'site-text', identifier: '*' } as const;
+
 export const decisions = ['approved', 'changes-requested', 'comment'] as const;
 export type Decision = (typeof decisions)[number];
 
@@ -246,8 +261,14 @@ export interface Subject {
 	identifier: string;
 }
 
+/** Anything access can be granted on: a reviewable document or the site text. */
+export interface AccessSubject {
+	kind: AccessKind;
+	identifier: string;
+}
+
 export interface AccessGrant {
-	subjectKind: SubjectKind;
+	subjectKind: AccessKind;
 	/** A document's identifier, or everyDocument. */
 	subjectIdentifier: string;
 	level: AccessLevel;
@@ -287,7 +308,7 @@ export interface DocumentAccess {
  */
 export function documentAccess(
 	person: Grantee,
-	subject: Subject,
+	subject: AccessSubject,
 	grants: readonly AccessGrant[],
 	time: Date = new Date()
 ): DocumentAccess {

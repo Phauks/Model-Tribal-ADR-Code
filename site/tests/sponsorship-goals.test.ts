@@ -18,10 +18,10 @@ beforeEach(() => {
 	database = testDatabase();
 });
 
-const counts = { nationPages: 947, federallyRecognized: 581, sources: 7165 };
+const counts = { nationPages: 947, federallyRecognized: 581, federallyOrStateRecognized: 650, sources: 7165 };
 
 function given(total: Partial<GivenToward['total']>, siteLastYear = 0): GivenToward {
-	return { total: { 'needed-most': 0, 'books-for-nations': 0, 'large-format': 0, hosting: 0, ...total }, siteLastYear, monthly: { cents: 0, sponsors: 0 } };
+	return { total: { 'needed-most': 0, 'books-for-nations': 0, 'large-format': 0, research: 0, hosting: 0, ...total }, siteLastYear, monthly: { cents: 0, sponsors: 0 } };
 }
 
 describe('the costs the lead author sets', () => {
@@ -50,15 +50,28 @@ describe('what the Sponsorship page shows', () => {
 			costCents: 1600,
 			paid: 64
 		});
-		expect(sponsorshipGoals(counts, { paperback: 1600 }, given({ 'books-for-nations': 5_000_000 })).copies?.paid).toBe(581);
+		expect(sponsorshipGoals(counts, { paperback: 1600 }, given({ 'books-for-nations': 5_000_000 })).copies?.paid).toBe(947);
+	});
+
+	it('fills the federal level first, and counts the same copies toward each later level', () => {
+		const level = (cents: number) => sponsorshipGoals(counts, { paperback: 1600 }, given({ 'books-for-nations': cents })).levels;
+		expect(level(102_500)).toEqual([
+			{ key: 'federal', nations: 581, paid: 64 },
+			{ key: 'federal-and-state', nations: 650, paid: 64 },
+			{ key: 'identified', nations: 947, paid: 64 }
+		]);
+		expect(level(700 * 1600).map((each) => each.paid)).toEqual([581, 650, 700]);
+		expect(sponsorshipGoals(counts, {}, given({})).levels.map((each) => each.paid)).toEqual([null, null, null]);
 	});
 
 	it('measures the site against this year and hardcovers against every nation', () => {
 		const goals = sponsorshipGoals(counts, { website: 7000, hardcover: 2500 }, given({ 'books-for-nations': 145_250, hosting: 99_999 }, 3500));
-		expect(goals.cards.map((card) => card.key)).toEqual(['site', 'hardcovers', 'needed-most']);
-		expect(goals.cards[0]).toMatchObject({ earmark: 'hosting', costCents: 7000, share: 0.5 });
-		expect(goals.cards[1]).toMatchObject({ earmark: 'books-for-nations', costCents: 2500 * 581, share: 0.1 });
-		expect(goals.cards[2]).toMatchObject({ earmark: 'needed-most', costCents: null, share: null });
+		expect(goals.cards.map((card) => card.key)).toEqual(['hardcovers', 'accessibility', 'research', 'site', 'discretionary']);
+		expect(goals.cards[0]).toMatchObject({ earmark: 'books-for-nations', costCents: 2500 * 581, share: 0.1 });
+		expect(goals.cards[1]).toMatchObject({ earmark: 'large-format', costCents: null, share: null });
+		expect(goals.cards[2]).toMatchObject({ earmark: 'research', costCents: null, share: null });
+		expect(goals.cards[3]).toMatchObject({ earmark: 'hosting', costCents: 7000, share: 0.5 });
+		expect(goals.cards[4]).toMatchObject({ earmark: 'needed-most', costCents: null, share: null });
 	});
 });
 
@@ -107,6 +120,8 @@ describe('totals of gifts', () => {
 		await gift(second.identifier, 's1', 'monthly', 1000, '2026-11-01T00:00:00.000Z');
 		await gift(second.identifier, 's2', 'one-time', 9900, '2026-11-02T00:00:00.000Z');
 		await gift(ended.identifier, 'e1', 'monthly', 7000, '2026-09-01T00:00:00.000Z');
+		// A yearly gift is not a month's gift, so the monthly total leaves it out.
+		await gift(ended.identifier, 'y1', 'yearly', 25000, '2026-11-10T00:00:00.000Z');
 		const totals = await givenToward(database, 'test', new Date('2026-11-23T00:00:00.000Z'));
 		expect(totals.monthly).toEqual({ cents: 6000, sponsors: 2 });
 	});

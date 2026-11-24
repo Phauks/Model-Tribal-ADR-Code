@@ -3,6 +3,7 @@
 	import { requestKindLabels, requestOutcomeLabels, requestStatusLabels } from '#lib/requests.ts';
 	import type { TableColumn, TableRow } from '#lib/tables/table-definition.ts';
 	import type { PageProps } from './$types';
+	import { mediumDate } from '#lib/readable-date.ts';
 
 	let { data }: PageProps = $props();
 
@@ -11,10 +12,6 @@
 		{ value: 'resolved', label: 'Resolved' },
 		{ value: 'all', label: 'All' }
 	];
-
-	function date(value: string): string {
-		return new Date(value).toLocaleDateString('en-US', { dateStyle: 'medium' });
-	}
 
 	const columns: TableColumn[] = [
 		{ key: 'reference', header: 'Reference', isRowHeader: true, sortable: true },
@@ -41,8 +38,8 @@
 							: requestStatusLabels[request.status]
 					},
 					team: { text: request.team },
-					received: { text: date(request.receivedAt), sortValue: request.receivedAt },
-					target: { text: next ? `${next.label} ${date(next.due)}` : '', sortValue: next?.due }
+					received: { text: mediumDate(request.receivedAt), sortValue: request.receivedAt },
+					target: { text: next ? `${next.label} ${mediumDate(next.due)}` : '', sortValue: next?.due }
 				}
 			};
 		})
@@ -52,7 +49,7 @@
 {#snippet cell(row: TableRow)}
 	{#each requestsByKey.get(row.key)?.deadlines.slice(0, 1) ?? [] as deadline (deadline.label)}
 		<span class:overdue={deadline.overdue}>
-			{deadline.overdue ? 'Past: ' : ''}{deadline.label.toLocaleLowerCase('en-US')} {date(deadline.due)}
+			{deadline.overdue ? 'Past: ' : ''}{deadline.label.toLocaleLowerCase('en-US')} {mediumDate(deadline.due)}
 		</span>
 	{/each}
 {/snippet}

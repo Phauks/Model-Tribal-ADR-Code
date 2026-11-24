@@ -4,6 +4,7 @@
 //
 // - Land areas and states: the U.S. Census Bureau's 2020 cartographic boundary files (1:500,000) of American Indian and Alaska Native areas and of states and territories, at full detail, built with tippecanoe. Hawaiian home lands are left out, as on the drawn map, and so is every area in geography/withdrawn-land-areas.json. Each area carries only its Census code and kind; names and the nations linked to each area come from the nation records when the site is built, so a renamed nation needs no new tiles.
 // - Basemap: towns, roads, water and borders from OpenStreetMap, in the Protomaps basemap's daily build, cut to the United States and its territories (geography/map-tile-region.json) up to zoom 12 with the pmtiles tool.
+// - World basemap: the same build for the whole world up to zoom 8 (about 560 MB), which the site serves wherever the basemap has no tile, so a reader who moves the map anywhere in the world sees land, water, borders and places rather than a blank (Trevor, 2026-11-24). Zoom 8 matches the U.S. Geological Survey's world pictures under the map's Layers button.
 //
 // It also writes geography/census-land-area-points-2020.json: for each area, the point to label it at (inside its largest piece), its bounding box and its size, which the map uses for the dots of small areas and to fit a nation's areas on its page.
 //
@@ -11,6 +12,7 @@
 //
 // Run from site/:
 //   node tools/build-map-tiles.mjs build [--basemap-build 20261122] [--work /tmp/map-tiles]
+//   node tools/build-map-tiles.mjs build-world [--work /tmp/map-tiles]
 //   node tools/build-map-tiles.mjs upload [--work /tmp/map-tiles]
 //   node tools/build-map-tiles.mjs upload-assets --assets path/to/basemaps-assets
 //
@@ -41,6 +43,8 @@ const basemapBuild = (name) => `https://build.protomaps.com/${name}.pmtiles`;
 
 /** The basemap's deepest zoom: about 38 meters a pixel, enough to see streets around the smallest rancheria (project choice; zoom 12 for the region is about 2.2 GB). MapLibre enlarges zoom 12 tiles for closer views. */
 const basemapMaxZoom = 12;
+/** The world basemap's deepest zoom (see the top of this file). */
+const worldBasemapMaxZoom = 8;
 /** The land areas' deepest zoom. Tippecanoe keeps full detail at its deepest zoom, which MapLibre enlarges for closer views. */
 const landAreasMaxZoom = 12;
 
@@ -213,8 +217,12 @@ async function build() {
 			retrieved
 		})
 	};
-	// The fonts and icon sheets are uploaded on their own (upload-assets), so their entry is kept.
-	if (existsSync(manifestPath)) manifest.assets = JSON.parse(readFileSync(manifestPath, 'utf8')).assets;
+	// The fonts and icon sheets are uploaded on their own (upload-assets), and the world basemap is built on its own (build-world), so their entries are kept.
+	if (existsSync(manifestPath)) {
+		const previous = JSON.parse(readFileSync(manifestPath, 'utf8'));
+		manifest.assets = previous.assets;
+		manifest.worldBasemap = previous.worldBasemap;
+	}
 	writeFileSync(manifestPath, `${JSON.stringify(manifest, null, '\t')}\n`);
 	const pointsFile = {
 		metadata: {
@@ -229,6 +237,25 @@ async function build() {
 	};
 	writeFileSync(pointsPath, `${JSON.stringify(pointsFile)}\n`);
 	console.log(`Built ${points.length} land areas (${manifest.landAreas.bytes.toLocaleString('en-US')} bytes) and basemap ${build} (${manifest.basemap.bytes.toLocaleString('en-US')} bytes) in ${work}.`);
+}
+
+/** Cuts the world basemap from the same Protomaps build as the basemap, so the two meet without a seam. */
+async function buildWorld() {
+	const work = option('work', '/tmp/map-tiles');
+	mkdirSync(work, { recursive: true });
+	const pmtiles = tool('go-pmtiles', 'pmtiles');
+	const manifest = JSON.parse(readFileSync(manifestPath, 'utf8'));
+	const build = manifest.basemap.set.replace(/^basemap-/, '');
+	const worldTiles = join(work, 'world-basemap.pmtiles');
+	execFileSync(pmtiles, ['extract', basemapBuild(build), worldTiles, `--maxzoom=${worldBasemapMaxZoom}`], { stdio: 'inherit' });
+	manifest.worldBasemap = await describe(worldTiles, `world-basemap-${build}`, {
+		source: basemapBuild(build),
+		license: 'Open Database License produced work; OpenStreetMap attribution required',
+		attribution: '© OpenStreetMap contributors',
+		retrieved: new Date().toISOString().slice(0, 10)
+	});
+	writeFileSync(manifestPath, `${JSON.stringify(manifest, null, '\t')}\n`);
+	console.log(`Built world basemap ${build} (${manifest.worldBasemap.bytes.toLocaleString('en-US')} bytes) in ${work}.`);
 }
 
 function bucketClient() {
@@ -300,7 +327,8 @@ async function upload() {
 	const manifest = JSON.parse(readFileSync(manifestPath, 'utf8'));
 	const files = [
 		[manifest.landAreas, join(work, 'land-areas.pmtiles')],
-		[manifest.basemap, join(work, 'basemap.pmtiles')]
+		[manifest.basemap, join(work, 'basemap.pmtiles')],
+		...(manifest.worldBasemap ? [[manifest.worldBasemap, join(work, 'world-basemap.pmtiles')]] : [])
 	];
 	for (const [entry, path] of files) {
 		const address = `${base}/${entry.key}`;
@@ -348,6 +376,7 @@ async function upload() {
 
 const command = process.argv[2];
 if (command === 'build') await build();
+else if (command === 'build-world') await buildWorld();
 else if (command === 'upload') await upload();
 else if (command === 'upload-assets') await uploadAssets();
-else console.log('Usage: node tools/build-map-tiles.mjs build|upload|upload-assets [--work folder] [--basemap-build YYYYMMDD] [--assets folder]');
+else console.log('Usage: node tools/build-map-tiles.mjs build|build-world|upload|upload-assets [--work folder] [--basemap-build YYYYMMDD] [--assets folder]');

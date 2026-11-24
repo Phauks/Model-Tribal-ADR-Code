@@ -22,8 +22,10 @@ import { scaleTop } from '../bar-chart.ts';
 import { imageViewerAttributeText } from '../image-viewer.ts';
 import { youtubeEmbedAddress, youtubePosterAddress } from '../video-links.ts';
 import { attributionSource } from '../quote-context.ts';
+import { firstPage, opinionAt, quoteOpinionLabel, type OpinionEntry } from '../case-opinions.ts';
 import { readingLinksAfter } from '../reading-links.ts';
 import { boxParts, essayBlocks, essayMarkdown, frontMatterField, isAttribution, missingEllipses, splitFrontMatter, topicsIn, type CitationReference } from './syntax.ts';
+import { escapeHtml } from '../escape-html.ts';
 
 export interface EssayLibrary {
 	/** The full citation of a source, as HTML in the project's Indigo Book style. */
@@ -47,8 +49,10 @@ export interface EssayLibrary {
 	 * name, so a case named in italics in the text links to it.
 	 */
 	caseNames?(): Record<string, string>;
-	/** Where a case's name links when no essay has a box for it: the copy of the opinion on this site, or where it was published. */
+	/** Where a case's name links: the case's own page (/cases/<key>). */
 	caseLink?(key: string): string | undefined;
+	/** A court case's opinions and the report page each starts on, so a quotation can say which opinion it comes from (case-opinions.ts). */
+	opinions?(key: string): OpinionEntry[] | undefined;
 }
 
 /** One heading in the essay, for the page's outline. */
@@ -67,14 +71,6 @@ export interface RenderedEssay {
 	problems: string[];
 	/** Things a writer should check, such as a quotation that may leave out words without an ellipsis. Publishing still goes ahead. */
 	warnings: string[];
-}
-
-function escapeHtml(text: string): string {
-	return text
-		.replaceAll('&', '&amp;')
-		.replaceAll('<', '&lt;')
-		.replaceAll('>', '&gt;')
-		.replaceAll('"', '&quot;');
 }
 
 /** A heading's id: its words in lower case, joined by hyphens, made unique on the page. */
@@ -143,7 +139,7 @@ const label = (text: string) => `<p class="essay-block-label">${text}</p>\n`;
  * quote block, its last paragraph; after a ">" quotation, the paragraph that
  * follows it.
  */
-function markAttributions(tokens: Token[]): void {
+function markAttributions(tokens: Token[], library: EssayLibrary): void {
 	const attributionAt = (index: number) =>
 		tokens[index]?.type === 'paragraph_open' && isAttribution(tokens[index + 1]?.content ?? '');
 	// An attribution that cites one source names it, so the page can offer the
@@ -154,6 +150,14 @@ function markAttributions(tokens: Token[]): void {
 		if (!cited) return;
 		open.attrSet('data-quote-source', cited.source);
 		if (cited.pinpoint) open.attrSet('data-quote-pinpoint', cited.pinpoint);
+		// Which opinion a quotation from a court case comes from (Trevor, Nov. 24, 2026), before its citation marker.
+		const opinion = opinionAt(library.opinions?.(cited.source), firstPage(cited.pinpoint));
+		const inline = tokens[tokens.indexOf(open) + 1];
+		if (opinion && inline?.children) {
+			const label = new Token('html_inline', '', 0);
+			label.content = `<span class="essay-quote-opinion">${escapeHtml(quoteOpinionLabel(opinion))}</span>`;
+			inline.children.unshift(label);
+		}
 	};
 	for (let index = 0; index < tokens.length; index += 1) {
 		const token = tokens[index];
@@ -249,8 +253,9 @@ function caseNamed(names: Map<string, string>, form: string): string | undefined
 function linkCaseNames(tokens: Token[], library: EssayLibrary, boxesHere: Set<string>): void {
 	const names = caseNameList(library);
 	if (names.size === 0) return;
+	// Every case has its own page (Trevor, Nov. 24, 2026), which caseLink gives; a box is the fallback.
 	const targetOf = (key: string): string | undefined =>
-		boxesHere.has(key) || library.boxPage?.(`case-${key}`) ? `#case-${key}` : library.caseLink?.(key);
+		library.caseLink?.(key) ?? (boxesHere.has(key) || library.boxPage?.(`case-${key}`) ? `#case-${key}` : undefined);
 	let linked = new Set<string>();
 	let inHeading = false;
 	let ownBox: string | undefined;
@@ -287,8 +292,8 @@ function linkCaseNames(tokens: Token[], library: EssayLibrary, boxesHere: Set<st
 			linked.add(key);
 			const open = new Token('link_open', 'a', 1);
 			open.attrs = [['href', target], ['class', 'case-link'], ['data-case', key]];
-			// The opinion itself opens in a new tab, so the essay stays open; a box is part of the essays.
-			const newTab = !target.startsWith('#');
+			// The opinion itself opens in a new tab, so the essay stays open; a box or a case's page is part of the site.
+			const newTab = !target.startsWith('#') && !target.startsWith('/cases/');
 			if (newTab) open.attrs.push(['target', '_blank'], ['rel', 'noopener']);
 			const hint = new Token('html_inline', '', 0);
 			hint.content = newTab ? '<span class="visually-hidden"> (opens in a new tab)</span>' : '';
@@ -508,7 +513,10 @@ function configure(markdown: MarkdownIt, state: RenderState): MarkdownIt {
 		rules[`container_${box}_open`] = (tokens, index) => {
 			const key = essayBlocks[box].exec(tokens[index].info.trim())?.[1] ?? '';
 			const mark = state.sources.cite({ key });
-			const citation = state.library.citation(key) ?? escapeHtml(key);
+			let citation = state.library.citation(key) ?? escapeHtml(key);
+			// The case's name at the head of its box opens the case's own page.
+			const page = box === 'case' ? state.library.caseLink?.(key) : undefined;
+			if (page?.startsWith('/cases/')) citation = citation.replace(/<(i|em)>([\s\S]*?)<\/\1>/, `<a class="case-page-link" href="${escapeHtml(page)}"><$1>$2</$1></a>`);
 			const anchor = `${box}-${key}`;
 			const id = state.slugs.has(anchor) ? '' : ` id="${escapeHtml(anchor)}"`;
 			state.slugs.add(anchor);
@@ -658,7 +666,7 @@ export function renderEssay(text: string, library: EssayLibrary, { lines }: { li
 		title ||= tokens[1]?.content ?? '';
 		tokens = tokens.slice(3);
 	}
-	markAttributions(tokens);
+	markAttributions(tokens, library);
 	markTopics(tokens);
 	const boxesHere = new Set([...body.matchAll(/^:{4,}[ \t]*case[ \t]+([a-z0-9-]+)[ \t]*$/gm)].map((box) => box[1]));
 	linkCaseNames(tokens, library, boxesHere);

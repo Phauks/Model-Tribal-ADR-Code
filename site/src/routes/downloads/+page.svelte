@@ -6,7 +6,9 @@
 	import Fingerprint from '@lucide/svelte/icons/fingerprint';
 	import { buildTime, formatBytes } from '#lib/offline-collections.ts';
 	import { citationDate, fileExtension, mapFiles, pageFormats } from '#lib/page-downloads.ts';
-	import { downloadChecksums, fileName, verifyAddress, verifyLink, type ChecksumEntry } from '#lib/checksums.ts';
+	import { downloadChecksums, verifyAddress, verifyLink, type ChecksumEntry } from '#lib/checksums.ts';
+	import CopyHash from '#lib/components/CopyHash.svelte';
+	import { datedFileName } from '#lib/download-names.ts';
 	import type { PageProps } from './$types';
 
 	let { data }: PageProps = $props();
@@ -95,46 +97,25 @@
 					links: [{ format: 'CSV', href: '/copies/list.csv' }]
 				}
 			],
-			after: 'A nation’s own documents download from its page: see From a page, below.'
-		}
-	]);
-
-	// What the Download menu offers on a page, so this page says where those files are without
-	// repeating a list for every nation. Kept beside the groups above so the two are read as one list.
-	const fromPages = $derived([
-		{
-			page: 'Any page',
-			offers: [{ what: 'The page itself, to print, edit or keep as plain text', formats: ['.pdf', ...pageFormats.map((format) => `.${format.extension}`)] }]
-		},
-		{
-			page: 'A nation’s page',
-			offers: [
-				{ what: 'The nation’s record, every fact with its source', formats: ['.json'] },
-				{ what: 'The page’s sources, for a citation manager: Citation Style Language JSON, RIS and BibTeX', formats: ['.json', '.ris', '.bib'] },
-				{ what: 'The government offices’ contacts, for an address book', formats: ['.vcf'] },
-				{
-					what: `Under “Laws and agreements”: the nation’s constitutions, laws and court opinions we hold, for ${numbers.format(data.nationsWithDocuments)} nations`,
-					formats: ['.zip']
-				}
-			]
+			after: 'A nation’s own documents download from its page, under “Laws and agreements”.'
 		}
 	]);
 
 	const contents = [
 		{ id: 'data', label: 'Data' },
 		{ id: 'maps', label: 'Maps' },
-		{ id: 'documents', label: 'Documents' },
-		{ id: 'from-a-page', label: 'From a page' },
-		{ id: 'book-heading', label: 'The book' },
-		{ id: 'never', label: 'Never in a download' }
+		{ id: 'documents', label: 'Documents' }
 	];
 
 	// Each file's SHA-256 shows only when the reader asks for it (Trevor, Nov. 24, 2026: the hashes read as clutter).
 	let shown = $state<Record<string, boolean>>({});
 
-	// A file's .sha256, one line in the form sha256sum -c reads.
+	// The name a file is saved under: its own name with the date of the build, as provisions-2026-11-23.csv (src/lib/download-names.ts).
+	const savedName = (href: string) => datedFileName(href, built);
+
+	// A file's .sha256, one line in the form sha256sum -c reads, naming the file as it is saved.
 	function checksumFile(sha256: string, href: string): string {
-		return `data:text/plain;charset=utf-8,${encodeURIComponent(`${sha256}  ${fileName(href)}\n`)}`;
+		return `data:text/plain;charset=utf-8,${encodeURIComponent(`${sha256}  ${savedName(href)}\n`)}`;
 	}
 
 	onMount(() => {
@@ -207,7 +188,7 @@
 					</div>
 					<p class="file-links">
 						{#each file.links as link (link.href)}
-							<a class="button button-quiet" href={link.href} download>
+							<a class="button button-quiet" href={link.href} download={savedName(link.href)}>
 								<Download size={18} aria-hidden="true" />
 								{fileExtension(link.href)}<span class="visually-hidden"> ({link.format}), {file.label}</span>
 							</a>
@@ -233,9 +214,9 @@
 								{#if hashes[link.href]}
 									<li>
 										<span class="hint">SHA-256{file.links.length > 1 ? ` (${fileExtension(link.href)})` : ''}</span>
-										<code>{hashes[link.href].sha256}</code>
-										<a class="hash-file" href={checksumFile(hashes[link.href].sha256, link.href)} download="{fileName(link.href)}.sha256">.sha256<span class="visually-hidden"> file for the {fileExtension(link.href)} file, {file.label}</span></a>
-										<a class="icon-button" href={verifyLink(hashes[link.href].sha256, fileName(link.href))} aria-label="Verify File: the {fileExtension(link.href)} file, {file.label}" title="Verify File">
+										<CopyHash sha256={hashes[link.href].sha256} label="the {fileExtension(link.href)} file, {file.label}" />
+										<a class="hash-file" href={checksumFile(hashes[link.href].sha256, link.href)} download="{savedName(link.href)}.sha256">.sha256<span class="visually-hidden"> file for the {fileExtension(link.href)} file, {file.label}</span></a>
+										<a class="icon-button" href={verifyLink(hashes[link.href].sha256, savedName(link.href))} aria-label="Verify File: the {fileExtension(link.href)} file, {file.label}" title="Verify File">
 											<FileCheck size={18} aria-hidden="true" />
 										</a>
 									</li>
@@ -248,46 +229,6 @@
 		</ul>
 		<p class="hint">{group.after}</p>
 	{/each}
-
-	<h2 id="from-a-page" class="group-heading">From a page</h2>
-	<p>These are in the Download menu on the page they belong to, built from what that page shows.</p>
-	{#each fromPages as from (from.page)}
-		<h3>{from.page}</h3>
-		<ul class="files">
-			{#each from.offers as offer (offer.what)}
-				<li>
-					<p class="file-text">{offer.what}</p>
-					<p class="file-links">
-						{#each offer.formats as format (format)}
-							<span class="format-tag">{format}</span>
-						{/each}
-					</p>
-				</li>
-			{/each}
-		</ul>
-	{/each}
-
-	<!-- Empty state: says what will appear and when (site/DESIGN.md, section 12). -->
-	<section class="panel panel-filled empty-state" aria-labelledby="book-heading">
-		<h2 id="book-heading">The book</h2>
-		<p>
-			Not out yet. The first edition will appear here as a PDF for printing and an EPUB for e-readers,
-			each with its edition number and the date it was made.
-		</p>
-	</section>
-
-	<h2 id="never" class="group-heading">Never in a download</h2>
-	<ul>
-		<li>Material a nation has asked us to restrict</li>
-		<li>A nation’s seal or logo</li>
-		<li>The full text of stories from outside publishers: the file gives each story’s page</li>
-		<li>
-			Documents held by the National Indian Law Library or by code publishers, and articles and
-			books: the files give their links
-		</li>
-		<li>Video and sound</li>
-		<li>Anything about the people who use the site</li>
-	</ul>
 </div>
 
 <style>
@@ -305,15 +246,6 @@
 		margin-top: var(--space-6);
 		padding-top: var(--space-4);
 		border-top: 2px solid var(--color-line);
-	}
-
-	.format-tag {
-		display: inline-block;
-		padding: var(--space-1) var(--space-2);
-		border: 1px solid var(--color-line);
-		border-radius: var(--radius-control);
-		font-size: var(--font-size-small);
-		color: var(--color-ink-muted);
 	}
 
 	.files {
@@ -378,23 +310,7 @@
 		border: 0;
 	}
 
-	.file-hashes code {
-		overflow-wrap: anywhere;
-		min-width: 0;
-	}
-
 	.file-links .icon-button {
 		align-self: center;
-	}
-
-	.empty-state {
-		margin-top: var(--space-5);
-	}
-
-	.empty-state h2 {
-		margin-top: 0;
-		/* At the largest text size in a wide font, a long word breaks rather
-		   than widening the page (WCAG 1.4.10). */
-		overflow-wrap: anywhere;
 	}
 </style>

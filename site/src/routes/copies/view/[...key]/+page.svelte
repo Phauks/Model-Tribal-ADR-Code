@@ -2,12 +2,21 @@
 	import Download from '@lucide/svelte/icons/download';
 	import ExternalLink from '@lucide/svelte/icons/external-link';
 	import Breadcrumbs from '#lib/components/Breadcrumbs.svelte';
+	import CopyHash from '#lib/components/CopyHash.svelte';
 	import type { PageProps } from './$types';
 
 	let { data }: PageProps = $props();
 	const details = $derived(data.details);
 	const opinion = $derived(details?.opinion);
 	const publishedAt = $derived(URL.canParse(data.original) ? new URL(data.original).hostname : data.original);
+	// A link to one page of a PDF, such as where an opinion starts on a case's page ("#page=22"), opens the file at that page.
+	let pdfPage = $state('');
+	$effect(() => {
+		const read = () => (pdfPage = /^#page=\d{1,5}$/.test(location.hash) ? location.hash : '');
+		read();
+		addEventListener('hashchange', read);
+		return () => removeEventListener('hashchange', read);
+	});
 </script>
 
 <svelte:head>
@@ -53,7 +62,7 @@
 			<dd>{data.capturedText}</dd>
 		{/if}
 		<dt>SHA-256</dt>
-		<dd><code class="hash">{data.sha256}</code> · <a href={data.verify}>Verify File</a></dd>
+		<dd><CopyHash sha256={data.sha256} label="this document" /> · <a href={data.verify}>Verify File</a></dd>
 		<dt>Take it down</dt>
 		<dd><a href={data.removal}>Ask to remove or redact this copy</a></dd>
 	</dl>
@@ -61,7 +70,7 @@
 
 <section class="document" aria-label="The document">
 	{#if data.isPdf}
-		<iframe class="frame" src={data.file} title="{data.title} ({data.kind})"></iframe>
+		{#key pdfPage}<iframe class="frame" src={data.file + pdfPage} title="{data.title} ({data.kind})"></iframe>{/key}
 	{:else}
 		<!-- A saved web page runs nothing and loads nothing: its own response says so too (src/lib/server/public-copy-serving.ts). -->
 		<iframe class="frame" src={data.file} title="{data.title} ({data.kind})" sandbox="" referrerpolicy="no-referrer"></iframe>
@@ -102,10 +111,6 @@
 
 	.details dd {
 		margin: 0;
-	}
-
-	.hash {
-		word-break: break-all;
 	}
 
 	.frame {

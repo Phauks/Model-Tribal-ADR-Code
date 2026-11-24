@@ -40,7 +40,7 @@ supreme_court:
   justices:
   - {name: "William H. Rehnquist", vote: majority}
   - {name: "John Paul Stevens", vote: majority, opinion: special concurrence}
-  - {name: "Sandra Day O'Connor", vote: majority, opinion: special concurrence}
+  - {name: "Sandra Day O'Connor", vote: majority, opinion: concurrence in part and in the judgment}
   - {name: "Antonin Scalia", vote: majority, opinion: majority}
   - {name: "Anthony M. Kennedy", vote: majority}
   - {name: "David H. Souter", vote: majority, opinion: concurrence}
@@ -48,7 +48,8 @@ supreme_court:
   - {name: "Ruth Bader Ginsburg", vote: majority, opinion: concurrence}
   - {name: "Stephen G. Breyer", vote: majority}
   source: https://api.oyez.org/cases/2000/99-1994
-  checked: '2026-11-22'
+  note: "The report says O'Connor filed an opinion concurring in part and concurring in the judgment."
+  checked: '2026-11-24'
 courtlistener:
   cluster: 118454
   citation: "533 U.S. 353"

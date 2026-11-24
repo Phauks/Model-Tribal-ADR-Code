@@ -30,6 +30,7 @@ import { pwnedPasswordsRange } from './password-checks.ts';
 import { readMeetingTotal, videoRoomSettings } from './realtime-kit.ts';
 import { giftSettingChecks, giftState } from './sponsors.ts';
 import { isTestKey, stripeSettings } from './stripe.ts';
+import { latestPublication, latestRebuild } from './site-text.ts';
 
 export type CheckState = 'working' | 'warning' | 'problem' | 'off';
 
@@ -619,7 +620,7 @@ const videoRooms: Check = {
 const imageryNames: Record<MapImageryName, string> = {
 	satellite: 'Satellite map pictures',
 	terrain: 'Terrain map pictures',
-	topographic: 'Topographic map pictures'
+	contours: 'Contour lines'
 };
 
 function imageryCheck(name: MapImageryName): Check {
@@ -628,11 +629,13 @@ function imageryCheck(name: MapImageryName): Check {
 		group: 'Outside services',
 		name: imageryNames[name],
 		async run({ fetcher }) {
-			// The one picture of the whole world, at zoom 0.
-			const response = await fetcher(imageryAddress(name, 0, 0, 0), { headers: { 'cache-control': 'no-cache' } });
+			// The one picture of the whole world at zoom 0, or, for a service that starts further in, one zoom 12 tile over Las Vegas, Nevada.
+			const source = mapImagery[name];
+			const [z, x, y] = source.minimumZoom === 0 ? [0, 0, 0] : [12, 737, 1606];
+			const response = await fetcher(imageryAddress(name, z, x, y), { headers: { 'cache-control': 'no-cache' } });
 			const type = (response.headers.get('content-type') ?? '').split(';')[0].trim();
 			await response.body?.cancel();
-			const details = [`U.S. Geological Survey, The National Map: ${mapImagery[name].service}`];
+			const details = [`U.S. Geological Survey, The National Map: ${source.kind === 'tiles' ? source.service : new URL(source.address).pathname.split('/').at(-3)}`];
 			if (!response.ok) return { state: 'problem', summary: `The National Map answered ${response.status}, so the ${name} base map shows nothing.`, details, fix: 'Usually brief; check https://www.usgs.gov/the-national-map-data-delivery if it lasts.' };
 			if (!type.startsWith('image/')) return { state: 'warning', summary: `The National Map answered with ${type || 'no type'} instead of a picture.`, details };
 			return { state: 'working', summary: 'The U.S. Geological Survey sent a picture.', details };
@@ -674,6 +677,34 @@ function directoryCheck(key: string, name: string, keeper: string, link: string)
 	};
 }
 
+const siteTextRebuilds: Check = {
+	key: 'site-text',
+	group: 'Workers',
+	name: 'Site text rebuilds',
+	async run({ environment }) {
+		const fix = `Create a deploy hook for the website (Workers & Pages > model-tribal-adr-code > Settings > Builds > Deploy Hooks) and save its address as the secret SITE_REBUILD_HOOK_URL (${settingsPlace}).`;
+		let publication: number;
+		let last: Awaited<ReturnType<typeof latestRebuild>>;
+		try {
+			publication = await latestPublication(environment.database);
+			last = await latestRebuild(environment.database);
+		} catch {
+			return { state: 'off', summary: 'The site text tables are missing.', details: [], fix: 'Apply migration 20261124T0119_add_site_text.sql.' };
+		}
+		const details = [
+			publication ? `Newest publication: ${publication}.` : 'Nothing published yet.',
+			...(last ? [`Last rebuild asked for publication ${last.publication} at ${last.requestedAt}: ${last.outcome}.`] : [])
+		];
+		if (!text(environment, 'SITE_REBUILD_HOOK_URL')) {
+			return { state: 'off', summary: 'No deploy hook, so published site text goes live with the next code change.', details, fix };
+		}
+		if (last && last.outcome !== 'asked') {
+			return { state: 'warning', summary: 'The last rebuild could not be asked for.', details, fix: `Check the deploy hook. ${fix}` };
+		}
+		return { state: 'working', summary: 'Publishing site text rebuilds the site.', details };
+	}
+};
+
 export const serviceChecks: readonly Check[] = [
 	database,
 	sourceLibrary,
@@ -684,6 +715,7 @@ export const serviceChecks: readonly Check[] = [
 	liveEditing,
 	scannerDesk,
 	scanner,
+	siteTextRebuilds,
 	rateLimitCheck('request-form-limit', 'Request form', 'requestFormLimit', 'the request form'),
 	rateLimitCheck('workspace-change-limit', 'Workspace changes', 'workspaceChangeLimit', 'making changes in the workspace'),
 	rateLimitCheck('sign-in-limit', 'Sign-in, by email address', 'signInLimit', 'guessing codes and passwords for one address'),
@@ -699,7 +731,7 @@ export const serviceChecks: readonly Check[] = [
 	videoRooms,
 	imageryCheck('satellite'),
 	imageryCheck('terrain'),
-	imageryCheck('topographic'),
+	imageryCheck('contours'),
 	breachedPasswords,
 	directoryCheck('federal-directory', 'Tribal Leaders Directory', 'The Bureau of Indian Affairs', federalDirectoryLink),
 	directoryCheck('alaska-directory', 'Alaska tribes directory', 'The State of Alaska', alaskaDirectoryLink),

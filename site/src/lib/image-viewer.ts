@@ -22,6 +22,7 @@
  * The pages that build HTML as text (essays, nations' own pictures) use
  * `imageViewerAttributeText`.
  */
+import { escapeHtml } from './escape-html.ts';
 
 /** The class every picture link that opens in the viewer carries. */
 export const imageViewerLinkClass = 'image-viewer-link';
@@ -78,7 +79,7 @@ export function imageViewerAttributes(description: string, details: ImageViewerD
 /** The same attributes written out for HTML built as text, each value escaped. */
 export function imageViewerAttributeText(description: string, details: ImageViewerDetails = {}): string {
 	return Object.entries(imageViewerAttributes(description, details))
-		.map(([name, value]) => ` ${name}="${escapeAttribute(value)}"`)
+		.map(([name, value]) => ` ${name}="${escapeHtml(value)}"`)
 		.join('');
 }
 
@@ -86,10 +87,6 @@ export function imageViewerAttributeText(description: string, details: ImageView
 export function imageViewerLinkLabel(description: string): string {
 	const shown = description.trim();
 	return shown ? `${shown} (open larger)` : 'Open the picture larger';
-}
-
-function escapeAttribute(value: string): string {
-	return value.replaceAll('&', '&amp;').replaceAll('"', '&quot;').replaceAll('<', '&lt;').replaceAll('>', '&gt;');
 }
 
 /** The picture link a click landed in, if the click should open the viewer. */

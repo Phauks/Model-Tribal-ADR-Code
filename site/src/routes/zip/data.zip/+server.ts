@@ -9,6 +9,7 @@
 import { strToU8, zipSync, type Zippable } from 'fflate';
 import { version } from '$app/env';
 import { buildTime } from '#lib/offline-collections.ts';
+import { datedFileName } from '#lib/download-names.ts';
 import { citationDate } from '#lib/page-downloads.ts';
 import { nations, storyRecords } from '#lib/server/content.ts';
 import { isoDate, shownExcerpts, shownFullText, shownTellings, storyIsShown } from '#lib/story-visibility.ts';
@@ -75,6 +76,6 @@ export const GET: RequestHandler = async ({ fetch }) => {
 	}
 	files['SHA256SUMS.txt'] = strToU8(sums.join(''));
 	return new Response(zipSync(files, { level: 6 }) as Uint8Array<ArrayBuffer>, {
-		headers: { 'content-type': 'application/zip', 'content-disposition': 'attachment; filename="model-tribal-adr-code-data.zip"' }
+		headers: { 'content-type': 'application/zip', 'content-disposition': `attachment; filename="${datedFileName('/zip/data.zip', built)}"` }
 	});
 };

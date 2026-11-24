@@ -56,11 +56,12 @@
 	import EssayChecks from '#lib/components/essays/EssayChecks.svelte';
 	import EssayGoTo from '#lib/components/essays/EssayGoTo.svelte';
 	import EssayFigureDialog from '#lib/components/essays/EssayFigureDialog.svelte';
-	import EssayAttestDialog from '#lib/components/essays/EssayAttestDialog.svelte';
+	import EssayCreditsPopover from '#lib/components/essays/EssayCreditsPopover.svelte';
 	import EssayComments from '#lib/components/essays/EssayComments.svelte';
 	import PersonAvatar from '#lib/components/essays/PersonAvatar.svelte';
 	import EssayShareDialog from '#lib/components/essays/EssayShareDialog.svelte';
 	import type { Snippet } from 'svelte';
+	import { offerPageTools } from '#lib/page-editing.svelte.ts';
 	import Bold from '@lucide/svelte/icons/bold';
 	import BookOpen from '@lucide/svelte/icons/book-open';
 	import CloudCheck from '@lucide/svelte/icons/cloud-check';
@@ -88,13 +89,15 @@
 	import { commentAt, commentMarks, showCommentMarks, type CommentMark } from '#lib/essays/comment-marks.ts';
 	import { findQuote, quoteAt, type TextQuote } from '#lib/essays/comment-anchors.ts';
 	import type { CommentAsk, CommentDraft, EssayComment } from '#lib/essays/comments.ts';
-	import { attestationLines, setAttestationLines } from '#lib/essays/attestation-lines.ts';
-	import { essaySections, sectionText, sha256Hex, type Attestation } from '#lib/essays/attestations.ts';
+	import { creditLines, setCreditLines } from '#lib/essays/credit-lines.ts';
+	import type { EssayCredits } from '#lib/essays/credits.ts';
+	import { essaySections } from '#lib/essays/sections.ts';
 	import EssaySources from '#lib/components/essays/EssaySources.svelte';
 	import EssaySourceLinks from '#lib/components/essays/EssaySourceLinks.svelte';
 	import { citationWithoutAddress, type SourceDocuments } from '#lib/essays/source-documents.ts';
 	import { figurePartOrder, figureParts, figurePartsFor, type FigureKind, type FigurePart, type NewFigure } from '#lib/essays/figures.ts';
 	import { figurePlayers, watchFigureFiles } from '#lib/essays/figure-players.ts';
+	import { essayChartFrom } from '#lib/table-builder.ts';
 	import { addAfterCurrent, addSection, moveCurrent } from '#lib/essays/placement.ts';
 	import { dropLocalDraft, isSaveAnswer, keepaliveLimit, keepLocalDraft, localDraft, type LocalDraft } from '#lib/essays/local-draft.ts';
 
@@ -110,11 +113,12 @@
 		publishedText = null,
 		publishedVersion = null,
 		yourName = null,
-		barStart,
-		barEnd,
+		toolsInMasthead = false,
 		titleExtras,
+		addChart = null,
 		onsaved,
-		onoutline
+		onoutline,
+		onchartadded
 	}: {
 		identifier: string;
 		text: string;
@@ -128,10 +132,12 @@
 		startAt?: string | null;
 		/** A comment thread to open the editor at, from the Comments for you page. */
 		startThread?: string | null;
-		/** Shown at the start of the bar, such as the page's Reading, Commenting and Editing choice. */
-		barStart?: Snippet;
-		/** Shown at the end of the bar, such as History and Publish. */
-		barEnd?: Snippet;
+		/**
+		 * Show the bar in the masthead's second row instead of above the text,
+		 * so the page starts where it does for readers (on an essay page;
+		 * src/lib/page-editing.svelte.ts).
+		 */
+		toolsInMasthead?: boolean;
 		/** The published body, to mark what the draft changed ("With drafts", essay-editor-mockups/4 and v2-1). */
 		publishedText?: string | null;
 		publishedVersion?: number | null;
@@ -143,6 +149,10 @@
 		onsaved?: (version: number) => void;
 		/** Called with the essay's outline as the draft stands, for the sidebar (editor-outline.ts). */
 		onoutline?: (items: OutlineItem[]) => void;
+		/** A Build a table address whose chart to add at the end of the essay once the editor is ready (?add-chart=). */
+		addChart?: string | null;
+		/** Called once the asked-for chart is added, or could not be. */
+		onchartadded?: () => void;
 	} = $props();
 
 	// The file as last saved, split so the editor shows only the body. The
@@ -246,31 +256,30 @@
 	const sourceLabels = $derived(new Map((library?.sources ?? []).map(([key, label]) => [key, citationWithoutAddress(label)])));
 	let showSources = $state(false);
 
-	/* Attesting to sections (attestations.ts) ------------------------------ */
+	/* Credits under each heading (credits.ts) ------------------------------ */
 
-	let attestDialog: ReturnType<typeof EssayAttestDialog> | undefined = $state();
-	let attestations = $state<Attestation[]>([]);
-	let attestationsLoaded = $state(false);
-	let attestingPerson = $state<string | null>(null);
-	let attestingRole = $state('');
-	let canWriteOrEdit = $state(false);
-	let hashTimer: ReturnType<typeof setTimeout> | undefined;
+	let creditsPopover: ReturnType<typeof EssayCreditsPopover> | undefined = $state();
+	let credits = $state<EssayCredits | null>(null);
+	let creditsTimer: ReturnType<typeof setTimeout> | undefined;
 
-	async function loadAttestations(): Promise<void> {
-		const response = await fetch(`/workspace/essays/${identifier}/attestations`).catch(() => null);
+	/** The credits for the newest saved version, and the credits added by hand. */
+	async function loadCredits(): Promise<void> {
+		const response = await fetch(`/workspace/essays/${identifier}/credits`).catch(() => null);
 		if (!response?.ok) return;
-		const body = (await response.json()) as { attestations: Attestation[]; you: string; yourRole: string; canWriteOrEdit: boolean };
-		attestingPerson = body.you;
-		attestingRole = body.yourRole;
-		canWriteOrEdit = body.canWriteOrEdit;
-		attestationsChanged(body.attestations);
+		creditsChanged((await response.json()) as EssayCredits);
 	}
 
-	function attestationsChanged(updated: Attestation[]): void {
-		attestations = updated;
-		attestationsLoaded = true;
-		if (view) setAttestationLines(view, { attestations: updated, loaded: true });
+	function creditsChanged(updated: EssayCredits): void {
+		credits = updated;
+		if (view) setCreditLines(view, { credits: updated });
 	}
+
+	// A new saved version can change who wrote what.
+	$effect(() => {
+		if (!credits || basedOn === credits.version) return;
+		clearTimeout(creditsTimer);
+		creditsTimer = setTimeout(() => void loadCredits(), 1500);
+	});
 
 	/* Sharing and review requests (review-requests.ts) ---------------------- */
 
@@ -290,7 +299,7 @@
 
 	function reviewRequestsChanged(updated: ReviewRequest[]): void {
 		reviewRequests = updated;
-		if (view) setAttestationLines(view, { requests: updated, you: reviewingPerson });
+		if (view) setCreditLines(view, { requests: updated, you: reviewingPerson });
 		refreshDraftMarksSoon();
 	}
 
@@ -330,24 +339,6 @@
 		});
 		view.dispatch(view.state.tr.setSelection(TextSelection.create(doc, start + 1)).scrollIntoView());
 		(view.domAtPos(start + 1).node as HTMLElement | null)?.parentElement?.scrollIntoView({ block: 'center' });
-	}
-
-	/** Each section's SHA-256 as the text stands, so the lines can say when it changed since an attestation. */
-	async function sectionHashes(): Promise<Record<string, string>> {
-		if (!view) return {};
-		const doc = view.state.doc;
-		const hashes: Record<string, string> = {};
-		for (const section of essaySections(doc)) hashes[section.slug] = await sha256Hex(sectionText(doc, section));
-		return hashes;
-	}
-
-	function refreshHashesSoon(): void {
-		clearTimeout(hashTimer);
-		hashTimer = setTimeout(async () => {
-			const doc = view?.state.doc;
-			const hashes = await sectionHashes();
-			if (view && view.state.doc === doc) setAttestationLines(view, { hashes });
-		}, 600);
 	}
 
 	/* With drafts, the title's extras and the undo history ------------------- */
@@ -710,15 +701,6 @@
 		return () => observer.disconnect();
 	});
 
-	async function openAttest(slug: string): Promise<void> {
-		if (!view) return;
-		const doc = view.state.doc;
-		const section = essaySections(doc).find((candidate) => candidate.slug === slug);
-		if (!section) return;
-		const text = sectionText(doc, section);
-		await attestDialog?.show({ slug, title: section.title, level: section.level, text, sha256: await sha256Hex(text) });
-	}
-
 	/* Checks and Go to ------------------------------------------------------- */
 
 	const checksKey = 'editor-checks';
@@ -944,6 +926,38 @@
 		);
 	}
 
+	/**
+	 * Adds a chart from Build a table at the end of the essay (Trevor, Nov.
+	 * 24, 2026: making our own charts should be "the same flow"): its title as
+	 * the caption, its numbers as of today as the table, and a source line
+	 * that links back to the builder (src/lib/table-builder.ts, essayChartFrom).
+	 */
+	async function placeChart(link: string): Promise<void> {
+		const chart = await essayChartFrom(link);
+		// Let the live room's text settle into the editor first.
+		await new Promise((resolve) => setTimeout(resolve, 300));
+		if (closed || !view) return;
+		if (!chart) {
+			figureFileNotice = 'That chart could not be read from Build a table. Add it with Add, then Chart.';
+			onchartadded?.();
+			return;
+		}
+		const node = schema.node('figure_block', { kind: 'chart', address: '' }, [
+			...blocksOf(chart.caption),
+			schema.node('table', null, [
+				tableRow([chart.labelHeader, chart.valueHeader], true),
+				...chart.rows.map(([label, value]) => tableRow([label, value.toLocaleString('en-US')]))
+			]),
+			newFigurePart('credit', chart.credit)
+		]);
+		const at = view.state.doc.content.size;
+		const transaction = view.state.tr.insert(at, node);
+		transaction.setSelection(TextSelection.near(transaction.doc.resolve(at + 1)));
+		view.dispatch(transaction.scrollIntoView());
+		(view.nodeDOM(at) as HTMLElement | null)?.scrollIntoView?.({ block: 'start' });
+		onchartadded?.();
+	}
+
 	/** A chart to fill in: its caption, a table of names and numbers, and a source line. */
 	function newChart(): EditorNode {
 		return schema.node('figure_block', { kind: 'chart', address: '' }, [
@@ -1141,7 +1155,6 @@
 					if (!editorView.state.doc.eq(previous.doc)) {
 						markChanged();
 						revision += 1;
-						refreshHashesSoon();
 						placeCommentsSoon();
 						refreshDraftMarksSoon();
 					}
@@ -1203,7 +1216,7 @@
 				componentFrames(),
 				draftMarksPlugin(() => ({ doc: publishedDoc, version: publishedVersion, inReview: reviewedSections() })),
 				titleExtrasPlugin(),
-				attestationLines({ attest: (slug) => void openAttest(slug), finishReview: (request) => void finishReview(request) }),
+				creditLines({ openCredits: (section, button) => creditsPopover?.show(section, button), finishReview: (request) => void finishReview(request) }),
 				caseHeadings({ citations: () => citationsByKey, change: canEdit ? changeBoxSource : undefined }),
 				outlineAnchors(),
 				tracker
@@ -1237,9 +1250,7 @@
 			}
 		});
 		describe(view.state);
-		if (attestationsLoaded) setAttestationLines(view, { attestations, loaded: true });
-		setAttestationLines(view, { requests: reviewRequests, you: reviewingPerson });
-		refreshHashesSoon();
+		setCreditLines(view, { credits, requests: reviewRequests, you: reviewingPerson });
 		placeComments();
 		mounts += 1;
 		refreshOutline();
@@ -1666,7 +1677,7 @@
 	onMount(() => {
 		mountEditor(initial.body);
 		dirty = false;
-		void loadAttestations();
+		void loadCredits();
 		const chosenThread = untrack(() => startThread);
 		void loadComments().then(() => {
 			if (chosenThread) goToThread(chosenThread);
@@ -1674,7 +1685,9 @@
 		void loadReviewRequests();
 		const chosenSection = untrack(() => startAt);
 		if (chosenSection) setTimeout(() => goToSection(chosenSection), 300);
-		if (untrack(() => live)) void joinRoom();
+		const ready = untrack(() => live) ? joinRoom() : Promise.resolve();
+		const askedChart = untrack(() => addChart);
+		if (askedChart && untrack(() => canEdit)) void ready.then(() => placeChart(askedChart));
 		const kept = canEdit ? localDraft(identifier) : null;
 		if (kept && kept.text === untrack(() => text)) dropLocalDraft(identifier);
 		else if (kept) recovered = kept;
@@ -1690,7 +1703,7 @@
 		closed = true;
 		clearTimeout(autoSaveTimer);
 		clearTimeout(joinTimer);
-		clearTimeout(hashTimer);
+		clearTimeout(creditsTimer);
 		clearTimeout(commentTimer);
 		clearTimeout(draftTimer);
 		clearTimeout(readingTimer);
@@ -1725,6 +1738,11 @@
 	/* The bar (as in the approved mockups) ----------------------------------- */
 
 	let moreMenu: HTMLDetailsElement | undefined = $state();
+
+	// On an essay page the bar is the masthead's second row while the editor is open (SiteHeader.svelte).
+	$effect(() => {
+		if (toolsInMasthead) return offerPageTools(toolbar);
+	});
 	/** Whether the "Name this version" box is open. */
 	let naming = $state(false);
 	/** The margin shows in commenting, and while editing when there is an open comment or the checks are open. */
@@ -1766,16 +1784,17 @@
 <svelte:window onbeforeunload={warnBeforeLeaving} onscroll={shareReadingPlaceSoon} />
 <svelte:document onvisibilitychange={saveWhenHidden} />
 
-<!-- svelte-ignore a11y_click_events_have_key_events, a11y_no_static_element_interactions -->
-<div class="essay-editor" class:is-commenting={!canEdit} onclickcapture={openReferencesApart}>
+{#snippet toolbar()}
 	<!--
 		One slim bar, as in the approved mockups (essay-editor-mockups/3 and v2-1):
-		the mode, then icons with tooltips, then the saved mark, who else is
-		here, Share, History and Publish. Tools the mockups leave out sit under
-		More; tools for the box the cursor is in show in a second row only then.
+		icons with tooltips, then the saved mark, who else is here and Share.
+		On an essay page it is the masthead's second row, and the mode, draft
+		changes, History and Publish are in the masthead's first row
+		(design/header-page-controls, option A). Tools the mockups leave out
+		sit under More; tools for the box the cursor is in show in a second row
+		only then.
 	-->
-	<div class="editor-bar" role="toolbar" aria-label="Editing">
-		{#if barStart}<div class="bar-group">{@render barStart()}</div>{/if}
+	<div class="editor-bar" class:in-masthead={toolsInMasthead} role="toolbar" aria-label="Editing">
 		{#if canEdit && mode === 'rich'}
 			<div class="bar-group" role="group" aria-label="Undo">
 				<button type="button" class="tool icon-tool" title="Undo (Ctrl+Z)" aria-label="Undo" onclick={() => run(inRoom ? undoCommand : undo)}><Undo2 size={18} aria-hidden="true" /></button>
@@ -1912,11 +1931,10 @@
 			{#if mode === 'rich' && canEdit}
 				<button type="button" class="tool icon-tool" title="Share and ask for review" aria-label="Share" onclick={openShare}><Share2 size={18} aria-hidden="true" /></button>
 			{/if}
-			{#if barEnd}{@render barEnd()}{/if}
 		</div>
 	</div>
 	{#if canEdit && mode === 'rich' && (active.box || missingParts.length || active.inside.has('analysis_block') || active.inside.has('table') || missingFigureParts.length)}
-		<div class="context-bar small" role="group" aria-label="This box">
+		<div class="context-bar small" class:in-masthead={toolsInMasthead} role="group" aria-label="This box">
 			{#if active.box}<button type="button" class="tool" onclick={() => openPicker(active.box === 'case_block' ? 'case' : 'law')}>Change {active.box === 'law_block' ? 'law' : 'case'}</button>{/if}
 			{#each missingParts as kind (kind)}<button type="button" class="tool" onclick={() => run(addBoxPart(kind))}>Add {boxParts[kind]}</button>{/each}
 			{#if active.inside.has('analysis_block')}<button type="button" class="tool" onclick={() => openPicker('analysis-title')}>Analysis title</button>{/if}
@@ -1927,6 +1945,11 @@
 			{#each missingFigureParts as kind (kind)}<button type="button" class="tool" onclick={() => run(addFigurePart(kind))}>Add {figureParts[kind]}</button>{/each}
 		</div>
 	{/if}
+{/snippet}
+
+<!-- svelte-ignore a11y_click_events_have_key_events, a11y_no_static_element_interactions -->
+<div class="essay-editor" class:is-commenting={!canEdit} onclickcapture={openReferencesApart}>
+	{#if !toolsInMasthead}{@render toolbar()}{/if}
 	<!-- Shown under the title in the text (titleExtrasPlugin); kept here until the editor moves it there. -->
 	<div class="title-extras" bind:this={extrasHost}>
 		{#if titleExtras}{@render titleExtras({ inReview: sectionsInReview, ...titleNumbers })}{/if}
@@ -2124,7 +2147,7 @@
 
 <EssayFigureDialog bind:this={figureDialog} essay={identifier} onadd={addFigure} />
 <EssayShareDialog bind:this={shareDialog} essay={identifier} onchange={reviewRequestsChanged} />
-<EssayAttestDialog bind:this={attestDialog} essay={identifier} {attestations} you={attestingPerson} yourRole={attestingRole} {canWriteOrEdit} onchange={attestationsChanged} />
+<EssayCreditsPopover bind:this={creditsPopover} essay={identifier} {credits} requests={reviewRequests} onchange={creditsChanged} />
 
 <dialog bind:this={pickerDialog} class="picker" onclose={() => (picker = null)} aria-labelledby="picker-heading">
 	{#if picker}
@@ -2218,6 +2241,66 @@
 		padding: var(--space-1) 0;
 		background: var(--color-paper);
 		border-bottom: 1px solid var(--color-line);
+	}
+
+	/*
+	 * In the masthead's second row (design/header-page-controls, option A):
+	 * the band's colors, and no bar of its own on the page.
+	 */
+	.editor-bar.in-masthead {
+		position: static;
+		padding: 2px 0 var(--space-1);
+		background: none;
+		border-bottom: 0;
+		color: var(--color-band-text);
+	}
+
+	.in-masthead .bar-group {
+		border-right-color: color-mix(in srgb, var(--color-band-text) 30%, transparent);
+	}
+
+	.in-masthead .tool,
+	.in-masthead .bar-hint,
+	.in-masthead .saved-mark,
+	.in-masthead .saved-mark.is-saved :global(svg),
+	.in-masthead .select-with-icon :global(svg) {
+		color: var(--color-band-text);
+	}
+
+	.in-masthead .tool:hover:not(:disabled) {
+		background: color-mix(in srgb, currentColor 14%, transparent);
+	}
+
+	.in-masthead .tool[aria-pressed='true'] {
+		background: color-mix(in srgb, currentColor 14%, transparent);
+		border-color: transparent;
+		box-shadow: inset 0 -3px 0 var(--color-band-text);
+	}
+
+	.in-masthead .tool-select,
+	.in-masthead #add-block {
+		border-color: color-mix(in srgb, var(--color-band-text) 50%, transparent);
+		background-color: transparent;
+		color: var(--color-band-text);
+	}
+
+	.in-masthead .tool-select option {
+		background: var(--color-paper);
+		color: var(--color-ink);
+	}
+
+	/* The menus open over the page in the page's own colors. */
+	.in-masthead .menu {
+		color: var(--color-ink);
+	}
+
+	.context-bar.in-masthead {
+		border-bottom: 0;
+		border-top: 1px dashed color-mix(in srgb, var(--color-band-text) 35%, transparent);
+	}
+
+	.context-bar.in-masthead .tool {
+		border-color: color-mix(in srgb, var(--color-band-text) 50%, transparent);
 	}
 
 	.bar-group {
@@ -2516,9 +2599,9 @@
 		background: var(--color-status-review-rule);
 	}
 
-	/* The headings and boxes the sidebar links to (editor-outline.ts) land below the sticky bar. */
+	/* The headings and boxes the sidebar links to (editor-outline.ts) land below the masthead and its tools. */
 	.editor-area :global(.ProseMirror > [id]) {
-		scroll-margin-top: calc(var(--space-6) * 3);
+		scroll-margin-top: calc(var(--masthead-stuck, calc(var(--space-6) * 3)) + var(--space-4));
 	}
 
 	/* The citation heading a case or law box (case-headings.ts), selectable and copyable, as in essay-editor-mockups/v2-1. */
@@ -2693,8 +2776,8 @@
 		content: none;
 	}
 
-	/* Attesting belongs to editing (essay-editor-mockups/v2-1); commenting shows only what is in review (4). */
-	.is-commenting .editor-area :global(.essay-attestations) {
+	/* Credits belong to editing (attest-proposal-mockup); commenting shows only what is in review (essay-editor-mockups/4). */
+	.is-commenting .editor-area :global(.essay-credits) {
 		display: none;
 	}
 
@@ -2806,7 +2889,7 @@
 		color: var(--color-link);
 	}
 
-	/* Open requests to review a section, above who attested to it (attestation-lines.ts), in the lavender of essay-editor-mockups/4 and v2-1. */
+	/* Open requests to review a section, above its credits (credit-lines.ts), in the lavender of essay-editor-mockups/4 and v2-1. */
 	.editor-area :global(.essay-in-review) {
 		display: flex;
 		flex-wrap: wrap;
@@ -2854,8 +2937,8 @@
 		color: var(--color-status-review);
 	}
 
-	/* Who attested to each section, under its heading (attestation-lines.ts). */
-	.editor-area :global(.essay-attestations) {
+	/* Who is credited for each section, under its heading (credit-lines.ts), as in the approved credits mockup. */
+	.editor-area :global(.essay-credits) {
 		display: flex;
 		flex-wrap: wrap;
 		align-items: center;
@@ -2867,21 +2950,27 @@
 		color: var(--color-ink-muted);
 	}
 
-	.editor-area :global(.essay-attestation strong) {
+	.editor-area :global(.essay-credit) {
+		display: inline-flex;
+		align-items: center;
+		gap: var(--space-1);
+	}
+
+	.editor-area :global(.essay-credit strong) {
 		color: var(--color-ink);
+		font-weight: var(--font-weight-semibold);
 	}
 
-	.editor-area :global(.essay-attestation-date) {
-		color: var(--color-link);
-	}
-
-	.editor-area :global(.essay-attestation.is-changed .essay-attestation-date) {
-		color: var(--color-action);
-	}
-
-	.editor-area :global(.essay-attest-button) {
+	.editor-area :global(.essay-credits-button) {
+		display: inline-flex;
+		align-items: center;
+		gap: var(--space-1);
+		min-height: 0;
+		padding: 0.15rem var(--space-2);
+		border-width: 1px;
+		border-color: var(--color-line);
 		font-size: var(--font-size-small);
-		padding: 0 var(--space-2);
+		font-weight: var(--font-weight-semibold);
 	}
 
 	/* Words someone commented on (comment-marks.ts). */

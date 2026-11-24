@@ -16,6 +16,7 @@
 	} from '#lib/nation-teams.ts';
 	import { teamAnswerDays } from '#lib/nation-team-reports.ts';
 	import type { PageProps } from './$types';
+	import { mediumDate } from '#lib/readable-date.ts';
 
 	let { data, form }: PageProps = $props();
 
@@ -70,10 +71,6 @@
 
 	function the(title: string): string {
 		return /^the\s/i.test(title) ? title : `the ${title}`;
-	}
-
-	function date(value: string | null): string {
-		return value ? new Date(value).toLocaleDateString('en-US', { dateStyle: 'medium' }) : '';
 	}
 
 	/** What is still missing before leaving a step, as one sentence, or empty. */
@@ -152,7 +149,7 @@
 			{#each data.places as place (place.identifier)}
 				<li>
 					<a href="/workspace/nation-teams/{place.nationIdentifier}">{nationTitle(place.nationIdentifier)}</a>:
-					{teamLevelLabels[place.level]}, {describeParts(place.parts)}, until {date(place.expiresAt)}.
+					{teamLevelLabels[place.level]}, {describeParts(place.parts)}, until {mediumDate(place.expiresAt)}.
 					<a href="/workspace/nation-teams/{place.nationIdentifier}/edit">Edit the page</a>
 				</li>
 			{/each}
@@ -296,7 +293,7 @@
 		<dl class="summary-list">
 			{#each data.applications as application (application.identifier)}
 				<div>
-					<dt>{nationTitle(application.nationIdentifier)} <span class="small muted">({application.reference}, {date(application.submittedAt)})</span></dt>
+					<dt>{nationTitle(application.nationIdentifier)} <span class="small muted">({application.reference}, {mediumDate(application.submittedAt)})</span></dt>
 					<dd>
 						{applicationStatusLabels[application.status]}
 						{#if application.status === 'declined' && application.decisionNote}

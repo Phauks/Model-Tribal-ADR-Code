@@ -1,6 +1,7 @@
 <script lang="ts">
 	import { applicationStatusLabels, proofRouteLabels } from '#lib/nation-teams.ts';
 	import type { PageProps } from './$types';
+	import { mediumDate } from '#lib/readable-date.ts';
 
 	let { data }: PageProps = $props();
 
@@ -9,9 +10,6 @@
 	);
 	const decided = $derived(data.applications.filter((application) => !open.includes(application)));
 
-	function date(value: string | null): string {
-		return value ? new Date(value).toLocaleDateString('en-US', { dateStyle: 'medium' }) : '';
-	}
 </script>
 
 <svelte:head>
@@ -44,7 +42,7 @@
 							<td>{application.displayName}<br /><span class="small muted">{application.office}</span></td>
 							<td>{proofRouteLabels[application.route]}</td>
 							<td>{applicationStatusLabels[application.status]}</td>
-							<td>{date(application.submittedAt)}</td>
+							<td>{mediumDate(application.submittedAt)}</td>
 						</tr>
 					{/each}
 				</tbody>
@@ -59,7 +57,7 @@
 					<li>
 						<a href="/workspace/nation-teams/requests/{application.reference}">{application.reference}</a>:
 						{application.displayName}, {application.nationTitle}, {applicationStatusLabels[application.status].toLocaleLowerCase('en-US')}
-						{date(application.decidedAt)}
+						{mediumDate(application.decidedAt)}
 					</li>
 				{/each}
 			</ul>

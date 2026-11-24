@@ -13,7 +13,7 @@
 import { Plugin, PluginKey } from 'prosemirror-state';
 import { Decoration, DecorationSet } from 'prosemirror-view';
 import type { Node as EditorNode } from 'prosemirror-model';
-import { essaySections } from './attestations.ts';
+import { essaySections } from './sections.ts';
 
 export type DraftMark = 'changed' | 'new';
 

@@ -36,7 +36,7 @@ import {
 	type FormGroup,
 	type FormTemplate
 } from '#lib/forms.ts';
-import { escapeHtml } from './markdown.ts';
+import { escapeHtml } from '../escape-html.ts';
 import { repositoryRoot } from './content.ts';
 import { resolveDocumentLink } from './project-documents.ts';
 

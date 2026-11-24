@@ -113,7 +113,6 @@ export const essayBlocks = {
 	credit: /^credit$/,
 	transcript: /^transcript$/
 } as const;
-export type EssayBlock = keyof typeof essayBlocks;
 
 /**
  * The parts of a case or law box, in the order they come, with the label

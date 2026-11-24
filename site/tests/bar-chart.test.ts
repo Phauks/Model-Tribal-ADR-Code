@@ -1,5 +1,6 @@
 import { describe, expect, it } from 'vitest';
 import { chartTable, pieSlices, scaleTop, shareText, slicePath } from '../src/lib/bar-chart.ts';
+import { dataChartList, dataTopicList } from '../src/lib/data-chart-list.ts';
 import { chartRecordEntries, chartRecords, dataCharts } from '../src/lib/server/data-charts.ts';
 
 describe('scaleTop', () => {
@@ -47,10 +48,23 @@ describe('chartTable', () => {
 describe('dataCharts (repository data)', () => {
 	const charts = dataCharts();
 
-	it('builds every chart with bars, largest first', () => {
-		expect(charts.length).toBeGreaterThanOrEqual(6);
-		for (const chart of charts) {
-			expect(chart.bars.length, chart.identifier).toBeGreaterThan(0);
+	// Charts whose bars follow time, age or the order a dispute meets its steps, not their size.
+	const inOrder = new Set([
+		'compacts-by-period',
+		'compacts-by-dispute-step',
+		'constitutions-by-voting-age',
+		'constitutions-by-council-term',
+		'treaties-by-decade',
+		'supreme-court-cases-by-court',
+		'supreme-court-cases-by-vote',
+		'tribal-opinions-by-decade',
+		'opinions-on-dispute-resolution-by-decade'
+	]);
+
+	it('builds every chart with bars, largest first unless they follow an order of their own', () => {
+		expect(charts.length).toBe(dataChartList.length);
+		for (const chart of charts) expect(chart.bars.length, chart.identifier).toBeGreaterThan(0);
+		for (const chart of charts.filter((candidate) => !inOrder.has(candidate.identifier))) {
 			const values = chart.bars.map((bar) => bar.value);
 			expect(values, chart.identifier).toEqual([...values].sort((first, second) => second - first));
 		}
@@ -59,6 +73,17 @@ describe('dataCharts (repository data)', () => {
 	it('links provision bars to Find recourse with the same filter', () => {
 		const byMethod = charts.find((chart) => chart.identifier === 'provisions-by-method')!;
 		expect(byMethod.bars.find((bar) => bar.label === 'Mediation')?.href).toBe('/nations/recourse?method=Mediation');
+	});
+
+	it('files every chart under exactly one topic, in the topics’ order', () => {
+		const filed = dataTopicList.flatMap((topic) => topic.charts);
+		expect(filed).toEqual(dataChartList.map((chart) => chart.identifier));
+		expect(new Set(filed).size).toBe(filed.length);
+	});
+
+	it('lists the topics in alphabetical order, so no one topic leads', () => {
+		const titles = dataTopicList.map((topic) => topic.title);
+		expect(titles).toEqual([...titles].sort((first, second) => first.localeCompare(second)));
 	});
 
 	it('links every bar to the records it counts', () => {
@@ -73,7 +98,7 @@ describe('chartRecords (repository data)', () => {
 
 	it('has a records page for every bar that does not go to Find recourse', () => {
 		const charts = entries.map((entry) => entry.chart);
-		expect(new Set(charts)).toEqual(new Set(['forums-by-kind', 'constitutions-by-status', 'compacts-by-arbitration']));
+		expect(new Set(charts)).toEqual(new Set(dataChartList.map((chart) => chart.identifier).filter((identifier) => !identifier.startsWith('provisions-'))));
 	});
 
 	it('lists as many records as each bar counts, each linked to its page or document', () => {
@@ -83,7 +108,7 @@ describe('chartRecords (repository data)', () => {
 			expect(records.rows.length, `${chart}/${bar}`).toBe(records.bar.value);
 			for (const row of records.rows) {
 				const first = records.columns[0].key;
-				if (chart !== 'compacts-by-arbitration') expect(row.cells[first].href, `${chart}/${bar}: ${row.key}`).toMatch(/^\/nations\//);
+				if (records.rowName[0] === 'nation') expect(row.cells[first].href, `${chart}/${bar}: ${row.key}`).toMatch(/^\/nations\//);
 			}
 		}
 	});
@@ -141,6 +166,20 @@ describe('pieSlices', () => {
 describe('dataCharts pies (repository data)', () => {
 	it('offers a pie only where each item counts under one bar', () => {
 		const pies = dataCharts().filter((chart) => chart.partsOfWhole).map((chart) => chart.identifier);
-		expect(pies).toEqual(['provisions-by-method', 'provisions-by-dispute', 'constitutions-by-status', 'compacts-by-arbitration']);
+		expect(pies).toEqual([
+			'provisions-by-method',
+			'provisions-by-dispute',
+			'constitutions-by-status',
+			'compacts-by-arbitration',
+			'compacts-by-decision',
+			'compacts-by-period',
+			'compacts-by-state',
+			'nations-by-bureau-region',
+			'treaties-by-decade',
+			'supreme-court-cases-by-court',
+			'supreme-court-cases-by-vote',
+			'tribal-opinions-by-decade',
+			'opinions-on-dispute-resolution-by-decade'
+		]);
 	});
 });

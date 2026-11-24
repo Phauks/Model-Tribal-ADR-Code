@@ -40,8 +40,15 @@ describe('the pages of each section, for the sidebar’s second column', () => {
 		expect(stories?.entries?.items.every((item) => item.link.startsWith('/stories/'))).toBe(true);
 	});
 
+	it('lists the Sponsorship levels page under Sponsorship', async () => {
+		expect((await sectionContents('sponsor'))?.pages).toEqual([
+			{ label: 'Sponsorship', link: '/sponsor' },
+			{ label: 'Sponsorship levels', link: '/sponsor/levels' }
+		]);
+	});
+
 	it('has nothing for a section it does not know', async () => {
-		expect(await sectionContents('sponsor')).toBeUndefined();
+		expect(await sectionContents('charter')).toBeUndefined();
 		expect(await sectionContents('constructor')).toBeUndefined();
 	});
 });

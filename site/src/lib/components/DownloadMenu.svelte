@@ -16,9 +16,12 @@
 	// layers), then the places to go for more. A file offered in several
 	// formats is one row with a button for each format, so a format is never
 	// mistaken for a different file.
+	import { version } from '$app/env';
 	import { page } from '$app/state';
 	import { siteName } from '#lib';
+	import { datedFileName, datedName } from '#lib/download-names.ts';
 	import { mapTableOnScreen } from '#lib/map-table-on-screen.svelte.ts';
+	import { buildTime } from '#lib/offline-collections.ts';
 	import { fileExtension, groupedFiles, pageCitation, pageDownloads, pageFormats, type PageFile, type PageFormat } from '#lib/page-downloads.ts';
 	import Check from '@lucide/svelte/icons/check';
 	import Download from '@lucide/svelte/icons/download';
@@ -34,6 +37,8 @@
 
 	let { onpdf }: { onpdf: () => void } = $props();
 
+	// Saved files carry the date of the build they came from, as record-2026-11-23.json (src/lib/download-names.ts).
+	const built = buildTime(version);
 	const offers = $derived(pageDownloads(page.url.pathname, mapTableOnScreen));
 	const groups = $derived(groupedFiles(offers.files));
 	const fileIcons: Record<PageFile['kind'], typeof FileBraces> = {
@@ -128,7 +133,7 @@
 			}
 			const link = document.createElement('a');
 			link.href = URL.createObjectURL(new Blob([body], { type: format.mediaType }));
-			link.download = pageFileName(location.pathname, format.extension);
+			link.download = datedName(pageFileName(location.pathname, format.extension), built);
 			document.body.append(link);
 			link.click();
 			link.remove();
@@ -230,7 +235,7 @@
 							<span class="choice-name">{file.label}</span>
 							<span class="formats">
 								{#each file.links as link (link.link)}
-									<a class="format" href={link.link} download onclick={() => close()} aria-label="{file.label}, {link.format} file, {fileExtension(link.link)}" title={link.format}>{fileExtension(link.link)}</a>
+									<a class="format" href={link.link} download={datedFileName(link.link, built)} onclick={() => close()} aria-label="{file.label}, {link.format} file, {fileExtension(link.link)}" title={link.format}>{fileExtension(link.link)}</a>
 								{/each}
 							</span>
 							</span>

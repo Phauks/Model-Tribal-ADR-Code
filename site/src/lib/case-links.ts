@@ -22,10 +22,8 @@ export interface CasePreview {
 	decided: string;
 	/** The holding, from the case's box in an essay, if it has one. */
 	holding?: string;
-	/** Where the link goes: the case's box, the copy on this site, or the opinion where it was published. */
+	/** The case's own page, /cases/<key>. */
 	link: string;
-	/** What the link opens, for the preview's last line. */
-	opens: 'box' | 'copy' | 'original';
 }
 
 export interface CasePreviewList {

@@ -1,5 +1,6 @@
 <script lang="ts">
 	import Breadcrumbs from '#lib/components/Breadcrumbs.svelte';
+	import CopyHash from '#lib/components/CopyHash.svelte';
 	import FileVerifier from '#lib/components/FileVerifier.svelte';
 	import FormDocument from '#lib/components/FormDocument.svelte';
 	import { verifyLink } from '#lib/checksums.ts';
@@ -141,7 +142,7 @@
 							<span class="small muted">({Math.max(1, Math.round(download.bytes / 1024))} KB)</span>
 							<br />
 							<span class="small"
-								>SHA-256: <code class="form-hash">{download.sha256}</code> ·
+								>SHA-256: <CopyHash sha256={download.sha256} label="the {download.kind}" /> ·
 								<a href={verifyLink(download.sha256, download.href.split('/').pop())}>Verify File</a></span
 							>
 						</li>
@@ -233,9 +234,6 @@
 </div>
 
 <style>
-	.form-hash {
-		overflow-wrap: anywhere;
-	}
 	fieldset {
 		margin: var(--space-6) 0;
 	}

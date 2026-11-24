@@ -43,12 +43,13 @@ supreme_court:
   - {name: "William J. Brennan, Jr.", vote: minority}
   - {name: "Byron R. White", vote: majority}
   - {name: "Warren E. Burger", vote: majority}
-  - {name: "Harry A. Blackmun", vote: minority, opinion: dissent}
+  - {name: "Harry A. Blackmun", vote: minority, opinion: dissent in part}
   - {name: "Lewis F. Powell, Jr.", vote: majority}
   - {name: "William H. Rehnquist", vote: majority}
   - {name: "John Paul Stevens", vote: majority, opinion: concurrence}
   source: https://api.oyez.org/cases/1980/79-1128
-  checked: '2026-11-22'
+  note: "The report says Blackmun filed an opinion dissenting in part."
+  checked: '2026-11-24'
 courtlistener:
   cluster: 110436
   citation: "450 U.S. 544"

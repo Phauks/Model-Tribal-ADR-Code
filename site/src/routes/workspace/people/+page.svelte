@@ -3,15 +3,12 @@
 	import { roleDescriptions, roleLabels, roles } from '#lib/permissions.ts';
 	import type { TableColumn, TableRow } from '#lib/tables/table-definition.ts';
 	import type { PageProps } from './$types';
+	import { mediumDate } from '#lib/readable-date.ts';
 
 	let { data, form }: PageProps = $props();
 
 	const values = $derived(form && 'values' in form ? form.values : undefined);
 	const statusLabels = { invited: 'Invited, not signed in yet', active: 'Active', removed: 'Access removed' };
-
-	function date(value: string | null): string {
-		return value ? new Date(value).toLocaleDateString('en-US', { dateStyle: 'medium' }) : '';
-	}
 
 	function nationTitle(identifier: string | null): string {
 		return data.nations.find((nation) => nation.identifier === identifier)?.title ?? identifier ?? '';
@@ -32,7 +29,7 @@
 				name: { text: `${listed.displayName} ${listed.email}`, sortValue: listed.displayName },
 				role: { text: roleLabels[listed.role] },
 				status: { text: statusLabels[listed.status] },
-				added: { text: date(listed.addedAt), sortValue: listed.addedAt },
+				added: { text: mediumDate(listed.addedAt), sortValue: listed.addedAt },
 				access: { text: '' }
 			}
 		}))
@@ -49,9 +46,9 @@
 			{#if listed.nationIdentifier}<br /><span class="small">for {nationTitle(listed.nationIdentifier)}</span>{/if}
 		{:else if column.key === 'status'}
 			{statusLabels[listed.status]}
-			{#if listed.lastSignedInAt}<br /><span class="small muted">Last signed in {date(listed.lastSignedInAt)}</span>{/if}
+			{#if listed.lastSignedInAt}<br /><span class="small muted">Last signed in {mediumDate(listed.lastSignedInAt)}</span>{/if}
 		{:else if column.key === 'added'}
-			{date(listed.addedAt)}{#if listed.addedByName}<br /><span class="small muted">by {listed.addedByName}</span>{/if}
+			{mediumDate(listed.addedAt)}{#if listed.addedByName}<br /><span class="small muted">by {listed.addedByName}</span>{/if}
 		{:else}
 			{#if listed.role !== 'lead-author'}
 				<a class="small" href="/workspace/access?person={listed.identifier}">Document access</a>
@@ -181,7 +178,7 @@
 	<ol class="history">
 		{#each data.history as event (event.identifier)}
 			<li>
-				<span class="small muted">{date(event.createdAt)}</span>
+				<span class="small muted">{mediumDate(event.createdAt)}</span>
 				{event.targetName ?? 'Someone'}: {event.action}{#if event.note} ({event.note}){/if}{#if event.actorName && event.actorName !== event.targetName}, by {event.actorName}{/if}
 			</li>
 		{/each}

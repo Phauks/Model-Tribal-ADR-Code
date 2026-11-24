@@ -4,6 +4,7 @@
 	import { decisionLabels, roleDescriptions, roleLabels, subjectKindLabels } from '#lib/permissions.ts';
 	import { requestKindLabels, requestStatusLabels } from '#lib/requests.ts';
 	import type { PageProps } from './$types';
+	import { mediumDate } from '#lib/readable-date.ts';
 
 	let { data }: PageProps = $props();
 
@@ -11,9 +12,6 @@
 		(data.openRequests ?? []).filter((request) => request.deadlines.some((deadline) => deadline.overdue))
 	);
 
-	function date(value: string): string {
-		return new Date(value).toLocaleDateString('en-US', { dateStyle: 'medium' });
-	}
 </script>
 
 <svelte:head>
@@ -110,7 +108,7 @@
 			{#each data.nonprofit.items as item (`${item.title}/${item.due}`)}
 				<li>
 					{#if item.state === 'overdue'}<strong>Overdue:</strong>{:else}Due soon:{/if}
-					{item.title}, {date(`${item.due}T12:00:00`)}.
+					{item.title}, {mediumDate(`${item.due}T12:00:00`)}.
 				</li>
 			{/each}
 		</ul>
@@ -156,7 +154,7 @@
 									<td>{requestStatusLabels[request.status]}</td>
 									<td>
 										{#each request.deadlines.filter((deadline) => deadline.overdue) as deadline (deadline.label)}
-											<div>{deadline.label} {date(deadline.due)}</div>
+											<div>{deadline.label} {mediumDate(deadline.due)}</div>
 										{/each}
 									</td>
 								</tr>
@@ -192,7 +190,7 @@
 						<a href="/workspace/reviews/{review.subjectKind}/{review.subjectIdentifier}"
 							>{review.title}</a
 						> ({subjectKindLabels[review.subjectKind].toLocaleLowerCase('en-US')}): {decisionLabels[review.decision].toLocaleLowerCase('en-US')} by {review.personName},
-						{date(review.createdAt)}
+						{mediumDate(review.createdAt)}
 					</li>
 				{/each}
 			</ul>

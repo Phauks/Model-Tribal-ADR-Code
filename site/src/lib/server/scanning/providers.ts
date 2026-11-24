@@ -20,7 +20,6 @@
 import { readRawScanResult, ScanFaultError, type ScanProvider } from './scan-port.ts';
 
 export const providerNames = ['container', 'http', 'off'] as const;
-export type ProviderName = (typeof providerNames)[number];
 
 /** Anything with a fetch method: a Container's Durable Object stub, a service binding, or globalThis. */
 export interface Fetcher {

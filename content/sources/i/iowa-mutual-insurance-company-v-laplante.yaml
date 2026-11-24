@@ -44,11 +44,12 @@ supreme_court:
   - {name: "Harry A. Blackmun", vote: majority}
   - {name: "Lewis F. Powell, Jr.", vote: majority}
   - {name: "William H. Rehnquist", vote: majority}
-  - {name: "John Paul Stevens", vote: minority, opinion: dissent}
+  - {name: "John Paul Stevens", vote: minority, opinion: concurrence in part and dissent in part}
   - {name: "Sandra Day O'Connor", vote: majority}
   - {name: "Antonin Scalia", vote: majority}
   source: https://api.oyez.org/cases/1986/85-1589
-  checked: '2026-11-22'
+  note: "The report says Stevens filed an opinion concurring in part and dissenting in part."
+  checked: '2026-11-24'
 courtlistener:
   cluster: 111820
   citation: "480 U.S. 9"

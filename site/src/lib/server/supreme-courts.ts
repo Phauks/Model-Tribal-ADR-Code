@@ -72,9 +72,9 @@ export function justicesFile(): JusticesFile {
 	return justicesCache;
 }
 
-/** "John Marshall" -> "Marshall"; "John G. Roberts, Jr." -> "Roberts". */
+/** "John Marshall" -> "Marshall"; "John G. Roberts, Jr." -> "Roberts"; "John M. Harlan II" -> "Harlan". */
 export function surname(name: string): string {
-	return name.replace(/,\s*(?:Jr\.|Sr\.)$/, '').trim().split(/\s+/).pop() ?? name;
+	return name.replace(/,?\s+(?:Jr\.|Sr\.|II|III)$/, '').trim().split(/\s+/).pop() ?? name;
 }
 
 /** Every Court, oldest first. */

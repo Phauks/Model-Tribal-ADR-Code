@@ -17,15 +17,18 @@ import path from 'node:path';
 import { parseCsv } from '../csv.ts';
 import type { BarChartData } from '../bar-chart.ts';
 import type { CitationMark } from '../citation-marks.ts';
-import { displayName, stateName } from '../nation-labels.ts';
+import { stateName } from '../nation-labels.ts';
 import { categoryOf } from '../nation-services.ts';
 import { copyPagePath } from '../public-copies.ts';
 import { recourseLink } from '../recourse.ts';
 import { dataChartNamed, dataChartTableLink } from '../data-chart-list.ts';
 import type { TableColumn, TableRow } from '../tables/table-definition.ts';
-import { nations, publicCopyFor, repositoryRoot, type NationRecord } from './content.ts';
+import { nations, publicCopyFor, repositoryRoot, type CitedFact, type NationRecord } from './content.ts';
 import { recourseRows } from './recourse.ts';
 import { SourceUses, type SourceEntry } from './source-uses.ts';
+import { byName, chartRecordsPath, webLink, nationCells, nationColumn, nationLink, nationName, statesColumn, topicChartRecords, topicCharts } from './data-topic-charts.ts';
+
+export { chartRecordsPath };
 
 function readCsv(relativePath: string): Record<string, string>[] {
 	return parseCsv(readFileSync(path.join(repositoryRoot, relativePath), 'utf8').normalize('NFC'));
@@ -71,8 +74,45 @@ function arbitrationOf(row: Record<string, string>): { slug: string; label: stri
 
 const forumsOf = (record: NationRecord) => record.justice_institutions ?? [];
 
-/** The address of the page that lists what one bar counts. */
-export const chartRecordsPath = (chart: string, bar: string): string => `/nations/data/${chart}/${bar}`;
+/** The kinds of federal gaming record a nation's page can list, in the order the chart's key gives them. */
+const gamingRecordKinds = [
+	{ slug: 'ordinance', label: 'Gaming ordinance approved by the National Indian Gaming Commission', has: (record: NationRecord) => (record.gaming?.ordinances ?? []).length > 0 },
+	{ slug: 'compact', label: 'Tribal-state compact or Secretarial Procedures', has: (record: NationRecord) => (record.gaming?.compacts ?? []).length > 0 },
+	{ slug: 'operates', label: 'Listed by the Commission as operating gaming', has: (record: NationRecord) => record.gaming?.operates_gaming?.value === true },
+	{ slug: 'enforcement', label: 'Commission enforcement action', has: (record: NationRecord) => (record.gaming?.enforcement_actions ?? []).length > 0 },
+	{ slug: 'indian-lands', label: 'Indian lands opinion', has: (record: NationRecord) => (record.gaming?.indian_lands_opinions ?? []).length > 0 }
+];
+
+const decisionWords: Record<string, string> = {
+	approved: 'Approved',
+	'deemed-approved': 'Deemed approved (not acted on within 45 days)',
+	extension: 'Extension',
+	disapproved: 'Disapproved',
+	'secretarial-procedures': 'Secretarial Procedures issued in place of a compact'
+};
+
+/** The steps a compact's dispute clause can name, in the order a dispute meets them. */
+const disputeSteps: [string, string][] = [
+	['notice', 'Written notice'],
+	['meet-and-confer', 'Meet and confer'],
+	['negotiation', 'Negotiation'],
+	['mediation', 'Mediation'],
+	['arbitration', 'Arbitration'],
+	['federal-court', 'Federal court'],
+	['state-court', 'State court'],
+	['court', 'A court, not named']
+];
+
+/** A record's link, when it is a web address; a few list rows hold a name in the link column instead. */
+
+
+/** The five-year period a listed date falls in, such as "1990–1994", from 1985; the current period ends with this year. */
+function periodOf(date: string): string {
+	const year = Number(date.slice(0, 4));
+	const start = Math.floor((year - 1985) / 5) * 5 + 1985;
+	return `${start}–${Math.min(start + 4, new Date().getFullYear())}`;
+}
+
 
 /** The data the charts and their record pages share, read once per build. */
 interface ChartInputs {
@@ -80,6 +120,8 @@ interface ChartInputs {
 	byId: Map<string, NationRecord>;
 	constitutionRows: Record<string, string>[];
 	compacts: Record<string, string>[];
+	/** Every document on the Office of Indian Gaming list: compacts, amendments, extensions, disapprovals and Secretarial Procedures. */
+	compactDocuments: Record<string, string>[];
 }
 
 let inputCache: ChartInputs | undefined;
@@ -91,7 +133,8 @@ function inputs(): ChartInputs {
 			records,
 			byId: new Map(records.map((record) => [record.id, record])),
 			constitutionRows: readCsv('research/constitutions/coverage.csv'),
-			compacts: readCsv('research/gaming/compact-clauses.csv').filter((row) => row.document_is === 'full-compact')
+			compacts: readCsv('research/gaming/compact-clauses.csv').filter((row) => row.document_is === 'full-compact'),
+			compactDocuments: readCsv('research/gaming/compact-documents.csv').filter((row) => row.decision !== '')
 		};
 	}
 	return inputCache;
@@ -111,7 +154,9 @@ function chartDefinitions(): BarChartData[] {
 	const provisionSource =
 		'Dispute resolution provisions read from each nation’s published law codes, court rules and ordinances, Nov. 2026. Each provision is counted once.';
 
-	const { records, constitutionRows, compacts } = inputs();
+	const { records, constitutionRows, compacts, compactDocuments } = inputs();
+	const gamingListSource = 'Documents on the Office of Indian Gaming list of tribal-state compacts, Department of the Interior, read Nov. 21, 2026.';
+	const periods = tally(compactDocuments, (row) => [periodOf(row.listed_date)]).sort((first, second) => first[0].localeCompare(second[0]));
 	const withForums = records.filter((record) => forumsOf(record).length > 0);
 	const forums = tally(withForums, (record) => forumsOf(record).map((fact) => categoryOf(fact.kind).id));
 	const forumHeadings = new Map(withForums.flatMap((record) => forumsOf(record).map((fact) => [categoryOf(fact.kind).id, categoryOf(fact.kind).heading] as const)));
@@ -200,7 +245,64 @@ function chartDefinitions(): BarChartData[] {
 				value,
 				href: chartRecordsPath('compacts-by-arbitration', slug)
 			}))
-		}
+		},
+		{
+			...dataChartNamed('gaming-records-by-kind'),
+			description: `How many nations’ pages list each kind of federal gaming record. A nation can have several kinds. Pick a kind to see the nations.`,
+			labelHeader: 'Record',
+			valueHeader: 'Nations',
+			source: 'National Indian Gaming Commission lists of approved ordinances, enforcement actions, Indian lands opinions and gaming tribes, and the Office of Indian Gaming list of compacts, each cited on the nation’s page.',
+			bars: gamingRecordKinds
+				.map((kind) => ({ label: kind.label, value: records.filter(kind.has).length, href: chartRecordsPath('gaming-records-by-kind', kind.slug) }))
+				.sort((first, second) => second.value - first.value)
+		},
+		{
+			...dataChartNamed('compacts-by-decision'),
+			partsOfWhole: true,
+			description: `${compactDocuments.length.toLocaleString('en-US')} compacts, amendments, extensions and Secretarial Procedures on the Department’s list, by what the Department did. A compact the Secretary does not act on within 45 days is deemed approved as far as it is consistent with the Indian Gaming Regulatory Act. Pick a line to see the documents.`,
+			labelHeader: 'Decision',
+			valueHeader: 'Documents',
+			source: gamingListSource,
+			bars: tally(compactDocuments, (row) => [row.decision]).map(([decision, value]) => ({
+				label: decisionWords[decision] ?? decision,
+				value,
+				href: chartRecordsPath('compacts-by-decision', decision)
+			}))
+		},
+		{
+			...dataChartNamed('compacts-by-period'),
+			partsOfWhole: true,
+			description: 'The same documents, by the five years in which the list dates them. The list’s date is often the Federal Register date, not the date of signing. Pick a period to see the documents.',
+			labelHeader: 'Years',
+			valueHeader: 'Documents',
+			source: gamingListSource,
+			bars: periods.map(([period, value]) => ({ label: period, value, href: chartRecordsPath('compacts-by-period', period.replace('–', '-')) }))
+		},
+		{
+			...dataChartNamed('compacts-by-state'),
+			partsOfWhole: true,
+			description: 'The same documents, by the state that is party to them. Pick a state to see its documents.',
+			labelHeader: 'State',
+			valueHeader: 'Documents',
+			source: gamingListSource,
+			shown: 15,
+			bars: tally(compactDocuments, (row) => [row.state]).map(([state, value]) => ({
+				label: stateName(state),
+				value,
+				href: chartRecordsPath('compacts-by-state', state.toLowerCase())
+			}))
+		},
+		{
+			...dataChartNamed('compacts-by-dispute-step'),
+			description: `How many of the ${compacts.length.toLocaleString('en-US')} full compacts name each step in their clause for disputes between the nation and the state. A compact can name several. Pick a step to see the compacts.`,
+			labelHeader: 'Step',
+			valueHeader: 'Compacts',
+			source: 'Compacts listed by the Office of Indian Gaming, read by machine for their dispute clauses, Nov. 2026; the readings await review.',
+			bars: disputeSteps
+				.map(([slug, label]) => ({ label, value: compacts.filter((row) => row['dispute_resolution.steps'].split(';').includes(slug)).length, href: chartRecordsPath('compacts-by-dispute-step', slug) }))
+				.filter((bar) => bar.value > 0)
+		},
+		...topicCharts()
 	];
 }
 
@@ -228,21 +330,6 @@ export interface ChartRecords {
 	sources: SourceEntry[];
 }
 
-const nationLink = (record: NationRecord, section: string) => `/nations/${record.id}#${section}`;
-const statesOf = (record: NationRecord) => [...new Set((record.states ?? []).map((fact) => fact.state))].map(stateName);
-const nationName = (record: NationRecord) => displayName(record.names.official);
-const byName = (first: { name: string }, second: { name: string }) => first.name.localeCompare(second.name, 'en', { sensitivity: 'base' });
-
-const nationColumn: TableColumn = { key: 'nation', header: 'Nation', isRowHeader: true, sortable: true };
-const statesColumn: TableColumn = { key: 'states', header: 'States', sortable: true, filterable: true };
-
-function nationCells(record: NationRecord, section: string): TableRow['cells'] {
-	const states = statesOf(record);
-	return {
-		nation: { text: nationName(record), href: nationLink(record, section) },
-		states: { text: states.join(', '), values: states }
-	};
-}
 
 /** Every bar that has a record page, for prerendering: [chart, bar]. */
 export function chartRecordEntries(): { chart: string; bar: string }[] {
@@ -339,8 +426,10 @@ export function chartRecords(chartKey: string, barKey: string, uses = new Source
 		};
 	}
 
-	if (chartKey === 'compacts-by-arbitration') {
-		const members = compacts.filter((row) => arbitrationOf(row).slug === barKey);
+	if (chartKey === 'compacts-by-arbitration' || chartKey === 'compacts-by-dispute-step') {
+		const members = compacts.filter((row) =>
+			chartKey === 'compacts-by-arbitration' ? arbitrationOf(row).slug === barKey : row['dispute_resolution.steps'].split(';').includes(barKey)
+		);
 		const rows = members
 			.map((row) => {
 				const copy = publicCopyFor(row.document_link);
@@ -369,7 +458,7 @@ export function chartRecords(chartKey: string, barKey: string, uses = new Source
 			.sort((first, second) => first.cells.compact.text.localeCompare(second.cells.compact.text, 'en', { sensitivity: 'base' }));
 		return {
 			...base,
-			description: `The ${rows.length.toLocaleString('en-US')} full gaming ${rows.length === 1 ? 'compact' : 'compacts'} whose dispute clause was read as: ${bar.label.toLocaleLowerCase('en-US')}. Each compact’s title opens the compact itself, the source of the reading; the clause is summed up in plain words, with where it sits in the compact. The readings were made by machine and await review, so read the compact before relying on one.`,
+			description: `The ${rows.length.toLocaleString('en-US')} full gaming ${rows.length === 1 ? 'compact' : 'compacts'} whose dispute clause was read as ${chartKey === 'compacts-by-dispute-step' ? 'naming this step' : bar.label.toLocaleLowerCase('en-US')}. Each compact’s title opens the compact itself, the source of the reading; the clause is summed up in plain words, with where it sits in the compact. The readings were made by machine and await review, so read the compact before relying on one.`,
 			rowName: ['compact', 'compacts'],
 			columns: [
 				{ key: 'compact', header: 'Compact', isRowHeader: true, sortable: true },
@@ -384,7 +473,91 @@ export function chartRecords(chartKey: string, barKey: string, uses = new Source
 		};
 	}
 
-	return undefined;
+	if (chartKey === 'gaming-records-by-kind') {
+		const kind = gamingRecordKinds.find((candidate) => candidate.slug === barKey);
+		if (!kind) return undefined;
+		uses.part(bar.label);
+		const rows = records
+			.filter(kind.has)
+			.map((record) => ({ record, name: nationName(record) }))
+			.sort(byName)
+			.map(({ record, name }) => {
+				const gaming = record.gaming ?? {};
+				const facts: { fact: CitedFact; text: string; href?: string }[] =
+					barKey === 'ordinance'
+						? (gaming.ordinances ?? []).map((fact) => ({ fact, text: `Ordinance${fact.as_of ? ` of ${fact.as_of}` : ''}`, href: webLink(fact.link) }))
+						: barKey === 'compact'
+							? (gaming.compacts ?? []).map((fact) => ({ fact, text: `${stateName(fact.state)}: ${fact.status.replaceAll('-', ' ')}${(fact as CitedFact & { approved?: string }).approved ? `, ${(fact as CitedFact & { approved?: string }).approved}` : ''}` }))
+							: barKey === 'operates'
+								? gaming.operates_gaming ? [{ fact: gaming.operates_gaming, text: 'Listed in the Gaming Tribe Report' }] : []
+								: barKey === 'enforcement'
+									? (gaming.enforcement_actions ?? []).map((fact) => ({ fact, text: `${fact.tracking_number}, ${fact.date}`, href: webLink(fact.link) }))
+									: (gaming.indian_lands_opinions ?? []).map((fact) => ({ fact, text: `${fact.parcel}, ${fact.date}`, href: webLink(fact.link) }));
+				const listed = facts.map(({ fact, text, href }) => {
+					const citations: CitationMark[] = [];
+					uses.citeFact(fact, bar.label, `${name}: ${text}`, citations);
+					return { text, href, citations };
+				});
+				items[record.id] = { records: listed };
+				return { key: record.id, cells: { ...nationCells(record, 'ties-heading'), records: { text: listed.map((item) => item.text).join('; ') } } };
+			});
+		return {
+			...base,
+			description: `The ${rows.length.toLocaleString('en-US')} ${rows.length === 1 ? 'nation whose page lists' : 'nations whose pages list'} this kind of record, with each record and its source.`,
+			rowName: ['nation', 'nations'],
+			columns: [nationColumn, statesColumn, { key: 'records', header: bar.label, custom: true, sortable: true }],
+			rows,
+			items,
+			sources: uses.list
+		};
+	}
+
+	if (chartKey === 'compacts-by-decision' || chartKey === 'compacts-by-period' || chartKey === 'compacts-by-state') {
+		const { compactDocuments } = inputs();
+		const members = compactDocuments.filter((row) =>
+			chartKey === 'compacts-by-decision' ? row.decision === barKey : chartKey === 'compacts-by-period' ? periodOf(row.listed_date).replace('–', '-') === barKey : row.state.toLowerCase() === barKey
+		);
+		const rows = members
+			.map((row) => {
+				const copy = publicCopyFor(row.document_link);
+				const linked = row.nations
+					.split(/[;,]\s*/)
+					.map((id) => byId.get(id.trim()))
+					.filter((record): record is NationRecord => record !== undefined)
+					.map((record) => ({ text: nationName(record), href: nationLink(record, 'ties-heading'), citations: [] }));
+				items[row.id] = { nations: linked };
+				return {
+					key: row.id,
+					cells: {
+						document: { text: row.title, href: copy ? copyPagePath(copy) : row.document_link || undefined },
+						nations: { text: linked.map((nation) => nation.text).join('; ') },
+						state: { text: stateName(row.state), values: [stateName(row.state)] },
+						date: { text: row.listed_date, sortValue: row.listed_date },
+						decision: { text: decisionWords[row.decision] ?? row.decision, values: [decisionWords[row.decision] ?? row.decision] },
+						notice: { text: row['federal_register.citation'] }
+					}
+				};
+			})
+			.sort((first, second) => first.cells.date.text.localeCompare(second.cells.date.text));
+		return {
+			...base,
+			description: `The ${rows.length.toLocaleString('en-US')} ${rows.length === 1 ? 'document' : 'documents'} on the Office of Indian Gaming list counted here. Each title opens the document; the Federal Register notice is the Department’s public notice of its action.`,
+			rowName: ['document', 'documents'],
+			columns: [
+				{ key: 'document', header: 'Document', isRowHeader: true, sortable: true },
+				{ key: 'nations', header: 'Nations', custom: true, sortable: true },
+				{ key: 'state', header: 'State', sortable: true, filterable: true },
+				{ key: 'date', header: 'Listed', type: 'date', sortable: true },
+				{ key: 'decision', header: 'Decision', sortable: true, filterable: true },
+				{ key: 'notice', header: 'Federal Register notice' }
+			],
+			rows,
+			items,
+			sources: uses.list
+		};
+	}
+
+	return topicChartRecords(chart, bar, barKey, uses);
 }
 
 /** The page that shows where a chart's numbers come from, for a chart whose bars open record pages. */

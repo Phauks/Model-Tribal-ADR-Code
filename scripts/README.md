@@ -136,6 +136,14 @@ Run by hand, never in continuous integration. They build [`research/tribal-law/`
 | `law/collect_law_texts.py` | `targets` lists every law code, court rules and dispute resolution link the profiles cite; `fetch` downloads each one and the chapters its index page links to, pacing each site; `scan` cuts the passages around dispute resolution terms into batches for reviewers; `merge` checks their quotations against the text and writes the provision files | `scripts/requirements.txt`, `curl`, `pdftotext`, `pandoc` |
 | `law/second_pass.py` | `prepare` writes review batches of the hard cases and a fixed random sample; `apply` writes the second reader's verdicts beside the provisions | Python 3 standard library |
 
+## Supreme Court people
+
+Run by hand, never in continuous integration.
+
+| Script | Does | Needs |
+| --- | --- | --- |
+| `law/supreme_court_people.py` | Writes `content/supreme-court/people.yaml`, one entry per Justice and per appointing President, from the Federal Judicial Center's Biographical Directory, the Library of Congress list of Presidents and the inaugural committee's list of ceremonies, with a portrait from Wikimedia Commons where its license is free. Downloads each portrait at the size the website shows, records its SHA-256 and, with the R2 keys, puts it in the bucket under `supreme-court/portraits/`. Commons limits requests hard, so it waits between files; `--cache` keeps what it fetched for a re-run | `scripts/requirements.txt`, `boto3` and the R2 keys to upload |
+
 ## Free case law sources
 
 Run by hand, never in continuous integration. Both use free public data with no account or key, find the newest data on their own, and can be re-run whenever new data or new case records arrive ([sources note](../research/analyses/2026-11-23-free-legal-information-sources.md)).

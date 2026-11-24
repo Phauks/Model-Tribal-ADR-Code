@@ -2,7 +2,9 @@
 	// The Sponsorship page, built to match mockup A, which Trevor approved on
 	// Nov. 23, 2026 (project files, design/sponsorship-bolder/), with his two
 	// changes: no amounts for a state's nations, and no cost fixed in the code
-	// (docs/sponsorship.md, "The Sponsorship page").
+	// (docs/sponsorship.md, "The Sponsorship page"). On Nov. 24 he named the
+	// book goal an initiative and renamed the other choices
+	// (design/book-initiative/).
 	//
 	// The band holds the page's own text, edited on the website like the
 	// essays (content/about/sponsor.md), how many nations' copies gifts have
@@ -11,37 +13,81 @@
 	// can fund, and the sponsors who chose to be listed. A cost shows only
 	// once the lead author sets it in the workspace; amounts given by a
 	// sponsor are never shown.
-	import BookOpen from '@lucide/svelte/icons/book-open';
+	import Accessibility from '@lucide/svelte/icons/accessibility';
 	import Building2 from '@lucide/svelte/icons/building-2';
+	import HandCoins from '@lucide/svelte/icons/hand-coins';
 	import Heart from '@lucide/svelte/icons/heart';
 	import Library from '@lucide/svelte/icons/library';
+	import Microscope from '@lucide/svelte/icons/microscope';
 	import Repeat from '@lucide/svelte/icons/repeat';
 	import Server from '@lucide/svelte/icons/server';
+	import Dropdown from '#lib/components/Dropdown.svelte';
 	import EssayArticle from '#lib/components/essays/EssayArticle.svelte';
-	import { dollars, earmarkLabels, earmarks, initials, largestGift, type Earmark } from '#lib/sponsorship.ts';
+	import {
+		dollars,
+		dollarsAfterTyping,
+		dollarsWhileTyping,
+		earmarkLabels,
+		earmarks,
+		giftCents,
+		initials,
+		largestGift,
+		smallestGift
+	} from '#lib/sponsorship.ts';
 	import type { PageProps } from './$types';
 
 	let { data }: PageProps = $props();
 	const { sponsors, giftsOpen, receiver, counts, goals, monthly, ...article } = $derived(data);
 
 	const cardText = {
-		site: { title: 'The site for a year', text: 'Hosting and the web address.', icon: Server },
 		hardcovers: { title: 'Hardcovers for every nation', text: 'library copies in place of paperbacks.', icon: Library },
-		'needed-most': { title: 'Wherever it is needed most', text: 'Research copies, printing and the site.', icon: BookOpen }
+		accessibility: { title: earmarkLabels['large-format'], text: 'Large print and other editions for readers who need them.', icon: Accessibility },
+		research: { title: earmarkLabels.research, text: 'Sources, records and the work behind each page.', icon: Microscope },
+		site: { title: earmarkLabels.hosting, text: 'Hosting and the web address for a year.', icon: Server },
+		discretionary: { title: earmarkLabels['needed-most'], text: 'Spent where the project decides.', icon: HandCoins }
 	} as const;
+
+	const levelNames = {
+		federal: 'federally recognized',
+		'federal-and-state': 'federally and state-recognized',
+		identified: 'all Identified Native Nations'
+	} as const;
+
+	const earmarkChoices = earmarks.map((earmark) => ({ value: earmark, label: earmarkLabels[earmark] }));
 
 	const number = (value: number) => value.toLocaleString('en-US');
 	const percent = (share: number) => Math.round(share * 100);
 	// A large figure reads best in whole dollars.
 	const wholeDollars = (cents: number) => dollars(Math.round(cents / 100) * 100);
 
-	// What each sponsor's gift funds, as the mockup's sponsor cards say it.
-	const fundsLabels: Record<Earmark, string> = {
-		'needed-most': 'Wherever it is needed most',
-		'books-for-nations': 'Copies for every nation',
-		'large-format': 'The large-format edition',
-		hosting: 'The site'
-	};
+	// The "Other" amount: only what can be money is kept as it is typed, and
+	// an amount outside the gifts the form takes is flagged before it is sent.
+	// The Account page checks it again (giftCents) whatever is sent.
+	let otherAmount = $state('');
+	let otherInvalid = $state(false);
+	let otherBox: HTMLInputElement | undefined = $state();
+	const otherProblem = `From ${dollars(smallestGift * 100)} to ${dollars(largestGift * 100)}.`;
+
+	function typeOther(event: Event & { currentTarget: HTMLInputElement }) {
+		otherAmount = dollarsWhileTyping(event.currentTarget.value);
+		event.currentTarget.value = otherAmount;
+		otherInvalid = false;
+		// A typed amount replaces a chosen one.
+		for (const choice of event.currentTarget.form?.querySelectorAll<HTMLInputElement>('input[name="amount"]') ?? []) choice.checked = false;
+	}
+
+	function leaveOther() {
+		otherAmount = dollarsAfterTyping(otherAmount);
+		otherInvalid = otherAmount !== '' && giftCents(otherAmount) === null;
+	}
+
+	function checkGift(event: SubmitEvent) {
+		if (otherAmount !== '' && giftCents(otherAmount) === null) {
+			event.preventDefault();
+			otherInvalid = true;
+			otherBox?.focus();
+		}
+	}
 
 	// Amounts that buy whole copies, once the cost of a copy is set; none is chosen ahead of time.
 	const copyAmounts = $derived(
@@ -63,27 +109,42 @@
 			<EssayArticle {...article} />
 			{#if goals.nations > 0}
 				<div class="goal">
-					{#if goals.copies}
-						<p class="count">{number(goals.copies.paid)} <span>of {number(goals.nations)} nations</span></p>
-						<div
-							class="bar"
-							role="progressbar"
-							aria-label="Nations whose copy is paid for"
-							aria-valuemin="0"
-							aria-valuemax={goals.nations}
-							aria-valuenow={goals.copies.paid}
-						>
-							<i style:width="{(goals.copies.paid / goals.nations) * 100}%"></i>
+					{#each goals.levels as level, index (level.key)}
+						<div class="level">
+							<p class="level-name">Level {index + 1}: {levelNames[level.key]}</p>
+							{#if level.paid !== null}
+								<p class="count">{number(level.paid)} <span>of {number(level.nations)} nations</span></p>
+								<div
+									class="bar"
+									role="progressbar"
+									aria-label="Level {index + 1}: nations whose copy is paid for"
+									aria-valuemin="0"
+									aria-valuemax={level.nations}
+									aria-valuenow={level.paid}
+								>
+									<i style:width="{(level.paid / level.nations) * 100}%"></i>
+								</div>
+								{@const left = level.nations - level.paid}
+								<p class="tracker">
+									<b>{Math.floor((level.paid / level.nations) * 100)}%</b>
+									{#if left > 0}
+										<span>{number(left)} to go</span>
+										{#if goals.copies}<span>{wholeDollars(left * goals.copies.costCents)} to finish</span>{/if}
+									{:else}
+										<span>Every copy paid for</span>
+									{/if}
+								</p>
+							{:else}
+								<p class="count">{number(level.nations)} <span>nations</span></p>
+							{/if}
 						</div>
-						<p class="note">{dollars(goals.copies.costCents)} prints and mails one paperback.</p>
-					{:else}
-						<p class="count">{number(goals.nations)} <span>nations</span></p>
-					{/if}
+					{/each}
+					{#if goals.copies}<p class="note">{dollars(goals.copies.costCents)} prints and mails one paperback.</p>{/if}
 				</div>
 			{/if}
 		</div>
 
-		<form class="give" method="get" action="/account/sponsorship">
+		<form class="give" method="get" action="/account/sponsorship" onsubmit={checkGift}>
 			<fieldset class="segmented">
 				<legend class="visually-hidden">How often</legend>
 				<input type="radio" id="give-once" name="frequency" value="one-time" />
@@ -91,23 +152,43 @@
 				<input type="radio" id="give-monthly" name="frequency" value="monthly" checked />
 				<label for="give-monthly"><Repeat aria-hidden="true" />Every month</label>
 			</fieldset>
-			<label class="toward">
-				<span>Toward</span>
-				<select name="toward">
-					{#each earmarks as earmark (earmark)}
-						<option value={earmark} selected={earmark === 'needed-most'}>{earmarkLabels[earmark]}</option>
-					{/each}
-				</select>
-			</label>
+			<Dropdown label="Toward" name="toward" labelInside choices={earmarkChoices} value="needed-most" />
 			<fieldset class="amounts">
 				<legend class="visually-hidden">Amount</legend>
 				{#each copyAmounts as choice (choice.copies)}
-					<input type="radio" id="give-{choice.copies}" name="amount" value={choice.cents / 100} />
+					<input
+						type="radio"
+						id="give-{choice.copies}"
+						name="amount"
+						value={choice.cents / 100}
+						onchange={() => {
+							otherAmount = '';
+							otherInvalid = false;
+						}}
+					/>
 					<label for="give-{choice.copies}"><b>{dollars(choice.cents)}</b><small>{choice.copies} {choice.copies === 1 ? 'copy' : 'copies'}</small></label>
 				{/each}
-				<label class="other" class:wide={copyAmounts.length % 2 === 0}>
+				<label class="other" class:wide={copyAmounts.length % 2 === 0} class:invalid={otherInvalid}>
 					<b>Other</b>
-					<input name="other" type="text" inputmode="decimal" placeholder="Any amount" aria-label="Other amount, in US dollars" />
+					<span class="money">
+						<span aria-hidden="true">$</span>
+						<input
+							bind:this={otherBox}
+							name="other"
+							type="text"
+							inputmode="decimal"
+							autocomplete="off"
+							maxlength="12"
+							placeholder="Any amount"
+							aria-label="Other amount, in US dollars"
+							aria-invalid={otherInvalid}
+							aria-describedby={otherInvalid ? 'other-problem' : undefined}
+							value={otherAmount}
+							oninput={typeOther}
+							onblur={leaveOther}
+						/>
+					</span>
+					{#if otherInvalid}<small id="other-problem" class="problem">{otherProblem}</small>{/if}
 				</label>
 			</fieldset>
 			<button class="button give-button" type="submit" disabled={!giftsOpen}><Heart aria-hidden="true" />Sponsor</button>
@@ -119,7 +200,7 @@
 
 	{#if counts.nationPages > 0}
 		<dl class="stats">
-			<div><dt>Native nations with their own page</dt><dd>{number(counts.nationPages)}</dd></div>
+			<div><dt>Identified Native Nations</dt><dd>{number(counts.nationPages)}</dd></div>
 			<div><dt>sources recorded and cited</dt><dd>{number(counts.sources)}</dd></div>
 			<div><dt>to read, download or print</dt><dd>$0</dd></div>
 			{#if monthly}
@@ -138,10 +219,10 @@
 				{@const about = cardText[card.key]}
 				<article class="card">
 					<about.icon class="card-icon" aria-hidden="true" />
-					{#if card.key === 'needed-most'}
-						<p class="cost">Any</p>
-					{:else if card.costCents}
+					{#if card.costCents}
 						<p class="cost">{card.key === 'hardcovers' ? wholeDollars(card.costCents) : dollars(card.costCents)}</p>
+					{:else}
+						<p class="cost">Any</p>
 					{/if}
 					<h3>{about.title}</h3>
 					<p class="muted small">{card.key === 'hardcovers' ? `${number(goals.nations)} ${about.text}` : about.text}</p>
@@ -188,12 +269,11 @@
 							<b>{sponsor.name ?? 'A sponsor'}</b>
 						{/if}
 					</div>
-					<span class="muted">{fundsLabels[sponsor.earmark]}</span>
+					<span class="muted">{earmarkLabels[sponsor.earmark]}</span>
 				</article>
 			{/each}
 			<a class="sponsor empty" href="/account/sponsorship"><Building2 aria-hidden="true" />Your organization</a>
 		</div>
-		<p class="small muted">Sponsors have no say in what the code says.</p>
 	</section>
 </div>
 
@@ -245,7 +325,7 @@
 	}
 
 	/* Editors open the text here (EssayArticle.svelte); their tools keep the page's own colors. */
-	.hero-text :global(:is(.access-bar, .essay-editor)) {
+	.hero-text :global(.essay-editor) {
 		padding: var(--space-3);
 		border-radius: var(--radius-panel);
 		background: var(--color-paper);
@@ -253,18 +333,40 @@
 	}
 
 	.goal {
+		display: grid;
+		gap: var(--space-5);
 		margin-top: var(--space-6);
+	}
+
+	.tracker {
+		display: flex;
+		flex-wrap: wrap;
+		gap: var(--space-1) var(--space-4);
+		margin: var(--space-2) 0 0;
+		font-size: var(--font-size-small);
+		color: color-mix(in srgb, var(--color-band-text) 82%, var(--color-band));
+	}
+
+	.tracker b {
+		color: var(--color-band-text);
+	}
+
+	.level-name {
+		margin: 0 0 var(--space-1);
+		font-size: var(--font-size-small);
+		font-weight: var(--font-weight-semibold);
+		color: color-mix(in srgb, var(--color-band-text) 82%, var(--color-band));
 	}
 
 	.count {
 		margin: 0;
-		font-size: clamp(2.75rem, 7vw, 4rem);
+		font-size: clamp(2.25rem, 5vw, 3rem);
 		font-weight: var(--font-weight-bold);
 		line-height: 1;
 	}
 
 	.count span {
-		font-size: 1.5rem;
+		font-size: 1.25rem;
 		font-weight: var(--font-weight-semibold);
 		color: color-mix(in srgb, var(--color-band-text) 82%, var(--color-band));
 	}
@@ -285,7 +387,7 @@
 
 	.goal .bar {
 		height: 1.125rem;
-		margin: var(--space-4) 0 var(--space-2);
+		margin: var(--space-3) 0 0;
 		background: color-mix(in srgb, var(--color-band-text) 20%, transparent);
 	}
 
@@ -359,33 +461,6 @@
 		height: 1.125rem;
 	}
 
-	.toward {
-		display: flex;
-		align-items: center;
-		gap: var(--space-2);
-		min-height: var(--layout-target-minimum);
-		padding: 0 var(--space-3);
-		border: 1px solid var(--color-control-border);
-		border-radius: var(--radius-control);
-		background: var(--color-paper);
-	}
-
-	.toward span {
-		color: var(--color-ink-muted);
-	}
-
-	.toward select {
-		flex: 1;
-		width: 100%;
-		min-width: 0;
-		text-overflow: ellipsis;
-		border: 0;
-		background: transparent;
-		color: inherit;
-		font: inherit;
-		font-weight: var(--font-weight-semibold);
-	}
-
 	.amounts {
 		display: grid;
 		grid-template-columns: 1fr 1fr;
@@ -426,6 +501,21 @@
 	.segmented input:focus-visible + label {
 		outline: 3px solid var(--color-focus);
 		outline-offset: 2px;
+	}
+
+	.money {
+		display: flex;
+		align-items: baseline;
+		gap: 0.125rem;
+		font-size: 0.875rem;
+	}
+
+	.other.invalid {
+		border-color: var(--color-danger);
+	}
+
+	.other .problem {
+		color: var(--color-danger);
 	}
 
 	.other input {
@@ -495,7 +585,7 @@
 
 	.cards {
 		display: grid;
-		grid-template-columns: repeat(3, minmax(0, 1fr));
+		grid-template-columns: repeat(auto-fit, minmax(12rem, 1fr));
 		gap: var(--space-4);
 	}
 

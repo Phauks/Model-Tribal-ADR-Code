@@ -140,10 +140,6 @@ export function tidyRuns(runs: Run[]): Run[] {
 	return out.map((run, index) => (out[index + 1]?.lineBreak ? { ...run, text: run.text.replace(/ $/, '') } : run));
 }
 
-export function runsText(runs: Run[]): string {
-	return runs.map((run) => (run.lineBreak ? '\n' : run.text)).join('');
-}
-
 class Reader {
 	constructor(private readonly base: string) {}
 

@@ -8,6 +8,7 @@
  * Most lists are known when the site is built. The essays are published from
  * the database, and their pages are rendered by the Worker, which reads them.
  */
+import { dataTopicList, dataTopicLink } from '#lib/data-chart-list.ts';
 import { libraryOutline } from '#lib/library-pages.ts';
 import type { SectionContents } from '#lib/sidebar-outline.ts';
 import type { OutlineItem } from '#lib/site-sections.ts';
@@ -20,7 +21,15 @@ export const nationsPages: OutlineItem[] = [
 	{ label: 'Map', link: '/nations/map' },
 	{ label: 'Timeline', link: '/nations/timeline' },
 	{ label: 'Find recourse', link: '/nations/recourse' },
-	{ label: 'Data and charts', link: '/nations/data' },
+	{
+		label: 'Data and charts',
+		link: '/nations/data',
+		// Its topic pages (Trevor, Nov. 24, 2026), then Build a table.
+		children: [
+			...dataTopicList.map((topic) => ({ label: topic.title, link: dataTopicLink(topic.identifier) })),
+			{ label: 'Build a table', link: '/nations/data/build' }
+		]
+	},
 	{ label: 'Federal offices', link: '/nations/federal-offices' }
 ];
 
@@ -55,6 +64,13 @@ const builtContents: Record<string, () => SectionContents> = {
 		pages: [
 			{ label: 'Current and upcoming events', link: '/events' },
 			{ label: 'Past events', link: '/events?when=past' }
+		]
+	}),
+	// The Sponsorship levels page sits under Sponsorship (docs/sponsorship.md, "Levels").
+	sponsor: () => ({
+		pages: [
+			{ label: 'Sponsorship', link: '/sponsor' },
+			{ label: 'Sponsorship levels', link: '/sponsor/levels' }
 		]
 	}),
 	store: () => ({

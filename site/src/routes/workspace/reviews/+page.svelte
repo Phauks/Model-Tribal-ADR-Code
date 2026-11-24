@@ -3,13 +3,10 @@
 	import { decisionLabels, subjectKindLabels, subjectKinds } from '#lib/permissions.ts';
 	import type { TableColumn, TableRow } from '#lib/tables/table-definition.ts';
 	import type { PageProps } from './$types';
+	import { mediumDate } from '#lib/readable-date.ts';
 
 	let { data }: PageProps = $props();
 	const searching = $derived(data.query !== '' || data.kind !== undefined);
-
-	function date(value: string): string {
-		return new Date(value).toLocaleDateString('en-US', { dateStyle: 'medium' });
-	}
 
 	const columns: TableColumn[] = [
 		{ key: 'name', header: 'Name', isRowHeader: true, sortable: true },
@@ -24,7 +21,7 @@
 				kind: { text: subjectKindLabels[subject.kind] },
 				latest: subject.latest
 					? {
-							text: `${decisionLabels[subject.latest.decision]}, ${subject.latest.personName}, ${date(subject.latest.createdAt)}`,
+							text: `${decisionLabels[subject.latest.decision]}, ${subject.latest.personName}, ${mediumDate(subject.latest.createdAt)}`,
 							sortValue: subject.latest.createdAt
 						}
 					: { text: '' }

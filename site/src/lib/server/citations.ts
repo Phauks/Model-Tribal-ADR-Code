@@ -12,7 +12,8 @@
 import { readFileSync } from 'node:fs';
 import path from 'node:path';
 import CSL from 'citeproc';
-import { escapeHtml, savedCopyLink } from './markdown.ts';
+import { escapeHtml } from '../escape-html.ts';
+import { savedCopyLink } from './markdown.ts';
 import { readingLinksHtml } from '../reading-links.ts';
 import { repositoryRoot, type SourceRecord } from './content.ts';
 import { caseItem } from './case-citations.ts';
