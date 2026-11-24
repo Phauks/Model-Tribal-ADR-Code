@@ -49,7 +49,7 @@ The lead author sets each level's amount a month under "Sponsorship levels" on t
 
 The page's note on taxes says gifts are not tax-deductible yet. Once the IRS recognizes the nonprofit, the note should name it and give its EIN, and say that a gift is deductible less the value of any books received (26 U.S.C. §§ 170(c), 6115).
 
-Still to build: yearly gifts on the Account page's gift form (Stripe subscriptions by the year), each sponsor's level on their Account page and, if they choose, in public, Patrons and Benefactors first on the Sponsorship page, and the sponsor mark on profiles.
+Still to build: each sponsor's level on their Account page and, if they choose, in public, Patrons and Benefactors first on the Sponsorship page, and the sponsor mark on profiles.
 
 ## Managers
 
@@ -74,9 +74,9 @@ Logos are PNG, JPEG or WebP up to 512 KB, checked by their first bytes, stored i
 
 ## Gifts and Stripe
 
-A gift is paid on Stripe Checkout, Stripe's own page, so card details never reach this site. A monthly gift is a Stripe subscription. The amount, card, billing address, cancelling and receipts are on Stripe's billing page (the customer portal), which the Account page opens. The site makes one Stripe customer for each sponsor in each mode, the first time a manager presses "Continue to payment", and matches every gift to the sponsor by that customer.
+A gift is paid on Stripe Checkout, Stripe's own page, so card details never reach this site. A monthly or yearly gift is a Stripe subscription that repeats each month or each year; the Account page's gift form offers every month, every year or once. The amount, card, billing address, cancelling and receipts are on Stripe's billing page (the customer portal), which the Account page opens. The site makes one Stripe customer for each sponsor in each mode, the first time a manager presses "Continue to payment", and matches every gift to the sponsor by that customer.
 
-Gifts are recorded from Stripe's webhook: a one-time gift when its Checkout page is paid (`checkout.session.completed`, or `checkout.session.async_payment_succeeded` for a bank payment that clears later) and a monthly gift each time its invoice is paid (`invoice.paid`). Each Checkout Session or invoice is recorded once, with what the sponsor chose the gift to go toward at that moment.
+Gifts are recorded from Stripe's webhook: a one-time gift when its Checkout page is paid (`checkout.session.completed`, or `checkout.session.async_payment_succeeded` for a bank payment that clears later) and a monthly or yearly gift each time its invoice is paid (`invoice.paid`). An invoice whose price repeats each year, or which pays for more than two months, is recorded as yearly. The monthly total on the Sponsorship page counts monthly gifts only. Each Checkout Session or invoice is recorded once, with what the sponsor chose the gift to go toward at that moment.
 
 ## Settings
 

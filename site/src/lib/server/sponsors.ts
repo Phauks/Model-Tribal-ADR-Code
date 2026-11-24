@@ -553,7 +553,7 @@ export async function saveStripeCustomer(database: D1Database, sponsor: Sponsor,
 }
 
 export interface Gift {
-	kind: 'one-time' | 'monthly';
+	kind: 'one-time' | 'monthly' | 'yearly';
 	amountCents: number;
 	currency: string;
 	earmark: string;
@@ -574,7 +574,7 @@ export async function recordGift(
 		mode: GiftMode;
 		customer: string;
 		stripeObject: string;
-		kind: 'one-time' | 'monthly';
+		kind: 'one-time' | 'monthly' | 'yearly';
 		amountCents: number;
 		currency: string;
 	},
@@ -596,7 +596,7 @@ export async function recordGift(
 			database,
 			sponsor.identifier,
 			{ account: null, name: 'Stripe' },
-			gift.kind === 'monthly' ? 'Monthly gift received' : 'Gift received',
+			gift.kind === 'monthly' ? 'Monthly gift received' : gift.kind === 'yearly' ? 'Yearly gift received' : 'Gift received',
 			`${gift.mode === 'test' ? 'Test mode. ' : ''}${gift.stripeObject}`
 		)
 	]);
