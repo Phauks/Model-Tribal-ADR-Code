@@ -30,7 +30,7 @@ Trevor approved these rules on Nov. 24, 2026. Pages live at /biographies/<name> 
 Following the CARE Principles for Indigenous Data Governance (Global Indigenous Data Alliance, 2019; Carroll et al., 19 Data Sci. J. 43 (2020)):
 
 - Collective benefit: a page exists to show how the law touched the person and the nation, not as a curiosity.
-- Authority to control: a nation that claims its page can review, correct or hide the pages of its people, as with stories ("Unreviewed" until then).
+- Authority to control: a nation that claims its page can review, correct or hide the pages of its people, as with stories ("Unverified" until then).
 - Responsibility: every fact has a source with a pin cite in Indigo Book form; a fact without a source is left out. No ceremonial or sacred information.
 - Ethics: no speculation. Where only one side's account exists, such as a court's recital of a conviction, the page says whose account it is.
 

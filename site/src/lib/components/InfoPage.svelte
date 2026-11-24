@@ -39,7 +39,7 @@
 		glance?: any[];
 		/** Short panels under At a glance, such as contacts. */
 		panels?: Snippet;
-		/** A status badge beside the title, such as "Unreviewed". */
+		/** A status badge beside the title, such as "Unverified". */
 		status?: Snippet;
 		// eslint-disable-next-line @typescript-eslint/no-explicit-any -- SourceList's own type
 		sources?: any[];

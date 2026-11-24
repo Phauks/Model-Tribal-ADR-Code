@@ -11,6 +11,7 @@
 	import DataTable from '#lib/components/DataTable.svelte';
 	import InfoPage from '#lib/components/InfoPage.svelte';
 	import ReviewStatus from '#lib/components/ReviewStatus.svelte';
+	import { nationVerification } from '#lib/review-status.ts';
 	import type { TableColumn, TableRow } from '#lib/tables/table-definition.ts';
 	import type { PageProps } from './$types';
 
@@ -56,11 +57,11 @@
 	]}
 >
 	{#snippet status()}
-		<ReviewStatus status={{ label: 'Unreviewed', verified: false }} description="Review by the nation:">
+		<ReviewStatus status={nationVerification(undefined)} description="Review by the nation:">
 			{#if data.nations.length > 0}
-				<p><strong>Unreviewed.</strong> {nationNames} {data.nations.length === 1 ? 'has' : 'have'} not reviewed this page yet.</p>
+				<p><strong>Unverified.</strong> {nationNames} {data.nations.length === 1 ? 'has' : 'have'} not reviewed this page yet.</p>
 			{:else}
-				<p><strong>Unreviewed.</strong> No nation has reviewed this page yet.</p>
+				<p><strong>Unverified.</strong> No nation has reviewed this page yet.</p>
 			{/if}
 			<p class="no-print"><a href={request}>Request a change or removal</a></p>
 		</ReviewStatus>
