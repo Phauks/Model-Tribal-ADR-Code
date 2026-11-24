@@ -109,6 +109,9 @@ tribes: []
 nations_in_case:
   checked: '2026-11-24'
   named: []
+  not_linked:
+  - named_as: Seneca Nation
+    reason: More than one of today's nations shares this name (seneca-cayuga-nation, seneca-nation-of-indians, tonawanda-band-of-seneca); which the case concerns has not been checked.
 review:
   status: verified
   by: scripts/caselaw/supreme_court_native_cases.py

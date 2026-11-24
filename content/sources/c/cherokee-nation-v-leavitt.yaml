@@ -113,10 +113,18 @@ rights:
 found_in:
 - 2026-11-24-supreme-court-native-cases
 notes: 'Full citation: 543 U.S. 631 (2005). Official report scan: https://www.supremecourt.gov/opinions/boundvolumes/543bv.pdf. Written by scripts/caselaw/supreme_court_native_cases.py from the Supreme Court Database (case 2004-025), the Caselaw Access Project''s text of the report and the Court''s bound volume; not yet read by a person.'
-tribes: []
+tribes:
+- cherokee-nation
 nations_in_case:
   checked: '2026-11-24'
-  named: []
+  named:
+  - nation: cherokee-nation
+    named_as: Cherokee Nation
+    role: party
+    note: Matched by the script to the nation record of the same name; not yet checked.
+  not_linked:
+  - named_as: Cherokee Nation of Oklahoma
+    reason: More than one of today's nations shares this name (amonsoquath-tribe-of-cherokee, arkansas-cherokee, arkansas-white-river-cherokee, cherokee-choctaw-nation-of-st-francis-and-black-rivers, cherokee-indians-of-georgia-inc, cherokee-indians-of-hoke-county-inc and 42 more); which the case concerns has not been checked.
 review:
   status: verified
   by: scripts/caselaw/supreme_court_native_cases.py

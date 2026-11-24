@@ -118,10 +118,16 @@ rights:
 found_in:
 - 2026-11-24-supreme-court-native-cases
 notes: 'Full citation: 324 U.S. 335 (1945). Official report scan: https://tile.loc.gov/storage-services/service/ll/usrep/usrep324/usrep324335/usrep324335.pdf. Written by scripts/caselaw/supreme_court_native_cases.py from the Supreme Court Database (case 1944-046), the Caselaw Access Project''s text of the report and the Library of Congress scan; not yet read by a person.'
-tribes: []
+tribes:
+- northwestern-band-of-the-shoshone-nation
 nations_in_case:
   checked: '2026-11-24'
-  named: []
+  named:
+  - nation: northwestern-band-of-the-shoshone-nation
+    named_as: Northwestern Bands of Shoshone Indians
+    role: party
+    historical: true
+    note: Matched by the script to the only nation record sharing this name; not yet checked against the case's history.
 review:
   status: verified
   by: scripts/caselaw/supreme_court_native_cases.py

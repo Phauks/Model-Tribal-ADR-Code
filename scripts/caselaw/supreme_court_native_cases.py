@@ -120,6 +120,18 @@ def end_stop(text: str) -> str:
     return text if re.search(r"\b(Inc|Co|Corp|Ltd|Jr|Sr|Bros|al)\.$", text) else text.rstrip(".")
 
 
+SMALL_WORDS = {"of", "the", "and", "v", "in", "on", "for", "at", "to", "a", "an", "et", "al", "ex", "rel"}
+
+
+def caption_case(text: str) -> str:
+    """A caption printed in capitals put in title case ("SIOUX NATION OF INDIANS" -> "Sioux Nation of Indians"), so the nation phrases can be found."""
+    letters = [c for c in text if c.isalpha()]
+    if not letters or sum(c.isupper() for c in letters) < 0.6 * len(letters):
+        return text
+    words = re.split(r"(\s+)", text.lower())
+    return "".join(w if w.isspace() or re.sub(r"\W", "", w) in SMALL_WORDS and i else w[:1].upper() + w[1:] for i, w in enumerate(words))
+
+
 def mdy(text: str) -> str | None:
     match = re.match(r"(\d+)/(\d+)/(\d{4})", text or "")
     return f"{match[3]}-{int(match[1]):02d}-{int(match[2]):02d}" if match else None
@@ -598,6 +610,11 @@ class Nations:
                "reservation", "confederated", "united", "states", "state", "county", "village", "native", "pueblo",
                "rancheria", "council", "inc", "et", "al", "v", "in", "people", "tribal", "business", "committee",
                "government", "sovereign", "indigenous", "corporation", "association", "chiefs", "town", "colony"}
+    # State names place a nation ("of Oklahoma") but do not tell nations apart.
+    GENERIC |= {"alabama", "alaska", "arizona", "california", "colorado", "connecticut", "florida", "idaho", "iowa", "kansas",
+                "louisiana", "maine", "massachusetts", "michigan", "minnesota", "mississippi", "montana", "nebraska", "nevada",
+                "mexico", "york", "carolina", "north", "south", "dakota", "oklahoma", "oregon", "texas", "utah", "washington",
+                "wisconsin", "wyoming", "virginia", "rhode", "island", "indiana", "new"}
 
     def __init__(self) -> None:
         self.names: dict[str, set[str]] = {}
@@ -621,13 +638,13 @@ class Nations:
         named, not_linked = [], []
         text = plain(caption)
         # A phrase naming a nation: "Cherokee Nation", "Menominee Tribe of Indians", "Sioux Nation of Indians", "Santa Clara Pueblo".
-        phrases = re.findall(r"((?:[A-Z][\w'’.-]*\s+){0,5}(?:Nation|Tribe|Tribes|Band|Bands|Indians|Pueblo|Community|Rancheria|Village|Reservation)(?:\s+of\s+(?:the\s+)?(?:[A-Z][\w'’.-]*\s*){1,5})?)", caption)
+        phrases = re.findall(r"((?:[A-Z][\w'’.-]*\s+){0,5}(?:Nation|Tribes|Tribe|Bands|Band|Indians|Pueblo|Community|Rancheria|Village|Reservation)(?:\s+of\s+(?:the\s+)?(?:[A-Z][\w'’.-]*\s*){1,5})?)", caption)
         seen = set()
         for phrase in phrases:
             phrase = re.sub(r"^(?:The|And|Of|In|Et|Al|Inc)\s+", "", phrase.strip(" ,.;"))
             phrase = re.sub(r"\s+(?:et\s+al|Petitioners?|Respondents?|Appellants?|Appellees?|Plaintiffs?|Defendants?)\b.*$", "", phrase, flags=re.I)
             key = plain(phrase)
-            if not key or key in seen or key in {"indians", "united states", "the indians"}:
+            if not key or key in seen or all(word in self.GENERIC for word in key.split()):
                 continue
             seen.add(key)
             exact = self.names.get(key, set())
@@ -847,7 +864,7 @@ def build(row: dict, scdb_rows: dict, volumes: Volumes, oyez: Oyez, justices: Ju
     bench["checked"] = TODAY
 
     # nations
-    named, not_linked = nations.propose(cap["name"])
+    named, not_linked = nations.propose(f'{caption_case(cap["name"])}; {cap["name_abbreviation"]}')
 
     # the record
     title = TITLE_FIXES.get(f"{volume} U.S. {page}") or end_stop(cap["name_abbreviation"])

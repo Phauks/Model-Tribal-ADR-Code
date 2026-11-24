@@ -114,10 +114,16 @@ rights:
 found_in:
 - 2026-11-24-supreme-court-native-cases
 notes: 'Full citation: 474 U.S. 9 (1985). Official report scan: https://tile.loc.gov/storage-services/service/ll/usrep/usrep474/usrep474009/usrep474009.pdf. Written by scripts/caselaw/supreme_court_native_cases.py from the Supreme Court Database (case 1985-003), the Caselaw Access Project''s text of the report and the Library of Congress scan; not yet read by a person.'
-tribes: []
+tribes:
+- chemehuevi-indian-tribe-of-the-chemehuevi-reservation
 nations_in_case:
   checked: '2026-11-24'
-  named: []
+  named:
+  - nation: chemehuevi-indian-tribe-of-the-chemehuevi-reservation
+    named_as: Chemehuevi Indian Tribe
+    role: party
+    historical: true
+    note: Matched by the script to the only nation record sharing this name; not yet checked against the case's history.
 review:
   status: unverified
   by: scripts/caselaw/supreme_court_native_cases.py

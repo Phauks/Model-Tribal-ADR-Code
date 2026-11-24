@@ -112,10 +112,16 @@ rights:
 found_in:
 - 2026-11-24-supreme-court-native-cases
 notes: 'Full citation: 442 U.S. 653 (1979). Official report scan: https://tile.loc.gov/storage-services/service/ll/usrep/usrep442/usrep442653/usrep442653.pdf. Written by scripts/caselaw/supreme_court_native_cases.py from the Supreme Court Database (case 1978-131), the Caselaw Access Project''s text of the report and the Library of Congress scan; not yet read by a person.'
-tribes: []
+tribes:
+- omaha-tribe-of-nebraska
 nations_in_case:
   checked: '2026-11-24'
-  named: []
+  named:
+  - nation: omaha-tribe-of-nebraska
+    named_as: Omaha Indian Tribe
+    role: party
+    historical: true
+    note: Matched by the script to the only nation record sharing this name; not yet checked against the case's history.
 review:
   status: verified
   by: scripts/caselaw/supreme_court_native_cases.py

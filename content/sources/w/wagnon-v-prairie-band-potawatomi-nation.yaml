@@ -113,10 +113,15 @@ rights:
 found_in:
 - 2026-11-24-supreme-court-native-cases
 notes: 'Full citation: 546 U.S. 95 (2005). Official report scan: https://www.supremecourt.gov/opinions/boundvolumes/546bv.pdf. Written by scripts/caselaw/supreme_court_native_cases.py from the Supreme Court Database (case 2005-011), the Caselaw Access Project''s text of the report and the Court''s bound volume; not yet read by a person.'
-tribes: []
+tribes:
+- prairie-band-potawatomi-nation
 nations_in_case:
   checked: '2026-11-24'
-  named: []
+  named:
+  - nation: prairie-band-potawatomi-nation
+    named_as: Prairie Band Potawatomi Nation
+    role: party
+    note: Matched by the script to the nation record of the same name; not yet checked.
 review:
   status: verified
   by: scripts/caselaw/supreme_court_native_cases.py

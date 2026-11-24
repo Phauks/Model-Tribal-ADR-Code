@@ -113,10 +113,16 @@ rights:
 found_in:
 - 2026-11-24-supreme-court-native-cases
 notes: 'Full citation: 425 U.S. 649 (1976). Official report scan: https://tile.loc.gov/storage-services/service/ll/usrep/usrep425/usrep425649/usrep425649.pdf. Written by scripts/caselaw/supreme_court_native_cases.py from the Supreme Court Database (case 1975-093), the Caselaw Access Project''s text of the report and the Library of Congress scan; not yet read by a person.'
-tribes: []
+tribes:
+- northern-cheyenne-tribe-of-the-northern-cheyenne-indian-reservation
 nations_in_case:
   checked: '2026-11-24'
-  named: []
+  named:
+  - nation: northern-cheyenne-tribe-of-the-northern-cheyenne-indian-reservation
+    named_as: Northern Cheyenne Tribe
+    role: party
+    historical: true
+    note: Matched by the script to the only nation record sharing this name; not yet checked against the case's history.
 review:
   status: unverified
   by: scripts/caselaw/supreme_court_native_cases.py

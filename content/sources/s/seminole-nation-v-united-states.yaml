@@ -111,6 +111,9 @@ tribes: []
 nations_in_case:
   checked: '2026-11-24'
   named: []
+  not_linked:
+  - named_as: Seminole Nation
+    reason: More than one of today's nations shares this name (calusa-seminole-nation, oklewaha-band-of-yamassee-seminole-indians, seminole-nation-of-florida, seminole-tribe-of-florida, the-seminole-nation-of-oklahoma, united-mascogo-seminole-tribe-of-texas); which the case concerns has not been checked.
 review:
   status: unverified
   by: scripts/caselaw/supreme_court_native_cases.py

@@ -109,6 +109,9 @@ tribes: []
 nations_in_case:
   checked: '2026-11-24'
   named: []
+  not_linked:
+  - named_as: Moadoc Tribes of Indians
+    reason: No nation record matches this name; it may be a historical name or a group that is not a recognized nation today.
 review:
   status: verified
   by: scripts/caselaw/supreme_court_native_cases.py

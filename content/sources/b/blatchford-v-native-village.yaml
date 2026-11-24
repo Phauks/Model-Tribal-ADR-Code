@@ -113,10 +113,15 @@ rights:
 found_in:
 - 2026-11-24-supreme-court-native-cases
 notes: 'Full citation: 501 U.S. 775 (1991). Official report scan: https://tile.loc.gov/storage-services/service/ll/usrep/usrep501/usrep501775/usrep501775.pdf. Written by scripts/caselaw/supreme_court_native_cases.py from the Supreme Court Database (case 1990-123), the Caselaw Access Project''s text of the report and the Library of Congress scan; not yet read by a person.'
-tribes: []
+tribes:
+- native-village-of-noatak
 nations_in_case:
   checked: '2026-11-24'
-  named: []
+  named:
+  - nation: native-village-of-noatak
+    named_as: Native Village of Noatak
+    role: party
+    note: Matched by the script to the nation record of the same name; not yet checked.
 review:
   status: verified
   by: scripts/caselaw/supreme_court_native_cases.py

@@ -114,10 +114,16 @@ rights:
 found_in:
 - 2026-11-24-supreme-court-native-cases
 notes: 'Full citation: 471 U.S. 759 (1985). Official report scan: https://tile.loc.gov/storage-services/service/ll/usrep/usrep471/usrep471759/usrep471759.pdf. Written by scripts/caselaw/supreme_court_native_cases.py from the Supreme Court Database (case 1984-108), the Caselaw Access Project''s text of the report and the Library of Congress scan; not yet read by a person.'
-tribes: []
+tribes:
+- blackfeet-tribe-of-the-blackfeet-indian-reservation-of-montana
 nations_in_case:
   checked: '2026-11-24'
-  named: []
+  named:
+  - nation: blackfeet-tribe-of-the-blackfeet-indian-reservation-of-montana
+    named_as: Blackfeet Tribe of Indians
+    role: party
+    historical: true
+    note: Matched by the script to the only nation record sharing this name; not yet checked against the case's history.
 review:
   status: verified
   by: scripts/caselaw/supreme_court_native_cases.py

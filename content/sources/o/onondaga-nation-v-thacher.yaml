@@ -106,10 +106,15 @@ rights:
 found_in:
 - 2026-11-24-supreme-court-native-cases
 notes: 'Full citation: 189 U.S. 306 (1903). Official report scan: https://tile.loc.gov/storage-services/service/ll/usrep/usrep189/usrep189306/usrep189306.pdf. Written by scripts/caselaw/supreme_court_native_cases.py from the Supreme Court Database (case 1902-125), the Caselaw Access Project''s text of the report and the Library of Congress scan; not yet read by a person.'
-tribes: []
+tribes:
+- onondaga-nation
 nations_in_case:
   checked: '2026-11-24'
-  named: []
+  named:
+  - nation: onondaga-nation
+    named_as: Onondaga Nation
+    role: party
+    note: Matched by the script to the nation record of the same name; not yet checked.
 review:
   status: verified
   by: scripts/caselaw/supreme_court_native_cases.py

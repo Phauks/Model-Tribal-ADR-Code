@@ -110,6 +110,11 @@ tribes: []
 nations_in_case:
   checked: '2026-11-24'
   named: []
+  not_linked:
+  - named_as: Choctaw Nation of Indians
+    reason: More than one of today's nations shares this name (bayou-lafourche-band-of-biloxi-chitimacha-choctaw, callattakapa-choctaw-tribe, cherokee-choctaw-nation-of-st-francis-and-black-rivers, choctaw-allen-tribe, choctaw-apache-tribe-of-ebarb, choctaw-nation-of-florida and 9 more); which the case concerns has not been checked.
+  - named_as: Choctaw Nation
+    reason: More than one of today's nations shares this name (bayou-lafourche-band-of-biloxi-chitimacha-choctaw, callattakapa-choctaw-tribe, cherokee-choctaw-nation-of-st-francis-and-black-rivers, choctaw-allen-tribe, choctaw-apache-tribe-of-ebarb, choctaw-nation-of-florida and 9 more); which the case concerns has not been checked.
 review:
   status: verified
   by: scripts/caselaw/supreme_court_native_cases.py

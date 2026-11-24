@@ -110,6 +110,9 @@ tribes: []
 nations_in_case:
   checked: '2026-11-24'
   named: []
+  not_linked:
+  - named_as: Shoshone Tribe of Indians
+    reason: More than one of today's nations shares this name (duckwater-shoshone-tribe, eastern-shoshone-tribe-of-the-wind-river-reservation, ely-shoshone-tribe-of-nevada, fort-mcdermitt-paiute-and-shoshone-tribes-of-the-fort-mcdermitt-indian-reservation, lone-pine-paiute-shoshone-tribe, northwestern-band-of-the-shoshone-nation and 6 more); which the case concerns has not been checked.
 review:
   status: verified
   by: scripts/caselaw/supreme_court_native_cases.py

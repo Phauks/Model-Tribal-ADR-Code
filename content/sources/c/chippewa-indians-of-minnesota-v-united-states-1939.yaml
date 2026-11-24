@@ -108,6 +108,9 @@ tribes: []
 nations_in_case:
   checked: '2026-11-24'
   named: []
+  not_linked:
+  - named_as: Chippewa Indians of Minnesota
+    reason: More than one of today's nations shares this name (bad-river-band-of-the-lake-superior-tribe-of-chippewa-indians-of-the-bad-river-reservation, burt-lake-band-of-ottawa-and-chippewa-indians, chippewa-cree-indians-of-the-rocky-boys-reservation, christian-pembina-chippewa-indians, grand-traverse-band-of-ottawa-and-chippewa-indians, kah-bay-kah-nong and 15 more); which the case concerns has not been checked.
 review:
   status: verified
   by: scripts/caselaw/supreme_court_native_cases.py

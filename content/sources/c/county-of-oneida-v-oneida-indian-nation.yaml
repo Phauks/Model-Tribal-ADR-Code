@@ -119,10 +119,18 @@ rights:
 found_in:
 - 2026-11-24-supreme-court-native-cases
 notes: 'Full citation: 470 U.S. 226 (1985). Official report scan: https://tile.loc.gov/storage-services/service/ll/usrep/usrep470/usrep470226/usrep470226.pdf. Written by scripts/caselaw/supreme_court_native_cases.py from the Supreme Court Database (case 1984-039), the Caselaw Access Project''s text of the report and the Library of Congress scan; not yet read by a person.'
-tribes: []
+tribes:
+- oneida-indian-nation
 nations_in_case:
   checked: '2026-11-24'
-  named: []
+  named:
+  - nation: oneida-indian-nation
+    named_as: Oneida Indian Nation
+    role: party
+    note: Matched by the script to the nation record of the same name; not yet checked.
+  not_linked:
+  - named_as: Oneida Indian Nation of New York State
+    reason: More than one of today's nations shares this name (oneida-indian-nation, oneida-nation); which the case concerns has not been checked.
 review:
   status: unverified
   by: scripts/caselaw/supreme_court_native_cases.py

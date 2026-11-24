@@ -105,10 +105,16 @@ rights:
 found_in:
 - 2026-11-24-supreme-court-native-cases
 notes: 'Full citation: 234 U.S. 245 (1914). Official report scan: https://tile.loc.gov/storage-services/service/ll/usrep/usrep234/usrep234245/usrep234245.pdf. Written by scripts/caselaw/supreme_court_native_cases.py from the Supreme Court Database (case 1913-096), the Caselaw Access Project''s text of the report and the Library of Congress scan; not yet read by a person.'
-tribes: []
+tribes:
+- mashpee-wampanoag-tribe
 nations_in_case:
   checked: '2026-11-24'
-  named: []
+  named:
+  - nation: mashpee-wampanoag-tribe
+    named_as: First Nation
+    role: party
+    historical: true
+    note: Matched by the script to the only nation record sharing this name; not yet checked against the case's history.
 review:
   status: verified
   by: scripts/caselaw/supreme_court_native_cases.py

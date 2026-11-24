@@ -107,10 +107,25 @@ rights:
 found_in:
 - 2026-11-24-supreme-court-native-cases
 notes: 'Full citation: 117 U.S. 288 (1886). Official report scan: https://tile.loc.gov/storage-services/service/ll/usrep/usrep117/usrep117288/usrep117288.pdf. Written by scripts/caselaw/supreme_court_native_cases.py from the Supreme Court Database (case 1885-161), the Caselaw Access Project''s text of the report and the Library of Congress scan; not yet read by a person.'
-tribes: []
+tribes:
+- cherokee-nation
+- eastern-band-of-cherokee-indians
 nations_in_case:
   checked: '2026-11-24'
-  named: []
+  named:
+  - nation: cherokee-nation
+    named_as: Cherokee Nation
+    role: party
+    note: Matched by the script to the nation record of the same name; not yet checked.
+  - nation: eastern-band-of-cherokee-indians
+    named_as: Eastern Band of Cherokee Indians
+    role: party
+    note: Matched by the script to the nation record of the same name; not yet checked.
+  not_linked:
+  - named_as: Cherokee Trust Funds. Eastern Band of Cherokee Indians
+    reason: More than one of today's nations shares this name (cherokee-nation-west-of-missouri-and-arkansas, eastern-band-of-cherokee-indians, eastern-cherokee-southern-iroquois-and-united-tribes-of-south-carolina, georgia-tribe-of-eastern-cherokee, piedmont-american-indian-association-lower-eastern-cherokee-nation-of-south-carolina); which the case concerns has not been checked.
+  - named_as: Commonly Called Cherokee Nation
+    reason: More than one of today's nations shares this name (amonsoquath-tribe-of-cherokee, arkansas-cherokee, arkansas-white-river-cherokee, cherokee-choctaw-nation-of-st-francis-and-black-rivers, cherokee-indians-of-georgia-inc, cherokee-indians-of-hoke-county-inc and 42 more); which the case concerns has not been checked.
 review:
   status: verified
   by: scripts/caselaw/supreme_court_native_cases.py

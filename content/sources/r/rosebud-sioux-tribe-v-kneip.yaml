@@ -113,10 +113,16 @@ rights:
 found_in:
 - 2026-11-24-supreme-court-native-cases
 notes: 'Full citation: 430 U.S. 584 (1977). Official report scan: https://tile.loc.gov/storage-services/service/ll/usrep/usrep430/usrep430584/usrep430584.pdf. Written by scripts/caselaw/supreme_court_native_cases.py from the Supreme Court Database (case 1976-082), the Caselaw Access Project''s text of the report and the Library of Congress scan; not yet read by a person.'
-tribes: []
+tribes:
+- rosebud-sioux-tribe-of-the-rosebud-indian-reservation
 nations_in_case:
   checked: '2026-11-24'
-  named: []
+  named:
+  - nation: rosebud-sioux-tribe-of-the-rosebud-indian-reservation
+    named_as: Rosebud Sioux Tribe
+    role: party
+    historical: true
+    note: Matched by the script to the only nation record sharing this name; not yet checked against the case's history.
 review:
   status: unverified
   by: scripts/caselaw/supreme_court_native_cases.py

@@ -117,6 +117,9 @@ tribes: []
 nations_in_case:
   checked: '2026-11-24'
   named: []
+  not_linked:
+  - named_as: Southern Ute Indian Tribe
+    reason: More than one of today's nations shares this name (american-indian-council-of-mariposa-county, cherokee-nation-west-of-missouri-and-arkansas, san-juan-southern-paiute-tribe-of-arizona, southern-cherokee-indian-tribe, southern-cherokee-nation-of-kentucky, southern-cherokee-treaty-tribe and 4 more); which the case concerns has not been checked.
 review:
   status: verified
   by: scripts/caselaw/supreme_court_native_cases.py

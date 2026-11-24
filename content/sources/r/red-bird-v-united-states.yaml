@@ -104,10 +104,15 @@ rights:
 found_in:
 - 2026-11-24-supreme-court-native-cases
 notes: 'Full citation: 203 U.S. 76 (1906). Official report scan: https://tile.loc.gov/storage-services/service/ll/usrep/usrep203/usrep203076/usrep203076.pdf. Written by scripts/caselaw/supreme_court_native_cases.py from the Supreme Court Database (case 1906-004), the Caselaw Access Project''s text of the report and the Library of Congress scan; not yet read by a person.'
-tribes: []
+tribes:
+- cherokee-nation
 nations_in_case:
   checked: '2026-11-24'
-  named: []
+  named:
+  - nation: cherokee-nation
+    named_as: Cherokee Nation
+    role: party
+    note: Matched by the script to the nation record of the same name; not yet checked.
 review:
   status: verified
   by: scripts/caselaw/supreme_court_native_cases.py

@@ -110,10 +110,15 @@ rights:
 found_in:
 - 2026-11-24-supreme-court-native-cases
 notes: 'Full citation: 369 U.S. 45 (1962). Official report scan: https://tile.loc.gov/storage-services/service/ll/usrep/usrep369/usrep369045/usrep369045.pdf. Written by scripts/caselaw/supreme_court_native_cases.py from the Supreme Court Database (case 1961-041), the Caselaw Access Project''s text of the report and the Library of Congress scan; not yet read by a person.'
-tribes: []
+tribes:
+- metlakatla-indian-community-annette-island-reserve
 nations_in_case:
   checked: '2026-11-24'
-  named: []
+  named:
+  - nation: metlakatla-indian-community-annette-island-reserve
+    named_as: Metlakatla Indian Community
+    role: party
+    note: Matched by the script to the nation record of the same name; not yet checked.
 review:
   status: verified
   by: scripts/caselaw/supreme_court_native_cases.py

@@ -110,6 +110,9 @@ tribes: []
 nations_in_case:
   checked: '2026-11-24'
   named: []
+  not_linked:
+  - named_as: Cheyenne Indians
+    reason: More than one of today's nations shares this name (cheyenne-and-arapaho-tribes, cheyenne-nation, cheyenne-river-sioux-tribe-of-the-cheyenne-river-reservation, northern-cheyenne-tribe-of-the-northern-cheyenne-indian-reservation); which the case concerns has not been checked.
 review:
   status: verified
   by: scripts/caselaw/supreme_court_native_cases.py
