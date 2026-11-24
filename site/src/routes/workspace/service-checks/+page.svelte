@@ -1,127 +1,382 @@
 <script lang="ts">
+	import CircleCheck from '@lucide/svelte/icons/circle-check';
+	import CircleDashed from '@lucide/svelte/icons/circle-dashed';
+	import CircleX from '@lucide/svelte/icons/circle-x';
+	import RefreshCw from '@lucide/svelte/icons/refresh-cw';
+	import TriangleAlert from '@lucide/svelte/icons/triangle-alert';
+	import Collapsible from '#lib/components/Collapsible.svelte';
+	import CountBadge from '#lib/components/CountBadge.svelte';
 	import type { PageProps } from './$types';
 
 	let { data }: PageProps = $props();
 
-	const stateLabels = {
+	type State = 'problem' | 'warning' | 'off' | 'working';
+	const order: State[] = ['problem', 'warning', 'off', 'working'];
+	const stateLabels: Record<State, string> = {
 		working: 'Working',
 		warning: 'Needs a look',
 		problem: 'Not working',
 		off: 'Not set up'
-	} as const;
+	};
 
-	const groups = $derived([...new Set(data.results.map((result) => result.group))]);
-	const counts = $derived({
-		problem: data.results.filter((result) => result.state === 'problem').length,
-		warning: data.results.filter((result) => result.state === 'warning').length,
-		off: data.results.filter((result) => result.state === 'off').length,
-		working: data.results.filter((result) => result.state === 'working').length
-	});
+	let shown = $state<State | 'all'>('all');
+
+	const counts = $derived(Object.fromEntries(order.map((state) => [state, data.results.filter((result) => result.state === state).length])) as Record<State, number>);
+	const visible = $derived(shown === 'all' ? data.results : data.results.filter((result) => result.state === shown));
+	const groups = $derived([...new Set(visible.map((result) => result.group))]);
 	const checkedAt = $derived(
 		new Date(data.checkedAt).toLocaleString('en-US', { dateStyle: 'medium', timeStyle: 'short', timeZone: 'America/Los_Angeles' })
 	);
 </script>
 
+{#snippet stateIcon(state: State, size: number)}
+	{#if state === 'working'}<CircleCheck {size} aria-hidden="true" />
+	{:else if state === 'warning'}<TriangleAlert {size} aria-hidden="true" />
+	{:else if state === 'problem'}<CircleX {size} aria-hidden="true" />
+	{:else}<CircleDashed {size} aria-hidden="true" />{/if}
+{/snippet}
+
 <svelte:head>
 	<title>Service checks · Workspace · Model Tribal ADR Code</title>
 </svelte:head>
 
-<h1>Service checks</h1>
-<p class="lead">
-	{counts.working} working, {counts.warning} needing a look, {counts.problem} not working, {counts.off} not set up.
-</p>
-<p class="small">
-	Checked {checkedAt} Pacific time{#if data.buildCommit}, on the deploy built from commit <code>{data.buildCommit.slice(0, 7)}</code>{/if}. Each check reads a setting and, where the service allows, asks it for something harmless: Lulu and Stripe are asked to read their webhooks, and the outreach mailbox is signed in to and left without sending. Nothing is changed, sent or paid, and secrets are never shown.
-	<a href="/workspace/service-checks">Check again</a>. Only the lead author sees this page.
+<div class="title-row">
+	<h1>Service checks</h1>
+	<a class="icon-button" href="/workspace/service-checks{data.design === 'b' ? '?design=b' : ''}" aria-label="Check again" title="Check again"><RefreshCw size={20} aria-hidden="true" /></a>
+</div>
+<p class="small muted checked">
+	{checkedAt} Pacific{#if data.buildCommit} · build <code>{data.buildCommit.slice(0, 7)}</code>{/if} · {data.results.length} checks
 </p>
 
-{#if counts.problem > 0}
-	<div class="notice notice-problem" role="alert">
-		<p>Not working: {data.results.filter((result) => result.state === 'problem').map((result) => result.name).join(', ')}.</p>
-	</div>
+<div class="tally" role="radiogroup" aria-label="Show">
+	{#each order as state (state)}
+		<button
+			type="button"
+			role="radio"
+			aria-checked={shown === state}
+			class="tally-item tally-{state}"
+			disabled={counts[state] === 0}
+			onclick={() => (shown = shown === state ? 'all' : state)}
+		>
+			{@render stateIcon(state, 20)}
+			<span class="tally-count">{counts[state]}</span>
+			<span class="tally-label">{stateLabels[state]}</span>
+		</button>
+	{/each}
+</div>
+
+{#if data.design === 'b'}
+	{#each groups as group (group)}
+		<section class="group" aria-labelledby="group-{group}">
+			<h2 id="group-{group}">{group}<CountBadge count={visible.filter((result) => result.group === group).length} /></h2>
+			<ul class="tiles">
+				{#each visible.filter((result) => result.group === group) as result (result.key)}
+					<li class="tile state-{result.state}">
+						<p class="tile-state">{@render stateIcon(result.state, 16)}{stateLabels[result.state]}<span class="muted time">{result.milliseconds} ms</span></p>
+						<p class="tile-name">{result.name}</p>
+						<p class="small">{result.summary}</p>
+						{#if result.details.length > 0 || (result.fix && result.state !== 'working')}
+							<details class="small more">
+								<summary>More</summary>
+								{#if result.binding}<p>Binding: <code>{result.binding}</code></p>{/if}
+								{#each result.details as detail (detail)}<p>{detail}</p>{/each}
+								{#if result.fix && result.state !== 'working'}<p><strong>What to do:</strong> {result.fix}</p>{/if}
+							</details>
+						{/if}
+					</li>
+				{/each}
+			</ul>
+		</section>
+	{/each}
+{:else}
+	{#each groups as group (group)}
+		{@const rows = visible.filter((result) => result.group === group)}
+		<Collapsible heading={group} identifier="group-{group.toLowerCase().replaceAll(' ', '-')}" count={rows.length} class="group">
+			<ul class="rows">
+				{#each rows as result (result.key)}
+					{@const more = result.details.length > 0 || Boolean(result.fix && result.state !== 'working') || Boolean(result.binding)}
+					<li class="row state-{result.state}">
+						<details open={result.state === 'problem' || result.state === 'warning'}>
+							<summary class:plain={!more}>
+								<span class="row-icon" title={stateLabels[result.state]}>{@render stateIcon(result.state, 20)}<span class="visually-hidden">{stateLabels[result.state]}:</span></span>
+								<span class="row-name">{result.name}</span>
+								<span class="row-summary">{result.summary}</span>
+								<span class="row-time muted small">{result.milliseconds} ms</span>
+							</summary>
+							{#if more}
+								<div class="row-more small">
+									{#if result.binding}<p>Binding <code>{result.binding}</code></p>{/if}
+									{#if result.details.length > 0}
+										<ul>
+											{#each result.details as detail (detail)}<li>{detail}</li>{/each}
+										</ul>
+									{/if}
+									{#if result.fix && result.state !== 'working'}<p class="fix"><strong>What to do:</strong> {result.fix}</p>{/if}
+								</div>
+							{/if}
+						</details>
+					</li>
+				{/each}
+			</ul>
+		</Collapsible>
+	{/each}
 {/if}
 
-{#each groups as group (group)}
-	<section aria-labelledby="group-{group}">
-		<h2 id="group-{group}">{group}</h2>
-		<ul class="checks">
-			{#each data.results.filter((result) => result.group === group) as result (result.key)}
-				<li class="check check-{result.state}">
-					<p class="heading">
-						<strong>{result.name}</strong>
-						<span class="state">{stateLabels[result.state]}</span>
-						<span class="small muted">{result.milliseconds} ms</span>
-					</p>
-					<p>{result.summary}</p>
-					{#if result.details.length > 0}
-						<ul class="small details">
-							{#each result.details as detail (detail)}<li>{detail}</li>{/each}
-						</ul>
-					{/if}
-					{#if result.fix && result.state !== 'working'}
-						<p class="small"><strong>What to do:</strong> {result.fix}</p>
-					{/if}
-				</li>
-			{/each}
-		</ul>
-	</section>
-{/each}
-
 <style>
-	.checks {
-		list-style: none;
-		padding: 0;
-		max-width: var(--layout-measure);
-	}
-
-	.check {
-		border: 1px solid var(--color-line);
-		border-left-width: 6px;
-		border-radius: var(--radius-control);
-		padding: var(--space-3) var(--space-4);
-		margin-bottom: var(--space-3);
-	}
-
-	.check > p {
-		margin: 0 0 var(--space-1);
-	}
-
-	.heading {
+	.title-row {
 		display: flex;
-		flex-wrap: wrap;
+		align-items: center;
+		justify-content: space-between;
 		gap: var(--space-3);
-		align-items: baseline;
 	}
 
-	.state {
+	.title-row h1 {
+		margin-bottom: 0;
+	}
+
+	.checked {
+		margin-top: var(--space-1);
+	}
+
+	/* The tally: one button for each state, which shows only the checks in it. */
+	.tally {
+		display: grid;
+		grid-template-columns: repeat(4, minmax(0, 1fr));
+		gap: var(--space-3);
+		margin: var(--space-4) 0 var(--space-5);
+	}
+
+	.tally-item {
+		display: grid;
+		grid-template-columns: auto 1fr;
+		grid-template-rows: auto auto;
+		column-gap: var(--space-2);
+		align-items: center;
+		padding: var(--space-3) var(--space-4);
+		border: 1px solid var(--color-line);
+		border-top-width: 4px;
+		border-radius: var(--radius-panel);
+		background: var(--color-surface-raised);
+		color: var(--color-ink);
+		font: inherit;
+		text-align: left;
+		cursor: pointer;
+	}
+
+	.tally-item:disabled {
+		cursor: default;
+		opacity: 0.6;
+	}
+
+	.tally-item[aria-checked='true'] {
+		outline: 2px solid currentColor;
+		outline-offset: 1px;
+	}
+
+	.tally-count {
+		font-size: var(--font-size-heading-2);
 		font-weight: var(--font-weight-semibold);
+		font-variant-numeric: tabular-nums;
+		line-height: 1.1;
 	}
 
-	.check-working {
-		border-left-color: var(--color-link);
+	.tally-label {
+		grid-column: 1 / -1;
+		color: var(--color-ink-muted);
+		font-size: var(--font-size-small);
 	}
 
-	.check-warning {
-		border-left-color: var(--color-action);
+	.tally-problem {
+		border-top-color: var(--color-danger);
 	}
 
-	.check-problem {
-		border-left-color: var(--color-danger);
-	}
-
-	.check-problem .state {
+	.tally-problem :global(svg) {
 		color: var(--color-danger);
 	}
 
-	.check-off {
-		border-left-color: var(--color-line);
+	.tally-warning {
+		border-top-color: var(--color-status-draft-rule);
 	}
 
-	.check-off .state {
+	.tally-warning :global(svg) {
+		color: var(--color-status-draft);
+	}
+
+	.tally-off :global(svg) {
 		color: var(--color-ink-muted);
 	}
 
-	.details {
-		margin: var(--space-1) 0;
+	.tally-working {
+		border-top-color: var(--color-status-published-rule);
+	}
+
+	.tally-working :global(svg) {
+		color: var(--color-status-published);
+	}
+
+	/* Design A: a folding section for each group, one line for each check. */
+	.rows {
+		list-style: none;
+		padding: 0;
+		margin: 0 0 var(--space-4);
+		border: 1px solid var(--color-line);
+		border-radius: var(--radius-panel);
+		background: var(--color-surface-raised);
+	}
+
+	.row + .row {
+		border-top: 1px solid var(--color-line);
+	}
+
+	.row summary {
+		display: grid;
+		grid-template-columns: auto minmax(10rem, 14rem) 1fr auto;
+		gap: var(--space-3);
+		align-items: baseline;
+		padding: var(--space-2) var(--space-3);
+		cursor: pointer;
+		list-style: none;
+	}
+
+	.row summary::-webkit-details-marker {
+		display: none;
+	}
+
+	.row summary.plain {
+		cursor: default;
+	}
+
+	.row-icon {
+		align-self: center;
+		display: inline-flex;
+	}
+
+	.row-name {
+		font-weight: var(--font-weight-semibold);
+	}
+
+	.row-time {
+		font-variant-numeric: tabular-nums;
+		white-space: nowrap;
+	}
+
+	.row-more {
+		padding: 0 var(--space-3) var(--space-3) calc(var(--space-3) * 2 + 20px);
+	}
+
+	.row-more p,
+	.row-more ul {
+		margin: 0 0 var(--space-1);
+	}
+
+	.state-working .row-icon,
+	.state-working .tile-state {
+		color: var(--color-status-published);
+	}
+
+	.state-warning .row-icon,
+	.state-warning .tile-state {
+		color: var(--color-status-draft);
+	}
+
+	.row.state-warning summary {
+		background: var(--color-status-draft-background);
+	}
+
+	.state-problem .row-icon,
+	.state-problem .tile-state {
+		color: var(--color-danger);
+	}
+
+	.row.state-problem summary {
+		background: var(--color-removed-background);
+	}
+
+	.state-off .row-icon,
+	.state-off .tile-state,
+	.state-off .row-summary {
+		color: var(--color-ink-muted);
+	}
+
+	/* Design B: a tile for each check. */
+	.tiles {
+		list-style: none;
+		padding: 0;
+		display: grid;
+		grid-template-columns: repeat(auto-fill, minmax(16rem, 1fr));
+		gap: var(--space-3);
+	}
+
+	.tile {
+		padding: var(--space-3);
+		border: 1px solid var(--color-line);
+		border-top-width: 4px;
+		border-radius: var(--radius-panel);
+		background: var(--color-surface-raised);
+	}
+
+	.tile p {
+		margin: 0 0 var(--space-1);
+	}
+
+	.tile.state-working {
+		border-top-color: var(--color-status-published-rule);
+	}
+
+	.tile.state-warning {
+		border-top-color: var(--color-status-draft-rule);
+	}
+
+	.tile.state-problem {
+		border-top-color: var(--color-danger);
+	}
+
+	.tile-state {
+		display: flex;
+		align-items: center;
+		gap: var(--space-1);
+		font-size: var(--font-size-small);
+		font-weight: var(--font-weight-semibold);
+	}
+
+	.time {
+		margin-left: auto;
+		font-weight: normal;
+	}
+
+	.tile-name {
+		font-weight: var(--font-weight-semibold);
+	}
+
+	@media (max-width: 40rem) {
+		.tally {
+			grid-template-columns: repeat(2, minmax(0, 1fr));
+		}
+
+		.row summary {
+			grid-template-columns: auto 1fr auto;
+			grid-template-areas: 'icon name time' '. summary summary';
+			row-gap: 0;
+		}
+
+		.row-icon {
+			grid-area: icon;
+		}
+
+		.row-name {
+			grid-area: name;
+		}
+
+		.row-time {
+			grid-area: time;
+		}
+
+		.row-summary {
+			grid-area: summary;
+		}
+
+		.row-more {
+			padding-left: calc(var(--space-3) * 2 + 20px);
+		}
 	}
 </style>
