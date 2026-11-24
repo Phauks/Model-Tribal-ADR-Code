@@ -1,7 +1,7 @@
-import { fail, redirect } from '@sveltejs/kit';
+import { fail } from '@sveltejs/kit';
 import { can } from '#lib/permissions.ts';
 import { cleanAddress } from '#lib/mail.ts';
-import { createBatch, listBatches, listTemplates, outreachReadiness, OutreachError } from '#lib/server/mail/outreach.ts';
+import { listBatches, listTemplates, outreachReadiness } from '#lib/server/mail/outreach.ts';
 import { mailCarriers, mailContext } from '#lib/server/mail/runtime.ts';
 import { liftSuppression, listSuppressions, suppress, suppressionLabels } from '#lib/server/mail/suppressions.ts';
 import { formText, requirePermission } from '#lib/server/workspace.ts';
@@ -25,37 +25,7 @@ export const load: PageServerLoad = async (event) => {
 	};
 };
 
-function whole(form: FormData, name: string, fallback: number): number {
-	const value = Number(formText(form, name, 10) ?? fallback);
-	return Number.isFinite(value) ? Math.round(value) : fallback;
-}
-
 export const actions: Actions = {
-	newBatch: async (event) => {
-		const person = requirePermission(event, 'send-outreach');
-		const form = await event.request.formData();
-		const name = formText(form, 'name', 120);
-		const template = formText(form, 'template', 100);
-		if (!name || !template) return fail(400, { problem: 'Give the batch a name and choose a template.' });
-		const followUp = formText(form, 'followUpDays', 3);
-		let identifier: string;
-		try {
-			identifier = await createBatch(mailContext(), person.identifier, {
-				name,
-				templateIdentifier: template,
-				perDay: whole(form, 'perDay', 40),
-				windowStartHour: Math.min(23, Math.max(0, whole(form, 'windowStart', 9))),
-				windowEndHour: Math.min(24, Math.max(1, whole(form, 'windowEnd', 15))),
-				weekdaysOnly: form.get('weekdaysOnly') === 'yes',
-				followUpDays: followUp ? Math.min(90, Math.max(1, Number(followUp) || 14)) : null,
-				askAcknowledgment: form.get('askAcknowledgment') === 'yes'
-			});
-		} catch (problem) {
-			if (problem instanceof OutreachError) return fail(400, { problem: problem.message });
-			throw problem;
-		}
-		redirect(303, `/workspace/outreach/${identifier}`);
-	},
 	suppress: async (event) => {
 		const person = requirePermission(event, 'manage-mail');
 		const form = await event.request.formData();

@@ -317,6 +317,15 @@ blockquote > footer {
 	padding-left: var(--space-5);
 }
 
+/* Two label and value lists in a row, such as a nation's courts and then who may practice before them, read as one list with no gap or double rule. */
+.summary-list:has(+ .summary-list) {
+	margin-bottom: 0;
+}
+
+.summary-list + .summary-list {
+	border-top: 0;
+}
+
 /*
  * No bullets unless it is a real list (Trevor, Nov. 23, 2026: nation pages
  * used "so many bullet points"; he chose "label rows"). Several values of one
@@ -1849,6 +1858,50 @@ sup.citation {
 .nation-contacts dd {
 	margin: 0 0 var(--space-2);
 	overflow-wrap: anywhere;
+}
+
+/*
+ * "Edit" on a part of a nation's page, for someone on the nation's team
+ * whose place covers that part (design/nation-editors, screen 2). Every page
+ * has the links, hidden; NationEditorBanner.svelte names the person's parts
+ * on the root, which shows theirs at the top right of the part.
+ */
+.nation-edit-link {
+	display: none;
+}
+
+:root[data-nation-edit~='about'] .nation-edit-link[data-edit-part='about'],
+:root[data-nation-edit~='courts-and-dispute-resolution'] .nation-edit-link[data-edit-part='courts-and-dispute-resolution'],
+:root[data-nation-edit~='statements'] .nation-edit-link[data-edit-part='statements'],
+:root[data-nation-edit~='contacts'] .nation-edit-link[data-edit-part='contacts'] {
+	position: absolute;
+	z-index: 1;
+	display: inline-flex;
+	align-items: center;
+	gap: var(--space-1);
+	color: var(--color-link);
+	font-size: var(--font-size-small);
+	font-weight: var(--font-weight-semibold);
+	text-decoration: none;
+}
+
+.nation-edit-link:hover {
+	text-decoration: underline;
+}
+
+.nation-words,
+details:has(> .nation-edit-link) {
+	position: relative;
+}
+
+.nation-words > .nation-edit-link {
+	top: var(--space-3);
+	right: var(--space-4);
+}
+
+details > .nation-edit-link {
+	top: var(--space-2);
+	right: 0;
 }
 
 .nation-hidden-note {
