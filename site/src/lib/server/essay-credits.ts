@@ -14,6 +14,7 @@ import { carryForward, expandOverlay, freshBlame, overlayKey, sectionHistories, 
 import { eventStatement } from './events.ts';
 import { newIdentifier, now } from './identifiers.ts';
 import { readVersionText } from './essays.ts';
+import { inGroupsOf, placeholdersFor } from '#lib/server/database-groups.ts';
 
 /** Changes when the way blame is worked out changes, so older files are worked out again. */
 const blameFormat = 2;
@@ -113,10 +114,9 @@ export async function sectionCredits(database: D1Database, bucket: R2Bucket, ess
 	const histories = sectionHistories(found.text, found.blame, headings);
 	const people = [...new Set(histories.flatMap((history) => history.parts.map((part) => part.person)))];
 	const names = new Map<string, string>();
-	for (let index = 0; index < people.length; index += 50) {
-		const batch = people.slice(index, index + 50);
+	for (const batch of inGroupsOf(people, 50)) {
 		const { results } = await database
-			.prepare(`SELECT identifier, display_name AS name FROM people WHERE identifier IN (${batch.map(() => '?').join(', ')})`)
+			.prepare(`SELECT identifier, display_name AS name FROM people WHERE identifier IN (${placeholdersFor(batch)})`)
 			.bind(...batch)
 			.all<{ identifier: string; name: string }>();
 		for (const row of results) names.set(row.identifier, row.name);
@@ -202,9 +202,7 @@ export interface ReaderName {
  */
 export async function readerNames(database: D1Database, people: string[]): Promise<Map<string, ReaderName>> {
 	const names = new Map<string, ReaderName>();
-	for (let index = 0; index < people.length; index += 50) {
-		const batch = people.slice(index, index + 50);
-		if (batch.length === 0) continue;
+	for (const batch of inGroupsOf(people, 50)) {
 		const { results } = await database
 			.prepare(
 				`SELECT profiles.person_identifier AS person, profiles.status, profiles.public_slug AS slug, versions.snapshot
@@ -212,7 +210,7 @@ export async function readerNames(database: D1Database, people: string[]): Promi
 				 JOIN contributor_profile_versions AS versions
 				   ON versions.profile_identifier = profiles.identifier AND versions.version = profiles.confirmed_version
 				 JOIN people ON people.identifier = profiles.person_identifier
-				 WHERE people.role != 'advisor' AND profiles.person_identifier IN (${batch.map(() => '?').join(', ')})`
+				 WHERE people.role != 'advisor' AND profiles.person_identifier IN (${placeholdersFor(batch)})`
 			)
 			.bind(...batch)
 			.all<{ person: string; status: string; slug: string | null; snapshot: string }>();
