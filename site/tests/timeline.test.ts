@@ -5,6 +5,7 @@ import {
 	byDate,
 	clampRange,
 	countsByBar,
+	mentionBits,
 	entryCitation,
 	eraOf,
 	extentOf,
@@ -65,7 +66,7 @@ describe('zooming', () => {
 	const extent = { from: 1840, to: 2030 };
 
 	it('covers every entry with a little room at each end', () => {
-		const span = extentOf([entry('1849-09-09'), entry('2023-06-22')], [{ year: 2016, count: 3, peacemaking: 0 }]);
+		const span = extentOf([entry('1849-09-09'), entry('2023-06-22')], [{ year: 2016, count: 3 }]);
 		expect(span.from).toBeLessThan(1849);
 		expect(span.to).toBeGreaterThan(2023);
 	});
@@ -88,28 +89,31 @@ describe('zooming', () => {
 	it('counts records into bars', () => {
 		const bars = countsByBar(
 			[
-				{ year: 1982, count: 64, peacemaking: 1 },
-				{ year: 1983, count: 81, peacemaking: 1 },
+				{ year: 1982, count: 64 },
+				{ year: 1983, count: 81 },
 				{ year: 1985, count: 11 }
 			],
 			5
 		);
-		expect(bars.get(1980)).toEqual({ count: 145, peacemaking: 2 });
-		expect(bars.get(1985)).toEqual({ count: 11, peacemaking: 0 });
+		expect(bars.get(1980)).toEqual({ count: 145 });
+		expect(bars.get(1985)).toEqual({ count: 11 });
 	});
 });
 
 describe('the Mentions filter', () => {
+	const words = ['gaming', 'peacemaking', 'mediation'];
+	const bits = (...chosen: string[]) => mentionBits(chosen, words);
 	const years = [
-		{ year: 1982, count: 64, peacemaking: 3, mediation: 2, both: 1 },
-		{ year: 1983, count: 81, peacemaking: 0, mediation: 0, both: 0 }
+		{ year: 1982, count: 64, mentions: [bits('peacemaking'), bits('peacemaking'), bits('peacemaking', 'mediation'), bits('mediation'), bits('gaming')] },
+		{ year: 1983, count: 81 }
 	];
 
-	it('counts the opinions that mention what is checked, each once', () => {
-		expect(mentioning(years, { peacemaking: false, mediation: false })).toBe(years);
-		expect(mentioning(years, { peacemaking: true, mediation: false })).toEqual([{ ...years[0], count: 3 }]);
-		expect(mentioning(years, { peacemaking: false, mediation: true })).toEqual([{ ...years[0], count: 2, peacemaking: 1 }]);
-		expect(mentioning(years, { peacemaking: true, mediation: true })).toEqual([{ ...years[0], count: 4 }]);
+	it('counts the opinions that mention any word checked, each once', () => {
+		expect(mentioning(years, [], words)).toBe(years);
+		expect(mentioning(years, ['peacemaking'], words)).toEqual([{ ...years[0], count: 3 }]);
+		expect(mentioning(years, ['mediation'], words)).toEqual([{ ...years[0], count: 2 }]);
+		expect(mentioning(years, ['peacemaking', 'mediation'], words)).toEqual([{ ...years[0], count: 4 }]);
+		expect(mentioning(years, ['gaming'], words)).toEqual([{ ...years[0], count: 1 }]);
 	});
 });
 
@@ -120,13 +124,13 @@ describe('downloads', () => {
 				{ ...entry('1959-01-12', 'case', 'Williams v. Lee'), citation: '358 U.S. 217 (1959)', link: '/copies/view/williams', nations: ['navajo-nation'] },
 				{ ...entry('1849-09-09', 'treaty', 'Treaty with the Navaho, 1849'), citation: '9 Stat. 974' }
 			],
-			[{ year: 1982, count: 64, peacemaking: 1, nation: 'navajo-nation' }],
+			[{ year: 1982, count: 64, nation: 'navajo-nation' }],
 			{ 'navajo-nation': 'Navajo Nation' },
 			'https://example.org'
 		);
 		expect(rows.map((row) => row.date)).toEqual(['1849-09-09', '1959-01-12', '1982']);
 		expect(rows[1]).toMatchObject({ kind: 'Court decisions', nations: 'Navajo Nation', link: 'https://example.org/copies/view/williams' });
-		expect(rows[2]).toMatchObject({ title: '64 published opinions', detail: '1 mentions peacemaking', link: 'https://example.org/nations/navajo-nation/opinions' });
+		expect(rows[2]).toMatchObject({ title: '64 published opinions', detail: '', link: 'https://example.org/nations/navajo-nation/opinions' });
 		const csv = timelineCsv(rows);
 		expect(csv.split('\r\n')[0]).toBe('Date,Kind,Title,Title (link),Citation,Detail,Nations');
 		expect(csv).toContain('"Treaty with the Navaho, 1849"');

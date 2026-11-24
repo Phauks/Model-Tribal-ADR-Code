@@ -217,7 +217,7 @@
 		kind: TimelineKind;
 		count: number;
 		marks: TimelineEntry[];
-		bars: { start: number; width: number; count: number; peacemaking: number }[];
+		bars: { start: number; width: number; count: number }[];
 		top: number;
 	}
 
@@ -306,7 +306,7 @@
 		era: Era;
 		entries: TimelineEntry[];
 		aggregated: Map<TimelineKind, TimelineEntry[]>;
-		opinions: { count: number; peacemaking: number; from: number; to: number; byNation: Map<string, number>; byYear: Map<number, { count: number; peacemaking: number }> } | undefined;
+		opinions: { count: number; from: number; to: number; byNation: Map<string, number>; byYear: Map<number, number> } | undefined;
 	}
 
 	const groups = $derived.by((): EraGroup[] => {
@@ -331,13 +331,9 @@
 		}
 		for (const year of opinionsInView) {
 			const group = groupOf(eraOf(year.year));
-			const counts = group.opinions ?? { count: 0, peacemaking: 0, from: year.year, to: year.year, byNation: new Map(), byYear: new Map() };
-			const yearCounts = counts.byYear.get(year.year) ?? { count: 0, peacemaking: 0 };
-			yearCounts.count += year.count;
-			yearCounts.peacemaking += year.peacemaking;
-			counts.byYear.set(year.year, yearCounts);
+			const counts = group.opinions ?? { count: 0, from: year.year, to: year.year, byNation: new Map(), byYear: new Map() };
+			counts.byYear.set(year.year, (counts.byYear.get(year.year) ?? 0) + year.count);
 			counts.count += year.count;
-			counts.peacemaking += year.peacemaking;
 			counts.from = Math.min(counts.from, year.year);
 			counts.to = Math.max(counts.to, year.year);
 			if (year.nation) counts.byNation.set(year.nation, (counts.byNation.get(year.nation) ?? 0) + year.count);
@@ -571,9 +567,6 @@
 						{@const left = Math.max(labelWidth, x(bar.start))}
 						{@const barWidth = Math.max(1.5, Math.min(width - right, x(bar.start + bar.width)) - left - 1)}
 						<rect class="bar" x={left} y={middle + (rowHeight - 12) / 2 - height} width={barWidth} height={height} rx="1" />
-						{#if bar.peacemaking > 0}
-							<rect class="peacemaking" x={left} y={middle + (rowHeight - 12) / 2 + 2} width={barWidth} height="3" />
-						{/if}
 					{/each}
 					{#each row.marks as entry (entry.id)}
 						{@const cx = x(yearOf(entry.date))}
@@ -651,9 +644,6 @@
 	<p class="key small muted" aria-hidden="true">
 		<span><svg width="12" height="12"><circle class="key-mark" cx="6" cy="6" r="5" /></svg> Exact date</span>
 		<span><svg width="12" height="12"><circle class="key-mark partial" cx="6" cy="6" r="4.5" /></svg> Year or month only</span>
-		{#if opinions.some((year) => year.peacemaking > 0)}
-			<span><svg width="16" height="8"><rect class="peacemaking" y="5" width="16" height="3" /></svg> Mention peacemaking</span>
-		{/if}
 		{#if entries.some((entry) => entry.context)}
 			<span><svg width="12" height="12"><rect class="key-context" x="2" y="2" width="8" height="8" transform="rotate(45 6 6)" /></svg> Applies to every nation</span>
 		{/if}
@@ -716,16 +706,12 @@
 									{/if}
 								</details>
 							{/if}
-							{#if counts.peacemaking > 0}
-								<span class="detail">{plural(counts.peacemaking, 'mentions', 'mention')} peacemaking</span>
-							{/if}
 							{#if down}
-								{@const most = Math.max(1, ...[...counts.byYear.values()].map((year) => year.count))}
+								{@const most = Math.max(1, ...counts.byYear.values())}
 								<svg class="by-year" width={(counts.to - counts.from + 1) * 7} height="32" aria-hidden="true">
-									{#each [...counts.byYear.entries()] as [year, each] (year)}
-										{@const height = Math.max(2, Math.sqrt(each.count / most) * 26)}
+									{#each [...counts.byYear.entries()] as [year, count] (year)}
+										{@const height = Math.max(2, Math.sqrt(count / most) * 26)}
 										<rect class="bar" x={(year - counts.from) * 7} y={27 - height} width="6" height={height} />
-										{#if each.peacemaking > 0}<rect class="peacemaking" x={(year - counts.from) * 7} y="29" width="6" height="3" />{/if}
 									{/each}
 								</svg>
 							{/if}
@@ -991,10 +977,6 @@
 	.bar {
 		fill: var(--kind-color);
 		opacity: 0.85;
-	}
-
-	.peacemaking {
-		fill: var(--color-action);
 	}
 
 	.mark {
