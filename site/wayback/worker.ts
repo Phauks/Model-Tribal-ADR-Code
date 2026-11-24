@@ -11,6 +11,8 @@
 //
 // Save Page Now 2 API: https://docs.google.com/document/d/1Nsv52MvSjbLb2PCpHlat0gkzw0EvtSgpKHu4mk0MnrA
 
+import type { R2Bucket } from '@cloudflare/workers-types/index.ts';
+
 interface StoredSecret {
 	get(): Promise<string>;
 }
