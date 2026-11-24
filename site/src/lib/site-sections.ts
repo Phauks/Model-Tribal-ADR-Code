@@ -4,6 +4,13 @@
 
 import { libraryOutline } from '#lib/library-pages.ts';
 
+/**
+ * A dot after an entry in an essay's outline while it is edited
+ * (src/lib/essays/editor-outline.ts): changed in the draft, new since the
+ * published version, or in a section someone was asked to review.
+ */
+export type OutlineMark = 'changed' | 'new' | 'review';
+
 /** One entry in a page's outline: a heading on the page, or a page within a section. */
 export type OutlineItem = {
 	label: string;
@@ -14,6 +21,9 @@ export type OutlineItem = {
 	current?: boolean;
 	/** A quieter note after the label, such as "tentative". */
 	note?: string;
+	/** A case, law or analysis box in an essay being edited, shown with its icon; a case's name is in italics. */
+	kind?: 'case' | 'law' | 'analysis';
+	mark?: OutlineMark;
 	children?: OutlineItem[];
 };
 

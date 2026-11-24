@@ -14,7 +14,9 @@
 	// A page about the site, such as the About page (src/lib/server/about-pages.ts),
 	// has no section, and shows the text from git until it is first published.
 	import Breadcrumbs from '../Breadcrumbs.svelte';
-	import { onMount } from 'svelte';
+	import { onDestroy, onMount } from 'svelte';
+	import { editingOutline } from '#lib/essays/editing-outline.svelte.ts';
+	import type { OutlineItem } from '#lib/site-sections.ts';
 	import { figurePlayers } from '#lib/essays/figure-players.ts';
 	import { quoteContext } from '#lib/essays/quote-context-view.ts';
 	import SourceList from '#lib/components/SourceList.svelte';
@@ -134,6 +136,18 @@
 		if (access) rememberView();
 	});
 
+	// While editing or commenting, the sidebar lists the essay as the draft stands, with Your work under it
+	// (essay-editor-mockups/4 and v2-1); reading, it lists the published headings again.
+	function showOutline(items: OutlineItem[]): void {
+		editingOutline.current = { path, items, work: access?.work ?? null };
+	}
+	$effect(() => {
+		if (mode === 'reading') editingOutline.current = null;
+	});
+	onDestroy(() => {
+		if (editingOutline.current?.path === path) editingOutline.current = null;
+	});
+
 	// Back to reading: show what was just saved.
 	let previousMode: typeof mode = 'reading';
 	$effect(() => {
@@ -176,7 +190,7 @@
 		{:then { default: EssayEditor }}
 			{#key mode}
 				<!-- Commenting opens the same draft without editing it, so comments land on the words the authors see. -->
-				<EssayEditor {identifier} text={access.text} version={access.latest.number} canEdit={access.canEdit && mode === 'editing'} autoSave={mode === 'editing'} live startAt={reviewAt ?? null} startThread={commentAt} publishedText={access.publishedText} publishedVersion={access.publishedVersion} yourName={access.you?.name ?? null} onsaved={saved}>
+				<EssayEditor {identifier} text={access.text} version={access.latest.number} canEdit={access.canEdit && mode === 'editing'} autoSave={mode === 'editing'} live startAt={reviewAt ?? null} startThread={commentAt} publishedText={access.publishedText} publishedVersion={access.publishedVersion} yourName={access.you?.name ?? null} onsaved={saved} onoutline={showOutline}>
 					{#snippet barStart()}
 						<EssayModePicker bind:mode canEdit={access!.canEdit} />
 						{#if access!.publishedVersion !== null}<EssayViewPicker bind:view bind:mode />{/if}
