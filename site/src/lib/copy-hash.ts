@@ -5,15 +5,17 @@
  * saved copy line is (src/lib/server/markdown.ts). The site's layout listens for clicks on any
  * page and copies the hash of the button clicked (copyHashOnClick).
  *
- * The hash itself is the button, so it is reached with Tab and copied with Enter or Space. A copy
- * icon follows it and turns to a check, the word "Copied" shows beside it for a moment, and a
- * status line after the button tells a screen reader. Where a line names the hash without showing
- * it, such as "SHA-256" in a citation's saved copy line, the button is the copy icon alone.
+ * The hash itself is the button, so it is reached with Tab and copied with Enter or Space. It is
+ * shaded on hover and glows for a moment once copied, with no icon or word beside it (Trevor, Nov.
+ * 24, 2026: "we don't need it to say copied or have the copy symbol"); a status line after the
+ * button tells a screen reader. Where a line names the hash without showing it, such as "SHA-256"
+ * in a citation's saved copy line, the button is a copy icon alone, which turns to a check and
+ * shows "Copied" beside it.
  */
 import { escapeHtml } from './escape-html.ts';
 import { copyText } from '#lib/clipboard.ts';
 
-/** How long the check and "Copied" show. */
+/** How long the glow, or the check and "Copied", show. */
 export const copiedFor = 2000;
 
 // Lucide 1.77.0 (ISC; LICENSES/Lucide.txt): copy and check, written out because the markup is also built as HTML text.
@@ -32,7 +34,7 @@ export function copyHashHtml(sha256: string, options: { label?: string; iconOnly
 	// A shown hash is the button's own name, so what a reader sees is what a screen reader says (WCAG 2.5.3).
 	const body = options.iconOnly
 		? `${copyIcon}${checkIcon}`
-		: `<code class="copy-hash-text">${hash}</code><span class="visually-hidden">, copy the SHA-256${of}</span>${copyIcon}${checkIcon}`;
+		: `<code class="copy-hash-text">${hash}</code><span class="visually-hidden">, copy the SHA-256${of}</span>`;
 	const name = options.iconOnly ? ` aria-label="Copy the SHA-256${of}"` : '';
 	return (
 		`<span class="copy-hash${options.iconOnly ? ' copy-hash-icon-only' : ''}">` +
