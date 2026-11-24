@@ -16,6 +16,7 @@
 	import Breadcrumbs from '../Breadcrumbs.svelte';
 	import { onDestroy, onMount } from 'svelte';
 	import { editingOutline } from '#lib/essays/editing-outline.svelte.ts';
+	import { newEssayPlace, partSections } from '#lib/essays/new-essay.svelte.ts';
 	import type { OutlineItem } from '#lib/site-sections.ts';
 	import { figurePlayers } from '#lib/essays/figure-players.ts';
 	import { quoteContext } from '#lib/essays/quote-context-view.ts';
@@ -144,8 +145,14 @@
 	$effect(() => {
 		if (mode === 'reading') editingOutline.current = null;
 	});
+	// "New essay" beside the section in the sidebar, for someone who may start one (new-essay.svelte.ts).
+	$effect(() => {
+		const part = Object.keys(partSections).find((candidate) => partSections[candidate] === sectionLink);
+		if (access?.canStart && part && sectionLink) newEssayPlace.current = { sectionLink, part };
+	});
 	onDestroy(() => {
 		if (editingOutline.current?.path === path) editingOutline.current = null;
+		if (newEssayPlace.current?.sectionLink === sectionLink) newEssayPlace.current = null;
 	});
 
 	// Back to reading: show what was just saved.
@@ -206,7 +213,7 @@
 				</EssayEditor>
 			{/key}
 		{:catch}
-			<p class="small">The editor could not be opened. <a href="/workspace/essays/{identifier}/edit">Open it in the workspace</a>.</p>
+			<p class="small">The editor could not be opened. Reload the page to try again.</p>
 		{/await}
 	{:else}
 		<div class="essay-text" use:figurePlayers use:quoteContext={shown.html}>

@@ -203,7 +203,7 @@
 <section>
 	<h2>How content changes</h2>
 	<p>
-		Essays are written and edited here, under <a href="/workspace/essays">Essays</a>. Every save
+		Essays are written and edited on their own pages: open one and choose Editing, or start one with the plus beside <a href="/essays">Essays</a> or <a href="/foundations">Foundations</a>. Every save
 		keeps a version that is never overwritten, and publishing a version puts it on the website. The
 		text of the code and the nation records lives in the repository’s files and changes only by pull
 		request, so every change has a history. This workspace also records who approved which version,

@@ -12,6 +12,8 @@
 	import { filterEntries, letterGroups, type SectionContents } from '#lib/sidebar-outline.ts';
 	import type { OutlineItem, SiteSection } from '#lib/site-sections.ts';
 	import SidebarTree from './SidebarTree.svelte';
+	import NewEssayButton from '#lib/components/essays/NewEssayButton.svelte';
+	import { newEssayPlace } from '#lib/essays/new-essay.svelte.ts';
 
 	let {
 		idSuffix,
@@ -50,9 +52,11 @@
 	const listId = $derived(`sidebar-column-${idSuffix}`);
 </script>
 
-<p class="column-title">
+<!-- "New essay" sits beside the section's name, as in essay-editor-mockups/4 and v2-1 (new-essay.svelte.ts). -->
+<div class="column-title">
 	<a href={section.link} aria-current={sectionIsCurrent ? 'page' : undefined}>{section.label}</a>
-</p>
+	{#if newEssayPlace.current?.sectionLink === section.link}<NewEssayButton part={newEssayPlace.current.part} sectionLabel={section.label} size={18} compact />{/if}
+</div>
 {#if outlineTitle}<p class="outline-title">{outlineTitle}</p>{/if}
 {#if contents.pages.length > 0}
 	<SidebarTree items={contents.pages} listId="{listId}-pages" flush {isActive} {isCurrent} {isOpen} {ontoggle} />
@@ -96,10 +100,15 @@
 
 <style>
 	.column-title {
+		display: flex;
+		align-items: center;
+		gap: var(--space-2);
 		margin: 0 0 var(--space-2);
+		padding-right: var(--space-2);
 	}
 
 	.column-title a {
+		flex: 1;
 		display: flex;
 		align-items: center;
 		min-height: 2.5rem;

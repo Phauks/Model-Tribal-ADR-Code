@@ -32,7 +32,7 @@
 		<span class="pill pill-new" title={saved}><Plus size={15} aria-hidden="true" /> {state.draft.added} new {state.draft.added === 1 ? 'component' : 'components'}</span>
 	{/if}
 	{#if state.gitConflicts > 0}
-		<a class="pill pill-conflict" href="/workspace/essays">Git changed {state.gitConflicts === 1 ? 'a paragraph' : `${state.gitConflicts} paragraphs`} also edited here</a>
+		<a class="pill pill-conflict" href="/workspace/essays/{state.identifier}">Git changed {state.gitConflicts === 1 ? 'a paragraph' : `${state.gitConflicts} paragraphs`} also edited here</a>
 	{/if}
 </p>
 
