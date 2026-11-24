@@ -53,22 +53,36 @@ export const fixtureAccounts = {
 	reader: { email: 'reader@example.org', name: 'Fixture Reader', role: null, twoStep: false }
 };
 
+/** @typedef {keyof typeof fixtureAccounts} FixtureAccount */
+
+/** @param {FixtureAccount} key */
 const accountIdentifier = (key) => `fixture-account-${key}`;
+/** @param {FixtureAccount} key */
 const personIdentifier = (key) => `fixture-person-${key}`;
 
-/** A value written into SQL: text in single quotes, with quotes doubled. */
+/**
+ * A value written into SQL: text in single quotes, with quotes doubled.
+ * @param {string | number | null | undefined} value
+ */
 function sql(value) {
 	if (value === null || value === undefined) return 'NULL';
 	if (typeof value === 'number') return String(value);
 	return `'${String(value).replaceAll("'", "''")}'`;
 }
 
+/**
+ * @param {string} table
+ * @param {Record<string, string | number | null | undefined>} row
+ */
 function insert(table, row, conflict = 'ON CONFLICT DO NOTHING') {
 	const columns = Object.keys(row);
 	return `INSERT INTO ${table} (${columns.join(', ')}) VALUES (${columns.map((column) => sql(row[column])).join(', ')}) ${conflict};`;
 }
 
-/** Runs Wrangler on the local copy. --local is always given; there is no way to ask for --remote here. */
+/**
+ * Runs Wrangler on the local copy. --local is always given; there is no way to ask for --remote here.
+ * @param {string[]} argumentsList
+ */
 function wrangler(argumentsList, { quiet = false } = {}) {
 	return execFileSync('npx', ['wrangler', ...argumentsList, '--local'], {
 		encoding: 'utf8',
@@ -77,7 +91,10 @@ function wrangler(argumentsList, { quiet = false } = {}) {
 	});
 }
 
-/** Runs SQL statements on the local copy of the database. */
+/**
+ * Runs SQL statements on the local copy of the database.
+ * @param {string[]} statements
+ */
 export function executeLocally(statements) {
 	const folder = mkdtempSync(path.join(tmpdir(), 'seed-local-database-'));
 	try {
@@ -94,7 +111,12 @@ export function migrateLocally() {
 	wrangler(['d1', 'migrations', 'apply', databaseBinding], { quiet: true });
 }
 
-/** Puts a file in the local copy of the private bucket. */
+/**
+ * Puts a file in the local copy of the private bucket.
+ * @param {string} key
+ * @param {string} text
+ * @param {string} contentType
+ */
 function putLocally(key, text, contentType) {
 	const folder = mkdtempSync(path.join(tmpdir(), 'seed-local-bucket-'));
 	try {
@@ -106,16 +128,19 @@ function putLocally(key, text, contentType) {
 	}
 }
 
+/** @param {string} text */
 const sha256 = (text) => createHash('sha256').update(text).digest('hex');
 
 /**
  * Statements that start a signed-in session for each named fixture account,
  * with the second step done, and the tokens to put in the session cookie
  * (__Host-session, src/lib/server/accounts.ts).
+ * @param {FixtureAccount[]} keys
  */
 export function fixtureSessions(keys, hours = 2) {
 	const started = new Date();
 	const expires = new Date(started.getTime() + hours * 60 * 60 * 1000);
+	/** @type {Partial<Record<FixtureAccount, string>>} */
 	const tokens = {};
 	const statements = keys.map((key) => {
 		const token = randomBytes(32).toString('base64url');
@@ -155,6 +180,7 @@ A second paragraph, with *emphasis* and a [link to the charter](/charter).
 
 export async function fixtureStatements() {
 	const time = new Date();
+	/** @param {number} days */
 	const at = (days) => new Date(time.getTime() + days * 24 * 60 * 60 * 1000).toISOString();
 	const added = at(-30);
 	const statements = [];
@@ -162,7 +188,8 @@ export async function fixtureStatements() {
 	// Kept as the site keeps it while PASSWORD_KEY is not set, as on a local copy.
 	const storedSecret = await sealSecret(fixtureAuthenticatorSecret, undefined);
 
-	for (const [key, account] of Object.entries(fixtureAccounts)) {
+	for (const key of /** @type {FixtureAccount[]} */ (Object.keys(fixtureAccounts))) {
+		const account = fixtureAccounts[key];
 		const salt = randomBytes(16).toString('base64url');
 		statements.push(
 			insert('accounts', {
@@ -433,7 +460,7 @@ async function main() {
 		console.log(`  ${account.email.padEnd(width)}  ${account.role ?? 'reader, no workspace access'}${account.twoStep ? ', two-step' : ''}`);
 	}
 	console.log(`Password for each: ${fixturePassword}`);
-	console.log(`Two-step code now: ${await currentCode()} (npm run database:seed:local -- --code prints the next one)`);
+	console.log(`Two-step code now: ${await currentCode()} (npm run database:seed:local -- --code prints it again later)`);
 	console.log(`Authenticator app: ${authenticatorLink(fixtureAuthenticatorSecret, fixtureAccounts.leadAuthor.email)}`);
 	if (note) console.log(note);
 }
