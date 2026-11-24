@@ -481,6 +481,7 @@
 							})}
 						>
 							<img
+								class="image-backing"
 								src={data.image.src}
 								alt={description}
 								loading="lazy"

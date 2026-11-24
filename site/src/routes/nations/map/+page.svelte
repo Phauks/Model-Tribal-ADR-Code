@@ -538,7 +538,7 @@
 					<div class="preview-head">
 						{#if detail?.image && shownPreview.nation && !hiddenImages[shownPreview.nation]}
 							{@const id = shownPreview.nation}
-							<img class="preview-image" src={detail.image.src} alt="{detail.image.kind} of {shownPreview.title}" width="64" height="64" onerror={() => (hiddenImages[id] = true)} />
+							<img class="preview-image image-backing" src={detail.image.src} alt="{detail.image.kind} of {shownPreview.title}" width="64" height="64" onerror={() => (hiddenImages[id] = true)} />
 						{/if}
 						<h3 id="map-preview-title" tabindex="-1" bind:this={previewHeading}>
 							{shownPreview.title}{#if shownPreview.badges}{' '}<RecognitionBadges badges={shownPreview.badges} size="small" />{/if}
