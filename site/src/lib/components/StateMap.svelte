@@ -10,6 +10,8 @@
 
 	let wanted = $state(true);
 	let ready = $state(false);
+	/** Said to screen readers when the map cannot start and the page keeps its table alone. */
+	let problem = $state('');
 </script>
 
 {#if wanted}
@@ -20,7 +22,10 @@
 			opening={bounds}
 			onselect={(anchor) => location.assign(anchor.startsWith('/') ? anchor : `/nations/map#${anchor}`)}
 			onready={() => (ready = true)}
-			onfail={() => (wanted = false)}
+			onfail={() => {
+				wanted = false;
+				problem = 'The interactive map could not be loaded.';
+			}}
 		/>
 		<figcaption>
 			<ul class="legend" aria-label="Key">
@@ -32,6 +37,7 @@
 		</figcaption>
 	</figure>
 {/if}
+<p class="visually-hidden" role="status">{problem}</p>
 
 <style>
 	/* The map fits in the window with its key, so its buttons are always in sight. */

@@ -123,11 +123,19 @@
         let key = str(marker.value)
         box-pages.insert(key, box-pages.at(key, default: ()) + (marker.location().page(),))
       }
-      if box-pages.values().any(pages => number in pages and (number + 1) in pages) {
-        align(right, text(size: type.running_head * 1pt, style: "italic", [Continued on next page]))
-      }
-      if page-has(<no-header>, number) and not page-has(<no-folio>, number) and not is-blank(number) {
-        align(center, text(size: type.running_head * 1pt, counter(page).display()))
+      let continued = box-pages.values().any(pages => number in pages and (number + 1) in pages)
+      let folio-at-foot = page-has(<no-header>, number) and not page-has(<no-folio>, number) and not is-blank(number)
+      let note = text(size: type.running_head * 1pt, style: "italic", [Continued on next page])
+      let folio = text(size: type.running_head * 1pt, counter(page).display())
+      // On a chapter's opening page the folio is at the foot too; both share
+      // one line, so the folio stays where it always is, inside the safety
+      // margin (a second line pushed it 0.004 in past it).
+      if continued and folio-at-foot {
+        grid(columns: (1fr, auto, 1fr), [], folio, align(right, note))
+      } else if continued {
+        align(right, note)
+      } else if folio-at-foot {
+        align(center, folio)
       }
     },
   )

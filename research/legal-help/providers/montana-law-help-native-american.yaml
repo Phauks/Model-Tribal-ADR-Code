@@ -1,0 +1,90 @@
+id: montana-law-help-native-american
+name: Native American pages, MontanaLawHelp.org
+kind: legal-information-site
+operator: nonprofit
+link: https://montanalawhelp.org/issues/native-american
+link_label: Native American
+services:
+- legal-information
+- forms
+who_can_use: Anyone.
+serves:
+- states:
+  - MT
+  scope: named-nations
+  nations:
+  - blackfeet-tribe-of-the-blackfeet-indian-reservation-of-montana
+  link: https://montanalawhelp.org/issues/native-american/blackfeet-reservation
+  text: A page of articles and resources for use on the reservation or in its tribal court.
+  source: montana-law-help-native-american-index
+- states:
+  - MT
+  scope: named-nations
+  nations:
+  - chippewa-cree-indians-of-the-rocky-boys-reservation
+  link: https://montanalawhelp.org/issues/native-american/rocky-boy-reservation
+  text: A page of articles and resources for use on the reservation or in its tribal court.
+  source: montana-law-help-native-american-index
+- states:
+  - MT
+  scope: named-nations
+  nations:
+  - confederated-salish-and-kootenai-tribes-of-the-flathead-reservation
+  link: https://montanalawhelp.org/issues/native-american/flathead-reservation
+  text: A page of articles and resources for use on the reservation or in its tribal court.
+  source: montana-law-help-native-american-index
+- states:
+  - MT
+  scope: named-nations
+  nations:
+  - crow-tribe-of-montana
+  link: https://montanalawhelp.org/issues/native-american/crow-reservation
+  text: A page of articles and resources for use on the reservation or in its tribal court.
+  source: montana-law-help-native-american-index
+- states:
+  - MT
+  scope: named-nations
+  nations:
+  - fort-belknap-indian-community-of-the-fort-belknap-reservation-of-montana
+  link: https://montanalawhelp.org/issues/native-american/fort-belknap-reservation
+  text: A page of articles and resources for use on the reservation or in its tribal court.
+  source: montana-law-help-native-american-index
+- states:
+  - MT
+  scope: named-nations
+  nations:
+  - assiniboine-and-sioux-tribes-of-the-fort-peck-indian-reservation
+  link: https://montanalawhelp.org/issues/native-american/fort-peck-reservation
+  text: A page of articles and resources for use on the reservation or in its tribal court.
+  source: montana-law-help-native-american-index
+- states:
+  - MT
+  scope: named-nations
+  nations:
+  - little-shell-tribe-of-chippewa-indians-of-montana
+  link: https://montanalawhelp.org/issues/native-american/little-shell-tribe
+  text: A page of articles and resources for use on the reservation or in its tribal court.
+  source: montana-law-help-native-american-index
+- states:
+  - MT
+  scope: named-nations
+  nations:
+  - northern-cheyenne-tribe-of-the-northern-cheyenne-indian-reservation
+  link: https://montanalawhelp.org/issues/native-american/northern-cheyenne-reservation
+  text: A page of articles and resources for use on the reservation or in its tribal court.
+  source: montana-law-help-native-american-index
+- states:
+  - MT
+  scope: statewide
+  text: General tribal resources, wills for Native Americans, and ICWA pages.
+  source: montana-law-help-native-american-index
+sources:
+- id: montana-law-help-native-american-index
+  title: Native American
+  publisher: MontanaLawHelp.org
+  link: https://montanalawhelp.org/issues/native-american
+  accessed: '2026-11-24'
+  verification: page-read
+  supports: Index of the eight reservation and tribe pages plus general pages; the Crow page lists the tribal code, constitution and court contact.
+note: Run with Montana Legal Services Association; the state’s Court Help Program runs self-help centers in state courthouses.
+checked: '2026-11-24'

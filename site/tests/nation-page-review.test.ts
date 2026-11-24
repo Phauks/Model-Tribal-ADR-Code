@@ -3,7 +3,7 @@ import type { D1Database } from '@cloudflare/workers-types/index.ts';
 import { isOverdue, pauseProblem, reviewDue } from '#lib/nation-page-review.ts';
 import { termEnd } from '#lib/nation-teams.ts';
 import { checkSeals, sealNewEntries } from '#lib/server/activity-seals.ts';
-import { liveChanges, publishChange, saveDraft } from '#lib/server/nation-page-changes.ts';
+import { historiesOf, historyOf, liveChanges, publishChange, saveDraft } from '#lib/server/nation-page-changes.ts';
 import {
 	answerPause,
 	currentPause,
@@ -17,7 +17,7 @@ import {
 	undoChange,
 	undoneChanges
 } from '#lib/server/nation-page-review.ts';
-import { addPlace } from '#lib/server/nation-teams.ts';
+import { addPlace, teamOf, teamsOf } from '#lib/server/nation-teams.ts';
 import { defaultFilters } from '#lib/page-history.ts';
 import { changeDetail, listChanges } from '#lib/server/page-history.ts';
 import { matchSignIn, type SignedInPerson } from '#lib/server/people.ts';
@@ -165,5 +165,33 @@ describe('the project’s review in the database', () => {
 		expect(onlyTeams.changes.map((change) => change.id)).toEqual([nationChanges[0].id]);
 		const detail = await changeDetail(database, undefined as never, nationChanges[0].id, new Map());
 		expect(detail?.comparison.kind).toBe('parts');
+	});
+
+	it('reads the teams and histories of several nations in one query each, as one nation at a time did', async () => {
+		const hopi = 'hopi-tribe';
+		await addPlace(
+			database,
+			{ nationIdentifier: hopi, email: 'h@hopi.example', displayName: 'h', level: 'steward', parts: null, office: null, expiresAt: termEnd(365), basis: null, addedByProject: false },
+			lead
+		);
+		await addPlace(
+			database,
+			{ nationIdentifier: navajo, email: 'd@navajo.example', displayName: 'Another', level: 'drafter', parts: null, office: null, expiresAt: termEnd(365), basis: null, addedByProject: false },
+			lead
+		);
+		await publishChange(database, about('First words.'), editor, new Date('2026-11-01T00:00:00Z'));
+		await publishChange(database, about('Second words.'), editor, new Date('2026-11-02T00:00:00Z'));
+		await saveDraft(database, about('Not yet.'), editor);
+		const nations = [navajo, hopi, 'no-such-nation'];
+		const at = new Date().toISOString();
+		const [teams, histories] = await Promise.all([teamsOf(database, nations, at), historiesOf(database, nations)]);
+		for (const nation of nations) {
+			expect(teams.get(nation)).toEqual(await teamOf(database, nation, at));
+			expect(histories.get(nation)).toEqual(await historyOf(database, nation));
+		}
+		expect(teams.get(navajo)).toHaveLength(2);
+		expect(teams.get(hopi)).toHaveLength(1);
+		expect(histories.get(navajo)).toHaveLength(2);
+		expect((await teamsOf(database, [])).size).toBe(0);
 	});
 });

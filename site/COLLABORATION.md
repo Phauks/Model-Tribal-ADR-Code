@@ -160,7 +160,7 @@ Content on the public site changes only by pull request, so any change can be re
 `/workspace/activity` (lead author only) lists everything done in the workspace, newest first, filtered by kind or person: invitations, role and access changes, reviews, requests, saved document versions, contributor profile changes, and refused attempts.
 
 - **Entries cannot be changed or deleted.** The database refuses (triggers in `migrations/0002_permission_tiers.sql`).
-- **Entries are sealed.** Each entry's seal is the SHA-256 hash of the entry and the seal before it, so changing, removing or reordering an entry breaks every seal after it (`src/lib/server/activity-seals.ts`; Schneier & Kelsey 1999). New entries are sealed after each change, and the whole chain is checked each time the Access or Activity page opens. The result shows on both pages and on the Overview.
+- **Entries are sealed.** Each entry's seal is the SHA-256 hash of the entry and the seal before it, so changing, removing or reordering an entry breaks every seal after it (`src/lib/server/activity-seals.ts`; Schneier & Kelsey 1999). New entries are sealed after each change. The whole chain is checked each time the Activity page opens and every hour by the scheduled run (`/activity-log/scheduled`), which records how far it is intact, or the first broken entry, in `event_seal_checkpoint`. The Access page and the Overview check only the entries after that checkpoint and show any problem the whole-chain check found. The result shows on all three pages.
 - **What it cannot do.** Someone with full control of the Cloudflare account could remove the rules and write a new, consistent chain. To catch that, the Activity page shows the latest seal and offers the whole log with its seals as a download; keep a copy now and then somewhere outside Cloudflare. D1 Time Travel can restore the database to an earlier minute (Cloudflare, *Time Travel and backups*).
 - **Personal details.** Because entries cannot be edited, do not put a requester's contact details in request notes: the 12-month deletion of personal details (docs/requests.md) cannot reach the log.
 
@@ -292,7 +292,7 @@ The tables are created by the files in `migrations/`. Workers Builds does not ru
 npm run database:migrate:remote   # wrangler d1 migrations apply database --remote
 ```
 
-Wrangler records which migrations ran, so running it again is safe. For the copy used by `npm run preview`, use `npm run database:migrate:local`. To write a new migration, run `npm run database:new-migration -- "what it does"`; new files are named for the UTC time and what they do, such as `20261123T0430_add_file_scans.sql` ([migrations/README.md](migrations/README.md)).
+Wrangler records which migrations ran, so running it again is safe. For the local copy that `npm run preview` uses, see [First run](README.md#first-run): `npm run database:seed:local` applies the migrations there and adds made-up people and records. To write a new migration, run `npm run database:new-migration -- "what it does"`; new files are named for the UTC time and what they do, such as `20261123T0430_add_file_scans.sql` ([migrations/README.md](migrations/README.md)).
 
 ### First sign-in
 
@@ -305,20 +305,6 @@ npm run sign-in-link -- lead@example.org   # works once, for one hour
 The same command helps anyone who has lost both their password and access to their email.
 
 The Workspace group in the left sidebar has a People page, where co-authors, advisors, editors, contributors and nation reviewers are added by email address, and an Access page, where their level on each document is raised or lowered. Each person signs in at `/sign-in` with that address, or with the link the People page gives you for them. Their access starts at their first sign-in.
-
-## Database
-
-The tables are created by the files in `migrations/`. Workers Builds does not run them, because its automatically created API token does not include D1 permission (Cloudflare, ["Workers Builds configuration: API token"](https://developers.cloudflare.com/workers/ci-cd/builds/configuration/#api-token)). Apply them once per new migration, from `site/` (migration 0002 adds access levels and the sealed activity log; apply it before deploying the code that uses it):
-
-```sh
-npm run database:migrate:remote   # wrangler d1 migrations apply database --remote
-```
-
-Wrangler records which migrations ran, so running it again is safe. For the copy used by `npm run preview`, use `npm run database:migrate:local`. To write a new migration, run `npm run database:new-migration -- "what it does"`; new files are named for the UTC time and what they do, such as `20261123T0430_add_file_scans.sql` ([migrations/README.md](migrations/README.md)).
-
-### First sign-in
-
-Open `/sign-in` and sign in with the `LEAD_AUTHOR_EMAIL` address. The Workspace group in the left sidebar has a People page, where co-authors, advisors, editors, contributors and nation reviewers are added by email address, and an Access page, where their level on each document is raised or lowered. Tell each person to sign in at `/sign-in` with that address; their access starts at their first sign-in.
 
 ## Database
 

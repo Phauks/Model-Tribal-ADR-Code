@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest';
-import { boxMarkdown, fillBoxes, quoteAttribution, type RecordBox } from '#lib/essays/record-boxes.ts';
+import { boxMarkdown, fillBoxes, quoteAttribution, readingMarkdown, type RecordBox } from '#lib/essays/record-boxes.ts';
 import { renderEssay, type EssayLibrary } from '#lib/essays/render.ts';
 import { taggedCases } from '#lib/essays/case-topics.ts';
 
@@ -84,6 +84,28 @@ describe('a box kept on the record', () => {
 		expect(origin.slice(0, 3)).toEqual([0, 1, 2]);
 		expect(origin[3]).toBe(2);
 		expect(origin.at(-1)).toBe(5);
+	});
+
+	it('places the record\'s reading right after the box, as the Analysis block the essay used to hold', () => {
+		const reading: RecordBox = { ...worcester, reading: { title: '*Worcester v. Georgia* (1832)', text: 'The core statement of inherent Native sovereignty.' } };
+		const analysis = '::: analysis *Worcester v. Georgia* (1832)\nThe core statement of inherent Native sovereignty.\n:::';
+		expect(readingMarkdown(reading)).toBe(analysis);
+		expect(readingMarkdown(worcester)).toBe('');
+		expect(boxMarkdown('case', 'worcester-v-georgia', reading)).toBe(boxMarkdown('case', 'worcester-v-georgia', worcester));
+		const withReading: EssayLibrary = {
+			...library,
+			box: (kind, key) => boxMarkdown(kind, key, key === 'worcester-v-georgia' ? reading : undefined) || undefined,
+			boxReading: (kind, key) => readingMarkdown(key === 'worcester-v-georgia' ? reading : undefined) || undefined
+		};
+		const essay = 'Before.\n\n:::: case worcester-v-georgia\n::::\n\nAfter.';
+		const { text, origin } = fillBoxes(essay, withReading.box!, withReading.boxReading);
+		expect(text).toBe(`Before.\n\n${written}\n\n${analysis}\n\nAfter.`);
+		expect(text.split('\n')).toHaveLength(origin.length);
+		expect(origin.at(-3)).toBe(3);
+		expect(origin.at(-1)).toBe(5);
+		const fromRecord = renderEssay(essay, withReading);
+		const fromEssay = renderEssay(`Before.\n\n${written}\n\n${analysis}\n\nAfter.`, { ...library, box: undefined });
+		expect(fromRecord.html).toBe(fromEssay.html);
 	});
 
 	it('leaves a box written out in the essay, and a box with no record, as they are', () => {

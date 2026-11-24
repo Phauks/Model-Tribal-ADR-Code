@@ -228,6 +228,7 @@
 </div>
 
 {#snippet option(choice: SearchableChoice<Value>, index: number)}
+	<!-- Keys move through the choices from the box, which keeps focus (aria-activedescendant); the click is for the pointer. -->
 	<!-- svelte-ignore a11y_click_events_have_key_events -->
 	<li
 		id={optionId(index)}

@@ -563,6 +563,35 @@ function describeFindings(findings: readonly PieceFinding[]): string | null {
 	return findings.length === 0 ? null : findings.map((finding) => finding.note).join('\n');
 }
 
+/** Statuses of a file that is not held: refused, taken back, or declined. */
+const notHeld: readonly UploadStatus[] = ['sending', 'not-accepted', 'withdrawn', 'not-used'];
+
+/**
+ * An earlier upload of the same file that is still held, if the sender may
+ * be told of it: one they sent themselves, or, for a pulled file, one any
+ * workspace editor pulled (Intake is shared, and the Your uploads page broke
+ * once on the same article pulled twice). Another sender's file is never
+ * named, because that would tell a sender what someone else sent. Essay
+ * figures are left out: the same picture may belong in two essays.
+ */
+async function heldCopy(
+	database: D1Database,
+	upload: UploadRow,
+	fingerprint: string
+): Promise<{ reference: string } | null> {
+	if (upload.way_in !== 'send-files' || !upload.account_identifier) return null;
+	return database
+		.prepare(
+			`SELECT reference FROM uploads
+			 WHERE fingerprint = ? AND identifier <> ? AND way_in = 'send-files'
+			   AND status NOT IN (${notHeld.map(() => '?').join(', ')})
+			   AND (account_identifier = ? OR (? = 1 AND from_pull_list = 1))
+			 ORDER BY received_at LIMIT 1`
+		)
+		.bind(fingerprint, upload.identifier, ...notHeld, upload.account_identifier, upload.from_pull_list)
+		.first<{ reference: string }>();
+}
+
 /** Pieces that have arrived, for picking up after a stop. */
 export async function receivedPieces(database: D1Database, upload: UploadRow): Promise<number[]> {
 	const pieces = await database
@@ -592,11 +621,19 @@ export async function finishUpload(database: D1Database, bucket: R2Bucket, uploa
 	const total = pieces.results.reduce((sum, piece) => sum + piece.size_bytes, 0);
 	if (total !== upload.size_bytes) throw new UploadProblem('The pieces do not add up to the file. Choose it again.', 409);
 
+	// The fingerprint comes from the pieces' hashes, so a second copy is refused before its pieces are joined and kept.
+	const fingerprint = await fileFingerprint(pieces.results.map((piece) => piece.sha256));
+	const earlier = await heldCopy(database, upload, fingerprint);
+	if (earlier) {
+		const reason = `This file was already sent as ${earlier.reference}.`;
+		await refuseFile(database, bucket, upload, reason);
+		throw new UploadProblem(reason, 422);
+	}
+
 	await bucket
 		.resumeMultipartUpload(upload.original_key, upload.multipart_identifier)
 		.complete(pieces.results.map((piece) => ({ partNumber: piece.number, etag: piece.entity_tag })));
 
-	const fingerprint = await fileFingerprint(pieces.results.map((piece) => piece.sha256));
 	const notes = pieces.results
 		.map((piece) => piece.findings)
 		.filter((value): value is string => !!value)

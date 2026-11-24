@@ -1,0 +1,68 @@
+id: new-mexico-legal-aid-native-american-program
+name: Native American Program, New Mexico Legal Aid
+kind: legal-aid
+operator: nonprofit
+link: https://newmexicolegalaid.org/native-american-program
+link_label: Native American Program
+services:
+- legal-advice
+- representation
+who_can_use: Income-eligible Native Americans in the service area (Legal Services Corporation Native American grant).
+lsc:
+- service_area: NNM-4
+  grantee_as_lsc_names_it: New Mexico Legal Aid
+  grant_2026: 700532
+  next_competition: 2029
+serves:
+- states:
+  - NM
+  scope: named-nations
+  text: Serves Native Americans living on or near the Mescalero Indian Reservation & the Pueblo Indian Reservations of Santa Ana, San Felipe, Santo Domingo, Cochiti, Jemez, Zia, Isleta, Sandia, Zuni, Acoma, Laguna Taos, Tesuque, San IIdefonso, Picuris, Santa Clara, Pojoaque, San Juan, and Nambe
+  source: lsc-service-area-nnm-4
+  nations:
+  - mescalero-apache-tribe-of-the-mescalero-reservation
+  - pueblo-of-santa-ana
+  - pueblo-of-san-felipe
+  - santo-domingo-pueblo
+  - pueblo-of-cochiti
+  - pueblo-of-jemez
+  - pueblo-of-zia
+  - pueblo-of-isleta
+  - pueblo-of-sandia
+  - zuni-tribe-of-the-zuni-reservation
+  - pueblo-of-acoma
+  - pueblo-of-laguna
+  - pueblo-of-taos
+  - pueblo-of-tesuque
+  - pueblo-of-san-ildefonso
+  - pueblo-of-picuris
+  - pueblo-of-santa-clara
+  - pueblo-of-pojoaque
+  - ohkay-owingeh
+  - pueblo-of-nambe
+  note: LSC writes “San Juan” for Ohkay Owingeh.
+note: The site resets automated connections; the page was read through a fetch service.
+sources:
+- id: lsc-service-area-nnm-4
+  title: Service area NNM-4
+  publisher: Legal Services Corporation
+  link: https://www.lsc.gov/grants/basic-field-grant/lsc-service-areas/map-lsc-service-areas?area=NNM-4
+  data_link: https://api.lscdataease.org/public/lsc/service_areas/NNM-4/about.json
+  accessed: '2026-11-24'
+  verification: data-read
+  supports: Service area type, current grantee, and the area description quoted in serves.
+- id: lsc-2026-notice-of-intent-to-award
+  title: 'Notice of Intent to Award: Grant Awards for the Delivery of Civil Legal Services to Eligible Low-Income Clients Beginning January 1, 2026'
+  publisher: Legal Services Corporation
+  link: https://lsc-live.app.box.com/s/fleq8j26yivz3potdw5hvpclth90icmp
+  accessed: '2026-11-24'
+  verification: page-read
+  supports: The applicant LSC intended to fund for each Native American service area in 2026, and the grant amount.
+- id: new-mexico-legal-aid-native-american-program
+  title: Native American Program
+  publisher: New Mexico Legal Aid
+  link: https://newmexicolegalaid.org/native-american-program
+  accessed: '2026-11-24'
+  verification: page-read
+  supports: Free legal services for Tribal members living on or near the 19 Pueblos or the Mescalero Apache Nation.
+checked: '2026-11-24'
