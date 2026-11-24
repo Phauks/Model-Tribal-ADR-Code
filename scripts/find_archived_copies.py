@@ -37,6 +37,12 @@ every record that already has a usable capture is cleared first. --minutes M
 stops starting new records after M minutes, so a run finishes inside a job's time limit even when
 the service is slow. The report is rewritten after every record, so a run that
 is stopped part way keeps what it captured.
+Two kinds of link are treated differently. A link already on archive.org is
+itself in the Internet Archive, so it is skipped. A link to a fixed published
+document (FIXED_DOCUMENT_HOSTS: Federal Register documents, GovInfo, Library of
+Congress items and the Kappler treaty texts) takes an existing capture of any
+age, because the document at that address does not change; such a record is
+looked up once that way even if its state says it was looked up recently.
 Uses only the Python standard library, plus PyYAML from requirements.txt.
 """
 
@@ -61,6 +67,11 @@ SECONDS_BEFORE_RETRY = 60
 SAVE_TIMEOUT = 120
 DAYS_BEFORE_LOOKING_AGAIN = 7
 DAYS_BEFORE_SAVING_AGAIN = 1
+# Sites whose links name a published document that never changes, so a
+# capture of any age is a capture of the same document.
+FIXED_DOCUMENT_HOSTS = ("federalregister.gov", "govinfo.gov", "loc.gov", "treaties.okstate.edu")
+# A link here is already in the Internet Archive.
+INTERNET_ARCHIVE_HOSTS = ("archive.org",)
 
 
 class RedirectedCapture(Exception):
@@ -105,6 +116,11 @@ def host_of(link: str) -> str:
 def as_request_link(link: str) -> str:
     """Percent-encode spaces and other characters a request line cannot carry, leaving the link's own encoding alone."""
     return urllib.parse.quote(link.strip(), safe=":/?#[]@!$&'()*+,;=%~")
+
+
+def on_hosts(link: str, hosts) -> bool:
+    host = host_of(link)
+    return any(host == known or host.endswith("." + known) for known in hosts)
 
 
 def save_capture(link: str):
@@ -209,6 +225,8 @@ def main(arguments: list[str]) -> int:
         record = yaml.safe_load(path.read_text(encoding="utf-8"))
         if record.get("archives") or not record.get("original_link"):
             continue
+        if on_hosts(record["original_link"], INTERNET_ARCHIVE_HOSTS):
+            continue
         seen = state.get(path.stem, {})
         if save and reuse_days is not None and recent(seen.get("save_failed", ""), today, DAYS_BEFORE_SAVING_AGAIN):
             continue
@@ -246,8 +264,12 @@ def main(arguments: list[str]) -> int:
     for path, record, seen in candidates:
         link = record["original_link"]
         retrieved = str(record.get("retrieved") or today)[:10]
-        if reuse_days is None or recent(seen.get("looked_up", ""), today, DAYS_BEFORE_LOOKING_AGAIN):
-            needs_save.append((path, record))
+        fixed = on_hosts(link, FIXED_DOCUMENT_HOSTS)
+        looked_up_recently = recent(seen.get("looked_up", ""), today, DAYS_BEFORE_LOOKING_AGAIN)
+        if reuse_days is None or (looked_up_recently and (not fixed or seen.get("looked_up_any_age"))):
+            # Without --save, a record looked up recently has nothing left to try.
+            if save or reuse_days is None:
+                needs_save.append((path, record))
             continue
         if out_of_time():
             stopped = True
@@ -259,11 +281,13 @@ def main(arguments: list[str]) -> int:
         except OSError as error:
             existing, problem = None, f"lookup failed ({error})"
         time.sleep(1)
-        if existing and days_apart(existing["captured"], retrieved) <= reuse_days:
+        if existing and (fixed or days_apart(existing["captured"], retrieved) <= reuse_days):
             finish(path, link, existing, None)
             continue
         if problem is None:
             state.setdefault(path.stem, {})["looked_up"] = today
+            if fixed:
+                state[path.stem]["looked_up_any_age"] = today
         if existing:
             problem = f"closest capture ({existing['captured']}) is more than {reuse_days} days from the retrieval date"
         if save:
@@ -293,7 +317,7 @@ def main(arguments: list[str]) -> int:
         if capture is None:
             try:
                 capture = closest_capture(link, today if save else retrieved)
-                if capture and reuse_days is not None and days_apart(capture["captured"], retrieved) > reuse_days:
+                if capture and reuse_days is not None and not on_hosts(link, FIXED_DOCUMENT_HOSTS) and days_apart(capture["captured"], retrieved) > reuse_days:
                     problem = (problem + "; " if problem else "") + f"closest capture ({capture['captured']}) is more than {reuse_days} days from the retrieval date"
                     capture = None
             except OSError as error:
