@@ -100,7 +100,7 @@ export function fullCitations(records: SourceRecord[]): Record<string, string> {
 			const address = new URL(link);
 			html = `${html} <a href="${escapeHtml(address.href)}">${escapeHtml(address.hostname)}</a>`;
 		}
-		citations[record.key] = html + savedCopyLink(record) + readingLinksHtml(record.reading_links);
+		citations[record.key] = html + readingLinksHtml(record.reading_links, savedCopyLink(record));
 	}
 	return citations;
 }
