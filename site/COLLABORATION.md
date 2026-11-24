@@ -124,7 +124,7 @@ Still to build: emails to a nation's office about changes, and notices to people
 
 ## Essays
 
-Essays are kept in the private `sourceDocuments` bucket and edited at `/workspace/essays` ([decision record 0021](../docs/decisions/0021-edit-drafts-in-the-browser-keep-essays-in-the-bucket.md), [docs/editing.md](../docs/editing.md)).
+Essays are kept in the private `sourceDocuments` bucket and edited in place on each essay's own page ([decision record 0021](../docs/decisions/0021-edit-drafts-in-the-browser-keep-essays-in-the-bucket.md), [docs/editing.md](../docs/editing.md)).
 
 - **Levels.** Comment access lets a person read every saved version and compare them. Contribute access lets them edit and save versions. Full access also lets them publish a version, restore an earlier one as a new version, hold a publication back from readers, save the git text over edits made here, and start a new essay (full access to every essay). Each page and action checks the level on that essay with `requireDocumentLevel`, as every workspace page does.
 - **Versions never change.** Each save writes a new file, `essays/<id>/versions/<number>-<first 12 characters of the SHA-256>.md`, refused if the name is taken (`If-None-Match: *`), and adds a row to `essay_versions` and an entry to the activity log. Database triggers refuse any change to a saved version or deletion of one. A save names the version the writer started from; if someone saved after that, the save is refused and the editor shows both, so nobody's text is lost.

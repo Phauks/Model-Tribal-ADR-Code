@@ -130,6 +130,20 @@ export async function reviewRequestsOf(
 	};
 }
 
+/** How many open review requests each essay has, by essay, for the badges on a section's page. */
+export async function openReviewCounts(database: D1Database): Promise<Map<string, number>> {
+	const { results } = await database
+		.prepare(
+			`SELECT essay_identifier AS essay, count(*) AS count FROM essay_review_requests
+			 WHERE closed_at IS NULL AND EXISTS (
+				SELECT 1 FROM essay_review_reviewers WHERE request_identifier = essay_review_requests.identifier AND done_at IS NULL
+			 )
+			 GROUP BY essay_identifier`
+		)
+		.all<{ essay: string; count: number }>();
+	return new Map(results.map((row) => [row.essay, row.count]));
+}
+
 /** How many open requests wait on a person, for the sidebar. */
 export async function reviewRequestCount(database: D1Database, person: string): Promise<number> {
 	const row = await database

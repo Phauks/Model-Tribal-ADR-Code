@@ -14,7 +14,6 @@ describe('the workspace pages in the left sidebar', () => {
 	it('lists every page for the lead author', () => {
 		expect(names(workspacePagesFor(permissionsOf('lead-author')))).toEqual([
 			'overview',
-			'essays',
 			'review-requests',
 			'comments',
 			'reviews',
@@ -44,7 +43,6 @@ describe('the workspace pages in the left sidebar', () => {
 	it('leaves out the pages a role cannot open', () => {
 		expect(names(workspacePagesFor(permissionsOf('editor')))).toEqual([
 			'overview',
-			'essays',
 			'review-requests',
 			'comments',
 			'reviews',
@@ -57,8 +55,8 @@ describe('the workspace pages in the left sidebar', () => {
 			'rooms',
 			'contributors'
 		]);
-		expect(names(workspacePagesFor(permissionsOf('co-author')))).toEqual(['overview', 'essays', 'review-requests', 'comments', 'reviews', 'library', 'rooms']);
-		expect(names(workspacePagesFor(permissionsOf('nation-reviewer')))).toEqual(['overview', 'essays', 'reviews', 'nation-uploads']);
+		expect(names(workspacePagesFor(permissionsOf('co-author')))).toEqual(['overview', 'review-requests', 'comments', 'reviews', 'library', 'rooms']);
+		expect(names(workspacePagesFor(permissionsOf('nation-reviewer')))).toEqual(['overview', 'reviews', 'nation-uploads']);
 	});
 
 	it('marks the overview only on its own page, and other pages on the pages within them', () => {
