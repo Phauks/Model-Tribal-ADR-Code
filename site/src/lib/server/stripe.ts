@@ -184,7 +184,8 @@ export interface GiftCheckoutRequest {
 	customer: string;
 	sponsor: string;
 	amountInCents: number;
-	monthly: boolean;
+	/** How often a recurring gift repeats; null for a single payment. */
+	every: 'month' | 'year' | null;
 	/** What the giver sees on Stripe's page. */
 	description: string;
 	successAddress: string;
@@ -192,13 +193,13 @@ export interface GiftCheckoutRequest {
 }
 
 /**
- * Opens a Stripe Checkout page for a gift: a subscription for a monthly gift,
- * a single payment otherwise. The amount is the sponsor's own, so the price
+ * Opens a Stripe Checkout page for a gift: a subscription for a monthly or
+ * yearly gift, a single payment otherwise. The amount is the sponsor's own, so the price
  * is made on the spot rather than set up in Stripe's dashboard.
  */
 export async function createGiftCheckout(settings: Pick<StripeSettings, 'secretKey'>, gift: GiftCheckoutRequest, fetcher: Fetch = fetch): Promise<string> {
 	const fields: Record<string, string | number | undefined> = {
-		mode: gift.monthly ? 'subscription' : 'payment',
+		mode: gift.every ? 'subscription' : 'payment',
 		customer: gift.customer,
 		client_reference_id: gift.sponsor,
 		'metadata[sponsor]': gift.sponsor,
@@ -209,8 +210,8 @@ export async function createGiftCheckout(settings: Pick<StripeSettings, 'secretK
 		'line_items[0][price_data][unit_amount]': gift.amountInCents,
 		'line_items[0][price_data][product_data][name]': gift.description
 	};
-	if (gift.monthly) {
-		fields['line_items[0][price_data][recurring][interval]'] = 'month';
+	if (gift.every) {
+		fields['line_items[0][price_data][recurring][interval]'] = gift.every;
 		fields['subscription_data[metadata][sponsor]'] = gift.sponsor;
 	} else {
 		fields.submit_type = 'donate';

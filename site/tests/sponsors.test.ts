@@ -226,7 +226,7 @@ describe('Stripe Checkout for a gift', () => {
 				customer: 'cus_test_1',
 				sponsor: 'sponsor-1',
 				amountInCents: 10000,
-				monthly: true,
+				every: 'month',
 				description: 'Gift',
 				successAddress: 'https://example.org/thanks',
 				cancelAddress: 'https://example.org/'
@@ -240,5 +240,54 @@ describe('Stripe Checkout for a gift', () => {
 		expect(fields.get('line_items[0][price_data][recurring][interval]')).toBe('month');
 		expect(fields.get('subscription_data[metadata][sponsor]')).toBe('sponsor-1');
 		expect(fields.get('submit_type')).toBeNull();
+	});
+
+	it('asks for a yearly subscription for a yearly gift', async () => {
+		let sent = '';
+		const fetcher = (async (_address: string, init?: RequestInit) => {
+			sent = String(init?.body);
+			return new Response(JSON.stringify({ url: 'https://checkout.stripe.com/c/pay/cs_test_2' }), { status: 200 });
+		}) as typeof fetch;
+		await createGiftCheckout(
+			{ secretKey: 'sk_test_1' },
+			{
+				customer: 'cus_test_1',
+				sponsor: 'sponsor-1',
+				amountInCents: 25000,
+				every: 'year',
+				description: 'Gift',
+				successAddress: 'https://example.org/thanks',
+				cancelAddress: 'https://example.org/'
+			},
+			fetcher
+		);
+		const fields = new URLSearchParams(sent);
+		expect(fields.get('mode')).toBe('subscription');
+		expect(fields.get('line_items[0][price_data][recurring][interval]')).toBe('year');
+	});
+
+	it('asks for a single payment for a one-time gift', async () => {
+		let sent = '';
+		const fetcher = (async (_address: string, init?: RequestInit) => {
+			sent = String(init?.body);
+			return new Response(JSON.stringify({ url: 'https://checkout.stripe.com/c/pay/cs_test_3' }), { status: 200 });
+		}) as typeof fetch;
+		await createGiftCheckout(
+			{ secretKey: 'sk_test_1' },
+			{
+				customer: 'cus_test_1',
+				sponsor: 'sponsor-1',
+				amountInCents: 5000,
+				every: null,
+				description: 'Gift',
+				successAddress: 'https://example.org/thanks',
+				cancelAddress: 'https://example.org/'
+			},
+			fetcher
+		);
+		const fields = new URLSearchParams(sent);
+		expect(fields.get('mode')).toBe('payment');
+		expect(fields.get('line_items[0][price_data][recurring][interval]')).toBeNull();
+		expect(fields.get('submit_type')).toBe('donate');
 	});
 });

@@ -1,7 +1,7 @@
 /**
  * Stripe tells the site here when a sponsor's gift is paid
  * (docs/sponsorship.md): a one-time gift when its Checkout page is paid, and
- * a monthly gift each time its invoice is paid. The gift is matched to the
+ * a monthly or yearly gift each time its invoice is paid. The gift is matched to the
  * sponsor by the Stripe customer the site made for them.
  *
  * Set up in Stripe's dashboard as its own webhook endpoint for the events
@@ -29,8 +29,28 @@ interface StripeEvent {
 			amount_total?: number | null;
 			amount_paid?: number | null;
 			currency?: string;
+			/** An invoice's lines: the subscription's price and the period paid for. */
+			lines?: {
+				data?: {
+					price?: { recurring?: { interval?: string } } | null;
+					period?: { start?: number; end?: number };
+				}[];
+			};
 		};
 	};
+}
+
+/**
+ * Whether a paid invoice is for a yearly gift: its price repeats each year,
+ * or, where Stripe's version leaves the price off the line, it pays for more
+ * than two months.
+ */
+function paysForAYear(lines: NonNullable<NonNullable<StripeEvent['data']>['object']>['lines']): boolean {
+	const line = lines?.data?.[0];
+	const interval = line?.price?.recurring?.interval;
+	if (interval) return interval === 'year';
+	const { start, end } = line?.period ?? {};
+	return Boolean(start && end && end - start > 60 * 24 * 60 * 60);
 }
 
 const plain = (text: string, status: number) =>
@@ -69,13 +89,13 @@ export const POST: RequestHandler = async ({ request }) => {
 		});
 		return plain(recorded ? 'Gift recorded.' : 'Already recorded, or not a sponsor.', 200);
 	}
-	// A monthly gift's first payment and each one after it arrive as paid invoices.
+	// A monthly or yearly gift's first payment and each one after it arrive as paid invoices.
 	if (event.type === 'invoice.paid') {
 		const recorded = await recordGift(environment.database, {
 			mode: state.mode,
 			customer: object.customer,
 			stripeObject: object.id,
-			kind: 'monthly',
+			kind: paysForAYear(object.lines) ? 'yearly' : 'monthly',
 			amountCents: object.amount_paid ?? 0,
 			currency: object.currency ?? 'usd'
 		});

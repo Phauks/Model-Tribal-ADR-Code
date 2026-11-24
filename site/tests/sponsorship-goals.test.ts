@@ -120,6 +120,8 @@ describe('totals of gifts', () => {
 		await gift(second.identifier, 's1', 'monthly', 1000, '2026-11-01T00:00:00.000Z');
 		await gift(second.identifier, 's2', 'one-time', 9900, '2026-11-02T00:00:00.000Z');
 		await gift(ended.identifier, 'e1', 'monthly', 7000, '2026-09-01T00:00:00.000Z');
+		// A yearly gift is not a month's gift, so the monthly total leaves it out.
+		await gift(ended.identifier, 'y1', 'yearly', 25000, '2026-11-10T00:00:00.000Z');
 		const totals = await givenToward(database, 'test', new Date('2026-11-23T00:00:00.000Z'));
 		expect(totals.monthly).toEqual({ cents: 6000, sponsors: 2 });
 	});
