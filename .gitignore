@@ -3,6 +3,8 @@ node_modules/
 pdf/output/
 dist/
 build/
+# The Build a table page (/nations/data/build) is source, not build output.
+!site/src/routes/nations/data/build/
 .svelte-kit/
 .wrangler/
 *.pdf
