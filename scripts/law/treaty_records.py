@@ -30,6 +30,10 @@ Usage:
   python3 scripts/law/treaty_records.py check --work DIR
   python3 scripts/law/treaty_records.py file --work DIR --captures /mnt/project-files/research/captures
   python3 scripts/law/treaty_records.py records
+
+`records` rewrites each record's notes, so run
+`python3 scripts/law/verify_treaties.py apply` after it to put back the
+text check of Nov. 24, 2026 and its corrections.
 """
 from __future__ import annotations
 
