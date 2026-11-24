@@ -33,6 +33,8 @@ const allowed = new Map(
 		// Forms laid out as tables: a row for each name, nation or language, and versions to compare.
 		'src/routes/profile/edit/+page.svelte': { table: 4 },
 		'src/routes/changes/+page.svelte': { table: 1 },
+		// A nation's laws and cases: a level for each kind and for each item, picked in its row.
+		'src/routes/workspace/nation-teams/[nation]/laws-and-cases/+page.svelte': { table: 2 },
 		// A short summary beside a form, and the list of settings that let sponsors give.
 		'src/routes/workspace/outreach/new/+page.svelte': { table: 1 },
 		'src/routes/workspace/sponsors/+page.svelte': { table: 1 }
