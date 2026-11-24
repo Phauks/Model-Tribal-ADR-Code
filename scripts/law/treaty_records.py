@@ -263,7 +263,12 @@ def records(args) -> None:
                 if result == "missing" else
                 " The Statutes at Large granule GovInfo returns for this citation did not clearly show this treaty, so no copy is stored; check the citation (research/reviews/2026-11-24-treaty-text-check.csv)."
                 if result == "check by hand" else "")
-        write(ratified_record(treaty, copy, flag))
+        record = ratified_record(treaty, copy, flag)
+        twins = sorted(other["key"] for other in ratified() if other["statutes_at_large"] == treaty["statutes_at_large"] and other is not treaty
+                       and other["key"] != treaty["key"])
+        if twins:
+            record["shares_link_with"] = twins
+        write(record)
         added += 1
     raw = json.loads(TREATIES.read_text(encoding="utf-8"))
     others = [(item, "Unratified treaty or related paper, not in Kappler's list of ratified treaties.")
