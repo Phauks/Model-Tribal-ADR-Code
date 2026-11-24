@@ -1,0 +1,88 @@
+profile: content/tribes/s/seminole-tribe-of-florida.yaml
+topic: legal-help
+status: partly-searched
+last_searched: '2026-11-24'
+searches:
+- date: '2026-11-24'
+  searched_by: Claude (AI assistant)
+  method: browser
+  place_kind: web-search
+  address: Web search (search engine)
+  query: Seminole Tribe of Florida legal aid members
+  outcome: not-found
+  reason: Results were tribal court pages and attorney-practice pages with no member legal aid or self-help program.
+- date: '2026-11-24'
+  searched_by: Claude (AI assistant)
+  method: browser
+  place_kind: web-search
+  address: Web search (search engine)
+  query: Florida Seminole Miccosukee legal aid Indian law unit free legal services
+  outcome: not-found
+  reason: Generic Florida legal aid results; no Seminole-specific program.
+- date: '2026-11-24'
+  searched_by: Claude (AI assistant)
+  method: browser
+  place_kind: tribal-court-site
+  address: https://www.semtribe.com/government/tribal-court/faq.html
+  outcome: not-found
+  reason: Tribal court FAQ; no legal aid, public defender or self-help described.
+- date: '2026-11-24'
+  searched_by: Claude (AI assistant)
+  method: browser
+  place_kind: nation-website
+  address: https://www.semtribe.com/services/health-and-human-services/advocacy-guardianship.html
+  outcome: dead-link
+  reason: Page returned a 404 error.
+- date: '2026-11-24'
+  searched_by: Claude (AI assistant)
+  method: browser
+  place_kind: tribal-court-site
+  address: https://www.semtribe.com/government/tribal-court.html
+  outcome: dead-link
+  reason: Page returned a 404 error.
+- date: '2026-11-24'
+  searched_by: Claude (AI assistant)
+  method: browser
+  place_kind: web-search
+  address: Web search (search engine)
+  query: Florida legal aid Native American program
+  outcome: not-found
+  reason: 'Statewide search: Results were private-lawyer directories and general Florida legal aid news; no Native-specific legal aid program named.'
+- date: '2026-11-24'
+  searched_by: Claude (AI assistant)
+  method: browser
+  place_kind: web-search
+  address: Web search (search engine)
+  query: Florida Rural Legal Services OR Legal Aid Society tribal members Seminole Miccosukee legal help
+  outcome: not-found
+  reason: 'Statewide search: Results were general legal aid listings and a Seminole veterans legal aid item, not a program for tribal members.'
+- date: '2026-11-24'
+  searched_by: Claude (AI assistant)
+  method: browser
+  place_kind: web-search
+  address: Web search (search engine)
+  query: Florida Seminole Miccosukee tribal members free legal aid nonprofit Native American legal services
+  outcome: not-found
+  reason: 'Statewide search: Results were private lawyers and tribal pages; no nonprofit legal aid unit for Native people found in snippets.'
+- date: '2026-11-24'
+  searched_by: Claude (AI assistant)
+  method: browser
+  place_kind: legal-aid-site
+  address: https://www.floridalawhelp.org/find-provider
+  outcome: not-found
+  reason: 'Statewide search: Read the provider finder; it has no Native American, American Indian, or tribal program text.'
+- date: '2026-11-24'
+  searched_by: Claude (AI assistant)
+  method: browser
+  place_kind: nation-website
+  address: https://www.semtribe.com/services/health-and-human-services/advocacy-guardianship.html
+  outcome: dead-link
+  reason: 'Statewide search: Seminole Tribe advocacy page returned a 404 error page.'
+- date: '2026-11-24'
+  searched_by: Claude (AI assistant)
+  method: browser
+  place_kind: legal-aid-site
+  address: https://indianlaw.org/node/71
+  outcome: error
+  reason: 'Statewide search: Not read: WebFetch budget for the session was exhausted.'
+next_steps: 'A person could open the pages that refused or timed out: https://indianlaw.org/node/71.'

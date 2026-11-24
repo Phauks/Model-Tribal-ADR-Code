@@ -19,6 +19,16 @@ serves:
   source: minnesota-state-law-library-carlton-county-referrals
   match: inferred
   note: The source does not name the four reservations; the three bands with reservations in Northeastern Minnesota are matched (Bois Forte has two reservation areas).
+- states:
+  - MN
+  scope: named-nations
+  nations:
+  - minnesota-chippewa-tribe
+  match: inferred
+  text: Civil and criminal representation to the Indian population and low-income individuals throughout the five county region and four Indian Reservations in Northeastern Minnesota.
+  source: minnesota-state-law-library-carlton-county-referrals
+  note: The Minnesota Chippewa Tribe is made up of six bands (Bois Forte, Fond du Lac, Grand Portage, Leech Lake, Mille Lacs and White Earth); this provider serves members of the Fond du Lac, Bois Forte and Grand Portage bands, so it is matched to the umbrella tribe too. The source does not name the Minnesota Chippewa Tribe.
+note: No website of its own was found.
 sources:
 - id: minnesota-state-law-library-carlton-county-referrals
   title: Carlton County Legal Referrals
@@ -27,5 +37,4 @@ sources:
   accessed: '2026-11-24'
   verification: page-read
   supports: Duluth address and phones (218) 727-2881 / 1-888-249-3205; description quoted in serves.
-note: No website of its own was found.
 checked: '2026-11-24'

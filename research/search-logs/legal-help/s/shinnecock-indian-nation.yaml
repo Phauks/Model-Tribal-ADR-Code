@@ -1,0 +1,64 @@
+profile: content/tribes/s/shinnecock-indian-nation.yaml
+topic: legal-help
+status: none-found
+last_searched: '2026-11-24'
+searches:
+- date: '2026-11-24'
+  searched_by: Claude (AI assistant)
+  method: browser
+  place_kind: web-search
+  address: Web search (search engine)
+  query: Shinnecock Indian Nation legal aid members legal services
+  outcome: not-found
+  reason: Results were tribal grant and department pages with no legal aid service for members.
+- date: '2026-11-24'
+  searched_by: Claude (AI assistant)
+  method: browser
+  place_kind: nation-website
+  address: https://www.shinnecock-nsn.gov/departments
+  outcome: not-found
+  reason: The 15-department list contains no legal aid, legal services, tribal court self-help, or member legal assistance.
+- date: '2026-11-24'
+  searched_by: Claude (AI assistant)
+  method: browser
+  place_kind: legal-aid-site
+  address: https://nslawservices.org
+  outcome: not-found
+  reason: Domain redirects to legalservicesli.org (Legal Services of Long Island), the site behind the Nassau Suffolk Law Services name. No Native American program was described.
+- date: '2026-11-24'
+  searched_by: Claude (AI assistant)
+  method: browser
+  place_kind: legal-aid-site
+  address: https://legalservicesli.org/
+  outcome: not-found
+  reason: The site describes free civil legal services for low-income people and disabled people, with no mention of Shinnecock, Native American, or tribal clients.
+- date: '2026-11-24'
+  searched_by: Claude (AI assistant)
+  method: browser
+  place_kind: web-search
+  address: Web search (search engine)
+  query: Nassau Suffolk Law Services Shinnecock Native American legal help
+  outcome: not-found
+  reason: Results were generic Nassau/Suffolk attorney listings and LawHelpNY pages with no Native American or Shinnecock reference.
+- date: '2026-11-24'
+  searched_by: Claude (AI assistant)
+  method: browser
+  place_kind: web-search
+  address: Web search (search engine)
+  query: New York legal aid Native American program
+  outcome: not-found
+  reason: 'Statewide search, nothing for this nation: Returned the American Indian Law Alliance listings (NYC) and LawHelpNY Native law page.'
+- date: '2026-11-24'
+  searched_by: Claude (AI assistant)
+  method: browser
+  place_kind: legal-aid-site
+  address: https://www.lawhelpny.org/issues/discrimination-and-civil-rights/native-american-law-issues
+  outcome: not-found
+  reason: 'Statewide search: Read the LawHelpNY Native American law page; it names no organization and links only to a generic find-legal-help search.'
+- date: '2026-11-24'
+  searched_by: Claude (AI assistant)
+  method: browser
+  place_kind: legal-aid-site
+  address: https://www.probono.net/oppsguide/organization.53858?print=1
+  outcome: not-found
+  reason: 'Statewide search, nothing for this nation: Read the American Indian Law Alliance listing; it describes free legal services for the NYC Native American community.'

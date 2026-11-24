@@ -3,14 +3,30 @@ name: Margery Hunter Brown Indian Law Clinic, University of Montana
 kind: law-school-clinic
 operator: law-school
 outreach_record: university-of-montana-margery-hunter-brown-indian-law-clinic
-status: to-classify
+link: https://umt.edu/law/academics/clinics/mhb.php
+link_label: Margery Hunter Brown Indian Law Clinic
+services:
+- legal-clinics
+- representation
+- tribal-government-projects
+who_can_use: Tribal courts and tribal communities; occasionally individual clients in Indian Child Welfare Act cases and tribal court actions.
+location: Alexander Blewett III School of Law, Missoula, Montana
 serves:
 - states:
   - MT
-  scope: unclassified
-  text: Grabbed from the outreach list; who the clinic serves is in its outreach record and not yet classified here.
-  source: outreach-record
+  scope: region
+  text: The clinic lists “assistance and support for community members through free legal clinics” and says it will “Occasionally represent clients in Indian Child Welfare Act cases” and “Occasionally represent clients in tribal court actions, primarily civil matters with some limited criminal representation.”
+  source: montana-indian-law-clinic-page
+  note: The page names no nation it serves, so the clinic is not matched to nations.
+note: Classified Nov. 24, 2026 from the clinic’s own page. Law school clinics are not shown on nation pages.
 sources:
+- id: montana-indian-law-clinic-page
+  title: Margery Hunter Brown Indian Law Clinic
+  publisher: Alexander Blewett III School of Law, University of Montana
+  link: https://umt.edu/law/academics/clinics/mhb.php
+  accessed: '2026-11-24'
+  verification: page-read
+  supports: 'The clinic’s work: tribal court support, free legal clinics, occasional representation.'
 - id: outreach-record
   title: Outreach record
   publisher: This project

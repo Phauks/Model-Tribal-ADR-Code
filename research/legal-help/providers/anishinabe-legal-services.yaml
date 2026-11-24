@@ -23,6 +23,15 @@ serves:
   - leech-lake-band
   - white-earth-band
   - red-lake-band-of-chippewa-indians
+- states:
+  - MN
+  scope: named-nations
+  nations:
+  - minnesota-chippewa-tribe
+  match: inferred
+  text: Serves Native Americans living within the boundaries of the Leech Lake, White Earth and Red Lake Indian Reservations
+  source: lsc-service-area-nmn-1
+  note: The Minnesota Chippewa Tribe is made up of six bands (Bois Forte, Fond du Lac, Grand Portage, Leech Lake, Mille Lacs and White Earth); this provider serves members of the Leech Lake and White Earth bands, so it is matched to the umbrella tribe too. The source does not name the Minnesota Chippewa Tribe.
 sources:
 - id: lsc-service-area-nmn-1
   title: Service area NMN-1

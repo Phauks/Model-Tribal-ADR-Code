@@ -1,0 +1,42 @@
+profile: content/tribes/l/lower-sioux-indian-community-in-the-state-of-minnesota.yaml
+topic: legal-help
+status: partly-searched
+last_searched: '2026-11-24'
+searches:
+- date: '2026-11-24'
+  searched_by: Claude (AI assistant)
+  method: browser
+  place_kind: web-search
+  address: Web search (search engine)
+  query: Lower Sioux Indian Community legal aid members
+  outcome: not-found
+  reason: Results were the nation's own pages and unrelated links; no legal aid or member legal services page appeared in the results.
+- date: '2026-11-24'
+  searched_by: Claude (AI assistant)
+  method: browser
+  place_kind: nation-website
+  address: https://lowersioux.com/departments/legal/
+  outcome: not-found
+  reason: 'Page ''Court & Legal'' read: General Counsel serves government agencies, Tribal Court offers forms only (divorce, protection order, complaint), no member legal aid or self-help described.'
+- date: '2026-11-24'
+  searched_by: Claude (AI assistant)
+  method: browser
+  place_kind: nation-website
+  address: https://lowersioux.com/
+  outcome: error
+  reason: Home page not read; the WebFetch budget ran out before it could be fetched.
+- date: '2026-11-24'
+  searched_by: Claude (AI assistant)
+  method: browser
+  place_kind: legal-aid-site
+  address: https://mn.gov/law-library/research-links/legal-referrals/redwood.jsp
+  outcome: not-found
+  reason: Redwood County referral page read; lists Southern Minnesota Regional Legal Services and general help with no Native American program named.
+- date: '2026-11-24'
+  searched_by: Claude (AI assistant)
+  method: browser
+  place_kind: legal-aid-site
+  address: https://minnesotahelp.info/Providers/Southern_Minnesota_Regional_Legal_Services_SMRLS/Legal_Assistance/1
+  outcome: not-found
+  reason: 'SMRLS listing read: covers Redwood and Yellow Medicine counties for low-income people, but no mention of American Indian, tribal members, or any reservation.'
+next_steps: 'A person could open the pages that refused or timed out: https://lowersioux.com/.'

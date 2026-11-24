@@ -1,0 +1,36 @@
+profile: content/tribes/t/tonto-apache-tribe-of-arizona.yaml
+topic: legal-help
+status: partly-searched
+last_searched: '2026-11-24'
+searches:
+- date: '2026-11-24'
+  searched_by: Claude (AI assistant)
+  method: browser
+  place_kind: web-search
+  address: Web search (search engine)
+  query: Tonto Apache Tribe legal aid members legal services
+  outcome: not-found
+  reason: Results were 211 and womenslaw listings for general Arizona services that do not name the Tonto Apache Tribe.
+- date: '2026-11-24'
+  searched_by: Claude (AI assistant)
+  method: browser
+  place_kind: web-search
+  address: Web search (search engine)
+  query: Tonto Apache Tribe tribal court self-help legal services
+  outcome: not-found
+  reason: Results were federal BIA Court of Indian Offenses self-help material and a Tonto Apache tribal court PDF from the state bar, which was not readable (fetch budget exhausted).
+- date: '2026-11-24'
+  searched_by: Claude (AI assistant)
+  method: browser
+  place_kind: nation-website
+  address: https://itcaonline.com/member-tribes/tonto-apache-tribe/
+  outcome: not-found
+  reason: Inter Tribal Council of Arizona member page has no legal aid, legal services, or tribal court language.
+- date: '2026-11-24'
+  searched_by: Claude (AI assistant)
+  method: browser
+  place_kind: tribal-court-site
+  address: https://www.azbar.org/media/nqnp24nk/nativeamerican-tontoapachetribalcourt.pdf
+  outcome: error
+  reason: WebFetch proxy budget for the session was exhausted before this document could be read.
+next_steps: 'A person could open the pages that refused or timed out: https://www.azbar.org/media/nqnp24nk/nativeamerican-tontoapachetribalcourt.pdf.'
