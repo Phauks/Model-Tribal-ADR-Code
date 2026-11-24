@@ -1,6 +1,6 @@
 import { error, fail, redirect } from '@sveltejs/kit';
 import { can } from '#lib/permissions.ts';
-import { dollars, giftFrequencies, isEarmark, isListing, largestGift, smallestGift, type Earmark, type GiftFrequency } from '#lib/sponsorship.ts';
+import { dollars, dollarsAfterTyping, giftCents, giftFrequencies, isEarmark, isListing, largestGift, smallestGift, type Earmark, type GiftFrequency } from '#lib/sponsorship.ts';
 import { workerEnvironment } from '#lib/server/environment.ts';
 import {
 	checkedLink,
@@ -51,13 +51,11 @@ import type { Actions, PageServerLoad, RequestEvent } from './$types';
  * Anything not valid is left blank.
  */
 function askedGift(search: URLSearchParams): { amount: string; frequency: GiftFrequency | null; toward: Earmark | null } {
-	const text = (search.get('other') || search.get('amount') || '').replace(/[$,\s]/g, '');
-	const amount = Number(text);
-	const valid = text !== '' && Number.isFinite(amount) && amount >= smallestGift && amount <= largestGift && Math.round(amount * 100) === amount * 100;
+	const cents = giftCents(search.get('other') || search.get('amount') || '');
 	const frequency = search.get('frequency');
 	const toward = search.get('toward');
 	return {
-		amount: valid ? text : '',
+		amount: cents === null ? '' : dollarsAfterTyping(String(cents / 100)),
 		frequency: giftFrequencies.includes(frequency as GiftFrequency) ? (frequency as GiftFrequency) : null,
 		toward: isEarmark(toward) ? toward : null
 	};
@@ -286,10 +284,10 @@ export const actions: Actions = {
 		const { sponsor, actor } = await managedSponsor(event, form);
 		const state = giftState(workerEnvironment());
 		if (!state.open) return fail(400, { problem: state.reason });
-		const amount = Number(formText(form, 'amount', 20)?.replace(/[$,\s]/g, ''));
+		const cents = giftCents(formText(form, 'amount', 20) ?? '');
 		const frequency = form.get('frequency') as GiftFrequency;
 		if (!giftFrequencies.includes(frequency)) return fail(400, { problem: 'Choose how often to give.' });
-		if (!Number.isFinite(amount) || amount < smallestGift || amount > largestGift || Math.round(amount * 100) !== amount * 100) {
+		if (cents === null) {
 			return fail(400, {
 				problem: `Give an amount from ${dollars(smallestGift * 100)} to ${dollars(largestGift * 100)}. For a larger gift, write to the project.`
 			});
@@ -312,7 +310,7 @@ export const actions: Actions = {
 			address = await createGiftCheckout(state.stripe, {
 				customer,
 				sponsor: sponsor.identifier,
-				amountInCents: Math.round(amount * 100),
+				amountInCents: cents,
 				monthly: frequency === 'monthly',
 				description: `Gift to Model Tribal ADR Code from ${sponsor.name}`,
 				successAddress: `${event.url.origin}${here(sponsor, '&gift=thanks')}`,
