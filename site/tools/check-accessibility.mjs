@@ -210,7 +210,9 @@ async function checkPage(page, pathname) {
 			}),
 		{ quiet: limits.settle, longest: limits.settleAtMost }
 	);
-	await page.addScriptTag({ content: axeSource });
+	// Run axe from the testing side rather than as a <script> in the page: the site's
+	// Content Security Policy refuses inline scripts it has no hash for (decision record 0055).
+	await page.evaluate(axeSource);
 	const found = [];
 	for (const theme of themes) {
 		await page.emulateMedia({ colorScheme: theme });

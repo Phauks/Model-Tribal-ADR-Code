@@ -6,11 +6,13 @@
  * outside that copy can know the token, and without a scheduled handler
  * (on a computer, in tests) there is no token and every request is refused.
  */
+import { sameSecret } from './same-secret.ts';
+
 export const scheduledTokenKey = 'model-tribal-adr-code.scheduled-run-token';
 export const scheduledTokenHeader = 'x-scheduled-run';
 
 export function isScheduledRun(request: Request): boolean {
 	const expected = (globalThis as Record<string, unknown>)[scheduledTokenKey];
 	const given = request.headers.get(scheduledTokenHeader);
-	return typeof expected === 'string' && expected.length >= 32 && given === expected;
+	return typeof expected === 'string' && expected.length >= 32 && sameSecret(given, expected);
 }

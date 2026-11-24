@@ -27,13 +27,22 @@ describe('guarding changes', () => {
 		expect(isCrossSite(post({ 'sec-fetch-site': 'cross-site', origin: site }), site)).toBe(true);
 	});
 
-	it('guards the workspace and sign-out only', () => {
+	it('guards every path except the services that post from their own servers', () => {
 		expect(isGuardedPath('/workspace')).toBe(true);
 		expect(isGuardedPath('/workspace/access')).toBe(true);
 		expect(isGuardedPath('/sign-out')).toBe(true);
 		expect(isGuardedPath('/events/peacemaking-in-practice')).toBe(true);
-		expect(isGuardedPath('/eventsx')).toBe(false);
-		expect(isGuardedPath('/workspaces')).toBe(false);
-		expect(isGuardedPath('/requests')).toBe(false);
+		expect(isGuardedPath('/account/security')).toBe(true);
+		expect(isGuardedPath('/profile/edit')).toBe(true);
+		expect(isGuardedPath('/sponsorship/invite/abc')).toBe(true);
+		expect(isGuardedPath('/orders/abc')).toBe(true);
+		expect(isGuardedPath('/store/checkout')).toBe(true);
+		expect(isGuardedPath('/requests')).toBe(true);
+		expect(isGuardedPath('/book/payment-webhook')).toBe(false);
+		expect(isGuardedPath('/book/printer-webhook')).toBe(false);
+		expect(isGuardedPath('/sponsorship/payment-webhook')).toBe(false);
+		expect(isGuardedPath('/mail/unsubscribe/token/one-click')).toBe(false);
+		expect(isGuardedPath('/book/payment-webhooks')).toBe(true);
+		expect(isGuardedPath('/mail/unsubscribe/token')).toBe(true);
 	});
 });
