@@ -126,7 +126,8 @@ export function chartTable(chart: BarChartData): { columns: TableColumn[]; rows:
 	return {
 		columns: [
 			{ key: 'label', header: chart.labelHeader, isRowHeader: true, sortable: true },
-			{ key: 'value', header: chart.valueHeader, type: 'number', sortable: true, custom: true }
+			// A chart of the parts of a whole has a total, shown in the table as its Sum row (Trevor, Nov. 24, 2026).
+			{ key: 'value', header: chart.valueHeader, type: 'number', sortable: true, custom: true, sum: Boolean(chart.partsOfWhole) }
 		],
 		rows: chart.bars.map((bar) => ({
 			key: bar.label,

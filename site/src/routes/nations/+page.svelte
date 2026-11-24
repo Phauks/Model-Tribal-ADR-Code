@@ -20,7 +20,8 @@
 {/if}
 
 {#if data.nationGroup}
-	<NationTable group={data.nationGroup} identifier="nations" searchLabel="Search Native nations" regions count={false} />
+	<!-- No search box: the site search at the top finds a nation, and the Name column filters by name (Trevor, Nov. 24, 2026). -->
+	<NationTable group={data.nationGroup} identifier="nations" regions count={false} />
 {/if}
 
 {#each data.otherGroups as group (group.entityType)}

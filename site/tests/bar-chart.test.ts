@@ -26,6 +26,21 @@ describe('chartTable', () => {
 		expect(table.rows[0].cells.value).toEqual({ text: '1,200', sortValue: 1200 });
 		expect(table.columns[1].custom).toBe(true);
 		expect(table.rows[0].cells.label.href).toBe('/nations/recourse?method=Mediation');
+		expect(table.columns[1].sum).toBe(false);
+	});
+
+	it('adds up a chart of the parts of a whole in a Sum row', () => {
+		const table = chartTable({
+			identifier: 'x',
+			title: 'X',
+			description: '',
+			labelHeader: 'Method',
+			valueHeader: 'Provisions',
+			source: '',
+			partsOfWhole: true,
+			bars: [{ label: 'Mediation', value: 1200 }]
+		});
+		expect(table.columns[1].sum).toBe(true);
 	});
 });
 

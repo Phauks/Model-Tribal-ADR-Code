@@ -255,7 +255,8 @@
 			{/snippet}
 		</DataTable>
 	</div>
-	{#if chart.partsOfWhole}
+	<!-- The table shows the total as its Sum row instead (Trevor, Nov. 24, 2026: "If you have a total, just put a Sum Row at the bottom of the table"). -->
+	{#if chart.partsOfWhole && !(interactive && shownAs === 'table')}
 		<p class="small chart-total">Total: {total.toLocaleString('en-US')} {chart.valueHeader.toLocaleLowerCase('en-US')}{leftOut.length > 0 ? ' shown' : ''}</p>
 	{/if}
 	<!-- Only the word "Source", which links to where the numbers come from (Trevor, Nov. 23, 2026); a bar's own page lists the source of each record it counts. -->
