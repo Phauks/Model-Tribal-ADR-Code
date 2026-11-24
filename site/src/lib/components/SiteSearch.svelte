@@ -180,6 +180,7 @@
 	{/if}
 
 	{#if expanded}
+		<!-- The panel's keys and leaving it work from anywhere inside; the search box, results and buttons are the controls. -->
 		<!-- svelte-ignore a11y_no_static_element_interactions -->
 		<div bind:this={panel} class="search-panel" id="{identifier}-panel" onkeydown={onKey} onfocusout={closeWhenLeft}>
 			<form role="search" action="/search" method="get">

@@ -156,7 +156,7 @@
 
 <div class="dropdown" class:label-inside={labelInside}>
 	{#if !labelInside}
-		<!-- The label is not a <label>, since the combobox is not a form field; selecting it moves focus to the combobox, as a <label> would. -->
+		<!-- The label is not a <label>, since the combobox is not a form field; selecting it moves focus to the combobox, as a <label> would. The keyboard reaches the combobox itself, so the label needs no keys. -->
 		<!-- svelte-ignore a11y_click_events_have_key_events, a11y_no_static_element_interactions -->
 		<div class="dropdown-label" id="{identifier}-label" onclick={() => combobox?.focus()}>{label}</div>
 	{/if}
@@ -207,6 +207,7 @@
 			onmousedown={(event) => event.preventDefault()}
 		>
 			{#each choices as choice, index (choice.value)}
+				<!-- Keys move through the choices from the combobox, which keeps focus (aria-activedescendant); the click is for the pointer. -->
 				<!-- svelte-ignore a11y_click_events_have_key_events -->
 				<li
 					id={optionId(index)}

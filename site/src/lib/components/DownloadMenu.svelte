@@ -180,6 +180,7 @@
 	<Download size={24} />
 </a>
 
+<!-- Escape and leaving the menu close it from anywhere inside; the button and links are the controls. -->
 <!-- svelte-ignore a11y_no_static_element_interactions -->
 <div class="download needs-scripts" bind:this={container} onfocusout={closeOnOutside} {onkeydown}>
 	<button

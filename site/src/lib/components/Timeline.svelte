@@ -49,6 +49,7 @@
 		axisYears,
 		barYears,
 		byDate,
+		clampRange,
 		countsByBar,
 		entryCitation,
 		eraOf,
@@ -188,6 +189,19 @@
 
 	function zoom(factor: number) {
 		range = zoomRange(view, factor, extent);
+	}
+
+	/** The overview from the keyboard: the arrows move the view a tenth of its width, Page Up and Page Down a whole width, Home and End to either end. */
+	function moveOverview(event: KeyboardEvent) {
+		const steps: Record<string, number> = { ArrowLeft: -0.1, ArrowDown: -0.1, ArrowRight: 0.1, ArrowUp: 0.1, PageDown: -1, PageUp: 1 };
+		const step = steps[event.key];
+		let next: TimelineRange | undefined;
+		if (step !== undefined) next = { from: view.from + step * span, to: view.to + step * span };
+		else if (event.key === 'Home') next = { from: extent.from, to: extent.from + span };
+		else if (event.key === 'End') next = { from: extent.to - span, to: extent.to };
+		if (!next) return;
+		event.preventDefault();
+		range = clampRange(next, extent);
 	}
 
 	const span = $derived(view.to - view.from);
@@ -406,9 +420,40 @@
 		if (!list) return;
 		const box = (event.currentTarget as HTMLElement).getBoundingClientRect();
 		const year = view.from + ((event.clientY - box.top) / box.height) * span;
+		railChosen = undefined;
 		const rows = [...list.querySelectorAll<HTMLElement>('[data-year]')];
 		const target = rows.find((row) => (newestFirst ? Number(row.dataset.year) <= year : Number(row.dataset.year) >= year)) ?? rows.at(-1);
 		target?.scrollIntoView({ block: 'center' });
+	}
+
+	/** The year last chosen on the rail from the keyboard, while its entries are still on screen. */
+	let railChosen = $state<number | undefined>();
+	const railValue = $derived(
+		railChosen !== undefined && onScreen && railChosen >= onScreen.from && railChosen <= onScreen.to ? railChosen : onScreen?.at
+	);
+
+	/**
+	 * The rail from the keyboard, drawn with the earliest year at the top: Down and Right go to the next year with
+	 * entries a decade or more on, Up and Left back, Page Down and Page Up five decades, Home and End to the first
+	 * and last years.
+	 */
+	function railKey(event: KeyboardEvent) {
+		if (!list) return;
+		const rows = [...list.querySelectorAll<HTMLElement>('[data-year]')];
+		const years = [...new Set(rows.map((row) => Number(row.dataset.year)))].sort((first, second) => first - second);
+		if (years.length === 0) return;
+		const step = span >= 40 ? 10 : 1;
+		const steps: Record<string, number> = { ArrowDown: step, ArrowRight: step, ArrowUp: -step, ArrowLeft: -step, PageDown: 5 * step, PageUp: -5 * step };
+		const base = railValue ?? years[0];
+		let year: number | undefined;
+		if (event.key === 'Home') year = years[0];
+		else if (event.key === 'End') year = years.at(-1);
+		else if (steps[event.key] > 0) year = years.find((each) => each >= base + steps[event.key]) ?? years.at(-1);
+		else if (steps[event.key] < 0) year = years.findLast((each) => each <= base + steps[event.key]) ?? years[0];
+		if (year === undefined) return;
+		event.preventDefault();
+		railChosen = year;
+		rows.find((row) => Number(row.dataset.year) === year)?.scrollIntoView({ block: 'center' });
 	}
 
 	/** Years between one entry and the next, said down the page where they are far apart. */
@@ -505,13 +550,20 @@
 		})()}
 		{@const most = Math.max(1, ...[...decades.values()].map((byKind) => [...byKind.values()].reduce((total, count) => total + count, 0)))}
 		{@const ox = (year: number) => ((year - extent.from) / (extent.to - extent.from)) * width}
-		<!-- svelte-ignore a11y_click_events_have_key_events, a11y_no_static_element_interactions -->
 		<svg
 			class="overview"
 			width={width}
 			height="64"
 			viewBox="0 0 {width} 64"
-			aria-hidden="true"
+			role="slider"
+			tabindex="0"
+			aria-label="Years shown"
+			aria-orientation="horizontal"
+			aria-valuemin={Math.floor(extent.from)}
+			aria-valuemax={Math.ceil(extent.to)}
+			aria-valuenow={Math.round((view.from + view.to) / 2)}
+			aria-valuetext="{Math.ceil(view.from)} to {Math.floor(view.to)}"
+			onkeydown={moveOverview}
 			onclick={(event) => {
 				const box = (event.currentTarget as SVGSVGElement).getBoundingClientRect();
 				const year = extent.from + ((event.clientX - box.left) / box.width) * (extent.to - extent.from);
@@ -541,6 +593,7 @@
 	{/if}
 
 	<div class="chart" class:hidden={down} bind:clientWidth={width}>
+		<!-- The drawing is hidden from screen readers and its marks are a pointer shortcut: the list below names the same records. -->
 		<!-- svelte-ignore a11y_click_events_have_key_events, a11y_no_static_element_interactions -->
 		<svg width={width} height={chartHeight} viewBox="0 0 {width} {chartHeight}" aria-hidden="true" onpointerleave={leave}>
 			{#each eraBands as band (band.era.name)}
@@ -651,6 +704,33 @@
 	{/if}
 
 	<div class="body">
+	<!-- The rail comes first, so the keyboard reaches it before the list's many links; the grid draws it on the right. -->
+	{#if down}
+		<div
+			class="rail no-print"
+			role="slider"
+			tabindex="0"
+			aria-label="Jump to a year"
+			aria-orientation="vertical"
+			aria-valuemin={Math.floor(view.from)}
+			aria-valuemax={Math.ceil(view.to)}
+			aria-valuenow={railValue ?? Math.floor(view.from)}
+			bind:clientHeight={railHeight}
+			onclick={jumpTo}
+			onkeydown={railKey}
+		>
+			{#each railTicks as year}
+				<span class="rail-tick" style:top="{railYear(year)}px">{year}</span>
+			{/each}
+			{#each railMarks as mark, index (index)}
+				<span class="rail-mark kind-{mark.kind}" style:top="{railYear(mark.year)}px" style:--lane={railLanes.indexOf(mark.kind)}></span>
+			{/each}
+			{#if onScreen}
+				<span class="rail-window" style:top="{railYear(onScreen.from)}px" style:height="{Math.max(6, railYear(onScreen.to + 1) - railYear(onScreen.from))}px"></span>
+				<span class="rail-year" style:top="{railYear(onScreen.at)}px">{onScreen.at}</span>
+			{/if}
+		</div>
+	{/if}
 	<div class="list" bind:this={list}>
 		{#each groups as group (group.era.name)}
 			<!-- Each era in its own box, so its held heading leaves the screen with its last entry. -->
@@ -722,21 +802,6 @@
 			</div>
 		{/each}
 	</div>
-	{#if down}
-		<!-- svelte-ignore a11y_click_events_have_key_events, a11y_no_static_element_interactions -->
-		<div class="rail no-print" aria-hidden="true" bind:clientHeight={railHeight} onclick={jumpTo}>
-			{#each railTicks as year}
-				<span class="rail-tick" style:top="{railYear(year)}px">{year}</span>
-			{/each}
-			{#each railMarks as mark, index (index)}
-				<span class="rail-mark kind-{mark.kind}" style:top="{railYear(mark.year)}px" style:--lane={railLanes.indexOf(mark.kind)}></span>
-			{/each}
-			{#if onScreen}
-				<span class="rail-window" style:top="{railYear(onScreen.from)}px" style:height="{Math.max(6, railYear(onScreen.to + 1) - railYear(onScreen.from))}px"></span>
-				<span class="rail-year" style:top="{railYear(onScreen.at)}px">{onScreen.at}</span>
-			{/if}
-		</div>
-	{/if}
 	</div>
 </div>
 
@@ -900,6 +965,16 @@
 		display: block;
 		margin-top: var(--space-3);
 		cursor: pointer;
+	}
+
+	/* The overview and the rail take focus as sliders; they show the ring without the yellow fill, which would cover the drawing. */
+	.overview:focus-visible,
+	.rail:focus-visible {
+		background-color: transparent;
+		box-shadow: none;
+	}
+	.overview:focus-visible {
+		color: inherit;
 	}
 
 	.fill-treaty {
@@ -1177,6 +1252,16 @@
 		align-items: start;
 	}
 
+	.down .list {
+		grid-column: 1;
+		grid-row: 1;
+	}
+
+	.down .rail {
+		grid-column: 2;
+		grid-row: 1;
+	}
+
 	/* Below 64rem the sidebar's Menu bar stays at the top of the screen, so held headings and the rail stop below it. */
 	.timeline {
 		--held-top: 0px;
@@ -1308,6 +1393,9 @@
 		font-size: 0.75rem;
 		color: var(--color-ink-muted);
 		cursor: pointer;
+	}
+	.rail:focus-visible {
+		color: var(--color-ink-muted);
 	}
 
 	.rail-tick {
