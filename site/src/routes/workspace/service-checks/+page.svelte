@@ -5,7 +5,6 @@
 	import RefreshCw from '@lucide/svelte/icons/refresh-cw';
 	import TriangleAlert from '@lucide/svelte/icons/triangle-alert';
 	import Collapsible from '#lib/components/Collapsible.svelte';
-	import CountBadge from '#lib/components/CountBadge.svelte';
 	import type { PageProps } from './$types';
 
 	let { data }: PageProps = $props();
@@ -42,7 +41,7 @@
 
 <div class="title-row">
 	<h1>Service checks</h1>
-	<a class="icon-button" href="/workspace/service-checks{data.design === 'b' ? '?design=b' : ''}" aria-label="Check again" title="Check again"><RefreshCw size={20} aria-hidden="true" /></a>
+	<a class="icon-button" href="/workspace/service-checks" aria-label="Check again" title="Check again"><RefreshCw size={20} aria-hidden="true" /></a>
 </div>
 <p class="small muted checked">
 	{checkedAt} Pacific{#if data.buildCommit} · build <code>{data.buildCommit.slice(0, 7)}</code>{/if} · {data.results.length} checks
@@ -65,62 +64,37 @@
 	{/each}
 </div>
 
-{#if data.design === 'b'}
-	{#each groups as group (group)}
-		<section class="group" aria-labelledby="group-{group}">
-			<h2 id="group-{group}">{group}<CountBadge count={visible.filter((result) => result.group === group).length} /></h2>
-			<ul class="tiles">
-				{#each visible.filter((result) => result.group === group) as result (result.key)}
-					<li class="tile state-{result.state}">
-						<p class="tile-state">{@render stateIcon(result.state, 16)}{stateLabels[result.state]}<span class="muted time">{result.milliseconds} ms</span></p>
-						<p class="tile-name">{result.name}</p>
-						<p class="small">{result.summary}</p>
-						{#if result.details.length > 0 || (result.fix && result.state !== 'working')}
-							<details class="small more">
-								<summary>More</summary>
-								{#if result.binding}<p>Binding: <code>{result.binding}</code></p>{/if}
-								{#each result.details as detail (detail)}<p>{detail}</p>{/each}
-								{#if result.fix && result.state !== 'working'}<p><strong>What to do:</strong> {result.fix}</p>{/if}
-							</details>
+{#each groups as group (group)}
+	{@const rows = visible.filter((result) => result.group === group)}
+	<Collapsible heading={group} identifier="group-{group.toLowerCase().replaceAll(' ', '-')}" count={rows.length}>
+		<ul class="rows">
+			{#each rows as result (result.key)}
+				{@const more = result.details.length > 0 || Boolean(result.fix && result.state !== 'working') || Boolean(result.binding)}
+				<li class="row state-{result.state}">
+					<details open={result.state === 'problem' || result.state === 'warning'}>
+						<summary class:plain={!more}>
+							<span class="row-icon" title={stateLabels[result.state]}>{@render stateIcon(result.state, 20)}<span class="visually-hidden">{stateLabels[result.state]}:</span></span>
+							<span class="row-name">{result.name}</span>
+							<span class="row-summary">{result.summary}</span>
+							<span class="row-time muted small">{result.milliseconds} ms</span>
+						</summary>
+						{#if more}
+							<div class="row-more small">
+								{#if result.binding}<p>Binding <code>{result.binding}</code></p>{/if}
+								{#if result.details.length > 0}
+									<ul>
+										{#each result.details as detail (detail)}<li>{detail}</li>{/each}
+									</ul>
+								{/if}
+								{#if result.fix && result.state !== 'working'}<p class="fix"><strong>What to do:</strong> {result.fix}</p>{/if}
+							</div>
 						{/if}
-					</li>
-				{/each}
-			</ul>
-		</section>
-	{/each}
-{:else}
-	{#each groups as group (group)}
-		{@const rows = visible.filter((result) => result.group === group)}
-		<Collapsible heading={group} identifier="group-{group.toLowerCase().replaceAll(' ', '-')}" count={rows.length} class="group">
-			<ul class="rows">
-				{#each rows as result (result.key)}
-					{@const more = result.details.length > 0 || Boolean(result.fix && result.state !== 'working') || Boolean(result.binding)}
-					<li class="row state-{result.state}">
-						<details open={result.state === 'problem' || result.state === 'warning'}>
-							<summary class:plain={!more}>
-								<span class="row-icon" title={stateLabels[result.state]}>{@render stateIcon(result.state, 20)}<span class="visually-hidden">{stateLabels[result.state]}:</span></span>
-								<span class="row-name">{result.name}</span>
-								<span class="row-summary">{result.summary}</span>
-								<span class="row-time muted small">{result.milliseconds} ms</span>
-							</summary>
-							{#if more}
-								<div class="row-more small">
-									{#if result.binding}<p>Binding <code>{result.binding}</code></p>{/if}
-									{#if result.details.length > 0}
-										<ul>
-											{#each result.details as detail (detail)}<li>{detail}</li>{/each}
-										</ul>
-									{/if}
-									{#if result.fix && result.state !== 'working'}<p class="fix"><strong>What to do:</strong> {result.fix}</p>{/if}
-								</div>
-							{/if}
-						</details>
-					</li>
-				{/each}
-			</ul>
-		</Collapsible>
-	{/each}
-{/if}
+					</details>
+				</li>
+			{/each}
+		</ul>
+	</Collapsible>
+{/each}
 
 <style>
 	.title-row {
@@ -214,7 +188,7 @@
 		color: var(--color-status-published);
 	}
 
-	/* Design A: a folding section for each group, one line for each check. */
+	/* A folding section for each group, one line for each check (Trevor chose this design, A, on Nov. 23, 2026). */
 	.rows {
 		list-style: none;
 		padding: 0;
@@ -269,13 +243,11 @@
 		margin: 0 0 var(--space-1);
 	}
 
-	.state-working .row-icon,
-	.state-working .tile-state {
+	.state-working .row-icon {
 		color: var(--color-status-published);
 	}
 
-	.state-warning .row-icon,
-	.state-warning .tile-state {
+	.state-warning .row-icon {
 		color: var(--color-status-draft);
 	}
 
@@ -283,8 +255,7 @@
 		background: var(--color-status-draft-background);
 	}
 
-	.state-problem .row-icon,
-	.state-problem .tile-state {
+	.state-problem .row-icon {
 		color: var(--color-danger);
 	}
 
@@ -293,59 +264,8 @@
 	}
 
 	.state-off .row-icon,
-	.state-off .tile-state,
 	.state-off .row-summary {
 		color: var(--color-ink-muted);
-	}
-
-	/* Design B: a tile for each check. */
-	.tiles {
-		list-style: none;
-		padding: 0;
-		display: grid;
-		grid-template-columns: repeat(auto-fill, minmax(16rem, 1fr));
-		gap: var(--space-3);
-	}
-
-	.tile {
-		padding: var(--space-3);
-		border: 1px solid var(--color-line);
-		border-top-width: 4px;
-		border-radius: var(--radius-panel);
-		background: var(--color-surface-raised);
-	}
-
-	.tile p {
-		margin: 0 0 var(--space-1);
-	}
-
-	.tile.state-working {
-		border-top-color: var(--color-status-published-rule);
-	}
-
-	.tile.state-warning {
-		border-top-color: var(--color-status-draft-rule);
-	}
-
-	.tile.state-problem {
-		border-top-color: var(--color-danger);
-	}
-
-	.tile-state {
-		display: flex;
-		align-items: center;
-		gap: var(--space-1);
-		font-size: var(--font-size-small);
-		font-weight: var(--font-weight-semibold);
-	}
-
-	.time {
-		margin-left: auto;
-		font-weight: normal;
-	}
-
-	.tile-name {
-		font-weight: var(--font-weight-semibold);
 	}
 
 	@media (max-width: 40rem) {

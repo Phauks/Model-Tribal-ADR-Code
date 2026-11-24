@@ -21,7 +21,5 @@ export const load: PageServerLoad = async (event) => {
 		migrationFiles,
 		now: checkedAt
 	});
-	// Mockup only: ?design=b shows the second design for Trevor to compare.
-	const design = event.url.searchParams.get('design') === 'b' ? 'b' : 'a';
-	return { results, checkedAt: checkedAt.toISOString(), buildCommit, design };
+	return { results, checkedAt: checkedAt.toISOString(), buildCommit };
 };
