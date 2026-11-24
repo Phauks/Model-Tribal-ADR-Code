@@ -107,6 +107,8 @@
 		leftOut?: string[];
 		/** Gives each row a button to leave it out; only a chart's own table turns it on (Trevor, Nov. 23, 2026: leaving data out stays on charts only). */
 		leaveOut?: boolean;
+		/** How many rows there are in all, when the page passes only the first of them (with its own "Show all"), so the count reads "Showing 50 of 52". */
+		total?: number;
 	}
 
 	let {
@@ -127,7 +129,8 @@
 		count: showCount = true,
 		tools = true,
 		leftOut = $bindable([]),
-		leaveOut = false
+		leaveOut = false,
+		total
 	}: Props = $props();
 
 	// A table drawn on the server gets its buttons once the browser has it; one made later in the browser, such as a map view's table, starts with them, so it is drawn once and does not jump (src/lib/page-started.ts).
@@ -183,9 +186,10 @@
 	const rowHeader = $derived(columns.find((column) => column.isRowHeader) ?? columns[0]);
 	/** A row's name, for its leave-out button and its chip: its row header's text. */
 	const rowLabel = (row: TableRow) => row.cells[rowHeader?.key ?? '']?.text || row.key;
+	const allRows = $derived(Math.max(total ?? 0, rows.length));
 	const count = $derived(
-		`Showing ${shownRows.length.toLocaleString('en-US')} of ${rows.length.toLocaleString('en-US')} ${
-			rows.length === 1 ? rowName[0] : rowName[1]
+		`Showing ${shownRows.length.toLocaleString('en-US')} of ${allRows.toLocaleString('en-US')} ${
+			allRows === 1 ? rowName[0] : rowName[1]
 		}`
 	);
 
@@ -261,8 +265,12 @@
 
 	// Keeps the page address in step with the table, without adding to the
 	// browser's history at each keystroke.
+	// It waits until the table has read the address once (onMount), or a table
+	// reached by a link within the site, which starts interactive, would wipe
+	// the filters in the link before reading them.
+	let addressRead = $state(false);
 	$effect(() => {
-		if (!interactive || !shareable) return;
+		if (!interactive || !shareable || !addressRead) return;
 		const parameters = writeTableState(
 			identifier,
 			{ query, sort: chosenSort, filters: columnFilters },
@@ -285,6 +293,7 @@
 			columnFilters = state.filters;
 			addedFilters = filterColumns.filter((column) => state.filters[column.key]).map((column) => column.key);
 		}
+		addressRead = true;
 		interactive = true;
 		const onChange = () => {
 			fullScreen = document.fullscreenElement === frame;
@@ -707,18 +716,55 @@
 		background: var(--color-surface);
 	}
 
-	/* Full screen: the table fills the screen and scrolls inside it. */
+	/*
+	 * Full screen: the table fills the screen under its controls and scrolls
+	 * inside its own box, both ways, so its end stays at the edge of the screen
+	 * and the sideways scroll bar is always in view (Trevor, Nov. 24, 2026:
+	 * "it should always keep the end of the table locked, so you cannot go over
+	 * the side"). The frame itself never scrolls sideways; it scrolls down only
+	 * when the controls are taller than the screen. The header row stays at the
+	 * top as the rows scroll under it.
+	 */
 	.data-table:fullscreen,
 	.data-table.filling-window {
-		overflow: auto;
+		display: flex;
+		flex-direction: column;
+		overflow: hidden auto;
 		padding: var(--space-6);
 		background: var(--color-paper);
+	}
+
+	.data-table:fullscreen > *,
+	.data-table.filling-window > * {
+		flex: none;
+	}
+
+	.data-table:fullscreen > .table-scroll,
+	.data-table.filling-window > .table-scroll {
+		flex: 1 1 auto;
+		min-height: 12rem;
+		overflow: auto;
+		margin-bottom: 0;
+	}
+
+	.data-table:fullscreen thead th,
+	.data-table.filling-window thead th {
+		position: sticky;
+		top: 0;
+		z-index: 2;
+		box-shadow: inset 0 -1px 0 var(--color-line);
 	}
 
 	.data-table.filling-window {
 		position: fixed;
 		inset: 0;
 		z-index: 1000;
+	}
+
+	/* The table and its controls end at the edge of the column, however wide the table is. */
+	.data-table {
+		min-width: 0;
+		max-width: 100%;
 	}
 
 	.table-empty {

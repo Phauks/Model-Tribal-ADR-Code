@@ -9,6 +9,8 @@
 	// in the source library (src/routes/workspace/essays/[id]/quotes). Choosing an issue selects its words; its
 	// buttons fix it, link it, add the word to the dictionary or hide it.
 	import { onDestroy, onMount } from 'svelte';
+	import SpellCheck from '@lucide/svelte/icons/spell-check';
+	import X from '@lucide/svelte/icons/x';
 	import { TextSelection } from 'prosemirror-state';
 	import type { EditorView } from 'prosemirror-view';
 	import type { Linter } from 'harper.js';
@@ -24,7 +26,10 @@
 		file,
 		library,
 		canEdit,
-		selected = $bindable(null)
+		selected = $bindable(null),
+		open = true,
+		found = $bindable(0),
+		onclose
 	}: {
 		/** The editor, once it exists. */
 		view: () => EditorView | undefined;
@@ -37,6 +42,11 @@
 		canEdit: boolean;
 		/** The issue chosen in the panel or by clicking its mark in the text. */
 		selected?: string | null;
+		/** Whether the list shows; the marks in the text show either way (essay-editor-mockups/v2-1). */
+		open?: boolean;
+		/** How many findings there are, for the count beside Checks in the bar. */
+		found?: number;
+		onclose?: () => void;
 	} = $props();
 
 	let linter: Linter | null = null;
@@ -113,6 +123,9 @@
 
 	const ignoreKey = (issue: CheckIssue) => `${issue.kind}:${issue.problem.toLowerCase()}:${issue.message}`;
 	const shown = $derived(issues.filter((issue) => !ignored.has(ignoreKey(issue))));
+	$effect(() => {
+		found = shown.length + (publishing ? publishing.problems.length + publishing.warnings.length : 0);
+	});
 	const groups = $derived([
 		{ title: 'Spelling', items: shown.filter((issue) => issue.kind === 'spelling') },
 		{ title: 'Grammar and usage', items: shown.filter((issue) => issue.kind === 'grammar') },
@@ -330,7 +343,13 @@
 	});
 </script>
 
-<section class="checks" aria-label="Checks">
+{#if open}
+<section class="checks" aria-labelledby="checks-heading">
+	<header class="checks-head">
+		<h2 id="checks-heading" class="small"><SpellCheck size={18} aria-hidden="true" /> Checks</h2>
+		<span class="small muted">checked on your computer</span>
+		{#if onclose}<button type="button" class="close" aria-label="Close the checks" title="Close" onclick={onclose}><X size={18} aria-hidden="true" /></button>{/if}
+	</header>
 	<p class="small muted status" role="status" aria-live="polite">
 		{#if loading}{loading}{:else if progress}{progress}{:else if running}Checking…{:else}{shown.length === 0 ? 'Nothing found.' : `${shown.length} to look at.`}{/if}
 	</p>
@@ -403,16 +422,47 @@
 		<p class="small muted">A phrase used often may be a term of art. Ask for a glossary entry through the glossary's own process; the essay then links it.</p>
 	{/if}
 </section>
+{/if}
 
 <style>
+	/* A panel in the right margin, as in essay-editor-mockups/v2-3. */
 	.checks {
+		position: sticky;
+		top: calc(var(--layout-target-minimum) + var(--space-4));
 		border: 1px solid var(--color-line);
-		border-radius: var(--radius-control);
+		border-radius: var(--radius-panel);
 		padding: var(--space-2) var(--space-3);
 		margin: 0 0 var(--space-3);
-		max-height: 24rem;
+		max-height: calc(100vh - 8rem);
 		overflow-y: auto;
-		background: var(--color-surface);
+		background: var(--color-surface-raised);
+		box-shadow: 0 1px 3px color-mix(in srgb, var(--color-ink) 10%, transparent);
+	}
+
+	.checks-head {
+		display: flex;
+		align-items: center;
+		gap: var(--space-2);
+		margin: 0 0 var(--space-2);
+	}
+
+	.checks-head h2 {
+		display: inline-flex;
+		align-items: center;
+		gap: var(--space-1);
+		margin: 0;
+		flex: 1;
+	}
+
+	.close {
+		display: inline-grid;
+		place-items: center;
+		min-width: var(--layout-target-minimum);
+		min-height: var(--layout-target-minimum);
+		border: 0;
+		background: none;
+		color: var(--color-ink);
+		cursor: pointer;
 	}
 
 	.status {

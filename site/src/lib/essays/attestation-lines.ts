@@ -17,7 +17,37 @@ import { Plugin, PluginKey, type EditorState } from 'prosemirror-state';
 import { Decoration, DecorationSet, type EditorView } from 'prosemirror-view';
 import { attestationRoleLabels, currentAttestations, essaySections, type Attestation } from './attestations.ts';
 import { essayDate } from './dates.ts';
+import { personColor, personInitials } from './person-look.ts';
 import { inReviewText, openRequestsOn, waitsOn, type ReviewRequest } from './review-requests.ts';
+
+const svgNamespace = 'http://www.w3.org/2000/svg';
+
+/** Lucide's inbox icon, as in the In review band of essay-editor-mockups/4 and v2-1. */
+function inboxIcon(): SVGSVGElement {
+	const svg = document.createElementNS(svgNamespace, 'svg');
+	for (const [name, value] of Object.entries({ width: '16', height: '16', viewBox: '0 0 24 24', fill: 'none', stroke: 'currentColor', 'stroke-width': '2', 'stroke-linecap': 'round', 'stroke-linejoin': 'round', 'aria-hidden': 'true' })) svg.setAttribute(name, value);
+	for (const shape of [['polyline', { points: '22 12 16 12 14 15 10 15 8 12 2 12' }], ['path', { d: 'M5.45 5.11 2 12v6a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2v-6l-3.45-6.89A2 2 0 0 0 16.76 4H7.24a2 2 0 0 0-1.79 1.11z' }]] as const) {
+		const element = document.createElementNS(svgNamespace, shape[0]);
+		for (const [name, value] of Object.entries(shape[1])) element.setAttribute(name, value);
+		svg.append(element);
+	}
+	return svg;
+}
+
+/** Each person still asked, as their initials in their color. */
+function reviewerAvatars(request: ReviewRequest): HTMLElement {
+	const holder = document.createElement('span');
+	holder.className = 'essay-review-people';
+	for (const reviewer of request.reviewers.filter((candidate) => candidate.doneAt === null)) {
+		const avatar = document.createElement('span');
+		avatar.className = 'essay-review-avatar';
+		avatar.style.background = personColor(reviewer.personName);
+		avatar.title = reviewer.personName;
+		avatar.textContent = personInitials(reviewer.personName);
+		holder.append(avatar);
+	}
+	return holder;
+}
 
 export interface AttestationLinesState {
 	attestations: Attestation[];
@@ -46,9 +76,12 @@ export function reviewLines(requests: ReviewRequest[], you: string | null, onDon
 		const text = document.createElement('span');
 		const strong = document.createElement('strong');
 		strong.textContent = 'In review';
-		text.append(strong, inReviewText(request).replace(/^In review/, ''));
+		const rest = document.createElement('span');
+		rest.className = 'essay-review-who';
+		rest.textContent = inReviewText(request).replace(/^In review/, '');
+		text.append(strong, rest);
 		if (request.message) text.title = request.message;
-		item.append(text);
+		item.append(inboxIcon(), text, reviewerAvatars(request));
 		if (waitsOn(request, you)) {
 			const button = document.createElement('button');
 			button.type = 'button';

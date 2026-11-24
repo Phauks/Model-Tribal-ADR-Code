@@ -35,6 +35,26 @@ export function isCommentAsk(value: unknown): value is CommentAsk {
 	return typeof value === 'string' && (commentAsks as readonly string[]).includes(value);
 }
 
+/**
+ * The project's AI helpers a thread can be assigned to, beside people
+ * (Trevor, Nov. 23, 2026). Nemesis is the adversarial reader that looks for
+ * loopholes. Neither answers an assigned thread by itself yet.
+ */
+export const commentHelpers = { claude: 'Claude', nemesis: 'Nemesis' } as const;
+export type CommentHelper = keyof typeof commentHelpers;
+
+export function isCommentHelper(value: unknown): value is CommentHelper {
+	return typeof value === 'string' && Object.hasOwn(commentHelpers, value);
+}
+
+/** Who a thread is assigned to. */
+export type CommentAssignee = { kind: 'person'; identifier: string; name: string } | { kind: 'helper'; helper: CommentHelper; name: string };
+
+/** How an assignee is sent to the server: "person:<identifier>" or "helper:claude". */
+export function assigneeKey(assignee: CommentAssignee): string {
+	return assignee.kind === 'person' ? `person:${assignee.identifier}` : `helper:${assignee.helper}`;
+}
+
 /** One comment as the editor shows it. */
 export interface EssayComment {
 	identifier: string;
@@ -50,6 +70,8 @@ export interface EssayComment {
 	createdAt: string;
 	resolvedAt: string | null;
 	resolvedByName: string | null;
+	/** Who the thread is assigned to; only on a thread's first comment. */
+	assignee: CommentAssignee | null;
 }
 
 /** A comment being written: the words it is on, and what the selection menu chose. */

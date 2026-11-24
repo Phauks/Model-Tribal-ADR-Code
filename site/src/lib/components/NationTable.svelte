@@ -12,6 +12,8 @@
 	table opens to the data behind it).
 -->
 <script lang="ts">
+	import Check from '@lucide/svelte/icons/check';
+	import Clock from '@lucide/svelte/icons/clock';
 	import DataTable from './DataTable.svelte';
 	import RecognitionBadges from './RecognitionBadges.svelte';
 	import { compareBadges } from '#lib/recognition-badges.ts';
@@ -46,7 +48,7 @@
 		{ key: 'recognition', header: 'Recognition', sortable: true, custom: true, filterable: true },
 		{ key: 'states', header: 'States', sortable: true, filterable: true, custom: true, searchable: true },
 		...(regions ? [{ key: 'region', header: 'Region', sortable: true, filterable: true, custom: true, searchable: true }] : []),
-		{ key: 'review', header: 'Review status', sortable: true, filterable: true }
+		{ key: 'review', header: 'Review status', sortable: true, filterable: true, custom: true }
 	]);
 
 	const rows: TableRow[] = $derived(
@@ -81,6 +83,7 @@
 
 	const recognitionById = $derived(new Map(group.rows.map((row) => [row.id, badged(row.recognition)])));
 	const statesById = $derived(new Map(group.rows.map((row) => [row.id, row.states])));
+	const verifiedById = $derived(new Map(group.rows.map((row) => [row.id, row.verified])));
 </script>
 
 <DataTable
@@ -101,6 +104,14 @@
 		{#if column.key === 'region'}
 			{@const regionPage = bureauRegionPage(row.cells.region.text)}
 			{#if regionPage}<a href={regionPage}>{row.cells.region.text}</a>{:else}{row.cells.region.text}{/if}
+		{:else if column.key === 'review'}
+			{@const verified = verifiedById.get(row.key) ?? false}
+			<span class="review-badge" class:review-badge-verified={verified}>{#if verified}<Check size={14} strokeWidth={2} aria-hidden="true" />{:else}<Clock
+						size={14}
+						strokeWidth={2}
+						aria-hidden="true"
+					/>{/if}{row.cells.review.text}</span
+			>
 		{:else if column.key === 'states'}
 			{#each statesById.get(row.key) ?? [] as code, index (code)}{index > 0 ? ', ' : ''}<a href="/nations/state/{code.toLocaleLowerCase('en-US')}">{stateName(code)}</a>{/each}
 		{:else}

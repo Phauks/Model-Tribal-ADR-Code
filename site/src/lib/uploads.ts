@@ -32,6 +32,24 @@ export const largestFileBytes: Record<UploadKind, number> = {
 export const largestAnyFileBytes = Math.max(...Object.values(largestFileBytes));
 
 
+/**
+ * Why a file cannot be sent, judged by its name alone, so the upload table can
+ * mark it as a problem as soon as it is added (design/upload-table, mockup 1).
+ * The server still judges every file by its first bytes
+ * (src/lib/server/upload-checks.ts); this only catches the obvious ones early.
+ */
+export function refusedByName(name: string): string | undefined {
+	const extension = /\.([A-Za-z0-9]{1,8})$/.exec(name.trim())?.[1]?.toLowerCase() ?? '';
+	if (['html', 'htm', 'xhtml', 'mht', 'mhtml'].includes(extension)) return 'Web pages can’t be sent. Save it as a PDF.';
+	if (extension === 'svg') return 'SVG pictures can’t be sent. Save it as a PNG.';
+	if (['docm', 'xlsm', 'pptm', 'dotm', 'xltm'].includes(extension)) return 'Office files with macros can’t be accepted.';
+	if (['doc', 'xls', 'ppt'].includes(extension)) return 'Older Word and Excel files can’t be accepted. Save it as a PDF, .docx or .xlsx.';
+	if (['7z', 'rar', 'gz', 'tar', 'tgz'].includes(extension)) return 'Only ZIP archives can be sent. Unpack this one first.';
+	if (['exe', 'dll', 'msi', 'bat', 'cmd', 'sh', 'js', 'ps1', 'app', 'dmg', 'apk', 'jar'].includes(extension))
+		return 'Programs and scripts can’t be sent.';
+	return undefined;
+}
+
 /** Where an upload's bytes are: a file in the private bucket, or a YouTube video it links to. */
 export const uploadSources = ['file', 'youtube'] as const;
 export type UploadSource = (typeof uploadSources)[number];

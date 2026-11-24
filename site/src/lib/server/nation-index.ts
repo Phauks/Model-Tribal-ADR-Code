@@ -5,7 +5,8 @@
  * one per state, stay for the links that open a state's nations.
  */
 import { foldForSearch } from '../tables/table-definition.ts';
-import { displayName, entityTypeLabels, reviewStatusLabels, stateName } from '../nation-labels.ts';
+import { displayName, entityTypeLabels, stateName } from '../nation-labels.ts';
+import { nationVerification } from '../review-status.ts';
 import { nations, type NationRecord } from './content.ts';
 import { recognitionViews, type RecognitionView } from './recognition.ts';
 
@@ -21,7 +22,9 @@ export interface NationIndexRow {
 	/** State and territory codes, such as "NV". */
 	states: string[];
 	statesText: string;
+	/** "Verified" once the nation has reviewed the page, otherwise "Unverified" (src/lib/review-status.ts). */
 	review: string;
+	verified: boolean;
 	recognition: RecognitionView[];
 	/** The Bureau of Indian Affairs region that serves the nation, such as "Pacific". */
 	region: string;
@@ -57,7 +60,8 @@ function rowOf(record: NationRecord): NationIndexRow {
 		letter: letterOf(displayName(record.names.official)),
 		states,
 		statesText: states.map(stateName).join(', '),
-		review: reviewStatusLabels[record.review?.status]?.label ?? record.review?.status ?? '',
+		review: nationVerification(record.review?.status).label,
+		verified: nationVerification(record.review?.status).verified,
 		recognition: recognitionViews(record),
 		region: record.federal_administration?.bureau_of_indian_affairs_region ?? ''
 	};

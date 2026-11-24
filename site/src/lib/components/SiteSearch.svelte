@@ -221,7 +221,7 @@
 									{#each results.slice(0, perGroup) as result (`${result.link} ${result.title}`)}
 										<li>
 											{#if result.image && !failedImages.has(result.image)}<img
-													class="seal"
+													class="seal image-backing"
 													src={result.image}
 													alt=""
 													width="24"
@@ -388,10 +388,14 @@
 		font-size: var(--font-size-small);
 	}
 
+	/* Pinned to the panel's bottom edge, as the search box is to its top, so it shows however long the results run. */
 	.all-results {
+		position: sticky;
+		bottom: 0;
 		display: block;
 		padding: var(--space-3) var(--space-4);
 		border-top: 1px solid var(--color-line);
+		background: var(--color-paper);
 		font-weight: var(--font-weight-semibold);
 	}
 

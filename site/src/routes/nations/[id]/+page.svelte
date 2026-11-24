@@ -12,6 +12,8 @@
 	import NationServices from '#lib/components/NationServices.svelte';
 	import SourceList from '#lib/components/SourceList.svelte';
 	import NationMap from '#lib/components/NationMap.svelte';
+	import NationEditorBanner from '#lib/components/NationEditorBanner.svelte';
+	import Pencil from '@lucide/svelte/icons/pencil';
 	import NationDocumentsOffline from '#lib/components/NationDocumentsOffline.svelte';
 	import RecognitionBadges from '#lib/components/RecognitionBadges.svelte';
 	import RecordPage from '#lib/components/RecordPage.svelte';
@@ -21,6 +23,7 @@
 	import Clock from '@lucide/svelte/icons/clock';
 	import History from '@lucide/svelte/icons/history';
 	import TopicBadges from '#lib/components/TopicBadges.svelte';
+	import { opinionsMentioning } from '#lib/opinion-mentions.ts';
 	import Timeline from '#lib/components/Timeline.svelte';
 	import { unclaimedPage } from '#lib/review-status.ts';
 	import { afterNavigate } from '$app/navigation';
@@ -56,6 +59,31 @@
 		}))
 	);
 	const enforcementMarks = $derived(new Map(data.enforcement.map((action) => [action.key, action.citations])));
+
+	// The Treaties table: Signed, Treaty, Statutes at Large, Kappler and Signed
+	// as (Trevor chose "label rows", Nov. 23, 2026: records with dates and
+	// citations go in the shared data table). The treaty's markers follow its
+	// title, as in the mockup.
+	const treatyColumns: TableColumn[] = [
+		{ key: 'signed', header: 'Signed', type: 'date', sortable: true },
+		{ key: 'treaty', header: 'Treaty', isRowHeader: true, sortable: true, searchable: true, custom: true },
+		{ key: 'statutes', header: 'Statutes at Large', sortable: true, searchable: true },
+		{ key: 'kappler', header: 'Kappler', sortable: true, searchable: true },
+		{ key: 'signedAs', header: 'Signed as', sortable: true, searchable: true, filterable: true }
+	];
+	const treatyRows: TableRow[] = $derived(
+		data.treaties.map((treaty) => ({
+			key: treaty.key,
+			cells: {
+				signed: { text: readableDate(treaty.signed), sortValue: treaty.signed },
+				treaty: { text: treaty.title, href: treaty.link },
+				statutes: { text: treaty.statutesAtLarge ?? '' },
+				kappler: { text: treaty.kappler ?? '' },
+				signedAs: { text: treaty.signedAs ?? '' }
+			}
+		}))
+	);
+	const treatyMarks = $derived(new Map(data.treaties.map((treaty) => [treaty.key, treaty.citations])));
 
 	// The court cases that name the nation, as a party or as what the case is
 	// about (Trevor, Nov. 23, 2026). Four short columns; under the case's name,
@@ -95,6 +123,9 @@
 <svelte:head>
 	<title>{page.officialName} · Nations · Model Tribal ADR Code</title>
 </svelte:head>
+
+<!-- For someone on the nation's team: "You can edit this page" (decision record 0041). -->
+{#if !page.withdrawn}<NationEditorBanner nation={page.id} />{/if}
 
 <Breadcrumbs trail={[{ label: 'Nations', href: '/nations' }]} />
 
@@ -209,6 +240,7 @@
 
 		<!-- 5. Courts and dispute resolution -->
 		<Collapsible heading="Courts and dispute resolution" identifier="courts-heading">
+			{@render editLink('courts-and-dispute-resolution', 'courts-heading', 'Courts and dispute resolution')}
 			{#if data.empty.courts}
 				{@render emptySection(data.empty.courts)}
 			{:else}
@@ -228,14 +260,11 @@
 					{opinions.count === 1 ? 'One opinion' : `${opinions.count.toLocaleString('en-US')} opinions`} of courts serving the nation {opinions.count === 1 ? 'is' : 'are'} published in the American Tribal Law Reporter or the Navajo Reporter{opinions.from === opinions.to ? `, from ${opinions.from}` : `, from ${opinions.from} to ${opinions.to}`}.<CitationMarks
 						marks={opinions.citations}
 					/>
-					{#if opinions.disputeResolutionCount > 0}
-						{opinions.disputeResolutionCount === opinions.count ? 'All of them' : `Of these, ${opinions.disputeResolutionCount.toLocaleString('en-US')}`} mention peacemaking, mediation, arbitration or another way of settling a dispute outside a trial; they are listed first.
-					{/if}
 				</p>
-				<ul class="opinions">
+				<ul class="opinions stacked-list">
 					{#each opinions.shown as opinion (opinion.path)}
 						<li>
-							<a href={opinion.path}><i>{opinion.name}</i></a>, {opinion.citation} ({opinion.court} {opinion.year}){#if opinion.topics.length > 0}<span class="small mentions"><span class="muted">Mentions</span>{' '}<TopicBadges topics={opinion.topics.map((topic) => ({ text: topic }))} /></span>{/if}
+							<a href={opinion.path}><i>{opinion.name}</i></a>, {opinion.citation} ({opinion.court} {opinion.year}){#if opinion.topics.length > 0}<span class="small mentions"><span class="muted">Mentions</span>{' '}<TopicBadges topics={opinion.topics.map((topic) => ({ text: topic, link: opinionsMentioning(data.page.id, topic) }))} /></span>{/if}
 						</li>
 					{/each}
 				</ul>
@@ -284,18 +313,22 @@
 		     reproduced, and each document with recorded versions, oldest first
 		     (decision record 0018). -->
 		<div data-print-part="documentHistory">
-			<Collapsible heading="Laws and agreements" identifier="law-heading">
+			<Collapsible heading="Laws and agreements" identifier="law-heading" actions={data.page.heldCopies.count > 0 ? documentTools : undefined}>
+				{@render editLink('statements', 'statement-law-heading', 'Laws and agreements')}
 				{#if data.law.length > 0}
 					<FactGroups groups={data.law} />
 				{/if}
 				<DocumentHistoryList documents={data.documents} />
 				<div class="nation-slot" data-nation-slot="law"></div>
-				<NationDocumentsOffline nation={data.page.id} held={data.page.heldCopies} />
 			</Collapsible>
+			{#snippet documentTools()}
+				<NationDocumentsOffline nation={data.page.id} held={data.page.heldCopies} />
+			{/snippet}
 		</div>
 
 		<!-- 7. Jurisdiction: Public Law 280, Indian Child Welfare Act agents and the like -->
 		<Collapsible heading="Jurisdiction" identifier="jurisdiction-heading">
+			{@render editLink('statements', 'statement-jurisdiction-heading', 'Jurisdiction')}
 			{#if data.empty.jurisdiction}
 				{@render emptySection(data.empty.jurisdiction)}
 			{:else}
@@ -305,8 +338,29 @@
 		</Collapsible>
 
 		<!-- 7a. Treaties and federal ties: treaties with links to Kappler, how the land was set aside, Indian Health Service -->
-		{#if data.ties.length > 0 || data.enforcement.length > 0}
+		{#if data.treaties.length > 0 || data.ties.length > 0 || data.enforcement.length > 0}
 			<Collapsible heading="Treaties and federal ties" identifier="ties-heading">
+				{#if data.treaties.length > 0}
+					<h3 id="treaties-heading">Treaties</h3>
+					<DataTable
+						identifier="treaties"
+						label="Table: treaties"
+						columns={treatyColumns}
+						rows={treatyRows}
+						defaultSort={{ key: 'signed', direction: 'ascending' }}
+						rowName={['treaty', 'treaties']}
+						download="{data.page.id}-treaties"
+					>
+						{#snippet cell(row: TableRow, column: TableColumn)}
+							{#if column.key === 'treaty'}
+								<span class="treaty-cell"
+									>{#if row.cells.treaty.href}<a href={row.cells.treaty.href}>{row.cells.treaty.text}</a
+										>{:else}{row.cells.treaty.text}{/if}<CitationMarks marks={treatyMarks.get(row.key)} /></span
+								>
+							{/if}
+						{/snippet}
+					</DataTable>
+				{/if}
 				{#if data.ties.length > 0}<FactGroups groups={data.ties} />{/if}
 				{#if data.enforcement.length > 0}
 					<!-- The Gaming Commission's enforcement actions, as a table (Trevor, Nov. 23, 2026). -->
@@ -354,7 +408,7 @@
 		     restricted or withdrawn story is never listed (decision record 0029). -->
 		{#if data.stories.length > 0}
 			<Collapsible heading="Stories" identifier="stories-heading">
-				<ul class="stories">
+				<ul class="stories stacked-list">
 					{#each data.stories as story (story.id)}
 						{@const shared = story.nations.filter((nation) => nation.id !== data.page.id)}
 						<li>
@@ -366,10 +420,10 @@
 			</Collapsible>
 		{/if}
 
-		<!-- 8. Nearby Nations, the other nations in the same states: plain lists, never a ranking -->
+		<!-- 8. Nearby Nations, the other nations in the same states: plain lists, never a ranking. It starts folded (nation page review, layout A). -->
 		{#if data.neighbors.length > 0}
 			<div class="no-print">
-				<Collapsible heading="Nearby Nations" identifier="neighbors-heading">
+				<Collapsible heading="Nearby Nations" identifier="neighbors-heading" open={false}>
 					{#each data.neighbors as entry (entry.state)}
 						<h3 class="neighbors-state">{entry.stateName}</h3>
 						{#if entry.nations.length > 0}
@@ -397,9 +451,16 @@
 	{/snippet}
 </RecordPage>
 
+<!-- "Edit" on a part of the page, shown only to someone on the nation's team whose place covers it (NationEditorBanner.svelte). -->
+{#snippet editLink(part: string, anchor: string, name: string)}
+	<a class="nation-edit-link no-print" data-edit-part={part} href="/workspace/nation-teams/{page.id}/edit#{anchor}"
+		><Pencil size={16} aria-hidden="true" />Edit<span class="visually-hidden"> {name}</span></a
+	>
+{/snippet}
+
 <!-- A legal section with nothing to show: the short answer, then how far the search went once one is finished. -->
-{#snippet emptySection(empty: { text: string; note: string })}
-	<p class="empty-section"><strong>{empty.text}.</strong>{#if empty.note}{' '}{empty.note}{/if}</p>
+{#snippet emptySection(empty: { text: string })}
+	<p class="empty-section">{empty.text}</p>
 {/snippet}
 
 <!-- 3. At a glance, with the seal and the map, then the contacts. -->
@@ -420,6 +481,7 @@
 							})}
 						>
 							<img
+								class="image-backing"
 								src={data.image.src}
 								alt={description}
 								loading="lazy"
@@ -441,6 +503,7 @@
 	{/if}
 	{#if hasContacts}
 		<Collapsible heading={contactsHeading} identifier="contacts-heading">
+			{@render editLink('contacts', 'contacts-heading', contactsHeading)}
 			<ContactCard cards={data.contacts} headingLevel={3} />
 		</Collapsible>
 	{/if}
@@ -474,21 +537,36 @@
 			display: none;
 		}
 	}
-	.opinions li + li {
-		margin-top: var(--space-2);
+	/*
+	 * A treaty's markers follow its title with no text around them, so each
+	 * gets a full 24 by 24 pixel target, as in FactGroups (WCAG 2.2, 2.5.8),
+	 * and the title link gets two pixels above and below.
+	 */
+	.treaty-cell :global(.note-marker) {
+		padding: 5px 9px 5px 0.05em;
 	}
+
+	.treaty-cell > a {
+		padding-block: 2px;
+	}
+
+	/* Room before the line that follows a list, such as "All 949 opinions". */
+	.opinions,
+	.stories {
+		margin-bottom: var(--space-4);
+	}
+
 	.mentions {
 		display: block;
 		margin-top: var(--space-1);
-	}
-	.stories li + li {
-		margin-top: var(--space-2);
 	}
 	.story-kind {
 		display: block;
 	}
 
+	/* Its rules keep clear of the floated At a glance column and contacts (RecordPage.svelte). */
 	.empty-section {
+		display: flow-root;
 		margin: 0 0 var(--space-5);
 		padding: var(--space-3) 0;
 		border-top: 1px solid var(--color-line);
@@ -530,6 +608,9 @@
 		columns: var(--layout-card-min);
 		column-gap: var(--space-5);
 		max-width: none;
+		/* Names in columns need no bullets (Trevor, Nov. 23, 2026). */
+		list-style: none;
+		padding-left: 0;
 	}
 
 	.neighbors li {

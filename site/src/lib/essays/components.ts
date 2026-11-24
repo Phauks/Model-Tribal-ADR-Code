@@ -87,8 +87,11 @@ function componentDecorations(state: EditorState): DecorationSet {
 		const classes = ['essay-component'];
 		if (component.labeledInside) classes.push('essay-component-boxed');
 		if (isCurrent) classes.push('is-current');
+		// The essay's title, its first heading, sits plain above the rest as on the page (essay-editor-mockups/v2-1).
+		const isTitle = index === 0 && doc.firstChild?.type.name === 'heading' && Number(doc.firstChild.attrs.level) === 1;
+		if (isTitle) classes.push('essay-title');
 		const attributes: Record<string, string> = { class: classes.join(' ') };
-		if (!component.labeledInside || isCurrent) {
+		if (!isTitle && (!component.labeledInside || isCurrent)) {
 			attributes['data-component'] = isCurrent ? `${component.label} · ${component.number}` : component.label;
 		}
 		return Decoration.node(component.from, component.to, attributes);
