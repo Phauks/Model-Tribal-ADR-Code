@@ -7,5 +7,5 @@
 		"noEmit": true,
 		"strict": true
 	},
-	"include": ["worker.ts"]
+	"include": ["worker.ts", "../src/markdown-it-plugins.d.ts"]
 }

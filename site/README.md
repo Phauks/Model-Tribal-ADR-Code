@@ -13,7 +13,7 @@ npm run build     # build the site into .svelte-kit/cloudflare
 npm run preview   # build, then serve the built Worker locally with Wrangler
 ```
 
-Checks that also run on every pull request (the "Website build" job in `.github/workflows/checks.yml`):
+Checks that also run on every pull request (the "Website" and "Accessibility" jobs in `.github/workflows/checks.yml`):
 
 ```sh
 npm run check             # TypeScript and Svelte
