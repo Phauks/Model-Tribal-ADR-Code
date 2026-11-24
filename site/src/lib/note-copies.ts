@@ -32,6 +32,8 @@ export function citationHtml(entry: Element, { newTab = false } = {}): string {
 	const note = entry.cloneNode(true) as Element;
 	for (const extra of note.querySelectorAll('.source-uses, .source-backlinks, .source-cited')) extra.remove();
 	for (const element of note.querySelectorAll('[id]')) element.removeAttribute('id');
+	// A copy starts with its places to read it closed, whatever the reader opened in the list (src/lib/reading-links.ts).
+	for (const toggle of note.querySelectorAll('.reading-toggle')) toggle.setAttribute('aria-expanded', 'false');
 	if (newTab) {
 		for (const link of note.querySelectorAll<HTMLAnchorElement>('a[href]')) {
 			if (link.origin === location.origin) continue;

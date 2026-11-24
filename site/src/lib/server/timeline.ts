@@ -27,7 +27,8 @@ import { displayName, stateName } from '../nation-labels.ts';
 import { webLink } from '../contact-links.ts';
 import { copyPagePath } from '../public-copies.ts';
 import type { CitationItem } from '../citation-formats.ts';
-import { isTimelineDate, timelineRows, type OpinionYear, type TimelineEntry, type TimelineRow } from '../timeline.ts';
+import { isTimelineDate, mentionBits, timelineRows, type OpinionYear, type TimelineEntry, type TimelineRow } from '../timeline.ts';
+import { mentionWordList } from '../opinion-mentions.ts';
 import { courtAbbreviation } from './case-citations.ts';
 import { casePreviewList } from './case-previews.ts';
 import {
@@ -42,6 +43,7 @@ import {
 import { documentHeading, documentHistoryView, nationDocumentHistories, type DocumentHistoryView } from './document-history.ts';
 import { SourceUses, whereInSource, type CitationMark } from './source-uses.ts';
 import { opinionsSourceKey, tribalCourtOpinions } from './tribal-court-opinions.ts';
+import { lawNames } from '../law-names.ts';
 
 /** The heading the timeline's sources are filed under in a page's References list. */
 export const timelineHeading = 'Timeline';
@@ -53,21 +55,7 @@ export const timelineHeading = 'Timeline';
  * gaming and Tribal courts that the legal history essay treats as the
  * framework for Tribal justice (content/essays/i-legal-history-timeline.md).
  */
-export const contextLaws: Record<string, string> = {
-	'indian-removal-act-1830': 'Indian Removal Act',
-	'major-crimes-act-1885': 'Major Crimes Act',
-	'general-allotment-act-1887': 'General Allotment Act',
-	'indian-reorganization-act-1934': 'Indian Reorganization Act',
-	'public-law-83-280': 'Public Law 280',
-	'indian-civil-rights-act-1968': 'Indian Civil Rights Act of 1968',
-	'indian-self-determination-and-education-assistance-act-1975': 'Indian Self-Determination and Education Assistance Act',
-	'indian-child-welfare-act-1978': 'Indian Child Welfare Act of 1978',
-	'indian-gaming-regulatory-act-1988': 'Indian Gaming Regulatory Act',
-	'indian-tribal-justice-act-1993': 'Indian Tribal Justice Act',
-	'tribal-law-and-order-act-2010': 'Tribal Law and Order Act of 2010',
-	'violence-against-women-reauthorization-act-2013-title-ix': 'Violence Against Women Reauthorization Act of 2013, title IX',
-	'violence-against-women-act-reauthorization-act-2022-title-viii': 'Violence Against Women Act Reauthorization Act of 2022, title VIII'
-};
+export const contextLaws: Record<string, string> = lawNames;
 
 const caseKinds = new Set(['federal-case', 'state-case', 'territorial-case']);
 const federalKinds = new Set(['federal-statute', 'executive-order']);
@@ -207,9 +195,6 @@ function caseLinks(): Map<string, string> {
 	return caseLinkCache;
 }
 
-/** The topics of an opinion, as words, that the full timeline's "Mediation or arbitration" filter finds. */
-const mediationTopics = new Set(['mediation', 'arbitration', 'alternative dispute resolution']);
-
 /** The opinions of one nation, or of every nation, counted by year (and by nation on the full timeline). */
 function opinionYears(nationId?: string): OpinionYear[] {
 	const counts = new Map<string, OpinionYear>();
@@ -219,13 +204,11 @@ function opinionYears(nationId?: string): OpinionYear[] {
 		const owners = nationId ? (opinion.nations.includes(nationId) ? [undefined] : []) : opinion.nations;
 		for (const nation of owners) {
 			const key = `${year}|${nation ?? ''}`;
-			const entry = counts.get(key) ?? { year, count: 0, peacemaking: 0, mediation: 0, both: 0, ...(nation ? { nation } : {}) };
-			const peacemaking = opinion.topics.includes('peacemaking');
-			const mediation = opinion.topics.some((topic) => mediationTopics.has(topic));
+			const entry = counts.get(key) ?? { year, count: 0, ...(nation ? { nation } : {}) };
 			entry.count += 1;
-			if (peacemaking) entry.peacemaking += 1;
-			if (mediation) entry.mediation = (entry.mediation ?? 0) + 1;
-			if (peacemaking && mediation) entry.both = (entry.both ?? 0) + 1;
+			// Only the full timeline filters by word, so a nation's own timeline leaves the words out.
+			const bits = nationId ? 0 : mentionBits(opinion.topics, mentionWordList);
+			if (bits !== 0) entry.mentions = [...(entry.mentions ?? []), bits];
 			counts.set(key, entry);
 		}
 	}

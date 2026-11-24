@@ -28,6 +28,7 @@ export type ScanPurpose =
 	| 'nation-picture'
 	| 'nation-team-proof'
 	| 'profile-picture'
+	| 'profile-document'
 	| 'sponsor-logo'
 	| 'room-recording'
 	| 'event-material'

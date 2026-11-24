@@ -144,6 +144,30 @@ export async function sha256Hex(text: string): Promise<string> {
 	return Array.from(new Uint8Array(digest), (byte) => byte.toString(16).padStart(2, '0')).join('');
 }
 
+/**
+ * The essays with a version this person saved that is not published yet,
+ * newest first, for "Your drafts" in the sidebar while editing
+ * (src/lib/essays/editing-outline.svelte.ts).
+ */
+export async function draftsBy(database: D1Database, person: string): Promise<{ title: string; link: string }[]> {
+	const { results } = await database
+		.prepare(
+			`SELECT e.identifier, e.part,
+				(SELECT title FROM essay_versions WHERE essay_identifier = e.identifier ORDER BY number DESC LIMIT 1) AS title,
+				(SELECT MAX(created_at) FROM essay_versions WHERE essay_identifier = e.identifier AND person_identifier = ?1) AS saved_at
+			 FROM essays e
+			 WHERE EXISTS (
+				SELECT 1 FROM essay_versions v
+				WHERE v.essay_identifier = e.identifier AND v.person_identifier = ?1
+					AND v.number > COALESCE((SELECT MAX(version_number) FROM essay_publications p WHERE p.essay_identifier = e.identifier AND p.listed = 1), 0)
+			 )
+			 ORDER BY saved_at DESC`
+		)
+		.bind(person)
+		.all<{ identifier: string; part: EssayPart; title: string | null }>();
+	return results.map((row) => ({ title: row.title || row.identifier, link: essayPath(row.identifier, row.part) }));
+}
+
 export async function listEssays(database: D1Database): Promise<EssaySummary[]> {
 	const { results } = await database
 		.prepare(

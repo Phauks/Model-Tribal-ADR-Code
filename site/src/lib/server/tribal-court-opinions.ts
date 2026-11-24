@@ -13,34 +13,13 @@
 import { existsSync, readFileSync } from 'node:fs';
 import path from 'node:path';
 import { parseCsv } from '../csv.ts';
+import { mentionWords } from '../opinion-mentions.ts';
 import { copyPagePath, removalRequestPath } from '../public-copies.ts';
 import { publicCopies, repositoryRoot } from './content.ts';
 
 /** The key of the dataset's source record (content/sources/c/). */
 export const opinionsSourceKey = 'caselaw-access-project-tribal-reporters';
 
-/** Topic tags that mean an opinion mentions a way of resolving disputes outside a trial. */
-export const disputeResolutionTopics = new Set([
-	'peacemaking',
-	'mediation',
-	'arbitration',
-	'alternative-dispute-resolution',
-	'talking-things-out',
-	'restorative-justice'
-]);
-
-const topicLabels: Record<string, string> = {
-	peacemaking: 'peacemaking',
-	mediation: 'mediation',
-	arbitration: 'arbitration',
-	'alternative-dispute-resolution': 'alternative dispute resolution',
-	'talking-things-out': 'talking things out',
-	'restorative-justice': 'restorative justice',
-	'custom-and-tradition': 'custom and tradition',
-	'sovereign-immunity': 'sovereign immunity',
-	'indian-civil-rights-act': 'Indian Civil Rights Act',
-	gaming: 'gaming'
-};
 
 export interface TribalCourtOpinion {
 	name: string;
@@ -53,7 +32,6 @@ export interface TribalCourtOpinion {
 	nations: string[];
 	/** Topic tags, as words: they mean the words appear in the opinion, not what it decides. */
 	topics: string[];
-	mentionsDisputeResolution: boolean;
 	/** The opinion's key in the bucket (src/lib/public-copies.ts). */
 	key: string;
 	/** Its page on this site, with the site's masthead and sidebar around it. */
@@ -81,8 +59,7 @@ export function tribalCourtOpinions(): TribalCourtOpinion[] {
 					year: row.decision_date.slice(0, 4),
 					docket: row.docket_number,
 					nations: row.nations.split(';').map((nation) => nation.trim()).filter(Boolean),
-					topics: tags.map((tag) => topicLabels[tag] ?? tag.replaceAll('-', ' ')),
-					mentionsDisputeResolution: tags.some((tag) => disputeResolutionTopics.has(tag)),
+					topics: tags.map((tag) => mentionWords[tag] ?? tag.replaceAll('-', ' ')),
 					key: row.copy_key,
 					path: copyPagePath({ key: row.copy_key }),
 					removal: removalRequestPath({ key: row.copy_key })

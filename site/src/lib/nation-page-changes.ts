@@ -21,7 +21,7 @@ export type ChangeKind = (typeof changeKinds)[number];
 
 export const changeKindLabels: Record<ChangeKind, string> = {
 	about: 'About',
-	courts: 'Courts and dispute resolution',
+	courts: 'Courts',
 	statements: 'Statements beside government records',
 	contacts: 'Contacts',
 	pictures: 'Pictures',
@@ -56,7 +56,7 @@ export const hideableSections = ['courts', 'law', 'jurisdiction', 'contacts', 's
 export type HideableSection = (typeof hideableSections)[number];
 
 export const hideableSectionLabels: Record<HideableSection, string> = {
-	courts: 'Courts and dispute resolution',
+	courts: 'Courts',
 	law: 'Laws and agreements',
 	jurisdiction: 'Jurisdiction',
 	contacts: 'Contacts',
@@ -321,4 +321,39 @@ export function pageLogTarget(nationIdentifier: string): string {
 /** Where a nation's picture is kept in the private bucket. */
 export function pictureKey(nationIdentifier: string, pictureIdentifier: string): string {
 	return `nation-pages/${nationIdentifier}/pictures/${pictureIdentifier}`;
+}
+
+/** One contact as it was and as it is now, for showing a change: either side may be missing. */
+export interface ContactChange {
+	/** Such as "Office of the President email". */
+	label: string;
+	before?: string;
+	after?: string;
+}
+
+/**
+ * The contacts that differ between two versions, matched by office and kind,
+ * so a new email for an office shows as the old address struck out beside
+ * the new one (design/nation-editors, screens 3 and 5).
+ */
+export function contactChanges(before: readonly NationContact[], after: readonly NationContact[]): ContactChange[] {
+	const key = (contact: NationContact) => `${contact.office.trim().toLocaleLowerCase('en-US')}\n${contact.kind}`;
+	const label = (contact: NationContact) => `${contact.office.trim()} ${contactKindLabels[contact.kind].toLocaleLowerCase('en-US')}`;
+	const earlier = new Map<string, NationContact[]>();
+	for (const contact of before) earlier.set(key(contact), [...(earlier.get(key(contact)) ?? []), contact]);
+	const changes: ContactChange[] = [];
+	for (const contact of after) {
+		const same = earlier.get(key(contact)) ?? [];
+		const unchanged = same.findIndex((old) => old.value.trim() === contact.value.trim());
+		if (unchanged >= 0) {
+			same.splice(unchanged, 1);
+			continue;
+		}
+		const replaced = same.shift();
+		changes.push({ label: label(contact), before: replaced?.value, after: contact.value });
+	}
+	for (const left of earlier.values()) {
+		for (const contact of left) changes.push({ label: label(contact), before: contact.value });
+	}
+	return changes;
 }

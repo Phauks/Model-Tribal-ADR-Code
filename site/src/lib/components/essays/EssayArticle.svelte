@@ -7,22 +7,23 @@
 	//
 	// The page is the same for every reader. When the browser holds the
 	// signed-in hint, the newest publication also asks the workspace what
-	// this person may do with the essay; a person with access gets the bar
-	// above the text (EssayAccessBar.svelte), the draft with its changes
-	// marked, and the editor in place of the text, loaded only then.
+	// this person may do with the essay; a person with access gets the
+	// page's controls in the masthead (PageControls.svelte), the draft with
+	// its changes marked, and the editor in place of the text, loaded only
+	// then, with its tools in the masthead's second row.
 	//
 	// A page about the site, such as the About page (src/lib/server/about-pages.ts),
 	// has no section, and shows the text from git until it is first published.
 	import Breadcrumbs from '../Breadcrumbs.svelte';
-	import { onMount } from 'svelte';
+	import { onDestroy, onMount } from 'svelte';
+	import { editingOutline } from '#lib/essays/editing-outline.svelte.ts';
+	import { newEssayPlace, partSections } from '#lib/essays/new-essay.svelte.ts';
+	import type { OutlineItem } from '#lib/site-sections.ts';
 	import { figurePlayers } from '#lib/essays/figure-players.ts';
 	import { quoteContext } from '#lib/essays/quote-context-view.ts';
 	import SourceList from '#lib/components/SourceList.svelte';
-	import EssayAccessBar from '#lib/components/essays/EssayAccessBar.svelte';
-	import EssayModePicker from '#lib/components/essays/EssayModePicker.svelte';
 	import EssayStatusPills from '#lib/components/essays/EssayStatusPills.svelte';
-	import History from '@lucide/svelte/icons/history';
-	import Send from '@lucide/svelte/icons/send';
+	import { offerPageControls, type PageControls, type PageMode } from '#lib/page-editing.svelte.ts';
 	import { readSignedInHint } from '#lib/signed-in-hint.ts';
 	import type { SourceEntry } from '#lib/server/source-uses.ts';
 	import type { EssayPageState } from '#lib/server/essay-page-state.ts';
@@ -85,6 +86,54 @@
 	}
 
 	// The editor's last save lands after it closes: show that text, and open the editor on it next time.
+	/*
+	 * The page's controls in the masthead, after the site's name
+	 * (PageControls.svelte; design/header-page-controls, approved by Trevor on
+	 * Nov. 23, 2026): Reading, Commenting and Editing; whether draft changes
+	 * show, where something is published to compare them with; History; and
+	 * Publish. Reading, Publish sends the newest version to readers; editing,
+	 * it opens the list of versions to choose one.
+	 */
+	$effect(() => {
+		if (!access) return;
+		const state = access;
+		const controls: PageControls = {
+			modes: state.canEdit ? ['reading', 'commenting', 'editing'] : ['reading', 'commenting'],
+			get mode() {
+				return mode;
+			},
+			setMode: (chosen: PageMode) => {
+				mode = chosen;
+			},
+			get drafts() {
+				const offered = mode === 'reading' ? state.draft !== null && state.publishedVersion !== null : state.publishedVersion !== null;
+				if (!offered) return null;
+				return {
+					// Commenting and editing always show the draft with its changes marked.
+					shown: mode === 'reading' ? view === 'drafts' : true,
+					set: (shown: boolean) => {
+						view = shown ? 'drafts' : 'published';
+						if (!shown) mode = 'reading';
+					}
+				};
+			},
+			history: { title: 'History: every saved version', href: `/workspace/essays/${identifier}` },
+			get publish() {
+				if (!state.canPublish) return null;
+				if (mode === 'editing') return { title: 'Choose a saved version to publish', href: `/workspace/essays/${identifier}` };
+				if (mode === 'reading' && state.draft) {
+					return {
+						title: `Publish version ${state.latest.number} for readers`,
+						action: `/workspace/essays/${identifier}?/publish`,
+						fields: { version: String(state.latest.number) }
+					};
+				}
+				return null;
+			}
+		};
+		return offerPageControls(controls);
+	});
+
 	function saved(): void {
 		if (mode === 'reading') void loadAccess();
 	}
@@ -134,6 +183,24 @@
 		if (access) rememberView();
 	});
 
+	// While editing or commenting, the sidebar lists the essay as the draft stands, with Your work under it
+	// (essay-editor-mockups/4 and v2-1); reading, it lists the published headings again.
+	function showOutline(items: OutlineItem[]): void {
+		editingOutline.current = { path, items, work: access?.work ?? null };
+	}
+	$effect(() => {
+		if (mode === 'reading') editingOutline.current = null;
+	});
+	// "New essay" beside the section in the sidebar, for someone who may start one (new-essay.svelte.ts).
+	$effect(() => {
+		const part = Object.keys(partSections).find((candidate) => partSections[candidate] === sectionLink);
+		if (access?.canStart && part && sectionLink) newEssayPlace.current = { sectionLink, part };
+	});
+	onDestroy(() => {
+		if (editingOutline.current?.path === path) editingOutline.current = null;
+		if (newEssayPlace.current?.sectionLink === sectionLink) newEssayPlace.current = null;
+	});
+
 	// Back to reading: show what was just saved.
 	let previousMode: typeof mode = 'reading';
 	$effect(() => {
@@ -147,12 +214,9 @@
 	{#if unpublished}<meta name="robots" content="noindex" />{/if}
 </svelte:head>
 
+<!-- The page's controls are in the masthead, so in every mode the page starts as it does for readers. -->
 {#if section && sectionLink}
 	<Breadcrumbs trail={[{ label: section, href: sectionLink }]} />
-{/if}
-
-{#if access && mode === 'reading'}
-	<EssayAccessBar state={access} bind:view bind:mode />
 {/if}
 
 <article class="reading essay">
@@ -175,17 +239,15 @@
 		{:then { default: EssayEditor }}
 			{#key mode}
 				<!-- Commenting opens the same draft without editing it, so comments land on the words the authors see. -->
-				<EssayEditor {identifier} text={access.text} version={access.latest.number} canEdit={access.canEdit && mode === 'editing'} autoSave={mode === 'editing'} live startAt={reviewAt ?? null} startThread={commentAt} onsaved={saved}>
-					{#snippet barStart()}<EssayModePicker bind:mode canEdit={access!.canEdit} />{/snippet}
-					{#snippet barEnd()}
-						<a class="bar-link" href="/workspace/essays/{identifier}" title="History: every saved version, and publishing" aria-label="History"><History size={18} aria-hidden="true" /></a>
-						{#if access!.canPublish && mode === 'editing'}<a class="button bar-publish" href="/workspace/essays/{identifier}" title="Choose a saved version to publish"><Send size={16} aria-hidden="true" /> Publish…</a>{/if}
+				<EssayEditor {identifier} text={access.text} version={access.latest.number} canEdit={access.canEdit && mode === 'editing'} autoSave={mode === 'editing'} live startAt={reviewAt ?? null} startThread={commentAt} publishedText={access.publishedText} publishedVersion={access.publishedVersion} yourName={access.you?.name ?? null} onsaved={saved} onoutline={showOutline} toolsInMasthead>
+					{#snippet titleExtras(extras)}
+						<EssayStatusPills state={access!} inReview={extras.inReview} />
+						{#if mode === 'commenting'}<p class="small muted essay-size">{extras.lines.toLocaleString('en-US')} lines · {extras.words.toLocaleString('en-US')} words</p>{/if}
 					{/snippet}
-					{#snippet belowBar()}<EssayStatusPills state={access!} />{/snippet}
 				</EssayEditor>
 			{/key}
 		{:catch}
-			<p class="small">The editor could not be opened. <a href="/workspace/essays/{identifier}/edit">Open it in the workspace</a>.</p>
+			<p class="small">The editor could not be opened. Reload the page to try again.</p>
 		{/await}
 	{:else}
 		<div class="essay-text" use:figurePlayers use:quoteContext={shown.html}>
@@ -202,25 +264,6 @@
 </article>
 
 <style>
-	.bar-link {
-		display: inline-grid;
-		place-items: center;
-		min-width: var(--layout-target-minimum);
-		min-height: var(--layout-target-minimum);
-		border-radius: var(--radius-control);
-		color: var(--color-ink);
-	}
-
-	.bar-link:hover {
-		background: var(--color-surface);
-	}
-
-	.bar-publish {
-		display: inline-flex;
-		align-items: center;
-		gap: var(--space-1);
-	}
-
 	/* Marks on the draft view, shown only to people with access (src/lib/essays/render.ts). */
 	.essay-text :global(.essay-draft-mark) {
 		position: relative;

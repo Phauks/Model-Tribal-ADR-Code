@@ -10,6 +10,17 @@
  * column, with Shift for bigger steps, and Enter fits it. Once a column has
  * been changed, a "Reset column widths" button appears under the table.
  *
+ * The end of the table stays where it is (Trevor, Nov. 24, 2026: "if you
+ * expand the table, it should always keep the end of the table locked, so you
+ * cannot go over the side"). Widening a column takes the width from the
+ * columns after it, nearest first, then from the columns before it, each down
+ * to the width of its longest word, so that no other column has its words
+ * split; narrowing a column gives the width to the next one (the one before,
+ * for the last). So the table is as wide after a change as before, and a
+ * column stops growing once the others are down to their longest words. A
+ * table that is already wider than the screen, as on a phone, scrolls in its
+ * own box as before. The table also never gets narrower than its box.
+ *
  * Widths are kept in em of the table's text, so they stay right when the
  * reader changes the text size, and they are remembered in this browser for
  * each table on each page. Without scripts, or before a reader changes
@@ -21,6 +32,15 @@
  */
 
 const marker = 'data-resizable-columns';
+/** The header cells each table had when its handles were made: when a reader hides or adds a column, the handles are made again. */
+const attachedCells = new WeakMap<HTMLTableElement, HTMLTableCellElement[]>();
+
+/** Whether a table's header cells are no longer the ones its handles were made for. */
+function headerChanged(table: HTMLTableElement): boolean {
+	const now = table.tHead?.rows[0]?.cells;
+	const then = attachedCells.get(table);
+	return !now || !then || now.length !== then.length || then.some((cell, index) => now[index] !== cell);
+}
 const storagePrefix = 'table-column-widths:';
 /** Narrowest a column can be made, in em. */
 const narrowest = 3;
@@ -50,6 +70,46 @@ function round(value: number): number {
 
 function clampWidth(value: number, most = widest): number {
 	return Math.min(most, Math.max(narrowest, value));
+}
+
+/**
+ * Sets one column's width without changing the table's: the change comes
+ * from, or goes to, the other columns (see the note at the top). Widths are
+ * in em; floors are how narrow each other column may be made, also in em; the
+ * result is a new list.
+ */
+export function shareWidth(widths: number[], index: number, width: number, most = widest, floors: number[] = []): number[] {
+	const next = [...widths];
+	// The other columns, in the order they give or take: after it, nearest first, then before it, nearest first.
+	const others = [
+		...next.map((_, place) => place).slice(index + 1),
+		...next
+			.map((_, place) => place)
+			.slice(0, index)
+			.reverse()
+	];
+	let change = clampWidth(width, most) - next[index];
+	if (change > 0) {
+		let needed = change;
+		for (const other of others) {
+			const given = Math.min(needed, Math.max(0, next[other] - Math.max(narrowest, floors[other] ?? 0)));
+			next[other] -= given;
+			needed -= given;
+			if (needed <= 0) break;
+		}
+		change -= needed;
+	} else if (change < 0) {
+		let left = -change;
+		for (const other of others) {
+			const taken = Math.min(left, Math.max(0, widest - next[other]));
+			next[other] += taken;
+			left -= taken;
+			if (left <= 0) break;
+		}
+		change += left;
+	}
+	next[index] += change;
+	return next;
 }
 
 /** Whether a table should get handles. */
@@ -86,10 +146,13 @@ function writeWidths(key: string, widths: number[] | undefined) {
  * Gives one table resizable columns. Returns a function that takes the
  * handles away again and puts the table back as it was.
  */
-export function resizableColumns(table: HTMLTableElement, key: string): () => void {
+export function resizableColumns(table: HTMLTableElement, place: string): () => void {
 	const header = table.tHead!.rows[0];
 	const cells = [...header.cells];
+	attachedCells.set(table, cells);
 	const names = cells.map((cell, index) => cell.textContent?.replace(/\s+/g, ' ').trim() || `Column ${index + 1}`);
+	// Widths are kept for each set of columns, so a reader who hides or adds a column and later puts it back finds the widths they had.
+	const key = `${place}:${names.join('|')}`;
 	let widths: number[] | undefined;
 
 	const columnGroup = document.createElement('colgroup');
@@ -118,7 +181,8 @@ export function resizableColumns(table: HTMLTableElement, key: string): () => vo
 			if (!columnGroup.isConnected) table.insertBefore(columnGroup, table.tHead);
 			next.forEach((width, index) => (columns[index].style.width = `${round(width)}em`));
 			table.style.tableLayout = 'fixed';
-			table.style.width = `${round(next.reduce((sum, width) => sum + width, 0))}em`;
+			// Never narrower than its box: widths saved on a wider screen, or set before the text got smaller, spread to fill it.
+			table.style.width = `max(100%, ${round(next.reduce((sum, width) => sum + width, 0))}em)`;
 			table.classList.add('columns-resized');
 			if (!reset.isConnected) table.after(reset);
 		} else {
@@ -148,10 +212,35 @@ export function resizableColumns(table: HTMLTableElement, key: string): () => vo
 		});
 	}
 
-	function setWidth(index: number, width: number, most = widest) {
-		const next = widths ? [...widths] : measure();
-		next[index] = clampWidth(width, most);
-		apply(next);
+	/**
+	 * How narrow each column can be without splitting a word, in em: the
+	 * widths the table takes when it is made as narrow as it can be, laid out
+	 * as the browser would without any widths set.
+	 */
+	function measureFloors(): number[] {
+		const size = fontSize(table);
+		const style = table.style.cssText;
+		const attached = columnGroup.isConnected;
+		const resized = table.classList.contains('columns-resized');
+		if (attached) columnGroup.remove();
+		table.classList.remove('columns-resized');
+		table.classList.add('columns-measuring');
+		table.style.tableLayout = 'auto';
+		table.style.width = 'min-content';
+		const found = cells.map((cell) => cell.getBoundingClientRect().width / size);
+		table.style.cssText = style;
+		table.classList.remove('columns-measuring');
+		if (resized) table.classList.add('columns-resized');
+		if (attached) table.insertBefore(columnGroup, table.tHead);
+		return found;
+	}
+
+	/** The floors for the change under way: measured once when a drag starts or a handle takes the focus, since measuring lays out every row. */
+	let floors: number[] | undefined;
+
+	/** Sets one column's width, from the widths given or the ones the columns have now, keeping the end of the table where it is. */
+	function setWidth(index: number, width: number, most = widest, from = widths ?? measure()) {
+		apply(shareWidth(from, index, width, most, floors ?? (floors = measureFloors())));
 	}
 
 	/** The width that shows the column's widest line without wrapping, up to widestFit. */
@@ -167,6 +256,7 @@ export function resizableColumns(table: HTMLTableElement, key: string): () => vo
 		column.forEach((cell, row) => (cell.style.whiteSpace = before[row]));
 		table.classList.remove('columns-measuring');
 		// One em on top for the handle and rounding, so the last letter never wraps.
+		floors = measureFloors();
 		setWidth(index, longest / size + 1, widestFit);
 		writeWidths(key, widths);
 	}
@@ -184,11 +274,13 @@ export function resizableColumns(table: HTMLTableElement, key: string): () => vo
 			if (event.button !== 0) return;
 			event.preventDefault();
 			const start = event.clientX;
-			const startWidth = (widths ?? measure())[index];
+			// Each move starts again from the widths at the start of the drag, so dragging back gives every column its width back.
+			const startWidths = widths ?? measure();
+			floors = measureFloors();
 			const size = fontSize(table);
 			handle.setPointerCapture(event.pointerId);
 			handle.classList.add('dragging');
-			const move = (moved: PointerEvent) => setWidth(index, startWidth + (moved.clientX - start) / size);
+			const move = (moved: PointerEvent) => setWidth(index, startWidths[index] + (moved.clientX - start) / size, widest, startWidths);
 			const end = () => {
 				handle.classList.remove('dragging');
 				handle.removeEventListener('pointermove', move);
@@ -200,7 +292,10 @@ export function resizableColumns(table: HTMLTableElement, key: string): () => vo
 			handle.addEventListener('pointerup', end);
 			handle.addEventListener('pointercancel', end);
 		});
-		handle.addEventListener('focus', describeAll);
+		handle.addEventListener('focus', () => {
+			floors = undefined;
+			describeAll();
+		});
 		handle.addEventListener('dblclick', () => fit(index));
 		handle.addEventListener('keydown', (event) => {
 			const change = event.shiftKey ? bigStep : step;
@@ -243,7 +338,7 @@ export function resizableTables(root: HTMLElement): () => void {
 
 	const scan = () => {
 		for (const [table, remove] of undo) {
-			if (!table.isConnected) {
+			if (!table.isConnected || headerChanged(table)) {
 				remove();
 				undo.delete(table);
 			}

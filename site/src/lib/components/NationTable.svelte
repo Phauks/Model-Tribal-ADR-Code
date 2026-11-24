@@ -1,17 +1,22 @@
 <!--
 	@component
 	One group of the Native nations index as a table: name, recognition badges
-	(each with its legal basis linked to the official text; no federal
-	recognition shows no badge, src/lib/recognition-badges.ts), states and
-	review status.
-	The rows are few enough on each index page (one letter or one state) that
-	the table has no search box; the site search in the masthead finds a
-	nation by name. Readers can narrow it by recognition, state or review
-	status, copy a link that keeps those choices, and download the rows as CSV.
+	(each opens how the nation holds that status, with its legal basis linked
+	to the official text; no federal recognition shows no badge,
+	src/lib/recognition-badges.ts), states and review status, and columns a
+	reader can add: the name as the federal or state list gives it, Indian
+	Health Service areas, languages and citizens.
+	The table has no search box; the site search in the masthead finds a
+	nation by name, and the Name column's filter narrows the table by name.
+	Readers can narrow it by recognition, state or review status from the
+	column headers, copy a link that keeps those choices, and download the
+	rows as CSV.
 	Each state opens the list of nations in it (Trevor, Nov. 23, 2026: every
 	table opens to the data behind it).
 -->
 <script lang="ts">
+	import Check from '@lucide/svelte/icons/check';
+	import Clock from '@lucide/svelte/icons/clock';
 	import DataTable from './DataTable.svelte';
 	import RecognitionBadges from './RecognitionBadges.svelte';
 	import { compareBadges } from '#lib/recognition-badges.ts';
@@ -46,7 +51,12 @@
 		{ key: 'recognition', header: 'Recognition', sortable: true, custom: true, filterable: true },
 		{ key: 'states', header: 'States', sortable: true, filterable: true, custom: true, searchable: true },
 		...(regions ? [{ key: 'region', header: 'Region', sortable: true, filterable: true, custom: true, searchable: true }] : []),
-		{ key: 'review', header: 'Review status', sortable: true, filterable: true }
+		{ key: 'review', header: 'Review status', sortable: true, filterable: true, custom: true },
+		// More columns a reader can add from the list of columns (Trevor, Nov. 24, 2026: "add ability to hide or add columns to tables").
+		{ key: 'listedName', header: 'Name as listed', sortable: true, searchable: true, optional: true },
+		{ key: 'healthAreas', header: 'Indian Health Service area', sortable: true, filterable: true, optional: true },
+		{ key: 'languages', header: 'Languages', sortable: true, filterable: true, optional: true },
+		{ key: 'citizens', header: 'Citizens', type: 'number', sortable: true, optional: true }
 	]);
 
 	const rows: TableRow[] = $derived(
@@ -67,7 +77,11 @@
 				},
 				states: { text: row.statesText, values: row.states.map(stateName) },
 				region: { text: row.region },
-				review: { text: row.review }
+				review: { text: row.review },
+				listedName: { text: row.listedName },
+				healthAreas: { text: row.healthAreas.join(', '), values: row.healthAreas },
+				languages: { text: row.languages.join(', '), values: row.languages },
+				citizens: row.citizens === undefined ? { text: '' } : { text: row.citizens.toLocaleString('en-US'), sortValue: row.citizens }
 			}
 		}))
 	);
@@ -81,6 +95,8 @@
 
 	const recognitionById = $derived(new Map(group.rows.map((row) => [row.id, badged(row.recognition)])));
 	const statesById = $derived(new Map(group.rows.map((row) => [row.id, row.states])));
+	const verifiedById = $derived(new Map(group.rows.map((row) => [row.id, row.verified])));
+	const explanationsById = $derived(new Map(group.rows.map((row) => [row.id, row.explanations])));
 </script>
 
 <DataTable
@@ -93,7 +109,6 @@
 	rowName={['nation', 'nations']}
 	{count}
 	filters={filters ?? group.rows.length > 5}
-	addFilter
 	download={identifier}
 	shareable
 >
@@ -101,34 +116,23 @@
 		{#if column.key === 'region'}
 			{@const regionPage = bureauRegionPage(row.cells.region.text)}
 			{#if regionPage}<a href={regionPage}>{row.cells.region.text}</a>{:else}{row.cells.region.text}{/if}
+		{:else if column.key === 'review'}
+			{@const verified = verifiedById.get(row.key) ?? false}
+			<span class="review-badge" class:review-badge-verified={verified}>{#if verified}<Check size={14} strokeWidth={2} aria-hidden="true" />{:else}<Clock
+						size={14}
+						strokeWidth={2}
+						aria-hidden="true"
+					/>{/if}{row.cells.review.text}</span
+			>
 		{:else if column.key === 'states'}
 			{#each statesById.get(row.key) ?? [] as code, index (code)}{index > 0 ? ', ' : ''}<a href="/nations/state/{code.toLocaleLowerCase('en-US')}">{stateName(code)}</a>{/each}
 		{:else}
 		{@const views = recognitionById.get(row.key) ?? []}
 		{#if views.length > 0}
-		<ul class="recognition">
-			{#each views as view, index (index)}
-				<li>
-					<RecognitionBadges badges={[view.badge]} size="small" />{#if view.short}{' '}<span class="small"
-							>({#if view.short.link}<a href={view.short.link}>{view.short.text}</a
-								>{:else}{view.short.text}{/if})</span
-						>{/if}
-				</li>
-			{/each}
-		</ul>
+			<!-- Each badge opens its source, rather than the source sitting beside it (Trevor, Nov. 24, 2026: "it should appear if you click the button that says the Federal or State"). -->
+			<RecognitionBadges badges={views.map((view) => view.badge)} size="small" explanations={explanationsById.get(row.key)} />
 		{/if}
 		{/if}
 	{/snippet}
 </DataTable>
 
-<style>
-	.recognition {
-		list-style: none;
-		margin: 0;
-		padding: 0;
-	}
-
-	.recognition li + li {
-		margin-top: var(--space-1);
-	}
-</style>

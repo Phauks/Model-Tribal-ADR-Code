@@ -49,7 +49,7 @@ export type PagePart = (typeof pageParts)[number];
 
 export const pagePartLabels: Record<PagePart, string> = {
 	about: 'About (the nation’s own words, names and terms)',
-	'courts-and-dispute-resolution': 'Courts and dispute resolution',
+	'courts-and-dispute-resolution': 'Courts',
 	contacts: 'Contacts',
 	stories: 'Stories',
 	images: 'Images and seal',

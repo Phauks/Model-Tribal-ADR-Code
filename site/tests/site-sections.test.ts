@@ -2,19 +2,20 @@ import { describe, expect, it } from 'vitest';
 import { sectionOf, siteSections } from '../src/lib/site-sections.ts';
 
 describe('site sections for the sidebar', () => {
-	it('follows the order of the working outline’s main menu', () => {
+	it('leads with the nations, the library and the glossary', () => {
 		expect(siteSections.map((section) => section.label)).toEqual([
-			'Model code',
-			'Peacemaking',
-			'Foundations',
-			'Essays',
-			'Methods and stories',
 			'Nations',
 			'Library',
 			'Glossary',
+			'Foundations',
+			'Essays',
+			'Methods and stories',
+			'Model code',
+			'Peacemaking',
 			'Events',
 			'About',
 			'Sponsorship',
+			'Contribute',
 			'Store'
 		]);
 	});
@@ -49,6 +50,6 @@ describe('site sections for the sidebar', () => {
 
 	it('links only sections whose pages exist', () => {
 		const built = siteSections.filter((section) => section.built).map((section) => section.link);
-		expect(built).toEqual(['/foundations', '/essays', '/stories', '/nations', '/library', '/glossary', '/events', '/about', '/sponsor', '/store']);
+		expect(built).toEqual(['/nations', '/library', '/glossary', '/foundations', '/essays', '/stories', '/events', '/about', '/sponsor', '/requests?kind=contribute', '/store']);
 	});
 });

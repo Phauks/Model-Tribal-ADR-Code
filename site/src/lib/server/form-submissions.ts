@@ -41,6 +41,7 @@ function newRequest(template: FormTemplate, sender: { name: string; contact: str
 		requesterRole: null,
 		writingForGovernment: false,
 		contact: sender.contact,
+		sharedWithTeam: false,
 		details: sender.note || null,
 		creditPreference: null,
 		publicationPermission: null,

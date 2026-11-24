@@ -1,7 +1,7 @@
 /**
  * Profile pictures (docs/contributor-profiles.md, "Profile pictures"). The
  * browser crops the picture to a square and makes a 400 by 400 JPEG before
- * sending it (src/lib/components/ProfilePicturePicker.svelte). The server
+ * sending it (src/lib/square-picture.ts). The server
  * accepts only a small JPEG, removes everything in it but the picture (camera
  * details, location, comments), and keeps it in the private bucket. It is
  * shown only on the person's public page, and never for someone under 18.

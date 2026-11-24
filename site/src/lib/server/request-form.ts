@@ -11,6 +11,7 @@ import {
 	type RequestKind,
 	type SourceKind
 } from '#lib/requests.ts';
+import { isTeamReportKind } from '#lib/nation-team-reports.ts';
 
 export const maximumFileBytes = 10 * 1024 * 1024;
 export const maximumFiles = 3;
@@ -71,6 +72,8 @@ export interface NewRequest {
 	requesterRole: string | null;
 	writingForGovernment: boolean;
 	contact: string;
+	/** The sender lets the nation's team see their name and contact details. */
+	sharedWithTeam: boolean;
 	details: string | null;
 	creditPreference: string | null;
 	publicationPermission: 'publish' | 'review-only' | null;
@@ -175,6 +178,7 @@ export async function readRequestForm(form: FormData): Promise<FormResult> {
 		requesterRole: optional(limit('requesterRole', shortText, text(form, 'requesterRole'))),
 		writingForGovernment: writingFor === 'yes',
 		contact,
+		sharedWithTeam: text(form, 'shareWithTeam') === 'yes' && isTeamReportKind(kind) && text(form, 'nationIdentifier') !== '',
 		details: optional(details),
 		creditPreference: null,
 		publicationPermission: null,

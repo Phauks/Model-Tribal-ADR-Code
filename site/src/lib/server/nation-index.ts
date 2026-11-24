@@ -5,9 +5,11 @@
  * one per state, stay for the links that open a state's nations.
  */
 import { foldForSearch } from '../tables/table-definition.ts';
-import { displayName, entityTypeLabels, reviewStatusLabels, stateName } from '../nation-labels.ts';
+import { displayName, entityTypeLabels, stateName } from '../nation-labels.ts';
+import { nationVerification } from '../review-status.ts';
 import { nations, type NationRecord } from './content.ts';
-import { recognitionViews, type RecognitionView } from './recognition.ts';
+import { recognitionExplanations, recognitionViews, type RecognitionView } from './recognition.ts';
+import type { BadgeExplanation } from '../recognition-explanation.ts';
 
 export interface NationIndexRow {
 	id: string;
@@ -21,10 +23,20 @@ export interface NationIndexRow {
 	/** State and territory codes, such as "NV". */
 	states: string[];
 	statesText: string;
+	/** "Verified" once the nation has reviewed the page, otherwise "Unverified" (src/lib/review-status.ts). */
 	review: string;
+	verified: boolean;
 	recognition: RecognitionView[];
 	/** The Bureau of Indian Affairs region that serves the nation, such as "Pacific". */
 	region: string;
+	/** What each badge opens: how the nation holds that status and the document that shows it, by badge label. */
+	explanations: Record<string, BadgeExplanation>;
+	/** The Indian Health Service areas that serve the nation, such as "Bemidji". */
+	healthAreas: string[];
+	/** The languages the record names. */
+	languages: string[];
+	/** How many citizens the nation counts, when the record gives it (other population counts, such as census residents, count different people and are left out). */
+	citizens?: number;
 }
 
 export interface NationGroup {
@@ -57,9 +69,14 @@ function rowOf(record: NationRecord): NationIndexRow {
 		letter: letterOf(displayName(record.names.official)),
 		states,
 		statesText: states.map(stateName).join(', '),
-		review: reviewStatusLabels[record.review?.status]?.label ?? record.review?.status ?? '',
+		review: nationVerification(record.review?.status).label,
+		verified: nationVerification(record.review?.status).verified,
 		recognition: recognitionViews(record),
-		region: record.federal_administration?.bureau_of_indian_affairs_region ?? ''
+		region: record.federal_administration?.bureau_of_indian_affairs_region ?? '',
+		explanations: recognitionExplanations(record),
+		healthAreas: [...new Set((record.indian_health_service ?? []).map((fact) => fact.area).filter(Boolean))],
+		languages: [...new Set((record.languages ?? []).map((fact) => fact.name ?? '').filter(Boolean))],
+		citizens: (record.population ?? []).find((fact) => fact.kind === 'citizens' && typeof fact.count === 'number')?.count
 	};
 }
 

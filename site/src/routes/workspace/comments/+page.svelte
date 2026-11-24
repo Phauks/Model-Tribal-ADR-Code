@@ -28,7 +28,7 @@
 					<p class="tags">{#each thread.asks as ask (ask)}<span class="tag">{commentAskLabels[ask]}</span>{/each}</p>
 				{/if}
 				<p class="small">
-					<strong>{thread.lastName}</strong>, {essayDate(thread.lastAt)}{thread.reason === 'mentioned' ? ', mentioning you' : ''}:
+					<strong>{thread.lastName}</strong>, {essayDate(thread.lastAt)}{thread.reason === 'mentioned' ? ', mentioning you' : thread.reason === 'assigned' ? ', assigned to you' : ''}:
 				</p>
 				{#if thread.lastBody !== askSentence(thread.asks)}<p class="body">{short(thread.lastBody)}</p>{/if}
 			</li>

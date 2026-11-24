@@ -2,17 +2,16 @@ import { error } from '@sveltejs/kit';
 import type { OutlineItem, PageOutline } from '#lib/site-sections.ts';
 import geometry from 'virtual:map-geometry';
 import { webLink } from '#lib/contact-links.ts';
-import { contactCards, contactsHeading, type ContactCards } from '#lib/contact-card.ts';
+import { contactCards, contactsHeading, defaultOfficeFor, type ContactCards } from '#lib/contact-card.ts';
 import { imageMayBeShown, imagePath } from '#lib/official-images.ts';
 import {
 	nations,
-	searchSummary,
 	sources as sourceRecords,
 	type CitedFact,
 	type NationRecord,
 	type SourceRecord
 } from '#lib/server/content.ts';
-import { emptySectionNote, type EmptyNote } from '#lib/search-status.ts';
+import { noneIdentified, type EmptyNote } from '#lib/search-status.ts';
 import { layoutPresenceMap, pointInBox, shapeInBox, shareStateShapes, type BoxLayers, type NationMapData, type PresenceMapLayout } from '#lib/presence-map.ts';
 import { landAreaKindLabels } from '#lib/nations-map-drawing.ts';
 import { readableDate } from '#lib/readable-date.ts';
@@ -32,7 +31,7 @@ import { issuedDate, nationTimeline, timelineHeading } from '#lib/server/timelin
 import { casePreviewList } from '#lib/server/case-previews.ts';
 import { courtAbbreviation } from '#lib/server/case-citations.ts';
 import { bureauRegionPage, healthAreaPage } from '#lib/federal-offices.ts';
-import { displayName, humanize, regionAnchor, reviewStatusLabels, stateName } from '#lib/nation-labels.ts';
+import { displayName, humanize, regionAnchor, presenceNote, reviewStatusLabels, stateName } from '#lib/nation-labels.ts';
 import type { EntryGenerator, PageServerLoad } from './$types';
 
 export const entries: EntryGenerator = () => nations().map((record) => ({ id: record.id }));
@@ -63,8 +62,6 @@ const opinionsShown = 5;
 
 interface CourtOpinions {
 	count: number;
-	/** How many mention peacemaking, mediation, arbitration or another way of settling a dispute outside a trial. */
-	disputeResolutionCount: number;
 	shown: TribalCourtOpinion[];
 	/** The years of the oldest and newest opinion. */
 	from: string;
@@ -75,20 +72,16 @@ interface CourtOpinions {
 
 /**
  * The nation's court opinions in the Caselaw Access Project's tribal
- * reporters (decision record 0047): how many there are, and the newest few,
- * those that mention a way of settling a dispute outside a trial first.
+ * reporters (decision record 0047): how many there are, and the newest few.
  */
 function courtOpinions(nationId: string, sources: SourceUses): CourtOpinions | undefined {
 	const all = opinionsOf(nationId);
 	if (all.length === 0) return undefined;
 	const citations: CitationMark[] = [];
 	sources.cite(opinionsSourceKey, { section: opinionsHeading, text: `${all.length} published opinions` }, citations);
-	const mentioning = all.filter((opinion) => opinion.mentionsDisputeResolution);
-	const shown = [...mentioning, ...all.filter((opinion) => !opinion.mentionsDisputeResolution)].slice(0, opinionsShown);
 	return {
 		count: all.length,
-		disputeResolutionCount: mentioning.length,
-		shown,
+		shown: all.slice(0, opinionsShown),
 		from: all.at(-1)!.year,
 		to: all[0].year,
 		citations,
@@ -142,11 +135,15 @@ function contactCard(record: NationRecord, sources: SourceUses): ContactCards {
 	const facts = record.contacts ?? [];
 	const describe = (fact: (typeof facts)[number]) => `${humanize(fact.kind)}: ${fact.value}`;
 	for (const fact of facts) sources.use(fact, contactsHeading, describe(fact));
-	return contactCards(facts, (fact) => {
-		const citations: CitationMark[] = [];
-		sources.citeFact(fact, contactsHeading, describe(fact), citations);
-		return citations;
-	});
+	return contactCards(
+		facts,
+		(fact) => {
+			const citations: CitationMark[] = [];
+			sources.citeFact(fact, contactsHeading, describe(fact), citations);
+			return citations;
+		},
+		defaultOfficeFor(record.entity_type)
+	);
 }
 
 /** How the page words each kind of presence a source records in a state. */
@@ -158,8 +155,8 @@ const presenceWords: Record<string, string> = {
 
 /**
  * The states with a presence as one line, "Arizona, New Mexico, Utah", and
- * under it what sources record in each, grouped by kind: "Land: Arizona, New
- * Mexico, Utah. Government office: Arizona." Every state fact keeps its marker.
+ * under it what sources record in each, grouped by kind: "Land in all three;
+ * government office in Arizona" (presenceNote). Every state fact keeps its marker.
  */
 function statesItem(record: NationRecord, sources: SourceUses, label: string): FactItem[] {
 	const facts = record.states ?? [];
@@ -178,10 +175,11 @@ function statesItem(record: NationRecord, sources: SourceUses, label: string): F
 		sources.citeFact(fact, label, `${stateName(fact.state)}${kind ? ` (${kind})` : ''}`, citations);
 	}
 	const names = (list: string[]) => list.map(stateName).sort((first, second) => first.localeCompare(second, 'en'));
-	const detail = [...byKind.entries()]
-		.map(([kind, list]) => `${kind.charAt(0).toLocaleUpperCase('en-US')}${kind.slice(1)}: ${names(list).join(', ')}.`)
-		.join(' ');
-	return [{ text: names(codes).join(', '), note: detail || undefined, citations }];
+	const detail = presenceNote(
+		[...byKind.entries()].map(([kind, list]) => [kind, names(list)]),
+		names(codes)
+	);
+	return [{ text: names(codes).join(', '), note: detail, citations }];
 }
 
 function atAGlance(record: NationRecord, sources: SourceUses): FactGroup[] {
@@ -807,7 +805,7 @@ const practiceKinds: Record<string, string> = {
  * such as the fee amounts or how to apply.
  */
 function courtPractice(record: NationRecord, sources: SourceUses): FactGroup[] {
-	const section = 'Courts and dispute resolution';
+	const section = 'Courts';
 	const order = Object.keys(practiceKinds);
 	const rank = (kind: string) => (order.includes(kind) ? order.indexOf(kind) : order.length);
 	const facts = [...(record.court_practice ?? [])].sort((first, second) => rank(first.kind) - rank(second.kind));
@@ -919,8 +917,7 @@ function publishedLaw(
 /**
  * The rows "Laws and agreements" shows when the nation's constitution or its
  * published laws are not on record, so the section always says whether they
- * were found. The project keeps no search log for laws yet, so the note says
- * how far the sources go rather than how far a search went.
+ * were found: "None Identified".
  */
 function missingLaw(record: NationRecord, documents: { kind: string }[]): FactGroup[] {
 	const kinds = new Set((record.governing_documents ?? []).map((fact) => fact.kind));
@@ -933,14 +930,8 @@ function missingLaw(record: NationRecord, documents: { kind: string }[]): FactGr
 	const hasLaws =
 		['law-code', 'court-rules', 'other'].some((kind) => kinds.has(kind)) ||
 		(record.dispute_resolution_law ?? []).length > 0;
-	const row = (field: string, label: string, what: string): FactGroup => {
-		const { text, note } = emptySectionNote(what, '', searchSummary(field, record.id));
-		return { field: `missing-${field}`, label, items: [{ text, note }] };
-	};
-	return [
-		...(hasConstitution ? [] : [row('constitution', 'Constitution', 'a constitution or other governing document')]),
-		...(hasLaws ? [] : [row('laws', 'Published laws', 'a law code or other published law')])
-	];
+	const row = (field: string, label: string): FactGroup => ({ field: `missing-${field}`, label, items: [{ text: noneIdentified.text }] });
+	return [...(hasConstitution ? [] : [row('constitution', 'Constitution')]), ...(hasLaws ? [] : [row('laws', 'Published laws')])];
 }
 
 /** Another nation that sources record in one of the same states. */
@@ -1080,7 +1071,7 @@ function nationMap(record: NationRecord, sources: SourceUses): NationMapData | u
 		views: views.map((view, index) => ({ key: view.key, label: view.label, layout: shared.layouts[index], layers: view.layers })),
 		stateNames: [...present].map(stateName).sort((first, second) => first.localeCompare(second, 'en')),
 		region: region ? { name: `${region.name} Region`, link: `/nations/map#${regionAnchor(region.name)}` } : undefined,
-		landAreas: areas.map((area) => ({ name: area.name, kind: landAreaKindLabels[area.kind] })),
+		landAreas: areas.map((area) => ({ code: area.identifier, name: area.name, kind: landAreaKindLabels[area.kind] })),
 		tileMap: areas.length > 0 ? nationTileMapData(areas.map((area) => area.identifier)) : undefined
 	};
 }
@@ -1244,7 +1235,7 @@ export const load: PageServerLoad = ({ params }) => {
 			versions: history.versions.map((version) => ({ id: version.id, label: labelOf(version, version.id) }))
 		}))
 	);
-	sources.part('Courts and dispute resolution');
+	sources.part('Courts');
 	const courts = courtsAndDisputeResolution(record, sources);
 	const practice = courtPractice(record, sources);
 	sources.part(opinionsHeading);
@@ -1275,30 +1266,9 @@ export const load: PageServerLoad = ({ params }) => {
 	// The legal sections always show, and say plainly when nothing was found,
 	// so a reader can see whether recourse may be available (Trevor, Nov. 22, 2026).
 	const empty: EmptySections = {
-		government:
-			government.length > 0
-				? undefined
-				: emptySectionNote(
-						'how the nation’s government is set up',
-						'A nation can govern itself under a constitution or by tradition that is not published online; its government office can say.',
-						searchSummary('governance', record.id)
-					),
-		courts:
-			courts.length > 0 || practice.length > 0
-				? undefined
-				: emptySectionNote(
-						'a court or other forum',
-						'A nation can settle disputes through its council or a court that is not listed online; its government office can say.',
-						searchSummary('courts', record.id) ?? searchSummary('dispute-resolution', record.id)
-					),
-		jurisdiction:
-			jurisdiction.length > 0
-				? undefined
-				: emptySectionNote(
-						'the nation’s Public Law 280 status or an Indian Child Welfare Act agent',
-						'',
-						searchSummary('jurisdiction', record.id)
-					)
+		government: government.length > 0 ? undefined : noneIdentified,
+		courts: courts.length > 0 || practice.length > 0 ? undefined : noneIdentified,
+		jurisdiction: jurisdiction.length > 0 ? undefined : noneIdentified
 	};
 	const result = {
 		page,
@@ -1333,7 +1303,7 @@ export const load: PageServerLoad = ({ params }) => {
 	if (glance.length > 0 || map) items.push({ label: 'At a glance', link: '#glance-heading' });
 	if (hasContacts) items.push({ label: contactsHeading, link: '#contacts-heading' });
 	items.push({ label: governmentHeading, link: '#government-heading' });
-	items.push({ label: 'Courts and dispute resolution', link: '#courts-heading' });
+	items.push({ label: 'Courts', link: '#courts-heading' });
 	if (opinions) items.push({ label: opinionsHeading, link: '#opinions-heading' });
 	if (cases.length > 0) items.push({ label: casesHeading, link: '#cases-heading' });
 	items.push({

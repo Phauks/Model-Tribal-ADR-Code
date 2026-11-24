@@ -37,6 +37,7 @@
 	import { accountPages, currentAccountPage, isAccountPath } from '#lib/account-menu.ts';
 	import { followActiveHeading, headingIds } from '#lib/active-heading.ts';
 	import { isUnfolded } from '#lib/outline-folding.ts';
+	import { editingOutline } from '#lib/essays/editing-outline.svelte.ts';
 	import { followedPageAddress } from '#lib/page-history.ts';
 	import type { Permission } from '#lib/permissions.ts';
 	import { readSignedInHint } from '#lib/signed-in-hint.ts';
@@ -52,6 +53,7 @@
 	import FoldButton from './sidebar/FoldButton.svelte';
 	import SectionColumn from './sidebar/SectionColumn.svelte';
 	import SidebarGroups from './sidebar/SidebarGroups.svelte';
+	import YourWork from './sidebar/YourWork.svelte';
 	import { SidebarState, sectionsKey } from './sidebar/sidebar-state.svelte.ts';
 	import { isSidebarShortcut, restoreSidebarVisibility, sidebarVisibility, toggleSidebar } from './sidebar/sidebar-visibility.svelte.ts';
 
@@ -68,7 +70,13 @@
 	let pageTitle = $state<string | undefined>(undefined);
 
 	// The section being read: its contents (from the root layout), with this page's outline in place.
-	const pageOutline = $derived(page.data.outline as PageOutline | undefined);
+	// While an essay is edited or commented on, its outline is the draft's, with
+	// what changed marked (src/lib/essays/editor-outline.ts), and Your work follows it.
+	const editing = $derived(editingOutline.current?.path === path ? editingOutline.current : undefined);
+	const publishedOutline = $derived(page.data.outline as PageOutline | undefined);
+	const pageOutline = $derived<PageOutline | undefined>(
+		editing ? { title: publishedOutline?.title, items: editing.items } : publishedOutline
+	);
 	const sectionContents = $derived(withSharedLists(page.data.sectionContents as SectionContents | undefined));
 	const composed = $derived(
 		composeSectionContents(currentSection?.opens ? sectionContents : undefined, pageOutline, path, pageTitle)
@@ -131,8 +139,9 @@
 	}
 
 	// Entries inside an outline open along the way to where the reader is (src/lib/outline-folding.ts).
+	// While editing, entries also open along the way to what changed or is in review (essay-editor-mockups/v2-1).
 	function isItemOpen(item: OutlineItem): boolean {
-		return isUnfolded(item, sidebar.itemChoices, isActive);
+		return isUnfolded(item, sidebar.itemChoices, editing ? (entry) => isActive(entry) || Boolean(entry.mark) : isActive);
 	}
 
 	// The sections fold like the Workspace and Your account groups, and start
@@ -383,6 +392,7 @@
 			<!-- Only the list scrolls, so "All sections" stays at the top and nothing slides under it. -->
 			<div class="pages-scroll" bind:this={wideColumn}>
 				{@render column('wide')}
+				{#if editing?.work}<YourWork work={editing.work} {path} />{/if}
 			</div>
 		</nav>
 	{/if}
@@ -564,9 +574,10 @@
 		.sidebar-wide {
 			display: block;
 			position: sticky;
-			top: 0;
+			/* Below the masthead while it stays at the top of the screen for editing (SiteHeader.svelte). */
+			top: var(--masthead-stuck, 0px);
 			align-self: start;
-			height: 100dvh;
+			height: calc(100dvh - var(--masthead-stuck, 0px));
 			overflow: hidden;
 			border-right: 1px solid var(--color-line);
 			box-sizing: border-box;
@@ -653,14 +664,14 @@
 	/* The menu bar stays at the top of the screen as the page scrolls. */
 	.sidebar-narrow {
 		position: sticky;
-		top: 0;
+		top: var(--masthead-stuck, 0px);
 		z-index: 5;
 		border-bottom: 1px solid var(--color-line);
 		background: var(--color-surface);
 	}
 
 	.sidebar-narrow[open] > nav {
-		max-height: calc(100dvh - var(--layout-target-minimum));
+		max-height: calc(100dvh - var(--layout-target-minimum) - var(--masthead-stuck, 0px));
 		overflow-y: auto;
 		overscroll-behavior: contain;
 	}

@@ -3,6 +3,7 @@ import {
 	advanceCheckedUploads,
 	deleteOldUploads,
 	queueCounts,
+	queueNations,
 	queueViews,
 	settlePulledFiles,
 	uploadQueue
@@ -17,6 +18,9 @@ export const load: PageServerLoad = async (event) => {
 	const view = isOneOf(queueViews, requestedView) ? requestedView : 'open';
 	const requestedKind = event.url.searchParams.get('kind');
 	const kind = isOneOf(uploadKinds, requestedKind) ? requestedKind : null;
+	const nations = await queueNations(database);
+	const requestedNation = event.url.searchParams.get('nation');
+	const nation = requestedNation && nations.includes(requestedNation) ? requestedNation : null;
 	// Declined files are removed from the bucket 30 days after the decision (docs/uploads.md).
 	const deleted = await deleteOldUploads(database, bucket);
 	// Files whose virus check finished move into the queue, or are refused.
@@ -26,8 +30,10 @@ export const load: PageServerLoad = async (event) => {
 	return {
 		view,
 		kind,
+		nation,
+		nations,
 		deleted,
 		counts: await queueCounts(database),
-		uploads: await uploadQueue(database, view, kind)
+		uploads: await uploadQueue(database, view, kind, nation)
 	};
 };

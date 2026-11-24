@@ -15,6 +15,7 @@ import { splitFrontMatter } from '../essays/syntax.ts';
 import type { SourceEntry } from './source-uses.ts';
 import type { D1Database, R2Bucket } from '@cloudflare/workers-types/index.ts';
 import { renderWithGenerated } from './essay-pages.ts';
+import type { YourWork } from '../essays/editing-outline.svelte.ts';
 import { latestVersion, publications, readVersionText, titleOf, version as versionRow } from './essays.ts';
 
 export interface EssayPageState {
@@ -29,10 +30,18 @@ export interface EssayPageState {
 	publishedVersion: number | null;
 	/** The newest version, marked against the published text, when it differs. */
 	draft: { html: string; sources: SourceEntry[]; changed: number; added: number } | null;
+	/** The published body, for the editor's draft marks, when a draft differs from it. */
+	publishedText: string | null;
 	/** The newest version's file, for the editor. */
 	text: string;
 	/** Paragraphs git changed that were also edited here, not merged yet (essay-git-sync.ts). */
 	gitConflicts: number;
+	/** The person asking, for their name and color in the live room; set by the page's route. */
+	you: { identifier: string; name: string } | null;
+	/** The person's own work, for "Your work" in the sidebar while editing; set by the page's route. */
+	work?: YourWork;
+	/** Whether the person may start a new essay, for "New essay" beside the section in the sidebar; set by the page's route. */
+	canStart?: boolean;
 }
 
 export async function essayPageState(
@@ -51,8 +60,10 @@ export async function essayPageState(
 	]);
 	const published = listed[0];
 	let draft: EssayPageState['draft'] = null;
+	let publishedText: string | null = null;
 	if (!published?.sha256 || published.sha256 !== latest.sha256) {
 		const before = published?.object_key ? splitFrontMatter(await readVersionText(bucket, { object_key: published.object_key })).body : '';
+		if (published?.object_key) publishedText = before;
 		const lines = lineChanges(before, splitFrontMatter(text).body);
 		// A generated page (the index of cases by topic) is built from the newest texts; only its own text is marked.
 		const rendered = await renderWithGenerated(text, 'saved', { lines });
@@ -77,7 +88,9 @@ export async function essayPageState(
 		},
 		publishedVersion: published?.version_number ?? null,
 		draft,
+		publishedText,
 		text,
-		gitConflicts
+		gitConflicts,
+		you: null
 	};
 }

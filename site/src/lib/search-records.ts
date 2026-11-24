@@ -137,7 +137,7 @@ export function nationFacets(records: Pick<SearchRecords, 'stateOptions' | 'regi
 		{ key: 'courts', label: 'Courts found', hint: foundHint, options: courtOptions, valuesOf: (row) => row.courts },
 		{
 			key: 'dispute',
-			label: 'Other ways to resolve disputes found',
+			label: 'Forums found',
 			hint: 'In a program, a forum or a law on record.',
 			options: disputeOptions,
 			valuesOf: (row) => row.dispute

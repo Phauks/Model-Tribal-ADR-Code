@@ -95,7 +95,8 @@
 		const copyHtml = citationHtml(entry);
 		const holder = document.createElement('div');
 		holder.innerHTML = copyHtml;
-		for (const hidden of holder.querySelectorAll('.visually-hidden')) hidden.remove();
+		// A copied citation is the citation alone, without the places to read it.
+		for (const hidden of holder.querySelectorAll('.visually-hidden, .reading-links')) hidden.remove();
 		return {
 			number: link.textContent?.trim() ?? '',
 			html: citationHtml(entry, { newTab: true }),

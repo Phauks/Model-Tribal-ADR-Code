@@ -13,7 +13,7 @@
  * of its own, such as the outlines a map is drawn from.
  *
  * part() names the part of the page the next citations sit in, such as
- * "Courts and dispute resolution". A source keeps the part that first cites
+ * "Courts". A source keeps the part that first cites
  * it, so a long Sources list can fold into groups that follow the page
  * (Trevor, Nov. 23, 2026; src/lib/source-groups.ts).
  */
@@ -51,7 +51,7 @@ export interface SourceEntry {
 	backlinks: string[];
 	/** The facts, grouped so a heading and a locator shared by several facts appear once. */
 	groups: SourceUseGroup[];
-	/** The part of the page that first cites the source, such as "Courts and dispute resolution". */
+	/** The part of the page that first cites the source, such as "Courts". */
 	part?: string;
 	/** Within that part, the document or heading that first cites it, such as "Gaming compact with Arizona". */
 	subpart?: string;

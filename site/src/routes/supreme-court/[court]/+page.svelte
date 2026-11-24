@@ -21,13 +21,13 @@
 	let { data }: PageProps = $props();
 
 	const justiceColumns: TableColumn[] = [
-		{ key: 'name', header: 'Justice', isRowHeader: true, sortable: true },
-		{ key: 'role', header: 'Role', sortable: true },
-		{ key: 'appointedBy', header: 'Appointed by', sortable: true },
-		{ key: 'joined', header: 'Joined the Court', type: 'date', sortable: true },
-		{ key: 'left', header: 'Left the Court', type: 'date', sortable: true },
-		{ key: 'ending', header: 'How service ended', sortable: true },
-		{ key: 'seat', header: 'Seat held before by', sortable: true }
+		{ key: 'name', header: 'Justice', isRowHeader: true, sortable: true, searchable: true },
+		{ key: 'role', header: 'Role', sortable: true, filterable: true },
+		{ key: 'appointedBy', header: 'Appointed by', sortable: true, filterable: true },
+		{ key: 'joined', header: 'Joined the Court', type: 'date', sortable: true, searchable: true },
+		{ key: 'left', header: 'Left the Court', type: 'date', sortable: true, searchable: true },
+		{ key: 'ending', header: 'How service ended', sortable: true, filterable: true },
+		{ key: 'seat', header: 'Seat held before by', sortable: true, filterable: true }
 	];
 
 	const justiceRows: TableRow[] = $derived(
@@ -46,13 +46,13 @@
 	);
 
 	const caseColumns: TableColumn[] = [
-		{ key: 'name', header: 'Case', isRowHeader: true, sortable: true, custom: true },
-		{ key: 'decided', header: 'Decided', type: 'date', sortable: true },
-		{ key: 'vote', header: 'Vote', sortable: true },
+		{ key: 'name', header: 'Case', isRowHeader: true, sortable: true, custom: true, searchable: true },
+		{ key: 'decided', header: 'Decided', type: 'date', sortable: true, searchable: true },
+		{ key: 'vote', header: 'Vote', sortable: true, filterable: true },
 		{ key: 'opinions', header: 'Opinions', type: 'number', sortable: true },
-		{ key: 'court', header: 'Opinion of the Court', sortable: true, custom: true },
-		{ key: 'concurring', header: 'Concurring', sortable: true, custom: true },
-		{ key: 'dissenting', header: 'Dissenting', sortable: true, custom: true }
+		{ key: 'court', header: 'Opinion of the Court', sortable: true, custom: true, filterable: true },
+		{ key: 'concurring', header: 'Concurring', sortable: true, custom: true, searchable: true },
+		{ key: 'dissenting', header: 'Dissenting', sortable: true, custom: true, searchable: true }
 	];
 
 	/** The opinions the Justices wrote, leaving out votes noted without one. */
@@ -119,6 +119,7 @@
 		rows={justiceRows}
 		rowName={['Justice', 'Justices']}
 		download="{data.key}-justices"
+		filters
 	/>
 	<p class="small muted source-line">Source<CitationMarks marks={data.benchMarks} /></p>
 </section>
@@ -140,7 +141,7 @@
 
 <section aria-labelledby="cases">
 	<h2 id="cases">Cases on this site <CountBadge count={data.cases.length} /></h2>
-	<DataTable identifier="cases-{data.key}" label="Table: cases decided by the {data.name}" columns={caseColumns} rows={caseRows} rowName={['case', 'cases']} download="{data.key}-cases">
+	<DataTable identifier="cases-{data.key}" label="Table: cases decided by the {data.name}" columns={caseColumns} rows={caseRows} rowName={['case', 'cases']} download="{data.key}-cases" filters>
 		{#snippet cell(row, column)}
 			{@const item = caseByKey.get(row.key)}
 			{#if item && column.key === 'name'}

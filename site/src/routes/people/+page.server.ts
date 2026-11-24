@@ -53,7 +53,7 @@ export const load: PageServerLoad = async ({ url, setHeaders }) => {
 		initials: initialsOf(entry.name),
 		picture: entry.pictureVersion ? `/contributors/${entry.slug}/picture?v=${encodeURIComponent(entry.pictureVersion)}` : null,
 		work: workLine(entry),
-		specialties: [...specialties.filter((value) => entry.specialties.includes(value)).map((value) => specialtyLabels[value]), ...(entry.specialtyOther ? [entry.specialtyOther] : [])]
+		specialties: [...specialties.filter((value) => entry.specialties.includes(value)).map((value) => specialtyLabels[value]), ...entry.specialtyOthers]
 	});
 	const board = entries.filter((entry) => entry.boardMember).map((entry) => ({ ...card(entry), office: entry.boardOffice }));
 	const others = entries.filter((entry) => !entry.boardMember);
@@ -73,12 +73,12 @@ export const load: PageServerLoad = async ({ url, setHeaders }) => {
 					{
 						heading: 'Other specialties',
 						description: 'In each person’s own words.',
-						people: others.filter((entry) => entry.specialtyOther).map((entry) => ({ ...card(entry), work: entry.specialtyOther! }))
+						people: others.filter((entry) => entry.specialtyOthers.length > 0).map((entry) => ({ ...card(entry), work: entry.specialtyOthers.join(', ') }))
 					},
 					{
 						heading: 'No specialty given',
 						description: '',
-						people: others.filter((entry) => entry.specialties.length === 0 && !entry.specialtyOther).map(card)
+						people: others.filter((entry) => entry.specialties.length === 0 && entry.specialtyOthers.length === 0).map(card)
 					}
 				];
 	setHeaders({ 'cache-control': 'public, max-age=300' });

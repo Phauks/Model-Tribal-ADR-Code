@@ -1,19 +1,33 @@
 /**
  * Comments on essay drafts, in D1 (src/lib/essays/comments.ts;
  * migrations/20261123T0613_add_essay_comments.sql and
- * 20261123T2300_add_essay_comment_mentions.sql). Each comment and each
- * thread marked done or reopened is recorded in the activity log in the
- * same batch.
+ * 20261123T2300_add_essay_comment_mentions.sql,
+ * 20261123T2340_add_essay_comment_assignments.sql). Each comment, each
+ * thread marked done or reopened, and each assignment is recorded in the
+ * activity log in the same batch.
  */
 import type { D1Database } from '@cloudflare/workers-types/index.ts';
 import { eventStatement } from './events.ts';
 import { newIdentifier, now } from './identifiers.ts';
-import { askSentence, isCommentAsk, type CommentAsk, type EssayComment } from '../essays/comments.ts';
+import { askSentence, commentHelpers, isCommentAsk, isCommentHelper, type CommentAsk, type CommentAssignee, type CommentHelper, type EssayComment } from '../essays/comments.ts';
 import { essayPath, type EssayPart } from './essays.ts';
 
-interface CommentRow extends Omit<EssayComment, 'asks'> {
+interface CommentRow extends Omit<EssayComment, 'asks' | 'assignee'> {
 	asks: string;
+	assigneePerson: string | null;
+	assigneeName: string | null;
+	assigneeHelper: string | null;
 }
+
+function readAssignee(row: Pick<CommentRow, 'assigneePerson' | 'assigneeName' | 'assigneeHelper'>): CommentAssignee | null {
+	if (row.assigneePerson) return { kind: 'person', identifier: row.assigneePerson, name: row.assigneeName ?? 'Someone' };
+	if (isCommentHelper(row.assigneeHelper)) return { kind: 'helper', helper: row.assigneeHelper, name: commentHelpers[row.assigneeHelper] };
+	return null;
+}
+
+/** The newest assignment of the thread whose first comment is `first`. */
+const latestAssignment = (first: string) =>
+	`(SELECT identifier FROM essay_comment_assignments WHERE thread_identifier = ${first} ORDER BY assigned_at DESC, rowid DESC LIMIT 1)`;
 
 function readAsks(text: string): CommentAsk[] {
 	try {
@@ -28,18 +42,81 @@ function readAsks(text: string): CommentAsk[] {
 export async function essayComments(database: D1Database, essay: string): Promise<EssayComment[]> {
 	const result = await database
 		.prepare(
-			`SELECT essay_comments.identifier, thread_identifier AS threadIdentifier, person_identifier AS personIdentifier,
-				author.display_name AS personName, body, asks, quote, quote_prefix AS quotePrefix, quote_suffix AS quoteSuffix,
-				essay_comments.created_at AS createdAt, resolved_at AS resolvedAt, resolver.display_name AS resolvedByName
+			`SELECT essay_comments.identifier, essay_comments.thread_identifier AS threadIdentifier, essay_comments.person_identifier AS personIdentifier,
+				author.display_name AS personName, essay_comments.body, essay_comments.asks, essay_comments.quote, essay_comments.quote_prefix AS quotePrefix,
+				essay_comments.quote_suffix AS quoteSuffix, essay_comments.created_at AS createdAt, essay_comments.resolved_at AS resolvedAt, resolver.display_name AS resolvedByName,
+				assignment.person_identifier AS assigneePerson, assignee.display_name AS assigneeName, assignment.helper AS assigneeHelper
 			 FROM essay_comments
 			 JOIN people AS author ON author.identifier = essay_comments.person_identifier
 			 LEFT JOIN people AS resolver ON resolver.identifier = essay_comments.resolved_by
-			 WHERE essay_identifier = ?
+			 LEFT JOIN essay_comment_assignments AS assignment ON assignment.identifier = ${latestAssignment('essay_comments.identifier')}
+			 LEFT JOIN people AS assignee ON assignee.identifier = assignment.person_identifier
+			 WHERE essay_comments.essay_identifier = ?
 			 ORDER BY essay_comments.created_at, essay_comments.identifier`
 		)
 		.bind(essay)
 		.all<CommentRow>();
-	return result.results.map((row) => ({ ...row, asks: readAsks(row.asks) }));
+	return result.results.map(({ assigneePerson, assigneeName, assigneeHelper, ...row }) => ({
+		...row,
+		asks: readAsks(row.asks),
+		assignee: readAssignee({ assigneePerson, assigneeName, assigneeHelper })
+	}));
+}
+
+/** Who to assign a thread to: a person, by identifier, or an AI helper; null takes the assignment away. */
+export type AssignTo = { person: string } | { helper: CommentHelper } | null;
+
+/** Reads "person:<identifier>", "helper:claude" or null, as the editor sends them. */
+export function readAssignTo(value: unknown): AssignTo | undefined {
+	if (value === null) return null;
+	if (typeof value !== 'string') return undefined;
+	const [kind, rest] = [value.slice(0, value.indexOf(':')), value.slice(value.indexOf(':') + 1)];
+	if (kind === 'person' && rest) return { person: rest };
+	if (kind === 'helper' && isCommentHelper(rest)) return { helper: rest };
+	return undefined;
+}
+
+/**
+ * Assigns a thread to a person or an AI helper, or takes the assignment
+ * away. The thread's author may, and so may anyone who can edit the essay;
+ * the caller checks that a person assigned can open the essay. Answers false
+ * when the thread is not there or the person may not.
+ */
+export async function assignThread(
+	database: D1Database,
+	input: { essay: string; thread: string; personIdentifier: string; mayAssignAny: boolean; to: AssignTo }
+): Promise<boolean> {
+	const first = await database
+		.prepare(
+			`SELECT person_identifier AS personIdentifier, quote FROM essay_comments
+			 WHERE identifier = ? AND essay_identifier = ? AND thread_identifier IS NULL`
+		)
+		.bind(input.thread, input.essay)
+		.first<{ personIdentifier: string; quote: string }>();
+	if (!first || (!input.mayAssignAny && first.personIdentifier !== input.personIdentifier)) return false;
+	const person = input.to && 'person' in input.to ? input.to.person : null;
+	const helper = input.to && 'helper' in input.to ? input.to.helper : null;
+	const name = person
+		? ((await database.prepare('SELECT display_name AS name FROM people WHERE identifier = ?').bind(person).first<{ name: string }>())?.name ?? 'someone')
+		: helper
+			? commentHelpers[helper]
+			: null;
+	const short = first.quote.length > 60 ? `${first.quote.slice(0, 57)}...` : first.quote;
+	await database.batch([
+		database
+			.prepare(
+				`INSERT INTO essay_comment_assignments (identifier, thread_identifier, person_identifier, helper, assigned_by, assigned_at)
+				 VALUES (?, ?, ?, ?, ?, ?)`
+			)
+			.bind(newIdentifier(), input.thread, person, helper, input.personIdentifier, now()),
+		eventStatement(database, {
+			personIdentifier: input.personIdentifier,
+			action: name ? `Assigned the comment on "${short}" to ${name}` : `Took back the assignment of the comment on "${short}"`,
+			targetKind: 'document',
+			targetIdentifier: `essay:${input.essay}`
+		})
+	]);
+	return true;
 }
 
 export interface NewComment {
@@ -152,8 +229,8 @@ export interface CommentForYou {
 	essayTitle: string;
 	quote: string;
 	asks: CommentAsk[];
-	/** Why it is here: someone mentioned the person, or answered them. */
-	reason: 'mentioned' | 'answered';
+	/** Why it is here: it was assigned to the person, someone mentioned them, or someone answered them. */
+	reason: 'assigned' | 'mentioned' | 'answered';
 	lastName: string;
 	lastBody: string;
 	lastAt: string;
@@ -162,14 +239,16 @@ export interface CommentForYou {
 }
 
 /*
- * Open threads waiting on a person: those where someone mentioned them, and
- * those they wrote in where someone else wrote last. Marking a thread done
- * takes it off the page.
+ * Open threads waiting on a person: those assigned to them, those where
+ * someone mentioned them, and those they wrote in where someone else wrote
+ * last. Marking a thread done takes it off the page.
  */
 const threadsForYou = `
 	SELECT first.identifier AS thread, first.essay_identifier AS essay, first.quote, first.asks,
 		EXISTS (SELECT 1 FROM essay_comment_mentions AS mention JOIN essay_comments AS entry ON entry.identifier = mention.comment_identifier
 			WHERE mention.person_identifier = ?1 AND (entry.identifier = first.identifier OR entry.thread_identifier = first.identifier)) AS mentioned,
+		EXISTS (SELECT 1 FROM essay_comment_assignments AS assignment
+			WHERE assignment.identifier = ${latestAssignment('first.identifier')} AND assignment.person_identifier = ?1) AS assigned,
 		last.person_identifier AS lastPerson, author.display_name AS lastName, last.body AS lastBody, last.created_at AS lastAt
 	FROM essay_comments AS first
 	JOIN essay_comments AS last ON last.identifier = (
@@ -186,7 +265,7 @@ export async function commentsForYou(database: D1Database, person: string): Prom
 				(SELECT title FROM essay_versions WHERE essay_versions.essay_identifier = threads.essay ORDER BY number DESC LIMIT 1) AS essayTitle,
 				(SELECT part FROM essays WHERE essays.identifier = threads.essay) AS essayPart
 			 FROM (${threadsForYou}) AS threads
-			 WHERE threads.mentioned OR EXISTS (SELECT 1 FROM essay_comments AS entry
+			 WHERE threads.assigned OR threads.mentioned OR EXISTS (SELECT 1 FROM essay_comments AS entry
 				WHERE (entry.identifier = threads.thread OR entry.thread_identifier = threads.thread) AND entry.person_identifier = ?1)
 			 ORDER BY threads.lastAt DESC`
 		)
@@ -197,6 +276,7 @@ export async function commentsForYou(database: D1Database, person: string): Prom
 			quote: string;
 			asks: string;
 			mentioned: number;
+			assigned: number;
 			lastPerson: string;
 			lastName: string;
 			lastBody: string;
@@ -205,15 +285,15 @@ export async function commentsForYou(database: D1Database, person: string): Prom
 			essayPart: EssayPart | null;
 		}>();
 	return result.results
-		// Once the person has written last, the thread waits on someone else.
-		.filter((row) => row.lastPerson !== person)
+		// Once the person has written last, the thread waits on someone else, unless it is assigned to them.
+		.filter((row) => row.assigned || row.lastPerson !== person)
 		.map((row) => ({
 			thread: row.thread,
 			essay: row.essay,
 			essayTitle: row.essayTitle ?? row.essay,
 			quote: row.quote,
 			asks: readAsks(row.asks),
-			reason: row.mentioned ? 'mentioned' : 'answered',
+			reason: row.assigned ? 'assigned' : row.mentioned ? 'mentioned' : 'answered',
 			lastName: row.lastName,
 			lastBody: row.lastBody,
 			lastAt: row.lastAt,

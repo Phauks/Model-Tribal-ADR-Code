@@ -12,6 +12,8 @@
 	import NationServices from '#lib/components/NationServices.svelte';
 	import SourceList from '#lib/components/SourceList.svelte';
 	import NationMap from '#lib/components/NationMap.svelte';
+	import NationPageControls from '#lib/components/NationPageControls.svelte';
+	import Pencil from '@lucide/svelte/icons/pencil';
 	import NationDocumentsOffline from '#lib/components/NationDocumentsOffline.svelte';
 	import RecognitionBadges from '#lib/components/RecognitionBadges.svelte';
 	import RecordPage from '#lib/components/RecordPage.svelte';
@@ -21,6 +23,7 @@
 	import Clock from '@lucide/svelte/icons/clock';
 	import History from '@lucide/svelte/icons/history';
 	import TopicBadges from '#lib/components/TopicBadges.svelte';
+	import { opinionsMentioning } from '#lib/opinion-mentions.ts';
 	import Timeline from '#lib/components/Timeline.svelte';
 	import { unclaimedPage } from '#lib/review-status.ts';
 	import { afterNavigate } from '$app/navigation';
@@ -120,6 +123,9 @@
 <svelte:head>
 	<title>{page.officialName} · Nations · Model Tribal ADR Code</title>
 </svelte:head>
+
+<!-- For someone on the nation's team: Edit, History and Your nation's team in the masthead (decision record 0041). -->
+{#if !page.withdrawn}<NationPageControls nation={page.id} />{/if}
 
 <Breadcrumbs trail={[{ label: 'Nations', href: '/nations' }]} />
 
@@ -232,8 +238,9 @@
 			{/if}
 		</Collapsible>
 
-		<!-- 5. Courts and dispute resolution -->
-		<Collapsible heading="Courts and dispute resolution" identifier="courts-heading">
+		<!-- 5. Courts -->
+		<Collapsible heading="Courts" identifier="courts-heading">
+			{@render editLink('courts-and-dispute-resolution', 'courts-heading', 'Courts')}
 			{#if data.empty.courts}
 				{@render emptySection(data.empty.courts)}
 			{:else}
@@ -253,14 +260,11 @@
 					{opinions.count === 1 ? 'One opinion' : `${opinions.count.toLocaleString('en-US')} opinions`} of courts serving the nation {opinions.count === 1 ? 'is' : 'are'} published in the American Tribal Law Reporter or the Navajo Reporter{opinions.from === opinions.to ? `, from ${opinions.from}` : `, from ${opinions.from} to ${opinions.to}`}.<CitationMarks
 						marks={opinions.citations}
 					/>
-					{#if opinions.disputeResolutionCount > 0}
-						{opinions.disputeResolutionCount === opinions.count ? 'All of them' : `Of these, ${opinions.disputeResolutionCount.toLocaleString('en-US')}`} mention peacemaking, mediation, arbitration or another way of settling a dispute outside a trial; they are listed first.
-					{/if}
 				</p>
 				<ul class="opinions stacked-list">
 					{#each opinions.shown as opinion (opinion.path)}
 						<li>
-							<a href={opinion.path}><i>{opinion.name}</i></a>, {opinion.citation} ({opinion.court} {opinion.year}){#if opinion.topics.length > 0}<span class="small mentions"><span class="muted">Mentions</span>{' '}<TopicBadges topics={opinion.topics.map((topic) => ({ text: topic }))} /></span>{/if}
+							<a href={opinion.path}><i>{opinion.name}</i></a>, {opinion.citation} ({opinion.court} {opinion.year}){#if opinion.topics.length > 0}<span class="small mentions"><span class="muted">Mentions</span>{' '}<TopicBadges topics={opinion.topics.map((topic) => ({ text: topic, link: opinionsMentioning(data.page.id, topic) }))} /></span>{/if}
 						</li>
 					{/each}
 				</ul>
@@ -309,18 +313,22 @@
 		     reproduced, and each document with recorded versions, oldest first
 		     (decision record 0018). -->
 		<div data-print-part="documentHistory">
-			<Collapsible heading="Laws and agreements" identifier="law-heading">
+			<Collapsible heading="Laws and agreements" identifier="law-heading" actions={data.page.heldCopies.count > 0 ? documentTools : undefined}>
+				{@render editLink('statements', 'statement-law-heading', 'Laws and agreements')}
 				{#if data.law.length > 0}
 					<FactGroups groups={data.law} />
 				{/if}
 				<DocumentHistoryList documents={data.documents} />
 				<div class="nation-slot" data-nation-slot="law"></div>
-				<NationDocumentsOffline nation={data.page.id} held={data.page.heldCopies} />
 			</Collapsible>
+			{#snippet documentTools()}
+				<NationDocumentsOffline nation={data.page.id} held={data.page.heldCopies} />
+			{/snippet}
 		</div>
 
 		<!-- 7. Jurisdiction: Public Law 280, Indian Child Welfare Act agents and the like -->
 		<Collapsible heading="Jurisdiction" identifier="jurisdiction-heading">
+			{@render editLink('statements', 'statement-jurisdiction-heading', 'Jurisdiction')}
 			{#if data.empty.jurisdiction}
 				{@render emptySection(data.empty.jurisdiction)}
 			{:else}
@@ -412,10 +420,10 @@
 			</Collapsible>
 		{/if}
 
-		<!-- 8. Nearby Nations, the other nations in the same states: plain lists, never a ranking -->
+		<!-- 8. Nearby Nations, the other nations in the same states: plain lists, never a ranking. It starts folded (nation page review, layout A). -->
 		{#if data.neighbors.length > 0}
 			<div class="no-print">
-				<Collapsible heading="Nearby Nations" identifier="neighbors-heading">
+				<Collapsible heading="Nearby Nations" identifier="neighbors-heading" open={false}>
 					{#each data.neighbors as entry (entry.state)}
 						<h3 class="neighbors-state">{entry.stateName}</h3>
 						{#if entry.nations.length > 0}
@@ -443,9 +451,16 @@
 	{/snippet}
 </RecordPage>
 
+<!-- "Edit" on a part of the page, shown only to someone on the nation's team whose place covers it (NationPageControls.svelte). -->
+{#snippet editLink(part: string, anchor: string, name: string)}
+	<a class="nation-edit-link no-print" data-edit-part={part} href="/workspace/nation-teams/{page.id}/edit#{anchor}"
+		><Pencil size={16} aria-hidden="true" />Edit<span class="visually-hidden"> {name}</span></a
+	>
+{/snippet}
+
 <!-- A legal section with nothing to show: the short answer, then how far the search went once one is finished. -->
-{#snippet emptySection(empty: { text: string; note: string })}
-	<p class="empty-section"><strong>{empty.text}.</strong>{#if empty.note}{' '}{empty.note}{/if}</p>
+{#snippet emptySection(empty: { text: string })}
+	<p class="empty-section">{empty.text}</p>
 {/snippet}
 
 <!-- 3. At a glance, with the seal and the map, then the contacts. -->
@@ -466,6 +481,7 @@
 							})}
 						>
 							<img
+								class="image-backing"
 								src={data.image.src}
 								alt={description}
 								loading="lazy"
@@ -487,6 +503,7 @@
 	{/if}
 	{#if hasContacts}
 		<Collapsible heading={contactsHeading} identifier="contacts-heading">
+			{@render editLink('contacts', 'contacts-heading', contactsHeading)}
 			<ContactCard cards={data.contacts} headingLevel={3} />
 		</Collapsible>
 	{/if}
@@ -547,7 +564,9 @@
 		display: block;
 	}
 
+	/* Its rules keep clear of the floated At a glance column and contacts (RecordPage.svelte). */
 	.empty-section {
+		display: flow-root;
 		margin: 0 0 var(--space-5);
 		padding: var(--space-3) 0;
 		border-top: 1px solid var(--color-line);

@@ -61,8 +61,10 @@
 </div>
 
 <style>
+	/* As wide as the field it holds, so the eye stays inside the field's right edge however wide the form is. */
 	.password-input {
 		position: relative;
+		max-width: var(--layout-field);
 	}
 
 	/* Room on the right for the eye button, only once it is there. */

@@ -1,4 +1,10 @@
-<!-- Your data: take a copy of what the project keeps about you, or delete your account. What is kept on the device instead is in Settings, under This device. -->
+<!-- Your data: take a copy of what the project keeps about you, or delete your account. What is kept on the device instead is in Settings, under This device. Each part is a card, as drawn (design/settings-and-account). -->
+<script lang="ts">
+	/** Opens the Settings dialog from the masthead's cog, which holds This device. */
+	function openSettings() {
+		document.querySelector<HTMLButtonElement>('header button[aria-label="Settings"]')?.click();
+	}
+</script>
 
 <svelte:head>
 	<title>Your data · Model Tribal ADR Code</title>
@@ -7,7 +13,8 @@
 <h1>Your data</h1>
 <p class="lead">What the project keeps about you, and how to take a copy or delete it.</p>
 
-<h2>Download a copy</h2>
+<section class="account-card" aria-labelledby="download-heading">
+<h2 id="download-heading">Download a copy</h2>
 <p>
 	One file with your account’s email address and sign-in dates, your profile answers and every version you
 	confirmed, your credit choices, the files and links you sent, the pages you follow and your email setting, and where you are signed in. Your
@@ -18,16 +25,22 @@
 	Requests sent through the request form are not tied to your account, so they are not in the file. Ask about them
 	with the reference you were given.
 </p>
+</section>
 
-<h2>Kept on this device, not with your account</h2>
+<section class="account-card" aria-labelledby="device-heading">
+<h2 id="device-heading">Kept on this device, not with your account</h2>
 <p>
 	Your display settings, print choices, starred pages and pages saved for offline reading stay in this browser. You
 	can export or clear them in Settings, under This device.
 </p>
+<p class="needs-scripts"><button class="button button-quiet" type="button" onclick={openSettings}>Open Settings</button></p>
+</section>
 
-<h2>Delete your account</h2>
+<section class="account-card danger-card" aria-labelledby="delete-heading">
+<h2 id="delete-heading">Delete your account</h2>
 <p>
 	Deletes your sign-in, your profile, your workspace access and the pages you follow, at once. You choose whether
 	your name stays on work you helped with.
 </p>
-<p><a class="button button-quiet" href="/profile/delete-account">Delete your account</a></p>
+<p><a class="button button-quiet danger" href="/profile/delete-account">Delete your account</a></p>
+</section>
