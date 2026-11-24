@@ -35,6 +35,7 @@
 	import LibraryBig from '@lucide/svelte/icons/library-big';
 	import Quote from '@lucide/svelte/icons/quote';
 	import { copyRichText } from '#lib/clipboard.ts';
+	import { saveFile } from '#lib/save-file.ts';
 
 	let { onpdf }: { onpdf: () => void } = $props();
 
@@ -132,15 +133,10 @@
 				const office = await import('#lib/office-documents.ts');
 				body = (format.id === 'word' ? office.pageWord(read) : office.pageOpenDocument(read)) as Uint8Array<ArrayBuffer>;
 			}
-			const link = document.createElement('a');
-			link.href = URL.createObjectURL(new Blob([body], { type: format.mediaType }));
-			link.download = datedName(pageFileName(location.pathname, format.extension), built);
-			document.body.append(link);
-			link.click();
-			link.remove();
-			setTimeout(() => URL.revokeObjectURL(link.href), 10_000);
+			const fileName = datedName(pageFileName(location.pathname, format.extension), built);
+			saveFile(new Blob([body], { type: format.mediaType }), fileName);
 			close(true);
-			message = `Saved ${link.download}.`;
+			message = `Saved ${fileName}.`;
 		} catch {
 			message = `The page could not be saved as ${format.format}. Please try again.`;
 		}
