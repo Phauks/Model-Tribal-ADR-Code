@@ -4,6 +4,7 @@
  * ended, or the tab closes while a save is on its way. The editor offers it
  * back the next time the essay opens.
  */
+import { readStoredJson, writeStored, writeStoredJson } from '#lib/browser-storage.ts';
 
 export interface LocalDraft {
 	text: string;
@@ -16,31 +17,20 @@ export interface LocalDraft {
 const key = (identifier: string): string => `essay-draft:${identifier}`;
 
 export function keepLocalDraft(identifier: string, text: string, basedOn: number): void {
-	try {
-		localStorage.setItem(key(identifier), JSON.stringify({ text, basedOn, at: new Date().toISOString() } satisfies LocalDraft));
-	} catch {
-		// Storage can be full or blocked; the save itself still goes ahead.
-	}
+	// Storage can be full or blocked; the save itself still goes ahead.
+	writeStoredJson(key(identifier), { text, basedOn, at: new Date().toISOString() } satisfies LocalDraft);
 }
 
 export function localDraft(identifier: string): LocalDraft | null {
-	try {
-		const kept = JSON.parse(localStorage.getItem(key(identifier)) ?? 'null') as Partial<LocalDraft> | null;
-		if (!kept || typeof kept.text !== 'string' || typeof kept.basedOn !== 'number' || typeof kept.at !== 'string') return null;
-		return { text: kept.text, basedOn: kept.basedOn, at: kept.at };
-	} catch {
-		return null;
-	}
+	const kept = readStoredJson(key(identifier)) as Partial<LocalDraft> | null;
+	if (!kept || typeof kept.text !== 'string' || typeof kept.basedOn !== 'number' || typeof kept.at !== 'string') return null;
+	return { text: kept.text, basedOn: kept.basedOn, at: kept.at };
 }
 
 /** Forgets the kept copy, but only if it is still the text given (a newer copy stays). */
 export function dropLocalDraft(identifier: string, text?: string): void {
-	try {
-		if (text !== undefined && localDraft(identifier)?.text !== text) return;
-		localStorage.removeItem(key(identifier));
-	} catch {
-		// As above.
-	}
+	if (text !== undefined && localDraft(identifier)?.text !== text) return;
+	writeStored(key(identifier), null);
 }
 
 /** Browsers refuse a keepalive request whose body is over 64 KiB, so only smaller saves use it. */
@@ -64,6 +54,6 @@ export function forgetLocalDrafts(): void {
 	try {
 		for (const stored of Object.keys(localStorage)) if (stored.startsWith('essay-draft:')) localStorage.removeItem(stored);
 	} catch {
-		// As above.
+		// Storage can be blocked; then nothing was kept.
 	}
 }

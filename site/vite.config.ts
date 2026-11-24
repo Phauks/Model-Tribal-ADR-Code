@@ -1,4 +1,5 @@
 import { execFileSync } from 'node:child_process';
+import { createHash } from 'node:crypto';
 import { readFileSync } from 'node:fs';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
@@ -9,7 +10,7 @@ import { designTokensToCss } from './src/lib/design-tokens.ts';
 import { buildMapGeometry } from './src/lib/map-geometry.ts';
 import { parseGitLog, type Change } from './src/lib/recent-changes.ts';
 import { fullCitations } from './src/lib/server/citations.ts';
-import { caseNames, essaysInGit, everyBoxFact, everyFullCitation, everyOpinionList, glossaryTerms, spellingWords } from './src/lib/server/essay-library.ts';
+import { caseNames, essaysInGit, everyBoxFact, everyFullCitation, everyOpinionList, everyRecordBox, glossaryTerms, spellingWords } from './src/lib/server/essay-library.ts';
 import { caseLinks } from './src/lib/server/case-previews.ts';
 import { buildFormCatalog } from './src/lib/server/form-catalog.ts';
 import { nationIndexRows } from './src/lib/server/nation-index.ts';
@@ -381,6 +382,7 @@ function essayLibrary(): Plugin {
 				`export const essayCaseNames = ${JSON.stringify(caseNames())};`,
 				`export const essayCaseLinks = ${JSON.stringify(caseLinks())};`,
 				`export const essayOpinions = ${JSON.stringify(everyOpinionList())};`,
+				`export const essayRecordBoxes = ${JSON.stringify(everyRecordBox())};`,
 				`export const essaySpellingWords = ${JSON.stringify(spellingWords())};`
 			].join('\n');
 		}
@@ -589,6 +591,30 @@ export default defineConfig({
 					filename.split(/[/\\]/).includes('node_modules') ? undefined : true
 			},
 			adapter: adapter(),
+			csp: {
+				// A hash of each script SvelteKit writes into a page, in pages built
+				// ahead of time and pages the Worker answers alike, so a script inside
+				// text shown with {@html} does not run (decision record 0055).
+				mode: 'hash',
+				directives: {
+					'script-src': [
+						'self',
+						// The reader's settings in src/app.html, which SvelteKit does not hash itself.
+						...appHtmlScriptHashes(),
+						// Svelte writes onload="this.__e=event" and onerror="this.__e=event" on
+						// images with load or error handlers, so it can replay events that come
+						// before the page starts. 'unsafe-hashes' lets only that exact text run.
+						'unsafe-hashes',
+						scriptHash('this.__e=event'),
+						// Spelling and grammar checking (Harper) and other WebAssembly.
+						'wasm-unsafe-eval'
+					],
+					// The map (MapLibre) and the video call kit start workers from blob: addresses.
+					'worker-src': ['self', 'blob:'],
+					'object-src': ['none'],
+					'base-uri': ['self']
+				}
+			},
 			prerender: {
 				// Every page is built ahead of time from the files in content/.
 				// The lists of checksums are written after the build (tools/write-checksums.mjs), so a
@@ -612,3 +638,14 @@ export default defineConfig({
 		}
 	}
 });
+
+/** The CSP source for a script's text: its SHA-256, in base64. */
+function scriptHash(text: string): `sha256-${string}` {
+	return `sha256-${createHash('sha256').update(text, 'utf8').digest('base64')}`;
+}
+
+/** Hashes of the inline scripts in src/app.html, read from the file so an edit there cannot leave a stale hash. */
+function appHtmlScriptHashes(): `sha256-${string}`[] {
+	const page = readFileSync(new URL('./src/app.html', import.meta.url), 'utf8');
+	return [...page.matchAll(/<script>([\s\S]*?)<\/script>/g)].map((match) => scriptHash(match[1]));
+}

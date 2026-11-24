@@ -4,6 +4,7 @@ import { dataChartList } from '#lib/data-chart-list.ts';
 import { dataCharts } from '#lib/server/data-charts.ts';
 import { rowsToCsv } from '#lib/tables/table-definition.ts';
 import type { EntryGenerator, RequestHandler } from './$types';
+import { csvResponse } from '#lib/csv.ts';
 
 // Each chart's table on the Data and charts page as its own CSV file, the same columns and rows as
 // the table under the chart, for the Download menu (src/lib/page-downloads.ts). Trevor asked on
@@ -16,10 +17,5 @@ export const GET: RequestHandler = ({ params }) => {
 	const chart = dataCharts().find((item) => item.identifier === params.table);
 	if (!chart) error(404, 'There is no chart by that name');
 	const { columns, rows } = chartTable(chart);
-	return new Response(rowsToCsv(columns, rows), {
-		headers: {
-			'content-type': 'text/csv; charset=utf-8',
-			'content-disposition': `attachment; filename="${params.table}.csv"`
-		}
-	});
+	return csvResponse(rowsToCsv(columns, rows), { fileName: `${params.table}.csv` });
 };

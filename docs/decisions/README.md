@@ -60,5 +60,6 @@ A record is never rewritten after it is accepted. A later record supersedes it a
 | [0050](0050-sponsor-accounts-on-the-account-pages.md) | Give sponsors an account page, with billing on Stripe's own pages | Proposed |
 | [0051](0051-search-the-source-documents-through-a-private-full-text-library.md) | Search the source documents through a private full-text library | Accepted |
 | [0054](0054-edit-the-site-text-from-the-website.md) | Edit the site text from the website, and rebuild the site to publish it | Accepted |
+| [0055](0055-limit-scripts-and-framing-with-security-headers.md) | Limit scripts and framing with a Content Security Policy and security headers | Accepted |
 
 Template: Status, Date, Context, Decision, Consequences, Sources.

@@ -100,6 +100,8 @@
 	import { essayChartFrom } from '#lib/table-builder.ts';
 	import { addAfterCurrent, addSection, moveCurrent } from '#lib/essays/placement.ts';
 	import { dropLocalDraft, isSaveAnswer, keepaliveLimit, keepLocalDraft, localDraft, type LocalDraft } from '#lib/essays/local-draft.ts';
+	import { writeStored } from '#lib/browser-storage.ts';
+	import { sendJson } from '#lib/send-json.ts';
 
 	let {
 		identifier,
@@ -305,17 +307,17 @@
 
 	async function finishReview(request: string): Promise<void> {
 		reviewProblem = '';
-		const response = await fetch(`/workspace/essays/${identifier}/sharing?request=${encodeURIComponent(request)}`, {
-			method: 'PATCH',
-			headers: { 'content-type': 'application/json' },
-			body: JSON.stringify({ done: true })
-		}).catch(() => null);
-		const body = (await response?.json().catch(() => null)) as { requests?: ReviewRequest[]; message?: string } | null;
-		if (!response?.ok || !body?.requests) {
-			reviewProblem = body?.message || 'That did not go through. Try again.';
+		const sent = await sendJson<{ requests: ReviewRequest[] }>(
+			`/workspace/essays/${identifier}/sharing?request=${encodeURIComponent(request)}`,
+			'PATCH',
+			{ done: true },
+			{ complete: (answer) => !!answer.requests }
+		);
+		if (!sent.ok) {
+			reviewProblem = sent.problem;
 			return;
 		}
-		reviewRequestsChanged(body.requests);
+		reviewRequestsChanged(sent.answer.requests);
 	}
 
 	function openShare(): void {
@@ -617,16 +619,17 @@
 		if (!quote) return;
 		collapseSelection();
 		commentProblem = '';
-		const response = await fetch(`/workspace/essays/${identifier}/comments`, {
-			method: 'POST',
-			headers: { 'content-type': 'application/json' },
-			body: JSON.stringify({ body: '', asks: [ask], quote, version })
-		}).catch(() => null);
-		const answer = (await response?.json().catch(() => null)) as { comments?: EssayComment[]; message?: string } | null;
-		if (!response?.ok || !answer?.comments) {
-			commentProblem = answer?.message || 'That did not go through. Try again.';
+		const sent = await sendJson<{ comments: EssayComment[] }>(
+			`/workspace/essays/${identifier}/comments`,
+			'POST',
+			{ body: '', asks: [ask], quote, version },
+			{ complete: (answer) => !!answer.comments }
+		);
+		if (!sent.ok) {
+			commentProblem = sent.problem;
 			return;
 		}
+		const { answer } = sent;
 		const before = new Set(comments.map((comment) => comment.identifier));
 		const added = answer.comments.find((comment) => !before.has(comment.identifier) && comment.threadIdentifier === null);
 		if (added) currentThread = added.identifier;
@@ -713,11 +716,7 @@
 	function toggleChecks(): void {
 		showChecks = !showChecks;
 		if (showChecks) void loadLibrary();
-		try {
-			localStorage.setItem(checksKey, showChecks ? 'on' : 'off');
-		} catch {
-			// Storage can be blocked; the choice is then not remembered.
-		}
+		writeStored(checksKey, showChecks ? 'on' : 'off');
 	}
 	let libraryProblem = $state('');
 	/** Each source's citation as plain text, by key, for the headings of case and law boxes (case-headings.ts). */
@@ -1695,7 +1694,7 @@
 			if (canEdit && localStorage.getItem(checksKey) === 'on') toggleChecks();
 			else void loadLibrary();
 		} catch {
-			// As above.
+			// Storage can be blocked; the choice is then not remembered.
 		}
 	});
 

@@ -42,6 +42,7 @@
 	import Scale from '@lucide/svelte/icons/scale';
 	import Scissors from '@lucide/svelte/icons/scissors';
 	import SearchCheck from '@lucide/svelte/icons/search-check';
+	import { sendJson } from '#lib/send-json.ts';
 
 	let {
 		essay,
@@ -202,17 +203,15 @@
 	async function send(payload: Record<string, unknown>, method = 'POST', query = ''): Promise<boolean> {
 		sending = true;
 		problem = '';
-		const response = await fetch(`/workspace/essays/${essay}/comments${query}`, {
-			method,
-			headers: { 'content-type': 'application/json' },
-			body: JSON.stringify(payload)
-		}).catch(() => null);
-		const answer = (await response?.json().catch(() => null)) as { comments?: EssayComment[]; message?: string } | null;
+		const sent = await sendJson<{ comments: EssayComment[] }>(`/workspace/essays/${essay}/comments${query}`, method, payload, {
+			complete: (answer) => !!answer.comments
+		});
 		sending = false;
-		if (!response?.ok || !answer?.comments) {
-			problem = answer?.message || 'That did not go through. Try again.';
+		if (!sent.ok) {
+			problem = sent.problem;
 			return false;
 		}
+		const { answer } = sent;
 		const before = new Set(comments.map((comment) => comment.identifier));
 		onchange(answer.comments);
 		const added = answer.comments.find((comment) => !before.has(comment.identifier) && comment.threadIdentifier === null);

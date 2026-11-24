@@ -17,6 +17,7 @@
  * browser only.
  */
 import type { Linter } from 'harper.js';
+import { readStoredJson, writeStoredJson } from '#lib/browser-storage.ts';
 
 export interface HarperIssue {
 	/** Place in the text checked, in UTF-16 code units, as JavaScript strings count. */
@@ -32,12 +33,8 @@ export interface HarperIssue {
 const addedWordsKey = 'editor-added-words';
 
 export function addedWords(): string[] {
-	try {
-		const saved = JSON.parse(localStorage.getItem(addedWordsKey) ?? '[]');
-		return Array.isArray(saved) ? saved.filter((word): word is string => typeof word === 'string') : [];
-	} catch {
-		return [];
-	}
+	const saved = readStoredJson(addedWordsKey);
+	return Array.isArray(saved) ? saved.filter((word): word is string => typeof word === 'string') : [];
 }
 
 let linter: Promise<Linter> | undefined;
@@ -62,11 +59,8 @@ export function harper(projectWords: string[]): Promise<Linter> {
 export async function addWord(word: string): Promise<void> {
 	const words = new Set(addedWords());
 	words.add(word);
-	try {
-		localStorage.setItem(addedWordsKey, JSON.stringify([...words]));
-	} catch {
-		// Storage can be blocked; the word then counts for this page only.
-	}
+	// Storage can be blocked; the word then counts for this page only.
+	writeStoredJson(addedWordsKey, [...words]);
 	if (linter) await (await linter).importWords([word]);
 }
 

@@ -37,6 +37,7 @@
 	import SignInForms from './SignInForms.svelte';
 	import { forgetLocalDrafts } from '#lib/essays/local-draft.ts';
 	import { followSettingsEverywhere, forgetEverywhere } from '#lib/settings-everywhere.ts';
+	import { readStoredJson, writeStored, writeStoredJson } from '#lib/browser-storage.ts';
 
 	interface SignedInAs {
 		name: string;
@@ -131,28 +132,21 @@
 		mounted = true;
 		const hint = readSignedInHint(document.cookie);
 		hintSignedIn = hint.signedIn;
-		try {
-			if (fromPage) localStorage.setItem(nameStorageKey, JSON.stringify(fromPage));
-			else if (!signedIn) {
-				localStorage.removeItem(nameStorageKey);
-				// Unsaved essay text kept by the editor (local-draft.ts) does not outlast the sign-in.
-				if (!location.pathname.startsWith('/sign-in')) forgetLocalDrafts();
-			}
-			else {
-				const stored = JSON.parse(localStorage.getItem(nameStorageKey) ?? 'null') as SignedInAs | null;
-				if (stored && typeof stored.name === 'string') remembered = { name: stored.name, role: String(stored.role ?? '') };
-			}
-		} catch {
-			// Storage can be blocked; the menu then says only that someone is signed in.
+		// Storage can be blocked; the menu then says only that someone is signed in.
+		if (fromPage) writeStoredJson(nameStorageKey, fromPage);
+		else if (!signedIn) {
+			writeStored(nameStorageKey, null);
+			// Unsaved essay text kept by the editor (local-draft.ts) does not outlast the sign-in.
+			if (!location.pathname.startsWith('/sign-in')) forgetLocalDrafts();
+		}
+		else {
+			const stored = readStoredJson(nameStorageKey) as SignedInAs | null;
+			if (stored && typeof stored.name === 'string') remembered = { name: stored.name, role: String(stored.role ?? '') };
 		}
 	});
 
 	function forgetName() {
-		try {
-			localStorage.removeItem(nameStorageKey);
-		} catch {
-			// Nothing was kept.
-		}
+		writeStored(nameStorageKey, null);
 		forgetLocalDrafts();
 		forgetEverywhere();
 	}

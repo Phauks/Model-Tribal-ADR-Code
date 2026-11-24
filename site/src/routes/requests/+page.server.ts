@@ -2,7 +2,8 @@ import { fail } from '@sveltejs/kit';
 import { reviewSubjects } from 'virtual:review-subjects';
 import { isRequestKind } from '#lib/requests.ts';
 import { workerEnvironment } from '#lib/server/environment.ts';
-import { readRequestForm } from '#lib/server/request-form.ts';
+import { BodyTooLarge, formWithin } from '#lib/server/limited-body.ts';
+import { maximumFileBytes, maximumFiles, readRequestForm } from '#lib/server/request-form.ts';
 import { saveRequest } from '#lib/server/request-store.ts';
 import type { Actions, PageServerLoad } from './$types';
 
@@ -34,6 +35,9 @@ export const load: PageServerLoad = ({ url }) => {
 	};
 };
 
+/** The largest form the request form takes: its files at their largest, and a megabyte for the text and the form's own wrapping. */
+const largestForm = maximumFiles * maximumFileBytes + 1024 * 1024;
+
 export const actions: Actions = {
 	default: async ({ request, getClientAddress }) => {
 		const environment = workerEnvironment();
@@ -56,8 +60,11 @@ export const actions: Actions = {
 
 		let form: FormData;
 		try {
-			form = await request.formData();
-		} catch {
+			form = await formWithin(request, largestForm);
+		} catch (problem) {
+			if (problem instanceof BodyTooLarge) {
+				return fail(413, { problem: `The files are too large. Each file can be up to ${maximumFileBytes / 1024 / 1024} MB.` });
+			}
 			return fail(400, { problem: 'The form could not be read. Please try again.' });
 		}
 

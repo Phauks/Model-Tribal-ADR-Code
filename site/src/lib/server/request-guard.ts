@@ -1,5 +1,5 @@
 /**
- * Guards for requests that change something in the workspace
+ * Guards for requests that change something anywhere on the site
  * (site/COLLABORATION.md, "Protection against unauthorized changes").
  *
  * SvelteKit already refuses form submissions from other sites by checking
@@ -31,20 +31,28 @@ export function isCrossSite(request: Request, siteOrigin: string): boolean {
 	return false;
 }
 
-/** Paths whose changes are guarded. */
+/**
+ * Addresses that other services post to from their own servers, each
+ * checked another way: payment and printer webhooks by their signature, and
+ * a mail program's one-click unsubscribe (RFC 8058) by the token in its
+ * address. A server sends neither Sec-Fetch-Site nor Origin, so these pass
+ * the check anyway; listing them keeps them working if a service ever
+ * starts sending an Origin header.
+ */
+const fromOtherServices: RegExp[] = [
+	/^\/book\/payment-webhook\/?$/,
+	/^\/book\/printer-webhook\/?$/,
+	/^\/sponsorship\/payment-webhook\/?$/,
+	/^\/mail\/unsubscribe\/[^/]+\/one-click\/?$/
+];
+
+/**
+ * Paths whose changes are guarded: every path except the few that other
+ * services post to. Until the site has its own domain, every other Worker on
+ * the same workers.dev account address counts as the same site, so the
+ * session cookie's SameSite setting alone would not stop a page there from
+ * sending a change here; this check refuses "same-site" too.
+ */
 export function isGuardedPath(path: string): boolean {
-	return (
-		path === '/workspace' ||
-		path.startsWith('/workspace/') ||
-		path === '/sign-out' ||
-		path.startsWith('/sign-out/') ||
-		path === '/following' ||
-		path.startsWith('/following/') ||
-		path === '/uploads' ||
-		path.startsWith('/uploads/') ||
-		path === '/events' ||
-		path.startsWith('/events/') ||
-		path === '/rooms' ||
-		path.startsWith('/rooms/')
-	);
+	return !fromOtherServices.some((pattern) => pattern.test(path));
 }

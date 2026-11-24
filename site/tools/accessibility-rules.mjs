@@ -48,7 +48,9 @@ export async function waitUntilSettled(page, { quiet = 250, longest = 3_000 } = 
  * place, as it does in a browser. The page is left in the first theme.
  */
 export async function axeViolations(page) {
-	if (!(await page.evaluate(() => 'axe' in window))) await page.addScriptTag({ content: axeSource });
+	// Run axe from the testing side rather than as a <script> in the page: the site's
+	// Content Security Policy refuses inline scripts it has no hash for (decision record 0055).
+	if (!(await page.evaluate(() => 'axe' in window))) await page.evaluate(axeSource);
 	const found = [];
 	for (const theme of themes) {
 		await page.emulateMedia({ colorScheme: theme });
