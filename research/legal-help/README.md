@@ -3,7 +3,9 @@
 Places a person can get legal help or legal information about tribal law or Indian law, and the states and Native nations each one serves. Started Nov. 24, 2026, when Trevor asked to identify tribal law self-help centers around the country and which states and nations they serve, so the results can be folded into nation pages and the assistance queue.
 
 - `providers/<id>.yaml`: one record per provider, following [`schemas/legal-help-provider.schema.json`](../../schemas/legal-help-provider.schema.json). Each `serves` item says which states and nations, quotes or closely paraphrases its source, and names the source in the record's own `sources` list.
-- `nation-matches.csv`: written by [`scripts/legal-help/match_nations.py`](../../scripts/legal-help/match_nations.py). One row per nation and provider, with the basis of the match: `named` (the source names the nation or its reservation), `members` (the nation's own program for its members), or `statewide` (the source says the provider serves Native people in every county of a state, so every nation with a page in that state is matched). Run the script again after adding or changing a record; `--check` only validates.
+- `nation-matches.csv`: written by [`scripts/legal-help/match_nations.py`](../../scripts/legal-help/match_nations.py). One row per nation and provider, with the basis of the match: `named` (the source names the nation or its reservation), `members` (the nation's own program for its members), or `statewide` (the source says the provider serves Native people in every county of a state, so every nation with a page in that state is matched). Run the script again after adding or changing a record; `--check` validates and fails when the file is out of date, and the Records and links check runs it.
+
+Nation pages read both in their Legal help section ([`site/src/lib/server/legal-help.ts`](../../site/src/lib/server/legal-help.ts)): `legal-aid` and `tribal-legal-aid` under Legal aid, `self-help-center` under Self-help, `legal-information-site` under Legal information. Records with status `to-classify` and law school clinics stay off the pages until someone reviews them.
 
 ## Kinds
 

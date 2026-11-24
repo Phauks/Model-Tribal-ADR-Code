@@ -13,9 +13,10 @@ Bases:
 Scopes "region", "topic" and "unclassified" are not matched to nations.
 
 Usage: python3 scripts/legal-help/match_nations.py [--check]
---check only validates (every named nation exists) and prints a summary.
+--check validates (every named nation exists) and fails when nation-matches.csv
+is not what the records give, since nation pages read it (site/src/lib/server/legal-help.ts).
 """
-import csv, glob, os, sys
+import csv, glob, io, os, sys
 import yaml
 
 ROOT = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
@@ -85,12 +86,19 @@ def main():
     print(f"federally recognized nations with a Native legal aid or self-help match: {len(native_specific & federal)} of {len(federal)}")
     if problems:
         sys.exit(1)
-    if not check:
-        with open(OUT, 'w', newline='') as f:
-            w = csv.DictWriter(f, fieldnames=list(unique[0].keys()))
-            w.writeheader()
-            w.writerows(unique)
-        print('wrote', os.path.relpath(OUT, ROOT))
+    buffer = io.StringIO(newline='')
+    w = csv.DictWriter(buffer, fieldnames=list(unique[0].keys()))
+    w.writeheader()
+    w.writerows(unique)
+    if check:
+        current = open(OUT, newline='').read() if os.path.exists(OUT) else ''
+        if current != buffer.getvalue():
+            print(f'{os.path.relpath(OUT, ROOT)} is out of date: run python3 scripts/legal-help/match_nations.py')
+            sys.exit(1)
+        return
+    with open(OUT, 'w', newline='') as f:
+        f.write(buffer.getvalue())
+    print('wrote', os.path.relpath(OUT, ROOT))
 
 
 if __name__ == '__main__':
