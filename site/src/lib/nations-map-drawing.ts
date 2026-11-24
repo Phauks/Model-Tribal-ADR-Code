@@ -341,10 +341,10 @@ export function drawShadedStatesMap(geometry: MapGeometry, view: { key: string; 
 		const code = `<text class="map-label marker-label${onLeft ? ' label-on-left' : ''}" x="${marker.x + (onLeft ? -12 : 12)}" y="${marker.y + 5}">${escapeHtml(shape.code)}</text>`;
 		markers.push(linkOrPlace(state.anchor ?? '', description, hitArea + outline + line + dot + code, Boolean(state.anchor)));
 	}
-	const titleId = `${view.key}-by-state-title`;
+	const titleIdentifier = `${view.key}-by-state-title`;
 	return (
-		`<svg class="map" viewBox="0 0 ${geometry.width} ${geometry.height}" role="group" aria-labelledby="${titleId}">` +
-		`<title id="${titleId}">${escapeHtml(view.title)}, by state</title>` +
+		`<svg class="map" viewBox="0 0 ${geometry.width} ${geometry.height}" role="group" aria-labelledby="${titleIdentifier}">` +
+		`<title id="${titleIdentifier}">${escapeHtml(view.title)}, by state</title>` +
 		drawFrames(geometry) +
 		`<g class="states">${shapes.join('')}</g>` +
 		`<path class="state-borders" d="${geometry.stateBorders}"/>` +
@@ -384,10 +384,10 @@ export function drawShadedLandAreasMap(
 		const y = median(points.map((point) => point.y));
 		return [`<text class="map-label region-label" x="${x.toFixed(1)}" y="${y.toFixed(1)}">${escapeHtml(label.name)}</text>`];
 	});
-	const titleId = `${view.key}-title`;
+	const titleIdentifier = `${view.key}-title`;
 	return (
-		`<svg class="map" viewBox="0 0 ${geometry.width} ${geometry.height}" role="group" aria-labelledby="${titleId}">` +
-		`<title id="${titleId}">${escapeHtml(view.title)}</title>` +
+		`<svg class="map" viewBox="0 0 ${geometry.width} ${geometry.height}" role="group" aria-labelledby="${titleIdentifier}">` +
+		`<title id="${titleIdentifier}">${escapeHtml(view.title)}</title>` +
 		drawFrames(geometry) +
 		`<path class="land" d="${geometry.land}"/>` +
 		`<path class="state-borders faint" d="${geometry.stateBorders}"/>` +

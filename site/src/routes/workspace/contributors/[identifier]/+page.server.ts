@@ -11,7 +11,7 @@ import {
 	setCreditSection,
 	type Decision
 } from '#lib/server/contributor-profiles.ts';
-import { eventsFor } from '#lib/server/events.ts';
+import { activityHistoryFor } from '#lib/server/activity-log.ts';
 import { formText, requirePermission, storage } from '#lib/server/workspace.ts';
 import type { Actions, PageServerLoad } from './$types';
 
@@ -27,7 +27,7 @@ export const load: PageServerLoad = async (event) => {
 	if (!profile || profile.status === 'draft') error(404, 'There is no such registration.');
 	const [versions, history] = await Promise.all([
 		profileVersions(database, profile.identifier),
-		eventsFor(database, 'profile', profile.identifier)
+		activityHistoryFor(database, 'profile', profile.identifier)
 	]);
 	return {
 		profile,

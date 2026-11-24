@@ -17,7 +17,7 @@ import {
 	type ChangeKind,
 	type NationPicture
 } from '../nation-page-changes.ts';
-import { eventStatement } from './events.ts';
+import { activityStatement } from './activity-log.ts';
 import { storeSentFile } from './file-scans.ts';
 import { newIdentifier, now } from './identifiers.ts';
 import type { SignedInPerson } from './people.ts';
@@ -173,7 +173,7 @@ export interface NewChange<K extends ChangeKind = ChangeKind> {
 }
 
 function logChange(database: D1Database, person: SignedInPerson, change: NewChange, action: string, note?: string) {
-	return eventStatement(database, {
+	return activityStatement(database, {
 		personIdentifier: person.identifier,
 		action: `${action}: ${describeChange(change.kind, change.content)}`,
 		targetKind: 'document',

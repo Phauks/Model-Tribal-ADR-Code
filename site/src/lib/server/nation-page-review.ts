@@ -7,7 +7,7 @@
 import type { D1Database } from '@cloudflare/workers-types/index.ts';
 import { describeChange, pageLogTarget } from '../nation-page-changes.ts';
 import type { ReviewOutcome } from '../nation-page-review.ts';
-import { eventStatement } from './events.ts';
+import { activityStatement } from './activity-log.ts';
 import { newIdentifier, now } from './identifiers.ts';
 import { changeColumns, changeTables, fromStored, type ChangeRow, type StoredChange } from './nation-page-changes.ts';
 import type { SignedInPerson } from './people.ts';
@@ -79,7 +79,7 @@ function reviewStatement(database: D1Database, change: ChangeRow, outcome: Revie
 }
 
 function logStatement(database: D1Database, person: SignedInPerson, nationIdentifier: string, action: string, note: string | null) {
-	return eventStatement(database, {
+	return activityStatement(database, {
 		personIdentifier: person.identifier,
 		action,
 		targetKind: 'document',

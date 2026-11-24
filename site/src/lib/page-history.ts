@@ -127,13 +127,13 @@ export type ChangeReference =
 	// A change a nation's team published on its own page (decision record 0041).
 	| { source: 'nation'; identifier: string };
 
-export function changeId(reference: ChangeReference): string {
+export function changeIdentifier(reference: ChangeReference): string {
 	if (reference.source === 'page') return `page-${reference.identifier}`;
 	if (reference.source === 'nation') return `nation-${reference.identifier}`;
 	return `essay-${reference.essay}-${reference.number}`;
 }
 
-export function parseChangeId(value: string | null | undefined): ChangeReference | undefined {
+export function parseChangeIdentifier(value: string | null | undefined): ChangeReference | undefined {
 	if (!value || value.length > 200) return undefined;
 	const page = /^page-([1-9][0-9]{0,15})$/.exec(value);
 	if (page) return { source: 'page', identifier: Number(page[1]) };

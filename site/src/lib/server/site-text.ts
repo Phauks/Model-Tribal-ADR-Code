@@ -11,7 +11,7 @@
  */
 import type { D1Database } from '@cloudflare/workers-types/index.ts';
 import type { SiteTextEntry } from '#lib/site-text-markers.ts';
-import { eventStatement } from './events.ts';
+import { activityStatement } from './activity-log.ts';
 import { now } from './identifiers.ts';
 
 /** The longest a piece of site text may be. */
@@ -153,7 +153,7 @@ export async function saveVersion(database: D1Database, input: SaveInput): Promi
 				 VALUES (?, ?, ?, ?, ?, ?, ?)`
 			)
 			.bind(input.entry.key, words, input.entry.words, input.entry.file, page, input.personIdentifier, createdAt),
-		eventStatement(database, {
+		activityStatement(database, {
 			personIdentifier: input.personIdentifier,
 			action: words === null ? 'Put back the built-in site text' : 'Saved a draft of site text',
 			targetKind: 'document',
@@ -190,7 +190,7 @@ export async function publish(database: D1Database, personIdentifier: string, ke
 				)
 				.bind(state.key, state.draft?.identifier ?? 0)
 		),
-		eventStatement(database, {
+		activityStatement(database, {
 			personIdentifier,
 			action: `Published ${waiting.length === 1 ? 'a change' : `${waiting.length} changes`} to the site text`,
 			targetKind: 'document',
@@ -256,7 +256,7 @@ export async function undoLatestPublication(
 		);
 	}
 	statements.push(
-		eventStatement(database, {
+		activityStatement(database, {
 			personIdentifier,
 			action: `Undid publication ${latest} of the site text`,
 			targetKind: 'document',

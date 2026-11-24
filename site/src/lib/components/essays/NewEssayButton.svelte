@@ -15,7 +15,7 @@
 	let addressTouched = false;
 	let problem = $state('');
 	let busy = $state(false);
-	const formId = $props.id();
+	const formIdentifier = $props.id();
 
 	// The address follows the title until the writer changes it.
 	function fromTitle(text: string): string {
@@ -52,13 +52,13 @@
 </button>
 
 <Modal bind:this={dialog} title="New essay in {sectionLabel}" fitContent>
-	<form id="new-essay-{formId}" onsubmit={start}>
+	<form id="new-essay-{formIdentifier}" onsubmit={start}>
 		{#if problem}<div class="notice notice-problem" role="alert"><p>{problem}</p></div>{/if}
 		<div class="field">
-			<label for="new-essay-title-{formId}">Title</label>
+			<label for="new-essay-title-{formIdentifier}">Title</label>
 			<input
 				type="text"
-				id="new-essay-title-{formId}"
+				id="new-essay-title-{formIdentifier}"
 				required
 				maxlength="300"
 				bind:value={title}
@@ -68,21 +68,21 @@
 			/>
 		</div>
 		<div class="field">
-			<label for="new-essay-address-{formId}">Address</label>
-			<p class="hint" id="new-essay-address-hint-{formId}">Lower-case words joined by hyphens. It becomes the page’s address and cannot be changed later.</p>
+			<label for="new-essay-address-{formIdentifier}">Address</label>
+			<p class="hint" id="new-essay-address-hint-{formIdentifier}">Lower-case words joined by hyphens. It becomes the page’s address and cannot be changed later.</p>
 			<input
 				type="text"
-				id="new-essay-address-{formId}"
+				id="new-essay-address-{formIdentifier}"
 				required
 				pattern="[a-z0-9]+(-[a-z0-9]+)*"
-				aria-describedby="new-essay-address-hint-{formId}"
+				aria-describedby="new-essay-address-hint-{formIdentifier}"
 				bind:value={address}
 				oninput={() => (addressTouched = true)}
 			/>
 		</div>
 	</form>
 	{#snippet actions()}
-		<button class="button" type="submit" form="new-essay-{formId}" disabled={busy}>Start the essay</button>
+		<button class="button" type="submit" form="new-essay-{formIdentifier}" disabled={busy}>Start the essay</button>
 		<button class="button button-quiet" type="button" onclick={() => dialog?.close()}>Cancel</button>
 	{/snippet}
 </Modal>

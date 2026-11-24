@@ -46,7 +46,7 @@ import {
 import { youtubeVideoIdentifier } from '#lib/video-links.ts';
 import { accessTo } from './access.ts';
 import { fileScans, forgetScan, mayServe, releaseByHand, requestScan, scanAgain, type FileScan } from './file-scans.ts';
-import { eventStatement } from './events.ts';
+import { activityStatement } from './activity-log.ts';
 import { newIdentifier, newRequestReference, now } from './identifiers.ts';
 import type { SignedInPerson } from './people.ts';
 import {
@@ -265,7 +265,7 @@ function uploadEvent(
 	personIdentifier: string | null = null,
 	note: string | null = null
 ): D1PreparedStatement {
-	return eventStatement(database, {
+	return activityStatement(database, {
 		personIdentifier,
 		action,
 		targetKind: 'upload',

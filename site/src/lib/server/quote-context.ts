@@ -99,15 +99,15 @@ async function documentsFor(database: D1Database, source: string, publicOnly: bo
 /** Paragraphs already read in this request, by document, for a check of many quotations. */
 export type ParagraphCache = Map<number, SourceParagraph[]>;
 
-async function paragraphsFor(database: D1Database, documentId: number, cache?: ParagraphCache): Promise<SourceParagraph[]> {
-	const kept = cache?.get(documentId);
+async function paragraphsFor(database: D1Database, documentIdentifier: number, cache?: ParagraphCache): Promise<SourceParagraph[]> {
+	const kept = cache?.get(documentIdentifier);
 	if (kept) return kept;
 	const { results } = await database
 		.prepare('SELECT page, label, method, text FROM pages WHERE document_id = ?1 ORDER BY sequence')
-		.bind(documentId)
+		.bind(documentIdentifier)
 		.all<LibraryPassageText>();
 	const paragraphs = paragraphsOf(results);
-	cache?.set(documentId, paragraphs);
+	cache?.set(documentIdentifier, paragraphs);
 	return paragraphs;
 }
 

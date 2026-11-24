@@ -93,10 +93,10 @@
 			.sort((first, second) => compareBadges(first.badge, second.badge));
 	}
 
-	const recognitionById = $derived(new Map(group.rows.map((row) => [row.id, badged(row.recognition)])));
-	const statesById = $derived(new Map(group.rows.map((row) => [row.id, row.states])));
-	const verifiedById = $derived(new Map(group.rows.map((row) => [row.id, row.verified])));
-	const explanationsById = $derived(new Map(group.rows.map((row) => [row.id, row.explanations])));
+	const recognitionByIdentifier = $derived(new Map(group.rows.map((row) => [row.id, badged(row.recognition)])));
+	const statesByIdentifier = $derived(new Map(group.rows.map((row) => [row.id, row.states])));
+	const verifiedByIdentifier = $derived(new Map(group.rows.map((row) => [row.id, row.verified])));
+	const explanationsByIdentifier = $derived(new Map(group.rows.map((row) => [row.id, row.explanations])));
 </script>
 
 <DataTable
@@ -117,7 +117,7 @@
 			{@const regionPage = bureauRegionPage(row.cells.region.text)}
 			{#if regionPage}<a href={regionPage}>{row.cells.region.text}</a>{:else}{row.cells.region.text}{/if}
 		{:else if column.key === 'review'}
-			{@const verified = verifiedById.get(row.key) ?? false}
+			{@const verified = verifiedByIdentifier.get(row.key) ?? false}
 			<span class="review-badge" class:review-badge-verified={verified}>{#if verified}<Check size={14} strokeWidth={2} aria-hidden="true" />{:else}<Clock
 						size={14}
 						strokeWidth={2}
@@ -125,12 +125,12 @@
 					/>{/if}{row.cells.review.text}</span
 			>
 		{:else if column.key === 'states'}
-			{#each statesById.get(row.key) ?? [] as code, index (code)}{index > 0 ? ', ' : ''}<a href="/nations/state/{code.toLocaleLowerCase('en-US')}">{stateName(code)}</a>{/each}
+			{#each statesByIdentifier.get(row.key) ?? [] as code, index (code)}{index > 0 ? ', ' : ''}<a href="/nations/state/{code.toLocaleLowerCase('en-US')}">{stateName(code)}</a>{/each}
 		{:else}
-		{@const views = recognitionById.get(row.key) ?? []}
+		{@const views = recognitionByIdentifier.get(row.key) ?? []}
 		{#if views.length > 0}
 			<!-- Each badge opens its source, rather than the source sitting beside it (Trevor, Nov. 24, 2026: "it should appear if you click the button that says the Federal or State"). -->
-			<RecognitionBadges badges={views.map((view) => view.badge)} size="small" explanations={explanationsById.get(row.key)} />
+			<RecognitionBadges badges={views.map((view) => view.badge)} size="small" explanations={explanationsByIdentifier.get(row.key)} />
 		{/if}
 		{/if}
 	{/snippet}

@@ -532,9 +532,9 @@ export function topicCharts(): BarChartData[] {
 			source: opinionsSource,
 			shown: 15,
 			bars: (() => {
-				const byId = new Map(nations().map((record) => [record.id, record]));
+				const byIdentifier = new Map(nations().map((record) => [record.id, record]));
 				return countBy(opinions, (opinion) => opinion.nations).flatMap(([id, value]) => {
-					const record = byId.get(id);
+					const record = byIdentifier.get(id);
 					return record ? [{ label: nationName(record), value, href: chartRecordsPath('tribal-opinions-by-nation', id) }] : [];
 				});
 			})()

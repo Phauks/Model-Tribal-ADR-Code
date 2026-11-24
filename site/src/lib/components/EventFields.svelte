@@ -29,7 +29,7 @@
 	let { values, invalid, problem }: { values: Values; invalid?: string; problem?: string } = $props();
 
 	const bad = (name: string) => (invalid === name ? 'true' : undefined);
-	const errorId = (name: string) => (invalid === name && problem ? `${name}-error` : undefined);
+	const errorIdentifier = (name: string) => (invalid === name && problem ? `${name}-error` : undefined);
 
 	const kindChoices = eventKinds.map((kind) => ({ value: kind as string, label: eventKindLabels[kind] }));
 	const zoneChoices = eventTimeZones.map((entry) => ({ value: entry.zone as string, label: entry.label }));
@@ -54,7 +54,7 @@
 </div>
 
 <div class="field">
-	<Dropdown label="Kind of event" id="kind" name="kind" choices={kindChoices} value={values.kind} invalid={Boolean(bad('kind'))} describedBy={errorId('kind')}>
+	<Dropdown label="Kind of event" id="kind" name="kind" choices={kindChoices} value={values.kind} invalid={Boolean(bad('kind'))} describedBy={errorIdentifier('kind')}>
 		{#snippet message()}{@render error('kind')}{/snippet}
 	</Dropdown>
 </div>
@@ -83,7 +83,7 @@
 			choices={zoneChoices}
 			value={values.timeZone}
 			invalid={Boolean(bad('timeZone'))}
-			describedBy={['zone-hint', errorId('timeZone')].filter(Boolean).join(' ')}
+			describedBy={['zone-hint', errorIdentifier('timeZone')].filter(Boolean).join(' ')}
 		>
 			{#snippet message()}
 				<p class="hint" id="zone-hint">The zone where the event is held. The Navajo Nation keeps daylight saving time, so use Mountain there.</p>
@@ -162,7 +162,7 @@
 			choices={recordingChoiceList}
 			value={values.recording}
 			invalid={Boolean(bad('recording'))}
-			describedBy={errorId('recording')}
+			describedBy={errorIdentifier('recording')}
 		>
 			{#snippet message()}{@render error('recording')}{/snippet}
 		</Dropdown>

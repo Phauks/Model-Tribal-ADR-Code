@@ -7,14 +7,14 @@ import { newIdentifier, now } from './identifiers.ts';
  * entries from contributor profiles. Entries are never changed or deleted,
  * and are sealed into a hash chain (activity-seals.ts).
  */
-export const eventTargets = ['person', 'request', 'review', 'grant', 'document', 'profile', 'upload'] as const;
-export type EventTarget = (typeof eventTargets)[number];
+export const activityTargets = ['person', 'request', 'review', 'grant', 'document', 'profile', 'upload'] as const;
+export type ActivityTarget = (typeof activityTargets)[number];
 
-export interface EventInput {
+export interface ActivityInput {
 	/** Empty for actions by a requester or by the site itself. */
 	personIdentifier: string | null;
 	action: string;
-	targetKind: EventTarget;
+	targetKind: ActivityTarget;
 	targetIdentifier: string;
 	note?: string | null;
 }
@@ -24,7 +24,8 @@ export interface EventInput {
  * sent in the same batch as the change it describes: D1 runs a batch as one
  * transaction, so a change is never saved without its record.
  */
-export function eventStatement(database: D1Database, event: EventInput): D1PreparedStatement {
+export function activityStatement(database: D1Database, entry: ActivityInput): D1PreparedStatement {
+	// The activity log lives in the D1 table that keeps its older name, `events` (with `event_seals`), so the deployed Worker and the database never disagree.
 	return database
 		.prepare(
 			`INSERT INTO events (identifier, person_identifier, action, target_kind, target_identifier, note, created_at)
@@ -32,16 +33,16 @@ export function eventStatement(database: D1Database, event: EventInput): D1Prepa
 		)
 		.bind(
 			newIdentifier(),
-			event.personIdentifier,
-			event.action,
-			event.targetKind,
-			event.targetIdentifier,
-			event.note ?? null,
+			entry.personIdentifier,
+			entry.action,
+			entry.targetKind,
+			entry.targetIdentifier,
+			entry.note ?? null,
 			now()
 		);
 }
 
-export interface EventRow {
+export interface ActivityHistoryRow {
 	identifier: string;
 	action: string;
 	note: string | null;
@@ -50,11 +51,11 @@ export interface EventRow {
 }
 
 /** The history of one person, request or review, oldest first. */
-export async function eventsFor(
+export async function activityHistoryFor(
 	database: D1Database,
-	targetKind: EventTarget,
+	targetKind: ActivityTarget,
 	targetIdentifier: string
-): Promise<EventRow[]> {
+): Promise<ActivityHistoryRow[]> {
 	const result = await database
 		.prepare(
 			`SELECT events.identifier, events.action, events.note, events.created_at AS createdAt,
@@ -64,7 +65,7 @@ export async function eventsFor(
 			 ORDER BY events.sequence`
 		)
 		.bind(targetKind, targetIdentifier)
-		.all<EventRow>();
+		.all<ActivityHistoryRow>();
 	return result.results;
 }
 
@@ -73,7 +74,7 @@ export interface ActivityRow {
 	action: string;
 	note: string | null;
 	createdAt: string;
-	targetKind: EventTarget;
+	targetKind: ActivityTarget;
 	targetIdentifier: string;
 	actorName: string | null;
 	/** The person's name when the entry is about a person. */
@@ -83,7 +84,7 @@ export interface ActivityRow {
 /** A page of the whole activity log, newest first, for the lead author. */
 export async function activityPage(
 	database: D1Database,
-	options: { before?: number; targetKind?: EventTarget; personIdentifier?: string; limit?: number }
+	options: { before?: number; targetKind?: ActivityTarget; personIdentifier?: string; limit?: number }
 ): Promise<ActivityRow[]> {
 	const result = await database
 		.prepare(

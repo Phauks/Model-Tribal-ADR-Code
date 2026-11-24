@@ -137,7 +137,7 @@
 
 	// ----- Drafts that save themselves --------------------------------------
 	const startingDraft = () => draft;
-	let draftId = $state(startingDraft());
+	let draftIdentifier = $state(startingDraft());
 	let saving = $state<'idle' | 'waiting' | 'saving' | 'saved' | 'failed'>('idle');
 	let savedAt = $state('');
 	let sending = false;
@@ -145,7 +145,7 @@
 
 	function draftBody(): string {
 		return JSON.stringify({
-			identifier: draftId,
+			identifier: draftIdentifier,
 			thread,
 			fields: { from: fields.from, to: fields.to, cc, bcc, subject: fields.subject, text: message, mode, message: answering }
 		});
@@ -160,7 +160,7 @@
 			const response = await fetch('/workspace/inbox/drafts/save', { method: 'POST', headers: { 'content-type': 'application/json' }, body: draftBody(), keepalive });
 			if (!response.ok) throw new Error(String(response.status));
 			const saved = (await response.json()) as { identifier: string; updatedAt: string };
-			draftId = saved.identifier;
+			draftIdentifier = saved.identifier;
 			savedAt = new Date(saved.updatedAt).toLocaleTimeString('en-US', { hour: 'numeric', minute: '2-digit' });
 			if (!timer) saving = 'saved';
 		} catch {
@@ -191,7 +191,7 @@
 	async function discardDraft(): Promise<void> {
 		sending = true;
 		clearTimeout(timer);
-		if (draftId) await fetch(`/workspace/inbox/drafts/save?identifier=${encodeURIComponent(draftId)}`, { method: 'DELETE' }).catch(() => undefined);
+		if (draftIdentifier) await fetch(`/workspace/inbox/drafts/save?identifier=${encodeURIComponent(draftIdentifier)}`, { method: 'DELETE' }).catch(() => undefined);
 		window.location.href = discard ?? window.location.pathname;
 	}
 
@@ -330,7 +330,7 @@
 	}}
 >
 	<input type="hidden" name="zone" value={zone} />
-	{#if draftId}<input type="hidden" name="draft" value={draftId} />{/if}
+	{#if draftIdentifier}<input type="hidden" name="draft" value={draftIdentifier} />{/if}
 	{#if mode}<input type="hidden" name="mode" value={mode} />{/if}
 	{#if answering}<input type="hidden" name="message" value={answering} />{/if}
 	<div class="rows">
@@ -497,7 +497,7 @@
 		<span class="draft-state small muted" role="status">
 			{#if saving === 'saving' || saving === 'waiting'}Saving…{:else if saving === 'saved'}<Check size={14} aria-hidden="true" />Draft saved {savedAt}{:else if saving === 'failed'}Draft not saved{/if}
 		</span>
-		{#if ready && draftId}
+		{#if ready && draftIdentifier}
 			<button type="button" class="icon-button discard" title="Discard the draft" aria-label="Discard the draft" onclick={discardDraft}><Trash2 size={20} aria-hidden="true" /></button>
 		{:else if discard}
 			<a class="icon-button discard" href={discard} title="Discard" aria-label="Discard"><Trash2 size={20} aria-hidden="true" /></a>

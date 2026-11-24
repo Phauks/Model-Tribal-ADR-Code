@@ -49,7 +49,7 @@
 	const groups = $derived(
 		entries && entries.items.length > groupFrom ? letterGroups(shown) : [{ letter: '', items: shown }]
 	);
-	const listId = $derived(`sidebar-column-${idSuffix}`);
+	const listIdentifier = $derived(`sidebar-column-${idSuffix}`);
 </script>
 
 <!-- "New essay" sits beside the section's name, as in essay-editor-mockups/4 and v2-1 (new-essay.svelte.ts). -->
@@ -59,7 +59,7 @@
 </div>
 {#if outlineTitle}<p class="outline-title">{outlineTitle}</p>{/if}
 {#if contents.pages.length > 0}
-	<SidebarTree items={contents.pages} listId="{listId}-pages" flush {isActive} {isCurrent} {isOpen} {ontoggle} />
+	<SidebarTree items={contents.pages} listIdentifier="{listIdentifier}-pages" flush {isActive} {isCurrent} {isOpen} {ontoggle} />
 {/if}
 {#if entries && entries.items.length > 0}
 	<div class="entries" class:after-pages={contents.pages.length > 0}>
@@ -87,7 +87,7 @@
 				{#each group.items as item (item.link)}
 					<li>
 						{#if item.children?.length}
-							<SidebarTree items={[item]} listId="{listId}-here" flush {isActive} {isCurrent} {isOpen} {ontoggle} />
+							<SidebarTree items={[item]} listIdentifier="{listIdentifier}-here" flush {isActive} {isCurrent} {isOpen} {ontoggle} />
 						{:else}
 							<a href={item.link} aria-current={isCurrent(item) ? 'page' : undefined}>{item.label}</a>
 						{/if}

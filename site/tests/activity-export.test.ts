@@ -1,7 +1,7 @@
 import { beforeEach, describe, expect, it } from 'vitest';
 import type { D1Database } from '@cloudflare/workers-types/index.ts';
 import { sealNewEntries } from '#lib/server/activity-seals.ts';
-import { activityLogLines, eventStatement, refusedAction } from '#lib/server/events.ts';
+import { activityLogLines, activityStatement, refusedAction } from '#lib/server/activity-log.ts';
 import { testDatabase } from './database.ts';
 
 let database: D1Database;
@@ -30,7 +30,7 @@ async function bytesOf(stream: ReadableStream<Uint8Array>): Promise<Uint8Array> 
 
 async function addEntries(count: number): Promise<void> {
 	for (let index = 0; index < count; index += 1) {
-		await eventStatement(database, {
+		await activityStatement(database, {
 			personIdentifier: null,
 			action: index % 3 === 0 ? refusedAction : `Entry “${index}”`,
 			targetKind: 'request',

@@ -6,7 +6,7 @@
 import type { D1Database } from '@cloudflare/workers-types/index.ts';
 import type { Role } from '#lib/permissions.ts';
 import { checkSealsSinceCheckpoint, sealNewEntries, type SealCheck } from './activity-seals.ts';
-import { refusedAction } from './events.ts';
+import { refusedAction } from './activity-log.ts';
 
 export interface AdministrationSummary {
 	people: { role: Role; status: 'invited' | 'active' | 'removed'; count: number }[];

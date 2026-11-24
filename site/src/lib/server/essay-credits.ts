@@ -11,7 +11,7 @@ import { creditRoleLabels, standingHandCredits, type CreditRole, type HandCredit
 import { parseEssay } from '../essays/document.ts';
 import { splitFrontMatter } from '../essays/syntax.ts';
 import { carryForward, expandOverlay, freshBlame, overlayKey, sectionHistories, writersAndEditors, type Blame, type OverlayRuns } from '../essays/word-blame.ts';
-import { eventStatement } from './events.ts';
+import { activityStatement } from './activity-log.ts';
 import { newIdentifier, now } from './identifiers.ts';
 import { readVersionText } from './essays.ts';
 import { inGroupsOf, placeholdersFor } from '#lib/server/database-groups.ts';
@@ -176,7 +176,7 @@ export async function changeHandCredit(
 				 VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)`
 			)
 			.bind(newIdentifier(), input.essay, input.slug, input.title, input.person, input.role, input.action, input.by, now()),
-		eventStatement(database, {
+		activityStatement(database, {
 			personIdentifier: input.by,
 			action:
 				input.action === 'add'
