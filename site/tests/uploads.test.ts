@@ -35,6 +35,7 @@ import {
 	nationSpokenFor,
 	uploadDetail,
 	settlePulledFiles,
+	intakeFilesOf,
 	isCaptureKey,
 	scanBadgeFor,
 	type Filing,
@@ -585,6 +586,29 @@ describe('pulled files', () => {
 		expect(filed.deleted_at).not.toBeNull();
 		expect(fake.stored.has(upload.original_key!)).toBe(false);
 		expect(fake.stored.has('articles/vance-2016.pdf')).toBe(true);
+		expect([...fake.stored.keys()].filter((key) => key.startsWith('intake/'))).toEqual([]);
+	});
+
+	it('file a second copy of a file already filed without breaking the page', async () => {
+		const first = await sendPulled();
+		const second = await sendPulled();
+		fake.stored.set('articles/court-review-2009.pdf', pdf);
+		await fake.bucket.put(`intake/filed/${first.reference}.json`, JSON.stringify({ captureKey: 'articles/court-review-2009.pdf' }));
+		expect(await settlePulledFiles(database, fake.bucket)).toBe(1);
+		await fake.bucket.put(
+			`intake/filed/${second.reference}.json`,
+			JSON.stringify({ captureKey: 'articles/court-review-2009.pdf', alreadyHeld: true })
+		);
+		expect(await settlePulledFiles(database, fake.bucket)).toBe(1);
+		expect(await uploadByReference(database, first.reference)).toMatchObject({ status: 'filed', filed_key: 'articles/court-review-2009.pdf' });
+		expect(await uploadByReference(database, second.reference)).toMatchObject({
+			status: 'filed',
+			filed_key: null,
+			decision_reason: 'Already held as articles/court-review-2009.pdf'
+		});
+		expect(fake.stored.has(second.original_key!)).toBe(false);
+		const intake = await intakeFilesOf(database, sender);
+		expect(intake.find((file) => file.reference === second.reference)?.filedAs).toBe('Already held as articles/court-review-2009.pdf');
 		expect([...fake.stored.keys()].filter((key) => key.startsWith('intake/'))).toEqual([]);
 	});
 
