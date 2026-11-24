@@ -23,6 +23,7 @@
 	import Copy from '@lucide/svelte/icons/copy';
 	import { onMount, tick } from 'svelte';
 	import { citationHtml, noteEntry } from '#lib/note-copies.ts';
+	import { copyRichText } from '#lib/clipboard.ts';
 
 	const previewId = 'citation-preview';
 	const showDelay = 250;
@@ -175,16 +176,7 @@
 		if (!shown) return;
 		const { copyText, copyHtml } = shown;
 		try {
-			if (typeof ClipboardItem === 'function' && navigator.clipboard?.write) {
-				await navigator.clipboard.write([
-					new ClipboardItem({
-						'text/plain': new Blob([copyText], { type: 'text/plain' }),
-						'text/html': new Blob([copyHtml], { type: 'text/html' })
-					})
-				]);
-			} else {
-				await navigator.clipboard.writeText(copyText);
-			}
+			await copyRichText(copyText, copyHtml);
 			copyState = 'copied';
 			clearTimeout(copiedTimer);
 			copiedTimer = setTimeout(() => (copyState = 'idle'), copiedFor);

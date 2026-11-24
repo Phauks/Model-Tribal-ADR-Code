@@ -48,6 +48,7 @@
 		type BuilderSettings
 	} from '#lib/table-builder.ts';
 	import type { PageProps } from './$types';
+	import { copyText } from '#lib/clipboard.ts';
 
 	let { data }: PageProps = $props();
 
@@ -132,7 +133,7 @@
 
 	async function copyLink(): Promise<void> {
 		try {
-			await navigator.clipboard.writeText(location.href);
+			await copyText(location.href);
 			copyStatus = 'Link copied';
 		} catch {
 			copyStatus = 'Copy the address from the address bar';

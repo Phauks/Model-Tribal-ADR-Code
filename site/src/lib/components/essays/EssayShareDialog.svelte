@@ -11,6 +11,7 @@
 	import { accessLevelLabels, roleLabels, type AccessLevel, type Role } from '#lib/permissions.ts';
 	import { inReviewText, isOpen, type ReviewRequest } from '#lib/essays/review-requests.ts';
 	import DateField from '#lib/components/DateField.svelte';
+	import { copyText } from '#lib/clipboard.ts';
 
 	interface Person {
 		identifier: string;
@@ -161,7 +162,7 @@
 	async function copyLink(): Promise<void> {
 		const link = `${location.origin}${location.pathname}`;
 		try {
-			await navigator.clipboard.writeText(link);
+			await copyText(link);
 			notice = 'Link copied. People who can open the essay see the draft there; readers see only what is published.';
 			linkCopied = true;
 		} catch {

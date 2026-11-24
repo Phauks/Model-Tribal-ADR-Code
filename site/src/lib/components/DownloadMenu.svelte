@@ -34,6 +34,7 @@
 	import MapIcon from '@lucide/svelte/icons/map';
 	import LibraryBig from '@lucide/svelte/icons/library-big';
 	import Quote from '@lucide/svelte/icons/quote';
+	import { copyRichText } from '#lib/clipboard.ts';
 
 	let { onpdf }: { onpdf: () => void } = $props();
 
@@ -154,16 +155,7 @@
 		const versions = page.data.versions as { content?: string } | undefined;
 		const citation = pageCitation(pageTitle(), siteName, versions?.content, location.href.split('#')[0], new Date());
 		try {
-			if (typeof ClipboardItem === 'function' && navigator.clipboard?.write) {
-				await navigator.clipboard.write([
-					new ClipboardItem({
-						'text/plain': new Blob([citation.text], { type: 'text/plain' }),
-						'text/html': new Blob([citation.html], { type: 'text/html' })
-					})
-				]);
-			} else {
-				await navigator.clipboard.writeText(citation.text);
-			}
+			await copyRichText(citation.text, citation.html);
 			copied = true;
 			message = `Citation copied: ${citation.text}`;
 			clearTimeout(copiedTimer);

@@ -95,6 +95,7 @@
 		type TableRow,
 		type TableSort
 	} from '#lib/tables/table-definition.ts';
+	import { copyPageLink, replaceAddressSearch } from '#lib/clipboard.ts';
 
 	interface Props {
 		/** Unique on the page; used for element ids. */
@@ -296,12 +297,7 @@
 	}
 
 	async function copyLink() {
-		try {
-			await navigator.clipboard.writeText(location.href);
-			copyStatus = 'Link copied.';
-		} catch {
-			copyStatus = `Copy this link: ${location.href}`;
-		}
+		copyStatus = await copyPageLink();
 	}
 
 	// Keeps the page address in step with the table, without adding to the
@@ -319,11 +315,7 @@
 			new URLSearchParams(location.search),
 			defaultSort
 		);
-		const search = parameters.toString();
-		const next = `${location.pathname}${search ? `?${search}` : ''}${location.hash}`;
-		if (next !== `${location.pathname}${location.search}${location.hash}`) {
-			history.replaceState(history.state, '', next);
-		}
+		replaceAddressSearch(parameters.toString());
 		copyStatus = '';
 	});
 

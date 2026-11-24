@@ -71,6 +71,7 @@
 		type TimelineRange
 	} from '#lib/timeline.ts';
 	import CitationMarks from './CitationMarks.svelte';
+	import { copyText } from '#lib/clipboard.ts';
 
 	interface Props {
 		entries: TimelineEntry[];
@@ -277,7 +278,7 @@
 
 	async function copy(text: string, what: string) {
 		try {
-			await navigator.clipboard.writeText(text);
+			await copyText(text);
 			copied = `${what} copied`;
 		} catch {
 			copied = text;
