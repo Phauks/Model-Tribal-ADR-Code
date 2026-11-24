@@ -59,6 +59,8 @@ export interface EssayLibrary {
 	 * the essay syntax, to fill a box the essay leaves empty (record-boxes.ts).
 	 */
 	box?(kind: BoxKind, key: string): string | undefined;
+	/** The reading its record keeps for a box the essay leaves empty, as an Analysis block to follow the box (record-boxes.ts). */
+	boxReading?(kind: BoxKind, key: string): string | undefined;
 }
 
 /** One heading in the essay, for the page's outline. */
@@ -662,7 +664,11 @@ function markChangedBlocks(tokens: Token[], lines: LineChange[]): Token[] {
 export function renderEssay(text: string, library: EssayLibrary, { lines }: { lines?: LineChange[] } = {}): RenderedEssay {
 	const { frontMatter, body: written } = splitFrontMatter(text.normalize('NFC'));
 	// A case or law box the essay leaves empty is filled from its record; marks made against the essay's own lines follow.
-	const { text: body, origin } = fillBoxes(written, (kind, key) => library.box?.(kind, key));
+	const { text: body, origin } = fillBoxes(
+		written,
+		(kind, key) => library.box?.(kind, key),
+		(kind, key) => library.boxReading?.(kind, key)
+	);
 	if (lines) lines = origin.map((line) => lines![line]);
 	const sources = new EssaySources(library);
 	const state: RenderState = { sources, library, problems: [], warnings: [], slugs: new Set(['sources-heading']) };

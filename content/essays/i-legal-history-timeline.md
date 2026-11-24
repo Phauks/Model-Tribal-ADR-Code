@@ -64,33 +64,17 @@ NCAI summarizes the colonial period: "These colonies acquired Indian lands under
 :::: law trade-and-intercourse-act-1790
 ::::
 
-::: analysis Trade and Intercourse Act (1790)
-This is the origin of the federal restraint on selling Tribal land.
-:::
-
 :::: law general-crimes-act-1817
 ::::
 
-::: analysis General Crimes Act (1817)
-That exception leaves room for a nation's own justice system to handle offenses among its own people.
-:::
-
 :::: case johnson-v-mintosh
 ::::
-
-::: analysis *Johnson v. M'Intosh* (1823)
-Foundational to how U.S. law describes Native land title and the limits it places on nations' power to sell land, and to why federal law, not state law, governs Native title.
-:::
 
 :::: law trade-and-intercourse-act-1834
 ::::
 
 :::: law indian-appropriation-act-1871
 ::::
-
-::: analysis End of treaty making in the Indian Appropriation Act (1871)
-After 1871, terms between governments take the form of statutes, compacts and agreements rather than treaties.
-:::
 
 ### Treaty Clauses on Crimes and Injuries
 
@@ -125,16 +109,8 @@ NCAI describes "pressure on eastern tribal nations to move west, resulting in fo
 :::: case cherokee-nation-v-georgia
 ::::
 
-::: analysis *Cherokee Nation v. Georgia* (1831)
-Source of the "domestic dependent nations" and trust ("ward") framing that still shapes federal-court access for Native nations and the trust relationship.
-:::
-
 :::: case worcester-v-georgia
 ::::
-
-::: analysis *Worcester v. Georgia* (1832)
-The core statement of inherent Native sovereignty and of the federal-Tribal relationship excluding state law.
-:::
 
 ## Reservations and Allotment (1871 to 1934)
 
@@ -145,16 +121,8 @@ NCAI writes that "Settlers' increasing desire for the land within reservations a
 :::: law rules-governing-court-of-indian-offenses-1883
 ::::
 
-::: analysis Rules Governing the Court of Indian Offenses (1883)
-The first federal courts on reservations were built to suppress traditional practice.
-:::
-
 :::: case ex-parte-crow-dog
 ::::
-
-::: analysis *Ex parte Crow Dog* (1883)
-Recognizes a nation's own process for resolving even a homicide as law the federal courts must respect absent clear congressional action.
-:::
 
 :::: law major-crimes-act-1885
 ::::
@@ -162,25 +130,13 @@ Recognizes a nation's own process for resolving even a homicide as law the feder
 :::: case united-states-v-kagama
 ::::
 
-::: analysis *United States v. Kagama* (1886)
-The doctrinal root of federal "plenary power" and of federal criminal jurisdiction in Indian country, which limits how far a nation's own criminal jurisdiction can reach for major crimes.
-:::
-
 ### Allotment and the Plenary Power
 
 :::: law general-allotment-act-1887
 ::::
 
-::: analysis General Allotment Act (1887)
-Allotment left checkerboard land ownership and fractionated heirship, the source of many disputes over jurisdiction, land and probate today.
-:::
-
 :::: case talton-v-mayes
 ::::
-
-::: analysis *Talton v. Mayes* (1896)
-Establishes that Tribal courts and processes are not bound by the federal Bill of Rights as such. That is why the Indian Civil Rights Act and each nation's own law, not the Constitution, set procedural protections in Tribal courts.
-:::
 
 :::: law curtis-act-1898
 ::::
@@ -188,46 +144,22 @@ Establishes that Tribal courts and processes are not bound by the federal Bill o
 :::: case lone-wolf-v-hitchcock
 ::::
 
-::: analysis *Lone Wolf v. Hitchcock* (1903)
-The high-water mark of "plenary power," including Congress's asserted power to abrogate treaties.
-:::
-
 ### Treaty Rights, Citizenship and Status
 
 :::: case elk-v-wilkins
 ::::
 
-::: analysis *Elk v. Wilkins* (1884)
-Background for the dual political status of citizens of Native nations.
-:::
-
 :::: case united-states-v-winans
 ::::
-
-::: analysis *United States v. Winans* (1905)
-Source of the reserved-rights doctrine: rights not expressly ceded are retained by the nation.
-:::
 
 :::: case winters-v-united-states
 ::::
 
-::: analysis *Winters v. United States* (1908)
-Basis of reserved water rights.
-:::
-
 :::: case united-states-v-sandoval
 ::::
 
-::: analysis *United States v. Sandoval* (1913)
-Defines the federal relationship with the Pueblos and the "dependent Indian community" category of Indian country. The opinion contains openly racist descriptions of Pueblo people.
-:::
-
 :::: law indian-citizenship-act-1924
 ::::
-
-::: analysis Indian Citizenship Act (1924)
-Citizens of Native nations therefore hold two citizenships, and can use state and federal forums as well as their nation's own.
-:::
 
 **1928. Meriam Report.** A government-commissioned survey found that "For the punishment of petty offenses and the settlement of minor civil disputes the only judicial machinery available is the Court of Indian Offenses," that "More than one-half of the reservations exist without them," and that decisions turned on "the current native ideas of property and justice" rather than on code or precedent [@meriam-report-1928, ch. 13].
 
@@ -250,10 +182,6 @@ This early federal statement covers decisions based on custom, not only formal j
 :::: law indian-claims-commission-act-1946
 ::::
 
-::: analysis Indian Claims Commission Act (1946)
-The commission is an early example of a special forum, outside the courts, for disputes between a nation and the United States.
-:::
-
 ## Termination (1946 to 1968)
 
 NCAI: "Congress decided to terminate federal recognition and assistance to more than 100 tribes. Public Law 280, passed in 1953, imposed state criminal and civil jurisdiction on many tribes in California, Minnesota, Nebraska, Oregon, and Wisconsin" [@ncai-tribal-nations-and-the-united-states, p. 13].
@@ -266,44 +194,24 @@ NCAI: "Congress decided to terminate federal recognition and assistance to more 
 :::: law public-law-83-280
 ::::
 
-::: analysis Public Law 280 (1953)
-In these states Tribal and state courts generally have concurrent jurisdiction, so a nation's forum operates alongside a state forum.
-:::
-
 :::: law menominee-termination-act-1954
 ::::
 
 :::: case tee-hit-ton-indians-v-united-states
 ::::
 
-::: analysis *Tee-Hit-Ton Indians v. United States* (1955)
-Explains why Alaska Native land claims were settled by statute rather than litigation, which shaped the distinctive Alaska setting (few reservations, the Alaska Native Claims Settlement Act corporations).
-:::
-
 :::: law indian-vocational-training-act-1956
 ::::
-
-::: analysis Relocation under the Indian Vocational Training Act (1956)
-Relocation helped create large urban Native populations living outside any nation's territory.
-:::
 
 ### Tribal Courts and the Constitution
 
 :::: case williams-v-lee
 ::::
 
-::: analysis *Williams v. Lee* (1959)
-The leading case protecting Tribal courts from state-court encroachment over on-reservation claims against citizens of the nation.
-:::
-
 **1959. Navajo Nation Courts.** The same year, the Navajo Nation Council "did away with the Courts of Indian Offenses and in its place created the Navajo Nation Courts on April 1, 1959" [@navajo-nation-judicial-branch-history-of-the-courts].
 
 :::: case native-american-church-v-navajo-tribal-council
 ::::
-
-::: analysis *Native American Church v. Navajo Tribal Council* (1959)
-Confirms that federal constitutional limits do not apply directly to Tribal governments, so procedural guarantees in Tribal courts come from the Indian Civil Rights Act and each nation's own law.
-:::
 
 ## Self-Determination (1968 to 1987)
 
@@ -317,16 +225,8 @@ NCAI: "A resurgence of tribal government involvement in federal policy developme
 :::: law indian-civil-rights-act-title-iv-tribal-consent-1968
 ::::
 
-::: analysis Tribal consent under Title IV of the Civil Rights Act of 1968
-That is a federal instruction that state courts apply Tribal custom.
-:::
-
 :::: case menominee-tribe-v-united-states
 ::::
-
-::: analysis *Menominee Tribe of Indians v. United States* (1968)
-A clear-statement rule protecting treaty rights from implied abrogation.
-:::
 
 ### Self-Determination as Federal Policy
 
@@ -335,26 +235,14 @@ A clear-statement rule protecting treaty rights from implied abrogation.
 :::: law alaska-native-claims-settlement-act-1971
 ::::
 
-::: analysis Alaska Native Claims Settlement Act (1971)
-Because land went to corporations, most Alaska Native Tribal courts work without a territorial base.
-:::
-
 :::: case mcclanahan-v-arizona-state-tax-commission
 ::::
-
-::: analysis *McClanahan v. State Tax Commission of Arizona* (1973)
-States the modern "backdrop" approach to sovereignty and preemption, which sorts Tribal, state and federal authority over reservation activity.
-:::
 
 :::: law menominee-restoration-act-1973
 ::::
 
 :::: case morton-v-mancari
 ::::
-
-::: analysis *Morton v. Mancari* (1974)
-The political-classification principle supports membership-based eligibility rules.
-:::
 
 :::: law indian-self-determination-and-education-assistance-act-1975
 ::::
@@ -364,37 +252,17 @@ The political-classification principle supports membership-based eligibility rul
 :::: case fisher-v-district-court
 ::::
 
-::: analysis *Fisher v. District Court* (1976)
-Shows that a nation's own ordinance allocating jurisdiction to its courts can displace state courts.
-:::
-
 :::: case bryan-v-itasca-county
 ::::
-
-::: analysis *Bryan v. Itasca County* (1976)
-Essential for nations in Public Law 280 States (including Alaska and California): state courts may hear private civil suits, but Tribal governments and their courts are not displaced.
-:::
 
 :::: case oliphant-v-suquamish-indian-tribe
 ::::
 
-::: analysis *Oliphant v. Suquamish Indian Tribe* (1978)
-Defines the main limit on Tribal criminal jurisdiction.
-:::
-
 :::: case united-states-v-wheeler
 ::::
 
-::: analysis *United States v. Wheeler* (1978)
-Confirms that Tribal justice systems exercise inherent, not delegated, authority; this is the legal basis for a nation's own courts.
-:::
-
 :::: case santa-clara-pueblo-v-martinez
 ::::
-
-::: analysis *Santa Clara Pueblo v. Martinez* (1978)
-Recognizes Tribal courts and nonjudicial Tribal institutions as competent forums for enforcing civil rights and resolving disputes, and leaves the Indian Civil Rights Act enforcement (except habeas) to them.
-:::
 
 :::: law indian-child-welfare-act-1978
 ::::
@@ -402,53 +270,25 @@ Recognizes Tribal courts and nonjudicial Tribal institutions as competent forums
 :::: law american-indian-religious-freedom-act-1978
 ::::
 
-::: analysis American Indian Religious Freedom Act (1978)
-The act reversed the official hostility of the 1883 rules.
-:::
-
 ### Civil Jurisdiction, Exhaustion and Gaming
 
 :::: case white-mountain-apache-tribe-v-bracker
 ::::
 
-::: analysis *White Mountain Apache Tribe v. Bracker* (1980)
-Supplies the balancing test for state authority over non-Indians on reservations.
-:::
-
 :::: case montana-v-united-states
 ::::
-
-::: analysis *Montana v. United States* (1981)
-The governing test for Tribal civil jurisdiction over nonmembers.
-:::
 
 :::: case merrion-v-jicarilla-apache-tribe
 ::::
 
-::: analysis *Merrion v. Jicarilla Apache Tribe* (1982)
-Teaches that commercial agreements do not silently waive sovereign powers.
-:::
-
 :::: case national-farmers-union-insurance-companies-v-crow-tribe
 ::::
-
-::: analysis *National Farmers Union Insurance Cos. v. Crow Tribe of Indians* (1985)
-Creates the Tribal-exhaustion doctrine: Tribal courts get the first opportunity to decide their own jurisdiction.
-:::
 
 :::: case iowa-mutual-insurance-company-v-laplante
 ::::
 
-::: analysis *Iowa Mutual Insurance Co. v. LaPlante* (1987)
-Supports finality of Tribal-court decisions: once a Tribal court with jurisdiction decides issues, federal courts defer.
-:::
-
 :::: case california-v-cabazon-band-of-mission-indians
 ::::
-
-::: analysis *California v. Cabazon Band of Mission Indians* (1987)
-The origin of the Indian Gaming Regulatory Act and of Tribal-state compacting.
-:::
 
 ## Modern Era (1988 to the Present)
 
@@ -459,51 +299,23 @@ NCAI: "By the new millennium, tribal governments made substantial gains in self-
 :::: law indian-gaming-regulatory-act-1988
 ::::
 
-::: analysis Indian Gaming Regulatory Act (1988)
-The gaming act is the main federal statute that writes a mediation step into relations between states and nations.
-:::
-
 :::: law usc-25-5331
 ::::
-
-::: analysis Contract disputes under the Indian Self-Determination and Education Assistance Act
-This is the clearest federal statutory endorsement found of a nation's own court and mediation as forums whose decisions bind a federal agency.
-:::
 
 :::: case seminole-tribe-v-florida-1996
 ::::
 
-::: analysis *Seminole Tribe of Florida v. Florida* (1996)
-Removes the federal-court remedy against a State that will not negotiate a gaming compact in good faith.
-:::
-
 :::: case yellen-v-confederated-tribes-of-chehalis-reservation
 ::::
-
-::: analysis *Yellen v. Confederated Tribes of the Chehalis Reservation* (2021)
-Clarifies the distinct legal status of Alaska Native corporations versus federally recognized Tribes.
-:::
 
 :::: case ysleta-del-sur-pueblo-v-texas
 ::::
 
-::: analysis *Ysleta del Sur Pueblo v. Texas* (2022)
-Shows how statute-specific gaming regimes for particular nations work outside the Indian Gaming Regulatory Act's ordinary framework.
-:::
-
 :::: case arizona-v-navajo-nation
 ::::
 
-::: analysis *Arizona v. Navajo Nation* (2023)
-Limits judicial enforcement of trust duties unless specific duties are written into treaties or statutes.
-:::
-
 :::: case becerra-v-san-carlos-apache-tribe
 ::::
-
-::: analysis *Becerra v. San Carlos Apache Tribe* (2024)
-The only Indian-law merits decision of October Terms 2023-2025. It arose from contract disputes under the Indian Self-Determination and Education Assistance Act.
-:::
 
 ### Sovereign Immunity
 
@@ -514,16 +326,8 @@ From 1991 to 2023 the Supreme Court repeatedly held that a nation is immune from
 :::: case oklahoma-tax-commission-v-citizen-band-potawatomi-indian-tribe
 ::::
 
-::: analysis *Oklahoma Tax Commission v. Citizen Band Potawatomi Indian Tribe of Oklahoma* (1991)
-Sets the "clear waiver" standard, and expressly points to negotiated Tribal-state agreements as the alternative to litigation.
-:::
-
 :::: case sokaogon-gaming-enterprise-corporation-v-tushie-montgomery-associates
 ::::
-
-::: analysis *Sokaogon Gaming Enterprise Corp. v. Tushie-Montgomery Associates, Inc.* (1996)
-An early, influential holding (by Judge Posner) that an ordinary arbitration clause can waive Tribal immunity; useful background for *C & L Enterprises*.
-:::
 
 :::: case kiowa-tribe-v-manufacturing-technologies
 ::::
@@ -531,104 +335,48 @@ An early, influential holding (by Judge Posner) that an ordinary arbitration cla
 :::: case val-u-construction-company-v-rosebud-sioux-tribe
 ::::
 
-::: analysis *Val-U Construction Co. v. Rosebud Sioux Tribe* (1998)
-A nation that has agreed to arbitrate may be bound by an award even if it refuses to participate.
-:::
-
 :::: case ninigret-development-corporation-v-narragansett-indian-wetuomuck-housing-authority
 ::::
-
-::: analysis *Ninigret Development Corp. v. Narragansett Indian Wetuomuck Housing Authority* (2000)
-A clear test for when arbitration language waives immunity, applied to a tiered clause (Tribal Council, then a Tribal Court-appointed arbitration board, then federal court only by written agreement).
-:::
 
 :::: case c-and-l-enterprises-v-citizen-band-potawatomi-2001
 ::::
 
-::: analysis *C & L Enterprises, Inc. v. Citizen Band Potawatomi Indian Tribe of Oklahoma* (2001)
-An arbitration clause plus enforcement and choice-of-law language can waive immunity for enforcement of awards.
-:::
-
 :::: case smith-v-hopland-band-of-pomo-indians
 ::::
-
-::: analysis *Smith v. Hopland Band of Pomo Indians* (2002)
-A state appellate application of reasoning like that in *C & L Enterprises*; shows how state courts read arbitration clauses in Tribal contracts.
-:::
 
 :::: case michigan-v-bay-mills-indian-community
 ::::
 
-::: analysis *Michigan v. Bay Mills Indian Community* (2014)
-Reaffirms broad Tribal immunity and expressly points to negotiated waivers in compacts and contracts as the route to remedies.
-:::
-
 :::: case lewis-v-clarke
 ::::
 
-::: analysis *Lewis v. Clarke* (2017)
-Tribal immunity does not shield employees sued personally.
-:::
-
 :::: case lac-du-flambeau-band-v-coughlin
 ::::
-
-::: analysis *Lac du Flambeau Band of Lake Superior Chippewa Indians v. Coughlin* (2023)
-A congressional abrogation that applies to Tribal enterprises in bankruptcy regardless of contract language.
-:::
 
 ### Civil Jurisdiction over Nonmembers
 
 :::: case strate-v-a-1-contractors
 ::::
 
-::: analysis *Strate v. A-1 Contractors* (1997)
-Limits Tribal adjudication of disputes between nonmembers absent consent.
-:::
-
 :::: case alaska-v-native-village-of-venetie-tribal-government
 ::::
-
-::: analysis *Alaska v. Native Village of Venetie Tribal Government* (1998)
-Central for Alaska Native nations. Territorial (Indian country) jurisdiction is largely unavailable on the Alaska Native Claims Settlement Act lands, so Alaska Tribal courts rely on membership-based jurisdiction and consent.
-:::
 
 :::: case atkinson-trading-company-v-shirley
 ::::
 
-::: analysis *Atkinson Trading Co. v. Shirley* (2001)
-Shows that services alone do not create consent.
-:::
-
 :::: case nevada-v-hicks
 ::::
-
-::: analysis *Nevada v. Hicks* (2001)
-Limits Tribal-court jurisdiction over state officials and federal claims.
-:::
 
 :::: case plains-commerce-bank-v-long-family-land-and-cattle-company
 ::::
 
-::: analysis *Plains Commerce Bank v. Long Family Land & Cattle Co.* (2008)
-Even where a nonmember has consensual dealings with members, Tribal jurisdiction must relate to those dealings and to Tribal sovereign interests.
-:::
-
 :::: case dollar-general-corporation-v-mississippi-band-of-choctaw-indians
 ::::
-
-::: analysis *Dollar General Corp. v. Mississippi Band of Choctaw Indians* (2016)
-Leaves open whether Tribal courts may hear tort claims against nonmembers who consent to commercial relationships.
-:::
 
 ### Recognition, Enforcement and Full Faith and Credit
 
 :::: law usc-25-5130
 ::::
-
-::: analysis Federal recognition under the Federally Recognized Indian Tribe List Act (1994)
-Most state rules for enforcing Tribal judgments apply only to courts of federally recognized nations, so list status can decide whether a judgment is enforceable off the reservation.
-:::
 
 :::: law usc-18-2265
 ::::
@@ -639,44 +387,20 @@ Most state rules for enforcing Tribal judgments apply only to courts of federall
 :::: case wilson-v-marchington-1997
 ::::
 
-::: analysis *Wilson v. Marchington* (1997)
-The leading federal framework for recognizing Tribal judgments. The equitable grounds include inconsistency with the parties' contractual choice of forum.
-:::
-
 :::: case john-v-baker
 ::::
-
-::: analysis *John v. Baker* (1999)
-The leading authority that Alaska Native Tribal courts operate on membership-based jurisdiction even without Indian country, and that state courts extend comity to them.
-:::
 
 :::: case teague-v-bad-river-band-2000
 ::::
 
-::: analysis *Teague v. Bad River Band of the Lake Superior Tribe of Chippewa Indians* (2000)
-An example of court-to-court communication (judicial conferencing) to resolve concurrent Tribal-state jurisdiction.
-:::
-
 :::: case bird-v-glacier-electric-cooperative
 ::::
-
-::: analysis *Bird v. Glacier Electric Cooperative, Inc.* (2001)
-Shows the due-process ground for refusing recognition in practice.
-:::
 
 :::: case att-corporation-v-coeur-dalene-tribe
 ::::
 
-::: analysis *AT&T Corp. v. Coeur d'Alene Tribe* (2002)
-Combines a strong statement of comity with a reminder that subject-matter limits (here, a federal statute's exclusive forum provisions) can defeat recognition.
-:::
-
 :::: case teague-v-bad-river-band-2003
 ::::
-
-::: analysis *Teague v. Bad River Band of the Lake Superior Tribe of Chippewa Indians* (2003)
-Illustrates the costs of uncoordinated parallel proceedings and the fractured approaches (full faith and credit vs. comity) state courts take.
-:::
 
 **Enforcement under federal law today.** Federal statutes require full faith and credit for Tribal orders in three areas: child custody (the Indian Child Welfare Act), protection orders and child support [@indian-child-welfare-act-1978; @usc-18-2265; @usc-28-1738b].
 
@@ -689,25 +413,13 @@ Outside those three areas, recognition depends on comity and on state rules.
 :::: case mississippi-band-of-choctaw-indians-v-holyfield
 ::::
 
-::: analysis *Mississippi Band of Choctaw Indians v. Holyfield* (1989)
-Shows that a nation's jurisdiction over family matters protects collective as well as individual interests.
-:::
-
 :::: case haaland-v-brackeen
 ::::
-
-::: analysis *Haaland v. Brackeen* (2023)
-Upholds the Indian Child Welfare Act, including the role of Tribal courts and Tribal placement preferences.
-:::
 
 ### Tribal Justice Systems
 
 :::: law indian-tribal-justice-act-1993
 ::::
-
-::: analysis Indian Tribal Justice Act (1993)
-This is the core federal statutory recognition that traditional and alternative dispute resolution are part of a nation's justice system.
-:::
 
 :::: law indian-tribal-justice-technical-and-legal-assistance-act-2000
 ::::
@@ -723,53 +435,25 @@ This is the core federal statutory recognition that traditional and alternative 
 :::: case duro-v-reina
 ::::
 
-::: analysis *Duro v. Reina* (1990)
-Historical example of Congress restoring Tribal jurisdiction after an adverse decision.
-:::
-
 **1990 and 1991. The "Duro fix."** After *Duro*, Congress amended the Indian Civil Rights Act to recognize "the inherent power of Indian tribes, hereby recognized and affirmed, to exercise criminal jurisdiction over all Indians" [@usc-25-1301].
 
 :::: case united-states-v-lara
 ::::
 
-::: analysis *United States v. Lara* (2004)
-Confirms Congress can restore (recognize) inherent jurisdiction.
-:::
-
 :::: case united-states-v-bryant
 ::::
-
-::: analysis *United States v. Bryant* (2016)
-Federal law gives effect to Tribal-court judgments that comply with the Indian Civil Rights Act.
-:::
 
 :::: case mcgirt-v-oklahoma
 ::::
 
-::: analysis *McGirt v. Oklahoma* (2020)
-Reservation status determines the territorial scope of a nation's jurisdiction; after *McGirt*, eastern Oklahoma nations expanded court systems and intergovernmental agreements.
-:::
-
 :::: case united-states-v-cooley
 ::::
-
-::: analysis *United States v. Cooley* (2021)
-First modern Supreme Court application of *Montana*'s second exception in favor of Tribal authority.
-:::
 
 :::: case denezpi-v-united-states
 ::::
 
-::: analysis *Denezpi v. United States* (2022)
-Concerns Courts of Indian Offenses, which still serve some nations [@cfr-25-part-11-courts-of-indian-offenses].
-:::
-
 :::: case oklahoma-v-castro-huerta
 ::::
-
-::: analysis *Oklahoma v. Castro-Huerta* (2022)
-Increases state criminal authority in Indian country, making Tribal-state cooperative agreements more important.
-:::
 
 ### Recent Statutes (2024 to 2026)
 
@@ -781,10 +465,6 @@ Increases state criminal authority in Indian country, making Tribal-state cooper
 
 :::: law miami-tribe-of-oklahoma-illinois-land-claim-settlement-2026
 ::::
-
-::: analysis Miami Tribe of Oklahoma land claim settlement (2026)
-The Miami claim continues a pattern of Congress resolving land disputes by assigning them to a chosen forum.
-:::
 
 ## Tribal Courts
 
@@ -835,10 +515,6 @@ Native Hawaiians, the CHamoru people of Guam and the Northern Mariana Islands, t
 
 :::: case rice-v-cayetano
 ::::
-
-::: analysis *Rice v. Cayetano* (2000)
-For Native Hawaiian institutions, this limits ancestry-based eligibility in state-run bodies.
-:::
 
 **2011 and 2016. Recognition by the State, a path offered by Interior.** Hawaiʻi's Act 195 states that "The Native Hawaiian people are hereby recognized as the only indigenous, aboriginal, maoli people of Hawaii" [@hawaii-revised-statutes-10h-1]. In 2016 the Interior Department adopted procedures for reestablishing a formal government-to-government relationship with a Native Hawaiian government, if the community forms one and asks [@interior-native-hawaiian-final-rule-2016; @cfr-43-part-50]. Neither step makes Native Hawaiians a Tribe, and many Kānaka Maoli reject the federal-recognition model itself [@kauanui-paradoxes-of-hawaiian-sovereignty-2018].
 
