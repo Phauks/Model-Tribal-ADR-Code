@@ -173,13 +173,3 @@ export function cleanTag(text: string): string | null {
 		.replace(/^-+|-+$/g, '');
 	return value && value.length <= 60 ? value : null;
 }
-
-/**
- * One CSV field (RFC 4180): quoted when it holds a comma, quote or line break.
- * A field that a spreadsheet would read as a formula gets a leading apostrophe.
- */
-export function csvText(value: string | null): string {
-	let text = value ?? '';
-	if (/^[=+\-@\t\r]/.test(text)) text = `'${text}`;
-	return /[",\r\n]/.test(text) ? `"${text.replace(/"/g, '""')}"` : text;
-}

@@ -4,7 +4,7 @@
  * cached and only the lead author and editors can download it.
  */
 import { error } from '@sveltejs/kit';
-import { csvText } from '#lib/address-book.ts';
+import { csvDocument, csvResponse } from '#lib/csv.ts';
 import { registrationStatusLabels } from '#lib/event-calendar.ts';
 import { eventByIdentifier, registrationsOf } from '#lib/server/event-calendar.ts';
 import { requirePermission, storage } from '#lib/server/workspace.ts';
@@ -25,14 +25,8 @@ export const GET: RequestHandler = async (event) => {
 			registration.accessNeeds,
 			registration.wantsReminders ? 'yes' : 'no',
 			registration.registeredAt
-		].map(csvText)
+		]
 	);
-	const body = [header, ...lines].map((line) => line.join(',')).join('\r\n') + '\r\n';
-	return new Response(body, {
-		headers: {
-			'content-type': 'text/csv; charset=utf-8',
-			'content-disposition': `attachment; filename="${found.slug}-registrations.csv"`,
-			'cache-control': 'no-store'
-		}
-	});
+	const body = csvDocument([header, ...lines], { guardFormulas: true });
+	return csvResponse(body, { fileName: `${found.slug}-registrations.csv`, private: true });
 };

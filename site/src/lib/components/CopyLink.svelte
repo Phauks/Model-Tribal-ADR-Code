@@ -6,6 +6,7 @@
 	 */
 	import Check from '@lucide/svelte/icons/check';
 	import Copy from '@lucide/svelte/icons/copy';
+	import { copyText } from '#lib/clipboard.ts';
 
 	let { link, label }: { link: string; label: string } = $props();
 
@@ -14,7 +15,7 @@
 
 	async function copy() {
 		try {
-			await navigator.clipboard.writeText(link);
+			await copyText(link);
 			copied = 'Copied.';
 		} catch {
 			copied = 'Could not copy. Select the link and copy it yourself.';

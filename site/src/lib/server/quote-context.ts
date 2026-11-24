@@ -23,6 +23,7 @@ import {
 	type SourceParagraph
 } from '../quote-context.ts';
 import { copyPath } from '../public-copies.ts';
+import { inGroupsOf, placeholdersFor } from '#lib/server/database-groups.ts';
 
 /** The longest quotation looked for, in characters, and the largest document read whole. */
 export const longestQuotation = 3000;
@@ -69,14 +70,13 @@ export async function sourcesWithPublicText(database: D1Database, keys: string[]
 	if (wanted.length === 0) return [];
 	const found = new Set<string>();
 	// D1 allows 100 bound values in a statement.
-	for (let start = 0; start < wanted.length; start += 90) {
-		const chunk = wanted.slice(start, start + 90);
+	for (const group of inGroupsOf(wanted, 90)) {
 		const { results } = await database
 			.prepare(
 				`SELECT DISTINCT r.record FROM citing_records r JOIN documents d ON d.document_id = r.document_id
-				 WHERE d.served = 1 AND d.text_status != 'none' AND r.record IN (${chunk.map(() => '?').join(', ')})`
+				 WHERE d.served = 1 AND d.text_status != 'none' AND r.record IN (${placeholdersFor(group)})`
 			)
-			.bind(...chunk)
+			.bind(...group)
 			.all<{ record: string }>();
 		for (const row of results) found.add(row.record);
 	}

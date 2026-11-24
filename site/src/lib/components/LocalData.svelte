@@ -17,6 +17,7 @@
 	import { buildReaderData, parseReaderData, readerDataFileName, readerDataSizeLimit, type ReaderData } from '#lib/reader-data.ts';
 	import { loadSettings, loadTheme, saveSettings, saveTheme } from '#lib/reading-settings.ts';
 	import { loadStarred, mergeStarred, saveStarred } from '#lib/starred-items.ts';
+	import { saveFile } from '#lib/save-file.ts';
 
 	type Part = 'settings' | 'print' | 'starred' | 'pages';
 
@@ -71,13 +72,9 @@
 			savedParts = status?.collections.filter((item) => item.kept).map((item) => item.id) ?? [];
 		}
 		const data = buildReaderData(loadSettings(), loadTheme(), loadPrintOptions(), savedParts, loadStarred());
-		const file = new Blob([`${JSON.stringify(data, null, '\t')}\n`], { type: 'application/json' });
-		const link = document.createElement('a');
-		link.href = URL.createObjectURL(file);
-		link.download = readerDataFileName();
-		link.click();
-		URL.revokeObjectURL(link.href);
-		message = `Exported to ${link.download}.`;
+		const fileName = readerDataFileName();
+		saveFile(new Blob([`${JSON.stringify(data, null, '\t')}\n`], { type: 'application/json' }), fileName);
+		message = `Exported to ${fileName}.`;
 	}
 
 	async function chooseFile(event: Event): Promise<void> {

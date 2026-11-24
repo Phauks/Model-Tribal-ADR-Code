@@ -39,6 +39,7 @@
 	} from '#lib/recourse.ts';
 	import { facetCounts, filterRows, toggleChoice, type FilterChoices } from '#lib/search-filters.ts';
 	import type { PageProps } from './$types';
+	import { copyPageLink, replaceAddressSearch } from '#lib/clipboard.ts';
 
 	let { data }: PageProps = $props();
 
@@ -110,22 +111,13 @@
 	});
 
 	async function copyLink() {
-		try {
-			await navigator.clipboard.writeText(location.href);
-			copyStatus = 'Link copied.';
-		} catch {
-			copyStatus = `Copy this link: ${location.href}`;
-		}
+		copyStatus = await copyPageLink();
 	}
 
 	// The choices go into the page address as the reader makes them, so a copied link opens the same list.
 	$effect(() => {
 		if (!allRows) return;
-		const search = recourseAddress({ text, choices }, facets).toString();
-		const next = `${location.pathname}${search ? `?${search}` : ''}${location.hash}`;
-		if (next !== `${location.pathname}${location.search}${location.hash}`) {
-			history.replaceState(history.state, '', next);
-		}
+		replaceAddressSearch(recourseAddress({ text, choices }, facets).toString());
 		copyStatus = '';
 	});
 

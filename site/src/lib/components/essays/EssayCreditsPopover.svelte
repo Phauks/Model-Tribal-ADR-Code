@@ -12,6 +12,7 @@
 	import { creditRoleChoices, creditRoleDoings, creditRoles, type CreditRole, type EssayCredits, type HistoryCredit } from '#lib/essays/credits.ts';
 	import { essayDateRange, essayShortDate } from '#lib/essays/dates.ts';
 	import { dueDate, isOpen, type ReviewRequest } from '#lib/essays/review-requests.ts';
+	import { sendJson } from '#lib/send-json.ts';
 
 	let {
 		essay,
@@ -94,19 +95,19 @@
 		if (!section) return;
 		busy = true;
 		problem = '';
-		const response = await fetch(`/workspace/essays/${essay}/credits`, {
-			method: 'POST',
-			headers: { 'content-type': 'application/json' },
-			body: JSON.stringify({ ...body, slug: section.slug, title: section.title })
-		}).catch(() => null);
+		const sent = await sendJson<EssayCredits>(
+			`/workspace/essays/${essay}/credits`,
+			'POST',
+			{ ...body, slug: section.slug, title: section.title },
+			{ complete: (answer) => !!answer.sections }
+		);
 		busy = false;
-		const answer = (await response?.json().catch(() => null)) as (EssayCredits & { message?: string }) | null;
-		if (!response?.ok || !answer?.sections) {
-			problem = answer?.message || 'That did not go through. Try again.';
+		if (!sent.ok) {
+			problem = sent.problem;
 			return;
 		}
 		if (body.action === 'add') person = '';
-		onchange(answer);
+		onchange(sent.answer);
 	}
 </script>
 
