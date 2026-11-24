@@ -7,7 +7,7 @@
 // index.js that keeps its fetch handler and adds `scheduled`, then points
 // the built Wrangler configuration at it. The scheduled handler passes the
 // run to the addresses scheduledPaths names for its cron trigger (the hourly
-// /following/scheduled, /library/scheduled and /site-text/scheduled, the weekly /address-book/scheduled, /events/scheduled every 15 minutes) inside the same copy of the Worker, with a
+// /following/scheduled, /library/scheduled, /site-text/scheduled and /activity-log/scheduled, the weekly /address-book/scheduled, /events/scheduled every 15 minutes) inside the same copy of the Worker, with a
 // random token made when that copy starts and kept only in its memory
 // (src/lib/server/scheduled-run.ts), so nothing outside can start a run.
 
@@ -28,10 +28,11 @@ export const scheduledTokenHeader = 'x-scheduled-run';
 // /library/scheduled loads the source library's newest changes
 // (src/lib/server/source-library.ts). /site-text/scheduled asks for a rebuild
 // when published site text has not reached the pages (docs/site-text.md).
+// /activity-log/scheduled checks the activity log's whole seal chain and records how far it is intact (src/lib/server/activity-seals.ts).
 // The weekly one checks the private address book against the federal and
 // Alaska directories and the nation pages (src/lib/server/address-book.ts).
 export const scheduledPaths = {
-	'17 * * * *': ['/following/scheduled', '/library/scheduled', '/site-text/scheduled'],
+	'17 * * * *': ['/following/scheduled', '/library/scheduled', '/site-text/scheduled', '/activity-log/scheduled'],
 	'41 9 * * 1': '/address-book/scheduled',
 	'4,19,34,49 * * * *': '/events/scheduled'
 };
