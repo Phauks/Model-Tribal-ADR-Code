@@ -13,7 +13,7 @@
 import { displayName } from '../nation-labels.ts';
 import { versionItemId, type RestrictableItem, type RestrictableList, type RestrictionKind } from '../nation-restrictions.ts';
 import { keyOfCopyPath } from './document-zips.ts';
-import { documentHeading, labelOf, nationDocumentHistories, textLink } from './document-history.ts';
+import { documentHeading, earliestDate, labelOf, nationDocumentHistories, textLink } from './document-history.ts';
 import { offlineSets } from './copy-lists.ts';
 import { nations, publicCopies, sources as sourceRecords } from './content.ts';
 import { opinionsOf } from './tribal-court-opinions.ts';
@@ -50,7 +50,10 @@ export function restrictableItems(nationId: string): RestrictableList {
 				kind,
 				title: kind === 'agreements' ? `${heading}: ${label}` : label,
 				original: copy?.links.at(-1) ?? source?.original_link ?? (link && !link.startsWith('/') ? link : undefined),
-				bytes: copy?.bytes
+				bytes: copy?.bytes,
+				document: history.id,
+				version: version.id,
+				date: earliestDate(version)
 			});
 		}
 	}
@@ -69,7 +72,10 @@ export function restrictableItems(nationId: string): RestrictableList {
 			title: opinion.name,
 			citation: `${opinion.citation} (${opinion.court} ${opinion.year})`,
 			original: opinion.original,
-			bytes: copies.get(opinion.key)?.bytes
+			bytes: copies.get(opinion.key)?.bytes,
+			cite: opinion.citation,
+			year: opinion.year,
+			nations: opinion.nations
 		});
 	}
 	// Counted as the nation's page lists them: its treaties, and the court cases that name it.

@@ -8,62 +8,62 @@
 // of the nation's live changes (/nations/<id>/changes.json) and writes it into
 // the page's empty places (data-nation-slot) as the page streams out. Pages
 // of nations with no changes pass through untouched. The nation's table of
-// court opinions gets the same treatment, and the list of copies its offline
-// set holds drops the copies the nation chose to cite only or hide
-// (src/lib/nation-restrictions.ts).
+// court opinions gets the same treatment.
+//
+// Nor can the build know what nations chose the site shows of their own laws
+// and court opinions (src/lib/nation-restrictions.ts). So the files and
+// pages made at build time that name them go to the site first: files to
+// /restricted-files/<address> (src/routes/restricted-files), pages and their
+// data to /restricted-pages/<address> (src/lib/server/restricted-pages.ts).
+// Each answers with the file or page as built when nothing in it is
+// restricted. The list of a nation's restrictable items is for its team's
+// page alone, which reads it from the built files, so it is never served.
 
-const nationPage = /^\/nations\/([a-z0-9-]+)(?:\/opinions)?$/;
-const offlineList = /^\/copies\/offline\/nations\/([a-z0-9-]+)\.json$/;
+const nationPage = /^\/nations\/(?!(?:coverage|data|federal-offices|law|letter|map|recourse|state|timeline)$)([a-z0-9-]+)(?:\/opinions)?$/;
+const restrictableList = /^\/nations\/[a-z0-9-]+\/restrictable\.json$/;
+
+/** Files the site filters (src/routes/restricted-files, restrictedFiles). */
+export const filteredFiles = [
+	/^\/search\/records\.json$/,
+	/^\/copies\/list\.csv$/,
+	/^\/copies\/offline\/nations\/[a-z0-9-]+\.json$/,
+	/^\/copies\/details\/[0-9a-f]{2}\.json$/,
+	/^\/nations\/[a-z0-9-]+\/timeline\.(json|csv)$/,
+	/^\/nations\/timeline\/entries\.(json|csv)$/,
+	/^\/nations\/law\/[a-z0-9-]+\.json$/,
+	/^\/nations\/data\/build\/[a-z-]+\.json$/,
+	/^\/zip\/data\.zip$/
+];
+
+/** Pages the site draws again when something on them is restricted (src/lib/restricted-pages.ts, restrictedPageViews), and the data a move within the site asks for. */
+export const filteredPages = [
+	/^\/nations\/timeline(\/__data\.json)?$/,
+	/^\/nations\/(?!(?:coverage|data|federal-offices|law|letter|map|recourse|state|timeline)(?:\/|$))[a-z0-9-]+(\/opinions)?(\/__data\.json)?$/,
+	/^\/copies\/list\/[a-z0-9-]+(\/__data\.json)?$/,
+	/^\/nations\/data\/(?!(?:build|tables)\/)[a-z0-9-]+\/(?!sources(?:\/|$))[^/]+?(\/__data\.json)?$/
+];
 
 /**
  * @typedef {{ fetch: (request: Request, env: unknown, context: unknown) => Promise<Response>, [key: string]: unknown }} Worker
  * @typedef {{ getAttribute: (name: string) => string | null, setInnerContent: (content: string, options: { html: boolean }) => void }} SlotElement
  * @typedef {new () => { on: (selector: string, handlers: { element: (element: SlotElement) => void }) => { transform: (response: Response) => Response | Promise<Response> } }} RewriterClass
- * @typedef {{ stamp: string, slots: Record<string, string>, withheld?: string[] }} Overlay
+ * @typedef {{ stamp: string, slots: Record<string, string> }} Overlay
  */
 
 /**
- * The bucket key of a copy from its address on this site, as src/lib/server/document-zips.ts reads it.
- * @param {string} path
- */
-function keyOfCopyPath(path) {
-	return path
-		.replace(/^\/copies\//, '')
-		.split('/')
-		.map((part) => decodeURIComponent(part))
-		.join('/');
-}
-
-/**
- * The nation's offline list without the copies it withholds.
- * @param {Worker} worker
+ * The request sent on to the site under another address, keeping its query.
  * @param {Request} request
- * @param {Overlay} overlay
- * @param {unknown} env
- * @param {unknown} context
+ * @param {string} prefix
+ * @param {boolean} [conditions] whether to keep the headers that let the answer be "not modified"
  */
-async function withoutWithheld(worker, request, overlay, env, context) {
-	const response = await worker.fetch(withoutConditions(request), env, context);
-	if (response.status !== 200) return response;
-	const withheld = new Set(overlay.withheld);
-	const list = await response.json();
-	const files = Array.isArray(list?.files) ? list.files.filter((/** @type {unknown[]} */ file) => !withheld.has(keyOfCopyPath(String(file[0])))) : [];
-	const headers = new Headers(response.headers);
-	headers.delete('content-length');
-	headers.delete('etag');
-	headers.set('cache-control', 'no-store');
-	return new Response(request.method === 'HEAD' ? null : JSON.stringify({ ...list, files }), { status: 200, headers });
-}
-
-/**
- * The same request without the conditions that would let the assets answer "not modified".
- * @param {Request} request
- */
-function withoutConditions(request) {
+function forwarded(request, prefix, conditions = true) {
+	const url = new URL(request.url);
 	const headers = new Headers(request.headers);
-	headers.delete('if-none-match');
-	headers.delete('if-modified-since');
-	return new Request(request.url, { method: request.method, headers });
+	if (!conditions) {
+		headers.delete('if-none-match');
+		headers.delete('if-modified-since');
+	}
+	return new Request(new URL(`${prefix}${url.pathname}${url.search}`, url), { method: request.method, headers });
 }
 
 /**
@@ -100,17 +100,16 @@ export function withNationPageChanges(worker, Rewriter = /** @type {any} */ (glo
 		async fetch(request, env, context) {
 			const url = new URL(request.url);
 			const reading = request.method === 'GET' || request.method === 'HEAD';
-			const list = reading ? offlineList.exec(url.pathname) : null;
-			if (list) {
-				const overlay = await readOverlay(worker, url, list[1], env, context);
-				return overlay?.withheld?.length ? withoutWithheld(worker, request, overlay, env, context) : worker.fetch(request, env, context);
-			}
-			const match = reading ? nationPage.exec(url.pathname) : null;
-			if (!match) return worker.fetch(request, env, context);
+			if (!reading) return worker.fetch(request, env, context);
+			if (restrictableList.test(url.pathname)) return new Response('Not found', { status: 404, headers: { 'cache-control': 'no-store' } });
+			if (filteredFiles.some((pattern) => pattern.test(url.pathname))) return worker.fetch(forwarded(request, '/restricted-files'), env, context);
+			const asPage = filteredPages.some((pattern) => pattern.test(url.pathname));
+			const match = nationPage.exec(url.pathname);
+			if (!match) return asPage ? worker.fetch(forwarded(request, '/restricted-pages'), env, context) : worker.fetch(request, env, context);
 			const overlay = await readOverlay(worker, url, match[1], env, context);
-			if (!overlay) return worker.fetch(request, env, context);
+			if (!overlay) return worker.fetch(forwarded(request, '/restricted-pages'), env, context);
 
-			const page = await worker.fetch(withoutConditions(request), env, context);
+			const page = await worker.fetch(forwarded(request, '/restricted-pages', false), env, context);
 			if (page.status !== 200 || !(page.headers.get('content-type') ?? '').includes('text/html')) return page;
 			const built = (page.headers.get('etag') ?? '').replace(/^W\//, '').replaceAll('"', '');
 			const headers = new Headers(page.headers);

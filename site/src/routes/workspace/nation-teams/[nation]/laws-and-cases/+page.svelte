@@ -208,7 +208,7 @@
 						<li>{line.before}{#if line.name}{#if line.caseName}<i>{line.name}</i>{:else}{line.name}{/if}{/if}{line.after}{index === lines.length - 1 ? '.' : ';'}</li>
 					{/each}
 				</ul>
-				<p class="small">Downloads and offline copies follow at once. Search and data sets follow at a later site update. Books already printed cannot change; the next edition follows.</p>
+				<p class="small">Search, downloads, offline copies and data sets follow at once. Books already printed cannot change; the next edition follows.</p>
 			</div>
 		{/if}
 		<div class="field note">
