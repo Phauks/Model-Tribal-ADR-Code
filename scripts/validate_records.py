@@ -460,9 +460,19 @@ def main() -> int:
         if list(dict.fromkeys(named)) != list(record.get("tribes", [])):
             errors.append(f"{path}: tribes must list the nations in nations_in_case, in the same order")
 
+    def check_record_box(path: pathlib.Path, record: dict) -> None:
+        """A case or law box on the record cites only sources that have records, and a case box only on a case."""
+        if record.get("case_box") and record.get("citation", {}).get("type") != "legal_case":
+            errors.append(f"{path}: case_box is only for court cases; a law uses law_box")
+        for field in ("case_box", "law_box"):
+            for key in re.findall(r"@([a-z0-9]+(?:-[a-z0-9]+)*)", json.dumps(record.get(field) or {}, ensure_ascii=False)):
+                if key not in sources:
+                    errors.append(f"{path}: {field} cites a missing source record '{key}'")
+
     for path, record in records.get("source.schema.json", []):
         if record.get("key") != path.stem:
             errors.append(f"{path}: key does not match the file name")
+        check_record_box(path, record)
         for session in record.get("found_in", []):
             if session not in sessions:
                 errors.append(f"{path}: found_in names a missing research session '{session}'")

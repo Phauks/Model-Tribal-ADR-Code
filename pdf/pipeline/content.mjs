@@ -4,6 +4,7 @@
 import fs from "node:fs";
 import path from "node:path";
 import YAML from "yaml";
+import { fillBoxes } from "./record-boxes.mjs";
 
 const FRONT_MATTER = /^---\n([\s\S]*?)\n---\n/;
 
@@ -94,6 +95,9 @@ export function loadContent(contentDirectory) {
     .filter((file) => path.basename(file) !== "README.md")
     .map(readMarkdownRecord)
     .filter((record) => publishable(record.data));
+  // A case or law box an essay leaves empty is filled from the source's record (record-boxes.mjs).
+  const sourcesByKey = new Map(sources.map((source) => [source.key, source]));
+  for (const record of [...essays, ...frontMatter, ...backMatter]) record.body = fillBoxes(record.body, sourcesByKey);
   return { sources, nationNames, peopleIds, glossary, variables, provisions, commentary, essays, frontMatter, backMatter };
 }
 
