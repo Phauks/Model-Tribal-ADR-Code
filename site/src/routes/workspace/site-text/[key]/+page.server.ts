@@ -3,7 +3,7 @@ import { atLeast, siteTextSubject } from '#lib/permissions.ts';
 import { requireDocumentLevel } from '#lib/server/access.ts';
 import { history, pieceStates, saveVersion, SiteTextProblem } from '#lib/server/site-text.ts';
 import { catalogByKey } from '#lib/server/site-text-catalog.ts';
-import { siteTextPlace } from '#lib/site-text.ts';
+import { entryPlace, siteTextPlace } from '#lib/site-text.ts';
 import { formText, requirePerson, storage } from '#lib/server/workspace.ts';
 import type { Actions, PageServerLoad } from './$types';
 
@@ -24,8 +24,11 @@ export const load: PageServerLoad = async (event) => {
 	return {
 		key,
 		builtIn,
-		place: siteTextPlace(entry?.file ?? versions[0]?.sourceFile ?? ''),
-		file: entry ? `${entry.file}, line ${entry.line}` : null,
+		place: entry ? entryPlace(entry) : siteTextPlace(versions[0]?.sourceFile ?? ''),
+		// A part of a case's or law's box is in its record, a file at the repository's top.
+		file: entry ? (entry.record ? entry.file.replace(/^\.\.\//, '') : `${entry.file}, line ${entry.line}`) : null,
+		page: entry?.record?.page ?? null,
+		record: Boolean(entry?.record),
 		attribute: entry?.attribute ?? null,
 		gone: !entry,
 		published: state?.published ?? null,

@@ -37,10 +37,10 @@
 </svelte:head>
 
 <p class="small"><a href="/workspace/site-text">Site text</a></p>
-<h1>{data.draft ?? data.published ?? data.builtIn}</h1>
+<h1>{data.record ? data.place : (data.draft ?? data.published ?? data.builtIn)}</h1>
 
-<dl class="facts">
-	<div><dt>Where</dt><dd>{data.place}{#if data.attribute} · {data.attribute}{/if}</dd></div>
+<dl class="facts" class:record={data.record}>
+	<div><dt>Where</dt><dd>{#if data.page}<a href={data.page}>{data.place}</a>{:else}{data.place}{/if}{#if data.attribute} · {data.attribute}{/if}</dd></div>
 	{#if data.file}<div><dt>File</dt><dd><code>{data.file}</code></dd></div>{/if}
 	<div><dt>Built-in</dt><dd>{data.builtIn}</dd></div>
 	<div><dt>Published</dt><dd>{data.published ?? data.builtIn}</dd></div>
@@ -55,7 +55,7 @@
 {#if data.canEdit}
 	<form class="edit" method="POST" action="?/save" use:enhance>
 		<label class="visually-hidden" for="words">Text</label>
-		<textarea id="words" name="words" rows="2" maxlength="2000">{data.draft ?? data.published ?? data.builtIn}</textarea>
+		<textarea id="words" name="words" rows={data.record ? 9 : 2} maxlength="2000">{data.draft ?? data.published ?? data.builtIn}</textarea>
 		<div class="buttons">
 			<button class="icon-button outline" type="submit" name="reset" value="yes" title="Reset to built-in text"><RotateCcw size={20} aria-hidden="true" /><span class="visually-hidden">Reset to built-in text</span></button>
 			<span class="space"></span>
@@ -131,5 +131,9 @@
 	}
 	.problem {
 		color: var(--color-danger);
+	}
+	/* A part of a case's or law's box keeps its paragraphs. */
+	.facts.record dd {
+		white-space: pre-line;
 	}
 </style>

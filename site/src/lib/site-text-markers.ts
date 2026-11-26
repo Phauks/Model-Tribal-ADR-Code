@@ -19,6 +19,10 @@
  */
 import MagicString from 'magic-string';
 import { parse } from 'svelte/compiler';
+import type { RecordTextPlace } from './record-text.ts';
+import { siteTextKey } from './site-text-key.ts';
+
+export { siteTextKey };
 
 /** One piece of fixed text, for the catalog the workspace lists. */
 export interface SiteTextEntry {
@@ -31,6 +35,12 @@ export interface SiteTextEntry {
 	words: string;
 	/** For a label in an attribute: its name, such as aria-label. */
 	attribute?: string;
+	/**
+	 * For a part of a case's or law's box (src/lib/record-text.ts): the
+	 * record, the part, the page that shows it and where it is in words.
+	 * Its words are the record's Markdown, paragraphs kept.
+	 */
+	record?: RecordTextPlace;
 }
 
 export const editableAttributes = ['aria-label', 'title', 'placeholder', 'alt'] as const;
@@ -48,26 +58,6 @@ const letter = /\p{L}/u;
 /** Runs of white space as single spaces, trimmed. */
 export function normalizeWords(words: string): string {
 	return words.replace(/\s+/g, ' ').trim();
-}
-
-/**
- * A short, stable name made from the file, the kind of text and the words
- * (cyrb53, a small 53-bit string hash, written in base 36). The same words
- * in the same file and place keep the same name from build to build.
- */
-export function siteTextKey(file: string, words: string, attribute = '', occurrence = 1): string {
-	const input = `${file}\n${attribute}\n${words}\n${occurrence}`;
-	let first = 0xdeadbeef;
-	let second = 0x41c6ce57;
-	for (let index = 0; index < input.length; index++) {
-		const code = input.charCodeAt(index);
-		first = Math.imul(first ^ code, 2654435761);
-		second = Math.imul(second ^ code, 1597334677);
-	}
-	first = Math.imul(first ^ (first >>> 16), 2246822507) ^ Math.imul(second ^ (second >>> 13), 3266489909);
-	second = Math.imul(second ^ (second >>> 16), 2246822507) ^ Math.imul(first ^ (first >>> 13), 3266489909);
-	const value = 4294967296 * (2097151 & second) + (first >>> 0);
-	return value.toString(36).padStart(11, '0').slice(-10);
 }
 
 /** Words written into Svelte markup between tags: nothing in them may read as a tag, an expression or an entity. */
