@@ -40,7 +40,8 @@ export const filteredPages = [
 	/^\/nations\/timeline(\/__data\.json)?$/,
 	/^\/nations\/(?!(?:coverage|data|federal-offices|law|letter|map|recourse|state|timeline)(?:\/|$))[a-z0-9-]+(\/opinions)?(\/__data\.json)?$/,
 	/^\/copies\/list\/[a-z0-9-]+(\/__data\.json)?$/,
-	/^\/nations\/data\/(?!(?:build|tables)\/)[a-z0-9-]+\/(?!sources(?:\/|$))[^/]+?(\/__data\.json)?$/
+	/^\/nations\/data\/(?!(?:build|tables)\/)[a-z0-9-]+\/(?!sources(?:\/|$))[^/]+?(\/__data\.json)?$/,
+	/^\/stats\/[a-z0-9-]+(\/__data\.json)?$/
 ];
 
 /**

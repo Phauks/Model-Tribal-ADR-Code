@@ -127,7 +127,7 @@ nations_in_case:
     historical: true
     note: Matched by the script to the only nation record sharing this name; not yet checked against the case's history.
 review:
-  status: unverified
+  status: verified
   by: scripts/caselaw/supreme_court_native_cases.py
   date: '2026-11-24'
   checks:
@@ -138,8 +138,8 @@ review:
     result: agree
     detail: Scan has 26 pages; the report runs 307 to 332
   - check: caption
-    result: settled
-    detail: 'Caption found in the scan''s text at 0.88. Read from the scan by an AI reader (record right): p. 307: UNITED STATES v. TOHONO O’ODHAM NATION (the record''s straight apostrophe differs only by extraction noise).'
+    result: confirmed
+    detail: 'Caption found in the scan''s text at 0.88. Read from the scan by an AI reader (record right): p. 307: UNITED STATES v. TOHONO O’ODHAM NATION (the record''s straight apostrophe differs only by extraction noise).. Confirmed: the report prints the caption "UNITED STATES v. TOHONO O''ODHAM NATION" on p. 308 (text layer, 0.94)'
   - check: printed dates
     result: agree
     detail: Caselaw Access Project "Argued November 1, 2010 — Decided April 26, 2011"; scan "Argued November 1, 2010—Decided April 26, 2011"

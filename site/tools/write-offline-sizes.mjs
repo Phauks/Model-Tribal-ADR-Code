@@ -47,11 +47,12 @@ function under(address, section) {
 /**
  * Which collection a page or one of its data files belongs to.
  * @param {string} address
- * @returns {'nations' | 'stories' | 'glossary' | 'other'}
+ * @returns {'nations' | 'cases' | 'stories' | 'glossary' | 'other'}
  */
 export function collectionOf(address) {
 	const page = pageOf(address);
 	if (under(page, '/nations')) return 'nations';
+	if (['/cases', '/supreme-court', '/biographies'].some((section) => under(page, section))) return 'cases';
 	if (under(page, '/stories')) return 'stories';
 	if (under(page, '/glossary')) return 'glossary';
 	return 'other';
@@ -137,7 +138,7 @@ function main() {
 		console.error('Could not read the build version or start-up name from the built site.');
 		process.exit(1);
 	}
-	const bytes = { nations: 0, stories: 0, glossary: 0, other: 0 };
+	const bytes = { nations: 0, cases: 0, stories: 0, glossary: 0, other: 0 };
 	/** @type {Record<string, string>} */
 	const fingerprintedFiles = {};
 	/** @type {Record<string, string>} */

@@ -96,7 +96,7 @@ nations_in_case:
   checked: '2026-11-24'
   named: []
 review:
-  status: unverified
+  status: verified
   by: scripts/caselaw/supreme_court_native_cases.py
   date: '2026-11-24'
   checks:
@@ -104,8 +104,8 @@ review:
     result: agree
     detail: Caselaw Access Project 170 U.S. 614 "New York Indians v. United States"; Database 170 U.S. 614 "NEW YORK INDIANS v. UNITED STATES"
   - check: scan
-    result: differs
-    detail: Scan has 12 pages; the report runs 614 to 615
+    result: confirmed
+    detail: 'Scan has 12 pages; the report runs 614 to 615. Confirmed: the scan''s pages are the report''s pp. 614-625 (12 of 12 pages show their page number or running head)'
   - check: caption
     result: agree
     detail: Caption found in the scan's text at 1.00
@@ -113,8 +113,8 @@ review:
     result: agree
     detail: Caselaw Access Project 1898-05-23; Database 1898-05-23
   - check: opinions
-    result: settled
-    detail: 'Report: none read; Database writers: none. Read from the scan by an AI reader (record right): p. 614: "Order of the Court." ... "NEW YORK INDIANS v. UNITED STATES. ... Announced May 23,1898. The judgment and mandate in this case, 170 U. S. 1, are amended." This is a court order with no writer and no opinion text, so no opinion is listed. The later opinion-start lines (pp. 617, 623) belong to HOLLOWAY v. DUNHAM, which begins at p. 615, not to this case.'
+    result: confirmed
+    detail: 'Report: none read; Database writers: none. Read from the scan by an AI reader (record right): p. 614: "Order of the Court." ... "NEW YORK INDIANS v. UNITED STATES. ... Announced May 23,1898. The judgment and mandate in this case, 170 U. S. 1, are amended." This is a court order with no writer and no opinion text, so no opinion is listed. The later opinion-start lines (pp. 617, 623) belong to HOLLOWAY v. DUNHAM, which begins at p. 615, not to this case.. Confirmed: the report prints no opinion'
   - check: bench
     result: agree
     detail: No Oyez votes; each opinion writer in the report sits on the Database's bench on the side the opinion takes

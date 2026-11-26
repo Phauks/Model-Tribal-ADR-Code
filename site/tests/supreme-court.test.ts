@@ -24,10 +24,22 @@ describe('Supreme Court pages', () => {
 		const page = courtPage('marshall-court')!;
 		expect(page.bench[0]).toMatchObject({ name: 'John Marshall', role: 'Chief Justice', appointedBy: 'John Adams' });
 		expect(page.facts.find((fact) => fact.label === 'Seats')?.text).toBe('6; 7 from Feb. 24, 1807');
-		expect(page.changes.find((change) => change.date === '1807-05-04')?.events).toEqual(['Thomas Todd took a new seat (2 Stat. 420).']);
-		expect(page.changes.at(-1)?.events).toEqual(['Chief Justice John Marshall died.']);
+		const sentences = (change?: { events: { text: string }[][] }) => change?.events.map((parts) => parts.map((part) => part.text).join(''));
+		expect(sentences(page.changes.find((change) => change.date === '1807-05-04'))).toEqual(['Thomas Todd took a new seat (2 Stat. 420).']);
+		expect(sentences(page.changes.at(-1))).toEqual(['Chief Justice John Marshall died.']);
+		// Trevor, Nov. 24, 2026: the changes link the people they mention.
+		expect(page.changes.find((change) => change.date === '1804-05-07')?.events).toEqual([
+			[{ text: 'William Johnson', link: '/supreme-court/justices/william-johnson' }, { text: ' took the seat of ' }, { text: 'Alfred Moore', link: '/supreme-court/justices/alfred-moore' }, { text: '.' }]
+		]);
+		expect(page.changes.at(-1)?.events[0].find((part) => part.link)?.link).toBe('/supreme-court/justices/john-marshall');
 		expect(page.cases.map((item) => item.key)).toEqual(['fletcher-v-peck', 'new-jersey-v-wilson', 'meigs-v-mclungs-lessee', 'preston-v-browder', 'danforths-lessee-v-thomas', 'johnson-v-mintosh', 'patterson-v-jenks', 'sundry-goods-wares-and-merchandises-v-united-states', 'cherokee-nation-v-georgia', 'worcester-v-georgia']);
 		expect(page.sources.map((source) => source.key)).toContain('supreme-court-historical-society-marshall-court');
+	});
+
+	it('ends a sentence after "Jr." with one period', () => {
+		const page = courtPage('rehnquist-court')!;
+		const kennedy = page.changes.find((change) => change.date === '1988-02-18')!;
+		expect(kennedy.events[0].map((part) => part.text).join('')).toBe('Anthony M. Kennedy took the seat of Lewis F. Powell, Jr.');
 	});
 
 	it('names who held a seat before and how service ended', () => {

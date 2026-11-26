@@ -164,6 +164,19 @@ export function personForCase(name: string, decided: string | undefined, caseKey
 	return people[0];
 }
 
+/**
+ * The address of the page of the Justice a case record names, or nothing
+ * where the name is no one's (per curiam's "The Court") or fits more than one
+ * Justice serving that day, so a link never goes to the wrong person.
+ */
+export function justiceLinkFor(name: string, decided: string | undefined, caseKey: string): string | undefined {
+	try {
+		return justicePath(personForCase(name, decided, caseKey));
+	} catch {
+		return undefined;
+	}
+}
+
 /** A record's decision day, YYYY-MM-DD, when it gives the full date. */
 export function decidedDay(issued: { 'date-parts'?: number[][] } | undefined): string | undefined {
 	const parts = issued?.['date-parts']?.[0] ?? [];

@@ -7,7 +7,7 @@
 -->
 <script lang="ts">
 	import CitationMarks from '#lib/components/CitationMarks.svelte';
-	import CountBadge from '#lib/components/CountBadge.svelte';
+	import Collapsible from '#lib/components/Collapsible.svelte';
 	import DataTable from '#lib/components/DataTable.svelte';
 	import InfoPage from '#lib/components/InfoPage.svelte';
 	import ReviewStatus from '#lib/components/ReviewStatus.svelte';
@@ -68,8 +68,7 @@
 	{/snippet}
 
 	{#if data.cases.length > 0}
-		<section aria-labelledby="cases">
-			<h2 id="cases">Cases <CountBadge count={data.cases.length} /></h2>
+		<Collapsible heading="Cases" identifier="cases" count={data.cases.length}>
 			<DataTable identifier="cases-{data.key}" label="Table: cases {data.name} took part in or is named in" columns={caseColumns} rows={caseRows} rowName={['case', 'cases']} count={false} download="{data.key}-cases">
 				{#snippet cell(row: TableRow, column: TableColumn)}
 					{@const item = caseByKey.get(row.key)}
@@ -77,18 +76,17 @@
 					{#if item && column.key === 'role'}{item.role}{#if item.result}<span class="result small muted">{item.result}</span>{/if}<CitationMarks marks={item.citations} />{/if}
 				{/snippet}
 			</DataTable>
-		</section>
+		</Collapsible>
 	{/if}
 
 	{#if data.events.length > 0}
-		<section aria-labelledby="events">
-			<h2 id="events">Life and events</h2>
+		<Collapsible heading="Life and events" identifier="events">
 			<ul class="events">
 				{#each data.events as event, index (index)}
 					<li><span class="when">{event.when}</span><span>{event.text}<CitationMarks marks={event.citations} /></span></li>
 				{/each}
 			</ul>
-		</section>
+		</Collapsible>
 	{/if}
 </InfoPage>
 

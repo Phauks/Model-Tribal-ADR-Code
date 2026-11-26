@@ -124,8 +124,9 @@
 		display: inline-flex;
 		align-items: center;
 		gap: var(--space-1);
-		padding: 0 var(--space-2) 0 calc(var(--space-2) - 2px);
-		border: 2px solid var(--color-link);
+		/* The same size as the page's other badges, such as who keeps the page and its history (.review-badge in global.css; Trevor, Nov. 24, 2026, found the federal badge larger than the rest). */
+		padding: 0 var(--space-2);
+		border: 1px solid var(--color-link);
 		border-radius: 999px;
 		/* A badge that is a button would otherwise take the browser's button fill, which the link color fails contrast on in the dark theme. */
 		background: none;
@@ -137,7 +138,6 @@
 	}
 
 	.recognition-badges-small .recognition-badge {
-		border-width: 1.5px;
 		font-size: 0.875em;
 	}
 
@@ -161,16 +161,11 @@
 		color: var(--color-ink);
 	}
 
-	/* A badge that opens its explanation is a button that looks like the badge. */
+	/* A badge that opens its explanation is a button that looks like the badge, and keeps the pill's height like the other badges, still at least 24 px to tap (WCAG 2.5.8). */
 	.recognition-badge-button {
-		min-height: var(--layout-target-minimum);
+		min-height: 1.5rem;
 		font-family: inherit;
 		cursor: pointer;
-	}
-
-	/* In a table's small badges the button keeps the pill's height, still at least 24 px to tap (WCAG 2.5.8). */
-	.recognition-badges-small .recognition-badge-button {
-		min-height: 1.5rem;
 	}
 
 	.recognition-badge-button:hover {

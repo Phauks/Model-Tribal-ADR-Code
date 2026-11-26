@@ -19,7 +19,7 @@ citation:
       - 11
       - 24
 caption:
-  printed: MEIGS and AL v. M'CLUNG'S lessee
+  printed: MEIGS AND AL. v. M'CLUNG'S LESSEE
   source: https://tile.loc.gov/storage-services/service/ll/usrep/usrep013/usrep013011/usrep013011.pdf
   checked: '2026-11-24'
 opinions:
@@ -100,7 +100,7 @@ nations_in_case:
   checked: '2026-11-24'
   named: []
 review:
-  status: unverified
+  status: verified
   by: scripts/caselaw/supreme_court_native_cases.py
   date: '2026-11-24'
   checks:
@@ -111,8 +111,8 @@ review:
     result: agree
     detail: Scan has 8 pages; the report runs 11 to 18
   - check: caption
-    result: settled
-    detail: 'Caption found in the scan''s text at 0.78. Read from the scan by an AI reader (record right): p.11 running head: MEIGS AxD AL -. MCLUNG''S LyssEa. (MEIGS AND AL. v. M''CLUNG''S LESSEE); p.12 V. between the parties.'
+    result: confirmed
+    detail: 'Caption found in the scan''s text at 0.78. Read from the scan by an AI reader (record right): p.11 running head: MEIGS AxD AL -. MCLUNG''S LyssEa. (MEIGS AND AL. v. M''CLUNG''S LESSEE); p.12 V. between the parties.. Confirmed: the report prints (read from the page images) p. 11: "MEIGS AND AL. v. M''CLUNG''S LESSEE." (the OCR reads this line poorly; checked on the page image) (printed in small capitals; the record had the Caselaw Access Project''s mixed case)'
   - check: decided
     result: agree
     detail: Supreme Court Library's table (from the Court's minutes, docket) Feb. 13, 1815*; Database 1815-02-13

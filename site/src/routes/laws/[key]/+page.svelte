@@ -8,10 +8,10 @@
 	and where this site cites it.
 -->
 <script lang="ts">
-	import CountBadge from '#lib/components/CountBadge.svelte';
+	import Collapsible from '#lib/components/Collapsible.svelte';
 	import ImpactAccounts from '#lib/components/ImpactAccounts.svelte';
 	import InfoPage from '#lib/components/InfoPage.svelte';
-	import { quoteContext } from '#lib/essays/quote-context-view.ts';
+	import RecordBoxSections from '#lib/components/RecordBoxSections.svelte';
 	import type { PageProps } from './$types';
 
 	let { data }: PageProps = $props();
@@ -34,38 +34,30 @@
 <InfoPage title={data.name} lead={data.citation} glance={data.glance} sources={data.sources} trail={[{ label: 'Library', href: '/library' }]}>
 	{#if data.fullTitle}<p class="full-title muted">{data.fullTitle}</p>{/if}
 
-	{#if data.bodyHtml}
-		<div class="essay-text law-body" use:quoteContext={data.bodyHtml}>
-			<!-- eslint-disable-next-line svelte/no-at-html-tags -- built from the repository's own Markdown -->
-			{@html data.bodyHtml}
-		</div>
-	{/if}
+	<RecordBoxSections sections={data.boxSections} />
 
 	<ImpactAccounts accounts={data.accounts} />
 
 	{#if data.readingHtml}
-		<section aria-labelledby="where-to-read">
-			<h2 id="where-to-read">Where to read it <CountBadge count={data.readingCount} /></h2>
+		<Collapsible heading="Where to read it" identifier="where-to-read" count={data.readingCount}>
 			<!-- eslint-disable-next-line svelte/no-at-html-tags -- built from the law's own record -->
 			<p class="law-reading">{@html data.readingHtml}</p>
-		</section>
+		</Collapsible>
 	{/if}
 
 	{#if data.text}
-		<section aria-labelledby="law-text">
-			<h2 id="law-text">Text</h2>
+		<Collapsible heading="Text" identifier="law-text">
 			{#if data.text.isPdf}
 				<iframe class="law-frame" src={data.text.file} title="{data.name} (PDF)" loading="lazy"></iframe>
 			{:else}
 				<!-- The saved text or web page runs nothing and loads nothing (src/lib/server/public-copy-serving.ts). -->
 				<iframe class="law-frame law-frame-text" src={data.text.file} title={data.name} sandbox="" referrerpolicy="no-referrer" loading="lazy"></iframe>
 			{/if}
-		</section>
+		</Collapsible>
 	{/if}
 
 	{#if data.essays.length + data.nations.length > 0}
-		<section aria-labelledby="on-this-site">
-			<h2 id="on-this-site">On this site <CountBadge count={data.essays.length + data.nations.length} /></h2>
+		<Collapsible heading="On this site" identifier="on-this-site" count={data.essays.length + data.nations.length}>
 			<dl class="summary-list">
 				{#if data.nations.length > 0}
 					<div>
@@ -93,23 +85,13 @@
 					</div>
 				{/if}
 			</dl>
-		</section>
+		</Collapsible>
 	{/if}
 </InfoPage>
 
 <style>
 	.full-title {
 		margin-top: 0;
-	}
-
-	.law-body :global(.essay-case-part > .essay-block-label) {
-		display: none;
-	}
-
-	.law-body :global(.essay-case-part) {
-		margin: 0;
-		padding: 0;
-		border: none;
 	}
 
 	.law-reading :global(.reading-list) {

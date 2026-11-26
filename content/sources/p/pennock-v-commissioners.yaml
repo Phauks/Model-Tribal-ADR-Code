@@ -35,7 +35,9 @@ history:
   status: live
   last_checked: '2026-11-24'
 court_dates:
-  printed: Decided Oct. 31, 1881
+  argued:
+  - '1880-12-06'
+  printed: Argued Dec. 6, 1880; decided Feb. 28, 1881
   source: https://www.supremecourt.gov/opinions/datesofdecisions.pdf
   note: The report prints only the term. These dates are from the Supreme Court Library's table of decision and argument dates, which takes them from the Court's Engrossed Minutes.
   checked: '2026-11-24'
@@ -105,7 +107,7 @@ nations_in_case:
   checked: '2026-11-24'
   named: []
 review:
-  status: unverified
+  status: verified
   by: scripts/caselaw/supreme_court_native_cases.py
   date: '2026-11-24'
   checks:
@@ -119,11 +121,11 @@ review:
     result: agree
     detail: Caption found in the scan's text at 0.98
   - check: decided
-    result: differs
-    detail: Supreme Court Library's table (from the Court's minutes) Oct. 31, 1881; Database 1881-02-28
+    result: agree
+    detail: Supreme Court Library's table (from the Court's minutes) Feb. 28, 1881; Database 1881-02-28
   - check: opinions
     result: agree
     detail: 'Report: majority Field p. 44; Database writers: Field'
   - check: bench
-    result: differs
-    detail: The Database lists Noah Haynes Swayne, William Strong, not serving on the day of decision; left out of the bench
+    result: confirmed
+    detail: 'The Database lists Noah Haynes Swayne, William Strong, not serving on the day of decision; left out of the bench. Confirmed: the Court''s list of Justices: Noah Haynes Swayne served 1862-01-27 to 1881-01-24; William Strong served 1870-03-14 to 1880-12-14, so not on the bench on 1881-02-28'

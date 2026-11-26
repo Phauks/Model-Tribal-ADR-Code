@@ -111,7 +111,7 @@ nations_in_case:
   checked: '2026-11-24'
   named: []
 review:
-  status: unverified
+  status: verified
   by: scripts/caselaw/supreme_court_native_cases.py
   date: '2026-11-24'
   checks:
@@ -131,8 +131,8 @@ review:
     result: agree
     detail: 'Printed and Database: 1898-04-11'
   - check: opinions
-    result: settled
-    detail: 'Report: majority Brown p. 14; Database writers: Brown; scan pages [(14, 9)]. Read from the scan by an AI reader (corrected): p. 8: "MR. JUSTICE BROWN delivered the opinion of the court." (OCR: "Afr. JUsTICE BDowN delivered the opinion of the court."). The record''s page 14 has no support in the scan; the only opinion start in the scan lines is p. 8. The dissent notices (pp. 17, 36: "The CHIEF JUSTICE, MR. JUSTICE HARLAN and MR. JUSTICE BREWER dissented.") carry no opinion text, so they are not listed.'
+    result: confirmed
+    detail: 'Report: majority Brown p. 14; Database writers: Brown; scan pages [(14, 9)]. Read from the scan by an AI reader (corrected): p. 8: "MR. JUSTICE BROWN delivered the opinion of the court." (OCR: "Afr. JUsTICE BDowN delivered the opinion of the court."). The record''s page 14 has no support in the scan; the only opinion start in the scan lines is p. 8. The dissent notices (pp. 17, 36: "The CHIEF JUSTICE, MR. JUSTICE HARLAN and MR. JUSTICE BREWER dissented.") carry no opinion text, so they are not listed.. Confirmed: The report prints p. 8: "JUsTICE BDowN delivered the opinion of the court"'
   - check: bench
     result: agree
     detail: No Oyez votes; each opinion writer in the report sits on the Database's bench on the side the opinion takes

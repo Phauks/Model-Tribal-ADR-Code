@@ -111,7 +111,7 @@ nations_in_case:
   checked: '2026-11-24'
   named: []
 review:
-  status: unverified
+  status: verified
   by: scripts/caselaw/supreme_court_native_cases.py
   date: '2026-11-24'
   checks:
@@ -122,8 +122,8 @@ review:
     result: agree
     detail: Scan has 19 pages; the report runs 481 to 499
   - check: caption
-    result: differs
-    detail: Caption found in the scan's text at 0.79
+    result: confirmed
+    detail: 'Caption found in the scan''s text at 0.79. Confirmed: the report prints the caption "BANKER v. HARVEY; QUEVAS v. HARVEY" on p. 481 (text layer, 0.97)'
   - check: printed dates
     result: agree
     detail: Caselaw Access Project "Argued March 20, 21, 1901. Decided May 13, 1901."; scan "Argued arch 20, 21, 1901.-Decided May 13, 1901."

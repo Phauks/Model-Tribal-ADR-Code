@@ -77,6 +77,17 @@ export function tribalCourtOpinions(): TribalCourtOpinion[] {
 	return opinionCache;
 }
 
+/**
+ * How many opinions in the data set the site does not show, such as those held
+ * back for a privacy review (research/capture-index-overrides.json). Only the
+ * number: which ones are held back is never published.
+ */
+export function heldBackOpinionCount(): number {
+	const file = path.join(repositoryRoot, 'research/tribal-court-opinions/opinions.csv');
+	const rows = existsSync(file) ? parseCsv(readFileSync(file, 'utf8')) : [];
+	return rows.length - tribalCourtOpinions().length;
+}
+
 /** One nation's opinions, newest first. */
 export function opinionsOf(nationId: string): TribalCourtOpinion[] {
 	return tribalCourtOpinions().filter((opinion) => opinion.nations.includes(nationId));

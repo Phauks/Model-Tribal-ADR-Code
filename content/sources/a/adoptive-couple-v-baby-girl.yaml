@@ -129,7 +129,7 @@ nations_in_case:
   checked: '2026-11-24'
   named: []
 review:
-  status: unverified
+  status: verified
   by: scripts/caselaw/supreme_court_native_cases.py
   date: '2026-11-24'
   checks:
@@ -140,8 +140,8 @@ review:
     result: agree
     detail: Scan has 56 pages; the report runs 637 to 692
   - check: caption
-    result: settled
-    detail: 'Caption found in the scan''s text at 0.87. Read from the scan by an AI reader (corrected): p. 637: ADOPTIVE COUPLE v. BABY GIRL, a minor child under the age of fourteen years, et al. (the record''s ''Petitioners'' is not in the printed caption).'
+    result: confirmed
+    detail: 'Caption found in the scan''s text at 0.87. Read from the scan by an AI reader (corrected): p. 637: ADOPTIVE COUPLE v. BABY GIRL, a minor child under the age of fourteen years, et al. (the record''s ''Petitioners'' is not in the printed caption).. Confirmed: the report prints the caption "ADOPTIVE COUPLE v. BABY GIRL, a minor child under the age of fourteen years, et al." on p. 637 (text layer, 1.00)'
   - check: printed dates
     result: agree
     detail: Caselaw Access Project "Argued April 16, 2013. Decided June 25, 2013."; scan "Argued April 16, 2013—Decided June 25, 2013"
@@ -149,8 +149,8 @@ review:
     result: agree
     detail: 'Printed and Database: 2013-06-25'
   - check: opinions
-    result: settled
-    detail: 'Report: majority Alito p. 641, concurrence Thomas p. 656, concurrence Breyer p. 666, dissent Scalia p. 667; Database writers: Alito, Breyer, Scalia. Read from the scan by an AI reader (corrected): p. 641: Justice Alito delivered the opinion of the Court. p. 656: Justice Thomas, concurring. p. 666: Justice Breyer, concurring. p. 667: Justice Scalia, dissenting. p. 668: Justice Sotomayor, with whom Justice Ginsburg and Justice Kagan join, and with whom Justice Scalia joins in part, dissenting.'
+    result: confirmed
+    detail: 'Report: majority Alito p. 641, concurrence Thomas p. 656, concurrence Breyer p. 666, dissent Scalia p. 667; Database writers: Alito, Breyer, Scalia. Read from the scan by an AI reader (corrected): p. 641: Justice Alito delivered the opinion of the Court. p. 656: Justice Thomas, concurring. p. 666: Justice Breyer, concurring. p. 667: Justice Scalia, dissenting. p. 668: Justice Sotomayor, with whom Justice Ginsburg and Justice Kagan join, and with whom Justice Scalia joins in part, dissenting.. Confirmed: the report prints (read from the page images) p. 641: "JUSTICE ALITO delivered the opinion of the Court."; p. 656: "JUSTICE THOMAS, concurring."; p. 666: "JUSTICE BREYER, concurring."; p. 667: "JUSTICE SCALIA, dissenting."; p. 668: "JUSTICE SOTOMAYOR, with whom JUSTICE GINSBURG and JUSTICE KAGAN join, and with whom JUSTICE SCALIA joins in part, dissenting." (the words "JUSTICE THOMAS concurs" on p. 690 are in Justice Sotomayor''s dissent, describing his opinion)'
   - check: bench
     result: agree
     detail: Oyez and the Database give the same Justices and votes

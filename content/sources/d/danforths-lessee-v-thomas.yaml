@@ -100,7 +100,7 @@ nations_in_case:
   checked: '2026-11-24'
   named: []
 review:
-  status: unverified
+  status: verified
   by: scripts/caselaw/supreme_court_native_cases.py
   date: '2026-11-24'
   checks:
@@ -111,8 +111,8 @@ review:
     result: agree
     detail: Scan has 4 pages; the report runs 155 to 158
   - check: caption
-    result: settled
-    detail: 'Caption found in the scan''s text at 0.55. Read from the scan by an AI reader (record right): p.155 running head: DAN ORTH''S LESSEE .P. / THoiMI (DANFORTH''S LESSEE v. THOMAS); p.156: ToDD, J., delivered the opinion of the court as follows.'
+    result: confirmed
+    detail: 'Caption found in the scan''s text at 0.55. Read from the scan by an AI reader (record right): p.155 running head: DAN ORTH''S LESSEE .P. / THoiMI (DANFORTH''S LESSEE v. THOMAS); p.156: ToDD, J., delivered the opinion of the court as follows.. Confirmed: the report prints (read from the page images) p. 155: "DANFORTH''S LESSEE v. THOMAS." (the OCR reads this line poorly; checked on the page image) (printed in small capitals below the heading LOCAL LAW)'
   - check: decided
     result: agree
     detail: Supreme Court Library's table (from the Court's minutes, docket) Mar. 8, 1816*; Database 1816-03-08

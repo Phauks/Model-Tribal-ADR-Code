@@ -111,7 +111,7 @@ nations_in_case:
   checked: '2026-11-24'
   named: []
 review:
-  status: unverified
+  status: verified
   by: scripts/caselaw/supreme_court_native_cases.py
   date: '2026-11-24'
   checks:
@@ -125,14 +125,14 @@ review:
     result: agree
     detail: Caption found in the scan's text at 1.00
   - check: printed dates
-    result: agree
-    detail: Caselaw Access Project "Argued December 13, 14, 1892. Decided April 3, 1893."; scan "Argued December 13,14, 1S92. -Decided April 3, 1893."
+    result: confirmed
+    detail: 'Caselaw Access Project "Argued December 13, 14, 1892. Decided April 3, 1893."; scan "Argued December 13,14, 1S92. -Decided April 3, 1893.". Confirmed: the report prints (read from the page images) p. 427: "Argued December 13, 14, 1892. Decided April 3, 1893." (the OCR reads this line poorly; checked on the page image) (the OCR reads 13 as 18; the page image shows 13)'
   - check: decided
     result: agree
     detail: 'Printed and Database: 1893-04-03'
   - check: opinions
-    result: settled
-    detail: 'Report: majority Fuller p. 463; Database writers: Fuller; scan pages [(463, 464)]. Read from the scan by an AI reader (record right): p. 463: "MR. CHIEF JUSTICE FULLER delivered the opinon of the court." (OCR: "MR. CHIEF JusTicE FULLER delivered the opinon of the / court.")'
+    result: confirmed
+    detail: 'Report: majority Fuller p. 463; Database writers: Fuller; scan pages [(463, 464)]. Read from the scan by an AI reader (record right): p. 463: "MR. CHIEF JUSTICE FULLER delivered the opinon of the court." (OCR: "MR. CHIEF JusTicE FULLER delivered the opinon of the / court."). Confirmed: the report prints (read from the page images) p. 463: "MR. CHIEF JUSTICE FULLER delivered the opinion of the court."'
   - check: bench
     result: agree
     detail: No Oyez votes; each opinion writer in the report sits on the Database's bench on the side the opinion takes

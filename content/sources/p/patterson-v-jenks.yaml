@@ -103,7 +103,7 @@ nations_in_case:
   checked: '2026-11-24'
   named: []
 review:
-  status: unverified
+  status: verified
   by: scripts/caselaw/supreme_court_native_cases.py
   date: '2026-11-24'
   checks:
@@ -114,8 +114,8 @@ review:
     result: agree
     detail: Scan has 23 pages; the report runs 216 to 238
   - check: caption
-    result: settled
-    detail: 'Caption found in the scan''s text at 0.88. Read from the scan by an AI reader (record right): p.216: WM. PATTERSON, PLAINTIFF IN ERROR -vs. THE REV. WILLIS JENKS ET AL. DEFENDANTS IN ERROR (Wm. is William; the record''s expansion is consistent with it).'
+    result: confirmed
+    detail: 'Caption found in the scan''s text at 0.88. Read from the scan by an AI reader (record right): p.216: WM. PATTERSON, PLAINTIFF IN ERROR -vs. THE REV. WILLIS JENKS ET AL. DEFENDANTS IN ERROR (Wm. is William; the record''s expansion is consistent with it).. Confirmed: the report prints (read from the page images) p. 216: "WILLIAM PATTERSON, PLAINTIFF IN ERROR vs. THE REV. WILLIS JENKS ET AL. DEFENDANTS IN ERROR."'
   - check: decided
     result: agree
     detail: Supreme Court Library's table (from the Court's minutes) Feb. 13, 1829; Database 1829-02-13

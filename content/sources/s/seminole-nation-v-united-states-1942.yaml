@@ -114,7 +114,7 @@ nations_in_case:
   - named_as: Seminole Nation
     reason: More than one of today's nations shares this name (calusa-seminole-nation, oklewaha-band-of-yamassee-seminole-indians, seminole-nation-of-florida, seminole-tribe-of-florida, the-seminole-nation-of-oklahoma, united-mascogo-seminole-tribe-of-texas); which the case concerns has not been checked.
 review:
-  status: unverified
+  status: verified
   by: scripts/caselaw/supreme_court_native_cases.py
   date: '2026-11-24'
   checks:
@@ -128,14 +128,14 @@ review:
     result: agree
     detail: Caption found in the scan's text at 1.00
   - check: printed dates
-    result: agree
-    detail: Caselaw Access Project "Argued April 2, 1942. Decided May 11, 1942."; scan "Argued April 2, 1942.-Decided May 11, 1042."
+    result: confirmed
+    detail: 'Caselaw Access Project "Argued April 2, 1942. Decided May 11, 1942."; scan "Argued April 2, 1942.-Decided May 11, 1042.". Confirmed: the report prints "Argued April 2, 1942. Decided May 11, 1942." on p. 310 (text layer, 0.97)'
   - check: decided
     result: agree
     detail: 'Printed and Database: 1942-05-11'
   - check: opinions
-    result: settled
-    detail: 'Report: majority Murphy p. 310; Database writers: Jackson, Murphy. Read from the scan by an AI reader (record right): p. 310: MR. JU''STICE MURPHY delivered the opinion of the Court. p. 317: MR. JUSTICE JACKSON dissents. (bare line with no opinion text, not an opinion)'
+    result: confirmed
+    detail: 'Report: majority Murphy p. 310; Database writers: Jackson, Murphy. Read from the scan by an AI reader (record right): p. 310: MR. JU''STICE MURPHY delivered the opinion of the Court. p. 317: MR. JUSTICE JACKSON dissents. (bare line with no opinion text, not an opinion). Confirmed: The report prints p. 310: "Mr. Justice Murrey delivered the opinion of the ’ Court"; votes noted without an opinion: p. 317: "MR. JUSTICE JACKSON dissents"'
   - check: bench
     result: agree
     detail: No Oyez votes; each opinion writer in the report sits on the Database's bench on the side the opinion takes

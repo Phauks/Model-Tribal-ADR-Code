@@ -110,7 +110,7 @@ nations_in_case:
   checked: '2026-11-24'
   named: []
 review:
-  status: unverified
+  status: verified
   by: scripts/caselaw/supreme_court_native_cases.py
   date: '2026-11-24'
   checks:
@@ -118,8 +118,8 @@ review:
     result: agree
     detail: Caselaw Access Project 274 U.S. 544 "Joines v. Patterson"; Database 274 U.S. 544 "JOINES v. PATTERSON et al."
   - check: scan
-    result: differs
-    detail: Scan has 10 pages; the report runs 544 to 554
+    result: confirmed
+    detail: 'Scan has 10 pages; the report runs 544 to 554. Confirmed: the scan''s pages are the report''s pp. 544-553 (10 of 10 pages show their page number or running head); p. 554 is also the first page of Clark v. Poor, and is in that case''s scan'
   - check: caption
     result: agree
     detail: Caption found in the scan's text at 1.00

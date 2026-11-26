@@ -31,7 +31,8 @@ opinions:
     page: 89
   - kind: dissent in part
     justice: Wiley Blount Rutledge
-    page: 129
+    page: 127
+    scan_page: 44
 original_link: https://www.loc.gov/item/usrep337086/
 retrieved: '2026-11-24'
 history:
@@ -114,7 +115,7 @@ nations_in_case:
   checked: '2026-11-24'
   named: []
 review:
-  status: unverified
+  status: verified
   by: scripts/caselaw/supreme_court_native_cases.py
   date: '2026-11-24'
   checks:
@@ -122,8 +123,8 @@ review:
     result: agree
     detail: Caselaw Access Project 337 U.S. 86 "Hynes, Regional Director, Fish & Wildlife Service v. Grimes Packing Co."; Database 337 U.S. 86 "HYNES, REGIONAL DIRECTOR, FISH AND WILDLIFE SERVICE, DEPARTMENT OF THE INTERIOR, v. GRIMES PACKING CO. ET AL."
   - check: scan
-    result: differs
-    detail: Scan has 53 pages; the report runs 86 to 136
+    result: confirmed
+    detail: 'Scan has 53 pages; the report runs 86 to 136. Confirmed: the scan''s pages are the report''s pp. 86-136 (51 of 51 pages show their page number or running head); scan page 10 is not a report page; scan page 11 is not a report page'
   - check: caption
     result: agree
     detail: Caption found in the scan's text at 1.00
@@ -134,8 +135,8 @@ review:
     result: agree
     detail: 'Printed and Database: 1949-05-31'
   - check: opinions
-    result: settled
-    detail: 'Report: majority Reed p. 89, dissent in part Rutledge p. 127; Database writers: Reed, Rutledge; scan pages [(127, 129)]. Read from the scan by an AI reader (corrected): p. 89: MR. JUSTICE REED delivered the opinion of the Court. p. 129: MR. JUSTICE RUTLEDGE, with whom MR. JUSTICE BLACK and MR. JUSTICE MURPHY agree, dissenting in part. (The record''s page 127 is not where the dissent begins.)'
+    result: confirmed
+    detail: 'Report: majority Reed p. 89, dissent in part Rutledge p. 127; Database writers: Reed, Rutledge; scan pages [(127, 129)]. Read from the scan by an AI reader (corrected): p. 89: MR. JUSTICE REED delivered the opinion of the Court. p. 129: MR. JUSTICE RUTLEDGE, with whom MR. JUSTICE BLACK and MR. JUSTICE MURPHY agree, dissenting in part. (The record''s page 127 is not where the dissent begins.). Confirmed: The report prints p. 89: "MR. JUSTICE REED delivered the opinion of the Court"; p. 127: "MR. JUSTICE RUTLEDGE, with whom MR. JUSTICE BLACK and MR. JUSTICE MURPHY agree, dissenting in part"'
   - check: bench
     result: agree
     detail: No Oyez votes; each opinion writer in the report sits on the Database's bench on the side the opinion takes
