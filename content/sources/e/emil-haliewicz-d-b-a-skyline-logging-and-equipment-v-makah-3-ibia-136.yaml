@@ -33,9 +33,14 @@ rights:
   redistribution: true
 jurisdictions:
 - level: federal
+tribes:
+- makah-indian-tribe-of-the-makah-indian-reservation
 nations_in_case:
   checked: '2026-11-26'
-  named: []
+  named:
+  - nation: makah-indian-tribe-of-the-makah-indian-reservation
+    named_as: Makah Indian Tribe
+    role: party
 access:
   open: true
   pull_from:
