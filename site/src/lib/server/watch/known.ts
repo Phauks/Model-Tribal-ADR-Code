@@ -96,6 +96,8 @@ export interface KnownLookup {
 	byFederalRegisterNumber: Map<string, KnownSource>;
 	byChecksum: Map<string, string>;
 	byTitle: Map<string, KnownSource>;
+	/** Each record's title by the name a match gives it (a source key or "document:<history>"). */
+	titles: Map<string, string>;
 	nationNames: { identifier: string; name: string; pattern: RegExp }[];
 }
 
@@ -108,7 +110,10 @@ export function lookupFor(index: KnownIdentifiers): KnownLookup {
 	const byFederalRegisterNumber = new Map<string, KnownSource>();
 	const byChecksum = new Map<string, string>();
 	const byTitle = new Map<string, KnownSource>();
+	const titles = new Map<string, string>();
+	for (const history of index.histories) titles.set(`document:${history.identifier}`, history.title);
 	for (const source of index.sources) {
+		titles.set(source.key, source.title);
 		const link = source.link ? normalizeLink(source.link) : undefined;
 		if (link && !byLink.has(link)) byLink.set(link, source);
 		if (source.federalRegisterNumber) byFederalRegisterNumber.set(source.federalRegisterNumber, source);
@@ -123,7 +128,7 @@ export function lookupFor(index: KnownIdentifiers): KnownLookup {
 		.flatMap((nation) => nation.names.filter((name) => name.length >= 6).map((name) => ({ identifier: nation.identifier, name })))
 		.sort((first, second) => second.name.length - first.name.length)
 		.map((entry) => ({ ...entry, pattern: new RegExp(`(^|[^A-Za-z])${escapeForPattern(entry.name).replace(/\s+/g, '\\s+')}([^A-Za-z]|$)`, 'i') }));
-	return { index, byLink, byFederalRegisterNumber, byChecksum, byTitle, nationNames };
+	return { index, byLink, byFederalRegisterNumber, byChecksum, byTitle, titles, nationNames };
 }
 
 export interface MatchInput {

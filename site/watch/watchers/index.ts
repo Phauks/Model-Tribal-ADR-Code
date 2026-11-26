@@ -37,6 +37,8 @@ export const notWatched: NotWatched[] = [
 	{ feed: 'charts', kind: 'derived', reason: 'Rebuilt from records; the census watcher will feed their inputs.' },
 	{ feed: 'glossary-terms', kind: 'never', reason: 'Definitions come only from Black’s Law Dictionary, 12th ed. (project rule).' },
 	{ feed: 'forms', kind: 'never', reason: 'The project’s own forms.' },
+	{ feed: 'land-cessions', kind: 'never', reason: 'Royce’s schedule (1899) and the Forest Service’s tracing of it are fixed; scripts/maps/land_cessions.py relinks them as treaty and nation records change.' },
+	{ feed: 'historic-maps', kind: 'never', reason: 'Royce’s 1899 map sheets do not change.' },
 
 	// Nation page parts (top-level fields of schemas/tribe.schema.json).
 	{ feed: 'nation:id', kind: 'never', reason: 'The project’s own identifier.' },

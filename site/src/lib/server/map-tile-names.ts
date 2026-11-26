@@ -1,0 +1,25 @@
+import tileManifest from '../../../geography/map-tiles.json';
+import cessionFile from '../../../geography/land-cessions.json';
+
+/** The years in which a cession was made, in order, for the year slider's stops. */
+export function cessionYears(): number[] {
+	return [...new Set((cessionFile.cessions as { dates: string[] }[]).flatMap((entry) => entry.dates.map((date) => Number(date.slice(0, 4)))))].sort((first, second) => first - second);
+}
+
+/** The tile sets' names, which change whenever their files do. */
+export const tileSetNames = {
+	landAreas: tileManifest.landAreas.set,
+	basemap: tileManifest.basemap.set,
+	maximumZoom: tileManifest.basemap.maxZoom,
+	/** The whole world, to zoom 8, where the basemap above (cut to the United States and its territories) has nothing. */
+	worldBasemap: tileManifest.worldBasemap.set,
+	worldMaximumZoom: tileManifest.worldBasemap.maxZoom,
+	/** Royce's land cessions (1899), as the Forest Service traced them (tools/build-historic-maps.mjs). */
+	landCessions: tileManifest.landCessions.set,
+	landCessionsMaximumZoom: tileManifest.landCessions.maxZoom,
+	/** The years in which a cession was made, for the year slider's ‹ and › buttons. */
+	landCessionYears: cessionYears(),
+	/** The Census Bureau's land areas for every year it published, each shape with the years it was drawn so (tools/build-historic-maps.mjs). */
+	landAreasByYear: tileManifest.landAreasByYear.set,
+	landAreaYears: tileManifest.landAreasByYear.years
+};

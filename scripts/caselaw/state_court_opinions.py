@@ -27,10 +27,11 @@ Subcommands, in the order they are run:
            organization as a party) and write one source record per case
            (content/sources/, kind state-case or territorial-case, topic
            state-court-indian-law, review unverified). Cases already held are
-           skipped by citation. Cases about children or protected persons, and
-           estates decided in or after --estates-from, are held for a privacy
-           review and listed only in --private/held-for-privacy-review.csv, which
-           never goes in git (decision record 0060). With --file, each opinion is
+           skipped by citation. Cases about children or protected persons are
+           held for a privacy review, and so are estate cases unless
+           --show-estates is given (or, with --estates-from, only those decided
+           in or after that year). Held cases are listed only in
+           --private/held-for-privacy-review.csv, which never goes in git (decision record 0060). With --file, each opinion is
            built as an HTML page of the court's opinions only, without the
            publisher's head matter, uploaded to R2 under caselaw-access-project/
            and added to research/capture-index.csv. Counts go to
@@ -40,7 +41,7 @@ Run from the repository root:
 
     python3 scripts/caselaw/state_court_opinions.py scan --work DIR [--jobs 8]
     python3 scripts/caselaw/state_court_opinions.py excerpts --work DIR --auto 10 --batches 8
-    python3 scripts/caselaw/state_court_opinions.py write --work DIR --auto 10 --private DIR --estates-from 1976 --file
+    python3 scripts/caselaw/state_court_opinions.py write --work DIR --auto 10 --private DIR --show-estates --file
 """
 
 from __future__ import annotations
@@ -160,7 +161,8 @@ def scan(args: argparse.Namespace) -> None:
 
 # Kinds of case the Tribal court opinions' privacy rules cover (decision record 0057;
 # research/analyses/2026-11-24-tribal-child-cases-privacy.md): children, protection orders and,
-# at the coordinator's request on Nov. 26, 2026, estates. Matched in the caption, then the text.
+# at the coordinator's request on Nov. 26, 2026, estates, which Trevor chose to show the same day
+# (--show-estates). Matched in the caption, then the text.
 SENSITIVE_CAPTION = re.compile(
     r"\b(?:adoption|custody|guardianship|welfare of|interest of|dependency|dependent|neglected|delinquen|juvenile|minor|"
     r"child(?:ren)?|infant|parental rights|paternity|protective order|protection order|estate of|estate|heirs|will of|probate|"
@@ -175,9 +177,11 @@ def sensitivity(case: dict) -> str:
     caption = (case.get("name") or "") + " " + (case.get("name_abbreviation") or "")
     if SENSITIVE_CAPTION.search(caption):
         match = SENSITIVE_CAPTION.search(caption).group(0).lower()
-        return "estate" if match in ("estate of", "estate", "heirs", "will of", "probate") else "child or protected person"
-    text = case_text(case)
-    hits = SENSITIVE_TEXT.findall(text)
+        if match not in ("estate of", "estate", "heirs", "will of", "probate"):
+            return "child or protected person"
+        # An estate case that is also about a child (an adoption, a minor heir's guardianship) is held as a child case.
+        return "child or protected person" if len(SENSITIVE_TEXT.findall(case_text(case))) >= 3 else "estate"
+    hits = SENSITIVE_TEXT.findall(case_text(case))
     return "child or protected person" if len(hits) >= 3 else ""
 
 
@@ -367,7 +371,7 @@ def write(args: argparse.Namespace) -> None:
             skipped += 1  # held already; every Supreme Court Native case has its own record
             continue
         reason = sensitivity(case)
-        if reason == "estate" and args.estates_from and int((row["date"] or "0")[:4] or 0) < args.estates_from:
+        if reason == "estate" and (args.show_estates or (args.estates_from and int((row["date"] or "0")[:4] or 0) < args.estates_from)):
             reason = ""  # an older estate: shown, per the choice recorded in decision record 0060
         choice = selected[row["id"]]
         if reason:
@@ -493,6 +497,7 @@ def main() -> None:
     p.add_argument("--work", required=True)
     p.add_argument("--auto", type=int, default=10)
     p.add_argument("--private", required=True, help="folder outside git for the list of held cases, which names people")
+    p.add_argument("--show-estates", action="store_true", help="show every estate case (Trevor, Nov. 26, 2026); only child and protected-person cases are held")
     p.add_argument("--estates-from", type=int, default=0, help="hold estate cases decided in this year or later (0: hold every estate case)")
     p.add_argument("--file", action="store_true", help="also file each opinion page in the bucket and the capture index")
     args = parser.parse_args()

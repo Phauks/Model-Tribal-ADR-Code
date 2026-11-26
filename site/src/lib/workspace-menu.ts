@@ -30,6 +30,7 @@ export type WorkspacePageName =
 	| 'nonprofit'
 	| 'service-checks'
 	| 'wayback'
+	| 'watch'
 	| 'site-text'
 	| 'sponsors'
 	| 'orders'
@@ -85,6 +86,8 @@ export const workspacePages: readonly WorkspacePage[] = [
 	// A nation reviewer reads and comments on files sent about their nation.
 	{ name: 'nation-uploads', label: 'Files about your nation', link: '/workspace/nation-uploads', category: 'Files and sources', needs: 'comment-on-nation-uploads' },
 	{ name: 'library', label: 'Source library', link: '/workspace/library', category: 'Files and sources', needs: 'search-source-library' },
+	// What the source watch found (docs/source-watch.md, "The review queue"): add, link or dismiss each item.
+	{ name: 'watch', label: 'Source watch', link: '/workspace/watch', category: 'Files and sources', needs: 'review-watch' },
 	{ name: 'nation-teams', label: 'Nation teams', link: '/workspace/nation-teams', category: 'Nations', needs: 'manage-people' },
 	// What nations published on their own pages, for the project to read afterwards.
 	{ name: 'nation-pages', label: 'Nations’ changes', link: '/workspace/nation-pages', category: 'Nations', needs: 'review-nation-pages' },

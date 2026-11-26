@@ -19,7 +19,7 @@ import { applyRules } from '../src/lib/server/watch/rules.ts';
 import { runWatcher } from '../src/lib/server/watch/run.ts';
 import { isDue, nextDue, readSchedule } from '../src/lib/server/watch/schedule.ts';
 import { candidateCounts, candidatesWithStatus, latestRuns, readCursor, type StoredCandidate } from '../src/lib/server/watch/store.ts';
-import { chooseTriageProvider, readAnswer, type TriageAnswer } from '../src/lib/server/watch/triage.ts';
+import { chooseTriageProvider, chosenModels, readAnswer, readWorkersAnswer, type TriageAnswer, type TriageQuestion } from '../src/lib/server/watch/triage.ts';
 import { defineWatcher, watcherIsOn, type CheckContext, type FoundItem, type WatcherDefinition } from '../src/lib/server/watch/watcher.ts';
 import ecfr, { itemFor as ecfrItem } from '../watch/watchers/ecfr.ts';
 import federalRegister, { feedsFor, itemFor as federalRegisterItem } from '../watch/watchers/federal-register.ts';
@@ -314,10 +314,44 @@ describe('triage by model', () => {
 		expect(() => readAnswer({ content: [{ type: 'text' }] })).toThrow();
 	});
 
-	it('stays off until a provider is named and bound', () => {
+	it('reads a Workers AI tool call and prices it', () => {
+		const { answer, use } = readWorkersAnswer({
+			choices: [{ message: { tool_calls: [{ type: 'function', function: { name: 'classify', arguments: JSON.stringify({ relevant: true, collection: 'intergovernmental-agreements', nations: [], proposed: 'new-version', hard: true, sensitivity: ['protection-order'], confidence: 0.8, reason: 'Extends a compact.' }) } }] } }],
+			usage: { prompt_tokens: 3000, completion_tokens: 200, prompt_tokens_details: { cached_tokens: 1000 } }
+		});
+		expect(answer).toMatchObject({ proposed: 'new-version', hard: true, sensitivity: ['protection-order'] });
+		expect(use).toEqual({ inputTokens: 2000, outputTokens: 200, cacheReadTokens: 1000, cacheWriteTokens: 0 });
+		// 2,000 × $0.30 + 1,000 × $0.10 + 200 × $1.00 per million = $0.0009.
+		expect(costMicrodollars('@cf/thinkingmachines/inkling-2-small', use)).toBe(900);
+		// The older shape, with tool_calls at the top and arguments as an object.
+		expect(readWorkersAnswer({ tool_calls: [{ name: 'classify', arguments: { relevant: false, proposed: 'not-relevant' } }] }).answer.proposed).toBe('not-relevant');
+		expect(() => readWorkersAnswer({ response: 'No tool.' })).toThrow();
+	});
+
+	it('uses Workers AI by default, and needs the binding', async () => {
+		expect(chooseTriageProvider({}).name).toBe('workers-ai');
 		expect(chooseTriageProvider({}).ready).not.toBe(true);
-		expect(chooseTriageProvider({ WATCH_TRIAGE_PROVIDER: 'ai-gateway' }).ready).not.toBe(true);
-		expect(chooseTriageProvider({ WATCH_TRIAGE_PROVIDER: 'ai-gateway', modelGateway: { run: async () => ({}) } }).ready).toBe(true);
+		expect(chosenModels({})).toEqual({ cheap: '@cf/thinkingmachines/inkling-2-small', top: '@cf/thinkingmachines/inkling-2-small' });
+		expect(chosenModels({ WATCH_TRIAGE_PROVIDER: 'ai-gateway', WATCH_CHEAP_MODEL: ' ' })?.cheap).toBe('anthropic/claude-haiku-5.5');
+		expect(chosenModels({ WATCH_TRIAGE_PROVIDER: 'none' })).toBeNull();
+		expect(chooseTriageProvider({ WATCH_TRIAGE_PROVIDER: 'none' }).ready).not.toBe(true);
+		expect(chooseTriageProvider({ WATCH_TRIAGE_PROVIDER: 'ai-gateway', models: { run: async () => ({}) } }).ready).toBe(true);
+		const calls: { model: string; input: Record<string, unknown>; options?: unknown }[] = [];
+		const provider = chooseTriageProvider({
+			models: {
+				run: async (model, input, options) => {
+					calls.push({ model, input, options });
+					return { choices: [{ message: { tool_calls: [{ function: { name: 'classify', arguments: '{"relevant":true,"collection":"tribal-codes","nations":[],"proposed":"add","hard":false,"sensitivity":[],"confidence":0.9,"reason":"A code."}' } }] } }], usage: { prompt_tokens: 10, completion_tokens: 5 } };
+				}
+			}
+		});
+		const question: TriageQuestion = { candidate: 1, watcher: 'federal-register', title: 'A notice', date: null, link: null, summary: null, facts: {}, feeds: [], possibleMatch: null };
+		expect((await provider.classify(question)).answer.collection).toBe('tribal-codes');
+		await provider.decideHard(question, null);
+		expect(calls.map((call) => [call.model, call.input.reasoning_effort, call.options])).toEqual([
+			['@cf/thinkingmachines/inkling-2-small', 'low', undefined],
+			['@cf/thinkingmachines/inkling-2-small', 'high', undefined]
+		]);
 	});
 
 	it('holds an item the model flags, and closes one it is sure is not relevant', () => {
