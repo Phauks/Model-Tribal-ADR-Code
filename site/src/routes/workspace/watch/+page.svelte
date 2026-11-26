@@ -26,6 +26,8 @@
 	import CountBadge from '#lib/components/CountBadge.svelte';
 	import { readableDate } from '#lib/readable-date.ts';
 	import { feedLabel as feedLabelFrom, hostingLabels, proposedLabels, sensitivityLabels } from '#lib/watch-labels.ts';
+	import Dropdown from '#lib/components/Dropdown.svelte';
+	import SearchableDropdown from '#lib/components/SearchableDropdown.svelte';
 	import type { PageProps } from './$types';
 
 	let { data, form }: PageProps = $props();
@@ -158,13 +160,12 @@
 			{#each Object.entries(data.filters) as [kind, value] (kind)}<input type="hidden" name={kind} value={value} />{/each}
 			{#each Object.entries(data.choices) as [kind, values] (kind)}
 				{#if !(kind in data.filters) && values.length > 0}
-					<label class="small"
-						>{filterLabels[kind]}
-						<select name={kind}>
-							<option value="">Any</option>
-							{#each values as choice (choice.value)}<option value={choice.value}>{kind === 'collection' ? feedLabel(choice.value) : kind === 'proposed' ? (proposedLabels[choice.value] ?? choice.label) : choice.label}</option>{/each}
-						</select>
-					</label>
+					{@const filterChoices = [{ value: '', label: 'Any' }, ...values.map((choice) => ({ value: choice.value, label: kind === 'collection' ? feedLabel(choice.value) : kind === 'proposed' ? (proposedLabels[choice.value] ?? choice.label) : choice.label }))]}
+					{#if values.length > 12}
+						<SearchableDropdown label={filterLabels[kind]} name={kind} choices={filterChoices} value="" />
+					{:else}
+						<Dropdown label={filterLabels[kind]} name={kind} choices={filterChoices} value="" />
+					{/if}
 				{/if}
 			{/each}
 			<button class="button" type="submit">Apply</button>
@@ -396,11 +397,6 @@
 		border: 1px solid var(--color-line);
 		border-radius: var(--radius-control);
 		background: var(--color-surface);
-	}
-	.filter-form label {
-		display: flex;
-		flex-direction: column;
-		gap: 4px;
 	}
 	.badge {
 		display: inline-flex;
