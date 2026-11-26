@@ -16,8 +16,8 @@
  *   check it (tests/sitemap.test.ts).
  * - Private and signed-in pages (src/lib/private-pages.ts) and tools that
  *   hold nothing to read, such as search itself.
- * - Stubs (src/lib/stubs.ts): a stub joins the sitemap on its own once its
- *   page has a write-up.
+ * - Stubs (src/lib/stubs.ts), only while sitemapLeavesOutStubs
+ *   (src/lib/sitemap.ts) says so. They are listed now.
  * - Files, views of a page with a query, and other sites' pages.
  *
  * What nations chose to hide is left out when the sitemap is asked for
@@ -146,7 +146,7 @@ function filesByPage(days: ReadonlyMap<string, string>): Map<string, string[]> {
 	return files;
 }
 
-/** Every page for the sitemap, in the order of the lists it comes from, each once, less the stubs' pages (src/lib/server/stub-list.ts, given by src/lib/server/sitemap-files.ts). */
+/** Every page for the sitemap, in the order of the lists it comes from, each once, less any stubs' pages given (src/lib/server/sitemap-files.ts, sitemapLeavesOutStubs). */
 export function sitemapEntries(stubs: ReadonlySet<string>): (SitemapEntry & { part: string })[] {
 	const pages = [...new Set(reachedLinks().map(sitemapPath).filter((page): page is string => Boolean(page)))].filter((page) => !stubs.has(page));
 	const days = fileDays();

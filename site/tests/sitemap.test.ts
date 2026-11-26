@@ -10,7 +10,7 @@ import { copyItemId } from '#lib/nation-restrictions.ts';
 import { copyPagePath } from '#lib/public-copies.ts';
 import { filterSitemapEntries, type SiteRestrictions } from '#lib/restricted-files.ts';
 import { openToSearchEngines, robotsText } from '#lib/search-engines.ts';
-import { indexXml, maxEntriesPerPart, partNamePattern, splitPart, urlsetXml, withNationChanges, type BuiltSitemapPart, type SitemapEntry } from '#lib/sitemap.ts';
+import { indexXml, maxEntriesPerPart, sitemapLeavesOutStubs, partNamePattern, splitPart, urlsetXml, withNationChanges, type BuiltSitemapPart, type SitemapEntry } from '#lib/sitemap.ts';
 import { collections } from '#lib/server/collections.ts';
 import { nationsForReview, publicCopies, repositoryRoot, sources } from '#lib/server/content.ts';
 import { itemLink } from '#lib/server/search-index.ts';
@@ -22,7 +22,7 @@ import { heldBackOpinionCount } from '#lib/server/tribal-court-opinions.ts';
 
 const read = (file: string) => readFileSync(path.join(repositoryRoot, file), 'utf8');
 
-/** A page the tests treat as a stub, to check stubs are left out (the build gives the real list, src/lib/server/sitemap-files.ts). */
+/** A page the tests treat as a stub, to check stubs can be left out (sitemapLeavesOutStubs; the build gives the real list, src/lib/server/sitemap-files.ts). */
 const stubForTest = '/cases/worcester-v-georgia';
 
 let parts: BuiltSitemapPart[];
@@ -148,8 +148,11 @@ describe('held, restricted and private pages never appear', () => {
 		for (const page of Object.keys(notInSitemap)) expect(pages.has(page), page).toBe(false);
 	});
 
-	it('leaves out stubs, files, views with a query and other sites', () => {
+	it('can leave out stubs, and leaves out files, views with a query and other sites', () => {
 		expect(pages.has(stubForTest)).toBe(false);
+		// Stubs are listed (docs/sitemap.md, "Stubs"); the switch takes them out.
+		expect(sitemapLeavesOutStubs).toBe(false);
+		expect(sitemapParts(new Set()).some((part) => part.entries.some((entry) => entry.path === stubForTest))).toBe(true);
 		expect(sitemapPath('/nations/map?cession=1')).toBeUndefined();
 		expect(sitemapPath('/copies/historic-maps/royce-1899/ca000001.jpg')).toBeUndefined();
 		expect(sitemapPath('https://www.bia.gov/')).toBeUndefined();

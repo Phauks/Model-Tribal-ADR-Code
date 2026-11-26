@@ -32,6 +32,14 @@ export interface BuiltSitemapIndex {
 	parts: { name: string; count: number; lastmod?: string }[];
 }
 
+/**
+ * Whether stubs (src/lib/stubs.ts) are left out of the sitemap. They are
+ * listed: most case, law and person pages are still stubs, and each has the
+ * citation and where to read the text, which is what people search for
+ * (Nov. 26, 2026). Set to true to leave them out until they have a write-up.
+ */
+export const sitemapLeavesOutStubs = false;
+
 /** The protocol's limit on addresses in one file. */
 export const maxEntriesPerPart = 50_000;
 

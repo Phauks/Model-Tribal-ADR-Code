@@ -22,11 +22,14 @@ Everything here is project design unless a source is cited.
 | Restricted nation records, and those waiting for the nation's approval | Not in `nations()` or `documentHistories()`, and their copies are withheld (`content.ts`, `isWithheld`). |
 | What a nation chose to hide or cite only (decision record 0056) | Filtered when the sitemap is asked for (`filterSitemapEntries` in `site/src/lib/restricted-files.ts`), the same rules as `/search/index.json`. A case's or law's page that shows a hidden copy is left out too. |
 | Private and signed-in pages | `site/src/lib/private-pages.ts`, the same lists `hooks.server.ts` uses to keep them out of caches. |
-| Stubs | `site/src/lib/server/stub-list.ts`. A stub joins the sitemap on its own once its page has a write-up. |
 | Tools with nothing to read, and views of a page | `notInSitemap` in `site/src/lib/server/sitemap-build.ts` (search, Starred, Read offline, Verify a file), and any address with a query, such as a land cession's view of the Map. |
 | Files and other sites | Only the site's own pages are listed. A source document's page (`/copies/view/…`) is listed, not the file. |
 
-`site/tests/sitemap.test.ts` checks each row against the real records: no held opinion, no Board decision on the held list, no state court opinion held back, no unpublished nation, no private page, no stub, and nothing a nation hid or asked to cite only.
+`site/tests/sitemap.test.ts` checks each row against the real records: no held opinion, no Board decision on the held list, no state court opinion held back, no unpublished nation, no private page, and nothing a nation hid or asked to cite only.
+
+## Stubs
+
+Stubs (`site/src/lib/stubs.ts`) are listed. On Nov. 26, 2026 most case, law and person pages were still stubs, and each has the citation and where to read the text, which is what people search for: leaving them out would have left 84 of about 7,500 cases. The privacy holds above apply to them as to every page. To leave stubs out until they have a write-up, set `sitemapLeavesOutStubs` to `true` in `site/src/lib/sitemap.ts`; the build then takes them out (`site/src/lib/server/stub-list.ts`).
 
 ## Opening the site at the first release
 
