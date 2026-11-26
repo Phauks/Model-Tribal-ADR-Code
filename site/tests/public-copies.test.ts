@@ -94,7 +94,8 @@ describe('the details a copy’s page shows', () => {
 		const details = copyDetails(copyDetailsShard(first))?.[first.key];
 		expect(details?.title).toBe(first.title);
 		expect(details?.list.slug).toBeTruthy();
-	});
+		// The first call works out every copy's details, which takes 15 to 25 seconds on a CI runner.
+	}, 60_000);
 
 	it('gives a tribal court opinion its citation', () => {
 		const opinion = publicCopies().find((each) => each.topic === 'caselaw-access-project');
