@@ -27,7 +27,7 @@
 </script>
 
 <svelte:head>
-	<title>{name} · Bureau of Indian Affairs · Model Tribal ADR Code</title>
+	<title>{name} · Bureau of Indian Affairs · Tribal Law Project</title>
 </svelte:head>
 
 {#snippet nationList(rows: NationIndexRow[])}

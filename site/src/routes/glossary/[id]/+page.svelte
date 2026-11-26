@@ -24,7 +24,7 @@
 </script>
 
 <svelte:head>
-	<title>{entry.term} · Glossary · Model Tribal ADR Code</title>
+	<title>{entry.term} · Glossary · Tribal Law Project</title>
 </svelte:head>
 
 <InfoPage title={entry.term} {glance} sources={data.sources} trail={[{ label: 'Glossary', href: '/glossary' }]}>

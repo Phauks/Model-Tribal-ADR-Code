@@ -11,7 +11,7 @@
 </script>
 
 <svelte:head>
-	<title>Statistics · Model Tribal ADR Code</title>
+	<title>Statistics · Tribal Law Project</title>
 	<meta name="description" content="How many nations, documents, laws, cases, people and other records the site holds." />
 </svelte:head>
 

@@ -20,7 +20,7 @@
 </script>
 
 <svelte:head>
-	<title>{data.title} · Model Tribal ADR Code</title>
+	<title>{data.title} · Tribal Law Project</title>
 </svelte:head>
 
 <InfoPage title={data.title} {glance} trail={[{ label: 'Licenses', href: '/licenses' }]}>

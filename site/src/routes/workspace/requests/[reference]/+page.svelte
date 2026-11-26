@@ -30,7 +30,7 @@
 </script>
 
 <svelte:head>
-	<title>Request {request.reference} · Workspace · Model Tribal ADR Code</title>
+	<title>Request {request.reference} · Workspace · Tribal Law Project</title>
 </svelte:head>
 
 <Breadcrumbs

@@ -46,7 +46,7 @@
 </script>
 
 <svelte:head>
-	<title>{data.event.title} · Events · Workspace · Model Tribal ADR Code</title>
+	<title>{data.event.title} · Events · Workspace · Tribal Law Project</title>
 </svelte:head>
 
 <Breadcrumbs

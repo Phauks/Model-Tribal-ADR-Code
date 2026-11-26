@@ -9,7 +9,7 @@
 </script>
 
 <svelte:head>
-	<title>Plan a room · Video rooms · Workspace · Model Tribal ADR Code</title>
+	<title>Plan a room · Video rooms · Workspace · Tribal Law Project</title>
 </svelte:head>
 
 <Breadcrumbs

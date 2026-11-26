@@ -35,7 +35,7 @@
 </script>
 
 <svelte:head>
-	<title>{data.name} · Cases · Model Tribal ADR Code</title>
+	<title>{data.name} · Cases · Tribal Law Project</title>
 	<meta name="description" content="{data.name}, {data.citation}: what the court decided, its opinions, the nations it names and where to read it." />
 </svelte:head>
 

@@ -60,7 +60,7 @@ export function calendarFile(events: readonly CalendarEvent[], site: string, nam
 	const lines = [
 		'BEGIN:VCALENDAR',
 		'VERSION:2.0',
-		'PRODID:-//Model Tribal ADR Code//Events//EN',
+		'PRODID:-//Tribal Law Project//Events//EN',
 		'CALSCALE:GREGORIAN',
 		'METHOD:PUBLISH',
 		`X-WR-CALNAME:${escapeText(name)}`,

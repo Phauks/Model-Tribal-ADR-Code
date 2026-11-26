@@ -9,7 +9,7 @@
 </script>
 
 <svelte:head>
-	<title>Your orders · Model Tribal ADR Code</title>
+	<title>Your orders · Tribal Law Project</title>
 </svelte:head>
 
 <h1>Your orders</h1>

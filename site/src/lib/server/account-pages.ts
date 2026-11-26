@@ -216,7 +216,7 @@ export async function accountDataExport(database: D1Database, account: SignedInA
 	]);
 	return {
 		about:
-			'Everything the Model Tribal ADR Code project keeps with your account, as of the time below. Settings, starred pages and pages saved for offline are kept on each device instead; export them from Settings, under This device.',
+			'Everything the Tribal Law Project keeps with your account, as of the time below. Settings, starred pages and pages saved for offline are kept on each device instead; export them from Settings, under This device.',
 		madeAt: now(),
 		account: accountRow ? { ...accountRow, has_password: Boolean(accountRow.has_password) } : null,
 		workspace: person ?? null,

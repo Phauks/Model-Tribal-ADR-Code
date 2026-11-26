@@ -16,7 +16,7 @@
 </script>
 
 <svelte:head>
-	<title>{data.toTeam ? 'Write to the nation’s team' : 'Make a request'} · Model Tribal ADR Code</title>
+	<title>{data.toTeam ? 'Write to the nation’s team' : 'Make a request'} · Tribal Law Project</title>
 </svelte:head>
 
 <div class="reading">

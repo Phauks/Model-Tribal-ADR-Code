@@ -16,7 +16,7 @@
 </script>
 
 <svelte:head>
-	<title>{event.title} · Events · Model Tribal ADR Code</title>
+	<title>{event.title} · Events · Tribal Law Project</title>
 	{#if event.summary}<meta name="description" content={event.summary} />{/if}
 	{#if event.status === 'draft'}<meta name="robots" content="noindex, nofollow" />{/if}
 </svelte:head>

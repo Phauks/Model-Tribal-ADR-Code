@@ -170,7 +170,7 @@
 </script>
 
 <svelte:head>
-	<title>Timeline · Nations · Model Tribal ADR Code</title>
+	<title>Timeline · Nations · Tribal Law Project</title>
 	<meta
 		name="description"
 		content="Treaties, land, laws and agreements, court decisions, Tribal court opinions and federal law on one timeline, from {firstYear} to the present, for every Native nation."

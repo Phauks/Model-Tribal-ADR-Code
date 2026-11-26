@@ -12,7 +12,7 @@
 </script>
 
 <svelte:head>
-	<title>Register · {data.event.title} · Events · Model Tribal ADR Code</title>
+	<title>Register · {data.event.title} · Events · Tribal Law Project</title>
 	<meta name="robots" content="noindex" />
 </svelte:head>
 

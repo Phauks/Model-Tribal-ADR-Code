@@ -36,8 +36,8 @@
 </script>
 
 <svelte:head>
-	<title>{data.name} · Contributors · Model Tribal ADR Code</title>
-	<meta name="description" content="{data.name}: credit and published work on the Model Tribal ADR Code." />
+	<title>{data.name} · Contributors · Tribal Law Project</title>
+	<meta name="description" content="{data.name}: credit and published work on the Tribal Law Project." />
 </svelte:head>
 
 <InfoPage title={data.name} {picture} {glance} trail={[{ label: 'People', href: '/people' }]}>

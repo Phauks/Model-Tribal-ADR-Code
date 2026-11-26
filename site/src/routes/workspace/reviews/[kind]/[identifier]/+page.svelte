@@ -19,7 +19,7 @@
 </script>
 
 <svelte:head>
-	<title>{data.subject.title} · Reviews · Workspace · Model Tribal ADR Code</title>
+	<title>{data.subject.title} · Reviews · Workspace · Tribal Law Project</title>
 </svelte:head>
 
 {#if data.allowed.capacity !== 'nation'}

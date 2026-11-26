@@ -101,7 +101,7 @@
 </script>
 
 <svelte:head>
-	<title>Order a printed copy · Model Tribal ADR Code</title>
+	<title>Order a printed copy · Tribal Law Project</title>
 </svelte:head>
 
 <div class="reading">

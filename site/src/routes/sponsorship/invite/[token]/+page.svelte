@@ -5,7 +5,7 @@
 </script>
 
 <svelte:head>
-	<title>Invitation to manage a sponsorship · Model Tribal ADR Code</title>
+	<title>Invitation to manage a sponsorship · Tribal Law Project</title>
 	<meta name="robots" content="noindex, nofollow" />
 </svelte:head>
 

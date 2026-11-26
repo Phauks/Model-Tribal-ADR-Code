@@ -9,7 +9,7 @@
 </script>
 
 <svelte:head>
-	<title>{pageName}, as of {dateTime(change.madeAt)} · Model Tribal ADR Code</title>
+	<title>{pageName}, as of {dateTime(change.madeAt)} · Tribal Law Project</title>
 	<meta name="robots" content="noindex" />
 </svelte:head>
 

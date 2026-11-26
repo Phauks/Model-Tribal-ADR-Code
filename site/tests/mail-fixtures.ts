@@ -110,7 +110,7 @@ export function testSettings(overrides: Partial<MailSettings> = {}): MailSetting
 		domain: 'example.org',
 		noticeAddress: 'lead@personal.example',
 		siteAddress: 'https://example.org',
-		senderName: 'Model Tribal ADR Code',
+		senderName: 'Tribal Law Project',
 		outreach: {
 			carrier: 'smtp',
 			from: 'outreach@outreach.example.org',

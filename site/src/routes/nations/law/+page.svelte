@@ -117,7 +117,7 @@
 </script>
 
 <svelte:head>
-	<title>Find the law · Model Tribal ADR Code</title>
+	<title>Find the law · Tribal Law Project</title>
 	<meta name="description" content="Pick a Native nation and a subject to see its laws, court decisions, agreements and the federal law that applies." />
 </svelte:head>
 

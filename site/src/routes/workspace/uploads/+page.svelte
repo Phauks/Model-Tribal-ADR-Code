@@ -88,7 +88,7 @@
 </script>
 
 <svelte:head>
-	<title>Uploads · Workspace · Model Tribal ADR Code</title>
+	<title>Uploads · Workspace · Tribal Law Project</title>
 </svelte:head>
 
 <div class="wide">

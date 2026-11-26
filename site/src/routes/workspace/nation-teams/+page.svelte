@@ -38,7 +38,7 @@
 </script>
 
 <svelte:head>
-	<title>Nation teams · Workspace · Model Tribal ADR Code</title>
+	<title>Nation teams · Workspace · Tribal Law Project</title>
 </svelte:head>
 
 <h1>Nation teams</h1>

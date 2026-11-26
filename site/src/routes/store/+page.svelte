@@ -81,7 +81,7 @@
 </script>
 
 <svelte:head>
-	<title>Store · Model Tribal ADR Code</title>
+	<title>Store · Tribal Law Project</title>
 	<meta name="description" content="Printed copies of the Model Tribal ADR Code." />
 </svelte:head>
 

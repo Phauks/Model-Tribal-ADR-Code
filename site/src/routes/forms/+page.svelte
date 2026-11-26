@@ -5,7 +5,7 @@
 </script>
 
 <svelte:head>
-	<title>Forms · Model Tribal ADR Code</title>
+	<title>Forms · Tribal Law Project</title>
 	<meta
 		name="description"
 		content="Forms for sharing a story, an interview or a document with the project. Fill one in online or print it."

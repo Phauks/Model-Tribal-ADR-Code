@@ -53,7 +53,7 @@
 </script>
 
 <svelte:head>
-	<title>Supreme Court · Model Tribal ADR Code</title>
+	<title>Supreme Court · Tribal Law Project</title>
 </svelte:head>
 
 <Breadcrumbs trail={[{ label: 'Library', href: '/library' }]} />

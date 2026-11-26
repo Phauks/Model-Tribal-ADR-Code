@@ -65,7 +65,7 @@
 </script>
 
 <svelte:head>
-	<title>{data.name} · Biographies · Model Tribal ADR Code</title>
+	<title>{data.name} · Biographies · Tribal Law Project</title>
 	<meta name="description" content="{data.name}: {data.lead}" />
 </svelte:head>
 

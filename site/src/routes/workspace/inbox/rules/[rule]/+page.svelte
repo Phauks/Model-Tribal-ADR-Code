@@ -10,7 +10,7 @@
 </script>
 
 <svelte:head>
-	<title>{data.rule.name} · Rules · Inbox · Workspace · Model Tribal ADR Code</title>
+	<title>{data.rule.name} · Rules · Inbox · Workspace · Tribal Law Project</title>
 </svelte:head>
 
 <Breadcrumbs

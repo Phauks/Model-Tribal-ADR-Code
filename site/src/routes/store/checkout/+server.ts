@@ -77,7 +77,7 @@ export const POST: RequestHandler = async ({ request, url, getClientAddress, loc
 			reference: identifier,
 			description: `${fileSet.title}, ${format.label.toLowerCase()} (${sizeOf(choice.size)?.name ?? choice.size}), ${fileSet.pages} pages, printed and mailed by Lulu`,
 			amountInCents: quote.priceCents,
-			gift: gift.cents > 0 ? { amountInCents: gift.cents, description: 'Gift to Model Tribal ADR Code' } : undefined,
+			gift: gift.cents > 0 ? { amountInCents: gift.cents, description: 'Gift to Tribal Law Project' } : undefined,
 			shippingCountry: address.country_code,
 			successAddress: `${url.origin}/orders/${identifier}?paid=1`,
 			cancelAddress: `${url.origin}/store`

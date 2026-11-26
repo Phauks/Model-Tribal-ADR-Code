@@ -58,7 +58,7 @@ export function giftState(environment: WorkerEnvironment): GiftState {
 		open: true,
 		mode,
 		stripe,
-		receiver: receiver || 'Model Tribal ADR Code (test mode: no real money moves)'
+		receiver: receiver || 'Tribal Law Project (test mode: no real money moves)'
 	};
 }
 

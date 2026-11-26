@@ -55,7 +55,7 @@
 {/snippet}
 
 <svelte:head>
-	<title>Requests · Workspace · Model Tribal ADR Code</title>
+	<title>Requests · Workspace · Tribal Law Project</title>
 </svelte:head>
 
 <h1>Requests</h1>

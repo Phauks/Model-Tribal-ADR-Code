@@ -85,7 +85,7 @@
 </script>
 
 <svelte:head>
-	<title>Access · Workspace · Model Tribal ADR Code</title>
+	<title>Access · Workspace · Tribal Law Project</title>
 </svelte:head>
 
 <h1>Access</h1>

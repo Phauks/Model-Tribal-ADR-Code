@@ -14,7 +14,7 @@
 </script>
 
 <svelte:head>
-	<title>Federal offices · Nations · Model Tribal ADR Code</title>
+	<title>Federal offices · Nations · Tribal Law Project</title>
 </svelte:head>
 
 <Breadcrumbs trail={[{ label: 'Nations', href: '/nations' }]} />

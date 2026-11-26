@@ -82,7 +82,7 @@
 </script>
 
 <svelte:head>
-	<title>{data.name} · Supreme Court · Model Tribal ADR Code</title>
+	<title>{data.name} · Supreme Court · Tribal Law Project</title>
 	<meta name="description" content="{data.name} of the Supreme Court of the United States, {data.years}: its Justices, its history and the cases on this site it decided." />
 </svelte:head>
 
