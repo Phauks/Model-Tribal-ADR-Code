@@ -86,6 +86,25 @@
 			}
 		}))
 	);
+	// The land the nation's predecessors ceded, from Royce's schedule (Trevor, 2026-11-26, historic maps mockup 6). A treaty with no page here is named by Royce's schedule alone; each map sheet opens in the image viewer.
+	const cessionColumns: TableColumn[] = [
+		{ key: 'royce', header: 'Royce no.', type: 'number', isRowHeader: true, sortable: true, searchable: true },
+		{ key: 'ceded', header: 'Ceded', type: 'date', sortable: true },
+		{ key: 'by', header: 'By', sortable: true, searchable: true, custom: true },
+		{ key: 'maps', header: 'Royce’s map', searchable: true, filterable: true, custom: true }
+	];
+	const cessionRows: TableRow[] = $derived(
+		data.landCessions.map((cession) => ({
+			key: cession.royce,
+			cells: {
+				royce: { text: cession.royce, sortValue: Number.parseFloat(cession.royce) },
+				ceded: { text: cession.dates.map((date) => readableDate(date)).join('; '), sortValue: cession.dates[0] ?? '' },
+				by: { text: cession.treaties.length > 0 ? cession.treaties.map((treaty) => treaty.name).join('; ') : cession.schedule },
+				maps: { text: cession.sheets.map((sheet) => sheet.name).join(', '), values: cession.sheets.map((sheet) => sheet.name) }
+			}
+		}))
+	);
+	const cessionsByRoyce = $derived(new Map(data.landCessions.map((cession) => [cession.royce, cession])));
 	const treatyMarks = $derived(new Map(data.treaties.map((treaty) => [treaty.key, treaty.citations])));
 
 	// The court cases that name the nation, as a party or as what the case is
@@ -445,6 +464,35 @@
 						{/snippet}
 					</DataTable>
 				{/if}
+			</Collapsible>
+		{/if}
+
+		<!-- 7a''. Land cessions: Royce's schedule (1899), with the present-day nations the Forest Service lists (historic maps mockup 6). -->
+		{#if data.landCessions.length > 0}
+			<Collapsible heading="Land cessions" identifier="cessions-heading" count={data.landCessions.length}>
+				<DataTable
+					identifier="land-cessions"
+					label="Table: land cessions"
+					columns={cessionColumns}
+					rows={cessionRows}
+					defaultSort={{ key: 'ceded', direction: 'ascending' }}
+					rowName={['cession', 'cessions']}
+					download="{data.page.id}-land-cessions"
+				>
+					{#snippet cell(row: TableRow, column: TableColumn)}
+						{@const cession = cessionsByRoyce.get(row.key)}
+						{#if cession && column.key === 'by'}
+							{#if cession.treaties.length > 0}
+								{#each cession.treaties as treaty, index (treaty.key)}{#if index > 0}{'; '}{/if}<a href="/laws/{treaty.key}">{treaty.name}</a>{/each}
+							{:else}
+								{cession.schedule}
+							{/if}
+						{:else if cession && column.key === 'maps'}
+							{#each cession.sheets as sheet, index (sheet.plate)}{#if index > 0}{', '}{/if}<a href={sheet.image} {...imageViewerAttributes(`Royce’s map: ${sheet.name}`, { title: `Royce’s map: ${sheet.name}`, original: sheet.link })}>{sheet.name}</a>{/each}
+						{/if}
+					{/snippet}
+				</DataTable>
+				<p class="small muted">From Royce’s schedule (1899), with the present-day nations the U.S. Forest Service lists.</p>
 			</Collapsible>
 		{/if}
 

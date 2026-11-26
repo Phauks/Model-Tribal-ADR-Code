@@ -360,4 +360,6 @@ export interface NationMapData {
 	landAreas: { code: string; name: string; kind: string }[];
 	/** The Land Areas view drawn with MapLibre over the site's own tiles, at the Census Bureau's full detail (TileMap.svelte). */
 	tileMap?: TileMapData;
+	/** The land cessions that name the nation, which the Land Areas view can draw (historic maps mockup 6): Royce's numbers, the box around them and the years they were made. */
+	cessions?: { royce: string[]; bounds?: [number, number, number, number]; years: number[] };
 }

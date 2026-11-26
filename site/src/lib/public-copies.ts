@@ -48,13 +48,15 @@ export interface PublicCopy {
  * Media types the Worker serves as copies. A saved web page is served in a
  * sandbox, with nothing it could load or run. Plain text is a document's
  * transcribed text, such as the executive orders' (scripts/law/executive_order_records.py).
+ * JPEG pictures are scanned maps, such as Royce's land cession sheets (tools/build-historic-maps.mjs).
  */
-export const servedMediaTypes = new Set(['application/pdf', 'text/html', 'text/plain']);
+export const servedMediaTypes = new Set(['application/pdf', 'text/html', 'text/plain', 'image/jpeg']);
 
 /** How a link names the file's kind, such as "PDF" or "saved web page". */
 export function mediaLabel(mediaType: string): string {
 	if (mediaType === 'text/html') return 'saved web page';
 	if (mediaType === 'text/plain') return 'text';
+	if (mediaType === 'image/jpeg') return 'JPEG picture';
 	return 'PDF';
 }
 

@@ -25,6 +25,7 @@ import { storySummaries } from './stories.ts';
 import { buildFormCatalog } from './form-catalog.ts';
 import { copyPagePath } from '../public-copies.ts';
 import { dataChartList, dataChartTrail } from '../data-chart-list.ts';
+import { landCessions, royceSheets } from './land-cessions.ts';
 
 /** The headings the collections are grouped under, in page order. */
 export const collectionGroups = ['Native nations', 'Federal law', 'Courts and cases', 'People', 'Reference'] as const;
@@ -153,6 +154,14 @@ export const collections: Collection[] = [
 	{ identifier: 'federal-regulations', title: 'Regulations', group: 'Federal law', sourceKinds: ['federal-regulation'], items: sourcesOfKind(['federal-regulation']) },
 	{ identifier: 'executive-orders', title: 'Executive Orders', group: 'Federal law', sourceKinds: ['executive-order'], items: sourcesOfKind(['executive-order']) },
 	{ identifier: 'federal-register-notices', title: 'Federal Register Notices', group: 'Federal law', sourceKinds: ['federal-register-notice'], items: sourcesOfKind(['federal-register-notice']) },
+	// Royce's land cessions (1899), each opening on the Map page at its year (historic maps, 2026-11-26).
+	{
+		identifier: 'land-cessions',
+		title: 'Land Cessions',
+		group: 'Federal law',
+		detailHeader: 'Named in Royce’s schedule',
+		items: () => landCessions().map((cession) => ({ title: `Royce cession ${cession.royce}`, href: `/nations/map?cession=${cession.royce}`, year: cession.dates[0] ? Number(cession.dates[0].slice(0, 4)) : undefined, detail: cession.schedule }))
+	},
 
 	// Courts and cases
 	{ identifier: 'supreme-court-cases', title: 'U.S. Supreme Court Cases', group: 'Courts and cases', items: casesBy(supremeCourt) },
@@ -207,6 +216,7 @@ export const collections: Collection[] = [
 
 	// Reference
 	{ identifier: 'source-copies', title: 'Source Documents', group: 'Reference', list: '/copies', items: () => publicCopies().map((copy) => ({ title: copy.title ?? copy.key, href: copyPagePath(copy) })) },
+	{ identifier: 'historic-maps', title: 'Historic Maps', group: 'Reference', years: () => '1899', items: () => [...royceSheets().values()].map((sheet) => ({ title: `Royce’s map: ${sheet.name}`, href: sheet.image, year: 1899 })) },
 	{ identifier: 'charts', title: 'Charts', group: 'Reference', items: () => dataChartList.map((chart) => ({ title: chart.title, href: dataChartTrail(chart).at(-1)?.href })) },
 	{ identifier: 'glossary-terms', title: 'Glossary Terms', group: 'Reference', items: () => glossary().map((entry) => ({ title: entry.term, href: `/glossary/${entry.id}` })) },
 	{ identifier: 'forms', title: 'Forms', group: 'Reference', items: () => buildFormCatalog().map((form) => ({ title: form.title, href: `/forms/${form.slug}` })) }

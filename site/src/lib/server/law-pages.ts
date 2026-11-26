@@ -23,6 +23,7 @@ import type { FactGroup } from './justice-pages.ts';
 import { accountsOf, type AccountEntry } from './impact-accounts.ts';
 import { isoOf, nationsCiting, orderNumber, orderPresident, type LawNation } from './law-facts.ts';
 import { isLawRecord, recordName } from './law-records.ts';
+import { boundsOfCessions, cessionsOfTreaty, treatyMapData } from './land-cessions.ts';
 import { savedCopyFor, savedCopyLink } from './markdown.ts';
 import { presidentByKey } from './supreme-court-people.ts';
 import { partialDate } from './stories.ts';
@@ -51,6 +52,8 @@ export interface LawPage {
 	/** The people with a biography on this site who signed the treaty. */
 	signers: { name: string; link: string; detail?: string }[];
 	sources: SourceEntry[];
+	/** The land a treaty ceded, from Royce's schedule (1899), for the small map under At a glance (historic maps mockup 7). */
+	landCeded?: { royce: string[]; bounds: [number, number, number, number]; map: ReturnType<typeof treatyMapData> };
 	/** Set when the law has no box and no accounts of its impact: a stub (src/lib/stubs.ts). */
 	stub?: Stub;
 }
@@ -115,12 +118,33 @@ export function lawPage(key: string): LawPage {
 	const president = order ? orderPresident(record) : undefined;
 	const presidentPage = president && presidentByKey(president.key) ? `/supreme-court/presidents/${president.key}` : undefined;
 	const nationsCited = nationsCiting(key);
+	const ceded = cessionsOfTreaty(key);
+	const cededBounds = boundsOfCessions(ceded);
 	const glance: FactGroup[] = [
 		{ field: 'kind', label: 'Kind', items: [{ text: kindLabels[record.kind] ?? record.kind }] },
 		{ field: 'number', label: 'Number', items: number ? [{ text: number }] : [] },
 		{ field: 'date', label: dateLabels[record.kind] ?? 'Date', items: date ? [{ text: date }] : [] },
 		{ field: 'president', label: 'President', items: president ? [{ text: president.name, link: presidentPage }] : [] },
 		{ field: 'citation', label: 'Citation', items: citation ? [{ text: citation }] : [] },
+		// Each cession opens on the Map page at its year; Royce's map sheets open in the image viewer.
+		{
+			field: 'land-ceded',
+			label: 'Land ceded',
+			items: ceded.map((cession) => ({
+				text: `Royce cession ${cession.royce}`,
+				link: `/nations/map?cession=${cession.royce}`,
+				detailParts:
+					cession.sheets.length === 0
+						? undefined
+						: [
+								{ text: `On Royce’s ${cession.sheets.length === 1 ? 'map' : 'maps'} ` },
+								...cession.sheets.flatMap((sheet, index) => [
+									...(index === 0 ? [] : [{ text: index === cession.sheets.length - 1 ? ' and ' : ', ' }]),
+									{ text: sheet.name, link: sheet.image, viewer: `Royce’s map: ${sheet.name}`, original: sheet.link }
+								])
+							]
+			}))
+		},
 		{
 			field: 'nations',
 			label: nationsCited.length === 1 ? 'Nation' : 'Nations',
@@ -150,6 +174,7 @@ export function lawPage(key: string): LawPage {
 		nations: nationsCited,
 		text: copy ? { file: copyPath(copy), isPdf: copy.mediaType === 'application/pdf' } : undefined,
 		signers: named.what === 'Treaty' ? signersOfTreaty(key) : [],
+		landCeded: cededBounds ? { royce: ceded.map((cession) => cession.royce), bounds: cededBounds, map: treatyMapData() } : undefined,
 		sources: box.sources,
 		stub: box.sections.length === 0 && accounts.length === 0 ? { kind: 'law', record: `laws/${key}` } : undefined
 	};

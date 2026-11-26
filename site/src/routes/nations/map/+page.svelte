@@ -21,6 +21,8 @@
 	import MapIcon from '@lucide/svelte/icons/map';
 	import MapPin from '@lucide/svelte/icons/map-pin';
 	import ViewSwitch from '#lib/components/ViewSwitch.svelte';
+	import YearSlider from '#lib/components/YearSlider.svelte';
+	import { censusYearFor, cessionLines, readCessionsSwitch, yearSliderSetup, type CessionDetail } from '#lib/historic-map.ts';
 	import type { PageProps } from './$types';
 
 	let { data }: PageProps = $props();
@@ -43,6 +45,46 @@
 	let tileMapCamera = $state<TileMapCamera | undefined>();
 	/** The tiled map's shape: flat (Web Mercator, which stretches places far from the equator, such as Alaska) or a globe, where every place keeps its true size (Trevor, 2026-11-23). */
 	let mapShape = $state<'flat' | 'globe'>('flat');
+
+	/**
+	 * The year slider under the map (Trevor, 2026-11-26, historic maps mockup A): on the Land Areas view it picks the Census year of the land areas, and with Land cessions switched on in the Layers menu, on any view, the land the United States had taken by that year. It starts at the latest Census year, so the map looks as it does today until the reader moves it.
+	 */
+	let cessionsOn = $state(false);
+	let year = $state<number | undefined>();
+	const slider = $derived(yearSliderSetup(data.historic.cessionYears, data.historic.censusYears, cessionsOn));
+	const shownYear = $derived(year ?? slider.maximum);
+	const sliderShown = $derived(tileMapReady && (current === 'lands' || cessionsOn));
+	const censusShown = $derived(censusYearFor(shownYear, data.historic.censusYears));
+	/** Whether the map shows a past year, which leaves out today's offices and dots. */
+	const pastShown = $derived(sliderShown && shownYear < slider.maximum);
+	function describeYear(value: number): string {
+		const census = censusYearFor(value, data.historic.censusYears);
+		const parts = [];
+		if (cessionsOn) parts.push(`${data.historic.cessionYears.filter((made) => made <= value).length > 0 ? 'land ceded by then' : 'no land ceded yet'}`);
+		if (current === 'lands') parts.push(census === undefined ? 'no Census land areas' : `Census land areas of ${census}`);
+		return parts.join('; ');
+	}
+
+	/** The cessions' details, fetched the first time the reader turns them on or opens one. */
+	let cessionList = $state.raw<CessionDetail[] | undefined>();
+	let cessionsLoading: Promise<void> | undefined;
+	function loadCessions(): Promise<void> {
+		cessionsLoading ??= fetch('/nations/map/land-cessions.json')
+			.then((response) => {
+				if (!response.ok) throw new Error(String(response.status));
+				return response.json() as Promise<CessionDetail[]>;
+			})
+			.then((body) => {
+				cessionList = body;
+			})
+			.catch(() => {
+				cessionsLoading = undefined;
+			});
+		return cessionsLoading;
+	}
+	$effect(() => {
+		if (cessionsOn) void loadCessions();
+	});
 
 	/**
 	 * The "Land areas" view's table is fetched the first time the view is chosen, because its rows are heavy. Its drawn copy, the Census Bureau's outlines, is fetched apart and only when it is needed (see loadDrawing).
@@ -175,7 +217,22 @@
 	 * "?view=" when the reader shared a view.
 	 */
 	async function showAddressedView(): Promise<void> {
-		const anchor = location.hash ? decodeURIComponent(location.hash.slice(1)) : '';
+		const cessionNamed = new URLSearchParams(location.search).get('cession');
+		const anchor = cessionNamed ? `cession-${cessionNamed}` : location.hash ? decodeURIComponent(location.hash.slice(1)) : '';
+		// A cession's details, linked from a treaty's page as ?cession=<number> or shared by the address the details keep, turn the cessions on at the year it was made.
+		if (anchor.startsWith('cession-')) {
+			cessionsOn = true;
+			await loadCessions();
+			const cession = cessionList?.find((entry) => `cession-${entry.royce}` === anchor);
+			if (cession?.dates[0]) year = Number(cession.dates[0].slice(0, 4));
+			const shownView = new URLSearchParams(location.search).get('view');
+			if (shownView && views.some((entry) => entry.key === shownView)) {
+				await loadView(shownView as NationsMapView);
+				current = shownView as NationsMapView;
+			}
+			if (cession) void select(anchor);
+			return;
+		}
 		let target = anchor ? document.getElementById(anchor) : null;
 		const panel = target?.closest<HTMLElement>('[data-map-view]');
 		const named = new URLSearchParams(location.search).get('view');
@@ -195,6 +252,7 @@
 	}
 
 	onMount(() => {
+		cessionsOn = readCessionsSwitch();
 		void showAddressedView();
 		const onHashChange = () => void showAddressedView();
 		window.addEventListener('hashchange', onHashChange);
@@ -278,6 +336,10 @@
 	});
 
 	function previewOf(key: string): Preview | undefined {
+		if (key.startsWith('cession-')) {
+			const cession = cessionList?.find((entry) => `cession-${entry.royce}` === key);
+			return cession ? { kind: 'Land cession', title: `Royce cession ${cession.royce}`, lines: cessionLines(cession, data.historic.volume), table: true } : undefined;
+		}
 		if (key.startsWith('nation:')) {
 			const id = key.slice('nation:'.length);
 			const nation = nationIndex.get(id);
@@ -346,6 +408,7 @@
 	/** Opens a place's or nation's preview, keeping its row's id in the address so the link can be shared. */
 	async function select(key: string): Promise<void> {
 		if (key.startsWith('/nations/')) key = `nation:${key.slice('/nations/'.length)}`;
+		if (key.startsWith('cession-')) await loadCessions();
 		preview = key;
 		if (!key.startsWith('nation:') && location.hash !== `#${key}`) history.replaceState(history.state, '', `#${key}`);
 		await tick();
@@ -355,7 +418,10 @@
 	/** The back arrow brings the table back where it was, and leaves the place out of the address. */
 	async function closeDetails(key: NationsMapView): Promise<void> {
 		preview = undefined;
-		if (location.hash) history.replaceState(history.state, '', `${location.pathname}${location.search}`);
+		const search = new URLSearchParams(location.search);
+		search.delete('cession');
+		const query = search.size > 0 ? `?${search}` : '';
+		if (location.hash || query !== location.search) history.replaceState(history.state, '', `${location.pathname}${query}`);
 		await tick();
 		document.getElementById(`map-table-${key}`)?.focus({ preventScroll: true });
 	}
@@ -526,27 +592,43 @@
 				</ZoomableMap>
 				</div>
 			</div>
+			{#if view.key === current && sliderShown}
+				<div class="no-print">
+					<YearSlider bind:value={() => shownYear, (value) => (year = value)} minimum={slider.minimum} maximum={slider.maximum} stops={slider.stops} bands={slider.bands} describe={describeYear} />
+				</div>
+			{/if}
 			<!-- The key sits under the map, where it never covers the map (Trevor, 2026-11-23, after trying it in the map's corner). The Go to menu above the map keeps the row of place buttons from pushing it out of sight. -->
-			{#if view.key === 'states' || view.key === 'lands' || (isShadedMapView(view.key) && shaded[view.key])}
+			{#if view.key === 'states' || view.key === 'lands' || (isShadedMapView(view.key) && shaded[view.key]) || (view.key === current && sliderShown)}
 				<figcaption>
 					<ul class="legend" aria-label="Key">
 					{#if view.key === 'states'}
 						{#each data.countClasses as entry (entry.key)}
 							<li><span class="swatch count-{entry.key}" aria-hidden="true"></span>{entry.label}</li>
 						{/each}
-						{#if tileMapReady}{@render officeKey()}{/if}
+						{#if tileMapReady && !pastShown}{@render officeKey()}{/if}
 					{:else if isShadedMapView(view.key) && shaded[view.key]}
 						{#each shaded[view.key]?.legend ?? [] as entry (entry.key)}
 							<li><span class="swatch count-{entry.shade}" aria-hidden="true"></span>{entry.label}</li>
 						{/each}
-						{#if byOf(view.key) === 'nation'}{@render officeKey()}{/if}
-					{:else if view.key === 'lands'}
+						{#if byOf(view.key) === 'nation' && !pastShown}{@render officeKey()}{/if}
+					{:else if view.key === 'lands' && (!sliderShown || censusShown !== undefined)}
 						{#each data.landAreaGroups as group (group.key)}
-							<li><span class="swatch land-{group.key}" aria-hidden="true"></span>{group.label}</li>
+							<li><span class="swatch land-{group.key}" aria-hidden="true"></span>{group.label}{#if pastShown}, {censusShown}{/if}</li>
 						{/each}
-						{@render officeKey()}
+						{#if !pastShown}{@render officeKey()}{/if}
+					{/if}
+					{#if view.key === current && sliderShown && cessionsOn}
+						<li><span class="swatch cession-by" aria-hidden="true"></span>Ceded by {shownYear}</li>
+						<li><span class="swatch cession-in" aria-hidden="true"></span>Ceded in {shownYear}</li>
 					{/if}
 					</ul>
+					{#if view.key === current && sliderShown}
+						<!-- One sentence of context, naming who made the map and when (mockup 1A). -->
+						<p class="small muted historic-note">
+							{#if cessionsOn}Land cessions as Charles C. Royce mapped them for the Bureau of American Ethnology (1899), traced by the U.S. Forest Service.{/if}
+							{#if view.key === 'lands'}Census Bureau land areas begin in 1990.{/if}
+						</p>
+					{/if}
 				</figcaption>
 			{/if}
 		</figure>
@@ -682,6 +764,9 @@
 				bind:shape={mapShape}
 				bind:camera={tileMapCamera}
 				onselect={(anchor) => void select(anchor)}
+				year={sliderShown ? shownYear : undefined}
+				bind:cessions={cessionsOn}
+				oncession={(royce) => void select(`cession-${royce}`)}
 				onready={() => (tileMapReady = true)}
 				onfail={() => {
 					tileMapWanted = false;
@@ -948,6 +1033,18 @@
 
 	.map-drawing :global(.count-0) {
 		fill: var(--color-map-class-0);
+	}
+	.swatch.cession-by {
+		background: color-mix(in srgb, var(--color-timeline-treaty) 30%, var(--color-paper));
+		border: 1px solid var(--color-timeline-treaty);
+	}
+	.swatch.cession-in {
+		background: color-mix(in srgb, var(--color-timeline-treaty) 75%, var(--color-paper));
+		border: 1px solid var(--color-timeline-treaty);
+	}
+	.historic-note {
+		max-width: 60ch;
+		margin: var(--space-2) 0 0;
 	}
 	.swatch.count-0 {
 		background: var(--color-map-class-0);
