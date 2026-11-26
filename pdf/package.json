@@ -5,8 +5,9 @@
   "license": "MIT",
   "type": "module",
   "engines": {
-    "node": ">=22"
+    "node": ">=26"
   },
+  "packageManager": "npm@12.2.3",
   "scripts": {
     "build": "node pipeline/build.mjs",
     "build:specimen": "node pipeline/build.mjs --specimen",

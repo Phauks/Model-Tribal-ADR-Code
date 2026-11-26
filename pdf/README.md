@@ -47,7 +47,7 @@ The inside margin depends on the page count, and the page count on the margins, 
 
 ## Building
 
-Needs Node.js 22, [Typst 0.15.1](https://github.com/typst/typst/releases/tag/v0.15.1) on the path (or in the `TYPST` variable) and Python 3 for the PDF checks.
+Needs Node.js 26 or later with npm 12, [Typst 0.15.1](https://github.com/typst/typst/releases/tag/v0.15.1) on the path (or in the `TYPST` variable) and Python 3 for the PDF checks.
 
 ```sh
 cd pdf

@@ -4,7 +4,7 @@ The website is built with SvelteKit (Svelte 5, TypeScript) and served by a Cloud
 
 ## Run it on your computer
 
-Needs Node.js 22 or later. From this folder:
+Needs Node.js 26 or later and npm 12 (the version in `.node-version` and the `packageManager` field of `package.json`; `npm install --global npm@12` updates an older npm). From this folder:
 
 ```sh
 npm ci            # install the exact versions in package-lock.json
@@ -47,7 +47,7 @@ Cloudflare Workers Builds deploys the site from GitHub ([decision record 0006](.
 
 | Setting | Value |
 | --- | --- |
-| Worker name | `model-tribal-adr-code` (must match `name` in `wrangler.jsonc`) |
+| Worker name | `tribal-law-project-site` (must match `name` in `wrangler.jsonc`) |
 | Production branch | `main` |
 | Root directory | `site` |
 | Build command | `npm ci && npm run build` |

@@ -1,5 +1,5 @@
 /**
- * The live editing Worker, model-tribal-adr-code-live: it holds the
+ * The live editing Worker, tribal-law-project-live: it holds the
  * EssayRoom Durable Objects (src/lib/server/live/essay-room.ts) and nothing
  * else. It has no public address; the website reaches the rooms through its
  * essayRooms binding (wrangler.jsonc in the folder above), after checking
