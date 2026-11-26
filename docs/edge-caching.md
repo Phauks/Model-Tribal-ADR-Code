@@ -37,7 +37,7 @@ A new page family drawn on request, or any other public answer that is the same 
 
 ## The www address
 
-`www.triballawproject.org` answers with a permanent redirect (301) to the same path and query on `https://triballawproject.org`. It is a proxied DNS record (`AAAA` to `100::`, an address that only lets Cloudflare answer) and a redirect rule named "www to apex" on the zone (Rules > Redirect Rules), so the Worker never runs for it.[^redirect]
+`www.triballawproject.org` answers with a permanent redirect (301) to the same path and query on `https://triballawproject.org`, and the Worker never runs for it. It is a proxied DNS record (`AAAA` to `100::`, an address that only lets Cloudflare answer) and two redirect rules from Cloudflare's templates on the zone (Rules > Redirect Rules), added by Trevor Goldsmith on Nov. 26, 2026: "Redirect from WWW to root", which sends `https://www.*` to `https://${1}`, and "Redirect from HTTP to HTTPS". The rules rewrite the whole address, query included, so a link such as `https://www.triballawproject.org/cases/worcester-v-georgia?x=1` arrives at `https://triballawproject.org/cases/worcester-v-georgia?x=1` (checked Nov. 26, 2026). An `http://www.` link takes two steps, to `https://www.` and then to the site.[^redirect]
 
 ## Measurements
 
