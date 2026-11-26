@@ -36,9 +36,12 @@ export interface DocumentFile {
 	title: string;
 	kind: string;
 	year?: string;
+	/** The nation it belongs to; empty when the record names none on this site. */
 	nation: string;
 	/** The heading on the nation's page that the result opens at. */
 	anchor: string;
+	/** Where it opens instead, for a document known from its source record: this site's copy, or where it is published. */
+	link?: string;
 }
 
 export interface SearchRecordsFile {
@@ -184,7 +187,7 @@ export function expandRecords(file: SearchRecordsFile): SearchRecords {
 			...row,
 			kindLabel: labelOf(documentKindOptions, row.kind),
 			nationName: names.get(row.nation) ?? row.nation,
-			link: `/nations/${row.nation}#${row.anchor}`
+			link: row.link ?? `/nations/${row.nation}#${row.anchor}`
 		}))
 	};
 }
