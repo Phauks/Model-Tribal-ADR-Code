@@ -2,8 +2,10 @@
 	@component
 	One federal law's, treaty's or executive order's page
 	(src/lib/server/law-pages.ts), on the site's one item layout: the law's
-	kind, date and citation At a glance, its box's parts as sections, the
-	accounts of its impact, where to read it, and where this site cites it.
+	kind, date and citation At a glance (with an order's number and President,
+	and the nations whose pages cite it), its box's parts as sections, the
+	accounts of its impact, where to read it, the text this site keeps of it,
+	and where this site cites it.
 -->
 <script lang="ts">
 	import CountBadge from '#lib/components/CountBadge.svelte';
@@ -13,7 +15,16 @@
 	import type { PageProps } from './$types';
 
 	let { data }: PageProps = $props();
+
+	/** Past this many, the nation pages wait behind a summary line. */
+	const longList = 12;
 </script>
+
+{#snippet nationList()}
+	{#each data.nations as nation (nation.id)}
+		<p><a href="/nations/{nation.id}">{nation.name}</a>{#if nation.what.length > 0}<span class="muted">&nbsp;› {nation.what.join('; ')}</span>{/if}</p>
+	{/each}
+{/snippet}
 
 <svelte:head>
 	<title>{data.name} · Laws · Model Tribal ADR Code</title>
@@ -40,18 +51,47 @@
 		</section>
 	{/if}
 
-	{#if data.essays.length > 0}
+	{#if data.text}
+		<section aria-labelledby="law-text">
+			<h2 id="law-text">Text</h2>
+			{#if data.text.isPdf}
+				<iframe class="law-frame" src={data.text.file} title="{data.name} (PDF)" loading="lazy"></iframe>
+			{:else}
+				<!-- The saved text or web page runs nothing and loads nothing (src/lib/server/public-copy-serving.ts). -->
+				<iframe class="law-frame law-frame-text" src={data.text.file} title={data.name} sandbox="" referrerpolicy="no-referrer" loading="lazy"></iframe>
+			{/if}
+		</section>
+	{/if}
+
+	{#if data.essays.length + data.nations.length > 0}
 		<section aria-labelledby="on-this-site">
-			<h2 id="on-this-site">On this site <CountBadge count={data.essays.length} /></h2>
+			<h2 id="on-this-site">On this site <CountBadge count={data.essays.length + data.nations.length} /></h2>
 			<dl class="summary-list">
-				<div>
-					<dt>Essays</dt>
-					<dd>
-						{#each data.essays as essay (essay.link)}
-							<p><a href={essay.link}>{essay.title}</a>{#if essay.where}<span class="muted">&nbsp;› {essay.where}</span>{/if}</p>
-						{/each}
-					</dd>
-				</div>
+				{#if data.nations.length > 0}
+					<div>
+						<dt>Nation pages</dt>
+						<dd>
+							{#if data.nations.length > longList}
+								<details>
+									<summary>{data.nations.length.toLocaleString('en-US')} nation pages</summary>
+									{@render nationList()}
+								</details>
+							{:else}
+								{@render nationList()}
+							{/if}
+						</dd>
+					</div>
+				{/if}
+				{#if data.essays.length > 0}
+					<div>
+						<dt>Essays</dt>
+						<dd>
+							{#each data.essays as essay (essay.link)}
+								<p><a href={essay.link}>{essay.title}</a>{#if essay.where}<span class="muted">&nbsp;› {essay.where}</span>{/if}</p>
+							{/each}
+						</dd>
+					</div>
+				{/if}
 			</dl>
 		</section>
 	{/if}
@@ -79,5 +119,20 @@
 
 	.summary-list dd :global(p) {
 		margin: 0;
+	}
+
+	.law-frame {
+		display: block;
+		width: 100%;
+		height: 70vh;
+		min-height: 24rem;
+		border: 1px solid var(--color-line);
+		border-radius: var(--radius-control);
+		background: var(--color-surface-raised);
+	}
+
+	/* A short text needs no tall frame. */
+	.law-frame-text {
+		height: 24rem;
 	}
 </style>

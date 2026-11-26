@@ -42,12 +42,18 @@ export interface PublicCopy {
 	namesReplaced?: boolean;
 }
 
-/** Media types the Worker serves as copies. A saved web page is served in a sandbox, with nothing it could load or run. */
-export const servedMediaTypes = new Set(['application/pdf', 'text/html']);
+/**
+ * Media types the Worker serves as copies. A saved web page is served in a
+ * sandbox, with nothing it could load or run. Plain text is a document's
+ * transcribed text, such as the executive orders' (scripts/law/executive_order_records.py).
+ */
+export const servedMediaTypes = new Set(['application/pdf', 'text/html', 'text/plain']);
 
 /** How a link names the file's kind, such as "PDF" or "saved web page". */
 export function mediaLabel(mediaType: string): string {
-	return mediaType === 'text/html' ? 'saved web page' : 'PDF';
+	if (mediaType === 'text/html') return 'saved web page';
+	if (mediaType === 'text/plain') return 'text';
+	return 'PDF';
 }
 
 /** The request form, filled in to ask that a name in a court opinion be replaced with initials (docs/requests.md). */

@@ -4,6 +4,7 @@
  * /laws/<key> (law-pages.ts).
  */
 import { lawNames } from '../law-names.ts';
+import { readableDate } from '../readable-date.ts';
 import { sources, type SourceRecord } from './content.ts';
 
 /** The record kinds that get a page at /laws/<key>: federal laws, treaties and orders. */
@@ -18,8 +19,8 @@ function isCaseRecord(record: SourceRecord): boolean {
 	return (record.citation as { type?: string }).type === 'legal_case' && Boolean(record.citation.title);
 }
 
-export function recordPageLink(key: string): string | undefined {
-	const record = sources().get(key);
+export function recordPageLink(key: string | undefined): string | undefined {
+	const record = key ? sources().get(key) : undefined;
 	if (!record) return undefined;
 	if (isCaseRecord(record)) return `/cases/${key}`;
 	if (isLawRecord(record)) return `/laws/${key}`;
@@ -48,5 +49,7 @@ export function recordName(key: string): { name: string; italic?: boolean; kind?
 	}
 	const year = yearOf(record);
 	const short = lawNames[key] ?? citation['title-short'];
-	return { name: short ? (year && !short.includes(String(year)) ? `${short} (${year})` : short) : (citation.title ?? key), kind: record.kind, what: 'Law' };
+	// A few order titles carry their date as 1906-12-19; it reads as Dec. 19, 1906.
+	const title = (citation.title ?? key).replace(/\b(\d{4}-\d{2}-\d{2})\b/, (date) => readableDate(date));
+	return { name: short ? (year && !short.includes(String(year)) ? `${short} (${year})` : short) : title, kind: record.kind, what: 'Law' };
 }
