@@ -15,7 +15,7 @@
 </script>
 
 <svelte:head>
-	<title>Sponsorship · Model Tribal ADR Code</title>
+	<title>Sponsorship · Tribal Law Project</title>
 </svelte:head>
 
 {#if data.viewingAs && data.sponsor}

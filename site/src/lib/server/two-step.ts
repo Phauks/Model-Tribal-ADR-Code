@@ -118,7 +118,7 @@ function sameText(a: string, b: string): boolean {
 }
 
 /** The name the app shows for the account. */
-export const issuerName = 'Model Tribal ADR Code';
+export const issuerName = 'Tribal Law Project';
 
 /** The address a QR code holds, in the "otpauth" form authenticator apps read. */
 export function authenticatorLink(secret: string, email: string): string {

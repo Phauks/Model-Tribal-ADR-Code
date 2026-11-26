@@ -5,7 +5,7 @@
 </script>
 
 <svelte:head>
-	<title>Let us know you got our message · Model Tribal ADR Code</title>
+	<title>Let us know you got our message · Tribal Law Project</title>
 	<meta name="robots" content="noindex" />
 </svelte:head>
 
@@ -16,7 +16,7 @@
 	{:else if form}
 		<p class="lead">This link is not valid. It may have been copied only in part.</p>
 	{:else}
-		<p class="lead">Press the button to tell the Model Tribal ADR Code project that our message reached you. It records only that you pressed it.</p>
+		<p class="lead">Press the button to tell the Tribal Law Project that our message reached you. It records only that you pressed it.</p>
 		<form method="post">
 			<p><button class="button" type="submit">Yes, I got it</button></p>
 		</form>

@@ -68,7 +68,7 @@
 </script>
 
 <svelte:head>
-	<title>Send files · Model Tribal ADR Code</title>
+	<title>Send files · Tribal Law Project</title>
 </svelte:head>
 
 <div class="send-page">

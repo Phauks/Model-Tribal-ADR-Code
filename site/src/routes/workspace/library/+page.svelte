@@ -58,7 +58,7 @@
 </script>
 
 <svelte:head>
-	<title>Source library · Workspace · Model Tribal ADR Code</title>
+	<title>Source library · Workspace · Tribal Law Project</title>
 </svelte:head>
 
 <h1>Source library</h1>

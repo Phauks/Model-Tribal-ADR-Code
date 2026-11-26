@@ -129,7 +129,7 @@
 </script>
 
 <svelte:head>
-	<title>Edit {the(data.nation.title)}’s page · Workspace · Model Tribal ADR Code</title>
+	<title>Edit {the(data.nation.title)}’s page · Workspace · Tribal Law Project</title>
 </svelte:head>
 
 <p class="small page-links">

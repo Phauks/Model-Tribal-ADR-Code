@@ -66,7 +66,7 @@ export type Fetcher = (input: string, init?: RequestInit) => Promise<Response>;
 const apiRoot = 'https://api.cloudflare.com/client/v4';
 
 /** The name that marks the site's app when an account has several RealtimeKit apps. */
-export const videoRoomAppName = 'Model Tribal ADR Code video rooms';
+export const videoRoomAppName = 'Tribal Law Project video rooms';
 
 interface Answer {
 	success?: boolean;

@@ -70,7 +70,7 @@
 </script>
 
 <svelte:head>
-	<title>Upload {upload.reference} · Workspace · Model Tribal ADR Code</title>
+	<title>Upload {upload.reference} · Workspace · Tribal Law Project</title>
 </svelte:head>
 
 <div class="wide">

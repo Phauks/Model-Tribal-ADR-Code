@@ -344,7 +344,7 @@
 </script>
 
 <svelte:head>
-	<title>Edit your profile · Model Tribal ADR Code</title>
+	<title>Edit your profile · Tribal Law Project</title>
 </svelte:head>
 
 {#snippet fieldError(name: string)}

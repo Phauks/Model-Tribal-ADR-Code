@@ -7,7 +7,7 @@
 </script>
 
 <svelte:head>
-	<title>Native nations · Model Tribal ADR Code</title>
+	<title>Native nations · Tribal Law Project</title>
 </svelte:head>
 
 <h1>

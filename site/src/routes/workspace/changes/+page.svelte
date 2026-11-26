@@ -33,7 +33,7 @@
 </script>
 
 <svelte:head>
-	<title>Hidden changes · Workspace · Model Tribal ADR Code</title>
+	<title>Hidden changes · Workspace · Tribal Law Project</title>
 </svelte:head>
 
 <h1>Hidden changes</h1>

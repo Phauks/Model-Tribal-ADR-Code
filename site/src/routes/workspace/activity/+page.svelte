@@ -56,7 +56,7 @@
 </script>
 
 <svelte:head>
-	<title>Activity log · Workspace · Model Tribal ADR Code</title>
+	<title>Activity log · Workspace · Tribal Law Project</title>
 </svelte:head>
 
 <h1>Activity log</h1>

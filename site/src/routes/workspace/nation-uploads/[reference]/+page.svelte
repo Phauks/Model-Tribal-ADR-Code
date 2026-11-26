@@ -31,7 +31,7 @@
 </script>
 
 <svelte:head>
-	<title>{name} · Files about your nation · Workspace · Model Tribal ADR Code</title>
+	<title>{name} · Files about your nation · Workspace · Tribal Law Project</title>
 </svelte:head>
 
 <div class="wide">

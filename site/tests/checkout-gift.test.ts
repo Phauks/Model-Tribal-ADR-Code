@@ -53,7 +53,7 @@ describe('a gift added to a purchase', () => {
 				reference: 'order-1',
 				description: 'Book',
 				amountInCents: 2341,
-				gift: { amountInCents: 159, description: 'Gift to Model Tribal ADR Code' },
+				gift: { amountInCents: 159, description: 'Gift to Tribal Law Project' },
 				successAddress: 'https://example.org/done',
 				cancelAddress: 'https://example.org/book'
 			},
@@ -62,7 +62,7 @@ describe('a gift added to a purchase', () => {
 		const fields = new URLSearchParams(sent);
 		expect(fields.get('line_items[0][price_data][unit_amount]')).toBe('2341');
 		expect(fields.get('line_items[1][price_data][unit_amount]')).toBe('159');
-		expect(fields.get('line_items[1][price_data][product_data][name]')).toBe('Gift to Model Tribal ADR Code');
+		expect(fields.get('line_items[1][price_data][product_data][name]')).toBe('Gift to Tribal Law Project');
 		expect(fields.get('metadata[gift_cents]')).toBe('159');
 	});
 });

@@ -41,7 +41,7 @@
 {/snippet}
 
 <svelte:head>
-	<title>Reviews · Workspace · Model Tribal ADR Code</title>
+	<title>Reviews · Workspace · Tribal Law Project</title>
 </svelte:head>
 
 <h1>Reviews</h1>

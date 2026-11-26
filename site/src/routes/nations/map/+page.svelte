@@ -439,7 +439,7 @@
 {/snippet}
 
 <svelte:head>
-	<title>Map · Nations · Model Tribal ADR Code</title>
+	<title>Map · Nations · Tribal Law Project</title>
 	<!-- Without scripts the view buttons cannot work, so every view is shown, one after another. -->
 	<noscript>
 		<style>

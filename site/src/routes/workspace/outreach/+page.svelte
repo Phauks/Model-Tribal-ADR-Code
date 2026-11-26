@@ -60,7 +60,7 @@
 {/snippet}
 
 <svelte:head>
-	<title>Outreach · Workspace · Model Tribal ADR Code</title>
+	<title>Outreach · Workspace · Tribal Law Project</title>
 </svelte:head>
 
 <h1>Outreach</h1>

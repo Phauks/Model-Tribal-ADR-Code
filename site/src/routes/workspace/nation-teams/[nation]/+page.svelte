@@ -194,7 +194,7 @@
 {/snippet}
 
 <svelte:head>
-	<title>{data.nation.title}’s team · Workspace · Model Tribal ADR Code</title>
+	<title>{data.nation.title}’s team · Workspace · Tribal Law Project</title>
 </svelte:head>
 
 {#if data.isAdministrator}

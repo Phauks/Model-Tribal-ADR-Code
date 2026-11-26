@@ -40,7 +40,7 @@
 </script>
 
 <svelte:head>
-	<title>{document.title} · Source library · Workspace · Model Tribal ADR Code</title>
+	<title>{document.title} · Source library · Workspace · Tribal Law Project</title>
 </svelte:head>
 
 <Breadcrumbs

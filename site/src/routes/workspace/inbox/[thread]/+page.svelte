@@ -112,7 +112,7 @@
 </script>
 
 <svelte:head>
-	<title>{thread.subject} · Inbox · Workspace · Model Tribal ADR Code</title>
+	<title>{thread.subject} · Inbox · Workspace · Tribal Law Project</title>
 </svelte:head>
 
 <div class="topbar" role="toolbar" aria-label="Conversation">

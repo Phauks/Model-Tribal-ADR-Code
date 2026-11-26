@@ -80,7 +80,7 @@
 </script>
 
 <svelte:head>
-	<title>Read offline · Model Tribal ADR Code</title>
+	<title>Read offline · Tribal Law Project</title>
 </svelte:head>
 
 <div class="reading">

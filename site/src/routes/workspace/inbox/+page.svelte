@@ -76,7 +76,7 @@
 </script>
 
 <svelte:head>
-	<title>{heading === 'Inbox' ? 'Inbox' : `${heading} · Inbox`} · Workspace · Model Tribal ADR Code</title>
+	<title>{heading === 'Inbox' ? 'Inbox' : `${heading} · Inbox`} · Workspace · Tribal Law Project</title>
 </svelte:head>
 
 <header class="list-head">

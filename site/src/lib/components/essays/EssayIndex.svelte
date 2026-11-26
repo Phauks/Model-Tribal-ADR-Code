@@ -50,7 +50,7 @@
 </script>
 
 <svelte:head>
-	<title>{section} · Model Tribal ADR Code</title>
+	<title>{section} · Tribal Law Project</title>
 	<meta name="description" content={lead} />
 </svelte:head>
 

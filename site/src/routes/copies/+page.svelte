@@ -8,7 +8,7 @@
 </script>
 
 <svelte:head>
-	<title>Source documents · Model Tribal ADR Code</title>
+	<title>Source documents · Tribal Law Project</title>
 </svelte:head>
 
 <div class="reading">

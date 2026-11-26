@@ -14,7 +14,7 @@
 </script>
 
 <svelte:head>
-	<title>Following · Model Tribal ADR Code</title>
+	<title>Following · Tribal Law Project</title>
 	<meta name="robots" content="noindex, nofollow" />
 </svelte:head>
 

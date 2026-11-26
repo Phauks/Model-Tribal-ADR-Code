@@ -7,7 +7,7 @@
 </script>
 
 <svelte:head>
-	<title>Compare versions · {data.title} · Workspace · Model Tribal ADR Code</title>
+	<title>Compare versions · {data.title} · Workspace · Tribal Law Project</title>
 </svelte:head>
 
 <Breadcrumbs

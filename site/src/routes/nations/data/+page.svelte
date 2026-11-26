@@ -7,7 +7,7 @@
 </script>
 
 <svelte:head>
-	<title>Data and charts · Model Tribal ADR Code</title>
+	<title>Data and charts · Tribal Law Project</title>
 	<meta name="description" content="Charts of Native nations’ courts, constitutions, jurisdiction, recognition, gaming compacts, treaties and cases, by topic." />
 </svelte:head>
 

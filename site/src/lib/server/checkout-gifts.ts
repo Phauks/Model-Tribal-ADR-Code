@@ -9,7 +9,7 @@
 import { giftCents, type GiftChoice } from '#lib/checkout-gift.ts';
 
 export function checkoutGiftReceiver(environment: WorkerEnvironment, mode: 'test' | 'live'): string | null {
-	if (mode === 'test') return 'Model Tribal ADR Code (test mode: no real money moves)';
+	if (mode === 'test') return 'Tribal Law Project (test mode: no real money moves)';
 	return environment.SPONSOR_GIFTS_RECEIVER?.trim() || null;
 }
 

@@ -17,7 +17,7 @@
 </script>
 
 <svelte:head>
-	<title>Library · Model Tribal ADR Code</title>
+	<title>Library · Tribal Law Project</title>
 	<meta
 		name="description"
 		content="The documents behind the model code: copies of the laws, constitutions and court opinions it cites, data and map files to download, and a way to check a downloaded file."

@@ -585,7 +585,7 @@ describe('outreach', () => {
 		expect(await runOutreach(context, carriers)).toEqual({ sent: 0, failed: 0 });
 
 		const mail = outreach.sent[0];
-		expect(mail.from).toEqual({ email: 'outreach@outreach.example.org', name: 'Model Tribal ADR Code' });
+		expect(mail.from).toEqual({ email: 'outreach@outreach.example.org', name: 'Tribal Law Project' });
 		expect(mail.replyTo).toEqual({ email: 'replies@example.org' });
 		expect(mail.subject).toBe('The Model Tribal ADR Code and Example Nation');
 		expect(mail.headers?.['List-Unsubscribe-Post']).toBe('List-Unsubscribe=One-Click');

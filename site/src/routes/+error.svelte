@@ -4,7 +4,7 @@
 
 <svelte:head>
 	<title
-		>{page.status === 404 ? 'Page not found' : page.status === 403 ? 'Not allowed' : 'Something went wrong'} · Model Tribal ADR Code</title
+		>{page.status === 404 ? 'Page not found' : page.status === 403 ? 'Not allowed' : 'Something went wrong'} · Tribal Law Project</title
 	>
 </svelte:head>
 

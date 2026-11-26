@@ -17,7 +17,7 @@
 </script>
 
 <svelte:head>
-	<title>Orders · Workspace · Model Tribal ADR Code</title>
+	<title>Orders · Workspace · Tribal Law Project</title>
 </svelte:head>
 
 <h1>Orders</h1>

@@ -140,7 +140,7 @@
 </script>
 
 <svelte:head>
-	<title>Data sets · Model Tribal ADR Code</title>
+	<title>Data sets · Tribal Law Project</title>
 </svelte:head>
 
 <div class="reading">

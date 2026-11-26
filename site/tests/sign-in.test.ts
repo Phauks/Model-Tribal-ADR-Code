@@ -74,6 +74,7 @@ describe('codes and passwords', () => {
 		expect(await newPasswordProblem('Long.Person@Example.org', 'long.person@example.org', service)).toMatch(/email address/);
 		expect(await newPasswordProblem('longperson-name-here', 'longperson.name.here@example.org', service)).toMatch(/email address/);
 		expect(await newPasswordProblem('Model Tribal ADR Code', 'a@example.org', service)).toMatch(/name of this site/);
+		expect(await newPasswordProblem('Tribal Law Project', 'a@example.org', service)).toMatch(/name of this site/);
 		expect(await newPasswordProblem('my model tribal adr code notes', 'a@example.org', service)).toBeUndefined();
 		expect(await newPasswordProblem('aaaaaaaaaaaaaaabbbb', 'a@example.org', service)).toMatch(/over and over/);
 	});
@@ -127,7 +128,7 @@ describe('how codes are delivered', () => {
 		expect(delivery.kind).toBe('email');
 		if (delivery.kind === 'email') await delivery.send('person@example.org', '123456', 'https://site.example/l');
 		expect(binding.send).toHaveBeenCalledWith(
-			expect.objectContaining({ to: 'person@example.org', from: { email: 'sign-in@example.org', name: 'Model Tribal ADR Code' } })
+			expect.objectContaining({ to: 'person@example.org', from: { email: 'sign-in@example.org', name: 'Tribal Law Project' } })
 		);
 	});
 });

@@ -1,5 +1,5 @@
 <svelte:head>
-	<title>Help write the code · Model Tribal ADR Code</title>
+	<title>Help write the code · Tribal Law Project</title>
 	<meta
 		name="description"
 		content="Sign up to write, review, research or share what you know, and choose how you are credited."

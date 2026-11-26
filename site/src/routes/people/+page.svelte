@@ -5,8 +5,8 @@
 </script>
 
 <svelte:head>
-	<title>People · Model Tribal ADR Code</title>
-	<meta name="description" content="The people who write, review and support the Model Tribal ADR Code." />
+	<title>People · Tribal Law Project</title>
+	<meta name="description" content="The people who write, review and support the Tribal Law Project." />
 </svelte:head>
 
 {#snippet person(entry: { name: string; path: string; initials: string; picture: string | null; work: string; specialties: string[] }, large: boolean, office: string | null)}

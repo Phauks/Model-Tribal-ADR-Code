@@ -5,7 +5,7 @@
 </script>
 
 <svelte:head>
-	<title>Sign in with a link · Model Tribal ADR Code</title>
+	<title>Sign in with a link · Tribal Law Project</title>
 </svelte:head>
 
 <div class="reading">

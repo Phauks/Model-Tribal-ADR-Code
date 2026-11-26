@@ -26,7 +26,7 @@
 </script>
 
 <svelte:head>
-	<title>{title} · Model Tribal ADR Code</title>
+	<title>{title} · Tribal Law Project</title>
 </svelte:head>
 
 <Breadcrumbs trail={crumbs} />

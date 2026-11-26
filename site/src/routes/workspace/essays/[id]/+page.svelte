@@ -31,7 +31,7 @@
 </script>
 
 <svelte:head>
-	<title>{data.title} · Essays · Workspace · Model Tribal ADR Code</title>
+	<title>{data.title} · Essays · Workspace · Tribal Law Project</title>
 </svelte:head>
 
 <Breadcrumbs

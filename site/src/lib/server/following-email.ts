@@ -47,7 +47,7 @@ export function updateEmailDelivery(environment: WorkerEnvironment): UpdateEmail
 			const message = digestMessage(digest, site);
 			await binding.send({
 				to: digest.email,
-				from: { email: from, name: 'Model Tribal ADR Code' },
+				from: { email: from, name: 'Tribal Law Project' },
 				subject: message.subject,
 				text: message.text,
 				headers: { 'List-Unsubscribe': `<${message.emailOffLink}>` }
@@ -65,7 +65,7 @@ export function digestMessage(digest: Digest, site: string): { subject: string; 
 	const count = digest.pages.length;
 	const emailOffLink = `${site}/following/email-off?token=${encodeURIComponent(digest.emailOffToken)}`;
 	const lines = [
-		count === 1 ? 'A page you follow on the Model Tribal ADR Code was updated:' : `${count} pages you follow on the Model Tribal ADR Code were updated:`,
+		count === 1 ? 'A page you follow on the Tribal Law Project was updated:' : `${count} pages you follow on the Tribal Law Project were updated:`,
 		''
 	];
 	for (const page of digest.pages) {

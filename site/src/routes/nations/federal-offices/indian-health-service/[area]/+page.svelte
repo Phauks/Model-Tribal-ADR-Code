@@ -30,7 +30,7 @@
 </script>
 
 <svelte:head>
-	<title>{name} · Indian Health Service · Model Tribal ADR Code</title>
+	<title>{name} · Indian Health Service · Tribal Law Project</title>
 </svelte:head>
 
 <InfoPage

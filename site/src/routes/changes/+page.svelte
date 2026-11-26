@@ -156,7 +156,7 @@
 </script>
 
 <svelte:head>
-	<title>{history ? `History of ${data.pageTitle ?? filters.page}` : 'Recent changes'} · Model Tribal ADR Code</title>
+	<title>{history ? `History of ${data.pageTitle ?? filters.page}` : 'Recent changes'} · Tribal Law Project</title>
 	<link rel="alternate" type="application/atom+xml" title="Recent changes" href={feedLink} />
 	{#if history}<meta name="robots" content="noindex" />{/if}
 </svelte:head>

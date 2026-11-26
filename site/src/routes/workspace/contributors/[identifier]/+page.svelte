@@ -19,7 +19,7 @@
 </script>
 
 <svelte:head>
-	<title>{fullName(profile.answers) || 'Contributor'} · Workspace · Model Tribal ADR Code</title>
+	<title>{fullName(profile.answers) || 'Contributor'} · Workspace · Tribal Law Project</title>
 </svelte:head>
 
 <Breadcrumbs
