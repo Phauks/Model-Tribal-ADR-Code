@@ -1,0 +1,57 @@
+key: onondaga-nation-v-thacher-1900
+kind: state-case
+citation:
+  type: legal_case
+  title: Onondaga Nation v. Thacher
+  authority: New York Supreme Court, Appellate Division
+  container-title: A.D.
+  volume: '53'
+  page: '561'
+  issued:
+    date-parts:
+    - - 1900
+  URL: https://static.case.law/ad/53/html/0561-01.html
+  accessed:
+    date-parts:
+    - - 2026
+      - 11
+      - 26
+original_link: https://static.case.law/ad/53/html/0561-01.html
+retrieved: '2026-11-26'
+archives: []
+history:
+  status: live
+  last_checked: '2026-11-26'
+rights:
+  status: no-permission-needed
+  basis: government-edict
+  basis_note: The text of a judicial opinion has no copyright (Georgia v. Public.Resource.Org, Inc., 590 U.S. 255 (2020)). The copy served on this site is the court's opinion only, without the publisher's headnotes, synopsis or other editorial matter (decision record 0060).
+  redistribution: true
+tribes:
+- onondaga-nation
+nations_in_case:
+  checked: '2026-11-26'
+  named:
+  - nation: onondaga-nation
+    named_as: Onondaga Nation
+    role: party
+    note: Matched by the script to the nation record of the same name; not yet checked.
+jurisdictions:
+- level: state
+  state: NY
+topics:
+- state-court-indian-law
+found_in:
+- 2026-11-26-state-court-indian-law-opinions
+notes: Published at 53 A.D. 561. Decided by the New York Supreme Court, Appellate Division on 1900. Found by scripts/caselaw/state_court_opinions.py in the Caselaw Access Project's volumes, with an Indian law term score of 3; an AI reader read excerpts and judged it an Indian law case (Indian nation capacity to sue for wampum belts).
+review:
+  status: unverified
+  by: scripts/caselaw/state_court_opinions.py
+  date: '2026-11-26'
+  checks:
+  - check: 'Indian law case: the term score and, below the score kept without a reading, an AI reader''s judgment of excerpts'
+    result: agree
+    detail: 'score 3; reader: Indian nation capacity to sue for wampum belts'
+  - check: Nations named in the caption, matched to nation records by name
+    result: agree
+    detail: 1 matched, 0 not linked

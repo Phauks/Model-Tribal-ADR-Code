@@ -1,0 +1,58 @@
+key: seneca-nation-of-indians-v-hammond-1875
+kind: state-case
+citation:
+  type: legal_case
+  title: Seneca Nation of Indians v. Hammond
+  authority: New York Supreme Court
+  container-title: Thomp. & Cook
+  volume: '6'
+  page: '595'
+  issued:
+    date-parts:
+    - - 1875
+      - 4
+  URL: https://static.case.law/thomp-cook/6/html/0595-01.html
+  accessed:
+    date-parts:
+    - - 2026
+      - 11
+      - 26
+original_link: https://static.case.law/thomp-cook/6/html/0595-01.html
+retrieved: '2026-11-26'
+archives: []
+history:
+  status: live
+  last_checked: '2026-11-26'
+rights:
+  status: no-permission-needed
+  basis: government-edict
+  basis_note: The text of a judicial opinion has no copyright (Georgia v. Public.Resource.Org, Inc., 590 U.S. 255 (2020)). The copy served on this site is the court's opinion only, without the publisher's headnotes, synopsis or other editorial matter (decision record 0060).
+  redistribution: true
+tribes:
+- seneca-nation-of-indians
+nations_in_case:
+  checked: '2026-11-26'
+  named:
+  - nation: seneca-nation-of-indians
+    named_as: Seneca Nation of Indians
+    role: party
+    note: Matched by the script to the nation record of the same name; not yet checked.
+jurisdictions:
+- level: state
+  state: NY
+topics:
+- state-court-indian-law
+found_in:
+- 2026-11-26-state-court-indian-law-opinions
+notes: Published at 6 Thomp. & Cook 595. Decided by the New York Supreme Court on 1875. Found by scripts/caselaw/state_court_opinions.py in the Caselaw Access Project's volumes, with an Indian law term score of 10, at or above 10, the level kept without a reading.
+review:
+  status: unverified
+  by: scripts/caselaw/state_court_opinions.py
+  date: '2026-11-26'
+  checks:
+  - check: 'Indian law case: the term score and, below the score kept without a reading, an AI reader''s judgment of excerpts'
+    result: agree
+    detail: score 10
+  - check: Nations named in the caption, matched to nation records by name
+    result: agree
+    detail: 1 matched, 0 not linked

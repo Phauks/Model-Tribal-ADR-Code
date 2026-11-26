@@ -1,0 +1,52 @@
+key: langford-v-monteith-1876
+kind: state-case
+citation:
+  type: legal_case
+  title: Langford v. Monteith
+  authority: Idaho Supreme Court
+  container-title: Idaho
+  volume: '1'
+  page: '612'
+  issued:
+    date-parts:
+    - - 1876
+      - 1
+  URL: https://static.case.law/idaho/1/html/0612-01.html
+  accessed:
+    date-parts:
+    - - 2026
+      - 11
+      - 26
+original_link: https://static.case.law/idaho/1/html/0612-01.html
+retrieved: '2026-11-26'
+archives: []
+history:
+  status: live
+  last_checked: '2026-11-26'
+rights:
+  status: no-permission-needed
+  basis: government-edict
+  basis_note: The text of a judicial opinion has no copyright (Georgia v. Public.Resource.Org, Inc., 590 U.S. 255 (2020)). The copy served on this site is the court's opinion only, without the publisher's headnotes, synopsis or other editorial matter (decision record 0060).
+  redistribution: true
+nations_in_case:
+  checked: '2026-11-26'
+  named: []
+jurisdictions:
+- level: state
+  state: ID
+topics:
+- state-court-indian-law
+found_in:
+- 2026-11-26-state-court-indian-law-opinions
+notes: Published at 1 Idaho 612. Decided by the Idaho Supreme Court on 1876. Found by scripts/caselaw/state_court_opinions.py in the Caselaw Access Project's volumes, with an Indian law term score of 9; an AI reader read excerpts and judged it an Indian law case (Nez Perce reservation lands, lease and forcible detainer).
+review:
+  status: unverified
+  by: scripts/caselaw/state_court_opinions.py
+  date: '2026-11-26'
+  checks:
+  - check: 'Indian law case: the term score and, below the score kept without a reading, an AI reader''s judgment of excerpts'
+    result: agree
+    detail: 'score 9; reader: Nez Perce reservation lands, lease and forcible detainer'
+  - check: Nations named in the caption, matched to nation records by name
+    result: agree
+    detail: 0 matched, 0 not linked

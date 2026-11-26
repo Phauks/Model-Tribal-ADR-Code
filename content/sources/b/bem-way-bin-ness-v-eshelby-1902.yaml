@@ -1,0 +1,53 @@
+key: bem-way-bin-ness-v-eshelby-1902
+kind: state-case
+citation:
+  type: legal_case
+  title: Bem-Way-Bin-Ness v. Eshelby
+  authority: Minnesota Supreme Court
+  container-title: Minn.
+  volume: '87'
+  page: '108'
+  issued:
+    date-parts:
+    - - 1902
+      - 7
+      - 11
+  URL: https://static.case.law/minn/87/html/0108-01.html
+  accessed:
+    date-parts:
+    - - 2026
+      - 11
+      - 26
+original_link: https://static.case.law/minn/87/html/0108-01.html
+retrieved: '2026-11-26'
+archives: []
+history:
+  status: live
+  last_checked: '2026-11-26'
+rights:
+  status: no-permission-needed
+  basis: government-edict
+  basis_note: The text of a judicial opinion has no copyright (Georgia v. Public.Resource.Org, Inc., 590 U.S. 255 (2020)). The copy served on this site is the court's opinion only, without the publisher's headnotes, synopsis or other editorial matter (decision record 0060).
+  redistribution: true
+nations_in_case:
+  checked: '2026-11-26'
+  named: []
+jurisdictions:
+- level: state
+  state: MN
+topics:
+- state-court-indian-law
+found_in:
+- 2026-11-26-state-court-indian-law-opinions
+notes: Published at 87 Minn. 108. Decided by the Minnesota Supreme Court on July 11, 1902. Found by scripts/caselaw/state_court_opinions.py in the Caselaw Access Project's volumes, with an Indian law term score of 7; an AI reader read excerpts and judged it an Indian law case (tribal Indians, Dawes Act citizenship and land).
+review:
+  status: unverified
+  by: scripts/caselaw/state_court_opinions.py
+  date: '2026-11-26'
+  checks:
+  - check: 'Indian law case: the term score and, below the score kept without a reading, an AI reader''s judgment of excerpts'
+    result: agree
+    detail: 'score 7; reader: tribal Indians, Dawes Act citizenship and land'
+  - check: Nations named in the caption, matched to nation records by name
+    result: agree
+    detail: 0 matched, 0 not linked

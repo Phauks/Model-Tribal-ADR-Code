@@ -1,0 +1,53 @@
+key: pledge-v-griffith-1905
+kind: state-case
+citation:
+  type: legal_case
+  title: Pledge v. Griffith
+  authority: Montana Supreme Court
+  container-title: Mont.
+  volume: '33'
+  page: '191'
+  issued:
+    date-parts:
+    - - 1905
+      - 11
+      - 17
+  URL: https://static.case.law/mont/33/html/0191-01.html
+  accessed:
+    date-parts:
+    - - 2026
+      - 11
+      - 26
+original_link: https://static.case.law/mont/33/html/0191-01.html
+retrieved: '2026-11-26'
+archives: []
+history:
+  status: live
+  last_checked: '2026-11-26'
+rights:
+  status: no-permission-needed
+  basis: government-edict
+  basis_note: The text of a judicial opinion has no copyright (Georgia v. Public.Resource.Org, Inc., 590 U.S. 255 (2020)). The copy served on this site is the court's opinion only, without the publisher's headnotes, synopsis or other editorial matter (decision record 0060).
+  redistribution: true
+nations_in_case:
+  checked: '2026-11-26'
+  named: []
+jurisdictions:
+- level: state
+  state: MT
+topics:
+- state-court-indian-law
+found_in:
+- 2026-11-26-state-court-indian-law-opinions
+notes: Published at 33 Mont. 191. Decided by the Montana Supreme Court on Nov. 17, 1905. Found by scripts/caselaw/state_court_opinions.py in the Caselaw Access Project's volumes, with an Indian law term score of 7; an AI reader read excerpts and judged it an Indian law case (election precinct on Fort Peck reservation).
+review:
+  status: unverified
+  by: scripts/caselaw/state_court_opinions.py
+  date: '2026-11-26'
+  checks:
+  - check: 'Indian law case: the term score and, below the score kept without a reading, an AI reader''s judgment of excerpts'
+    result: agree
+    detail: 'score 7; reader: election precinct on Fort Peck reservation'
+  - check: Nations named in the caption, matched to nation records by name
+    result: agree
+    detail: 0 matched, 0 not linked

@@ -50,6 +50,7 @@ const collectionIcons: Record<string, Component> = {
 	'federal-register-notices': Newspaper,
 	'supreme-court-cases': Gavel,
 	'other-court-cases': Scale,
+	'state-court-opinions': Gavel,
 	'tribal-court-opinions': FileText,
 	'supreme-courts': Landmark,
 	biographies: UserRound,

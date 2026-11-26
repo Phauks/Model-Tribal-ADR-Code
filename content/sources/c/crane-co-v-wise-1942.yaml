@@ -1,0 +1,53 @@
+key: crane-co-v-wise-1942
+kind: state-case
+citation:
+  type: legal_case
+  title: Crane Co. v. Wise
+  authority: Oklahoma Supreme Court
+  container-title: Okla.
+  volume: '190'
+  page: '436'
+  issued:
+    date-parts:
+    - - 1942
+      - 4
+      - 14
+  URL: https://static.case.law/okla/190/html/0436-01.html
+  accessed:
+    date-parts:
+    - - 2026
+      - 11
+      - 26
+original_link: https://static.case.law/okla/190/html/0436-01.html
+retrieved: '2026-11-26'
+archives: []
+history:
+  status: live
+  last_checked: '2026-11-26'
+rights:
+  status: no-permission-needed
+  basis: government-edict
+  basis_note: The text of a judicial opinion has no copyright (Georgia v. Public.Resource.Org, Inc., 590 U.S. 255 (2020)). The copy served on this site is the court's opinion only, without the publisher's headnotes, synopsis or other editorial matter (decision record 0060).
+  redistribution: true
+nations_in_case:
+  checked: '2026-11-26'
+  named: []
+jurisdictions:
+- level: state
+  state: OK
+topics:
+- state-court-indian-law
+found_in:
+- 2026-11-26-state-court-indian-law-opinions
+notes: Published at 190 Okla. 436; 124 P.2d 724. Decided by the Oklahoma Supreme Court on Apr. 14, 1942. Found by scripts/caselaw/state_court_opinions.py in the Caselaw Access Project's volumes, with an Indian law term score of 9; an AI reader read excerpts and judged it an Indian law case (Osage Indian Agency bond contract for restricted allottee property).
+review:
+  status: unverified
+  by: scripts/caselaw/state_court_opinions.py
+  date: '2026-11-26'
+  checks:
+  - check: 'Indian law case: the term score and, below the score kept without a reading, an AI reader''s judgment of excerpts'
+    result: agree
+    detail: 'score 9; reader: Osage Indian Agency bond contract for restricted allottee property'
+  - check: Nations named in the caption, matched to nation records by name
+    result: agree
+    detail: 0 matched, 0 not linked
