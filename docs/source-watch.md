@@ -218,7 +218,8 @@ Collections are the identifiers in the collections registry. Nation page parts a
 | Collection | Watchers | Notes |
 | --- | --- | --- |
 | U.S. Supreme Court Cases (`supreme-court-cases`) | `supreme-court`; `courtlistener`; `govinfo` (`USREPORTS`) | Quotes re-checked when official pagination appears. |
-| Other Court Cases (`other-court-cases`) | `courtlistener`; `govinfo` (`USCOURTS`) | State cases are link only (tier 3). |
+| Other Court Cases (`other-court-cases`) | `courtlistener`; `govinfo` (`USCOURTS`) | State court opinions on Indian law are their own collection, below. |
+| State Court Opinions (`state-court-opinions`) | `courtlistener` (planned, phase 2) | The Caselaw Access Project set ends about 2019 and does not change; later opinions come from CourtListener's state appellate courts, found by the same Indian law terms (`scripts/caselaw/state_court_opinions.py`). Child, protection-order and recent estate cases are held for a privacy review before anything is shown or sent to a model (decision record 0060). |
 | Tribal Court Opinions (`tribal-court-opinions`) | `consented-courts` only | The Caselaw Access Project set does not change. Later opinions only from nations that publish them and agree (data roadmap, "By consent"); the watcher's list of courts starts empty. Initials and privacy holds apply before anything is shown or sent to a model. |
 | U.S. Supreme Courts (`supreme-courts`) | Derived | From the Justices. |
 | Courts (`courts`) | See Native nations, courts | |

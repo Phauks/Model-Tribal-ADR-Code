@@ -1,0 +1,59 @@
+key: quinault-indian-nation-v-imperium-terminal-services-llc-2017
+kind: state-case
+citation:
+  type: legal_case
+  title: Quinault Indian Nation v. Imperium Terminal Services, LLC
+  authority: Washington Supreme Court
+  container-title: Wash. 2d
+  volume: '187'
+  page: '460'
+  issued:
+    date-parts:
+    - - 2017
+      - 1
+      - 12
+  URL: https://static.case.law/wash-2d/187/html/0460-01.html
+  accessed:
+    date-parts:
+    - - 2026
+      - 11
+      - 26
+original_link: https://static.case.law/wash-2d/187/html/0460-01.html
+retrieved: '2026-11-26'
+archives: []
+history:
+  status: live
+  last_checked: '2026-11-26'
+rights:
+  status: no-permission-needed
+  basis: government-edict
+  basis_note: The text of a judicial opinion has no copyright (Georgia v. Public.Resource.Org, Inc., 590 U.S. 255 (2020)). The copy served on this site is the court's opinion only, without the publisher's headnotes, synopsis or other editorial matter (decision record 0060).
+  redistribution: true
+tribes:
+- quinault-indian-nation
+nations_in_case:
+  checked: '2026-11-26'
+  named:
+  - nation: quinault-indian-nation
+    named_as: Quinault Indian Nation
+    role: party
+    note: Matched by the script to the nation record of the same name; not yet checked.
+jurisdictions:
+- level: state
+  state: WA
+topics:
+- state-court-indian-law
+found_in:
+- 2026-11-26-state-court-indian-law-opinions
+notes: Published at 187 Wash. 2d 460. Decided by the Washington Supreme Court on Jan. 12, 2017. Found by scripts/caselaw/state_court_opinions.py in the Caselaw Access Project's volumes, with an Indian law term score of 9 and a Native nation or Native organization named as a party.
+review:
+  status: unverified
+  by: scripts/caselaw/state_court_opinions.py
+  date: '2026-11-26'
+  checks:
+  - check: 'Indian law case: the term score and, below the score kept without a reading, an AI reader''s judgment of excerpts'
+    result: agree
+    detail: score 9; kept because a party is a Native nation or organization
+  - check: Nations named in the caption, matched to nation records by name
+    result: agree
+    detail: 1 matched, 0 not linked

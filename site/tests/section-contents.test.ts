@@ -38,7 +38,8 @@ describe('the pages of each section, for the sidebar’s second column', () => {
 		const stories = await sectionContents('stories');
 		expect(stories?.pages).toEqual([{ label: 'All stories', link: '/stories' }]);
 		expect(stories?.entries?.items.every((item) => item.link.startsWith('/stories/'))).toBe(true);
-	});
+		// The first call reads every record (about 27,000), which takes 15 to 30 seconds on a CI runner.
+	}, 60_000);
 
 	it('lists the Sponsorship levels page under Sponsorship', async () => {
 		expect((await sectionContents('sponsor'))?.pages).toEqual([

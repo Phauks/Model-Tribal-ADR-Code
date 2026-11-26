@@ -115,11 +115,24 @@ function treaties(): CollectionItem[] {
 	return [...sources().values()].filter((record) => typeOf(record) === 'treaty').map((record) => sourceItem(record, tribesOf(record)));
 }
 
-/** Court cases with a name, by the citation's authority. */
+const stateOpinionTopic = 'state-court-indian-law';
+const isStateOpinion = (record: SourceRecord) => (record.topics ?? []).includes(stateOpinionTopic);
+
+/** State court opinions found by scripts/caselaw/state_court_opinions.py, less those held for a privacy review. */
+const stateCourtOpinions = () =>
+	[...sources().values()].filter((record) => isStateOpinion(record) && record.citation.title).map((record) => sourceItem(record, record.citation.authority));
+
+/** How many state court opinions the script held for a privacy review (research/state-court-opinions/summary.json). */
+function heldBackStateOpinions(): number {
+	const file = path.join(repositoryRoot, 'research/state-court-opinions/summary.json');
+	return existsSync(file) ? Number((JSON.parse(readFileSync(file, 'utf8')) as { held_for_privacy_review?: number }).held_for_privacy_review ?? 0) : 0;
+}
+
+/** Court cases with a name, by the citation's authority, less the state court opinions, which are their own collection. */
 function casesBy(test: (authority: string) => boolean): () => CollectionItem[] {
 	return () =>
 		[...sources().values()]
-			.filter((record) => typeOf(record) === 'legal_case' && record.citation.title && test(record.citation.authority ?? ''))
+			.filter((record) => typeOf(record) === 'legal_case' && record.citation.title && !isStateOpinion(record) && test(record.citation.authority ?? ''))
 			.map((record) => sourceItem(record, record.citation.authority));
 }
 
@@ -210,6 +223,15 @@ export const collections: Collection[] = [
 		group: 'Courts and cases',
 		items: casesBy(indianAppealsBoard),
 		heldBack: heldBackBoardDecisions,
+		heldBackReason: 'held back for a privacy review'
+	},
+	{
+		identifier: 'state-court-opinions', search: { group: 'case', label: 'State court opinion' },
+		title: 'State Court Opinions',
+		group: 'Courts and cases',
+		detailHeader: 'Court',
+		items: stateCourtOpinions,
+		heldBack: heldBackStateOpinions,
 		heldBackReason: 'held back for a privacy review'
 	},
 	{

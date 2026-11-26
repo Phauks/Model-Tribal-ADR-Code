@@ -23,7 +23,8 @@ describe('Biographies of Native people', () => {
 		]);
 		expect(page.picture?.src).toBe('/biographies/portraits/crow-dog.jpg');
 		expect(page.sources.map((source) => source.key)).toEqual(['ex-parte-crow-dog']);
-	});
+		// The first call reads every record (about 27,000), which takes 15 to 30 seconds on a CI runner.
+	}, 60_000);
 
 	it('lists the people with a page on their case and their nation', () => {
 		expect(peopleInCase('ex-parte-crow-dog').map((person) => person.name)).toEqual(['Crow Dog', 'Spotted Tail']);

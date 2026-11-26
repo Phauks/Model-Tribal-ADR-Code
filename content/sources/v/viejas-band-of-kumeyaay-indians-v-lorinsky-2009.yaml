@@ -1,0 +1,53 @@
+key: viejas-band-of-kumeyaay-indians-v-lorinsky-2009
+kind: state-case
+citation:
+  type: legal_case
+  title: Viejas Band of Kumeyaay Indians v. Lorinsky
+  authority: Connecticut Appellate Court
+  container-title: Conn. App.
+  volume: '116'
+  page: '144'
+  issued:
+    date-parts:
+    - - 2009
+      - 8
+      - 4
+  URL: https://static.case.law/conn-app/116/html/0144-01.html
+  accessed:
+    date-parts:
+    - - 2026
+      - 11
+      - 26
+original_link: https://static.case.law/conn-app/116/html/0144-01.html
+retrieved: '2026-11-26'
+archives: []
+history:
+  status: live
+  last_checked: '2026-11-26'
+rights:
+  status: no-permission-needed
+  basis: government-edict
+  basis_note: The text of a judicial opinion has no copyright (Georgia v. Public.Resource.Org, Inc., 590 U.S. 255 (2020)). The copy served on this site is the court's opinion only, without the publisher's headnotes, synopsis or other editorial matter (decision record 0060).
+  redistribution: true
+nations_in_case:
+  checked: '2026-11-26'
+  named: []
+jurisdictions:
+- level: state
+  state: CT
+topics:
+- state-court-indian-law
+found_in:
+- 2026-11-26-state-court-indian-law-opinions
+notes: Published at 116 Conn. App. 144. Decided by the Connecticut Appellate Court on Aug. 4, 2009. Found by scripts/caselaw/state_court_opinions.py in the Caselaw Access Project's volumes, with an Indian law term score of 5 and a Native nation or Native organization named as a party.
+review:
+  status: unverified
+  by: scripts/caselaw/state_court_opinions.py
+  date: '2026-11-26'
+  checks:
+  - check: 'Indian law case: the term score and, below the score kept without a reading, an AI reader''s judgment of excerpts'
+    result: agree
+    detail: score 5; kept because a party is a Native nation or organization
+  - check: Nations named in the caption, matched to nation records by name
+    result: agree
+    detail: 0 matched, 0 not linked
