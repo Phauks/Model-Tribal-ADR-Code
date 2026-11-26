@@ -11,7 +11,7 @@ export type CandidateStatus = (typeof candidateStatuses)[number];
 
 /** One step of triage, as the candidate records it. */
 export interface TriageStep {
-	step: 'rules' | 'cheap-model' | 'top-model' | 'sample-check';
+	step: 'rules' | 'cheap-model' | 'top-model' | 'sample-check' | 'person';
 	/** The rule's name, or the model's identifier. */
 	by: string;
 	answer: string;

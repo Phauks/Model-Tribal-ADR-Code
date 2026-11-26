@@ -729,7 +729,7 @@ const sourceWatch: Check = {
 const sourceWatchModels: Check = {
 	key: 'source-watch-models',
 	group: 'Workers',
-	name: 'Source watch models (AI Gateway)',
+	name: 'Source watch models',
 	async run({ environment, now = new Date() }) {
 		const progress = await watchProgress(environment);
 		if (progress && 'problem' in progress) return { state: 'problem', summary: progress.problem, details: [] };
@@ -742,12 +742,12 @@ const sourceWatchModels: Check = {
 			...(spend.length > 1 ? [`Together: ${dollars(total)} in the last 30 days.`] : []),
 			...(models.lastSample ? [`Last weekly sample check ${models.lastSample.at}: ${models.lastSample.checked} checked, ${models.lastSample.disagreed} disagreed with the cheaper model.`] : [])
 		];
-		const fix = 'Create the AI Gateway "source-watch" with Unified Billing, load credits, and set WATCH_TRIAGE_PROVIDER to ai-gateway on the tribal-law-project-watch Worker (site/watch/README.md, "Models").';
+		const fix = 'Set WATCH_TRIAGE_PROVIDER to workers-ai on the tribal-law-project-watch Worker (Settings > Variables and Secrets), or remove it to use the default (site/watch/README.md, "Models").';
 		if (models.provider === 'none') return { state: 'off', summary: 'Triage by model is off, so items the rules cannot decide go to people.', details, fix };
 		if (!models.ready) return { state: 'problem', summary: models.problem ?? 'The triage provider is not ready.', details, fix };
 		const recentProblem = models.lastProblemAt && now.getTime() - Date.parse(models.lastProblemAt) < 3_600_000;
-		if (recentProblem) return { state: 'problem', summary: `The models did not answer: ${models.problem ?? 'no reason given'}`, details, fix: 'Check the gateway’s logs and the credit balance in the Cloudflare dashboard (AI > AI Gateway > source-watch). Waiting items stay waiting until it answers.' };
-		return { state: 'working', summary: `${models.cheapModel ?? 'The cheap model'} sorts the middle band through AI Gateway ${models.gateway ?? ''}${models.lastCallAt ? `; last call ${models.lastCallAt}` : '; no calls yet'}.`, details };
+		if (recentProblem) return { state: 'problem', summary: `The models did not answer: ${models.problem ?? 'no reason given'}`, details, fix: models.provider === 'ai-gateway' ? 'Check the gateway’s logs and the credit balance in the Cloudflare dashboard (AI > AI Gateway > source-watch). Waiting items stay waiting until it answers.' : 'Check the Worker’s logs in the Cloudflare dashboard (Workers & Pages > tribal-law-project-watch > Logs). Waiting items stay waiting until the model answers.' };
+		return { state: 'working', summary: `${models.cheapModel ?? 'The cheap model'} sorts the middle band ${models.provider === 'ai-gateway' ? `through AI Gateway ${models.gateway ?? ''}` : 'on Workers AI'}${models.lastCallAt ? `; last call ${models.lastCallAt}` : '; no calls yet'}.`, details };
 	}
 };
 

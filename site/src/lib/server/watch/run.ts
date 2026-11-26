@@ -159,7 +159,8 @@ export async function runWatcher(watcher: WatcherDefinition, runIdentifier: stri
 						link: item.link ?? null,
 						feeds: ruled.feeds,
 						nations,
-						facts: item.facts ?? {},
+						// The matched record's title, for the review page, which cannot read the records.
+						facts: { ...(item.facts ?? {}), ...(match.record && lookup?.titles.get(match.record) ? { matchTitle: lookup.titles.get(match.record) } : {}) },
 						summary: item.summary?.slice(0, 8000) ?? null,
 						captureKey: capture?.key ?? null,
 						captureSha256: capture?.sha256 ?? null,
