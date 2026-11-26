@@ -27,7 +27,9 @@ export const workerFirstPaths = [
 	'/copies/list/*',
 	'/copies/details/*',
 	'/search/records.json',
-	'/zip/data.zip'
+	'/zip/data.zip',
+	'/stats/*',
+	'/courts/*'
 ];
 
 /** @param {string} innerEntry the entry the build made, such as scheduled-entry.js */

@@ -19,6 +19,7 @@ import { biographies, biographyPath } from './biographies.ts';
 import { peopleIndex } from './justice-pages.ts';
 import { courtsWithPages } from './supreme-court-pages.ts';
 import { courtPath } from './supreme-courts.ts';
+import { courts as namedCourts } from './courts.ts';
 import { heldBackOpinionCount, tribalCourtOpinions } from './tribal-court-opinions.ts';
 import { storySummaries } from './stories.ts';
 import { buildFormCatalog } from './form-catalog.ts';
@@ -177,6 +178,7 @@ export const collections: Collection[] = [
 			return courts.length ? `${courts[0].years.slice(0, 4)}–${last || 'today'}` : '';
 		}
 	},
+	{ identifier: 'courts', title: 'Courts', group: 'Courts and cases', detailHeader: 'Kind', list: '/courts', items: () => namedCourts().map((court) => ({ title: court.name, href: `/courts/${court.key}`, detail: court.kind })) },
 
 	// People
 	{ identifier: 'biographies', title: 'Biographies', group: 'People', items: () => biographies().map((person) => ({ title: person.name, href: biographyPath(person.key) })) },

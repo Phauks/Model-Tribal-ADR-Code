@@ -37,6 +37,11 @@ import { opinionTitle, surname, type OpinionEntry } from '../case-opinions.ts';
 import type { SourceEntry } from './source-uses.ts';
 import { peopleInCase } from './biographies.ts';
 import { accountsOf, type AccountEntry } from './impact-accounts.ts';
+import { courtName, courtPagePath, isSupremeCourt } from '../court-pages.ts';
+import type { Stub } from '../stubs.ts';
+import { caseCourtName, citationLine } from './record-citations.ts';
+
+export { caseCourtName, citationLine };
 
 export interface CaseMention {
 	title: string;
@@ -93,6 +98,10 @@ export interface CasePage {
 	sources: SourceEntry[];
 	/** Set for a record a script wrote whose sources do not yet all agree (review.status "unverified", schemas/source.schema.json). */
 	unverified?: boolean;
+	/** The court that decided a case other than the Supreme Court's, with its page (src/lib/server/courts.ts). */
+	decidedBy?: { name: string; link: string };
+	/** Set when the case has no box and no accounts of its impact: a stub (src/lib/stubs.ts). */
+	stub?: Stub;
 }
 
 interface CaseRecordParts {
@@ -258,13 +267,6 @@ export function essaysCiting(key: string, title: string): CaseMention[] {
 	return found.sort((one, other) => one.title.localeCompare(other.title));
 }
 
-export function citationLine(record: SourceRecord): string {
-	const { volume, page, number, authority } = record.citation;
-	const reporter = [volume, record.citation['container-title'], page].filter(Boolean).join(' ');
-	const year = record.citation.issued?.['date-parts']?.[0]?.[0];
-	if (reporter && volume && page) return `${reporter}${year ? ` (${year})` : ''}`;
-	return [number, [authority, year].filter(Boolean).join(', ')].filter(Boolean).join(' ').trim() || (year ? String(year) : '');
-}
 
 export function casePage(key: string): CasePage {
 	const record = sources().get(key) as (SourceRecord & CaseRecordParts) | undefined;
@@ -275,6 +277,9 @@ export function casePage(key: string): CasePage {
 	const saved = savedCopyLink(record);
 	const bench = record.supreme_court;
 	const courtLink = bench ? courtPath(bench.court) : undefined;
+	const decider = caseCourtName(record);
+	const deciderLink = decider && !isSupremeCourt(decider) ? courtPagePath(decider) : undefined;
+	const accounts = accountsOf({ record: key });
 	return {
 		key,
 		name,
@@ -294,8 +299,10 @@ export function casePage(key: string): CasePage {
 		essays: essaysCiting(key, name),
 		nationPages: nations.filter((nation) => nationNamesAndKinds().has(nation.id)).map((nation) => ({ name: nation.name, link: `/nations/${nation.id}` })),
 		court: bench && courtLink ? { name: bench.court, link: courtLink } : undefined,
-		accounts: accountsOf({ record: key }),
+		accounts,
 		sources: box.sources,
-		unverified: record.review?.status === 'unverified' || undefined
+		unverified: record.review?.status === 'unverified' || undefined,
+		decidedBy: decider && deciderLink ? { name: courtName(decider), link: deciderLink } : undefined,
+		stub: box.sections.length === 0 && accounts.length === 0 ? { kind: 'case', record: `cases/${key}` } : undefined
 	};
 }

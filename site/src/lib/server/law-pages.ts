@@ -22,6 +22,7 @@ import { isLawRecord, recordName } from './law-records.ts';
 import { savedCopyLink } from './markdown.ts';
 import { partialDate } from './stories.ts';
 import type { SourceEntry } from './source-uses.ts';
+import type { Stub } from '../stubs.ts';
 
 export interface LawPage {
 	key: string;
@@ -39,6 +40,8 @@ export interface LawPage {
 	readingCount: number;
 	essays: CaseMention[];
 	sources: SourceEntry[];
+	/** Set when the law has no box and no accounts of its impact: a stub (src/lib/stubs.ts). */
+	stub?: Stub;
 }
 
 const kindLabels: Record<string, string> = {
@@ -96,6 +99,7 @@ export function lawPage(key: string): LawPage {
 	].filter((group) => group.items.length > 0);
 	const saved = savedCopyLink(record);
 	const title = record.citation.title;
+	const accounts = accountsOf({ record: key });
 	return {
 		key,
 		name: named.what === 'Treaty' ? named.name : named.name.replace(/ \(\d{4}\)$/, ''),
@@ -104,10 +108,11 @@ export function lawPage(key: string): LawPage {
 		glance,
 		boxSections: box.sections,
 		topics: box.topics,
-		accounts: accountsOf({ record: key }),
+		accounts,
 		readingHtml: readingLinksHtml(record.reading_links, saved).replace(/<button[\s\S]*?<\/button>/, ''),
 		readingCount: (record.reading_links?.links.length ?? 0) + (saved ? 1 : 0),
 		essays: essaysCiting(key, named.name),
-		sources: box.sources
+		sources: box.sources,
+		stub: box.sections.length === 0 && accounts.length === 0 ? { kind: 'law', record: `laws/${key}` } : undefined
 	};
 }
