@@ -484,7 +484,7 @@
      "opinions": [
       {
        "kind": "majority",
-       "justice": "Byron Raymond White",
+       "justice": "Byron R. White",
        "page": 138
       },
       {
@@ -1346,6 +1346,163 @@
       "text": "Supplemental decree entered October 10, 2000—Consolidated decree entered March 27, 2006"
      }
     ]
+   }
+  }
+ },
+ "1977-147": {
+  "key": "regents-of-the-university-of-california-v-bakke",
+  "read": "2026-11-26",
+  "facts": {
+   "decided": {
+    "lines": [
+     {
+      "page": 265,
+      "text": "No. 76-811. Argued October 12, 1977—Decided June 28, 1978"
+     }
+    ],
+    "correct": {
+     "decided": "1978-06-28"
+    },
+    "note": "the Database gives June 26, 1978"
+   },
+   "opinions": {
+    "lines": [
+     {
+      "page": 269,
+      "text": "MR. JUSTICE POWELL announced the judgment of the Court."
+     },
+     {
+      "page": 324,
+      "text": "Opinion of MR. JUSTICE BRENNAN, MR. JUSTICE WHITE, MR. JUSTICE MARSHALL, and MR. JUSTICE BLACKMUN, concurring in the judgment in part and dissenting in part."
+     },
+     {
+      "page": 379,
+      "text": "MR. JUSTICE WHITE."
+     },
+     {
+      "page": 387,
+      "text": "MR. JUSTICE MARSHALL."
+     },
+     {
+      "page": 402,
+      "text": "MR. JUSTICE BLACKMUN."
+     },
+     {
+      "page": 408,
+      "text": "MR. JUSTICE STEVENS, with whom THE CHIEF JUSTICE, MR. JUSTICE STEWART, and MR. JUSTICE REHNQUIST join, concurring in the judgment in part and dissenting in part.",
+      "ocr_poor": true
+     }
+    ],
+    "correct": {
+     "opinions": [
+      {
+       "kind": "judgment",
+       "justice": "Lewis F. Powell, Jr.",
+       "page": 269
+      },
+      {
+       "kind": "concurrence in part and dissent in part",
+       "justice": "William J. Brennan, Jr.",
+       "page": 324,
+       "note": "Headed \"concurring in the judgment in part and dissenting in part\"; the joint opinion of Justices Brennan, White, Marshall and Blackmun."
+      },
+      {
+       "kind": "concurrence in part and dissent in part",
+       "justice": "Byron R. White",
+       "page": 379,
+       "note": "Headed only with his name; on Title VI."
+      },
+      {
+       "kind": "concurrence in part and dissent in part",
+       "justice": "Thurgood Marshall",
+       "page": 387,
+       "note": "Headed only with his name."
+      },
+      {
+       "kind": "concurrence in part and dissent in part",
+       "justice": "Harry A. Blackmun",
+       "page": 402,
+       "note": "Headed only with his name."
+      },
+      {
+       "kind": "concurrence in part and dissent in part",
+       "justice": "John Paul Stevens",
+       "page": 408,
+       "note": "Headed \"concurring in the judgment in part and dissenting in part\"; joined by Chief Justice Burger and Justices Stewart and Rehnquist."
+      }
+     ]
+    }
+   }
+  }
+ },
+ "1988-026": {
+  "key": "city-of-richmond-v-j-a-croson-co",
+  "read": "2026-11-26",
+  "facts": {
+   "opinions": {
+    "lines": [
+     {
+      "page": 476,
+      "text": "JUSTICE O'CONNOR announced the judgment of the Court and delivered the opinion of the Court with respect to Parts I, III-B, and IV"
+     },
+     {
+      "page": 511,
+      "text": "JUSTICE STEVENS, concurring in part and concurring in the judgment."
+     },
+     {
+      "page": 518,
+      "text": "JUSTICE KENNEDY, concurring in part and concurring in the judgment."
+     },
+     {
+      "page": 520,
+      "text": "JUSTICE SCALIA, concurring in the judgment.",
+      "ocr_poor": true
+     },
+     {
+      "page": 528,
+      "text": "JUSTICE MARSHALL, with whom JUSTICE BRENNAN and JUSTICE BLACKMUN join, dissenting."
+     },
+     {
+      "page": 561,
+      "text": "JUSTICE BLACKMUN, with whom JUSTICE BRENNAN joins, dissenting."
+     }
+    ],
+    "correct": {
+     "opinions": [
+      {
+       "kind": "majority",
+       "justice": "Sandra Day O'Connor",
+       "page": 476,
+       "note": "The opinion of the Court as to Parts I, III-B and IV; as to Parts II and III-A, a plurality."
+      },
+      {
+       "kind": "concurrence in part and in the judgment",
+       "justice": "John Paul Stevens",
+       "page": 511
+      },
+      {
+       "kind": "concurrence in part and in the judgment",
+       "justice": "Anthony M. Kennedy",
+       "page": 518
+      },
+      {
+       "kind": "special concurrence",
+       "justice": "Antonin Scalia",
+       "page": 520
+      },
+      {
+       "kind": "dissent",
+       "justice": "Thurgood Marshall",
+       "page": 528
+      },
+      {
+       "kind": "dissent",
+       "justice": "Harry A. Blackmun",
+       "page": 561
+      }
+     ]
+    },
+    "note": "the Caselaw Access Project's heading put Justice Marshall's name on the opinion that announces the judgment"
    }
   }
  }
