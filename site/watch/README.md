@@ -1,6 +1,6 @@
 # Source watch Worker
 
-The Worker `tribal-law-project-watch` looks for new and changed legal material and puts what it finds in a queue for people. Nothing it finds is published without a person. The design, the catalog of sources and the reasons are in [docs/source-watch.md](../../docs/source-watch.md) and decision record [0059](../../docs/decisions/0059-watch-for-new-legal-sources-with-plug-in-watchers.md).
+The Worker `tribal-law-project-radar` looks for new and changed legal material and puts what it finds in a queue for people. Nothing it finds is published without a person. The design, the catalog of sources and the reasons are in [docs/source-watch.md](../../docs/source-watch.md) and decision record [0059](../../docs/decisions/0059-watch-for-new-legal-sources-with-plug-in-watchers.md).
 
 ## What is here
 
@@ -30,14 +30,14 @@ The migration is already applied to the live database (`site/migrations/20261126
 3. Under importing a repository, select **GitHub**. If Cloudflare asks, sign in to GitHub and allow it this repository, as for the other Workers.
 4. Select the repository `Model-Tribal-ADR-Code`.
 5. On the next page, fill in:
-   - **Project name:** `tribal-law-project-watch`. It must match the name in `site/watch/wrangler.jsonc` exactly, or the build fails.
+   - **Project name:** `tribal-law-project-radar`. It must match the name in `site/watch/wrangler.jsonc` exactly, or the build fails.
    - **Build command:** `cd .. && npm ci && npm run watch:index`
    - **Deploy command:** `npx wrangler deploy` (usually filled in already).
    - Open **Advanced settings** and set the **Root directory** (on some screens called **Path**) to `site/watch`.
 6. Select **Deploy**. The first build takes a few minutes.
 7. When it has finished, open the new Worker, then **Settings** > **Build** > **Build watch paths**, and set the included paths to `site/watch/*`, `site/src/lib/server/watch/*`, `content/*` and `research/capture-index.csv`. Then the Worker is rebuilt with a fresh index of the records only when those files change, not on every push.
 
-To check it, open the progress page at `https://tribal-law-project-watch.trevordgoldsmith.workers.dev/`, which fills in within a few minutes. The site's Service checks page has two rows, "Source watch" and "Source watch models", which read the same progress from the bucket.
+To check it, open the progress page at `https://tribal-law-project-radar.trevordgoldsmith.workers.dev/`, which fills in within a few minutes. The site's Service checks page has two rows, "Source watch" and "Source watch models", which read the same progress from the bucket.
 
 These steps follow Cloudflare's [Workers Builds](https://developers.cloudflare.com/workers/ci-cd/builds/) ("Connect a new Worker"), [build configuration](https://developers.cloudflare.com/workers/ci-cd/builds/configuration/) and [build watch paths](https://developers.cloudflare.com/workers/ci-cd/builds/build-watch-paths/) pages, and the name rule in [Workers Builds troubleshooting](https://developers.cloudflare.com/workers/ci-cd/builds/troubleshoot/#workers-name-requirement).
 
