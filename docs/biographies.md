@@ -6,7 +6,8 @@ Trevor approved these rules on Nov. 24, 2026. Pages live at /biographies/<name> 
 
 1. A Native person a case on this site names as a party or petitioner, or as the person whose act, death, land or rights the case turns on. Examples: Crow Dog and Spotted Tail (*Ex parte Crow Dog*, 109 U.S. 556 (1883)).
 2. A Native leader that a source on this site names as leading the nation: a treaty signer, the head of government when a governing document on the site was adopted, or a leader who brought the nation's case.
-3. No page for minors, for people a record names only by initials or a pseudonym, or for people known only from family, juvenile or sealed matters. Non-Native people in the cases (for example Samuel Worcester, a missionary) stay on the case pages.
+3. A person who signed a ratified treaty for the United States: the commissioners, governors and officers who negotiated the treaties (Trevor chose to add them to Biographies on Nov. 26, 2026). Their page lists the treaties they signed; a President or Justice also links to that page.
+4. No page for minors, for people a record names only by initials or a pseudonym, or for people known only from family, juvenile or sealed matters. Other non-Native people in the cases (for example Samuel Worcester, a missionary) stay on the case pages.
 
 ## Living people and the recently dead
 
@@ -47,6 +48,14 @@ On Nov. 24, 2026 Trevor asked for many more pages than the first seven. They wer
 - **People in the Supreme Court cases.** The opinions of the 533 cases in `research/supreme-court-coverage/native-cases-scdb.csv` were read from the Library of Congress scans of the United States Reports. A reader listed each person the opinion itself says is Native, named with at least two words, and not a minor, with a word-for-word quote for each fact. `verify_drafts.py` finds every quote on its page and drops what it can't find. A person whose only tie is citizenship in a nation (which also covered adopted and intermarried citizens and freedmen) was left out. A case decided in 1945 or later is treated as possibly about a living person, so the page gives the public role only.
 - **Treaty leaders.** The signature pages of the 370 ratified treaties were read from the Statutes at Large on GovInfo, and every Native signer was listed as printed (`treaty-signers.json`, 9,250 names, each found on its page by `verify_treaties.py`). A signer gets a page when the treaty prints a title such as chief, head man or principal chief beside the name, or when the same printed name signs two or more treaties for the same nation with no more than 30 years between signings. The treaties print names, not identities: two signings under one name may be two people, and one person may appear under two spellings. The page says only what each treaty prints.
 - **Nations.** A page links a nation only where the case names it and its successor is clear (`nation-map.json`), or where the treaty records link the signing nation to today's nation with high confidence.
+
+## Repeat signers and United States signers (Nov. 26, 2026)
+
+Trevor expected every Native signer of two or more treaties to have a page, and chose to add the United States signers too. The signer count (`research/analyses/2026-11-26-treaty-signer-count.md`) tested how reliably printed names can be matched, and the pages follow its strict threshold.
+
+- **Native repeat signers.** `make_repeat_signer_records.py` joins two signings only when they come from different treaties, the nations they were signed for share a nation family (all Sioux bands, all Chippewa bands, Sac and Fox, and so on), the treaties are no more than 30 years apart, and the printed names are the same letters or have the same sound key (`signer_count/matching.py`). It made 163 pages for repeat signers the first rule missed. Closer calls, where only the English name is the same or the sound keys are 85% or more alike, are never joined by script: they are listed in `research/reviews/2026-11-26-treaty-signer-matches.csv` for a person to decide. Christian names many signers shared (John, Charley, Louison) are left out, as before.
+- **United States signers.** `make_us_signer_records.py` reads the signers from Kappler's text (`research/biographies/2026-11-26/treaty-us-signers.json`) and joins signings with the same family name whose given names agree ("Wm." is William, "H." is Henry; two different middle initials are two people) within 40 years, with the hand calls from the signer count. It made 224 pages. Each signing cites the treaty's signature page in the Statutes at Large.
+- **Stubs.** A page that holds only treaty signings (no cases, no picture, no other life events) carries the Stub badge and note, and is listed in Workspace › Stubs.
 
 ## Records
 
