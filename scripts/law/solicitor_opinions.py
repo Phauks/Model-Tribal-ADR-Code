@@ -390,6 +390,11 @@ def records(args) -> None:
     for row in csv.DictReader(CAPTURE_INDEX.open(encoding="utf-8")):
         copies[row["sha256"]] = {"storage_key": row["key"], "checksum": row["sha256"], "media_type": row["media_type"], "bytes": int(row["bytes"])}
     names = NationNames()
+    # The University of Oklahoma pages each hold several opinions: records on one page list each other (lint_records duplicate-link).
+    by_page: dict[str, list[str]] = {}
+    for opinion in opinions:
+        if not (opinion["m"] in EXISTING and not opinion.get("supplement")):
+            by_page.setdefault(opinion["link"].split("#", 1)[0], []).append(record_key(opinion))
     written = 0
     for opinion in opinions:
         if opinion["m"] in EXISTING and not opinion.get("supplement"):
@@ -399,7 +404,12 @@ def records(args) -> None:
         if path.exists() and SESSION not in path.read_text(encoding="utf-8"):
             print("key taken by another record, skipped:", key, file=sys.stderr)
             continue
-        path.write_text(dump(record_for(opinion, copies.get(opinion["sha256"]), names.find(opinion["subject"]))), encoding="utf-8")
+        record = record_for(opinion, copies.get(opinion["sha256"]), names.find(opinion["subject"]))
+        others = [other for other in by_page[opinion["link"].split("#", 1)[0]] if other != key]
+        if others:
+            record = {**{name: value for name, value in record.items() if name in ("key", "kind", "citation", "original_link", "retrieved", "file")},
+                      "shares_link_with": others, **record}
+        path.write_text(dump(record), encoding="utf-8")
         written += 1
     print(f"wrote {written} records")
 
