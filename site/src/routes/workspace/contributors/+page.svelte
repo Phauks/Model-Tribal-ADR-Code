@@ -40,7 +40,7 @@
 </script>
 
 <svelte:head>
-	<title>Contributors · Workspace · Model Tribal ADR Code</title>
+	<title>Contributors · Workspace · Tribal Law Project</title>
 </svelte:head>
 
 <h1>Contributors</h1>

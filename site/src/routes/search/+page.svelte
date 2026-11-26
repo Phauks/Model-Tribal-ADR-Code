@@ -252,7 +252,7 @@
 </script>
 
 <svelte:head>
-	<title>{trimmed ? `“${trimmed}” · ` : ''}Search · Model Tribal ADR Code</title>
+	<title>{trimmed ? `“${trimmed}” · ` : ''}Search · Tribal Law Project</title>
 </svelte:head>
 
 <div class="reading">

@@ -5,8 +5,8 @@
 </script>
 
 <svelte:head>
-	<title>Contributors · Model Tribal ADR Code</title>
-	<meta name="description" content="People who helped write and review the Model Tribal ADR Code." />
+	<title>Contributors · Tribal Law Project</title>
+	<meta name="description" content="People who helped write and review the Tribal Law Project." />
 </svelte:head>
 
 <div class="reading">

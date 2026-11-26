@@ -31,7 +31,7 @@
 </script>
 
 <svelte:head>
-	<title>Biographies · Model Tribal ADR Code</title>
+	<title>Biographies · Tribal Law Project</title>
 	<meta name="description" content="Native people in the cases on this site and leaders in nations' histories, each fact with its source." />
 </svelte:head>
 

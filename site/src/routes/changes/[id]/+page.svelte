@@ -57,7 +57,7 @@
 </script>
 
 <svelte:head>
-	<title>Change to {pageName} · Recent changes · Model Tribal ADR Code</title>
+	<title>Change to {pageName} · Recent changes · Tribal Law Project</title>
 	<meta name="robots" content="noindex" />
 </svelte:head>
 

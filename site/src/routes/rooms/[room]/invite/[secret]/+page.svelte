@@ -13,7 +13,7 @@
 </script>
 
 <svelte:head>
-	<title>{data.room.title} · Video room · Model Tribal ADR Code</title>
+	<title>{data.room.title} · Video room · Tribal Law Project</title>
 	<meta name="robots" content="noindex" />
 </svelte:head>
 

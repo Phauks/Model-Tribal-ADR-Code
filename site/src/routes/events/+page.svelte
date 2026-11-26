@@ -26,9 +26,9 @@
 </script>
 
 <svelte:head>
-	<title>{data.past ? 'Past events' : 'Events'} · Model Tribal ADR Code</title>
+	<title>{data.past ? 'Past events' : 'Events'} · Tribal Law Project</title>
 	<meta name="description" content="Talks, panels, workshops and gatherings about dispute resolution in Native nations." />
-	<link rel="alternate" type="text/calendar" title="Model Tribal ADR Code events" href="/events/calendar.ics" />
+	<link rel="alternate" type="text/calendar" title="Tribal Law Project events" href="/events/calendar.ics" />
 </svelte:head>
 
 <div class="events-page">

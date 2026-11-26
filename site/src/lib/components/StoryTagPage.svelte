@@ -19,7 +19,7 @@
 </script>
 
 <svelte:head>
-	<title>{title} · Stories · Model Tribal ADR Code</title>
+	<title>{title} · Stories · Tribal Law Project</title>
 	<meta name="description" content="Stories about disputes and peace tagged with the {what.toLocaleLowerCase('en-US')} “{tag.name}”." />
 </svelte:head>
 

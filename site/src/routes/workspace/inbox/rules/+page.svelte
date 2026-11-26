@@ -26,7 +26,7 @@
 </script>
 
 <svelte:head>
-	<title>Auto-sort rules · Inbox · Workspace · Model Tribal ADR Code</title>
+	<title>Auto-sort rules · Inbox · Workspace · Tribal Law Project</title>
 </svelte:head>
 
 <div class="head">

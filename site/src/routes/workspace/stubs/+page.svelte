@@ -44,7 +44,7 @@
 </script>
 
 <svelte:head>
-	<title>Stubs · Workspace · Model Tribal ADR Code</title>
+	<title>Stubs · Workspace · Tribal Law Project</title>
 </svelte:head>
 
 <Breadcrumbs trail={[{ label: 'Workspace', href: '/workspace' }]} />

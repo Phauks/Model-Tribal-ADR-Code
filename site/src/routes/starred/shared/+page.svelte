@@ -76,7 +76,7 @@
 </script>
 
 <svelte:head>
-	<title>{collection?.title ? `${collection.title} · ` : ''}Shared collection · Model Tribal ADR Code</title>
+	<title>{collection?.title ? `${collection.title} · ` : ''}Shared collection · Tribal Law Project</title>
 </svelte:head>
 
 <div class="reading">

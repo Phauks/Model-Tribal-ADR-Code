@@ -27,7 +27,7 @@ export function documentsReadme(title: string, siteAddress: string, made: string
 	return [
 		title,
 		'',
-		`From the Model Tribal ADR Code website, ${siteAddress}, made ${made}.`,
+		`From the Tribal Law Project website, ${siteAddress}, made ${made}.`,
 		'',
 		'These are the website’s own copies of documents it cites and is allowed to share: works of the United States government, and nations’ constitutions, laws and court opinions. documents.csv lists each file with its title, the address it was published at and its SHA-256.',
 		'',

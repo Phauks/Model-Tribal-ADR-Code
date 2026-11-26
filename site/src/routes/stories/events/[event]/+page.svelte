@@ -12,7 +12,7 @@
 </script>
 
 <svelte:head>
-	<title>{data.name} · Stories · Model Tribal ADR Code</title>
+	<title>{data.name} · Stories · Tribal Law Project</title>
 	<meta name="description" content="Accounts of {data.name.toLocaleLowerCase('en-US')}, each in the teller’s own words." />
 </svelte:head>
 

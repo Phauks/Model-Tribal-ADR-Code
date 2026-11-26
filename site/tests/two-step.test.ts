@@ -85,7 +85,7 @@ describe('authenticator codes', () => {
 	it('makes the address authenticator apps read', () => {
 		const link = authenticatorLink('ABCDEFGH', 'person@example.org');
 		expect(link).toBe(
-			'otpauth://totp/Model%20Tribal%20ADR%20Code%3Aperson%40example.org?secret=ABCDEFGH&issuer=Model%20Tribal%20ADR%20Code&algorithm=SHA1&digits=6&period=30'
+			'otpauth://totp/Tribal%20Law%20Project%3Aperson%40example.org?secret=ABCDEFGH&issuer=Tribal%20Law%20Project&algorithm=SHA1&digits=6&period=30'
 		);
 		const code = scanCode(link);
 		expect(code.size).toBeGreaterThanOrEqual(21);

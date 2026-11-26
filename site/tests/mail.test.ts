@@ -130,7 +130,7 @@ describe('signed tokens', () => {
 describe('raw messages', () => {
 	it('never write Bcc, and encode names and subjects outside ASCII', () => {
 		const raw = buildRawMessage({
-			from: { email: 'contact@example.org', name: 'Model Tribal ADR Code' },
+			from: { email: 'contact@example.org', name: 'Tribal Law Project' },
 			to: [{ email: 'office@nation.example', name: 'Diné Office' }],
 			bcc: [{ email: 'hidden@example.org' }],
 			subject: 'Yá’át’ééh and welcome',

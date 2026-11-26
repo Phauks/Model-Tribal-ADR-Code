@@ -17,7 +17,7 @@
 </script>
 
 <svelte:head>
-	<title>Versions of {title} · {section} · Model Tribal ADR Code</title>
+	<title>Versions of {title} · {section} · Tribal Law Project</title>
 </svelte:head>
 
 <Breadcrumbs

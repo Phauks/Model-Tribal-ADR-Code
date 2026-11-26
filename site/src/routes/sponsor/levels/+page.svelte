@@ -36,7 +36,7 @@
 </script>
 
 <svelte:head>
-	<title>Sponsorship levels · Model Tribal ADR Code</title>
+	<title>Sponsorship levels · Tribal Law Project</title>
 	<meta name="description" content="What everyone gets free, and what each sponsorship level adds." />
 </svelte:head>
 

@@ -11,7 +11,7 @@
 </script>
 
 <svelte:head>
-	<title>Intake · Workspace · Model Tribal ADR Code</title>
+	<title>Intake · Workspace · Tribal Law Project</title>
 </svelte:head>
 
 <div class="intake-page">

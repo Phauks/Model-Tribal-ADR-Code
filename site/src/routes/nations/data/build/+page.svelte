@@ -181,7 +181,7 @@
 <svelte:window onclick={onWindowClick} />
 
 <svelte:head>
-	<title>Build a table · Model Tribal ADR Code</title>
+	<title>Build a table · Tribal Law Project</title>
 	<meta name="description" content="Build a table from the site’s data on Native nations, courts, laws, gaming compacts, constitutions, treaties and tribal court opinions." />
 </svelte:head>
 

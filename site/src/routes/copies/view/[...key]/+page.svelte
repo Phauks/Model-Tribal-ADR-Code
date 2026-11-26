@@ -24,7 +24,7 @@
 </script>
 
 <svelte:head>
-	<title>{data.title} · Source documents · Model Tribal ADR Code</title>
+	<title>{data.title} · Source documents · Tribal Law Project</title>
 </svelte:head>
 
 <div class="reading">

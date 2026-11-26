@@ -20,7 +20,7 @@
 </script>
 
 <svelte:head>
-	<title>Nonprofit · Workspace · Model Tribal ADR Code</title>
+	<title>Nonprofit · Workspace · Tribal Law Project</title>
 </svelte:head>
 
 <h1>Nonprofit</h1>

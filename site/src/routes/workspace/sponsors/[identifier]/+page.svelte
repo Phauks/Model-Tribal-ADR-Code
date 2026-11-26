@@ -32,7 +32,7 @@
 </script>
 
 <svelte:head>
-	<title>{data.sponsor.name} · Sponsors · Workspace · Model Tribal ADR Code</title>
+	<title>{data.sponsor.name} · Sponsors · Workspace · Tribal Law Project</title>
 </svelte:head>
 
 <Breadcrumbs

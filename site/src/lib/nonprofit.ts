@@ -522,7 +522,7 @@ export function calendarFile(
 				description: task.notes ?? ''
 			}))
 	];
-	const lines = ['BEGIN:VCALENDAR', 'VERSION:2.0', 'PRODID:-//Model Tribal ADR Code//Nonprofit due dates//EN', 'CALSCALE:GREGORIAN', 'X-WR-CALNAME:Nonprofit due dates'];
+	const lines = ['BEGIN:VCALENDAR', 'VERSION:2.0', 'PRODID:-//Tribal Law Project//Nonprofit due dates//EN', 'CALSCALE:GREGORIAN', 'X-WR-CALNAME:Nonprofit due dates'];
 	for (const event of events) {
 		const start = event.due.replace(/-/g, '');
 		const end = addDays(event.due, 1).replace(/-/g, '');

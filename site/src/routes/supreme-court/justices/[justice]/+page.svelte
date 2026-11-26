@@ -42,7 +42,7 @@
 </script>
 
 <svelte:head>
-	<title>{data.name} · Supreme Court · Model Tribal ADR Code</title>
+	<title>{data.name} · Supreme Court · Tribal Law Project</title>
 	<meta name="description" content="{data.name}, {data.summary}: votes and opinions in the cases on this site." />
 </svelte:head>
 

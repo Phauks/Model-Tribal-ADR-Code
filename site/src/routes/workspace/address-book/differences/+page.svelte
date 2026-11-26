@@ -18,7 +18,7 @@
 </script>
 
 <svelte:head>
-	<title>Differences · Address book · Workspace · Model Tribal ADR Code</title>
+	<title>Differences · Address book · Workspace · Tribal Law Project</title>
 </svelte:head>
 
 <Breadcrumbs

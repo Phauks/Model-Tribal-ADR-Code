@@ -12,7 +12,7 @@
 </script>
 
 <svelte:head>
-	<title>{data.template ? data.template.name : 'New template'} · Outreach · Workspace · Model Tribal ADR Code</title>
+	<title>{data.template ? data.template.name : 'New template'} · Outreach · Workspace · Tribal Law Project</title>
 </svelte:head>
 
 <Breadcrumbs

@@ -42,7 +42,7 @@ export function mailSettings(environment: WorkerEnvironment): MailSettings {
 		domain,
 		noticeAddress: text(environment.MAIL_NOTICE_ADDRESS),
 		siteAddress: text(environment.SITE_ADDRESS)?.replace(/\/+$/, '') ?? null,
-		senderName: text(environment.MAIL_SENDER_NAME) ?? 'Model Tribal ADR Code',
+		senderName: text(environment.MAIL_SENDER_NAME) ?? 'Tribal Law Project',
 		outreach: outreachSettings(environment),
 		signingKey: text(environment.MAIL_SIGNING_KEY)
 	};
