@@ -1,5 +1,6 @@
 import { describe, expect, it } from 'vitest';
-import { readCaptureLink, saveItYourselfLink } from '#lib/server/wayback.ts';
+import type { Fetcher } from '@cloudflare/workers-types/index.ts';
+import { readCaptureLink, readWaybackStatus, saveItYourselfLink } from '#lib/server/wayback.ts';
 
 // The workspace's Wayback captures page (site/WAYBACK.md, "Links that fail").
 describe('a Wayback link pasted by hand', () => {
@@ -29,5 +30,24 @@ describe('a Wayback link pasted by hand', () => {
 describe('saving a link yourself', () => {
 	it('opens Save Page Now for that link', () => {
 		expect(saveItYourselfLink('https://example.gov/a?b=1')).toBe('https://web.archive.org/save/https://example.gov/a?b=1');
+	});
+});
+
+// The site reaches the Worker through the waybackWorker service binding, because a
+// Worker's fetch of another Worker's workers.dev address on the same account answers 404.
+describe('the Wayback Worker’s progress', () => {
+	const worker = (response: Response) => ({ fetch: async () => response }) as unknown as Fetcher;
+
+	it('says so when the binding is missing', async () => {
+		expect(await readWaybackStatus(undefined)).toEqual({ problem: 'The waybackWorker binding is missing.' });
+	});
+
+	it('says what the Worker answered when it is not a status', async () => {
+		expect(await readWaybackStatus(worker(new Response('Not found', { status: 404 })))).toEqual({ problem: 'The Wayback Worker answered 404.' });
+	});
+
+	it('reads the status through the binding', async () => {
+		const status = { state: 'saving', stateWords: 'Saving', left: 3, savingNow: [{ key: 'a', link: 'https://example.gov/', askedAt: null }] };
+		expect(await readWaybackStatus(worker(Response.json(status)))).toEqual({ status });
 	});
 });

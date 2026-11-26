@@ -87,6 +87,16 @@
 			}
 		]
 	},
+	// The Wayback Worker (site/wayback), for its progress on the Service checks
+	// page and the workspace's Wayback captures page. A Worker cannot fetch
+	// another Worker's workers.dev address on the same account, so the site
+	// reaches it through this binding (site/WAYBACK.md).
+	"services": [
+		{
+			"binding": "waybackWorker",
+			"service": "model-tribal-adr-code-wayback"
+		}
+	],
 	// Limits how often one address can send the request form: five a minute
 	// is plenty for a person and slows down automated spam, without asking
 	// anyone to make an account or solve a puzzle (docs/requests.md).
