@@ -66,5 +66,6 @@ A record is never rewritten after it is accepted. A later record supersedes it a
 | [0058](0058-draw-item-pages-on-request.md) | Draw the large families of item pages when a reader opens them | Accepted |
 | [0059](0059-watch-for-new-legal-sources-with-plug-in-watchers.md) | Watch for new and changed legal sources with plug-in watchers, and review every find by hand | Accepted |
 | [0060](0060-serve-state-agreements-and-state-court-opinions.md) | Serve copies of Oklahoma's filed state-tribal agreements and of published state court opinions | Accepted |
+| [0062](0062-add-passkeys-outside-sign-in-and-a-person-check.md) | Add passkeys, Google and Microsoft sign-in, and Cloudflare Turnstile on public forms | Accepted |
 
 Template: Status, Date, Context, Decision, Consequences, Sources.

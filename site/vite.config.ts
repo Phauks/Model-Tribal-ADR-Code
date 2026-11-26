@@ -650,7 +650,10 @@ export default defineConfig({
 						'unsafe-hashes',
 						scriptHash('this.__e=event'),
 						// Spelling and grammar checking (Harper) and other WebAssembly.
-						'wasm-unsafe-eval'
+						'wasm-unsafe-eval',
+						// Cloudflare Turnstile, the "are you a person?" check on public forms
+						// (src/lib/components/TurnstileCheck.svelte, decision record 0062).
+						'https://challenges.cloudflare.com'
 					],
 					// The map (MapLibre) and the video call kit start workers from blob: addresses.
 					'worker-src': ['self', 'blob:'],

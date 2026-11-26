@@ -189,7 +189,21 @@
 		// cannot list the account (the live room failed that way on Nov. 23, 2026).
 		// The token itself, VIDEO_ROOM_TOKEN, is a Secret set in the dashboard.
 		"VIDEO_ROOM_ACCOUNT": "b7902f2098c6d8cd1ac5910fc5373fee",
-		"VIDEO_ROOM_APPLICATION": "97ccdd98-f20c-46c8-b0cd-c34aa6934c50"
+		"VIDEO_ROOM_APPLICATION": "97ccdd98-f20c-46c8-b0cd-c34aa6934c50",
+		// Cloudflare Turnstile, the "are you a person?" check on sign-in, Create
+		// an account, Forgot your password, the request form and Report a
+		// problem (src/lib/server/turnstile.ts, decision record 0062). The site
+		// key is public. The secret key, TURNSTILE_SECRET_KEY, is a Secret set in
+		// the dashboard; the check is off while either is missing. The host
+		// names are the ones a token may come from: never localhost here.
+		"TURNSTILE_SITE_KEY": "0x4AAAAAAGU3ZRvLv4EQkRI2",
+		"TURNSTILE_HOSTNAMES": "triballawproject.org",
+		// Google and Microsoft sign-in (src/lib/server/outside-sign-in.ts). Each
+		// client identifier is public; its secret (GOOGLE_CLIENT_SECRET,
+		// MICROSOFT_CLIENT_SECRET) is a Secret set in the dashboard. Empty keeps
+		// the provider off: Trevor deferred both on Nov. 26, 2026.
+		"GOOGLE_CLIENT_ID": "",
+		"MICROSOFT_CLIENT_ID": ""
 	},
 	// Every hour, at 17 minutes past: find updates to followed pages and send
 	// the summary emails that are due. Mondays at 09:41 UTC: check the private
@@ -218,6 +232,9 @@
 	// dashboard variables are replaced by this file on each deploy):
 	// LEAD_AUTHOR_EMAIL, the first lead author's address (COLLABORATION.md,
 	// "Setting up sign-in"); MAIL_SIGNING_KEY, which signs unsubscribe links;
-	// and OUTREACH_SMTP_PASSWORD, the outreach mailbox's app password
-	// (MAIL.md, "Switching email on").
+	// OUTREACH_SMTP_PASSWORD, the outreach mailbox's app password
+	// (MAIL.md, "Switching email on"); TURNSTILE_SECRET_KEY, the "are you a
+	// person?" check's secret; and, once Google and Microsoft sign-in are
+	// switched on, GOOGLE_CLIENT_SECRET and MICROSOFT_CLIENT_SECRET
+	// (COLLABORATION.md, "Google and Microsoft sign-in").
 }
