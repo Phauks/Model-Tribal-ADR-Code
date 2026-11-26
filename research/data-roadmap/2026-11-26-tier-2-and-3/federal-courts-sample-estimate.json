@@ -1,0 +1,156 @@
+{
+ "cl-ct": {
+  "volumes": 26,
+  "sampled": 13,
+  "all_cases": 3144,
+  "any_term": 170,
+  "score_3_plus": 126,
+  "score_5_plus": 104,
+  "score_10_plus": 74,
+  "weighted": 106,
+  "weighted_by_jurisdiction": {
+   "U.S.": 106
+  }
+ },
+ "f-appx": {
+  "volumes": 714,
+  "sampled": 48,
+  "all_cases": 289363,
+  "any_term": 1562,
+  "score_3_plus": 491,
+  "score_5_plus": 372,
+  "score_10_plus": 178,
+  "weighted": 495,
+  "weighted_by_jurisdiction": {
+   "U.S.": 495
+  }
+ },
+ "f-cas": {
+  "volumes": 30,
+  "sampled": 10,
+  "all_cases": 18252,
+  "any_term": 165,
+  "score_3_plus": 87,
+  "score_5_plus": 60,
+  "score_10_plus": 39,
+  "weighted": 75,
+  "weighted_by_jurisdiction": {
+   "U.S.": 75,
+   "Ark.": 0
+  }
+ },
+ "f-supp-2d": {
+  "volumes": 999,
+  "sampled": 50,
+  "all_cases": 116863,
+  "any_term": 2917,
+  "score_3_plus": 1139,
+  "score_5_plus": 919,
+  "score_10_plus": 719,
+  "weighted": 1091,
+  "weighted_by_jurisdiction": {
+   "U.S.": 1091
+  }
+ },
+ "f-supp-3d": {
+  "volumes": 386,
+  "sampled": 39,
+  "all_cases": 36363,
+  "any_term": 1138,
+  "score_3_plus": 465,
+  "score_5_plus": 356,
+  "score_10_plus": 277,
+  "weighted": 435,
+  "weighted_by_jurisdiction": {
+   "U.S.": 427,
+   "Alaska": 8
+  }
+ },
+ "f-supp": {
+  "volumes": 997,
+  "sampled": 50,
+  "all_cases": 213757,
+  "any_term": 2951,
+  "score_3_plus": 1276,
+  "score_5_plus": 1057,
+  "score_10_plus": 818,
+  "weighted": 1197,
+  "weighted_by_jurisdiction": {
+   "U.S.": 1197
+  }
+ },
+ "f": {
+  "volumes": 300,
+  "sampled": 30,
+  "all_cases": 70600,
+  "any_term": 1040,
+  "score_3_plus": 640,
+  "score_5_plus": 510,
+  "score_10_plus": 350,
+  "weighted": 552,
+  "weighted_by_jurisdiction": {
+   "U.S.": 552
+  }
+ },
+ "f2d": {
+  "volumes": 999,
+  "sampled": 50,
+  "all_cases": 276403,
+  "any_term": 3756,
+  "score_3_plus": 2018,
+  "score_5_plus": 1578,
+  "score_10_plus": 999,
+  "weighted": 1779,
+  "weighted_by_jurisdiction": {
+   "U.S.": 1779
+  }
+ },
+ "f3d": {
+  "volumes": 935,
+  "sampled": 47,
+  "all_cases": 140529,
+  "any_term": 4257,
+  "score_3_plus": 2168,
+  "score_5_plus": 1691,
+  "score_10_plus": 1174,
+  "weighted": 1933,
+  "weighted_by_jurisdiction": {
+   "U.S.": 1916,
+   "D.C.": 17
+  }
+ },
+ "fed-cl": {
+  "volumes": 109,
+  "sampled": 37,
+  "all_cases": 9728,
+  "any_term": 734,
+  "score_3_plus": 359,
+  "score_5_plus": 295,
+  "score_10_plus": 233,
+  "weighted": 327,
+  "weighted_by_jurisdiction": {
+   "U.S.": 327
+  }
+ },
+ "us-ct-cl": {
+  "volumes": 231,
+  "sampled": 39,
+  "all_cases": 19286,
+  "any_term": 829,
+  "score_3_plus": 592,
+  "score_5_plus": 450,
+  "score_10_plus": 278,
+  "weighted": 492,
+  "weighted_by_jurisdiction": {
+   "U.S.": 492
+  }
+ },
+ "_total": {
+  "all_cases": 1194288,
+  "any_term": 19519,
+  "score_3_plus": 9361,
+  "score_5_plus": 7392,
+  "score_10_plus": 5139,
+  "weighted": 8482
+ }
+}
