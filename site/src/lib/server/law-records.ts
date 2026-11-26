@@ -4,7 +4,6 @@
  * /laws/<key> (law-pages.ts).
  */
 import { lawNames } from '../law-names.ts';
-import { readableDate } from '../readable-date.ts';
 import { sources, type SourceRecord } from './content.ts';
 
 /** The record kinds that get a page at /laws/<key>: federal laws, treaties and orders. */
@@ -49,7 +48,5 @@ export function recordName(key: string): { name: string; italic?: boolean; kind?
 	}
 	const year = yearOf(record);
 	const short = lawNames[key] ?? citation['title-short'];
-	// A few order titles carry their date as 1906-12-19; it reads as Dec. 19, 1906.
-	const title = (citation.title ?? key).replace(/\b(\d{4}-\d{2}-\d{2})\b/, (date) => readableDate(date));
-	return { name: short ? (year && !short.includes(String(year)) ? `${short} (${year})` : short) : title, kind: record.kind, what: 'Law' };
+	return { name: short ? (year && !short.includes(String(year)) ? `${short} (${year})` : short) : (citation.title ?? key), kind: record.kind, what: 'Law' };
 }

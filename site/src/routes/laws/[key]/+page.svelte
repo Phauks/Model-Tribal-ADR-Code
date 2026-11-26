@@ -47,12 +47,15 @@
 
 	{#if data.text}
 		<Collapsible heading="Text" identifier="law-text">
-			{#if data.text.isPdf}
-				<iframe class="law-frame" src={data.text.file} title="{data.name} (PDF)" loading="lazy"></iframe>
-			{:else}
-				<!-- The saved text or web page runs nothing and loads nothing (src/lib/server/public-copy-serving.ts). -->
-				<iframe class="law-frame law-frame-text" src={data.text.file} title={data.name} sandbox="" referrerpolicy="no-referrer" loading="lazy"></iframe>
-			{/if}
+			<!-- Its own block, so the frame takes the width beside At a glance instead of dropping below it. -->
+			<div class="law-frame-box">
+				{#if data.text.isPdf}
+					<iframe class="law-frame" src={data.text.file} title="{data.name} (PDF)" loading="lazy"></iframe>
+				{:else}
+					<!-- The saved text or web page runs nothing and loads nothing (src/lib/server/public-copy-serving.ts). -->
+					<iframe class="law-frame law-frame-text" src={data.text.file} title={data.name} sandbox="" referrerpolicy="no-referrer" loading="lazy"></iframe>
+				{/if}
+			</div>
 		</Collapsible>
 	{/if}
 
@@ -101,6 +104,10 @@
 
 	.summary-list dd :global(p) {
 		margin: 0;
+	}
+
+	.law-frame-box {
+		display: flow-root;
 	}
 
 	.law-frame {
