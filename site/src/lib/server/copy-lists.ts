@@ -51,8 +51,12 @@ const fixedGroups: Record<string, string> = {
 	'supreme-court': 'Supreme Court opinions',
 	statutes: 'Federal statutes and Public Laws',
 	'federal-register': 'Federal Register documents',
+	// The Interior Board of Indian Appeals' decisions, a list of their own so the federal list stays a size a page can show.
+	'interior-board-of-indian-appeals': 'Interior Board of Indian Appeals decisions',
+	// Lower federal courts' opinions from the Caselaw Access Project (decision record 0060).
+	'federal-court-opinions': 'Lower federal court opinions',
 	'other-federal': 'Other federal documents',
-	// Published state and territorial court opinions (decision record 0060); federal courts' opinions go with the other federal documents.
+	// Published state and territorial court opinions (decision record 0060).
 	'state-court-opinions': 'State court opinions',
 	// Oklahoma's register of state-tribal compacts and agreements (decision record 0060).
 	'oklahoma-state-tribal-agreements': 'Oklahoma state-tribal agreements'
@@ -79,6 +83,8 @@ const opinionPrefix = 'opinions-';
 
 function groupOf(copy: PublicCopy, names: Map<string, string>): string {
 	if (copy.topic === 'caselaw-access-project') return `${opinionPrefix}${copy.nations[0] ?? 'other'}`;
+	if (copy.topic === 'ibia-decisions') return 'interior-board-of-indian-appeals';
+	if (copy.topic === 'federal-court-opinions') return 'federal-court-opinions';
 	if (copy.topic === 'state-court-opinions') return 'state-court-opinions';
 	if (copy.topic === 'oklahoma-secretary-of-state') return 'oklahoma-state-tribal-agreements';
 	if (copy.topic === 'constitutions' || copy.topic === 'tribal-law') {
