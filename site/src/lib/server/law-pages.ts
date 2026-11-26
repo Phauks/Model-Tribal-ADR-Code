@@ -9,7 +9,10 @@
  * - the accounts of its impact (impact-accounts.ts), shown only when an
  *   account names the law;
  * - where to read it, the essays on this site that cite it and, for a
- *   treaty, the people with a biography who signed it.
+ *   treaty, the people with a biography who signed it;
+ * - for a chapter of Title 25 of the Code or a part of 25 C.F.R., its
+ *   sections, and for an Act, the Title 25 sections it enacted
+ *   (title-25-sections.ts).
  *
  * A section with nothing in it is left out.
  */
@@ -28,6 +31,7 @@ import { presidentByKey } from './supreme-court-people.ts';
 import { partialDate } from './stories.ts';
 import type { SourceEntry } from './source-uses.ts';
 import type { Stub } from '../stubs.ts';
+import { sectionsEnactedBy, sectionsOf, type SectionList } from './title-25-sections.ts';
 
 export interface LawPage {
 	key: string;
@@ -50,6 +54,10 @@ export interface LawPage {
 	text?: LawText;
 	/** The people with a biography on this site who signed the treaty. */
 	signers: { name: string; link: string; detail?: string }[];
+	/** A Title 25 chapter's or part's sections. */
+	sections?: SectionList;
+	/** The Title 25 sections the Act enacted. */
+	enacted: { label: string; heading: string; link: string; inForce: boolean }[];
 	sources: SourceEntry[];
 	/** Set when the law has no box and no accounts of its impact: a stub (src/lib/stubs.ts). */
 	stub?: Stub;
@@ -118,7 +126,8 @@ export function lawPage(key: string): LawPage {
 	const glance: FactGroup[] = [
 		{ field: 'kind', label: 'Kind', items: [{ text: kindLabels[record.kind] ?? record.kind }] },
 		{ field: 'number', label: 'Number', items: number ? [{ text: number }] : [] },
-		{ field: 'date', label: dateLabels[record.kind] ?? 'Date', items: date ? [{ text: date }] : [] },
+		// A chapter of the Code is dated by the edition it was read from, not enacted on one day.
+		{ field: 'date', label: /^usc-\d+-chapter-/.test(key) ? 'Edition' : (dateLabels[record.kind] ?? 'Date'), items: date ? [{ text: date }] : [] },
 		{ field: 'president', label: 'President', items: president ? [{ text: president.name, link: presidentPage }] : [] },
 		{ field: 'citation', label: 'Citation', items: citation ? [{ text: citation }] : [] },
 		{
@@ -135,6 +144,7 @@ export function lawPage(key: string): LawPage {
 	const copy = savedCopyFor(record);
 	const title = record.citation.title;
 	const accounts = accountsOf({ record: key });
+	const sections = sectionsOf(key);
 	return {
 		key,
 		name: named.what === 'Treaty' ? named.name : named.name.replace(/ \(\d{4}\)$/, ''),
@@ -150,7 +160,9 @@ export function lawPage(key: string): LawPage {
 		nations: nationsCited,
 		text: copy ? { file: copyPath(copy), isPdf: copy.mediaType === 'application/pdf' } : undefined,
 		signers: named.what === 'Treaty' ? signersOfTreaty(key) : [],
+		sections,
+		enacted: record.kind === 'federal-statute' ? sectionsEnactedBy(key) : [],
 		sources: box.sources,
-		stub: box.sections.length === 0 && accounts.length === 0 ? { kind: 'law', record: `laws/${key}` } : undefined
+		stub: box.sections.length === 0 && accounts.length === 0 && !sections ? { kind: 'law', record: `laws/${key}` } : undefined
 	};
 }
