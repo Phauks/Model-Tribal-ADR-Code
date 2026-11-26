@@ -24,6 +24,7 @@ export const notWatched: NotWatched[] = [
 	{ feed: 'supreme-court-cases', kind: 'planned', reason: 'supreme-court (the Court’s slip opinions page) and govinfo (U.S. Reports pagination), phase 1; govinfo needs the api.data.gov key.' },
 	{ feed: 'other-court-cases', kind: 'planned', reason: 'courtlistener once Free Law Project has answered, and govinfo (USCOURTS) once the api.data.gov key is set; phase 2.' },
 	{ feed: 'state-court-opinions', kind: 'planned', reason: 'courtlistener (state appellate courts, by the same Indian law terms) once Free Law Project has answered, phase 2; the Caselaw Access Project set ends about 2019 and does not change.' },
+	{ feed: 'interior-board-of-indian-appeals', kind: 'planned', reason: 'ibia (the Board’s chronological index of decisions, weekly), phase 2; scripts/law/ibia_decisions.py rebuilds the collection meanwhile.' },
 	{ feed: 'tribal-court-opinions', kind: 'planned', reason: 'consented-courts, phase 3: only nations that publish their opinions and agree, with initials and privacy holds first (decision record 0057). Its list of courts starts empty.' },
 	{ feed: 'oklahoma-state-tribal-agreements', kind: 'planned', reason: 'oklahoma-register (the Oklahoma Secretary of State’s register data file, json/dataTribal.json, compared by file number; scripts/agreements/oklahoma_register.py reads it today), phase 2.' },
 	{ feed: 'supreme-courts', kind: 'derived', reason: 'Built from the Justices.' },

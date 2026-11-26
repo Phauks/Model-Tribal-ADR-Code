@@ -17,6 +17,7 @@
 import { existsSync, readFileSync } from 'node:fs';
 import path from 'node:path';
 import { documentHistories, glossary, nations, publicCopies, publicCopyFor, repositoryRoot, sources, type SourceRecord } from './content.ts';
+import { parseCsv } from '../csv.ts';
 import { biographies, biographyPath } from './biographies.ts';
 import { peopleIndex } from './justice-pages.ts';
 import { courtsWithPages } from './supreme-court-pages.ts';
@@ -136,6 +137,14 @@ function casesBy(test: (authority: string) => boolean): () => CollectionItem[] {
 }
 
 const supremeCourt = (authority: string) => authority === 'Supreme Court of the United States';
+/** Decisions of Interior's appeals board, their own collection (scripts/law/ibia_decisions.py). */
+const indianAppealsBoard = (authority: string) => authority === 'Interior Board of Indian Appeals';
+
+/** The Board's decisions held back for a privacy review (probate appeals and decisions about minors), by citation only. */
+function heldBackBoardDecisions(): number {
+	const file = path.join(repositoryRoot, 'research/ibia/held-back.csv');
+	return existsSync(file) ? parseCsv(readFileSync(file, 'utf8')).length : 0;
+}
 
 function nationNameOf(): (id: string) => string {
 	const names = new Map(nations().map((nation) => [nation.id, nation.names.official]));
@@ -206,7 +215,16 @@ export const collections: Collection[] = [
 
 	// Courts and cases
 	{ identifier: 'supreme-court-cases', search: { group: 'case', label: 'Court case' }, title: 'U.S. Supreme Court Cases', group: 'Courts and cases', items: casesBy(supremeCourt) },
-	{ identifier: 'other-court-cases', search: { group: 'case', label: 'Court case' }, title: 'Other Court Cases', group: 'Courts and cases', detailHeader: 'Court', items: casesBy((authority) => !supremeCourt(authority)) },
+	{ identifier: 'other-court-cases', search: { group: 'case', label: 'Court case' }, title: 'Other Court Cases', group: 'Courts and cases', detailHeader: 'Court', items: casesBy((authority) => !supremeCourt(authority) && !indianAppealsBoard(authority)) },
+	{
+		identifier: 'interior-board-of-indian-appeals',
+		search: { group: 'case', label: 'Interior Board of Indian Appeals decision' },
+		title: 'Interior Board of Indian Appeals Decisions',
+		group: 'Courts and cases',
+		items: casesBy(indianAppealsBoard),
+		heldBack: heldBackBoardDecisions,
+		heldBackReason: 'held back for a privacy review'
+	},
 	{
 		identifier: 'state-court-opinions', search: { group: 'case', label: 'State court opinion' },
 		title: 'State Court Opinions',

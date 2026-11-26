@@ -28,7 +28,7 @@
 	const lead = $derived.by(() => {
 		const counts = [
 			opinionCount > 0 ? `${opinionCount.toLocaleString('en-US')} ${opinionCount === 1 ? 'opinion' : 'opinions'}` : '',
-			data.cases.length > 0 ? `${data.cases.length} ${data.cases.length === 1 ? 'case' : 'cases'}` : ''
+			data.caseCount > 0 ? `${data.caseCount.toLocaleString('en-US')} ${data.caseCount === 1 ? 'case' : 'cases'}` : ''
 		].filter(Boolean);
 		const named = counts.length > 0 ? `, named in ${counts.join(' and ')} on this site` : '';
 		const what = data.nations.length > 0 ? `A Tribal court of ${nationNames}` : `A ${data.kind.toLocaleLowerCase('en-US')}`;
@@ -101,13 +101,14 @@
 	{/if}
 
 	{#if data.cases.length > 0}
-		<Collapsible heading="Cases" identifier="cases" count={data.cases.length}>
-			<DataTable identifier="cases-{data.key}" label="Table: cases the {data.name} decided" columns={caseColumns} rows={caseRows} rowName={['case', 'cases']} count={false} tools={false}>
+		<Collapsible heading="Cases" identifier="cases" count={data.caseCount}>
+			<DataTable identifier="cases-{data.key}" label={data.cases.length < data.caseCount ? `Table: the newest cases the ${data.name} decided` : `Table: cases the ${data.name} decided`} columns={caseColumns} rows={caseRows} rowName={['case', 'cases']} count={false} tools={false}>
 				{#snippet cell(row: TableRow, column: TableColumn)}
 					{@const entry = caseByKey.get(row.key)}
 					{#if entry && column.key === 'name'}<a href={entry.link}><i>{entry.name}</i></a>{/if}
 				{/snippet}
 			</DataTable>
+			{#if data.caseList}<p><a href={data.caseList}>All {data.caseCount.toLocaleString('en-US')} cases</a></p>{/if}
 		</Collapsible>
 	{/if}
 
