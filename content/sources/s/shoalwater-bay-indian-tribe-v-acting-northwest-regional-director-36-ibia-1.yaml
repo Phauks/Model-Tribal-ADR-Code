@@ -33,9 +33,14 @@ rights:
   redistribution: true
 jurisdictions:
 - level: federal
+tribes:
+- shoalwater-bay-indian-tribe-of-the-shoalwater-bay-indian-reservation
 nations_in_case:
   checked: '2026-11-26'
-  named: []
+  named:
+  - nation: shoalwater-bay-indian-tribe-of-the-shoalwater-bay-indian-reservation
+    named_as: Shoalwater Bay Indian Tribe
+    role: party
 access:
   open: true
   pull_from:
