@@ -58,11 +58,11 @@ declare global {
 		signInNetworkLimit?: RateLimit;
 		/** Files one account can start sending in a minute (src/routes/uploads/pieces). */
 		uploadLimit?: RateLimit;
-		/** The live editing rooms, one per essay, in the model-tribal-adr-code-live Worker (src/lib/server/live-editing.ts). */
+		/** The live editing rooms, one per essay, in the tribal-law-project-live Worker (src/lib/server/live-editing.ts). */
 		essayRooms?: DurableObjectNamespace;
-		/** The virus scanner's desk, in model-tribal-adr-code-scanner (src/lib/server/scanner-wake.ts). */
+		/** The virus scanner's desk, in tribal-law-project-scanner (src/lib/server/scanner-wake.ts). */
 		scanDesks?: DurableObjectNamespace;
-		/** The Wayback Worker, model-tribal-adr-code-wayback, for its progress (src/lib/server/wayback.ts). */
+		/** The Wayback Worker, tribal-law-project-wayback, for its progress (src/lib/server/wayback.ts). */
 		waybackWorker?: Fetcher;
 		/** Cloudflare Email Service, for sign-in codes (src/lib/server/sign-in-email.ts). */
 		signInEmail?: SignInEmailBinding;
