@@ -1,0 +1,53 @@
+key: sue-perior-concrete-and-paving-inc-v-seneca-gaming-corp-2012
+kind: state-case
+citation:
+  type: legal_case
+  title: Sue/Perior Concrete & Paving, Inc. v. Seneca Gaming Corp.
+  authority: New York Supreme Court, Appellate Division
+  container-title: A.D.3d
+  volume: '99'
+  page: '1203'
+  issued:
+    date-parts:
+    - - 2012
+      - 10
+      - 5
+  URL: https://static.case.law/ad3d/99/html/1203-01.html
+  accessed:
+    date-parts:
+    - - 2026
+      - 11
+      - 26
+original_link: https://static.case.law/ad3d/99/html/1203-01.html
+retrieved: '2026-11-26'
+archives: []
+history:
+  status: live
+  last_checked: '2026-11-26'
+rights:
+  status: no-permission-needed
+  basis: government-edict
+  basis_note: The text of a judicial opinion has no copyright (Georgia v. Public.Resource.Org, Inc., 590 U.S. 255 (2020)). The copy served on this site is the court's opinion only, without the publisher's headnotes, synopsis or other editorial matter (decision record 0060).
+  redistribution: true
+nations_in_case:
+  checked: '2026-11-26'
+  named: []
+jurisdictions:
+- level: state
+  state: NY
+topics:
+- state-court-indian-law
+found_in:
+- 2026-11-26-state-court-indian-law-opinions
+notes: Published at 99 A.D.3d 1203; 952 N.Y.S.2d 353. Decided by the New York Supreme Court, Appellate Division on Oct. 5, 2012. Found by scripts/caselaw/state_court_opinions.py in the Caselaw Access Project's volumes, with an Indian law term score of 9; an AI reader read excerpts and judged it an Indian law case (tribal sovereign immunity of tribal officers).
+review:
+  status: unverified
+  by: scripts/caselaw/state_court_opinions.py
+  date: '2026-11-26'
+  checks:
+  - check: 'Indian law case: the term score and, below the score kept without a reading, an AI reader''s judgment of excerpts'
+    result: agree
+    detail: 'score 9; reader: tribal sovereign immunity of tribal officers'
+  - check: Nations named in the caption, matched to nation records by name
+    result: agree
+    detail: 0 matched, 0 not linked

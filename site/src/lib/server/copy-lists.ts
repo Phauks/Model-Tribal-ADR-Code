@@ -46,14 +46,22 @@ export interface CopyRow {
 	removal: string;
 }
 
-const federalGroups: Record<string, string> = {
+/** The lists that are not one nation's, in page order: federal documents, then state material. */
+const fixedGroups: Record<string, string> = {
 	'supreme-court': 'Supreme Court opinions',
 	statutes: 'Federal statutes and Public Laws',
 	'federal-register': 'Federal Register documents',
+	// The Interior Board of Indian Appeals' decisions, a list of their own so the federal list stays a size a page can show.
 	'interior-board-of-indian-appeals': 'Interior Board of Indian Appeals decisions',
+	// Lower federal courts' opinions from the Caselaw Access Project (decision record 0060).
+	'federal-court-opinions': 'Lower federal court opinions',
 	'gaming-commission': 'National Indian Gaming Commission documents',
 	acknowledgment: 'Federal acknowledgment documents',
-	'other-federal': 'Other federal documents'
+	'other-federal': 'Other federal documents',
+	// Published state and territorial court opinions (decision record 0060).
+	'state-court-opinions': 'State court opinions',
+	// Oklahoma's register of state-tribal compacts and agreements (decision record 0060).
+	'oklahoma-state-tribal-agreements': 'Oklahoma state-tribal agreements'
 };
 
 function nationNames(): Map<string, string> {
@@ -77,6 +85,10 @@ const opinionPrefix = 'opinions-';
 
 function groupOf(copy: PublicCopy, names: Map<string, string>): string {
 	if (copy.topic === 'caselaw-access-project') return `${opinionPrefix}${copy.nations[0] ?? 'other'}`;
+	if (copy.topic === 'ibia-decisions') return 'interior-board-of-indian-appeals';
+	if (copy.topic === 'federal-court-opinions') return 'federal-court-opinions';
+	if (copy.topic === 'state-court-opinions') return 'state-court-opinions';
+	if (copy.topic === 'oklahoma-secretary-of-state') return 'oklahoma-state-tribal-agreements';
 	if (copy.topic === 'constitutions' || copy.topic === 'tribal-law') {
 		const [first] = namesOf(copy, names);
 		const letter = first?.normalize('NFD').charAt(0).toLowerCase() ?? '';
@@ -89,14 +101,13 @@ function groupOf(copy: PublicCopy, names: Map<string, string>): string {
 	if (copy.topic === 'govinfo' && /^FR-/.test(copy.key.split('/')[1] ?? '')) return 'federal-register';
 	// The tier 2 collections each have a list of their own; together they were too long for one page.
 	if (copy.topic === 'federal-register') return 'federal-register';
-	if (copy.topic === 'ibia-decisions') return 'interior-board-of-indian-appeals';
 	if (copy.topic === 'nigc') return 'gaming-commission';
 	if (copy.topic === 'acknowledgment') return 'acknowledgment';
 	return 'other-federal';
 }
 
 function groupTitle(slug: string, names = nationNames()): string {
-	if (federalGroups[slug]) return federalGroups[slug];
+	if (fixedGroups[slug]) return fixedGroups[slug];
 	if (slug.startsWith(opinionPrefix)) {
 		const name = names.get(slug.slice(opinionPrefix.length));
 		return name ? `Tribal court opinions: ${name}` : 'Tribal court opinions';
@@ -132,7 +143,7 @@ export function copyGroups(): CopyGroup[] {
 		counts.set(slug, (counts.get(slug) ?? 0) + 1);
 	}
 	const order = (slug: string) =>
-		federalGroups[slug] ? Object.keys(federalGroups).indexOf(slug) : slug.startsWith(opinionPrefix) ? 5 : slug === 'other-nations' ? 1000 : 10 + slug.charCodeAt(0);
+		fixedGroups[slug] ? Object.keys(fixedGroups).indexOf(slug) : slug.startsWith(opinionPrefix) ? 5 : slug === 'other-nations' ? 1000 : 10 + slug.charCodeAt(0);
 	return [...counts]
 		.map(([slug, count]) => ({ slug, title: groupTitle(slug, names), count }))
 		.sort((first, second) => order(first.slug) - order(second.slug) || first.title.localeCompare(second.title));

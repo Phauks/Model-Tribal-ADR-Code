@@ -52,6 +52,7 @@ const collectionIcons: Record<string, Component> = {
 	'national-indian-gaming-commission': Dices,
 	'supreme-court-cases': Gavel,
 	'other-court-cases': Scale,
+	'state-court-opinions': Gavel,
 	'tribal-court-opinions': FileText,
 	'supreme-courts': Landmark,
 	biographies: UserRound,
