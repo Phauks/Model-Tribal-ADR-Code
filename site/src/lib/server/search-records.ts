@@ -17,7 +17,9 @@ import {
 	type NationFile,
 	type SearchRecordsFile
 } from '../search-records.ts';
-import { documentHistories, nations, type DocumentHistoryRecord, type NationRecord } from './content.ts';
+import { foldForSearch } from '../tables/table-definition.ts';
+import { collections } from './collections.ts';
+import { documentHistories, nations, sources, type DocumentHistoryRecord, type NationRecord } from './content.ts';
 import { nationIndexRows } from './nation-index.ts';
 import { storySummaries } from './stories.ts';
 
@@ -200,11 +202,53 @@ function documentRows(records: NationRecord[], names: Map<string, string>): Docu
 			});
 		}
 	}
+	rows.push(...sourceDocumentRows(rows, new Set(records.map((record) => record.id))));
 	return rows.sort(
 		(first, second) =>
 			(names.get(first.nation) ?? '').localeCompare(names.get(second.nation) ?? '', 'en', { sensitivity: 'base' }) ||
 			first.title.localeCompare(second.title, 'en', { sensitivity: 'base' })
 	);
+}
+
+/** The kind of document a source record of a nation's law is, by its record kind. */
+function sourceDocumentKind(kind: string, title: string): string {
+	if (kind === 'tribal-constitution') return 'constitution';
+	if (kind === 'tribal-code') return 'law-code';
+	if (kind === 'tribal-court-rule') return 'court-rules';
+	if (kind === 'intergovernmental-agreement' && /gaming/i.test(title)) return 'gaming-compact';
+	return 'other';
+}
+
+/**
+ * Nations' constitutions, codes and agreements known from source records
+ * (the collections in src/lib/server/collections.ts that search lists as
+ * documents), less any whose title a nation's document history already lists
+ * for the same nation. Each opens at this site's copy, or where it is published.
+ */
+function sourceDocumentRows(existing: DocumentFile[], published: Set<string>): DocumentFile[] {
+	const seen = new Set(existing.map((row) => `${row.nation} ${foldForSearch(row.title)}`));
+	const records = sources();
+	const rows: DocumentFile[] = [];
+	for (const collection of collections) {
+		if (collection.search.group !== 'document' || !collection.sourceKinds) continue;
+		for (const item of collection.items()) {
+			const record = item.key ? records.get(item.key) : undefined;
+			if (!record || !item.href) continue;
+			const nation = (record.tribes ?? []).find((id) => published.has(id)) ?? '';
+			const key = `${nation} ${foldForSearch(item.title)}`;
+			if (seen.has(key)) continue;
+			seen.add(key);
+			rows.push({
+				title: item.title,
+				kind: sourceDocumentKind((record as { kind?: string }).kind ?? '', item.title),
+				...(item.year ? { year: String(item.year) } : {}),
+				nation,
+				anchor: '',
+				link: item.href
+			});
+		}
+	}
+	return rows;
 }
 
 export function searchRecords(): SearchRecordsFile {

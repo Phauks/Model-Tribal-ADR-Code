@@ -27,6 +27,7 @@
 	import type { RecognitionBadge } from '#lib/recognition-badges.ts';
 	import {
 		countMatches,
+		forEntryGroups,
 		matchEverything,
 		resultGroupLabels,
 		resultGroups,
@@ -45,6 +46,7 @@
 		title: string;
 		link: string;
 		matchedName?: string;
+		matchedGroup?: string;
 		badges?: RecognitionBadge[];
 		image?: string;
 		detail?: string;
@@ -85,9 +87,7 @@
 				link: row.link,
 				detail: [row.kindLabel, row.year, row.nationName].filter(Boolean).join(' · ')
 			})),
-			story: matches.story,
-			term: matches.term,
-			page: matches.page
+			...forEntryGroups<PanelResult[]>((group) => matches[group])
 		};
 		return resultGroups.map((group) => ({ group, results: lists[group] })).filter((entry) => entry.results.length > 0);
 	});
@@ -232,7 +232,7 @@
 													onerror={() => failedImages.add(result.image ?? '')}
 												/>{/if}
 											<a href={result.link}>{result.title}</a>
-											{#if result.matchedName}<span class="detail">also called {result.matchedName}</span>{/if}
+											{#if result.matchedName}<span class="detail">also called {result.matchedName}</span>{:else if result.matchedGroup}<span class="detail">{result.matchedGroup}</span>{/if}
 											{#if result.badges}<span class="detail"><RecognitionBadges badges={result.badges} size="small" /></span>{/if}
 											{#if result.detail}<span class="detail">{result.detail}</span>{/if}
 										</li>

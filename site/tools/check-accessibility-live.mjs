@@ -65,8 +65,13 @@ const openers = {
 		await mastheadButton(page, 'Search');
 		await page.locator('.search-panel input[type="search"]').waitFor({ state: 'visible' });
 	},
-	async settings(page) {
+	async 'page settings'(page) {
 		await mastheadButton(page, 'Settings');
+		await page.locator('#page-settings').waitFor({ state: 'visible' });
+	},
+	async settings(page) {
+		await openers['page settings'](page);
+		await page.locator('#page-settings').getByRole('button', { name: 'More settings' }).click();
 		await page.locator('dialog.modal[open]').waitFor({ state: 'visible' });
 	},
 	async 'settings dropdown'(page) {
@@ -124,7 +129,7 @@ const openers = {
 
 /* The pages, and whom to see them as -------------------------------------- */
 
-const headerStates = ['search', 'settings', 'settings dropdown', 'print', 'download', 'report'];
+const headerStates = ['search', 'page settings', 'settings', 'settings dropdown', 'print', 'download', 'report'];
 
 /** Each visitor's pages: an address, or an address and the open states to check it in. */
 const visits = {

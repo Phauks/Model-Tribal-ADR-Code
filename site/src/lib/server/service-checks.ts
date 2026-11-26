@@ -32,6 +32,8 @@ import { readMeetingTotal, videoRoomSettings } from './realtime-kit.ts';
 import { giftSettingChecks, giftState } from './sponsors.ts';
 import { isTestKey, stripeSettings } from './stripe.ts';
 import { latestPublication, latestRebuild } from './site-text.ts';
+import { dollars } from './watch/model-prices.ts';
+import { readWatchProgress, watchState, watchStateWords, watchWorkerAddress, type WatchProgress } from './watch/progress.ts';
 
 export type CheckState = 'working' | 'warning' | 'problem' | 'off';
 
@@ -109,7 +111,7 @@ function missing(environment: WorkerEnvironment, names: readonly string[]): stri
 	return names.filter((name) => !setting(environment, name));
 }
 
-const settingsPlace = 'Cloudflare dashboard: Workers & Pages > model-tribal-adr-code > Settings > Variables and Secrets';
+const settingsPlace = 'Cloudflare dashboard: Workers & Pages > tribal-law-project-site > Settings > Variables and Secrets';
 
 const database: Check = {
 	key: 'database',
@@ -235,7 +237,7 @@ const liveEditing: Check = {
 		const response = await rooms.getByName('service-check').fetch('https://room/service-check');
 		await response.body?.cancel();
 		return response.status === 426
-			? { state: 'working', summary: 'The model-tribal-adr-code-live Worker answers.', details: [] }
+			? { state: 'working', summary: 'The tribal-law-project-live Worker answers.', details: [] }
 			: { state: 'problem', summary: `The live Worker answered ${response.status} instead of 426.`, details: [], fix: 'Deploy the live Worker again (site/live).' };
 	}
 };
@@ -252,7 +254,7 @@ const scannerDesk: Check = {
 		const response = await desks.get(desks.idFromName('desk')).fetch('https://desk/wake', { method: 'POST' });
 		await response.body?.cancel();
 		return response.status === 202
-			? { state: 'working', summary: 'The model-tribal-adr-code-scanner Worker answers.', details: [] }
+			? { state: 'working', summary: 'The tribal-law-project-scanner Worker answers.', details: [] }
 			: { state: 'problem', summary: `The scanner Worker answered ${response.status} instead of 202.`, details: [], fix: 'Deploy the scanner Worker again (site/SCANNING.md).' };
 	}
 };
@@ -567,7 +569,7 @@ const scanner: Check = {
 			? Math.floor((now.getTime() - Date.parse(`${version.clamavDatabaseDate}T00:00:00Z`)) / 86_400_000)
 			: null;
 		if (oldest && now.getTime() - Date.parse(oldest) > 30 * 60_000) {
-			return { state: 'problem', summary: `Files have waited for a scan since ${oldest}, so they are held from reviewers.`, details, fix: 'Check that the model-tribal-adr-code-scanner Worker is deployed and its cron runs (site/SCANNING.md).' };
+			return { state: 'problem', summary: `Files have waited for a scan since ${oldest}, so they are held from reviewers.`, details, fix: 'Check that the tribal-law-project-scanner Worker is deployed and its cron runs (site/SCANNING.md).' };
 		}
 		if (count('failed') > 0) return { state: 'warning', summary: `${count('failed')} ${count('failed') === 1 ? 'file' : 'files'} could not be scanned after several tries.`, details, fix: 'Scan again or release by hand from the upload page.' };
 		if (signatureAgeDays !== null && signatureAgeDays > 7) {
@@ -670,7 +672,7 @@ const waybackCaptures: Check = {
 				// The cron runs every minute even with nothing left, so a stale run means the schedule stopped.
 				return { state: 'problem', summary: status.minutesSinceLastRun === null ? 'The Wayback Worker has not run yet.' : `The Wayback Worker last ran ${status.minutesSinceLastRun} minutes ago; it runs every minute, even with nothing to save.`, details, fix: 'Check the Worker’s cron trigger and its logs in the Cloudflare dashboard (site/WAYBACK.md).' };
 			case 'keys-refused':
-				return { state: 'problem', summary: status.lastError ?? 'The archive.org keys are missing or refused.', details, fix: 'Add or replace the ARCHIVE_ORG_ACCESS_KEY and ARCHIVE_ORG_SECRET_KEY secrets on the model-tribal-adr-code-wayback Worker (site/WAYBACK.md).' };
+				return { state: 'problem', summary: status.lastError ?? 'The archive.org keys are missing or refused.', details, fix: 'Add or replace the ARCHIVE_ORG_ACCESS_KEY and ARCHIVE_ORG_SECRET_KEY secrets on the tribal-law-project-wayback Worker (site/WAYBACK.md).' };
 			case 'paused-daily-limit':
 				return { state: 'warning', summary: 'The Wayback Worker reached the Archive’s daily limit and starts again within the hour.', details };
 			case 'idle':
@@ -678,6 +680,74 @@ const waybackCaptures: Check = {
 			default:
 				return { state: 'working', summary: `The Wayback Worker is running (${status.stateWords.toLocaleLowerCase('en-US')}): ${status.left.toLocaleString('en-US')} left.`, details };
 		}
+	}
+};
+
+/** The watch Worker's progress, which it writes to the source documents bucket every minute (src/lib/server/watch/progress.ts). */
+async function watchProgress(environment: WorkerEnvironment): Promise<WatchProgress | null | { problem: string }> {
+	if (!environment.sourceDocuments) return { problem: 'The sourceDocuments bucket binding is missing.' };
+	try {
+		return await readWatchProgress(environment.sourceDocuments);
+	} catch (problem) {
+		return { problem: `Its progress could not be read: ${message(problem)}` };
+	}
+}
+
+const watchSetup = 'Deploy the Worker from site/watch with Workers Builds (site/watch/README.md, "Setting it up").';
+
+const sourceWatch: Check = {
+	key: 'source-watch',
+	group: 'Workers',
+	name: 'Source watch',
+	async run({ environment, now = new Date() }) {
+		const progress = await watchProgress(environment);
+		if (progress && 'problem' in progress) return { state: 'problem', summary: progress.problem, details: [] };
+		const { state, minutesSinceTick } = watchState(progress, now);
+		if (!progress) return { state: 'off', summary: 'The source watch has not run yet, so new Federal Register documents, eCFR changes and changed cited links are not found.', details: [], fix: watchSetup };
+		const counts = progress.counts ?? {};
+		const watchers = Object.entries(progress.watchers);
+		const failing = watchers.filter(([, watcher]) => watcher.enabled && watcher.lastOutcome === 'failed');
+		const details = [
+			`${(counts['to-review'] ?? 0).toLocaleString('en-US')} to review, ${(counts.held ?? 0).toLocaleString('en-US')} held, ${(counts['waiting-for-model'] ?? 0).toLocaleString('en-US')} waiting for a model.`,
+			`${watchers.filter(([, watcher]) => watcher.enabled).length} of ${watchers.length} watchers on. Progress page: ${watchWorkerAddress}/`,
+			...failing.map(([identifier, watcher]) => `${watcher.title} (${identifier}) failed: ${watcher.lastProblem ?? 'no reason given'}`),
+			progress.knownIndex ? `Records index from the site build of ${progress.knownIndex.madeAt}.` : 'No records index yet, so nothing found is matched against the records; the site writes it within the hour after a build.'
+		];
+		switch (state) {
+			case 'not-running':
+				return { state: 'problem', summary: `The source watch last ran ${minutesSinceTick} minutes ago; it runs every minute.`, details, fix: 'Check the tribal-law-project-watch Worker’s cron trigger and its logs in the Cloudflare dashboard.' };
+			case 'idle':
+				return { state: 'warning', summary: 'The source watch is running, but every watcher is off.', details, fix: 'Clear WATCH_TURN_OFF on the tribal-law-project-watch Worker.' };
+			case 'problem':
+				return { state: 'warning', summary: progress.lastError ?? `${failing.length} watcher${failing.length === 1 ? '' : 's'} failed on the last run.`, details };
+			default:
+				return { state: progress.knownIndex ? 'working' : 'warning', summary: `${watchStateWords[state]}.`, details };
+		}
+	}
+};
+
+const sourceWatchModels: Check = {
+	key: 'source-watch-models',
+	group: 'Workers',
+	name: 'Source watch models (AI Gateway)',
+	async run({ environment, now = new Date() }) {
+		const progress = await watchProgress(environment);
+		if (progress && 'problem' in progress) return { state: 'problem', summary: progress.problem, details: [] };
+		if (!progress) return { state: 'off', summary: 'The source watch has not run yet.', details: [], fix: watchSetup };
+		const models = progress.models;
+		const spend = models.spend30Days ?? [];
+		const total = spend.reduce((sum, row) => sum + row.costMicrodollars, 0);
+		const details = [
+			...spend.map((row) => `${row.model}: ${row.calls.toLocaleString('en-US')} calls, ${dollars(row.costMicrodollars)} in the last 30 days.`),
+			...(spend.length > 1 ? [`Together: ${dollars(total)} in the last 30 days.`] : []),
+			...(models.lastSample ? [`Last weekly sample check ${models.lastSample.at}: ${models.lastSample.checked} checked, ${models.lastSample.disagreed} disagreed with the cheaper model.`] : [])
+		];
+		const fix = 'Create the AI Gateway "source-watch" with Unified Billing, load credits, and set WATCH_TRIAGE_PROVIDER to ai-gateway on the tribal-law-project-watch Worker (site/watch/README.md, "Models").';
+		if (models.provider === 'none') return { state: 'off', summary: 'Triage by model is off, so items the rules cannot decide go to people.', details, fix };
+		if (!models.ready) return { state: 'problem', summary: models.problem ?? 'The triage provider is not ready.', details, fix };
+		const recentProblem = models.lastProblemAt && now.getTime() - Date.parse(models.lastProblemAt) < 3_600_000;
+		if (recentProblem) return { state: 'problem', summary: `The models did not answer: ${models.problem ?? 'no reason given'}`, details, fix: 'Check the gateway’s logs and the credit balance in the Cloudflare dashboard (AI > AI Gateway > source-watch). Waiting items stay waiting until it answers.' };
+		return { state: 'working', summary: `${models.cheapModel ?? 'The cheap model'} sorts the middle band through AI Gateway ${models.gateway ?? ''}${models.lastCallAt ? `; last call ${models.lastCallAt}` : '; no calls yet'}.`, details };
 	}
 };
 
@@ -720,7 +790,7 @@ const siteTextRebuilds: Check = {
 	group: 'Workers',
 	name: 'Site text rebuilds',
 	async run({ environment }) {
-		const fix = `Create a deploy hook for the website (Workers & Pages > model-tribal-adr-code > Settings > Builds > Deploy Hooks) and save its address as the secret SITE_REBUILD_HOOK_URL (${settingsPlace}).`;
+		const fix = `Create a deploy hook for the website (Workers & Pages > tribal-law-project-site > Settings > Builds > Deploy Hooks) and save its address as the secret SITE_REBUILD_HOOK_URL (${settingsPlace}).`;
 		let publication: number;
 		let last: Awaited<ReturnType<typeof latestRebuild>>;
 		try {
@@ -754,6 +824,8 @@ export const serviceChecks: readonly Check[] = [
 	scannerDesk,
 	scanner,
 	waybackCaptures,
+	sourceWatch,
+	sourceWatchModels,
 	siteTextRebuilds,
 	rateLimitCheck('request-form-limit', 'Request form', 'requestFormLimit', 'the request form'),
 	rateLimitCheck('workspace-change-limit', 'Workspace changes', 'workspaceChangeLimit', 'making changes in the workspace'),

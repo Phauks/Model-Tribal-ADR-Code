@@ -5,7 +5,7 @@
  * after each pause in the editing.
  *
  * One room per essay, named "essay:<id>" (src/lib/server/live-editing.ts).
- * The room runs in its own Worker, model-tribal-adr-code-live
+ * The room runs in its own Worker, tribal-law-project-live
  * (live/wrangler.jsonc), so that the many deploys of the website do not
  * restart rooms in the middle of someone's typing. The website checks who
  * is connecting and passes their name and level on the essay in headers;

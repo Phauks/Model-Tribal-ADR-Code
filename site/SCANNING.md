@@ -88,7 +88,7 @@ An unknown name, or `http` without an address, counts as `off`, so a mistake hol
 
 The scanner deploys with its own Workers Builds project, like the live editing Worker:
 
-1. In the Cloudflare dashboard, create a Worker from this repository with root directory `site/scanner`, build command `cd .. && npm ci`, deploy command `npx wrangler deploy`, and build watch paths `site/scanner/*` and `site/src/lib/server/scanning/*`. The name must be `model-tribal-adr-code-scanner`.
+1. In the Cloudflare dashboard, create a Worker from this repository with root directory `site/scanner`, build command `cd .. && npm ci`, deploy command `npx wrangler deploy`, and build watch paths `site/scanner/*` and `site/src/lib/server/scanning/*`. The name must be `tribal-law-project-scanner`.
 2. Apply the migration: `npx wrangler d1 migrations apply database --remote` from `site/`.
 3. The first deploy builds the engine image (about ten minutes) and provisions the container, which can take a few minutes more.
 4. Optional: for fresh signatures every day, create a deploy hook for the scanner Worker (Settings > Builds > Deploy Hooks) and save its address as the secret `SCAN_REBUILD_HOOK_URL`. The Worker calls it daily at 06:23 UTC, and the rebuild downloads the day's signatures. Without it, signatures are as fresh as the scanner's last deploy, and each result records which signatures it used.

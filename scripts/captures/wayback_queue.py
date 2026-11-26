@@ -3,7 +3,7 @@
 The Wayback Worker (site/wayback, site/WAYBACK.md) saves links with the
 project's archive.org keys, which live only in Cloudflare. It reads its list
 from research/wayback-queue.tsv on main, and lists what it captured at
-https://model-tribal-adr-code-wayback.trevordgoldsmith.workers.dev/captures.json.
+https://tribal-law-project-wayback.trevordgoldsmith.workers.dev/captures.json.
 
   python3 scripts/captures/wayback_queue.py --write
       Rewrites research/wayback-queue.tsv: every source record with an

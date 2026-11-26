@@ -33,7 +33,9 @@ export type ScanPurpose =
 	| 'sponsor-logo'
 	| 'room-recording'
 	| 'event-material'
-	| 'book-order-photo';
+	| 'book-order-photo'
+	/** A file the source watch fetched from a public source (docs/source-watch.md, "Storage and hosting"). */
+	| 'watch-capture';
 
 export interface FileScan {
 	objectKey: string;

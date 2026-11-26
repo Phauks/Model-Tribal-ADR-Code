@@ -1,0 +1,58 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/Phauks/Model-Tribal-ADR-Code/schemas/search-names.schema.json",
+  "title": "Search names",
+  "description": "content/search/names.yaml: names readers search by that the records don't give, such as acronyms and popular names of one law or case (names) and names for a set of them, such as the Marshall Trilogy (groups). Each has a basis: a published source that uses the name for exactly these items. The site search adds them (site/src/lib/server/search-index.ts).",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["checked", "names", "groups"],
+  "properties": {
+    "checked": { "$ref": "common.schema.json#/$defs/calendarDate", "description": "When every basis was last checked." },
+    "names": { "type": "array", "items": { "$ref": "#/$defs/name" } },
+    "groups": { "type": "array", "items": { "$ref": "#/$defs/group" } }
+  },
+  "$defs": {
+    "item": {
+      "type": "string",
+      "pattern": "^(/[^\\s]*|[a-z0-9][a-z0-9-]*)$",
+      "description": "A source record key, whose page on this site the name finds (/laws/<key> or /cases/<key>), or a path on this site. Never a Tribal court opinion."
+    },
+    "names": {
+      "type": "array",
+      "minItems": 1,
+      "items": { "type": "string", "minLength": 1 },
+      "description": "The names, the first shown when a set's name matches."
+    },
+    "basis": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["citation", "link", "words"],
+      "properties": {
+        "source": { "$ref": "common.schema.json#/$defs/slug", "description": "The source record, when there is one." },
+        "citation": { "type": "string", "minLength": 1, "description": "The source, as the Indigo Book cites it." },
+        "link": { "type": "string", "format": "uri", "pattern": "^https://" },
+        "words": { "type": "string", "minLength": 1, "description": "The source's own words that use the name, copied exactly." }
+      }
+    },
+    "name": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["names", "item", "basis"],
+      "properties": {
+        "names": { "$ref": "#/$defs/names" },
+        "item": { "$ref": "#/$defs/item" },
+        "basis": { "$ref": "#/$defs/basis" }
+      }
+    },
+    "group": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["names", "items", "basis"],
+      "properties": {
+        "names": { "$ref": "#/$defs/names" },
+        "items": { "type": "array", "minItems": 2, "uniqueItems": true, "items": { "$ref": "#/$defs/item" } },
+        "basis": { "$ref": "#/$defs/basis" }
+      }
+    }
+  }
+}

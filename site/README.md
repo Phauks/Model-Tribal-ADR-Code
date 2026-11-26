@@ -47,7 +47,7 @@ Cloudflare Workers Builds deploys the site from GitHub ([decision record 0006](.
 
 | Setting | Value |
 | --- | --- |
-| Worker name | `model-tribal-adr-code` (must match `name` in `wrangler.jsonc`) |
+| Worker name | `tribal-law-project-site` (must match `name` in `wrangler.jsonc`) |
 | Production branch | `main` |
 | Root directory | `site` |
 | Build command | `npm ci && npm run build` |

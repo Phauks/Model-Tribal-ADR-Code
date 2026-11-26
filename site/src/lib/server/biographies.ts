@@ -2,7 +2,9 @@
  * Pages about Native people in the cases and in nations' histories
  * (content/biographies/, src/routes/biographies/[person]; Trevor, Nov. 24,
  * 2026: "profiles for native Americans who are involved in this litigation or
- * leaders as well, especially notable leaders"). Every fact comes from the
+ * leaders as well, especially notable leaders"), and about the people who
+ * signed treaties with them for the United States (Trevor chose to add them
+ * to Biographies on Nov. 26, 2026). Every fact comes from the
  * record with its source and the place in it; a fact without one is never
  * shown. Runs at build time only.
  */
@@ -19,6 +21,8 @@ import { nations, publicCopyFor, repositoryRoot, sources } from './content.ts';
 import type { FactGroup } from './justice-pages.ts';
 import { isLawRecord, recordName } from './law-records.ts';
 import { SourceUses, type SourceEntry } from './source-uses.ts';
+import { justicePath, peopleFile, presidentPath } from './supreme-court-people.ts';
+import type { Stub } from '../stubs.ts';
 
 interface Cited {
 	source: string;
@@ -101,6 +105,8 @@ export interface BiographyPage {
 	treaties: BiographyTreaty[];
 	events: BiographyEvent[];
 	sources: SourceEntry[];
+	/** Set when the page holds only the treaties the person signed: a stub (src/lib/stubs.ts). */
+	stub?: Stub;
 }
 
 const folder = path.join(repositoryRoot, 'content/biographies');
@@ -309,6 +315,16 @@ export function biographyPage(key: string): BiographyPage | null {
 		});
 	}
 
+	// A treaty commissioner who also has a President's or Justice's page, such as Andrew Jackson.
+	const forUnitedStates = treaties.length > 0 && treaties.every((item) => item.signedFor === 'United States');
+	if (forUnitedStates) {
+		const people = peopleFile();
+		const president = people.presidents.find((candidate) => candidate.name === person.name);
+		const justice = people.justices.find((candidate) => candidate.name === person.name);
+		if (president) glance.push({ field: 'office', label: 'President', items: [{ text: `President of the United States, ${president.years.map(([from, to]) => `${from}–${to}`).join(', ')}`, link: presidentPath(president) }] });
+		if (justice) glance.push({ field: 'office', label: 'Justice', items: [{ text: 'Justice of the Supreme Court', link: justicePath(justice) }] });
+	}
+
 	uses.part('Life and events');
 	const events: BiographyEvent[] = (person.events ?? []).map((entry) => {
 		const href = treatyLinks.get(entry.source);
@@ -347,6 +363,11 @@ export function biographyPage(key: string): BiographyPage | null {
 		cases,
 		treaties,
 		events,
-		sources: uses.list
+		sources: uses.list,
+		// Nothing but treaty signings: no cases, no picture, no other life events.
+		stub:
+			cases.length === 0 && !person.portrait && events.length > 0 && events.every((event) => event.link !== undefined)
+				? { kind: 'person', record: `biographies/${key}` }
+				: undefined
 	};
 }
