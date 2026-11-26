@@ -32,12 +32,14 @@ function linkAddresses(html: string): string {
 }
 
 /**
- * The full citation of every source record, in the same form as
- * fullCitations() in citations.ts: each as the first citation of its source.
- * One citation processor serves them all, which takes seconds instead of the
- * half a minute that a processor per source takes for five thousand records.
+ * The citation of each source record as citeproc-js prints it in the project's
+ * Indigo Book style, the first time a work cites it, as HTML: the citation
+ * alone, without the links to the source and to where to read it that
+ * everyFullCitation() adds. One citation processor serves them all, which
+ * takes seconds instead of the half a minute that a processor per source
+ * takes for five thousand records. A record the style cannot cite is left out.
  */
-export function everyFullCitation(records: SourceRecord[] = [...sources().values()]): Record<string, string> {
+export function citationTexts(records: SourceRecord[] = [...sources().values()]): Map<string, string> {
 	const styleFolder = path.join(repositoryRoot, 'pdf', 'styles');
 	const style = readFileSync(path.join(styleFolder, 'project-law-review.csl'), 'utf8');
 	const locale = readFileSync(path.join(styleFolder, 'locales-en-US.xml'), 'utf8');
@@ -57,7 +59,7 @@ export function everyFullCitation(records: SourceRecord[] = [...sources().values
 		'en-US'
 	);
 	engine.setOutputFormat('html');
-	const citations: Record<string, string> = {};
+	const texts = new Map<string, string>();
 	for (const record of records) {
 		let text: string | undefined;
 		try {
@@ -71,9 +73,23 @@ export function everyFullCitation(records: SourceRecord[] = [...sources().values
 			text = undefined;
 		}
 		if (!text || /CSL STYLE ERROR/.test(text)) continue;
-		let html = linkAddresses(
-			text.replaceAll('<span style="font-variant:small-caps;">', '<span class="small-capitals">')
-		);
+		texts.set(record.key, text.replaceAll('<span style="font-variant:small-caps;">', '<span class="small-capitals">'));
+	}
+	return texts;
+}
+
+/**
+ * The full citation of every source record, in the same form as
+ * fullCitations() in citations.ts: each as the first citation of its source,
+ * with a link to the source and the list of where to read it.
+ */
+export function everyFullCitation(records: SourceRecord[] = [...sources().values()]): Record<string, string> {
+	const texts = citationTexts(records);
+	const citations: Record<string, string> = {};
+	for (const record of records) {
+		const text = texts.get(record.key);
+		if (!text) continue;
+		let html = linkAddresses(text);
 		const link = record.original_link ?? record.citation.URL;
 		if (!html.includes('<a ') && link && URL.canParse(link)) {
 			const address = new URL(link);

@@ -40,6 +40,8 @@ export interface PublicCopy {
 	 * It has no links: the original still has the names in it.
 	 */
 	namesReplaced?: boolean;
+	/** The records the copy belongs to, such as the source record of the case it reports, by key. */
+	records: string[];
 }
 
 /**
@@ -119,6 +121,15 @@ export interface CopyDetails {
 	list: { slug: string; title: string };
 	/** For a tribal court opinion: its name, citation, court and date decided. */
 	opinion?: { name: string; citation: string; court: string; decided: string; docket: string; namesReplaced?: boolean };
+	/**
+	 * For a copy of a cited source: how the project cites it (Indigo Book), as HTML, without the
+	 * name when the name is the page's title, such as "10 U.S. 87 (1810)." for Fletcher v. Peck.
+	 */
+	citation?: string;
+	/** Whether the name is a case's, set in italics. */
+	isCase?: boolean;
+	/** The case's page on this site, for a court case that has one. */
+	casePage?: string;
 }
 
 /**

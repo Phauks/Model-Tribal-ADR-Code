@@ -30,7 +30,12 @@ text layer, then in a fresh OCR of the page image), and a check the report
 bears out becomes "confirmed", with the words it prints. Facts no script can
 read are read from the page images into research/supreme-court-coverage/
 report-readings.json, each with the lines it rests on; a reading counts only
-when every one of its lines is found on its printed page. The status stays
+when every one of its lines is found on its printed page. Where the Library
+of Congress has no scan under a case's citation, or its scan can't be read for
+a fact, research/supreme-court-coverage/other-scans.json names another copy of
+the printed report (a lettered Library of Congress scan, the scan of an
+earlier case that holds the pages, or the Internet Archive's scan of the
+volume) and the page it starts on. The status stays
 "unverified" unless every check agreed or was confirmed; even then it means
 the sources and the report agree, not that a person has read the record. A
 record whose review status a person has changed, or that has no review block,
@@ -60,6 +65,7 @@ import json
 import re
 import subprocess
 import sys
+import tempfile
 import time
 import unicodedata
 import urllib.request
@@ -81,6 +87,9 @@ SETTLED = ROOT / "research" / "supreme-court-coverage" / "settled.json"
 # Lines read from the official report's page images where the scripts could not settle a fact, by Database case ID:
 # each line, with its printed page, is checked against the report's text before it confirms anything.
 READINGS = ROOT / "research" / "supreme-court-coverage" / "report-readings.json"
+# Other copies of the official report, by citation, where the Library of Congress has no scan under the case's citation
+# ("use": "scan") or its scan can't be read for a fact ("use": "second copy", for the checks named).
+OTHER_SCANS_PATH = ROOT / "research" / "supreme-court-coverage" / "other-scans.json"
 TODAY = datetime.date.today().isoformat()
 REPORT = ROOT / "research" / "reviews" / f"{TODAY}-supreme-court-native-cases.csv"
 SESSION = "2026-11-24-supreme-court-native-cases"
@@ -598,8 +607,41 @@ def bound_volume(volume: str) -> str:
 
 
 def official_pdf(volume: str, page: str) -> str:
-    """The official report as a PDF: the Library of Congress scan through volume 542, the Court's bound volume after."""
+    """The official report as a PDF: the Library of Congress scan through volume 542, the Court's bound volume after,
+    or the copy other-scans.json names for the case."""
+    other = other_scan(volume, page)
+    if other:
+        return other["pdf"]
     return loc_pdf(volume, page) if int(volume) <= 542 else bound_volume(volume)
+
+
+def other_scan(volume: str, page: str, use: str = "scan") -> dict | None:
+    entry = OTHER_SCANS.get(f"{int(volume)} U.S. {int(page)}")
+    return entry if entry and entry["use"] == use else None
+
+
+def other_scan_pages(entry: dict, volume: str, page: str, count: int, cache: Path) -> tuple[list[str], Path] | None:
+    """The case's pages from another copy of the official report (other-scans.json), cut from it into a PDF of their
+    own, so that a page's place in the list is its place in that PDF; with the cut PDF."""
+    cut = cache / "other" / f"other-{int(volume)}-{int(page)}-{entry['use'].replace(' ', '-')}.pdf"
+    text_path = cut.with_suffix(".json")
+    if not text_path.exists():
+        whole = cache / "other" / entry["pdf"].rsplit("/", 1)[1]
+        if not whole.exists():
+            try:
+                fetch(entry["pdf"], whole)
+            except subprocess.CalledProcessError:
+                return None
+        start = entry["first_scan_page"]
+        with tempfile.TemporaryDirectory() as work:
+            subprocess.run(["pdfseparate", "-f", str(start), "-l", str(start + count - 1), str(whole), f"{work}/page-%d.pdf"], check=True)
+            subprocess.run(["pdfunite", *[f"{work}/page-{n}.pdf" for n in range(start, start + count)], str(cut)], check=True)
+        result = subprocess.run(["pdftotext", "-enc", "UTF-8", str(cut), "-"], capture_output=True, check=True)
+        pages = result.stdout.decode("utf-8", "replace").split("\f")
+        if pages and not pages[-1].strip():
+            pages.pop()
+        text_path.write_text(json.dumps(pages))
+    return json.loads(text_path.read_text()), cut
 
 
 def bound_volume_pages(volume: str, first: int, last: int, cache: Path) -> list[str] | None:
@@ -795,7 +837,12 @@ def build(row: dict, scdb_rows: dict, volumes: Volumes, oyez: Oyez, justices: Ju
 
     # the Library of Congress scan
     last_page = int(cap["last_page"]) if str(cap.get("last_page", "")).isdigit() else int(page)
-    pages = loc_pages(volume, page, cache) if int(volume) <= 542 else bound_volume_pages(volume, int(page), last_page, cache)
+    other = other_scan(volume, page)
+    if other:
+        found_other = other_scan_pages(other, volume, page, last_page - int(page) + 1, cache)
+        pages = found_other[0] if found_other else None
+    else:
+        pages = loc_pages(volume, page, cache) if int(volume) <= 542 else bound_volume_pages(volume, int(page), last_page, cache)
     first, last = int(cap["first_page"]), int(cap["last_page"]) if str(cap.get("last_page", "")).isdigit() else None
     if pages is None:
         checks.append({"check": "scan", "result": "missing", "detail": "No scan of the official report found"})
@@ -906,9 +953,11 @@ def build(row: dict, scdb_rows: dict, volumes: Volumes, oyez: Oyez, justices: Ju
     nominative = next((c["cite"] for c in cap["citations"] if c["type"] == "nominative"), None)
     year = day[:4]
     full = f"{volume} U.S. ({nominative}) {page} ({year})" if nominative else f"{volume} U.S. {page} ({year})"
-    loc_item = f"https://www.loc.gov/item/{loc_name(volume, page)}/"
+    loc_item = other["item"] if other and pages else f"https://www.loc.gov/item/{loc_name(volume, page)}/"
     links = []
-    if pages and int(volume) <= 542:
+    if pages and other:
+        links.append({"site": other["site"], "label": other["label"], "access": "official" if other["site"] == "library-of-congress" else "free", "link": other["item"]})
+    elif pages and int(volume) <= 542:
         links.append({"site": "library-of-congress", "label": "Library of Congress", "access": "official", "link": loc_item})
     elif pages:
         links.append({"site": "supremecourt", "label": "Supreme Court of the United States", "access": "official", "link": bound_volume(volume)})
@@ -946,6 +995,10 @@ def build(row: dict, scdb_rows: dict, volumes: Volumes, oyez: Oyez, justices: Ju
         status = "verified" if all(c["result"] in ("agree", "confirmed") for c in checks) else "unverified"
     elif pages and int(volume) <= 542:
         scan_pages = scan_page_numbers(pages, first, last, listing)
+    if pages and other:  # a page of another copy is linked by its place in that copy
+        mapping, _ = official_report.page_map(pages, first, last)
+        scan_pages = {e["page"]: other["first_scan_page"] + (mapping.index(e["page"]) if e["page"] in mapping else e["page"] - first)
+                      for e in listing}
     for entry in listing:
         if entry["page"] in scan_pages:
             entry["scan_page"] = scan_pages[entry["page"]]
@@ -973,6 +1026,8 @@ def build(row: dict, scdb_rows: dict, volumes: Volumes, oyez: Oyez, justices: Ju
     record["notes"] = (f"Full citation: {full}. Official report scan: {report}. Written by {SCRIPT} from the Supreme Court Database "
                        f"(case {row['scdb_case_id']}), the Caselaw Access Project's text of the report and {'the Library of Congress scan' if int(volume) <= 542 else "the Court's bound volume"}; "
                        "not yet read by a person.")
+    if pages and other:
+        record["notes"] = record["notes"].replace("the Library of Congress scan;", f"the {other['label']} scan named in research/supreme-court-coverage/other-scans.json;") + f" {other['why']}"
     record["tribes"] = [n["nation"] for n in named]
     record["nations_in_case"] = {"checked": TODAY, "named": named}
     if not_linked:
@@ -1015,8 +1070,11 @@ def confirm_in_report(row, checks, listing, caption, court_dates, day, pages, fi
         if facts:
             print(f"{row['scdb_case_id']}: no scan to check the reading against", file=sys.stderr)
         return listing, caption, court_dates, day, scan_pages
-    bound = int(volume) > 542
+    other = other_scan(volume, page)
+    bound = int(volume) > 542 and not other
     pdf = cache / "bound" / f"{volume}bv.pdf" if bound else cache / "loc" / f"{loc_name(volume, page)}.pdf"
+    if other:
+        pdf = other_scan_pages(other, volume, page, len(pages), cache)[1]
     base = bound_volume_start(volume, pages, cache) if bound else 0
     mapping, map_notes = official_report.page_map(pages, first, last)
     index_of = {printed: index for index, printed in enumerate(mapping) if printed is not None}
@@ -1075,7 +1133,7 @@ def confirm_in_report(row, checks, listing, caption, court_dates, day, pages, fi
             score, how, index = official_report.find_text(caption, pages, [0, 1], pdf if not bound else None, cache)
             if score >= 0.9:
                 auto = f"the report prints the caption \"{caption}\" on p. {mapping[index] if index is not None else first} ({how}, {score:.2f})"
-        elif name in ("printed dates", "decided") and court_dates and court_dates.get("source", "").startswith(("https://tile.loc.gov", "https://www.supremecourt.gov/opinions/bound")):
+        elif name in ("printed dates", "decided") and court_dates and court_dates.get("source", "").startswith(("https://tile.loc.gov", "https://www.supremecourt.gov/opinions/bound", "https://archive.org/")):
             line = court_dates["printed"]
             decided = parse_days(re.search(r"Decided\s+(.*)", line)[1]) if re.search(r"Decided\s+(.*)", line) else []
             score, how, index = official_report.find_text(line, pages, [0, 1, 2], pdf if not bound else None, cache)
@@ -1083,6 +1141,13 @@ def confirm_in_report(row, checks, listing, caption, court_dates, day, pages, fi
             figures = index is not None and (official_report.has_numbers(line, pages[index]) or (not bound and official_report.has_numbers(line, official_report.ocr_page(pdf, index, cache))))
             if score >= 0.9 and figures and plausible_dates(court_dates, day) and (name == "printed dates" or same_day):
                 auto = f"the report prints \"{line}\" on p. {mapping[index] if index is not None else first} ({how}, {score:.2f})"
+            second = other_scan(volume, page, "second copy")
+            if not auto and second and name in second.get("checks", []) and plausible_dates(court_dates, day) and (name == "printed dates" or same_day):
+                copy_pages, copy_pdf = other_scan_pages(second, volume, page, min(3, len(pages)), cache)
+                score, how, index = official_report.find_text(line, copy_pages, [0, 1, 2], copy_pdf, cache)
+                if index is not None and score >= 0.9 and (official_report.has_numbers(line, copy_pages[index]) or official_report.has_numbers(line, official_report.ocr_page(copy_pdf, index, cache))):
+                    auto = (f"the report prints \"{line}\" on p. {first + index} of the {second['label']}'s copy of the volume "
+                            f"(scan page {second['first_scan_page'] + index}, {how}, {score:.2f}; {second['item']}). {second['why']}")
         elif name == "scan":
             shown, total, wrong = official_report.map_checks(pages, mapping)
             wanted = [e["page"] for e in listing]
@@ -1161,7 +1226,8 @@ def main() -> int:
         file_captures(cache, args.file_captures)
         return 0
 
-    global TABLE, SETTLED_READINGS, READING_LINES
+    global TABLE, SETTLED_READINGS, READING_LINES, OTHER_SCANS
+    OTHER_SCANS = json.loads(OTHER_SCANS_PATH.read_text(encoding="utf-8")) if OTHER_SCANS_PATH.exists() else {}
     TABLE = dates_table(cache)
     SETTLED_READINGS = json.loads(SETTLED.read_text(encoding="utf-8")) if SETTLED.exists() else {}
     READING_LINES = json.loads(READINGS.read_text(encoding="utf-8")) if READINGS.exists() else {}
@@ -1220,13 +1286,20 @@ def main() -> int:
                     if kept in old:
                         record[kept] = old[kept]
             pending.append((path, record))
-    # Cases in one of the Court's bound volumes share its address.
+    # Cases in one of the Court's bound volumes share its address, as does a case whose pages are in another case's
+    # scan (other-scans.json); records written before and not rerun count too.
     by_link: dict[str, list[str]] = {}
     for _, record in pending:
         by_link.setdefault(record["original_link"], []).append(record["key"])
+    rerun = {record["key"] for _, record in pending}
+    for key, earlier in records.items():
+        if (earlier.get("review") or {}).get("by") == SCRIPT and key not in rerun and earlier.get("original_link") in by_link:
+            by_link[earlier["original_link"]].append(key)
+    other_items = {entry["item"] for entry in OTHER_SCANS.values()}
     for path, record in pending:
         others = [key for key in by_link[record["original_link"]] if key != record["key"]]
-        if others and "boundvolumes" in record["original_link"]:
+        if others and ("boundvolumes" in record["original_link"] or record["original_link"] in other_items
+                       or any(r["original_link"] in other_items for _, r in pending if r["key"] in others)):
             record["shares_link_with"] = sorted(others)
         path.parent.mkdir(parents=True, exist_ok=True)
         path.write_text(dump(order(record)), encoding="utf-8")
@@ -1283,6 +1356,19 @@ def file_captures(cache: Path, captures: Path) -> None:
                                  "--obtained", f"downloaded by {SCRIPT}", "--redistribution", "yes", "--link", bound_volume(volume),
                                  "--rights", "Official report of the Supreme Court of the United States; a work of the U.S. government (17 U.S.C. § 105).",
                                  str(path)], check=True)
+    keys_by_citation = {row["citation"]: row["key"] for row in csv.DictReader(REPORT.open(encoding="utf-8")) if row["key"]}
+    others = json.loads(OTHER_SCANS_PATH.read_text(encoding="utf-8")) if OTHER_SCANS_PATH.exists() else {}
+    for citation, entry in others.items():  # the other copies of the report that records cite (other-scans.json)
+        path = cache / "other" / entry["pdf"].rsplit("/", 1)[1]
+        if not path.exists() or citation not in keys_by_citation or opinions.hashlib.sha256(path.read_bytes()).hexdigest() in filed:
+            continue
+        host, name = entry["pdf"].split("://", 1)[1].split("/", 1)
+        subprocess.run(mirror + ["--topic", host, "--name", name,
+                                 "--title", f"United States Reports: {entry['label']} scan holding {entry['case']}, {citation}",
+                                 "--obtained", f"downloaded by {SCRIPT}", "--redistribution", "yes", "--link", entry["pdf"],
+                                 "--record", keys_by_citation[citation],
+                                 "--rights", "Official report of the Supreme Court of the United States; a work of the U.S. government (17 U.S.C. § 105).",
+                                 str(path)], check=True)
     for row in csv.DictReader(REPORT.open(encoding="utf-8")):
         if not row["key"] or " U.S. " not in row["citation"]:
             continue
@@ -1302,6 +1388,7 @@ def file_captures(cache: Path, captures: Path) -> None:
 TABLE: dict = {}
 SETTLED_READINGS: dict = {}
 READING_LINES: dict = {}
+OTHER_SCANS: dict = {}
 
 ORDER = ["key", "kind", "citation", "caption", "opinions", "original_link", "shares_link_with", "retrieved", "archives", "history", "court_dates",
          "supreme_court", "courtlistener", "reading_links", "rights", "citator", "found_in", "notes", "tribes", "nations_in_case", "review"]

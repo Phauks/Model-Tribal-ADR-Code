@@ -12,7 +12,7 @@ citation:
     - - 1867
       - 5
       - 16
-  URL: https://static.case.law/us/154/html/0552-02.html
+  URL: https://archive.org/details/sim_united-states-supreme-court-cases-adjudged_1894_154/page/n569/mode/1up
   accessed:
     date-parts:
     - - 2026
@@ -20,16 +20,17 @@ citation:
       - 24
 caption:
   printed: UNITED STATES v. MAYRAND
-  source: https://static.case.law/us/154/html/0552-02.html
+  source: https://archive.org/download/sim_united-states-supreme-court-cases-adjudged_1894_154/sim_united-states-supreme-court-cases-adjudged_1894_154.pdf
   checked: '2026-11-24'
 opinions:
-  source: https://static.case.law/us/154/html/0552-02.html
+  source: https://archive.org/download/sim_united-states-supreme-court-cases-adjudged_1894_154/sim_united-states-supreme-court-cases-adjudged_1894_154.pdf
   checked: '2026-11-24'
   list:
   - kind: majority
     justice: Salmon Portland Chase
     page: 552
-original_link: https://static.case.law/us/154/html/0552-02.html
+    scan_page: 570
+original_link: https://archive.org/details/sim_united-states-supreme-court-cases-adjudged_1894_154/page/n569/mode/1up
 retrieved: '2026-11-24'
 history:
   status: live
@@ -38,7 +39,7 @@ court_dates:
   submitted:
   - '1867-05-15'
   printed: Submitted May 15, 1867. Decided May 16, 1867.
-  source: https://static.case.law/us/154/html/0552-02.html
+  source: https://archive.org/download/sim_united-states-supreme-court-cases-adjudged_1894_154/sim_united-states-supreme-court-cases-adjudged_1894_154.pdf
   checked: '2026-11-24'
 supreme_court:
   court: Chase Court
@@ -73,6 +74,10 @@ supreme_court:
 reading_links:
   checked: '2026-11-24'
   links:
+  - site: internet-archive
+    label: Internet Archive
+    access: free
+    link: https://archive.org/details/sim_united-states-supreme-court-cases-adjudged_1894_154/page/n569/mode/1up
   - site: justia
     label: Justia
     access: free
@@ -100,13 +105,13 @@ rights:
   redistribution: true
 found_in:
 - 2026-11-24-supreme-court-native-cases
-notes: 'Full citation: 154 U.S. 552 (1867). Official report scan: https://static.case.law/us/154/html/0552-02.html. Written by scripts/caselaw/supreme_court_native_cases.py from the Supreme Court Database (case 1866-135), the Caselaw Access Project''s text of the report and the Library of Congress scan; not yet read by a person.'
+notes: 'Full citation: 154 U.S. 552 (1867). Official report scan: https://archive.org/download/sim_united-states-supreme-court-cases-adjudged_1894_154/sim_united-states-supreme-court-cases-adjudged_1894_154.pdf. Written by scripts/caselaw/supreme_court_native_cases.py from the Supreme Court Database (case 1866-135), the Caselaw Access Project''s text of the report and the Internet Archive scan named in research/supreme-court-coverage/other-scans.json; not yet read by a person. The case is printed in volume 154''s appendix of cases not reported before, which the Library of Congress did not scan; this is the Internet Archive''s scan of the volume.'
 tribes: []
 nations_in_case:
   checked: '2026-11-24'
   named: []
 review:
-  status: unverified
+  status: verified
   by: scripts/caselaw/supreme_court_native_cases.py
   date: '2026-11-24'
   checks:
@@ -114,16 +119,19 @@ review:
     result: agree
     detail: Caselaw Access Project 154 U.S. 552 "United States v. Mayrand"; Database 154 U.S. 552 "UNITED STATES v. LOUIS MAYRAND"
   - check: scan
-    result: missing
-    detail: No scan of the official report found
+    result: agree
+    detail: Scan has 1 pages; the report runs 552 to 552
+  - check: caption
+    result: confirmed
+    detail: 'Caption found in the scan''s text at 0.77. Confirmed: the report prints the caption "UNITED STATES v. MAYRAND" on p. 552 (fresh OCR, 1.00)'
   - check: printed dates
-    result: differs
-    detail: Caselaw Access Project "Submitted May 15, 1867. Decided May 16, 1867."; scan "not found"
+    result: confirmed
+    detail: 'Caselaw Access Project "Submitted May 15, 1867. Decided May 16, 1867."; scan "Submitted april 18, 1867. ——- Decided April 22, 1867". Confirmed: the report prints "Submitted May 15, 1867. Decided May 16, 1867." on p. 552 (text layer, 1.00)'
   - check: decided
     result: agree
     detail: 'Printed and Database: 1867-05-16'
   - check: opinions
-    result: differs
+    result: agree
     detail: 'Report: majority Chase p. 552; Database writers: Chase'
   - check: bench
     result: agree
