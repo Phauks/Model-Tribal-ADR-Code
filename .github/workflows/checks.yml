@@ -191,9 +191,13 @@ jobs:
       - uses: actions/checkout@v5
       - uses: actions/setup-node@v5
         with:
-          node-version: "22"
+          node-version-file: .node-version
           cache: npm
           cache-dependency-path: site/package-lock.json
+      # setup-node brings the npm that ships with Node; the packageManager
+      # field names the npm the project uses (Cloudflare builds read it too).
+      - name: Install the npm named in package.json
+        run: npm install --global "$(node -p "require('./package.json').packageManager")"
       - run: npm ci
       # Reads only the source, so it runs before the build and fails fast.
       - name: Pick-one fields and data tables use the shared components
@@ -239,9 +243,13 @@ jobs:
       - uses: actions/checkout@v5
       - uses: actions/setup-node@v5
         with:
-          node-version: "22"
+          node-version-file: .node-version
           cache: npm
           cache-dependency-path: site/package-lock.json
+      # setup-node brings the npm that ships with Node; the packageManager
+      # field names the npm the project uses (Cloudflare builds read it too).
+      - name: Install the npm named in package.json
+        run: npm install --global "$(node -p "require('./package.json').packageManager")"
       - run: npm ci
       - name: Type check
         run: npm run check
@@ -271,9 +279,13 @@ jobs:
       - uses: actions/checkout@v5
       - uses: actions/setup-node@v5
         with:
-          node-version: "22"
+          node-version-file: .node-version
           cache: npm
           cache-dependency-path: site/package-lock.json
+      # setup-node brings the npm that ships with Node; the packageManager
+      # field names the npm the project uses (Cloudflare builds read it too).
+      - name: Install the npm named in package.json
+        run: npm install --global "$(node -p "require('./package.json').packageManager")"
       - run: npm ci
       - uses: actions/download-artifact@v4
         with:
@@ -315,9 +327,13 @@ jobs:
       - uses: actions/checkout@v5
       - uses: actions/setup-node@v5
         with:
-          node-version: "22"
+          node-version-file: .node-version
           cache: npm
           cache-dependency-path: site/package-lock.json
+      # setup-node brings the npm that ships with Node; the packageManager
+      # field names the npm the project uses (Cloudflare builds read it too).
+      - name: Install the npm named in package.json
+        run: npm install --global "$(node -p "require('./package.json').packageManager")"
       - run: npm ci
       - uses: actions/download-artifact@v4
         with:
@@ -348,9 +364,13 @@ jobs:
       - uses: actions/checkout@v5
       - uses: actions/setup-node@v5
         with:
-          node-version: "22"
+          node-version-file: .node-version
           cache: npm
           cache-dependency-path: pdf/package-lock.json
+      # setup-node brings the npm that ships with Node; the packageManager
+      # field names the npm the project uses (Cloudflare builds read it too).
+      - name: Install the npm named in package.json
+        run: npm install --global "$(node -p "require('./package.json').packageManager")"
       - uses: actions/setup-python@v6
         with:
           python-version: "3.12"

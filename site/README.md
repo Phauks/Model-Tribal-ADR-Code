@@ -4,7 +4,7 @@ The website is built with SvelteKit (Svelte 5, TypeScript) and served by a Cloud
 
 ## Run it on your computer
 
-Needs Node.js 22 or later. From this folder:
+Needs Node.js 26 or later and npm 12 (the version in `.node-version` and the `packageManager` field of `package.json`; `npm install --global npm@12` updates an older npm). From this folder:
 
 ```sh
 npm ci            # install the exact versions in package-lock.json
