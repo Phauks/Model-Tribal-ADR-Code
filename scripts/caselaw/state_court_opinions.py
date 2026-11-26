@@ -240,7 +240,9 @@ TOPIC = "state-court-indian-law"
 FEDERAL_TOPIC = "federal-court-indian-law"
 # Federal courts whose reports the Project files with the states' (the District of Columbia's, mostly); their cases are federal.
 FEDERAL_COURT = re.compile(r"^United States |^Supreme Court of the District of Columbia$|^Court of Appeals of the District of Columbia$")
-CAPTURE_TOPIC = "caselaw-access-project"
+# The copies' own topics, so they are never listed as Tribal court opinions, which use "caselaw-access-project".
+CAPTURE_TOPIC = "state-court-opinions"
+FEDERAL_CAPTURE_TOPIC = "federal-court-opinions"
 STATES = {
     "Alabama": "AL", "Alaska": "AK", "Arizona": "AZ", "Arkansas": "AR", "California": "CA", "Colorado": "CO", "Connecticut": "CT",
     "Delaware": "DE", "District of Columbia": "DC", "Florida": "FL", "Georgia": "GA", "Hawaii": "HI", "Idaho": "ID", "Illinois": "IL",
@@ -253,8 +255,6 @@ STATES = {
 }
 RIGHTS_NOTE = ("The text of a judicial opinion has no copyright (Georgia v. Public.Resource.Org, Inc., 590 U.S. 255 (2020)). "
                "The copy served on this site is the court's opinion only, without the publisher's headnotes, synopsis or other editorial matter (decision record 0060).")
-CAPTURE_RIGHTS = ("A state court's published opinion, from the Caselaw Access Project (released without restriction, 2024): "
-                  "no copyright in the text; publisher's headnotes and editorial matter left out; served under decision record 0060.")
 
 
 def dump(value) -> str:
@@ -445,10 +445,11 @@ def write(args: argparse.Namespace) -> None:
                 if mirror_captures.remote_state(s3, bucket, capture) != (len(data), digest):
                     raise SystemExit(f"verification failed for {capture}")
             new = {field: "" for field in mirror_captures.FIELDS}
-            new.update(key=capture, bytes=len(data), sha256=digest, media_type="text/html", topic=CAPTURE_TOPIC,
+            topic = FEDERAL_CAPTURE_TOPIC if record["kind"] == "federal-case" else CAPTURE_TOPIC
+            new.update(key=capture, bytes=len(data), sha256=digest, media_type="text/html", topic=topic,
                        title=record["citation"]["title"], nations=";".join(record.get("tribes", [])),
                        obtained=f"built from the Caselaw Access Project's files, {TODAY}", link=record["original_link"], captured=TODAY,
-                       records=record["key"], record_kinds="source", rights=CAPTURE_RIGHTS, redistribution="yes", keep_local="no", orphan="no")
+                       records=record["key"], record_kinds="source", rights=mirror_captures.TOPIC_RIGHTS[topic], redistribution="yes", keep_local="no", orphan="no")
             for field in ("redistribution", "rights"):
                 if overrides.get(capture, {}).get(field):
                     new[field] = overrides[capture][field]

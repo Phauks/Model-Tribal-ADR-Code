@@ -93,6 +93,10 @@ TOPIC_RIGHTS = {
     "articles": "Journal article: copyright held by the author or journal; private copy, not redistributed.",
     "oklahoma-secretary-of-state": ("A state-tribal compact or agreement as filed with the Oklahoma Secretary of State, a public record: "
                                     "served on the website under decision record 0060; a nation can ask for removal or redaction."),
+    "state-court-opinions": ("A state or territorial court's published opinion, from the Caselaw Access Project (released without restriction, 2024): "
+                             "no copyright in the text; publisher's headnotes and editorial matter left out; served under decision record 0060."),
+    "federal-court-opinions": ("A federal court's published opinion, from the Caselaw Access Project (released without restriction, 2024): "
+                               "no copyright in the text; publisher's headnotes and editorial matter left out; served under decision record 0060."),
 }
 DEFAULT_RIGHTS = "Private research copy; not redistributed."
 

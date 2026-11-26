@@ -50,7 +50,9 @@ const federalGroups: Record<string, string> = {
 	'supreme-court': 'Supreme Court opinions',
 	statutes: 'Federal statutes and Public Laws',
 	'federal-register': 'Federal Register documents',
-	'other-federal': 'Other federal documents'
+	'other-federal': 'Other federal documents',
+	// Published state and territorial court opinions (decision record 0060); federal courts' opinions go with the other federal documents.
+	'state-court-opinions': 'State court opinions'
 };
 
 function nationNames(): Map<string, string> {
@@ -74,6 +76,7 @@ const opinionPrefix = 'opinions-';
 
 function groupOf(copy: PublicCopy, names: Map<string, string>): string {
 	if (copy.topic === 'caselaw-access-project') return `${opinionPrefix}${copy.nations[0] ?? 'other'}`;
+	if (copy.topic === 'state-court-opinions') return 'state-court-opinions';
 	if (copy.topic === 'constitutions' || copy.topic === 'tribal-law') {
 		const [first] = namesOf(copy, names);
 		const letter = first?.normalize('NFD').charAt(0).toLowerCase() ?? '';
