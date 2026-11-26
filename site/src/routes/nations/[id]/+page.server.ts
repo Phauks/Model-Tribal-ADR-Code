@@ -28,6 +28,7 @@ import { recognitionExplanations, recognitionView } from '#lib/server/recognitio
 import type { CitationPart } from '#lib/legal-citations.ts';
 import { nationIndexRows } from '#lib/server/nation-index.ts';
 import { nationTileMapData } from '#lib/server/nations-map.ts';
+import { boundsOfCessions, cessionsOfNation } from '#lib/server/land-cessions.ts';
 import { offlineSets } from '#lib/server/copy-lists.ts';
 import { nationStorySummaries } from '#lib/server/stories.ts';
 import { opinionsOf, opinionsSourceKey, type TribalCourtOpinion } from '#lib/server/tribal-court-opinions.ts';
@@ -1047,6 +1048,23 @@ function nationMap(record: NationRecord, sources: SourceUses): NationMapData | u
 	};
 }
 
+/**
+ * The land the nation's predecessors ceded, from Royce's schedule (1899) with the present-day nations the U.S. Forest Service lists (historic maps mockup 6), oldest first.
+ */
+function nationLandCessions(id: string, sources: SourceUses) {
+	const cessions = cessionsOfNation(id);
+	if (cessions.length === 0) return [];
+	sources.add('royce-1899-indian-land-cessions-in-the-united-states', { section: 'Land cessions', text: 'the schedule of cessions and the map sheets' });
+	sources.add('forest-service-indian-land-cessions', { section: 'Land cessions', text: 'the shapes, and the present-day nations of each cession' });
+	return cessions.map((cession) => ({
+		royce: cession.royce,
+		dates: cession.dates,
+		schedule: cession.schedule,
+		treaties: cession.treaties,
+		sheets: cession.sheets.map((sheet) => ({ plate: sheet.plate, name: sheet.name, image: sheet.image, link: sheet.link }))
+	}));
+}
+
 function heldCopies(id: string): { count: number; bytes: number } {
 	const files = offlineSets().nations.get(id)?.files ?? [];
 	return { count: files.length, bytes: files.reduce((total, [, bytes]) => total + bytes, 0) };
@@ -1099,6 +1117,7 @@ export const load: PageServerLoad = ({ params }) => {
 			documents: [],
 			jurisdiction: [],
 			treaties: [],
+			landCessions: [] as ReturnType<typeof nationLandCessions>,
 			ties: [],
 			enforcement: [],
 			stories: [],
@@ -1241,6 +1260,13 @@ export const load: PageServerLoad = ({ params }) => {
 	const treaties = treatyRows(record, sources);
 	const ties = federalTies(record, sources);
 	const enforcement = enforcementActions(record, sources);
+	sources.part('Land cessions');
+	const landCessions = nationLandCessions(record.id, sources);
+	// The glance map draws the same cessions (historic maps mockup 6).
+	if (map?.tileMap && landCessions.length > 0) {
+		const all = cessionsOfNation(record.id);
+		map.cessions = { royce: all.map((cession) => cession.royce), bounds: boundsOfCessions(all), years: [...new Set(all.flatMap((cession) => cession.dates.map((date) => Number(date.slice(0, 4)))))].sort((first, second) => first - second) };
+	}
 	// Every dated record on the page on one line, after the sections it
 	// repeats, so its markers reuse their sources' numbers.
 	const timeline = nationTimeline(record, sources, documents);
@@ -1276,6 +1302,7 @@ export const load: PageServerLoad = ({ params }) => {
 		documents,
 		jurisdiction,
 		treaties,
+		landCessions,
 		ties,
 		enforcement,
 		timeline: hasTimeline ? timeline : undefined,
@@ -1303,6 +1330,7 @@ export const load: PageServerLoad = ({ params }) => {
 	});
 	items.push({ label: 'Jurisdiction', link: '#jurisdiction-heading' });
 	if (treaties.length > 0 || ties.length > 0 || enforcement.length > 0) items.push({ label: 'Treaties and federal ties', link: '#ties-heading' });
+	if (landCessions.length > 0) items.push({ label: 'Land cessions', link: '#cessions-heading' });
 	if (hasTimeline) items.push({ label: timelineHeading, link: '#timeline-heading' });
 	if (stories.length > 0) items.push({ label: 'Stories', link: '#stories-heading' });
 	if (result.neighbors.length > 0) {
