@@ -32,7 +32,7 @@ One notice of violation, CO-03-02 (Sac and Fox Tribe of the Mississippi in Iowa)
 
 ## Results
 
-1,077 of 1,079 documents are stored and served, dated Sept. 14, 1992 to Oct. 29, 2026: 101 Indian lands opinions, 122 game classification opinions, 326 declination letters, 360 enforcement actions, 65 final decisions and 103 bulletins. They are listed together at /stats/national-indian-gaming-commission.
+1,077 of 1,079 documents are stored and served, dated Sept. 14, 1992 to Oct. 29, 2026: 101 Indian lands opinions, 122 game classification opinions, 326 declination letters, 360 enforcement actions, 65 final decisions and 103 bulletins. They have 1,068 records: where a table lists one document twice, with the same title and date, it gets one record, and where the Commission answered several entries in one file (two games in one letter, two parcels in one opinion), each entry keeps its record and the records list each other. They are listed together at /stats/national-indian-gaming-commission.
 
 ## Next
 
