@@ -15,7 +15,7 @@ purpose: 'Trevor asked on Nov. 26, 2026 to "grab" the tier 3 state court opinion
 queries:
 - Every case in every state, regional and territorial reporter volume of the Caselaw Access Project, scored by the tier 2 and 3 study's Indian law terms
 - For cases scoring 3 to 9, whether excerpts show an Indian law case (research/state-court-opinions/reading-instructions.md)
-- Which selected cases concern children, protected persons or estates, to hold for a privacy review
+- Which selected cases concern children or protected persons, to hold for a privacy review
 sources_added: []
 limits: 'The Caselaw Access Project ends about 2019; later opinions (about 650 by the study''s estimate) are not here and would come from CourtListener. Cases scoring under 3 were not read, so a few Indian law cases with only one or two of the terms are missed. The AI readers saw excerpts, not whole opinions; their judgments are in research/state-court-opinions/readings.json, and the spot check agreed with the score for 193 of 200 cases (the 7 it rejected were left out unless a party is a Native nation or organization). Nations are linked only where the caption names one that matches a nation record. Records start unverified.'
 ---
@@ -33,10 +33,14 @@ The readers judged 1,703 of the 2,470 borderline cases to be Indian law cases. T
 That made 4,408 cases. Of them:
 
 - 11 were already held (by citation, or because they are Supreme Court cases filed in a state reporter, such as *United States v. McBratney*, also reported at 2 Colo. L. Rep. 378);
-- 1,345 are held for a privacy review (1,294 about children or protected persons, 51 estates decided in or after 1976), listed only in the project's private files, never in git;
-- 3,052 have records: 2,902 from state and territorial courts, including 68 from the Court of Appeals of Indian Territory, and 150 from federal courts whose reports the Project files with the states' (mostly the District of Columbia's).
+- 1,297 are held for a privacy review (cases about children or protected persons), listed only in the project's private files, never in git;
+- 3,100 have records: 2,950 from state and territorial courts, including 68 from the Court of Appeals of Indian Territory, and 150 from federal courts whose reports the Project files with the states' (mostly the District of Columbia's).
 
 The federal courts' 150 are recorded as federal cases (topic `federal-court-indian-law`) and are listed with the other lower court cases, not as state court opinions.
+
+## Estate cases
+
+The first run held 51 estate cases decided since 1976. Later the same day Trevor chose to show estate cases like any other opinion, so they were written with `--show-estates`: 48 now have records and 3, which are also about a child, are held with the child cases.
 
 ## Hosting
 

@@ -1,0 +1,27 @@
+key: forest-service-indian-land-cessions
+kind: dataset
+citation:
+  type: dataset
+  title: Indian Land Cessions in the United States (EDW_TribalCessionLands_01)
+  author:
+  - literal: U.S. Forest Service, Office of Tribal Relations
+  medium: ArcGIS map service
+  URL: https://apps.fs.usda.gov/arcx/rest/services/EDW/EDW_TribalCessionLands_01/MapServer
+  accessed:
+    date-parts: [[2026, 11, 26]]
+original_link: https://apps.fs.usda.gov/arcx/rest/services/EDW/EDW_TribalCessionLands_01/MapServer
+retrieved: '2026-11-26'
+archives: []
+history:
+  status: live
+  last_checked: '2026-11-26'
+rights:
+  status: no-permission-needed
+  basis: us-government-work
+  basis_note: A work of the U.S. Forest Service, a federal agency, so not protected by copyright in the United States (17 U.S.C. § 105). Its use note says the data are for informational purposes only and are not legal documents.
+  redistribution: true
+jurisdictions:
+- level: federal
+found_in:
+- 2026-11-26-historic-maps-core
+notes: 'The Forest Service scanned, georeferenced and traced all 67 of Royce''s (1899) map sheets into 718 cession shapes, each with Royce''s cession number, the cession dates, the map sheets it is drawn on and the present-day nations named in the Federal Register list of its day (layer 0 and table 2). The website draws the land cessions map layer from these shapes (site/tools/build-historic-maps.mjs) and links each cession to treaty records and nation pages with scripts/maps/land_cessions.py. The downloaded shapes and table are kept in the project''s bucket under historic-maps/forest-service-land-cessions/.'

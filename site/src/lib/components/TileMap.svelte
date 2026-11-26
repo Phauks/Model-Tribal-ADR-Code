@@ -47,6 +47,7 @@
 	import type { Map as MapLibreMap, StyleSpecification, LayerSpecification, SourceSpecification, ExpressionSpecification, FilterSpecification } from 'maplibre-gl';
 	import type { TileMapData } from '#lib/server/nations-map.ts';
 	import { motionDuration, motionEasing } from '#lib/motion.ts';
+	import { censusYearFor, writeCessionsSwitch } from '#lib/historic-map.ts';
 
 	let {
 		view,
@@ -58,7 +59,13 @@
 		onready,
 		onfail,
 		onselect,
-		opening: openingBox
+		opening: openingBox,
+		year,
+		cessions = $bindable(false),
+		cessionsShown,
+		cessionsAlways = false,
+		cessionsBounds,
+		oncession
 	}: {
 		view: TileMapView;
 		/** For a shaded view: shade each nation's land areas, or each state by the category most of its nations have. */
@@ -76,6 +83,18 @@
 		onselect?: (anchor: string) => void;
 		/** Where the map opens, and where its reset button goes back to, [west, south, east, north] in degrees: a state's page opens on the state (Trevor, 2026-11-24). Without it the map opens on the 48 contiguous states, or on a nation's lands. */
 		opening?: [number, number, number, number];
+		/** The year the slider under the map picks (YearSlider.svelte): the land the United States had taken by then, and the Census Bureau's land areas as they were then. Without it, or at the latest Census year, the land areas are today's. */
+		year?: number;
+		/** Whether Royce's land cessions are drawn, from the Historic switch in the Layers menu (historic maps mockup A), remembered on the device. */
+		cessions?: boolean;
+		/** Only these cessions, by Royce's number: a nation's page shows the cessions that name it. */
+		cessionsShown?: string[];
+		/** A treaty's page: its cessions are always drawn, whatever the year, with no switch and no land areas (mockup 7). */
+		cessionsAlways?: boolean;
+		/** The box around cessionsShown; turning the switch on widens a nation's map to take them in (mockup 6). */
+		cessionsBounds?: [number, number, number, number];
+		/** Called with Royce's number when the reader chooses a cession on the map. */
+		oncession?: (royce: string) => void;
 	} = $props();
 
 	const oneNation = $derived(given !== undefined);
@@ -135,23 +154,47 @@
 	let layersMenu: HTMLElement | undefined = $state();
 	let layersMenuBottom = $state(0);
 	/** Whether the view draws land areas, so the outline switch has something to turn off. */
-	const hasLandAreas = $derived(oneNation || view === 'lands' || (isShadedMapView(view) && by === 'nation'));
+	const hasLandAreas = $derived((oneNation && !cessionsAlways) || view === 'lands' || (isShadedMapView(view) && by === 'nation'));
 
 	$effect(() => {
 		writeStored(baseStorage, baseMap);
 		writeStored(placeNamesStorage, placeNames ? 'on' : 'off');
 		writeStored(outlinesStorage, outlines ? 'on' : 'off');
 	});
+	$effect(() => {
+		if (!cessionsAlways && ready) writeCessionsSwitch(cessions);
+	});
+	const drawsCessions = $derived(cessions || cessionsAlways);
+	let cessionsWereOn: boolean | undefined;
+	$effect(() => {
+		const on = cessions;
+		if (!ready || !map) return;
+		const turnedOn = cessionsWereOn === false && on;
+		cessionsWereOn = on;
+		if (!turnedOn || !cessionsBounds || !oneNation) return;
+		const box = map.getBounds();
+		const around: [number, number, number, number] = [Math.min(box.getWest(), cessionsBounds[0]), Math.min(box.getSouth(), cessionsBounds[1]), Math.max(box.getEast(), cessionsBounds[2]), Math.max(box.getNorth(), cessionsBounds[3])];
+		map.fitBounds(around, { padding: 16, duration: motionDuration('long'), easing: motionEasing('standard') });
+	});
 	// A new base map or switch redraws the map's layers on the same map, as changing the view does.
 	let styledWith = '';
 	$effect(() => {
-		const wanted = `${baseMap} ${placeNames} ${outlines}`;
+		const wanted = `${baseMap} ${placeNames} ${outlines} ${drawsCessions} ${year} ${cessionsShown?.join(',')}`;
 		if (!ready || !map) return;
 		if (styledWith === '') styledWith = wanted;
 		if (wanted === styledWith) return;
 		styledWith = wanted;
-		void restyleMap?.();
+		restyleSoon();
 	});
+	/** Moving the slider asks for many redraws a second; only the last one in each frame is drawn. */
+	let restyleFrame = 0;
+	function restyleSoon(): void {
+		if (restyleFrame) return;
+		restyleFrame = requestAnimationFrame(() => {
+			restyleFrame = 0;
+			void restyleMap?.();
+		});
+	}
 
 	/**
 	 * Places the menu beside the Layers button where it fits. On a short map, or when choosing a picture adds a row, it moves down so it never reaches past the map's top.
@@ -278,6 +321,15 @@
 		const pointShade: ExpressionSpecification = ['match', ['get', 'group'], 'federal', colors.classes[4], 'state', colors.classes[3], colors.classes[2]];
 		const hovered = (color: ExpressionSpecification | string): ExpressionSpecification => ['case', ['boolean', ['feature-state', 'hover'], false], colors.focus, color];
 
+		// An earlier year than the latest Census year shows the Census Bureau's land areas as they were drawn that year, and none before its first (historic maps mockup A). The dots and names are from the 2020 Census, so they are left out before it.
+		const censusYears = data.tiles.landAreaYears;
+		const pastYear = year !== undefined && year < censusYears[censusYears.length - 1];
+		const census = pastYear && year !== undefined ? censusYearFor(year, censusYears) : undefined;
+		const landSource = pastYear ? 'areas-by-year' : 'places';
+		const inCensusYear: FilterSpecification | undefined = census === undefined ? undefined : ['all', ['<=', ['get', 'from'], census], ['>=', ['get', 'to'], census]];
+		const hideLandAreas = (pastYear && census === undefined) || cessionsAlways;
+		const hideDots = hideLandAreas || (pastYear && (census ?? 0) < 2020);
+
 		const fills: LayerSpecification[] = [];
 		const tops: LayerSpecification[] = [];
 		if (view === 'states') {
@@ -363,12 +415,14 @@
 			);
 		} else {
 			// On a nation's page, only the nation's own areas are drawn.
-			const onlyTheseAreas: { filter?: FilterSpecification } = oneNation
-				? { filter: ['in', ['to-string', ['get', 'code']], ['literal', data.areas.map((area) => area.code)]] }
-				: {};
-			fills.push({ id: 'land-areas', type: 'fill', source: 'places', 'source-layer': 'land-areas', ...onlyTheseAreas, paint: { 'fill-color': hovered(groupShade), 'fill-opacity': 0.55 } });
+			const filters: FilterSpecification[] = [
+				...(oneNation ? [['in', ['to-string', ['get', 'code']], ['literal', data.areas.map((area) => area.code)]] as FilterSpecification] : []),
+				...(inCensusYear ? [inCensusYear] : [])
+			];
+			const onlyTheseAreas: { filter?: FilterSpecification } = filters.length === 0 ? {} : { filter: filters.length === 1 ? filters[0] : (['all', ...filters] as FilterSpecification) };
+			fills.push({ id: 'land-areas', type: 'fill', source: landSource, 'source-layer': 'land-areas', ...onlyTheseAreas, paint: { 'fill-color': hovered(groupShade), 'fill-opacity': 0.55 } });
 			tops.push(
-				{ id: 'land-areas-lines', type: 'line', source: 'places', 'source-layer': 'land-areas', ...onlyTheseAreas, paint: { 'line-color': colors.classes[4], 'line-width': ['interpolate', ['linear'], ['zoom'], 3, 0.4, 10, 1.6] } },
+				{ id: 'land-areas-lines', type: 'line', source: landSource, 'source-layer': 'land-areas', ...onlyTheseAreas, paint: { 'line-color': colors.classes[4], 'line-width': ['interpolate', ['linear'], ['zoom'], 3, 0.4, 10, 1.6] } },
 				{
 					id: 'area-groups',
 					type: 'circle',
@@ -446,6 +500,39 @@
 			);
 		}
 
+		// Royce's land cessions (historic maps mockup A), under the land areas: light for land ceded by the slider's year, dark for land ceded in it, with Royce's numbers once zoomed in. A treaty's page draws its own cessions dark.
+		if (drawsCessions) {
+			const cessionColor = token('timeline-treaty');
+			const byYear: FilterSpecification[] = cessionsAlways || year === undefined ? [] : [['<=', ['get', 'year'], year]];
+			const only: FilterSpecification[] = cessionsShown ? [['in', ['get', 'royce'], ['literal', cessionsShown]]] : [];
+			const filter = ['all', ...byYear, ...only] as FilterSpecification;
+			const inThisYear: ExpressionSpecification | boolean = cessionsAlways ? true : year === undefined ? false : ['==', ['get', 'year'], year];
+			// Above a view's shades of states or regions, so it shows on every view, and under the land areas.
+			const landFill = fills.findIndex((layer) => layer.id === 'land-areas');
+			fills.splice(landFill === -1 ? fills.length : landFill, 0, { id: 'cession-fills', type: 'fill', source: 'cessions', 'source-layer': 'cessions', filter, paint: { 'fill-color': hovered(cessionColor), 'fill-opacity': ['case', inThisYear, 0.7, 0.22] } } as LayerSpecification);
+			tops.unshift(
+				{ id: 'cession-lines', type: 'line', source: 'cessions', 'source-layer': 'cessions', filter, paint: { 'line-color': cessionColor, 'line-width': ['case', inThisYear, 2.2, 0.7], 'line-opacity': ['case', inThisYear, 1, 0.7] } },
+				{
+					id: 'cession-numbers',
+					type: 'symbol',
+					source: 'cessions',
+					'source-layer': 'cessions',
+					filter,
+					minzoom: 5.2,
+					layout: { 'text-field': ['get', 'royce'], 'text-font': ['Noto Sans Medium'], 'text-size': 11, 'text-padding': 4 },
+					paint: { 'text-color': colors.ink, 'text-halo-color': colors.paper, 'text-halo-width': 1.5 }
+				}
+			);
+		}
+		const landAreaLayers = new Set(['land-areas', 'land-areas-lines']);
+		const dotLayers = new Set(['area-groups', 'area-group-counts', 'area-dots', 'area-names']);
+		// The offices mark nations with no land area today, so they go with today's map too.
+		const officeLayers = new Set(['office-dots', 'office-names']);
+		const yearHides = (layer: LayerSpecification) => (hideLandAreas && landAreaLayers.has(layer.id)) || (hideDots && dotLayers.has(layer.id)) || (pastYear && officeLayers.has(layer.id));
+		for (const list of [fills, tops]) {
+			for (let index = list.length - 1; index >= 0; index -= 1) if (yearHides(list[index])) list.splice(index, 1);
+		}
+
 		// On a picture base map the shades let the picture show through, and land areas are outlined in a light orange that reads on photos (mockup 1A). The reader can also turn the land area outlines off, and on a picture keep or drop the place names and roads.
 		const picture = baseMap !== 'map';
 		const landLayers = new Set(['land-areas', 'land-areas-lines']);
@@ -454,7 +541,7 @@
 		if (picture) {
 			const onPictureLine = token('band-progress');
 			for (const layer of shownFills) {
-				if (layer.type === 'fill' && layer.paint) layer.paint['fill-opacity'] = layer.id === 'land-areas' && !isShadedMapView(view) ? 0.2 : 0.6;
+				if (layer.type === 'fill' && layer.paint && !layer.id.startsWith('cession')) layer.paint['fill-opacity'] = layer.id === 'land-areas' && !isShadedMapView(view) ? 0.2 : 0.6;
 			}
 			for (const layer of shownTops) {
 				if (layer.id === 'land-areas-lines' && layer.type === 'line' && layer.paint) {
@@ -533,6 +620,11 @@
 					promoteId: { states: 'code', 'land-areas': 'code' },
 					attribution: 'U.S. Census Bureau'
 				},
+				// The historic layers, each a source only while it is drawn, so its credit shows only then.
+				...(drawsCessions
+					? { cessions: { type: 'vector', tiles: [`${origin}/map-tiles/${data.tiles.landCessions}/{z}/{x}/{y}.mvt`], maxzoom: data.tiles.landCessionsMaximumZoom, promoteId: { cessions: 'royce' }, attribution: 'U.S. Forest Service, after Royce (1899)' } as SourceSpecification }
+					: {}),
+				...(pastYear ? { 'areas-by-year': { type: 'vector', tiles: [`${origin}/map-tiles/${data.tiles.landAreasByYear}/{z}/{x}/{y}.mvt`], maxzoom: 12, promoteId: { 'land-areas': 'code' }, attribution: 'U.S. Census Bureau' } as SourceSpecification } : {}),
 				regions: { type: 'geojson', data: data.regions, promoteId: 'name', attribution: 'Bureau of Indian Affairs' },
 				offices: {
 					type: 'geojson',
@@ -669,13 +761,19 @@
 			try {
 				const [{ default: maplibre }, data] = await Promise.all([import('maplibre-gl'), loadData(), import('maplibre-gl/dist/maplibre-gl.css')]);
 				if (stopped || !container) return;
-				if (data.areas.length === 0 && oneNation) throw new Error('The nation has no land areas to show');
+				if (data.areas.length === 0 && oneNation && !openingBox) throw new Error('The nation has no land areas to show');
 				const style = await styleFor(data);
 				const start = camera ?? undefined;
-				const opening = oneNation
-					? { bounds: boundsOfAreas(data.areas), fitBoundsOptions: { padding: 32, maxZoom: nationClosestZoom } }
-					: openingBox
-						? { bounds: openingBox, fitBoundsOptions: { padding: 16, maxZoom: 10 } }
+				// A nation's map opens on its lands, and with the cessions on, on the land its predecessors ceded too (mockup 6).
+				const ownBounds = (): [number, number, number, number] => {
+					const lands = boundsOfAreas(data.areas);
+					if (!cessions || !cessionsBounds) return lands;
+					return [Math.min(lands[0], cessionsBounds[0]), Math.min(lands[1], cessionsBounds[1]), Math.max(lands[2], cessionsBounds[2]), Math.max(lands[3], cessionsBounds[3])];
+				};
+				const opening = openingBox
+					? { bounds: openingBox, fitBoundsOptions: { padding: 16, maxZoom: 10 } }
+					: oneNation
+						? { bounds: ownBounds(), fitBoundsOptions: { padding: 32, maxZoom: nationClosestZoom } }
 					: start
 						? { center: start.center, zoom: start.zoom }
 						: { bounds: tileMapPlaces[0].bounds, fitBoundsOptions: { padding: 16 } };
@@ -707,8 +805,9 @@
 				resetButton.setAttribute('aria-label', 'Reset the map');
 				resetButton.innerHTML = resetIcon;
 				resetButton.addEventListener('click', () => {
-					const bounds = oneNation ? boundsOfAreas(data.areas) : (openingBox ?? tileMapPlaces[0].bounds);
-					map?.fitBounds(bounds, { padding: oneNation ? 32 : 16, maxZoom: oneNation ? nationClosestZoom : 10, duration: motionDuration('long'), easing: motionEasing('standard') });
+					const bounds = openingBox ?? (oneNation ? boundsOfAreas(data.areas) : tileMapPlaces[0].bounds);
+					const ownLands = oneNation && !openingBox;
+					map?.fitBounds(bounds, { padding: ownLands ? 32 : 16, maxZoom: ownLands ? nationClosestZoom : 10, duration: motionDuration('long'), easing: motionEasing('standard') });
 				});
 				viewGroup.append(resetButton);
 				if (document.fullscreenEnabled) {
@@ -832,7 +931,8 @@
 						const found = event.features?.[0];
 						if (!map || !found || found.id === undefined) return;
 						clearHover();
-						hover = { source: entry.source, sourceLayer: entry.sourceLayer, id: found.id };
+						// The land areas come from today's tiles or a past year's, so the hover goes to the source the shape came from.
+						hover = { source: found.source, sourceLayer: found.sourceLayer, id: found.id };
 						map.setFeatureState(hover, { hover: true });
 						map.getCanvas().style.cursor = 'pointer';
 					});
@@ -849,6 +949,32 @@
 					const zoom = await source.getClusterExpansionZoom(Number(found.properties?.cluster_id));
 					map.easeTo({ center: (found.geometry as GeoJSON.Point).coordinates as [number, number], zoom, duration: motionDuration('medium'), easing: motionEasing('standard') });
 				});
+
+				// Choosing a cession opens its details (mockup 2A). Cessions overlap, so the one made in the slider's year wins, then the latest; a land area, dot or office drawn over it wins over both.
+				if (oncession) {
+					const above = ['land-areas', 'area-dots', 'area-groups', 'office-dots'];
+					const onTop = (point: import('maplibre-gl').PointLike) => (map ? map.queryRenderedFeatures(point, { layers: above.filter((layer) => map?.getLayer(layer)) }).length > 0 : false);
+					const chosenCession = (features: import('maplibre-gl').MapGeoJSONFeature[] | undefined) =>
+						[...(features ?? [])].sort((first, second) => Number(second.properties?.year === year) - Number(first.properties?.year === year) || Number(second.properties?.year) - Number(first.properties?.year))[0];
+					map.on('click', 'cession-fills', (event) => {
+						if (onTop(event.point)) return;
+						const found = chosenCession(event.features);
+						if (found) oncession(String(found.properties?.royce));
+					});
+					map.on('mousemove', 'cession-fills', (event) => {
+						if (!map || onTop(event.point)) return;
+						const found = chosenCession(event.features);
+						if (!found || found.id === undefined) return;
+						clearHover();
+						hover = { source: 'cessions', sourceLayer: 'cessions', id: found.id };
+						map.setFeatureState(hover, { hover: true });
+						map.getCanvas().style.cursor = 'pointer';
+					});
+					map.on('mouseleave', 'cession-fills', () => {
+						clearHover();
+						if (map) map.getCanvas().style.cursor = '';
+					});
+				}
 
 				// The map follows the site's theme: the sun and moon button sets data-theme, and without it the system setting decides.
 				const restyle = async () => {
@@ -911,6 +1037,12 @@
 		{/if}
 		{#if hasLandAreas}
 			<label class="layers-switch"><input type="checkbox" bind:checked={outlines} />Land area outlines</label>
+		{/if}
+		{#if !cessionsAlways}
+			<fieldset class="layers-historic">
+				<legend>Historic</legend>
+				<label class="layers-switch"><input type="checkbox" bind:checked={cessions} />Land cessions <span class="layers-note">Royce, 1899</span></label>
+			</fieldset>
 		{/if}
 	</div>
 </div>
@@ -1070,6 +1202,24 @@
 		gap: var(--space-2);
 		min-height: 2rem;
 		margin-top: var(--space-1);
+	}
+
+	.layers-historic {
+		margin: var(--space-3) 0 0;
+		padding: 0;
+		border: 0;
+		border-top: 1px solid var(--color-line);
+	}
+
+	.layers-historic legend {
+		margin: 0 0 var(--space-1);
+		padding: var(--space-2) 0 0;
+		font-weight: var(--font-weight-bold);
+	}
+
+	.layers-note {
+		color: var(--color-ink-muted);
+		font-size: var(--font-size-small);
 	}
 
 	.layers-switch input {

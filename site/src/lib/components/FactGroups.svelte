@@ -11,6 +11,7 @@
 	// icon (nation page review, Nov. 22, 2026); it opens in a new tab
 	// (src/lib/new-tab-links.ts).
 	import ExternalLink from '@lucide/svelte/icons/external-link';
+	import { imageViewerAttributes } from '#lib/image-viewer.ts';
 	import type { CitationMark } from '#lib/citation-marks.ts';
 	import CitationMarks from './CitationMarks.svelte';
 	import TopicBadges from './TopicBadges.svelte';
@@ -21,7 +22,7 @@
 		link?: string;
 		detail?: string;
 		/** A detail with linked citations, such as a recognition status's legal basis. */
-		detailParts?: { text: string; link?: string }[];
+		detailParts?: { text: string; link?: string; viewer?: string; original?: string }[];
 		/** A short line under the value, such as what sources record in each state. */
 		note?: string;
 		citations?: CitationMark[];
@@ -81,7 +82,8 @@
 		/>{/if}
 	{#if item.detailParts}
 		<span class="fact-detail muted small"
-			>{#each item.detailParts as part, partIndex (partIndex)}{#if part.link}<a href={part.link}>{part.text}</a
+			>{#each item.detailParts as part, partIndex (partIndex)}{#if part.link && part.viewer}<a href={part.link} {...imageViewerAttributes(part.viewer, { title: part.viewer, original: part.original })}>{part.text}</a
+					>{:else if part.link}<a href={part.link}>{part.text}</a
 					>{:else}{part.text}{/if}{/each}</span
 		>
 	{:else if item.detail}

@@ -15,7 +15,7 @@
 	"packageManager": "npm@12.2.3",
 	"scripts": {
 		"dev": "vite dev",
-		"build": "vite build && node tools/write-offline-sizes.mjs && node tools/write-checksums.mjs && node tools/add-scheduled-run.mjs && node tools/add-nation-page-changes.mjs && node tools/add-mail-handlers.mjs",
+		"build": "vite build && node tools/write-offline-sizes.mjs && node tools/write-checksums.mjs && node tools/add-scheduled-run.mjs && node tools/add-nation-page-changes.mjs && node tools/add-mail-handlers.mjs && node tools/add-edge-cache.mjs",
 		"preview": "npm run build && wrangler dev",
 		"deploy": "npm run build && wrangler deploy",
 		"prepare": "svelte-kit sync || echo ''",
@@ -50,6 +50,8 @@
 		"@fontsource/noto-serif": "^5.3.0",
 		"@fontsource/opendyslexic": "^5.3.0",
 		"@lucide/svelte": "1.77.0",
+		"@maplibre/geojson-vt": "^6.3.3",
+		"@maplibre/vt-pbf": "^4.3.3",
 		"@protomaps/basemaps": "^5.7.2",
 		"@sveltejs/adapter-cloudflare": "9.0.0",
 		"@sveltejs/kit": "^3.4.0",

@@ -15,7 +15,7 @@ The Worker `tribal-law-project-watch` looks for new and changed legal material a
 | Watcher | Source | When (UTC) | Starts |
 | --- | --- | --- | --- |
 | `federal-register` | Federal Register API: the Indian affairs agencies, Title 25 of the C.F.R., and presidential documents mentioning tribes | Each weekday hour, minute 7 | On |
-| `federal-register-search` | Federal Register API: every agency, for "tribe", "tribal", "Indian country" and "Alaska Native" | Weekdays at 13:37 | Off until model triage runs, since most of its 4,900 documents a year are consultation notices |
+| `federal-register-search` | Federal Register API: every agency, for "tribe", "tribal", "Indian country" and "Alaska Native" | Weekdays at 13:37 | On; most of its 4,900 documents a year are consultation notices, which the models sort out |
 | `ecfr` | eCFR versions API: Title 25, 42 C.F.R. parts 136, 136a and 137, and 43 C.F.R. part 4 | Daily at 14:23 | On |
 | `cited-links` | Every original link a source record cites, re-checked once every 60 days, a few every 10 minutes | Every 10 minutes | On |
 
@@ -23,39 +23,46 @@ A first run only notes where each source stands (the Federal Register looks back
 
 ## Setting it up
 
-These steps are for the lead author, in the Cloudflare dashboard. None of them needs a secret.
+The migration is already applied to the live database (`site/migrations/20261126T1930_add_source_watch.sql`, Nov. 26, 2026). One step is left for the lead author, in the Cloudflare dashboard: create the Worker from this repository with Workers Builds. It needs no secret, no key and no gateway, and the models work as soon as it deploys.
 
-1. **Apply the migration.** `site/migrations/20261126T1930_add_source_watch.sql` adds the tables `watch_candidates`, `watch_cursors`, `watch_runs`, `watch_pages` and `watch_model_spend`. The thread that lands the pull request applies it to the live database after checking `d1_migrations`.
-2. **Create the Worker with Workers Builds.** Workers & Pages > Create > Import a repository, choose this repository, and set:
-   - Project name: `tribal-law-project-watch`
-   - Root directory: `site/watch`
-   - Build command: `cd .. && npm ci && npm run watch:index`
-   - Deploy command: `npx wrangler deploy`
-   - Build watch paths: `site/watch/*`, `site/src/lib/server/watch/*`, `content/*` and `research/capture-index.csv`, so the Worker is rebuilt with a fresh index when the records change.
-3. **Check it.** The progress page is at `https://tribal-law-project-watch.trevordgoldsmith.workers.dev/`. The site's Service checks page has two rows, "Source watch" and "Source watch models (AI Gateway)", which read the same progress from the bucket.
+1. Open the Cloudflare dashboard at dash.cloudflare.com and go to **Workers & Pages**.
+2. Select **Create application**.
+3. Under importing a repository, select **GitHub**. If Cloudflare asks, sign in to GitHub and allow it this repository, as for the other Workers.
+4. Select the repository `Model-Tribal-ADR-Code`.
+5. On the next page, fill in:
+   - **Project name:** `tribal-law-project-watch`. It must match the name in `site/watch/wrangler.jsonc` exactly, or the build fails.
+   - **Build command:** `cd .. && npm ci && npm run watch:index`
+   - **Deploy command:** `npx wrangler deploy` (usually filled in already).
+   - Open **Advanced settings** and set the **Root directory** (on some screens called **Path**) to `site/watch`.
+6. Select **Deploy**. The first build takes a few minutes.
+7. When it has finished, open the new Worker, then **Settings** > **Build** > **Build watch paths**, and set the included paths to `site/watch/*`, `site/src/lib/server/watch/*`, `content/*` and `research/capture-index.csv`. Then the Worker is rebuilt with a fresh index of the records only when those files change, not on every push.
+
+To check it, open the progress page at `https://tribal-law-project-watch.trevordgoldsmith.workers.dev/`, which fills in within a few minutes. The site's Service checks page has two rows, "Source watch" and "Source watch models", which read the same progress from the bucket.
+
+These steps follow Cloudflare's [Workers Builds](https://developers.cloudflare.com/workers/ci-cd/builds/) ("Connect a new Worker"), [build configuration](https://developers.cloudflare.com/workers/ci-cd/builds/configuration/) and [build watch paths](https://developers.cloudflare.com/workers/ci-cd/builds/build-watch-paths/) pages, and the name rule in [Workers Builds troubleshooting](https://developers.cloudflare.com/workers/ci-cd/builds/troubleshoot/#workers-name-requirement).
 
 ## Models
 
-Items the rules cannot decide are sorted by Claude Haiku 5.5, and hard cases (does this amend a compact we hold) go to Claude Opus 5.5, through Cloudflare AI Gateway with Unified Billing: the calls are paid from credits on the Cloudflare account, so there is no Anthropic key and no secret (Trevor chose this on Nov. 26, 2026). On Mondays at 05:13 UTC, Opus 5.5 checks a random sample of 10 of the week's Haiku answers, and the progress page shows how many it disagreed with.
+Items the rules cannot decide are sorted by a model that Cloudflare runs itself, through the Worker's Workers AI binding (`models` in `wrangler.jsonc`). It is billed on the account's Workers Paid plan, which includes 10,000 Neurons a day free ([Workers AI pricing](https://developers.cloudflare.com/workers-ai/platform/pricing/)), so there is nothing to buy or set up. Trevor asked for this on Nov. 26, 2026, in place of the AI Gateway steps.
+
+The model is Inkling 2 Small (`@cf/thinkingmachines/inkling-2-small`), from Thinking Machines Lab, added to Workers AI on Nov. 12, 2026. Cloudflare calls it "the first frontier open model from a US lab on Workers AI"; it supports function calling, which the Worker uses for a structured answer, and zero data retention, and it costs $0.30 a million input tokens and $1.00 a million output tokens ([model page](https://developers.cloudflare.com/workers-ai/models/inkling-2-small/), [announcement](https://developers.cloudflare.com/changelog/post/2026-11-12-inkling-2-small-workers-ai/)). It reads the middle band with low reasoning effort, and the hard cases (does this amend a compact we hold) with high effort. On Mondays at 05:13 UTC it checks a random sample of 10 of the week's answers again at high effort, and the progress page shows how many it disagreed with. Its limit is 20 requests a minute on the Workers Paid plan; the Worker asks about at most 10 items a minute.
+
+At the design's estimate of about 6,000 items a year reaching a model (docs/source-watch.md, "Rate of work and cost"), each about 3,000 tokens in and up to 1,000 out with reasoning, that is about $5.40 of input and $6 of output a year before the free daily Neurons, by the project's own arithmetic from the prices above.
 
 The models see only an item's title, the summary the source gave, its facts (agency, type, C.F.R. part) and the record it may match. They never see file text. Items from a host whose robots.txt or Content-Signal says no to AI use (Municode and eCode360, for example), items flagged as a child, family or protection order matter, and Tribal court opinions are never sent to a model; Tribal court opinions are held for the lead author by rule, so the step that puts initials in them is not needed yet.
 
-Until the steps below are done, `WATCH_TRIAGE_PROVIDER` is `none`, and those items go straight to people.
+Other choices, set with `WATCH_TRIAGE_PROVIDER` on the Worker (Settings > Variables and Secrets, a plain variable, not a secret):
 
-1. Load credits: AI > AI Gateway > Credits (Unified Billing). A few dollars lasts a long time at the estimated rate (docs/source-watch.md, "Rate of work and cost").
-2. Create a gateway named `source-watch` (AI > AI Gateway > Create gateway).
-3. On the Worker (Settings > Variables and Secrets), set `WATCH_TRIAGE_PROVIDER` to `ai-gateway`. This is a plain variable, not a secret. To keep it in code instead, change it in `wrangler.jsonc`.
-4. Optionally set `WATCH_TURN_ON` to `federal-register-search` to start the all-agency search.
-
-Unified Billing allows a gateway 200 requests a minute; the Worker asks about at most 10 items a minute.
+- `ai-gateway`: Claude Haiku 5.5 for the middle band and Claude Opus 5.5 for hard cases and the weekly sample, through Cloudflare AI Gateway. It needs a gateway named `source-watch` (AI > AI Gateway > Create gateway) and Unified Billing credits loaded on the account (AI > AI Gateway > Credits).
+- `none`: no model; every item the rules cannot decide goes to a person. Set `WATCH_TURN_OFF` to `federal-register-search` too, or its 4,900 documents a year go to people.
 
 ## Settings
 
 | Variable | What it does |
 | --- | --- |
-| `WATCH_TRIAGE_PROVIDER` | `none` (the default: the middle band goes to people), `ai-gateway`, or `nightly-task` (not built) |
-| `WATCH_GATEWAY` | The AI Gateway's name, `source-watch` |
-| `WATCH_CHEAP_MODEL`, `WATCH_TOP_MODEL` | The model catalog names, `anthropic/claude-haiku-5.5` and `anthropic/claude-opus-5.5` |
+| `WATCH_TRIAGE_PROVIDER` | `workers-ai` (the default), `ai-gateway`, `none`, or `nightly-task` (not built) |
+| `WATCH_CHEAP_MODEL`, `WATCH_TOP_MODEL` | Empty for the provider's own models: Inkling 2 Small for both on Workers AI; `anthropic/claude-haiku-5.5` and `anthropic/claude-opus-5.5` on AI Gateway. Any Workers AI text model with function calling can be named instead. |
+| `WATCH_GATEWAY` | The AI Gateway's name, `source-watch`, for `ai-gateway` only |
 | `WATCH_TURN_ON`, `WATCH_TURN_OFF` | Watchers to turn on or off, separated by commas, without a code change |
 
 ## Adding a source
