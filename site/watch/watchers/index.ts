@@ -24,6 +24,7 @@ export const notWatched: NotWatched[] = [
 	{ feed: 'supreme-court-cases', kind: 'planned', reason: 'supreme-court (the Court’s slip opinions page) and govinfo (U.S. Reports pagination), phase 1; govinfo needs the api.data.gov key.' },
 	{ feed: 'other-court-cases', kind: 'planned', reason: 'courtlistener once Free Law Project has answered, and govinfo (USCOURTS) once the api.data.gov key is set; phase 2.' },
 	{ feed: 'tribal-court-opinions', kind: 'planned', reason: 'consented-courts, phase 3: only nations that publish their opinions and agree, with initials and privacy holds first (decision record 0057). Its list of courts starts empty.' },
+	{ feed: 'oklahoma-state-tribal-agreements', kind: 'planned', reason: 'oklahoma-register (the Oklahoma Secretary of State’s register data file, json/dataTribal.json, compared by file number; scripts/agreements/oklahoma_register.py reads it today), phase 2.' },
 	{ feed: 'supreme-courts', kind: 'derived', reason: 'Built from the Justices.' },
 	{ feed: 'courts', kind: 'planned', reason: 'nation-sites (court pages) in phase 3, and courtlistener (new court names) in phase 2.' },
 	{ feed: 'biographies', kind: 'planned', reason: 'wikidata, phase 2, and new parties and leaders in accepted cases and treaties. No automatic people pages.' },
