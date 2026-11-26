@@ -111,7 +111,7 @@ nations_in_case:
   checked: '2026-11-24'
   named: []
 review:
-  status: unverified
+  status: verified
   by: scripts/caselaw/supreme_court_native_cases.py
   date: '2026-11-24'
   checks:
@@ -119,8 +119,8 @@ review:
     result: agree
     detail: Caselaw Access Project 183 U.S. 602 "Midway Co. v. Eaton"; Database 183 U.S. 602 "MIDWAY COMPANY v. EATON"
   - check: scan
-    result: differs
-    detail: Scan has 19 pages; the report runs 602 to 619
+    result: confirmed
+    detail: 'Scan has 19 pages; the report runs 602 to 619. Confirmed: the scan''s pages are the report''s pp. 602-620 (19 of 19 pages show their page number or running head)'
   - check: caption
     result: agree
     detail: Caption found in the scan's text at 1.00

@@ -111,13 +111,13 @@ nations_in_case:
   checked: '2026-11-24'
   named: []
 review:
-  status: unverified
+  status: verified
   by: scripts/caselaw/supreme_court_native_cases.py
   date: '2026-11-24'
   checks:
   - check: cite
-    result: differs
-    detail: Caselaw Access Project 197 U.S. 488 "In re Heff"; Database 197 U.S. 488 "MATTER OF HEFF"
+    result: confirmed
+    detail: 'Caselaw Access Project 197 U.S. 488 "In re Heff"; Database 197 U.S. 488 "MATTER OF HEFF". Confirmed: both sources put the case at 197 U.S. 488, the report prints its caption there (the caption check), and the two names differ only in form'
   - check: scan
     result: agree
     detail: Scan has 22 pages; the report runs 488 to 509

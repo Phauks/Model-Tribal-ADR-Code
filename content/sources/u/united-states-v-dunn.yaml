@@ -110,7 +110,7 @@ nations_in_case:
   checked: '2026-11-24'
   named: []
 review:
-  status: unverified
+  status: verified
   by: scripts/caselaw/supreme_court_native_cases.py
   date: '2026-11-24'
   checks:
@@ -118,8 +118,8 @@ review:
     result: agree
     detail: Caselaw Access Project 268 U.S. 121 "United States v. Dunn"; Database 268 U.S. 121 "UNITED STATES v. DUNN et al."
   - check: scan
-    result: differs
-    detail: Scan has 16 pages; the report runs 121 to 137
+    result: confirmed
+    detail: 'Scan has 16 pages; the report runs 121 to 137. Confirmed: the scan''s pages are the report''s pp. 121-136 (16 of 16 pages show their page number or running head); p. 137 is also the first page of Stebbins v. Riley, and is in that case''s scan'
   - check: caption
     result: agree
     detail: Caption found in the scan's text at 1.00

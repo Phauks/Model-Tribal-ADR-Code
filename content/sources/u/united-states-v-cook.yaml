@@ -111,7 +111,7 @@ nations_in_case:
   checked: '2026-11-24'
   named: []
 review:
-  status: unverified
+  status: verified
   by: scripts/caselaw/supreme_court_native_cases.py
   date: '2026-11-24'
   checks:
@@ -128,8 +128,8 @@ review:
     result: agree
     detail: Supreme Court Library's table (from the Court's minutes) May 4, 1874; Database 1874-05-04
   - check: opinions
-    result: settled
-    detail: 'Report: none read; Database writers: Waite; not read: writer of a majority ("The CHIEF JUSTICE"). Read from the scan by an AI reader (corrected): p.592: The CHIEF JUSTICE delivered the opinion of the court. We think the action was properly brought, and that it may be maintained.'
+    result: confirmed
+    detail: 'Report: none read; Database writers: Waite; not read: writer of a majority ("The CHIEF JUSTICE"). Read from the scan by an AI reader (corrected): p.592: The CHIEF JUSTICE delivered the opinion of the court. We think the action was properly brought, and that it may be maintained.. Confirmed: The report prints p. 592: "The CHIEF JUSTICE delivered the opinion of the court"'
   - check: bench
     result: agree
     detail: No Oyez votes; each opinion writer in the report sits on the Database's bench on the side the opinion takes

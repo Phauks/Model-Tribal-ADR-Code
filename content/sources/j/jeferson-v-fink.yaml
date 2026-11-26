@@ -111,7 +111,7 @@ nations_in_case:
   checked: '2026-11-24'
   named: []
 review:
-  status: unverified
+  status: verified
   by: scripts/caselaw/supreme_court_native_cases.py
   date: '2026-11-24'
   checks:
@@ -119,8 +119,8 @@ review:
     result: agree
     detail: Caselaw Access Project 247 U.S. 288 "Jeferson v. Fink"; Database 247 U.S. 288 "JEFERSON et al. v. FINK et al., ADMINISTRATORS OF SEVERS, et al."
   - check: scan
-    result: differs
-    detail: Scan has 7 pages; the report runs 288 to 295
+    result: confirmed
+    detail: 'Scan has 7 pages; the report runs 288 to 295. Confirmed: the scan''s pages are the report''s pp. 288-294 (7 of 7 pages show their page number or running head); p. 295 is also the first page of Hartranft v. Mullowny, and is in that case''s scan'
   - check: caption
     result: agree
     detail: Caption found in the scan's text at 1.00

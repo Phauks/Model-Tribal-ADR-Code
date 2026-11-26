@@ -74,6 +74,32 @@ const bucketCalls: Record<string, BucketUse> = {
     kind: "project-file",
     why: "Reads an intake note the project's own script wrote (intake/filed or intake/declined); only its fields are used, never served.",
   },
+  // The Wayback Worker's own progress (site/WAYBACK.md): which links it has
+  // asked the Wayback Machine to save, and what came back.
+  "wayback/worker.ts readMarks get(MARKS_OBJECT)": {
+    kind: "project-file",
+    why: "The lead author's marks on links the Wayback Worker could not save, written by the workspace's Wayback captures page.",
+  },
+  "src/lib/server/wayback.ts readWaybackProgress get(progressObject)": {
+    kind: "project-file",
+    why: "The Wayback Worker's progress record, read for the workspace's Wayback captures page.",
+  },
+  "src/lib/server/wayback.ts readWaybackMarks get(marksObject)": {
+    kind: "project-file",
+    why: "The lead author's marks on failed Wayback links; only that page writes them.",
+  },
+  "src/lib/server/wayback.ts writeWaybackMarks put(marksObject)": {
+    kind: "project-file",
+    why: "The lead author's marks on failed Wayback links, written from a form a signed-in lead author sends; it holds only links, dates and a name.",
+  },
+  "wayback/worker.ts readProgress get(PROGRESS_OBJECT)": {
+    kind: "project-file",
+    why: "The Wayback Worker's own progress record, which only it writes.",
+  },
+  "wayback/worker.ts writeProgress put(PROGRESS_OBJECT)": {
+    kind: "project-file",
+    why: "The Wayback Worker's own progress record, written from what the Wayback Machine answered; it holds only links and dates.",
+  },
   "src/lib/server/uploads.ts finishUpload get(upload.original_key)": {
     kind: "kept-not-served",
     why: "Reads a sent picture to make its copy without location details; both are put in line for the scan, and neither is served until it passes.",

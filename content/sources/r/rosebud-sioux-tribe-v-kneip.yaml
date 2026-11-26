@@ -40,7 +40,6 @@ history:
 court_dates:
   argued:
   - '1977-01-12'
-  - '1977-04-04'
   printed: Argued January 12, 1977 Decided April 4, 1977
   source: https://tile.loc.gov/storage-services/service/ll/usrep/usrep430/usrep430584/usrep430584.pdf
   checked: '2026-11-24'
@@ -124,7 +123,7 @@ nations_in_case:
     historical: true
     note: Matched by the script to the only nation record sharing this name; not yet checked against the case's history.
 review:
-  status: unverified
+  status: verified
   by: scripts/caselaw/supreme_court_native_cases.py
   date: '2026-11-24'
   checks:
@@ -144,8 +143,8 @@ review:
     result: agree
     detail: 'Printed and Database: 1977-04-04'
   - check: opinions
-    result: settled
-    detail: 'Report: majority Rehnquist p. 585, dissent Marshall p. 616; Database writers: Marshall, Rehnquist; scan pages [(616, 615)]. Read from the scan by an AI reader (corrected): p. 585: MR. JUSTICE REHNQUIST delivered the opinion of the Court. p. 615: MR. JUSTICE MARSHALL, with whom MR. JUSTICE BRENNAN and MR. JUSTICE STEWART join, dissenting. (The record''s page 616 is a running head, not the start.)'
+    result: confirmed
+    detail: 'Report: majority Rehnquist p. 585, dissent Marshall p. 616; Database writers: Marshall, Rehnquist; scan pages [(616, 615)]. Read from the scan by an AI reader (corrected): p. 585: MR. JUSTICE REHNQUIST delivered the opinion of the Court. p. 615: MR. JUSTICE MARSHALL, with whom MR. JUSTICE BRENNAN and MR. JUSTICE STEWART join, dissenting. (The record''s page 616 is a running head, not the start.). Confirmed: The report prints p. 585: "MR. JUSTICE REHNQUIST delivered the opinion of the Court"; p. 615: "MR. JUSTICE MARSHALL, with whom MR. JUSTICE BRENNAN and MR. JUSTICE STEWART join, dissenting"'
   - check: bench
     result: agree
     detail: Oyez and the Database give the same Justices and votes

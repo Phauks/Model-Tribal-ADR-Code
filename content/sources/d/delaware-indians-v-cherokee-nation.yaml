@@ -119,7 +119,7 @@ nations_in_case:
   - named_as: Delaware Indians
     reason: More than one of today's nations shares this name (chickamauga-keetoowah-unami-wolf-band-of-cherokee-delaware-shawnee-of-ohio-west-virginia-and-virginia, delaware-muncie, delaware-nation, delaware-tribe-of-indians, lenape-indian-tribe-of-delaware, munsee-thames-river-delaware-indian-nation and 1 more); which the case concerns has not been checked.
 review:
-  status: unverified
+  status: verified
   by: scripts/caselaw/supreme_court_native_cases.py
   date: '2026-11-24'
   checks:
@@ -127,8 +127,8 @@ review:
     result: agree
     detail: Caselaw Access Project 193 U.S. 127 "Delaware Indians v. Cherokee Nation"; Database 193 U.S. 127 "DELAWARE INDIANS v. CHEROKEE NATION"
   - check: scan
-    result: differs
-    detail: Scan has 19 pages; the report runs 127 to 146
+    result: confirmed
+    detail: 'Scan has 19 pages; the report runs 127 to 146. Confirmed: the scan''s pages are the report''s pp. 127-145 (19 of 19 pages show their page number or running head); p. 146 is also the first page of Giles v. Teasley, Board of Registrars, and is in that case''s scan'
   - check: caption
     result: agree
     detail: Caption found in the scan's text at 1.00

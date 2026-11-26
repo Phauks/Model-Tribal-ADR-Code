@@ -66,7 +66,7 @@ export function removeCollection(collection: CollectionIdentifier): Promise<Offl
 }
 
 /**
- * Saves the kept collections from this build: after an update, or after an interrupted save. Asked on every visit, so the worker answers without the status, which would read the list of every built page (src/service-worker/index.ts); a worker from an earlier build answers with it.
+ * After an update, or after an interrupted save: saves again the saved pages that changed, a few pages new to a kept collection, and the rest of a save the reader started. A kept collection that gained many pages waits for the reader (src/service-worker/index.ts, automaticTopUp). Asked on every visit, so the worker answers without the status, which would read the list of every built page (src/service-worker/index.ts); a worker from an earlier build answers with it.
  */
 export async function resumeSaving(onProgress?: (progress: Progress) => void): Promise<void> {
 	await ask({ type: 'offline-resume' }, onProgress);

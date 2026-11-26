@@ -10,7 +10,7 @@
 	An info page (site/DESIGN.md, "Info pages").
 -->
 <script lang="ts">
-	import CountBadge from '#lib/components/CountBadge.svelte';
+	import Collapsible from '#lib/components/Collapsible.svelte';
 	import InfoPage from '#lib/components/InfoPage.svelte';
 	import type { NationIndexRow } from '#lib/server/nation-index.ts';
 	import type { PageProps } from './$types';
@@ -49,17 +49,15 @@
 	]}
 >
 	{#each data.agencies as agency (agency.key)}
-		<section aria-labelledby={agency.key}>
-			<h2 id={agency.key}>{agency.name} <CountBadge count={agency.nations.length} /></h2>
+		<Collapsible heading={agency.name} identifier={agency.key} count={agency.nations.length}>
 			{#if agency.link}<p class="small">Official page: <a href={agency.link}>{shortLink(agency.link)}</a></p>{/if}
 			{@render nationList(agency.nations)}
-		</section>
+		</Collapsible>
 	{/each}
 
 	{#if data.unassigned.length > 0}
-		<section aria-labelledby="no-agency">
-			<h2 id="no-agency">{data.agencies.length > 0 ? 'No agency named' : 'Nations served'} <CountBadge count={data.unassigned.length} /></h2>
+		<Collapsible heading={data.agencies.length > 0 ? 'No agency named' : 'Nations served'} identifier="no-agency" count={data.unassigned.length}>
 			{@render nationList(data.unassigned)}
-		</section>
+		</Collapsible>
 	{/if}
 </InfoPage>

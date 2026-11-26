@@ -15,6 +15,10 @@
  * - A reader can save a whole collection at once from Settings ("Saved for
  *   offline", src/lib/offline-collections.ts). The worker remembers which
  *   collections the reader keeps, so it saves them again after an update.
+ *   After an update it downloads, on its own, only the kept pages that
+ *   changed, a few pages new to a kept collection (automaticTopUp), and the
+ *   rest of a save the reader started that was cut short. A collection that
+ *   gained many pages waits until the reader saves it again.
  *   The list of every built page is a separate file, read only for saving
  *   and showing collections (builtPaths below), not part of this script.
  * - Each build has its own cache, named after the build version. A page from
@@ -103,11 +107,22 @@ const neverCached = [
 const keptCollectionsKey = '/__kept-collections';
 /** This build's fingerprints, stored in its cache so the page can compare builds. */
 const fingerprintsKey = savedFingerprintsKey;
+/** Not a real address: the collections the reader asked to save whose saving has not finished. */
+const unfinishedCollectionsKey = '/__unfinished-collections';
 /** Not a real address: saved pages that changed in this build, to download again. */
 const changedKey = '/__changed';
 /** Not a real address: this build's list of prerendered files, once read (builtPaths). */
 const builtPathsKey = '/__built-paths';
-const internalKeys = new Set([keptCollectionsKey, fingerprintsKey, changedKey, builtPathsKey]);
+const internalKeys = new Set([keptCollectionsKey, unfinishedCollectionsKey, fingerprintsKey, changedKey, builtPathsKey]);
+/**
+ * The most files an update downloads on its own to fill in a kept
+ * collection: a few new nations or glossary entries, not a new section of
+ * the site. "Other pages" once grew from a few dozen pages to nearly 2,000
+ * when cases and biographies were added, and every reader who had kept it
+ * was sent all of them without asking (Nov. 24, 2026). Beyond this, Settings
+ * shows the pages not yet saved and the reader decides.
+ */
+const automaticTopUp = 100;
 
 /**
  * A nation's seal or logo is never saved for offline use, so that an image a
@@ -449,11 +464,11 @@ async function tidyOldCaches(): Promise<void> {
 	const currentFiles = new Set(immutable.map((file) => absolute(file.path)));
 	for (const name of oldNames) {
 		const oldCache = await caches.open(name);
-		// Keep the reader's list of kept collections; their pages are saved
-		// again from this build when a page asks (offline-resume).
-		const kept = await oldCache.match(keptCollectionsKey);
-		if (kept && !(await cache.match(keptCollectionsKey))) {
-			await cache.put(keptCollectionsKey, kept);
+		// Keep the reader's lists of kept and unfinished collections; their
+		// pages are saved again from this build when a page asks (offline-resume).
+		for (const key of [keptCollectionsKey, unfinishedCollectionsKey]) {
+			const list = await oldCache.match(key);
+			if (list && !(await cache.match(key))) await cache.put(key, list);
 		}
 		// Font file names carry a hash of their content, so a saved copy
 		// with a name in this build is still the same file.
@@ -541,8 +556,9 @@ async function isFromThisBuild(response: Response): Promise<boolean> {
 	return !newerBuildSeen;
 }
 
-async function keptCollections(cache: Cache): Promise<Set<CollectionIdentifier>> {
-	const saved = await cache.match(keptCollectionsKey);
+/** A list of collections stored in the cache under a made-up address: the kept ones, or the unfinished ones. */
+async function readCollections(cache: Cache, key: string): Promise<Set<CollectionIdentifier>> {
+	const saved = await cache.match(key);
 	if (!saved) return new Set();
 	try {
 		return new Set((await saved.json()) as CollectionIdentifier[]);
@@ -551,14 +567,25 @@ async function keptCollections(cache: Cache): Promise<Set<CollectionIdentifier>>
 	}
 }
 
-async function setKept(cache: Cache, id: CollectionIdentifier, kept: boolean): Promise<void> {
-	const list = await keptCollections(cache);
-	if (kept) list.add(id);
+async function markCollection(cache: Cache, key: string, id: CollectionIdentifier, marked: boolean): Promise<void> {
+	const list = await readCollections(cache, key);
+	if (marked) list.add(id);
 	else list.delete(id);
-	await cache.put(
-		keptCollectionsKey,
-		new Response(JSON.stringify([...list]), { headers: { 'content-type': 'application/json' } })
-	);
+	await cache.put(key, new Response(JSON.stringify([...list]), { headers: { 'content-type': 'application/json' } }));
+}
+
+function keptCollections(cache: Cache): Promise<Set<CollectionIdentifier>> {
+	return readCollections(cache, keptCollectionsKey);
+}
+
+async function setKept(cache: Cache, id: CollectionIdentifier, kept: boolean): Promise<void> {
+	await markCollection(cache, keptCollectionsKey, id, kept);
+}
+
+/** The files of a collection in this build that are not saved yet. */
+async function missingFiles(cache: Cache, files: string[]): Promise<string[]> {
+	const have = new Set((await cache.keys()).map((request) => new URL(request.url).pathname));
+	return files.filter((path) => !have.has(path));
 }
 
 async function status(): Promise<OfflineStatus> {
@@ -593,6 +620,8 @@ async function status(): Promise<OfflineStatus> {
 
 /** One saving job per collection at a time; later requests share it. */
 const running = new Map<CollectionIdentifier, Promise<void>>();
+/** Collections the reader removed while they were being saved: their jobs stop after the files already on the way. */
+const stopping = new Set<CollectionIdentifier>();
 const listeners = new Map<CollectionIdentifier, Set<MessagePort>>();
 
 function tell(port: MessagePort | undefined, reply: WorkerReply): void {
@@ -602,10 +631,7 @@ function tell(port: MessagePort | undefined, reply: WorkerReply): void {
 async function saveCollection(id: CollectionIdentifier): Promise<void> {
 	const cache = await caches.open(cacheName);
 	const files = (await collectionFiles()).get(id) ?? [];
-	const missing: string[] = [];
-	for (const path of files) {
-		if (!(await cache.match(path))) missing.push(path);
-	}
+	const missing = await missingFiles(cache, files);
 	let done = files.length - missing.length;
 	const report = () => {
 		for (const port of listeners.get(id) ?? []) {
@@ -618,6 +644,7 @@ async function saveCollection(id: CollectionIdentifier): Promise<void> {
 	// The scripts and styles the saved pages load, so they also work offline (src/lib/offline-shell.ts).
 	const scripts = new Set<string>();
 	async function next(): Promise<void> {
+		if (stopping.has(id)) return;
 		const path = queue.shift();
 		if (!path) return;
 		const response = await fetch(path);
@@ -651,6 +678,14 @@ function runSave(id: CollectionIdentifier, port: MessagePort | undefined): Promi
 async function removeCollection(id: CollectionIdentifier): Promise<void> {
 	const cache = await caches.open(cacheName);
 	await setKept(cache, id, false);
+	await markCollection(cache, unfinishedCollectionsKey, id, false);
+	// Stop a save still running, and wait for it, so no file it fetched lands after the removal.
+	const job = running.get(id);
+	if (job) {
+		stopping.add(id);
+		await job.catch(() => undefined);
+		stopping.delete(id);
+	}
 	await setChangedPages(cache, (await changedPages(cache)).filter((path) => collectionOf(path) !== id));
 	const built = await builtPaths();
 	for (const request of await cache.keys()) {
@@ -896,8 +931,12 @@ async function answer(request: WorkerRequest, port: MessagePort | undefined): Pr
 			case 'offline-status':
 				break;
 			case 'offline-save': {
-				await setKept(await caches.open(cacheName), request.collection, true);
+				const cache = await caches.open(cacheName);
+				await setKept(cache, request.collection, true);
+				// Marked until done, so a save cut short continues on the next visit (offline-resume).
+				await markCollection(cache, unfinishedCollectionsKey, request.collection, true);
 				await runSave(request.collection, port);
+				await markCollection(cache, unfinishedCollectionsKey, request.collection, false);
 				break;
 			}
 			case 'offline-remove':
@@ -905,8 +944,18 @@ async function answer(request: WorkerRequest, port: MessagePort | undefined): Pr
 				break;
 			case 'offline-resume': {
 				await saveChangedPages();
-				const kept = await keptCollections(await caches.open(cacheName));
-				for (const id of kept) await runSave(id, port);
+				const cache = await caches.open(cacheName);
+				const kept = await keptCollections(cache);
+				const unfinished = await readCollections(cache, unfinishedCollectionsKey);
+				const lists = kept.size > 0 ? await collectionFiles() : new Map<CollectionIdentifier, string[]>();
+				for (const id of kept) {
+					// A kept collection that gained many pages waits for the reader (automaticTopUp), unless the
+					// reader's own save of it was cut short.
+					const missing = await missingFiles(cache, lists.get(id) ?? []);
+					if (missing.length === 0 || (missing.length > automaticTopUp && !unfinished.has(id))) continue;
+					await runSave(id, port);
+					await markCollection(cache, unfinishedCollectionsKey, id, false);
+				}
 				// Copies of documents are large, so only sets left unfinished are saved again here.
 				for (const set of await pendingSets()) await runDocumentSave(set, undefined).catch(() => undefined);
 				// The page does not need the status here, which would read the list of every built page.

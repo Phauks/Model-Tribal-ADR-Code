@@ -35,7 +35,7 @@ opinions:
   - kind: concurrence in part and dissent in part
     justice: Potter Stewart
     page: 174
-  - kind: concurrence in part and dissent in part
+  - kind: concurrence in part, concurrence in the result in part, and dissent in part
     justice: William H. Rehnquist
     page: 176
 original_link: https://www.loc.gov/item/usrep447134/
@@ -46,7 +46,6 @@ history:
 court_dates:
   argued:
   - '1979-10-09'
-  - '1979-06-10'
   printed: Argued October 9, 1979 Decided June 10, 1980
   source: https://tile.loc.gov/storage-services/service/ll/usrep/usrep447/usrep447134/usrep447134.pdf
   checked: '2026-11-24'
@@ -132,7 +131,7 @@ nations_in_case:
     historical: true
     note: Matched by the script to the only nation record sharing this name; not yet checked against the case's history.
 review:
-  status: unverified
+  status: verified
   by: scripts/caselaw/supreme_court_native_cases.py
   date: '2026-11-24'
   checks:
@@ -152,8 +151,8 @@ review:
     result: agree
     detail: 'Printed and Database: 1980-06-10'
   - check: opinions
-    result: settled
-    detail: 'Report: majority White p. 138, concurrence in part and dissent in part Brennan p. 165, concurrence in part and dissent in part Stewart p. 174, dissent in part Rehnquist p. 176; Database writers: Brennan, Rehnquist, Stewart, White; scan pages [(165, 164)]. Read from the scan by an AI reader (corrected): p. 138: MR. JUSTICE WHITE delivered the opinion of the Court. p. 164: MR. JUSTICE BRENNAN, with whom MR. JUSTICE MARSHALL joins, concurring in part and dissenting in part. p. 174: MR. JUSTICE STEWART, concurring in part and dissenting in part. p. 176: MR. JUSTIME REHNQUIST, concurring in part, concurring in the result in part, and dissenting in part. (Brennan''s start is p. 164, not 165; Rehnquist''s label includes a concurrence, so the closest listed kind is used.)'
+    result: confirmed
+    detail: 'Report: majority White p. 138, concurrence in part and dissent in part Brennan p. 165, concurrence in part and dissent in part Stewart p. 174, concurrence in part, concurrence in the result in part, and dissent in part Rehnquist p. 176; Database writers: Brennan, Rehnquist, Stewart, White; scan pages [(165, 164)]. Read from the scan by an AI reader (corrected): p. 138: MR. JUSTICE WHITE delivered the opinion of the Court. p. 164: MR. JUSTICE BRENNAN, with whom MR. JUSTICE MARSHALL joins, concurring in part and dissenting in part. p. 174: MR. JUSTICE STEWART, concurring in part and dissenting in part. p. 176: MR. JUSTIME REHNQUIST, concurring in part, concurring in the result in part, and dissenting in part. (Brennan''s start is p. 164, not 165; Rehnquist''s label includes a concurrence, so the closest listed kind is used.). Confirmed: the report prints (read from the page images) p. 138: "MR. JUSTICE WHITE delivered the opinion of the Court."; p. 164: "MR. JUSTICE BRENNAN, with whom MR. JUSTICE MARSHALL joins, concurring in part and dissenting in part."; p. 174: "MR. JUSTICE STEWART, concurring in part and dissenting in part."; p. 176: "MR. JUSTICE REHNQUIST, concurring in part, concurring in the result in part, and dissenting in part."'
   - check: bench
     result: agree
     detail: Oyez and the Database give the same Justices and votes

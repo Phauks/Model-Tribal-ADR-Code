@@ -649,6 +649,52 @@ function imageryCheck(name: MapImageryName): Check {
 	};
 }
 
+/** The Wayback Worker's public progress (site/WAYBACK.md); it has no binding, so it is reached by its address. */
+export const waybackWorkerAddress = 'https://model-tribal-adr-code-wayback.trevordgoldsmith.workers.dev';
+
+const waybackCaptures: Check = {
+	key: 'wayback-captures',
+	group: 'Workers',
+	name: 'Wayback captures',
+	async run({ fetcher }) {
+		const response = await fetcher(`${waybackWorkerAddress}/status.json`);
+		if (!response.ok) {
+			await response.body?.cancel();
+			return { state: 'off', summary: `The Wayback Worker answered ${response.status}, so source links are saved only by the slower archive workflow.`, details: [], fix: 'Deploy the Worker from site/wayback and add its two archive.org key secrets (site/WAYBACK.md, "Setting it up").' };
+		}
+		const status = (await response.json()) as {
+			state: 'not-running' | 'keys-refused' | 'paused-daily-limit' | 'saving' | 'waiting-to-retry' | 'idle';
+			stateWords: string;
+			minutesSinceLastRun: number | null;
+			lastError: string | null;
+			left: number;
+			captured: number;
+			capturedLast24Hours: number;
+			waiting: number;
+			failedWillRetry: number;
+			gaveUp: number;
+			markedByHand: number;
+		};
+		const details = [
+			`${status.captured.toLocaleString('en-US')} captured (${status.capturedLast24Hours.toLocaleString('en-US')} in the last 24 hours), ${status.left.toLocaleString('en-US')} left, ${status.waiting} being saved now.`,
+			`${status.failedWillRetry} failed and will be tried again; ${status.gaveUp} given up after three tries; ${status.markedByHand} marked by hand (workspace, Wayback captures). Progress page: ${waybackWorkerAddress}/`
+		];
+		switch (status.state) {
+			case 'not-running':
+				// The cron runs every minute even with nothing left, so a stale run means the schedule stopped.
+				return { state: 'problem', summary: status.minutesSinceLastRun === null ? 'The Wayback Worker has not run yet.' : `The Wayback Worker last ran ${status.minutesSinceLastRun} minutes ago; it runs every minute, even with nothing to save.`, details, fix: 'Check the Worker’s cron trigger and its logs in the Cloudflare dashboard (site/WAYBACK.md).' };
+			case 'keys-refused':
+				return { state: 'problem', summary: status.lastError ?? 'The archive.org keys are missing or refused.', details, fix: 'Add or replace the ARCHIVE_ORG_ACCESS_KEY and ARCHIVE_ORG_SECRET_KEY secrets on the model-tribal-adr-code-wayback Worker (site/WAYBACK.md).' };
+			case 'paused-daily-limit':
+				return { state: 'warning', summary: 'The Wayback Worker reached the Archive’s daily limit and starts again within the hour.', details };
+			case 'idle':
+				return { state: 'working', summary: 'The Wayback Worker is running and has nothing left to save.', details };
+			default:
+				return { state: 'working', summary: `The Wayback Worker is running (${status.stateWords.toLocaleLowerCase('en-US')}): ${status.left.toLocaleString('en-US')} left.`, details };
+		}
+	}
+};
+
 const breachedPasswords: Check = {
 	key: 'breached-passwords',
 	group: 'Outside services',
@@ -721,6 +767,7 @@ export const serviceChecks: readonly Check[] = [
 	liveEditing,
 	scannerDesk,
 	scanner,
+	waybackCaptures,
 	siteTextRebuilds,
 	rateLimitCheck('request-form-limit', 'Request form', 'requestFormLimit', 'the request form'),
 	rateLimitCheck('workspace-change-limit', 'Workspace changes', 'workspaceChangeLimit', 'making changes in the workspace'),

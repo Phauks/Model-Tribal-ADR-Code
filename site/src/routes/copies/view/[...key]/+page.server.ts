@@ -23,6 +23,7 @@ import {
 	copyPath,
 	fileSize,
 	mediaLabel,
+	nameRequestPath,
 	removalRequestPath,
 	type CopyDetails
 } from '#lib/public-copies.ts';
@@ -77,8 +78,11 @@ export const load: PageServerLoad = async ({ params, url, fetch, setHeaders }) =
 		capturedText: details?.captured ? readableDate(details.captured) : '',
 		decidedText: details?.opinion?.decided ? readableDate(details.opinion.decided) : '',
 		sha256: copy.sha256,
-		original: copy.links.at(-1) ?? copy.links[0],
+		original: copy.links.at(-1) ?? copy.links[0] ?? '',
 		verify: verifyLink(copy.sha256, name),
-		removal: removalRequestPath(copy)
+		removal: removalRequestPath(copy),
+		// A redacted opinion (research/tribal-court-opinions/redacted.csv): it says so, and has no link to the original.
+		namesReplaced: details?.opinion?.namesReplaced === true,
+		nameRequest: nameRequestPath(copy)
 	};
 };

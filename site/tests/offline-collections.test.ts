@@ -6,6 +6,10 @@ describe('offline collections', () => {
 		expect(collectionOf('/nations')).toBe('nations');
 		expect(collectionOf('/nations/map')).toBe('nations');
 		expect(collectionOf('/nations/navajo-nation/__data.json')).toBe('nations');
+		expect(collectionOf('/cases/worcester-v-georgia')).toBe('cases');
+		expect(collectionOf('/supreme-court/__data.json')).toBe('cases');
+		expect(collectionOf('/biographies/x/__data.json')).toBe('cases');
+		expect(collectionOf('/casesx')).toBe('other');
 		expect(collectionOf('/stories')).toBe('stories');
 		expect(collectionOf('/stories/lummi-salmon-woman/__data.json')).toBe('stories');
 		expect(collectionOf('/glossary')).toBe('glossary');

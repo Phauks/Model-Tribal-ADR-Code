@@ -114,7 +114,7 @@ nations_in_case:
   checked: '2026-11-24'
   named: []
 review:
-  status: unverified
+  status: verified
   by: scripts/caselaw/supreme_court_native_cases.py
   date: '2026-11-24'
   checks:
@@ -134,8 +134,8 @@ review:
     result: agree
     detail: 'Printed and Database: 1913-04-07'
   - check: opinions
-    result: settled
-    detail: 'Report: majority Pitney p. 252; Database writers: Holmes, Pitney. Read from the scan by an AI reader (corrected): p. 252: MR. JUSTICE PITNEY delivered the opinion of the court. p. 277: Dissenting Opinion: Holmes, Lurton, Hughes., JJ. (dissent text follows: The confession of Joe Dick, since deceased...); p. 277: MR. JUSTICE VAN DEVANTER concurs in the result. (no opinion text, not listed)'
+    result: confirmed
+    detail: 'Report: majority Pitney p. 252; Database writers: Holmes, Pitney. Read from the scan by an AI reader (corrected): p. 252: MR. JUSTICE PITNEY delivered the opinion of the court. p. 277: Dissenting Opinion: Holmes, Lurton, Hughes., JJ. (dissent text follows: The confession of Joe Dick, since deceased...); p. 277: MR. JUSTICE VAN DEVANTER concurs in the result. (no opinion text, not listed). Confirmed: The report prints p. 252: "MR. JUSTICE PITNEY delivered the opinion of the court"; p. 277: "Mr. Justice Hoimss, with whom concur Mr. Justice Lurton and Mr. Justice Hucugs, dissenting"'
   - check: bench
     result: agree
     detail: No Oyez votes; each opinion writer in the report sits on the Database's bench on the side the opinion takes

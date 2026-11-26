@@ -1,4 +1,4 @@
-# 0057. Draw the large families of item pages when a reader opens them
+# 0058. Draw the large families of item pages when a reader opens them
 
 - **Status:** Accepted
 - **Date:** 2026-11-24

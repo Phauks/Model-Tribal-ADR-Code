@@ -43,7 +43,6 @@ history:
 court_dates:
   argued:
   - '2011-04-20'
-  - '2011-06-13'
   printed: Argued April 20, 2011 Decided June 13, 2011
   source: https://www.supremecourt.gov/opinions/boundvolumes/564bv.pdf
   checked: '2026-11-24'
@@ -124,7 +123,7 @@ nations_in_case:
     role: party
     note: Matched by the script to the nation record of the same name; not yet checked.
 review:
-  status: unverified
+  status: verified
   by: scripts/caselaw/supreme_court_native_cases.py
   date: '2026-11-24'
   checks:
@@ -144,8 +143,8 @@ review:
     result: agree
     detail: 'Printed and Database: 2011-06-13'
   - check: opinions
-    result: settled
-    detail: 'Report: majority Kagan p. 165, special concurrence Ginsburg p. 187, dissent Sotomayor p. 188; Database writers: Alito, Ginsburg, Sotomayor. Read from the scan by an AI reader (corrected): p. 165: Justice Alito delivered the opinion of the Court. p. 187: Justice Ginsburg, with whom Justice Breyer joins, concurring in the judgment. p. 188: Justice Sotomayor, dissenting.'
+    result: confirmed
+    detail: 'Report: majority Kagan p. 165, special concurrence Ginsburg p. 187, dissent Sotomayor p. 188; Database writers: Alito, Ginsburg, Sotomayor. Read from the scan by an AI reader (corrected): p. 165: Justice Alito delivered the opinion of the Court. p. 187: Justice Ginsburg, with whom Justice Breyer joins, concurring in the judgment. p. 188: Justice Sotomayor, dissenting.. Confirmed: The report prints p. 165: "Justice Alito delivered the opinion of the Court"; p. 187: "Justice Ginsburg, with whom Justice Breyer joins, concurring in the judgment"; p. 188: "Justice Sotomayor, dissenting"'
   - check: bench
-    result: differs
-    detail: No Oyez votes; Kagan wrote a majority but the Database counts a not recorded vote
+    result: agree
+    detail: No Oyez votes; each opinion writer in the report sits on the Database's bench on the side the opinion takes

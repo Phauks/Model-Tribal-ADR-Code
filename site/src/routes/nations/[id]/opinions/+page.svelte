@@ -1,4 +1,5 @@
 <script lang="ts">
+	import Shield from '@lucide/svelte/icons/shield';
 	import Breadcrumbs from '#lib/components/Breadcrumbs.svelte';
 	import DataTable from '#lib/components/DataTable.svelte';
 	import TopicBadges from '#lib/components/TopicBadges.svelte';
@@ -45,7 +46,7 @@
 			return {
 				key: opinion.path,
 				cells: {
-					name: { text: opinion.name, href: cited ? opinion.original : opinion.path },
+					name: { text: opinion.name, href: cited ? opinion.original : opinion.path, values: opinion.namesReplaced ? ['names-replaced'] : [] },
 					court: { text: opinion.court },
 					decided: { text: readableDate(opinion.decided), sortValue: opinion.decided },
 					citation: { text: opinion.docket ? `${opinion.citation} (${opinion.docket})` : opinion.citation },
@@ -103,10 +104,11 @@
 		{#if column.key === 'name'}
 			{@const id = copyItemId(row.key)}
 			<span data-restrict-item={id}
-				>{#if restrictions.levels[id] === 'cite'}<a class="original" href={row.cells.name.href} rel="noopener noreferrer"
+				>{#if restrictions.levels[id] === 'cite' && !row.cells.name.href}{row.cells.name.text}{:else if restrictions.levels[id] === 'cite'}<a class="original" href={row.cells.name.href} rel="noopener noreferrer"
 						>{row.cells.name.text}<ExternalLink size={14} aria-hidden="true" /></a
 					>{:else}<a href={row.cells.name.href}>{row.cells.name.text}</a>{/if}</span
-			>
+			>{#if row.cells.name.values?.length}
+				<span class="review-badge review-badge-verified names-replaced"><Shield size={14} strokeWidth={2} aria-hidden="true" />Names replaced</span>{/if}
 		{/if}
 		{#if column.key === 'removal'}<a href={row.cells.removal.href}>Ask to remove</a>{/if}
 		{#if column.key === mentionsColumn}<span data-restrict-text><TopicBadges
@@ -122,5 +124,11 @@
 		display: inline-flex;
 		align-items: center;
 		gap: var(--space-1);
+	}
+
+	.names-replaced {
+		margin-left: var(--space-1);
+		font-size: var(--font-size-small);
+		white-space: nowrap;
 	}
 </style>
