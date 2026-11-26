@@ -40,7 +40,6 @@ history:
 court_dates:
   argued:
   - '1970-01-14'
-  - '1970-04-27'
   printed: Argued January 14, 1970 Decided April 27, 1970
   source: https://tile.loc.gov/storage-services/service/ll/usrep/usrep397/usrep397598/usrep397598.pdf
   checked: '2026-11-24'
@@ -117,7 +116,7 @@ nations_in_case:
   checked: '2026-11-24'
   named: []
 review:
-  status: unverified
+  status: verified
   by: scripts/caselaw/supreme_court_native_cases.py
   date: '2026-11-24'
   checks:
@@ -137,8 +136,8 @@ review:
     result: agree
     detail: 'Printed and Database: 1970-04-27'
   - check: opinions
-    result: settled
-    detail: 'Report: majority Burger p. 599, concurrence Harlan p. 611; Database writers: Black, Burger, Harlan. Read from the scan by an AI reader (record right): p. 599: MR. CHIEF JUSTICE BURGER delivered the opinion of the Court. p. 611: MR. JUSTICE HARLAN, concurring. p. 610: ''MR. JUSTICE BLACK, for the reasons set forth by the Court of Appeals in this case, 407 F. 2d 394, and in'' -- a one-line dissent by reference with no opinion text, so it is not listed as an opinion.'
+    result: confirmed
+    detail: 'Report: majority Burger p. 599, concurrence Harlan p. 611; Database writers: Black, Burger, Harlan. Read from the scan by an AI reader (record right): p. 599: MR. CHIEF JUSTICE BURGER delivered the opinion of the Court. p. 611: MR. JUSTICE HARLAN, concurring. p. 610: ''MR. JUSTICE BLACK, for the reasons set forth by the Court of Appeals in this case, 407 F. 2d 394, and in'' -- a one-line dissent by reference with no opinion text, so it is not listed as an opinion.. Confirmed: The report prints p. 599: "MR. CHIEF JUSTICE BURGER delivered the opinion of the Court"; p. 611: "MR. JUSTICE HARLAN, concurring"'
   - check: bench
     result: agree
     detail: Oyez and the Database give the same Justices and votes

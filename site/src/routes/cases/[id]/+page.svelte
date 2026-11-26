@@ -4,17 +4,18 @@
 	mockup on Nov. 24, 2026, design/case-pages/). A record page: the case's
 	facts in At a glance, its box's parts as sections, then its opinions, the
 	parties and nations, where to read it, and where this site cites it.
+	Every section folds (Collapsible.svelte).
 -->
 <script lang="ts">
 	import Clock from '@lucide/svelte/icons/clock';
 	import Breadcrumbs from '#lib/components/Breadcrumbs.svelte';
-	import CountBadge from '#lib/components/CountBadge.svelte';
+	import Collapsible from '#lib/components/Collapsible.svelte';
 	import GlancePanel from '#lib/components/GlancePanel.svelte';
 	import ImpactAccounts from '#lib/components/ImpactAccounts.svelte';
+	import RecordBoxSections from '#lib/components/RecordBoxSections.svelte';
 	import RecordPage from '#lib/components/RecordPage.svelte';
 	import SourceList from '#lib/components/SourceList.svelte';
 	import TopicBadges from '#lib/components/TopicBadges.svelte';
-	import { quoteContext } from '#lib/essays/quote-context-view.ts';
 	import type { PageProps } from './$types';
 
 	let { data }: PageProps = $props();
@@ -45,33 +46,26 @@
 		{#if data.topics.length > 0 || data.unverified}<div class="badge-line">{#if data.unverified}<span class="review-badge"><Clock size={16} strokeWidth={2} aria-hidden="true" />Unverified</span>{/if}{#if data.topics.length > 0}<TopicBadges topics={data.topics.map((text) => ({ text }))} />{/if}</div>{/if}
 	{/snippet}
 
-	{#if data.bodyHtml}
-		<div class="essay-text case-body" use:quoteContext={data.bodyHtml}>
-			<!-- eslint-disable-next-line svelte/no-at-html-tags -- built from the repository's own Markdown -->
-			{@html data.bodyHtml}
-		</div>
-	{/if}
+	<RecordBoxSections sections={data.boxSections} />
 
 	{#if data.opinions.length > 0}
-		<section aria-labelledby="opinions">
-			<h2 id="opinions">Opinions <CountBadge count={data.opinions.length} /></h2>
+		<Collapsible heading="Opinions" identifier="opinions" count={data.opinions.length}>
 			<dl class="summary-list">
 				{#each data.opinions as opinion, index (index)}
 					<div>
 						<dt>{opinion.title}</dt>
 						<dd>
-							{opinion.justice}{#if opinion.page}{opinion.justice ? ', ' : ''}{#if opinion.link}<a href={opinion.link}>starting at page {opinion.page}</a>{:else}starting at page {opinion.page}{/if}{/if}
+							{#if opinion.justiceLink}<a href={opinion.justiceLink}>{opinion.justice}</a>{:else}{opinion.justice}{/if}{#if opinion.page}{opinion.justice ? ', ' : ''}{#if opinion.link}<a href={opinion.link}>starting at page {opinion.page}</a>{:else}starting at page {opinion.page}{/if}{/if}
 							{#if opinion.note}<span class="fact-detail muted small">{opinion.note}</span>{/if}
 						</dd>
 					</div>
 				{/each}
 			</dl>
-		</section>
+		</Collapsible>
 	{/if}
 
 	{#if data.caption || data.nations.length > 0 || data.people.length > 0}
-		<section aria-labelledby="parties">
-			<h2 id="parties">{data.people.length > 0 ? 'Parties, people and nations' : 'Parties and nations'}</h2>
+		<Collapsible heading={data.people.length > 0 ? 'Parties, people and nations' : 'Parties and nations'} identifier="parties">
 			<dl class="summary-list">
 				{#if data.caption}
 					<div>
@@ -96,22 +90,20 @@
 				{/each}
 			</dl>
 			{#if data.nationNote}<p class="small muted">{data.nationNote}</p>{/if}
-		</section>
+		</Collapsible>
 	{/if}
 
 	<ImpactAccounts accounts={data.accounts} />
 
 	{#if data.readingHtml}
-		<section aria-labelledby="where-to-read">
-			<h2 id="where-to-read">Where to read it <CountBadge count={data.readingCount} /></h2>
+		<Collapsible heading="Where to read it" identifier="where-to-read" count={data.readingCount}>
 			<!-- eslint-disable-next-line svelte/no-at-html-tags -- built from the case's own record -->
 			<p class="case-reading">{@html data.readingHtml}</p>
-		</section>
+		</Collapsible>
 	{/if}
 
 	{#if citedCount > 0}
-		<section aria-labelledby="on-this-site">
-			<h2 id="on-this-site">On this site <CountBadge count={citedCount} /></h2>
+		<Collapsible heading="On this site" identifier="on-this-site" count={citedCount}>
 			<dl class="summary-list">
 				{#if data.essays.length > 0}
 					<div>
@@ -138,7 +130,7 @@
 					</div>
 				{/if}
 			</dl>
-		</section>
+		</Collapsible>
 	{/if}
 
 	{#snippet sources()}<SourceList sources={data.sources} />{/snippet}
@@ -161,21 +153,6 @@
 <style>
 	.case-citation {
 		margin-top: calc(-1 * var(--space-2));
-	}
-
-	/* Each part of the box is a section with its own heading here, so the part's small label is not repeated. */
-	.case-body :global(.essay-case-part > .essay-block-label) {
-		display: none;
-	}
-
-	.case-body :global(.essay-case-part) {
-		margin: 0;
-		padding: 0;
-		border: none;
-	}
-
-	.case-body :global(figure) {
-		max-width: var(--layout-measure);
 	}
 
 	/* The places to read it, open, with the rule down their left side as under a citation. */

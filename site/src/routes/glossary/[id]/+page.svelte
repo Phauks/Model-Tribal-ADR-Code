@@ -5,7 +5,7 @@
 	info page (site/DESIGN.md, "Info pages").
 -->
 <script lang="ts">
-	import CountBadge from '#lib/components/CountBadge.svelte';
+	import Collapsible from '#lib/components/Collapsible.svelte';
 	import GlossaryEntry from '#lib/components/GlossaryEntry.svelte';
 	import InfoPage from '#lib/components/InfoPage.svelte';
 	import { basisLabels, statusLabels } from '#lib/glossary-labels.ts';
@@ -32,13 +32,12 @@
 	<GlossaryEntry {entry} headingLevel={1} part="body" />
 
 	{#if data.linkedFrom.length > 0}
-		<section aria-labelledby="linked-from">
-			<h2 id="linked-from">Other entries that use this term <CountBadge count={data.linkedFrom.length} /></h2>
+		<Collapsible heading="Other entries that use this term" identifier="linked-from" count={data.linkedFrom.length}>
 			<ul>
 				{#each data.linkedFrom as other (other.id)}
 					<li><a class="term-link" href="/glossary/{other.id}">{other.term}</a></li>
 				{/each}
 			</ul>
-		</section>
+		</Collapsible>
 	{/if}
 </InfoPage>

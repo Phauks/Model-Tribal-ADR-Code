@@ -34,6 +34,12 @@ retrieved: '2026-11-24'
 history:
   status: live
   last_checked: '2026-11-24'
+court_dates:
+  argued:
+  - '1903-10-19'
+  printed: Argued October 19. Decided November 9, 1903.
+  source: https://tile.loc.gov/storage-services/service/ll/usrep/usrep191/usrep191093/usrep191093.pdf
+  checked: '2026-11-24'
 supreme_court:
   court: Fuller Court
   natural_court: Fuller Court (1903-1906)
@@ -104,7 +110,7 @@ nations_in_case:
   checked: '2026-11-24'
   named: []
 review:
-  status: unverified
+  status: verified
   by: scripts/caselaw/supreme_court_native_cases.py
   date: '2026-11-24'
   checks:
@@ -118,8 +124,8 @@ review:
     result: agree
     detail: Caption found in the scan's text at 1.00
   - check: printed dates
-    result: settled
-    detail: 'Caselaw Access Project "Argued October 19. Decided November 9, 1903."; scan "Argued October 19.-Decided November 9,1903.". Read from the scan by an AI reader (corrected): p. 93: No. 12. Original. Argued October 19.-Decided November 9,1903. (record has no printed date line)'
+    result: agree
+    detail: Caselaw Access Project "Argued October 19. Decided November 9, 1903."; scan "Argued October 19.-Decided November 9,1903."
   - check: decided
     result: agree
     detail: 'Printed and Database: 1903-11-09'

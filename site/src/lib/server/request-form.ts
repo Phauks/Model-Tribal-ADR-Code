@@ -156,19 +156,23 @@ export async function readRequestForm(form: FormData): Promise<FormResult> {
 	const details = limit('details', longText, text(form, 'details'));
 	if (details === '' && kind !== 'add-nation') {
 		errors.details =
-			kind === 'restrict' || kind === 'remove'
+			kind === 'replace-name'
+				? 'Say whose name it is, for example "the mother" or "me". Please do not write the full name.'
+				: kind === 'restrict' || kind === 'remove'
 				? 'Say where the material is and what should happen. Please do not repeat sensitive material.'
 				: 'Tell us what you would like.';
 	}
 
 	const material = limit('material', longText, text(form, 'material'));
-	if ((kind === 'correct' || kind === 'restrict' || kind === 'remove') && material === '') {
+	if ((kind === 'correct' || kind === 'restrict' || kind === 'remove' || kind === 'replace-name') && material === '') {
 		errors.material = 'Say which page, record or passage this is about.';
 	}
 
 	const writingFor = text(form, 'writingForGovernment');
 	const request: NewRequest = {
-		kind,
+		// A request to replace a name is kept as a request to make something private, so the opinion
+		// is hidden within 7 days while the name is replaced (research/analyses/2026-11-24-redaction-practices-for-opinions.md).
+		kind: kind === 'replace-name' ? 'restrict' : kind,
 		material: optional(material),
 		nationIdentifier: optional(limit('nationIdentifier', shortText, text(form, 'nationIdentifier'))),
 		requesterName: optional(limit('requesterName', shortText, text(form, 'requesterName'))),
@@ -177,7 +181,7 @@ export async function readRequestForm(form: FormData): Promise<FormResult> {
 		writingForGovernment: writingFor === 'yes',
 		contact,
 		sharedWithTeam: text(form, 'shareWithTeam') === 'yes' && isTeamReportKind(kind) && text(form, 'nationIdentifier') !== '',
-		details: optional(details),
+		details: optional(kind === 'replace-name' ? `Replace a name with initials. ${details}` : details),
 		creditPreference: null,
 		publicationPermission: null,
 		missingNationOfficialName: null,

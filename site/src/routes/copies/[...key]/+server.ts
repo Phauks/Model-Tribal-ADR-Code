@@ -33,6 +33,8 @@ export const GET: RequestHandler = async ({ params, request, setHeaders }) => {
 	}
 	const bucket = environment.sourceDocuments;
 	if (!bucket) {
+		// A redacted opinion has no address to send a reader to: its original still has the names in it.
+		if (!copy.links[0]) error(503, 'This copy is not available right now.');
 		return new Response(null, { status: 302, headers: { Location: copy.links[0], 'Cache-Control': 'no-store' } });
 	}
 	const response = await servePublicCopy(request, copy, bucket);

@@ -115,7 +115,7 @@ nations_in_case:
   checked: '2026-11-24'
   named: []
 review:
-  status: unverified
+  status: verified
   by: scripts/caselaw/supreme_court_native_cases.py
   date: '2026-11-24'
   checks:
@@ -135,8 +135,8 @@ review:
     result: agree
     detail: 'Printed and Database: 1943-06-14'
   - check: opinions
-    result: settled
-    detail: 'Report: majority Black p. 599, dissent in part Murphy p. 612; Database writers: Black, Douglas, Murphy. Read from the scan by an AI reader (record right): p. 599: MR. JUSTICE BLACK delivered the opinion of the Court. p. 612: MR. JUSTICE MURPHY, dissenting in part: I dissent because the opinion of the Court rejects a century and a half of history. (The p. 612 line ''MR. JUSTICE DOUGLAS:'' has no opinion text under it, so no Douglas opinion is shown.)'
+    result: confirmed
+    detail: 'Report: majority Black p. 599, dissent in part Murphy p. 612; Database writers: Black, Douglas, Murphy. Read from the scan by an AI reader (record right): p. 599: MR. JUSTICE BLACK delivered the opinion of the Court. p. 612: MR. JUSTICE MURPHY, dissenting in part: I dissent because the opinion of the Court rejects a century and a half of history. (The p. 612 line ''MR. JUSTICE DOUGLAS:'' has no opinion text under it, so no Douglas opinion is shown.). Confirmed: The report prints p. 599: "MR. JUSTICE BLACK delivered the opinion of the Court"; p. 612: "MR. JUSTICE MURPHY, dissenting in part: I dissent because the opinion of the Court rejects a century and a half of history"'
   - check: bench
     result: agree
     detail: No Oyez votes; each opinion writer in the report sits on the Database's bench on the side the opinion takes

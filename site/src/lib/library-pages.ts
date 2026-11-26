@@ -30,6 +30,11 @@ export const libraryPages: LibraryPage[] = [
 		description: 'Native people in the cases on this site and leaders in nations’ histories, each fact with its source.'
 	},
 	{
+		label: 'Statistics',
+		link: '/stats',
+		description: 'How many nations, laws, treaties, executive orders, cases, people and other records the site holds, each opening the list of what it counts.'
+	},
+	{
 		label: 'Back matter',
 		link: '/back-matter',
 		description: 'Pages that close the book and help readers find their way through it, such as the index of cases by topic.'

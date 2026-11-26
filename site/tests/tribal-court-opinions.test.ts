@@ -1,7 +1,7 @@
 import { readFileSync } from 'node:fs';
 import path from 'node:path';
 import { describe, expect, it } from 'vitest';
-import { publicCopies, repositoryRoot } from '#lib/server/content.ts';
+import { publicCopies, redactedOpinionKeys, repositoryRoot } from '#lib/server/content.ts';
 import { nationsWithOpinions, opinionsOf, tribalCourtOpinions } from '#lib/server/tribal-court-opinions.ts';
 
 describe('tribal court opinions (decision record 0047)', () => {
@@ -38,11 +38,24 @@ describe('tribal court opinions (decision record 0047)', () => {
 		const held = Object.entries(overrides)
 			.filter(([key, override]) => key.startsWith('caselaw-access-project/') && override.redistribution === 'no')
 			.map(([key]) => key);
-		expect(held.length).toBeGreaterThan(0);
+		// Holds come and go (the privacy holds were lifted once each opinion was redacted).
 		const listed = new Set(opinions.map((opinion) => opinion.key));
 		for (const key of held) {
 			expect(served.has(key)).toBe(false);
 			expect(listed.has(key)).toBe(false);
+		}
+	});
+
+	it('never links a redacted opinion to its original, which still has the names in it', () => {
+		const redacted = redactedOpinionKeys();
+		const copies = publicCopies().filter((copy) => redacted.has(copy.key));
+		expect(copies.length).toBe(redacted.size);
+		for (const copy of copies) {
+			expect(copy.namesReplaced).toBe(true);
+			expect(copy.links).toEqual([]);
+		}
+		for (const opinion of opinions.filter((item) => redacted.has(item.key))) {
+			expect(opinion.namesReplaced).toBe(true);
 		}
 	});
 });

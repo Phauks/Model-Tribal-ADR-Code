@@ -116,7 +116,7 @@ nations_in_case:
   - named_as: Chickasaw Nation
     reason: More than one of today's nations shares this name (chaloklowa-chickasaw-indian-people, georgia-band-of-chickasaw-indians, the-chickasaw-nation); which the case concerns has not been checked.
 review:
-  status: unverified
+  status: verified
   by: scripts/caselaw/supreme_court_native_cases.py
   date: '2026-11-24'
   checks:
@@ -124,8 +124,8 @@ review:
     result: agree
     detail: Caselaw Access Project 193 U.S. 115 "United States v. Choctaw Nation"; Database 193 U.S. 115 "UNITED STATES v. THE CHOCTAW NATION AND THE CHICKASAW NATION"
   - check: scan
-    result: differs
-    detail: Scan has 12 pages; the report runs 115 to 127
+    result: confirmed
+    detail: 'Scan has 12 pages; the report runs 115 to 127. Confirmed: the scan''s pages are the report''s pp. 115-126 (12 of 12 pages show their page number or running head); p. 127 is also the first page of Delaware Indians v. Cherokee Nation, and is in that case''s scan'
   - check: caption
     result: agree
     detail: Caption found in the scan's text at 1.00

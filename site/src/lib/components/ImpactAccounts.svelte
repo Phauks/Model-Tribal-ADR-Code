@@ -7,15 +7,14 @@
 	Left out when no account names the page's law.
 -->
 <script lang="ts">
-	import CountBadge from './CountBadge.svelte';
+	import Collapsible from './Collapsible.svelte';
 	import type { AccountEntry } from '#lib/server/impact-accounts.ts';
 
 	let { accounts }: { accounts: AccountEntry[] } = $props();
 </script>
 
 {#if accounts.length > 0}
-	<section aria-labelledby="accounts-of-its-impact">
-		<h2 id="accounts-of-its-impact">Accounts of its impact <CountBadge count={accounts.length} /></h2>
+	<Collapsible heading="Accounts of its impact" identifier="accounts-of-its-impact" count={accounts.length}>
 		<ul class="impact-accounts">
 			{#each accounts as account (account.id)}
 				<li>
@@ -35,7 +34,7 @@
 				</li>
 			{/each}
 		</ul>
-	</section>
+	</Collapsible>
 {/if}
 
 <style>

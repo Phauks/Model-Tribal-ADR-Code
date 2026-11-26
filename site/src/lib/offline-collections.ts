@@ -8,7 +8,7 @@
 
 import type { DocumentSet, DocumentsStatus } from './offline-documents.ts';
 
-export type CollectionIdentifier = 'nations' | 'stories' | 'glossary' | 'other';
+export type CollectionIdentifier = 'nations' | 'cases' | 'stories' | 'glossary' | 'other';
 
 export interface Collection {
 	id: CollectionIdentifier;
@@ -22,12 +22,13 @@ export const collections: Collection[] = [
 		label: 'Nation profiles',
 		hint: 'A page for each nation, the list of nations, the drawn maps, the tables, the charts and Find recourse'
 	},
+	{ id: 'cases', label: 'Cases and biographies', hint: 'Each court case, each Supreme Court case and each biography' },
 	{ id: 'stories', label: 'Stories', hint: 'Each story in full, with its credit and source' },
 	{ id: 'glossary', label: 'Glossary', hint: 'Every glossary entry' },
 	{
 		id: 'other',
 		label: 'Other pages',
-		hint: 'The home page, changelog, downloads, help and about pages'
+		hint: 'Every page not listed above, such as the home page, help, forms, the changelog and the about pages'
 	}
 ];
 
@@ -41,10 +42,18 @@ function under(path: string, section: string): boolean {
 	return path === section || path.startsWith(`${section}/`);
 }
 
+/**
+ * The sections in "Cases and biographies". They were once part of "Other pages", which grew from a few dozen pages to
+ * nearly 2,000 when they were added, so a reader who had kept "Other pages" was sent all of them (Nov. 24, 2026). A large
+ * new section gets a collection of its own here rather than falling into "Other pages".
+ */
+const casesSections = ['/cases', '/supreme-court', '/biographies'];
+
 /** Which collection a page or one of its data files belongs to. */
 export function collectionOf(path: string): CollectionIdentifier {
 	const page = pageOf(path);
 	if (under(page, '/nations')) return 'nations';
+	if (casesSections.some((section) => under(page, section))) return 'cases';
 	if (under(page, '/stories')) return 'stories';
 	if (under(page, '/glossary')) return 'glossary';
 	return 'other';

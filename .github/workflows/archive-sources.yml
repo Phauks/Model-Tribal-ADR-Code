@@ -134,11 +134,25 @@ jobs:
         with:
           python-version: "3.12"
       - run: pip install -r scripts/requirements.txt
+      - name: Take the captures the Wayback Worker made
+        # The Worker (site/wayback, site/WAYBACK.md) saves links signed in with
+        # the project's archive.org keys, which live only in Cloudflare. Its
+        # list of captures is public and read-only. While it is running, this
+        # job only looks up existing copies and leaves the saving to it.
+        run: |
+          worker=https://model-tribal-adr-code-wayback.trevordgoldsmith.workers.dev
+          if curl -sf --max-time 60 "$worker/captures.json" -o worker-captures.json; then
+            echo "SAVE_OPTION=" >> "$GITHUB_ENV"
+          else
+            echo '{"captures": []}' > worker-captures.json
+            echo "SAVE_OPTION=--save" >> "$GITHUB_ENV"
+          fi
+          python3 scripts/captures/wayback_queue.py --report worker-captures.json worker-report.json
       - name: Capture older sources
         env:
           LIMIT: ${{ inputs.limit || '2000' }}
           KEYS: ${{ inputs.keys }}
-        run: python3 scripts/find_archived_copies.py --save --reuse-days 365 --state archive-state.json --limit "$LIMIT" --minutes 90 --report archive-report.json $KEYS
+        run: python3 scripts/find_archived_copies.py $SAVE_OPTION --reuse-days 365 --state archive-state.json --limit "$LIMIT" --minutes 90 --report archive-report.json $KEYS
       - name: Keep the record of lookups and saves for the next run
         if: always()
         uses: actions/cache/save@v4
@@ -146,7 +160,9 @@ jobs:
           path: archive-state.json
           key: archive-state-${{ github.run_id }}
       - name: Write the captures into the records
-        run: python3 scripts/apply_archive_report.py archive-report.json
+        run: |
+          python3 scripts/apply_archive_report.py archive-report.json worker-report.json
+          python3 scripts/captures/wayback_queue.py --write
       - name: Check the records
         run: |
           python3 scripts/check_text.py
@@ -156,9 +172,9 @@ jobs:
         env:
           GH_TOKEN: ${{ github.token }}
         run: |
-          if git diff --quiet -- content/sources; then echo "No new captures."; exit 0; fi
+          if git diff --quiet -- content/sources research/wayback-queue.tsv; then echo "No new captures."; exit 0; fi
           count=$(git diff --name-only -- content/sources | wc -l)
-          git add content/sources
+          git add content/sources research/wayback-queue.tsv
           git commit -m "chore(content): add Wayback captures for $count source records" \
             -m "Written by the archive workflow's catch-up job (scripts/apply_archive_report.py) from its archive report."
           git fetch origin main

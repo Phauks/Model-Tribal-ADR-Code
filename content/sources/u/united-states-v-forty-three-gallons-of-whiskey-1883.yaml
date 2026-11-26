@@ -104,7 +104,7 @@ nations_in_case:
   checked: '2026-11-24'
   named: []
 review:
-  status: unverified
+  status: verified
   by: scripts/caselaw/supreme_court_native_cases.py
   date: '2026-11-24'
   checks:
@@ -115,8 +115,8 @@ review:
     result: agree
     detail: Scan has 8 pages; the report runs 491 to 498
   - check: caption
-    result: settled
-    detail: 'Caption found in the scan''s text at 0.83. Read from the scan by an AI reader (record right): p. 491: "UNITED STATES v. FORTY-THREE GALLONS OF WHISKEY" (the title block reads UNITED / STATES v. FORTY-THREE / GALLONS / OF / WHISKEY; the running head abbreviates it to "FORTY-THREE GALS. WHISKEY").'
+    result: confirmed
+    detail: 'Caption found in the scan''s text at 0.83. Read from the scan by an AI reader (record right): p. 491: "UNITED STATES v. FORTY-THREE GALLONS OF WHISKEY" (the title block reads UNITED / STATES v. FORTY-THREE / GALLONS / OF / WHISKEY; the running head abbreviates it to "FORTY-THREE GALS. WHISKEY").. Confirmed: the report prints the caption "UNITED STATES v. FORTY-THREE GALLONS OF WHISKEY" on p. 491 (fresh OCR, 1.00)'
   - check: decided
     result: agree
     detail: Caselaw Access Project 1883-05-07; Database 1883-05-07

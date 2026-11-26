@@ -105,7 +105,7 @@ nations_in_case:
   checked: '2026-11-24'
   named: []
 review:
-  status: unverified
+  status: verified
   by: scripts/caselaw/supreme_court_native_cases.py
   date: '2026-11-24'
   checks:
@@ -116,8 +116,8 @@ review:
     result: agree
     detail: Scan has 12 pages; the report runs 358 to 369
   - check: caption
-    result: settled
-    detail: 'Caption found in the scan''s text at 0.89. Read from the scan by an AI reader (corrected): p.358: SUNDRY GOODS, WARES AND MERCHANDISES, THE AMERICA[N FUR] COMPANY, CLAIMANTS, PLAINTIFFS IN ERROR -vs. THE UNITED STATES, DEFENDANTS IN ERROR (OCR drops the N FUR). p.359 running head: [American Fr C6npiny ''s: The United Staes.] gives American Fur Company.'
+    result: confirmed
+    detail: 'Caption found in the scan''s text at 0.89. Read from the scan by an AI reader (corrected): p.358: SUNDRY GOODS, WARES AND MERCHANDISES, THE AMERICA[N FUR] COMPANY, CLAIMANTS, PLAINTIFFS IN ERROR -vs. THE UNITED STATES, DEFENDANTS IN ERROR (OCR drops the N FUR). p.359 running head: [American Fr C6npiny ''s: The United Staes.] gives American Fur Company.. Confirmed: the report prints (read from the page images) p. 358: "SUNDRY GOODS, WARES AND MERCHANDISES, THE AMERICAN FUR COMPANY, CLAIMANTS, PLAINTIFFS IN ERROR, vs. THE UNITED STATES, DEFENDANTS IN ERROR."'
   - check: decided
     result: agree
     detail: Supreme Court Library's table (from the Court's minutes) Mar. 11, 1829; Database 1829-03-11

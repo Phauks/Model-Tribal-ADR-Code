@@ -110,7 +110,7 @@ nations_in_case:
   checked: '2026-11-24'
   named: []
 review:
-  status: unverified
+  status: verified
   by: scripts/caselaw/supreme_court_native_cases.py
   date: '2026-11-24'
   checks:
@@ -118,8 +118,8 @@ review:
     result: agree
     detail: Caselaw Access Project 247 U.S. 175 "United States v. Ferguson"; Database 247 U.S. 175 "UNITED STATES v. FERGUSON et al."
   - check: scan
-    result: differs
-    detail: Scan has 4 pages; the report runs 175 to 179
+    result: confirmed
+    detail: 'Scan has 4 pages; the report runs 175 to 179. Confirmed: the scan''s pages are the report''s pp. 175-178 (4 of 4 pages show their page number or running head); p. 179 is also the first page of Doyle v. Mitchell Bros., and is in that case''s scan'
   - check: caption
     result: agree
     detail: Caption found in the scan's text at 0.97

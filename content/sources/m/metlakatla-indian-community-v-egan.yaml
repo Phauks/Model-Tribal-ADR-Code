@@ -29,6 +29,10 @@ opinions:
   - kind: majority
     justice: Felix Frankfurter
     page: 556
+  - kind: dissent
+    justice: Earl Warren
+    page: 563
+    note: A joint statement of Chief Justice Warren and Justices Black and Douglas at the end of the Court's opinion.
 original_link: https://www.loc.gov/item/usrep363555/
 retrieved: '2026-11-24'
 history:
@@ -121,7 +125,7 @@ nations_in_case:
     role: party
     note: Matched by the script to the nation record of the same name; not yet checked.
 review:
-  status: unverified
+  status: verified
   by: scripts/caselaw/supreme_court_native_cases.py
   date: '2026-11-24'
   checks:
@@ -141,8 +145,8 @@ review:
     result: agree
     detail: 'Printed and Database: 1960-06-20'
   - check: opinions
-    result: settled
-    detail: 'Report: majority Frankfurter p. 556; Database writers: Black, Douglas, Frankfurter, Warren. Read from the scan by an AI reader (record right): p. 556: MR. JUSTICE FRANKFURTER delivered the opinion of the Court. p. 563: ''THE CHIEF JUSTICE, MR. JUSTICE BLACK and MR. JUSTICE DOUGLAS dissent from remitting the parties to'' -- a bare statement of dissent with no opinion text, so it is not listed as an opinion.'
+    result: confirmed
+    detail: 'Report: majority Frankfurter p. 556; Database writers: Black, Douglas, Frankfurter, Warren. Read from the scan by an AI reader (record right): p. 556: MR. JUSTICE FRANKFURTER delivered the opinion of the Court. p. 563: ''THE CHIEF JUSTICE, MR. JUSTICE BLACK and MR. JUSTICE DOUGLAS dissent from remitting the parties to'' -- a bare statement of dissent with no opinion text, so it is not listed as an opinion.. Confirmed: the report prints (read from the page images) p. 556: "MR. JUSTICE FRANKFURTER delivered the opinion of the Court."; p. 563: "THE CHIEF JUSTICE, MR. JUSTICE BLACK and MR. JUSTICE DOUGLAS dissent from remitting the parties to the Alaska Supreme Court, as they are of the view that the controlling questions are federal ones"'
   - check: bench
     result: agree
     detail: Oyez and the Database give the same Justices and votes

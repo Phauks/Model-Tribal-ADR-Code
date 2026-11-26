@@ -100,7 +100,7 @@ nations_in_case:
   checked: '2026-11-24'
   named: []
 review:
-  status: unverified
+  status: verified
   by: scripts/caselaw/supreme_court_native_cases.py
   date: '2026-11-24'
   checks:
@@ -117,8 +117,8 @@ review:
     result: agree
     detail: Supreme Court Library's table (from the Court's minutes, docket) Mar. 4, 1816*; Database 1816-03-04
   - check: opinions
-    result: settled
-    detail: 'Report: majority Todd p. 121; Database writers: Todd; scan pages [(121, 121)]. Read from the scan by an AI reader (record right): p.121: TODD, J., delivered the opinion of the court, and'
+    result: confirmed
+    detail: 'Report: majority Todd p. 121; Database writers: Todd; scan pages [(121, 121)]. Read from the scan by an AI reader (record right): p.121: TODD, J., delivered the opinion of the court, and. Confirmed: The report prints p. 121: "TODD, J., delivered the opinion of the court, and) Broiwder"'
   - check: bench
     result: agree
     detail: No Oyez votes; each opinion writer in the report sits on the Database's bench on the side the opinion takes
