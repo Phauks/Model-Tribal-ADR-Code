@@ -1,16 +1,32 @@
 key: the-one-who-carries-the-voice
 name: the One who carries the Voice
-lead: Signed the Treaty with the Chippewa, 1854, for the The Mississippi Bands as 2d chief.
+lead: Signed three treaties with the United States for the The Mississippi Bands, 1854–1863, listed in one as 2d chief.
 living: false
 names:
 - name: My-yaw-ge-way-we-dunk
   note: as the Treaty with the Chippewa, 1854 prints it
   source: treaty-with-the-chippewa-1854
   where: 10 Stat. 1114
+- name: Mah-yah-ge-way-we-durg
+  note: as the Treaty with the Chippewa, 1855 prints it
+  source: treaty-with-the-chippewa-1855
+  where: 10 Stat. 1170
+- name: Ma-ya-je-way-we-dung
+  note: as the Treaty with the Chippewa of the Mississippi and the Pillager and Lake Winnibigoshish Bands, 1863 prints it
+  source: treaty-with-the-chippewa-of-the-mississippi-and-the-pillager-and-lake-winnibigoshish-bands-1863
+  where: 12 Stat. 1252
 cases: []
 events:
 - when: Sept. 30, 1854
   text: Signed the Treaty with the Chippewa, 1854, for the The Mississippi Bands, listed as 2d chief.
   source: treaty-with-the-chippewa-1854
   where: 10 Stat. 1114
-checked: '2026-11-24'
+- when: Feb. 22, 1855
+  text: Signed the Treaty with the Chippewa, 1855, for the Mississippi bands.
+  source: treaty-with-the-chippewa-1855
+  where: 10 Stat. 1170
+- when: Mar. 11, 1863
+  text: Signed the Treaty with the Chippewa of the Mississippi and the Pillager and Lake Winnibigoshish Bands, 1863, for the Po-ke-ga-ma Band.
+  source: treaty-with-the-chippewa-of-the-mississippi-and-the-pillager-and-lake-winnibigoshish-bands-1863
+  where: 12 Stat. 1252
+checked: '2026-11-26'

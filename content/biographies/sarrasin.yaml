@@ -1,7 +1,12 @@
 key: sarrasin
 name: Sarrasin
-lead: Signed the Treaty with the Quapaw, 1833, for the Quapaw Indians as chief.
+lead: Signed two treaties with the United States for the Quapaw Nation, 1824–1833, listed in one as chief.
 living: false
+names:
+- name: Sarazen
+  note: as the Treaty with the Quapaw, 1824 prints it
+  source: treaty-with-the-quapaw-1824
+  where: 7 Stat. 234
 nations:
 - nation: quapaw-nation
   named_as: Quapaw Indians
@@ -9,8 +14,12 @@ nations:
   where: 7 Stat. 426
 cases: []
 events:
+- when: Nov. 15, 1824
+  text: Signed the Treaty with the Quapaw, 1824, for the Quapaw Nation.
+  source: treaty-with-the-quapaw-1824
+  where: 7 Stat. 234
 - when: May 13, 1833
   text: Signed the Treaty with the Quapaw, 1833, for the Quapaw Indians, listed as chief.
   source: treaty-with-the-quapaw-1833
   where: 7 Stat. 426
-checked: '2026-11-24'
+checked: '2026-11-26'

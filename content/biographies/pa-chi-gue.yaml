@@ -1,7 +1,12 @@
 key: pa-chi-gue
 name: Pa chi gue
-lead: Signed the Treaty with the Osage, 1808, for the Great and Little Osage nation of Indians as little chief.
+lead: Signed two treaties with the United States for the Great and Little Osage nation of Indians, 1808–1818, listed in one as little chief.
 living: false
+names:
+- name: Pachique
+  note: as the Treaty with the Osage, 1818 prints it
+  source: treaty-with-the-osage-1818
+  where: 7 Stat. 184
 nations:
 - nation: the-osage-nation
   named_as: Great and Little Osage nation of Indians
@@ -13,4 +18,8 @@ events:
   text: Signed the Treaty with the Osage, 1808, for the Great and Little Osage nation of Indians, listed as little chief.
   source: treaty-with-the-osage-1808
   where: 7 Stat. 111
-checked: '2026-11-24'
+- when: Sept. 25, 1818
+  text: Signed the Treaty with the Osage, 1818, for the Great and Little Osage nation.
+  source: treaty-with-the-osage-1818
+  where: 7 Stat. 184
+checked: '2026-11-26'

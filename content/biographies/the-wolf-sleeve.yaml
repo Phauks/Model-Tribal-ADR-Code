@@ -1,20 +1,28 @@
 key: the-wolf-sleeve
 name: The Wolf Sleeve
-lead: Signed two treaties with the United States for the Apaches, 1865, listed in one as chief.
+lead: Signed three treaties with the United States for the Apaches, 1865–1867, listed in one as chief.
 living: false
 names:
 - name: Mah-vip-pah
   note: as the Treaty with the Apache, Cheyenne, and Arapaho, 1865 prints it
   source: treaty-with-the-apache-cheyenne-and-arapaho-1865
   where: 14 Stat. 714
+- name: Maii-vip-pah
+  note: as the Treaty with the Kiowa, Comanche, and Apache, 1867 prints it
+  source: treaty-with-the-kiowa-comanche-and-apache-1867
+  where: 15 Stat. 591
 cases: []
 events:
-- when: Oct. 17, 1865
-  text: Signed the Treaty with the Apache, Cheyenne, and Arapaho, 1865, for the Apaches, listed as chief.
-  source: treaty-with-the-apache-cheyenne-and-arapaho-1865
-  where: 14 Stat. 714
 - when: Oct. 14, 1865
   text: Signed the Treaty with the Cheyenne and Arapaho, 1865, for the Apache tribe of Indians, listed as chief.
   source: treaty-with-the-cheyenne-and-arapaho-1865
   where: 14 Stat. 710
-checked: '2026-11-24'
+- when: Oct. 17, 1865
+  text: Signed the Treaty with the Apache, Cheyenne, and Arapaho, 1865, for the Apaches, listed as chief.
+  source: treaty-with-the-apache-cheyenne-and-arapaho-1865
+  where: 14 Stat. 714
+- when: Oct. 21, 1867
+  text: Signed the Treaty with the Kiowa, Comanche, and Apache, 1867, for the Apaches.
+  source: treaty-with-the-kiowa-comanche-and-apache-1867
+  where: 15 Stat. 591
+checked: '2026-11-26'

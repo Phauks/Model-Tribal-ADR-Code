@@ -1,7 +1,12 @@
 key: ossmeet
 name: Ossmeet
-lead: Signed two treaties with the United States for the Putawatimies, 1809.
+lead: Signed three treaties with the United States for the Putawatimies, 1809–1821.
 living: false
+names:
+- name: Os-see-meet
+  note: as the Treaty with the Ottawa, etc., 1821 prints it
+  source: treaty-with-the-ottawa-etc-1821
+  where: 7 Stat. 221
 cases: []
 events:
 - when: Sept. 30, 1809
@@ -12,4 +17,8 @@ events:
   text: Signed the Treaty with the Delawares, etc., 1809, for the Putawatimies.
   source: treaty-with-the-delawares-etc-1809
   where: 7 Stat. 115
-checked: '2026-11-24'
+- when: Aug. 29, 1821
+  text: Signed the Treaty with the Ottawa, etc., 1821, for the Potawatamies.
+  source: treaty-with-the-ottawa-etc-1821
+  where: 7 Stat. 221
+checked: '2026-11-26'

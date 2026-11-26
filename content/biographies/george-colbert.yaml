@@ -1,7 +1,12 @@
 key: george-colbert
 name: George Colbert
-lead: Signed five treaties with the United States for the Chickasaw nation, 1801–1834.
+lead: Signed six treaties with the United States for the Chickasaw nation, 1801–1834.
 living: false
+names:
+- name: Col. George Colbert
+  note: as the Treaty with the Chickasaw, 1818 prints it
+  source: treaty-with-the-chickasaw-1818
+  where: 7 Stat. 195
 nations:
 - nation: the-chickasaw-nation
   named_as: Chickasaw nation
@@ -17,6 +22,10 @@ events:
   text: Signed the Treaty with the Chickasaw, 1805, for the Chickasaw nation of Indians.
   source: treaty-with-the-chickasaw-1805
   where: 7 Stat. 90
+- when: Oct. 19, 1818
+  text: Signed the Treaty with the Chickasaw, 1818, for the Chickasaw nation.
+  source: treaty-with-the-chickasaw-1818
+  where: 7 Stat. 195
 - when: Oct. 20, 1832
   text: Signed the Treaty with the Chickasaw, 1832, for the Chickasaw nation.
   source: treaty-with-the-chickasaw-1832-oct-20
@@ -29,4 +38,4 @@ events:
   text: Signed the Treaty with the Chickasaw, 1834, for the Chickasaw nation of Indians.
   source: treaty-with-the-chickasaw-1834
   where: 7 Stat. 456
-checked: '2026-11-24'
+checked: '2026-11-26'

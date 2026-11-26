@@ -1,7 +1,12 @@
 key: pe-tway-we-tum
 name: Pe-tway-we-tum
-lead: Signed the Treaty with the Chippewa of Saginaw, etc., 1855, for the Saginaw Bands as headman.
+lead: Signed two treaties with the United States for the Saganaws, 1837–1855, listed in one as headman.
 living: false
+names:
+- name: Peteway, Weetum
+  note: as the Treaty with the Chippewa, 1837 prints it
+  source: treaty-with-the-chippewa-1837-jan-14
+  where: 7 Stat. 532
 nations:
 - nation: saginaw-chippewa-indian-tribe-of-michigan
   named_as: Saginaw Bands
@@ -9,8 +14,12 @@ nations:
   where: 11 Stat. 635
 cases: []
 events:
+- when: Jan. 14, 1837
+  text: Signed the Treaty with the Chippewa, 1837, for the Saganaws.
+  source: treaty-with-the-chippewa-1837-jan-14
+  where: 7 Stat. 532
 - when: Aug. 2, 1855
   text: Signed the Treaty with the Chippewa of Saginaw, etc., 1855, for the Saginaw Bands, listed as headman.
   source: treaty-with-the-chippewa-of-saginaw-etc-1855
   where: 11 Stat. 635
-checked: '2026-11-24'
+checked: '2026-11-26'

@@ -58,6 +58,11 @@ def display(name):
     return name
 
 
+def untitled(name):
+    """A name without a leading military title, when a name is left after it ("Capt. Daniel M'Curtain")."""
+    return re.sub(r'^(capt\.?|captain|maj\.?|major|col\.?|gen\.?)\s+(?=\S+\s+\S)', '', name, flags=re.I)
+
+
 def when(date):
     y, m, d = (int(x) for x in date.split('-'))
     return f"{MONTHS[m - 1]} {d}, {y}"
@@ -128,11 +133,6 @@ for field in ('core', 'phon'):
                 if compatible(a, b):
                     parent[find(a['i'])] = find(b['i'])
 
-groups = collections.defaultdict(list)
-for m in mentions:
-    groups[find(m['i'])].append(m)
-people = [g for g in groups.values() if len({m['key'] for m in g}) >= 2 and not any(m['i'] in page_of for m in g) and not all(m['core'] in COMMON for m in g)]
-
 # Review list: joins this script does not make, for a person to decide.
 review = []
 group_of = {m['i']: find(m['i']) for m in mentions}
@@ -162,32 +162,53 @@ def describe(m):
     return [display(m['printed']), m['english'] or '', clean_nation(m['nation']), t['title'], t['date_signed'][:4], page_of.get(m['i'], '')]
 
 
+def ident(m):
+    return f"{m['key']}|{m['nation']}|{m['printed']}"
+
+
+# Decisions on the review list (Trevor, Nov. 26, 2026: "use best effort for treaty signers"): each pair was read by
+# two AI readers; only a pair both called the same person, at least one with high confidence, is "same".
+decision_file = f"{repo}/research/reviews/2026-11-26-treaty-signer-match-decisions.csv"
+decisions = {}
+if os.path.exists(decision_file):
+    for row in csv.DictReader(open(decision_file)):
+        decisions[(row['a'], row['b'])] = row['decision']
+for item in review:
+    item['decision'] = decisions.get((ident(item['a']), ident(item['b'])), '')
+
 os.makedirs(f"{repo}/research/reviews", exist_ok=True)
 with open(f"{repo}/research/reviews/2026-11-26-treaty-signer-matches.csv", 'w', newline='') as handle:
     out = csv.writer(handle, lineterminator='\n')
-    out.writerow(['rule', 'similarity', 'a_name', 'a_english', 'a_signed_for', 'a_treaty', 'a_year', 'a_page', 'b_name', 'b_english', 'b_signed_for', 'b_treaty', 'b_year', 'b_page', 'decision'])
+    out.writerow(['rule', 'similarity', 'a_name', 'a_english', 'a_signed_for', 'a_treaty', 'a_year', 'a_page', 'b_name', 'b_english', 'b_signed_for', 'b_treaty', 'b_year', 'b_page', 'decision', 'a', 'b'])
     for item in sorted(review, key=lambda r: (r['rule'], -r['similarity'], display(r['a']['printed']))):
-        out.writerow([item['rule'], item['similarity'], *describe(item['a']), *describe(item['b']), ''])
+        out.writerow([item['rule'], item['similarity'], *describe(item['a']), *describe(item['b']), item['decision'], ident(item['a']), ident(item['b'])])
 
-written = 0
-for group in sorted(people, key=lambda g: min(m['year'] for m in g)):
-    group.sort(key=lambda m: (treaties[m['key']]['date_signed'], m['i']))
-    # An English rendering names the page unless it only names a nation ("a Chippeway").
-    english = collections.Counter(display(m['english']) for m in group if m['english'] and not fams(m['english']))
-    printed = collections.Counter(display(m['printed']) for m in group)
-    name = english.most_common(1)[0][0] if english else printed.most_common(1)[0][0]
-    name = name[:1].upper() + name[1:]
-    first = group[0]
-    tribe = (tokens(first['nation']) or tokens(treaties[first['key']]['title']) or ['nation'])[0]
-    key = slug(name)
-    for candidate in (key, f"{key}-{tribe}", f"{key}-{tribe}-{first['year']}"):
-        if candidate not in taken:
-            key = candidate
-            break
+# Join the pairs decided "same", but undo any join that makes one person span more than 40 years or 12 treaties.
+strict = {m['i']: find(m['i']) for m in mentions}
+for item in review:
+    if item['decision'] == 'same':
+        parent[find(item['a']['i'])] = find(item['b']['i'])
+groups = collections.defaultdict(list)
+for m in mentions:
+    groups[find(m['i'])].append(m)
+final = []
+for group in groups.values():
+    years = [m['year'] for m in group]
+    if max(years) - min(years) > 40 or len({m['key'] for m in group}) > 12:
+        parts = collections.defaultdict(list)
+        for m in group:
+            parts[strict[m['i']]].append(m)
+        final.extend(parts.values())
     else:
-        continue
-    taken.add(key)
-    seen, names, nations, events = set(), [], [], []
+        final.append(group)
+people = [g for g in final if len({m['key'] for m in g}) >= 2 and not any(m['i'] in page_of for m in g) and not all(m['core'] in COMMON for m in g)]
+# A person who already has a page and is found signing more treaties: those signings are added to the page.
+extend = [(next(page_of[m['i']] for m in g if m['i'] in page_of), g) for g in final if len({page_of[m['i']] for m in g if m['i'] in page_of}) == 1 and any(m['i'] not in page_of for m in g)]
+several_pages = [g for g in final if len({page_of[m['i']] for m in g if m['i'] in page_of}) > 1]
+
+def signings(group, name, known=()):
+    """The other names, nations and signing events of a person's signer lines, leaving out treaties in known."""
+    seen, names, nations, events = set(known), [], [], []
     for m in group:
         t = treaties[m['key']]
         source = keymap[m['key']]
@@ -204,12 +225,44 @@ for group in sorted(people, key=lambda g: min(m['year'] for m in g)):
                 nations.append({'nation': nation_id, 'named_as': nation, 'source': source, 'where': where})
         label = f", listed as {m['label']}" if m.get('label') else ''
         events.append({'when': when(t['date_signed']), 'text': f"Signed the {t['title']}, for the {nation}{label}.", 'source': source, 'where': where})
+    return names, nations, events
+
+
+written = 0
+for group in sorted(people, key=lambda g: min(m['year'] for m in g)):
+    group.sort(key=lambda m: (treaties[m['key']]['date_signed'], m['i']))
+    # An English rendering names the page unless it only names a nation ("a Chippeway").
+    english = collections.Counter(untitled(display(m['english'])) for m in group if m['english'] and not fams(m['english']))
+    printed = collections.Counter(untitled(display(m['printed'])) for m in group)
+    # The most used spelling, and on a tie one with no comma (a reading slip) and no shortened word ("Wm.").
+    name = max(english or printed, key=lambda n: ((english or printed)[n], ',' not in n, not re.search(r'\b\w+\.', n), len(n)))
+    name = name[:1].upper() + name[1:]
+    first = group[0]
+    # A page of the same name for someone of the same nation family is this person's page (Samuel Garland, Choctaw).
+    if slug(name) in taken and os.path.exists(f"{biography_folder}/{slug(name)}.yaml"):
+        existing = yaml.safe_load(open(f"{biography_folder}/{slug(name)}.yaml"))
+        family = set().union(*[fams(n.get('named_as', '')) | fams(n['nation']) for n in existing.get('nations', [])] or [set()])
+        if family & set().union(*[fams(m['nation']) for m in group]):
+            extend.append((slug(name), group))
+            continue
+    tribe = (tokens(first['nation']) or tokens(treaties[first['key']]['title']) or ['nation'])[0]
+    key = slug(name)
+    for candidate in (key, f"{key}-{tribe}", f"{key}-{tribe}-{first['year']}"):
+        if candidate not in taken:
+            key = candidate
+            break
+    else:
+        continue
+    taken.add(key)
+    names, nations, events = signings(group, name)
     if len({e['source'] for e in events}) < 2:
         continue
     years = sorted({int(treaties[m['key']]['date_signed'][:4]) for m in group})
     span = f"{years[0]}" if len(years) == 1 else f"{years[0]}–{years[-1]}"
     count = len({e['source'] for e in events})
-    lead = f"Signed {WORDS.get(count, count)} treaties with the United States for the {clean_nation(first['nation']) or ', '.join(treaties[first['key']]['osu_signatory_tags'])}, {span}."
+    # The lead names the first signing's nation as printed when it names a nation, or else the treaty's nations.
+    named = next((clean_nation(m['nation']) for m in group if fams(m['nation'])), None)
+    lead = f"Signed {WORDS.get(count, count)} treaties with the United States for the {named or ', '.join(treaties[first['key']]['osu_signatory_tags'])}, {span}."
     record = {'key': key, 'name': name, 'lead': lead, 'living': False}
     if names:
         record['names'] = names
@@ -221,4 +274,53 @@ for group in sorted(people, key=lambda g: min(m['year'] for m in g)):
     with open(f"{biography_folder}/{key}.yaml", 'w') as handle:
         yaml.safe_dump(record, handle, sort_keys=False, allow_unicode=True, width=10000)
     written += 1
-print('repeat signers with no page', len(people), 'written', written, 'review rows', len(review))
+
+MONTH_NUMBER = {m: n for n, m in enumerate(MONTHS, 1)}
+
+
+def day(text):
+    """(year, month, day) of a date as the records write it ("Sept. 20, 1828", "June 1855", "1889"); 0 for a part not given."""
+    match = re.match(r'^(?:([A-Z][a-z]+\.?) (?:(\d{1,2}), )?)?(\d{4})$', str(text))
+    return (int(match.group(3)), MONTH_NUMBER.get(match.group(1), 0), int(match.group(2) or 0)) if match else None
+
+
+extended = 0
+for key, group in extend:
+    path = f"{biography_folder}/{key}.yaml"
+    record = yaml.safe_load(open(path))
+    known = {e['source'] for e in record.get('events', [])}
+    by_source = {v: k for k, v in keymap.items()}
+    new = sorted((m for m in group if m['i'] not in page_of and keymap[m['key']] not in known), key=lambda m: (treaties[m['key']]['date_signed'], m['i']))
+    if not new:
+        continue
+    names, nations, events = signings(new, record['name'], {by_source.get(source) for source in known})
+    if not events:
+        continue
+    have = {record['name'].lower()} | {n['name'].lower() for n in record.get('names', [])}
+    record.setdefault('names', []).extend(n for n in names if n['name'].lower() not in have)
+    if not record['names']:
+        del record['names']
+    have_nations = {n['nation'] for n in record.get('nations', [])}
+    added_nations = [n for n in nations if n['nation'] not in have_nations]
+    if added_nations:
+        record.setdefault('nations', []).extend(added_nations)
+    record['events'] = record.get('events', []) + events
+    if all(day(e['when']) for e in record['events']):
+        record['events'].sort(key=lambda e: day(e['when']))
+    # A lead written from the treaties alone is written again with the new count.
+    signed = [e for e in record['events'] if e['text'].startswith('Signed the ')]
+    if len(signed) == len(record['events']) and re.match(r'^Signed (the |\w+ treaties with the United States for )', record['lead']):
+        label = re.search(r'(?:, listed in one as | as )([^.,]+)\.$', record['lead'])
+        years = sorted({day(e['when'])[0] for e in signed if day(e['when'])})
+        group_name = re.search(r' for the (.+), \d{4}', record['lead']) or re.search(r', for the (.+?)(?:, listed as .+)?\.$', signed[0]['text'])
+        if years and group_name:
+            span = f"{years[0]}" if len(years) == 1 else f"{years[0]}–{years[-1]}"
+            count = len({e['source'] for e in signed})
+            record['lead'] = f"Signed {WORDS.get(count, count)} treaties with the United States for the {group_name.group(1)}, {span}" + (f", listed in one as {label.group(1)}" if label else '') + '.'
+    record['checked'] = CHECKED
+    order = ['key', 'name', 'lead', 'living', 'names', 'nations', 'cases', 'events']
+    record = {k: record[k] for k in order + [k for k in record if k not in order] if k in record}
+    with open(path, 'w') as handle:
+        yaml.safe_dump(record, handle, sort_keys=False, allow_unicode=True, width=10000)
+    extended += 1
+print('repeat signers with no page', len(people), 'written', written, 'pages given more signings', extended, 'people with two or more pages left as they are', len(several_pages), 'review rows', len(review), 'decided same', sum(1 for r in review if r['decision'] == 'same'))

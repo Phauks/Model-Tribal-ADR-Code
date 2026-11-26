@@ -1,7 +1,16 @@
 key: william-m-gilvery
 name: William M'Gilvery
-lead: Signed two treaties with the United States for the Chickasaw nation, 1818–1832.
+lead: Signed four treaties with the United States for the Chickasaw nation, 1805–1832.
 living: false
+names:
+- name: William McGillivry
+  note: as the Treaty with the Chickasaw, 1805 prints it
+  source: treaty-with-the-chickasaw-1805
+  where: 7 Stat. 90
+- name: William McGilvery
+  note: as the Treaty with the Chickasaw, 1832 prints it
+  source: treaty-with-the-chickasaw-1832-oct-22
+  where: 7 Stat. 390
 nations:
 - nation: the-chickasaw-nation
   named_as: Chickasaw nation
@@ -9,6 +18,10 @@ nations:
   where: 7 Stat. 195
 cases: []
 events:
+- when: July 23, 1805
+  text: Signed the Treaty with the Chickasaw, 1805, for the Chickasaw nation of Indians.
+  source: treaty-with-the-chickasaw-1805
+  where: 7 Stat. 90
 - when: Oct. 19, 1818
   text: Signed the Treaty with the Chickasaw, 1818, for the Chickasaw nation.
   source: treaty-with-the-chickasaw-1818
@@ -17,4 +30,8 @@ events:
   text: Signed the Treaty with the Chickasaw, 1832, for the Chickasaw nation.
   source: treaty-with-the-chickasaw-1832-oct-20
   where: 7 Stat. 387
-checked: '2026-11-24'
+- when: Oct. 22, 1832
+  text: Signed the Treaty with the Chickasaw, 1832, for the Chickasaw nation.
+  source: treaty-with-the-chickasaw-1832-oct-22
+  where: 7 Stat. 390
+checked: '2026-11-26'

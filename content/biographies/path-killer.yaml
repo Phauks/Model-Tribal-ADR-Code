@@ -1,7 +1,12 @@
 key: path-killer
 name: Path Killer
-lead: Signed two treaties with the United States for the Cherokee, 1804–1816.
+lead: Signed three treaties with the United States for the Cherokee, 1804–1816.
 living: false
+names:
+- name: Path-Kille
+  note: as the Treaty with the Cherokee, 1805 prints it
+  source: treaty-with-the-cherokee-1805-oct-25
+  where: 7 Stat. 94
 nations:
 - nation: cherokee-nation
   named_as: Cherokee nation
@@ -13,6 +18,10 @@ events:
   text: Signed the Treaty with the Cherokee, 1804, for the Cherokee.
   source: treaty-with-the-cherokee-1804
   where: 7 Stat. 288
+- when: Oct. 25, 1805
+  text: Signed the Treaty with the Cherokee, 1805, for the Cherokees.
+  source: treaty-with-the-cherokee-1805-oct-25
+  where: 7 Stat. 94
 - when: Sept. 14, 1816
   text: Signed the Treaty with the Cherokee, 1816, for the Cherokee nation.
   source: treaty-with-the-cherokee-1816-sept-14

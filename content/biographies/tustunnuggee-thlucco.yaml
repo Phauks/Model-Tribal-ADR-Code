@@ -1,7 +1,12 @@
 key: tustunnuggee-thlucco
 name: Tustunnuggee Thlucco
-lead: Signed two treaties with the United States for the Creek nation, 1802–1814, listed in one as speaker.
+lead: Signed three treaties with the United States for the Creek nation, 1802–1818, listed in one as speaker.
 living: false
+names:
+- name: Tustunnugee Thlucco
+  note: as the Treaty with the Creeks, 1818 prints it
+  source: treaty-with-the-creeks-1818
+  where: 7 Stat. 172
 nations:
 - nation: the-muscogee-nation
   named_as: Creek nation
@@ -17,4 +22,8 @@ events:
   text: Signed the Treaty with the Creeks, 1814, for the Creek nation, listed as speaker.
   source: treaty-with-the-creeks-1814
   where: 7 Stat. 122
-checked: '2026-11-24'
+- when: Jan. 22, 1818
+  text: Signed the Treaty with the Creeks, 1818, for the Creek nation.
+  source: treaty-with-the-creeks-1818
+  where: 7 Stat. 172
+checked: '2026-11-26'

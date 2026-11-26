@@ -1,6 +1,6 @@
 key: tarrapin
 name: Tarrapin
-lead: Signed two treaties with the United States for the Cherokees, 1785–1791.
+lead: Signed three treaties with the United States for the Cherokees, 1785–1805.
 living: false
 names:
 - name: Tuckasee
@@ -11,6 +11,10 @@ names:
   note: as the Treaty with the Cherokee, 1791 prints it
   source: treaty-with-the-cherokee-1791
   where: 7 Stat. 42
+- name: Tuc, ka, see
+  note: as the Treaty with the Cherokee, 1805 prints it
+  source: treaty-with-the-cherokee-1805-oct-25
+  where: 7 Stat. 94
 nations:
 - nation: cherokee-nation
   named_as: Cherokees
@@ -26,4 +30,8 @@ events:
   text: Signed the Treaty with the Cherokee, 1791, for the Cherokee nation.
   source: treaty-with-the-cherokee-1791
   where: 7 Stat. 42
-checked: '2026-11-24'
+- when: Oct. 25, 1805
+  text: Signed the Treaty with the Cherokee, 1805, for the Cherokees.
+  source: treaty-with-the-cherokee-1805-oct-25
+  where: 7 Stat. 94
+checked: '2026-11-26'

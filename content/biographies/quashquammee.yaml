@@ -1,9 +1,22 @@
 key: quashquammee
 name: Quashquammee
-lead: Signed two treaties with the United States for the Sac, 1816–1822, listed in one as chief.
+lead: Signed four treaties with the United States for the Sac, 1804–1822, listed in one as chief.
 living: false
+names:
+- name: Quashquame
+  note: as the Treaty with the Sauk and Foxes, 1804 prints it
+  source: treaty-with-the-sauk-and-foxes-1804
+  where: 7 Stat. 87
 cases: []
 events:
+- when: Nov. 3, 1804
+  text: Signed the Treaty with the Sauk and Foxes, 1804, for the Sac and Fox tribes.
+  source: treaty-with-the-sauk-and-foxes-1804
+  where: 7 Stat. 87
+- when: Sept. 13, 1815
+  text: Signed the Treaty with the Sauk, 1815, for the Foxes.
+  source: treaty-with-the-sauk-1815
+  where: 7 Stat. 135
 - when: Aug. 24, 1816
   text: Signed the Treaty with the Ottawa, etc., 1816, for the Sac, listed as chief.
   source: treaty-with-the-ottawa-etc-1816
@@ -12,4 +25,4 @@ events:
   text: Signed the Treaty with the Sauk and Foxes, 1822, for the Sac and Fox Tribes.
   source: treaty-with-the-sauk-and-foxes-1822
   where: 7 Stat. 223
-checked: '2026-11-24'
+checked: '2026-11-26'

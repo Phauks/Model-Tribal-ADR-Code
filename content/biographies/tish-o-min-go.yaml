@@ -1,7 +1,12 @@
 key: tish-o-min-go
 name: Tish-o-min-go
-lead: Signed two treaties with the United States for the Chickasaw nation, 1832.
+lead: Signed three treaties with the United States for the Chickasaw nation, 1816–1832.
 living: false
+names:
+- name: Tishshomingo
+  note: as the Treaty with the Chickasaw, 1816 prints it
+  source: treaty-with-the-chickasaw-1816
+  where: 7 Stat. 152
 nations:
 - nation: the-chickasaw-nation
   named_as: Chickasaw nation
@@ -9,6 +14,10 @@ nations:
   where: 7 Stat. 387
 cases: []
 events:
+- when: Sept. 20, 1816
+  text: Signed the Treaty with the Chickasaw, 1816, for the Chickasaw nation.
+  source: treaty-with-the-chickasaw-1816
+  where: 7 Stat. 152
 - when: Oct. 20, 1832
   text: Signed the Treaty with the Chickasaw, 1832, for the Chickasaw nation.
   source: treaty-with-the-chickasaw-1832-oct-20
@@ -17,4 +26,4 @@ events:
   text: Signed the Treaty with the Chickasaw, 1832, for the Chickasaw nation.
   source: treaty-with-the-chickasaw-1832-oct-22
   where: 7 Stat. 390
-checked: '2026-11-24'
+checked: '2026-11-26'

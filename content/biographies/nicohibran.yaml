@@ -1,12 +1,16 @@
 key: nicohibran
 name: Nicohibran
-lead: Signed two treaties with the United States for the Great and Little Osage Nations of Indians, 1825–1839.
+lead: Signed three treaties with the United States for the Great and Little Osage Nations of Indians, 1808–1839.
 living: false
 names:
 - name: Ni-ko-hi-bran
   note: as the Treaty with the Osage, 1839 prints it
   source: treaty-with-the-osage-1839
   where: 7 Stat. 578
+- name: Ni Conil Bran
+  note: as the Treaty with the Osage, 1808 prints it
+  source: treaty-with-the-osage-1808
+  where: 7 Stat. 111
 nations:
 - nation: the-osage-nation
   named_as: Great and Little Osage Nations of Indians
@@ -14,6 +18,10 @@ nations:
   where: 7 Stat. 244
 cases: []
 events:
+- when: Nov. 10, 1808
+  text: Signed the Treaty with the Osage, 1808, for the Great and Little Osage nation of Indians, listed as warrior.
+  source: treaty-with-the-osage-1808
+  where: 7 Stat. 111
 - when: June 2, 1825
   text: Signed the Treaty with the Osage, 1825, for the Great and Little Osage Nations of Indians.
   source: treaty-with-the-osage-1825

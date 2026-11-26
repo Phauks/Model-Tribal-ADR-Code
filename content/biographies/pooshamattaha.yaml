@@ -1,7 +1,12 @@
 key: pooshamattaha
 name: Pooshamattaha
-lead: Signed two treaties with the United States for the Great Medal Mingoes, 1805–1816.
+lead: Signed three treaties with the United States for the Great Medal Mingoes, 1805–1820.
 living: false
+names:
+- name: Pooshawattaha
+  note: as the Treaty with the Choctaw, 1820 prints it
+  source: treaty-with-the-choctaw-1820
+  where: 7 Stat. 210
 nations:
 - nation: the-choctaw-nation-of-oklahoma
   named_as: Choctaw nation
@@ -17,4 +22,8 @@ events:
   text: Signed the Treaty with the Choctaw, 1816, for the Choctaw nation.
   source: treaty-with-the-choctaw-1816
   where: 7 Stat. 153
+- when: Oct. 18, 1820
+  text: Signed the Treaty with the Choctaw, 1820, for the Medal Mingoes.
+  source: treaty-with-the-choctaw-1820
+  where: 7 Stat. 210
 checked: '2026-11-26'

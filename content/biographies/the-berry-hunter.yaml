@@ -1,16 +1,29 @@
 key: the-berry-hunter
 name: the Berry Hunter
-lead: Signed the Treaty with the Chippewa, 1854, for the The Mississippi Bands as 1st chief.
+lead: Signed two treaties with the United States for the The Mississippi Bands, 1854–1866, listed in one as 1st chief.
 living: false
 names:
 - name: Caw-nawn-daw-waw-win-zo
   note: as the Treaty with the Chippewa, 1854 prints it
   source: treaty-with-the-chippewa-1854
   where: 10 Stat. 1114
+- name: Gawnandawawinzo
+  note: as the Treaty with the Chippewa-Bois Fort Band, 1866 prints it
+  source: treaty-with-the-chippewa-bois-fort-band-1866
+  where: 14 Stat. 767
+nations:
+- nation: bois-forte-band
+  named_as: Bois Forte band of Chippewas
+  source: treaty-with-the-chippewa-bois-fort-band-1866
+  where: 14 Stat. 767
 cases: []
 events:
 - when: Sept. 30, 1854
   text: Signed the Treaty with the Chippewa, 1854, for the The Mississippi Bands, listed as 1st chief.
   source: treaty-with-the-chippewa-1854
   where: 10 Stat. 1114
-checked: '2026-11-24'
+- when: Apr. 7, 1866
+  text: Signed the Treaty with the Chippewa-Bois Fort Band, 1866, for the Bois Forte band of Chippewas.
+  source: treaty-with-the-chippewa-bois-fort-band-1866
+  where: 14 Stat. 767
+checked: '2026-11-26'

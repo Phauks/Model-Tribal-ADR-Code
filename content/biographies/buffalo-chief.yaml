@@ -1,12 +1,16 @@
 key: buffalo-chief
 name: Buffalo Chief
-lead: Signed the Treaty with the Confederated Oto and Missouri, 1854, for the Confederate tribes of Ottoe and Missouria Indians as chief.
+lead: Signed two treaties with the United States for the Missourias, 1854, listed in one as chief.
 living: false
 names:
 - name: Chi-an-a-ka
   note: as the Treaty with the Confederated Oto and Missouri, 1854 prints it
   source: treaty-with-the-confederated-oto-and-missouri-1854
   where: 10 Stat. 1131
+- name: Cha-won-a-ke
+  note: as the Treaty with the Oto and Missouri, 1854 prints it
+  source: treaty-with-the-oto-and-missouri-1854
+  where: 10 Stat. 1041
 nations:
 - nation: otoe-missouria-tribe-of-indians
   named_as: Confederate tribes of Ottoe and Missouria Indians
@@ -14,8 +18,12 @@ nations:
   where: 10 Stat. 1131
 cases: []
 events:
+- when: Mar. 15, 1854
+  text: Signed the Treaty with the Oto and Missouri, 1854, for the Missourias.
+  source: treaty-with-the-oto-and-missouri-1854
+  where: 10 Stat. 1041
 - when: Dec. 9, 1854
   text: Signed the Treaty with the Confederated Oto and Missouri, 1854, for the Confederate tribes of Ottoe and Missouria Indians, listed as chief.
   source: treaty-with-the-confederated-oto-and-missouri-1854
   where: 10 Stat. 1131
-checked: '2026-11-24'
+checked: '2026-11-26'

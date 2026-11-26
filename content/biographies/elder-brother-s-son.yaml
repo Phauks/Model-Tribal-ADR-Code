@@ -1,16 +1,24 @@
 key: elder-brother-s-son
 name: Elder Brother's Son
-lead: Signed the Treaty with the Pillager Band of Chippewa Indians, 1847, for the Pillager band of Chippewa Indians as 2d chief.
+lead: Signed two treaties with the United States for the St. Croix river, 1837–1847, listed in one as 2d chief.
 living: false
 names:
 - name: Ca-pe-ma-be
   note: as the Treaty with the Pillager Band of Chippewa Indians, 1847 prints it
   source: treaty-with-the-pillager-band-of-chippewa-indians-1847
   where: 9 Stat. 909
+- name: Ka-be-ma-be
+  note: as the Treaty with the Chippewa, 1837 prints it
+  source: treaty-with-the-chippewa-1837-july-29
+  where: 7 Stat. 537
 cases: []
 events:
+- when: July 29, 1837
+  text: Signed the Treaty with the Chippewa, 1837, for the St. Croix river.
+  source: treaty-with-the-chippewa-1837-july-29
+  where: 7 Stat. 537
 - when: Aug. 21, 1847
   text: Signed the Treaty with the Pillager Band of Chippewa Indians, 1847, for the Pillager band of Chippewa Indians, listed as 2d chief.
   source: treaty-with-the-pillager-band-of-chippewa-indians-1847
   where: 9 Stat. 909
-checked: '2026-11-24'
+checked: '2026-11-26'

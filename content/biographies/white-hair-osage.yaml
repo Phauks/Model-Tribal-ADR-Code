@@ -1,6 +1,6 @@
 key: white-hair-osage
 name: White Hair
-lead: Signed four treaties with the United States for the Great and Little Osage Tribes or Nations, 1815–1825, listed in one as head chief.
+lead: Signed six treaties with the United States for the Great and Little Osage Tribes or Nations, 1815–1839, listed in one as head chief.
 living: false
 names:
 - name: Teshuhimga
@@ -19,6 +19,14 @@ names:
   note: as the Treaty with the Osage, 1825 prints it
   source: treaty-with-the-osage-1825
   where: 7 Stat. 243
+- name: Paheskaw
+  note: as the Treaty with the Osage, 1818 prints it
+  source: treaty-with-the-osage-1818
+  where: 7 Stat. 184
+- name: Pa-hu-sca
+  note: as the Treaty with the Osage, 1839 prints it
+  source: treaty-with-the-osage-1839
+  where: 7 Stat. 577
 nations:
 - nation: the-osage-nation
   named_as: Great and Little Osage Tribes or Nations
@@ -30,16 +38,24 @@ events:
   text: Signed the Treaty with the Osage, 1815, for the Great and Little Osage Tribes or Nations.
   source: treaty-with-the-osage-1815
   where: 7 Stat. 133
+- when: Sept. 25, 1818
+  text: Signed the Treaty with the Osage, 1818, for the Great and Little Osage nation.
+  source: treaty-with-the-osage-1818
+  where: 7 Stat. 184
 - when: Aug. 31, 1822
   text: Signed the Treaty with the Osage, 1822, for the Great and Little Osage Indians, listed as head chief.
   source: treaty-with-the-osage-1822
   where: 7 Stat. 222
-- when: Aug. 10, 1825
-  text: Signed the Treaty with the Great and Little Osage, 1825, for the Great and Little Osage Tribes of Indians, listed as head chief.
-  source: treaty-with-the-great-and-little-osage-1825
-  where: 7 Stat. 270
 - when: June 2, 1825
   text: Signed the Treaty with the Osage, 1825, for the Great and Little Osage Nations of Indians.
   source: treaty-with-the-osage-1825
   where: 7 Stat. 243
-checked: '2026-11-24'
+- when: Aug. 10, 1825
+  text: Signed the Treaty with the Great and Little Osage, 1825, for the Great and Little Osage Tribes of Indians, listed as head chief.
+  source: treaty-with-the-great-and-little-osage-1825
+  where: 7 Stat. 270
+- when: Jan. 11, 1839
+  text: Signed the Treaty with the Osage, 1839, for the Great and Little Osage nation of Indians.
+  source: treaty-with-the-osage-1839
+  where: 7 Stat. 577
+checked: '2026-11-26'

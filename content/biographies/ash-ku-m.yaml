@@ -1,9 +1,22 @@
 key: ash-ku-m
 name: Ash-ku m
-lead: Signed three treaties with the United States for the Potawattimies tribe of Indians, 1834–1836.
+lead: Signed six treaties with the United States for the Potawattimies tribe of Indians, 1828–1837.
 living: false
+names:
+- name: Ash-kum
+  note: as the Treaty with the Potawatomi, 1828 prints it
+  source: treaty-with-the-potawatomi-1828
+  where: 7 Stat. 319
 cases: []
 events:
+- when: Sept. 20, 1828
+  text: Signed the Treaty with the Potawatomi, 1828, for the Potawatamie tribe.
+  source: treaty-with-the-potawatomi-1828
+  where: 7 Stat. 319
+- when: Oct. 26, 1832
+  text: Signed the Treaty with the Potawatomi, 1832, for the Pottawatimies.
+  source: treaty-with-the-potawatomi-1832-oct-26
+  where: 7 Stat. 395
 - when: Dec. 16, 1834
   text: Signed the Treaty with the Potawatomi, 1834, for the Potawattimies tribe of Indians.
   source: treaty-with-the-potawatomi-1834-dec-16
@@ -16,4 +29,8 @@ events:
   text: Signed the Treaty with the Potawatomi, 1836, for the Potawattimies of the Wabash.
   source: treaty-with-the-potawatomi-1836-0471a
   where: 7 Stat. 516
-checked: '2026-11-24'
+- when: Feb. 11, 1837
+  text: Signed the Treaty with the Potawatomi, 1837, for the Potawatomies of Indiana.
+  source: treaty-with-the-potawatomi-1837
+  where: 7 Stat. 533
+checked: '2026-11-26'
