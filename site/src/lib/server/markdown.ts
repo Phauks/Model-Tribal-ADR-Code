@@ -13,10 +13,11 @@ import { marked } from 'marked';
 import { marksHtml, type CitationMark } from '../citation-marks.ts';
 import { verifyLink, fileName } from '../checksums.ts';
 import { copyHashHtml } from '../copy-hash.ts';
-import { copyPagePath, copyPath, mediaLabel } from '../public-copies.ts';
+import { copyPagePath, copyPath, mediaLabel, type PublicCopy } from '../public-copies.ts';
 import { officialReportLinks, readingLinksHtml } from '../reading-links.ts';
-import { glossary, publicCopyFor, type SourceRecord } from './content.ts';
+import { glossary, publicCopyFor, publicCopyWithDigest, type SourceRecord } from './content.ts';
 import { escapeHtml } from '../escape-html.ts';
+import { recordPageLink } from './law-records.ts';
 
 /** Still exported here for code written before lib/escape-html.ts; new code imports that module. */
 export { escapeHtml };
@@ -39,11 +40,12 @@ export function formatSource(
 	const link = source.original_link ?? citation.URL;
 	const parts: string[] = [];
 	if (authors.length > 0) parts.push(escapeHtml(authors.join(', ')));
-	parts.push(
-		source.kind.endsWith('statute') || source.kind.endsWith('regulation')
-			? escapeHtml(title)
-			: `<cite>${escapeHtml(title)}</cite>`
-	);
+	const written =
+		source.kind.endsWith('statute') || source.kind.endsWith('regulation') ? escapeHtml(title) : `<cite>${escapeHtml(title)}</cite>`;
+	// A law, treaty, order or case with its own page on this site links to it
+	// (Trevor, Nov. 24, 2026: an executive order's reference led nowhere on the site).
+	const page = recordPageLink(key);
+	parts.push(page ? `<a class="source-page" href="${escapeHtml(page)}">${written}</a>` : written);
 	let text = parts.join(', ');
 	if (year) text += ` (${year})`;
 	if (locator) text += `, ${escapeHtml(locator)}`;
@@ -78,10 +80,9 @@ export function formatSource(
  * source cited. Empty when the site keeps no copy.
  */
 export function savedCopyLink(source: SourceRecord | undefined): string {
-	if (!source) return '';
+	const copy = savedCopyFor(source);
+	if (!source || !copy) return '';
 	const official = officialReportLinks(source.reading_links).map(publicCopyFor).find(Boolean);
-	const copy = official ?? publicCopyFor(source.original_link) ?? publicCopyFor(source.citation.URL);
-	if (!copy) return '';
 	const kind = official ? `official report, ${mediaLabel(copy.mediaType)}` : copy.mediaType === 'text/html' ? 'web page' : mediaLabel(copy.mediaType);
 	const saved = copy.captured ? `, ${escapeHtml(formatCaptureDate(copy.captured))}` : '';
 	// Trevor asked on Nov. 23, 2026 for a link to check a downloaded copy against its SHA-256 (src/lib/checksums.ts).
@@ -91,6 +92,22 @@ export function savedCopyLink(source: SourceRecord | undefined): string {
 	// A copy icon after "SHA-256" puts the hash itself on the clipboard (src/lib/copy-hash.ts; Trevor, Nov. 24, 2026).
 	const copyButton = copyHashHtml(copy.sha256, { label: 'the saved copy', iconOnly: true });
 	return `<span class="source-saved"><a href="${escapeHtml(page)}">Saved copy</a> (${kind}${saved}; <a class="source-verify" href="${verify}">SHA-256</a>${copyButton})</span>`;
+}
+
+/**
+ * The copy this site serves of a source's document: its official report,
+ * else the copy of the page it was found at, else the file its record says
+ * was stored for it (such as an executive order's text).
+ */
+export function savedCopyFor(source: SourceRecord | undefined): PublicCopy | undefined {
+	if (!source) return undefined;
+	const stored = (source as SourceRecord & { file?: { checksum?: string } }).file?.checksum;
+	return (
+		officialReportLinks(source.reading_links).map(publicCopyFor).find(Boolean) ??
+		publicCopyFor(source.original_link) ??
+		publicCopyFor(source.citation.URL) ??
+		publicCopyWithDigest(stored)
+	);
 }
 
 function webAddress(link: string | undefined): URL | undefined {

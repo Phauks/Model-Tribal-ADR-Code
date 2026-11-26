@@ -98,6 +98,8 @@
 		holder.innerHTML = copyHtml;
 		// A copied citation is the citation alone, without the places to read it.
 		for (const hidden of holder.querySelectorAll('.visually-hidden, .reading-links')) hidden.remove();
+		// Nor a link to the source's page on this site: the title stays as text.
+		for (const page of holder.querySelectorAll('a.source-page')) page.replaceWith(...page.childNodes);
 		return {
 			number: link.textContent?.trim() ?? '',
 			html: citationHtml(entry, { newTab: true }),

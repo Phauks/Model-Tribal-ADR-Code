@@ -44,7 +44,7 @@ import { documentHeading, documentHistoryView, nationDocumentHistories, type Doc
 import { SourceUses, whereInSource, type CitationMark } from './source-uses.ts';
 import { opinionsSourceKey, tribalCourtOpinions } from './tribal-court-opinions.ts';
 import { lawNames } from '../law-names.ts';
-import { isLawRecord } from './law-records.ts';
+import { isLawRecord, recordPageLink } from './law-records.ts';
 
 /** The heading the timeline's sources are filed under in a page's References list. */
 export const timelineHeading = 'Timeline';
@@ -254,7 +254,8 @@ function nationRecordEntries(
 			title,
 			citation: fact.instrument,
 			detail,
-			link: `${pageLink}#ties-heading`,
+			// The treaty, order or Act's own page, else the nation page's line for it.
+			link: recordPageLink(fact.source) ?? `${pageLink}#ties-heading`,
 			nations: [record.id],
 			citations: mark(fact.source, fact.land_area, whereInSource(fact))
 		});

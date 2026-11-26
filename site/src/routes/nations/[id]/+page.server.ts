@@ -37,6 +37,7 @@ import { bureauRegionPage, healthAreaPage } from '#lib/federal-offices.ts';
 import { displayName, humanize, regionAnchor, presenceNote, reviewStatusLabels, stateName } from '#lib/nation-labels.ts';
 import { legalHelpCitation, legalHelpFor, legalHelpHeading } from '#lib/server/legal-help.ts';
 import { formatSource } from '#lib/server/markdown.ts';
+import { recordPageLink } from '#lib/server/law-records.ts';
 import type { EntryGenerator, PageServerLoad } from './$types';
 
 export const entries: EntryGenerator = () => [
@@ -580,6 +581,8 @@ function federalTies(record: NationRecord, sources: SourceUses): FactGroup[] {
 				cited(sources, section, fact, {
 					label: fact.land_area,
 					text: [establishmentWords[fact.method] ?? humanize(fact.method), fact.instrument].filter(Boolean).join(': '),
+					// The treaty, order or Act's own page (/laws/<key>), where it has one.
+					link: recordPageLink(fact.source),
 					detail: fact.date ? readableDate(fact.date) : undefined,
 					note: fact.detail
 				})

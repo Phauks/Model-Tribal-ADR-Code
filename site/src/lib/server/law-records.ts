@@ -18,8 +18,8 @@ function isCaseRecord(record: SourceRecord): boolean {
 	return (record.citation as { type?: string }).type === 'legal_case' && Boolean(record.citation.title);
 }
 
-export function recordPageLink(key: string): string | undefined {
-	const record = sources().get(key);
+export function recordPageLink(key: string | undefined): string | undefined {
+	const record = key ? sources().get(key) : undefined;
 	if (!record) return undefined;
 	if (isCaseRecord(record)) return `/cases/${key}`;
 	if (isLawRecord(record)) return `/laws/${key}`;
