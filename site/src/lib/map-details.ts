@@ -7,8 +7,16 @@ import type { RecognitionBadge } from './recognition-badges.ts';
 /** One linked nation in a count's list: its page, or the part of it that holds the fact and its sources. */
 export type MapDetailsNation = { id: string; name: string; href: string };
 
-/** A fact in the details. A count of nations opens to those nations (mockup 3A). */
-export type MapDetailsLine = { label: string; value: string; nations?: MapDetailsNation[] };
+/** A link in a fact's value; one with no address is plain text. */
+export type MapDetailsLink = { label: string; href?: string };
+
+/** A picture in a fact's value, which opens in the image viewer, such as one of Royce's map sheets. */
+export type MapDetailsPicture = { label: string; src: string; href: string; original?: string };
+
+/**
+ * A fact in the details. A count of nations opens to those nations (mockup 3A). A fact may instead be links, written after each other with commas and then the value, or pictures (historic maps mockup 2A).
+ */
+export type MapDetailsLine = { label: string; value: string; nations?: MapDetailsNation[]; links?: MapDetailsLink[]; pictures?: MapDetailsPicture[] };
 
 /** A line of a nation's contact, from its preview file (/nations/<id>/preview.json). */
 export type MapDetailsContact = { label: string; lines: string[]; link?: string; external?: boolean };
@@ -23,6 +31,8 @@ export type MapDetails = {
 	/** The nations the place's entry names, which a place with one nation uses to open that nation's details. */
 	nations?: { id: string; name: string; badges?: RecognitionBadge[] }[];
 	page?: { href: string; label: string };
+	/** Every fact's name beside its value, as in a table, for details with long values such as a land cession's (historic maps mockup 2A). */
+	table?: boolean;
 };
 
 /** A count of nations that opens to them, in name order; given a section, each goes to that part of the nation's page. */

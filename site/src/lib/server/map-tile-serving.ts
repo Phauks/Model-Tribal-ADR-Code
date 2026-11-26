@@ -18,7 +18,7 @@ export interface TileSet {
 
 /** The tile sets the website serves, by the name in their address. */
 export const tileSets: ReadonlyMap<string, TileSet> = new Map(
-	[manifest.landAreas, manifest.basemap, manifest.worldBasemap].map((entry) => [entry.set, entry])
+	[manifest.landAreas, manifest.basemap, manifest.worldBasemap, manifest.landCessions, manifest.landAreasByYear].map((entry) => [entry.set, entry])
 );
 
 /** The world basemap, served in place of a basemap tile outside the United States and its territories (tools/build-map-tiles.mjs). */
