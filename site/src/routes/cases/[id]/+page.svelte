@@ -40,8 +40,8 @@
 <Breadcrumbs {trail} />
 
 <RecordPage glance={data.facts.length > 0 ? glance : undefined}>
+	{#snippet title()}<h1><i>{data.name}</i></h1>{/snippet}
 	{#snippet introduction()}
-		<h1><i>{data.name}</i></h1>
 		{#if data.citation}<p class="lead case-citation">{data.citation}</p>{/if}
 		{#if data.topics.length > 0 || data.unverified}<div class="badge-line">{#if data.unverified}<span class="review-badge"><Clock size={16} strokeWidth={2} aria-hidden="true" />Unverified</span>{/if}{#if data.topics.length > 0}<TopicBadges topics={data.topics.map((text) => ({ text }))} />{/if}</div>{/if}
 	{/snippet}

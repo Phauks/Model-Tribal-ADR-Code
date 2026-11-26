@@ -46,7 +46,7 @@
 		children?: Snippet;
 	}
 
-	let { title, lead, names = [], trail, picture, glance = [], panels, status, sources = [], children }: Props = $props();
+	let { title: titleText, lead, names = [], trail, picture, glance = [], panels, status, sources = [], children }: Props = $props();
 	// The panel's picture snippet shares the prop's name.
 	const pictureView = $derived(picture);
 	const hasGlance = $derived(picture !== undefined || glance.length > 0 || panels !== undefined);
@@ -55,8 +55,8 @@
 {#if trail}<Breadcrumbs {trail} />{/if}
 
 <RecordPage glance={hasGlance ? glancePart : undefined} sources={sources.length > 0 ? sourcesPart : undefined}>
+	{#snippet title()}<h1>{titleText}</h1>{/snippet}
 	{#snippet introduction()}
-		<h1>{title}</h1>
 		{#if names.length > 0}
 			<p class="other-names">
 				{#each names as other, index (other.name)}{#if index > 0}{'; '}{/if}<span lang={other.language ?? 'und'}><strong>{other.name}</strong></span>{#if other.note}<span class="muted">, {other.note}</span>{/if}<CitationMarks marks={other.citations ?? []} />{/each}
@@ -74,7 +74,7 @@
 		{#snippet picture()}
 			{#if pictureView}
 				<figure class="info-picture">
-					<a href={pictureView.src} {...imageViewerAttributes(pictureView.alt, { title, credit: pictureView.credit, original: pictureView.original })}>
+					<a href={pictureView.src} {...imageViewerAttributes(pictureView.alt, { title: titleText, credit: pictureView.credit, original: pictureView.original })}>
 						<img src={pictureView.src} alt={pictureView.alt} width={pictureView.width} height={pictureView.height} loading="lazy" decoding="async" />
 					</a>
 					{#if pictureView.credit}
