@@ -1,9 +1,9 @@
-import { caseKeys, casePage } from '#lib/server/case-pages.ts';
-import type { EntryGenerator, PageServerLoad } from './$types';
+import type { CasePage } from '#lib/server/case-pages.ts';
+import { builtPageData } from '#lib/server/page-data.ts';
+import type { PageServerLoad } from './$types';
 
-// Built with the site from the case records and the essays in git, like the Supreme Court pages.
-export const prerender = true;
+// Drawn by the Worker when a reader opens it, from the page's data as built
+// (src/lib/server/page-data.ts, src/routes/page-data).
+export const prerender = false;
 
-export const entries: EntryGenerator = () => caseKeys().map((id) => ({ id }));
-
-export const load: PageServerLoad = ({ params }) => casePage(params.id);
+export const load: PageServerLoad = ({ params, url }) => builtPageData<CasePage>('cases', params.id, url);

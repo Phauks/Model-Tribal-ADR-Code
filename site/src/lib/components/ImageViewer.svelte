@@ -33,6 +33,7 @@
 		swipeStep,
 		type ImageViewerItem
 	} from '#lib/image-viewer.ts';
+	import { fileSize } from '#lib/public-copies.ts';
 	import { saveFile } from '#lib/save-file.ts';
 
 	const identifier = $props.id();
@@ -44,6 +45,12 @@
 	let failed = $state(false);
 	/** The shown picture's width and its width divided by its height, once it has loaded. */
 	let size = $state<{ width: number; ratio: number } | undefined>();
+	/**
+	 * The name the picture downloads under, with its extension, and its size, read from the file
+	 * the picture was drawn from (the browser keeps it, so this costs no second download). Trevor,
+	 * Nov. 24, 2026: "It should list the file size and file name with extension somewhere on the page."
+	 */
+	let fileFacts = $state<{ file: string; name: string; size: string } | undefined>();
 	/** Said aloud when the reader steps to another picture; the dialog's own name covers the first. */
 	let announcement = $state('');
 	let swipeStart: { x: number; y: number } | undefined;
@@ -59,7 +66,20 @@
 		item = readImageViewerItem(link);
 		failed = false;
 		size = undefined;
+		void readFileFacts(item, imageViewerTitle(item));
 		preloadNeighbors();
+	}
+
+	async function readFileFacts(shown: ImageViewerItem, name: string): Promise<void> {
+		fileFacts = undefined;
+		try {
+			const answer = await fetch(shown.file);
+			if (!answer.ok) return;
+			const blob = await answer.blob();
+			if (item?.file === shown.file) fileFacts = { file: shown.file, name: downloadName(name, shown.file, blob.type), size: fileSize(blob.size) };
+		} catch {
+			// Without the facts the line is left out; the picture and its download still work.
+		}
 	}
 
 	/** Starts loading the pictures on either side, so stepping to them is quick. */
@@ -237,6 +257,9 @@
 			{/if}
 			{#if item.credit}
 				<p class="viewer-credit">{item.credit}</p>
+			{/if}
+			{#if fileFacts && fileFacts.file === item.file}
+				<p class="viewer-file">{fileFacts.name} · {fileFacts.size}</p>
 			{/if}
 			<ul class="viewer-links">
 				{#if item.source}
@@ -416,6 +439,12 @@
 	.viewer-credit {
 		margin: var(--space-1) 0 0;
 		color: var(--color-viewer-text-muted);
+	}
+
+	.viewer-file {
+		margin: var(--space-1) 0 0;
+		color: var(--color-viewer-text-muted);
+		overflow-wrap: anywhere;
 	}
 
 	.viewer-links {

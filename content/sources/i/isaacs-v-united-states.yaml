@@ -108,7 +108,7 @@ nations_in_case:
   checked: '2026-11-24'
   named: []
 review:
-  status: unverified
+  status: verified
   by: scripts/caselaw/supreme_court_native_cases.py
   date: '2026-11-24'
   checks:
@@ -122,8 +122,8 @@ review:
     result: agree
     detail: Caption found in the scan's text at 1.00
   - check: printed dates
-    result: differs
-    detail: Caselaw Access Project "Submitted October 23, 1895. Decided November 11, 1895."; scan "Submitted October 28, 1S95. Decided November 11, 1895."
+    result: confirmed
+    detail: 'Caselaw Access Project "Submitted October 23, 1895. Decided November 11, 1895."; scan "Submitted October 28, 1S95. Decided November 11, 1895.". Confirmed: the report prints "Submitted October 23, 1895. Decided November 11, 1895." on p. 487 of the Internet Archive''s copy of the volume (scan page 519, fresh OCR, 1.00; https://archive.org/details/sim_united-states-supreme-court-cases-adjudged_1896_159/page/n518/mode/1up). The Library of Congress scan is black and white, and the figure in "Submitted October 23" reads as 23 or 28; the Internet Archive''s grayscale scan of the same volume shows 23.'
   - check: decided
     result: agree
     detail: 'Printed and Database: 1895-11-11'

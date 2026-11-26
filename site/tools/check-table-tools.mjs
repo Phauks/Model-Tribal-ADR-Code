@@ -190,13 +190,13 @@ for (const viewport of viewports) {
 	await chart.getByRole('button', { name: 'Bars', exact: true }).click();
 	check((await chart.locator('.chart-total').count()) === 1, at('/nations/data/dispute-resolution: the bars lost their "Total:" line'));
 
-	// The Supreme Court tables filter from their headers too.
-	await page.goto(`${base}/supreme-court/roberts-court`, { waitUntil: 'load' });
-	const justices = page.locator('.data-table').first();
-	await justices.locator('.filter-button').first().waitFor();
-	await justices.getByRole('button', { name: 'Filter Appointed by', exact: true }).click();
-	checkInside(at('/supreme-court/roberts-court, Appointed by filter'), await openMenu(page));
-	await picture(page, `${viewport.name}-6-supreme-court`);
+	// Other prebuilt tables filter from their headers too. The Court pages' tables (/supreme-court/burger-court) are drawn on request, so tools/check-accessibility-live.mjs opens their column filter on the Worker instead.
+	await page.goto(`${base}/biographies`, { waitUntil: 'load' });
+	const people = page.locator('.data-table').first();
+	await people.locator('.filter-button').first().waitFor();
+	await people.getByRole('button', { name: 'Filter Nation', exact: true }).click();
+	checkInside(at('/biographies, Nation filter'), await openMenu(page));
+	await picture(page, `${viewport.name}-6-biographies`);
 
 	// Build a table uses the same tools (Trevor, Nov. 24, 2026: one flow for readers and the team): the shared table's list of columns and header filters ungrouped, the same filter menus from one funnel when grouped, and the Sum row under a two-way table.
 	await page.goto(`${base}/nations/data/build?data=courts`, { waitUntil: 'load' });

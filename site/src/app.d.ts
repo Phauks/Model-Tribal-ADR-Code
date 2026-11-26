@@ -1,5 +1,5 @@
 // See https://svelte.dev/docs/kit/types#app.d.ts
-import type { D1Database, DurableObjectNamespace, R2Bucket, RateLimit } from '@cloudflare/workers-types/index.ts';
+import type { D1Database, DurableObjectNamespace, Fetcher, R2Bucket, RateLimit } from '@cloudflare/workers-types/index.ts';
 import type { ActiveSession } from '#lib/server/accounts.ts';
 import type { SignedInAccount } from '#lib/server/contributor-profiles.ts';
 import type { EmailSendBinding } from '#lib/server/mail/carriers.ts';
@@ -62,6 +62,8 @@ declare global {
 		essayRooms?: DurableObjectNamespace;
 		/** The virus scanner's desk, in model-tribal-adr-code-scanner (src/lib/server/scanner-wake.ts). */
 		scanDesks?: DurableObjectNamespace;
+		/** The Wayback Worker, model-tribal-adr-code-wayback, for its progress (src/lib/server/wayback.ts). */
+		waybackWorker?: Fetcher;
 		/** Cloudflare Email Service, for sign-in codes (src/lib/server/sign-in-email.ts). */
 		signInEmail?: SignInEmailBinding;
 		/** The address sign-in codes come from, on a domain onboarded in Email Service. */

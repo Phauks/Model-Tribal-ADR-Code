@@ -17,7 +17,8 @@ import {
 } from '../public-copies.ts';
 import type { DocumentFile, DocumentSetList, DocumentSetSummary } from '../offline-documents.ts';
 import { formatCaptureDate } from './markdown.ts';
-import { nations, publicCopies } from './content.ts';
+import { nations, publicCopies, sources, type SourceRecord } from './content.ts';
+import { citationTexts } from './essay-library.ts';
 import { tribalCourtOpinions } from './tribal-court-opinions.ts';
 
 export interface CopyGroup {
@@ -46,6 +47,7 @@ export interface CopyRow {
 }
 
 const federalGroups: Record<string, string> = {
+	'supreme-court': 'Supreme Court opinions',
 	statutes: 'Federal statutes and Public Laws',
 	'federal-register': 'Federal Register documents',
 	'other-federal': 'Other federal documents'
@@ -79,7 +81,8 @@ function groupOf(copy: PublicCopy, names: Map<string, string>): string {
 	}
 	const file = copy.key.split('/').at(-1) ?? '';
 	if (copy.topic === 'govinfo' && /^(STATUTE|PLAW)-/.test(file)) return 'statutes';
-	if (copy.topic === 'tile.loc.gov') return 'statutes';
+	// The Library of Congress keeps both the Statutes at Large and the United States Reports.
+	if (copy.topic === 'tile.loc.gov') return copy.key.includes('/usrep/') ? 'supreme-court' : 'statutes';
 	if (copy.topic === 'govinfo' && /^FR-/.test(copy.key.split('/')[1] ?? '')) return 'federal-register';
 	return 'other-federal';
 }
@@ -154,6 +157,9 @@ function detailShards(): Map<string, Record<string, CopyDetails>> {
 	if (detailCache) return detailCache;
 	const names = nationNames();
 	const opinions = new Map(tribalCourtOpinions().map((opinion) => [opinion.key, opinion]));
+	const records = sources();
+	const cited = new Map(publicCopies().map((copy) => [copy.key, copy.records.map((key) => records.get(key)).find((record) => record?.citation?.title)]));
+	const texts = citationTexts([...new Set([...cited.values()].filter((record): record is SourceRecord => record !== undefined))]);
 	const shards = new Map<string, Record<string, CopyDetails>>();
 	for (const copy of publicCopies()) {
 		const ids = copy.nations.length > 0 ? copy.nations : copy.topic === 'constitutions' ? [copy.key.split('/')[1]] : [];
@@ -179,7 +185,7 @@ function detailShards(): Map<string, Record<string, CopyDetails>> {
 							...(copy.namesReplaced ? { namesReplaced: true } : {})
 						}
 					}
-				: {})
+				: citationOf(cited.get(copy.key), texts, copy.title))
 		};
 		const shard = copyDetailsShard(copy);
 		const entries = shards.get(shard) ?? {};
@@ -188,6 +194,24 @@ function detailShards(): Map<string, Record<string, CopyDetails>> {
 	}
 	detailCache = shards;
 	return shards;
+}
+
+/**
+ * How the project cites the source a copy belongs to (Indigo Book), for the line under the copy's
+ * title: the name is left out when it is the title, so Fletcher v. Peck reads "10 U.S. 87 (1810)."
+ * A web address in the citation stays as text, since the page links the original already.
+ */
+function citationOf(record: SourceRecord | undefined, texts: Map<string, string>, title: string): Partial<CopyDetails> {
+	const text = record ? texts.get(record.key) : undefined;
+	if (!record || !text) return {};
+	const name = record.citation.title ?? '';
+	const isCase = (record.citation as { type?: string }).type === 'legal_case';
+	let citation = text;
+	for (const start of [`<i>${name}</i>, `, `${name}, `]) {
+		if (name && name === title && citation.startsWith(start)) citation = citation.slice(start.length);
+	}
+	// Every case record with a name has a page (src/lib/server/case-pages.ts, caseKeys).
+	return { citation, isCase, ...(isCase ? { casePage: `/cases/${record.key}` } : {}) };
 }
 
 /** The names of the detail files, such as "0f". */

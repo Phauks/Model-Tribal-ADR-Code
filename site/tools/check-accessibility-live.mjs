@@ -132,6 +132,12 @@ const visits = {
 		['/glossary', [...headerStates, 'sign-in panel', 'all sections', 'phone menu', 'phone more']],
 		['/nations/hannahville-indian-community', ['follow']],
 		['/supreme-court/burger-court', ['column filter']],
+		// One page of each family the Worker draws from built data (src/lib/server/page-data.ts); the prerendered check no longer sees them.
+		'/cases/worcester-v-georgia',
+		'/laws/act-1858-12-22-pueblo-land-claims-confirmed',
+		'/biographies/a-pish-ka-go-gi',
+		'/supreme-court/justices/john-marshall',
+		'/supreme-court/presidents/abraham-lincoln',
 		'/sign-in',
 		'/sign-in/forgot',
 		['/requests', ['sign-in panel']],

@@ -124,6 +124,13 @@ jobs:
             git switch -c archive/captures
             echo "CAPTURES_BASE=main" >> "$GITHUB_ENV"
           fi
+          # The scripts always come from main: an open captures branch can be days
+          # older than main and lack a script this job now runs. They are kept
+          # outside the work tree so they are never committed to the branch.
+          tools="$RUNNER_TEMP/main-tools"
+          mkdir -p "$tools"
+          git archive origin/main scripts | tar -x -C "$tools"
+          echo "TOOLS=$tools" >> "$GITHUB_ENV"
       - name: Restore the record of earlier lookups and saves
         uses: actions/cache/restore@v4
         with:
@@ -133,7 +140,7 @@ jobs:
       - uses: actions/setup-python@v6
         with:
           python-version: "3.12"
-      - run: pip install -r scripts/requirements.txt
+      - run: pip install -r "$TOOLS/scripts/requirements.txt"
       - name: Take the captures the Wayback Worker made
         # The Worker (site/wayback, site/WAYBACK.md) saves links signed in with
         # the project's archive.org keys, which live only in Cloudflare. Its
@@ -147,12 +154,12 @@ jobs:
             echo '{"captures": []}' > worker-captures.json
             echo "SAVE_OPTION=--save" >> "$GITHUB_ENV"
           fi
-          python3 scripts/captures/wayback_queue.py --report worker-captures.json worker-report.json
+          python3 "$TOOLS/scripts/captures/wayback_queue.py" --report worker-captures.json worker-report.json
       - name: Capture older sources
         env:
           LIMIT: ${{ inputs.limit || '2000' }}
           KEYS: ${{ inputs.keys }}
-        run: python3 scripts/find_archived_copies.py $SAVE_OPTION --reuse-days 365 --state archive-state.json --limit "$LIMIT" --minutes 90 --report archive-report.json $KEYS
+        run: python3 "$TOOLS/scripts/find_archived_copies.py" $SAVE_OPTION --reuse-days 365 --state archive-state.json --limit "$LIMIT" --minutes 90 --report archive-report.json $KEYS
       - name: Keep the record of lookups and saves for the next run
         if: always()
         uses: actions/cache/save@v4
@@ -161,12 +168,12 @@ jobs:
           key: archive-state-${{ github.run_id }}
       - name: Write the captures into the records
         run: |
-          python3 scripts/apply_archive_report.py archive-report.json worker-report.json
-          python3 scripts/captures/wayback_queue.py --write
+          python3 "$TOOLS/scripts/apply_archive_report.py" archive-report.json worker-report.json
+          python3 "$TOOLS/scripts/captures/wayback_queue.py" --write
       - name: Check the records
         run: |
-          python3 scripts/check_text.py
-          python3 scripts/validate_records.py
+          python3 "$TOOLS/scripts/check_text.py"
+          python3 "$TOOLS/scripts/validate_records.py"
       - name: Commit to the captures branch and open or update its pull request
         id: commit
         env:

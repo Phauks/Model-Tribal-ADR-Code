@@ -1,6 +1,7 @@
 import { fail } from '@sveltejs/kit';
 import { formText, requirePermission, storage } from '#lib/server/workspace.ts';
-import { readCaptureLink, readWaybackMarks, readWaybackProgress, saveItYourselfLink, setWaybackMark, type MarkKind } from '#lib/server/wayback.ts';
+import { workerEnvironment } from '#lib/server/environment.ts';
+import { readCaptureLink, readWaybackMarks, readWaybackProgress, readWaybackStatus, saveItYourselfLink, setWaybackMark, waybackWorkerAddress, type MarkKind } from '#lib/server/wayback.ts';
 import type { Actions, PageServerLoad } from './$types';
 
 // Links the Wayback Worker could not save (site/WAYBACK.md, "Links that
@@ -14,7 +15,12 @@ const kinds: MarkKind[] = ['saved-by-hand', 'failed-by-hand', 'file-sent'];
 export const load: PageServerLoad = async (event) => {
 	requirePermission(event, 'check-services');
 	const { bucket } = storage(event);
-	const [progress, marks] = await Promise.all([readWaybackProgress(bucket), readWaybackMarks(bucket)]);
+	const [progress, marks, live] = await Promise.all([
+		readWaybackProgress(bucket),
+		readWaybackMarks(bucket),
+		// The "Right now" section; the list of failed links below works without it.
+		readWaybackStatus(workerEnvironment().waybackWorker).catch((problem: unknown) => ({ problem: problem instanceof Error ? problem.message : String(problem) }))
+	]);
 	const rows = Object.entries(progress?.records ?? {})
 		.filter(([key, entry]) => (!entry.capture && entry.problem) || marks[key])
 		.map(([key, entry]) => ({
@@ -29,7 +35,15 @@ export const load: PageServerLoad = async (event) => {
 			mark: marks[key] ?? null
 		}))
 		.sort((a, b) => (b.failedAt ?? '').localeCompare(a.failedAt ?? ''));
-	return { connected: progress !== null, lastRun: progress?.lastRun ?? null, rows, mostTries };
+	return {
+		connected: progress !== null,
+		lastRun: progress?.lastRun ?? null,
+		rows,
+		mostTries,
+		status: 'status' in live ? live.status : null,
+		statusProblem: 'problem' in live ? live.problem : null,
+		progressPage: waybackWorkerAddress
+	};
 };
 
 export const actions: Actions = {

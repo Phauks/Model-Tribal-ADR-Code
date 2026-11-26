@@ -12,7 +12,7 @@ citation:
     - - 1891
       - 5
       - 25
-  URL: https://www.loc.gov/item/usrep141107/
+  URL: https://www.loc.gov/item/usrep141107a/
   accessed:
     date-parts:
     - - 2026
@@ -20,16 +20,17 @@ citation:
       - 24
 caption:
   printed: In re MAYFIELD, Petitioner
-  source: https://tile.loc.gov/storage-services/service/ll/usrep/usrep141/usrep141107/usrep141107.pdf
+  source: https://tile.loc.gov/storage-services/service/ll/usrep/usrep141/usrep141107a/usrep141107a.pdf
   checked: '2026-11-24'
 opinions:
-  source: https://tile.loc.gov/storage-services/service/ll/usrep/usrep141/usrep141107/usrep141107.pdf
+  source: https://tile.loc.gov/storage-services/service/ll/usrep/usrep141/usrep141107a/usrep141107a.pdf
   checked: '2026-11-24'
   list:
   - kind: majority
     justice: Henry Billings Brown
     page: 111
-original_link: https://www.loc.gov/item/usrep141107/
+    scan_page: 5
+original_link: https://www.loc.gov/item/usrep141107a/
 retrieved: '2026-11-24'
 history:
   status: live
@@ -38,7 +39,7 @@ court_dates:
   submitted:
   - '1891-04-27'
   printed: Submitted April 27, 1891. Decided May 25, 1891.
-  source: https://tile.loc.gov/storage-services/service/ll/usrep/usrep141/usrep141107/usrep141107.pdf
+  source: https://tile.loc.gov/storage-services/service/ll/usrep/usrep141/usrep141107a/usrep141107a.pdf
   checked: '2026-11-24'
 supreme_court:
   court: Fuller Court
@@ -76,7 +77,7 @@ reading_links:
   - site: library-of-congress
     label: Library of Congress
     access: official
-    link: https://www.loc.gov/item/usrep141107/
+    link: https://www.loc.gov/item/usrep141107a/
   - site: justia
     label: Justia
     access: free
@@ -104,13 +105,13 @@ rights:
   redistribution: true
 found_in:
 - 2026-11-24-supreme-court-native-cases
-notes: 'Full citation: 141 U.S. 107 (1891). Official report scan: https://tile.loc.gov/storage-services/service/ll/usrep/usrep141/usrep141107/usrep141107.pdf. Written by scripts/caselaw/supreme_court_native_cases.py from the Supreme Court Database (case 1890-293), the Caselaw Access Project''s text of the report and the Library of Congress scan; not yet read by a person.'
+notes: 'Full citation: 141 U.S. 107 (1891). Official report scan: https://tile.loc.gov/storage-services/service/ll/usrep/usrep141/usrep141107a/usrep141107a.pdf. Written by scripts/caselaw/supreme_court_native_cases.py from the Supreme Court Database (case 1890-293), the Caselaw Access Project''s text of the report and the Library of Congress scan named in research/supreme-court-coverage/other-scans.json; not yet read by a person. The Library of Congress files this case''s scan as usrep141107a; usrep141107 is Evans v. State Bank, which begins on the same page.'
 tribes: []
 nations_in_case:
   checked: '2026-11-24'
   named: []
 review:
-  status: unverified
+  status: verified
   by: scripts/caselaw/supreme_court_native_cases.py
   date: '2026-11-24'
   checks:
@@ -118,8 +119,8 @@ review:
     result: agree
     detail: Caselaw Access Project 141 U.S. 107 "In re Mayfield"; Database 141 U.S. 107 "in re MAYFIELD, PETITIONER"
   - check: scan
-    result: differs
-    detail: Scan has 1 pages; the report runs 107 to 116
+    result: agree
+    detail: Scan has 10 pages; the report runs 107 to 116
   - check: caption
     result: agree
     detail: Caption found in the scan's text at 1.00
@@ -130,8 +131,8 @@ review:
     result: agree
     detail: 'Printed and Database: 1891-05-25'
   - check: opinions
-    result: differs
-    detail: 'Report: majority Brown p. 111; Database writers: Brown; scan pages [(111, 107)]'
+    result: agree
+    detail: 'Report: majority Brown p. 111; Database writers: Brown'
   - check: bench
     result: agree
     detail: No Oyez votes; each opinion writer in the report sits on the Database's bench on the side the opinion takes

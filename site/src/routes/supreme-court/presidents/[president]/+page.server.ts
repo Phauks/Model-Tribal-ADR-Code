@@ -1,11 +1,9 @@
-import { error } from '@sveltejs/kit';
-import { presidentKeys, presidentPage } from '#lib/server/justice-pages.ts';
-import type { EntryGenerator, PageServerLoad } from './$types';
+import type { PresidentPage } from '#lib/server/justice-pages.ts';
+import { builtPageData } from '#lib/server/page-data.ts';
+import type { PageServerLoad } from './$types';
 
-export const entries: EntryGenerator = () => presidentKeys().map((president) => ({ president }));
+// Drawn by the Worker when a reader opens it, from the page's data as built
+// (src/lib/server/page-data.ts, src/routes/page-data).
+export const prerender = false;
 
-export const load: PageServerLoad = ({ params }) => {
-	const page = presidentPage(params.president);
-	if (!page) error(404, 'This site has no page for that President.');
-	return page;
-};
+export const load: PageServerLoad = ({ params, url }) => builtPageData<PresidentPage>('presidents', params.president, url);

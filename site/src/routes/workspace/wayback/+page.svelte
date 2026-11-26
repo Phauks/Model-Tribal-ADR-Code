@@ -1,6 +1,7 @@
 <script lang="ts">
 	// Links the Wayback Worker could not save (site/WAYBACK.md, "Links that fail").
 	import { enhance } from '$app/forms';
+	import { invalidateAll } from '$app/navigation';
 	import ExternalLink from '@lucide/svelte/icons/external-link';
 	import type { PageProps } from './$types';
 
@@ -17,6 +18,21 @@
 	const marked = $derived(data.rows.filter((row) => row.mark));
 	const visible = $derived(shown === 'open' ? open : marked);
 
+	const status = $derived(data.status);
+
+	// The Worker runs every minute, so the page asks again every minute.
+	$effect(() => {
+		const timer = setInterval(() => void invalidateAll(), 60_000);
+		return () => clearInterval(timer);
+	});
+	const number = (value: number) => value.toLocaleString('en-US');
+
+	function minutesAgo(stamp: string | null): string {
+		if (!stamp) return '';
+		const minutes = Math.max(0, Math.round((Date.now() - Date.parse(stamp)) / 60_000));
+		return minutes === 0 ? 'asked this minute' : `asked ${minutes} minute${minutes === 1 ? '' : 's'} ago`;
+	}
+
 	function when(stamp: string | null): string {
 		return stamp ? new Date(stamp).toLocaleString('en-US', { dateStyle: 'medium', timeStyle: 'short', timeZone: 'America/Los_Angeles' }) + ' Pacific' : '';
 	}
@@ -29,8 +45,48 @@
 <h1>Wayback captures</h1>
 <p class="muted">
 	Links the Wayback Worker could not save. Open a link to see whether it still works, try saving it from your own browser, then mark what happened. If you can get the file itself, send it from here and it goes through the
-	usual upload checks. Overall progress is on the <a href="https://model-tribal-adr-code-wayback.trevordgoldsmith.workers.dev/">Worker’s progress page</a>.
+	usual upload checks. Overall progress is on the <a href={data.progressPage}>Worker’s progress page</a>.
 </p>
+
+<section class="now" aria-labelledby="right-now">
+	<h2 id="right-now">Right now</h2>
+	{#if !status}
+		<p class="small problem">The Worker’s progress can’t be read: {data.statusProblem}</p>
+	{:else}
+		<p><span class="state" class:state-problem={status.state === 'not-running' || status.state === 'keys-refused'}>{status.stateWords}</span></p>
+		{#if status.paused}
+			<p class="small problem">Paused until {when(status.paused.until)}: {status.paused.reason}.</p>
+		{/if}
+		{#if status.nextRetryAt}
+			<p class="small">Nothing new to save. The next failed link is tried again {when(status.nextRetryAt)}.</p>
+		{/if}
+		{#if status.savingNow?.length}
+			<p class="small">Waiting on the Archive for {status.savingNow.length} save{status.savingNow.length === 1 ? '' : 's'}:</p>
+			<ul class="saving">
+				{#each status.savingNow as item (item.key)}
+					<li class="small">
+						<a href={item.link} target="_blank" rel="noopener noreferrer">{item.link} <ExternalLink size={14} aria-hidden="true" /></a>
+						<span class="muted">· {minutesAgo(item.askedAt)}</span>
+					</li>
+				{/each}
+			</ul>
+		{:else if status.savingNow}
+			<p class="small muted">No saves waiting on the Archive.</p>
+		{/if}
+		<dl class="usage">
+			{#if status.requests}
+				<div><dt>Save requests, last minute</dt><dd>{status.requests.lastMinute} of {status.requests.ourLimitEachMinute}</dd></div>
+				<div><dt>Last hour</dt><dd>{number(status.requests.lastHour)} of {number(status.requests.ourLimitEachMinute * 60)}</dd></div>
+				<div><dt>Last 24 hours</dt><dd>{number(status.requests.last24Hours)} of {number(status.requests.archiveLimitEachDay)}</dd></div>
+			{/if}
+			{#if status.capturedLastHour !== undefined}
+				<div><dt>Captured, last hour</dt><dd>{number(status.capturedLastHour)}</dd></div>
+			{/if}
+			<div><dt>Captured, last 24 hours</dt><dd>{number(status.capturedLast24Hours)}</dd></div>
+			<div><dt>Left</dt><dd>{number(status.left)}</dd></div>
+		</dl>
+	{/if}
+</section>
 
 {#if !data.connected}
 	<p>The Wayback Worker hasn’t run yet, so there is nothing to show. Its setup is in site/WAYBACK.md.</p>
@@ -99,6 +155,53 @@
 {/if}
 
 <style>
+	.now {
+		margin: 16px 0 24px;
+	}
+	.now h2 {
+		margin: 0 0 8px;
+	}
+	.now p {
+		margin: 0 0 8px;
+	}
+	.state {
+		display: inline-block;
+		padding: 2px 10px;
+		border: 1px solid var(--color-line);
+		border-radius: 999px;
+		font-weight: 600;
+	}
+	.state-problem {
+		color: var(--color-danger);
+		border-color: currentColor;
+	}
+	.saving {
+		margin: 0 0 8px;
+		padding-left: 1.25rem;
+	}
+	.saving a {
+		overflow-wrap: anywhere;
+	}
+	.usage {
+		display: grid;
+		grid-template-columns: repeat(auto-fit, minmax(10rem, 1fr));
+		gap: 8px;
+		margin: 12px 0 0;
+	}
+	.usage div {
+		border: 1px solid var(--color-line);
+		border-radius: 8px;
+		padding: 8px 12px;
+	}
+	.usage dt {
+		font-size: 0.875rem;
+		opacity: 0.8;
+	}
+	.usage dd {
+		margin: 2px 0 0;
+		font-size: 1.25rem;
+		font-variant-numeric: tabular-nums;
+	}
 	.tabs {
 		display: flex;
 		flex-wrap: wrap;

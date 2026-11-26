@@ -1,9 +1,10 @@
 /**
  * A copy of a document shown inside the site (src/lib/public-copies.ts,
  * copyPagePath): the masthead and the left sidebar stay, the Library section
- * open, and the document opens in a frame below its title, the date the copy
- * was made, where it was published and its SHA-256, with links to download
- * it, open the file alone, verify it and ask for it to be taken down.
+ * open, and the document opens in a frame below its title and citation. Under
+ * it, in small text, are links to open it in a new tab, download it and ask
+ * for it to be taken down, then its file name and size, where it was
+ * published, the date the copy was made, its SHA-256 and a link to verify it.
  *
  * Rendered by the Worker on request, since there are thousands of copies. The
  * title and other details come from a small prebuilt file
