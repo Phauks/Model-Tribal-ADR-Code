@@ -1,0 +1,156 @@
+key: washington-state-department-of-licensing-v-cougar-den-inc
+kind: federal-case
+citation:
+  type: legal_case
+  title: Washington State Department of Licensing v. Cougar Den, Inc.
+  authority: Supreme Court of the United States
+  container-title: U.S.
+  volume: '586'
+  page: '347'
+  issued:
+    date-parts:
+    - - 2019
+      - 3
+      - 19
+  URL: https://www.supremecourt.gov/opinions/boundvolumes/586bv.pdf
+  accessed:
+    date-parts:
+    - - 2026
+      - 11
+      - 26
+caption:
+  printed: WASHINGTON STATE DEPARTMENT OF LICENSING v. COUGAR DEN, INC.
+  source: https://www.supremecourt.gov/opinions/boundvolumes/586bv.pdf
+  checked: '2026-11-26'
+opinions:
+  source: https://www.supremecourt.gov/opinions/boundvolumes/586bv.pdf
+  checked: '2026-11-26'
+  list:
+  - kind: judgment
+    justice: Stephen G. Breyer
+    page: 350
+  - kind: special concurrence
+    justice: Neil M. Gorsuch
+    page: 367
+  - kind: dissent
+    justice: John G. Roberts, Jr.
+    page: 377
+  - kind: dissent
+    justice: Brett M. Kavanaugh
+    page: 386
+original_link: https://www.supremecourt.gov/opinions/boundvolumes/586bv.pdf
+retrieved: '2026-11-26'
+history:
+  status: live
+  last_checked: '2026-11-26'
+court_dates:
+  argued:
+  - '2018-10-30'
+  printed: Argued October 30, 2018—Decided March 19, 2019
+  source: https://www.supremecourt.gov/opinions/boundvolumes/586bv.pdf
+  checked: '2026-11-26'
+supreme_court:
+  court: Roberts Court
+  natural_court: Roberts Court (2018-2020)
+  decision_type: plurality opinion
+  vote:
+    majority: 5
+    minority: 4
+  justices:
+  - name: Stephen G. Breyer
+    vote: majority
+    opinion: plurality
+  - name: Sonia Sotomayor
+    vote: majority
+  - name: Elena Kagan
+    vote: majority
+  - name: Neil Gorsuch
+    vote: majority
+    opinion: special concurrence
+  - name: Ruth Bader Ginsburg
+    vote: majority
+  - name: John G. Roberts, Jr.
+    vote: minority
+    opinion: dissent
+  - name: Samuel A. Alito, Jr.
+    vote: minority
+  - name: Clarence Thomas
+    vote: minority
+  - name: Brett M. Kavanaugh
+    vote: minority
+    opinion: dissent
+  source: https://api.oyez.org/cases/2018/16-1498
+  checked: '2026-11-26'
+reading_links:
+  checked: '2026-11-26'
+  links:
+  - site: supremecourt
+    label: Supreme Court of the United States
+    access: official
+    link: https://www.supremecourt.gov/opinions/boundvolumes/586bv.pdf
+  - site: cornell
+    label: Cornell LII
+    access: free
+    link: https://www.law.cornell.edu/supremecourt/text/16-1498
+  - site: justia
+    label: Justia
+    access: free
+    link: https://supreme.justia.com/cases/federal/us/586/347/
+    unchecked: true
+  - site: oyez
+    label: Oyez
+    access: free
+    link: https://www.oyez.org/cases/2018/16-1498
+  - site: google-scholar
+    label: Google Scholar
+    access: free
+    link: https://scholar.google.com/scholar?hl=en&as_sdt=2006&q=%22586%20U.S.%20347%22
+    unchecked: true
+  - site: westlaw
+    label: Westlaw
+    access: subscription
+    link: https://1.next.westlaw.com/Link/Document/FullText?findType=Y&cite=586%20U.S.%20347
+    unchecked: true
+  - site: lexis
+    label: Lexis
+    access: subscription
+    link: https://advance.lexis.com/api/search?q=586%20U.S.%20347
+    unchecked: true
+rights:
+  status: no-permission-needed
+  basis: us-government-work
+  basis_note: Opinions of federal courts are works of the U.S. government (17 U.S.C. § 105); the host site's own additions are not reproduced.
+  redistribution: true
+found_in:
+- 2026-11-24-supreme-court-native-cases
+notes: 'Full citation: 586 U.S. 347 (2019). Official report scan: https://www.supremecourt.gov/opinions/boundvolumes/586bv.pdf. Written by scripts/caselaw/supreme_court_native_cases.py from the Supreme Court Database (case 2018-013), the Legal Information Institute''s text of the slip opinion and the Court''s bound volume; not yet read by a person.'
+tribes: []
+nations_in_case:
+  checked: '2026-11-26'
+  named: []
+review:
+  status: verified
+  by: scripts/caselaw/supreme_court_native_cases.py
+  date: '2026-11-26'
+  checks:
+  - check: cite
+    result: agree
+    detail: Slip opinion (Legal Information Institute) 586 U.S. 347 "Washington State Department of Licensing v. Cougar Den, Inc."; Database 16-1498 "WASHINGTON STATE DEPARTMENT OF LICENSING v. COUGAR DEN INC."
+  - check: scan
+    result: agree
+    detail: Scan has 45 pages; the report runs 347 to 391
+  - check: caption
+    result: agree
+    detail: Caption found in the scan's text at 1.00
+  - check: printed dates
+    result: agree
+    detail: Slip opinion (Legal Information Institute) "Argued October 30, 2018—Decided March 19, 2019"; scan "Argued October 30, 2018—Decided March 19, 2019"
+  - check: decided
+    result: agree
+    detail: 'Printed and Database: 2019-03-19'
+  - check: opinions
+    result: agree
+    detail: 'Report: judgment Breyer p. 350, special concurrence Gorsuch p. 367, dissent Roberts p. 377, dissent Kavanaugh p. 386; Database writers: Breyer, Gorsuch, Kavanaugh, Roberts'
+  - check: bench
+    result: agree
+    detail: Oyez and the Database give the same Justices and votes

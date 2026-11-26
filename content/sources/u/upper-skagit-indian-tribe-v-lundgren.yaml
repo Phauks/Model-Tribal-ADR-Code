@@ -1,0 +1,159 @@
+key: upper-skagit-indian-tribe-v-lundgren
+kind: federal-case
+citation:
+  type: legal_case
+  title: Upper Skagit Indian Tribe v. Lundgren
+  authority: Supreme Court of the United States
+  container-title: U.S.
+  volume: '584'
+  page: '554'
+  issued:
+    date-parts:
+    - - 2018
+      - 5
+      - 21
+  URL: https://www.supremecourt.gov/opinions/boundvolumes/584bv.pdf
+  accessed:
+    date-parts:
+    - - 2026
+      - 11
+      - 26
+caption:
+  printed: UPPER SKAGIT INDIAN TRIBE v. LUNDGREN et vir
+  source: https://www.supremecourt.gov/opinions/boundvolumes/584bv.pdf
+  checked: '2026-11-26'
+opinions:
+  source: https://www.supremecourt.gov/opinions/boundvolumes/584bv.pdf
+  checked: '2026-11-26'
+  list:
+  - kind: majority
+    justice: Neil M. Gorsuch
+    page: 556
+  - kind: concurrence
+    justice: John G. Roberts, Jr.
+    page: 562
+  - kind: dissent
+    justice: Clarence Thomas
+    page: 564
+original_link: https://www.supremecourt.gov/opinions/boundvolumes/584bv.pdf
+shares_link_with:
+- washington-v-united-states
+retrieved: '2026-11-26'
+history:
+  status: live
+  last_checked: '2026-11-26'
+court_dates:
+  argued:
+  - '2018-03-21'
+  printed: Argued March 21, 2018—Decided May 21, 2018
+  source: https://www.supremecourt.gov/opinions/boundvolumes/584bv.pdf
+  checked: '2026-11-26'
+supreme_court:
+  court: Roberts Court
+  natural_court: Roberts Court (2017-2018)
+  decision_type: majority opinion
+  vote:
+    majority: 7
+    minority: 2
+  justices:
+  - name: Neil Gorsuch
+    vote: majority
+    opinion: majority
+  - name: John G. Roberts, Jr.
+    vote: majority
+    opinion: concurrence
+  - name: Anthony M. Kennedy
+    vote: majority
+  - name: Stephen G. Breyer
+    vote: majority
+  - name: Ruth Bader Ginsburg
+    vote: majority
+  - name: Sonia Sotomayor
+    vote: majority
+  - name: Elena Kagan
+    vote: majority
+  - name: Clarence Thomas
+    vote: minority
+    opinion: dissent
+  - name: Samuel A. Alito, Jr.
+    vote: minority
+  source: https://api.oyez.org/cases/2017/17-387
+  checked: '2026-11-26'
+reading_links:
+  checked: '2026-11-26'
+  links:
+  - site: supremecourt
+    label: Supreme Court of the United States
+    access: official
+    link: https://www.supremecourt.gov/opinions/boundvolumes/584bv.pdf
+  - site: cornell
+    label: Cornell LII
+    access: free
+    link: https://www.law.cornell.edu/supremecourt/text/17-387
+  - site: justia
+    label: Justia
+    access: free
+    link: https://supreme.justia.com/cases/federal/us/584/554/
+    unchecked: true
+  - site: oyez
+    label: Oyez
+    access: free
+    link: https://www.oyez.org/cases/2017/17-387
+  - site: google-scholar
+    label: Google Scholar
+    access: free
+    link: https://scholar.google.com/scholar?hl=en&as_sdt=2006&q=%22584%20U.S.%20554%22
+    unchecked: true
+  - site: westlaw
+    label: Westlaw
+    access: subscription
+    link: https://1.next.westlaw.com/Link/Document/FullText?findType=Y&cite=584%20U.S.%20554
+    unchecked: true
+  - site: lexis
+    label: Lexis
+    access: subscription
+    link: https://advance.lexis.com/api/search?q=584%20U.S.%20554
+    unchecked: true
+rights:
+  status: no-permission-needed
+  basis: us-government-work
+  basis_note: Opinions of federal courts are works of the U.S. government (17 U.S.C. § 105); the host site's own additions are not reproduced.
+  redistribution: true
+found_in:
+- 2026-11-24-supreme-court-native-cases
+notes: 'Full citation: 584 U.S. 554 (2018). Official report scan: https://www.supremecourt.gov/opinions/boundvolumes/584bv.pdf. Written by scripts/caselaw/supreme_court_native_cases.py from the Supreme Court Database (case 2017-064), the Legal Information Institute''s text of the slip opinion and the Court''s bound volume; not yet read by a person.'
+tribes:
+- upper-skagit-indian-tribe
+nations_in_case:
+  checked: '2026-11-26'
+  named:
+  - nation: upper-skagit-indian-tribe
+    named_as: Upper Skagit Indian Tribe
+    role: party
+    note: Matched by the script to the nation record of the same name; not yet checked.
+review:
+  status: verified
+  by: scripts/caselaw/supreme_court_native_cases.py
+  date: '2026-11-26'
+  checks:
+  - check: cite
+    result: agree
+    detail: Slip opinion (Legal Information Institute) 584 U.S. 554 "Upper Skagit Indian Tribe v. Lundgren"; Database 17-387 "UPPER SKAGIT INDIAN TRIBE v. LUNDGREN"
+  - check: scan
+    result: agree
+    detail: Scan has 23 pages; the report runs 554 to 576
+  - check: caption
+    result: agree
+    detail: Caption found in the scan's text at 1.00
+  - check: printed dates
+    result: agree
+    detail: Slip opinion (Legal Information Institute) "Argued March 21, 2018—Decided May 21, 2018"; scan "Argued March 21, 2018—Decided May 21, 2018"
+  - check: decided
+    result: agree
+    detail: 'Printed and Database: 2018-05-21'
+  - check: opinions
+    result: agree
+    detail: 'Report: majority Gorsuch p. 556, concurrence Roberts p. 562, dissent Thomas p. 564; Database writers: Gorsuch, Roberts, Thomas'
+  - check: bench
+    result: agree
+    detail: Oyez and the Database give the same Justices and votes

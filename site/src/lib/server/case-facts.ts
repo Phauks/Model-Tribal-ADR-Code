@@ -47,7 +47,8 @@ const decisionLabels: Record<string, string> = {
 	'equally divided Court': 'Affirmed by an equally divided Court',
 	'judgment of the Court': 'No opinion for a majority',
 	seriatim: 'Each Justice gave an opinion (seriatim)',
-	decree: 'Decree'
+	decree: 'Decree',
+	'opinion in chambers': 'Opinion of one Justice in chambers'
 };
 
 // Each kind of date and its label, in the order used when two fall on the same day.
@@ -156,7 +157,9 @@ export function caseFacts(record: CaseRecord, nations: ReadonlyMap<string, { nam
 		const inMajority = justices.filter((justice) => justice.vote === 'majority');
 		const inMinority = justices.filter((justice) => justice.vote === 'minority');
 		const unrecorded = justices.filter((justice) => justice.vote === 'not recorded');
-		const absent = justices.filter((justice) => !['majority', 'minority', 'not recorded'].includes(justice.vote));
+		// A Justice deciding an application alone, as Circuit Justice
+		const inChambers = justices.filter((justice) => justice.vote === 'in chambers');
+		const absent = justices.filter((justice) => !['majority', 'minority', 'not recorded', 'in chambers'].includes(justice.vote));
 		// Opinion writers first: the opinion of the Court, then other
 		// opinions, then the justices who joined without writing.
 		const leads = (justice: Justice) => ['majority', 'plurality', 'judgment'].includes(justice.opinion ?? '');
@@ -168,6 +171,7 @@ export function caseFacts(record: CaseRecord, nations: ReadonlyMap<string, { nam
 		const decided = decidedDay(record.citation?.issued);
 		if (inMajority.length) facts.push(['Majority', justiceList(writersFirst(inMajority), decided)]);
 		if (inMinority.length) facts.push(['Dissent', justiceList(writersFirst(inMinority), decided)]);
+		if (inChambers.length) facts.push(['In chambers', justiceList(inChambers, decided)]);
 		if (unrecorded.length) facts.push(['Vote not recorded', justiceList(unrecorded, decided)]);
 		if (absent.length) facts.push(['Did not participate', justiceList(absent, decided)]);
 	}
