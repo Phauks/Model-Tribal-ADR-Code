@@ -8,13 +8,15 @@
  * - its box's Summary, Quotes and Treatment (`law_box`, record-boxes.ts);
  * - the accounts of its impact (impact-accounts.ts), shown only when an
  *   account names the law;
- * - where to read it, and the essays on this site that cite it.
+ * - where to read it, the essays on this site that cite it and, for a
+ *   treaty, the people with a biography who signed it.
  *
  * A section with nothing in it is left out.
  */
 import { error } from '@sveltejs/kit';
 import { copyPath } from '../public-copies.ts';
 import { readingLinksHtml } from '../reading-links.ts';
+import { signersOfTreaty } from './biographies.ts';
 import { boxSections, citationLine, type BoxSection, essaysCiting, type CaseMention } from './case-pages.ts';
 import { sources, type SourceRecord } from './content.ts';
 import type { FactGroup } from './justice-pages.ts';
@@ -45,6 +47,8 @@ export interface LawPage {
 	nations: LawNation[];
 	/** The law's text as this site keeps it, shown in a frame on the page. */
 	text?: LawText;
+	/** The people with a biography on this site who signed the treaty. */
+	signers: { name: string; link: string; detail?: string }[];
 	sources: SourceEntry[];
 }
 
@@ -141,6 +145,7 @@ export function lawPage(key: string): LawPage {
 		essays: essaysCiting(key, named.name),
 		nations: nationsCited,
 		text: copy ? { file: copyPath(copy), isPdf: copy.mediaType === 'application/pdf' } : undefined,
+		signers: named.what === 'Treaty' ? signersOfTreaty(key) : [],
 		sources: box.sources
 	};
 }

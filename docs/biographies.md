@@ -38,6 +38,8 @@ Following the CARE Principles for Indigenous Data Governance (Global Indigenous 
 
 Every item page (people, Courts, cases, nations, stories, and next glossary terms, federal offices, forms and licenses) uses one shared layout, InfoPage: title, other names, one-line lead and status badge; At a glance with the picture and key facts, each with its source markers; the page's own sections; References.
 
+A person's own sections are Cases (each case linked to its page), Treaties and Life and events. Treaties lists every treaty the person signed, read from the life events that cite a treaty record: the treaty's name linked to its page at /laws/<key>, its first page in the Statutes at Large, the date signed, whom the treaty prints the person as signing for, the title printed beside the name, and the copy of the treaty's text this site keeps (Trevor, Nov. 24, 2026: "we say this man signed treaties. We should link to those treaty pages or documents"). The same treaty name is linked in the life event, and each treaty's page lists the signers who have a page.
+
 ## How the first thousand pages were made
 
 On Nov. 24, 2026 Trevor asked for many more pages than the first seven. They were made by script, with small AI readers for the reading, and every page starts Unverified. The scripts are in `scripts/biographies/` and their working data in `research/biographies/2026-11-24/`.

@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest';
-import { biographies, biographyPage, checked, peopleInCase, peopleOfNation, type BiographyRecord } from '#lib/server/biographies.ts';
+import { biographies, biographyPage, checked, peopleInCase, peopleOfNation, signersOfTreaty, treatySigning, type BiographyRecord } from '#lib/server/biographies.ts';
 import { courtPage } from '#lib/server/supreme-court-pages.ts';
 
 describe('Biographies of Native people', () => {
@@ -36,6 +36,39 @@ describe('Biographies of Native people', () => {
 			for (const event of page.events) expect(event.citations.length, `${person.key}: ${event.when}`).toBeGreaterThan(0);
 			for (const item of page.cases) expect(item.citations.length, `${person.key}: ${item.key}`).toBeGreaterThan(0);
 		}
+	});
+
+	it("links each treaty Little Robe signed to its page and the copy of its text", () => {
+		const page = biographyPage('little-robe')!;
+		expect(page.treaties.map((item) => item.link)).toEqual([
+			'/laws/treaty-with-the-apache-cheyenne-and-arapaho-1865',
+			'/laws/treaty-with-the-cheyenne-and-arapaho-1865',
+			'/laws/treaty-with-the-cheyenne-and-arapaho-1867'
+		]);
+		expect(page.treaties[0]).toMatchObject({ signed: 'Oct. 17, 1865', signedFor: 'Cheyennes', listedAs: 'chief', citation: '14 Stat. 713' });
+		expect(page.treaties[2].listedAs).toBeUndefined();
+		expect(page.treaties[2].document).toEqual({ href: '/copies/view/treaties/treaty-with-the-cheyenne-and-arapaho-1867.pdf', format: 'PDF' });
+		expect(page.glance.find((group) => group.field === 'treaties')?.items).toHaveLength(3);
+		expect(page.events[2].link).toEqual({ text: 'Treaty with the Cheyenne and Arapaho, 1867', href: '/laws/treaty-with-the-cheyenne-and-arapaho-1867' });
+		expect(page.events[2].text).toContain(page.events[2].link!.text);
+		// The life event repeats the treaty's row, so both markers point at one entry in References.
+		expect(page.events[2].citations[0].number).toBe(page.treaties[2].citations[0].number);
+		expect(signersOfTreaty('treaty-with-the-cheyenne-and-arapaho-1867').map((person) => person.name)).toContain('Little Robe');
+	});
+
+	it('reads every treaty signing and links every signed treaty', () => {
+		expect(treatySigning('Signed the Treaty with the Seneca, 1831, for the Senecas, listed as Capt..')).toEqual({ treaty: 'Treaty with the Seneca, 1831', signedFor: 'Senecas', listedAs: 'Capt.' });
+		let signings = 0;
+		for (const person of biographies()) {
+			const page = biographyPage(person.key)!;
+			for (const event of page.events.filter((item) => item.text.startsWith('Signed the Treaty'))) {
+				signings += 1;
+				expect(event.link, `${person.key}: ${event.text}`).toBeDefined();
+				expect(event.text).toContain(event.link!.text);
+			}
+			for (const item of page.treaties) expect(item.signedFor, `${person.key}: ${item.key}`).toBeTruthy();
+		}
+		expect(signings).toBeGreaterThan(1400);
 	});
 
 	it('keeps a living person to the public role', () => {
