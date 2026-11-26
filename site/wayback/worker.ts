@@ -16,8 +16,9 @@
 // Save Page Now 2 API: https://docs.google.com/document/d/1Nsv52MvSjbLb2PCpHlat0gkzw0EvtSgpKHu4mk0MnrA
 
 import type { R2Bucket } from '@cloudflare/workers-types/index.ts';
+import { moveDatabases, type MoveEnv } from './move-databases.ts';
 
-interface Env {
+interface Env extends MoveEnv {
 	sourceDocuments: R2Bucket;
 	// Worker secrets, set on this Worker in the Cloudflare dashboard (site/WAYBACK.md).
 	ARCHIVE_ORG_ACCESS_KEY?: string;
@@ -575,6 +576,8 @@ ${rows(status.recentProblems.map((item) => ({ key: item.key, link: item.link, no
 export default {
 	async scheduled(_event: ScheduledController, env: Env, context: ExecutionContext): Promise<void> {
 		context.waitUntil(work(env));
+		// TEMPORARY: the move to the tribal-law-project databases (move-databases.ts).
+		context.waitUntil(moveDatabases(env));
 	},
 
 	async fetch(request: Request, env: Env): Promise<Response> {
