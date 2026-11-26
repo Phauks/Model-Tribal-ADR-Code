@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest';
-import { joinPageControls } from '../src/lib/join-page-controls.ts';
+import { joinFallbacks, joinPageControls } from '../src/lib/join-page-controls.ts';
 import type { PageControls, PageMode } from '../src/lib/page-editing.svelte.ts';
 
 function controls(modes: PageMode[], extra: Partial<PageControls> = {}): PageControls & { mode: PageMode } {
@@ -54,5 +54,44 @@ describe('joinPageControls', () => {
 		expect(joined.links).toHaveLength(1);
 		joined.setMode?.('editing');
 		expect(joined.mode).toBe('editing');
+	});
+});
+
+describe('joinFallbacks and page comments', () => {
+	it('joins the site text’s Editing and the page’s Commenting into one choice of three', () => {
+		const siteText = controls(['reading', 'editing'], { history: { title: 'Site text history', href: '/workspace/site-text' } });
+		const comments = controls(['reading', 'commenting'], { openComments: 2 });
+		const joined = joinFallbacks([siteText, comments]);
+		expect(joined.modes).toEqual(['reading', 'commenting', 'editing']);
+		expect(joined.openComments).toBe(2);
+		joined.setMode?.('commenting');
+		expect(comments.mode).toBe('commenting');
+		expect(siteText.mode).toBe('reading');
+		expect(joined.mode).toBe('commenting');
+		joined.setMode?.('editing');
+		expect(comments.mode).toBe('reading');
+		expect(joined.mode).toBe('editing');
+		expect(joined.history?.href).toBe('/workspace/site-text');
+	});
+
+	it('leaves Commenting to a page with comments of its own, such as an essay', () => {
+		const essay = controls(['reading', 'commenting', 'editing']);
+		const comments = controls(['reading', 'commenting'], { openComments: 5 });
+		const joined = joinPageControls(essay, comments);
+		joined.setMode?.('commenting');
+		expect(essay.mode).toBe('commenting');
+		expect(comments.mode).toBe('reading');
+		expect(joined.openComments).toBeUndefined();
+	});
+
+	it('gives Commenting to the page’s comments where the page has none of its own', () => {
+		const nation = controls([], { links: [{ title: 'Edit', href: '/edit', icon: 'edit' }] });
+		const comments = controls(['reading', 'commenting'], { openComments: 1 });
+		const joined = joinPageControls(nation, comments);
+		expect(joined.modes).toEqual(['reading', 'commenting']);
+		joined.setMode?.('commenting');
+		expect(comments.mode).toBe('commenting');
+		expect(joined.mode).toBe('commenting');
+		expect(joined.openComments).toBe(1);
 	});
 });

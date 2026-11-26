@@ -13,7 +13,7 @@ import { listRequests } from '#lib/server/request-store.ts';
 import { latestReviews } from '#lib/server/reviews.ts';
 import { requirePerson, storage } from '#lib/server/workspace.ts';
 import { reviewRequestCount } from '#lib/server/essay-review-requests.ts';
-import { commentsForYouCount } from '#lib/server/essay-comments.ts';
+import { everyCommentForYouCount } from '#lib/server/page-comments.ts';
 import type { PageServerLoad } from './$types';
 
 export const load: PageServerLoad = async (event) => {
@@ -92,7 +92,7 @@ export const load: PageServerLoad = async (event) => {
 	// Drafts and sections people asked this person to review.
 	const reviewRequestsForYou = await reviewRequestCount(database, person.identifier);
 	// Comments that mention this person or answer them.
-	const commentsForYou = can(person, 'comment') ? await commentsForYouCount(database, person.identifier) : 0;
+	const commentsForYou = can(person, 'comment') ? await everyCommentForYouCount(database, person) : 0;
 
 	return {
 		teams,

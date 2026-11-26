@@ -8,7 +8,7 @@ import { essayAccess } from '#lib/server/essay-workspace.ts';
 import { syncEssaysFromGitOnce } from '#lib/server/essay-git-sync.ts';
 import { essayPageState } from '#lib/server/essay-page-state.ts';
 import { can } from '#lib/permissions.ts';
-import { commentsForYouCount } from '#lib/server/essay-comments.ts';
+import { everyCommentForYouCount } from '#lib/server/page-comments.ts';
 import { reviewRequestCount } from '#lib/server/essay-review-requests.ts';
 import { draftsBy } from '#lib/server/essays.ts';
 import { canStartEssays } from '#lib/server/essay-workspace.ts';
@@ -25,7 +25,7 @@ export const GET: RequestHandler = async (event) => {
 	// "Your work" under the essay's outline in the sidebar while editing (essay-editor-mockups/4 and v2-1).
 	const [reviewRequests, commentsForYou, drafts, canStart] = await Promise.all([
 		reviewRequestCount(database, person.identifier),
-		can(person, 'comment') ? commentsForYouCount(database, person.identifier) : 0,
+		can(person, 'comment') ? everyCommentForYouCount(database, person) : 0,
 		draftsBy(database, person.identifier),
 		canStartEssays(database, person)
 	]);
