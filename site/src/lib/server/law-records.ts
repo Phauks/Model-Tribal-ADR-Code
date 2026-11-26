@@ -6,8 +6,8 @@
 import { lawNames } from '../law-names.ts';
 import { sources, type SourceRecord } from './content.ts';
 
-/** The record kinds that get a page at /laws/<key>: federal laws, treaties and orders. */
-const lawKinds = new Set(['federal-statute', 'federal-regulation', 'federal-register-notice', 'executive-order']);
+/** The record kinds that get a page at /laws/<key>: federal laws, treaties and orders, and federal agencies' own documents (opinions, enforcement actions, bulletins). */
+const lawKinds = new Set(['federal-statute', 'federal-regulation', 'federal-register-notice', 'federal-agency-document', 'executive-order']);
 
 export function isLawRecord(record: SourceRecord): boolean {
 	const type = (record.citation as { type?: string }).type;

@@ -55,6 +55,8 @@ const fixedGroups: Record<string, string> = {
 	'interior-board-of-indian-appeals': 'Interior Board of Indian Appeals decisions',
 	// Lower federal courts' opinions from the Caselaw Access Project (decision record 0060).
 	'federal-court-opinions': 'Lower federal court opinions',
+	'gaming-commission': 'National Indian Gaming Commission documents',
+	acknowledgment: 'Federal acknowledgment documents',
 	'other-federal': 'Other federal documents',
 	// Published state and territorial court opinions (decision record 0060).
 	'state-court-opinions': 'State court opinions',
@@ -97,6 +99,10 @@ function groupOf(copy: PublicCopy, names: Map<string, string>): string {
 	// The Library of Congress keeps both the Statutes at Large and the United States Reports.
 	if (copy.topic === 'tile.loc.gov') return copy.key.includes('/usrep/') ? 'supreme-court' : 'statutes';
 	if (copy.topic === 'govinfo' && /^FR-/.test(copy.key.split('/')[1] ?? '')) return 'federal-register';
+	// The tier 2 collections each have a list of their own; together they were too long for one page.
+	if (copy.topic === 'federal-register') return 'federal-register';
+	if (copy.topic === 'nigc') return 'gaming-commission';
+	if (copy.topic === 'acknowledgment') return 'acknowledgment';
 	return 'other-federal';
 }
 
