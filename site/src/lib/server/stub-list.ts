@@ -4,6 +4,7 @@
  * its editors (design /mnt/project-files/design/stub-pages/). Made when the
  * site is built, as /stubs.json.
  */
+import { biographies, biographyPage } from './biographies.ts';
 import { caseKeys, casePage } from './case-pages.ts';
 import { courtPage, courts } from './courts.ts';
 import { lawKeys, lawPage } from './law-pages.ts';
@@ -44,6 +45,13 @@ export function stubList(): StubListing[] {
 		if (!page.stub) continue;
 		const pages = page.essays.length;
 		list.push({ kind: 'law', name: page.name, link: `/laws/${key}`, made: 'short', mentions: pages, mentionsText: pages > 0 ? plural(pages, 'page', 'pages') : '', record: page.stub.record });
+	}
+	for (const person of biographies()) {
+		const page = biographyPage(person.key);
+		if (!page?.stub) continue;
+		// Each treaty's page lists its signers, so every treaty is a page that names the person.
+		const pages = page.treaties.length;
+		list.push({ kind: 'person', name: page.name, link: `/biographies/${person.key}`, made: 'short', mentions: pages, mentionsText: pages > 0 ? plural(pages, 'page', 'pages') : '', record: page.stub.record });
 	}
 	return list.sort((first, second) => second.mentions - first.mentions || first.name.localeCompare(second.name));
 }

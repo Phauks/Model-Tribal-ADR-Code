@@ -1,6 +1,6 @@
 # 0059. Watch for new and changed legal sources with plug-in watchers, and review every find by hand
 
-- **Status:** Proposed
+- **Status:** Accepted (Trevor Goldsmith, Nov. 26, 2026, choosing option B for the models)
 - **Date:** 2026-11-26
 - **Extends:** decision records [0018](0018-document-version-history.md) (document version history), [0037](0037-keep-a-copy-of-every-directly-cited-page.md) (a copy of every cited page), [0046](0046-scan-files-with-clamav-in-a-cloudflare-container.md) (malware scanning), [0056](0056-let-nations-restrict-their-laws-and-opinions.md) (nations' restrictions) and [0057](0057-replace-names-in-tribal-court-opinions-with-initials.md) (initials in opinions)
 
@@ -12,24 +12,24 @@ The pieces it can build on already run: a scanner Worker that checks every outsi
 
 The full design, with the source-by-source table and a watch strategy for every collection and every part of a nation's profile, is [docs/source-watch.md](../source-watch.md).
 
-## Decision (proposed)
+## Decision
 
 1. **A watch Worker of plug-in watchers.** A new Worker (`model-tribal-adr-code-watch`, or `tribal-law-project-watch` if the Workers are renamed first) runs watchers: one module per source, each naming its documentation, hosts, tier, hosting rule, schedule and the collections it feeds, built on shared drivers (API, feed, sitemap, page, email, bulk, by hand). A new source or collection adds one module. A test fails if a collection in the registry, or a top-level part of a nation's profile, has no watcher and is not listed as not watched with a reason.
 2. **Feeds and APIs over crawling.** The Federal Register, eCFR, GovInfo and Congress.gov APIs, NIGC's sitemap, CourtListener (after asking Free Law Project) and alert emails come first. Pages are compared by a hash of their main text only where nothing better exists, mainly nations' own sites, and only at addresses already in the records.
 3. **Dedupe against the records before anyone sees a find.** Each site build writes an index of known identifiers (Federal Register document numbers, reporter citations, docket and CourtListener numbers, GovInfo packages, links and file SHA-256 hashes). A known item is closed; a known link with a new file is a new version of that record (decision record 0018).
 4. **Scripts first, then Claude Haiku, then the top model.** Rules settle what they can and record why. Claude Haiku classifies what the rules leave in the middle. Claude Opus takes only hard questions (what an amendment changed, conflicting sources, uncertain privacy flags) and checks a weekly sample of Haiku's answers.
-5. **Models run first in a nightly scheduled task (option A).** The Worker writes the day's undecided candidates to the bucket; a nightly scheduled task, set up like the library update, classifies them and writes the answers back. This needs no new key. When volume is steady, the Worker can call the Claude API directly through Cloudflare AI Gateway with the key stored as a gateway provider key in Secrets Store (option B).
+5. **Models run in the Worker through Cloudflare AI Gateway (option B).** Trevor chose this on Nov. 26, 2026. The Worker calls Claude through its AI binding to a gateway with Unified Billing, paid from Cloudflare credits at Anthropic's per-token prices plus a 5% fee on buying credits, with no Anthropic key and no secret on the Worker. The triage provider stays a setting (none, nightly task, AI Gateway), so the nightly scheduled task (option A) remains a fallback, and the Worker cannot use the Claude plan, which covers Claude sessions rather than API calls from the project's code.
 6. **A review queue in the workspace, and nothing published without a person.** Every find waits on `/workspace/watch` for a person to add it, mark it a new version or a duplicate, hold it, or dismiss it. Added items become record drafts in a daily pull request and start Unverified. The watcher never writes or changes a quote; when official U.S. Reports pagination appears for a case first added from a slip opinion, the quotes that cite it are checked again against the official report. The page is built only after its mockup is approved.
 7. **A private, scanned copy of everything fetched; serve only what the rules allow.** Every fetched file goes to the private bucket and through the malware scanner before anything, models included, opens it. The site serves only works of the United States government and nations' governing documents, as today.
 8. **Polite and within each source's terms.** A Durable Object per host spaces requests (one every 30 seconds for a nation's site), obeys robots.txt (RFC 9309) and Retry-After, sends conditional requests, and names the project in its user agent. Where a host signals against AI use, as Municode and eCode360 do, its text is never sent to a model. Sources that bar scripts become reminders for a person to check by hand.
 9. **Nations and privacy first.** The watcher reads each nation's restrictions before queuing anything, flags and holds anything that looks like a child, family or protection order case before a model sees it, puts initials in Tribal court opinions first, and collects post-2017 Tribal court opinions only from nations that agree.
-10. **Keys as Cloudflare bindings.** The api.data.gov key (GovInfo, Congress.gov) and the CourtListener token go in Secrets Store and reach the Worker through bindings; an Anthropic key, if option B is chosen, lives only in AI Gateway.
+10. **Keys as Cloudflare bindings.** The api.data.gov key (GovInfo, Congress.gov) and the CourtListener token go in Secrets Store and reach the Worker through bindings; option B needs no key with Unified Billing, and an Anthropic key, if used instead, lives only in AI Gateway.
 11. **Built by tier.** Phase 1: tier 1 federal sources through APIs, with rules only. Phase 2: model triage and tier 2. Phase 3: nations' own sites and events. Phase 4: states, link only, possibly on a separate site.
 
 ## Options weighed
 
 - **Where the watching runs.** A Worker (chosen) suits frequent small checks and matches the scanner and Wayback Workers. GitHub Actions or Claude scheduled tasks alone could run the same scripts, but would poll less often, put fetch logic in two places, and cost plan usage for work that needs no model. Folding the watchers into the scanner or Wayback Worker would mix unrelated failures.
-- **Where the models run.** A: nightly scheduled task, no new key, up to a day's delay, uses the plan (recommended to start). B: the Worker calls the Claude API through AI Gateway, minutes instead of a day, needs an Anthropic API key; estimated at a few dollars a year for Haiku and tens of dollars for the top model at list prices. C: Workers AI open models, no key at all, but untested for legal relevance; kept as a fallback.
+- **Where the models run.** A: nightly scheduled task, no new key, up to a day's delay, uses the plan (first recommended; kept as a fallback). B (chosen): the Worker calls the Claude API through AI Gateway, minutes instead of a day, paid with Cloudflare credits (Unified Billing) or an Anthropic key; estimated at a few dollars a year for Haiku and tens of dollars for the top model at Anthropic's list prices. C: Workers AI open models, no key at all, but untested for legal relevance; kept as a fallback.
 - **Watching everything by crawling.** Rejected: slower, costlier for small nation sites, harder to keep within robots.txt and terms, and noisier than APIs that say exactly what changed.
 
 ## Consequences
@@ -37,11 +37,11 @@ The full design, with the source-by-source table and a watch strategy for every 
 - Each collection gets a named watcher or a written reason it is not watched, so a new data thread adds a watcher as part of adding a collection, and `docs/data-roadmap.md` says so.
 - A person's review becomes the steady work: a review page for finds, weekly samples of what the rules closed, and a daily pull request of accepted records.
 - A new Worker, three D1 tables, a scan purpose (`watch-capture`), a workspace permission (`review-watch`), a progress page and a Service checks row.
-- Trevor needs to add an api.data.gov key, a CourtListener token and a note to Free Law Project, a routed watch email address with alert subscriptions, and, for option B, an Anthropic key in AI Gateway. Renaming the Workers before the watch Worker is first deployed avoids re-pointing its email rule and service bindings.
+- Trevor needs to add an api.data.gov key, a CourtListener token and a note to Free Law Project, a routed watch email address with alert subscriptions, and, for option B, Cloudflare credits for AI Gateway (or an Anthropic key in it). Renaming the Workers before the watch Worker is first deployed avoids re-pointing its email rule and service bindings.
 - Some sources still need a person: the Bureau of Indian Affairs' Tribal Leaders Directory and ihs.gov did not answer scripts from the cloud on Nov. 26, 2026, and the National Indian Law Library bars systematic requests.
 
 ## Sources
 
 - [docs/source-watch.md](../source-watch.md) and the sources it lists for each API, including the Federal Register, eCFR, GovInfo, api.data.gov, Congress.gov and CourtListener documentation, the Supreme Court's and NIGC's robots.txt and sitemap, RFC 9309 and the Content Signals Policy.
-- Cloudflare, [Workflows](https://developers.cloudflare.com/workflows/), [AI Gateway, Bring Your Own Keys](https://developers.cloudflare.com/ai-gateway/configuration/bring-your-own-keys/), [routed email to a Worker](https://developers.cloudflare.com/email-service/api/route-emails/email-handler/).
+- Cloudflare, [Workflows](https://developers.cloudflare.com/workflows/), [AI Gateway, Unified Billing](https://developers.cloudflare.com/ai-gateway/features/unified-billing/), [AI Gateway, Bring Your Own Keys](https://developers.cloudflare.com/ai-gateway/configuration/bring-your-own-keys/), [routed email to a Worker](https://developers.cloudflare.com/email-service/api/route-emails/email-handler/).
 - Anthropic, [pricing](https://platform.claude.com/docs/en/about-claude/pricing).

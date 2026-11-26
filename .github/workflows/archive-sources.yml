@@ -147,7 +147,7 @@ jobs:
         # list of captures is public and read-only. While it is running, this
         # job only looks up existing copies and leaves the saving to it.
         run: |
-          worker=https://model-tribal-adr-code-wayback.trevordgoldsmith.workers.dev
+          worker=https://tribal-law-project-wayback.trevordgoldsmith.workers.dev
           if curl -sf --max-time 60 "$worker/captures.json" -o worker-captures.json; then
             echo "SAVE_OPTION=" >> "$GITHUB_ENV"
           else

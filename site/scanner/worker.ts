@@ -1,5 +1,5 @@
 /**
- * The scanner Worker, model-tribal-adr-code-scanner (site/SCANNING.md). It
+ * The scanner Worker, tribal-law-project-scanner (site/SCANNING.md). It
  * scans files in the private bucket for viruses and malware and writes the
  * results to the file_scans table, which the website reads before serving a
  * file. It has no public address and the website has no binding to it: the

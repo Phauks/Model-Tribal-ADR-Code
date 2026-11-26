@@ -111,7 +111,7 @@ function missing(environment: WorkerEnvironment, names: readonly string[]): stri
 	return names.filter((name) => !setting(environment, name));
 }
 
-const settingsPlace = 'Cloudflare dashboard: Workers & Pages > model-tribal-adr-code > Settings > Variables and Secrets';
+const settingsPlace = 'Cloudflare dashboard: Workers & Pages > tribal-law-project-site > Settings > Variables and Secrets';
 
 const database: Check = {
 	key: 'database',
@@ -237,7 +237,7 @@ const liveEditing: Check = {
 		const response = await rooms.getByName('service-check').fetch('https://room/service-check');
 		await response.body?.cancel();
 		return response.status === 426
-			? { state: 'working', summary: 'The model-tribal-adr-code-live Worker answers.', details: [] }
+			? { state: 'working', summary: 'The tribal-law-project-live Worker answers.', details: [] }
 			: { state: 'problem', summary: `The live Worker answered ${response.status} instead of 426.`, details: [], fix: 'Deploy the live Worker again (site/live).' };
 	}
 };
@@ -254,7 +254,7 @@ const scannerDesk: Check = {
 		const response = await desks.get(desks.idFromName('desk')).fetch('https://desk/wake', { method: 'POST' });
 		await response.body?.cancel();
 		return response.status === 202
-			? { state: 'working', summary: 'The model-tribal-adr-code-scanner Worker answers.', details: [] }
+			? { state: 'working', summary: 'The tribal-law-project-scanner Worker answers.', details: [] }
 			: { state: 'problem', summary: `The scanner Worker answered ${response.status} instead of 202.`, details: [], fix: 'Deploy the scanner Worker again (site/SCANNING.md).' };
 	}
 };
@@ -569,7 +569,7 @@ const scanner: Check = {
 			? Math.floor((now.getTime() - Date.parse(`${version.clamavDatabaseDate}T00:00:00Z`)) / 86_400_000)
 			: null;
 		if (oldest && now.getTime() - Date.parse(oldest) > 30 * 60_000) {
-			return { state: 'problem', summary: `Files have waited for a scan since ${oldest}, so they are held from reviewers.`, details, fix: 'Check that the model-tribal-adr-code-scanner Worker is deployed and its cron runs (site/SCANNING.md).' };
+			return { state: 'problem', summary: `Files have waited for a scan since ${oldest}, so they are held from reviewers.`, details, fix: 'Check that the tribal-law-project-scanner Worker is deployed and its cron runs (site/SCANNING.md).' };
 		}
 		if (count('failed') > 0) return { state: 'warning', summary: `${count('failed')} ${count('failed') === 1 ? 'file' : 'files'} could not be scanned after several tries.`, details, fix: 'Scan again or release by hand from the upload page.' };
 		if (signatureAgeDays !== null && signatureAgeDays > 7) {
@@ -672,7 +672,7 @@ const waybackCaptures: Check = {
 				// The cron runs every minute even with nothing left, so a stale run means the schedule stopped.
 				return { state: 'problem', summary: status.minutesSinceLastRun === null ? 'The Wayback Worker has not run yet.' : `The Wayback Worker last ran ${status.minutesSinceLastRun} minutes ago; it runs every minute, even with nothing to save.`, details, fix: 'Check the Worker’s cron trigger and its logs in the Cloudflare dashboard (site/WAYBACK.md).' };
 			case 'keys-refused':
-				return { state: 'problem', summary: status.lastError ?? 'The archive.org keys are missing or refused.', details, fix: 'Add or replace the ARCHIVE_ORG_ACCESS_KEY and ARCHIVE_ORG_SECRET_KEY secrets on the model-tribal-adr-code-wayback Worker (site/WAYBACK.md).' };
+				return { state: 'problem', summary: status.lastError ?? 'The archive.org keys are missing or refused.', details, fix: 'Add or replace the ARCHIVE_ORG_ACCESS_KEY and ARCHIVE_ORG_SECRET_KEY secrets on the tribal-law-project-wayback Worker (site/WAYBACK.md).' };
 			case 'paused-daily-limit':
 				return { state: 'warning', summary: 'The Wayback Worker reached the Archive’s daily limit and starts again within the hour.', details };
 			case 'idle':
@@ -790,7 +790,7 @@ const siteTextRebuilds: Check = {
 	group: 'Workers',
 	name: 'Site text rebuilds',
 	async run({ environment }) {
-		const fix = `Create a deploy hook for the website (Workers & Pages > model-tribal-adr-code > Settings > Builds > Deploy Hooks) and save its address as the secret SITE_REBUILD_HOOK_URL (${settingsPlace}).`;
+		const fix = `Create a deploy hook for the website (Workers & Pages > tribal-law-project-site > Settings > Builds > Deploy Hooks) and save its address as the secret SITE_REBUILD_HOOK_URL (${settingsPlace}).`;
 		let publication: number;
 		let last: Awaited<ReturnType<typeof latestRebuild>>;
 		try {

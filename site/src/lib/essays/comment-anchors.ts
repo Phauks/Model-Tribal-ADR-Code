@@ -61,18 +61,7 @@ function offsetAt(flat: FlatText, position: number): number {
 /** The words between two positions, with the text around them, for a new comment. */
 export function quoteAt(doc: EditorNode, from: number, to: number): TextQuote | null {
 	const flat = flatten(doc);
-	const start = offsetAt(flat, from);
-	const end = offsetAt(flat, to);
-	const quote = flat.text.slice(start, end).trim();
-	if (!quote) return null;
-	const leading = flat.text.slice(start, end).length - flat.text.slice(start, end).trimStart().length;
-	const quoteStart = start + leading;
-	const quoteEnd = quoteStart + quote.length;
-	return {
-		quote,
-		prefix: flat.text.slice(Math.max(0, quoteStart - contextLength), quoteStart),
-		suffix: flat.text.slice(quoteEnd, quoteEnd + contextLength)
-	};
+	return quoteIn(flat.text, offsetAt(flat, from), offsetAt(flat, to));
 }
 
 /** How many characters two strings share, counting from their ends toward each other (prefix) or starts (suffix). */
@@ -88,21 +77,40 @@ function sharedStart(first: string, second: string): number {
 	return count;
 }
 
-/** Where a comment's words are now, or null when they are no longer in the text. */
-export function findQuote(doc: EditorNode, selector: TextQuote): { from: number; to: number } | null {
-	if (!selector.quote) return null;
-	const flat = flatten(doc);
+/**
+ * Where a comment's words are in a text: of every place they appear, the one
+ * whose surrounding text matches the kept text best; -1 when they are not
+ * there. Shared by essays and other pages (src/lib/page-comment-anchors.ts).
+ */
+export function bestMatch(text: string, selector: TextQuote): number {
+	if (!selector.quote) return -1;
 	let best = -1;
 	let bestScore = -1;
-	for (let found = flat.text.indexOf(selector.quote); found !== -1; found = flat.text.indexOf(selector.quote, found + 1)) {
-		const before = flat.text.slice(Math.max(0, found - contextLength), found);
-		const after = flat.text.slice(found + selector.quote.length, found + selector.quote.length + contextLength);
+	for (let found = text.indexOf(selector.quote); found !== -1; found = text.indexOf(selector.quote, found + 1)) {
+		const before = text.slice(Math.max(0, found - contextLength), found);
+		const after = text.slice(found + selector.quote.length, found + selector.quote.length + contextLength);
 		const score = sharedEnd(before, selector.prefix) + sharedStart(after, selector.suffix);
 		if (score > bestScore) {
 			best = found;
 			bestScore = score;
 		}
 	}
+	return best;
+}
+
+/** The words between two offsets of a text, with the text around them, or null when only spaces are between. */
+export function quoteIn(text: string, start: number, end: number): TextQuote | null {
+	const quote = text.slice(start, end).trim();
+	if (!quote) return null;
+	const quoteStart = start + (text.slice(start, end).length - text.slice(start, end).trimStart().length);
+	const quoteEnd = quoteStart + quote.length;
+	return { quote, prefix: text.slice(Math.max(0, quoteStart - contextLength), quoteStart), suffix: text.slice(quoteEnd, quoteEnd + contextLength) };
+}
+
+/** Where a comment's words are now, or null when they are no longer in the text. */
+export function findQuote(doc: EditorNode, selector: TextQuote): { from: number; to: number } | null {
+	const flat = flatten(doc);
+	const best = bestMatch(flat.text, selector);
 	if (best === -1) return null;
 	const last = best + selector.quote.length - 1;
 	return { from: flat.positions[best], to: flat.positions[last] + 1 };

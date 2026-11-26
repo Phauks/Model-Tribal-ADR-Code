@@ -1,9 +1,6 @@
 <!-- Your data: take a copy of what the project keeps about you, or delete your account. What is kept on the device instead is in Settings, under This device. Each part is a card, as drawn (design/settings-and-account). -->
 <script lang="ts">
-	/** Opens the Settings dialog from the masthead's cog, which holds This device. */
-	function openSettings() {
-		document.querySelector<HTMLButtonElement>('header button[aria-label="Settings"]')?.click();
-	}
+	import { openSettings } from '#lib/settings-dialog.ts';
 </script>
 
 <svelte:head>
@@ -33,7 +30,7 @@
 	Your display settings, print choices, starred pages and pages saved for offline reading stay in this browser. You
 	can export or clear them in Settings, under This device.
 </p>
-<p class="needs-scripts"><button class="button button-quiet" type="button" onclick={openSettings}>Open Settings</button></p>
+<p class="needs-scripts"><button class="button button-quiet" type="button" onclick={(event) => openSettings('device', event.currentTarget)}>Open Settings</button></p>
 </section>
 
 <section class="account-card danger-card" aria-labelledby="delete-heading">

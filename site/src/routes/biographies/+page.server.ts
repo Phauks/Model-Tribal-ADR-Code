@@ -9,6 +9,8 @@ export const load: PageServerLoad = () => ({
 			name: person.name,
 			lead: person.lead,
 			nations: page.nations,
+			// Signed treaties for the United States rather than for a nation.
+			unitedStates: page.treaties.length > 0 && page.treaties.every((treaty) => treaty.signedFor === 'United States'),
 			cases: page.cases.length
 		};
 	})
