@@ -6,6 +6,7 @@
 import { error, json } from '@sveltejs/kit';
 import { siteTextSubject } from '#lib/permissions.ts';
 import { accessTo } from '#lib/server/access.ts';
+import { recordPiece } from '#lib/server/record-text.ts';
 import { pieceStates } from '#lib/server/site-text.ts';
 import { catalogByKey } from '#lib/server/site-text-catalog.ts';
 import { requirePersonForData, storage } from '#lib/server/workspace.ts';
@@ -34,7 +35,8 @@ export const POST: RequestHandler = async (event) => {
 				builtIn: entry.words,
 				attribute: entry.attribute ?? null,
 				published: state?.published ?? null,
-				draft: state?.draft ? { words: state.draft.words, personName: state.draft.personName, createdAt: state.draft.createdAt } : null
+				draft: state?.draft ? { words: state.draft.words, personName: state.draft.personName, createdAt: state.draft.createdAt } : null,
+				record: recordPiece(entry, state)
 			}
 		];
 	});

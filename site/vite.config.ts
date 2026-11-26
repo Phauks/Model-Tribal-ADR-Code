@@ -30,10 +30,11 @@ import {
 } from './src/lib/server/content.ts';
 import { isoDate, storyIsShown, storySourceKeys } from './src/lib/story-visibility.ts';
 import { directoryNameOf, sourceKindOf } from './src/lib/address-book-sync.ts';
-import { markSiteText } from './src/lib/site-text-markers.ts';
+import { markSiteText, type SiteTextEntry } from './src/lib/site-text-markers.ts';
 import { copyRestriction } from './src/lib/nation-restrictions.ts';
 import { installCandidates, readerToolFiles, type ManifestChunk } from './src/lib/offline-shell.ts';
 import { loadPublishedSiteText, siteTextCatalog } from './src/lib/server/site-text-build.ts';
+import { publishedRecordText, recordTextCatalog, usePublishedRecordText } from './src/lib/server/record-text-build.ts';
 
 const designTokensPath = fileURLToPath(new URL('./design-tokens.json', import.meta.url));
 const siteFolder = fileURLToPath(new URL('.', import.meta.url));
@@ -42,6 +43,16 @@ const siteFolder = fileURLToPath(new URL('.', import.meta.url));
 // once before anything is built.
 const publishedSiteText = await loadPublishedSiteText(siteFolder);
 const publishedSiteTextWords = new Map(Object.entries(publishedSiteText.texts));
+// The parts of case and law boxes that can be edited the same way ("Record
+// text"). Their catalog is read from the records before any published words
+// go into them, and only when something has been published is it read here,
+// before the plugins below read the records.
+let recordTextEntries: SiteTextEntry[] | undefined;
+const recordTextCatalogOnce = () => (recordTextEntries ??= recordTextCatalog());
+if (Object.keys(publishedSiteText.texts).length > 0) {
+	const changed = usePublishedRecordText(publishedRecordText(recordTextCatalogOnce(), publishedSiteText.texts));
+	if (changed > 0) console.log(`Record text: building with ${changed} published parts of case and law boxes.`);
+}
 const designTokensModule = 'virtual:design-tokens.css';
 const resolvedDesignTokensModule = `\0${designTokensModule}`;
 
@@ -529,7 +540,7 @@ function siteText(): Plugin {
 		load(identifier) {
 			if (identifier !== resolvedSiteTextCatalogModule) return undefined;
 			return [
-				`export const siteTextCatalog = ${JSON.stringify(siteTextCatalog(siteFolder))};`,
+				`export const siteTextCatalog = ${JSON.stringify([...siteTextCatalog(siteFolder), ...recordTextCatalogOnce()])};`,
 				`export const builtPublication = ${publishedSiteText.publication};`
 			].join('\n');
 		}

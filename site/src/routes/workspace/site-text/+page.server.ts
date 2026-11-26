@@ -14,7 +14,7 @@ import {
 	undoLatestPublication
 } from '#lib/server/site-text.ts';
 import { builtPublication, catalogByKey, catalogEntries } from '#lib/server/site-text-catalog.ts';
-import { siteTextPlace } from '#lib/site-text.ts';
+import { entryPlace, siteTextPlace } from '#lib/site-text.ts';
 import { formText, requirePerson, storage } from '#lib/server/workspace.ts';
 import type { Actions, PageServerLoad } from './$types';
 
@@ -50,7 +50,7 @@ export const load: PageServerLoad = async (event) => {
 				key: entry.key,
 				words: state?.published ?? entry.words,
 				builtIn: entry.words,
-				place: siteTextPlace(entry.file),
+				place: entryPlace(entry),
 				attribute: entry.attribute ?? null,
 				edited: state?.published != null,
 				draft: state?.draft ? (state.draft.words ?? entry.words) : null,
@@ -93,7 +93,7 @@ export const load: PageServerLoad = async (event) => {
 			const builtIn = entry?.words ?? state.draft?.builtInWords ?? '';
 			return {
 				key: state.key,
-				place: siteTextPlace(entry?.file ?? state.draft?.sourceFile ?? ''),
+				place: entry ? entryPlace(entry) : siteTextPlace(state.draft?.sourceFile ?? ''),
 				page: state.draft?.page ?? null,
 				before: state.published ?? builtIn,
 				after: state.draft?.words ?? builtIn,
