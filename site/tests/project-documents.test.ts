@@ -12,7 +12,7 @@ import {
 	withScrollingTables
 } from '#lib/server/project-documents.ts';
 
-const repository = 'https://github.com/Phauks/Model-Tribal-ADR-Code';
+const repository = 'https://github.com/Phauks/Tribal-Law-Project';
 
 describe('project documents as site pages', () => {
 	it('shows the charter and the licenses, and no internal documents', () => {

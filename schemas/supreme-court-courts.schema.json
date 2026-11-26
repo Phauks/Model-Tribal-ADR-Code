@@ -1,6 +1,6 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "$id": "https://github.com/Phauks/Model-Tribal-ADR-Code/schemas/supreme-court-courts.schema.json",
+  "$id": "https://github.com/Phauks/Tribal-Law-Project/schemas/supreme-court-courts.schema.json",
   "title": "Supreme Court Courts",
   "description": "content/supreme-court/courts.yaml: each Court of the Supreme Court of the United States that has a page on the site, named for its Chief Justice, with a short history in the project's own words (site/src/lib/server/supreme-courts.ts). Who sat on each Court comes from justices.yaml. scripts/validate_records.py checks that each chief is a Chief Justice in justices.yaml and that each [@key] names a source record.",
   "type": "object",

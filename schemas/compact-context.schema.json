@@ -1,6 +1,6 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "$id": "https://github.com/Phauks/Model-Tribal-ADR-Code/schemas/compact-context.schema.json",
+  "$id": "https://github.com/Phauks/Tribal-Law-Project/schemas/compact-context.schema.json",
   "title": "Gaming compact context (table row)",
   "description": "One row of research/gaming/compact-context.csv: a cited fact on compact negotiation, good-faith litigation, Secretarial Procedures, compact review rules, revenue sharing, or a state's negotiating authority and current talks (research/gaming/README.md). Built by scripts/gaming/build_context.py and scripts/gaming/check_quotes.py. Every cell is text and an empty cell is left out before checking, so 'required' means the cell may not be empty.",
   "type": "object",

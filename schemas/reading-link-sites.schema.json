@@ -1,6 +1,6 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "$id": "https://github.com/Phauks/Model-Tribal-ADR-Code/schemas/reading-link-sites.schema.json",
+  "$id": "https://github.com/Phauks/Tribal-Law-Project/schemas/reading-link-sites.schema.json",
   "title": "Reading link sites",
   "description": "research/reading-links/sites.yaml: the places a reader can read a case or law the site cites, in the order the links show in. scripts/caselaw/reading_links.py reads these settings, checks each link and writes a reading_links block into each source record, which the site shows (site/src/lib/reading-links.ts).",
   "type": "object",

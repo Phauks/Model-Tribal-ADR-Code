@@ -1,6 +1,6 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "$id": "https://github.com/Phauks/Model-Tribal-ADR-Code/schemas/document-history.schema.json",
+  "$id": "https://github.com/Phauks/Tribal-Law-Project/schemas/document-history.schema.json",
   "title": "Document history",
   "description": "One document over time and every version of it: a constitution and its amendments, a gaming compact and its amendments, extensions and replacements, a code or court rules and their revisions, or any other source that changes. Each version cites its own source record, which holds its citation and archived copies. Stored as content/documents/<first letter of id, or _other>/<id>.yaml (decision record 0018).",
   "type": "object",
