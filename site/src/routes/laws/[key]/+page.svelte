@@ -36,17 +36,29 @@
 		</Collapsible>
 	{/if}
 
-	{#if data.essays.length > 0}
-		<Collapsible heading="On this site" identifier="on-this-site" count={data.essays.length}>
+	{#if data.essays.length + data.signers.length > 0}
+		<Collapsible heading="On this site" identifier="on-this-site" count={data.essays.length + data.signers.length}>
 			<dl class="summary-list">
-				<div>
-					<dt>Essays</dt>
-					<dd>
-						{#each data.essays as essay (essay.link)}
-							<p><a href={essay.link}>{essay.title}</a>{#if essay.where}<span class="muted">&nbsp;› {essay.where}</span>{/if}</p>
-						{/each}
-					</dd>
-				</div>
+				{#if data.essays.length > 0}
+					<div>
+						<dt>Essays</dt>
+						<dd>
+							{#each data.essays as essay (essay.link)}
+								<p><a href={essay.link}>{essay.title}</a>{#if essay.where}<span class="muted">&nbsp;› {essay.where}</span>{/if}</p>
+							{/each}
+						</dd>
+					</div>
+				{/if}
+				{#if data.signers.length > 0}
+					<div>
+						<dt>Signers</dt>
+						<dd>
+							{#each data.signers as signer (signer.link)}
+								<p><a href={signer.link}>{signer.name}</a>{#if signer.detail}<span class="muted">, for {signer.detail}</span>{/if}</p>
+							{/each}
+						</dd>
+					</div>
+				{/if}
 			</dl>
 		</Collapsible>
 	{/if}
