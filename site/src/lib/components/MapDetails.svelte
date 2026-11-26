@@ -8,6 +8,7 @@
 	import ChevronDown from '@lucide/svelte/icons/chevron-down';
 	import Search from '@lucide/svelte/icons/search';
 	import RecognitionBadges from './RecognitionBadges.svelte';
+	import { imageViewerAttributes } from '#lib/image-viewer.ts';
 	import type { MapDetails, MapDetailsContact, MapDetailsLine, MapDetailsNation } from '#lib/map-details.ts';
 
 	let {
@@ -113,6 +114,24 @@
 						{/if}
 					{/if}
 				</div>
+			{:else if line.links || line.pictures || details.table}
+				<!-- Links and pictures are long, so the fact's name sits beside them as in a table (historic maps mockup 2A). -->
+				<div class="row wide">
+					<span class="label">{line.label}</span>
+					<span class="value">
+						{#each line.links ?? [] as link, linkIndex (linkIndex)}{#if linkIndex > 0}{', '}{/if}{#if link.href}<a href={link.href}>{link.label}</a>{:else}{link.label}{/if}{/each}{#if line.value}{line.links?.length ? ', ' : ''}{line.value}{/if}
+						{#if line.pictures}
+							<span class="pictures">
+								{#each line.pictures as picture (picture.href)}
+									<a href={picture.href} {...imageViewerAttributes(picture.label, { title: picture.label, original: picture.original })}>
+										<img class="image-backing" src={picture.src} alt={picture.label} loading="lazy" />
+										<span>{picture.label}</span>
+									</a>
+								{/each}
+							</span>
+						{/if}
+					</span>
+				</div>
 			{:else}
 				<div class="row">
 					<span>{line.label}</span>
@@ -204,6 +223,41 @@
 
 	.value {
 		text-align: right;
+	}
+
+	.row.wide {
+		display: grid;
+		align-items: start;
+		grid-template-columns: minmax(6rem, 2fr) 5fr;
+	}
+
+	.row.wide .label {
+		font-weight: var(--font-weight-bold);
+	}
+
+	.row.wide .value {
+		text-align: left;
+	}
+
+	.pictures {
+		display: flex;
+		flex-wrap: wrap;
+		gap: var(--space-3);
+	}
+
+	.pictures a {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		gap: var(--space-1);
+		width: 7rem;
+		text-align: center;
+	}
+
+	.pictures img {
+		width: 100%;
+		height: auto;
+		border: 1px solid var(--color-line);
 	}
 
 	.contact a {
