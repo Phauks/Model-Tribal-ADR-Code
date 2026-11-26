@@ -1,4 +1,5 @@
 <script lang="ts">
+	import { openToSearchEngines } from '#lib/search-engines.ts';
 	// Self-hosted type (site/DESIGN.md, section 7): Atkinson Hyperlegible Next
 	// in the three weights the site uses, then Noto fonts that the browser
 	// downloads only for characters Atkinson Hyperlegible Next lacks, through
@@ -73,7 +74,8 @@
 </script>
 
 <svelte:head>
-	<meta name="robots" content="noindex" />
+	<!-- Until the first release (src/lib/search-engines.ts). -->
+	{#if !openToSearchEngines}<meta name="robots" content="noindex" />{/if}
 	<meta name="theme-color" content={data.themeColor.light} media="(prefers-color-scheme: light)" />
 	<meta name="theme-color" content={data.themeColor.dark} media="(prefers-color-scheme: dark)" />
 	<link rel="manifest" href="/manifest.webmanifest" />
