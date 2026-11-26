@@ -16,7 +16,7 @@ The Worker `tribal-law-project-watch` looks for new and changed legal material a
 | --- | --- | --- | --- |
 | `federal-register` | Federal Register API: the Indian affairs agencies, Title 25 of the C.F.R., and presidential documents mentioning tribes | Each weekday hour, minute 7 | On |
 | `federal-register-search` | Federal Register API: every agency, for "tribe", "tribal", "Indian country" and "Alaska Native" | Weekdays at 13:37 | On; most of its 4,900 documents a year are consultation notices, which the models sort out |
-| `ecfr` | eCFR versions API: Title 25, 42 C.F.R. parts 136, 136a and 137, and 43 C.F.R. part 4 | Daily at 14:23 | On |
+| `ecfr` | eCFR versions API: Title 25, 42 C.F.R. parts 136, 136a and 137, and subparts D, H and K of 43 C.F.R. part 4 | Daily at 14:23 | On |
 | `cited-links` | Every original link a source record cites, re-checked once every 60 days, a few every 10 minutes | Every 10 minutes | On |
 
 A first run only notes where each source stands (the Federal Register looks back 14 days), so the queue does not fill with old items.
