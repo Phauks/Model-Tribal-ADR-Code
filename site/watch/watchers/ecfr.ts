@@ -66,7 +66,7 @@ export function itemFor(version: Version): FoundItem {
 		title: `${version.title} C.F.R. ${name}`,
 		date: version.amendment_date,
 		link: sectionLink(version.title, version.identifier),
-		feeds: ['federal-regulations'],
+		feeds: Number(version.title) === 25 ? ['regulation-sections', 'federal-regulations'] : ['federal-regulations'],
 		facts: { title: Number(version.title), part: version.part, section: version.identifier, substantive: version.substantive, removed: version.removed, issueDate: version.issue_date }
 	};
 }
@@ -75,7 +75,7 @@ export default defineWatcher({
 	identifier: 'ecfr',
 	title: 'eCFR',
 	tier: 1,
-	feeds: ['federal-regulations'],
+	feeds: ['regulation-sections', 'federal-regulations'],
 	driver: 'api',
 	schedule: '23 14 * * *',
 	hosts: ['www.ecfr.gov'],

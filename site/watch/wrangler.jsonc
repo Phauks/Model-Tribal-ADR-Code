@@ -5,11 +5,11 @@
 // write candidates to the database for the workspace's Source watch page.
 // Nothing it finds is published without a person.
 //
-// Workers Builds deploys it from the GitHub repository (root directory:
-// site/watch, build command: cd .. && npm ci, deploy command:
-// npx wrangler deploy, build watch paths: site/watch/* and
-// site/src/lib/server/watch/*). No secret is stored here or in GitHub
-// (decision record 0006); the models are reached through the AI binding.
+// Workers Builds deploys it from the GitHub repository (site/watch/README.md,
+// "Setting it up"): root directory site/watch, build command
+// cd .. && npm ci && npm run watch:index, deploy command npx wrangler deploy.
+// No secret is stored here or in GitHub (decision record 0006); the models
+// are reached through the AI binding.
 {
 	"$schema": "../node_modules/wrangler/config-schema.json",
 	"name": "tribal-law-project-watch",

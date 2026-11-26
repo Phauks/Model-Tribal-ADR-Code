@@ -20,6 +20,7 @@ export const watchers: WatcherDefinition[] = [federalRegister, federalRegisterSe
 export const notWatched: NotWatched[] = [
 	// Collections (src/lib/server/collections.ts).
 	{ feed: 'stories', kind: 'never', reason: 'Stories come from people, with their consent and their nations’ protocols (decision records 0019 and 0036).' },
+	{ feed: 'united-states-code-sections', kind: 'planned', reason: 'us-code-release-points (the Office of the Law Revision Counsel’s release points for Title 25), phase 1, next after these.' },
 	{ feed: 'supreme-court-cases', kind: 'planned', reason: 'supreme-court (the Court’s slip opinions page) and govinfo (U.S. Reports pagination), phase 1; govinfo needs the api.data.gov key.' },
 	{ feed: 'other-court-cases', kind: 'planned', reason: 'courtlistener once Free Law Project has answered, and govinfo (USCOURTS) once the api.data.gov key is set; phase 2.' },
 	{ feed: 'tribal-court-opinions', kind: 'planned', reason: 'consented-courts, phase 3: only nations that publish their opinions and agree, with initials and privacy holds first (decision record 0057). Its list of courts starts empty.' },
