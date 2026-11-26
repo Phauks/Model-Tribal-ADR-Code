@@ -32,7 +32,7 @@ describe('Supreme Court pages', () => {
 			[{ text: 'William Johnson', link: '/supreme-court/justices/william-johnson' }, { text: ' took the seat of ' }, { text: 'Alfred Moore', link: '/supreme-court/justices/alfred-moore' }, { text: '.' }]
 		]);
 		expect(page.changes.at(-1)?.events[0].find((part) => part.link)?.link).toBe('/supreme-court/justices/john-marshall');
-		expect(page.cases.map((item) => item.key)).toEqual(['fletcher-v-peck', 'new-jersey-v-wilson', 'meigs-v-mclungs-lessee', 'preston-v-browder', 'danforths-lessee-v-thomas', 'johnson-v-mintosh', 'patterson-v-jenks', 'sundry-goods-wares-and-merchandises-v-united-states', 'cherokee-nation-v-georgia', 'worcester-v-georgia']);
+		expect(page.cases.map((item) => item.key)).toEqual(['fletcher-v-peck', 'new-jersey-v-wilson', 'meigs-v-mclungs-lessee', 'preston-v-browder', 'danforths-lessee-v-thomas', 'johnson-v-mintosh', 'danforth-v-wear', 'patterson-v-jenks', 'sundry-goods-wares-and-merchandises-v-united-states', 'cherokee-nation-v-georgia', 'worcester-v-georgia', 'mitchel-v-united-states', 'united-states-v-fernandez']);
 		expect(page.sources.map((source) => source.key)).toContain('supreme-court-historical-society-marshall-court');
 	});
 
@@ -102,7 +102,7 @@ describe('Justice and President pages', () => {
 		const page = justicePage('john-marshall')!;
 		expect(page.summary).toBe('Chief Justice, 1801–1835');
 		// The Marshall Court cases on the site, oldest first, including those written by script from the Supreme Court Database (2026-11-24).
-		expect(page.cases.map((item) => item.key)).toEqual(['fletcher-v-peck', 'new-jersey-v-wilson', 'meigs-v-mclungs-lessee', 'preston-v-browder', 'danforths-lessee-v-thomas', 'johnson-v-mintosh', 'patterson-v-jenks', 'sundry-goods-wares-and-merchandises-v-united-states', 'cherokee-nation-v-georgia', 'worcester-v-georgia']);
+		expect(page.cases.map((item) => item.key)).toEqual(['fletcher-v-peck', 'new-jersey-v-wilson', 'meigs-v-mclungs-lessee', 'preston-v-browder', 'danforths-lessee-v-thomas', 'johnson-v-mintosh', 'danforth-v-wear', 'patterson-v-jenks', 'sundry-goods-wares-and-merchandises-v-united-states', 'cherokee-nation-v-georgia', 'worcester-v-georgia', 'mitchel-v-united-states']);
 		const wrote = ['johnson-v-mintosh', 'cherokee-nation-v-georgia', 'worcester-v-georgia'];
 		expect(page.cases.filter((item) => wrote.includes(item.key)).every((item) => item.parts[0].part === 'Opinion of the Court')).toBe(true);
 		const facts = page.glance.flatMap((group) => group.items.map((item) => ({ ...item, label: group.label })));
@@ -114,6 +114,6 @@ describe('Justice and President pages', () => {
 		const { presidentPage } = await import('#lib/server/justice-pages.ts');
 		const page = presidentPage('john-adams')!;
 		expect(page.appointees.map((justice) => justice.name)).toEqual(['Bushrod Washington', 'Alfred Moore', 'John Marshall']);
-		expect(page.cases.map((item) => item.key)).toEqual(['fletcher-v-peck', 'new-jersey-v-wilson', 'meigs-v-mclungs-lessee', 'preston-v-browder', 'danforths-lessee-v-thomas', 'johnson-v-mintosh', 'patterson-v-jenks', 'sundry-goods-wares-and-merchandises-v-united-states', 'cherokee-nation-v-georgia', 'worcester-v-georgia']);
+		expect(page.cases.map((item) => item.key)).toEqual(['fletcher-v-peck', 'new-jersey-v-wilson', 'meigs-v-mclungs-lessee', 'preston-v-browder', 'danforths-lessee-v-thomas', 'johnson-v-mintosh', 'danforth-v-wear', 'patterson-v-jenks', 'sundry-goods-wares-and-merchandises-v-united-states', 'cherokee-nation-v-georgia', 'worcester-v-georgia', 'mitchel-v-united-states']);
 	});
 });
