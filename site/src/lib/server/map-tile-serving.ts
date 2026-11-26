@@ -21,6 +21,19 @@ export const tileSets: ReadonlyMap<string, TileSet> = new Map(
 	[manifest.landAreas, manifest.basemap, manifest.worldBasemap, manifest.landCessions, manifest.landAreasByYear].map((entry) => [entry.set, entry])
 );
 
+/**
+ * Where a tile is kept in a Cloudflare location's own cache across deploys
+ * (src/lib/server/kept-answers.ts), or undefined for a tile set not served.
+ * The key names every tile set served, since a basemap tile can come from the
+ * world basemap: a new tile set, such as land areas rebuilt after a nation
+ * withdraws one, changes every key, so no kept tile outlives its set.
+ */
+export function keptTileKey(origin: string, setName: string, z: number, x: number, y: number): string | undefined {
+	if (!tileSets.has(setName) || !isTileAddress(z, x, y)) return undefined;
+	const sets = [...tileSets.keys()].sort().join('+');
+	return `${origin}/map-tiles/${setName}/${z}/${x}/${y}.mvt?sets=${encodeURIComponent(sets)}`;
+}
+
 /** The world basemap, served in place of a basemap tile outside the United States and its territories (tools/build-map-tiles.mjs). */
 const worldFallback: ReadonlyMap<string, TileSet> = new Map([[manifest.basemap.set, manifest.worldBasemap]]);
 

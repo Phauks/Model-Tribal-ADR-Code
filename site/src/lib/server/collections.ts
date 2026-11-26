@@ -141,7 +141,7 @@ const supremeCourt = (authority: string) => authority === 'Supreme Court of the 
 /** Decisions of Interior's appeals board, their own collection (scripts/law/ibia_decisions.py). */
 const indianAppealsBoard = (authority: string) => authority === 'Interior Board of Indian Appeals';
 
-/** The Board's decisions held back for a privacy review (probate appeals and decisions about minors), by citation only. */
+/** The Board's decisions held back for a privacy review (decisions about a child or a protected person), by citation only. */
 function heldBackBoardDecisions(): number {
 	const file = path.join(repositoryRoot, 'research/ibia/held-back.csv');
 	return existsSync(file) ? parseCsv(readFileSync(file, 'utf8')).length : 0;

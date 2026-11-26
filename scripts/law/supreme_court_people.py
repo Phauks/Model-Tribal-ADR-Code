@@ -220,7 +220,7 @@ def upload(people: list[dict], folder: pathlib.Path) -> int:
         "s3", endpoint_url=f"https://{keys[2]}.r2.cloudflarestorage.com",
         aws_access_key_id=keys[0], aws_secret_access_key=keys[1], region_name="auto",
     )
-    bucket = os.environ.get("R2_BUCKET", "model-tribal-adr-code-sources")
+    bucket = os.environ.get("R2_BUCKET", "tribal-law-project-files")
     count = 0
     for person in people:
         portrait = person.get("portrait")
