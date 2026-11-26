@@ -15,7 +15,7 @@
  * them.
  */
 import { untrack, type Snippet } from 'svelte';
-import { joinPageControls } from './join-page-controls.ts';
+import { joinFallbacks, joinPageControls } from './join-page-controls.ts';
 
 export type PageMode = 'reading' | 'commenting' | 'editing';
 
@@ -50,6 +50,8 @@ export interface PageControls {
 	links?: readonly PageLink[];
 	history?: { title: string; href: string } | null;
 	publish?: PagePublish | null;
+	/** How many comment threads are open on the page, shown on the Commenting button. */
+	openComments?: number;
 }
 
 // Raw, so the getters a page passes are kept as they are, not copied into state.
@@ -58,7 +60,9 @@ let offers = $state.raw<{ controls: PageControls; fallback: boolean }[]>([]);
 /** The controls the masthead shows now, or null on a page that offers none. */
 export function currentPageControls(): PageControls | null {
 	const own = offers.findLast((offer) => !offer.fallback)?.controls;
-	const fallback = offers.findLast((offer) => offer.fallback)?.controls;
+	// Every page can have more than one fallback, such as the site text's and the page's comments.
+	const fallbacks = offers.filter((offer) => offer.fallback).map((offer) => offer.controls);
+	const fallback = fallbacks.length > 1 ? joinFallbacks(fallbacks) : fallbacks[0];
 	if (own && fallback) return joinPageControls(own, fallback);
 	return own ?? fallback ?? null;
 }
@@ -66,8 +70,10 @@ export function currentPageControls(): PageControls | null {
 /**
  * Offers the page's controls to the masthead; call the returned function to
  * take them back. A fallback, such as the site text's controls that every
- * page has (src/lib/components/SiteTextEditor.svelte), is joined to the
- * page's own offer (joinPageControls), whenever either was offered.
+ * page has (src/lib/components/SiteTextEditor.svelte) or the page's comments
+ * (src/lib/components/PageComments.svelte), is joined to the page's own offer
+ * (joinPageControls), whenever either was offered; several fallbacks are
+ * joined first (joinFallbacks).
  */
 export function offerPageControls(controls: PageControls, { fallback = false }: { fallback?: boolean } = {}): () => void {
 	const offer = { controls, fallback };

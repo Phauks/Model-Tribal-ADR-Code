@@ -10,6 +10,7 @@ Everything a reader reads, as plain files. The website and the print edition are
 | `forms/` | Fill-in forms (referral, agreement to participate, settlement, arbitration clause) | Markdown with placeholders | CC0 1.0 |
 | `tribes/` | One profile per nation or community | YAML | CC BY 4.0 |
 | `sources/` | One record per source: citation data, archive links, rights | YAML | CC BY 4.0 (records only, not the works they describe) |
+| `law/` | Lists generated from official sources that law pages read, such as the sections of Title 25 of the United States Code and of the Code of Federal Regulations (`scripts/law/title_25_acts.py`) | JSON | CC BY 4.0 (the lists only, not the laws they list) |
 | `glossary/` | One entry per defined term or acronym, linked from text as `[[id]]` | YAML | CC BY 4.0 |
 | `methods/` | One record per dispute resolution method, from any tradition; the list is open | YAML | CC BY 4.0 |
 | `bibliographies/` | Annotated reading lists built on the source records | Markdown | CC BY 4.0 |

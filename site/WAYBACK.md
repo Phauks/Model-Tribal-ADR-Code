@@ -39,6 +39,6 @@ A marked link is not tried again. The marks are kept beside the Worker's progres
 
 1. Make a free account at archive.org and open https://archive.org/account/s3.php for the access key and secret key.
 2. Create a Workers Builds project for this Worker: connect the repository, root directory `site/wayback`, build command `cd .. && npm ci`, deploy command `npx wrangler deploy`, build watch path `site/wayback/*`.
-3. After the first deploy, open the Worker (model-tribal-adr-code-wayback) > Settings > Variables and Secrets, and add two secrets of type Secret: `ARCHIVE_ORG_ACCESS_KEY` and `ARCHIVE_ORG_SECRET_KEY`. Until they are set, the progress page says the keys are missing.
+3. After the first deploy, open the Worker (tribal-law-project-wayback) > Settings > Variables and Secrets, and add two secrets of type Secret: `ARCHIVE_ORG_ACCESS_KEY` and `ARCHIVE_ORG_SECRET_KEY`. Until they are set, the progress page says the keys are missing.
 
-After the first deploy, `https://model-tribal-adr-code-wayback.trevordgoldsmith.workers.dev/` shows its progress within a few minutes.
+After the first deploy, `https://tribal-law-project-wayback.trevordgoldsmith.workers.dev/` shows its progress within a few minutes.

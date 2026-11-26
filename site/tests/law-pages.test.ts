@@ -76,3 +76,35 @@ describe('A reference to a law with its own page', () => {
 		expect(formatSource(other, other.key)).not.toContain('source-page');
 	});
 });
+
+describe('Title 25 of the Code and of the regulations', () => {
+	it('lists a chapter’s sections, each linking into our copy of the chapter at its page', async () => {
+		const { sectionsOf } = await import('#lib/server/title-25-sections.ts');
+		const chapter = sectionsOf('usc-25-chapter-45')!;
+		expect(chapter.kind).toBe('code');
+		const reorganization = chapter.inForce.find((section) => section.label === '§ 5123')!;
+		expect(reorganization).toMatchObject({ anchor: 'sec-5123', heading: expect.stringMatching(/^Organization of Indian tribes/) });
+		expect(reorganization.link).toMatch(/^\/copies\/united-states-code\/2024\/title-25-chapter-45\.pdf#page=\d+$/);
+		expect(reorganization.act).toMatchObject({ link: '/laws/indian-reorganization-act-1934' });
+	});
+
+	it('lists a part’s sections, linking to the eCFR', async () => {
+		const { sectionsOf } = await import('#lib/server/title-25-sections.ts');
+		const part = sectionsOf('cfr-25-part-11-courts-of-indian-offenses')!;
+		expect(part.kind).toBe('regulations');
+		expect(part.inForce.find((section) => section.label === '§ 11.100')?.link).toBe('https://www.ecfr.gov/current/title-25/section-11.100');
+	});
+
+	it('gives an Act the sections it enacted, linking to their chapter’s page', async () => {
+		const { sectionsEnactedBy } = await import('#lib/server/title-25-sections.ts');
+		const enacted = sectionsEnactedBy('indian-reorganization-act-1934');
+		expect(enacted.map((section) => section.label)).toContain('25 U.S.C. § 5123');
+		expect(enacted.find((section) => section.label === '25 U.S.C. § 5123')?.link).toBe('/laws/usc-25-chapter-45#sec-5123');
+	});
+
+	it('gives every Act a Title 25 section names a record, and every Act record a page', () => {
+		const acts = [...sources().values()].filter((record) => (record as { found_in?: string[] }).found_in?.includes('2026-11-26-title-25-acts'));
+		expect(acts.length).toBeGreaterThan(250);
+		expect(acts.filter((record) => !isLawRecord(record)).map((record) => record.key)).toEqual([]);
+	});
+});

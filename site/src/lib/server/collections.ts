@@ -26,6 +26,8 @@ import { buildFormCatalog } from './form-catalog.ts';
 import { copyPagePath } from '../public-copies.ts';
 import { dataChartList, dataChartTrail } from '../data-chart-list.ts';
 import type { ResultGroup } from '../search-everything.ts';
+import { allSections } from './title-25-sections.ts';
+import { isLawRecord } from './law-records.ts';
 
 /** The headings the collections are grouped under, in page order. */
 export const collectionGroups = ['Native nations', 'Federal law', 'Courts and cases', 'People', 'Reference'] as const;
@@ -80,11 +82,11 @@ export interface Collection {
 const kindOf = (record: SourceRecord) => (record as SourceRecord & { kind?: string }).kind ?? '';
 const typeOf = (record: SourceRecord) => (record.citation as { type?: string }).type ?? '';
 
-/** A source record as a list row: a case links to its page, anything else to our copy or else where it is published. */
+/** A source record as a list row: a case or law links to its page, anything else to our copy or else where it is published. */
 function sourceItem(record: SourceRecord, detail?: string): CollectionItem {
 	const link = record.original_link ?? record.citation.URL;
 	const copy = publicCopyFor(link);
-	const href = typeOf(record) === 'legal_case' ? `/cases/${record.key}` : copy ? copyPagePath(copy) : link;
+	const href = typeOf(record) === 'legal_case' ? `/cases/${record.key}` : isLawRecord(record) ? `/laws/${record.key}` : copy ? copyPagePath(copy) : link;
 	return { title: record.citation.title ?? record.key, href, year: record.citation.issued?.['date-parts']?.[0]?.[0], detail, key: record.key };
 }
 
@@ -163,6 +165,9 @@ export const collections: Collection[] = [
 	{ identifier: 'treaties', search: { group: 'law', label: 'Treaty' }, title: 'Treaties and Agreements', group: 'Federal law', detailHeader: 'Nation', items: treaties },
 	{ identifier: 'federal-statutes', search: { group: 'law', label: 'Statute' }, title: 'Statutes', group: 'Federal law', sourceKinds: ['federal-statute'], items: sourcesOfKind(['federal-statute']) },
 	{ identifier: 'federal-regulations', search: { group: 'law', label: 'Regulation' }, title: 'Regulations', group: 'Federal law', sourceKinds: ['federal-regulation'], items: sourcesOfKind(['federal-regulation']) },
+	// Each section in force of Title 25 of the Code and of 25 C.F.R., listed on its chapter's or part's page (title-25-sections.ts).
+	{ identifier: 'united-states-code-sections', search: { group: 'law', label: 'U.S. Code section' }, title: 'U.S. Code Sections (Title 25)', group: 'Federal law', detailHeader: 'Chapter', items: () => allSections('code') },
+	{ identifier: 'regulation-sections', search: { group: 'law', label: 'Regulation section' }, title: 'Regulation Sections (25 C.F.R.)', group: 'Federal law', detailHeader: 'Part', items: () => allSections('regulations') },
 	{ identifier: 'executive-orders', search: { group: 'law', label: 'Executive order' }, title: 'Executive Orders', group: 'Federal law', sourceKinds: ['executive-order'], items: sourcesOfKind(['executive-order']) },
 	{ identifier: 'federal-register-notices', search: { group: 'law', label: 'Federal Register notice' }, title: 'Federal Register Notices', group: 'Federal law', sourceKinds: ['federal-register-notice'], items: sourcesOfKind(['federal-register-notice']) },
 

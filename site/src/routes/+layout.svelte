@@ -35,6 +35,7 @@
 	import LinkPreviews from '#lib/components/LinkPreviews.svelte';
 	import ImageViewer from '#lib/components/ImageViewer.svelte';
 	import SiteTextEditor from '#lib/components/SiteTextEditor.svelte';
+	import PageComments from '#lib/components/PageComments.svelte';
 	import { onMount } from 'svelte';
 	import { onNavigate } from '$app/navigation';
 	import { page } from '$app/state';
@@ -101,6 +102,7 @@
 	<LinkPreviews />
 	<ImageViewer />
 	<SiteTextEditor />
+	<PageComments />
 {/if}
 
 <style>

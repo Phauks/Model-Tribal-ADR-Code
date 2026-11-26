@@ -2,7 +2,7 @@
 	// The masthead (site/DESIGN.md, section 6, "Masthead"). One row: the
 	// sidebar button and the site's name at the left; at the right one evenly
 	// spaced row of icon buttons (search, Report a problem as a flag, Star,
-	// Follow, Print, Download, theme, Settings), then sign-in or the account
+	// Follow, Print, Download, Settings), then sign-in or the account
 	// menu at the far right (Trevor, Nov. 23, 2026). Contribute left the
 	// masthead for the sidebar's list of sections, so the row holds only the
 	// buttons (Trevor, Nov. 24, 2026; src/lib/site-sections.ts). Star and
@@ -11,6 +11,9 @@
 	// of what the page offers (DownloadMenu.svelte). The site's sections are in
 	// the sidebar (SiteSidebar.svelte), so the masthead has no menu row. The
 	// content version shows only on paper; on screen it is in the footer.
+	// The Settings cog opens a small Page settings panel under it, which holds
+	// the theme, so the theme button left the row (Trevor, Nov. 26, 2026;
+	// PageSettings.svelte).
 	//
 	// On wide screens a hamburger button near the page's left edge, before the
 	// name, hides and shows the sidebar, so a hidden sidebar leaves nothing
@@ -41,11 +44,10 @@
 	import DownloadMenu from './DownloadMenu.svelte';
 	import PrintOptions from './PrintOptions.svelte';
 	import ReportProblem from './ReportProblem.svelte';
-	import SettingsPanel from './SettingsPanel.svelte';
+	import PageSettings from './PageSettings.svelte';
 	import SiteSearch from './SiteSearch.svelte';
 	import FollowButton from './FollowButton.svelte';
 	import StarButton from './StarButton.svelte';
-	import ThemeSetting from './ThemeSetting.svelte';
 
 	let { contentVersion }: { contentVersion: string } = $props();
 
@@ -135,7 +137,7 @@
 				class="more-button"
 				type="button"
 				popovertarget="masthead-more"
-				aria-label="More: report a problem, star, follow, print, cite, download, theme, settings and sign in"
+				aria-label="More: report a problem, star, follow, print, cite, download, settings and sign in"
 			>
 				<Ellipsis size={24} /><span aria-hidden="true">More</span>
 			</button>
@@ -147,8 +149,7 @@
 				<PrintOptions bind:this={printOptions} />
 				<CiteMenu />
 				<DownloadMenu onpdf={() => printOptions?.open()} />
-				<ThemeSetting />
-				<SettingsPanel />
+				<PageSettings />
 				<AccountLink />
 			</div>
 		</div>
