@@ -9,14 +9,19 @@
 import type { RecognitionBadge } from './recognition-badges.ts';
 import { foldForSearch } from './tables/table-definition.ts';
 
-export type SearchKind = 'nation' | 'story' | 'term' | 'page';
+export type SearchKind = 'nation' | 'law' | 'case' | 'person' | 'story' | 'term' | 'reference' | 'page';
 
 export interface SearchEntry {
 	kind: SearchKind;
 	/** What the result is called, such as a nation's official name. */
 	title: string;
-	/** Other names that should find it: self-designations, former names, aliases. */
+	/** Other names that should find it: self-designations, former names, aliases, acronyms. */
 	also?: string[];
+	/**
+	 * The sets it belongs to, such as the Marshall Trilogy (content/search/names.yaml),
+	 * each as its names: the name shown first, then other names for the set. Any of them finds every member.
+	 */
+	groups?: string[][];
 	/** One line shown under the title, such as the states or a summary. */
 	detail?: string;
 	/** A nation's recognition badges (src/lib/recognition-badges.ts); none for no federal recognition. */
@@ -28,14 +33,20 @@ export interface SearchEntry {
 
 export const searchKindLabels: Record<SearchKind, string> = {
 	nation: 'Nations and communities',
+	law: 'Federal law',
+	case: 'Courts and cases',
+	person: 'People',
 	story: 'Stories',
 	term: 'Glossary',
+	reference: 'Reference',
 	page: 'Pages'
 };
 
 export interface SearchResult extends SearchEntry {
 	/** The other name that matched, when the title did not. */
 	matchedName?: string;
+	/** The set whose name matched, by the name shown, when neither the title nor another name did. */
+	matchedGroup?: string;
 	score: number;
 }
 
@@ -56,7 +67,8 @@ function nameScore(name: string, words: string[], phrase: string): number {
 
 /**
  * The entries that match, best first. A title match ranks above a match on
- * another name, which ranks above a match on the detail line alone. Ties keep
+ * another name, which ranks above a match on the name of a set the entry
+ * belongs to, which ranks above a match on the detail line alone. Ties keep
  * the index's order, which is alphabetical within each kind.
  */
 export function searchEntries(entries: SearchEntry[], query: string): SearchResult[] {
@@ -76,11 +88,23 @@ export function searchEntries(entries: SearchEntry[], query: string): SearchResu
 				}
 			}
 		}
+		let matchedGroup: string | undefined;
+		if (score <= 0) {
+			for (const names of entry.groups ?? []) {
+				for (const name of names) {
+					const groupScore = nameScore(name, words, phrase) - 20;
+					if (groupScore > score) {
+						score = groupScore;
+						matchedGroup = names[0];
+					}
+				}
+			}
+		}
 		if (score <= 0 && entry.detail) {
 			const haystack = foldForSearch(`${entry.title} ${(entry.also ?? []).join(' ')} ${entry.detail}`);
 			if (words.every((word) => haystack.includes(word))) score = 10;
 		}
-		if (score > 0) results.push({ ...entry, matchedName, score });
+		if (score > 0) results.push({ ...entry, matchedName, matchedGroup, score });
 	}
 	return results.sort((first, second) => second.score - first.score);
 }

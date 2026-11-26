@@ -203,7 +203,8 @@ export interface NationRecord {
 	names: {
 		official: string;
 		official_source?: string;
-		self_designation?: (CitedFact & { name: string; language_tag?: string })[];
+		self_designation?: (CitedFact & { name: string; language_tag?: string; romanized?: string })[];
+		alternate?: (CitedFact & { name: string })[];
 		former?: (CitedFact & { name: string })[];
 		pronunciation?: (CitedFact & {
 			name: string;

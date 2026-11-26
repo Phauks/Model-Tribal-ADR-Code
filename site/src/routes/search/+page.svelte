@@ -34,14 +34,16 @@
 		type NationSearchRow,
 		type SearchRecords
 	} from '#lib/search-records.ts';
-	import { matchEverything, resultGroupLabels } from '#lib/search-everything.ts';
+	import { entryGroups, forEntryGroups, matchEverything, resultGroupLabels, resultGroups, type ResultGroup } from '#lib/search-everything.ts';
 	import { loadSearchIndex, type SearchEntry, type SearchResult } from '#lib/site-search.ts';
 	import type { TableColumn, TableRow } from '#lib/tables/table-definition.ts';
 
-	type Show = 'all' | 'nation' | 'document' | 'story' | 'term' | 'page';
+	type Show = 'all' | ResultGroup;
+	/** A result listed straight from the index; a story listed without words typed has no name that matched. */
+	type ListedResult = SearchEntry & Partial<Pick<SearchResult, 'matchedName' | 'matchedGroup'>>;
 
 	const showLabels: Record<Show, string> = { all: 'Everything', ...resultGroupLabels };
-	const showOrder: Show[] = ['all', 'nation', 'document', 'story', 'term', 'page'];
+	const showOrder: Show[] = ['all', ...resultGroups];
 
 	/** Results shown per group before "Show all". */
 	const firstShown = 25;
@@ -162,17 +164,21 @@
 		});
 	}
 
-	// Glossary terms and the site's pages belong to no nation, so nation filters put them away.
-	const terms = $derived(filtering ? [] : (matches?.term ?? []));
-	const pages = $derived(filtering ? [] : (matches?.page ?? []));
+	/**
+	 * Each group listed straight from the search index. Stories follow the
+	 * nation filters; the rest belong to no nation in the index (federal law,
+	 * cases, people, glossary terms, reference material and the site's pages),
+	 * so nation filters put them away.
+	 */
+	const listed = $derived(
+		forEntryGroups<ListedResult[]>((group) => (group === 'story' ? stories : filtering ? [] : (matches?.[group] ?? [])))
+	);
 
 	const totals = $derived<Record<Show, number>>({
-		all: nations.length + documents.length + stories.length + terms.length + pages.length,
+		...forEntryGroups((group) => listed[group].length),
+		all: nations.length + documents.length + entryGroups.reduce((total, group) => total + listed[group].length, 0),
 		nation: nations.length,
-		document: documents.length,
-		story: stories.length,
-		term: terms.length,
-		page: pages.length
+		document: documents.length
 	});
 	const shows = (kind: Show) => (show === 'all' || show === kind) && totals[kind] > 0;
 
@@ -260,7 +266,7 @@
 
 	<form class="search-form needs-scripts" role="search" action="/search" method="get" onsubmit={search}>
 		<div class="field">
-			<label for="search-page-query">Search nations, laws, stories, glossary terms and pages</label>
+			<label for="search-page-query">Search nations, laws, cases, people, stories and pages</label>
 			<input
 				id="search-page-query"
 				type="search"
@@ -426,9 +432,8 @@
 				</details>
 			{/if}
 
-			{#each [['story', stories], ['term', terms], ['page', pages]] as [kind, list] (kind)}
-				{@const group = kind as Show}
-				{@const items = list as SearchResult[]}
+			{#each entryGroups as group (group)}
+				{@const items = listed[group]}
 				{#if shows(group)}
 					<details class="result-group" open>
 						<summary>
@@ -444,6 +449,8 @@
 									<a href={result.link}>{result.title}</a>
 									{#if result.matchedName}
 										<span class="small muted">(also called {result.matchedName})</span>
+									{:else if result.matchedGroup}
+										<span class="small muted">({result.matchedGroup})</span>
 									{/if}
 									{#if result.detail}<p class="small muted">{result.detail}</p>{/if}
 								</li>

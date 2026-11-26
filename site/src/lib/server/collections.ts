@@ -25,6 +25,7 @@ import { storySummaries } from './stories.ts';
 import { buildFormCatalog } from './form-catalog.ts';
 import { copyPagePath } from '../public-copies.ts';
 import { dataChartList, dataChartTrail } from '../data-chart-list.ts';
+import type { ResultGroup } from '../search-everything.ts';
 
 /** The headings the collections are grouped under, in page order. */
 export const collectionGroups = ['Native nations', 'Federal law', 'Courts and cases', 'People', 'Reference'] as const;
@@ -39,6 +40,8 @@ export interface CollectionItem {
 	year?: number;
 	/** One more fact for the list's third column, such as the court or nation. */
 	detail?: string;
+	/** The source record it is, when it is one, so search can send a reader to the record's own page. */
+	key?: string;
 }
 
 export interface Collection {
@@ -63,6 +66,15 @@ export interface Collection {
 	heldBack?: () => number;
 	/** Why they are held back, read after the number: "held back for a privacy review". */
 	heldBackReason?: string;
+	/**
+	 * Where the site search lists its items (src/lib/server/search-index.ts),
+	 * so every collection is searchable and a new one is too. 'nation',
+	 * 'document', 'story' and 'term' are searched through their own indexes;
+	 * any other group gets one result per item, with `label` (one item, such
+	 * as "Executive order") leading its detail line. tests/search-coverage.test.ts
+	 * checks that every item is found.
+	 */
+	search: { group: ResultGroup; label?: string };
 }
 
 const kindOf = (record: SourceRecord) => (record as SourceRecord & { kind?: string }).kind ?? '';
@@ -73,7 +85,7 @@ function sourceItem(record: SourceRecord, detail?: string): CollectionItem {
 	const link = record.original_link ?? record.citation.URL;
 	const copy = publicCopyFor(link);
 	const href = typeOf(record) === 'legal_case' ? `/cases/${record.key}` : copy ? copyPagePath(copy) : link;
-	return { title: record.citation.title ?? record.key, href, year: record.citation.issued?.['date-parts']?.[0]?.[0], detail };
+	return { title: record.citation.title ?? record.key, href, year: record.citation.issued?.['date-parts']?.[0]?.[0], detail, key: record.key };
 }
 
 /** Source records of some kinds (schemas/source.schema.json), less treaties, which are their own collection. */
@@ -112,7 +124,7 @@ const tribesOf = (record: SourceRecord) => {
 export const collections: Collection[] = [
 	// Native nations
 	{
-		identifier: 'native-nations',
+		identifier: 'native-nations', search: { group: 'nation' },
 		title: 'Native Nations',
 		group: 'Native nations',
 		detailHeader: 'States',
@@ -123,7 +135,7 @@ export const collections: Collection[] = [
 				.map((nation) => ({ title: nation.names.official, href: `/nations/${nation.id}`, detail: [...new Set(nation.states?.map((place) => place.state))].join(', ') || undefined }))
 	},
 	{
-		identifier: 'governing-documents',
+		identifier: 'governing-documents', search: { group: 'document' },
 		title: 'Governing Document Histories',
 		group: 'Native nations',
 		detailHeader: 'Nation',
@@ -136,11 +148,11 @@ export const collections: Collection[] = [
 			}));
 		}
 	},
-	{ identifier: 'tribal-constitutions', title: 'Constitutions', group: 'Native nations', detailHeader: 'Nation', sourceKinds: ['tribal-constitution'], items: sourcesOfKind(['tribal-constitution'], tribesOf) },
-	{ identifier: 'tribal-codes', title: 'Codes and Laws', group: 'Native nations', detailHeader: 'Nation', sourceKinds: ['tribal-code', 'tribal-court-rule'], items: sourcesOfKind(['tribal-code', 'tribal-court-rule'], tribesOf) },
-	{ identifier: 'intergovernmental-agreements', title: 'Compacts and Agreements', group: 'Native nations', detailHeader: 'Nation', sourceKinds: ['intergovernmental-agreement'], items: sourcesOfKind(['intergovernmental-agreement'], tribesOf) },
+	{ identifier: 'tribal-constitutions', search: { group: 'document' }, title: 'Constitutions', group: 'Native nations', detailHeader: 'Nation', sourceKinds: ['tribal-constitution'], items: sourcesOfKind(['tribal-constitution'], tribesOf) },
+	{ identifier: 'tribal-codes', search: { group: 'document' }, title: 'Codes and Laws', group: 'Native nations', detailHeader: 'Nation', sourceKinds: ['tribal-code', 'tribal-court-rule'], items: sourcesOfKind(['tribal-code', 'tribal-court-rule'], tribesOf) },
+	{ identifier: 'intergovernmental-agreements', search: { group: 'document' }, title: 'Compacts and Agreements', group: 'Native nations', detailHeader: 'Nation', sourceKinds: ['intergovernmental-agreement'], items: sourcesOfKind(['intergovernmental-agreement'], tribesOf) },
 	{
-		identifier: 'stories',
+		identifier: 'stories', search: { group: 'story' },
 		title: 'Stories',
 		group: 'Native nations',
 		detailHeader: 'Nation',
@@ -148,17 +160,17 @@ export const collections: Collection[] = [
 	},
 
 	// Federal law
-	{ identifier: 'treaties', title: 'Treaties and Agreements', group: 'Federal law', detailHeader: 'Nation', items: treaties },
-	{ identifier: 'federal-statutes', title: 'Statutes', group: 'Federal law', sourceKinds: ['federal-statute'], items: sourcesOfKind(['federal-statute']) },
-	{ identifier: 'federal-regulations', title: 'Regulations', group: 'Federal law', sourceKinds: ['federal-regulation'], items: sourcesOfKind(['federal-regulation']) },
-	{ identifier: 'executive-orders', title: 'Executive Orders', group: 'Federal law', sourceKinds: ['executive-order'], items: sourcesOfKind(['executive-order']) },
-	{ identifier: 'federal-register-notices', title: 'Federal Register Notices', group: 'Federal law', sourceKinds: ['federal-register-notice'], items: sourcesOfKind(['federal-register-notice']) },
+	{ identifier: 'treaties', search: { group: 'law', label: 'Treaty' }, title: 'Treaties and Agreements', group: 'Federal law', detailHeader: 'Nation', items: treaties },
+	{ identifier: 'federal-statutes', search: { group: 'law', label: 'Statute' }, title: 'Statutes', group: 'Federal law', sourceKinds: ['federal-statute'], items: sourcesOfKind(['federal-statute']) },
+	{ identifier: 'federal-regulations', search: { group: 'law', label: 'Regulation' }, title: 'Regulations', group: 'Federal law', sourceKinds: ['federal-regulation'], items: sourcesOfKind(['federal-regulation']) },
+	{ identifier: 'executive-orders', search: { group: 'law', label: 'Executive order' }, title: 'Executive Orders', group: 'Federal law', sourceKinds: ['executive-order'], items: sourcesOfKind(['executive-order']) },
+	{ identifier: 'federal-register-notices', search: { group: 'law', label: 'Federal Register notice' }, title: 'Federal Register Notices', group: 'Federal law', sourceKinds: ['federal-register-notice'], items: sourcesOfKind(['federal-register-notice']) },
 
 	// Courts and cases
-	{ identifier: 'supreme-court-cases', title: 'U.S. Supreme Court Cases', group: 'Courts and cases', items: casesBy(supremeCourt) },
-	{ identifier: 'other-court-cases', title: 'Other Court Cases', group: 'Courts and cases', detailHeader: 'Court', items: casesBy((authority) => !supremeCourt(authority)) },
+	{ identifier: 'supreme-court-cases', search: { group: 'case', label: 'Court case' }, title: 'U.S. Supreme Court Cases', group: 'Courts and cases', items: casesBy(supremeCourt) },
+	{ identifier: 'other-court-cases', search: { group: 'case', label: 'Court case' }, title: 'Other Court Cases', group: 'Courts and cases', detailHeader: 'Court', items: casesBy((authority) => !supremeCourt(authority)) },
 	{
-		identifier: 'tribal-court-opinions',
+		identifier: 'tribal-court-opinions', search: { group: 'case', label: 'Tribal court opinion' },
 		title: 'Tribal Court Opinions',
 		group: 'Courts and cases',
 		detailHeader: 'Court',
@@ -167,7 +179,7 @@ export const collections: Collection[] = [
 		heldBackReason: 'held back for a privacy review'
 	},
 	{
-		identifier: 'supreme-courts',
+		identifier: 'supreme-courts', search: { group: 'case', label: 'U.S. Supreme Court' },
 		title: 'U.S. Supreme Courts',
 		group: 'Courts and cases',
 		detailHeader: 'Years',
@@ -178,12 +190,12 @@ export const collections: Collection[] = [
 			return courts.length ? `${courts[0].years.slice(0, 4)}–${last || 'today'}` : '';
 		}
 	},
-	{ identifier: 'courts', title: 'Courts', group: 'Courts and cases', detailHeader: 'Kind', list: '/courts', items: () => namedCourts().map((court) => ({ title: court.name, href: `/courts/${court.key}`, detail: court.kind })) },
+	{ identifier: 'courts', search: { group: 'case', label: 'Court' }, title: 'Courts', group: 'Courts and cases', detailHeader: 'Kind', list: '/courts', items: () => namedCourts().map((court) => ({ title: court.name, href: `/courts/${court.key}`, detail: court.kind })) },
 
 	// People
-	{ identifier: 'biographies', title: 'Biographies', group: 'People', items: () => biographies().map((person) => ({ title: person.name, href: biographyPath(person.key) })) },
+	{ identifier: 'biographies', search: { group: 'person', label: 'Biography' }, title: 'Biographies', group: 'People', items: () => biographies().map((person) => ({ title: person.name, href: biographyPath(person.key) })) },
 	{
-		identifier: 'justices',
+		identifier: 'justices', search: { group: 'person', label: 'U.S. Supreme Court Justice' },
 		title: 'U.S. Supreme Court Justices',
 		group: 'People',
 		detailHeader: 'Years',
@@ -194,7 +206,7 @@ export const collections: Collection[] = [
 		}
 	},
 	{
-		identifier: 'presidents',
+		identifier: 'presidents', search: { group: 'person', label: 'U.S. President' },
 		title: 'U.S. Presidents',
 		group: 'People',
 		detailHeader: 'Years',
@@ -206,10 +218,10 @@ export const collections: Collection[] = [
 	},
 
 	// Reference
-	{ identifier: 'source-copies', title: 'Source Documents', group: 'Reference', list: '/copies', items: () => publicCopies().map((copy) => ({ title: copy.title ?? copy.key, href: copyPagePath(copy) })) },
-	{ identifier: 'charts', title: 'Charts', group: 'Reference', items: () => dataChartList.map((chart) => ({ title: chart.title, href: dataChartTrail(chart).at(-1)?.href })) },
-	{ identifier: 'glossary-terms', title: 'Glossary Terms', group: 'Reference', items: () => glossary().map((entry) => ({ title: entry.term, href: `/glossary/${entry.id}` })) },
-	{ identifier: 'forms', title: 'Forms', group: 'Reference', items: () => buildFormCatalog().map((form) => ({ title: form.title, href: `/forms/${form.slug}` })) }
+	{ identifier: 'source-copies', search: { group: 'reference', label: 'Source document' }, title: 'Source Documents', group: 'Reference', list: '/copies', items: () => publicCopies().map((copy) => ({ title: copy.title ?? copy.key, href: copyPagePath(copy) })) },
+	{ identifier: 'charts', search: { group: 'reference', label: 'Chart' }, title: 'Charts', group: 'Reference', items: () => dataChartList.map((chart) => ({ title: chart.title, href: dataChartTrail(chart).at(-1)?.href })) },
+	{ identifier: 'glossary-terms', search: { group: 'term' }, title: 'Glossary Terms', group: 'Reference', items: () => glossary().map((entry) => ({ title: entry.term, href: `/glossary/${entry.id}` })) },
+	{ identifier: 'forms', search: { group: 'reference', label: 'Form' }, title: 'Forms', group: 'Reference', items: () => buildFormCatalog().map((form) => ({ title: form.title, href: `/forms/${form.slug}` })) }
 ];
 
 /**

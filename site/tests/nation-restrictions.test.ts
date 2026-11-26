@@ -193,7 +193,7 @@ describe('what the Worker sends to the site first', () => {
 	};
 
 	it('sends built files that name laws and opinions to be filtered', async () => {
-		for (const path of ['/search/records.json', '/copies/list.csv', '/copies/details/0f.json', '/copies/offline/nations/cherokee-nation.json', '/nations/cherokee-nation/timeline.csv', '/nations/timeline/entries.json', '/nations/law/cherokee-nation.json', '/nations/data/build/opinions.json', '/zip/data.zip']) {
+		for (const path of ['/search/records.json', '/search/index.json', '/copies/list.csv', '/copies/details/0f.json', '/copies/offline/nations/cherokee-nation.json', '/nations/cherokee-nation/timeline.csv', '/nations/timeline/entries.json', '/nations/law/cherokee-nation.json', '/nations/data/build/opinions.json', '/zip/data.zip']) {
 			expect((await ask(path)).seen).toEqual([`/restricted-files${path}`]);
 		}
 	});

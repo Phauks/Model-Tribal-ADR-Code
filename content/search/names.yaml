@@ -1,0 +1,181 @@
+# Names readers search by that the records themselves don't give: acronyms
+# and popular names for one law or case, and names for a set of them, such as
+# the Marshall Trilogy. The site search (site/src/lib/server/search-index.ts)
+# adds each name to what it searches. Every name has a basis: a published
+# source that uses the name for exactly these items, with the words that show
+# it. Schema: schemas/search-names.schema.json.
+#
+# An item is a source record key (its page on this site, /laws/<key> or
+# /cases/<key>) or a path on this site. Never name a Tribal court opinion
+# here: an opinion held back or published with initials must not be found by
+# any other name (tests/search-coverage.test.ts checks this).
+checked: 2026-11-26
+names:
+  - names: [ICWA]
+    item: indian-child-welfare-act-1978
+    basis:
+      citation: 25 C.F.R. § 23.2 (2026)
+      link: https://www.ecfr.gov/current/title-25/section-23.2
+      words: Act means the Indian Child Welfare Act (ICWA)
+  - names: [IGRA]
+    item: indian-gaming-regulatory-act-1988
+    basis:
+      citation: 25 C.F.R. § 290.2 (2026)
+      link: https://www.ecfr.gov/current/title-25/section-290.2
+      words: IGRA means the Indian Gaming Regulatory Act of 1988
+  - names: [ISDEAA]
+    item: indian-self-determination-and-education-assistance-act-1975
+    basis:
+      citation: 42 C.F.R. § 136.501 (2026)
+      link: https://www.ecfr.gov/current/title-42/section-136.501
+      words: the Indian Self-Determination and Education Assistance Act (ISDEAA)
+  - names: [ISDA, Indian Self-Determination Act]
+    item: indian-self-determination-and-education-assistance-act-1975
+    basis:
+      citation: 42 C.F.R. § 137.2 (2026)
+      link: https://www.ecfr.gov/current/title-42/section-137.2
+      words: title III of the Indian Self-Determination Act (ISDA)
+  - names: [IRA]
+    item: indian-reorganization-act-1934
+    basis:
+      citation: 25 C.F.R. § 81.4 (2026)
+      link: https://www.ecfr.gov/current/title-25/section-81.4
+      words: the Indian Reorganization Act (IRA), 25 U.S.C. 476, 477
+  - names: [OIWA]
+    item: oklahoma-indian-welfare-act-1936
+    basis:
+      citation: 25 C.F.R. § 81.4 (2026)
+      link: https://www.ecfr.gov/current/title-25/section-81.4
+      words: the Oklahoma Indian Welfare Act (OIWA), 25 U.S.C. 503
+  - names: [ANCSA]
+    item: alaska-native-claims-settlement-act-1971
+    basis:
+      citation: 25 C.F.R. § 1000.830 (2026)
+      link: https://www.ecfr.gov/current/title-25/section-1000.830
+      words: the Alaska Native Claims Settlement Act (ANCSA)
+  - names: [AIRFA]
+    item: american-indian-religious-freedom-act-1978
+    basis:
+      citation: 33 C.F.R. § 148.737 (2026)
+      link: https://www.ecfr.gov/current/title-33/section-148.737
+      words: American Indian Religious Freedom Act (AIRFA), 42 U.S.C. 1996
+  - names: [ICRA]
+    item: indian-civil-rights-act-1968
+    basis:
+      citation: Special Tribal Criminal Jurisdiction Reimbursement, 88 Fed. Reg. 21,459, 21,460 n.8 (Apr. 11, 2023)
+      link: https://www.govinfo.gov/content/pkg/FR-2023-04-11/html/2023-07519.htm
+      words: The Indian Civil Rights Act of 1968 (ICRA)
+  - names: [TLOA]
+    item: tribal-law-and-order-act-2010
+    basis:
+      citation: Special Tribal Criminal Jurisdiction Reimbursement, 88 Fed. Reg. 21,459, 21,460 (Apr. 11, 2023)
+      link: https://www.govinfo.gov/content/pkg/FR-2023-04-11/html/2023-07519.htm
+      words: the Tribal Law and Order Act of 2010 (TLOA)
+  - names: [VAWA 2013, VAWA]
+    item: violence-against-women-reauthorization-act-2013-title-ix
+    basis:
+      citation: Special Tribal Criminal Jurisdiction Reimbursement, 88 Fed. Reg. 21,459, 21,459 (Apr. 11, 2023)
+      link: https://www.govinfo.gov/content/pkg/FR-2023-04-11/html/2023-07519.htm
+      words: The Violence Against Women Reauthorization Act of 2013 (VAWA 2013)
+  - names: [VAWA 2022, VAWA]
+    item: violence-against-women-act-reauthorization-act-2022-title-viii
+    basis:
+      citation: Special Tribal Criminal Jurisdiction Reimbursement, 88 Fed. Reg. 21,459, 21,459 (Apr. 11, 2023)
+      link: https://www.govinfo.gov/content/pkg/FR-2023-04-11/html/2023-07519.htm
+      words: The Violence Against Women Act Reauthorization Act of 2022 (VAWA 2022)
+  - names: [Public Law 280, PL 280]
+    item: public-law-83-280
+    basis:
+      citation: 28 C.F.R. § 50.25 (2026)
+      link: https://www.ecfr.gov/current/title-28/section-50.25
+      words: subject to State criminal jurisdiction under Public Law 280, 18 U.S.C. 1162(a)
+  - names: [Dawes Act]
+    item: general-allotment-act-1887
+    basis:
+      citation: Dawes Act (1887), Nat'l Archives, Milestone Documents
+      link: https://www.archives.gov/milestone-documents/dawes-act
+      words: General Allotment Act or Dawes Act
+  - names: [Johnson v. McIntosh]
+    item: johnson-v-mintosh
+    basis:
+      citation: 1832, Supreme Court Rules U.S. Must Treat Tribes as Nations, Native Voices, Nat'l Libr. of Med.
+      link: https://www.nlm.nih.gov/nativevoices/timeline/283.html
+      words: Other cases in the “Marshall Trilogy” are Johnson v. McIntosh (1823) and Cherokee Nation v. Georgia (1831).
+groups:
+  - names: [Marshall Trilogy, Marshall cases]
+    items: [johnson-v-mintosh, cherokee-nation-v-georgia, worcester-v-georgia]
+    basis:
+      citation: 1832, Supreme Court Rules U.S. Must Treat Tribes as Nations, Native Voices, Nat'l Libr. of Med.
+      link: https://www.nlm.nih.gov/nativevoices/timeline/283.html
+      words: The third of three court cases (the “Marshall Trilogy”) that become the foundation of American Indian law is decided.
+  - names: [Cherokee Cases]
+    items: [cherokee-nation-v-georgia, worcester-v-georgia]
+    basis:
+      source: norgren-cherokee-cases-2004
+      citation: 'Jill Norgren, The Cherokee Cases: Two Landmark Federal Decisions in the Fight for Sovereignty (2004)'
+      link: https://lawcat.berkeley.edu/record/423574
+      words: 'The Cherokee Cases: Two Landmark Federal Decisions in the Fight for Sovereignty'
+  # The cases of the National Indian Law Library's collection, by its table of
+  # contents. Two are not on this site yet: Arizona v. California (1963) and
+  # Colorado River Water Conservation District v. United States (1976). The
+  # book lists its cases by date, so its United States v. Mitchell, between
+  # New Mexico v. Mescalero Apache Tribe (1983) and Solem v. Bartlett (1984),
+  # is the 1983 decision.
+  - names: [Landmark Indian Law Cases, Landmark Native American cases, Landmark Native American law cases, Landmark Indian cases, Landmark tribal cases]
+    items:
+      - johnson-v-mintosh
+      - cherokee-nation-v-georgia
+      - worcester-v-georgia
+      - united-states-v-mcbratney
+      - ex-parte-crow-dog
+      - united-states-v-kagama
+      - talton-v-mayes
+      - lone-wolf-v-hitchcock
+      - united-states-v-winans
+      - winters-v-united-states
+      - tee-hit-ton-indians-v-united-states
+      - williams-v-lee
+      - warren-trading-post-co-v-arizona-tax-commission
+      - menominee-tribe-v-united-states
+      - mcclanahan-v-arizona-state-tax-commission
+      - oneida-indian-nation-v-county-of-oneida
+      - morton-v-mancari
+      - moe-v-confederated-salish-and-kootenai-tribes-of-the-flathead-reservation
+      - bryan-v-itasca-county
+      - oliphant-v-suquamish-indian-tribe
+      - united-states-v-wheeler
+      - santa-clara-pueblo-v-martinez
+      - washington-v-washington-state-commercial-passenger-fishing-vessel-assn
+      - washington-v-confederated-tribes-of-the-colville-indian-reservation
+      - white-mountain-apache-tribe-v-bracker
+      - montana-v-united-states
+      - merrion-v-jicarilla-apache-tribe
+      - new-mexico-v-mescalero-apache-tribe
+      - united-states-v-mitchell-1983
+      - solem-v-bartlett
+      - county-of-oneida-v-oneida-indian-nation
+      - montana-v-blackfeet-tribe-of-indians
+      - national-farmers-union-insurance-companies-v-crow-tribe
+      - united-states-v-dion
+      - california-v-cabazon-band-of-mission-indians
+      - lyng-v-northwest-indian-cemetery-protective-assn
+      - mississippi-band-of-choctaw-indians-v-holyfield
+      - cotton-petroleum-corp-v-new-mexico
+      - employment-division-v-smith
+      - duro-v-reina
+      - blatchford-v-native-village
+      - seminole-tribe-v-florida-1996
+      - strate-v-a-1-contractors
+      - idaho-v-coeur-dalene-tribe
+      - alaska-v-native-village-of-venetie-tribal-government
+      - kiowa-tribe-v-manufacturing-technologies
+      - minnesota-v-mille-lacs-band-of-chippewa-indians
+      - atkinson-trading-company-v-shirley
+      - nevada-v-hicks
+      - united-states-v-lara
+      - city-of-sherrill-v-oneida-indian-nation
+      - mcgirt-v-oklahoma
+    basis:
+      citation: Landmark Indian Law Cases (Joel West Williams ed., 2d ed. 2022)
+      link: https://heinonline.org/HeinDocs/Landmark_2ed_TOC.pdf
+      words: Landmark Indian Law Cases, Second Edition, Edited by Joel West Williams, National Indian Law Library, Native American Rights Fund
