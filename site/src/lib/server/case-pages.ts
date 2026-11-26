@@ -193,7 +193,7 @@ export function caseOpinions(record: SourceRecord & CaseRecordParts): CaseOpinio
 	const writerLink = (name: string) => (record.supreme_court ? justiceLinkFor(name, decided, record.key) : undefined);
 	const list = record.opinions?.list;
 	if (list?.length) {
-		const scan = officialReportLinks(record.reading_links).find((link) => /tile\.loc\.gov\/.+\/usrep\d+\.pdf$/.test(link));
+		const scan = officialReportLinks(record.reading_links).find((link) => /tile\.loc\.gov\/.+\/usrep\d+[a-z]?\.pdf$/.test(link));
 		const copy = scan ? publicCopyFor(scan) : undefined;
 		const first = Number(record.citation.page);
 		return [...list]

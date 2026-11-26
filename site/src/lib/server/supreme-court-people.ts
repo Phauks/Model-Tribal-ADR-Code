@@ -148,6 +148,18 @@ function plainName(name: string): string {
  * the build, so a link never goes to the wrong person.
  */
 export function personForCase(name: string, decided: string | undefined, caseKey: string): JusticePerson {
+	// Every Justice and President page looks up every case's bench, so the same names come back thousands of times.
+	const memoKey = `${name}|${decided ?? ''}`;
+	const known = peopleForCases.get(memoKey);
+	if (known) return known;
+	const person = findPersonForCase(name, decided, caseKey);
+	peopleForCases.set(memoKey, person);
+	return person;
+}
+
+const peopleForCases = new Map<string, JusticePerson>();
+
+function findPersonForCase(name: string, decided: string | undefined, caseKey: string): JusticePerson {
 	const family = plainName(surname(name));
 	const initial = plainName(name)[0];
 	const serving = justicesFile().justices.filter(

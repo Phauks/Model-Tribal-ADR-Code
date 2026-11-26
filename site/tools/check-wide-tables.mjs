@@ -1,6 +1,6 @@
 // Checks that a data table never goes over the side of the screen (src/lib/components/DataTable.svelte, src/lib/tables/resizable-columns.ts). Trevor asked on Nov. 24, 2026: "if you expand the table, it should always keep the end of the table locked, so you cannot go over the side". Widening a column made the whole page scroll sideways (text placed inside a cell sat out past the table's box), and on a phone the full-screen table scrolled sideways as a whole, controls and all.
 //
-// On the Native nations table and a Supreme Court table, at desktop and phone widths, this widens the first column by keyboard and by dragging, and opens the table full screen, both with the browser's full screen and filling the window (as on an iPhone). Each time: the page does not scroll sideways, the table's box ends inside the screen, a widened column keeps the end of the table where it was, and in full screen the sideways scroll bar is on the screen. Run from site/ after `npm run build`:
+// On the Native nations table and the Supreme Court page's Justices table, at desktop and phone widths, this widens the first column by keyboard and by dragging, and opens the table full screen, both with the browser's full screen and filling the window (as on an iPhone). Each time: the page does not scroll sideways, the table's box ends inside the screen, a widened column keeps the end of the table where it was, and in full screen the sideways scroll bar is on the screen. Run from site/ after `npm run build`:
 //   node tools/check-wide-tables.mjs
 //
 // The prerendered pages are served from the build output, as Cloudflare serves them, and opened in Chromium through Playwright. Set CHROMIUM_PATH to use a Chromium that is already installed. Set SCREENSHOTS to a folder to save a picture of each step there.
@@ -54,7 +54,8 @@ const viewports = [
 	{ name: 'desktop', width: 1440, height: 900 },
 	{ name: 'phone', width: 390, height: 844 }
 ];
-const pages = ['/nations', '/supreme-court/roberts-court'];
+// Court pages (/supreme-court/roberts-court) are drawn on request now (src/lib/server/page-data.ts), so this static server can't serve them; the Supreme Court page's own tables use the same component.
+const pages = ['/nations', '/supreme-court'];
 
 /** Where the first table's box and the table end, and how far the page and the full-screen frame scroll sideways. */
 function measure(page) {

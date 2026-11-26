@@ -21,6 +21,7 @@
  * list), so the checks run in tests without the network.
  */
 import type { D1Database } from '@cloudflare/workers-types/index.ts';
+import { readWaybackStatus, waybackWorkerAddress } from './wayback.ts';
 import { latestScan, readableScanTime, readScannerVersion, scannerName, scannerVersionWords } from './file-scans.ts';
 import { alaskaDirectoryLink, federalDirectoryLink } from './address-book.ts';
 import { forgetLuluToken, luluAccessToken, luluSettings } from './lulu.ts';
@@ -649,32 +650,17 @@ function imageryCheck(name: MapImageryName): Check {
 	};
 }
 
-/** The Wayback Worker's public progress (site/WAYBACK.md); it has no binding, so it is reached by its address. */
-export const waybackWorkerAddress = 'https://model-tribal-adr-code-wayback.trevordgoldsmith.workers.dev';
-
 const waybackCaptures: Check = {
 	key: 'wayback-captures',
 	group: 'Workers',
 	name: 'Wayback captures',
-	async run({ fetcher }) {
-		const response = await fetcher(`${waybackWorkerAddress}/status.json`);
-		if (!response.ok) {
-			await response.body?.cancel();
-			return { state: 'off', summary: `The Wayback Worker answered ${response.status}, so source links are saved only by the slower archive workflow.`, details: [], fix: 'Deploy the Worker from site/wayback and add its two archive.org key secrets (site/WAYBACK.md, "Setting it up").' };
+	binding: 'waybackWorker',
+	async run({ environment }) {
+		const read = await readWaybackStatus(environment.waybackWorker);
+		if ('problem' in read) {
+			return { state: environment.waybackWorker ? 'problem' : 'off', summary: `${read.problem} Source links are saved only by the slower archive workflow.`, details: [], fix: 'Deploy the Worker from site/wayback, add its two archive.org key secrets, and keep the waybackWorker service binding in site/wrangler.jsonc (site/WAYBACK.md, "Setting it up").' };
 		}
-		const status = (await response.json()) as {
-			state: 'not-running' | 'keys-refused' | 'paused-daily-limit' | 'saving' | 'waiting-to-retry' | 'idle';
-			stateWords: string;
-			minutesSinceLastRun: number | null;
-			lastError: string | null;
-			left: number;
-			captured: number;
-			capturedLast24Hours: number;
-			waiting: number;
-			failedWillRetry: number;
-			gaveUp: number;
-			markedByHand: number;
-		};
+		const { status } = read;
 		const details = [
 			`${status.captured.toLocaleString('en-US')} captured (${status.capturedLast24Hours.toLocaleString('en-US')} in the last 24 hours), ${status.left.toLocaleString('en-US')} left, ${status.waiting} being saved now.`,
 			`${status.failedWillRetry} failed and will be tried again; ${status.gaveUp} given up after three tries; ${status.markedByHand} marked by hand (workspace, Wayback captures). Progress page: ${waybackWorkerAddress}/`

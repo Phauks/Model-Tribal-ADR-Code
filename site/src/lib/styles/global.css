@@ -1639,10 +1639,10 @@ sup.citation {
 
 /*
  * A SHA-256 that copies itself when clicked (src/lib/copy-hash.ts). The hash
- * reads as code, with a small copy icon after it; a click turns the icon to a
- * check and shows "Copied" beside it for a moment. No border, so it stays
- * part of the line it sits in. A long hash breaks rather than widening the
- * page. Without scripts nothing copies, so the hash is plain text.
+ * reads as code and is shaded on hover; a click makes the shade glow for a
+ * moment, with no icon or word beside it. No border, so it stays part of the
+ * line it sits in. A long hash breaks rather than widening the page. Without
+ * scripts nothing copies, so the hash is plain text.
  */
 .copy-hash {
 	position: relative;
@@ -1673,6 +1673,19 @@ sup.citation {
 .copy-hash-button:focus-visible {
 	background-color: var(--color-focus);
 	color: var(--focus-text);
+}
+
+/* Copied: the hover shade deepens to the link color and glows, then fades back as a highlight does. */
+.copy-hash:not(.copy-hash-icon-only) .copy-hash-button {
+	transition:
+		background-color var(--motion-duration-highlight) var(--motion-easing-standard),
+		box-shadow var(--motion-duration-highlight) var(--motion-easing-standard);
+}
+
+.copy-hash:not(.copy-hash-icon-only) .copy-hash-button[data-copied='yes'] {
+	background-color: color-mix(in srgb, var(--color-link) 22%, transparent);
+	box-shadow: 0 0 0.6em color-mix(in srgb, var(--color-link) 55%, transparent);
+	transition: none;
 }
 
 .copy-hash-text {
@@ -1739,7 +1752,8 @@ sup.citation {
 	white-space: nowrap;
 }
 
-.copy-hash-button[data-copied]::after {
+.copy-hash-icon-only .copy-hash-button[data-copied]::after,
+.copy-hash-button[data-copied='no']::after {
 	content: 'Copied';
 	margin-left: 0.4em;
 	padding: 0 0.4em;

@@ -25,7 +25,7 @@ const local = arguments_.includes('--local');
 const siteIndex = arguments_.indexOf('--site');
 const email = arguments_.find((value, index) => !value.startsWith('--') && (siteIndex < 0 || index !== siteIndex + 1));
 const site =
-	siteIndex >= 0 ? arguments_[siteIndex + 1] : local ? 'http://localhost:8787' : 'https://model-tribal-adr-code.trevordgoldsmith.workers.dev';
+	siteIndex >= 0 ? arguments_[siteIndex + 1] : local ? 'http://localhost:8787' : 'https://triballawproject.org';
 
 if (!email || !/^[^\s@'"]+@[^\s@'"]+\.[^\s@'"]+$/u.test(email)) {
 	console.error('Give the email address, for example: npm run sign-in-link -- person@example.com');

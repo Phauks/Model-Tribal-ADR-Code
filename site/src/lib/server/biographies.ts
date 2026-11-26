@@ -144,6 +144,10 @@ export function peopleOfNation(nationIdentifier: string): { name: string; link: 
 		}));
 }
 
+// Built once, not for each of the thousand biography pages.
+let nationDisplayNames: Map<string, string> | undefined;
+let casePreviewsById: Map<string, ReturnType<typeof casePreviewList>['cases'][number]> | undefined;
+
 export function biographyPage(key: string): BiographyPage | null {
 	const person = biographies().find((candidate) => candidate.key === key);
 	if (!person) return null;
@@ -161,7 +165,7 @@ export function biographyPage(key: string): BiographyPage | null {
 	}));
 
 	uses.part('At a glance');
-	const nationNames = new Map(nations().map((nation) => [nation.id, displayName(nation.names.official)]));
+	const nationNames = (nationDisplayNames ??= new Map(nations().map((nation) => [nation.id, displayName(nation.names.official)])));
 	const glance: FactGroup[] = [];
 	const nationItems = (person.nations ?? []).map((entry) => ({
 		text: nationNames.get(entry.nation) ?? entry.nation,
@@ -176,7 +180,7 @@ export function biographyPage(key: string): BiographyPage | null {
 			items: nationItems
 		});
 
-	const previews = new Map(casePreviewList().cases.map((preview) => [preview.id, preview]));
+	const previews = (casePreviewsById ??= new Map(casePreviewList().cases.map((preview) => [preview.id, preview])));
 	const cases: BiographyCase[] = [];
 	for (const entry of person.cases ?? []) {
 		const preview = previews.get(entry.case);

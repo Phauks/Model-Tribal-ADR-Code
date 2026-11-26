@@ -30,7 +30,7 @@ export interface ReadingLinks {
 	links: ReadingLink[];
 }
 
-const libraryOfCongressItem = /^https:\/\/www\.loc\.gov\/item\/usrep(\d{3})(\d{3,4})\/?$/;
+const libraryOfCongressItem = /^https:\/\/www\.loc\.gov\/item\/usrep(\d{3})(\d{3,4}[a-z]?)\/?$/;
 
 /**
  * The PDFs of a Supreme Court case's official report among its reading
