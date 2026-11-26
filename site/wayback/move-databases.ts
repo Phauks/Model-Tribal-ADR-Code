@@ -21,6 +21,9 @@ import { applyLibraryChanges } from '../src/lib/server/source-library.ts';
 
 export interface MoveEnv {
 	sourceDocuments: R2Bucket;
+	// After the switch, sourceDocuments is the new bucket, and requests for the
+	// last "missing" pass are still read from the old one.
+	oldSourceDocuments?: R2Bucket;
 	oldSiteDatabase?: D1Database;
 	newSiteDatabase?: D1Database;
 	newSourceLibrary?: D1Database;
@@ -171,12 +174,13 @@ export async function copySiteDatabase(from: D1Database, to: D1Database, mode: M
 
 async function copyOnRequest(env: MoveEnv): Promise<void> {
 	if (!env.oldSiteDatabase || !env.newSiteDatabase) return;
-	const request = await env.sourceDocuments.get(prefix + 'request.json');
+	const bucket = env.oldSourceDocuments ?? env.sourceDocuments;
+	const request = await bucket.get(prefix + 'request.json');
 	if (!request) return;
-	const running = await env.sourceDocuments.head(prefix + 'running.json');
+	const running = await bucket.head(prefix + 'running.json');
 	if (running && Date.now() - running.uploaded.getTime() < 15 * 60 * 1000) return;
 	const { mode } = (await request.json()) as { mode?: Mode };
-	await env.sourceDocuments.put(prefix + 'running.json', JSON.stringify({ mode, started: new Date().toISOString() }));
+	await bucket.put(prefix + 'running.json', JSON.stringify({ mode, started: new Date().toISOString() }));
 	const started = new Date().toISOString();
 	let result: object;
 	try {
@@ -185,10 +189,10 @@ async function copyOnRequest(env: MoveEnv): Promise<void> {
 	} catch (problem) {
 		result = { started, failed: new Date().toISOString(), problem: String(problem) };
 	}
-	await env.sourceDocuments.put(prefix + `result-${started.replaceAll(':', '')}.json`, JSON.stringify(result, null, 1), {
+	await bucket.put(prefix + `result-${started.replaceAll(':', '')}.json`, JSON.stringify(result, null, 1), {
 		httpMetadata: { contentType: 'application/json' }
 	});
-	await env.sourceDocuments.delete([prefix + 'request.json', prefix + 'running.json']);
+	await bucket.delete([prefix + 'request.json', prefix + 'running.json']);
 }
 
 /** The minute's work for the move; it never stops the Wayback saves. */
