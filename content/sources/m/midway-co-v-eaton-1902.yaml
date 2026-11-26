@@ -12,7 +12,7 @@ citation:
     - - 1902
       - 1
       - 13
-  URL: https://static.case.law/us/183/html/0619-01.html
+  URL: https://www.loc.gov/item/usrep183602/
   accessed:
     date-parts:
     - - 2026
@@ -20,16 +20,17 @@ citation:
       - 24
 caption:
   printed: MIDWAY COMPANY v. EATON
-  source: https://static.case.law/us/183/html/0619-01.html
+  source: https://tile.loc.gov/storage-services/service/ll/usrep/usrep183/usrep183602/usrep183602.pdf
   checked: '2026-11-24'
 opinions:
-  source: https://static.case.law/us/183/html/0619-01.html
+  source: https://tile.loc.gov/storage-services/service/ll/usrep/usrep183/usrep183602/usrep183602.pdf
   checked: '2026-11-24'
   list:
   - kind: majority
     justice: Joseph McKenna
     page: 620
-original_link: https://static.case.law/us/183/html/0619-01.html
+    scan_page: 19
+original_link: https://www.loc.gov/item/usrep183602/
 retrieved: '2026-11-24'
 history:
   status: live
@@ -39,7 +40,7 @@ court_dates:
   - '1901-12-04'
   - '1901-12-05'
   printed: Argued December 4, 5, 1901. Decided January 13, 1902.
-  source: https://static.case.law/us/183/html/0619-01.html
+  source: https://tile.loc.gov/storage-services/service/ll/usrep/usrep183/usrep183602/usrep183602.pdf
   checked: '2026-11-24'
 supreme_court:
   court: Fuller Court
@@ -74,6 +75,10 @@ supreme_court:
 reading_links:
   checked: '2026-11-24'
   links:
+  - site: library-of-congress
+    label: Library of Congress
+    access: official
+    link: https://www.loc.gov/item/usrep183602/
   - site: justia
     label: Justia
     access: free
@@ -101,13 +106,13 @@ rights:
   redistribution: true
 found_in:
 - 2026-11-24-supreme-court-native-cases
-notes: 'Full citation: 183 U.S. 619 (1902). Official report scan: https://static.case.law/us/183/html/0619-01.html. Written by scripts/caselaw/supreme_court_native_cases.py from the Supreme Court Database (case 1901-143), the Caselaw Access Project''s text of the report and the Library of Congress scan; not yet read by a person.'
+notes: 'Full citation: 183 U.S. 619 (1902). Official report scan: https://tile.loc.gov/storage-services/service/ll/usrep/usrep183/usrep183602/usrep183602.pdf. Written by scripts/caselaw/supreme_court_native_cases.py from the Supreme Court Database (case 1901-143), the Caselaw Access Project''s text of the report and the Library of Congress scan named in research/supreme-court-coverage/other-scans.json; not yet read by a person. The Library of Congress has no scan under this citation; the case''s two pages are the last two pages of the scan of Midway Co. v. Eaton, 183 U.S. 602.'
 tribes: []
 nations_in_case:
   checked: '2026-11-24'
   named: []
 review:
-  status: unverified
+  status: verified
   by: scripts/caselaw/supreme_court_native_cases.py
   date: '2026-11-24'
   checks:
@@ -115,16 +120,19 @@ review:
     result: agree
     detail: Caselaw Access Project 183 U.S. 619 "Midway Co. v. Eaton"; Database 183 U.S. 619 "MIDWAY COMPANY v. EATON"
   - check: scan
-    result: missing
-    detail: No scan of the official report found
+    result: agree
+    detail: Scan has 2 pages; the report runs 619 to 620
+  - check: caption
+    result: agree
+    detail: Caption found in the scan's text at 1.00
   - check: printed dates
-    result: differs
-    detail: Caselaw Access Project "Argued December 4, 5, 1901. Decided January 13, 1902."; scan "not found"
+    result: agree
+    detail: Caselaw Access Project "Argued December 4, 5, 1901. Decided January 13, 1902."; scan "Argued December 4, 5, 1901.-Decided January 13, 1902."
   - check: decided
     result: agree
     detail: 'Printed and Database: 1902-01-13'
   - check: opinions
-    result: differs
+    result: agree
     detail: 'Report: majority Mckenna p. 620; Database writers: Mckenna'
   - check: bench
     result: agree

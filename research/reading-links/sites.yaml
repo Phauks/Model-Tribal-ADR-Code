@@ -64,6 +64,12 @@ sites:
     note: scan of the printed United States Reports
     links:
       us-reports: https://www.loc.gov/item/usrep{volume3}{page3}/
+  internet-archive:
+    label: Internet Archive
+    access: free
+    for: [us-reports]
+    check: none
+    note: a scan of the printed United States Reports where the Library of Congress has none for the case, named in research/supreme-court-coverage/other-scans.json and written into the record by scripts/caselaw/supreme_court_native_cases.py (no address pattern, so scripts/caselaw/reading_links.py makes no link of its own)
   courtlistener:
     label: CourtListener
     access: free
