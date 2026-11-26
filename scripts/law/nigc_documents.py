@@ -335,17 +335,38 @@ def records(args) -> None:
     copies = {}
     for row in csv.DictReader(CAPTURE_INDEX.open(encoding="utf-8")):
         copies[row["sha256"]] = {"storage_key": row["key"], "checksum": row["sha256"], "media_type": row["media_type"], "bytes": int(row["bytes"])}
-    written = 0
+    # A table can list one document twice (the same title and date under two headings): it gets one record.
+    # Different entries that the Commission answered in one file (two games in one letter) each keep a record
+    # and list each other in shares_link_with.
+    kept, seen = [], set()
     for item in documents:
         if not item.get("file"):
             continue
+        marker = (item["final"], item["title"], item["date"])
+        if marker not in seen:
+            seen.add(marker)
+            kept.append(item)
+    by_link: dict[str, list[str]] = {}
+    for item in kept:
+        by_link.setdefault(item["final"], []).append(record_key(item))
+    written = set()
+    for item in kept:
         key = record_key(item)
         named = names.named(item["nation"]) if item.get("nation") else []
+        record = record_for(item, copies.get(item["sha256"]), named)
+        others = [other for other in by_link[item["final"]] if other != key]
+        if others:
+            record = {**{name: value for name, value in record.items() if name in ("key", "kind", "citation", "original_link", "retrieved", "file")},
+                      "shares_link_with": others, **record}
         path = SOURCES / (key[0] if key[0].isalpha() else "_other") / f"{key}.yaml"
         path.parent.mkdir(exist_ok=True)
-        path.write_text(dump(record_for(item, copies.get(item["sha256"]), named)), encoding="utf-8")
-        written += 1
-    print(f"wrote {written} records")
+        path.write_text(dump(record), encoding="utf-8")
+        written.add(path)
+    # Records an earlier run wrote for a listing it now folds into another.
+    for path in [*SOURCES.glob("n/nigc-*.yaml"), *SOURCES.glob("_other/nigc-*.yaml")]:
+        if path not in written and SESSION in path.read_text(encoding="utf-8"):
+            path.unlink()
+    print(f"wrote {len(written)} records")
 
 
 def main() -> None:
