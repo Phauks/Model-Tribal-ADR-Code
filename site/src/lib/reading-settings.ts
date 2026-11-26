@@ -7,8 +7,8 @@
  * Each setting other than the theme becomes a data attribute on the root
  * element, for example data-text-size="larger", and global.css reacts to it.
  * A setting at its default value has no attribute. The theme keeps the
- * "theme" storage key and data-theme attribute that the theme button uses
- * (site/DESIGN.md, section 8).
+ * "theme" storage key and data-theme attribute it had when the masthead
+ * had a theme button (site/DESIGN.md, section 8).
  *
  * The inline script in src/app.html applies the stored settings before the
  * first paint. It repeats the storage keys and setting names below;
@@ -19,7 +19,7 @@
 
 export const settingsStorageKey = 'reading-settings';
 /**
- * Sent on window after Settings or the theme button saves a change, so the
+ * Sent on window after Settings or the Page settings panel saves a change, so the
  * copy kept with a signed-in person's account can follow
  * (src/lib/settings-everywhere.ts).
  */
