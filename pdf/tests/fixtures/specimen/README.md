@@ -9,5 +9,6 @@ Test content for the print build. Nothing here is a proposed provision or a stat
 | `content/provisions/02-104.md` | Subsections (a), (1), (A), Alternatives A and B, placeholders, long footnotes that split across pages |
 | `content/commentary/02-104.md` | Comment, Illustrations and Source Note; a table; citations to a uniform act, a statute and a case, with full forms, short forms and *Id.* |
 | `content/provisions/02-105.md` | A second section, for running heads and section order |
-| `content/essays/i-typesetting-specimen.md` | Part I essay: headings, lists, a block quotation, and characters that need the Noto fallback fonts |
+| `content/essays/i-typesetting-specimen.md` | Part I essay: headings, lists, a block quotation, characters that need the Noto fallback fonts, and figures: a wide color photograph, a tall transparent drawing and a video |
+| `files/<reference>/<name>` | The specimen's pictures, found here instead of on the website (`pipeline/pictures.mjs`) |
 | `content/essays/iii-specimen-methods.md` | Part III, so all three parts are built |
