@@ -12,6 +12,7 @@
 	import ImpactAccounts from '#lib/components/ImpactAccounts.svelte';
 	import InfoPage from '#lib/components/InfoPage.svelte';
 	import RecordBoxSections from '#lib/components/RecordBoxSections.svelte';
+	import SavedText from '#lib/components/SavedText.svelte';
 	import StubBadge from '#lib/components/StubBadge.svelte';
 	import StubNote from '#lib/components/StubNote.svelte';
 	import type { PageProps } from './$types';
@@ -47,19 +48,7 @@
 		</Collapsible>
 	{/if}
 
-	{#if data.text}
-		<Collapsible heading="Text" identifier="law-text">
-			<!-- Its own block, so the frame takes the width beside At a glance instead of dropping below it. -->
-			<div class="law-frame-box">
-				{#if data.text.isPdf}
-					<iframe class="law-frame" src={data.text.file} title="{data.name} (PDF)" loading="lazy"></iframe>
-				{:else}
-					<!-- The saved text or web page runs nothing and loads nothing (src/lib/server/public-copy-serving.ts). -->
-					<iframe class="law-frame law-frame-text" src={data.text.file} title={data.name} sandbox="" referrerpolicy="no-referrer" loading="lazy"></iframe>
-				{/if}
-			</div>
-		</Collapsible>
-	{/if}
+	{#if data.text}<SavedText file={data.text.file} isPdf={data.text.isPdf} name={data.name} identifier="law-text" />{/if}
 
 	{#if data.essays.length + data.nations.length + data.signers.length > 0}
 		<Collapsible heading="On this site" identifier="on-this-site" count={data.essays.length + data.nations.length + data.signers.length}>
@@ -120,24 +109,5 @@
 
 	.summary-list dd :global(p) {
 		margin: 0;
-	}
-
-	.law-frame-box {
-		display: flow-root;
-	}
-
-	.law-frame {
-		display: block;
-		width: 100%;
-		height: 70vh;
-		min-height: 24rem;
-		border: 1px solid var(--color-line);
-		border-radius: var(--radius-control);
-		background: var(--color-surface-raised);
-	}
-
-	/* A short text needs no tall frame. */
-	.law-frame-text {
-		height: 24rem;
 	}
 </style>
