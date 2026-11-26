@@ -47,7 +47,7 @@ function under(path: string, section: string): boolean {
  * nearly 2,000 when they were added, so a reader who had kept "Other pages" was sent all of them (Nov. 24, 2026). A large
  * new section gets a collection of its own here rather than falling into "Other pages".
  */
-const casesSections = ['/cases', '/supreme-court', '/biographies'];
+const casesSections = ['/cases', '/supreme-court', '/biographies', '/courts'];
 
 /** Which collection a page or one of its data files belongs to. */
 export function collectionOf(path: string): CollectionIdentifier {

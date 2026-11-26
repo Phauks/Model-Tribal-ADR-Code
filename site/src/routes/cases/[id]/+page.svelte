@@ -15,6 +15,8 @@
 	import RecordBoxSections from '#lib/components/RecordBoxSections.svelte';
 	import RecordPage from '#lib/components/RecordPage.svelte';
 	import SourceList from '#lib/components/SourceList.svelte';
+	import StubBadge from '#lib/components/StubBadge.svelte';
+	import StubNote from '#lib/components/StubNote.svelte';
 	import TopicBadges from '#lib/components/TopicBadges.svelte';
 	import type { PageProps } from './$types';
 
@@ -29,7 +31,7 @@
 			: [])
 	]);
 	const nationPageLinks = $derived(new Set(data.nationPages.map((nation) => nation.link)));
-	const citedCount = $derived(data.essays.length + data.nationPages.length + (data.court ? 1 : 0));
+	const citedCount = $derived(data.essays.length + data.nationPages.length + (data.court ? 1 : 0) + (data.decidedBy ? 1 : 0));
 </script>
 
 <svelte:head>
@@ -43,7 +45,7 @@
 	{#snippet title()}<h1><i>{data.name}</i></h1>{/snippet}
 	{#snippet introduction()}
 		{#if data.citation}<p class="lead case-citation">{data.citation}</p>{/if}
-		{#if data.topics.length > 0 || data.unverified}<div class="badge-line">{#if data.unverified}<span class="review-badge"><Clock size={16} strokeWidth={2} aria-hidden="true" />Unverified</span>{/if}{#if data.topics.length > 0}<TopicBadges topics={data.topics.map((text) => ({ text }))} />{/if}</div>{/if}
+		{#if data.topics.length > 0 || data.unverified || data.stub}<div class="badge-line">{#if data.stub}<StubBadge stub={data.stub} />{/if}{#if data.unverified}<span class="review-badge"><Clock size={16} strokeWidth={2} aria-hidden="true" />Unverified</span>{/if}{#if data.topics.length > 0}<TopicBadges topics={data.topics.map((text) => ({ text }))} />{/if}</div>{/if}
 	{/snippet}
 
 	<RecordBoxSections sections={data.boxSections} />
@@ -129,9 +131,17 @@
 						<dd><a href="{data.court.link}#cases">{data.court.name}</a></dd>
 					</div>
 				{/if}
+				{#if data.decidedBy}
+					<div>
+						<dt>Court</dt>
+						<dd><a href={data.decidedBy.link}>{data.decidedBy.name}</a></dd>
+					</div>
+				{/if}
 			</dl>
 		</Collapsible>
 	{/if}
+
+	{#if data.stub}<StubNote stub={data.stub} />{/if}
 
 	{#snippet sources()}<SourceList sources={data.sources} />{/snippet}
 </RecordPage>

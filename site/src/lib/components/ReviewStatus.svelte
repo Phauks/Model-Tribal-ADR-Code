@@ -13,6 +13,7 @@
 	import { onMount, type Snippet } from 'svelte';
 	import type { HTMLDetailsAttributes } from 'svelte/elements';
 	import type { ReviewStatus } from '#lib/review-status.ts';
+	import { closeStatusPopovers } from '#lib/status-popovers.ts';
 
 	let {
 		status,
@@ -27,27 +28,7 @@
 		children: Snippet;
 	} & HTMLDetailsAttributes = $props();
 
-	onMount(() => {
-		const close = (except?: EventTarget | null) => {
-			for (const open of document.querySelectorAll<HTMLDetailsElement>('details.status-popover[open]')) {
-				if (!(except instanceof Node && open.contains(except))) open.open = false;
-			}
-		};
-		const onClick = (event: MouseEvent) => close(event.target);
-		const onKey = (event: KeyboardEvent) => {
-			if (event.key !== 'Escape') return;
-			const open = document.querySelector<HTMLDetailsElement>('details.status-popover[open]');
-			if (!open) return;
-			open.open = false;
-			open.querySelector('summary')?.focus();
-		};
-		document.addEventListener('click', onClick);
-		document.addEventListener('keydown', onKey);
-		return () => {
-			document.removeEventListener('click', onClick);
-			document.removeEventListener('keydown', onKey);
-		};
-	});
+	onMount(closeStatusPopovers);
 </script>
 
 <details class="status-popover" {...attributes}>

@@ -12,6 +12,8 @@
 	import ImpactAccounts from '#lib/components/ImpactAccounts.svelte';
 	import InfoPage from '#lib/components/InfoPage.svelte';
 	import RecordBoxSections from '#lib/components/RecordBoxSections.svelte';
+	import StubBadge from '#lib/components/StubBadge.svelte';
+	import StubNote from '#lib/components/StubNote.svelte';
 	import type { PageProps } from './$types';
 
 	let { data }: PageProps = $props();
@@ -31,7 +33,7 @@
 	<meta name="description" content="{data.name}, {data.citation}: what it did, the accounts of its impact and where to read it." />
 </svelte:head>
 
-<InfoPage title={data.name} lead={data.citation} glance={data.glance} sources={data.sources} trail={[{ label: 'Library', href: '/library' }]}>
+<InfoPage title={data.name} lead={data.citation} glance={data.glance} sources={data.sources} trail={[{ label: 'Library', href: '/library' }]} status={data.stub ? stubStatus : undefined}>
 	{#if data.fullTitle}<p class="full-title muted">{data.fullTitle}</p>{/if}
 
 	<RecordBoxSections sections={data.boxSections} />
@@ -100,7 +102,11 @@
 			</dl>
 		</Collapsible>
 	{/if}
+
+	{#if data.stub}<StubNote stub={data.stub} />{/if}
 </InfoPage>
+
+{#snippet stubStatus()}{#if data.stub}<StubBadge stub={data.stub} />{/if}{/snippet}
 
 <style>
 	.full-title {

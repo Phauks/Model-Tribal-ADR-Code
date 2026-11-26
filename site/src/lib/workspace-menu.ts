@@ -16,6 +16,7 @@ export type WorkspacePageName =
 	| 'intake'
 	| 'nation-uploads'
 	| 'reviews'
+	| 'stubs'
 	| 'library'
 	| 'contributors'
 	| 'events'
@@ -72,6 +73,8 @@ export const workspacePages: readonly WorkspacePage[] = [
 	{ name: 'comments', label: 'Comments for you', link: '/workspace/comments', category: 'Writing and review', needs: 'comment' },
 	// Everyone sees the documents they can open, by role or by grant.
 	{ name: 'reviews', label: 'Reviews', link: '/workspace/reviews', category: 'Writing and review' },
+	// Pages made from references, and pages too short to stand alone (src/lib/stubs.ts), most mentioned first.
+	{ name: 'stubs', label: 'Stubs', link: '/workspace/stubs', category: 'Writing and review', needs: 'comment' },
 	{ name: 'inbox', label: 'Inbox', link: '/workspace/inbox', category: 'Messages', needs: 'read-mail' },
 	{ name: 'requests', label: 'Requests', link: '/workspace/requests', category: 'Messages', needs: 'read-requests' },
 	{ name: 'outreach', label: 'Outreach', link: '/workspace/outreach', category: 'Messages', needs: 'send-outreach' },

@@ -2287,6 +2287,51 @@ details > .nation-edit-link {
 	}
 }
 
+/*
+ * A stub (src/lib/stubs.ts): the "Stub" badge beside the title, and the note
+ * at the page's end, where Wikipedia puts its stub template.
+ */
+.status-badges {
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+	gap: var(--space-2);
+}
+
+.status-badges .review-badge {
+	margin-right: 0;
+}
+
+.stub-badge .stub-mark {
+	color: var(--color-link);
+}
+
+.stub-note {
+	display: flex;
+	align-items: flex-start;
+	gap: var(--space-3);
+	margin: var(--space-5) 0 var(--space-2);
+	padding: var(--space-3) var(--space-4);
+	border: 1px dashed var(--color-line);
+	border-radius: var(--radius-control);
+}
+
+.stub-note p {
+	margin: 0;
+}
+
+.stub-note .stub-mark {
+	flex: none;
+	margin-top: 3px;
+}
+
+.stub-note .stub-actions {
+	display: flex;
+	flex-wrap: wrap;
+	gap: var(--space-2) var(--space-4);
+	margin-top: var(--space-2);
+}
+
 /* Topics, methods and other short tags as badges (src/lib/components/TopicBadges.svelte; Trevor, Nov. 23, 2026). */
 .topic-badges,
 .summary-list dd > ul.topic-badges {

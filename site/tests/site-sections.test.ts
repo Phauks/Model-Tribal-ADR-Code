@@ -45,7 +45,7 @@ describe('site sections for the sidebar', () => {
 		expect(sectionOf('/supreme-court/marshall-court')?.label).toBe('Library');
 		expect(sectionOf('/copiesx')).toBeUndefined();
 		const library = siteSections.find((section) => section.label === 'Library');
-		expect(library?.gathers?.map((page) => page.link)).toEqual(['/copies', '/downloads', '/supreme-court', '/biographies', '/stats', '/back-matter', '/licenses']);
+		expect(library?.gathers?.map((page) => page.link)).toEqual(['/copies', '/downloads', '/supreme-court', '/courts', '/biographies', '/stats', '/back-matter', '/licenses']);
 	});
 
 	it('links only sections whose pages exist', () => {

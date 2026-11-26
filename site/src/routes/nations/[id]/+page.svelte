@@ -1,4 +1,5 @@
 <script lang="ts">
+	import { courtPagePath } from '#lib/court-pages.ts';
 	import Breadcrumbs from '#lib/components/Breadcrumbs.svelte';
 	import CitationMarks from '#lib/components/CitationMarks.svelte';
 	import DataTable from '#lib/components/DataTable.svelte';
@@ -103,7 +104,7 @@
 			cells: {
 				year: { text: entry.decided?.slice(0, 4) ?? '', sortValue: entry.decided },
 				name: { text: [entry.name, entry.citation].filter(Boolean).join(', '), sortValue: entry.name, href: entry.link },
-				court: { text: entry.court ?? '' },
+				court: { text: entry.court ?? '', href: entry.courtLink },
 				role: { text: entry.role }
 			}
 		}))
@@ -299,7 +300,7 @@
 						{@const cited = levelOf(opinion.key) === 'cite'}
 						<li data-restrict-item="copy:{opinion.key}">
 							{#if cited}<a class="original" href={opinion.original} rel="noopener noreferrer"><i>{opinion.name}</i><ExternalLink size={14} aria-hidden="true" /></a
-								>{:else}<a href={opinion.path}><i>{opinion.name}</i></a>{/if}, {opinion.citation} ({opinion.court} {opinion.year}){#if opinion.topics.length > 0 && !cited}<span class="small mentions" data-restrict-text><span class="muted">Mentions</span>{' '}<TopicBadges topics={opinion.topics.map((topic) => ({ text: topic, link: opinionsMentioning(data.page.id, topic) }))} /></span>{/if}
+								>{:else}<a href={opinion.path}><i>{opinion.name}</i></a>{/if}, {opinion.citation} (<a href={courtPagePath(opinion.court)}>{opinion.court}</a> {opinion.year}){#if opinion.topics.length > 0 && !cited}<span class="small mentions" data-restrict-text><span class="muted">Mentions</span>{' '}<TopicBadges topics={opinion.topics.map((topic) => ({ text: topic, link: opinionsMentioning(data.page.id, topic) }))} /></span>{/if}
 						</li>
 					{/each}
 				</ul>

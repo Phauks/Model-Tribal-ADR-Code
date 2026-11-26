@@ -45,6 +45,8 @@ function paramsOf(view: RestrictedPageView, match: RegExpExecArray): Record<stri
 			return {};
 		case 'collection':
 			return { collection: match[1] };
+		case 'court':
+			return { court: match[1] };
 	}
 }
 

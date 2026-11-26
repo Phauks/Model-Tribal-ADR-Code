@@ -25,6 +25,11 @@ export const libraryPages: LibraryPage[] = [
 		description: 'Each Court of the Supreme Court of the United States that decided a case on this site, named for its Chief Justice: its Justices, its history and its cases.'
 	},
 	{
+		label: 'Courts',
+		link: '/courts',
+		description: 'The Tribal, federal, state and territorial courts whose opinions or cases are on this site.'
+	},
+	{
 		label: 'Biographies',
 		link: '/biographies',
 		description: 'Native people in the cases on this site and leaders in nations’ histories, each fact with its source.'

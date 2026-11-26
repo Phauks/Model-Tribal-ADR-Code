@@ -1,4 +1,5 @@
 <script lang="ts">
+	import { courtPagePath } from '#lib/court-pages.ts';
 	import Shield from '@lucide/svelte/icons/shield';
 	import Breadcrumbs from '#lib/components/Breadcrumbs.svelte';
 	import DataTable from '#lib/components/DataTable.svelte';
@@ -47,7 +48,7 @@
 				key: opinion.path,
 				cells: {
 					name: { text: opinion.name, href: cited ? opinion.original : opinion.path, values: opinion.namesReplaced ? ['names-replaced'] : [] },
-					court: { text: opinion.court },
+					court: { text: opinion.court, href: courtPagePath(opinion.court) },
 					decided: { text: readableDate(opinion.decided), sortValue: opinion.decided },
 					citation: { text: opinion.docket ? `${opinion.citation} (${opinion.docket})` : opinion.citation },
 					[mentionsColumn]: cited ? { text: '', values: [] } : { text: opinion.topics.join(', '), values: opinion.topics },

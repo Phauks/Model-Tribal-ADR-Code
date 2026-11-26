@@ -27,6 +27,7 @@ import { savedCopyFor, savedCopyLink } from './markdown.ts';
 import { presidentByKey } from './supreme-court-people.ts';
 import { partialDate } from './stories.ts';
 import type { SourceEntry } from './source-uses.ts';
+import type { Stub } from '../stubs.ts';
 
 export interface LawPage {
 	key: string;
@@ -50,6 +51,8 @@ export interface LawPage {
 	/** The people with a biography on this site who signed the treaty. */
 	signers: { name: string; link: string; detail?: string }[];
 	sources: SourceEntry[];
+	/** Set when the law has no box and no accounts of its impact: a stub (src/lib/stubs.ts). */
+	stub?: Stub;
 }
 
 
@@ -131,6 +134,7 @@ export function lawPage(key: string): LawPage {
 	const saved = savedCopyLink(record);
 	const copy = savedCopyFor(record);
 	const title = record.citation.title;
+	const accounts = accountsOf({ record: key });
 	return {
 		key,
 		name: named.what === 'Treaty' ? named.name : named.name.replace(/ \(\d{4}\)$/, ''),
@@ -139,13 +143,14 @@ export function lawPage(key: string): LawPage {
 		glance,
 		boxSections: box.sections,
 		topics: box.topics,
-		accounts: accountsOf({ record: key }),
+		accounts,
 		readingHtml: readingLinksHtml(record.reading_links, saved).replace(/<button[\s\S]*?<\/button>/, ''),
 		readingCount: (record.reading_links?.links.length ?? 0) + (saved ? 1 : 0),
 		essays: essaysCiting(key, named.name),
 		nations: nationsCited,
 		text: copy ? { file: copyPath(copy), isPdf: copy.mediaType === 'application/pdf' } : undefined,
 		signers: named.what === 'Treaty' ? signersOfTreaty(key) : [],
-		sources: box.sources
+		sources: box.sources,
+		stub: box.sections.length === 0 && accounts.length === 0 ? { kind: 'law', record: `laws/${key}` } : undefined
 	};
 }

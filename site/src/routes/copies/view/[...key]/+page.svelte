@@ -1,4 +1,5 @@
 <script lang="ts">
+	import { courtPagePath } from '#lib/court-pages.ts';
 	import Download from '@lucide/svelte/icons/download';
 	import ExternalLink from '@lucide/svelte/icons/external-link';
 	import Shield from '@lucide/svelte/icons/shield';
@@ -38,7 +39,7 @@
 	</h1>
 	{#if opinion}
 		<p class="lead">
-			{opinion.citation} ({opinion.court}{data.decidedText ? `, decided ${data.decidedText}` : ''}){#if opinion.docket}<span class="small muted">
+			{opinion.citation} (<a href={courtPagePath(opinion.court)}>{opinion.court}</a>{data.decidedText ? `, decided ${data.decidedText}` : ''}){#if opinion.docket}<span class="small muted">
 					· Docket {opinion.docket}</span
 				>{/if}
 		</p>

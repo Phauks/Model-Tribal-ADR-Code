@@ -1,3 +1,4 @@
+import { courtPagePath } from '#lib/court-pages.ts';
 import { peopleOfNation } from '#lib/server/biographies.ts';
 import { error, redirect } from '@sveltejs/kit';
 import type { OutlineItem, PageOutline } from '#lib/site-sections.ts';
@@ -462,6 +463,8 @@ export interface NationCase {
 	/** "358 U.S. 217", or the docket number when the case is not reported. */
 	citation?: string;
 	court?: string;
+	/** The court's page (src/lib/court-pages.ts). */
+	courtLink?: string;
 	role: string;
 	/** The name the case gives the nation, when it is not the nation's name today. */
 	namedAs?: string;
@@ -498,6 +501,7 @@ function nationCases(record: NationRecord, sources: SourceUses): NationCase[] {
 				name: source.citation.title ?? source.key,
 				citation: volume && reporter && page ? `${volume} ${reporterShortNames[reporter] ?? reporter} ${page}` : number,
 				court: shortCourtName(authority),
+				courtLink: courtPagePath(authority),
 				role: caseRoles[named?.role ?? 'subject'],
 				namedAs: namedAs && namedAs.toLocaleLowerCase('en-US') !== ownName ? namedAs : undefined,
 				note: named?.note,

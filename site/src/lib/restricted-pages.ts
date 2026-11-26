@@ -33,7 +33,8 @@ export const restrictedPageViews = [
 	{ view: 'opinions', pattern: /^\/nations\/([a-z0-9-]+)\/opinions$/ },
 	{ view: 'copies', pattern: /^\/copies\/list\/([a-z0-9-]+)$/ },
 	{ view: 'chart-bar', pattern: /^\/nations\/data\/(?!(?:build|tables)\/)([a-z0-9-]+)\/(?!sources$)([^/]+)$/ },
-	{ view: 'collection', pattern: /^\/stats\/([a-z0-9-]+)$/ }
+	{ view: 'collection', pattern: /^\/stats\/([a-z0-9-]+)$/ },
+	{ view: 'court', pattern: /^\/courts\/([a-z0-9-]+)$/ }
 ] as const;
 
 export type RestrictedPageView = (typeof restrictedPageViews)[number]['view'];
@@ -155,6 +156,20 @@ export function filterCollectionPage(data: Data, restrictions: SiteRestrictions)
 }
 
 /**
+ * A court's page (src/lib/server/courts.ts): the opinions a nation hid left
+ * out of its newest opinions and its count; cited ones linked to their
+ * originals, without the words from their text.
+ */
+export function filterCourtPage(data: Data, restrictions: SiteRestrictions): Data {
+	const keys = (data.opinionKeys as string[]) ?? [];
+	const opinions = (data.opinions as { key: string; path: string; original: string; topics: string[] }[]) ?? [];
+	const keptKeys = keys.filter((key) => levelOf(restrictions, `copy:${key}`) !== 'hide');
+	const kept = filterOpinions(opinions, restrictions).map((opinion) => (levelOf(restrictions, `copy:${opinion.key}`) === 'cite' ? { ...opinion, path: opinion.original } : opinion));
+	const changed = keptKeys.length !== keys.length || kept.length !== opinions.length || kept.some((opinion, index) => opinion.path !== opinions[index].path);
+	return changed ? { ...data, opinionKeys: keptKeys, opinions: kept } : data;
+}
+
+/**
  * The full timeline, whose entries and counts are short arrays (src/routes/nations/timeline):
  * [kind, date, title, citation, detail, link, nations, italic] and [year, count, nation, mentions].
  */
@@ -194,5 +209,7 @@ export function filterPageData(view: RestrictedPageView, match: RegExpExecArray,
 			return filterTimelinePage(data, restrictions, timelineKinds);
 		case 'collection':
 			return filterCollectionPage(data, restrictions);
+		case 'court':
+			return filterCourtPage(data, restrictions);
 	}
 }

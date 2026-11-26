@@ -41,7 +41,8 @@ export const filteredPages = [
 	/^\/nations\/(?!(?:coverage|data|federal-offices|law|letter|map|recourse|state|timeline)(?:\/|$))[a-z0-9-]+(\/opinions)?(\/__data\.json)?$/,
 	/^\/copies\/list\/[a-z0-9-]+(\/__data\.json)?$/,
 	/^\/nations\/data\/(?!(?:build|tables)\/)[a-z0-9-]+\/(?!sources(?:\/|$))[^/]+?(\/__data\.json)?$/,
-	/^\/stats\/[a-z0-9-]+(\/__data\.json)?$/
+	/^\/stats\/[a-z0-9-]+(\/__data\.json)?$/,
+	/^\/courts\/[a-z0-9-]+(\/__data\.json)?$/
 ];
 
 /**
