@@ -26,7 +26,8 @@ export type EssayPart = (typeof essayParts)[number];
 export const aboutPageAddresses: Record<string, string> = {
 	about: '/about',
 	sponsor: '/sponsor',
-	'using-ai': '/using-ai'
+	'using-ai': '/using-ai',
+	watch: '/about/watch'
 };
 
 /** The parts a new essay can be started in from the workspace. */

@@ -1,6 +1,6 @@
 // One Node.js version everywhere. Cloudflare's Workers Builds reads
 // .node-version from each Worker's root directory (site, site/live,
-// site/scanner, site/wayback), the checks read the copy at the top of the
+// site/scanner, site/wayback, site/watch), the checks read the copy at the top of the
 // repository, and both package.json files refuse an older Node. This keeps
 // the copies, the engines fields and the npm version from drifting apart.
 import { readFileSync } from 'node:fs';
@@ -22,7 +22,7 @@ describe('Node.js and npm versions', () => {
 		expect(nodeVersion).toMatch(/^\d+$/);
 	});
 
-	it.each(['site', 'site/live', 'site/scanner', 'site/wayback'])(
+	it.each(['site', 'site/live', 'site/scanner', 'site/wayback', 'site/watch'])(
 		'%s/.node-version matches the top of the repository',
 		(folder) => {
 			expect(read(`${folder}/.node-version`).trim()).toBe(nodeVersion);
