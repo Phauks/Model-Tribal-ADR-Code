@@ -11,6 +11,8 @@ describe('a SHA-256 to copy', () => {
 		expect(html).toContain('copy the SHA-256 of the CSV file');
 		expect(html).not.toContain('aria-label');
 		expect(html).toContain('role="status"');
+		// No copy icon beside a shown hash: a click makes it glow instead (Trevor, Nov. 24, 2026).
+		expect(html).not.toContain('<svg');
 	});
 
 	it('names an icon-only button for a screen reader', () => {
