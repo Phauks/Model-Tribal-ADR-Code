@@ -5,8 +5,10 @@
 	// looks, dark mode among them, and a "More settings" button at the bottom
 	// for the rest; the theme button left the masthead for this panel. The
 	// panel holds the theme (light, dark or this device's), text size, text
-	// width and alignment, each the same control as in the full dialog
-	// (SettingSlider.svelte, SymbolChoice.svelte). "More settings" opens the
+	// width, alignment, font and spacing (Trevor chose these, option B of
+	// design/page-settings-popover, on Nov. 26, 2026), each the same control
+	// as in the full dialog (SettingSlider.svelte, SymbolChoice.svelte,
+	// Dropdown.svelte). "More settings" opens the
 	// full Settings dialog (SettingsPanel.svelte) at Text.
 	//
 	// The panel is a native popover, so it sits above everything, and Escape
@@ -22,14 +24,21 @@
 	import MonitorSmartphone from '@lucide/svelte/icons/monitor-smartphone';
 	import Settings from '@lucide/svelte/icons/settings';
 	import SlidersHorizontal from '@lucide/svelte/icons/sliders-horizontal';
+	import Space from '@lucide/svelte/icons/space';
 	import Sun from '@lucide/svelte/icons/sun';
 	import TextAlignJustify from '@lucide/svelte/icons/text-align-justify';
 	import TextAlignStart from '@lucide/svelte/icons/text-align-start';
+	import WrapText from '@lucide/svelte/icons/wrap-text';
+	import Dropdown from './Dropdown.svelte';
 	import SettingSlider from './SettingSlider.svelte';
 	import SettingsPanel from './SettingsPanel.svelte';
 	import SymbolChoice from './SymbolChoice.svelte';
 	import {
+		addOpenDyslexicFaces,
 		defaultSettings,
+		downloadFont,
+		fontChoices,
+		fontFamilyTokens,
 		lineWidthChoices,
 		loadSettings,
 		loadTheme,
@@ -37,9 +46,12 @@
 		saveTheme,
 		textAlignmentChoices,
 		textSizeChoices,
+		textSpacingChoices,
 		type Choice,
+		type Font,
 		type ReadingSettings,
 		type TextAlignment,
+		type TextSpacing,
 		type Theme
 	} from '#lib/reading-settings.ts';
 
@@ -57,6 +69,12 @@
 	];
 	const themeIcons = { light: Sun, dark: Moon, device: MonitorSmartphone } satisfies Record<Theme, unknown>;
 	const alignmentIcons = { left: TextAlignStart, justified: TextAlignJustify } satisfies Record<TextAlignment, unknown>;
+	const spacingIcons = { standard: WrapText, wide: Space } satisfies Record<TextSpacing, unknown>;
+
+	/** Each font choice is shown in its own typeface, as in the dialog. */
+	function fontStyle(font: Font): string {
+		return `font-family: var(${fontFamilyTokens[font]})`;
+	}
 
 	// The dialog may change a setting while the panel is closed, so the panel reads them again each time it opens.
 	function read() {
@@ -67,6 +85,7 @@
 	function change<Name extends keyof ReadingSettings>(name: Name, value: ReadingSettings[Name]) {
 		settings[name] = value;
 		saveSettings($state.snapshot(settings));
+		if (name === 'font') downloadFont(value as Font);
 	}
 
 	function changeTheme(value: Theme) {
@@ -86,6 +105,8 @@
 	async function toggled(event: ToggleEvent) {
 		if (event.newState !== 'open') return;
 		read();
+		// The font choice shows OpenDyslexic in its own typeface, whose faces are read only when needed.
+		void addOpenDyslexicFaces();
 		await tick();
 		panel?.focus();
 	}
@@ -154,6 +175,22 @@
 		value={settings.textAlignment}
 		hints={false}
 		onchange={(value) => change('textAlignment', value)}
+	/>
+	<Dropdown
+		label="Font"
+		choices={fontChoices}
+		value={settings.font}
+		onchange={(value) => change('font', value)}
+		choiceStyle={fontStyle}
+	/>
+	<SymbolChoice
+		legend="Spacing"
+		name="page-settings-spacing"
+		choices={textSpacingChoices}
+		icons={spacingIcons}
+		value={settings.textSpacing}
+		hints={false}
+		onchange={(value) => change('textSpacing', value)}
 	/>
 	<button type="button" class="more-settings" onclick={moreSettings}>
 		<SlidersHorizontal size={20} aria-hidden="true" />
@@ -227,6 +264,13 @@
 		outline-offset: -3px;
 		background: var(--color-focus);
 		color: var(--focus-text);
+	}
+
+	/* Where the window is tall enough for the whole panel, the font list can hang below it rather than scroll it. */
+	@media (min-width: 40.01rem) and (min-height: 48rem) {
+		.page-settings {
+			overflow: visible;
+		}
 	}
 
 	/* Phones: under the one-row masthead, across the screen, over the More panel. */
