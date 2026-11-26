@@ -19,17 +19,19 @@ interface CommentRow extends Omit<EssayComment, 'asks' | 'assignee'> {
 	assigneeHelper: string | null;
 }
 
-function readAssignee(row: Pick<CommentRow, 'assigneePerson' | 'assigneeName' | 'assigneeHelper'>): CommentAssignee | null {
+/** Who a thread is assigned to, from the newest assignment's columns. */
+export function readAssignee(row: Pick<CommentRow, 'assigneePerson' | 'assigneeName' | 'assigneeHelper'>): CommentAssignee | null {
 	if (row.assigneePerson) return { kind: 'person', identifier: row.assigneePerson, name: row.assigneeName ?? 'Someone' };
 	if (isCommentHelper(row.assigneeHelper)) return { kind: 'helper', helper: row.assigneeHelper, name: commentHelpers[row.assigneeHelper] };
 	return null;
 }
 
-/** The newest assignment of the thread whose first comment is `first`. */
-const latestAssignment = (first: string) =>
-	`(SELECT identifier FROM essay_comment_assignments WHERE thread_identifier = ${first} ORDER BY assigned_at DESC, rowid DESC LIMIT 1)`;
+/** The newest assignment of the thread whose first comment is `first`, from the essay's assignments or another table of the same shape. */
+export const latestAssignment = (first: string, table = 'essay_comment_assignments') =>
+	`(SELECT identifier FROM ${table} WHERE thread_identifier = ${first} ORDER BY assigned_at DESC, rowid DESC LIMIT 1)`;
 
-function readAsks(text: string): CommentAsk[] {
+/** The quick asks kept as a JSON array, without any word no longer offered. */
+export function readAsks(text: string): CommentAsk[] {
 	try {
 		const parsed = JSON.parse(text) as unknown;
 		return Array.isArray(parsed) ? parsed.filter(isCommentAsk) : [];
