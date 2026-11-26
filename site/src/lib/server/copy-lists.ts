@@ -46,47 +46,59 @@ export interface CopyRow {
 	removal: string;
 }
 
-const federalGroups: Record<string, string> = {
+/** The lists that are not one nation's, in page order: federal documents, then state material. */
+const fixedGroups: Record<string, string> = {
 	'supreme-court': 'Supreme Court opinions',
 	statutes: 'Federal statutes and Public Laws',
 	'federal-register': 'Federal Register documents',
-	'other-federal': 'Other federal documents'
+	// The Interior Board of Indian Appeals' decisions, a list of their own so the federal list stays a size a page can show.
+	'interior-board-of-indian-appeals': 'Interior Board of Indian Appeals decisions',
+	// Lower federal courts' opinions from the Caselaw Access Project and CourtListener (decision record 0060).
+	'federal-court-opinions': 'Lower federal court opinions',
+	'gaming-commission': 'National Indian Gaming Commission documents',
+	acknowledgment: 'Federal acknowledgment documents',
+	'other-federal': 'Other federal documents',
+	// Published state and territorial court opinions (decision record 0060).
+	'state-court-opinions': 'State court opinions',
+	// Oklahoma's register of state-tribal compacts and agreements (decision record 0060).
+	'oklahoma-state-tribal-agreements': 'Oklahoma state-tribal agreements'
 };
 
 /**
- * Published court opinions (decision record 0060), listed in parts of at most pageSize rows, in
- * the order of their keys (source, reporter, volume): one page of thousands of rows is too big for
- * a Worker asset and for the accessibility check, which gives up on a page after 90 seconds.
+ * Court opinion lists longer than pageSize rows (decision record 0060) are split into parts, in the
+ * order of the copies' keys (source, reporter, volume): the first part keeps the list's address and
+ * the others add "-2", "-3" and so on. One page of thousands of rows is too big for a Worker asset
+ * and for the accessibility check, which gives up on a page after 90 seconds.
  */
-const pagedTopics: Record<string, string> = {
-	'federal-court-opinions': 'Federal court opinions',
-	'state-court-opinions': 'State court opinions'
-};
+const pagedGroups = new Set(['federal-court-opinions', 'state-court-opinions']);
 const pageSize = 2500;
-let pageCache: Map<string, { slug: string; part: number; parts: number }> | undefined;
+let pageCache: Map<string, { slug: string; parts: number }> | undefined;
 
-function pages(): Map<string, { slug: string; part: number; parts: number }> {
+/** The list each paged copy is in, by key. */
+function pages(): Map<string, { slug: string; parts: number }> {
 	if (pageCache) return pageCache;
-	pageCache = new Map();
-	for (const topic of Object.keys(pagedTopics)) {
+	const cache = new Map<string, { slug: string; parts: number }>();
+	for (const group of pagedGroups) {
 		const keys = publicCopies()
-			.filter((copy) => copy.topic === topic)
+			.filter((copy) => copy.topic === group)
 			.map((copy) => copy.key)
 			.sort();
 		const parts = Math.max(1, Math.ceil(keys.length / pageSize));
 		keys.forEach((key, index) => {
 			const part = Math.floor(index / pageSize) + 1;
-			pageCache?.set(key, { slug: `${topic}-${part}`, part, parts });
+			cache.set(key, { slug: part === 1 ? group : `${group}-${part}`, parts });
 		});
 	}
-	return pageCache;
+	pageCache = cache;
+	return cache;
 }
 
-function pagedTitle(slug: string): string | undefined {
-	const match = /^(.*)-(\d+)$/.exec(slug);
-	if (!match || !pagedTopics[match[1]]) return undefined;
+/** A paged list's base group and part, or undefined for any other list. */
+function pageOf(slug: string): { group: string; part: number; parts: number } | undefined {
+	const match = /^(.*?)(?:-(\d+))?$/.exec(slug);
+	if (!match || !pagedGroups.has(match[1])) return undefined;
 	const parts = [...pages().values()].find((page) => page.slug === slug)?.parts ?? 1;
-	return parts > 1 ? `${pagedTopics[match[1]]}, part ${match[2]} of ${parts}` : pagedTopics[match[1]];
+	return { group: match[1], part: Number(match[2] ?? 1), parts };
 }
 
 function nationNames(): Map<string, string> {
@@ -110,7 +122,9 @@ const opinionPrefix = 'opinions-';
 
 function groupOf(copy: PublicCopy, names: Map<string, string>): string {
 	if (copy.topic === 'caselaw-access-project') return `${opinionPrefix}${copy.nations[0] ?? 'other'}`;
-	if (pagedTopics[copy.topic]) return pages().get(copy.key)?.slug ?? `${copy.topic}-1`;
+	if (copy.topic === 'ibia-decisions') return 'interior-board-of-indian-appeals';
+	if (pagedGroups.has(copy.topic)) return pages().get(copy.key)?.slug ?? copy.topic;
+	if (copy.topic === 'oklahoma-secretary-of-state') return 'oklahoma-state-tribal-agreements';
 	if (copy.topic === 'constitutions' || copy.topic === 'tribal-law') {
 		const [first] = namesOf(copy, names);
 		const letter = first?.normalize('NFD').charAt(0).toLowerCase() ?? '';
@@ -121,13 +135,17 @@ function groupOf(copy: PublicCopy, names: Map<string, string>): string {
 	// The Library of Congress keeps both the Statutes at Large and the United States Reports.
 	if (copy.topic === 'tile.loc.gov') return copy.key.includes('/usrep/') ? 'supreme-court' : 'statutes';
 	if (copy.topic === 'govinfo' && /^FR-/.test(copy.key.split('/')[1] ?? '')) return 'federal-register';
+	// The tier 2 collections each have a list of their own; together they were too long for one page.
+	if (copy.topic === 'federal-register') return 'federal-register';
+	if (copy.topic === 'nigc') return 'gaming-commission';
+	if (copy.topic === 'acknowledgment') return 'acknowledgment';
 	return 'other-federal';
 }
 
 function groupTitle(slug: string, names = nationNames()): string {
-	if (federalGroups[slug]) return federalGroups[slug];
-	const paged = pagedTitle(slug);
-	if (paged) return paged;
+	const paged = pageOf(slug);
+	if (paged) return paged.parts > 1 ? `${fixedGroups[paged.group]}, part ${paged.part} of ${paged.parts}` : fixedGroups[paged.group];
+	if (fixedGroups[slug]) return fixedGroups[slug];
 	if (slug.startsWith(opinionPrefix)) {
 		const name = names.get(slug.slice(opinionPrefix.length));
 		return name ? `Tribal court opinions: ${name}` : 'Tribal court opinions';
@@ -163,10 +181,10 @@ export function copyGroups(): CopyGroup[] {
 		counts.set(slug, (counts.get(slug) ?? 0) + 1);
 	}
 	const order = (slug: string) =>
-		federalGroups[slug]
-			? Object.keys(federalGroups).indexOf(slug)
-			: pagedTitle(slug)
-				? Object.keys(federalGroups).length + (slug.startsWith('federal-') ? 0 : 0.5)
+		pageOf(slug)
+			? Object.keys(fixedGroups).indexOf(pageOf(slug)?.group ?? '') + (pageOf(slug)?.part ?? 1) / 100
+			: fixedGroups[slug]
+				? Object.keys(fixedGroups).indexOf(slug)
 				: slug.startsWith(opinionPrefix)
 					? 5
 					: slug === 'other-nations'

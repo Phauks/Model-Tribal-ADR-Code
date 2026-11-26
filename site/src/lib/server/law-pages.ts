@@ -21,7 +21,8 @@ import { copyPath } from '../public-copies.ts';
 import { readingLinksHtml } from '../reading-links.ts';
 import { signersOfTreaty } from './biographies.ts';
 import { boxSections, citationLine, type BoxSection, essaysCiting, type CaseMention } from './case-pages.ts';
-import { sources, type SourceRecord } from './content.ts';
+import { nations, sources, type SourceRecord } from './content.ts';
+import { displayName } from '../nation-labels.ts';
 import type { FactGroup } from './justice-pages.ts';
 import { accountsOf, type AccountEntry } from './impact-accounts.ts';
 import { isoOf, nationsCiting, orderNumber, orderPresident, type LawNation } from './law-facts.ts';
@@ -74,6 +75,7 @@ const kindLabels: Record<string, string> = {
 	'federal-statute': 'Federal statute',
 	'federal-regulation': 'Federal regulation',
 	'federal-register-notice': 'Federal Register notice',
+	'federal-agency-document': 'Federal agency document',
 	'executive-order': 'Executive order',
 	'intergovernmental-agreement': 'Treaty'
 };
@@ -82,6 +84,7 @@ const dateLabels: Record<string, string> = {
 	'federal-statute': 'Enacted',
 	'federal-regulation': 'Edition',
 	'federal-register-notice': 'Published',
+	'federal-agency-document': 'Issued',
 	'executive-order': 'Signed',
 	'intergovernmental-agreement': 'Signed'
 };
@@ -104,6 +107,16 @@ function lawCitation(record: SourceRecord): string {
 }
 
 
+/** The nations a record names in its tribes field, by name, in the order given. */
+function namedNations(ids: string[]): { id: string; name: string }[] {
+	if (ids.length === 0) return [];
+	const byId = new Map(nations().map((nation) => [nation.id, nation]));
+	return ids.slice(0, glanceNations).flatMap((id) => {
+		const nation = byId.get(id);
+		return nation ? [{ id, name: displayName(nation.names.official) }] : [];
+	});
+}
+
 /** The most nations At a glance names one by one. */
 const glanceNations = 8;
 
@@ -123,8 +136,12 @@ export function lawPage(key: string): LawPage {
 	const president = order ? orderPresident(record) : undefined;
 	const presidentPage = president && presidentByKey(president.key) ? `/supreme-court/presidents/${president.key}` : undefined;
 	const nationsCited = nationsCiting(key);
+	// An agency's document or notice no nation page cites yet still names its nations in the record (tribes).
+	const nationsNamed = nationsCited.length > 0 ? nationsCited : namedNations(record.tribes ?? []);
 	const glance: FactGroup[] = [
-		{ field: 'kind', label: 'Kind', items: [{ text: kindLabels[record.kind] ?? record.kind }] },
+		// An agency's document says which kind it is, such as "Indian lands opinion" (scripts/law/nigc_documents.py).
+		{ field: 'kind', label: 'Kind', items: [{ text: (record.citation as { genre?: string }).genre ?? kindLabels[record.kind] ?? record.kind }] },
+		{ field: 'agency', label: 'Agency', items: record.kind === 'federal-agency-document' ? (record.citation.author ?? []).flatMap((author) => (author.literal ? [{ text: author.literal }] : [])) : [] },
 		{ field: 'number', label: 'Number', items: number ? [{ text: number }] : [] },
 		// A chapter of the Code is dated by the edition it was read from, not enacted on one day.
 		{ field: 'date', label: /^usc-\d+-chapter-/.test(key) ? 'Edition' : (dateLabels[record.kind] ?? 'Date'), items: date ? [{ text: date }] : [] },
@@ -132,12 +149,12 @@ export function lawPage(key: string): LawPage {
 		{ field: 'citation', label: 'Citation', items: citation ? [{ text: citation }] : [] },
 		{
 			field: 'nations',
-			label: nationsCited.length === 1 ? 'Nation' : 'Nations',
+			label: nationsNamed.length === 1 ? 'Nation' : 'Nations',
 			// A list such as the Federal Register's list of recognized nations is cited by hundreds: At a glance counts them.
 			items:
 				nationsCited.length > glanceNations
 					? [{ text: `${nationsCited.length.toLocaleString('en-US')} nations`, link: '#on-this-site' }]
-					: nationsCited.map((nation) => ({ text: nation.name, link: `/nations/${nation.id}` }))
+					: nationsNamed.map((nation) => ({ text: nation.name, link: `/nations/${nation.id}` }))
 		}
 	].filter((group) => group.items.length > 0);
 	const saved = savedCopyLink(record);

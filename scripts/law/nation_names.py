@@ -59,6 +59,8 @@ class NationNames:
                 shorter = re.sub(rf"\s+of\s+(?:the\s+)?(?:State\s+of\s+)?(?:{STATES})$", "", bare)
                 self._add(shorter, nation)
                 self._add(re.sub(r"\s+of\s+Indians\b", "", shorter), nation)
+                # "Spokane Tribe of the Spokane Reservation": also "Spokane Tribe" (dropped when another nation shares it).
+                self._add(re.sub(r"\s+of\s+the\s+[A-Z][\w' .-]+\s+Reservation$", "", shorter), nation)
         ordinances = ROOT / "research/gaming/ordinance-documents.csv"
         if ordinances.exists():
             for row in csv.DictReader(ordinances.open(encoding="utf-8")):
