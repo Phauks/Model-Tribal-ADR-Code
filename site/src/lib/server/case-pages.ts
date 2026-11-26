@@ -30,10 +30,10 @@ import { essayPath, partOf, titleOf } from './essays.ts';
 import { nationNamesAndKinds, publicCopyFor, sources, type SourceRecord } from './content.ts';
 import { courtPath } from './supreme-courts.ts';
 import { decidedDay, justiceLinkFor } from './supreme-court-people.ts';
-import { savedCopyLink } from './markdown.ts';
+import { savedCopyFor, savedCopyLink } from './markdown.ts';
 import { displayName } from '../nation-labels.ts';
 import { officialReportLinks, readingLinksHtml } from '../reading-links.ts';
-import { copyPagePath } from '../public-copies.ts';
+import { copyPagePath, copyPath } from '../public-copies.ts';
 import { opinionTitle, surname, type OpinionEntry } from '../case-opinions.ts';
 import type { SourceEntry } from './source-uses.ts';
 import { peopleInCase } from './biographies.ts';
@@ -91,6 +91,8 @@ export interface CasePage {
 	/** The same lines as the list behind a citation's book icon (reading-links.ts), shown open. */
 	readingHtml: string;
 	readingCount: number;
+	/** The decision's text as this site keeps it, shown in a frame, when the record has a stored copy of its own (an agency decision's PDF). */
+	text?: { file: string; isPdf: boolean };
 	essays: CaseMention[];
 	nationPages: { name: string; link: string }[];
 	court?: { name: string; link: string };
@@ -270,6 +272,13 @@ export function essaysCiting(key: string, title: string): CaseMention[] {
 }
 
 
+/** The record's own stored copy (its `file` block), for the page's Text section; a copy of a whole reporter volume is left to Where to read it. */
+function textOf(record: SourceRecord): CasePage['text'] {
+	const stored = (record as SourceRecord & { file?: { checksum?: string } }).file?.checksum;
+	const copy = stored ? savedCopyFor(record) : undefined;
+	return copy && copy.sha256 === stored ? { file: copyPath(copy), isPdf: copy.mediaType === 'application/pdf' } : undefined;
+}
+
 export function casePage(key: string): CasePage {
 	const record = sources().get(key) as (SourceRecord & CaseRecordParts) | undefined;
 	if (!record || (record.citation as { type?: string }).type !== 'legal_case' || !record.citation.title) error(404, 'No case has this address.');
@@ -298,6 +307,7 @@ export function casePage(key: string): CasePage {
 		// The list a citation's book icon opens, shown open here, without the icon.
 		readingHtml: readingLinksHtml(record.reading_links, saved).replace(/<button[\s\S]*?<\/button>/, ''),
 		readingCount: (record.reading_links?.links.length ?? 0) + (saved ? 1 : 0),
+		text: textOf(record),
 		essays: essaysCiting(key, name),
 		nationPages: nations.filter((nation) => nationNamesAndKinds().has(nation.id)).map((nation) => ({ name: nation.name, link: `/nations/${nation.id}` })),
 		court: bench && courtLink ? { name: bench.court, link: courtLink } : undefined,
