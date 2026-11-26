@@ -29,6 +29,25 @@
 			"binding": "sourceDocuments",
 			"bucket_name": "model-tribal-adr-code-sources"
 		}
+	],
+	// TEMPORARY, for the move to the tribal-law-project databases
+	// (move-databases.ts, docs/cloudflare-names.md). Remove after the switch.
+	"d1_databases": [
+		{
+			"binding": "oldSiteDatabase",
+			"database_name": "model-tribal-adr-code",
+			"database_id": "2386ebd3-cea2-4ca1-9fff-0772fcd8bc6b"
+		},
+		{
+			"binding": "newSiteDatabase",
+			"database_name": "tribal-law-project",
+			"database_id": "eeb27102-f50e-40ff-bebd-5347c5c055c7"
+		},
+		{
+			"binding": "newSourceLibrary",
+			"database_name": "tribal-law-project-library",
+			"database_id": "90c5f0f5-6352-459e-a946-b3f18ea97d96"
+		}
 	]
 	// ARCHIVE_ORG_ACCESS_KEY and ARCHIVE_ORG_SECRET_KEY are Worker secrets (Settings >
 	// Variables and Secrets), made at https://archive.org/account/s3.php. Only this
