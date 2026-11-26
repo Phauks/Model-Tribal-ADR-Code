@@ -42,6 +42,7 @@ import {
 import { documentHeading, documentHistoryView, nationDocumentHistories } from './document-history.ts';
 import { SourceUses } from './source-uses.ts';
 import { caseCitation, issuedDate, lawCitation } from './timeline.ts';
+import { recordPageLink } from './law-records.ts';
 import { opinionsOf } from './tribal-court-opinions.ts';
 
 /** provisions.csv subject_area -> subject. "other" has none. */
@@ -429,7 +430,7 @@ export function nationLaw(record: NationRecord): NationLaw {
 			kind: 'Land set aside',
 			title: land.land_area,
 			detail: [humanize(land.method), land.instrument].filter(Boolean).join(': '),
-			link: `/nations/${record.id}#ties-heading`,
+			link: recordPageLink(land.source) ?? `/nations/${record.id}#ties-heading`,
 			date: land.date,
 			subjects: ['land']
 		});

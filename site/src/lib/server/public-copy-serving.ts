@@ -75,7 +75,8 @@ function fileName(copy: ServableCopy): string {
 
 function copyHeaders(copy: ServableCopy, etag?: string): Headers {
 	const headers = new Headers({
-		'Content-Type': copy.mediaType,
+		// Plain text says it is UTF-8, so a transcription's accented letters and dashes show as written.
+		'Content-Type': copy.mediaType === 'text/plain' ? 'text/plain; charset=utf-8' : copy.mediaType,
 		'Content-Disposition': `inline; filename="${fileName(copy)}"`,
 		// A day: the file never changes under its key, but a copy taken off the list should stop being served soon.
 		'Cache-Control': 'public, max-age=86400',
