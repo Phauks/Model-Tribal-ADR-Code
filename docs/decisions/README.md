@@ -65,5 +65,6 @@ A record is never rewritten after it is accepted. A later record supersedes it a
 | [0057](0057-replace-names-in-tribal-court-opinions-with-initials.md) | Replace names in Tribal court opinions with initials | Accepted |
 | [0058](0058-draw-item-pages-on-request.md) | Draw the large families of item pages when a reader opens them | Accepted |
 | [0059](0059-watch-for-new-legal-sources-with-plug-in-watchers.md) | Watch for new and changed legal sources with plug-in watchers, and review every find by hand | Accepted |
+| [0060](0060-serve-state-agreements-and-state-court-opinions.md) | Serve copies of Oklahoma's filed state-tribal agreements and of published state court opinions | Accepted |
 
 Template: Status, Date, Context, Decision, Consequences, Sources.

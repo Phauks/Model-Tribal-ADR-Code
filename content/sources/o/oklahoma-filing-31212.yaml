@@ -1,0 +1,57 @@
+key: oklahoma-filing-31212
+kind: intergovernmental-agreement
+citation:
+  type: document
+  title: 'Choctaw Nation and Bureau of Indian Affairs with cities of Bokoshe, Stigler, Calvin and Panama and Hughes County: cross-deputization agreements'
+  author:
+  - literal: The Choctaw Nation of Oklahoma
+  - literal: City of Bokoshe
+  - literal: City of Stigler
+  - literal: City of Calvin
+  - literal: Hughes County
+  - literal: City of Panama
+  - literal: Bureau of Indian Affairs
+  container-title: Oklahoma Secretary of State, Tribal Compacts and Agreements
+  number: File 31212
+  URL: https://execleg.sos.ok.gov/documents/filelog/47641.pdf
+  accessed:
+    date-parts:
+    - - 2026
+      - 11
+      - 26
+  issued:
+    date-parts:
+    - - 1994
+      - 8
+      - 22
+original_link: https://execleg.sos.ok.gov/documents/filelog/47641.pdf
+retrieved: '2026-11-26'
+archives: []
+history:
+  status: live
+  last_checked: '2026-11-26'
+rights:
+  status: no-permission-needed
+  basis: fact-only
+  basis_note: Facts are recorded from the register. The State's filed copy, a public record of the Oklahoma Secretary of State, is served on this site (decision record 0060); a nation can ask to have it taken down.
+  redistribution: true
+tribes:
+- the-choctaw-nation-of-oklahoma
+jurisdictions:
+- level: multiple
+  note: Agreement filed with the Oklahoma Secretary of State.
+topics:
+- oklahoma-state-tribal-agreement
+- cross-deputization
+found_in:
+- 2026-11-26-oklahoma-state-tribal-agreements
+notes: 'Oklahoma Secretary of State file 31212, filed Aug. 22, 1994. The register''s title reads “Agreement Tribal Cross Deputization ICA 94-0038, ICA 94-0039, ICA 94-0040, ICA 94-0041, ICA 94-0042” and its description “BIA/Choctaw Nation & City of Bokoshe, City of Stigler, City of Calvin, Hughes County, City of Panama”. The register line reads as an agreement or compact. The filed copy is a scan with no text layer; this record''s facts come from the register''s own title and description, read by script and by an AI reader, not from the scan. The date is the filing date, not the signing date. The reader noted: Bundle of five ICAs (94-0038 to 94-0042) in one entry.'
+review:
+  status: unverified
+  by: scripts/agreements/oklahoma_register.py
+  date: '2026-11-26'
+  checks:
+  - check: 'Nations named in the register line: the script''s reading and an AI reader''s'
+    result: agree
+  - check: 'Subject: the script''s reading of the register title and an AI reader''s'
+    result: agree

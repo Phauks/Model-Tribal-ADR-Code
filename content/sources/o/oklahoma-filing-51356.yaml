@@ -1,0 +1,52 @@
+key: oklahoma-filing-51356
+kind: intergovernmental-agreement
+citation:
+  type: document
+  title: 'Chickasaw Nation and McClain County Sheriff''s Office: addendum to the law enforcement deputation agreement'
+  author:
+  - literal: The Chickasaw Nation
+  - literal: McClain County Sheriff's Office
+  container-title: Oklahoma Secretary of State, Tribal Compacts and Agreements
+  number: File 51356
+  URL: https://execleg.sos.ok.gov/documents/filelog/94467.pdf
+  accessed:
+    date-parts:
+    - - 2026
+      - 11
+      - 26
+  issued:
+    date-parts:
+    - - 2021
+      - 8
+      - 18
+original_link: https://execleg.sos.ok.gov/documents/filelog/94467.pdf
+retrieved: '2026-11-26'
+archives: []
+history:
+  status: live
+  last_checked: '2026-11-26'
+rights:
+  status: no-permission-needed
+  basis: fact-only
+  basis_note: Facts are recorded from the register. The State's filed copy, a public record of the Oklahoma Secretary of State, is served on this site (decision record 0060); a nation can ask to have it taken down.
+  redistribution: true
+tribes:
+- the-chickasaw-nation
+jurisdictions:
+- level: multiple
+  note: Agreement filed with the Oklahoma Secretary of State.
+topics:
+- oklahoma-state-tribal-agreement
+- cross-deputization
+found_in:
+- 2026-11-26-oklahoma-state-tribal-agreements
+notes: 'Oklahoma Secretary of State file 51356, filed Aug. 18, 2021. The register''s title reads “Agreement Tribal Cross Deputization Law Enforcement Addendum file #41100” and its description “Municipal Addendum, McClain County Sheriff''s Office joins in to the Deputation Agreement for Law Enforcement in the Chickasaw Nation Indian County”. The register line reads as an addendum adding a party to an existing agreement (it names Deputation Agreement for Law Enforcement in the Chickasaw Nation). The filed copy is a scan with no text layer; this record''s facts come from the register''s own title and description, read by script and by an AI reader, not from the scan. The date is the filing date, not the signing date.'
+review:
+  status: unverified
+  by: scripts/agreements/oklahoma_register.py
+  date: '2026-11-26'
+  checks:
+  - check: 'Nations named in the register line: the script''s reading and an AI reader''s'
+    result: agree
+  - check: 'Subject: the script''s reading of the register title and an AI reader''s'
+    result: agree

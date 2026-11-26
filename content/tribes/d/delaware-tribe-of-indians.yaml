@@ -350,6 +350,51 @@ jurisdiction:
   as_of: '2017-07-18'
   locator: Answer, second and third paragraphs (the lists of mandatory and optional states)
   note: Inferred from the state's absence from both lists. Nation placed in Oklahoma by its office state in the BIA Tribal Leaders Directory, so confidence is medium.
+jurisdiction_agreements:
+- kind: tax-agreement
+  other_party: State of Oklahoma
+  agreement: Motor fuel tax contract
+  state: OK
+  status: unknown
+  detail: Filed with the Oklahoma Secretary of State on Dec. 29, 1998 (file 35665).
+  source: oklahoma-filing-35665
+  confidence: medium
+  verification: title-only
+  locator: Register entry, file 35665
+  note: 'From the register line: “Delaware Tribe of Indians/State of Oklahoma”. Whether it is still in force is not recorded.'
+- kind: tax-agreement
+  other_party: State of Oklahoma
+  agreement: Tobacco tax compact
+  state: OK
+  status: unknown
+  detail: Filed with the Oklahoma Secretary of State on Dec. 29, 1998 (file 35666).
+  source: oklahoma-filing-35666
+  confidence: medium
+  verification: title-only
+  locator: Register entry, file 35666
+  note: 'From the register line: “Delaware Tribe/State of Oklahoma”. Whether it is still in force is not recorded.'
+- kind: tax-agreement
+  other_party: State of Oklahoma
+  agreement: Tobacco tax compact
+  state: OK
+  status: unknown
+  detail: Filed with the Oklahoma Secretary of State on July 9, 1999 (file 36074).
+  source: oklahoma-filing-36074
+  confidence: medium
+  verification: title-only
+  locator: Register entry, file 36074
+  note: 'From the register line: “Delaware Tribe of Western Oklahoma/State of Oklahoma”. Whether it is still in force is not recorded.'
+- kind: other
+  other_party: State of Oklahoma
+  agreement: Resolution 2011-20 creating housing program and payment-in-lieu-of-tax agreements with counties
+  state: OK
+  status: unknown
+  detail: Filed with the Oklahoma Secretary of State on Aug. 23, 2011 (file 45014).
+  source: oklahoma-filing-45014
+  confidence: medium
+  verification: title-only
+  locator: Register entry, file 45014
+  note: 'From the register line: “Delaware Tribal Resolution 2011-20 authorizing the creation of housing program and entering into local cooperation and payment in liew of tax agreements with various counties”. Whether it is still in force is not recorded.'
 court_practice:
 - kind: court-rules
   title: Court Rules

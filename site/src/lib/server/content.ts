@@ -104,6 +104,8 @@ export interface SourceRecord {
 	original_link?: string;
 	/** The nations a source is about, by profile id. */
 	tribes?: string[];
+	/** Free tags (schemas/source.schema.json), such as "oklahoma-state-tribal-agreement". */
+	topics?: string[];
 	/** For a court case: each nation it names, how, and in what role (schemas/source.schema.json). */
 	nations_in_case?: NationsInCase;
 	archives?: { link?: string; url?: string; captured?: string }[];
