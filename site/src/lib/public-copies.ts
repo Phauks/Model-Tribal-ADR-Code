@@ -35,6 +35,11 @@ export interface PublicCopy {
 	nations: string[];
 	/** Why the project may share it, in words (project analysis, not legal advice). */
 	rights: string;
+	/**
+	 * A Tribal court opinion with protected people's names replaced by initials.
+	 * It has no links: the original still has the names in it.
+	 */
+	namesReplaced?: boolean;
 }
 
 /** Media types the Worker serves as copies. A saved web page is served in a sandbox, with nothing it could load or run. */
@@ -43,6 +48,11 @@ export const servedMediaTypes = new Set(['application/pdf', 'text/html']);
 /** How a link names the file's kind, such as "PDF" or "saved web page". */
 export function mediaLabel(mediaType: string): string {
 	return mediaType === 'text/html' ? 'saved web page' : 'PDF';
+}
+
+/** The request form, filled in to ask that a name in a court opinion be replaced with initials (docs/requests.md). */
+export function nameRequestPath(copy: Pick<PublicCopy, 'key'>): string {
+	return `/requests?${new URLSearchParams({ kind: 'replace-name', record: `copies/${copy.key}` }).toString().replaceAll('%2F', '/')}`;
 }
 
 /** The request form, filled in to ask that a copy be taken down or redacted (docs/requests.md). */
@@ -102,7 +112,7 @@ export interface CopyDetails {
 	/** The short list the copy is in, below /copies/list/. */
 	list: { slug: string; title: string };
 	/** For a tribal court opinion: its name, citation, court and date decided. */
-	opinion?: { name: string; citation: string; court: string; decided: string; docket: string };
+	opinion?: { name: string; citation: string; court: string; decided: string; docket: string; namesReplaced?: boolean };
 }
 
 /**

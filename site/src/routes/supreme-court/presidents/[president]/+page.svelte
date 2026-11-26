@@ -10,7 +10,7 @@
 <script lang="ts">
 	import BenchChart from '#lib/components/BenchChart.svelte';
 	import CitationMarks from '#lib/components/CitationMarks.svelte';
-	import CountBadge from '#lib/components/CountBadge.svelte';
+	import Collapsible from '#lib/components/Collapsible.svelte';
 	import DataTable from '#lib/components/DataTable.svelte';
 	import InfoPage from '#lib/components/InfoPage.svelte';
 	import { readableDate } from '#lib/readable-date.ts';
@@ -79,8 +79,7 @@
 		{ label: 'Supreme Court', href: '/supreme-court' }
 	]}
 >
-	<section aria-labelledby="justices">
-		<h2 id="justices">Justices appointed <CountBadge count={data.appointees.length} /></h2>
+	<Collapsible heading="Justices appointed" identifier="justices" count={data.appointees.length}>
 		<BenchChart rows={data.rows} start={data.start} end={data.end} cases={data.cases} width={560} labelWidth={110} />
 		<DataTable
 			identifier="justices-{data.key}"
@@ -91,10 +90,9 @@
 			download="{data.key}-justices"
 		/>
 		<p class="small muted source-line">Source<CitationMarks marks={data.appointeeMarks} /></p>
-	</section>
+	</Collapsible>
 
-	<section aria-labelledby="cases">
-		<h2 id="cases">Cases on this site <CountBadge count={data.cases.length} /></h2>
+	<Collapsible heading="Cases on this site" identifier="cases" count={data.cases.length}>
 		{#if data.cases.length > 0}
 			<DataTable
 				identifier="cases-{data.key}"
@@ -118,7 +116,7 @@
 				{/snippet}
 			</DataTable>
 		{/if}
-	</section>
+	</Collapsible>
 </InfoPage>
 
 <style>

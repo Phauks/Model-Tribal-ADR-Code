@@ -119,6 +119,14 @@
 	 * nothing runs underneath, such as the References list's groups and
 	 * rows, whose rules showed through the contact card; grids, flex rows,
 	 * lists set in columns and scrolling tables do this by themselves.
+	 *
+	 * A section's own box still runs under the glance column, and a
+	 * positioned box is painted and clicked above a float, so a positioned
+	 * section beside the column (a nation's Courts, which holds the team's
+	 * hidden Edit link, or a section with heading buttons) covered the
+	 * contact card: its email, phone and contact page could not be clicked
+	 * or selected (Trevor, Nov. 24, 2026). The glance column is lifted above
+	 * the sections, so whatever sits beside it, it stays on top.
 	 */
 	@container page (min-width: 52rem) {
 		.record-page.has-glance {
@@ -126,6 +134,8 @@
 		}
 
 		.record-glance {
+			position: relative;
+			z-index: 1;
 			float: right;
 			clear: right;
 			/* Two fifths of the column, or the room the text width leaves, whichever is wider. */

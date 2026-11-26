@@ -7,6 +7,7 @@ export const requestKinds = [
 	'correct',
 	'restrict',
 	'remove',
+	'replace-name',
 	'add-nation',
 	'contribute',
 	'question'
@@ -17,6 +18,7 @@ export const requestKindLabels: Record<RequestKind, string> = {
 	correct: 'Correct something',
 	restrict: 'Make something private',
 	remove: 'Delete something',
+	'replace-name': 'Replace a name with initials',
 	'add-nation': 'Add a nation that is missing',
 	contribute: 'Contribute (sources, review, terms, writing)',
 	question: 'Ask a question'
@@ -28,6 +30,8 @@ export const requestKindHints: Record<RequestKind, string> = {
 		'We keep it in our private records but stop showing it, for example because it is sensitive or belongs to the community. We hide it within 7 days, then review it.',
 	remove:
 		'We delete it from the website and from later editions of the book. We hide it within 7 days, then review it.',
+	'replace-name':
+		'You, your child or a relative is named in a court opinion on this site. We replace the name with initials within 7 days. No court order needed.',
 	'add-nation':
 		'A nation is not listed. One federal or state government source that names it is enough.',
 	contribute: 'Offer sources, review, preferred terms or writing.',

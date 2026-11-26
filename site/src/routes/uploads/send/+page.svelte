@@ -5,14 +5,17 @@
 	// a video file.
 	import { onMount } from 'svelte';
 	import { goto } from '$app/navigation';
+	import { page } from '$app/state';
 	import X from '@lucide/svelte/icons/x';
 	import FileSender from '#lib/components/FileSender.svelte';
 	import { originLabels, origins, permittedUseLabels, permittedUses, type Origin, type PermittedUse } from '#lib/uploads.ts';
 	import { nationNames } from '#lib/nation-names.ts';
 
-	let description = $state('');
-	let origin = $state<Origin | ''>('');
-	let originNote = $state('');
+	// A link from the workspace's Wayback captures page fills in what the file is and where it was published.
+	const publishedAt = page.url.searchParams.get('published') ?? '';
+	let description = $state(page.url.searchParams.get('description') ?? '');
+	let origin = $state<Origin | ''>(publishedAt ? 'published' : '');
+	let originNote = $state(publishedAt);
 	let permittedUse = $state<PermittedUse | ''>('');
 	let nationFirst = $state(false);
 	let underEighteen = $state(false);

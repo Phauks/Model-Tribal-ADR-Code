@@ -37,7 +37,6 @@ history:
 court_dates:
   argued:
   - '1973-04-18'
-  - '1973-06-04'
   printed: Argued April 18, 1973 Decided June 4, 1973
   source: https://tile.loc.gov/storage-services/service/ll/usrep/usrep412/usrep412391/usrep412391.pdf
   checked: '2026-11-24'
@@ -114,7 +113,7 @@ nations_in_case:
   checked: '2026-11-24'
   named: []
 review:
-  status: unverified
+  status: verified
   by: scripts/caselaw/supreme_court_native_cases.py
   date: '2026-11-24'
   checks:
@@ -125,8 +124,8 @@ review:
     result: agree
     detail: Scan has 10 pages; the report runs 391 to 400
   - check: caption
-    result: settled
-    detail: 'Caption found in the scan''s text at 0.87. Read from the scan by an AI reader (record right): p. 391: ''UNITED STATES v. MASON, ADMINISTRATQR, ET .'' (the scan''s caption line, with the ''AL.'' cut off by OCR); the record''s ''UNITED STATES v. MASON, ADMINISTRATOR, et al'' matches the printed words.'
+    result: confirmed
+    detail: 'Caption found in the scan''s text at 0.87. Read from the scan by an AI reader (record right): p. 391: ''UNITED STATES v. MASON, ADMINISTRATQR, ET .'' (the scan''s caption line, with the ''AL.'' cut off by OCR); the record''s ''UNITED STATES v. MASON, ADMINISTRATOR, et al'' matches the printed words.. Confirmed: the report prints the caption "UNITED STATES v. MASON, ADMINISTRATOR, et al." on p. 391 (fresh OCR, 0.93)'
   - check: printed dates
     result: agree
     detail: Caselaw Access Project "Argued April 18, 1973 Decided June 4, 1973"; scan "Argued Aprir 18, 1973--Decided June 4, 1973"

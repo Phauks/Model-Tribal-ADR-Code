@@ -10,7 +10,7 @@
 <script lang="ts">
 	import FileText from '@lucide/svelte/icons/file-text';
 	import CitationMarks from '#lib/components/CitationMarks.svelte';
-	import CountBadge from '#lib/components/CountBadge.svelte';
+	import Collapsible from '#lib/components/Collapsible.svelte';
 	import DataTable from '#lib/components/DataTable.svelte';
 	import InfoPage from '#lib/components/InfoPage.svelte';
 	import ReviewStatus from '#lib/components/ReviewStatus.svelte';
@@ -91,8 +91,7 @@
 	{/snippet}
 
 	{#if data.cases.length > 0}
-		<section aria-labelledby="cases">
-			<h2 id="cases">Cases <CountBadge count={data.cases.length} /></h2>
+		<Collapsible heading="Cases" identifier="cases" count={data.cases.length}>
 			<DataTable identifier="cases-{data.key}" label="Table: cases {data.name} took part in or is named in" columns={caseColumns} rows={caseRows} rowName={['case', 'cases']} count={false} download="{data.key}-cases">
 				{#snippet cell(row: TableRow, column: TableColumn)}
 					{@const item = caseByKey.get(row.key)}
@@ -100,12 +99,11 @@
 					{#if item && column.key === 'role'}{item.role}{#if item.result}<span class="result small muted">{item.result}</span>{/if}<CitationMarks marks={item.citations} />{/if}
 				{/snippet}
 			</DataTable>
-		</section>
+		</Collapsible>
 	{/if}
 
 	{#if data.treaties.length > 0}
-		<section aria-labelledby="treaties">
-			<h2 id="treaties">Treaties <CountBadge count={data.treaties.length} /></h2>
+		<Collapsible heading="Treaties" identifier="treaties" count={data.treaties.length}>
 			<DataTable identifier="treaties-{data.key}" label="Table: treaties {data.name} signed" columns={treatyColumns} rows={treatyRows} rowName={['treaty', 'treaties']} count={false} download="{data.key}-treaties">
 				{#snippet cell(row: TableRow, column: TableColumn)}
 					{@const item = treatyByKey.get(row.key)}
@@ -114,12 +112,11 @@
 					{#if item?.document && column.key === 'text'}<a class="treaty-text" href={item.document.href}><FileText size={16} strokeWidth={1.75} aria-hidden="true" />{item.document.format}<span class="visually-hidden"> copy of the {item.name}</span></a>{/if}
 				{/snippet}
 			</DataTable>
-		</section>
+		</Collapsible>
 	{/if}
 
 	{#if data.events.length > 0}
-		<section aria-labelledby="events">
-			<h2 id="events">Life and events</h2>
+		<Collapsible heading="Life and events" identifier="events">
 			<ul class="events">
 				{#each data.events as event, index (index)}
 					<li>
@@ -129,7 +126,7 @@
 					</li>
 				{/each}
 			</ul>
-		</section>
+		</Collapsible>
 	{/if}
 </InfoPage>
 

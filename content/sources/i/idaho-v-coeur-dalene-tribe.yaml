@@ -43,7 +43,6 @@ history:
 court_dates:
   argued:
   - '1996-10-16'
-  - '1996-06-23'
   printed: Argued October 16, 1996 Decided June 23, 1997
   source: https://tile.loc.gov/storage-services/service/ll/usrep/usrep521/usrep521261/usrep521261.pdf
   checked: '2026-11-24'
@@ -128,7 +127,7 @@ nations_in_case:
     historical: true
     note: Matched by the script to the only nation record sharing this name; not yet checked against the case's history.
 review:
-  status: unverified
+  status: verified
   by: scripts/caselaw/supreme_court_native_cases.py
   date: '2026-11-24'
   checks:
@@ -148,8 +147,8 @@ review:
     result: agree
     detail: 'Printed and Database: 1997-06-23'
   - check: opinions
-    result: settled
-    detail: 'Report: judgment Kennedy p. 263, concurrence in part and in the judgment O Connor p. 288, dissent Souter p. 297; Database writers: Kennedy, O Connor, Souter; scan pages [(263, 262)]. Read from the scan by an AI reader (record right): p. 263: KENNEDY, J., announced the judgment of the Court and delivered the opinion of the Court with respect to Parts I, II-A, and III. p. 263: O''CONNOR, J., filed an opinion concurring in part and concurring in the judgment, in which SCALIA and THOMAS, JJ., joined, post, p. 288. p. 263: SOUTER, J., filed a dissenting opinion, in which STEVENS, GINSBURG, and BREYER, JJ., joined, post, p. 297. p. 297: JUSTICE SOUTER, with whom JUSTICE STEVENS, JUSTICE GINSBURG, and JUSTICE BREYER join, dissenting.'
+    result: confirmed
+    detail: 'Report: judgment Kennedy p. 263, concurrence in part and in the judgment O Connor p. 288, dissent Souter p. 297; Database writers: Kennedy, O Connor, Souter; scan pages [(263, 262)]. Read from the scan by an AI reader (record right): p. 263: KENNEDY, J., announced the judgment of the Court and delivered the opinion of the Court with respect to Parts I, II-A, and III. p. 263: O''CONNOR, J., filed an opinion concurring in part and concurring in the judgment, in which SCALIA and THOMAS, JJ., joined, post, p. 288. p. 263: SOUTER, J., filed a dissenting opinion, in which STEVENS, GINSBURG, and BREYER, JJ., joined, post, p. 297. p. 297: JUSTICE SOUTER, with whom JUSTICE STEVENS, JUSTICE GINSBURG, and JUSTICE BREYER join, dissenting.. Confirmed: the report prints (read from the page images) p. 263: "JUSTICE KENNEDY announced the judgment of the Court and delivered the opinion of the Court with respect to Parts"; p. 288: "JUSTICE O''CONNOR, with whom JUSTICE SCALIA and JUSTICE THOMAS join, concurring in part and concurring in the judgment."; p. 297: "JUSTICE SOUTER, with whom JUSTICE STEVENS, JUSTICE GINSBURG, and JUSTICE BREYER join, dissenting."'
   - check: bench
     result: agree
     detail: Oyez and the Database give the same Justices and votes

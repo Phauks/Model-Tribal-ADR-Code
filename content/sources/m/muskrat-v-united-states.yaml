@@ -112,7 +112,7 @@ nations_in_case:
   checked: '2026-11-24'
   named: []
 review:
-  status: unverified
+  status: verified
   by: scripts/caselaw/supreme_court_native_cases.py
   date: '2026-11-24'
   checks:
@@ -126,8 +126,8 @@ review:
     result: agree
     detail: Caption found in the scan's text at 1.00
   - check: printed dates
-    result: settled
-    detail: 'Caselaw Access Project "Argued November 30 and December 1, 2, 1910. Decided January 23, 1911."; scan "not found". Read from the scan by an AI reader (record right): p. 346: Argued November 30 and December lj, / 1910.-Decided / January 23, 1911. (OCR of Argued November 30 and December 1, 2, 1910. Decided January 23, 1911.)'
+    result: confirmed
+    detail: 'Caselaw Access Project "Argued November 30 and December 1, 2, 1910. Decided January 23, 1911."; scan "not found". Read from the scan by an AI reader (record right): p. 346: Argued November 30 and December lj, / 1910.-Decided / January 23, 1911. (OCR of Argued November 30 and December 1, 2, 1910. Decided January 23, 1911.). Confirmed: the report prints (read from the page images) p. 346: "Argued November 30 and December 1, 2, 1910. Decided January 23, 1911." (the OCR reads this line poorly; checked on the page image) (the OCR misreads "December 1, 2")'
   - check: decided
     result: agree
     detail: 'Printed and Database: 1911-01-23'

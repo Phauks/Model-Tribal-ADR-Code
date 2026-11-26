@@ -36,8 +36,8 @@ history:
   last_checked: '2026-11-24'
 court_dates:
   argued:
-  - '1912-02-03'
-  printed: Argued February ?3, 1912. Decided May 13, 1912.
+  - '1912-02-23'
+  printed: Argued February 23, 1912. Decided May 13, 1912.
   source: https://tile.loc.gov/storage-services/service/ll/usrep/usrep224/usrep224665/usrep224665.pdf
   checked: '2026-11-24'
 supreme_court:
@@ -124,8 +124,8 @@ review:
     result: agree
     detail: Caption found in the scan's text at 1.00
   - check: printed dates
-    result: agree
-    detail: Caselaw Access Project "Argued February ?3, 1912. Decided May 13, 1912."; scan "Argued February 23, 1912.-Decided May 13, 1912."
+    result: confirmed
+    detail: 'Caselaw Access Project "Argued February ?3, 1912. Decided May 13, 1912."; scan "Argued February 23, 1912.-Decided May 13, 1912.". Confirmed: the report prints "Argued February 23, 1912. Decided May 13, 1912." on p. 665 (text layer, 1.00)'
   - check: decided
     result: agree
     detail: 'Printed and Database: 1912-05-13'

@@ -32,6 +32,7 @@ opinions:
   - kind: dissent
     justice: Thurgood Marshall
     page: 12
+    note: A statement at the end of the per curiam opinion.
   - kind: dissent
     justice: John Paul Stevens
     page: 13
@@ -125,7 +126,7 @@ nations_in_case:
     historical: true
     note: Matched by the script to the only nation record sharing this name; not yet checked against the case's history.
 review:
-  status: unverified
+  status: verified
   by: scripts/caselaw/supreme_court_native_cases.py
   date: '2026-11-24'
   checks:
@@ -145,8 +146,8 @@ review:
     result: agree
     detail: 'Printed and Database: 1985-11-04'
   - check: opinions
-    result: settled
-    detail: 'Report: per curiam Court p. 10, dissent Stevens p. 13; Database writers: Marshall, Stevens. Read from the scan by an AI reader (corrected): p. 10: PER CURIAM. p. 12: JUSTICE BRENNAN would deny certiorari. [next line] dissents from this summary disposition, which has been ordered without affording the parties prior notice or an opportunity to file briefs on the merits. ... See Maggio v. Fulford ... (MARSHALL, J., dissenting); Wyrick v. Fields ... (MARSHALL, J., dissenting). p. 13: STEVENS, J., dissenting; JUSTICE STEVENS, dissenting. p. 14: I respectfully dissent.'
+    result: confirmed
+    detail: 'Report: per curiam Court p. 10, dissent Stevens p. 13; Database writers: Marshall, Stevens. Read from the scan by an AI reader (corrected): p. 10: PER CURIAM. p. 12: JUSTICE BRENNAN would deny certiorari. [next line] dissents from this summary disposition, which has been ordered without affording the parties prior notice or an opportunity to file briefs on the merits. ... See Maggio v. Fulford ... (MARSHALL, J., dissenting); Wyrick v. Fields ... (MARSHALL, J., dissenting). p. 13: STEVENS, J., dissenting; JUSTICE STEVENS, dissenting. p. 14: I respectfully dissent.. Confirmed: the report prints (read from the page images) p. 10: "PER CURIAM."; p. 12: "JUSTICE MARSHALL dissents from this summary disposition, which has been ordered without affording the parties prior notice or an opportunity to file briefs on the merits."; p. 13: "JUSTICE STEVENS, dissenting."'
   - check: bench
     result: agree
     detail: No Oyez votes; each opinion writer in the report sits on the Database's bench on the side the opinion takes

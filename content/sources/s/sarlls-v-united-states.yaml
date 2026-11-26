@@ -36,9 +36,8 @@ history:
   last_checked: '2026-11-24'
 court_dates:
   submitted:
-  - '1893-11-01'
-  - '1893-04-09'
-  printed: Submitted November 1&, 1893, Decided April 9, 1894.
+  - '1893-11-15'
+  printed: Submitted November 15, 1893. Decided April 9, 1894.
   source: https://tile.loc.gov/storage-services/service/ll/usrep/usrep152/usrep152570/usrep152570.pdf
   checked: '2026-11-24'
 supreme_court:
@@ -125,8 +124,8 @@ review:
     result: agree
     detail: Caption found in the scan's text at 1.00
   - check: printed dates
-    result: agree
-    detail: Caselaw Access Project "Submitted November 1&, 1893, Decided April 9, 1894."; scan "Submitted November 15, 1893. -Decided April 9,1894."
+    result: confirmed
+    detail: 'Caselaw Access Project "Submitted November 1&, 1893, Decided April 9, 1894."; scan "Submitted November 15, 1893. -Decided April 9,1894.". Confirmed: the report prints "Submitted November 15, 1893. Decided April 9, 1894." on p. 570 (text layer, 1.00)'
   - check: decided
     result: agree
     detail: 'Printed and Database: 1894-04-09'

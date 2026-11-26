@@ -202,33 +202,35 @@
 				</span>
 				<span data-nation-slot="history"></span>
 			</div>
-			{#if page.listedName !== page.officialName}
-				<p class="small muted">
-					<!-- The listed name as an alias; its marker leads to the list in References (Trevor, Nov. 23, 2026). -->
-					Alias: {page.listedName}<CitationMarks
-						marks={data.nameCitations}
-					/>
-				</p>
+			<!-- Other names, one labeled line each in one style, each with its marker (Trevor, Nov. 23 and 24, 2026):
+			     the listed name as an alias, whose marker leads to the list in References, then each name the
+			     nation uses for itself or its people, with its language where the record names it, then how to
+			     say it, copied from the cited source and never worked out from the spelling. -->
+			{#if page.listedName !== page.officialName || data.selfDesignations.length > 0 || data.pronunciations.length > 0}
+				<div class="other-names small muted">
+					{#if page.listedName !== page.officialName}
+						<p>Alias: {page.listedName}<CitationMarks marks={data.nameCitations} /></p>
+					{/if}
+					{#each data.selfDesignations as designation (designation.name)}
+						<p>
+							Own name:
+							<span lang={designation.languageTag}>{designation.name}</span>{#if designation.language}{' '}({designation.language}){/if}<CitationMarks
+								marks={designation.citations}
+							/>
+						</p>
+					{/each}
+					{#each data.pronunciations as entry, index (index)}
+						<p>
+							How to say <span lang={entry.languageTag}>{entry.name}</span>:
+							{#if entry.respelling}{entry.respelling}{/if}
+							{#if entry.phoneticTranscription}/{entry.phoneticTranscription}/{/if}
+							{#if entry.recording}<a href={entry.recording}>Listen to the recording</a>{/if}<CitationMarks
+								marks={entry.citations}
+							/>
+						</p>
+					{/each}
+				</div>
 			{/if}
-			{#each data.selfDesignations as designation (designation.name)}
-				<p class="lead">
-					<span lang={designation.languageTag}>{designation.name}</span><CitationMarks
-						marks={designation.citations}
-					/>
-				</p>
-			{/each}
-			<!-- Pronunciation: copied from the cited source, never worked out from the spelling -->
-			{#each data.pronunciations as entry, index (index)}
-				<p>
-					<span class="muted">How to say</span>
-					<span lang={entry.languageTag}>{entry.name}</span>:
-					{#if entry.respelling}{entry.respelling}{/if}
-					{#if entry.phoneticTranscription}/{entry.phoneticTranscription}/{/if}
-					{#if entry.recording}<a href={entry.recording}>Listen to the recording</a>{/if}<CitationMarks
-						marks={entry.citations}
-					/>
-				</p>
-			{/each}
 		{/if}
 
 		{#if page.withdrawn}
@@ -567,6 +569,15 @@
 {/snippet}
 
 <style>
+	/* The listed name, own names and how to say them: one short line each, set close together. */
+	.other-names {
+		margin: 0 0 var(--space-3);
+	}
+
+	.other-names p {
+		margin: 0 0 var(--space-1);
+	}
+
 	.case-name,
 	.case-detail {
 		display: block;

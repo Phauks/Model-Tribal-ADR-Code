@@ -6,6 +6,7 @@
 	site.
 -->
 <script lang="ts">
+	import Collapsible from '#lib/components/Collapsible.svelte';
 	import InfoPage from '#lib/components/InfoPage.svelte';
 	import type { PageProps } from './$types';
 
@@ -44,8 +45,7 @@
 		<p class="biography">{data.biography}</p>
 	{/if}
 
-	<section aria-labelledby="work">
-		<h2 id="work">Work on this site</h2>
+	<Collapsible heading="Work on this site" identifier="work">
 		{#if hasWork}
 			{#if data.essays.length > 0}
 				<section aria-labelledby="helped-write">
@@ -66,7 +66,7 @@
 		{:else}
 			<p>Work {data.name} helps with is listed here once it is published.</p>
 		{/if}
-	</section>
+	</Collapsible>
 </InfoPage>
 
 <style>

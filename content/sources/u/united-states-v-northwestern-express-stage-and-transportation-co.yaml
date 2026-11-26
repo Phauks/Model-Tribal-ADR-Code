@@ -113,7 +113,7 @@ nations_in_case:
   - named_as: Sioux Nation
     reason: More than one of today's nations shares this name (assiniboine-and-sioux-tribes-of-the-fort-peck-indian-reservation, cheyenne-river-sioux-tribe-of-the-cheyenne-river-reservation, crow-creek-sioux-tribe-of-the-crow-creek-reservation, flandreau-santee-sioux-tribe-of-south-dakota, lower-brule-sioux-tribe-of-the-lower-brule-reservation, lower-sioux-indian-community-in-the-state-of-minnesota and 7 more); which the case concerns has not been checked.
 review:
-  status: unverified
+  status: verified
   by: scripts/caselaw/supreme_court_native_cases.py
   date: '2026-11-24'
   checks:
@@ -127,8 +127,8 @@ review:
     result: agree
     detail: Caption found in the scan's text at 1.00
   - check: printed dates
-    result: settled
-    detail: 'Caselaw Access Project "Submitted December 7, 1896. Decided January 4, 1897."; scan "not found". Read from the scan by an AI reader (record right): p. 686: "Submitted December 7, 1896.-Decided January 4, 1897." (OCR: "Submitted1Iecember 7,1896.-Decided January4, 1897."). The date line is on the scan, so the "not found" note in the check is wrong, and the record''s printed dates match.'
+    result: confirmed
+    detail: 'Caselaw Access Project "Submitted December 7, 1896. Decided January 4, 1897."; scan "not found". Read from the scan by an AI reader (record right): p. 686: "Submitted December 7, 1896.-Decided January 4, 1897." (OCR: "Submitted1Iecember 7,1896.-Decided January4, 1897."). The date line is on the scan, so the "not found" note in the check is wrong, and the record''s printed dates match.. Confirmed: the report prints "Submitted December 7, 1896. Decided January 4, 1897." on p. 686 (fresh OCR, 0.98)'
   - check: decided
     result: agree
     detail: 'Printed and Database: 1897-01-04'

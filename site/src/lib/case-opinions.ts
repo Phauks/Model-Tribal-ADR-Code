@@ -15,8 +15,10 @@ export type OpinionKind =
 	| 'special concurrence'
 	| 'concurrence in the result'
 	| 'concurrence in part and in the judgment'
+	| 'concurrence in part and in the result'
 	| 'concurrence in part and dissent in part'
 	| 'concurrence in part, concurrence in the judgment in part, and dissent in part'
+	| 'concurrence in part, concurrence in the result in part, and dissent in part'
 	| 'dissent'
 	| 'dissent in part'
 	| 'per curiam';
@@ -25,6 +27,8 @@ export interface OpinionEntry {
 	kind: OpinionKind;
 	justice: string;
 	page: number;
+	/** The page of the saved scan that holds it, where that is not counted from the case's first page (an inserted map or blank leaf comes before it). */
+	scan_page?: number;
 	note?: string;
 }
 
@@ -37,8 +41,10 @@ export const opinionLabels: Record<string, string> = {
 	'concurrence in the result': 'concurring in the result',
 	'concurrence in the result without opinion': 'concurring in the result, without an opinion',
 	'concurrence in part and in the judgment': 'opinion concurring in part and concurring in the judgment',
+	'concurrence in part and in the result': 'opinion concurring in part and concurring in the result',
 	'concurrence in part and dissent in part': 'opinion concurring in part and dissenting in part',
 	'concurrence in part, concurrence in the judgment in part, and dissent in part': 'opinion concurring in part, concurring in the judgment in part, and dissenting in part',
+	'concurrence in part, concurrence in the result in part, and dissent in part': 'opinion concurring in part, concurring in the result in part, and dissenting in part',
 	'dissent in part': 'opinion dissenting in part',
 	judgment: 'opinion announcing the judgment',
 	dissent: 'dissenting opinion',
