@@ -50,13 +50,18 @@ export interface SearchResult extends SearchEntry {
 	score: number;
 }
 
+/** Folds text for matching, and writes initialisms without their periods, so "USC" finds "U.S.C." and "U.S.C." finds "USC". */
+function fold(text: string): string {
+	return foldForSearch(text).replace(/(?<![\p{L}\p{N}])(?:\p{L}\.){2,}/gu, (letters) => letters.replaceAll('.', ''));
+}
+
 function wordsOf(query: string): string[] {
-	return foldForSearch(query).split(/\s+/).filter(Boolean);
+	return fold(query).split(/\s+/).filter(Boolean);
 }
 
 /** How well one name matches: whole name, start of the name, start of a word, or anywhere. */
 function nameScore(name: string, words: string[], phrase: string): number {
-	const folded = foldForSearch(name);
+	const folded = fold(name);
 	if (!words.every((word) => folded.includes(word))) return 0;
 	if (folded === phrase) return 100;
 	if (folded.startsWith(phrase)) return 80;
@@ -101,7 +106,7 @@ export function searchEntries(entries: SearchEntry[], query: string): SearchResu
 			}
 		}
 		if (score <= 0 && entry.detail) {
-			const haystack = foldForSearch(`${entry.title} ${(entry.also ?? []).join(' ')} ${entry.detail}`);
+			const haystack = fold(`${entry.title} ${(entry.also ?? []).join(' ')} ${entry.detail}`);
 			if (words.every((word) => haystack.includes(word))) score = 10;
 		}
 		if (score > 0) results.push({ ...entry, matchedName, matchedGroup, score });
