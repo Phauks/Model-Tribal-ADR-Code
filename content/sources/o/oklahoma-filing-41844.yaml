@@ -1,0 +1,88 @@
+key: oklahoma-filing-41844
+kind: intergovernmental-agreement
+citation:
+  type: document
+  title: 'Choctaw Nation, Muscogee (Creek) Nation, Bureau of Indian Affairs and local governments in southeastern Oklahoma: cross-deputization addendum'
+  author:
+  - literal: The Choctaw Nation of Oklahoma
+  - literal: The Muscogee Nation
+  - literal: Bureau of Indian Affairs
+  - literal: Office of the District Attorney, District 19
+  - literal: Eastern Oklahoma State College
+  - literal: Carl Albert Junior College
+  - literal: City of Caney
+  - literal: City of Durant
+  - literal: City of Clayton
+  - literal: City of Antlers
+  - literal: City of Calera
+  - literal: City of Fort Towson
+  - literal: City of Sallisaw
+  - literal: City of Valliant
+  - literal: City of Sawyer
+  - literal: City of Bokchito
+  - literal: City of Bokoshe
+  - literal: City of Rattan
+  - literal: City of Hartshorne
+  - literal: City of Calvin
+  - literal: City of Pocola
+  - literal: City of Idabel
+  - literal: City of Wright City
+  - literal: City of Stringtown
+  - literal: City of Wilburton
+  - literal: City of Tushka
+  - literal: City of Caddo
+  - literal: City of Panama
+  - literal: City of Kinta
+  - literal: City of Haworth
+  - literal: City of Atoka
+  - literal: City of Haileyville
+  - literal: City of Howe
+  - literal: Pittsburg County
+  - literal: LeFlore County
+  - literal: Atoka County
+  - literal: Bryan County
+  container-title: Oklahoma Secretary of State, Tribal Compacts and Agreements
+  number: File 41844
+  URL: https://execleg.sos.ok.gov/documents/filelog/64656.pdf
+  accessed:
+    date-parts:
+    - - 2026
+      - 11
+      - 26
+  issued:
+    date-parts:
+    - - 2007
+      - 2
+      - 9
+original_link: https://execleg.sos.ok.gov/documents/filelog/64656.pdf
+retrieved: '2026-11-26'
+archives: []
+history:
+  status: live
+  last_checked: '2026-11-26'
+rights:
+  status: no-permission-needed
+  basis: fact-only
+  basis_note: Facts are recorded from the register. The State's filed copy, a public record of the Oklahoma Secretary of State, is served on this site (decision record 0060); a nation can ask to have it taken down.
+  redistribution: true
+tribes:
+- the-choctaw-nation-of-oklahoma
+- the-muscogee-nation
+jurisdictions:
+- level: multiple
+  note: Agreement filed with the Oklahoma Secretary of State.
+topics:
+- oklahoma-state-tribal-agreement
+- cross-deputization
+found_in:
+- 2026-11-26-oklahoma-state-tribal-agreements
+notes: 'Oklahoma Secretary of State file 41844, filed Feb. 9, 2007. The register''s title reads “Agreement Tribal Cross Deputization Law Enforcement Addendum file #41100” and its description “Choctaw Nation, Bureau of Indian Affairs, the District #19 District Attorney, Eastern Oklahoma State College, Carl Albert Junior College, Cities of Caney, Durant, Clayton, Antlers, Calera, Ft. Towson, Sallisaw, Valliant, Sawyer, Bokchito, Bokoshe, Ratten, Hartshorne, Calvin, Pocola, Idabel, Wright City, Stringtown, Wilburton, Tushka, Caddo, Panama, Kinta, Haworth, Atoka, Haileyville, Howe, Counties of Pittsburg, LeFlore, Atoka and Bryan, and the Tribe of Muscogee (Creek) Nation”. The register line reads as an addendum adding a party to an existing agreement (it names file #41100). The filed copy is a scan with no text layer; this record''s facts come from the register''s own title and description, read by script and by an AI reader, not from the scan. The date is the filing date, not the signing date.'
+review:
+  status: unverified
+  by: scripts/agreements/oklahoma_register.py
+  date: '2026-11-26'
+  checks:
+  - check: 'Nations named in the register line: the script''s reading and an AI reader''s'
+    result: agree
+  - check: 'Subject: the script''s reading of the register title and an AI reader''s'
+    result: agree

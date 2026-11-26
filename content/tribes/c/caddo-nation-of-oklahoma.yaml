@@ -648,6 +648,39 @@ jurisdiction_agreements:
   verification: read-in-full
   locator: Section I.L, Oklahoma (two-column list of 34 tribes)
   note: 'The source reads: “Caddo Nation”. The report says most of the 34 agreements "expired on June 30, 2013" and that 16 new agreements had been executed by early 2014; it does not say which. Status is therefore uncertain. The name in the list is matched to the roster by name and state. Report date is March 2014, so current status needs confirming. Most Oklahoma agreements in the survey lapsed on June 30, 2013, and some were renewed; the survey does not settle which, so the status is left unknown.'
+- kind: tax-agreement
+  other_party: State of Oklahoma
+  agreement: Tobacco tax compact
+  state: OK
+  status: unknown
+  detail: Filed with the Oklahoma Secretary of State on Mar. 10, 1999 (file 35806).
+  source: oklahoma-filing-35806
+  confidence: medium
+  verification: title-only
+  locator: Register entry, file 35806
+  note: 'From the register line: “Caddo Indian Tribe of Oklahoma/State of Oklahoma”. Whether it is still in force is not recorded.'
+- kind: tax-agreement
+  other_party: State of Oklahoma
+  agreement: Motor fuel tax contract
+  state: OK
+  status: unknown
+  detail: Filed with the Oklahoma Secretary of State on Sept. 13, 2000 (file 36879).
+  source: oklahoma-filing-36879
+  confidence: medium
+  verification: title-only
+  locator: Register entry, file 36879
+  note: 'From the register line: “Caddo Tribe of Oklahoma/state of Oklahoma”. Whether it is still in force is not recorded.'
+- kind: tax-agreement
+  other_party: State of Oklahoma
+  agreement: Tobacco tax compact
+  state: OK
+  status: unknown
+  detail: Filed with the Oklahoma Secretary of State on Mar. 18, 2024 (file 53012).
+  source: oklahoma-filing-53012
+  confidence: medium
+  verification: title-only
+  locator: Register entry, file 53012
+  note: 'From the register line: “Tribal-State Tobacco Compact between the Caddo Nation of Oklahoma and the State of Oklahoma”. Whether it is still in force is not recorded.'
 nearby_state_courts:
 - state: OK
   county: Caddo County

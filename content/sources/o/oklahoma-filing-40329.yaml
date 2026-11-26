@@ -1,0 +1,61 @@
+key: oklahoma-filing-40329
+kind: intergovernmental-agreement
+citation:
+  type: document
+  title: 'Osage Tribe of Indians, District Attorney District 10 and cities: multi-jurisdictional drug task force cross-deputization agreement'
+  author:
+  - literal: The Osage Nation
+  - literal: Office of the District Attorney, District 10
+  - literal: Osage County
+  - literal: Pawnee County
+  - literal: City of Pawhuska
+  - literal: City of Hominy
+  - literal: City of Barnsdall
+  - literal: City of Fairfax
+  - literal: Town of Skiatook
+  - literal: City of Cleveland
+  - literal: City of Pawnee
+  container-title: Oklahoma Secretary of State, Tribal Compacts and Agreements
+  number: File 40329
+  URL: https://execleg.sos.ok.gov/documents/filelog/62900.pdf
+  accessed:
+    date-parts:
+    - - 2026
+      - 11
+      - 26
+  issued:
+    date-parts:
+    - - 2005
+      - 2
+      - 22
+original_link: https://execleg.sos.ok.gov/documents/filelog/62900.pdf
+retrieved: '2026-11-26'
+archives: []
+history:
+  status: live
+  last_checked: '2026-11-26'
+rights:
+  status: no-permission-needed
+  basis: fact-only
+  basis_note: Facts are recorded from the register. The State's filed copy, a public record of the Oklahoma Secretary of State, is served on this site (decision record 0060); a nation can ask to have it taken down.
+  redistribution: true
+tribes:
+- the-osage-nation
+jurisdictions:
+- level: multiple
+  note: Agreement filed with the Oklahoma Secretary of State.
+topics:
+- oklahoma-state-tribal-agreement
+- cross-deputization
+found_in:
+- 2026-11-26-oklahoma-state-tribal-agreements
+notes: 'Oklahoma Secretary of State file 40329, filed Feb. 22, 2005. The register''s title reads “Agreement Tribal Cross Deputization Multi-Jurisdictional Drug Enforcement Task Force Osage- Pawnee Counties” and its description “District Attorney District #10 Osage and Pawnee Counties, City of Pawhuska, City of Hominy, City of Barnsdall, City of Fairfax, Town of Skiatook, City of Cleveland, City of Pawnee, and the Osage Tribe of Indians”. The register line reads as an agreement or compact. The filed copy is a scan with no text layer; this record''s facts come from the register''s own title and description, read by script and by an AI reader, not from the scan. The date is the filing date, not the signing date.'
+review:
+  status: unverified
+  by: scripts/agreements/oklahoma_register.py
+  date: '2026-11-26'
+  checks:
+  - check: 'Nations named in the register line: the script''s reading and an AI reader''s'
+    result: agree
+  - check: 'Subject: the script''s reading of the register title and an AI reader''s'
+    result: agree

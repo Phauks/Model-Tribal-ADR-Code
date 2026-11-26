@@ -41,6 +41,7 @@ const collectionIcons: Record<string, Component> = {
 	'tribal-constitutions': ScrollText,
 	'tribal-codes': BookText,
 	'intergovernmental-agreements': Handshake,
+	'oklahoma-state-tribal-agreements': Handshake,
 	stories: BookOpen,
 	treaties: Scroll,
 	'federal-statutes': BookText,
