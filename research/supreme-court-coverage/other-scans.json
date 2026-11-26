@@ -1,0 +1,43 @@
+{
+ "141 U.S. 107": {
+  "use": "scan",
+  "case": "In re Mayfield",
+  "pdf": "https://tile.loc.gov/storage-services/service/ll/usrep/usrep141/usrep141107a/usrep141107a.pdf",
+  "item": "https://www.loc.gov/item/usrep141107a/",
+  "site": "library-of-congress",
+  "label": "Library of Congress",
+  "first_scan_page": 1,
+  "why": "The Library of Congress files this case's scan as usrep141107a; usrep141107 is Evans v. State Bank, which begins on the same page."
+ },
+ "154 U.S. 552": {
+  "use": "scan",
+  "case": "United States v. Mayrand",
+  "pdf": "https://archive.org/download/sim_united-states-supreme-court-cases-adjudged_1894_154/sim_united-states-supreme-court-cases-adjudged_1894_154.pdf",
+  "item": "https://archive.org/details/sim_united-states-supreme-court-cases-adjudged_1894_154/page/n569/mode/1up",
+  "site": "internet-archive",
+  "label": "Internet Archive",
+  "first_scan_page": 570,
+  "why": "The case is printed in volume 154's appendix of cases not reported before, which the Library of Congress did not scan; this is the Internet Archive's scan of the volume."
+ },
+ "159 U.S. 487": {
+  "use": "second copy",
+  "checks": ["printed dates"],
+  "case": "Isaacs v. United States",
+  "pdf": "https://archive.org/download/sim_united-states-supreme-court-cases-adjudged_1896_159/sim_united-states-supreme-court-cases-adjudged_1896_159.pdf",
+  "item": "https://archive.org/details/sim_united-states-supreme-court-cases-adjudged_1896_159/page/n518/mode/1up",
+  "site": "internet-archive",
+  "label": "Internet Archive",
+  "first_scan_page": 519,
+  "why": "The Library of Congress scan is black and white, and the figure in \"Submitted October 23\" reads as 23 or 28; the Internet Archive's grayscale scan of the same volume shows 23."
+ },
+ "183 U.S. 619": {
+  "use": "scan",
+  "case": "Midway Co. v. Eaton",
+  "pdf": "https://tile.loc.gov/storage-services/service/ll/usrep/usrep183/usrep183602/usrep183602.pdf",
+  "item": "https://www.loc.gov/item/usrep183602/",
+  "site": "library-of-congress",
+  "label": "Library of Congress",
+  "first_scan_page": 18,
+  "why": "The Library of Congress has no scan under this citation; the case's two pages are the last two pages of the scan of Midway Co. v. Eaton, 183 U.S. 602."
+ }
+}
