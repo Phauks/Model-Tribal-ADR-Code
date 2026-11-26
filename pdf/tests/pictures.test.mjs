@@ -40,6 +40,8 @@ test("the website pictures come from is set in book.yaml, and can be turned off"
 });
 
 test("print copies are grayscale, flattened on white, and record the original's SHA-256", () => {
+  // Inside the print folder, where the copies must be; output/ does not exist in a fresh checkout.
+  fs.mkdirSync(path.join(PRINT_DIRECTORY, "output"), { recursive: true });
   const cache = fs.mkdtempSync(path.join(PRINT_DIRECTORY, "output", "test-pictures-"));
   try {
     const photo = "/files/U-20261126-PR1NT5/council-house.jpg";
