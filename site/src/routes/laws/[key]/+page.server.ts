@@ -1,9 +1,9 @@
-import { lawKeys, lawPage } from '#lib/server/law-pages.ts';
-import type { EntryGenerator, PageServerLoad } from './$types';
+import type { LawPage } from '#lib/server/law-pages.ts';
+import { builtPageData } from '#lib/server/page-data.ts';
+import type { PageServerLoad } from './$types';
 
-// Built with the site from the law records, like the case pages.
-export const prerender = true;
+// Drawn by the Worker when a reader opens it, from the page's data as built
+// (src/lib/server/page-data.ts, src/routes/page-data).
+export const prerender = false;
 
-export const entries: EntryGenerator = () => lawKeys().map((key) => ({ key }));
-
-export const load: PageServerLoad = ({ params }) => lawPage(params.key);
+export const load: PageServerLoad = ({ params, url }) => builtPageData<LawPage>('laws', params.key, url);

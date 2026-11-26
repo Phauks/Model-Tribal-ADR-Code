@@ -69,10 +69,20 @@ function citationsOf(record: SourceRecord): string[] {
 	return keys;
 }
 
-export function casePreviewList(
-	records: SourceRecord[] = [...sources().values()],
-	texts: Record<string, string> = essaysInGit()
-): CasePreviewList {
+let defaultPreviewList: CasePreviewList | undefined;
+
+/**
+ * Every case's preview. Called without arguments, as the case, Justice,
+ * President, biography and nation pages do for each page they build, the
+ * list is made once and shared: it reads every source record and every
+ * essay, which took several seconds of each build for each kind of page.
+ */
+export function casePreviewList(records?: SourceRecord[], texts?: Record<string, string>): CasePreviewList {
+	if (records === undefined && texts === undefined) return (defaultPreviewList ??= makeCasePreviewList([...sources().values()], essaysInGit()));
+	return makeCasePreviewList(records ?? [...sources().values()], texts ?? essaysInGit());
+}
+
+function makeCasePreviewList(records: SourceRecord[], texts: Record<string, string>): CasePreviewList {
 	const holdings = boxHoldings(texts, records);
 	const cases: CasePreview[] = [];
 	const citations: Record<string, string> = {};

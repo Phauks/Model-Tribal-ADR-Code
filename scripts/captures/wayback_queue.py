@@ -8,9 +8,9 @@ https://model-tribal-adr-code-wayback.trevordgoldsmith.workers.dev/captures.json
   python3 scripts/captures/wayback_queue.py --write
       Rewrites research/wayback-queue.tsv: every source record with an
       'original_link' and no archived copy, except links already on
-      archive.org and Federal Register pages (federalregister.gov refuses
-      Save Page Now; scripts/find_archived_copies.py reuses older copies of
-      those).
+      archive.org and Federal Register and eCFR pages (both send Save Page
+      Now to unblock.federalregister.gov; scripts/find_archived_copies.py
+      reuses older copies of those).
 
   python3 scripts/captures/wayback_queue.py --report WORKER_JSON OUT_JSON
       Turns the Worker's captures.json into the report format
@@ -28,7 +28,7 @@ import urllib.parse
 import yaml
 
 QUEUE = pathlib.Path("research/wayback-queue.tsv")
-SKIPPED_HOSTS = ("archive.org", "federalregister.gov")
+SKIPPED_HOSTS = ("archive.org", "federalregister.gov", "ecfr.gov")
 
 
 def on_hosts(link: str, hosts) -> bool:

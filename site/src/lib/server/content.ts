@@ -591,7 +591,8 @@ function indexedCopies(): PublicCopy[] {
 				topic: row.topic || row.key.split('/')[0],
 				nations: row.nations.split(';').filter(Boolean),
 				rights: row.rights,
-				...(namesReplaced.has(row.key) ? { namesReplaced: true } : {})
+				...(namesReplaced.has(row.key) ? { namesReplaced: true } : {}),
+				records: (row.records ?? '').split(';').filter(Boolean)
 			}))
 			// A redacted opinion never points to the original, which still has the names in it.
 			.map((copy) => (copy.namesReplaced ? { ...copy, links: [] } : copy))

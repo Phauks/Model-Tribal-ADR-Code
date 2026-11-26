@@ -30,7 +30,7 @@ jobs:
     runs-on: ubuntu-latest
     timeout-minutes: 15
     env:
-      SITE_URL: ${{ vars.SITE_URL || 'https://model-tribal-adr-code.trevordgoldsmith.workers.dev' }}
+      SITE_URL: ${{ vars.SITE_URL || 'https://triballawproject.org' }}
     steps:
       - uses: actions/checkout@v4
         with:

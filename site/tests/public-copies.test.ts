@@ -103,6 +103,16 @@ describe('the details a copy’s page shows', () => {
 		expect(details?.opinion?.citation).toBeTruthy();
 		expect(details?.list.slug.startsWith('opinions-')).toBe(true);
 	});
+
+	it('gives a Supreme Court report its citation, without repeating the name, and its own list', () => {
+		const report = publicCopies().find((each) => each.records.includes('fletcher-v-peck'));
+		if (!report) return;
+		const details = copyDetails(copyDetailsShard(report))?.[report.key];
+		expect(details?.citation).toBe('10 U.S. 87 (1810).');
+		expect(details?.isCase).toBe(true);
+		expect(details?.casePage).toBe('/cases/fletcher-v-peck');
+		expect(details?.list).toEqual({ slug: 'supreme-court', title: 'Supreme Court opinions' });
+	});
 });
 
 describe('filling the bucket', () => {

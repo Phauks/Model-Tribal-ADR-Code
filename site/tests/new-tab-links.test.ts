@@ -1,7 +1,7 @@
 import { describe, expect, it } from 'vitest';
 import { isOutsideLink } from '#lib/new-tab-links.ts';
 
-const origin = 'https://model-tribal-adr-code.trevordgoldsmith.workers.dev';
+const origin = 'https://triballawproject.org';
 
 describe('which links on a nation page open in a new tab', () => {
 	it('opens links to other websites in a new tab', () => {
