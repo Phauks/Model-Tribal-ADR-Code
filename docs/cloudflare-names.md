@@ -1,6 +1,6 @@
 # Cloudflare names
 
-The lead author renamed the project's Workers in the Cloudflare dashboard on Nov. 26, 2026. The databases and buckets keep their old names for now. This page lists the names in use and what the remaining moves would take.
+The lead author renamed the project's Workers in the Cloudflare dashboard on Nov. 26, 2026, and the databases and buckets moved to new ones under the new names the same day. This page lists the names in use.
 
 ## Workers
 
@@ -16,37 +16,23 @@ Each Worker's `name` in its Wrangler file must match the name in the dashboard. 
 
 The Wayback Worker's public address moved with it, to `https://tribal-law-project-wayback.trevordgoldsmith.workers.dev`. The old address answers 404 (Cloudflare error 1042).
 
-## Databases and buckets not yet moved
+## Databases and buckets
 
-| Kind | Name | Binding | Size on Nov. 26, 2026 |
-| --- | --- | --- | --- |
-| D1 | `model-tribal-adr-code` | `database` (site, live, scanner, watch) | 3.5 MB |
-| D1 | `model-tribal-adr-code-library` | `sourceLibrary` (site) | 1.1 GB |
-| R2 | `model-tribal-adr-code-sources` | `sourceDocuments` (site, live, scanner, wayback, watch) | 24,889 objects, 19.6 GB |
-| R2 | `model-tribal-adr-code-mail` | `mailFiles` (site, scanner) | empty |
+Cloudflare cannot rename a D1 database or an R2 bucket, so on Nov. 26, 2026 the project moved to new ones under the new names and switched the bindings in one pull request.
 
-Site code reaches them only by binding name, so a move changes the Wrangler files, a few scripts and the Service checks labels, not the site's code.
+| Kind | Name | Old name | Binding | How it was moved |
+| --- | --- | --- | --- | --- |
+| D1 | `tribal-law-project` (`eeb27102-f50e-40ff-bebd-5347c5c055c7`) | `model-tribal-adr-code` | `database` (site, live, scanner, watch) | Copied by the Wayback Worker's temporary copy code: 127 tables, 4,800 rows and all 60 migrations matched |
+| D1 | `tribal-law-project-library` (`90c5f0f5-6352-459e-a946-b3f18ea97d96`) | `model-tribal-adr-code-library` | `sourceLibrary` (site) | Loaded from the change files under `_library/d1/` in the bucket, as the site's hourly run does |
+| R2 | `tribal-law-project-files` | `model-tribal-adr-code-sources` | `sourceDocuments` (site, live, scanner, wayback, watch) | R2 data migration (Super Slurper), then a second pass for files written during the switch |
+| R2 | `tribal-law-project-mail` | `model-tribal-adr-code-mail` | `mailFiles` (site, scanner) | R2 data migration for mail received during the switch |
 
-### Renaming a D1 database
+Site code reaches them only by binding name, so the switch changed the Wrangler files, the default bucket in the scripts and the Service checks labels, not the site's code. Migrations are applied with `npx wrangler d1 migrations apply database --remote`, which follows the binding.
 
-The Cloudflare API's call for changing a D1 database takes only its read replication setting, not a name, so a new name means a new database:
+The old databases and buckets stay, unused, until the lead author deletes them. Nothing should be written to them after the switch.
 
-1. Pause writes: there are no outside users yet, but the scanner and the site's scheduled run write every minute.
-2. `npx wrangler d1 export model-tribal-adr-code --remote --output=site.sql`, create `tribal-law-project` with `npx wrangler d1 create`, then `npx wrangler d1 execute tribal-law-project --remote --file=site.sql`. The export carries the `d1_migrations` table, so later migrations apply in order.
-3. Change `database_name` and `database_id` in `site/wrangler.jsonc`, `site/live/wrangler.jsonc`, `site/scanner/wrangler.jsonc` and `site/watch/wrangler.jsonc`, and merge. All four Workers redeploy from `main`.
-4. Check the Service checks page, then delete the old database after a week.
+### The temporary copy code
 
-The library database is rebuilt from the source bucket by `scripts/library/build_library.py`, so it can be made fresh under its new name (`tribal-law-project-library`) instead of copied, and only `site/wrangler.jsonc` names it.
-
-### Moving to a new R2 bucket
-
-R2 buckets cannot be renamed. The move is a copy:
-
-1. Create the new bucket (for example `tribal-law-project-sources`), private, in the same location.
-2. Copy every object, keeping keys, with Cloudflare's R2 data migration tool or `rclone`, then compare object counts and total size with the old bucket.
-3. Change `bucket_name` in the five Wrangler files, the default bucket in `scripts/library/library.py`, `scripts/library/build_library.py`, `scripts/captures/mirror_captures.py`, `scripts/books/publish_file_sets.py`, `scripts/law/supreme_court_people.py`, `site/tools/seed-local-database.mjs` and `site/tools/build-map-tiles.mjs`, and the bucket label in `site/src/lib/server/service-checks.ts`. Merge.
-4. Copy again for anything written between steps 2 and 3 (sent files, Wayback progress, captures), then keep the old bucket read-only for a while before deleting it.
-
-The mail bucket is empty, so it can simply be made new under `tribal-law-project-mail` and the two Wrangler files and `site/MAIL.md` changed.
+`site/wayback/move-databases.ts` runs in the Wayback Worker's minute schedule while it has bindings to the old and new databases. A request object at `_migration/site-database/request.json` (`{"mode": "full"}` or `{"mode": "missing"}`) starts a copy of the site's database, and the result is written beside it. After the switch it reads the request from the old bucket (binding `oldSourceDocuments`), for the last "missing" pass. The file and its bindings are removed once that pass is done.
 
 Names that are not Cloudflare resources (the npm package names, User-Agent strings, download file names, the token keys of the scheduled run and the mail run, and the authenticator key label) keep `model-tribal-adr-code`. Changing the token keys or the authenticator label would break saved settings and set-up authenticator apps.

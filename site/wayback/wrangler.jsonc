@@ -27,6 +27,12 @@
 	"r2_buckets": [
 		{
 			"binding": "sourceDocuments",
+			"bucket_name": "tribal-law-project-files"
+		},
+		// TEMPORARY: the old bucket, where the last "missing" copy request is
+		// read (move-databases.ts). Remove with the rest after the switch.
+		{
+			"binding": "oldSourceDocuments",
 			"bucket_name": "model-tribal-adr-code-sources"
 		}
 	],
@@ -42,11 +48,6 @@
 			"binding": "newSiteDatabase",
 			"database_name": "tribal-law-project",
 			"database_id": "eeb27102-f50e-40ff-bebd-5347c5c055c7"
-		},
-		{
-			"binding": "newSourceLibrary",
-			"database_name": "tribal-law-project-library",
-			"database_id": "90c5f0f5-6352-459e-a946-b3f18ea97d96"
 		}
 	]
 	// ARCHIVE_ORG_ACCESS_KEY and ARCHIVE_ORG_SECRET_KEY are Worker secrets (Settings >
