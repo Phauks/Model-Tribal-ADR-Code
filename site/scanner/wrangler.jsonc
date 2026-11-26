@@ -47,20 +47,20 @@
 	"d1_databases": [
 		{
 			"binding": "database",
-			"database_name": "model-tribal-adr-code",
-			"database_id": "2386ebd3-cea2-4ca1-9fff-0772fcd8bc6b",
+			"database_name": "tribal-law-project",
+			"database_id": "eeb27102-f50e-40ff-bebd-5347c5c055c7",
 			"migrations_dir": "../migrations"
 		}
 	],
 	"r2_buckets": [
 		{
 			"binding": "sourceDocuments",
-			"bucket_name": "model-tribal-adr-code-sources"
+			"bucket_name": "tribal-law-project-files"
 		},
 		// The project inbox's mail; the desk reads files under mail/ from here.
 		{
 			"binding": "mailFiles",
-			"bucket_name": "model-tribal-adr-code-mail"
+			"bucket_name": "tribal-law-project-mail"
 		}
 	],
 	// Every minute: wake the desk to scan whatever is waiting. Daily at 06:23
