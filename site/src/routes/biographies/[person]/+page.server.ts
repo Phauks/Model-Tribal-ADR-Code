@@ -1,11 +1,9 @@
-import { error } from '@sveltejs/kit';
-import { biographies, biographyPage } from '#lib/server/biographies.ts';
-import type { EntryGenerator, PageServerLoad } from './$types';
+import type { BiographyPage } from '#lib/server/biographies.ts';
+import { builtPageData } from '#lib/server/page-data.ts';
+import type { PageServerLoad } from './$types';
 
-export const entries: EntryGenerator = () => biographies().map((person) => ({ person: person.key }));
+// Drawn by the Worker when a reader opens it, from the page's data as built
+// (src/lib/server/page-data.ts, src/routes/page-data).
+export const prerender = false;
 
-export const load: PageServerLoad = ({ params }) => {
-	const page = biographyPage(params.person);
-	if (!page) error(404, 'This site has no page for that person.');
-	return page;
-};
+export const load: PageServerLoad = ({ params, url }) => builtPageData<BiographyPage>('biographies', params.person, url);

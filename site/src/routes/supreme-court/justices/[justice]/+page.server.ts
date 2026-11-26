@@ -1,11 +1,9 @@
-import { error } from '@sveltejs/kit';
-import { justiceKeys, justicePage } from '#lib/server/justice-pages.ts';
-import type { EntryGenerator, PageServerLoad } from './$types';
+import type { JusticePage } from '#lib/server/justice-pages.ts';
+import { builtPageData } from '#lib/server/page-data.ts';
+import type { PageServerLoad } from './$types';
 
-export const entries: EntryGenerator = () => justiceKeys().map((justice) => ({ justice }));
+// Drawn by the Worker when a reader opens it, from the page's data as built
+// (src/lib/server/page-data.ts, src/routes/page-data).
+export const prerender = false;
 
-export const load: PageServerLoad = ({ params }) => {
-	const page = justicePage(params.justice);
-	if (!page) error(404, 'This site has no page for that Justice.');
-	return page;
-};
+export const load: PageServerLoad = ({ params, url }) => builtPageData<JusticePage>('justices', params.justice, url);
