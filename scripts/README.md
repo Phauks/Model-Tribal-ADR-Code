@@ -23,6 +23,9 @@ The workflow's final job, `All checks`, passes only when every other check passe
 | Script | Does | Needs |
 | --- | --- | --- |
 | `analysis/dispute_resolution_practice.py` | Counts the dispute resolution records in the profiles by kind, evidence tier, recognition and region, and lists data quality flags, as JSON for `research/analyses/` | `scripts/requirements.txt` |
+| `analysis/indian_law_case_sample.py` | Samples Caselaw Access Project reporter volumes, scores each case for Indian law terms and scales the counts to the whole reporter (`sample`, `estimate`); used for the tier 2 and 3 note | Python 3 standard library |
+| `analysis/federal_agency_counts.py` | Counts Interior Board of Indian Appeals decisions (writes the whole index as CSV), National Indian Gaming Commission reading room tables and Federal Register documents from Indian affairs agencies | Python 3 standard library |
+| `analysis/oregon_statutes_count.py` | Counts the sections of the Oregon Revised Statutes that use Indian law terms, chapter by chapter | Python 3 standard library |
 
 ## Legal help
 

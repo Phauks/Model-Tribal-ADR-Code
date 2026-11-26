@@ -1,0 +1,1623 @@
+{
+ "method": "scripts/analysis/indian_law_case_sample.py over every state official reporter (every 10th volume in 27 states with many Native nations, every 33rd elsewhere) and the regional reporters; see the tier 2 and 3 note, section 3.1",
+ "read": "2026-11-26",
+ "totals": {
+  "all_cases": 4926121,
+  "any_term": 11700,
+  "score_3_plus": 4948,
+  "score_5_plus": 3711,
+  "score_10_plus": 2633,
+  "weighted": 4567
+ },
+ "weighted_by_state": {
+  "Okla.": {
+   "weighted": 654,
+   "cases_in_cap": 67134
+  },
+  "Cal.": {
+   "weighted": 431,
+   "cases_in_cap": 144162
+  },
+  "N.Y.": {
+   "weighted": 346,
+   "cases_in_cap": 1109433
+  },
+  "Wash.": {
+   "weighted": 240,
+   "cases_in_cap": 106177
+  },
+  "S.D.": {
+   "weighted": 204,
+   "cases_in_cap": 16782
+  },
+  "Mont.": {
+   "weighted": 196,
+   "cases_in_cap": 28503
+  },
+  "Alaska": {
+   "weighted": 194,
+   "cases_in_cap": 10749
+  },
+  "Ariz.": {
+   "weighted": 192,
+   "cases_in_cap": 28481
+  },
+  "Or.": {
+   "weighted": 165,
+   "cases_in_cap": 59660
+  },
+  "N.M.": {
+   "weighted": 153,
+   "cases_in_cap": 18469
+  },
+  "Kan.": {
+   "weighted": 131,
+   "cases_in_cap": 50182
+  },
+  "Minn.": {
+   "weighted": 124,
+   "cases_in_cap": 56091
+  },
+  "N.D.": {
+   "weighted": 103,
+   "cases_in_cap": 17017
+  },
+  "Mich.": {
+   "weighted": 90,
+   "cases_in_cap": 83027
+  },
+  "Idaho": {
+   "weighted": 85,
+   "cases_in_cap": 19402
+  },
+  "Ala.": {
+   "weighted": 83,
+   "cases_in_cap": 133318
+  },
+  "Ark.": {
+   "weighted": 77,
+   "cases_in_cap": 60582
+  },
+  "Wis.": {
+   "weighted": 72,
+   "cases_in_cap": 50470
+  },
+  "N.C.": {
+   "weighted": 61,
+   "cases_in_cap": 118446
+  },
+  "Pa.": {
+   "weighted": 60,
+   "cases_in_cap": 248710
+  },
+  "Iowa": {
+   "weighted": 60,
+   "cases_in_cap": 57776
+  },
+  "La.": {
+   "weighted": 54,
+   "cases_in_cap": 314588
+  },
+  "Tex.": {
+   "weighted": 52,
+   "cases_in_cap": 250659
+  },
+  "Colo.": {
+   "weighted": 51,
+   "cases_in_cap": 40897
+  },
+  "Utah": {
+   "weighted": 44,
+   "cases_in_cap": 22904
+  },
+  "Wyo.": {
+   "weighted": 44,
+   "cases_in_cap": 10931
+  },
+  "Conn.": {
+   "weighted": 42,
+   "cases_in_cap": 57564
+  },
+  "Mo.": {
+   "weighted": 39,
+   "cases_in_cap": 139635
+  },
+  "Ill.": {
+   "weighted": 38,
+   "cases_in_cap": 186586
+  },
+  "Ind.": {
+   "weighted": 37,
+   "cases_in_cap": 93619
+  },
+  "Ga.": {
+   "weighted": 36,
+   "cases_in_cap": 172343
+  },
+  "Neb.": {
+   "weighted": 36,
+   "cases_in_cap": 38910
+  },
+  "Miss.": {
+   "weighted": 34,
+   "cases_in_cap": 60608
+  },
+  "Haw.": {
+   "weighted": 33,
+   "cases_in_cap": 18848
+  },
+  "Me.": {
+   "weighted": 27,
+   "cases_in_cap": 27935
+  },
+  "Va.": {
+   "weighted": 27,
+   "cases_in_cap": 40707
+  },
+  "U.S.": {
+   "weighted": 25,
+   "cases_in_cap": 1842424
+  },
+  "Vt.": {
+   "weighted": 25,
+   "cases_in_cap": 22745
+  },
+  "Dakota Territory": {
+   "weighted": 24,
+   "cases_in_cap": 310
+  },
+  "Ohio": {
+   "weighted": 22,
+   "cases_in_cap": 154247
+  },
+  "Mass.": {
+   "weighted": 21,
+   "cases_in_cap": 93274
+  },
+  "R.I.": {
+   "weighted": 19,
+   "cases_in_cap": 26689
+  },
+  "Fla.": {
+   "weighted": 19,
+   "cases_in_cap": 329447
+  },
+  "Ky.": {
+   "weighted": 19,
+   "cases_in_cap": 79574
+  },
+  "Nev.": {
+   "weighted": 18,
+   "cases_in_cap": 13707
+  },
+  "Tenn.": {
+   "weighted": 17,
+   "cases_in_cap": 38545
+  },
+  "S.C.": {
+   "weighted": 16,
+   "cases_in_cap": 41875
+  },
+  "N.H.": {
+   "weighted": 8,
+   "cases_in_cap": 21540
+  },
+  "Md.": {
+   "weighted": 3,
+   "cases_in_cap": 45746
+  },
+  "N.J.": {
+   "weighted": 3,
+   "cases_in_cap": 116256
+  },
+  "W. Va.": {
+   "weighted": 3,
+   "cases_in_cap": 27661
+  },
+  "D.C.": {
+   "weighted": 2,
+   "cases_in_cap": 33226
+  },
+  "Del.": {
+   "weighted": 1,
+   "cases_in_cap": 17657
+  }
+ },
+ "reporters_with_hits": {
+  "a2d": {
+   "volumes": 967,
+   "sampled": 39,
+   "any_term": 99,
+   "score_3_plus": 25,
+   "score_5_plus": 25,
+   "score_10_plus": 25,
+   "weighted": 29
+  },
+  "a3d": {
+   "volumes": 212,
+   "sampled": 22,
+   "any_term": 67,
+   "score_3_plus": 19,
+   "score_5_plus": 19,
+   "score_10_plus": 19,
+   "weighted": 21
+  },
+  "abbn-cas": {
+   "volumes": 31,
+   "sampled": 4,
+   "any_term": 8,
+   "score_3_plus": 8,
+   "score_5_plus": 0,
+   "score_10_plus": 0,
+   "weighted": 5
+  },
+  "ad": {
+   "volumes": 286,
+   "sampled": 29,
+   "any_term": 49,
+   "score_3_plus": 30,
+   "score_5_plus": 20,
+   "score_10_plus": 20,
+   "weighted": 25
+  },
+  "ad2d": {
+   "volumes": 309,
+   "sampled": 31,
+   "any_term": 90,
+   "score_3_plus": 30,
+   "score_5_plus": 10,
+   "score_10_plus": 0,
+   "weighted": 26
+  },
+  "ad3d": {
+   "volumes": 157,
+   "sampled": 16,
+   "any_term": 137,
+   "score_3_plus": 69,
+   "score_5_plus": 49,
+   "score_10_plus": 29,
+   "weighted": 60
+  },
+  "ala": {
+   "volumes": 295,
+   "sampled": 9,
+   "any_term": 131,
+   "score_3_plus": 33,
+   "score_5_plus": 33,
+   "score_10_plus": 33,
+   "weighted": 38
+  },
+  "alaska": {
+   "volumes": 17,
+   "sampled": 2,
+   "any_term": 60,
+   "score_3_plus": 42,
+   "score_5_plus": 34,
+   "score_10_plus": 8,
+   "weighted": 36
+  },
+  "ariz-app": {
+   "volumes": 27,
+   "sampled": 3,
+   "any_term": 27,
+   "score_3_plus": 18,
+   "score_5_plus": 18,
+   "score_10_plus": 9,
+   "weighted": 16
+  },
+  "ariz": {
+   "volumes": 242,
+   "sampled": 25,
+   "any_term": 348,
+   "score_3_plus": 194,
+   "score_5_plus": 145,
+   "score_10_plus": 87,
+   "weighted": 168
+  },
+  "ark-terr-rep": {
+   "volumes": 1,
+   "sampled": 1,
+   "any_term": 15,
+   "score_3_plus": 11,
+   "score_5_plus": 5,
+   "score_10_plus": 5,
+   "weighted": 8
+  },
+  "ark": {
+   "volumes": 375,
+   "sampled": 12,
+   "any_term": 188,
+   "score_3_plus": 0,
+   "score_5_plus": 0,
+   "score_10_plus": 0,
+   "weighted": 19
+  },
+  "barb": {
+   "volumes": 67,
+   "sampled": 7,
+   "any_term": 10,
+   "score_3_plus": 10,
+   "score_5_plus": 10,
+   "score_10_plus": 0,
+   "weighted": 8
+  },
+  "cal-2d": {
+   "volumes": 71,
+   "sampled": 8,
+   "any_term": 18,
+   "score_3_plus": 9,
+   "score_5_plus": 9,
+   "score_10_plus": 0,
+   "weighted": 8
+  },
+  "cal-3d": {
+   "volumes": 54,
+   "sampled": 6,
+   "any_term": 18,
+   "score_3_plus": 18,
+   "score_5_plus": 9,
+   "score_10_plus": 9,
+   "weighted": 13
+  },
+  "cal-4th": {
+   "volumes": 63,
+   "sampled": 7,
+   "any_term": 54,
+   "score_3_plus": 18,
+   "score_5_plus": 18,
+   "score_10_plus": 18,
+   "weighted": 19
+  },
+  "cal-5th": {
+   "volumes": 1,
+   "sampled": 1,
+   "any_term": 2,
+   "score_3_plus": 2,
+   "score_5_plus": 2,
+   "score_10_plus": 2,
+   "weighted": 2
+  },
+  "cal-app-2d": {
+   "volumes": 276,
+   "sampled": 28,
+   "any_term": 59,
+   "score_3_plus": 20,
+   "score_5_plus": 10,
+   "score_10_plus": 10,
+   "weighted": 18
+  },
+  "cal-app-3d": {
+   "volumes": 235,
+   "sampled": 30,
+   "any_term": 94,
+   "score_3_plus": 8,
+   "score_5_plus": 8,
+   "score_10_plus": 8,
+   "weighted": 15
+  },
+  "cal-app-4th": {
+   "volumes": 248,
+   "sampled": 31,
+   "any_term": 448,
+   "score_3_plus": 336,
+   "score_5_plus": 320,
+   "score_10_plus": 264,
+   "weighted": 293
+  },
+  "cal-app-5th": {
+   "volumes": 11,
+   "sampled": 11,
+   "any_term": 27,
+   "score_3_plus": 20,
+   "score_5_plus": 17,
+   "score_10_plus": 15,
+   "weighted": 17
+  },
+  "cal-app": {
+   "volumes": 140,
+   "sampled": 14,
+   "any_term": 30,
+   "score_3_plus": 10,
+   "score_5_plus": 10,
+   "score_10_plus": 10,
+   "weighted": 10
+  },
+  "cal-rptr-3d": {
+   "volumes": 56,
+   "sampled": 6,
+   "any_term": 47,
+   "score_3_plus": 28,
+   "score_5_plus": 19,
+   "score_10_plus": 19,
+   "weighted": 23
+  },
+  "cal-unrep": {
+   "volumes": 7,
+   "sampled": 1,
+   "any_term": 7,
+   "score_3_plus": 0,
+   "score_5_plus": 0,
+   "score_10_plus": 0,
+   "weighted": 1
+  },
+  "cal": {
+   "volumes": 219,
+   "sampled": 22,
+   "any_term": 50,
+   "score_3_plus": 10,
+   "score_5_plus": 10,
+   "score_10_plus": 0,
+   "weighted": 12
+  },
+  "colo-l-rep": {
+   "volumes": 4,
+   "sampled": 1,
+   "any_term": 4,
+   "score_3_plus": 4,
+   "score_5_plus": 4,
+   "score_10_plus": 4,
+   "weighted": 3
+  },
+  "colo": {
+   "volumes": 200,
+   "sampled": 20,
+   "any_term": 40,
+   "score_3_plus": 10,
+   "score_5_plus": 10,
+   "score_10_plus": 0,
+   "weighted": 12
+  },
+  "conn-app": {
+   "volumes": 149,
+   "sampled": 15,
+   "any_term": 60,
+   "score_3_plus": 20,
+   "score_5_plus": 20,
+   "score_10_plus": 20,
+   "weighted": 21
+  },
+  "conn": {
+   "volumes": 303,
+   "sampled": 31,
+   "any_term": 59,
+   "score_3_plus": 20,
+   "score_5_plus": 20,
+   "score_10_plus": 20,
+   "weighted": 21
+  },
+  "dakota": {
+   "volumes": 6,
+   "sampled": 1,
+   "any_term": 42,
+   "score_3_plus": 30,
+   "score_5_plus": 18,
+   "score_10_plus": 12,
+   "weighted": 24
+  },
+  "dallam": {
+   "volumes": 1,
+   "sampled": 1,
+   "any_term": 1,
+   "score_3_plus": 1,
+   "score_5_plus": 1,
+   "score_10_plus": 0,
+   "weighted": 1
+  },
+  "daly-ny": {
+   "volumes": 16,
+   "sampled": 2,
+   "any_term": 16,
+   "score_3_plus": 0,
+   "score_5_plus": 0,
+   "score_10_plus": 0,
+   "weighted": 2
+  },
+  "davis-l-ct-cas": {
+   "volumes": 1,
+   "sampled": 1,
+   "any_term": 1,
+   "score_3_plus": 0,
+   "score_5_plus": 0,
+   "score_10_plus": 0,
+   "weighted": 0
+  },
+  "del-cas": {
+   "volumes": 3,
+   "sampled": 1,
+   "any_term": 3,
+   "score_3_plus": 0,
+   "score_5_plus": 0,
+   "score_10_plus": 0,
+   "weighted": 0
+  },
+  "denio": {
+   "volumes": 5,
+   "sampled": 1,
+   "any_term": 5,
+   "score_3_plus": 5,
+   "score_5_plus": 5,
+   "score_10_plus": 0,
+   "weighted": 4
+  },
+  "doug": {
+   "volumes": 2,
+   "sampled": 1,
+   "any_term": 2,
+   "score_3_plus": 2,
+   "score_5_plus": 2,
+   "score_10_plus": 0,
+   "weighted": 2
+  },
+  "dudley-rep": {
+   "volumes": 1,
+   "sampled": 1,
+   "any_term": 1,
+   "score_3_plus": 1,
+   "score_5_plus": 1,
+   "score_10_plus": 1,
+   "weighted": 1
+  },
+  "fla-supp-2d": {
+   "volumes": 50,
+   "sampled": 5,
+   "any_term": 10,
+   "score_3_plus": 0,
+   "score_5_plus": 0,
+   "score_10_plus": 0,
+   "weighted": 1
+  },
+  "fla": {
+   "volumes": 160,
+   "sampled": 16,
+   "any_term": 30,
+   "score_3_plus": 0,
+   "score_5_plus": 0,
+   "score_10_plus": 0,
+   "weighted": 3
+  },
+  "freem-ch": {
+   "volumes": 1,
+   "sampled": 1,
+   "any_term": 4,
+   "score_3_plus": 2,
+   "score_5_plus": 1,
+   "score_10_plus": 1,
+   "weighted": 2
+  },
+  "ga": {
+   "volumes": 302,
+   "sampled": 10,
+   "any_term": 91,
+   "score_3_plus": 30,
+   "score_5_plus": 30,
+   "score_10_plus": 0,
+   "weighted": 32
+  },
+  "greene": {
+   "volumes": 4,
+   "sampled": 1,
+   "any_term": 4,
+   "score_3_plus": 4,
+   "score_5_plus": 4,
+   "score_10_plus": 0,
+   "weighted": 3
+  },
+  "haw": {
+   "volumes": 140,
+   "sampled": 5,
+   "any_term": 112,
+   "score_3_plus": 28,
+   "score_5_plus": 0,
+   "score_10_plus": 0,
+   "weighted": 25
+  },
+  "hopk-ch": {
+   "volumes": 1,
+   "sampled": 1,
+   "any_term": 2,
+   "score_3_plus": 1,
+   "score_5_plus": 0,
+   "score_10_plus": 0,
+   "weighted": 1
+  },
+  "how-pr": {
+   "volumes": 66,
+   "sampled": 7,
+   "any_term": 19,
+   "score_3_plus": 9,
+   "score_5_plus": 0,
+   "score_10_plus": 0,
+   "weighted": 7
+  },
+  "idaho": {
+   "volumes": 162,
+   "sampled": 17,
+   "any_term": 162,
+   "score_3_plus": 105,
+   "score_5_plus": 67,
+   "score_10_plus": 48,
+   "weighted": 85
+  },
+  "ill-app-3d": {
+   "volumes": 395,
+   "sampled": 12,
+   "any_term": 66,
+   "score_3_plus": 33,
+   "score_5_plus": 33,
+   "score_10_plus": 33,
+   "weighted": 31
+  },
+  "ill-app": {
+   "volumes": 351,
+   "sampled": 11,
+   "any_term": 32,
+   "score_3_plus": 0,
+   "score_5_plus": 0,
+   "score_10_plus": 0,
+   "weighted": 3
+  },
+  "ill": {
+   "volumes": 415,
+   "sampled": 13,
+   "any_term": 32,
+   "score_3_plus": 0,
+   "score_5_plus": 0,
+   "score_10_plus": 0,
+   "weighted": 3
+  },
+  "ind-app": {
+   "volumes": 182,
+   "sampled": 6,
+   "any_term": 30,
+   "score_3_plus": 0,
+   "score_5_plus": 0,
+   "score_10_plus": 0,
+   "weighted": 3
+  },
+  "ind": {
+   "volumes": 275,
+   "sampled": 9,
+   "any_term": 31,
+   "score_3_plus": 0,
+   "score_5_plus": 0,
+   "score_10_plus": 0,
+   "weighted": 3
+  },
+  "indian-terr": {
+   "volumes": 7,
+   "sampled": 1,
+   "any_term": 56,
+   "score_3_plus": 28,
+   "score_5_plus": 7,
+   "score_10_plus": 7,
+   "weighted": 21
+  },
+  "iowa": {
+   "volumes": 261,
+   "sampled": 27,
+   "any_term": 29,
+   "score_3_plus": 0,
+   "score_5_plus": 0,
+   "score_10_plus": 0,
+   "weighted": 3
+  },
+  "jeff": {
+   "volumes": 1,
+   "sampled": 1,
+   "any_term": 1,
+   "score_3_plus": 0,
+   "score_5_plus": 0,
+   "score_10_plus": 0,
+   "weighted": 0
+  },
+  "johns-cas": {
+   "volumes": 2,
+   "sampled": 1,
+   "any_term": 6,
+   "score_3_plus": 2,
+   "score_5_plus": 0,
+   "score_10_plus": 0,
+   "weighted": 2
+  },
+  "johns": {
+   "volumes": 20,
+   "sampled": 2,
+   "any_term": 10,
+   "score_3_plus": 0,
+   "score_5_plus": 0,
+   "score_10_plus": 0,
+   "weighted": 1
+  },
+  "kan-app-2d": {
+   "volumes": 53,
+   "sampled": 6,
+   "any_term": 26,
+   "score_3_plus": 18,
+   "score_5_plus": 18,
+   "score_10_plus": 18,
+   "weighted": 16
+  },
+  "kan": {
+   "volumes": 304,
+   "sampled": 31,
+   "any_term": 226,
+   "score_3_plus": 127,
+   "score_5_plus": 108,
+   "score_10_plus": 78,
+   "weighted": 113
+  },
+  "keyes": {
+   "volumes": 4,
+   "sampled": 1,
+   "any_term": 4,
+   "score_3_plus": 4,
+   "score_5_plus": 4,
+   "score_10_plus": 0,
+   "weighted": 3
+  },
+  "ky": {
+   "volumes": 314,
+   "sampled": 10,
+   "any_term": 31,
+   "score_3_plus": 31,
+   "score_5_plus": 0,
+   "score_10_plus": 0,
+   "weighted": 19
+  },
+  "la-ann": {
+   "volumes": 52,
+   "sampled": 2,
+   "any_term": 26,
+   "score_3_plus": 0,
+   "score_5_plus": 0,
+   "score_10_plus": 0,
+   "weighted": 3
+  },
+  "lans": {
+   "volumes": 7,
+   "sampled": 1,
+   "any_term": 7,
+   "score_3_plus": 0,
+   "score_5_plus": 0,
+   "score_10_plus": 0,
+   "weighted": 1
+  },
+  "lock-rev-cas": {
+   "volumes": 1,
+   "sampled": 1,
+   "any_term": 1,
+   "score_3_plus": 0,
+   "score_5_plus": 0,
+   "score_10_plus": 0,
+   "weighted": 0
+  },
+  "mass-app-ct": {
+   "volumes": 90,
+   "sampled": 9,
+   "any_term": 30,
+   "score_3_plus": 0,
+   "score_5_plus": 0,
+   "score_10_plus": 0,
+   "weighted": 3
+  },
+  "mass-l-rptr": {
+   "volumes": 34,
+   "sampled": 4,
+   "any_term": 8,
+   "score_3_plus": 0,
+   "score_5_plus": 0,
+   "score_10_plus": 0,
+   "weighted": 1
+  },
+  "mass": {
+   "volumes": 477,
+   "sampled": 48,
+   "any_term": 70,
+   "score_3_plus": 20,
+   "score_5_plus": 0,
+   "score_10_plus": 0,
+   "weighted": 17
+  },
+  "mccahon": {
+   "volumes": 1,
+   "sampled": 1,
+   "any_term": 2,
+   "score_3_plus": 2,
+   "score_5_plus": 1,
+   "score_10_plus": 0,
+   "weighted": 1
+  },
+  "md-app": {
+   "volumes": 234,
+   "sampled": 8,
+   "any_term": 29,
+   "score_3_plus": 0,
+   "score_5_plus": 0,
+   "score_10_plus": 0,
+   "weighted": 3
+  },
+  "me": {
+   "volumes": 161,
+   "sampled": 17,
+   "any_term": 9,
+   "score_3_plus": 9,
+   "score_5_plus": 0,
+   "score_10_plus": 0,
+   "weighted": 6
+  },
+  "mich-app": {
+   "volumes": 317,
+   "sampled": 32,
+   "any_term": 59,
+   "score_3_plus": 40,
+   "score_5_plus": 40,
+   "score_10_plus": 30,
+   "weighted": 36
+  },
+  "mich-np-r": {
+   "volumes": 2,
+   "sampled": 1,
+   "any_term": 2,
+   "score_3_plus": 2,
+   "score_5_plus": 2,
+   "score_10_plus": 0,
+   "weighted": 2
+  },
+  "mich": {
+   "volumes": 499,
+   "sampled": 50,
+   "any_term": 150,
+   "score_3_plus": 30,
+   "score_5_plus": 20,
+   "score_10_plus": 20,
+   "weighted": 35
+  },
+  "minn": {
+   "volumes": 312,
+   "sampled": 32,
+   "any_term": 107,
+   "score_3_plus": 39,
+   "score_5_plus": 29,
+   "score_10_plus": 20,
+   "weighted": 38
+  },
+  "misc": {
+   "volumes": 208,
+   "sampled": 21,
+   "any_term": 59,
+   "score_3_plus": 30,
+   "score_5_plus": 30,
+   "score_10_plus": 20,
+   "weighted": 28
+  },
+  "misc2d": {
+   "volumes": 196,
+   "sampled": 20,
+   "any_term": 147,
+   "score_3_plus": 78,
+   "score_5_plus": 69,
+   "score_10_plus": 59,
+   "weighted": 71
+  },
+  "misc3d": {
+   "volumes": 57,
+   "sampled": 6,
+   "any_term": 48,
+   "score_3_plus": 19,
+   "score_5_plus": 19,
+   "score_10_plus": 19,
+   "weighted": 19
+  },
+  "miss": {
+   "volumes": 254,
+   "sampled": 8,
+   "any_term": 95,
+   "score_3_plus": 32,
+   "score_5_plus": 0,
+   "score_10_plus": 0,
+   "weighted": 25
+  },
+  "mo": {
+   "volumes": 365,
+   "sampled": 12,
+   "any_term": 30,
+   "score_3_plus": 0,
+   "score_5_plus": 0,
+   "score_10_plus": 0,
+   "weighted": 3
+  },
+  "monaghan": {
+   "volumes": 2,
+   "sampled": 1,
+   "any_term": 4,
+   "score_3_plus": 0,
+   "score_5_plus": 0,
+   "score_10_plus": 0,
+   "weighted": 0
+  },
+  "mont": {
+   "volumes": 389,
+   "sampled": 39,
+   "any_term": 389,
+   "score_3_plus": 219,
+   "score_5_plus": 190,
+   "score_10_plus": 130,
+   "weighted": 196
+  },
+  "mor-st-cas": {
+   "volumes": 2,
+   "sampled": 1,
+   "any_term": 2,
+   "score_3_plus": 2,
+   "score_5_plus": 0,
+   "score_10_plus": 0,
+   "weighted": 1
+  },
+  "morris": {
+   "volumes": 1,
+   "sampled": 1,
+   "any_term": 2,
+   "score_3_plus": 2,
+   "score_5_plus": 1,
+   "score_10_plus": 0,
+   "weighted": 1
+  },
+  "nc-app": {
+   "volumes": 236,
+   "sampled": 24,
+   "any_term": 49,
+   "score_3_plus": 30,
+   "score_5_plus": 30,
+   "score_10_plus": 30,
+   "weighted": 27
+  },
+  "nc": {
+   "volumes": 369,
+   "sampled": 37,
+   "any_term": 50,
+   "score_3_plus": 20,
+   "score_5_plus": 20,
+   "score_10_plus": 20,
+   "weighted": 20
+  },
+  "nd": {
+   "volumes": 79,
+   "sampled": 8,
+   "any_term": 10,
+   "score_3_plus": 10,
+   "score_5_plus": 0,
+   "score_10_plus": 0,
+   "weighted": 6
+  },
+  "ne2d": {
+   "volumes": 616,
+   "sampled": 25,
+   "any_term": 74,
+   "score_3_plus": 25,
+   "score_5_plus": 25,
+   "score_10_plus": 0,
+   "weighted": 26
+  },
+  "ne3d": {
+   "volumes": 130,
+   "sampled": 17,
+   "any_term": 15,
+   "score_3_plus": 8,
+   "score_5_plus": 0,
+   "score_10_plus": 0,
+   "weighted": 5
+  },
+  "neb-app": {
+   "volumes": 15,
+   "sampled": 2,
+   "any_term": 15,
+   "score_3_plus": 15,
+   "score_5_plus": 8,
+   "score_10_plus": 8,
+   "weighted": 11
+  },
+  "neb": {
+   "volumes": 274,
+   "sampled": 28,
+   "any_term": 127,
+   "score_3_plus": 20,
+   "score_5_plus": 10,
+   "score_10_plus": 0,
+   "weighted": 25
+  },
+  "nev": {
+   "volumes": 129,
+   "sampled": 13,
+   "any_term": 60,
+   "score_3_plus": 20,
+   "score_5_plus": 10,
+   "score_10_plus": 10,
+   "weighted": 18
+  },
+  "nh": {
+   "volumes": 169,
+   "sampled": 6,
+   "any_term": 84,
+   "score_3_plus": 0,
+   "score_5_plus": 0,
+   "score_10_plus": 0,
+   "weighted": 8
+  },
+  "njl": {
+   "volumes": 137,
+   "sampled": 5,
+   "any_term": 27,
+   "score_3_plus": 0,
+   "score_5_plus": 0,
+   "score_10_plus": 0,
+   "weighted": 3
+  },
+  "nm-app": {
+   "volumes": 10,
+   "sampled": 1,
+   "any_term": 60,
+   "score_3_plus": 20,
+   "score_5_plus": 10,
+   "score_10_plus": 10,
+   "weighted": 18
+  },
+  "nm": {
+   "volumes": 150,
+   "sampled": 15,
+   "any_term": 260,
+   "score_3_plus": 130,
+   "score_5_plus": 120,
+   "score_10_plus": 100,
+   "weighted": 121
+  },
+  "nw2d": {
+   "volumes": 877,
+   "sampled": 59,
+   "any_term": 877,
+   "score_3_plus": 461,
+   "score_5_plus": 386,
+   "score_10_plus": 327,
+   "weighted": 415
+  },
+  "ny-2d": {
+   "volumes": 100,
+   "sampled": 10,
+   "any_term": 10,
+   "score_3_plus": 10,
+   "score_5_plus": 10,
+   "score_10_plus": 10,
+   "weighted": 8
+  },
+  "ny-crim": {
+   "volumes": 41,
+   "sampled": 5,
+   "any_term": 25,
+   "score_3_plus": 16,
+   "score_5_plus": 16,
+   "score_10_plus": 16,
+   "weighted": 15
+  },
+  "ny-sup-ct": {
+   "volumes": 92,
+   "sampled": 10,
+   "any_term": 9,
+   "score_3_plus": 9,
+   "score_5_plus": 0,
+   "score_10_plus": 0,
+   "weighted": 6
+  },
+  "ny": {
+   "volumes": 309,
+   "sampled": 31,
+   "any_term": 40,
+   "score_3_plus": 0,
+   "score_5_plus": 0,
+   "score_10_plus": 0,
+   "weighted": 4
+  },
+  "nys": {
+   "volumes": 160,
+   "sampled": 16,
+   "any_term": 110,
+   "score_3_plus": 40,
+   "score_5_plus": 40,
+   "score_10_plus": 20,
+   "weighted": 41
+  },
+  "ohio-app-3d": {
+   "volumes": 197,
+   "sampled": 6,
+   "any_term": 33,
+   "score_3_plus": 0,
+   "score_5_plus": 0,
+   "score_10_plus": 0,
+   "weighted": 3
+  },
+  "ohio-cc-dec": {
+   "volumes": 23,
+   "sampled": 1,
+   "any_term": 23,
+   "score_3_plus": 0,
+   "score_5_plus": 0,
+   "score_10_plus": 0,
+   "weighted": 2
+  },
+  "ohio-ch": {
+   "volumes": 1,
+   "sampled": 1,
+   "any_term": 1,
+   "score_3_plus": 0,
+   "score_5_plus": 0,
+   "score_10_plus": 0,
+   "weighted": 0
+  },
+  "ohio-cir-dec": {
+   "volumes": 12,
+   "sampled": 1,
+   "any_term": 12,
+   "score_3_plus": 0,
+   "score_5_plus": 0,
+   "score_10_plus": 0,
+   "weighted": 1
+  },
+  "ohio-np-ns": {
+   "volumes": 32,
+   "sampled": 1,
+   "any_term": 32,
+   "score_3_plus": 0,
+   "score_5_plus": 0,
+   "score_10_plus": 0,
+   "weighted": 3
+  },
+  "ohio-np": {
+   "volumes": 8,
+   "sampled": 1,
+   "any_term": 8,
+   "score_3_plus": 0,
+   "score_5_plus": 0,
+   "score_10_plus": 0,
+   "weighted": 1
+  },
+  "ohio": {
+   "volumes": 20,
+   "sampled": 1,
+   "any_term": 20,
+   "score_3_plus": 20,
+   "score_5_plus": 0,
+   "score_10_plus": 0,
+   "weighted": 12
+  },
+  "okla-crim": {
+   "volumes": 97,
+   "sampled": 10,
+   "any_term": 107,
+   "score_3_plus": 68,
+   "score_5_plus": 19,
+   "score_10_plus": 19,
+   "weighted": 49
+  },
+  "okla": {
+   "volumes": 208,
+   "sampled": 21,
+   "any_term": 1030,
+   "score_3_plus": 436,
+   "score_5_plus": 258,
+   "score_10_plus": 119,
+   "weighted": 385
+  },
+  "or-app": {
+   "volumes": 288,
+   "sampled": 29,
+   "any_term": 179,
+   "score_3_plus": 79,
+   "score_5_plus": 79,
+   "score_10_plus": 60,
+   "weighted": 77
+  },
+  "or-tax": {
+   "volumes": 18,
+   "sampled": 2,
+   "any_term": 9,
+   "score_3_plus": 9,
+   "score_5_plus": 0,
+   "score_10_plus": 0,
+   "weighted": 5
+  },
+  "or": {
+   "volumes": 360,
+   "sampled": 36,
+   "any_term": 160,
+   "score_3_plus": 100,
+   "score_5_plus": 70,
+   "score_10_plus": 30,
+   "weighted": 84
+  },
+  "p2d": {
+   "volumes": 748,
+   "sampled": 50,
+   "any_term": 524,
+   "score_3_plus": 269,
+   "score_5_plus": 239,
+   "score_10_plus": 165,
+   "weighted": 247
+  },
+  "p3d": {
+   "volumes": 447,
+   "sampled": 45,
+   "any_term": 636,
+   "score_3_plus": 288,
+   "score_5_plus": 238,
+   "score_10_plus": 209,
+   "weighted": 267
+  },
+  "pa-commw": {
+   "volumes": 168,
+   "sampled": 6,
+   "any_term": 28,
+   "score_3_plus": 0,
+   "score_5_plus": 0,
+   "score_10_plus": 0,
+   "weighted": 3
+  },
+  "pa-d-c": {
+   "volumes": 89,
+   "sampled": 3,
+   "any_term": 89,
+   "score_3_plus": 0,
+   "score_5_plus": 0,
+   "score_10_plus": 0,
+   "weighted": 9
+  },
+  "pa-d-c2d": {
+   "volumes": 75,
+   "sampled": 3,
+   "any_term": 75,
+   "score_3_plus": 0,
+   "score_5_plus": 0,
+   "score_10_plus": 0,
+   "weighted": 8
+  },
+  "pa-super": {
+   "volumes": 456,
+   "sampled": 14,
+   "any_term": 65,
+   "score_3_plus": 0,
+   "score_5_plus": 0,
+   "score_10_plus": 0,
+   "weighted": 7
+  },
+  "pa": {
+   "volumes": 639,
+   "sampled": 20,
+   "any_term": 32,
+   "score_3_plus": 0,
+   "score_5_plus": 0,
+   "score_10_plus": 0,
+   "weighted": 3
+  },
+  "paige-ch": {
+   "volumes": 11,
+   "sampled": 2,
+   "any_term": 6,
+   "score_3_plus": 6,
+   "score_5_plus": 6,
+   "score_10_plus": 0,
+   "weighted": 5
+  },
+  "pears": {
+   "volumes": 1,
+   "sampled": 1,
+   "any_term": 1,
+   "score_3_plus": 0,
+   "score_5_plus": 0,
+   "score_10_plus": 0,
+   "weighted": 0
+  },
+  "pin": {
+   "volumes": 3,
+   "sampled": 1,
+   "any_term": 3,
+   "score_3_plus": 0,
+   "score_5_plus": 0,
+   "score_10_plus": 0,
+   "weighted": 0
+  },
+  "posey": {
+   "volumes": 2,
+   "sampled": 1,
+   "any_term": 4,
+   "score_3_plus": 0,
+   "score_5_plus": 0,
+   "score_10_plus": 0,
+   "weighted": 0
+  },
+  "rec-co-ch-sc": {
+   "volumes": 1,
+   "sampled": 1,
+   "any_term": 6,
+   "score_3_plus": 0,
+   "score_5_plus": 0,
+   "score_10_plus": 0,
+   "weighted": 1
+  },
+  "sc": {
+   "volumes": 421,
+   "sampled": 13,
+   "any_term": 130,
+   "score_3_plus": 0,
+   "score_5_plus": 0,
+   "score_10_plus": 0,
+   "weighted": 13
+  },
+  "scl": {
+   "volumes": 49,
+   "sampled": 2,
+   "any_term": 24,
+   "score_3_plus": 0,
+   "score_5_plus": 0,
+   "score_10_plus": 0,
+   "weighted": 2
+  },
+  "sd": {
+   "volumes": 90,
+   "sampled": 9,
+   "any_term": 100,
+   "score_3_plus": 40,
+   "score_5_plus": 40,
+   "score_10_plus": 20,
+   "weighted": 40
+  },
+  "se2d": {
+   "volumes": 142,
+   "sampled": 15,
+   "any_term": 57,
+   "score_3_plus": 19,
+   "score_5_plus": 9,
+   "score_10_plus": 0,
+   "weighted": 18
+  },
+  "serg-rawl": {
+   "volumes": 17,
+   "sampled": 1,
+   "any_term": 34,
+   "score_3_plus": 17,
+   "score_5_plus": 17,
+   "score_10_plus": 0,
+   "weighted": 16
+  },
+  "silv-ct-app": {
+   "volumes": 4,
+   "sampled": 1,
+   "any_term": 4,
+   "score_3_plus": 4,
+   "score_5_plus": 4,
+   "score_10_plus": 4,
+   "weighted": 3
+  },
+  "so2d": {
+   "volumes": 999,
+   "sampled": 40,
+   "any_term": 200,
+   "score_3_plus": 75,
+   "score_5_plus": 50,
+   "score_10_plus": 25,
+   "weighted": 70
+  },
+  "so3d": {
+   "volumes": 275,
+   "sampled": 28,
+   "any_term": 88,
+   "score_3_plus": 49,
+   "score_5_plus": 39,
+   "score_10_plus": 39,
+   "weighted": 43
+  },
+  "stew-p": {
+   "volumes": 5,
+   "sampled": 1,
+   "any_term": 5,
+   "score_3_plus": 5,
+   "score_5_plus": 5,
+   "score_10_plus": 5,
+   "weighted": 4
+  },
+  "sw2d": {
+   "volumes": 999,
+   "sampled": 40,
+   "any_term": 75,
+   "score_3_plus": 0,
+   "score_5_plus": 0,
+   "score_10_plus": 0,
+   "weighted": 7
+  },
+  "sw3d": {
+   "volumes": 579,
+   "sampled": 39,
+   "any_term": 193,
+   "score_3_plus": 104,
+   "score_5_plus": 89,
+   "score_10_plus": 59,
+   "weighted": 94
+  },
+  "tenn-app": {
+   "volumes": 63,
+   "sampled": 2,
+   "any_term": 32,
+   "score_3_plus": 0,
+   "score_5_plus": 0,
+   "score_10_plus": 0,
+   "weighted": 3
+  },
+  "tenn": {
+   "volumes": 225,
+   "sampled": 7,
+   "any_term": 129,
+   "score_3_plus": 0,
+   "score_5_plus": 0,
+   "score_10_plus": 0,
+   "weighted": 13
+  },
+  "tex-l-r": {
+   "volumes": 3,
+   "sampled": 1,
+   "any_term": 3,
+   "score_3_plus": 0,
+   "score_5_plus": 0,
+   "score_10_plus": 0,
+   "weighted": 0
+  },
+  "tex": {
+   "volumes": 163,
+   "sampled": 5,
+   "any_term": 65,
+   "score_3_plus": 65,
+   "score_5_plus": 0,
+   "score_10_plus": 0,
+   "weighted": 39
+  },
+  "utah": {
+   "volumes": 123,
+   "sampled": 13,
+   "any_term": 9,
+   "score_3_plus": 9,
+   "score_5_plus": 9,
+   "score_10_plus": 0,
+   "weighted": 8
+  },
+  "va-app": {
+   "volumes": 67,
+   "sampled": 3,
+   "any_term": 22,
+   "score_3_plus": 0,
+   "score_5_plus": 0,
+   "score_10_plus": 0,
+   "weighted": 2
+  },
+  "va": {
+   "volumes": 267,
+   "sampled": 9,
+   "any_term": 89,
+   "score_3_plus": 30,
+   "score_5_plus": 0,
+   "score_10_plus": 0,
+   "weighted": 24
+  },
+  "vt": {
+   "volumes": 203,
+   "sampled": 7,
+   "any_term": 29,
+   "score_3_plus": 29,
+   "score_5_plus": 29,
+   "score_10_plus": 29,
+   "weighted": 25
+  },
+  "w-va": {
+   "volumes": 239,
+   "sampled": 8,
+   "any_term": 30,
+   "score_3_plus": 0,
+   "score_5_plus": 0,
+   "score_10_plus": 0,
+   "weighted": 3
+  },
+  "walk-ch": {
+   "volumes": 1,
+   "sampled": 1,
+   "any_term": 1,
+   "score_3_plus": 1,
+   "score_5_plus": 0,
+   "score_10_plus": 0,
+   "weighted": 1
+  },
+  "wash-2d": {
+   "volumes": 187,
+   "sampled": 19,
+   "any_term": 167,
+   "score_3_plus": 108,
+   "score_5_plus": 69,
+   "score_10_plus": 49,
+   "weighted": 88
+  },
+  "wash-app": {
+   "volumes": 199,
+   "sampled": 20,
+   "any_term": 289,
+   "score_3_plus": 119,
+   "score_5_plus": 90,
+   "score_10_plus": 60,
+   "weighted": 111
+  },
+  "wash-terr": {
+   "volumes": 3,
+   "sampled": 1,
+   "any_term": 15,
+   "score_3_plus": 6,
+   "score_5_plus": 3,
+   "score_10_plus": 0,
+   "weighted": 5
+  },
+  "wash": {
+   "volumes": 200,
+   "sampled": 20,
+   "any_term": 60,
+   "score_3_plus": 40,
+   "score_5_plus": 30,
+   "score_10_plus": 10,
+   "weighted": 34
+  },
+  "wend": {
+   "volumes": 26,
+   "sampled": 3,
+   "any_term": 9,
+   "score_3_plus": 0,
+   "score_5_plus": 0,
+   "score_10_plus": 0,
+   "weighted": 1
+  },
+  "wis-2d": {
+   "volumes": 378,
+   "sampled": 38,
+   "any_term": 109,
+   "score_3_plus": 60,
+   "score_5_plus": 50,
+   "score_10_plus": 40,
+   "weighted": 53
+  },
+  "wis": {
+   "volumes": 275,
+   "sampled": 28,
+   "any_term": 69,
+   "score_3_plus": 20,
+   "score_5_plus": 10,
+   "score_10_plus": 0,
+   "weighted": 19
+  },
+  "wright": {
+   "volumes": 1,
+   "sampled": 1,
+   "any_term": 1,
+   "score_3_plus": 0,
+   "score_5_plus": 0,
+   "score_10_plus": 0,
+   "weighted": 0
+  },
+  "wyo": {
+   "volumes": 80,
+   "sampled": 8,
+   "any_term": 50,
+   "score_3_plus": 20,
+   "score_5_plus": 20,
+   "score_10_plus": 10,
+   "weighted": 20
+  },
+  "yeates": {
+   "volumes": 4,
+   "sampled": 1,
+   "any_term": 20,
+   "score_3_plus": 12,
+   "score_5_plus": 0,
+   "score_10_plus": 0,
+   "weighted": 8
+  }
+ }
+}
