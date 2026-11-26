@@ -11,7 +11,13 @@
 	"$schema": "./node_modules/wrangler/config-schema.json",
 	"name": "model-tribal-adr-code",
 	"compatibility_date": "2026-11-20",
-	"workers_dev": true,
+	// The site's address is the project domain, triballawproject.org, a
+	// Custom Domain of this Worker (Cloudflare makes its DNS record and
+	// certificate). The workers.dev address is off, so there is one address
+	// to cite; it was turned off in the dashboard on Nov. 25, 2026, and is
+	// kept off here so a deploy does not turn it back on.
+	"workers_dev": false,
+	"routes": [{ "pattern": "triballawproject.org", "custom_domain": true }],
 	// No version (preview) addresses. Each one runs that version's code
 	// against the live database, buckets and email bindings, and every past
 	// version keeps its address, so code with a problem fixed since would
@@ -141,7 +147,8 @@
 	// only. Set it once the domain is onboarded (docs/domain-to-do.md;
 	// COLLABORATION.md, "Following pages"). SITE_ADDRESS is the site's public
 	// address, for the links in those emails and in the project inbox's
-	// unsubscribe links; change it when the site moves to the domain.
+	// unsubscribe links. The build also reads the published site text from it
+	// (src/lib/server/site-text-build.ts), so it must be an address that answers.
 	//
 	// The third, projectEmail, sends replies from the project inbox
 	// (site/MAIL.md). It sends only mail people started: replies, and the
@@ -152,7 +159,7 @@
 	"vars": {
 		"SIGN_IN_EMAIL_FROM": "",
 		"UPDATE_EMAIL_FROM": "",
-		"SITE_ADDRESS": "https://model-tribal-adr-code.trevordgoldsmith.workers.dev",
+		"SITE_ADDRESS": "https://triballawproject.org",
 		// The project inbox (site/MAIL.md, "Switching email on"). While
 		// MAIL_DOMAIN is empty, the inbox pages open but no mail is received
 		// or sent. MAIL_SIGNING_KEY and OUTREACH_SMTP_PASSWORD are Secrets set

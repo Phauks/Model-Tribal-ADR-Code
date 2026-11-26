@@ -62,7 +62,7 @@ from pathlib import Path
 DEFAULT_BUCKET = "model-tribal-adr-code-sources"
 LIBRARY_OBJECT = "_library/library.sqlite.gz"
 MANIFEST_OBJECT = "_library/manifest.json"
-SITE = "https://model-tribal-adr-code.trevordgoldsmith.workers.dev"
+SITE = "https://triballawproject.org"
 
 
 # ---------------------------------------------------------------- getting the library

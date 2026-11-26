@@ -1,24 +1,24 @@
 # Waiting on the domain
 
-The project has no domain yet. The website runs at `https://model-tribal-adr-code.trevordgoldsmith.workers.dev`, and the site sends no email, because Cloudflare Email Service sends only from a domain on the same Cloudflare account.[^email-send] On 2026-11-22 the lead author chose to buy a new domain for the project and to pick its name later.
+The project's domain is `triballawproject.org`, registered on the project's Cloudflare account on 2026-11-25. The website runs there. The site sends no email yet, because Cloudflare Email Service sends only from a domain onboarded on the same Cloudflare account.[^email-send] On 2026-11-22 the lead author chose to buy a new domain for the project.
 
 This page lists everything that waits on the domain, so that it can all be done together once the name is chosen. When an item is done, tick it and name the pull request.
 
 ## 1. Choose and register the name
 
-- [ ] **The lead author picks the name.** Candidates checked on 2026-11-22 with Cloudflare Registrar's availability check, all available then at US$8.50 for the first year and US$11.20 a year after:[^registrar-check]
+- [x] **The lead author picks the name:** `triballawproject.org`. Candidates checked on 2026-11-22 with Cloudflare Registrar's availability check, all available then at US$8.50 for the first year and US$11.20 a year after:[^registrar-check]
   - `tribaladrcode.org` (suggested: short, names the code, and `.org` suits a non-commercial project);
   - `modeltribaladrcode.org` (matches the full project name);
   - `tribaladr.org` (shortest, but reads as a general site about Tribal ADR).
 
   `.law` is not offered by Cloudflare Registrar.
-- [ ] **Register it with Cloudflare Registrar on the project's Cloudflare account.** Cloudflare sells domains at cost and puts their DNS on the same account,[^registrar] so the Worker and Email Service can use the domain with no records to copy by hand. Registration costs money and cannot be undone, so it waits for the lead author's yes.
+- [x] **Register it with Cloudflare Registrar on the project's Cloudflare account.** Done 2026-11-25. Cloudflare sells domains at cost and puts their DNS on the same account,[^registrar] so the Worker and Email Service can use the domain with no records to copy by hand. Registration costs money and cannot be undone, so it waits for the lead author's yes.
 
 ## 2. Move the website to the domain
 
-- [ ] Add the domain to the Worker as a custom domain (`routes` with `custom_domain: true` in `site/wrangler.jsonc`). Cloudflare then creates the DNS record and the certificate.[^custom-domain]
-- [ ] Decide whether the workers.dev address stays on (`workers_dev` in `site/wrangler.jsonc`). Two live addresses split links and citations; turning it off, or redirecting it, leaves one address to cite.
-- [ ] Replace the workers.dev address where it is written down: `site/README.md` (Workers Builds), `site/COLLABORATION.md` ("Setting up sign-in"), `docs/decisions/0006-secrets-only-in-cloudflare.md`, and the default `--site` in `site/tools/make-sign-in-link.mjs`.
+- [x] Add the domain to the Worker as a custom domain (`routes` with `custom_domain: true` in `site/wrangler.jsonc`). Added in the dashboard on 2026-11-25 and written into `site/wrangler.jsonc` afterward. Cloudflare then creates the DNS record and the certificate.[^custom-domain]
+- [x] Decide whether the workers.dev address stays on (`workers_dev` in `site/wrangler.jsonc`). Turned off on 2026-11-25, so there is one address to cite.
+- [x] Replace the workers.dev address where it is written down, including `SITE_ADDRESS` in `site/wrangler.jsonc` and the default `--site` in `site/tools/make-sign-in-link.mjs`.
 - [ ] At the first release, not before: remove the `noindex` tag in `site/src/routes/+layout.svelte`, open `site/static/robots.txt`, and add canonical links and a sitemap on the domain. The site stays out of search engines during 0.0.x because nation pages have not been reviewed by the nations.
 
 ## 3. Turn on email
