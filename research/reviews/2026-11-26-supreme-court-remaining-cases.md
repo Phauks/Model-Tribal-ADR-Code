@@ -32,7 +32,7 @@ The three odd citations that have a scan of the printed report were written by h
 
 - *United States v. Chetimachas Indians*, 131 U.S. app. lxx (1852): from the appendix of cases omitted from the reports in volume 131, in the Internet Archive's scan of the volume (scan page 550); the Library of Congress has no scan of the appendix. Verified.
 - *Missouri, Kansas & Texas Railway Co. v. United States*, 92 U.S. 760 n. (1876): decided in a note to *Leavenworth, Lawrence & Galveston Railroad Co. v. United States*. The report prints no date for the note case, so the decision date (April 10, 1876) rests on the Database alone, and the record stays Unverified.
-- *National Farmers Union Insurance Cos. v. Crow Tribe of Indians*, 468 U.S. 1315 (1984) (Rehnquist, J., in chambers): one Justice's opinion as Circuit Justice continuing a stay, before the Court decided the case at 471 U.S. 845 (1985). Verified. The site now shows a Justice "In chambers" in a case's facts and on the Justice's and the Court's pages.
+- *National Farmers Union Insurance Cos. v. Crow Tribe of Indians*, 468 U.S. 1315 (1984) (Rehnquist, J., in chambers): one Justice's opinion as Circuit Justice continuing a stay, before the Court decided the case at 471 U.S. 845 (1985). Verified. The site now shows such an opinion as "Opinion of one Justice in chambers", with the Justice, in the case's facts, and as an opinion in chambers on the Justice's and the Court's pages.
 
 ## Not added
 

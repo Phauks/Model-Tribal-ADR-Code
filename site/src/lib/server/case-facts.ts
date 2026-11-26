@@ -171,7 +171,7 @@ export function caseFacts(record: CaseRecord, nations: ReadonlyMap<string, { nam
 		const decided = decidedDay(record.citation?.issued);
 		if (inMajority.length) facts.push(['Majority', justiceList(writersFirst(inMajority), decided)]);
 		if (inMinority.length) facts.push(['Dissent', justiceList(writersFirst(inMinority), decided)]);
-		if (inChambers.length) facts.push(['In chambers', justiceList(inChambers, decided)]);
+		if (inChambers.length) facts.push(['Justice', justiceList(inChambers, decided)]);
 		if (unrecorded.length) facts.push(['Vote not recorded', justiceList(unrecorded, decided)]);
 		if (absent.length) facts.push(['Did not participate', justiceList(absent, decided)]);
 	}
