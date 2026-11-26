@@ -17,6 +17,7 @@
 import { csvDocument, parseCsv } from './csv.ts';
 import { copyItemId, type RestrictableItem, type RestrictionLevel } from './nation-restrictions.ts';
 import type { SearchRecordsFile } from './search-records.ts';
+import type { SearchEntry } from './site-search.ts';
 import type { CopyDetails } from './public-copies.ts';
 import { kindLabels, type OpinionYear, type TimelineEntry, type TimelineRow } from './timeline.ts';
 
@@ -116,14 +117,43 @@ export function hiddenOpinions(restrictions: SiteRestrictions, year: string | nu
 
 // ----- Search -----
 
-/** The advanced search's records (/search/records.json): a document whose every version is hidden is not listed. Rows name documents, never their text. */
+/**
+ * The advanced search's records (/search/records.json): a document whose
+ * every version is hidden is not listed, nor one linked to a hidden copy; one
+ * linked to a cited copy opens where the original is kept. Rows name
+ * documents, never their text.
+ */
 export function filterSearchRecords(file: SearchRecordsFile, restrictions: SiteRestrictions): SearchRecordsFile {
 	return {
 		...file,
-		documents: file.documents.filter(
-			(row) => !(row.anchor.startsWith('document-') && restrictions.hiddenDocuments.has(`${row.nation}#${row.anchor.slice('document-'.length)}`))
-		)
+		documents: file.documents.flatMap((row) => {
+			if (row.anchor.startsWith('document-') && restrictions.hiddenDocuments.has(`${row.nation}#${row.anchor.slice('document-'.length)}`)) return [];
+			const level = linkLevel(restrictions, row.link);
+			if (level === 'hide') return [];
+			if (level === 'cite') return [{ ...row, link: originalOf(restrictions, row.link) || undefined }];
+			return [row];
+		})
 	};
+}
+
+/**
+ * The site search's index (/search/index.json): an entry linked to a copy a
+ * nation hid is left out, one linked to a cited copy opens where the original
+ * is kept, and one opening at a document whose every version is hidden is
+ * left out. Entries give names, never words from a document's text.
+ */
+export function filterSearchIndex(entries: SearchEntry[], restrictions: SiteRestrictions): SearchEntry[] {
+	return entries.flatMap((entry) => {
+		const anchor = /^\/nations\/([a-z0-9-]+)#document-(.+)$/.exec(entry.link);
+		if (anchor && restrictions.hiddenDocuments.has(`${anchor[1]}#${anchor[2]}`)) return [];
+		const level = linkLevel(restrictions, entry.link);
+		if (level === 'hide') return [];
+		if (level === 'cite') {
+			const original = originalOf(restrictions, entry.link);
+			return original ? [{ ...entry, link: original }] : [];
+		}
+		return [entry];
+	});
 }
 
 // ----- Copies -----

@@ -1,0 +1,62 @@
+key: oklahoma-filing-27286
+kind: intergovernmental-agreement
+citation:
+  type: document
+  title: 'Cherokee Nation, U.S. Department of the Interior and county and state law enforcement agencies: cross-deputization agreement'
+  author:
+  - literal: Cherokee Nation
+  - literal: United States Department of the Interior
+  - literal: County Board of Commissioners
+  - literal: County Sheriff's Department
+  - literal: Oklahoma State Bureau of Investigation
+  - literal: Oklahoma Highway Patrol
+  - literal: State Fire Marshal
+  - literal: Oklahoma Department of Dangerous Drugs and Narcotics
+  - literal: Department of Corrections
+  - literal: Council on Law Enforcement Education and Training
+  - literal: Oklahoma Game Rangers
+  - literal: Oklahoma Lake Patrol
+  container-title: Oklahoma Secretary of State, Tribal Compacts and Agreements
+  number: File 27286
+  URL: https://execleg.sos.ok.gov/documents/filelog/54074.pdf
+  accessed:
+    date-parts:
+    - - 2026
+      - 11
+      - 26
+  issued:
+    date-parts:
+    - - 1992
+      - 7
+      - 8
+original_link: https://execleg.sos.ok.gov/documents/filelog/54074.pdf
+retrieved: '2026-11-26'
+archives: []
+history:
+  status: live
+  last_checked: '2026-11-26'
+rights:
+  status: no-permission-needed
+  basis: fact-only
+  basis_note: Facts are recorded from the register. The State's filed copy, a public record of the Oklahoma Secretary of State, is served on this site (decision record 0060); a nation can ask to have it taken down.
+  redistribution: true
+tribes:
+- cherokee-nation
+jurisdictions:
+- level: multiple
+  note: Agreement filed with the Oklahoma Secretary of State.
+topics:
+- oklahoma-state-tribal-agreement
+- cross-deputization
+found_in:
+- 2026-11-26-oklahoma-state-tribal-agreements
+notes: 'Oklahoma Secretary of State file 27286, filed July 8, 1992. The register''s title reads “Agreement Tribal Cross Deputization (original agreement is OKSOS file number 27286 -- OK Attorney General ''Letter of Approval'' added and filed 10/10/1994--SOS document # 31425)” and its description “Cherokee Nation /U.S. Deptment of Interior/Co Comm. Various Law Enf. including by not limited to County Sheriff''s Department, Oklahoma State Bureau of Investigation, Oklahoma Highway Patrol, State Fire Marshal, Oklahoma Department of Dangerous Drugs and Narcotics, Departmetn of Corrections, Council on Law Enforcement Education and Training, Oklahoma Game Rangers, Oklahoma Lake Patrol, Oklahoma State Fire Marshal, etc”. The register line reads as an agreement or compact. The filed copy is a scan with no text layer; this record''s facts come from the register''s own title and description, read by script and by an AI reader, not from the scan. The date is the filing date, not the signing date. The reader noted: Text lists agencies followed by "etc."; list may be incomplete.'
+review:
+  status: unverified
+  by: scripts/agreements/oklahoma_register.py
+  date: '2026-11-26'
+  checks:
+  - check: 'Nations named in the register line: the script''s reading and an AI reader''s'
+    result: agree
+  - check: 'Subject: the script''s reading of the register title and an AI reader''s'
+    result: agree

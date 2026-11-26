@@ -1,0 +1,52 @@
+key: wall-v-williamson-1845
+kind: state-case
+citation:
+  type: legal_case
+  title: Wall v. Williamson
+  authority: Alabama Supreme Court
+  container-title: Ala.
+  volume: '8'
+  page: '48'
+  issued:
+    date-parts:
+    - - 1845
+      - 1
+  URL: https://static.case.law/ala/8/html/0048-01.html
+  accessed:
+    date-parts:
+    - - 2026
+      - 11
+      - 26
+original_link: https://static.case.law/ala/8/html/0048-01.html
+retrieved: '2026-11-26'
+archives: []
+history:
+  status: live
+  last_checked: '2026-11-26'
+rights:
+  status: no-permission-needed
+  basis: government-edict
+  basis_note: The text of a judicial opinion has no copyright (Georgia v. Public.Resource.Org, Inc., 590 U.S. 255 (2020)). The copy served on this site is the court's opinion only, without the publisher's headnotes, synopsis or other editorial matter (decision record 0060).
+  redistribution: true
+nations_in_case:
+  checked: '2026-11-26'
+  named: []
+jurisdictions:
+- level: state
+  state: AL
+topics:
+- state-court-indian-law
+found_in:
+- 2026-11-26-state-court-indian-law-opinions
+notes: Published at 8 Ala. 48. Decided by the Alabama Supreme Court on 1845. Found by scripts/caselaw/state_court_opinions.py in the Caselaw Access Project's volumes, with an Indian law term score of 3; an AI reader read excerpts and judged it an Indian law case (Indian tribe marriage and property law applied in state court).
+review:
+  status: unverified
+  by: scripts/caselaw/state_court_opinions.py
+  date: '2026-11-26'
+  checks:
+  - check: 'Indian law case: the term score and, below the score kept without a reading, an AI reader''s judgment of excerpts'
+    result: agree
+    detail: 'score 3; reader: Indian tribe marriage and property law applied in state court'
+  - check: Nations named in the caption, matched to nation records by name
+    result: agree
+    detail: 0 matched, 0 not linked

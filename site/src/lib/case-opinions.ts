@@ -49,7 +49,8 @@ export const opinionLabels: Record<string, string> = {
 	judgment: 'opinion announcing the judgment',
 	dissent: 'dissenting opinion',
 	'coauthored dissent': 'joint dissenting opinion',
-	'per curiam': 'per curiam opinion'
+	'per curiam': 'per curiam opinion',
+	'in chambers': 'opinion in chambers'
 };
 
 /** "Opinion of the Court", with a capital, for a heading or the start of a line. */

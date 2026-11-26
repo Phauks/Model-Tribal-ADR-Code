@@ -5,7 +5,7 @@
 </script>
 
 <svelte:head>
-	<title>Stories · Model Tribal ADR Code</title>
+	<title>Stories · Tribal Law Project</title>
 	<meta
 		name="description"
 		content="Stories, accounts and teachings about resolving disputes and making peace, quoted in the words of the Native nations and people who tell them."

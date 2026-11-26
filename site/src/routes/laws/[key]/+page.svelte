@@ -12,6 +12,7 @@
 	import ImpactAccounts from '#lib/components/ImpactAccounts.svelte';
 	import InfoPage from '#lib/components/InfoPage.svelte';
 	import RecordBoxSections from '#lib/components/RecordBoxSections.svelte';
+	import SavedText from '#lib/components/SavedText.svelte';
 	import StubBadge from '#lib/components/StubBadge.svelte';
 	import StubNote from '#lib/components/StubNote.svelte';
 	import TileMap from '#lib/components/TileMap.svelte';
@@ -32,8 +33,21 @@
 	{/each}
 {/snippet}
 
+{#snippet enactedList()}
+	{#each data.enacted as section (section.link)}
+		<p><a href={section.link}>{section.label}</a><span class="muted">&nbsp;› {section.heading}</span></p>
+	{/each}
+{/snippet}
+
+{#snippet sectionRow(section: NonNullable<typeof data.sections>['inForce'][number])}
+	<div>
+		<dt id={section.anchor}>{#if section.link}<a href={section.link}>{section.label}</a>{:else}{section.label}{/if}</dt>
+		<dd>{section.heading}{#if section.act}<span class="muted">&nbsp;› {#if section.act.link}<a href={section.act.link}>{section.act.name}</a>{:else}{section.act.name}{/if}</span>{/if}</dd>
+	</div>
+{/snippet}
+
 <svelte:head>
-	<title>{data.name} · Laws · Model Tribal ADR Code</title>
+	<title>{data.name} · Laws · Tribal Law Project</title>
 	<meta name="description" content="{data.name}, {data.citation}: what it did, the accounts of its impact and where to read it." />
 </svelte:head>
 
@@ -69,23 +83,46 @@
 		</Collapsible>
 	{/if}
 
-	{#if data.text}
-		<Collapsible heading="Text" identifier="law-text">
-			<!-- Its own block, so the frame takes the width beside At a glance instead of dropping below it. -->
-			<div class="law-frame-box">
-				{#if data.text.isPdf}
-					<iframe class="law-frame" src={data.text.file} title="{data.name} (PDF)" loading="lazy"></iframe>
-				{:else}
-					<!-- The saved text or web page runs nothing and loads nothing (src/lib/server/public-copy-serving.ts). -->
-					<iframe class="law-frame law-frame-text" src={data.text.file} title={data.name} sandbox="" referrerpolicy="no-referrer" loading="lazy"></iframe>
-				{/if}
-			</div>
+	{#if data.sections}
+		<Collapsible heading="Sections" identifier="sections" count={data.sections.inForce.length}>
+			<dl class="summary-list section-list">
+				{#each data.sections.inForce as section (section.anchor)}
+					{@render sectionRow(section)}
+				{/each}
+			</dl>
+			{#if data.sections.notInForce.length > 0}
+				<details class="sections-gone">
+					<summary>{data.sections.notInForce.length.toLocaleString('en-US')} repealed, transferred or omitted</summary>
+					<dl class="summary-list section-list">
+						{#each data.sections.notInForce as section (section.anchor)}
+							{@render sectionRow(section)}
+						{/each}
+					</dl>
+				</details>
+			{/if}
 		</Collapsible>
 	{/if}
 
-	{#if data.essays.length + data.nations.length + data.signers.length > 0}
-		<Collapsible heading="On this site" identifier="on-this-site" count={data.essays.length + data.nations.length + data.signers.length}>
+	{#if data.text}<SavedText file={data.text.file} isPdf={data.text.isPdf} name={data.name} identifier="law-text" />{/if}
+
+	{#if data.essays.length + data.nations.length + data.signers.length + data.enacted.length > 0}
+		<Collapsible heading="On this site" identifier="on-this-site" count={data.essays.length + data.nations.length + data.signers.length + data.enacted.length}>
 			<dl class="summary-list">
+				{#if data.enacted.length > 0}
+					<div>
+						<dt>United States Code</dt>
+						<dd>
+							{#if data.enacted.length > longList}
+								<details>
+									<summary>{data.enacted.length.toLocaleString('en-US')} sections of Title 25</summary>
+									{@render enactedList()}
+								</details>
+							{:else}
+								{@render enactedList()}
+							{/if}
+						</dd>
+					</div>
+				{/if}
 				{#if data.nations.length > 0}
 					<div>
 						<dt>Nation pages</dt>
@@ -155,22 +192,17 @@
 		margin: 0;
 	}
 
-	.law-frame-box {
-		display: flow-root;
+	/* The row a link from an Act's page lands on, below the sticky header. */
+	.section-list dt {
+		scroll-margin-top: 4.5rem;
 	}
 
-	.law-frame {
-		display: block;
-		width: 100%;
-		height: 70vh;
-		min-height: 24rem;
-		border: 1px solid var(--color-line);
-		border-radius: var(--radius-control);
+	.section-list dt:target,
+	.section-list dt:target + dd {
 		background: var(--color-surface-raised);
 	}
 
-	/* A short text needs no tall frame. */
-	.law-frame-text {
-		height: 24rem;
+	.sections-gone {
+		margin-top: 1rem;
 	}
 </style>

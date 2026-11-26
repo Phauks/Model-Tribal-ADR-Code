@@ -1,0 +1,53 @@
+key: in-re-the-general-adjudication-of-all-rights-to-use-water-in-the-gila-river-syst-2001
+kind: state-case
+citation:
+  type: legal_case
+  title: In re the General Adjudication of All Rights to Use Water in the Gila River System & Source
+  authority: Arizona Supreme Court
+  container-title: Ariz.
+  volume: '201'
+  page: '307'
+  issued:
+    date-parts:
+    - - 2001
+      - 11
+      - 26
+  URL: https://static.case.law/ariz/201/html/0307-01.html
+  accessed:
+    date-parts:
+    - - 2026
+      - 11
+      - 26
+original_link: https://static.case.law/ariz/201/html/0307-01.html
+retrieved: '2026-11-26'
+archives: []
+history:
+  status: live
+  last_checked: '2026-11-26'
+rights:
+  status: no-permission-needed
+  basis: government-edict
+  basis_note: The text of a judicial opinion has no copyright (Georgia v. Public.Resource.Org, Inc., 590 U.S. 255 (2020)). The copy served on this site is the court's opinion only, without the publisher's headnotes, synopsis or other editorial matter (decision record 0060).
+  redistribution: true
+nations_in_case:
+  checked: '2026-11-26'
+  named: []
+jurisdictions:
+- level: state
+  state: AZ
+topics:
+- state-court-indian-law
+found_in:
+- 2026-11-26-state-court-indian-law-opinions
+notes: Published at 201 Ariz. 307; 35 P.3d 68. Decided by the Arizona Supreme Court on Nov. 26, 2001. Found by scripts/caselaw/state_court_opinions.py in the Caselaw Access Project's volumes, with an Indian law term score of 59, at or above 10, the level kept without a reading.
+review:
+  status: unverified
+  by: scripts/caselaw/state_court_opinions.py
+  date: '2026-11-26'
+  checks:
+  - check: 'Indian law case: the term score and, below the score kept without a reading, an AI reader''s judgment of excerpts'
+    result: agree
+    detail: score 59
+  - check: Nations named in the caption, matched to nation records by name
+    result: agree
+    detail: 0 matched, 0 not linked

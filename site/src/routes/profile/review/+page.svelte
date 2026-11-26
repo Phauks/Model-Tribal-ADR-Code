@@ -17,7 +17,7 @@
 	};</script>
 
 <svelte:head>
-	<title>Check your answers · Model Tribal ADR Code</title>
+	<title>Check your answers · Tribal Law Project</title>
 </svelte:head>
 
 <h1>Check your answers</h1>

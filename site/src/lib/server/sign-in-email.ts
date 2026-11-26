@@ -40,7 +40,7 @@ export type CodePurpose = 'sign-in' | 'new-account';
 export function signInMessage(code: string, link: string, purpose: CodePurpose = 'sign-in'): { subject: string; text: string } {
 	if (purpose === 'new-account') {
 		return {
-			subject: `Confirm your email address for the Model Tribal ADR Code: ${code}`,
+			subject: `Confirm your email address for the Tribal Law Project: ${code}`,
 			text: [
 				`Your code is ${code}. Type it where you are creating your account.`,
 				'',
@@ -54,7 +54,7 @@ export function signInMessage(code: string, link: string, purpose: CodePurpose =
 		};
 	}
 	return {
-		subject: `Your sign-in code for the Model Tribal ADR Code: ${code}`,
+		subject: `Your sign-in code for the Tribal Law Project: ${code}`,
 		text: [
 			`Your sign-in code is ${code}.`,
 			'',
@@ -78,7 +78,7 @@ export function emailDelivery(environment: WorkerEnvironment, url: URL): EmailDe
 		kind: 'email',
 		send: async (to, code, link, purpose = 'sign-in') => {
 			const { subject, text } = signInMessage(code, link, purpose);
-			await binding.send({ to, from: { email: from, name: 'Model Tribal ADR Code' }, subject, text });
+			await binding.send({ to, from: { email: from, name: 'Tribal Law Project' }, subject, text });
 		}
 	};
 }

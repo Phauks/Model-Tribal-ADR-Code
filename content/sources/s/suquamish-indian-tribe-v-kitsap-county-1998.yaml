@@ -1,0 +1,60 @@
+key: suquamish-indian-tribe-v-kitsap-county-1998
+kind: state-case
+citation:
+  type: legal_case
+  title: Suquamish Indian Tribe v. Kitsap County
+  authority: Washington Court of Appeals
+  container-title: Wash. App.
+  volume: '92'
+  page: '816'
+  issued:
+    date-parts:
+    - - 1998
+      - 10
+      - 19
+  URL: https://static.case.law/wash-app/92/html/0816-01.html
+  accessed:
+    date-parts:
+    - - 2026
+      - 11
+      - 26
+original_link: https://static.case.law/wash-app/92/html/0816-01.html
+retrieved: '2026-11-26'
+archives: []
+history:
+  status: live
+  last_checked: '2026-11-26'
+rights:
+  status: no-permission-needed
+  basis: government-edict
+  basis_note: The text of a judicial opinion has no copyright (Georgia v. Public.Resource.Org, Inc., 590 U.S. 255 (2020)). The copy served on this site is the court's opinion only, without the publisher's headnotes, synopsis or other editorial matter (decision record 0060).
+  redistribution: true
+tribes:
+- suquamish-indian-tribe-of-the-port-madison-reservation
+nations_in_case:
+  checked: '2026-11-26'
+  named:
+  - nation: suquamish-indian-tribe-of-the-port-madison-reservation
+    named_as: Suquamish Indian Tribe
+    role: party
+    historical: true
+    note: Matched by the script to the only nation record sharing this name; not yet checked against the case's history.
+jurisdictions:
+- level: state
+  state: WA
+topics:
+- state-court-indian-law
+found_in:
+- 2026-11-26-state-court-indian-law-opinions
+notes: Published at 92 Wash. App. 816. Decided by the Washington Court of Appeals on Oct. 19, 1998. Found by scripts/caselaw/state_court_opinions.py in the Caselaw Access Project's volumes, with an Indian law term score of 4 and a Native nation or Native organization named as a party.
+review:
+  status: unverified
+  by: scripts/caselaw/state_court_opinions.py
+  date: '2026-11-26'
+  checks:
+  - check: 'Indian law case: the term score and, below the score kept without a reading, an AI reader''s judgment of excerpts'
+    result: agree
+    detail: score 4; kept because a party is a Native nation or organization
+  - check: Nations named in the caption, matched to nation records by name
+    result: agree
+    detail: 1 matched, 0 not linked

@@ -2,11 +2,11 @@
 
 A design for the part of the project that looks for new and changed legal material on the internet: new cases, laws, regulations, compacts and their amendments, changes to nations' constitutions and codes, new court and contact details, and the rest of what the site holds. Trevor Goldsmith asked for it on Nov. 26, 2026 ("a special worker that will analyze the Internet for new documents, cases, and information that we should add to the website. Changes to compacts, laws, etc."), asked that it cover every collection the site has, and asked that it be modular so it grows as new kinds of items are added. Decision record [0059](decisions/0059-watch-for-new-legal-sources-with-plug-in-watchers.md) (accepted Nov. 26, 2026) records the choices; this page is the working design and the catalog of watchers, and is meant to be kept current as watchers are added.
 
-Nothing on this page is built yet. Statements about how a source behaves were checked by request from the project's cloud environment on Nov. 26, 2026, unless a citation says otherwise. Estimates of volume and cost are the project's own arithmetic from those counts and are labeled as estimates.
+Phase 1 is being built (see "Built so far" below); the rest is design. Statements about how a source behaves were checked by request from the project's cloud environment on Nov. 26, 2026, unless a citation says otherwise. Estimates of volume and cost are the project's own arithmetic from those counts and are labeled as estimates.
 
 ## In short
 
-- **One new Worker, many small watchers.** A watch Worker (`model-tribal-adr-code-watch`, or `tribal-law-project-watch` if the Workers are renamed first) runs plug-in modules called watchers. A watcher knows one source: how to ask it what is new since last time, and which collections its items belong to. Adding a source or a collection means adding one watcher file and one line in the watcher list, the same way a new data set adds one entry to the collections registry (`site/src/lib/server/collections.ts`).
+- **One new Worker, many small watchers.** A watch Worker (`tribal-law-project-watch`, named like the other Workers since they were renamed on Nov. 26, 2026) runs plug-in modules called watchers. A watcher knows one source: how to ask it what is new since last time, and which collections its items belong to. Adding a source or a collection means adding one watcher file and one line in the watcher list, the same way a new data set adds one entry to the collections registry (`site/src/lib/server/collections.ts`).
 - **Feeds and APIs first, pages last.** Federal Register, eCFR, GovInfo and Congress.gov have APIs that answer "what changed since this date"; NIGC publishes a sitemap with a modified date for every document; alert services can email the project. Page watching (fetching a page and comparing its text with last time) is the fallback, used mainly for nations' own sites, and is slow and polite.
 - **Scripts decide first.** Every candidate goes through script rules (identifiers, agency, C.F.R. part, nation name matching, known-record lookup). Only the ones the rules cannot settle go to a cheap model (Claude Haiku), and only the hard ones (does this amend a compact we hold, is this a child case) go to the top model.
 - **Nothing publishes without a person.** Candidates land in a review queue in the workspace (`/workspace/watch`). A person accepts, links to an existing record, or dismisses each one. Accepted items become record drafts that go through a pull request like any other record, and start as Unverified. The watcher never writes a quote.
@@ -92,7 +92,7 @@ Candidates and each watcher's cursor live in the site's D1 database (new tables 
 
 ### Dedupe against the records we have
 
-The Worker cannot read `content/`, so each site build writes an index of known identifiers, read by the watch Worker through a service binding to the site (an internal route, not public):
+The Worker cannot read `content/` while it runs, so its own build writes an index of known identifiers and bundles it (`site/watch/make-known-identifiers.ts`); Workers Builds rebuilds the Worker when the records change. The index is about 700 KB compressed, so it is kept out of the website's bundle. It holds:
 
 - Federal Register document numbers (`citation.number`, such as "FR Doc. 2022-01789"), volume and page.
 - U.S. Reports volume and page, docket numbers, CourtListener cluster numbers (the `courtlistener` block).
@@ -187,6 +187,7 @@ Collections are the identifiers in the collections registry. Nation page parts a
 | Native Nations (`native-nations`); recognition | `federal-register` (the yearly list of recognized entities, usually in January, and acknowledgment findings); `interior-pages` (Office of Federal Acknowledgment); by-hand for state recognition lists | A new or renamed entity on the list becomes a candidate to add or rename a profile; state lists are link only. |
 | Governing Document Histories (`governing-documents`), Constitutions (`tribal-constitutions`), Codes and Laws (`tribal-codes`) | `nation-sites`; `cited-links`; `federal-register` (liquor and other ordinances the Bureau of Indian Affairs publishes); `nigc` (gaming ordinances) | A changed text becomes a new version of the document history (decision record 0018) with `changes: not-compared` until compared. Hosting: serve (governing documents), within each nation's restrictions. |
 | Compacts and Agreements (`intergovernmental-agreements`) | `federal-register` (approvals, "deemed approved" notices, extensions, amendments, Secretarial Procedures); `interior-pages` (BIA compact list and texts); by-hand for state gaming agencies | The most common kind of change, for example the Federal Register notices extending the Picayune Rancheria of Chukchansi Indians and Flandreau Santee Sioux Tribe compacts (Nov. 18 and Oct. 21, 2026); 344 Federal Register documents mention a "Class III Gaming Compact". |
+| Oklahoma State-Tribal Agreements (`oklahoma-state-tribal-agreements`) | `oklahoma-register` (planned, phase 2) | The Oklahoma Secretary of State's register data file (`json/dataTribal.json`), compared by file number; a new file number becomes a candidate record with its filed PDF. Read today by `scripts/agreements/oklahoma_register.py`. Hosting: serve (decision record 0060). |
 | Stories (`stories`) | Not watched | Stories come from people, with their consent and their nations' protocols (decision records 0019, 0036). |
 | Contacts (`contacts`) | `leaders-directory` (by hand until the directory accepts scripts); `nation-sites` | Office details only. Leaders' personal names stay off the public site (decision record 0051). Claimed nation pages are kept by their teams (0041), so changes for those go to the team as a suggestion. |
 | Government (`governance`, `government_structure`) | `nation-sites`; document history changes | Facts from governing documents (decision record 0042). |
@@ -217,7 +218,8 @@ Collections are the identifiers in the collections registry. Nation page parts a
 | Collection | Watchers | Notes |
 | --- | --- | --- |
 | U.S. Supreme Court Cases (`supreme-court-cases`) | `supreme-court`; `courtlistener`; `govinfo` (`USREPORTS`) | Quotes re-checked when official pagination appears. |
-| Other Court Cases (`other-court-cases`) | `courtlistener`; `govinfo` (`USCOURTS`) | State cases are link only (tier 3). |
+| Other Court Cases (`other-court-cases`) | `courtlistener`; `govinfo` (`USCOURTS`) | State court opinions on Indian law are their own collection, below. |
+| State Court Opinions (`state-court-opinions`) | `courtlistener` (planned, phase 2) | The Caselaw Access Project set ends about 2019 and does not change; later opinions come from CourtListener's state appellate courts, found by the same Indian law terms (`scripts/caselaw/state_court_opinions.py`). Child, protection-order and recent estate cases are held for a privacy review before anything is shown or sent to a model (decision record 0060). |
 | Tribal Court Opinions (`tribal-court-opinions`) | `consented-courts` only | The Caselaw Access Project set does not change. Later opinions only from nations that publish them and agree (data roadmap, "By consent"); the watcher's list of courts starts empty. Initials and privacy holds apply before anything is shown or sent to a model. |
 | U.S. Supreme Courts (`supreme-courts`) | Derived | From the Justices. |
 | Courts (`courts`) | See Native nations, courts | |
@@ -276,6 +278,16 @@ These are the project's own estimates from the counts above.
 2. **Model triage and tier 2.** The AI Gateway triage provider (option B), then `nigc`, `interior-pages`, `gao`, `senate-indian-affairs`, `wikidata`, `census`, `journals`, the email driver and the watch address, and `courtlistener` once Free Law Project has answered.
 3. **Nations' own sites and events.** `nation-sites`, `leaders-directory`, `consented-courts`, `events`.
 4. **Tier 3 states.** Link-only watchers for state statutes and cases, possibly on a separate site (Trevor, Nov. 24, 2026).
+
+## Built so far
+
+Phase 1, without the GovInfo, Congress.gov and Supreme Court watchers (they wait on the api.data.gov key) and without the by-hand cards. Setup steps and settings are in [site/watch/README.md](../site/watch/README.md).
+
+- **The Worker** (`site/watch`): a one-minute cron that starts each due watcher as a Workflows instance, a host desk Durable Object per host (robots.txt read daily, including Content-Signal; 5 seconds between requests to government hosts and 30 to others; back-off on 429 and 503), a progress page, and two Service checks rows that read `watch/progress.json` from the bucket.
+- **Watchers:** `federal-register` (the Indian affairs agencies, Title 25 and presidential documents, each weekday hour), `federal-register-search` (every agency; off until model triage runs), `ecfr` (Title 25, 42 C.F.R. parts 136, 136a and 137, 43 C.F.R. part 4, daily; the eCFR's robots.txt bars its full-text endpoints, so changed sections are linked, not copied) and `cited-links` (every original link once in 60 days). The guard test lists every other collection and nation profile field with its reason in `site/watch/watchers/index.ts`.
+- **Storage:** D1 tables `watch_candidates`, `watch_cursors`, `watch_runs`, `watch_pages` and `watch_model_spend`; files under `watch/captures/` in the private bucket, put in line for the scan with purpose `watch-capture`.
+- **Triage:** rules, then the AI Gateway provider (Claude Haiku 5.5, then Claude Opus 5.5 for hard cases and a weekly sample check), which stays off (`WATCH_TRIAGE_PROVIDER=none`) until credits are loaded and the gateway exists. Models see titles, summaries and facts, never file text. Tribal court opinions and child, family and protection order matters are held for the lead author by rule and never sent to a model.
+- **Not built yet:** the review page `/workspace/watch` (Trevor chose mockup A, one table, on Nov. 26, 2026; `/mnt/project-files/design/source-watch-review/`), turning accepted items into record drafts and the daily pull request, and the public `/about/watch` page the Worker's User-Agent names.
 
 ## What Trevor needs to do (when building starts)
 

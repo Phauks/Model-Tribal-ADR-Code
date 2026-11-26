@@ -13,7 +13,7 @@
 </script>
 
 <svelte:head>
-	<title>Hide part of a change · Workspace · Model Tribal ADR Code</title>
+	<title>Hide part of a change · Workspace · Tribal Law Project</title>
 </svelte:head>
 
 <Breadcrumbs

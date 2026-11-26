@@ -1,0 +1,53 @@
+key: mann-v-north-dakota-tax-commissioner-2007
+kind: state-case
+citation:
+  type: legal_case
+  title: Mann v. North Dakota Tax Commissioner
+  authority: North Dakota Supreme Court
+  container-title: N.W.2d
+  volume: '736'
+  page: '464'
+  issued:
+    date-parts:
+    - - 2007
+      - 7
+      - 25
+  URL: https://static.case.law/nw2d/736/html/0464-01.html
+  accessed:
+    date-parts:
+    - - 2026
+      - 11
+      - 26
+original_link: https://static.case.law/nw2d/736/html/0464-01.html
+retrieved: '2026-11-26'
+archives: []
+history:
+  status: live
+  last_checked: '2026-11-26'
+rights:
+  status: no-permission-needed
+  basis: government-edict
+  basis_note: The text of a judicial opinion has no copyright (Georgia v. Public.Resource.Org, Inc., 590 U.S. 255 (2020)). The copy served on this site is the court's opinion only, without the publisher's headnotes, synopsis or other editorial matter (decision record 0060).
+  redistribution: true
+nations_in_case:
+  checked: '2026-11-26'
+  named: []
+jurisdictions:
+- level: state
+  state: ND
+topics:
+- state-court-indian-law
+found_in:
+- 2026-11-26-state-court-indian-law-opinions
+notes: Published at 736 N.W.2d 464; 2007 ND 119. Decided by the North Dakota Supreme Court on July 25, 2007. Found by scripts/caselaw/state_court_opinions.py in the Caselaw Access Project's volumes, with an Indian law term score of 46, at or above 10, the level kept without a reading.
+review:
+  status: unverified
+  by: scripts/caselaw/state_court_opinions.py
+  date: '2026-11-26'
+  checks:
+  - check: 'Indian law case: the term score and, below the score kept without a reading, an AI reader''s judgment of excerpts'
+    result: agree
+    detail: score 46
+  - check: Nations named in the caption, matched to nation records by name
+    result: agree
+    detail: 0 matched, 0 not linked

@@ -145,7 +145,7 @@
 </script>
 
 <svelte:head>
-	<title>Starred · Model Tribal ADR Code</title>
+	<title>Starred · Tribal Law Project</title>
 </svelte:head>
 
 <div class="reading">

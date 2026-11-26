@@ -10,7 +10,7 @@ export const GET: RequestHandler = () => {
 	const light = colorsOf('light');
 	const manifest = {
 		name: siteName,
-		short_name: 'Model ADR Code',
+		short_name: 'Tribal Law',
 		description:
 			'Model provisions and commentary on dispute resolution that Native nations may adapt through their own processes.',
 		lang: 'en',

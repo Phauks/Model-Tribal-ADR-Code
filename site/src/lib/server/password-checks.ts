@@ -34,6 +34,8 @@ function bare(text: string): string {
 
 /** Whole passwords refused because they come from this site, whatever their spacing or capitals. */
 const siteWords = [
+	'tribal law project',
+	'triballawproject',
 	'model tribal adr code',
 	'tribal adr code',
 	'model tribal code',

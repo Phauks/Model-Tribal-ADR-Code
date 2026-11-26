@@ -1,0 +1,97 @@
+key: state-ex-rel-greely-v-confederated-salish-and-kootenai-tribes-of-the-flathead-re-1985
+kind: state-case
+citation:
+  type: legal_case
+  title: State ex rel. Greely v. Confederated Salish & Kootenai Tribes of the Flathead Reservation
+  authority: Montana Supreme Court
+  container-title: Mont.
+  volume: '219'
+  page: '76'
+  issued:
+    date-parts:
+    - - 1985
+      - 12
+      - 18
+  URL: https://static.case.law/mont/219/html/0076-01.html
+  accessed:
+    date-parts:
+    - - 2026
+      - 11
+      - 26
+original_link: https://static.case.law/mont/219/html/0076-01.html
+retrieved: '2026-11-26'
+archives: []
+history:
+  status: live
+  last_checked: '2026-11-26'
+rights:
+  status: no-permission-needed
+  basis: government-edict
+  basis_note: The text of a judicial opinion has no copyright (Georgia v. Public.Resource.Org, Inc., 590 U.S. 255 (2020)). The copy served on this site is the court's opinion only, without the publisher's headnotes, synopsis or other editorial matter (decision record 0060).
+  redistribution: true
+tribes:
+- northern-cheyenne-tribe-of-the-northern-cheyenne-indian-reservation
+- blackfeet-tribe-of-the-blackfeet-indian-reservation-of-montana
+- chippewa-cree-indians-of-the-rocky-boys-reservation
+- confederated-salish-and-kootenai-tribes-of-the-flathead-reservation
+- assiniboine-and-sioux-tribes-of-the-fort-peck-indian-reservation
+- turtle-mountain-band-of-chippewa-indians-of-north-dakota
+nations_in_case:
+  checked: '2026-11-26'
+  named:
+  - nation: northern-cheyenne-tribe-of-the-northern-cheyenne-indian-reservation
+    named_as: Northern Cheyenne Tribe of Northern Cheyenne Reservation
+    role: party
+    historical: true
+    note: Matched by the script to the only nation record sharing this name; not yet checked against the case's history.
+  - nation: blackfeet-tribe-of-the-blackfeet-indian-reservation-of-montana
+    named_as: Blackfeet Indian Nation of the Blackfeet Reservation
+    role: party
+    historical: true
+    note: Matched by the script to the only nation record sharing this name; not yet checked against the case's history.
+  - nation: chippewa-cree-indians-of-the-rocky-boys-reservation
+    named_as: Chippewa-Cree Tribes of the Rocky Boy's Reservation
+    role: party
+    historical: true
+    note: Matched by the script to the only nation record sharing this name; not yet checked against the case's history.
+  - nation: confederated-salish-and-kootenai-tribes-of-the-flathead-reservation
+    named_as: Kootenai Tribes of the Flathead Reservation
+    role: party
+    historical: true
+    note: Matched by the script to the only nation record sharing this name; not yet checked against the case's history.
+  - nation: assiniboine-and-sioux-tribes-of-the-fort-peck-indian-reservation
+    named_as: Fort Peck Reservation
+    role: party
+    historical: true
+    note: Matched by the script to the only nation record sharing this name; not yet checked against the case's history.
+  - nation: turtle-mountain-band-of-chippewa-indians-of-north-dakota
+    named_as: Turtle Mountain Chippewa Tribe
+    role: party
+    historical: true
+    note: Matched by the script to the only nation record sharing this name; not yet checked against the case's history.
+  not_linked:
+  - named_as: Crow Tribe of Indians
+    reason: More than one of today's nations shares this name (crow-creek-sioux-tribe-of-the-crow-creek-reservation, crow-tribe-of-montana); which the case concerns has not been checked.
+  - named_as: Crow Reservation
+    reason: More than one of today's nations shares this name (crow-creek-sioux-tribe-of-the-crow-creek-reservation, crow-tribe-of-montana); which the case concerns has not been checked.
+  - named_as: Crow Tribe of the Crow Reservation
+    reason: More than one of today's nations shares this name (crow-creek-sioux-tribe-of-the-crow-creek-reservation, crow-tribe-of-montana); which the case concerns has not been checked.
+jurisdictions:
+- level: state
+  state: MT
+topics:
+- state-court-indian-law
+found_in:
+- 2026-11-26-state-court-indian-law-opinions
+notes: Published at 219 Mont. 76; 712 P.2d 754. Decided by the Montana Supreme Court on Dec. 18, 1985. Found by scripts/caselaw/state_court_opinions.py in the Caselaw Access Project's volumes, with an Indian law term score of 60, at or above 10, the level kept without a reading.
+review:
+  status: unverified
+  by: scripts/caselaw/state_court_opinions.py
+  date: '2026-11-26'
+  checks:
+  - check: 'Indian law case: the term score and, below the score kept without a reading, an AI reader''s judgment of excerpts'
+    result: agree
+    detail: score 60
+  - check: Nations named in the caption, matched to nation records by name
+    result: missing
+    detail: 6 matched, 3 not linked

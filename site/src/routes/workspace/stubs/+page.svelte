@@ -4,7 +4,8 @@
 	design/stub-pages/): every stub on the site, most mentioned first, as
 	Wikipedia lists its stubs and wanted pages for editors. A court's page is
 	made from the opinions and cases that name it; a case's or law's page is
-	short when its record has no box yet. Expand opens the request form for
+	short when its record has no box yet, and a person's page when it holds
+	only the treaties the person signed. Expand opens the request form for
 	that page (src/lib/stubs.ts).
 -->
 <script lang="ts">
@@ -18,7 +19,7 @@
 
 	let { data }: PageProps = $props();
 
-	const kindLabels = { court: 'Court', case: 'Case', law: 'Law' } as const;
+	const kindLabels = { court: 'Court', case: 'Case', law: 'Law', person: 'Person' } as const;
 	const madeLabels = { references: 'Made from references', short: 'Short page' } as const;
 
 	const columns: TableColumn[] = [
@@ -44,7 +45,7 @@
 </script>
 
 <svelte:head>
-	<title>Stubs · Workspace · Model Tribal ADR Code</title>
+	<title>Stubs · Workspace · Tribal Law Project</title>
 </svelte:head>
 
 <Breadcrumbs trail={[{ label: 'Workspace', href: '/workspace' }]} />

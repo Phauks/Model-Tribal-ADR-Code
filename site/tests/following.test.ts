@@ -342,7 +342,7 @@ describe('the email switch', () => {
 		expect(binding.send).toHaveBeenCalledWith(
 			expect.objectContaining({
 				to: 'reader@example.org',
-				from: { email: 'updates@site.example', name: 'Model Tribal ADR Code' },
+				from: { email: 'updates@site.example', name: 'Tribal Law Project' },
 				headers: { 'List-Unsubscribe': '<https://site.example/following/email-off?token=token-token-token-token>' },
 				text: expect.stringContaining('What changed: https://site.example/essays/x/history')
 			})

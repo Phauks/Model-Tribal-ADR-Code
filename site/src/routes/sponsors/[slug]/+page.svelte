@@ -31,7 +31,7 @@
 </script>
 
 <svelte:head>
-	<title>{sponsor.name} · Sponsors · Model Tribal ADR Code</title>
+	<title>{sponsor.name} · Sponsors · Tribal Law Project</title>
 </svelte:head>
 
 <InfoPage title={sponsor.name ?? 'A sponsor'} lead={sponsor.oneLine ?? undefined} {picture} {glance} trail={[{ label: 'Sponsorship', href: '/sponsor' }]}>

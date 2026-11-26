@@ -72,7 +72,7 @@ export function landAreasGeoJson(): SourcedCollection<Polygon | MultiPolygon> {
 	const metadata = (landAreasTopology as { metadata?: { retrieved?: string; file?: string } }).metadata;
 	return {
 		type: 'FeatureCollection',
-		source: `U.S. Census Bureau, 2020 cartographic boundary file of American Indian/Alaska Native/Native Hawaiian areas, 1:500,000 (${metadata?.file ?? ''}), simplified for a national map by the Model Tribal ADR Code project`,
+		source: `U.S. Census Bureau, 2020 cartographic boundary file of American Indian/Alaska Native/Native Hawaiian areas, 1:500,000 (${metadata?.file ?? ''}), simplified for a national map by the Tribal Law Project`,
 		retrieved: metadata?.retrieved,
 		note: 'The Census Bureau’s areas, not a statement of any nation’s territory. Hawaiian home lands and areas a nation asked to leave off the map are left out.',
 		features: shapes(landAreasTopology, 'areas')
@@ -94,7 +94,7 @@ export function regionsGeoJson(): SourcedCollection<Polygon | MultiPolygon> {
 	const metadata = (regionsTopology as { metadata?: { retrieved?: string; service?: string } }).metadata;
 	return {
 		type: 'FeatureCollection',
-		source: `U.S. Department of the Interior, Bureau of Indian Affairs, Branch of Geospatial Support, BIA Regions (${metadata?.service ?? ''}), simplified for a national map by the Model Tribal ADR Code project`,
+		source: `U.S. Department of the Interior, Bureau of Indian Affairs, Branch of Geospatial Support, BIA Regions (${metadata?.service ?? ''}), simplified for a national map by the Tribal Law Project`,
 		retrieved: metadata?.retrieved,
 		note: 'The Bureau’s administrative regions, not the lands of any nation.',
 		features: shapes(regionsTopology, 'regions').map((item) => ({

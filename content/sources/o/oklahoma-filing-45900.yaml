@@ -1,0 +1,52 @@
+key: oklahoma-filing-45900
+kind: intergovernmental-agreement
+citation:
+  type: document
+  title: 'Seminole Nation of Oklahoma and State of Oklahoma: letter of intent to negotiate tobacco tax compact'
+  author:
+  - literal: The Seminole Nation of Oklahoma
+  - literal: State of Oklahoma
+  container-title: Oklahoma Secretary of State, Tribal Compacts and Agreements
+  number: File 45900
+  URL: https://execleg.sos.ok.gov/documents/filelog/88919.pdf
+  accessed:
+    date-parts:
+    - - 2026
+      - 11
+      - 26
+  issued:
+    date-parts:
+    - - 2012
+      - 12
+      - 28
+original_link: https://execleg.sos.ok.gov/documents/filelog/88919.pdf
+retrieved: '2026-11-26'
+archives: []
+history:
+  status: live
+  last_checked: '2026-11-26'
+rights:
+  status: no-permission-needed
+  basis: fact-only
+  basis_note: Facts are recorded from the register. The State's filed copy, a public record of the Oklahoma Secretary of State, is served on this site (decision record 0060); a nation can ask to have it taken down.
+  redistribution: true
+tribes:
+- the-seminole-nation-of-oklahoma
+jurisdictions:
+- level: multiple
+  note: Agreement filed with the Oklahoma Secretary of State.
+topics:
+- oklahoma-state-tribal-agreement
+- tobacco-tax
+found_in:
+- 2026-11-26-oklahoma-state-tribal-agreements
+notes: Oklahoma Secretary of State file 45900, filed Dec. 28, 2012. The register's title reads “Governor's Office Tribal-State Tobacco Compact Seminole Nation of Oklahoma” and its description “Letter of intent to negotiate a new tobacco compact”. The register line reads as a letter or notice, such as a notice of intent to negotiate. The filed copy is a scan with no text layer; this record's facts come from the register's own title and description, read by script and by an AI reader, not from the scan. The date is the filing date, not the signing date.
+review:
+  status: unverified
+  by: scripts/agreements/oklahoma_register.py
+  date: '2026-11-26'
+  checks:
+  - check: 'Nations named in the register line: the script''s reading and an AI reader''s'
+    result: agree
+  - check: 'Subject: the script''s reading of the register title and an AI reader''s'
+    result: agree

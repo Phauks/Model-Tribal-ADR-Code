@@ -21,7 +21,7 @@
 </script>
 
 <svelte:head>
-	<title>Verify File · Model Tribal ADR Code</title>
+	<title>Verify File · Tribal Law Project</title>
 </svelte:head>
 
 <div class="reading">

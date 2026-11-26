@@ -104,6 +104,8 @@ export interface SourceRecord {
 	original_link?: string;
 	/** The nations a source is about, by profile id. */
 	tribes?: string[];
+	/** Free tags (schemas/source.schema.json), such as "oklahoma-state-tribal-agreement". */
+	topics?: string[];
 	/** For a court case: each nation it names, how, and in what role (schemas/source.schema.json). */
 	nations_in_case?: NationsInCase;
 	archives?: { link?: string; url?: string; captured?: string }[];
@@ -203,7 +205,8 @@ export interface NationRecord {
 	names: {
 		official: string;
 		official_source?: string;
-		self_designation?: (CitedFact & { name: string; language_tag?: string })[];
+		self_designation?: (CitedFact & { name: string; language_tag?: string; romanized?: string })[];
+		alternate?: (CitedFact & { name: string })[];
 		former?: (CitedFact & { name: string })[];
 		pronunciation?: (CitedFact & {
 			name: string;
@@ -667,4 +670,13 @@ export function publicCopyFor(link: string | undefined): PublicCopy | undefined 
 	publicCopyLinks ??= copiesByLink(indexedCopies());
 	const copy = publicCopyLinks.get(matching);
 	return copy && !isWithheld(copy) ? copy : undefined;
+}
+
+/** The SHA-256 of every file in the capture index, for the source watch's known-identifiers index (src/lib/server/watch/known-build.ts). */
+export function captureIndexSha256s(): string[] {
+	const indexPath = 'research/capture-index.csv';
+	if (!existsSync(path.join(repositoryRoot, indexPath))) return [];
+	return parseCsv(readText(indexPath))
+		.map((row) => row.sha256)
+		.filter((sha256) => /^[0-9a-f]{64}$/.test(sha256 ?? ''));
 }

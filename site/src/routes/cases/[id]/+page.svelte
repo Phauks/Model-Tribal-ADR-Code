@@ -14,6 +14,7 @@
 	import ImpactAccounts from '#lib/components/ImpactAccounts.svelte';
 	import RecordBoxSections from '#lib/components/RecordBoxSections.svelte';
 	import RecordPage from '#lib/components/RecordPage.svelte';
+	import SavedText from '#lib/components/SavedText.svelte';
 	import SourceList from '#lib/components/SourceList.svelte';
 	import StubBadge from '#lib/components/StubBadge.svelte';
 	import StubNote from '#lib/components/StubNote.svelte';
@@ -35,7 +36,7 @@
 </script>
 
 <svelte:head>
-	<title>{data.name} · Cases · Model Tribal ADR Code</title>
+	<title>{data.name} · Cases · Tribal Law Project</title>
 	<meta name="description" content="{data.name}, {data.citation}: what the court decided, its opinions, the nations it names and where to read it." />
 </svelte:head>
 
@@ -103,6 +104,8 @@
 			<p class="case-reading">{@html data.readingHtml}</p>
 		</Collapsible>
 	{/if}
+
+	{#if data.text}<SavedText file={data.text.file} isPdf={data.text.isPdf} name={data.name} identifier="case-text" />{/if}
 
 	{#if citedCount > 0}
 		<Collapsible heading="On this site" identifier="on-this-site" count={citedCount}>

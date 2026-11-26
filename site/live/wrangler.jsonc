@@ -14,7 +14,7 @@
 // file there. No secret is stored in GitHub (decision record 0006).
 {
 	"$schema": "../node_modules/wrangler/config-schema.json",
-	"name": "model-tribal-adr-code-live",
+	"name": "tribal-law-project-live",
 	"main": "worker.ts",
 	"compatibility_date": "2026-11-20",
 	// No public address: only the website's binding reaches the rooms.

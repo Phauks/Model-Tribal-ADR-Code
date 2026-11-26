@@ -23,7 +23,8 @@ describe('Biographies of Native people', () => {
 		]);
 		expect(page.picture?.src).toBe('/biographies/portraits/crow-dog.jpg');
 		expect(page.sources.map((source) => source.key)).toEqual(['ex-parte-crow-dog']);
-	});
+		// The first call reads every record (about 27,000), which takes 15 to 30 seconds on a CI runner.
+	}, 60_000);
 
 	it('lists the people with a page on their case and their nation', () => {
 		expect(peopleInCase('ex-parte-crow-dog').map((person) => person.name)).toEqual(['Crow Dog', 'Spotted Tail']);
@@ -96,5 +97,22 @@ describe('Biographies of Native people', () => {
 				})
 			]
 		});
+	});
+
+	it('gives the people who signed treaties for the United States a page, and links a President to his own', () => {
+		const cass = biographyPage('lewis-cass')!;
+		expect(cass.treaties.length).toBeGreaterThan(10);
+		expect(cass.treaties.every((item) => item.signedFor === 'United States')).toBe(true);
+		expect(signersOfTreaty(cass.treaties[0].key).map((person) => person.name)).toContain('Lewis Cass');
+		const jackson = biographyPage('andrew-jackson-united-states')!;
+		expect(jackson.glance.find((group) => group.field === 'office')?.items[0].link).toBe('/supreme-court/presidents/andrew-jackson');
+		// The Makah sub-chief the 1855 treaty prints as Andrew Jackson keeps his own page, with no President link.
+		expect(biographyPage('andrew-jackson')!.glance.find((group) => group.field === 'office')).toBeUndefined();
+	});
+
+	it('marks a page that holds only treaty signings as a stub, and no other', () => {
+		expect(biographyPage('little-robe')!.stub).toEqual({ kind: 'person', record: 'biographies/little-robe' });
+		expect(biographyPage('lewis-cass')!.stub?.kind).toBe('person');
+		expect(biographyPage('crow-dog')!.stub).toBeUndefined();
 	});
 });

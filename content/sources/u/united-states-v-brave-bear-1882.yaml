@@ -1,0 +1,52 @@
+key: united-states-v-brave-bear-1882
+kind: territorial-case
+citation:
+  type: legal_case
+  title: United States v. Brave Bear
+  authority: Supreme Court of Dakota
+  container-title: Dakota
+  volume: '3'
+  page: '34'
+  issued:
+    date-parts:
+    - - 1882
+      - 5
+  URL: https://static.case.law/dakota/3/html/0034-01.html
+  accessed:
+    date-parts:
+    - - 2026
+      - 11
+      - 26
+original_link: https://static.case.law/dakota/3/html/0034-01.html
+retrieved: '2026-11-26'
+archives: []
+history:
+  status: live
+  last_checked: '2026-11-26'
+rights:
+  status: no-permission-needed
+  basis: government-edict
+  basis_note: The text of a judicial opinion has no copyright (Georgia v. Public.Resource.Org, Inc., 590 U.S. 255 (2020)). The copy served on this site is the court's opinion only, without the publisher's headnotes, synopsis or other editorial matter (decision record 0060).
+  redistribution: true
+nations_in_case:
+  checked: '2026-11-26'
+  named: []
+jurisdictions:
+- level: other
+  note: Dakota Territory
+topics:
+- state-court-indian-law
+found_in:
+- 2026-11-26-state-court-indian-law-opinions
+notes: Published at 3 Dakota 34. Decided by the Supreme Court of Dakota on 1882. Found by scripts/caselaw/state_court_opinions.py in the Caselaw Access Project's volumes, with an Indian law term score of 9; an AI reader read excerpts and judged it an Indian law case (criminal jurisdiction in Indian country, reservation boundaries).
+review:
+  status: unverified
+  by: scripts/caselaw/state_court_opinions.py
+  date: '2026-11-26'
+  checks:
+  - check: 'Indian law case: the term score and, below the score kept without a reading, an AI reader''s judgment of excerpts'
+    result: agree
+    detail: 'score 9; reader: criminal jurisdiction in Indian country, reservation boundaries'
+  - check: Nations named in the caption, matched to nation records by name
+    result: agree
+    detail: 0 matched, 0 not linked

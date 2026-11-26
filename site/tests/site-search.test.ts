@@ -6,6 +6,8 @@ const entries: SearchEntry[] = [
 	{ kind: 'nation', title: 'Paiute Indian Tribe of Utah', detail: 'Utah', link: '/nations/paiute-utah' },
 	{ kind: 'nation', title: 'Cherokee Nation', also: ['ᏣᎳᎩᎯ ᎠᏰᎵ'], detail: 'Oklahoma', link: '/nations/cherokee' },
 	{ kind: 'nation', title: 'Native Village of Ekwok', detail: 'Alaska', link: '/nations/ekwok' },
+	{ kind: 'law', title: '25 U.S.C. § 1901. Congressional findings', detail: 'Chapter 21', link: '/laws/usc-25-chapter-21#sec-1901' },
+	{ kind: 'law', title: 'Indian Child Welfare Act of 1978', also: ['ICWA'], detail: '25 USC 1901', link: '/laws/indian-child-welfare-act-1978' },
 	{ kind: 'term', title: 'Peacemaking', detail: 'A process of talking through a dispute', link: '/glossary/peacemaking' }
 ];
 
@@ -34,5 +36,10 @@ describe('searchEntries', () => {
 
 	it('ignores case and accents', () => {
 		expect(searchEntries(entries, 'PEÁCEMAKING').map((result) => result.link)).toEqual(['/glossary/peacemaking']);
+	});
+
+	it('reads initialisms with or without their periods', () => {
+		expect(searchEntries(entries, '25 usc 1901').map((result) => result.link)).toEqual(['/laws/usc-25-chapter-21#sec-1901', '/laws/indian-child-welfare-act-1978']);
+		expect(searchEntries(entries, '25 U.S.C. 1901').map((result) => result.link)).toEqual(['/laws/usc-25-chapter-21#sec-1901', '/laws/indian-child-welfare-act-1978']);
 	});
 });

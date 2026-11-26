@@ -159,7 +159,7 @@
 </script>
 
 <svelte:head>
-	<title>{page.officialName} · Nations · Model Tribal ADR Code</title>
+	<title>{page.officialName} · Nations · Tribal Law Project</title>
 </svelte:head>
 
 <!-- For someone on the nation's team: Edit, History and Your nation's team in the masthead (decision record 0041). -->

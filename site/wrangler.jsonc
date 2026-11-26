@@ -9,7 +9,7 @@
 // points Wrangler at the generated configuration.
 {
 	"$schema": "./node_modules/wrangler/config-schema.json",
-	"name": "model-tribal-adr-code",
+	"name": "tribal-law-project-site",
 	"compatibility_date": "2026-11-20",
 	// The site's address is the project domain, triballawproject.org, a
 	// Custom Domain of this Worker (Cloudflare makes its DNS record and
@@ -67,7 +67,7 @@
 		}
 	],
 	// Live editing rooms, one per essay. They run in their own Worker,
-	// model-tribal-adr-code-live (live/wrangler.jsonc), so that this site's
+	// tribal-law-project-live (live/wrangler.jsonc), so that this site's
 	// deploys do not close people's live connections (COLLABORATION.md,
 	// "Essays").
 	"durable_objects": {
@@ -75,7 +75,7 @@
 			{
 				"name": "essayRooms",
 				"class_name": "EssayRoom",
-				"script_name": "model-tribal-adr-code-live"
+				"script_name": "tribal-law-project-live"
 			},
 			// The virus scanner's desk (site/scanner). A sent file wakes it, so
 			// the check starts at once instead of at its next minute round
@@ -83,7 +83,7 @@
 			{
 				"name": "scanDesks",
 				"class_name": "ScanDesk",
-				"script_name": "model-tribal-adr-code-scanner"
+				"script_name": "tribal-law-project-scanner"
 			}
 		]
 	},
@@ -94,7 +94,7 @@
 	"services": [
 		{
 			"binding": "waybackWorker",
-			"service": "model-tribal-adr-code-wayback"
+			"service": "tribal-law-project-wayback"
 		}
 	],
 	// Limits how often one address can send the request form: five a minute
@@ -176,7 +176,7 @@
 		// in the dashboard, never here.
 		"MAIL_DOMAIN": "",
 		"MAIL_NOTICE_ADDRESS": "",
-		"MAIL_SENDER_NAME": "Model Tribal ADR Code",
+		"MAIL_SENDER_NAME": "Tribal Law Project",
 		"OUTREACH_CARRIER": "",
 		"OUTREACH_FROM": "",
 		"OUTREACH_REPLY_TO": "",

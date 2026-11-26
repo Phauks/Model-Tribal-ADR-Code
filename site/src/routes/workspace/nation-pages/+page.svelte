@@ -74,7 +74,7 @@
 </script>
 
 <svelte:head>
-	<title>Changes made by nations · Workspace · Model Tribal ADR Code</title>
+	<title>Changes made by nations · Workspace · Tribal Law Project</title>
 </svelte:head>
 
 <h1>Changes made by nations</h1>

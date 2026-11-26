@@ -1,0 +1,53 @@
+key: town-of-ledyard-v-wms-gaming-inc-2018
+kind: state-case
+citation:
+  type: legal_case
+  title: Town of Ledyard v. WMS Gaming, Inc.
+  authority: Connecticut Supreme Court
+  container-title: A.3d
+  volume: '191'
+  page: '983'
+  issued:
+    date-parts:
+    - - 2018
+      - 9
+      - 4
+  URL: https://static.case.law/a3d/191/html/0983-01.html
+  accessed:
+    date-parts:
+    - - 2026
+      - 11
+      - 26
+original_link: https://static.case.law/a3d/191/html/0983-01.html
+retrieved: '2026-11-26'
+archives: []
+history:
+  status: live
+  last_checked: '2026-11-26'
+rights:
+  status: no-permission-needed
+  basis: government-edict
+  basis_note: The text of a judicial opinion has no copyright (Georgia v. Public.Resource.Org, Inc., 590 U.S. 255 (2020)). The copy served on this site is the court's opinion only, without the publisher's headnotes, synopsis or other editorial matter (decision record 0060).
+  redistribution: true
+nations_in_case:
+  checked: '2026-11-26'
+  named: []
+jurisdictions:
+- level: state
+  state: CT
+topics:
+- state-court-indian-law
+found_in:
+- 2026-11-26-state-court-indian-law-opinions
+notes: Published at 191 A.3d 983; 330 Conn. 75. Decided by the Connecticut Supreme Court on Sept. 4, 2018. Found by scripts/caselaw/state_court_opinions.py in the Caselaw Access Project's volumes, with an Indian law term score of 6; an AI reader read excerpts and judged it an Indian law case (tax on tribal gaming slot machines).
+review:
+  status: unverified
+  by: scripts/caselaw/state_court_opinions.py
+  date: '2026-11-26'
+  checks:
+  - check: 'Indian law case: the term score and, below the score kept without a reading, an AI reader''s judgment of excerpts'
+    result: agree
+    detail: 'score 6; reader: tax on tribal gaming slot machines'
+  - check: Nations named in the caption, matched to nation records by name
+    result: agree
+    detail: 0 matched, 0 not linked

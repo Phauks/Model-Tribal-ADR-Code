@@ -33,7 +33,7 @@
 </script>
 
 <svelte:head>
-	<title>Courts · Model Tribal ADR Code</title>
+	<title>Courts · Tribal Law Project</title>
 	<meta name="description" content="The Tribal, federal, state and territorial courts whose opinions or cases are on this site." />
 </svelte:head>
 

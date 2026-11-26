@@ -1,0 +1,128 @@
+key: missouri-kansas-and-texas-railway-co-v-united-states-1876
+kind: federal-case
+citation:
+  type: legal_case
+  title: Missouri, Kansas & Texas Railway Co. v. United States
+  authority: Supreme Court of the United States
+  container-title: U.S.
+  volume: '92'
+  page: '760'
+  issued:
+    date-parts:
+    - - 1876
+      - 4
+      - 10
+  URL: https://www.loc.gov/item/usrep092760/
+  accessed:
+    date-parts:
+    - - 2026
+      - 11
+      - 26
+caption:
+  printed: Missouri, Kansas, and Texas Railway Company v. United States
+  source: https://tile.loc.gov/storage-services/service/ll/usrep/usrep092/usrep092760/usrep092760.pdf
+  checked: '2026-11-26'
+opinions:
+  source: https://tile.loc.gov/storage-services/service/ll/usrep/usrep092/usrep092760/usrep092760.pdf
+  checked: '2026-11-26'
+  list:
+  - kind: majority
+    justice: David Davis
+    page: 760
+original_link: https://www.loc.gov/item/usrep092760/
+retrieved: '2026-11-26'
+history:
+  status: live
+  last_checked: '2026-11-26'
+supreme_court:
+  court: Waite Court
+  natural_court: Waite Court (1874-1877)
+  decision_type: majority opinion
+  vote:
+    majority: 6
+    minority: 3
+  justices:
+  - name: Morrison Remick Waite
+    vote: majority
+  - name: Nathan Clifford
+    vote: majority
+  - name: Noah Haynes Swayne
+    vote: minority
+  - name: Samuel Freeman Miller
+    vote: majority
+  - name: David Davis
+    vote: majority
+    opinion: majority
+  - name: Stephen Johnson Field
+    vote: minority
+  - name: William Strong
+    vote: minority
+  - name: Joseph P. Bradley
+    vote: majority
+  - name: Ward Hunt
+    vote: majority
+  source: http://scdb.wustl.edu/_brickFiles/Legacy_07/SCDB_Legacy_07_justiceCentered_Citation.csv.zip
+  note: From the Supreme Court Database, case 1875-215. The report prints Justice Davis's opinion and that Justices Swayne, Field and Strong dissented.
+  checked: '2026-11-26'
+reading_links:
+  checked: '2026-11-26'
+  links:
+  - site: library-of-congress
+    label: Library of Congress
+    access: official
+    link: https://www.loc.gov/item/usrep092760/
+  - site: justia
+    label: Justia
+    access: free
+    link: https://supreme.justia.com/cases/federal/us/92/760/
+    unchecked: true
+  - site: google-scholar
+    label: Google Scholar
+    access: free
+    link: https://scholar.google.com/scholar?hl=en&as_sdt=2006&q=%2292%20U.S.%20760%22
+    unchecked: true
+  - site: westlaw
+    label: Westlaw
+    access: subscription
+    link: https://1.next.westlaw.com/Link/Document/FullText?findType=Y&cite=92%20U.S.%20760
+    unchecked: true
+  - site: lexis
+    label: Lexis
+    access: subscription
+    link: https://advance.lexis.com/api/search?q=92%20U.S.%20760
+    unchecked: true
+rights:
+  status: no-permission-needed
+  basis: us-government-work
+  basis_note: Opinions of federal courts are works of the U.S. government (17 U.S.C. § 105); the host site's own additions are not reproduced.
+  redistribution: true
+found_in:
+- 2026-11-24-supreme-court-native-cases
+notes: 'Full citation: Missouri, Kan. & Tex. Ry. Co. v. United States, 92 U.S. 760 n. (1876). Official report scan: https://tile.loc.gov/storage-services/service/ll/usrep/usrep092/usrep092760/usrep092760.pdf. Decided in a note at the end of Leavenworth, Lawrence & Galveston Railroad Co. v. United States, 92 U.S. 733 (1876), which it follows: the claimed land grant lay within the Osage reservation. The report prints no date for the note case; the decision date is the Database''s, the day the Court decided Leavenworth (Supreme Court Library table of decision dates). Not yet read by a person.'
+tribes: []
+nations_in_case:
+  checked: '2026-11-26'
+  named: []
+review:
+  status: unverified
+  by: Claude, by hand from the official report (thread "Add the remaining Supreme Court Native cases")
+  date: '2026-11-26'
+  checks:
+  - check: cite
+    result: agree
+    detail: Database 92 U.S. 760n "MISSOURI, KANSAS, AND TEXAS RAILWAY COMPANY v. UNITED STATES"; the Library of Congress files the note's page as usrep092760
+  - check: scan
+    result: confirmed
+    detail: Library of Congress scan usrep092760 (1 page) prints p. 760 with the note case
+  - check: caption
+    result: confirmed
+    detail: The report prints "Missouri, Kansas, and Texas Railway Company v. United States, appeal from the Circuit Court of the United States for the District of Kansas" in the note on p. 760
+  - check: decided
+    result: missing
+    detail: The report prints no date for the note case; Database 1876-04-10, the date the Supreme Court Library's table gives for Leavenworth, L. & G. R. Co. v. United States, 92 U.S. 733
+  - check: opinions
+    result: confirmed
+    detail: 'The report prints "Mr. Justice Davis delivered the opinion of the court." on p. 760; Database writer: Davis'
+  - check: bench
+    result: confirmed
+    detail: The report prints "Mr. Justice Swayne, Mr. Justice Field, and Mr. Justice Strong dissented" on p. 760; the Database counts those three in the minority

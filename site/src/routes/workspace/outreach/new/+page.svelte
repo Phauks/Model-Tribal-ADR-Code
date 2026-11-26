@@ -94,7 +94,7 @@
 </script>
 
 <svelte:head>
-	<title>New outreach batch · Outreach · Workspace · Model Tribal ADR Code</title>
+	<title>New outreach batch · Outreach · Workspace · Tribal Law Project</title>
 </svelte:head>
 
 <p class="small back"><a href="/workspace/outreach">Outreach</a></p>

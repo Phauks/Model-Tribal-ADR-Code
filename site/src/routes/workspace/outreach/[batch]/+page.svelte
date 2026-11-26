@@ -63,7 +63,7 @@
 {/snippet}
 
 <svelte:head>
-	<title>{batch.name} · Outreach · Workspace · Model Tribal ADR Code</title>
+	<title>{batch.name} · Outreach · Workspace · Tribal Law Project</title>
 </svelte:head>
 
 <Breadcrumbs

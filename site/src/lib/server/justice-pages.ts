@@ -150,7 +150,8 @@ const opinionWords: Record<string, string> = {
 	dissent: 'Dissenting opinion',
 	'dissent in part': 'Opinion dissenting in part',
 	'coauthored dissent': 'Joint dissenting opinion',
-	'joining the dissent in part': 'Joined the dissent in part'
+	'joining the dissent in part': 'Joined the dissent in part',
+	'in chambers': 'Opinion in chambers'
 };
 
 const written = new Set(Object.keys(opinionWords).filter((kind) => !['concurrence in the result without opinion', 'joining the dissent in part'].includes(kind)));

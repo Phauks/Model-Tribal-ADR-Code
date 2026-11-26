@@ -22,7 +22,7 @@
 </script>
 
 <svelte:head>
-	<title>{problem ? 'Error: ' : ''}Two-step sign-in · Model Tribal ADR Code</title>
+	<title>{problem ? 'Error: ' : ''}Two-step sign-in · Tribal Law Project</title>
 </svelte:head>
 
 <Breadcrumbs trail={[{ label: 'Sign-in and security', href: '/account/security' }]} />
@@ -71,7 +71,7 @@
 				class="scan-code"
 				viewBox="-4 -4 {setUp.scanCode.size + 8} {setUp.scanCode.size + 8}"
 				role="img"
-				aria-label="QR code for adding Model Tribal ADR Code to an authenticator app. The key below does the same."
+				aria-label="QR code for adding Tribal Law Project to an authenticator app. The key below does the same."
 				shape-rendering="crispEdges"
 			>
 				<rect class="scan-code-light" x="-4" y="-4" width={setUp.scanCode.size + 8} height={setUp.scanCode.size + 8} />

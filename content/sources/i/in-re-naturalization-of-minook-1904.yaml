@@ -1,0 +1,52 @@
+key: in-re-naturalization-of-minook-1904
+kind: federal-case
+citation:
+  type: legal_case
+  title: In re Naturalization of Minook
+  authority: United States District Court for the District of Alaska
+  container-title: Alaska
+  volume: '2'
+  page: '200'
+  issued:
+    date-parts:
+    - - 1904
+      - 5
+      - 16
+  URL: https://static.case.law/alaska/2/html/0200-01.html
+  accessed:
+    date-parts:
+    - - 2026
+      - 11
+      - 26
+original_link: https://static.case.law/alaska/2/html/0200-01.html
+retrieved: '2026-11-26'
+archives: []
+history:
+  status: live
+  last_checked: '2026-11-26'
+rights:
+  status: no-permission-needed
+  basis: government-edict
+  basis_note: The text of a judicial opinion has no copyright (Georgia v. Public.Resource.Org, Inc., 590 U.S. 255 (2020)). The copy served on this site is the court's opinion only, without the publisher's headnotes, synopsis or other editorial matter (decision record 0060).
+  redistribution: true
+nations_in_case:
+  checked: '2026-11-26'
+  named: []
+jurisdictions:
+- level: federal
+topics:
+- federal-court-indian-law
+found_in:
+- 2026-11-26-state-court-indian-law-opinions
+notes: Published at 2 Alaska 200. Decided by the United States District Court for the District of Alaska on May 16, 1904. Found by scripts/caselaw/state_court_opinions.py in the Caselaw Access Project's volumes, with an Indian law term score of 8; an AI reader read excerpts and judged it an Indian law case (Alaska Natives as Indians under federal Indian laws, naturalization).
+review:
+  status: unverified
+  by: scripts/caselaw/state_court_opinions.py
+  date: '2026-11-26'
+  checks:
+  - check: 'Indian law case: the term score and, below the score kept without a reading, an AI reader''s judgment of excerpts'
+    result: agree
+    detail: 'score 8; reader: Alaska Natives as Indians under federal Indian laws, naturalization'
+  - check: Nations named in the caption, matched to nation records by name
+    result: agree
+    detail: 0 matched, 0 not linked

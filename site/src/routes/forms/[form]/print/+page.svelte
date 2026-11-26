@@ -6,7 +6,7 @@
 </script>
 
 <svelte:head>
-	<title>{data.title} (to print) · Forms · Model Tribal ADR Code</title>
+	<title>{data.title} (to print) · Forms · Tribal Law Project</title>
 </svelte:head>
 
 <div class="reading">
@@ -21,7 +21,7 @@
 	<FormDocument html={data.html} mode="blank" />
 	{#if data.sendable}
 		<p class="small print-only">
-			Send the signed form as a photo or scan through the Forms page of the Model Tribal ADR Code website.
+			Send the signed form as a photo or scan through the Forms page of the Tribal Law Project website.
 		</p>
 	{/if}
 </div>

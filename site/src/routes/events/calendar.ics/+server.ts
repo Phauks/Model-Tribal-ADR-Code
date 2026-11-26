@@ -13,7 +13,7 @@ export const GET: RequestHandler = async ({ url }) => {
 	const environment = workerEnvironment();
 	const events = environment.database ? await feedEvents(environment.database) : [];
 	const site = siteAddress(environment) ?? url.origin;
-	return new Response(calendarFile(events, site, 'Model Tribal ADR Code events'), {
+	return new Response(calendarFile(events, site, 'Tribal Law Project events'), {
 		headers: { 'content-type': 'text/calendar; charset=utf-8' }
 	});
 };

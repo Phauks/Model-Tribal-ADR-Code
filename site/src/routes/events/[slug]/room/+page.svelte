@@ -12,7 +12,7 @@
 </script>
 
 <svelte:head>
-	<title>Room · {data.event.title} · Events · Model Tribal ADR Code</title>
+	<title>Room · {data.event.title} · Events · Tribal Law Project</title>
 </svelte:head>
 
 <CallBar title={data.event.title} when={data.event.when}>

@@ -17,7 +17,7 @@
 </script>
 
 <svelte:head>
-	<title>Sign-in and security · Model Tribal ADR Code</title>
+	<title>Sign-in and security · Tribal Law Project</title>
 </svelte:head>
 
 <h1>Sign-in and security</h1>

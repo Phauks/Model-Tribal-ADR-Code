@@ -312,7 +312,7 @@ export const actions: Actions = {
 				sponsor: sponsor.identifier,
 				amountInCents: cents,
 				every: frequency === 'monthly' ? 'month' : frequency === 'yearly' ? 'year' : null,
-				description: `Gift to Model Tribal ADR Code from ${sponsor.name}`,
+				description: `Gift to Tribal Law Project from ${sponsor.name}`,
 				successAddress: `${event.url.origin}${here(sponsor, '&gift=thanks')}`,
 				cancelAddress: `${event.url.origin}${here(sponsor)}`
 			});

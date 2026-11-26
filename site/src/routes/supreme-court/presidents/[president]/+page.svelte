@@ -64,7 +64,7 @@
 </script>
 
 <svelte:head>
-	<title>{data.name} · Supreme Court · Model Tribal ADR Code</title>
+	<title>{data.name} · Supreme Court · Tribal Law Project</title>
 	<meta name="description" content="{data.name}, {data.summary}: the Justices appointed and their part in the cases on this site." />
 </svelte:head>
 

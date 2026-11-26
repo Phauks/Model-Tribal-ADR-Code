@@ -14,7 +14,7 @@
 </script>
 
 <svelte:head>
-	<title>Compare versions of {pageName} · Model Tribal ADR Code</title>
+	<title>Compare versions of {pageName} · Tribal Law Project</title>
 	<meta name="robots" content="noindex" />
 </svelte:head>
 

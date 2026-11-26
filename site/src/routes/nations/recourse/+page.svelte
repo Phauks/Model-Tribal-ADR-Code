@@ -153,7 +153,7 @@
 {/snippet}
 
 <svelte:head>
-	<title>Find recourse · Model Tribal ADR Code</title>
+	<title>Find recourse · Tribal Law Project</title>
 	<meta
 		name="description"
 		content="Search the dispute resolution provisions in Native nations' own laws by method, kind of dispute and state."

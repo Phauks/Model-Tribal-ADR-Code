@@ -7,7 +7,7 @@
 </script>
 
 <svelte:head>
-	<title>Delete your account · Model Tribal ADR Code</title>
+	<title>Delete your account · Tribal Law Project</title>
 </svelte:head>
 
 <h1>Delete your account</h1>

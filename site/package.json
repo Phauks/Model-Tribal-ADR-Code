@@ -2,7 +2,7 @@
 	"name": "model-tribal-adr-code-site",
 	"version": "0.0.1",
 	"private": true,
-	"description": "Website for the Model Tribal ADR Code, built with SvelteKit and served by a Cloudflare Worker.",
+	"description": "Website for the Tribal Law Project, built with SvelteKit and served by a Cloudflare Worker.",
 	"license": "MIT",
 	"type": "module",
 	"imports": {
@@ -36,7 +36,8 @@
 		"database:seed:local": "node tools/seed-local-database.mjs",
 		"database:migrate:remote": "wrangler d1 migrations apply database --remote",
 		"database:new-migration": "node tools/new-migration.mjs",
-		"sign-in-link": "node tools/make-sign-in-link.mjs"
+		"sign-in-link": "node tools/make-sign-in-link.mjs",
+		"watch:index": "node watch/make-known-identifiers.ts"
 	},
 	"devDependencies": {
 		"@cloudflare/containers": "^0.3.7",

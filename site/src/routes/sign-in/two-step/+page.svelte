@@ -13,7 +13,7 @@
 </script>
 
 <svelte:head>
-	<title>{problem ? 'Error: ' : ''}Confirm it is you · Model Tribal ADR Code</title>
+	<title>{problem ? 'Error: ' : ''}Confirm it is you · Tribal Law Project</title>
 </svelte:head>
 
 <div class="reading">
@@ -28,7 +28,7 @@
 			You are signing in as <strong>{data.email}</strong>.
 			{backup
 				? 'Type one of the backup codes you saved when you set up two-step sign-in. Each one works once.'
-				: 'Open your authenticator app and type the six-digit code it shows for Model Tribal ADR Code.'}
+				: 'Open your authenticator app and type the six-digit code it shows for Tribal Law Project.'}
 		</p>
 		<form method="post" action="?/confirm" class="panel">
 			<input type="hidden" name="returnTo" value={data.returnTo} />

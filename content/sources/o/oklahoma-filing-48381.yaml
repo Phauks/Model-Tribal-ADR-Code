@@ -1,0 +1,53 @@
+key: oklahoma-filing-48381
+kind: intergovernmental-agreement
+citation:
+  type: document
+  title: 'Quapaw Tribe of Oklahoma and State of Oklahoma: Tar Creek remediation agreement'
+  author:
+  - literal: Quapaw Nation
+  - literal: State of Oklahoma
+  container-title: Oklahoma Secretary of State, Tribal Compacts and Agreements
+  number: File 48381
+  URL: https://execleg.sos.ok.gov/documents/filelog/91448.pdf
+  accessed:
+    date-parts:
+    - - 2026
+      - 11
+      - 26
+  issued:
+    date-parts:
+    - - 2016
+      - 12
+      - 22
+original_link: https://execleg.sos.ok.gov/documents/filelog/91448.pdf
+retrieved: '2026-11-26'
+archives: []
+history:
+  status: live
+  last_checked: '2026-11-26'
+rights:
+  status: no-permission-needed
+  basis: fact-only
+  basis_note: Facts are recorded from the register. The State's filed copy, a public record of the Oklahoma Secretary of State, is served on this site (decision record 0060); a nation can ask to have it taken down.
+  redistribution: true
+tribes:
+- quapaw-nation
+jurisdictions:
+- level: multiple
+  note: Agreement filed with the Oklahoma Secretary of State.
+topics:
+- oklahoma-state-tribal-agreement
+- environment
+found_in:
+- 2026-11-26-oklahoma-state-tribal-agreements
+notes: Oklahoma Secretary of State file 48381, filed Dec. 22, 2016. The register's title reads “Agreement Tribal Compact” and its description “Agreement Between the Quapaw Tribe of Oklahoma and the State of Oklahoma for remediation of contaminated properties at the Tar Creek Superfund site”. The register line reads as an agreement or compact. The filed copy is a scan with no text layer; this record's facts come from the register's own title and description, read by script and by an AI reader, not from the scan. The date is the filing date, not the signing date.
+review:
+  status: unverified
+  by: scripts/agreements/oklahoma_register.py
+  date: '2026-11-26'
+  checks:
+  - check: 'Nations named in the register line: the script''s reading and an AI reader''s'
+    result: agree
+  - check: 'Subject: the script''s reading of the register title and an AI reader''s'
+    result: differs
+    detail: script other, reader environment. The AI reader's reading is used; checked by hand on Nov. 26, 2026.

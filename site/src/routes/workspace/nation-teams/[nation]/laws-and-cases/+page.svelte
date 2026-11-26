@@ -87,7 +87,7 @@
 </script>
 
 <svelte:head>
-	<title>{data.nation.title}’s laws and cases · Workspace · Model Tribal ADR Code</title>
+	<title>{data.nation.title}’s laws and cases · Workspace · Tribal Law Project</title>
 </svelte:head>
 
 <p class="small page-links">

@@ -1,7 +1,7 @@
 <!--
 	@component
 	One Native person in the cases or in a nation's history (Trevor, Nov. 24,
-	2026), on the site's one item layout (InfoPage): the picture and key facts
+	2026), or one who signed treaties for the United States (Nov. 26), on the site's one item layout (InfoPage): the picture and key facts
 	At a glance, the cases the person took part in or is named in, the
 	treaties the person signed, each linked to its page and to the copy of its
 	text the site keeps, and the events of the person's life the sources
@@ -14,6 +14,8 @@
 	import DataTable from '#lib/components/DataTable.svelte';
 	import InfoPage from '#lib/components/InfoPage.svelte';
 	import ReviewStatus from '#lib/components/ReviewStatus.svelte';
+	import StubBadge from '#lib/components/StubBadge.svelte';
+	import StubNote from '#lib/components/StubNote.svelte';
 	import { nationVerification } from '#lib/review-status.ts';
 	import type { TableColumn, TableRow } from '#lib/tables/table-definition.ts';
 	import type { PageProps } from './$types';
@@ -63,7 +65,7 @@
 </script>
 
 <svelte:head>
-	<title>{data.name} · Biographies · Model Tribal ADR Code</title>
+	<title>{data.name} · Biographies · Tribal Law Project</title>
 	<meta name="description" content="{data.name}: {data.lead}" />
 </svelte:head>
 
@@ -80,6 +82,8 @@
 	]}
 >
 	{#snippet status()}
+		<div class="status-badges">
+		{#if data.stub}<StubBadge stub={data.stub} />{/if}
 		<ReviewStatus status={nationVerification(undefined)} description="Review by the nation:">
 			{#if data.nations.length > 0}
 				<p><strong>Unverified.</strong> {nationNames} {data.nations.length === 1 ? 'has' : 'have'} not reviewed this page yet.</p>
@@ -88,6 +92,7 @@
 			{/if}
 			<p class="no-print"><a href={request}>Request a change or removal</a></p>
 		</ReviewStatus>
+		</div>
 	{/snippet}
 
 	{#if data.cases.length > 0}
@@ -128,6 +133,8 @@
 			</ul>
 		</Collapsible>
 	{/if}
+
+	{#if data.stub}<StubNote stub={data.stub} />{/if}
 </InfoPage>
 
 <style>

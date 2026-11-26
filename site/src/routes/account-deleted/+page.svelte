@@ -1,5 +1,5 @@
 <svelte:head>
-	<title>Account deleted · Model Tribal ADR Code</title>
+	<title>Account deleted · Tribal Law Project</title>
 	<meta name="robots" content="noindex" />
 </svelte:head>
 

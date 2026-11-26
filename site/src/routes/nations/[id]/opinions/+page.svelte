@@ -60,7 +60,7 @@
 </script>
 
 <svelte:head>
-	<title>Court opinions · {data.nation.name} · Model Tribal ADR Code</title>
+	<title>Court opinions · {data.nation.name} · Tribal Law Project</title>
 </svelte:head>
 
 <div class="reading">

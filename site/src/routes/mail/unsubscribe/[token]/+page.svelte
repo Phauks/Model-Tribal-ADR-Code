@@ -5,7 +5,7 @@
 </script>
 
 <svelte:head>
-	<title>Stop email from the project · Model Tribal ADR Code</title>
+	<title>Stop email from the project · Tribal Law Project</title>
 	<meta name="robots" content="noindex" />
 </svelte:head>
 
@@ -20,7 +20,7 @@
 		<p class="lead">This link is not valid. It may have been copied only in part.</p>
 		<p>You can also reply “stop” to the message you received, and a person will take your address off the list.</p>
 	{:else}
-		<p class="lead">Press the button to stop all further email from the Model Tribal ADR Code project to the address this message went to.</p>
+		<p class="lead">Press the button to stop all further email from the Tribal Law Project to the address this message went to.</p>
 		<form method="post">
 			<p><button class="button" type="submit">Stop email to this address</button></p>
 		</form>
