@@ -13,7 +13,7 @@ import type { D1Database, R2Bucket } from '@cloudflare/workers-types/index.ts';
 import { readSettings, restrictsAnything } from '../../nation-restrictions.ts';
 import { storeCapture } from './capture.ts';
 import { bucketPageTexts } from './drivers/page.ts';
-import { lookupFor, matchKnown, nationsNamedIn, type KnownIdentifiers, type KnownLookup } from './known.ts';
+import { lookupFor, matchKnown, nationsNamedIn, type KnownIdentifiers, type KnownLookup, type MatchInput } from './known.ts';
 import { ComeBackLater, NotAllowed, politeFetch, type Desks } from './polite-fetch.ts';
 import { applyRules } from './rules.ts';
 import { addCandidate, candidateExists, finishRun, pageMemory, readCursor, startRun, writeCursor, type RunCounts } from './store.ts';
@@ -61,6 +61,14 @@ export async function restrictedNations(database: D1Database): Promise<Set<strin
 		// Without the table (a fresh database), no nation restricts anything yet.
 		return new Set();
 	}
+}
+
+/** A changed regulation section's title, part and section, from the facts the eCFR watcher gives (watch/watchers/ecfr.ts). */
+export function regulationOf(item: FoundItem): MatchInput['regulation'] {
+	if (!item.kind.startsWith('regulation-section')) return null;
+	const { title, part, section } = item.facts ?? {};
+	if ((typeof title !== 'number' && typeof title !== 'string') || typeof section !== 'string') return null;
+	return { title, part: typeof part === 'string' && part ? part : section.split('.')[0], section };
 }
 
 function message(problem: unknown): string {
@@ -121,9 +129,10 @@ export async function runWatcher(watcher: WatcherDefinition, runIdentifier: stri
 				let capture = item.capture ?? null;
 				let noModelText = item.noModelText ?? false;
 				const federalRegisterNumber = typeof item.facts?.documentNumber === 'string' ? item.facts.documentNumber : null;
+				const regulation = regulationOf(item);
 				const nations = nationsNamedIn(lookup, `${item.title} ${item.summary ?? ''}`);
 				const decide = () => {
-					const match = matchKnown(lookup as KnownLookup, { title: item.title, link: item.link ?? item.fileAddress ?? null, federalRegisterNumber, sha256: capture?.sha256 ?? null });
+					const match = matchKnown(lookup as KnownLookup, { title: item.title, link: item.link ?? item.fileAddress ?? null, federalRegisterNumber, sha256: capture?.sha256 ?? null, regulation });
 					return { match, ruled: applyRules({ watcher, item: { ...item, noModelText }, match, nations, restrictedNations: restrictedSet, modelAvailable: dependencies.modelAvailable, now: now() }) };
 				};
 				let { match, ruled } = decide();
