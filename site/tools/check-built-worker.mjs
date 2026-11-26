@@ -4,8 +4,9 @@
 //   node tools/check-built-worker.mjs
 //
 // The Cloudflare adapter makes a Worker with only a fetch handler; the build
-// then wraps it three times (tools/add-scheduled-run.mjs,
-// tools/add-nation-page-changes.mjs, tools/add-mail-handlers.mjs). Those
+// then wraps it four times (tools/add-scheduled-run.mjs,
+// tools/add-nation-page-changes.mjs, tools/add-mail-handlers.mjs,
+// tools/add-edge-cache.mjs). Those
 // steps rely on how the adapter lays out its output, so a new adapter could
 // break them without any error at build time. The adapter's version is
 // pinned in package.json for that reason; this check is what to run after
@@ -32,15 +33,18 @@ const check = (condition, message) => {
 // 1. The entry files wrap one another in the order the build wrote them.
 const workerFolder = path.dirname(builtConfiguration);
 const configuration = JSON.parse(readFileSync(builtConfiguration, 'utf8'));
-const chain = ['mail-entry.js', 'nation-pages-entry.js', 'scheduled-entry.js', 'index.js'];
+const chain = ['edge-cache-entry.js', 'mail-entry.js', 'nation-pages-entry.js', 'scheduled-entry.js', 'index.js'];
 check(configuration.main === chain[0], `The built Worker's main file is ${configuration.main}, not ${chain[0]}`);
 for (const [index, entry] of chain.slice(0, -1).entries()) {
 	const source = readFileSync(path.join(workerFolder, entry), 'utf8');
 	check(source.includes(`'./${chain[index + 1]}'`) || source.includes(`"./${chain[index + 1]}"`), `${entry} does not wrap ${chain[index + 1]}`);
 }
-const mailEntry = readFileSync(path.join(workerFolder, chain[0]), 'utf8');
+check(configuration.cache?.enabled === true, 'Workers Cache is not switched on in the built configuration');
+const edgeEntry = readFileSync(path.join(workerFolder, chain[0]), 'utf8');
+check(edgeEntry.includes('withEdgeCachePolicy(worker)'), `${chain[0]} does not add the edge cache policy`);
+const mailEntry = readFileSync(path.join(workerFolder, chain[1]), 'utf8');
 for (const handler of ['fetch', 'email', 'scheduled', 'queue']) {
-	check(new RegExp(`async ${handler}\\(`).test(mailEntry), `${chain[0]} has no ${handler} handler`);
+	check(new RegExp(`async ${handler}\\(`).test(mailEntry), `${chain[1]} has no ${handler} handler`);
 }
 check(
 	Array.isArray(configuration.assets?.run_worker_first) && configuration.assets.run_worker_first.includes('/nations/*'),
@@ -54,13 +58,17 @@ const worker = await startLocalWorker({ testScheduled: true });
 try {
 	const get = async (address, init) => {
 		const response = await fetch(`${worker.base}${address}`, { redirect: 'manual', signal: AbortSignal.timeout(60_000), ...init });
-		return { status: response.status, text: await response.text() };
+		return { status: response.status, text: await response.text(), headers: response.headers };
 	};
 
 	const home = await get('/');
 	check(home.status === 200 && home.text.includes('<h1'), `/ answered ${home.status}`);
 	const signIn = await get('/sign-in');
 	check(signIn.status === 200 && /<form/.test(signIn.text), `/sign-in, which only the Worker answers, answered ${signIn.status}`);
+	// The edge may keep a built record page but never a signed-in page (tools/edge-cache-worker.js).
+	check(signIn.headers.get('cloudflare-cdn-cache-control') === 'no-store', `/sign-in told the edge ${signIn.headers.get('cloudflare-cdn-cache-control')}, not no-store`);
+	const casePage = await get('/cases/worcester-v-georgia');
+	check(casePage.status === 200 && /^public, max-age=\d+$/.test(casePage.headers.get('cloudflare-cdn-cache-control') ?? ''), `A case page answered ${casePage.status} and told the edge ${casePage.headers.get('cloudflare-cdn-cache-control')}`);
 	const nation = await get('/nations/hannahville-indian-community');
 	check(nation.status === 200 && nation.text.includes('<h1'), `A nation page answered ${nation.status}`);
 
