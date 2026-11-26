@@ -2,15 +2,11 @@
  * The workspace's Source watch page (src/lib/server/watch/review.ts): the
  * views, the filters and what a person decides, against a test database.
  */
-import { describe, expect, it, vi } from 'vitest';
-
-// Story credits format citations through a module the site build makes; the titles don't need it.
-vi.mock('virtual:source-citations', () => ({ sourceCitations: {} }));
-import { collections } from '#lib/server/collections.ts';
+import { describe, expect, it } from 'vitest';
 import { decide, readFilters, readView, reviewList, viewsFor } from '../src/lib/server/watch/review.ts';
 import { addCandidate, type Candidate } from '../src/lib/server/watch/store.ts';
 import { can } from '../src/lib/permissions.ts';
-import { collectionTitles, feedLabel } from '../src/lib/watch-labels.ts';
+import { feedLabel } from '../src/lib/watch-labels.ts';
 import { testDatabase } from './database.ts';
 
 const now = new Date('2026-11-26T12:00:00Z');
@@ -99,8 +95,9 @@ describe('the Source watch review page', () => {
 		expect(await decide(database, { identifier: held.identifier, decision: 'add' }, { identifier: 'lead', isLeadAuthor: false }, now)).toHaveProperty('problem');
 	});
 
-	it('names every collection as the collections registry does', () => {
-		expect(collectionTitles).toEqual(Object.fromEntries(collections.map((collection) => [collection.identifier, collection.title])));
-		expect(feedLabel('nation:land_establishment')).toBe('Nation page: land establishment');
+	it('names collections and nation page parts', () => {
+		expect(feedLabel('treaties', { treaties: 'Treaties and Agreements' })).toBe('Treaties and Agreements');
+		expect(feedLabel('unknown-collection', {})).toBe('unknown-collection');
+		expect(feedLabel('nation:land_establishment', {})).toBe('Nation page: land establishment');
 	});
 });

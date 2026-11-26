@@ -1,5 +1,6 @@
 import { fail } from '@sveltejs/kit';
 import { nationNames } from 'virtual:section-lists';
+import { collections } from '#lib/server/collections.ts';
 import { fileScans, scanStatusWords } from '#lib/server/file-scans.ts';
 import { readWatchProgress, watchState, watchStateWords, watchWorkerAddress } from '#lib/server/watch/progress.ts';
 import { decide, decisions, readFilters, readView, reviewList, reviewViewLabels, viewsFor, type Decision } from '#lib/server/watch/review.ts';
@@ -14,6 +15,7 @@ import type { Actions, PageServerLoad } from './$types';
 export const prerender = false;
 
 const nationNameByIdentifier = new Map(nationNames.map(([name, identifier]) => [identifier, name]));
+const collectionTitles: Record<string, string> = Object.fromEntries(collections.map((collection) => [collection.identifier, collection.title]));
 
 function nextRun(progress: Awaited<ReturnType<typeof readWatchProgress>>): { title: string; at: string } | null {
 	const due = Object.values(progress?.watchers ?? {})
@@ -81,7 +83,8 @@ export const load: PageServerLoad = async (event) => {
 			next: nextRun(progress),
 			progressPage: `${watchWorkerAddress}/`
 		},
-		isLeadAuthor
+		isLeadAuthor,
+		collectionTitles
 	};
 };
 

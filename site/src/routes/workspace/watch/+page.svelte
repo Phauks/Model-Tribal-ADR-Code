@@ -25,10 +25,12 @@
 	import Breadcrumbs from '#lib/components/Breadcrumbs.svelte';
 	import CountBadge from '#lib/components/CountBadge.svelte';
 	import { readableDate } from '#lib/readable-date.ts';
-	import { feedLabel, hostingLabels, proposedLabels, sensitivityLabels } from '#lib/watch-labels.ts';
+	import { feedLabel as feedLabelFrom, hostingLabels, proposedLabels, sensitivityLabels } from '#lib/watch-labels.ts';
 	import type { PageProps } from './$types';
 
 	let { data, form }: PageProps = $props();
+
+	const feedLabel = (feed: string) => feedLabelFrom(feed, data.collectionTitles);
 
 	// "Checked 2 minutes ago · 3 watchers · next: eCFR at 12:07 PM", as in the mockup.
 	const stateLine = $derived(
