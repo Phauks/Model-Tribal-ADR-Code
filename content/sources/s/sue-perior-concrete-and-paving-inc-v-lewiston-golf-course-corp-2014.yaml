@@ -1,0 +1,53 @@
+key: sue-perior-concrete-and-paving-inc-v-lewiston-golf-course-corp-2014
+kind: state-case
+citation:
+  type: legal_case
+  title: Sue/Perior Concrete & Paving, Inc. v. Lewiston Golf Course Corp.
+  authority: New York Court of Appeals
+  container-title: N.Y.3d
+  volume: '24'
+  page: '538'
+  issued:
+    date-parts:
+    - - 2014
+      - 11
+      - 25
+  URL: https://static.case.law/ny3d/24/html/0538-01.html
+  accessed:
+    date-parts:
+    - - 2026
+      - 11
+      - 26
+original_link: https://static.case.law/ny3d/24/html/0538-01.html
+retrieved: '2026-11-26'
+archives: []
+history:
+  status: live
+  last_checked: '2026-11-26'
+rights:
+  status: no-permission-needed
+  basis: government-edict
+  basis_note: The text of a judicial opinion has no copyright (Georgia v. Public.Resource.Org, Inc., 590 U.S. 255 (2020)). The copy served on this site is the court's opinion only, without the publisher's headnotes, synopsis or other editorial matter (decision record 0060).
+  redistribution: true
+nations_in_case:
+  checked: '2026-11-26'
+  named: []
+jurisdictions:
+- level: state
+  state: NY
+topics:
+- state-court-indian-law
+found_in:
+- 2026-11-26-state-court-indian-law-opinions
+notes: Published at 24 N.Y.3d 538; 25 N.E.3d 928; 2 N.Y.S.3d 15. Decided by the New York Court of Appeals on Nov. 25, 2014. Found by scripts/caselaw/state_court_opinions.py in the Caselaw Access Project's volumes, with an Indian law term score of 66, at or above 10, the level kept without a reading.
+review:
+  status: unverified
+  by: scripts/caselaw/state_court_opinions.py
+  date: '2026-11-26'
+  checks:
+  - check: 'Indian law case: the term score and, below the score kept without a reading, an AI reader''s judgment of excerpts'
+    result: agree
+    detail: score 66
+  - check: Nations named in the caption, matched to nation records by name
+    result: agree
+    detail: 0 matched, 0 not linked

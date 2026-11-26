@@ -14,7 +14,10 @@
  * listed. The count is the number of items, so the card and its list agree.
  * Where items are held back, `heldBack` gives only how many, never which.
  */
-import { documentHistories, glossary, nations, publicCopies, publicCopyFor, sources, type SourceRecord } from './content.ts';
+import { existsSync, readFileSync } from 'node:fs';
+import path from 'node:path';
+import { documentHistories, glossary, nations, publicCopies, publicCopyFor, repositoryRoot, sources, type SourceRecord } from './content.ts';
+import { parseCsv } from '../csv.ts';
 import { biographies, biographyPath } from './biographies.ts';
 import { peopleIndex } from './justice-pages.ts';
 import { courtsWithPages } from './supreme-court-pages.ts';
@@ -90,11 +93,20 @@ function sourceItem(record: SourceRecord, detail?: string): CollectionItem {
 	return { title: record.citation.title ?? record.key, href, year: record.citation.issued?.['date-parts']?.[0]?.[0], detail, key: record.key };
 }
 
-/** Source records of some kinds (schemas/source.schema.json), less treaties, which are their own collection. */
+/**
+ * The filings in the Oklahoma Secretary of State's register of tribal compacts and agreements
+ * (scripts/agreements/oklahoma_register.py), a collection of their own, so they are not counted again
+ * among the compacts and agreements from other sources.
+ */
+const oklahomaTopic = 'oklahoma-state-tribal-agreement';
+const isOklahomaFiling = (record: SourceRecord) => (record.topics ?? []).includes(oklahomaTopic);
+const oklahomaAgreements = () => [...sources().values()].filter(isOklahomaFiling);
+
+/** Source records of some kinds (schemas/source.schema.json), less treaties, which are their own collection, and Oklahoma's register. */
 function sourcesOfKind(kinds: string[], detail?: (record: SourceRecord) => string | undefined): () => CollectionItem[] {
 	return () =>
 		[...sources().values()]
-			.filter((record) => kinds.includes(kindOf(record)) && typeOf(record) !== 'treaty')
+			.filter((record) => kinds.includes(kindOf(record)) && typeOf(record) !== 'treaty' && !isOklahomaFiling(record))
 			.map((record) => sourceItem(record, detail?.(record)));
 }
 
@@ -103,15 +115,54 @@ function treaties(): CollectionItem[] {
 	return [...sources().values()].filter((record) => typeOf(record) === 'treaty').map((record) => sourceItem(record, tribesOf(record)));
 }
 
-/** Court cases with a name, by the citation's authority. */
+const stateOpinionTopic = 'state-court-indian-law';
+const isStateOpinion = (record: SourceRecord) => (record.topics ?? []).includes(stateOpinionTopic);
+
+/** State court opinions found by scripts/caselaw/state_court_opinions.py, less those held for a privacy review. */
+const stateCourtOpinions = () =>
+	[...sources().values()].filter((record) => isStateOpinion(record) && record.citation.title).map((record) => sourceItem(record, record.citation.authority));
+
+/** How many state court opinions the script held for a privacy review (research/state-court-opinions/summary.json). */
+function heldBackStateOpinions(): number {
+	const file = path.join(repositoryRoot, 'research/state-court-opinions/summary.json');
+	return existsSync(file) ? Number((JSON.parse(readFileSync(file, 'utf8')) as { held_for_privacy_review?: number }).held_for_privacy_review ?? 0) : 0;
+}
+
+/** Court cases with a name, by the citation's authority, less the state court opinions, which are their own collection. */
 function casesBy(test: (authority: string) => boolean): () => CollectionItem[] {
 	return () =>
 		[...sources().values()]
-			.filter((record) => typeOf(record) === 'legal_case' && record.citation.title && test(record.citation.authority ?? ''))
+			.filter((record) => typeOf(record) === 'legal_case' && record.citation.title && !isStateOpinion(record) && test(record.citation.authority ?? ''))
 			.map((record) => sourceItem(record, record.citation.authority));
 }
 
 const supremeCourt = (authority: string) => authority === 'Supreme Court of the United States';
+/** Decisions of Interior's appeals board, their own collection (scripts/law/ibia_decisions.py). */
+const indianAppealsBoard = (authority: string) => authority === 'Interior Board of Indian Appeals';
+
+/** The Board's decisions held back for a privacy review (probate appeals and decisions about minors), by citation only. */
+function heldBackBoardDecisions(): number {
+	const file = path.join(repositoryRoot, 'research/ibia/held-back.csv');
+	return existsSync(file) ? parseCsv(readFileSync(file, 'utf8')).length : 0;
+}
+
+const gamingCommission = 'National Indian Gaming Commission';
+
+/** The Gaming Commission's reading room: its opinions, letters, enforcement actions and bulletins, and its final decisions, which are cases (scripts/law/nigc_documents.py). */
+function gamingCommissionDocuments(): CollectionItem[] {
+	return [...sources().values()]
+		.filter((record) => (kindOf(record) === 'federal-agency-document' && record.citation.author?.some((author) => author.literal === gamingCommission)) || (typeOf(record) === 'legal_case' && record.citation.authority === gamingCommission))
+		.map((record) => sourceItem(record, (record.citation as { genre?: string }).genre ?? 'Commission final decision'));
+}
+
+const acknowledgmentOffice = 'U.S. Department of the Interior, Office of Federal Acknowledgment';
+
+/** The Department's documents in each federal acknowledgment petition: proposed findings, final determinations and the rest (scripts/law/acknowledgment_petitions.py). */
+function acknowledgmentDocuments(): CollectionItem[] {
+	return [...sources().values()]
+		.filter((record) => kindOf(record) === 'federal-agency-document' && record.citation.author?.some((author) => author.literal === acknowledgmentOffice))
+		.map((record) => sourceItem(record, (record.citation as { genre?: string }).genre));
+}
 
 function nationNameOf(): (id: string) => string {
 	const names = new Map(nations().map((nation) => [nation.id, nation.names.official]));
@@ -154,6 +205,15 @@ export const collections: Collection[] = [
 	{ identifier: 'tribal-codes', search: { group: 'document' }, title: 'Codes and Laws', group: 'Native nations', detailHeader: 'Nation', sourceKinds: ['tribal-code', 'tribal-court-rule'], items: sourcesOfKind(['tribal-code', 'tribal-court-rule'], tribesOf) },
 	{ identifier: 'intergovernmental-agreements', search: { group: 'document' }, title: 'Compacts and Agreements', group: 'Native nations', detailHeader: 'Nation', sourceKinds: ['intergovernmental-agreement'], items: sourcesOfKind(['intergovernmental-agreement'], tribesOf) },
 	{
+		identifier: 'oklahoma-state-tribal-agreements',
+		search: { group: 'document' },
+		title: 'Oklahoma State-Tribal Agreements',
+		group: 'Native nations',
+		detailHeader: 'Nation',
+		sourceKinds: ['intergovernmental-agreement'],
+		items: () => oklahomaAgreements().map((record) => sourceItem(record, tribesOf(record)))
+	},
+	{
 		identifier: 'stories', search: { group: 'story' },
 		title: 'Stories',
 		group: 'Native nations',
@@ -170,10 +230,30 @@ export const collections: Collection[] = [
 	{ identifier: 'regulation-sections', search: { group: 'law', label: 'Regulation section' }, title: 'Regulation Sections (25 C.F.R.)', group: 'Federal law', detailHeader: 'Part', items: () => allSections('regulations') },
 	{ identifier: 'executive-orders', search: { group: 'law', label: 'Executive order' }, title: 'Executive Orders', group: 'Federal law', sourceKinds: ['executive-order'], items: sourcesOfKind(['executive-order']) },
 	{ identifier: 'federal-register-notices', search: { group: 'law', label: 'Federal Register notice' }, title: 'Federal Register Notices', group: 'Federal law', sourceKinds: ['federal-register-notice'], items: sourcesOfKind(['federal-register-notice']) },
+	{ identifier: 'federal-acknowledgment', search: { group: 'law', label: 'Acknowledgment document' }, title: 'Federal Acknowledgment Petitions', group: 'Federal law', detailHeader: 'Kind', sourceKinds: ['federal-agency-document'], items: acknowledgmentDocuments },
+	{ identifier: 'national-indian-gaming-commission', search: { group: 'law', label: 'Gaming Commission document' }, title: 'Gaming Commission Opinions and Actions', group: 'Federal law', detailHeader: 'Kind', sourceKinds: ['federal-agency-document'], items: gamingCommissionDocuments },
 
 	// Courts and cases
 	{ identifier: 'supreme-court-cases', search: { group: 'case', label: 'Court case' }, title: 'U.S. Supreme Court Cases', group: 'Courts and cases', items: casesBy(supremeCourt) },
-	{ identifier: 'other-court-cases', search: { group: 'case', label: 'Court case' }, title: 'Other Court Cases', group: 'Courts and cases', detailHeader: 'Court', items: casesBy((authority) => !supremeCourt(authority)) },
+	{ identifier: 'other-court-cases', search: { group: 'case', label: 'Court case' }, title: 'Other Court Cases', group: 'Courts and cases', detailHeader: 'Court', items: casesBy((authority) => !supremeCourt(authority) && !indianAppealsBoard(authority) && authority !== gamingCommission) },
+	{
+		identifier: 'interior-board-of-indian-appeals',
+		search: { group: 'case', label: 'Interior Board of Indian Appeals decision' },
+		title: 'Interior Board of Indian Appeals Decisions',
+		group: 'Courts and cases',
+		items: casesBy(indianAppealsBoard),
+		heldBack: heldBackBoardDecisions,
+		heldBackReason: 'held back for a privacy review'
+	},
+	{
+		identifier: 'state-court-opinions', search: { group: 'case', label: 'State court opinion' },
+		title: 'State Court Opinions',
+		group: 'Courts and cases',
+		detailHeader: 'Court',
+		items: stateCourtOpinions,
+		heldBack: heldBackStateOpinions,
+		heldBackReason: 'held back for a privacy review'
+	},
 	{
 		identifier: 'tribal-court-opinions', search: { group: 'case', label: 'Tribal court opinion' },
 		title: 'Tribal Court Opinions',

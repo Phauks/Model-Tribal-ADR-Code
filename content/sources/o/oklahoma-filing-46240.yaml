@@ -1,0 +1,56 @@
+key: oklahoma-filing-46240
+kind: intergovernmental-agreement
+citation:
+  type: document
+  title: 'Bob Rabon, attorney for Chickasaw and Choctaw nations, and State of Oklahoma: letter extending tobacco tax compact termination date'
+  author:
+  - literal: The Chickasaw Nation
+  - literal: The Choctaw Nation of Oklahoma
+  - literal: Bob Rabon
+  - literal: State of Oklahoma
+  container-title: Oklahoma Secretary of State, Tribal Compacts and Agreements
+  number: File 46240
+  URL: https://execleg.sos.ok.gov/documents/filelog/89261.pdf
+  accessed:
+    date-parts:
+    - - 2026
+      - 11
+      - 26
+  issued:
+    date-parts:
+    - - 2013
+      - 6
+      - 14
+original_link: https://execleg.sos.ok.gov/documents/filelog/89261.pdf
+retrieved: '2026-11-26'
+archives: []
+history:
+  status: live
+  last_checked: '2026-11-26'
+rights:
+  status: no-permission-needed
+  basis: fact-only
+  basis_note: Facts are recorded from the register. The State's filed copy, a public record of the Oklahoma Secretary of State, is served on this site (decision record 0060); a nation can ask to have it taken down.
+  redistribution: true
+tribes:
+- the-chickasaw-nation
+- the-choctaw-nation-of-oklahoma
+jurisdictions:
+- level: multiple
+  note: Agreement filed with the Oklahoma Secretary of State.
+topics:
+- oklahoma-state-tribal-agreement
+- tobacco-tax
+found_in:
+- 2026-11-26-oklahoma-state-tribal-agreements
+notes: 'Oklahoma Secretary of State file 46240, filed June 14, 2013. The register''s title reads “Governor''s Office Tribal-State Tobacco Compact Bob Rabon (Chickasaw Nation & Choctaw Nation attorney)” and its description “Letter extending the termination date of current compact and proposed amendment”. The register line reads as an extension of an existing compact or agreement (it names current tobacco compact). The filed copy is a scan with no text layer; this record''s facts come from the register''s own title and description, read by script and by an AI reader, not from the scan. The date is the filing date, not the signing date. The reader noted: letter addressed to the nations'' attorney; State party taken from the compact type.'
+review:
+  status: unverified
+  by: scripts/agreements/oklahoma_register.py
+  date: '2026-11-26'
+  checks:
+  - check: 'Nations named in the register line: the script''s reading and an AI reader''s'
+    result: differs
+    detail: script ['the-chickasaw-nation'], reader ['the-chickasaw-nation', 'the-choctaw-nation-of-oklahoma']. The AI reader's reading is used; checked by hand on Nov. 26, 2026.
+  - check: 'Subject: the script''s reading of the register title and an AI reader''s'
+    result: agree

@@ -1,0 +1,51 @@
+key: oklahoma-filing-51367
+kind: intergovernmental-agreement
+citation:
+  type: document
+  title: 'Delaware Tribe of Indians: tribal resolution on a housing program and county payment-in-lieu agreements'
+  author:
+  - literal: Delaware Tribe of Indians
+  container-title: Oklahoma Secretary of State, Tribal Compacts and Agreements
+  number: File 51367
+  URL: https://execleg.sos.ok.gov/documents/filelog/94478.pdf
+  accessed:
+    date-parts:
+    - - 2026
+      - 11
+      - 26
+  issued:
+    date-parts:
+    - - 2021
+      - 8
+      - 11
+original_link: https://execleg.sos.ok.gov/documents/filelog/94478.pdf
+retrieved: '2026-11-26'
+archives: []
+history:
+  status: live
+  last_checked: '2026-11-26'
+rights:
+  status: no-permission-needed
+  basis: fact-only
+  basis_note: Facts are recorded from the register. The State's filed copy, a public record of the Oklahoma Secretary of State, is served on this site (decision record 0060); a nation can ask to have it taken down.
+  redistribution: true
+tribes:
+- delaware-tribe-of-indians
+jurisdictions:
+- level: multiple
+  note: Agreement filed with the Oklahoma Secretary of State.
+topics:
+- oklahoma-state-tribal-agreement
+- housing
+found_in:
+- 2026-11-26-oklahoma-state-tribal-agreements
+notes: 'Oklahoma Secretary of State file 51367, filed Aug. 11, 2021. The register''s title reads “Delaware Tribe of Indians - Tribal Resolution 2011-20” and its description “Tribal resolution of the Delawar Tribe of Indians Authorizing the Creation of a Tribally created Housing Program and Authoring the Delaware Tribe of Indians to enter into local cooperation and payment in lieu of tax agreements with various counties (State of Oklahoma”. The register line reads as a filing of another kind. The filed copy is a scan with no text layer; this record''s facts come from the register''s own title and description, read by script and by an AI reader, not from the scan. The date is the filing date, not the signing date. The reader noted: Tribal resolution, not a compact. The counties are not named and the text is cut off before the closing parenthesis.'
+review:
+  status: unverified
+  by: scripts/agreements/oklahoma_register.py
+  date: '2026-11-26'
+  checks:
+  - check: 'Nations named in the register line: the script''s reading and an AI reader''s'
+    result: agree
+  - check: 'Subject: the script''s reading of the register title and an AI reader''s'
+    result: agree

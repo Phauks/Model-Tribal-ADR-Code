@@ -75,6 +75,7 @@ export const sitePages: SearchEntry[] = [
 	{ kind: 'page', title: 'Sponsorship levels', also: ['Sponsor levels', 'Monthly gift', 'Yearly gift'], link: '/sponsor/levels' },
 	{ kind: 'page', title: 'Using AI with Tribal Law', also: ['AI', 'Artificial intelligence', 'ChatGPT', 'Chatbot'], detail: 'How to use AI tools safely when learning about a nation\'s law', link: '/using-ai' },
 	{ kind: 'page', title: 'Timeline to public review', also: ['Public review', 'Roadmap', 'Drafting committee', 'Where things stand'], detail: 'Where the model code stands and the steps to public review', link: '/about/timeline' },
+	{ kind: 'page', title: 'Source Watch', also: ['Source watch', 'New documents', 'Federal Register'], detail: 'How new and changed public legal documents are found, and how to ask it to stop', link: '/about/watch' },
 	{ kind: 'page', title: 'Acknowledgments', also: ['Credits', 'Land acknowledgment', 'Southern Paiute', 'Nuwuvi'], detail: 'Credits, and the land where this work was written', link: '/acknowledgments' },
 	{ kind: 'page', title: 'Changelog', also: ['Versions', 'What changed'], detail: 'What changed in each version', link: '/changelog' },
 	{ kind: 'page', title: 'Recent changes', also: ['Changes', 'Edits', 'Page history'], link: '/changes' },

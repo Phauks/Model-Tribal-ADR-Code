@@ -1,0 +1,56 @@
+key: doolittle-v-small-tribes-of-western-washington-inc-1999
+kind: state-case
+citation:
+  type: legal_case
+  title: Doolittle v. Small Tribes of Western Washington, Inc.
+  authority: Washington Court of Appeals
+  container-title: Wash. App.
+  volume: '94'
+  page: '126'
+  issued:
+    date-parts:
+    - - 1999
+      - 2
+      - 12
+  URL: https://static.case.law/wash-app/94/html/0126-01.html
+  accessed:
+    date-parts:
+    - - 2026
+      - 11
+      - 26
+original_link: https://static.case.law/wash-app/94/html/0126-01.html
+retrieved: '2026-11-26'
+archives: []
+history:
+  status: live
+  last_checked: '2026-11-26'
+rights:
+  status: no-permission-needed
+  basis: government-edict
+  basis_note: The text of a judicial opinion has no copyright (Georgia v. Public.Resource.Org, Inc., 590 U.S. 255 (2020)). The copy served on this site is the court's opinion only, without the publisher's headnotes, synopsis or other editorial matter (decision record 0060).
+  redistribution: true
+nations_in_case:
+  checked: '2026-11-26'
+  named: []
+  not_linked:
+  - named_as: Small Tribes of Western Washington
+    reason: More than one of today's nations shares this name (big-sandy-rancheria-of-western-mono-indians-of-california, te-moak-tribe-of-western-shoshone-indians-of-nevada, the-arkansas-band-of-western-cherokee, the-western-pequot-tribal-nation-of-new-haven, united-band-of-the-western-cherokee-nation, united-keetoowah-band-of-cherokee-indians-in-oklahoma and 3 more); which the case concerns has not been checked.
+jurisdictions:
+- level: state
+  state: WA
+topics:
+- state-court-indian-law
+found_in:
+- 2026-11-26-state-court-indian-law-opinions
+notes: Published at 94 Wash. App. 126. Decided by the Washington Court of Appeals on Feb. 12, 1999. Found by scripts/caselaw/state_court_opinions.py in the Caselaw Access Project's volumes, with an Indian law term score of 7 and a Native nation or Native organization named as a party.
+review:
+  status: unverified
+  by: scripts/caselaw/state_court_opinions.py
+  date: '2026-11-26'
+  checks:
+  - check: 'Indian law case: the term score and, below the score kept without a reading, an AI reader''s judgment of excerpts'
+    result: agree
+    detail: score 7; kept because a party is a Native nation or organization
+  - check: Nations named in the caption, matched to nation records by name
+    result: missing
+    detail: 0 matched, 1 not linked

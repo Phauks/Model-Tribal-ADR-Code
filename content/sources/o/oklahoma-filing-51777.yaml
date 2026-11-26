@@ -1,0 +1,52 @@
+key: oklahoma-filing-51777
+kind: intergovernmental-agreement
+citation:
+  type: document
+  title: 'Choctaw Nation and Oklahoma Tourism and Recreation Department: addendum to the law enforcement deputation agreement'
+  author:
+  - literal: The Choctaw Nation of Oklahoma
+  - literal: Oklahoma Tourism and Recreation Department
+  container-title: Oklahoma Secretary of State, Tribal Compacts and Agreements
+  number: File 51777
+  URL: https://execleg.sos.ok.gov/documents/filelog/94889.pdf
+  accessed:
+    date-parts:
+    - - 2026
+      - 11
+      - 26
+  issued:
+    date-parts:
+    - - 2022
+      - 5
+      - 12
+original_link: https://execleg.sos.ok.gov/documents/filelog/94889.pdf
+retrieved: '2026-11-26'
+archives: []
+history:
+  status: live
+  last_checked: '2026-11-26'
+rights:
+  status: no-permission-needed
+  basis: fact-only
+  basis_note: Facts are recorded from the register. The State's filed copy, a public record of the Oklahoma Secretary of State, is served on this site (decision record 0060); a nation can ask to have it taken down.
+  redistribution: true
+tribes:
+- the-choctaw-nation-of-oklahoma
+jurisdictions:
+- level: multiple
+  note: Agreement filed with the Oklahoma Secretary of State.
+topics:
+- oklahoma-state-tribal-agreement
+- cross-deputization
+found_in:
+- 2026-11-26-oklahoma-state-tribal-agreements
+notes: 'Oklahoma Secretary of State file 51777, filed May 12, 2022. The register''s title reads “Agreement Tribal Cross Deputization Law Enforcement Addendum file #41100” and its description “State Addendum, Addition of State Agency Oklahoma Tourism & Recreation Department joins into the Deputation Agreement for Law Enforcement in the Choctaw Nation”. The register line reads as an addendum adding a party to an existing agreement (it names Deputation Agreement for Law Enforcement in the Choctaw Nation). The filed copy is a scan with no text layer; this record''s facts come from the register''s own title and description, read by script and by an AI reader, not from the scan. The date is the filing date, not the signing date.'
+review:
+  status: unverified
+  by: scripts/agreements/oklahoma_register.py
+  date: '2026-11-26'
+  checks:
+  - check: 'Nations named in the register line: the script''s reading and an AI reader''s'
+    result: agree
+  - check: 'Subject: the script''s reading of the register title and an AI reader''s'
+    result: agree

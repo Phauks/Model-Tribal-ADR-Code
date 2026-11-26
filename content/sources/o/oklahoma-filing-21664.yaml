@@ -1,0 +1,51 @@
+key: oklahoma-filing-21664
+kind: intergovernmental-agreement
+citation:
+  type: document
+  title: 'Muskogee Youth Council: youth services agreement'
+  author:
+  - literal: Muskogee Youth Council
+  container-title: Oklahoma Secretary of State, Tribal Compacts and Agreements
+  number: File 21664
+  URL: https://execleg.sos.ok.gov/documents/filelog/54224.pdf
+  accessed:
+    date-parts:
+    - - 2026
+      - 11
+      - 26
+  issued:
+    date-parts:
+    - - 1987
+      - 6
+      - 16
+original_link: https://execleg.sos.ok.gov/documents/filelog/54224.pdf
+retrieved: '2026-11-26'
+archives: []
+history:
+  status: live
+  last_checked: '2026-11-26'
+rights:
+  status: no-permission-needed
+  basis: fact-only
+  basis_note: Facts are recorded from the register. The State's filed copy, a public record of the Oklahoma Secretary of State, is served on this site (decision record 0060); a nation can ask to have it taken down.
+  redistribution: true
+jurisdictions:
+- level: multiple
+  note: Agreement filed with the Oklahoma Secretary of State.
+topics:
+- oklahoma-state-tribal-agreement
+- child-welfare
+found_in:
+- 2026-11-26-oklahoma-state-tribal-agreements
+notes: 'Oklahoma Secretary of State file 21664, filed June 16, 1987. The register''s title reads “Agreements” and its description “Muskogee Youth Council youth services. Agreement”. The register line reads as an agreement or compact. The filed copy is a scan with no text layer; this record''s facts come from the register''s own title and description, read by script and by an AI reader, not from the scan. The date is the filing date, not the signing date. The reader noted: No nation named; the council''s tribal status is not stated.'
+review:
+  status: unverified
+  by: scripts/agreements/oklahoma_register.py
+  date: '2026-11-26'
+  checks:
+  - check: 'Nations named in the register line: the script''s reading and an AI reader''s'
+    result: differs
+    detail: script ['the-muscogee-nation'], reader []. The AI reader's reading is used; checked by hand on Nov. 26, 2026.
+  - check: 'Subject: the script''s reading of the register title and an AI reader''s'
+    result: differs
+    detail: script other, reader child-welfare. The AI reader's reading is used; checked by hand on Nov. 26, 2026.
