@@ -1286,13 +1286,20 @@ def main() -> int:
                     if kept in old:
                         record[kept] = old[kept]
             pending.append((path, record))
-    # Cases in one of the Court's bound volumes share its address.
+    # Cases in one of the Court's bound volumes share its address, as does a case whose pages are in another case's
+    # scan (other-scans.json); records written before and not rerun count too.
     by_link: dict[str, list[str]] = {}
     for _, record in pending:
         by_link.setdefault(record["original_link"], []).append(record["key"])
+    rerun = {record["key"] for _, record in pending}
+    for key, earlier in records.items():
+        if (earlier.get("review") or {}).get("by") == SCRIPT and key not in rerun and earlier.get("original_link") in by_link:
+            by_link[earlier["original_link"]].append(key)
+    other_items = {entry["item"] for entry in OTHER_SCANS.values()}
     for path, record in pending:
         others = [key for key in by_link[record["original_link"]] if key != record["key"]]
-        if others and "boundvolumes" in record["original_link"]:
+        if others and ("boundvolumes" in record["original_link"] or record["original_link"] in other_items
+                       or any(r["original_link"] in other_items for _, r in pending if r["key"] in others)):
             record["shares_link_with"] = sorted(others)
         path.parent.mkdir(parents=True, exist_ok=True)
         path.write_text(dump(order(record)), encoding="utf-8")
