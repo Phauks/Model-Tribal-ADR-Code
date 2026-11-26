@@ -26,6 +26,15 @@
 	"observability": {
 		"enabled": true
 	},
+	// Workers Cache: Cloudflare's edge answers a repeat request for a page
+	// every reader sees alike without running the Worker. Only the answers
+	// tools/edge-cache-worker.js marks may be kept (built record pages, map
+	// tiles, the search index); every other answer, and every signed-in or
+	// personal page, is marked no-store. Each deploy is a new version with
+	// nothing kept, so there is nothing to purge by hand (docs/edge-caching.md).
+	"cache": {
+		"enabled": true
+	},
 	// Code refers to these resources only by their binding names ("database"
 	// and "sourceDocuments"). The resource names below can change, for
 	// example when the project is renamed, without changing any code.

@@ -15,9 +15,13 @@
 	import SavedText from '#lib/components/SavedText.svelte';
 	import StubBadge from '#lib/components/StubBadge.svelte';
 	import StubNote from '#lib/components/StubNote.svelte';
+	import TileMap from '#lib/components/TileMap.svelte';
 	import type { PageProps } from './$types';
 
 	let { data }: PageProps = $props();
+
+	let cededMapWanted = $state(true);
+	let cededMapReady = $state(false);
 
 	/** Past this many, the nation pages wait behind a summary line. */
 	const longList = 12;
@@ -47,7 +51,25 @@
 	<meta name="description" content="{data.name}, {data.citation}: what it did, the accounts of its impact and where to read it." />
 </svelte:head>
 
-<InfoPage title={data.name} lead={data.citation} glance={data.glance} sources={data.sources} trail={[{ label: 'Library', href: '/library' }]} status={data.stub ? stubStatus : undefined}>
+<!-- The land a treaty ceded, drawn under At a glance (Trevor, 2026-11-26, historic maps mockup 7). With no map on the device, At a glance's Land ceded row says the same in words. -->
+{#snippet cededMap()}
+	{#if data.landCeded && cededMapWanted}
+		<div class="ceded-map no-print" class:ready={cededMapReady}>
+			<TileMap
+				view="lands"
+				label="Land ceded by {data.name}"
+				data={data.landCeded.map}
+				opening={data.landCeded.bounds}
+				cessionsShown={data.landCeded.royce}
+				cessionsAlways
+				onready={() => (cededMapReady = true)}
+				onfail={() => (cededMapWanted = false)}
+			/>
+		</div>
+	{/if}
+{/snippet}
+
+<InfoPage title={data.name} lead={data.citation} glance={data.glance} panels={data.landCeded ? cededMap : undefined} sources={data.sources} trail={[{ label: 'Library', href: '/library' }]} status={data.stub ? stubStatus : undefined}>
 	{#if data.fullTitle}<p class="full-title muted">{data.fullTitle}</p>{/if}
 
 	<RecordBoxSections sections={data.boxSections} />
@@ -146,6 +168,17 @@
 {#snippet stubStatus()}{#if data.stub}<StubBadge stub={data.stub} />{/if}{/snippet}
 
 <style>
+	/* The map takes its place once it has drawn, so a device that cannot draw it never shows an empty frame. */
+	.ceded-map {
+		margin-top: var(--space-3);
+	}
+
+	.ceded-map:not(.ready) {
+		visibility: hidden;
+		height: 0;
+		overflow: hidden;
+	}
+
 	.full-title {
 		margin-top: 0;
 	}

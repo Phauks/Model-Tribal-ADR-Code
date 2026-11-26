@@ -59,22 +59,25 @@
 			"bucket_name": "model-tribal-adr-code-sources"
 		}
 	],
-	// Claude, through AI Gateway with Unified Billing: the account's credits
-	// pay, so no Anthropic key and no secret (site/watch/README.md, "Models").
+	// The models that sort what the rules cannot decide: Workers AI, run by
+	// Cloudflare and billed on the Workers Paid plan, so nothing to set up and
+	// no secret (site/watch/README.md, "Models").
 	"ai": {
-		"binding": "modelGateway"
+		"binding": "models"
 	},
-	// WATCH_TRIAGE_PROVIDER: "none" (rules only; the middle band goes to
-	// people), "ai-gateway" (Claude Haiku 5.5, then Claude Opus 5.5 for hard
-	// cases) or "nightly-task" (not built). Leave it "none" until credits are
-	// loaded and the gateway exists. WATCH_GATEWAY names the gateway.
+	// WATCH_TRIAGE_PROVIDER: "workers-ai" (the default: Inkling 2 Small),
+	// "ai-gateway" (Claude Haiku 5.5, then Claude Opus 5.5 for hard cases;
+	// needs the gateway WATCH_GATEWAY with Unified Billing credits), "none"
+	// (rules only; the middle band goes to people) or "nightly-task" (not
+	// built). WATCH_CHEAP_MODEL and WATCH_TOP_MODEL left empty mean the
+	// provider's own models.
 	// WATCH_TURN_ON and WATCH_TURN_OFF list watchers, separated by commas, to
 	// turn on or off without a code change.
 	"vars": {
-		"WATCH_TRIAGE_PROVIDER": "none",
+		"WATCH_TRIAGE_PROVIDER": "workers-ai",
 		"WATCH_GATEWAY": "source-watch",
-		"WATCH_CHEAP_MODEL": "anthropic/claude-haiku-5.5",
-		"WATCH_TOP_MODEL": "anthropic/claude-opus-5.5",
+		"WATCH_CHEAP_MODEL": "",
+		"WATCH_TOP_MODEL": "",
 		"WATCH_TURN_ON": "",
 		"WATCH_TURN_OFF": ""
 	}
