@@ -128,6 +128,7 @@ const opinionKinds: Record<string, { column: OpinionColumn; qualifier?: string; 
 	},
 	dissent: { column: 'dissenting' },
 	'dissent in part': { column: 'dissenting', qualifier: 'in part' },
+	'in chambers': { column: 'court', qualifier: 'in chambers' },
 	'coauthored dissent': { column: 'dissenting', qualifier: 'written jointly' },
 	'joining the dissent in part': null
 };

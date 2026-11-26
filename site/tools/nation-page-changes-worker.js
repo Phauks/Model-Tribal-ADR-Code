@@ -25,6 +25,7 @@ const restrictableList = /^\/nations\/[a-z0-9-]+\/restrictable\.json$/;
 /** Files the site filters (src/routes/restricted-files, restrictedFiles). */
 export const filteredFiles = [
 	/^\/search\/records\.json$/,
+	/^\/search\/index\.json$/,
 	/^\/copies\/list\.csv$/,
 	/^\/copies\/offline\/nations\/[a-z0-9-]+\.json$/,
 	/^\/copies\/details\/[0-9a-f]{2}\.json$/,

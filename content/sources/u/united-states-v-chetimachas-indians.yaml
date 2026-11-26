@@ -1,0 +1,129 @@
+key: united-states-v-chetimachas-indians
+kind: federal-case
+citation:
+  type: legal_case
+  title: United States v. Chetimachas Indians
+  authority: Supreme Court of the United States
+  container-title: U.S.
+  volume: '131'
+  page: lxx
+  issued:
+    date-parts:
+    - - 1852
+      - 12
+      - 15
+  URL: https://archive.org/details/sim_united-states-supreme-court-cases-adjudged_1889_131
+  accessed:
+    date-parts:
+    - - 2026
+      - 11
+      - 26
+caption:
+  printed: UNITED STATES v. CHETIMACHAS INDIANS
+  source: https://archive.org/download/sim_united-states-supreme-court-cases-adjudged_1889_131/sim_united-states-supreme-court-cases-adjudged_1889_131.pdf
+  checked: '2026-11-26'
+original_link: https://archive.org/details/sim_united-states-supreme-court-cases-adjudged_1889_131
+retrieved: '2026-11-26'
+history:
+  status: live
+  last_checked: '2026-11-26'
+court_dates:
+  printed: No. 21, December Term, 1852.—Decided December 15, 1852.
+  source: https://archive.org/download/sim_united-states-supreme-court-cases-adjudged_1889_131/sim_united-states-supreme-court-cases-adjudged_1889_131.pdf
+  checked: '2026-11-26'
+  note: Printed in the appendix of cases omitted from the reports (131 U.S. app. lxx, 1889); the case was dismissed without argument.
+supreme_court:
+  court: Taney Court
+  natural_court: Taney Court (1852-1853)
+  decision_type: per curiam
+  vote:
+    majority: 8
+    minority: 0
+  justices:
+  - name: Roger Brooke Taney
+    vote: majority
+  - name: John McLean
+    vote: majority
+  - name: James Moore Wayne
+    vote: majority
+  - name: John Catron
+    vote: majority
+  - name: Peter Vivian Daniel
+    vote: majority
+  - name: Samuel Nelson
+    vote: majority
+  - name: Robert Cooper Grier
+    vote: majority
+  - name: Benjamin Robbins Curtis
+    vote: majority
+  source: http://scdb.wustl.edu/_brickFiles/Legacy_07/SCDB_Legacy_07_justiceCentered_Citation.csv.zip
+  note: From the Supreme Court Database, case 1852-059. The report prints only that Chief Justice Taney announced the dismissal; it names no other Justice.
+  checked: '2026-11-26'
+reading_links:
+  checked: '2026-11-26'
+  links:
+  - site: internet-archive
+    label: Internet Archive
+    access: free
+    link: https://archive.org/details/sim_united-states-supreme-court-cases-adjudged_1889_131
+  - site: justia
+    label: Justia
+    access: free
+    link: https://supreme.justia.com/cases/federal/us/131/lxx/
+    unchecked: true
+  - site: google-scholar
+    label: Google Scholar
+    access: free
+    link: https://scholar.google.com/scholar?hl=en&as_sdt=2006&q=%22131%20U.S.%20lxx%22
+    unchecked: true
+  - site: westlaw
+    label: Westlaw
+    access: subscription
+    link: https://1.next.westlaw.com/Link/Document/FullText?findType=Y&cite=131%20U.S.%20lxx
+    unchecked: true
+  - site: lexis
+    label: Lexis
+    access: subscription
+    link: https://advance.lexis.com/api/search?q=131%20U.S.%20lxx
+    unchecked: true
+rights:
+  status: no-permission-needed
+  basis: us-government-work
+  basis_note: Opinions of federal courts are works of the U.S. government (17 U.S.C. § 105); the host site's own additions are not reproduced.
+  redistribution: true
+found_in:
+- 2026-11-24-supreme-court-native-cases
+notes: 'Full citation: United States v. Chetimachas Indians, 131 U.S. app. lxx (1852). Official report: the appendix of cases omitted from the reports in volume 131 (1889), p. lxx, scan page 550 of the Internet Archive''s copy of the volume (https://archive.org/details/sim_united-states-supreme-court-cases-adjudged_1889_131); the Library of Congress has no scan of the appendix. Chief Justice Taney dismissed the United States'' appeal because the Attorney General declined to argue it, stating that the Chetimachas Indians were entitled to the land claimed. Not yet read by a person.'
+tribes:
+- chitimacha-tribe-of-louisiana
+nations_in_case:
+  checked: '2026-11-26'
+  named:
+  - nation: chitimacha-tribe-of-louisiana
+    named_as: Chetimachas Indians
+    role: party
+    historical: true
+    note: The report's spelling of the Chitimacha; matched by hand to the Chitimacha Tribe of Louisiana (the appeal came from the District Court for the Eastern District of Louisiana).
+review:
+  status: verified
+  by: Claude, by hand from the official report (thread "Add the remaining Supreme Court Native cases")
+  date: '2026-11-26'
+  checks:
+  - check: cite
+    result: agree
+    detail: Database 131 U.S. lxx "UNITED STATES v. CHETIMACHAS INDIANS"; the volume's table of cases omitted from the reports gives the case at lxx
+  - check: scan
+    result: confirmed
+    detail: Internet Archive scan of volume 131, scan page 550, prints the page head "lxx APPENDIX." and the case
+  - check: caption
+    result: confirmed
+    detail: The report prints "UNITED STATES v. CHETIMACHAS INDIANS." on p. lxx
+  - check: printed dates
+    result: confirmed
+    detail: The report prints "No. 21, December Term, 1852.—Decided December 15, 1852." on p. lxx
+  - check: decided
+    result: agree
+    detail: 'Printed and Database: 1852-12-15'
+  - check: bench
+    result: agree
+    detail: No Oyez votes; the one Justice the report names, Chief Justice Taney, who announced the dismissal, sits on the Database's bench in the majority
