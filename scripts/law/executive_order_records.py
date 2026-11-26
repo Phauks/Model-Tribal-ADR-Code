@@ -60,6 +60,8 @@ MODERN = [13007, 13021, 13084, 13096, 13104, 13175, 13270, 13336, 13549, 13592, 
 MONTH_NAMES = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"]
 MONTHS = ["Jan.", "Feb.", "Mar.", "Apr.", "May", "June", "July", "Aug.", "Sept.", "Oct.", "Nov.", "Dec."]
 DATE = re.compile(r"\b(" + "|".join(MONTH_NAMES) + r")\.? (\d{1,2})[,.]? (\d{4})")
+# An earlier order or recommendation a title names ("Revoking Executive Order of August 25, 1877"): its date is not this order's.
+NAMED_ORDER = re.compile(r"((?:(?:Executive )?[Oo]rder(?: No\.)?(?: [\d]+-?[A-Z]?)?|[Rr]ecommendation) of )" + DATE.pattern)
 RIGHTS = {"status": "no-permission-needed", "basis": "us-government-work",
           "basis_note": "A work of the United States government, not subject to copyright (17 U.S.C. § 105).",
           "redistribution": True}
@@ -138,7 +140,7 @@ def read_page(order: dict, page: str) -> str:
     title_at = text.find(order["title"].split(":")[0])
     body = text[title_at:] if title_at >= 0 else text
     body = body.split("\n", 1)[1].strip() if "\n" in body else body
-    title_date = DATE.search(order["title"])
+    title_date = DATE.search(NAMED_ORDER.sub("", order["title"]))
     body_date = DATE.search(body)
     order["date"] = iso(title_date) if title_date else iso(body_date) if body_date else order["year"]
     order["date_from"] = "title" if title_date else "text" if body_date else "year only"
@@ -344,7 +346,9 @@ def record_for(item: dict, copy: dict | None) -> dict:
     entry = item.get("federal_register")
     number = item.get("number")
     name = re.sub(r"^Executive Order(?: \d+-?[A-Z]?)?:?\s*", "", item["title"]).strip()
-    name = DATE.sub("", name).strip(" ,.")
+    # The order's own date goes; the date of an earlier order it names stays, in the style guide's form.
+    name = NAMED_ORDER.sub(lambda match: match.group(1) + long_date(iso(DATE.match(match.group(0)[len(match.group(1)):]))), name)
+    name = re.sub(r"(?<!of )" + DATE.pattern, "", name).strip(" ,.")
     date = item["date"]
     parts = [int(part) for part in date.split("-")]
     if entry:
