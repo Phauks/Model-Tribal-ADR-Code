@@ -24,6 +24,7 @@ import Scale from '@lucide/svelte/icons/scale';
 import Scroll from '@lucide/svelte/icons/scroll';
 import ScrollText from '@lucide/svelte/icons/scroll-text';
 import Dices from '@lucide/svelte/icons/dices';
+import Stamp from '@lucide/svelte/icons/stamp';
 import User from '@lucide/svelte/icons/user';
 import UserRound from '@lucide/svelte/icons/user-round';
 import Users from '@lucide/svelte/icons/users';
@@ -50,6 +51,7 @@ const collectionIcons: Record<string, Component> = {
 	'executive-orders': PenLine,
 	'federal-register-notices': Newspaper,
 	'national-indian-gaming-commission': Dices,
+	'federal-acknowledgment': Stamp,
 	'supreme-court-cases': Gavel,
 	'other-court-cases': Scale,
 	'state-court-opinions': Gavel,
