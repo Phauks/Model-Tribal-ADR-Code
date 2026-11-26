@@ -28,7 +28,7 @@ This page lists everything that waits on the domain, so that it can all be done 
 - [x] **Event emails.** On the same switch as summaries: people registered for events get confirmations, waitlist offers, reminders and word of changes or cancellations from the 15-minute run. Steps: `site/COLLABORATION.md`, "Events".
 - [ ] **Request notices.** Email the maintainer a link to each new request, never its contents (`docs/requests.md`, "How it is built"). Not built.
 - [ ] **Contributor notices.** Email the lead author when a registration arrives, and contributors before each edition goes to print (`docs/contributor-profiles.md`, "Not built yet"). Not built.
-- [ ] **The project inbox and outreach.** Built; `MAIL_DOMAIN` is set. Waiting on Email Routing to the Worker, the `MAIL_SIGNING_KEY` secret, the delivery-report queue, and later the outreach mailbox on a subdomain. The steps are in `site/MAIL.md`, "Switching email on" (decision record 0040). Nations asking for a correction or removal can then write to the project's own address.
+- [ ] **The project inbox and outreach.** Built; `MAIL_DOMAIN` is set. Email Routing's catch-all sends every address to the Worker and the delivery-report queue is subscribed (2026-11-26). Waiting on the `MAIL_SIGNING_KEY` key (Secrets Store, PR #302) and later the outreach mailbox on a subdomain. The steps are in `site/MAIL.md`, "Switching email on" (decision record 0040). Nations asking for a correction or removal can then write to the project's own address.
 
 ## 4. Print and ebook
 

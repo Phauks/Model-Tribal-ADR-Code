@@ -209,9 +209,12 @@
 	"triggers": {
 		"crons": ["17 * * * *", "41 9 * * 1", "4,19,34,49 * * * *", "*/5 * * * *"]
 	}
-	// The queue consumer for delivery events from Cloudflare Email Service is
-	// added when email is switched on, because a deploy fails while the
-	// queue does not exist yet (site/MAIL.md, "Delivery reports").
+	,
+	// Delivery events from Cloudflare Email Service (site/MAIL.md, "Delivery
+	// reports"): the queue is subscribed to all six Email Sending events for
+	// triballawproject.org, and tools/add-mail-handlers.mjs adds the queue
+	// handler. A deploy fails while the queue named here does not exist.
+	"queues": { "consumers": [{ "queue": "tribal-law-project-mail-delivery-events", "max_batch_size": 50 }] }
 	//
 	// Some settings are made in the Cloudflare dashboard (Worker > Settings >
 	// Variables and Secrets) rather than here, because this file is public,
