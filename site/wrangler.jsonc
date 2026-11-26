@@ -146,16 +146,16 @@
 		}
 	],
 	// Cloudflare Email Service, for sign-in codes. It sends only from a domain
-	// onboarded in Email Service on this Cloudflare account; the address is
+	// onboarded in Email Service on this Cloudflare account; triballawproject.org
+	// was onboarded for sending on 2026-11-25, and the address is
 	// SIGN_IN_EMAIL_FROM below. While that is empty, the site sends no email
 	// and people sign in with a password or a link from the lead author
 	// (COLLABORATION.md, "Setting up sign-in").
 	//
 	// The second binding sends summaries of updates to pages readers follow,
-	// from UPDATE_EMAIL_FROM. That address is the switch for those emails:
-	// while it is empty, nothing is sent and readers see notices on the site
-	// only. Set it once the domain is onboarded (docs/domain-to-do.md;
-	// COLLABORATION.md, "Following pages"). SITE_ADDRESS is the site's public
+	// and the event emails, from UPDATE_EMAIL_FROM. That address is the switch
+	// for those emails: while it is empty, nothing is sent and readers see
+	// notices on the site only (COLLABORATION.md, "Following pages"). SITE_ADDRESS is the site's public
 	// address, for the links in those emails and in the project inbox's
 	// unsubscribe links. The build also reads the published site text from it
 	// (src/lib/server/site-text-build.ts), so it must be an address that answers.
@@ -167,14 +167,15 @@
 	// terms do not allow unsolicited mail.
 	"send_email": [{ "name": "signInEmail" }, { "name": "updateEmail" }, { "name": "projectEmail" }],
 	"vars": {
-		"SIGN_IN_EMAIL_FROM": "",
-		"UPDATE_EMAIL_FROM": "",
+		"SIGN_IN_EMAIL_FROM": "sign-in@triballawproject.org",
+		"UPDATE_EMAIL_FROM": "updates@triballawproject.org",
 		"SITE_ADDRESS": "https://triballawproject.org",
 		// The project inbox (site/MAIL.md, "Switching email on"). While
 		// MAIL_DOMAIN is empty, the inbox pages open but no mail is received
-		// or sent. MAIL_SIGNING_KEY and OUTREACH_SMTP_PASSWORD are Secrets set
+		// or sent. Mail reaches the inbox through Email Routing's catch-all
+		// rule, which sends every address on the domain to this Worker. MAIL_SIGNING_KEY and OUTREACH_SMTP_PASSWORD are Secrets set
 		// in the dashboard, never here.
-		"MAIL_DOMAIN": "",
+		"MAIL_DOMAIN": "triballawproject.org",
 		"MAIL_NOTICE_ADDRESS": "",
 		"MAIL_SENDER_NAME": "Tribal Law Project",
 		"OUTREACH_CARRIER": "",
