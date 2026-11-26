@@ -12,8 +12,7 @@ describe('Accounts of a law’s impact', () => {
 		expect(duncan).toMatchObject({ type: 'Firsthand', link: '/stories/cherokee-duncan-allotment-testimony-1906' });
 		expect(duncan?.excerpt?.text).toContain('the Curtis law');
 		expect(duncan?.excerpt?.locator).toContain('186');
-		// The first call reads every source record (about 31,000), which takes 15 to 30 seconds on a CI runner.
-	}, 60_000);
+	});
 
 	it('links one account to every law and event it names, many to many', () => {
 		const duncan = accountsOf({ record: 'curtis-act-1898' }).find((account) => account.id === 'cherokee-duncan-allotment-testimony-1906')!;
