@@ -28,7 +28,7 @@ import { passwordHash, passwordIterations } from '#lib/server/sign-in-secrets.ts
 
 /** The binding and bucket names in wrangler.jsonc. */
 const databaseBinding = 'database';
-const bucketName = 'model-tribal-adr-code-sources';
+const bucketName = 'tribal-law-project-files';
 
 export const fixturePassword = 'local fixture password';
 // Base32, 160 bits, as the site makes them (src/lib/server/two-step.ts).

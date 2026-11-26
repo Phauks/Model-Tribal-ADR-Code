@@ -119,11 +119,11 @@ The outreach mailbox can be changed by settings alone (lead author, Nov. 23, 202
 
 ## Storage
 
-Mail has a private R2 bucket of its own, `model-tribal-adr-code-mail`, bound as `mailFiles` in `wrangler.jsonc` and in the scanner's `scanner/wrangler.jsonc`. It holds each message whole, its HTML and its attachments, under `mail/`. Nothing in it is public: the Worker serves a file only to someone on the conversation's inbox, and an attachment only after the virus check (`SCANNING.md`). The scanner reads files under `mail/` from this bucket and everything else from `sourceDocuments`.
+Mail has a private R2 bucket of its own, `tribal-law-project-mail`, bound as `mailFiles` in `wrangler.jsonc` and in the scanner's `scanner/wrangler.jsonc`. It holds each message whole, its HTML and its attachments, under `mail/`. Nothing in it is public: the Worker serves a file only to someone on the conversation's inbox, and an attachment only after the virus check (`SCANNING.md`). The scanner reads files under `mail/` from this bucket and everything else from `sourceDocuments`.
 
 Mail is kept apart from the source documents for three reasons. Access can be given to one without the other. Rules such as deleting old mail or keeping a backup copy can be set for mail alone. And a mistake in code that tidies one bucket cannot touch the other.
 
-The bucket has to exist before a deploy that binds it, or the deploy fails. Create it once in the Cloudflare dashboard (R2 > Create bucket, name `model-tribal-adr-code-mail`, no public access), or with `npx wrangler r2 bucket create model-tribal-adr-code-mail`.
+The bucket has to exist before a deploy that binds it, or the deploy fails. Create it once in the Cloudflare dashboard (R2 > Create bucket, name `tribal-law-project-mail`, no public access), or with `npx wrangler r2 bucket create tribal-law-project-mail`.
 
 ## Settings
 
