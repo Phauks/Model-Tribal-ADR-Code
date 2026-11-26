@@ -2,6 +2,7 @@
  * Shared by the editing box and the workspace's Site text pages
  * (docs/site-text.md).
  */
+import { recordTextHeadings, type RecordTextPart } from './record-text.ts';
 
 /** What the editing box knows about one piece of text on the page. */
 export interface SiteTextPiece {
@@ -12,6 +13,8 @@ export interface SiteTextPiece {
 	/** The published words, or null for the built-in words. */
 	published: string | null;
 	draft: { words: string | null; personName: string | null; createdAt: string } | null;
+	/** For a part of a case's or law's box (src/lib/record-text.ts): its heading, and what it shows drawn as HTML. */
+	record?: { heading: string; html: string | null } | null;
 }
 
 /** The words a piece shows with drafts: the draft, else what is published, else the built-in words. */
@@ -38,6 +41,8 @@ export function pageName(path: string): string {
 }
 
 export function siteTextPlace(file: string): string {
+	const record = /(?:^|\/)content\/sources\/(?:[^/]+\/)?([^/]+)\.yaml$/.exec(file);
+	if (record) return `Record ${record[1]}`;
 	const route = /^src\/routes(\/.*)?\/\+(page|layout|error)\.svelte$/.exec(file);
 	if (route) {
 		const path = (route[1] ?? '').replace(/\/\([^)]+\)/g, '') || '/';
@@ -49,4 +54,10 @@ export function siteTextPlace(file: string): string {
 	if (!component) return file;
 	const words = component[1].replace(/([a-z0-9])([A-Z])/g, '$1 $2').toLocaleLowerCase('en-US');
 	return words.charAt(0).toLocaleUpperCase('en-US') + words.slice(1);
+}
+
+/** Where a piece of text is, from its catalog entry: a part of a box is its record's name and the part's heading. */
+export function entryPlace(entry: { file: string; record?: { name: string; part: string } }): string {
+	if (entry.record) return `${entry.record.name} › ${recordTextHeadings[entry.record.part as RecordTextPart] ?? entry.record.part}`;
+	return siteTextPlace(entry.file);
 }

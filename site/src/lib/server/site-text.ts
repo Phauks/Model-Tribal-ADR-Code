@@ -10,6 +10,7 @@
  * built-in words".
  */
 import type { D1Database } from '@cloudflare/workers-types/index.ts';
+import { tidyRecordWords } from '#lib/record-text.ts';
 import type { SiteTextEntry } from '#lib/site-text-markers.ts';
 import { activityStatement } from './activity-log.ts';
 import { now } from './identifiers.ts';
@@ -57,6 +58,15 @@ export function cleanWords(words: string | null, builtIn: string): string | null
 	if (words === null) return null;
 	const tidy = words.replace(/\s+/g, ' ').trim();
 	if (!tidy || tidy === builtIn) return null;
+	if (tidy.length > longestWords) throw new SiteTextProblem(`Keep it under ${longestWords} characters.`);
+	return tidy;
+}
+
+/** A part of a case's or law's box as saved: like cleanWords, but its paragraphs kept (src/lib/record-text.ts). */
+export function cleanRecordWords(words: string | null, builtIn: string): string | null {
+	if (words === null) return null;
+	const tidy = tidyRecordWords(words);
+	if (!tidy || tidy === tidyRecordWords(builtIn)) return null;
 	if (tidy.length > longestWords) throw new SiteTextProblem(`Keep it under ${longestWords} characters.`);
 	return tidy;
 }
@@ -143,7 +153,7 @@ export interface SaveInput {
 
 /** Saves a new version of one piece of text, as a draft. */
 export async function saveVersion(database: D1Database, input: SaveInput): Promise<SiteTextVersion> {
-	const words = cleanWords(input.words, input.entry.words);
+	const words = input.entry.record ? cleanRecordWords(input.words, input.entry.words) : cleanWords(input.words, input.entry.words);
 	const createdAt = now();
 	const page = input.page && input.page.startsWith('/') ? input.page.slice(0, 500) : null;
 	await database.batch([

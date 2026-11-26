@@ -23,7 +23,17 @@ Everything here is project design unless a source is cited.
 
 A piece's name is ten characters made from a hash of its file, the attribute (if any), its words and which occurrence of those words it is in the file. If a later code change rewords a piece that has an edit, the name changes and the edit stops matching. The workspace's Site text page then lists the edit under "No longer on the site", so the new wording can be edited again or the edit let go.
 
-Out of scope: text with its own editor or from the research records (essays, nation pages, glossary entries, cases, laws), and text written inside program code, such as role names in `permissions.ts` or sentences built in a script. Wrapping that kind of text by hand is the next stage.
+Out of scope: text with its own editor or from the research records (essays, nation pages, glossary entries), other than the parts of case and law boxes described under [Record text](#record-text), and text written inside program code, such as role names in `permissions.ts`, section headings passed to a component, or sentences built in a script. Wrapping that kind of text by hand is the next stage.
+
+## Record text
+
+The prose parts of a case's or a law's box (Background, Question, Holding, Summary and Treatment) come from the case's or law's research record in `content/sources/`, not from a component. Trevor Goldsmith found on Nov. 24, 2026 that the Indian Removal Act's Summary could not be selected in Edit mode, because the site text editor did not cover record text. Since then each of those parts is one more piece of site text, on every law, treaty, executive order and case page that shows it:
+
+- **Its name** comes from the record and the part (`src/lib/record-text.ts`), not from its words, so an edit made on the website keeps showing after the record's own words change in the repository. "Reset to built-in text" goes back to the record's words, which are the built-in words.
+- **Editing** works as for any other piece: in Editing, the part has a dotted outline, and clicking it opens a larger box with the part's Markdown, citations included (`[@key, pinpoint]`). Enter starts a new line, and Ctrl or Command with Enter saves. A draft is drawn in place; its citation numbers start again at 1 until the site is rebuilt.
+- **Publishing** is the same Publish button and rebuild. The build puts the published words into the records before any page is built (`src/lib/server/record-text-build.ts`), so the case or law page and every essay box built from the record show them.
+- **Quotations** stay in the records only. They must match the official report word for word, which is checked against the report, not on a page.
+- **Not yet:** adding a part a record does not have, and copying published words back into the record files in the repository. Until then the repository keeps the built-in words, and the Site text page lists each edited part with its record's file.
 
 ## Editing
 

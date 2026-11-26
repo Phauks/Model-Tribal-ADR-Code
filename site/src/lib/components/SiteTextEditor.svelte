@@ -7,7 +7,10 @@
 	// text the build marked (src/lib/site-text-markers.ts) shows a faint
 	// underline, and clicking it opens a small box to change it. Saved
 	// changes are drafts, shown in place; Publish lists them and publishes
-	// them, and the site then rebuilds with the new words.
+	// them, and the site then rebuilds with the new words. The prose parts of
+	// a case's or law's box (Summary, Treatment and the like) come from its
+	// record and are marked data-record-text (src/lib/record-text.ts); they
+	// edit the same way, in a larger box that keeps paragraphs.
 	import Check from '@lucide/svelte/icons/check';
 	import History from '@lucide/svelte/icons/history';
 	import RotateCcw from '@lucide/svelte/icons/rotate-ccw';
@@ -41,7 +44,7 @@
 	let pieces = $state.raw<Map<string, SiteTextPiece>>(new Map());
 
 	// The open editing box.
-	let open = $state<{ key: string; attribute: string | null; top: number; left: number; sheet: boolean } | null>(null);
+	let open = $state<{ key: string; attribute: string | null; record: boolean; top: number; left: number; sheet: boolean } | null>(null);
 	let words = $state('');
 	let saving = $state(false);
 	let problem = $state('');
@@ -60,6 +63,7 @@
 	function keysOnPage(): string[] {
 		const keys = new Set<string>();
 		for (const element of document.querySelectorAll('[data-text]')) keys.add(element.getAttribute('data-text') ?? '');
+		for (const element of document.querySelectorAll('[data-record-text]')) keys.add(element.getAttribute('data-record-text') ?? '');
 		for (const element of document.querySelectorAll('[data-text-attributes]')) {
 			for (const mark of (element.getAttribute('data-text-attributes') ?? '').split(' ')) keys.add(mark.split(':')[1] ?? '');
 		}
@@ -88,7 +92,9 @@
 	}
 
 	// What each changed element said before, so Reading puts it back.
-	const originals = new Map<Element, { text?: string; attributes: Record<string, string> }>();
+	const originals = new Map<Element, { text?: string; html?: string; attributes: Record<string, string> }>();
+	// The HTML last put into each part of a box, so redrawing it does not loop through the page watcher.
+	const drawn = new WeakMap<Element, string>();
 
 	function remember(element: Element) {
 		if (!originals.has(element)) originals.set(element, { attributes: {} });
@@ -105,6 +111,20 @@
 				const original = remember(element);
 				original.text ??= element.textContent ?? '';
 				element.textContent = shown;
+			}
+			element.classList.toggle('site-text-draft', piece.draft !== null);
+		}
+		for (const element of document.querySelectorAll('[data-record-text]')) {
+			const piece = pieces.get(element.getAttribute('data-record-text') ?? '');
+			if (editing) element.setAttribute('tabindex', '0');
+			else element.removeAttribute('tabindex');
+			if (!piece) continue;
+			const html = piece.record?.html;
+			if (html && drawn.get(element) !== html) {
+				const original = remember(element);
+				original.html ??= element.innerHTML;
+				element.innerHTML = html;
+				drawn.set(element, html);
 			}
 			element.classList.toggle('site-text-draft', piece.draft !== null);
 		}
@@ -130,10 +150,15 @@
 	function restore() {
 		for (const [element, original] of originals) {
 			if (original.text !== undefined) element.textContent = original.text;
+			if (original.html !== undefined) {
+				element.innerHTML = original.html;
+				drawn.delete(element);
+			}
 			for (const [attribute, value] of Object.entries(original.attributes)) element.setAttribute(attribute, value);
 		}
 		originals.clear();
 		for (const element of document.querySelectorAll('.site-text-draft')) element.classList.remove('site-text-draft');
+		for (const element of document.querySelectorAll('[data-record-text][tabindex]')) element.removeAttribute('tabindex');
 	}
 
 	async function refresh() {
@@ -164,10 +189,12 @@
 		if (!piece) return;
 		const box = element.getBoundingClientRect();
 		const sheet = window.matchMedia('(max-width: 37.5rem)').matches;
-		const width = Math.min(380, window.innerWidth - 32);
+		const record = Boolean(piece.record);
+		const width = Math.min(record ? 560 : 380, window.innerWidth - 32);
 		open = {
 			key,
 			attribute,
+			record,
 			sheet,
 			top: box.bottom + window.scrollY + 14,
 			left: Math.max(16, Math.min(box.left + window.scrollX - 8, window.scrollX + window.innerWidth - width - 16))
@@ -185,6 +212,8 @@
 	function pieceAt(target: Element): { element: Element; key: string; attribute: string | null } | null {
 		const text = target.closest('[data-text]');
 		if (text) return { element: text, key: text.getAttribute('data-text') ?? '', attribute: null };
+		const part = target.closest('[data-record-text]');
+		if (part) return { element: part, key: part.getAttribute('data-record-text') ?? '', attribute: null };
 		const labelled = target.closest('[data-text-attributes]');
 		if (labelled) {
 			const [attribute, key] = (labelled.getAttribute('data-text-attributes') ?? '').split(' ')[0].split(':');
@@ -236,9 +265,9 @@
 			problem = response ? ((await response.json().catch(() => null)) as { message?: string } | null)?.message ?? 'Not saved.' : 'Not saved. Check the connection.';
 			return;
 		}
-		const answer = (await response.json()) as Pick<SiteTextPiece, 'key' | 'published' | 'draft'> & { waiting: number };
+		const answer = (await response.json()) as Pick<SiteTextPiece, 'key' | 'published' | 'draft' | 'record'> & { waiting: number };
 		const piece = pieces.get(answer.key);
-		if (piece) pieces = new Map([...pieces, [answer.key, { ...piece, published: answer.published, draft: answer.draft }]]);
+		if (piece) pieces = new Map([...pieces, [answer.key, { ...piece, published: answer.published, draft: answer.draft, record: answer.record ?? piece.record }]]);
 		waiting = answer.waiting;
 		apply();
 		close();
@@ -266,12 +295,12 @@
 			body: JSON.stringify({ key: draft.key, words: draft.published, page: null })
 		}).catch(() => null);
 		if (!response?.ok || !list) return;
-		const answer = (await response.json()) as Pick<SiteTextPiece, 'key' | 'published' | 'draft'> & { waiting: number };
+		const answer = (await response.json()) as Pick<SiteTextPiece, 'key' | 'published' | 'draft' | 'record'> & { waiting: number };
 		waiting = answer.waiting;
 		list = { ...list, drafts: list.drafts.filter((each) => each.key !== draft.key) };
 		const piece = pieces.get(draft.key);
 		if (piece) {
-			pieces = new Map([...pieces, [draft.key, { ...piece, published: answer.published, draft: answer.draft }]]);
+			pieces = new Map([...pieces, [draft.key, { ...piece, published: answer.published, draft: answer.draft, record: answer.record ?? piece.record }]]);
 			apply();
 		}
 	}
@@ -364,6 +393,7 @@
 	<div
 		class="site-text-box"
 		class:sheet={open.sheet}
+		class:record={open.record}
 		style:top={open.sheet ? null : `${open.top}px`}
 		style:left={open.sheet ? null : `${open.left}px`}
 		role="dialog"
@@ -371,21 +401,23 @@
 	>
 		{#if open.sheet}<span class="grabber" aria-hidden="true"></span>{:else}<span class="arrow" aria-hidden="true"></span>{/if}
 		{#if open.attribute}<p class="kind">{attributeNames[open.attribute] ?? open.attribute}</p>{/if}
+		{#if openPiece.record}<p class="kind">{openPiece.record.heading}</p>{/if}
 		<label class="visually-hidden" for="site-text-words">Text</label>
 		<textarea
 			id="site-text-words"
 			bind:this={field}
 			bind:value={words}
-			rows="2"
+			rows={open.record ? 9 : 2}
 			maxlength="2000"
 			onkeydown={(event) => {
-				if (event.key === 'Enter' && !event.shiftKey) {
+				// In a part of a box, Enter starts a new line or paragraph; Ctrl or Command with Enter saves.
+				if (event.key === 'Enter' && (open?.record ? event.ctrlKey || event.metaKey : !event.shiftKey)) {
 					event.preventDefault();
 					void save(words);
 				}
 			}}
 		></textarea>
-		{#if words.trim() !== openPiece.builtIn}
+		{#if words.trim() !== openPiece.builtIn.trim()}
 			<p class="built-in">Built-in: <s>{openPiece.builtIn}</s></p>
 		{/if}
 		{#if problem}<p class="problem" role="alert">{problem}</p>{/if}
@@ -456,6 +488,27 @@
 	:global(html:not(.site-text-editing) site-text.site-text-draft) {
 		display: inline !important;
 	}
+	/* A part of a case's or law's box shows as one block to click while editing,
+	   kept beside the At a glance column rather than running under it. */
+	:global(html.site-text-editing [data-record-text]),
+	:global([data-record-text].site-text-draft) {
+		display: flow-root;
+	}
+	:global(html.site-text-editing [data-record-text]:not(.site-text-open)) {
+		outline: 1px dotted color-mix(in srgb, currentColor 45%, transparent);
+		outline-offset: 4px;
+		cursor: text;
+	}
+	:global(html.site-text-editing [data-record-text]:not(.site-text-open):is(:hover, :focus-visible)) {
+		outline-color: currentColor;
+	}
+	:global(html.site-text-editing [data-record-text] a) {
+		cursor: text;
+	}
+	:global(html:not(.site-text-editing) [data-record-text].site-text-draft) {
+		background: var(--color-status-draft-background);
+		box-shadow: inset 3px 0 0 var(--color-status-draft-rule);
+	}
 
 	.site-text-box,
 	.site-text-list {
@@ -475,6 +528,13 @@
 	}
 	.site-text-box {
 		width: min(380px, calc(100vw - 32px));
+	}
+	.site-text-box.record {
+		width: min(560px, calc(100vw - 32px));
+	}
+	.site-text-box.record .built-in {
+		max-height: 8rem;
+		overflow: auto;
 	}
 	.site-text-box.sheet {
 		position: fixed;

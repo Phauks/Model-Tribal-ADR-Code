@@ -18,6 +18,7 @@ import { imageMayBeShown, type OfficialImageRecord, type ServableImage } from '.
 import { parseCsv } from '../csv.ts';
 import { copiesByLink, linkForMatching, servedMediaTypes, type PublicCopy } from '../public-copies.ts';
 import type { RecordBox } from '../essays/record-boxes.ts';
+import { applyRecordText, type RecordTextWords } from '../record-text.ts';
 
 export const repositoryRoot = path.resolve(process.cwd(), '..');
 
@@ -115,16 +116,33 @@ export interface SourceRecord {
 }
 
 let sourceCache: Map<string, SourceRecord> | undefined;
+const sourceFileCache = new Map<string, string>();
 
+/**
+ * Every source record by key. When the build carries words published from
+ * the website for parts of case and law boxes (docs/site-text.md, "Record
+ * text"), vite.config.ts names a file of them in PUBLISHED_RECORD_TEXT_FILE
+ * and they replace the records' own words here, so every page built from
+ * the records shows them.
+ */
 export function sources(): Map<string, SourceRecord> {
 	if (!sourceCache) {
 		sourceCache = new Map();
 		for (const file of yamlFilesUnder('content/sources')) {
 			const record = readYaml<SourceRecord>(file);
 			sourceCache.set(record.key, record);
+			sourceFileCache.set(record.key, file);
 		}
+		const published = process.env.PUBLISHED_RECORD_TEXT_FILE;
+		if (published) applyRecordText(sourceCache, JSON.parse(readFileSync(published, 'utf8')) as RecordTextWords);
 	}
 	return sourceCache;
+}
+
+/** A source record's file, relative to the repository root, such as content/sources/i/indian-removal-act-1830.yaml. */
+export function sourceFile(key: string): string | undefined {
+	sources();
+	return sourceFileCache.get(key);
 }
 
 /* Glossary ---------------------------------------------------------------- */

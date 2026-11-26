@@ -7,7 +7,7 @@ import { siteTextSubject } from '#lib/permissions.ts';
 import { requireDocumentLevel } from '#lib/server/access.ts';
 import { drafts } from '#lib/server/site-text.ts';
 import { catalogByKey } from '#lib/server/site-text-catalog.ts';
-import { pageName, siteTextPlace } from '#lib/site-text.ts';
+import { entryPlace, pageName, siteTextPlace } from '#lib/site-text.ts';
 import { requirePersonForData, storage } from '#lib/server/workspace.ts';
 import type { RequestHandler } from './$types';
 
@@ -23,7 +23,7 @@ export const GET: RequestHandler = async (event) => {
 		const builtIn = entry?.words ?? state.draft?.builtInWords ?? '';
 		return {
 			key: state.key,
-			place: state.draft?.page ? pageName(state.draft.page) : siteTextPlace(entry?.file ?? state.draft?.sourceFile ?? ''),
+			place: entry?.record ? entryPlace(entry) : state.draft?.page ? pageName(state.draft.page) : siteTextPlace(entry?.file ?? state.draft?.sourceFile ?? ''),
 			before: state.published ?? builtIn,
 			after: state.draft?.words ?? builtIn,
 			published: state.published

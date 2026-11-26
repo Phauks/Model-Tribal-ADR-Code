@@ -22,6 +22,7 @@
 import { error } from '@sveltejs/kit';
 import { essayBoxFacts, essaysInGit } from 'virtual:essay-library';
 import { renderEssay } from '../essays/render.ts';
+import { markRecordText } from '../record-text.ts';
 import { splitFrontMatter } from '../essays/syntax.ts';
 import { boxPartMarkdown, type RecordBox } from '../essays/record-boxes.ts';
 import { essayLibrary, withRecordBoxes } from './essay-pages.ts';
@@ -171,7 +172,8 @@ export function boxSections(key: string, title: string, box: RecordBox | undefin
 	}
 	if (!markdown) return { sections: [], topics, sources: [] };
 	const rendered = renderEssay(`# ${title}\n\n${markdown}`, essayLibrary);
-	const html = rendered.html.replace(/<h1[^>]*>[\s\S]*?<\/h1>\n?/, '');
+	// Each prose part carries its name, so it can be edited in place (docs/site-text.md, "Record text").
+	const html = markRecordText(rendered.html.replace(/<h1[^>]*>[\s\S]*?<\/h1>\n?/, ''), key);
 	const headings = [...html.matchAll(/<h2 id="([^"]+)">([^<]+)<\/h2>\n?/g)];
 	const sections = headings.map((match, index) => ({
 		id: match[1],
