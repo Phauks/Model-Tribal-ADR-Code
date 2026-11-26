@@ -13,9 +13,11 @@ import { parse } from 'yaml';
 import type { CitationMark } from '../citation-marks.ts';
 import type { InfoName, InfoPicture } from '../info-page.ts';
 import { displayName } from '../nation-labels.ts';
+import { copyPagePath } from '../public-copies.ts';
 import { casePreviewList } from './case-previews.ts';
-import { nations, repositoryRoot } from './content.ts';
+import { nations, publicCopyFor, repositoryRoot, sources } from './content.ts';
 import type { FactGroup } from './justice-pages.ts';
+import { isLawRecord, recordName } from './law-records.ts';
 import { SourceUses, type SourceEntry } from './source-uses.ts';
 
 interface Cited {
@@ -64,6 +66,26 @@ export interface BiographyCase {
 export interface BiographyEvent {
 	when: string;
 	text: string;
+	/** The treaty the event names, linked to its page: `text` holds `link.text` once. */
+	link?: { text: string; href: string };
+	citations: CitationMark[];
+}
+
+/** A treaty the person signed, with its page on this site and the copy of its text the site keeps. */
+export interface BiographyTreaty {
+	key: string;
+	/** The treaty's name, as its page heads it: "Treaty with the Cheyenne and Arapaho (1867)". */
+	name: string;
+	/** Its first page in the Statutes at Large: "15 Stat. 593". */
+	citation?: string;
+	link: string;
+	signed: string;
+	/** The people the treaty prints the person as signing for: "Cheyennes". */
+	signedFor?: string;
+	/** The title the treaty prints beside the person's name: "chief". */
+	listedAs?: string;
+	/** The page of the copy of the treaty's text that the site keeps, and its format. */
+	document?: { href: string; format: string };
 	citations: CitationMark[];
 }
 
@@ -76,6 +98,7 @@ export interface BiographyPage {
 	glance: FactGroup[];
 	nations: { id: string; name: string }[];
 	cases: BiographyCase[];
+	treaties: BiographyTreaty[];
 	events: BiographyEvent[];
 	sources: SourceEntry[];
 }
@@ -144,6 +167,50 @@ export function peopleOfNation(nationIdentifier: string): { name: string; link: 
 		}));
 }
 
+/**
+ * A treaty signing as scripts/biographies/make_treaty_records.py writes it:
+ * "Signed the Treaty with the Cheyenne and Arapaho, 1867, for the Cheyennes,
+ * listed as chief." Gives the treaty's name as the sentence prints it, and the
+ * people and title the treaty prints beside the person's name.
+ */
+const signing = /^Signed the (.+?, \d{4}(?:, [A-Z][a-z]{2,4}\.? \d{1,2})?), for (?:the )*(.+?)(?:, listed as (.+?))?\.?$/;
+
+export function treatySigning(text: string): { treaty: string; signedFor: string; listedAs?: string } | undefined {
+	const match = signing.exec(text);
+	return match ? { treaty: match[1], signedFor: match[2], listedAs: match[3] } : undefined;
+}
+
+/** The treaty a fact cites, when its source is a treaty with a page at /laws/<key>. */
+function treatyRecord(key: string) {
+	const record = sources().get(key);
+	return record && isLawRecord(record) && (record.citation as { type?: string }).type === 'treaty' ? record : undefined;
+}
+
+let signers: Map<string, { name: string; link: string; detail?: string }[]> | undefined;
+
+/** The people with a page who signed a treaty, for the treaty's page, with whom the treaty prints them as signing for. */
+export function signersOfTreaty(treatyKey: string): { name: string; link: string; detail?: string }[] {
+	if (!signers) {
+		signers = new Map();
+		for (const person of biographies()) {
+			const seen = new Set<string>();
+			for (const event of person.events ?? []) {
+				const signed = treatySigning(event.text);
+				if (!signed || seen.has(event.source)) continue;
+				seen.add(event.source);
+				const list = signers.get(event.source) ?? [];
+				list.push({
+					name: person.name,
+					link: biographyPath(person.key),
+					detail: `${signed.signedFor}${signed.listedAs ? `, listed as ${signed.listedAs}` : ''}`
+				});
+				signers.set(event.source, list);
+			}
+		}
+	}
+	return signers.get(treatyKey) ?? [];
+}
+
 // Built once, not for each of the thousand biography pages.
 let nationDisplayNames: Map<string, string> | undefined;
 let casePreviewsById: Map<string, ReturnType<typeof casePreviewList>['cases'][number]> | undefined;
@@ -209,12 +276,51 @@ export function biographyPage(key: string): BiographyPage | null {
 		});
 	}
 
+	// Every treaty the person signed (Trevor, Nov. 24, 2026: "we say this man
+	// signed treaties. We should link to those treaty pages or documents"):
+	// its page at /laws/<key> and the copy of its text the site keeps.
+	uses.part('Treaties');
+	const treaties: BiographyTreaty[] = [];
+	const treatyLinks = new Map<string, string>();
+	for (const entry of person.events ?? []) {
+		const record = treatyRecord(entry.source);
+		if (!record || treatyLinks.has(entry.source)) continue;
+		const signed = treatySigning(entry.text);
+		const copy = publicCopyFor(record.original_link) ?? publicCopyFor(record.citation.URL);
+		const link = `/laws/${entry.source}`;
+		treatyLinks.set(entry.source, link);
+		treaties.push({
+			key: entry.source,
+			name: recordName(entry.source).name,
+			citation: /\d+ Stat\. \d+/.exec(record.citation.title ?? '')?.[0],
+			link,
+			signed: entry.when,
+			signedFor: signed?.signedFor,
+			listedAs: signed?.listedAs,
+			document: copy ? { href: copyPagePath(copy), format: copy.mediaType === 'application/pdf' ? 'PDF' : copy.mediaType === 'text/html' ? 'HTML' : 'File' } : undefined,
+			citations: cite(entry, 'Treaties', entry.text)
+		});
+	}
+	if (treaties.length > 0) {
+		glance.push({
+			field: 'treaties',
+			label: treaties.length === 1 ? 'Treaty signed' : 'Treaties signed',
+			items: treaties.map((item) => ({ text: item.name, link: item.link }))
+		});
+	}
+
 	uses.part('Life and events');
-	const events = (person.events ?? []).map((entry) => ({
-		when: entry.when,
-		text: entry.text,
-		citations: cite(entry, 'Life and events', entry.text)
-	}));
+	const events: BiographyEvent[] = (person.events ?? []).map((entry) => {
+		const href = treatyLinks.get(entry.source);
+		const named = href ? treatySigning(entry.text)?.treaty : undefined;
+		return {
+			when: entry.when,
+			text: entry.text,
+			link: href && named ? { text: named, href } : undefined,
+			// A signing repeats a row of Treaties, so its marker points at the same entry in References.
+			citations: href ? [uses.again(entry.source, { section: 'Life and events', text: entry.text, where: entry.where })] : cite(entry, 'Life and events', entry.text)
+		};
+	});
 
 	const picture: InfoPicture | undefined = person.portrait
 		? {
@@ -239,6 +345,7 @@ export function biographyPage(key: string): BiographyPage | null {
 			name: nationNames.get(entry.nation) ?? entry.nation
 		})),
 		cases,
+		treaties,
 		events,
 		sources: uses.list
 	};
