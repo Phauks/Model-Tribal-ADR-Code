@@ -1,0 +1,81 @@
+// Cloudflare Worker that watches public sources for new and changed legal
+// material (docs/source-watch.md, decision record 0059). Its watchers ask
+// the Federal Register, the eCFR and the links the records cite what is new,
+// keep a private copy of each file (scanned before anything opens it), and
+// write candidates to the database for the workspace's Source watch page.
+// Nothing it finds is published without a person.
+//
+// Workers Builds deploys it from the GitHub repository (root directory:
+// site/watch, build command: cd .. && npm ci, deploy command:
+// npx wrangler deploy, build watch paths: site/watch/* and
+// site/src/lib/server/watch/*). No secret is stored here or in GitHub
+// (decision record 0006); the models are reached through the AI binding.
+{
+	"$schema": "../node_modules/wrangler/config-schema.json",
+	"name": "tribal-law-project-watch",
+	"main": "worker.ts",
+	"compatibility_date": "2026-11-20",
+	"compatibility_flags": ["nodejs_compat"],
+	// A public address for the read-only progress page (counts and each
+	// watcher's last run; never an item's title or text).
+	"workers_dev": true,
+	"preview_urls": false,
+	"observability": {
+		"enabled": true
+	},
+	// Every minute: start the watchers that are due, ask the models about a
+	// few waiting items, and write the progress record.
+	"triggers": {
+		"crons": ["* * * * *"]
+	},
+	// One desk per host: robots.txt, spacing between requests and back-off
+	// (src/lib/server/watch/host-desk.ts).
+	"exports": {
+		"HostDesk": { "type": "durable-object", "storage": "sqlite" }
+	},
+	"durable_objects": {
+		"bindings": [{ "name": "hostDesks", "class_name": "HostDesk" }]
+	},
+	// One Workflows instance per watcher run, so each step is retried on its own.
+	"workflows": [
+		{
+			"name": "tribal-law-project-watch-run",
+			"binding": "watchRuns",
+			"class_name": "WatchRun"
+		}
+	],
+	// The same database and bucket as the website, by the same binding names.
+	"d1_databases": [
+		{
+			"binding": "database",
+			"database_name": "model-tribal-adr-code",
+			"database_id": "2386ebd3-cea2-4ca1-9fff-0772fcd8bc6b",
+			"migrations_dir": "../migrations"
+		}
+	],
+	"r2_buckets": [
+		{
+			"binding": "sourceDocuments",
+			"bucket_name": "model-tribal-adr-code-sources"
+		}
+	],
+	// Claude, through AI Gateway with Unified Billing: the account's credits
+	// pay, so no Anthropic key and no secret (site/watch/README.md, "Models").
+	"ai": {
+		"binding": "modelGateway"
+	},
+	// WATCH_TRIAGE_PROVIDER: "none" (rules only; the middle band goes to
+	// people), "ai-gateway" (Claude Haiku 5.5, then Claude Opus 5.5 for hard
+	// cases) or "nightly-task" (not built). Leave it "none" until credits are
+	// loaded and the gateway exists. WATCH_GATEWAY names the gateway.
+	// WATCH_TURN_ON and WATCH_TURN_OFF list watchers, separated by commas, to
+	// turn on or off without a code change.
+	"vars": {
+		"WATCH_TRIAGE_PROVIDER": "none",
+		"WATCH_GATEWAY": "source-watch",
+		"WATCH_CHEAP_MODEL": "anthropic/claude-haiku-5.5",
+		"WATCH_TOP_MODEL": "anthropic/claude-opus-5.5",
+		"WATCH_TURN_ON": "",
+		"WATCH_TURN_OFF": ""
+	}
+}

@@ -35,7 +35,8 @@
 		"database:seed:local": "node tools/seed-local-database.mjs",
 		"database:migrate:remote": "wrangler d1 migrations apply database --remote",
 		"database:new-migration": "node tools/new-migration.mjs",
-		"sign-in-link": "node tools/make-sign-in-link.mjs"
+		"sign-in-link": "node tools/make-sign-in-link.mjs",
+		"watch:index": "node watch/make-known-identifiers.ts"
 	},
 	"devDependencies": {
 		"@cloudflare/containers": "^0.3.7",

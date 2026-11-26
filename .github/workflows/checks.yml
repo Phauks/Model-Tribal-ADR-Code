@@ -249,6 +249,8 @@ jobs:
         run: npx tsc -p scanner/tsconfig.json
       - name: Type check the Wayback Worker (wayback/worker.ts)
         run: npx tsc -p wayback/tsconfig.json
+      - name: Type check the source watch Worker (watch/worker.ts)
+        run: npx tsc -p watch/tsconfig.json
       - name: Type check the live editing Worker (live/worker.ts)
         run: npx tsc -p live/tsconfig.json
       - name: Unit tests

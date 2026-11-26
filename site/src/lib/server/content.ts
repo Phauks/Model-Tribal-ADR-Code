@@ -668,3 +668,12 @@ export function publicCopyFor(link: string | undefined): PublicCopy | undefined 
 	const copy = publicCopyLinks.get(matching);
 	return copy && !isWithheld(copy) ? copy : undefined;
 }
+
+/** The SHA-256 of every file in the capture index, for the source watch's known-identifiers index (src/lib/server/watch/known-build.ts). */
+export function captureIndexSha256s(): string[] {
+	const indexPath = 'research/capture-index.csv';
+	if (!existsSync(path.join(repositoryRoot, indexPath))) return [];
+	return parseCsv(readText(indexPath))
+		.map((row) => row.sha256)
+		.filter((sha256) => /^[0-9a-f]{64}$/.test(sha256 ?? ''));
+}

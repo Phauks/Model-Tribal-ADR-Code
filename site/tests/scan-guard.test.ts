@@ -100,6 +100,28 @@ const bucketCalls: Record<string, BucketUse> = {
     kind: "project-file",
     why: "The Wayback Worker's own progress record, written from what the Wayback Machine answered; it holds only links and dates.",
   },
+  // The source watch (docs/source-watch.md): files it fetches from public
+  // sources are kept privately and put in line for the scan by storeCapture;
+  // the rest are records the watch Worker or the site writes itself.
+  "src/lib/server/watch/capture.ts storeCapture put(key)": {
+    kind: "sent-file-store",
+  },
+  "src/lib/server/watch/drivers/page.ts read get(key)": {
+    kind: "kept-not-served",
+    why: "Text the watch Worker extracted from a watched page, read only to show a short difference on the review page; never a file, never served.",
+  },
+  "src/lib/server/watch/drivers/page.ts write put(key)": {
+    kind: "kept-not-served",
+    why: "Text the watch Worker extracted from a watched page (tags removed), kept to compare with the next version; never a file, never served.",
+  },
+  "src/lib/server/watch/progress.ts readWatchProgress get(progressObject)": {
+    kind: "project-file",
+    why: "The watch Worker's own progress record (counts and run outcomes), read by its progress page and the Service checks page.",
+  },
+  "src/lib/server/watch/progress.ts writeWatchProgress put(progressObject)": {
+    kind: "project-file",
+    why: "The watch Worker's own progress record: counts, run outcomes and model spend, never an item's text.",
+  },
   "src/lib/server/uploads.ts finishUpload get(upload.original_key)": {
     kind: "kept-not-served",
     why: "Reads a sent picture to make its copy without location details; both are put in line for the scan, and neither is served until it passes.",
