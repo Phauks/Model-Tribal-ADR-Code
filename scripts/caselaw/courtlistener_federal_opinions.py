@@ -128,30 +128,29 @@ def opinions(args: argparse.Namespace) -> None:
     row_start = re.compile(rb'\n(?="\d+","\d{4}-\d\d-\d\d \d\d:\d\d:\d\d)')
     last_field = re.compile(rb',"?(\d+)"?\s*$')
     header = next(csv.reader([source.readline().decode("utf-8")]))
-    # Opinions that use an Indian law term are kept in memory; the others of the wanted clusters go to a
-    # compressed side store on disk, so a dissent or concurrence that uses no term still joins its case.
-    import sqlite3  # noqa: PLC0415
-    import zlib  # noqa: PLC0415
-    side_path = cache / "opinions-side.sqlite"
-    side_path.unlink(missing_ok=True)
-    side = sqlite3.connect(side_path)
-    side.execute("create table opinion (cluster text, type text, author text, text blob)")
+    # Opinions that use an Indian law term are kept in memory; for the others of the wanted clusters only
+    # where the row sits in the decompressed file is noted, so a dissent or concurrence that uses no term
+    # can be read back by seeking once the pass is done (the file is indexed as it is read).
     texts: dict[str, list[dict]] = {}
+    elsewhere: dict[str, list[tuple[int, int]]] = {}
     seen, started, rest = 0, time.time(), b""
 
-    def take(raw: bytes) -> None:
+    def parse(raw: bytes) -> tuple[str, dict]:
+        values = next(csv.reader([raw.decode("utf-8", "replace")], escapechar="\\", doublequote=False))
+        row = dict(zip(header, values))
+        return row["cluster_id"], {"type": row["type"], "author": row["author_str"], "text": opinion_text(row)}
+
+    def take(raw: bytes, offset: int) -> None:
         match = last_field.search(raw[-40:])
         if not match or match.group(1).decode() not in wanted:
             return
-        values = next(csv.reader([raw.decode("utf-8", "replace")], escapechar="\\", doublequote=False))
-        row = dict(zip(header, values))
-        cluster_id = row["cluster_id"]
-        part = {"type": row["type"], "author": row["author_str"], "text": opinion_text(row)}
+        cluster_id, part = parse(raw)
         if cluster_id in texts or any(pattern.search(part["text"]) for pattern in MARKERS.values()):
             texts.setdefault(cluster_id, []).append(part)
         else:
-            side.execute("insert into opinion values (?, ?, ?, ?)", (cluster_id, part["type"], part["author"], zlib.compress(part["text"].encode("utf-8"))))
+            elsewhere.setdefault(cluster_id, []).append((offset, len(raw)))
 
+    base = source.tell()  # decompressed offset of data[0]
     while True:
         block = source.read(64 << 20)
         data = rest + block
@@ -161,22 +160,23 @@ def opinions(args: argparse.Namespace) -> None:
         begin = 0
         for cut in cuts:
             if cut > begin:
-                take(data[begin:cut])
+                take(data[begin:cut], base + begin)
                 seen += 1
             begin = cut + 1
         rest = data[begin:]
+        base += begin
         if not block:
             break
         if seen // 500_000 != (seen - len(cuts)) // 500_000:
-            side.commit()
             print(f"{seen} opinions read, {len(texts)} clusters with a term, {(time.time() - started) / 60:.0f} min", flush=True)
-    side.commit()
-    side.execute("create index by_cluster on opinion (cluster)")
+    joined = 0
     for cluster_id, parts in texts.items():
-        for kind, author, blob in side.execute("select type, author, text from opinion where cluster = ?", (cluster_id,)):
-            parts.append({"type": kind, "author": author, "text": zlib.decompress(blob).decode("utf-8")})
-    side.close()
-    side_path.unlink()
+        for offset, length in elsewhere.get(cluster_id, []):
+            source.seek(offset)
+            parts.append(parse(source.read(length))[1])
+            joined += 1
+    source.close()
+    print(joined, "opinions without a term joined to their cases", flush=True)
     print(seen, "opinions read;", len(texts), "clusters with an Indian law term", flush=True)
     out = work / "candidates-courtlistener.jsonl"
     count = 0

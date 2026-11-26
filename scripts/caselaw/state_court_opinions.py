@@ -262,10 +262,17 @@ def select(args: argparse.Namespace) -> None:
     for path in sorted((work / "reading").glob("out-*.json")):
         for answer in json.loads(path.read_text()):
             readings[answer["id"]] = answer
+    # The spot check of cases kept by score (reading/check-out.json): a case it judged not Indian law is left
+    # out, unless the caption names a Native nation as a party.
+    check = work / "reading" / "check-out.json"
+    rejected = {answer["id"] for answer in json.loads(check.read_text()) if answer.get("indian_law") is False} if check.exists() else set()
     selected, missing = [], 0
     for row in candidates(work):
         if row["score"] >= args.auto and not only_native(row):
-            selected.append({"id": row["id"], "how": "score"})
+            if row["id"] not in rejected:
+                selected.append({"id": row["id"], "how": "score"})
+            elif NATIVE_PARTY.search(row["name"] or ""):
+                selected.append({"id": row["id"], "how": "caption"})
             continue
         answer = readings.get(row["id"])
         if needs_reading(row, args.auto, args.read_from) and answer is None:
