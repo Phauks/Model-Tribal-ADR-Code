@@ -154,7 +154,7 @@
 	comes right after the title, so the key facts come first.
 -->
 <RecordPage glance={!page.withdrawn && (data.glance.length > 0 || data.map || hasContacts) ? glance : undefined}>
-	{#snippet introduction()}
+	{#snippet title()}
 		{#if page.example}
 			<div class="notice" role="note">
 				<p>
@@ -166,6 +166,8 @@
 
 		<!-- 1. Name. The nation's seal or logo heads At a glance (docs/official-images.md). -->
 		<h1>{page.officialName}</h1>
+	{/snippet}
+	{#snippet introduction()}
 		{#if !page.withdrawn}
 			<!-- Recognition badges (Trevor, Nov. 22, 2026; the full wording and legal basis
 			     are in At a glance), then who keeps the page, on the same line since both
