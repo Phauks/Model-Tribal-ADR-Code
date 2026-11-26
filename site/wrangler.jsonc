@@ -36,8 +36,8 @@
 	"d1_databases": [
 		{
 			"binding": "database",
-			"database_name": "model-tribal-adr-code",
-			"database_id": "2386ebd3-cea2-4ca1-9fff-0772fcd8bc6b",
+			"database_name": "tribal-law-project",
+			"database_id": "eeb27102-f50e-40ff-bebd-5347c5c055c7",
 			"migrations_dir": "migrations"
 		},
 		{
@@ -45,8 +45,8 @@
 			// every document in the bucket, loaded from scripts/library/ and kept
 			// up to date by the hourly run at minute 29.
 			"binding": "sourceLibrary",
-			"database_name": "model-tribal-adr-code-library",
-			"database_id": "5ee18668-8141-400f-8f90-113f631a1734"
+			"database_name": "tribal-law-project-library",
+			"database_id": "90c5f0f5-6352-459e-a946-b3f18ea97d96"
 		}
 	],
 	// Private bucket for copies of source documents. Not public: nothing in
@@ -55,7 +55,7 @@
 	"r2_buckets": [
 		{
 			"binding": "sourceDocuments",
-			"bucket_name": "model-tribal-adr-code-sources"
+			"bucket_name": "tribal-law-project-files"
 		},
 		// Private bucket for the project inbox (site/MAIL.md, "Storage"): each
 		// message whole, its HTML and its attachments, under mail/. Kept apart
@@ -63,7 +63,7 @@
 		// rules and backups, and a mistake in one cannot touch the other.
 		{
 			"binding": "mailFiles",
-			"bucket_name": "model-tribal-adr-code-mail"
+			"bucket_name": "tribal-law-project-mail"
 		}
 	],
 	// Live editing rooms, one per essay. They run in their own Worker,

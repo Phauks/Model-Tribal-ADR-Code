@@ -816,8 +816,8 @@ const siteTextRebuilds: Check = {
 export const serviceChecks: readonly Check[] = [
 	database,
 	sourceLibrary,
-	bucketCheck('source-documents-bucket', 'Source documents bucket', 'sourceDocuments', 'model-tribal-adr-code-sources', 'source documents and sent files'),
-	bucketCheck('mail-bucket', 'Mail bucket', 'mailFiles', 'model-tribal-adr-code-mail', 'the project inbox’s messages and attachments'),
+	bucketCheck('source-documents-bucket', 'Source documents bucket', 'sourceDocuments', 'tribal-law-project-files', 'source documents and sent files'),
+	bucketCheck('mail-bucket', 'Mail bucket', 'mailFiles', 'tribal-law-project-mail', 'the project inbox’s messages and attachments'),
 	mapTiles,
 	siteFiles,
 	liveEditing,

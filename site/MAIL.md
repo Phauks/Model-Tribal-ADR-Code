@@ -119,11 +119,11 @@ The outreach mailbox can be changed by settings alone (lead author, Nov. 23, 202
 
 ## Storage
 
-Mail has a private R2 bucket of its own, `model-tribal-adr-code-mail`, bound as `mailFiles` in `wrangler.jsonc` and in the scanner's `scanner/wrangler.jsonc`. It holds each message whole, its HTML and its attachments, under `mail/`. Nothing in it is public: the Worker serves a file only to someone on the conversation's inbox, and an attachment only after the virus check (`SCANNING.md`). The scanner reads files under `mail/` from this bucket and everything else from `sourceDocuments`.
+Mail has a private R2 bucket of its own, `tribal-law-project-mail`, bound as `mailFiles` in `wrangler.jsonc` and in the scanner's `scanner/wrangler.jsonc`. It holds each message whole, its HTML and its attachments, under `mail/`. Nothing in it is public: the Worker serves a file only to someone on the conversation's inbox, and an attachment only after the virus check (`SCANNING.md`). The scanner reads files under `mail/` from this bucket and everything else from `sourceDocuments`.
 
 Mail is kept apart from the source documents for three reasons. Access can be given to one without the other. Rules such as deleting old mail or keeping a backup copy can be set for mail alone. And a mistake in code that tidies one bucket cannot touch the other.
 
-The bucket has to exist before a deploy that binds it, or the deploy fails. Create it once in the Cloudflare dashboard (R2 > Create bucket, name `model-tribal-adr-code-mail`, no public access), or with `npx wrangler r2 bucket create model-tribal-adr-code-mail`.
+The bucket has to exist before a deploy that binds it, or the deploy fails. Create it once in the Cloudflare dashboard (R2 > Create bucket, name `tribal-law-project-mail`, no public access), or with `npx wrangler r2 bucket create tribal-law-project-mail`.
 
 ## Settings
 
@@ -148,7 +148,7 @@ The addresses are not a setting: they are the inboxes, made on the Inbox setting
 
 These steps wait for the domain (`docs/domain-to-do.md`). The DNS records are added by Cloudflare when each part is switched on, because the domain's DNS is on the same Cloudflare account.
 
-1. **Receiving.** In the dashboard, open the domain's Email > Email Routing and enable it; Cloudflare adds its MX records (`route1`, `route2` and `route3.mx.cloudflare.net`), an SPF record with `include:_spf.mx.cloudflare.net`, and a DKIM record.[^routing] Under Routing rules, set the catch-all to "Send to a Worker" and choose `model-tribal-adr-code`. A catch-all is needed for the `unsubscribe+` addresses and lets the inbox see mail to any address on the domain.
+1. **Receiving.** In the dashboard, open the domain's Email > Email Routing and enable it; Cloudflare adds its MX records (`route1`, `route2` and `route3.mx.cloudflare.net`), an SPF record with `include:_spf.mx.cloudflare.net`, and a DKIM record.[^routing] Under Routing rules, set the catch-all to "Send to a Worker" and choose `tribal-law-project-site`. A catch-all is needed for the `unsubscribe+` addresses and lets the inbox see mail to any address on the domain.
 2. **Sending replies.** In Email Service > Email Sending, onboard the domain. Cloudflare adds the sending SPF and DKIM records on the `cf-bounce` subdomain and a DMARC record (`p=reject`) if the domain has none.[^send] The same step serves sign-in codes (`SIGN_IN_EMAIL_FROM`).
 3. **Settings.** In `wrangler.jsonc`, set `MAIL_DOMAIN`, `SITE_ADDRESS` and, if wanted, `MAIL_NOTICE_ADDRESS`, and merge that change. In the dashboard, add `MAIL_SIGNING_KEY` as a Secret (for example the output of `openssl rand -hex 32`).
 4. **The database.** Run `npm run database:migrate:remote` from `site/` (or let the next deploy's migration step do it) so migration 0013 is applied.
