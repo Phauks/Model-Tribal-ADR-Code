@@ -59,13 +59,26 @@ interface Progress {
 	lastError?: string;
 	lastErrorAt?: string;
 	keysRefused?: string;
+	/** Save requests sent each minute (keyed like 2026-11-24T18:42, UTC) over the last 24 hours. */
+	requestsByMinute?: Record<string, number>;
+	/** When the Archive last asked us to stop for a while, and why. */
+	pausedUntil?: string;
+	pauseReason?: string;
 }
 
 const QUEUE_LINK = 'https://raw.githubusercontent.com/Phauks/Model-Tribal-ADR-Code/main/research/wayback-queue.tsv';
 const PROGRESS_OBJECT = 'wayback/progress.json';
 const MARKS_OBJECT = 'wayback/marks.json';
 const SAVE_SERVICE = 'https://web.archive.org/save';
+const CAPTURE_INDEX = 'https://web.archive.org/cdx/search/cdx';
+// Save Page Now's answer when a capture newer than REUSE_WITHIN already exists, such as
+// "The same snapshot had been made 569 hours, 49 minutes ago. You can make new capture of this URL after 720 hours."
+// That capture is what we want, so it is looked up and taken instead of counted as a failure.
+const SAME_SNAPSHOT = /same snapshot had been made/i;
 const SAVES_EACH_MINUTE = 6;
+// Save Page Now's limits for a signed-in account (the API document above).
+const ARCHIVE_SAVES_EACH_MINUTE = 7;
+const ARCHIVE_SAVES_EACH_DAY = 30_000;
 const STATUS_CHECKS_EACH_MINUTE = 30;
 const MINUTES_BETWEEN_QUEUE_READS = 60;
 // A job's status is kept for an hour; after that the save is counted as failed.
@@ -89,6 +102,27 @@ function hostOf(link: string): string {
 
 function hoursSince(stamp: string | undefined, now: Date): number {
 	return stamp ? (now.getTime() - Date.parse(stamp)) / 3_600_000 : Infinity;
+}
+
+function minuteKey(date: Date): string {
+	return date.toISOString().slice(0, 16);
+}
+
+function countRequest(progress: Progress, now: Date): void {
+	const counts = (progress.requestsByMinute ??= {});
+	counts[minuteKey(now)] = (counts[minuteKey(now)] ?? 0) + 1;
+	const oldest = minuteKey(new Date(now.getTime() - 24 * 3_600_000));
+	for (const key of Object.keys(counts)) if (key < oldest) delete counts[key];
+}
+
+function requestsInLast(progress: Progress, now: Date, minutes: number): number {
+	const from = minuteKey(new Date(now.getTime() - (minutes - 1) * 60_000));
+	return Object.entries(progress.requestsByMinute ?? {}).reduce((total, [key, count]) => (key >= from ? total + count : total), 0);
+}
+
+function pause(progress: Progress, now: Date, minutes: number, reason: string): void {
+	progress.pausedUntil = new Date(now.getTime() + minutes * 60_000).toISOString();
+	progress.pauseReason = reason;
 }
 
 function message(problem: unknown): string {
@@ -130,6 +164,51 @@ function authorization(env: Env): string {
 	return `LOW ${env.ARCHIVE_ORG_ACCESS_KEY}:${env.ARCHIVE_ORG_SECRET_KEY}`;
 }
 
+// The newest capture of a link that the Archive answered with a page (not a 4xx or 5xx), or null.
+async function latestCapture(link: string): Promise<Capture | null> {
+	const query = new URLSearchParams({ url: link, output: 'json', fl: 'timestamp,original', filter: '!statuscode:[45]..', limit: '-1' });
+	const response = await fetch(`${CAPTURE_INDEX}?${query}`, {
+		headers: { Accept: 'application/json', 'User-Agent': USER_AGENT },
+		signal: AbortSignal.timeout(REQUEST_TIMEOUT_MILLISECONDS)
+	});
+	if (!response.ok) {
+		await response.body?.cancel();
+		return null;
+	}
+	const rows = ((await response.json().catch(() => [])) as string[][]).filter((row) => /^\d{14}$/.test(row[0] ?? ''));
+	const newest = rows.at(-1);
+	if (!newest || hostOf(newest[1]) !== hostOf(link)) return null;
+	const [stamp, original] = newest;
+	return {
+		service: 'wayback',
+		link: `https://web.archive.org/web/${stamp}/${original}`,
+		captured: `${stamp.slice(0, 4)}-${stamp.slice(4, 6)}-${stamp.slice(6, 8)}`
+	};
+}
+
+// For a link the Archive says it already captured recently: takes that capture.
+// If the lookup finds nothing, the link waits a day without using up a try.
+async function takeExistingCapture(entry: Entry, answer: string, now: Date): Promise<void> {
+	let capture: Capture | null = null;
+	try {
+		capture = await latestCapture(entry.link);
+	} catch {
+		// No answer from the index: looked up again tomorrow.
+	}
+	entry.job = undefined;
+	entry.asked = undefined;
+	if (capture) {
+		entry.capture = capture;
+		entry.capturedAt = now.toISOString();
+		entry.problem = undefined;
+		entry.failed = undefined;
+	} else {
+		entry.failed = now.toISOString();
+		entry.problem = answer;
+	}
+	entry.tries = Math.max((entry.tries ?? 1) - 1, 0);
+}
+
 function markFailed(entry: Entry, problem: string, now: Date): void {
 	entry.job = undefined;
 	entry.asked = undefined;
@@ -167,6 +246,8 @@ async function checkJob(entry: Entry, signIn: string, now: Date): Promise<void> 
 		entry.capturedAt = now.toISOString();
 		entry.job = undefined;
 		entry.problem = undefined;
+	} else if (answer.status === 'error' && SAME_SNAPSHOT.test(answer.message ?? '')) {
+		await takeExistingCapture(entry, answer.message!, now);
 	} else if (answer.status === 'error') {
 		markFailed(entry, answer.status_ext || answer.message || 'save failed', now);
 	} else if (hoursSince(entry.asked, now) * 60 > MINUTES_BEFORE_GIVING_UP_ON_A_JOB) {
@@ -188,12 +269,14 @@ async function askForSave(entry: Entry, signIn: string, now: Date, progress: Pro
 		body,
 		signal: AbortSignal.timeout(REQUEST_TIMEOUT_MILLISECONDS)
 	});
+	countRequest(progress, now);
 	if (response.status === 401 || response.status === 403) {
 		await response.body?.cancel();
 		throw new Error(`Save Page Now refused the archive.org keys (HTTP ${response.status}); check the ARCHIVE_ORG_ACCESS_KEY and ARCHIVE_ORG_SECRET_KEY secrets on this Worker`);
 	}
 	if (response.status === 429) {
 		await response.body?.cancel();
+		pause(progress, now, 1, 'the Archive asked us to slow down (HTTP 429)');
 		return false;
 	}
 	entry.tries = (entry.tries ?? 0) + 1;
@@ -212,12 +295,18 @@ async function askForSave(entry: Entry, signIn: string, now: Date, progress: Pro
 	const reason = answer.status_ext || answer.message || `HTTP ${response.status}`;
 	if (reason === 'error:user-session-limit' || reason === 'error:too-many-requests') {
 		entry.tries -= 1;
+		pause(progress, now, 1, reason === 'error:user-session-limit' ? 'the Archive is still working on our earlier saves' : 'the Archive asked us to slow down');
 		return false;
 	}
 	if (reason === 'error:too-many-daily-captures' && !answer.message?.includes('this URL')) {
 		entry.tries -= 1;
 		progress.dailyLimitReached = now.toISOString();
+		pause(progress, now, 60, 'the Archive’s daily limit was reached');
 		return false;
+	}
+	if (SAME_SNAPSHOT.test(answer.message ?? '')) {
+		await takeExistingCapture(entry, answer.message!, now);
+		return true;
 	}
 	markFailed(entry, reason, now);
 	return true;
@@ -260,6 +349,12 @@ async function work(env: Env): Promise<void> {
 				const entry = (progress.records[key] ??= { link });
 				if (entry.link !== link) Object.assign(entry, { link, tries: 0, failed: undefined, problem: undefined, capture: undefined });
 				if (entry.capture || entry.job || (entry.tries ?? 0) >= MOST_TRIES) continue;
+				// Links the Archive already had, from before this Worker took existing captures: looked up straight away.
+				if (SAME_SNAPSHOT.test(entry.problem ?? '') && entry.tries) {
+					saves += 1;
+					await takeExistingCapture(entry, entry.problem!, now);
+					continue;
+				}
 				if (hoursSince(entry.failed, now) < HOURS_BEFORE_SAVING_AGAIN) continue;
 				saves += 1;
 				let goOn = true;
@@ -313,6 +408,12 @@ function summary(progress: Progress, marks: Record<string, Mark>, now: Date) {
 		const entry = progress.records[key];
 		return !entry || (!entry.capture && !entry.job && (entry.tries ?? 0) < MOST_TRIES && hoursSince(entry.failed, now) >= HOURS_BEFORE_SAVING_AGAIN);
 	}).length;
+	const retryTimes = [...queued]
+		.map((key) => progress.records[key])
+		.filter((entry) => entry && !entry.capture && !entry.job && (entry.tries ?? 0) < MOST_TRIES && entry.failed)
+		.map((entry) => Date.parse(entry!.failed!) + HOURS_BEFORE_SAVING_AGAIN * 3_600_000);
+	const nextRetry = retryTimes.length ? Math.min(...retryTimes) : null;
+	const paused = progress.pausedUntil && Date.parse(progress.pausedUntil) > now.getTime() ? { until: progress.pausedUntil, reason: progress.pauseReason ?? '' } : null;
 	const minutesSinceLastRun = progress.lastRun ? Math.round(hoursSince(progress.lastRun, now) * 60) : null;
 	// The cron runs every minute even with nothing to do, so a stale last run means the schedule stopped, never that the list is empty.
 	const state: WorkerState =
@@ -340,7 +441,22 @@ function summary(progress: Progress, marks: Record<string, Mark>, now: Date) {
 		left,
 		captured: captured.length,
 		capturedLast24Hours: capturedToday,
+		capturedLastHour: captured.filter(([, entry]) => hoursSince(entry.capturedAt, now) < 1).length,
 		waiting,
+		savingNow: entries
+			.filter(([, entry]) => entry.job)
+			.sort(([, a], [, b]) => (a.asked ?? '').localeCompare(b.asked ?? ''))
+			.map(([key, entry]) => ({ key, link: entry.link, askedAt: entry.asked ?? null })),
+		paused,
+		nextRetryAt: dueNow === 0 && nextRetry !== null ? new Date(Math.max(nextRetry, now.getTime())).toISOString() : null,
+		requests: {
+			lastMinute: requestsInLast(progress, now, 1),
+			lastHour: requestsInLast(progress, now, 60),
+			last24Hours: requestsInLast(progress, now, 24 * 60),
+			ourLimitEachMinute: SAVES_EACH_MINUTE,
+			archiveLimitEachMinute: ARCHIVE_SAVES_EACH_MINUTE,
+			archiveLimitEachDay: ARCHIVE_SAVES_EACH_DAY
+		},
 		failedWillRetry: failedRecently,
 		gaveUp: gaveUp.length,
 		queueRead: progress.queueRead ?? null,
@@ -360,6 +476,10 @@ function escape(text: string): string {
 	return text.replace(/[&<>"']/g, (character) => `&#${character.charCodeAt(0)};`);
 }
 
+function pacific(stamp: string): string {
+	return new Date(stamp).toLocaleString('en-US', { dateStyle: 'medium', timeStyle: 'short', timeZone: 'America/Los_Angeles' }) + ' Pacific';
+}
+
 function page(status: ReturnType<typeof summary>): string {
 	const health =
 		status.minutesSinceLastRun === null
@@ -375,6 +495,25 @@ function page(status: ReturnType<typeof summary>): string {
 		['Failed, will try again', status.failedWillRetry],
 		['Gave up after three tries', status.gaveUp],
 		['Marked by hand', status.markedByHand]
+	];
+	const minutesAgo = (stamp: string | null) => {
+		if (!stamp) return '';
+		const minutes = Math.max(0, Math.round((Date.now() - Date.parse(stamp)) / 60_000));
+		return minutes === 0 ? 'asked this minute' : `asked ${minutes} minute${minutes === 1 ? '' : 's'} ago`;
+	};
+	const requests = status.requests;
+	const rightNow = [
+		status.paused ? `<p class="error">Paused until ${escape(pacific(status.paused.until))}: ${escape(status.paused.reason)}.</p>` : '',
+		status.nextRetryAt ? `<p>Nothing new to save. The next failed link is tried again at ${escape(pacific(status.nextRetryAt))}.</p>` : '',
+		status.savingNow.length
+			? `<p>Waiting on the Archive for ${status.savingNow.length} save${status.savingNow.length === 1 ? '' : 's'}:</p>`
+			: '<p class="quiet">No saves waiting on the Archive right now.</p>'
+	].join('');
+	const usage: [string, string][] = [
+		['Save requests, last minute', `${requests.lastMinute} of ${requests.ourLimitEachMinute}`],
+		['Save requests, last hour', `${requests.lastHour.toLocaleString('en-US')} of ${(requests.ourLimitEachMinute * 60).toLocaleString('en-US')}`],
+		['Save requests, last 24 hours', `${requests.last24Hours.toLocaleString('en-US')} of ${requests.archiveLimitEachDay.toLocaleString('en-US')}`],
+		['Captured in the last hour', status.capturedLastHour.toLocaleString('en-US')]
 	];
 	const rows = (items: { key: string; link: string; note: string }[]) =>
 		items.length
@@ -415,6 +554,12 @@ a { color: inherit; }
 <p class="quiet">Source library links saved in the Wayback Machine with the project's archive.org keys. ${escape(health)} This page refreshes every minute.</p>
 ${status.lastError ? `<p class="error">Last problem (${escape(status.lastErrorAt ?? '')}): ${escape(status.lastError)}</p>` : ''}
 ${status.dailyLimitReached ? '<p class="error">The Archive’s daily limit was reached; saving starts again within the hour.</p>' : ''}
+<h2>Right now</h2>
+${rightNow}
+${status.savingNow.length ? rows(status.savingNow.map((item) => ({ key: item.key, link: item.link, note: minutesAgo(item.askedAt) }))) : ''}
+<dl>${usage.map(([label, value]) => `<div><dt>${escape(label)}</dt><dd>${escape(value)}</dd></div>`).join('')}</dl>
+<p class="quiet">The Worker asks for at most ${requests.ourLimitEachMinute} saves a minute, under the Archive’s limit of ${requests.archiveLimitEachMinute} a minute and ${requests.archiveLimitEachDay.toLocaleString('en-US')} a day for a signed-in account. A save waits for the Archive to finish it, usually a minute or two.</p>
+<h2>All links</h2>
 <dl>${numbers.map(([label, value]) => `<div><dt>${escape(label)}</dt><dd>${value.toLocaleString('en-US')}</dd></div>`).join('')}</dl>
 <p class="quiet">${status.queued.toLocaleString('en-US')} links on the list, last read ${escape(status.queueRead ?? 'never')}. Captures reach the records through the archive workflow's captures pull request.</p>
 <h2>Latest captures</h2>

@@ -5,7 +5,7 @@
  * page reads it from the same bucket and writes the marks beside it, which the
  * Worker reads every minute.
  */
-import type { R2Bucket } from '@cloudflare/workers-types/index.ts';
+import type { Fetcher, R2Bucket } from '@cloudflare/workers-types/index.ts';
 
 export const progressObject = 'wayback/progress.json';
 export const marksObject = 'wayback/marks.json';
@@ -101,4 +101,45 @@ export async function setWaybackMark(bucket: R2Bucket, key: string, mark: Waybac
 /** The Save Page Now address a person opens to save a link from their own browser. */
 export function saveItYourselfLink(link: string): string {
 	return `https://web.archive.org/save/${link}`;
+}
+
+/** The Wayback Worker's public progress page. */
+export const waybackWorkerAddress = 'https://model-tribal-adr-code-wayback.trevordgoldsmith.workers.dev';
+
+export type WaybackState = 'not-running' | 'keys-refused' | 'paused-daily-limit' | 'saving' | 'waiting-to-retry' | 'idle';
+
+/** What the Wayback Worker's /status.json answers (site/wayback/worker.ts, summary). */
+export interface WaybackStatus {
+	state: WaybackState;
+	stateWords: string;
+	minutesSinceLastRun: number | null;
+	lastError: string | null;
+	left: number;
+	captured: number;
+	capturedLast24Hours: number;
+	/** Missing from a Worker deployed before the "Right now" section. */
+	capturedLastHour?: number;
+	waiting: number;
+	failedWillRetry: number;
+	gaveUp: number;
+	markedByHand: number;
+	savingNow?: { key: string; link: string; askedAt: string | null }[];
+	paused?: { until: string; reason: string } | null;
+	nextRetryAt?: string | null;
+	requests?: { lastMinute: number; lastHour: number; last24Hours: number; ourLimitEachMinute: number; archiveLimitEachMinute: number; archiveLimitEachDay: number };
+}
+
+/**
+ * Asks the Wayback Worker for its progress through the waybackWorker service
+ * binding. A Worker cannot fetch another Worker's workers.dev address on the
+ * same account (it answers 404), so the binding is the only way in.
+ */
+export async function readWaybackStatus(worker: Fetcher | undefined): Promise<{ status: WaybackStatus } | { problem: string }> {
+	if (!worker) return { problem: 'The waybackWorker binding is missing.' };
+	const response = await worker.fetch('https://wayback/status.json');
+	if (!response.ok) {
+		await response.body?.cancel();
+		return { problem: `The Wayback Worker answered ${response.status}.` };
+	}
+	return { status: (await response.json()) as WaybackStatus };
 }
