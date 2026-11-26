@@ -20,7 +20,10 @@ citation:
       - 21
 original_link: https://law.resource.org/pub/us/case/reporter/F3/146/146.F3d.573.97-2739.97-2718.html
 retrieved: '2026-11-21'
-archives: []   # Wayback capture pending: the shared archive workflow fills this in
+archives:
+- service: wayback
+  link: https://web.archive.org/web/20261126020712/https://law.resource.org/pub/us/case/reporter/F3/146/146.F3d.573.97-2739.97-2718.html
+  captured: '2026-11-26'
 history:
   status: live
   last_checked: '2026-11-21'

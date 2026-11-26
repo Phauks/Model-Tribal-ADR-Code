@@ -16,7 +16,10 @@ citation:
       - 24
 original_link: https://www2.census.gov/geo/tiger/TIGER2025/TTRACT/
 retrieved: '2026-11-24'
-archives: []
+archives:
+- service: wayback
+  link: https://web.archive.org/web/20261125005613/https://www2.census.gov/geo/tiger/TIGER2025/TTRACT/
+  captured: '2026-11-25'
 file:
   storage_key: census-boundaries/census-tiger-2025-tribal-census-tracts.zip
   checksum: 692282e549ad6c334ea11181e36dcbdc9cf137138945af46114b85f413cc0a51
