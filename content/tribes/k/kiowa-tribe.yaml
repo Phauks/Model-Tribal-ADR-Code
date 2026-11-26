@@ -765,6 +765,39 @@ jurisdiction_agreements:
   verification: read-in-full
   locator: Section I.L, Oklahoma (two-column list of 34 tribes)
   note: 'The source reads: “KiowaTribe”. The report says most of the 34 agreements "expired on June 30, 2013" and that 16 new agreements had been executed by early 2014; it does not say which. Status is therefore uncertain. The name in the list is matched to the roster by name and state. Report date is March 2014, so current status needs confirming. Most Oklahoma agreements in the survey lapsed on June 30, 2013, and some were renewed; the survey does not settle which, so the status is left unknown.'
+- kind: tax-agreement
+  other_party: State of Oklahoma
+  agreement: Motor fuel tax contract
+  state: OK
+  status: unknown
+  detail: Filed with the Oklahoma Secretary of State on Dec. 3, 2003 (file 39371).
+  source: oklahoma-filing-39371
+  confidence: medium
+  verification: title-only
+  locator: Register entry, file 39371
+  note: 'From the register line: “Kiowa Tribe of Oklahoma, State of Oklahoma”. Whether it is still in force is not recorded.'
+- kind: tax-agreement
+  other_party: State of Oklahoma
+  agreement: Tobacco tax compact
+  state: OK
+  status: unknown
+  detail: Filed with the Oklahoma Secretary of State on Dec. 12, 2003 (file 39403).
+  source: oklahoma-filing-39403
+  confidence: medium
+  verification: title-only
+  locator: Register entry, file 39403
+  note: 'From the register line: “The Kiowa Tribe of Oklahoma and the State of Oklahoma”. Whether it is still in force is not recorded.'
+- kind: tax-agreement
+  other_party: State of Oklahoma
+  agreement: Letter extending tobacco tax compact termination date
+  state: OK
+  status: unknown
+  detail: Filed with the Oklahoma Secretary of State on June 21, 2013 (file 46254).
+  source: oklahoma-filing-46254
+  confidence: medium
+  verification: title-only
+  locator: Register entry, file 46254
+  note: 'From the register line: “Letter extending the termination date of current compact and proposed amendment”. Whether it is still in force is not recorded.'
 court_practice:
 - kind: bar-admission
   title: Attorney Bar Admission Application (revised 4-14-2025)

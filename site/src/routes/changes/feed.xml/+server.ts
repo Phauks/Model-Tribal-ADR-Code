@@ -50,7 +50,7 @@ export const GET: RequestHandler = async ({ url }) => {
 	const body = `<?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
   <id>${escapeHtml(self)}</id>
-  <title>Recent changes · Model Tribal ADR Code</title>
+  <title>Recent changes · Tribal Law Project</title>
   <link rel="self" href="${escapeHtml(self)}"/>
   <link rel="alternate" href="${escapeHtml(`${origin}/changes${url.search}`)}"/>
   <updated>${escapeHtml(updated)}</updated>

@@ -56,7 +56,7 @@ export const GET: RequestHandler = async ({ fetch }) => {
 	files['stories.json'] = strToU8(JSON.stringify(stories, null, '\t'));
 	files['README.txt'] = strToU8(
 		[
-			'Model Tribal ADR Code: the data behind the website',
+			'Tribal Law Project: the data behind the website',
 			'',
 			`Made ${citationDate(built)}, build ${version}.`,
 			'',

@@ -36,7 +36,7 @@
 {/snippet}
 
 <svelte:head>
-	<title>Service checks · Workspace · Model Tribal ADR Code</title>
+	<title>Service checks · Workspace · Tribal Law Project</title>
 </svelte:head>
 
 <div class="title-row">

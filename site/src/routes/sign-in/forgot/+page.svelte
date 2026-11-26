@@ -6,7 +6,7 @@
 </script>
 
 <svelte:head>
-	<title>Forgot your password? · Model Tribal ADR Code</title>
+	<title>Forgot your password? · Tribal Law Project</title>
 </svelte:head>
 
 <div class="reading">

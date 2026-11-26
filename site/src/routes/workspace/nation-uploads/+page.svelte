@@ -58,7 +58,7 @@
 {/snippet}
 
 <svelte:head>
-	<title>Files about your nation · Workspace · Model Tribal ADR Code</title>
+	<title>Files about your nation · Workspace · Tribal Law Project</title>
 </svelte:head>
 
 <div class="wide">

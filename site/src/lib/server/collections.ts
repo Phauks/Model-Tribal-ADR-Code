@@ -93,11 +93,20 @@ function sourceItem(record: SourceRecord, detail?: string): CollectionItem {
 	return { title: record.citation.title ?? record.key, href, year: record.citation.issued?.['date-parts']?.[0]?.[0], detail, key: record.key };
 }
 
-/** Source records of some kinds (schemas/source.schema.json), less treaties, which are their own collection. */
+/**
+ * The filings in the Oklahoma Secretary of State's register of tribal compacts and agreements
+ * (scripts/agreements/oklahoma_register.py), a collection of their own, so they are not counted again
+ * among the compacts and agreements from other sources.
+ */
+const oklahomaTopic = 'oklahoma-state-tribal-agreement';
+const isOklahomaFiling = (record: SourceRecord) => (record.topics ?? []).includes(oklahomaTopic);
+const oklahomaAgreements = () => [...sources().values()].filter(isOklahomaFiling);
+
+/** Source records of some kinds (schemas/source.schema.json), less treaties, which are their own collection, and Oklahoma's register. */
 function sourcesOfKind(kinds: string[], detail?: (record: SourceRecord) => string | undefined): () => CollectionItem[] {
 	return () =>
 		[...sources().values()]
-			.filter((record) => kinds.includes(kindOf(record)) && typeOf(record) !== 'treaty')
+			.filter((record) => kinds.includes(kindOf(record)) && typeOf(record) !== 'treaty' && !isOklahomaFiling(record))
 			.map((record) => sourceItem(record, detail?.(record)));
 }
 
@@ -164,6 +173,15 @@ export const collections: Collection[] = [
 	{ identifier: 'tribal-constitutions', search: { group: 'document' }, title: 'Constitutions', group: 'Native nations', detailHeader: 'Nation', sourceKinds: ['tribal-constitution'], items: sourcesOfKind(['tribal-constitution'], tribesOf) },
 	{ identifier: 'tribal-codes', search: { group: 'document' }, title: 'Codes and Laws', group: 'Native nations', detailHeader: 'Nation', sourceKinds: ['tribal-code', 'tribal-court-rule'], items: sourcesOfKind(['tribal-code', 'tribal-court-rule'], tribesOf) },
 	{ identifier: 'intergovernmental-agreements', search: { group: 'document' }, title: 'Compacts and Agreements', group: 'Native nations', detailHeader: 'Nation', sourceKinds: ['intergovernmental-agreement'], items: sourcesOfKind(['intergovernmental-agreement'], tribesOf) },
+	{
+		identifier: 'oklahoma-state-tribal-agreements',
+		search: { group: 'document' },
+		title: 'Oklahoma State-Tribal Agreements',
+		group: 'Native nations',
+		detailHeader: 'Nation',
+		sourceKinds: ['intergovernmental-agreement'],
+		items: () => oklahomaAgreements().map((record) => sourceItem(record, tribesOf(record)))
+	},
 	{
 		identifier: 'stories', search: { group: 'story' },
 		title: 'Stories',

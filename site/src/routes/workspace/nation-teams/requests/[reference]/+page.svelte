@@ -22,7 +22,7 @@
 </script>
 
 <svelte:head>
-	<title>Request {application.reference} · Nation teams · Workspace · Model Tribal ADR Code</title>
+	<title>Request {application.reference} · Nation teams · Workspace · Tribal Law Project</title>
 </svelte:head>
 
 <Breadcrumbs

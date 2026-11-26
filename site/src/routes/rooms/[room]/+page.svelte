@@ -14,7 +14,7 @@
 </script>
 
 <svelte:head>
-	<title>{data.room ? `${data.room.title} · ` : ''}Video rooms · Model Tribal ADR Code</title>
+	<title>{data.room ? `${data.room.title} · ` : ''}Video rooms · Tribal Law Project</title>
 </svelte:head>
 
 {#if !data.room}

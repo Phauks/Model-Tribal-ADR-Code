@@ -9,7 +9,7 @@
 </script>
 
 <svelte:head>
-	<title>Email and notifications · Model Tribal ADR Code</title>
+	<title>Email and notifications · Tribal Law Project</title>
 </svelte:head>
 
 <h1>Email and notifications</h1>

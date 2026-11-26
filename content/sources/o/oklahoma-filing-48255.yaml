@@ -1,0 +1,52 @@
+key: oklahoma-filing-48255
+kind: intergovernmental-agreement
+citation:
+  type: document
+  title: 'Choctaw Nation and Oklahoma Department of Wildlife Conservation: memorandum of understanding on Lake Nanih Waiya'
+  author:
+  - literal: The Choctaw Nation of Oklahoma
+  - literal: Oklahoma Department of Wildlife Conservation
+  container-title: Oklahoma Secretary of State, Tribal Compacts and Agreements
+  number: File 48255
+  URL: https://execleg.sos.ok.gov/documents/filelog/91318.pdf
+  accessed:
+    date-parts:
+    - - 2026
+      - 11
+      - 26
+  issued:
+    date-parts:
+    - - 2016
+      - 8
+      - 31
+original_link: https://execleg.sos.ok.gov/documents/filelog/91318.pdf
+retrieved: '2026-11-26'
+archives: []
+history:
+  status: live
+  last_checked: '2026-11-26'
+rights:
+  status: no-permission-needed
+  basis: fact-only
+  basis_note: Facts are recorded from the register. The State's filed copy, a public record of the Oklahoma Secretary of State, is served on this site (decision record 0060); a nation can ask to have it taken down.
+  redistribution: true
+tribes:
+- the-choctaw-nation-of-oklahoma
+jurisdictions:
+- level: multiple
+  note: Agreement filed with the Oklahoma Secretary of State.
+topics:
+- oklahoma-state-tribal-agreement
+- hunting-and-fishing
+found_in:
+- 2026-11-26-oklahoma-state-tribal-agreements
+notes: Oklahoma Secretary of State file 48255, filed Aug. 31, 2016. The register's title reads “MOU between the Choctaw Nation and the Oklahoma Dept. of Wildlife Conservation” and its description “Memorandum of Understanding between the Choctaw Nation and the Oklahoma Department of Wildlife Conservation - Lake Nanih Waiya”. The register line reads as an agreement or compact. The filed copy is a scan with no text layer; this record's facts come from the register's own title and description, read by script and by an AI reader, not from the scan. The date is the filing date, not the signing date.
+review:
+  status: unverified
+  by: scripts/agreements/oklahoma_register.py
+  date: '2026-11-26'
+  checks:
+  - check: 'Nations named in the register line: the script''s reading and an AI reader''s'
+    result: agree
+  - check: 'Subject: the script''s reading of the register title and an AI reader''s'
+    result: agree

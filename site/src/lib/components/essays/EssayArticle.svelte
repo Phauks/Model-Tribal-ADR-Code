@@ -217,7 +217,7 @@
 </script>
 
 <svelte:head>
-	<title>{[shownTitle, section, 'Model Tribal ADR Code'].filter(Boolean).join(' · ')}</title>
+	<title>{[shownTitle, section, 'Tribal Law Project'].filter(Boolean).join(' · ')}</title>
 	{#if unpublished}<meta name="robots" content="noindex" />{/if}
 </svelte:head>
 

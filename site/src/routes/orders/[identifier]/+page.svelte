@@ -27,7 +27,7 @@
 </script>
 
 <svelte:head>
-	<title>Your order · Model Tribal ADR Code</title>
+	<title>Your order · Tribal Law Project</title>
 	<meta name="robots" content="noindex" />
 </svelte:head>
 

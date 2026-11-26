@@ -32,7 +32,7 @@
 </script>
 
 <svelte:head>
-	<title>{contact.name} · Address book · Workspace · Model Tribal ADR Code</title>
+	<title>{contact.name} · Address book · Workspace · Tribal Law Project</title>
 </svelte:head>
 
 <Breadcrumbs

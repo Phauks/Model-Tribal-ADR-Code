@@ -48,7 +48,7 @@
 </script>
 
 <svelte:head>
-	<title>Inbox settings · Inbox · Workspace · Model Tribal ADR Code</title>
+	<title>Inbox settings · Inbox · Workspace · Tribal Law Project</title>
 </svelte:head>
 
 <h1>Inbox settings</h1>
@@ -180,7 +180,7 @@
 			<form method="post" action="?/signature" class="stack">
 				<input type="hidden" name="address" value={address} />
 				<label for="signature-{address}"><strong>{address}</strong></label>
-				<textarea id="signature-{address}" name="body" rows="4" maxlength="2000" placeholder="Name&#10;Model Tribal ADR Code&#10;Website">{data.signatures[address] ?? ''}</textarea>
+				<textarea id="signature-{address}" name="body" rows="4" maxlength="2000" placeholder="Name&#10;Tribal Law Project&#10;Website">{data.signatures[address] ?? ''}</textarea>
 				<div><button class="button button-quiet" type="submit">Save the signature</button></div>
 			</form>
 		{/each}

@@ -11,7 +11,7 @@
 </script>
 
 <svelte:head>
-	<title>Changes to the page of {data.nation.title} · Workspace · Model Tribal ADR Code</title>
+	<title>Changes to the page of {data.nation.title} · Workspace · Tribal Law Project</title>
 </svelte:head>
 
 <p class="small">

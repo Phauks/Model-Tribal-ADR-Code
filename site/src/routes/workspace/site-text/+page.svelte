@@ -62,7 +62,7 @@
 </script>
 
 <svelte:head>
-	<title>Site text · Workspace · Model Tribal ADR Code</title>
+	<title>Site text · Workspace · Tribal Law Project</title>
 </svelte:head>
 
 <div class="title-row">

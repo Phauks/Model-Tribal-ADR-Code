@@ -5,7 +5,7 @@
 </script>
 
 <svelte:head>
-	<title>Changelog · Model Tribal ADR Code</title>
+	<title>Changelog · Tribal Law Project</title>
 </svelte:head>
 
 <div class="reading">

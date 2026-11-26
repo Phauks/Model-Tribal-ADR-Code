@@ -43,7 +43,7 @@
 {/snippet}
 
 <svelte:head>
-	<title>{data.name} · Laws · Model Tribal ADR Code</title>
+	<title>{data.name} · Laws · Tribal Law Project</title>
 	<meta name="description" content="{data.name}, {data.citation}: what it did, the accounts of its impact and where to read it." />
 </svelte:head>
 

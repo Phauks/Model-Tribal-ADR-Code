@@ -41,7 +41,7 @@
 </script>
 
 <svelte:head>
-	<title>{data.room.title} · Video rooms · Workspace · Model Tribal ADR Code</title>
+	<title>{data.room.title} · Video rooms · Workspace · Tribal Law Project</title>
 </svelte:head>
 
 <Breadcrumbs

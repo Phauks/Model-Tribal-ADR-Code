@@ -47,7 +47,7 @@
 </script>
 
 <svelte:head>
-	<title>{story.title} · Stories · Model Tribal ADR Code</title>
+	<title>{story.title} · Stories · Tribal Law Project</title>
 	<meta
 		name="description"
 		content={story.fullText

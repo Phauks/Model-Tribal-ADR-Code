@@ -8,7 +8,7 @@
 </script>
 
 <svelte:head>
-	<title>Version {data.number} · {data.title} · Workspace · Model Tribal ADR Code</title>
+	<title>Version {data.number} · {data.title} · Workspace · Tribal Law Project</title>
 </svelte:head>
 
 <Breadcrumbs

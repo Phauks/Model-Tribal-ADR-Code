@@ -66,7 +66,7 @@ export function nationVcards(nation: string, cards: ContactCards, page: string):
 				'X-ABShowAs:COMPANY',
 				...office.rows.flatMap(lines),
 				...websites,
-				`NOTE:${vcardText(`Public office contacts from the Model Tribal ADR Code website, ${page}. Check the nation's own website for changes.`)}`,
+				`NOTE:${vcardText(`Public office contacts from the Tribal Law Project website, ${page}. Check the nation's own website for changes.`)}`,
 				'END:VCARD'
 			];
 			return card.map(foldLine).join('\r\n');

@@ -71,7 +71,7 @@
 </script>
 
 <svelte:head>
-	<title>{data.name} · Courts · Model Tribal ADR Code</title>
+	<title>{data.name} · Courts · Tribal Law Project</title>
 	<meta name="description" content={lead} />
 </svelte:head>
 

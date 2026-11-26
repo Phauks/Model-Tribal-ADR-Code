@@ -4,7 +4,7 @@
 </script>
 
 <svelte:head>
-	<title>Your data · Model Tribal ADR Code</title>
+	<title>Your data · Tribal Law Project</title>
 </svelte:head>
 
 <h1>Your data</h1>

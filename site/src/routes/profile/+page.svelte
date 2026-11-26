@@ -13,7 +13,7 @@
 </script>
 
 <svelte:head>
-	<title>Your profile · Model Tribal ADR Code</title>
+	<title>Your profile · Tribal Law Project</title>
 </svelte:head>
 
 {#if !profile}

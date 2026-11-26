@@ -5,7 +5,7 @@
 </script>
 
 <svelte:head>
-	<title>Video rooms · Model Tribal ADR Code</title>
+	<title>Video rooms · Tribal Law Project</title>
 </svelte:head>
 
 <h1>Video rooms</h1>

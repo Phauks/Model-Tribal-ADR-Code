@@ -61,7 +61,7 @@
 </script>
 
 <svelte:head>
-	<title>{template.title} · Forms · Model Tribal ADR Code</title>
+	<title>{template.title} · Forms · Tribal Law Project</title>
 	<meta name="description" content="{template.title}. When to use it: {template.summary}." />
 </svelte:head>
 

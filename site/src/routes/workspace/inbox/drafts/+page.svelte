@@ -17,7 +17,7 @@
 </script>
 
 <svelte:head>
-	<title>Drafts · Inbox · Workspace · Model Tribal ADR Code</title>
+	<title>Drafts · Inbox · Workspace · Tribal Law Project</title>
 </svelte:head>
 
 <h1>Drafts</h1>

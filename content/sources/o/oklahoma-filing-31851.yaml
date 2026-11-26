@@ -1,0 +1,73 @@
+key: oklahoma-filing-31851
+kind: intergovernmental-agreement
+citation:
+  type: document
+  title: 'Choctaw Nation, Citizen Band Potawatomi and Bureau of Indian Affairs with 19 counties and cities: cross-deputization agreements'
+  author:
+  - literal: Citizen Potawatomi Nation, Oklahoma
+  - literal: The Choctaw Nation of Oklahoma
+  - literal: Pottawatomie County
+  - literal: City of Atoka
+  - literal: City of Caddo
+  - literal: LeFlore County
+  - literal: City of Poteau
+  - literal: City of Pocola
+  - literal: City of Talihina
+  - literal: Haskell County
+  - literal: Latimer County
+  - literal: City of Calera
+  - literal: Pittsburg County
+  - literal: City of Kiowa
+  - literal: City of McAlester
+  - literal: City of Stringtown
+  - literal: Coal County
+  - literal: City of Shady Point
+  - literal: City of Coalgate
+  - literal: City of Tupelo
+  - literal: City of Tushka
+  - literal: Bureau of Indian Affairs
+  container-title: Oklahoma Secretary of State, Tribal Compacts and Agreements
+  number: File 31851
+  URL: https://execleg.sos.ok.gov/documents/filelog/48281.pdf
+  accessed:
+    date-parts:
+    - - 2026
+      - 11
+      - 26
+  issued:
+    date-parts:
+    - - 1995
+      - 1
+      - 9
+original_link: https://execleg.sos.ok.gov/documents/filelog/48281.pdf
+retrieved: '2026-11-26'
+archives: []
+history:
+  status: live
+  last_checked: '2026-11-26'
+rights:
+  status: no-permission-needed
+  basis: fact-only
+  basis_note: Facts are recorded from the register. The State's filed copy, a public record of the Oklahoma Secretary of State, is served on this site (decision record 0060); a nation can ask to have it taken down.
+  redistribution: true
+tribes:
+- citizen-potawatomi-nation
+- the-choctaw-nation-of-oklahoma
+jurisdictions:
+- level: multiple
+  note: Agreement filed with the Oklahoma Secretary of State.
+topics:
+- oklahoma-state-tribal-agreement
+- cross-deputization
+found_in:
+- 2026-11-26-oklahoma-state-tribal-agreements
+notes: 'Oklahoma Secretary of State file 31851, filed Jan. 9, 1995. The register''s title reads “Agreement Tribal Cross Deputization” and its description “Citizen Band Potawatomi & Pottawatomie County; City of Atoka, Bureau of Indian Affairs & Choctaw Nation ICA 94-0017; City of Caddo, Bureau of Indian Affairs & Choctaw Nation ICA 94-0051; LeFlore County, Bureau of Indian Affairs & Choctaw Nation ICA 94-0026; City of Poteau, Bureau of Indian Affairs & Choctaw Nation ICA 94-0016; City of Pocola, Bureau of Indian Affairs & Choctaw Nation ICA 94-0018; City of Talihina, Bureau of Indian Affaris and Choctaw Nation ICA 94-0014; Haskell County, Bureau of Indian Affairs and Choctaw Nation ICA 94-0025; Latimer County, Bureau of Indian Affairs and Choctaw Nation ICA 94-0013; City of Calera, Bureau of Indian Affairs and Choctaw Nation ICA 94-0031; Pittsburg County, Bureau of Indian Affairs and Choctaw Nation ICA 94-0020; City of Kiowa, Bureau of Indian Affairs and Choctaw Nation ICA 94-0023; City of McAlester, Bureau of Indian Affairs and Choctaw Nation ICA 94-0022; City of Stringtown, Bureau of Indian Affairs and Choctaw Nation ICA 94-0032; Coal County, Bureau of Indian Affairs and Choctaw Nation ICA 94-0046; City of Shady Point, Bureau of Indian Affairs and Choctaw Nation ICA 94-0024; City of Coalgate, Bureau of Indian Affairs and Choctaw Nation ICA 94-0021; City of Tupelo, Bureau of Indian Affairs and Choctaw Nation ICA 94-0028; City of Tushka, Bureau of Indian Affairs and Choctaw Nation ICA 94-0027”. The register line reads as an agreement or compact. The filed copy is a scan with no text layer; this record''s facts come from the register''s own title and description, read by script and by an AI reader, not from the scan. The date is the filing date, not the signing date. The reader noted: Bundle of about 20 ICAs; Citizen Band is named only in the lead entry.'
+review:
+  status: unverified
+  by: scripts/agreements/oklahoma_register.py
+  date: '2026-11-26'
+  checks:
+  - check: 'Nations named in the register line: the script''s reading and an AI reader''s'
+    result: agree
+  - check: 'Subject: the script''s reading of the register title and an AI reader''s'
+    result: agree

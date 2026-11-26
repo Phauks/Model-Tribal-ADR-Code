@@ -33,7 +33,7 @@
 </script>
 
 <svelte:head>
-	<title>Site text · Workspace · Model Tribal ADR Code</title>
+	<title>Site text · Workspace · Tribal Law Project</title>
 </svelte:head>
 
 <p class="small"><a href="/workspace/site-text">Site text</a></p>
