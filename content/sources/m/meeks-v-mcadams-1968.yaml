@@ -1,0 +1,57 @@
+key: meeks-v-mcadams-1968
+kind: federal-case
+citation:
+  type: legal_case
+  title: Meeks v. McAdams
+  authority: United States Court of Appeals for the Tenth Circuit
+  container-title: F.2d
+  volume: '390'
+  page: '650'
+  issued:
+    date-parts:
+    - - 1968
+      - 3
+      - 4
+  URL: https://static.case.law/f2d/390/html/0650-02.html
+  accessed:
+    date-parts:
+    - - 2026
+      - 11
+      - 26
+original_link: https://static.case.law/f2d/390/html/0650-02.html
+retrieved: '2026-11-26'
+archives: []
+history:
+  status: live
+  last_checked: '2026-11-26'
+rights:
+  status: no-permission-needed
+  basis: government-edict
+  basis_note: The text of a judicial opinion has no copyright (Georgia v. Public.Resource.Org, Inc., 590 U.S. 255 (2020)). The copy served on this site is the court's opinion only, without the publisher's headnotes, synopsis or other editorial matter (decision record 0060).
+  redistribution: true
+nations_in_case:
+  checked: '2026-11-26'
+  named: []
+  not_linked:
+  - named_as: Shoshone Tribe
+    reason: More than one of today's nations shares this name (duckwater-shoshone-tribe, eastern-shoshone-tribe-of-the-wind-river-reservation, ely-shoshone-tribe-of-nevada, fort-mcdermitt-paiute-and-shoshone-tribes-of-the-fort-mcdermitt-indian-reservation, lone-pine-paiute-shoshone-tribe, northwestern-band-of-the-shoshone-nation and 6 more); which the case concerns has not been checked.
+  - named_as: Arapahoe Tribe
+    reason: No nation record matches this name; it may be a historical name or a group that is not a recognized nation today.
+jurisdictions:
+- level: federal
+topics:
+- federal-court-indian-law
+found_in:
+- 2026-11-26-federal-court-indian-law-opinions
+notes: Published at 390 F.2d 650. Decided by the United States Court of Appeals for the Tenth Circuit on Mar. 4, 1968. Found by scripts/caselaw/state_court_opinions.py in the Caselaw Access Project's volumes, with an Indian law term score of 3; an AI reader read excerpts and judged it an Indian law case (tribal police vehicle death, Shoshone tribal members, Wind River reservation).
+review:
+  status: unverified
+  by: scripts/caselaw/state_court_opinions.py
+  date: '2026-11-26'
+  checks:
+  - check: 'Indian law case: the term score and, below the score kept without a reading, an AI reader''s judgment of excerpts'
+    result: agree
+    detail: 'score 3; reader: tribal police vehicle death, Shoshone tribal members, Wind River reservation'
+  - check: Nations named in the caption, matched to nation records by name
+    result: missing
+    detail: 0 matched, 2 not linked

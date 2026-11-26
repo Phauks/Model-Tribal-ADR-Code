@@ -1,0 +1,52 @@
+key: seazengers-inc-v-united-states-1957
+kind: federal-case
+citation:
+  type: legal_case
+  title: Seazengers, Inc. v. United States
+  authority: United States Customs Court
+  container-title: F. Supp.
+  volume: '158'
+  page: '726'
+  issued:
+    date-parts:
+    - - 1957
+      - 10
+      - 8
+  URL: https://static.case.law/f-supp/158/html/0726-01.html
+  accessed:
+    date-parts:
+    - - 2026
+      - 11
+      - 26
+original_link: https://static.case.law/f-supp/158/html/0726-01.html
+retrieved: '2026-11-26'
+archives: []
+history:
+  status: live
+  last_checked: '2026-11-26'
+rights:
+  status: no-permission-needed
+  basis: government-edict
+  basis_note: The text of a judicial opinion has no copyright (Georgia v. Public.Resource.Org, Inc., 590 U.S. 255 (2020)). The copy served on this site is the court's opinion only, without the publisher's headnotes, synopsis or other editorial matter (decision record 0060).
+  redistribution: true
+nations_in_case:
+  checked: '2026-11-26'
+  named: []
+jurisdictions:
+- level: federal
+topics:
+- federal-court-indian-law
+found_in:
+- 2026-11-26-federal-court-indian-law-opinions
+notes: Published at 158 F. Supp. 726. Decided by the United States Customs Court on Oct. 8, 1957. Found by scripts/caselaw/state_court_opinions.py in the Caselaw Access Project's volumes, with an Indian law term score of 4; an AI reader read excerpts and judged it an Indian law case (sovereign immunity of Indian nations and cross-claims).
+review:
+  status: unverified
+  by: scripts/caselaw/state_court_opinions.py
+  date: '2026-11-26'
+  checks:
+  - check: 'Indian law case: the term score and, below the score kept without a reading, an AI reader''s judgment of excerpts'
+    result: agree
+    detail: 'score 4; reader: sovereign immunity of Indian nations and cross-claims'
+  - check: Nations named in the caption, matched to nation records by name
+    result: agree
+    detail: 0 matched, 0 not linked

@@ -50,10 +50,44 @@ const federalGroups: Record<string, string> = {
 	'supreme-court': 'Supreme Court opinions',
 	statutes: 'Federal statutes and Public Laws',
 	'federal-register': 'Federal Register documents',
-	'other-federal': 'Other federal documents',
-	// Published state and territorial court opinions (decision record 0060); federal courts' opinions go with the other federal documents.
+	'other-federal': 'Other federal documents'
+};
+
+/**
+ * Published court opinions (decision record 0060), listed in parts of at most pageSize rows, in
+ * the order of their keys (source, reporter, volume): one page of thousands of rows is too big for
+ * a Worker asset and for the accessibility check, which gives up on a page after 90 seconds.
+ */
+const pagedTopics: Record<string, string> = {
+	'federal-court-opinions': 'Federal court opinions',
 	'state-court-opinions': 'State court opinions'
 };
+const pageSize = 2500;
+let pageCache: Map<string, { slug: string; part: number; parts: number }> | undefined;
+
+function pages(): Map<string, { slug: string; part: number; parts: number }> {
+	if (pageCache) return pageCache;
+	pageCache = new Map();
+	for (const topic of Object.keys(pagedTopics)) {
+		const keys = publicCopies()
+			.filter((copy) => copy.topic === topic)
+			.map((copy) => copy.key)
+			.sort();
+		const parts = Math.max(1, Math.ceil(keys.length / pageSize));
+		keys.forEach((key, index) => {
+			const part = Math.floor(index / pageSize) + 1;
+			pageCache?.set(key, { slug: `${topic}-${part}`, part, parts });
+		});
+	}
+	return pageCache;
+}
+
+function pagedTitle(slug: string): string | undefined {
+	const match = /^(.*)-(\d+)$/.exec(slug);
+	if (!match || !pagedTopics[match[1]]) return undefined;
+	const parts = [...pages().values()].find((page) => page.slug === slug)?.parts ?? 1;
+	return parts > 1 ? `${pagedTopics[match[1]]}, part ${match[2]} of ${parts}` : pagedTopics[match[1]];
+}
 
 function nationNames(): Map<string, string> {
 	return new Map(nations().map((record) => [record.id, displayName(record.names.official)]));
@@ -76,7 +110,7 @@ const opinionPrefix = 'opinions-';
 
 function groupOf(copy: PublicCopy, names: Map<string, string>): string {
 	if (copy.topic === 'caselaw-access-project') return `${opinionPrefix}${copy.nations[0] ?? 'other'}`;
-	if (copy.topic === 'state-court-opinions') return 'state-court-opinions';
+	if (pagedTopics[copy.topic]) return pages().get(copy.key)?.slug ?? `${copy.topic}-1`;
 	if (copy.topic === 'constitutions' || copy.topic === 'tribal-law') {
 		const [first] = namesOf(copy, names);
 		const letter = first?.normalize('NFD').charAt(0).toLowerCase() ?? '';
@@ -92,6 +126,8 @@ function groupOf(copy: PublicCopy, names: Map<string, string>): string {
 
 function groupTitle(slug: string, names = nationNames()): string {
 	if (federalGroups[slug]) return federalGroups[slug];
+	const paged = pagedTitle(slug);
+	if (paged) return paged;
 	if (slug.startsWith(opinionPrefix)) {
 		const name = names.get(slug.slice(opinionPrefix.length));
 		return name ? `Tribal court opinions: ${name}` : 'Tribal court opinions';
@@ -127,10 +163,18 @@ export function copyGroups(): CopyGroup[] {
 		counts.set(slug, (counts.get(slug) ?? 0) + 1);
 	}
 	const order = (slug: string) =>
-		federalGroups[slug] ? Object.keys(federalGroups).indexOf(slug) : slug.startsWith(opinionPrefix) ? 5 : slug === 'other-nations' ? 1000 : 10 + slug.charCodeAt(0);
+		federalGroups[slug]
+			? Object.keys(federalGroups).indexOf(slug)
+			: pagedTitle(slug)
+				? Object.keys(federalGroups).length + (slug.startsWith('federal-') ? 0 : 0.5)
+				: slug.startsWith(opinionPrefix)
+					? 5
+					: slug === 'other-nations'
+						? 1000
+						: 10 + slug.charCodeAt(0);
 	return [...counts]
 		.map(([slug, count]) => ({ slug, title: groupTitle(slug, names), count }))
-		.sort((first, second) => order(first.slug) - order(second.slug) || first.title.localeCompare(second.title));
+		.sort((first, second) => order(first.slug) - order(second.slug) || first.title.localeCompare(second.title, undefined, { numeric: true }));
 }
 
 /** The rows of one list. */

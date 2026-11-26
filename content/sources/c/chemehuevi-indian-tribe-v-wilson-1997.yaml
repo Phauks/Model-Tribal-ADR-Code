@@ -1,0 +1,79 @@
+key: chemehuevi-indian-tribe-v-wilson-1997
+kind: federal-case
+citation:
+  type: legal_case
+  title: Chemehuevi Indian Tribe v. Wilson
+  authority: United States District Court for the Northern District of California
+  container-title: F. Supp.
+  volume: '987'
+  page: '804'
+  issued:
+    date-parts:
+    - - 1997
+      - 11
+      - 24
+  URL: https://static.case.law/f-supp/987/html/0804-01.html
+  accessed:
+    date-parts:
+    - - 2026
+      - 11
+      - 26
+original_link: https://static.case.law/f-supp/987/html/0804-01.html
+retrieved: '2026-11-26'
+archives: []
+history:
+  status: live
+  last_checked: '2026-11-26'
+rights:
+  status: no-permission-needed
+  basis: government-edict
+  basis_note: The text of a judicial opinion has no copyright (Georgia v. Public.Resource.Org, Inc., 590 U.S. 255 (2020)). The copy served on this site is the court's opinion only, without the publisher's headnotes, synopsis or other editorial matter (decision record 0060).
+  redistribution: true
+tribes:
+- elk-valley-rancheria
+- hoopa-valley-tribe
+- hopland-band-of-pomo-indians
+- redding-rancheria
+nations_in_case:
+  checked: '2026-11-26'
+  named:
+  - nation: elk-valley-rancheria
+    named_as: Elk Valley Rancheria
+    role: party
+    note: Matched by the script to the nation record of the same name; not yet checked.
+  - nation: hoopa-valley-tribe
+    named_as: Hoopa Valley Indian Tribe
+    role: party
+    historical: true
+    note: Matched by the script to the only nation record sharing this name; not yet checked against the case's history.
+  - nation: hopland-band-of-pomo-indians
+    named_as: Hopland Band of Pomo Indians
+    role: party
+    note: Matched by the script to the nation record of the same name; not yet checked.
+  - nation: redding-rancheria
+    named_as: Redding Rancheria
+    role: party
+    note: Matched by the script to the nation record of the same name; not yet checked.
+  not_linked:
+  - named_as: Pomo Indians
+    reason: More than one of today's nations shares this name (big-valley-band-of-pomo-indians-of-the-big-valley-rancheria, cloverdale-rancheria-of-pomo-indians-of-california, coyote-valley-band-of-pomo-indians-of-california, dry-creek-rancheria-band-of-pomo-indians, elem-indian-colony-of-pomo-indians-of-the-sulphur-bank-rancheria, habematolel-pomo-of-upper-lake and 9 more); which the case concerns has not been checked.
+  - named_as: Smith River Rancheria
+    reason: More than one of today's nations shares this name (arkansas-white-river-cherokee, bad-river-band-of-the-lake-superior-tribe-of-chippewa-indians-of-the-bad-river-reservation, bear-river-band-of-the-rohnerville-rancheria, cherokee-river-indian-community, cheyenne-river-sioux-tribe-of-the-cheyenne-river-reservation, colorado-river-indian-tribes-of-the-colorado-river-indian-reservation and 22 more); which the case concerns has not been checked.
+jurisdictions:
+- level: federal
+topics:
+- federal-court-indian-law
+found_in:
+- 2026-11-26-federal-court-indian-law-opinions
+notes: Published at 987 F. Supp. 804. Decided by the United States District Court for the Northern District of California on Nov. 24, 1997. Found by scripts/caselaw/state_court_opinions.py in the Caselaw Access Project's volumes, with an Indian law term score of 70, at or above 10, the level kept without a reading.
+review:
+  status: unverified
+  by: scripts/caselaw/state_court_opinions.py
+  date: '2026-11-26'
+  checks:
+  - check: 'Indian law case: the term score and, below the score kept without a reading, an AI reader''s judgment of excerpts'
+    result: agree
+    detail: score 70
+  - check: Nations named in the caption, matched to nation records by name
+    result: missing
+    detail: 4 matched, 2 not linked

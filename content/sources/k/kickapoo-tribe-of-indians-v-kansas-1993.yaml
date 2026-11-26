@@ -1,0 +1,63 @@
+key: kickapoo-tribe-of-indians-v-kansas-1993
+kind: federal-case
+citation:
+  type: legal_case
+  title: Kickapoo Tribe of Indians v. Kansas
+  authority: United States District Court for the District of Kansas
+  container-title: F. Supp.
+  volume: '818'
+  page: '1423'
+  issued:
+    date-parts:
+    - - 1993
+      - 3
+      - 29
+  URL: https://static.case.law/f-supp/818/html/1423-01.html
+  accessed:
+    date-parts:
+    - - 2026
+      - 11
+      - 26
+original_link: https://static.case.law/f-supp/818/html/1423-01.html
+retrieved: '2026-11-26'
+archives: []
+history:
+  status: live
+  last_checked: '2026-11-26'
+rights:
+  status: no-permission-needed
+  basis: government-edict
+  basis_note: The text of a judicial opinion has no copyright (Georgia v. Public.Resource.Org, Inc., 590 U.S. 255 (2020)). The copy served on this site is the court's opinion only, without the publisher's headnotes, synopsis or other editorial matter (decision record 0060).
+  redistribution: true
+tribes:
+- kickapoo-tribe-of-oklahoma
+nations_in_case:
+  checked: '2026-11-26'
+  named:
+  - nation: kickapoo-tribe-of-oklahoma
+    named_as: Kickapoo Tribe
+    role: party
+    note: Matched by the script to a name the nation record gives; not yet checked.
+  not_linked:
+  - named_as: Kickapoo Reservation
+    reason: More than one of today's nations shares this name (kickapoo-traditional-tribe-of-texas, kickapoo-tribe-of-indians-of-the-kickapoo-reservation-in-kansas, kickapoo-tribe-of-oklahoma); which the case concerns has not been checked.
+  - named_as: Kickapoo Nation
+    reason: More than one of today's nations shares this name (kickapoo-traditional-tribe-of-texas, kickapoo-tribe-of-indians-of-the-kickapoo-reservation-in-kansas, kickapoo-tribe-of-oklahoma); which the case concerns has not been checked.
+jurisdictions:
+- level: federal
+topics:
+- federal-court-indian-law
+found_in:
+- 2026-11-26-federal-court-indian-law-opinions
+notes: Published at 818 F. Supp. 1423. Decided by the United States District Court for the District of Kansas on Mar. 29, 1993. Found by scripts/caselaw/state_court_opinions.py in the Caselaw Access Project's volumes, with an Indian law term score of 90, at or above 10, the level kept without a reading.
+review:
+  status: unverified
+  by: scripts/caselaw/state_court_opinions.py
+  date: '2026-11-26'
+  checks:
+  - check: 'Indian law case: the term score and, below the score kept without a reading, an AI reader''s judgment of excerpts'
+    result: agree
+    detail: score 90
+  - check: Nations named in the caption, matched to nation records by name
+    result: missing
+    detail: 1 matched, 2 not linked

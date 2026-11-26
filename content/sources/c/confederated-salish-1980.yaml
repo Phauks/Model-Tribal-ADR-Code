@@ -1,0 +1,59 @@
+key: confederated-salish-1980
+kind: federal-case
+citation:
+  type: legal_case
+  title: Confederated Salish
+  authority: United States Court of Claims
+  container-title: Ct. Cl.
+  volume: '224'
+  page: '683'
+  issued:
+    date-parts:
+    - - 1980
+      - 6
+      - 13
+  URL: https://static.case.law/us-ct-cl/224/html/0683-01.html
+  accessed:
+    date-parts:
+    - - 2026
+      - 11
+      - 26
+original_link: https://static.case.law/us-ct-cl/224/html/0683-01.html
+retrieved: '2026-11-26'
+archives: []
+history:
+  status: live
+  last_checked: '2026-11-26'
+rights:
+  status: no-permission-needed
+  basis: government-edict
+  basis_note: The text of a judicial opinion has no copyright (Georgia v. Public.Resource.Org, Inc., 590 U.S. 255 (2020)). The copy served on this site is the court's opinion only, without the publisher's headnotes, synopsis or other editorial matter (decision record 0060).
+  redistribution: true
+tribes:
+- confederated-salish-and-kootenai-tribes-of-the-flathead-reservation
+nations_in_case:
+  checked: '2026-11-26'
+  named:
+  - nation: confederated-salish-and-kootenai-tribes-of-the-flathead-reservation
+    named_as: Kootenai Tribes of the Flathead Reservation
+    role: party
+    historical: true
+    note: Matched by the script to the only nation record sharing this name; not yet checked against the case's history.
+jurisdictions:
+- level: federal
+topics:
+- federal-court-indian-law
+found_in:
+- 2026-11-26-federal-court-indian-law-opinions
+notes: Published at 224 Ct. Cl. 683. Decided by the United States Court of Claims on June 13, 1980. Found by scripts/caselaw/state_court_opinions.py in the Caselaw Access Project's volumes, with an Indian law term score of 3; an AI reader read excerpts and judged it an Indian law case (Confederated Salish fiduciary duty claims and Indian lands).
+review:
+  status: unverified
+  by: scripts/caselaw/state_court_opinions.py
+  date: '2026-11-26'
+  checks:
+  - check: 'Indian law case: the term score and, below the score kept without a reading, an AI reader''s judgment of excerpts'
+    result: agree
+    detail: 'score 3; reader: Confederated Salish fiduciary duty claims and Indian lands'
+  - check: Nations named in the caption, matched to nation records by name
+    result: agree
+    detail: 1 matched, 0 not linked
