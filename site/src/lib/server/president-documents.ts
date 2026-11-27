@@ -70,7 +70,7 @@ export interface PresidentDocuments {
 
 interface TreatyDates {
 	source: string;
-	treaties: { key: string; signed?: string; ratified?: string; proclaimed: string }[];
+	treaties: { key: string; signed?: string; citation?: string; ratified?: string; proclaimed: string }[];
 }
 
 let treatyDatesCache: TreatyDates | undefined;
@@ -162,11 +162,12 @@ function allDocuments(): Map<string, PresidentDocuments> {
 		if (!record || !president) continue;
 		found.get(president.key)?.treaties.push({
 			key: record.key,
-			title: recordName(record.key).name.replace(/ \(\d{4}\)$/, ''),
+			// "Treaty with the Ute, 1868" and "…, 1868 (Fort Laramie Treaty)" without the year, which the dates beside it give.
+			title: recordName(record.key).name.replace(/ \(\d{4}\)$/, '').replace(/, \d{4}(?= \(|$)/, ''),
 			link: recordPageLink(record.key),
 			date: entry.proclaimed,
 			dateText: readableDate(entry.proclaimed),
-			citation: /(\d+ Stat\. \d+)/.exec(record.citation.title ?? '')?.[1],
+			citation: entry.citation ?? /(\d+ Stat\. \d+)/.exec(record.citation.title ?? '')?.[1],
 			signed: entry.signed,
 			signedText: entry.signed ? readableDate(entry.signed) : undefined
 		});

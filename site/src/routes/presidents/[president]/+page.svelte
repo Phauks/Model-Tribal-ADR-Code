@@ -141,7 +141,7 @@
 </svelte:head>
 
 <InfoPage title={data.name} lead={data.summary} picture={data.portrait} glance={data.glance} sources={data.sources} trail={[{ label: 'U.S. Presidents', href: '/stats/presidents' }]}>
-	<Collapsible heading="Executive orders and proclamations" identifier="orders-heading" count={data.orders.length || undefined}>
+	<Collapsible class="president-section" heading="Executive orders and proclamations" identifier="orders-heading" count={data.orders.length || undefined}>
 		{#if data.orders.length > 0}
 			<DataTable identifier="orders-{data.key}" label="Table: executive orders and proclamations signed by {data.name}" columns={orderColumns} rows={orderRows} rowName={['order', 'orders']} download="{data.key}-orders" />
 			{#if data.ordersLink}<p class="small section-foot"><a href={data.ordersLink}>Open in Executive Orders</a></p>{/if}
@@ -150,7 +150,7 @@
 		{/if}
 	</Collapsible>
 
-	<Collapsible heading="Treaties proclaimed" identifier="treaties-heading" count={data.treaties.length || undefined}>
+	<Collapsible class="president-section" heading="Treaties proclaimed" identifier="treaties-heading" count={data.treaties.length || undefined}>
 		{#if data.treaties.length > 0}
 			<DataTable identifier="treaties-{data.key}" label="Table: treaties proclaimed by {data.name}" columns={treatyColumns} rows={treatyRows} rowName={['treaty', 'treaties']} download="{data.key}-treaties" />
 			<p class="small muted section-foot">Dates from Kappler's headers<CitationMarks marks={data.treatyMarks} /></p>
@@ -159,7 +159,7 @@
 		{/if}
 	</Collapsible>
 
-	<Collapsible heading="Acts of Congress" identifier="acts-heading" count={data.acts.length || undefined}>
+	<Collapsible class="president-section" heading="Acts of Congress" identifier="acts-heading" count={data.acts.length || undefined}>
 		{#if data.acts.length > 0}
 			<DataTable identifier="acts-{data.key}" label="Table: Acts of Congress that became law while {data.name} was President" columns={actColumns} rows={actRows} rowName={['Act', 'Acts']} download="{data.key}-acts" />
 		{:else}
@@ -167,7 +167,7 @@
 		{/if}
 	</Collapsible>
 
-	<Collapsible heading="Justices appointed" identifier="justices-heading" count={data.appointees.length || undefined}>
+	<Collapsible class="president-section" heading="Justices appointed" identifier="justices-heading" count={data.appointees.length || undefined}>
 		{#if data.appointees.length > 0}
 			<BenchChart rows={data.rows} start={data.start} end={data.end} cases={data.chartCases} width={560} labelWidth={110} allLink />
 			<DataTable identifier="justices-{data.key}" label="Table: Justices appointed by {data.name}" columns={justiceColumns} rows={justiceRows} rowName={['Justice', 'Justices']} download="{data.key}-justices" />
@@ -177,7 +177,7 @@
 		{/if}
 	</Collapsible>
 
-	<Collapsible heading="Supreme Court cases decided" identifier="decided-heading" count={data.decided.length || undefined}>
+	<Collapsible class="president-section" heading="Supreme Court cases decided" identifier="decided-heading" count={data.decided.length || undefined}>
 		{#if data.decided.length > 0}
 			<DataTable identifier="decided-{data.key}" label="Table: Supreme Court cases on this site decided while {data.name} was President" columns={decidedColumns} rows={decidedRows} rowName={['case', 'cases']} download="{data.key}-cases-decided">
 				{#snippet cell(row)}
@@ -192,7 +192,7 @@
 	</Collapsible>
 
 	{#if data.cases.length > 0}
-		<Collapsible heading="Cases heard by Justices he appointed" identifier="cases-heading" count={data.cases.length}>
+		<Collapsible class="president-section" heading="Cases heard by Justices he appointed" identifier="cases-heading" count={data.cases.length}>
 			<DataTable identifier="cases-{data.key}" label="Table: cases on this site in which Justices appointed by {data.name} took part" columns={caseColumns} rows={caseRows} rowName={['case', 'cases']} download="{data.key}-cases">
 				{#snippet cell(row, column)}
 					{@const item = caseByKey.get(row.key)}
@@ -225,5 +225,10 @@
 
 	.section-foot {
 		margin-top: var(--space-2);
+	}
+
+	/* A table beside Key facts keeps to the room left of it, as on the mockup, rather than running under the panel. */
+	:global(.president-section .data-table) {
+		display: flow-root;
 	}
 </style>

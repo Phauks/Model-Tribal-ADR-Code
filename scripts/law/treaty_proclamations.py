@@ -58,7 +58,7 @@ def main() -> int:
             continue
         if not (SOURCES / key[0] / f"{key}.yaml").exists():
             raise SystemExit(f"{CHECK.name} names {key}, which has no record in content/sources")
-        entry: dict = {"key": key, "signed": row["date_signed"] or None}
+        entry: dict = {"key": key, "signed": row["date_signed"] or None, "citation": row["citation"] or None}
         ratified = dated(row["ratified"])
         if ratified:
             entry["ratified"] = ratified[0]
