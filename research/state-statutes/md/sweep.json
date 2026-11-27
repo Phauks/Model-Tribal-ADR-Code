@@ -1,0 +1,49 @@
+{
+  "state": "MD",
+  "code": "Annotated Code of Maryland",
+  "edition": 2026,
+  "read": "2026-11-27",
+  "keyword_pass": {
+    "sections": 39025,
+    "live": 39011,
+    "strong": 65,
+    "weak_only": 218,
+    "reserved": 14
+  },
+  "reading": {
+    "missing_answers": 0,
+    "rows": 81,
+    "core": 22,
+    "incidental": 59,
+    "by_pool": {
+      "A": {
+        "incidental": 51,
+        "core": 14
+      },
+      "B": {
+        "none": 207,
+        "incidental": 8,
+        "core": 3
+      },
+      "C": {
+        "none": 194,
+        "core": 5
+      },
+      "D": {
+        "none": 300
+      }
+    },
+    "meta": {
+      "live": 39011,
+      "A": 65,
+      "B": 218,
+      "E": 0,
+      "C": 199,
+      "C_sample": 199,
+      "D": 38529,
+      "D_sample": 300,
+      "items": 782,
+      "batches": 6
+    }
+  }
+}

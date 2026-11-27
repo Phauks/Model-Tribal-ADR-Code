@@ -1,0 +1,50 @@
+key: texas-insurance-code-section-5002-001
+kind: state-statute
+citation:
+  type: legislation
+  title: Execution of Compact
+  title-short: Tex. Ins. Code Ann. § 5002.001
+  container-title: Insurance Code
+  container-title-short: Tex. Ins. Code Ann.
+  section: '5002.001'
+  author:
+  - literal: Texas Legislative Council
+  issued:
+    date-parts:
+    - - 2011
+  URL: https://statutes.capitol.texas.gov/Docs/IN/htm/IN.5002.htm#5002.001
+  accessed:
+    date-parts:
+    - - 2026
+      - 11
+      - 27
+original_link: https://statutes.capitol.texas.gov/Docs/IN/htm/IN.5002.htm#5002.001
+retrieved: '2026-11-27'
+archives: []
+history:
+  status: live
+  last_checked: '2026-11-27'
+state_law:
+  relevance: incidental
+  citation: Tex. Ins. Code Ann. § 5002.001 (2025)
+rights:
+  status: no-permission-needed
+  basis: government-edict
+  basis_note: 'Official state statutes are not copyrightable under the government edicts doctrine (Georgia v. Public.Resource.Org, Inc., 590 U.S. 255 (2020)). Linked, not served: state statutes stay link only.'
+  redistribution: false
+jurisdictions:
+- level: state
+  state: TX
+topics:
+- state-indian-law
+found_in:
+- 2026-11-27-state-statutes-ia-ma-md-mo-oh-tx
+notes: 'Indigo Book citation: Tex. Ins. Code Ann. § 5002.001 (2025). History: Added by Acts 2011, 82nd Leg., 1st C.S., Ch. 7 (S.B. 7), Sec. 12.01, eff. September 28, 2011. Text read from the Texas Legislative Council''s download of the code as HTML (statutes.capitol.texas.gov) on Nov. 27, 2026. Found by the state statutes sweep (terms: native americans; native); AI reader''s verdict incidental: Health compact definition excludes care provided to Native Americans. Unverified.'
+review:
+  status: unverified
+  by: scripts/law/state_statutes/run.py
+  date: '2026-11-27'
+  checks:
+  - check: 'Indian law section: the sweep''s keyword pass and an AI reader''s verdict (core, incidental or none)'
+    result: agree
+    detail: 'incidental; terms: native americans; native'

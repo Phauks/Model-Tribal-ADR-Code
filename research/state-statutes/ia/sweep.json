@@ -1,0 +1,50 @@
+{
+  "state": "IA",
+  "code": "Iowa Code",
+  "edition": 2026,
+  "read": "2026-11-27",
+  "keyword_pass": {
+    "sections": 47239,
+    "live": 25438,
+    "strong": 92,
+    "weak_only": 194,
+    "reserved": 19017,
+    "repealed": 2784
+  },
+  "reading": {
+    "missing_answers": 0,
+    "rows": 109,
+    "core": 37,
+    "incidental": 72,
+    "by_pool": {
+      "A": {
+        "core": 29,
+        "incidental": 62,
+        "none": 1
+      },
+      "B": {
+        "core": 8,
+        "none": 176,
+        "incidental": 10
+      },
+      "C": {
+        "none": 300
+      },
+      "D": {
+        "none": 300
+      }
+    },
+    "meta": {
+      "live": 25438,
+      "A": 92,
+      "B": 194,
+      "E": 0,
+      "C": 530,
+      "C_sample": 300,
+      "D": 24622,
+      "D_sample": 300,
+      "items": 886,
+      "batches": 7
+    }
+  }
+}

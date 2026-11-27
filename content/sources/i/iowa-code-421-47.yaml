@@ -1,0 +1,50 @@
+key: iowa-code-421-47
+kind: state-statute
+citation:
+  type: legislation
+  title: Tax agreements with Indian tribes
+  title-short: Iowa Code § 421.47
+  container-title: Iowa Code
+  container-title-short: Iowa Code
+  section: '421.47'
+  author:
+  - literal: Iowa Legislature
+  issued:
+    date-parts:
+    - - 2002
+  URL: https://www.legis.iowa.gov/docs/code/421.47.pdf
+  accessed:
+    date-parts:
+    - - 2026
+      - 11
+      - 27
+original_link: https://www.legis.iowa.gov/docs/code/421.47.pdf
+retrieved: '2026-11-27'
+archives: []
+history:
+  status: live
+  last_checked: '2026-11-27'
+state_law:
+  relevance: core
+  citation: Iowa Code § 421.47 (2026)
+rights:
+  status: no-permission-needed
+  basis: government-edict
+  basis_note: 'Official state statutes are not copyrightable under the government edicts doctrine (Georgia v. Public.Resource.Org, Inc., 590 U.S. 255 (2020)). Linked, not served: state statutes stay link only.'
+  redistribution: false
+jurisdictions:
+- level: state
+  state: IA
+topics:
+- state-indian-law
+found_in:
+- 2026-11-27-state-statutes-ia-ma-md-mo-oh-tx
+notes: 'Indigo Book citation: Iowa Code § 421.47 (2026). History: 2002 Acts, ch 1151, §4; 2011 Acts, ch 25, §143. Text read from the Iowa Legislature''s XML file for the chapter of the Iowa Code (2026 edition, legis.iowa.gov) on Nov. 27, 2026. Found by the state statutes sweep (terms: indian country; indian tribe; indian tribes; indian; tribal; tribe; tribes); AI reader''s verdict core: Department tax collection agreements with Indian tribes in Indian country. Unverified.'
+review:
+  status: unverified
+  by: scripts/law/state_statutes/run.py
+  date: '2026-11-27'
+  checks:
+  - check: 'Indian law section: the sweep''s keyword pass and an AI reader''s verdict (core, incidental or none)'
+    result: agree
+    detail: 'core; terms: indian country; indian tribe; indian tribes; indian; tribal; tribe; tribes'

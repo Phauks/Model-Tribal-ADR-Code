@@ -1,0 +1,50 @@
+key: iowa-code-513b-2
+kind: state-statute
+citation:
+  type: legislation
+  title: Definitions
+  title-short: Iowa Code § 513B.2
+  container-title: Iowa Code
+  container-title-short: Iowa Code
+  section: 513B.2
+  author:
+  - literal: Iowa Legislature
+  issued:
+    date-parts:
+    - - 1991
+  URL: https://www.legis.iowa.gov/docs/code/513B.2.pdf
+  accessed:
+    date-parts:
+    - - 2026
+      - 11
+      - 27
+original_link: https://www.legis.iowa.gov/docs/code/513B.2.pdf
+retrieved: '2026-11-27'
+archives: []
+history:
+  status: live
+  last_checked: '2026-11-27'
+state_law:
+  relevance: incidental
+  citation: Iowa Code § 513B.2 (2026)
+rights:
+  status: no-permission-needed
+  basis: government-edict
+  basis_note: 'Official state statutes are not copyrightable under the government edicts doctrine (Georgia v. Public.Resource.Org, Inc., 590 U.S. 255 (2020)). Linked, not served: state statutes stay link only.'
+  redistribution: false
+jurisdictions:
+- level: state
+  state: IA
+topics:
+- state-indian-law
+found_in:
+- 2026-11-27-state-statutes-ia-ma-md-mo-oh-tx
+notes: 'Indigo Book citation: Iowa Code § 513B.2 (2026). History: 91 Acts, ch 244, §2; 92 Acts, ch 1167, §1; 93 Acts, ch 80, §2, 3; 94 Acts, ch 1176, §9; 95 Acts, ch 185, §9; 97 Acts, ch 103, §2 – 11; 98 Acts, ch 1057, §8; 2000 Acts, ch 1023, §20; 2001 Acts, ch 69, §13, 39; 2007 Acts, ch 57, §3 – 5, 8; 2007 Acts, ch 215, §255; 2009 Acts, ch 118, §20; 2011 Acts, ch 70, §26, 49; 2017 Acts, ch 148, §37; 2023 Acts, ch 19, §1189. Text read from the Iowa Legislature''s XML file for the chapter of the Iowa Code (2026 edition, legis.iowa.gov) on Nov. 27, 2026. Found by the state statutes sweep (terms: indian health; indian; tribal); AI reader''s verdict incidental: Indian Health Service or tribal program listed as coverage exclusion. Unverified.'
+review:
+  status: unverified
+  by: scripts/law/state_statutes/run.py
+  date: '2026-11-27'
+  checks:
+  - check: 'Indian law section: the sweep''s keyword pass and an AI reader''s verdict (core, incidental or none)'
+    result: agree
+    detail: 'incidental; terms: indian health; indian; tribal'

@@ -50,4 +50,10 @@ Records the project already holds under the same key (most were made by hand for
 | Virginia | `adapters/virginia.py` | Section pages, law.lis.virginia.gov/vacode |
 | Alaska | `adapters/alaska.py` (no history lines in the print view; readers are told that Alaska Native Claims Settlement Act corporations count as Native) | Print view of each title, akleg.gov/basis/statutes.asp |
 | Arizona | `adapters/arizona.py` (no history lines) | Section pages, azleg.gov/ars, listed on each title's page |
+| Iowa | `adapters/iowa.py` (each record links to the section's own PDF) | Chapter XML files, legis.iowa.gov (2026 edition), listed on each title's page |
+| Massachusetts | `adapters/massachusetts.py` (cited by chapter: section numbers are `<chapter>:<section>`; no history lines) | The Legislature's open data service, malegislature.gov/api, one call per chapter and per section |
+| Maryland | `adapters/maryland.py` (cited by article: section numbers are `<article>:<section>`; no catchlines and no history lines, so records are named by citation) | Whole-article HTML files, mgaleg.maryland.gov/2026RS/Statute_Web |
+| Missouri | `adapters/missouri.py` | Section pages, revisor.mo.gov, listed on each chapter's page |
+| Ohio | `adapters/ohio.py` (no history lines) | Whole-chapter pages, codes.ohio.gov, listed on each title's page |
+| Texas | `adapters/texas.py` (all 30 codes; section numbers are `<code>:<section>`, cited in each code's own form; catchlines given title case) | The Legislative Council's zipped HTML download of each code, tcss.legis.texas.gov/resources/Zips |
 | Oklahoma | `adapters/oklahoma.py` (read in the pilot; `run.py seed OK` turns the pilot's list into this pipeline's list) | Title PDFs, oklegislature.gov |
