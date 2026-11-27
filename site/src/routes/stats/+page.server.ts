@@ -1,12 +1,12 @@
 import type { BarChartData } from '#lib/bar-chart.ts';
-import { collectionsByGroup, nationsInCollections } from '#lib/server/collections.ts';
+import { collectionsByGroup } from '#lib/server/collections.ts';
 import { nations } from '#lib/server/content.ts';
 import { chartRecordsPath, dataCharts } from '#lib/server/data-charts.ts';
-import { isComponentBand, isFederallyRecognized, isNativeNation, listSection, recognitionStatus, recognitionStatuses, withoutFederalRecord } from '#lib/server/recognition-status.ts';
+import { isComponentBand, isFederallyRecognized, isNativeNation, listSection, recognitionStatus, withoutFederalRecord } from '#lib/server/recognition-status.ts';
 import type { PageServerLoad } from './$types';
 
-/** The charts of Recognition and federal services shown under Recognition (Trevor, Nov. 27, 2026), in this order. */
-const recognitionCharts = ['nations-by-recognition-status', 'federal-recognition-by-basis', 'without-federal-recognition', 'state-recognized-by-state', 'nations-by-bureau-region'];
+/** The one chart shown under Recognition; the finer breakdowns stay on Data and charts (Trevor, Nov. 27, 2026: "Tiles and status chart only"). */
+const recognitionChart = 'nations-by-recognition-status';
 
 const slugOf = (label: string) => label.toLowerCase().replace(/[^a-z0-9]+/g, '-');
 
@@ -54,15 +54,12 @@ function recognitionTiles(): RecognitionTile[] {
 }
 
 export const load: PageServerLoad = () => {
-	const charts = dataCharts();
 	return {
 		groups: collectionsByGroup(),
 		built: new Date().toISOString().slice(0, 10),
 		recognition: {
 			tiles: recognitionTiles(),
-			statuses: [...recognitionStatuses],
-			charts: recognitionCharts.map((identifier) => charts.find((chart) => chart.identifier === identifier)).filter((chart): chart is BarChartData => Boolean(chart)),
-			collections: nationsInCollections()
+			chart: dataCharts().find((chart): chart is BarChartData => chart.identifier === recognitionChart)
 		}
 	};
 };

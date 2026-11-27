@@ -10,8 +10,6 @@
 	import Users from '@lucide/svelte/icons/users';
 	import type { Component } from 'svelte';
 	import BarChart from '#lib/components/BarChart.svelte';
-	import DataTable from '#lib/components/DataTable.svelte';
-	import type { TableColumn, TableRow } from '#lib/tables/table-definition.ts';
 	import { collectionIcon, groupIcons } from '#lib/collection-icons.ts';
 	import { readableDate } from '#lib/readable-date.ts';
 	import type { PageProps } from './$types';
@@ -19,7 +17,7 @@
 	let { data }: PageProps = $props();
 	const number = (value: number) => value.toLocaleString('en-US');
 
-	// Recognition (Trevor, Nov. 27, 2026: "delineate between federally recognized, state, and non-recognized"): the same cards, then the charts, then which collections hold records of nations of each status.
+	// Recognition (Trevor, Nov. 27, 2026: "delineate between federally recognized, state, and non-recognized"): the same cards, then the status chart; the finer breakdowns are on Data and charts.
 	const tileIcons: Record<string, Component> = {
 		'federally-recognized': Landmark,
 		'state-recognized-only': MapPin,
@@ -28,27 +26,6 @@
 		'native-hawaiian-community': Users,
 		'territorial-peoples': Users
 	};
-	const listFiltered = (href: string, identifier: string, status: string) => (href.startsWith('/stats/') ? `${href}?${new URLSearchParams({ [`${identifier}.recognition`]: status })}` : href);
-	const collectionColumns: TableColumn[] = $derived([
-		{ key: 'collection', header: 'Collection', isRowHeader: true, sortable: true },
-		...data.recognition.statuses.map((status) => ({ key: status, header: status, type: 'number' as const, sortable: true })),
-		{ key: 'total', header: 'All nations', type: 'number' as const, sortable: true }
-	]);
-	const collectionRows: TableRow[] = $derived(
-		data.recognition.collections.map((row) => ({
-			key: row.identifier,
-			cells: {
-				collection: { text: row.title, href: row.href },
-				...Object.fromEntries(
-					data.recognition.statuses.map((status) => [
-						status,
-						{ text: number(row.counts[status]), sortValue: row.counts[status], href: row.counts[status] ? listFiltered(row.href, row.identifier, status) : undefined }
-					])
-				),
-				total: { text: number(row.total), sortValue: row.total, href: row.href }
-			}
-		}))
-	);
 </script>
 
 {#snippet recognitionSection()}
@@ -67,23 +44,8 @@
 				</li>
 			{/each}
 		</ul>
-		<div class="charts">
-			{#each data.recognition.charts as chart (chart.identifier)}
-				<BarChart {chart} headingLevel={3} />
-			{/each}
-		</div>
-		{#if collectionRows.length}
-			<h3 id="nations-in-collections">Nations With Records in Each Collection</h3>
-			<p class="table-note">How many nations of each status a collection holds at least one record about. A number opens those records.</p>
-			<DataTable
-				identifier="nations-in-collections"
-				label="Table: Nations With Records in Each Collection"
-				columns={collectionColumns}
-				rows={collectionRows}
-				download="nations-in-collections"
-				rowName={['collection', 'collections']}
-				count={false}
-			/>
+		{#if data.recognition.chart}
+			<div class="chart"><BarChart chart={data.recognition.chart} headingLevel={3} /></div>
 		{/if}
 	</section>
 {/snippet}
@@ -227,21 +189,8 @@
 		color: var(--color-ink-muted);
 	}
 
-	.charts {
-		display: grid;
-		gap: var(--space-5);
+	.chart {
 		margin-top: var(--space-5);
-	}
-
-	h3 {
-		font-size: var(--font-size-large);
-		margin: var(--space-5) 0 var(--space-1);
-	}
-
-	.table-note {
-		margin: 0 0 var(--space-3);
-		color: var(--color-ink-muted);
-		font-size: var(--font-size-small);
 	}
 
 	.years,
