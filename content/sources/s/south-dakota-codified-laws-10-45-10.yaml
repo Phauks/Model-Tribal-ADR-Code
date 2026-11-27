@@ -1,0 +1,50 @@
+key: south-dakota-codified-laws-10-45-10
+kind: state-statute
+citation:
+  type: legislation
+  title: Exemption of sales to United States, states, municipalities, charities, and Indian tribes
+  title-short: S.D. Codified Laws § 10-45-10
+  container-title: South Dakota Codified Laws
+  container-title-short: S.D. Codified Laws
+  section: 10-45-10
+  author:
+  - literal: South Dakota Legislature
+  issued:
+    date-parts:
+    - - 1935
+  URL: https://sdlegislature.gov/Statutes/10-45-10
+  accessed:
+    date-parts:
+    - - 2026
+      - 11
+      - 27
+original_link: https://sdlegislature.gov/Statutes/10-45-10
+retrieved: '2026-11-27'
+archives: []
+history:
+  status: live
+  last_checked: '2026-11-27'
+state_law:
+  relevance: incidental
+  citation: S.D. Codified Laws § 10-45-10 (2026)
+rights:
+  status: no-permission-needed
+  basis: government-edict
+  basis_note: 'Official state statutes are not copyrightable under the government edicts doctrine (Georgia v. Public.Resource.Org, Inc., 590 U.S. 255 (2020)). Linked, not served: state statutes stay link only.'
+  redistribution: false
+jurisdictions:
+- level: state
+  state: SD
+topics:
+- state-indian-law
+found_in:
+- 2026-11-27-state-statutes-sweep
+notes: 'Indigo Book citation: S.D. Codified Laws § 10-45-10 (2026). History: SL 1935, ch 205, § 34-a; SDC 1939, § 57.3202 (5); SL 1939, ch 269; SL 1974, ch 101, § 1; SL 1975, ch 104; SL 1979, ch 84, § 8; SL 1983, ch 88, § 1; SL 1984, ch 87; SL 1987, ch 100; SL 2008, ch 51, § 14; SL 2011, ch 57, § 1. Text read from the South Dakota Legislature''s statutes service for the section''s chapter (sdlegislature.gov/Statutes) on Nov. 27, 2026. Found by the state statutes sweep (terms: indian tribe; indian tribes; indian; tribe; tribes); AI reader''s verdict incidental: Retail sales tax exempts sales to any Indian tribe. Unverified.'
+review:
+  status: unverified
+  by: scripts/law/state_statutes/run.py
+  date: '2026-11-27'
+  checks:
+  - check: 'Indian law section: the sweep''s keyword pass and an AI reader''s verdict (core, incidental or none)'
+    result: agree
+    detail: 'incidental; terms: indian tribe; indian tribes; indian; tribe; tribes'

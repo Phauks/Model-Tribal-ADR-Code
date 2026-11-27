@@ -1,0 +1,50 @@
+key: south-dakota-codified-laws-43-2a-1
+kind: state-statute
+citation:
+  type: legislation
+  title: Definitions
+  title-short: S.D. Codified Laws § 43-2A-1
+  container-title: South Dakota Codified Laws
+  container-title-short: S.D. Codified Laws
+  section: 43-2A-1
+  author:
+  - literal: South Dakota Legislature
+  issued:
+    date-parts:
+    - - 1979
+  URL: https://sdlegislature.gov/Statutes/43-2A-1
+  accessed:
+    date-parts:
+    - - 2026
+      - 11
+      - 27
+original_link: https://sdlegislature.gov/Statutes/43-2A-1
+retrieved: '2026-11-27'
+archives: []
+history:
+  status: live
+  last_checked: '2026-11-27'
+state_law:
+  relevance: incidental
+  citation: S.D. Codified Laws § 43-2A-1 (2026)
+rights:
+  status: no-permission-needed
+  basis: government-edict
+  basis_note: 'Official state statutes are not copyrightable under the government edicts doctrine (Georgia v. Public.Resource.Org, Inc., 590 U.S. 255 (2020)). Linked, not served: state statutes stay link only.'
+  redistribution: false
+jurisdictions:
+- level: state
+  state: SD
+topics:
+- state-indian-law
+found_in:
+- 2026-11-27-state-statutes-sweep
+notes: 'Indigo Book citation: S.D. Codified Laws § 43-2A-1 (2026). History: SL 1979, ch 291, § 7; SL 2024, ch 176, § 1. Text read from the South Dakota Legislature''s statutes service for the section''s chapter (sdlegislature.gov/Statutes) on Nov. 27, 2026. Found by the state statutes sweep (terms: federally recognized indian tribes; indian; tribes); AI reader''s verdict incidental: Excludes federally recognized tribes from foreign government definition. Unverified.'
+review:
+  status: unverified
+  by: scripts/law/state_statutes/run.py
+  date: '2026-11-27'
+  checks:
+  - check: 'Indian law section: the sweep''s keyword pass and an AI reader''s verdict (core, incidental or none)'
+    result: agree
+    detail: 'incidental; terms: federally recognized indian tribes; indian; tribes'

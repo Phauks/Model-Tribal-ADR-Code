@@ -1,0 +1,50 @@
+key: south-dakota-codified-laws-13-28-37
+kind: state-statute
+citation:
+  type: legislation
+  title: High school student postsecondary course enrollment--Dual credit--Eligibility
+  title-short: S.D. Codified Laws § 13-28-37
+  container-title: South Dakota Codified Laws
+  container-title-short: S.D. Codified Laws
+  section: 13-28-37
+  author:
+  - literal: South Dakota Legislature
+  issued:
+    date-parts:
+    - - 1990
+  URL: https://sdlegislature.gov/Statutes/13-28-37
+  accessed:
+    date-parts:
+    - - 2026
+      - 11
+      - 27
+original_link: https://sdlegislature.gov/Statutes/13-28-37
+retrieved: '2026-11-27'
+archives: []
+history:
+  status: live
+  last_checked: '2026-11-27'
+state_law:
+  relevance: incidental
+  citation: S.D. Codified Laws § 13-28-37 (2026)
+rights:
+  status: no-permission-needed
+  basis: government-edict
+  basis_note: 'Official state statutes are not copyrightable under the government edicts doctrine (Georgia v. Public.Resource.Org, Inc., 590 U.S. 255 (2020)). Linked, not served: state statutes stay link only.'
+  redistribution: false
+jurisdictions:
+- level: state
+  state: SD
+topics:
+- state-indian-law
+found_in:
+- 2026-11-27-state-statutes-sweep
+notes: 'Indigo Book citation: S.D. Codified Laws § 13-28-37 (2026). History: SL 1990, ch 122, § 5; SL 1996, ch 119; SL 2003, ch 100, § 1; SL 2014, ch 86, § 1; SL 2015, ch 92, § 1; SL 2018, ch 96, § 1; SL 2020, ch 61, § 40; SL 2023, ch 57, § 1; SL 2024, ch 55, § 1. Text read from the South Dakota Legislature''s statutes service for the section''s chapter (sdlegislature.gov/Statutes) on Nov. 27, 2026. Found by the state statutes sweep (terms: tribal school; tribal); AI reader''s verdict incidental: Tribal school must approve student''s postsecondary course enrollment. Unverified.'
+review:
+  status: unverified
+  by: scripts/law/state_statutes/run.py
+  date: '2026-11-27'
+  checks:
+  - check: 'Indian law section: the sweep''s keyword pass and an AI reader''s verdict (core, incidental or none)'
+    result: agree
+    detail: 'incidental; terms: tribal school; tribal'

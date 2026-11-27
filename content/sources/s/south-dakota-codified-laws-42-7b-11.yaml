@@ -1,0 +1,50 @@
+key: south-dakota-codified-laws-42-7b-11
+kind: state-statute
+citation:
+  type: legislation
+  title: Powers of commission
+  title-short: S.D. Codified Laws § 42-7B-11
+  container-title: South Dakota Codified Laws
+  container-title-short: S.D. Codified Laws
+  section: 42-7B-11
+  author:
+  - literal: South Dakota Legislature
+  issued:
+    date-parts:
+    - - 1989
+  URL: https://sdlegislature.gov/Statutes/42-7B-11
+  accessed:
+    date-parts:
+    - - 2026
+      - 11
+      - 27
+original_link: https://sdlegislature.gov/Statutes/42-7B-11
+retrieved: '2026-11-27'
+archives: []
+history:
+  status: live
+  last_checked: '2026-11-27'
+state_law:
+  relevance: incidental
+  citation: S.D. Codified Laws § 42-7B-11 (2026)
+rights:
+  status: no-permission-needed
+  basis: government-edict
+  basis_note: 'Official state statutes are not copyrightable under the government edicts doctrine (Georgia v. Public.Resource.Org, Inc., 590 U.S. 255 (2020)). Linked, not served: state statutes stay link only.'
+  redistribution: false
+jurisdictions:
+- level: state
+  state: SD
+topics:
+- state-indian-law
+found_in:
+- 2026-11-27-state-statutes-sweep
+notes: 'Indigo Book citation: S.D. Codified Laws § 42-7B-11 (2026). History: SL 1989, ch 374, § 9; SL 1990, ch 343, § 12; SL 1993, ch 321, § 16; SL 1995, ch 245, § 2; SL 1997, ch 244, § 1; SL 2012, ch 205, § 1. Text read from the South Dakota Legislature''s statutes service for the section''s chapter (sdlegislature.gov/Statutes) on Nov. 27, 2026. Found by the state statutes sweep (terms: indian gaming; indian); AI reader''s verdict incidental: Gaming commission duties under Indian Gaming Regulatory Act compacts. Unverified.'
+review:
+  status: unverified
+  by: scripts/law/state_statutes/run.py
+  date: '2026-11-27'
+  checks:
+  - check: 'Indian law section: the sweep''s keyword pass and an AI reader''s verdict (core, incidental or none)'
+    result: agree
+    detail: 'incidental; terms: indian gaming; indian'
