@@ -95,8 +95,8 @@ describe('the details a copy’s page shows', () => {
 		const details = copyDetails(copyDetailsShard(first))?.[first.key];
 		expect(details?.title).toBe(first.title);
 		expect(details?.list.slug).toBeTruthy();
-		// The first call works out every copy's details, which takes 15 to 25 seconds on a CI runner.
-	}, 60_000);
+		// The first call works out every copy's details. Measured on Nov. 27, 2026, with 27,656 copies citing 22,684 records, that took 45 seconds on a cloud machine (18 s reading the source records, 10 s formatting their citations) and more than 60 seconds on a busy CI runner, so this test gets three minutes.
+	}, 180_000);
 
 	it('gives a tribal court opinion its citation', () => {
 		const opinion = publicCopies().find((each) => each.topic === 'caselaw-access-project');
