@@ -28,6 +28,7 @@ import { existsSync, mkdirSync, readdirSync, readFileSync, statSync, writeFileSy
 import { basename, join } from 'node:path';
 import { GeoJSONVT } from '@maplibre/geojson-vt';
 import { fromGeojsonVt } from '@maplibre/vt-pbf';
+import polylabel from 'polylabel';
 import { unzipSync } from 'fflate';
 import * as shapefile from 'shapefile';
 import { writePmtiles } from './pmtiles-writer.mjs';
@@ -160,19 +161,33 @@ async function readCensusYear(path) {
 	return shapefile.read(files[shp].buffer.slice(files[shp].byteOffset, files[shp].byteOffset + files[shp].byteLength), files[dbf].buffer.slice(files[dbf].byteOffset, files[dbf].byteOffset + files[dbf].byteLength), { encoding: 'latin1' });
 }
 
-/** Cuts features into vector tiles, depth first, dropping each tile's working copy once its children are done so memory stays small. */
-function cutTiles(features, layer, maxZoom) {
-	const index = new GeoJSONVT({ type: 'FeatureCollection', features }, { maxZoom, indexMaxZoom: 4, indexMaxPoints: 0, tolerance: 3, extent: 4096, buffer: 64 });
+/** Cuts features into vector tiles, depth first, dropping each tile's working copy once its children are done so memory stays small. Extra layers (such as one label point for each shape) go into the same tiles; their features must lie inside the main layer's shapes. */
+function cutTiles(features, layer, maxZoom, extraLayers = {}) {
+	const options = { maxZoom, indexMaxZoom: 4, indexMaxPoints: 0, tolerance: 3, extent: 4096, buffer: 64 };
+	const index = new GeoJSONVT({ type: 'FeatureCollection', features }, options);
+	const extras = Object.entries(extraLayers).map(([name, extra]) => [name, new GeoJSONVT({ type: 'FeatureCollection', features: extra }, options)]);
 	const tiles = new Map();
 	const visit = (z, x, y) => {
 		const tile = index.getTile(z, x, y);
 		if (!tile || tile.features.length === 0) return;
-		tiles.set(`${z}/${x}/${y}`, fromGeojsonVt({ [layer]: tile }, { version: 2, extent: 4096 }));
+		const layers = { [layer]: tile };
+		for (const [name, extra] of extras) {
+			const extraTile = extra.getTile(z, x, y);
+			if (extraTile && extraTile.features.length) layers[name] = extraTile;
+		}
+		tiles.set(`${z}/${x}/${y}`, fromGeojsonVt(layers, { version: 2, extent: 4096 }));
 		if (z < maxZoom) for (const [dx, dy] of [[0, 0], [1, 0], [0, 1], [1, 1]]) visit(z + 1, x * 2 + dx, y * 2 + dy);
 		if (z > 4) delete index.tileIndex.tiles[((1 << z) * y + x) * 32 + z];
 	};
 	visit(0, 0, 0);
 	return tiles;
+}
+
+/** The area of a ring in square degrees, enough to pick a shape's largest piece. */
+function ringArea(ring) {
+	let sum = 0;
+	for (let index = 0, previous = ring.length - 1; index < ring.length; previous = index, index += 1) sum += (ring[previous][0] - ring[index][0]) * (ring[previous][1] + ring[index][1]);
+	return Math.abs(sum / 2);
 }
 
 function boundsOf(features) {
@@ -252,12 +267,20 @@ async function buildBorders(work) {
 				properties: { id: `${properties.ID}-${properties.VERSION}`, name: properties.FULL_NAME, kind: territoryKinds[properties.TERR_TYPE] ?? 'other', from: Number(properties.START_N), to: to === newberryEnd ? stillInPlace : to, change: properties.CHANGE ?? '', citation: properties.CITATION ?? '' }
 			};
 		});
-	const tiles = cutTiles(features, 'borders', bordersMaxZoom);
+	// One name for each state or territory, inside its largest piece, so a shape cut across many tiles is named once and not once a tile.
+	const labels = features.map((feature) => {
+		const polygons = feature.geometry.type === 'Polygon' ? [feature.geometry.coordinates] : feature.geometry.coordinates;
+		const largest = polygons.reduce((best, polygon) => (ringArea(polygon[0]) > ringArea(best[0]) ? polygon : best));
+		const point = polylabel(largest, 0.01);
+		const { name, from, to } = feature.properties;
+		return { type: 'Feature', geometry: { type: 'Point', coordinates: [Number(point[0].toFixed(4)), Number(point[1].toFixed(4))] }, properties: { name, from, to } };
+	});
+	const tiles = cutTiles(features, 'borders', bordersMaxZoom, { 'border-names': labels });
 	const bounds = boundsOf(features);
 	const path = join(work, 'borders.pmtiles');
-	writePmtiles(path, tiles, { minZoom: 0, maxZoom: bordersMaxZoom, bounds, metadata: { name: 'Borders over time', attribution: 'Newberry Library, Atlas of Historical County Boundaries', vector_layers: [{ id: 'borders', fields: { id: 'String', name: 'String', kind: 'String', from: 'Number', to: 'Number', change: 'String', citation: 'String' }, minzoom: 0, maxzoom: bordersMaxZoom }] } });
+	writePmtiles(path, tiles, { minZoom: 0, maxZoom: bordersMaxZoom, bounds, metadata: { name: 'Borders over time', attribution: 'Newberry Library, Atlas of Historical County Boundaries', vector_layers: [{ id: 'borders', fields: { id: 'String', name: 'String', kind: 'String', from: 'Number', to: 'Number', change: 'String', citation: 'String' }, minzoom: 0, maxzoom: bordersMaxZoom }, { id: 'border-names', fields: { name: 'String', from: 'Number', to: 'Number' }, minzoom: 0, maxzoom: bordersMaxZoom }] } });
 	const described = describe(path, '', {});
-	return { ...describe(path, `borders-${described.sha256.slice(0, 12)}`, {}), minZoom: 0, maxZoom: bordersMaxZoom, bounds, layers: ['borders'], features: features.length, years: [...new Set(features.flatMap((feature) => [feature.properties.from, feature.properties.to]).filter((date) => date < stillInPlace).map((date) => Math.floor(date / 10000)))].sort((first, second) => first - second), first: 17830903, last: newberryEnd, sources: [newberryFile, newberryPage], retrieved: new Date().toISOString().slice(0, 10) };
+	return { ...describe(path, `borders-${described.sha256.slice(0, 12)}`, {}), minZoom: 0, maxZoom: bordersMaxZoom, bounds, layers: ['borders', 'border-names'], features: features.length, years: [...new Set(features.flatMap((feature) => [feature.properties.from, feature.properties.to]).filter((date) => date < stillInPlace).map((date) => Math.floor(date / 10000)))].sort((first, second) => first - second), first: 17830903, last: newberryEnd, sources: [newberryFile, newberryPage], retrieved: new Date().toISOString().slice(0, 10) };
 }
 
 /** Joins line pieces that meet end to end into longer lines. The Park Service draws the trail as about 2,000 short pieces, and pieces shorter than a pixel would vanish from the national view. */

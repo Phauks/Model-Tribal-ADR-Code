@@ -179,10 +179,10 @@
 		"left_out": "Hawaiian home lands; areas in geography/withdrawn-land-areas.json"
 	},
 	"borders": {
-		"set": "borders-05c2ebfa0ce4",
-		"key": "map-tiles/borders-05c2ebfa0ce4.pmtiles",
-		"bytes": 1449666,
-		"sha256": "05c2ebfa0ce440eb9b786b53379c4a56c4569f4dbeb675a3b04d45f28f9f5f95",
+		"set": "borders-26b86c87e317",
+		"key": "map-tiles/borders-26b86c87e317.pmtiles",
+		"bytes": 1482802,
+		"sha256": "26b86c87e317c9e8b8ae7d71d214bc9a61da8a29a7e070d40b717bd8a2e10382",
 		"minZoom": 0,
 		"maxZoom": 7,
 		"bounds": [
@@ -192,7 +192,8 @@
 			71.3896
 		],
 		"layers": [
-			"borders"
+			"borders",
+			"border-names"
 		],
 		"features": 220,
 		"years": [
