@@ -19,6 +19,16 @@ recognition:
   verification: bulk-import
   as_of: '2026-01-30'
   locator: 91 Fed. Reg. 4105
+- type: federal
+  earliest_record: federal-list
+  legal_basis: Indian Tribal Entities That Have a Government-to-Government Relationship With the United States, 44 Fed. Reg. 7235, 7236 (Feb. 6, 1979)
+  since: '1979-02-06'
+  source: bia-recognized-entities-1979
+  confidence: medium
+  verification: bulk-import
+  as_of: '1979-02-06'
+  locator: 44 Fed. Reg. 7236 (entry "Soboba Band of Luiseno Mission Indians, Soboba Reservation, California")
+  note: The earliest record this site has found that shows the United States dealing with the nation as a federally recognized nation. The relationship may be older. The list's entry reads "Soboba Band of Luiseno Mission Indians, Soboba Reservation, California." The entry is matched to the nation by name.
 states:
 - state: CA
   presence: government-office
@@ -436,6 +446,14 @@ jurisdiction:
   verification: inferred
   as_of: '2023-09-21'
   locator: Bureau of Indian Affairs, Approved HEARTH Act Regulations, Approved in 2023
+- topic: water-rights-settlement
+  value: enacted
+  detail: Congress enacted the Soboba Band of Luiseño Indians Settlement Act in 2008 (Pub. L. No. 110-297), settling the water rights of Soboba Band of Luiseño Indians. It quantifies 9,000 acre-feet a year in all and authorizes about $21.0 million in federal funds, as the Congressional Research Service counts it (R44148, Table 1).
+  source: public-law-110-297
+  confidence: high
+  verification: inferred
+  as_of: '2008'
+  locator: Congressional Research Service, R44148, Table 1, 2008
 nearby_state_courts:
 - state: CA
   county: Riverside County

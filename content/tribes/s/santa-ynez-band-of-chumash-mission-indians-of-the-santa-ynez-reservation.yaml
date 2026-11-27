@@ -11,6 +11,19 @@ recognition:
   verification: bulk-import
   as_of: '2026-01-30'
   locator: 91 Fed. Reg. 4105
+- type: federal
+  earliest_record: constitution
+  legal_basis: Constitution of the Santa Ynez Band of Chumash Mission Indians of the Santa Ynez Reservation, California (approved by the Secretary of the Interior Feb. 7, 1964)
+  since: '1964-02-07'
+  source: constitution-santa-ynez-band-of-chumash-mission-indians-of-the-santa-ynez-reservation-1964-text
+  document_version:
+    document: santa-ynez-band-of-chumash-mission-indians-of-the-santa-ynez-reservation-constitution
+    version: 1964-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1964-02-07'
+  locator: 1964 articles of association, approval certificate
+  note: The earliest record this site has found that shows the United States dealing with the nation as a federally recognized nation. The relationship may be older. The Secretary of the Interior approved the nation's constitution; the date is read from the approval certificate.
 states:
 - state: CA
   presence: government-office

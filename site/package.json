@@ -25,6 +25,7 @@
 		"check:motion": "node tools/check-motion-comes-from-tokens.mjs",
 		"check:color-vision": "node tools/check-color-vision.mjs",
 		"check:shared-components": "node tools/check-shared-components.mjs",
+		"check:silent-catches": "node tools/check-silent-catches.mjs",
 		"check:built-site": "node tools/check-built-site.mjs",
 		"check:accessibility": "node tools/check-accessibility.mjs",
 		"check:accessibility:live": "node tools/check-accessibility-live.mjs",

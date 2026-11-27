@@ -11,6 +11,16 @@ recognition:
   verification: bulk-import
   as_of: '2026-01-30'
   locator: 91 Fed. Reg. 4105
+- type: federal
+  earliest_record: land
+  legal_basis: Exec. Order of Nov. 9, 1871, 1 Kappler 811-12
+  since: '1871-11-09'
+  source: executive-order-1871-11-09-white-mountain-camp-apache-reservation
+  confidence: medium
+  verification: read-in-full
+  as_of: '1871-11-09'
+  locator: 1 Kappler 811-812
+  note: The earliest record this site has found that shows the United States dealing with the nation as a federally recognized nation. The relationship may be older. The instrument first set aside the White Mountain (Camp Apache) Reservation, Arizona.
 states:
 - state: AZ
   presence: government-office
@@ -691,6 +701,14 @@ jurisdiction:
   verification: inferred
   as_of: '1997-02-03'
   locator: 'Table of approvals by Tribe, column "Regulatory Programs": "WQS Program"'
+- topic: water-rights-settlement
+  value: enacted
+  detail: Congress enacted the White Mountain Apache Tribe Water Rights Quantification Act of 2010 in 2010, amended 2022 (Pub. L. No. 111-291, Pub. L. No. 117-342), settling the water rights of White Mountain Apache Tribe. It quantifies 99,000 acre-feet a year in all and authorizes about $857.2 million in federal funds, as the Congressional Research Service counts it (R44148, Table 1).
+  source: public-law-111-291
+  confidence: high
+  verification: inferred
+  as_of: '2010'
+  locator: Congressional Research Service, R44148, Table 1, 2010
 nearby_state_courts:
 - state: AZ
   county: Navajo County

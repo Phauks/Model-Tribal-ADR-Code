@@ -152,6 +152,14 @@
 			"name": "uploadLimit",
 			"namespace_id": "1005",
 			"simple": { "limit": 600, "period": 60 }
+		},
+		// How many problems one network address's browsers can report in a
+		// minute (POST /problems, site/ERRORS.md). A page sends ten at most,
+		// so this only stops a script from filling the problems table.
+		{
+			"name": "problemReportLimit",
+			"namespace_id": "1006",
+			"simple": { "limit": 30, "period": 60 }
 		}
 	],
 	// Cloudflare Email Service, for sign-in codes. It sends only from a domain

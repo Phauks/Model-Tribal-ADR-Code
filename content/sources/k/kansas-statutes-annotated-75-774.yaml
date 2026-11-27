@@ -1,0 +1,50 @@
+key: kansas-statutes-annotated-75-774
+kind: state-statute
+citation:
+  type: legislation
+  title: Coordination of training for law enforcement agencies regarding missing and murdered indigenous persons
+  title-short: Kan. Stat. Ann. § 75-774
+  container-title: Kansas Statutes Annotated
+  container-title-short: Kan. Stat. Ann.
+  section: 75-774
+  author:
+  - literal: Kansas Office of Revisor of Statutes
+  issued:
+    date-parts:
+    - - 2021
+  URL: https://ksrevisor.gov/statutes/chapters/ch75/075_007_0074.html
+  accessed:
+    date-parts:
+    - - 2026
+      - 11
+      - 27
+original_link: https://ksrevisor.gov/statutes/chapters/ch75/075_007_0074.html
+retrieved: '2026-11-27'
+archives: []
+history:
+  status: live
+  last_checked: '2026-11-27'
+state_law:
+  relevance: core
+  citation: Kan. Stat. Ann. § 75-774 (2025)
+rights:
+  status: no-permission-needed
+  basis: government-edict
+  basis_note: 'Official state statutes are not copyrightable under the government edicts doctrine (Georgia v. Public.Resource.Org, Inc., 590 U.S. 255 (2020)). Linked, not served: state statutes stay link only.'
+  redistribution: false
+jurisdictions:
+- level: state
+  state: KS
+topics:
+- state-indian-law
+found_in:
+- 2026-11-27-state-statutes-third-batch
+notes: 'Indigo Book citation: Kan. Stat. Ann. § 75-774 (2025). History: L. 2021, ch. 24, § 1; July 1. Text read from the Kansas Revisor of Statutes'' page for the section in the Kansas Statutes Annotated (ksrevisor.gov/statutes) on Nov. 27, 2026. Found by the state statutes sweep (terms: indian tribes; native american; indian; indigenous; native; tribes); AI reader''s verdict core: AG training on missing and murdered indigenous persons, with tribes. Unverified.'
+review:
+  status: unverified
+  by: scripts/law/state_statutes/run.py
+  date: '2026-11-27'
+  checks:
+  - check: 'Indian law section: the sweep''s keyword pass and an AI reader''s verdict (core, incidental or none)'
+    result: agree
+    detail: 'core; terms: indian tribes; native american; indian; indigenous; native; tribes'

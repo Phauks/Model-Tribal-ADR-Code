@@ -80,6 +80,16 @@ recognition:
   verification: bulk-import
   as_of: '2026-01-30'
   locator: 91 Fed. Reg. 4103
+- type: federal
+  earliest_record: treaty
+  legal_basis: Treaty with the Flatheads, etc. (Treaty of Hell Gate), July 16, 1855, 12 Stat. 975
+  since: '1855-07-16'
+  source: treaty-with-the-flatheads-etc-1855
+  confidence: medium
+  verification: inferred
+  as_of: '1855-07-16'
+  locator: p. 722 (Treaty with the Flatheads, etc., 1855; Kappler header "July 16, 1855. | 12 Stats., 975. | Ratified Mar. 8, 1859. | Proclaimed Apr. 18, 1859.")
+  note: The earliest record this site has found that shows the United States dealing with the nation as a federally recognized nation. The relationship may be older. The treaty names the Flathead; Kootenai; the nation's profile links it to the treaty by name, and the link has not yet been checked against a second source. 2 nations' profiles link this treaty.
 states:
 - state: MT
   presence: government-office
@@ -854,6 +864,14 @@ jurisdiction:
   verification: inferred
   as_of: '1995-03-01'
   locator: 'Table of approvals by Tribe, column "Regulatory Programs": "WQS Program"'
+- topic: water-rights-settlement
+  value: enacted
+  detail: Congress enacted the Montana Water Rights Protection Act in 2020 (Pub. L. No. 116-260), settling the water rights of Confederated Salish-Kootenai Tribe. It quantifies 90,000 acre-feet a year in all and authorizes about $1,900.0 million in federal funds, as the Congressional Research Service counts it (R44148, Table 1).
+  source: public-law-116-260
+  confidence: high
+  verification: inferred
+  as_of: '2020'
+  locator: Congressional Research Service, R44148, Table 1, 2020
 jurisdiction_agreements:
 - kind: child-welfare-agreement
   other_party: Montana Department of Public Health and Human Services

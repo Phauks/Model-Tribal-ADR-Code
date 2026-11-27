@@ -11,6 +11,16 @@ recognition:
   verification: bulk-import
   as_of: '2026-01-30'
   locator: 91 Fed. Reg. 4105
+- type: federal
+  earliest_record: land
+  legal_basis: Exec. Order of June 14, 1867, 1 Kappler 837
+  since: '1867-06-14'
+  source: executive-order-1867-06-14-southern-and-northern-idaho-reservations
+  confidence: medium
+  verification: read-in-full
+  as_of: '1867-06-14'
+  locator: 1 Kappler 837
+  note: The earliest record this site has found that shows the United States dealing with the nation as a federally recognized nation. The relationship may be older. The instrument first set aside the Fort Hall Reserve (southern Idaho reservation for the Boise and Bruneau Shoshones and Bannocks).
 states:
 - state: ID
   presence: government-office
@@ -705,6 +715,14 @@ jurisdiction:
   verification: inferred
   as_of: '2026-10-21'
   locator: 'Table of approvals by Tribe, column "Administrative Functions": "CAA §§ 106; 107(c)-(e); 110(a)(2)(D); 126; 505(a)(2)"'
+- topic: water-rights-settlement
+  value: enacted
+  detail: Congress enacted the Fort Hall Indian Water Rights Act of 1990 in 1990 (Pub. L. No. 101-602), settling the water rights of Fort Hall Shoshone-Bannock Tribes. It quantifies 581,331 acre-feet a year in all and authorizes about $22.0 million in federal funds, as the Congressional Research Service counts it (R44148, Table 1).
+  source: public-law-101-602
+  confidence: high
+  verification: inferred
+  as_of: '1990'
+  locator: Congressional Research Service, R44148, Table 1, 1990
 nearby_state_courts:
 - state: ID
   county: Bingham County

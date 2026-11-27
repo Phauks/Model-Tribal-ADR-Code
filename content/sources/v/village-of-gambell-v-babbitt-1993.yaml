@@ -1,0 +1,107 @@
+key: village-of-gambell-v-babbitt-1993
+kind: federal-case
+citation:
+  type: legal_case
+  title: Village of Gambell v. Babbitt
+  authority: United States Court of Appeals for the Ninth Circuit
+  container-title: F.2d
+  volume: '999'
+  page: '403'
+  issued:
+    date-parts:
+    - - 1993
+      - 7
+      - 15
+  URL: https://static.case.law/f2d/999/html/0403-01.html
+  accessed:
+    date-parts:
+    - - 2026
+      - 11
+      - 26
+original_link: https://static.case.law/f2d/999/html/0403-01.html
+retrieved: '2026-11-26'
+archives: []
+history:
+  status: live
+  last_checked: '2026-11-26'
+rights:
+  status: no-permission-needed
+  basis: government-edict
+  basis_note: The text of a judicial opinion has no copyright (Georgia v. Public.Resource.Org, Inc., 590 U.S. 255 (2020)). The copy served on this site is the court's opinion only, without the publisher's headnotes, synopsis or other editorial matter (decision record 0060).
+  redistribution: true
+tribes:
+- stebbins-community-association
+- village-of-kotlik
+- native-village-of-saint-michael
+- native-village-of-unalakleet
+- native-village-of-koyuk
+- native-village-of-shaktoolik
+- nome-eskimo-community
+- village-of-solomon
+- native-village-of-teller
+- king-island-native-community
+nations_in_case:
+  checked: '2026-11-26'
+  named:
+  - nation: stebbins-community-association
+    named_as: Village of Stebbins
+    role: party
+    historical: true
+    note: Matched by the script to the only nation record sharing this name; not yet checked against the case's history.
+  - nation: village-of-kotlik
+    named_as: Native Village of Kotlik
+    role: party
+    historical: true
+    note: Matched by the script to the only nation record sharing this name; not yet checked against the case's history.
+  - nation: native-village-of-saint-michael
+    named_as: Native Village of St. Michael
+    role: party
+    historical: true
+    note: Matched by the script to the only nation record sharing this name; not yet checked against the case's history.
+  - nation: native-village-of-unalakleet
+    named_as: Native Village of Unalakleet
+    role: party
+    note: Matched by the script to the nation record of the same name; not yet checked.
+  - nation: native-village-of-koyuk
+    named_as: Native Village of Koyuk
+    role: party
+    note: Matched by the script to the nation record of the same name; not yet checked.
+  - nation: native-village-of-shaktoolik
+    named_as: Native Village of Shaktoolik
+    role: party
+    note: Matched by the script to the nation record of the same name; not yet checked.
+  - nation: nome-eskimo-community
+    named_as: Nome Eskimo Community
+    role: party
+    note: Matched by the script to the nation record of the same name; not yet checked.
+  - nation: village-of-solomon
+    named_as: Native Village of Solomon
+    role: party
+    historical: true
+    note: Matched by the script to the only nation record sharing this name; not yet checked against the case's history.
+  - nation: native-village-of-teller
+    named_as: Native Village of Teller
+    role: party
+    note: Matched by the script to the nation record of the same name; not yet checked.
+  - nation: king-island-native-community
+    named_as: King Island Native Community
+    role: party
+    note: Matched by the script to the nation record of the same name; not yet checked.
+jurisdictions:
+- level: federal
+topics:
+- federal-court-indian-law
+found_in:
+- 2026-11-26-federal-court-indian-law-opinions
+notes: Published at 999 F.2d 403. Decided by the United States Court of Appeals for the Ninth Circuit on July 15, 1993. Found by scripts/caselaw/state_court_opinions.py in the Caselaw Access Project's volumes, with an Indian law term score of 2; an AI reader read excerpts and judged it an Indian law case (aboriginal rights and ANCSA on Outer Continental Shelf).
+review:
+  status: unverified
+  by: scripts/caselaw/state_court_opinions.py
+  date: '2026-11-26'
+  checks:
+  - check: 'Indian law case: the term score and, below the score kept without a reading, an AI reader''s judgment of excerpts'
+    result: agree
+    detail: 'score 2; reader: aboriginal rights and ANCSA on Outer Continental Shelf'
+  - check: Nations named in the caption, matched to nation records by name
+    result: agree
+    detail: 10 matched, 0 not linked

@@ -1,0 +1,50 @@
+key: minnesota-statutes-124d-091
+kind: state-statute
+citation:
+  type: legislation
+  title: Concurrent Enrollment Program Aid
+  title-short: Minn. Stat. § 124D.091
+  container-title: Minnesota Statutes
+  container-title-short: Minn. Stat.
+  section: 124D.091
+  author:
+  - literal: Minnesota Office of the Revisor of Statutes
+  issued:
+    date-parts:
+    - - 2007
+  URL: https://www.revisor.mn.gov/statutes/cite/124D.091
+  accessed:
+    date-parts:
+    - - 2026
+      - 11
+      - 27
+original_link: https://www.revisor.mn.gov/statutes/cite/124D.091
+retrieved: '2026-11-27'
+archives: []
+history:
+  status: live
+  last_checked: '2026-11-27'
+state_law:
+  relevance: incidental
+  citation: Minn. Stat. § 124D.091 (2026)
+rights:
+  status: no-permission-needed
+  basis: government-edict
+  basis_note: 'Official state statutes are not copyrightable under the government edicts doctrine (Georgia v. Public.Resource.Org, Inc., 590 U.S. 255 (2020)). Linked, not served: state statutes stay link only.'
+  redistribution: false
+jurisdictions:
+- level: state
+  state: MN
+topics:
+- state-indian-law
+found_in:
+- 2026-11-27-state-statutes-third-batch
+notes: 'Indigo Book citation: Minn. Stat. § 124D.091 (2026). History: 2007 c 146 art 2 s 18; 1Sp2011 c 11 art 2 s 28; 2015 c 69 art 3 s 5; 1Sp2019 c 11 art 2 s 10; 1Sp2025 c 10 art 1 s 29; art 2 s 25. Text read from the Minnesota Revisor of Statutes'' full-text chapter page for the section (revisor.mn.gov/statutes) on Nov. 27, 2026. Found by the state statutes sweep (terms: tribal); AI reader''s verdict incidental: Tribal contract schools eligible for concurrent enrollment aid. Unverified.'
+review:
+  status: unverified
+  by: scripts/law/state_statutes/run.py
+  date: '2026-11-27'
+  checks:
+  - check: 'Indian law section: the sweep''s keyword pass and an AI reader''s verdict (core, incidental or none)'
+    result: agree
+    detail: 'incidental; terms: tribal'

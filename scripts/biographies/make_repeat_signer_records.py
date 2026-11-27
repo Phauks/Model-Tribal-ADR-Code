@@ -80,7 +80,7 @@ def clean_nation(text):
 
 # Signer lines: the Statutes at Large reading (checked against each page), and Kappler's text for 17 treaties that reading lacks.
 rows = [r for r in json.load(open(f"{repo}/research/biographies/2026-11-24/treaty-signers.json")) if r['ok']]
-rows += json.load(open(f"{repo}/research/biographies/2026-11-26/treaty-signers-kappler-fill.json"))
+rows += [r for r in json.load(open(f"{repo}/research/biographies/2026-11-26/treaty-signers-kappler-fill.json")) if r['ok']]
 mentions = []
 for r in rows:
     t = treaties[r['key']]

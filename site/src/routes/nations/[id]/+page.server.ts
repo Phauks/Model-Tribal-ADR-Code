@@ -44,6 +44,9 @@ import { displayName, humanize, regionAnchor, presenceNote, reviewStatusLabels, 
 import { legalHelpCitation, legalHelpFor, legalHelpHeading } from '#lib/server/legal-help.ts';
 import { formatSource } from '#lib/server/markdown.ts';
 import { recordPageLink } from '#lib/server/law-records.ts';
+import { agencyRows, awardsDates, awardsFiscalYear, awardsSource, dollars, nationAwards, recipientPage } from '#lib/server/federal-awards.ts';
+import { builderAreaName, surveyFigures, surveyPeople, surveyRows, surveySource, surveyYears } from '#lib/server/census-areas.ts';
+import { builderPath } from '#lib/table-builder.ts';
 import type { EntryGenerator, PageServerLoad } from './$types';
 
 export const entries: EntryGenerator = () => [
@@ -68,6 +71,8 @@ interface FactItem {
 	note?: string;
 	/** The markers of the fact's sources (src/lib/citation-marks.ts). */
 	citations?: CitationMark[];
+	/** An estimate's margin of error, shown after it as "± 5" (Census figures). */
+	margin?: string;
 }
 
 const opinionsHeading = 'Court opinions';
@@ -106,7 +111,7 @@ function courtOpinions(nationIdentifier: string, sources: SourceUses): CourtOpin
 }
 
 /** What the courts and jurisdiction sections say when they have nothing to show. */
-/** The nation's seal or logo at the top of At a glance, and what the image viewer shows with it. */
+/** The nation's seal or logo at the top of Key facts, and what the image viewer shows with it. */
 interface NationImage {
 	src: string;
 	kind: string;
@@ -130,6 +135,14 @@ interface FactGroup {
 	items: FactItem[];
 	/** The note every value shares, said once under the label (FactGroups.svelte). */
 	note?: string;
+	/** The group takes the panel's full width, its label above its values (FactGroups.svelte). */
+	wide?: boolean;
+	/** Values shown as a small table, with any items after it (FactGroups.svelte). */
+	table?: {
+		headers: string[];
+		rows: { text: string; link?: string; value: string; citations?: CitationMark[] }[];
+		note?: string;
+	};
 }
 
 function group(field: string, label: string, items: FactItem[], note?: string): FactGroup[] {
@@ -291,7 +304,149 @@ function atAGlance(record: NationRecord, sources: SourceUses): FactGroup[] {
 			(record.memberships ?? []).map((fact) =>
 				cited(sources, 'Member of', fact, { text: fact.organization, link: organizationHome(fact) })
 			)
-		)
+		),
+		...awardsGroups(record, sources),
+		...censusGroups(record, sources)
+	];
+}
+
+/**
+ * The federal awards to the nation's government in the latest complete fiscal
+ * year (Trevor chose mockup A on Nov. 27, 2026; project files
+ * design/federal-awards/; src/lib/server/federal-awards.ts), just above the
+ * Census area, in the same wide layout: the total, linked to the recipient's
+ * page on USAspending.gov when the government reports under one UEI number,
+ * with the fiscal year's dates under it, then the largest agencies and the
+ * rest in one row, so the rows add up to the total. One marker, on the last
+ * row, covers the group. A nation with no awards to its government has none,
+ * nor one whose awards net to nothing or less (an agency took back more than
+ * it awarded in the year).
+ */
+function awardsGroups(record: NationRecord, sources: SourceUses): FactGroup[] {
+	const awards = nationAwards().get(record.id);
+	if (!awards || Math.round(awards.total) <= 0) return [];
+	const label = 'Federal awards';
+	const total = dollars(awards.total);
+	const rows: FactItem[] = agencyRows(awards.agencies);
+	const citations: CitationMark[] = [];
+	const ueis = awards.recipients.map((recipient) => recipient.uei).join(' and ');
+	sources.cite(awardsSource, { section: label, text: `${total} in fiscal year ${awardsFiscalYear}`, where: `recipient UEI ${ueis}` }, citations);
+	if (rows.length > 0) rows[rows.length - 1] = { ...rows[rows.length - 1], citations };
+	const lead: FactItem = {
+		text: total,
+		link: awards.recipients.length === 1 ? recipientPage(awards.recipients[0].recipientId) : undefined,
+		note: awardsDates,
+		...(rows.length === 0 ? { citations } : {})
+	};
+	return [{ field: 'federal-awards', label, wide: true, items: [lead, ...rows] }];
+}
+
+/** Where in the survey's file an area's figures are, for the References list. */
+const surveyWhere = (code: string) => `summary level 250, GEOID 2500000US${code}`;
+
+/** The table builder's Census areas, narrowed by one column's values. */
+function censusBuilderLink(column: string, values: string[]): string {
+	const parameters = new URLSearchParams({ data: 'census-areas' });
+	for (const value of values) parameters.append(`where.${column}`, value);
+	return `${builderPath}?${parameters}`;
+}
+
+/** At most this many areas show their figures one by one; more make a table of the people living in each. */
+const censusAreasShownInFull = 2;
+
+/**
+ * The Census figures for the land areas the nation's entry names (Trevor,
+ * Nov. 27, 2026; src/lib/server/census-areas.ts), last in Key facts, just
+ * above the map that draws the same areas. One or two areas each show their
+ * name, the dates of the figures, the people the 2020 Census counted living
+ * there and the survey's seven figures with their margins of error; three or
+ * more make a small table of the people living in each, with a link to all
+ * their figures in the table builder. The group is named for the area, not
+ * the nation: the figures describe everyone living there, and none counts a
+ * nation's citizens. A nation with no Census area has no group.
+ */
+function censusGroups(record: NationRecord, sources: SourceUses): FactGroup[] {
+	const survey = surveyRows();
+	const residents = new Map<string, CitedFact & { count: number }>();
+	for (const fact of record.population ?? []) {
+		const code = /GEOID 2500000US(\w{4})/.exec(fact.locator ?? '')?.[1];
+		if (fact.kind === 'resident-population' && code && typeof fact.count === 'number') residents.set(code, { ...fact, count: fact.count });
+	}
+	const seen = new Set<string>();
+	const areas = (record.census_areas ?? [])
+		.filter((fact) => !fact.vintage || fact.vintage === '2020')
+		.map((fact) => ({ fact, code: String(fact.geographic_identifier).padStart(4, '0') }))
+		.filter(({ code }) => !seen.has(code) && seen.add(code))
+		.map(({ fact, code }) => ({ fact, code, row: survey.get(code), resident: residents.get(code) }))
+		.filter((area) => area.row || area.resident);
+	if (areas.length === 0) return [];
+
+	if (areas.length <= censusAreasShownInFull) {
+		const label = 'Census area';
+		return areas.map(({ fact, code, row, resident }) => {
+			sources.use(fact, label, fact.name);
+			const surveyItem = (figure: { label: string; text: string; margin?: string }): FactItem => {
+				const citations: CitationMark[] = [];
+				sources.cite(surveySource, { section: label, text: `${figure.label}: ${figure.text}${figure.margin ? ` ± ${figure.margin}` : ''}`, where: surveyWhere(code) }, citations);
+				return { ...figure, citations };
+			};
+			const figures = row ? surveyFigures(row).map(surveyItem) : [];
+			// The 2020 count where the entry records it; otherwise the survey's estimate.
+			const estimate = !resident && row ? surveyPeople(row) : undefined;
+			const people = resident
+				? [cited(sources, label, resident, { label: 'People living there', text: resident.count.toLocaleString('en-US') })]
+				: estimate
+					? [surveyItem(estimate)]
+					: [];
+			const dates = !resident
+				? `${surveyYears} estimates.`
+				: figures.length > 0
+					? `Counted in 2020; other figures are ${surveyYears} estimates.`
+					: 'Counted in 2020.';
+			const items: FactItem[] = [
+				{ text: fact.name, link: row ? censusBuilderLink('name', [builderAreaName(row)]) : undefined, note: dates },
+				...people,
+				...figures
+			];
+			return { field: `census-area-${code}`, label, wide: true, items };
+		});
+	}
+
+	const label = 'Census areas';
+	const rows = areas.map(({ fact, row, resident }) => {
+		sources.use(fact, label, fact.name);
+		const estimate = row ? surveyPeople(row) : undefined;
+		return {
+			text: fact.name,
+			link: row ? censusBuilderLink('name', [builderAreaName(row)]) : undefined,
+			value: resident ? resident.count.toLocaleString('en-US') : `${estimate!.text}${estimate!.margin ? ` ± ${estimate!.margin}` : ''}`,
+			counted: Boolean(resident)
+		};
+	});
+	// One marker for each source, on the last line, as a paragraph's citation covers the whole of it.
+	const citations: CitationMark[] = [];
+	const counted = areas.filter((area) => area.resident);
+	if (counted.length > 0) {
+		const first = counted[0].resident!;
+		sources.cite(first.source!, { section: label, text: `People living there in ${counted.length} areas`, where: 'usgeo2020.npl, summary level 250, field POP100, as of 2020-04-01' }, citations);
+	}
+	if (rows.some((row) => !row.counted)) {
+		sources.cite(surveySource, { section: label, text: 'People living there, where the 2020 count is missing', where: 'summary level 250' }, citations);
+	}
+	const shown = rows.map(({ counted: _counted, ...row }, index) => (index === rows.length - 1 ? { ...row, citations } : row));
+	const everyCounted = rows.every((row) => row.counted);
+	return [
+		{
+			field: 'census-areas',
+			label,
+			wide: true,
+			table: {
+				headers: ['Area', 'People living there'],
+				rows: shown,
+				note: everyCounted ? 'Counted in 2020.' : `Counted in 2020, or estimated for ${surveyYears} where marked ±.`
+			},
+			items: [{ text: 'All Census figures for these areas', link: censusBuilderLink('nations', [displayName(record.names.official)]) }]
+		}
 	];
 }
 
@@ -420,7 +575,7 @@ function governmentFacts(
 }
 
 /**
- * At a glance: the name of the governing body and the title of the head of
+ * Key facts: the name of the governing body and the title of the head of
  * government. The title the federal directory lists comes first, being the
  * newest; otherwise the governing document's.
  */
@@ -448,7 +603,8 @@ const jurisdictionTopics: Record<string, string> = {
 	'tribal-law-and-order-act-enhanced-sentencing': 'Tribal Law and Order Act',
 	'indian-child-welfare-act': 'Indian Child Welfare Act',
 	'hearth-act-leasing-regulations': 'Leasing under the HEARTH Act',
-	'environmental-treatment-as-a-state': 'Environmental programs (treatment as a state)'
+	'environmental-treatment-as-a-state': 'Environmental programs (treatment as a state)',
+	'water-rights-settlement': 'Water rights settlements'
 };
 const topicOrder = Object.keys(jurisdictionTopics);
 
@@ -634,7 +790,7 @@ const establishmentWords: Record<string, string> = {
  * The nation's relationship with the United States after its treaties (a
  * table of their own, treatyRows): how its land was set aside, and the Indian
  * Health Service Area and service unit that serve it. The Bureau of Indian
- * Affairs region stays in At a glance. The Gaming Commission's enforcement
+ * Affairs region stays in Key facts. The Gaming Commission's enforcement
  * actions follow as a table (enforcementActions).
  */
 function federalTies(record: NationRecord, sources: SourceUses): FactGroup[] {
@@ -978,7 +1134,7 @@ function publishedLaw(
 			lines.map((line) => {
 				const shared = lines.filter((other) => sameTitle(other.title, line.title)).length > 1;
 				const site = shared ? host(line.link) : undefined;
-				// Cited under the plain title, the words At a glance uses, so the
+				// Cited under the plain title, the words Key facts uses, so the
 				// Sources list names the fact once and links back to both markers.
 				const citations: CitationMark[] = [];
 				for (const fact of line.facts) sources.citeFact(fact, documentsLabel, line.title, citations);
@@ -1240,8 +1396,8 @@ export const load: PageServerLoad = ({ params }) => {
 	const sources = new SourceUses((key) => legalHelpCitation(key) ?? formatSource(sourceRecords().get(key), key));
 	// Each source is filed under the part of the page that first cites it, so a
 	// long Sources list folds into groups that follow the page (Trevor, Nov. 23,
-	// 2026). The name and seal at the top go with At a glance.
-	sources.part('At a glance');
+	// 2026). The name and seal at the top go with Key facts.
+	sources.part('Key facts');
 	// The nation's seal or logo, only when its reuse status allows showing it
 	// (docs/official-images.md). The Worker serves it from the private bucket.
 	// It is shown first, under the name, so its source is numbered first.
@@ -1322,7 +1478,7 @@ export const load: PageServerLoad = ({ params }) => {
 	});
 
 	// Sources are numbered in the order the page first cites them, which is
-	// the order the page shows them: At a glance comes right after the title.
+	// the order the page shows them: Key facts comes right after the title.
 	const names = [page.listedName, page.officialName];
 	const glance = shareMarks(atAGlance(record, sources), sources);
 	sources.part(contactsHeading);
@@ -1420,7 +1576,7 @@ export const load: PageServerLoad = ({ params }) => {
 		sources: sources.list
 	};
 
-	// The page's outline, for the sidebar: one entry per heading, in the page's order. At a glance is left out: it sits beside the opening of the page, so jumping to it only made the page jump (Trevor, Nov. 27, 2026).
+	// The page's outline, for the sidebar: one entry per heading, in the page's order. Key facts is left out: it sits beside the opening of the page, so jumping to it only made the page jump (Trevor, Nov. 27, 2026).
 	const items: OutlineItem[] = [];
 	const hasContacts = contacts.websites.length > 0 || contacts.offices.length > 0;
 	if (hasContacts) items.push({ label: contactsHeading, link: '#contacts-heading' });

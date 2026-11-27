@@ -8,7 +8,7 @@
 	import SearchableDropdown from '#lib/components/SearchableDropdown.svelte';
 	import LazySourceList from '#lib/components/LazySourceList.svelte';
 	import { mapViewChoices, mapViews } from '#lib/map-views.ts';
-	import TileMap, { storedBaseMap, storedPlaceNames, tileMapPlaces, type TileMapCamera, type TileMapFeature, type TileMapLayers, type TileMapPadding } from '#lib/components/TileMap.svelte';
+	import TileMap, { storedBaseMap, tileMapPlaces, type TileMapCamera, type TileMapFeature, type TileMapLayers, type TileMapPadding } from '#lib/components/TileMap.svelte';
 	import MapExplorer from '#lib/components/MapExplorer.svelte';
 	import Collapsible from '#lib/components/Collapsible.svelte';
 	import { readableDate } from '#lib/readable-date.ts';
@@ -39,11 +39,9 @@
 	let current = $state<NationsMapView>('states');
 
 	/**
-	 * The map is drawn with MapLibre from the project's own tiles where the device can (decision record 0039). The drawn map underneath stays for printing, and takes over if MapLibre cannot start, so a reader always has a map. Changing views keeps the reader's place.
+	 * The map is drawn with MapLibre from the project's own tiles (decision record 0039). The drawn map underneath is for printing and for readers without scripts. If MapLibre cannot start, the map says so in its own frame, with Try again, instead of the drawn map taking its place (Trevor, 2026-11-27). Changing views keeps the reader's place.
 	 */
-	let tileMapWanted = $state(true);
-	/** Said to screen readers when the tiled map cannot start and the drawn map takes its place. */
-	let tileMapProblem = $state('');
+	const tileMapWanted = true;
 	let tileMapReady = $state(false);
 	let tileMap = $state<TileMap | undefined>();
 
@@ -71,7 +69,6 @@
 	]);
 	/** The base map and its switches, which the Layers list sets and every map on the site remembers. */
 	let baseMap = $state(storedBaseMap());
-	let placeNames = $state(storedPlaceNames());
 
 	/**
 	 * The view whose table is under the map, whose drawn copy prints, and which the Download menu offers: the land's coloring if it has one, then States, Nations' land or the regions, whichever is on first.
@@ -764,14 +761,9 @@
 				statesBy={statesColor}
 					onfeature={(feature) => void chooseFeature(feature)}
 					bind:baseMap
-					bind:placeNames
 					outlines={true}
 					onready={() => (tileMapReady = true)}
-					onfail={() => {
-						tileMapWanted = false;
-						tileMapReady = false;
-						tileMapProblem = 'The interactive map could not be loaded, so the drawn map is shown.';
-					}}
+					onfail={() => (tileMapReady = false)}
 				/>
 			</div>
 		</div>
@@ -785,7 +777,6 @@
 					bind:statesColor
 					{statesColorChoices}
 					bind:baseMap
-					bind:placeNames
 					bind:year
 					first={firstYear}
 					last={lastYear}
@@ -994,8 +985,6 @@
 		</div>
 	</div>
 {/each}
-
-<p class="visually-hidden" role="status">{tileMapProblem}</p>
 
 <!-- The key on the map lists only what is on (mockup D1). -->
 {#snippet explorerKey()}

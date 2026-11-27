@@ -1,0 +1,49 @@
+key: allen-v-tuggle-2023
+kind: federal-case
+citation:
+  type: legal_case
+  title: Allen v. Tuggle
+  authority: United States District Court for the Eastern District of Oklahoma
+  issued:
+    date-parts:
+    - - 2023
+      - 1
+      - 27
+  URL: https://www.courtlistener.com/opinion/9919075/allen-v-tuggle/
+  accessed:
+    date-parts:
+    - - 2026
+      - 11
+      - 26
+original_link: https://www.courtlistener.com/opinion/9919075/allen-v-tuggle/
+retrieved: '2026-11-26'
+archives: []
+history:
+  status: live
+  last_checked: '2026-11-26'
+rights:
+  status: no-permission-needed
+  basis: government-edict
+  basis_note: The text of a judicial opinion has no copyright (Georgia v. Public.Resource.Org, Inc., 590 U.S. 255 (2020)). The copy served on this site is the court's opinion only, without the publisher's headnotes, synopsis or other editorial matter (decision record 0060).
+  redistribution: true
+nations_in_case:
+  checked: '2026-11-26'
+  named: []
+jurisdictions:
+- level: federal
+topics:
+- federal-court-indian-law
+found_in:
+- 2026-11-26-federal-court-indian-law-opinions
+notes: Docket 6:22-cv-00125; no reporter citation yet. Decided by the United States District Court for the Eastern District of Oklahoma on Jan. 27, 2023. Found by scripts/caselaw/courtlistener_federal_opinions.py and scripts/caselaw/state_court_opinions.py in CourtListener's bulk files, with an Indian law term score of 2; an AI reader read excerpts and judged it an Indian law case (Major Crimes Act, McGirt Creek Reservation).
+review:
+  status: unverified
+  by: scripts/caselaw/state_court_opinions.py
+  date: '2026-11-26'
+  checks:
+  - check: 'Indian law case: the term score and, below the score kept without a reading, an AI reader''s judgment of excerpts'
+    result: agree
+    detail: 'score 2; reader: Major Crimes Act, McGirt Creek Reservation'
+  - check: Nations named in the caption, matched to nation records by name
+    result: agree
+    detail: 0 matched, 0 not linked

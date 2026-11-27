@@ -8,22 +8,22 @@
 	// - the pages the page belongs with: a nation's own pages under "‹ Nations"
 	//   and its name, or the essays of Foundations (page.data.family,
 	//   src/lib/server/section-contents.ts, src/lib/nation-family.ts);
-	// - otherwise the pages of the section being read, in the groups of its
-	//   menu (src/lib/site-navigation.ts);
 	// - then "On this page": the page's headings, the one being read marked as
 	//   the page scrolls (src/lib/active-heading.ts);
 	// - then "Changes to This Page", where the site records the page's changes
 	//   (Trevor, Nov. 23, 2026), and Your work while an essay is edited.
 	//
-	// The Account pages are a place too: on their own pages the column lists
-	// them as it lists a section's pages (src/lib/personal-navigation.ts).
-	// Elsewhere they are under the masthead's profile button, not in the
-	// column (Trevor, Nov. 27, 2026; design/sidebar-workspace-profile,
-	// option B). The Workspace's pages are in the section bar's Workspace tab
-	// and the phone Menu sheet, so the column does not list them again, even
-	// on the Workspace's own pages (Trevor, Nov. 27, 2026: "since we have top
-	// nav for workspace, do we need left sidebar nav for it now? probably can
-	// remove").
+	// The column navigates only the pages beneath the page being read and
+	// never repeats the top navigation (Trevor, Nov. 27, 2026: "left nav
+	// becomes navigation for pages beneath, it should not be double nav for
+	// what is already in the top nav"). So it does not list a section's menu
+	// (the section bar has it), the Account pages (the profile button's menu
+	// has them) or the Workspace's pages (the Workspace tab has them), and a
+	// nation's pages have no "‹ Nations" link (the section bar's Nations and
+	// the breadcrumbs go there). Where nothing is left to show, as on the
+	// home page, there is no column and the page takes the whole width
+	// (Trevor, Nov. 27, 2026: "the home tribal law page should not have a
+	// left sidebar"); +layout.svelte reads the column's `empty` class.
 	//
 	// Long lists, such as every nation, are no longer in the column: the
 	// Nations menu has a box to go straight to a nation.
@@ -43,7 +43,6 @@
 	import { page } from '$app/state';
 	import Briefcase from '@lucide/svelte/icons/briefcase';
 	import ChevronDown from '@lucide/svelte/icons/chevron-down';
-	import ChevronLeft from '@lucide/svelte/icons/chevron-left';
 	import FileClock from '@lucide/svelte/icons/file-clock';
 	import Menu from '@lucide/svelte/icons/menu';
 	import X from '@lucide/svelte/icons/x';
@@ -51,19 +50,13 @@
 	import { isUnfolded } from '#lib/outline-folding.ts';
 	import { editingOutline } from '#lib/essays/editing-outline.svelte.ts';
 	import { followedPageAddress, pageChangesLink } from '#lib/page-history.ts';
-	import { accountSection, personalSectionOf, workspaceSection } from '#lib/personal-navigation.ts';
-	import {
-		currentNavigationLink,
-		holdingNavigationLink,
-		navigationSectionOf,
-		navigationSections,
-		type NavigationCounts,
-		type NavigationLink,
-		type NavigationSection
-	} from '#lib/site-navigation.ts';
+	import { personalSectionOf, workspaceSection } from '#lib/personal-navigation.ts';
+	import { currentNavigationLink, navigationSectionOf, navigationSections, type NavigationCounts, type NavigationSection } from '#lib/site-navigation.ts';
 	import type { OutlineItem, PageFamily, PageOutline } from '#lib/site-sections.ts';
 	import { WorkspaceAccess } from '#lib/workspace-access.svelte.ts';
+	import { sidebarTools } from '#lib/sidebar-tools.svelte.ts';
 	import CountBadge from './CountBadge.svelte';
+	import CodeOutline from './sidebar/CodeOutline.svelte';
 	import SidebarTree from './sidebar/SidebarTree.svelte';
 	import YourWork from './sidebar/YourWork.svelte';
 	import { SidebarState } from './sidebar/sidebar-state.svelte.ts';
@@ -86,14 +79,10 @@
 	// ---- Where the reader is ----
 	const family = $derived(page.data.family as PageFamily | undefined);
 	const currentSection = $derived(navigationSectionOf(path));
-	// The Workspace, for people with access to it, and the Account pages, as places of their own.
+	// The Workspace, for people with access to it, and the Account pages, as places of their own, for the phone Menu sheet.
 	const access = new WorkspaceAccess();
 	const workspace = $derived(workspaceSection(access.pages));
 	const personalSection = $derived(currentSection ? undefined : personalSectionOf(path, workspace));
-	// A family takes the place of the section's pages. The Workspace is left to its tab.
-	const columnSection = $derived(currentSection ?? (personalSection === accountSection ? accountSection : undefined));
-	const shownSection = $derived(family ? undefined : columnSection);
-	const heldLink = $derived(shownSection ? holdingNavigationLink(shownSection, path, search) : undefined);
 
 	// The page's own headings. While an essay is edited or commented on, its
 	// outline is the draft's, with what changed marked (src/lib/essays/editor-outline.ts).
@@ -104,10 +93,13 @@
 	const outlineOfHeadings = $derived(outlineItems.every((item) => item.link.startsWith('#')));
 	const outlineLabel = $derived(outlineOfHeadings ? 'On This Page' : 'Contents');
 
+	// Whether the wide column has anything to show. The home page never has a column.
+	const columnEmpty = $derived(path === '/' || !(family || outlineItems.length > 0 || followedPage || editing?.work));
+
 	// What the phone strip names beside "Menu".
 	const localTitle = $derived(
-		family?.title ??
-			shownSection?.label ??
+		family?.short ??
+			family?.title ??
 			publishedOutline?.title ??
 			(path === '/' ? 'Home' : (pageTitle ?? ''))
 	);
@@ -222,20 +214,25 @@
 		});
 	});
 
+	// ---- A page's own tools, such as the search page's filters (src/lib/sidebar-tools.svelte.ts) ----
+	const tools = $derived(sidebarTools.current);
+
 	// ---- The phone sheets ----
 	let menuSheet: HTMLDetailsElement | undefined = $state();
 	let localSheet: HTMLDetailsElement | undefined = $state();
+	let toolsSheet: HTMLDetailsElement | undefined = $state();
 
 	// Choosing a link closes the sheet, including a heading on this page.
 	function closeOnLink(event: MouseEvent) {
 		if (!(event.target as HTMLElement).closest('a')) return;
 		if (menuSheet) menuSheet.open = false;
 		if (localSheet) localSheet.open = false;
+		if (toolsSheet) toolsSheet.open = false;
 	}
 
 	function closeOnEscape(event: KeyboardEvent) {
 		if (event.key !== 'Escape') return;
-		for (const sheet of [menuSheet, localSheet]) {
+		for (const sheet of [menuSheet, localSheet, toolsSheet]) {
 			if (!sheet?.open) continue;
 			sheet.open = false;
 			sheet.querySelector('summary')?.focus();
@@ -245,34 +242,21 @@
 	// One sheet at a time.
 	function opened(sheet: HTMLDetailsElement | undefined) {
 		if (!sheet?.open) return;
-		for (const other of [menuSheet, localSheet]) if (other && other !== sheet) other.open = false;
+		for (const other of [menuSheet, localSheet, toolsSheet]) if (other && other !== sheet) other.open = false;
 	}
 </script>
-
-{#snippet pageLink(item: NavigationLink, current: boolean, held: boolean)}
-	{#if item.soon}
-		<span class="local-link soon">{item.label} <span class="soon-note">soon</span></span>
-	{:else}
-		<a class="local-link" class:held={held && !current} href={item.link} aria-current={current ? 'page' : undefined}>
-			<span>{item.label}</span>
-			{#if item.count && counts?.[item.count]}<CountBadge count={counts[item.count]} />{/if}
-		</a>
-	{/if}
-{/snippet}
 
 {#snippet local(idSuffix: string)}
 	{#if family}
 		<!-- The pages the page belongs with, such as a nation's own pages. -->
 		<div class="local-head">
-			{#if family.back}
-				<a class="back-link" href={family.back.link}><ChevronLeft size={18} aria-hidden="true" />{family.back.label}</a>
-			{/if}
 			{#if family.link}
 				<a class="local-title" href={family.link} aria-current={family.link === path ? 'page' : undefined}>{family.title}</a>
 			{:else}
 				<p class="local-title">{family.title}</p>
 			{/if}
 		</div>
+		{#if family.tree}<CodeOutline tree={family.tree} {idSuffix} />{/if}
 		<!-- The page being read is named but not linked, since a link to it would go nowhere (Trevor, Nov. 27, 2026). A list holding only that page is left out: the title above already names it. -->
 		{#if family.pages.some((item) => item.link !== path)}
 			<ul class="local-pages">
@@ -295,23 +279,6 @@
 				{/each}
 			</ul>
 		{/if}
-	{:else if shownSection}
-		<!-- The section's pages, in the groups of its menu. -->
-		<div class="local-head">
-			{#if shownSection.home}
-				<a class="local-title" href={shownSection.home} aria-current={shownSection.home === path ? 'page' : undefined}>{shownSection.label}</a>
-			{:else}
-				<p class="local-title">{shownSection.label}</p>
-			{/if}
-		</div>
-		{#each shownSection.groups as group (group.title)}
-			{#if group.title}<p class="local-label">{group.title}</p>{/if}
-			<ul class="local-pages">
-				{#each group.links as item (item.link)}
-					<li>{@render pageLink(item, item === currentNavigationLink(shownSection, path, search), item === heldLink)}</li>
-				{/each}
-			</ul>
-		{/each}
 	{:else if publishedOutline?.title && outlineItems.length > 0}
 		<div class="local-head"><p class="local-title">{publishedOutline.title}</p></div>
 	{/if}
@@ -343,8 +310,14 @@
      the hamburger at the top left of the masthead, or with Ctrl+\ (Trevor,
      Nov. 23, 2026); hidden, the page takes the whole width. Without scripts it
      always shows. -->
-<div class="sidebar-wide no-print" id="site-sidebar" bind:this={wideSidebar}>
+<div class="sidebar-wide no-print" class:empty={columnEmpty} id="site-sidebar" bind:this={wideSidebar}>
 	<nav aria-label="Where you are" class="local-column" bind:this={wideColumn}>
+		{#if tools}
+			<section class="page-tools" aria-labelledby="sidebar-tools-title-wide">
+				<div class="local-head"><h2 class="local-title" id="sidebar-tools-title-wide">{tools.title}</h2></div>
+				{@render tools.tools('wide')}
+			</section>
+		{/if}
 		{@render local('wide')}
 		{#if editing?.work}<YourWork work={editing.work} {path} />{/if}
 	</nav>
@@ -377,7 +350,7 @@
 			</ul>
 		</nav>
 	</details>
-	{#if family || shownSection || outlineItems.length > 0}
+	{#if family || outlineItems.length > 0}
 		<details class="sheet local-sheet" bind:this={localSheet} ontoggle={() => opened(localSheet)}>
 			<summary>
 				<span class="sheet-word where">{localTitle}</span>
@@ -391,6 +364,18 @@
 		</details>
 	{:else if localTitle}
 		<span class="where plain">{localTitle}</span>
+	{/if}
+	{#if tools}
+		<details class="sheet tools-sheet" bind:this={toolsSheet} ontoggle={() => opened(toolsSheet)}>
+			<summary>
+				<span class="sheet-word">{tools.sheetLabel}</span>
+				<X size={24} aria-hidden="true" class="when-open" />
+				<span class="visually-hidden when-open">Close</span>
+			</summary>
+			<section class="sheet-body local-column page-tools" aria-label={tools.sheetLabel}>
+				{@render tools.tools('narrow')}
+			</section>
+		</details>
 	{/if}
 </div>
 
@@ -465,20 +450,6 @@
 		margin: 0 0 var(--space-2);
 	}
 
-	.back-link {
-		display: inline-flex;
-		align-items: center;
-		gap: var(--space-1);
-		min-height: 2rem;
-		margin-left: -0.2rem;
-		color: var(--color-link);
-		font-weight: var(--font-weight-semibold);
-		text-decoration: none;
-	}
-
-	.back-link:hover {
-		text-decoration: underline;
-	}
 
 	.local-title {
 		margin: 0;
@@ -574,11 +545,6 @@
 	}
 
 	/* A page under one of the links, such as one chart under Data and charts. */
-	.local-link.held {
-		border-left-color: var(--color-line-strong, var(--color-line));
-		font-weight: var(--font-weight-semibold);
-	}
-
 	.number {
 		font-variant-numeric: tabular-nums;
 		color: var(--color-ink-muted);
@@ -638,7 +604,8 @@
 		}
 
 		/* A column the reader hid stays hidden from the first paint (app.html). */
-		:global(:root[data-sidebar-hidden='true']) .sidebar-wide {
+		:global(:root[data-sidebar-hidden='true']) .sidebar-wide,
+		.sidebar-wide.empty {
 			display: none;
 		}
 	}
@@ -697,6 +664,7 @@
 	}
 
 	.where.plain {
+		flex: 1;
 		align-self: center;
 		padding: 0 var(--space-4);
 		font-weight: var(--font-weight-semibold);
@@ -746,6 +714,12 @@
 		background: var(--color-paper);
 	}
 
+	.tools-sheet {
+		flex: none;
+		margin-left: auto;
+	}
+
+	.tools-sheet .sheet-body,
 	.local-sheet .sheet-body {
 		padding: var(--space-4) var(--space-4) var(--space-6);
 		font-size: var(--font-size-base, 1rem);
@@ -807,10 +781,8 @@
 
 	.phone-name:focus-visible,
 	.phone-sections summary.toggle:focus-visible {
-		outline: 3px solid var(--color-focus-ring);
+		outline: 3px solid var(--focus-ring);
 		outline-offset: -3px;
-		background: var(--color-focus);
-		color: var(--focus-text);
 	}
 
 	.phone-sections summary.toggle {

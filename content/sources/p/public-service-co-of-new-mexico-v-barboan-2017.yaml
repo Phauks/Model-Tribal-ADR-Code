@@ -1,0 +1,76 @@
+key: public-service-co-of-new-mexico-v-barboan-2017
+kind: federal-case
+citation:
+  type: legal_case
+  title: Public Service Co. of New Mexico v. Barboan
+  authority: United States Court of Appeals for the Tenth Circuit
+  container-title: F.3d
+  volume: '857'
+  page: '1101'
+  issued:
+    date-parts:
+    - - 2017
+      - 5
+      - 26
+  URL: https://static.case.law/f3d/857/html/1101-01.html
+  accessed:
+    date-parts:
+    - - 2026
+      - 11
+      - 26
+original_link: https://static.case.law/f3d/857/html/1101-01.html
+retrieved: '2026-11-26'
+archives: []
+history:
+  status: live
+  last_checked: '2026-11-26'
+rights:
+  status: no-permission-needed
+  basis: government-edict
+  basis_note: The text of a judicial opinion has no copyright (Georgia v. Public.Resource.Org, Inc., 590 U.S. 255 (2020)). The copy served on this site is the court's opinion only, without the publisher's headnotes, synopsis or other editorial matter (decision record 0060).
+  redistribution: true
+tribes:
+- navajo-nation
+- pueblo-of-laguna
+- ute-mountain-ute-tribe
+- confederated-tribes-of-the-umatilla-indian-reservation
+nations_in_case:
+  checked: '2026-11-26'
+  named:
+  - nation: navajo-nation
+    named_as: Navajo Nation
+    role: party
+    note: Matched by the script to the nation record of the same name; not yet checked.
+  - nation: pueblo-of-laguna
+    named_as: Pueblo of Laguna
+    role: party
+    note: Matched by the script to the nation record of the same name; not yet checked.
+  - nation: ute-mountain-ute-tribe
+    named_as: Ute Mountain Ute Tribe
+    role: party
+    note: Matched by the script to the nation record of the same name; not yet checked.
+  - nation: confederated-tribes-of-the-umatilla-indian-reservation
+    named_as: Confederated Tribes of the Umatilla Indian Reservation
+    role: party
+    note: Matched by the script to the nation record of the same name; not yet checked.
+  not_linked:
+  - named_as: American Indians
+    reason: More than one of today's nations shares this name (american-indian-council-of-mariposa-county, native-american-mohegans-inc, piedmont-american-indian-association-lower-eastern-cherokee-nation-of-south-carolina, samoan-people-of-american-samoa, southern-sierra-miwuk-nation, the-yamassee-native-american-moors-of-the-creek-nation); which the case concerns has not been checked.
+jurisdictions:
+- level: federal
+topics:
+- federal-court-indian-law
+found_in:
+- 2026-11-26-federal-court-indian-law-opinions
+notes: Published at 857 F.3d 1101. Decided by the United States Court of Appeals for the Tenth Circuit on May 26, 2017. Found by scripts/caselaw/state_court_opinions.py in the Caselaw Access Project's volumes, with an Indian law term score of 110, at or above 10, the level kept without a reading.
+review:
+  status: unverified
+  by: scripts/caselaw/state_court_opinions.py
+  date: '2026-11-26'
+  checks:
+  - check: 'Indian law case: the term score and, below the score kept without a reading, an AI reader''s judgment of excerpts'
+    result: agree
+    detail: score 110
+  - check: Nations named in the caption, matched to nation records by name
+    result: missing
+    detail: 4 matched, 1 not linked

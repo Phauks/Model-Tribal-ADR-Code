@@ -11,6 +11,19 @@ recognition:
   verification: bulk-import
   as_of: '2026-01-30'
   locator: 91 Fed. Reg. 4103
+- type: federal
+  earliest_record: constitution
+  legal_basis: Constitution of the Dry Creek Rancheria Band of Pomo Indians, California (approved by the Secretary of the Interior Aug. 29, 1977)
+  since: '1977-08-29'
+  source: constitution-dry-creek-rancheria-band-of-pomo-indians-1977-text
+  document_version:
+    document: dry-creek-rancheria-band-of-pomo-indians-constitution
+    version: 1977-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1977-08-29'
+  locator: 1977 articles of association, as amended (text 1), approval certificate
+  note: The earliest record this site has found that shows the United States dealing with the nation as a federally recognized nation. The relationship may be older. The Secretary of the Interior approved the nation's constitution; the date is read from the approval certificate.
 states:
 - state: CA
   presence: government-office

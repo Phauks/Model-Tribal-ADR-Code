@@ -2,7 +2,7 @@
 	@component
 	One court case's page (src/lib/server/case-pages.ts; Trevor approved the
 	mockup on Nov. 24, 2026, design/case-pages/). A record page: the case's
-	facts in At a glance, its box's parts as sections, then its opinions (each
+	facts in Key facts, its box's parts as sections, then its opinions (each
 	to read in full where the site serves its text, CaseOpinions.svelte), the
 	parties and nations, where to read it, and where this site cites it.
 	Every section folds (Collapsible.svelte).
@@ -35,7 +35,7 @@
 			: [])
 	]);
 	const nationPageLinks = $derived(new Set(data.nationPages.map((nation) => nation.link)));
-	// At a glance only with enough facts; one or two follow the citation instead (src/lib/info-page.ts).
+	// Key facts only with enough facts; one or two follow the citation instead (src/lib/info-page.ts).
 	const lineFacts = $derived(data.facts.length < glancePanelMinimum ? data.facts : []);
 	const citedCount = $derived(data.essays.length + data.nationPages.length + (data.court ? 1 : 0) + (data.decidedBy ? 1 : 0));
 </script>
@@ -50,7 +50,7 @@
 <RecordPage glance={data.facts.length >= glancePanelMinimum ? glance : undefined}>
 	{#snippet title()}<h1><i>{data.name}</i></h1>{/snippet}
 	{#snippet introduction()}
-		<!-- One or two facts, too few for At a glance, follow the citation (src/lib/info-page.ts). -->
+		<!-- One or two facts, too few for Key facts, follow the citation (src/lib/info-page.ts). -->
 		{#if data.citation || lineFacts.length > 0}<p class="lead case-citation">
 				{data.citation}{#each lineFacts as [label, html], index (label)}<span class="lead-facts"
 						>{data.citation || index > 0 ? ' · ' : ''}{label}{' '}<!-- eslint-disable-next-line svelte/no-at-html-tags -- built from the case's own record (case-facts.ts) -->{@html html}</span

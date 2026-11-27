@@ -11,6 +11,16 @@ recognition:
   verification: bulk-import
   as_of: '2026-01-30'
   locator: 91 Fed. Reg. 4103
+- type: federal
+  earliest_record: treaty
+  legal_basis: Treaty with the Tribes of Middle Oregon, June 25, 1855, 12 Stat. 963
+  since: '1855-06-25'
+  source: treaty-with-the-tribes-of-middle-oregon-1855
+  confidence: medium
+  verification: inferred
+  as_of: '1855-06-25'
+  locator: p. 714 (Treaty with the Tribes of Middle Oregon, 1855; Kappler header "June 25, 1855. | 12 Stats., 963. | Ratified Mar. 8, 1859. | Proclaimed Apr. 18, 1859.")
+  note: The earliest record this site has found that shows the United States dealing with the nation as a federally recognized nation. The relationship may be older. The treaty names the Middle Oregon; Wasco; Lower Deschutes; Upper Deschutes; Tenino; Dog River Wasco; the nation's profile links it to the treaty by name, and the link has not yet been checked against a second source.
 states:
 - state: OR
   presence: government-office

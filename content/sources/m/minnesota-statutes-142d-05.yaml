@@ -1,0 +1,50 @@
+key: minnesota-statutes-142d-05
+kind: state-statute
+citation:
+  type: legislation
+  title: School Readiness Programs
+  title-short: Minn. Stat. § 142D.05
+  container-title: Minnesota Statutes
+  container-title-short: Minn. Stat.
+  section: 142D.05
+  author:
+  - literal: Minnesota Office of the Revisor of Statutes
+  issued:
+    date-parts:
+    - - 1991
+  URL: https://www.revisor.mn.gov/statutes/cite/142D.05
+  accessed:
+    date-parts:
+    - - 2026
+      - 11
+      - 27
+original_link: https://www.revisor.mn.gov/statutes/cite/142D.05
+retrieved: '2026-11-27'
+archives: []
+history:
+  status: live
+  last_checked: '2026-11-27'
+state_law:
+  relevance: incidental
+  citation: Minn. Stat. § 142D.05 (2026)
+rights:
+  status: no-permission-needed
+  basis: government-edict
+  basis_note: 'Official state statutes are not copyrightable under the government edicts doctrine (Georgia v. Public.Resource.Org, Inc., 590 U.S. 255 (2020)). Linked, not served: state statutes stay link only.'
+  redistribution: false
+jurisdictions:
+- level: state
+  state: MN
+topics:
+- state-indian-law
+found_in:
+- 2026-11-27-state-statutes-third-batch
+notes: 'Indigo Book citation: Minn. Stat. § 142D.05 (2026). History: 1991 c 265 art 7 s 6; 1993 c 224 art 4 s 8; 1994 c 647 art 4 s 11; 1997 c 162 art 1 s 3,4; 1998 c 397 art 3 s 20 -27,103; art 11 s 3; 1999 c 205 art 1 s 70; 1Sp2003 c 9 art 7 s 8; 1Sp2005 c 5 art 7 s 6 -12; 2007 c 146 art 9 s 13; 2009 c 96 art 6 s 5; 2010 c 346 art 1 s 6 -8; 2012 c 239 art 1 s 33; 2014 c 272 art 1 s 32; 1Sp2015 c 3 art 9 s 4; 2016 c 189 art 25 s 33; art 29 s 3; 2023 c 55 art 9 s 19; 2024 c 80 art 4 s 11,26; 2024 c 109 art 2 s 31; 2024 c 115 art 16 s 42; 2025 c 20 s 107; 2026 c 127 art 9 s 8. Text read from the Minnesota Revisor of Statutes'' full-text chapter page for the section (revisor.mn.gov/statutes) on Nov. 27, 2026. Found by the state statutes sweep (terms: indian; native); AI reader''s verdict incidental: Foster care verification includes Minnesota Indian Family Preservation Act placements. Unverified.'
+review:
+  status: unverified
+  by: scripts/law/state_statutes/run.py
+  date: '2026-11-27'
+  checks:
+  - check: 'Indian law section: the sweep''s keyword pass and an AI reader''s verdict (core, incidental or none)'
+    result: agree
+    detail: 'incidental; terms: indian; native'

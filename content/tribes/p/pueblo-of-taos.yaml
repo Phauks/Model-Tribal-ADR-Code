@@ -11,6 +11,16 @@ recognition:
   verification: bulk-import
   as_of: '2026-01-30'
   locator: 91 Fed. Reg. 4104
+- type: federal
+  earliest_record: land
+  legal_basis: Act of Dec. 22, 1858, ch. 5, 11 Stat. 374
+  since: '1858-12-22'
+  source: act-1858-12-22-pueblo-land-claims-confirmed
+  confidence: medium
+  verification: read-in-full
+  as_of: '1858-12-22'
+  locator: 11 Stat. 374
+  note: The earliest record this site has found that shows the United States dealing with the nation as a federally recognized nation. The relationship may be older. The instrument first set aside the Pueblo of Taos land grant, New Mexico.
 states:
 - state: NM
   presence: government-office
@@ -490,6 +500,14 @@ jurisdiction:
   verification: inferred
   as_of: '2005-12-08'
   locator: 'Table of approvals by Tribe, column "Regulatory Programs": "WQS Program"'
+- topic: water-rights-settlement
+  value: enacted
+  detail: Congress enacted the Taos Pueblo Indian Water Rights Settlement Act in 2010 (Pub. L. No. 111-291), settling the water rights of Taos Pueblo Tribe. It quantifies 9,628 acre-feet a year in all and authorizes about $124.0 million in federal funds, as the Congressional Research Service counts it (R44148, Table 1).
+  source: public-law-111-291
+  confidence: high
+  verification: inferred
+  as_of: '2010'
+  locator: Congressional Research Service, R44148, Table 1, 2010
 jurisdiction_agreements:
 - kind: child-welfare-agreement
   other_party: New Mexico Children, Youth and Families Department
