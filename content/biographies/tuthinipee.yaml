@@ -1,9 +1,18 @@
 key: tuthinipee
 name: Tuthinipee
-lead: Signed two treaties with the United States for the Putawatimies, 1809.
+lead: Signed four treaties with the United States for the Putawatimies, 1803–1818.
 living: false
+names:
+- name: Tuthinepee
+  note: as the Treaty with the Potawatomi, 1818 prints it
+  source: treaty-with-the-potawatomi-1818
+  where: 7 Stat. 185
 cases: []
 events:
+- when: June 7, 1803
+  text: Signed the Treaty with the Delawares, etc., 1803, for the Pulawaiimies.
+  source: treaty-with-the-delawares-etc-1803
+  where: 7 Stat. 76
 - when: Sept. 30, 1809
   text: Signed the Supplementary Treaty with the Miami, etc., 1809, for the Putawatimies.
   source: supplementary-treaty-with-the-miami-etc-1809
@@ -12,4 +21,8 @@ events:
   text: Signed the Treaty with the Delawares, etc., 1809, for the Putawatimies.
   source: treaty-with-the-delawares-etc-1809
   where: 7 Stat. 115
-checked: '2026-11-24'
+- when: Oct. 2, 1818
+  text: Signed the Treaty with the Potawatomi, 1818, for the Potawatamie nation of Indians.
+  source: treaty-with-the-potawatomi-1818
+  where: 7 Stat. 185
+checked: '2026-11-26'

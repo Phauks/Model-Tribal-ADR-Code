@@ -1,6 +1,6 @@
 key: the-black-dog
 name: The Black Dog
-lead: Signed two treaties with the United States for the Osages, 1835–1837.
+lead: Signed three treaties with the United States for the Osages, 1835–1839.
 living: false
 names:
 - name: Shone-ta-sah-ba
@@ -11,6 +11,10 @@ names:
   note: as the Treaty with the Kiowa, etc., 1837 prints it
   source: treaty-with-the-kiowa-etc-1837
   where: 7 Stat. 535
+- name: Chon-ta-sa-bais
+  note: as the Treaty with the Osage, 1839 prints it
+  source: treaty-with-the-osage-1839
+  where: 7 Stat. 577
 nations:
 - nation: the-osage-nation
   named_as: Osages
@@ -26,4 +30,8 @@ events:
   text: Signed the Treaty with the Kiowa, etc., 1837, for the Osages.
   source: treaty-with-the-kiowa-etc-1837
   where: 7 Stat. 535
-checked: '2026-11-24'
+- when: Jan. 11, 1839
+  text: Signed the Treaty with the Osage, 1839, for the Great and Little Osage nation of Indians.
+  source: treaty-with-the-osage-1839
+  where: 7 Stat. 577
+checked: '2026-11-26'

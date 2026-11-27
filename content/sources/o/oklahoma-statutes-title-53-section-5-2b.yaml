@@ -1,0 +1,61 @@
+key: oklahoma-statutes-title-53-section-5-2b
+kind: state-statute
+citation:
+  type: legislation
+  title: Authorization to transfer ownership of historic properties
+  title-short: Okla. Stat. tit. 53, § 5.2b
+  container-title: Oklahoma Statutes
+  container-title-short: Okla. Stat.
+  volume: '53'
+  section: 5.2b
+  author:
+  - literal: Oklahoma Legislature
+  issued:
+    date-parts:
+    - - 2016
+      - 5
+      - 16
+  URL: https://www.oklegislature.gov/OK_Statutes/CompleteTitles/os53.pdf#page=18
+  accessed:
+    date-parts:
+    - - 2026
+      - 11
+      - 26
+original_link: https://www.oklegislature.gov/OK_Statutes/CompleteTitles/os53.pdf#page=18
+retrieved: '2026-11-26'
+archives: []
+history:
+  status: live
+  last_checked: '2026-11-26'
+shares_link_with:
+- oklahoma-statutes-title-53-section-1-4a
+- oklahoma-statutes-title-53-section-361
+- oklahoma-statutes-title-53-section-412
+- oklahoma-statutes-title-53-section-413
+- oklahoma-statutes-title-53-section-414
+- oklahoma-statutes-title-53-section-7-2
+state_law:
+  relevance: incidental
+  citation: Okla. Stat. tit. 53, § 5.2b (2026)
+  page: 18
+rights:
+  status: no-permission-needed
+  basis: government-edict
+  basis_note: 'Official state statutes are not copyrightable under the government edicts doctrine (Georgia v. Public.Resource.Org, Inc., 590 U.S. 255 (2020)). Linked, not served: state statutes stay link only.'
+  redistribution: false
+jurisdictions:
+- level: state
+  state: OK
+topics:
+- state-indian-law
+found_in:
+- 2026-11-26-state-statutes-pilot
+notes: 'Indigo Book citation: Okla. Stat. tit. 53, § 5.2b (2026). History: Added by Laws 2016, c. 309, § 1, emerg. eff. May 16, 2016. Text read from the Legislative Service Bureau''s Title 53 PDF (updated Nov. 12, 2026), page 18. Found by the state statutes pilot (terms: federally recognized indian tribe); AI reader''s verdict incidental: Historic property may be sold to federally recognized tribe. Unverified.'
+review:
+  status: unverified
+  by: scripts/law/oklahoma_statutes.py
+  date: '2026-11-26'
+  checks:
+  - check: 'Indian law section: the pilot''s keyword pass and an AI reader''s verdict (core, incidental or none)'
+    result: agree
+    detail: 'incidental; terms: federally recognized indian tribe'

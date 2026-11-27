@@ -12,6 +12,8 @@
 }
 
 html {
+	/* Headings follow the body font unless the reader picks another in Settings (data-heading-font below). */
+	--font-family-heading: var(--font-family-reading);
 	font-family: var(--font-family-reading);
 	font-size: 100%;
 	line-height: var(--font-line-height-reading);
@@ -38,6 +40,15 @@ body {
 	background: var(--color-paper);
 	color: var(--color-ink);
 	overflow-wrap: break-word;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	font-family: var(--font-family-heading);
 }
 
 h1,
@@ -923,6 +934,19 @@ sup.citation {
 	--font-family-reading: var(--font-family-opendyslexic);
 }
 
+/* The heading font (Settings, Text), when the reader picks one other than the body font. */
+:root:root[data-heading-font='atkinson-hyperlegible-next'] {
+	--font-family-heading: var(--font-family-atkinson-hyperlegible-next);
+}
+
+:root:root[data-heading-font='serif'] {
+	--font-family-heading: var(--font-family-serif);
+}
+
+:root:root[data-heading-font='opendyslexic'] {
+	--font-family-heading: var(--font-family-opendyslexic);
+}
+
 /*
  * Text width (Settings, Text): how much of the page's column running text
  * may use, from 40 to 100 percent; 100, the default, fills the column (Trevor,
@@ -952,18 +976,6 @@ sup.citation {
 
 :root:root[data-line-width='90'] {
 	--layout-measure: 90cqi;
-}
-
-/* Wide spacing uses the values WCAG 2.2, 1.4.12 Text Spacing tests. */
-:root:root[data-text-spacing='wide'] {
-	--font-line-height-reading: var(--font-line-height-reading-wide);
-	--font-line-height-heading: var(--font-line-height-heading-wide);
-	letter-spacing: var(--font-letter-spacing-wide);
-	word-spacing: var(--font-word-spacing-wide);
-}
-
-:root[data-text-spacing='wide'] :is(p, li, dd, blockquote) {
-	margin-bottom: var(--font-paragraph-spacing-wide);
 }
 
 /*
@@ -1060,6 +1072,31 @@ sup.citation {
 	margin-top: var(--space-4);
 	padding-top: var(--space-3);
 	border-top: 1px solid var(--color-line);
+}
+
+/* The later cases under a case's Treatment, by kind of treatment, each kind's count in a badge (record-boxes.ts, laterCasesMarkdown; Trevor, Nov. 27, 2026). */
+.later-cases-kind {
+	margin: var(--space-4) 0 var(--space-1);
+}
+
+.later-cases-kind .count-badge {
+	font-weight: normal;
+}
+
+ul.later-cases {
+	margin: 0 0 var(--space-3);
+	padding-left: 1.3em;
+}
+
+ul.later-cases li + li {
+	margin-top: var(--space-1);
+}
+
+/* A link that leaves the site, such as a case on case.law, ends with an arrow (as in the opinion copies, scripts/caselaw/copy_links.py). */
+a.external::after {
+	content: '\2197';
+	font-size: 0.75em;
+	margin-left: 0.1em;
 }
 
 /* A case box's topics, as tags; the index of cases by topic is built from them. */

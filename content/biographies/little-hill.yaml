@@ -1,6 +1,6 @@
 key: little-hill
 name: Little Hill
-lead: Signed four treaties with the United States for the Winnebago nation, 1837–1865.
+lead: Signed five treaties with the United States for the Winnebago nation, 1837–1865.
 living: false
 names:
 - name: Sho-go-nic-kah
@@ -11,6 +11,10 @@ names:
   note: as the Treaty with the Winnebago, 1855 prints it
   source: treaty-with-the-winnebago-1855
   where: 10 Stat. 1175
+- name: Sho-go-nee-kaw
+  note: as the Treaty with the Winnebago, 1846 prints it
+  source: treaty-with-the-winnebago-1846
+  where: 9 Stat. 879
 nations:
 - nation: ho-chunk-nation-of-wisconsin
   named_as: Winnebago nation
@@ -26,6 +30,10 @@ events:
   text: Signed the Treaty with the Winnebago, 1837, for the Winnebago nation.
   source: treaty-with-the-winnebago-1837
   where: 7 Stat. 544
+- when: Oct. 13, 1846
+  text: Signed the Treaty with the Winnebago, 1846, for the Winnebago Tribe of Indians.
+  source: treaty-with-the-winnebago-1846
+  where: 9 Stat. 879
 - when: Feb. 27, 1855
   text: Signed the Treaty with the Winnebago, 1855, for the Winnebago tribe of Indians.
   source: treaty-with-the-winnebago-1855
@@ -38,4 +46,4 @@ events:
   text: Signed the Treaty with the Winnebago, 1865, for the Winnebago Tribe of Indians.
   source: treaty-with-the-winnebago-1865
   where: 14 Stat. 672
-checked: '2026-11-24'
+checked: '2026-11-26'

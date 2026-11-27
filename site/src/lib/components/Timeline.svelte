@@ -130,6 +130,13 @@
 	}: Props = $props();
 
 	const icons = kindIcons;
+	/**
+	 * Each kind's icon is drawn once, in a sprite, and every row of the list points at it: the full
+	 * timeline lists about ten thousand entries, and an icon drawn in full in each row was a third of
+	 * the page (5.7 of 16.7 MB on Nov. 27, 2026) and many thousands of elements to build.
+	 */
+	const spriteId = $props.id();
+	const iconHref = (kind: TimelineKind) => `#${spriteId}-${kind}`;
 
 	const extent = $derived(givenExtent ?? extentOf(entries, opinions));
 	/** The kinds that have anything to show, in row order. */
@@ -367,10 +374,17 @@
 	const railYear = (year: number) => ((year - view.from) / span) * railHeight;
 	const railTicks = $derived(axisYears(view, Math.max(3, Math.round(railHeight / 90))));
 	const railLanes = $derived(visibleKinds);
-	const railMarks = $derived([
-		...entriesInView.map((entry) => ({ kind: entry.kind, year: yearOf(entry.date) })),
-		...opinionsInView.map((year) => ({ kind: 'opinion' as TimelineKind, year: year.year + 0.5 }))
-	]);
+	/** One mark for each kind at each pixel of the rail: marks in the same place look like one, and the full timeline has thousands. */
+	const railMarks = $derived.by(() => {
+		const marks = new Map<string, { kind: TimelineKind; top: number }>();
+		const add = (kind: TimelineKind, year: number) => {
+			const top = Math.round(railYear(year));
+			marks.set(`${kind}|${top}`, { kind, top });
+		};
+		for (const entry of entriesInView) add(entry.kind, yearOf(entry.date));
+		for (const year of opinionsInView) add('opinion', year.year + 0.5);
+		return [...marks.values()];
+	});
 
 	function measure() {
 		if (!down || !list) return;
@@ -470,7 +484,13 @@
 
 <svelte:window onkeydown={onKey} onpointerdown={onPointerDown} onscroll={onScroll} onresize={onScroll} />
 
-<div class="timeline" class:down>
+<div class="timeline" class:down data-ready={interactive ? '' : undefined}>
+	<svg class="sprite" width="0" height="0" aria-hidden="true">
+		{#each timelineKinds as { kind } (kind)}
+			{@const Icon = icons[kind]}
+			<symbol id="{spriteId}-{kind}" viewBox="0 0 24 24"><Icon size={24} /></symbol>
+		{/each}
+	</svg>
 	{#if interactive}
 		<div class="toolbar no-print" class:beside={besideHeading && !down}>
 			{#if summary || down}
@@ -677,7 +697,8 @@
 	{#if down}
 		<p class="key small muted" aria-hidden="true">
 			{#each visibleKinds as kind (kind)}
-				<span class="kind-{kind}"><span class="key-ring"></span>{kindLabels[kind]}</span>
+				{@const Icon = icons[kind]}
+				<span class="kind-{kind}"><span class="key-icon"><Icon size={16} aria-hidden="true" /></span>{kindLabels[kind]}</span>
 			{/each}
 			<span><span class="key-ring partial"></span>Year or month only</span>
 			{#if entries.some((entry) => entry.context)}
@@ -710,11 +731,15 @@
 			onclick={jumpTo}
 			onkeydown={railKey}
 		>
+			{#each railLanes as kind, lane (kind)}
+				{@const Icon = icons[kind]}
+				<span class="rail-lane-icon kind-{kind}" style:--lane={lane} aria-hidden="true"><Icon size={12} strokeWidth={2.25} /></span>
+			{/each}
 			{#each railTicks as year}
 				<span class="rail-tick" style:top="{railYear(year)}px">{year}</span>
 			{/each}
 			{#each railMarks as mark, index (index)}
-				<span class="rail-mark kind-{mark.kind}" style:top="{railYear(mark.year)}px" style:--lane={railLanes.indexOf(mark.kind)}></span>
+				<span class="rail-mark kind-{mark.kind}" style:top="{mark.top}px" style:--lane={railLanes.indexOf(mark.kind)}></span>
 			{/each}
 			{#if onScreen}
 				<span class="rail-window" style:top="{railYear(onScreen.from)}px" style:height="{Math.max(6, railYear(onScreen.to + 1) - railYear(onScreen.from))}px"></span>
@@ -740,11 +765,10 @@
 					{@render row(entry)}
 				{/each}
 				{#each [...group.aggregated.entries()] as [kind, list] (kind)}
-					{@const Icon = icons[kind]}
 					{@const key = `${group.era.name}|${kind}`}
 					<li class="entry kind-{kind}" data-year={Math.floor(yearOf(list[0].date))}>
 						<span class="date">{Math.floor(yearOf(list[0].date))}–{Math.floor(yearOf(list.at(-1)!.date))}</span>
-						<span class="icon"><Icon size={16} aria-hidden="true" /></span>
+						<span class="icon"><svg width="16" height="16" aria-hidden="true"><use href={iconHref(kind)} /></svg></span>
 						<details class="aggregate" bind:open={() => opened[key] ?? false, (value) => (opened[key] = value)}>
 							<summary>{plural(list.length, aggregateWords[kind][0], aggregateWords[kind][1])}</summary>
 							{#if opened[key]}
@@ -797,10 +821,9 @@
 </div>
 
 {#snippet row(entry: TimelineEntry)}
-	{@const Icon = icons[entry.kind]}
 	<li class="entry kind-{entry.kind}" class:partial={isPartialDate(entry.date)} class:context={entry.context} id="timeline-{entry.id}" data-year={Math.floor(yearOf(entry.date))}>
 		<span class="date">{timelineDate(entry.date)}</span>
-		<span class="icon"><Icon size={16} aria-hidden="true" /><span class="visually-hidden">{kindLabels[entry.kind]}:</span></span>
+		<span class="icon"><svg width="16" height="16" aria-hidden="true"><use href={iconHref(entry.kind)} /></svg><span class="visually-hidden">{kindLabels[entry.kind]}:</span></span>
 		<span class="what">
 			{#if entry.link}<a href={entry.link} rel={external(entry.link) ? 'noopener' : undefined}>{#if entry.italic}<i>{entry.title}</i>{:else}{entry.title}{/if}</a>{:else if entry.italic}<i>{entry.title}</i>{:else}{entry.title}{/if}{#if entry.citation}, {entry.citation}{/if}<CitationMarks marks={entry.citations} />
 			{#if entry.detail}<span class="detail">{entry.detail}</span>{:else if entry.context && down}<span class="detail">Applies to every nation</span>{/if}
@@ -814,6 +837,13 @@
 <style>
 	.timeline {
 		margin: var(--space-3) 0 var(--space-5);
+	}
+
+	.sprite {
+		position: absolute;
+		width: 0;
+		height: 0;
+		overflow: hidden;
 	}
 
 	.toolbar {
@@ -869,6 +899,12 @@
 
 	.key-ring.partial {
 		border-style: dashed;
+	}
+
+	/* Each kind in the key shows its icon, the same one its entries carry, so the key reads without telling colors apart (WCAG 1.4.1). */
+	.key-icon {
+		display: inline-flex;
+		color: var(--kind-color);
 	}
 
 	@media (max-width: 30rem) {
@@ -1189,6 +1225,24 @@
 		border-bottom: 0;
 	}
 
+	/*
+	 * The browser lays out and paints only the rows near the screen. The full timeline lists about ten
+	 * thousand, and switching its layout spent over two seconds laying out rows nobody could see
+	 * (measured Nov. 27, 2026; with this, about a third of that). The rows stay in the page, so finding
+	 * in the page, links to a row and screen readers still reach every one. The sizes are the typical
+	 * row's height until a row has been drawn once, then its own.
+	 */
+	.entries > li {
+		content-visibility: auto;
+		contain-intrinsic-size: auto 4rem;
+	}
+
+	@media (max-width: 40rem) {
+		.entries > li {
+			contain-intrinsic-size: auto 7.5rem;
+		}
+	}
+
 	.date {
 		color: var(--color-ink-muted);
 		font-variant-numeric: tabular-nums;
@@ -1415,6 +1469,15 @@
 		background: var(--kind-color);
 	}
 
+	/* Each lane of the rail is headed by its kind's icon, above the rail, so the lanes are told apart by more than color. */
+	.rail-lane-icon {
+		position: absolute;
+		top: -1.125rem;
+		left: calc(2.75rem + var(--lane) * 0.875rem + 0.3125rem - 6px);
+		display: flex;
+		color: var(--kind-color);
+	}
+
 	.rail-window {
 		position: absolute;
 		left: -0.35rem;
@@ -1449,6 +1512,11 @@
 		.rail-mark {
 			left: calc(0.2rem + var(--lane) * 0.3rem);
 			width: 0.25rem;
+		}
+
+		/* A phone's rail is too narrow for the lane icons; the key above names each kind with its icon. */
+		.rail-lane-icon {
+			display: none;
 		}
 
 		.down .entries:not(.nested)::before {

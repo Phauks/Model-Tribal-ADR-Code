@@ -77,7 +77,7 @@
 	{#if data.storyCount > 0}
 		<section class="panel" aria-labelledby="stories-heading">
 			<h3 id="stories-heading"><a href="/stories">Stories</a></h3>
-			<p>Stories, accounts and teachings about making peace, quoted in the words of the nations and people who tell them.</p>
+			<p>Stories, accounts and teachings about law, justice and governance, quoted in the words of the nations and people who tell them.</p>
 		</section>
 	{/if}
 	<section class="panel" aria-labelledby="glossary-heading">

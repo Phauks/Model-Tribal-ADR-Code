@@ -1,7 +1,12 @@
 key: skahomat
 name: Skahomat
-lead: Signed two treaties with the United States for the Wyandots, 1789–1807.
+lead: Signed three treaties with the United States for the Wyandots, 1789–1808.
 living: false
+names:
+- name: Ska-ho mat
+  note: as the Treaty with the Chippewa, etc., 1808 prints it
+  source: treaty-with-the-chippewa-etc-1808
+  where: 7 Stat. 113
 nations:
 - nation: wyandotte-nation
   named_as: Wyandots
@@ -17,4 +22,8 @@ events:
   text: Signed the Treaty with the Ottawa, etc., 1807, for the Wyandots.
   source: treaty-with-the-ottawa-etc-1807
   where: 7 Stat. 107
-checked: '2026-11-24'
+- when: Nov. 25, 1808
+  text: Signed the Treaty with the Chippewa, etc., 1808, for the Wyandotts.
+  source: treaty-with-the-chippewa-etc-1808
+  where: 7 Stat. 113
+checked: '2026-11-26'
