@@ -20,6 +20,16 @@ recognition:
   verification: bulk-import
   as_of: '2026-01-30'
   locator: 91 Fed. Reg. 4103
+- type: federal
+  earliest_record: treaty
+  legal_basis: Treaty with the Comanche, etc., Aug. 24, 1835, 7 Stat. 474
+  since: '1835-08-24'
+  source: treaty-with-the-comanche-etc-1835
+  confidence: medium
+  verification: inferred
+  as_of: '1835-08-24'
+  locator: p. 435 (Treaty with the Comanche, etc., 1835; Kappler header "Aug. 24, 1835. | 7 Stat., 474. | Proclamation, May 19, 1836.")
+  note: The earliest record this site has found that shows the United States dealing with the nation as a federally recognized nation. The relationship may be older. The treaty names the Comanche; the nation's profile links it to the treaty by name, and the link has not yet been checked against a second source. 8 nations' profiles link this treaty.
 states:
 - state: OK
   presence: government-office

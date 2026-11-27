@@ -1,0 +1,50 @@
+key: minnesota-statutes-256f-10
+kind: state-statute
+citation:
+  type: legislation
+  title: Child Welfare Targeted Case Management
+  title-short: Minn. Stat. § 256F.10
+  container-title: Minnesota Statutes
+  container-title-short: Minn. Stat.
+  section: 256F.10
+  author:
+  - literal: Minnesota Office of the Revisor of Statutes
+  issued:
+    date-parts:
+    - - 1993
+  URL: https://www.revisor.mn.gov/statutes/cite/256F.10
+  accessed:
+    date-parts:
+    - - 2026
+      - 11
+      - 27
+original_link: https://www.revisor.mn.gov/statutes/cite/256F.10
+retrieved: '2026-11-27'
+archives: []
+history:
+  status: live
+  last_checked: '2026-11-27'
+state_law:
+  relevance: incidental
+  citation: Minn. Stat. § 256F.10 (2026)
+rights:
+  status: no-permission-needed
+  basis: government-edict
+  basis_note: 'Official state statutes are not copyrightable under the government edicts doctrine (Georgia v. Public.Resource.Org, Inc., 590 U.S. 255 (2020)). Linked, not served: state statutes stay link only.'
+  redistribution: false
+jurisdictions:
+- level: state
+  state: MN
+topics:
+- state-indian-law
+found_in:
+- 2026-11-27-state-statutes-third-batch
+notes: 'Indigo Book citation: Minn. Stat. § 256F.10 (2026). History: 1Sp1993 c 1 art 3 s 26; 1999 c 139 art 4 s 2; 1999 c 159 s 73; 1999 c 245 art 8 s 12 -18; 2001 c 178 art 1 s 44; 2002 c 277 s 26; 2003 c 112 art 2 s 50; 1Sp2003 c 14 art 1 s 106; art 11 s 11; 2004 c 288 art 3 s 27; 2009 c 101 art 2 s 109; 2015 c 78 art 4 s 61; 1Sp2020 c 2 art 8 s 102,103; 2026 c 88 art 1 s 149,150. Text read from the Minnesota Revisor of Statutes'' full-text chapter page for the section (revisor.mn.gov/statutes) on Nov. 27, 2026. Found by the state statutes sweep (terms: federally recognized indian tribe; tribal government; indian; reservation; tribal; tribe); AI reader''s verdict incidental: Federally recognized Tribe may be certified child welfare case management provider. Unverified.'
+review:
+  status: unverified
+  by: scripts/law/state_statutes/run.py
+  date: '2026-11-27'
+  checks:
+  - check: 'Indian law section: the sweep''s keyword pass and an AI reader''s verdict (core, incidental or none)'
+    result: agree
+    detail: 'incidental; terms: federally recognized indian tribe; tribal government; indian; reservation; tribal; tribe'

@@ -123,7 +123,7 @@
 	/*
 	 * A rule under each heading marks where a section begins (Trevor picked
 	 * this on Nov. 26, 2026; site/DESIGN.md, "Section headings"). The rule is on the
-	 * heading row, a flex box, so beside a floated At a glance box it stops at
+	 * heading row, a flex box, so beside a floated Key facts box it stops at
 	 * the box's edge instead of running under it. Sections inside the At a
 	 * glance box have no rule, since the box already sets them apart.
 	 */

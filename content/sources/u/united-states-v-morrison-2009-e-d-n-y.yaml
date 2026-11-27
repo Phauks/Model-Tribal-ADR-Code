@@ -1,0 +1,52 @@
+key: united-states-v-morrison-2009-e-d-n-y
+kind: federal-case
+citation:
+  type: legal_case
+  title: United States v. Morrison
+  authority: United States District Court for the Eastern District of New York
+  container-title: F. Supp. 2d
+  volume: '656'
+  page: '338'
+  issued:
+    date-parts:
+    - - 2009
+      - 9
+      - 10
+  URL: https://static.case.law/f-supp-2d/656/html/0338-01.html
+  accessed:
+    date-parts:
+    - - 2026
+      - 11
+      - 26
+original_link: https://static.case.law/f-supp-2d/656/html/0338-01.html
+retrieved: '2026-11-26'
+archives: []
+history:
+  status: live
+  last_checked: '2026-11-26'
+rights:
+  status: no-permission-needed
+  basis: government-edict
+  basis_note: The text of a judicial opinion has no copyright (Georgia v. Public.Resource.Org, Inc., 590 U.S. 255 (2020)). The copy served on this site is the court's opinion only, without the publisher's headnotes, synopsis or other editorial matter (decision record 0060).
+  redistribution: true
+nations_in_case:
+  checked: '2026-11-26'
+  named: []
+jurisdictions:
+- level: federal
+topics:
+- federal-court-indian-law
+found_in:
+- 2026-11-26-federal-court-indian-law-opinions
+notes: Published at 656 F. Supp. 2d 338. Decided by the United States District Court for the Eastern District of New York on Sept. 10, 2009. Found by scripts/caselaw/state_court_opinions.py in the Caselaw Access Project's volumes, with an Indian law term score of 6; an AI reader read excerpts and judged it an Indian law case (untaxed cigarette sales on Poospatuck reservation, tribal member sales).
+review:
+  status: unverified
+  by: scripts/caselaw/state_court_opinions.py
+  date: '2026-11-26'
+  checks:
+  - check: 'Indian law case: the term score and, below the score kept without a reading, an AI reader''s judgment of excerpts'
+    result: agree
+    detail: 'score 6; reader: untaxed cigarette sales on Poospatuck reservation, tribal member sales'
+  - check: Nations named in the caption, matched to nation records by name
+    result: agree
+    detail: 0 matched, 0 not linked

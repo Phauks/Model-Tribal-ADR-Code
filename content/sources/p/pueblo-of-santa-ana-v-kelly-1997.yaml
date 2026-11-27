@@ -1,0 +1,104 @@
+key: pueblo-of-santa-ana-v-kelly-1997
+kind: federal-case
+citation:
+  type: legal_case
+  title: Pueblo of Santa Ana v. Kelly
+  authority: United States Court of Appeals for the Tenth Circuit
+  container-title: F.3d
+  volume: '104'
+  page: '1546'
+  issued:
+    date-parts:
+    - - 1997
+      - 1
+      - 10
+  URL: https://static.case.law/f3d/104/html/1546-01.html
+  accessed:
+    date-parts:
+    - - 2026
+      - 11
+      - 26
+original_link: https://static.case.law/f3d/104/html/1546-01.html
+retrieved: '2026-11-26'
+archives: []
+history:
+  status: live
+  last_checked: '2026-11-26'
+rights:
+  status: no-permission-needed
+  basis: government-edict
+  basis_note: The text of a judicial opinion has no copyright (Georgia v. Public.Resource.Org, Inc., 590 U.S. 255 (2020)). The copy served on this site is the court's opinion only, without the publisher's headnotes, synopsis or other editorial matter (decision record 0060).
+  redistribution: true
+tribes:
+- pueblo-of-tesuque
+- pueblo-of-acoma
+- pueblo-of-sandia
+- pueblo-of-isleta
+- pueblo-of-pojoaque
+- pueblo-of-taos
+- yuhaaviatam-of-san-manuel-nation
+- shakopee-mdewakanton-sioux-community-of-minnesota
+- pueblo-of-santa-ana
+nations_in_case:
+  checked: '2026-11-26'
+  named:
+  - nation: pueblo-of-tesuque
+    named_as: Pueblo of Tesuque
+    role: party
+    note: Matched by the script to the nation record of the same name; not yet checked.
+  - nation: pueblo-of-acoma
+    named_as: Pueblo of Acoma
+    role: party
+    note: Matched by the script to the nation record of the same name; not yet checked.
+  - nation: pueblo-of-sandia
+    named_as: Pueblo of Sandia
+    role: party
+    note: Matched by the script to the nation record of the same name; not yet checked.
+  - nation: pueblo-of-isleta
+    named_as: Pueblo of Isleta
+    role: party
+    note: Matched by the script to the nation record of the same name; not yet checked.
+  - nation: pueblo-of-pojoaque
+    named_as: Pueblo of Pojoaque
+    role: party
+    note: Matched by the script to the nation record of the same name; not yet checked.
+  - nation: pueblo-of-taos
+    named_as: Pueblo of Taos
+    role: party
+    note: Matched by the script to the nation record of the same name; not yet checked.
+  - nation: yuhaaviatam-of-san-manuel-nation
+    named_as: San Manuel Band of Mission Indians
+    role: party
+    note: Matched by the script to the nation record of the same name; not yet checked.
+  - nation: shakopee-mdewakanton-sioux-community-of-minnesota
+    named_as: Shakopee Mdewakanton Sioux Community
+    role: party
+    historical: true
+    note: Matched by the script to the only nation record sharing this name; not yet checked against the case's history.
+  - nation: pueblo-of-santa-ana
+    named_as: Pueblo of Santa Ana
+    role: party
+    note: Matched by the script to a name the nation record gives; not yet checked.
+  not_linked:
+  - named_as: Pueblo of San Juan
+    reason: More than one of today's nations shares this name (amah-mutsun-tribal-band-of-mission-san-juan-bautista, costanoan-tribe-of-santa-cruz-and-san-juan-bautista-missions, piro-manso-tiwa-indian-tribe-of-the-pueblo-of-san-juan-guadalupe, san-juan-southern-paiute-tribe-of-arizona); which the case concerns has not been checked.
+  - named_as: Sisseton Wahpeton Sioux Tribe
+    reason: No nation record matches this name; it may be a historical name or a group that is not a recognized nation today.
+jurisdictions:
+- level: federal
+topics:
+- federal-court-indian-law
+found_in:
+- 2026-11-26-federal-court-indian-law-opinions
+notes: Published at 104 F.3d 1546. Decided by the United States Court of Appeals for the Tenth Circuit on Jan. 10, 1997. Found by scripts/caselaw/state_court_opinions.py in the Caselaw Access Project's volumes, with an Indian law term score of 107, at or above 10, the level kept without a reading.
+review:
+  status: unverified
+  by: scripts/caselaw/state_court_opinions.py
+  date: '2026-11-26'
+  checks:
+  - check: 'Indian law case: the term score and, below the score kept without a reading, an AI reader''s judgment of excerpts'
+    result: agree
+    detail: score 107
+  - check: Nations named in the caption, matched to nation records by name
+    result: missing
+    detail: 9 matched, 2 not linked

@@ -1,0 +1,50 @@
+key: idaho-code-67-7903
+kind: state-statute
+citation:
+  type: legislation
+  title: Verification of lawful presence — Exceptions — Reporting
+  title-short: Idaho Code § 67-7903
+  container-title: Idaho Code
+  container-title-short: Idaho Code
+  section: 67-7903
+  author:
+  - literal: Idaho Legislature
+  issued:
+    date-parts:
+    - - 2007
+  URL: https://legislature.idaho.gov/statutesrules/idstat/Title67/T67CH79/SECT67-7903
+  accessed:
+    date-parts:
+    - - 2026
+      - 11
+      - 27
+original_link: https://legislature.idaho.gov/statutesrules/idstat/Title67/T67CH79/SECT67-7903
+retrieved: '2026-11-27'
+archives: []
+history:
+  status: live
+  last_checked: '2026-11-27'
+state_law:
+  relevance: incidental
+  citation: Idaho Code § 67-7903 (2026)
+rights:
+  status: no-permission-needed
+  basis: government-edict
+  basis_note: 'Official state statutes are not copyrightable under the government edicts doctrine (Georgia v. Public.Resource.Org, Inc., 590 U.S. 255 (2020)). Linked, not served: state statutes stay link only.'
+  redistribution: false
+jurisdictions:
+- level: state
+  state: ID
+topics:
+- state-indian-law
+found_in:
+- 2026-11-27-state-statutes-third-batch
+notes: 'Indigo Book citation: Idaho Code § 67-7903 (2026). History: 67-7903, added 2007, ch. 311, sec. 1, p. 878; am. 2008, ch. 27, sec. 19, p. 58; am. 2009, ch. 177, sec. 20, p. 572; am. 2009, ch. 197, sec. 1, p. 633; am. 2011, ch. 280, sec. 1, p. 760; am. 2011, ch. 291, sec. 28, p. 812; am. 2022, ch. 318, sec. 61, p. 1032; am. 2025, ch. 275, sec. 2, p. 1167; am. 2026, ch. 100, sec. 1, p. 541. Text read from the Idaho Legislature''s page for the section in the Idaho Statutes (legislature.idaho.gov/statutesrules/idstat) on Nov. 27, 2026. Found by the state statutes sweep (terms: native american; native; tribal); AI reader''s verdict incidental: Native American tribal document accepted as proof of lawful presence. Unverified.'
+review:
+  status: unverified
+  by: scripts/law/state_statutes/run.py
+  date: '2026-11-27'
+  checks:
+  - check: 'Indian law section: the sweep''s keyword pass and an AI reader''s verdict (core, incidental or none)'
+    result: agree
+    detail: 'incidental; terms: native american; native; tribal'

@@ -21,6 +21,16 @@ recognition:
   verification: bulk-import
   as_of: '2026-01-30'
   locator: 91 Fed. Reg. 4103
+- type: federal
+  earliest_record: land
+  legal_basis: Exec. Order of June 8, 1880, 1 Kappler 809
+  since: '1880-06-08'
+  source: executive-order-1880-06-08-havasupai-reservation
+  confidence: high
+  verification: read-in-full
+  as_of: '1880-06-08'
+  locator: 1 Kappler 809
+  note: The earliest record this site has found that shows the United States dealing with the nation as a federally recognized nation. The relationship may be older. The instrument first set aside the Suppai (Havasupai) Reserve, Arizona.
 states:
 - state: AZ
   presence: government-office

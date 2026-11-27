@@ -21,6 +21,16 @@ recognition:
   verification: bulk-import
   as_of: '2026-01-30'
   locator: 91 Fed. Reg. 4103
+- type: federal
+  earliest_record: treaty
+  legal_basis: Treaty with the Sioux-Miniconjou Band, Oct. 10, 1865, 14 Stat. 695
+  since: '1865-10-10'
+  source: treaty-with-the-sioux-miniconjou-band-1865
+  confidence: medium
+  verification: inferred
+  as_of: '1865-10-10'
+  locator: p. 883 (Treaty with the Sioux-Miniconjou Band, 1865; Kappler header "Oct. 10, 1865. | 14 Stats., 695.| Ratified Mar. 5, 1866. | Proclaimed Mar. 17, 1866.")
+  note: The earliest record this site has found that shows the United States dealing with the nation as a federally recognized nation. The relationship may be older. The treaty names the Miniconjou; the nation's profile links it to the treaty by name, and the link has not yet been checked against a second source.
 states:
 - state: SD
   presence: government-office

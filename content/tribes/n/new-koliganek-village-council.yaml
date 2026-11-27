@@ -21,6 +21,16 @@ recognition:
   verification: bulk-import
   as_of: '2026-01-30'
   locator: 91 Fed. Reg. 4106
+- type: federal
+  earliest_record: federal-list
+  legal_basis: Indian Entities Recognized and Eligible To Receive Services From the United States Bureau of Indian Affairs, 53 Fed. Reg. 52829, 52834 (Dec. 29, 1988)
+  since: '1988-12-29'
+  source: bia-recognized-entities-1988
+  confidence: medium
+  verification: inferred
+  as_of: '1988-12-29'
+  locator: 53 Fed. Reg. 52834 (entry "Koliganek")
+  note: The earliest record this site has found that shows the United States dealing with the nation as a federally recognized nation. The relationship may be older. The list's entry reads "Koliganek." The entry is matched to the nation by name. The 1988 list also named Alaska Native Claims Settlement Act corporations, which are not tribal governments (58 Fed. Reg. 54364, 54365 (Oct. 21, 1993)).
 states:
 - state: AK
   presence: government-office

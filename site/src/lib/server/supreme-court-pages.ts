@@ -90,7 +90,7 @@ export interface CourtPage {
 	endText?: string;
 	years: string;
 	facts: { label: string; text: string; marks: CitationMark[] }[];
-	/** A picture of the Court, or else of its Chief Justice, for At a glance. */
+	/** A picture of the Court, or else of its Chief Justice, for Key facts. */
 	picture?: InfoPicture;
 	glance: FactGroup[];
 	historyHtml: string;

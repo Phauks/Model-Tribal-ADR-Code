@@ -26,6 +26,8 @@
 	} = $props();
 
 	let sources = $state.raw<SourceEntry[] | undefined>();
+	// A reader who opens the waiting heading keeps the list open once it comes; a list fetched because the reader scrolled near it starts closed, as every References section does.
+	let openWhenLoaded = $state(false);
 	let problem = $state('');
 	let holder = $state<HTMLElement | undefined>();
 	let fallback = $state<HTMLElement | undefined>();
@@ -45,6 +47,11 @@
 				problem = 'The references could not be loaded. Open this section again to retry.';
 			});
 		return loading;
+	}
+
+	function onWaitingToggle(event: Event): void {
+		if ((event.target as HTMLDetailsElement).open) openWhenLoaded = true;
+		void load();
 	}
 
 	onMount(() => {
@@ -92,10 +99,10 @@
 </script>
 
 {#if sources}
-	<SourceList {sources} />
+	<SourceList {sources} open={openWhenLoaded} />
 {:else}
 	<div bind:this={holder}>
-		<div class="needs-scripts no-print" bind:this={fallback} ontogglecapture={() => void load()}>
+		<div class="needs-scripts no-print" bind:this={fallback} ontogglecapture={onWaitingToggle}>
 			<Collapsible heading="References" identifier="sources-heading-waiting" {count} open={false}>
 				<p class="muted" role="status">{problem}</p>
 			</Collapsible>
