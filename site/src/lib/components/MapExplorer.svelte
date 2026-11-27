@@ -77,7 +77,6 @@
 		statesColor = $bindable(),
 		statesColorChoices,
 		baseMap = $bindable(),
-		placeNames = $bindable(),
 		year = $bindable(),
 		first,
 		last,
@@ -97,7 +96,6 @@
 		statesColor: string;
 		statesColorChoices: SearchableChoice<string>[];
 		baseMap: TileMapBase;
-		placeNames: boolean;
 		/** The timeline's year; undefined is Today. */
 		year: number | undefined;
 		first: number;
@@ -380,9 +378,6 @@
 					</label>
 				{/each}
 			</div>
-			{#if baseMap !== 'map'}
-				<label class="explorer-layer"><input type="checkbox" bind:checked={placeNames} /><span class="explorer-layer-words">Place names and roads</span></label>
-			{/if}
 		</div>
 	</section>
 </div>

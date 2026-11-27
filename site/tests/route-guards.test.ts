@@ -210,6 +210,13 @@ const publicHandlers: Record<string, { handlers: string[]; reason: string }> = {
 			'Reporting a problem with a paid order needs the order’s long random identifier, which only the buyer is given; it is limited per connection and only adds a report for the team.'
 	},
 
+	// Downloading several search results at once (src/lib/search-selection.ts).
+	'src/routes/search/download/+server.ts': {
+		handlers: ['POST'],
+		reason:
+			'Changes nothing: it is a POST only because the list of results is long. It puts together a .zip of files any reader may already download one at a time, taken only from the build’s records and list of copies and following nations’ choices, at most 500 results a time, as the nations’ .zip downloads do.'
+	},
+
 	// The video room.
 	'src/routes/rooms/[room]/invite/[secret]/+page.server.ts': {
 		handlers: ['actions.join'],

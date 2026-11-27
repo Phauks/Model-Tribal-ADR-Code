@@ -45,6 +45,7 @@ import { displayName, humanize, regionAnchor, presenceNote, reviewStatusLabels, 
 import { legalHelpCitation, legalHelpFor, legalHelpHeading } from '#lib/server/legal-help.ts';
 import { formatSource } from '#lib/server/markdown.ts';
 import { recordPageLink } from '#lib/server/law-records.ts';
+import { agencyRows, awardsDates, awardsFiscalYear, awardsSource, dollars, nationAwards, recipientPage } from '#lib/server/federal-awards.ts';
 import { builderAreaName, surveyFigures, surveyPeople, surveyRows, surveySource, surveyYears } from '#lib/server/census-areas.ts';
 import { builderPath } from '#lib/table-builder.ts';
 import type { EntryGenerator, PageServerLoad } from './$types';
@@ -312,8 +313,40 @@ function atAGlance(record: NationRecord, sources: SourceUses): FactGroup[] {
 				cited(sources, 'Member of', fact, { text: fact.organization, link: organizationHome(fact) })
 			)
 		),
+		...awardsGroups(record, sources),
 		...censusGroups(record, sources)
 	];
+}
+
+/**
+ * The federal awards to the nation's government in the latest complete fiscal
+ * year (Trevor chose mockup A on Nov. 27, 2026; project files
+ * design/federal-awards/; src/lib/server/federal-awards.ts), just above the
+ * Census area, in the same wide layout: the total, linked to the recipient's
+ * page on USAspending.gov when the government reports under one UEI number,
+ * with the fiscal year's dates under it, then the largest agencies and the
+ * rest in one row, so the rows add up to the total. One marker, on the last
+ * row, covers the group. A nation with no awards to its government has none,
+ * nor one whose awards net to nothing or less (an agency took back more than
+ * it awarded in the year).
+ */
+function awardsGroups(record: NationRecord, sources: SourceUses): FactGroup[] {
+	const awards = nationAwards().get(record.id);
+	if (!awards || Math.round(awards.total) <= 0) return [];
+	const label = 'Federal awards';
+	const total = dollars(awards.total);
+	const rows: FactItem[] = agencyRows(awards.agencies);
+	const citations: CitationMark[] = [];
+	const ueis = awards.recipients.map((recipient) => recipient.uei).join(' and ');
+	sources.cite(awardsSource, { section: label, text: `${total} in fiscal year ${awardsFiscalYear}`, where: `recipient UEI ${ueis}` }, citations);
+	if (rows.length > 0) rows[rows.length - 1] = { ...rows[rows.length - 1], citations };
+	const lead: FactItem = {
+		text: total,
+		link: awards.recipients.length === 1 ? recipientPage(awards.recipients[0].recipientId) : undefined,
+		note: awardsDates,
+		...(rows.length === 0 ? { citations } : {})
+	};
+	return [{ field: 'federal-awards', label, wide: true, items: [lead, ...rows] }];
 }
 
 /** Where in the survey's file an area's figures are, for the References list. */
@@ -578,7 +611,8 @@ const jurisdictionTopics: Record<string, string> = {
 	'tribal-law-and-order-act-enhanced-sentencing': 'Tribal Law and Order Act',
 	'indian-child-welfare-act': 'Indian Child Welfare Act',
 	'hearth-act-leasing-regulations': 'Leasing under the HEARTH Act',
-	'environmental-treatment-as-a-state': 'Environmental programs (treatment as a state)'
+	'environmental-treatment-as-a-state': 'Environmental programs (treatment as a state)',
+	'water-rights-settlement': 'Water rights settlements'
 };
 const topicOrder = Object.keys(jurisdictionTopics);
 
@@ -801,6 +835,90 @@ function federalTies(record: NationRecord, sources: SourceUses): FactGroup[] {
 				)
 		)
 	];
+}
+
+/** One document of the nation's federal acknowledgment petition, a row of the petition documents table. */
+export interface PetitionDocument {
+	key: string;
+	/** YYYY, YYYY-MM or YYYY-MM-DD. */
+	issued?: string;
+	name: string;
+	/** "62 Fed. Reg. 44714" or "36 IBIA 245", when the document has one. */
+	citation?: string;
+	/** Who wrote it: the Department's office, the Board, the petitioner, or the person or body that commented. */
+	from: string;
+	link?: string;
+	citations: CitationMark[];
+}
+
+const petitionSection = 'Treaties and federal ties';
+
+/** The nation's petition under 25 C.F.R. Part 83, as a label row: its number and where it stands. */
+function petitionFacts(record: NationRecord, sources: SourceUses): FactGroup[] {
+	const fact = (record.recognition ?? []).find((entry) => entry.petition_number);
+	if (!fact) return [];
+	const stage = String(fact.petition_stage ?? '').split(/\s*[(;]/)[0].trim();
+	return group('acknowledgment-petition', 'Acknowledgment petition', [
+		cited(sources, petitionSection, fact, { text: `Petition #${String(fact.petition_number).replace(/^0+(?=\d)/, '')}`, detail: stage || undefined })
+	]);
+}
+
+/** Who a petition document is from, in the From column. */
+function petitionDocumentFrom(source: SourceRecord): string {
+	const genre = source.citation.genre ?? '';
+	if (source.kind.endsWith('-case')) return source.citation.authority ?? 'Interior Board of Indian Appeals';
+	if (genre === "Petitioner's document") return 'Petitioner';
+	const author = source.citation.author?.[0]?.literal ?? '';
+	return author.replace(/^U\.S\. Department of the Interior, /, '') || 'Department of the Interior';
+}
+
+/** A petition document's name on the nation's own page, which need not repeat the nation's name. */
+function petitionDocumentName(source: SourceRecord): string {
+	const genre = source.citation.genre ?? '';
+	if (genre === 'Public comment') return 'Public comment';
+	const title = source.citation.title ?? source.key;
+	// "Proposed Finding: Chinook Indian Tribe / Chinook Nation (petition 057)" is "Proposed Finding".
+	return source.key.startsWith('acknowledgment-') ? title.replace(/:[^:]*$/, '') : title;
+}
+
+/**
+ * The documents of the nation's federal acknowledgment petition, oldest
+ * first (Trevor, Nov. 27, 2026: "if petitioning, we should show petitioning
+ * documents"): the Office of Federal Acknowledgment's findings and letters,
+ * the Federal Register notices, the Interior Board of Indian Appeals'
+ * decisions, the petitioner's own documents and the public comments, each
+ * a record linked to the nation (scripts/law/acknowledgment_petitions.py
+ * link). A record with its own page links there; the petitioner's documents
+ * and the comments link the Office's copy.
+ */
+function petitionDocuments(record: NationRecord, sources: SourceUses): PetitionDocument[] {
+	if (!(record.recognition ?? []).some((fact) => fact.petition_number)) return [];
+	return [...sourceRecords().values()]
+		.filter(
+			(source) =>
+				source.tribes?.includes(record.id) &&
+				source.topics?.includes('federal-recognition') &&
+				(source.key.startsWith('acknowledgment-') || source.kind === 'federal-register-notice' || (source.kind === 'federal-case' && source.citation['container-title'] === 'IBIA'))
+		)
+		.map((source) => ({ source, issued: issuedDate(source), name: petitionDocumentName(source) }))
+		// Sorted before the markers are numbered, so they count up the table.
+		.sort((first, second) => (first.issued ?? '').localeCompare(second.issued ?? '') || first.name.localeCompare(second.name))
+		.map(({ source, issued, name }) => {
+			const { volume, page } = source.citation;
+			const reporter = source.citation['container-title-short'] ?? source.citation['container-title'];
+			const citations: CitationMark[] = [];
+			sources.cite(source.key, { section: petitionSection, text: name }, citations);
+			const address = source.original_link ?? source.citation.URL;
+			return {
+				key: source.key,
+				issued,
+				name,
+				citation: volume && reporter && page ? `${volume} ${reporter} ${page}` : undefined,
+				from: petitionDocumentFrom(source),
+				link: recordPageLink(source.key) ?? (address && URL.canParse(address) ? webLink(address) : undefined),
+				citations
+			};
+		});
 }
 
 /** One treaty, a row of the Treaties table on the nation page. */
@@ -1351,6 +1469,7 @@ export const load: PageServerLoad = ({ params }) => {
 			treaties: [],
 			landCessions: [] as ReturnType<typeof nationLandCessions>,
 			ties: [],
+			petition: [] as PetitionDocument[],
 			programs: [] as FederalProgramRow[],
 			enforcement: [],
 			stories: [],
@@ -1494,7 +1613,8 @@ export const load: PageServerLoad = ({ params }) => {
 	const jurisdiction = shareMarks(jurisdictionFacts(record, sources), sources);
 	sources.part('Treaties and federal ties');
 	const treaties = treatyRows(record, sources);
-	const ties = shareMarks(federalTies(record, sources), sources);
+	const ties = shareMarks([...petitionFacts(record, sources), ...federalTies(record, sources)], sources);
+	const petition = petitionDocuments(record, sources);
 	const programs = federalProgramRows(record, sources);
 	const enforcement = enforcementActions(record, sources);
 	sources.part('Land cessions');
@@ -1541,6 +1661,7 @@ export const load: PageServerLoad = ({ params }) => {
 		treaties,
 		landCessions,
 		ties,
+		petition,
 		programs,
 		enforcement,
 		timeline: hasTimeline ? timeline : undefined,
@@ -1566,7 +1687,7 @@ export const load: PageServerLoad = ({ params }) => {
 		children: documents.map((document) => ({ label: document.heading, link: `#document-${document.id}` }))
 	});
 	items.push({ label: 'Jurisdiction', link: '#jurisdiction-heading' });
-	if (treaties.length > 0 || ties.length > 0 || programs.length > 0 || enforcement.length > 0) items.push({ label: 'Treaties and federal ties', link: '#ties-heading' });
+	if (treaties.length > 0 || ties.length > 0 || petition.length > 0 || programs.length > 0 || enforcement.length > 0) items.push({ label: 'Treaties and federal ties', link: '#ties-heading' });
 	if (landCessions.length > 0) items.push({ label: 'Land cessions', link: '#cessions-heading' });
 	if (hasTimeline) items.push({ label: timelineHeading, link: '#timeline-heading' });
 	if (stories.length > 0) items.push({ label: 'Stories', link: '#stories-heading' });
