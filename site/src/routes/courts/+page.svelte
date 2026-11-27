@@ -41,4 +41,4 @@
 
 <h1>Courts <CountBadge count={data.courts.length} /></h1>
 <p>The Supreme Court of the United States has <a href="/supreme-court">its own pages</a>.</p>
-<DataTable identifier="courts" label="Table: courts named on this site" {columns} {rows} rowName={['court', 'courts']} download="courts" filters />
+<DataTable identifier="courts" label="Table: courts named on this site" {columns} {rows} rowName={['court', 'courts']} download="courts" filters shareable />
