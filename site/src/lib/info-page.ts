@@ -25,7 +25,7 @@ export interface InfoName {
 }
 
 /**
- * At a glance only where it earns its place (Trevor chose option B on Nov.
+ * Key facts only where it earns its place (Trevor chose option B on Nov.
  * 26, 2026, after a review of 103 pages found the panel mostly repeating the
  * title and lead on treaties, statutes, courts and stubs, project files
  * design/at-a-glance-review/). A page keeps the panel when it has at least

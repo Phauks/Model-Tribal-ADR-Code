@@ -1,0 +1,56 @@
+key: ute-indian-tribe-of-the-uintah-and-ouray-reservation-v-lawrence-2023
+kind: federal-case
+citation:
+  type: legal_case
+  title: Ute Indian Tribe of the Uintah and Ouray Reservation v. Lawrence
+  authority: United States District Court for the District of Utah
+  issued:
+    date-parts:
+    - - 2023
+      - 9
+      - 6
+  URL: https://www.courtlistener.com/opinion/10219901/ute-indian-tribe-of-the-uintah-and-ouray-reservation-v-lawrence/
+  accessed:
+    date-parts:
+    - - 2026
+      - 11
+      - 26
+original_link: https://www.courtlistener.com/opinion/10219901/ute-indian-tribe-of-the-uintah-and-ouray-reservation-v-lawrence/
+retrieved: '2026-11-26'
+archives: []
+history:
+  status: live
+  last_checked: '2026-11-26'
+rights:
+  status: no-permission-needed
+  basis: government-edict
+  basis_note: The text of a judicial opinion has no copyright (Georgia v. Public.Resource.Org, Inc., 590 U.S. 255 (2020)). The copy served on this site is the court's opinion only, without the publisher's headnotes, synopsis or other editorial matter (decision record 0060).
+  redistribution: true
+tribes:
+- ute-indian-tribe-of-the-uintah-and-ouray-reservation
+nations_in_case:
+  checked: '2026-11-26'
+  named:
+  - nation: ute-indian-tribe-of-the-uintah-and-ouray-reservation
+    named_as: Ute Indian Tribe of the Uintah
+    role: party
+    historical: true
+    note: Matched by the script to the only nation record sharing this name; not yet checked against the case's history.
+jurisdictions:
+- level: federal
+topics:
+- federal-court-indian-law
+found_in:
+- 2026-11-26-federal-court-indian-law-opinions
+notes: Docket 2:16-cv-00579; no reporter citation yet. Decided by the United States District Court for the District of Utah on Sept. 6, 2023. Found by scripts/caselaw/courtlistener_federal_opinions.py and scripts/caselaw/state_court_opinions.py in CourtListener's bulk files, with an Indian law term score of 9; an AI reader read excerpts and judged it an Indian law case (Ute Tribe enforcement against contractor and state court jurisdiction).
+review:
+  status: unverified
+  by: scripts/caselaw/state_court_opinions.py
+  date: '2026-11-26'
+  checks:
+  - check: 'Indian law case: the term score and, below the score kept without a reading, an AI reader''s judgment of excerpts'
+    result: agree
+    detail: 'score 9; reader: Ute Tribe enforcement against contractor and state court jurisdiction'
+  - check: Nations named in the caption, matched to nation records by name
+    result: agree
+    detail: 1 matched, 0 not linked

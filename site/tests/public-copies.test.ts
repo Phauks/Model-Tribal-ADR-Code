@@ -95,8 +95,8 @@ describe('the details a copy’s page shows', () => {
 		const details = copyDetails(copyDetailsShard(first))?.[first.key];
 		expect(details?.title).toBe(first.title);
 		expect(details?.list.slug).toBeTruthy();
-		// The first call works out every copy's details. That took 15 to 25 seconds on a CI runner, and over 60 seconds by
-		// Nov. 27, 2026, once the congressional documents and lower federal court opinions were filed (about 40 seconds locally).
+		// The first call works out every copy's details, citing each copy's record, which took 15 to 25 seconds on a CI runner
+		// and more than 60 once the Indian Claims Commission's and the repatriation notices' 9,700 copies came (Nov. 27, 2026).
 	}, 180_000);
 
 	it('gives a tribal court opinion its citation', () => {

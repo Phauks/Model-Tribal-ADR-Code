@@ -1,0 +1,58 @@
+key: busby-school-of-the-northern-cheyenne-tribe-v-united-states-1985
+kind: federal-case
+citation:
+  type: legal_case
+  title: Busby School of the Northern Cheyenne Tribe v. United States
+  authority: United States Court of Claims
+  container-title: Cl. Ct.
+  volume: '8'
+  page: '596'
+  issued:
+    date-parts:
+    - - 1985
+      - 7
+      - 30
+  URL: https://static.case.law/cl-ct/8/html/0596-01.html
+  accessed:
+    date-parts:
+    - - 2026
+      - 11
+      - 26
+original_link: https://static.case.law/cl-ct/8/html/0596-01.html
+retrieved: '2026-11-26'
+archives: []
+history:
+  status: live
+  last_checked: '2026-11-26'
+rights:
+  status: no-permission-needed
+  basis: government-edict
+  basis_note: The text of a judicial opinion has no copyright (Georgia v. Public.Resource.Org, Inc., 590 U.S. 255 (2020)). The copy served on this site is the court's opinion only, without the publisher's headnotes, synopsis or other editorial matter (decision record 0060).
+  redistribution: true
+tribes:
+- northern-cheyenne-tribe-of-the-northern-cheyenne-indian-reservation
+nations_in_case:
+  checked: '2026-11-26'
+  named:
+  - nation: northern-cheyenne-tribe-of-the-northern-cheyenne-indian-reservation
+    named_as: Northern Cheyenne Tribe
+    role: party
+    note: Matched by the script to a name the nation record gives; not yet checked.
+jurisdictions:
+- level: federal
+topics:
+- federal-court-indian-law
+found_in:
+- 2026-11-26-federal-court-indian-law-opinions
+notes: Published at 8 Cl. Ct. 596. Decided by the United States Court of Claims on July 30, 1985. Found by scripts/caselaw/state_court_opinions.py in the Caselaw Access Project's volumes, with an Indian law term score of 18, at or above 10, the level kept without a reading.
+review:
+  status: unverified
+  by: scripts/caselaw/state_court_opinions.py
+  date: '2026-11-26'
+  checks:
+  - check: 'Indian law case: the term score and, below the score kept without a reading, an AI reader''s judgment of excerpts'
+    result: agree
+    detail: score 18
+  - check: Nations named in the caption, matched to nation records by name
+    result: agree
+    detail: 1 matched, 0 not linked

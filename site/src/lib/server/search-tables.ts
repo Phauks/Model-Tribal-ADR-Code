@@ -19,6 +19,12 @@
  * panel then waits for the files, as it always did) and fills the tables
  * again after answering, so a hidden copy is never found here once a nation
  * has hidden it.
+ *
+ * A fill is written in several batches, each a few megabytes, because one
+ * batch with the whole index (21 MB of rows for 40,406 entries on Nov. 27,
+ * 2026) failed in D1 every time, while the 30,812 entries before it fitted.
+ * The tables answer nothing while a fill is under way: its first batch clears
+ * the key with the old rows, and only its last batch sets the key again.
  */
 import type { D1Database, D1PreparedStatement } from '@cloudflare/workers-types/index.ts';
 import { documentResult, panelResult, resultGroups, type PanelAnswer, type PanelResult, type ResultGroup } from '../search-everything.ts';
@@ -35,8 +41,9 @@ const setRank = 2;
 /** Words searched for at most; more are left out of the query, so it stays a reasonable size. */
 const mostWords = 12;
 
-/** Entries written per statement, so each stays well under D1's limits on a statement's size. */
-const entriesPerStatement = 1000;
+/** Characters of rows (as JSON) written by one statement and by one batch, well under what D1 takes in one request. */
+const statementBytes = 256_000;
+const batchBytes = 2_000_000;
 
 /** How long a fill may take before another request may start one again. */
 const fillTimeout = 120_000;
@@ -61,85 +68,124 @@ async function sha256(text: string): Promise<string> {
 	return Array.from(new Uint8Array(digest), (byte) => byte.toString(16).padStart(2, '0')).join('');
 }
 
-function chunks<Item>(items: Item[], size: number): Item[][] {
-	const parts: Item[][] = [];
-	for (let start = 0; start < items.length; start += size) parts.push(items.slice(start, start + size));
-	return parts;
+/** The columns of each table, in the order its rows list them. */
+const tableColumns = {
+	site_search_entries: ['position', 'kind', 'result', 'everything'],
+	site_search_names: ['position', 'rank', 'ordinal', 'shown', 'folded', 'words'],
+	site_search_documents: ['position', 'result', 'words']
+} as const;
+
+type Table = keyof typeof tableColumns;
+type Row = (string | number | null)[];
+
+/** This fill still holds the tables: no later fill has taken them over. */
+const stillFilling = "(SELECT value FROM site_search_state WHERE name = 'filling') = ?";
+
+/** A statement writing these rows, only while the fill named by `token` still holds the tables. */
+function insertRows(database: D1Database, table: Table, rows: string, token: string): D1PreparedStatement {
+	const columns = tableColumns[table];
+	const values = columns.map((_, index) => `json_extract(value, '$[${index}]')`).join(', ');
+	return database.prepare(`INSERT INTO ${table} (${columns.join(', ')}) SELECT ${values} FROM json_each(?1) WHERE ${stillFilling.replace('?', '?2')}`).bind(rows, token);
+}
+
+/** Every table's rows, as JSON arrays of about `statementBytes` each. */
+function* rowParts(listed: SearchEntry[], records: SearchRecords): Generator<{ table: Table; rows: string; count: number }> {
+	let table: Table = 'site_search_entries';
+	let part: string[] = [];
+	let bytes = 0;
+	const flush = () => {
+		const done = { table, rows: `[${part.join(',')}]`, count: part.length };
+		part = [];
+		bytes = 0;
+		return done;
+	};
+	function* add(into: Table, row: Row) {
+		if (part.length > 0 && (into !== table || bytes >= statementBytes)) yield flush();
+		table = into;
+		const text = JSON.stringify(row);
+		part.push(text);
+		bytes += text.length;
+	}
+	const names: Row[] = [];
+	for (const [position, entry] of listed.entries()) {
+		const item = prepare(entry);
+		yield* add('site_search_entries', [position, entry.kind, JSON.stringify(panelResult({ ...entry, score: 0 })), item.everything]);
+		let ordinal = 0;
+		const words = (name: { words: string[] }) => ` ${name.words.join(' ')} `;
+		names.push([position, titleRank, ordinal++, null, item.title.folded, words(item.title)]);
+		for (const name of item.also) names.push([position, otherNameRank, ordinal++, name.name, name.folded, words(name)]);
+		for (const group of item.groups) for (const name of group.names) names.push([position, setRank, ordinal++, group.shown, name.folded, words(name)]);
+	}
+	for (const row of names) yield* add('site_search_names', row);
+	for (const [position, row] of records.documents.entries()) {
+		yield* add('site_search_documents', [position, JSON.stringify(documentResult(row)), foldForSearch(`${row.title} ${row.kindLabel} ${row.year ?? ''} ${row.nationName}`)]);
+	}
+	if (part.length > 0) yield flush();
 }
 
 /**
  * Fills the tables from the files as readers get them, unless another fill
  * started less than two minutes ago. Nothing is written when the files are
- * the same as last time; only the key changes. The rows are replaced in one
- * batch, which D1 runs as one transaction, so a query never sees half of them.
+ * the same as last time; only the key changes. Otherwise the first batch
+ * clears the key and the old rows, the rows follow in batches of about
+ * `batchBytes`, and the last batch sets the key. Each write is made only
+ * while this fill holds the tables, so a fill that a later one took over
+ * writes nothing more and leaves the key alone ('busy').
  */
 export async function fillSearchTables(database: D1Database, key: string, entries: SearchEntry[], records: SearchRecords, now = Date.now()): Promise<'filled' | 'unchanged' | 'busy'> {
 	const started = Number((await stateOf(database, 'filling')) ?? 0);
 	if (started && now - started < fillTimeout) return 'busy';
-	await database.prepare("INSERT INTO site_search_state (name, value) VALUES ('filling', ?) ON CONFLICT (name) DO UPDATE SET value = excluded.value").bind(String(now)).run();
+	const token = String(now);
+	const setState = (name: string, value: string) =>
+		database
+			.prepare(`INSERT INTO site_search_state (name, value) SELECT ?1, ?2 WHERE ${stillFilling.replace('?', '?3')} ON CONFLICT (name) DO UPDATE SET value = excluded.value`)
+			.bind(name, value, token);
+	const finish = () => database.prepare(`DELETE FROM site_search_state WHERE name = 'filling' AND value = ?`).bind(token);
+	await database.prepare("INSERT INTO site_search_state (name, value) VALUES ('filling', ?) ON CONFLICT (name) DO UPDATE SET value = excluded.value").bind(token).run();
+	let step = 'comparing the files with the last fill';
 	try {
 		// The device lists a nation only when its record is in the records file (matchEverything).
 		const nationLinks = new Set(records.nations.map((row) => row.link));
 		const listed = entries.filter((entry) => entry.kind !== 'nation' || nationLinks.has(entry.link));
 		const content = await sha256(JSON.stringify([listed, records.documents]));
-		const statements: D1PreparedStatement[] = [];
-		const setState = (name: string, value: string) =>
-			database.prepare('INSERT INTO site_search_state (name, value) VALUES (?, ?) ON CONFLICT (name) DO UPDATE SET value = excluded.value').bind(name, value);
-		if ((await stateOf(database, 'content')) !== content) {
-			statements.push(database.prepare('DELETE FROM site_search_names'), database.prepare('DELETE FROM site_search_entries'), database.prepare('DELETE FROM site_search_documents'));
-			const entryRows: [number, SearchKind, string, string][] = [];
-			const nameRows: [number, number, number, string | null, string, string][] = [];
-			listed.forEach((entry, position) => {
-				const item = prepare(entry);
-				entryRows.push([position, entry.kind, JSON.stringify(panelResult({ ...entry, score: 0 })), item.everything]);
-				let ordinal = 0;
-				const words = (name: { words: string[] }) => ` ${name.words.join(' ')} `;
-				nameRows.push([position, titleRank, ordinal++, null, item.title.folded, words(item.title)]);
-				for (const name of item.also) nameRows.push([position, otherNameRank, ordinal++, name.name, name.folded, words(name)]);
-				for (const group of item.groups) for (const name of group.names) nameRows.push([position, setRank, ordinal++, group.shown, name.folded, words(name)]);
-			});
-			for (const part of chunks(entryRows, entriesPerStatement)) {
-				statements.push(
-					database
-						.prepare(
-							`INSERT INTO site_search_entries (position, kind, result, everything)
-							 SELECT json_extract(value, '$[0]'), json_extract(value, '$[1]'), json_extract(value, '$[2]'), json_extract(value, '$[3]') FROM json_each(?)`
-						)
-						.bind(JSON.stringify(part))
-				);
-			}
-			for (const part of chunks(nameRows, entriesPerStatement)) {
-				statements.push(
-					database
-						.prepare(
-							`INSERT INTO site_search_names (position, rank, ordinal, shown, folded, words)
-							 SELECT json_extract(value, '$[0]'), json_extract(value, '$[1]'), json_extract(value, '$[2]'), json_extract(value, '$[3]'), json_extract(value, '$[4]'), json_extract(value, '$[5]') FROM json_each(?)`
-						)
-						.bind(JSON.stringify(part))
-				);
-			}
-			const documentRows = records.documents.map((row, position) => [
-				position,
-				JSON.stringify(documentResult(row)),
-				foldForSearch(`${row.title} ${row.kindLabel} ${row.year ?? ''} ${row.nationName}`)
-			]);
-			for (const part of chunks(documentRows, entriesPerStatement)) {
-				statements.push(
-					database
-						.prepare(
-							`INSERT INTO site_search_documents (position, result, words)
-							 SELECT json_extract(value, '$[0]'), json_extract(value, '$[1]'), json_extract(value, '$[2]') FROM json_each(?)`
-						)
-						.bind(JSON.stringify(part))
-				);
-			}
-			statements.push(setState('content', content));
+		if ((await stateOf(database, 'content')) === content) {
+			step = 'setting the key';
+			const [keySet] = await database.batch([setState('key', key), finish()]);
+			return keySet.meta.changes > 0 ? 'unchanged' : 'busy';
 		}
-		statements.push(setState('key', key), database.prepare("DELETE FROM site_search_state WHERE name = 'filling'"));
-		await database.batch(statements);
-		return statements.length > 2 ? 'filled' : 'unchanged';
+		step = 'clearing the old rows';
+		const [held] = await database.batch([
+			database.prepare(`SELECT 1 AS held WHERE ${stillFilling}`).bind(token),
+			database.prepare(`DELETE FROM site_search_state WHERE name IN ('key', 'content') AND ${stillFilling}`).bind(token),
+			...Object.keys(tableColumns).map((table) => database.prepare(`DELETE FROM ${table} WHERE ${stillFilling}`).bind(token))
+		]);
+		if (held.results.length === 0) return 'busy';
+		let batch: { statement: D1PreparedStatement; count: number }[] = [];
+		let bytes = 0;
+		let batches = 0;
+		const send = async () => {
+			batches += 1;
+			step = `writing batch ${batches} of rows`;
+			const results = await database.batch(batch.map((item) => item.statement));
+			const written = results.every((result, index) => result.meta.changes === batch[index].count);
+			batch = [];
+			bytes = 0;
+			return written;
+		};
+		for (const part of rowParts(listed, records)) {
+			batch.push({ statement: insertRows(database, part.table, part.rows, token), count: part.count });
+			bytes += part.rows.length;
+			if (bytes >= batchBytes && !(await send())) return 'busy';
+		}
+		if (batch.length > 0 && !(await send())) return 'busy';
+		step = 'setting the key';
+		const [contentSet] = await database.batch([setState('content', content), setState('key', key), finish()]);
+		return contentSet.meta.changes > 0 ? 'filled' : 'busy';
 	} catch (problem) {
-		await database.prepare("DELETE FROM site_search_state WHERE name = 'filling'").run();
+		// The message, written out: an error passed to console.error reaches Workers Logs as its stack alone.
+		const message = problem instanceof Error ? `${problem.message}${problem.cause instanceof Error ? ` (${problem.cause.message})` : ''}` : String(problem);
+		console.error(`Filling the site search tables failed while ${step}: ${message}`);
+		await finish().run();
 		throw problem;
 	}
 }

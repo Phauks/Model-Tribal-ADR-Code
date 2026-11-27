@@ -1,0 +1,55 @@
+key: pit-river-tribe-v-bureau-of-land-management-2019
+kind: federal-case
+citation:
+  type: legal_case
+  title: Pit River Tribe v. Bureau of Land Management
+  authority: United States District Court for the Northern District of California
+  issued:
+    date-parts:
+    - - 2019
+      - 11
+      - 27
+  URL: https://www.courtlistener.com/opinion/9595746/pit-river-tribe-v-bureau-of-land-management/
+  accessed:
+    date-parts:
+    - - 2026
+      - 11
+      - 26
+original_link: https://www.courtlistener.com/opinion/9595746/pit-river-tribe-v-bureau-of-land-management/
+retrieved: '2026-11-26'
+archives: []
+history:
+  status: live
+  last_checked: '2026-11-26'
+rights:
+  status: no-permission-needed
+  basis: government-edict
+  basis_note: The text of a judicial opinion has no copyright (Georgia v. Public.Resource.Org, Inc., 590 U.S. 255 (2020)). The copy served on this site is the court's opinion only, without the publisher's headnotes, synopsis or other editorial matter (decision record 0060).
+  redistribution: true
+tribes:
+- pit-river-tribe
+nations_in_case:
+  checked: '2026-11-26'
+  named:
+  - nation: pit-river-tribe
+    named_as: Pit River Tribe
+    role: party
+    note: Matched by the script to the nation record of the same name; not yet checked.
+jurisdictions:
+- level: federal
+topics:
+- federal-court-indian-law
+found_in:
+- 2026-11-26-federal-court-indian-law-opinions
+notes: Docket 4:19-cv-02002; no reporter citation yet. Decided by the United States District Court for the Northern District of California on Nov. 27, 2019. Found by scripts/caselaw/courtlistener_federal_opinions.py and scripts/caselaw/state_court_opinions.py in CourtListener's bulk files, with an Indian law term score of 1; an AI reader read excerpts and judged it an Indian law case (Pit River Tribe challenge to federal land leases and trust duties).
+review:
+  status: unverified
+  by: scripts/caselaw/state_court_opinions.py
+  date: '2026-11-26'
+  checks:
+  - check: 'Indian law case: the term score and, below the score kept without a reading, an AI reader''s judgment of excerpts'
+    result: agree
+    detail: 'score 1; reader: Pit River Tribe challenge to federal land leases and trust duties'
+  - check: Nations named in the caption, matched to nation records by name
+    result: agree
+    detail: 1 matched, 0 not linked

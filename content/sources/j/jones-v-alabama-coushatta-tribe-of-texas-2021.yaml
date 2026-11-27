@@ -1,0 +1,55 @@
+key: jones-v-alabama-coushatta-tribe-of-texas-2021
+kind: federal-case
+citation:
+  type: legal_case
+  title: Jones v. Alabama-Coushatta Tribe of Texas
+  authority: United States District Court for the Eastern District of Texas
+  issued:
+    date-parts:
+    - - 2021
+      - 1
+      - 13
+  URL: https://www.courtlistener.com/opinion/9978505/jones-v-alabama-coushatta-tribe-of-texas/
+  accessed:
+    date-parts:
+    - - 2026
+      - 11
+      - 26
+original_link: https://www.courtlistener.com/opinion/9978505/jones-v-alabama-coushatta-tribe-of-texas/
+retrieved: '2026-11-26'
+archives: []
+history:
+  status: live
+  last_checked: '2026-11-26'
+rights:
+  status: no-permission-needed
+  basis: government-edict
+  basis_note: The text of a judicial opinion has no copyright (Georgia v. Public.Resource.Org, Inc., 590 U.S. 255 (2020)). The copy served on this site is the court's opinion only, without the publisher's headnotes, synopsis or other editorial matter (decision record 0060).
+  redistribution: true
+tribes:
+- alabama-coushatta-tribe-of-texas
+nations_in_case:
+  checked: '2026-11-26'
+  named:
+  - nation: alabama-coushatta-tribe-of-texas
+    named_as: Alabama-Coushatta Tribe of Texas
+    role: party
+    note: Matched by the script to the nation record of the same name; not yet checked.
+jurisdictions:
+- level: federal
+topics:
+- federal-court-indian-law
+found_in:
+- 2026-11-26-federal-court-indian-law-opinions
+notes: Docket 9:20-cv-00063; no reporter citation yet. Decided by the United States District Court for the Eastern District of Texas on Jan. 13, 2021. Found by scripts/caselaw/courtlistener_federal_opinions.py and scripts/caselaw/state_court_opinions.py in CourtListener's bulk files, with an Indian law term score of 4; an AI reader read excerpts and judged it an Indian law case (tribal sovereign immunity from tort claim).
+review:
+  status: unverified
+  by: scripts/caselaw/state_court_opinions.py
+  date: '2026-11-26'
+  checks:
+  - check: 'Indian law case: the term score and, below the score kept without a reading, an AI reader''s judgment of excerpts'
+    result: agree
+    detail: 'score 4; reader: tribal sovereign immunity from tort claim'
+  - check: Nations named in the caption, matched to nation records by name
+    result: agree
+    detail: 1 matched, 0 not linked

@@ -1,0 +1,64 @@
+key: scholder-v-united-states-1970
+kind: federal-case
+citation:
+  type: legal_case
+  title: Scholder v. United States
+  authority: United States Court of Appeals for the Ninth Circuit
+  container-title: F.2d
+  volume: '428'
+  page: '1123'
+  issued:
+    date-parts:
+    - - 1970
+      - 6
+      - 22
+  URL: https://static.case.law/f2d/428/html/1123-01.html
+  accessed:
+    date-parts:
+    - - 2026
+      - 11
+      - 26
+original_link: https://static.case.law/f2d/428/html/1123-01.html
+retrieved: '2026-11-26'
+archives: []
+history:
+  status: live
+  last_checked: '2026-11-26'
+rights:
+  status: no-permission-needed
+  basis: government-edict
+  basis_note: The text of a judicial opinion has no copyright (Georgia v. Public.Resource.Org, Inc., 590 U.S. 255 (2020)). The copy served on this site is the court's opinion only, without the publisher's headnotes, synopsis or other editorial matter (decision record 0060).
+  redistribution: true
+tribes:
+- pala-band-of-mission-indians
+- rincon-band-of-luiseno-indians
+nations_in_case:
+  checked: '2026-11-26'
+  named:
+  - nation: pala-band-of-mission-indians
+    named_as: Pala Band of Mission Indians
+    role: party
+    note: Matched by the script to the nation record of the same name; not yet checked.
+  - nation: rincon-band-of-luiseno-indians
+    named_as: Rincon Band of Mission Indians
+    role: party
+    historical: true
+    note: Matched by the script to the only nation record sharing this name; not yet checked against the case's history.
+jurisdictions:
+- level: federal
+topics:
+- federal-court-indian-law
+found_in:
+- 2026-11-26-federal-court-indian-law-opinions
+notes: Published at 428 F.2d 1123. Decided by the United States Court of Appeals for the Ninth Circuit on June 22, 1970. Found by scripts/caselaw/state_court_opinions.py in the Caselaw Access Project's volumes, with an Indian law term score of 51, at or above 10, the level kept without a reading.
+review:
+  status: unverified
+  by: scripts/caselaw/state_court_opinions.py
+  date: '2026-11-26'
+  checks:
+  - check: 'Indian law case: the term score and, below the score kept without a reading, an AI reader''s judgment of excerpts'
+    result: agree
+    detail: score 51
+  - check: Nations named in the caption, matched to nation records by name
+    result: agree
+    detail: 2 matched, 0 not linked

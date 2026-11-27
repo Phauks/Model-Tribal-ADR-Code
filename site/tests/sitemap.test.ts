@@ -32,7 +32,7 @@ beforeAll(() => {
 	parts = sitemapParts(new Set([stubForTest]));
 	pages = new Set(parts.flatMap((part) => part.entries.map((entry) => entry.path)));
 	// Reading every record the first time takes a while.
-}, 120_000);
+}, 180_000);
 
 describe('the sitemap grows with the collections', () => {
 	it('lists every page of every collection, so a new record or collection is in it from the next build', () => {

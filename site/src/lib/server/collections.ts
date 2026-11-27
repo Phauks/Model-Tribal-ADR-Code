@@ -319,11 +319,24 @@ function heldBackStateOpinions(): number {
 	return existsSync(file) ? Number((JSON.parse(readFileSync(file, 'utf8')) as { held_for_privacy_review?: number }).held_for_privacy_review ?? 0) : 0;
 }
 
-/** Court cases with a name, by the citation's authority, less the state court opinions, which are their own collection. */
+const federalOpinionTopic = 'federal-court-indian-law';
+const isFederalOpinion = (record: SourceRecord) => (record.topics ?? []).includes(federalOpinionTopic);
+
+/** Lower federal court opinions found by scripts/caselaw/state_court_opinions.py --courts federal, less those held for a privacy review. */
+const federalCourtOpinions = () =>
+	[...sources().values()].filter((record) => isFederalOpinion(record) && record.citation.title).map((record) => sourceItem(record, record.citation.authority));
+
+/** How many federal court opinions the script held for a privacy review (research/federal-court-opinions/summary.json). */
+function heldBackFederalOpinions(): number {
+	const file = path.join(repositoryRoot, 'research/federal-court-opinions/summary.json');
+	return existsSync(file) ? Number((JSON.parse(readFileSync(file, 'utf8')) as { held_for_privacy_review?: number }).held_for_privacy_review ?? 0) : 0;
+}
+
+/** Court cases with a name, by the citation's authority, less the state and federal court opinions, which are collections of their own. */
 function casesBy(test: (authority: string) => boolean): () => CollectionItem[] {
 	return () =>
 		[...sources().values()]
-			.filter((record) => typeOf(record) === 'legal_case' && record.citation.title && !isStateOpinion(record) && test(record.citation.authority ?? ''))
+			.filter((record) => typeOf(record) === 'legal_case' && record.citation.title && !isStateOpinion(record) && !isFederalOpinion(record) && test(record.citation.authority ?? ''))
 			.map((record) => sourceItem(record, record.citation.authority));
 }
 
@@ -526,6 +539,15 @@ export const collections: Collection[] = [
 		group: 'Courts and cases',
 		items: casesBy(indianAppealsBoard),
 		heldBack: heldBackBoardDecisions,
+		heldBackReason: 'held back for a privacy review'
+	},
+	{
+		identifier: 'federal-court-opinions', search: { group: 'case', label: 'Lower federal court opinion' },
+		title: 'Lower Federal Court Opinions',
+		group: 'Courts and cases',
+		detailHeader: 'Court',
+		items: federalCourtOpinions,
+		heldBack: heldBackFederalOpinions,
 		heldBackReason: 'held back for a privacy review'
 	},
 	{
