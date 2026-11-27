@@ -106,9 +106,9 @@ class Conversation {
 			this.reader.releaseLock();
 			this.writer.releaseLock();
 		} catch {
-			// Already released.
+			// expected: already released.
 		}
-		await this.socket.close().catch(() => undefined);
+		await this.socket.close().catch(() => /* expected: the connection is ending either way */ undefined);
 	}
 }
 
@@ -156,7 +156,7 @@ export async function sendOverSmtp(
 		const body = dotStuff(raw);
 		await conversation.send(`${body.endsWith('\r\n') ? body.slice(0, -2) : body}\r\n.`);
 		await conversation.expect([250], 'Message');
-		await conversation.send('QUIT').catch(() => undefined);
+		await conversation.send('QUIT').catch(() => /* expected: the message was accepted; quitting politely is a courtesy */ undefined);
 	} finally {
 		await conversation.close();
 	}
