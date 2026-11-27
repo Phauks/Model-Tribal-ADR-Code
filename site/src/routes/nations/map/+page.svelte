@@ -8,7 +8,7 @@
 	import SearchableDropdown from '#lib/components/SearchableDropdown.svelte';
 	import LazySourceList from '#lib/components/LazySourceList.svelte';
 	import { mapViewChoices, mapViews } from '#lib/map-views.ts';
-	import TileMap, { storedBaseMap, storedOutlines, storedPlaceNames, tileMapPlaces, type TileMapCamera, type TileMapFeature, type TileMapLayers } from '#lib/components/TileMap.svelte';
+	import TileMap, { storedBaseMap, storedPlaceNames, tileMapPlaces, type TileMapCamera, type TileMapFeature, type TileMapLayers, type TileMapPadding } from '#lib/components/TileMap.svelte';
 	import MapExplorer from '#lib/components/MapExplorer.svelte';
 	import Collapsible from '#lib/components/Collapsible.svelte';
 	import { readableDate } from '#lib/readable-date.ts';
@@ -61,7 +61,6 @@
 	/** The base map and its switches, which the Layers list sets and every map on the site remembers. */
 	let baseMap = $state(storedBaseMap());
 	let placeNames = $state(storedPlaceNames());
-	let outlines = $state(storedOutlines());
 
 	/**
 	 * The view whose table is under the map, whose drawn copy prints, and which the Download menu offers: the land's coloring if it has one, then States, Nations' land or the regions, whichever is on first.
@@ -511,6 +510,7 @@
 
 	/** Closing the details leaves the place out of the address. */
 	async function closeDetails(key: NationsMapView): Promise<void> {
+		tileMap?.clearFound();
 		preview = undefined;
 		chosenFeature = undefined;
 		const search = new URLSearchParams(location.search);
@@ -553,12 +553,41 @@
 		...goToStates.map((name) => ({ value: `place:${name}`, label: name, group: 'States' })),
 		...[...nationIndex.values()].sort((first, second) => first.name.localeCompare(second.name, 'en')).map((nation) => ({ value: `nation:${nation.id}`, label: nation.name, group: 'Nations' }))
 	]);
-	function onSearch(value: string): void {
-		if (value.startsWith('place:')) tileMap?.showPlace(value.slice('place:'.length));
-		else if (value.startsWith('nation:')) void select(value);
+	/**
+	 * What the map's search found: the map goes to it and marks it, and a nation or state opens its details beside it (Trevor, 2026-11-27: finding a nation did not mark it or go to it). A place with no details closes any that were open.
+	 */
+	async function onSearch(value: string): Promise<void> {
+		const name = value.slice(value.indexOf(':') + 1);
+		const state = value.startsWith('place:') ? data.stateRows.find((row) => row.name === name) : undefined;
+		if (value.startsWith('nation:')) await select(value);
+		else if (state) await select(`state-${state.code}`);
+		else {
+			preview = undefined;
+			chosenFeature = undefined;
+			if (location.hash) history.replaceState(history.state, '', `${location.pathname}${location.search}`);
+			await tick();
+		}
+		const padding = roomOnMap();
+		if (value.startsWith('nation:')) tileMap?.showNation(name, padding);
+		else tileMap?.showPlace(name, padding);
 	}
 
-	let tileHolder = $state<HTMLElement | undefined>();
+	/** The room the controls floating on the map take, so what the search found is not under them. */
+	function roomOnMap(): TileMapPadding {
+		const frame = document.querySelector<HTMLElement>('.live-frame')?.getBoundingClientRect();
+		if (!frame) return 48;
+		const edge = (selector: string, side: 'bottom' | 'top' | 'left') => {
+			const box = document.querySelector<HTMLElement>(`.live-frame ${selector}`)?.getBoundingClientRect();
+			if (!box || box.width === 0) return 0;
+			return side === 'bottom' ? box.bottom - frame.top : side === 'top' ? frame.bottom - box.top : frame.right - box.left;
+		};
+		return {
+			top: Math.max(24, edge('.explorer-top', 'bottom')) + 16,
+			bottom: Math.max(24, edge('.explorer-timeline', 'top')) + 16,
+			left: 24,
+			right: Math.max(72, edge('.explorer-details', 'left')) + 16
+		};
+	}
 
 	/** The folded table's heading under the map, and its number of rows. */
 	function tableHeading(key: NationsMapView): string {
@@ -593,13 +622,6 @@
 			.filter(Boolean)
 			.join(', ') || 'Base map'
 	);
-
-	/** Puts the tiled map into the view on screen. */
-	function placeTileMap(key: NationsMapView) {
-		return (node: HTMLElement) => {
-			if (key === current && tileHolder && tileHolder.parentElement !== node) node.prepend(tileHolder);
-		};
-	}
 
 	/** A place on the drawn map is a link to its row; it opens the preview instead. */
 	function onDrawnClick(event: MouseEvent): void {
@@ -669,6 +691,64 @@
 	<h1>Map of Native Nations</h1>
 </div>
 
+<!--
+	The one tiled map, with its controls floating on it, stays in one frame above the views, so turning a layer on or off, which can change the table under the map, never moves or rebuilds the map (Trevor, 2026-11-27). Each view keeps its own drawn map below, for print and for where the tiled map cannot start.
+-->
+{#if tileMapWanted}
+	<div class="map-frame explorer-frame live-frame no-print" data-map-full-screen>
+		<div class="map-drawing" class:tiled={tileMapReady} class:waiting={!tileMapReady}>
+			<p class="map-loading small muted" aria-hidden="true">Loading the map…</p>
+			<div class="tile-holder">
+				<TileMap
+					bind:this={tileMap}
+					view={isShadedMapView(colorBy) ? colorBy : 'lands'}
+					label={mapLabel}
+					bind:shape={mapShape}
+					bind:camera={tileMapCamera}
+					onselect={(anchor) => {
+						tileMap?.clearFound();
+						void select(anchor);
+					}}
+					{year}
+					bind:cessions={cessionsOn}
+					oncession={(royce) => void select(`cession-${royce}`)}
+					layerSwitches={layers}
+					onfeature={(feature) => void chooseFeature(feature)}
+					bind:baseMap
+					bind:placeNames
+					outlines={true}
+					onready={() => (tileMapReady = true)}
+					onfail={() => {
+						tileMapWanted = false;
+						tileMapReady = false;
+						tileMapProblem = 'The interactive map could not be loaded, so the drawn map is shown.';
+					}}
+				/>
+			</div>
+		</div>
+		{#if tileMapReady}
+			<div class="explorer">
+				<MapExplorer
+					bind:layers
+					bind:cessions={cessionsOn}
+					bind:colorBy
+					{colorChoices}
+					bind:baseMap
+					bind:placeNames
+					bind:year
+					first={firstYear}
+					last={lastYear}
+					marks={timelineMarks}
+					places={searchChoices}
+					onplace={(value) => void onSearch(value)}
+					key={explorerKey}
+					details={shownPreview ? explorerDetails : undefined}
+				/>
+			</div>
+		{/if}
+	</div>
+{/if}
+
 {#each views as view (view.key)}
 	<div
 		class="map-view"
@@ -680,7 +760,7 @@
 		aria-busy={view.key === current && pending !== undefined ? 'true' : undefined}
 	>
 		<h2 id={view.heading} class="view-heading">{view.label}</h2>
-		<figure class="map-figure" data-print-part="maps">
+		<figure class="map-figure" class:behind-live={tileMapWanted} data-print-part="maps">
 			<!-- Where the interactive map cannot start, the drawn map takes its place, with the view picker above it. -->
 			{#if !tileMapWanted}
 				<div class="map-toolbar no-print">
@@ -707,9 +787,8 @@
 				</div>
 			{/if}
 			<!-- The map is the page's main body, with its controls floating quietly on it (Trevor, 2026-11-26, map redesign D). The frame goes full screen with them. -->
-			<div class="map-frame" class:explorer-frame={tileMapWanted && view.key === current} data-map-full-screen>
-				<div class="map-drawing" {@attach placeTileMap(view.key)} class:tiled={tileMapReady && view.key === current} class:waiting={tileMapWanted && !tileMapReady && view.key === current} data-nations-map={view.key === 'states' ? '' : undefined}>
-					<p class="map-loading small muted" aria-hidden="true">Loading the map…</p>
+			<div class="map-frame">
+				<div class="map-drawing" data-nations-map={view.key === 'states' ? '' : undefined}>
 					<div class="drawn-map">
 					<ZoomableMap label={view.label} maximum={view.key === 'lands' ? 16 : 8}>
 						{#if view.key === 'lands' || isShadedMapView(view.key)}
@@ -731,27 +810,6 @@
 					</ZoomableMap>
 					</div>
 				</div>
-				{#if view.key === current && tileMapReady}
-					<div class="explorer no-print">
-						<MapExplorer
-							bind:layers
-							bind:cessions={cessionsOn}
-							bind:colorBy
-							{colorChoices}
-							bind:baseMap
-							bind:placeNames
-							bind:outlines
-							bind:year
-							first={firstYear}
-							last={lastYear}
-							marks={timelineMarks}
-							places={searchChoices}
-							onplace={onSearch}
-							key={explorerKey}
-							details={shownPreview ? explorerDetails : undefined}
-						/>
-					</div>
-				{/if}
 			</div>
 			<!-- The drawn map's key, for print and where the interactive map cannot start; on screen the key floats on the map. -->
 			{#if view.key === 'states' || view.key === 'lands' || (isShadedMapView(view.key) && shaded[view.key])}
@@ -886,35 +944,6 @@
 	</div>
 {/each}
 
-<!-- The one tiled map, moved into the view on screen, so changing what is shown keeps the map, its place and its tiles (Trevor, 2026-11-23). -->
-<div class="tile-map-home">
-	{#if tileMapWanted}
-		<div class="tile-holder" bind:this={tileHolder}>
-			<TileMap
-				bind:this={tileMap}
-				view={isShadedMapView(colorBy) ? colorBy : 'lands'}
-				label={mapLabel}
-				bind:shape={mapShape}
-				bind:camera={tileMapCamera}
-				onselect={(anchor) => void select(anchor)}
-				{year}
-				bind:cessions={cessionsOn}
-				oncession={(royce) => void select(`cession-${royce}`)}
-				layerSwitches={layers}
-				onfeature={(feature) => void chooseFeature(feature)}
-				bind:baseMap
-				bind:placeNames
-				bind:outlines
-				onready={() => (tileMapReady = true)}
-				onfail={() => {
-					tileMapWanted = false;
-					tileMapReady = false;
-					tileMapProblem = 'The interactive map could not be loaded, so the drawn map is shown.';
-				}}
-			/>
-		</div>
-	{/if}
-</div>
 <p class="visually-hidden" role="status">{tileMapProblem}</p>
 
 <!-- The key on the map lists only what is on (mockup D1). -->
@@ -1106,11 +1135,6 @@
 		}
 	}
 
-	/* Until the tiled map is moved into the view on screen, it is not shown. */
-	.tile-map-home {
-		display: none;
-	}
-
 	.map-loading {
 		display: none;
 		position: absolute;
@@ -1163,6 +1187,22 @@
 	.map-frame {
 		container: map-frame / inline-size;
 		position: relative;
+	}
+
+	.live-frame {
+		margin: var(--space-5) 0;
+	}
+
+	/* Without scripts there is no tiled map, so the drawn maps are the maps. */
+	:global(html:not([data-scripts='on'])) .live-frame {
+		display: none;
+	}
+
+	/* While the tiled map is wanted, each view's drawn map is kept for print only. */
+	@media screen {
+		:global(html[data-scripts='on']) .map-figure.behind-live {
+			display: none;
+		}
 	}
 
 	@media screen {

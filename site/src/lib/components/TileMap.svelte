@@ -56,6 +56,9 @@
 	/**
 	 * Places the map can go to by name. The states and territories are where they really are on the map, so the map page's Go to menu names each rather than drawing a box at its own scale (Trevor, 2026-11-22: every territory shown and named on its own). Bounds are west, south, east, north in degrees.
 	 */
+	/** Room to leave around what the map moves to, in pixels: one number for every side, or each side's own. */
+	export type TileMapPadding = number | { top: number; right: number; bottom: number; left: number };
+
 	export const tileMapPlaces: { name: string; bounds: [number, number, number, number] }[] = [
 		{ name: 'The 48 contiguous states', bounds: [-125, 24.4, -66.9, 49.4] },
 		{ name: 'Alaska', bounds: [-179.2, 51.2, -129.9, 71.4] },
@@ -216,7 +219,8 @@
 	$effect(() => {
 		writeStored(baseStorage, baseMap);
 		writeStored(placeNamesStorage, placeNames ? 'on' : 'off');
-		writeStored(outlinesStorage, outlines ? 'on' : 'off');
+		// The Map page has its own Nations' land switch and no outline switch, so it leaves the nation pages' choice alone.
+		if (!explorer) writeStored(outlinesStorage, outlines ? 'on' : 'off');
 	});
 	$effect(() => {
 		if (!cessionsAlways && ready) writeCessionsSwitch(cessions);
@@ -378,7 +382,8 @@
 			colors.classes[2]
 		];
 		const pointShade: ExpressionSpecification = ['match', ['get', 'group'], 'federal', colors.classes[4], 'state', colors.classes[3], colors.classes[2]];
-		const hovered = (color: ExpressionSpecification | string): ExpressionSpecification => ['case', ['boolean', ['feature-state', 'hover'], false], colors.focus, color];
+		// A shape under the pointer, or one the reader found with the map's search, takes the focus color.
+		const hovered = (color: ExpressionSpecification | string): ExpressionSpecification => ['case', ['any', ['boolean', ['feature-state', 'hover'], false], ['boolean', ['feature-state', 'found'], false]], colors.focus, color];
 		/** Each category's pattern over its areas' shade (src/lib/map-shapes.ts): stripes, dots and a grid, the darkest shade solid, so no area rests on its shade alone. `shadeOf` gives each area's shade, 0 to 4. */
 		const patternOver = (id: string, from: { source: string; 'source-layer'?: string; filter?: FilterSpecification }, shadeOf: ExpressionSpecification): LayerSpecification => ({
 			id,
@@ -495,11 +500,13 @@
 				? ['match', ['to-string', ['get', 'code']], ...entries.flatMap(([code, area]) => [code, colors.classes[area.shade]]), colors.classes[0]]
 				: colors.classes[0]) as unknown as ExpressionSpecification;
 			const dotShade = ['match', ['get', 'shade'], 1, colors.classes[1], 2, colors.classes[2], 3, colors.classes[3], colors.classes[4]] as unknown as ExpressionSpecification;
-			fills.push({ id: 'land-areas', type: 'fill', source: 'places', 'source-layer': 'land-areas', paint: { 'fill-color': hovered(areaShade), 'fill-opacity': 0.85 } });
+			// A past year shows the areas as the Census Bureau drew them that year, colored by the facts recorded today (Trevor, 2026-11-27: the coloring ignored the timeline).
+			const thatYear: { filter?: FilterSpecification } = inCensusYear ? { filter: inCensusYear } : {};
+			fills.push({ id: 'land-areas', type: 'fill', source: landSource, 'source-layer': 'land-areas', ...thatYear, paint: { 'fill-color': hovered(areaShade), 'fill-opacity': 0.85 } });
 			const areaShadeNumber = (entries.length > 0 ? ['match', ['to-string', ['get', 'code']], ...entries.flatMap(([code, area]) => [code, area.shade]), 0] : ['literal', 0]) as unknown as ExpressionSpecification;
-			fills.push(patternOver('land-areas-patterns', { source: 'places', 'source-layer': 'land-areas' }, areaShadeNumber));
+			fills.push(patternOver('land-areas-patterns', { source: landSource, 'source-layer': 'land-areas', ...thatYear }, areaShadeNumber));
 			tops.push(
-				{ id: 'land-areas-lines', type: 'line', source: 'places', 'source-layer': 'land-areas', paint: { 'line-color': colors.line, 'line-width': ['interpolate', ['linear'], ['zoom'], 3, 0.4, 10, 1.4] } },
+				{ id: 'land-areas-lines', type: 'line', source: landSource, 'source-layer': 'land-areas', ...thatYear, paint: { 'line-color': colors.line, 'line-width': ['interpolate', ['linear'], ['zoom'], 3, 0.4, 10, 1.4] } },
 				// Each small area's dot takes its category's shape as well as its shade (src/lib/map-shapes.ts), so no reader has to tell the shades apart.
 				{
 					id: 'area-dots',
@@ -874,18 +881,61 @@
 		else location.hash = anchor;
 	}
 
-	/** Moves the map to one of the places in tileMapPlaces, by name; the map page's Go to menu calls it. */
-	export function showPlace(name: string): void {
+	/**
+	 * The shapes the reader found with the map's search: a state, or a nation's land areas and office. They keep the focus color until the reader finds something else or closes the details (Trevor, 2026-11-27: finding a nation should mark it and go to it).
+	 */
+	type FoundShape = { source: string; sourceLayer?: string; id: string | number };
+	let found: FoundShape[] = [];
+	function markFound(shapes: FoundShape[]): void {
+		for (const shape of found) if (map?.getSource(shape.source)) map.setFeatureState(shape, { found: false });
+		found = shapes;
+		markFoundAgain();
+	}
+	/** A redrawn map can drop a source and add it back, losing its marks, so they are set again after each redraw. */
+	function markFoundAgain(): void {
+		for (const shape of found) if (map?.getSource(shape.source)) map.setFeatureState(shape, { found: true });
+	}
+	/** Clears what the search found, as when the reader closes its details. */
+	export function clearFound(): void {
+		markFound([]);
+	}
+
+	/** Moves the map to one of the places in tileMapPlaces, or a state, by name; the map page's search calls it. A state is marked too. */
+	export function showPlace(name: string, padding: TileMapPadding = 24): void {
 		const place = tileMapPlaces.find((entry) => entry.name === name);
 		// The move takes its time from the motion tokens, so Reduce motion makes it a jump (src/lib/motion.ts).
 		if (place) {
-			map?.fitBounds(place.bounds, { padding: 24, maxZoom: 10, duration: motionDuration('long'), easing: motionEasing('standard') });
+			markFound([]);
+			map?.fitBounds(place.bounds, { padding, maxZoom: 10, duration: motionDuration('long'), easing: motionEasing('standard') });
 			return;
 		}
 		// Every state is a place too, from the map's data.
 		void loadData().then((data) => {
-			const state = Object.values(data.states).find((entry) => 'name' in entry && entry.name === name);
-			if (state && 'bounds' in state && state.bounds) map?.fitBounds(state.bounds, { padding: 24, maxZoom: 10, duration: motionDuration('long'), easing: motionEasing('standard') });
+			const entry = Object.entries(data.states).find(([, state]) => 'name' in state && state.name === name);
+			if (!entry) return;
+			const [code, state] = entry;
+			markFound([{ source: 'places', sourceLayer: 'states', id: code }]);
+			if ('bounds' in state && state.bounds) map?.fitBounds(state.bounds, { padding, maxZoom: 10, duration: motionDuration('long'), easing: motionEasing('standard') });
+		});
+	}
+
+	/** Moves the map to a nation's land areas, or to its office if it has none, and marks them. The padding keeps them clear of what floats over the map. */
+	export function showNation(id: string, padding: TileMapPadding = 48): void {
+		void loadData().then((data) => {
+			const codes = new Set(data.nationAreas?.[id] ?? []);
+			const areas = data.areas.filter((area) => codes.has(area.code));
+			const officeIndex = (data.offices ?? []).findIndex((office) => office.nation === id);
+			markFound([
+				...areas.flatMap((area): FoundShape[] => [
+					{ source: 'places', sourceLayer: 'land-areas', id: area.code },
+					{ source: 'areas-by-year', sourceLayer: 'land-areas', id: area.code },
+					{ source: 'area-points', id: Number(area.code) }
+				]),
+				...(officeIndex === -1 ? [] : [{ source: 'offices', id: officeIndex }])
+			]);
+			const moving = { padding, duration: motionDuration('long'), easing: motionEasing('standard') };
+			if (areas.length > 0) map?.fitBounds(boundsOfAreas(areas), { ...moving, maxZoom: 10 });
+			else if (officeIndex !== -1) map?.flyTo({ center: data.offices[officeIndex].point, zoom: 8, padding: typeof padding === 'number' ? { top: padding, right: padding, bottom: padding, left: padding } : padding, duration: moving.duration, easing: moving.easing });
 		});
 	}
 
@@ -1187,7 +1237,9 @@
 
 				// The map follows the site's theme: the sun and moon button sets data-theme, and without it the system setting decides.
 				const restyle = async () => {
-					if (map) map.setStyle(await styleFor(data));
+					if (!map) return;
+					map.setStyle(await styleFor(data));
+					markFoundAgain();
 				};
 				restyleMap = restyle;
 				const themeWatcher = new MutationObserver(() => void restyle());

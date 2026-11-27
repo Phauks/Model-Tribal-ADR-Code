@@ -48,7 +48,6 @@
 		colorChoices,
 		baseMap = $bindable(),
 		placeNames = $bindable(),
-		outlines = $bindable(),
 		year = $bindable(),
 		first,
 		last,
@@ -66,7 +65,6 @@
 		colorChoices: SearchableChoice<string>[];
 		baseMap: TileMapBase;
 		placeNames: boolean;
-		outlines: boolean;
 		/** The timeline's year; undefined is Today. */
 		year: number | undefined;
 		first: number;
@@ -85,6 +83,8 @@
 	const identifier = $props.id();
 	const isOn = (layer: MapExplorerLayer['key']) => (layer === 'cessions' ? cessions : layers[layer]);
 	function setOn(layer: MapExplorerLayer['key'], on: boolean): void {
+		// A layer the reader sets is theirs, even one the timeline turned on.
+		if (layer === 'borders') bordersByTimeline = false;
 		if (layer === 'cessions') cessions = on;
 		else layers = { ...layers, [layer]: on };
 	}
@@ -127,10 +127,22 @@
 		return kept;
 	});
 	const tickYears = $derived([first, 1830, 1880, 1930, 1980, last].filter((value, index, all) => value >= first && value <= last && all.indexOf(value) === index));
-	/** Dragging back in time turns on the borders of that time, as the mockup's note says. */
+	/**
+	 * Dragging back in time turns on the borders of that time, as the mockup's note says. Back at Today they go off again if the timeline turned them on, so the timeline never leaves a layer on that the reader did not choose (Trevor, 2026-11-27: settings overriding each other).
+	 */
+	let bordersByTimeline = false;
 	function moveTo(value: number): void {
 		year = value >= last ? undefined : value;
-		if (year !== undefined && !layers.borders) layers = { ...layers, borders: true };
+		if (year !== undefined && !layers.borders) {
+			layers = { ...layers, borders: true };
+			bordersByTimeline = true;
+		}
+		if (year === undefined) backToToday();
+	}
+	function backToToday(): void {
+		year = undefined;
+		if (bordersByTimeline && layers.borders) layers = { ...layers, borders: false };
+		bordersByTimeline = false;
 	}
 
 	/** Play steps through the years in which the map changes, from where the slider is (or the start) to Today. */
@@ -152,7 +164,7 @@
 			index += 1;
 			if (index >= steps.length) {
 				stop();
-				year = undefined;
+				backToToday();
 				return;
 			}
 			moveTo(steps[index]);
@@ -237,9 +249,6 @@
 		{#if baseMap !== 'map'}
 			<label class="explorer-layer"><input type="checkbox" bind:checked={placeNames} /><span class="explorer-layer-words">Place names and roads</span></label>
 		{/if}
-		{#if layers.lands}
-			<label class="explorer-layer"><input type="checkbox" bind:checked={outlines} /><span class="explorer-layer-words">Land area outlines</span></label>
-		{/if}
 	</fieldset>
 </div>
 
@@ -288,7 +297,7 @@
 	</div>
 	<button type="button" class="map-control map-float explorer-flat" aria-pressed={year === undefined} onclick={() => {
 		stop();
-		year = undefined;
+		backToToday();
 	}}>
 		{#if year === undefined}<Check class="map-control-check" aria-hidden="true" size={18} strokeWidth={2.5} />{/if}Today
 	</button>
