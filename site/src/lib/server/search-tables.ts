@@ -24,6 +24,7 @@ import type { D1Database, D1PreparedStatement } from '@cloudflare/workers-types/
 import { documentResult, panelResult, resultGroups, type PanelAnswer, type PanelResult, type ResultGroup } from '../search-everything.ts';
 import type { SearchRecords } from '../search-records.ts';
 import { prepare, wordsOf, type SearchEntry, type SearchKind } from '../site-search.ts';
+import { restrictionStamp, restrictionStampSql, type RestrictionStampRow } from './restriction-stamp.ts';
 import { foldForSearch } from '../tables/table-definition.ts';
 
 /** Kinds of name, in the order the device tries them, and what each takes off the score. */
@@ -161,9 +162,17 @@ function wordStarts(count: number): string {
  * keep the index's order, as searchEntries does.
  */
 export async function querySearchTables(database: D1Database, query: string, perGroup: number): Promise<PanelAnswer> {
+	const search = searchStatements(database, query, perGroup);
+	return search.read(search.statements.length > 0 ? await database.batch<SearchRow>(search.statements) : []);
+}
+
+type SearchRow = { kind?: SearchKind; result: string; rank?: number; shown?: string | null; total: number };
+
+/** The statements that search the tables for the words typed, and how to read their rows as the panel's answer. */
+function searchStatements(database: D1Database, query: string, perGroup: number): { statements: D1PreparedStatement[]; read: (results: { results: SearchRow[] }[]) => PanelAnswer } {
 	const words = wordsOf(query).slice(0, mostWords);
 	const documentWords = foldForSearch(query.trim()).split(/\s+/).filter(Boolean).slice(0, mostWords);
-	if (words.length === 0) return { total: 0, groups: [] };
+	if (words.length === 0) return { statements: [], read: () => ({ total: 0, groups: [] }) };
 	const phrase = words.join(' ');
 	const count = words.length;
 	const phraseParameter = `?${count + 1}`;
@@ -196,12 +205,16 @@ export async function querySearchTables(database: D1Database, query: string, per
 		SELECT result, total FROM (
 			SELECT result, position, COUNT(*) OVER () AS total FROM site_search_documents WHERE ${containsAll('words', documentWords.length)}
 		) ORDER BY position LIMIT ?${documentWords.length + 1}`;
-	const [entryRows, documentRows] = await database.batch<{ kind?: SearchKind; result: string; rank?: number; shown?: string | null; total: number }>([
+	const statements = [
 		database.prepare(entriesSql).bind(...words, phrase, perGroup),
 		documentWords.length > 0 ? database.prepare(documentsSql).bind(...documentWords, perGroup) : database.prepare('SELECT 1 AS result, 0 AS total WHERE 0')
-	]);
+	];
+	return { statements, read: ([entryRows, documentRows]) => panelAnswerFrom(entryRows.results, documentRows.results) };
+}
+
+function panelAnswerFrom(entryRows: SearchRow[], documentRows: SearchRow[]): PanelAnswer {
 	const found = new Map<ResultGroup, { count: number; results: PanelResult[] }>();
-	for (const row of entryRows.results) {
+	for (const row of entryRows) {
 		const group = row.kind as ResultGroup;
 		const result = JSON.parse(row.result) as PanelResult;
 		if (row.rank === otherNameRank && row.shown) result.matchedName = row.shown;
@@ -210,12 +223,37 @@ export async function querySearchTables(database: D1Database, query: string, per
 		list.results.push(result);
 		found.set(group, list);
 	}
-	if (documentRows.results.length > 0) {
-		found.set('document', { count: documentRows.results[0].total, results: documentRows.results.map((row) => JSON.parse(row.result) as PanelResult) });
+	if (documentRows.length > 0) {
+		found.set('document', { count: documentRows[0].total, results: documentRows.map((row) => JSON.parse(row.result) as PanelResult) });
 	}
 	const groups = resultGroups.flatMap((group) => {
 		const list = found.get(group);
 		return list ? [{ group, ...list }] : [];
 	});
 	return { total: groups.reduce((total, group) => total + group.count, 0), groups };
+}
+
+/**
+ * The panel's answer, if the tables hold this build's index and the
+ * restrictions in force, in one trip to the database: the restrictions'
+ * stamp, the tables' key and the search go in one batch, and the search's
+ * rows are used only when the key matches. Otherwise the answer is the
+ * restrictions' stamp, for filling the tables.
+ */
+export async function answerWhenReady(
+	database: D1Database,
+	indexVersion: string,
+	query: string,
+	perGroup: number
+): Promise<{ ready: true; answer: PanelAnswer } | { ready: false; stamp: string | undefined }> {
+	const search = searchStatements(database, query, perGroup);
+	const [stampRows, keyRows, ...searchRows] = await database.batch<Record<string, unknown>>([
+		database.prepare(restrictionStampSql),
+		database.prepare("SELECT value FROM site_search_state WHERE name = 'key'"),
+		...search.statements
+	]);
+	const stamp = restrictionStamp(stampRows.results[0] as unknown as RestrictionStampRow | undefined);
+	const key = keyRows.results[0]?.value;
+	if (key !== searchTablesKey(indexVersion, stamp)) return { ready: false, stamp };
+	return { ready: true, answer: search.read(searchRows as unknown as { results: SearchRow[] }[]) };
 }

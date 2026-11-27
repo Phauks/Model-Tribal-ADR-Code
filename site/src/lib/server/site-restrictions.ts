@@ -13,10 +13,11 @@
  * out of view.
  */
 import type { D1Database } from '@cloudflare/workers-types/index.ts';
-import { publicCopies } from 'virtual:public-copies';
 import { readSettings, type RestrictionSettings } from '../nation-restrictions.ts';
 import type { SiteRestrictions } from '../restricted-files.ts';
+import { restrictableCopies } from './copy-list.ts';
 import { gatherRestrictions, restrictableList } from './nation-restrictions.ts';
+import { restrictionStamp, restrictionStampSql, type RestrictionStampRow } from './restriction-stamp.ts';
 
 type Assets = { fetch: (input: string) => Promise<Response> };
 
@@ -53,11 +54,10 @@ export async function siteRestrictions(database: D1Database | undefined, assets:
 	if (!database) return undefined;
 	let stamp: string;
 	try {
-		const row = await database
-			.prepare('SELECT COUNT(*) AS saves, MAX(made_at) AS latest FROM nation_restriction_changes')
-			.first<{ saves: number; latest: string | null }>();
-		if (!row || !row.saves) return undefined;
-		stamp = `${row.saves}-${row.latest ?? ''}`;
+		const row = await database.prepare(restrictionStampSql).first<RestrictionStampRow>();
+		const read = restrictionStamp(row);
+		if (!read) return undefined;
+		stamp = read;
 	} catch (problem) {
 		console.error('Nation restrictions could not be read', problem);
 		return undefined;
@@ -65,7 +65,7 @@ export async function siteRestrictions(database: D1Database | undefined, assets:
 	if (cached?.stamp !== stamp) {
 		const url = new URL(origin);
 		const value = allSettings(database)
-			.then((settings) => gatherRestrictions(settings, (nation) => restrictableList(nation, url, fetch, assets), publicCopies, stamp))
+			.then(async (settings) => gatherRestrictions(settings, (nation) => restrictableList(nation, url, fetch, assets), await restrictableCopies(), stamp))
 			.catch((problem) => {
 				console.error('Nation restrictions could not be gathered', problem);
 				cached = undefined;

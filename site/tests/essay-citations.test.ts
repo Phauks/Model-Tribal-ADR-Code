@@ -1,4 +1,5 @@
 import { describe, expect, it, vi } from 'vitest';
+import { essayRecordFiles, fileNumber, spreadFilePath } from '#lib/built-files.ts';
 import { citationFileCount, citationFileNumber, citationFilePath, citationTextsPath, plainCitation } from '#lib/essay-citation-files.ts';
 
 const worker = vi.hoisted(() => ({ env: {} as Record<string, unknown> }));
@@ -27,8 +28,8 @@ function staticFiles() {
 			const address = new URL(request).pathname;
 			asked.push(address);
 			const body = files.get(address);
-			// Every one of the citation files is built, even an empty one.
-			if (body === undefined && address.startsWith('/page-data/essay-citations/')) return new Response('{}');
+			// Every one of a set of spread files is built, even an empty one.
+			if (body === undefined && address.startsWith('/page-data/')) return new Response('{}');
 			return body === undefined ? new Response('Not found', { status: 404 }) : new Response(body);
 		}
 	};
@@ -67,6 +68,23 @@ describe('reading citations in the Worker', () => {
 		worker.env.ASSETS = staticFiles();
 		const rendered = await renderWithCitations('# A\n\nOne [@worcester-v-georgia]. Two [@no-such-source].\n', library);
 		expect(rendered.sources.map((source) => source.html)).toEqual([citations['worcester-v-georgia'], 'no-such-source']);
+	});
+
+	it('draws a case box from its record, read with the citation', async () => {
+		const files = staticFiles();
+		worker.env.ASSETS = {
+			async fetch(request: string) {
+				const address = new URL(request).pathname;
+				if (address === spreadFilePath(essayRecordFiles, fileNumber('worcester-v-georgia', essayRecordFiles.count))) {
+					return new Response(JSON.stringify({ 'worcester-v-georgia': { caseFacts: [['Decided', 'March 3, 1832']], link: '/cases/worcester-v-georgia' } }));
+				}
+				return files.fetch(request);
+			}
+		};
+		const rendered = await renderWithCitations('# A\n\n:::: case worcester-v-georgia\n::::\n', library);
+		expect(rendered.html).toContain('March 3, 1832');
+		expect(rendered.html).toContain('/cases/worcester-v-georgia');
+		expect(rendered.html).toContain('Worcester v. Georgia');
 	});
 
 	it('gives every source as plain text for the editor', async () => {

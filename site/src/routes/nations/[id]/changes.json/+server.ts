@@ -9,8 +9,8 @@
  * (src/lib/nation-restrictions.ts).
  */
 import { error, json } from '@sveltejs/kit';
-import { publicCopies } from 'virtual:public-copies';
 import { reviewSubjects } from 'virtual:review-subjects';
+import { restrictableCopyMap } from '#lib/server/copy-list.ts';
 import { workerEnvironment } from '#lib/server/environment.ts';
 import { liveChanges } from '#lib/server/nation-page-changes.ts';
 import { pageOverlay } from '#lib/server/nation-page-overlay.ts';
@@ -20,8 +20,6 @@ import { pageHistorySummary } from '#lib/server/page-history.ts';
 import type { RequestHandler } from './$types';
 
 export const prerender = false;
-
-const copies = new Map(publicCopies.map((copy) => [copy.key, copy]));
 
 export const GET: RequestHandler = async ({ params, url, fetch }) => {
 	if (!reviewSubjects.some((subject) => subject.kind === 'nation' && subject.identifier === params.id)) {
@@ -35,7 +33,7 @@ export const GET: RequestHandler = async ({ params, url, fetch }) => {
 				await liveChanges(database, params.id),
 				await claimOf(database, params.id),
 				await pageHistorySummary(database, `/nations/${params.id}`),
-				await nationPageRestrictions(database, params.id, () => restrictableList(params.id, url, fetch, environment.ASSETS), copies)
+				await nationPageRestrictions(database, params.id, () => restrictableList(params.id, url, fetch, environment.ASSETS), restrictableCopyMap)
 			)
 		: undefined;
 	return json(overlay ?? { stamp: null, slots: {} }, { headers: { 'Cache-Control': 'no-store' } });

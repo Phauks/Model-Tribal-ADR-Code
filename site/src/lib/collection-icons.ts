@@ -52,6 +52,7 @@ const collectionIcons: Record<string, Component> = {
 	'federal-register-notices': Newspaper,
 	'national-indian-gaming-commission': Dices,
 	'federal-acknowledgment': Stamp,
+	'solicitor-opinions': BookOpen,
 	'supreme-court-cases': Gavel,
 	'other-court-cases': Scale,
 	'state-court-opinions': Gavel,

@@ -46,12 +46,18 @@ export interface CopyRow {
 	removal: string;
 }
 
-/** The volumes of the Interior Board of Indian Appeals' reports each of its lists holds; the last has no end. */
+/**
+ * The volumes of the Interior Board of Indian Appeals' reports each of its
+ * lists holds, five to a list; the last has no end. Twenty volumes to a list
+ * made pages of 1,000 to 1,700 decisions and 3 to 5 MB, which the
+ * accessibility check could not finish in 90 seconds on a CI runner
+ * (Nov. 27, 2026); five make at most about 500.
+ */
+const boardVolumesPerList = 5;
+const boardVolumesListed = 70;
 const boardVolumeRanges: [number, number | undefined][] = [
-	[1, 20],
-	[21, 40],
-	[41, 60],
-	[61, undefined]
+	...Array.from({ length: boardVolumesListed / boardVolumesPerList }, (_, index): [number, number] => [index * boardVolumesPerList + 1, (index + 1) * boardVolumesPerList]),
+	[boardVolumesListed + 1, undefined]
 ];
 
 function boardSlug(first: number, last: number | undefined): string {
@@ -79,6 +85,7 @@ const fixedGroups: Record<string, string> = {
 	'federal-court-opinions': 'Lower federal court opinions',
 	'gaming-commission': 'National Indian Gaming Commission documents',
 	acknowledgment: 'Federal acknowledgment documents',
+	'solicitor-opinions': 'Solicitor’s opinions',
 	'other-federal': 'Other federal documents',
 	// Published state and territorial court opinions (decision record 0060).
 	'state-court-opinions': 'State court opinions',
@@ -125,6 +132,7 @@ function groupOf(copy: PublicCopy, names: Map<string, string>): string {
 	if (copy.topic === 'federal-register') return 'federal-register';
 	if (copy.topic === 'nigc') return 'gaming-commission';
 	if (copy.topic === 'acknowledgment') return 'acknowledgment';
+	if (copy.topic === 'solicitor-opinions') return 'solicitor-opinions';
 	return 'other-federal';
 }
 
