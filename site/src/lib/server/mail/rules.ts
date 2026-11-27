@@ -68,6 +68,7 @@ function parseJson<T>(value: string): T[] {
 		const parsed = JSON.parse(value) as unknown;
 		return Array.isArray(parsed) ? (parsed as T[]) : [];
 	} catch {
+		// expected: a damaged stored list reads as empty.
 		return [];
 	}
 }

@@ -294,7 +294,7 @@ function loggedCommits(): LoggedCommit[] {
 		);
 		return parseNamedLog(log);
 	} catch {
-		// No git, as in some builds on a computer: changes are recorded without a summary.
+		// expected: no git, as in some builds on a computer: changes are recorded without a summary.
 		return [];
 	}
 }
