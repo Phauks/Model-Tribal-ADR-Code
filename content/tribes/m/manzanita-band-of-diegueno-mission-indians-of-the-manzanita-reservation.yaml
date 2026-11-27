@@ -11,6 +11,19 @@ recognition:
   verification: bulk-import
   as_of: '2026-01-30'
   locator: 91 Fed. Reg. 4104
+- type: federal
+  earliest_record: constitution
+  legal_basis: Constitution of the Manzanita Band of Diegueno Mission Indians of the Manzanita Reservation, California (approved by the Secretary of the Interior Sept. 15, 1976)
+  since: '1976-09-15'
+  source: constitution-manzanita-band-of-diegueno-mission-indians-of-the-manzanita-reservation-1976-text
+  document_version:
+    document: manzanita-band-of-diegueno-mission-indians-of-the-manzanita-reservation-constitution
+    version: 1976-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1976-09-15'
+  locator: 1976 constitution, as amended, approval certificate
+  note: The earliest record this site has found that shows the United States dealing with the nation as a federally recognized nation. The relationship may be older. The Secretary of the Interior approved the nation's constitution; the date is read from the approval certificate.
 states:
 - state: CA
   presence: government-office

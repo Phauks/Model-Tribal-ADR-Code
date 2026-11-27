@@ -1,0 +1,52 @@
+key: united-states-v-de-jordan-1949
+kind: federal-case
+citation:
+  type: legal_case
+  title: United States v. De Jordan
+  authority: United States District Court for the District of Minnesota
+  container-title: F. Supp.
+  volume: '86'
+  page: '770'
+  issued:
+    date-parts:
+    - - 1949
+      - 11
+      - 10
+  URL: https://static.case.law/f-supp/86/html/0770-01.html
+  accessed:
+    date-parts:
+    - - 2026
+      - 11
+      - 26
+original_link: https://static.case.law/f-supp/86/html/0770-01.html
+retrieved: '2026-11-26'
+archives: []
+history:
+  status: live
+  last_checked: '2026-11-26'
+rights:
+  status: no-permission-needed
+  basis: government-edict
+  basis_note: The text of a judicial opinion has no copyright (Georgia v. Public.Resource.Org, Inc., 590 U.S. 255 (2020)). The copy served on this site is the court's opinion only, without the publisher's headnotes, synopsis or other editorial matter (decision record 0060).
+  redistribution: true
+nations_in_case:
+  checked: '2026-11-26'
+  named: []
+jurisdictions:
+- level: federal
+topics:
+- federal-court-indian-law
+found_in:
+- 2026-11-26-federal-court-indian-law-opinions
+notes: Published at 86 F. Supp. 770. Decided by the United States District Court for the District of Minnesota on Nov. 10, 1949. Found by scripts/caselaw/state_court_opinions.py in the Caselaw Access Project's volumes, with an Indian law term score of 2; an AI reader read excerpts and judged it an Indian law case (Indian defendant, offense on Indian reservation, counsel).
+review:
+  status: unverified
+  by: scripts/caselaw/state_court_opinions.py
+  date: '2026-11-26'
+  checks:
+  - check: 'Indian law case: the term score and, below the score kept without a reading, an AI reader''s judgment of excerpts'
+    result: agree
+    detail: 'score 2; reader: Indian defendant, offense on Indian reservation, counsel'
+  - check: Nations named in the caption, matched to nation records by name
+    result: agree
+    detail: 0 matched, 0 not linked

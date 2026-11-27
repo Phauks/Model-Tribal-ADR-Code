@@ -146,46 +146,37 @@ a.term-link {
 }
 
 /*
- * Yellow focus with an ink ring (DESIGN.md, section 9). Text on the yellow
- * fill is the darkest token of each theme: ink in light, paper in dark.
+ * Keyboard focus is a 3 px teal ring set 2 px off the control, with no fill
+ * (DESIGN.md, section 9; focus F1, chosen by Trevor on Nov. 27, 2026, in place
+ * of the yellow box). The ring's color comes from --focus-ring, so a surface
+ * of another color can swap it: on the band it turns white (light) or stays
+ * cyan (dark), and the light panels that open from the band switch it back.
  */
 :root {
-	--focus-text: var(--color-ink);
+	--focus-ring: var(--color-focus-ring);
 }
 
-@media (prefers-color-scheme: dark) {
-	:root:not([data-theme='light']) {
-		--focus-text: var(--color-paper);
-	}
+.masthead {
+	--focus-ring: var(--color-focus-ring-on-band);
 }
 
-:root[data-theme='dark'] {
-	--focus-text: var(--color-paper);
+.masthead :is(dialog, [popover]:not(.masthead-more), .search-panel, .cite-panel, .download-panel, .account-menu) {
+	--focus-ring: var(--color-focus-ring);
 }
 
-:focus-visible,
-a:focus-visible,
-a:visited:focus-visible {
-	outline: 3px solid var(--color-focus-ring);
-	outline-offset: 0;
-	background-color: var(--color-focus);
-	color: var(--focus-text);
-	box-shadow: 0 0 0 3px var(--color-focus);
-	text-decoration: none;
+:focus-visible {
+	outline: 3px solid var(--focus-ring);
+	outline-offset: 2px;
 }
 
 /*
  * Elements that take focus only from a script or a skip link, such as the
- * main landmark and the error summary, are not controls: they keep their
- * own colors so the text inside them stays readable (WCAG 1.4.3). Table
- * boxes that scroll sideways take focus so a keyboard can scroll them
- * (WCAG 2.1.1); they show the ring without the yellow fill.
+ * main landmark and the error summary, are not controls, so they show no
+ * ring. Table boxes that scroll sideways take focus so a keyboard can scroll
+ * them (WCAG 2.1.1); their ring sits on the box's edge.
  */
-[tabindex='-1']:focus-visible,
 .table-scroll:focus-visible {
-	background-color: transparent;
-	color: inherit;
-	box-shadow: none;
+	outline-offset: 0;
 }
 
 [tabindex='-1']:focus-visible {
@@ -600,12 +591,6 @@ th[scope='row'] {
 	background: color-mix(in srgb, currentColor 14%, transparent);
 }
 
-/* The rule above would hide the focus fill, so restore it. */
-.icon-button:focus-visible {
-	background-color: var(--color-focus);
-	color: var(--focus-text);
-}
-
 @media (forced-colors: active) {
 	.icon-button:hover {
 		outline: 1px solid ButtonText;
@@ -784,14 +769,14 @@ sup.citation {
 .note-marker[data-arrived],
 .source-list > li[data-arrived] {
 	background: var(--color-notice-background);
-	outline: 2px solid var(--color-focus-ring);
+	outline: 2px solid var(--focus-ring);
 	outline-offset: 1px;
 	animation: arrived var(--motion-duration-highlight) var(--motion-easing-standard);
 }
 
 @keyframes arrived {
 	from {
-		background: var(--color-placeholder-background);
+		background: var(--color-selection);
 	}
 }
 
@@ -1396,7 +1381,7 @@ a.external::after {
 }
 
 .essay-figure-youtube:focus-visible {
-	outline: 3px solid var(--color-focus-ring);
+	outline: 3px solid var(--focus-ring);
 	outline-offset: 2px;
 }
 
@@ -1731,11 +1716,6 @@ a.external::after {
 	}
 }
 
-.copy-hash-button:focus-visible {
-	background-color: var(--color-focus);
-	color: var(--focus-text);
-}
-
 /* Copied: the hover shade deepens to the link color and glows, then fades back as a highlight does. */
 .copy-hash:not(.copy-hash-icon-only) .copy-hash-button {
 	transition:
@@ -1903,6 +1883,7 @@ a.external::after {
 	--motion-duration-medium: 0ms;
 	--motion-duration-long: 0ms;
 	--motion-duration-highlight: 0ms;
+	--motion-duration-roll: 0ms;
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -1911,6 +1892,7 @@ a.external::after {
 		--motion-duration-medium: 0ms;
 		--motion-duration-long: 0ms;
 		--motion-duration-highlight: 0ms;
+	--motion-duration-roll: 0ms;
 	}
 
 	*,
@@ -2457,7 +2439,7 @@ a.topic-badge:hover {
  * A nation's seal or logo is drawn for light paper, and many are black lines
  * on a clear ground, which vanish on the dark theme's paper. In dark mode the
  * image sits on a light plate (Trevor, Nov. 23, 2026: "yes, standard"), the
- * same wherever a seal shows: search, At a glance, link previews and the map.
+ * same wherever a seal shows: search, Key facts, link previews and the map.
  */
 @media (prefers-color-scheme: dark) {
 	:root:not([data-theme='light']) .image-backing {
@@ -2639,7 +2621,7 @@ a.topic-badge:hover {
 }
 
 .map-control:focus-visible {
-	outline: 3px solid var(--color-focus-ring);
+	outline: 3px solid var(--focus-ring);
 	outline-offset: 2px;
 }
 

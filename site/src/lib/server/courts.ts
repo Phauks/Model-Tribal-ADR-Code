@@ -222,7 +222,7 @@ export function courtPage(key: string): CourtPage {
   );
   const caseYears = yearSpan(court.cases.map((entry) => entry.decided));
 
-  uses.part("At a glance");
+  uses.part("Key facts");
   const cite = (section: string, text: string): CitationMark[] => {
     const marks: CitationMark[] = [];
     if (court.opinions.length > 0)
@@ -231,7 +231,7 @@ export function courtPage(key: string): CourtPage {
   };
   // The page's lead already says the court's kind, how many opinions and
   // cases name it and their years (routes/courts/[court]/+page.svelte), so
-  // At a glance keeps only what it does not: the nation, with its source, and
+  // Key facts keeps only what it does not: the nation, with its source, and
   // the reporters (Trevor chose this on Nov. 26, 2026; src/lib/info-page.ts).
   if (court.nations.length > 0)
     glance.push({

@@ -1,10 +1,12 @@
 <script lang="ts">
+	import { pageChangesLink } from '#lib/page-history.ts';
 	import { courtPagePath } from '#lib/court-pages.ts';
 	import Breadcrumbs from '#lib/components/Breadcrumbs.svelte';
 	import CitationMarks from '#lib/components/CitationMarks.svelte';
 	import DataTable from '#lib/components/DataTable.svelte';
 	import { readableDate } from '#lib/readable-date.ts';
 	import type { TableColumn, TableRow } from '#lib/tables/table-definition.ts';
+	import type { Snippet } from 'svelte';
 	import Collapsible from '#lib/components/Collapsible.svelte';
 	import ContactCard from '#lib/components/ContactCard.svelte';
 	import DocumentHistoryList from '#lib/components/DocumentHistoryList.svelte';
@@ -194,8 +196,8 @@
 
 <!--
 	A record page (site/DESIGN.md, "Record pages", "Nation pages"): the text on
-	the left, held to a readable line length, and beside it "At a glance" (the
-	seal, key facts and map) and the contacts. On a narrow screen "At a glance"
+	the left, held to a readable line length, and beside it "Key facts" (the
+	seal, key facts and map) and the contacts. On a narrow screen "Key facts"
 	comes right after the title, so the key facts come first.
 -->
 <RecordPage glance={!page.withdrawn && (data.glance.length > 0 || data.map || hasContacts) ? glance : undefined}>
@@ -209,13 +211,13 @@
 			</div>
 		{/if}
 
-		<!-- 1. Name. The nation's seal or logo heads At a glance (docs/official-images.md). -->
+		<!-- 1. Name. The nation's seal or logo heads Key facts (docs/official-images.md). -->
 		<h1>{page.officialName}</h1>
 	{/snippet}
 	{#snippet introduction()}
 		{#if !page.withdrawn}
 			<!-- Recognition badges (Trevor, Nov. 22, 2026; the full wording and legal basis
-			     are in At a glance), then who keeps the page, on the same line since both
+			     are in Key facts), then who keeps the page, on the same line since both
 			     are badges (Trevor, Nov. 23, 2026). The build always says "Unclaimed"; for
 			     a claimed page the Worker hides it and fills the status place with the
 			     claimed badge (src/lib/server/nation-page-overlay.ts). -->
@@ -243,7 +245,7 @@
 						>
 						<div class="status-panel">
 							<p class="muted">Nation pages show when they changed and which parts, never earlier wording.</p>
-							<p><a href="/changes?page={encodeURIComponent(`/nations/${page.id}`)}">See all changes to this page</a></p>
+							<p><a href={pageChangesLink(`/nations/${page.id}`)}>See all changes to this page</a></p>
 						</div>
 					</details>
 				</span>
@@ -446,7 +448,6 @@
 		{#if data.treaties.length > 0 || data.ties.length > 0 || data.programs.length > 0 || data.enforcement.length > 0}
 			<Collapsible heading="Treaties and federal ties" identifier="ties-heading">
 				{#if data.treaties.length > 0}
-					<h3 id="treaties-heading">Treaties</h3>
 					<DataTable
 						identifier="treaties"
 						label="Table: treaties"
@@ -456,6 +457,7 @@
 						rowName={['treaty', 'treaties']}
 						download="{data.page.id}-treaties"
 					>
+						{#snippet heading(count: Snippet)}<h3 id="treaties-heading">Treaties {@render count()}</h3>{/snippet}
 						{#snippet cell(row: TableRow, column: TableColumn)}
 							{#if column.key === 'treaty'}
 								<span class="treaty-cell"
@@ -468,7 +470,6 @@
 				{/if}
 				{#if data.ties.length > 0}<FactGroups groups={data.ties} />{/if}
 				{#if data.programs.length > 0}
-					<h3 id="federal-programs-heading">Self-governance and federal programs</h3>
 					<DataTable
 						identifier="federal-programs"
 						label="Table: self-governance and federal programs"
@@ -477,6 +478,7 @@
 						rowName={['program', 'programs']}
 						download="{data.page.id}-federal-programs"
 					>
+						{#snippet heading(count: Snippet)}<h3 id="federal-programs-heading">Self-governance and federal programs {@render count()}</h3>{/snippet}
 						{#snippet cell(row: TableRow, column: TableColumn)}
 							{#if column.key === 'program'}
 								<span class="program-cell"
@@ -489,7 +491,6 @@
 				{/if}
 				{#if data.enforcement.length > 0}
 					<!-- The Gaming Commission's enforcement actions, as a table (Trevor, Nov. 23, 2026). -->
-					<h3 id="enforcement-heading">Gaming Commission enforcement actions</h3>
 					<DataTable
 						identifier="enforcement-actions"
 						label="Table: Gaming Commission enforcement actions"
@@ -500,6 +501,7 @@
 						filters
 						download="{data.page.id}-enforcement-actions"
 					>
+						{#snippet heading(count: Snippet)}<h3 id="enforcement-heading">Gaming Commission enforcement actions {@render count()}</h3>{/snippet}
 						{#snippet cell(row: TableRow, column: TableColumn)}
 							{#if column.key === 'document'}
 								{#if row.cells.document.href}<a href={row.cells.document.href}>{row.cells.document.text}</a>{/if}
@@ -581,7 +583,7 @@
 					{#each data.neighbors as entry (entry.state)}
 						<h3 class="neighbors-state">{entry.stateName}</h3>
 						{#if entry.nations.length > 0}
-							<ul class="neighbors">
+							<ul class="neighbors stacked-list">
 								{#each entry.nations as nation (nation.id)}
 									<li><a href="/nations/{nation.id}">{nation.name}</a></li>
 								{/each}
@@ -617,7 +619,7 @@
 	<p class="empty-section">{empty.text}</p>
 {/snippet}
 
-<!-- 3. At a glance, with the seal and the map, then the contacts. -->
+<!-- 3. Key facts, with the seal and the map, then the contacts. -->
 {#snippet glance()}
 	{#if data.glance.length > 0 || data.map}
 		<!-- On a phone the first facts show and the rest, with the map, wait behind "Show all" (GlancePanel.svelte). -->
@@ -753,7 +755,7 @@
 		display: block;
 	}
 
-	/* Its rules keep clear of the floated At a glance column and contacts (RecordPage.svelte). */
+	/* Its rules keep clear of the floated Key facts column and contacts (RecordPage.svelte). */
 	.empty-section {
 		display: flow-root;
 		margin: 0 0 var(--space-5);
@@ -792,17 +794,13 @@
 		font-size: var(--font-size-body);
 	}
 
-	/* As many columns as fit, so the list spreads out under At a glance. */
+	/*
+	 * One nation per line, with the thin dashed rule of a stacked list between
+	 * them, so a long name never runs into the next (Trevor chose "one per
+	 * line, full width" on Nov. 27, 2026; design/nearby-nations). No bullets
+	 * (Trevor, Nov. 23, 2026).
+	 */
 	.neighbors {
-		columns: var(--layout-card-min);
-		column-gap: var(--space-5);
 		max-width: none;
-		/* Names in columns need no bullets (Trevor, Nov. 23, 2026). */
-		list-style: none;
-		padding-left: 0;
-	}
-
-	.neighbors li {
-		break-inside: avoid;
 	}
 </style>

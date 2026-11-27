@@ -994,16 +994,6 @@
 		cursor: pointer;
 	}
 
-	/* The overview and the rail take focus as sliders; they show the ring without the yellow fill, which would cover the drawing. */
-	.overview:focus-visible,
-	.rail:focus-visible {
-		background-color: transparent;
-		box-shadow: none;
-	}
-	.overview:focus-visible {
-		color: inherit;
-	}
-
 	.fill-treaty {
 		fill: var(--color-timeline-treaty);
 	}

@@ -11,6 +11,16 @@ recognition:
   verification: bulk-import
   as_of: '2026-01-30'
   locator: 91 Fed. Reg. 4103
+- type: federal
+  earliest_record: treaty
+  legal_basis: Treaty with the Six Nations, Oct. 22, 1784, 7 Stat. 15
+  since: '1784-10-22'
+  source: treaty-with-the-six-nations-1784
+  confidence: medium
+  verification: inferred
+  as_of: '1784-10-22'
+  locator: p. 5 (Treaty with the Six Nations, 1784; Kappler header "Oct. 22, 1784. | 7 Stat., 15.")
+  note: The earliest record this site has found that shows the United States dealing with the nation as a federally recognized nation. The relationship may be older. The treaty names the Cayuga; the nation's profile links it to the treaty by name, and the link has not yet been checked against a second source. 8 nations' profiles link this treaty.
 states:
 - state: NY
   presence: government-office

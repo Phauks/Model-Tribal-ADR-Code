@@ -321,11 +321,24 @@ function heldBackStateOpinions(): number {
 	return existsSync(file) ? Number((JSON.parse(readFileSync(file, 'utf8')) as { held_for_privacy_review?: number }).held_for_privacy_review ?? 0) : 0;
 }
 
-/** Court cases with a name, by the citation's authority, less the state court opinions, which are their own collection. */
+const federalOpinionTopic = 'federal-court-indian-law';
+const isFederalOpinion = (record: SourceRecord) => (record.topics ?? []).includes(federalOpinionTopic);
+
+/** Lower federal court opinions found by scripts/caselaw/state_court_opinions.py --courts federal, less those held for a privacy review. */
+const federalCourtOpinions = () =>
+	[...sources().values()].filter((record) => isFederalOpinion(record) && record.citation.title).map((record) => sourceItem(record, record.citation.authority));
+
+/** How many federal court opinions the script held for a privacy review (research/federal-court-opinions/summary.json). */
+function heldBackFederalOpinions(): number {
+	const file = path.join(repositoryRoot, 'research/federal-court-opinions/summary.json');
+	return existsSync(file) ? Number((JSON.parse(readFileSync(file, 'utf8')) as { held_for_privacy_review?: number }).held_for_privacy_review ?? 0) : 0;
+}
+
+/** Court cases with a name, by the citation's authority, less the state and federal court opinions, which are collections of their own. */
 function casesBy(test: (authority: string) => boolean): () => CollectionItem[] {
 	return () =>
 		[...sources().values()]
-			.filter((record) => typeOf(record) === 'legal_case' && record.citation.title && !isStateOpinion(record) && test(record.citation.authority ?? ''))
+			.filter((record) => typeOf(record) === 'legal_case' && record.citation.title && !isStateOpinion(record) && !isFederalOpinion(record) && test(record.citation.authority ?? ''))
 			.map((record) => sourceItem(record, record.citation.authority));
 }
 
@@ -358,6 +371,19 @@ function acknowledgmentDocuments(): CollectionItem[] {
 	return [...sources().values()]
 		.filter((record) => kindOf(record) === 'federal-agency-document' && record.citation.author?.some((author) => author.literal === acknowledgmentOffice))
 		.map((record) => sourceItem(record, (record.citation as { genre?: string }).genre));
+}
+
+const genreOf = (record: SourceRecord) => (record.citation as { genre?: string }).genre ?? '';
+
+/**
+ * Congress's own documents on Indian affairs, by genre (scripts/law/congressional_documents.py and scripts/law/crs_reports.py):
+ * each listed with its first committee, or for a Congressional Research Service product, the kind of product.
+ */
+function congressionalDocuments(test: (genre: string) => boolean): () => CollectionItem[] {
+	return () =>
+		[...sources().values()]
+			.filter((record) => kindOf(record) === 'congressional-document' && test(genreOf(record)))
+			.map((record) => sourceItem(record, genreOf(record).startsWith('CRS') ? genreOf(record) : record.legislative?.committees?.[0] ?? genreOf(record)));
 }
 
 const solicitorOffice = 'U.S. Department of the Interior, Office of the Solicitor';
@@ -484,6 +510,10 @@ export const collections: Collection[] = [
 	{ identifier: 'federal-acknowledgment', search: { group: 'law', label: 'Acknowledgment document' }, title: 'Federal Acknowledgment Petitions', group: 'Federal law', detailHeader: 'Kind', sourceKinds: ['federal-agency-document'], items: acknowledgmentDocuments },
 	{ identifier: 'solicitor-opinions', search: { group: 'law', label: 'Solicitor’s opinion' }, title: 'Solicitor’s Opinions', group: 'Federal law', detailHeader: 'Number', sourceKinds: ['federal-agency-document'], items: solicitorOpinions },
 	{ identifier: 'national-indian-gaming-commission', search: { group: 'law', label: 'Gaming Commission document' }, title: 'Gaming Commission Opinions and Actions', group: 'Federal law', detailHeader: 'Kind', sourceKinds: ['federal-agency-document'], items: gamingCommissionDocuments },
+	{ identifier: 'congressional-hearings', search: { group: 'law', label: 'Congressional hearing' }, title: 'Congressional Hearings', group: 'Federal law', detailHeader: 'Committee', sourceKinds: ['congressional-document'], items: congressionalDocuments((genre) => genre === 'Hearing') },
+	{ identifier: 'committee-reports', search: { group: 'law', label: 'Committee report' }, title: 'Committee Reports', group: 'Federal law', detailHeader: 'Committee', sourceKinds: ['congressional-document'], items: congressionalDocuments((genre) => genre === 'House report' || genre === 'Senate report') },
+	{ identifier: 'committee-prints', search: { group: 'law', label: 'Committee print' }, title: 'Committee Prints', group: 'Federal law', detailHeader: 'Committee', sourceKinds: ['congressional-document'], items: congressionalDocuments((genre) => genre === 'Committee print' || genre === 'Congressional document' || genre === 'House document' || genre === 'Senate document') },
+	{ identifier: 'congressional-research-service-reports', search: { group: 'law', label: 'Congressional Research Service product' }, title: 'Congressional Research Service Reports', group: 'Federal law', detailHeader: 'Kind', sourceKinds: ['congressional-document'], items: congressionalDocuments((genre) => genre.startsWith('CRS')) },
 	// Royce's land cessions (1899), each opening on the Map page at its year (historic maps, 2026-11-26).
 	{
 		identifier: 'land-cessions',
@@ -515,6 +545,15 @@ export const collections: Collection[] = [
 		title: 'Indian Claims Commission Decisions',
 		group: 'Courts and cases',
 		items: casesBy(claimsCommission)
+	},
+	{
+		identifier: 'federal-court-opinions', search: { group: 'case', label: 'Lower federal court opinion' },
+		title: 'Lower Federal Court Opinions',
+		group: 'Courts and cases',
+		detailHeader: 'Court',
+		items: federalCourtOpinions,
+		heldBack: heldBackFederalOpinions,
+		heldBackReason: 'held back for a privacy review'
 	},
 	{
 		identifier: 'state-court-opinions', search: { group: 'case', label: 'State court opinion' },

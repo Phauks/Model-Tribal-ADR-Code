@@ -1,0 +1,61 @@
+key: wyandotte-nation-v-national-indian-gaming-commission-2004
+kind: federal-case
+citation:
+  type: legal_case
+  title: Wyandotte Nation v. National Indian Gaming Commission
+  authority: United States Court of Appeals for the Tenth Circuit
+  container-title: F. App'x
+  volume: '99'
+  page: '836'
+  issued:
+    date-parts:
+    - - 2004
+      - 5
+      - 18
+  URL: https://static.case.law/f-appx/99/html/0836-01.html
+  accessed:
+    date-parts:
+    - - 2026
+      - 11
+      - 26
+original_link: https://static.case.law/f-appx/99/html/0836-01.html
+retrieved: '2026-11-26'
+archives: []
+history:
+  status: live
+  last_checked: '2026-11-26'
+rights:
+  status: no-permission-needed
+  basis: government-edict
+  basis_note: The text of a judicial opinion has no copyright (Georgia v. Public.Resource.Org, Inc., 590 U.S. 255 (2020)). The copy served on this site is the court's opinion only, without the publisher's headnotes, synopsis or other editorial matter (decision record 0060).
+  redistribution: true
+tribes:
+- wyandotte-nation
+nations_in_case:
+  checked: '2026-11-26'
+  named:
+  - nation: wyandotte-nation
+    named_as: Wyandotte Nation
+    role: party
+    note: Matched by the script to a name the nation record gives; not yet checked.
+  not_linked:
+  - named_as: Federally Recognized Indian Tribe
+    reason: No nation record matches this name; it may be a historical name or a group that is not a recognized nation today.
+jurisdictions:
+- level: federal
+topics:
+- federal-court-indian-law
+found_in:
+- 2026-11-26-federal-court-indian-law-opinions
+notes: Published at 99 F. App'x 836. Decided by the United States Court of Appeals for the Tenth Circuit on May 18, 2004. Found by scripts/caselaw/state_court_opinions.py in the Caselaw Access Project's volumes, with an Indian law term score of 2; an AI reader read excerpts and judged it an Indian law case (federally recognized tribe v. gaming commission).
+review:
+  status: unverified
+  by: scripts/caselaw/state_court_opinions.py
+  date: '2026-11-26'
+  checks:
+  - check: 'Indian law case: the term score and, below the score kept without a reading, an AI reader''s judgment of excerpts'
+    result: agree
+    detail: 'score 2; reader: federally recognized tribe v. gaming commission'
+  - check: Nations named in the caption, matched to nation records by name
+    result: missing
+    detail: 1 matched, 1 not linked

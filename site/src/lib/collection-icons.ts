@@ -58,6 +58,7 @@ const collectionIcons: Record<string, Component> = {
 	'solicitor-opinions': BookOpen,
 	'supreme-court-cases': Gavel,
 	'other-court-cases': Scale,
+	'federal-court-opinions': Gavel,
 	'state-court-opinions': Gavel,
 	'indian-claims-commission': Scroll,
 	'tribal-court-opinions': FileText,

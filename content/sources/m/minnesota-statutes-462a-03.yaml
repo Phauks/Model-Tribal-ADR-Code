@@ -1,0 +1,50 @@
+key: minnesota-statutes-462a-03
+kind: state-statute
+citation:
+  type: legislation
+  title: Definitions
+  title-short: Minn. Stat. § 462A.03
+  container-title: Minnesota Statutes
+  container-title-short: Minn. Stat.
+  section: 462A.03
+  author:
+  - literal: Minnesota Office of the Revisor of Statutes
+  issued:
+    date-parts:
+    - - 1971
+  URL: https://www.revisor.mn.gov/statutes/cite/462A.03
+  accessed:
+    date-parts:
+    - - 2026
+      - 11
+      - 27
+original_link: https://www.revisor.mn.gov/statutes/cite/462A.03
+retrieved: '2026-11-27'
+archives: []
+history:
+  status: live
+  last_checked: '2026-11-27'
+state_law:
+  relevance: incidental
+  citation: Minn. Stat. § 462A.03 (2026)
+rights:
+  status: no-permission-needed
+  basis: government-edict
+  basis_note: 'Official state statutes are not copyrightable under the government edicts doctrine (Georgia v. Public.Resource.Org, Inc., 590 U.S. 255 (2020)). Linked, not served: state statutes stay link only.'
+  redistribution: false
+jurisdictions:
+- level: state
+  state: MN
+topics:
+- state-indian-law
+found_in:
+- 2026-11-27-state-statutes-third-batch
+notes: 'Indigo Book citation: Minn. Stat. § 462A.03 (2026). History: 1971 c 702 s 3; 1973 c 501 s 15; 1973 c 515 s 2 -10; 1974 c 441 s 4 -6; 1976 c 218 s 2 -6; 1976 c 254 s 1; 1977 c 401 s 2,3; 1981 c 306 s 3; 1982 c 581 s 24; 1983 c 185 s 1; 1984 c 640 s 32; 1984 c 654 art 5 s 58; 1Sp1985 c 13 s 333; 1986 c 465 art 2 s 10; 1987 c 350 s 1; 1988 c 542 s 1; 1989 c 270 s 1; 1989 c 328 art 1 s 3; 1991 c 292 art 6 s 52; art 9 s 15-18; 1992 c 522 s 24; 1Sp1993 c 1 art 9 s 74; 1997 c 7 art 5 s 36; 1Sp2001 c 4 art 4 s 2 -5; 2002 c 221 s 45; 1Sp2003 c 14 art 6 s 67; 2004 c 263 s 19; 2005 c 56 s 1; 2013 c 59 art 2 s 16; 1Sp2020 c 2 art 6 s 123; 2022 c 55 art 3 s 1; 2024 c 79 art 10 s 2. Text read from the Minnesota Revisor of Statutes'' full-text chapter page for the section (revisor.mn.gov/statutes) on Nov. 27, 2026. Found by the state statutes sweep (terms: american indian; indian tribe; indian; tribal; tribe); AI reader''s verdict incidental: Defines American Indian for housing finance purposes. Unverified.'
+review:
+  status: unverified
+  by: scripts/law/state_statutes/run.py
+  date: '2026-11-27'
+  checks:
+  - check: 'Indian law section: the sweep''s keyword pass and an AI reader''s verdict (core, incidental or none)'
+    result: agree
+    detail: 'incidental; terms: american indian; indian tribe; indian; tribal; tribe'

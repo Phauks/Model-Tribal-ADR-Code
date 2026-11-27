@@ -631,7 +631,7 @@
 	textarea:focus-visible {
 		background: var(--color-surface-raised);
 		color: var(--color-ink);
-		outline: 3px solid var(--color-focus-ring);
+		outline: 3px solid var(--focus-ring);
 		outline-offset: 1px;
 	}
 

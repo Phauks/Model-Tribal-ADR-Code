@@ -4,7 +4,7 @@
 	that nation pages list, each with how many nations take part as far as the
 	project's lists show (Trevor, Nov. 26, 2026: each program on a nation page
 	opens a page about it). The self-governance compacts come first, as in
-	each nation's At a glance.
+	each nation's Key facts.
 -->
 <script lang="ts">
 	import Breadcrumbs from '#lib/components/Breadcrumbs.svelte';

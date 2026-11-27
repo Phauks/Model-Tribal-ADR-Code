@@ -11,6 +11,16 @@ recognition:
   verification: bulk-import
   as_of: '2026-01-30'
   locator: 91 Fed. Reg. 4105
+- type: federal
+  earliest_record: treaty
+  legal_basis: Treaty with the Winnebago, June 3, 1816, 7 Stat. 144
+  since: '1816-06-03'
+  source: treaty-with-the-winnebago
+  confidence: medium
+  verification: inferred
+  as_of: '1816-06-03'
+  locator: page not determined (Treaty with the Winnebago, 1816; Kappler header "June 3, 1816. | 7 Stat., 144. | Proclamation, Dec. 30, 1816.")
+  note: The earliest record this site has found that shows the United States dealing with the nation as a federally recognized nation. The relationship may be older. The treaty names the Winnebago; the nation's profile links it to the treaty by name, and the link has not yet been checked against a second source. 2 nations' profiles link this treaty.
 states:
 - state: NE
   presence: government-office

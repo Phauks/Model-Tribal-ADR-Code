@@ -1,0 +1,50 @@
+key: kansas-statutes-annotated-79-3408c
+kind: state-statute
+citation:
+  type: legislation
+  title: Fuel owned on date rate of tax changed; inventory tax or refund; native American licensed retailer exempt, when
+  title-short: Kan. Stat. Ann. § 79-3408c
+  container-title: Kansas Statutes Annotated
+  container-title-short: Kan. Stat. Ann.
+  section: 79-3408c
+  author:
+  - literal: Kansas Office of Revisor of Statutes
+  issued:
+    date-parts:
+    - - 1969
+  URL: https://ksrevisor.gov/statutes/chapters/ch79/079_034_0008c.html
+  accessed:
+    date-parts:
+    - - 2026
+      - 11
+      - 27
+original_link: https://ksrevisor.gov/statutes/chapters/ch79/079_034_0008c.html
+retrieved: '2026-11-27'
+archives: []
+history:
+  status: live
+  last_checked: '2026-11-27'
+state_law:
+  relevance: core
+  citation: Kan. Stat. Ann. § 79-3408c (2025)
+rights:
+  status: no-permission-needed
+  basis: government-edict
+  basis_note: 'Official state statutes are not copyrightable under the government edicts doctrine (Georgia v. Public.Resource.Org, Inc., 590 U.S. 255 (2020)). Linked, not served: state statutes stay link only.'
+  redistribution: false
+jurisdictions:
+- level: state
+  state: KS
+topics:
+- state-indian-law
+found_in:
+- 2026-11-27-state-statutes-third-batch
+notes: 'Indigo Book citation: Kan. Stat. Ann. § 79-3408c (2025). History: L. 1969, ch. 462, § 2; L. 1976, ch. 426, § 2; L. 1983, ch. 320, § 2; L. 1989, ch. 209, § 32; L. 1992, ch. 106, § 11; L. 1995, ch. 262, § 31; L. 1998, ch. 96, § 3; L. 1999, ch. 137, § 28; L. 2001, ch. 5, § 453; July 1. Text read from the Kansas Revisor of Statutes'' page for the section in the Kansas Statutes Annotated (ksrevisor.gov/statutes) on Nov. 27, 2026. Found by the state statutes sweep (terms: native american; native; reservation; tribe; tribes); AI reader''s verdict core: Fuel tax exemption for Native American retailers on reservations. Unverified.'
+review:
+  status: unverified
+  by: scripts/law/state_statutes/run.py
+  date: '2026-11-27'
+  checks:
+  - check: 'Indian law section: the sweep''s keyword pass and an AI reader''s verdict (core, incidental or none)'
+    result: agree
+    detail: 'core; terms: native american; native; reservation; tribe; tribes'

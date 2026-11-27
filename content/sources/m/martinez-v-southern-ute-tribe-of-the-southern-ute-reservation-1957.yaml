@@ -1,0 +1,55 @@
+key: martinez-v-southern-ute-tribe-of-the-southern-ute-reservation-1957
+kind: federal-case
+citation:
+  type: legal_case
+  title: Martinez v. Southern Ute Tribe of the Southern Ute Reservation
+  authority: United States District Court for the District of Colorado
+  container-title: F. Supp.
+  volume: '151'
+  page: '476'
+  issued:
+    date-parts:
+    - - 1957
+      - 3
+      - 29
+  URL: https://static.case.law/f-supp/151/html/0476-01.html
+  accessed:
+    date-parts:
+    - - 2026
+      - 11
+      - 26
+original_link: https://static.case.law/f-supp/151/html/0476-01.html
+retrieved: '2026-11-26'
+archives: []
+history:
+  status: live
+  last_checked: '2026-11-26'
+rights:
+  status: no-permission-needed
+  basis: government-edict
+  basis_note: The text of a judicial opinion has no copyright (Georgia v. Public.Resource.Org, Inc., 590 U.S. 255 (2020)). The copy served on this site is the court's opinion only, without the publisher's headnotes, synopsis or other editorial matter (decision record 0060).
+  redistribution: true
+nations_in_case:
+  checked: '2026-11-26'
+  named: []
+  not_linked:
+  - named_as: Southern Ute Tribe of the Southern Ute Reservation
+    reason: More than one of today's nations shares this name (american-indian-council-of-mariposa-county, cherokee-nation-west-of-missouri-and-arkansas, san-juan-southern-paiute-tribe-of-arizona, southern-cherokee-indian-tribe, southern-cherokee-nation-of-kentucky, southern-cherokee-treaty-tribe and 4 more); which the case concerns has not been checked.
+jurisdictions:
+- level: federal
+topics:
+- federal-court-indian-law
+found_in:
+- 2026-11-26-federal-court-indian-law-opinions
+notes: Published at 151 F. Supp. 476. Decided by the United States District Court for the District of Colorado on Mar. 29, 1957. Found by scripts/caselaw/state_court_opinions.py in the Caselaw Access Project's volumes, with an Indian law term score of 9; an AI reader read excerpts and judged it an Indian law case (tribal membership denial by tribal council, Southern Ute).
+review:
+  status: unverified
+  by: scripts/caselaw/state_court_opinions.py
+  date: '2026-11-26'
+  checks:
+  - check: 'Indian law case: the term score and, below the score kept without a reading, an AI reader''s judgment of excerpts'
+    result: agree
+    detail: 'score 9; reader: tribal membership denial by tribal council, Southern Ute'
+  - check: Nations named in the caption, matched to nation records by name
+    result: missing
+    detail: 0 matched, 1 not linked

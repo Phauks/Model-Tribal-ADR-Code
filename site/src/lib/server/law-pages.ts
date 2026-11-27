@@ -4,7 +4,7 @@
  * asked on Nov. 24, 2026 for a place on each law for the accounts of its
  * impact). Built with the site from the law's source record:
  *
- * - its name, its citation and, At a glance, its kind, date and citation;
+ * - its name, its citation and, Key facts, its kind, date and citation;
  * - its box's Summary, Quotes and Treatment (`law_box`, record-boxes.ts);
  * - the accounts of its impact (impact-accounts.ts), shown only when an
  *   account names the law;
@@ -12,7 +12,11 @@
  *   treaty, the people with a biography who signed it;
  * - for a chapter of Title 25 of the Code or a part of 25 C.F.R., its
  *   sections, and for an Act, the Title 25 sections it enacted
- *   (title-25-sections.ts).
+ *   (title-25-sections.ts);
+ * - for a statute, its legislative history: the committee reports and other
+ *   congressional documents on the bill that became it
+ *   (scripts/law/congressional_documents.py), and for a congressional
+ *   document, its committee, Congress, bills and the laws it is the history of.
  *
  * A section with nothing in it is left out.
  */
@@ -63,8 +67,10 @@ export interface LawPage {
 	sections?: SectionList;
 	/** The Title 25 sections the Act enacted. */
 	enacted: { label: string; heading: string; link: string; inForce: boolean }[];
+	/** For a statute: the committee reports and other congressional documents on the bill that became it, oldest first. */
+	legislativeHistory: { name: string; link: string; detail: string }[];
 	sources: SourceEntry[];
-	/** The land a treaty ceded, from Royce's schedule (1899), for the small map under At a glance (historic maps mockup 7). */
+	/** The land a treaty ceded, from Royce's schedule (1899), for the small map under Key facts (historic maps mockup 7). */
 	landCeded?: { royce: string[]; bounds: [number, number, number, number]; map: ReturnType<typeof treatyMapData> };
 	/** Set when the law has no box and no accounts of its impact: a stub (src/lib/stubs.ts). */
 	stub?: Stub;
@@ -82,6 +88,7 @@ const kindLabels: Record<string, string> = {
 	'federal-regulation': 'Federal regulation',
 	'federal-register-notice': 'Federal Register notice',
 	'federal-agency-document': 'Federal agency document',
+	'congressional-document': 'Congressional document',
 	'executive-order': 'Executive order',
 	'intergovernmental-agreement': 'Treaty',
 	'state-statute': 'State statute'
@@ -92,6 +99,7 @@ const dateLabels: Record<string, string> = {
 	'federal-regulation': 'Edition',
 	'federal-register-notice': 'Published',
 	'federal-agency-document': 'Issued',
+	'congressional-document': 'Issued',
 	'executive-order': 'Signed',
 	'intergovernmental-agreement': 'Signed',
 	'state-statute': 'Enacted'
@@ -135,8 +143,51 @@ function stateNamesOf(record: SourceRecord): string[] {
 	return [...new Set(jurisdictions.filter((entry) => entry.level === 'state' && entry.state).map((entry) => stateName(entry.state!)))];
 }
 
-/** The most nations At a glance names one by one. */
+/** The most nations Key facts names one by one. */
 const glanceNations = 8;
+
+let historyCache: Map<string, { name: string; link: string; detail: string; date: string }[]> | undefined;
+
+/** Each statute's legislative history: the congressional documents whose record names it in legislative.laws, oldest first. */
+function legislativeHistoryOf(key: string): { name: string; link: string; detail: string }[] {
+	if (!historyCache) {
+		historyCache = new Map();
+		for (const record of sources().values()) {
+			if (record.kind !== 'congressional-document') continue;
+			const parts = record.citation.issued?.['date-parts']?.[0] ?? [];
+			const genre = (record.citation as { genre?: string }).genre ?? 'Congressional document';
+			for (const law of record.legislative?.laws ?? []) {
+				const entries = historyCache.get(law) ?? [];
+				entries.push({ name: record.citation.number ?? record.citation.title ?? record.key, link: `/laws/${record.key}`, detail: [genre, parts[0]].filter(Boolean).join(', '), date: parts.map((part) => String(part).padStart(2, '0')).join('-') });
+				historyCache.set(law, entries);
+			}
+		}
+		for (const entries of historyCache.values()) entries.sort((a, b) => a.date.localeCompare(b.date) || a.name.localeCompare(b.name));
+	}
+	return (historyCache.get(key) ?? []).map(({ name, link, detail }) => ({ name, link, detail }));
+}
+
+/** A congressional document's own facts Key facts: its committees, Congress, bills and the laws it is the history of. */
+function legislativeFacts(record: SourceRecord): FactGroup[] {
+	const legislative = record.legislative;
+	if (record.kind !== 'congressional-document' || !legislative) return [];
+	const lawLinks = (legislative.laws ?? []).flatMap((law) => (sources().has(law) ? [{ text: recordName(law).name, link: `/laws/${law}` }] : []));
+	const genre = (record.citation as { genre?: string }).genre ?? '';
+	const authors = genre.startsWith('CRS') ? (record.citation.author ?? []).flatMap((author) => (author.literal ? [{ text: author.literal }] : [])) : [];
+	return [
+		{ field: 'authors', label: authors.length === 1 ? 'Author' : 'Authors', items: authors },
+		{ field: 'committee', label: (legislative.committees?.length ?? 0) === 1 ? 'Committee' : 'Committees', items: (legislative.committees ?? []).map((text) => ({ text })) },
+		{ field: 'congress', label: 'Congress', items: legislative.congress ? [{ text: `${ordinalOf(legislative.congress)} Congress${legislative.session ? `, ${ordinalOf(legislative.session)} session` : ''}` }] : [] },
+		{ field: 'bills', label: (legislative.bills?.length ?? 0) === 1 ? 'Bill' : 'Bills', items: (legislative.bills ?? []).map((text) => ({ text })) },
+		{ field: 'laws', label: lawLinks.length === 1 ? 'Law' : 'Laws', items: lawLinks }
+	];
+}
+
+function ordinalOf(value: number): string {
+	const tens = value % 100;
+	const suffix = tens >= 11 && tens <= 13 ? 'th' : ({ 1: 'st', 2: 'nd', 3: 'rd' } as Record<number, string>)[value % 10] ?? 'th';
+	return `${value}${suffix}`;
+}
 
 export function lawPage(key: string): LawPage {
 	const record = sources().get(key);
@@ -165,9 +216,10 @@ export function lawPage(key: string): LawPage {
 		{ field: 'indian-law', label: 'Indian law', items: record.state_law ? [{ text: relevanceLabels[record.state_law.relevance] ?? record.state_law.relevance }] : [] },
 		{ field: 'act', label: 'Act', items: record.state_law?.act ? [{ text: record.state_law.act }] : [] },
 		{ field: 'agency', label: 'Agency', items: record.kind === 'federal-agency-document' ? (record.citation.author ?? []).flatMap((author) => (author.literal ? [{ text: author.literal }] : [])) : [] },
+		...legislativeFacts(record),
 		{ field: 'number', label: 'Number', items: number ? [{ text: number }] : [] },
 		// A chapter of the Code is dated by the edition it was read from, not enacted on one day.
-		{ field: 'date', label: /^usc-\d+-chapter-/.test(key) ? 'Edition' : (dateLabels[record.kind] ?? 'Date'), items: date ? [{ text: date }] : [] },
+		{ field: 'date', label: /^usc-\d+-chapter-/.test(key) ? 'Edition' : (record.citation as { genre?: string }).genre === 'Hearing' ? 'Held' : (dateLabels[record.kind] ?? 'Date'), items: date ? [{ text: date }] : [] },
 		{ field: 'president', label: 'President', items: president ? [{ text: president.name, link: presidentPage }] : [] },
 		{ field: 'citation', label: 'Citation', items: citation ? [{ text: citation }] : [] },
 		// Each cession opens on the Map page at its year; Royce's map sheets open in the image viewer.
@@ -192,7 +244,7 @@ export function lawPage(key: string): LawPage {
 		{
 			field: 'nations',
 			label: nationsNamed.length === 1 ? 'Nation' : 'Nations',
-			// A list such as the Federal Register's list of recognized nations is cited by hundreds: At a glance counts them.
+			// A list such as the Federal Register's list of recognized nations is cited by hundreds: Key facts counts them.
 			items:
 				nationsCited.length > glanceNations
 					? [{ text: `${nationsCited.length.toLocaleString('en-US')} nations`, link: '#on-this-site' }]
@@ -224,6 +276,7 @@ export function lawPage(key: string): LawPage {
 		signers: named.what === 'Treaty' ? signersOfTreaty(key) : [],
 		sections,
 		enacted: record.kind === 'federal-statute' ? sectionsEnactedBy(key) : [],
+		legislativeHistory: record.kind === 'federal-statute' ? legislativeHistoryOf(key) : [],
 		landCeded: cededBounds ? { royce: ceded.map((cession) => cession.royce), bounds: cededBounds, map: treatyMapData() } : undefined,
 		sources: box.sources,
 		stub: box.sections.length === 0 && accounts.length === 0 && !sections ? { kind: 'law', record: `laws/${key}` } : undefined

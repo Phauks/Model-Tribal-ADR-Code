@@ -7,6 +7,7 @@
 // - Borders over time: the Newberry Library's Atlas of Historical County Boundaries, US Historical States and Territories (generalized), every state and territory from September 3, 1783 to December 31, 2000 with its start and end dates, the change that made it and the law cited for it. Layer "borders". The Library makes the Atlas's files available for any lawful purpose, commercial or non-commercial, without licensing or permission fees, and says the old Creative Commons notice inside the files can be ignored (https://publications.newberry.org/ahcb/downloads/united_states.html).
 // - Removal routes: the National Park Service's lines for the Trail of Tears National Historic Trail (the Cherokee removal routes of 1837 to 1839). Layer "routes", each line carrying the routes it is part of.
 // - Homelands found by the Indian Claims Commission: the National Park Service's tracing of the U.S. Geological Survey's 1978 map "Indian Land Areas Judicially Established". Layer "homelands", each area carrying the Commission's area number and the nation or nations it names. The map shows these as findings, dashed and credited, never as borders.
+// - Reservations on the 1909 map: the Office of Indian Affairs' "Map showing Indian reservations within the limits of the United States" (1909; National Archives, catalog 655555952), traced by scripts/maps/oia_1909_reservations.py into research/historic-maps/oia-1909/oia-1909-reservations.geojson. Layer "reservations", each shape or point with its name as printed, its status ("Reservation" or "Opened"), the nations suggested for it and its review status; a shape too small to see far out also gets a point ("marker"). With it, the scan itself warped onto web map tiles by that script's `warp` step, as WebP pictures, for the "Show the original map" switch.
 // - Royce's 67 map sheets, the Library of Congress's scans (g3701em.gct00002), each as the Library's JPEG 2000 file and as a JPEG the site's image viewer can show, with the full volume as one PDF. geography/royce-sheets.json lists them with their bucket keys, sizes and SHA-256.
 //
 // The tiles are cut with geojson-vt and written with tools/pmtiles-writer.mjs, so no tippecanoe is needed. Turning the JPEG 2000 scans into JPEGs needs ImageMagick (`magick` or `convert`) with OpenJPEG.
@@ -17,6 +18,8 @@
 //   node --max-old-space-size=8192 tools/build-historic-maps.mjs build [--work /tmp/historic-maps]
 //   node tools/build-historic-maps.mjs upload [--work /tmp/historic-maps]
 //   node tools/build-historic-maps.mjs index [--work /tmp/historic-maps]
+//
+// The 1909 map alone: `build --only 1909`, `upload --only 1909` and `index --only 1909`, with the scan at <work>/oia-1909/oia-1909.jpg and its warped tiles at <work>/oia-1909/scan-tiles/ (python3 ../scripts/maps/oia_1909_reservations.py warp --work <that folder> --scan <the scan>).
 //
 // "index" adds a row for each file it uploaded (not the tiles) to research/capture-index.csv, replacing rows with the same key, so the site serves the sheets and the volume as copies (/copies/historic-maps/...) and every file in the bucket is accounted for.
 //
@@ -59,6 +62,12 @@ const homelandsLayer = `${parkService}/Indian_Land_Areas_Judicially_Established_
 
 const sheetsItem = 'https://www.loc.gov/item/13023487/';
 const volumeFile = 'https://tile.loc.gov/storage-services/public/law/llss4015/llss4015.pdf';
+
+const reservations1909Path = new URL('../../research/historic-maps/oia-1909/oia-1909-reservations.geojson', import.meta.url);
+const scan1909Record = 'https://catalog.archives.gov/id/655555952';
+const scan1909File = 'https://catalog.archives.gov/medialz/cartographic/rg-075/305482/Batch0017/11/305482_11536_AA%20_01.jpg';
+const scan1909Key = 'historic-maps/oia-1909/national-archives-655555952.jpg';
+const reservations1909MaxZoom = 11;
 
 const cessionsMaxZoom = 10;
 const bordersMaxZoom = 7;
@@ -341,6 +350,81 @@ async function buildHomelands(work) {
 	return { ...describe(path, `homelands-${described.sha256.slice(0, 12)}`, {}), minZoom: 0, maxZoom: homelandsMaxZoom, bounds, layers: ['homelands'], features: features.length, sources: [homelandsLayer], retrieved: new Date().toISOString().slice(0, 10) };
 }
 
+/** Square kilometers of a polygon's outer rings, near enough to tell a speck from a reservation. */
+function squareKilometers(geometry) {
+	const rings = geometry.type === 'Polygon' ? [geometry.coordinates[0]] : geometry.coordinates.map((polygon) => polygon[0]);
+	let total = 0;
+	for (const ring of rings) {
+		const middle = ring.reduce((sum, point) => sum + point[1], 0) / ring.length;
+		let twice = 0;
+		for (let index = 0; index < ring.length - 1; index += 1) twice += ring[index][0] * ring[index + 1][1] - ring[index + 1][0] * ring[index][1];
+		total += (Math.abs(twice) / 2) * 111.32 * 111.32 * Math.cos((middle * Math.PI) / 180);
+	}
+	return total;
+}
+
+/** The reservations on the Office of Indian Affairs' 1909 map, as traced by scripts/maps/oia_1909_reservations.py. */
+function buildReservations1909(work) {
+	const source = JSON.parse(readFileSync(reservations1909Path, 'utf8'));
+	const features = [];
+	source.features.forEach((feature, index) => {
+		const p = feature.properties;
+		const properties = {
+			n: index + 1,
+			id: p.id,
+			name: p.name,
+			status: p.status,
+			nations: (p.nations ?? []).join(','),
+			label: p.name_source === 'label' ? 1 : 0,
+			neighbors: (p.neighbors ?? []).join('|'),
+			placed: p.internal_lines ? 1 : 0,
+			panel: p.panel ?? '',
+			note: p.note ?? '',
+			review: p.review
+		};
+		features.push({ type: 'Feature', geometry: { type: feature.geometry.type, coordinates: rounded(feature.geometry.coordinates) }, properties });
+		// A shape smaller than a mid-sized county vanishes far out, so it also gets a point, which the map shows only there.
+		if (feature.geometry.type !== 'Point') {
+			const size = squareKilometers(feature.geometry);
+			if (size < 600) {
+				const polygons = feature.geometry.type === 'Polygon' ? [feature.geometry.coordinates] : feature.geometry.coordinates;
+				const largest = polygons.reduce((best, polygon) => (squareKilometers({ type: 'Polygon', coordinates: polygon }) > squareKilometers({ type: 'Polygon', coordinates: best }) ? polygon : best));
+				features.push({ type: 'Feature', geometry: { type: 'Point', coordinates: rounded(polylabel(largest, 0.001)) }, properties: { ...properties, marker: 1 } });
+			}
+		}
+	});
+	const tiles = cutTiles(features, 'reservations', reservations1909MaxZoom);
+	const bounds = boundsOf(features);
+	const path = join(work, 'reservations-1909.pmtiles');
+	writePmtiles(path, tiles, { minZoom: 0, maxZoom: reservations1909MaxZoom, bounds, metadata: { name: 'Reservations on the 1909 map', attribution: 'Office of Indian Affairs (1909), National Archives', vector_layers: [{ id: 'reservations', fields: { n: 'Number', id: 'String', name: 'String', status: 'String', nations: 'String', label: 'Number', neighbors: 'String', placed: 'Number', panel: 'String', note: 'String', review: 'String', marker: 'Number' }, minzoom: 0, maxzoom: reservations1909MaxZoom }] } });
+	const described = describe(path, '', {});
+	return { ...describe(path, `reservations-1909-${described.sha256.slice(0, 12)}`, {}), minZoom: 0, maxZoom: reservations1909MaxZoom, bounds, layers: ['reservations'], features: source.features.length, years: [1909], source: 'research/historic-maps/oia-1909/oia-1909-reservations.geojson', sources: [scan1909Record], retrieved: '2026-11-27' };
+}
+
+/** The 1909 map itself, warped onto web map tiles by scripts/maps/oia_1909_reservations.py (`warp`): WebP pictures, kept as they are. */
+function buildScan1909(work) {
+	const root = join(work, 'oia-1909', 'scan-tiles');
+	const tiles = new Map();
+	let maxZoom = 0;
+	for (const z of readdirSync(root)) {
+		for (const x of readdirSync(join(root, z))) {
+			for (const name of readdirSync(join(root, z, x))) {
+				tiles.set(`${z}/${x}/${name.replace(/\.webp$/, '')}`, readFileSync(join(root, z, x, name)));
+				maxZoom = Math.max(maxZoom, Number(z));
+			}
+		}
+	}
+	// The picture reaches past the reservations (the whole country is printed), so the bounds come from the tiles at zoom 6.
+	const atSix = [...tiles.keys()].filter((key) => key.startsWith('6/')).map((key) => key.split('/').map(Number));
+	const longitude = (x) => (x / 64) * 360 - 180;
+	const latitude = (y) => (Math.atan(Math.sinh(Math.PI * (1 - (2 * y) / 64))) * 180) / Math.PI;
+	const bounds = [longitude(Math.min(...atSix.map(([, x]) => x))), latitude(Math.max(...atSix.map(([, , y]) => y)) + 1), longitude(Math.max(...atSix.map(([, x]) => x)) + 1), latitude(Math.min(...atSix.map(([, , y]) => y)))].map((value) => Math.round(value * 1e4) / 1e4);
+	const path = join(work, 'scan-1909.pmtiles');
+	writePmtiles(path, tiles, { minZoom: 0, maxZoom, bounds, tileType: 'webp', metadata: { name: 'Map showing Indian reservations within the limits of the United States (1909)', attribution: 'Office of Indian Affairs (1909), National Archives' } });
+	const described = describe(path, '', {});
+	return { ...describe(path, `scan-1909-${described.sha256.slice(0, 12)}`, {}), format: 'webp', minZoom: 0, maxZoom, bounds, tiles: tiles.size, sources: [scan1909File, scan1909Record], retrieved: '2026-11-27' };
+}
+
 async function buildLandAreasByYear(work) {
 	const withdrawn = new Set(JSON.parse(readFileSync(withdrawnPath, 'utf8')).codes);
 	const years = Object.keys(censusYears).map(Number);
@@ -457,6 +541,10 @@ async function build() {
 	const manifest = JSON.parse(readFileSync(manifestPath, 'utf8'));
 	if (only === 'all' || only === 'cessions') manifest.landCessions = await buildCessions(work);
 	if (only === 'all' || only === 'land-areas') manifest.landAreasByYear = await buildLandAreasByYear(work);
+	if (only === 'all' || only === '1909') {
+		manifest.reservations1909 = buildReservations1909(work);
+		manifest.scan1909 = buildScan1909(work);
+	}
 	if (only === 'all' || only === 'layers') {
 		manifest.borders = await buildBorders(work);
 		manifest.removalRoutes = await buildRemovalRoutes(work);
@@ -488,7 +576,14 @@ async function upload() {
 		[join(work, 'homelands.pmtiles'), manifest.homelands.key, 'application/vnd.pmtiles'],
 		...layerSources(work).map((entry) => [entry.path, entry.key, entry.mediaType])
 	];
-	const files = option('only', 'all') === 'layers' ? layers : [
+	const map1909 = [
+		[join(work, 'reservations-1909.pmtiles'), manifest.reservations1909.key, 'application/vnd.pmtiles'],
+		[join(work, 'scan-1909.pmtiles'), manifest.scan1909.key, 'application/vnd.pmtiles'],
+		[join(work, 'oia-1909', 'oia-1909.jpg'), scan1909Key, 'image/jpeg']
+	];
+	const only = option('only', 'all');
+	const files = only === '1909' ? map1909 : only === 'layers' ? layers : [
+		...map1909,
 		...layers,
 		[join(work, 'land-cessions.pmtiles'), manifest.landCessions.key, 'application/vnd.pmtiles'],
 		[join(work, 'land-areas-by-year.pmtiles'), manifest.landAreasByYear.key, 'application/vnd.pmtiles'],
@@ -555,9 +650,16 @@ function index() {
 		return { bytes: bytes.length, sha256: sha256(bytes) };
 	};
 	const row = (fields) => ({ topic: 'historic-maps', nations: '', captured: today, record_kinds: 'source', listed_in: '', catalog: '', derived_from: '', rights: governmentWork, redistribution: 'yes', keep_local: 'no', orphan: 'no', ...fields });
-	const layerRows = layerSources(work).map((entry) => row({ key: entry.key, ...file(entry.path), media_type: entry.mediaType, title: entry.title, obtained: `downloaded by tools/build-historic-maps.mjs, ${today}`, link: entry.link, records: entry.records, ...(entry.rights ? { rights: entry.rights } : {}) }));
-	const rows = option('only', 'all') === 'layers' ? layerRows : [
-		...layerRows,
+	// Read only when asked for, so `--only 1909` needs none of the other layers' downloads.
+	const layerRows = () => layerSources(work).map((entry) => row({ key: entry.key, ...file(entry.path), media_type: entry.mediaType, title: entry.title, obtained: `downloaded by tools/build-historic-maps.mjs, ${today}`, link: entry.link, records: entry.records, ...(entry.rights ? { rights: entry.rights } : {}) }));
+	const scanPath = join(work, 'oia-1909', 'oia-1909.jpg');
+	const map1909Rows = existsSync(scanPath)
+		? [row({ key: scan1909Key, ...file(scanPath), media_type: 'image/jpeg', title: 'Office of Indian Affairs, Map Showing Indian Reservations Within the Limits of the United States (1909)', obtained: `downloaded from the National Archives Catalog, ${today}`, link: scan1909Record, records: 'office-of-indian-affairs-reservations-map-1909' })]
+		: [];
+	const only = option('only', 'all');
+	const rows = only === '1909' ? map1909Rows : only === 'layers' ? layerRows() : [
+		...layerRows(),
+		...map1909Rows,
 		row({ key: sheets.volume.key, bytes: sheets.volume.bytes, sha256: sheets.volume.sha256, media_type: 'application/pdf', title: `${sheets.author}, ${sheets.title} (1899)`, obtained: `downloaded from the Library of Congress by script, ${today}`, link: sheets.volume.link, records: roycesRecord }),
 		...sheets.sheets.flatMap((sheet) => {
 			const name = sheet.name ?? `plate ${sheet.plate}`;

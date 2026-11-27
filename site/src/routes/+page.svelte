@@ -4,6 +4,7 @@
 	import Search from '@lucide/svelte/icons/search';
 	import Dropdown from '#lib/components/Dropdown.svelte';
 	import SearchableDropdown from '#lib/components/SearchableDropdown.svelte';
+	import SponsorRow from '#lib/components/SponsorRow.svelte';
 	import { lawSubjects, type LawSubjectChoice } from '#lib/find-the-law.ts';
 	import type { PageProps } from './$types';
 
@@ -98,6 +99,9 @@
 	</p>
 	<p><a class="button" href="/requests">Make a request</a></p>
 </section>
+
+<!-- The rolling row of sponsors (Trevor, Nov. 27, 2026; docs/sponsorship.md, "The home page row"). -->
+<SponsorRow />
 
 <style>
 	.find-law {

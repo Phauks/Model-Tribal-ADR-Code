@@ -1,0 +1,50 @@
+key: minnesota-statutes-297f-08
+kind: state-statute
+citation:
+  type: legislation
+  title: Cigarette Stamps
+  title-short: Minn. Stat. § 297F.08
+  container-title: Minnesota Statutes
+  container-title-short: Minn. Stat.
+  section: 297F.08
+  author:
+  - literal: Minnesota Office of the Revisor of Statutes
+  issued:
+    date-parts:
+    - - 1997
+  URL: https://www.revisor.mn.gov/statutes/cite/297F.08
+  accessed:
+    date-parts:
+    - - 2026
+      - 11
+      - 27
+original_link: https://www.revisor.mn.gov/statutes/cite/297F.08
+retrieved: '2026-11-27'
+archives: []
+history:
+  status: live
+  last_checked: '2026-11-27'
+state_law:
+  relevance: incidental
+  citation: Minn. Stat. § 297F.08 (2026)
+rights:
+  status: no-permission-needed
+  basis: government-edict
+  basis_note: 'Official state statutes are not copyrightable under the government edicts doctrine (Georgia v. Public.Resource.Org, Inc., 590 U.S. 255 (2020)). Linked, not served: state statutes stay link only.'
+  redistribution: false
+jurisdictions:
+- level: state
+  state: MN
+topics:
+- state-indian-law
+found_in:
+- 2026-11-27-state-statutes-third-batch
+notes: 'Indigo Book citation: Minn. Stat. § 297F.08 (2026). History: 1997 c 106 art 1 s 8; 1999 c 250 art 1 s 92; 2000 c 490 art 10 s 12 -16; 2003 c 127 art 14 s 6,7; 1Sp2003 c 23 s 31; 2005 c 151 art 2 s 17; art 8 s 10,11; 2019 c 50 art 1 s 98; 1Sp2019 c 6 art 11 s 7,8. Text read from the Minnesota Revisor of Statutes'' full-text chapter page for the section (revisor.mn.gov/statutes) on Nov. 27, 2026. Found by the state statutes sweep (terms: indian reservation; indian; reservation); AI reader''s verdict incidental: Special cigarette stamp for reservation retail under tribal agreement. Unverified.'
+review:
+  status: unverified
+  by: scripts/law/state_statutes/run.py
+  date: '2026-11-27'
+  checks:
+  - check: 'Indian law section: the sweep''s keyword pass and an AI reader''s verdict (core, incidental or none)'
+    result: agree
+    detail: 'incidental; terms: indian reservation; indian; reservation'
