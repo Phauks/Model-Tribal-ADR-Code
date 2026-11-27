@@ -30,7 +30,6 @@
 	import Avatar from '../../inbox/Avatar.svelte';
 	import TagChip from '../../inbox/TagChip.svelte';
 	import { listDate } from '../../inbox/dates.ts';
-	import ReadinessNotice from '../ReadinessNotice.svelte';
 	import { outreachBase as base } from '../views.ts';
 	import { whenWords } from '../when.ts';
 	import { recipientViews } from './recipient-views.ts';
@@ -157,8 +156,6 @@
 	<span><Gauge size={14} aria-hidden="true" />At most {batch.perDay} a day, {batch.weekdaysOnly ? 'weekdays, ' : ''}{hour(batch.windowStartHour)} to {hour(batch.windowEndHour)} their time</span>
 	<span><BellRing size={14} aria-hidden="true" />{batch.followUpDays ? `Follow up after ${batch.followUpDays} days` : 'No follow-up'}</span>
 </p>
-
-{#if open}<ReadinessNotice problems={data.problems} />{/if}
 
 {#if form && 'problem' in form}
 	<div class="notice notice-problem" role="alert"><p>{form.problem}</p></div>

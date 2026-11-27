@@ -10,7 +10,6 @@ import {
 	getBatch,
 	nextSendAt,
 	OutreachError,
-	outreachReadiness,
 	removeRecipient,
 	renameBatch,
 	retryRecipient,
@@ -21,7 +20,7 @@ import {
 	type NewRecipient
 } from '#lib/server/mail/outreach.ts';
 import { currentTime } from '#lib/server/mail/context.ts';
-import { mailCarriers, mailContext } from '#lib/server/mail/runtime.ts';
+import { mailContext } from '#lib/server/mail/runtime.ts';
 import { suppress } from '#lib/server/mail/suppressions.ts';
 import { formText, requirePermission } from '#lib/server/workspace.ts';
 import { inView, recipientViews } from './recipient-views.ts';
@@ -77,8 +76,7 @@ export const load: PageServerLoad = async (event) => {
 			next: recipient.identifier === firstWaiting?.identifier && nextAt ? nextAt.toISOString() : null
 		})),
 		repliesTo: inbox?.name ?? replyTo,
-		tags: [...new Set(contacts.flatMap((contact) => contact.tags))].sort(),
-		problems: outreachReadiness(context, mailCarriers(context))
+		tags: [...new Set(contacts.flatMap((contact) => contact.tags))].sort()
 	};
 };
 
