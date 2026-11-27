@@ -14,7 +14,7 @@ export const themes = ['light', 'dark'];
 
 /**
  * Waits until nothing in the page has changed for `quiet` milliseconds, or
- * `longest` at the most. Some controls (Report a problem, the map's zoom
+ * `longest` at the most. Some controls (Request a Change, the map's zoom
  * buttons) are added by the page's script just after the load event, so
  * axe-core should see the page only once it stops changing.
  */

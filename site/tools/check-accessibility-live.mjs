@@ -99,7 +99,7 @@ const openers = {
 		await page.locator('#download-choices').waitFor({ state: 'visible' });
 	},
 	async report(page) {
-		await mastheadButton(page, 'Report a problem');
+		await mastheadButton(page, 'Request a Change');
 		await page.locator('dialog.modal[open]').waitFor({ state: 'visible' });
 	},
 	async follow(page) {
