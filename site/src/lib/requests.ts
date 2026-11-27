@@ -3,6 +3,9 @@
  * docs/requests.md, shared by the request form and the co-author workspace.
  */
 
+/** Files a request takes, added one at a time in the form (Trevor, Nov. 27, 2026). */
+export const maximumRequestFiles = 5;
+
 export const requestKinds = [
 	'correct',
 	'restrict',
@@ -113,8 +116,8 @@ export const authorityStatementLabels: Record<AuthorityStatement, string> = {
 };
 
 /**
- * The statements a reader accepts, with one checkbox, before any request is
- * sent, each on its own line (Trevor, Nov. 27, 2026). The last three repeat
+ * The Terms of Submission a reader accepts, with one checkbox, before any
+ * request is sent, each on its own line (Trevor, Nov. 27, 2026). The last three repeat
  * how the project uses what is sent (docs/requests.md, "How it is used").
  */
 export function requestStatements(kind: RequestKind): string[] {

@@ -1,9 +1,9 @@
 import { fail } from '@sveltejs/kit';
 import { reviewSubjects } from 'virtual:review-subjects';
-import { isRequestKind } from '#lib/requests.ts';
+import { isRequestKind, maximumRequestFiles } from '#lib/requests.ts';
 import { workerEnvironment } from '#lib/server/environment.ts';
 import { BodyTooLarge, formWithin } from '#lib/server/limited-body.ts';
-import { maximumFileBytes, maximumFiles, readRequestForm } from '#lib/server/request-form.ts';
+import { maximumFileBytes, readRequestForm, sourceSlots } from '#lib/server/request-form.ts';
 import { saveRequest } from '#lib/server/request-store.ts';
 import { checkTurnstile, turnstileActions, turnstileProblem } from '#lib/server/turnstile.ts';
 import type { Actions, PageServerLoad } from './$types';
@@ -36,8 +36,8 @@ export const load: PageServerLoad = ({ url }) => {
 	};
 };
 
-/** The largest form the request form takes: its files at their largest, and a megabyte for the text and the form's own wrapping. */
-const largestForm = maximumFiles * maximumFileBytes + 1024 * 1024;
+/** The largest form the request form takes: its files (or a missing nation's source copies) at their largest, and a megabyte for the text and the form's own wrapping. */
+const largestForm = Math.max(maximumRequestFiles, sourceSlots) * maximumFileBytes + 1024 * 1024;
 
 export const actions: Actions = {
 	default: async ({ request, getClientAddress }) => {

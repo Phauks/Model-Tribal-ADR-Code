@@ -49,10 +49,20 @@ describe('request form', () => {
 
 	it('checks a file by its first bytes, not its name', async () => {
 		const fake = new File(['<html>'], 'evil.pdf', { type: 'application/pdf' });
-		const result = await readRequestForm(form({ kind: 'question', contact: 'person@example.org', details: 'y', file1: fake }));
-		expect(!result.ok && result.errors.file1).toMatch(/Only PDF/);
-		const real = await readRequestForm(form({ kind: 'question', contact: 'person@example.org', details: 'y', file1: pdf() }));
+		const result = await readRequestForm(form({ kind: 'question', contact: 'person@example.org', details: 'y', files: fake }));
+		expect(!result.ok && result.errors.files).toMatch(/Only PDF/);
+		const real = await readRequestForm(form({ kind: 'question', contact: 'person@example.org', details: 'y', files: pdf() }));
 		expect(real.ok && real.request.sources[0]?.file?.type).toBe('application/pdf');
+	});
+
+	it('takes several files under one name, up to the limit', async () => {
+		const data = form({ kind: 'question', contact: 'person@example.org', details: 'y' });
+		for (let count = 0; count < 2; count += 1) data.append('files', pdf());
+		const two = await readRequestForm(data);
+		expect(two.ok && two.request.sources).toHaveLength(2);
+		for (let count = 0; count < 4; count += 1) data.append('files', pdf());
+		const six = await readRequestForm(data);
+		expect(!six.ok && six.errors.files).toMatch(/at most 5 files/);
 	});
 
 	it('asks a contributor for permission to publish', async () => {

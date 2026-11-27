@@ -12,11 +12,13 @@
 	import type { Snippet } from 'svelte';
 	import { applyAction, enhance } from '$app/forms';
 	import Dropdown from '#lib/components/Dropdown.svelte';
+	import FileAdder from '#lib/components/FileAdder.svelte';
 	import TurnstileCheck, { turnstileResetEvent } from '#lib/components/TurnstileCheck.svelte';
 	import { turnstileKey } from '#lib/turnstile-key.ts';
 	import {
 		authorityStatementLabels,
 		authorityStatements,
+		maximumRequestFiles,
 		requestStatements,
 		sourceKindLabels,
 		sourceKinds,
@@ -256,7 +258,7 @@
 {#snippet materialField()}
 	{@const sensitive = kind === 'restrict' || kind === 'remove' || kind === 'replace-name'}
 	<div class="field">
-		<label for="{prefix}material">Page, record or passage</label>
+		<label for="{prefix}material">Web page</label>
 		{#if sensitive}
 			<p class="hint" id="{prefix}material-hint">
 				Please only say where the material is. Do not repeat sensitive material here.
@@ -278,17 +280,18 @@
 {/snippet}
 
 {#snippet detailsField()}
+	{@const question = kind === 'correct' ? 'What is wrong, and what should it say?' : kind === 'replace-name' ? 'Whose name should be replaced? Say how they appear, such as “the mother”, not their full name.' : kind === 'restrict' || kind === 'remove' ? 'What should happen to the material?' : kind === 'contribute' ? 'What would you like to offer?' : kind === 'add-nation' ? `Anything else we should know${compact ? ' (optional)' : ''}` : toTeam ? 'Your message' : 'Your question'}
 	<div class="field">
-		<label for="{prefix}details">
-			{#if kind === 'correct'}What is wrong, and what should it say?{:else if kind === 'replace-name'}Whose name should be replaced? Say how they appear, such as “the mother”, not their full name.{:else if kind === 'restrict' || kind === 'remove'}What should happen to the material?{:else if kind === 'contribute'}What would you like to offer?{:else if kind === 'add-nation'}Anything else we should know{compact ? ' (optional)' : ''}{:else if toTeam}Your message{:else}Your question{/if}
-		</label>
+		<!-- The dialog names the box "Details" and asks the question under it (Trevor, Nov. 27, 2026). -->
+		<label for="{prefix}details">{compact ? `Details${kind === 'add-nation' ? ' (optional)' : ''}` : question}</label>
+		{#if compact}<p class="hint" id="{prefix}details-hint">{question.replace(' (optional)', '')}</p>{/if}
 		{@render fieldError('details')}
 		<textarea
 			id="{prefix}details"
 			name="details"
 			rows={compact ? 10 : 6}
 			aria-invalid={errors.details ? 'true' : undefined}
-			aria-describedby={describedBy('details')}>{value('details')}</textarea
+			aria-describedby={describedBy('details', compact)}>{value('details')}</textarea
 		>
 	</div>
 	{#if value('nationIdentifier', nationIdentifier) && (kind === 'correct' || kind === 'question' || kind === 'contribute')}
@@ -351,21 +354,26 @@
 {/snippet}
 
 {#snippet fileFields()}
-	<p class="hint">
-		{#if compact}
-			PDF, PNG, JPEG or WebP, up to 10 MB each.
-		{:else}
-			You can attach up to three files, for example a nation’s resolution or a corrected citation
-			(PDF, PNG, JPEG or WebP, up to 10 MB each).
-		{/if}
-	</p>
-	{#each [1, 2, 3] as slot (slot)}
-		<div class="field">
-			<label for="{prefix}file{slot}">File {slot} (optional)</label>
-			{@render fieldError(`file${slot}`)}
-			<input type="file" id="{prefix}file{slot}" name="file{slot}" accept={accepted} />
-		</div>
-	{/each}
+	<div class="field">
+		<label for="{prefix}files">Files (optional)</label>
+		<p class="hint" id="{prefix}files-hint">
+			{#if compact}
+				Up to {maximumRequestFiles}: PDF, PNG, JPEG or WebP, up to 10 MB each.
+			{:else}
+				Up to {maximumRequestFiles} files, for example a nation’s resolution or a corrected citation
+				(PDF, PNG, JPEG or WebP, up to 10 MB each).
+			{/if}
+		</p>
+		{@render fieldError('files')}
+		<FileAdder
+			id="{prefix}files"
+			name="files"
+			accept={accepted}
+			maximum={maximumRequestFiles}
+			invalid={Boolean(errors.files)}
+			describedBy={describedBy('files', true)}
+		/>
+	</div>
 {/snippet}
 
 {#if problem}
@@ -394,10 +402,6 @@
 					{@render lead?.()}
 					{#if kind === 'add-nation'}
 						{@render nationFieldset()}
-					{:else if toTeam}
-						<input type="hidden" name="material" value={value('material', material)} />
-					{:else}
-						{@render materialField()}
 					{/if}
 					{@render contactField()}
 					{@render aboutYouFields()}
@@ -405,6 +409,10 @@
 				<div class="column">
 					{#if kind === 'add-nation'}
 						{@render proofFieldset()}
+					{:else if toTeam}
+						<input type="hidden" name="material" value={value('material', material)} />
+					{:else}
+						{@render materialField()}
 					{/if}
 					{@render detailsField()}
 					{#if kind !== 'add-nation'}
@@ -483,7 +491,7 @@
 		{/if}
 
 		<fieldset class="statements">
-			<legend>Before you send</legend>
+			<legend>Terms of Submission</legend>
 			<ul class="statement-lines">
 				{#each requestStatements(kind) as statement (statement)}<li>{statement}</li>{/each}
 			</ul>
@@ -499,11 +507,11 @@
 					aria-invalid={errors.acceptStatements ? 'true' : undefined}
 					aria-describedby={describedBy('acceptStatements')}
 				/>
-				<label for="{prefix}acceptStatements">I accept these statements</label>
+				<label for="{prefix}acceptStatements">I accept these terms</label>
 			</div>
 		</fieldset>
 		{#if siteKey}<TurnstileCheck {siteKey} action="request" />{/if}
-		<p><button class="button" type="submit">{toTeam ? 'Send the message' : 'Send the request'}</button></p>
+		<p><button class="button" type="submit">{toTeam ? 'Send the message' : 'Submit'}</button></p>
 	</form>
 
 <style>
@@ -578,7 +586,7 @@
 		}
 	}
 
-	/* Each statement on its own line, above the one box that accepts them all. */
+	/* Each term on its own line, above the one box that accepts them all. */
 	.statements legend {
 		font-weight: var(--font-weight-bold);
 		margin-bottom: var(--space-2);

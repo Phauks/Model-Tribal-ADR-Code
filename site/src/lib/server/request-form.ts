@@ -6,6 +6,7 @@
 import {
 	authorityStatements,
 	isRequestKind,
+	maximumRequestFiles,
 	sourceKinds,
 	type AuthorityStatement,
 	type RequestKind,
@@ -109,7 +110,15 @@ export async function readFile(
 	name: string,
 	errors: Record<string, string>
 ): Promise<UploadedFile | null> {
-	const value = form.get(name);
+	return checkFile(form.get(name), name, errors);
+}
+
+/** Checks one sent file: its size, and its type by its first bytes. */
+async function checkFile(
+	value: FormDataEntryValue | null,
+	name: string,
+	errors: Record<string, string>
+): Promise<UploadedFile | null> {
 	if (!(value instanceof File) || value.size === 0) return null;
 	if (value.size > maximumFileBytes) {
 		errors[name] = 'The file is larger than 10 MB. Please send a smaller copy or a link instead.';
@@ -175,7 +184,7 @@ export async function readRequestForm(form: FormData): Promise<FormResult> {
 
 	const material = limit('material', longText, text(form, 'material'));
 	if ((kind === 'correct' || kind === 'restrict' || kind === 'remove' || kind === 'replace-name') && material === '') {
-		errors.material = 'Say which page, record or passage this is about.';
+		errors.material = 'Say which web page this is about.';
 	}
 
 	const writingFor = text(form, 'writingForGovernment');
@@ -268,8 +277,10 @@ export async function readRequestForm(form: FormData): Promise<FormResult> {
 				'Give at least one government source that names the nation: a citation, an upload, or both.';
 		}
 	} else {
-		for (let slot = 1; slot <= maximumFiles; slot += 1) {
-			const file = await readFile(form, `file${slot}`, errors);
+		const sent = form.getAll('files').filter((value) => value instanceof File && value.size > 0);
+		if (sent.length > maximumRequestFiles) errors.files = `Please send at most ${maximumRequestFiles} files.`;
+		for (const value of sent.slice(0, maximumRequestFiles)) {
+			const file = await checkFile(value, 'files', errors);
 			if (file) {
 				request.sources.push({
 					sourceKind: null,
