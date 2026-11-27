@@ -835,7 +835,7 @@ function petitionDocumentName(source: SourceRecord): string {
 	const genre = source.citation.genre ?? '';
 	if (genre === 'Public comment') return 'Public comment';
 	const title = source.citation.title ?? source.key;
-	// "Proposed Finding: Chinook Indian Tribe / Chinook Nation (Petitioner #057)" is "Proposed Finding".
+	// "Proposed Finding: Chinook Indian Tribe / Chinook Nation (petition 057)" is "Proposed Finding".
 	return source.key.startsWith('acknowledgment-') ? title.replace(/:[^:]*$/, '') : title;
 }
 
