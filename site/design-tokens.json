@@ -191,6 +191,30 @@
         "$value": "#0F4C54",
         "$description": "Map: 100 or more nations."
       },
+      "map-sky": {
+        "$value": "#122630",
+        "$description": "Map: the night sky behind the globe, near the earth. Dark in both themes, so the stars show (Trevor, 2026-11-27, mockup A)."
+      },
+      "map-sky-edge": {
+        "$value": "#08131A",
+        "$description": "Map: the night sky behind the globe, at the map's edges."
+      },
+      "map-sky-star": {
+        "$value": "#FFF8EE",
+        "$description": "Map: a white star in the sky behind the globe, the same in both themes. Drawn faint to full by the star's brightness."
+      },
+      "map-sky-star-cool": {
+        "$value": "#D6E2FF",
+        "$description": "Map: a hot, blue-white star (B-V under 0.2) in the sky behind the globe."
+      },
+      "map-sky-star-warm": {
+        "$value": "#FFE2C0",
+        "$description": "Map: a cool, orange-white star (B-V over 1.0) in the sky behind the globe."
+      },
+      "map-sky-glow": {
+        "$value": "#8FD3DA",
+        "$description": "Map: the thin glow at the earth's edge on the globe, drawn at 38 percent and fading out."
+      },
       "scrollbar-thumb": {
         "$value": "#3F7F86",
         "$description": "Scrollbar thumb, the part a reader drags. 4.0:1 on the scrollbar track and 4.4:1 on paper (non-text minimum 3:1)."
@@ -206,6 +230,10 @@
       "image-backing": {
         "$value": "#FFFAF5",
         "$description": "Plate behind a nation's seal or logo. Seals are drawn for light paper, so in dark mode they sit on a light plate and their dark lines stay visible (Trevor, Nov. 23, 2026)."
+      },
+      "sponsor-logo-plate": {
+        "$value": "#FFFFFF",
+        "$description": "White plate behind a sponsor's logo in the home page row, in both themes, since logos are drawn for white paper (mockup Trevor approved on Nov. 27, 2026, design/home-sponsor-row/)."
       },
       "scan-code-light": {
         "$value": "#FFFFFF",
@@ -485,6 +513,30 @@
         "$value": "#B5E8EC",
         "$description": "Map: 100 or more nations."
       },
+      "map-sky": {
+        "$value": "#10232A",
+        "$description": "Map: the night sky behind the globe, near the earth. Dark in both themes, so the stars show (Trevor, 2026-11-27, mockup A)."
+      },
+      "map-sky-edge": {
+        "$value": "#070F13",
+        "$description": "Map: the night sky behind the globe, at the map's edges."
+      },
+      "map-sky-star": {
+        "$value": "#FFF8EE",
+        "$description": "Map: a white star in the sky behind the globe, the same in both themes. Drawn faint to full by the star's brightness."
+      },
+      "map-sky-star-cool": {
+        "$value": "#D6E2FF",
+        "$description": "Map: a hot, blue-white star (B-V under 0.2) in the sky behind the globe."
+      },
+      "map-sky-star-warm": {
+        "$value": "#FFE2C0",
+        "$description": "Map: a cool, orange-white star (B-V over 1.0) in the sky behind the globe."
+      },
+      "map-sky-glow": {
+        "$value": "#8FD3DA",
+        "$description": "Map: the thin glow at the earth's edge on the globe, drawn at 38 percent and fading out."
+      },
       "scrollbar-thumb": {
         "$value": "#5A979E",
         "$description": "Scrollbar thumb, the part a reader drags. 4.6:1 on the scrollbar track and 5.2:1 on paper (non-text minimum 3:1)."
@@ -500,6 +552,10 @@
       "image-backing": {
         "$value": "#F6EEE6",
         "$description": "Plate behind a nation's seal or logo. Seals are drawn for light paper, so in dark mode they sit on a light plate and their dark lines stay visible (Trevor, Nov. 23, 2026)."
+      },
+      "sponsor-logo-plate": {
+        "$value": "#FFFFFF",
+        "$description": "White plate behind a sponsor's logo in the home page row, in both themes, since logos are drawn for white paper (mockup Trevor approved on Nov. 27, 2026, design/home-sponsor-row/)."
       },
       "scan-code-light": {
         "$value": "#FFFFFF",
@@ -850,7 +906,7 @@
     }
   },
   "motion": {
-    "$description": "How long movement takes and how it speeds up and slows down (site/DESIGN.md, section 6, \"Motion\"). Every transition, animation and script animation on the site takes its timing from here, through src/lib/motion.ts or the --motion-* custom properties. Motion happens only in answer to something the reader does. When the reader picks Reduce motion in Settings, or the device asks for less motion, every duration becomes 0.",
+    "$description": "How long movement takes and how it speeds up and slows down (site/DESIGN.md, section 6, \"Motion\"). Every transition, animation and script animation on the site takes its timing from here, through src/lib/motion.ts or the --motion-* custom properties. Motion happens only in answer to something the reader does, except the rolling row of sponsors on the home page, which Trevor asked for on Nov. 27, 2026 and which the reader can pause. When the reader picks Reduce motion in Settings, or the device asks for less motion, every duration becomes 0.",
     "duration": {
       "$type": "duration",
       "short": {
@@ -880,6 +936,13 @@
           "unit": "ms"
         },
         "$description": "How long the mark on a source or note a link has just gone to takes to fade to its resting color."
+      },
+      "roll": {
+        "$value": {
+          "value": 5000,
+          "unit": "ms"
+        },
+        "$description": "How long the rolling row of sponsors on the home page takes to move by one sponsor's tile, so the whole row takes this times the number of sponsors. Slow enough to read each name as it passes."
       }
     },
     "easing": {
@@ -910,6 +973,15 @@
           1
         ],
         "$description": "Something leaving: it starts slowly and speeds away."
+      },
+      "steady": {
+        "$value": [
+          0,
+          0,
+          1,
+          1
+        ],
+        "$description": "An even speed from start to end, for movement that loops, such as the rolling row of sponsors."
       }
     }
   }

@@ -39,6 +39,11 @@ reading_links:
     label: "Lexis"
     access: subscription
     link: https://advance.lexis.com/api/search?q=25%20U.S.C.%20%C2%A7%20232
+file:
+  storage_key: united-states-code/2024/title-25-section-232.pdf
+  checksum: 8f32ad8fa343ad601026c1abf6f59fe2cded47684d8f6ff4a77ce5840414a247
+  media_type: application/pdf
+  bytes: 142364
 rights:
   status: no-permission-needed
   basis: us-government-work
@@ -46,4 +51,5 @@ rights:
   redistribution: true
 found_in:
 - 2026-11-23-jurisdiction-and-federal-ties
-notes: 'Indigo Book citation: 25 U.S.C. § 232 (2024). Status: in force. Read the full section text on Cornell LII (law.cornell.edu), fetched by HTTPS. Private copy research/captures/jurisdiction/us-code-title-25-section-232.html.'
+- 2026-11-27-us-code-sections
+notes: 'Indigo Book citation: 25 U.S.C. § 232 (2024). Status: in force. Read the full section text on Cornell LII (law.cornell.edu), fetched by HTTPS. Private copy research/captures/jurisdiction/us-code-title-25-section-232.html. The stored copy is 25 U.S.C. § 232 from the 2024 edition of the Code on GovInfo (the text with its notes), saved by scripts/law/us_code_sections.py.'

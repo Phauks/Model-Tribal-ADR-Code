@@ -97,6 +97,9 @@ TOPIC_RIGHTS = {
                              "no copyright in the text; publisher's headnotes and editorial matter left out; served under decision record 0060."),
     "federal-court-opinions": ("A federal court's published opinion, from the Caselaw Access Project (released without restriction, 2024): "
                                "no copyright in the text; publisher's headnotes and editorial matter left out; served under decision record 0060."),
+    "supreme-court-opinions": ("The opinions of the Supreme Court of the United States in a case, as the Caselaw Access Project (released without restriction, 2024) "
+                               "read them from the United States Reports: works of the United States government, no copyright (17 U.S.C. § 105); "
+                               "the reporter's syllabus and statement of the case left out; the Library of Congress scan of the report is the official copy."),
 }
 DEFAULT_RIGHTS = "Private research copy; not redistributed."
 

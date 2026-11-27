@@ -1,0 +1,29 @@
+key: esa-hipparcos-catalogue
+kind: dataset
+citation:
+  type: dataset
+  title: The Hipparcos and Tycho Catalogues (ESA SP-1200), Hipparcos Main Catalog
+  author:
+    - literal: European Space Agency
+  medium: Table of 118,218 stars (NASA HEASARC copy, heasarc_hipparcos.tdat.gz)
+  URL: https://www.cosmos.esa.int/web/hipparcos/catalogues
+  issued:
+    date-parts: [[1997]]
+  accessed:
+    date-parts: [[2026, 11, 27]]
+original_link: https://heasarc.gsfc.nasa.gov/FTP/heasarc/dbase/tdat_files/heasarc_hipparcos.tdat.gz
+retrieved: 2026-11-27
+history:
+  status: live
+  last_checked: 2026-11-27
+rights:
+  status: no-permission-needed
+  basis: open-license
+  basis_note: >-
+    ESA distributes the Hipparcos and Tycho Catalogues "under the CC BY-NC 3.0 IGO licence" and asks users to credit "ESA" (ESA, The Hipparcos and Tycho Catalogues page, and ESDC Terms and Conditions, https://www.cosmos.esa.int/web/esdc/terms-and-conditions, read Nov. 27, 2026). Commercial use needs ESA's separate permission. The project's use, a star background on a nonprofit's free website, is noncommercial on the project's reading of the license; the map's credit line shows "Stars: ESA Hipparcos" while the globe is shown, and the stars are not used in anything sold, such as the printed book.
+  license: CC-BY-NC-3.0-IGO
+  redistribution: true
+found_in:
+  - 2026-11-27-globe-star-sky
+notes: >-
+  The website's globe draws the 6,211 stars brighter than magnitude 6.2 behind the earth (site/static/map-sky/stars.json, written by site/tools/fetch-globe-stars.mjs): each star's position, V magnitude and B-V color only. The Yale Bright Star Catalog was not used, because NASA HEASARC says it offers that catalog for research only and that Yale or its authors may still hold its copyright.

@@ -9,6 +9,7 @@
 	// together) are sent up in pieces and go as download links instead
 	// (site/MAIL.md, "Big files as links"); that needs scripts.
 	import { onMount } from 'svelte';
+	import { invalidate } from '$app/navigation';
 	import Check from '@lucide/svelte/icons/check';
 	import Clock from '@lucide/svelte/icons/clock';
 	import MessageSquareText from '@lucide/svelte/icons/message-square-text';
@@ -160,7 +161,10 @@
 			const response = await fetch('/workspace/inbox/drafts/save', { method: 'POST', headers: { 'content-type': 'application/json' }, body: draftBody(), keepalive });
 			if (!response.ok) throw new Error(String(response.status));
 			const saved = (await response.json()) as { identifier: string; updatedAt: string };
+			const isNew = draftIdentifier !== saved.identifier;
 			draftIdentifier = saved.identifier;
+			// A new draft changes the Drafts count in the inbox's left column, which a saved draft does not otherwise reload.
+			if (isNew) void invalidate('mail:counts');
 			savedAt = new Date(saved.updatedAt).toLocaleTimeString('en-US', { hour: 'numeric', minute: '2-digit' });
 			if (!timer) saving = 'saved';
 		} catch {
@@ -184,6 +188,8 @@
 		window.addEventListener('pagehide', leave);
 		return () => {
 			window.removeEventListener('pagehide', leave);
+			// Moving to another inbox page before the moment is up saves what was written too.
+			if (timer && !sending) void saveDraft(true);
 			clearTimeout(timer);
 		};
 	});
@@ -570,6 +576,8 @@
 		border: 0;
 		border-radius: 0;
 		background: transparent;
+		/* Its own ink, so the site's focus style (dark text meant for the yellow fill) does not turn the words dark on this clear background in dark mode. */
+		color: var(--color-ink);
 		padding: var(--space-4);
 		resize: vertical;
 		line-height: var(--font-line-height-reading);
