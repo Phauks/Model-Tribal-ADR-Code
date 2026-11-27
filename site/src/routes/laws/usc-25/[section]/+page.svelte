@@ -18,6 +18,7 @@
 	import ImpactAccounts from '#lib/components/ImpactAccounts.svelte';
 	import InfoPage from '#lib/components/InfoPage.svelte';
 	import RecordBoxSections from '#lib/components/RecordBoxSections.svelte';
+	import SavedText from '#lib/components/SavedText.svelte';
 	import CodePager from '#lib/components/code/CodePager.svelte';
 	import StatusTag from '#lib/components/code/StatusTag.svelte';
 	import type { PageProps } from './$types';
@@ -59,7 +60,10 @@
 		<p class="moved-from muted">Formerly {#each data.movedFrom as from, index (from.label)}{#if index > 0}, {/if}{#if from.link}<a href={from.link}>{from.label}</a>{:else}{from.label}{/if}{/each}.</p>
 	{/if}
 
-	{#if inForce}
+	{#if data.text}
+		<!-- The section's official text, kept from its older record; the shared document text component takes this place too. -->
+		<SavedText file={data.text.file} isPdf={data.text.isPdf} name={data.name} identifier="text" />
+	{:else if inForce}
 		<Collapsible heading="Text" identifier="text">
 			<!-- The shared document text component takes this place (thread "Standardize how document text is shown"). -->
 			<div class="text-slot">

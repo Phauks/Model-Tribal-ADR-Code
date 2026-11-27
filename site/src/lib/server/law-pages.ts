@@ -85,16 +85,17 @@ export interface LawMoved {
 /** A section of Title 25 on its own page, with what the site's older record of that section holds: its box, accounts and where the site cites it. */
 export interface SectionPageData extends SectionPage {
 	kept: Pick<LawPage, 'key' | 'name' | 'boxSections' | 'accounts' | 'essays' | 'nations' | 'sources'>[];
+	/** The official text this site keeps for the section, from its older record (us_code_sections.py), when it has one. */
+	text?: LawText;
 }
 
 export function sectionPageData(slug: string): SectionPageData {
 	const page = sectionPage(slug);
+	const laws = page.records.map(lawContent);
 	return {
 		...page,
-		kept: page.records.map((key) => {
-			const law = lawContent(key);
-			return { key, name: law.name, boxSections: law.boxSections, accounts: law.accounts, essays: law.essays, nations: law.nations, sources: law.sources };
-		})
+		kept: laws.map((law) => ({ key: law.key, name: law.name, boxSections: law.boxSections, accounts: law.accounts, essays: law.essays, nations: law.nations, sources: law.sources })),
+		text: laws.find((law) => law.text)?.text
 	};
 }
 

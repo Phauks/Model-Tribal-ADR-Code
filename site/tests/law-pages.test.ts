@@ -166,6 +166,12 @@ describe('Title 25 as an outline', () => {
 		expect(lawPage('usc-25-5329-c-model-agreement-disputes')).toEqual({ movedTo: '/laws/usc-25/5329' });
 	});
 
+	it('shows the official text kept for a section’s older record', async () => {
+		const { sectionPageData } = await import('#lib/server/law-pages.ts');
+		expect(sectionPageData('1911').text).toMatchObject({ isPdf: true });
+		expect(sectionPageData('5321').text).toBeUndefined();
+	});
+
 	it('lists a chapter’s contents under its subchapters', async () => {
 		const { contentsOf } = await import('#lib/server/code-outline.ts');
 		const groups = contentsOf('6');
