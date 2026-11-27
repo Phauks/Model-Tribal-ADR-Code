@@ -402,6 +402,11 @@ function solicitorOpinions(): CollectionItem[] {
 		.map((record) => sourceItem(record, (record.citation as { number?: string }).number));
 }
 
+/** The Bureau of Indian Affairs' films and sound recordings on federal Indian policy at the National Archives, Record Group 75 (scripts/law/national_archives_films.py). */
+function indianAffairsFilms(): CollectionItem[] {
+	return [...sources().values()].filter((record) => (record.topics ?? []).includes('federal-indian-policy-film')).map((record) => sourceItem(record, genreOf(record)));
+}
+
 /**
  * The settlements of Native nations' water rights that Congress enacted, one item each, linking to the enacting Act's page
  * (research/water-settlements/enacted-settlements.csv, copied from the Congressional Research Service's report R44148;
@@ -550,6 +555,7 @@ export const collections: Collection[] = [
 	},
 	{ identifier: 'federal-acknowledgment', search: { group: 'law', label: 'Acknowledgment document' }, title: 'Federal Acknowledgment Petitions', group: 'Federal law', detailHeader: 'Kind', sourceKinds: ['federal-agency-document'], items: acknowledgmentDocuments },
 	{ identifier: 'solicitor-opinions', search: { group: 'law', label: 'Solicitor’s opinion' }, title: 'Solicitor’s Opinions', group: 'Federal law', detailHeader: 'Number', sourceKinds: ['federal-agency-document'], items: solicitorOpinions },
+	{ identifier: 'indian-affairs-films', search: { group: 'law', label: 'Indian Affairs film or recording' }, title: 'Indian Affairs Films and Recordings', group: 'Federal law', detailHeader: 'Kind', sourceKinds: ['federal-agency-document'], items: indianAffairsFilms },
 	{ identifier: 'national-indian-gaming-commission', search: { group: 'law', label: 'Gaming Commission document' }, title: 'Gaming Commission Opinions and Actions', group: 'Federal law', detailHeader: 'Kind', sourceKinds: ['federal-agency-document'], items: gamingCommissionDocuments },
 	{
 		identifier: 'water-rights-settlements',
