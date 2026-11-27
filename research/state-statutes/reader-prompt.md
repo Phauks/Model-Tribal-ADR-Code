@@ -19,3 +19,7 @@ State notes used so far:
 - South Dakota, North Dakota and Minnesota: "Dakota" in "South Dakota" or "North Dakota" is the state, and "Sioux Falls" is a city; neither is a Native nation.
 - Idaho: "Nez Perce", "Kootenai", "Shoshone", "Bannock" and "Benewah" are also county names; a county named for a nation is a place name only.
 - Kansas: "Kansas", "Wichita", "Ottawa", "Shawnee", "Osage", "Miami", "Pottawatomie", "Wyandotte" and "Cherokee" are also county or city names; they are place names only unless the text speaks of the tribe or its people.
+- Vermont: the state recognizes four Abenaki tribes (Elnu, Nulhegan, Koasek, Missisquoi); a state-recognized tribe counts as a Native nation. "Missisquoi" alone is often the river, bay or wildlife refuge, a place name only.
+- New Jersey: the state recognizes three tribes (the Nanticoke Lenni-Lenape, the Powhatan Renape and the Ramapough Lenape); a state-recognized tribe counts as a Native nation. "Lenape" in the name of a school district, park, lake or road is a place name only, and "Delaware" is usually the state, river or bay.
+- Pennsylvania: "Indiana" (the county or borough) and "Indian Creek" are place names only; "the Commonwealth" is the state.
+- Connecticut: the Mashantucket Pequot Tribe and the Mohegan Tribe are federally recognized, and the state also recognizes the Schaghticoke, Paucatuck Eastern Pequot and Golden Hill Paugussett; all count as Native nations. "Pequot", "Mohegan" or "Quinnipiac" in the name of a road, river, bridge, university or town area is a place name only.

@@ -56,4 +56,8 @@ Records the project already holds under the same key (most were made by hand for
 | North Dakota | `adapters/north_dakota.py` (no source notes in the PDFs, so no enactment years) | Chapter PDFs, ndlegis.gov/cencode, listed with section names on the Century Code page |
 | Idaho | `adapters/idaho.py` | Section pages, legislature.idaho.gov/statutesrules/idstat, listed on each chapter's page |
 | Kansas | `adapters/kansas.py` | Section pages, ksrevisor.gov/statutes, listed on each chapter's page |
+| Vermont | `adapters/vermont.py` (cited by title: section numbers are `<title>:<section>`; appendix titles, such as the municipal charters of title 24, number sections within each chapter) | Full-chapter pages, legislature.vermont.gov/statutes; each record links to the section's own page |
+| New Jersey | `adapters/new_jersey.py` | The Legislature's plain-text file of the statutes, pub.njleg.state.nj.us/statutes (no stable address for one section: records link to the statutes database's search for the section's number) |
+| Pennsylvania | `adapters/pennsylvania.py` (cited by title: `<title>:<section>`; Consolidated Statutes only) | Whole-title pages, palegis.us/statutes/consolidated; each record links to the section's own page |
+| Connecticut | `adapters/connecticut.py` (the site omits its intermediate certificate, which fetch() adds) | Chapter pages of the revision of Jan. 1, 2025, cga.ct.gov/current/pub, with the 2026 Supplement's sections in their place |
 | Oklahoma | `adapters/oklahoma.py` (read in the pilot; `run.py seed OK` turns the pilot's list into this pipeline's list) | Title PDFs, oklegislature.gov |

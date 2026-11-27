@@ -1,0 +1,49 @@
+key: connecticut-general-statutes-8-2
+kind: state-statute
+citation:
+  type: legislation
+  title: Regulations
+  title-short: Conn. Gen. Stat. § 8-2
+  container-title: General Statutes of Connecticut
+  container-title-short: Conn. Gen. Stat.
+  section: 8-2
+  author:
+  - literal: Connecticut General Assembly
+  URL: https://www.cga.ct.gov/2026/sup/chap_124.htm#sec_8-2
+  accessed:
+    date-parts:
+    - - 2026
+      - 11
+      - 27
+original_link: https://www.cga.ct.gov/2026/sup/chap_124.htm#sec_8-2
+retrieved: '2026-11-27'
+archives: []
+history:
+  status: live
+  last_checked: '2026-11-27'
+shares_link_with:
+- connecticut-general-statutes-8-2e
+state_law:
+  relevance: incidental
+  citation: Conn. Gen. Stat. § 8-2 (2026)
+rights:
+  status: no-permission-needed
+  basis: government-edict
+  basis_note: 'Official state statutes are not copyrightable under the government edicts doctrine (Georgia v. Public.Resource.Org, Inc., 590 U.S. 255 (2020)). Linked, not served: state statutes stay link only.'
+  redistribution: false
+jurisdictions:
+- level: state
+  state: CT
+topics:
+- state-indian-law
+found_in:
+- 2026-11-27-state-statutes-new-england-mid-atlantic
+notes: 'Indigo Book citation: Conn. Gen. Stat. § 8-2 (2026). History: 1949 Rev., S. 837; November, 1955, S. N10; 1959, P.A. 614, S. 2; 661; 1961, P.A. 569; 1963, P.A. 133; 1967, P.A. 801; P.A. 77-509, S. 1; P.A. 78-314, S. 1; P.A. 80-327, S. 1; P.A. 81-334, S. 2; P.A. 83-388, S. 6, 9; P.A. 84-263; P.A. 85-91, S. 2, 5; 85-279, S. 3; P.A. 87-215, S. 1, 7; 87-232; 87-474, S. 1; 87-490, S. 1; P.A. 88-105, S. 2; 88-203, S. 1; P.A. 89-277, S. 1; P.A. 91-170, S. 1; 91-392, S. 1; 91-395, S. 1, 11; P.A. 92-50; P.A. 93-385, S. 3; P.A. 95-239, S. 2; 95-335, S. 14, 26; P.A. 97-296, S. 2, 4; P.A. 98-105, S. 3; P.A. 10-87, S. 4; P.A. 11-124, S. 2; 11-188, S. 3; P.A. 15-227, S. 25; P.A. 17-39, S. 1; 17-155, S. 2; P.A. 18-28, S. 1, 2; 18-132, S. 1; P.A. 21-29, S. 4; P.A. 23-142, S. 2. Text read from the Connecticut General Assembly''s chapter page for the section in the General Statutes of Connecticut, revised to Jan. 1, 2025, or in its 2026 Supplement (cga.ct.gov), on Nov. 27, 2026. Found by the state statutes sweep (terms: tribal); AI reader''s verdict incidental: Zoning purpose to protect state''s tribal resources. Unverified.'
+review:
+  status: unverified
+  by: scripts/law/state_statutes/run.py
+  date: '2026-11-27'
+  checks:
+  - check: 'Indian law section: the sweep''s keyword pass and an AI reader''s verdict (core, incidental or none)'
+    result: agree
+    detail: 'incidental; terms: tribal'

@@ -1,0 +1,58 @@
+key: connecticut-general-statutes-12-860
+kind: state-statute
+citation:
+  type: legislation
+  title: Key employee or occupational employee and sovereign immunity
+  title-short: Conn. Gen. Stat. § 12-860
+  container-title: General Statutes of Connecticut
+  container-title-short: Conn. Gen. Stat.
+  section: 12-860
+  author:
+  - literal: Connecticut General Assembly
+  issued:
+    date-parts:
+    - - 2021
+  URL: https://www.cga.ct.gov/current/pub/chap_229b.htm#sec_12-860
+  accessed:
+    date-parts:
+    - - 2026
+      - 11
+      - 27
+original_link: https://www.cga.ct.gov/current/pub/chap_229b.htm#sec_12-860
+retrieved: '2026-11-27'
+archives: []
+history:
+  status: live
+  last_checked: '2026-11-27'
+shares_link_with:
+- connecticut-general-statutes-12-851
+- connecticut-general-statutes-12-852
+- connecticut-general-statutes-12-853
+- connecticut-general-statutes-12-861
+- connecticut-general-statutes-12-864
+- connecticut-general-statutes-12-865
+- connecticut-general-statutes-12-870
+state_law:
+  relevance: core
+  citation: Conn. Gen. Stat. § 12-860 (2026)
+rights:
+  status: no-permission-needed
+  basis: government-edict
+  basis_note: 'Official state statutes are not copyrightable under the government edicts doctrine (Georgia v. Public.Resource.Org, Inc., 590 U.S. 255 (2020)). Linked, not served: state statutes stay link only.'
+  redistribution: false
+jurisdictions:
+- level: state
+  state: CT
+topics:
+- state-indian-law
+found_in:
+- 2026-11-27-state-statutes-new-england-mid-atlantic
+notes: 'Indigo Book citation: Conn. Gen. Stat. § 12-860 (2026). History: P.A. 21-23, S. 11; P.A. 23-54, S. 5. Text read from the Connecticut General Assembly''s chapter page for the section in the General Statutes of Connecticut, revised to Jan. 1, 2025, or in its 2026 Supplement (cga.ct.gov), on Nov. 27, 2026. Found by the state statutes sweep (terms: indian tribe; indian; tribe); AI reader''s verdict core: Tribal gaming employees cannot raise sovereign immunity defense. Unverified.'
+review:
+  status: unverified
+  by: scripts/law/state_statutes/run.py
+  date: '2026-11-27'
+  checks:
+  - check: 'Indian law section: the sweep''s keyword pass and an AI reader''s verdict (core, incidental or none)'
+    result: agree
+    detail: 'core; terms: indian tribe; indian; tribe'
