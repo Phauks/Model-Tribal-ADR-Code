@@ -492,7 +492,9 @@
 
 		<fieldset class="statements">
 			<legend>Terms of Submission</legend>
-			<!-- A short box that scrolls, so the terms take little room (Trevor, Nov. 27, 2026). -->
+			<!-- A short box that scrolls, so the terms take little room (Trevor, Nov. 27, 2026).
+			     It takes focus so keyboard readers can scroll it (WCAG 2.1.1). -->
+			<!-- svelte-ignore a11y_no_noninteractive_tabindex -->
 			<ul class="statement-lines" tabindex="0" aria-label="Terms of Submission">
 				{#each requestStatements(kind) as statement (statement)}<li>{statement}</li>{/each}
 			</ul>
