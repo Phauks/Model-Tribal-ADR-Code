@@ -33,7 +33,7 @@ async function bytesWithin(body: ReadableStream<Uint8Array> | null, maximumBytes
 		if (done) break;
 		total += value.byteLength;
 		if (total > maximumBytes) {
-			await reader.cancel().catch(() => undefined);
+			await reader.cancel().catch(() => /* expected: the body is only being let go */ undefined);
 			throw new BodyTooLarge(maximumBytes);
 		}
 		pieces.push(value);

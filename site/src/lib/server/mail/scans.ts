@@ -14,6 +14,7 @@
  */
 import { fileScans, forgetScan, mayServe, releaseByHand, scanStatusWords, type FileScan } from '#lib/server/file-scans.ts';
 import { actionStatement, currentTime, type MailContext } from './context.ts';
+import { report } from '../report.ts';
 
 /** Where an attachment stands, for the conversation page. */
 export interface AttachmentCheck {
@@ -31,7 +32,9 @@ async function scansOf(context: MailContext, keys: string[]): Promise<Map<string
 	if (keys.length === 0) return new Map();
 	try {
 		return await fileScans(context.database, keys);
-	} catch {
+	} catch (problem) {
+		// Without the scans every attachment is held, as if not yet scanned; the failure is reported.
+		report(problem, { code: 'mail.scans', place: 'mail' });
 		return new Map();
 	}
 }
@@ -81,7 +84,9 @@ export async function forgetAttachmentScans(context: MailContext, keys: string[]
 	for (const key of keys) {
 		try {
 			await forgetScan(context.database, key);
-		} catch {
+		} catch (problem) {
+			// The file is already gone; its scan row is left behind, and the failure is reported.
+			report(problem, { code: 'mail.forget-scans', place: 'mail' });
 			return;
 		}
 	}

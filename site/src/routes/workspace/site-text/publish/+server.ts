@@ -17,7 +17,8 @@ export const POST: RequestHandler = async (event) => {
 	const person = requirePersonForData(event);
 	const { database } = storage(event);
 	await requireDocumentLevel(event, database, siteTextSubject, 'full');
-	const body = (await event.request.json().catch(() => null)) as { keys?: unknown } | null;
+	// A body that is not JSON is refused, rather than read as "publish everything".
+	const body = (await event.request.json().catch(() => error(400, 'Send the keys to publish.'))) as { keys?: unknown } | null;
 	const keys = Array.isArray(body?.keys) ? body.keys.filter((key): key is string => typeof key === 'string') : undefined;
 	const number = await publish(database, person.identifier, keys);
 	if (number === null) error(400, 'There is nothing to publish.');

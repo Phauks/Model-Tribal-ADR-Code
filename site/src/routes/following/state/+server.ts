@@ -36,7 +36,7 @@ export const POST: RequestHandler = async ({ locals, request }) => {
 	const database = environment.database;
 	if (!locals.account || !database) error(401, 'Sign in to follow pages.');
 	const subject = locals.account.subject;
-	const body = (await request.json().catch(() => null)) as { address?: unknown; follow?: unknown } | null;
+	const body = (await request.json().catch(() => /* expected: a body that is not JSON is refused just below with 400 */ null)) as { address?: unknown; follow?: unknown } | null;
 	const address = typeof body?.address === 'string' ? body.address : '';
 	if (!followKindOf(address) || typeof body?.follow !== 'boolean') error(400, 'Name a page that can be followed.');
 	// The same limit as changes in the workspace, kept apart for following.

@@ -25,7 +25,7 @@ export const POST: RequestHandler = async ({ request, getClientAddress }) => {
 		return json({ available: false, reason: 'Too many price requests. Wait a minute and try again.' }, { status: 429 });
 	}
 
-	const read = readBookOrderForm(await request.json().catch(() => undefined), false);
+	const read = readBookOrderForm(await request.json().catch(() => /* expected: a body that is not JSON is refused just below with 400 */ undefined), false);
 	if (!read.ok) return json({ available: false, reason: read.problem }, { status: 400 });
 	const { choice, shippingLevel, address } = read.form;
 

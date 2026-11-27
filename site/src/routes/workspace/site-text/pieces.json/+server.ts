@@ -21,7 +21,7 @@ export const POST: RequestHandler = async (event) => {
 	const { database } = storage(event);
 	const access = await accessTo(database, person, siteTextSubject);
 	if (access.level === 'no-access') error(403, 'You do not have access to the site text.');
-	const body = (await event.request.json().catch(() => null)) as { keys?: unknown } | null;
+	const body = (await event.request.json().catch(() => /* expected: a body that is not JSON asks for no pieces, and gets none */ null)) as { keys?: unknown } | null;
 	const keys = Array.isArray(body?.keys) ? body.keys.filter((key): key is string => typeof key === 'string' && keyPattern.test(key)).slice(0, 5000) : [];
 	const catalog = catalogByKey();
 	const states = await pieceStates(database);

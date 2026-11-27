@@ -42,6 +42,10 @@ export const edgeCacheRules = [
 	// always shown (decision record 0056); the route itself sends a copy a
 	// nation restricts with no-store, and the tag purges it with their choices.
 	{ pattern: /^\/cases\/[^/]+\/opinions\.json$/, seconds: day, tags: ['record-pages', 'nation-restrictions'], statuses: [200] },
+	// A copy's words for the document text card, read from the copy as the
+	// opinions are (src/routes/copies/reading/[...key]), and kept and purged
+	// as they are. A copy a nation chose to cite only answers 403, never kept.
+	{ pattern: /^\/copies\/reading\/.+\.json$/, seconds: day, tags: ['record-pages', 'nation-restrictions'], statuses: [200] },
 	// Map tiles: each tile set's name changes whenever its file does
 	// (src/lib/server/map-tile-serving.ts), and pictures of the U.S. Geological
 	// Survey's maps change seldom (src/lib/server/map-imagery.ts).
