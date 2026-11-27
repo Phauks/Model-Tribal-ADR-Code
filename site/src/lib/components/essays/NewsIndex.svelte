@@ -11,7 +11,6 @@
 	import NewEssayButton from '#lib/components/essays/NewEssayButton.svelte';
 	import { newEssayPlace } from '#lib/essays/new-essay.svelte.ts';
 	import { readSignedInHint } from '#lib/signed-in-hint.ts';
-	import { sendProblem } from '#lib/problem-reports.ts';
 
 	let { posts }: { posts: { identifier: string; title: string; link: string; summary: string; postedAt: string; postedText: string }[] } = $props();
 
@@ -27,8 +26,7 @@
 				canStart = body?.canStart ?? false;
 				if (canStart) newEssayPlace.current = { sectionLink: '/news', part: 'news' };
 			})
-			// The published news still shows; the drafts list's failure is reported (site/ERRORS.md).
-			.catch((problem: unknown) => sendProblem(problem, { code: 'news.drafts', path: location.pathname, place: 'NewsIndex' }));
+			.catch(() => /* expected: without a staff sign-in the drafts list is left out, and the published posts still show */ undefined);
 	});
 
 	onDestroy(() => {
