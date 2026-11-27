@@ -266,6 +266,10 @@ const bucketCalls: Record<string, BucketUse> = {
     kind: "project-file",
     why: "Copies of government documents and constitutions the project saved from their official sources.",
   },
+  "src/routes/cases/[id]/opinions.json/+server.ts GET get(copy.key)": {
+    kind: "project-file",
+    why: "The served copy of a case's opinions, which the project built from the Caselaw Access Project; only the file indexed with the site is read.",
+  },
   "src/routes/nations/[id]/image/+server.ts GET get(image.key)": {
     kind: "project-file",
     why: "Nation seals and images the project collected from official sources.",
