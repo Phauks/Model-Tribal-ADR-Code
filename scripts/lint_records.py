@@ -34,12 +34,13 @@ Checks:
                     a profile fact that cites a version no longer in effect
                     names that version in `document_version`, so the page can
                     say so; otherwise it should cite the version in effect
-  quote-ellipsis    a case or law box quotation uses "..." only where words
-                    are left out: never after a sentence's own period, and a
-                    leading or trailing "..." only where the quoted sentence
-                    really starts before or goes on after the quoted words,
-                    as scripts/library/check_box_quotes.py found in the text
-                    it quotes (research/quotes/box-quote-endings.json)
+  quote-ellipsis    a case or law box quotation marks left-out words in the
+                    Indigo Book form (R8.3): no "..." at the start (the first
+                    letter is capitalized in brackets, "[T]he"), "... ." at
+                    the end of a sentence cut short, where
+                    scripts/library/check_box_quotes.py found the sentence
+                    goes on (research/quotes/box-quote-endings.json), and no
+                    "..." after a sentence that ends
   edition-citation  every source cited by content headed for an edition
                     (essays, provisions, commentary, glossary) is archived,
                     has a citator result if it is a case, statute, regulation
@@ -171,10 +172,12 @@ def check_sources(tree, report, changed_sources, today, grace_days):
 
 
 def check_quote_ellipses(tree, report, changed_sources):
-    """A quotation that ends where the court's sentence ends keeps its period
-    and takes no "...": "Their relation to the United States resembles that
-    of a ward to his guardian." (the lead author's rule of Nov. 27, 2026;
-    docs/style-guide.md, "Quotations")."""
+    """Box quotations mark left-out words in the Indigo Book form (R8.3; the
+    lead author chose it on Nov. 26, 2026; docs/style-guide.md,
+    "Quotations"): no "..." at the start, where the first letter is
+    capitalized in brackets ("[T]he"); "... ." at the end of a sentence cut
+    short, which scripts/library/check_box_quotes.py must have confirmed
+    against the text quoted; and nothing after a sentence that ends."""
     path = tree.root / QUOTE_ENDINGS_FILE
     endings = {}
     if path.exists():
@@ -187,21 +190,20 @@ def check_quote_ellipses(tree, report, changed_sources):
                 text = (quote.get("text") or "").strip()
                 where = f"{source['_file']}: {box}.quotes[{index}]"
                 new = source["_file"] in changed_sources
-                if re.search(rf"[.?!][\"”’')\]]*\s*{ELLIPSIS}$", text):
-                    report.add("quote-ellipsis", f'{where} ends its sentence and then "..."; a quotation that ends where the sentence ends keeps the period and takes no "..."', new)
-                    continue
-                leading = re.match(ELLIPSIS, text) is not None
-                trailing = re.search(rf"{ELLIPSIS}$", text) is not None
-                if not (leading or trailing):
-                    continue
-                entry = endings.get((key, quote.get("text")))
-                if entry is None:
-                    report.add("quote-ellipsis", f'{where} begins or ends with "..." but has not been checked against the text it quotes; {rerun.format(key=key)}', new)
-                    continue
-                if trailing and entry.get("end") == "sentence":
-                    report.add("quote-ellipsis", f'{where} ends with "..." but the sentence ends there in {entry.get("document")}; end it with the sentence\'s own period ({rerun.format(key=key)})', new)
-                if leading and entry.get("start") == "sentence":
-                    report.add("quote-ellipsis", f'{where} begins with "..." but the sentence starts there in {entry.get("document")}; drop the "..."', new)
+                if re.match(ELLIPSIS, text):
+                    report.add("quote-ellipsis", f'{where} begins with "..."; drop it and capitalize the first letter in brackets, "[T]he" (Indigo Book R8.3.2)', new)
+                elif re.match(r"^[\s\"“‘'*_(]*[a-z]", text):
+                    report.add("quote-ellipsis", f'{where} begins with a lowercase letter; capitalize it in brackets, "[T]he" (Indigo Book R8.3.2)', new)
+                if re.search(r"[^\s.]\s+(?:\.\.\.|…)\s+[.?!]$", text):
+                    entry = endings.get((key, quote.get("text")))
+                    if entry is None:
+                        report.add("quote-ellipsis", f'{where} ends with "... ." but has not been checked against the text it quotes; {rerun.format(key=key)}', new)
+                    elif entry.get("end") == "sentence":
+                        report.add("quote-ellipsis", f'{where} ends with "... ." but the sentence ends there in {entry.get("document")}; end it with the sentence\'s own period ({rerun.format(key=key)})', new)
+                elif re.search(rf"[.?!][\"”’')\]]*\s*{ELLIPSIS}$", text):
+                    report.add("quote-ellipsis", f'{where} ends its sentence and then "..."; a quotation that ends where the sentence ends keeps the period and takes no "..." (Indigo Book R8.3.7)', new)
+                elif re.search(rf"{ELLIPSIS}$", text):
+                    report.add("quote-ellipsis", f'{where} ends with a bare "..."; a sentence cut short ends "... ." with the sentence\'s own closing mark (Indigo Book R8.3.5); {rerun.format(key=key)}', new)
 
 
 def check_documents(tree, report, changed_documents, changed_sources):
