@@ -43,6 +43,11 @@ reading_links:
     label: "Lexis"
     access: subscription
     link: https://advance.lexis.com/api/search?q=20%20U.S.C.%20%C2%A7%207512
+file:
+  storage_key: united-states-code/2024/title-20-section-7512.pdf
+  checksum: 95e36b4acd03c186eb698ca42813e033c95d9a86937e255ef56e96703f1c5b63
+  media_type: application/pdf
+  bytes: 146894
 rights:
   status: no-permission-needed
   basis: fact-only
@@ -52,7 +57,5 @@ tribes:
 - native-hawaiian-community
 found_in:
 - 2026-11-21-hawaiian-and-territorial
-notes: Pub. L. 89-10, title VI, § 6202, as added by Pub. L. 107-110 and last amended by Pub. L. 114-95
-  (Dec. 10, 2015). Text read in full via LII reproduction of the U.S. Code; uscode.house.gov section URL
-  returned 404 in this session.
-  The 2015 date previously recorded here is the year of the last amendment, not the code's year; the current code is cited without a year (Indigo Book R16.1.2).
+- 2026-11-27-us-code-sections
+notes: Pub. L. 89-10, title VI, § 6202, as added by Pub. L. 107-110 and last amended by Pub. L. 114-95 (Dec. 10, 2015). Text read in full via LII reproduction of the U.S. Code; uscode.house.gov section URL returned 404 in this session. The 2015 date previously recorded here is the year of the last amendment, not the code's year; the current code is cited without a year (Indigo Book R16.1.2). The stored copy is 20 U.S.C. § 7512 from the 2024 edition of the Code on GovInfo (the text with its notes), saved by scripts/law/us_code_sections.py.

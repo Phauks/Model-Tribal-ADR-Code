@@ -131,7 +131,7 @@ review:
     detail: 'Printed and Database: 1895-05-20'
   - check: opinions
     result: confirmed
-    detail: 'Report: majority White p. 237; Database writers: White; scan pages [(237, 237)]. Read from the scan by an AI reader (record right): p. 237: "MR. JUSTICE WHITE" ... "opinion of the court." (OCR: ". JUSTICE WITE, / opinion of the court."); next line "after stating the case, delivered the /".. Confirmed: the report prints (read from the page images) p. 237: "MR. JUSTICE WHITE, after stating the case, delivered the opinion of the court."'
+    detail: 'Report: majority White p. 237; Database writers: White; scan pages [(237, 237)]. Read from the scan by an AI reader (record right): p. 237: "MR. JUSTICE WHITE" . . . "opinion of the court." (OCR: ". JUSTICE WITE, / opinion of the court."); next line "after stating the case, delivered the /".. Confirmed: the report prints (read from the page images) p. 237: "MR. JUSTICE WHITE, after stating the case, delivered the opinion of the court."'
   - check: bench
     result: agree
     detail: No Oyez votes; each opinion writer in the report sits on the Database's bench on the side the opinion takes

@@ -5,7 +5,8 @@
  *
  * Each recognition fact becomes one line. Its kind ("Act of Congress",
  * "Federal acknowledgment process", "State law") is named only when the
- * fact's own legal basis says so; otherwise the line gives the legal basis
+ * fact's own legal basis says so (a case name such as "Tillie Hardwick v.
+ * United States" makes it a court judgment); otherwise the line gives the legal basis
  * alone. Where the record holds no document for how a federally recognized
  * nation was first recognized, the panel says so instead of guessing.
  */
@@ -65,6 +66,7 @@ export function howRecognized(fact: ExplainedFact): string | undefined {
 		if (/Pub\. L\.|Public Law|P\.L\. \d/.test(basis)) return 'Act of Congress';
 		if (/[Ff]inal [Dd]etermination/.test(basis)) return 'Federal acknowledgment process';
 		if (/Assistant Secretary|administratively/.test(basis)) return 'Decision of the Assistant Secretary – Indian Affairs';
+		if (/^[^,]+ v\. United States, No\./.test(basis)) return 'Court judgment';
 		return undefined;
 	}
 	if (fact.type === 'state') {

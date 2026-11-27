@@ -1141,6 +1141,22 @@ jurisdiction:
   verification: read-in-full
   as_of: '2011'
   note: Statement on an individual NCAI implementing-tribe profile page, not a list.
+- topic: environmental-treatment-as-a-state
+  value: clean-water-act-water-quality-standards
+  detail: EPA found the nation eligible on Apr. 30, 2001 to set water quality standards (treatment in a similar manner as a state under Clean Water Act § 518), and first approved its standards on Oct. 18, 2001.
+  source: epa-actions-on-tribal-water-quality-standards
+  confidence: high
+  verification: inferred
+  as_of: '2001-04-30'
+  locator: 'Table of approvals by Tribe, column "Regulatory Programs": "WQS Program"'
+- topic: environmental-treatment-as-a-state
+  value: clean-air-act-administrative-functions
+  detail: 'EPA has approved the nation for treatment in a similar manner as a state to perform administrative functions under the Clean Air Act: § 505(a)(2).'
+  source: epa-tribes-approved-for-treatment-as-a-state
+  confidence: high
+  verification: inferred
+  as_of: '2026-10-21'
+  locator: 'Table of approvals by Tribe, column "Administrative Functions": "CAA § 505(a)(2)"'
 jurisdiction_agreements:
 - kind: child-welfare-agreement
   other_party: Oregon Department of Human Services

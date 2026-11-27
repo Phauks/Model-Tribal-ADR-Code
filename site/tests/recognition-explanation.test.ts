@@ -20,6 +20,13 @@ describe('howRecognized', () => {
 		expect(howRecognized(list)).toBe('On the federal list of recognized tribes');
 		expect(howRecognized(act)).toBe('Act of Congress');
 		expect(howRecognized({ type: 'federal', legal_basis: 'Final determination, 52 Fed. Reg. 4193 (Feb. 10, 1987)' })).toBe('Federal acknowledgment process');
+		expect(
+			howRecognized({
+				type: 'federal',
+				legal_basis:
+					'Tillie Hardwick v. United States, No. C-79-1910-SW (N.D. Cal. Dec. 22, 1983) (order restoring the rancheria), noted in Geographic Composition of the Health Service Delivery Areas (HSDA) Established by Regulations of the Indian Health Service, 53 Fed. Reg. 32460, 32462, 32463 n.3 (Aug. 25, 1988)'
+			})
+		).toBe('Court judgment');
 		expect(howRecognized({ type: 'federal', legal_basis: 'Something else' })).toBeUndefined();
 	});
 

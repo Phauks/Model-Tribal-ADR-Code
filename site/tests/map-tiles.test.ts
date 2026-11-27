@@ -1,4 +1,6 @@
-import { readFileSync } from 'node:fs';
+import { mkdtempSync, readFileSync } from 'node:fs';
+import { tmpdir } from 'node:os';
+import { join } from 'node:path';
 import { afterEach, describe, expect, it } from 'vitest';
 import { forgetMapTileFiles, isTileAddress, mapAssetKey, serveMapAsset, serveMapTile, tileSets } from '../src/lib/server/map-tile-serving.ts';
 
@@ -104,5 +106,34 @@ describe('serving the map fonts and icons', () => {
 		expect(new Uint8Array(await response.arrayBuffer())).toEqual(glyphs);
 		expect((await serveMapAsset(bucket, 'glyphs/Noto Sans Medium/512-767.pbf')).status).toBe(404);
 		expect((await serveMapAsset(bucket, 'other/file.txt')).status).toBe(404);
+	});
+});
+
+describe('serving the 1909 map as pictures', () => {
+	const scan = [...tileSets.values()].find((tileSet) => tileSet.set.startsWith('scan-1909-'));
+	/** A one-tile picture file, as tools/build-historic-maps.mjs writes the 1909 map: the WebP bytes are kept as they are. */
+	async function pictureFile(): Promise<Uint8Array> {
+		// Loaded by address, so the type check does not take in the plain JavaScript writer.
+		const { writePmtiles } = await import(/* @vite-ignore */ new URL('../tools/pmtiles-writer.mjs', import.meta.url).href);
+		const path = join(mkdtempSync(join(tmpdir(), 'scan-1909-')), 'scan.pmtiles');
+		const picture = new Uint8Array([0x52, 0x49, 0x46, 0x46, 1, 2, 3, 4, 0x57, 0x45, 0x42, 0x50]);
+		writePmtiles(path, new Map([['5/7/11', picture]]), { minZoom: 0, maxZoom: 5, bounds: [-125, 24, -66, 50], tileType: 'webp', metadata: { name: 'test' } });
+		return readFileSync(path);
+	}
+
+	it('serves a picture tile as WebP, unchanged', async () => {
+		if (!scan) throw new Error('geography/map-tiles.json names no 1909 map tile set');
+		const { bucket } = memoryBucket({ [scan.key]: await pictureFile() });
+		const response = await serveMapTile(bucket, scan.set, 5, 7, 11, 'webp');
+		expect(response.status).toBe(200);
+		expect(response.headers.get('content-type')).toBe('image/webp');
+		expect(new Uint8Array(await response.arrayBuffer()).slice(0, 4)).toEqual(new Uint8Array([0x52, 0x49, 0x46, 0x46]));
+	});
+
+	it('refuses a picture set asked for as vector tiles, and a vector set asked for as pictures', async () => {
+		if (!scan) throw new Error('geography/map-tiles.json names no 1909 map tile set');
+		const { bucket } = memoryBucket({ [scan.key]: await pictureFile(), [landAreas.key]: fixture });
+		expect((await serveMapTile(bucket, scan.set, 5, 7, 11)).status).toBe(404);
+		expect((await serveMapTile(bucket, landAreas.set, 4, 2, 6, 'webp')).status).toBe(404);
 	});
 });

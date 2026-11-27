@@ -81,8 +81,11 @@ export const sponsorBenefits: Benefit[] = [
 	{ text: 'Your name in the next printed edition', from: 'supporter' },
 	{ text: 'A paperback of each new edition', from: 'patron' },
 	{ text: 'Listed first on the Sponsorship page', from: 'patron' },
+	// The home page row (Trevor, Nov. 27, 2026): it shows a sponsor's level, so only if they choose it.
+	{ text: 'Your name in the sponsors row on the home page, if you choose', from: 'patron' },
 	{ text: 'Your logo in the next printed edition', from: 'benefactor' },
 	{ text: 'Your logo and one line about you, first on the Sponsorship page', from: 'benefactor' },
+	{ text: 'Your logo in place of your name in the sponsors row on the home page', from: 'benefactor' },
 	{ text: 'Five hardcovers of each new edition', from: 'benefactor' },
 	{ text: 'CLE programs free for five of your staff', from: 'benefactor', later: true },
 	{ text: '10 paperbacks a year, sent to nations, courts or libraries you choose', from: 'benefactor' }

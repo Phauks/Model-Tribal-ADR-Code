@@ -10,7 +10,7 @@
  * counts the nation's team (src/lib/permissions.ts, documentAccess); on any
  * other page, the person's role default, so advisors and co-authors comment
  * and editors and the lead author may also mark any thread done. Everyone
- * else keeps the flag to report a problem. Each comment, each thread marked
+ * else keeps the flag to request a change. Each comment, each thread marked
  * done or reopened, and each assignment is recorded in the activity log in
  * the same batch.
  */
