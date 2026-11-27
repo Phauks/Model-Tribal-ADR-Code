@@ -55,19 +55,20 @@ function fold(text: string): string {
 	return foldForSearch(text).replace(/(?<![\p{L}\p{N}])(?:\p{L}\.){2,}/gu, (letters) => letters.replaceAll('.', ''));
 }
 
-function wordsOf(query: string): string[] {
+/** The words typed, folded as names are, in the order typed. */
+export function wordsOf(query: string): string[] {
 	return fold(query).split(/\s+/).filter(Boolean);
 }
 
 /** A name folded once, with its words, so typing does not fold it again. */
-interface FoldedName {
+export interface FoldedName {
 	name: string;
 	folded: string;
 	words: string[];
 }
 
 /** An entry with its names folded, made once per index (folding every name on every keystroke made typing lag). */
-interface PreparedEntry {
+export interface PreparedEntry {
 	entry: SearchEntry;
 	title: FoldedName;
 	also: FoldedName[];
@@ -81,7 +82,8 @@ function foldName(name: string): FoldedName {
 	return { name, folded, words: folded.split(/[^\p{L}\p{N}]+/u) };
 }
 
-function prepare(entry: SearchEntry): PreparedEntry {
+/** An entry with its names folded: what the search on the device keeps, and what the server's search tables hold (src/lib/server/search-tables.ts). */
+export function prepare(entry: SearchEntry): PreparedEntry {
 	return {
 		entry,
 		title: foldName(entry.title),
@@ -101,6 +103,24 @@ function prepared(entries: SearchEntry[]): PreparedEntry[] {
 		preparedIndexes.set(entries, list);
 	}
 	return list;
+}
+
+/** Entries folded between pauses, so preparing a large index never holds the page still for long. */
+const entriesPerStep = 1000;
+
+/**
+ * Folds an index's names ahead of its first search, a part at a time with a
+ * pause between parts, so typing stays smooth while it runs. The masthead's
+ * panel keeps showing the server's answers until it is done.
+ */
+export async function prepareSearchIndex(entries: SearchEntry[]): Promise<void> {
+	if (preparedIndexes.has(entries)) return;
+	const list: PreparedEntry[] = [];
+	for (let start = 0; start < entries.length; start += entriesPerStep) {
+		for (const entry of entries.slice(start, start + entriesPerStep)) list.push(prepare(entry));
+		await new Promise((resolve) => setTimeout(resolve, 0));
+	}
+	preparedIndexes.set(entries, list);
 }
 
 /** How well one name matches: whole name, start of the name, start of a word, or anywhere. */

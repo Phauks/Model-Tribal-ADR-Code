@@ -51,7 +51,11 @@ export const edgeCacheRules = [
 	// The sitemap (src/lib/sitemap.ts) leaves out what nations hid too, so it
 	// is purged with them. It also adds published essays and nations' own
 	// page changes, which purge nothing: an hour is how late those can be.
-	{ pattern: /^\/(?:sitemap|sitemaps\/[a-z]+(?:-[a-z]+)*(?:-\d+)?)\.xml$/, seconds: 3600, tags: ['nation-restrictions'], statuses: [200] }
+	{ pattern: /^\/(?:sitemap|sitemaps\/[a-z]+(?:-[a-z]+)*(?:-\d+)?)\.xml$/, seconds: 3600, tags: ['nation-restrictions'], statuses: [200] },
+	// The search on the server (src/routes/search/query): one answer per
+	// search typed, the same for every reader and drawn from the same files,
+	// so it is kept and purged as they are.
+	{ pattern: /^\/search\/query$/, seconds: 300, tags: ['nation-restrictions'], statuses: [200] }
 ];
 
 export const edgeHeader = 'cloudflare-cdn-cache-control';
