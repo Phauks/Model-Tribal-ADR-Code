@@ -1,0 +1,47 @@
+key: north-carolina-general-statutes-108d-40
+kind: state-statute
+citation:
+  type: legislation
+  title: (Effective until October 1, 2026) Populations covered by PHPs
+  title-short: N.C. Gen. Stat. § 108D-40
+  container-title: General Statutes of North Carolina
+  container-title-short: N.C. Gen. Stat.
+  section: 108D-40
+  author:
+  - literal: North Carolina General Assembly
+  URL: https://www.ncleg.gov/EnactedLegislation/Statutes/HTML/BySection/Chapter_108D/GS_108D-40.html
+  accessed:
+    date-parts:
+    - - 2026
+      - 11
+      - 27
+original_link: https://www.ncleg.gov/EnactedLegislation/Statutes/HTML/BySection/Chapter_108D/GS_108D-40.html
+retrieved: '2026-11-27'
+archives: []
+history:
+  status: live
+  last_checked: '2026-11-27'
+state_law:
+  relevance: incidental
+  citation: N.C. Gen. Stat. § 108D-40 (2025)
+rights:
+  status: no-permission-needed
+  basis: government-edict
+  basis_note: 'Official state statutes are not copyrightable under the government edicts doctrine (Georgia v. Public.Resource.Org, Inc., 590 U.S. 255 (2020)). Linked, not served: state statutes stay link only.'
+  redistribution: false
+jurisdictions:
+- level: state
+  state: NC
+topics:
+- state-indian-law
+found_in:
+- 2026-11-27-state-statutes-sweep
+notes: 'Indigo Book citation: N.C. Gen. Stat. § 108D-40 (2025). History: 2015-245, s. 4; 2016-121, s. 2(b); 2018-48, s. 1; 2018-49, s. 5; 2019-81, ss. 12, 14(a); 2020-88, s. 12(b); 2021-62, s. 4.8(b), (c); 2022-74, ss. 9D.14(a), 9D.15(z); 2023-134, s. 9E.22(h); 2024-34, s. 12.1(a); 2025-27, s. 2.2(a); 2025-64, s. 4.1(b). Text read from the North Carolina General Assembly''s page for the section''s chapter of the General Statutes (ncleg.gov) on Nov. 27, 2026. Found by the state statutes sweep (terms: indian); AI reader''s verdict incidental: Gives Indian recipients an option to voluntarily enroll in PHPs. Unverified.'
+review:
+  status: unverified
+  by: scripts/law/state_statutes/run.py
+  date: '2026-11-27'
+  checks:
+  - check: 'Indian law section: the sweep''s keyword pass and an AI reader''s verdict (core, incidental or none)'
+    result: agree
+    detail: 'incidental; terms: indian'

@@ -1,0 +1,52 @@
+key: south-carolina-code-27-15-20
+kind: state-statute
+citation:
+  type: legislation
+  title: Formal requisites of lease
+  title-short: S.C. Code Ann. § 27-15-20
+  container-title: Code of Laws of South Carolina 1976
+  container-title-short: S.C. Code Ann.
+  section: 27-15-20
+  author:
+  - literal: South Carolina General Assembly
+  URL: https://www.scstatehouse.gov/code/t27c015.php
+  accessed:
+    date-parts:
+    - - 2026
+      - 11
+      - 27
+original_link: https://www.scstatehouse.gov/code/t27c015.php
+retrieved: '2026-11-27'
+archives: []
+history:
+  status: live
+  last_checked: '2026-11-27'
+shares_link_with:
+- south-carolina-code-27-15-10
+- south-carolina-code-27-15-30
+- south-carolina-code-27-15-40
+- south-carolina-code-27-15-50
+state_law:
+  relevance: core
+  citation: S.C. Code Ann. § 27-15-20 (2025)
+rights:
+  status: no-permission-needed
+  basis: government-edict
+  basis_note: 'Official state statutes are not copyrightable under the government edicts doctrine (Georgia v. Public.Resource.Org, Inc., 590 U.S. 255 (2020)). Linked, not served: state statutes stay link only.'
+  redistribution: false
+jurisdictions:
+- level: state
+  state: SC
+topics:
+- state-indian-law
+found_in:
+- 2026-11-27-state-statutes-sweep
+notes: 'Indigo Book citation: S.C. Code Ann. § 27-15-20 (2025). History: 1962 Code SECTION 57-152; 1952 Code SECTION 57-152; 1942 Code SECTION 8690; 1932 Code SECTION 8690; Civ. C. ''22 SECTION 5212; Civ. C. ''12 SECTION 3449; Civ. C. ''02 SECTION 2363; G. S. 1771; R. S. 1882; 1808 (5) 576; 1854 (12) 324. Text read from the South Carolina Legislative Services Agency''s page for the section''s chapter of the Code of Laws (scstatehouse.gov/code) on Nov. 27, 2026. Found by the state statutes sweep (terms: catawba; indians); AI reader''s verdict core: Catawba Indian lands lease validity requirements. Unverified.'
+review:
+  status: unverified
+  by: scripts/law/state_statutes/run.py
+  date: '2026-11-27'
+  checks:
+  - check: 'Indian law section: the sweep''s keyword pass and an AI reader''s verdict (core, incidental or none)'
+    result: agree
+    detail: 'core; terms: catawba; indians'

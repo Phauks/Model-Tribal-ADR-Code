@@ -1,0 +1,50 @@
+key: code-of-virginia-29-1-301
+kind: state-statute
+citation:
+  type: legislation
+  title: Exemptions from license requirements
+  title-short: Va. Code Ann. § 29.1-301
+  container-title: Code of Virginia
+  container-title-short: Va. Code Ann.
+  section: 29.1-301
+  author:
+  - literal: Virginia General Assembly
+  issued:
+    date-parts:
+    - - 1954
+  URL: https://law.lis.virginia.gov/vacode/title29.1/chapter3/section29.1-301/
+  accessed:
+    date-parts:
+    - - 2026
+      - 11
+      - 27
+original_link: https://law.lis.virginia.gov/vacode/title29.1/chapter3/section29.1-301/
+retrieved: '2026-11-27'
+archives: []
+history:
+  status: live
+  last_checked: '2026-11-27'
+state_law:
+  relevance: incidental
+  citation: Va. Code Ann. § 29.1-301 (2025)
+rights:
+  status: no-permission-needed
+  basis: government-edict
+  basis_note: 'Official state statutes are not copyrightable under the government edicts doctrine (Georgia v. Public.Resource.Org, Inc., 590 U.S. 255 (2020)). Linked, not served: state statutes stay link only.'
+  redistribution: false
+jurisdictions:
+- level: state
+  state: VA
+topics:
+- state-indian-law
+found_in:
+- 2026-11-27-state-statutes-sweep
+notes: 'Indigo Book citation: Va. Code Ann. § 29.1-301 (2025). History: Code 1950, § 29-52; 1950, pp. 619, 627; 1954, c. 623; 1962, c. 526; 1964, c. 445; 1968, c. 673; 1974, c. 363; 1977, c. 392; 1980, cc. 494, 500; 1981, c. 16; 1985, c. 154; 1987, cc. 126, 488, 507; 1988, cc. 180, 488; 1992, c. 262; 1996, cc. 118, 151; 1997, c. 267; 2000, cc. 110, 142; 2001, cc. 49, 597; 2002, c. 67; 2004, c. 846; 2008, c. 279; 2010, c. 345; 2016, c. 63; 2018, cc. 116, 507; 2026, c. 834. Text read from the Virginia Division of Legislative Systems'' page for the section in the Code of Virginia (law.lis.virginia.gov) on Nov. 27, 2026. Found by the state statutes sweep (terms: indian reservation; indian; reservation; tribal; tribe; tribes); AI reader''s verdict incidental: Hunting and fishing license exemption for Indians and Virginia tribes. Unverified.'
+review:
+  status: unverified
+  by: scripts/law/state_statutes/run.py
+  date: '2026-11-27'
+  checks:
+  - check: 'Indian law section: the sweep''s keyword pass and an AI reader''s verdict (core, incidental or none)'
+    result: agree
+    detail: 'incidental; terms: indian reservation; indian; reservation; tribal; tribe; tribes'

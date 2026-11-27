@@ -1,0 +1,50 @@
+key: south-carolina-code-63-7-2320
+kind: state-statute
+citation:
+  type: legislation
+  title: Kinship Foster Care Program
+  title-short: S.C. Code Ann. § 63-7-2320
+  container-title: Code of Laws of South Carolina 1976
+  container-title-short: S.C. Code Ann.
+  section: 63-7-2320
+  author:
+  - literal: South Carolina General Assembly
+  issued:
+    date-parts:
+    - - 2008
+  URL: https://www.scstatehouse.gov/code/t63c007.php
+  accessed:
+    date-parts:
+    - - 2026
+      - 11
+      - 27
+original_link: https://www.scstatehouse.gov/code/t63c007.php
+retrieved: '2026-11-27'
+archives: []
+history:
+  status: live
+  last_checked: '2026-11-27'
+state_law:
+  relevance: incidental
+  citation: S.C. Code Ann. § 63-7-2320 (2025)
+rights:
+  status: no-permission-needed
+  basis: government-edict
+  basis_note: 'Official state statutes are not copyrightable under the government edicts doctrine (Georgia v. Public.Resource.Org, Inc., 590 U.S. 255 (2020)). Linked, not served: state statutes stay link only.'
+  redistribution: false
+jurisdictions:
+- level: state
+  state: SC
+topics:
+- state-indian-law
+found_in:
+- 2026-11-27-state-statutes-sweep
+notes: 'Indigo Book citation: S.C. Code Ann. § 63-7-2320 (2025). History: 2008 Act No. 361, SECTION 2; 2018 Act No. 146 (H.3701), SECTION 3, eff April 4, 2018; 2022 Act No. 168 (S.222), SECTION 1, eff May 16, 2022; 2026 Act No. 99 (S.415), SECTION 3, eff February 27, 2026. Text read from the South Carolina Legislative Services Agency''s page for the section''s chapter of the Code of Laws (scstatehouse.gov/code) on Nov. 27, 2026. Found by the state statutes sweep (terms: alaska native; american indian; indian child; indian; native); AI reader''s verdict incidental: Kinship foster care; saves Indian Child Welfare Act placement preferences. Unverified.'
+review:
+  status: unverified
+  by: scripts/law/state_statutes/run.py
+  date: '2026-11-27'
+  checks:
+  - check: 'Indian law section: the sweep''s keyword pass and an AI reader''s verdict (core, incidental or none)'
+    result: agree
+    detail: 'incidental; terms: alaska native; american indian; indian child; indian; native'
