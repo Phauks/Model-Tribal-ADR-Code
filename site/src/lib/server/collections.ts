@@ -667,25 +667,32 @@ export const collectionPath = (identifier: string) => `/stats/${identifier}`;
 
 /** Every collection with its count, in registry order, leaving out any that count nothing yet. */
 export function collectionCounts(): CollectionCount[] {
-	return collections
-		.map((collection) => {
-			const items = collection.items();
-			const held = collection.heldBack?.() ?? 0;
-			const breakdown = collection.breakdown?.(items) ?? documentBreakdown(items);
-			const withCopies = items.some((item) => item.copies?.length);
-			return {
-				identifier: collection.identifier,
-				title: collection.title,
-				group: collection.group,
-				href: collection.list ?? collectionPath(collection.identifier),
-				count: items.length,
-				...(collection.years ? { years: collection.years() } : yearSpan(items) ? { years: yearSpan(items) } : {}),
-				...(held > 0 ? { heldBack: held, heldBackReason: collection.heldBackReason } : {}),
-				...(breakdown.length > 0 ? { breakdown } : {}),
-				...(withCopies ? { copyColumns: collection.copyCounts ? ('counts' as const) : ('copy' as const) } : {})
-			};
-		})
-		.filter((collection) => collection.count > 0);
+	return collections.map(countOf).filter((collection) => collection.count > 0);
+}
+
+/** One collection with its count, for its own list page (src/routes/stats/[collection]), which needs no other. */
+export function collectionCount(identifier: string): CollectionCount | undefined {
+	const collection = collections.find((candidate) => candidate.identifier === identifier);
+	const counted = collection ? countOf(collection) : undefined;
+	return counted && counted.count > 0 ? counted : undefined;
+}
+
+function countOf(collection: (typeof collections)[number]): CollectionCount {
+	const items = collection.items();
+	const held = collection.heldBack?.() ?? 0;
+	const breakdown = collection.breakdown?.(items) ?? documentBreakdown(items);
+	const withCopies = items.some((item) => item.copies?.length);
+	return {
+		identifier: collection.identifier,
+		title: collection.title,
+		group: collection.group,
+		href: collection.list ?? collectionPath(collection.identifier),
+		count: items.length,
+		...(collection.years ? { years: collection.years() } : yearSpan(items) ? { years: yearSpan(items) } : {}),
+		...(held > 0 ? { heldBack: held, heldBackReason: collection.heldBackReason } : {}),
+		...(breakdown.length > 0 ? { breakdown } : {}),
+		...(withCopies ? { copyColumns: collection.copyCounts ? ('counts' as const) : ('copy' as const) } : {})
+	};
 }
 
 /** The collections under each heading, for the page, leaving out empty headings. */
