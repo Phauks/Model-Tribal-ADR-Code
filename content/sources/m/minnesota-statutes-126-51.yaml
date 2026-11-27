@@ -1,0 +1,47 @@
+key: minnesota-statutes-126-51
+kind: state-statute
+citation:
+  type: legislation
+  title: Section 126.51
+  title-short: Minn. Stat. § 126.51
+  container-title: Minnesota Statutes
+  container-title-short: Minn. Stat.
+  section: '126.51'
+  author:
+  - literal: Minnesota Office of the Revisor of Statutes
+  URL: https://www.revisor.mn.gov/statutes/cite/126.51
+  accessed:
+    date-parts:
+    - - 2026
+      - 11
+      - 27
+original_link: https://www.revisor.mn.gov/statutes/cite/126.51
+retrieved: '2026-11-27'
+archives: []
+history:
+  status: live
+  last_checked: '2026-11-27'
+state_law:
+  relevance: core
+  citation: Minn. Stat. § 126.51 (2026)
+rights:
+  status: no-permission-needed
+  basis: government-edict
+  basis_note: 'Official state statutes are not copyrightable under the government edicts doctrine (Georgia v. Public.Resource.Org, Inc., 590 U.S. 255 (2020)). Linked, not served: state statutes stay link only.'
+  redistribution: false
+jurisdictions:
+- level: state
+  state: MN
+topics:
+- state-indian-law
+found_in:
+- 2026-11-27-state-statutes-third-batch
+notes: 'Indigo Book citation: Minn. Stat. § 126.51 (2026). Text read from the Minnesota Revisor of Statutes'' full-text chapter page for the section (revisor.mn.gov/statutes) on Nov. 27, 2026. Found by the state statutes sweep (no keyword; read because its chapter''s name is Indian law); the session''s verdict core: Chapter on American Indian curriculum; subdivisions renumbered or repealed. Unverified.'
+review:
+  status: unverified
+  by: scripts/law/state_statutes/run.py
+  date: '2026-11-27'
+  checks:
+  - check: 'Indian law section: the sweep''s keyword pass and an AI reader''s verdict (core, incidental or none)'
+    result: settled
+    detail: core; no keyword, found by the reader alone

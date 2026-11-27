@@ -16,6 +16,7 @@ import {
 } from '#lib/server/content.ts';
 import { noneIdentified, type EmptyNote } from '#lib/search-status.ts';
 import { governanceGroups } from '#lib/governance-groups.ts';
+import { branchLines } from '#lib/governance-branches.ts';
 import { hasConstitution, hasPublishedLaws } from '#lib/server/coverage.ts';
 import { layoutPresenceMap, pointInBox, shapeInBox, shareStateShapes, type BoxLayers, type NationMapData, type PresenceMapLayout } from '#lib/presence-map.ts';
 import { landAreaKindLabels } from '#lib/nations-map-drawing.ts';
@@ -481,6 +482,7 @@ function governmentFacts(
 	const facts = record.governance ?? [];
 	const groups: FactGroup[] = [];
 	const read = new Map<string, FactItem>();
+	const branchMarks = new Map<string, CitationMark[]>();
 	for (const definition of governanceGroups) {
 		const items: FactItem[] = [];
 		if (definition.field === 'governance-form') {
@@ -501,6 +503,21 @@ function governmentFacts(
 				// does; two sources giving the same value share one line.
 				const shown = [label, fact.value].filter(Boolean).join(': ');
 				const sourceText = fact.quote ? `${shown}. “${fact.quote}”` : shown;
+				if (aspect === 'branches') {
+					// One line for each branch, its powers under it; the marker
+					// goes on the last line, as the whole list is one fact.
+					const known = branchMarks.get(fact.value);
+					const citations: CitationMark[] = known ?? [];
+					sources.citeFact(fact, definition.label, sourceText, citations);
+					if (!known) {
+						branchMarks.set(fact.value, citations);
+						const lines = branchLines(fact.value);
+						lines.forEach((line, index) =>
+							items.push({ text: line.text, note: line.powers, ...(index === lines.length - 1 ? { citations } : {}) })
+						);
+					}
+					continue;
+				}
 				const same = items.find((item) => item.label === label && item.text === fact.value);
 				const citations: CitationMark[] = same?.citations ?? [];
 				sources.citeFact(fact, definition.label, sourceText, citations);

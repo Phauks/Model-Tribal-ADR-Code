@@ -22,6 +22,19 @@ recognition:
   as_of: '2026-01-30'
   locator: 91 Fed. Reg. 4106
   note: 'The notice adds in parentheses: Cordova.'
+- type: federal
+  earliest_record: constitution
+  legal_basis: Constitution of the Native Village of Eyak (approved by the Secretary of the Interior June 18, 1980)
+  since: '1980-06-18'
+  source: constitution-native-village-of-eyak-1980-text
+  document_version:
+    document: native-village-of-eyak-constitution
+    version: 1980-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1980-06-18'
+  locator: 1980 constitution, approval certificate
+  note: The earliest record this site has found that shows the United States dealing with the nation as a federally recognized nation. The relationship may be older. The Secretary of the Interior approved the nation's constitution; the date is read from the approval certificate.
 states:
 - state: AK
   presence: government-office

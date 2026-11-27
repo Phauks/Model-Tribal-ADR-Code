@@ -21,6 +21,16 @@ recognition:
   verification: bulk-import
   as_of: '2026-01-30'
   locator: 91 Fed. Reg. 4105
+- type: federal
+  earliest_record: treaty
+  legal_basis: Treaty of Point Elliott, Jan. 22, 1855, 12 Stat. 927
+  since: '1855-01-22'
+  source: treaty-with-the-dwamish-suquamish-etc-1855
+  confidence: medium
+  verification: inferred
+  as_of: '1855-01-22'
+  locator: p. 669 (Treaty with the Dwamish, Suquamish, etc., 1855; Kappler header "Jan. 22, 1855. | 12 Stat. 927. Ratified Mar. 8, 1859. | Proclaimed Apr. 11, 1859.")
+  note: The earliest record this site has found that shows the United States dealing with the nation as a federally recognized nation. The relationship may be older. The treaty names the Sk-tahlmish; Skopeáhmish; Sktahlejum; Shohomish; Sha-ho-mish / Snohomish; the nation's profile links it to the treaty by name, and the link has not yet been checked against a second source. 11 nations' profiles link this treaty.
 states:
 - state: WA
   presence: government-office

@@ -583,7 +583,7 @@
 					{#each data.neighbors as entry (entry.state)}
 						<h3 class="neighbors-state">{entry.stateName}</h3>
 						{#if entry.nations.length > 0}
-							<ul class="neighbors">
+							<ul class="neighbors stacked-list">
 								{#each entry.nations as nation (nation.id)}
 									<li><a href="/nations/{nation.id}">{nation.name}</a></li>
 								{/each}
@@ -794,17 +794,13 @@
 		font-size: var(--font-size-body);
 	}
 
-	/* As many columns as fit, so the list spreads out under Key facts. */
+	/*
+	 * One nation per line, with the thin dashed rule of a stacked list between
+	 * them, so a long name never runs into the next (Trevor chose "one per
+	 * line, full width" on Nov. 27, 2026; design/nearby-nations). No bullets
+	 * (Trevor, Nov. 23, 2026).
+	 */
 	.neighbors {
-		columns: var(--layout-card-min);
-		column-gap: var(--space-5);
 		max-width: none;
-		/* Names in columns need no bullets (Trevor, Nov. 23, 2026). */
-		list-style: none;
-		padding-left: 0;
-	}
-
-	.neighbors li {
-		break-inside: avoid;
 	}
 </style>

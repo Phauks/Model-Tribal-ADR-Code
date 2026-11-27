@@ -6,7 +6,7 @@ import { error, json } from '@sveltejs/kit';
 import { siteTextSubject } from '#lib/permissions.ts';
 import { requireDocumentLevel } from '#lib/server/access.ts';
 import { recordPiece } from '#lib/server/record-text.ts';
-import { pieceStates, saveVersion, SiteTextProblem } from '#lib/server/site-text.ts';
+import { pieceStates, saveVersion, SiteTextProblem, waitingCount } from '#lib/server/site-text.ts';
 import { catalogByKey } from '#lib/server/site-text-catalog.ts';
 import { requirePersonForData, storage } from '#lib/server/workspace.ts';
 import type { RequestHandler } from './$types';
@@ -36,7 +36,7 @@ export const POST: RequestHandler = async (event) => {
 			published: state?.published ?? null,
 			draft: state?.draft ? { words: state.draft.words, personName: state.draft.personName, createdAt: state.draft.createdAt } : null,
 			record: await recordPiece(entry, state),
-			waiting: [...states.values()].filter((each) => each.draft).length
+			waiting: waitingCount(states, catalogByKey())
 		},
 		{ headers: { 'cache-control': 'no-store' } }
 	);

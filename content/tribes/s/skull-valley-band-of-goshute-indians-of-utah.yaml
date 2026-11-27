@@ -11,6 +11,16 @@ recognition:
   verification: bulk-import
   as_of: '2026-01-30'
   locator: 91 Fed. Reg. 4105
+- type: federal
+  earliest_record: treaty
+  legal_basis: Treaty with the Shoshoni-Goship, Oct. 12, 1863, 13 Stat. 681
+  since: '1863-10-12'
+  source: treaty-with-the-shoshoni-goship-1863
+  confidence: medium
+  verification: inferred
+  as_of: '1863-10-12'
+  locator: p. 859 (Treaty with the Shoshoni-Goship, 1863; Kappler header "Oct. 12, 1863. | 13 Stats., 681. | Ratified Mar. 7, 1864 | Proclaimed Jan. 17, 1865.")
+  note: The earliest record this site has found that shows the United States dealing with the nation as a federally recognized nation. The relationship may be older. The treaty names the Goship; the nation's profile links it to the treaty by name, and the link has not yet been checked against a second source. 2 nations' profiles link this treaty.
 states:
 - state: UT
   presence: government-office

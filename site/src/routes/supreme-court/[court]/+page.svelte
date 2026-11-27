@@ -93,7 +93,7 @@
 	glance={data.glance}
 	sources={data.sources}
 	trail={[
-		{ label: 'Library', href: '/library' },
+		{ label: 'Courts and cases', href: '/cases' },
 		{ label: 'Supreme Court', href: '/supreme-court' }
 	]}
 >
