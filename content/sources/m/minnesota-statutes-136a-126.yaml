@@ -1,0 +1,50 @@
+key: minnesota-statutes-136a-126
+kind: state-statute
+citation:
+  type: legislation
+  title: Indian Scholarships
+  title-short: Minn. Stat. § 136A.126
+  container-title: Minnesota Statutes
+  container-title-short: Minn. Stat.
+  section: 136A.126
+  author:
+  - literal: Minnesota Office of the Revisor of Statutes
+  issued:
+    date-parts:
+    - - 1959
+  URL: https://www.revisor.mn.gov/statutes/cite/136A.126
+  accessed:
+    date-parts:
+    - - 2026
+      - 11
+      - 27
+original_link: https://www.revisor.mn.gov/statutes/cite/136A.126
+retrieved: '2026-11-27'
+archives: []
+history:
+  status: live
+  last_checked: '2026-11-27'
+state_law:
+  relevance: core
+  citation: Minn. Stat. § 136A.126 (2026)
+rights:
+  status: no-permission-needed
+  basis: government-edict
+  basis_note: 'Official state statutes are not copyrightable under the government edicts doctrine (Georgia v. Public.Resource.Org, Inc., 590 U.S. 255 (2020)). Linked, not served: state statutes stay link only.'
+  redistribution: false
+jurisdictions:
+- level: state
+  state: MN
+topics:
+- state-indian-law
+found_in:
+- 2026-11-27-state-statutes-third-batch
+notes: 'Indigo Book citation: Minn. Stat. § 136A.126 (2026). History: Ex1959 c 71 art 5 s 36; 1971 c 176 s 1; 1977 c 384 s 1; 1983 c 258 s 28; 1Sp1985 c 11 s 12; 1988 c 629 s 28; 1988 c 718 art 3 s 3; 1993 c 224 art 9 s 32; art 13 s 40; 1993 c 374 s 23; 1997 c 192 s 20; 1998 c 397 art 2 s 107,164; 1998 c 398 art 5 s 55; 2000 c 489 art 3 s 4; 1Sp2001 c 6 art 2 s 49; 1Sp2005 c 5 art 2 s 70; 2007 c 146 art 2 s 28, 47; 2008 c 298 s 5; 2010 c 364 s 8,9; 2013 c 99 art 2 s 29; 2014 c 149 s 18 -20; 1Sp2021 c 2 art 2 s 10,11; 2023 c 41 art 2 s 17. Text read from the Minnesota Revisor of Statutes'' full-text chapter page for the section (revisor.mn.gov/statutes) on Nov. 27, 2026. Found by the state statutes sweep (terms: american indian; indian; tribal; tribe); AI reader''s verdict core: Scholarships for Indian ancestry or enrolled tribal members. Unverified.'
+review:
+  status: unverified
+  by: scripts/law/state_statutes/run.py
+  date: '2026-11-27'
+  checks:
+  - check: 'Indian law section: the sweep''s keyword pass and an AI reader''s verdict (core, incidental or none)'
+    result: agree
+    detail: 'core; terms: american indian; indian; tribal; tribe'

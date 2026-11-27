@@ -1,0 +1,50 @@
+key: minnesota-statutes-16c-05
+kind: state-statute
+citation:
+  type: legislation
+  title: Contract Management; Validity and Review
+  title-short: Minn. Stat. § 16C.05
+  container-title: Minnesota Statutes
+  container-title-short: Minn. Stat.
+  section: 16C.05
+  author:
+  - literal: Minnesota Office of the Revisor of Statutes
+  issued:
+    date-parts:
+    - - 1994
+  URL: https://www.revisor.mn.gov/statutes/cite/16C.05
+  accessed:
+    date-parts:
+    - - 2026
+      - 11
+      - 27
+original_link: https://www.revisor.mn.gov/statutes/cite/16C.05
+retrieved: '2026-11-27'
+archives: []
+history:
+  status: live
+  last_checked: '2026-11-27'
+state_law:
+  relevance: incidental
+  citation: Minn. Stat. § 16C.05 (2026)
+rights:
+  status: no-permission-needed
+  basis: government-edict
+  basis_note: 'Official state statutes are not copyrightable under the government edicts doctrine (Georgia v. Public.Resource.Org, Inc., 590 U.S. 255 (2020)). Linked, not served: state statutes stay link only.'
+  redistribution: false
+jurisdictions:
+- level: state
+  state: MN
+topics:
+- state-indian-law
+found_in:
+- 2026-11-27-state-statutes-third-batch
+notes: 'Indigo Book citation: Minn. Stat. § 16C.05 (2026). History: 1994 c 632 art 3 s 33; 1998 c 386 art 1 s 6; 1999 c 86 art 1 s 11; 1999 c 230 s 1; 2000 c 488 art 2 s 1; 1Sp2001 c 8 art 2 s 10; 1Sp2001 c 10 art 2 s 37; 2003 c 130 s 12; 1Sp2003 c 1 art 2 s 48,49; 2004 c 206 s 7; 2007 c 148 art 2 s 35,36; 2009 c 101 art 2 s 109; 2014 c 187 s 3; 2014 c 196 art 1 s 5; art 2 s 4; 2025 c 39 art 2 s 44,45. Text read from the Minnesota Revisor of Statutes'' full-text chapter page for the section (revisor.mn.gov/statutes) on Nov. 27, 2026. Found by the state statutes sweep (terms: indian tribe; indian tribes; indian; tribe; tribes); AI reader''s verdict incidental: Contract rule bars requiring Indian Tribes to deny sovereignty. Unverified.'
+review:
+  status: unverified
+  by: scripts/law/state_statutes/run.py
+  date: '2026-11-27'
+  checks:
+  - check: 'Indian law section: the sweep''s keyword pass and an AI reader''s verdict (core, incidental or none)'
+    result: agree
+    detail: 'incidental; terms: indian tribe; indian tribes; indian; tribe; tribes'

@@ -11,6 +11,16 @@ recognition:
   verification: bulk-import
   as_of: '2026-01-30'
   locator: 91 Fed. Reg. 4105
+- type: federal
+  earliest_record: land
+  legal_basis: Exec. Order of Sept. 22, 1866, 1 Kappler 924
+  since: '1866-09-22'
+  source: executive-order-1866-09-shoalwater-reservation
+  confidence: medium
+  verification: read-in-full
+  as_of: '1866-09-22'
+  locator: 1 Kappler 924
+  note: The earliest record this site has found that shows the United States dealing with the nation as a federally recognized nation. The relationship may be older. The instrument first set aside the Shoalwater Reserve, Washington Territory.
 states:
 - state: WA
   presence: government-office

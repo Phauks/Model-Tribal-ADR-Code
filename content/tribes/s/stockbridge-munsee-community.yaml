@@ -11,6 +11,16 @@ recognition:
   verification: bulk-import
   as_of: '2026-01-30'
   locator: 91 Fed. Reg. 4105
+- type: federal
+  earliest_record: treaty
+  legal_basis: Treaty with the Oneida, etc., Dec. 2, 1794, 7 Stat. 47
+  since: '1794-12-02'
+  source: treaty-with-the-oneida-etc-1794
+  confidence: medium
+  verification: inferred
+  as_of: '1794-12-02'
+  locator: p. 37 (Treaty with the Oneida, etc., 1794; Kappler header "Dec. 2, 1794. | 7 Stat., 47. | Proclamation, Jan. 21, 1795.")
+  note: The earliest record this site has found that shows the United States dealing with the nation as a federally recognized nation. The relationship may be older. The treaty names the Stockbridge; the nation's profile links it to the treaty by name, and the link has not yet been checked against a second source. 4 nations' profiles link this treaty.
 states:
 - state: WI
   presence: government-office

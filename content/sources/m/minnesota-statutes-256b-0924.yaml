@@ -1,0 +1,50 @@
+key: minnesota-statutes-256b-0924
+kind: state-statute
+citation:
+  type: legislation
+  title: Targeted Case Management Services
+  title-short: Minn. Stat. § 256B.0924
+  container-title: Minnesota Statutes
+  container-title-short: Minn. Stat.
+  section: 256B.0924
+  author:
+  - literal: Minnesota Office of the Revisor of Statutes
+  issued:
+    date-parts:
+    - - 2001
+  URL: https://www.revisor.mn.gov/statutes/cite/256B.0924
+  accessed:
+    date-parts:
+    - - 2026
+      - 11
+      - 27
+original_link: https://www.revisor.mn.gov/statutes/cite/256B.0924
+retrieved: '2026-11-27'
+archives: []
+history:
+  status: live
+  last_checked: '2026-11-27'
+state_law:
+  relevance: incidental
+  citation: Minn. Stat. § 256B.0924 (2026)
+rights:
+  status: no-permission-needed
+  basis: government-edict
+  basis_note: 'Official state statutes are not copyrightable under the government edicts doctrine (Georgia v. Public.Resource.Org, Inc., 590 U.S. 255 (2020)). Linked, not served: state statutes stay link only.'
+  redistribution: false
+jurisdictions:
+- level: state
+  state: MN
+topics:
+- state-indian-law
+found_in:
+- 2026-11-27-state-statutes-third-batch
+notes: 'Indigo Book citation: Minn. Stat. § 256B.0924 (2026). History: 1Sp2001 c 9 art 2 s 44; 2002 c 277 s 18; 2002 c 375 art 2 s 31; 2002 c 379 art 1 s 113; 2003 c 112 art 2 s 50; 2005 c 56 s 1; 1Sp2005 c 4 art 3 s 9; 2008 c 363 art 15 s 6,7; 2009 c 101 art 2 s 109; 1Sp2017 c 6 art 4 s 44; 1Sp2021 c 7 art 6 s 20; art 11 s 25; 2024 c 125 art 1 s 18; 2024 c 127 art 46 s 18; 1Sp2025 c 9 art 2 s 25; 2026 c 88 art 1 s 126; 2026 c 95 art 4 s 18 -22; 2026 c 121 art 3 s 53. Text read from the Minnesota Revisor of Statutes'' full-text chapter page for the section (revisor.mn.gov/statutes) on Nov. 27, 2026. Found by the state statutes sweep (terms: indian health; tribal government; tribal nations; indian; tribal; tribe; tribes); AI reader''s verdict incidental: Tribal governments and Tribal case managers eligible as Medical Assistance providers. Unverified.'
+review:
+  status: unverified
+  by: scripts/law/state_statutes/run.py
+  date: '2026-11-27'
+  checks:
+  - check: 'Indian law section: the sweep''s keyword pass and an AI reader''s verdict (core, incidental or none)'
+    result: agree
+    detail: 'incidental; terms: indian health; tribal government; tribal nations; indian; tribal; tribe; tribes'

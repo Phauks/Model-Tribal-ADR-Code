@@ -19,10 +19,17 @@ recognition:
   verification: bulk-import
   as_of: '2026-01-30'
   locator: 91 Fed. Reg. 4104
-  note: 'Named in the notice as one of the six component reservations of the Minnesota Chippewa Tribe,
-    Minnesota, not as a separate entity: Minnesota Chippewa Tribe, Minnesota (Six component reservations:
-    Bois Forte Band (Nett Lake); Fond du Lac Band; Grand Portage Band; Leech Lake Band; Mille Lacs Band;
-    White Earth Band).'
+  note: 'Named in the notice as one of the six component reservations of the Minnesota Chippewa Tribe, Minnesota, not as a separate entity: Minnesota Chippewa Tribe, Minnesota (Six component reservations: Bois Forte Band (Nett Lake); Fond du Lac Band; Grand Portage Band; Leech Lake Band; Mille Lacs Band; White Earth Band).'
+- type: federal
+  earliest_record: treaty
+  legal_basis: Treaty with the Pillager Band of Chippewa Indians, Aug. 21, 1847, 9 Stat. 908
+  since: '1847-08-21'
+  source: treaty-with-the-pillager-band-of-chippewa-indians-1847
+  confidence: medium
+  verification: inferred
+  as_of: '1847-08-21'
+  locator: p. 569 (Treaty with the Pillager Band of Chippewa Indians, 1847; Kappler header "Aug. 21, 1847. | 9 Stat., 908. | Proclamation Apr. 7, 1848.")
+  note: The earliest record this site has found that shows the United States dealing with the nation as a federally recognized nation. The relationship may be older. The treaty names the Pillager; the nation's profile links it to the treaty by name, and the link has not yet been checked against a second source. 2 nations' profiles link this treaty.
 states:
 - state: MN
   presence: land

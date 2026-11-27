@@ -37,7 +37,7 @@
 	<meta name="description" content="The Tribal, federal, state and territorial courts whose opinions or cases are on this site." />
 </svelte:head>
 
-<Breadcrumbs trail={[{ label: 'Library', href: '/library' }]} current="Courts" />
+<Breadcrumbs trail={[{ label: 'Courts and cases', href: '/cases' }]} current="Courts" />
 
 <h1>Courts <CountBadge count={data.courts.length} /></h1>
 <p>The Supreme Court of the United States has <a href="/supreme-court">its own pages</a>.</p>

@@ -1,0 +1,47 @@
+key: idaho-code-55-103
+kind: state-statute
+citation:
+  type: legislation
+  title: Who may own property
+  title-short: Idaho Code § 55-103
+  container-title: Idaho Code
+  container-title-short: Idaho Code
+  section: 55-103
+  author:
+  - literal: Idaho Legislature
+  URL: https://legislature.idaho.gov/statutesrules/idstat/Title55/T55CH1/SECT55-103
+  accessed:
+    date-parts:
+    - - 2026
+      - 11
+      - 27
+original_link: https://legislature.idaho.gov/statutesrules/idstat/Title55/T55CH1/SECT55-103
+retrieved: '2026-11-27'
+archives: []
+history:
+  status: live
+  last_checked: '2026-11-27'
+state_law:
+  relevance: incidental
+  citation: Idaho Code § 55-103 (2026)
+rights:
+  status: no-permission-needed
+  basis: government-edict
+  basis_note: 'Official state statutes are not copyrightable under the government edicts doctrine (Georgia v. Public.Resource.Org, Inc., 590 U.S. 255 (2020)). Linked, not served: state statutes stay link only.'
+  redistribution: false
+jurisdictions:
+- level: state
+  state: ID
+topics:
+- state-indian-law
+found_in:
+- 2026-11-27-state-statutes-third-batch
+notes: 'Indigo Book citation: Idaho Code § 55-103 (2026). History: 55-103, added R.S., sec. 2827; reen. R.C. & C.L., sec. 3058; C.S., sec. 2827; I.C.A., sec. 54-103; am. 2023, ch. 251, sec. 1, p. 768; am. 2024, ch. 24, sec. 1, p. 177; am. 2025, ch. 270, sec. 1, p. 1158; am. 2025, ch. 326, sec. 2, p. 1345; am. 2026, ch. 251, sec. 22, p. 1073. Text read from the Idaho Legislature''s page for the section in the Idaho Statutes (legislature.idaho.gov/statutesrules/idstat) on Nov. 27, 2026. Found by the state statutes sweep (terms: federally recognized indian tribe; indian; tribe); AI reader''s verdict incidental: Foreign government definition excludes federally recognized Indian tribes. Unverified.'
+review:
+  status: unverified
+  by: scripts/law/state_statutes/run.py
+  date: '2026-11-27'
+  checks:
+  - check: 'Indian law section: the sweep''s keyword pass and an AI reader''s verdict (core, incidental or none)'
+    result: agree
+    detail: 'incidental; terms: federally recognized indian tribe; indian; tribe'

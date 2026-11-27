@@ -1,0 +1,50 @@
+key: kansas-statutes-annotated-50-6a07
+kind: state-statute
+citation:
+  type: legislation
+  title: Additional definitions
+  title-short: Kan. Stat. Ann. § 50-6a07
+  container-title: Kansas Statutes Annotated
+  container-title-short: Kan. Stat. Ann.
+  section: 50-6a07
+  author:
+  - literal: Kansas Office of Revisor of Statutes
+  issued:
+    date-parts:
+    - - 2009
+  URL: https://ksrevisor.gov/statutes/chapters/ch50/050_006a_0007.html
+  accessed:
+    date-parts:
+    - - 2026
+      - 11
+      - 27
+original_link: https://ksrevisor.gov/statutes/chapters/ch50/050_006a_0007.html
+retrieved: '2026-11-27'
+archives: []
+history:
+  status: live
+  last_checked: '2026-11-27'
+state_law:
+  relevance: incidental
+  citation: Kan. Stat. Ann. § 50-6a07 (2025)
+rights:
+  status: no-permission-needed
+  basis: government-edict
+  basis_note: 'Official state statutes are not copyrightable under the government edicts doctrine (Georgia v. Public.Resource.Org, Inc., 590 U.S. 255 (2020)). Linked, not served: state statutes stay link only.'
+  redistribution: false
+jurisdictions:
+- level: state
+  state: KS
+topics:
+- state-indian-law
+found_in:
+- 2026-11-27-state-statutes-third-batch
+notes: 'Indigo Book citation: Kan. Stat. Ann. § 50-6a07 (2025). History: L. 2009, ch. 110, § 1; L. 2015, ch. 79, § 4; L. 2017, ch. 96, § 23; June 22. Text read from the Kansas Revisor of Statutes'' page for the section in the Kansas Statutes Annotated (ksrevisor.gov/statutes) on Nov. 27, 2026. Found by the state statutes sweep (terms: indian allotments; indian communities; indian reservation; indian tribe; tribal land; allotments; indian; indians; nation; reservation; tribal; tribe); AI reader''s verdict incidental: Cigarette act definitions of Indian tribe and qualified tribal land. Unverified.'
+review:
+  status: unverified
+  by: scripts/law/state_statutes/run.py
+  date: '2026-11-27'
+  checks:
+  - check: 'Indian law section: the sweep''s keyword pass and an AI reader''s verdict (core, incidental or none)'
+    result: agree
+    detail: 'incidental; terms: indian allotments; indian communities; indian reservation; indian tribe; tribal land; allotments; indian; indians; nation; reservation; tribal; tribe'

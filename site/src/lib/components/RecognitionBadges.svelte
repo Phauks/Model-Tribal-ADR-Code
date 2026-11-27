@@ -93,7 +93,7 @@
 								<li>
 									{#if line.how}<strong>{line.how}</strong>{line.since ? `, ${line.since}` : ''}{': '}{:else if line.since}{line.since}{': '}{/if}{#each line.legalBasis as part, partIndex (partIndex)}{#if part.link}<a
 												href={part.link}>{part.text}</a
-											>{:else}{part.text}{/if}{/each}
+											>{:else}{part.text}{/if}{/each}{#if line.unverified}{' '}<span class="recognition-explanation-unverified">Unverified</span>{/if}
 								</li>
 							{/each}
 						</ul>
@@ -173,7 +173,7 @@
 	}
 
 	.recognition-badge-button:focus-visible {
-		outline: 3px solid var(--color-focus, var(--color-link));
+		outline: 3px solid var(--focus-ring);
 		outline-offset: 2px;
 	}
 
@@ -202,6 +202,11 @@
 		font-weight: var(--font-weight-semibold);
 	}
 
+
+	.recognition-explanation-unverified {
+		color: var(--color-ink-muted);
+		font-style: italic;
+	}
 
 	.recognition-explanation-gap {
 		margin: var(--space-2) 0 0;

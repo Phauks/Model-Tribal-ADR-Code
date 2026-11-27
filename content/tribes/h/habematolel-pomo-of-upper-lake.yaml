@@ -11,6 +11,19 @@ recognition:
   verification: bulk-import
   as_of: '2026-01-30'
   locator: 91 Fed. Reg. 4103
+- type: federal
+  earliest_record: constitution
+  legal_basis: Constitution of the Habematolel Pomo of Upper Lake, California (approved by the Secretary of the Interior Apr. 13, 1940), under the Indian Reorganization Act, ch. 576, § 16, 48 Stat. 984, 987 (1934)
+  since: '1940-04-13'
+  source: university-of-oklahoma-indian-reorganization-act-capomocons
+  document_version:
+    document: habematolel-pomo-of-upper-lake-constitution
+    version: 1940-text
+  confidence: medium
+  verification: inferred
+  as_of: '1940-04-13'
+  locator: 1940 constitution and bylaws, approval certificate
+  note: The earliest record this site has found that shows the United States dealing with the nation as a federally recognized nation. The relationship may be older. The Secretary of the Interior approved the nation's constitution; the date is read by rule from the approval certificate.
 states:
 - state: CA
   presence: government-office
