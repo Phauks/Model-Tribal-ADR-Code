@@ -5,8 +5,8 @@
  *
  * content/supreme-court/people.yaml, which scripts/law/supreme_court_people.py
  * builds from the Federal Judicial Center's Directory, the Library of
- * Congress list of Presidents and Wikimedia Commons, has one entry per
- * person, with a portrait where its license allows one. Who served and when
+ * Congress list of Presidents, has one entry per person; each person's
+ * picture is in pictures.yaml (supreme-court-pictures.ts). Who served and when
  * still comes from justices.yaml, one entry per appointment; the two meet at
  * the seat (SCT0104), which the Directory gives for each appointment.
  *
@@ -17,28 +17,6 @@ import path from 'node:path';
 import { parse } from 'yaml';
 import { repositoryRoot } from './content.ts';
 import { justicesFile, surname, type Justice } from './supreme-courts.ts';
-
-export interface Portrait {
-	/** The file's name on Wikimedia Commons. */
-	file: string;
-	/** The file's page on Commons, which records its source and license. */
-	page: string;
-	artist?: string;
-	credit?: string;
-	date?: string;
-	/** As Commons names it: "Public domain", "CC BY-SA 3.0". */
-	license: string;
-	license_link?: string;
-	attribution_required: boolean;
-	media_type: string;
-	width: number;
-	height: number;
-	/** The private bucket's copy the site shows. */
-	key: string;
-	/** Commons' copy at the size the site shows, used to fill the bucket. */
-	display_link: string;
-	sha256?: string;
-}
 
 export interface Appointment {
 	seat: string;
@@ -64,7 +42,6 @@ export interface JusticePerson {
 	career: string[];
 	appointments: Appointment[];
 	other_federal_service: ({ court: string; title: string; appointed_by?: string; commissioned?: string; ended?: string } | { text: string })[];
-	portrait?: Portrait;
 }
 
 export interface PresidentPerson {
@@ -76,7 +53,6 @@ export interface PresidentPerson {
 	/** The present term's start, when the Library of Congress list stops before it. */
 	serving_since?: string;
 	party?: string;
-	portrait?: Portrait;
 }
 
 interface PeopleFile {
@@ -193,25 +169,4 @@ export function justiceLinkFor(name: string, decided: string | undefined, caseKe
 export function decidedDay(issued: { 'date-parts'?: number[][] } | undefined): string | undefined {
 	const parts = issued?.['date-parts']?.[0] ?? [];
 	return parts.length >= 3 ? `${parts[0]}-${String(parts[1]).padStart(2, '0')}-${String(parts[2]).padStart(2, '0')}` : undefined;
-}
-
-/** The portraits the Worker may serve, for "virtual:portraits". */
-export function servablePortraits(): { person: string; key: string; mediaType: string; sha256: string; link: string }[] {
-	const { justices, presidents } = peopleFile();
-	return [...justices, ...presidents]
-		.filter((person) => person.portrait?.sha256)
-		.map((person) => ({
-			person: person.key,
-			key: person.portrait!.key,
-			mediaType: person.portrait!.media_type,
-			sha256: person.portrait!.sha256!,
-			link: person.portrait!.display_link
-		}));
-}
-
-/** A portrait's credit line: "Henry Inman, 1832. Public domain." */
-export function portraitCredit(portrait: Portrait): string {
-	const maker = [portrait.artist, portrait.date].filter(Boolean).join(', ');
-	const license = /^public domain$/i.test(portrait.license) ? 'Public domain' : portrait.license;
-	return [maker, portrait.credit && portrait.credit !== portrait.artist ? portrait.credit : undefined, license].filter(Boolean).join('. ') + '.';
 }
