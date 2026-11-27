@@ -564,7 +564,7 @@ export function presidentPage(key: string): PresidentPage | null {
 		chartCases: chartCasesOfPeople(people.map((each) => each.key)),
 		sources: sourceUses.list,
 		outline: { title: president.name, items },
-		family: { back: { label: 'U.S. Presidents', link: '/stats/presidents' }, title: president.name, link: path_, pages: [{ label: 'President Page', link: path_ }] }
+		family: { title: president.name, link: path_, pages: [{ label: 'President Page', link: path_ }] }
 	};
 }
 

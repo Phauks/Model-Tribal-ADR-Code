@@ -129,7 +129,7 @@ describe('Justice and President pages', () => {
 		expect(johnson.decided.map((item) => item.key)).toEqual(['united-states-v-holliday', 'the-kansas-indians', 'the-new-york-indians', 'united-states-v-mayrand', 'wilson-v-wall', 'kendall-v-united-states']);
 		expect(johnson.glance.find((group) => group.field === 'in-office')?.items.map((item) => item.text)).toEqual(['Apr. 15, 1865 – Mar. 4, 1869']);
 		expect(johnson.glance.find((group) => group.field === 'before')?.items[0]).toMatchObject({ text: 'Abraham Lincoln', link: '/presidents/abraham-lincoln' });
-		expect(johnson.family.back?.link).toBe('/stats/presidents');
+		expect(johnson.family).toEqual({ title: 'Andrew Johnson', link: '/presidents/andrew-johnson', pages: [{ label: 'President Page', link: '/presidents/andrew-johnson' }] });
 		expect(johnson.outline.items.map((item) => item.link)).toEqual(['#orders-heading', '#treaties-heading', '#acts-heading', '#justices-heading', '#decided-heading', '#sources-heading']);
 	});
 
