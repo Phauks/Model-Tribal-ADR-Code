@@ -36,6 +36,19 @@ recognition:
   verification: bulk-import
   as_of: '2026-01-30'
   locator: 91 Fed. Reg. 4103
+- type: federal
+  earliest_record: constitution
+  legal_basis: Constitution of the Fort McDermitt Paiute and Shoshone Tribes of the Fort McDermitt Indian Reservation, Nevada and Oregon (approved by the Secretary of the Interior July 2, 1936), under the Indian Reorganization Act, ch. 576, § 16, 48 Stat. 984, 987 (1934)
+  since: '1936-07-02'
+  source: constitution-fort-mcdermitt-paiute-and-shoshone-tribes-of-the-fort-mcdermitt-indian-reservation-1936-text
+  document_version:
+    document: fort-mcdermitt-paiute-and-shoshone-tribes-of-the-fort-mcdermitt-indian-reservation-constitution
+    version: 1936-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1936-07-02'
+  locator: 1936 constitution and bylaws (Library of Congress copy), approval certificate
+  note: The earliest record this site has found that shows the United States dealing with the nation as a federally recognized nation. The relationship may be older. The Secretary of the Interior approved the nation's constitution; the date is read from the approval certificate.
 states:
 - state: NV
   presence: government-office

@@ -1,6 +1,6 @@
 import { describe, expect, it } from 'vitest';
 import { citationParts } from '../src/lib/legal-citations.ts';
-import { explainStatus, howRecognized, linkDocumentName } from '../src/lib/recognition-explanation.ts';
+import { earliestRecordNote, explainStatus, howRecognized, linkDocumentName } from '../src/lib/recognition-explanation.ts';
 
 const list = {
 	type: 'federal',
@@ -48,6 +48,28 @@ describe('explainStatus', () => {
 
 	it('says so when the record has only the list', () => {
 		expect(explainStatus('Federally recognized', [list], parts).gap).toMatch(/has not yet found the document/);
+	});
+
+	it('gives the earliest record found, by kind, and says the relationship may be older', () => {
+		const treaty = {
+			type: 'federal',
+			earliest_record: 'treaty',
+			verification: 'inferred',
+			source: 'treaty-with-the-shawnee-1786',
+			since: '1786-01-31',
+			legal_basis: 'Treaty with the Shawnee, Jan. 31, 1786, 7 Stat. 26'
+		};
+		const explained = explainStatus('Federally recognized', [list, treaty], parts);
+		expect(explained.lines.map((line) => line.how)).toEqual(['On the federal list of recognized tribes', 'Treaty']);
+		expect(explained.lines[1].since).toBe('Jan. 31, 1786');
+		expect(explained.lines[1].unverified).toBe(true);
+		expect(explained.lines[0].unverified).toBeUndefined();
+		expect(explained.gap).toBe(earliestRecordNote);
+	});
+
+	it('names an earliest list entry as the earliest list, not the current one', () => {
+		const earliest = { type: 'federal', earliest_record: 'federal-list', source: 'bia-recognized-entities-1979', legal_basis: 'Indian Tribal Entities That Have a Government-to-Government Relationship With the United States, 44 Fed. Reg. 7235, 7235 (Feb. 6, 1979)' };
+		expect(howRecognized(earliest)).toBe('Earliest federal list naming the nation');
 	});
 
 	it('shows a legal basis two facts share once', () => {

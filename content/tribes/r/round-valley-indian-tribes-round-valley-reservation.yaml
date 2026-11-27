@@ -11,6 +11,16 @@ recognition:
   verification: bulk-import
   as_of: '2026-01-30'
   locator: 91 Fed. Reg. 4104
+- type: federal
+  earliest_record: land
+  legal_basis: Order of the Secretary of the Interior (Nov. 18, 1858), as recited in Commissioner's letter of Jan. 6, 1860, 1 Kappler 824-825
+  since: '1858-11-18'
+  source: letter-1860-01-06-round-valley-reserve
+  confidence: low
+  verification: inferred
+  as_of: '1858-11-18'
+  locator: 1 Kappler 825
+  note: The earliest record this site has found that shows the United States dealing with the nation as a federally recognized nation. The relationship may be older. The instrument first set aside the Round Valley (Nome Cult) Reserve, California.
 states:
 - state: CA
   presence: government-office

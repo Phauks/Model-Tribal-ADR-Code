@@ -29,6 +29,19 @@ recognition:
   verification: bulk-import
   as_of: '2026-01-30'
   locator: 91 Fed. Reg. 4105
+- type: federal
+  earliest_record: constitution
+  legal_basis: Constitution of the Kenaitze Indian Tribe (approved by the Secretary of the Interior June 21, 1971)
+  since: '1971-06-21'
+  source: constitution-kenaitze-indian-tribe-1971-text
+  document_version:
+    document: kenaitze-indian-tribe-constitution
+    version: 1971-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1971-06-21'
+  locator: 1971 constitution, approval certificate
+  note: The earliest record this site has found that shows the United States dealing with the nation as a federally recognized nation. The relationship may be older. The Secretary of the Interior approved the nation's constitution; the date is read from the approval certificate.
 states:
 - state: AK
   presence: government-office
