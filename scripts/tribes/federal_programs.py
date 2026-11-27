@@ -357,7 +357,7 @@ def capture(key: str, url: str, suffix: str, study_file: str | None = None) -> s
     return f"research/captures/self-governance/{path.name}"
 
 
-def write_source(key: str, kind: str, citation: dict, url: str, rights: str, notes: str, copy: str | None, archives: list | None = None) -> None:
+def write_source(key: str, kind: str, citation: dict, url: str, rights: str, notes: str, copy: str | None, archives: list | None = None, shares: list | None = None) -> None:
     path = ROOT / "content" / "sources" / key[0] / f"{key}.yaml"
     if path.exists():
         record = yaml.safe_load(path.read_text(encoding="utf-8"))
@@ -371,6 +371,7 @@ def write_source(key: str, kind: str, citation: dict, url: str, rights: str, not
         "kind": kind,
         "citation": {**citation, "URL": url, "accessed": {"date-parts": [[2026, 11, 26]]}},
         "original_link": url,
+        **({"shares_link_with": shares} if shares else {}),
         "retrieved": DATE,
         "archives": archives or [],
         "history": {"status": "live", "last_checked": DATE},
@@ -414,7 +415,8 @@ def sources() -> None:
                      {"type": "dataset", "title": f"Recipients of Assistance Listing {listing} ({title}), fiscal year 2025", "author": [{"literal": "U.S. Department of the Treasury, Bureau of the Fiscal Service, USAspending.gov"}], "medium": "API"},
                      "https://api.usaspending.gov/api/v2/search/spending_by_category/recipient/", "us-government-work",
                      f"Total obligations to each recipient under Assistance Listing {listing}, Oct. 1, 2024 to Sept. 30, 2025, from the USAspending API (spending_by_category/recipient, filtered by program number and period). Obligations as agencies reported them, which can differ from a program's own funding figures.",
-                     capture(key, "", ".json", study))
+                     capture(key, "", ".json", study),
+                     shares=[f"usaspending-fy2025-assistance-listing-{other.replace('.', '-')}" for other in ("15.022", "93.210", "93.441") if other != listing])
     news = (
         ("ict-news-2024-08-20-potawatomi-transportation-compact", "https://ictnews.org/news/potawatomi-tribe-signs-self-governing-compact-with-transportation-department", "Potawatomi tribe signs self-governing compact with Transportation Department", "ICT News", [2024, 8, 20], "ict.html",
          "Names the four nations with Tribal Transportation Self-Governance Program compacts by August 2024: the Cherokee Nation (the first, 2022), Ohkay Owingeh, the Citizen Potawatomi Nation and the Forest County Potawatomi Community."),
