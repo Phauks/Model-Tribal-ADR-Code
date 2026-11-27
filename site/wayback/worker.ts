@@ -110,14 +110,17 @@ const OLDER_CAPTURE_DAYS = 365;
 // save. On 2026-11-27 a sample of the queue found a usable copy already held for 8 of 8 links on
 // oha.doi.gov, nigc.gov and treaties.okstate.edu, so most links need no save at all. The index is a
 // separate service from Save Page Now and does not count against its limits.
-const LOOKUPS_EACH_MINUTE = 20;
-const LOOKUPS_AT_ONCE = 4;
+// At 20 a minute, 4 at once, the index answered HTTP 429 after about six minutes (2026-11-27 06:05 UTC).
+const LOOKUPS_EACH_MINUTE = 12;
+const LOOKUPS_AT_ONCE = 2;
 const STATUS_CHECKS_AT_ONCE = 6;
 // When the index answers HTTP 429 or a server error, lookups stop this long; saves go on without them.
 const MINUTES_LOOKUPS_PAUSE = 5;
 // No new call to the Archive starts this long after a run began, so a run ends before the next
 // minute's run reads the progress object (each call itself gives up after REQUEST_TIMEOUT_MILLISECONDS).
-const RUN_BUDGET_MILLISECONDS = 30_000;
+const RUN_BUDGET_MILLISECONDS = 35_000;
+// When each round of saves starts, counted from the start of the run.
+const SAVE_ROUNDS_MILLISECONDS = [0, 22_000];
 // Hosts whose pages are plain HTML files: Save Page Now is told to skip running their scripts, which
 // makes each capture shorter and frees its session sooner ("js_behavior_timeout=0", the API document).
 const STATIC_PAGE_HOSTS = ['static.case.law'];
@@ -540,43 +543,51 @@ async function work(env: Env): Promise<void> {
 		const lookupsWorking = !progress.lookupsPausedUntil;
 
 		if (hoursSince(progress.dailyLimitReached, now) >= 1 && Date.now() < deadline) {
-			// Never more saves than Save Page Now has sessions free for us.
-			const free = await freeSessions(signIn, progress, now);
-			const most = Math.min(SAVES_EACH_MINUTE, free ?? SAVES_EACH_MINUTE);
+			// Never more saves than Save Page Now has sessions free for us. The account has had 3 sessions
+			// (/save/status/user, 2026-11-27) and a capture often ends within seconds, so a second round
+			// later in the minute uses the sessions the first round's captures have freed.
 			let saves = 0;
-			for (const { key, link } of waiting) {
-				if (saves >= most || Date.now() >= deadline) break;
-				const known = progress.records[key];
-				if (known?.capture || known?.job || busyLinks.has(link)) continue;
-				const shared = capturedLinks.get(link);
-				if (shared) {
-					takeCapture(entryOf(key, link), shared, now);
-					continue;
-				}
-				// A link is looked up before it is saved, unless the index is not answering.
-				if (!known?.lookedUp && lookupsWorking) continue;
-				const entry = entryOf(key, link);
-				if ((entry.tries ?? 0) >= MOST_TRIES) continue;
-				// Links the Archive already had, from before this Worker took existing captures: looked up straight away.
-				if (SAME_SNAPSHOT.test(entry.problem ?? '') && entry.tries) {
+			let goOn = true;
+			for (const startsAt of SAVE_ROUNDS_MILLISECONDS) {
+				if (!goOn || saves >= SAVES_EACH_MINUTE) break;
+				const wait = now.getTime() + startsAt - Date.now();
+				if (wait > 0) await new Promise((resolve) => setTimeout(resolve, wait));
+				if (Date.now() >= deadline) break;
+				const free = await freeSessions(signIn, progress, new Date());
+				const most = Math.min(SAVES_EACH_MINUTE, saves + (free ?? SAVES_EACH_MINUTE));
+				for (const { key, link } of waiting) {
+					if (saves >= most || Date.now() >= deadline) break;
+					const known = progress.records[key];
+					if (known?.capture || known?.job || busyLinks.has(link)) continue;
+					const shared = capturedLinks.get(link);
+					if (shared) {
+						takeCapture(entryOf(key, link), shared, now);
+						continue;
+					}
+					// A link is looked up before it is saved, unless the index is not answering.
+					if (!known?.lookedUp && lookupsWorking) continue;
+					const entry = entryOf(key, link);
+					if ((entry.tries ?? 0) >= MOST_TRIES) continue;
+					// Links the Archive already had, from before this Worker took existing captures: looked up straight away.
+					if (SAME_SNAPSHOT.test(entry.problem ?? '') && entry.tries) {
+						saves += 1;
+						await takeExistingCapture(entry, entry.problem!, now);
+						continue;
+					}
+					if (hoursSince(entry.failed, now) < HOURS_BEFORE_SAVING_AGAIN) continue;
 					saves += 1;
-					await takeExistingCapture(entry, entry.problem!, now);
-					continue;
+					try {
+						goOn = await askForSave(entry, signIn, now, progress);
+						if (entry.job) busyLinks.add(entry.link);
+						if (entry.capture) capturedLinks.set(entry.link, entry.capture);
+					} catch (problem) {
+						if (/refused the archive\.org keys/.test(message(problem))) throw problem;
+						// A timeout or a dropped connection: try this link again tomorrow.
+						entry.tries = (entry.tries ?? 0) + 1;
+						markFailed(entry, `save request failed (${message(problem)})`, now);
+					}
+					if (!goOn) break;
 				}
-				if (hoursSince(entry.failed, now) < HOURS_BEFORE_SAVING_AGAIN) continue;
-				saves += 1;
-				let goOn = true;
-				try {
-					goOn = await askForSave(entry, signIn, now, progress);
-					if (entry.job) busyLinks.add(entry.link);
-					if (entry.capture) capturedLinks.set(entry.link, entry.capture);
-				} catch (problem) {
-					if (/refused the archive\.org keys/.test(message(problem))) throw problem;
-					// A timeout or a dropped connection: try this link again tomorrow.
-					entry.tries = (entry.tries ?? 0) + 1;
-					markFailed(entry, `save request failed (${message(problem)})`, now);
-				}
-				if (!goOn) break;
 			}
 		}
 	} catch (problem) {
