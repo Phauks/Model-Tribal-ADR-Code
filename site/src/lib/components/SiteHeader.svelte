@@ -49,8 +49,10 @@
 	import FollowButton from './FollowButton.svelte';
 	import StarButton from './StarButton.svelte';
 	import SaveOfflineButton from './SaveOfflineButton.svelte';
+	import UpdateButton from './UpdateButton.svelte';
+	import type { TrackVersions } from '#lib/server/versions.ts';
 
-	let { contentVersion }: { contentVersion: string } = $props();
+	let { contentVersion, versions }: { contentVersion: string; versions: TrackVersions } = $props();
 
 	/**
 	 * "Report a problem" opens a dialog with the request form (ReportProblem),
@@ -133,6 +135,7 @@
 			<span class="page-controls-row no-print"><PageControls place="row" /></span>
 		</div>
 		<div class="masthead-controls no-print">
+			<UpdateButton {versions} />
 			<SiteSearch bind:this={search} />
 			<button
 				class="more-button"

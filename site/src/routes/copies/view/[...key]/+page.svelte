@@ -74,8 +74,12 @@
 		{#if data.isPdf}
 			{#key pdfPage}<iframe class="frame" src={data.file + pdfPage} title="{data.title} ({data.kind})"></iframe>{/key}
 		{:else}
-			<!-- A saved web page runs nothing and loads nothing: its own response says so too (src/lib/server/public-copy-serving.ts). -->
-			<iframe class="frame" src={data.file} title="{data.title} ({data.kind})" sandbox="" referrerpolicy="no-referrer"></iframe>
+			<!--
+				A saved web page runs nothing and loads nothing: its own response says so too (src/lib/server/public-copy-serving.ts).
+				A reader's click on one of its links may still open the page it links to: this site's pages in this window
+				(target="_top"), other sites in a new tab (scripts/caselaw/copy_links.py).
+			-->
+			<iframe class="frame" src={data.file} title="{data.title} ({data.kind})" sandbox="allow-top-navigation-by-user-activation allow-popups allow-popups-to-escape-sandbox" referrerpolicy="no-referrer"></iframe>
 		{/if}
 		<!--
 			Small links under the document, in place of the buttons above it: the browser's own viewer
