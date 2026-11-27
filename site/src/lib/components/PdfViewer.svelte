@@ -7,7 +7,7 @@
 	with pdf.js (pdfjs-dist, Apache 2.0), loaded only when a PDF is shown, so
 	no other page carries it.
 
-	Its bar names the record, not the file's metadata, with the page count.
+	Its bar names the record, not the file's metadata; the card above it gives the page count.
 	Pages are drawn as they come near the screen, each with a layer of its
 	words over it, so a reader can select, find and cite a passage as in a
 	text. The file is never changed: its SHA-256 must match the publisher's.
@@ -88,9 +88,9 @@
 		};
 	});
 
-	/** The scale that fits a page to the frame's width, sharp on the screen it is on. */
-	function fitScale(pageWidth: number): number {
-		return Math.max(0.25, (width || 800) / pageWidth);
+	/** The scale that fits a page to the width it is shown at, so its words lie over the drawn ones. */
+	function fitScale(pageWidth: number, holder: HTMLElement): number {
+		return Math.max(0.25, (holder.clientWidth || width || 800) / pageWidth);
 	}
 
 	async function draw(number: number, holder: HTMLElement): Promise<void> {
@@ -99,7 +99,7 @@
 		try {
 			const page = await pdf.getPage(number);
 			const base = page.getViewport({ scale: 1 });
-			const scale = fitScale(base.width);
+			const scale = fitScale(base.width, holder);
 			const viewport = page.getViewport({ scale });
 			const ratio = window.devicePixelRatio || 1;
 			const canvas = holder.querySelector('canvas') as HTMLCanvasElement;
@@ -123,7 +123,6 @@
 		<FileText size={16} strokeWidth={2} aria-hidden="true" />
 		<span class="pdf-title">{title}</span>
 		<span class="pdf-name">{name}</span>
-		{#if pageCount > 0}<span class="pdf-count">{pageCount.toLocaleString('en-US')} {pageCount === 1 ? 'page' : 'pages'}</span>{/if}
 	</p>
 	<div class="pdf-pages" bind:this={frame}>
 		{#if failed}
@@ -163,14 +162,9 @@
 		overflow-wrap: anywhere;
 	}
 
-	.pdf-name,
-	.pdf-count {
+	.pdf-name {
 		color: var(--color-ink-muted);
 		overflow-wrap: anywhere;
-	}
-
-	.pdf-count {
-		margin-left: auto;
 	}
 
 	.pdf-pages {
@@ -184,7 +178,7 @@
 
 	.pdf-page {
 		position: relative;
-		width: min(100%, 52rem);
+		width: min(100%, 36rem);
 		background: var(--color-paper);
 		scroll-margin-top: var(--space-3);
 		box-shadow: 0 1px 4px color-mix(in srgb, var(--color-ink) 40%, transparent);

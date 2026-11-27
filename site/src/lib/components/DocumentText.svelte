@@ -305,8 +305,20 @@
 		return page;
 	}
 
-	function fragmentWords(text: string): string {
-		const words = text.replace(/\s+/g, ' ').trim().split(' ');
+	/** Whether a point in the text falls inside a word, where a link to the passage cannot start or end. */
+	function insideWord(node: Node, offset: number, after: boolean): boolean {
+		if (node.nodeType !== Node.TEXT_NODE) return false;
+		const text = node.textContent ?? '';
+		const near = after ? text[offset] : text[offset - 1];
+		const here = after ? text[offset - 1] : text[offset];
+		return Boolean(near && here && /[\p{L}\p{N}]/u.test(near) && /[\p{L}\p{N}]/u.test(here));
+	}
+
+	function fragmentWords(text: string, cutFirst = false, cutLast = false): string {
+		let words = text.replace(/\s+/g, ' ').trim().split(' ');
+		// A browser finds a passage by whole words, so a word cut by the selection is left out.
+		if (cutLast && words.length > 1) words = words.slice(0, -1);
+		if (cutFirst && words.length > 1) words = words.slice(1);
 		const encode = (part: string) => encodeURIComponent(part).replace(/-/g, '%2D').replace(/,/g, '%2C');
 		if (words.length <= 8) return encode(words.join(' '));
 		return `${encode(words.slice(0, 4).join(' '))},${encode(words.slice(-4).join(' '))}`;
@@ -329,7 +341,7 @@
 		const last = pageAt(range.endContainer, range.endOffset);
 		const pdfPage = (range.startContainer.parentElement ?? undefined)?.closest<HTMLElement>('.pdf-page')?.dataset.page;
 		const place = `${location.origin}${location.pathname}`;
-		const link = pdfPage ? `${place}#page=${pdfPage}` : `${place}#${first && body.querySelector(`#page-${CSS.escape(first)}`) ? `page-${first}` : identifier}:~:text=${fragmentWords(quote)}`;
+		const link = pdfPage ? `${place}#page=${pdfPage}` : `${place}#${first && body.querySelector(`#page-${CSS.escape(first)}`) ? `page-${first}` : identifier}:~:text=${fragmentWords(quote, insideWord(range.startContainer, range.startOffset, false), insideWord(range.endContainer, range.endOffset, true))}`;
 		const box = range.getBoundingClientRect();
 		const frame = card.getBoundingClientRect();
 		cite = { top: box.bottom - frame.top + 6, left: Math.max(0, Math.min(box.left - frame.left, frame.width - 240)), quote, first, last, link, open: false, copied: false };
@@ -363,6 +375,20 @@
 		document.addEventListener('selectionchange', changed);
 		return () => document.removeEventListener('selectionchange', changed);
 	});
+
+	/** The source note with its addresses as short links, named by their site. */
+	function noteParts(note: string): { text: string; link?: string }[] {
+		const parts: { text: string; link?: string }[] = [];
+		let last = 0;
+		for (const match of note.matchAll(/https?:\/\/[^\s;,]+[^\s;,.)]/g)) {
+			if (match.index > last) parts.push({ text: note.slice(last, match.index) });
+			const host = /^https?:\/\/(?:www\.)?([^/]+)/.exec(match[0])?.[1] ?? match[0];
+			parts.push({ text: host, link: match[0] });
+			last = match.index + match[0].length;
+		}
+		if (last < note.length) parts.push({ text: note.slice(last) });
+		return parts;
+	}
 </script>
 
 <svelte:window onclick={closeMenu} onkeydown={closeMenu} />
@@ -381,7 +407,7 @@
 			<div class="card-head">
 				<span class="file-facts">
 					<span class="format" title="The file’s format">{file.extension}</span>
-					<span>{#if pagesLabel}{pagesLabel.toLocaleString('en-US')} {pagesLabel === 1 ? 'page' : 'pages'} · {/if}{file.size}</span>
+					<span>{#if pagesLabel}{pagesLabel.toLocaleString('en-US')} {pagesLabel === 1 ? 'page' : 'pages'}{' · '}{/if}{file.size}</span>
 					{#if file.captured}<span class="captured">Copy made {file.captured}</span>{/if}
 					<span class="review-badge trust" class:review-badge-verified={file.trust.verified} title={file.trust.detail}
 						>{#if file.trust.verified}<BadgeCheck size={14} strokeWidth={2} aria-hidden="true" />{:else}<Clock size={14} strokeWidth={2} aria-hidden="true" />{/if}{file.trust.label}<span class="visually-hidden">: {file.trust.detail}</span></span
@@ -480,7 +506,7 @@
 					{#if view !== 'scan'}
 						<div class="reading-column">
 							{#if reading}
-								{#if reading.note}<p class="text-note">{reading.note}</p>{/if}
+								{#if reading.note}<p class="text-note">{#each noteParts(reading.note) as part, index (index)}{#if part.link}<a href={part.link} class="external" target="_blank" rel="noopener noreferrer">{part.text}</a>{:else}{part.text}{/if}{/each}</p>{/if}
 								<!-- eslint-disable-next-line svelte/no-at-html-tags -- the served copy's words, cleaned to a short list of elements (src/lib/reading-text.ts) -->
 								<div class="reading-text" class:flowing={lines === 'flowing'} class:clipped>{@html html}</div>
 								{#if clipped}
@@ -523,6 +549,7 @@
 
 			<p class="card-foot">
 				{#if file.publishedAt}<span>Published at <a href={file.publishedAt.link} rel="noopener noreferrer">{file.publishedAt.host}</a></span>{/if}
+				{#if file.captured}<span class="foot-captured">Copy made {file.captured}</span>{/if}
 				<span class="foot-hash">SHA-256 <CopyHash sha256={file.sha256} label="this document" /></span>
 				<span><a href={file.verify}>Verify File</a></span>
 			</p>
@@ -801,6 +828,10 @@
 		overflow-wrap: break-word;
 	}
 
+	.foot-captured {
+		display: none;
+	}
+
 	.reading-text.clipped {
 		max-height: 58rem;
 		overflow: hidden;
@@ -835,6 +866,22 @@
 
 	.reading-text :global(.small-caps) {
 		font-variant: small-caps;
+	}
+
+	/* Find in this document: every match marked, the current one stronger. */
+	:global(::highlight(document-find)) {
+		background-color: color-mix(in srgb, var(--color-selection) 55%, transparent);
+	}
+
+	:global(::highlight(document-find-current)) {
+		background-color: var(--color-selection);
+		text-decoration: underline 2px var(--color-ink);
+		text-underline-offset: 3px;
+	}
+
+	/* The reporter's parties, date and judges, set apart as printed. */
+	.reading-text :global(.case-head) {
+		font-style: italic;
 	}
 
 	.reading-text :global(.opinion-author) {
@@ -1076,8 +1123,42 @@
 			display: none;
 		}
 
+		/* On a phone the copy's date moves to the foot, as in the approved design. */
 		.captured {
 			display: none;
+		}
+
+		.foot-captured {
+			display: inline;
+		}
+
+		.reading-text.clipped {
+			max-height: 34rem;
+		}
+
+		/* The tools stay beside the file's facts, which wrap below each other. */
+		.card-head {
+			flex-wrap: nowrap;
+			align-items: flex-start;
+		}
+
+		.file-facts {
+			flex: 1;
+			min-width: 0;
+		}
+
+		.card-tools {
+			flex: none;
+		}
+
+		/* The buttons say what they do; the words before them are for screen readers here. */
+		.bar-label {
+			position: absolute;
+			width: 1px;
+			height: 1px;
+			overflow: hidden;
+			clip-path: inset(50%);
+			white-space: nowrap;
 		}
 	}
 

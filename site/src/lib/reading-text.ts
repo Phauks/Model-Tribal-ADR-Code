@@ -465,7 +465,8 @@ export function cleanPageHtml(html: string, options: CleanOptions = {}): { html:
 			closeParagraph();
 			// The card's own heading is a level 2: the page's headings sit below it.
 			const level = Math.min(6, Number(name[1]) + 2);
-			open(name, `<h${level}${attributes.get('id') ? ` id="text-${identifier(attributes.get('id') ?? '')}"` : ''}>`, true, `h${level}`);
+			const parties = options.caselaw && classes.includes('parties') ? ' class="case-head"' : '';
+			open(name, `<h${level}${attributes.get('id') ? ` id="text-${identifier(attributes.get('id') ?? '')}"` : ''}${parties}>`, true, `h${level}`);
 			continue;
 		}
 		if (name === 'aside') {
@@ -527,7 +528,9 @@ export function cleanPageHtml(html: string, options: CleanOptions = {}): { html:
 				const centered = (attributes.get('align') ?? '').toLowerCase() === 'center' || stack.some((element) => element.name === 'center');
 				const right = (attributes.get('align') ?? '').toLowerCase() === 'right';
 				const id = attributes.get('id');
-				const kind = author ? 'opinion-author' : centered ? 'centered' : right ? 'right' : '';
+				// The reporter's own lines above an opinion: the date it was decided and the judges sitting.
+				const head = options.caselaw && (classes.includes('decisiondate') || classes.includes('judges'));
+				const kind = author ? 'opinion-author' : head ? 'case-head' : centered ? 'centered' : right ? 'right' : '';
 				tag = `<p${kind ? ` class="${kind}"` : ''}${id && !options.caselaw ? ` id="text-${identifier(id)}"` : ''}${languageOf(attributes)}>`;
 			}
 			if ((name === 'td' || name === 'th') && /^\d{1,2}$/.test(attributes.get('colspan') ?? '')) tag = `<${name} colspan="${attributes.get('colspan')}">`;
@@ -566,7 +569,9 @@ function caselawNote(page: string): string | undefined {
 	const sentence = decodeEntities(line.replace(/<a\b[\s\S]*?<\/a>\.?/g, '').replace(/<[^>]*>/g, ''))
 		.replace(/\s+/g, ' ')
 		.trim();
-	return sentence.replace(/^The court['’]s opinions?, from/, 'Text from').replace(/, without the publisher['’]s headnotes and synopsis\./, ', with the publisher’s headnotes removed.');
+	// The header's own request link is the card's flag button, so a sentence that leads into a link goes.
+	const kept = sentence.split(/(?<=[.:])\s+/).filter((part) => !/:$/.test(part)).join(' ');
+	return kept.replace(/^The court['’]s opinions?, from/, 'Text from').replace(/, without the publisher['’]s headnotes and synopsis\./, ', with the publisher’s headnotes removed.');
 }
 
 /** The part of a saved page that holds its text: its <main> or <article>, else its <body>. */
@@ -587,7 +592,9 @@ export function readingFromHtml(page: string, base?: string): ReadingText {
 	if (caselaw) {
 		const main = page.includes('<main>') ? page.slice(page.indexOf('<main>') + 6, page.lastIndexOf('</main>')) : mainPart(page);
 		const { html, pages } = cleanPageHtml(main, { caselaw: true });
-		const note = caselawNote(page);
+		const found = caselawNote(page);
+		// The page rules follow the printed report's own pages.
+		const note = found && pages.length > 0 ? `${found} Pages as in the printed report.` : found;
 		return { html, ...(note ? { note } : {}), pages, printedLines: false, words: wordCount(html) };
 	}
 	const { html, pages } = cleanPageHtml(mainPart(page), { base });
