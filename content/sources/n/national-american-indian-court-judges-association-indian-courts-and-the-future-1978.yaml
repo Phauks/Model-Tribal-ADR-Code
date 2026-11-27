@@ -22,7 +22,10 @@ citation:
 original_link: >-
   http://www.tribal-institute.org/download/Pubs/Indian%20Courts%20and%20the%20Future_Report%20of%20the%20NAICJA%20Long%20Range%20Planning%20Project.pdf
 retrieved: '2026-11-21'
-archives: []   # Wayback capture pending: the shared archive workflow fills this in
+archives:
+- service: wayback
+  link: https://web.archive.org/web/20261125090904/https://www.tribal-institute.org/download/Pubs/Indian%20Courts%20and%20the%20Future_Report%20of%20the%20NAICJA%20Long%20Range%20Planning%20Project.pdf
+  captured: '2026-11-25'
 history:
   status: live
   last_checked: '2026-11-21'

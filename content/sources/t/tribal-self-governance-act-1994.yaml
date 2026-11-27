@@ -22,7 +22,10 @@ citation:
       - 21
 original_link: https://www.govinfo.gov/content/pkg/STATUTE-108/pdf/STATUTE-108-Pg4250.pdf
 retrieved: '2026-11-21'
-archives: []   # Wayback capture pending: the shared archive workflow fills this in
+archives:
+- service: wayback
+  link: https://web.archive.org/web/20261126003307/https://www.govinfo.gov/content/pkg/STATUTE-108/pdf/STATUTE-108-Pg4250.pdf
+  captured: '2026-11-26'
 history:
   status: live
   last_checked: '2026-11-21'
