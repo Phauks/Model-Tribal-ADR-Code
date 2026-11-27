@@ -39,7 +39,7 @@ The Century Code is published as one PDF per chapter; the Legislative Branch's C
 
 ## Idaho
 
-IDAHO_NOTES
+The Legislature's chapter pages list only the sections in force (63 of the 1,472 chapters listed are empty, repealed whole), with catchlines in capitals; the section pages print the catchline in mixed case under a style that shows it in capitals, so some are all lower case or half capitals, and the adapter gives those sentence or title case with the nations' and state's names capitalized. 20,496 sections listed, 20,493 in force; 113 strong and 170 weak-only hits; 134 Indian law sections (31 core, 103 incidental). The core sections include the State-Tribal Relations Act and the Idaho Council on Indian Affairs (Idaho Code §§ 67-4001 to 67-4007), the state-tribal gaming compact sections (§§ 67-429A to 67-429C), the state's civil and criminal jurisdiction in Indian country (§§ 67-5101 to 67-5103, of which § 67-5101 was already held by hand and left as it was), tribal fuel and sales tax agreements and the Coeur d'Alene Tribe water rights settlement (§ 42-1430), which only the weak pass found through the tribe's name. The readers marked five strong hits none; the session agreed with four (two county boundaries, a civics course that covers tribal governments, § 33-1602, and the naming of Heyburn Park, § 67-4202) and settled one as incidental (the Indian Health Service program as creditable health coverage, § 41-4703). Neither recall sample found a miss, and the 40 verdicts read at random all agreed.
 
 ## Kansas
 
