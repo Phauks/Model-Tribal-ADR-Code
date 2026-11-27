@@ -492,7 +492,8 @@
 
 		<fieldset class="statements">
 			<legend>Terms of Submission</legend>
-			<ul class="statement-lines">
+			<!-- A short box that scrolls, so the terms take little room (Trevor, Nov. 27, 2026). -->
+			<ul class="statement-lines" tabindex="0" aria-label="Terms of Submission">
 				{#each requestStatements(kind) as statement (statement)}<li>{statement}</li>{/each}
 			</ul>
 			{@render fieldError('acceptStatements')}
@@ -587,20 +588,34 @@
 	}
 
 	/* Each term on its own line, above the one box that accepts them all. */
-	.statements legend {
-		font-weight: var(--font-weight-bold);
-		margin-bottom: var(--space-2);
+	.statements {
+		margin-bottom: var(--space-3);
 	}
 
+	.statements legend {
+		font-weight: var(--font-weight-bold);
+		margin-bottom: var(--space-1);
+	}
+
+	/* Each term on its own line in a box about four lines tall that scrolls for the rest. */
 	.statement-lines {
 		list-style: none;
 		margin: 0;
-		padding: 0;
+		padding: var(--space-1) var(--space-3);
+		max-height: 6.25rem;
+		overflow-y: auto;
+		border: 1px solid var(--color-line);
+		border-radius: var(--radius-control);
 		font-size: var(--font-size-small);
+		line-height: 1.45;
 	}
 
 	.statement-lines li {
-		margin: 0 0 var(--space-1);
+		margin: 0;
+	}
+
+	.statements .choice {
+		margin: var(--space-2) 0 0;
 	}
 
 	/* The add-nation sources' fold. */
