@@ -66,6 +66,7 @@ export const sitePages: SearchEntry[] = [
 	{ kind: 'page', title: 'Foundations', link: '/foundations' },
 	{ kind: 'page', title: 'Essays', also: ['Legal history', 'Chapters'], link: '/essays' },
 	{ kind: 'page', title: 'Back matter', also: ['Cases by topic'], link: '/back-matter' },
+	{ kind: 'page', title: 'News', also: ['Posts', 'Announcements', 'Updates'], detail: 'Posts from the project', link: '/news' },
 	{ kind: 'page', title: 'Contributors', also: ['Authors', 'Credits'], link: '/contributors' },
 	{ kind: 'page', title: 'Data sets', also: ['Downloads', 'Book', 'PDF', 'EPUB', 'Data'], detail: 'The book and the data behind this site', link: '/downloads' },
 	{ kind: 'page', title: 'Order a printed copy', also: ['Book', 'Print', 'Buy'], link: '/book' },
