@@ -1,0 +1,90 @@
+key: mille-lacs-band-v-minnesota-1997
+kind: federal-case
+citation:
+  type: legal_case
+  title: Mille Lacs Band v. Minnesota
+  authority: United States District Court for the District of Minnesota
+  container-title: F. Supp.
+  volume: '952'
+  page: '1362'
+  issued:
+    date-parts:
+    - - 1997
+      - 1
+      - 29
+  URL: https://static.case.law/f-supp/952/html/1362-01.html
+  accessed:
+    date-parts:
+    - - 2026
+      - 11
+      - 27
+original_link: https://static.case.law/f-supp/952/html/1362-01.html
+retrieved: '2026-11-27'
+archives: []
+history:
+  status: live
+  last_checked: '2026-11-27'
+rights:
+  status: no-permission-needed
+  basis: government-edict
+  basis_note: The text of a judicial opinion has no copyright (Georgia v. Public.Resource.Org, Inc., 590 U.S. 255 (2020)). The copy served on this site is the court's opinion only, without the publisher's headnotes, synopsis or other editorial matter (decision record 0060).
+  redistribution: true
+tribes:
+- st-croix-chippewa-indians-of-wisconsin
+- lac-du-flambeau-band-of-lake-superior-chippewa-indians-of-the-lac-du-flambeau-reservation-of-wisconsin
+- lac-courte-oreilles-band-of-lake-superior-chippewa-indians-of-wisconsin
+- red-cliff-band-of-lake-superior-chippewa-indians-of-wisconsin
+- mille-lacs-band
+nations_in_case:
+  checked: '2026-11-27'
+  named:
+  - nation: st-croix-chippewa-indians-of-wisconsin
+    named_as: St. Croix Chippewa Indians
+    role: party
+    historical: true
+    note: Matched by the script to the only nation record sharing this name; not yet checked against the case's history.
+  - nation: lac-du-flambeau-band-of-lake-superior-chippewa-indians-of-the-lac-du-flambeau-reservation-of-wisconsin
+    named_as: Lac Du Flambeau Band
+    role: party
+    historical: true
+    note: Matched by the script to the only nation record sharing this name; not yet checked against the case's history.
+  - nation: lac-courte-oreilles-band-of-lake-superior-chippewa-indians-of-wisconsin
+    named_as: Lac Courte Oreilles Indians
+    role: party
+    historical: true
+    note: Matched by the script to the only nation record sharing this name; not yet checked against the case's history.
+  - nation: red-cliff-band-of-lake-superior-chippewa-indians-of-wisconsin
+    named_as: Red Cliff Band of Lake Superior
+    role: party
+    historical: true
+    note: Matched by the script to the only nation record sharing this name; not yet checked against the case's history.
+  - nation: mille-lacs-band
+    named_as: Mille Lacs Band
+    role: party
+    note: Matched by the script to a name the nation record gives; not yet checked.
+  not_linked:
+  - named_as: Bad River Band
+    reason: More than one of today's nations shares this name (arkansas-white-river-cherokee, bad-river-band-of-the-lake-superior-tribe-of-chippewa-indians-of-the-bad-river-reservation, bear-river-band-of-the-rohnerville-rancheria, cherokee-river-indian-community, cheyenne-river-sioux-tribe-of-the-cheyenne-river-reservation, colorado-river-indian-tribes-of-the-colorado-river-indian-reservation and 22 more); which the case concerns has not been checked.
+  - named_as: Sokaogan Chippewa Community
+    reason: More than one of today's nations shares this name (bad-river-band-of-the-lake-superior-tribe-of-chippewa-indians-of-the-bad-river-reservation, burt-lake-band-of-ottawa-and-chippewa-indians, chippewa-cree-indians-of-the-rocky-boys-reservation, christian-pembina-chippewa-indians, grand-traverse-band-of-ottawa-and-chippewa-indians, kah-bay-kah-nong and 15 more); which the case concerns has not been checked.
+jurisdictions:
+- level: federal
+topics:
+- federal-court-indian-law
+found_in:
+- 2026-11-26-federal-court-indian-law-opinions
+notes: Published at 952 F. Supp. 1362. Decided by the United States District Court for the District of Minnesota on Jan. 29, 1997. Found by scripts/caselaw/state_court_opinions.py in the Caselaw Access Project's volumes, with an Indian law term score of 22, at or above 10, the level kept without a reading. It was held at first for a privacy review because its text uses words about children or protected persons; two readings of the full opinion on Nov. 27, 2026 found no child or protected person named, so it is shown.
+review:
+  status: unverified
+  by: scripts/caselaw/state_court_opinions.py
+  date: '2026-11-27'
+  checks:
+  - check: 'Indian law case: the term score and, below the score kept without a reading, an AI reader''s judgment of excerpts'
+    result: agree
+    detail: score 22
+  - check: Nations named in the caption, matched to nation records by name
+    result: missing
+    detail: 5 matched, 2 not linked
+  - check: 'Privacy: no child or protected person named in the opinion'
+    result: agree
+    detail: two AI readings of the full text, Nov. 27, 2026; released from the privacy hold

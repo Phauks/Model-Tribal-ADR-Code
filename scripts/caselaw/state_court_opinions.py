@@ -37,7 +37,17 @@ Subcommands, in the order they are run:
            and added to research/capture-index.csv. Counts go to
            research/state-court-opinions/summary.json and records.csv.
 
-With --courts federal, excerpts and write work on the lower federal courts' opinions
+  release  Bring back cases a read check cleared of a privacy hold (--cleared, a private
+           CSV outside git with the columns id, link and decision; the rows whose
+           decision is "release"). Each case is fetched again from the Caselaw Access
+           Project into --work, with its score and how it was chosen rebuilt from the
+           scan's terms and the readers' answers in the data folder's readings.json, and
+           written as write does, adding to the records already written: no other
+           record is removed, records.csv and summary.json gain the cases, and the
+           private list of held cases loses them. Their records say why they were
+           held and why they were released, without names.
+
+With --courts federal, excerpts, write and release work on the lower federal courts' opinions
 instead (data tier 2): scripts/caselaw/federal_indian_law_cases.py scans the eleven
 federal reporters and its prepare step lays the results out in this script's --work
 layout. Federal records are kind federal-case, topic federal-court-indian-law, their
@@ -51,6 +61,7 @@ Run from the repository root:
     python3 scripts/caselaw/state_court_opinions.py write --work DIR --auto 10 --private DIR --show-estates --file
     python3 scripts/caselaw/state_court_opinions.py --courts federal excerpts --work DIR --auto 10 --read-from 1 --batches 30
     python3 scripts/caselaw/state_court_opinions.py --courts federal write --work DIR --auto 10 --private DIR --show-estates --file
+    python3 scripts/caselaw/state_court_opinions.py --courts federal release --cleared CSV --work DIR --private DIR --show-estates --file
 """
 
 from __future__ import annotations
@@ -334,6 +345,13 @@ STATES = {
     "Rhode Island": "RI", "South Carolina": "SC", "South Dakota": "SD", "Tennessee": "TN", "Texas": "TX", "Utah": "UT",
     "Vermont": "VT", "Virginia": "VA", "Washington": "WA", "West Virginia": "WV", "Wisconsin": "WI", "Wyoming": "WY",
 }
+# release: held cases a read check cleared. Trevor chose "read-check, then release" for the held federal
+# opinions on Nov. 27, 2026; two AI readings of each full text found no child or protected person named.
+RELEASED = "2026-11-27"
+RELEASE_NOTE = ("It was held at first for a privacy review because its text uses words about children or protected persons; "
+                "two readings of the full opinion on Nov. 27, 2026 found no child or protected person named, so it is shown.")
+RELEASE_CHECK = {"check": "Privacy: no child or protected person named in the opinion", "result": "agree",
+                 "detail": "two AI readings of the full text, Nov. 27, 2026; released from the privacy hold"}
 RIGHTS_NOTE = ("The text of a judicial opinion has no copyright (Georgia v. Public.Resource.Org, Inc., 590 U.S. 255 (2020)). "
                "The copy served on this site is the court's opinion only, without the publisher's headnotes, synopsis or other editorial matter (decision record 0060).")
 
@@ -444,13 +462,17 @@ def write(args: argparse.Namespace) -> None:
     data, session = (FEDERAL_DATA, FEDERAL_SESSION) if federal else (DATA, SESSION)
     selected = {row["id"]: row for row in json.loads((work / "selected.json").read_text())}
     rows = [row for row in candidates(work) if row["id"] in selected]
+    # release: cases a read check cleared of a privacy hold, added to the records an earlier run wrote.
+    cleared: set = getattr(args, "cleared", set())
+    adding = bool(cleared)
+    today = RELEASED if adding else TODAY
     sys.path.insert(0, str(Path(__file__).resolve().parent))
     from supreme_court_native_cases import Nations  # noqa: PLC0415
     nations = Nations()
     sys.path.insert(0, str(ROOT / "scripts" / "law"))
     from nation_names import NationNames  # noqa: PLC0415
     names = NationNames()
-    keys, cites, ours = existing_citations(session)
+    keys, cites, ours = existing_citations("" if adding else session)
     keys |= {path.stem for path in ours.values()}  # an earlier run's keys stay with their cases
     rewritten: set[Path] = set()
     if args.file:
@@ -463,7 +485,7 @@ def write(args: argparse.Namespace) -> None:
         index = mirror_captures.load_index()
         by_key = {row["key"]: row for row in index}
         overrides = json.loads((ROOT / "research" / "capture-index-overrides.json").read_text(encoding="utf-8"))
-    written, skipped, held, public_rows, private_rows = 0, 0, 0, [], []
+    written, skipped, held, released_count, public_rows, private_rows = 0, 0, 0, 0, [], []
     pages = []
     for row in rows:
         case = json.loads((work / "cases" / row["reporter"] / row["volume"] / row["file"]).read_text())
@@ -476,6 +498,9 @@ def write(args: argparse.Namespace) -> None:
         if reason == "estate" and (args.show_estates or (args.estates_from and int((row["date"] or "0")[:4] or 0) < args.estates_from)):
             reason = ""  # an older estate: shown, per the choice recorded in decision record 0060
         choice = selected[row["id"]]
+        released = row["id"] in cleared and reason == "child or protected person"
+        if released:
+            reason = ""
         if reason:
             held += 1
             private_rows.append({"id": row["id"], "name": case.get("name_abbreviation"), "citation": "; ".join(cite_list),
@@ -509,7 +534,7 @@ def write(args: argparse.Namespace) -> None:
         citation = {"type": "legal_case", "title": case.get("name_abbreviation"), "authority": (case.get("court") or {}).get("name")}
         if first:
             citation.update({"container-title": first[1], "volume": first[0], "page": first[2]})
-        citation.update({"issued": {"date-parts": [date_parts]}, "URL": link, "accessed": {"date-parts": [[2026, 11, 26]]}})
+        citation.update({"issued": {"date-parts": [date_parts]}, "URL": link, "accessed": {"date-parts": [[int(part) for part in today.split("-")]]}})
         how = {"score": f"an Indian law term score of {row['score']}, at or above {args.auto}, the level kept without a reading",
                "reader": f"an Indian law term score of {row['score']}; an AI reader read excerpts and judged it an Indian law case ({choice.get('topic', '')})",
                "caption": f"an Indian law term score of {row['score']} and a Native nation or Native organization named as a party"}[choice["how"]]
@@ -518,24 +543,26 @@ def write(args: argparse.Namespace) -> None:
             "kind": "territorial-case" if territorial else "state-case",
             "citation": citation,
             "original_link": link,
-            "retrieved": TODAY,
+            "retrieved": today,
             "archives": [],
-            "history": {"status": "live", "last_checked": TODAY},
+            "history": {"status": "live", "last_checked": today},
             "rights": {"status": "no-permission-needed", "basis": "government-edict", "basis_note": RIGHTS_NOTE, "redistribution": True},
             **({"tribes": [n["nation"] for n in named]} if named else {}),
-            "nations_in_case": {"checked": TODAY, "named": named, **({"not_linked": not_linked} if not_linked else {})},
+            "nations_in_case": {"checked": today, "named": named, **({"not_linked": not_linked} if not_linked else {})},
             "jurisdictions": [{"level": "territory" if territorial else "state", **({"state": STATES[jurisdiction]} if jurisdiction in STATES else {})}],
             "topics": [TOPIC],
             "found_in": [session],
             "notes": ((f"Published at {'; '.join(cite_list)}. " if cite_list else f"Docket {case.get('docket_number') or 'number not given'}; no reporter citation yet. ")
                       + f"Decided by the {citation['authority']}" + (f" on {readable(row['date'])}" if row["date"] else "")
                       + (". Found by scripts/caselaw/courtlistener_federal_opinions.py and scripts/caselaw/state_court_opinions.py in CourtListener's bulk files" if from_courtlistener(row)
-                         else ". Found by scripts/caselaw/state_court_opinions.py in the Caselaw Access Project's volumes") + f", with {how}."),
-            "review": {"status": "unverified", "by": "scripts/caselaw/state_court_opinions.py", "date": TODAY, "checks": [
+                         else ". Found by scripts/caselaw/state_court_opinions.py in the Caselaw Access Project's volumes") + f", with {how}."
+                      + (" " + RELEASE_NOTE if released else "")),
+            "review": {"status": "unverified", "by": "scripts/caselaw/state_court_opinions.py", "date": today, "checks": [
                 {"check": "Indian law case: the term score and, below the score kept without a reading, an AI reader's judgment of excerpts",
                  "result": "agree", "detail": f"score {row['score']}" + (f"; reader: {choice.get('topic', '')}" if choice["how"] == "reader" else "; kept because a party is a Native nation or organization" if choice["how"] == "caption" else "")},
                 {"check": "Nations named in the caption, matched to nation records by name", "result": "agree" if not not_linked else "missing",
-                 "detail": f"{len(named)} matched, {len(not_linked)} not linked"}]},
+                 "detail": f"{len(named)} matched, {len(not_linked)} not linked"}]
+                + ([RELEASE_CHECK] if released else [])},
         }
         if record["jurisdictions"][0]["level"] == "territory":
             record["jurisdictions"][0] = {"level": "other", "note": "Indian Territory" if "Indian Territory" in court_name else jurisdiction or "Territorial court"}
@@ -546,13 +573,14 @@ def write(args: argparse.Namespace) -> None:
         path.write_text(dump(record), encoding="utf-8")
         rewritten.add(path)
         written += 1
+        released_count += released
         public_rows.append({"key": key, "citation": "; ".join(cite_list), "court": row["court"], "date": row["date"], "score": row["score"], "how": choice["how"]})
         if args.file:
             capture = copy_key(row, FEDERAL_CAPTURE_TOPIC if federal else CAPTURE_TOPIC)
             page = opinion_page(case, capture, link, from_courtlistener(row))
             pages.append((capture, page, record, row))
     stale = {path.stem for path in ours.values() if path not in rewritten}
-    for path in ours.values():
+    for path in ([] if adding else ours.values()):
         if path not in rewritten:
             path.unlink()  # no longer selected, or now held for a privacy review
     if args.file:
@@ -568,14 +596,14 @@ def write(args: argparse.Namespace) -> None:
                 with tempfile.NamedTemporaryFile(suffix=".html") as handle:
                     handle.write(data)
                     handle.flush()
-                    s3.upload_file(handle.name, bucket, capture, ExtraArgs={"ContentType": "text/html; charset=utf-8", "Metadata": {"sha256": digest, "captured": TODAY}})
+                    s3.upload_file(handle.name, bucket, capture, ExtraArgs={"ContentType": "text/html; charset=utf-8", "Metadata": {"sha256": digest, "captured": today}})
                 if mirror_captures.remote_state(s3, bucket, capture) != (len(data), digest):
                     raise SystemExit(f"verification failed for {capture}")
             new = {field: "" for field in mirror_captures.FIELDS}
             topic = FEDERAL_CAPTURE_TOPIC if record["kind"] == "federal-case" else CAPTURE_TOPIC
             new.update(key=capture, bytes=len(data), sha256=digest, media_type="text/html", topic=topic,
                        title=record["citation"]["title"], nations=";".join(record.get("tribes", [])),
-                       obtained=f"built from {'CourtListener' if from_courtlistener(row) else 'the Caselaw Access Project'}'s files, {TODAY}", link=record["original_link"], captured=TODAY,
+                       obtained=f"built from {'CourtListener' if from_courtlistener(row) else 'the Caselaw Access Project'}'s files, {today}", link=record["original_link"], captured=today,
                        records=record["key"], record_kinds="source", rights=mirror_captures.TOPIC_RIGHTS[topic], redistribution="yes", keep_local="no", orphan="no")
             for field in ("redistribution", "rights"):
                 if overrides.get(capture, {}).get(field):
@@ -590,20 +618,89 @@ def write(args: argparse.Namespace) -> None:
                     by_key[capture] = new
         mirror_captures.write_index(index)
     data.mkdir(parents=True, exist_ok=True)
+    private = Path(args.private)
+    private.mkdir(parents=True, exist_ok=True)
+    if adding:
+        # The earlier run's lists, less what this run settles: its new records join records.csv, and the
+        # cases it released leave the private list, which keeps every case still held.
+        with open(data / "records.csv", newline="", encoding="utf-8") as handle:
+            earlier = [row for row in csv.DictReader(handle) if row["key"] not in {r["key"] for r in public_rows}]
+        public_rows = earlier + public_rows
+        with open(private / "held-for-privacy-review.csv", newline="", encoding="utf-8") as handle:
+            still = list(csv.DictReader(handle))
+        released_ids = {str(row["id"]) for row in rows if row["id"] in cleared} - {str(r["id"]) for r in private_rows}
+        private_rows = [r for r in still if r["id"] not in released_ids and r["id"] not in {str(p["id"]) for p in private_rows}] + private_rows
+        before = json.loads((data / "summary.json").read_text(encoding="utf-8"))
+        written = before["written"] + written
+        skipped = before["already_held"]
+        held = len(private_rows)
     with open(data / "records.csv", "w", newline="", encoding="utf-8") as handle:
         writer = csv.DictWriter(handle, ["key", "citation", "court", "date", "score", "how"])
         writer.writeheader()
         writer.writerows(public_rows)
     summary = {"written": written, "already_held": skipped, "held_for_privacy_review": held,
                "held_by_reason": {reason: sum(1 for r in private_rows if r["reason"] == reason) for reason in sorted({r["reason"] for r in private_rows})}}
+    if adding:
+        summary["released_after_read_check"] = before.get("released_after_read_check", 0) + released_count
     (data / "summary.json").write_text(json.dumps(summary, indent=1) + "\n", encoding="utf-8")
-    private = Path(args.private)
-    private.mkdir(parents=True, exist_ok=True)
     with open(private / "held-for-privacy-review.csv", "w", newline="", encoding="utf-8") as handle:
         writer = csv.DictWriter(handle, ["id", "name", "citation", "court", "date", "reason", "link"])
         writer.writeheader()
         writer.writerows(private_rows)
     print(summary)
+
+
+def release(args: argparse.Namespace) -> None:
+    """Fetch the cleared cases into --work in write's layout, with the score and choice an earlier run gave them, then write them."""
+    import csv  # noqa: PLC0415
+    work = Path(args.work)
+    data = FEDERAL_DATA if args.courts == "federal" else DATA
+    with open(args.cleared, newline="", encoding="utf-8") as handle:
+        cleared = [row for row in csv.DictReader(handle) if row["decision"] == "release"]
+    readings = {answer["id"]: answer for answer in json.loads((data / "readings.json").read_text(encoding="utf-8"))}
+    found = re.compile(re.escape(STATIC) + r"/([^/]+)/(\d+)/html/([^/]+)\.html$")
+
+    def fetch(row: dict) -> tuple[dict, dict]:
+        match = found.match(row["link"])
+        if not match:
+            raise SystemExit(f"not a Caselaw Access Project link: {row['id']}")
+        reporter, volume, name = match.groups()
+        path = work / "cases" / reporter / volume / f"{name}.json"
+        if not path.exists():
+            path.parent.mkdir(parents=True, exist_ok=True)
+            path.write_bytes(get(f"{STATIC}/{reporter}/{volume}/cases/{name}.json"))
+        case = json.loads(path.read_text(encoding="utf-8"))
+        if str(case.get("id")) != row["id"]:
+            raise SystemExit(f"case {row['id']} is not at its link")
+        body = case.get("casebody") or {}
+        text = (body.get("head_matter") or "") + "\n" + "\n".join((opinion.get("text") or "") for opinion in body.get("opinions", []))
+        hits = {key: len(pattern.findall(text)) for key, pattern in MARKERS.items()}  # as scripts/caselaw/federal_indian_law_cases.py scored it
+        return case, {"reporter": reporter, "volume": volume, "file": f"{name}.json", "id": case["id"], "name": case.get("name_abbreviation"),
+                      "date": case.get("decision_date") or "", "court": (case.get("court") or {}).get("name"),
+                      "jurisdiction": (case.get("jurisdiction") or {}).get("name"),
+                      "citations": [c.get("cite") for c in case.get("citations") or []], "score": sum(hits.values()), "hits": hits}
+
+    with cf.ThreadPoolExecutor(8) as pool:
+        laid_out = list(pool.map(fetch, cleared))
+    selected = []
+    for case, row in laid_out:
+        # How select chose it: the score, else a reader's answer, else a Native party in the caption.
+        answer = readings.get(row["id"]) or {}
+        if row["score"] >= args.auto and not only_native(row):
+            selected.append({"id": row["id"], "how": "score"})
+        elif answer.get("indian_law") is True:
+            selected.append({"id": row["id"], "how": "reader", "topic": answer.get("topic", "")})
+        elif NATIVE_PARTY.search(row["name"] or ""):
+            selected.append({"id": row["id"], "how": "caption"})
+        else:
+            raise SystemExit(f"case {row['id']} has no way it was chosen")
+    with open(work / "candidates.jsonl", "w", encoding="utf-8") as out:
+        for _, row in laid_out:
+            out.write(json.dumps(row) + "\n")
+    (work / "selected.json").write_text(json.dumps(selected, indent=1))
+    print(len(selected), "cleared cases laid out", {how: sum(1 for row in selected if row["how"] == how) for how in ("score", "reader", "caption")})
+    args.cleared = {row["id"] for _, row in laid_out}
+    write(args)
 
 
 def main() -> None:
@@ -632,8 +729,16 @@ def main() -> None:
     p.add_argument("--show-estates", action="store_true", help="show every estate case (Trevor, Nov. 26, 2026); only child and protected-person cases are held")
     p.add_argument("--estates-from", type=int, default=0, help="hold estate cases decided in this year or later (0: hold every estate case)")
     p.add_argument("--file", action="store_true", help="also file each opinion page in the bucket and the capture index")
+    p = sub.add_parser("release")
+    p.add_argument("--cleared", required=True, help="private CSV outside git (columns id, link, decision) of held cases a read check cleared")
+    p.add_argument("--work", required=True)
+    p.add_argument("--auto", type=int, default=10)
+    p.add_argument("--private", required=True, help="folder outside git with the list of held cases, which names people")
+    p.add_argument("--show-estates", action="store_true")
+    p.add_argument("--estates-from", type=int, default=0)
+    p.add_argument("--file", action="store_true", help="also file each opinion page in the bucket and the capture index")
     args = parser.parse_args()
-    {"scan": scan, "excerpts": excerpts, "select": select, "write": write}[args.command](args)
+    {"scan": scan, "excerpts": excerpts, "select": select, "write": write, "release": release}[args.command](args)
 
 
 if __name__ == "__main__":

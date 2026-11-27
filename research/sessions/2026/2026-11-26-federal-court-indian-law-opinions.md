@@ -50,7 +50,7 @@ Of the 9,254, 592 share a citation with a Project case and 55 more match one by 
 
 District court names are given in the Project's style ("United States District Court for the Eastern District of New York", not CourtListener's "District Court, E.D. New York"), so each court is listed one way.
 
-In all, the collection has 12,392 records and 673 cases held for a privacy review.
+In all, the collection had 12,392 records and 673 cases held for a privacy review; after the read check below (Nov. 27, 2026) it has 12,686 records and 379 held.
 
 ## Hosting
 
@@ -59,3 +59,11 @@ Each record's copy is the court's opinion only, built from the Project's JSON (o
 ## Privacy holds
 
 The held cases follow the state court set's rules (decision record 0060): cases about children, protected persons and adoptions are not written as records and their copies are not served until a person reviews them. Federal courts name minors and victims by initials, so a case with a party named only by initials (*United States v. B.N.M.*) is held too. Estate cases are shown. The list is in the project's private files under `research/federal-court-opinions/private/`.
+
+## Read check and release, Nov. 27, 2026
+
+Most of the 673 holds came from the text rule alone: three or more words about children ("adoption", "juvenile", "custody" and the like) anywhere in the opinion, which also catches the adoption of a rule or a regulation. The thread "Close the tier 2 data gaps" sorted the holds into groups, and Trevor chose "read-check, then release" for the 387 Caselaw Access Project opinions held for their text only. Two AI readings of each full opinion asked whether it names a child or a protected person, in full or by an identifying first name. For 294 neither reading found one; 93 stay held.
+
+The 294 were fetched again from the Caselaw Access Project (the first run's work folder was gone) and written with `scripts/caselaw/state_court_opinions.py --courts federal release`, which rebuilds each case's score from the scan's terms and how it was chosen from `research/federal-court-opinions/readings.json` (188 by score, 106 on a reader's judgment), then writes them as `write` does, adding to the existing records. Each record's notes and review say it was held for its words about children and released after the read check. Their copies were filed in `tribal-law-project-files` under `federal-court-opinions/` and checked by size and SHA-256 (294 of 294). The private list of held cases now has 379 rows: 44 whose caption is about a child or protected person, 74 with a party named only by initials, the 93 above and 168 CourtListener opinions whose text the cloud could not read without a CourtListener token.
+
+One copy, of a 1917 Court of Claims estate case, had stayed in the capture index after its record was held in the first run; the case is among the 294, so the row is right again.
