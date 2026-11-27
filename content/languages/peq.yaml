@@ -1,0 +1,32 @@
+# Written by scripts/languages/build_registry.py from Glottolog 5.4 and the ISO 639-3 code tables; do not edit by hand.
+tag: peq
+name: Southern Pomo
+iso_639_3:
+  code: peq
+  reference_name: Southern Pomo
+  scope: individual
+  source: iso-639-3-code-tables
+glottolog:
+  glottocode: sout2984
+  level: language
+  source: glottolog-5-4
+family:
+  name: Pomoan
+  glottocode: pomo1273
+  source: glottolog-5-4
+endangered_languages_project:
+  link: https://endangeredlanguages.com/elp-language/1533
+  source: glottolog-5-4
+dialects: []
+works:
+- glottolog_reference: '318628'
+  title: 'A Grammar of Southern Pomo: An Indigenous Language of California'
+  kinds:
+  - grammar
+  author: Neil Alexander Walker
+  year: 2013
+  publisher: University of California at Santa Barbara
+  pages: 698
+  most_extensive_description: true
+  source: glottolog-5-4
+retrieved: '2026-11-27'

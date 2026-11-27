@@ -4,7 +4,7 @@
  * Prerendered pages are served as files and never reach this code.
  */
 import { building, dev } from '$app/env';
-import type { Handle } from '@sveltejs/kit/hooks';
+import type { Handle, HandleServerError } from '@sveltejs/kit/hooks';
 import { sealNewEntries } from '#lib/server/activity-seals.ts';
 import { afterResponse, workerEnvironment } from '#lib/server/environment.ts';
 import { activityStatement, refusedAction } from '#lib/server/activity-log.ts';
@@ -14,6 +14,8 @@ import { isLiveEditingRequest, openLiveEditing } from '#lib/server/live-editing.
 import { restrictedPageAnswer, restrictedPagePrefix } from '#lib/server/restricted-pages.ts';
 import { changesSomething, isCrossSite, isGuardedPath } from '#lib/server/request-guard.ts';
 import { framePolicy, publicSecurityHeaders } from '#lib/server/security-headers.ts';
+import { report } from '#lib/server/report.ts';
+import { reportHere } from '#lib/server/report-here.ts';
 import { clearSessionCookie } from '#lib/server/sign-in.ts';
 import { clearSignedIn, markSignedIn } from '#lib/server/signed-in-hint.ts';
 import { needsTwoStep, permissionsOf } from '#lib/permissions.ts';
@@ -71,7 +73,7 @@ export const handle: Handle = async ({ event, resolve }) => {
 		if (environment.database) {
 			const session = await sessionAccount(environment.database, event.cookies.get(sessionCookie)).catch(
 				(problem) => {
-					console.error('Could not read the session', problem);
+					reportHere(problem, { code: 'sign-in.session-read', place: 'hooks.handle', path, method: event.request.method });
 					return undefined;
 				}
 			);
@@ -139,6 +141,22 @@ export const handle: Handle = async ({ event, resolve }) => {
 	}
 
 	return withSecurityHeaders(response, path);
+};
+
+/**
+ * Every error thrown while answering that SvelteKit did not expect: a bug,
+ * or a service that failed. It is reported once (src/lib/server/report.ts)
+ * and the reader's error page shows its reference, so a report from the
+ * reader and the log line can be matched (site/ERRORS.md). Errors the site
+ * raised itself with error(), such as a page that is not there, are answers
+ * rather than problems, and are not reported.
+ */
+export const handleError: HandleServerError = ({ kind, error, event }) => {
+	if (kind !== 'unknown') return;
+	const context = { code: 'page.unexpected', place: event.route.id ?? event.url.pathname, path: event.url.pathname, method: event.request.method, status: 500 };
+	// While the site is built there is no Worker, so a page that fails to prerender is only logged.
+	const { reference } = building ? report(error, context) : reportHere(error, context);
+	return { reference };
 };
 
 /**

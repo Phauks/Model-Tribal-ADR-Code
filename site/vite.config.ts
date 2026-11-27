@@ -12,9 +12,10 @@ import { keptChanges, mergeChanges, parseGitLog, type Change } from './src/lib/r
 import { fullCitations } from './src/lib/server/citations.ts';
 import { citationFileCount, citationFileNumber, citationFilePath, citationTextsPath, plainCitation } from './src/lib/essay-citation-files.ts';
 import { caseNames, essayRecords, essaysInGit, everyBoxFact, everyFullCitation, everyOpinionList, everyRecordBox, glossaryTerms, spellingWords, type EssayRecord } from './src/lib/server/essay-library.ts';
-import { builtDataFolder, copyFiles, copyMovesFile, restrictableCopiesFile, essayCaseNamesFile, essayRecordFiles, privateFilePath, spreadFilePath, spreadRecords, type SpreadFiles } from './src/lib/built-files.ts';
+import { builtDataFolder, copyFiles, copyMovesFile, restrictableCopiesFile, textLinkFiles, essayCaseNamesFile, essayRecordFiles, privateFilePath, spreadFilePath, spreadRecords, type SpreadFiles } from './src/lib/built-files.ts';
 import type { StoredCopy } from './src/lib/server/copy-list.ts';
 import { caseLinks } from './src/lib/server/case-previews.ts';
+import { textLinkIndex } from './src/lib/server/text-link-index.ts';
 import { buildFormCatalog } from './src/lib/server/form-catalog.ts';
 import { nationIndexRows } from './src/lib/server/nation-index.ts';
 import { followableBuild } from './src/lib/server/followable-build.ts';
@@ -36,6 +37,7 @@ import { isoDate, storyIsShown, storySourceKeys } from './src/lib/story-visibili
 import { directoryNameOf, sourceKindOf } from './src/lib/address-book-sync.ts';
 import { markSiteText, type SiteTextEntry } from './src/lib/site-text-markers.ts';
 import { copyRestriction } from './src/lib/nation-restrictions.ts';
+import { copyFileNames } from './src/lib/server/copy-lists.ts';
 import { installCandidates, readerToolFiles, type ManifestChunk } from './src/lib/offline-shell.ts';
 import { loadPublishedSiteText, siteTextCatalog } from './src/lib/server/site-text-build.ts';
 import { loadLiveChanges, loadRepositoryHistory } from './src/lib/server/recent-changes-build.ts';
@@ -313,17 +315,26 @@ function portraitList(): Plugin {
 
 /** Every copy the Worker may serve, worked out once for the whole build. */
 let servedCopies: Record<string, StoredCopy> | undefined;
-const servedCopiesOnce = () =>
-	(servedCopies ??= Object.fromEntries(
+const servedCopiesOnce = () => {
+	if (servedCopies) return servedCopies;
+	// The name a reader saves each file under: its title rather than the code its key ends in (src/lib/readable-file-names.ts).
+	const names = copyFileNames();
+	servedCopies = Object.fromEntries(
 		publicCopies().map((copy) => {
 			const { key, mediaType, sha256, bytes, links, charset } = copy;
 			// A nation's law or opinion carries its kind and nations, so the Worker can follow the nation's choices (src/lib/nation-restrictions.ts).
 			const restrict = copyRestriction(copy);
-			return [key, { mediaType, sha256, bytes, links, ...(charset ? { charset } : {}), ...(restrict ? { restrict } : {}) }];
+			const name = names.get(key);
+			return [key, { mediaType, sha256, bytes, links, ...(charset ? { charset } : {}), ...(name ? { name } : {}), ...(restrict ? { restrict } : {}) }];
 		})
-	));
+	);
+	return servedCopies;
+};
 let movedCopies: Record<string, string> | undefined;
 const copyMovesOnce = () => (movedCopies ??= copyMoves());
+let everyTextLink: Record<string, string> | undefined;
+/** The pages a citation inside a document's text links to (src/lib/server/text-link-index.ts), worked out once. */
+const textLinksOnce = () => (everyTextLink ??= textLinkIndex());
 const restrictableCopiesOnce = () => Object.entries(servedCopiesOnce()).flatMap(([key, copy]) => (copy.restrict ? [{ key, restrict: copy.restrict }] : []));
 
 /**
@@ -343,12 +354,14 @@ function publicCopiesList(): Plugin {
 			writeBuiltData(copyFiles.name, servedCopiesOnce());
 			writeBuiltData(restrictableCopiesFile, restrictableCopiesOnce());
 			writeBuiltData(copyMovesFile, copyMovesOnce());
+			writeBuiltData(textLinkFiles.name, textLinksOnce());
 		},
 		generateBundle() {
 			if (this.environment.name !== 'client') return;
 			emitSpreadFiles(this, copyFiles, servedCopiesOnce());
 			this.emitFile({ type: 'asset', fileName: privateFilePath(restrictableCopiesFile).slice(1), source: JSON.stringify(restrictableCopiesOnce()) });
 			this.emitFile({ type: 'asset', fileName: privateFilePath(copyMovesFile).slice(1), source: JSON.stringify(copyMovesOnce()) });
+			emitSpreadFiles(this, textLinkFiles, textLinksOnce());
 		}
 	};
 }

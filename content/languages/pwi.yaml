@@ -1,0 +1,48 @@
+# Written by scripts/languages/build_registry.py from Glottolog 5.4 and the ISO 639-3 code tables; do not edit by hand.
+tag: pwi
+name: Patwin
+iso_639_3:
+  code: pwi
+  reference_name: Patwin
+  scope: individual
+  source: iso-639-3-code-tables
+glottolog:
+  glottocode: patw1250
+  level: language
+  source: glottolog-5-4
+family:
+  name: Wintuan
+  glottocode: wint1258
+  source: glottolog-5-4
+endangered_languages_project:
+  link: https://endangeredlanguages.com/elp-language/1537
+  source: glottolog-5-4
+dialects:
+- name: Nuclear Patwin
+  glottocode: nucl1784
+  source: glottolog-5-4
+- name: Southern Patwin
+  glottocode: sout3315
+  source: glottolog-5-4
+works:
+- glottolog_reference: '573965'
+  title: A Grammar of Patwin
+  kinds:
+  - grammar
+  author: Lewis C. Lawyer
+  year: 2021
+  publisher: University of Nebraska Press
+  pages: 464
+  most_extensive_description: true
+  source: glottolog-5-4
+- glottolog_reference: '588188'
+  title: A Description of the Patwin Language
+  kinds:
+  - grammar
+  author: Lewis C. Lawyer
+  year: 2019
+  publisher: University of California at Berkeley
+  pages: 395
+  most_extensive_description: true
+  source: glottolog-5-4
+retrieved: '2026-11-27'

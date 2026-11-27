@@ -16,6 +16,7 @@ import {
 	type PublicCopy
 } from '../public-copies.ts';
 import type { DocumentFile, DocumentSetList, DocumentSetSummary } from '../offline-documents.ts';
+import { readableFileNames } from '../readable-file-names.ts';
 import { formatCaptureDate } from './markdown.ts';
 import { nations, publicCopies, sources, type SourceRecord } from './content.ts';
 import { citationTexts } from './essay-library.ts';
@@ -128,7 +129,7 @@ const fixedGroups: Record<string, string> = {
 	...Object.fromEntries(
 		boardVolumeRanges.map(([first, last]) => [boardSlug(first, last), last === undefined ? `Interior Board of Indian Appeals decisions, volume ${first} and later` : `Interior Board of Indian Appeals decisions, volumes ${first} to ${last}`])
 	),
-	// Lower federal courts' opinions from the Caselaw Access Project (decision record 0060).
+	// Lower federal courts' opinions from the Caselaw Access Project and CourtListener (decision record 0060).
 	'federal-court-opinions': 'Lower federal court opinions',
 	'gaming-commission': 'National Indian Gaming Commission documents',
 	acknowledgment: 'Federal acknowledgment documents',
@@ -141,6 +142,43 @@ const fixedGroups: Record<string, string> = {
 	// Oklahoma's register of state-tribal compacts and agreements (decision record 0060).
 	'oklahoma-state-tribal-agreements': 'Oklahoma state-tribal agreements'
 };
+
+/**
+ * Court opinion lists longer than pageSize rows (decision record 0060) are split into parts, in the
+ * order of the copies' keys (source, reporter, volume): the first part keeps the list's address and
+ * the others add "-2", "-3" and so on. One page of thousands of rows is too big for a Worker asset
+ * and for the accessibility check, which gives up on a page after 90 seconds.
+ */
+const pagedGroups = new Set(['federal-court-opinions', 'state-court-opinions']);
+const pageSize = 2500;
+let pageCache: Map<string, { slug: string; parts: number }> | undefined;
+
+/** The list each paged copy is in, by key. */
+function pages(): Map<string, { slug: string; parts: number }> {
+	if (pageCache) return pageCache;
+	const cache = new Map<string, { slug: string; parts: number }>();
+	for (const group of pagedGroups) {
+		const keys = publicCopies()
+			.filter((copy) => copy.topic === group)
+			.map((copy) => copy.key)
+			.sort();
+		const parts = Math.max(1, Math.ceil(keys.length / pageSize));
+		keys.forEach((key, index) => {
+			const part = Math.floor(index / pageSize) + 1;
+			cache.set(key, { slug: part === 1 ? group : `${group}-${part}`, parts });
+		});
+	}
+	pageCache = cache;
+	return cache;
+}
+
+/** A paged list's base group and part, or undefined for any other list. */
+function pageOf(slug: string): { group: string; part: number; parts: number } | undefined {
+	const match = /^(.*?)(?:-(\d+))?$/.exec(slug);
+	if (!match || !pagedGroups.has(match[1])) return undefined;
+	const parts = [...pages().values()].find((page) => page.slug === slug)?.parts ?? 1;
+	return { group: match[1], part: Number(match[2] ?? 1), parts };
+}
 
 function nationNames(): Map<string, string> {
 	return new Map(nations().map((record) => [record.id, displayName(record.names.official)]));
@@ -169,10 +207,9 @@ const opinionPrefix = 'opinions-';
 function groupOf(copy: PublicCopy, names: Map<string, string>): string {
 	if (copy.topic === 'caselaw-access-project') return `${opinionPrefix}${copy.nations[0] ?? 'other'}`;
 	if (copy.topic === 'ibia-decisions') return boardGroup(copy);
+	if (pagedGroups.has(copy.topic)) return pages().get(copy.key)?.slug ?? copy.topic;
 	// The Supreme Court's opinions as text, split by opinion, beside the scans of the United States Reports (scripts/caselaw/case_opinion_texts.py).
 	if (copy.topic === 'supreme-court-opinions') return 'supreme-court';
-	if (copy.topic === 'federal-court-opinions') return 'federal-court-opinions';
-	if (copy.topic === 'state-court-opinions') return 'state-court-opinions';
 	if (copy.topic === 'oklahoma-secretary-of-state') return 'oklahoma-state-tribal-agreements';
 	if (copy.topic === 'constitutions' || copy.topic === 'tribal-law') {
 		const [first] = namesOf(copy, names);
@@ -195,6 +232,8 @@ function groupOf(copy: PublicCopy, names: Map<string, string>): string {
 }
 
 function groupTitle(slug: string, names = nationNames()): string {
+	const paged = pageOf(slug);
+	if (paged) return paged.parts > 1 ? `${fixedGroups[paged.group]}, part ${paged.part} of ${paged.parts}` : fixedGroups[paged.group];
 	if (fixedGroups[slug]) return fixedGroups[slug];
 	if (slug.startsWith(opinionPrefix)) {
 		const name = names.get(slug.slice(opinionPrefix.length));
@@ -231,10 +270,18 @@ export function copyGroups(): CopyGroup[] {
 		counts.set(slug, (counts.get(slug) ?? 0) + 1);
 	}
 	const order = (slug: string) =>
-		fixedGroups[slug] ? Object.keys(fixedGroups).indexOf(slug) : slug.startsWith(opinionPrefix) ? Object.keys(fixedGroups).indexOf('gaming-commission') : slug === 'other-nations' ? 1000 : 10 + slug.charCodeAt(0);
+		pageOf(slug)
+			? Object.keys(fixedGroups).indexOf(pageOf(slug)?.group ?? '') + (pageOf(slug)?.part ?? 1) / 100
+			: fixedGroups[slug]
+				? Object.keys(fixedGroups).indexOf(slug)
+				: slug.startsWith(opinionPrefix)
+					? Object.keys(fixedGroups).indexOf('gaming-commission')
+					: slug === 'other-nations'
+						? 1000
+						: 10 + slug.charCodeAt(0);
 	return [...counts]
 		.map(([slug, count]) => ({ slug, title: groupTitle(slug, names), count }))
-		.sort((first, second) => order(first.slug) - order(second.slug) || first.title.localeCompare(second.title));
+		.sort((first, second) => order(first.slug) - order(second.slug) || first.title.localeCompare(second.title, undefined, { numeric: true }));
 }
 
 /** The rows of one list. */
@@ -252,6 +299,27 @@ export function allCopyRows(): CopyRow[] {
 }
 
 export { groupTitle };
+
+let fileNameCache: Map<string, string> | undefined;
+
+/**
+ * The name each copy is saved under, by key (src/lib/readable-file-names.ts): its title, and its
+ * nation where the title does not name it, rather than the code many keys end in.
+ */
+export function copyFileNames(): Map<string, string> {
+	if (fileNameCache) return fileNameCache;
+	const names = nationNames();
+	const opinions = new Map(tribalCourtOpinions().map((opinion) => [opinion.key, opinion]));
+	fileNameCache = readableFileNames(
+		publicCopies().map((copy) => ({
+			key: copy.key,
+			title: opinions.get(copy.key)?.name || copy.title,
+			links: copy.links,
+			nations: namesOf(copy, names)
+		}))
+	);
+	return fileNameCache;
+}
 
 let detailCache: Map<string, Record<string, CopyDetails>> | undefined;
 
@@ -345,6 +413,7 @@ export function offlineSets(): { federal: DocumentSetList; nations: Map<string, 
 
 function buildOfflineSets(): { federal: DocumentSetList; nations: Map<string, DocumentSetList> } {
 	const names = nationNames();
+	const fileNames = copyFileNames();
 	const federal: DocumentFile[] = [];
 	const byNation = new Map<string, DocumentFile[]>();
 	for (const copy of publicCopies()) {
@@ -353,7 +422,8 @@ function buildOfflineSets(): { federal: DocumentSetList; nations: Map<string, Do
 			copy.bytes,
 			copy.sha256,
 			copy.title,
-			copy.links.at(-1) ?? copy.links[0] ?? ''
+			copy.links.at(-1) ?? copy.links[0] ?? '',
+			fileNames.get(copy.key) ?? ''
 		];
 		// A nation's set holds its constitutions, its laws and its courts' opinions (decision record
 		// 0047); everything else the site holds is a United States document.

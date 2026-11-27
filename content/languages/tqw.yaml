@@ -1,0 +1,53 @@
+# Written by scripts/languages/build_registry.py from Glottolog 5.4 and the ISO 639-3 code tables; do not edit by hand.
+tag: tqw
+name: Tonkawa
+iso_639_3:
+  code: tqw
+  reference_name: Tonkawa
+  scope: individual
+  source: iso-639-3-code-tables
+glottolog:
+  glottocode: tonk1249
+  level: language
+  source: glottolog-5-4
+family: null
+dialects: []
+works:
+- glottolog_reference: '107416'
+  title: An Analytic Dictionary of the Tonkawa Language
+  kinds:
+  - dictionary
+  author: Harry Hoijer
+  year: 1949
+  publisher: University of California Press
+  source: glottolog-5-4
+- glottolog_reference: '62003'
+  title: An analytical dictionary of the Tonkawa language
+  kinds:
+  - dictionary
+  author: Harry Hoijer
+  year: 1949
+  publisher: University of California Press
+  pages: 74
+  source: glottolog-5-4
+- glottolog_reference: '71877'
+  title: Tonkawa
+  kinds:
+  - grammar
+  author: Harry Hoijer
+  year: 1933
+  publisher: Government Printing Office
+  pages: 148
+  most_extensive_description: true
+  source: glottolog-5-4
+- glottolog_reference: '93214'
+  title: 'Tonkawa: An Indian Language of Texas'
+  kinds:
+  - grammar
+  author: Harry Hoijer
+  year: 1931
+  publisher: University of Chicago
+  pages: 106
+  most_extensive_description: true
+  source: glottolog-5-4
+retrieved: '2026-11-27'

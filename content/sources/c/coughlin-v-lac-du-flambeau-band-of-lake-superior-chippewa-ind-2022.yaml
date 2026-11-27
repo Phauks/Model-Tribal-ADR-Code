@@ -1,0 +1,59 @@
+key: coughlin-v-lac-du-flambeau-band-of-lake-superior-chippewa-ind-2022
+kind: federal-case
+citation:
+  type: legal_case
+  title: Coughlin v. Lac du Flambeau Band of Lake Superior Chippewa Ind
+  authority: United States Court of Appeals for the First Circuit
+  container-title: F.4th
+  volume: '33'
+  page: '600'
+  issued:
+    date-parts:
+    - - 2022
+      - 5
+      - 6
+  URL: https://www.courtlistener.com/opinion/6466483/coughlin-v-lac-du-flambeau-band-of-lake-superior-chippewa-ind/
+  accessed:
+    date-parts:
+    - - 2026
+      - 11
+      - 26
+original_link: https://www.courtlistener.com/opinion/6466483/coughlin-v-lac-du-flambeau-band-of-lake-superior-chippewa-ind/
+retrieved: '2026-11-26'
+archives: []
+history:
+  status: live
+  last_checked: '2026-11-26'
+rights:
+  status: no-permission-needed
+  basis: government-edict
+  basis_note: The text of a judicial opinion has no copyright (Georgia v. Public.Resource.Org, Inc., 590 U.S. 255 (2020)). The copy served on this site is the court's opinion only, without the publisher's headnotes, synopsis or other editorial matter (decision record 0060).
+  redistribution: true
+tribes:
+- lac-du-flambeau-band-of-lake-superior-chippewa-indians-of-the-lac-du-flambeau-reservation-of-wisconsin
+nations_in_case:
+  checked: '2026-11-26'
+  named:
+  - nation: lac-du-flambeau-band-of-lake-superior-chippewa-indians-of-the-lac-du-flambeau-reservation-of-wisconsin
+    named_as: Flambeau Band of Lake Superior Chippewa Ind
+    role: party
+    historical: true
+    note: Matched by the script to the only nation record sharing this name; not yet checked against the case's history.
+jurisdictions:
+- level: federal
+topics:
+- federal-court-indian-law
+found_in:
+- 2026-11-26-federal-court-indian-law-opinions
+notes: Published at 33 F.4th 600. Decided by the United States Court of Appeals for the First Circuit on May 6, 2022. Found by scripts/caselaw/courtlistener_federal_opinions.py and scripts/caselaw/state_court_opinions.py in CourtListener's bulk files, with an Indian law term score of 119, at or above 10, the level kept without a reading.
+review:
+  status: unverified
+  by: scripts/caselaw/state_court_opinions.py
+  date: '2026-11-26'
+  checks:
+  - check: 'Indian law case: the term score and, below the score kept without a reading, an AI reader''s judgment of excerpts'
+    result: agree
+    detail: score 119
+  - check: Nations named in the caption, matched to nation records by name
+    result: agree
+    detail: 1 matched, 0 not linked

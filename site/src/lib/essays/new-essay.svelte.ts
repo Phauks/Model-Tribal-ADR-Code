@@ -9,11 +9,11 @@
 export interface NewEssayPlace {
 	/** The section's address, such as /essays. */
 	sectionLink: string;
-	/** The part a new essay goes in: foundations, essays or back-matter. */
+	/** The part a new essay goes in: foundations, essays, back-matter or news. */
 	part: string;
 }
 
 export const newEssayPlace = $state<{ current: NewEssayPlace | null }>({ current: null });
 
 /** The section page for each part an essay can be started in. */
-export const partSections: Record<string, string> = { foundations: '/foundations', essays: '/essays', 'back-matter': '/back-matter' };
+export const partSections: Record<string, string> = { foundations: '/foundations', essays: '/essays', 'back-matter': '/back-matter', news: '/news' };

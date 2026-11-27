@@ -128,6 +128,12 @@ const signedInCheck = /(^|\.)locals\.(account|person)$/;
  * taken off the list.
  */
 const publicHandlers: Record<string, { handlers: string[]; reason: string }> = {
+	// Problems from readers' browsers (site/ERRORS.md).
+	'src/routes/problems/+server.ts': {
+		handlers: ['POST'],
+		reason:
+			'Any reader’s browser reports problems here, signed in or not. Each network address may send 30 a minute (problemReportLimit), a report is at most 8 KB, its fields are checked and cut short, and all it changes is a count in the problems table.'
+	},
 	// Signing in and out.
 	'src/routes/sign-in/+page.server.ts': {
 		handlers: ['actions.send', 'actions.resend', 'actions.create', 'actions.code', 'actions.password'],
@@ -202,6 +208,13 @@ const publicHandlers: Record<string, { handlers: string[]; reason: string }> = {
 		handlers: ['actions.problem'],
 		reason:
 			'Reporting a problem with a paid order needs the order’s long random identifier, which only the buyer is given; it is limited per connection and only adds a report for the team.'
+	},
+
+	// Downloading several search results at once (src/lib/search-selection.ts).
+	'src/routes/search/download/+server.ts': {
+		handlers: ['POST'],
+		reason:
+			'Changes nothing: it is a POST only because the list of results is long. It puts together a .zip of files any reader may already download one at a time, taken only from the build’s records and list of copies and following nations’ choices, at most 500 results a time, as the nations’ .zip downloads do.'
 	},
 
 	// The video room.

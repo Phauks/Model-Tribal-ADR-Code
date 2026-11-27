@@ -1,0 +1,47 @@
+# Written by scripts/languages/build_registry.py from Glottolog 5.4 and the ISO 639-3 code tables; do not edit by hand.
+tag: yok
+name: Northern Yokuts
+iso_639_3:
+  code: yok
+  reference_name: Yokuts
+  scope: individual
+  source: iso-639-3-code-tables
+glottolog:
+  glottocode: yoku1256
+  level: language
+  source: glottolog-5-4
+family:
+  name: Yokutsan
+  glottocode: yoku1255
+  source: glottolog-5-4
+iso_names:
+- name: Yokuts
+  source: iso-639-3-code-tables
+endangered_languages_project:
+  link: https://endangeredlanguages.com/elp-language/6146
+  source: glottolog-5-4
+dialects:
+- name: Delta Yokuts
+  glottocode: delt1254
+  source: glottolog-5-4
+- name: Gashowu
+  glottocode: gash1251
+  source: glottolog-5-4
+- name: Kings River
+  glottocode: king1260
+  source: glottolog-5-4
+- name: Valley Yokuts
+  glottocode: vall1251
+  source: glottolog-5-4
+works:
+- glottolog_reference: '301791'
+  title: Yokuts Language of California
+  kinds:
+  - grammar
+  author: Stanley Newman
+  year: 1944
+  publisher: Johnson
+  pages: 247
+  most_extensive_description: true
+  source: glottolog-5-4
+retrieved: '2026-11-27'

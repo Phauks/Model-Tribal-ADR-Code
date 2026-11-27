@@ -1,0 +1,51 @@
+key: maine-revised-statutes-title-5-section-4651
+kind: state-statute
+citation:
+  type: legislation
+  title: Definitions
+  title-short: Me. Rev. Stat. tit. 5, § 4651
+  container-title: Maine Revised Statutes
+  container-title-short: Me. Rev. Stat.
+  volume: '5'
+  section: '4651'
+  author:
+  - literal: Maine Legislature, Office of the Revisor of Statutes
+  issued:
+    date-parts:
+    - - 1987
+  URL: https://legislature.maine.gov/statutes/5/title5sec4651.html
+  accessed:
+    date-parts:
+    - - 2026
+      - 11
+      - 27
+original_link: https://legislature.maine.gov/statutes/5/title5sec4651.html
+retrieved: '2026-11-27'
+archives: []
+history:
+  status: live
+  last_checked: '2026-11-27'
+state_law:
+  relevance: incidental
+  citation: Me. Rev. Stat. tit. 5, § 4651 (2026)
+rights:
+  status: no-permission-needed
+  basis: government-edict
+  basis_note: 'Official state statutes are not copyrightable under the government edicts doctrine (Georgia v. Public.Resource.Org, Inc., 590 U.S. 255 (2020)). Linked, not served: state statutes stay link only.'
+  redistribution: false
+jurisdictions:
+- level: state
+  state: ME
+topics:
+- state-indian-law
+found_in:
+- 2026-11-27-state-statutes-california-nebraska-utah-maine-florida
+notes: 'Indigo Book citation: Me. Rev. Stat. tit. 5, § 4651 (2026). History: PL 1987, c. 515, §1 (NEW). PL 1987, c. 695, §1 (AMD). PL 1991, c. 760, §1 (AMD). PL 1993, c. 199, §1 (AMD). PL 1993, c. 469, §1 (AMD). PL 1995, c. 265, §§1,2 (AMD). PL 1995, c. 650, §1 (AMD). PL 2001, c. 134, §1 (AMD). PL 2011, c. 559, Pt. C, §§1, 2 (AMD). PL 2015, c. 410, Pt. C, §1 (AMD). PL 2015, c. 443, §1 (AMD). PL 2017, c. 288, Pt. A, §4 (AMD). PL 2017, c. 455, §1 (AMD). PL 2025, c. 90, §1 (AMD). PL 2025, c. 400, §1 (AMD). PL 2025, c. 417, §1 (AMD). PL 2025, c. 767, §1 (AMD). Text read from the Maine Revisor of Statutes'' page for the section (legislature.maine.gov/statutes) on Nov. 27, 2026. Found by the state statutes sweep (terms: tribal court; nation; passamaquoddy; penobscot; tribal; tribe); AI reader''s verdict incidental: Passamaquoddy and Penobscot tribal courts count as courts for harassment orders. Unverified.'
+review:
+  status: unverified
+  by: scripts/law/state_statutes/run.py
+  date: '2026-11-27'
+  checks:
+  - check: 'Indian law section: the sweep''s keyword pass and an AI reader''s verdict (core, incidental or none)'
+    result: agree
+    detail: 'incidental; terms: tribal court; nation; passamaquoddy; penobscot; tribal; tribe'

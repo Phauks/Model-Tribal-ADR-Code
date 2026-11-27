@@ -1,0 +1,51 @@
+key: wyoming-statutes-36-4-205
+kind: state-statute
+citation:
+  type: legislation
+  title: Grant applications; eligible entities
+  title-short: Wyo. Stat. Ann. § 36-4-205
+  container-title: Wyoming Statutes
+  container-title-short: Wyo. Stat. Ann.
+  section: 36-4-205
+  author:
+  - literal: Wyoming Legislative Service Office
+  URL: https://wyoleg.gov/statutes/compress/title36.pdf#page=58
+  accessed:
+    date-parts:
+    - - 2026
+      - 11
+      - 27
+original_link: https://wyoleg.gov/statutes/compress/title36.pdf#page=58
+retrieved: '2026-11-27'
+archives: []
+history:
+  status: live
+  last_checked: '2026-11-27'
+shares_link_with:
+- wyoming-statutes-36-12-109
+- wyoming-statutes-36-4-204
+- wyoming-statutes-36-8-301
+state_law:
+  relevance: incidental
+  citation: Wyo. Stat. Ann. § 36-4-205 (2025)
+rights:
+  status: no-permission-needed
+  basis: government-edict
+  basis_note: 'Official state statutes are not copyrightable under the government edicts doctrine (Georgia v. Public.Resource.Org, Inc., 590 U.S. 255 (2020)). Linked, not served: state statutes stay link only.'
+  redistribution: false
+jurisdictions:
+- level: state
+  state: WY
+topics:
+- state-indian-law
+found_in:
+- 2026-11-27-state-statutes-fourth-batch
+notes: 'Indigo Book citation: Wyo. Stat. Ann. § 36-4-205 (2025). Text read from the Wyoming Legislative Service Office''s PDF of the section''s title of the Wyoming Statutes (wyoleg.gov/statutes) on Nov. 27, 2026. Found by the state statutes sweep (terms: tribal governing body; eastern shoshone; northern arapaho; tribal; tribes); AI reader''s verdict incidental: Outdoor trust grants may go to Shoshone and Arapaho tribes. Unverified.'
+review:
+  status: unverified
+  by: scripts/law/state_statutes/run.py
+  date: '2026-11-27'
+  checks:
+  - check: 'Indian law section: the sweep''s keyword pass and an AI reader''s verdict (core, incidental or none)'
+    result: agree
+    detail: 'incidental; terms: tribal governing body; eastern shoshone; northern arapaho; tribal; tribes'

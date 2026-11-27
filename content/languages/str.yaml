@@ -1,0 +1,82 @@
+# Written by scripts/languages/build_registry.py from Glottolog 5.4 and the ISO 639-3 code tables; do not edit by hand.
+tag: str
+name: Northern Straits Salish
+iso_639_3:
+  code: str
+  reference_name: Straits Salish
+  scope: individual
+  source: iso-639-3-code-tables
+glottolog:
+  glottocode: stra1244
+  level: language
+  source: glottolog-5-4
+family:
+  name: Salishan
+  glottocode: sali1255
+  source: glottolog-5-4
+iso_names:
+- name: Straits Salish
+  source: iso-639-3-code-tables
+endangered_languages_project:
+  link: https://endangeredlanguages.com/elp-language/1917
+  source: glottolog-5-4
+dialects:
+- name: Lekwungen
+  glottocode: song1308
+  source: glottolog-5-4
+- name: Lummi
+  glottocode: lumm1243
+  source: glottolog-5-4
+- name: Saanich
+  glottocode: saan1246
+  source: glottolog-5-4
+- name: Samish
+  glottocode: sami1249
+  source: glottolog-5-4
+- name: Semiahmoo
+  glottocode: semi1266
+  source: glottolog-5-4
+- name: Sooke
+  glottocode: sook1244
+  source: glottolog-5-4
+works:
+- glottolog_reference: '16903'
+  title: Saanich, North Straits Salish Classified Word List
+  kinds:
+  - dictionary
+  author: Timothy Montler
+  year: 1991
+  publisher: Canadian Museum of Civilization
+  pages: 171
+  source: glottolog-5-4
+- glottolog_reference: '56332'
+  title: An outline of the morphology and phonology of Saanich, North Straits Salish
+  kinds:
+  - grammar
+  author: Timothy Montler
+  year: 1986
+  publisher: Department of Anthropology, University of Montana
+  pages: 278
+  most_extensive_description: true
+  source: glottolog-5-4
+- glottolog_reference: '60902'
+  title: A Phonology and Morphology of Songish, A Dialect of Straits Salish
+  kinds:
+  - grammar
+  author: Yolanda Adela Raffo
+  year: 1972
+  publisher: University of Kansas
+  pages: 265
+  most_extensive_description: true
+  source: glottolog-5-4
+- glottolog_reference: '7632'
+  title: A Grammar of Non-Particles in Sooke, A Dialect of Straits Coast Salish
+  kinds:
+  - grammar
+  author: Barbara Silverman Efrat
+  year: 1969
+  publisher: University of Pennsylvania
+  pages: 206
+  most_extensive_description: true
+  source: glottolog-5-4
+retrieved: '2026-11-27'

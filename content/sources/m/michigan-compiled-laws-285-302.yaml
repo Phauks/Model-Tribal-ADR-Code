@@ -1,0 +1,50 @@
+key: michigan-compiled-laws-285-302
+kind: state-statute
+citation:
+  type: legislation
+  title: Definitions; agricultural value-added grant program; establishment and administration; grant awards; procedure; condition of receiving grant; establishment of low-interest loan program; fiduciary obligations upon grant recipient; "substantial conflict of interest" defined; grant application; form or format; rules; effect on prior grants
+  title-short: Mich. Comp. Laws § 285.302
+  container-title: Michigan Compiled Laws
+  container-title-short: Mich. Comp. Laws
+  section: '285.302'
+  author:
+  - literal: Michigan Legislature
+  issued:
+    date-parts:
+    - - 2000
+  URL: https://legislature.mi.gov/Laws/MCL?objectName=mcl-285.302
+  accessed:
+    date-parts:
+    - - 2026
+      - 11
+      - 27
+original_link: https://legislature.mi.gov/Laws/MCL?objectName=mcl-285.302
+retrieved: '2026-11-27'
+archives: []
+history:
+  status: live
+  last_checked: '2026-11-27'
+state_law:
+  relevance: incidental
+  citation: Mich. Comp. Laws § 285.302 (2026)
+rights:
+  status: no-permission-needed
+  basis: government-edict
+  basis_note: 'Official state statutes are not copyrightable under the government edicts doctrine (Georgia v. Public.Resource.Org, Inc., 590 U.S. 255 (2020)). Linked, not served: state statutes stay link only.'
+  redistribution: false
+jurisdictions:
+- level: state
+  state: MI
+topics:
+- state-indian-law
+found_in:
+- 2026-11-27-state-statutes-fourth-batch
+notes: 'Indigo Book citation: Mich. Comp. Laws § 285.302 (2026). History: 2000, Act 322, Imd. Eff. Oct. 26, 2000; Am. 2006, Act 423, Imd. Eff. Sept. 29, 2006 Admin Rule: R 285.351 et seq. of the Michigan Administrative Code. Text read from the Michigan Legislature''s page for the section''s chapter of the Michigan Compiled Laws (legislature.mi.gov), complete through Public Act 114 of 2026, on Nov. 27, 2026. Found by the state statutes sweep (terms: indian gaming; indian); AI reader''s verdict incidental: Grant recipients barred from funding Indian gaming regulatory act casinos. Unverified.'
+review:
+  status: unverified
+  by: scripts/law/state_statutes/run.py
+  date: '2026-11-27'
+  checks:
+  - check: 'Indian law section: the sweep''s keyword pass and an AI reader''s verdict (core, incidental or none)'
+    result: agree
+    detail: 'incidental; terms: indian gaming; indian'

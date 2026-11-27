@@ -216,7 +216,7 @@ function draftOf(row: { identifier: string; thread_identifier: string | null; fi
 	try {
 		fields = JSON.parse(row.fields);
 	} catch {
-		// A damaged draft opens empty.
+		// expected: a damaged draft opens empty.
 	}
 	return { identifier: row.identifier, threadIdentifier: row.thread_identifier, fields: draftFieldsFrom(fields), updatedAt: row.updated_at };
 }
@@ -413,6 +413,7 @@ export async function getAway(context: MailContext): Promise<AwayMessage> {
 			since: typeof parsed.since === 'string' ? parsed.since : null
 		};
 	} catch {
+		// expected: a damaged away message reads as off.
 		return noAway;
 	}
 }

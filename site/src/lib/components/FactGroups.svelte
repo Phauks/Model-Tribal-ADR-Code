@@ -205,7 +205,9 @@
 	 * reaches 24 by 24 pixels without growing the line. It leaves a pixel or
 	 * two to spare, because a fallback font draws the number smaller than the
 	 * site's own font does (23.5 by 23 pixels in Liberation Sans with 4 and 8
-	 * pixels; measured Nov. 23, 2026).
+	 * pixels; measured Nov. 23, 2026). The right padding is 10 pixels: with 9,
+	 * a [1], the narrowest marker, drew 23.9 pixels wide in the site's font,
+	 * short of a full target where it follows a link (measured Nov. 27, 2026).
 	 *
 	 * A link that is the whole fact gets the same treatment: two pixels above
 	 * and below take a line of it from 21 to 25 pixels, so it is a full target
@@ -213,7 +215,7 @@
 	 * which changes wherever the link wraps.
 	 */
 	.summary-list :global(.note-marker) {
-		padding: 5px 9px 5px 0.05em;
+		padding: 5px 10px 5px 0.05em;
 	}
 
 	.summary-list dd > a,

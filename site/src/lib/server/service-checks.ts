@@ -33,6 +33,9 @@ import { giftSettingChecks, giftState } from './sponsors.ts';
 import { isTestKey, stripeSettings } from './stripe.ts';
 import { latestPublication, latestRebuild } from './site-text.ts';
 import { dollars } from './watch/model-prices.ts';
+import { problemsSince, type ProblemRow } from './report.ts';
+import { expectedRuns, workerNames, workerRuns, type WorkerRunRow } from './reported.ts';
+import { isMissingTable } from '../problems.ts';
 import { readWatchProgress, watchState, watchStateWords, watchWorkerAddress, type WatchProgress } from './watch/progress.ts';
 
 export type CheckState = 'working' | 'warning' | 'problem' | 'off';
@@ -154,7 +157,9 @@ const database: Check = {
 				.prepare('SELECT name FROM d1_migrations ORDER BY id')
 				.all<{ name: string }>();
 			applied = results.map((row) => row.name);
-		} catch {
+		} catch (problem) {
+			// Only a missing table means this; anything else shows as the check failing, with its message.
+			if (!isMissingTable(problem)) throw problem;
 			return {
 				state: 'warning',
 				summary: 'The database answers, but it has no record of which migrations were applied.',
@@ -191,7 +196,9 @@ const sourceLibrary: Check = {
 			counts = await library
 				.prepare('SELECT (SELECT COUNT(*) FROM documents) AS documents, (SELECT COUNT(*) FROM pages) AS pages')
 				.first<{ documents: number; pages: number }>();
-		} catch {
+		} catch (problem) {
+			// Only a missing table means this; anything else shows as the check failing, with its message.
+			if (!isMissingTable(problem)) throw problem;
 			return { state: 'warning', summary: 'The library database answers, but its tables are missing.', details: [], fix: 'Load it from scripts/library/ (src/lib/server/source-library.ts).' };
 		}
 		const documents = counts?.documents ?? 0;
@@ -304,7 +311,7 @@ const scannerDesk: Check = {
 	}
 };
 
-type RateLimitBinding = 'requestFormLimit' | 'workspaceChangeLimit' | 'signInLimit' | 'signInNetworkLimit' | 'uploadLimit';
+type RateLimitBinding = 'requestFormLimit' | 'workspaceChangeLimit' | 'signInLimit' | 'signInNetworkLimit' | 'uploadLimit' | 'problemReportLimit';
 
 /** Each limit names how many a minute it allows and whom it counts, as site/wrangler.jsonc sets it (Trevor, Nov. 26, 2026: "rate limits should denote the limits"). */
 function rateLimitCheck(key: string, name: string, binding: RateLimitBinding, use: string, perMinute: number, counted: string): Check {
@@ -422,6 +429,7 @@ async function readJson(response: Response): Promise<unknown> {
 	try {
 		return text ? JSON.parse(text) : undefined;
 	} catch {
+		// expected: an answer that is not JSON is read as none, and the check says what it expected.
 		return undefined;
 	}
 }
@@ -550,16 +558,16 @@ export async function trySmtpSignIn(
 		}
 		const plain = btoa(`\u0000${connection.username}\u0000${connection.password}`);
 		await command(`AUTH PLAIN ${plain}`, [235], 'Sign-in');
-		await command('QUIT', [221], 'QUIT').catch(() => undefined);
+		await command('QUIT', [221], 'QUIT').catch(() => /* expected: the sign-in already succeeded; quitting politely is a courtesy */ undefined);
 		return { greeting: greeting.text, steps };
 	} finally {
 		try {
 			reader.releaseLock();
 			writer.releaseLock();
 		} catch {
-			// Already released.
+			// expected: already released.
 		}
-		await socket.close().catch(() => undefined);
+		await socket.close().catch(() => /* expected: the connection is ending either way */ undefined);
 	}
 }
 
@@ -630,7 +638,9 @@ const scanner: Check = {
 				.prepare('SELECT status, COUNT(*) AS count, MIN(requested_at) AS oldest FROM file_scans GROUP BY status')
 				.all<{ status: string; count: number; oldest: string | null }>();
 			rows = result.results;
-		} catch {
+		} catch (problem) {
+			// Only a missing table means this; anything else shows as the check failing, with its message.
+			if (!isMissingTable(problem)) throw problem;
 			return { state: 'off', summary: 'The file_scans table is missing.', details: [], fix: 'Apply migration 0021 and deploy the scanner Worker (site/SCANNING.md).' };
 		}
 		const count = (status: string) => rows.find((row) => row.status === status)?.count ?? 0;
@@ -917,7 +927,9 @@ const siteTextRebuilds: Check = {
 		try {
 			publication = await latestPublication(environment.database);
 			last = await latestRebuild(environment.database);
-		} catch {
+		} catch (problem) {
+			// Only a missing table means this; anything else shows as the check failing, with its message.
+			if (!isMissingTable(problem)) throw problem;
 			return { state: 'off', summary: 'The site text tables are missing.', details: [], fix: 'Apply migration 20261124T0119_add_site_text.sql.' };
 		}
 		const details = [
@@ -934,8 +946,125 @@ const siteTextRebuilds: Check = {
 	}
 };
 
+/** How far back the Problems check looks. */
+const problemWindowDays = 7;
+
+/**
+ * What has gone wrong lately, from the problems table the site and its
+ * Workers count every reported problem in (src/lib/server/report.ts,
+ * site/ERRORS.md). Each line names a code, where it happened, how often, when
+ * last, and the reference that finds it in Cloudflare's Workers Logs.
+ */
+const recentProblems: Check = {
+	key: 'recent-problems',
+	group: 'Problems',
+	name: 'Problems in the last 7 days',
+	target: { name: 'tribal-law-project', kind: 'D1 database', part: 'problems table' },
+	use: 'Counting the problems the site, its Workers and readers’ browsers report',
+	test: 'Lists each kind of problem reported in the last 7 days, newest first. Search Workers Logs for a reference to see the whole report.',
+	async run({ environment, now = new Date() }) {
+		let rows: ProblemRow[];
+		try {
+			rows = await problemsSince(environment.database, new Date(now.getTime() - problemWindowDays * 86_400_000));
+		} catch (problem) {
+			if (isMissingTable(problem)) return { state: 'off', summary: 'The problems table is missing.', details: [], fix: 'Apply migration 20261127T0747_add_problems.' };
+			throw problem;
+		}
+		if (rows.length === 0) return { state: 'working', summary: 'Nothing has been reported in the last 7 days.', details: [] };
+		const total = rows.reduce((sum, row) => sum + row.count, 0);
+		const details = rows.map(
+			(row) => `${row.code} (${row.source}, ${row.place}): ${row.count.toLocaleString('en-US')} since ${row.firstSeen.slice(0, 10)}, last ${row.lastSeen.slice(0, 16).replace('T', ' ')} UTC, ${row.lastReference}. ${row.lastMessage}`
+		);
+		const kinds = rows.length === 1 ? 'kind' : 'kinds';
+		return {
+			state: 'warning',
+			summary: `${rows.length} ${kinds} of problem reported ${total.toLocaleString('en-US')} ${total === 1 ? 'time' : 'times'} in the last 7 days.`,
+			details,
+			fix: 'Search Workers Logs in the Cloudflare dashboard for a reference to read the whole report.'
+		};
+	}
+};
+
+/** A time as the Problems rows show it: 2026-11-27 09:58 UTC. */
+function utcMinute(stamp: string): string {
+	return `${stamp.slice(0, 16).replace('T', ' ')} UTC`;
+}
+
+/** A handler in words: scheduled:rebuild is "scheduled rebuild", alarm:ScanDesk "ScanDesk alarm", fetch "requests". */
+function handlerWords(handler: string): string {
+	if (handler === 'fetch') return 'requests';
+	if (handler === 'scheduled') return 'scheduled run';
+	const [kind, name] = handler.split(':');
+	return kind === 'alarm' ? `${name} alarm` : `${kind} ${name ?? ''}`.trim();
+}
+
+function runLine(row: WorkerRunRow | undefined, title: string): string {
+	if (!row) return `${title}: has not recorded a run yet.`;
+	const took = row.lastMilliseconds === null ? '' : ` in ${(row.lastMilliseconds / 1000).toLocaleString('en-US', { maximumFractionDigits: 1 })} s`;
+	const last = row.handler === 'fetch' ? `${title}:` : `${title}: last ran ${utcMinute(row.lastStarted)}, ${row.lastOutcome}${took}.`;
+	const words = (row.lastFailureMessage ?? '').trim();
+	const failed = row.lastFailed
+		? ` Last failed ${utcMinute(row.lastFailed)} (${row.lastFailureCode ?? 'unexpected'}, ${row.lastFailureReference ?? 'no reference'})${words ? `: ${words}${/[.!?]$/.test(words) ? '' : '.'}` : '.'}`
+		: ' Never failed.';
+	const counts = row.handler === 'fetch' ? '' : ` ${row.failures.toLocaleString('en-US')} of ${row.runs.toLocaleString('en-US')} runs failed.`;
+	return `${last}${failed}${counts}`.replace(/\s+$/, '');
+}
+
+/**
+ * When each Worker's scheduled runs and alarms last ran and last failed, from
+ * the row each writes when it ends (src/lib/server/reported.ts, site/ERRORS.md,
+ * "Worker runs"). A scheduled run that is late or failed last time is not
+ * working; an alarm or a fetch that failed in the last day needs a look.
+ */
+const workerRunsCheck: Check = {
+	key: 'worker-runs',
+	group: 'Workers',
+	name: 'Scheduled runs and alarms',
+	target: { name: 'tribal-law-project', kind: 'D1 database', part: 'worker_runs table' },
+	use: 'Knowing when each Worker last ran and last failed',
+	test: 'Reads the row each Worker writes when a scheduled run or alarm ends, and when its fetch handler fails.',
+	async run({ environment, now = new Date() }) {
+		let rows: WorkerRunRow[];
+		try {
+			rows = await workerRuns(environment.database);
+		} catch (problem) {
+			if (isMissingTable(problem)) return { state: 'off', summary: 'The worker_runs table is missing.', details: [], fix: 'Apply migration 20261127T1000_add_worker_runs.' };
+			throw problem;
+		}
+		const byKey = new Map(rows.map((row) => [`${row.worker} ${row.handler}`, row]));
+		const late: string[] = [];
+		const failing: string[] = [];
+		const details: string[] = [];
+		for (const expected of expectedRuns) {
+			const row = byKey.get(`${expected.worker} ${expected.handler}`);
+			byKey.delete(`${expected.worker} ${expected.handler}`);
+			const title = `${workerNames[expected.worker]} ${handlerWords(expected.handler)} (${expected.when})`;
+			details.push(runLine(row, title));
+			if (!row || now.getTime() - Date.parse(row.lastStarted) > expected.lateAfterMinutes * 60_000) late.push(title);
+			else if (row.lastOutcome === 'failed') failing.push(title);
+		}
+		const dayAgo = now.getTime() - 86_400_000;
+		const recentFailures: string[] = [];
+		for (const row of byKey.values()) {
+			const title = `${workerNames[row.worker] ?? row.worker} ${handlerWords(row.handler)}`;
+			details.push(runLine(row, title));
+			if (row.lastFailed && Date.parse(row.lastFailed) >= dayAgo) recentFailures.push(title);
+		}
+		const fix = 'Search Workers Logs in the Cloudflare dashboard for the reference, and check the Worker’s cron triggers and deployments.';
+		if (late.length > 0 || failing.length > 0) {
+			const parts = [late.length > 0 ? `${late.length} late or never recorded` : '', failing.length > 0 ? `${failing.length} failed last time` : ''].filter(Boolean);
+			return { state: 'problem', summary: `Of ${expectedRuns.length} scheduled runs, ${parts.join(' and ')}.`, details, fix };
+		}
+		if (recentFailures.length > 0) {
+			return { state: 'warning', summary: `Every scheduled run is on time, but these failed in the last day: ${recentFailures.join(', ')}.`, details, fix };
+		}
+		return { state: 'working', summary: `All ${expectedRuns.length} scheduled runs are on time and finished last time.`, details };
+	}
+};
+
 export const serviceChecks: readonly Check[] = [
 	database,
+	recentProblems,
 	sourceLibrary,
 	bucketCheck('source-documents-bucket', 'Files bucket', 'sourceDocuments', 'tribal-law-project-files', 'source documents and sent files', 'Source documents, sent files, map tiles, the library’s change files and the Workers’ progress files'),
 	bucketCheck('mail-bucket', 'Mail bucket', 'mailFiles', 'tribal-law-project-mail', 'the project inbox’s messages and attachments', 'The project inbox’s messages and attachments'),
@@ -947,12 +1076,14 @@ export const serviceChecks: readonly Check[] = [
 	waybackCaptures,
 	sourceWatch,
 	sourceWatchModels,
+	workerRunsCheck,
 	siteTextRebuilds,
 	rateLimitCheck('request-form-limit', 'Request and order forms', 'requestFormLimit', 'the request form, self-help forms and book quotes and orders', 5, 'network address'),
 	rateLimitCheck('workspace-change-limit', 'Workspace changes', 'workspaceChangeLimit', 'making changes in the workspace and following pages', 30, 'person'),
 	rateLimitCheck('sign-in-limit', 'Sign-in, by email address', 'signInLimit', 'guessing codes and passwords for one address', 5, 'email address and step'),
 	rateLimitCheck('sign-in-network-limit', 'Sign-in, by network address', 'signInNetworkLimit', 'guessing from one network address', 30, 'network address and step'),
 	rateLimitCheck('upload-limit', 'Uploads', 'uploadLimit', 'starting uploads', 600, 'account'),
+	rateLimitCheck('problem-report-limit', 'Problem reports from browsers', 'problemReportLimit', 'problem reports sent by readers’ browsers', 30, 'network address'),
 	siteAddress,
 	leadAuthor,
 	passwordKey,

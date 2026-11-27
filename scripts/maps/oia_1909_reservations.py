@@ -7,8 +7,8 @@ Steps, each writing into a work folder:
 
 - `georeference`: finds the printed latitude and longitude lines where they cross, growing out from four crossings read by eye in Washington State, and keeps the crossings that agree with a polyconic projection. Writes gcps.json. The committed copy is research/historic-maps/oia-1909/gcps.json.
 - `check-fit`: prints how far the fitted map lands from each crossing, and the error when each crossing is left out of the fit in turn.
-- `extract`: picks out the brown fill, turns each patch into a shape (or a point when it is too small to draw), and calls a patch "Opened" when it is mostly a band around paper. Writes shapes-raw.geojson.
-- `build`: applies the reading of each patch in this file (NAMES, DROP, SPLITS, ADDED) and writes the layer, research/historic-maps/oia-1909/oia-1909-reservations.geojson, and a review table, research/reviews/2026-11-27-oia-1909-reservations.csv. Every shape is marked Unverified.
+- `extract`: picks out the brown fill, turns each patch into a shape (or a point when it is too small to draw), and calls a patch "Opened" when it is mostly a band around paper. Writes shapes-raw.geojson, and the legend's red signs (schools and the asylum) as signs-raw.geojson.
+- `build`: takes out of each shape the red signs that stick out of it (a sign marks a place, not land), applies the reading of each patch in this file (NAMES, DROP, SPLITS, ADDED) and writes the layer, research/historic-maps/oia-1909/oia-1909-reservations.geojson, and a review table, research/reviews/2026-11-27-oia-1909-reservations.csv. Every shape is marked Unverified.
 - `pictures`: draws the layer over the scan and over the 1990 Census reservation shapes for side-by-side checking.
 
 Where two reservations were printed touching, the patch is one piece of brown. `build` splits it along the line halfway between the matching areas in the Census Bureau's 2020 boundary file (cb_2020_us_aiannh_500k, which includes the Oklahoma Tribal Statistical Areas), and says so on each piece (internal_lines). Those inner lines are not traced from the 1909 map.
@@ -75,33 +75,24 @@ NAMES = {
     32: ("Fort Berthold", L, ["three-affiliated-tribes-of-the-fort-berthold-reservation"]),
     33: ("Bois Fort", L, ["bois-forte-band"]),
     34: ("Devils Lake", L, ["spirit-lake-tribe"]),
-    35: ("Devils Lake", L, ["spirit-lake-tribe"]),
     36: ("Deer Creek", L, ["bois-forte-band"]),
     37: ("Vermillion Lake", L, ["bois-forte-band"]),
     38: ("Umatilla", L, ["confederated-tribes-of-the-umatilla-indian-reservation"]),
-    39: ("Umatilla", O, ["confederated-tribes-of-the-umatilla-indian-reservation"]),
     40: ("Winnibigoshish", L, ["leech-lake-band"]),
-    41: ("Winnibigoshish", L, ["leech-lake-band"]),
     42: ("Warm Springs", L, ["confederated-tribes-of-the-warm-springs-reservation-of-oregon"]),
     43: ("White Earth", L, ["white-earth-band"]),
     44: ("Leech Lake", L, ["leech-lake-band"]),
-    45: ("Leech Lake", L, ["leech-lake-band"]),
-    46: ("Bay Mills", L, ["bay-mills-indian-community"]),
     48: ("L'Anse", L, ["keweenaw-bay-indian-community"]),
-    49: ("L'Anse", L, ["keweenaw-bay-indian-community"]),
     50: ("St. Regis", L, ["saint-regis-mohawk-tribe"]),
     51: ("Fond du Lac", L, ["fond-du-lac-band"]),
     52: ("La Pointe (Bad River)", L, ["bad-river-band-of-the-lake-superior-tribe-of-chippewa-indians-of-the-bad-river-reservation"]),
     55: ("Mille Lac", L, ["mille-lacs-band"]),
     56: ("Lac du Flambeau", L, ["lac-du-flambeau-band-of-lake-superior-chippewa-indians-of-the-lac-du-flambeau-reservation-of-wisconsin"]),
-    57: ("Lac du Flambeau", L, ["lac-du-flambeau-band-of-lake-superior-chippewa-indians-of-the-lac-du-flambeau-reservation-of-wisconsin"]),
     58: ("Lemhi", L, []),
     59: ("Lac Court d'Oreilles", L, ["lac-courte-oreilles-band-of-lake-superior-chippewa-indians-of-wisconsin"]),
     60: ("Lake Traverse (Sisseton)", L, ["sisseton-wahpeton-oyate-of-the-lake-traverse-reservation"]),
-    61: ("Lake Traverse (Sisseton)", L, ["sisseton-wahpeton-oyate-of-the-lake-traverse-reservation"]),
     62: ("Klamath", L, ["klamath-tribes"]),
     64: ("Oneida", L, ["oneida-nation"]),
-    65: ("Oneida", L, ["oneida-nation"]),
     66: ("Onondaga", L, ["onondaga-nation"]),
     67: ("Hoopa Valley", L, ["hoopa-valley-tribe"]),
     68: ("Tonawanda", L, ["tonawanda-band-of-seneca"]),
@@ -110,7 +101,6 @@ NAMES = {
     72: ("Fort Hall", L, ["shoshone-bannock-tribes-of-the-fort-hall-reservation"]),
     74: ("Cattaraugus", L, ["seneca-nation-of-indians"]),
     76: ("Oil Spring", L, ["seneca-nation-of-indians"]),
-    77: ("Duck Valley", L, ["shoshone-paiute-tribes-of-the-duck-valley-reservation"]),
     78: ("Allegany", L, ["seneca-nation-of-indians"]),
     79: ("Duck Valley", L, ["shoshone-paiute-tribes-of-the-duck-valley-reservation"]),
     85: ("Ponca", L, ["ponca-tribe-of-nebraska"]),
@@ -141,7 +131,7 @@ NAMES = {
     128: ("Isleta", L, ["pueblo-of-isleta"]),
     130: ("Torres-Martinez", O, ["torres-martinez-desert-cahuilla-indians"]),
     131: ("Los Coyotes", O, ["los-coyotes-band-of-cahuilla-and-cupeno-indians"]),
-    132: ("Camp McDowell", L, ["fort-mcdowell-yavapai-nation"]),
+    133: ("Gila River", L, ["gila-river-indian-community-of-the-gila-river-indian-reservation"]),
     134: ("Gila Bend", L, ["tohono-oodham-nation-of-arizona"]),
     135: ("Yuma", L, ["quechan-tribe-of-the-fort-yuma-indian-reservation"]),
     136: ("Mescalero Apache", L, ["mescalero-apache-tribe-of-the-mescalero-reservation"]),
@@ -166,6 +156,10 @@ for n in (4, 7, 10, 12, 13, 14):
     DROP[n] = "brown dots by the word Columbia (possibly allotments on the former Columbia (Moses) reservation); not a reservation fill"
 for n in (81, 82, 83, 108, 109, 112, 116, 117, 118):
     DROP[n] = "agency or school symbol, not a reservation fill"
+# Found Nov. 27, 2026, checking every point against the scan (Trevor: red signs were being read as land): a red sign standing on the paper inside a reservation already drawn as a shape, or beside it.
+for n, shape_name in ((35, "Devils Lake"), (41, "Winnibigoshish"), (45, "Leech Lake"), (49, "L'Anse"), (57, "Lac du Flambeau"), (61, "Lake Traverse (Sisseton)"), (65, "Oneida"), (77, "Duck Valley"), (39, "Umatilla")):
+    DROP[n] = f"red school or agency sign (or a speck beside it) at {shape_name}, which is drawn on its own; not a second reservation"
+DROP[46] = "day school sign at Bay Mills; the name is printed as a school's, in lower case, not in the capitals the map uses for reservations"
 for n, keep in ((5, 6), (16, 17), (24, 25), (94, 95), (100, 101)):
     DROP[n] = f"same small reservation as patch {keep}, drawn once as a point"
 for n in range(138, 148):
@@ -218,7 +212,8 @@ SPLITS = {
         ("5955", "Kiowa, Comanche, Wichita (shared)", O, ["kiowa-tribe", "comanche-nation", "apache-tribe-of-oklahoma", "wichita-and-affiliated-tribes", "caddo-nation-of-oklahoma", "delaware-nation"]),
     ],
     129: [("1140", "White Mountain (Fort Apache)", L, ["white-mountain-apache-tribe-of-the-fort-apache-reservation"]), ("3355", "San Carlos", L, ["san-carlos-apache-tribe-of-the-san-carlos-reservation"])],
-    133: [("1310", "Gila River", L, ["gila-river-indian-community-of-the-gila-river-indian-reservation"]), ("3340", "Salt River", L, ["salt-river-pima-maricopa-indian-community-of-the-salt-river-reservation"])],
+    # Camp McDowell and Salt River are printed touching, with "SALT RIVER" beside the lower piece; the red star by Phoenix, once read as Salt River, is the Phoenix school (Nov. 27, 2026).
+    132: [("1220", "Camp McDowell", L, ["fort-mcdowell-yavapai-nation"]), ("3340", "Salt River", L, ["salt-river-pima-maricopa-indian-community-of-the-salt-river-reservation"])],
 }
 
 # Small reservations printed as specks too small to pick out by color, placed by hand at the speck next to the printed name: (name, status, scan x, scan y, nations).
@@ -505,6 +500,66 @@ def check_fit(args):
 
 # ---------------------------------------------------------------- extraction
 
+# The legend's red signs (non-reservation school, boarding school, day school, mission school, insane asylum) mark a place, not land. Extraction keeps a red sign printed on or against the brown so it does not punch a hole in the fill; `build` then takes out each sign that stands mostly on plain paper (Trevor, 2026-11-27: the red stars were being read as land).
+SIGN_ON_BROWN = 0.5
+
+
+def _red_signs(red, brown, to_ll, off, inset=""):
+    """The red signs in one part of the sheet, each as a shape with how much of the paper around it is brown. Writes nothing; returns GeoJSON features."""
+    import cv2
+    sign = cv2.morphologyEx(cv2.dilate(red, np.ones((5, 5), np.uint8)), cv2.MORPH_CLOSE, np.ones((5, 5), np.uint8))
+    n, lab, stats, _ = cv2.connectedComponentsWithStats(sign, 8)
+    out = []
+    for i in range(1, n):
+        x, y, w, hh, area = stats[i]
+        if area < 40 or area > 30000:
+            continue
+        x0, y0 = max(0, x - 8), max(0, y - 8)
+        comp = (lab[y0:y + hh + 8, x0:x + w + 8] == i).astype(np.uint8)
+        around = cv2.dilate(comp, np.ones((9, 9), np.uint8)) & (1 - comp)
+        on_brown = float((brown[y0:y + hh + 8, x0:x + w + 8][around > 0]).mean()) if around.any() else 0.0
+        cnt = max(cv2.findContours(comp, cv2.RETR_EXTERNAL, cv2.CHAIN_APPROX_NONE)[0], key=cv2.contourArea)
+        ap = cv2.approxPolyDP(cnt, 1.0, True)
+        if len(ap) < 3:
+            continue
+        ring = to_ll(ap.reshape(-1, 2).astype(float) + np.array([x0, y0]) + off)
+        out.append({"type": "Feature", "properties": {"inset": inset, "pixel_area": int(area), "on_brown": round(on_brown, 3)}, "geometry": {"type": "Polygon", "coordinates": [ring + [ring[0]]]}})
+    return out
+
+
+def _without_signs(g, signs, per_pixel, to_m, to_ll, whole=None):
+    """g with the red signs that stick out of it taken out, and the slivers of fill left beside them dropped. `whole` is the patch g was cut from, when g is one reservation of several printed touching, so a sign on the line between two of them is not taken for one sticking out. Returns the shape (None when nothing is left) and its new size in scan pixels."""
+    from shapely.ops import unary_union
+    gm = to_m(g)
+    wm = to_m(whole) if whole is not None else gm
+    e = 1.5 * per_pixel ** 0.5
+    # Only a sign that sticks out of the patch: one inside it (on the brown, or on the paper of an opened area) is on the land.
+    cut = []
+    for sg in signs:
+        if not sg.intersects(g):
+            continue
+        sm = to_m(sg)
+        around = sm.buffer(2 * e).difference(sm)
+        if around.difference(wm).area >= 0.3 * around.area:
+            cut.append(sm)
+    if not cut:
+        return g, gm.area / per_pixel
+    cm = unary_union(cut)
+    near = cm.buffer(4 * e)
+    left = gm.difference(cm)
+    # Opening (in then out by a pixel and a half) only beside the signs, so the rest of the outline is untouched.
+    beside = left.intersection(near).buffer(-e).buffer(e).intersection(near)
+    left = unary_union([left.difference(near), beside])
+    parts = [q for q in getattr(left, "geoms", [left]) if q.geom_type == "Polygon" and q.area >= 60 * per_pixel]
+    if not parts:
+        return None, 0
+    left = unary_union(parts)
+    ll = to_ll(left)
+    if ll.geom_type == "GeometryCollection":
+        ll = unary_union([q for q in ll.geoms if q.geom_type in ("Polygon", "MultiPolygon")])
+    return ll, left.area / per_pixel
+
+
 def extract(args):
     import cv2
     im = _load_scan(args.scan)
@@ -620,7 +675,11 @@ def extract(args):
     out = Path(args.work) / "shapes-raw.geojson"
     out.write_text(json.dumps({"type": "FeatureCollection", "features": feats}))
     print(f"wrote {out}: {len(feats)} patches")
-    _extract_insets(im, args.work)
+    signs = _red_signs(red & keep, brown, lambda c: to_ll(c), np.array([0, 0]))
+    signs += _extract_insets(im, args.work)
+    out = Path(args.work) / "signs-raw.geojson"
+    out.write_text(json.dumps({"type": "FeatureCollection", "features": signs}))
+    print(f"wrote {out}: {len(signs)} red signs")
 
 
 # ---------------------------------------------------------------- the inset panels
@@ -797,6 +856,7 @@ def _extract_insets(im, work):
     from shapely.geometry import Polygon, mapping
     transforms = _inset_transforms()
     feats = []
+    signs = []
 
     def to_ll(name, c, off):
         c = c.reshape(-1, 2).astype(float) + off
@@ -831,6 +891,7 @@ def _extract_insets(im, work):
             brown[max(0, b - y0):max(0, d - y0), max(0, a - x0):max(0, c - x0)] = 0
         red = (((h <= 5) | (h >= 170)) & (s >= 120) & (v >= 120)).astype(np.uint8)
         dark = (v < 120).astype(np.uint8)
+        signs += _red_signs(red, brown, lambda c, name=name: to_ll(name, c, np.array([0, 0])), off, name)
         # Keep red symbols and black lettering on the brown, so they do not punch holes in it.
         mask = brown | (red & cv2.dilate(brown, np.ones((15, 15), np.uint8))) | (dark & cv2.dilate(brown, np.ones((5, 5), np.uint8)))
         mask = cv2.morphologyEx(mask, cv2.MORPH_CLOSE, np.ones((5, 5), np.uint8))
@@ -879,6 +940,7 @@ def _extract_insets(im, work):
     out = Path(work) / "insets-raw.geojson"
     out.write_text(json.dumps({"type": "FeatureCollection", "features": feats}))
     print(f"wrote {out}: {len(feats)} patches in the panels")
+    return signs
 
 
 # ---------------------------------------------------------------- build
@@ -978,6 +1040,23 @@ def build(args):
     def drop_row(patch, reason):
         rows.append({"id": "", "patch": patch, "name": "", "name_source": "", "status": "", "geometry": "", "nations": "", "internal_lines": "", "review": "", "note": "dropped: " + reason})
 
+    # Red signs standing mostly on paper are places, not land (see _red_signs).
+    signs = {}
+    for f in json.loads((Path(args.work) / "signs-raw.geojson").read_text())["features"]:
+        if f["properties"]["on_brown"] < SIGN_ON_BROWN:
+            signs.setdefault(f["properties"]["inset"], []).append(shape(f["geometry"]))
+    cleared = []
+
+    def clear(g, n, pixel_area, inset="", whole=None, per_pixel=None):
+        if g.geom_type not in ("Polygon", "MultiPolygon"):
+            return g, pixel_area
+        per_pixel = per_pixel or to_m(g).area / max(1, pixel_area)
+        was = to_m(g).area / per_pixel
+        out, area = _without_signs(g, signs.get(inset, []), per_pixel, to_m, to_ll, whole)
+        if out is None or area < 0.98 * was:
+            cleared.append((n, round(was), round(area)))
+        return out, area
+
     # The panels first: the main map's Oklahoma patch needs the Northeastern Oklahoma panel's shapes cut out of it.
     from shapely.ops import unary_union
     insets_raw = json.loads((Path(args.work) / "insets-raw.geojson").read_text())
@@ -991,6 +1070,8 @@ def build(args):
             continue
         g = shape(f["geometry"])
         g = g if g.is_valid else g.buffer(0)
+        big = g.geom_type != "Point" and p["pixel_area"] >= INSET_POINT_BELOW
+        per_pixel = to_m(g).area / max(1, p["pixel_area"]) if big else None
         status = _status(p["kind"])
         if n in INSET_SPLITS:
             parts = INSET_SPLITS[n]
@@ -998,8 +1079,15 @@ def build(args):
             names = [name for _, name, *_ in parts]
             for (code, name, src, nat), piece in zip(parts, pieces):
                 if piece is not None:
-                    inset_feats.append((to_ll(piece.simplify(30)), name, src, status, nat, n, "Printed touching its neighbors; the line between them is placed halfway between the 2020 Census areas, not traced from the 1909 map", names, panel, ""))
+                    piece, _ = clear(to_ll(piece.simplify(30)), f"{n} ({name})", 0, p["inset"], g, per_pixel)
+                    if piece is not None:
+                        inset_feats.append((piece, name, src, status, nat, n, "Printed touching its neighbors; the line between them is placed halfway between the 2020 Census areas, not traced from the 1909 map", names, panel, ""))
             continue
+        if big:
+            g, _ = clear(g, n, p["pixel_area"], p["inset"], None, per_pixel)
+            if g is None:
+                drop_row(n, "only a red sign (a school or asylum), not a reservation fill")
+                continue
         if n not in INSET_NAMES:
             sys.exit(f"panel patch {n} has no reading in INSET_NAMES, INSET_DROP or INSET_SPLITS")
         name, src, nat = INSET_NAMES[n]
@@ -1018,9 +1106,6 @@ def build(args):
             drop_row(n, DROP[n])
             continue
         g = shape(f["geometry"])
-        if g.geom_type == "Polygon" and p["pixel_area"] < POINT_BELOW:
-            lo, la = t.pixel_to_lonlat(np.array([p["pixel_x"]]), np.array([p["pixel_y"]]))
-            g = shape({"type": "Point", "coordinates": [round(lo[0], 5), round(la[0], 5)]})
         if g.geom_type == "Polygon" and len(f["geometry"]["coordinates"]) > 1:
             # Keep only the holes that are kept as Opened areas.
             from shapely.geometry import Polygon
@@ -1028,6 +1113,23 @@ def build(args):
             g = Polygon(f["geometry"]["coordinates"][0], kept)
         if g.geom_type == "Polygon":
             g = g if g.is_valid else g.buffer(0)
+        before = g
+        # A speck too small to draw keeps its point even under a sign: the agency or school was printed over the reservation.
+        big = g.geom_type in ("Polygon", "MultiPolygon") and p["pixel_area"] >= POINT_BELOW
+        per_pixel = to_m(g).area / max(1, p["pixel_area"]) if big else None
+        area = p["pixel_area"]
+        if big and n not in SPLITS:
+            g, area = clear(g, n, p["pixel_area"], "", None, per_pixel)
+            if g is None:
+                drop_row(n, "only a red sign (a school or asylum), not a reservation fill")
+                continue
+        if g.geom_type in ("Polygon", "MultiPolygon") and area < POINT_BELOW:
+            if g is before:
+                lo, la = t.pixel_to_lonlat(np.array([p["pixel_x"]]), np.array([p["pixel_y"]]))
+                g = shape({"type": "Point", "coordinates": [round(lo[0], 5), round(la[0], 5)]})
+            else:
+                c = max(getattr(g, "geoms", [g]), key=lambda q: q.area).representative_point()
+                g = shape({"type": "Point", "coordinates": [round(c.x, 5), round(c.y, 5)]})
         status = _status(p["kind"])
         if n in SPLITS:
             gm = to_m(g)
@@ -1044,6 +1146,11 @@ def build(args):
                 if piece is None:
                     continue
                 piece = to_ll(piece.simplify(200))
+                if big:
+                    piece, _ = clear(piece, f"{n} ({name})", 0, "", g, per_pixel)
+                    if piece is None:
+                        drop_row(n, f"{name}: only a red sign (a school or asylum), not a reservation fill")
+                        continue
                 emit(piece, name, src, status, nat, n, "Printed touching its neighbors; the line between them is placed halfway between the 2020 Census areas, not traced from the 1909 map", names)
             continue
         if n not in NAMES:
@@ -1071,6 +1178,8 @@ def build(args):
         kinds[k] = kinds.get(k, 0) + 1
     print(f"wrote {out}: {len(feats)} features {kinds}; {sum(1 for r in rows if r['note'].startswith('dropped'))} patches dropped")
     print(f"wrote {REVIEW}")
+    for n, was, now in cleared:
+        print(f"red signs taken out of patch {n}: {was} -> {round(now)} scan pixels")
 
 
 # ---------------------------------------------------------------- pictures

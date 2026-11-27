@@ -1,0 +1,43 @@
+# Written by scripts/languages/build_registry.py from Glottolog 5.4 and the ISO 639-3 code tables; do not edit by hand.
+tag: oj
+name: Ojibwa
+iso_639_3:
+  code: oji
+  reference_name: Ojibwa
+  scope: macrolanguage
+  source: iso-639-3-code-tables
+glottolog:
+  glottocode: ojib1241
+  level: family
+  source: glottolog-5-4
+family:
+  name: Algic
+  glottocode: algi1248
+  source: glottolog-5-4
+dialects:
+- name: Algonquin
+  glottocode: algo1255
+  source: glottolog-5-4
+- name: Central Ojibwa
+  glottocode: cent2136
+  source: glottolog-5-4
+- name: Chippewa
+  glottocode: chip1241
+  source: glottolog-5-4
+- name: Eastern Ojibwa
+  glottocode: east2542
+  source: glottolog-5-4
+- name: Northwestern Ojibwa
+  glottocode: nort2961
+  source: glottolog-5-4
+- name: Ottawa
+  glottocode: otta1242
+  source: glottolog-5-4
+- name: Severn Ojibwa
+  glottocode: seve1240
+  source: glottolog-5-4
+- name: Western Ojibwa
+  glottocode: west1510
+  source: glottolog-5-4
+works: []
+retrieved: '2026-11-27'

@@ -1,0 +1,50 @@
+key: michigan-compiled-laws-4-794
+kind: state-statute
+citation:
+  type: legislation
+  title: Powers and duties of liaison
+  title-short: Mich. Comp. Laws § 4.794
+  container-title: Michigan Compiled Laws
+  container-title-short: Mich. Comp. Laws
+  section: '4.794'
+  author:
+  - literal: Michigan Legislature
+  issued:
+    date-parts:
+    - - 2024
+  URL: https://legislature.mi.gov/Laws/MCL?objectName=mcl-4.794
+  accessed:
+    date-parts:
+    - - 2026
+      - 11
+      - 27
+original_link: https://legislature.mi.gov/Laws/MCL?objectName=mcl-4.794
+retrieved: '2026-11-27'
+archives: []
+history:
+  status: live
+  last_checked: '2026-11-27'
+state_law:
+  relevance: core
+  citation: Mich. Comp. Laws § 4.794 (2026)
+rights:
+  status: no-permission-needed
+  basis: government-edict
+  basis_note: 'Official state statutes are not copyrightable under the government edicts doctrine (Georgia v. Public.Resource.Org, Inc., 590 U.S. 255 (2020)). Linked, not served: state statutes stay link only.'
+  redistribution: false
+jurisdictions:
+- level: state
+  state: MI
+topics:
+- state-indian-law
+found_in:
+- 2026-11-27-state-statutes-fourth-batch
+notes: 'Indigo Book citation: Mich. Comp. Laws § 4.794 (2026). History: 2024, Act 208, Eff. Apr. 2, 2025. Text read from the Michigan Legislature''s page for the section''s chapter of the Michigan Compiled Laws (legislature.mi.gov), complete through Public Act 114 of 2026, on Nov. 27, 2026. Found by the state statutes sweep (terms: federally recognized tribe; federally recognized tribes; tribal members; tribal; tribe; tribes); AI reader''s verdict core: Duties of tribal legislative liaison office. Unverified.'
+review:
+  status: unverified
+  by: scripts/law/state_statutes/run.py
+  date: '2026-11-27'
+  checks:
+  - check: 'Indian law section: the sweep''s keyword pass and an AI reader''s verdict (core, incidental or none)'
+    result: agree
+    detail: 'core; terms: federally recognized tribe; federally recognized tribes; tribal members; tribal; tribe; tribes'

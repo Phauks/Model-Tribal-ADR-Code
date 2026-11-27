@@ -161,6 +161,7 @@ export function justiceLinkFor(name: string, decided: string | undefined, caseKe
 	try {
 		return justicePath(personForCase(name, decided, caseKey));
 	} catch {
+		// expected: a name that is no one's, or fits more than one Justice that day, gets no link (see above).
 		return undefined;
 	}
 }

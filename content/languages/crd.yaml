@@ -1,0 +1,60 @@
+# Written by scripts/languages/build_registry.py from Glottolog 5.4 and the ISO 639-3 code tables; do not edit by hand.
+tag: crd
+name: Coeur d'Alene
+iso_639_3:
+  code: crd
+  reference_name: Coeur d'Alene
+  scope: individual
+  source: iso-639-3-code-tables
+glottolog:
+  glottocode: coeu1236
+  level: language
+  source: glottolog-5-4
+family:
+  name: Salishan
+  glottocode: sali1255
+  source: glottolog-5-4
+endangered_languages_project:
+  link: https://endangeredlanguages.com/elp-language/1695
+  source: glottolog-5-4
+dialects: []
+works:
+- glottolog_reference: '73758'
+  title: Coeur d'Alene Grammatical Relations
+  kinds:
+  - grammar
+  author: Ivy G. Doak
+  year: 1997
+  publisher: UMI
+  pages: 347
+  most_extensive_description: true
+  source: glottolog-5-4
+- glottolog_reference: '547284'
+  title: A dictionary of Coeur d'Alene Salish from Gladys Reichard's file slips
+  kinds:
+  - dictionary
+  author: Paul T. Barthmaier
+  year: 1996
+  publisher: University of Montana
+  pages: 139
+  source: glottolog-5-4
+- glottolog_reference: '312136'
+  title: 'Snchitsu''umshts: the Coeur d''Alene Language'
+  kinds:
+  - grammar
+  - dictionary
+  author: Lawrence G. Nicodemus
+  year: 1975
+  publisher: Coeur d'Alene Tribal Council
+  source: glottolog-5-4
+- glottolog_reference: '22829'
+  title: Coeur d'Alene
+  kinds:
+  - grammar
+  author: Gladys A. Reichard
+  year: 1933
+  publisher: Government Printing Office
+  pages: 193
+  most_extensive_description: true
+  source: glottolog-5-4
+retrieved: '2026-11-27'

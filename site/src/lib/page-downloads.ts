@@ -243,7 +243,7 @@ export function pageDownloads(path: string, mapTable?: { file: string; label: st
 			]
 		};
 	}
-	return { citable: /^\/(stories|cases|laws|essays|foundations|biographies|courts|back-matter|presidents)\/[^/]+$/.test(path) || /^\/nations\/federal-offices\/[^/]+\/[^/]+$/.test(path) || /^\/supreme-court\/(justices|presidents)\/[^/]+$/.test(path) || /^\/supreme-court\/(?!justices$|presidents$|portraits$)[^/]+$/.test(path), files: [] };
+	return { citable: /^\/(stories|cases|laws|essays|foundations|biographies|courts|back-matter|news|presidents)\/[^/]+$/.test(path) || /^\/nations\/federal-offices\/[^/]+\/[^/]+$/.test(path) || /^\/supreme-court\/(justices|presidents)\/[^/]+$/.test(path) || /^\/supreme-court\/(?!justices$|presidents$|portraits$)[^/]+$/.test(path), files: [] };
 }
 
 /** The map's layers as GeoJSON (RFC 7946), for mapping programs; also listed on the Downloads page. */

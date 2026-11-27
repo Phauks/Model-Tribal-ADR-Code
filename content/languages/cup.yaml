@@ -1,0 +1,51 @@
+# Written by scripts/languages/build_registry.py from Glottolog 5.4 and the ISO 639-3 code tables; do not edit by hand.
+tag: cup
+name: Cupeño
+iso_639_3:
+  code: cup
+  reference_name: Cupeño
+  scope: individual
+  source: iso-639-3-code-tables
+glottolog:
+  glottocode: cupe1243
+  level: language
+  source: glottolog-5-4
+family:
+  name: Uto-Aztecan
+  glottocode: utoa1244
+  source: glottolog-5-4
+endangered_languages_project:
+  link: https://endangeredlanguages.com/elp-language/2009
+  source: glottolog-5-4
+dialects: []
+works:
+- glottolog_reference: '113898'
+  title: A Grammar of Cupeño
+  kinds:
+  - grammar
+  author: Jane A. Hill
+  year: 2005
+  publisher: University of California Press
+  pages: 549
+  most_extensive_description: true
+  source: glottolog-5-4
+- glottolog_reference: '678843'
+  title: 'Mulu''wetam: The First People. Cupeño Oral History and Language'
+  kinds:
+  - dictionary
+  author: Jane H. Hill and Rosínda Nolasquez
+  year: 1973
+  publisher: Malki Museum
+  pages: 290
+  source: glottolog-5-4
+- glottolog_reference: '72283'
+  title: A grammar of the Cupeño language
+  kinds:
+  - grammar
+  author: Jane H. Hill
+  year: 1966
+  publisher: University of California at Los Angeles
+  pages: 329
+  most_extensive_description: true
+  source: glottolog-5-4
+retrieved: '2026-11-27'

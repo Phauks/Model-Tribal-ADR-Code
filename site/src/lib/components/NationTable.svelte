@@ -17,6 +17,7 @@
 <script lang="ts">
 	import Check from '@lucide/svelte/icons/check';
 	import Clock from '@lucide/svelte/icons/clock';
+	import type { Snippet } from 'svelte';
 	import DataTable from './DataTable.svelte';
 	import RecognitionBadges from './RecognitionBadges.svelte';
 	import { compareBadges } from '#lib/recognition-badges.ts';
@@ -32,7 +33,9 @@
 		searchLabel,
 		regions = false,
 		count = true,
-		filters
+		filters,
+		headingLevel,
+		headingIdentifier
 	}: {
 		group: NationGroup;
 		identifier: string;
@@ -44,6 +47,10 @@
 		count?: boolean;
 		/** Whether the column filters show; by default, when the table has more than five rows. */
 		filters?: boolean;
+		/** Puts the group's name in the table's title row as a heading of this level, with the count badge, in place of a heading above the box (Trevor, Nov. 27, 2026: the titles on /nations sat outside the tables). */
+		headingLevel?: 2 | 3;
+		/** The heading's id, for a section labelled by it. */
+		headingIdentifier?: string;
 	} = $props();
 
 	const columns: TableColumn[] = $derived([
@@ -111,6 +118,7 @@
 	filters={filters ?? group.rows.length > 5}
 	download={identifier}
 	shareable
+	heading={headingLevel ? groupHeading : undefined}
 >
 	{#snippet cell(row, column)}
 		{#if column.key === 'region'}
@@ -135,4 +143,6 @@
 		{/if}
 	{/snippet}
 </DataTable>
+
+{#snippet groupHeading(countBadge: Snippet)}<svelte:element this={`h${headingLevel}`} id={headingIdentifier}>{group.label} {@render countBadge()}</svelte:element>{/snippet}
 

@@ -1,0 +1,52 @@
+# Written by scripts/languages/build_registry.py from Glottolog 5.4 and the ISO 639-3 code tables; do not edit by hand.
+tag: com
+name: Comanche
+iso_639_3:
+  code: com
+  reference_name: Comanche
+  scope: individual
+  source: iso-639-3-code-tables
+glottolog:
+  glottocode: coma1245
+  level: language
+  source: glottolog-5-4
+family:
+  name: Uto-Aztecan
+  glottocode: utoa1244
+  source: glottolog-5-4
+endangered_languages_project:
+  link: https://endangeredlanguages.com/elp-language/2005
+  source: glottolog-5-4
+dialects: []
+works:
+- glottolog_reference: '568385'
+  title: Comanche Dictionary and Grammar
+  kinds:
+  - grammar
+  author: Lila Wistrand Robinson and James Armagost
+  year: 2012
+  publisher: The Summer Institute of Linguistics and the University of Texas at Arlington
+  pages: 415
+  most_extensive_description: true
+  source: glottolog-5-4
+- glottolog_reference: '54074'
+  title: Comanche Dictionary and Grammar
+  kinds:
+  - grammar
+  author: Lila Wistrand Robinson and James Armagost
+  year: 1990
+  publisher: The Summer Institute of Linguistics and the University of Texas at Arlington
+  pages: 356
+  most_extensive_description: true
+  source: glottolog-5-4
+- glottolog_reference: '91553'
+  title: A Grammatical Sketch of the Comanche Language
+  kinds:
+  - grammar
+  author: Jean Ormsbee Charney
+  year: 1989
+  publisher: University of Colorado at Boulder
+  pages: 352
+  most_extensive_description: true
+  source: glottolog-5-4
+retrieved: '2026-11-27'

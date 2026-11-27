@@ -1,0 +1,52 @@
+key: southern-california-edison-co-v-rice-1982
+kind: federal-case
+citation:
+  type: legal_case
+  title: Southern California Edison Co. v. Rice
+  authority: United States Court of Appeals for the Ninth Circuit
+  container-title: F.2d
+  volume: '685'
+  page: '354'
+  issued:
+    date-parts:
+    - - 1982
+      - 8
+      - 26
+  URL: https://static.case.law/f2d/685/html/0354-01.html
+  accessed:
+    date-parts:
+    - - 2026
+      - 11
+      - 26
+original_link: https://static.case.law/f2d/685/html/0354-01.html
+retrieved: '2026-11-26'
+archives: []
+history:
+  status: live
+  last_checked: '2026-11-26'
+rights:
+  status: no-permission-needed
+  basis: government-edict
+  basis_note: The text of a judicial opinion has no copyright (Georgia v. Public.Resource.Org, Inc., 590 U.S. 255 (2020)). The copy served on this site is the court's opinion only, without the publisher's headnotes, synopsis or other editorial matter (decision record 0060).
+  redistribution: true
+nations_in_case:
+  checked: '2026-11-26'
+  named: []
+jurisdictions:
+- level: federal
+topics:
+- federal-court-indian-law
+found_in:
+- 2026-11-26-federal-court-indian-law-opinions
+notes: Published at 685 F.2d 354. Decided by the United States Court of Appeals for the Ninth Circuit on Aug. 26, 1982. Found by scripts/caselaw/state_court_opinions.py in the Caselaw Access Project's volumes, with an Indian law term score of 22, at or above 10, the level kept without a reading.
+review:
+  status: unverified
+  by: scripts/caselaw/state_court_opinions.py
+  date: '2026-11-26'
+  checks:
+  - check: 'Indian law case: the term score and, below the score kept without a reading, an AI reader''s judgment of excerpts'
+    result: agree
+    detail: score 22
+  - check: Nations named in the caption, matched to nation records by name
+    result: agree
+    detail: 0 matched, 0 not linked

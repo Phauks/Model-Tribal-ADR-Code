@@ -39,7 +39,7 @@ export const GET: RequestHandler = async (event) => {
 
 export const POST: RequestHandler = async (event) => {
 	const { identifier, database, person } = await essayAccess(event, 'comment', { forData: true });
-	const body = (await event.request.json().catch(() => null)) as Record<string, unknown> | null;
+	const body = (await event.request.json().catch(() => /* expected: a body that is not JSON is refused just below with 400 */ null)) as Record<string, unknown> | null;
 	if (!body || typeof body.body !== 'string') error(400, 'Write the comment first.');
 	const thread = typeof body.thread === 'string' ? body.thread : null;
 	const quote = body.quote as { quote?: unknown; prefix?: unknown; suffix?: unknown } | undefined;
@@ -70,7 +70,7 @@ export const POST: RequestHandler = async (event) => {
 
 export const PATCH: RequestHandler = async (event) => {
 	const { identifier, database, person, level } = await essayAccess(event, 'comment', { forData: true });
-	const body = (await event.request.json().catch(() => null)) as { resolved?: unknown; assign?: unknown } | null;
+	const body = (await event.request.json().catch(() => /* expected: a body that is not JSON is refused just below with 400 */ null)) as { resolved?: unknown; assign?: unknown } | null;
 	const thread = event.url.searchParams.get('thread') ?? '';
 	if (body && 'assign' in body) {
 		const to = await allowedAssignee(database, identifier, body.assign);
