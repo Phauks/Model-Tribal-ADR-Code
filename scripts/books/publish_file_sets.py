@@ -37,7 +37,7 @@ from pathlib import Path
 
 REPOSITORY = Path(__file__).resolve().parents[2]
 DEFAULT_EDITIONS = REPOSITORY / "pdf" / "output" / "editions"
-DEFAULT_BUCKET = "model-tribal-adr-code-sources"
+DEFAULT_BUCKET = "tribal-law-project-files"
 BINDINGS = {"paperback", "hardcover"}
 # Upload order: details.json last (see the module description).
 FILES = [("interior.pdf", "application/pdf"), ("cover.pdf", "application/pdf"), ("details.json", "application/json")]

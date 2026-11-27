@@ -27,6 +27,7 @@ import type { FactGroup } from './justice-pages.ts';
 import { accountsOf, type AccountEntry } from './impact-accounts.ts';
 import { isoOf, nationsCiting, orderNumber, orderPresident, type LawNation } from './law-facts.ts';
 import { isLawRecord, recordName } from './law-records.ts';
+import { boundsOfCessions, cessionsOfTreaty, treatyMapData } from './land-cessions.ts';
 import { savedCopyFor, savedCopyLink } from './markdown.ts';
 import { presidentByKey } from './supreme-court-people.ts';
 import { partialDate } from './stories.ts';
@@ -60,6 +61,8 @@ export interface LawPage {
 	/** The Title 25 sections the Act enacted. */
 	enacted: { label: string; heading: string; link: string; inForce: boolean }[];
 	sources: SourceEntry[];
+	/** The land a treaty ceded, from Royce's schedule (1899), for the small map under At a glance (historic maps mockup 7). */
+	landCeded?: { royce: string[]; bounds: [number, number, number, number]; map: ReturnType<typeof treatyMapData> };
 	/** Set when the law has no box and no accounts of its impact: a stub (src/lib/stubs.ts). */
 	stub?: Stub;
 }
@@ -138,6 +141,8 @@ export function lawPage(key: string): LawPage {
 	const nationsCited = nationsCiting(key);
 	// An agency's document or notice no nation page cites yet still names its nations in the record (tribes).
 	const nationsNamed = nationsCited.length > 0 ? nationsCited : namedNations(record.tribes ?? []);
+	const ceded = cessionsOfTreaty(key);
+	const cededBounds = boundsOfCessions(ceded);
 	const glance: FactGroup[] = [
 		// An agency's document says which kind it is, such as "Indian lands opinion" (scripts/law/nigc_documents.py).
 		{ field: 'kind', label: 'Kind', items: [{ text: (record.citation as { genre?: string }).genre ?? kindLabels[record.kind] ?? record.kind }] },
@@ -147,6 +152,25 @@ export function lawPage(key: string): LawPage {
 		{ field: 'date', label: /^usc-\d+-chapter-/.test(key) ? 'Edition' : (dateLabels[record.kind] ?? 'Date'), items: date ? [{ text: date }] : [] },
 		{ field: 'president', label: 'President', items: president ? [{ text: president.name, link: presidentPage }] : [] },
 		{ field: 'citation', label: 'Citation', items: citation ? [{ text: citation }] : [] },
+		// Each cession opens on the Map page at its year; Royce's map sheets open in the image viewer.
+		{
+			field: 'land-ceded',
+			label: 'Land ceded',
+			items: ceded.map((cession) => ({
+				text: `Royce cession ${cession.royce}`,
+				link: `/nations/map?cession=${cession.royce}`,
+				detailParts:
+					cession.sheets.length === 0
+						? undefined
+						: [
+								{ text: `On Royce’s ${cession.sheets.length === 1 ? 'map' : 'maps'} ` },
+								...cession.sheets.flatMap((sheet, index) => [
+									...(index === 0 ? [] : [{ text: index === cession.sheets.length - 1 ? ' and ' : ', ' }]),
+									{ text: sheet.name, link: sheet.image, viewer: `Royce’s map: ${sheet.name}`, original: sheet.link }
+								])
+							]
+			}))
+		},
 		{
 			field: 'nations',
 			label: nationsNamed.length === 1 ? 'Nation' : 'Nations',
@@ -179,6 +203,7 @@ export function lawPage(key: string): LawPage {
 		signers: named.what === 'Treaty' ? signersOfTreaty(key) : [],
 		sections,
 		enacted: record.kind === 'federal-statute' ? sectionsEnactedBy(key) : [],
+		landCeded: cededBounds ? { royce: ceded.map((cession) => cession.royce), bounds: cededBounds, map: treatyMapData() } : undefined,
 		sources: box.sources,
 		stub: box.sections.length === 0 && accounts.length === 0 && !sections ? { kind: 'law', record: `laws/${key}` } : undefined
 	};

@@ -331,7 +331,7 @@
 				</div>
 			{/if}
 			{#key dataRead}
-				<OfflineSaving headingLevel={4} />
+				<OfflineSaving layout="summary" headingLevel={3} />
 			{/key}
 			<LocalData
 				headingLevel={4}

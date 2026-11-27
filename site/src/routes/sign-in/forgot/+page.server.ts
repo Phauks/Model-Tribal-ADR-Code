@@ -1,5 +1,6 @@
 import { workerEnvironment } from '#lib/server/environment.ts';
 import { emailDelivery } from '#lib/server/sign-in-email.ts';
+import { turnstileSiteKey } from '#lib/server/turnstile.ts';
 import type { PageServerLoad } from './$types';
 
 export const prerender = false;
@@ -11,5 +12,6 @@ export const prerender = false;
  * replaced by signing in with a code and going straight to the password page.
  */
 export const load: PageServerLoad = async ({ url }) => {
-	return { codesAvailable: emailDelivery(workerEnvironment(), url).kind !== 'none' };
+	const environment = workerEnvironment();
+	return { codesAvailable: emailDelivery(environment, url).kind !== 'none', turnstileSiteKey: turnstileSiteKey(environment) };
 };

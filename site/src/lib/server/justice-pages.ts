@@ -35,6 +35,8 @@ interface FactItem {
 	text: string;
 	link?: string;
 	citations?: CitationMark[];
+	/** Words after the value, some linked; a part with a viewer title opens in the image viewer. */
+	detailParts?: { text: string; link?: string; viewer?: string; original?: string }[];
 }
 
 export interface FactGroup {

@@ -33,9 +33,14 @@ rights:
   redistribution: true
 jurisdictions:
 - level: federal
+tribes:
+- walker-river-paiute-tribe-of-the-walker-river-reservation
 nations_in_case:
   checked: '2026-11-26'
-  named: []
+  named:
+  - nation: walker-river-paiute-tribe-of-the-walker-river-reservation
+    named_as: Walker River Paiute Tribe
+    role: party
 access:
   open: true
   pull_from:

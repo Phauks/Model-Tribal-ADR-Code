@@ -13,7 +13,9 @@
 	way to them.
 -->
 <script lang="ts">
-	import { tick } from 'svelte';
+	import { onMount, tick } from 'svelte';
+	import YearSlider from './YearSlider.svelte';
+	import { censusYearFor, readCessionsSwitch, yearSliderSetup } from '#lib/historic-map.ts';
 	import type { NationMapData } from '#lib/presence-map.ts';
 	import ZoomableMap from './ZoomableMap.svelte';
 	import TileMap from './TileMap.svelte';
@@ -33,6 +35,17 @@
 	/** Said to screen readers when the tiled map cannot start and the drawn map takes its place. */
 	let tileMapProblem = $state('');
 	let tileMapReady = $state(false);
+
+	/**
+	 * The year slider under the tiled map, and the Land cessions switch in its Layers menu, shared with the Map page (Trevor, 2026-11-26, historic maps mockup 6): the slider picks the Census year of the land areas, and with the switch on, the land the nation's predecessors had ceded by then.
+	 */
+	const censusYears = $derived(map.tileMap?.tiles.landAreaYears ?? []);
+	let cessionsOn = $state(false);
+	onMount(() => (cessionsOn = readCessionsSwitch()));
+	const slider = $derived(yearSliderSetup(map.cessions?.years ?? [], censusYears, cessionsOn && map.cessions !== undefined));
+	let year = $state<number | undefined>();
+	const shownYear = $derived(year ?? slider.maximum);
+	const censusShown = $derived(censusYearFor(shownYear, censusYears));
 
 	function choose(key: NationMapView): void {
 		tileMapReady = false;
@@ -116,6 +129,10 @@
 						view="lands"
 						label="Land Areas map of {nationName}"
 						data={map.tileMap}
+						year={shownYear}
+						bind:cessions={cessionsOn}
+						cessionsShown={map.cessions?.royce ?? []}
+						cessionsBounds={map.cessions?.bounds}
 						onselect={(anchor) => void chooseArea(anchor)}
 						onready={() => (tileMapReady = true)}
 						onfail={() => {
@@ -187,7 +204,26 @@
 						<a href={map.region?.link}>All Bureau of Indian Affairs regions</a>.
 					</p>
 				{:else}
-					<p class="key"><span class="swatch land" aria-hidden="true"></span>Census land areas named in this entry</p>
+					{#if tiled}
+						<YearSlider
+							compact
+							bind:value={() => shownYear, (value) => (year = value)}
+							minimum={slider.minimum}
+							maximum={slider.maximum}
+							stops={slider.stops}
+							bands={slider.bands}
+							describe={(value) => {
+								const census = censusYearFor(value, censusYears);
+								return census === undefined ? 'no Census land areas' : `Census land areas of ${census}`;
+							}}
+						/>
+					{/if}
+					{#if !tiled || censusShown !== undefined}
+						<p class="key"><span class="swatch land" aria-hidden="true"></span>Census land areas named in this entry{#if tiled && censusShown !== undefined && shownYear < slider.maximum}, {censusShown}{/if}</p>
+					{/if}
+					{#if tiled && cessionsOn && map.cessions}
+						<p class="key"><span class="swatch cession" aria-hidden="true"></span>Land this nation’s predecessors ceded</p>
+					{/if}
 					{#if tiled && areaDetails}
 						<div class="details"><MapDetails bind:this={detailsPanel} details={areaDetails} /></div>
 					{/if}
@@ -198,7 +234,7 @@
 					</ul>
 					<p class="small muted">
 						{#if tiled}
-							Outlines are the Census Bureau’s 2020 areas, drawn over a map of OpenStreetMap data. They are not a statement of the nation’s own boundaries. A dot marks an area until it is big enough to see. Scroll over the map, or pinch, to zoom.
+							Outlines are the Census Bureau’s {censusShown !== undefined && shownYear < slider.maximum ? censusShown : 2020} areas, drawn over a map of OpenStreetMap data. They are not a statement of the nation’s own boundaries. A dot marks an area until it is big enough to see. Scroll over the map, or pinch, to zoom.
 						{:else}
 							Outlines are the Census Bureau’s 2020 areas, simplified for a national map. They are not a statement of the nation’s own boundaries.{#if Object.values(view.layers).some((layer) => layer.dots.length > 0)}{' '}A dot marks an area too small to see.{/if}
 						{/if}
@@ -298,6 +334,11 @@
 
 	.land-area,
 	.land-area-dot,
+	.swatch.cession {
+		background: color-mix(in srgb, var(--color-timeline-treaty) 35%, var(--color-paper));
+		border-color: var(--color-timeline-treaty);
+	}
+
 	.swatch.land {
 		fill: var(--color-map-class-4);
 		background: var(--color-map-class-4);

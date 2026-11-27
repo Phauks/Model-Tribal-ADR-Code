@@ -28,6 +28,7 @@ import { storySummaries } from './stories.ts';
 import { buildFormCatalog } from './form-catalog.ts';
 import { copyPagePath } from '../public-copies.ts';
 import { dataChartList, dataChartTrail } from '../data-chart-list.ts';
+import { landCessions, royceSheets } from './land-cessions.ts';
 import type { ResultGroup } from '../search-everything.ts';
 import { allSections } from './title-25-sections.ts';
 import { isLawRecord } from './law-records.ts';
@@ -89,8 +90,20 @@ const typeOf = (record: SourceRecord) => (record.citation as { type?: string }).
 function sourceItem(record: SourceRecord, detail?: string): CollectionItem {
 	const link = record.original_link ?? record.citation.URL;
 	const copy = publicCopyFor(link);
-	const href = typeOf(record) === 'legal_case' ? `/cases/${record.key}` : isLawRecord(record) ? `/laws/${record.key}` : copy ? copyPagePath(copy) : link;
+	const href = typeOf(record) === 'legal_case' ? `/cases/${record.key}` : isLawRecord(record) ? `/laws/${record.key}` : copy ? copyPagePath(copy) : publishedAt(record, link);
 	return { title: record.citation.title ?? record.key, href, year: record.citation.issued?.['date-parts']?.[0]?.[0], detail, key: record.key };
+}
+
+/**
+ * Where a source with no copy on this site is published: its own address, an
+ * archived copy when the file is gone from there, or nowhere, so a list never
+ * links to a page that answers "not found" (three filings in Oklahoma's
+ * register have no file at the State's site; Trevor, Nov. 27, 2026).
+ */
+function publishedAt(record: SourceRecord, link: string | undefined): string | undefined {
+	if (record.history?.status !== 'removed') return link;
+	const archived = record.archives?.find((archive) => archive.url ?? archive.link);
+	return archived?.url ?? archived?.link;
 }
 
 /**
@@ -153,7 +166,7 @@ const supremeCourt = (authority: string) => authority === 'Supreme Court of the 
 /** Decisions of Interior's appeals board, their own collection (scripts/law/ibia_decisions.py). */
 const indianAppealsBoard = (authority: string) => authority === 'Interior Board of Indian Appeals';
 
-/** The Board's decisions held back for a privacy review (probate appeals and decisions about minors), by citation only. */
+/** The Board's decisions held back for a privacy review (decisions about a child or a protected person), by citation only. */
 function heldBackBoardDecisions(): number {
 	const file = path.join(repositoryRoot, 'research/ibia/held-back.csv');
 	return existsSync(file) ? parseCsv(readFileSync(file, 'utf8')).length : 0;
@@ -166,6 +179,15 @@ function gamingCommissionDocuments(): CollectionItem[] {
 	return [...sources().values()]
 		.filter((record) => (kindOf(record) === 'federal-agency-document' && record.citation.author?.some((author) => author.literal === gamingCommission)) || (typeOf(record) === 'legal_case' && record.citation.authority === gamingCommission))
 		.map((record) => sourceItem(record, (record.citation as { genre?: string }).genre ?? 'Commission final decision'));
+}
+
+const acknowledgmentOffice = 'U.S. Department of the Interior, Office of Federal Acknowledgment';
+
+/** The Department's documents in each federal acknowledgment petition: proposed findings, final determinations and the rest (scripts/law/acknowledgment_petitions.py). */
+function acknowledgmentDocuments(): CollectionItem[] {
+	return [...sources().values()]
+		.filter((record) => kindOf(record) === 'federal-agency-document' && record.citation.author?.some((author) => author.literal === acknowledgmentOffice))
+		.map((record) => sourceItem(record, (record.citation as { genre?: string }).genre));
 }
 
 function nationNameOf(): (id: string) => string {
@@ -234,7 +256,17 @@ export const collections: Collection[] = [
 	{ identifier: 'regulation-sections', search: { group: 'law', label: 'Regulation section' }, title: 'Regulation Sections (25 C.F.R.)', group: 'Federal law', detailHeader: 'Part', items: () => allSections('regulations') },
 	{ identifier: 'executive-orders', search: { group: 'law', label: 'Executive order' }, title: 'Executive Orders', group: 'Federal law', sourceKinds: ['executive-order'], items: sourcesOfKind(['executive-order']) },
 	{ identifier: 'federal-register-notices', search: { group: 'law', label: 'Federal Register notice' }, title: 'Federal Register Notices', group: 'Federal law', sourceKinds: ['federal-register-notice'], items: sourcesOfKind(['federal-register-notice']) },
+	{ identifier: 'federal-acknowledgment', search: { group: 'law', label: 'Acknowledgment document' }, title: 'Federal Acknowledgment Petitions', group: 'Federal law', detailHeader: 'Kind', sourceKinds: ['federal-agency-document'], items: acknowledgmentDocuments },
 	{ identifier: 'national-indian-gaming-commission', search: { group: 'law', label: 'Gaming Commission document' }, title: 'Gaming Commission Opinions and Actions', group: 'Federal law', detailHeader: 'Kind', sourceKinds: ['federal-agency-document'], items: gamingCommissionDocuments },
+	// Royce's land cessions (1899), each opening on the Map page at its year (historic maps, 2026-11-26).
+	{
+		identifier: 'land-cessions',
+		search: { group: 'law', label: 'Land cession' },
+		title: 'Land Cessions',
+		group: 'Federal law',
+		detailHeader: 'Named in Royce’s schedule',
+		items: () => landCessions().map((cession) => ({ title: `Royce cession ${cession.royce}`, href: `/nations/map?cession=${cession.royce}`, year: cession.dates[0] ? Number(cession.dates[0].slice(0, 4)) : undefined, detail: cession.schedule }))
+	},
 
 	// Courts and cases
 	{ identifier: 'supreme-court-cases', search: { group: 'case', label: 'Court case' }, title: 'U.S. Supreme Court Cases', group: 'Courts and cases', items: casesBy(supremeCourt) },
@@ -316,6 +348,7 @@ export const collections: Collection[] = [
 
 	// Reference
 	{ identifier: 'source-copies', search: { group: 'reference', label: 'Source document' }, title: 'Source Documents', group: 'Reference', list: '/copies', items: () => publicCopies().map((copy) => ({ title: copy.title ?? copy.key, href: copyPagePath(copy) })) },
+	{ identifier: 'historic-maps', search: { group: 'reference', label: 'Historic map' }, title: 'Historic Maps', group: 'Reference', years: () => '1899', items: () => [...royceSheets().values()].map((sheet) => ({ title: `Royce’s map: ${sheet.name}`, href: sheet.image, year: 1899 })) },
 	{ identifier: 'charts', search: { group: 'reference', label: 'Chart' }, title: 'Charts', group: 'Reference', items: () => dataChartList.map((chart) => ({ title: chart.title, href: dataChartTrail(chart).at(-1)?.href })) },
 	{ identifier: 'glossary-terms', search: { group: 'term' }, title: 'Glossary Terms', group: 'Reference', items: () => glossary().map((entry) => ({ title: entry.term, href: `/glossary/${entry.id}` })) },
 	{ identifier: 'forms', search: { group: 'reference', label: 'Form' }, title: 'Forms', group: 'Reference', items: () => buildFormCatalog().map((form) => ({ title: form.title, href: `/forms/${form.slug}` })) }

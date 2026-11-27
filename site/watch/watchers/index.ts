@@ -26,6 +26,7 @@ export const notWatched: NotWatched[] = [
 	{ feed: 'federal-court-opinions', kind: 'planned', reason: 'courtlistener (the federal courts of appeals, district courts and Court of Federal Claims, by the same Indian law terms) once Free Law Project has answered, phase 2; until then scripts/caselaw/courtlistener_federal_opinions.py reads the quarterly bulk files.' },
 	{ feed: 'state-court-opinions', kind: 'planned', reason: 'courtlistener (state appellate courts, by the same Indian law terms) once Free Law Project has answered, phase 2; the Caselaw Access Project set ends about 2019 and does not change.' },
 	{ feed: 'interior-board-of-indian-appeals', kind: 'planned', reason: 'ibia (the Board’s chronological index of decisions, weekly), phase 2; scripts/law/ibia_decisions.py rebuilds the collection meanwhile.' },
+	{ feed: 'federal-acknowledgment', kind: 'planned', reason: 'federal-register (acknowledgment notices) and the Office of Federal Acknowledgment’s petition pages, phase 2; scripts/law/acknowledgment_petitions.py rebuilds the collection meanwhile.' },
 	{ feed: 'national-indian-gaming-commission', kind: 'planned', reason: 'nigc (the Commission’s document sitemaps, daily), phase 2; scripts/law/nigc_documents.py rebuilds the collection meanwhile.' },
 	{ feed: 'tribal-court-opinions', kind: 'planned', reason: 'consented-courts, phase 3: only nations that publish their opinions and agree, with initials and privacy holds first (decision record 0057). Its list of courts starts empty.' },
 	{ feed: 'oklahoma-state-tribal-agreements', kind: 'planned', reason: 'oklahoma-register (the Oklahoma Secretary of State’s register data file, json/dataTribal.json, compared by file number; scripts/agreements/oklahoma_register.py reads it today), phase 2.' },
@@ -37,6 +38,8 @@ export const notWatched: NotWatched[] = [
 	{ feed: 'charts', kind: 'derived', reason: 'Rebuilt from records; the census watcher will feed their inputs.' },
 	{ feed: 'glossary-terms', kind: 'never', reason: 'Definitions come only from Black’s Law Dictionary, 12th ed. (project rule).' },
 	{ feed: 'forms', kind: 'never', reason: 'The project’s own forms.' },
+	{ feed: 'land-cessions', kind: 'never', reason: 'Royce’s schedule (1899) and the Forest Service’s tracing of it are fixed; scripts/maps/land_cessions.py relinks them as treaty and nation records change.' },
+	{ feed: 'historic-maps', kind: 'never', reason: 'Royce’s 1899 map sheets do not change.' },
 
 	// Nation page parts (top-level fields of schemas/tribe.schema.json).
 	{ feed: 'nation:id', kind: 'never', reason: 'The project’s own identifier.' },

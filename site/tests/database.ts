@@ -35,6 +35,13 @@ class Statement {
 	}
 }
 
+/** An empty stand-in, with no migrations applied. */
+export function emptyTestDatabase(): D1Database {
+	const database = new DatabaseSync(':memory:');
+	database.exec('PRAGMA foreign_keys = ON');
+	return shimFor(database);
+}
+
 export function testDatabase(): D1Database {
 	const database = new DatabaseSync(':memory:');
 	database.exec('PRAGMA foreign_keys = ON');
@@ -46,13 +53,22 @@ export function testDatabase(): D1Database {
 		database.exec(readFileSync(path.join(folder, file), 'utf8'));
 		database.exec('COMMIT');
 	}
+	return shimFor(database);
+}
+
+function shimFor(database: DatabaseSync): D1Database {
 	const shim = {
 		prepare: (sql: string) => new Statement(database, sql),
 		batch: async (statements: Statement[]) => {
 			database.exec('BEGIN');
 			try {
 				const results = [];
-				for (const statement of statements) results.push(await statement.run());
+				// Like D1, a batch returns each statement's rows as well as its changes.
+				for (const statement of statements) {
+					const prepared = database.prepare(statement.sql);
+					if (prepared.columns().length > 0) results.push({ results: prepared.all(...statement.values), meta: { changes: 0 } });
+					else results.push({ results: [], meta: { changes: Number(prepared.run(...statement.values).changes) } });
+				}
 				database.exec('COMMIT');
 				return results;
 			} catch (problem) {
