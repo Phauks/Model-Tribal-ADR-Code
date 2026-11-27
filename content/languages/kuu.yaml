@@ -1,0 +1,52 @@
+# Written by scripts/languages/build_registry.py from Glottolog 5.4 and the ISO 639-3 code tables; do not edit by hand.
+tag: kuu
+name: Upper Kuskokwim
+iso_639_3:
+  code: kuu
+  reference_name: Upper Kuskokwim
+  scope: individual
+  source: iso-639-3-code-tables
+glottolog:
+  glottocode: uppe1438
+  level: language
+  source: glottolog-5-4
+family:
+  name: Athabaskan-Eyak-Tlingit
+  glottocode: atha1245
+  source: glottolog-5-4
+endangered_languages_project:
+  link: https://endangeredlanguages.com/elp-language/1167
+  source: glottolog-5-4
+alaska_native_language_center:
+  link: https://www.uaf.edu/anlc/languages-move/upperkuskokwim.php
+  source: alaska-native-language-center-languages
+dialects: []
+works:
+- glottolog_reference: '308714'
+  title: 'Dinak''i: Upper Kuskokwim Athapaskan junior dictionary'
+  kinds:
+  - dictionary
+  author: Raymond Collins and Betty Petruska
+  year: 1979
+  publisher: Summer Institute of Linguistics
+  pages: 156
+  source: glottolog-5-4
+- glottolog_reference: '314263'
+  title: Upper Kuskokwim Athapaskan dictionary (Dinak'i)
+  kinds:
+  - dictionary
+  author: Raymond Collins, Sally Collins and Betty Petruska
+  year: 1966
+  publisher: University of Alaska
+  pages: 74
+  source: glottolog-5-4
+- glottolog_reference: '39071'
+  title: Upper Kuskokwim Athapaskan dictionary (Dinak'i)
+  kinds:
+  - dictionary
+  author: Raymond Collins and Sally Collins
+  year: 1966
+  publisher: Summer Institute of Linguistics
+  pages: 74
+  source: glottolog-5-4
+retrieved: '2026-11-27'

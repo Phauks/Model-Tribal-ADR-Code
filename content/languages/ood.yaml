@@ -1,0 +1,120 @@
+# Written by scripts/languages/build_registry.py from Glottolog 5.4 and the ISO 639-3 code tables; do not edit by hand.
+tag: ood
+name: Tohono O'odham
+iso_639_3:
+  code: ood
+  reference_name: Tohono O'odham
+  scope: individual
+  source: iso-639-3-code-tables
+glottolog:
+  glottocode: toho1245
+  level: language
+  source: glottolog-5-4
+family:
+  name: Uto-Aztecan
+  glottocode: utoa1244
+  source: glottolog-5-4
+endangered_languages_project:
+  link: https://endangeredlanguages.com/elp-language/1166
+  source: glottolog-5-4
+dialects:
+- name: Akimel O'odham
+  glottocode: akim1239
+  source: glottolog-5-4
+- name: Tohono O'odam
+  glottocode: toho1246
+  source: glottolog-5-4
+works:
+- glottolog_reference: '557423'
+  title: 'Sonoran O''otam: A Description and Prospectus, with a Description of Ati Piman'
+  kinds:
+  - grammar
+  author: David Leedom Shaul
+  year: 2018
+  publisher: LINCOM
+  pages: 292
+  most_extensive_description: true
+  source: glottolog-5-4
+- glottolog_reference: '145983'
+  title: Dictionary Tohono O'odham/Pima to English, English to Tohono O'odham/Pima
+  kinds:
+  - dictionary
+  author: Dean Saxton, Lucille Saxton and Susie Enos
+  year: 1998
+  publisher: University of Arizona Press
+  pages: 176
+  source: glottolog-5-4
+- glottolog_reference: '74847'
+  title: A Papago grammar
+  kinds:
+  - grammar
+  author: Ofelia Zepeda
+  year: 1997
+  publisher: Univ. of Arizona Press
+  pages: 206
+  most_extensive_description: true
+  source: glottolog-5-4
+- glottolog_reference: '144761'
+  title: A Papago Grammar
+  kinds:
+  - grammar
+  author: Ofelia Zepeda
+  year: 1983
+  publisher: University of Arizona Press
+  pages: 206
+  most_extensive_description: true
+  source: glottolog-5-4
+- glottolog_reference: '323154'
+  title: Dictionary Tohono O'odham/Pima to English
+  kinds:
+  - dictionary
+  author: Dean Saxton, Lucille Saxton and Susie Enos
+  year: 1983
+  publisher: University of Arizona
+  pages: 176
+  source: glottolog-5-4
+- glottolog_reference: '685838'
+  title: 'Dictionary: Papago and Pima to English, English to Papago and Pima'
+  kinds:
+  - dictionary
+  author: Dean Saxton and Lucille Saxton
+  year: 1982
+  publisher: The University of Arizona Press
+  source: glottolog-5-4
+- glottolog_reference: '76625'
+  title: 'Dictionary: Papago & Pima to English, O''othham-Mil-gahn, English to Papaga & Pima, Milg-gahn-O''othham'
+  kinds:
+  - dictionary
+  author: Dean Saxton and Lucille Saxton
+  year: 1977
+  publisher: Univ. of Arizona Press
+  pages: 191
+  source: glottolog-5-4
+- glottolog_reference: '86415'
+  title: A dictionary of Papago usage
+  kinds:
+  - dictionary
+  author: M. Mathiot
+  year: 1973
+  publisher: Indiana University
+  pages: 520
+  source: glottolog-5-4
+- glottolog_reference: '74902'
+  title: Dictionary Papago and Pima to English, English to Papago and Pima
+  kinds:
+  - dictionary
+  author: Dean Saxton and Lucille Saxton
+  year: 1969
+  publisher: The University of Arizona Press
+  source: glottolog-5-4
+- glottolog_reference: '150698'
+  title: A Papago Grammar
+  kinds:
+  - grammar
+  author: Kenneth Locke Hale
+  year: 1959
+  publisher: UMI
+  pages: 188
+  most_extensive_description: true
+  source: glottolog-5-4
+retrieved: '2026-11-27'

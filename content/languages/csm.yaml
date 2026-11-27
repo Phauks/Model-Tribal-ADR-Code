@@ -1,0 +1,47 @@
+# Written by scripts/languages/build_registry.py from Glottolog 5.4 and the ISO 639-3 code tables; do not edit by hand.
+tag: csm
+name: Central Sierra Miwok
+iso_639_3:
+  code: csm
+  reference_name: Central Sierra Miwok
+  scope: individual
+  source: iso-639-3-code-tables
+glottolog:
+  glottocode: cent2140
+  level: language
+  source: glottolog-5-4
+family:
+  name: Miwok-Costanoan
+  glottocode: miwo1274
+  source: glottolog-5-4
+endangered_languages_project:
+  link: https://endangeredlanguages.com/elp-language/4056
+  source: glottolog-5-4
+dialects:
+- name: Eastern Central Sierra Miwok
+  glottocode: east2547
+  source: glottolog-5-4
+- name: Western Central Sierra Miwok
+  glottocode: west2634
+  source: glottolog-5-4
+works:
+- glottolog_reference: '48488'
+  title: 'Central Sierra Miwok dictionary: with texts'
+  kinds:
+  - dictionary
+  author: Lucy Shepard Freeland and S. M. Broadbent
+  year: 1960
+  publisher: University of California Press
+  pages: 71
+  source: glottolog-5-4
+- glottolog_reference: '17832'
+  title: Language of the Sierra Miwok
+  kinds:
+  - grammar
+  author: Lucy Shepard Freeland
+  year: 1951
+  publisher: Waverly Press
+  pages: 68
+  most_extensive_description: true
+  source: glottolog-5-4
+retrieved: '2026-11-27'

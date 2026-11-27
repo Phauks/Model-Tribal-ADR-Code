@@ -1,0 +1,25 @@
+key: alaska-native-language-center-languages
+kind: web-page
+citation:
+  type: webpage
+  title: Alaska Native Languages
+  author:
+  - literal: Alaska Native Language Center, University of Alaska Fairbanks
+  container-title: Alaska Native Language Center
+  URL: https://www.uaf.edu/anlc/languages-move/languages.php
+  accessed:
+    date-parts: [[2026, 11, 27]]
+original_link: https://www.uaf.edu/anlc/languages-move/languages.php
+retrieved: '2026-11-27'
+archives: []
+history:
+  status: live
+  last_checked: '2026-11-27'
+rights:
+  status: no-permission-needed
+  basis: link-only
+  basis_note: Only the address of the center's page for each language is kept and linked; nothing from the pages is copied.
+  redistribution: false
+found_in:
+- 2026-11-27-language-pages
+notes: 'The center''s list links one page for each of the 20 Alaska Native languages, the languages Alaska made official in 2014 (Act of Apr. 21, 2014, ch. 116, 2014 Alaska Sess. Laws). scripts/languages/build_registry.py matches each page to the ISO 639-3 code of its language by hand (ANLC_PAGES).'

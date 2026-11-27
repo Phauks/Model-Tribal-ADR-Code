@@ -53,6 +53,7 @@ const nationPartLabels: Record<string, string> = {
 	official_images: 'Seal and images',
 	tribal_insignia_database_entries: 'Seal and images',
 	languages: 'Languages',
+	language_programs: 'Languages',
 	gaming: 'Gaming',
 	memberships: 'Memberships',
 	related_entities: 'Related nations',

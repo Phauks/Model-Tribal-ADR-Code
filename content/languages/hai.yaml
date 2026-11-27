@@ -1,0 +1,182 @@
+# Written by scripts/languages/build_registry.py from Glottolog 5.4 and the ISO 639-3 code tables; do not edit by hand.
+tag: hai
+name: Haida
+iso_639_3:
+  code: hai
+  reference_name: Haida
+  scope: macrolanguage
+  source: iso-639-3-code-tables
+glottolog:
+  glottocode: haid1248
+  level: family
+  source: glottolog-5-4
+family: null
+alaska_native_language_center:
+  link: https://www.uaf.edu/anlc/languages-move/haida.php
+  source: alaska-native-language-center-languages
+dialects:
+- name: Northern Haida
+  glottocode: nort2938
+  source: glottolog-5-4
+- name: Southern Haida
+  glottocode: sout2956
+  source: glottolog-5-4
+works:
+- glottolog_reference: '168135'
+  title: Haida Dictionary
+  kinds:
+  - dictionary
+  author: John Enrico
+  year: 2005
+  source: glottolog-5-4
+- glottolog_reference: '168136'
+  title: Haida Dictionary Materials and Correspondence
+  kinds:
+  - dictionary
+  author: John Enrico
+  year: 2000
+  source: glottolog-5-4
+- glottolog_reference: '168162'
+  title: Review of Haida Dictionary
+  kinds:
+  - dictionary
+  author: Robert D Levine
+  year: 1981
+  source: glottolog-5-4
+- glottolog_reference: '169264'
+  title: Haida Leer Dictionary Project
+  kinds:
+  - dictionary
+  author: Jeff (interviewer) Leer, Nat. (speaker) Edenso, Salina (speaker) Peratrovich and Charles. (speaker) Natkong
+  year: 1979
+  source: glottolog-5-4
+- glottolog_reference: '172062'
+  title: Review of] Haida Dictionary, ed. Erma Lawrence et al
+  kinds:
+  - dictionary
+  author: Robert D Levine
+  year: 1979
+  pages: 15
+  source: glottolog-5-4
+- glottolog_reference: '172076'
+  title: Data file for comprehensive Haida dictionary
+  kinds:
+  - dictionary
+  author: Jeff Leer
+  year: 1978
+  source: glottolog-5-4
+- glottolog_reference: '172050'
+  title: Haida Dictionary
+  kinds:
+  - dictionary
+  author: Erma Lawrence and Jeff Leer
+  year: 1977
+  source: glottolog-5-4
+- glottolog_reference: '168144'
+  title: Haida Dictionary Data, Annotated
+  kinds:
+  - dictionary
+  author: Erma Lawrence and Jeff Leer
+  year: 1977
+  source: glottolog-5-4
+- glottolog_reference: '172093'
+  title: List of Classified nouns in Haida Noun Dictionary, from Erma Lawrence and Christine Edenso
+  kinds:
+  - dictionary
+  author: Jeff Leer
+  year: 1976
+  pages: 11
+  source: glottolog-5-4
+- glottolog_reference: '172043'
+  title: Haida Noun Dictionary.2nd edition
+  kinds:
+  - dictionary
+  author: Erma Lawrence
+  year: 1975
+  source: glottolog-5-4
+- glottolog_reference: '168142'
+  title: Haida Verb Dictionary Draft
+  kinds:
+  - dictionary
+  author: Erma Lawrence
+  year: 1975
+  source: glottolog-5-4
+- glottolog_reference: '171796'
+  title: Haida dictionary
+  kinds:
+  - dictionary
+  author: Charles Natkong
+  year: 1974
+  pages: 79
+  source: glottolog-5-4
+- glottolog_reference: '172094'
+  title: Haida Dictionary
+  kinds:
+  - dictionary
+  author: Nancy. McRoy and Charles Natkong
+  year: 1974
+  pages: 37
+  source: glottolog-5-4
+- glottolog_reference: '172052'
+  title: 'Progress report on Skidegate Haida grammar I: Old and new information in Haida morphosyntax'
+  kinds:
+  - grammar
+  author: Robert D Levine
+  year: 1974
+  pages: 17
+  most_extensive_description: true
+  source: glottolog-5-4
+- glottolog_reference: '168174'
+  title: Haida Dictionary slip files
+  kinds:
+  - dictionary
+  author: Charles Natkong
+  year: 1973
+  source: glottolog-5-4
+- glottolog_reference: '171725'
+  title: English-Haida Dictionary of Nouns
+  kinds:
+  - dictionary
+  author: Erma Lawrence
+  year: 1972
+  source: glottolog-5-4
+- glottolog_reference: '171943'
+  title: A Child's Manual
+  kinds:
+  - grammar
+  author: Anonymous
+  year: 1894
+  pages: 12
+  most_extensive_description: true
+  source: glottolog-5-4
+- glottolog_reference: '172104'
+  title: Descriptive notes on certain implements, weapons, ets., from Graham Island, Queen Charlotte Islands, B.C
+  kinds:
+  - grammar
+  author: Alexander Mackenzie
+  year: 1891
+  most_extensive_description: true
+  source: glottolog-5-4
+- glottolog_reference: '172103'
+  title: The Haidah Indians of Queen Charlotte's Islands, British Columbia, with a brief description of their carvings, tattoo designs, etc
+  kinds:
+  - grammar
+  author: James G Swan
+  year: 1874
+  most_extensive_description: true
+  source: glottolog-5-4
+- glottolog_reference: '172114'
+  title: Dictionary of Indian Tongues
+  kinds:
+  - dictionary
+  author: Anonymous
+  year: 1862
+  source: glottolog-5-4
+- glottolog_reference: '169259'
+  title: Dictionary Corrections
+  kinds:
+  - dictionary
+  author: Erma (speaker) Lawrence
+  year: 0
+  source: glottolog-5-4
+retrieved: '2026-11-27'

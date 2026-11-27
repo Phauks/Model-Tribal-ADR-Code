@@ -1,0 +1,121 @@
+# Written by scripts/languages/build_registry.py from Glottolog 5.4 and the ISO 639-3 code tables; do not edit by hand.
+tag: aht
+name: Ahtena
+iso_639_3:
+  code: aht
+  reference_name: Ahtena
+  scope: individual
+  source: iso-639-3-code-tables
+glottolog:
+  glottocode: ahte1237
+  level: language
+  source: glottolog-5-4
+family:
+  name: Athabaskan-Eyak-Tlingit
+  glottocode: atha1245
+  source: glottolog-5-4
+endangered_languages_project:
+  link: https://endangeredlanguages.com/elp-language/761
+  source: glottolog-5-4
+alaska_native_language_center:
+  link: https://www.uaf.edu/anlc/languages-move/ahtna.php
+  source: alaska-native-language-center-languages
+dialects:
+- name: Mentasta
+  glottocode: ment1252
+  source: glottolog-5-4
+- name: Nuclear Ahtna
+  glottocode: nucl1792
+  source: glottolog-5-4
+works:
+- glottolog_reference: '174430'
+  title: Ahtna Noun Dictionary with Pronunciation Guide
+  kinds:
+  - dictionary
+  author: John E. (compiler) Smelcer, James (editor) Kari, Mildred (editor) Buck and Markle (speaker) Pete
+  year: 1998
+  source: glottolog-5-4
+- glottolog_reference: '109637'
+  title: Ahtna Athabaskan Dictionary
+  kinds:
+  - dictionary
+  author: James Kari
+  year: 1990
+  publisher: Alaska Native Language Center
+  pages: 702
+  source: glottolog-5-4
+- glottolog_reference: '680091'
+  title: Ahtna Athapaskan Dictionary
+  kinds:
+  - dictionary
+  author: James Kari
+  year: 1990
+  publisher: Alaska Native Language Center
+  source: glottolog-5-4
+- glottolog_reference: '663633'
+  title: Ahtna Dictionary
+  kinds:
+  - dictionary
+  author: James Kari
+  year: 1990
+  publisher: Alaska Native Language Center
+  source: glottolog-5-4
+- glottolog_reference: '174449'
+  title: 'Ahtna Athabaskan Dictionary: Draft'
+  kinds:
+  - dictionary
+  author: James Kari
+  year: 1989
+  source: glottolog-5-4
+- glottolog_reference: '168243'
+  title: Ahtna Dictionary Computerization and Draft Index
+  kinds:
+  - dictionary
+  author: James Kari
+  year: 1988
+  source: glottolog-5-4
+- glottolog_reference: '174407'
+  title: Ahtna Dictionary Project - Preliminary Stem List
+  kinds:
+  - dictionary
+  author: James Kari
+  year: 1978
+  source: glottolog-5-4
+- glottolog_reference: '174356'
+  title: Ahtna Dictionary Drafts
+  kinds:
+  - dictionary
+  author: James Kari and Mildred Buck
+  year: 1975
+  pages: 466
+  source: glottolog-5-4
+- glottolog_reference: '174359'
+  title: Ahtna Noun Dictionary
+  kinds:
+  - dictionary
+  author: James Kari and Mildred Buck
+  year: 1975
+  publisher: Alaska Native Language Center
+  pages: 201
+  source: glottolog-5-4
+- glottolog_reference: '552251'
+  title: Ahtna Noun Dictionary and Pronounciation Guide
+  kinds:
+  - dictionary
+  author: John Smelcer
+  year: 1975
+  publisher: The Ahtna Heritage Foundation
+  pages: 148
+  source: glottolog-5-4
+- glottolog_reference: '174292'
+  title: Ahtna Athabaskan Dictionary Word Initial Index
+  kinds:
+  - dictionary
+  source: glottolog-5-4
+- glottolog_reference: '174298'
+  title: Ahtna Dictionary [microform
+  kinds:
+  - dictionary
+  author: James Kari
+  source: glottolog-5-4
+retrieved: '2026-11-27'

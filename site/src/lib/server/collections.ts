@@ -38,6 +38,7 @@ import { allSections } from './title-25-sections.ts';
 import { isLawRecord } from './law-records.ts';
 import { nationsInPrograms, programSummaries } from './federal-programs.ts';
 import { federalProgramPage } from '../federal-programs.ts';
+import { familyPath, languageFamilies, languages } from './languages.ts';
 
 /** The headings the collections are grouped under, in page order. */
 export const collectionGroups = ['Native nations', 'Federal law', 'State law', 'Courts and cases', 'People', 'Reference'] as const;
@@ -460,6 +461,23 @@ export const collections: Collection[] = [
 		detailHeader: 'Nation',
 		items: () => storySummaries().map((story) => ({ title: story.title, href: `/stories/${story.id}`, detail: story.nations.map((nation) => nation.name).join('; ') || undefined })),
 		breakdown: () => [`from ${counted(distinct(storySummaries().flatMap((story) => story.nations.map((nation) => nation.name))), 'nation', 'nations')}`]
+	},
+	// The languages nations' records name, and their families (language pages, approved Nov. 27, 2026).
+	{
+		identifier: 'languages', search: { group: 'reference', label: 'Language' },
+		title: 'Languages',
+		group: 'Native nations',
+		detailHeader: 'ISO 639-3',
+		list: '/languages',
+		items: () => languages().map((language) => ({ title: language.name, href: `/languages/${language.tag}`, detail: language.iso_639_3.code })),
+		breakdown: () => [`in ${counted(languageFamilies().length, 'family', 'families')}`, counted(languages().filter((language) => !language.family).length, 'isolate', 'isolates')]
+	},
+	{
+		identifier: 'language-families', search: { group: 'reference', label: 'Language family' },
+		title: 'Language Families',
+		group: 'Native nations',
+		detailHeader: 'Languages',
+		items: () => languageFamilies().map((family) => ({ title: `${family.name} languages`, href: familyPath(family.name), detail: String(family.members.length) }))
 	},
 
 	// Federal law

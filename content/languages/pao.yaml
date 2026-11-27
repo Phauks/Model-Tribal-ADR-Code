@@ -1,0 +1,95 @@
+# Written by scripts/languages/build_registry.py from Glottolog 5.4 and the ISO 639-3 code tables; do not edit by hand.
+tag: pao
+name: Northern Paiute
+iso_639_3:
+  code: pao
+  reference_name: Northern Paiute
+  scope: individual
+  source: iso-639-3-code-tables
+glottolog:
+  glottocode: nort2954
+  level: language
+  source: glottolog-5-4
+family:
+  name: Uto-Aztecan
+  glottocode: utoa1244
+  source: glottolog-5-4
+endangered_languages_project:
+  link: https://endangeredlanguages.com/elp-language/1916
+  source: glottolog-5-4
+dialects:
+- name: Bannock
+  glottocode: bann1248
+  source: glottolog-5-4
+- name: North Northern Paiute
+  glottocode: nort1551
+  source: glottolog-5-4
+- name: South Northern Paiute
+  glottocode: sout2967
+  source: glottolog-5-4
+works:
+- glottolog_reference: '472672'
+  title: Northern Paiute-Bannock Dictionary.By Sven Liljeblad, Catherine S. Fowler, and Glenda Powell
+  kinds:
+  - dictionary
+  author: Tim Thornes
+  year: 2013
+  publisher: International Journal of American Linguistics
+  pages: 580
+  source: glottolog-5-4
+- glottolog_reference: '304123'
+  title: Paiute-English English-Paiute Dictionary
+  kinds:
+  - dictionary
+  author: Arie Poldervaart
+  year: 2004
+  publisher: Yerington Paiute Tribe
+  pages: 118
+  source: glottolog-5-4
+- glottolog_reference: '115850'
+  title: A Northern Paiute Grammar and Texts
+  kinds:
+  - grammar
+  author: Timothy Jon Thornes
+  year: 2003
+  publisher: University of Oregon
+  pages: 580
+  most_extensive_description: true
+  source: glottolog-5-4
+- glottolog_reference: '684601'
+  title: Paiute-English English-Paiute Dictionary
+  kinds:
+  - dictionary
+  author: Arie Poldevaart
+  year: 1987
+  publisher: Yerington Paiute Tribe
+  source: glottolog-5-4
+- glottolog_reference: '49228'
+  title: Paiute-English, English-Paiute dictionary
+  kinds:
+  - dictionary
+  author: Arie Poldervaart
+  year: 1987
+  publisher: Yerington Paiute Tribe
+  pages: 118
+  source: glottolog-5-4
+- glottolog_reference: '90959'
+  title: Yerington Paiute grammar
+  kinds:
+  - grammar
+  author: Russell Dick, Ed Williams and Arie Poldervaart
+  year: 1987
+  publisher: Bilingual education services
+  pages: 172
+  most_extensive_description: true
+  source: glottolog-5-4
+- glottolog_reference: '81711'
+  title: 'Uto-Aztecan grammatical sketches: Studies in Uto-Aztecan grammar 3'
+  kinds:
+  - grammar
+  author: Ronald W. Langacker
+  year: 1982
+  publisher: Summer Institute of Linguistics Publications in Linguistics, 56(3)
+  most_extensive_description: true
+  source: glottolog-5-4
+retrieved: '2026-11-27'

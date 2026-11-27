@@ -1,0 +1,67 @@
+# Written by scripts/languages/build_registry.py from Glottolog 5.4 and the ISO 639-3 code tables; do not edit by hand.
+tag: kio
+name: Kiowa
+iso_639_3:
+  code: kio
+  reference_name: Kiowa
+  scope: individual
+  source: iso-639-3-code-tables
+glottolog:
+  glottocode: kiow1266
+  level: language
+  source: glottolog-5-4
+family:
+  name: Kiowa-Tanoan
+  glottocode: kiow1265
+  source: glottolog-5-4
+endangered_languages_project:
+  link: https://endangeredlanguages.com/elp-language/867
+  source: glottolog-5-4
+dialects: []
+works:
+- glottolog_reference: '696662'
+  title: The Kiowa Dictionary
+  kinds:
+  - dictionary
+  author: Taylor L. Miller and Amber A Neely
+  year: 2019
+  source: glottolog-5-4
+- glottolog_reference: '119727'
+  title: A grammar of Kiowa
+  kinds:
+  - grammar
+  author: Laurel J. Watkins and Parker McKenzie
+  year: 1999
+  publisher: UMI
+  pages: 284
+  most_extensive_description: true
+  source: glottolog-5-4
+- glottolog_reference: '70036'
+  title: A Grammar of Kiowa
+  kinds:
+  - grammar
+  author: Laurel J. Watkins
+  year: 1984
+  publisher: University of Nebraska Press
+  pages: 268
+  most_extensive_description: true
+  source: glottolog-5-4
+- glottolog_reference: '688100'
+  title: A grammar of Kiowa
+  kinds:
+  - grammar
+  author: Laurel J. Watkins
+  year: 1980
+  publisher: University of Kansas
+  most_extensive_description: true
+  source: glottolog-5-4
+- glottolog_reference: '81680'
+  title: Vocabulary of the Kiowa language
+  kinds:
+  - dictionary
+  author: John Peabody Harrington
+  year: 1928
+  publisher: U.S. Govt. print. off.
+  pages: 255
+  source: glottolog-5-4
+retrieved: '2026-11-27'

@@ -1,0 +1,47 @@
+# Written by scripts/languages/build_registry.py from Glottolog 5.4 and the ISO 639-3 code tables; do not edit by hand.
+tag: qui
+name: Quileute
+iso_639_3:
+  code: qui
+  reference_name: Quileute
+  scope: individual
+  source: iso-639-3-code-tables
+glottolog:
+  glottocode: quil1240
+  level: language
+  source: glottolog-5-4
+family:
+  name: Chimakuan
+  glottocode: chim1311
+  source: glottolog-5-4
+endangered_languages_project:
+  link: https://endangeredlanguages.com/elp-language/5309
+  source: glottolog-5-4
+dialects:
+- name: Hoh
+  glottocode: hohh1236
+  source: glottolog-5-4
+- name: Nuclear Quileute
+  glottocode: nucl1246
+  source: glottolog-5-4
+works:
+- glottolog_reference: '16237'
+  title: Quileute dictionary
+  kinds:
+  - dictionary
+  author: Joseph Frederick Powell, Woodruff, Sr. and Fred
+  year: 1976
+  publisher: University of Idaho
+  pages: 519
+  source: glottolog-5-4
+- glottolog_reference: '54584'
+  title: Quileute
+  kinds:
+  - grammar
+  author: Manuel J. Andrade
+  year: 1933
+  publisher: Government Printing Office
+  pages: 144
+  most_extensive_description: true
+  source: glottolog-5-4
+retrieved: '2026-11-27'

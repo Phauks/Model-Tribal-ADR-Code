@@ -1,0 +1,96 @@
+# Written by scripts/languages/build_registry.py from Glottolog 5.4 and the ISO 639-3 code tables; do not edit by hand.
+tag: dak
+name: Dakota
+iso_639_3:
+  code: dak
+  reference_name: Dakota
+  scope: individual
+  source: iso-639-3-code-tables
+glottolog:
+  glottocode: dako1258
+  level: language
+  source: glottolog-5-4
+family:
+  name: Siouan
+  glottocode: siou1252
+  source: glottolog-5-4
+dialects:
+- name: Santee-Sisseton
+  glottocode: dako1259
+  source: glottolog-5-4
+- name: Yankton-Yanktonai
+  glottocode: nako1239
+  source: glottolog-5-4
+works:
+- glottolog_reference: '686374'
+  title: 'Grammatik des Dakota (Sioux): Grundzüge des Santee-Sisseton Dialekts'
+  kinds:
+  - grammar
+  author: Berthold Simons
+  year: 2024
+  publisher: LINCOM
+  pages: 362
+  most_extensive_description: true
+  source: glottolog-5-4
+- glottolog_reference: '85961'
+  title: 'New Lakota Dictionary: Lakhótiyapi-English / English-Lakhótiyapi & Incorporating the Dakota Dialects of Yankton-Yanktonai & Santee-Sisseton'
+  kinds:
+  - dictionary
+  author: Jan F. Ullrich
+  year: 2011
+  publisher: Lakota Language Consortium
+  pages: 1100
+  source: glottolog-5-4
+- glottolog_reference: '676843'
+  title: The Comparative Siouan Dictionary Project
+  kinds:
+  - dictionary
+  author: W. Frawley, K.C. Hill and P. Munro
+  year: 2002
+  source: glottolog-5-4
+- glottolog_reference: '144328'
+  title: A Dakota-English dictionary
+  kinds:
+  - dictionary
+  author: Stephen R. Riggs
+  year: 1992
+  publisher: Minnesota Historical Society Press
+  pages: 681
+  source: glottolog-5-4
+- glottolog_reference: '310549'
+  title: 'A Dakota-English dictionary: Stephen Return Riggs ; ed.by James Owen Dorsey ; with a new foreword by Carolynn I. Schommer'
+  kinds:
+  - dictionary
+  author: Stephen Return Riggs and James Owen Dorsey
+  year: 1992
+  publisher: Minnesota Historical Society Press
+  pages: 665
+  source: glottolog-5-4
+- glottolog_reference: '307556'
+  title: An English-Dakota dictionary
+  kinds:
+  - dictionary
+  author: John Poage Williamson
+  year: 1992
+  publisher: Minnesota Historical Society Press
+  pages: 264
+  source: glottolog-5-4
+- glottolog_reference: '688068'
+  title: Dakotah Sioux Indian Dictionary
+  kinds:
+  - dictionary
+  author: Paul WarCloud
+  year: 1971
+  publisher: Tekakwitha Fine Arts Center
+  source: glottolog-5-4
+- glottolog_reference: '88897'
+  title: Dakota Grammar, Texts, and Ethnography
+  kinds:
+  - grammar
+  author: Stephen R. Riggs
+  year: 1893
+  publisher: Government Printing Office
+  pages: 274
+  most_extensive_description: true
+  source: glottolog-5-4
+retrieved: '2026-11-27'

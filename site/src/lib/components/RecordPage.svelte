@@ -211,7 +211,8 @@
 			margin-top: 0;
 		}
 
-		.has-glance :global(:is(.record-details, .record-sources) :is(.notice, .panel, .timeline, figure, hr, .source-group, .source-list > li)) {
+		/* Not a figure kept hidden, such as a map view not chosen (NationMap.svelte). */
+		.has-glance :global(:is(.record-details, .record-sources) :is(.notice, .panel, .timeline, figure:not([hidden]), hr, .source-group, .source-list > li)) {
 			display: flow-root;
 		}
 

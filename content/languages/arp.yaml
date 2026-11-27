@@ -1,0 +1,58 @@
+# Written by scripts/languages/build_registry.py from Glottolog 5.4 and the ISO 639-3 code tables; do not edit by hand.
+tag: arp
+name: Arapaho
+iso_639_3:
+  code: arp
+  reference_name: Arapaho
+  scope: individual
+  source: iso-639-3-code-tables
+glottolog:
+  glottocode: arap1274
+  level: language
+  source: glottolog-5-4
+family:
+  name: Algic
+  glottocode: algi1248
+  source: glottolog-5-4
+endangered_languages_project:
+  link: https://endangeredlanguages.com/elp-language/661
+  source: glottolog-5-4
+dialects: []
+works:
+- glottolog_reference: '123161'
+  title: The Arapaho language
+  kinds:
+  - grammar
+  author: Andrew Cowell, Moss, Sr. and Alonzo
+  year: 2008
+  publisher: University Press of Colorado
+  pages: 536
+  most_extensive_description: true
+  source: glottolog-5-4
+- glottolog_reference: '469156'
+  title: Arapaho Dictionary
+  kinds:
+  - dictionary
+  author: Lisa Conathan
+  year: 2006
+  source: glottolog-5-4
+- glottolog_reference: '110626'
+  title: 'Transitivity in Arapaho: A Construction Grammar Approach'
+  kinds:
+  - grammar
+  author: Hartwell S. Francis
+  year: 2006
+  publisher: University of Colorado at Boulder
+  pages: 359
+  most_extensive_description: true
+  source: glottolog-5-4
+- glottolog_reference: '472231'
+  title: Dictionary of Contemporary Arapaho Usage
+  kinds:
+  - dictionary
+  author: Zdeněk Salzmann
+  year: 1983
+  publisher: Wind River Reservation, Wyoming
+  pages: 231
+  source: glottolog-5-4
+retrieved: '2026-11-27'

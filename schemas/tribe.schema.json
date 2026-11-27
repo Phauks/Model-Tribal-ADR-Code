@@ -298,6 +298,21 @@
         "unevaluatedProperties": false
       }
     },
+    "language_programs": {
+      "type": "array",
+      "description": "The nation's own language program: a language department, immersion school, classes or language site that the nation runs, or that the nation names as its program (research/analyses/2026-11-27-language-resources.md). Every entry needs a link, as every service on a nation page does.",
+      "items": {
+        "type": "object",
+        "$ref": "#/$defs/citedFact",
+        "required": ["name", "link", "source"],
+        "properties": {
+          "name": { "type": "string", "description": "The program's name, as the nation gives it." },
+          "link": { "type": "string", "format": "uri", "pattern": "^https?://" },
+          "run_by": { "enum": ["nation", "tribal-college", "organization"], "description": "Who runs it: the nation itself, a tribal college, or an organization the nation names as its program." }
+        },
+        "unevaluatedProperties": false
+      }
+    },
     "federal_administration": {
       "type": "object",
       "$ref": "#/$defs/citedFact",
