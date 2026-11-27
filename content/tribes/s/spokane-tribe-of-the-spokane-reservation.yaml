@@ -11,6 +11,16 @@ recognition:
   verification: bulk-import
   as_of: '2026-01-30'
   locator: 91 Fed. Reg. 4105
+- type: federal
+  earliest_record: land
+  legal_basis: Exec. Order of Jan. 18, 1881, 1 Kappler 925
+  since: '1881-01-18'
+  source: executive-order-1881-01-18-spokane-reservation
+  confidence: high
+  verification: read-in-full
+  as_of: '1881-01-18'
+  locator: 1 Kappler 925
+  note: The earliest record this site has found that shows the United States dealing with the nation as a federally recognized nation. The relationship may be older. The instrument first set aside the Spokane Reserve, Washington Territory.
 states:
 - state: WA
   presence: government-office

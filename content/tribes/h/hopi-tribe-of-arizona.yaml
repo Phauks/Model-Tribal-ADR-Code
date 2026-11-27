@@ -11,6 +11,16 @@ recognition:
   verification: bulk-import
   as_of: '2026-01-30'
   locator: 91 Fed. Reg. 4104
+- type: federal
+  earliest_record: land
+  legal_basis: Exec. Order of Dec. 16, 1882, 1 Kappler 805
+  since: '1882-12-16'
+  source: executive-order-1882-12-16-moqui-hopi-reservation
+  confidence: high
+  verification: read-in-full
+  as_of: '1882-12-16'
+  locator: 1 Kappler 805
+  note: The earliest record this site has found that shows the United States dealing with the nation as a federally recognized nation. The relationship may be older. The instrument first set aside the Moqui (Hopi) Reserve, Arizona.
 states:
 - state: AZ
   presence: government-office

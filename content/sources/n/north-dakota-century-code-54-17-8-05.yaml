@@ -1,0 +1,49 @@
+key: north-dakota-century-code-54-17-8-05
+kind: state-statute
+citation:
+  type: legislation
+  title: Powers and duties of commission
+  title-short: N.D. Cent. Code § 54-17.8-05
+  container-title: North Dakota Century Code
+  container-title-short: N.D. Cent. Code
+  section: 54-17.8-05
+  author:
+  - literal: North Dakota Legislative Branch
+  URL: https://ndlegis.gov/cencode/t54c17-8.pdf#nameddest=54-17p8-05
+  accessed:
+    date-parts:
+    - - 2026
+      - 11
+      - 27
+original_link: https://ndlegis.gov/cencode/t54c17-8.pdf#nameddest=54-17p8-05
+retrieved: '2026-11-27'
+archives: []
+history:
+  status: live
+  last_checked: '2026-11-27'
+shares_link_with:
+- north-dakota-century-code-54-17-8-03
+state_law:
+  relevance: incidental
+  citation: N.D. Cent. Code § 54-17.8-05 (2025)
+rights:
+  status: no-permission-needed
+  basis: government-edict
+  basis_note: 'Official state statutes are not copyrightable under the government edicts doctrine (Georgia v. Public.Resource.Org, Inc., 590 U.S. 255 (2020)). Linked, not served: state statutes stay link only.'
+  redistribution: false
+jurisdictions:
+- level: state
+  state: ND
+topics:
+- state-indian-law
+found_in:
+- 2026-11-27-state-statutes-third-batch
+notes: 'Indigo Book citation: N.D. Cent. Code § 54-17.8-05 (2025). Text read from the North Dakota Legislative Branch''s PDF of the section''s chapter of the Century Code (ndlegis.gov/cencode) on Nov. 27, 2026. Found by the state statutes sweep (terms: tribal government; tribal); AI reader''s verdict incidental: Outdoor heritage commission may grant funds to tribal governments. Unverified.'
+review:
+  status: unverified
+  by: scripts/law/state_statutes/run.py
+  date: '2026-11-27'
+  checks:
+  - check: 'Indian law section: the sweep''s keyword pass and an AI reader''s verdict (core, incidental or none)'
+    result: agree
+    detail: 'incidental; terms: tribal government; tribal'

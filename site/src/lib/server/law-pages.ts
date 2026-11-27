@@ -4,7 +4,7 @@
  * asked on Nov. 24, 2026 for a place on each law for the accounts of its
  * impact). Built with the site from the law's source record:
  *
- * - its name, its citation and, At a glance, its kind, date and citation;
+ * - its name, its citation and, Key facts, its kind, date and citation;
  * - its box's Summary, Quotes and Treatment (`law_box`, record-boxes.ts);
  * - the accounts of its impact (impact-accounts.ts), shown only when an
  *   account names the law;
@@ -71,7 +71,7 @@ export interface LawPage {
 	/** For a statute: the committee reports and other congressional documents on the bill that became it, oldest first. */
 	legislativeHistory: { name: string; link: string; detail: string }[];
 	sources: SourceEntry[];
-	/** The land a treaty ceded, from Royce's schedule (1899), for the small map under At a glance (historic maps mockup 7). */
+	/** The land a treaty ceded, from Royce's schedule (1899), for the small map under Key facts (historic maps mockup 7). */
 	landCeded?: { royce: string[]; bounds: [number, number, number, number]; map: ReturnType<typeof treatyMapData> };
 	/** Set when the law has no box and no accounts of its impact: a stub (src/lib/stubs.ts). */
 	stub?: Stub;
@@ -172,7 +172,7 @@ function stateNamesOf(record: SourceRecord): string[] {
 	return [...new Set(jurisdictions.filter((entry) => entry.level === 'state' && entry.state).map((entry) => stateName(entry.state!)))];
 }
 
-/** The most nations At a glance names one by one. */
+/** The most nations Key facts names one by one. */
 const glanceNations = 8;
 
 let historyCache: Map<string, { name: string; link: string; detail: string; date: string }[]> | undefined;
@@ -196,7 +196,7 @@ function legislativeHistoryOf(key: string): { name: string; link: string; detail
 	return (historyCache.get(key) ?? []).map(({ name, link, detail }) => ({ name, link, detail }));
 }
 
-/** A congressional document's own facts At a glance: its committees, Congress, bills and the laws it is the history of. */
+/** A congressional document's own facts Key facts: its committees, Congress, bills and the laws it is the history of. */
 function legislativeFacts(record: SourceRecord): FactGroup[] {
 	const legislative = record.legislative;
 	if (record.kind !== 'congressional-document' || !legislative) return [];
@@ -278,7 +278,7 @@ function lawContent(key: string): LawPage {
 		{
 			field: 'nations',
 			label: nationsNamed.length === 1 ? 'Nation' : 'Nations',
-			// A list such as the Federal Register's list of recognized nations is cited by hundreds: At a glance counts them.
+			// A list such as the Federal Register's list of recognized nations is cited by hundreds: Key facts counts them.
 			items:
 				nationsCited.length > glanceNations
 					? [{ text: `${nationsCited.length.toLocaleString('en-US')} nations`, link: '#on-this-site' }]

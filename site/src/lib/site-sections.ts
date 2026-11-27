@@ -42,8 +42,6 @@ export type PageOutline = {
 export type PageFamily = {
 	/** A code's outline in place of a flat list of pages, such as a Title 25 chapter's subchapters and sections (src/lib/code-outline.ts). */
 	tree?: import('./code-outline.ts').CodeTree;
-	/** Back up to the section, such as "‹ Nations". */
-	back?: { label: string; link: string };
 	/** The family's name, such as the nation's name. */
 	title: string;
 	/** A shorter name for the phone strip, such as "§ 5321 · Chapter 46". */

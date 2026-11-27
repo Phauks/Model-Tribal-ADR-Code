@@ -1,8 +1,8 @@
 import { describe, expect, it } from 'vitest';
 import { withoutRepeats } from '../src/lib/info-page.ts';
 
-// At a glance only where it earns its place (Trevor, Nov. 26, 2026; src/lib/info-page.ts).
-describe('the facts At a glance keeps', () => {
+// Key facts only where it earns its place (Trevor, Nov. 26, 2026; src/lib/info-page.ts).
+describe('the facts Key facts keeps', () => {
 	const treaty = [
 		{ field: 'kind', label: 'Kind', items: [{ text: 'Treaty' }] },
 		{ field: 'date', label: 'Signed', items: [{ text: 'Oct. 28, 1867' }] },

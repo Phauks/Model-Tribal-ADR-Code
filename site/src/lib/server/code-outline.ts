@@ -192,10 +192,9 @@ const findBox = { label: 'Find in Title 25', link: titleLink };
 /** Federal law's own page, which the trail of every page of Title 25 starts from. */
 export const federalLaw = { label: 'Federal law', href: '/laws' };
 
-/** The side column on a chapter's page or a section's page: back to Title 25, the chapter's name, its outline. */
+/** The side column on a chapter's page or a section's page: the chapter's name and its outline. */
 function chapterFamily(chapter: Chapter, current?: PlacedSection): PageFamily & { tree: CodeTree } {
 	return {
-		back: { label: 'Title 25', link: titleLink },
 		title: `Chapter ${chapter.number}. ${chapter.heading}`,
 		short: current ? `${sectionLabel(current)} · Chapter ${chapter.number}` : `Chapter ${chapter.number}`,
 		link: chapterLink(chapter),
@@ -209,7 +208,6 @@ function titleFamily(): PageFamily & { tree: CodeTree } {
 	return {
 		title: 'Title 25. Indians',
 		short: 'Title 25',
-		back: { label: 'Federal law', link: federalLaw.href },
 		link: titleLink,
 		pages: [],
 		tree: {

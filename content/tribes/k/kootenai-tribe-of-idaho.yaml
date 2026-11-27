@@ -11,6 +11,16 @@ recognition:
   verification: bulk-import
   as_of: '2026-01-30'
   locator: 91 Fed. Reg. 4104
+- type: federal
+  earliest_record: treaty
+  legal_basis: Treaty with the Flatheads, etc. (Treaty of Hell Gate), July 16, 1855, 12 Stat. 975
+  since: '1855-07-16'
+  source: treaty-with-the-flatheads-etc-1855
+  confidence: medium
+  verification: inferred
+  as_of: '1855-07-16'
+  locator: p. 722 (Treaty with the Flatheads, etc., 1855; Kappler header "July 16, 1855. | 12 Stats., 975. | Ratified Mar. 8, 1859. | Proclaimed Apr. 18, 1859.")
+  note: The earliest record this site has found that shows the United States dealing with the nation as a federally recognized nation. The relationship may be older. The treaty names the Kootenai; the nation's profile links it to the treaty by name, and the link has not yet been checked against a second source. 2 nations' profiles link this treaty.
 states:
 - state: ID
   presence: government-office

@@ -11,6 +11,16 @@ recognition:
   verification: bulk-import
   as_of: '2026-01-30'
   locator: 91 Fed. Reg. 4103
+- type: federal
+  earliest_record: treaty
+  legal_basis: Treaty with the Delawares, 1778, 7 Stat. 13
+  since: '1778-09-17'
+  source: treaty-with-the-delawares-1778
+  confidence: medium
+  verification: inferred
+  as_of: '1778-09-17'
+  locator: p. 3 (Treaty with the Delawares, 1778; Kappler header "Sept. 17, 1778. | 7 Stat., 13.")
+  note: The earliest record this site has found that shows the United States dealing with the nation as a federally recognized nation. The relationship may be older. The treaty names the Delaware; the nation's profile links it to the treaty by name, and the link has not yet been checked against a second source. 2 nations' profiles link this treaty.
 states:
 - state: OK
   presence: government-office
