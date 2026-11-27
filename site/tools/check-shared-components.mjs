@@ -36,7 +36,6 @@ const allowed = new Map(
 		// A nation's laws and cases: a level for each kind and for each item, picked in its row.
 		'src/routes/workspace/nation-teams/[nation]/laws-and-cases/+page.svelte': { table: 2 },
 		// A short summary beside a form, and the list of settings that let sponsors give.
-		'src/routes/workspace/outreach/new/+page.svelte': { table: 1 },
 		'src/routes/workspace/sponsors/+page.svelte': { table: 1 },
 		// The Source watch queue: each row opens in place to the item's details and the decisions on it (mockup A, Trevor, Nov. 26, 2026), a work list rather than data to sort or download.
 		'src/routes/workspace/watch/+page.svelte': { table: 1 }

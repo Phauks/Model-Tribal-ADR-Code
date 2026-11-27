@@ -1,5 +1,4 @@
 <script lang="ts">
-	import Breadcrumbs from '#lib/components/Breadcrumbs.svelte';
 	import { fullDate } from '../../../inbox/dates.ts';
 	import type { PageProps } from './$types';
 
@@ -15,13 +14,6 @@
 	<title>{data.template ? data.template.name : 'New template'} · Outreach · Workspace · Tribal Law Project</title>
 </svelte:head>
 
-<Breadcrumbs
-	trail={[
-		{ label: 'Workspace', href: '/workspace' },
-		{ label: 'Outreach', href: '/workspace/outreach' }
-	]}
-	current={data.template ? data.template.name : 'Write a template'}
-/>
 <h1>{data.template ? data.template.name : 'Write a template'}</h1>
 {#if data.template}<p class="muted">Version {data.template.version}{data.template.archived ? ', archived' : ''}. Saving makes a new version; batches keep the version they were made from.</p>{/if}
 
