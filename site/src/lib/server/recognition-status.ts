@@ -57,7 +57,8 @@ const onFederalList = (fact: CitedFact) => typeof fact.source === 'string' && fe
 export const federalBases: { slug: string; label: string; matches: (fact: RecognitionFact) => boolean }[] = [
 	{ slug: 'part-83', label: 'Acknowledged under 25 C.F.R. Part 83', matches: (fact) => /final determination/i.test(fact.legal_basis ?? '') },
 	{ slug: 'assistant-secretary', label: 'Decision of the Assistant Secretary', matches: (fact) => /Assistant Secretary/.test(fact.legal_basis ?? '') },
-	{ slug: 'act-of-congress', label: 'Act of Congress', matches: (fact) => /Pub\. L\.|\bAct\b/.test(fact.legal_basis ?? '') }
+	{ slug: 'act-of-congress', label: 'Act of Congress', matches: (fact) => /Pub\. L\.|\bAct\b/.test(fact.legal_basis ?? '') },
+	{ slug: 'court-judgment', label: 'Court judgment', matches: (fact) => /^[^,]+ v\. United States, No\./.test(fact.legal_basis ?? '') }
 ];
 export const basisNotTraced = { slug: 'not-yet-traced', label: 'On the federal list; basis not yet traced' };
 
@@ -66,10 +67,12 @@ export function federalBasis(record: NationRecord): { slug: string; label: strin
 	if (!isFederallyRecognized(record)) return undefined;
 	const federal = factsOf(record, 'federal');
 	for (const basis of federalBases) {
-		const facts = federal.filter((fact) => !onFederalList(fact) && basis.matches(fact));
+		// The earliest record found (a treaty, a reservation order, an approved constitution) shows the
+		// relationship, not the act that conferred recognition, so it is never counted as a basis.
+		const facts = federal.filter((fact) => !onFederalList(fact) && !fact.earliest_record && basis.matches(fact));
 		if (facts.length > 0) return { slug: basis.slug, label: basis.label, facts };
 	}
-	return { ...basisNotTraced, facts: federal.filter(onFederalList).slice(0, 1) };
+	return { ...basisNotTraced, facts: federal.filter((fact) => onFederalList(fact) && !fact.earliest_record).slice(0, 1) };
 }
 
 /**

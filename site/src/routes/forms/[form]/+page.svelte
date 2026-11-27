@@ -31,7 +31,7 @@
 		}))
 	);
 	const accepted = 'application/pdf,image/png,image/jpeg,image/webp';
-	/** The form's key facts, At a glance (site/DESIGN.md, "Info pages"). */
+	/** The form's key facts, Key facts (site/DESIGN.md, "Info pages"). */
 	const glance = $derived(
 		[
 			{ field: 'use', label: 'When to use it', items: [{ text: template.summary }] },

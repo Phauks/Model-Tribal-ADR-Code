@@ -1,0 +1,50 @@
+key: minnesota-statutes-142e-16
+kind: state-statute
+citation:
+  type: legislation
+  title: Provider Requirements
+  title-short: Minn. Stat. § 142E.16
+  container-title: Minnesota Statutes
+  container-title-short: Minn. Stat.
+  section: 142E.16
+  author:
+  - literal: Minnesota Office of the Revisor of Statutes
+  issued:
+    date-parts:
+    - - 2003
+  URL: https://www.revisor.mn.gov/statutes/cite/142E.16
+  accessed:
+    date-parts:
+    - - 2026
+      - 11
+      - 27
+original_link: https://www.revisor.mn.gov/statutes/cite/142E.16
+retrieved: '2026-11-27'
+archives: []
+history:
+  status: live
+  last_checked: '2026-11-27'
+state_law:
+  relevance: incidental
+  citation: Minn. Stat. § 142E.16 (2026)
+rights:
+  status: no-permission-needed
+  basis: government-edict
+  basis_note: 'Official state statutes are not copyrightable under the government edicts doctrine (Georgia v. Public.Resource.Org, Inc., 590 U.S. 255 (2020)). Linked, not served: state statutes stay link only.'
+  redistribution: false
+jurisdictions:
+- level: state
+  state: MN
+topics:
+- state-indian-law
+found_in:
+- 2026-11-27-state-statutes-third-batch
+notes: 'Indigo Book citation: Minn. Stat. § 142E.16 (2026). History: 1Sp2003 c 14 art 9 s 21; 2004 c 228 art 1 s 29; 2004 c 288 art 4 s 16,17; 2005 c 136 art 7 s 21; 2006 c 264 s 3; 2007 c 147 art 2 s 10; 2008 c 361 art 3 s 5,6; 2010 c 299 s 14; 1Sp2011 c 9 art 1 s 6; 2012 c 216 art 7 s 4 -6; 2014 c 228 art 2 s 1; 2015 c 71 art 1 s 1; 2015 c 78 art 4 s 1 -4; 1Sp2019 c 9 art 2 s 9; 1Sp2021 c 7 art 8 s 4; 2023 c 70 art 13 s 3 -10; 2024 c 80 art 2 s 74; art 5 s 3-5,7; art 8 s 70; 2024 c 115 art 16 s 41; 1Sp2025 c 3 art 13 s 11,12; 2026 c 88 art 1 s 57; 2026 c 121 art 11 s 1. Text read from the Minnesota Revisor of Statutes'' full-text chapter page for the section (revisor.mn.gov/statutes) on Nov. 27, 2026. Found by the state statutes sweep (terms: tribe); AI reader''s verdict incidental: Child care license issued by a Tribe qualifies provider. Unverified.'
+review:
+  status: unverified
+  by: scripts/law/state_statutes/run.py
+  date: '2026-11-27'
+  checks:
+  - check: 'Indian law section: the sweep''s keyword pass and an AI reader''s verdict (core, incidental or none)'
+    result: agree
+    detail: 'incidental; terms: tribe'

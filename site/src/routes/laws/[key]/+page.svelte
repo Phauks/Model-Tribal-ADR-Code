@@ -2,7 +2,7 @@
 	@component
 	One federal law's, treaty's or executive order's page
 	(src/lib/server/law-pages.ts), on the site's one item layout: the law's
-	kind, date and citation At a glance (with an order's number and President,
+	kind, date and citation Key facts (with an order's number and President,
 	and the nations whose pages cite it), its box's parts as sections, the
 	accounts of its impact, where to read it, the text this site keeps of it,
 	and where this site cites it.
@@ -29,7 +29,7 @@
 	const trail = $derived(
 		browsed
 			? [{ label: browsed.section.label, href: browsed.section.href }, { label: browsed.collection.crumb, href: browsed.collection.path }, ...(browsed.place.focus ? [browsed.place.focus] : [])]
-			: [{ label: 'Library', href: '/library' }]
+			: [data.kind === 'state-statute' ? { label: 'Library', href: '/library' } : { label: 'Federal law', href: '/laws' }]
 	);
 	const crumb = $derived(browsed ? (/No\. [\w-]+/.exec(data.citation)?.[0] ?? data.name) : undefined);
 
@@ -61,7 +61,7 @@
 	<meta name="description" content="{data.name}, {data.citation}: what it did, the accounts of its impact and where to read it." />
 </svelte:head>
 
-<!-- The land a treaty ceded, drawn under At a glance (Trevor, 2026-11-26, historic maps mockup 7). With no map on the device, At a glance's Land ceded row says the same in words. -->
+<!-- The land a treaty ceded, drawn under Key facts (Trevor, 2026-11-26, historic maps mockup 7). With no map on the device, Key facts' Land ceded row says the same in words. -->
 {#snippet cededMap()}
 	{#if data.landCeded && cededMapWanted}
 		<div class="ceded-map no-print" class:ready={cededMapReady}>

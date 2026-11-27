@@ -11,6 +11,16 @@ recognition:
   verification: bulk-import
   as_of: '2026-01-30'
   locator: 91 Fed. Reg. 4104
+- type: federal
+  earliest_record: land
+  legal_basis: Exec. Order of May 29, 1873, 1 Kappler 871
+  since: '1873-05-29'
+  source: executive-order-1873-05-29-mescalero-apache-reservation
+  confidence: high
+  verification: read-in-full
+  as_of: '1873-05-29'
+  locator: 1 Kappler 871
+  note: The earliest record this site has found that shows the United States dealing with the nation as a federally recognized nation. The relationship may be older. The instrument first set aside the Fort Stanton Indian Reserve (Mescalero Apache), New Mexico.
 states:
 - state: NM
   presence: government-office

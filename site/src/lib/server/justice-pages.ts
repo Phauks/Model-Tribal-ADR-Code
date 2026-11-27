@@ -287,7 +287,7 @@ export function justicePage(key: string): JusticePage | null {
 	const appointments = appointmentsOf(person);
 	const glance: FactGroup[] = [];
 
-	sourceUses.part('At a glance');
+	sourceUses.part('Key facts');
 	for (const appointment of appointments) {
 		const details = person.appointments.find((entry) => entry.seat === appointment.seat);
 		const items: FactItem[] = [];
@@ -334,7 +334,7 @@ export function justicePage(key: string): JusticePage | null {
 
 	const lifeMarks = (text: string): CitationMark[] => {
 		const marks: CitationMark[] = [];
-		sourceUses.cite(biographySource, { section: 'At a glance', text }, marks);
+		sourceUses.cite(biographySource, { section: 'Key facts', text }, marks);
 		return marks;
 	};
 	if (person.born.date || person.born.place) {
@@ -423,14 +423,14 @@ export function presidentPage(key: string): PresidentPage | null {
 	const files = peopleFile().sources;
 	const serviceSource = justicesFile().sources.service;
 
-	sourceUses.part('At a glance');
+	sourceUses.part('Key facts');
 	const yearMarks: CitationMark[] = [];
-	sourceUses.cite(files.presidents, { section: 'At a glance', text: 'Years as President' }, yearMarks);
-	if (president.serving_since) sourceUses.cite(files.inaugurations, { section: 'At a glance', text: 'The present term' }, yearMarks);
+	sourceUses.cite(files.presidents, { section: 'Key facts', text: 'Years as President' }, yearMarks);
+	if (president.serving_since) sourceUses.cite(files.inaugurations, { section: 'Key facts', text: 'The present term' }, yearMarks);
 	const glance: FactGroup[] = [{ field: 'president', label: 'President', items: [{ text: presidentYears(president), citations: yearMarks }] }];
 	if (president.party) {
 		const marks: CitationMark[] = [];
-		sourceUses.cite(files.biography, { section: 'At a glance', text: 'Party' }, marks);
+		sourceUses.cite(files.biography, { section: 'Key facts', text: 'Party' }, marks);
 		glance.push({ field: 'party', label: 'Party', items: [{ text: president.party, citations: marks }] });
 	}
 

@@ -1,0 +1,50 @@
+key: south-dakota-codified-laws-61-6a-6
+kind: state-statute
+citation:
+  type: legislation
+  title: Billing for payments
+  title-short: S.D. Codified Laws § 61-6A-6
+  container-title: South Dakota Codified Laws
+  container-title-short: S.D. Codified Laws
+  section: 61-6A-6
+  author:
+  - literal: South Dakota Legislature
+  issued:
+    date-parts:
+    - - 2002
+  URL: https://sdlegislature.gov/Statutes/61-6A-6
+  accessed:
+    date-parts:
+    - - 2026
+      - 11
+      - 27
+original_link: https://sdlegislature.gov/Statutes/61-6A-6
+retrieved: '2026-11-27'
+archives: []
+history:
+  status: live
+  last_checked: '2026-11-27'
+state_law:
+  relevance: core
+  citation: S.D. Codified Laws § 61-6A-6 (2026)
+rights:
+  status: no-permission-needed
+  basis: government-edict
+  basis_note: 'Official state statutes are not copyrightable under the government edicts doctrine (Georgia v. Public.Resource.Org, Inc., 590 U.S. 255 (2020)). Linked, not served: state statutes stay link only.'
+  redistribution: false
+jurisdictions:
+- level: state
+  state: SD
+topics:
+- state-indian-law
+found_in:
+- 2026-11-27-state-statutes-third-batch
+notes: 'Indigo Book citation: S.D. Codified Laws § 61-6A-6 (2026). History: SL 2002, ch 244, § 6. Text read from the South Dakota Legislature''s statutes service for the section''s chapter (sdlegislature.gov/Statutes) on Nov. 27, 2026. Found by the state statutes sweep (terms: indian tribe; indian; tribal; tribe); AI reader''s verdict core: Billing tribes for unemployment benefits in lieu of contributions. Unverified.'
+review:
+  status: unverified
+  by: scripts/law/state_statutes/run.py
+  date: '2026-11-27'
+  checks:
+  - check: 'Indian law section: the sweep''s keyword pass and an AI reader''s verdict (core, incidental or none)'
+    result: agree
+    detail: 'core; terms: indian tribe; indian; tribal; tribe'
