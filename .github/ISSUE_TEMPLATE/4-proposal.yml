@@ -6,7 +6,7 @@ body:
   - type: markdown
     attributes:
       value: |
-        **Before you start:** issues here are public. If your request concerns restricted, ceremonial or community-held knowledge, or you are writing on behalf of a nation to restrict or remove material, please use the [private route](https://github.com/Phauks/Model-Tribal-ADR-Code/blob/main/docs/requests.md#until-the-website-is-live) instead.
+        **Before you start:** issues here are public. If your request concerns restricted, ceremonial or community-held knowledge, or you are writing on behalf of a nation to restrict or remove material, please use the [private route](https://github.com/Phauks/Tribal-Law-Project/blob/main/docs/requests.md#until-the-website-is-live) instead.
   - type: dropdown
     id: kind
     attributes:
@@ -35,7 +35,7 @@ body:
     attributes:
       label: Project rules
       options:
-        - label: I have read the [charter](https://github.com/Phauks/Model-Tribal-ADR-Code/blob/main/docs/charter.md) and the [style guide](https://github.com/Phauks/Model-Tribal-ADR-Code/blob/main/docs/style-guide.md).
+        - label: I have read the [charter](https://github.com/Phauks/Tribal-Law-Project/blob/main/docs/charter.md) and the [style guide](https://github.com/Phauks/Tribal-Law-Project/blob/main/docs/style-guide.md).
           required: true
         - label: This does not include restricted, ceremonial or community-held knowledge without the community's written approval.
           required: true

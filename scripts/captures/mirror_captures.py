@@ -5,7 +5,7 @@ The captures are the project's private copies of documents (constitutions,
 Tribal law, gaming compacts, nation images, hand-pulled Westlaw prints and
 others). They live in the project's working files under research/captures/
 and, after the move decided on 2026-11-22, in the private R2 bucket
-`model-tribal-adr-code-sources`, under the same paths: the object key is the
+`tribal-law-project-files`, under the same paths: the object key is the
 path below research/captures/ (for example
 `constitutions/caddo-nation-of-oklahoma/45f8a88c34c9cb61.pdf`). They are never
 committed to git (decision record 0004).
@@ -67,7 +67,7 @@ from pathlib import Path
 REPO = Path(__file__).resolve().parents[2]
 INDEX_CSV = REPO / "research" / "capture-index.csv"
 ORPHANS_CSV = REPO / "research" / "capture-orphans.csv"
-DEFAULT_BUCKET = "model-tribal-adr-code-sources"
+DEFAULT_BUCKET = "tribal-law-project-files"
 TEXT_SUFFIXES = (".txt", ".json", ".raw")
 HAND_PULLER = "Trevor Goldsmith"
 

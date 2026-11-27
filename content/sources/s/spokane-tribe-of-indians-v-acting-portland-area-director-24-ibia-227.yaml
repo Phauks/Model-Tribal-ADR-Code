@@ -33,9 +33,14 @@ rights:
   redistribution: true
 jurisdictions:
 - level: federal
+tribes:
+- spokane-tribe-of-the-spokane-reservation
 nations_in_case:
   checked: '2026-11-26'
-  named: []
+  named:
+  - nation: spokane-tribe-of-the-spokane-reservation
+    named_as: Spokane Tribe
+    role: party
 access:
   open: true
   pull_from:

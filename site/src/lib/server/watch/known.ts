@@ -10,6 +10,9 @@
  * "already have it" without a person seeing it. One whose link is known but
  * whose file is new is proposed as a new version of that record. One that
  * matches only on its normalized title is shown as "possibly the same as".
+ * A changed regulation section is matched by its citation: to the section's
+ * own record when we hold one, or else to the record of the part it belongs
+ * to, as a new version (regulationKey).
  */
 import type { MatchKind } from './watcher.ts';
 
@@ -26,6 +29,8 @@ export interface KnownSource {
 	federalRegisterNumber?: string;
 	/** U.S. Reports or another reporter, as "volume reporter page". */
 	reporter?: string;
+	/** A Code of Federal Regulations part or section, as regulationKey writes it. */
+	regulation?: string;
 	nations?: string[];
 }
 
@@ -79,6 +84,26 @@ export function normalizeFederalRegisterNumber(text: string): string | undefined
 	return match ? match[1].toUpperCase() : undefined;
 }
 
+/**
+ * A Code of Federal Regulations part or section in one form, so a record's
+ * citation and an eCFR section compare alike: "25 CFR part 522" or
+ * "25 CFR § 522.2". The part of a section is the number before its point,
+ * so the rule needs no model.
+ */
+export function regulationKey(title: string | number, part: string, section?: string | null): string {
+	const tidy = (text: string) => text.trim().toLowerCase().replace(/^§\s*/, '');
+	return section ? `${String(title).trim()} CFR § ${tidy(section)}` : `${String(title).trim()} CFR part ${tidy(part)}`;
+}
+
+/** The regulation a record's citation names ("pt. 522" or "83.1" in a volume of the Code of Federal Regulations), or undefined. */
+export function regulationOfCitation(citation: { 'container-title'?: string; volume?: string | number; section?: string }): string | undefined {
+	if (!/Code of Federal Regulations/i.test(citation['container-title'] ?? '') || !citation.volume || !citation.section) return undefined;
+	const part = /^(?:pt\.?|part)\s*(\d+[a-z]?)$/i.exec(citation.section.trim());
+	if (part) return regulationKey(citation.volume, part[1]);
+	const section = /^(?:§\s*)?(\d+[a-z]?\.\d+[a-z0-9-]*)$/i.exec(citation.section.trim());
+	return section ? regulationKey(citation.volume, section[1].split('.')[0], section[1]) : undefined;
+}
+
 /** A title reduced for loose comparison: lower case, letters and numbers only. */
 export function normalizeTitle(title: string): string {
 	return title
@@ -96,6 +121,9 @@ export interface KnownLookup {
 	byFederalRegisterNumber: Map<string, KnownSource>;
 	byChecksum: Map<string, string>;
 	byTitle: Map<string, KnownSource>;
+	byRegulation: Map<string, KnownSource>;
+	/** Each record's title by the name a match gives it (a source key or "document:<history>"). */
+	titles: Map<string, string>;
 	nationNames: { identifier: string; name: string; pattern: RegExp }[];
 }
 
@@ -108,11 +136,16 @@ export function lookupFor(index: KnownIdentifiers): KnownLookup {
 	const byFederalRegisterNumber = new Map<string, KnownSource>();
 	const byChecksum = new Map<string, string>();
 	const byTitle = new Map<string, KnownSource>();
+	const byRegulation = new Map<string, KnownSource>();
+	const titles = new Map<string, string>();
+	for (const history of index.histories) titles.set(`document:${history.identifier}`, history.title);
 	for (const source of index.sources) {
+		titles.set(source.key, source.title);
 		const link = source.link ? normalizeLink(source.link) : undefined;
 		if (link && !byLink.has(link)) byLink.set(link, source);
 		if (source.federalRegisterNumber) byFederalRegisterNumber.set(source.federalRegisterNumber, source);
 		if (source.checksum) byChecksum.set(source.checksum, source.key);
+		if (source.regulation && !byRegulation.has(source.regulation)) byRegulation.set(source.regulation, source);
 		const title = normalizeTitle(source.title);
 		if (title.length > 12 && !byTitle.has(title)) byTitle.set(title, source);
 	}
@@ -123,7 +156,7 @@ export function lookupFor(index: KnownIdentifiers): KnownLookup {
 		.flatMap((nation) => nation.names.filter((name) => name.length >= 6).map((name) => ({ identifier: nation.identifier, name })))
 		.sort((first, second) => second.name.length - first.name.length)
 		.map((entry) => ({ ...entry, pattern: new RegExp(`(^|[^A-Za-z])${escapeForPattern(entry.name).replace(/\s+/g, '\\s+')}([^A-Za-z]|$)`, 'i') }));
-	return { index, byLink, byFederalRegisterNumber, byChecksum, byTitle, nationNames };
+	return { index, byLink, byFederalRegisterNumber, byChecksum, byTitle, byRegulation, titles, nationNames };
 }
 
 export interface MatchInput {
@@ -131,6 +164,8 @@ export interface MatchInput {
 	link?: string | null;
 	federalRegisterNumber?: string | null;
 	sha256?: string | null;
+	/** For a changed regulation section: its title, part and section, such as 25, "522", "522.2". */
+	regulation?: { title: string | number; part: string; section: string } | null;
 }
 
 export interface Match {
@@ -142,6 +177,14 @@ export interface Match {
 
 /** What the dedupe step finds for an item. */
 export function matchKnown(lookup: KnownLookup, input: MatchInput): Match {
+	if (input.regulation) {
+		// The section's eCFR link stays the same when it changes, so a link match would wrongly say "already have it".
+		const { title, part, section } = input.regulation;
+		const own = lookup.byRegulation.get(regulationKey(title, part, section));
+		if (own) return { kind: 'new-version', record: own.key, reason: `${title} C.F.R. § ${section} changed; it is the record ${own.key}.` };
+		const whole = lookup.byRegulation.get(regulationKey(title, part));
+		if (whole) return { kind: 'new-version', record: whole.key, reason: `${title} C.F.R. § ${section} is in part ${part}, the record ${whole.key}, so the change is a new version of that part.` };
+	}
 	if (input.federalRegisterNumber) {
 		const number = normalizeFederalRegisterNumber(input.federalRegisterNumber);
 		const found = number ? lookup.byFederalRegisterNumber.get(number) : undefined;

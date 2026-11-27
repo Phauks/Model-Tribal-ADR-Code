@@ -6,6 +6,8 @@
 //                                        chapter in tests/fixtures/specimen
 //                                        plus everything in content/
 //   --trim <size>      build at another size without editing book.yaml
+//   --pictures <dir>   look for essays' pictures in this folder first, as
+//                      <reference>/<name>, before the website (pictures.mjs)
 //   --no-check         skip the PDF checks in tools/check_interior.py
 //
 // Output goes to pdf/output/<name>/: interior.pdf, report.json, and the
@@ -20,6 +22,7 @@ import { compileInterior, TYPST_VERSION, typstVersion } from "./compile.mjs";
 import { loadConfiguration, PRINT_DIRECTORY, REPOSITORY_DIRECTORY, trackVersion } from "./configuration.mjs";
 import { loadContent } from "./content.mjs";
 import { printReport } from "./geometry.mjs";
+import { PICTURE_HEIGHT_SHARE, pictureAddresses, pictureSite, preparePictures } from "./pictures.mjs";
 
 export const SPECIMEN_DIRECTORY = path.join(PRINT_DIRECTORY, "tests/fixtures/specimen");
 
@@ -41,7 +44,7 @@ function mergeContent(first, second) {
   return merged;
 }
 
-export function build({ specimen = false, trim, name, check = true } = {}) {
+export function build({ specimen = false, trim, name, check = true, pictureFolders = [] } = {}) {
   const started = performance.now();
   const { book, sizes } = loadConfiguration({
     trim,
@@ -54,7 +57,16 @@ export function build({ specimen = false, trim, name, check = true } = {}) {
   const directory = path.join(PRINT_DIRECTORY, "output", outputName);
   fs.mkdirSync(directory, { recursive: true });
 
-  const { body, warnings } = assembleBook({ book, content });
+  // The pictures essays show, from a local folder or the website, as grayscale print copies.
+  const folders = [...pictureFolders, ...(specimen ? [path.join(SPECIMEN_DIRECTORY, "files")] : [])];
+  const pictures = preparePictures(pictureAddresses([...content.essays, ...(content.frontMatter || []), ...(content.backMatter || [])]), {
+    site: pictureSite(book),
+    folders,
+  });
+  const { body, warnings } = assembleBook({ book, content, pictures });
+  for (const [address, picture] of pictures) {
+    if (picture.problem) warnings.push(`Picture ${address} prints as a box, without the picture: ${picture.problem}.`);
+  }
   fs.writeFileSync(path.join(directory, "main.typ"), body);
 
   const metadata = {
@@ -73,6 +85,18 @@ export function build({ specimen = false, trim, name, check = true } = {}) {
   if (!version || !version.includes(TYPST_VERSION)) {
     report.warnings.push(`Built with ${version || "an unknown Typst"}; the build is tested with Typst ${TYPST_VERSION}.`);
   }
+  // Lulu: "Images should be 300 ppi resolution" (PDF Creation Settings, Interior File Specifications & Layout).
+  for (const [address, picture] of pictures) {
+    if (picture.problem) continue;
+    const printedWidth = Math.min(layout.text.width, layout.text.height * PICTURE_HEIGHT_SHARE * (picture.width / picture.height));
+    const ppi = Math.round(picture.width / printedWidth);
+    picture.ppi = ppi;
+    if (ppi < 300) report.warnings.push(`Picture ${address} prints at about ${ppi} ppi at this size; Lulu asks for 300 ppi, so it may look soft.`);
+  }
+  // The build record names each picture's original file by its SHA-256, so an edition can be rebuilt exactly.
+  report.pictures = [...pictures].map(([address, picture]) =>
+    picture.problem ? { address, printed: false, problem: picture.problem } : { address, printed: true, sha256: picture.sha256, from: picture.from, pixels: [picture.width, picture.height], ppi: picture.ppi },
+  );
   report.build_seconds = Math.round(performance.now() - started) / 1000;
 
   if (check) {
@@ -98,9 +122,15 @@ function main() {
       specimen: { type: "boolean", default: false },
       trim: { type: "string" },
       "no-check": { type: "boolean", default: false },
+      pictures: { type: "string", multiple: true, default: [] },
     },
   });
-  const { directory, report } = build({ specimen: values.specimen, trim: values.trim, check: !values["no-check"] });
+  const { directory, report } = build({
+    specimen: values.specimen,
+    trim: values.trim,
+    check: !values["no-check"],
+    pictureFolders: values.pictures.map((folder) => path.resolve(folder)),
+  });
   const relative = path.relative(process.cwd(), directory);
   console.log(`${relative}/interior.pdf`);
   console.log(

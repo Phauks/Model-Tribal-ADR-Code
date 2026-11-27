@@ -23,7 +23,7 @@
 	<meta name="description" content="Stories about disputes and peace tagged with the {what.toLocaleLowerCase('en-US')} “{tag.name}”." />
 </svelte:head>
 
-<Breadcrumbs trail={[{ label: 'Stories', href: '/stories' }]} />
+<Breadcrumbs trail={[{ label: 'Stories', href: '/stories' }]} current="{what}: {title}" />
 
 <div class="reading">
 	<h1><span class="muted tag-kind">{what}:</span> {title}</h1>

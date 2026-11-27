@@ -3,16 +3,27 @@
  * "Where the models run"). The provider is a setting on the watch Worker,
  * WATCH_TRIAGE_PROVIDER, swapped like the scanner's SCAN_PROVIDER:
  *
- * - "none" (the default): rules only. The middle band goes straight to a
- *   person on the review page.
+ * - "workers-ai" (the default): the Worker asks a model that Cloudflare
+ *   runs itself, through its Workers AI binding, billed on the account's
+ *   Workers Paid plan. Nothing to set up: no gateway, no credits, no key and
+ *   no secret. Trevor asked for this on Nov. 26, 2026, after finding the AI
+ *   Gateway steps hard to follow. The model is Inkling 2 Small
+ *   (@cf/thinkingmachines/inkling-2-small), the most capable open model on
+ *   Workers AI when chosen: added Nov. 12, 2026, with function calling, zero
+ *   data retention, and $0.30 a million input tokens and $1.00 a million
+ *   output tokens (https://developers.cloudflare.com/workers-ai/models/inkling-2-small/,
+ *   https://developers.cloudflare.com/changelog/post/2026-11-12-inkling-2-small-workers-ai/).
+ *   It reads the middle band with low reasoning effort and the hard cases
+ *   and the weekly sample check with high effort.
  * - "ai-gateway": the Worker asks Claude through Cloudflare AI Gateway with
- *   its AI binding, billed to the account's Unified Billing credits. No
- *   Anthropic key and no secret on the Worker. Trevor chose this on
- *   Nov. 26, 2026. Claude Haiku 5.5 reads the middle band; Claude Opus 5.5
- *   takes the hard cases and checks a sample of Haiku's answers each week.
+ *   the same binding, billed to the account's Unified Billing credits.
+ *   Claude Haiku 5.5 reads the middle band; Claude Opus 5.5 takes the hard
+ *   cases and checks a sample of Haiku's answers each week. Kept as an
+ *   option; it needs a gateway named source-watch and loaded credits.
+ * - "none": rules only. The middle band goes straight to a person on the
+ *   review page.
  * - "nightly-task": option A of the design, a nightly scheduled task. Not
- *   built, since Trevor chose AI Gateway; the setting is kept so the choice
- *   stays swappable.
+ *   built; the setting is kept so the choice stays swappable.
  *
  * What a model may read: an item's title, the summary its source published,
  * its facts (agency, document type, C.F.R. parts) and the title of a record
@@ -26,12 +37,17 @@
 import { costMicrodollars, type TokenUse } from './model-prices.ts';
 import type { Feed, ProposedAction, SensitivityFlag } from './watcher.ts';
 
-export const triageProviderNames = ['none', 'ai-gateway', 'nightly-task'] as const;
+export const triageProviderNames = ['workers-ai', 'ai-gateway', 'none', 'nightly-task'] as const;
 export type TriageProviderName = (typeof triageProviderNames)[number];
 
+export const defaultTriageProvider: TriageProviderName = 'workers-ai';
 export const defaultGateway = 'source-watch';
-export const defaultCheapModel = 'anthropic/claude-haiku-5.5';
-export const defaultTopModel = 'anthropic/claude-opus-5.5';
+
+/** Each provider's models when WATCH_CHEAP_MODEL or WATCH_TOP_MODEL is left empty. */
+export const defaultModels = {
+	'workers-ai': { cheap: '@cf/thinkingmachines/inkling-2-small', top: '@cf/thinkingmachines/inkling-2-small' },
+	'ai-gateway': { cheap: 'anthropic/claude-haiku-5.5', top: 'anthropic/claude-opus-5.5' }
+} as const;
 
 /** What a model is shown about one item. */
 export interface TriageQuestion {
@@ -70,6 +86,8 @@ export interface ModelCall {
 
 export interface TriageProvider {
 	name: TriageProviderName;
+	/** The models it asks, for the spend of a call that gave no answer. */
+	models?: { cheap: string; top: string };
 	/** Whether it is set up enough to be asked; when not, why. */
 	ready: true | { problem: string };
 	/** The cheap model's answer. */
@@ -83,18 +101,26 @@ export interface TriageSettings {
 	WATCH_GATEWAY?: string;
 	WATCH_CHEAP_MODEL?: string;
 	WATCH_TOP_MODEL?: string;
-	/** The Worker's AI binding (wrangler.jsonc "ai"). */
-	modelGateway?: ModelBinding;
+	/** The Worker's AI binding (wrangler.jsonc "ai"), for Workers AI and for AI Gateway. */
+	models?: ModelBinding;
 }
 
-/** The part of the AI binding the watch uses: env.AI.run(model, input, { gateway: { id } }). */
+/** The part of the AI binding the watch uses: env.AI.run(model, input), with { gateway: { id } } for AI Gateway. */
 export interface ModelBinding {
-	run(model: string, input: Record<string, unknown>, options: { gateway: { id: string } }): Promise<unknown>;
+	run(model: string, input: Record<string, unknown>, options?: { gateway: { id: string } }): Promise<unknown>;
 }
 
+/** The provider the settings name; an empty or unknown setting means the default. */
 export function providerName(settings: TriageSettings): TriageProviderName {
-	const chosen = (settings.WATCH_TRIAGE_PROVIDER ?? 'none').trim().toLowerCase();
-	return (triageProviderNames as readonly string[]).includes(chosen) ? (chosen as TriageProviderName) : 'none';
+	const chosen = (settings.WATCH_TRIAGE_PROVIDER ?? '').trim().toLowerCase();
+	return (triageProviderNames as readonly string[]).includes(chosen) ? (chosen as TriageProviderName) : defaultTriageProvider;
+}
+
+/** The models the chosen provider asks, or null when it asks none. */
+export function chosenModels(settings: TriageSettings): { cheap: string; top: string } | null {
+	const name = providerName(settings);
+	if (name !== 'workers-ai' && name !== 'ai-gateway') return null;
+	return { cheap: settings.WATCH_CHEAP_MODEL?.trim() || defaultModels[name].cheap, top: settings.WATCH_TOP_MODEL?.trim() || defaultModels[name].top };
 }
 
 const unanswerable = (problem: string) => async (): Promise<ModelCall> => {
@@ -104,19 +130,18 @@ const unanswerable = (problem: string) => async (): Promise<ModelCall> => {
 /** The provider the settings name. A provider that is named but not ready says why, and the middle band goes to people. */
 export function chooseTriageProvider(settings: TriageSettings): TriageProvider {
 	const name = providerName(settings);
-	if (name === 'ai-gateway') {
-		if (!settings.modelGateway) {
-			const problem = 'The watch Worker has no AI binding named modelGateway (site/watch/wrangler.jsonc).';
+	if (name === 'workers-ai' || name === 'ai-gateway') {
+		if (!settings.models) {
+			const problem = 'The watch Worker has no AI binding named models (site/watch/wrangler.jsonc).';
 			return { name, ready: { problem }, classify: unanswerable(problem), decideHard: unanswerable(problem) };
 		}
-		return gatewayProvider(settings.modelGateway, {
-			gateway: settings.WATCH_GATEWAY?.trim() || defaultGateway,
-			cheapModel: settings.WATCH_CHEAP_MODEL?.trim() || defaultCheapModel,
-			topModel: settings.WATCH_TOP_MODEL?.trim() || defaultTopModel
-		});
+		const chosen = chosenModels(settings) ?? defaultModels[name];
+		const models = { cheapModel: chosen.cheap, topModel: chosen.top };
+		if (name === 'workers-ai') return workersProvider(settings.models, models);
+		return gatewayProvider(settings.models, { gateway: settings.WATCH_GATEWAY?.trim() || defaultGateway, ...models });
 	}
 	if (name === 'nightly-task') {
-		const problem = 'The nightly-task provider is not built; Trevor chose AI Gateway on Nov. 26, 2026. Set WATCH_TRIAGE_PROVIDER to ai-gateway or none.';
+		const problem = 'The nightly-task provider is not built. Set WATCH_TRIAGE_PROVIDER to workers-ai, ai-gateway or none.';
 		return { name, ready: { problem }, classify: unanswerable(problem), decideHard: unanswerable(problem) };
 	}
 	const problem = 'Triage by model is off (WATCH_TRIAGE_PROVIDER is none).';
@@ -132,7 +157,8 @@ const collectionsList = [
 	'tribal-codes: a nation’s codes, ordinances and court rules',
 	'intergovernmental-agreements: compacts and agreements between a nation and a state or the United States',
 	'federal-statutes',
-	'federal-regulations',
+	'federal-regulations: a regulation as a whole, or a part of the Code of Federal Regulations',
+	'regulation-sections: one section of Title 25 of the Code of Federal Regulations, such as 25 C.F.R. § 522.2',
 	'executive-orders',
 	'federal-register-notices: other Federal Register notices about Native nations’ law',
 	'supreme-court-cases',
@@ -154,9 +180,9 @@ Answer only with the classify tool. Rules:
 - collection is one identifier from this list:
 ${collectionsList.map((line) => `  - ${line}`).join('\n')}
 - nations lists the nations the item names, exactly as written in it. Do not guess nations it does not name.
-- proposed is "add" for a new item, "new-version" if it amends, extends or replaces a compact, code or constitution, "note" for a proposed rule or an item worth noting but not holding, or "not-relevant".
+- proposed is "add" for a new item, "new-version" if it amends, extends or replaces a compact, code, constitution or regulation (a changed section of a regulation part is a new version of that part), "note" for a proposed rule or an item worth noting but not holding, or "not-relevant".
 - hard is true if deciding needs a careful legal reading: whether it amends, extends or replaces a specific compact or code and which clauses changed, or whether two sources disagree.
-- sensitivity lists "child-or-family-case" if anything suggests a juvenile, child welfare, Indian Child Welfare Act, adoption, guardianship or custody matter, and "protection-order" for a protection or restraining order. Otherwise an empty list.
+- sensitivity is about particular people. List "child-or-family-case" when the item is itself a case, decision or order about a particular child or family: a juvenile, child welfare, Indian Child Welfare Act, adoption, guardianship or custody matter. List "protection-order" when the item is itself a protection or restraining order, or a case about one. A law, regulation, proposed rule, form, program description, court page or list of a code’s chapters that only names these kinds of matters is not about a particular person: do not flag it. If the item names or describes a particular child, parent or family, flag it even when it is also a rule or a page. Otherwise an empty list.
 - confidence is 0 to 1.
 - reason is one or two plain sentences, under 300 characters. Never quote more than a few words, and never write a summary of the document for publication.`;
 
@@ -172,7 +198,8 @@ const answerSchema = {
 		confidence: { type: 'number' },
 		reason: { type: 'string' }
 	},
-	required: ['relevant', 'collection', 'nations', 'proposed', 'hard', 'sensitivity', 'confidence', 'reason']
+	required: ['relevant', 'collection', 'nations', 'proposed', 'hard', 'sensitivity', 'confidence', 'reason'],
+	additionalProperties: false
 } as const;
 
 export function questionText(question: TriageQuestion, earlier: TriageAnswer | null = null): string {
@@ -190,18 +217,93 @@ export function questionText(question: TriageQuestion, earlier: TriageAnswer | n
 	return lines.filter(Boolean).join('\n');
 }
 
+/**
+ * A model call that gave no usable answer: nothing, no classify call, or an
+ * answer cut off at the token limit. It carries the tokens the call still
+ * used, so the spend shown stays true. The provider asks once more (with
+ * twice the room when the answer was cut off); a second miss sends the item
+ * to a person (./model-triage.ts). Inkling 2 Small at high reasoning gave no
+ * answer on about one call in eight in the Nov. 26, 2026 comparison, nearly
+ * always at the token limit (research/analyses/2026-11-26-workers-ai-vs-claude-triage.md,
+ * section 7).
+ */
+export class NoAnswer extends Error {
+	constructor(
+		readonly why: 'empty' | 'cut-off',
+		readonly use: TokenUse
+	) {
+		super(why === 'cut-off' ? 'The model’s answer was cut off at its token limit.' : 'The model did not answer with the classify tool.');
+	}
+}
+
+const noUse: TokenUse = { inputTokens: 0, outputTokens: 0, cacheReadTokens: 0, cacheWriteTokens: 0 };
+
+function addUse(first: TokenUse, second: TokenUse): TokenUse {
+	return {
+		inputTokens: first.inputTokens + second.inputTokens,
+		outputTokens: first.outputTokens + second.outputTokens,
+		cacheReadTokens: first.cacheReadTokens + second.cacheReadTokens,
+		cacheWriteTokens: first.cacheWriteTokens + second.cacheWriteTokens
+	};
+}
+
 /** Reads the classify tool's input out of an Anthropic Messages answer. */
 export function readAnswer(message: unknown): { answer: TriageAnswer; use: TokenUse } {
 	const body = message as {
 		content?: { type: string; name?: string; input?: unknown }[];
+		stop_reason?: string;
 		usage?: { input_tokens?: number; output_tokens?: number; cache_read_input_tokens?: number; cache_creation_input_tokens?: number };
 	};
+	const usage = body.usage ?? {};
+	const use = {
+		inputTokens: usage.input_tokens ?? 0,
+		outputTokens: usage.output_tokens ?? 0,
+		cacheReadTokens: usage.cache_read_input_tokens ?? 0,
+		cacheWriteTokens: usage.cache_creation_input_tokens ?? 0
+	};
+	// A tool call cut off at the limit may hold half its input, so it is not trusted.
+	if (body.stop_reason === 'max_tokens') throw new NoAnswer('cut-off', use);
 	const call = body.content?.find((block) => block.type === 'tool_use' && block.name === 'classify');
-	if (!call || typeof call.input !== 'object' || call.input === null) throw new Error('The model did not answer with the classify tool.');
-	const input = call.input as Partial<TriageAnswer>;
+	if (!call || typeof call.input !== 'object' || call.input === null) throw new NoAnswer('empty', use);
+	return { answer: tidyAnswer(call.input as Partial<TriageAnswer>), use };
+}
+
+/**
+ * Reads the classify call out of a Workers AI answer: the Chat Completions
+ * shape (choices[0].message.tool_calls, with arguments as a JSON string) the
+ * current models give, or the older shape with tool_calls at the top.
+ */
+export function readWorkersAnswer(message: unknown): { answer: TriageAnswer; use: TokenUse } {
+	type Call = { name?: string; arguments?: unknown; function?: { name?: string; arguments?: unknown } };
+	const body = message as {
+		choices?: { message?: { tool_calls?: Call[] }; finish_reason?: string }[];
+		tool_calls?: Call[];
+		usage?: { prompt_tokens?: number; completion_tokens?: number; prompt_tokens_details?: { cached_tokens?: number } };
+	};
+	const usage = body.usage ?? {};
+	const cached = usage.prompt_tokens_details?.cached_tokens ?? 0;
+	// Chat Completions counts cached tokens inside prompt_tokens.
+	const use = { inputTokens: Math.max(0, (usage.prompt_tokens ?? 0) - cached), outputTokens: usage.completion_tokens ?? 0, cacheReadTokens: cached, cacheWriteTokens: 0 };
+	if (body.choices?.[0]?.finish_reason === 'length') throw new NoAnswer('cut-off', use);
+	const calls = body.choices?.[0]?.message?.tool_calls ?? body.tool_calls ?? [];
+	const call = calls.find((each) => (each.function?.name ?? each.name) === 'classify');
+	let input = call?.function?.arguments ?? call?.arguments;
+	if (typeof input === 'string') {
+		try {
+			input = JSON.parse(input);
+		} catch {
+			input = null;
+		}
+	}
+	if (!input || typeof input !== 'object') throw new NoAnswer('empty', use);
+	return { answer: tidyAnswer(input as Partial<TriageAnswer>), use };
+}
+
+/** Keeps only the answer's known fields, in range. */
+function tidyAnswer(input: Partial<TriageAnswer>): TriageAnswer {
 	const sensitivity = (Array.isArray(input.sensitivity) ? input.sensitivity : []).filter((flag): flag is SensitivityFlag => flag === 'child-or-family-case' || flag === 'protection-order');
 	const proposed = (['add', 'new-version', 'note', 'not-relevant'] as const).find((value) => value === input.proposed) ?? 'note';
-	const answer: TriageAnswer = {
+	return {
 		relevant: input.relevant === true,
 		collection: typeof input.collection === 'string' ? input.collection : 'none',
 		nations: Array.isArray(input.nations) ? input.nations.filter((name): name is string => typeof name === 'string').slice(0, 20) : [],
@@ -211,38 +313,104 @@ export function readAnswer(message: unknown): { answer: TriageAnswer; use: Token
 		confidence: typeof input.confidence === 'number' ? Math.min(1, Math.max(0, input.confidence)) : 0,
 		reason: typeof input.reason === 'string' ? input.reason.slice(0, 400) : ''
 	};
-	const usage = body.usage ?? {};
-	return {
-		answer,
-		use: {
-			inputTokens: usage.input_tokens ?? 0,
-			outputTokens: usage.output_tokens ?? 0,
-			cacheReadTokens: usage.cache_read_input_tokens ?? 0,
-			cacheWriteTokens: usage.cache_creation_input_tokens ?? 0
-		}
-	};
 }
 
-function messagesInput(question: TriageQuestion, earlier: TriageAnswer | null, maxTokens: number): Record<string, unknown> {
+/**
+ * The Anthropic Messages request. Claude Opus 5.5 rejects a forced tool
+ * (tool_choice "tool" or "any") with a 400, and its thinking cannot be turned
+ * off; Claude Haiku 5.5 takes a forced tool only with thinking off. So the
+ * tool is offered with tool_choice "auto" and strict: true, which keeps the
+ * call to the schema, and the instructions say to answer only with it. Both
+ * models think, and thinking counts toward max_tokens, so the limits are well
+ * above the answer's size. The effort is set, since both default to medium.
+ */
+function messagesInput(question: TriageQuestion, earlier: TriageAnswer | null, maxTokens: number, effort: 'low' | 'high'): Record<string, unknown> {
 	return {
 		max_tokens: maxTokens,
 		system: [{ type: 'text', text: triageInstructions, cache_control: { type: 'ephemeral' } }],
 		messages: [{ role: 'user', content: questionText(question, earlier) }],
-		tools: [{ name: 'classify', description: 'Record where this item belongs.', input_schema: answerSchema }],
-		tool_choice: { type: 'tool', name: 'classify' }
+		tools: [{ name: 'classify', description: 'Record where this item belongs.', input_schema: answerSchema, strict: true }],
+		tool_choice: { type: 'auto' },
+		output_config: { effort }
+	};
+}
+
+function workersInput(question: TriageQuestion, earlier: TriageAnswer | null, maxTokens: number, effort: 'low' | 'high'): Record<string, unknown> {
+	return {
+		messages: [
+			{ role: 'system', content: triageInstructions },
+			{ role: 'user', content: questionText(question, earlier) }
+		],
+		tools: [{ type: 'function', function: { name: 'classify', description: 'Record where this item belongs.', parameters: answerSchema } }],
+		tool_choice: 'required',
+		reasoning_effort: effort,
+		// Reasoning counts toward the limit, so it is well above the answer's size.
+		max_completion_tokens: maxTokens
+	};
+}
+
+/** Whether a failed call was "too many requests" (HTTP 429, or Workers AI's capacity error). */
+export function tooManyRequests(problem: unknown): boolean {
+	const status = (problem as { status?: unknown } | null)?.status;
+	if (status === 429) return true;
+	const text = problem instanceof Error ? problem.message : String(problem);
+	return /\b429\b|too many requests|rate limit|capacity temporarily exceeded/i.test(text);
+}
+
+/** How long to wait before asking again after "too many requests". */
+export const waitAfterTooMany = 2000;
+
+const pause = (milliseconds: number) => new Promise<void>((resolve) => setTimeout(resolve, milliseconds));
+
+/**
+ * One model call, asked again once when it fails in a way that asking again
+ * fixes: "too many requests" after a short wait (every one in the Nov. 26,
+ * 2026 comparison went through on the retry), and an empty or cut-off answer
+ * (./NoAnswer above). A second miss is thrown for ./model-triage.ts to
+ * handle, with the tokens both calls used.
+ */
+export async function askWithRetry(read: (maxTokens: number) => Promise<{ answer: TriageAnswer; use: TokenUse }>, model: string, maxTokens: number, wait: (milliseconds: number) => Promise<void> = pause): Promise<ModelCall> {
+	let used = noUse;
+	let limit = maxTokens;
+	for (let attempt = 1; ; attempt += 1) {
+		try {
+			const { answer, use } = await read(limit);
+			const total = addUse(used, use);
+			return { answer, model, use: total, costMicrodollars: costMicrodollars(model, total) };
+		} catch (problem) {
+			if (attempt >= 2) throw problem instanceof NoAnswer ? new NoAnswer(problem.why, addUse(used, problem.use)) : problem;
+			if (problem instanceof NoAnswer) {
+				used = addUse(used, problem.use);
+				if (problem.why === 'cut-off') limit *= 2;
+			} else if (tooManyRequests(problem)) {
+				await wait(waitAfterTooMany);
+			} else {
+				throw problem;
+			}
+		}
+	}
+}
+
+function workersProvider(binding: ModelBinding, options: { cheapModel: string; topModel: string }): TriageProvider {
+	const ask = (model: string, question: TriageQuestion, earlier: TriageAnswer | null, maxTokens: number, effort: 'low' | 'high') =>
+		askWithRetry(async (limit) => readWorkersAnswer(await binding.run(model, workersInput(question, earlier, limit, effort))), model, maxTokens);
+	return {
+		name: 'workers-ai',
+		models: { cheap: options.cheapModel, top: options.topModel },
+		ready: true,
+		classify: (question) => ask(options.cheapModel, question, null, 4000, 'low'),
+		decideHard: (question, earlier) => ask(options.topModel, question, earlier, 16000, 'high')
 	};
 }
 
 function gatewayProvider(binding: ModelBinding, options: { gateway: string; cheapModel: string; topModel: string }): TriageProvider {
-	const ask = async (model: string, question: TriageQuestion, earlier: TriageAnswer | null, maxTokens: number): Promise<ModelCall> => {
-		const message = await binding.run(model, messagesInput(question, earlier, maxTokens), { gateway: { id: options.gateway } });
-		const { answer, use } = readAnswer(message);
-		return { answer, model, use, costMicrodollars: costMicrodollars(model, use) };
-	};
+	const ask = (model: string, question: TriageQuestion, earlier: TriageAnswer | null, maxTokens: number, effort: 'low' | 'high') =>
+		askWithRetry(async (limit) => readAnswer(await binding.run(model, messagesInput(question, earlier, limit, effort), { gateway: { id: options.gateway } })), model, maxTokens);
 	return {
 		name: 'ai-gateway',
+		models: { cheap: options.cheapModel, top: options.topModel },
 		ready: true,
-		classify: (question) => ask(options.cheapModel, question, null, 600),
-		decideHard: (question, earlier) => ask(options.topModel, question, earlier, 1200)
+		classify: (question) => ask(options.cheapModel, question, null, 4000, 'low'),
+		decideHard: (question, earlier) => ask(options.topModel, question, earlier, 16000, 'high')
 	};
 }

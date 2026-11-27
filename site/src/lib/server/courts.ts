@@ -191,6 +191,7 @@ export interface CourtPage {
   /** Oldest first; for a court with more than shownCaseCount, only its newest that many. */
   cases: CourtCase[];
   caseCount: number;
+  caseYears?: { from: string; to: string };
   /** Where every case is listed, when the page lists only the newest. */
   caseList?: string;
   glance: FactGroup[];
@@ -206,13 +207,6 @@ function yearSpan(dates: string[]): { from: string; to: string } | undefined {
     .filter(Boolean)
     .sort();
   return years.length > 0 ? { from: years[0], to: years.at(-1)! } : undefined;
-}
-
-export function spanText(
-  span: { from: string; to: string } | undefined,
-): string {
-  if (!span) return "";
-  return span.from === span.to ? span.from : `${span.from}–${span.to}`;
 }
 
 export function courtPage(key: string): CourtPage {
@@ -232,12 +226,10 @@ export function courtPage(key: string): CourtPage {
       uses.cite(opinionsSourceKey, { section, text }, marks);
     return marks;
   };
-  if (court.kind !== "Tribal court" || court.nations.length === 0)
-    glance.push({
-      field: "kind",
-      label: "Kind",
-      items: [{ text: court.kind }],
-    });
+  // The page's lead already says the court's kind, how many opinions and
+  // cases name it and their years (routes/courts/[court]/+page.svelte), so
+  // At a glance keeps only what it does not: the nation, with its source, and
+  // the reporters (Trevor chose this on Nov. 26, 2026; src/lib/info-page.ts).
   if (court.nations.length > 0)
     glance.push({
       field: "nation",
@@ -249,16 +241,6 @@ export function courtPage(key: string): CourtPage {
       })),
     });
   if (court.opinions.length > 0) {
-    glance.push({
-      field: "opinions",
-      label: "Opinions",
-      items: [
-        {
-          text: `${court.opinions.length.toLocaleString("en-US")}, ${spanText(opinionYears)}`,
-          citations: cite("Opinions", "Opinions"),
-        },
-      ],
-    });
     const reporters = [
       ...new Set(
         court.opinions
@@ -276,17 +258,6 @@ export function courtPage(key: string): CourtPage {
         })),
       });
   }
-  if (court.cases.length > 0)
-    glance.push({
-      field: "cases",
-      label: "Cases",
-      items: [
-        {
-          text: `${court.cases.length.toLocaleString("en-US")}, ${spanText(caseYears)}`,
-        },
-      ],
-    });
-
   // The nation pages that name the court: in their court opinions, and in the cases each lists.
   const mentions: CourtMention[] = [];
   const opinionLists = court.nations.map((nation) => ({
@@ -354,6 +325,7 @@ export function courtPage(key: string): CourtPage {
     opinionLists,
     cases: caseList ? court.cases.slice(-shownCaseCount) : court.cases,
     caseCount: court.cases.length,
+    caseYears,
     caseList,
     glance,
     mentions,

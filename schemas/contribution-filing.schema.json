@@ -1,6 +1,6 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "$id": "https://github.com/Phauks/Model-Tribal-ADR-Code/schemas/contribution-filing.schema.json",
+  "$id": "https://github.com/Phauks/Tribal-Law-Project/schemas/contribution-filing.schema.json",
   "title": "Contribution filing",
   "description": "The record kept with every contribution that reached the project from a person rather than from a published source: what was received, which forms were signed and in what version, what the contributor permitted, and every step since. Filings hold personal details and unpublished material, so they live in the website's private database and file bucket, never in git; this schema fixes their shape and their export format (docs/contributions.md; decision record 0020). Public records carry only the filing id and the public-safe fields in common.schema.json.",
   "type": "object",

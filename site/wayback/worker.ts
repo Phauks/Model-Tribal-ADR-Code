@@ -40,6 +40,8 @@ interface Entry {
 	problem?: string;
 	failed?: string;
 	tries?: number;
+	/** When the Archive's capture index was last asked for an older capture after a failed save. */
+	lookedUp?: string;
 }
 
 // The lead author's marks on links the Worker could not save, set on the
@@ -64,10 +66,12 @@ interface Progress {
 	requestsByMinute?: Record<string, number>;
 	/** When the Archive last asked us to stop for a while, and why. */
 	pausedUntil?: string;
+	/** The last RETRY_ROUND this progress has taken. */
+	retryRound?: number;
 	pauseReason?: string;
 }
 
-const QUEUE_LINK = 'https://raw.githubusercontent.com/Phauks/Model-Tribal-ADR-Code/main/research/wayback-queue.tsv';
+const QUEUE_LINK = 'https://raw.githubusercontent.com/Phauks/Tribal-Law-Project/main/research/wayback-queue.tsv';
 const PROGRESS_OBJECT = 'wayback/progress.json';
 const MARKS_OBJECT = 'wayback/marks.json';
 const SAVE_SERVICE = 'https://web.archive.org/save';
@@ -88,6 +92,19 @@ const HOURS_BEFORE_SAVING_AGAIN = 24;
 const MOST_TRIES = 3;
 // An existing capture this recent is returned instead of a new one.
 const REUSE_WITHIN = '30d';
+// When a save fails, the newest capture the Archive already holds is taken instead: of any age on
+// these hosts, whose documents do not change (as scripts/find_archived_copies.py does), and from the
+// last year elsewhere (as the archive workflow's --reuse-days 365 does). The Library of Congress often
+// answers Save Page Now with "not found" or never finishes, though its United States Reports pages exist.
+const FIXED_DOCUMENT_HOSTS = ['federalregister.gov', 'govinfo.gov', 'loc.gov', 'treaties.okstate.edu'];
+const OLDER_CAPTURE_DAYS = 365;
+const LOOKUPS_EACH_MINUTE = 10;
+// Hosts that serve a site's own uploaded files (Squarespace, Wix, Divio, Revize, Dropbox, Higher Logic,
+// CivicLive): a save that ends on one of them captured the same document, not a login wall.
+const FILE_HOSTS = ['squarespace.com', 'filesusr.com', 'divio-media.com', 'revize.com', 'dropboxusercontent.com', 'higherlogicdownload.s3.amazonaws.com', 'civiclive.com'];
+// Raising this tries once more every link given up on (round 1: the older-capture lookup and file
+// hosts above, 2026-11-27).
+const RETRY_ROUND = 1;
 // Each call to the Archive gives up after this long, so one slow answer cannot hold up the minute.
 const REQUEST_TIMEOUT_MILLISECONDS = 20_000;
 const RECENT_ROWS = 25;
@@ -99,6 +116,25 @@ function hostOf(link: string): string {
 	} catch {
 		return '';
 	}
+}
+
+function onHosts(host: string, hosts: string[]): boolean {
+	return hosts.some((known) => host === known || host.endsWith(`.${known}`));
+}
+
+// The registered name of a host: legmt.gov for mca.legmt.gov, aic.gov.au for www.aic.gov.au.
+function siteOf(host: string): string {
+	const labels = host.split('.');
+	const countryShared = labels.length > 2 && /^[a-z]{2}$/.test(labels.at(-1)!) && /^(gov|com|org|edu|net|co|ac)$/.test(labels.at(-2)!);
+	return labels.slice(countryShared ? -3 : -2).join('.');
+}
+
+// Whether a save of `link` that ended at `captured` captured the same document: the same site, or one
+// of the hosts that serve a site's uploaded files.
+function sameDocument(link: string, captured: string): boolean {
+	const from = hostOf(link);
+	const to = hostOf(captured);
+	return from === to || siteOf(from) === siteOf(to) || onHosts(to, FILE_HOSTS);
 }
 
 function hoursSince(stamp: string | undefined, now: Date): number {
@@ -166,8 +202,9 @@ function authorization(env: Env): string {
 }
 
 // The newest capture of a link that the Archive answered with a page (not a 4xx or 5xx), or null.
-async function latestCapture(link: string): Promise<Capture | null> {
-	const query = new URLSearchParams({ url: link, output: 'json', fl: 'timestamp,original', filter: '!statuscode:[45]..', limit: '-1' });
+// With onlyPages, only captures the Archive answered with 200, so a capture of a redirect is never taken.
+async function latestCapture(link: string, onlyPages = false): Promise<Capture | null> {
+	const query = new URLSearchParams({ url: link, output: 'json', fl: 'timestamp,original', filter: onlyPages ? 'statuscode:200' : '!statuscode:[45]..', limit: '-1' });
 	const response = await fetch(`${CAPTURE_INDEX}?${query}`, {
 		headers: { Accept: 'application/json', 'User-Agent': USER_AGENT },
 		signal: AbortSignal.timeout(REQUEST_TIMEOUT_MILLISECONDS)
@@ -210,11 +247,30 @@ async function takeExistingCapture(entry: Entry, answer: string, now: Date): Pro
 	entry.tries = Math.max((entry.tries ?? 1) - 1, 0);
 }
 
+// For a link whose save failed: takes the newest capture the Archive already holds, if it is recent
+// enough (FIXED_DOCUMENT_HOSTS, OLDER_CAPTURE_DAYS). Asked once for each failure run.
+async function takeOlderCapture(entry: Entry, now: Date): Promise<boolean> {
+	entry.lookedUp = now.toISOString();
+	let capture: Capture | null = null;
+	try {
+		capture = await latestCapture(entry.link, true);
+	} catch {
+		return false;
+	}
+	if (!capture) return false;
+	const ageInDays = (now.getTime() - Date.parse(capture.captured)) / 86_400_000;
+	if (!onHosts(hostOf(entry.link), FIXED_DOCUMENT_HOSTS) && ageInDays > OLDER_CAPTURE_DAYS) return false;
+	Object.assign(entry, { capture, capturedAt: now.toISOString(), job: undefined, asked: undefined, problem: undefined, failed: undefined });
+	return true;
+}
+
 function markFailed(entry: Entry, problem: string, now: Date): void {
 	entry.job = undefined;
 	entry.asked = undefined;
 	entry.failed = now.toISOString();
 	entry.problem = problem;
+	// Each failure is followed by one look for an older capture (takeOlderCapture).
+	entry.lookedUp = undefined;
 }
 
 async function checkJob(entry: Entry, signIn: string, now: Date): Promise<void> {
@@ -232,7 +288,7 @@ async function checkJob(entry: Entry, signIn: string, now: Date): Promise<void> 
 	};
 	if (answer.status === 'success' && answer.timestamp) {
 		const captured = answer.original_url || entry.link;
-		if (hostOf(captured) !== hostOf(entry.link)) {
+		if (!sameDocument(entry.link, captured)) {
 			// A login wall or a signed download link: a person checks it.
 			markFailed(entry, `the page redirected to ${hostOf(captured)}; check it by hand`, now);
 			entry.tries = MOST_TRIES;
@@ -329,6 +385,14 @@ async function work(env: Env): Promise<void> {
 			}
 		}
 		const marks = await readMarks(env);
+		if ((progress.retryRound ?? 0) < RETRY_ROUND) {
+			// Every link given up on gets its tries back; each is first looked up for an older capture.
+			for (const entry of Object.values(progress.records)) {
+				if (entry.capture || entry.job || (entry.tries ?? 0) < MOST_TRIES) continue;
+				Object.assign(entry, { tries: 0, lookedUp: undefined, failed: entry.failed ?? now.toISOString() });
+			}
+			progress.retryRound = RETRY_ROUND;
+		}
 		const signIn = authorization(env);
 
 		let checks = 0;
@@ -344,12 +408,20 @@ async function work(env: Env): Promise<void> {
 
 		if (hoursSince(progress.dailyLimitReached, now) >= 1) {
 			let saves = 0;
+			let lookups = 0;
 			for (const [key, link] of progress.queue) {
 				if (saves >= SAVES_EACH_MINUTE) break;
 				if (marks[key]) continue;
 				const entry = (progress.records[key] ??= { link });
-				if (entry.link !== link) Object.assign(entry, { link, tries: 0, failed: undefined, problem: undefined, capture: undefined });
-				if (entry.capture || entry.job || (entry.tries ?? 0) >= MOST_TRIES) continue;
+				if (entry.link !== link) Object.assign(entry, { link, tries: 0, failed: undefined, problem: undefined, capture: undefined, lookedUp: undefined });
+				if (entry.capture || entry.job) continue;
+				// A link whose save failed: an older capture the Archive holds, before asking again.
+				if (entry.failed && !entry.lookedUp) {
+					if (lookups >= LOOKUPS_EACH_MINUTE) continue;
+					lookups += 1;
+					if (await takeOlderCapture(entry, now)) continue;
+				}
+				if ((entry.tries ?? 0) >= MOST_TRIES) continue;
 				// Links the Archive already had, from before this Worker took existing captures: looked up straight away.
 				if (SAME_SNAPSHOT.test(entry.problem ?? '') && entry.tries) {
 					saves += 1;
