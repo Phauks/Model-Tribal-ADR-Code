@@ -13,6 +13,7 @@ import FileClock from '@lucide/svelte/icons/file-clock';
 import FileText from '@lucide/svelte/icons/file-text';
 import Files from '@lucide/svelte/icons/files';
 import Gavel from '@lucide/svelte/icons/gavel';
+import HandHeart from '@lucide/svelte/icons/hand-heart';
 import Handshake from '@lucide/svelte/icons/handshake';
 import Landmark from '@lucide/svelte/icons/landmark';
 import Library from '@lucide/svelte/icons/library';
@@ -52,10 +53,12 @@ const collectionIcons: Record<string, Component> = {
 	'federal-register-notices': Newspaper,
 	'national-indian-gaming-commission': Dices,
 	'federal-acknowledgment': Stamp,
+	'repatriation-notices': HandHeart,
 	'solicitor-opinions': BookOpen,
 	'supreme-court-cases': Gavel,
 	'other-court-cases': Scale,
 	'state-court-opinions': Gavel,
+	'indian-claims-commission': Scroll,
 	'tribal-court-opinions': FileText,
 	'supreme-courts': Landmark,
 	biographies: UserRound,

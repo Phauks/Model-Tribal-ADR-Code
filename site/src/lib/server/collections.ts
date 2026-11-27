@@ -117,13 +117,15 @@ function publishedAt(record: SourceRecord, link: string | undefined): string | u
  */
 const oklahomaTopic = 'oklahoma-state-tribal-agreement';
 const isOklahomaFiling = (record: SourceRecord) => (record.topics ?? []).includes(oklahomaTopic);
+/** The National Park Service's repatriation notices, their own collection (scripts/law/repatriation_notices.py). */
+const isRepatriationNotice = (record: SourceRecord) => kindOf(record) === 'federal-register-notice' && (record.topics ?? []).includes('repatriation');
 const oklahomaAgreements = () => [...sources().values()].filter(isOklahomaFiling);
 
 /** Source records of some kinds (schemas/source.schema.json), less treaties, which are their own collection, and Oklahoma's register. */
 function sourcesOfKind(kinds: string[], detail?: (record: SourceRecord) => string | undefined): () => CollectionItem[] {
 	return () =>
 		[...sources().values()]
-			.filter((record) => kinds.includes(kindOf(record)) && typeOf(record) !== 'treaty' && !isOklahomaFiling(record))
+			.filter((record) => kinds.includes(kindOf(record)) && typeOf(record) !== 'treaty' && !isOklahomaFiling(record) && !isRepatriationNotice(record))
 			.map((record) => sourceItem(record, detail?.(record)));
 }
 
@@ -182,6 +184,9 @@ function heldBackBoardDecisions(): number {
 
 const gamingCommission = 'National Indian Gaming Commission';
 
+/** The Indian Claims Commission's decisions (1948-1978), their own collection (scripts/law/indian_claims_commission.py). */
+const claimsCommission = (authority: string) => authority === 'Indian Claims Commission';
+
 /** The Gaming Commission's reading room: its opinions, letters, enforcement actions and bulletins, and its final decisions, which are cases (scripts/law/nigc_documents.py). */
 function gamingCommissionDocuments(): CollectionItem[] {
 	return [...sources().values()]
@@ -216,6 +221,15 @@ const tribesOf = (record: SourceRecord) => {
 	const name = nationNameOf();
 	return record.tribes?.map(name).join('; ') || undefined;
 };
+
+/** A notice names up to dozens of nations; the list shows the first three and counts the rest. */
+function repatriationNotices(): CollectionItem[] {
+	const name = nationNameOf();
+	return [...sources().values()].filter(isRepatriationNotice).map((record) => {
+		const named = (record.tribes ?? []).map(name);
+		return sourceItem(record, named.length === 0 ? undefined : named.length <= 3 ? named.join('; ') : `${named.slice(0, 3).join('; ')} and ${named.length - 3} more`);
+	});
+}
 
 export const collections: Collection[] = [
 	// Native nations
@@ -283,6 +297,15 @@ export const collections: Collection[] = [
 	{ identifier: 'regulation-sections', search: { group: 'law', label: 'Regulation section' }, title: 'Regulation Sections (25 C.F.R.)', group: 'Federal law', detailHeader: 'Part', items: () => allSections('regulations') },
 	{ identifier: 'executive-orders', search: { group: 'law', label: 'Executive order' }, title: 'Executive Orders', group: 'Federal law', sourceKinds: ['executive-order'], items: sourcesOfKind(['executive-order']) },
 	{ identifier: 'federal-register-notices', search: { group: 'law', label: 'Federal Register notice' }, title: 'Federal Register Notices', group: 'Federal law', sourceKinds: ['federal-register-notice'], items: sourcesOfKind(['federal-register-notice']) },
+	{
+		identifier: 'repatriation-notices',
+		search: { group: 'law', label: 'Repatriation notice' },
+		title: 'Repatriation Notices',
+		group: 'Federal law',
+		detailHeader: 'Nations',
+		sourceKinds: ['federal-register-notice'],
+		items: repatriationNotices
+	},
 	{ identifier: 'federal-acknowledgment', search: { group: 'law', label: 'Acknowledgment document' }, title: 'Federal Acknowledgment Petitions', group: 'Federal law', detailHeader: 'Kind', sourceKinds: ['federal-agency-document'], items: acknowledgmentDocuments },
 	{ identifier: 'solicitor-opinions', search: { group: 'law', label: 'Solicitor’s opinion' }, title: 'Solicitor’s Opinions', group: 'Federal law', detailHeader: 'Number', sourceKinds: ['federal-agency-document'], items: solicitorOpinions },
 	{ identifier: 'national-indian-gaming-commission', search: { group: 'law', label: 'Gaming Commission document' }, title: 'Gaming Commission Opinions and Actions', group: 'Federal law', detailHeader: 'Kind', sourceKinds: ['federal-agency-document'], items: gamingCommissionDocuments },
@@ -301,7 +324,7 @@ export const collections: Collection[] = [
 
 	// Courts and cases
 	{ identifier: 'supreme-court-cases', search: { group: 'case', label: 'Court case' }, title: 'U.S. Supreme Court Cases', group: 'Courts and cases', items: casesBy(supremeCourt) },
-	{ identifier: 'other-court-cases', search: { group: 'case', label: 'Court case' }, title: 'Other Court Cases', group: 'Courts and cases', detailHeader: 'Court', items: casesBy((authority) => !supremeCourt(authority) && !indianAppealsBoard(authority) && authority !== gamingCommission) },
+	{ identifier: 'other-court-cases', search: { group: 'case', label: 'Court case' }, title: 'Other Court Cases', group: 'Courts and cases', detailHeader: 'Court', items: casesBy((authority) => !supremeCourt(authority) && !indianAppealsBoard(authority) && !claimsCommission(authority) && authority !== gamingCommission) },
 	{
 		identifier: 'interior-board-of-indian-appeals',
 		search: { group: 'case', label: 'Interior Board of Indian Appeals decision' },
@@ -310,6 +333,13 @@ export const collections: Collection[] = [
 		items: casesBy(indianAppealsBoard),
 		heldBack: heldBackBoardDecisions,
 		heldBackReason: 'held back for a privacy review'
+	},
+	{
+		identifier: 'indian-claims-commission',
+		search: { group: 'case', label: 'Indian Claims Commission decision' },
+		title: 'Indian Claims Commission Decisions',
+		group: 'Courts and cases',
+		items: casesBy(claimsCommission)
 	},
 	{
 		identifier: 'state-court-opinions', search: { group: 'case', label: 'State court opinion' },

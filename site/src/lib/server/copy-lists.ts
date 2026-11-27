@@ -72,6 +72,57 @@ function boardGroup(copy: PublicCopy): string {
 	return boardSlug(...range);
 }
 
+/**
+ * The Indian Claims Commission's decisions, five of its 43 volumes to a list
+ * (about 320 decisions each), by the volume in the file name, such as
+ * "oksd_icc_d337_v12_p404.pdf" (volume 12): one list of all 2,779 would be
+ * past what the accessibility check reads in 90 seconds.
+ */
+const claimsVolumesPerList = 5;
+const claimsVolumeRanges: [number, number][] = Array.from({ length: Math.ceil(43 / claimsVolumesPerList) }, (_, index) => [index * claimsVolumesPerList + 1, Math.min(43, (index + 1) * claimsVolumesPerList)]);
+const claimsSlug = ([first, last]: [number, number]) => `indian-claims-commission-volumes-${first}-${last}`;
+
+function claimsGroup(copy: PublicCopy): string {
+	const volume = Number(/_v(\d+)_p/i.exec(copy.key)?.[1] ?? Number.NaN);
+	return claimsSlug(claimsVolumeRanges.find(([first, last]) => volume >= first && volume <= last) ?? claimsVolumeRanges.at(-1)!);
+}
+
+/**
+ * The repatriation notices, by the year the Federal Register printed them (in
+ * the GovInfo address, ".../FR-2024-05-19/..."), so no list holds much more
+ * than 500: a few early years together, then a list a year, and two a year
+ * from 2024, when the notices grew past 700 a year.
+ */
+const repatriationEarly: [number, number][] = [
+	[1994, 2000],
+	[2001, 2004],
+	[2005, 2007]
+];
+const repatriationHalvesFrom = 2024;
+/** The last year with lists of its own; later notices go in its last list until this moves on. (A Worker's clock reads 1970 when a module loads, so the year is not read from it.) */
+const repatriationListedTo = 2030;
+const repatriationLists: { slug: string; title: string }[] = [
+	...repatriationEarly.map(([first, last]) => ({ slug: `repatriation-notices-${first}-${last}`, title: `Repatriation notices, ${first} to ${last}` })),
+	...Array.from({ length: repatriationListedTo - 2007 }, (_, index) => 2008 + index).flatMap((year) =>
+		year < repatriationHalvesFrom
+			? [{ slug: `repatriation-notices-${year}`, title: `Repatriation notices, ${year}` }]
+			: [
+					{ slug: `repatriation-notices-${year}-january-to-june`, title: `Repatriation notices, January to June ${year}` },
+					{ slug: `repatriation-notices-${year}-july-to-december`, title: `Repatriation notices, July to December ${year}` }
+				]
+	)
+];
+
+function repatriationGroup(copy: PublicCopy): string {
+	const printed = copy.links.map((link) => /\/FR-(\d{4})-(\d{2})-/.exec(link)).find(Boolean);
+	const year = Number(printed?.[1] ?? copy.captured.slice(0, 4));
+	const early = repatriationEarly.find(([first, last]) => year >= first && year <= last);
+	if (early || year < 2008) return `repatriation-notices-${(early ?? repatriationEarly[0]).join('-')}`;
+	if (year < repatriationHalvesFrom) return `repatriation-notices-${year}`;
+	const slug = `repatriation-notices-${year}-${Number(printed?.[2] ?? 1) <= 6 ? 'january-to-june' : 'july-to-december'}`;
+	return repatriationLists.some((list) => list.slug === slug) ? slug : repatriationLists.at(-1)!.slug;
+}
+
 /** The lists that are not one nation's, in page order: federal documents, then state material. */
 const fixedGroups: Record<string, string> = {
 	'supreme-court': 'Supreme Court opinions',
@@ -87,6 +138,8 @@ const fixedGroups: Record<string, string> = {
 	'gaming-commission': 'National Indian Gaming Commission documents',
 	acknowledgment: 'Federal acknowledgment documents',
 	'solicitor-opinions': 'Solicitor’s opinions',
+	...Object.fromEntries(repatriationLists.map((list) => [list.slug, list.title])),
+	...Object.fromEntries(claimsVolumeRanges.map((range) => [claimsSlug(range), `Indian Claims Commission decisions, volumes ${range[0]} to ${range[1]}`])),
 	'other-federal': 'Other federal documents',
 	// Published state and territorial court opinions (decision record 0060).
 	'state-court-opinions': 'State court opinions',
@@ -121,6 +174,7 @@ const opinionPrefix = 'opinions-';
 function groupOf(copy: PublicCopy, names: Map<string, string>): string {
 	if (copy.topic === 'caselaw-access-project') return `${opinionPrefix}${copy.nations[0] ?? 'other'}`;
 	if (copy.topic === 'ibia-decisions') return boardGroup(copy);
+	if (copy.topic === 'indian-claims-commission') return claimsGroup(copy);
 	if (copy.topic === 'federal-court-opinions') return 'federal-court-opinions';
 	if (copy.topic === 'state-court-opinions') return 'state-court-opinions';
 	if (copy.topic === 'oklahoma-secretary-of-state') return 'oklahoma-state-tribal-agreements';
@@ -138,6 +192,7 @@ function groupOf(copy: PublicCopy, names: Map<string, string>): string {
 	if (copy.topic === 'federal-register') return 'federal-register';
 	if (copy.topic === 'nigc') return 'gaming-commission';
 	if (copy.topic === 'acknowledgment') return 'acknowledgment';
+	if (copy.topic === 'repatriation-notices') return repatriationGroup(copy);
 	if (copy.topic === 'solicitor-opinions') return 'solicitor-opinions';
 	return 'other-federal';
 }
