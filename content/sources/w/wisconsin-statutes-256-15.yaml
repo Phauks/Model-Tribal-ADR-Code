@@ -1,0 +1,47 @@
+key: wisconsin-statutes-256-15
+kind: state-statute
+citation:
+  type: legislation
+  title: Emergency medical services personnel; licensure; certification; training
+  title-short: Wis. Stat. § 256.15
+  container-title: Wisconsin Statutes
+  container-title-short: Wis. Stat.
+  section: '256.15'
+  author:
+  - literal: Wisconsin Legislative Reference Bureau
+  URL: https://docs.legis.wisconsin.gov/document/statutes/256.15
+  accessed:
+    date-parts:
+    - - 2026
+      - 11
+      - 27
+original_link: https://docs.legis.wisconsin.gov/document/statutes/256.15
+retrieved: '2026-11-27'
+archives: []
+history:
+  status: live
+  last_checked: '2026-11-27'
+state_law:
+  relevance: incidental
+  citation: Wis. Stat. § 256.15 (2023-24)
+rights:
+  status: no-permission-needed
+  basis: government-edict
+  basis_note: 'Official state statutes are not copyrightable under the government edicts doctrine (Georgia v. Public.Resource.Org, Inc., 590 U.S. 255 (2020)). Linked, not served: state statutes stay link only.'
+  redistribution: false
+jurisdictions:
+- level: state
+  state: WI
+topics:
+- state-indian-law
+found_in:
+- 2026-11-27-state-statutes-fourth-batch
+notes: 'Indigo Book citation: Wis. Stat. § 256.15 (2023-24). History: 1973 c. 321; 1975 c. 39 ss. 645 to 647d, 732 (2); 1975 c. 224; 1977 c. 29, 167; 1979 c. 321; 1981 c. 73, 380; 1981 c. 391 s. 211; 1983 a. 189; 1985 a. 120, 135; 1987 a. 70, 399; 1989 a. 31; 1989 a. 102 ss. 20, 21, 36 to 59; 1991 a. 39, 238; 1993 a. 27, 29, 105, 183, 251, 399; 1997 a. 79, 191, 237; 1999 a. 7, 56; 2001 a. 109; 2005 a. 25, 486; 2007 a. 104; 2007 a. 130 ss. 50 to 52, 55 to 57, 63 to 66, 69, 71 to 104; Stats. 2007 s. 256.15; 2009 a. 28, 42; 2009 a. 180 s. 123; 2009 a. 209; 2011 a. 120, 209; 2013 a. 200; 2015 a. 26, 55, 83, 113; 2017 a. 12, 66, 97, 350; 2019 a. 25; 2021 a. 238 s. 45; 2023 a. 12, 176; 2025 a. 76. Text read from the Wisconsin Legislative Reference Bureau''s PDF of the section''s chapter of the 2023-24 Wisconsin Statutes, updated through 2025 Wisconsin Act 247 and published Nov. 4, 2026 (docs.legis.wisconsin.gov/statutes), on Nov. 27, 2026. Found by the state statutes sweep (terms: american indian; indian tribe; indian; tribe); AI reader''s verdict incidental: Defines Indian tribe and includes tribes as public agency. Unverified.'
+review:
+  status: unverified
+  by: scripts/law/state_statutes/run.py
+  date: '2026-11-27'
+  checks:
+  - check: 'Indian law section: the sweep''s keyword pass and an AI reader''s verdict (core, incidental or none)'
+    result: agree
+    detail: 'incidental; terms: american indian; indian tribe; indian; tribe'
