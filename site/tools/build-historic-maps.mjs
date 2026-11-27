@@ -4,13 +4,16 @@
 //
 // - Land cessions: the U.S. Forest Service's tracing of the 718 cessions on Charles C. Royce's maps in Indian Land Cessions in the United States (1899). One PMTiles file, layer "cessions", each shape carrying Royce's number and the year of its first cession date. The facts shown for each cession (treaties, nations, map sheets) are in geography/land-cessions.json, written by scripts/maps/land_cessions.py, which also downloads the shapes (`fetch`).
 // - Land areas by year: the Census Bureau's American Indian, Alaska Native and Native Hawaiian areas for 1990, 2000 and every year 2007 to 2026, in one PMTiles file, layer "land-areas". Each shape carries its Census code, its kind, and the first and last years ("from", "to") in which the Bureau drew it exactly so; a shape the Bureau redrew is a new shape from that year. The map shows a year by keeping the shapes whose years include the latest Census year at or before it. Hawaiian home lands are left out, as on the 2020 map, and so is every area in geography/withdrawn-land-areas.json.
+// - Borders over time: the Newberry Library's Atlas of Historical County Boundaries, US Historical States and Territories (generalized), every state and territory from September 3, 1783 to December 31, 2000 with its start and end dates, the change that made it and the law cited for it. Layer "borders". The Library makes the Atlas's files available for any lawful purpose, commercial or non-commercial, without licensing or permission fees, and says the old Creative Commons notice inside the files can be ignored (https://publications.newberry.org/ahcb/downloads/united_states.html).
+// - Removal routes: the National Park Service's lines for the Trail of Tears National Historic Trail (the Cherokee removal routes of 1837 to 1839). Layer "routes", each line carrying the routes it is part of.
+// - Homelands found by the Indian Claims Commission: the National Park Service's tracing of the U.S. Geological Survey's 1978 map "Indian Land Areas Judicially Established". Layer "homelands", each area carrying the Commission's area number and the nation or nations it names. The map shows these as findings, dashed and credited, never as borders.
 // - Royce's 67 map sheets, the Library of Congress's scans (g3701em.gct00002), each as the Library's JPEG 2000 file and as a JPEG the site's image viewer can show, with the full volume as one PDF. geography/royce-sheets.json lists them with their bucket keys, sizes and SHA-256.
 //
 // The tiles are cut with geojson-vt and written with tools/pmtiles-writer.mjs, so no tippecanoe is needed. Turning the JPEG 2000 scans into JPEGs needs ImageMagick (`magick` or `convert`) with OpenJPEG.
 //
 // Run from site/:
 //   python3 ../scripts/maps/land_cessions.py fetch --work /tmp/historic-maps
-//   node tools/build-historic-maps.mjs fetch [--work /tmp/historic-maps]
+//   node tools/build-historic-maps.mjs fetch [--work /tmp/historic-maps] [--only layers]
 //   node --max-old-space-size=8192 tools/build-historic-maps.mjs build [--work /tmp/historic-maps]
 //   node tools/build-historic-maps.mjs upload [--work /tmp/historic-maps]
 //   node tools/build-historic-maps.mjs index [--work /tmp/historic-maps]
@@ -47,10 +50,19 @@ export const censusYears = {
 	...Object.fromEntries(Array.from({ length: 16 }, (_, index) => 2011 + index).map((year) => [year, `${tiger}/TIGER${year}/AIANNH/tl_${year}_us_aiannh.zip`]))
 };
 
+const newberryPage = 'https://publications.newberry.org/ahcb/downloads/united_states.html';
+const newberryFile = 'https://publications.newberry.org/ahcb/downloads/gis/US_AtlasHCB_StateTerr_Gen01.zip';
+const parkService = 'https://services1.arcgis.com/fBc8EJBxQRMcHlei/ArcGIS/rest/services';
+const removalRoutesLayer = `${parkService}/TRTE_NHT/FeatureServer/0`;
+const homelandsLayer = `${parkService}/Indian_Land_Areas_Judicially_Established_1978/FeatureServer/5`;
+
 const sheetsItem = 'https://www.loc.gov/item/13023487/';
 const volumeFile = 'https://tile.loc.gov/storage-services/public/law/llss4015/llss4015.pdf';
 
 const cessionsMaxZoom = 10;
+const bordersMaxZoom = 7;
+const removalRoutesMaxZoom = 10;
+const homelandsMaxZoom = 9;
 const landAreasMaxZoom = 12;
 
 function option(name, fallback) {
@@ -73,9 +85,38 @@ async function download(url, path) {
 	}
 }
 
+/** Every feature of an ArcGIS layer as GeoJSON in longitude and latitude, a page at a time. */
+async function downloadLayer(layer, path) {
+	if (existsSync(path) && statSync(path).size > 0) return;
+	const features = [];
+	for (let offset = 0; ; ) {
+		const address = `${layer}/query?where=1%3D1&outFields=*&outSR=4326&f=geojson&resultOffset=${offset}&resultRecordCount=1000`;
+		const response = await fetch(address, { headers: { 'User-Agent': 'model-tribal-code-maps/1.0' } });
+		if (!response.ok) throw new Error(`${address} answered ${response.status}`);
+		const page = await response.json();
+		features.push(...page.features);
+		offset += page.features.length;
+		if (page.features.length === 0 || !(page.exceededTransferLimit || page.properties?.exceededTransferLimit)) break;
+	}
+	writeFileSync(path, JSON.stringify({ type: 'FeatureCollection', features }));
+}
+
+/** The Newberry Library's states and territories, the two National Park Service layers. The Library's site sometimes asks a person to pass a check before a download; then download the file by hand into the work folder's newberry folder. */
+async function fetchLayers(work) {
+	mkdirSync(join(work, 'newberry'), { recursive: true });
+	const newberry = join(work, 'newberry', basename(newberryFile));
+	await download(newberryFile, newberry);
+	const head = readFileSync(newberry).subarray(0, 2).toString('latin1');
+	if (head !== 'PK') throw new Error(`The Newberry Library sent a page, not the file. Download ${newberryFile} by hand (from ${newberryPage}) to ${newberry}.`);
+	await downloadLayer(removalRoutesLayer, join(work, 'removal-routes.geojson'));
+	await downloadLayer(homelandsLayer, join(work, 'homelands.geojson'));
+	console.log(`Downloaded the Newberry Library's states and territories and the two National Park Service layers to ${work}.`);
+}
+
 /** Downloads the Census years and Royce's sheets and volume; the cession shapes come from scripts/maps/land_cessions.py. */
 async function fetchSources() {
 	const work = option('work', '/tmp/historic-maps');
+	if (option('only', 'all') === 'layers') return fetchLayers(work);
 	for (const folder of ['census', 'royce']) mkdirSync(join(work, folder), { recursive: true });
 	for (const [year, url] of Object.entries(censusYears)) await download(url, join(work, 'census', `${year}.zip`));
 	const item = await (await fetch(`${sheetsItem}?fo=json`)).json();
@@ -179,6 +220,102 @@ async function buildCessions(work) {
 		sources: [facts.sources.shapes, facts.sources.schedule],
 		retrieved: facts.retrieved
 	};
+}
+
+/** A date as the number the map compares: 1838-05-23 is 18380523. */
+const dateNumber = (date) => Number(String(date).slice(0, 10).replaceAll('-', ''));
+
+/** The Newberry Library's file ends on December 31, 2000; a shape still in place then is in place today. */
+const newberryEnd = 20001231;
+const stillInPlace = 99991231;
+
+async function readZippedShapefile(path, name) {
+	const files = unzipSync(readFileSync(path));
+	const shp = Object.keys(files).find((entry) => entry.endsWith(`${name}.shp`));
+	const dbf = shp.replace(/\.shp$/, '.dbf');
+	const slice = (bytes) => bytes.buffer.slice(bytes.byteOffset, bytes.byteOffset + bytes.byteLength);
+	return shapefile.read(slice(files[shp]), slice(files[dbf]), { encoding: 'latin1' });
+}
+
+const territoryKinds = { State: 'state', Territory: 'territory', 'Unorganized Territory': 'unorganized-territory', 'District of Columbia': 'district', Other: 'other' };
+
+async function buildBorders(work) {
+	const collection = await readZippedShapefile(join(work, 'newberry', basename(newberryFile)), 'US_HistStateTerr_Gen01');
+	const features = collection.features
+		.filter((feature) => feature.geometry)
+		.map((feature) => {
+			const properties = feature.properties;
+			const to = Number(properties.END_N);
+			return {
+				type: 'Feature',
+				geometry: { type: feature.geometry.type, coordinates: rounded(feature.geometry.coordinates) },
+				properties: { id: `${properties.ID}-${properties.VERSION}`, name: properties.FULL_NAME, kind: territoryKinds[properties.TERR_TYPE] ?? 'other', from: Number(properties.START_N), to: to === newberryEnd ? stillInPlace : to, change: properties.CHANGE ?? '', citation: properties.CITATION ?? '' }
+			};
+		});
+	const tiles = cutTiles(features, 'borders', bordersMaxZoom);
+	const bounds = boundsOf(features);
+	const path = join(work, 'borders.pmtiles');
+	writePmtiles(path, tiles, { minZoom: 0, maxZoom: bordersMaxZoom, bounds, metadata: { name: 'Borders over time', attribution: 'Newberry Library, Atlas of Historical County Boundaries', vector_layers: [{ id: 'borders', fields: { id: 'String', name: 'String', kind: 'String', from: 'Number', to: 'Number', change: 'String', citation: 'String' }, minzoom: 0, maxzoom: bordersMaxZoom }] } });
+	const described = describe(path, '', {});
+	return { ...describe(path, `borders-${described.sha256.slice(0, 12)}`, {}), minZoom: 0, maxZoom: bordersMaxZoom, bounds, layers: ['borders'], features: features.length, years: [...new Set(features.flatMap((feature) => [feature.properties.from, feature.properties.to]).filter((date) => date < stillInPlace).map((date) => Math.floor(date / 10000)))].sort((first, second) => first - second), first: 17830903, last: newberryEnd, sources: [newberryFile, newberryPage], retrieved: new Date().toISOString().slice(0, 10) };
+}
+
+/** Joins line pieces that meet end to end into longer lines. The Park Service draws the trail as about 2,000 short pieces, and pieces shorter than a pixel would vanish from the national view. */
+function joinLines(lines) {
+	const key = (point) => `${point[0]},${point[1]}`;
+	const remaining = lines.map((line) => [...line]);
+	const joined = [];
+	while (remaining.length) {
+		let line = remaining.pop();
+		for (let grown = true; grown; ) {
+			grown = false;
+			for (let index = remaining.length - 1; index >= 0; index -= 1) {
+				const other = remaining[index];
+				const [start, end] = [key(line[0]), key(line[line.length - 1])];
+				if (key(other[0]) === end) line = [...line, ...other.slice(1)];
+				else if (key(other[other.length - 1]) === end) line = [...line, ...other.slice(0, -1).reverse()];
+				else if (key(other[other.length - 1]) === start) line = [...other, ...line.slice(1)];
+				else if (key(other[0]) === start) line = [...other.slice(1).reverse(), ...line];
+				else continue;
+				remaining.splice(index, 1);
+				grown = true;
+			}
+		}
+		joined.push(line);
+	}
+	return joined;
+}
+
+async function buildRemovalRoutes(work) {
+	const source = JSON.parse(readFileSync(join(work, 'removal-routes.geojson'), 'utf8'));
+	/** The pieces of each route or set of routes that share a line. */
+	const byRoutes = new Map();
+	for (const feature of source.features) {
+		if (!feature.geometry) continue;
+		const routes = String(feature.properties.TRALTNAME ?? '').split('|').filter(Boolean).join(', ');
+		const lines = feature.geometry.type === 'LineString' ? [feature.geometry.coordinates] : feature.geometry.coordinates;
+		byRoutes.set(routes, [...(byRoutes.get(routes) ?? []), ...lines.map((line) => rounded(line))]);
+	}
+	const features = [...byRoutes].map(([routes, lines]) => ({ type: 'Feature', geometry: { type: 'MultiLineString', coordinates: joinLines(lines) }, properties: { trail: 'Trail of Tears', routes } }));
+	const tiles = cutTiles(features, 'routes', removalRoutesMaxZoom);
+	const bounds = boundsOf(features);
+	const path = join(work, 'removal-routes.pmtiles');
+	writePmtiles(path, tiles, { minZoom: 0, maxZoom: removalRoutesMaxZoom, bounds, metadata: { name: 'Removal routes', attribution: 'National Park Service', vector_layers: [{ id: 'routes', fields: { trail: 'String', routes: 'String' }, minzoom: 0, maxzoom: removalRoutesMaxZoom }] } });
+	const described = describe(path, '', {});
+	return { ...describe(path, `removal-routes-${described.sha256.slice(0, 12)}`, {}), minZoom: 0, maxZoom: removalRoutesMaxZoom, bounds, layers: ['routes'], features: features.length, years: [1837, 1839], sources: [removalRoutesLayer], retrieved: new Date().toISOString().slice(0, 10) };
+}
+
+async function buildHomelands(work) {
+	const source = JSON.parse(readFileSync(join(work, 'homelands.geojson'), 'utf8'));
+	const features = source.features
+		.filter((feature) => feature.geometry)
+		.map((feature) => ({ type: 'Feature', geometry: { type: feature.geometry.type, coordinates: rounded(feature.geometry.coordinates) }, properties: { area: Number(feature.properties.CATNUM), named: String(feature.properties.Affiliatio ?? '').trim() } }));
+	const tiles = cutTiles(features, 'homelands', homelandsMaxZoom);
+	const bounds = boundsOf(features);
+	const path = join(work, 'homelands.pmtiles');
+	writePmtiles(path, tiles, { minZoom: 0, maxZoom: homelandsMaxZoom, bounds, metadata: { name: 'Homelands found by the Indian Claims Commission', attribution: 'National Park Service, after the U.S. Geological Survey (1978)', vector_layers: [{ id: 'homelands', fields: { area: 'Number', named: 'String' }, minzoom: 0, maxzoom: homelandsMaxZoom }] } });
+	const described = describe(path, '', {});
+	return { ...describe(path, `homelands-${described.sha256.slice(0, 12)}`, {}), minZoom: 0, maxZoom: homelandsMaxZoom, bounds, layers: ['homelands'], features: features.length, sources: [homelandsLayer], retrieved: new Date().toISOString().slice(0, 10) };
 }
 
 async function buildLandAreasByYear(work) {
@@ -297,6 +434,11 @@ async function build() {
 	const manifest = JSON.parse(readFileSync(manifestPath, 'utf8'));
 	if (only === 'all' || only === 'cessions') manifest.landCessions = await buildCessions(work);
 	if (only === 'all' || only === 'land-areas') manifest.landAreasByYear = await buildLandAreasByYear(work);
+	if (only === 'all' || only === 'layers') {
+		manifest.borders = await buildBorders(work);
+		manifest.removalRoutes = await buildRemovalRoutes(work);
+		manifest.homelands = await buildHomelands(work);
+	}
 	writeFileSync(manifestPath, `${JSON.stringify(manifest, null, '\t')}\n`);
 	if (only === 'all' || only === 'sheets') buildSheets(work);
 	console.log('Recorded the tile sets in geography/map-tiles.json.');
@@ -317,7 +459,14 @@ async function upload() {
 	const { client, base } = await bucketClient();
 	const manifest = JSON.parse(readFileSync(manifestPath, 'utf8'));
 	const sheets = JSON.parse(readFileSync(sheetsPath, 'utf8'));
-	const files = [
+	const layers = [
+		[join(work, 'borders.pmtiles'), manifest.borders.key, 'application/vnd.pmtiles'],
+		[join(work, 'removal-routes.pmtiles'), manifest.removalRoutes.key, 'application/vnd.pmtiles'],
+		[join(work, 'homelands.pmtiles'), manifest.homelands.key, 'application/vnd.pmtiles'],
+		...layerSources(work).map((entry) => [entry.path, entry.key, entry.mediaType])
+	];
+	const files = option('only', 'all') === 'layers' ? layers : [
+		...layers,
 		[join(work, 'land-cessions.pmtiles'), manifest.landCessions.key, 'application/vnd.pmtiles'],
 		[join(work, 'land-areas-by-year.pmtiles'), manifest.landAreasByYear.key, 'application/vnd.pmtiles'],
 		[join(work, 'royce', 'llss4015.pdf'), sheets.volume.key, 'application/pdf'],
@@ -358,6 +507,15 @@ async function upload() {
 	console.log(`Uploaded ${sent} files; ${skipped} were already in the bucket.`);
 }
 
+/** The downloaded files behind the three newer layers, as kept in the bucket. */
+function layerSources(work) {
+	return [
+		{ path: join(work, 'newberry', basename(newberryFile)), key: `historic-maps/newberry-states-and-territories/${basename(newberryFile)}`, mediaType: 'application/zip', title: 'Newberry Library, Atlas of Historical County Boundaries, US Historical States and Territories (generalized)', link: newberryPage, records: 'newberry-atlas-historical-states-and-territories', rights: 'The Newberry Library makes the Atlas files available for any lawful purpose, commercial or non-commercial, without licensing or permission fees.' },
+		{ path: join(work, 'removal-routes.geojson'), key: 'historic-maps/park-service-trail-of-tears/removal-routes.geojson', mediaType: 'application/geo+json', title: 'National Park Service, Trail of Tears National Historic Trail, designated alignment', link: removalRoutesLayer, records: 'park-service-trail-of-tears-routes' },
+		{ path: join(work, 'homelands.geojson'), key: 'historic-maps/park-service-indian-land-areas-1978/homelands.geojson', mediaType: 'application/geo+json', title: 'National Park Service, Indian Land Areas Judicially Established 1978', link: homelandsLayer, records: 'indian-land-areas-judicially-established-1978' }
+	];
+}
+
 const roycesRecord = 'royce-1899-indian-land-cessions-in-the-united-states';
 const indexPath = new URL('../../research/capture-index.csv', import.meta.url);
 const indexColumns = ['key', 'bytes', 'sha256', 'media_type', 'topic', 'title', 'nations', 'obtained', 'link', 'captured', 'records', 'record_kinds', 'listed_in', 'catalog', 'derived_from', 'rights', 'redistribution', 'keep_local', 'orphan'];
@@ -374,7 +532,9 @@ function index() {
 		return { bytes: bytes.length, sha256: sha256(bytes) };
 	};
 	const row = (fields) => ({ topic: 'historic-maps', nations: '', captured: today, record_kinds: 'source', listed_in: '', catalog: '', derived_from: '', rights: governmentWork, redistribution: 'yes', keep_local: 'no', orphan: 'no', ...fields });
-	const rows = [
+	const layerRows = layerSources(work).map((entry) => row({ key: entry.key, ...file(entry.path), media_type: entry.mediaType, title: entry.title, obtained: `downloaded by tools/build-historic-maps.mjs, ${today}`, link: entry.link, records: entry.records, ...(entry.rights ? { rights: entry.rights } : {}) }));
+	const rows = option('only', 'all') === 'layers' ? layerRows : [
+		...layerRows,
 		row({ key: sheets.volume.key, bytes: sheets.volume.bytes, sha256: sheets.volume.sha256, media_type: 'application/pdf', title: `${sheets.author}, ${sheets.title} (1899)`, obtained: `downloaded from the Library of Congress by script, ${today}`, link: sheets.volume.link, records: roycesRecord }),
 		...sheets.sheets.flatMap((sheet) => {
 			const name = sheet.name ?? `plate ${sheet.plate}`;
@@ -405,4 +565,4 @@ if (command === 'fetch') await fetchSources();
 else if (command === 'build') await build();
 else if (command === 'upload') await upload();
 else if (command === 'index') index();
-else console.log('Usage: node tools/build-historic-maps.mjs fetch|build|upload|index [--work folder] [--only cessions|land-areas|sheets]');
+else console.log('Usage: node tools/build-historic-maps.mjs fetch|build|upload|index [--work folder] [--only cessions|land-areas|sheets|layers]');
