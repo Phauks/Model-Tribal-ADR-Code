@@ -80,7 +80,7 @@ found_in:
 notes: 'Indigo Book citation: Okla. Stat. tit. 63, § 4030 (2026). History: Added by Laws 1989, c. 346, § 30, eff. Jan. 1, 1990. Amended by Laws 1990, c. 304, § 5, Text read from the Legislative Service Bureau''s Title 63 PDF (updated Nov. 12, 2026), page 1896. Found by the state statutes pilot (terms: federally recognized indian tribe); AI reader''s verdict incidental: Vessel numbers may be assigned by federally recognized tribes. Unverified.'
 review:
   status: unverified
-  by: scripts/law/oklahoma_statutes.py
+  by: scripts/law/state_statutes/run.py
   date: '2026-11-26'
   checks:
   - check: 'Indian law section: the pilot''s keyword pass and an AI reader''s verdict (core, incidental or none)'

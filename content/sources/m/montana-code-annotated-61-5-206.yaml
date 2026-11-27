@@ -1,0 +1,50 @@
+key: montana-code-annotated-61-5-206
+kind: state-statute
+citation:
+  type: legislation
+  title: Authority of department to suspend or revoke license or driving privilege -- right to hearing
+  title-short: Mont. Code Ann. § 61-5-206
+  container-title: Montana Code Annotated
+  container-title-short: Mont. Code Ann.
+  section: 61-5-206
+  author:
+  - literal: Montana Legislature
+  issued:
+    date-parts:
+    - - 1947
+  URL: https://mca.legmt.gov/bills/mca/title_0610/chapter_0050/part_0020/section_0060/0610-0050-0020-0060.html
+  accessed:
+    date-parts:
+    - - 2026
+      - 11
+      - 27
+original_link: https://mca.legmt.gov/bills/mca/title_0610/chapter_0050/part_0020/section_0060/0610-0050-0020-0060.html
+retrieved: '2026-11-27'
+archives: []
+history:
+  status: live
+  last_checked: '2026-11-27'
+state_law:
+  relevance: incidental
+  citation: Mont. Code Ann. § 61-5-206 (2025)
+rights:
+  status: no-permission-needed
+  basis: government-edict
+  basis_note: 'Official state statutes are not copyrightable under the government edicts doctrine (Georgia v. Public.Resource.Org, Inc., 590 U.S. 255 (2020)). Linked, not served: state statutes stay link only.'
+  redistribution: false
+jurisdictions:
+- level: state
+  state: MT
+topics:
+- state-indian-law
+found_in:
+- 2026-11-27-state-statutes-sweep
+notes: 'Indigo Book citation: Mont. Code Ann. § 61-5-206 (2025). History: En. Sec. 31, Ch. 267, L. 1947; amd. Sec. 1, Ch. 101, L. 1961; amd. Sec. 1, Ch. 137, L. 1969; R.C.M. 1947, 31-147; amd. Sec. 1, Ch. 503, L. 1985; amd. Sec. 1, Ch. 244, L. 1987; amd. Sec. 23, Ch. 443, L. 1987; amd. Sec. 1, Ch. 471, L. 1991; amd. Sec. 18, Ch. 195, L. 1993; amd. Sec. 2, Ch. 218, L. 2001; amd. Sec. 4, Ch. 556, L. 2003; amd. Sec. 115, Ch. 596, L. 2005; amd. Sec. 10, Ch. 180, L. 2007; amd. Sec. 21, Ch. 323, L. 2017. Text read from the Montana Legislature''s page for the section in the Montana Code Annotated 2025 (mca.legmt.gov) on Nov. 27, 2026. Found by the state statutes sweep (terms: tribal); AI reader''s verdict incidental: License revocation offenses cover tribal identification card misuse for alcohol. Unverified.'
+review:
+  status: unverified
+  by: scripts/law/state_statutes/run.py
+  date: '2026-11-27'
+  checks:
+  - check: 'Indian law section: the sweep''s keyword pass and an AI reader''s verdict (core, incidental or none)'
+    result: agree
+    detail: 'incidental; terms: tribal'

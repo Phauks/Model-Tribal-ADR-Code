@@ -49,10 +49,10 @@ topics:
 - state-indian-law
 found_in:
 - 2026-11-26-state-statutes-pilot
-notes: 'Indigo Book citation: Okla. Stat. tit. 17, § 139.102 (2026). History: from customer to provider, or downstream, from provider to customer, transmission to or from the Internet in excess of or at a constant download speed of twenty-five (25) megabits Added by Laws 1997, c. 408, § 2, eff. July 1, 1997. Amended by Laws 1998, c. 246, § 9, eff. Text read from the Legislative Service Bureau''s Title 17 PDF (updated Nov. 12, 2026), page 57. Found by the state statutes pilot (terms: indian health); AI reader''s verdict incidental: Telecom definitions include tribal health programs as eligible providers. Unverified.'
+notes: 'Indigo Book citation: Okla. Stat. tit. 17, § 139.102 (2026). History: Added by Laws 1997, c. 408, § 2, eff. July 1, 1997. Amended by Laws 1998, c. 246, § 9, eff. Text read from the Legislative Service Bureau''s Title 17 PDF (updated Nov. 12, 2026), page 57. Found by the state statutes pilot (terms: indian health); AI reader''s verdict incidental: Telecom definitions include tribal health programs as eligible providers. Unverified.'
 review:
   status: unverified
-  by: scripts/law/oklahoma_statutes.py
+  by: scripts/law/state_statutes/run.py
   date: '2026-11-26'
   checks:
   - check: 'Indian law section: the pilot''s keyword pass and an AI reader''s verdict (core, incidental or none)'

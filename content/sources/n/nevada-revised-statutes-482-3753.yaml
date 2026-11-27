@@ -1,0 +1,53 @@
+key: nevada-revised-statutes-482-3753
+kind: state-statute
+citation:
+  type: legislation
+  title: Professional full-time salaried firefighters
+  title-short: Nev. Rev. Stat. § 482.3753
+  container-title: Nevada Revised Statutes
+  container-title-short: Nev. Rev. Stat.
+  section: '482.3753'
+  author:
+  - literal: Nevada Legislature
+  issued:
+    date-parts:
+    - - 1997
+  URL: https://www.leg.state.nv.us/nrs/NRS-482.html#NRS482Sec3753
+  accessed:
+    date-parts:
+    - - 2026
+      - 11
+      - 27
+original_link: https://www.leg.state.nv.us/nrs/NRS-482.html#NRS482Sec3753
+retrieved: '2026-11-27'
+archives: []
+history:
+  status: live
+  last_checked: '2026-11-27'
+shares_link_with:
+- nevada-revised-statutes-482-37937
+- nevada-revised-statutes-482-5165
+state_law:
+  relevance: incidental
+  citation: Nev. Rev. Stat. § 482.3753 (2025)
+rights:
+  status: no-permission-needed
+  basis: government-edict
+  basis_note: 'Official state statutes are not copyrightable under the government edicts doctrine (Georgia v. Public.Resource.Org, Inc., 590 U.S. 255 (2020)). Linked, not served: state statutes stay link only.'
+  redistribution: false
+jurisdictions:
+- level: state
+  state: NV
+topics:
+- state-indian-law
+found_in:
+- 2026-11-27-state-statutes-sweep
+notes: 'Indigo Book citation: Nev. Rev. Stat. § 482.3753 (2025). History: (Added to NRS by 1997, 1358; A 2001, 318, 1510; 2007, 78; 2013, 2838; 2015, 62; 2023, 2915). Text read from the Nevada Legislature''s chapter page for the section (leg.state.nv.us/nrs) on Nov. 27, 2026. Found by the state statutes sweep (terms: indian tribe; indian; tribe); AI reader''s verdict incidental: Firefighter plates: Indian tribe included in other-jurisdiction definition. Unverified.'
+review:
+  status: unverified
+  by: scripts/law/state_statutes/run.py
+  date: '2026-11-27'
+  checks:
+  - check: 'Indian law section: the sweep''s keyword pass and an AI reader''s verdict (core, incidental or none)'
+    result: agree
+    detail: 'incidental; terms: indian tribe; indian; tribe'

@@ -64,7 +64,7 @@ found_in:
 notes: 'Indigo Book citation: Okla. Stat. tit. 21, § 941 (2026). History: Added by Laws 1916, c. 26, p. 54, § 1, emerg. eff. Jan. 29, 1916. Amended by Laws 1992, c. Text read from the Legislative Service Bureau''s Title 21 PDF (updated Nov. 12, 2026), page 503. Found by the state statutes pilot (terms: indian gaming; indian lands); AI reader''s verdict incidental: Gambling penalties carve out Indian lands under IGRA. Unverified.'
 review:
   status: unverified
-  by: scripts/law/oklahoma_statutes.py
+  by: scripts/law/state_statutes/run.py
   date: '2026-11-26'
   checks:
   - check: 'Indian law section: the pilot''s keyword pass and an AI reader''s verdict (core, incidental or none)'

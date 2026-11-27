@@ -54,7 +54,7 @@ found_in:
 notes: 'Indigo Book citation: Okla. Stat. tit. 27A, § 2-16-106 (2026). History: Added by Laws 2006, c. 261, § 6, eff. July 1, 2006. Amended by Laws 2014, c. 174, § 1, eff. Text read from the Legislative Service Bureau''s Title 27A PDF (updated Nov. 12, 2026), page 376. Found by the state statutes pilot (terms: tribal); AI reader''s verdict incidental: Refinery permitting coordinates with tribal agencies. Unverified.'
 review:
   status: unverified
-  by: scripts/law/oklahoma_statutes.py
+  by: scripts/law/state_statutes/run.py
   date: '2026-11-26'
   checks:
   - check: 'Indian law section: the pilot''s keyword pass and an AI reader''s verdict (core, incidental or none)'

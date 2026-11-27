@@ -19,7 +19,6 @@
 	import SavedText from '#lib/components/SavedText.svelte';
 	import SourceList from '#lib/components/SourceList.svelte';
 	import StubBadge from '#lib/components/StubBadge.svelte';
-	import StubNote from '#lib/components/StubNote.svelte';
 	import TopicBadges from '#lib/components/TopicBadges.svelte';
 	import { glancePanelMinimum } from '#lib/info-page.ts';
 	import { copyPagePath } from '#lib/public-copies.ts';
@@ -156,8 +155,6 @@
 			</dl>
 		</Collapsible>
 	{/if}
-
-	{#if data.stub}<StubNote stub={data.stub} />{/if}
 
 	{#snippet sources()}<SourceList sources={data.sources} />{/snippet}
 </RecordPage>

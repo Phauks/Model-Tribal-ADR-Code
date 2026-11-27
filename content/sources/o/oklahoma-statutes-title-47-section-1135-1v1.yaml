@@ -55,7 +55,7 @@ found_in:
 notes: 'Indigo Book citation: Okla. Stat. tit. 47, § 1135.1v1 (2026). History: Added by Laws 2004, c. 504, § 10, eff. July 1, 2004. Amended by Laws 2007, c. 272, § 1, eff. Laws 2024, c. 228, § 1, emerg. eff. April 30, 2024. Text read from the Legislative Service Bureau''s Title 47 PDF (updated Nov. 12, 2026), page 1179. Found by the state statutes pilot (terms: indian tribe; native american); AI reader''s verdict incidental: Special plates section includes Indian Tribal License Plates provision. Unverified.'
 review:
   status: unverified
-  by: scripts/law/oklahoma_statutes.py
+  by: scripts/law/state_statutes/run.py
   date: '2026-11-26'
   checks:
   - check: 'Indian law section: the pilot''s keyword pass and an AI reader''s verdict (core, incidental or none)'

@@ -161,6 +161,32 @@ indian_health_service:
   as_of: '2026-11-23'
   locator: Self-Governance Tribes list by Area
   note: Listed as "Little Shell Tribe of Chippewa Indians of Montana". Also on the Indian Health Service Self-Governance Tribes list (Little Shell Tribe of Chippewa Indians of Montana (2025)); the list does not say which service unit or programs the compact covers.
+federal_programs:
+- program: indian-health-service-self-governance-compact
+  since: 2025
+  source: indian-health-service-self-governance-tribes
+  confidence: high
+  verification: bulk-import
+  as_of: '2025-07-01'
+  locator: Billings Area, row 'Little Shell Tribe of Chippewa Indians of Montana'
+- program: indian-housing-block-grant
+  fiscal_year: 2026
+  amount: 3577297
+  amount_kind: allocation
+  source: hud-ihbg-fy2026-formula-allocations
+  confidence: high
+  verification: bulk-import
+  as_of: '2026'
+  locator: MT, row 'Little Shell Tribe of Chippewa Indians' (Great Falls)
+- program: indian-health-service-self-governance-compact
+  fiscal_year: 2025
+  amount: 4589400
+  amount_kind: obligations
+  source: usaspending-fy2025-assistance-listing-93-210
+  confidence: high
+  verification: bulk-import
+  as_of: '2025'
+  locator: Assistance Listing 93.210, recipient 'LITTLE SHELL TRIBE OF CHIPPEWA INDIANS OF MONTANA' (UEI DTQFCMMDJ2K5), Oct. 1, 2024 to Sept. 30, 2025
 governance:
 - aspect: form
   value: Constitution under the Act of Congress of June 18, 1934

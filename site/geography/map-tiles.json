@@ -177,5 +177,151 @@
 		],
 		"retrieved": "2026-11-26",
 		"left_out": "Hawaiian home lands; areas in geography/withdrawn-land-areas.json"
+	},
+	"borders": {
+		"set": "borders-26b86c87e317",
+		"key": "map-tiles/borders-26b86c87e317.pmtiles",
+		"bytes": 1482802,
+		"sha256": "26b86c87e317c9e8b8ae7d71d214bc9a61da8a29a7e070d40b717bd8a2e10382",
+		"minZoom": 0,
+		"maxZoom": 7,
+		"bounds": [
+			-179.1474,
+			18.9123,
+			-66.9499,
+			71.3896
+		],
+		"layers": [
+			"borders",
+			"border-names"
+		],
+		"features": 220,
+		"years": [
+			1783,
+			1784,
+			1786,
+			1787,
+			1788,
+			1790,
+			1791,
+			1792,
+			1796,
+			1798,
+			1800,
+			1802,
+			1803,
+			1804,
+			1805,
+			1809,
+			1812,
+			1816,
+			1817,
+			1818,
+			1819,
+			1820,
+			1821,
+			1822,
+			1824,
+			1828,
+			1834,
+			1836,
+			1837,
+			1838,
+			1840,
+			1845,
+			1846,
+			1848,
+			1849,
+			1850,
+			1851,
+			1853,
+			1854,
+			1855,
+			1858,
+			1859,
+			1861,
+			1862,
+			1863,
+			1864,
+			1866,
+			1867,
+			1868,
+			1871,
+			1873,
+			1876,
+			1882,
+			1884,
+			1889,
+			1890,
+			1893,
+			1896,
+			1898,
+			1900,
+			1902,
+			1907,
+			1908,
+			1909,
+			1912,
+			1923,
+			1926,
+			1936,
+			1950,
+			1959
+		],
+		"first": 17830903,
+		"last": 20001231,
+		"sources": [
+			"https://publications.newberry.org/ahcb/downloads/gis/US_AtlasHCB_StateTerr_Gen01.zip",
+			"https://publications.newberry.org/ahcb/downloads/united_states.html"
+		],
+		"retrieved": "2026-11-27"
+	},
+	"removalRoutes": {
+		"set": "removal-routes-46de418478c7",
+		"key": "map-tiles/removal-routes-46de418478c7.pmtiles",
+		"bytes": 186787,
+		"sha256": "46de418478c71025fe67709a55622487592cd041a2350ddaeb1529c64245c804",
+		"minZoom": 0,
+		"maxZoom": 10,
+		"bounds": [
+			-95.1193,
+			33.7776,
+			-83.3812,
+			37.9969
+		],
+		"layers": [
+			"routes"
+		],
+		"features": 21,
+		"years": [
+			1837,
+			1839
+		],
+		"sources": [
+			"https://services1.arcgis.com/fBc8EJBxQRMcHlei/ArcGIS/rest/services/TRTE_NHT/FeatureServer/0"
+		],
+		"retrieved": "2026-11-27"
+	},
+	"homelands": {
+		"set": "homelands-cfe7b1310229",
+		"key": "map-tiles/homelands-cfe7b1310229.pmtiles",
+		"bytes": 551579,
+		"sha256": "cfe7b1310229c602eb9b2d8940900fcfaca87e2d167418be11f4987e7ba1625b",
+		"minZoom": 0,
+		"maxZoom": 9,
+		"bounds": [
+			-124.6614,
+			24.52,
+			-77.8262,
+			49.3414
+		],
+		"layers": [
+			"homelands"
+		],
+		"features": 298,
+		"sources": [
+			"https://services1.arcgis.com/fBc8EJBxQRMcHlei/ArcGIS/rest/services/Indian_Land_Areas_Judicially_Established_1978/FeatureServer/5"
+		],
+		"retrieved": "2026-11-27"
 	}
 }

@@ -71,7 +71,7 @@ found_in:
 notes: 'Indigo Book citation: Okla. Stat. tit. 70, § 1210.508J (2026). History: Added by Laws 2026, c. 34, § 9, emerg. eff. April 21, 2026. Text read from the Legislative Service Bureau''s Title 70 PDF (updated Nov. 12, 2026), page 1428. Found by the state statutes pilot (terms: federally recognized indian tribes); AI reader''s verdict incidental: Reading fund accepts monies from federally recognized tribes. Unverified.'
 review:
   status: unverified
-  by: scripts/law/oklahoma_statutes.py
+  by: scripts/law/state_statutes/run.py
   date: '2026-11-26'
   checks:
   - check: 'Indian law section: the pilot''s keyword pass and an AI reader''s verdict (core, incidental or none)'

@@ -77,10 +77,10 @@ topics:
 - state-indian-law
 found_in:
 - 2026-11-26-state-statutes-pilot
-notes: 'Indigo Book citation: Okla. Stat. tit. 63, § 2-309D (2026). History: Added by Laws 1990, c. 210, § 4, eff. Sept. 1, 1990. Amended by Laws 1997, c. 238, § 5, eff. Laws 2015, c. 1, § 2, eff. Nov. 1, 2015; Laws 2016, c. 210, § 35, emerg. eff. April 26, 2016; Laws 2018, c. 175, § 4, eff. Nov. 1, 2018; Laws 2019, c. 428, § 18, emerg. eff. May 21, 2019; Laws 2020, c. 161, § 59, emerg. eff. May 21, 2020; Laws 2021, c. 395, § 1, emerg. eff. May 3, Laws 2015, c. 84, § 1 repealed by Laws 2016, c. 210, § 36, emerg. eff. April 26, 2016. Laws Text read from the Legislative Service Bureau''s Title 63 PDF (updated Nov. 12, 2026), page 1101. Found by the state statutes pilot (terms: tribal); AI reader''s verdict incidental: Central repository access extended to tribal law enforcement agencies. Unverified.'
+notes: 'Indigo Book citation: Okla. Stat. tit. 63, § 2-309D (2026). History: Added by Laws 1990, c. 210, § 4, eff. Sept. 1, 1990. Amended by Laws 1997, c. 238, § 5, eff. Laws 2015, c. 1, § 2, eff. Nov. 1, 2015; Laws 2016, c. 210, § 35, emerg. eff. April 26, 2016; Laws 2018, c. 175, § 4, eff. Nov. 1, 2018; Laws 2019, c. 428, § 18, emerg. eff. May 21, 2019; Laws 2020, c. 161, § 59, emerg. eff. May 21, 2020; Laws 2021, c. 395, § 1, emerg. eff. May 3, Laws 2015, c. 84, § 1 repealed by Laws 2016, c. 210, § 36, emerg. eff. April 26, 2016. Laws. Text read from the Legislative Service Bureau''s Title 63 PDF (updated Nov. 12, 2026), page 1101. Found by the state statutes pilot (terms: tribal); AI reader''s verdict incidental: Central repository access extended to tribal law enforcement agencies. Unverified.'
 review:
   status: unverified
-  by: scripts/law/oklahoma_statutes.py
+  by: scripts/law/state_statutes/run.py
   date: '2026-11-26'
   checks:
   - check: 'Indian law section: the pilot''s keyword pass and an AI reader''s verdict (core, incidental or none)'

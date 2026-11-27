@@ -198,6 +198,33 @@ indian_health_service:
   locator: '"Federally Recognized Tribes" list, Mt. Edgecumbe Service Area profile'
   note: 'The source''s words: "Organized Village of Kake".'
   operator: tribal
+federal_programs:
+- program: interior-self-governance-compact
+  since: 1996
+  source: bia-office-of-self-governance-tribes-2024-07-24
+  confidence: high
+  verification: bulk-import
+  as_of: '2024-07-24'
+  locator: row 'Organized Village Of Kake' (Alaska Region)
+- program: indian-housing-block-grant
+  fiscal_year: 2026
+  amount: 223126
+  amount_kind: allocation
+  source: hud-ihbg-fy2026-formula-allocations
+  confidence: medium
+  verification: bulk-import
+  as_of: '2026'
+  locator: AK, row 'Kake' (Kake)
+  note: The list's name was matched to this nation by a person or AI review; the list names 'Kake'.
+- program: interior-self-governance-compact
+  fiscal_year: 2025
+  amount: 1409564
+  amount_kind: obligations
+  source: usaspending-fy2025-assistance-listing-15-022
+  confidence: high
+  verification: bulk-import
+  as_of: '2025'
+  locator: Assistance Listing 15.022, recipient 'ORGANIZED VILLAGE OF KAKE' (UEI JY4HKQYAAB36), Oct. 1, 2024 to Sept. 30, 2025
 government_structure:
 - kind: alaska-indian-reorganization-act
   detail: Constitution (Organized Village of Kake, Alaska) (approved 1947) states it was adopted under

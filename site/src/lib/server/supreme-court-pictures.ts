@@ -33,6 +33,10 @@ export interface SupremeCourtPicture {
 	checked: string;
 	/** The file the copy was downloaded from. */
 	copy: string;
+	/** Degrees clockwise the copy was turned before it was served. */
+	rotate?: number;
+	/** Left, top, right and bottom of the part served, in pixels of the (turned) copy. */
+	crop?: number[];
 	media_type: string;
 	width: number;
 	height: number;
@@ -79,13 +83,17 @@ export function pictureView(subject: string): InfoPicture | undefined {
 	};
 }
 
-/** The pictures the Worker may serve, for "virtual:portraits". */
-export function servablePortraits(): { person: string; key: string; mediaType: string; sha256: string; link: string }[] {
+/**
+ * The pictures the Worker may serve, for "virtual:portraits". A picture turned
+ * or cut from its copy has no link: the Worker cannot remake it, so it is
+ * served only from the bucket.
+ */
+export function servablePortraits(): { person: string; key: string; mediaType: string; sha256: string; link?: string }[] {
 	return [...pictures().values()].map((picture) => ({
 		person: picture.subject,
 		key: picture.key,
 		mediaType: picture.media_type,
 		sha256: picture.sha256,
-		link: picture.copy
+		...(picture.rotate || picture.crop ? {} : { link: picture.copy })
 	}));
 }

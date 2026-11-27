@@ -52,7 +52,7 @@ found_in:
 notes: 'Indigo Book citation: Okla. Stat. tit. 20, § 1005.1 (2026). History: Added by Laws 1996, c. 192, § 1, eff. Nov. 1, 1996. Amended by Laws 1997, c. 400, § 5, eff. Text read from the Legislative Service Bureau''s Title 20 PDF (updated Nov. 12, 2026), page 697. Found by the state statutes pilot (terms: indian); AI reader''s verdict incidental: Records retention exempts Indian deed approval records. Unverified.'
 review:
   status: unverified
-  by: scripts/law/oklahoma_statutes.py
+  by: scripts/law/state_statutes/run.py
   date: '2026-11-26'
   checks:
   - check: 'Indian law section: the pilot''s keyword pass and an AI reader''s verdict (core, incidental or none)'

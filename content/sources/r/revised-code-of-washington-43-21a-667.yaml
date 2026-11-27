@@ -1,0 +1,50 @@
+key: revised-code-of-washington-43-21a-667
+kind: state-statute
+citation:
+  type: legislation
+  title: Aquatic algae control account — Freshwater and saltwater aquatic algae control program
+  title-short: Wash. Rev. Code § 43.21A.667
+  container-title: Revised Code of Washington
+  container-title-short: Wash. Rev. Code
+  section: 43.21A.667
+  author:
+  - literal: Washington State Legislature
+  issued:
+    date-parts:
+    - - 2005
+  URL: https://app.leg.wa.gov/RCW/default.aspx?cite=43.21A.667
+  accessed:
+    date-parts:
+    - - 2026
+      - 11
+      - 27
+original_link: https://app.leg.wa.gov/RCW/default.aspx?cite=43.21A.667
+retrieved: '2026-11-27'
+archives: []
+history:
+  status: live
+  last_checked: '2026-11-27'
+state_law:
+  relevance: incidental
+  citation: Wash. Rev. Code § 43.21A.667 (2026)
+rights:
+  status: no-permission-needed
+  basis: government-edict
+  basis_note: 'Official state statutes are not copyrightable under the government edicts doctrine (Georgia v. Public.Resource.Org, Inc., 590 U.S. 255 (2020)). Linked, not served: state statutes stay link only.'
+  redistribution: false
+jurisdictions:
+- level: state
+  state: WA
+topics:
+- state-indian-law
+found_in:
+- 2026-11-27-state-statutes-sweep
+notes: 'Indigo Book citation: Wash. Rev. Code § 43.21A.667 (2026). History: [2014 c 76 s 1. Prior: 2011 c 171 s 7; 2011 c 169 s 2; 2011 c 5 s 908; 2009 c 564 s 933; 2005 c 464 s 4.]. Text read from the Washington State Legislature''s full-text chapter page for the section (app.leg.wa.gov/RCW) on Nov. 27, 2026. Found by the state statutes sweep (terms: native; tribes); AI reader''s verdict incidental: Algae control grants may go to tribes. Unverified.'
+review:
+  status: unverified
+  by: scripts/law/state_statutes/run.py
+  date: '2026-11-27'
+  checks:
+  - check: 'Indian law section: the sweep''s keyword pass and an AI reader''s verdict (core, incidental or none)'
+    result: agree
+    detail: 'incidental; terms: native; tribes'

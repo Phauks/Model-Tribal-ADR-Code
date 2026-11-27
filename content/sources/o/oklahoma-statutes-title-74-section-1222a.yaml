@@ -89,7 +89,7 @@ found_in:
 notes: 'Indigo Book citation: Okla. Stat. tit. 74, § 1222A (2026). History: Added by Laws 2021, c. 513, § 1, emerg. eff. May 24, 2021. Text read from the Legislative Service Bureau''s Title 74 PDF (updated Nov. 12, 2026), page 828. Found by the state statutes pilot (terms: state-tribal; tribal governments); AI reader''s verdict core: State-Tribal Litigation Revolving Fund for state-tribal disputes. Unverified.'
 review:
   status: unverified
-  by: scripts/law/oklahoma_statutes.py
+  by: scripts/law/state_statutes/run.py
   date: '2026-11-26'
   checks:
   - check: 'Indian law section: the pilot''s keyword pass and an AI reader''s verdict (core, incidental or none)'

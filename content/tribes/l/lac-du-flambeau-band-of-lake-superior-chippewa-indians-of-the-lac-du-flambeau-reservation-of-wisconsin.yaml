@@ -181,6 +181,26 @@ indian_health_service:
   as_of: '2026-11-23'
   locator: Tribal Health Programs lists (Michigan, Minnesota, Wisconsin)
   note: 'Listed as "Lac du Flambeau Band of Lake Superior Chippewa Indians of the Lac du Flambeau Reservation of Wisconsin". Also listed under the same Area in: indian-health-service-self-governance-tribes. Also on the Indian Health Service Self-Governance Tribes list (Fond du Lac Band of Lake Superior Chippewa (1995)); the list does not say which service unit or programs the compact covers.'
+federal_programs:
+- program: indian-housing-block-grant
+  fiscal_year: 2026
+  amount: 2654635
+  amount_kind: allocation
+  source: hud-ihbg-fy2026-formula-allocations
+  confidence: high
+  verification: bulk-import
+  as_of: '2026'
+  locator: WI, row 'Lac Du Flambeau Band of Lake Superior Chippewa' (Lac du Flambeau)
+- program: isdeaa-contract-indian-health-service
+  fiscal_year: 2025
+  amount: 10907593
+  amount_kind: obligations
+  source: usaspending-fy2025-assistance-listing-93-441
+  confidence: medium
+  verification: bulk-import
+  as_of: '2025'
+  locator: Assistance Listing 93.441, recipient 'LAC DU FLAMBEAU BAND OF LAKE SUPERIOR CHIPPEWA INDIANS' (UEI Q425K7BJUDG6), Oct. 1, 2024 to Sept. 30, 2025
+  note: The list's name was matched to this nation by a person or AI review; the list names 'LAC DU FLAMBEAU BAND OF LAKE SUPERIOR CHIPPEWA INDIANS'.
 government_structure:
 - kind: indian-reorganization-act
   detail: Listed as "Lac du Flambeau Band of the Lake Superior Chippewa Indians of Wisconsin" among organizations

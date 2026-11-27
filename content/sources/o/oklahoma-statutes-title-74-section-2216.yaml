@@ -89,7 +89,7 @@ found_in:
 notes: 'Indigo Book citation: Okla. Stat. tit. 74, § 2216 (2026). History: Added by Laws 2005, c. 363, § 17, eff. Nov. 1, 2005. Amended by Laws 2012, c. 304, § 990. Text read from the Legislative Service Bureau''s Title 74 PDF (updated Nov. 12, 2026), page 994. Found by the state statutes pilot (terms: federally recognized tribes); AI reader''s verdict incidental: Park rangers may provide enforcement under agreements with federally recognized tribes. Unverified.'
 review:
   status: unverified
-  by: scripts/law/oklahoma_statutes.py
+  by: scripts/law/state_statutes/run.py
   date: '2026-11-26'
   checks:
   - check: 'Indian law section: the pilot''s keyword pass and an AI reader''s verdict (core, incidental or none)'

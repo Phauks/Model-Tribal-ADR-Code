@@ -13,13 +13,17 @@
  * of their own, for the filters that need all of them at once, which read
  * it only once a nation has restricted something.
  */
-import { copyFiles, restrictableCopiesFile } from '../built-files.ts';
+import { copyFiles, copyMovesFile, restrictableCopiesFile } from '../built-files.ts';
 import type { CopyRestriction } from '../nation-restrictions.ts';
 import type { PublicCopy } from '../public-copies.ts';
 import { privateFile, privateSpreadReader } from './built-files.ts';
 
-/** A copy as the Worker serves it: its key, type, hash, size and original addresses, and for a nation's law or court opinion, the choices it follows. */
-export type ServedCopy = Pick<PublicCopy, 'key' | 'mediaType' | 'sha256' | 'bytes' | 'links'> & { restrict?: CopyRestriction };
+/**
+ * A copy as the Worker serves it: its key, type, hash, size and original
+ * addresses, a saved web page's encoding when it is not UTF-8, and for a
+ * nation's law or court opinion, the choices it follows.
+ */
+export type ServedCopy = Pick<PublicCopy, 'key' | 'mediaType' | 'sha256' | 'bytes' | 'links' | 'charset'> & { restrict?: CopyRestriction };
 
 /** A copy as its file keeps it, under its key. */
 export type StoredCopy = Omit<ServedCopy, 'key'>;
@@ -37,6 +41,14 @@ export async function servedCopies(keys: Iterable<string>): Promise<Map<string, 
 export async function servedCopy(key: string): Promise<ServedCopy | undefined> {
 	const copy = await copies.recordOf(key);
 	return copy ? { key, ...copy } : undefined;
+}
+
+const moves = privateFile<Record<string, string>>(copyMovesFile, {});
+
+/** The key of the copy a saved web page's reading page opens instead, such as the text of the same executive order, if there is one. */
+export async function movedCopy(key: string): Promise<string | undefined> {
+	const found = await moves();
+	return Object.hasOwn(found, key) ? found[key] : undefined;
 }
 
 /** A copy of a nation's law or court opinion: its key and the choices it follows. */

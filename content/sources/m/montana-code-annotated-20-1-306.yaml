@@ -1,0 +1,50 @@
+key: montana-code-annotated-20-1-306
+kind: state-statute
+citation:
+  type: legislation
+  title: Commemorative exercises on certain days
+  title-short: Mont. Code Ann. § 20-1-306
+  container-title: Montana Code Annotated
+  container-title-short: Mont. Code Ann.
+  section: 20-1-306
+  author:
+  - literal: Montana Legislature
+  issued:
+    date-parts:
+    - - 1971
+  URL: https://mca.legmt.gov/bills/mca/title_0200/chapter_0010/part_0030/section_0060/0200-0010-0030-0060.html
+  accessed:
+    date-parts:
+    - - 2026
+      - 11
+      - 27
+original_link: https://mca.legmt.gov/bills/mca/title_0200/chapter_0010/part_0030/section_0060/0200-0010-0030-0060.html
+retrieved: '2026-11-27'
+archives: []
+history:
+  status: live
+  last_checked: '2026-11-27'
+state_law:
+  relevance: incidental
+  citation: Mont. Code Ann. § 20-1-306 (2025)
+rights:
+  status: no-permission-needed
+  basis: government-edict
+  basis_note: 'Official state statutes are not copyrightable under the government edicts doctrine (Georgia v. Public.Resource.Org, Inc., 590 U.S. 255 (2020)). Linked, not served: state statutes stay link only.'
+  redistribution: false
+jurisdictions:
+- level: state
+  state: MT
+topics:
+- state-indian-law
+found_in:
+- 2026-11-27-state-statutes-sweep
+notes: 'Indigo Book citation: Mont. Code Ann. § 20-1-306 (2025). History: En. 75-7407 by Sec. 371, Ch. 5, L. 1971; R.C.M. 1947, 75-7407; amd. Sec. 1, Ch. 202, L. 1997; amd. Sec. 1, Ch. 320, L. 2025. Text read from the Montana Legislature''s page for the section in the Montana Code Annotated 2025 (mca.legmt.gov) on Nov. 27, 2026. Found by the state statutes sweep (terms: american indian; indian); AI reader''s verdict incidental: Districts must hold exercises on American Indian Heritage Day, among others. Unverified.'
+review:
+  status: unverified
+  by: scripts/law/state_statutes/run.py
+  date: '2026-11-27'
+  checks:
+  - check: 'Indian law section: the sweep''s keyword pass and an AI reader''s verdict (core, incidental or none)'
+    result: agree
+    detail: 'incidental; terms: american indian; indian'

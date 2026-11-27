@@ -16,7 +16,7 @@ import type { ReadingLinks } from '../reading-links.ts';
 import type { StoryRecord } from '../story-visibility.ts';
 import { imageMayBeShown, type OfficialImageRecord, type ServableImage } from '../official-images.ts';
 import { parseCsv } from '../csv.ts';
-import { copiesByLink, linkForMatching, servedMediaTypes, type PublicCopy } from '../public-copies.ts';
+import { copiesByLink, copyPreference, linkForMatching, servedMediaTypes, type PublicCopy } from '../public-copies.ts';
 import type { RecordBox } from '../essays/record-boxes.ts';
 import { applyRecordText, type RecordTextWords } from '../record-text.ts';
 
@@ -245,6 +245,20 @@ export interface NationRecord {
 		bureau_of_indian_affairs_agency?: string;
 	};
 	indian_health_service?: (CitedFact & { area: string; service_unit?: string; operator?: string })[];
+	/** Federal self-governance, self-determination and block grant programs, one fact per program per source (site/src/lib/federal-programs.ts). */
+	federal_programs?: (CitedFact & {
+		program: string;
+		agency?: string;
+		since?: number;
+		start?: string;
+		end?: string;
+		fiscal_year?: number;
+		through?: string;
+		programs_included?: string[];
+		amount?: number;
+		amount_kind?: 'allocation' | 'obligations';
+		detail?: string;
+	})[];
 	government_structure?: (CitedFact & { kind: string; detail?: string })[];
 	/** How the government is set up, one plain fact per item (decision record 0042). */
 	governance?: (CitedFact & { aspect: string; value: string; quote?: string })[];
@@ -595,6 +609,8 @@ function indexedCopies(): PublicCopy[] {
 		const indexPath = 'research/capture-index.csv';
 		const rows = existsSync(path.join(repositoryRoot, indexPath)) ? parseCsv(readText(indexPath)) : [];
 		const namesReplaced = redactedOpinionKeys();
+		const charsets = copyCharsets();
+		const pages = copyPageCounts();
 		indexedCopyCache = rows
 			.filter(
 				(row) =>
@@ -619,7 +635,9 @@ function indexedCopies(): PublicCopy[] {
 				nations: row.nations.split(';').filter(Boolean),
 				rights: row.rights,
 				...(namesReplaced.has(row.key) ? { namesReplaced: true } : {}),
-				records: (row.records ?? '').split(';').filter(Boolean)
+				records: (row.records ?? '').split(';').filter(Boolean),
+				...(charsets.has(row.key) ? { charset: charsets.get(row.key) } : {}),
+				...(pages.has(row.sha256) ? { pages: pages.get(row.sha256) } : {})
 			}))
 			// A redacted opinion never points to the original, which still has the names in it.
 			.map((copy) => (copy.namesReplaced ? { ...copy, links: [] } : copy))
@@ -627,6 +645,70 @@ function indexedCopies(): PublicCopy[] {
 			.sort((first, second) => first.title.localeCompare(second.title));
 	}
 	return indexedCopyCache;
+}
+
+/**
+ * The saved web pages that are not in UTF-8, with their encoding
+ * (research/copy-charsets.csv, written by scripts/captures/check_saved_pages.py
+ * charsets). The Worker names the encoding when it serves a saved page, since
+ * a browser that is not told reads a page with no <meta charset> as
+ * Windows-1252 and garbles its accented letters, dashes and section signs.
+ */
+function copyCharsets(): Map<string, string> {
+	const file = 'research/copy-charsets.csv';
+	if (!existsSync(path.join(repositoryRoot, file))) return new Map();
+	return new Map(
+		parseCsv(readText(file))
+			.filter((row) => /^[a-z0-9-]+$/i.test(row.charset ?? ''))
+			.map((row) => [row.key, row.charset.toLowerCase()])
+	);
+}
+
+/** Court opinions' topics, whose withheld copies are never named, not even to send a reader on. */
+const opinionTopics = new Set(['state-court-opinions', 'caselaw-access-project', 'federal-court-opinions', 'tribal-court-decisions', 'tribal-court-opinions']);
+
+/**
+ * Saved web pages that open another copy of the same document instead, by
+ * key: the copy the site serves of the page's address, when that copy is a
+ * PDF, a text or a picture (copyPreference). A saved page carries the other
+ * site's menus around the text, and some of these are no longer served at all
+ * (the Oklahoma State University pages of executive orders, whose texts are
+ * served under executive-orders/), so an old link to one still reaches the
+ * document.
+ */
+export function copyMoves(): Record<string, string> {
+	const indexPath = 'research/capture-index.csv';
+	if (!existsSync(path.join(repositoryRoot, indexPath))) return {};
+	const served = copiesByLink(publicCopies());
+	const moves: Record<string, string> = {};
+	for (const row of parseCsv(readText(indexPath))) {
+		if (row.media_type !== 'text/html' || row.derived_from || opinionTopics.has(row.topic)) continue;
+		for (const link of row.link.split(/\s+/)) {
+			const matching = linkForMatching(link);
+			const copy = matching ? served.get(matching) : undefined;
+			if (copy && copy.key !== row.key && copyPreference(copy.mediaType) < copyPreference('text/html')) {
+				moves[row.key] = copy.key;
+				break;
+			}
+		}
+	}
+	return moves;
+}
+
+/**
+ * How many pages each PDF has, by SHA-256 (research/copy-pages.csv, written by
+ * scripts/library/count_pages.py), so the Statistics page and nation pages can
+ * give documents and their pages separately (Trevor, Nov. 27, 2026). Empty
+ * when the file is missing.
+ */
+function copyPageCounts(): Map<string, number> {
+	const file = 'research/copy-pages.csv';
+	if (!existsSync(path.join(repositoryRoot, file))) return new Map();
+	return new Map(
+		parseCsv(readText(file))
+			.map((row): [string, number] => [row.sha256, Number(row.pages)])
+			.filter(([, pages]) => pages > 0)
+	);
 }
 
 /**

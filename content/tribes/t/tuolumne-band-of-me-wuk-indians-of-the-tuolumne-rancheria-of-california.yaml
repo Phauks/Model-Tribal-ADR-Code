@@ -184,6 +184,46 @@ indian_health_service:
   as_of: '2026-11-23'
   locator: regional lists (West Central, Southern, Northern, East Central)
   note: 'Listed as "Tuolumne Band of Me-Wuk Indians of the Tuolumne Rancheria of California". Also listed under the same Area in: indian-health-service-self-governance-tribes. Also on the Indian Health Service Self-Governance Tribes list (Tuolumne Me-Wuk Tribal Council (2025)); the list does not say which service unit or programs the compact covers.'
+federal_programs:
+- program: indian-health-service-self-governance-compact
+  since: 2025
+  source: indian-health-service-self-governance-tribes
+  confidence: medium
+  verification: bulk-import
+  as_of: '2025-07-01'
+  locator: California Area, row 'Tuolumne Me-Wuk Tribal Council'
+  note: The list's name was matched to this nation by a person or AI review; the list names 'Tuolumne Me-Wuk Tribal Council'.
+- program: indian-housing-block-grant
+  fiscal_year: 2026
+  amount: 630790
+  amount_kind: allocation
+  source: hud-ihbg-fy2026-formula-allocations
+  confidence: high
+  verification: bulk-import
+  as_of: '2026'
+  locator: CA, row 'Tuolumne Band of Me-Wuk Indians' (Tuolumne)
+- program: indian-health-service-self-governance-compact
+  fiscal_year: 2025
+  amount: 1550810
+  amount_kind: obligations
+  through: Tuolumne Me-Wuk Indian Health Center, Incorporation
+  source: usaspending-fy2025-assistance-listing-93-210
+  confidence: medium
+  verification: bulk-import
+  as_of: '2025'
+  locator: Assistance Listing 93.210, recipient 'TUOLUMNE ME-WUK INDIAN HEALTH CENTER, INCORPORATION' (UEI K1TXS7VVGGZ6), Oct. 1, 2024 to Sept. 30, 2025
+  note: The list's name was matched to this nation by a person or AI review; the list names 'TUOLUMNE ME-WUK INDIAN HEALTH CENTER, INCORPORATION'.
+- program: isdeaa-contract-indian-health-service
+  fiscal_year: 2025
+  amount: 950718
+  amount_kind: obligations
+  through: Tuolumne Me-Wuk Indian Health Center, Incorporation
+  source: usaspending-fy2025-assistance-listing-93-441
+  confidence: medium
+  verification: bulk-import
+  as_of: '2025'
+  locator: Assistance Listing 93.441, recipient 'TUOLUMNE ME-WUK INDIAN HEALTH CENTER, INCORPORATION' (UEI K1TXS7VVGGZ6), Oct. 1, 2024 to Sept. 30, 2025
+  note: The list's name was matched to this nation by a person or AI review; the list names 'TUOLUMNE ME-WUK INDIAN HEALTH CENTER, INCORPORATION'.
 government_structure:
 - kind: indian-reorganization-act
   detail: Listed as "The Tuolumne of Me-wuk Indians of the Tuolumne Rancheria, California" among organizations
