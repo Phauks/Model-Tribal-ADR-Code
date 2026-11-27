@@ -1,0 +1,60 @@
+key: haaland-2025
+kind: federal-case
+citation:
+  type: legal_case
+  title: Haaland
+  authority: United States District Court for the District of New Mexico
+  issued:
+    date-parts:
+    - - 2025
+      - 11
+      - 24
+  URL: https://www.courtlistener.com/opinion/10741936/pueblo-of-san-felipe-a-federally-recognized-indian-tribe-v-debra-haaland/
+  accessed:
+    date-parts:
+    - - 2026
+      - 11
+      - 26
+original_link: https://www.courtlistener.com/opinion/10741936/pueblo-of-san-felipe-a-federally-recognized-indian-tribe-v-debra-haaland/
+retrieved: '2026-11-26'
+archives: []
+history:
+  status: live
+  last_checked: '2026-11-26'
+rights:
+  status: no-permission-needed
+  basis: government-edict
+  basis_note: The text of a judicial opinion has no copyright (Georgia v. Public.Resource.Org, Inc., 590 U.S. 255 (2020)). The copy served on this site is the court's opinion only, without the publisher's headnotes, synopsis or other editorial matter (decision record 0060).
+  redistribution: true
+tribes:
+- pueblo-of-san-felipe
+nations_in_case:
+  checked: '2026-11-26'
+  named:
+  - nation: pueblo-of-san-felipe
+    named_as: Pueblo of San Felipe
+    role: party
+    note: Matched by the script to the nation record of the same name; not yet checked.
+  not_linked:
+  - named_as: Federally Recognized Indian Tribe
+    reason: No nation record matches this name; it may be a historical name or a group that is not a recognized nation today.
+  - named_as: Indian Affairs Southern Pueblo
+    reason: More than one of today's nations shares this name (american-indian-council-of-mariposa-county, cherokee-nation-west-of-missouri-and-arkansas, san-juan-southern-paiute-tribe-of-arizona, southern-cherokee-indian-tribe, southern-cherokee-nation-of-kentucky, southern-cherokee-treaty-tribe and 4 more); which the case concerns has not been checked.
+jurisdictions:
+- level: federal
+topics:
+- federal-court-indian-law
+found_in:
+- 2026-11-26-federal-court-indian-law-opinions
+notes: Docket 1:23-cv-00296; no reporter citation yet. Decided by the United States District Court for the District of New Mexico on Nov. 24, 2025. Found by scripts/caselaw/courtlistener_federal_opinions.py and scripts/caselaw/state_court_opinions.py in CourtListener's bulk files, with an Indian law term score of 11, at or above 10, the level kept without a reading.
+review:
+  status: unverified
+  by: scripts/caselaw/state_court_opinions.py
+  date: '2026-11-26'
+  checks:
+  - check: 'Indian law case: the term score and, below the score kept without a reading, an AI reader''s judgment of excerpts'
+    result: agree
+    detail: score 11
+  - check: Nations named in the caption, matched to nation records by name
+    result: missing
+    detail: 1 matched, 2 not linked

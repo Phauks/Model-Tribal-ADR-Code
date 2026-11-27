@@ -178,6 +178,8 @@ SENSITIVE_TEXT = re.compile(
     r"Indian Child Welfare Act|\bICWA\b|termination of (?:the )?parental rights|\badoption\b|child custody|"
     r"protective order|order of protection|protection order|juvenile court|youth court", re.I)
 
+INITIALS_PARTY = re.compile(r"^\s*(?:In re |Matter of |Doe, )?(?:[A-Z]\.\s?){1,4}(?:-?[A-Z]\.\s?)*(?:,? (?:Jr|Sr)\.?)?(?:,? et al\.?)?\s*$")
+
 
 def sensitivity(case: dict) -> str:
     """Why a case is held for a privacy review, or "" when it is not."""
@@ -185,6 +187,11 @@ def sensitivity(case: dict) -> str:
     if SENSITIVE_CAPTION.search(caption):
         match = SENSITIVE_CAPTION.search(caption).group(0).lower()
         return "estate" if match in ("estate of", "estate", "heirs", "will of", "probate") else "child or protected person"
+    # A party the court names only by initials (United States v. B.N.M., L.B. v. United States) is most often a
+    # minor or a victim the court has already shielded; the opinion's text may still say more.
+    for name in (case.get("name_abbreviation"), case.get("name")):
+        if any(INITIALS_PARTY.match(side) for side in re.split(r"\bv\.?\s", name or "")):
+            return "child or protected person"
     text = case_text(case)
     hits = SENSITIVE_TEXT.findall(text)
     return "child or protected person" if len(hits) >= 3 else ""
@@ -238,6 +245,12 @@ def excerpts(args: argparse.Namespace) -> None:
     rows = [row for row in candidates(work) if needs_reading(row, args.auto, args.read_from)]
     out = work / "reading"
     out.mkdir(exist_ok=True)
+    first = 1
+    if args.unread:
+        # Only cases no reader has answered yet (candidates added later, such as CourtListener's), in new batches after the last.
+        answered = {answer["id"] for path in out.glob("out-*.json") for answer in json.loads(path.read_text())}
+        rows = [row for row in rows if row["id"] not in answered]
+        first = 1 + max((int(path.stem.split("-")[1]) for path in out.glob("in-*.json")), default=0)
     items = []
     for row in rows:
         case = json.loads((work / "cases" / row["reporter"] / row["volume"] / row["file"]).read_text())
@@ -247,8 +260,8 @@ def excerpts(args: argparse.Namespace) -> None:
     size = -(-len(items) // args.batches)
     for index in range(args.batches):
         part = items[index * size:(index + 1) * size]
-        (out / f"in-{index + 1}.json").write_text(json.dumps(part, indent=0, ensure_ascii=False))
-    print(f"{len(items)} cases to read in {args.batches} batches")
+        (out / f"in-{first + index}.json").write_text(json.dumps(part, indent=0, ensure_ascii=False))
+    print(f"{len(items)} cases to read in batches {first} to {first + args.batches - 1}")
 
 
 # A Native nation or Native organization named as a party, for cases a reader did not keep.
@@ -262,10 +275,10 @@ def select(args: argparse.Namespace) -> None:
     for path in sorted((work / "reading").glob("out-*.json")):
         for answer in json.loads(path.read_text()):
             readings[answer["id"]] = answer
-    # The spot check of cases kept by score (reading/check-out.json): a case it judged not Indian law is left
-    # out, unless the caption names a Native nation as a party.
-    check = work / "reading" / "check-out.json"
-    rejected = {answer["id"] for answer in json.loads(check.read_text()) if answer.get("indian_law") is False} if check.exists() else set()
+    # The spot checks of cases kept by score (reading/check-out.json, and check-<name>-out.json for later
+    # sets): a case judged not Indian law is left out, unless the caption names a Native nation as a party.
+    rejected = {answer["id"] for path in (work / "reading").glob("check*out.json")
+                for answer in json.loads(path.read_text()) if answer.get("indian_law") is False}
     selected, missing = [], 0
     for row in candidates(work):
         if row["score"] >= args.auto and not only_native(row):
@@ -522,6 +535,7 @@ def write(args: argparse.Namespace) -> None:
         if federal or FEDERAL_COURT.search(court_name):
             record.update(kind="federal-case", jurisdictions=[{"level": "federal"}], topics=[FEDERAL_TOPIC])
         path = SOURCES / (key[0] if "a" <= key[0] <= "z" else "_other") / f"{key}.yaml"
+        path.parent.mkdir(exist_ok=True)  # no record had begun with x before
         path.write_text(dump(record), encoding="utf-8")
         rewritten.add(path)
         written += 1
@@ -599,6 +613,7 @@ def main() -> None:
     p.add_argument("--read-from", type=int, default=KEEP_FULL, help="lowest score read (the federal run reads every candidate, from 1)")
     p.add_argument("--snippets", type=int, default=5, help="passages per case")
     p.add_argument("--width", type=int, default=220, help="characters on each side of a term")
+    p.add_argument("--unread", action="store_true", help="only cases with no reader's answer yet, in new batches numbered after the last")
     p = sub.add_parser("select")
     p.add_argument("--work", required=True)
     p.add_argument("--auto", type=int, default=10)

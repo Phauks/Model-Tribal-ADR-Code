@@ -95,7 +95,7 @@ TOPIC_RIGHTS = {
                                     "served on the website under decision record 0060; a nation can ask for removal or redaction."),
     "state-court-opinions": ("A state or territorial court's published opinion, from the Caselaw Access Project (released without restriction, 2024): "
                              "no copyright in the text; publisher's headnotes and editorial matter left out; served under decision record 0060."),
-    "federal-court-opinions": ("A federal court's published opinion, from the Caselaw Access Project (released without restriction, 2024): "
+    "federal-court-opinions": ("A federal court's opinion, from the Caselaw Access Project (released without restriction, 2024) or CourtListener's bulk files (Free Law Project, public domain mark): "
                                "no copyright in the text; publisher's headnotes and editorial matter left out; served under decision record 0060."),
 }
 DEFAULT_RIGHTS = "Private research copy; not redistributed."

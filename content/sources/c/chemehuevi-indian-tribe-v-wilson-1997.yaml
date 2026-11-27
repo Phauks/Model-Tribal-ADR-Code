@@ -34,6 +34,7 @@ tribes:
 - hoopa-valley-tribe
 - hopland-band-of-pomo-indians
 - redding-rancheria
+- chemehuevi-indian-tribe-of-the-chemehuevi-reservation
 nations_in_case:
   checked: '2026-11-26'
   named:
@@ -54,6 +55,10 @@ nations_in_case:
     named_as: Redding Rancheria
     role: party
     note: Matched by the script to the nation record of the same name; not yet checked.
+  - nation: chemehuevi-indian-tribe-of-the-chemehuevi-reservation
+    named_as: Chemehuevi Indian Tribe
+    role: party
+    note: Matched by the script to a name the nation record gives; not yet checked.
   not_linked:
   - named_as: Pomo Indians
     reason: More than one of today's nations shares this name (big-valley-band-of-pomo-indians-of-the-big-valley-rancheria, cloverdale-rancheria-of-pomo-indians-of-california, coyote-valley-band-of-pomo-indians-of-california, dry-creek-rancheria-band-of-pomo-indians, elem-indian-colony-of-pomo-indians-of-the-sulphur-bank-rancheria, habematolel-pomo-of-upper-lake and 9 more); which the case concerns has not been checked.
@@ -76,4 +81,4 @@ review:
     detail: score 70
   - check: Nations named in the caption, matched to nation records by name
     result: missing
-    detail: 4 matched, 2 not linked
+    detail: 5 matched, 2 not linked

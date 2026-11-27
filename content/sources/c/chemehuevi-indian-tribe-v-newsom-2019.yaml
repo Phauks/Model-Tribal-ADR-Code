@@ -31,6 +31,7 @@ rights:
   redistribution: true
 tribes:
 - chicken-ranch-rancheria-of-me-wuk-indians-of-california
+- chemehuevi-indian-tribe-of-the-chemehuevi-reservation
 nations_in_case:
   checked: '2026-11-26'
   named:
@@ -39,6 +40,10 @@ nations_in_case:
     role: party
     historical: true
     note: Matched by the script to the only nation record sharing this name; not yet checked against the case's history.
+  - nation: chemehuevi-indian-tribe-of-the-chemehuevi-reservation
+    named_as: Chemehuevi Indian Tribe
+    role: party
+    note: Matched by the script to a name the nation record gives; not yet checked.
 jurisdictions:
 - level: federal
 topics:
@@ -56,4 +61,4 @@ review:
     detail: score 60
   - check: Nations named in the caption, matched to nation records by name
     result: agree
-    detail: 1 matched, 0 not linked
+    detail: 2 matched, 0 not linked

@@ -89,13 +89,33 @@ def clusters(args: argparse.Namespace) -> None:
     for cluster_id, cluster in found.items():
         if cluster["docket"] in court_of:
             court_id, number = court_of[cluster["docket"]]
-            cluster.update(court=court_id, court_name=courts[court_id]["full_name"], court_short=courts[court_id]["short_name"], docket_number=number)
+            cluster.update(court=court_id, court_name=court_title(courts[court_id]["full_name"]), court_short=courts[court_id]["short_name"], docket_number=number)
             kept[cluster_id] = cluster
     for row in bulk_rows(paths["citations"]):
         if row["cluster_id"] in kept:
             kept[row["cluster_id"]]["citations"].append(f"{row['volume']} {row['reporter']} {row['page']}")
     (cache / "clusters.json").write_text(json.dumps(kept))
     print(len(kept), "clusters in federal courts", flush=True)
+
+
+TERRITORIAL = {"District Court, Virgin Islands": "District Court of the Virgin Islands", "District Court, D. Guam": "District Court of Guam",
+               "District Court, Northern Mariana Islands": "District Court for the Northern Mariana Islands",
+               "District Court, District of Columbia": "United States District Court for the District of Columbia"}
+DISTRICTS = {"N": "Northern", "S": "Southern", "E": "Eastern", "W": "Western", "C": "Central", "M": "Middle"}
+
+
+def court_title(name: str) -> str:
+    """CourtListener's court name in the Caselaw Access Project's style, so one court is listed one way
+    ("District Court, E.D. New York" is "United States District Court for the Eastern District of New York")."""
+    if name in TERRITORIAL:
+        return TERRITORIAL[name]
+    match = re.fullmatch(r"District Court, (?:([NSEWCM])\.D\.|D\.) (.+)", name)
+    if match:
+        part = f"{DISTRICTS[match.group(1)]} District" if match.group(1) else "District"
+        return f"United States District Court for the {part} of {match.group(2)}"
+    if name.startswith("Court of Appeals for the "):
+        return "United States " + name.replace("the D.C. Circuit", "the District of Columbia Circuit")
+    return name
 
 
 TAG = re.compile(r"<[^>]+>")
@@ -115,6 +135,7 @@ def opinion_text(row: dict) -> str:
 def opinions(args: argparse.Namespace) -> None:
     import indexed_bzip2  # noqa: PLC0415
     cache, work = Path(args.cache), Path(args.work)
+    work.mkdir(parents=True, exist_ok=True)  # made first: the pass takes over an hour
     wanted = json.loads((cache / "clusters.json").read_text())
     print(len(wanted), "clusters to look for", flush=True)
     # The file is downloaded whole first (about 55 GB): parallel decompression needs a local file, and
@@ -212,22 +233,66 @@ def opinions(args: argparse.Namespace) -> None:
     print(count, "candidates written to", out, flush=True)
 
 
+WORD = re.compile(r"[a-z0-9]+")
+NOT_NAMES = {"the", "of", "in", "re", "v", "vs", "and", "inc", "co", "corp", "llc", "et", "al", "us", "united", "states", "america"}
+
+
+def name_words(name: str) -> frozenset[str]:
+    return frozenset(word for word in WORD.findall((name or "").lower()) if word not in NOT_NAMES and len(word) > 2)
+
+
+def same_case(row: dict, other: dict) -> bool:
+    """Whether two candidates without a shared citation look like one opinion: filed within a week, and most of the shorter caption's words in the other."""
+    from datetime import date  # noqa: PLC0415
+    try:
+        apart = abs((date.fromisoformat(row["date"][:10]) - date.fromisoformat(other["date"][:10])).days)
+    except ValueError:
+        return False
+    first, second = name_words(row["name"]), name_words(other["name"])
+    shorter = min(len(first), len(second))
+    if apart > 7 or not shorter or len(first & second) < max(1, (shorter * 2 + 2) // 3):
+        return False
+    # Each side of the "v." shares a word with the same side of the other caption (Havasu Water Co. v. Chemehuevi Indian Tribe is not Chemehuevi Indian Tribe v. McMahon).
+    sides, others = re.split(r"\bv\.?\s", row["name"] or "", maxsplit=1), re.split(r"\bv\.?\s", other["name"] or "", maxsplit=1)
+    if len(sides) == 2 and len(others) == 2:
+        return all(name_words(one) & name_words(two) or not name_words(one) or not name_words(two) for one, two in zip(sides, others))
+    return True
+
+
 def merge(args: argparse.Namespace) -> None:
     work = Path(args.work)
     rows = [json.loads(line) for line in open(work / "candidates.jsonl", encoding="utf-8")]
     rows = [row for row in rows if row["reporter"] != "courtlistener"]
     cites = {" ".join(cite.split()) for row in rows for cite in row["citations"] if cite}
-    added = 0
+    # The Project's last federal volumes overlap CourtListener's first years (Oct. 2017 to 2019); district
+    # opinions from GovInfo carry no citation there, so those are matched by date and caption.
+    recent: dict[str, list[dict]] = {}
+    for row in rows:
+        if (row["date"] or "") >= "2017-09":
+            recent.setdefault(row["date"][:7], []).append(row)
+    added = by_cite = by_name = 0
     for line in open(work / "candidates-courtlistener.jsonl", encoding="utf-8"):
         row = json.loads(line)
         if any(" ".join(cite.split()) in cites for cite in row["citations"]):
+            by_cite += 1
+            continue
+        month = row["date"][:7]
+        if any(same_case(row, other) for near in nearby_months(month) for other in recent.get(near, [])):
+            by_name += 1
             continue
         rows.append(row)
         added += 1
     with open(work / "candidates.jsonl", "w", encoding="utf-8") as handle:
         for row in rows:
             handle.write(json.dumps(row) + "\n")
-    print(added, "CourtListener candidates added")
+    print(added, "CourtListener candidates added;", by_cite, "already there by citation,", by_name, "by date and caption")
+
+
+def nearby_months(month: str) -> list[str]:
+    """The month and those on either side, so a filing date a few days off still meets its match."""
+    year, number = int(month[:4]), int(month[5:7])
+    index = year * 12 + number - 1
+    return [f"{(index + step) // 12}-{(index + step) % 12 + 1:02d}" for step in (-1, 0, 1)]
 
 
 def main() -> None:

@@ -1,0 +1,58 @@
+key: tsi-akim-maidu-of-taylorsville-rancheria-v-u-s-dept-of-the-interior-2021
+kind: federal-case
+citation:
+  type: legal_case
+  title: Tsi Akim Maidu of Taylorsville Rancheria v. U.S. Dept. of the Interior
+  authority: United States District Court for the Eastern District of California
+  issued:
+    date-parts:
+    - - 2021
+      - 9
+      - 13
+  URL: https://www.courtlistener.com/opinion/9563550/tsi-akim-maidu-of-taylorsville-rancheria-v-us-dept-of-the-interior/
+  accessed:
+    date-parts:
+    - - 2026
+      - 11
+      - 26
+original_link: https://www.courtlistener.com/opinion/9563550/tsi-akim-maidu-of-taylorsville-rancheria-v-us-dept-of-the-interior/
+retrieved: '2026-11-26'
+archives: []
+history:
+  status: live
+  last_checked: '2026-11-26'
+rights:
+  status: no-permission-needed
+  basis: government-edict
+  basis_note: The text of a judicial opinion has no copyright (Georgia v. Public.Resource.Org, Inc., 590 U.S. 255 (2020)). The copy served on this site is the court's opinion only, without the publisher's headnotes, synopsis or other editorial matter (decision record 0060).
+  redistribution: true
+tribes:
+- tsi-akim-maidu
+nations_in_case:
+  checked: '2026-11-26'
+  named:
+  - nation: tsi-akim-maidu
+    named_as: Tsi Akim Maidu
+    role: party
+    note: Matched by the script to a name the nation record gives; not yet checked.
+  not_linked:
+  - named_as: Taylorsville Rancheria
+    reason: No nation record matches this name; it may be a historical name or a group that is not a recognized nation today.
+jurisdictions:
+- level: federal
+topics:
+- federal-court-indian-law
+found_in:
+- 2026-11-26-federal-court-indian-law-opinions
+notes: Docket 2:17-cv-01156; no reporter citation yet. Decided by the United States District Court for the Eastern District of California on Sept. 13, 2021. Found by scripts/caselaw/courtlistener_federal_opinions.py and scripts/caselaw/state_court_opinions.py in CourtListener's bulk files, with an Indian law term score of 1; an AI reader read excerpts and judged it an Indian law case (Taylorsville Rancheria tribal status APA challenge).
+review:
+  status: unverified
+  by: scripts/caselaw/state_court_opinions.py
+  date: '2026-11-26'
+  checks:
+  - check: 'Indian law case: the term score and, below the score kept without a reading, an AI reader''s judgment of excerpts'
+    result: agree
+    detail: 'score 1; reader: Taylorsville Rancheria tribal status APA challenge'
+  - check: Nations named in the caption, matched to nation records by name
+    result: missing
+    detail: 1 matched, 1 not linked
