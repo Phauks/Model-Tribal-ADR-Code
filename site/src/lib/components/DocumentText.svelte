@@ -482,8 +482,8 @@
 					{/if}
 					<span class="bar-label">Text size</span>
 					<span class="size-buttons">
-						<button type="button" aria-label="Smaller text" title="Smaller text" disabled={sizeStep === 0} onclick={() => setSize(sizeStep - 1)}>A−</button>
-						<button type="button" aria-label="Larger text" title="Larger text" disabled={sizeStep === sizes.length - 1} onclick={() => setSize(sizeStep + 1)}>A+</button>
+						<button type="button" title="Smaller text" disabled={sizeStep === 0} onclick={() => setSize(sizeStep - 1)}>A−<span class="visually-hidden">, smaller text</span></button>
+						<button type="button" title="Larger text" disabled={sizeStep === sizes.length - 1} onclick={() => setSize(sizeStep + 1)}>A+<span class="visually-hidden">, larger text</span></button>
 					</span>
 				</div>
 			{/if}
