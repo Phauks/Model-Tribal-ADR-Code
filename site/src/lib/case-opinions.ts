@@ -50,7 +50,10 @@ export const opinionLabels: Record<string, string> = {
 	dissent: 'dissenting opinion',
 	'coauthored dissent': 'joint dissenting opinion',
 	'per curiam': 'per curiam opinion',
-	'in chambers': 'opinion in chambers'
+	'in chambers': 'opinion in chambers',
+	// Kinds the Caselaw Access Project marks in state and federal reports (scripts/caselaw/case_opinion_texts.py).
+	rehearing: 'opinion on rehearing',
+	'on the merits': 'opinion on the merits'
 };
 
 /** "Opinion of the Court", with a capital, for a heading or the start of a line. */

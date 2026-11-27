@@ -35,6 +35,7 @@ import { displayName } from '../nation-labels.ts';
 import { officialReportLinks, readingLinksHtml } from '../reading-links.ts';
 import { copyPagePath, copyPath } from '../public-copies.ts';
 import { opinionTitle, surname, type OpinionEntry } from '../case-opinions.ts';
+import { opinionTextsOf } from './case-opinion-texts.ts';
 import type { SourceEntry } from './source-uses.ts';
 import { peopleInCase } from './biographies.ts';
 import { accountsOf, type AccountEntry } from './impact-accounts.ts';
@@ -63,6 +64,12 @@ export interface CaseOpinion {
 	/** That page in the saved copy of the official report. */
 	link?: string;
 	note?: string;
+	/** The page where it ends, when the site has its text (case-opinion-texts.ts). */
+	lastPage?: number;
+	/** Its length in words, when the site has its text. */
+	words?: number;
+	/** Its place among the opinions in the copy that holds its text, from 0; set only when the site has its text. */
+	position?: number;
 }
 
 export interface CaseNation {
@@ -83,6 +90,8 @@ export interface CasePage {
 	/** The box's parts, each a folding section. */
 	boxSections: BoxSection[];
 	opinions: CaseOpinion[];
+	/** The served copy the opinions' text is read from when a reader opens the page (/cases/<key>/opinions.json), when the site has it. */
+	opinionCopy?: string;
 	nations: CaseNation[];
 	/** Native people in the case who have a page (content/biographies/). */
 	people: { name: string; link: string; role: string }[];
@@ -187,33 +196,57 @@ export function boxSections(key: string, title: string, box: RecordBox | undefin
 }
 
 /**
- * The opinions, from the record's opinions block, each linked to its first
- * page in the saved scan of the official report, which starts at the case's
- * first page. Without that block, the writers the bench names, unlinked.
+ * The opinions. Where the site serves their text (case-opinion-texts.ts),
+ * one for each opinion in that copy, with its pages and length, the writer
+ * named from the record's opinions block where one starts on the same page.
+ * Otherwise from the record's opinions block, each linked to its first page
+ * in the saved scan of the official report, which starts at the case's first
+ * page. Without that block, the writers the bench names, unlinked.
  */
 export function caseOpinions(record: SourceRecord & CaseRecordParts): CaseOpinion[] {
 	// The Justices' pages, as the bench in At a glance links them (case-facts.ts).
 	const decided = decidedDay(record.citation.issued);
 	const writerLink = (name: string) => (record.supreme_court ? justiceLinkFor(name, decided, record.key) : undefined);
 	const list = record.opinions?.list;
-	if (list?.length) {
-		const scan = officialReportLinks(record.reading_links).find((link) => /tile\.loc\.gov\/.+\/usrep\d+[a-z]?\.pdf$/.test(link));
-		const copy = scan ? publicCopyFor(scan) : undefined;
-		const first = Number(record.citation.page);
-		return [...list]
-			.sort((one, other) => one.page - other.page)
-			.map((opinion) => ({
-				title: opinionTitle(opinion.kind),
-				justice: opinion.kind === 'per curiam' ? '' : surname(opinion.justice),
-				justiceLink: opinion.kind === 'per curiam' ? undefined : writerLink(opinion.justice),
-				page: opinion.page,
-				link: copy && Number.isInteger(first) && opinion.page >= first ? `${copyPagePath(copy)}#page=${opinion.scan_page ?? opinion.page - first + 1}` : undefined,
-				note: opinion.note
-			}));
+	const listed = list?.length ? recordOpinions(record, list, writerLink) : [];
+	const texts = opinionTextsOf(record.key);
+	if (texts.length) {
+		// The opinions as the copy with their text has them; a writer the record names from the official report, with
+		// the Justice's page and the page in the saved scan, wins over the writer's line in the copy.
+		const unused = [...listed];
+		return texts.map((text): CaseOpinion => {
+			const at = unused.findIndex((opinion) => opinion.page !== undefined && opinion.page === text.firstPage);
+			const named = at >= 0 ? unused.splice(at, 1)[0] : undefined;
+			const perCuriam = text.kind === 'per curiam';
+			return {
+				...(named ?? { title: opinionTitle(text.kind), justice: perCuriam ? '' : text.author, justiceLink: perCuriam || !text.author ? undefined : writerLink(text.author), page: text.firstPage }),
+				lastPage: text.lastPage,
+				words: text.words,
+				position: text.position
+			};
+		});
 	}
+	if (listed.length) return listed;
 	return (record.supreme_court?.justices ?? [])
 		.filter((justice) => justice.opinion)
 		.map((justice) => ({ title: opinionTitle(justice.opinion!), justice: surname(justice.name), justiceLink: writerLink(justice.name) }));
+}
+
+/** The record's own list of opinions (its opinions block), each linked to its first page in the saved scan of the official report. */
+function recordOpinions(record: SourceRecord & CaseRecordParts, list: OpinionEntry[], writerLink: (name: string) => string | undefined): CaseOpinion[] {
+	const scan = officialReportLinks(record.reading_links).find((link) => /tile\.loc\.gov\/.+\/usrep\d+[a-z]?\.pdf$/.test(link));
+	const copy = scan ? publicCopyFor(scan) : undefined;
+	const first = Number(record.citation.page);
+	return [...list]
+		.sort((one, other) => one.page - other.page)
+		.map((opinion) => ({
+			title: opinionTitle(opinion.kind),
+			justice: opinion.kind === 'per curiam' ? '' : surname(opinion.justice),
+			justiceLink: opinion.kind === 'per curiam' ? undefined : writerLink(opinion.justice),
+			page: opinion.page,
+			link: copy && Number.isInteger(first) && opinion.page >= first ? `${copyPagePath(copy)}#page=${opinion.scan_page ?? opinion.page - first + 1}` : undefined,
+			note: opinion.note
+		}));
 }
 
 function caseNations(record: SourceRecord & CaseRecordParts): { nations: CaseNation[]; shared?: string } {
@@ -301,6 +334,7 @@ export function casePage(key: string): CasePage {
 		topics: box.topics,
 		boxSections: box.sections,
 		opinions: caseOpinions(record),
+		opinionCopy: opinionTextsOf(key)[0]?.copy,
 		nations,
 		people: peopleInCase(key),
 		nationNote: shared,

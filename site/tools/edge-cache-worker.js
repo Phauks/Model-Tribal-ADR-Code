@@ -37,6 +37,11 @@ export const edgeCacheRules = [
 	{ pattern: /^\/supreme-court\/(?:justices|presidents)\/[^/]+(?:\/__data\.json)?$/, seconds: day, tags: ['record-pages'], statuses: [200] },
 	{ pattern: /^\/supreme-court\/(?!justices$|presidents$|portraits$)[^/]+(?:\/__data\.json)?$/, seconds: day, tags: ['record-pages'], statuses: [200] },
 	{ pattern: /^\/supreme-court\/portraits\/[^/]+$/, seconds: 30 * day, tags: ['record-pages'], statuses: [200] },
+	// A case's opinions, read from the copy that holds their text
+	// (src/routes/cases/[id]/opinions.json). Federal and state opinions are
+	// always shown (decision record 0056); the route itself sends a copy a
+	// nation restricts with no-store, and the tag purges it with their choices.
+	{ pattern: /^\/cases\/[^/]+\/opinions\.json$/, seconds: day, tags: ['record-pages', 'nation-restrictions'], statuses: [200] },
 	// Map tiles: each tile set's name changes whenever its file does
 	// (src/lib/server/map-tile-serving.ts), and pictures of the U.S. Geological
 	// Survey's maps change seldom (src/lib/server/map-imagery.ts).
