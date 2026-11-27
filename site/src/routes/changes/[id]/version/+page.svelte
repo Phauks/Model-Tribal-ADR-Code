@@ -1,4 +1,5 @@
 <script lang="ts">
+	import { pageChangesLink } from '#lib/page-history.ts';
 	import Breadcrumbs from '#lib/components/Breadcrumbs.svelte';
 	import { dateTime } from '#lib/change-dates.ts';
 	import type { PageProps } from './$types';
@@ -16,7 +17,7 @@
 <Breadcrumbs
 	trail={[
 		{ label: 'Recent changes', href: '/changes' },
-		{ label: `History of ${pageName}`, href: `/changes?page=${encodeURIComponent(change.address)}` }
+		{ label: `History of ${pageName}`, href: pageChangesLink(change.address) }
 	]}
 	current="As of {dateTime(change.madeAt)}"
 />

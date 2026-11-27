@@ -1,4 +1,5 @@
 <script lang="ts">
+	import { pageChangesLink } from '#lib/page-history.ts';
 	import Breadcrumbs from '#lib/components/Breadcrumbs.svelte';
 	import ChangeComparison from '#lib/components/changes/ChangeComparison.svelte';
 	import { dateTime } from '#lib/change-dates.ts';
@@ -21,7 +22,7 @@
 <Breadcrumbs
 	trail={[
 		{ label: 'Recent changes', href: '/changes' },
-		{ label: `History of ${pageName}`, href: `/changes?page=${encodeURIComponent(data.to.address)}` }
+		{ label: `History of ${pageName}`, href: pageChangesLink(data.to.address) }
 	]}
 	current="Compare two versions of {pageName}"
 />

@@ -279,11 +279,23 @@ export function tileMapData() {
 			}))
 		},
 		areas: tileMapAreas(byArea, () => true),
+		/** Each nation's land areas by Census code, so the map's search can show and mark a nation's lands (Trevor, 2026-11-27). */
+		nationAreas: nationAreasOf(byArea),
 		offices: placedOffices().map((office) => ({ ...office, anchor: `/nations/${office.nation}` })),
 		shading: tileMapShading() as ReturnType<typeof tileMapShading> | undefined
 	};
 }
 
+
+/** The land areas each nation's entry names, by the nation's id, leaving out withdrawn areas. */
+function nationAreasOf(byArea: Map<string, ListedNation[]>): Record<string, string[]> {
+	const areas: Record<string, string[]> = {};
+	for (const [code, linked] of byArea) {
+		if (withdrawnLandAreas.has(code)) continue;
+		for (const nation of linked) (areas[nation.id] ??= []).push(code);
+	}
+	return areas;
+}
 
 /** Each land area's dot, box and label for the tiled map, for the areas the test keeps. */
 function tileMapAreas(byArea: Map<string, ListedNation[]>, keep: (code: string) => boolean) {
@@ -316,6 +328,7 @@ export function nationTileMapData(codes: string[]): TileMapData {
 		states: {},
 		regions: { type: 'FeatureCollection', features: [] },
 		areas: tileMapAreas(new Map(), (code) => wanted.has(code)),
+		nationAreas: {},
 		offices: [],
 		shading: undefined
 	};

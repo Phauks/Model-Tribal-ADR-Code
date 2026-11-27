@@ -1,0 +1,83 @@
+key: congressional-hearing-118hhrg52513
+kind: congressional-document
+citation:
+  type: hearing
+  title: Legislative Hearing on H.R. 630, to Amend the Indian Health Care Improvement Act to Establish An Urban Indian Organization Confer Policy for the Department of Health and Human Services, ``Urban Indian Health Confer Act''; H.R. 1240, to Transfer Administrative Jurisdiction of Certain Federal Lands From the Army Corps of Engineers to the Bureau of Indian Affairs, to Take Such Lands Into Trust for the Winnebago Tribe of Nebraska, and for Other Purposes, ``Winnebago Land Transfer Act of 2023''; H.R. 1722, to Amend the Grand Ronde Reservation Act, and for Other Purposes, ``Grand Ronde Reservation Act Amendment of 2023''; H.R. 2461, to Ratify A Treaty Between the San Juan Southern Paiute Tribe and the Navajo Nation, to Provide for the Creation of A Reservation for the San Juan Southern Paiute Tribe, and for Other Purposes, ``San Juan Southern Paiute Tribal Homelands Act of 2023''; H.R. 2839, to Amend the Siletz Reservation Act to Address the Hunting, Fishing, Trapping, and Animal Gathering Rights of the Confederated Tribes of Siletz Indians, and for Other Purposes; and H.R. 3371, to Direct the Secretary of the Interior to Complete All Actions Necessary for Certain Land to Be Held in Restricted Fee Status By the Oglala Sioux Tribe and Cheyenne River Sioux Tribe, and for Other Purposes, ``Wounded Knee Massacre Memorial and Sacred Site Act''
+  genre: Hearing
+  author:
+  - literal: U.S. House of Representatives, Committee on Natural Resources
+  publisher: U.S. Government Publishing Office
+  URL: https://www.govinfo.gov/app/details/CHRG-118hhrg52513
+  number-of-pages: '84'
+  issued:
+    date-parts:
+    - - 2023
+      - 6
+      - 7
+  accessed:
+    date-parts:
+    - - 2026
+      - 11
+      - 27
+original_link: https://www.govinfo.gov/app/details/CHRG-118hhrg52513
+retrieved: '2026-11-27'
+file:
+  storage_key: congress/CHRG-118hhrg52513.pdf
+  checksum: 934f6083828bce675797f12c1dd04ba4e0d568c589303fe34c4e923441298fdb
+  media_type: application/pdf
+  bytes: 324790
+legislative:
+  chamber: house
+  congress: 118
+  session: 1
+  committees:
+  - Committee on Natural Resources
+  bills:
+  - H.R. 1240 (118th Cong.)
+  - S. 153 (118th Cong.)
+  - S. Con. Res. 153 (118th Cong.)
+  - H.R. 1722 (118th Cong.)
+  - H.R. 2461 (118th Cong.)
+  - H.R. 2462 (118th Cong.)
+  - H.R. 2549 (118th Cong.)
+  - H.R. 2839 (118th Cong.)
+  - H. Res. 2839 (118th Cong.)
+  - H.R. 2850 (118th Cong.)
+  - H.R. 3371 (118th Cong.)
+  - H.R. 4462 (118th Cong.)
+  - S. 460 (118th Cong.)
+  - H.R. 4709 (118th Cong.)
+  - H.R. 5221 (118th Cong.)
+  - H.R. 630 (118th Cong.)
+  held:
+  - '2023-06-07'
+  govinfo_package: CHRG-118hhrg52513
+rights:
+  status: no-permission-needed
+  basis: us-government-work
+  basis_note: A work of the United States government, not subject to copyright (17 U.S.C. § 105).
+  redistribution: true
+jurisdictions:
+- level: federal
+tribes:
+- confederated-tribes-of-siletz-indians-of-oregon
+- san-juan-southern-paiute-tribe-of-arizona
+- cheyenne-river-sioux-tribe-of-the-cheyenne-river-reservation
+- winnebago-tribe-of-nebraska
+- oglala-sioux-tribe
+- navajo-nation
+access:
+  open: true
+  pull_from:
+  - free-web
+found_in:
+- 2026-11-27-congressional-documents
+notes: 'Indigo Book citation: Legislative Hearing on H.R. 630, to Amend the Indian Health Care Improvement Act to Establish An Urban Indian Organization Confer Policy for the Department of Health and Human Services, ``Urban Indian Health Confer Act''''; H.R. 1240, to Transfer Administrative Jurisdiction of Certain Federal Lands From the Army Corps of Engineers to the Bureau of Indian Affairs, to Take Such Lands Into Trust for the Winnebago Tribe of Nebraska, and for Other Purposes, ``Winnebago Land Transfer Act of 2023''''; H.R. 1722, to Amend the Grand Ronde Reservation Act, and for Other Purposes, ``Grand Ronde Reservation Act Amendment of 2023''''; H.R. 2461, to Ratify A Treaty Between the San Juan Southern Paiute Tribe and the Navajo Nation, to Provide for the Creation of A Reservation for the San Juan Southern Paiute Tribe, and for Other Purposes, ``San Juan Southern Paiute Tribal Homelands Act of 2023''''; H.R. 2839, to Amend the Siletz Reservation Act to Address the Hunting, Fishing, Trapping, and Animal Gathering Rights of the Confederated Tribes of Siletz Indians, and for Other Purposes; and H.R. 3371, to Direct the Secretary of the Interior to Complete All Actions Necessary for Certain Land to Be Held in Restricted Fee Status By the Oglala Sioux Tribe and Cheyenne River Sioux Tribe, and for Other Purposes, ``Wounded Knee Massacre Memorial and Sacred Site Act'''', 118th Cong. (2023). Hearing of the Committee on Natural Resources, 118th Congress. From GovInfo (CHRG-118hhrg52513); kept because its title names Native people. Title, date, committee and numbers from GovInfo''s summary and MODS record; nations matched by name in the title. Generated by scripts/law/congressional_documents.py; not yet read by a person (Unverified).'
+review:
+  status: unverified
+  by: scripts/law/congressional_documents.py
+  date: '2026-11-27'
+  checks:
+  - check: citation
+    result: missing
+    detail: 'GovInfo metadata only: CHRG-118hhrg52513'
