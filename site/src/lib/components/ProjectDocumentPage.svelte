@@ -29,7 +29,7 @@
 	<title>{title} · Tribal Law Project</title>
 </svelte:head>
 
-<Breadcrumbs trail={crumbs} />
+<Breadcrumbs trail={crumbs} current={title} />
 
 <div class="reading">
 	<h1>{title}</h1>

@@ -25,21 +25,25 @@ export const POST: RequestHandler = async (event) => {
 	const keys = Array.isArray(body?.keys) ? body.keys.filter((key): key is string => typeof key === 'string' && keyPattern.test(key)).slice(0, 5000) : [];
 	const catalog = catalogByKey();
 	const states = await pieceStates(database);
-	const pieces = keys.flatMap((key) => {
-		const entry = catalog.get(key);
-		if (!entry) return [];
-		const state = states.get(key);
-		return [
-			{
-				key,
-				builtIn: entry.words,
-				attribute: entry.attribute ?? null,
-				published: state?.published ?? null,
-				draft: state?.draft ? { words: state.draft.words, personName: state.draft.personName, createdAt: state.draft.createdAt } : null,
-				record: recordPiece(entry, state)
-			}
-		];
-	});
+	const pieces = (
+		await Promise.all(
+			keys.map(async (key) => {
+				const entry = catalog.get(key);
+				if (!entry) return [];
+				const state = states.get(key);
+				return [
+					{
+						key,
+						builtIn: entry.words,
+						attribute: entry.attribute ?? null,
+						published: state?.published ?? null,
+						draft: state?.draft ? { words: state.draft.words, personName: state.draft.personName, createdAt: state.draft.createdAt } : null,
+						record: await recordPiece(entry, state)
+					}
+				];
+			})
+		)
+	).flat();
 	const waiting = [...states.values()].filter((state) => state.draft).length;
 	return json({ level: access.level, pieces, waiting }, { headers: { 'cache-control': 'no-store' } });
 };

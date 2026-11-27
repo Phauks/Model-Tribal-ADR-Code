@@ -35,6 +35,12 @@ describe('what the edge may keep', () => {
 		const policy = edgePolicy('GET', '/search/index.json', ok());
 		expect(policy).toEqual({ control: 'public, max-age=300', tags: ['nation-restrictions'] });
 		expect(edgePolicy('GET', '/search/records.json', ok()).tags).toEqual(['nation-restrictions']);
+		// The sitemap leaves out what nations hid, so it is purged with them (src/lib/sitemap.ts).
+		expect(edgePolicy('GET', '/sitemap.xml', ok())).toEqual({ control: 'public, max-age=3600', tags: ['nation-restrictions'] });
+		expect(edgePolicy('GET', '/sitemaps/source-documents.xml', ok()).tags).toEqual(['nation-restrictions']);
+		expect(edgePolicy('GET', '/sitemaps/cases-2.xml', ok()).tags).toEqual(['nation-restrictions']);
+		// The lists as built are never served, so never kept.
+		expect(edgePolicy('GET', '/sitemaps/built/parts.json', ok()).control).toBe('no-store');
 	});
 
 	it('never keeps a signed-in, personal or changing page', () => {

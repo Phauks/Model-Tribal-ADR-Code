@@ -35,7 +35,7 @@ export const POST: RequestHandler = async (event) => {
 			key: entry.key,
 			published: state?.published ?? null,
 			draft: state?.draft ? { words: state.draft.words, personName: state.draft.personName, createdAt: state.draft.createdAt } : null,
-			record: recordPiece(entry, state),
+			record: await recordPiece(entry, state),
 			waiting: [...states.values()].filter((each) => each.draft).length
 		},
 		{ headers: { 'cache-control': 'no-store' } }

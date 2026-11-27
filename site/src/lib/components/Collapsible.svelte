@@ -52,10 +52,12 @@
 			const outer = box.getBoundingClientRect();
 			const inner = heading.getBoundingClientRect();
 			const rightToLeft = getComputedStyle(box).direction === 'rtl';
+			// The rule under the heading is not part of its row, so the buttons line up with the heading's text, not with the rule.
+			const rule = parseFloat(getComputedStyle(heading).borderBottomWidth) || 0;
 			row = {
 				top: inner.top - outer.top,
 				end: rightToLeft ? inner.left - outer.left : outer.right - inner.right,
-				height: inner.height
+				height: inner.height - rule
 			};
 		};
 		const observer = new ResizeObserver(measure);
@@ -118,6 +120,13 @@
 		block-size: auto;
 	}
 
+	/*
+	 * A rule under each heading marks where a section begins (Trevor picked
+	 * this on Nov. 26, 2026; site/DESIGN.md, "Section headings"). The rule is on the
+	 * heading row, a flex box, so beside a floated At a glance box it stops at
+	 * the box's edge instead of running under it. Sections inside the At a
+	 * glance box have no rule, since the box already sets them apart.
+	 */
 	summary {
 		display: flex;
 		align-items: center;
@@ -125,6 +134,19 @@
 		min-height: var(--layout-target-minimum);
 		list-style: none;
 		cursor: pointer;
+		border-bottom: 2px solid var(--color-line);
+		margin-bottom: var(--space-4);
+	}
+
+	:global(.glance-box) .collapsible > summary {
+		border-bottom: 0;
+		margin-bottom: 0;
+	}
+
+	/* A list of facts right under the rule drops its own top line, so the two never sit as a double line. */
+	.collapsible > summary + :global(.summary-list),
+	.collapsible > summary + :global(.nation-edit-link) + :global(.summary-list) {
+		border-top: 0;
 	}
 
 	summary::-webkit-details-marker {
@@ -132,7 +154,11 @@
 	}
 
 	summary h2 {
-		margin: var(--space-3) 0;
+		margin: var(--space-3) 0 var(--space-2);
+	}
+
+	:global(.glance-box) .collapsible > summary h2 {
+		margin-bottom: var(--space-3);
 	}
 
 	.with-actions {
