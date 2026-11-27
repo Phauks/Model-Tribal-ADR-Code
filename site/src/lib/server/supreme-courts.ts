@@ -74,7 +74,11 @@ export function justicesFile(): JusticesFile {
 
 /** "John Marshall" -> "Marshall"; "John G. Roberts, Jr." -> "Roberts"; "John M. Harlan II" -> "Harlan". */
 export function surname(name: string): string {
-	return name.replace(/,?\s+(?:Jr\.|Sr\.|II|III)$/, '').trim().split(/\s+/).pop() ?? name;
+	const words = name.replace(/,?\s+(?:Jr\.|Sr\.|II|III)$/, '').trim().split(/\s+/);
+	const last = words.pop() ?? name;
+	// "Willis Van Devanter" is Justice Van Devanter, not Devanter.
+	const before = words.at(-1);
+	return before && /^(?:Van|Von|De|Du)$/.test(before) ? `${before} ${last}` : last;
 }
 
 /** Every Court, oldest first. */
@@ -106,8 +110,8 @@ export function courtPath(name: string): string | null {
 }
 
 /** The Associate Justices who sat while this Chief Justice served. */
-export function associatesOf(court: Court): Justice[] {
-	const end = court.end ?? '9999-12-31';
+export function associatesOf(court: Court, until?: string): Justice[] {
+	const end = until ?? court.end ?? '9999-12-31';
 	return justicesFile()
 		.justices.filter(
 			(justice) => justice.role === 'Associate Justice' && justice.oath < end && (justice.left ?? '9999-12-31') > court.start

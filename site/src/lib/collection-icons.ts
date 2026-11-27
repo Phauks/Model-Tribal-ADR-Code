@@ -13,6 +13,7 @@ import FileClock from '@lucide/svelte/icons/file-clock';
 import FileText from '@lucide/svelte/icons/file-text';
 import Files from '@lucide/svelte/icons/files';
 import Gavel from '@lucide/svelte/icons/gavel';
+import Globe from '@lucide/svelte/icons/globe';
 import Handshake from '@lucide/svelte/icons/handshake';
 import Landmark from '@lucide/svelte/icons/landmark';
 import Library from '@lucide/svelte/icons/library';
@@ -63,6 +64,7 @@ const collectionIcons: Record<string, Component> = {
 	justices: Users,
 	presidents: User,
 	'source-copies': Files,
+	'saved-web-pages': Globe,
 	charts: ChartColumn,
 	'glossary-terms': BookA,
 	forms: ClipboardList

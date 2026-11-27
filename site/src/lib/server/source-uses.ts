@@ -64,6 +64,8 @@ export function whereInSource(fact: Pick<CitedFact, 'locator' | 'as_of'>): strin
 }
 
 export class SourceUses {
+	/** Markers taken off the page; their ids stay used, so later markers never repeat one. */
+	readonly #unmarked = new Set<string>();
 	readonly #entries = new Map<
 		string,
 		Omit<SourceEntry, 'groups'> & { uses: SourceUse[] }
@@ -155,6 +157,16 @@ export class SourceUses {
 		return mark;
 	}
 
+	/**
+	 * Takes markers off the page, such as the markers of a line whose next
+	 * line cites the same sources at the same places and carries them for
+	 * both. The facts they supported stay in the Sources list; only the links
+	 * back to the removed markers go.
+	 */
+	unmark(marks: CitationMark[]): void {
+		for (const mark of marks) this.#unmarked.add(mark.anchor);
+	}
+
 	/** cite() for a cited fact: nothing when the fact names no source. */
 	citeFact(
 		fact: CitedFact | undefined,
@@ -181,7 +193,7 @@ export class SourceUses {
 						facts: [use.text]
 					});
 			}
-			return { ...entry, groups };
+			return { ...entry, backlinks: entry.backlinks.filter((anchor) => !this.#unmarked.has(anchor)), groups };
 		});
 	}
 }

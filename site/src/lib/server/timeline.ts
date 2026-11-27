@@ -34,7 +34,6 @@ import { casePreviewList } from './case-previews.ts';
 import {
 	documentHistories,
 	nations,
-	publicCopyFor,
 	sources as sourceRecords,
 	type DocumentHistoryRecord,
 	type NationRecord,
@@ -45,6 +44,7 @@ import { SourceUses, whereInSource, type CitationMark } from './source-uses.ts';
 import { opinionsSourceKey, tribalCourtOpinions } from './tribal-court-opinions.ts';
 import { lawNames } from '../law-names.ts';
 import { isLawRecord, recordPageLink } from './law-records.ts';
+import { savedCopyFor } from './markdown.ts';
 
 /** The heading the timeline's sources are filed under in a page's References list. */
 export const timelineHeading = 'Timeline';
@@ -81,7 +81,7 @@ export function issuedDate(record: SourceRecord): string | undefined {
 
 /** A source record's own address: this site's copy of it when it keeps one, else where it was published. */
 function recordLink(record: SourceRecord): string | undefined {
-	const copy = publicCopyFor(record.original_link) ?? publicCopyFor(record.citation.URL);
+	const copy = savedCopyFor(record);
 	if (copy) return copyPagePath(copy);
 	return webLink(record.original_link) ?? webLink(record.citation.URL);
 }

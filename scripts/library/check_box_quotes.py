@@ -10,8 +10,10 @@ Book does (R8.3; docs/style-guide.md, "Quotations"):
     "..." there; its first letter is capitalized in brackets, "[T]he", or
     left as it is when it is already a capital (R8.3.2);
   - a quotation that stops before the end of the court's sentence ends with
-    "..." and then the sentence's own closing mark: "knowledge ... ."
+    "..." and then the sentence's own closing mark: "knowledge . . . ."
     (R8.3.5);
+  - every ellipsis is three periods with spaces between them, ". . ."
+    (R8.3.1);
   - a quotation that ends where the court's sentence ends keeps the
     sentence's own period (or "?" or "!") and takes no "..." (R8.3.7).
 
@@ -23,7 +25,7 @@ line-break hyphens, so a scan's hyphenation and curly quotation marks do not
 hide a match; the words themselves must all be there, in order.
 
 What it finds goes to research/quotes/box-quote-endings.json with --write:
-one entry for each quotation that ends with "... .", saying whether the
+one entry for each quotation that ends with ". . . .", saying whether the
 sentence really goes on after the last quoted word. scripts/lint_records.py
 reads that file, so a pull request that adds or changes such a quotation
 fails until this script has confirmed it (check "quote-ellipsis"). An entry
@@ -40,10 +42,11 @@ see library.py):
 
 --fix changes only the two ends of a quotation: a leading "..." goes and the
 first letter is capitalized in brackets; a trailing "..." becomes the
-sentence's own closing mark where the sentence ends there, or "... ." (with
+sentence's own closing mark where the sentence ends there, or ". . . ." (with
 the closing mark the court's sentence ends with) where it goes on; a closing
 mark goes after any closing quotation mark the quotation already has only
-when the source puts it there. Every other problem is for a person to read.
+when the source puts it there; and every "..." or "…" is written ". . .".
+Every other problem is for a person to read.
 """
 
 from __future__ import annotations
@@ -66,8 +69,11 @@ ENDINGS_FILE = ROOT / "research" / "quotes" / "box-quote-endings.json"
 BOXES = ("case_box", "law_box")
 ELLIPSIS = r"(?:\.\s?\.\s?\.|…)"
 LEADING = re.compile(rf"^\s*{ELLIPSIS}\s*")
-# "knowledge ... ." : the Indigo Book's mark for a sentence cut short (R8.3.5).
-CUT_END = re.compile(r"(?<=[^\s.])\s+(?:\.\.\.|…)\s+([.?!])\s*$")
+# "knowledge . . . ." : the Indigo Book's mark for a sentence cut short (R8.3.5).
+CUT_END = re.compile(r"(?<=[^\s.])\s+(?:\. \. \.|\.\.\.|…)\s+([.?!])\s*$")
+# The Indigo Book writes the ellipsis as three periods with spaces between
+# them (R8.3.1); "..." and "…" are the unspaced forms.
+UNSPACED = re.compile(r"\.\.\.|…")
 BARE_END = re.compile(rf"\s*{ELLIPSIS}\s*$")
 # Words before a period that do not end a sentence.
 ABBREVIATIONS = {"v", "vs", "co", "corp", "inc", "no", "nos", "mr", "mrs", "ms", "dr", "st", "ct", "cir", "id", "ibid", "e.g", "i.e", "cf", "art", "sec", "secs", "ch", "cl", "stat", "rev", "ann", "supp", "ed", "eds", "ex", "rel", "jr", "sr", "gen", "gov", "dept", "assn", "ry", "bros", "u.s", "u.s.c", "f", "p", "pp", "n", "nn"}
@@ -94,12 +100,12 @@ def letters(text: str) -> tuple[str, list[int]]:
 
 
 def strip_end(text: str) -> str:
-    """The quotation without a trailing "... ." or "..."."""
+    """The quotation without a trailing ". . . ." or ". . ."."""
     return BARE_END.sub("", CUT_END.sub("", text))
 
 
 def trailing_form(text: str) -> str | None:
-    """'cut' for "word ... .", 'bare' for "word ...", else None."""
+    """'cut' for "word . . . .", 'bare' for "word . . .", else None."""
     if CUT_END.search(text):
         return "cut"
     if BARE_END.search(text):
@@ -404,14 +410,16 @@ def problems_of(result) -> list[str]:
         problems.append('begins with "..."; drop it and capitalize the first letter in brackets, "[T]he" (Indigo Book R8.3.2)')
     elif starts_lowercase(text):
         problems.append('begins with a lowercase letter; capitalize it in brackets, "[T]he" (Indigo Book R8.3.2)')
+    if UNSPACED.search(text):
+        problems.append('write the ellipsis as three spaced periods, ". . ." (Indigo Book R8.3.1)')
     trailing = result["trailing"]
     if result["end"] == "sentence" and trailing:
         problems.append(f'needless "...": the sentence ends here with "{result["mark"]}" (Indigo Book R8.3.7)')
     elif result["end"] == "continues":
         if trailing == "bare":
-            problems.append(f'the sentence goes on: end with "... {result["closing"]}" (Indigo Book R8.3.5)')
+            problems.append(f'the sentence goes on: end with ". . . {result["closing"]}" (Indigo Book R8.3.5)')
         elif trailing is None:
-            problems.append(f'stops mid-sentence: end with "... {result["closing"]}" (Indigo Book R8.3.5)')
+            problems.append(f'stops mid-sentence: end with ". . . {result["closing"]}" (Indigo Book R8.3.5)')
     return problems
 
 
@@ -444,8 +452,13 @@ def fixed_text(result) -> str:
             body += result["mark"]
         text = body + closing
     elif result["end"] == "continues" and trailing != "cut":
-        text = strip_end(text).rstrip() + " ... " + result["closing"]
-    return text
+        text = strip_end(text).rstrip() + " . . . " + result["closing"]
+    return spaced(text)
+
+
+def spaced(text: str) -> str:
+    """The quotation with every ellipsis written ". . ."."""
+    return UNSPACED.sub(". . .", text)
 
 
 def apply_fixes(results) -> int:
@@ -499,7 +512,7 @@ def write_endings(results) -> int:
         entries.append(entry)
     entries.sort(key=lambda entry: (entry["record"], entry["text"]))
     document = {
-        "about": "For each case or law box quotation that ends with \"... .\" (a sentence cut short, Indigo Book R8.3.5), whether the quoted sentence goes on past the last quoted word in the document it quotes ('continues') or stops there ('sentence'). Written by scripts/library/check_box_quotes.py --write; read by scripts/lint_records.py (check quote-ellipsis).",
+        "about": "For each case or law box quotation that ends with \". . . .\" (a sentence cut short, Indigo Book R8.3.5), whether the quoted sentence goes on past the last quoted word in the document it quotes ('continues') or stops there ('sentence'). Written by scripts/library/check_box_quotes.py --write; read by scripts/lint_records.py (check quote-ellipsis).",
         "quotations": entries,
     }
     ENDINGS_FILE.parent.mkdir(parents=True, exist_ok=True)

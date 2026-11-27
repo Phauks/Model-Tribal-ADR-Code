@@ -51,6 +51,10 @@
         "$value": "#FFFFFF",
         "$description": "Text on the band. 9.6:1 on band."
       },
+      "band-inset": {
+        "$value": "#0C3B42",
+        "$description": "The masthead's search box at rest, a recessed strip in the band (Trevor, Nov. 27, 2026, closed look 2 in design/header-search/closed-looks). Band text is 12.2:1 on it."
+      },
       "band-progress": {
         "$value": "#F2A65A",
         "$description": "The filled part of a progress bar on the band, such as the Sponsorship page's goal. 4.8:1 on band."
@@ -167,6 +171,30 @@
         "$value": "#0F4C54",
         "$description": "Map: 100 or more nations."
       },
+      "map-sky": {
+        "$value": "#122630",
+        "$description": "Map: the night sky behind the globe, near the earth. Dark in both themes, so the stars show (Trevor, 2026-11-27, mockup A)."
+      },
+      "map-sky-edge": {
+        "$value": "#08131A",
+        "$description": "Map: the night sky behind the globe, at the map's edges."
+      },
+      "map-sky-star": {
+        "$value": "#FFF8EE",
+        "$description": "Map: a white star in the sky behind the globe, the same in both themes. Drawn faint to full by the star's brightness."
+      },
+      "map-sky-star-cool": {
+        "$value": "#D6E2FF",
+        "$description": "Map: a hot, blue-white star (B-V under 0.2) in the sky behind the globe."
+      },
+      "map-sky-star-warm": {
+        "$value": "#FFE2C0",
+        "$description": "Map: a cool, orange-white star (B-V over 1.0) in the sky behind the globe."
+      },
+      "map-sky-glow": {
+        "$value": "#8FD3DA",
+        "$description": "Map: the thin glow at the earth's edge on the globe, drawn at 38 percent and fading out."
+      },
       "scrollbar-thumb": {
         "$value": "#3F7F86",
         "$description": "Scrollbar thumb, the part a reader drags. 4.0:1 on the scrollbar track and 4.4:1 on paper (non-text minimum 3:1)."
@@ -255,6 +283,14 @@
         "$value": "#F0E442",
         "$description": "Chart slice 7 (yellow), from the Okabe-Ito palette (Okabe & Ito, Color Universal Design), in this fixed order and never cycled. Each slice carries its number, which leads its line in the key, so no reader has to match colors; every chart also has a table view. The set must pass npm run check:color-vision."
       },
+      "vote-majority": {
+        "$value": "#0072B2",
+        "$description": "Justice timelines: a vote with the majority, drawn as a filled dot (Okabe-Ito blue). Always a dot, never only a color; the card names the Justices. The vote colors must pass npm run check:color-vision."
+      },
+      "vote-dissent": {
+        "$value": "#D55E00",
+        "$description": "Justice timelines: a dissent, drawn as a cross (Okabe-Ito vermillion). Always a cross, never only a color; the card names the Justices."
+      },
       "viewer-checker-light": {
         "$value": "#FFFFFF",
         "$description": "Light squares of the checkerboard behind a picture in the image viewer, which shows through its clear parts, the same in both themes."
@@ -312,6 +348,10 @@
       "band-text": {
         "$value": "#F3EFEA",
         "$description": "Text on the band. 12.0:1 on band."
+      },
+      "band-inset": {
+        "$value": "#08272B",
+        "$description": "The masthead's search box at rest, a recessed strip in the band (Trevor, Nov. 27, 2026, closed look 2 in design/header-search/closed-looks). Band text is 13.7:1 on it."
       },
       "band-progress": {
         "$value": "#F2A65A",
@@ -429,6 +469,30 @@
         "$value": "#B5E8EC",
         "$description": "Map: 100 or more nations."
       },
+      "map-sky": {
+        "$value": "#10232A",
+        "$description": "Map: the night sky behind the globe, near the earth. Dark in both themes, so the stars show (Trevor, 2026-11-27, mockup A)."
+      },
+      "map-sky-edge": {
+        "$value": "#070F13",
+        "$description": "Map: the night sky behind the globe, at the map's edges."
+      },
+      "map-sky-star": {
+        "$value": "#FFF8EE",
+        "$description": "Map: a white star in the sky behind the globe, the same in both themes. Drawn faint to full by the star's brightness."
+      },
+      "map-sky-star-cool": {
+        "$value": "#D6E2FF",
+        "$description": "Map: a hot, blue-white star (B-V under 0.2) in the sky behind the globe."
+      },
+      "map-sky-star-warm": {
+        "$value": "#FFE2C0",
+        "$description": "Map: a cool, orange-white star (B-V over 1.0) in the sky behind the globe."
+      },
+      "map-sky-glow": {
+        "$value": "#8FD3DA",
+        "$description": "Map: the thin glow at the earth's edge on the globe, drawn at 38 percent and fading out."
+      },
       "scrollbar-thumb": {
         "$value": "#5A979E",
         "$description": "Scrollbar thumb, the part a reader drags. 4.6:1 on the scrollbar track and 5.2:1 on paper (non-text minimum 3:1)."
@@ -516,6 +580,14 @@
       "chart-series-7": {
         "$value": "#F0E442",
         "$description": "Chart slice 7 (yellow), from the Okabe-Ito palette (Okabe & Ito, Color Universal Design), in this fixed order and never cycled. Each slice carries its number, which leads its line in the key, so no reader has to match colors; every chart also has a table view. The set must pass npm run check:color-vision."
+      },
+      "vote-majority": {
+        "$value": "#56B4E9",
+        "$description": "Justice timelines: a vote with the majority, drawn as a filled dot (Okabe-Ito sky blue). Always a dot, never only a color; the card names the Justices. The vote colors must pass npm run check:color-vision."
+      },
+      "vote-dissent": {
+        "$value": "#E69F00",
+        "$description": "Justice timelines: a dissent, drawn as a cross (Okabe-Ito orange). Always a cross, never only a color; the card names the Justices."
       },
       "viewer-checker-light": {
         "$value": "#FFFFFF",

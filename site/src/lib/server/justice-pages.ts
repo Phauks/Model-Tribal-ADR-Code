@@ -11,7 +11,9 @@
  */
 import { readableDate } from '../readable-date.ts';
 import type { CitationMark } from '../citation-marks.ts';
+import type { ChartCase } from '../bench-chart.ts';
 import { casePreviewList } from './case-previews.ts';
+import { chartCasesOfPeople } from './chart-cases.ts';
 import { sources } from './content.ts';
 import { SourceUses, type SourceEntry } from './source-uses.ts';
 import {
@@ -50,6 +52,8 @@ export type PortraitView = InfoPicture;
 /** A bar on a chart: the part of one appointment shown. */
 export interface ServiceRow {
 	name: string;
+	/** The Justice's key (people.yaml), which each case's votes carry too. */
+	person: string;
 	role: string;
 	from: string;
 	to: string;
@@ -82,6 +86,8 @@ export interface JusticePage {
 	start: string;
 	end: string;
 	cases: PersonCase[];
+	/** The same cases with each Justice's vote, for the chart. */
+	chartCases: ChartCase[];
 	/** Every post before and beside the Court, oldest first. */
 	career: CareerLine[];
 	careerMarks: CitationMark[];
@@ -110,6 +116,8 @@ export interface PresidentPage {
 	start: string;
 	end: string;
 	cases: PersonCase[];
+	/** The same cases with each Justice's vote, for the chart. */
+	chartCases: ChartCase[];
 	sources: SourceEntry[];
 }
 
@@ -350,6 +358,7 @@ export function justicePage(key: string): JusticePage | null {
 	sourceUses.part('Cases on this site');
 	const rows: ServiceRow[] = appointments.map((appointment) => ({
 		name: person.name,
+		person: person.key,
 		role: appointment.role,
 		from: appointment.oath,
 		to: appointment.left ?? today()
@@ -361,6 +370,7 @@ export function justicePage(key: string): JusticePage | null {
 		for (const court of sat) {
 			rows.push({
 				name: court.chief.name,
+				person: personOf(court.chief).key,
 				role: 'Chief Justice',
 				from: court.start > start ? court.start : start,
 				to: (court.end ?? today()) < end ? court.end! : end,
@@ -393,6 +403,7 @@ export function justicePage(key: string): JusticePage | null {
 		start: appointments[0].oath,
 		end: appointments.at(-1)!.left ?? today(),
 		cases,
+		chartCases: chartCasesOfPeople([person.key]),
 		career,
 		careerMarks,
 		sources: sourceUses.list
@@ -445,6 +456,7 @@ export function presidentPage(key: string): PresidentPage | null {
 	sourceUses.cite(serviceSource, { section: 'Justices appointed', text: 'Each Justice the President appointed, and the dates of service' }, appointeeMarks);
 	const rows: ServiceRow[] = appointed.map((appointment) => ({
 		name: appointment.name,
+		person: personOf(appointment).key,
 		role: appointment.role,
 		from: appointment.oath,
 		to: appointment.left ?? today(),
@@ -463,6 +475,7 @@ export function presidentPage(key: string): PresidentPage | null {
 		start: rows.reduce((first, row) => (row.from < first ? row.from : first), rows[0]?.from ?? today()),
 		end: rows.reduce((last, row) => (row.to > last ? row.to : last), rows[0]?.to ?? today()),
 		cases,
+		chartCases: chartCasesOfPeople(people.map((each) => each.key)),
 		sources: sourceUses.list
 	};
 }

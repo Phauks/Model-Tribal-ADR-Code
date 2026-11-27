@@ -159,6 +159,8 @@ function groupOf(copy: PublicCopy, names: Map<string, string>): string {
 	if (copy.topic === 'caselaw-access-project') return `${opinionPrefix}${copy.nations[0] ?? 'other'}`;
 	if (copy.topic === 'ibia-decisions') return boardGroup(copy);
 	if (pagedGroups.has(copy.topic)) return pages().get(copy.key)?.slug ?? copy.topic;
+	// The Supreme Court's opinions as text, split by opinion, beside the scans of the United States Reports (scripts/caselaw/case_opinion_texts.py).
+	if (copy.topic === 'supreme-court-opinions') return 'supreme-court';
 	if (copy.topic === 'oklahoma-secretary-of-state') return 'oklahoma-state-tribal-agreements';
 	if (copy.topic === 'constitutions' || copy.topic === 'tribal-law') {
 		const [first] = namesOf(copy, names);

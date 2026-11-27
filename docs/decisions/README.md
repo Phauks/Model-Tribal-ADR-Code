@@ -71,6 +71,7 @@ A record is never rewritten after it is accepted. A later record supersedes it a
 | [0063](0063-widen-stories-to-law-justice-and-governance.md) | Widen story records to law, justice and governance | Accepted |
 | [0064](0064-check-facts-against-their-sources-and-answer-from-our-records.md) | Check each fact against the source it cites, and answer visitors' questions only from our records | Accepted |
 | [0065](0065-take-in-public-domain-myths-and-religious-texts.md) | Take in public-domain myths and religious texts, including ceremonial ones | Accepted |
+| [0066](0066-show-case-opinions-in-full-on-the-case-page.md) | Show a case's opinions in full on its page, read from the copy the site serves | Accepted |
 | [0067](0067-form-an-indigenous-advisory-council.md) | Form an Indigenous Advisory Council, starting with a small unpaid group | Accepted |
 
 Template: Status, Date, Context, Decision, Consequences, Sources.
