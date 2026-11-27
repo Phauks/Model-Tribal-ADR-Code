@@ -147,7 +147,7 @@ describe('Title 25 as an outline', () => {
 		const page = sectionPage('5321');
 		expect(page.name).toBe('§ 5321. Self-determination contracts');
 		expect(page.status).toBe('in force');
-		expect(page.trail.map((crumb) => crumb.label)).toEqual(['U.S. Code, Title 25', 'Chapter 46', 'Subchapter I']);
+		expect(page.trail.map((crumb) => crumb.label)).toEqual(['Federal law', 'U.S. Code, Title 25', 'Chapter 46', 'Subchapter I']);
 		expect(page.previous?.number).toBe('§ 5310');
 		expect(page.next?.number).toBe('§ 5322');
 		expect(page.movedFrom.map((from) => from.label)).toContain('§ 450f');

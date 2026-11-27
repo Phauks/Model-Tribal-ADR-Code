@@ -189,6 +189,8 @@ function treeOf(chapter: Chapter, current?: PlacedSection): CodeTreeItem[] {
 }
 
 const findBox = { label: 'Find in Title 25', link: titleLink };
+/** Federal law's own page, which the trail of every page of Title 25 starts from. */
+export const federalLaw = { label: 'Federal law', href: '/laws' };
 
 /** The side column on a chapter's page or a section's page: back to Title 25, the chapter's name, its outline. */
 function chapterFamily(chapter: Chapter, current?: PlacedSection): PageFamily & { tree: CodeTree } {
@@ -207,6 +209,7 @@ function titleFamily(): PageFamily & { tree: CodeTree } {
 	return {
 		title: 'Title 25. Indians',
 		short: 'Title 25',
+		back: { label: 'Federal law', link: federalLaw.href },
 		link: titleLink,
 		pages: [],
 		tree: {
@@ -310,7 +313,7 @@ export function chapterNavigation(key: string): ChapterNavigation | undefined {
 	return {
 		contents: contentsOf(chapter.number),
 		family: chapterFamily(chapter),
-		trail: [{ label: 'U.S. Code, Title 25', href: titleLink }],
+		trail: [federalLaw, { label: 'U.S. Code, Title 25', href: titleLink }],
 		previous: neighbor(chapters[index - 1]),
 		next: neighbor(chapters[index + 1]),
 		inForce: chapter.sections.filter(inForce).length,
@@ -383,6 +386,7 @@ export function sectionPage(slug: string): SectionPage {
 	const subchapter = section.subchapter ? { label: groupLabel(section.subchapter, 'subchapter'), heading: section.subchapter.heading, link: `${chapter.link}#${groupAnchor(section.subchapter, 'subchapter')}` } : undefined;
 	const part = section.part ? { label: groupLabel(section.part, 'part'), heading: section.part.heading, link: `${chapter.link}#${partAnchor(section)}` } : undefined;
 	const trail = [
+		federalLaw,
 		{ label: 'U.S. Code, Title 25', href: titleLink },
 		{ label: `Chapter ${chapter.number}`, href: chapter.link },
 		...(subchapter ? [{ label: subchapter.label, href: subchapter.link }] : []),

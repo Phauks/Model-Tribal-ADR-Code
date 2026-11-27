@@ -70,7 +70,7 @@
 	{/if}
 {/snippet}
 
-<InfoPage title={data.name} lead={data.citation} glance={data.glance} panels={data.landCeded ? cededMap : undefined} sources={data.sources} trail={data.trail ?? [{ label: 'Library', href: '/library' }]} crumb={data.chapter ? data.name.split('.')[0] : undefined} status={data.stub ? stubStatus : undefined}>
+<InfoPage title={data.name} lead={data.citation} glance={data.glance} panels={data.landCeded ? cededMap : undefined} sources={data.sources} trail={data.trail ?? [data.kind === 'state-statute' ? { label: 'Library', href: '/library' } : { label: 'Federal law', href: '/laws' }]} crumb={data.chapter ? data.name.split('.')[0] : undefined} status={data.stub ? stubStatus : undefined}>
 	{#if data.fullTitle}<p class="full-title muted">{data.fullTitle}</p>{/if}
 
 	{#if data.chapter}

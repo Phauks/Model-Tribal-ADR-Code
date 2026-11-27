@@ -8,8 +8,7 @@
 	says so; the switch shows how many of each chapter's sections are no
 	longer in force.
 
-	The title tops its outline and Federal law has no page of its own, so the
-	page has no trail above its title.
+	Its trail goes up to Federal law.
 
 	The box works on the page as one types; the side column's box on the other
 	pages of Title 25 sends its words here as ?find=.
@@ -17,6 +16,7 @@
 <script lang="ts">
 	import { onMount } from 'svelte';
 	import Search from '@lucide/svelte/icons/search';
+	import Breadcrumbs from '#lib/components/Breadcrumbs.svelte';
 	import type { PageProps } from './$types';
 
 	let { data }: PageProps = $props();
@@ -70,6 +70,7 @@
 </svelte:head>
 
 <article class="title-page">
+	<Breadcrumbs trail={[{ label: 'Federal law', href: '/laws' }]} current="U.S. Code, Title 25" />
 	<h1>Title 25. Indians</h1>
 	<p class="lead-line">
 		<span>United States Code, {data.edition} edition{#if data.currentThrough}{' '}(current through {longDate(data.currentThrough)}){/if}</span>
