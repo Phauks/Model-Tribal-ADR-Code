@@ -114,7 +114,7 @@ review:
     detail: Caselaw Access Project 1898-05-23; Database 1898-05-23
   - check: opinions
     result: confirmed
-    detail: 'Report: none read; Database writers: none. Read from the scan by an AI reader (record right): p. 614: "Order of the Court." ... "NEW YORK INDIANS v. UNITED STATES. ... Announced May 23,1898. The judgment and mandate in this case, 170 U. S. 1, are amended." This is a court order with no writer and no opinion text, so no opinion is listed. The later opinion-start lines (pp. 617, 623) belong to HOLLOWAY v. DUNHAM, which begins at p. 615, not to this case.. Confirmed: the report prints no opinion'
+    detail: 'Report: none read; Database writers: none. Read from the scan by an AI reader (record right): p. 614: "Order of the Court." . . . "NEW YORK INDIANS v. UNITED STATES. . . . Announced May 23,1898. The judgment and mandate in this case, 170 U. S. 1, are amended." This is a court order with no writer and no opinion text, so no opinion is listed. The later opinion-start lines (pp. 617, 623) belong to HOLLOWAY v. DUNHAM, which begins at p. 615, not to this case.. Confirmed: the report prints no opinion'
   - check: bench
     result: agree
     detail: No Oyez votes; each opinion writer in the report sits on the Database's bench on the side the opinion takes

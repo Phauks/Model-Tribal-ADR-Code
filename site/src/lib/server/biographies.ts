@@ -17,12 +17,13 @@ import type { InfoName, InfoPicture } from '../info-page.ts';
 import { displayName } from '../nation-labels.ts';
 import { copyPagePath } from '../public-copies.ts';
 import { casePreviewList } from './case-previews.ts';
-import { nations, publicCopyFor, repositoryRoot, sources } from './content.ts';
+import { nations, repositoryRoot, sources } from './content.ts';
 import type { FactGroup } from './justice-pages.ts';
 import { isLawRecord, recordName } from './law-records.ts';
 import { SourceUses, type SourceEntry } from './source-uses.ts';
 import { justicePath, peopleFile, presidentPath } from './supreme-court-people.ts';
 import type { Stub } from '../stubs.ts';
+import { savedCopyFor } from './markdown.ts';
 
 interface Cited {
 	source: string;
@@ -292,7 +293,7 @@ export function biographyPage(key: string): BiographyPage | null {
 		const record = treatyRecord(entry.source);
 		if (!record || treatyLinks.has(entry.source)) continue;
 		const signed = treatySigning(entry.text);
-		const copy = publicCopyFor(record.original_link) ?? publicCopyFor(record.citation.URL);
+		const copy = savedCopyFor(record);
 		const link = `/laws/${entry.source}`;
 		treatyLinks.set(entry.source, link);
 		treaties.push({

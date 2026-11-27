@@ -41,6 +41,11 @@ reading_links:
     label: "Lexis"
     access: subscription
     link: https://advance.lexis.com/api/search?q=48%20U.S.C.%20%C2%A7%201421a
+file:
+  storage_key: united-states-code/2024/title-48-section-1421a.pdf
+  checksum: cac34e2faf672719bdd58d744dbda59c408ffddd14aea0b8c449d87ce3fcb7f5
+  media_type: application/pdf
+  bytes: 135838
 rights:
   status: no-permission-needed
   basis: government-edict
@@ -52,7 +57,8 @@ topics:
 - territories
 found_in:
 - 2026-11-22-foundations-sources
-notes: Read on Cornell LII on Nov. 22, 2026. Section 3 of the Organic Act of Guam, Act of Aug. 1, 1950, ch. 512, 64 Stat. 384.
+- 2026-11-27-us-code-sections
+notes: Read on Cornell LII on Nov. 22, 2026. Section 3 of the Organic Act of Guam, Act of Aug. 1, 1950, ch. 512, 64 Stat. 384. The stored copy is 48 U.S.C. § 1421a from the 2024 edition of the Code on GovInfo (the text with its notes), saved by scripts/law/us_code_sections.py.
 law_box:
   summary: |-
     The Organic Act of 1950 made Guam an unincorporated territory [@usc-48-1421a]. Guam's Chamorro Land Trust Act provides land leases for Native Chamorros [@guam-code-21-chapter-75].
