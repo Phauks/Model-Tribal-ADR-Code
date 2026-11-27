@@ -8,6 +8,13 @@
 //
 // The prerendered pages are served from the build output, as Cloudflare serves them, and opened in
 // Chromium through Playwright. Set CHROMIUM_PATH to use a Chromium that is already installed.
+//
+// The full timeline lists about ten thousand entries, so starting it and switching its layout take
+// seconds on a busy machine. The check waits on what the page says rather than on a fixed delay:
+// the timeline carries data-ready once its scripts have started and the reader's saved layout is
+// applied, and each step waits for the browser to finish its work before the next click. The clicks
+// may take as long as they need (a button under something else still fails, after the wait); on
+// Nov. 26 and 27, 2026 a three-second limit failed now and then on pages nothing had changed.
 
 import { createServer } from 'node:http';
 import { existsSync, statSync } from 'node:fs';
@@ -73,6 +80,18 @@ async function coveredButtons(page) {
 
 const isDown = (page) => page.evaluate(() => !!document.querySelector('.timeline.down'));
 
+/** How long a step of the full timeline may take on a slow machine before it counts as broken. */
+const patience = 30_000;
+
+/** Waits until the timeline's scripts have started, and then until the browser has nothing left to do. */
+async function settled(page) {
+	await page.locator('.timeline[data-ready]').first().waitFor({ timeout: patience });
+	await page.evaluate(
+		(timeout) => new Promise((resolve) => requestAnimationFrame(() => requestIdleCallback(() => resolve(undefined), { timeout }))),
+		patience
+	);
+}
+
 for (const viewport of viewports) {
 	for (const path of pages) {
 		const context = await browser.newContext({ serviceWorkers: 'block', reducedMotion: 'reduce', viewport: { width: viewport.width, height: viewport.height } });
@@ -82,7 +101,7 @@ for (const viewport of viewports) {
 		page.on('pageerror', (error) => errors.push(String(error)));
 		const where = `${path} (${viewport.name})`;
 		await page.goto(base + path, { waitUntil: 'load' });
-		await page.locator('.timeline .toolbar').first().waitFor();
+		await settled(page);
 		check(await isDown(page), `${where}: the timeline should open down the page`);
 
 		for (const [label, down] of [
@@ -93,11 +112,12 @@ for (const viewport of viewports) {
 			const button = page.getByRole('button', { name: label, exact: true }).first();
 			try {
 				// A real click at the button's middle, which fails if anything lies over it.
-				await button.click({ timeout: 3000 });
+				await button.click({ timeout: patience });
 			} catch {
 				check(false, `${where}: "${label}" could not be clicked`);
 				continue;
 			}
+			await settled(page);
 			check((await isDown(page)) === down, `${where}: after "${label}" the timeline should run ${down ? 'down the page' : 'across'}`);
 			const covered = await coveredButtons(page);
 			check(covered.length === 0, `${where}: ${down ? 'down the page' : 'across'}, toolbar buttons lie under something else: ${covered.join(', ')}`);
@@ -105,11 +125,11 @@ for (const viewport of viewports) {
 
 		// The choice is remembered: reload, still across, and back down again.
 		await page.reload({ waitUntil: 'load' });
-		await page.locator('.timeline .toolbar').first().waitFor();
-		await page.waitForFunction(() => !document.querySelector('.timeline.down'), undefined, { timeout: 3000 }).catch(() => {});
+		await settled(page);
 		check(!(await isDown(page)), `${where}: after reloading, the timeline should stay across`);
 		try {
-			await page.getByRole('button', { name: 'Down the page', exact: true }).first().click({ timeout: 3000 });
+			await page.getByRole('button', { name: 'Down the page', exact: true }).first().click({ timeout: patience });
+			await settled(page);
 			check(await isDown(page), `${where}: after reloading, "Down the page" should turn the timeline back`);
 		} catch {
 			check(false, `${where}: after reloading, "Down the page" could not be clicked`);
