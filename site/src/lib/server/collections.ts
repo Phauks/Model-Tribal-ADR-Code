@@ -90,8 +90,20 @@ const typeOf = (record: SourceRecord) => (record.citation as { type?: string }).
 function sourceItem(record: SourceRecord, detail?: string): CollectionItem {
 	const link = record.original_link ?? record.citation.URL;
 	const copy = publicCopyFor(link);
-	const href = typeOf(record) === 'legal_case' ? `/cases/${record.key}` : isLawRecord(record) ? `/laws/${record.key}` : copy ? copyPagePath(copy) : link;
+	const href = typeOf(record) === 'legal_case' ? `/cases/${record.key}` : isLawRecord(record) ? `/laws/${record.key}` : copy ? copyPagePath(copy) : publishedAt(record, link);
 	return { title: record.citation.title ?? record.key, href, year: record.citation.issued?.['date-parts']?.[0]?.[0], detail, key: record.key };
+}
+
+/**
+ * Where a source with no copy on this site is published: its own address, an
+ * archived copy when the file is gone from there, or nowhere, so a list never
+ * links to a page that answers "not found" (three filings in Oklahoma's
+ * register have no file at the State's site; Trevor, Nov. 27, 2026).
+ */
+function publishedAt(record: SourceRecord, link: string | undefined): string | undefined {
+	if (record.history?.status !== 'removed') return link;
+	const archived = record.archives?.find((archive) => archive.url ?? archive.link);
+	return archived?.url ?? archived?.link;
 }
 
 /**
