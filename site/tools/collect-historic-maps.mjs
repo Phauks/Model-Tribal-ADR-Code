@@ -15,12 +15,12 @@ import { createHash } from 'node:crypto';
 import { execFileSync } from 'node:child_process';
 import { existsSync, mkdirSync, readFileSync, statSync, writeFileSync } from 'node:fs';
 import { basename, join } from 'node:path';
+import { addToCaptureIndex } from './capture-index.mjs';
 
 const root = new URL('../../', import.meta.url);
 const scansPath = new URL('site/geography/historic-map-scans.json', root);
 const servedPath = new URL('site/geography/historic-map-scans-served.json', root);
 const listPath = new URL('research/reviews/2026-11-26-historic-maps-library-of-congress.csv', root);
-const indexPath = new URL('research/capture-index.csv', root);
 const sourcesFolder = new URL('content/sources/', root);
 
 const bureau = 'https://biamaps.geoplatform.gov/server/rest/services/DivLTR';
@@ -355,8 +355,6 @@ async function upload() {
 	console.log(`Uploaded ${sent} files; ${skipped} were already in the bucket.`);
 }
 
-const indexColumns = ['key', 'bytes', 'sha256', 'media_type', 'topic', 'title', 'nations', 'obtained', 'link', 'captured', 'records', 'record_kinds', 'listed_in', 'catalog', 'derived_from', 'rights', 'redistribution', 'keep_local', 'orphan'];
-const csvField = (value) => (/[",\n]/.test(String(value)) ? `"${String(value).replaceAll('"', '""')}"` : String(value));
 
 /** Adds the uploaded files to the capture index (research/capture-index.csv), replacing rows with the same key. */
 function index() {
@@ -382,11 +380,8 @@ function index() {
 			})
 		)
 	];
-	const keys = new Set(rows.map((found) => found.key));
-	const lines = readFileSync(indexPath, 'utf8').split('\n').filter((line) => line !== '');
-	const kept = lines.filter((line, number) => number === 0 || !keys.has(line.split(',')[0].replace(/^"|"$/g, '')));
-	const added = rows.map((found) => indexColumns.map((column) => csvField(found[column] ?? '')).join(','));
-	writeFileSync(indexPath, `${[...kept, ...added].join('\n')}\n`);
+	// Each row replaces any row with the same key, and the index stays in key order (tools/capture-index.mjs).
+	addToCaptureIndex(rows);
 	console.log(`Indexed ${rows.length} files in research/capture-index.csv.`);
 }
 
