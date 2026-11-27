@@ -30,6 +30,7 @@ import { buildFormCatalog } from './form-catalog.ts';
 import { copyPagePath } from '../public-copies.ts';
 import { dataChartList, dataChartTrail } from '../data-chart-list.ts';
 import { landCessions, royceSheets } from './land-cessions.ts';
+import { historicMapScans } from './historic-map-scans.ts';
 import type { ResultGroup } from '../search-everything.ts';
 import { allSections } from './title-25-sections.ts';
 import { isLawRecord } from './law-records.ts';
@@ -347,7 +348,19 @@ export const collections: Collection[] = [
 
 	// Reference
 	{ identifier: 'source-copies', search: { group: 'reference', label: 'Source document' }, title: 'Source Documents', group: 'Reference', list: '/copies', items: () => publicCopies().map((copy) => ({ title: copy.title ?? copy.key, href: copyPagePath(copy) })) },
-	{ identifier: 'historic-maps', search: { group: 'reference', label: 'Historic map' }, title: 'Historic Maps', group: 'Reference', years: () => '1899', items: () => [...royceSheets().values()].map((sheet) => ({ title: `Royce’s map: ${sheet.name}`, href: sheet.image, year: 1899 })) },
+	{
+		identifier: 'historic-maps', search: { group: 'reference', label: 'Historic map' },
+		title: 'Historic Maps',
+		group: 'Reference',
+		items: () => [
+			...[...royceSheets().values()].map((sheet) => ({ title: `Royce’s map: ${sheet.name}`, href: sheet.image, year: 1899 })),
+			...historicMapScans().map((map) => ({ title: map.title, href: map.images[0].image, year: map.year ?? undefined }))
+		],
+		years: () => {
+			const years = [1899, ...historicMapScans().flatMap((map) => (map.year ? [map.year] : []))];
+			return `${Math.min(...years)}–${Math.max(...years)}`;
+		}
+	},
 	{ identifier: 'charts', search: { group: 'reference', label: 'Chart' }, title: 'Charts', group: 'Reference', items: () => dataChartList.map((chart) => ({ title: chart.title, href: dataChartTrail(chart).at(-1)?.href })) },
 	{ identifier: 'glossary-terms', search: { group: 'term' }, title: 'Glossary Terms', group: 'Reference', items: () => glossary().map((entry) => ({ title: entry.term, href: `/glossary/${entry.id}` })) },
 	{ identifier: 'forms', search: { group: 'reference', label: 'Form' }, title: 'Forms', group: 'Reference', items: () => buildFormCatalog().map((form) => ({ title: form.title, href: `/forms/${form.slug}` })) }
