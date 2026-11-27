@@ -1,0 +1,52 @@
+{
+  "state": "FL",
+  "code": "Florida Statutes",
+  "edition": 2026,
+  "read": "2026-11-27",
+  "keyword_pass": {
+    "sections": 24993,
+    "live": 24993,
+    "strong": 77,
+    "weak_only": 403
+  },
+  "reading": {
+    "missing_answers": 0,
+    "rows": 96,
+    "core": 35,
+    "incidental": 61,
+    "by_pool": {
+      "A": {
+        "incidental": 51,
+        "core": 24,
+        "none": 2
+      },
+      "B": {
+        "none": 384,
+        "incidental": 9,
+        "core": 10
+      },
+      "C": {
+        "none": 299,
+        "incidental": 1
+      },
+      "D": {
+        "none": 300
+      },
+      "E": {
+        "core": 1
+      }
+    },
+    "meta": {
+      "live": 24993,
+      "A": 77,
+      "B": 403,
+      "E": 1,
+      "C": 469,
+      "C_sample": 300,
+      "D": 24043,
+      "D_sample": 300,
+      "items": 1081,
+      "batches": 8
+    }
+  }
+}

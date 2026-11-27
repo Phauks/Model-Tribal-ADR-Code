@@ -970,6 +970,22 @@ jurisdiction:
   verification: inferred
   as_of: '2026-10-21'
   locator: 'Table of approvals by Tribe, column "Regulatory Programs with an Enforcement Component": "NPDES Program; PWSS Program; UIC Program"'
+- topic: water-rights-settlement
+  value: enacted
+  detail: Congress enacted the Northwestern New Mexico Rural Water Projects Act (Navajo-Gallup Water Supply Project and Navajo Nation water rights) in 2009 (Pub. L. No. 111-11), settling the water rights of Navajo Nation. It quantifies 535,330 acre-feet a year in all and authorizes about $984.1 million in federal funds, as the Congressional Research Service counts it (R44148, Table 1).
+  source: public-law-111-11
+  confidence: high
+  verification: inferred
+  as_of: '2009'
+  locator: Congressional Research Service, R44148, Table 1, 2009
+- topic: water-rights-settlement
+  value: enacted
+  detail: Congress enacted the Navajo Utah Water Rights Settlement Act of 2020 in 2020 (Pub. L. No. 116-260), settling the water rights of Navajo Nation. It quantifies 81,500 acre-feet a year in all and authorizes about $210.4 million in federal funds, as the Congressional Research Service counts it (R44148, Table 1).
+  source: public-law-116-260
+  confidence: high
+  verification: inferred
+  as_of: '2020'
+  locator: Congressional Research Service, R44148, Table 1, 2020
 jurisdiction_agreements:
 - kind: cross-deputization
   other_party: Arizona Department of Public Safety

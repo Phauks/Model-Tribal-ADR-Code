@@ -1,0 +1,51 @@
+key: maine-revised-statutes-title-12-section-682
+kind: state-statute
+citation:
+  type: legislation
+  title: Definitions
+  title-short: Me. Rev. Stat. tit. 12, § 682
+  container-title: Maine Revised Statutes
+  container-title-short: Me. Rev. Stat.
+  volume: '12'
+  section: '682'
+  author:
+  - literal: Maine Legislature, Office of the Revisor of Statutes
+  issued:
+    date-parts:
+    - - 1969
+  URL: https://legislature.maine.gov/statutes/12/title12sec682.html
+  accessed:
+    date-parts:
+    - - 2026
+      - 11
+      - 27
+original_link: https://legislature.maine.gov/statutes/12/title12sec682.html
+retrieved: '2026-11-27'
+archives: []
+history:
+  status: live
+  last_checked: '2026-11-27'
+state_law:
+  relevance: incidental
+  citation: Me. Rev. Stat. tit. 12, § 682 (2026)
+rights:
+  status: no-permission-needed
+  basis: government-edict
+  basis_note: 'Official state statutes are not copyrightable under the government edicts doctrine (Georgia v. Public.Resource.Org, Inc., 590 U.S. 255 (2020)). Linked, not served: state statutes stay link only.'
+  redistribution: false
+jurisdictions:
+- level: state
+  state: ME
+topics:
+- state-indian-law
+found_in:
+- 2026-11-27-state-statutes-california-nebraska-utah-maine-florida
+notes: 'Indigo Book citation: Me. Rev. Stat. tit. 12, § 682 (2026). History: PL 1969, c. 494 (NEW). PL 1971, c. 457, §2 (RPR). PL 1971, c. 544, §28-B (AMD). PL 1973, c. 569, §§2-5 (AMD). PL 1979, c. 541, §A127 (AMD). PL 1979, c. 631, §1 (AMD). PL 1981, c. 698, §70 (AMD). PL 1987, c. 514, §1 (AMD). PL 1987, c. 810, §§1,11 (AMD). PL 1987, c. 885, §§1,2 (AMD). PL 1989, c. 47, §1 (AMD). PL 1989, c. 584, §1 (AMD). PL 1989, c. 762, §§1,4 (AMD). PL 1989, c. 772, §1 (AMD). PL 1991, c. 306 (AMD). PL 1991, c. 687, §1 (AMD). PL 1995, c. 386, §1 (AMD). PL 1999, c. 333, §§1, 2 (AMD). PL 2001, c. 402, §§1, 2 (AMD). PL 2001, c. 431, §§1,2 (AMD). PL 2009, c. 16, §1 (AMD). PL 2009, c. 615, Pt. D, §§1, 2 (AMD). PL 2011, c. 682, §§4, 5 (AMD). PL 2025, c. 11, §1 (AMD). PL 2025, c. 61, §1 (AMD). Text read from the Maine Revisor of Statutes'' page for the section (legislature.maine.gov/statutes) on Nov. 27, 2026. Found by the state statutes sweep (terms: indian reservations; indian; reservations); AI reader''s verdict incidental: Land use definition excludes Indian reservations from unorganized areas. Unverified.'
+review:
+  status: unverified
+  by: scripts/law/state_statutes/run.py
+  date: '2026-11-27'
+  checks:
+  - check: 'Indian law section: the sweep''s keyword pass and an AI reader''s verdict (core, incidental or none)'
+    result: agree
+    detail: 'incidental; terms: indian reservations; indian; reservations'
