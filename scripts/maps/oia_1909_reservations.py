@@ -1183,7 +1183,8 @@ def warp(args):
             k &= ~((fx >= a) & (fx < c) & (fy >= b) & (fy < d))
         return k
 
-    panels = [b for b in SKIP[:2]]
+    # The panels sit on the main map's paper; their boxes, widened to take in their frame lines, are cut out of the main map so a panel's drawing never shows over the main map's ground (the Pueblo panel reaches past SKIP[1], to x 4790).
+    panels = [b for b in SKIP[:2]] + [(x0 - 40, y0 - 40, x1 + 40, y1 + 40) for x0, y0, x1, y1 in (inset["box"] for inset in INSETS.values())]
     written = 0
     # The main map's ground: the corners of its border, widened a little.
     corners = np.array([[NEATLINE[0], NEATLINE[1]], [NEATLINE[2], NEATLINE[1]], [NEATLINE[0], NEATLINE[3]], [NEATLINE[2], NEATLINE[3]], [(NEATLINE[0] + NEATLINE[2]) / 2, NEATLINE[3]], [(NEATLINE[0] + NEATLINE[2]) / 2, NEATLINE[1]]], float)

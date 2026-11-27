@@ -323,5 +323,52 @@
 			"https://services1.arcgis.com/fBc8EJBxQRMcHlei/ArcGIS/rest/services/Indian_Land_Areas_Judicially_Established_1978/FeatureServer/5"
 		],
 		"retrieved": "2026-11-27"
+	},
+	"reservations1909": {
+		"set": "reservations-1909-f7e1a081c12e",
+		"key": "map-tiles/reservations-1909-f7e1a081c12e.pmtiles",
+		"bytes": 1228683,
+		"sha256": "f7e1a081c12e6f7bc72e4cf0f23aaddb04f8df45019f7f311199fede22ee1e07",
+		"minZoom": 0,
+		"maxZoom": 11,
+		"bounds": [
+			-124.5607,
+			26.3019,
+			-74.6156,
+			49.0082
+		],
+		"layers": [
+			"reservations"
+		],
+		"features": 193,
+		"years": [
+			1909
+		],
+		"source": "research/historic-maps/oia-1909/oia-1909-reservations.geojson",
+		"sources": [
+			"https://catalog.archives.gov/id/655555952"
+		],
+		"retrieved": "2026-11-27"
+	},
+	"scan1909": {
+		"set": "scan-1909-14c9d1a839f4",
+		"key": "map-tiles/scan-1909-14c9d1a839f4.pmtiles",
+		"bytes": 36698355,
+		"sha256": "14c9d1a839f4055ea1bf47a8b19409533d28d4c711b87c5ab62ee672c1bdae79",
+		"format": "webp",
+		"minZoom": 0,
+		"maxZoom": 11,
+		"bounds": [
+			-135,
+			21.943,
+			-61.875,
+			52.4828
+		],
+		"tiles": 5483,
+		"sources": [
+			"https://catalog.archives.gov/medialz/cartographic/rg-075/305482/Batch0017/11/305482_11536_AA%20_01.jpg",
+			"https://catalog.archives.gov/id/655555952"
+		],
+		"retrieved": "2026-11-27"
 	}
 }

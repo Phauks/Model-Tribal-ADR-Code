@@ -26,13 +26,18 @@
 		borders: boolean;
 		routes: boolean;
 		homelands: boolean;
+		/** The reservations traced from the Office of Indian Affairs' 1909 map (approved mockup, 2026-11-27). */
+		reservations1909: boolean;
+		/** The 1909 map itself under the tracing, its "Show the original map" switch. */
+		scan1909: boolean;
 	}
 
 	/** A shape from a history layer that the reader chose, for the details beside the map. */
 	export type TileMapFeature =
 		| { kind: 'border'; id: string; name: string; territory: string; from: number; to: number; change: string; citation: string }
 		| { kind: 'homeland'; area: number; named: string }
-		| { kind: 'route'; routes: string };
+		| { kind: 'route'; routes: string }
+		| { kind: 'reservation1909'; n: number; id: string; name: string; status: string; nations: string[]; label: boolean; neighbors: string[]; placed: boolean; panel: string; note: string; review: string };
 
 	/** The base map and switches are remembered on the device, and every map on the site shares them. */
 	const baseStorage = 'map-base';
@@ -448,6 +453,42 @@
 				}
 			);
 		};
+		/**
+		 * The reservations on the Office of Indian Affairs' 1909 map, as the map draws them (approved mockup, 2026-11-27): a reservation in its brown, Opened land as brown stripes over paper, and a reservation too small to draw as a dot. A shape too small to see far out also has a dot there. Under them, if the reader asks, the map itself; then the shapes are only outlined, in a blue that reads on the old paper, so the two can be compared.
+		 */
+		const addReservations1909 = (scan: boolean) => {
+			const brown = token('map-reservation-1909');
+			const edge = scan ? token('map-tracing-over-scan') : token('map-reservation-1909-line');
+			// Pointed at, or chosen and shown in the details (marked as the search marks what it found).
+			const marked: ExpressionSpecification = ['any', ['boolean', ['feature-state', 'hover'], false], ['boolean', ['feature-state', 'found'], false]];
+			const opened: ExpressionSpecification = ['==', ['get', 'status'], 'Opened'];
+			const shapes: FilterSpecification = ['!=', ['geometry-type'], 'Point'];
+			if (scan) fills.push({ id: 'scan-1909', type: 'raster', source: 'scan1909', paint: { 'raster-opacity': 1 } });
+			fills.push({
+				id: 'reservations-1909',
+				type: 'fill',
+				source: 'reservations1909',
+				'source-layer': 'reservations',
+				filter: shapes,
+				paint: { 'fill-color': ['case', marked, colors.focus, opened, colors.paper, brown], 'fill-opacity': ['case', marked, scan ? 0.45 : 0.85, scan ? 0 : 0.75] }
+			});
+			if (!scan) fills.push({ id: 'reservations-1909-stripes', type: 'fill', source: 'reservations1909', 'source-layer': 'reservations', filter: ['all', shapes, opened], paint: { 'fill-pattern': patternImageName('stripes', brown) } });
+			const dot = (id: string, filter: FilterSpecification, extra: Partial<LayerSpecification> = {}): LayerSpecification =>
+				({
+					id,
+					type: 'circle',
+					source: 'reservations1909',
+					'source-layer': 'reservations',
+					filter,
+					...extra,
+					paint: { 'circle-color': ['case', marked, colors.focus, opened, colors.paper, brown], 'circle-radius': 5, 'circle-stroke-color': edge, 'circle-stroke-width': 1.5 }
+				}) as LayerSpecification;
+			tops.push(
+				{ id: 'reservations-1909-lines', type: 'line', source: 'reservations1909', 'source-layer': 'reservations', filter: shapes, paint: { 'line-color': ['case', marked, colors.ink, edge], 'line-width': ['case', marked, 2.4, scan ? 1.6 : 1] } },
+				dot('reservations-1909-markers', ['all', ['==', ['geometry-type'], 'Point'], ['has', 'marker']], { maxzoom: 7 }),
+				dot('reservations-1909-dots', ['all', ['==', ['geometry-type'], 'Point'], ['!', ['has', 'marker']]])
+			);
+		};
 		/** The removal routes the National Park Service maps (the Trail of Tears, 1837 to 1839), in the action color with a paper edge so they read over any layer. */
 		const addRoutes = () => {
 			tops.push(
@@ -662,6 +703,7 @@
 			}
 			if (layersOn.regions && today) addRegions(true);
 			if (layersOn.homelands) addHomelands();
+			if (layersOn.reservations1909) addReservations1909(layersOn.scan1909);
 			if (layersOn.lands) {
 				if (isShadedMapView(view)) addShadedLands();
 				else addLands();
@@ -806,6 +848,12 @@
 					: {}),
 				...(layerSwitches?.borders ? { borders: { type: 'vector', tiles: [`${origin}/map-tiles/${data.tiles.borders}/{z}/{x}/{y}.mvt`], maxzoom: data.tiles.bordersMaximumZoom, promoteId: { borders: 'id' }, attribution: 'Newberry Library, Atlas of Historical County Boundaries' } as SourceSpecification } : {}),
 				...(layerSwitches?.homelands ? { homelands: { type: 'vector', tiles: [`${origin}/map-tiles/${data.tiles.homelands}/{z}/{x}/{y}.mvt`], maxzoom: data.tiles.homelandsMaximumZoom, promoteId: { homelands: 'area' }, attribution: 'National Park Service, after the U.S. Geological Survey (1978)' } as SourceSpecification } : {}),
+				...(layerSwitches?.reservations1909
+					? {
+							reservations1909: { type: 'vector', tiles: [`${origin}/map-tiles/${data.tiles.reservations1909}/{z}/{x}/{y}.mvt`], maxzoom: data.tiles.reservations1909MaximumZoom, promoteId: { reservations: 'n' }, attribution: 'Office of Indian Affairs (1909), National Archives' } as SourceSpecification,
+							...(layerSwitches.scan1909 ? { scan1909: { type: 'raster', tiles: [`${origin}/map-tiles/${data.tiles.scan1909}/{z}/{x}/{y}.webp`], tileSize: 256, maxzoom: data.tiles.scan1909MaximumZoom } as SourceSpecification } : {})
+						}
+					: {}),
 				...(layerSwitches?.routes ? { routes: { type: 'vector', tiles: [`${origin}/map-tiles/${data.tiles.removalRoutes}/{z}/{x}/{y}.mvt`], maxzoom: data.tiles.removalRoutesMaximumZoom, attribution: 'National Park Service' } as SourceSpecification } : {}),
 				...(pastYear ? { 'areas-by-year': { type: 'vector', tiles: [`${origin}/map-tiles/${data.tiles.landAreasByYear}/{z}/{x}/{y}.mvt`], maxzoom: 12, promoteId: { 'land-areas': 'code' }, attribution: 'U.S. Census Bureau' } as SourceSpecification } : {}),
 				regions: { type: 'geojson', data: data.regions, promoteId: 'name', attribution: 'Bureau of Indian Affairs' },
@@ -1176,12 +1224,30 @@
 					[...(features ?? [])].sort((first, second) => Number(second.properties?.year === year) - Number(first.properties?.year === year) || Number(second.properties?.year) - Number(first.properties?.year))[0];
 				// On the Map page (map redesign D) the layers lie over each other, so a click goes to the topmost thing under the pointer: a removal route, a land area or its dot or an office, a homeland, a cession, a region, a state, then a state or territory of the past. A numbered circle opens on its own (below).
 				if (explorer) {
+					const words = (value: unknown, separator: string) => String(value ?? '').split(separator).filter(Boolean);
+					const reservation1909 = (properties: Record<string, unknown>): TileMapFeature => ({
+						kind: 'reservation1909',
+						n: Number(properties.n),
+						id: String(properties.id ?? ''),
+						name: String(properties.name ?? ''),
+						status: String(properties.status ?? ''),
+						nations: words(properties.nations, ','),
+						label: Number(properties.label) === 1,
+						neighbors: words(properties.neighbors, '|'),
+						placed: Number(properties.placed) === 1,
+						panel: String(properties.panel ?? ''),
+						note: String(properties.note ?? ''),
+						review: String(properties.review ?? '')
+					});
 					const history: Record<string, (properties: Record<string, unknown>) => TileMapFeature> = {
 						routes: (properties) => ({ kind: 'route', routes: String(properties.routes ?? '') }),
 						homelands: (properties) => ({ kind: 'homeland', area: Number(properties.area), named: String(properties.named ?? '') }),
+						'reservations-1909': reservation1909,
+						'reservations-1909-dots': reservation1909,
+						'reservations-1909-markers': reservation1909,
 						borders: (properties) => ({ kind: 'border', id: String(properties.id), name: String(properties.name ?? ''), territory: String(properties.kind ?? ''), from: Number(properties.from), to: Number(properties.to), change: String(properties.change ?? ''), citation: String(properties.citation ?? '') })
 					};
-					const order = ['routes', 'area-groups', 'area-dots', 'office-dots', 'land-areas', 'homelands', 'cession-fills', 'regions', 'states', 'borders'];
+					const order = ['routes', 'reservations-1909-dots', 'reservations-1909-markers', 'area-groups', 'area-dots', 'office-dots', 'land-areas', 'reservations-1909', 'homelands', 'cession-fills', 'regions', 'states', 'borders'];
 					map.on('click', (event) => {
 						if (!map) return;
 						for (const layer of order) {
@@ -1189,10 +1255,19 @@
 							const features = map.queryRenderedFeatures(event.point, { layers: [layer] });
 							if (features.length === 0) continue;
 							if (layer === 'area-groups') return;
-							if (layer in history) onfeature?.(history[layer](features[0].properties ?? {}));
-							else if (layer === 'cession-fills') {
-								const found = chosenCession(features);
-								if (found) oncession?.(String(found.properties?.royce));
+							if (layer in history) {
+								const feature = history[layer](features[0].properties ?? {});
+								// A 1909 reservation stays marked while its details are open, as a found nation does.
+								if (feature.kind === 'reservation1909') markFound([{ source: 'reservations1909', sourceLayer: 'reservations', id: feature.n }]);
+								else if (found.some((shape) => shape.source === 'reservations1909')) markFound([]);
+								onfeature?.(feature);
+								return;
+							}
+							// Anything else chosen ends the mark on a 1909 reservation.
+							if (found.some((shape) => shape.source === 'reservations1909')) markFound([]);
+							if (layer === 'cession-fills') {
+								const cession = chosenCession(features);
+								if (cession) oncession?.(String(cession.properties?.royce));
 							} else {
 								const entry = interactive.find((item) => item.layer === layer);
 								if (entry) openRow(entry.anchor(features[0].properties ?? {}));
@@ -1200,12 +1275,12 @@
 							return;
 						}
 					});
-					for (const [layer, source] of [['homelands', 'homelands'], ['borders', 'borders']]) {
+					for (const [layer, source, sourceLayer] of [['homelands', 'homelands', 'homelands'], ['borders', 'borders', 'borders'], ['reservations-1909', 'reservations1909', 'reservations'], ['reservations-1909-dots', 'reservations1909', 'reservations'], ['reservations-1909-markers', 'reservations1909', 'reservations']]) {
 						map.on('mousemove', layer, (event) => {
 							const found = event.features?.[0];
 							if (!map || !found || found.id === undefined) return;
 							clearHover();
-							hover = { source, sourceLayer: source, id: found.id };
+							hover = { source, sourceLayer, id: found.id };
 							map.setFeatureState(hover, { hover: true });
 							map.getCanvas().style.cursor = 'pointer';
 						});

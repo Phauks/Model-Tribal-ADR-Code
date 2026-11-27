@@ -21,7 +21,8 @@
 		{ key: 'borders', label: 'Borders over time', source: 'Newberry Library', group: 'history' },
 		{ key: 'cessions', label: 'Land cessions', source: 'Royce, 1899', group: 'history' },
 		{ key: 'routes', label: 'Removal routes', source: 'National Park Service', group: 'history' },
-		{ key: 'homelands', label: 'Homelands found by the Indian Claims Commission', source: '1978 map', group: 'history' }
+		{ key: 'homelands', label: 'Homelands found by the Indian Claims Commission', source: '1978 map', group: 'history' },
+		{ key: 'reservations1909', label: 'Reservations on the 1909 map', source: 'Office of Indian Affairs, 1909', group: 'history' }
 	];
 
 	/** The Layers list's sections, each of which folds (Trevor, 2026-11-27). */
@@ -118,7 +119,9 @@
 		// A layer the reader sets is theirs, even one the timeline turned on.
 		if (layer === 'borders') bordersByTimeline = false;
 		if (layer === 'cessions') cessions = on;
-		else layers = { ...layers, [layer]: on };
+		else layers = { ...layers, [layer]: on, ...(layer === 'reservations1909' && !on ? { scan1909: false } : {}) };
+		// The 1909 map is of one year, so turning it on at Today takes the timeline there (1909 reservations mockup 1).
+		if (layer === 'reservations1909' && on && year === undefined) moveTo(1909);
 	}
 	const onCount = $derived(mapExplorerLayers.filter((layer) => isOn(layer.key)).length);
 
@@ -297,6 +300,10 @@
 			>
 			<span class="swatch swatch-{layer.key}" class:swatch-states-colored={layer.key === 'states' && statesColor !== ''} aria-hidden="true"></span>
 		</label>
+		{#if layer.key === 'reservations1909' && layers.reservations1909}
+			<!-- The map itself under the tracing, so the two can be compared (1909 reservations mockup 3). -->
+			<label class="explorer-layer explorer-sublayer"><input type="checkbox" bind:checked={layers.scan1909} /><span class="explorer-layer-words">Show the original map</span></label>
+		{/if}
 	{/each}
 {/snippet}
 
@@ -677,6 +684,21 @@
 	.swatch-homelands {
 		border: 2px dashed var(--color-status-draft-rule);
 		background: color-mix(in srgb, var(--color-status-draft-rule) 18%, transparent);
+	}
+
+	.swatch-reservations1909 {
+		border-color: var(--color-map-reservation-1909-line);
+		background: var(--color-map-reservation-1909);
+	}
+
+	/* A switch that belongs to the layer above it sits under that layer's name. */
+	.explorer-sublayer {
+		padding-left: calc(1.25rem + var(--space-3));
+	}
+
+	.explorer-layer.explorer-sublayer input {
+		width: 1rem;
+		height: 1rem;
 	}
 
 	.explorer-color :global(input) {

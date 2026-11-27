@@ -54,7 +54,7 @@
 	/**
 	 * The layers on the map (Trevor, 2026-11-26, map redesign D): today's layers and the history layers, each turned on and off from the buttons across the top of the map or the Layers list. The map opens on nations' land and states, with the offices of nations with no land area (mockup D1).
 	 */
-	let layers = $state<TileMapLayers>({ lands: true, states: true, offices: true, regions: false, borders: false, routes: false, homelands: false });
+	let layers = $state<TileMapLayers>({ lands: true, states: true, offices: true, regions: false, borders: false, routes: false, homelands: false, reservations1909: false, scan1909: false });
 	/** How the land is colored: '' for one color, or a shaded view's key (src/lib/shaded-map-views.ts). */
 	let colorBy = $state('');
 	const colorChoices = $derived([{ value: '', label: 'Kind of land' }, ...mapViewChoices.filter((choice) => isShadedMapView(choice.value)).map((choice) => ({ ...choice, group: undefined }))]);
@@ -406,12 +406,13 @@
 		return index;
 	});
 
-	/** A shape chosen on a history layer (borders, removal routes, homelands), shown in the details until another place is chosen. */
+	/** A shape chosen on a history layer (borders, removal routes, homelands, the 1909 map's reservations), shown in the details until another place is chosen. */
 	let chosenFeature = $state<TileMapFeature | undefined>();
 	const territoryWords: Record<string, string> = { state: 'State', territory: 'Territory', 'unorganized-territory': 'Unorganized territory', district: 'District of Columbia', other: 'Claimed or shared, not U.S.' };
 	/** A date in the Newberry Library's file (18380523) as words. */
 	const dayWords = (day: number) => readableDate(`${String(day).slice(0, 4)}-${String(day).slice(4, 6)}-${String(day).slice(6, 8)}`);
 	function featurePreview(feature: TileMapFeature): Preview {
+		if (feature.kind === 'reservation1909') return reservation1909Preview(feature);
 		if (feature.kind === 'border') {
 			const state = data.stateRows.find((row) => row.name === feature.name);
 			const lines: PreviewLine[] = [{ label: `From ${dayWords(feature.from)}`, value: feature.change + (feature.citation ? ` ${feature.citation}` : '') }];
@@ -442,6 +443,26 @@
 			],
 			table: true
 		};
+	}
+
+	/** Where the 1909 map is kept (research/historic-maps/oia-1909/). */
+	const map1909 = 'https://catalog.archives.gov/id/655555952';
+	/** A reservation on the 1909 map, as the approved mockup shows it (1909 reservations mockup 2): what the map printed, the nation there today, how a shared line was drawn, its review, and the map itself. */
+	function reservation1909Preview(feature: Extract<TileMapFeature, { kind: 'reservation1909' }>): Preview {
+		const opened = feature.status === 'Opened';
+		const lines: PreviewLine[] = [{ label: 'As printed', value: opened ? 'Opened' : 'Indian reservation' }];
+		if (!feature.label) lines.push({ label: 'Name', value: 'The name printed here cannot be read; this is the name of the 1990 Census area under it' });
+		const nations = feature.nations.map((id) => ({ label: nationIndex.get(id)?.name ?? id, href: `/nations/${id}` }));
+		lines.push(nations.length > 0 ? { label: nations.length === 1 ? 'Nation today' : 'Nations today', value: '', links: nations } : { label: 'Nation today', value: 'None Identified' });
+		if (feature.placed && feature.neighbors.length > 0) {
+			const named = feature.neighbors.length <= 2 ? feature.neighbors.join(' and ') : '';
+			lines.push({ label: named ? `Line with ${named}` : 'Lines with its neighbors', value: `Printed touching${named ? '' : ` ${feature.neighbors.join(', ')}`}; placed from the 2020 Census ${named ? 'line' : 'lines'}, not traced` });
+		}
+		if (feature.panel) lines.push({ label: 'Drawn in', value: `The map’s panel “${feature.panel}”` });
+		if (feature.note) lines.push({ label: 'Note', value: feature.note });
+		lines.push({ label: 'Review', value: feature.review || 'Unverified' });
+		lines.push({ label: 'Source', value: 'Office of Indian Affairs, Map showing Indian reservations within the limits of the United States (1909), National Archives.', after: { label: 'See the original map', href: map1909 } });
+		return { kind: opened ? 'Opened, 1909 map' : 'Reservation, 1909 map', title: feature.name, lines, table: true };
 	}
 
 	function previewOf(key: string): Preview | undefined {
@@ -643,7 +664,8 @@
 			layers.borders ? `Borders${year === undefined ? '' : ` in ${year}`}` : '',
 			cessionsOn ? 'Land cessions' : '',
 			layers.routes ? 'Removal routes' : '',
-			layers.homelands ? 'Homelands found by the Indian Claims Commission' : ''
+			layers.homelands ? 'Homelands found by the Indian Claims Commission' : '',
+			layers.reservations1909 ? (layers.scan1909 ? 'Reservations on the 1909 map, over the map itself' : 'Reservations on the 1909 map') : ''
 		]
 			.filter(Boolean)
 			.join(', ') || 'Base map'
@@ -1030,6 +1052,11 @@
 		{#if layers.homelands}
 			<li><span class="swatch homeland" aria-hidden="true"></span>Homeland found by the Indian Claims Commission</li>
 		{/if}
+		{#if layers.reservations1909}
+			<li><span class="swatch reservation-1909" aria-hidden="true"></span>Reservation, 1909 map</li>
+			<li><span class="swatch opened-1909" aria-hidden="true"></span>Opened, 1909 map</li>
+			<li><span class="swatch small-1909" aria-hidden="true"></span>Small reservation, 1909 map</li>
+		{/if}
 	</ul>
 {/snippet}
 
@@ -1351,6 +1378,26 @@
 	.swatch.homeland {
 		border: 2px dashed var(--color-status-draft-rule);
 		background: color-mix(in srgb, var(--color-status-draft-rule) 18%, transparent);
+	}
+
+	/* The 1909 map's signs, as the map draws them (TileMap.svelte, addReservations1909): brown, brown stripes over paper for Opened land, and a dot for a reservation too small to draw. */
+	.swatch.reservation-1909 {
+		border: 1px solid var(--color-map-reservation-1909-line);
+		background: var(--color-map-reservation-1909);
+	}
+
+	.swatch.opened-1909 {
+		border: 1px solid var(--color-map-reservation-1909-line);
+		background: repeating-linear-gradient(135deg, var(--color-map-reservation-1909) 0 1.5px, var(--color-paper) 1.5px 4.5px);
+	}
+
+	.swatch.small-1909 {
+		width: 0.75rem;
+		height: 0.75rem;
+		margin-inline: 0.2rem;
+		border: 1.5px solid var(--color-map-reservation-1909-line);
+		border-radius: 50%;
+		background: var(--color-map-reservation-1909);
 	}
 
 	.map-drawing :global(.map) {

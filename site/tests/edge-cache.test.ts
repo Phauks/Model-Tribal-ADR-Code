@@ -26,6 +26,7 @@ describe('what the edge may keep', () => {
 
 	it('keeps map tiles, empty tiles included, map pictures and the map’s fonts and icons', () => {
 		expect(edgePolicy('GET', '/map-tiles/basemap-20261122/6/15/24.mvt', ok()).tags).toEqual(['map-tiles']);
+		expect(edgePolicy('GET', '/map-tiles/scan-1909-efc0c917deec/6/15/24.webp', ok()).tags).toEqual(['map-tiles']);
 		expect(edgePolicy('GET', '/map-tiles/basemap-20261122/6/15/24.mvt', ok({}, 204)).control).toMatch(/^public/);
 		expect(edgePolicy('GET', '/map-tiles/imagery/satellite/6/15/24', ok()).control).toMatch(/^public/);
 		expect(edgePolicy('GET', '/map-tiles/assets/sprites/white.json', ok()).control).toMatch(/^public/);

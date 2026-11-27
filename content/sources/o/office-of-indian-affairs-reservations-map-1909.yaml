@@ -1,0 +1,29 @@
+key: office-of-indian-affairs-reservations-map-1909
+kind: federal-agency-document
+citation:
+  type: map
+  title: Map Showing Indian Reservations Within the Limits of the United States
+  author:
+  - literal: Office of Indian Affairs, compiled under the direction of Commissioner R. G. Valentine
+  archive: National Archives, Record Group 75, Central Map Files 11536 AA
+  URL: https://catalog.archives.gov/id/655555952
+  issued:
+    date-parts: [[1909]]
+  accessed:
+    date-parts: [[2026, 11, 27]]
+original_link: https://catalog.archives.gov/id/655555952
+retrieved: '2026-11-27'
+archives: []
+history:
+  status: live
+  last_checked: '2026-11-27'
+rights:
+  status: no-permission-needed
+  basis: us-government-work
+  basis_note: A map made by the Office of Indian Affairs, a federal agency, so not protected by copyright in the United States (17 U.S.C. § 105).
+  redistribution: true
+jurisdictions:
+- level: federal
+found_in:
+- 2026-11-27-1909-reservations-layer
+notes: 'The 1909 edition of the Office of Indian Affairs'' national map of reservations, in the National Archives'' scan (15,949 by 10,467 pixels). A solid brown fill is an "Indian reservation" and a brown band around plain paper is "Opened" land; three inset panels show the Mission reservations of southern California, the Pueblo grants of New Mexico and northeastern Oklahoma at larger scales. The project traced it into the Map page''s layer "Reservations on the 1909 map" (scripts/maps/oia_1909_reservations.py), every shape marked Unverified, and keeps the scan in the project''s bucket under historic-maps/oia-1909/.'
