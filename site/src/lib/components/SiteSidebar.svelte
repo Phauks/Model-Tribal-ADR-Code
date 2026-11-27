@@ -12,15 +12,20 @@
 	//   menu (src/lib/site-navigation.ts);
 	// - then "On this page": the page's headings, the one being read marked as
 	//   the page scrolls (src/lib/active-heading.ts);
-	// - then the reader's groups: Your account, the Workspace and the reader's
-	//   own links (sidebar/SidebarGroups.svelte), and Your work while an essay
-	//   is edited.
+	// - then Your work while an essay is edited.
+	//
+	// The Workspace and the Account pages are places too: on their own pages
+	// the column lists them as it lists a section's pages
+	// (src/lib/personal-navigation.ts). Elsewhere they are in the section bar's
+	// Workspace tab and under the masthead's profile button, not in the column
+	// (Trevor, Nov. 27, 2026; design/sidebar-workspace-profile, option B).
 	//
 	// Long lists, such as every nation, are no longer in the column: the
 	// Nations menu has a box to go straight to a nation.
 	//
 	// On phones a strip under the masthead holds two buttons: "Menu", which
-	// opens the sections as a sheet over the page, the section being read open,
+	// opens the sections as a sheet over the page, the section being read open
+	// and the Workspace after them for people with access,
 	// and the name of where the reader is, which opens this column as a sheet.
 	// Both are <details> elements, so they work without JavaScript; with it a
 	// sheet closes on Escape and when a link is followed.
@@ -31,17 +36,15 @@
 	import { building } from '$app/env';
 	import { afterNavigate } from '$app/navigation';
 	import { page } from '$app/state';
+	import Briefcase from '@lucide/svelte/icons/briefcase';
 	import ChevronDown from '@lucide/svelte/icons/chevron-down';
 	import ChevronLeft from '@lucide/svelte/icons/chevron-left';
 	import Menu from '@lucide/svelte/icons/menu';
 	import X from '@lucide/svelte/icons/x';
-	import { accountPages, currentAccountPage, isAccountPath } from '#lib/account-menu.ts';
 	import { followActiveHeading, headingIds } from '#lib/active-heading.ts';
 	import { isUnfolded } from '#lib/outline-folding.ts';
 	import { editingOutline } from '#lib/essays/editing-outline.svelte.ts';
-	import { followedPageAddress } from '#lib/page-history.ts';
-	import type { Permission } from '#lib/permissions.ts';
-	import { readSignedInHint } from '#lib/signed-in-hint.ts';
+	import { personalSectionOf, workspaceSection } from '#lib/personal-navigation.ts';
 	import {
 		currentNavigationLink,
 		holdingNavigationLink,
@@ -52,14 +55,8 @@
 		type NavigationSection
 	} from '#lib/site-navigation.ts';
 	import type { OutlineItem, PageFamily, PageOutline } from '#lib/site-sections.ts';
-	import {
-		isCurrentWorkspacePage,
-		workspacePagesFor,
-		workspacePagesNamed,
-		type WorkspacePage
-	} from '#lib/workspace-menu.ts';
+	import { WorkspaceAccess } from '#lib/workspace-access.svelte.ts';
 	import CountBadge from './CountBadge.svelte';
-	import SidebarGroups from './sidebar/SidebarGroups.svelte';
 	import SidebarTree from './sidebar/SidebarTree.svelte';
 	import YourWork from './sidebar/YourWork.svelte';
 	import { SidebarState } from './sidebar/sidebar-state.svelte.ts';
@@ -70,8 +67,6 @@
 	const path = $derived(page.url.pathname);
 	// Pages built ahead of time cannot read the query while being built.
 	const search = $derived(building ? '' : page.url.search);
-	// The page the reader is on, when the site records its changes ("Changes to this page").
-	const followedPage = $derived(page.error ? undefined : followedPageAddress(path));
 	const counts = $derived(page.data.navigationCounts as NavigationCounts | undefined);
 
 	// The page's title, for the phone strip on pages with nothing else to name them.
@@ -80,8 +75,12 @@
 	// ---- Where the reader is ----
 	const family = $derived(page.data.family as PageFamily | undefined);
 	const currentSection = $derived(navigationSectionOf(path));
+	// The Workspace, for people with access to it, and the Account pages, as places of their own.
+	const access = new WorkspaceAccess();
+	const workspace = $derived(workspaceSection(access.pages));
+	const personalSection = $derived(currentSection ? undefined : personalSectionOf(path, workspace));
 	// A family takes the place of the section's pages.
-	const shownSection = $derived(family ? undefined : currentSection);
+	const shownSection = $derived(family ? undefined : (currentSection ?? personalSection));
 	const heldLink = $derived(shownSection ? holdingNavigationLink(shownSection, path, search) : undefined);
 
 	// The page's own headings. While an essay is edited or commented on, its
@@ -94,34 +93,10 @@
 	// An outline of the page's headings is "On this page"; one that lists other pages, such as the back matter's, is "Contents".
 	const outlineLabel = $derived(outlineItems.every((item) => item.link.startsWith('#')) ? 'On This Page' : 'Contents');
 
-	// The workspace pages to list: from the page itself in the workspace,
-	// otherwise from the signed-in hint, read in the browser.
-	let hintedPageNames = $state<string[]>([]);
-	let hintedSignedIn = $state(false);
-	$effect(() => {
-		const hint = readSignedInHint(document.cookie);
-		hintedPageNames = hint.workspacePageNames;
-		hintedSignedIn = hint.signedIn;
-	});
-	const permissions = $derived(page.data.permissions as Permission[] | undefined);
-	const workspaceMenu = $derived<WorkspacePage[]>(
-		permissions ? workspacePagesFor(permissions) : workspacePagesNamed(hintedPageNames)
-	);
-	const currentWorkspacePage = $derived(workspaceMenu.find((item) => isCurrentWorkspacePage(item.link, path)));
-
-	// For someone signed in, a "Your account" group lists the Account pages
-	// (src/lib/account-menu.ts). The pages the Worker renders know at once who
-	// is signed in; the others wait for the hint.
-	const signedIn = $derived(hintedSignedIn || page.data.person !== undefined || page.data.email !== undefined);
-	const onAccountPage = $derived(isAccountPath(path));
-	const currentAccount = $derived(onAccountPage ? currentAccountPage(path) : undefined);
-
 	// What the phone strip names beside "Menu".
 	const localTitle = $derived(
 		family?.title ??
 			shownSection?.label ??
-			(currentWorkspacePage ? 'Workspace' : undefined) ??
-			(currentAccount ? 'Your account' : undefined) ??
 			publishedOutline?.title ??
 			(path === '/' ? 'Home' : (pageTitle ?? ''))
 	);
@@ -308,7 +283,7 @@
 			{/if}
 		</div>
 		{#each shownSection.groups as group (group.title)}
-			<p class="local-label">{group.title}</p>
+			{#if group.title}<p class="local-label">{group.title}</p>{/if}
 			<ul class="local-pages">
 				{#each group.links as item (item.link)}
 					<li>{@render pageLink(item, item === currentNavigationLink(shownSection, path, search), item === heldLink)}</li>
@@ -334,18 +309,6 @@
 	{/if}
 {/snippet}
 
-{#snippet groups(idSuffix: string)}
-	<SidebarGroups
-		{idSuffix}
-		{path}
-		{sidebar}
-		accountPages={signedIn || onAccountPage ? [...accountPages] : []}
-		{currentAccount}
-		{workspaceMenu}
-		{currentWorkspacePage}
-		{followedPage}
-	/>
-{/snippet}
 
 <!-- Wide screens: a column beside the page. The reader hides and shows it with
      the hamburger at the top left of the masthead, or with Ctrl+\ (Trevor,
@@ -354,7 +317,6 @@
 <div class="sidebar-wide no-print" id="site-sidebar" bind:this={wideSidebar}>
 	<nav aria-label="Where you are" class="local-column" bind:this={wideColumn}>
 		{@render local('wide')}
-		<div class="column-groups">{@render groups('wide')}</div>
 		{#if editing?.work}<YourWork work={editing.work} {path} />{/if}
 	</nav>
 </div>
@@ -382,8 +344,8 @@
 				{#each navigationSections as section (section.key)}
 					{@render phoneSection(section)}
 				{/each}
+				{#if workspace}{@render phoneSection(workspace)}{/if}
 			</ul>
-			<div class="sheet-groups">{@render groups('narrow')}</div>
 		</nav>
 	</details>
 	{#if family || shownSection || outlineItems.length > 0}
@@ -404,17 +366,19 @@
 </div>
 
 {#snippet phoneSection(section: NavigationSection)}
-	{@const current = section === currentSection}
+	{@const current = section === (currentSection ?? personalSection)}
 	{@const sectionLink = currentNavigationLink(section, path, search)}
-	<li>
+	<li class:personal={section === workspace}>
 		<details name="phone-section" open={current}>
 			<summary class:current>
-				<span>{section.label}{#if current}<span class="visually-hidden"> (the section you are in)</span>{/if}</span>
+				<span class:personal-label={section === workspace}
+					>{#if section === workspace}<Briefcase size={20} aria-hidden="true" />{/if}{section.label}{#if current}<span class="visually-hidden"> (the section you are in)</span>{/if}</span
+				>
 				<ChevronDown size={20} aria-hidden="true" />
 			</summary>
 			<div class="phone-groups">
 				{#each section.groups as group (group.title)}
-					<p class="local-label">{group.title}</p>
+					{#if group.title}<p class="local-label">{group.title}</p>{/if}
 					<ul>
 						{#each group.links as item (item.link)}
 							<li>
@@ -429,7 +393,7 @@
 					</ul>
 				{/each}
 				{#if section.home}
-					<p class="phone-home"><a href={section.home}>All of {section.label}</a></p>
+					<p class="phone-home"><a href={section.home}>{section === workspace ? 'Overview' : `All of ${section.label}`}</a></p>
 				{/if}
 			</div>
 		</details>
@@ -442,7 +406,7 @@
 	 * design/sidebar-nesting): a row is a caret, a small gap and its text; a
 	 * list under an entry starts one step to the right of that entry, with a
 	 * thin guide line down from the entry's caret beside it. The lists use
-	 * these measures in sidebar/FoldGroup.svelte, sidebar/SidebarTree.svelte
+	 * these measures in sidebar/SidebarTree.svelte
 	 * and here.
 	 */
 	.sidebar-wide,
@@ -611,19 +575,10 @@
 			font-size: 0.95rem;
 		}
 
-		/* The reader's groups, after where the reader is; each draws its own rule above it. */
-		.column-groups {
-			margin-top: var(--space-4);
-		}
-
 		/* The headings sit closer together than the pages, as in the mockup. */
 		.local-column .headings :global(a) {
 			padding-top: 0.2rem;
 			padding-bottom: 0.2rem;
-		}
-
-		.column-groups:empty {
-			display: none;
 		}
 
 		/* A column the reader hid stays hidden from the first paint (app.html). */
@@ -776,13 +731,13 @@
 		border-left-color: var(--color-action);
 	}
 
-	.phone-sections summary :global(svg) {
+	.phone-sections summary > :global(svg) {
 		color: var(--color-ink-muted);
 		transform: rotate(-90deg);
 		transition: transform var(--motion-duration-short) var(--motion-easing-standard);
 	}
 
-	.phone-sections details[open] > summary :global(svg) {
+	.phone-sections details[open] > summary > :global(svg) {
 		transform: none;
 	}
 
@@ -819,7 +774,18 @@
 		margin: var(--space-2) 0 0;
 	}
 
-	.sheet-groups {
-		padding: var(--space-3) var(--space-4) var(--space-6);
+	/* The Workspace comes after the six sections, set apart by a wider rule, as in mockups/B-phone-menu-light.png. */
+	.phone-sections > li.personal {
+		border-top: 6px solid var(--color-line);
+	}
+
+	.phone-sections .personal-label {
+		display: inline-flex;
+		align-items: center;
+		gap: var(--space-2);
+	}
+
+	.phone-sections .personal-label :global(svg) {
+		color: var(--color-ink);
 	}
 </style>

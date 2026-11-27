@@ -3,13 +3,16 @@
 	// section 6, "Masthead"). Pages are built ahead of time, so they show
 	// "Sign in" until the browser reads the signed-in hint
 	// (src/lib/signed-in-hint.ts). Once someone has signed in, a profile button
-	// takes its place (Trevor asked for this on Nov. 22, 2026). It opens a
-	// short list, following the WAI-ARIA disclosure pattern rather than a
-	// menu: who is signed in, and Sign out. Everything else that was here,
-	// the account pages, Following and the Workspace, is in the left sidebar
-	// (Trevor, Nov. 23, 2026; src/lib/account-menu.ts). Trevor asked on Nov.
-	// 22, 2026 for "Signed in as" and Sign out to live here rather than across
-	// the top of the workspace and profile pages.
+	// takes its place (Trevor asked for this on Nov. 22, 2026). It opens the
+	// account menu, following the WAI-ARIA disclosure pattern rather than a
+	// menu: who is signed in, the person's own pages (Profile and credit,
+	// Following with its new updates, Your uploads, Nation team, Starred
+	// pages), the settings kept with the account, and Sign out
+	// (src/lib/account-menu.ts). Trevor chose on Nov. 27, 2026 to bring the
+	// account pages here from the side column, now that the section bar
+	// carries the site's places; the Workspace is the bar's last tab
+	// (design/sidebar-workspace-profile, option B). On phones the menu covers
+	// the screen as a sheet with its own Close button.
 	//
 	// The workspace and profile pages know who is signed in; they keep the name
 	// on this device (localStorage), so the pages built ahead of time can show
@@ -27,10 +30,23 @@
 	// button stays a link to /sign-in.
 	import { onMount, tick } from 'svelte';
 	import { page } from '$app/state';
+	import Bell from '@lucide/svelte/icons/bell';
+	import Database from '@lucide/svelte/icons/database';
+	import HandHeart from '@lucide/svelte/icons/hand-heart';
 	import LogIn from '@lucide/svelte/icons/log-in';
 	import LogOut from '@lucide/svelte/icons/log-out';
+	import Mail from '@lucide/svelte/icons/mail';
+	import ShieldCheck from '@lucide/svelte/icons/shield-check';
+	import ShoppingBag from '@lucide/svelte/icons/shopping-bag';
+	import Star from '@lucide/svelte/icons/star';
+	import Upload from '@lucide/svelte/icons/upload';
 	import UserRound from '@lucide/svelte/icons/user-round';
+	import Users from '@lucide/svelte/icons/users';
+	import X from '@lucide/svelte/icons/x';
+	import type { Component } from 'svelte';
+	import { accountPages, currentAccountPage, type AccountPage } from '#lib/account-menu.ts';
 	import { followingState } from '#lib/following-state.svelte.ts';
+	import { unreadLabel } from '#lib/following.ts';
 	import { roleLabels, type Role } from '#lib/permissions.ts';
 	import { readSignedInHint } from '#lib/signed-in-hint.ts';
 	import type { SignInState } from '#lib/sign-in-state.ts';
@@ -65,6 +81,35 @@
 		return undefined;
 	});
 	const signedInAs = $derived(fromPage ?? remembered);
+
+	// The account menu's rows, each with its icon; Starred pages is the reader's own, kept on this device.
+	const icons: Record<string, Component<{ size?: number; 'aria-hidden'?: 'true' }>> = {
+		'/profile': UserRound,
+		'/following': Bell,
+		'/uploads': Upload,
+		'/profile/nation-team': Users,
+		'/starred': Star,
+		'/account/security': ShieldCheck,
+		'/account/email': Mail,
+		'/account/orders': ShoppingBag,
+		'/account/sponsorship': HandHeart,
+		'/account/data': Database
+	};
+	const starredPages: AccountPage = { label: 'Starred pages', link: '/starred', group: 'yours' };
+	const yours = [...accountPages.filter((item) => item.group === 'yours'), starredPages];
+	const settings = accountPages.filter((item) => item.group === 'settings');
+	const current = $derived(page.url.pathname === '/starred' ? starredPages : currentAccountPage(page.url.pathname));
+	// Updates to followed pages not yet seen, beside Following (site/DESIGN.md, section 6, "Follow").
+	const unread = $derived(followingState.current.signedIn ? followingState.current.unread : 0);
+
+	/** Up to two letters for the round mark beside the name: the first letters of its first two words, or of an email address. */
+	function initials(name: string): string {
+		const words = name.includes('@') ? [name] : name.trim().split(/\s+/);
+		return words
+			.slice(0, 2)
+			.map((word) => word.charAt(0).toLocaleUpperCase('en-US'))
+			.join('');
+	}
 	// The pages the Worker renders know at once; the others wait for the hint.
 	const signedIn = $derived(hintSignedIn || fromPage !== undefined);
 
@@ -186,25 +231,47 @@
 		>
 			<UserRound size={24} />
 		</button>
-		<ul id="account-links" class="account-links" hidden={!open}>
-			<li class="signed-in-as">
+		<div id="account-links" class="account-menu" hidden={!open}>
+			<div class="sheet-head">
+				<span>Your account</span>
+				<button type="button" class="icon-button" aria-label="Close" onclick={() => ((open = false), button?.focus())}><X size={24} /></button>
+			</div>
+			<div class="signed-in-as">
 				{#if signedInAs}
-					<span class="small">Signed in as</span>
-					<strong>{signedInAs.name}</strong>
-					{#if signedInAs.role}<span class="small muted">{signedInAs.role}</span>{/if}
+					<span class="mark" aria-hidden="true">{initials(signedInAs.name)}</span>
+					<span class="who">
+						<span class="visually-hidden">Signed in as</span>
+						<strong>{signedInAs.name}</strong>
+						{#if signedInAs.role}<span class="role">{signedInAs.role}</span>{/if}
+					</span>
 				{:else}
 					<span>You are signed in.</span>
 				{/if}
-			</li>
-			<li>
-				<form method="post" action="/sign-out" onsubmit={forgetName}>
-					<button type="submit">
-						<LogOut size={20} strokeWidth={1.75} />
-						Sign out
-					</button>
-				</form>
-			</li>
-		</ul>
+			</div>
+			{#snippet rows(items: AccountPage[])}
+				<ul>
+					{#each items as item (item.link)}
+						{@const Icon = icons[item.link]}
+						<li class:needs-scripts={item === starredPages}>
+							<a href={item.link} aria-current={item === current ? 'page' : undefined} onclick={() => (open = false)}>
+								{#if Icon}<Icon size={18} aria-hidden="true" />{/if}
+								<span class="label">{item.label}</span>
+								{#if item.link === '/following' && unread > 0}<span class="unread">{unreadLabel(unread)} new</span>{/if}
+							</a>
+						</li>
+					{/each}
+				</ul>
+			{/snippet}
+			{@render rows(yours)}
+			<p class="group-title" id="account-settings-title">Settings</p>
+			<div role="group" aria-labelledby="account-settings-title">{@render rows(settings)}</div>
+			<form method="post" action="/sign-out" onsubmit={forgetName}>
+				<button type="submit">
+					<LogOut size={18} aria-hidden="true" />
+					<span class="label">Sign out</span>
+				</button>
+			</form>
+		</div>
 	</div>
 {:else if mounted && !onSignInPage}
 	<button
@@ -369,60 +436,214 @@
 		color: var(--color-band);
 	}
 
-	.account-links {
+	/* The account menu, as in design/sidebar-workspace-profile/mockups/B-desktop-account-light.png. */
+	.account-menu {
 		position: absolute;
 		right: 0;
 		top: calc(100% + var(--space-2));
 		z-index: 20;
-		min-width: 14rem;
-		margin: 0;
-		padding: var(--space-2) 0;
-		list-style: none;
+		box-sizing: border-box;
+		width: 18.75rem;
+		max-height: calc(100dvh - 5rem);
+		overflow-y: auto;
+		padding: var(--space-3) var(--space-2);
 		background: var(--color-surface-raised);
 		color: var(--color-ink);
-		border: 1px solid var(--color-control-border);
-		border-radius: var(--radius-control);
-		box-shadow: 0 var(--space-1) var(--space-3) color-mix(in srgb, var(--color-ink) 20%, transparent);
+		border: 1px solid var(--color-line);
+		border-radius: var(--radius-panel);
+		box-shadow: 0 var(--space-3) var(--space-6) color-mix(in srgb, var(--color-ink) 18%, transparent);
+		font-size: var(--font-size-small);
+		text-align: left;
 	}
 
-	.account-links[hidden] {
+	.account-menu[hidden] {
 		display: none;
 	}
 
-	.account-links button {
+	/* The sheet's own heading and Close button show only on phones. */
+	.sheet-head {
+		display: none;
+	}
+
+	.account-menu ul {
+		list-style: none;
+		margin: 0;
+		padding: 0 0 var(--space-2);
+		border-bottom: 1px solid var(--color-line);
+	}
+
+	/* Who is signed in: text, not a link, above the links. */
+	.signed-in-as {
 		display: flex;
 		align-items: center;
-		gap: var(--space-2);
+		gap: var(--space-3);
+		padding: var(--space-1) 0.625rem 0.625rem;
+		margin-bottom: var(--space-2);
+		border-bottom: 1px solid var(--color-line);
+		overflow-wrap: anywhere;
+	}
+
+	.mark {
+		display: grid;
+		place-items: center;
+		flex: none;
+		width: 2.25rem;
+		height: 2.25rem;
+		border-radius: 50%;
+		background: var(--color-band);
+		color: var(--color-band-text);
+		box-shadow: inset 0 0 0 1px color-mix(in srgb, var(--color-band-text) 25%, transparent);
+		font-size: 0.85rem;
+		font-weight: var(--font-weight-bold);
+		letter-spacing: 0.02em;
+	}
+
+	.who {
+		display: flex;
+		flex-direction: column;
+		min-width: 0;
+	}
+
+	.who strong {
+		font-size: var(--font-size-body);
+	}
+
+	.role {
+		color: var(--color-ink-muted);
+	}
+
+	.group-title {
+		margin: 0.625rem 0 0.375rem;
+		padding: 0 0.625rem;
+		color: var(--color-ink-muted);
+		font-size: 0.75rem;
+		font-weight: var(--font-weight-semibold);
+		letter-spacing: var(--font-letter-spacing-wide, 0.06em);
+		text-transform: uppercase;
+	}
+
+	.account-menu a,
+	.account-menu form button {
+		display: flex;
+		align-items: center;
+		gap: 0.625rem;
 		width: 100%;
-		min-height: var(--layout-target-minimum);
-		padding: 0 var(--space-4);
+		box-sizing: border-box;
+		min-height: 2.125rem;
+		padding: 0 0.625rem;
 		border: 0;
+		border-radius: var(--radius-control);
 		background: transparent;
 		color: var(--color-ink);
 		font: inherit;
+		font-weight: var(--font-weight-semibold);
 		text-align: left;
 		text-decoration: none;
 		cursor: pointer;
 	}
 
-	.account-links button:hover {
+	.account-menu a :global(svg),
+	.account-menu form button :global(svg) {
+		flex: none;
+		color: var(--color-link);
+	}
+
+	.account-menu a:hover,
+	.account-menu form button:hover {
+		background: var(--color-surface);
+	}
+
+	.account-menu a:hover .label,
+	.account-menu form button:hover .label {
 		text-decoration: underline;
 	}
 
-	/* Who is signed in: text, not a link, above the links. */
-	.account-links .signed-in-as {
-		display: flex;
-		flex-direction: column;
-		gap: 0.1rem;
-		padding: var(--space-2) var(--space-4) var(--space-3);
-		margin-bottom: var(--space-1);
-		border-bottom: 1px solid var(--color-line);
-		overflow-wrap: anywhere;
-		max-width: 20rem;
+	.account-menu a[aria-current='page'] {
+		background: var(--color-surface);
+		font-weight: var(--font-weight-bold);
 	}
 
-	.account-links form {
-		margin: 0;
-		border-top: 1px solid var(--color-line);
+	.label {
+		flex: 1;
+		min-width: 0;
+	}
+
+	/* The number of updates not yet seen, in the action color. */
+	.unread {
+		color: var(--color-action);
+		font-size: 0.8rem;
+		font-weight: var(--font-weight-semibold);
+	}
+
+	.account-menu form {
+		margin: var(--space-2) 0 0;
+	}
+
+	/* Phones: the menu is a sheet over the whole screen, as in mockups/B-phone-account-light.png. */
+	@media (max-width: 40rem) {
+		.account-menu {
+			position: fixed;
+			inset: 0;
+			z-index: 30;
+			width: auto;
+			max-height: none;
+			padding: 0 0 var(--space-6);
+			border: 0;
+			border-radius: 0;
+			background: var(--color-paper);
+			box-shadow: none;
+			font-size: var(--font-size-body);
+		}
+
+		.sheet-head {
+			display: flex;
+			align-items: center;
+			justify-content: space-between;
+			min-height: 3.5rem;
+			padding: 0 var(--space-2) 0 var(--space-4);
+			background: var(--color-band);
+			color: var(--color-band-text);
+			font-size: 1.15rem;
+			font-weight: var(--font-weight-bold);
+		}
+
+		.sheet-head .icon-button {
+			color: var(--color-band-text);
+		}
+
+		.signed-in-as {
+			padding: var(--space-4) var(--space-4) var(--space-1);
+			margin: 0;
+			border-bottom: 0;
+		}
+
+		.account-menu ul {
+			padding: 0;
+			border-bottom: 0;
+		}
+
+		.account-menu a,
+		.account-menu form button {
+			gap: var(--space-3);
+			min-height: 3rem;
+			padding: 0 var(--space-4);
+			border-bottom: 1px solid var(--color-line);
+			border-radius: 0;
+		}
+
+		.account-menu a :global(svg),
+		.account-menu form button :global(svg) {
+			width: 20px;
+			height: 20px;
+		}
+
+		.group-title {
+			margin: 0;
+			padding: 1.125rem var(--space-4) 0.375rem;
+		}
+
+		.account-menu form {
+			margin: 0;
+		}
 	}
 </style>

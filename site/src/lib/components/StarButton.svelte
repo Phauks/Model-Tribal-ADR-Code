@@ -52,7 +52,7 @@
 		} else {
 			const kept = saveStarred(addStarred(items, address, pageTitle()));
 			message = kept
-				? 'Starred. Your starred pages are listed under Starred pages, in the sidebar.'
+				? 'Starred. Your starred pages are listed under Starred pages, in the Library menu.'
 				: 'This browser is not keeping data for this site, so the star lasts only while this page is open.';
 			if (!kept) starred = [...starred, address];
 		}
