@@ -1,0 +1,53 @@
+key: wyoming-statutes-21-4-602
+kind: state-statute
+citation:
+  type: legislation
+  title: American Indian educational program
+  title-short: Wyo. Stat. Ann. § 21-4-602
+  container-title: Wyoming Statutes
+  container-title-short: Wyo. Stat. Ann.
+  section: 21-4-602
+  author:
+  - literal: Wyoming Legislative Service Office
+  URL: https://wyoleg.gov/statutes/compress/title21.pdf#page=160
+  accessed:
+    date-parts:
+    - - 2026
+      - 11
+      - 27
+original_link: https://wyoleg.gov/statutes/compress/title21.pdf#page=160
+retrieved: '2026-11-27'
+archives: []
+history:
+  status: live
+  last_checked: '2026-11-27'
+shares_link_with:
+- wyoming-statutes-21-16-1307
+- wyoming-statutes-21-2-802
+- wyoming-statutes-21-3-304
+- wyoming-statutes-21-4-107
+- wyoming-statutes-21-4-601
+state_law:
+  relevance: core
+  citation: Wyo. Stat. Ann. § 21-4-602 (2025)
+rights:
+  status: no-permission-needed
+  basis: government-edict
+  basis_note: 'Official state statutes are not copyrightable under the government edicts doctrine (Georgia v. Public.Resource.Org, Inc., 590 U.S. 255 (2020)). Linked, not served: state statutes stay link only.'
+  redistribution: false
+jurisdictions:
+- level: state
+  state: WY
+topics:
+- state-indian-law
+found_in:
+- 2026-11-27-state-statutes-fourth-batch
+notes: 'Indigo Book citation: Wyo. Stat. Ann. § 21-4-602 (2025). Text read from the Wyoming Legislative Service Office''s PDF of the section''s title of the Wyoming Statutes (wyoleg.gov/statutes) on Nov. 27, 2026. Found by the state statutes sweep (terms: american indian; american indians; indian tribes; eastern shoshone; indian; indians; northern arapaho; tribes); AI reader''s verdict core: American Indian education program with tribes on standards and materials. Unverified.'
+review:
+  status: unverified
+  by: scripts/law/state_statutes/run.py
+  date: '2026-11-27'
+  checks:
+  - check: 'Indian law section: the sweep''s keyword pass and an AI reader''s verdict (core, incidental or none)'
+    result: agree
+    detail: 'core; terms: american indian; american indians; indian tribes; eastern shoshone; indian; indians; northern arapaho; tribes'

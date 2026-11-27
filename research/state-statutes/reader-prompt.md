@@ -19,3 +19,6 @@ State notes used so far:
 - South Dakota, North Dakota and Minnesota: "Dakota" in "South Dakota" or "North Dakota" is the state, and "Sioux Falls" is a city; neither is a Native nation.
 - Idaho: "Nez Perce", "Kootenai", "Shoshone", "Bannock" and "Benewah" are also county names; a county named for a nation is a place name only.
 - Kansas: "Kansas", "Wichita", "Ottawa", "Shawnee", "Osage", "Miami", "Pottawatomie", "Wyandotte" and "Cherokee" are also county or city names; they are place names only unless the text speaks of the tribe or its people.
+- Michigan: "Ottawa", "Chippewa" and "Menominee" are also county names and "Wyandotte" is a city; a county or city named for a nation is a place name only.
+- Wyoming: "Cheyenne" is the state capital, and "Shoshone" and "Wind River" are also names of a national forest, a river, mountains and towns; they are place names only unless the text speaks of the tribes, the Wind River Indian Reservation or their people.
+- Colorado: "Pueblo" is also a city and a county, and "Arapahoe", "Cheyenne", "Kiowa" and "Ute" are also names of counties, towns, creeks and passes; they are place names only unless the text speaks of a tribe, a pueblo as a Native community, or their people. Water law "reservations" of water are not Indian reservations.

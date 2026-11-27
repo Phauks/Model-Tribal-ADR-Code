@@ -1,0 +1,50 @@
+key: michigan-compiled-laws-206-110
+kind: state-statute
+citation:
+  type: legislation
+  title: Taxable income of individuals, estates, or trusts; definitions; allocation; rents and royalties
+  title-short: Mich. Comp. Laws § 206.110
+  container-title: Michigan Compiled Laws
+  container-title-short: Mich. Comp. Laws
+  section: '206.110'
+  author:
+  - literal: Michigan Legislature
+  issued:
+    date-parts:
+    - - 1967
+  URL: https://legislature.mi.gov/Laws/MCL?objectName=mcl-206.110
+  accessed:
+    date-parts:
+    - - 2026
+      - 11
+      - 27
+original_link: https://legislature.mi.gov/Laws/MCL?objectName=mcl-206.110
+retrieved: '2026-11-27'
+archives: []
+history:
+  status: live
+  last_checked: '2026-11-27'
+state_law:
+  relevance: incidental
+  citation: Mich. Comp. Laws § 206.110 (2026)
+rights:
+  status: no-permission-needed
+  basis: government-edict
+  basis_note: 'Official state statutes are not copyrightable under the government edicts doctrine (Georgia v. Public.Resource.Org, Inc., 590 U.S. 255 (2020)). Linked, not served: state statutes stay link only.'
+  redistribution: false
+jurisdictions:
+- level: state
+  state: MI
+topics:
+- state-indian-law
+found_in:
+- 2026-11-27-state-statutes-fourth-batch
+notes: 'Indigo Book citation: Mich. Comp. Laws § 206.110 (2026). History: 1967, Act 281, Eff. Oct. 1, 1967; Am. 1969, Act 332, Imd. Eff. Nov. 4, 1969; Am. 1990, Act 283, Imd. Eff. Dec. 14, 1990; Am. 1996, Act 484, Eff. Jan. 1, 1997; Am. 2003, Act 21, Imd. Eff. June 24, 2003; Am. 2011, Act 38, Eff. Jan. 1, 2012. Text read from the Michigan Legislature''s page for the section''s chapter of the Michigan Compiled Laws (legislature.mi.gov), complete through Public Act 114 of 2026, on Nov. 27, 2026. Found by the state statutes sweep (terms: federally recognized indian tribe; indian gaming; native american; indian; native; tribe); AI reader''s verdict incidental: Income tax sourcing defines casino to include tribal land gaming. Unverified.'
+review:
+  status: unverified
+  by: scripts/law/state_statutes/run.py
+  date: '2026-11-27'
+  checks:
+  - check: 'Indian law section: the sweep''s keyword pass and an AI reader''s verdict (core, incidental or none)'
+    result: agree
+    detail: 'incidental; terms: federally recognized indian tribe; indian gaming; native american; indian; native; tribe'

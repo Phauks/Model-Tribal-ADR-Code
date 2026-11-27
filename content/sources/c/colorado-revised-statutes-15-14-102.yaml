@@ -1,0 +1,57 @@
+key: colorado-revised-statutes-15-14-102
+kind: state-statute
+citation:
+  type: legislation
+  title: Definitions
+  title-short: Colo. Rev. Stat. § 15-14-102
+  container-title: Colorado Revised Statutes
+  container-title-short: Colo. Rev. Stat.
+  section: 15-14-102
+  author:
+  - literal: Colorado Office of Legislative Legal Services
+  issued:
+    date-parts:
+    - - 2000
+  URL: https://olls.info/crs/crs2026-title-15.pdf
+  accessed:
+    date-parts:
+    - - 2026
+      - 11
+      - 27
+original_link: https://olls.info/crs/crs2026-title-15.pdf
+retrieved: '2026-11-27'
+archives: []
+history:
+  status: live
+  last_checked: '2026-11-27'
+shares_link_with:
+- colorado-revised-statutes-15-11-1202
+- colorado-revised-statutes-15-11-1302
+- colorado-revised-statutes-15-14-5-102
+- colorado-revised-statutes-15-20-102
+- colorado-revised-statutes-15-24-102
+- colorado-revised-statutes-15-5-103
+state_law:
+  relevance: incidental
+  citation: Colo. Rev. Stat. § 15-14-102 (2026)
+rights:
+  status: no-permission-needed
+  basis: government-edict
+  basis_note: 'Official state statutes are not copyrightable under the government edicts doctrine (Georgia v. Public.Resource.Org, Inc., 590 U.S. 255 (2020)). Linked, not served: state statutes stay link only.'
+  redistribution: false
+jurisdictions:
+- level: state
+  state: CO
+topics:
+- state-indian-law
+found_in:
+- 2026-11-27-state-statutes-fourth-batch
+notes: 'Indigo Book citation: Colo. Rev. Stat. § 15-14-102 (2026). History: Source: L. 2000: Entire part R&RE, p. 1778, § 1, effective January 1, 2001 (see § 15-17-103). L. 2016: (10.5) added, (SB 16-131), ch. 286, p. 1165, § 2, effective August 10. L. 2019: IP and (8) amended, (HB 19-1042), ch. 55, p. 192, § 1, effective March 28. L. 2020: (7.5) and (13.5) added, (SB 20-129), ch. 270, p. 1315, § 1, effective September 1. Text read from the Colorado Office of Legislative Legal Services'' 2026 download of the Colorado Revised Statutes (content.leg.colorado.gov, 2026 CRS Titles for Download) on Nov. 27, 2026. Found by the state statutes sweep (terms: indian tribe; native village; indian; native; tribe); AI reader''s verdict incidental: Defines Tribe including federally recognized tribes for conservatorship law. Unverified.'
+review:
+  status: unverified
+  by: scripts/law/state_statutes/run.py
+  date: '2026-11-27'
+  checks:
+  - check: 'Indian law section: the sweep''s keyword pass and an AI reader''s verdict (core, incidental or none)'
+    result: agree
+    detail: 'incidental; terms: indian tribe; native village; indian; native; tribe'

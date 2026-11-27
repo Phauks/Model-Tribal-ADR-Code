@@ -1,0 +1,58 @@
+key: colorado-revised-statutes-33-6-113-1
+kind: state-statute
+citation:
+  type: legislation
+  title: Illegal trafficking of wildlife - violation - penalties - investigations and surveys of trafficked wildlife - definition - appropriation
+  title-short: Colo. Rev. Stat. § 33-6-113.1
+  container-title: Colorado Revised Statutes
+  container-title-short: Colo. Rev. Stat.
+  section: 33-6-113.1
+  author:
+  - literal: Colorado Office of Legislative Legal Services
+  issued:
+    date-parts:
+    - - 2025
+  URL: https://olls.info/crs/crs2026-title-33.pdf
+  accessed:
+    date-parts:
+    - - 2026
+      - 11
+      - 27
+original_link: https://olls.info/crs/crs2026-title-33.pdf
+retrieved: '2026-11-27'
+archives: []
+history:
+  status: live
+  last_checked: '2026-11-27'
+shares_link_with:
+- colorado-revised-statutes-33-1-102
+- colorado-revised-statutes-33-10-119
+- colorado-revised-statutes-33-10-5-107
+- colorado-revised-statutes-33-12-103-8
+- colorado-revised-statutes-33-9-202
+- colorado-revised-statutes-33-9-203
+- colorado-revised-statutes-33-9-205
+state_law:
+  relevance: incidental
+  citation: Colo. Rev. Stat. § 33-6-113.1 (2026)
+rights:
+  status: no-permission-needed
+  basis: government-edict
+  basis_note: 'Official state statutes are not copyrightable under the government edicts doctrine (Georgia v. Public.Resource.Org, Inc., 590 U.S. 255 (2020)). Linked, not served: state statutes stay link only.'
+  redistribution: false
+jurisdictions:
+- level: state
+  state: CO
+topics:
+- state-indian-law
+found_in:
+- 2026-11-27-state-statutes-fourth-batch
+notes: 'Indigo Book citation: Colo. Rev. Stat. § 33-6-113.1 (2026). History: Source: L. 2025: Entire section added, (SB 25-168), ch. 355, p. 1915, § 5, effective July 1, 2026. Text read from the Colorado Office of Legislative Legal Services'' 2026 download of the Colorado Revised Statutes (content.leg.colorado.gov, 2026 CRS Titles for Download) on Nov. 27, 2026. Found by the state statutes sweep (terms: tribal government; nation; tribal); AI reader''s verdict incidental: Wildlife trafficking offense covers violations of tribal government law. Unverified.'
+review:
+  status: unverified
+  by: scripts/law/state_statutes/run.py
+  date: '2026-11-27'
+  checks:
+  - check: 'Indian law section: the sweep''s keyword pass and an AI reader''s verdict (core, incidental or none)'
+    result: agree
+    detail: 'incidental; terms: tribal government; nation; tribal'

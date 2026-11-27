@@ -56,4 +56,7 @@ Records the project already holds under the same key (most were made by hand for
 | North Dakota | `adapters/north_dakota.py` (no source notes in the PDFs, so no enactment years) | Chapter PDFs, ndlegis.gov/cencode, listed with section names on the Century Code page |
 | Idaho | `adapters/idaho.py` | Section pages, legislature.idaho.gov/statutesrules/idstat, listed on each chapter's page |
 | Kansas | `adapters/kansas.py` | Section pages, ksrevisor.gov/statutes, listed on each chapter's page |
+| Colorado | `adapters/colorado.py` (the HTML prints each title's contents first; a heading counts as a section only when text or a source note follows it) | The Office of Legislative Legal Services' yearly download of every title in HTML, olls.info/crs (listed on content.leg.colorado.gov); records link to the title's PDF |
+| Michigan | `adapters/michigan.py` (chapter 1, the constitution, is not read; a section's act is the public act it sits in) | Whole-chapter pages, legislature.mi.gov/Home/RenderDoc; each record links to the section's own page |
+| Wyoming | `adapters/wyoming.py` (no history lines in the PDFs, so no enactment years) | Title PDFs, wyoleg.gov/statutes/compress; each record links to its title's PDF at the section's page |
 | Oklahoma | `adapters/oklahoma.py` (read in the pilot; `run.py seed OK` turns the pilot's list into this pipeline's list) | Title PDFs, oklegislature.gov |
