@@ -79,7 +79,7 @@ console.log('Biggest modules:');
 for (const module of modules.slice(0, 8)) console.log(`  ${mib(module.bytes).padStart(9)}  ${module.name}`);
 if (codeBytes > codeAtMost) {
 	problems.push(
-		`The Worker's code is ${mib(codeBytes)}, over this check's ${mib(codeAtMost)} (Cloudflare refuses a deploy over ${mib(codeLimit)}). Move the biggest data out of the code into static files read on request, as src/lib/essay-citation-files.ts and src/lib/server/page-data.ts do.`
+		`The Worker's code is ${mib(codeBytes)}, over this check's ${mib(codeAtMost)} (Cloudflare refuses a deploy over ${mib(codeLimit)}). Move the biggest data out of the code into static files read on request, as src/lib/built-files.ts, src/lib/essay-citation-files.ts and src/lib/server/page-data.ts do, or keep a library only the browser runs out of the server build (vite.config.ts, browserOnlyInServer).`
 	);
 }
 
