@@ -163,9 +163,11 @@ Each question, answer, citations, tools used, tokens and verdict of the post-che
 
 A fixed set of about 150 questions (from the search logs, plus questions from Trevor Goldsmith, Patrick Chapin and Danielle Finn), each with the pages a correct answer must cite. Scored on: correct, misgrounded (Stanford's term), refused when it should have answered, and answered when it should have refused. The bar for opening Ask to visitors is a choice for Trevor; a reasonable start is 95% of citations supporting their sentence, as judged by Fact check and by a person, and no answers to personal legal questions.
 
-### 5.8 Agent limits, models and best practices: still to be worked out
+### 5.8 Agent limits, models and best practices: proposed, awaiting Trevor's choices
 
 On Nov. 26, 2026 (Pacific), approving the panel, Trevor Goldsmith asked for special bounds and limits for the AI worker or agent, and for the models and best practices to be identified. Sections 5.2 to 5.6 set the first limits (read-only tools that filter by the visitor's rights, at most six tool calls, citations checked in code, Turnstile, rate limits, a daily budget, 90-day logs). Still to be decided, with sources, before phase 3 is built: the full set of limits for the agent (what it may read, call and say, conversation length, cost per conversation, and what happens when a limit is reached), which model or models it runs on (Inkling 2 Small is the working default; Fact check and Ask may need different ones), defenses against instructions hidden in source documents and questions, and the published practices this follows.
+
+A research note of Nov. 27, 2026, [Limits, models and safeguards for the Ask agent and Fact check's live recheck](../research/analyses/2026-11-27-ask-agent-limits-and-models.md), proposes answers: limits per question, conversation, person and site with what the reader sees at each; what the agent may read, do and say; Inkling 2 Small at low effort for every job, with gpt-oss-120b as a second look on Fact check's flags; Prompt Guard 2 to screen questions and sweep the library once; a three-way model test before Ask opens; and layered defenses against hidden instructions, following the OWASP Top 10 for LLM Applications and Anthropic's and Cloudflare's guidance. Its section 7 lists the choices for Trevor; nothing there applies until he accepts it.
 
 ## 6. Summarize, Timeline and Top questions
 
