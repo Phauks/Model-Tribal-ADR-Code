@@ -157,22 +157,24 @@ export function isAttribution(paragraph: string): boolean {
 }
 
 /**
- * Whether a quotation leaves out words without saying so, by the rule the
- * print build applies to the Foundations chapters: a quotation that starts
- * with a lowercase letter (or a bracketed lowercase change such as "[w]e")
- * needs a leading "... ", and one that does not end in ".", "?" or "!"
- * (perhaps followed by a closing quotation mark or bracket) needs a trailing
- * " ...". Citations after the quoted words are ignored.
+ * Whether a quotation marks words left out at its ends in the Indigo Book
+ * form (R8.3; docs/style-guide.md, "Quotations"). `start` is true when it
+ * begins with "..." or with a lowercase letter (bare or bracketed, "[w]e"):
+ * a quotation that begins after the start of the sentence takes no "..." and
+ * capitalizes its first letter in brackets, "[W]e" (R8.3.2). `end` is true
+ * when it ends in a bare "..." or does not end in ".", "?" or "!" (perhaps
+ * followed by a closing quotation mark or bracket): a sentence cut short ends "... ." with the
+ * sentence's own closing mark (R8.3.5). Citations after the quoted words are
+ * ignored.
  */
-export function missingEllipses(quotation: string): { start: boolean; end: boolean } {
+export function quotationEndProblems(quotation: string): { start: boolean; end: boolean } {
 	const text = quotation
 		.replace(/\s*\[@[^\]]*\]\s*$/g, '')
 		.replace(/^[\s"“‘']+/, '')
 		.trim();
 	if (!text) return { start: false, end: false };
-	const startsCut = /^(\.\.\.|…)/.test(text);
-	const start = !startsCut && /^(\[[a-z]|[a-z])/.test(text);
-	const end = !/(\.\.\.|…)$/.test(text) && !/[.?!][\]"”’')]*$/.test(text);
+	const start = /^(\.\.\.|…)/.test(text) || /^[*_]*(\[[a-z]|[a-z])/.test(text);
+	const end = /(\.\.\.|…)$/.test(text) || !/[.?!][\]"”’')]*$/.test(text);
 	return { start, end };
 }
 

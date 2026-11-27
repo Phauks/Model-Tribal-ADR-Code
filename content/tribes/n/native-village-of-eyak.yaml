@@ -210,6 +210,69 @@ indian_health_service:
   as_of: '2026-11-23'
   locator: '"Federally Recognized Tribes" list, Anchorage Service Area profile'
   note: 'The source''s words: "Native Village of Eyak".'
+federal_programs:
+- program: interior-self-governance-compact
+  since: 2003
+  source: bia-office-of-self-governance-tribes-2024-07-24
+  confidence: high
+  verification: bulk-import
+  as_of: '2024-07-24'
+  locator: row 'Native Village Of Eyak' (Alaska Region)
+- program: indian-health-service-self-governance-compact
+  since: 2011
+  source: indian-health-service-self-governance-tribes
+  confidence: high
+  verification: bulk-import
+  as_of: '2025-07-01'
+  locator: Alaska Area, row 'Native Village of Eyak'
+- program: pl-102-477-plan
+  start: '2026-10-01'
+  end: '2029-09-30'
+  programs_included:
+  - Coordinated Tribal Assistance Solicitation Purpose Area 3 - The Guided Path to Wellness Program
+  - Child Care & Development Funds – Discretionary
+  - Indian Housing Block Grant
+  - Indian Child Welfare Act
+  - 'Welfare Assistance: Burial Assistance'
+  - 'Welfare Assistance: Emergency Assistance'
+  - 'Welfare Assistance: General Assistance'
+  - Higher Education
+  - Johnson O’Malley
+  detail: Carried under a self-governance compact
+  source: bia-pl-102-477-plan-directory
+  confidence: medium
+  verification: bulk-import
+  as_of: '2026-11-26'
+  locator: PL102_477_Contracts, plan 'Native Village of Eyak (Cordova)'; PL102_477_PartnerEnrollment, its 9 programs
+  note: The list's name was matched to this nation by a person or AI review; the list names 'Native Village of Eyak (Cordova)'.
+- program: indian-housing-block-grant
+  fiscal_year: 2026
+  amount: 187562
+  amount_kind: allocation
+  source: hud-ihbg-fy2026-formula-allocations
+  confidence: medium
+  verification: bulk-import
+  as_of: '2026'
+  locator: AK, row 'Eyak' (Cordova)
+  note: The list's name was matched to this nation by a person or AI review; the list names 'Eyak'.
+- program: interior-self-governance-compact
+  fiscal_year: 2025
+  amount: 905034
+  amount_kind: obligations
+  source: usaspending-fy2025-assistance-listing-15-022
+  confidence: high
+  verification: bulk-import
+  as_of: '2025'
+  locator: Assistance Listing 15.022, recipient 'NATIVE VILLAGE OF EYAK' (UEI X4SJKU5C1ET5), Oct. 1, 2024 to Sept. 30, 2025
+- program: indian-health-service-self-governance-compact
+  fiscal_year: 2025
+  amount: 1955787
+  amount_kind: obligations
+  source: usaspending-fy2025-assistance-listing-93-210
+  confidence: high
+  verification: bulk-import
+  as_of: '2025'
+  locator: Assistance Listing 93.210, recipient 'NATIVE VILLAGE OF EYAK' (UEI X4SJKU5C1ET5), Oct. 1, 2024 to Sept. 30, 2025
 governance:
 - aspect: governing-body
   value: Native Village of Eyak Tribal Council

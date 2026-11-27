@@ -37,7 +37,7 @@ The three odd citations that have a scan of the printed report were written by h
 ## Not added
 
 - 169 U.S. 733 (*United States and Comanche Indians v. Kemp*, 1898) and 172 U.S. 641 (*United States and Comanche Indians v. Hood*, 1898): memorandum decisions. Neither the Library of Congress, the Caselaw Access Project nor the Internet Archive has these pages. Both were added on Nov. 27, 2026 from GovInfo's scans (see "Added Nov. 27, 2026" below).
-- 429 U.S. 976: not a decision. It is the order of November 29, 1976 granting certiorari in *Puyallup Tribe, Inc. v. Department of Game of Washington*, which the Court decided at 433 U.S. 165 (1977); that case already has a record.
+- 429 U.S. 976: not a decision. It is the order of November 29, 1976 granting certiorari in *Puyallup Tribe, Inc. v. Department of Game of Washington*, which the Court decided at 433 U.S. 165 (1977); that case already has a record. On Nov. 27, 2026 Trevor decided to take it off the list ("then yes remove it"), after the order was read in GovInfo's scan of volume 429 (https://www.govinfo.gov/content/pkg/USREPORTS-429/pdf/USREPORTS-429-BackMatter-2.pdf, PDF page 176, under "Certiorari Granted").
 
 ## Copies
 
@@ -108,4 +108,4 @@ GovInfo's copy of each volume of the United States Reports includes the volume's
 
 The printed decision dates match the Database (cases 1897-223 and 1898-182), and the captions and dates were read from the page images, not only the scans' text layer. The report names no Justice, so each bench follows the Database: 4 to 4 with no Justice's vote recorded, eight Justices in *Kemp* (Justice Field had retired and Justice McKenna had not yet joined) and Justice McKenna not taking part in *Hood* (the Database gives him no vote; the report does not say). Both PDFs are filed in R2 and the capture index under govinfo/USREPORTS-169/ and govinfo/USREPORTS-172/, and are served as public copies.
 
-With these, 627 of the 628 cases on the list have records. The one left, 429 U.S. 976, is the certiorari grant in *Puyallup Tribe, Inc. v. Department of Game of Washington*, not a decision; that case has its record at 433 U.S. 165.
+With these, 627 of the 628 cases on the list had records. The one left, 429 U.S. 976, is the certiorari grant in *Puyallup Tribe, Inc. v. Department of Game of Washington*, not a decision; that case has its record at 433 U.S. 165. Trevor decided the same day to take the order off the list, so every one of the 627 cases on it now has a record.

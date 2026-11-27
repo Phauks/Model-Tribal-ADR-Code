@@ -163,6 +163,27 @@ indian_health_service:
   as_of: '2026-11-23'
   locator: Tribally Administered Programs table
   note: Listed as "Miccosukee Tribe of Indians of Florida".
+federal_programs:
+- program: indian-housing-block-grant
+  fiscal_year: 2026
+  amount: 110362
+  amount_kind: allocation
+  source: hud-ihbg-fy2026-formula-allocations
+  confidence: high
+  verification: bulk-import
+  as_of: '2026'
+  locator: FL, row 'Miccosukee Tribe' (Miami)
+- program: isdeaa-contract-indian-health-service
+  fiscal_year: 2025
+  amount: 3435246
+  amount_kind: obligations
+  through: Miccosukee Corporation
+  source: usaspending-fy2025-assistance-listing-93-441
+  confidence: medium
+  verification: bulk-import
+  as_of: '2025'
+  locator: Assistance Listing 93.441, recipient 'MICCOSUKEE CORPORATION' (UEI KDGNQQAMNUD1), Oct. 1, 2024 to Sept. 30, 2025
+  note: The list's name was matched to this nation by a person or AI review; the list names 'MICCOSUKEE CORPORATION'.
 governance:
 - aspect: form
   value: Constitution and Bylaws under Section 16 of the Indian Reorganization Act

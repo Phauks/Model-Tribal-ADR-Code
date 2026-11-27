@@ -363,6 +363,12 @@ export const setupSteps: readonly SetupStep[] = [
 		authority: [{ label: 'Nev. Rev. Stat. § 78.150(1)(c)', link: corporationStatutes }]
 	},
 	{
+		key: 'setup-advisory-council',
+		title: 'Invite the first Indigenous Advisory Council',
+		what: 'Three to five Indigenous volunteers, invited by Trevor and Danielle Finn: unpaid, credited, advice only, and any member may ask to hold a sacred or privacy-sensitive item while the council discusses it.',
+		authority: []
+	},
+	{
 		key: 'setup-ownership',
 		title: 'Decide who owns the book, code and data',
 		what: 'Assignment, exclusive license or non-exclusive license to the corporation, approved by the directors other than the author.',
@@ -371,7 +377,7 @@ export const setupSteps: readonly SetupStep[] = [
 	{
 		key: 'setup-documents',
 		title: 'Draft articles, bylaws and conflict-of-interest policy',
-		what: 'Articles limit purposes to 501(c)(3) purposes and name a 501(c)(3) for assets on dissolution; have a Nevada attorney review them.',
+		what: 'Articles limit purposes to 501(c)(3) purposes and name a 501(c)(3) for assets on dissolution; the bylaws name the Indigenous Advisory Council; have a Nevada attorney review them.',
 		authority: [
 			{ label: '26 C.F.R. § 1.501(c)(3)-1(b)' },
 			{ label: 'Instructions for Form 1023 app. A', link: fullInstructions }

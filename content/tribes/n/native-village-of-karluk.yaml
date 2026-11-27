@@ -157,6 +157,26 @@ indian_health_service:
   as_of: '2026-11-23'
   locator: '"Federally Recognized Tribes" list, Anchorage Service Area profile'
   note: 'The source''s words: "Native Village of Karluk".'
+federal_programs:
+- program: indian-housing-block-grant
+  fiscal_year: 2026
+  amount: 110362
+  amount_kind: allocation
+  source: hud-ihbg-fy2026-formula-allocations
+  confidence: medium
+  verification: bulk-import
+  as_of: '2026'
+  locator: AK, row 'Karluk' (Karluk)
+  note: The list's name was matched to this nation by a person or AI review; the list names 'Karluk'.
+- program: isdeaa-contract-indian-health-service
+  fiscal_year: 2025
+  amount: 158125
+  amount_kind: obligations
+  source: usaspending-fy2025-assistance-listing-93-441
+  confidence: high
+  verification: bulk-import
+  as_of: '2025'
+  locator: Assistance Listing 93.441, recipient 'NATIVE VILLAGE OF KARLUK' (UEI R7JQH7ES7YH6), Oct. 1, 2024 to Sept. 30, 2025
 government_structure:
 - kind: alaska-indian-reorganization-act
   detail: Listed as "The Native Village of Karluk" among organizations under constitutions approved by

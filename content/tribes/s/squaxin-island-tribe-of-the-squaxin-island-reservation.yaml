@@ -158,6 +158,52 @@ indian_health_service:
   as_of: '2026-11-23'
   locator: '"Tribes of Oregon, Washington and Idaho" list'
   note: 'Listed as "Squaxin Island Tribe". Also listed under the same Area in: indian-health-service-self-governance-tribes. Also on the Indian Health Service Self-Governance Tribes list (Squaxin Island Indian Tribe (1995)); the list does not say which service unit or programs the compact covers.'
+federal_programs:
+- program: interior-self-governance-compact
+  since: 1994
+  source: bia-office-of-self-governance-tribes-2024-07-24
+  confidence: medium
+  verification: bulk-import
+  as_of: '2024-07-24'
+  locator: row 'Squaxin Island Tribe' (Northwest Region)
+  note: The list's name was matched to this nation by a person or AI review; the list names 'Squaxin Island Tribe'.
+- program: indian-health-service-self-governance-compact
+  since: 1995
+  source: indian-health-service-self-governance-tribes
+  confidence: medium
+  verification: bulk-import
+  as_of: '2025-07-01'
+  locator: Portland Area, row 'Squaxin Island Indian Tribe'
+  note: The list's name was matched to this nation by a person or AI review; the list names 'Squaxin Island Indian Tribe'.
+- program: indian-housing-block-grant
+  fiscal_year: 2026
+  amount: 1355079
+  amount_kind: allocation
+  source: hud-ihbg-fy2026-formula-allocations
+  confidence: high
+  verification: bulk-import
+  as_of: '2026'
+  locator: WA, row 'Squaxin Island Tribe' (Shelton)
+- program: interior-self-governance-compact
+  fiscal_year: 2025
+  amount: 4839312
+  amount_kind: obligations
+  source: usaspending-fy2025-assistance-listing-15-022
+  confidence: medium
+  verification: bulk-import
+  as_of: '2025'
+  locator: Assistance Listing 15.022, recipient 'SQUAXIN ISLAND TRIBE' (UEI Z7LUCA1NAJ85), Oct. 1, 2024 to Sept. 30, 2025
+  note: The list's name was matched to this nation by a person or AI review; the list names 'SQUAXIN ISLAND TRIBE'.
+- program: indian-health-service-self-governance-compact
+  fiscal_year: 2025
+  amount: 4134854
+  amount_kind: obligations
+  source: usaspending-fy2025-assistance-listing-93-210
+  confidence: medium
+  verification: bulk-import
+  as_of: '2025'
+  locator: Assistance Listing 93.210, recipient 'SQUAXIN ISLAND TRIBE' (UEI Z7LUCA1NAJ85), Oct. 1, 2024 to Sept. 30, 2025
+  note: The list's name was matched to this nation by a person or AI review; the list names 'SQUAXIN ISLAND TRIBE'.
 governance:
 - aspect: governing-body
   value: Tribal Council
