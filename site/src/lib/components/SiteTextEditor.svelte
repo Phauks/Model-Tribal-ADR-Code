@@ -489,7 +489,7 @@
 		display: inline !important;
 	}
 	/* A part of a case's or law's box shows as one block to click while editing,
-	   kept beside the At a glance column rather than running under it. */
+	   kept beside the Key facts column rather than running under it. */
 	:global(html.site-text-editing [data-record-text]),
 	:global([data-record-text].site-text-draft) {
 		display: flow-root;

@@ -105,7 +105,7 @@ function courtOpinions(nationIdentifier: string, sources: SourceUses): CourtOpin
 }
 
 /** What the courts and jurisdiction sections say when they have nothing to show. */
-/** The nation's seal or logo at the top of At a glance, and what the image viewer shows with it. */
+/** The nation's seal or logo at the top of Key facts, and what the image viewer shows with it. */
 interface NationImage {
 	src: string;
 	kind: string;
@@ -403,7 +403,7 @@ function governmentFacts(
 }
 
 /**
- * At a glance: the name of the governing body and the title of the head of
+ * Key facts: the name of the governing body and the title of the head of
  * government. The title the federal directory lists comes first, being the
  * newest; otherwise the governing document's.
  */
@@ -617,7 +617,7 @@ const establishmentWords: Record<string, string> = {
  * The nation's relationship with the United States after its treaties (a
  * table of their own, treatyRows): how its land was set aside, and the Indian
  * Health Service Area and service unit that serve it. The Bureau of Indian
- * Affairs region stays in At a glance. The Gaming Commission's enforcement
+ * Affairs region stays in Key facts. The Gaming Commission's enforcement
  * actions follow as a table (enforcementActions).
  */
 function federalTies(record: NationRecord, sources: SourceUses): FactGroup[] {
@@ -961,7 +961,7 @@ function publishedLaw(
 			lines.map((line) => {
 				const shared = lines.filter((other) => sameTitle(other.title, line.title)).length > 1;
 				const site = shared ? host(line.link) : undefined;
-				// Cited under the plain title, the words At a glance uses, so the
+				// Cited under the plain title, the words Key facts uses, so the
 				// Sources list names the fact once and links back to both markers.
 				const citations: CitationMark[] = [];
 				for (const fact of line.facts) sources.citeFact(fact, documentsLabel, line.title, citations);
@@ -1223,8 +1223,8 @@ export const load: PageServerLoad = ({ params }) => {
 	const sources = new SourceUses((key) => legalHelpCitation(key) ?? formatSource(sourceRecords().get(key), key));
 	// Each source is filed under the part of the page that first cites it, so a
 	// long Sources list folds into groups that follow the page (Trevor, Nov. 23,
-	// 2026). The name and seal at the top go with At a glance.
-	sources.part('At a glance');
+	// 2026). The name and seal at the top go with Key facts.
+	sources.part('Key facts');
 	// The nation's seal or logo, only when its reuse status allows showing it
 	// (docs/official-images.md). The Worker serves it from the private bucket.
 	// It is shown first, under the name, so its source is numbered first.
@@ -1305,7 +1305,7 @@ export const load: PageServerLoad = ({ params }) => {
 	});
 
 	// Sources are numbered in the order the page first cites them, which is
-	// the order the page shows them: At a glance comes right after the title.
+	// the order the page shows them: Key facts comes right after the title.
 	const names = [page.listedName, page.officialName];
 	const glance = shareMarks(atAGlance(record, sources), sources);
 	sources.part(contactsHeading);
@@ -1403,7 +1403,7 @@ export const load: PageServerLoad = ({ params }) => {
 		sources: sources.list
 	};
 
-	// The page's outline, for the sidebar: one entry per heading, in the page's order. At a glance is left out: it sits beside the opening of the page, so jumping to it only made the page jump (Trevor, Nov. 27, 2026).
+	// The page's outline, for the sidebar: one entry per heading, in the page's order. Key facts is left out: it sits beside the opening of the page, so jumping to it only made the page jump (Trevor, Nov. 27, 2026).
 	const items: OutlineItem[] = [];
 	const hasContacts = contacts.websites.length > 0 || contacts.offices.length > 0;
 	if (hasContacts) items.push({ label: contactsHeading, link: '#contacts-heading' });

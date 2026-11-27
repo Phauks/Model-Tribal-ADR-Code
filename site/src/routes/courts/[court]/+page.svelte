@@ -2,7 +2,7 @@
 	@component
 	One court the site names (src/lib/server/courts.ts; Trevor approved the
 	mockup on Nov. 24, 2026, design/stub-pages/), on the site's one item
-	layout: its nation, opinions and cases At a glance, its newest opinions,
+	layout: its nation, opinions and cases Key facts, its newest opinions,
 	the cases it decided, and the pages that name it. Each court's page is a
 	stub until someone writes about the court (src/lib/stubs.ts). A nation's
 	choice to hide its opinions, or to have them only cited, is applied when
@@ -25,7 +25,7 @@
 	// "the Navajo Nation", as a nation's name reads in a sentence.
 	const nationNames = $derived(data.nations.map((nation) => (/^the /i.test(nation.name) ? nation.name : `the ${nation.name}`)).join(' and '));
 	const lead = $derived.by(() => {
-		// Each count with its years, which At a glance no longer repeats (src/lib/server/courts.ts).
+		// Each count with its years, which Key facts no longer repeats (src/lib/server/courts.ts).
 		const years = (span: { from: string; to: string } | undefined) => (span ? ` (${span.from === span.to ? span.from : `${span.from}–${span.to}`})` : '');
 		const counts = [
 			opinionCount > 0 ? `${opinionCount.toLocaleString('en-US')} ${opinionCount === 1 ? 'opinion' : 'opinions'}${years(data.opinionYears)}` : '',
