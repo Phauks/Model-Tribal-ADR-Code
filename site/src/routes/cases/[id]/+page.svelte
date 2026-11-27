@@ -23,7 +23,7 @@
 
 	let { data }: PageProps = $props();
 	const trail = $derived([
-		{ label: 'Library', href: '/library' },
+		{ label: 'Courts and cases', href: '/cases' },
 		...(data.court
 			? [
 					{ label: 'Supreme Court', href: '/supreme-court' },
