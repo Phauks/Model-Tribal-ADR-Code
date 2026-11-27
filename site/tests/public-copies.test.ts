@@ -95,7 +95,8 @@ describe('the details a copy’s page shows', () => {
 		const details = copyDetails(copyDetailsShard(first))?.[first.key];
 		expect(details?.title).toBe(first.title);
 		expect(details?.list.slug).toBeTruthy();
-		// The first call works out every copy's details. Measured on Nov. 27, 2026, with 27,656 copies citing 22,684 records, that took 45 seconds on a cloud machine (18 s reading the source records, 10 s formatting their citations) and more than 60 seconds on a busy CI runner, so this test gets three minutes.
+		// The first call works out every copy's details, citing each copy's record, which took 15 to 25 seconds on a CI runner
+		// and more than 60 once the Indian Claims Commission's and the repatriation notices' 9,700 copies came (Nov. 27, 2026).
 	}, 180_000);
 
 	it('gives a tribal court opinion its citation', () => {

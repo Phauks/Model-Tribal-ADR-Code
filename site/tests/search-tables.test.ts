@@ -1,5 +1,5 @@
 import { beforeAll, describe, expect, it, vi } from 'vitest';
-import type { D1Database } from '@cloudflare/workers-types/index.ts';
+import type { D1Database, D1PreparedStatement } from '@cloudflare/workers-types/index.ts';
 
 // Story credits format citations through a module the site build makes; the index doesn't need it.
 vi.mock('virtual:source-citations', () => ({ sourceCitations: {} }));
@@ -81,6 +81,41 @@ describe('the search tables', () => {
 		expect(await fillSearchTables(database, searchTablesKey('build-3', undefined), entries, records)).toBe('busy');
 		await database.prepare("DELETE FROM site_search_state WHERE name = 'filling'").run();
 	});
+	it('write the rows in batches of about two megabytes, which D1 takes, and answer nothing until the last', async () => {
+		const fresh = testDatabase();
+		const batch = fresh.batch.bind(fresh);
+		const sizes: number[] = [];
+		const keys: (string | undefined)[] = [];
+		fresh.batch = (async (statements: D1PreparedStatement[]) => {
+			sizes.push(statements.reduce((total, statement) => total + JSON.stringify((statement as unknown as { values: unknown[] }).values).length, 0));
+			const results = await batch(statements);
+			keys.push((await fresh.prepare("SELECT value FROM site_search_state WHERE name = 'key'").first<{ value: string }>())?.value);
+			return results;
+		}) as D1Database['batch'];
+		expect(await fillSearchTables(fresh, searchTablesKey('build-5', undefined), entries, records)).toBe('filled');
+		expect(sizes.length).toBeGreaterThan(3);
+		expect(Math.max(...sizes)).toBeLessThan(2_500_000);
+		expect(keys.slice(0, -1).every((key) => key === undefined)).toBe(true);
+		expect(keys.at(-1)).toBe(searchTablesKey('build-5', undefined));
+	});
+
+	it('stop writing once a later fill takes the tables over, and leave the key unset', async () => {
+		const fresh = testDatabase();
+		const batch = fresh.batch.bind(fresh);
+		let calls = 0;
+		fresh.batch = (async (statements: D1PreparedStatement[]) => {
+			calls += 1;
+			// After the old rows are cleared, another request starts a fill of its own.
+			if (calls === 2) await fresh.prepare("UPDATE site_search_state SET value = 'another fill' WHERE name = 'filling'").run();
+			return batch(statements);
+		}) as D1Database['batch'];
+		expect(await fillSearchTables(fresh, searchTablesKey('build-6', undefined), entries, records)).toBe('busy');
+		expect(calls).toBe(2);
+		expect(await searchTablesReady(fresh, searchTablesKey('build-6', undefined))).toBe(false);
+		expect(await fresh.prepare('SELECT COUNT(*) AS count FROM site_search_entries').first<{ count: number }>()).toEqual({ count: 0 });
+		expect(await fresh.prepare("SELECT value FROM site_search_state WHERE name = 'filling'").first<{ value: string }>()).toEqual({ value: 'another fill' });
+	});
+
 	it('answer in one trip only while the key matches the build and the restrictions', async () => {
 		const fresh = testDatabase();
 		await fillSearchTables(fresh, searchTablesKey('build-9', undefined), entries, records);

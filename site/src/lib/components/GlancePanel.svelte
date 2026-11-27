@@ -1,6 +1,6 @@
 <!--
 	@component
-	The "At a glance" panel of a record page (site/DESIGN.md, "Record pages"):
+	The "Key facts" panel of a record page (site/DESIGN.md, "Record pages"):
 	a filled box, like a reference work's fact box, with an optional picture on
 	top (such as a nation's seal) and the key facts under a heading the reader
 	can fold away. It takes any content, usually FactGroups and a map.
@@ -35,7 +35,7 @@
 		children: Snippet;
 	}
 
-	let { heading = 'At a glance', identifier = 'glance-heading', facts = 0, more, picture, children }: Props = $props();
+	let { heading = 'Key facts', identifier = 'glance-heading', facts = 0, more, picture, children }: Props = $props();
 
 	let unfolded = $state(false);
 	let box = $state<HTMLElement>();
