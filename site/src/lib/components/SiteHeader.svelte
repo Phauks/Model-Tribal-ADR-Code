@@ -283,6 +283,12 @@
 			display: inline-grid;
 		}
 
+		/* On a page with no column, such as the home page, there is nothing to
+		   hide or show; the button keeps its place so the name does not move. */
+		:global(:root:has(.sidebar-wide.empty)) .sidebar-toggle {
+			visibility: hidden;
+		}
+
 		:global(:root[data-scripts='on']) .masthead-row {
 			padding-left: var(--space-2);
 		}

@@ -8,7 +8,7 @@ interface Bench {
 }
 
 // Every Justice a Supreme Court case record names, as the case page shows them:
-// the writers in its Opinions list and the whole bench in At a glance.
+// the writers in its Opinions list and the whole bench in Key facts.
 const named: { key: string; name: string; decided?: string; writer: boolean }[] = [];
 for (const record of sources().values()) {
 	const { opinions, supreme_court: bench } = record as typeof record & Bench;

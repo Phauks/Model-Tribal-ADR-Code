@@ -238,7 +238,7 @@ export function biographyPage(key: string): BiographyPage | null {
 		citations: cite(entry, 'Name', entry.name)
 	}));
 
-	uses.part('At a glance');
+	uses.part('Key facts');
 	const nationNames = (nationDisplayNames ??= new Map(nations().map((nation) => [nation.id, displayName(nation.names.official)])));
 	const glance: FactGroup[] = [];
 	const nationItems = (person.nations ?? []).map((entry) => ({
