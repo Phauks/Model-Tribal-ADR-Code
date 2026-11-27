@@ -1,4 +1,4 @@
-# 0064. Take in public-domain myths and religious texts, including ceremonial ones
+# 0065. Take in public-domain myths and religious texts, including ceremonial ones
 
 - **Status:** Accepted (lead author, Nov. 26, 2026, 5:21 PM Pacific); to be reviewed by the project's Indigenous advisory council once it is formed
 - **Date:** 2026-11-26

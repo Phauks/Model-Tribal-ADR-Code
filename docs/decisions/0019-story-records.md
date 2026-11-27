@@ -1,6 +1,6 @@
 # 0019. Record stories in their tellers' own words, with credit, permissions and protocols
 
-- **Status:** Accepted (lead author, Nov. 21, 2026); website display amended by [0029](0029-show-stories-while-nations-review-them.md) and [0034](0034-show-stories-in-full-where-rights-allow.md); scope widened by [0063](0063-widen-stories-to-law-justice-and-governance.md); sacred and ceremonial rule replaced for published public-domain texts by [0064](0064-take-in-public-domain-myths-and-religious-texts.md)
+- **Status:** Accepted (lead author, Nov. 21, 2026); website display amended by [0029](0029-show-stories-while-nations-review-them.md) and [0034](0034-show-stories-in-full-where-rights-allow.md); scope widened by [0063](0063-widen-stories-to-law-justice-and-governance.md); sacred and ceremonial rule replaced for published public-domain texts by [0065](0065-take-in-public-domain-myths-and-religious-texts.md)
 - **Date:** 2026-11-21
 
 ## Context

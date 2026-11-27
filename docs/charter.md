@@ -50,7 +50,7 @@ Indigenous peoples have the right "to maintain, control, protect and develop the
 
 - the project uses published sources (a nation's own codes, court rules and official program materials) and material a nation has approved;
 - ceremonial, restricted or community-held knowledge that has not been published is not added without the community's written approval, and is marked restricted if it is held at all;
-- published texts in the public domain, including myths and religious and ceremonial texts, may be shown in full, labeled with who told and who recorded them, and marked for the nation's review<!-- repository-only --> ([decision record 0064](decisions/0064-take-in-public-domain-myths-and-religious-texts.md))<!-- /repository-only -->;
+- published texts in the public domain, including myths and religious and ceremonial texts, may be shown in full, labeled with who told and who recorded them, and marked for the nation's review<!-- repository-only --> ([decision record 0065](decisions/0065-take-in-public-domain-myths-and-religious-texts.md))<!-- /repository-only -->;
 - the project may attach Local Contexts Notices, which are "applied by researchers or institutional/repository staff," to signal Indigenous connections, and displays any Labels a community applies itself.[^lc-tk]
 
 ### 6. The right to correct, restrict or withdraw

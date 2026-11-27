@@ -82,8 +82,8 @@
 	{#if siteUpdates.resaving}
 		<div class="notice update-toast" role="status">
 			<p>
-				Saving the latest copies of the pages you keep: {siteUpdates.resaving.done} of {siteUpdates
-					.resaving.total} files.
+				Saving the latest copies of the pages you chose: {siteUpdates.resaving.done} of {siteUpdates
+					.resaving.total} pages.
 			</p>
 		</div>
 	{/if}
