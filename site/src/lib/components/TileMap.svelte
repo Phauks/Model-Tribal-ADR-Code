@@ -104,6 +104,7 @@
 		cessionsBounds,
 		oncession,
 		layerSwitches,
+		statesBy = 'count',
 		onfeature,
 		baseMap = $bindable(storedBaseMap()),
 		placeNames = $bindable(storedPlaceNames()),
@@ -141,6 +142,8 @@
 		 * The Map page's layers (map redesign D). With them the map draws each layer that is on, together, rather than one view: "view" then says only how the land is colored ("lands" for one color, or a shaded view), and the page draws its own Layers list, so the map keeps only zoom, flat or globe, and full screen, at the top right.
 		 */
 		layerSwitches?: TileMapLayers;
+		/** On the Map page, how the States layer is colored: 'count' for its number of nations, a shaded view's key for what most of its nations have, or '' for outlines only. */
+		statesBy?: string;
 		/** Called with a shape from the borders, removal routes or homelands layer that the reader chose. */
 		onfeature?: (feature: TileMapFeature) => void;
 		/** The base map, which the page's Layers list can choose too; remembered on the device. */
@@ -240,7 +243,7 @@
 	// A new base map or switch redraws the map's layers on the same map, as changing the view does.
 	let styledWith = '';
 	$effect(() => {
-		const wanted = `${baseMap} ${placeNames} ${outlines} ${drawsCessions} ${year} ${cessionsShown?.join(',')} ${JSON.stringify(layerSwitches ?? {})}`;
+		const wanted = `${baseMap} ${placeNames} ${outlines} ${drawsCessions} ${year} ${statesBy} ${cessionsShown?.join(',')} ${JSON.stringify(layerSwitches ?? {})}`;
 		if (!ready || !map) return;
 		if (styledWith === '') styledWith = wanted;
 		if (wanted === styledWith) return;
@@ -480,9 +483,9 @@
 			});
 		};
 		/** A shaded view by state: each state takes the shade of the category most of its nations have. */
-		const addStatesByCategory = () => {
+		const addStatesByCategory = (shading = shadingIn(data)) => {
 			// A shaded view by state: each state takes the shade of the category most of its nations have.
-			const entries = Object.entries(shadingIn(data)?.states ?? {});
+			const entries = Object.entries(shading?.states ?? {});
 			const byStateShade = (entries.length > 0
 				? ['match', ['get', 'code'], ...entries.flatMap(([code, state]) => [code, colors.classes[state.shade]]), colors.classes[0]]
 				: colors.classes[0]) as unknown as ExpressionSpecification;
@@ -490,6 +493,21 @@
 			const stateShadeNumber = (entries.length > 0 ? ['match', ['get', 'code'], ...entries.flatMap(([code, state]) => [code, state.shade]), 0] : ['literal', 0]) as unknown as ExpressionSpecification;
 			fills.push(patternOver('states-patterns', { source: 'places', 'source-layer': 'states' }, stateShadeNumber));
 			tops.push({ id: 'states-lines', type: 'line', source: 'places', 'source-layer': 'states', paint: { 'line-color': colors.line, 'line-width': 0.8 } });
+		};
+		/** The states outlined and named, with a clear fill so a state can still be pointed at and chosen. */
+		const addStatesOutlined = () => {
+			const marked: ExpressionSpecification = ['any', ['boolean', ['feature-state', 'hover'], false], ['boolean', ['feature-state', 'found'], false]];
+			fills.push({ id: 'states', type: 'fill', source: 'places', 'source-layer': 'states', paint: { 'fill-color': colors.focus, 'fill-opacity': ['case', marked, 0.35, 0] } });
+			tops.push(
+				{ id: 'states-lines', type: 'line', source: 'places', 'source-layer': 'states', paint: { 'line-color': colors.ink, 'line-width': 1, 'line-opacity': 0.6 } },
+				{
+					id: 'states-names',
+					type: 'symbol',
+					source: 'state-names',
+					layout: { 'text-field': ['get', 'name'], 'text-font': ['Noto Sans Medium'], 'text-size': 12, 'text-max-width': 8, 'text-padding': 2 },
+					paint: { 'text-color': colors.ink, 'text-halo-color': colors.paper, 'text-halo-width': 1.5 }
+				}
+			);
 		};
 		/** A shaded view's land areas, each in its category's shade. */
 		const addShadedLands = () => {
@@ -636,9 +654,11 @@
 			// The Map page (map redesign D): every layer that is on, from the bottom up. Today's layers are drawn at Today only.
 			const today = !pastYear;
 			if (layersOn.borders) addBorders();
+			// The states are colored on their own, apart from the land (Trevor, 2026-11-27): by number of nations, by what most of their nations have in a view, or not at all.
 			if (layersOn.states && today) {
-				if (isShadedMapView(view)) addStatesByCategory();
-				else addStatesByCount();
+				if (isShadedMapView(statesBy)) addStatesByCategory(data.shading?.[statesBy]);
+				else if (statesBy === 'count') addStatesByCount();
+				else addStatesOutlined();
 			}
 			if (layersOn.regions && today) addRegions(true);
 			if (layersOn.homelands) addHomelands();
@@ -1112,7 +1132,7 @@
 
 				// Selecting a place goes to its row; hovering marks it, as the drawn map does.
 				const interactive: { layer: string; source: string; sourceLayer?: string; anchor: (properties: Record<string, unknown>) => string | undefined }[] = [
-					{ layer: 'states', source: 'places', sourceLayer: 'states', anchor: (properties) => (by === 'state' || (explorer && isShadedMapView(view)) ? shadingIn(data)?.states[String(properties.code)]?.anchor : data.states[String(properties.code)]?.anchor) },
+					{ layer: 'states', source: 'places', sourceLayer: 'states', anchor: (properties) => (explorer ? (isShadedMapView(statesBy) ? data.shading?.[statesBy]?.states[String(properties.code)]?.anchor : data.states[String(properties.code)]?.anchor) : by === 'state' ? shadingIn(data)?.states[String(properties.code)]?.anchor : data.states[String(properties.code)]?.anchor) },
 					{ layer: 'regions', source: 'regions', anchor: (properties) => String(properties.anchor) },
 					{ layer: 'area-dots', source: 'area-points', anchor: (properties) => String(properties.anchor) },
 					{ layer: 'office-dots', source: 'offices', anchor: (properties) => String(properties.anchor ?? '') },
@@ -1566,7 +1586,8 @@
 	@container tile-map (max-width: 40rem) {
 		.tile-map.explorer :global(.maplibregl-ctrl-top-right) {
 			top: auto;
-			bottom: 6.5rem;
+			/* Above the timeline, which takes two rows on a phone (MapExplorer.svelte). */
+			bottom: 11rem;
 		}
 
 		.tile-map.explorer :global(.maplibregl-ctrl-top-right .maplibregl-ctrl) {

@@ -49,7 +49,7 @@
 
 	let tileMapCamera = $state<TileMapCamera | undefined>();
 	/** The tiled map's shape: flat (Web Mercator, which stretches places far from the equator, such as Alaska) or a globe, where every place keeps its true size (Trevor, 2026-11-23). */
-	let mapShape = $state<'flat' | 'globe'>('flat');
+	let mapShape = $state<'flat' | 'globe'>('globe');
 
 	/**
 	 * The layers on the map (Trevor, 2026-11-26, map redesign D): today's layers and the history layers, each turned on and off from the buttons across the top of the map or the Layers list. The map opens on nations' land and states, with the offices of nations with no land area (mockup D1).
@@ -57,7 +57,18 @@
 	let layers = $state<TileMapLayers>({ lands: true, states: true, offices: true, regions: false, borders: false, routes: false, homelands: false });
 	/** How the land is colored: '' for one color, or a shaded view's key (src/lib/shaded-map-views.ts). */
 	let colorBy = $state('');
-	const colorChoices = $derived([{ value: '', label: 'Nothing (one color)' }, ...mapViewChoices.filter((choice) => isShadedMapView(choice.value)).map((choice) => ({ ...choice, group: undefined }))]);
+	const colorChoices = $derived([{ value: '', label: 'Kind of land' }, ...mapViewChoices.filter((choice) => isShadedMapView(choice.value)).map((choice) => ({ ...choice, group: undefined }))]);
+	/**
+	 * How the states are colored, chosen apart from the land (Trevor, 2026-11-27): by number of nations, by what most of their nations have in a view that has a by-state version, or not at all.
+	 */
+	let statesColor = $state('count');
+	const statesColorChoices = $derived([
+		{ value: '', label: 'Nothing (outlines only)' },
+		{ value: 'count', label: 'Number of nations' },
+		...mapViewChoices
+			.filter((choice) => isShadedMapView(choice.value) && shadedViewDefinitions[choice.value].byState !== false)
+			.map((choice) => ({ ...choice, group: 'What most of its nations have' }))
+	]);
 	/** The base map and its switches, which the Layers list sets and every map on the site remembers. */
 	let baseMap = $state(storedBaseMap());
 	let placeNames = $state(storedPlaceNames());
@@ -65,10 +76,22 @@
 	/**
 	 * The view whose table is under the map, whose drawn copy prints, and which the Download menu offers: the land's coloring if it has one, then States, Nations' land or the regions, whichever is on first.
 	 */
-	const primary = $derived<NationsMapView>(isShadedMapView(colorBy) ? colorBy : layers.states ? 'states' : layers.lands ? 'lands' : layers.regions ? 'regions' : 'states');
+	const landsColor = $derived(layers.lands && isShadedMapView(colorBy) ? colorBy : undefined);
+	const statesView = $derived(layers.states && isShadedMapView(statesColor) ? statesColor : undefined);
+	const primary = $derived<NationsMapView>(landsColor ?? statesView ?? (layers.states ? 'states' : layers.lands ? 'lands' : layers.regions ? 'regions' : 'states'));
 	$effect(() => {
 		const key = primary;
 		if (key !== current && key !== pending) void choose(key);
+	});
+	// States colored by a view show that view's by-state table, and its key needs the view's data.
+	$effect(() => {
+		const key = statesView;
+		if (!key) return;
+		if (key !== landsColor) shownBy[key] = 'state';
+		void loadView(key);
+	});
+	$effect(() => {
+		if (landsColor) shownBy[landsColor] = 'nation';
 	});
 	// The land areas' table is fetched when Nations' land is on, so a land area chosen on the map has its details.
 	$effect(() => {
@@ -88,6 +111,7 @@
 			layers = { ...layers, regions: true, states: false };
 		} else {
 			colorBy = '';
+			statesColor = 'count';
 			layers = { ...layers, states: true };
 		}
 	}
@@ -104,6 +128,8 @@
 	const censusShown = $derived(censusYearFor(shownYear, data.historic.censusYears));
 	/** Whether the map shows a past year, which leaves out today's layers. */
 	const pastShown = $derived(tileMapReady && year !== undefined && year < lastYear);
+	/** With the states colored by a view under the land, the key names which shades are the land's and which the states'. */
+	const bothByView = $derived(layers.lands && statesView !== undefined && !pastShown);
 
 	/** The cessions' details, fetched the first time the reader turns them on or opens one. */
 	let cessionList = $state.raw<CessionDetail[] | undefined>();
@@ -611,8 +637,8 @@
 	/** What the map shows, for screen readers: the layers that are on. */
 	const mapLabel = $derived(
 		[
-			layers.lands ? (isShadedMapView(colorBy) ? `Nations’ land by ${views.find((entry) => entry.key === colorBy)?.label ?? ''}` : 'Nations’ land') : '',
-			layers.states && !pastShown ? 'States by number of nations' : '',
+			layers.lands ? (landsColor ? `Nations’ land by ${views.find((entry) => entry.key === landsColor)?.label ?? ''}` : 'Nations’ land') : '',
+			layers.states && !pastShown ? (statesView ? `States by ${views.find((entry) => entry.key === statesView)?.label ?? ''}` : statesColor === 'count' ? 'States by number of nations' : 'States') : '',
 			layers.regions && !pastShown ? 'Bureau of Indian Affairs regions' : '',
 			layers.borders ? `Borders${year === undefined ? '' : ` in ${year}`}` : '',
 			cessionsOn ? 'Land cessions' : '',
@@ -701,7 +727,7 @@
 			<div class="tile-holder">
 				<TileMap
 					bind:this={tileMap}
-					view={isShadedMapView(colorBy) ? colorBy : 'lands'}
+					view={landsColor ?? 'lands'}
 					label={mapLabel}
 					bind:shape={mapShape}
 					bind:camera={tileMapCamera}
@@ -713,6 +739,7 @@
 					bind:cessions={cessionsOn}
 					oncession={(royce) => void select(`cession-${royce}`)}
 					layerSwitches={layers}
+				statesBy={statesColor}
 					onfeature={(feature) => void chooseFeature(feature)}
 					bind:baseMap
 					bind:placeNames
@@ -733,6 +760,8 @@
 					bind:cessions={cessionsOn}
 					bind:colorBy
 					{colorChoices}
+					bind:statesColor
+					{statesColorChoices}
 					bind:baseMap
 					bind:placeNames
 					bind:year
@@ -950,8 +979,9 @@
 {#snippet explorerKey()}
 	<ul class="legend map-key" aria-label="Key">
 		{#if layers.lands && !(pastShown && censusShown === undefined)}
-			{#if isShadedMapView(colorBy) && shaded[colorBy]}
-				{#each shaded[colorBy]?.legend ?? [] as entry (entry.key)}
+			{#if bothByView}<li class="key-heading">Nations’ land</li>{/if}
+			{#if landsColor && shaded[landsColor]}
+				{#each shaded[landsColor]?.legend ?? [] as entry (entry.key)}
 					<li>{@render categorySwatch(entry.shade)}{entry.label}</li>
 				{/each}
 			{:else}
@@ -960,8 +990,17 @@
 				{/each}
 			{/if}
 		{/if}
-		{#if layers.states && !pastShown && !isShadedMapView(colorBy)}
-			<li><span class="swatch states-range" aria-hidden="true"></span>Nations per state: 1 to 50+</li>
+		{#if layers.states && !pastShown}
+			{#if statesView && shaded[statesView]}
+				<li class="key-heading">States, by what most of their nations have</li>
+				{#each shaded[statesView]?.legend ?? [] as entry (entry.key)}
+					<li>{@render categorySwatch(entry.shade)}{entry.label}</li>
+				{/each}
+			{:else if statesColor === 'count'}
+				<li><span class="swatch states-range" aria-hidden="true"></span>Nations per state: 1 to 50+</li>
+			{:else}
+				<li><span class="swatch state-outline" aria-hidden="true"></span>State</li>
+			{/if}
 		{/if}
 		{#if layers.regions && !pastShown}
 			<li><span class="swatch region" aria-hidden="true"></span>Bureau of Indian Affairs region</li>
@@ -1270,6 +1309,16 @@
 
 	.swatch.states-range {
 		background: linear-gradient(90deg, var(--color-map-class-1), var(--color-map-class-4));
+	}
+
+	.swatch.state-outline {
+		border: 1.5px solid var(--color-ink);
+		background: transparent;
+	}
+
+	.map-key .key-heading {
+		margin-top: var(--space-1);
+		font-weight: var(--font-weight-bold);
 	}
 
 	.swatch.region {

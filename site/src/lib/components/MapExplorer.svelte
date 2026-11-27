@@ -1,6 +1,6 @@
 <!--
 	@component
-	The controls that float on the Map page's map (Trevor, 2026-11-26, map redesign D, in one visual language): search and Layers at the top left with the main layers as buttons beside them, the Layers list grouped Today, Color land by, History and Base map, a key that lists only what is on, a timeline along the bottom that rests on Today, and the chosen place's details on the right. The map's own buttons (zoom, flat or globe, full screen) stand at the top right (TileMap.svelte). Every part takes its look from global.css, "Controls that float on a map".
+	The controls that float on the Map page's map (Trevor, 2026-11-26, map redesign D, in one visual language): search and Layers at the top left, the Layers list in sections that fold (Layers today, Color, Layers in history, Base map), a key that lists only what is on and folds away, a timeline along the bottom that rests on Today and can be stepped through by hand or played at a chosen speed, and the chosen place's details on the right. The map's own buttons (zoom, flat or globe, full screen) stand at the top right (TileMap.svelte). Every part takes its look from global.css, "Controls that float on a map".
 -->
 <script lang="ts" module>
 	import type { TileMapBase, TileMapLayers } from './TileMap.svelte';
@@ -9,34 +9,61 @@
 	export interface MapExplorerLayer {
 		key: keyof TileMapLayers | 'cessions';
 		label: string;
-		/** The shorter name on its button across the top. */
-		button: string;
 		source?: string;
 		group: 'today' | 'history';
 	}
 
 	export const mapExplorerLayers: MapExplorerLayer[] = [
-		{ key: 'lands', label: 'Nations’ land', button: 'Nations’ land', source: 'Census Bureau, 2020', group: 'today' },
-		{ key: 'states', label: 'States, shaded by number of nations', button: 'States', group: 'today' },
-		{ key: 'offices', label: 'Offices of nations with no land area', button: 'Offices', group: 'today' },
-		{ key: 'regions', label: 'Bureau of Indian Affairs regions', button: 'Regions', group: 'today' },
-		{ key: 'borders', label: 'Borders over time', button: 'Borders over time', source: 'Newberry Library', group: 'history' },
-		{ key: 'cessions', label: 'Land cessions', button: 'Land cessions', source: 'Royce, 1899', group: 'history' },
-		{ key: 'routes', label: 'Removal routes', button: 'Removal routes', source: 'National Park Service', group: 'history' },
-		{ key: 'homelands', label: 'Homelands found by the Indian Claims Commission', button: 'Homelands', source: '1978 map', group: 'history' }
+		{ key: 'lands', label: 'Nations’ land', source: 'Census Bureau, 2020', group: 'today' },
+		{ key: 'states', label: 'States', group: 'today' },
+		{ key: 'offices', label: 'Offices of nations without land', group: 'today' },
+		{ key: 'regions', label: 'Bureau of Indian Affairs regions', group: 'today' },
+		{ key: 'borders', label: 'Borders over time', source: 'Newberry Library', group: 'history' },
+		{ key: 'cessions', label: 'Land cessions', source: 'Royce, 1899', group: 'history' },
+		{ key: 'routes', label: 'Removal routes', source: 'National Park Service', group: 'history' },
+		{ key: 'homelands', label: 'Homelands found by the Indian Claims Commission', source: '1978 map', group: 'history' }
 	];
 
-	/** The layers with a button across the top of the map (mockup D1); the rest are in the Layers list only. */
-	const buttonLayers: MapExplorerLayer['key'][] = ['lands', 'states', 'borders', 'cessions', 'routes', 'homelands'];
+	/** The Layers list's sections, each of which folds (Trevor, 2026-11-27). */
+	type Section = 'today' | 'color' | 'history' | 'base';
+
+	/** How fast Play moves through the years: the time each step stays on screen is 900 ms divided by the speed. */
+	const speeds = [
+		{ value: 0.5, label: 'Slow, 0.5×' },
+		{ value: 1, label: 'Normal, 1×' },
+		{ value: 2, label: 'Fast, 2×' },
+		{ value: 4, label: 'Fastest, 4×' }
+	];
+
+	/** What the reader chose here is remembered on the device; storage that is missing or refused leaves the defaults. */
+	function readStored(key: string): string | null {
+		try {
+			return localStorage.getItem(key);
+		} catch {
+			return null;
+		}
+	}
+	function writeStored(key: string, value: string): void {
+		try {
+			localStorage.setItem(key, value);
+		} catch {
+			// The choice lasts for this visit only.
+		}
+	}
 </script>
 
 <script lang="ts">
 	import { onMount, tick, type Snippet } from 'svelte';
 	import Check from '@lucide/svelte/icons/check';
+	import ChevronDown from '@lucide/svelte/icons/chevron-down';
+	import ChevronUp from '@lucide/svelte/icons/chevron-up';
 	import Layers from '@lucide/svelte/icons/layers';
+	import List from '@lucide/svelte/icons/list';
 	import Play from '@lucide/svelte/icons/play';
 	import Pause from '@lucide/svelte/icons/pause';
 	import Search from '@lucide/svelte/icons/search';
+	import SkipBack from '@lucide/svelte/icons/skip-back';
+	import SkipForward from '@lucide/svelte/icons/skip-forward';
 	import SearchableDropdown, { type SearchableChoice } from './SearchableDropdown.svelte';
 	import CountBadge from './CountBadge.svelte';
 	import { tileMapBases } from './TileMap.svelte';
@@ -46,6 +73,8 @@
 		cessions = $bindable(),
 		colorBy = $bindable(),
 		colorChoices,
+		statesColor = $bindable(),
+		statesColorChoices,
 		baseMap = $bindable(),
 		placeNames = $bindable(),
 		year = $bindable(),
@@ -60,9 +89,12 @@
 		layers: TileMapLayers;
 		/** Royce's land cessions, a switch the nation and treaty pages share. */
 		cessions: boolean;
-		/** How the land is colored: '' for one color, or a shaded view's key. */
+		/** How the land is colored: '' by kind of land, or a shaded view's key. */
 		colorBy: string;
 		colorChoices: SearchableChoice<string>[];
+		/** How the states are colored: 'count' by number of nations, a shaded view's key, or '' for outlines only. */
+		statesColor: string;
+		statesColorChoices: SearchableChoice<string>[];
 		baseMap: TileMapBase;
 		placeNames: boolean;
 		/** The timeline's year; undefined is Today. */
@@ -97,13 +129,65 @@
 		layersOpen = !layersOpen;
 		if (layersOpen) {
 			await tick();
-			layersPanel?.querySelector<HTMLElement>('input')?.focus();
+			layersPanel?.querySelector<HTMLElement>('input, .explorer-fold')?.focus();
 		}
 	}
+
+	/** Which of the Layers list's sections are folded, remembered on the device. Each opens by default. */
+	const foldedStorage = 'map-layers-folded';
+	let folded = $state<Record<Section, boolean>>({ today: false, color: false, history: false, base: false });
+	function toggleSection(section: Section): void {
+		folded = { ...folded, [section]: !folded[section] };
+		writeStored(foldedStorage, JSON.stringify(folded));
+	}
+
+	/** Whether the key is folded down to its button, remembered on the device. A phone starts with it folded, since it would cover much of the map. */
+	const keyStorage = 'map-key-folded';
+	let keyFolded = $state(false);
+	function toggleKey(): void {
+		keyFolded = !keyFolded;
+		writeStored(keyStorage, keyFolded ? 'yes' : 'no');
+	}
+
+	/** Play's speed, remembered on the device. */
+	const speedStorage = 'map-play-speed';
+	let speed = $state(1);
+	let speedOpen = $state(false);
+	let speedButton = $state<HTMLButtonElement | undefined>();
+	let speedMenu = $state<HTMLElement | undefined>();
+	async function toggleSpeed(): Promise<void> {
+		speedOpen = !speedOpen;
+		if (speedOpen) {
+			await tick();
+			speedMenu?.querySelector<HTMLElement>('[aria-checked="true"]')?.focus();
+		}
+	}
+	function chooseSpeed(value: number): void {
+		speed = value;
+		writeStored(speedStorage, String(value));
+		speedOpen = false;
+		speedButton?.focus();
+		// A new speed takes effect at once while playing.
+		if (playing) restartTimer();
+	}
+
 	onMount(() => {
+		try {
+			const stored = JSON.parse(readStored(foldedStorage) ?? '{}') as Partial<Record<Section, boolean>>;
+			folded = { ...folded, ...Object.fromEntries(Object.entries(stored).filter(([, value]) => typeof value === 'boolean')) };
+		} catch {
+			// A damaged entry leaves every section open.
+		}
+		const keyChoice = readStored(keyStorage);
+		keyFolded = keyChoice === null ? matchMedia('(max-width: 40rem)').matches : keyChoice === 'yes';
+		const storedSpeed = Number(readStored(speedStorage));
+		if (speeds.some((entry) => entry.value === storedSpeed)) speed = storedSpeed;
+
 		const outside = (event: PointerEvent) => {
 			const target = event.target as Node | null;
-			if (layersOpen && target && !layersPanel?.contains(target) && !layersButton?.contains(target)) layersOpen = false;
+			if (!target) return;
+			if (layersOpen && !layersPanel?.contains(target) && !layersButton?.contains(target)) layersOpen = false;
+			if (speedOpen && !speedMenu?.contains(target) && !speedButton?.contains(target)) speedOpen = false;
 		};
 		document.addEventListener('pointerdown', outside);
 		return () => document.removeEventListener('pointerdown', outside);
@@ -114,7 +198,7 @@
 	/** Where the timeline's slider is: the year, or the end at Today. */
 	const sliderValue = $derived(year ?? last);
 	const at = (value: number) => `${((value - first) / (last - first)) * 100}%`;
-	/** The notches on the bar, thinned so that each stands clear of the last (about twenty across the bar, as in mockup D1); playing still steps through every year in marks. */
+	/** The notches on the bar, thinned so that each stands clear of the last (about twenty across the bar, as in mockup D1); playing and stepping still go through every year in marks. */
 	const notches = $derived.by(() => {
 		const gap = (last - first) / 24;
 		const kept: number[] = [];
@@ -127,17 +211,20 @@
 		return kept;
 	});
 	const tickYears = $derived([first, 1830, 1880, 1930, 1980, last].filter((value, index, all) => value >= first && value <= last && all.indexOf(value) === index));
+	/** The years in which the map changes, in order, which Play and the step buttons go through. */
+	const steps = $derived([...new Set(marks)].filter((value) => value >= first && value < last).sort((a, b) => a - b));
+
 	/**
 	 * Dragging back in time turns on the borders of that time, as the mockup's note says. Back at Today they go off again if the timeline turned them on, so the timeline never leaves a layer on that the reader did not choose (Trevor, 2026-11-27: settings overriding each other).
 	 */
 	let bordersByTimeline = false;
 	function moveTo(value: number): void {
-		year = value >= last ? undefined : value;
-		if (year !== undefined && !layers.borders) {
+		if (value >= last) return backToToday();
+		year = value;
+		if (!layers.borders) {
 			layers = { ...layers, borders: true };
 			bordersByTimeline = true;
 		}
-		if (year === undefined) backToToday();
 	}
 	function backToToday(): void {
 		year = undefined;
@@ -145,33 +232,73 @@
 		bordersByTimeline = false;
 	}
 
-	/** Play steps through the years in which the map changes, from where the slider is (or the start) to Today. */
+	/** The step buttons go to the year before or after in which the map changes (Trevor, 2026-11-27); past the last one is Today. */
+	const atFirst = $derived(year !== undefined && year <= (steps[0] ?? first));
+	function stepBack(): void {
+		stop();
+		const now = year ?? last;
+		const earlier = steps.filter((value) => value < now);
+		moveTo(earlier[earlier.length - 1] ?? steps[0] ?? first);
+	}
+	function stepForward(): void {
+		stop();
+		if (year === undefined) return;
+		const later = steps.find((value) => value > (year ?? last));
+		if (later === undefined) backToToday();
+		else moveTo(later);
+	}
+
+	/** Play steps through the years in which the map changes, from where the slider is (or the start) to Today, at the chosen speed. */
 	let playing = $state(false);
 	let timer: ReturnType<typeof setInterval> | undefined;
+	let playIndex = 0;
 	function stop(): void {
 		playing = false;
 		if (timer) clearInterval(timer);
 		timer = undefined;
 	}
-	function play(): void {
-		if (playing) return stop();
-		const steps = marks.filter((value) => value >= first && value < last);
-		let index = year === undefined ? 0 : steps.findIndex((value) => value > (year ?? first));
-		if (index < 0) index = 0;
-		playing = true;
-		moveTo(steps[index] ?? first);
+	function restartTimer(): void {
+		if (timer) clearInterval(timer);
 		timer = setInterval(() => {
-			index += 1;
-			if (index >= steps.length) {
+			playIndex += 1;
+			if (playIndex >= steps.length) {
 				stop();
 				backToToday();
 				return;
 			}
-			moveTo(steps[index]);
-		}, 900);
+			moveTo(steps[playIndex]);
+		}, 900 / speed);
+	}
+	function play(): void {
+		if (playing) return stop();
+		playIndex = year === undefined ? 0 : steps.findIndex((value) => value > (year ?? first));
+		if (playIndex < 0) playIndex = 0;
+		playing = true;
+		moveTo(steps[playIndex] ?? first);
+		restartTimer();
 	}
 	onMount(() => stop);
 </script>
+
+{#snippet foldButton(section: Section, heading: string)}
+	<button type="button" class="explorer-fold" aria-expanded={!folded[section]} aria-controls="{identifier}-{section}" onclick={() => toggleSection(section)}>
+		<span class="map-panel-heading">{heading}</span>
+		{#if folded[section]}<ChevronDown aria-hidden="true" size={18} />{:else}<ChevronUp aria-hidden="true" size={18} />{/if}
+	</button>
+{/snippet}
+
+{#snippet layerRows(group: MapExplorerLayer['group'])}
+	{#each mapExplorerLayers.filter((layer) => layer.group === group) as layer (layer.key)}
+		{@const pastOnly = group === 'today' && year !== undefined && layer.key !== 'lands'}
+		<label class="explorer-layer" class:explorer-layer-resting={pastOnly && isOn(layer.key)}>
+			<input type="checkbox" checked={isOn(layer.key)} onchange={(event) => setOn(layer.key, event.currentTarget.checked)} />
+			<span class="explorer-layer-words"
+				>{layer.label}{#if pastOnly}<span class="explorer-layer-source">Shown at Today only</span>{:else if layer.source}<span class="explorer-layer-source">{layer.source}</span>{/if}</span
+			>
+			<span class="swatch swatch-{layer.key}" class:swatch-states-colored={layer.key === 'states' && statesColor !== ''} aria-hidden="true"></span>
+		</label>
+	{/each}
+{/snippet}
 
 <div class="explorer-top">
 	<div class="explorer-search map-float">
@@ -192,13 +319,6 @@
 		<Layers aria-hidden="true" size={18} /><span class="explorer-layers-word">Layers</span>
 		<CountBadge count={onCount} label="on" />
 	</button>
-	<div class="explorer-buttons" role="group" aria-label="Main layers">
-		{#each mapExplorerLayers.filter((layer) => buttonLayers.includes(layer.key)) as layer (layer.key)}
-			<button type="button" class="map-control map-float" aria-pressed={isOn(layer.key)} onclick={() => setOn(layer.key, !isOn(layer.key))}>
-				{#if isOn(layer.key)}<Check class="map-control-check" aria-hidden="true" size={18} strokeWidth={2.5} />{/if}{layer.button}
-			</button>
-		{/each}
-	</div>
 </div>
 
 <!-- svelte-ignore a11y_no_noninteractive_element_interactions -->
@@ -217,44 +337,61 @@
 		}
 	}}
 >
-	{#each [{ group: 'today', heading: 'Today' }, { group: 'history', heading: 'History' }] as section (section.group)}
-		{#if section.group === 'history'}
-			<p class="map-panel-heading" id="{identifier}-color">Color land by</p>
+	<section class="explorer-group" aria-label="Layers today">
+		{@render foldButton('today', 'Layers today')}
+		<div id="{identifier}-today" hidden={folded.today}>{@render layerRows('today')}</div>
+	</section>
+	<!-- Each layer that can be colored has its own choice, so coloring one never recolors another (Trevor, 2026-11-27). -->
+	<section class="explorer-group" aria-label="Color">
+		{@render foldButton('color', 'Color')}
+		<div id="{identifier}-color" class="explorer-colors" hidden={folded.color}>
 			<div class="explorer-color">
-				<SearchableDropdown label="Color land by" hideLabel choices={colorChoices} bind:value={colorBy} />
+				<span class="explorer-color-label" id="{identifier}-color-lands" aria-hidden="true">Nations’ land</span>
+				<SearchableDropdown label="Color nations’ land by" hideLabel choices={colorChoices} bind:value={colorBy} disabled={!layers.lands} />
+				{#if !layers.lands}<span class="explorer-layer-source">Turn on Nations’ land to color it</span>{/if}
 			</div>
-		{/if}
-		<fieldset class="explorer-group">
-			<legend class="map-panel-heading">{section.heading}</legend>
-			{#each mapExplorerLayers.filter((layer) => layer.group === section.group) as layer (layer.key)}
-				<label class="explorer-layer">
-					<input type="checkbox" checked={isOn(layer.key)} onchange={(event) => setOn(layer.key, event.currentTarget.checked)} />
-					<span class="explorer-layer-words">{layer.label}{#if layer.source}<span class="explorer-layer-source">{layer.source}</span>{/if}</span>
-					<span class="swatch swatch-{layer.key}" aria-hidden="true"></span>
-				</label>
-			{/each}
-		</fieldset>
-	{/each}
-	<fieldset class="explorer-group">
-		<legend class="map-panel-heading">Base map</legend>
-		<div class="explorer-bases">
-			{#each tileMapBases as choice (choice.value)}
-				<label class="explorer-base" class:map-control-on={baseMap === choice.value}>
-					<input class="visually-hidden" type="radio" name="{identifier}-base" value={choice.value} checked={baseMap === choice.value} onchange={() => (baseMap = choice.value)} />
-					<img src="/map-bases/{choice.value}.png" alt="" width="96" height="54" />
-					<span>{choice.label}</span>
-				</label>
-			{/each}
+			<div class="explorer-color">
+				<span class="explorer-color-label" aria-hidden="true">States</span>
+				<SearchableDropdown label="Color states by" hideLabel choices={statesColorChoices} bind:value={statesColor} disabled={!layers.states} />
+				{#if !layers.states}<span class="explorer-layer-source">Turn on States to color them</span>{/if}
+			</div>
 		</div>
-		{#if baseMap !== 'map'}
-			<label class="explorer-layer"><input type="checkbox" bind:checked={placeNames} /><span class="explorer-layer-words">Place names and roads</span></label>
-		{/if}
-	</fieldset>
+	</section>
+	<section class="explorer-group" aria-label="Layers in history">
+		{@render foldButton('history', 'Layers in history')}
+		<div id="{identifier}-history" hidden={folded.history}>{@render layerRows('history')}</div>
+	</section>
+	<section class="explorer-group" aria-label="Base map">
+		{@render foldButton('base', 'Base map')}
+		<div id="{identifier}-base" hidden={folded.base}>
+			<div class="explorer-bases" role="radiogroup" aria-label="Base map">
+				{#each tileMapBases as choice (choice.value)}
+					<label class="explorer-base" class:map-control-on={baseMap === choice.value}>
+						<input class="visually-hidden" type="radio" name="{identifier}-base" value={choice.value} checked={baseMap === choice.value} onchange={() => (baseMap = choice.value)} />
+						<img src="/map-bases/{choice.value}.png" alt="" width="96" height="54" />
+						<span>{choice.label}</span>
+					</label>
+				{/each}
+			</div>
+			{#if baseMap !== 'map'}
+				<label class="explorer-layer"><input type="checkbox" bind:checked={placeNames} /><span class="explorer-layer-words">Place names and roads</span></label>
+			{/if}
+		</div>
+	</section>
 </div>
 
-<div class="explorer-key map-float map-panel" class:beside-details={details !== undefined} aria-label="Key" role="group">
-	<p class="map-panel-heading">Key</p>
-	{@render key()}
+<!-- The key folds down to one button, so it never has to cover the map (Trevor, 2026-11-27). -->
+<div class="explorer-key" class:map-float={!keyFolded} class:map-panel={!keyFolded} class:folded={keyFolded} class:beside-details={details !== undefined} aria-label="Key" role="group">
+	{#if keyFolded}
+		<button type="button" class="map-control map-float" aria-expanded="false" aria-controls="{identifier}-key" onclick={toggleKey}>
+			<List aria-hidden="true" size={18} /><span class="explorer-key-word">Key</span><ChevronDown aria-hidden="true" size={18} />
+		</button>
+	{:else}
+		<button type="button" class="explorer-fold" aria-expanded="true" aria-controls="{identifier}-key" onclick={toggleKey}>
+			<span class="map-panel-heading">Key</span><ChevronUp aria-hidden="true" size={18} />
+		</button>
+	{/if}
+	<div id="{identifier}-key" hidden={keyFolded}>{@render key()}</div>
 </div>
 
 {#if details}
@@ -264,8 +401,14 @@
 {/if}
 
 <div class="explorer-timeline map-float map-panel">
-	<button type="button" class="map-control map-control-square map-float explorer-flat" aria-label={playing ? 'Stop' : 'Play the years'} title={playing ? 'Stop' : 'Play the years'} onclick={play}>
+	<button type="button" class="map-control map-control-square map-float explorer-flat explorer-play" aria-label={playing ? 'Stop' : 'Play the years'} title={playing ? 'Stop' : 'Play the years'} onclick={play}>
 		{#if playing}<Pause aria-hidden="true" size={20} />{:else}<Play aria-hidden="true" size={20} />{/if}
+	</button>
+	<button type="button" class="map-control map-control-square map-float explorer-flat explorer-back" aria-label="Go back to the last change" title="Go back to the last change" disabled={atFirst} onclick={stepBack}>
+		<SkipBack aria-hidden="true" size={20} />
+	</button>
+	<button type="button" class="map-control map-control-square map-float explorer-flat explorer-forward" aria-label="Go forward to the next change" title="Go forward to the next change" disabled={year === undefined} onclick={stepForward}>
+		<SkipForward aria-hidden="true" size={20} />
 	</button>
 	{#if year !== undefined}<output class="explorer-year" for="{identifier}-year">{year}</output>{/if}
 	<div class="explorer-track">
@@ -295,7 +438,36 @@
 			{/each}
 		</div>
 	</div>
-	<button type="button" class="map-control map-float explorer-flat" aria-pressed={year === undefined} onclick={() => {
+	<div class="explorer-speed">
+		<button type="button" class="map-control map-float explorer-flat" aria-expanded={speedOpen} aria-controls="{identifier}-speed" aria-label="Speed, {speed}×" title="Speed" bind:this={speedButton} onclick={() => void toggleSpeed()}>
+			{speed}×<ChevronDown aria-hidden="true" size={18} />
+		</button>
+		<!-- svelte-ignore a11y_no_noninteractive_element_interactions -->
+		<div
+			class="explorer-speed-menu map-float map-panel"
+			id="{identifier}-speed"
+			role="radiogroup"
+			tabindex="-1"
+			aria-label="Speed"
+			hidden={!speedOpen}
+			bind:this={speedMenu}
+			onkeydown={(event) => {
+				if (event.key === 'Escape') {
+					event.preventDefault();
+					speedOpen = false;
+					speedButton?.focus();
+				}
+			}}
+		>
+			<p class="map-panel-heading" aria-hidden="true">Speed</p>
+			{#each speeds as choice (choice.value)}
+				<button type="button" role="radio" aria-checked={speed === choice.value} class="map-control explorer-speed-choice" class:map-control-on={speed === choice.value} onclick={() => chooseSpeed(choice.value)}>
+					<span class="explorer-speed-check">{#if speed === choice.value}<Check class="map-control-check" aria-hidden="true" size={18} strokeWidth={2.5} />{/if}</span>{choice.label}
+				</button>
+			{/each}
+		</div>
+	</div>
+	<button type="button" class="map-control map-float explorer-flat explorer-today" aria-pressed={year === undefined} onclick={() => {
 		stop();
 		backToToday();
 	}}>
@@ -353,17 +525,6 @@
 		border-radius: var(--radius-control);
 	}
 
-	.explorer-buttons {
-		display: flex;
-		gap: var(--space-2);
-		min-width: 0;
-		overflow-x: auto;
-		/* Room for the buttons' shadow inside the scrolling row. */
-		padding: var(--space-2) var(--space-1);
-		margin: calc(var(--space-2) * -1) calc(var(--space-1) * -1);
-		scrollbar-width: none;
-	}
-
 	.explorer-layers {
 		position: absolute;
 		z-index: 3;
@@ -379,14 +540,60 @@
 		display: none;
 	}
 
-	.explorer-group {
-		margin: 0;
-		padding: 0;
-		border: 0;
+	.explorer-group + .explorer-group {
+		border-top: 1px solid var(--color-line);
 	}
 
-	.explorer-group legend {
+	.explorer-group > div {
+		padding-bottom: var(--space-2);
+	}
+
+	.explorer-group > div[hidden] {
+		display: none;
+	}
+
+	/* A section's heading is the button that folds it, as on the key. */
+	.explorer-fold {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		width: 100%;
+		min-height: var(--layout-target-minimum);
 		padding: 0;
+		border: 0;
+		background: none;
+		color: var(--color-ink);
+		cursor: pointer;
+	}
+
+	.explorer-fold .map-panel-heading {
+		margin: 0;
+	}
+
+	.explorer-fold:focus-visible {
+		outline: 3px solid var(--color-focus-ring);
+		outline-offset: 2px;
+		border-radius: var(--radius-control);
+	}
+
+	/* A layer of today that is on but not drawn, because the timeline shows a past year. */
+	.explorer-layer-resting .explorer-layer-words,
+	.explorer-layer-resting .swatch {
+		opacity: 0.6;
+	}
+
+	.explorer-colors {
+		display: grid;
+		gap: var(--space-3);
+	}
+
+	.explorer-color {
+		display: grid;
+		gap: var(--space-1);
+	}
+
+	.explorer-color-label {
+		font-weight: var(--font-weight-bold);
 	}
 
 	.explorer-layer {
@@ -428,7 +635,14 @@
 		background: var(--color-map-class-4);
 	}
 
+	/* The States swatch shows how they are drawn: outlined, or shaded when they are colored. */
 	.swatch-states {
+		border-color: var(--color-ink);
+		background: transparent;
+	}
+
+	.swatch-states.swatch-states-colored {
+		border-color: var(--color-control-border);
 		background: linear-gradient(90deg, var(--color-map-class-1), var(--color-map-class-3));
 	}
 
@@ -514,8 +728,21 @@
 		font-size: var(--font-size-small);
 	}
 
-	.explorer-key .map-panel-heading {
-		margin-top: var(--space-1);
+	.explorer-key .explorer-fold {
+		min-height: 2rem;
+	}
+
+	.explorer-key > div[hidden] {
+		display: none;
+	}
+
+	/* Folded, the key is one button. */
+	.explorer-key.folded {
+		padding: 0;
+	}
+
+	.explorer-key-word {
+		font-weight: var(--font-weight-bold);
 	}
 
 	/* With a place's details open on the right, the key moves to the left. */
@@ -553,6 +780,52 @@
 	/* Buttons inside a panel are already lifted by it. */
 	.explorer-flat {
 		box-shadow: none;
+	}
+
+	.explorer-timeline button:disabled {
+		opacity: 0.45;
+		cursor: default;
+	}
+
+	.explorer-speed {
+		position: relative;
+		flex: none;
+	}
+
+	.explorer-speed-menu {
+		position: absolute;
+		z-index: 4;
+		right: 0;
+		bottom: calc(100% + var(--space-3));
+		display: flex;
+		flex-direction: column;
+		gap: var(--space-1);
+		width: 11.5rem;
+		padding: var(--space-2);
+	}
+
+	.explorer-speed-menu[hidden] {
+		display: none;
+	}
+
+	.explorer-speed-menu .map-panel-heading {
+		margin: var(--space-1) var(--space-2);
+	}
+
+	.explorer-speed-choice {
+		justify-content: flex-start;
+		width: 100%;
+		box-shadow: none;
+	}
+
+	.explorer-speed-choice:not(.map-control-on) {
+		border-color: transparent;
+		background: transparent;
+	}
+
+	.explorer-speed-check {
+		display: inline-flex;
+		width: 18px;
 	}
 
 	.explorer-year {
@@ -674,16 +947,71 @@
 			flex: 1 0 100%;
 		}
 
-		.explorer-buttons {
-			flex: 1;
-		}
-
 		.explorer-layers-word {
 			display: none;
 		}
 
+		/* The key, folded, sits beside Layers; open, it drops below them. */
 		.explorer-key {
+			top: calc(var(--space-3) * 2 + var(--layout-target-minimum));
+			bottom: auto;
+			left: calc(var(--space-3) + 5.5rem);
+			right: auto;
+			max-width: calc(100% - var(--space-3) * 2 - 5.5rem);
+		}
+
+		.explorer-key.beside-details {
+			left: calc(var(--space-3) + 5.5rem);
+		}
+
+		.explorer-key-word {
 			display: none;
+		}
+
+		/* The timeline takes two rows: the bar and Today, then play, the steps and the speed. */
+		.explorer-timeline {
+			/* Clear of the map's credits, which take two lines on a phone. */
+			bottom: 2.75rem;
+			display: grid;
+			grid-template-columns: repeat(3, var(--layout-target-minimum)) auto minmax(0, 1fr);
+			grid-template-areas:
+				'track track track track today'
+				'play back forward speed year';
+			gap: var(--space-2) var(--space-1);
+		}
+
+		.explorer-today {
+			justify-self: end;
+		}
+
+		.explorer-track {
+			grid-area: track;
+		}
+
+		.explorer-today {
+			grid-area: today;
+			margin-left: var(--space-2);
+		}
+
+		.explorer-play {
+			grid-area: play;
+		}
+
+		.explorer-back {
+			grid-area: back;
+		}
+
+		.explorer-forward {
+			grid-area: forward;
+		}
+
+		.explorer-speed {
+			grid-area: speed;
+		}
+
+		.explorer-year {
+			grid-area: year;
+			text-align: right;
 		}
 
 		.explorer-layers {
