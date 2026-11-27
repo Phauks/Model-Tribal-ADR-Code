@@ -11,6 +11,16 @@ recognition:
   verification: bulk-import
   as_of: '2026-01-30'
   locator: 91 Fed. Reg. 4104
+- type: federal
+  earliest_record: treaty
+  legal_basis: Treaty of Fort Laramie with Sioux, etc., Sept. 17, 1851, 11 Stat. 749
+  since: '1851-09-17'
+  source: treaty-of-fort-laramie-with-sioux-etc-1851
+  confidence: medium
+  verification: inferred
+  as_of: '1851-09-17'
+  locator: p. 594 (Treaty of Fort Laramie with Sioux, etc., 1851; Kappler header "Sept. 17, 1851. | 11 Stats., p. 749.")
+  note: The earliest record this site has found that shows the United States dealing with the nation as a federally recognized nation. The relationship may be older. The treaty names the Arapaho; the nation's profile links it to the treaty by name, and the link has not yet been checked against a second source. 7 nations' profiles link this treaty.
 states:
 - state: WY
   presence: government-office
@@ -565,7 +575,7 @@ dispute_resolution:
       a probation condition.
   - kind: peacemaking
     title: 'DRAFT Title XVI: Peacemaker Court (Dated: June 20, 1989'
-    citation: 'DRAFT Title XVI: Peacemaker Court (Dated: June 20, 1989; Peacemakers (Appointment & qualifications -- Powers of peacemakers -- Limitations; peacemakers not judges; agreed arbitration -- Duties of peacemakers -- Reports to tribal court; Procedure (Request for peacemaking -- Requests and objections -- Duties of clerk of tribal court -- Appointment of peacemaker -- Notice to begin proceedings -- Compensation of peacemaker -- Subpoena -- Fees)\; Conduct of Peacemakers (General standards -- Complaints regarding peacemakers -- Action on complaint; Transfer of Cases from Tribal Court to Peacemaker Court (General policy -- Civil matters -- Criminal matters -- Criminal probation -- Transfer on probation; ...'
+    citation: 'DRAFT Title XVI: Peacemaker Court (Dated: June 20, 1989; Peacemakers (Appointment & qualifications -- Powers of peacemakers -- Limitations; peacemakers not judges; agreed arbitration -- Duties of peacemakers -- Reports to tribal court; Procedure (Request for peacemaking -- Requests and objections -- Duties of clerk of tribal court -- Appointment of peacemaker -- Notice to begin proceedings -- Compensation of peacemaker -- Subpoena -- Fees)\; Conduct of Peacemakers (General standards -- Complaints regarding peacemakers -- Action on complaint; Transfer of Cases from Tribal Court to Peacemaker Court (General policy -- Civil matters -- Criminal matters -- Criminal probation -- Transfer on probation; . . .'
     link: https://narf.org/nill/codes/shoshonearapaho/index.html
     source: national-indian-law-library-code-codes-shoshonearapaho
     confidence: medium
@@ -817,6 +827,14 @@ jurisdiction:
   as_of: '2017-07-18'
   locator: Answer, second and third paragraphs (the lists of mandatory and optional states)
   note: Inferred from the state's absence from both lists. Nation placed in Wyoming by the Census Bureau's land areas.
+- topic: environmental-treatment-as-a-state
+  value: clean-air-act-administrative-functions
+  detail: 'EPA has approved the nation for treatment in a similar manner as a state to perform administrative functions under the Clean Air Act: §§ 107(d)(3); 112 (r)(7)(B)(iii); 126; 169B; 176A; 184; 505(a)(2).'
+  source: epa-tribes-approved-for-treatment-as-a-state
+  confidence: high
+  verification: inferred
+  as_of: '2026-10-21'
+  locator: 'Table of approvals by Tribe, column "Administrative Functions": "CAA §§ 107(d)(3); 112 (r)(7)(B)(iii); 126; 169B; 176A; 184; 505(a)(2)"'
 court_practice:
 - kind: bar-admission
   title: Attorney & Non-Attorney Information

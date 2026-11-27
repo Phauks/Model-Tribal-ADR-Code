@@ -27,6 +27,16 @@ recognition:
   verification: bulk-import
   as_of: '2026-01-30'
   locator: 91 Fed. Reg. 4104
+- type: federal
+  earliest_record: land
+  legal_basis: Exec. Order of Dec. 27, 1875, 1 Kappler 820-821
+  since: '1875-12-27'
+  source: executive-order-1875-12-27-mission-indian-reservations
+  confidence: medium
+  verification: read-in-full
+  as_of: '1875-12-27'
+  locator: 1 Kappler 820-821
+  note: The earliest record this site has found that shows the United States dealing with the nation as a federally recognized nation. The relationship may be older. The instrument first set aside the Potrero tract including Rincon, San Diego County, California.
 states:
 - state: CA
   presence: government-office
@@ -724,6 +734,22 @@ jurisdiction:
     were read from images and matched to the roster. Row re-read on 2026-11-22 from the page image (the
     govinfo PDF has no text layer for the table); verification level unchanged because the name was not
     matched word for word in machine-read text.'
+- topic: hearth-act-leasing-regulations
+  value: approved
+  detail: The Secretary of the Interior approved the leasing regulations (Business) of the Rincon Band of Luiseno Mission Indians, as the Bureau of Indian Affairs' list names it, under the HEARTH Act, 25 U.S.C. § 415(h), on June 4, 2015, so the nation can lease its trust land for those purposes under its own regulations without the Bureau of Indian Affairs approving each lease.
+  source: hearth-act-leasing-regulations-rincon-band-of-luiseno-indians-2015-06-04
+  confidence: high
+  verification: inferred
+  as_of: '2015-06-04'
+  locator: Bureau of Indian Affairs, Approved HEARTH Act Regulations, Approved in 2015
+- topic: environmental-treatment-as-a-state
+  value: clean-water-act-water-quality-standards
+  detail: EPA found the nation eligible on Apr. 3, 2018 to set water quality standards (treatment in a similar manner as a state under Clean Water Act § 518), and first approved its standards on Jan. 31, 2024.
+  source: epa-actions-on-tribal-water-quality-standards
+  confidence: high
+  verification: inferred
+  as_of: '2018-04-03'
+  locator: 'Table of approvals by Tribe, column "Regulatory Programs": "WQS Program"'
 court_practice:
 - kind: court-rules
   title: Code of Civil Procedure & Rules of Court
@@ -815,7 +841,7 @@ land_establishment:
   confidence: medium
   verification: read-in-full
   locator: 1 Kappler 820-821
-  note: 'The instrument reads: “Portrero. — Including Rincon ... withdrawn from sale and set apart as reservations for the permanent use and occupancy of the Mission Indians in Lower California”. The tract is headed "Portrero" (Potrero) and "Including Rincon, Gapich, and La Joya"; Rincon is named. "La Joya" is not matched here to La Jolla (see doubtful).'
+  note: 'The instrument reads: “Portrero. — Including Rincon . . . withdrawn from sale and set apart as reservations for the permanent use and occupancy of the Mission Indians in Lower California”. The tract is headed "Portrero" (Potrero) and "Including Rincon, Gapich, and La Joya"; Rincon is named. "La Joya" is not matched here to La Jolla (see doubtful).'
 memberships:
 - organization: Southern California Tribal Chairmen's Association
   source: southern-california-tribal-chairmens-association-member-tribes

@@ -11,6 +11,16 @@ recognition:
   verification: bulk-import
   as_of: '2026-01-30'
   locator: 91 Fed. Reg. 4103
+- type: federal
+  earliest_record: treaty
+  legal_basis: Treaty with the Shawnee, Jan. 31, 1786, 7 Stat. 26
+  since: '1786-01-31'
+  source: treaty-with-the-shawnee-1786
+  confidence: medium
+  verification: inferred
+  as_of: '1786-01-31'
+  locator: p. 16 (Treaty with the Shawnee, 1786; Kappler header "Jan. 31, 1786. | 7 Stat., 26.")
+  note: The earliest record this site has found that shows the United States dealing with the nation as a federally recognized nation. The relationship may be older. The treaty names the Shawnee; the nation's profile links it to the treaty by name, and the link has not yet been checked against a second source. 3 nations' profiles link this treaty.
 states:
 - state: OK
   presence: government-office
@@ -855,6 +865,14 @@ jurisdiction:
   as_of: '2017-07-18'
   locator: Answer, second and third paragraphs (the lists of mandatory and optional states)
   note: Inferred from the state's absence from both lists. Nation placed in Oklahoma by its office state in the BIA Tribal Leaders Directory, so confidence is medium.
+- topic: hearth-act-leasing-regulations
+  value: approved
+  detail: The Secretary of the Interior approved the leasing regulations (Business) of the Absentee Shawnee Tribe of Oklahoma, as the Bureau of Indian Affairs' list names it, under the HEARTH Act, 25 U.S.C. § 415(h), on June 3, 2015, so the nation can lease its trust land for those purposes under its own regulations without the Bureau of Indian Affairs approving each lease.
+  source: hearth-act-leasing-regulations-absentee-shawnee-tribe-of-indians-of-oklahoma-2015-06-03
+  confidence: high
+  verification: inferred
+  as_of: '2015-06-03'
+  locator: Bureau of Indian Affairs, Approved HEARTH Act Regulations, Approved in 2015
 jurisdiction_agreements:
 - kind: child-welfare-agreement
   other_party: Oklahoma Department of Human Services

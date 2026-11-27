@@ -22,7 +22,7 @@ and the Federal Register lists back to the first one in 1979:
   nation, found by matching its names back through the 40 lists from 1979
   (`appearances`, below), with every uncertain match checked by a reviewer.
 
-None of these is asserted as the nation's first recognition here. The
+None of these is asserted as the act that first recognized the nation. The
 `candidates` step writes a review table (research/reviews/first-recognition/
 candidates.csv) with the earliest-dated candidate and the reasons it needs a
 person's check.
@@ -39,6 +39,13 @@ Steps, from the repository root:
   python3 scripts/tribes/first_recognition.py candidates
       Writes the review table, using the reviewers' answers in
       research/reviews/first-recognition/list-appearance-reviews.json.
+  python3 scripts/tribes/first_recognition.py profiles --work DIR
+      Adds to each nation without its own recognition basis the earliest of
+      these candidates as a federal recognition fact marked `earliest_record`
+      (Trevor, Nov. 27, 2026: "the first instance that it shows they were
+      federally recognized"). A treaty counts only as linked on the profile, a
+      constitution only once the Secretary of the Interior approved it, and a
+      list entry gets its page from the list's text (DIR, from `fetch`).
 """
 from __future__ import annotations
 
@@ -341,12 +348,15 @@ def nation_state(nation: dict) -> str:
 
 def candidates() -> None:
     sys.path.insert(0, str(ROOT / "scripts/tribes"))
-    import recognition_basis  # the 58 nations whose own basis is already cited
+    import recognition_basis  # the nations whose own basis is already cited
 
-    covered = set(recognition_basis.LEGISLATED) | set(recognition_basis.DETERMINED) | set(recognition_basis.ADMINISTRATIVE)
+    covered = (set(recognition_basis.LEGISLATED) | set(recognition_basis.DETERMINED) | set(recognition_basis.ADMINISTRATIVE)
+               | set(recognition_basis.JUDGED))
     data = json.loads(APPEARANCES.read_text())
     reviews_path = REVIEWS / "list-appearance-reviews.json"
     reviews = {row["nation"]: row for row in json.loads(reviews_path.read_text())} if reviews_path.exists() else {}
+    audit_path = REVIEWS / "list-appearance-audit.json"  # second review of the list-only rows
+    audit = {row["nation"]: row for row in json.loads(audit_path.read_text())} if audit_path.exists() else {}
     lists = {record["key"]: record for record in list_records()}
     treaties = treaty_records()
     parties = treaty_parties()
@@ -407,11 +417,18 @@ def candidates() -> None:
             if review:
                 if review.get("earliest_list") and review["earliest_list"] != key:
                     reasons.append(f"script said {key}; reviewer said {review['earliest_list']}")
-                    key, entry = review["earliest_list"], review.get("entry")
+                    key = review["earliest_list"]
+                if review.get("earliest_list") == key and review.get("entry"):
+                    entry = review["entry"]
                 if review.get("confidence") != "high":
                     reasons.append(f"reviewer confidence {review.get('confidence')}")
             elif method != "script":
                 reasons.append("match not yet reviewed")
+            second = audit.get(nid)
+            if second and second.get("earliest_list") != key:
+                settled = review and review.get("reviewed_by", "").startswith("Claude (AI assistant), by searching")
+                if not settled:
+                    reasons.append(f"a second reviewer, shown at most five lines per list, said {second.get('earliest_list') or 'no list'}")
             if entry and re.search(r"\b(Inc\.?|Corporation|Native Association)\b", entry):
                 reasons.append("the entry names an Alaska Native corporation or association, not the tribal government")
             if key == "bia-recognized-entities-1988" and nation_state(nation) == "AK":
@@ -445,14 +462,176 @@ def candidates() -> None:
     print(f"{len(rows)} federal nations; of those without their own basis cited, earliest candidate by kind: {kinds}")
 
 
+# Trevor (Nov. 27, 2026), on what a nation page should cite: "the first instance that it shows they were
+# federally recognized. a relationshipp is expected to have begun prior to that anyways". So each nation
+# without its own recognition basis gets one fact: the earliest document the project holds that shows the
+# United States dealing with it as a recognized nation, labeled by kind (`earliest_record`).
+EARLIEST = ("The earliest record this site has found that shows the United States dealing with the nation as a "
+            "federally recognized nation. The relationship may be older.")
+ALASKA_1988 = ("The 1988 list also named Alaska Native Claims Settlement Act corporations, which are not tribal "
+               "governments (58 Fed. Reg. 54364, 54365 (Oct. 21, 1993)).")
+
+
+def plain_letters(text: str) -> str:
+    folded = unicodedata.normalize("NFKD", text).encode("ascii", "ignore").decode().lower()
+    return re.sub(r"[^a-z0-9]", "", folded)
+
+
+@lru_cache(None)
+def list_pages(work: Path, key: str) -> list[str]:
+    return [plain_letters(page) for page in (work / f"{key}.txt").read_text(encoding="utf-8", errors="replace").split("\f")]
+
+
+def list_page(work: Path, key: str, first_page: int, entry: str) -> int | None:
+    """The Federal Register page that prints the entry: the stored copy starts at the list's first page."""
+    wanted = plain_letters(entry)[:30]
+    if len(wanted) >= 8:
+        for index, page in enumerate(list_pages(work, key)):
+            if wanted in page:
+                return first_page + index
+    # A short entry, such as "Council" on the 1988 Alaska list: the page with a line that is the entry.
+    pages = (work / f"{key}.txt").read_text(encoding="utf-8", errors="replace").split("\f")
+    for index, page in enumerate(pages):
+        if any(plain_letters(line) == plain_letters(entry) for line in page.split("\n")):
+            return first_page + index
+    return None
+
+
+def recognition_basis_months() -> list[str]:
+    import recognition_basis
+    return recognition_basis.MONTHS
+
+
+def secretarial_approval(nation: str) -> tuple[dict, dict] | None:
+    """The earliest version of the nation's constitution that the Secretary of the Interior approved."""
+    path = DOCUMENTS / (nation[0] if nation[0].isalpha() else "_other") / f"{nation}-constitution.yaml"
+    if not path.exists():
+        return None
+    history = yaml.safe_load(path.read_text())
+    approved = [version for version in history.get("versions") or []
+                if (version.get("dates") or {}).get("approved")
+                and (version.get("approval") or {}).get("authority") == "secretary-of-the-interior"]
+    if not approved:
+        return None
+    return history, min(approved, key=lambda version: str(version["dates"]["approved"]))
+
+
+def earliest_facts(nation: dict, row: dict, reviews: dict, lists: dict, treaties: dict, parties: dict,
+                   work: Path, written_date) -> list[dict]:
+    """Every candidate fact for one nation, each dated; the caller keeps the earliest."""
+    nid = nation["id"]
+    found = []
+    linked = sorted(nation.get("treaties") or [], key=lambda treaty: treaty["signed"])
+    if linked:
+        link = linked[0]
+        record = treaties.get(link["statutes_at_large"])
+        title = record["citation"]["title"] if record else link["title"]
+        citation = title if "Stat." in title else f"{title}, {link['statutes_at_large']}"
+        shared = parties.get(link["statutes_at_large"], 0)
+        note = (f"{EARLIEST} The treaty names the {link.get('signatory') or 'party'}; the nation's profile links it to the "
+                "treaty by name, and the link has not yet been checked against a second source.")
+        if shared > 1:
+            note += f" {shared} nations' profiles link this treaty."
+        found.append({"type": "federal", "earliest_record": "treaty", "legal_basis": citation, "since": link["signed"],
+                      "source": record["key"] if record else link["source"],
+                      "confidence": "low" if link.get("confidence") == "low" else "medium", "verification": "inferred",
+                      "as_of": link["signed"], "locator": link.get("locator") or link["statutes_at_large"], "note": note})
+    land = sorted((entry for entry in nation.get("land_establishment") or []
+                   if entry.get("date") and entry.get("detail") == "First set aside"
+                   and not re.search(r"does not name|not .* by name", entry.get("note", ""))),
+                  key=lambda entry: str(entry["date"]))
+    if land:
+        entry = land[0]
+        found.append({"type": "federal", "earliest_record": "land", "legal_basis": entry["instrument"], "since": str(entry["date"]),
+                      "source": entry["source"], "confidence": entry.get("confidence", "medium"),
+                      "verification": entry.get("verification", "inferred"), "as_of": str(entry["date"]),
+                      "locator": entry.get("locator") or entry["instrument"],
+                      "note": f"{EARLIEST} The instrument first set aside the {entry.get('land_area') or 'nation’s land'}."})
+    approval = secretarial_approval(nid)
+    if approval:
+        history, version = approval
+        when = str(version["dates"]["approved"])
+        kind = next((entry["kind"] for entry in nation.get("government_structure") or [] if entry.get("kind") in ORGANIZING_ACTS), None)
+        parts = when.split("-")
+        written = (written_date(when) if len(parts) == 3
+                   else f"in {recognition_basis_months()[int(parts[1]) - 1]} {parts[0]}" if len(parts) == 2 else f"in {when}")
+        citation = f"{history['title']} (approved by the Secretary of the Interior {written})"
+        if kind:
+            citation += f", under the {ORGANIZING_ACTS[kind]}"
+        how = "read from the approval certificate" if version.get("verification") == "read-in-full" else "read by rule from the approval certificate"
+        found.append({"type": "federal", "earliest_record": "constitution", "legal_basis": citation, "since": when,
+                      "source": version["source"], "document_version": {"document": history["id"], "version": version["id"]},
+                      "confidence": version.get("confidence", "medium"),
+                      "verification": version.get("verification", "inferred"), "as_of": when,
+                      "locator": f"{version.get('label') or version['id']}, {(version.get('approval') or {}).get('locator', 'approval')}",
+                      "note": f"{EARLIEST} The Secretary of the Interior approved the nation's constitution; the date is {how}."})
+    key = row.get("earliest_list")
+    if key and key != LIST_SOURCE:
+        record = lists[key]
+        entry = row.get("earliest_list_entry", "")
+        cite = re.search(r"Indigo Book citation: (.*?\([A-Z][a-z]+\.? \d{1,2}, \d{4}\))", record.get("notes", ""))
+        citation = cite.group(1) if cite else record["citation"]["title"]
+        volume, first = re.search(r"(\d+) Fed\. Reg\. ([\d,]+) \(", citation).groups()
+        first_page = int(first.replace(",", ""))
+        page = list_page(work, key, first_page, entry)
+        pin = f"{first_page}, {page}" if page and page != first_page else f"{first_page}, {first_page}" if page else f"{first_page}"
+        citation = citation.replace(f"Fed. Reg. {first} (", f"Fed. Reg. {pin} (")
+        review = reviews.get(nid) or {}
+        reasons = row.get("earliest_list_reasons", "")
+        settled = not reasons
+        corporation = bool(re.search(r"\b(Inc\.?|Corporation|Native Association)\b", entry))
+        note = f"{EARLIEST} The list's entry reads \"{entry.rstrip('.')}.\" The entry is matched to the nation by name." if entry else EARLIEST
+        if key == "bia-recognized-entities-1988" and nation_state(nation) == "AK":
+            note += " " + ALASKA_1988
+        found.append({"type": "federal", "earliest_record": "federal-list", "legal_basis": citation, "since": record["_date"],
+                      "source": key, "confidence": "low" if corporation or review.get("confidence") == "low" else "medium",
+                      "verification": "bulk-import" if settled else "inferred", "as_of": record["_date"],
+                      "locator": f"{volume} Fed. Reg. {page}" + (f" (entry \"{entry}\")" if entry else "") if page else f"{volume} Fed. Reg. {first_page}",
+                      "note": note})
+    return found
+
+
+def profiles(work: Path) -> None:
+    """Adds each nation's earliest record of federal recognition to its profile (`earliest_record`)."""
+    sys.path.insert(0, str(ROOT / "scripts/tribes"))
+    import recognition_basis
+
+    covered = (set(recognition_basis.LEGISLATED) | set(recognition_basis.DETERMINED) | set(recognition_basis.ADMINISTRATIVE)
+               | set(recognition_basis.JUDGED))
+    rows = {row["nation"]: row for row in csv.DictReader((REVIEWS / "candidates.csv").open())}
+    reviews_path = REVIEWS / "list-appearance-reviews.json"
+    reviews = {row["nation"]: row for row in json.loads(reviews_path.read_text())}
+    lists = {record["key"]: record for record in list_records()}
+    treaties = treaty_records()
+    parties = treaty_parties()
+    kinds: dict[str, int] = {}
+    unverified = changed = 0
+    for nation in federal_nations():
+        nid = nation["id"]
+        path = recognition_basis.profile_path(nid)
+        recognition = [dict(fact) for fact in nation["recognition"] if "earliest_record" not in fact]
+        if nid not in covered:
+            found = earliest_facts(nation, rows.get(nid, {}), reviews, lists, treaties, parties, work, recognition_basis.written_date)
+            if found:
+                fact = min(found, key=lambda fact: fact["since"])
+                index = next(i for i, existing in enumerate(recognition) if existing.get("source") == LIST_SOURCE) + 1
+                recognition.insert(index, fact)
+                kinds[fact["earliest_record"]] = kinds.get(fact["earliest_record"], 0) + 1
+                unverified += fact["verification"] == "inferred"
+        if recognition != nation["recognition"]:
+            changed += recognition_basis.replace_recognition(path, recognition)
+    print(f"earliest records by kind: {kinds}; {unverified} rest on an inferred match; {changed} profiles changed")
+
+
 def main() -> None:
     parser = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
-    parser.add_argument("step", choices=["fetch", "appearances", "candidates"])
+    parser.add_argument("step", choices=["fetch", "appearances", "candidates", "profiles"])
     parser.add_argument("--work", type=Path)
     args = parser.parse_args()
-    if args.step in ("fetch", "appearances") and not args.work:
+    if args.step in ("fetch", "appearances", "profiles") and not args.work:
         parser.error("--work is required")
-    {"fetch": lambda: fetch(args.work), "appearances": lambda: appearances(args.work), "candidates": candidates}[args.step]()
+    {"fetch": lambda: fetch(args.work), "appearances": lambda: appearances(args.work), "candidates": candidates,
+     "profiles": lambda: profiles(args.work)}[args.step]()
 
 
 if __name__ == "__main__":

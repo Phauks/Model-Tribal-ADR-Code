@@ -19,6 +19,16 @@ recognition:
   verification: bulk-import
   as_of: '2026-01-30'
   locator: 91 Fed. Reg. 4104
+- type: federal
+  earliest_record: treaty
+  legal_basis: Treaty of Medicine Creek, Dec. 26, 1854, 10 Stat. 1132
+  since: '1854-12-26'
+  source: treaty-with-the-nisqualli-puyallup-etc-1854
+  confidence: medium
+  verification: inferred
+  as_of: '1854-12-26'
+  locator: p. 661 (Treaty with the Nisqualli, Puyallup, etc., 1854; Kappler header "Dec. 26, 1854. | 10 Stat., 1132. | Ratified Mar. 3, 1855. | Proclaimed Apr. 10, 1855.")
+  note: The earliest record this site has found that shows the United States dealing with the nation as a federally recognized nation. The relationship may be older. The treaty names the Nisqually; the nation's profile links it to the treaty by name, and the link has not yet been checked against a second source. 3 nations' profiles link this treaty.
 states:
 - state: WA
   presence: government-office
@@ -908,6 +918,22 @@ jurisdiction:
     prints its table as page images, so nation names were read from images and matched to the roster.
     Row re-read on 2026-11-22 from the page image (the govinfo PDF has no text layer for the table); verification
     level unchanged because the name was not matched word for word in machine-read text.'
+- topic: hearth-act-leasing-regulations
+  value: approved
+  detail: The Secretary of the Interior approved the leasing regulations (Residential) of the Nisqually Indian Tribe, as the Bureau of Indian Affairs' list names it, under the HEARTH Act, 25 U.S.C. § 415(h), on May 2, 2024, so the nation can lease its trust land for those purposes under its own regulations without the Bureau of Indian Affairs approving each lease.
+  source: hearth-act-leasing-regulations-nisqually-indian-tribe-2024-05-02
+  confidence: high
+  verification: inferred
+  as_of: '2024-05-02'
+  locator: Bureau of Indian Affairs, Approved HEARTH Act Regulations, Approved in 2024
+- topic: hearth-act-leasing-regulations
+  value: approved
+  detail: The Secretary of the Interior approved the leasing regulations (Business) of the Nisqually Indian Tribe, as the Bureau of Indian Affairs' list names it, under the HEARTH Act, 25 U.S.C. § 415(h), on Aug. 30, 2022, so the nation can lease its trust land for those purposes under its own regulations without the Bureau of Indian Affairs approving each lease.
+  source: hearth-act-leasing-regulations-nisqually-indian-tribe-2022-08-30
+  confidence: high
+  verification: inferred
+  as_of: '2022-08-30'
+  locator: Bureau of Indian Affairs, Approved HEARTH Act Regulations, Approved in 2022
 court_practice:
 - kind: forms
   title: Nisqually Indian Tribe Judicial Services (court forms)

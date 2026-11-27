@@ -1,0 +1,50 @@
+key: minnesota-statutes-150a-10
+kind: state-statute
+citation:
+  type: legislation
+  title: Allied Dental Personnel
+  title-short: Minn. Stat. § 150A.10
+  container-title: Minnesota Statutes
+  container-title-short: Minn. Stat.
+  section: 150A.10
+  author:
+  - literal: Minnesota Office of the Revisor of Statutes
+  issued:
+    date-parts:
+    - - 1969
+  URL: https://www.revisor.mn.gov/statutes/cite/150A.10
+  accessed:
+    date-parts:
+    - - 2026
+      - 11
+      - 27
+original_link: https://www.revisor.mn.gov/statutes/cite/150A.10
+retrieved: '2026-11-27'
+archives: []
+history:
+  status: live
+  last_checked: '2026-11-27'
+state_law:
+  relevance: incidental
+  citation: Minn. Stat. § 150A.10 (2026)
+rights:
+  status: no-permission-needed
+  basis: government-edict
+  basis_note: 'Official state statutes are not copyrightable under the government edicts doctrine (Georgia v. Public.Resource.Org, Inc., 590 U.S. 255 (2020)). Linked, not served: state statutes stay link only.'
+  redistribution: false
+jurisdictions:
+- level: state
+  state: MN
+topics:
+- state-indian-law
+found_in:
+- 2026-11-27-state-statutes-third-batch
+notes: 'Indigo Book citation: Minn. Stat. § 150A.10 (2026). History: 1969 c 974 s 10; 1976 c 263 s 9; 1986 c 444; 1996 c 273 s 3,4; 1Sp2001 c 9 art 2 s 5; 2002 c 379 art 1 s 113; 1Sp2003 c 5 s 4,5; 2005 c 147 art 4 s 4; 2009 c 95 art 3 s 20 -23; 2009 c 159 s 75 -77; 2014 c 291 art 4 s 40; 2017 c 30 s 1,2; 1Sp2017 c 6 art 11 s 51; 2022 c 98 art 3 s 18; 2026 c 115 art 7 s 28 -30. Text read from the Minnesota Revisor of Statutes'' full-text chapter page for the section (revisor.mn.gov/statutes) on Nov. 27, 2026. Found by the state statutes sweep (terms: tribal); AI reader''s verdict incidental: Dental hygienist services; Tribal clinic qualifies under collaborative agreement definition. Unverified.'
+review:
+  status: unverified
+  by: scripts/law/state_statutes/run.py
+  date: '2026-11-27'
+  checks:
+  - check: 'Indian law section: the sweep''s keyword pass and an AI reader''s verdict (core, incidental or none)'
+    result: agree
+    detail: 'incidental; terms: tribal'

@@ -11,6 +11,16 @@ recognition:
   verification: bulk-import
   as_of: '2026-01-30'
   locator: 91 Fed. Reg. 4105
+- type: federal
+  earliest_record: treaty
+  legal_basis: Treaty with the Winnebago, June 3, 1816, 7 Stat. 144
+  since: '1816-06-03'
+  source: treaty-with-the-winnebago
+  confidence: medium
+  verification: inferred
+  as_of: '1816-06-03'
+  locator: page not determined (Treaty with the Winnebago, 1816; Kappler header "June 3, 1816. | 7 Stat., 144. | Proclamation, Dec. 30, 1816.")
+  note: The earliest record this site has found that shows the United States dealing with the nation as a federally recognized nation. The relationship may be older. The treaty names the Winnebago; the nation's profile links it to the treaty by name, and the link has not yet been checked against a second source. 2 nations' profiles link this treaty.
 states:
 - state: NE
   presence: government-office
@@ -848,6 +858,14 @@ jurisdiction:
     notice prints its table as page images, so nation names were read from images and matched to the roster.
     Row re-read on 2026-11-22 from the page image (the govinfo PDF has no text layer for the table); verification
     level unchanged because the name was not matched word for word in machine-read text.'
+- topic: environmental-treatment-as-a-state
+  value: clean-water-act-water-quality-standards
+  detail: EPA found the nation eligible on Jan. 19, 2021 to set water quality standards (treatment in a similar manner as a state under Clean Water Act § 518); EPA's list gives no date of approved standards of the nation's own.
+  source: epa-actions-on-tribal-water-quality-standards
+  confidence: high
+  verification: inferred
+  as_of: '2021-01-19'
+  locator: 'Table of approvals by Tribe, column "Regulatory Programs": "WQS Program"'
 jurisdiction_agreements:
 - kind: child-welfare-agreement
   other_party: Nebraska Department of Health and Human Services, Division of Children and Family Services
@@ -1064,7 +1082,7 @@ land_establishment:
   confidence: high
   verification: read-in-full
   locator: 14 Stat. 671
-  note: 'The instrument reads: “the United States agree to set apart for the ... occupation and future home of the Winnebago Indians, forever”. Land taken from the Omaha cession of Mar. 6, 1865.'
+  note: 'The instrument reads: “the United States agree to set apart for the . . . occupation and future home of the Winnebago Indians, forever”. Land taken from the Omaha cession of Mar. 6, 1865.'
 memberships:
 - organization: Great Plains Tribal Leaders Health Board
   source: great-plains-tribal-leaders-health-board-member-tribes

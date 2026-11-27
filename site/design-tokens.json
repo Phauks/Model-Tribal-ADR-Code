@@ -51,9 +51,25 @@
         "$value": "#FFFFFF",
         "$description": "Text on the band. 9.6:1 on band."
       },
+      "band-inset": {
+        "$value": "#0C3B42",
+        "$description": "The masthead's search box at rest, a recessed strip in the band (Trevor, Nov. 27, 2026, closed look 2 in design/header-search/closed-looks). Band text is 12.2:1 on it."
+      },
       "band-progress": {
         "$value": "#F2A65A",
         "$description": "The filled part of a progress bar on the band, such as the Sponsorship page's goal. 4.8:1 on band."
+      },
+      "section-bar": {
+        "$value": "#FFFAF5",
+        "$description": "The section bar under the masthead and its open menu: one surface, the page's own paper (palette C, chosen by Trevor on Nov. 27, 2026; design/header-nav-colors). Ink on it 15.7:1."
+      },
+      "section-bar-raised": {
+        "$value": "#F6EEE6",
+        "$description": "The side box in an open section menu, a row under the mouse, and count badges there. Ink on it 14.1:1; link 5.2:1."
+      },
+      "menu-shadow": {
+        "$value": "#22201E59",
+        "$description": "Shadow under an open section menu (ink at 35%)."
       },
       "track-alternative-dispute-resolution": {
         "$value": "#B4461A",
@@ -119,13 +135,21 @@
         "$value": "#CFC8EE",
         "$description": "Edge of the In review band."
       },
-      "focus": {
-        "$value": "#FFD34D",
-        "$description": "Keyboard focus fill."
-      },
       "focus-ring": {
-        "$value": "#22201E",
-        "$description": "Keyboard focus outline, 3 px."
+        "$value": "#0F4C54",
+        "$description": "Keyboard focus ring, 3 px, 2 px from the control, with no fill (focus F1, chosen by Trevor on Nov. 27, 2026, in place of the yellow box). 9.3:1 on paper, 8.4:1 on surface, 9.6:1 on surface-raised, 7.8:1 on selection."
+      },
+      "focus-ring-on-band": {
+        "$value": "#FFFFFF",
+        "$description": "The focus ring on the band. 9.6:1 on band, 12.2:1 on the search box's inset."
+      },
+      "selection": {
+        "$value": "#D5EBEE",
+        "$description": "Fill of the choice the arrow keys are on in a list, with a 3 px focus-ring bar at its left; also an open toggle such as the map's Layers button. Ink on it 13.1:1; link 4.9:1."
+      },
+      "map-highlight": {
+        "$value": "#FFD34D",
+        "$description": "Fill of the place on the drawn map under the mouse or keyboard. Not a focus box: the place itself lights up."
       },
       "danger": {
         "$value": "#9C1C10",
@@ -167,6 +191,42 @@
         "$value": "#0F4C54",
         "$description": "Map: 100 or more nations."
       },
+      "map-reservation-1909": {
+        "$value": "#9C5F2A",
+        "$description": "Map: a reservation on the Office of Indian Affairs' 1909 map, after its brown; Opened land is its stripes over paper. Always beside its key entry."
+      },
+      "map-reservation-1909-line": {
+        "$value": "#6E3F17",
+        "$description": "Map: the edge of a reservation or Opened land on the 1909 map, darker than its fill."
+      },
+      "map-tracing-over-scan": {
+        "$value": "#1838B0",
+        "$description": "Map: the traced shapes' edges drawn over a scanned map, which stays light in both themes, so the same blue in both."
+      },
+      "map-sky": {
+        "$value": "#122630",
+        "$description": "Map: the night sky behind the globe, near the earth. Dark in both themes, so the stars show (Trevor, 2026-11-27, mockup A)."
+      },
+      "map-sky-edge": {
+        "$value": "#08131A",
+        "$description": "Map: the night sky behind the globe, at the map's edges."
+      },
+      "map-sky-star": {
+        "$value": "#FFF8EE",
+        "$description": "Map: a white star in the sky behind the globe, the same in both themes. Drawn faint to full by the star's brightness."
+      },
+      "map-sky-star-cool": {
+        "$value": "#D6E2FF",
+        "$description": "Map: a hot, blue-white star (B-V under 0.2) in the sky behind the globe."
+      },
+      "map-sky-star-warm": {
+        "$value": "#FFE2C0",
+        "$description": "Map: a cool, orange-white star (B-V over 1.0) in the sky behind the globe."
+      },
+      "map-sky-glow": {
+        "$value": "#8FD3DA",
+        "$description": "Map: the thin glow at the earth's edge on the globe, drawn at 38 percent and fading out."
+      },
       "scrollbar-thumb": {
         "$value": "#3F7F86",
         "$description": "Scrollbar thumb, the part a reader drags. 4.0:1 on the scrollbar track and 4.4:1 on paper (non-text minimum 3:1)."
@@ -182,6 +242,10 @@
       "image-backing": {
         "$value": "#FFFAF5",
         "$description": "Plate behind a nation's seal or logo. Seals are drawn for light paper, so in dark mode they sit on a light plate and their dark lines stay visible (Trevor, Nov. 23, 2026)."
+      },
+      "sponsor-logo-plate": {
+        "$value": "#FFFFFF",
+        "$description": "White plate behind a sponsor's logo in the home page row, in both themes, since logos are drawn for white paper (mockup Trevor approved on Nov. 27, 2026, design/home-sponsor-row/)."
       },
       "scan-code-light": {
         "$value": "#FFFFFF",
@@ -321,9 +385,25 @@
         "$value": "#F3EFEA",
         "$description": "Text on the band. 12.0:1 on band."
       },
+      "band-inset": {
+        "$value": "#08272B",
+        "$description": "The masthead's search box at rest, a recessed strip in the band (Trevor, Nov. 27, 2026, closed look 2 in design/header-search/closed-looks). Band text is 13.7:1 on it."
+      },
       "band-progress": {
         "$value": "#F2A65A",
         "$description": "The filled part of a progress bar on the band, such as the Sponsorship page's goal. 6.8:1 on band."
+      },
+      "section-bar": {
+        "$value": "#16292D",
+        "$description": "The section bar under the masthead and its open menu: one surface, the panels' surface (palette C). Ink on it 13.2:1."
+      },
+      "section-bar-raised": {
+        "$value": "#1D3438",
+        "$description": "The side box in an open section menu, a row under the mouse, and count badges there. Ink on it 11.5:1; link 6.9:1."
+      },
+      "menu-shadow": {
+        "$value": "#00000099",
+        "$description": "Shadow under an open section menu (black at 60%, since a light shadow would glow)."
       },
       "track-alternative-dispute-resolution": {
         "$value": "#FF9A66",
@@ -389,13 +469,21 @@
         "$value": "#4A4380",
         "$description": "Edge of the In review band."
       },
-      "focus": {
-        "$value": "#FFD34D",
-        "$description": "Keyboard focus fill."
-      },
       "focus-ring": {
+        "$value": "#6CCAD3",
+        "$description": "Keyboard focus ring, 3 px, 2 px from the control, with no fill. 9.0:1 on paper, 7.9:1 on surface, 6.9:1 on surface-raised, 5.1:1 on selection."
+      },
+      "focus-ring-on-band": {
+        "$value": "#6CCAD3",
+        "$description": "The focus ring on the band. 7.2:1 on band."
+      },
+      "selection": {
+        "$value": "#1A4A51",
+        "$description": "Fill of the choice the arrow keys are on in a list, with a 3 px focus-ring bar at its left; also an open toggle such as the map's Layers button. Ink on it 8.6:1; link 5.1:1."
+      },
+      "map-highlight": {
         "$value": "#FFD34D",
-        "$description": "Keyboard focus outline, 3 px."
+        "$description": "Fill of the place on the drawn map under the mouse or keyboard."
       },
       "danger": {
         "$value": "#FF8A80",
@@ -437,6 +525,42 @@
         "$value": "#B5E8EC",
         "$description": "Map: 100 or more nations."
       },
+      "map-reservation-1909": {
+        "$value": "#C98A52",
+        "$description": "Map: a reservation on the Office of Indian Affairs' 1909 map, after its brown; Opened land is its stripes over paper. Always beside its key entry."
+      },
+      "map-reservation-1909-line": {
+        "$value": "#E3B184",
+        "$description": "Map: the edge of a reservation or Opened land on the 1909 map, darker than its fill."
+      },
+      "map-tracing-over-scan": {
+        "$value": "#1838B0",
+        "$description": "Map: the traced shapes' edges drawn over a scanned map, which stays light in both themes, so the same blue in both."
+      },
+      "map-sky": {
+        "$value": "#10232A",
+        "$description": "Map: the night sky behind the globe, near the earth. Dark in both themes, so the stars show (Trevor, 2026-11-27, mockup A)."
+      },
+      "map-sky-edge": {
+        "$value": "#070F13",
+        "$description": "Map: the night sky behind the globe, at the map's edges."
+      },
+      "map-sky-star": {
+        "$value": "#FFF8EE",
+        "$description": "Map: a white star in the sky behind the globe, the same in both themes. Drawn faint to full by the star's brightness."
+      },
+      "map-sky-star-cool": {
+        "$value": "#D6E2FF",
+        "$description": "Map: a hot, blue-white star (B-V under 0.2) in the sky behind the globe."
+      },
+      "map-sky-star-warm": {
+        "$value": "#FFE2C0",
+        "$description": "Map: a cool, orange-white star (B-V over 1.0) in the sky behind the globe."
+      },
+      "map-sky-glow": {
+        "$value": "#8FD3DA",
+        "$description": "Map: the thin glow at the earth's edge on the globe, drawn at 38 percent and fading out."
+      },
       "scrollbar-thumb": {
         "$value": "#5A979E",
         "$description": "Scrollbar thumb, the part a reader drags. 4.6:1 on the scrollbar track and 5.2:1 on paper (non-text minimum 3:1)."
@@ -452,6 +576,10 @@
       "image-backing": {
         "$value": "#F6EEE6",
         "$description": "Plate behind a nation's seal or logo. Seals are drawn for light paper, so in dark mode they sit on a light plate and their dark lines stay visible (Trevor, Nov. 23, 2026)."
+      },
+      "sponsor-logo-plate": {
+        "$value": "#FFFFFF",
+        "$description": "White plate behind a sponsor's logo in the home page row, in both themes, since logos are drawn for white paper (mockup Trevor approved on Nov. 27, 2026, design/home-sponsor-row/)."
       },
       "scan-code-light": {
         "$value": "#FFFFFF",
@@ -742,7 +870,7 @@
         "value": 40,
         "unit": "rem"
       },
-      "$description": "Widest column beside the text on wide screens, such as At a glance and its map on a nation's page."
+      "$description": "Widest column beside the text on wide screens, such as Key facts and its map on a nation's page."
     },
     "label-column": {
       "$value": {
@@ -802,7 +930,7 @@
     }
   },
   "motion": {
-    "$description": "How long movement takes and how it speeds up and slows down (site/DESIGN.md, section 6, \"Motion\"). Every transition, animation and script animation on the site takes its timing from here, through src/lib/motion.ts or the --motion-* custom properties. Motion happens only in answer to something the reader does. When the reader picks Reduce motion in Settings, or the device asks for less motion, every duration becomes 0.",
+    "$description": "How long movement takes and how it speeds up and slows down (site/DESIGN.md, section 6, \"Motion\"). Every transition, animation and script animation on the site takes its timing from here, through src/lib/motion.ts or the --motion-* custom properties. Motion happens only in answer to something the reader does, except the rolling row of sponsors on the home page, which Trevor asked for on Nov. 27, 2026 and which the reader can pause. When the reader picks Reduce motion in Settings, or the device asks for less motion, every duration becomes 0.",
     "duration": {
       "$type": "duration",
       "short": {
@@ -832,6 +960,13 @@
           "unit": "ms"
         },
         "$description": "How long the mark on a source or note a link has just gone to takes to fade to its resting color."
+      },
+      "roll": {
+        "$value": {
+          "value": 5000,
+          "unit": "ms"
+        },
+        "$description": "How long the rolling row of sponsors on the home page takes to move by one sponsor's tile, so the whole row takes this times the number of sponsors. Slow enough to read each name as it passes."
       }
     },
     "easing": {
@@ -862,6 +997,15 @@
           1
         ],
         "$description": "Something leaving: it starts slowly and speeds away."
+      },
+      "steady": {
+        "$value": [
+          0,
+          0,
+          1,
+          1
+        ],
+        "$description": "An even speed from start to end, for movement that loops, such as the rolling row of sponsors."
       }
     }
   }

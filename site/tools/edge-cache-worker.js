@@ -37,10 +37,15 @@ export const edgeCacheRules = [
 	{ pattern: /^\/supreme-court\/(?:justices|presidents)\/[^/]+(?:\/__data\.json)?$/, seconds: day, tags: ['record-pages'], statuses: [200] },
 	{ pattern: /^\/supreme-court\/(?!justices$|presidents$|portraits$)[^/]+(?:\/__data\.json)?$/, seconds: day, tags: ['record-pages'], statuses: [200] },
 	{ pattern: /^\/supreme-court\/portraits\/[^/]+$/, seconds: 30 * day, tags: ['record-pages'], statuses: [200] },
+	// A case's opinions, read from the copy that holds their text
+	// (src/routes/cases/[id]/opinions.json). Federal and state opinions are
+	// always shown (decision record 0056); the route itself sends a copy a
+	// nation restricts with no-store, and the tag purges it with their choices.
+	{ pattern: /^\/cases\/[^/]+\/opinions\.json$/, seconds: day, tags: ['record-pages', 'nation-restrictions'], statuses: [200] },
 	// Map tiles: each tile set's name changes whenever its file does
 	// (src/lib/server/map-tile-serving.ts), and pictures of the U.S. Geological
 	// Survey's maps change seldom (src/lib/server/map-imagery.ts).
-	{ pattern: /^\/map-tiles\/[a-z0-9-]+\/\d{1,2}\/\d{1,8}\/\d{1,8}\.mvt$/, seconds: 30 * day, tags: ['map-tiles'], statuses: [200, 204] },
+	{ pattern: /^\/map-tiles\/[a-z0-9-]+\/\d{1,2}\/\d{1,8}\/\d{1,8}\.(mvt|webp)$/, seconds: 30 * day, tags: ['map-tiles'], statuses: [200, 204] },
 	{ pattern: /^\/map-tiles\/imagery\/[a-z-]+\/\d{1,2}\/\d{1,8}\/\d{1,8}$/, seconds: 30 * day, tags: ['map-tiles'], statuses: [200, 204] },
 	{ pattern: /^\/map-tiles\/assets\/.+$/, seconds: 7 * day, tags: ['map-tiles'], statuses: [200] },
 	// The site search's files. They leave out what nations chose to hide
@@ -55,7 +60,11 @@ export const edgeCacheRules = [
 	// The search on the server (src/routes/search/query): one answer per
 	// search typed, the same for every reader and drawn from the same files,
 	// so it is kept and purged as they are.
-	{ pattern: /^\/search\/query$/, seconds: 300, tags: ['nation-restrictions'], statuses: [200] }
+	{ pattern: /^\/search\/query$/, seconds: 300, tags: ['nation-restrictions'], statuses: [200] },
+	// The sponsors in the home page's rolling row (src/routes/sponsor/row.json):
+	// the same for every reader, without amounts. A new sponsor, logo or choice
+	// shows within five minutes.
+	{ pattern: /^\/sponsor\/row\.json$/, seconds: 300, tags: ['sponsors'], statuses: [200] }
 ];
 
 export const edgeHeader = 'cloudflare-cdn-cache-control';

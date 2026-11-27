@@ -356,7 +356,7 @@
 	}
 
 	.map-surface:focus-visible {
-		outline: 3px solid var(--color-focus);
+		outline: 3px solid var(--focus-ring);
 		outline-offset: 2px;
 	}
 

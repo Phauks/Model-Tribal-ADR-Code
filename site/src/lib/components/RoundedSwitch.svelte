@@ -104,10 +104,6 @@
 		font-weight: var(--font-weight-semibold);
 	}
 
-	.choice:focus-visible {
-		background-color: var(--color-focus);
-		color: var(--focus-text);
-	}
 
 	@media (forced-colors: active) {
 		.choice[aria-selected='true'] {

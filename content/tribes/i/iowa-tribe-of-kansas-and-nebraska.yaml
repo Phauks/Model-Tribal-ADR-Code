@@ -18,6 +18,16 @@ recognition:
   verification: bulk-import
   as_of: '2026-01-30'
   locator: 91 Fed. Reg. 4104
+- type: federal
+  earliest_record: treaty
+  legal_basis: Treaty with the Iowa, Sept. 16, 1815, 7 Stat. 136
+  since: '1815-09-16'
+  source: treaty-with-the-iowa-1815
+  confidence: medium
+  verification: inferred
+  as_of: '1815-09-16'
+  locator: p. 122 (Treaty with the Iowa, 1815; Kappler header "Sept. 16, 1815. | 7 Stat., 136. | Ratified Dec. 26, 1815.")
+  note: The earliest record this site has found that shows the United States dealing with the nation as a federally recognized nation. The relationship may be older. The treaty names the Iowa; the nation's profile links it to the treaty by name, and the link has not yet been checked against a second source. 2 nations' profiles link this treaty.
 states:
 - state: KS
   presence: government-office

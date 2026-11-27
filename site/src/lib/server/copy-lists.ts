@@ -72,6 +72,52 @@ function boardGroup(copy: PublicCopy): string {
 	return boardSlug(...range);
 }
 
+/**
+ * Congress's documents, in lists by the year of the document (its source record's date), each a few hundred long:
+ * hearings, committee reports from the Serial Set back to the 1820s and from GovInfo since 1995, and committee prints
+ * (scripts/law/congressional_documents.py), then the Congressional Research Service's products (scripts/law/crs_reports.py).
+ */
+const congressLists: { slug: string; title: string; genres: string[]; from?: number; to?: number }[] = [
+	{ slug: 'congressional-hearings-to-1994', title: 'Congressional hearings to 1994', genres: ['Hearing'], to: 1994 },
+	{ slug: 'congressional-hearings-1995-2006', title: 'Congressional hearings, 1995 to 2006', genres: ['Hearing'], from: 1995, to: 2006 },
+	{ slug: 'congressional-hearings-2007-on', title: 'Congressional hearings, 2007 and later', genres: ['Hearing'], from: 2007 },
+	...(
+		[
+			[undefined, 1869],
+			[1870, 1884],
+			[1885, 1894],
+			[1895, 1904],
+			[1905, 1919],
+			[1920, 1925],
+			[1926, 1930],
+			[1931, 1934],
+			[1935, 1940],
+			[1941, 1959],
+			[1960, 1979],
+			[1980, 1994],
+			[1995, 2009],
+			[2010, undefined]
+		] as [number | undefined, number | undefined][]
+	).map(([from, to]) => ({
+		slug: from === undefined ? `committee-reports-to-${to}` : `committee-reports-${from}-${to ?? 'on'}`,
+		title: from === undefined ? `Committee reports to ${to}` : to === undefined ? `Committee reports, ${from} and later` : `Committee reports, ${from} to ${to}`,
+		genres: ['House report', 'Senate report'],
+		from,
+		to
+	})),
+	{ slug: 'committee-prints', title: 'Committee prints', genres: ['Committee print', 'House document', 'Senate document', 'Congressional document'] }
+];
+
+function congressGroup(copy: PublicCopy): string {
+	const record = copy.records.map((key) => sources().get(key)).find((found) => found?.kind === 'congressional-document');
+	const genre = (record?.citation as { genre?: string } | undefined)?.genre ?? '';
+	const year = record?.citation.issued?.['date-parts']?.[0]?.[0] ?? 0;
+	// Other files kept under congress/, such as a bill's text, stay in the other federal documents' list.
+	if (!record) return 'other-federal';
+	const list = congressLists.find((entry) => entry.genres.includes(genre) && (entry.from === undefined || year >= entry.from) && (entry.to === undefined || year <= entry.to));
+	return list?.slug ?? 'committee-prints';
+}
+
 /** The lists that are not one nation's, in page order: federal documents, then state material. */
 const fixedGroups: Record<string, string> = {
 	'supreme-court': 'Supreme Court opinions',
@@ -82,10 +128,12 @@ const fixedGroups: Record<string, string> = {
 	...Object.fromEntries(
 		boardVolumeRanges.map(([first, last]) => [boardSlug(first, last), last === undefined ? `Interior Board of Indian Appeals decisions, volume ${first} and later` : `Interior Board of Indian Appeals decisions, volumes ${first} to ${last}`])
 	),
-	// Lower federal courts' opinions from the Caselaw Access Project (decision record 0060).
+	// Lower federal courts' opinions from the Caselaw Access Project and CourtListener (decision record 0060).
 	'federal-court-opinions': 'Lower federal court opinions',
 	'gaming-commission': 'National Indian Gaming Commission documents',
 	acknowledgment: 'Federal acknowledgment documents',
+	...Object.fromEntries(congressLists.map((list) => [list.slug, list.title])),
+	'congressional-research-service': 'Congressional Research Service reports',
 	'solicitor-opinions': 'Solicitor’s opinions',
 	'other-federal': 'Other federal documents',
 	// Published state and territorial court opinions (decision record 0060).
@@ -93,6 +141,43 @@ const fixedGroups: Record<string, string> = {
 	// Oklahoma's register of state-tribal compacts and agreements (decision record 0060).
 	'oklahoma-state-tribal-agreements': 'Oklahoma state-tribal agreements'
 };
+
+/**
+ * Court opinion lists longer than pageSize rows (decision record 0060) are split into parts, in the
+ * order of the copies' keys (source, reporter, volume): the first part keeps the list's address and
+ * the others add "-2", "-3" and so on. One page of thousands of rows is too big for a Worker asset
+ * and for the accessibility check, which gives up on a page after 90 seconds.
+ */
+const pagedGroups = new Set(['federal-court-opinions', 'state-court-opinions']);
+const pageSize = 2500;
+let pageCache: Map<string, { slug: string; parts: number }> | undefined;
+
+/** The list each paged copy is in, by key. */
+function pages(): Map<string, { slug: string; parts: number }> {
+	if (pageCache) return pageCache;
+	const cache = new Map<string, { slug: string; parts: number }>();
+	for (const group of pagedGroups) {
+		const keys = publicCopies()
+			.filter((copy) => copy.topic === group)
+			.map((copy) => copy.key)
+			.sort();
+		const parts = Math.max(1, Math.ceil(keys.length / pageSize));
+		keys.forEach((key, index) => {
+			const part = Math.floor(index / pageSize) + 1;
+			cache.set(key, { slug: part === 1 ? group : `${group}-${part}`, parts });
+		});
+	}
+	pageCache = cache;
+	return cache;
+}
+
+/** A paged list's base group and part, or undefined for any other list. */
+function pageOf(slug: string): { group: string; part: number; parts: number } | undefined {
+	const match = /^(.*?)(?:-(\d+))?$/.exec(slug);
+	if (!match || !pagedGroups.has(match[1])) return undefined;
+	const parts = [...pages().values()].find((page) => page.slug === slug)?.parts ?? 1;
+	return { group: match[1], part: Number(match[2] ?? 1), parts };
+}
 
 function nationNames(): Map<string, string> {
 	return new Map(nations().map((record) => [record.id, displayName(record.names.official)]));
@@ -121,8 +206,9 @@ const opinionPrefix = 'opinions-';
 function groupOf(copy: PublicCopy, names: Map<string, string>): string {
 	if (copy.topic === 'caselaw-access-project') return `${opinionPrefix}${copy.nations[0] ?? 'other'}`;
 	if (copy.topic === 'ibia-decisions') return boardGroup(copy);
-	if (copy.topic === 'federal-court-opinions') return 'federal-court-opinions';
-	if (copy.topic === 'state-court-opinions') return 'state-court-opinions';
+	if (pagedGroups.has(copy.topic)) return pages().get(copy.key)?.slug ?? copy.topic;
+	// The Supreme Court's opinions as text, split by opinion, beside the scans of the United States Reports (scripts/caselaw/case_opinion_texts.py).
+	if (copy.topic === 'supreme-court-opinions') return 'supreme-court';
 	if (copy.topic === 'oklahoma-secretary-of-state') return 'oklahoma-state-tribal-agreements';
 	if (copy.topic === 'constitutions' || copy.topic === 'tribal-law') {
 		const [first] = namesOf(copy, names);
@@ -138,11 +224,15 @@ function groupOf(copy: PublicCopy, names: Map<string, string>): string {
 	if (copy.topic === 'federal-register') return 'federal-register';
 	if (copy.topic === 'nigc') return 'gaming-commission';
 	if (copy.topic === 'acknowledgment') return 'acknowledgment';
+	if (copy.topic === 'congress') return congressGroup(copy);
+	if (copy.topic === 'crs') return 'congressional-research-service';
 	if (copy.topic === 'solicitor-opinions') return 'solicitor-opinions';
 	return 'other-federal';
 }
 
 function groupTitle(slug: string, names = nationNames()): string {
+	const paged = pageOf(slug);
+	if (paged) return paged.parts > 1 ? `${fixedGroups[paged.group]}, part ${paged.part} of ${paged.parts}` : fixedGroups[paged.group];
 	if (fixedGroups[slug]) return fixedGroups[slug];
 	if (slug.startsWith(opinionPrefix)) {
 		const name = names.get(slug.slice(opinionPrefix.length));
@@ -179,10 +269,18 @@ export function copyGroups(): CopyGroup[] {
 		counts.set(slug, (counts.get(slug) ?? 0) + 1);
 	}
 	const order = (slug: string) =>
-		fixedGroups[slug] ? Object.keys(fixedGroups).indexOf(slug) : slug.startsWith(opinionPrefix) ? Object.keys(fixedGroups).indexOf('gaming-commission') : slug === 'other-nations' ? 1000 : 10 + slug.charCodeAt(0);
+		pageOf(slug)
+			? Object.keys(fixedGroups).indexOf(pageOf(slug)?.group ?? '') + (pageOf(slug)?.part ?? 1) / 100
+			: fixedGroups[slug]
+				? Object.keys(fixedGroups).indexOf(slug)
+				: slug.startsWith(opinionPrefix)
+					? Object.keys(fixedGroups).indexOf('gaming-commission')
+					: slug === 'other-nations'
+						? 1000
+						: 10 + slug.charCodeAt(0);
 	return [...counts]
 		.map(([slug, count]) => ({ slug, title: groupTitle(slug, names), count }))
-		.sort((first, second) => order(first.slug) - order(second.slug) || first.title.localeCompare(second.title));
+		.sort((first, second) => order(first.slug) - order(second.slug) || first.title.localeCompare(second.title, undefined, { numeric: true }));
 }
 
 /** The rows of one list. */

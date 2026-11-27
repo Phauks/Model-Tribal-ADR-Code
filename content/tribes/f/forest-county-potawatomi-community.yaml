@@ -11,6 +11,16 @@ recognition:
   verification: bulk-import
   as_of: '2026-01-30'
   locator: 91 Fed. Reg. 4103
+- type: federal
+  earliest_record: treaty
+  legal_basis: Treaty with the Wyandot, etc., Jan. 9, 1789, 7 Stat. 28
+  since: '1789-01-09'
+  source: treaty-with-the-wyandot-etc-1789
+  confidence: medium
+  verification: inferred
+  as_of: '1789-01-09'
+  locator: p. 18 (Treaty with the Wyandot, etc., 1789; Kappler header "Jan. 9, 1789. | 7 Stat., 28. | Proclamation, Sept. 27, 1789.")
+  note: The earliest record this site has found that shows the United States dealing with the nation as a federally recognized nation. The relationship may be older. The treaty names the Potawatomi; the nation's profile links it to the treaty by name, and the link has not yet been checked against a second source. 13 nations' profiles link this treaty.
 states:
 - state: WI
   presence: government-office
@@ -833,6 +843,22 @@ jurisdiction:
   confidence: high
   verification: read-in-full
   as_of: '1997-01-10'
+- topic: hearth-act-leasing-regulations
+  value: approved
+  detail: The Secretary of the Interior approved the leasing regulations (Leasing Ordinance (Agriculture, Business, Residential, Wind and Solar Resource, WEEL) of the Forest County Potawatomi Community, as the Bureau of Indian Affairs' list names it, under the HEARTH Act, 25 U.S.C. § 415(h), on Aug. 6, 2024, so the nation can lease its trust land for those purposes under its own regulations without the Bureau of Indian Affairs approving each lease.
+  source: hearth-act-leasing-regulations-forest-county-potawatomi-community-2024-08-06
+  confidence: high
+  verification: inferred
+  as_of: '2024-08-06'
+  locator: Bureau of Indian Affairs, Approved HEARTH Act Regulations, Approved in 2024
+- topic: environmental-treatment-as-a-state
+  value: clean-air-act-administrative-functions
+  detail: 'EPA has approved the nation for treatment in a similar manner as a state to perform administrative functions under the Clean Air Act: §§ 126; 505(a)(2).'
+  source: epa-tribes-approved-for-treatment-as-a-state
+  confidence: high
+  verification: inferred
+  as_of: '2026-10-21'
+  locator: 'Table of approvals by Tribe, column "Administrative Functions": "CAA §§ 126; 505(a)(2)"'
 court_practice:
 - kind: court-rules
   title: Tribal Court Rules (Forest County Potawatomi)

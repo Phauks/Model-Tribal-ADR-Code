@@ -8,18 +8,22 @@
 	// - the pages the page belongs with: a nation's own pages under "‹ Nations"
 	//   and its name, or the essays of Foundations (page.data.family,
 	//   src/lib/server/section-contents.ts, src/lib/nation-family.ts);
-	// - otherwise the pages of the section being read, in the groups of its
-	//   menu (src/lib/site-navigation.ts);
 	// - then "On this page": the page's headings, the one being read marked as
 	//   the page scrolls (src/lib/active-heading.ts);
 	// - then "Changes to This Page", where the site records the page's changes
 	//   (Trevor, Nov. 23, 2026), and Your work while an essay is edited.
 	//
-	// The Workspace and the Account pages are places too: on their own pages
-	// the column lists them as it lists a section's pages
-	// (src/lib/personal-navigation.ts). Elsewhere they are in the section bar's
-	// Workspace tab and under the masthead's profile button, not in the column
-	// (Trevor, Nov. 27, 2026; design/sidebar-workspace-profile, option B).
+	// The column navigates only the pages beneath the page being read and
+	// never repeats the top navigation (Trevor, Nov. 27, 2026: "left nav
+	// becomes navigation for pages beneath, it should not be double nav for
+	// what is already in the top nav"). So it does not list a section's menu
+	// (the section bar has it), the Account pages (the profile button's menu
+	// has them) or the Workspace's pages (the Workspace tab has them), and a
+	// nation's pages have no "‹ Nations" link (the section bar's Nations and
+	// the breadcrumbs go there). Where nothing is left to show, as on the
+	// home page, there is no column and the page takes the whole width
+	// (Trevor, Nov. 27, 2026: "the home tribal law page should not have a
+	// left sidebar"); +layout.svelte reads the column's `empty` class.
 	//
 	// Long lists, such as every nation, are no longer in the column: the
 	// Nations menu has a box to go straight to a nation.
@@ -39,24 +43,15 @@
 	import { page } from '$app/state';
 	import Briefcase from '@lucide/svelte/icons/briefcase';
 	import ChevronDown from '@lucide/svelte/icons/chevron-down';
-	import ChevronLeft from '@lucide/svelte/icons/chevron-left';
 	import FileClock from '@lucide/svelte/icons/file-clock';
 	import Menu from '@lucide/svelte/icons/menu';
 	import X from '@lucide/svelte/icons/x';
 	import { followActiveHeading, headingIds } from '#lib/active-heading.ts';
 	import { isUnfolded } from '#lib/outline-folding.ts';
 	import { editingOutline } from '#lib/essays/editing-outline.svelte.ts';
-	import { followedPageAddress } from '#lib/page-history.ts';
+	import { followedPageAddress, pageChangesLink } from '#lib/page-history.ts';
 	import { personalSectionOf, workspaceSection } from '#lib/personal-navigation.ts';
-	import {
-		currentNavigationLink,
-		holdingNavigationLink,
-		navigationSectionOf,
-		navigationSections,
-		type NavigationCounts,
-		type NavigationLink,
-		type NavigationSection
-	} from '#lib/site-navigation.ts';
+	import { currentNavigationLink, navigationSectionOf, navigationSections, type NavigationCounts, type NavigationSection } from '#lib/site-navigation.ts';
 	import type { OutlineItem, PageFamily, PageOutline } from '#lib/site-sections.ts';
 	import { WorkspaceAccess } from '#lib/workspace-access.svelte.ts';
 	import CountBadge from './CountBadge.svelte';
@@ -72,7 +67,9 @@
 	const search = $derived(building ? '' : page.url.search);
 	const counts = $derived(page.data.navigationCounts as NavigationCounts | undefined);
 	// The page the reader is on, when the site records its changes: "Changes to This Page" ends the column.
-	const followedPage = $derived(page.error ? undefined : followedPageAddress(path));
+	// On the page's own Changes view the link stays, marked as where the reader is (src/lib/server/page-changes.ts).
+	const changesOf = $derived(page.error ? undefined : (page.data.historyOf as string | undefined));
+	const followedPage = $derived(page.error ? undefined : (changesOf ?? followedPageAddress(path)));
 
 	// The page's title, for the phone strip on pages with nothing else to name them.
 	let pageTitle = $state<string | undefined>(undefined);
@@ -80,28 +77,26 @@
 	// ---- Where the reader is ----
 	const family = $derived(page.data.family as PageFamily | undefined);
 	const currentSection = $derived(navigationSectionOf(path));
-	// The Workspace, for people with access to it, and the Account pages, as places of their own.
+	// The Workspace, for people with access to it, and the Account pages, as places of their own, for the phone Menu sheet.
 	const access = new WorkspaceAccess();
 	const workspace = $derived(workspaceSection(access.pages));
 	const personalSection = $derived(currentSection ? undefined : personalSectionOf(path, workspace));
-	// A family takes the place of the section's pages.
-	const shownSection = $derived(family ? undefined : (currentSection ?? personalSection));
-	const heldLink = $derived(shownSection ? holdingNavigationLink(shownSection, path, search) : undefined);
 
 	// The page's own headings. While an essay is edited or commented on, its
 	// outline is the draft's, with what changed marked (src/lib/essays/editor-outline.ts).
 	const editing = $derived(editingOutline.current?.path === path ? editingOutline.current : undefined);
 	const publishedOutline = $derived(page.data.outline as PageOutline | undefined);
 	const outlineItems = $derived<OutlineItem[]>(editing ? editing.items : (publishedOutline?.items ?? []));
-	// Rows line up without room for carets when no heading has headings under it.
-	const outlineNests = $derived(outlineItems.some((item) => item.children?.length));
-	// An outline of the page's headings is "On this page"; one that lists other pages, such as the back matter's, is "Contents".
-	const outlineLabel = $derived(outlineItems.every((item) => item.link.startsWith('#')) ? 'On This Page' : 'Contents');
+	// An outline of the page's headings is "On this page", a name only screen readers hear (Trevor, Nov. 27, 2026: "don't need to say On This Page"); one that lists other pages, such as the back matter's, is headed "Contents".
+	const outlineOfHeadings = $derived(outlineItems.every((item) => item.link.startsWith('#')));
+	const outlineLabel = $derived(outlineOfHeadings ? 'On This Page' : 'Contents');
+
+	// Whether the wide column has anything to show. The home page never has a column.
+	const columnEmpty = $derived(path === '/' || !(family || outlineItems.length > 0 || followedPage || editing?.work));
 
 	// What the phone strip names beside "Menu".
 	const localTitle = $derived(
 		family?.title ??
-			shownSection?.label ??
 			publishedOutline?.title ??
 			(path === '/' ? 'Home' : (pageTitle ?? ''))
 	);
@@ -243,68 +238,47 @@
 	}
 </script>
 
-{#snippet pageLink(item: NavigationLink, current: boolean, held: boolean)}
-	{#if item.soon}
-		<span class="local-link soon">{item.label} <span class="soon-note">soon</span></span>
-	{:else}
-		<a class="local-link" class:held={held && !current} href={item.link} aria-current={current ? 'page' : undefined}>
-			<span>{item.label}</span>
-			{#if item.count && counts?.[item.count]}<CountBadge count={counts[item.count]} />{/if}
-		</a>
-	{/if}
-{/snippet}
-
 {#snippet local(idSuffix: string)}
 	{#if family}
 		<!-- The pages the page belongs with, such as a nation's own pages. -->
 		<div class="local-head">
-			{#if family.back}
-				<a class="back-link" href={family.back.link}><ChevronLeft size={18} aria-hidden="true" />{family.back.label}</a>
-			{/if}
 			{#if family.link}
 				<a class="local-title" href={family.link} aria-current={family.link === path ? 'page' : undefined}>{family.title}</a>
 			{:else}
 				<p class="local-title">{family.title}</p>
 			{/if}
 		</div>
-		<ul class="local-pages">
-			{#each family.pages as item (item.link)}
-				{@const current = item.link === path}
-				<li>
-					<a class="local-link" href={item.link} aria-current={current ? 'page' : undefined}>
-						<span>{#if item.number}<span class="number">{item.number}</span>{' '}{/if}{item.label}</span>
-						{#if item.count}<CountBadge count={item.count} />{/if}
-					</a>
-				</li>
-			{/each}
-		</ul>
-	{:else if shownSection}
-		<!-- The section's pages, in the groups of its menu. -->
-		<div class="local-head">
-			{#if shownSection.home}
-				<a class="local-title" href={shownSection.home} aria-current={shownSection.home === path ? 'page' : undefined}>{shownSection.label}</a>
-			{:else}
-				<p class="local-title">{shownSection.label}</p>
-			{/if}
-		</div>
-		{#each shownSection.groups as group (group.title)}
-			{#if group.title}<p class="local-label">{group.title}</p>{/if}
+		<!-- The page being read is named but not linked, since a link to it would go nowhere (Trevor, Nov. 27, 2026). A list holding only that page is left out: the title above already names it. -->
+		{#if family.pages.some((item) => item.link !== path)}
 			<ul class="local-pages">
-				{#each group.links as item (item.link)}
-					<li>{@render pageLink(item, item === currentNavigationLink(shownSection, path, search), item === heldLink)}</li>
+				{#each family.pages as item (item.link)}
+					{#if item.link === path}
+						<li>
+							<span class="local-link" aria-current="page">
+								<span>{#if item.number}<span class="number">{item.number}</span>{' '}{/if}{item.label}</span>
+								{#if item.count}<CountBadge count={item.count} />{/if}
+							</span>
+						</li>
+					{:else}
+						<li>
+							<a class="local-link" href={item.link}>
+								<span>{#if item.number}<span class="number">{item.number}</span>{' '}{/if}{item.label}</span>
+								{#if item.count}<CountBadge count={item.count} />{/if}
+							</a>
+						</li>
+					{/if}
 				{/each}
 			</ul>
-		{/each}
+		{/if}
 	{:else if publishedOutline?.title && outlineItems.length > 0}
 		<div class="local-head"><p class="local-title">{publishedOutline.title}</p></div>
 	{/if}
 	{#if outlineItems.length > 0}
-		<p class="local-label on-this-page" id="sidebar-on-this-page-{idSuffix}">{outlineLabel}</p>
-		<div class="headings" class:no-carets={!outlineNests}>
+		<p class="local-label on-this-page" class:visually-hidden={outlineOfHeadings} id="sidebar-on-this-page-{idSuffix}">{outlineLabel}</p>
+		<div class="headings" class:unlabeled={outlineOfHeadings}>
 			<SidebarTree
 				items={outlineItems}
 				listIdentifier="sidebar-outline-{idSuffix}"
-				flush
 				{isActive}
 				isCurrent={isCurrentHeading}
 				isOpen={isItemOpen}
@@ -313,8 +287,13 @@
 		</div>
 	{/if}
 	{#if followedPage}
-		<!-- Opens the history of the page the reader is on, not every page's (Trevor, Nov. 23, 2026). -->
-		<p class="page-changes"><a href="/changes?page={encodeURIComponent(followedPage)}"><FileClock size={18} aria-hidden="true" />Changes to This Page</a></p>
+		<!-- Opens the history of the page the reader is on, not every page's (Trevor, Nov. 23, 2026), in the
+		     page's own place, so this column stays (Trevor, Nov. 27, 2026, design/page-changes-in-page, option B). -->
+		<p class="page-changes">
+			<a href={pageChangesLink(followedPage)} aria-current={changesOf ? 'page' : undefined}
+				><FileClock size={18} aria-hidden="true" />Changes to This Page</a
+			>
+		</p>
 	{/if}
 {/snippet}
 
@@ -322,7 +301,7 @@
      the hamburger at the top left of the masthead, or with Ctrl+\ (Trevor,
      Nov. 23, 2026); hidden, the page takes the whole width. Without scripts it
      always shows. -->
-<div class="sidebar-wide no-print" id="site-sidebar" bind:this={wideSidebar}>
+<div class="sidebar-wide no-print" class:empty={columnEmpty} id="site-sidebar" bind:this={wideSidebar}>
 	<nav aria-label="Where you are" class="local-column" bind:this={wideColumn}>
 		{@render local('wide')}
 		{#if editing?.work}<YourWork work={editing.work} {path} />{/if}
@@ -356,7 +335,7 @@
 			</ul>
 		</nav>
 	</details>
-	{#if family || shownSection || outlineItems.length > 0}
+	{#if family || outlineItems.length > 0}
 		<details class="sheet local-sheet" bind:this={localSheet} ontoggle={() => opened(localSheet)}>
 			<summary>
 				<span class="sheet-word where">{localTitle}</span>
@@ -376,12 +355,22 @@
 {#snippet phoneSection(section: NavigationSection)}
 	{@const current = section === (currentSection ?? personalSection)}
 	{@const sectionLink = currentNavigationLink(section, path, search)}
-	<li class:personal={section === workspace}>
+	<li class:personal={section === workspace} class:linked={!!section.home}>
+		<!-- The name goes to the section's own page; the chevron beside it opens the section's groups (Trevor, Nov. 27, 2026: no "All of …" link). -->
+		{#if section.home}
+			<a class="phone-name" class:current href={section.home} aria-current={section.home === path ? 'page' : current ? 'true' : undefined}
+				><span class:personal-label={section === workspace}>{#if section === workspace}<Briefcase size={20} aria-hidden="true" />{/if}{section.label}</span></a
+			>
+		{/if}
 		<details name="phone-section" open={current}>
-			<summary class:current>
-				<span class:personal-label={section === workspace}
-					>{#if section === workspace}<Briefcase size={20} aria-hidden="true" />{/if}{section.label}{#if current}<span class="visually-hidden"> (the section you are in)</span>{/if}</span
-				>
+			<summary class:current={current && !section.home} class:toggle={!!section.home}>
+				{#if section.home}
+					<span class="visually-hidden">{section.label} pages</span>
+				{:else}
+					<span class:personal-label={section === workspace}
+						>{#if section === workspace}<Briefcase size={20} aria-hidden="true" />{/if}{section.label}{#if current}<span class="visually-hidden"> (the section you are in)</span>{/if}</span
+					>
+				{/if}
 				<ChevronDown size={20} aria-hidden="true" />
 			</summary>
 			<div class="phone-groups">
@@ -400,9 +389,6 @@
 						{/each}
 					</ul>
 				{/each}
-				{#if section.home}
-					<p class="phone-home"><a href={section.home}>{section === workspace ? 'Overview' : `All of ${section.label}`}</a></p>
-				{/if}
 			</div>
 		</details>
 	</li>
@@ -410,22 +396,13 @@
 
 <style>
 	/*
-	 * Nesting, the same in every list of the column (Trevor chose option B,
-	 * design/sidebar-nesting): a row is a caret, a small gap and its text; a
-	 * list under an entry starts one step to the right of that entry, with a
-	 * thin guide line down from the entry's caret beside it. The lists use
-	 * these measures in sidebar/SidebarTree.svelte
-	 * and here.
+	 * Nesting in the page's headings (sidebar/SidebarTree.svelte): a heading
+	 * under another starts one step to the right, with no guide line
+	 * (Trevor, Nov. 27, 2026, design/nation-column-restyle).
 	 */
 	.sidebar-wide,
 	.sidebar-narrow {
-		--sidebar-caret: 1.75rem;
-		--sidebar-caret-gap: var(--space-1);
-		--sidebar-step: 1.25rem;
-		/* The guide line runs down the middle of the parent's caret. */
-		--sidebar-line-at: calc(var(--sidebar-caret) / 2);
-		/* From the guide line to where the list's rows start. */
-		--sidebar-line-to-rows: calc(var(--sidebar-step) - var(--sidebar-line-at));
+		--sidebar-step: 1rem;
 	}
 
 	summary {
@@ -446,20 +423,6 @@
 		margin: 0 0 var(--space-2);
 	}
 
-	.back-link {
-		display: inline-flex;
-		align-items: center;
-		gap: var(--space-1);
-		min-height: 2rem;
-		margin-left: -0.2rem;
-		color: var(--color-link);
-		font-weight: var(--font-weight-semibold);
-		text-decoration: none;
-	}
-
-	.back-link:hover {
-		text-decoration: underline;
-	}
 
 	.local-title {
 		margin: 0;
@@ -507,6 +470,15 @@
 		text-decoration: underline;
 	}
 
+	/* On the page's Changes view: marked like the page being read in the list above. */
+	.page-changes a[aria-current='page'] {
+		border-left: 3px solid var(--color-action);
+		border-radius: 0 var(--radius-control) var(--radius-control) 0;
+		padding-left: calc(var(--space-3) - 3px);
+		background: var(--color-surface);
+		font-weight: var(--font-weight-bold);
+	}
+
 	.sidebar-narrow .page-changes a {
 		min-height: var(--layout-target-minimum);
 	}
@@ -546,11 +518,6 @@
 	}
 
 	/* A page under one of the links, such as one chart under Data and charts. */
-	.local-link.held {
-		border-left-color: var(--color-line-strong, var(--color-line));
-		font-weight: var(--font-weight-semibold);
-	}
-
 	.number {
 		font-variant-numeric: tabular-nums;
 		color: var(--color-ink-muted);
@@ -565,22 +532,14 @@
 		font-style: italic;
 	}
 
-	/* The page's headings: a guide line down their left, the one being read marked on it. */
+	/* The page's headings: their text lines up with the pages above them, and the one being read is marked as a page is. */
 	.headings {
-		border-left: 1px solid var(--color-line);
 		font-size: 0.9rem;
 	}
 
-	.headings :global(.outline.flush > li > .entry) {
-		margin-left: -2px;
-	}
-
-	.headings.no-carets :global(.fold.space) {
-		display: none;
-	}
-
-	.headings.no-carets :global(.outline.flush > li > .entry > a) {
-		padding-left: var(--space-3);
+	/* With no label above them, a gap sets the headings apart from the pages. */
+	.headings.unlabeled {
+		margin-top: var(--space-4);
 	}
 
 	/* ---- Wide screens ---- */
@@ -618,7 +577,8 @@
 		}
 
 		/* A column the reader hid stays hidden from the first paint (app.html). */
-		:global(:root[data-sidebar-hidden='true']) .sidebar-wide {
+		:global(:root[data-sidebar-hidden='true']) .sidebar-wide,
+		.sidebar-wide.empty {
 			display: none;
 		}
 	}
@@ -763,8 +723,44 @@
 		font-weight: var(--font-weight-semibold);
 	}
 
-	.phone-sections summary.current {
+	.phone-sections summary.current,
+	.phone-name.current {
 		border-left-color: var(--color-action);
+	}
+
+	/* A section with a page of its own: its name is a link across the row, and its chevron, at the row's right end, opens its groups. */
+	.phone-sections > li.linked {
+		position: relative;
+	}
+
+	.phone-name {
+		display: flex;
+		align-items: center;
+		min-height: 3.5rem;
+		padding: 0 calc(3.5rem + var(--space-2)) 0 var(--space-4);
+		border-left: 4px solid transparent;
+		color: var(--color-ink);
+		font-size: var(--font-size-lead);
+		font-weight: var(--font-weight-semibold);
+		text-decoration: none;
+	}
+
+	.phone-name:focus-visible,
+	.phone-sections summary.toggle:focus-visible {
+		outline: 3px solid var(--focus-ring);
+		outline-offset: -3px;
+	}
+
+	.phone-sections summary.toggle {
+		position: absolute;
+		top: 0;
+		right: 0;
+		justify-content: center;
+		width: 3.5rem;
+		height: 3.5rem;
+		min-height: 0;
+		padding: 0;
+		border-left: 1px solid var(--color-line);
 	}
 
 	.phone-sections summary > :global(svg) {
@@ -795,8 +791,7 @@
 		min-height: var(--layout-target-minimum);
 	}
 
-	.phone-groups a,
-	.phone-home a {
+	.phone-groups a {
 		color: var(--color-link);
 		font-weight: var(--font-weight-semibold);
 	}
@@ -804,10 +799,6 @@
 	.phone-groups a[aria-current='page'] {
 		color: var(--color-ink);
 		font-weight: var(--font-weight-bold);
-	}
-
-	.phone-home {
-		margin: var(--space-2) 0 0;
 	}
 
 	/* The Workspace comes after the six sections, set apart by a wider rule, as in mockups/B-phone-menu-light.png. */

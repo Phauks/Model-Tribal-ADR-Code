@@ -1,0 +1,77 @@
+key: oneida-nation-of-new-york-v-cuomo-2011
+kind: federal-case
+citation:
+  type: legal_case
+  title: Oneida Nation of New York v. Cuomo
+  authority: United States Court of Appeals for the Second Circuit
+  container-title: F.3d
+  volume: '645'
+  page: '154'
+  issued:
+    date-parts:
+    - - 2011
+      - 5
+      - 9
+  URL: https://static.case.law/f3d/645/html/0154-01.html
+  accessed:
+    date-parts:
+    - - 2026
+      - 11
+      - 26
+original_link: https://static.case.law/f3d/645/html/0154-01.html
+retrieved: '2026-11-26'
+archives: []
+history:
+  status: live
+  last_checked: '2026-11-26'
+rights:
+  status: no-permission-needed
+  basis: government-edict
+  basis_note: The text of a judicial opinion has no copyright (Georgia v. Public.Resource.Org, Inc., 590 U.S. 255 (2020)). The copy served on this site is the court's opinion only, without the publisher's headnotes, synopsis or other editorial matter (decision record 0060).
+  redistribution: true
+tribes:
+- seneca-nation-of-indians
+- saint-regis-mohawk-tribe
+- poospatuck-indian-nation
+- oneida-nation
+nations_in_case:
+  checked: '2026-11-26'
+  named:
+  - nation: seneca-nation-of-indians
+    named_as: Seneca Nation of Indians
+    role: party
+    note: Matched by the script to the nation record of the same name; not yet checked.
+  - nation: saint-regis-mohawk-tribe
+    named_as: St. Regis Mohawk Tribe
+    role: party
+    historical: true
+    note: Matched by the script to the only nation record sharing this name; not yet checked against the case's history.
+  - nation: poospatuck-indian-nation
+    named_as: Unkechauge Indian Nation
+    role: party
+    note: Matched by the script to the nation record of the same name; not yet checked.
+  - nation: oneida-nation
+    named_as: Oneida Nation of New York
+    role: party
+    note: Matched by the script to a name the nation record gives; not yet checked.
+  not_linked:
+  - named_as: Cayuga Indian Nation of New York
+    reason: More than one of today's nations shares this name (cayuga-nation, seneca-cayuga-nation); which the case concerns has not been checked.
+jurisdictions:
+- level: federal
+topics:
+- federal-court-indian-law
+found_in:
+- 2026-11-26-federal-court-indian-law-opinions
+notes: Published at 645 F.3d 154. Decided by the United States Court of Appeals for the Second Circuit on May 9, 2011. Found by scripts/caselaw/state_court_opinions.py in the Caselaw Access Project's volumes, with an Indian law term score of 90, at or above 10, the level kept without a reading.
+review:
+  status: unverified
+  by: scripts/caselaw/state_court_opinions.py
+  date: '2026-11-26'
+  checks:
+  - check: 'Indian law case: the term score and, below the score kept without a reading, an AI reader''s judgment of excerpts'
+    result: agree
+    detail: score 90
+  - check: Nations named in the caption, matched to nation records by name
+    result: missing
+    detail: 4 matched, 1 not linked

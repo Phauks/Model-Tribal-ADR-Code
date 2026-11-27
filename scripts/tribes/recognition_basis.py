@@ -166,6 +166,59 @@ DETERMINED = {
     "pamunkey-indian-tribe": "Final Determination for Federal Acknowledgment of the Pamunkey Indian Tribe, 80 Fed. Reg. 39144 (July 8, 2015)",
 }
 
+# Rancherias restored by the court order of Dec. 22, 1983 in Tillie Hardwick v.
+# United States. The project does not hold the order; the Indian Health Service's
+# notice of Aug. 25, 1988 marks each of these 17 entries in its table with note 3,
+# "Restored by Court Order issued December 22, 1983, in Tillie Hardwick v. U.S.,
+# Civil No. C-79-1910-SW, U.S. District Court for the Northern District of
+# California" (53 Fed. Reg. 32463). Read on the page images on Nov. 27, 2026.
+# Nation -> (page of its entry in the notice's table, name the notice gives it).
+HARDWICK_NOTICE = "ihs-health-service-delivery-areas-1988"
+JUDGED_SEARCHED = "2026-11-27"
+JUDGED = {
+    "big-valley-band-of-pomo-indians-of-the-big-valley-rancheria": ("32460", "Big Valley Rancheria"),
+    "blue-lake-rancheria": ("32460", "Blue Lake Rancheria"),
+    "buena-vista-rancheria-of-me-wuk-indians-of-california": ("32460", "Buena Vista Rancheria"),
+    "chicken-ranch-rancheria-of-me-wuk-indians-of-california": ("32460", "Chicken Ranch Rancheria"),
+    "cloverdale-rancheria-of-pomo-indians-of-california": ("32460", "Cloverdale Rancheria"),
+    "elk-valley-rancheria": ("32461", "Elk Valley Rancheria"),
+    "greenville-rancheria": ("32461", "Greenville Rancheria"),
+    "mooretown-rancheria-of-maidu-indians-of-california": ("32462", "Mooretown Rancheria"),
+    "northfork-rancheria-of-mono-indians-of-california": ("32462", "North Fork Rancheria"),
+    "picayune-rancheria-of-chukchansi-indians-of-california": ("32462", "Picayune Rancheria"),
+    "pinoleville-pomo-nation": ("32462", "Pinoleville Rancheria"),
+    "potter-valley-tribe": ("32462", "Potter Valley Rancheria"),
+    "quartz-valley-indian-community-of-the-quartz-valley-reservation-of-california": ("32462", "Quartz Valley Rancheria"),
+    "redding-rancheria": ("32462", "Redding Rancheria"),
+    "redwood-valley-or-little-river-band-of-pomo-indians-of-the-redwood-valley-rancheria-california": ("32462", "Redwood Valley Rancheria"),
+    "bear-river-band-of-the-rohnerville-rancheria": ("32462", "Rohnerville Rancheria"),
+    "tolowa-dee-ni-nation": ("32462", "Smith River Rancheria"),
+}
+JUDGMENT = "Tillie Hardwick v. United States, No. C-79-1910-SW (N.D. Cal. Dec. 22, 1983) (order restoring the rancheria)"
+NOTICE = ("Geographic Composition of the Health Service Delivery Areas (HSDA) Established by Regulations of the Indian "
+          "Health Service, 53 Fed. Reg. 32460, {page} (Aug. 25, 1988)")
+
+
+def judged_fact(identifier: str) -> tuple[dict, str]:
+    page, listed = JUDGED[identifier]
+    pin = f"{page}, 32463 n.3"
+    citation = f"{JUDGMENT}, noted in {NOTICE.format(page=pin)}"
+    fact = {
+        "type": "federal",
+        "legal_basis": citation,
+        "since": "1983-12-22",
+        "source": HARDWICK_NOTICE,
+        "confidence": "high",
+        "verification": "read-in-full",
+        "as_of": "1988-08-25",
+        "locator": f"53 Fed. Reg. {page} (table entry \"{listed}\", note 3) and 32463 (note 3)",
+        "note": (f"The Indian Health Service's table of health service delivery areas marks the entry \"{listed}\" with note 3, "
+                 "\"Restored by Court Order issued December 22, 1983, in Tillie Hardwick v. U.S., Civil No. C-79-1910-SW, U.S. "
+                 "District Court for the Northern District of California\". The project does not hold the order itself."),
+    }
+    return fact, citation
+
+
 # Nations whose own basis is an administrative decision without a Federal
 # Register citation the project holds: left as the source words them.
 ADMINISTRATIVE = {"ione-band-of-miwok-indians-of-california", "tejon-indian-tribe"}
@@ -240,6 +293,11 @@ def update_profile(identifier: str) -> str | None:
         if not any(existing.get("source") == fact["source"] for existing in recognition):
             index = next(i for i, existing in enumerate(recognition) if existing.get("source") == LIST_SOURCE) + 1
             recognition.insert(index, fact)
+    elif identifier in JUDGED:
+        fact, own = judged_fact(identifier)
+        recognition = [existing for existing in recognition if existing.get("source") != HARDWICK_NOTICE]
+        index = next(i for i, existing in enumerate(recognition) if existing.get("source") == LIST_SOURCE) + 1
+        recognition.insert(index, fact)
     elif identifier in DETERMINED:
         own = DETERMINED[identifier] + PART83
         for existing in recognition:
@@ -344,6 +402,25 @@ def search_log(identifier: str, own: str | None) -> None:
             "government. Until then the Bureau of Indian Affairs list is the document cited.")
     path = LOGS / (identifier[0] if identifier[0].isalpha() else "_other") / f"{identifier}.yaml"
     path.parent.mkdir(parents=True, exist_ok=True)
+    if identifier in JUDGED and path.exists():
+        # The search of Nov. 27, 2026 that found the Hardwick restoration is added to the log of Nov. 23.
+        existing = yaml.safe_load(path.read_text())
+        if not any(search.get("date") == JUDGED_SEARCHED for search in existing.get("searches") or []):
+            existing["searches"].append({
+                "date": JUDGED_SEARCHED,
+                "searched_by": "Claude (AI assistant)",
+                "method": "by-hand",
+                "place_kind": "federal-register",
+                "address": "https://api.govinfo.gov/search",
+                "query": "GovInfo full-text search of the Federal Register for \"Tillie Hardwick\"; the notice found was read on its page images",
+                "outcome": "found",
+                "reason": f"Cited: {own}.",
+            })
+            existing["status"] = "found"
+            existing["last_searched"] = JUDGED_SEARCHED
+            existing.pop("next_steps", None)
+            path.write_text(dump(existing))
+        return
     if path.exists():
         existing = yaml.safe_load(path.read_text())
         if existing.get("searches") and existing["searches"][0].get("date") == TODAY:
@@ -362,14 +439,14 @@ def federal_nations() -> list[str]:
 
 def main() -> None:
     nations = federal_nations()
-    missing = [identifier for identifier in [*LEGISLATED, *DETERMINED, *ADMINISTRATIVE] if identifier not in nations]
+    missing = [identifier for identifier in [*LEGISLATED, *DETERMINED, *JUDGED, *ADMINISTRATIVE] if identifier not in nations]
     if missing:
         raise SystemExit(f"not federal nations in the dataset: {missing}")
     for key in sorted({LEGISLATED[identifier][0] for identifier in LEGISLATED}):
         source_record(key)
     found = 0
     for identifier in nations:
-        own = update_profile(identifier) if identifier in LEGISLATED or identifier in DETERMINED else None
+        own = update_profile(identifier) if identifier in LEGISLATED or identifier in DETERMINED or identifier in JUDGED else None
         if identifier in ADMINISTRATIVE:
             own = ("the administrative decision the Office of Federal Acknowledgment list records, worded as the list words "
                    "it; no Federal Register notice of it was found")

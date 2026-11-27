@@ -11,6 +11,16 @@ recognition:
   verification: bulk-import
   as_of: '2026-01-30'
   locator: 91 Fed. Reg. 4105
+- type: federal
+  earliest_record: treaty
+  legal_basis: Treaty with the Six Nations, Oct. 22, 1784, 7 Stat. 15
+  since: '1784-10-22'
+  source: treaty-with-the-six-nations-1784
+  confidence: medium
+  verification: inferred
+  as_of: '1784-10-22'
+  locator: p. 5 (Treaty with the Six Nations, 1784; Kappler header "Oct. 22, 1784. | 7 Stat., 15.")
+  note: The earliest record this site has found that shows the United States dealing with the nation as a federally recognized nation. The relationship may be older. The treaty names the Mohawk; the nation's profile links it to the treaty by name, and the link has not yet been checked against a second source. 8 nations' profiles link this treaty.
 states:
 - state: NY
   presence: government-office
@@ -720,6 +730,30 @@ jurisdiction:
   verification: read-in-full
   locator: 25 U.S.C. § 233; Act of Sept. 13, 1950, ch. 947, 64 Stat. 845
   note: Section 233 also excludes civil actions involving Indian lands or claims about events before Sept. 13, 1952; tribes could preserve their own laws and customs by enactment before Sept. 13, 1952.
+- topic: environmental-treatment-as-a-state
+  value: clean-water-act-water-quality-standards
+  detail: EPA found the nation eligible on Oct. 16, 2002 to set water quality standards (treatment in a similar manner as a state under Clean Water Act § 518), and first approved its standards on Sept. 14, 2007.
+  source: epa-actions-on-tribal-water-quality-standards
+  confidence: high
+  verification: inferred
+  as_of: '2002-10-16'
+  locator: 'Table of approvals by Tribe, column "Regulatory Programs": "WQS Program"'
+- topic: environmental-treatment-as-a-state
+  value: clean-air-act-implementation-plan
+  detail: EPA has approved the nation for treatment in a similar manner as a state for tribal implementation plan (Clean Air Act § 110).
+  source: epa-tribes-approved-for-treatment-as-a-state
+  confidence: high
+  verification: inferred
+  as_of: '2026-10-21'
+  locator: 'Table of approvals by Tribe, column "Regulatory Programs with an Enforcement Component": "TIP"'
+- topic: environmental-treatment-as-a-state
+  value: clean-air-act-administrative-functions
+  detail: 'EPA has approved the nation for treatment in a similar manner as a state to perform administrative functions under the Clean Air Act: § 505(a)(2).'
+  source: epa-tribes-approved-for-treatment-as-a-state
+  confidence: high
+  verification: inferred
+  as_of: '2026-10-21'
+  locator: 'Table of approvals by Tribe, column "Administrative Functions": "CAA § 505(a)(2)"'
 jurisdiction_agreements:
 - kind: child-welfare-agreement
   other_party: New York State Office of Children and Family Services

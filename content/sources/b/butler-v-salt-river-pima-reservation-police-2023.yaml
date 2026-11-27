@@ -1,0 +1,56 @@
+key: butler-v-salt-river-pima-reservation-police-2023
+kind: federal-case
+citation:
+  type: legal_case
+  title: Butler v. Salt River Pima Reservation Police
+  authority: United States District Court for the District of Arizona
+  issued:
+    date-parts:
+    - - 2023
+      - 8
+      - 29
+  URL: https://www.courtlistener.com/opinion/9536280/butler-v-salt-river-pima-reservation-police/
+  accessed:
+    date-parts:
+    - - 2026
+      - 11
+      - 26
+original_link: https://www.courtlistener.com/opinion/9536280/butler-v-salt-river-pima-reservation-police/
+retrieved: '2026-11-26'
+archives: []
+history:
+  status: live
+  last_checked: '2026-11-26'
+rights:
+  status: no-permission-needed
+  basis: government-edict
+  basis_note: The text of a judicial opinion has no copyright (Georgia v. Public.Resource.Org, Inc., 590 U.S. 255 (2020)). The copy served on this site is the court's opinion only, without the publisher's headnotes, synopsis or other editorial matter (decision record 0060).
+  redistribution: true
+tribes:
+- salt-river-pima-maricopa-indian-community-of-the-salt-river-reservation
+nations_in_case:
+  checked: '2026-11-26'
+  named:
+  - nation: salt-river-pima-maricopa-indian-community-of-the-salt-river-reservation
+    named_as: Salt River Pima Reservation
+    role: party
+    historical: true
+    note: Matched by the script to the only nation record sharing this name; not yet checked against the case's history.
+jurisdictions:
+- level: federal
+topics:
+- federal-court-indian-law
+found_in:
+- 2026-11-26-federal-court-indian-law-opinions
+notes: Docket 2:23-cv-01234; no reporter citation yet. Decided by the United States District Court for the District of Arizona on Aug. 29, 2023. Found by scripts/caselaw/courtlistener_federal_opinions.py and scripts/caselaw/state_court_opinions.py in CourtListener's bulk files, with an Indian law term score of 13, at or above 10, the level kept without a reading.
+review:
+  status: unverified
+  by: scripts/caselaw/state_court_opinions.py
+  date: '2026-11-26'
+  checks:
+  - check: 'Indian law case: the term score and, below the score kept without a reading, an AI reader''s judgment of excerpts'
+    result: agree
+    detail: score 13
+  - check: Nations named in the caption, matched to nation records by name
+    result: agree
+    detail: 1 matched, 0 not linked

@@ -516,12 +516,11 @@
 		visibility: visible;
 	}
 
-	/* The choice the arrow keys are on looks like a focused control, as in the plain dropdown. */
+	/* The choice the arrow keys are on: a teal tint with a ring-colored bar at its left, as in the plain dropdown. */
 	.searchable-dropdown-option.active {
-		background: var(--color-focus);
-		color: var(--focus-text);
-		outline: 3px solid var(--color-focus-ring);
-		outline-offset: -3px;
+		background: var(--color-selection);
+		color: var(--color-ink);
+		box-shadow: inset 3px 0 0 var(--focus-ring);
 	}
 
 	.searchable-dropdown-option.active .searchable-dropdown-description {

@@ -702,7 +702,8 @@
 		box-shadow: 0 1px 2px color-mix(in srgb, var(--color-ink) 12%, transparent);
 	}
 	.segments label:focus-within {
-		box-shadow: 0 0 0 3px var(--color-focus);
+		outline: 3px solid var(--focus-ring);
+		outline-offset: 2px;
 	}
 	.field-inline {
 		display: inline-flex;
@@ -715,7 +716,8 @@
 		font-size: var(--font-size-small);
 	}
 	.field-inline:focus-within {
-		box-shadow: 0 0 0 3px var(--color-focus);
+		outline: 3px solid var(--focus-ring);
+		outline-offset: 2px;
 	}
 	.field-inline input {
 		width: 5.5rem;

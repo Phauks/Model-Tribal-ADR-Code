@@ -1,0 +1,50 @@
+key: minnesota-statutes-626-91
+kind: state-statute
+citation:
+  type: legislation
+  title: Law Enforcement Authority; Lower Sioux Indian Community Peace Officers
+  title-short: Minn. Stat. § 626.91
+  container-title: Minnesota Statutes
+  container-title-short: Minn. Stat.
+  section: '626.91'
+  author:
+  - literal: Minnesota Office of the Revisor of Statutes
+  issued:
+    date-parts:
+    - - 1997
+  URL: https://www.revisor.mn.gov/statutes/cite/626.91
+  accessed:
+    date-parts:
+    - - 2026
+      - 11
+      - 27
+original_link: https://www.revisor.mn.gov/statutes/cite/626.91
+retrieved: '2026-11-27'
+archives: []
+history:
+  status: live
+  last_checked: '2026-11-27'
+state_law:
+  relevance: core
+  citation: Minn. Stat. § 626.91 (2026)
+rights:
+  status: no-permission-needed
+  basis: government-edict
+  basis_note: 'Official state statutes are not copyrightable under the government edicts doctrine (Georgia v. Public.Resource.Org, Inc., 590 U.S. 255 (2020)). Linked, not served: state statutes stay link only.'
+  redistribution: false
+jurisdictions:
+- level: state
+  state: MN
+topics:
+- state-indian-law
+found_in:
+- 2026-11-27-state-statutes-third-batch
+notes: 'Indigo Book citation: Minn. Stat. § 626.91 (2026). History: 1997 c 185 s 1; 1998 c 386 art 2 s 98; 2000 c 411 s 4; 2005 c 10 art 2 s 4; 2023 c 52 art 10 s 27,28. Text read from the Minnesota Revisor of Statutes'' full-text chapter page for the section (revisor.mn.gov/statutes) on Nov. 27, 2026. Found by the state statutes sweep (terms: indian community; indian; lower sioux); AI reader''s verdict core: Lower Sioux Indian Community peace officer and law enforcement powers. Unverified.'
+review:
+  status: unverified
+  by: scripts/law/state_statutes/run.py
+  date: '2026-11-27'
+  checks:
+  - check: 'Indian law section: the sweep''s keyword pass and an AI reader''s verdict (core, incidental or none)'
+    result: agree
+    detail: 'core; terms: indian community; indian; lower sioux'

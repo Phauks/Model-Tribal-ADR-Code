@@ -1,0 +1,47 @@
+key: idaho-code-63-602a
+kind: state-statute
+citation:
+  type: legislation
+  title: Property exempt from taxation — Government property
+  title-short: Idaho Code § 63-602A
+  container-title: Idaho Code
+  container-title-short: Idaho Code
+  section: 63-602A
+  author:
+  - literal: Idaho Legislature
+  URL: https://legislature.idaho.gov/statutesrules/idstat/Title63/T63CH6/SECT63-602A
+  accessed:
+    date-parts:
+    - - 2026
+      - 11
+      - 27
+original_link: https://legislature.idaho.gov/statutesrules/idstat/Title63/T63CH6/SECT63-602A
+retrieved: '2026-11-27'
+archives: []
+history:
+  status: live
+  last_checked: '2026-11-27'
+state_law:
+  relevance: incidental
+  citation: Idaho Code § 63-602A (2026)
+rights:
+  status: no-permission-needed
+  basis: government-edict
+  basis_note: 'Official state statutes are not copyrightable under the government edicts doctrine (Georgia v. Public.Resource.Org, Inc., 590 U.S. 255 (2020)). Linked, not served: state statutes stay link only.'
+  redistribution: false
+jurisdictions:
+- level: state
+  state: ID
+topics:
+- state-indian-law
+found_in:
+- 2026-11-27-state-statutes-third-batch
+notes: 'Indigo Book citation: Idaho Code § 63-602A (2026). History: 63-602A added 1996, ch. 98, sec. 7, p. 348; am. 2003, ch. 8, sec. 2, p. 16; am. 2013, ch. 134, sec. 1, p. 306. Text read from the Idaho Legislature''s page for the section in the Idaho Statutes (legislature.idaho.gov/statutesrules/idstat) on Nov. 27, 2026. Found by the state statutes sweep (terms: federally recognized indian tribe; indian tribe; indian; reservation; tribe); AI reader''s verdict incidental: Exempts property of federally recognized tribe within reservation from taxation. Unverified.'
+review:
+  status: unverified
+  by: scripts/law/state_statutes/run.py
+  date: '2026-11-27'
+  checks:
+  - check: 'Indian law section: the sweep''s keyword pass and an AI reader''s verdict (core, incidental or none)'
+    result: agree
+    detail: 'incidental; terms: federally recognized indian tribe; indian tribe; indian; reservation; tribe'

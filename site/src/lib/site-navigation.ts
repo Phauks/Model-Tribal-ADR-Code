@@ -106,8 +106,15 @@ export type NavigationGroup = { title: string; links: NavigationLink[] };
 export type NavigationSection = {
 	key: string;
 	label: string;
-	/** The section's own page, where it has one. */
+	/**
+	 * The section's own page, which its name in the section bar and the phone
+	 * Menu sheet links to (Trevor, Nov. 27, 2026: no "All of …" link; every
+	 * section has a home). Each of the six sections has one; the Workspace
+	 * has one only when the reader's role opens its Overview.
+	 */
 	home?: string;
+	/** The section's name in sentence case, as its own page's title and the breadcrumbs give it. */
+	title?: string;
 	groups: NavigationGroup[];
 	/**
 	 * The addresses that belong to the section besides its links: a path and
@@ -158,6 +165,8 @@ export const navigationSections: NavigationSection[] = [
 	{
 		key: 'federal-law',
 		label: 'Federal Law',
+		title: 'Federal law',
+		home: '/laws',
 		groups: [
 			{
 				title: 'Laws',
@@ -177,6 +186,15 @@ export const navigationSections: NavigationSection[] = [
 				]
 			},
 			{
+				title: 'Congress',
+				links: [
+					{ label: 'Hearings', link: '/stats/congressional-hearings', icon: 'message-square', count: 'congressional-hearings' },
+					{ label: 'Committee Reports', link: '/stats/committee-reports', icon: 'file-text', count: 'committee-reports' },
+					{ label: 'Committee Prints', link: '/stats/committee-prints', icon: 'scroll-text', count: 'committee-prints' },
+					{ label: 'Research Service Reports', link: '/stats/congressional-research-service-reports', icon: 'library', count: 'congressional-research-service-reports' }
+				]
+			},
+			{
 				title: 'Agency Records',
 				links: [
 					{ label: 'Acknowledgment Petitions', link: '/stats/federal-acknowledgment', icon: 'file-check', count: 'federal-acknowledgment' },
@@ -190,6 +208,8 @@ export const navigationSections: NavigationSection[] = [
 	{
 		key: 'courts-and-cases',
 		label: 'Courts and Cases',
+		title: 'Courts and cases',
+		home: '/cases',
 		groups: [
 			{
 				title: 'U.S. Supreme Court',
@@ -254,6 +274,7 @@ export const navigationSections: NavigationSection[] = [
 	{
 		key: 'writing',
 		label: 'Writing',
+		home: '/writing',
 		groups: [
 			{
 				title: 'Published',

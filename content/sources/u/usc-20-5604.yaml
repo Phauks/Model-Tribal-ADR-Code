@@ -39,6 +39,11 @@ reading_links:
     label: "Lexis"
     access: subscription
     link: https://advance.lexis.com/api/search?q=20%20U.S.C.%20%C2%A7%205604
+file:
+  storage_key: united-states-code/2024/title-20-section-5604.pdf
+  checksum: 337a7bd4b614b804fbf87b21a9756b2e7ce27d965467f034db121d8b648f4c78
+  media_type: application/pdf
+  bytes: 137484
 rights:
   status: no-permission-needed
   basis: us-government-work
@@ -65,4 +70,5 @@ access:
     and Conflict Resolution Act of 1998 history.
 found_in:
 - 2026-11-21-united-states-dispute-resolution
-notes: Read on the original page. Citator check not yet run.
+- 2026-11-27-us-code-sections
+notes: Read on the original page. Citator check not yet run. The stored copy is 20 U.S.C. § 5604 from the 2024 edition of the Code on GovInfo (the text with its notes), saved by scripts/law/us_code_sections.py.

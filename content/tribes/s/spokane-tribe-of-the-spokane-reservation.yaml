@@ -11,6 +11,16 @@ recognition:
   verification: bulk-import
   as_of: '2026-01-30'
   locator: 91 Fed. Reg. 4105
+- type: federal
+  earliest_record: land
+  legal_basis: Exec. Order of Jan. 18, 1881, 1 Kappler 925
+  since: '1881-01-18'
+  source: executive-order-1881-01-18-spokane-reservation
+  confidence: high
+  verification: read-in-full
+  as_of: '1881-01-18'
+  locator: 1 Kappler 925
+  note: The earliest record this site has found that shows the United States dealing with the nation as a federally recognized nation. The relationship may be older. The instrument first set aside the Spokane Reserve, Washington Territory.
 states:
 - state: WA
   presence: government-office
@@ -755,6 +765,14 @@ jurisdiction:
     to the roster. Row re-read on 2026-11-22 from the page image (the govinfo PDF has no text layer for
     the table); verification level unchanged because the name was not matched word for word in machine-read
     text.'
+- topic: environmental-treatment-as-a-state
+  value: clean-water-act-water-quality-standards
+  detail: EPA found the nation eligible on July 23, 2002 to set water quality standards (treatment in a similar manner as a state under Clean Water Act § 518), and first approved its standards on Apr. 22, 2003.
+  source: epa-actions-on-tribal-water-quality-standards
+  confidence: high
+  verification: inferred
+  as_of: '2002-07-23'
+  locator: 'Table of approvals by Tribe, column "Regulatory Programs": "WQS Program"'
 court_practice:
 - kind: forms
   title: Links for Court Documents

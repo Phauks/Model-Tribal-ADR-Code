@@ -11,6 +11,16 @@ recognition:
   verification: bulk-import
   as_of: '2026-01-30'
   locator: 91 Fed. Reg. 4105
+- type: federal
+  earliest_record: treaty
+  legal_basis: Treaty with the Osage, Nov. 10, 1808, 7 Stat. 107
+  since: '1808-11-10'
+  source: treaty-with-the-osage-1808
+  confidence: medium
+  verification: inferred
+  as_of: '1808-11-10'
+  locator: p. 95 (Treaty with the Osage, 1808; Kappler header "Nov. 10, 1808. | 7 Stat., 107. | Ratified Apr. 28, 1810.")
+  note: The earliest record this site has found that shows the United States dealing with the nation as a federally recognized nation. The relationship may be older. The treaty names the Great Osage; Little Osage; the nation's profile links it to the treaty by name, and the link has not yet been checked against a second source.
 states:
 - state: OK
   presence: government-office
@@ -794,6 +804,14 @@ jurisdiction:
   as_of: '2017-07-18'
   locator: Answer, second and third paragraphs (the lists of mandatory and optional states)
   note: Inferred from the state's absence from both lists. Nation placed in Oklahoma by the Census Bureau's land areas.
+- topic: hearth-act-leasing-regulations
+  value: approved
+  detail: The Secretary of the Interior approved the leasing regulations (Business) of the Osage Nation, as the Bureau of Indian Affairs' list names it, under the HEARTH Act, 25 U.S.C. § 415(h), on July 17, 2017, so the nation can lease its trust land for those purposes under its own regulations without the Bureau of Indian Affairs approving each lease.
+  source: hearth-act-leasing-regulations-the-osage-nation-2017-07-17
+  confidence: high
+  verification: inferred
+  as_of: '2017-07-17'
+  locator: Bureau of Indian Affairs, Approved HEARTH Act Regulations, Approved in 2017
 jurisdiction_agreements:
 - kind: child-welfare-agreement
   other_party: Oklahoma Department of Human Services

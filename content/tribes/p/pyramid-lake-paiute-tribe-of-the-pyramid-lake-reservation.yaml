@@ -11,6 +11,16 @@ recognition:
   verification: bulk-import
   as_of: '2026-01-30'
   locator: 91 Fed. Reg. 4104
+- type: federal
+  earliest_record: land
+  legal_basis: Letter of Comm'r of Indian Affairs, Nov. 29, 1859, 1 Kappler 868
+  since: '1859-11-29'
+  source: letter-1859-11-29-pyramid-lake-walker-lake-reservations
+  confidence: medium
+  verification: read-in-full
+  as_of: '1859-11-29'
+  locator: 1 Kappler 868
+  note: The earliest record this site has found that shows the United States dealing with the nation as a federally recognized nation. The relationship may be older. The instrument first set aside the Pyramid Lake (Truckee) Reserve, Nevada.
 states:
 - state: NV
   presence: government-office
@@ -746,6 +756,22 @@ jurisdiction:
   verification: read-in-full
   locator: 88 Nev. at 446
   note: The court held state courts lacked jurisdiction over Pyramid Lake members' crimes on the reservation and vacated the convictions. Nevada Supreme Court, 1972.
+- topic: hearth-act-leasing-regulations
+  value: approved
+  detail: The Secretary of the Interior approved the leasing regulations (Business) of the Pyramid Lake Paiute Tribe, as the Bureau of Indian Affairs' list names it, under the HEARTH Act, 25 U.S.C. § 415(h), on Dec. 22, 2021, so the nation can lease its trust land for those purposes under its own regulations without the Bureau of Indian Affairs approving each lease.
+  source: hearth-act-leasing-regulations-pyramid-lake-paiute-tribe-of-the-pyramid-lake-reservation-2021-12-22
+  confidence: high
+  verification: inferred
+  as_of: '2021-12-22'
+  locator: Bureau of Indian Affairs, Approved HEARTH Act Regulations, Approved in 2021
+- topic: environmental-treatment-as-a-state
+  value: clean-water-act-water-quality-standards
+  detail: EPA found the nation eligible on Jan. 30, 2007 to set water quality standards (treatment in a similar manner as a state under Clean Water Act § 518), and first approved its standards on Dec. 19, 2008.
+  source: epa-actions-on-tribal-water-quality-standards
+  confidence: high
+  verification: inferred
+  as_of: '2007-01-30'
+  locator: 'Table of approvals by Tribe, column "Regulatory Programs": "WQS Program"'
 court_practice:
 - kind: forms
   title: Applications & Forms (Tribal Court page forms)

@@ -17,6 +17,12 @@
 	arrow keys move between them, Enter opens the case and Escape closes the
 	card. On a narrow screen the card is a sheet along the bottom.
 
+	A bar above the chart steps through the cases one at a time, earlier and
+	later (CaseStepper; Trevor, Nov. 27, 2026: "a nav bar for the judicial
+	timelines so that you can navigate through each case as they go by"). Its
+	case stays drawn down through the bench until another is chosen, and it
+	stays in view while the chart does.
+
 	On a Justice's page (`self`), each diamond is that Justice's own vote
 	instead, with the totals in the key.
 
@@ -28,6 +34,7 @@
 	import { outcomeText, type BenchVote, type ChartCase } from '#lib/bench-chart.ts';
 	import { surname } from '#lib/case-opinions.ts';
 	import CaseDiamond from './CaseDiamond.svelte';
+	import CaseStepper from './CaseStepper.svelte';
 	import CaseVoteCard from './CaseVoteCard.svelte';
 	import CountBadge from './CountBadge.svelte';
 	import VoteMark from './VoteMark.svelte';
@@ -123,6 +130,8 @@
 	/* The chosen case ------------------------------------------------------- */
 
 	let chosen = $state<number | undefined>();
+	/** The case the bar above the chart is on, which stays marked when a card closes. */
+	let stepped = $state<number | undefined>();
 	/** How the card was opened: a pointer resting on the mark, keyboard focus, or a click or tap that keeps it. */
 	let how = $state<'hover' | 'focus' | 'kept'>('hover');
 	/** Which mark takes the tab stop. */
@@ -130,15 +139,20 @@
 	let anchor = $state<{ left: number; right: number; top: number; bottom: number }>();
 	let narrow = $state(false);
 	let svg = $state<SVGSVGElement>();
+	let frame = $state<HTMLDivElement>();
 	let closing: ReturnType<typeof setTimeout> | undefined;
 
-	const active = $derived(chosen === undefined ? undefined : placed[chosen]);
+	const onBar = $derived(stepped !== undefined && stepped < placed.length ? stepped : undefined);
+	/** The case drawn down through the bench: the card's, or else the bar's. */
+	const marking = $derived(chosen ?? onBar);
+	const active = $derived(marking === undefined ? undefined : placed[marking]);
+	const carded = $derived(chosen === undefined ? undefined : placed[chosen]);
 
 	function place() {
-		if (!active || !svg) return;
+		if (!carded || !svg) return;
 		const box = svg.getBoundingClientRect();
 		const scale = box.width / width;
-		const left = box.left + active.cx * scale;
+		const left = box.left + carded.cx * scale;
 		anchor = { left, right: left, top: box.top + (top - 2) * scale, bottom: box.top + height * scale };
 	}
 
@@ -147,7 +161,20 @@
 		chosen = index;
 		current = index;
 		how = by;
+		if (by !== 'hover') stepped = index;
 		place();
+	}
+
+	/** The bar moved: mark that case, close any card, and bring it into view where the chart scrolls sideways. */
+	function onStep(index: number) {
+		close();
+		stepped = index;
+		current = index;
+		const entry = placed[index];
+		if (!frame || !svg || !entry) return;
+		const scale = svg.getBoundingClientRect().width / width;
+		const at = entry.cx * scale;
+		if (at < frame.scrollLeft + 40 || at > frame.scrollLeft + frame.clientWidth - 40) frame.scrollLeft = at - frame.clientWidth / 2;
 	}
 
 	function close() {
@@ -238,7 +265,12 @@
 </script>
 
 <figure class="bench-chart">
-	<div class="frame">
+	{#if placed.length > 0}
+		<div class="bar-holder">
+			<CaseStepper cases={placed.map((entry) => entry.item)} index={onBar} onmove={onStep} showCourt={!self} />
+		</div>
+	{/if}
+	<div class="frame" bind:this={frame}>
 		<!-- Narrow drawings may shrink as far as wide ones, scale for scale, before the frame scrolls. -->
 		<svg bind:this={svg} viewBox="0 0 {width} {height}" width="100%" style:min-width="{(width * 34) / 760}rem" role="group" aria-label="Cases on this site, by date">
 			<g aria-hidden="true">
@@ -266,7 +298,7 @@
 			</g>
 			{#each placed as entry, index (entry.item.key)}
 				{@const cy = markY(entry.level)}
-				{@const isActive = chosen === index}
+				{@const isActive = marking === index}
 				{@const own = self ? ownVote(entry.item) : undefined}
 				<!-- svelte-ignore a11y_click_events_have_key_events -- the keys are handled in onkeydown -->
 				<g
@@ -275,8 +307,8 @@
 					role="button"
 					tabindex={index === current ? 0 : -1}
 					aria-label={label(entry.item)}
-					aria-expanded={isActive}
-					aria-controls={isActive ? cardId : undefined}
+					aria-expanded={chosen === index}
+					aria-controls={chosen === index ? cardId : undefined}
 					onpointerenter={(event) => {
 						if (event.pointerType === 'mouse' && how !== 'kept') open(index, 'hover');
 					}}
@@ -333,10 +365,10 @@
 			{/if}
 		</p>
 	{/if}
-	{#if active}
+	{#if carded}
 		<CaseVoteCard
 			id={cardId}
-			item={active.item}
+			item={carded.item}
 			anchor={narrow ? undefined : anchor}
 			sheet={narrow}
 			position="{(chosen ?? 0) + 1} of {placed.length}"
@@ -356,6 +388,21 @@
 
 	.frame {
 		overflow-x: auto;
+	}
+
+	/* Held in view while the chart is, under the masthead. */
+	.bar-holder {
+		position: sticky;
+		top: calc(var(--masthead-stuck, 0px) + var(--space-2));
+		z-index: 2;
+		margin-bottom: var(--space-2);
+	}
+
+	/* Below the Menu strip, which stays at the top on narrower screens. */
+	@media (max-width: 63.99rem) {
+		.bar-holder {
+			top: calc(var(--masthead-stuck, 0px) + var(--layout-target-minimum) + 1px + var(--space-1));
+		}
 	}
 
 	svg {
@@ -428,9 +475,9 @@
 	}
 
 	.case:focus-visible .focus {
-		fill: var(--color-focus);
-		stroke: var(--color-focus-ring);
-		stroke-width: 2.5;
+		fill: none;
+		stroke: var(--focus-ring);
+		stroke-width: 3;
 	}
 
 	.key {

@@ -11,6 +11,16 @@ recognition:
   verification: bulk-import
   as_of: '2026-01-30'
   locator: 91 Fed. Reg. 4103
+- type: federal
+  earliest_record: treaty
+  legal_basis: Treaty with the Shoshoni-Goship, Oct. 12, 1863, 13 Stat. 681
+  since: '1863-10-12'
+  source: treaty-with-the-shoshoni-goship-1863
+  confidence: medium
+  verification: inferred
+  as_of: '1863-10-12'
+  locator: p. 859 (Treaty with the Shoshoni-Goship, 1863; Kappler header "Oct. 12, 1863. | 13 Stats., 681. | Ratified Mar. 7, 1864 | Proclaimed Jan. 17, 1865.")
+  note: The earliest record this site has found that shows the United States dealing with the nation as a federally recognized nation. The relationship may be older. The treaty names the Goship; the nation's profile links it to the treaty by name, and the link has not yet been checked against a second source. 2 nations' profiles link this treaty.
 states:
 - state: UT
   presence: government-office
@@ -503,6 +513,14 @@ jurisdiction:
   verification: read-in-full
   locator: 1973 Nev. Stat. ch. 601, § 1, subsec. 4, at 1052; NRS 41.430(4)
   note: 'Sections 1-5 took effect July 1, 1974 (§ 16). The current NRS text still carries this language. Goldberg (2010) says no tribe asked to continue; the 1976 AIPRC report says Ely Colony alone chose to keep state jurisdiction. Goldberg''s date for the assumption (1967) conflicts with the Statutes (1955). Also cites: nevada-revised-statutes-41-430.'
+- topic: environmental-treatment-as-a-state
+  value: clean-water-act-water-quality-standards
+  detail: EPA found the nation eligible on May 23, 2019 to set water quality standards (treatment in a similar manner as a state under Clean Water Act § 518); EPA's list gives no date of approved standards of the nation's own.
+  source: epa-actions-on-tribal-water-quality-standards
+  confidence: high
+  verification: inferred
+  as_of: '2019-05-23'
+  locator: 'Table of approvals by Tribe, column "Regulatory Programs": "WQS Program"'
 nearby_state_courts:
 - state: NV
   county: White Pine County

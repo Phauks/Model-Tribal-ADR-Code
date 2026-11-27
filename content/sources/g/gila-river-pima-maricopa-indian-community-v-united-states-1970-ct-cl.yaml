@@ -1,0 +1,52 @@
+key: gila-river-pima-maricopa-indian-community-v-united-states-1970-ct-cl
+kind: federal-case
+citation:
+  type: legal_case
+  title: Gila River Pima-Maricopa Indian Community v. United States
+  authority: United States Court of Claims
+  container-title: Ct. Cl.
+  volume: '190'
+  page: '790'
+  issued:
+    date-parts:
+    - - 1970
+      - 2
+      - 20
+  URL: https://static.case.law/us-ct-cl/190/html/0790-01.html
+  accessed:
+    date-parts:
+    - - 2026
+      - 11
+      - 26
+original_link: https://static.case.law/us-ct-cl/190/html/0790-01.html
+retrieved: '2026-11-26'
+archives: []
+history:
+  status: live
+  last_checked: '2026-11-26'
+rights:
+  status: no-permission-needed
+  basis: government-edict
+  basis_note: The text of a judicial opinion has no copyright (Georgia v. Public.Resource.Org, Inc., 590 U.S. 255 (2020)). The copy served on this site is the court's opinion only, without the publisher's headnotes, synopsis or other editorial matter (decision record 0060).
+  redistribution: true
+nations_in_case:
+  checked: '2026-11-26'
+  named: []
+jurisdictions:
+- level: federal
+topics:
+- federal-court-indian-law
+found_in:
+- 2026-11-26-federal-court-indian-law-opinions
+notes: Published at 190 Ct. Cl. 790. Decided by the United States Court of Claims on Feb. 20, 1970. Found by scripts/caselaw/state_court_opinions.py in the Caselaw Access Project's volumes, with an Indian law term score of 25, at or above 10, the level kept without a reading.
+review:
+  status: unverified
+  by: scripts/caselaw/state_court_opinions.py
+  date: '2026-11-26'
+  checks:
+  - check: 'Indian law case: the term score and, below the score kept without a reading, an AI reader''s judgment of excerpts'
+    result: agree
+    detail: score 25
+  - check: Nations named in the caption, matched to nation records by name
+    result: agree
+    detail: 0 matched, 0 not linked

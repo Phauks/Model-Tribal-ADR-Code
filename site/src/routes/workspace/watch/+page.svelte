@@ -457,7 +457,8 @@
 		cursor: pointer;
 	}
 	.title-button:focus-visible {
-		outline: 2px solid var(--color-focus);
+		outline: 3px solid var(--focus-ring);
+		outline-offset: 2px;
 	}
 	.item-title {
 		font-weight: 600;

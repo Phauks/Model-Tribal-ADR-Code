@@ -107,7 +107,7 @@
 		padding-block: 2px;
 	}
 
-	/* The table of nations is wide, so it starts under At a glance rather than squeezed beside it. */
+	/* The table of nations is wide, so it starts under Key facts rather than squeezed beside it. */
 	:global(.collapsible.past-glance) {
 		clear: both;
 	}

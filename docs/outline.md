@@ -140,7 +140,7 @@ The website is the primary edition. It carries every part, plus what print canno
 
 ### Always available
 
-- **Report a problem**, once at the top of every page, and the private request route for nations ([requests.md](requests.md)).
+- **Request a Change**, once at the top of every page, and the private request route for nations ([requests.md](requests.md)).
 - **Search**, **theme** (one sun and moon button), **read offline** and **downloads** (PDF, EPUB, data).
 - **Profile** for readers: saves, notes and shared collections, built in two steps ([roadmap, parked research](roadmap.md#parked-research)).
 - **Join and workspace** for contributors: access levels per document, reviews, requests and the activity log (built).

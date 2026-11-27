@@ -28,6 +28,19 @@ recognition:
   verification: bulk-import
   as_of: '2026-01-30'
   locator: 91 Fed. Reg. 4105
+- type: federal
+  earliest_record: constitution
+  legal_basis: Constitution of the Metlakatla Indian Community, Annette Island Reserve (approved by the Secretary of the Interior Aug. 23, 1944), under the Act of May 1, 1936, ch. 254, § 1, 49 Stat. 1250, 1250
+  since: '1944-08-23'
+  source: university-of-oklahoma-indian-reorganization-act-metlacons
+  document_version:
+    document: metlakatla-indian-community-annette-island-reserve-constitution
+    version: 1944-text
+  confidence: medium
+  verification: inferred
+  as_of: '1944-08-23'
+  locator: 1944 constitution and bylaws (1944-08-23), approval certificate
+  note: The earliest record this site has found that shows the United States dealing with the nation as a federally recognized nation. The relationship may be older. The Secretary of the Interior approved the nation's constitution; the date is read by rule from the approval certificate.
 states:
 - state: AK
   presence: government-office

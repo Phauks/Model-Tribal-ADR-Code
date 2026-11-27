@@ -34,7 +34,6 @@ import { casePreviewList } from './case-previews.ts';
 import {
 	documentHistories,
 	nations,
-	publicCopyFor,
 	sources as sourceRecords,
 	type DocumentHistoryRecord,
 	type NationRecord,
@@ -45,6 +44,7 @@ import { SourceUses, whereInSource, type CitationMark } from './source-uses.ts';
 import { opinionsSourceKey, tribalCourtOpinions } from './tribal-court-opinions.ts';
 import { lawNames } from '../law-names.ts';
 import { isLawRecord, recordPageLink } from './law-records.ts';
+import { savedCopyFor } from './markdown.ts';
 
 /** The heading the timeline's sources are filed under in a page's References list. */
 export const timelineHeading = 'Timeline';
@@ -59,6 +59,13 @@ export const timelineHeading = 'Timeline';
 export const contextLaws: Record<string, string> = lawNames;
 
 const caseKinds = new Set(['federal-case', 'state-case', 'territorial-case']);
+/**
+ * The opinions collected by script from the Caselaw Access Project and CourtListener
+ * (scripts/caselaw/state_court_opinions.py): more than twelve thousand, so the full timeline lists
+ * only those that name a nation, and the page stays under the Workers' 25 MiB limit for one file.
+ */
+const bulkOpinionTopics = new Set(['federal-court-indian-law', 'state-court-indian-law']);
+const bulkOpinion = (source: SourceRecord) => (source.topics ?? []).some((topic) => bulkOpinionTopics.has(topic));
 const federalKinds = new Set(['federal-statute', 'executive-order']);
 
 /** A source record's date: YYYY, YYYY-MM or YYYY-MM-DD from its `issued` date parts. */
@@ -74,7 +81,7 @@ export function issuedDate(record: SourceRecord): string | undefined {
 
 /** A source record's own address: this site's copy of it when it keeps one, else where it was published. */
 function recordLink(record: SourceRecord): string | undefined {
-	const copy = publicCopyFor(record.original_link) ?? publicCopyFor(record.citation.URL);
+	const copy = savedCopyFor(record);
 	if (copy) return copyPagePath(copy);
 	return webLink(record.original_link) ?? webLink(record.citation.URL);
 }
@@ -459,8 +466,9 @@ export function siteTimeline(): SiteTimeline {
 	for (const source of sourceRecords().values()) {
 		const entry = caseKinds.has(source.kind) ? caseEntry(source) : federalKinds.has(source.kind) ? lawEntry(source, false) : undefined;
 		if (!entry) continue;
-		used.add(source.key);
 		const named = { ...entry, nations: entry.nations?.filter((id) => byIdentifier.has(id)) };
+		if (bulkOpinion(source) && !named.nations?.length) continue;
+		used.add(source.key);
 		if (entry.kind !== 'federal') {
 			entries.push(named);
 			continue;

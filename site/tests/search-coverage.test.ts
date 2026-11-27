@@ -26,7 +26,7 @@ beforeAll(() => {
 	records = expandRecords(searchRecords());
 	links = new Set([...entries.map((entry) => entry.link), ...records.documents.map((row) => row.link)]);
 	// Reading every record the first time takes a while.
-}, 120_000);
+}, 180_000);
 
 /** Every link a search for these words finds, in any group. */
 function found(query: string): string[] {
@@ -107,6 +107,8 @@ const notSearched: Record<string, string> = {
 	'/following/email-off': 'a link in an email',
 	'/changes/compare': 'comparing two versions, opened from a page’s history',
 	'/changes/[id]': 'one change, opened from Recent changes',
+	'/[...address]/changes': 'a page’s own list of changes, opened from the page',
+	'/licenses/changes': 'as other pages’ lists of changes',
 	'/essays/[slug]': 'whether an essay is published lives in the database, which the build cannot read; Essays lists them',
 	'/foundations/[slug]': 'as essays',
 	'/back-matter/[slug]': 'as essays',

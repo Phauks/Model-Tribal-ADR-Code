@@ -11,6 +11,16 @@ recognition:
   verification: bulk-import
   as_of: '2026-01-30'
   locator: 91 Fed. Reg. 4104
+- type: federal
+  earliest_record: treaty
+  legal_basis: Treaty with the Six Nations, Oct. 22, 1784, 7 Stat. 15
+  since: '1784-10-22'
+  source: treaty-with-the-six-nations-1784
+  confidence: medium
+  verification: inferred
+  as_of: '1784-10-22'
+  locator: p. 5 (Treaty with the Six Nations, 1784; Kappler header "Oct. 22, 1784. | 7 Stat., 15.")
+  note: The earliest record this site has found that shows the United States dealing with the nation as a federally recognized nation. The relationship may be older. The treaty names the Oneidea; the nation's profile links it to the treaty by name, and the link has not yet been checked against a second source. 8 nations' profiles link this treaty.
 states:
 - state: WI
   presence: government-office
@@ -962,6 +972,14 @@ jurisdiction:
     its table as page images, so nation names were read from images and matched to the roster. Row re-read
     on 2026-11-22 from the page image, and the name was found word for word in the notice''s machine-read
     (OCR) text by the second gap review (research/reviews/2026-11-22-icwa-agents.csv).'
+- topic: hearth-act-leasing-regulations
+  value: approved
+  detail: The Secretary of the Interior approved the leasing regulations (Agricultural, Business, Residential) of the Oneida Nation, as the Bureau of Indian Affairs' list names it, under the HEARTH Act, 25 U.S.C. § 415(h), on Jan. 23, 2018, so the nation can lease its trust land for those purposes under its own regulations without the Bureau of Indian Affairs approving each lease.
+  source: hearth-act-leasing-regulations-oneida-nation-2018-01-23
+  confidence: high
+  verification: inferred
+  as_of: '2018-01-23'
+  locator: Bureau of Indian Affairs, Approved HEARTH Act Regulations, Approved in 2018
 court_practice:
 - kind: bar-admission
   title: What are the Rules of Admission to Practice Before the Judiciary?

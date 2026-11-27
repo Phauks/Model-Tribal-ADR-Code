@@ -21,6 +21,16 @@ recognition:
   verification: bulk-import
   as_of: '2026-01-30'
   locator: 91 Fed. Reg. 4104
+- type: federal
+  earliest_record: federal-list
+  legal_basis: Indian Tribal Entities That Have a Government-to-Government Relationship With the United States, 44 Fed. Reg. 7235, 7236 (Feb. 6, 1979)
+  since: '1979-02-06'
+  source: bia-recognized-entities-1979
+  confidence: medium
+  verification: bulk-import
+  as_of: '1979-02-06'
+  locator: 44 Fed. Reg. 7236 (entry "Miccosukee Tribe of Florida")
+  note: The earliest record this site has found that shows the United States dealing with the nation as a federally recognized nation. The relationship may be older. The list's entry reads "Miccosukee Tribe of Florida." The entry is matched to the nation by name.
 states:
 - state: FL
   presence: government-office
@@ -473,6 +483,22 @@ jurisdiction:
     notice prints its table as page images, so nation names were read from images and matched to the roster.
     Row re-read on 2026-11-22 from the page image (the govinfo PDF has no text layer for the table); verification
     level unchanged because the name was not matched word for word in machine-read text.'
+- topic: hearth-act-leasing-regulations
+  value: approved
+  detail: The Secretary of the Interior approved the leasing regulations (Agricultural, Business, Wind and Solar Resource, WEEL) of the Miccosukee Tribe of Indians, as the Bureau of Indian Affairs' list names it, under the HEARTH Act, 25 U.S.C. § 415(h), on Dec. 23, 2022, so the nation can lease its trust land for those purposes under its own regulations without the Bureau of Indian Affairs approving each lease.
+  source: hearth-act-leasing-regulations-miccosukee-tribe-of-indians-2022-12-23
+  confidence: high
+  verification: inferred
+  as_of: '2022-12-23'
+  locator: Bureau of Indian Affairs, Approved HEARTH Act Regulations, Approved in 2022
+- topic: environmental-treatment-as-a-state
+  value: clean-water-act-water-quality-standards
+  detail: EPA found the nation eligible on Dec. 20, 1994 to set water quality standards (treatment in a similar manner as a state under Clean Water Act § 518), and first approved its standards on May 25, 1999.
+  source: epa-actions-on-tribal-water-quality-standards
+  confidence: high
+  verification: inferred
+  as_of: '1994-12-20'
+  locator: 'Table of approvals by Tribe, column "Regulatory Programs": "WQS Program"'
 nearby_state_courts:
 - state: FL
   county: Broward County

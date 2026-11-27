@@ -11,6 +11,16 @@ recognition:
   verification: bulk-import
   as_of: '2026-01-30'
   locator: 91 Fed. Reg. 4103
+- type: federal
+  earliest_record: land
+  legal_basis: Exec. Order of Apr. 9, 1872, 1 Kappler 916
+  since: '1872-04-09'
+  source: executive-order-1872-04-09-colville-bands-reservation
+  confidence: medium
+  verification: read-in-full
+  as_of: '1872-04-09'
+  locator: 1 Kappler 916
+  note: The earliest record this site has found that shows the United States dealing with the nation as a federally recognized nation. The relationship may be older. The instrument first set aside the Colville Reserve (first tract), Washington Territory.
 states:
 - state: WA
   presence: government-office
@@ -541,7 +551,7 @@ dispute_resolution:
     confidence: medium
     verification: read-in-full
     as_of: '2025-08-25'
-    note: Read in full on 2026-11-23 from page images (Colville Tribal Code Chapter 5-2 Juveniles (September 2010 version), Secs. 5-2-191 to 5-2-197 amended 12/16/04 (Res. 2004-799) and 2/17/05 (Res. 2005-108)). Code text read from the captured Chapter 5-2 (September 2010 version), PDF pp. 8-9, Secs. 5-2-191 to 5-2-197 (scanned, read as page images). NARF's PDF link returned 404; the captured copy is the code text. The chapter also covers minor-in-need-of-care cases; the referral wording ('all cases ... under this Chapter') reaches them, but the steps are written for the juvenile-offender track. Gate 1 item 3 review, research/reviews/2026-11-23-text-read-tier.json, record 74.
+    note: Read in full on 2026-11-23 from page images (Colville Tribal Code Chapter 5-2 Juveniles (September 2010 version), Secs. 5-2-191 to 5-2-197 amended 12/16/04 (Res. 2004-799) and 2/17/05 (Res. 2005-108)). Code text read from the captured Chapter 5-2 (September 2010 version), PDF pp. 8-9, Secs. 5-2-191 to 5-2-197 (scanned, read as page images). NARF's PDF link returned 404; the captured copy is the code text. The chapter also covers minor-in-need-of-care cases; the referral wording ('all cases . . . under this Chapter') reaches them, but the steps are written for the juvenile-offender track. Gate 1 item 3 review, research/reviews/2026-11-23-text-read-tier.json, record 74.
   provisions:
   - kind: peacemaking
     title: Juveniles – Peacemaking Circle
@@ -747,6 +757,22 @@ jurisdiction:
     matched to the roster. Row re-read on 2026-11-22 from the page image (the govinfo PDF has no text
     layer for the table); verification level unchanged because the name was not matched word for word
     in machine-read text.'
+- topic: hearth-act-leasing-regulations
+  value: approved
+  detail: The Secretary of the Interior approved the leasing regulations (Business) of the Confederated Tribes of the Colville Reservation, as the Bureau of Indian Affairs' list names it, under the HEARTH Act, 25 U.S.C. § 415(h), on May 3, 2021, so the nation can lease its trust land for those purposes under its own regulations without the Bureau of Indian Affairs approving each lease.
+  source: hearth-act-leasing-regulations-confederated-tribes-of-the-colville-reservation-2021-05-03
+  confidence: high
+  verification: inferred
+  as_of: '2021-05-03'
+  locator: Bureau of Indian Affairs, Approved HEARTH Act Regulations, Approved in 2021
+- topic: environmental-treatment-as-a-state
+  value: clean-water-act-water-quality-standards
+  detail: EPA found the nation eligible on May 2, 2018 to set water quality standards (treatment in a similar manner as a state under Clean Water Act § 518), and first approved its standards on July 6, 1989.
+  source: epa-actions-on-tribal-water-quality-standards
+  confidence: high
+  verification: inferred
+  as_of: '2018-05-02'
+  locator: 'Table of approvals by Tribe, column "Regulatory Programs": "WQS Program"'
 court_practice:
 - kind: court-rules
   title: Procedural Rules

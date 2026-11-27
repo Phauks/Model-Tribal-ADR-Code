@@ -38,7 +38,7 @@ names:
     confidence: high
     verification: read-in-full
     as_of: '2026-11-21'
-    note: 'Page: ''“Flathead” ... is not a tribal name, we prefer to be called by our actual tribal identities
+    note: 'Page: ''“Flathead” . . . is not a tribal name, we prefer to be called by our actual tribal identities
       or simply “the Tribes” when referring to us collectively.'''
   official_source: bia-recognized-entities-2026
   pronunciation:
@@ -80,6 +80,16 @@ recognition:
   verification: bulk-import
   as_of: '2026-01-30'
   locator: 91 Fed. Reg. 4103
+- type: federal
+  earliest_record: treaty
+  legal_basis: Treaty with the Flatheads, etc. (Treaty of Hell Gate), July 16, 1855, 12 Stat. 975
+  since: '1855-07-16'
+  source: treaty-with-the-flatheads-etc-1855
+  confidence: medium
+  verification: inferred
+  as_of: '1855-07-16'
+  locator: p. 722 (Treaty with the Flatheads, etc., 1855; Kappler header "July 16, 1855. | 12 Stats., 975. | Ratified Mar. 8, 1859. | Proclaimed Apr. 18, 1859.")
+  note: The earliest record this site has found that shows the United States dealing with the nation as a federally recognized nation. The relationship may be older. The treaty names the Flathead; Kootenai; the nation's profile links it to the treaty by name, and the link has not yet been checked against a second source. 2 nations' profiles link this treaty.
 states:
 - state: MT
   presence: government-office
@@ -846,6 +856,14 @@ jurisdiction:
     from images and matched to the roster. Row re-read on 2026-11-22 from the page image (the govinfo
     PDF has no text layer for the table); verification level unchanged because the name was not matched
     word for word in machine-read text.'
+- topic: environmental-treatment-as-a-state
+  value: clean-water-act-water-quality-standards
+  detail: EPA found the nation eligible on Mar. 1, 1995 to set water quality standards (treatment in a similar manner as a state under Clean Water Act § 518), and first approved its standards on Mar. 18, 1996.
+  source: epa-actions-on-tribal-water-quality-standards
+  confidence: high
+  verification: inferred
+  as_of: '1995-03-01'
+  locator: 'Table of approvals by Tribe, column "Regulatory Programs": "WQS Program"'
 jurisdiction_agreements:
 - kind: child-welfare-agreement
   other_party: Montana Department of Public Health and Human Services
@@ -951,7 +969,7 @@ land_establishment:
   confidence: high
   verification: read-in-full
   locator: 12 Stat. 975
-  note: 'The instrument reads: “There is, however, reserved from the lands above ceded, ... for the use and occupation of the said confederated tribes, and as a general Indian reservation”. Kappler lists the Jocko Reserve (Flathead Agency) as "established by treaty July 16, 1855" (1 Kappler 859).'
+  note: 'The instrument reads: “There is, however, reserved from the lands above ceded, . . . for the use and occupation of the said confederated tribes, and as a general Indian reservation”. Kappler lists the Jocko Reserve (Flathead Agency) as "established by treaty July 16, 1855" (1 Kappler 859).'
 memberships:
 - organization: Rocky Mountain Tribal Leaders Council
   source: rocky-mountain-tribal-leaders-council-who-we-are

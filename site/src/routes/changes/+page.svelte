@@ -7,6 +7,7 @@
 	import CalendarIcon from '@lucide/svelte/icons/calendar';
 	import Check from '@lucide/svelte/icons/check';
 	import Breadcrumbs from '#lib/components/Breadcrumbs.svelte';
+	import PageHistory from '#lib/components/PageHistory.svelte';
 	import Dropdown from '#lib/components/Dropdown.svelte';
 	import ChevronRight from '@lucide/svelte/icons/chevron-right';
 	import EyeOff from '@lucide/svelte/icons/eye-off';
@@ -24,6 +25,7 @@
 		dayChoices,
 		defaultFilters,
 		filterQuery,
+		pageChangesLink,
 		largeChange,
 		pageKindFilterLabels,
 		pageKindLabels,
@@ -55,13 +57,6 @@
 
 	// A feed reader is not signed in, so the feed leaves out "Only pages I follow".
 	const feedLink = $derived(`/changes/feed.xml${filterQuery({ ...filters, following: false })}`);
-	/** The request form, filled in with this page, for "Ask for a change or removal". */
-	const requestLink = $derived.by(() => {
-		const match = /^\/(nations|stories)\/([a-z0-9-]+)$/.exec(filters.page ?? '');
-		if (!match) return '/requests';
-		return `/requests?record=${match[1] === 'nations' ? 'tribes' : 'stories'}/${match[2]}`;
-	});
-
 	/** The dates the list covers, "Nov. 1 to Nov. 23, 2026", or nothing for any time. */
 	const span = $derived.by(() => {
 		if (!filters.days) return '';
@@ -137,22 +132,15 @@
 		return `/changes${filterQuery(filters, { who: change.whoKey, page: undefined })}`;
 	}
 
+	/** A page's own Changes view, or its history here when it is no longer on the site. */
 	function historyLink(address: string): string {
-		return `/changes?page=${encodeURIComponent(address)}`;
+		return pageChangesLink(address);
 	}
 
 	function totalSize(items: ChangeView[]): number | undefined {
 		const sizes = items.map((item) => item.sizeChange).filter((size): size is number => size !== undefined);
 		return sizes.length > 0 ? sizes.reduce((sum, size) => sum + size, 0) : undefined;
 	}
-
-	let fromChoice = $state<string | undefined>(undefined);
-	let toChoice = $state<string | undefined>(undefined);
-	const comparable = $derived(data.changes.filter((change) => change.comparable));
-	$effect(() => {
-		fromChoice = comparable[1]?.id;
-		toChoice = comparable[0]?.id;
-	});
 </script>
 
 <svelte:head>
@@ -231,122 +219,13 @@
 		Showing changes to {#if data.pageOnSite && filters.page}<a href={filters.page}>{historyName}</a>{:else}{historyName}{/if} only
 		· <a href="/changes">Show all changes</a>
 	</p>
-	<div class:history-columns={!historyShowsWording}>
-	<div class="history-main">
-	{#if !historyShowsWording}
-		<p class="lede">When this page changed, who changed it and which parts. Only the current page is shown on this site.</p>
-	{:else}
-		<p class="lede">Every version readers have seen. Choose two to compare, or open one to read it as it stood.</p>
-	{/if}
-
-	{#if data.changes.length === 0 && !data.recordedSince}
-		<p>No changes to this page have been recorded. Changes are recorded from Nov. 23, 2026 on.</p>
-	{:else}
-		<form method="get" action="/changes/compare" class="history-form">
-			{#if historyShowsWording && comparable.length > 1}
-				<p><button type="submit" class="button">Compare the two chosen versions</button></p>
-			{/if}
-			<div class="table-scroll">
-				<table class="history">
-					<thead>
-						<tr>
-							{#if historyShowsWording}<th scope="col"><span class="visually-hidden">Compare from, to</span>Compare</th>{/if}
-							<th scope="col">When</th>
-							<th scope="col">Who</th>
-							{#if historyShowsWording}<th scope="col">Size</th>{:else}<th scope="col">Parts changed</th>{/if}
-							<th scope="col">Summary</th>
-							{#if historyShowsWording}<th scope="col"><span class="visually-hidden">Links</span></th>{/if}
-						</tr>
-					</thead>
-					<tbody>
-						{#each data.changes as change, index (change.id)}
-							<tr class:struck={change.textHidden}>
-								{#if historyShowsWording}
-									<td class="radios">
-										{#if change.comparable}
-											<input
-												type="radio"
-												name="from"
-												value={change.id}
-												bind:group={fromChoice}
-												aria-label="Compare from {dateTime(change.madeAt)}"
-											/>
-											<input
-												type="radio"
-												name="to"
-												value={change.id}
-												bind:group={toChoice}
-												aria-label="Compare to {dateTime(change.madeAt)}"
-											/>
-										{/if}
-									</td>
-								{/if}
-								<td><time datetime={change.madeAt}>{dateTime(change.madeAt)}</time>{#if index === 0 && change.change !== 'removed'} <span class="tag new">Current</span>{/if}</td>
-								<td>
-									{#if change.whoHidden}<span class="hidden-part">name hidden</span>{:else}{change.who}{/if}
-									{#if change.id.startsWith('nation-')}<span class="tag nation">Nation’s own edit</span>{/if}
-								</td>
-								{#if historyShowsWording}
-									<td class="numbers">
-										{#if change.textHidden}<span class="hidden-part">size hidden</span>{:else}{change.size?.toLocaleString('en-US') ?? ''} {@render size(change)}{/if}
-									</td>
-								{:else}
-									<td>
-										{#if change.textHidden}<span class="part-chip hidden-part">parts hidden</span>
-										{:else if change.change === 'new'}<span class="part-chip">New page</span>
-										{:else if change.change === 'removed'}<span class="part-chip">Page removed</span>
-										{:else}<ul class="part-chips">{#each change.parts ?? [] as part (part)}<li class="part-chip">{part}</li>{/each}</ul>{/if}
-									</td>
-								{/if}
-								<td>
-									{#if change.summaryHidden}<span class="hidden-part">summary hidden</span>{:else if change.summary}<span class="summary">{change.summary}</span>{/if}
-									{@render hiddenTag(change)}
-								</td>
-								{#if historyShowsWording}<td class="links">
-									{#if change.comparable}
-										<a href="/changes/{change.id}/version">read</a> · <a href="/changes/{change.id}">changes</a>
-									{/if}
-								</td>{/if}
-							</tr>
-						{/each}
-						{#if data.changes.length === 0 && data.recordedSince}
-							<!-- A page that has not changed since the history began: the one version readers have seen. -->
-							<tr>
-								{#if historyShowsWording}<td class="radios"></td>{/if}
-								<td><time datetime={data.recordedSince}>{dateTime(data.recordedSince)}</time> <span class="tag new">Current</span></td>
-								<td>{siteReleaseName}</td>
-								<td>{#if !historyShowsWording}No changes yet{/if}</td>
-								<td><span class="summary">The page as it stood when the site began keeping its history. It has not changed since.</span></td>
-								{#if historyShowsWording}<td class="links">{#if data.pageOnSite && filters.page}<a href={filters.page}>read</a>{/if}</td>{/if}
-							</tr>
-						{/if}
-					</tbody>
-				</table>
-			</div>
-		</form>
-	{/if}
-	<p class="small muted">
-		The history begins on Nov. 23, 2026, when the site began recording changes.
-		{#if historyShowsWording}Versions saved while writing, before they were published, are kept in the workspace and are not listed here.{/if}
-	</p>
-	</div>
-	{#if !historyShowsWording}
-		<!-- Why a nation page or story keeps no earlier wording, and where to ask for a change (approved mockup 5, design/recent-changes). -->
-		<aside class="history-notes" aria-label="About this history">
-			<div class="history-note">
-				<p class="note-title"><Lock size={16} aria-hidden="true" /><strong>Why there is no earlier wording here.</strong></p>
-				<p>
-					A nation can ask us to take something off its page. Showing older versions would put that text back in view, so
-					{historyKind === 'story' ? 'stories keep' : 'nation pages keep'} their history private. The nation’s own editors and the project’s reviewers can compare versions in the workspace.
-				</p>
-			</div>
-			<div class="history-note">
-				<p class="note-title"><strong>Something wrong on this page?</strong></p>
-				<p><a href={requestLink}>Ask for a change or removal</a></p>
-			</div>
-		</aside>
-	{/if}
-	</div>
+	<PageHistory
+		changes={data.changes}
+		address={filters.page ?? ''}
+		kind={historyKind}
+		pageOnSite={data.pageOnSite}
+		recordedSince={data.recordedSince}
+	/>
 {:else}
 	<p class="eyebrow">About the site</p>
 	<h1>Recent changes</h1>
@@ -625,7 +504,7 @@
 
 	.chip:has(input:focus-visible),
 	.switch:has(input:focus-visible) {
-		outline: 3px solid var(--color-focus-ring);
+		outline: 3px solid var(--focus-ring);
 		outline-offset: 2px;
 	}
 
@@ -855,96 +734,25 @@
 		margin-block-start: 0;
 	}
 
-	/* A nation page's history: the table, with why there is no earlier wording beside it. */
-	.history-columns {
-		display: grid;
-		grid-template-columns: minmax(0, 1fr) 19rem;
-		gap: var(--space-5);
-		align-items: start;
-	}
 
-	.history-notes {
-		display: grid;
-		gap: var(--space-3);
-	}
 
-	.history-note {
-		background: var(--color-surface);
-		border-radius: var(--radius-panel);
-		padding: var(--space-3) var(--space-4);
-		font-size: var(--font-size-small);
-		color: var(--color-ink-muted);
-	}
 
-	.history-note p {
-		margin: 0;
-	}
 
-	.note-title {
-		display: flex;
-		align-items: center;
-		gap: var(--space-1);
-		color: var(--color-ink);
-	}
 
-	.note-title :global(svg) {
-		color: var(--color-link);
-		flex: none;
-	}
 
-	.part-chips {
-		list-style: none;
-		margin: 0;
-		padding: 0;
-		display: flex;
-		flex-direction: column;
-		align-items: flex-start;
-		gap: var(--space-1);
-	}
 
-	.part-chip {
-		display: inline-block;
-		white-space: nowrap;
-		padding: 0 var(--space-2);
-		border-radius: var(--radius-control);
-		background: var(--color-surface);
-	}
 
-	.history .tag.nation {
-		margin-inline: 0;
-	}
 
-	.history td {
-		vertical-align: top;
-	}
 
-	.history .radios {
-		white-space: nowrap;
-	}
 
-	.history .numbers {
-		white-space: nowrap;
-		font-variant-numeric: tabular-nums;
-	}
 
-	.history .links {
-		white-space: nowrap;
-	}
 
-	/* Links break anywhere elsewhere on the site; here a short word such as "read" stays whole. */
-	.history .links a {
-		overflow-wrap: normal;
-		word-break: normal;
-	}
 
 	@media (max-width: 60rem) {
 		.fields {
 			grid-template-columns: repeat(auto-fit, minmax(9rem, 1fr));
 		}
 
-		.history-columns {
-			grid-template-columns: minmax(0, 1fr);
-		}
 	}
 
 	@media (max-width: 40rem) {

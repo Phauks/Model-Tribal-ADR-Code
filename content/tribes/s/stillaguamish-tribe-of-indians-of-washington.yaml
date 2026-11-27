@@ -18,6 +18,16 @@ recognition:
   verification: bulk-import
   as_of: '2026-01-30'
   locator: 91 Fed. Reg. 4105
+- type: federal
+  earliest_record: treaty
+  legal_basis: Treaty of Point Elliott, Jan. 22, 1855, 12 Stat. 927
+  since: '1855-01-22'
+  source: treaty-with-the-dwamish-suquamish-etc-1855
+  confidence: medium
+  verification: inferred
+  as_of: '1855-01-22'
+  locator: p. 669 (Treaty with the Dwamish, Suquamish, etc., 1855; Kappler header "Jan. 22, 1855. | 12 Stat. 927. Ratified Mar. 8, 1859. | Proclaimed Apr. 11, 1859.")
+  note: The earliest record this site has found that shows the United States dealing with the nation as a federally recognized nation. The relationship may be older. The treaty names the Stoluck-wha-mish; the nation's profile links it to the treaty by name, and the link has not yet been checked against a second source. 11 nations' profiles link this treaty.
 states:
 - state: WA
   presence: government-office
@@ -702,6 +712,14 @@ jurisdiction:
     to the roster. Row re-read on 2026-11-22 from the page image (the govinfo PDF has no text layer for
     the table); verification level unchanged because the name was not matched word for word in machine-read
     text.'
+- topic: hearth-act-leasing-regulations
+  value: approved
+  detail: The Secretary of the Interior approved the leasing regulations (Agricultural, Business, Wind and Solar Resource) of the Stillaguamish Tribe of Indians, as the Bureau of Indian Affairs' list names it, under the HEARTH Act, 25 U.S.C. § 415(h), on July 17, 2017, so the nation can lease its trust land for those purposes under its own regulations without the Bureau of Indian Affairs approving each lease.
+  source: hearth-act-leasing-regulations-stillaguamish-tribe-of-indians-of-washington-2017-07-17
+  confidence: high
+  verification: inferred
+  as_of: '2017-07-17'
+  locator: Bureau of Indian Affairs, Approved HEARTH Act Regulations, Approved in 2017
 jurisdiction_agreements:
 - kind: cross-deputization
   other_party: Snohomish County Sheriff, Washington

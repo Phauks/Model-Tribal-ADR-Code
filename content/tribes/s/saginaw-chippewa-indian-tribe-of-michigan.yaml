@@ -11,6 +11,16 @@ recognition:
   verification: bulk-import
   as_of: '2026-01-30'
   locator: 91 Fed. Reg. 4104
+- type: federal
+  earliest_record: treaty
+  legal_basis: Treaty with the Chippewa, Sept. 24, 1819, 7 Stat. 203
+  since: '1819-09-24'
+  source: treaty-with-the-chippewa-1819
+  confidence: medium
+  verification: inferred
+  as_of: '1819-09-24'
+  locator: p. 185 (Treaty with the Chippewa, 1819; Kappler header "Sept. 24, 1819. | 7 Stat., 203. | Proclamation, Mar. 25, 1820.")
+  note: The earliest record this site has found that shows the United States dealing with the nation as a federally recognized nation. The relationship may be older. The treaty names the Chippewa nation (Saginaw district); the nation's profile links it to the treaty by name, and the link has not yet been checked against a second source.
 states:
 - state: MI
   presence: government-office
@@ -661,6 +671,14 @@ jurisdiction:
   as_of: '2017-07-18'
   locator: Answer, second and third paragraphs (the lists of mandatory and optional states)
   note: Inferred from the state's absence from both lists. Nation placed in Michigan by the Census Bureau's land areas.
+- topic: hearth-act-leasing-regulations
+  value: approved
+  detail: The Secretary of the Interior approved the leasing regulations (Business) of the Saginaw Chippewa Indian Tribe of Michigan, as the Bureau of Indian Affairs' list names it, under the HEARTH Act, 25 U.S.C. § 415(h), on Nov. 17, 2022, so the nation can lease its trust land for those purposes under its own regulations without the Bureau of Indian Affairs approving each lease.
+  source: hearth-act-leasing-regulations-saginaw-chippewa-indian-tribe-of-michigan-2022-11-17
+  confidence: high
+  verification: inferred
+  as_of: '2022-11-17'
+  locator: Bureau of Indian Affairs, Approved HEARTH Act Regulations, Approved in 2022
 jurisdiction_agreements:
 - kind: tax-agreement
   other_party: Michigan Department of Treasury

@@ -11,6 +11,16 @@ recognition:
   verification: bulk-import
   as_of: '2026-01-30'
   locator: 91 Fed. Reg. 4104
+- type: federal
+  earliest_record: treaty
+  legal_basis: Treaty with the Navaho, Sept. 9, 1849, 9 Stat. 974
+  since: '1849-09-09'
+  source: treaty-with-the-navaho-1849
+  confidence: medium
+  verification: inferred
+  as_of: '1849-09-09'
+  locator: p. 583 (Treaty with the Navaho, 1849; Kappler header "Sept. 9, 1849. | 9 Stat., 974. | Ratified Sept. 9, 1850. | Proclaimed Sept. 24, 1850.")
+  note: The earliest record this site has found that shows the United States dealing with the nation as a federally recognized nation. The relationship may be older. The treaty names the Navajo; the nation's profile links it to the treaty by name, and the link has not yet been checked against a second source.
 states:
 - state: AZ
   presence: government-office
@@ -912,6 +922,54 @@ jurisdiction:
   verification: read-in-full
   locator: 113 Ariz. at 431
   note: 1976 holding about service of process on the Tohono O'odham (Papago) reservation, reasoning from the 1968 consent requirement. The research did not find any later Arizona assumption. Other federal statutes can still give Arizona limited authority; none checked here.
+- topic: hearth-act-leasing-regulations
+  value: approved
+  detail: The Secretary of the Interior approved the leasing regulations of the Navajo Nation General Leasing Act, as the Bureau of Indian Affairs' list names it, under the HEARTH Act, 25 U.S.C. § 415(h), on May 16, 2014, so the nation can lease its trust land for those purposes under its own regulations without the Bureau of Indian Affairs approving each lease.
+  source: hearth-act-leasing-regulations-navajo-nation-2014-05-16
+  confidence: high
+  verification: inferred
+  as_of: '2014-05-16'
+  locator: Bureau of Indian Affairs, Approved HEARTH Act Regulations, Approved in 2014
+- topic: environmental-treatment-as-a-state
+  value: clean-air-act-operating-permits
+  detail: EPA has approved the nation for treatment in a similar manner as a state for operating permits (Clean Air Act title V).
+  source: epa-tribes-approved-for-treatment-as-a-state
+  confidence: high
+  verification: inferred
+  as_of: '2026-10-21'
+  locator: 'Table of approvals by Tribe, column "Regulatory Programs": "Operating Permit Program; WQS Program"'
+- topic: environmental-treatment-as-a-state
+  value: clean-water-act-water-quality-standards
+  detail: EPA found the nation eligible on Jan. 20, 2006 to set water quality standards (treatment in a similar manner as a state under Clean Water Act § 518), and first approved its standards on Apr. 11, 2006.
+  source: epa-actions-on-tribal-water-quality-standards
+  confidence: high
+  verification: inferred
+  as_of: '2006-01-20'
+  locator: 'Table of approvals by Tribe, column "Regulatory Programs": "Operating Permit Program; WQS Program"'
+- topic: environmental-treatment-as-a-state
+  value: clean-water-act-discharge-permits
+  detail: EPA has approved the nation for treatment in a similar manner as a state for discharge permits (Clean Water Act § 402).
+  source: epa-tribes-approved-for-treatment-as-a-state
+  confidence: high
+  verification: inferred
+  as_of: '2026-10-21'
+  locator: 'Table of approvals by Tribe, column "Regulatory Programs with an Enforcement Component": "NPDES Program; PWSS Program; UIC Program"'
+- topic: environmental-treatment-as-a-state
+  value: safe-drinking-water-act-public-water-systems
+  detail: EPA has approved the nation for treatment in a similar manner as a state for public water system supervision (Safe Drinking Water Act § 1413).
+  source: epa-tribes-approved-for-treatment-as-a-state
+  confidence: high
+  verification: inferred
+  as_of: '2026-10-21'
+  locator: 'Table of approvals by Tribe, column "Regulatory Programs with an Enforcement Component": "NPDES Program; PWSS Program; UIC Program"'
+- topic: environmental-treatment-as-a-state
+  value: safe-drinking-water-act-underground-injection
+  detail: EPA has approved the nation for treatment in a similar manner as a state for underground injection control (Safe Drinking Water Act § 1425).
+  source: epa-tribes-approved-for-treatment-as-a-state
+  confidence: high
+  verification: inferred
+  as_of: '2026-10-21'
+  locator: 'Table of approvals by Tribe, column "Regulatory Programs with an Enforcement Component": "NPDES Program; PWSS Program; UIC Program"'
 jurisdiction_agreements:
 - kind: cross-deputization
   other_party: Arizona Department of Public Safety

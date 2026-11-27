@@ -11,6 +11,19 @@ recognition:
   verification: bulk-import
   as_of: '2026-01-30'
   locator: 91 Fed. Reg. 4105
+- type: federal
+  earliest_record: constitution
+  legal_basis: Constitution of the Twenty-Nine Palms Band of Mission Indians of California (approved by the Secretary of the Interior May 2, 1972)
+  since: '1972-05-02'
+  source: constitution-twenty-nine-palms-band-of-mission-indians-of-california-1972-text
+  document_version:
+    document: twenty-nine-palms-band-of-mission-indians-of-california-constitution
+    version: 1972-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1972-05-02'
+  locator: 1972 articles of association, approval certificate
+  note: The earliest record this site has found that shows the United States dealing with the nation as a federally recognized nation. The relationship may be older. The Secretary of the Interior approved the nation's constitution; the date is read from the approval certificate.
 states:
 - state: CA
   presence: government-office
@@ -522,6 +535,22 @@ jurisdiction:
     and matched to the roster. Row re-read on 2026-11-22 from the page image (the govinfo PDF has no text
     layer for the table); verification level unchanged because the name was not matched word for word
     in machine-read text.'
+- topic: hearth-act-leasing-regulations
+  value: approved
+  detail: The Secretary of the Interior approved the leasing regulations (Business) of the Twenty-Nine Palms Band of Mission Indians of California, as the Bureau of Indian Affairs' list names it, under the HEARTH Act, 25 U.S.C. § 415(h), on June 14, 2016, so the nation can lease its trust land for those purposes under its own regulations without the Bureau of Indian Affairs approving each lease.
+  source: hearth-act-leasing-regulations-twenty-nine-palms-band-of-mission-indians-of-california-2016-06-14
+  confidence: high
+  verification: inferred
+  as_of: '2016-06-14'
+  locator: Bureau of Indian Affairs, Approved HEARTH Act Regulations, Approved in 2016
+- topic: environmental-treatment-as-a-state
+  value: clean-water-act-water-quality-standards
+  detail: EPA found the nation eligible on Oct. 26, 2006 to set water quality standards (treatment in a similar manner as a state under Clean Water Act § 518), and first approved its standards on Aug. 20, 2015.
+  source: epa-actions-on-tribal-water-quality-standards
+  confidence: high
+  verification: inferred
+  as_of: '2006-10-26'
+  locator: 'Table of approvals by Tribe, column "Regulatory Programs": "WQS Program"'
 nearby_state_courts:
 - state: CA
   county: Riverside County

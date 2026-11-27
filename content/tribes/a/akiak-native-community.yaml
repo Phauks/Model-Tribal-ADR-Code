@@ -21,6 +21,19 @@ recognition:
   verification: bulk-import
   as_of: '2026-01-30'
   locator: 91 Fed. Reg. 4105
+- type: federal
+  earliest_record: constitution
+  legal_basis: Constitution of the Akiak Native Community (approved by the Secretary of the Interior May 11, 1949), under the Act of May 1, 1936, ch. 254, § 1, 49 Stat. 1250, 1250
+  since: '1949-05-11'
+  source: constitution-akiak-native-community-1949-text
+  document_version:
+    document: akiak-native-community-constitution
+    version: 1949-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1949-05-11'
+  locator: 1949 constitution and bylaws (1949-05-11), approval certificate
+  note: The earliest record this site has found that shows the United States dealing with the nation as a federally recognized nation. The relationship may be older. The Secretary of the Interior approved the nation's constitution; the date is read from the approval certificate.
 states:
 - state: AK
   presence: government-office

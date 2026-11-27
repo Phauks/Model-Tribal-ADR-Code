@@ -2,13 +2,15 @@
 	@component
 	One court case's page (src/lib/server/case-pages.ts; Trevor approved the
 	mockup on Nov. 24, 2026, design/case-pages/). A record page: the case's
-	facts in At a glance, its box's parts as sections, then its opinions, the
+	facts in Key facts, its box's parts as sections, then its opinions (each
+	to read in full where the site serves its text, CaseOpinions.svelte), the
 	parties and nations, where to read it, and where this site cites it.
 	Every section folds (Collapsible.svelte).
 -->
 <script lang="ts">
 	import Clock from '@lucide/svelte/icons/clock';
 	import Breadcrumbs from '#lib/components/Breadcrumbs.svelte';
+	import CaseOpinions from '#lib/components/CaseOpinions.svelte';
 	import Collapsible from '#lib/components/Collapsible.svelte';
 	import GlancePanel from '#lib/components/GlancePanel.svelte';
 	import ImpactAccounts from '#lib/components/ImpactAccounts.svelte';
@@ -19,11 +21,12 @@
 	import StubBadge from '#lib/components/StubBadge.svelte';
 	import TopicBadges from '#lib/components/TopicBadges.svelte';
 	import { glancePanelMinimum } from '#lib/info-page.ts';
+	import { copyPagePath } from '#lib/public-copies.ts';
 	import type { PageProps } from './$types';
 
 	let { data }: PageProps = $props();
 	const trail = $derived([
-		{ label: 'Library', href: '/library' },
+		{ label: 'Courts and cases', href: '/cases' },
 		...(data.court
 			? [
 					{ label: 'Supreme Court', href: '/supreme-court' },
@@ -32,7 +35,7 @@
 			: [])
 	]);
 	const nationPageLinks = $derived(new Set(data.nationPages.map((nation) => nation.link)));
-	// At a glance only with enough facts; one or two follow the citation instead (src/lib/info-page.ts).
+	// Key facts only with enough facts; one or two follow the citation instead (src/lib/info-page.ts).
 	const lineFacts = $derived(data.facts.length < glancePanelMinimum ? data.facts : []);
 	const citedCount = $derived(data.essays.length + data.nationPages.length + (data.court ? 1 : 0) + (data.decidedBy ? 1 : 0));
 </script>
@@ -47,7 +50,7 @@
 <RecordPage glance={data.facts.length >= glancePanelMinimum ? glance : undefined}>
 	{#snippet title()}<h1><i>{data.name}</i></h1>{/snippet}
 	{#snippet introduction()}
-		<!-- One or two facts, too few for At a glance, follow the citation (src/lib/info-page.ts). -->
+		<!-- One or two facts, too few for Key facts, follow the citation (src/lib/info-page.ts). -->
 		{#if data.citation || lineFacts.length > 0}<p class="lead case-citation">
 				{data.citation}{#each lineFacts as [label, html], index (label)}<span class="lead-facts"
 						>{data.citation || index > 0 ? ' · ' : ''}{label}{' '}<!-- eslint-disable-next-line svelte/no-at-html-tags -- built from the case's own record (case-facts.ts) -->{@html html}</span
@@ -58,7 +61,9 @@
 
 	<RecordBoxSections sections={data.boxSections} />
 
-	{#if data.opinions.length > 0}
+	{#if data.opinionCopy}
+		<CaseOpinions caseKey={data.key} opinions={data.opinions} copyPage={copyPagePath({ key: data.opinionCopy })} />
+	{:else if data.opinions.length > 0}
 		<Collapsible heading="Opinions" identifier="opinions" count={data.opinions.length}>
 			<dl class="summary-list">
 				{#each data.opinions as opinion, index (index)}

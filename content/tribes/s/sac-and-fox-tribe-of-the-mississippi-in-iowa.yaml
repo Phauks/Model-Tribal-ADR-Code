@@ -26,6 +26,16 @@ recognition:
   verification: bulk-import
   as_of: '2026-01-30'
   locator: 91 Fed. Reg. 4104
+- type: federal
+  earliest_record: treaty
+  legal_basis: Treaty with the Wyandot, etc., Jan. 9, 1789, 7 Stat. 28
+  since: '1789-01-09'
+  source: treaty-with-the-wyandot-etc-1789
+  confidence: low
+  verification: inferred
+  as_of: '1789-01-09'
+  locator: p. 18 (Treaty with the Wyandot, etc., 1789; Kappler header "Jan. 9, 1789. | 7 Stat., 28. | Proclamation, Sept. 27, 1789.")
+  note: The earliest record this site has found that shows the United States dealing with the nation as a federally recognized nation. The relationship may be older. The treaty names the Sac; the nation's profile links it to the treaty by name, and the link has not yet been checked against a second source. 13 nations' profiles link this treaty.
 states:
 - state: IA
   presence: government-office
@@ -670,6 +680,14 @@ jurisdiction:
   verification: read-in-full
   locator: Pub. L. 115-301, § 1, 132 Stat. 4395
   note: 'Original grant: Act of June 30, 1948, ch. 759, 62 Stat. 1161, "jurisdiction is hereby conferred on the State of Iowa over offenses committed by or against Indians on the Sac and Fox Indian Reservation in that State" (marginal headnotes interleave in the scan text layer). Iowa civil jurisdiction (Iowa Code § 1.12) was already recorded and is separate. Also cites: statutes-at-large-62-1161.'
+- topic: environmental-treatment-as-a-state
+  value: clean-water-act-water-quality-standards
+  detail: EPA found the nation eligible on Aug. 13, 2019 to set water quality standards (treatment in a similar manner as a state under Clean Water Act § 518), and first approved its standards on May 13, 2026.
+  source: epa-actions-on-tribal-water-quality-standards
+  confidence: high
+  verification: inferred
+  as_of: '2019-08-13'
+  locator: 'Table of approvals by Tribe, column "Regulatory Programs": "WQS Program"'
 jurisdiction_agreements:
 - kind: child-welfare-agreement
   other_party: Iowa Department of Human Services

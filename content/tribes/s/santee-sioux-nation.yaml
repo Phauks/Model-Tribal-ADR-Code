@@ -11,6 +11,16 @@ recognition:
   verification: bulk-import
   as_of: '2026-01-30'
   locator: 91 Fed. Reg. 4105
+- type: federal
+  earliest_record: treaty
+  legal_basis: Treaty with the Sauk and Foxes, etc., July 15, 1830, 7 Stat. 328
+  since: '1830-07-15'
+  source: treaty-with-the-sauk-and-foxes-etc-1830
+  confidence: low
+  verification: inferred
+  as_of: '1830-07-15'
+  locator: p. 305 (Treaty with the Sauk and Foxes, etc., 1830; Kappler header "July 15, 1830. | 7 Stat., 328. | Proclamation, Feb. 24, 1831.")
+  note: The earliest record this site has found that shows the United States dealing with the nation as a federally recognized nation. The relationship may be older. The treaty names the Wahpekuta; Mdewakanton; the nation's profile links it to the treaty by name, and the link has not yet been checked against a second source. 14 nations' profiles link this treaty.
 states:
 - state: NE
   presence: government-office
@@ -478,6 +488,14 @@ jurisdiction:
     notice prints its table as page images, so nation names were read from images and matched to the roster.
     Row re-read on 2026-11-22 from the page image (the govinfo PDF has no text layer for the table); verification
     level unchanged because the name was not matched word for word in machine-read text.'
+- topic: environmental-treatment-as-a-state
+  value: clean-air-act-administrative-functions
+  detail: 'EPA has approved the nation for treatment in a similar manner as a state to perform administrative functions under the Clean Air Act: §§ 126; 319; 505(a)(2).'
+  source: epa-tribes-approved-for-treatment-as-a-state
+  confidence: high
+  verification: inferred
+  as_of: '2026-10-21'
+  locator: 'Table of approvals by Tribe, column "Administrative Functions": "CAA §§ 126; 319; 505(a)(2)"'
 jurisdiction_agreements:
 - kind: tax-agreement
   other_party: Nebraska Department of Revenue

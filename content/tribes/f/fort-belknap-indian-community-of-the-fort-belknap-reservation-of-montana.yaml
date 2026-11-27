@@ -48,6 +48,16 @@ recognition:
   verification: bulk-import
   as_of: '2026-01-30'
   locator: 91 Fed. Reg. 4103
+- type: federal
+  earliest_record: treaty
+  legal_basis: Treaty of Fort Laramie with Sioux, etc., Sept. 17, 1851, 11 Stat. 749
+  since: '1851-09-17'
+  source: treaty-of-fort-laramie-with-sioux-etc-1851
+  confidence: medium
+  verification: inferred
+  as_of: '1851-09-17'
+  locator: p. 594 (Treaty of Fort Laramie with Sioux, etc., 1851; Kappler header "Sept. 17, 1851. | 11 Stats., p. 749.")
+  note: The earliest record this site has found that shows the United States dealing with the nation as a federally recognized nation. The relationship may be older. The treaty names the Assiniboine; the nation's profile links it to the treaty by name, and the link has not yet been checked against a second source. 7 nations' profiles link this treaty.
 states:
 - state: MT
   presence: government-office
@@ -708,6 +718,14 @@ jurisdiction:
   verification: read-in-full
   locator: Mont. Code Ann. § 2-1-302(1)-(2); § 2-1-303
   note: Procedure only; the research found no proclamation under it for any other tribe. Under § 2-1-303 the State assumes jurisdiction 60 days after the proclamation. Enacted as 1963 Mont. Laws ch. 81 (section history lines).
+- topic: hearth-act-leasing-regulations
+  value: approved
+  detail: The Secretary of the Interior approved the leasing regulations (Residential) of the Fort Belknap Indian, as the Bureau of Indian Affairs' list names it, under the HEARTH Act, 25 U.S.C. § 415(h), on June 12, 2020, so the nation can lease its trust land for those purposes under its own regulations without the Bureau of Indian Affairs approving each lease.
+  source: hearth-act-leasing-regulations-fort-belknap-indian-community-of-the-fort-belknap-reservatio-2020-06-12
+  confidence: high
+  verification: inferred
+  as_of: '2020-06-12'
+  locator: Bureau of Indian Affairs, Approved HEARTH Act Regulations, Approved in 2020
 jurisdiction_agreements:
 - kind: child-welfare-agreement
   other_party: Montana Department of Public Health and Human Services
@@ -806,7 +824,7 @@ land_establishment:
   confidence: medium
   verification: read-in-full
   locator: 25 Stat. 113, art. (Fort Belknap Reservation boundary)
-  note: 'The instrument reads: “the separate reservation for the Indians now attached to and receiving rations at the Fort Belknap Agency shall be bounded as follows”. Carved out of the reservation of Exec. Order of July 5, 1873 (1 Kappler 855-856). The act names "Indians now attached to ... Fort Belknap Agency," not the Gros Ventre and Assiniboine by name.'
+  note: 'The instrument reads: “the separate reservation for the Indians now attached to and receiving rations at the Fort Belknap Agency shall be bounded as follows”. Carved out of the reservation of Exec. Order of July 5, 1873 (1 Kappler 855-856). The act names "Indians now attached to . . . Fort Belknap Agency," not the Gros Ventre and Assiniboine by name.'
 memberships:
 - organization: Rocky Mountain Tribal Leaders Council
   source: rocky-mountain-tribal-leaders-council-who-we-are

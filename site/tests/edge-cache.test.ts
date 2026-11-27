@@ -26,6 +26,7 @@ describe('what the edge may keep', () => {
 
 	it('keeps map tiles, empty tiles included, map pictures and the map’s fonts and icons', () => {
 		expect(edgePolicy('GET', '/map-tiles/basemap-20261122/6/15/24.mvt', ok()).tags).toEqual(['map-tiles']);
+		expect(edgePolicy('GET', '/map-tiles/scan-1909-efc0c917deec/6/15/24.webp', ok()).tags).toEqual(['map-tiles']);
 		expect(edgePolicy('GET', '/map-tiles/basemap-20261122/6/15/24.mvt', ok({}, 204)).control).toMatch(/^public/);
 		expect(edgePolicy('GET', '/map-tiles/imagery/satellite/6/15/24', ok()).control).toMatch(/^public/);
 		expect(edgePolicy('GET', '/map-tiles/assets/sprites/white.json', ok()).control).toMatch(/^public/);
@@ -41,6 +42,12 @@ describe('what the edge may keep', () => {
 		expect(edgePolicy('GET', '/sitemaps/cases-2.xml', ok()).tags).toEqual(['nation-restrictions']);
 		// The lists as built are never served, so never kept.
 		expect(edgePolicy('GET', '/sitemaps/built/parts.json', ok()).control).toBe('no-store');
+	});
+
+	it('keeps the home page row of sponsors five minutes, but never a sponsor’s own pages', () => {
+		expect(edgePolicy('GET', '/sponsor/row.json', ok())).toEqual({ control: 'public, max-age=300', tags: ['sponsors'] });
+		expect(edgePolicy('GET', '/sponsor', ok()).control).toBe('no-store');
+		expect(edgePolicy('GET', '/account/sponsorship', ok()).control).toBe('no-store');
 	});
 
 	it('never keeps a signed-in, personal or changing page', () => {

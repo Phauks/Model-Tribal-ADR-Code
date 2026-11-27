@@ -11,6 +11,16 @@ recognition:
   verification: bulk-import
   as_of: '2026-01-30'
   locator: 91 Fed. Reg. 4104
+- type: federal
+  earliest_record: federal-list
+  legal_basis: Indian Entities Recognized and Eligible To Receive Services From the United States Bureau of Indian Affairs, 67 Fed. Reg. 46328, 46329 (July 12, 2002)
+  since: '2002-07-12'
+  source: bia-recognized-entities-2002
+  confidence: medium
+  verification: inferred
+  as_of: '2002-07-12'
+  locator: 67 Fed. Reg. 46329 (entry "Lower Lake Rancheria, California")
+  note: The earliest record this site has found that shows the United States dealing with the nation as a federally recognized nation. The relationship may be older. The list's entry reads "Lower Lake Rancheria, California." The entry is matched to the nation by name.
 states:
 - state: CA
   presence: government-office

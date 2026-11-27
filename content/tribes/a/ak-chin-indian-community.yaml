@@ -11,6 +11,16 @@ recognition:
   verification: bulk-import
   as_of: '2026-01-30'
   locator: 91 Fed. Reg. 4103
+- type: federal
+  earliest_record: federal-list
+  legal_basis: Indian Tribal Entities That Have a Government-to-Government Relationship With the United States, 44 Fed. Reg. 7235, 7235 (Feb. 6, 1979)
+  since: '1979-02-06'
+  source: bia-recognized-entities-1979
+  confidence: medium
+  verification: bulk-import
+  as_of: '1979-02-06'
+  locator: 44 Fed. Reg. 7235 (entry "Ak Chin Indian Community, Maricopa, Ak")
+  note: The earliest record this site has found that shows the United States dealing with the nation as a federally recognized nation. The relationship may be older. The list's entry reads "Ak Chin Indian Community, Maricopa, Ak." The entry is matched to the nation by name.
 states:
 - state: AZ
   presence: government-office
@@ -604,6 +614,14 @@ jurisdiction:
   verification: read-in-full
   locator: 113 Ariz. at 431
   note: 1976 holding about service of process on the Tohono O'odham (Papago) reservation, reasoning from the 1968 consent requirement. The research did not find any later Arizona assumption. Other federal statutes can still give Arizona limited authority; none checked here.
+- topic: hearth-act-leasing-regulations
+  value: approved
+  detail: The Secretary of the Interior approved the leasing regulations (Business) of the Ak-Chin Indian Community, as the Bureau of Indian Affairs' list names it, under the HEARTH Act, 25 U.S.C. § 415(h), on Nov. 10, 2013, so the nation can lease its trust land for those purposes under its own regulations without the Bureau of Indian Affairs approving each lease.
+  source: hearth-act-leasing-regulations-ak-chin-indian-community-2013-11-10
+  confidence: high
+  verification: inferred
+  as_of: '2013-11-10'
+  locator: Bureau of Indian Affairs, Approved HEARTH Act Regulations, Approved in 2013
 nearby_state_courts:
 - state: AZ
   county: Pinal County

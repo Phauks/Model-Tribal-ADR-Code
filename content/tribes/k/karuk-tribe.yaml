@@ -11,6 +11,16 @@ recognition:
   verification: bulk-import
   as_of: '2026-01-30'
   locator: 91 Fed. Reg. 4104
+- type: federal
+  earliest_record: federal-list
+  legal_basis: Indian Tribal Entities That Have a Government-to-Government Relationship With the United States, 44 Fed. Reg. 7235, 7235 (Feb. 6, 1979)
+  since: '1979-02-06'
+  source: bia-recognized-entities-1979
+  confidence: medium
+  verification: bulk-import
+  as_of: '1979-02-06'
+  locator: 44 Fed. Reg. 7235 (entry "Karok Tribe of California")
+  note: The earliest record this site has found that shows the United States dealing with the nation as a federally recognized nation. The relationship may be older. The list's entry reads "Karok Tribe of California." The entry is matched to the nation by name.
 states:
 - state: CA
   presence: government-office
@@ -855,6 +865,22 @@ jurisdiction:
     table as page images, so nation names were read from images and matched to the roster. Row re-read
     on 2026-11-22 from the page image, and the name was found word for word in the notice''s machine-read
     (OCR) text by the second gap review (research/reviews/2026-11-22-icwa-agents.csv).'
+- topic: hearth-act-leasing-regulations
+  value: approved
+  detail: The Secretary of the Interior approved the leasing regulations (Agricultural Business, Residential) of the Karuk Tribe, as the Bureau of Indian Affairs' list names it, under the HEARTH Act, 25 U.S.C. § 415(h), on Mar. 25, 2022, so the nation can lease its trust land for those purposes under its own regulations without the Bureau of Indian Affairs approving each lease.
+  source: hearth-act-leasing-regulations-karuk-tribe-2022-03-25
+  confidence: high
+  verification: inferred
+  as_of: '2022-03-25'
+  locator: Bureau of Indian Affairs, Approved HEARTH Act Regulations, Approved in 2022
+- topic: environmental-treatment-as-a-state
+  value: clean-water-act-water-quality-standards
+  detail: EPA found the nation eligible on June 26, 2020 to set water quality standards (treatment in a similar manner as a state under Clean Water Act § 518); EPA's list gives no date of approved standards of the nation's own.
+  source: epa-actions-on-tribal-water-quality-standards
+  confidence: high
+  verification: inferred
+  as_of: '2020-06-26'
+  locator: 'Table of approvals by Tribe, column "Regulatory Programs": "WQS Program"'
 jurisdiction_agreements:
 - kind: child-welfare-agreement
   other_party: California Department of Social Services

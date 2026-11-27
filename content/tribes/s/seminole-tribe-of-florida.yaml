@@ -11,6 +11,16 @@ recognition:
   verification: bulk-import
   as_of: '2026-01-30'
   locator: 91 Fed. Reg. 4105
+- type: federal
+  earliest_record: treaty
+  legal_basis: Treaty with the Florida Tribes of Indians, Sept. 18, 1823, 7 Stat. 224
+  since: '1823-09-18'
+  source: treaty-with-the-florida-tribes-of-indians-1823
+  confidence: medium
+  verification: inferred
+  as_of: '1823-09-18'
+  locator: p. 203 (Treaty with the Florida Tribes of Indians, 1823; Kappler header "Sept. 18, 1823. | 7 Stat., 224. | Proclamation, Jan. 2, 1824.")
+  note: The earliest record this site has found that shows the United States dealing with the nation as a federally recognized nation. The relationship may be older. The treaty names the Florida Tribes; the nation's profile links it to the treaty by name, and the link has not yet been checked against a second source. 2 nations' profiles link this treaty.
 states:
 - state: FL
   presence: government-office
@@ -884,6 +894,30 @@ jurisdiction:
   verification: read-in-full
   locator: Pub. L. 100-228 § 6(d)(1), 101 Stat. at 1559-60
   note: 'Quote is the first part of the clause; it continues "shall continue in full force and effect on such lands unless the United States accepts a retrocession." 25 U.S.C. § 1772d is "omitted" from the Code. The Miccosukee Tribe and Poarch Band: no similar statute found (not researched in depth).'
+- topic: hearth-act-leasing-regulations
+  value: approved
+  detail: The Secretary of the Interior approved the leasing regulations (Business) of the Seminole Tribe of Florida, as the Bureau of Indian Affairs' list names it, under the HEARTH Act, 25 U.S.C. § 415(h), on Jan. 8, 2015, so the nation can lease its trust land for those purposes under its own regulations without the Bureau of Indian Affairs approving each lease.
+  source: hearth-act-leasing-regulations-seminole-tribe-of-florida-2015-01-08
+  confidence: high
+  verification: inferred
+  as_of: '2015-01-08'
+  locator: Bureau of Indian Affairs, Approved HEARTH Act Regulations, Approved in 2015
+- topic: hearth-act-leasing-regulations
+  value: approved
+  detail: The Secretary of the Interior approved the leasing regulations (Residential) of the Seminole Tribe of Florida, as the Bureau of Indian Affairs' list names it, under the HEARTH Act, 25 U.S.C. § 415(h), on Jan. 8, 2015, so the nation can lease its trust land for those purposes under its own regulations without the Bureau of Indian Affairs approving each lease.
+  source: hearth-act-leasing-regulations-seminole-tribe-of-florida-2015-01-08-2
+  confidence: high
+  verification: inferred
+  as_of: '2015-01-08'
+  locator: Bureau of Indian Affairs, Approved HEARTH Act Regulations, Approved in 2015
+- topic: environmental-treatment-as-a-state
+  value: clean-water-act-water-quality-standards
+  detail: EPA found the nation eligible on June 1, 1994 to set water quality standards (treatment in a similar manner as a state under Clean Water Act § 518), and first approved its standards on Sept. 26, 1997.
+  source: epa-actions-on-tribal-water-quality-standards
+  confidence: high
+  verification: inferred
+  as_of: '1994-06-01'
+  locator: 'Table of approvals by Tribe, column "Regulatory Programs": "WQS Program"'
 court_practice:
 - kind: forms
   title: Forms (Seminole Tribe of Florida Tribal Court)
