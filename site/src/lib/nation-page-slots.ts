@@ -35,5 +35,5 @@ export async function fillNationSlots(nationIdentifier: string, pagePath = `/nat
  * Worker or fillNationSlots put it in the page (src/lib/nation-restrictions.ts).
  */
 export function restrictionsInPage(): PageRestrictions {
-	return readPageRestrictions(document.querySelector('script[data-nation-restrictions]')?.textContent);
+	return readPageRestrictions(document.querySelector('script[data-nation-restrictions]')?.textContent, (problem) => sendProblem(problem, { code: 'nation-restrictions.page' }));
 }
