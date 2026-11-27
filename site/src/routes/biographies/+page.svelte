@@ -36,7 +36,7 @@
 	<meta name="description" content="Native people in the cases on this site, leaders in nations' histories, and the people who signed treaties for the United States, each fact with its source." />
 </svelte:head>
 
-<Breadcrumbs trail={[{ label: 'Library', href: '/library' }]} />
+<Breadcrumbs trail={[{ label: 'Library', href: '/library' }]} current="Biographies" />
 
 <h1>Biographies <CountBadge count={data.people.length} /></h1>
 <DataTable identifier="biographies" label="Table: people with a page on this site" {columns} {rows} rowName={['person', 'people']} download="biographies" filters />
