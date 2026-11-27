@@ -40,7 +40,7 @@
 	<meta name="description" content="What everyone gets free, and what each sponsorship level adds." />
 </svelte:head>
 
-<Breadcrumbs trail={[{ label: 'Sponsorship', href: '/sponsor' }]} />
+<Breadcrumbs trail={[{ label: 'Sponsorship', href: '/sponsor' }]} current="Sponsorship levels" />
 <div class="sponsorship-levels">
 	<div class="title-row">
 		<h1>Sponsorship levels</h1>

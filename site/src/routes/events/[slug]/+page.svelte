@@ -22,7 +22,7 @@
 </svelte:head>
 
 <div class="event-page">
-	<Breadcrumbs trail={[{ label: 'Events', href: '/events' }]} />
+	<Breadcrumbs trail={[{ label: 'Events', href: '/events' }]} current={event.title} />
 	<h1>{event.title}</h1>
 	<p class="meta">
 		<span><CalendarDays size={20} strokeWidth={1.75} aria-hidden="true" /> {event.when}</span>

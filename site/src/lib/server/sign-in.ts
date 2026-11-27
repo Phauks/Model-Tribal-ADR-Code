@@ -3,9 +3,11 @@
  * (site/COLLABORATION.md, "How sign-in works"; decision record 0024).
  *
  * The site signs people in itself: a code or link sent by email, a password,
- * or a link the lead author made for someone they invited. Accounts and
- * sessions are in the site's own database (src/lib/server/accounts.ts). No
- * outside sign-in service is involved and no secret has to be set.
+ * a passkey, or a link the lead author made for someone they invited.
+ * Accounts and sessions are in the site's own database
+ * (src/lib/server/accounts.ts). Google and Microsoft can also vouch for
+ * someone (src/lib/server/outside-sign-in.ts), but the session is still the
+ * site's own.
  */
 import type { D1Database } from '@cloudflare/workers-types/index.ts';
 import type { Cookies } from '@sveltejs/kit';
@@ -103,9 +105,13 @@ export async function finishSignIn(
 		return { outcome: 'refused', reason: 'removed' };
 	}
 	const hasWorkspace = match.outcome === 'signed-in';
+	// A passkey already proved two things, the device and the person, so it
+	// counts as the second step as well (NIST SP 800-63B-4, section 2.2).
+	const passkey = method === 'passkey';
+	const waits = account.hasTwoStep && !passkey;
 	const { token, expiresAt } = await startSession(database, account.identifier, method, {
 		device,
-		secondStep: account.hasTwoStep ? 'waiting' : 'none',
+		secondStep: passkey ? 'done' : waits ? 'waiting' : 'none',
 		lasting: keep && !hasWorkspace
 	});
 	setSessionCookie(cookies, token, expiresAt);
@@ -114,7 +120,7 @@ export async function finishSignIn(
 	// follow, takes them back there.
 	const toWorkspace = returnTo === '/workspace' || returnTo.startsWith('/workspace/') || returnTo.startsWith('/workspace?');
 	const destination = hasWorkspace || !toWorkspace ? returnTo : '/profile';
-	if (account.hasTwoStep) return { outcome: 'signed-in', destination: secondStepPage(destination) };
+	if (waits) return { outcome: 'signed-in', destination: secondStepPage(destination) };
 	markSignedIn(cookies);
 	return { outcome: 'signed-in', destination };
 }

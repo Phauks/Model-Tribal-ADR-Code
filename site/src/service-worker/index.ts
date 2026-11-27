@@ -45,20 +45,31 @@ import { assets, immutable } from '$app/manifest';
 import { self } from '$app/service-worker';
 import { builtPathsAddress, installFiles } from 'virtual:offline-files';
 import { copyPagePrefix } from '#lib/public-copies.ts';
+import { pageOf, type WorkerReply, type WorkerRequest } from '#lib/offline-collections.ts';
 import {
-	collectionOf,
-	collections,
-	pageOf,
-	type CollectionIdentifier,
-	type CollectionStatus,
-	type OfflineStatus,
-	type WorkerReply,
-	type WorkerRequest
-} from '#lib/offline-collections.ts';
+	applyChoice,
+	catalogAddress,
+	catalogIndexAddress,
+	catalogPageOf,
+	catalogTree,
+	chosenPages,
+	filesOf,
+	type Catalog,
+	type CatalogIndexEntry,
+	type CatalogNode,
+	type CatalogPage,
+	type ChoiceChange,
+	type Choices,
+	type ChoicesStatus,
+	type NodeState,
+	type PageChoice,
+	type PageState
+} from '#lib/offline-choices.ts';
 import {
 	documentsCacheName,
 	isDocumentSet,
 	listAddress,
+	nationSet,
 	type DocumentFile,
 	type DocumentSet,
 	type DocumentSetList,
@@ -101,19 +112,27 @@ const neverCached = [
 	// A quotation's paragraph depends on the words asked about, which saved pages match without (ignoreSearch).
 	'/quote-context',
 	// The data the Worker draws case, law, biography and Supreme Court pages from (src/lib/server/page-data.ts); the pages themselves are saved as they are read.
-	'/page-data'
+	'/page-data',
+	// For search engines, not readers (src/lib/sitemap.ts, src/lib/search-engines.ts).
+	'/robots.txt',
+	'/sitemap.xml',
+	'/sitemaps'
 ];
-/** Not a real address: the list of collections the reader keeps, stored in the cache. */
+/** Not a real address: the collections a device kept before the outline replaced them, read once and replaced by choicesKey. */
 const keptCollectionsKey = '/__kept-collections';
+/** Not a real address: the parts, groups and pages the reader chose to save (readChoices). */
+const choicesKey = '/__chosen';
 /** This build's fingerprints, stored in its cache so the page can compare builds. */
 const fingerprintsKey = savedFingerprintsKey;
-/** Not a real address: the collections the reader asked to save whose saving has not finished. */
-const unfinishedCollectionsKey = '/__unfinished-collections';
+/** Not a real address: present while a save the reader asked for has not finished. */
+const unfinishedKey = '/__unfinished';
+/** Not a real address: present once this build has saved the pages new to what the reader chose (offline-resume). */
+const toppedUpKey = '/__topped-up';
 /** Not a real address: saved pages that changed in this build, to download again. */
 const changedKey = '/__changed';
 /** Not a real address: this build's list of prerendered files, once read (builtPaths). */
 const builtPathsKey = '/__built-paths';
-const internalKeys = new Set([keptCollectionsKey, unfinishedCollectionsKey, fingerprintsKey, changedKey, builtPathsKey]);
+const internalKeys = new Set([keptCollectionsKey, choicesKey, unfinishedKey, toppedUpKey, '/__unfinished-collections', fingerprintsKey, changedKey, builtPathsKey]);
 /**
  * The most files an update downloads on its own to fill in a kept
  * collection: a few new nations or glossary entries, not a new section of
@@ -213,16 +232,6 @@ async function readBuiltPaths(): Promise<Set<string>> {
 	throw new Error('The list of this build’s pages could not be read.');
 }
 
-/** Every page and page data file of this build, by collection, that may be saved. */
-async function collectionFiles(): Promise<Map<CollectionIdentifier, string[]>> {
-	const lists = new Map<CollectionIdentifier, string[]>(collections.map((collection) => [collection.id, []]));
-	for (const path of await builtPaths()) {
-		if (isNeverCached(path) || path === '/manifest.webmanifest' || path === '/icon.svg') continue;
-		lists.get(collectionOf(path))?.push(path);
-	}
-	return lists;
-}
-
 /** Saves those of these built scripts and styles that are not saved yet. */
 async function saveMissing(cache: Cache, paths: Iterable<string>): Promise<void> {
 	const missing: string[] = [];
@@ -249,9 +258,6 @@ async function noteScriptsOf(response: Response, wanted: Set<string>): Promise<v
 	for (const path of scriptsIn(await response.clone().text())) wanted.add(path);
 }
 
-function pagesIn(files: string[]): Set<string> {
-	return new Set(files.filter((path) => !path.endsWith('__data.json')).map(pageOf));
-}
 const cacheFirst = new Set([...shell, ...staticFiles, '/manifest.webmanifest', '/icon.svg']);
 
 self.addEventListener('install', (event) => {
@@ -324,6 +330,12 @@ async function carryForward(cache: Cache, fingerprints: Fingerprints | undefined
 					continue;
 				}
 				const expected = fingerprints?.files[path];
+				if (fingerprints && !expected && (await carryDrawnPage(cache, oldCache, oldVersion, path, response, fingerprints))) {
+					have.add(path);
+					changed.delete(path);
+					continue;
+				}
+				if (fingerprints?.onRequest?.[pageOf(path)]) changed.add(path);
 				if (!fingerprints || !expected) continue;
 				if ((response.headers.get('content-type') ?? '').includes('text/html')) {
 					const blanked = withoutBuild(await response.text(), oldVersion);
@@ -348,6 +360,38 @@ async function carryForward(cache: Cache, fingerprints: Fingerprints | undefined
 		// Storage or a read failed: whatever was not carried forward is downloaded again.
 	}
 	await setChangedPages(cache, [...changed]);
+}
+
+const oldFingerprints = new Map<string, Promise<Fingerprints | undefined>>();
+
+/**
+ * Carries a saved page the Worker drew on request (src/lib/server/page-data.ts), or its __data.json, into this build:
+ * such a page has no built file to compare, so it is the same when the page data it was drawn from is the same in both
+ * builds and every script and style its HTML loads is in this build. It is not carried otherwise, and a page that
+ * changed is listed to be saved again (carryForward).
+ */
+async function carryDrawnPage(cache: Cache, oldCache: Cache, oldVersion: string, path: string, response: Response, fingerprints: Fingerprints): Promise<boolean> {
+	const page = pageOf(path);
+	const expected = fingerprints.onRequest?.[page];
+	if (!expected) return false;
+	let before = oldFingerprints.get(oldVersion);
+	if (!before) {
+		before = oldCache
+			.match(fingerprintsKey)
+			.then(async (saved) => (saved ? ((await saved.json()) as Fingerprints) : undefined))
+			.catch(() => undefined);
+		oldFingerprints.set(oldVersion, before);
+	}
+	if ((await before)?.onRequest?.[page] !== expected) return false;
+	if (!(response.headers.get('content-type') ?? '').includes('text/html')) {
+		await cache.put(path, response);
+		return true;
+	}
+	const text = await response.text();
+	if (!scriptsIn(text).every((script) => shellSet.has(script))) return false;
+	const drawn = withBuild(withoutBuild(text, oldVersion), fingerprints.version, fingerprints.startName);
+	await cache.put(path, new Response(drawn, { headers: { 'content-type': 'text/html; charset=utf-8' } }));
+	return true;
 }
 
 async function changedPages(cache: Cache): Promise<string[]> {
@@ -419,7 +463,7 @@ async function removeWithdrawnPages(fingerprints: Fingerprints | undefined): Pro
  * Whether a saved page is in this build. The fingerprints, which install reads anyway, name every page a reader may save, which is every page a cache can hold (tools/write-offline-sizes.mjs), so the list of built files is read only when they could not be had. When neither can be read, installing fails and the browser tries again later, so no withdrawn page is kept.
  */
 async function builtPageCheck(fingerprints: Fingerprints | undefined): Promise<(path: string) => boolean> {
-	if (fingerprints) return (path) => Object.hasOwn(fingerprints.files, path);
+	if (fingerprints) return (path) => Object.hasOwn(fingerprints.files, path) || Object.hasOwn(fingerprints.onRequest ?? {}, pageOf(path));
 	const built = await builtPaths();
 	return (path) => built.has(path);
 }
@@ -464,9 +508,9 @@ async function tidyOldCaches(): Promise<void> {
 	const currentFiles = new Set(immutable.map((file) => absolute(file.path)));
 	for (const name of oldNames) {
 		const oldCache = await caches.open(name);
-		// Keep the reader's lists of kept and unfinished collections; their
+		// Keep the reader's choices, and whether a save was cut short; the chosen
 		// pages are saved again from this build when a page asks (offline-resume).
-		for (const key of [keptCollectionsKey, unfinishedCollectionsKey]) {
+		for (const key of [choicesKey, keptCollectionsKey, unfinishedKey]) {
 			const list = await oldCache.match(key);
 			if (list && !(await cache.match(key))) await cache.put(key, list);
 		}
@@ -556,144 +600,492 @@ async function isFromThisBuild(response: Response): Promise<boolean> {
 	return !newerBuildSeen;
 }
 
-/** A list of collections stored in the cache under a made-up address: the kept ones, or the unfinished ones. */
-async function readCollections(cache: Cache, key: string): Promise<Set<CollectionIdentifier>> {
-	const saved = await cache.match(key);
-	if (!saved) return new Set();
-	try {
-		return new Set((await saved.json()) as CollectionIdentifier[]);
-	} catch {
-		return new Set();
-	}
-}
-
-async function markCollection(cache: Cache, key: string, id: CollectionIdentifier, marked: boolean): Promise<void> {
-	const list = await readCollections(cache, key);
-	if (marked) list.add(id);
-	else list.delete(id);
-	await cache.put(key, new Response(JSON.stringify([...list]), { headers: { 'content-type': 'application/json' } }));
-}
-
-function keptCollections(cache: Cache): Promise<Set<CollectionIdentifier>> {
-	return readCollections(cache, keptCollectionsKey);
-}
-
-async function setKept(cache: Cache, id: CollectionIdentifier, kept: boolean): Promise<void> {
-	await markCollection(cache, keptCollectionsKey, id, kept);
-}
-
-/** The files of a collection in this build that are not saved yet. */
-async function missingFiles(cache: Cache, files: string[]): Promise<string[]> {
-	const have = new Set((await cache.keys()).map((request) => new URL(request.url).pathname));
-	return files.filter((path) => !have.has(path));
-}
-
-async function status(): Promise<OfflineStatus> {
-	const cache = await caches.open(cacheName);
-	const kept = await keptCollections(cache);
-	const built = await builtPaths();
-	const collectionFileLists = await collectionFiles();
-	const savedPages = new Map<CollectionIdentifier, Set<string>>();
-	const bytes = new Map<CollectionIdentifier, number>();
-	for (const request of await cache.keys()) {
-		const path = new URL(request.url).pathname;
-		if (!built.has(path) || isNeverCached(path)) continue;
-		const id = collectionOf(path);
-		if (!path.endsWith('__data.json')) {
-			savedPages.set(id, (savedPages.get(id) ?? new Set()).add(pageOf(path)));
-		}
-		const response = await cache.match(request);
-		if (response) bytes.set(id, (bytes.get(id) ?? 0) + (await response.blob()).size);
-	}
-	const list: CollectionStatus[] = collections.map(({ id }) => {
-		const pages = pagesIn(collectionFileLists.get(id) ?? []);
-		return {
-			id,
-			total: pages.size,
-			saved: [...(savedPages.get(id) ?? [])].filter((page) => pages.has(page)).length,
-			bytes: bytes.get(id) ?? 0,
-			kept: kept.has(id)
-		};
-	});
-	return { version, collections: list };
-}
-
-/** One saving job per collection at a time; later requests share it. */
-const running = new Map<CollectionIdentifier, Promise<void>>();
-/** Collections the reader removed while they were being saved: their jobs stop after the files already on the way. */
-const stopping = new Set<CollectionIdentifier>();
-const listeners = new Map<CollectionIdentifier, Set<MessagePort>>();
-
 function tell(port: MessagePort | undefined, reply: WorkerReply): void {
 	port?.postMessage(reply);
 }
 
-async function saveCollection(id: CollectionIdentifier): Promise<void> {
+/** A list stored in a cache under a made-up address. */
+async function readList<Item>(cache: Cache, key: string): Promise<Item[]> {
+	const saved = await cache.match(key);
+	if (!saved) return [];
+	try {
+		const list = (await saved.json()) as unknown;
+		return Array.isArray(list) ? (list as Item[]) : [];
+	} catch {
+		return [];
+	}
+}
+
+function json(value: unknown): Response {
+	return new Response(JSON.stringify(value), { headers: { 'content-type': 'application/json' } });
+}
+
+/**
+ * The parts, groups and pages the reader chose, kept in this build's cache and carried to the next build. A device
+ * that kept whole collections before the outline (Nov. 26, 2026) starts from the parts they became.
+ */
+async function readChoices(cache: Cache): Promise<Choices> {
+	const saved = await cache.match(choicesKey);
+	if (saved) {
+		try {
+			const choices = (await saved.json()) as Choices;
+			if (Array.isArray(choices.nodes) && Array.isArray(choices.pages)) return choices;
+		} catch {
+			// Unreadable: as if nothing were chosen.
+		}
+		return { nodes: [], pages: [] };
+	}
+	const kept = await readList<string>(cache, keptCollectionsKey);
+	const parts: Record<string, string[]> = { nations: ['nations'], cases: ['cases', 'supreme-court', 'biographies'], stories: ['stories'], glossary: ['glossary'], other: ['other'] };
+	return { nodes: kept.flatMap((id) => parts[id] ?? []), pages: [] };
+}
+
+async function writeChoices(cache: Cache, choices: Choices): Promise<void> {
+	await cache.put(choicesKey, json({ nodes: [...new Set(choices.nodes)], pages: [...new Set(choices.pages)] }));
+	await cache.delete(keptCollectionsKey);
+}
+
+let catalogRead: Promise<Catalog> | undefined;
+const listsRead = new Map<string, Promise<CatalogPage[]>>();
+let indexRead: Promise<Map<string, string>> | undefined;
+
+/** A file of this build's catalog: the saved copy, else from the network, then saved in this build's cache. */
+async function catalogFile<Kind>(address: string): Promise<Kind> {
 	const cache = await caches.open(cacheName);
-	const files = (await collectionFiles()).get(id) ?? [];
-	const missing = await missingFiles(cache, files);
-	let done = files.length - missing.length;
-	const report = () => {
-		for (const port of listeners.get(id) ?? []) {
-			tell(port, { type: 'progress', collection: id, done, total: files.length });
-		}
-	};
-	report();
-	// A few at a time, so reading the site stays quick while this runs.
-	const queue = [...missing];
-	// The scripts and styles the saved pages load, so they also work offline (src/lib/offline-shell.ts).
-	const scripts = new Set<string>();
+	const saved = await cache.match(address);
+	if (saved) return (await saved.json()) as Kind;
+	const response = await fetch(address);
+	if (!response.ok) throw new Error(`Could not read ${address}`);
+	await cache.put(address, response.clone());
+	return (await response.json()) as Kind;
+}
+
+/** The outline of what can be saved in this build (tools/write-offline-catalog.mjs). */
+function catalog(): Promise<Catalog> {
+	catalogRead ??= catalogFile<Catalog>(catalogAddress)
+		.then(async (read) => {
+			if (read.version === version) return read;
+			// The server has a newer build: its pages would need scripts this version lacks.
+			await (await caches.open(cacheName)).delete(catalogAddress);
+			newerBuildSeen = true;
+			throw new Error('newer-build');
+		})
+		.catch((error: unknown) => {
+			catalogRead = undefined;
+			throw error;
+		});
+	return catalogRead;
+}
+
+function listOf(node: CatalogNode): Promise<CatalogPage[]> {
+	if (!node.list) return Promise.resolve([]);
+	const address = node.list;
+	let read = listsRead.get(address);
+	if (!read) {
+		read = catalogFile<CatalogPage[]>(address).catch((error: unknown) => {
+			listsRead.delete(address);
+			throw error;
+		});
+		listsRead.set(address, read);
+	}
+	return read;
+}
+
+/** Every list of the catalog, by node key. */
+async function allLists(read: Catalog): Promise<Record<string, CatalogPage[]>> {
+	const lists: Record<string, CatalogPage[]> = {};
+	const nodes = catalogTree(read, {}).listNodes();
+	// A few at a time: the lists are small, but there are a few hundred.
+	const queue = [...nodes];
 	async function next(): Promise<void> {
-		if (stopping.has(id)) return;
-		const path = queue.shift();
-		if (!path) return;
-		const response = await fetch(path);
-		if (!(await isFromThisBuild(response))) {
-			throw new Error(newerBuildSeen ? 'newer-build' : `Could not save ${path}`);
-		}
-		await noteScriptsOf(response, scripts);
-		await cache.put(path, response);
-		done += 1;
-		if (done % 10 === 0 || queue.length === 0) report();
+		const node = queue.shift();
+		if (!node) return;
+		lists[node.key] = await listOf(node);
 		return next();
 	}
-	await Promise.all(Array.from({ length: 6 }, next));
-	await saveMissing(cache, scripts);
-	report();
+	await Promise.all(Array.from({ length: 8 }, next));
+	return lists;
 }
 
-function runSave(id: CollectionIdentifier, port: MessagePort | undefined): Promise<void> {
-	if (port) listeners.set(id, (listeners.get(id) ?? new Set()).add(port));
-	let job = running.get(id);
-	if (!job) {
-		job = saveCollection(id).finally(() => {
-			running.delete(id);
-			listeners.delete(id);
+/** Each page's list, from the finder's index, for the save button at the top of a page. */
+function pageLists(): Promise<Map<string, string>> {
+	indexRead ??= catalogFile<CatalogIndexEntry[]>(catalogIndexAddress)
+		.then((entries) => new Map(entries.map(([path, , list]) => [path, list])))
+		.catch((error: unknown) => {
+			indexRead = undefined;
+			throw error;
 		});
-		running.set(id, job);
-	}
-	return job;
+	return indexRead;
 }
 
-async function removeCollection(id: CollectionIdentifier): Promise<void> {
-	const cache = await caches.open(cacheName);
-	await setKept(cache, id, false);
-	await markCollection(cache, unfinishedCollectionsKey, id, false);
-	// Stop a save still running, and wait for it, so no file it fetched lands after the removal.
-	const job = running.get(id);
-	if (job) {
-		stopping.add(id);
-		await job.catch(() => undefined);
-		stopping.delete(id);
+function isDocumentKey(key: string): boolean {
+	return key === 'documents' || key.startsWith('documents-') || key.startsWith('/copies/') || key.endsWith('#documents');
+}
+
+/** The document set a nation's entry in the outline stands for: "/nations/x#documents" is "nation:x". */
+function setOfEntry(path: string): DocumentSet | undefined {
+	const match = /^\/nations\/([a-z0-9-]+)#documents$/.exec(path);
+	return match ? nationSet(match[1]) : undefined;
+}
+
+/** The pages saved in this build's cache, by address. */
+async function savedPaths(cache: Cache): Promise<Set<string>> {
+	return new Set((await cache.keys()).map((request) => new URL(request.url).pathname));
+}
+
+/** The saved pages the waiting update changes (its carryForward lists them in its own cache), if one waits. */
+async function waitingChanges(): Promise<Set<string> | undefined> {
+	if (!self.registration.waiting) return undefined;
+	for (const name of await caches.keys()) {
+		if (name === cacheName || !name.startsWith(cachePrefix)) continue;
+		return new Set(await changedPages(await caches.open(name)));
 	}
-	await setChangedPages(cache, (await changedPages(cache)).filter((path) => collectionOf(path) !== id));
-	const built = await builtPaths();
-	for (const request of await cache.keys()) {
-		const path = new URL(request.url).pathname;
-		if (built.has(path) && collectionOf(path) === id && !precachedSet.has(path)) {
-			await cache.delete(request);
+	return new Set();
+}
+
+async function choicesStatus(): Promise<ChoicesStatus> {
+	const cache = await caches.open(cacheName);
+	const read = await catalog();
+	const lists = await allLists(read);
+	const tree = catalogTree(read, lists);
+	const choices = await readChoices(cache);
+	const chosen = chosenPages(choices, read, lists);
+	const saved = await savedPaths(cache);
+	const changes = await waitingChanges();
+	const documents = await documentChoices();
+	const nodes: Record<string, NodeState> = {};
+	const pages: Record<string, PageState> = {};
+	const readPages = { pages: 0, bytes: 0 };
+	const waiting = { changedPages: 0, bytes: 0 };
+	let missing = 0;
+	const add = (key: string, count: number, bytes: number, changed: boolean) => {
+		for (const at of [key, ...tree.above(key)]) {
+			const state = (nodes[at] ??= { chosen: 0, bytes: 0 });
+			state.chosen += count;
+			state.bytes += bytes;
+			if (changed) state.changed = (state.changed ?? 0) + 1;
+		}
+	};
+	for (const node of tree.listNodes()) {
+		for (const page of lists[node.key] ?? []) {
+			if (isDocumentKey(node.key)) {
+				const status = documents.statusOf(page);
+				if (status.chosen) pages[page.path] = { chosen: true };
+				if (status.saved > 0) add(node.key, status.saved, status.bytes, false);
+				continue;
+			}
+			const whole = filesOf(page).length > 0 && filesOf(page).every((file) => saved.has(file));
+			const some = filesOf(page).some((file) => saved.has(file));
+			const isChosen = chosen.has(page.path);
+			const changed = changes !== undefined && filesOf(page).some((file) => changes.has(file));
+			if (changed) {
+				waiting.changedPages += 1;
+				waiting.bytes += page.bytes;
+			}
+			if (isChosen) {
+				pages[page.path] = { chosen: true, ...(changed ? { changed: true } : {}) };
+				if (whole) add(node.key, 1, page.bytes, changed);
+				else missing += 1;
+			} else if (some) {
+				pages[page.path] = { read: true, ...(changed ? { changed: true } : {}) };
+				readPages.pages += 1;
+				readPages.bytes += page.bytes;
+			}
 		}
 	}
+	if (saving) {
+		for (const key of saving.keys) {
+			const state = (nodes[key] ??= { chosen: 0, bytes: 0 });
+			state.saving = { done: saving.done, total: saving.total };
+		}
+	}
+	return { version, nodes, pages, read: readPages, ...(changes ? { waiting } : {}), missing, choices };
+}
+
+/** The pages and files the choices hold that are not saved yet. */
+async function missingChosen(cache: Cache): Promise<{ pages: CatalogPage[]; files: number }> {
+	const read = await catalog();
+	const lists = await allLists(read);
+	const saved = await savedPaths(cache);
+	const pages = [...chosenPages(await readChoices(cache), read, lists).values()].filter(
+		(page) => !isDocumentKey(page.path) && filesOf(page).some((file) => !saved.has(file))
+	);
+	return { pages, files: pages.reduce((total, page) => total + filesOf(page).filter((file) => !saved.has(file)).length, 0) };
+}
+
+/** The save running now, if any: the outline's nodes it is for, and how far it has come in pages. */
+let saving: { keys: string[]; done: number; total: number } | undefined;
+let savingJob: Promise<void> | undefined;
+/** Pages to save, by address, as the choices stood when the job last looked. Removing a page takes it out. */
+let stillChosen = new Set<string>();
+const savingListeners = new Set<MessagePort>();
+
+function reportSaving(): void {
+	if (!saving) return;
+	for (const port of savingListeners) tell(port, { type: 'choices-progress', done: saving.done, total: saving.total });
+}
+
+/**
+ * Saves every chosen page not saved yet, six files at a time, so reading stays quick while it runs. Another change
+ * while it runs is taken in: pages chosen meanwhile are saved too, and pages removed meanwhile are skipped.
+ */
+function saveChosen(keys: string[], port: MessagePort | undefined): Promise<void> {
+	if (port) savingListeners.add(port);
+	if (saving) saving.keys = [...new Set([...saving.keys, ...keys])];
+	savingJob ??= (async () => {
+		const cache = await caches.open(cacheName);
+		await writeFlag(cache, unfinishedKey, true);
+		saving = { keys, done: 0, total: 0 };
+		// Again until nothing chosen is missing, which takes in pages chosen while it ran; a round that saved nothing ends it.
+		let lastRound = '';
+		for (;;) {
+			const { pages } = await missingChosen(cache);
+			const round = pages.map((page) => page.path).join('\n');
+			if (pages.length === 0 || round === lastRound) break;
+			lastRound = round;
+			stillChosen = new Set(pages.map((page) => page.path));
+			saving.total = saving.done + pages.length;
+			reportSaving();
+			const queue = [...pages];
+			const scripts = new Set<string>();
+			const have = await savedPaths(cache);
+			async function next(): Promise<void> {
+				const page = queue.shift();
+				if (!page) return;
+				if (stillChosen.has(page.path)) {
+					for (const file of filesOf(page)) {
+						if (have.has(file)) continue;
+						const response = await fetch(file);
+						if (!(await isFromThisBuild(response))) throw new Error(newerBuildSeen ? 'newer-build' : `Could not save ${file}`);
+						await noteScriptsOf(response, scripts);
+						await cache.put(file, response);
+					}
+					// Removed while its files were on the way.
+					if (!stillChosen.has(page.path)) for (const file of filesOf(page)) if (!precachedSet.has(file)) await cache.delete(file);
+				}
+				if (saving) saving.done += 1;
+				if ((saving?.done ?? 0) % 10 === 0 || queue.length === 0) reportSaving();
+				return next();
+			}
+			await Promise.all(Array.from({ length: 6 }, next));
+			await saveMissing(cache, scripts);
+		}
+		await writeFlag(cache, unfinishedKey, false);
+	})().finally(() => {
+		savingJob = undefined;
+		saving = undefined;
+		savingListeners.clear();
+	});
+	return savingJob;
+}
+
+async function readFlag(cache: Cache, key: string): Promise<boolean> {
+	return (await cache.match(key)) !== undefined;
+}
+
+async function writeFlag(cache: Cache, key: string, on: boolean): Promise<void> {
+	if (on) await cache.put(key, json(true));
+	else await cache.delete(key);
+}
+
+/** Deletes the saved files of pages the choices no longer hold, other than the core pages saved on install. */
+async function removePages(cache: Cache, pages: Iterable<CatalogPage>): Promise<void> {
+	const changed = new Set(await changedPages(cache));
+	for (const page of pages) {
+		stillChosen.delete(page.path);
+		for (const file of filesOf(page)) {
+			changed.delete(file);
+			if (!precachedSet.has(file)) await cache.delete(file);
+		}
+	}
+	await setChangedPages(cache, [...changed]);
+}
+
+/** Applies the reader's changes: the choices first, then removals, then saving, which may take a while. */
+async function applyChoices(changes: ChoiceChange[], port: MessagePort | undefined): Promise<void> {
+	const cache = await caches.open(cacheName);
+	const read = await catalog();
+	const lists = await allLists(read);
+	const tree = catalogTree(read, lists);
+	const before = chosenPages(await readChoices(cache), read, lists);
+	let choices = await readChoices(cache);
+	const documentChanges: ChoiceChange[] = [];
+	for (const asked of changes) {
+		let change = asked;
+		// A page the catalog folds into another, such as a nation's opinions page into the nation's entry.
+		if (change.kind === 'page' && !isDocumentKey(change.key) && tree.above(change.key).length === 0) {
+			const known = await pageLists();
+			const page = catalogPageOf(change.key, (at) => known.has(at) && !isDocumentKey(at));
+			if (page) change = { ...change, key: page };
+		}
+		if (isDocumentKey(change.key)) documentChanges.push(change);
+		else if (tree.nodeOf.has(change.key) || tree.above(change.key).length > 0) choices = applyChoice(choices, change, tree);
+	}
+	await writeChoices(cache, choices);
+	const after = chosenPages(choices, read, lists);
+	await removePages(cache, [...before.values()].filter((page) => !after.has(page.path)));
+	if (documentChanges.length > 0) await applyDocumentChanges(documentChanges, tree, lists);
+	const keys = changes.filter((change) => change.save && !isDocumentKey(change.key)).map((change) => change.key);
+	tell(port, { type: 'choices', status: await choicesStatus() });
+	// No changes at all: the reader asked to save what they chose that is not saved yet.
+	if (keys.length > 0 || changes.length === 0) await saveChosen(keys, port);
+	if (documentChanges.some((change) => change.save)) await saveKeptDocuments();
+}
+
+/** Deletes every page saved as the reader read, which the choices do not hold. */
+async function clearReadPages(): Promise<void> {
+	const cache = await caches.open(cacheName);
+	const read = await catalog();
+	const lists = await allLists(read);
+	const chosen = chosenPages(await readChoices(cache), read, lists);
+	const saved = await savedPaths(cache);
+	const pages: CatalogPage[] = [];
+	for (const list of Object.values(lists)) {
+		for (const page of list) if (!isDocumentKey(page.path) && !chosen.has(page.path) && filesOf(page).some((file) => saved.has(file))) pages.push(page);
+	}
+	await removePages(cache, pages);
+}
+
+/** Forgets every choice and deletes every saved page and copy, for Settings > Your data. */
+async function clearEverything(): Promise<void> {
+	const cache = await caches.open(cacheName);
+	await writeChoices(cache, { nodes: [], pages: [] });
+	await writeFlag(cache, unfinishedKey, false);
+	stillChosen.clear();
+	const built = await builtPaths().catch(() => new Set<string>());
+	const read = await catalog().catch(() => undefined);
+	const lists = read ? await allLists(read) : {};
+	const files = new Set([...built, ...Object.values(lists).flatMap((list) => list.flatMap((page) => filesOf(page)))]);
+	for (const request of await cache.keys()) {
+		const path = new URL(request.url).pathname;
+		if (files.has(path) && !precachedSet.has(path)) await cache.delete(request);
+	}
+	await setChangedPages(cache, []);
+	const documents = await caches.open(documentsCacheName);
+	for (const set of await readSets(documents, keptDocumentsKey)) await removeDocumentSet(set);
+	await removeCopies(await readList<string>(documents, keptCopiesKey));
+}
+
+/**
+ * Whether the page at an address is chosen and saved, for the save button at the top of each page. Asked on every page,
+ * so a reader who has chosen nothing gets the answer without the catalog's index being read.
+ */
+async function pageChoice(path: string): Promise<PageChoice> {
+	const cache = await caches.open(cacheName);
+	const choices = await readChoices(cache);
+	if (choices.nodes.length === 0 && choices.pages.length === 0) {
+		return { path, known: !isNeverCached(path), chosen: false, saved: (await cache.match(path)) !== undefined };
+	}
+	const lists = await pageLists();
+	const page = catalogPageOf(path, (at) => lists.has(at) && !isDocumentKey(at));
+	if (!page) return { path, known: false, chosen: false, saved: false };
+	const read = await catalog();
+	const node = catalogTree(read, {}).nodeOf.get(lists.get(page) ?? '');
+	const entry = node ? (await listOf(node)).find((item) => item.path === page) : undefined;
+	if (!node || !entry) return { path, known: false, chosen: false, saved: false };
+	const tree = catalogTree(read, { [node.key]: [entry] });
+	const chosen = choices.pages.includes(page) || [node.key, ...tree.above(node.key)].some((key) => choices.nodes.includes(key));
+	const saved = await savedPaths(cache);
+	return { path: page, known: true, chosen, saved: filesOf(entry).every((file) => saved.has(file)) };
+}
+
+/** Not a real address: copies of United States documents the reader chose one by one, in the documents cache. */
+const keptCopiesKey = '/__kept-copies';
+
+/** What is chosen and saved of the documents, for the outline. */
+async function documentChoices(): Promise<{ statusOf: (page: CatalogPage) => { chosen: boolean; saved: number; bytes: number } }> {
+	const cache = await caches.open(documentsCacheName);
+	const kept = new Set(await readSets(cache, keptDocumentsKey));
+	const copies = new Set(await readList<string>(cache, keptCopiesKey));
+	const saved = await savedCopies(cache);
+	const nations = new Map<DocumentSet, { saved: number; bytes: number }>();
+	for (const set of kept) {
+		if (set === 'federal') continue;
+		const files = (await documentList(cache, set, false))?.files ?? [];
+		const savedFiles = files.filter(([path]) => saved.has(path));
+		nations.set(set, { saved: savedFiles.length, bytes: savedFiles.reduce((total, [, bytes]) => total + bytes, 0) });
+	}
+	return {
+		statusOf(page) {
+			const set = setOfEntry(page.path);
+			if (set) return { chosen: kept.has(set), ...(nations.get(set) ?? { saved: 0, bytes: 0 }) };
+			const chosen = kept.has('federal') || copies.has(page.path);
+			const isSaved = chosen && saved.has(page.path);
+			return { chosen, saved: isSaved ? 1 : 0, bytes: isSaved ? page.bytes : 0 };
+		}
+	};
+}
+
+/** Deletes saved copies, except those a kept set still lists. */
+async function removeCopies(paths: string[]): Promise<void> {
+	const cache = await caches.open(documentsCacheName);
+	const gone = new Set(paths);
+	await cache.put(keptCopiesKey, json((await readList<string>(cache, keptCopiesKey)).filter((path) => !gone.has(path))));
+	const stillWanted = new Set<string>();
+	for (const set of await readSets(cache, keptDocumentsKey)) {
+		for (const [path] of (await documentList(cache, set, false))?.files ?? []) stillWanted.add(path);
+	}
+	for (const path of gone) if (!stillWanted.has(path)) await cache.delete(path);
+}
+
+/**
+ * The reader's changes to documents, made on the sets the copies are kept in (src/lib/offline-documents.ts): the
+ * United States documents as one set or one by one, and each nation's documents as that nation's set, as its page
+ * saves them.
+ */
+async function applyDocumentChanges(changes: ChoiceChange[], tree: ReturnType<typeof catalogTree>, lists: Record<string, CatalogPage[]>): Promise<void> {
+	const cache = await caches.open(documentsCacheName);
+	const allFederal = (lists['documents-federal'] ?? Object.entries(lists).filter(([key]) => key.startsWith('documents-federal-')).flatMap(([, list]) => list)).map((page) => page.path);
+	for (const change of changes) {
+		const entries = change.kind === 'page' ? [change.key] : [...tree.below(change.key)].filter((key) => key.startsWith('/'));
+		const sets = entries.map(setOfEntry).filter((set): set is DocumentSet => set !== undefined);
+		const copies = entries.filter((key) => key.startsWith('/copies/'));
+		const kept = await readSets(cache, keptDocumentsKey);
+		const keptCopies = new Set(await readList<string>(cache, keptCopiesKey));
+		const wholeFederal = change.kind === 'node' && (change.key === 'documents' || change.key === 'documents-federal');
+		if (change.save) {
+			const keep = [...sets, ...(wholeFederal ? (['federal'] as DocumentSet[]) : [])];
+			await writeSets(cache, keptDocumentsKey, [...kept, ...keep]);
+			await writeSets(cache, pendingDocumentsKey, [...(await readSets(cache, pendingDocumentsKey)), ...keep]);
+			if (wholeFederal) await cache.put(keptCopiesKey, json([]));
+			else if (!kept.includes('federal')) await cache.put(keptCopiesKey, json([...new Set([...keptCopies, ...copies])]));
+		} else {
+			for (const set of sets) await removeDocumentSet(set);
+			if (wholeFederal) {
+				await removeDocumentSet('federal');
+				await removeCopies([...keptCopies]);
+			} else if (copies.length > 0) {
+				if (kept.includes('federal')) {
+					// The rest of the United States documents stay, one by one.
+					await writeSets(cache, keptDocumentsKey, kept.filter((set) => set !== 'federal'));
+					await writeSets(cache, pendingDocumentsKey, (await readSets(cache, pendingDocumentsKey)).filter((set) => set !== 'federal'));
+					const gone = new Set(copies);
+					await cache.put(keptCopiesKey, json(allFederal.filter((path) => !gone.has(path))));
+				}
+				await removeCopies(copies);
+			}
+		}
+	}
+}
+
+/** Saves the kept sets left unfinished, and the copies chosen one by one that are not saved yet. */
+async function saveKeptDocuments(): Promise<void> {
+	for (const set of await pendingSets()) await runDocumentSave(set, undefined).catch(() => undefined);
+	const cache = await caches.open(documentsCacheName);
+	const wanted = await readList<string>(cache, keptCopiesKey);
+	if (wanted.length === 0) return;
+	const saved = await savedCopies(cache);
+	const missing = new Set(wanted.filter((path) => !saved.has(path)));
+	if (missing.size === 0) return;
+	const list = await documentList(cache, 'federal', true);
+	const queue = (list?.files ?? []).filter(([path]) => missing.has(path));
+	async function next(): Promise<void> {
+		const file = queue.shift();
+		if (!file) return;
+		await saveCopy(cache, file).catch(() => undefined);
+		return next();
+	}
+	await Promise.all(Array.from({ length: 4 }, next));
 }
 
 // Copies of documents saved for offline reading (src/lib/offline-documents.ts). They live in their
@@ -778,6 +1170,17 @@ async function documentsStatus(asked: DocumentSet[]): Promise<DocumentsStatus> {
 	return { sets };
 }
 
+/** Saves one copy with its fingerprint, so a later build can tell whether it changed. False when it cannot be saved. */
+async function saveCopy(cache: Cache, [path, , fingerprint]: DocumentFile): Promise<boolean> {
+	// A copy the bucket lacks is a redirect to the original, which is not saved.
+	const response = await fetch(path, { redirect: 'manual' });
+	if (response.status !== 200 || response.type !== 'basic') return false;
+	const headers = new Headers(response.headers);
+	headers.set(fingerprintHeader, fingerprint);
+	await cache.put(path, new Response(response.body, { status: 200, headers }));
+	return true;
+}
+
 const documentJobs = new Map<DocumentSet, Promise<void>>();
 const documentListeners = new Map<DocumentSet, Set<MessagePort>>();
 
@@ -801,21 +1204,8 @@ async function saveDocumentSet(set: DocumentSet): Promise<void> {
 	async function next(): Promise<void> {
 		const file = queue.shift();
 		if (!file) return;
-		const [path, , fingerprint] = file;
-		try {
-			// A copy the bucket lacks is a redirect to the original, which is not saved.
-			const response = await fetch(path, { redirect: 'manual' });
-			if (response.status === 200 && response.type === 'basic') {
-				const headers = new Headers(response.headers);
-				headers.set(fingerprintHeader, fingerprint);
-				await cache.put(path, new Response(response.body, { status: 200, headers }));
-				done += 1;
-			} else {
-				failed += 1;
-			}
-		} catch {
-			failed += 1;
-		}
+		if (await saveCopy(cache, file).catch(() => false)) done += 1;
+		else failed += 1;
 		if (done % 5 === 0 || queue.length === 0) report();
 		return next();
 	}
@@ -845,7 +1235,7 @@ async function removeDocumentSet(set: DocumentSet): Promise<void> {
 	const kept = (await readSets(cache, keptDocumentsKey)).filter((item) => item !== set);
 	await writeSets(cache, keptDocumentsKey, kept);
 	await writeSets(cache, pendingDocumentsKey, (await readSets(cache, pendingDocumentsKey)).filter((item) => item !== set));
-	const stillWanted = new Set<string>();
+	const stillWanted = new Set<string>(await readList<string>(cache, keptCopiesKey));
 	for (const other of kept) {
 		for (const [path] of (await documentList(cache, other, false))?.files ?? []) stillWanted.add(path);
 	}
@@ -868,7 +1258,9 @@ async function removeWithdrawnDocuments(): Promise<void> {
 		const cache = await caches.open(documentsCacheName);
 		const kept = await readSets(cache, keptDocumentsKey);
 		const listed = new Map<string, string>();
-		for (const set of kept) {
+		// Copies chosen one by one are United States documents, listed in its set.
+		const read = (await readList<string>(cache, keptCopiesKey)).length > 0 && !kept.includes('federal') ? [...kept, 'federal' as const] : kept;
+		for (const set of read) {
 			const response = await fetch(listAddress(set), { cache: 'no-store' });
 			if (response.status === 404) continue;
 			if (!response.ok) return;
@@ -928,37 +1320,38 @@ async function answer(request: WorkerRequest, port: MessagePort | undefined): Pr
 		// The first request after an update waits until the old caches are tidied.
 		await finishUpdate();
 		switch (request.type) {
-			case 'offline-status':
+			case 'choices-status':
 				break;
-			case 'offline-save': {
-				const cache = await caches.open(cacheName);
-				await setKept(cache, request.collection, true);
-				// Marked until done, so a save cut short continues on the next visit (offline-resume).
-				await markCollection(cache, unfinishedCollectionsKey, request.collection, true);
-				await runSave(request.collection, port);
-				await markCollection(cache, unfinishedCollectionsKey, request.collection, false);
+			case 'choices-apply':
+				await applyChoices(request.changes, port);
 				break;
-			}
-			case 'offline-remove':
-				await removeCollection(request.collection);
+			case 'choices-clear-read':
+				await clearReadPages();
 				break;
+			case 'choices-clear':
+				await clearEverything();
+				tell(port, { type: 'cleared' });
+				return;
+			case 'page-choice':
+				tell(port, { type: 'page-choice', choice: await pageChoice(request.path) });
+				return;
 			case 'offline-resume': {
 				await saveChangedPages();
 				const cache = await caches.open(cacheName);
-				const kept = await keptCollections(cache);
-				const unfinished = await readCollections(cache, unfinishedCollectionsKey);
-				const lists = kept.size > 0 ? await collectionFiles() : new Map<CollectionIdentifier, string[]>();
-				for (const id of kept) {
-					// A kept collection that gained many pages waits for the reader (automaticTopUp), unless the
-					// reader's own save of it was cut short.
-					const missing = await missingFiles(cache, lists.get(id) ?? []);
-					if (missing.length === 0 || (missing.length > automaticTopUp && !unfinished.has(id))) continue;
-					await runSave(id, port);
-					await markCollection(cache, unfinishedCollectionsKey, id, false);
+				const choices = await readChoices(cache);
+				const unfinished = await readFlag(cache, unfinishedKey);
+				// Looked at once per build, and again only while a save is unfinished: reading every list of the
+				// catalog on each visit would slow every page down.
+				if ((choices.nodes.length > 0 || choices.pages.length > 0) && (unfinished || !(await readFlag(cache, toppedUpKey)))) {
+					// Pages new to a chosen part wait for the reader when they are many (automaticTopUp), unless the
+					// reader's own save was cut short.
+					const { pages } = await missingChosen(cache);
+					if (pages.length > 0 && (pages.length <= automaticTopUp || unfinished)) await saveChosen([], port);
+					await writeFlag(cache, toppedUpKey, true);
 				}
-				// Copies of documents are large, so only sets left unfinished are saved again here.
-				for (const set of await pendingSets()) await runDocumentSave(set, undefined).catch(() => undefined);
-				// The page does not need the status here, which would read the list of every built page.
+				// Copies of documents are large, so only sets left unfinished, and copies chosen one by one, are saved here.
+				await saveKeptDocuments();
+				// The page does not need the status here, which reads every list of the catalog.
 				tell(port, { type: 'resumed' });
 				return;
 			}
@@ -976,7 +1369,7 @@ async function answer(request: WorkerRequest, port: MessagePort | undefined): Pr
 				return;
 			}
 		}
-		tell(port, { type: 'status', status: await status() });
+		tell(port, { type: 'choices', status: await choicesStatus() });
 	} catch (error) {
 		tell(port, failure(error));
 	}

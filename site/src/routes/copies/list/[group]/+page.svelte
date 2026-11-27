@@ -43,7 +43,7 @@
 </svelte:head>
 
 <div class="reading">
-	<Breadcrumbs trail={[{ label: 'Source documents', href: '/copies' }]} />
+	<Breadcrumbs trail={[{ label: 'Source documents', href: '/copies' }]} current={data.title} />
 	<h1>{data.title}</h1>
 </div>
 

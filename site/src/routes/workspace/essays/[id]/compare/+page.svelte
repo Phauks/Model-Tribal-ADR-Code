@@ -16,6 +16,7 @@
 		{ label: 'Essays', href: '/workspace/essays' },
 		{ label: data.title, href: `/workspace/essays/${data.identifier}` }
 	]}
+	current="Version {data.from.number} to version {data.to.number}"
 />
 
 <h1>Version {data.from.number} to version {data.to.number}</h1>

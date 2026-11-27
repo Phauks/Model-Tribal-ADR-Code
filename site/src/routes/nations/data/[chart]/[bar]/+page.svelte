@@ -21,7 +21,7 @@
 	<meta name="description" content={data.description} />
 </svelte:head>
 
-<Breadcrumbs trail={dataChartTrail(data.chart)} />
+<Breadcrumbs trail={dataChartTrail(data.chart)} current={data.bar.label} />
 
 <h1>{data.bar.label}</h1>
 <p class="lead count-line">

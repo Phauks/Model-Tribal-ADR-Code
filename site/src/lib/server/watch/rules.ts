@@ -96,12 +96,12 @@ export function applyRules(input: RulesInput): RulesOutcome {
 	let feeds: Feed[] = item.feeds ?? [];
 	let proposed: ProposedAction | null = null;
 	let relevance: number | null = null;
-	let decided: { action: 'close' | 'review'; by: string; reason: string } | null = null;
+	let decided: { action: 'close' | 'review'; by: string; reason: string; own: boolean } | null = null;
 
 	for (const rule of watcher.rules ?? []) {
 		const answer = rule.decide(item);
 		if (!answer) continue;
-		decided = { action: answer.action, by: `${watcher.identifier}:${rule.name}`, reason: answer.reason };
+		decided = { action: answer.action, by: `${watcher.identifier}:${rule.name}`, reason: answer.reason, own: true };
 		feeds = answer.feeds ?? feeds;
 		proposed = answer.proposed ?? proposed;
 		relevance = answer.relevance ?? relevance;
@@ -110,7 +110,7 @@ export function applyRules(input: RulesInput): RulesOutcome {
 	if (!decided) {
 		const rule = titleRules.find((candidate) => candidate.pattern.test(item.title));
 		if (rule) {
-			decided = { action: rule.action, by: rule.name, reason: rule.reason };
+			decided = { action: rule.action, by: rule.name, reason: rule.reason, own: false };
 			feeds = rule.feeds ?? feeds;
 			proposed = rule.proposed ?? null;
 			relevance = rule.relevance;
@@ -128,7 +128,8 @@ export function applyRules(input: RulesInput): RulesOutcome {
 	if (sensitivity.some((flag) => holdingFlags.includes(flag))) {
 		return { status: 'held', feeds, proposed, relevance, sensitivity, step: step('held', 'sensitivity', `Held for the lead author: ${sensitivity.join(', ')}.`) };
 	}
-	if (match.kind === 'new-version') {
+	// A watcher's own close rule outranks a new version: the eCFR's editorial changes to a section of a part we hold stay closed.
+	if (match.kind === 'new-version' && !(decided?.own && decided.action === 'close')) {
 		return { status: 'to-review', feeds, proposed: 'new-version', relevance: relevance ?? 0.9, sensitivity, step: step('review', 'dedupe', match.reason) };
 	}
 	if (decided?.action === 'close') {
