@@ -22,6 +22,9 @@
  */
 import type { D1Database, DurableObjectNamespace, R2Bucket } from '@cloudflare/workers-types/index.ts';
 import { WorkflowEntrypoint, type WorkflowEvent, type WorkflowStep, type WorkflowStepConfig } from 'cloudflare:workers';
+import { messageOf } from '../src/lib/problems.ts';
+import { report } from '../src/lib/server/report.ts';
+import { reported } from '../src/lib/server/reported.ts';
 import { lookupFor, type KnownIdentifiers, type KnownLookup } from '../src/lib/server/watch/known.ts';
 import { dollars } from '../src/lib/server/watch/model-prices.ts';
 import { checkSample, triageWaiting } from '../src/lib/server/watch/model-triage.ts';
@@ -146,8 +149,14 @@ async function stillRunning(database: D1Database, watcher: string, now: Date): P
 	return row !== null;
 }
 
+/** Reports a problem from the minute's run (site/ERRORS.md) and returns its words for the progress file. */
+function noted(problem: unknown, code: string, environment: WatchEnvironment, counting: Promise<unknown>[]): string {
+	report(problem, { code, source: 'radar', place: 'scheduled', database: environment.database, keep: (write) => counting.push(write) });
+	return messageOf(problem);
+}
+
 /** Starts each watcher that is due and not still running from last time. */
-async function startDueWatchers(environment: WatchEnvironment, now: Date): Promise<string[]> {
+async function startDueWatchers(environment: WatchEnvironment, now: Date, counting: Promise<unknown>[]): Promise<string[]> {
 	const problems: string[] = [];
 	for (const watcher of watchers) {
 		if (!watcherIsOn(watcher, environment).on || !isDue(watcher.schedule, now)) continue;
@@ -156,16 +165,20 @@ async function startDueWatchers(environment: WatchEnvironment, now: Date): Promi
 			await environment.watchRuns.create({ id: `${watcher.identifier}-${minuteStamp(now)}`, params: { watcher: watcher.identifier } });
 		} catch (problem) {
 			// The same minute's instance already exists when the cron fires twice; anything else is reported.
-			const words = problem instanceof Error ? problem.message : String(problem);
-			if (!/already exists/i.test(words)) problems.push(`${watcher.identifier}: ${words}`);
+			if (!/already exists/i.test(messageOf(problem))) problems.push(`${watcher.identifier}: ${noted(problem, 'radar.start', environment, counting)}`);
 		}
 	}
 	return problems;
 }
 
 async function tick(environment: WatchEnvironment, now: Date): Promise<void> {
-	const previous = await readWatchProgress(environment.sourceDocuments).catch(() => null);
-	const problems = await startDueWatchers(environment, now);
+	const counting: Promise<unknown>[] = [];
+	// Without last minute's progress the counts start again; the failure is reported.
+	const previous = await readWatchProgress(environment.sourceDocuments).catch((problem: unknown) => {
+		noted(problem, 'radar.progress', environment, counting);
+		return null;
+	});
+	const problems = await startDueWatchers(environment, now, counting);
 
 	const provider = chooseTriageProvider(environment);
 	const models: ModelProgress = {
@@ -195,7 +208,7 @@ async function tick(environment: WatchEnvironment, now: Date): Promise<void> {
 			if (sample.problem) problems.push(`Sample check: ${sample.problem}`);
 		}
 	} catch (problem) {
-		problems.push(problem instanceof Error ? problem.message : String(problem));
+		problems.push(noted(problem, 'radar.triage', environment, counting));
 	}
 
 	const runs = new Map((await latestRuns(environment.database)).map((run) => [run.watcher, run]));
@@ -232,6 +245,7 @@ async function tick(environment: WatchEnvironment, now: Date): Promise<void> {
 		watchers: watcherProgress,
 		models
 	});
+	await Promise.all(counting);
 }
 
 /* The progress page ------------------------------------------------------- */
@@ -317,10 +331,11 @@ ${spend ? `<table><thead><tr><th>Model</th><th>Calls, 30 days</th><th>Spend, 30 
 </html>`;
 }
 
-export default {
-	async scheduled(controller: ScheduledController, environment: WatchEnvironment, context: ExecutionContext): Promise<void> {
+// Reported and recorded (site/ERRORS.md, "Worker runs"). The minute's run is waited for, so its row says whether it finished.
+export default reported('radar', {
+	async scheduled(controller: ScheduledController, environment: WatchEnvironment): Promise<void> {
 		const now = new Date(Math.floor(controller.scheduledTime / 60_000) * 60_000);
-		context.waitUntil(tick(environment, now));
+		await tick(environment, now);
 	},
 
 	async fetch(request: Request, environment: WatchEnvironment): Promise<Response> {
@@ -333,4 +348,4 @@ export default {
 			headers: { 'content-type': 'text/html; charset=utf-8', 'cache-control': 'no-store', 'content-security-policy': "default-src 'none'; style-src 'unsafe-inline'" }
 		});
 	}
-} satisfies ExportedHandler<WatchEnvironment>;
+}) satisfies ExportedHandler<WatchEnvironment>;

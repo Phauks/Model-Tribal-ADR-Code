@@ -61,6 +61,8 @@ import { mergeThreeWay } from '../../essays/merge.ts';
 import { compressOverlay, overlayKey, overlayOf } from '../../essays/word-blame.ts';
 import { joinFrontMatter, splitFrontMatter } from '../../essays/syntax.ts';
 import { SaveConflict, isEssayIdentifier, latestVersion, readVersionText, saveVersion, version, type VersionRow } from '../essays.ts';
+import { report } from '../report.ts';
+import { runReported } from '../reported.ts';
 
 /** The bindings the room's Worker has (live/wrangler.jsonc). */
 export interface RoomEnvironment {
@@ -138,6 +140,7 @@ export function visitorFromHeaders(headers: { get(name: string): string | null }
 	try {
 		name = decodeURIComponent(headers.get(visitorHeaders.name) ?? '');
 	} catch {
+		// expected: a name the website did not encode is refused like any other bad visitor.
 		return null;
 	}
 	if (!isEssayIdentifier(essay) || !person || !Number.isFinite(sessionEnds)) return null;
@@ -292,7 +295,7 @@ export class EssayRoom {
 			if (!essay) await this.start(visitor.essay);
 			else await this.catchUp({ evenIfUnsaved: false });
 		} catch (problem) {
-			console.error('Could not open the live room', problem);
+			this.report(problem, 'live.open');
 			socket.close(1011, 'The live room could not open the essay. Try again in a minute.');
 			return;
 		}
@@ -337,7 +340,7 @@ export class EssayRoom {
 				// Authentication messages and anything else: the website has already checked who this is.
 			}
 		} catch (problem) {
-			console.error('Could not read a live editing message', problem);
+			this.report(problem, 'live.message');
 			socket.close(closeCodes.badRequest, 'The room could not read a message from this editor. Reload the page.');
 		}
 	}
@@ -376,7 +379,7 @@ export class EssayRoom {
 			try {
 				socket.send(message);
 			} catch {
-				// A socket that is closing; its close handler tidies up.
+				// expected: a socket that is closing; its close handler tidies up.
 			}
 		}
 	}
@@ -491,7 +494,7 @@ export class EssayRoom {
 			try {
 				socket.send(this.factsMessage(visitor));
 			} catch {
-				// Closing.
+				// expected: a socket that is closing; its close handler tidies up.
 			}
 		}
 	}
@@ -638,7 +641,12 @@ export class EssayRoom {
 
 	// --- Saving ----------------------------------------------------------------
 
+	/** Saves when the room is due (saveWhenDue), reported and recorded as alarm:EssayRoom (site/ERRORS.md, "Worker runs"). */
 	async alarm(): Promise<void> {
+		await runReported({ source: 'live', handler: 'alarm:EssayRoom', database: this.environment.database }, () => this.saveWhenDue());
+	}
+
+	private async saveWhenDue(): Promise<void> {
 		this.alarmSet = false;
 		const span = this.sql
 			.exec<{ first: number | null; last: number | null }>(
@@ -656,11 +664,16 @@ export class EssayRoom {
 		try {
 			await this.save();
 		} catch (problem) {
-			console.error('The live room could not save a version', problem);
+			this.report(problem, 'live.save');
 			this.setAlarm(Date.now() + afterProblem);
 			return;
 		}
 		if (this.unsaved()) this.setAlarm(Date.now() + quietBeforeSaving);
+	}
+
+	/** Reports a problem the room handles itself (src/lib/server/report.ts). */
+	private report(problem: unknown, code: string): void {
+		report(problem, { code, source: 'live', place: 'EssayRoom', database: this.environment.database, keep: (write) => this.context.waitUntil(write) });
 	}
 
 	private setAlarm(at: number): void {
@@ -733,7 +746,7 @@ export class EssayRoom {
 				});
 			} catch (problem) {
 				// The version is saved; its new words are credited to the person who saved last.
-				console.error('Who typed what could not be kept', problem);
+				this.report(problem, 'live.overlay');
 			}
 		}
 		if (savedText !== ours) this.replaceText(ours, savedText, baseText);
@@ -755,6 +768,7 @@ function withRealName(stateText: string, name: string): string | null {
 	try {
 		state = JSON.parse(stateText);
 	} catch {
+		// expected: an awareness state from a browser that is not JSON is dropped.
 		return null;
 	}
 	if (state === null || typeof state !== 'object' || Array.isArray(state)) return null;

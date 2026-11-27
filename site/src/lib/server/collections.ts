@@ -157,6 +157,7 @@ function webPageBreakdown(items: CollectionItem[]): string[] {
 			try {
 				return new URL(copy.links[0] ?? '').hostname.replace(/^www\./, '');
 			} catch {
+				// expected: a copy whose link is not a web address names no site.
 				return undefined;
 			}
 		})

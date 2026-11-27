@@ -20,7 +20,7 @@ export const POST: RequestHandler = async (event) => {
 		event.locals.refused = 'needs full access to every essay to start one';
 		error(403, 'Only someone with full access to every essay can start a new one.');
 	}
-	const body = (await event.request.json().catch(() => null)) as { title?: unknown; part?: unknown; identifier?: unknown } | null;
+	const body = (await event.request.json().catch(() => /* expected: a body that is not JSON has no title, which is refused just below with 400 */ null)) as { title?: unknown; part?: unknown; identifier?: unknown } | null;
 	const title = typeof body?.title === 'string' ? body.title.trim().slice(0, 300) : '';
 	const part = body?.part as EssayPart;
 	const identifier = typeof body?.identifier === 'string' ? body.identifier.trim().toLowerCase().slice(0, 120) : '';

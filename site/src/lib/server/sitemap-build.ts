@@ -105,6 +105,7 @@ export function fileDays(): Map<string, string> {
 		const shallow = new Set(existsSync(shallowFile) ? readFileSync(shallowFile, 'utf8').split('\n').filter(Boolean) : []);
 		fileDayCache = parseFileDays(run(['-c', 'core.quotepath=off', 'log', '--first-parent', '--format=%x1e%H%x09%cI', '--name-only', 'HEAD', '--', 'content']), shallow);
 	} catch {
+		// expected: without git, as in some builds on a computer, the sitemap leaves out change dates.
 		fileDayCache = new Map();
 	}
 	return fileDayCache;
