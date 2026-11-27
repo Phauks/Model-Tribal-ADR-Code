@@ -40,6 +40,7 @@
 		{ label: 'Workspace', href: '/workspace' },
 		{ label: 'Sponsors', href: '/workspace/sponsors' }
 	]}
+	current={data.sponsor.name}
 />
 <h1>{data.sponsor.name}</h1>
 <p>

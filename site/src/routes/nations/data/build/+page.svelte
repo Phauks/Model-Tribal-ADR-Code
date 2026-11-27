@@ -186,7 +186,7 @@
 </svelte:head>
 
 <div class="builder-page">
-	<Breadcrumbs trail={[{ label: 'Nations', href: '/nations' }, { label: 'Data and charts', href: '/nations/data' }]} />
+	<Breadcrumbs trail={[{ label: 'Nations', href: '/nations' }, { label: 'Data and charts', href: '/nations/data' }]} current="Build a table" />
 	<h1>Build a table</h1>
 
 	{#if loadFailed}

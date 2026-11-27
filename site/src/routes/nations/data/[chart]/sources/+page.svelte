@@ -18,7 +18,7 @@
 	<meta name="description" content={data.source} />
 </svelte:head>
 
-<Breadcrumbs trail={dataChartTrail(data.chart)} />
+<Breadcrumbs trail={dataChartTrail(data.chart)} current="Sources: {data.chart.title}" />
 
 <h1>Sources: {data.chart.title}</h1>
 <p class="lead">{data.source}</p>
