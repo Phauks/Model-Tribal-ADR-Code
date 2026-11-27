@@ -70,7 +70,7 @@ found_in:
 notes: 'Indigo Book citation: Okla. Stat. tit. 10A, § 1-4-909 (2026). History: Added by Laws 2009, c. 233, § 131, emerg. eff. May 21, 2009. Amended by Laws 2019, c. Text read from the Legislative Service Bureau''s Title 10A PDF (updated Nov. 12, 2026), page 181. Found by the state statutes pilot (terms: tribe); AI reader''s verdict incidental: Child''s tribe must receive notice of reinstatement hearings. Unverified.'
 review:
   status: unverified
-  by: scripts/law/oklahoma_statutes.py
+  by: scripts/law/state_statutes/run.py
   date: '2026-11-26'
   checks:
   - check: 'Indian law section: the pilot''s keyword pass and an AI reader''s verdict (core, incidental or none)'

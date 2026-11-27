@@ -49,7 +49,7 @@ found_in:
 notes: 'Indigo Book citation: Okla. Stat. tit. 2, § 5-3A.3 (2026). History: Added by Laws 2020, c. 102, § 3, eff. Nov. 1, 2020. Text read from the Legislative Service Bureau''s Title 2 PDF (updated Nov. 12, 2026), page 198. Found by the state statutes pilot (terms: tribal); AI reader''s verdict incidental: Farmers market registration lists tribal aid programs as payment. Unverified.'
 review:
   status: unverified
-  by: scripts/law/oklahoma_statutes.py
+  by: scripts/law/state_statutes/run.py
   date: '2026-11-26'
   checks:
   - check: 'Indian law section: the pilot''s keyword pass and an AI reader''s verdict (core, incidental or none)'

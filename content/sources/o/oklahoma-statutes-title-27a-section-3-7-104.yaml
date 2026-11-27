@@ -54,7 +54,7 @@ found_in:
 notes: 'Indigo Book citation: Okla. Stat. tit. 27A, § 3-7-104 (2026). History: Added by Laws 2022, c. 410, § 4, eff. Nov. 1, 2022. Text read from the Legislative Service Bureau''s Title 27A PDF (updated Nov. 12, 2026), page 441. Found by the state statutes pilot (terms: tribal land); AI reader''s verdict incidental: Healthy soil program collaborates with tribal land jurisdictions. Unverified.'
 review:
   status: unverified
-  by: scripts/law/oklahoma_statutes.py
+  by: scripts/law/state_statutes/run.py
   date: '2026-11-26'
   checks:
   - check: 'Indian law section: the pilot''s keyword pass and an AI reader''s verdict (core, incidental or none)'

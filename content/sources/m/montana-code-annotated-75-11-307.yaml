@@ -1,0 +1,50 @@
+key: montana-code-annotated-75-11-307
+kind: state-statute
+citation:
+  type: legislation
+  title: Reimbursement for expenses caused by release
+  title-short: Mont. Code Ann. § 75-11-307
+  container-title: Montana Code Annotated
+  container-title-short: Mont. Code Ann.
+  section: 75-11-307
+  author:
+  - literal: Montana Legislature
+  issued:
+    date-parts:
+    - - 1989
+  URL: https://mca.legmt.gov/bills/mca/title_0750/chapter_0110/part_0030/section_0070/0750-0110-0030-0070.html
+  accessed:
+    date-parts:
+    - - 2026
+      - 11
+      - 27
+original_link: https://mca.legmt.gov/bills/mca/title_0750/chapter_0110/part_0030/section_0070/0750-0110-0030-0070.html
+retrieved: '2026-11-27'
+archives: []
+history:
+  status: live
+  last_checked: '2026-11-27'
+state_law:
+  relevance: incidental
+  citation: Mont. Code Ann. § 75-11-307 (2025)
+rights:
+  status: no-permission-needed
+  basis: government-edict
+  basis_note: 'Official state statutes are not copyrightable under the government edicts doctrine (Georgia v. Public.Resource.Org, Inc., 590 U.S. 255 (2020)). Linked, not served: state statutes stay link only.'
+  redistribution: false
+jurisdictions:
+- level: state
+  state: MT
+topics:
+- state-indian-law
+found_in:
+- 2026-11-27-state-statutes-sweep
+notes: 'Indigo Book citation: Mont. Code Ann. § 75-11-307 (2025). History: En. Sec. 3, Ch. 528, L. 1989; amd. Sec. 2, Ch. 389, L. 1991; amd. Sec. 3, Ch. 763, L. 1991; amd. Sec. 3, Ch. 339, L. 1993; amd. Sec. 2, Ch. 55, L. 1995; amd. Sec. 2, Ch. 115, L. 1997; amd. Sec. 1, Ch. 137, L. 2003; amd. Sec. 1, Ch. 245, L. 2003; amd. Sec. 2, Ch. 396, L. 2009; amd. Sec. 1, Ch. 189, L. 2011; amd. Sec. 1, Ch. 107, L. 2015; amd. Sec. 7, Ch. 296, L. 2015; amd. Sec. 1, Ch. 754, L. 2023; amd. Sec. 1, Ch. 189, L. 2025. Text read from the Montana Legislature''s page for the section in the Montana Code Annotated 2025 (mca.legmt.gov) on Nov. 27, 2026. Found by the state statutes sweep (terms: tribal); AI reader''s verdict incidental: UST reimbursement covers damages from tribal agency enforcement actions. Unverified.'
+review:
+  status: unverified
+  by: scripts/law/state_statutes/run.py
+  date: '2026-11-27'
+  checks:
+  - check: 'Indian law section: the sweep''s keyword pass and an AI reader''s verdict (core, incidental or none)'
+    result: agree
+    detail: 'incidental; terms: tribal'

@@ -71,10 +71,10 @@ topics:
 - state-indian-law
 found_in:
 - 2026-11-26-state-statutes-pilot
-notes: 'Indigo Book citation: Okla. Stat. tit. 10, § 1150.3 (2026). History: from a list submitted by the executive board of the Oklahoma Bar Added by Laws 1991, c. 192, § 4, eff. Sept. 1, 1991. Amended by Laws 1993, c. 195, § 2, eff. Text read from the Legislative Service Bureau''s Title 10 PDF (updated Nov. 12, 2026), page 247. Found by the state statutes pilot (terms: indian affairs; native american); AI reader''s verdict incidental: Child Death Review Board seat for tribal member. Unverified.'
+notes: 'Indigo Book citation: Okla. Stat. tit. 10, § 1150.3 (2026). History: Added by Laws 1991, c. 192, § 4, eff. Sept. 1, 1991. Amended by Laws 1993, c. 195, § 2, eff. Text read from the Legislative Service Bureau''s Title 10 PDF (updated Nov. 12, 2026), page 247. Found by the state statutes pilot (terms: indian affairs; native american); AI reader''s verdict incidental: Child Death Review Board seat for tribal member. Unverified.'
 review:
   status: unverified
-  by: scripts/law/oklahoma_statutes.py
+  by: scripts/law/state_statutes/run.py
   date: '2026-11-26'
   checks:
   - check: 'Indian law section: the pilot''s keyword pass and an AI reader''s verdict (core, incidental or none)'

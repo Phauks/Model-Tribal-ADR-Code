@@ -67,10 +67,10 @@ topics:
 - state-indian-law
 found_in:
 - 2026-11-26-state-statutes-pilot
-notes: 'Indigo Book citation: Okla. Stat. tit. 10A, § 1-4-813 (2026). History: Added by Laws 1998, c. 421, § 23, emerg. eff. June 11, 1998. Amended by Laws 2000, c. from § 7003-5.6f of Title 10 by Laws 2009, c. 233, § 259, emerg. eff. May 21, 2009. Text read from the Legislative Service Bureau''s Title 10A PDF (updated Nov. 12, 2026), page 165. Found by the state statutes pilot (terms: indian child); AI reader''s verdict incidental: Postadoption agreements define birth relatives of Indian child by tribal law. Unverified.'
+notes: 'Indigo Book citation: Okla. Stat. tit. 10A, § 1-4-813 (2026). History: Added by Laws 1998, c. 421, § 23, emerg. eff. June 11, 1998. Amended by Laws 2000, c. Text read from the Legislative Service Bureau''s Title 10A PDF (updated Nov. 12, 2026), page 165. Found by the state statutes pilot (terms: indian child); AI reader''s verdict incidental: Postadoption agreements define birth relatives of Indian child by tribal law. Unverified.'
 review:
   status: unverified
-  by: scripts/law/oklahoma_statutes.py
+  by: scripts/law/state_statutes/run.py
   date: '2026-11-26'
   checks:
   - check: 'Indian law section: the pilot''s keyword pass and an AI reader''s verdict (core, incidental or none)'

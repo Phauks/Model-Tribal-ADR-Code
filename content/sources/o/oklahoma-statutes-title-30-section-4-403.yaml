@@ -47,7 +47,7 @@ found_in:
 notes: 'Indigo Book citation: Okla. Stat. tit. 30, § 4-403 (2026). History: Added by Laws 1923-24, c. 84, p. 101, § 5. Amended by Laws 1988, c. 329, § 89, eff. Dec. 1, Amended by Laws 1990, c. 323, § 64, operative July 1, 1990; Laws 2000, c. 144, § 1, emerg. Text read from the Legislative Service Bureau''s Title 30 PDF (updated Nov. 12, 2026), page 109. Found by the state statutes pilot (terms: indian tribe); AI reader''s verdict incidental: Restricted Indian tribe contingent-fee approvals exempt from guardianship act. Unverified.'
 review:
   status: unverified
-  by: scripts/law/oklahoma_statutes.py
+  by: scripts/law/state_statutes/run.py
   date: '2026-11-26'
   checks:
   - check: 'Indian law section: the pilot''s keyword pass and an AI reader''s verdict (core, incidental or none)'

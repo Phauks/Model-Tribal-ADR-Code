@@ -70,7 +70,7 @@ found_in:
 notes: 'Indigo Book citation: Okla. Stat. tit. 10A, § 1-6-103 (2026). History: Added by Laws 1991, c. 296, § 11, eff. Jan. 1, 1992. Amended by Laws 1993, c. 78, § 1, Laws 2025, c. 215, § 1, emerg. eff. May 13, 2025. Text read from the Legislative Service Bureau''s Title 10A PDF (updated Nov. 12, 2026), page 193. Found by the state statutes pilot (terms: federally recognized indian tribe; indian child; indian tribe; indian tribes; tribal court); AI reader''s verdict incidental: Federally recognized tribe may inspect child records without court order. Unverified.'
 review:
   status: unverified
-  by: scripts/law/oklahoma_statutes.py
+  by: scripts/law/state_statutes/run.py
   date: '2026-11-26'
   checks:
   - check: 'Indian law section: the pilot''s keyword pass and an AI reader''s verdict (core, incidental or none)'

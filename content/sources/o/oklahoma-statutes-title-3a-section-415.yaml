@@ -56,10 +56,10 @@ topics:
 - state-indian-law
 found_in:
 - 2026-11-26-state-statutes-pilot
-notes: 'Indigo Book citation: Okla. Stat. tit. 3A, § 415 (2026). History: Added by Laws 1992, c. 328, § 16, eff. Dec. 1, 1992, and adopted Text read from the Legislative Service Bureau''s Title 3A PDF (updated Nov. 12, 2026), page 147. Found by the state statutes pilot (terms: federally recognized indian tribe; federally recognized indian tribes); AI reader''s verdict incidental: Charity game equipment may be sold to federally recognized tribes. Unverified.'
+notes: 'Indigo Book citation: Okla. Stat. tit. 3A, § 415 (2026). History: Added by Laws 1992, c. 328, § 16, eff. Dec. 1, 1992, and adopted. Text read from the Legislative Service Bureau''s Title 3A PDF (updated Nov. 12, 2026), page 147. Found by the state statutes pilot (terms: federally recognized indian tribe; federally recognized indian tribes); AI reader''s verdict incidental: Charity game equipment may be sold to federally recognized tribes. Unverified.'
 review:
   status: unverified
-  by: scripts/law/oklahoma_statutes.py
+  by: scripts/law/state_statutes/run.py
   date: '2026-11-26'
   checks:
   - check: 'Indian law section: the pilot''s keyword pass and an AI reader''s verdict (core, incidental or none)'

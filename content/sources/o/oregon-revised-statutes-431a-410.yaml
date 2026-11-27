@@ -1,0 +1,56 @@
+key: oregon-revised-statutes-431a-410
+kind: state-statute
+citation:
+  type: legislation
+  title: Grants for clean air programs
+  title-short: Or. Rev. Stat. § 431A.410
+  container-title: Oregon Revised Statutes
+  container-title-short: Or. Rev. Stat.
+  section: 431A.410
+  author:
+  - literal: Oregon Legislative Assembly
+  issued:
+    date-parts:
+    - - 2021
+  URL: https://www.oregonlegislature.gov/bills_laws/ors/ors431A.html
+  accessed:
+    date-parts:
+    - - 2026
+      - 11
+      - 27
+original_link: https://www.oregonlegislature.gov/bills_laws/ors/ors431A.html
+retrieved: '2026-11-27'
+archives: []
+history:
+  status: live
+  last_checked: '2026-11-27'
+shares_link_with:
+- oregon-revised-statutes-431a-400
+- oregon-revised-statutes-431a-412
+- oregon-revised-statutes-431a-430
+- oregon-revised-statutes-431a-850
+- oregon-revised-statutes-431a-869
+state_law:
+  relevance: incidental
+  citation: Or. Rev. Stat. § 431A.410 (2025)
+rights:
+  status: no-permission-needed
+  basis: government-edict
+  basis_note: 'Official state statutes are not copyrightable under the government edicts doctrine (Georgia v. Public.Resource.Org, Inc., 590 U.S. 255 (2020)). Linked, not served: state statutes stay link only.'
+  redistribution: false
+jurisdictions:
+- level: state
+  state: OR
+topics:
+- state-indian-law
+found_in:
+- 2026-11-27-state-statutes-sweep
+notes: 'Indigo Book citation: Or. Rev. Stat. § 431A.410 (2025). History: [2021 c.592 §14; 2022 c.86 §§30,30a; 2023 c.611 §6]. Text read from the Oregon Legislature''s 2025 edition chapter page for the section (oregonlegislature.gov/bills_laws/ors) on Nov. 27, 2026. Found by the state statutes sweep (terms: federally recognized indian tribes; indian; tribes); AI reader''s verdict incidental: Clean air grants open to federally recognized Indian tribes in Oregon. Unverified.'
+review:
+  status: unverified
+  by: scripts/law/state_statutes/run.py
+  date: '2026-11-27'
+  checks:
+  - check: 'Indian law section: the sweep''s keyword pass and an AI reader''s verdict (core, incidental or none)'
+    result: agree
+    detail: 'incidental; terms: federally recognized indian tribes; indian; tribes'
