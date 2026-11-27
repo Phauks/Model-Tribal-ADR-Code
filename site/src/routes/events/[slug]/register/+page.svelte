@@ -22,6 +22,7 @@
 			{ label: 'Events', href: '/events' },
 			{ label: data.event.title, href: `/events/${data.event.slug}` }
 		]}
+		current="Register"
 	/>
 	<h1>Register</h1>
 	<p>{data.event.when}</p>

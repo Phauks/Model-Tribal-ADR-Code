@@ -17,6 +17,7 @@
 	import { onMount } from 'svelte';
 	import Modal from './Modal.svelte';
 	import { noteBlock, noteCopy } from '#lib/note-copies.ts';
+	import { loadPicturesForPrint, startLoadingPictures } from '#lib/print-pictures.ts';
 	import {
 		defaultPrintOptions,
 		linkAddressOptions,
@@ -91,8 +92,10 @@
 		setTimeout(() => (resetMessage = 'Print choices reset to the defaults.'), 50);
 	}
 
-	function print() {
+	async function print() {
 		close();
+		// Pictures further down the page load first, so none prints blank.
+		await loadPicturesForPrint();
 		// Let the dialog close before the print window takes over the page.
 		requestAnimationFrame(() => window.print());
 	}
@@ -127,13 +130,17 @@
 			for (const section of folded) section.open = false;
 			folded = [];
 		};
+		// The browser's own Print command: start every picture loading, so it prints if it arrives in time.
+		const loadPictures = () => startLoadingPictures();
 		window.addEventListener('beforeprint', addNotes);
 		window.addEventListener('beforeprint', openFolded);
+		window.addEventListener('beforeprint', loadPictures);
 		window.addEventListener('afterprint', removeNotes);
 		window.addEventListener('afterprint', refold);
 		return () => {
 			window.removeEventListener('beforeprint', addNotes);
 			window.removeEventListener('beforeprint', openFolded);
+			window.removeEventListener('beforeprint', loadPictures);
 			window.removeEventListener('afterprint', removeNotes);
 			window.removeEventListener('afterprint', refold);
 		};

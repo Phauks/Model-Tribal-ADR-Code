@@ -157,9 +157,13 @@ export const documentFacets: Facet<DocumentSearchRow>[] = [
 
 /** Whether every word typed appears in the document's title, kind, year or nation. */
 export function documentMatches(row: DocumentSearchRow, words: string[]): boolean {
-	const haystack = foldForSearch(`${row.title} ${row.kindLabel} ${row.year ?? ''} ${row.nationName}`);
+	const haystack = documentHaystacks.get(row) ?? foldForSearch(`${row.title} ${row.kindLabel} ${row.year ?? ''} ${row.nationName}`);
+	documentHaystacks.set(row, haystack);
 	return words.every((word) => haystack.includes(word));
 }
+
+/** Each document's words folded once, so typing does not fold every document again. */
+const documentHaystacks = new WeakMap<DocumentSearchRow, string>();
 
 function labelOf(options: FacetOption[], value: string): string {
 	return options.find((option) => option.value === value)?.label ?? value;

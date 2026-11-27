@@ -69,6 +69,7 @@
 			{ label: 'Nations', href: '/nations' },
 			{ label: data.nation.name, href: `/nations/${data.nation.id}` }
 		]}
+		current="Court opinions: {data.nation.name}"
 	/>
 	<h1>Court opinions: {data.nation.name}</h1>
 	<p>

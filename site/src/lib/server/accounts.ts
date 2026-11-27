@@ -86,6 +86,14 @@ export async function accountByEmail(database: D1Database, email: string): Promi
 	return row ? toAccount(row) : undefined;
 }
 
+export async function accountByIdentifier(database: D1Database, identifier: string): Promise<Account | undefined> {
+	const row = await database
+		.prepare(`SELECT ${accountColumns} FROM accounts WHERE identifier = ?`)
+		.bind(identifier)
+		.first<AccountRow>();
+	return row ? toAccount(row) : undefined;
+}
+
 /**
  * The account for an address whose owner has just proved they receive mail
  * there, made if this is their first sign-in.
@@ -490,7 +498,12 @@ export async function linkStillWorks(database: D1Database, token: string): Promi
 
 /* Sessions ------------------------------------------------------------- */
 
-export type SessionMethod = 'code' | 'link' | 'password';
+/**
+ * How a session started. A passkey is both steps of sign-in at once (it
+ * checks the device and the person's fingerprint, face or PIN), so a passkey
+ * session never waits for the second step (decision record 0062).
+ */
+export type SessionMethod = 'code' | 'link' | 'password' | 'passkey' | 'google' | 'microsoft';
 
 /** Whether a session waits for the second step (migrations/20261123T0500_add_two_step_sign_in.sql). */
 export type SecondStep = 'none' | 'waiting' | 'done';

@@ -1,6 +1,6 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "$id": "https://github.com/Phauks/Model-Tribal-ADR-Code/schemas/provision.schema.json",
+  "$id": "https://github.com/Phauks/Tribal-Law-Project/schemas/provision.schema.json",
   "title": "Model provision (front matter)",
   "description": "YAML front matter of content/provisions/<chapter>-<section>.md. The Markdown body holds the provision text, with alternatives in fenced blocks marked by alternative id and placeholders written as {{variable.name}}.",
   "type": "object",

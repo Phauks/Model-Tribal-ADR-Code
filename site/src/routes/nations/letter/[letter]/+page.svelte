@@ -14,7 +14,7 @@
 	<title>{data.letter.label} · Nations · Tribal Law Project</title>
 </svelte:head>
 
-<Breadcrumbs trail={[{ label: 'Nations', href: '/nations' }]} />
+<Breadcrumbs trail={[{ label: 'Nations', href: '/nations' }]} current={heading} />
 
 <h1>{heading}</h1>
 <p class="small muted">{data.letter.count.toLocaleString('en-US')} {data.letter.count === 1 ? 'page' : 'pages'}</p>

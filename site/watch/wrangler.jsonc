@@ -6,16 +6,22 @@
 // Nothing it finds is published without a person.
 //
 // Workers Builds deploys it from the GitHub repository (site/watch/README.md,
-// "Setting it up"): root directory site/watch, build command
-// cd .. && npm ci && npm run watch:index, deploy command npx wrangler deploy.
+// "Setting it up"): root directory site/watch, build command cd .. && npm ci,
+// deploy command npx wrangler deploy. Wrangler itself makes the index of
+// known records before it bundles (the "build" below), so a deploy works
+// whatever the dashboard's build command says after npm ci.
 // No secret is stored here or in GitHub (decision record 0006); the models
 // are reached through the AI binding.
 {
 	"$schema": "../node_modules/wrangler/config-schema.json",
-	"name": "tribal-law-project-watch",
+	"name": "tribal-law-project-radar",
 	"main": "worker.ts",
 	"compatibility_date": "2026-11-20",
 	"compatibility_flags": ["nodejs_compat"],
+	// Writes known-identifiers.json, which worker.ts bundles; run from site/.
+	"build": {
+		"command": "cd .. && npm run watch:index"
+	},
 	// A public address for the read-only progress page (counts and each
 	// watcher's last run; never an item's title or text).
 	"workers_dev": true,
@@ -39,7 +45,7 @@
 	// One Workflows instance per watcher run, so each step is retried on its own.
 	"workflows": [
 		{
-			"name": "tribal-law-project-watch-run",
+			"name": "tribal-law-project-radar-run",
 			"binding": "watchRuns",
 			"class_name": "WatchRun"
 		}

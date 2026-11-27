@@ -12,7 +12,7 @@
 </svelte:head>
 
 <div class="data-page">
-	<Breadcrumbs trail={[{ label: 'Nations', href: '/nations' }]} />
+	<Breadcrumbs trail={[{ label: 'Nations', href: '/nations' }]} current="Data and charts" />
 	<h1>Data and charts</h1>
 	<p class="lead">Counts drawn from the nation pages and the documents behind them. Every bar opens the records it counts.</p>
 	<ul class="topic-list">

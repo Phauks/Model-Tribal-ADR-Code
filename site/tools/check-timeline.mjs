@@ -71,6 +71,10 @@ async function coveredButtons(page) {
 	});
 }
 
+// How long a button may take to become clickable. /nations/timeline is a 17 MB page by Nov. 27, 2026,
+// and on a CI runner it can take more than 3 seconds after loading before its buttons answer.
+const clickWait = 15_000;
+
 const isDown = (page) => page.evaluate(() => !!document.querySelector('.timeline.down'));
 
 for (const viewport of viewports) {
@@ -93,7 +97,7 @@ for (const viewport of viewports) {
 			const button = page.getByRole('button', { name: label, exact: true }).first();
 			try {
 				// A real click at the button's middle, which fails if anything lies over it.
-				await button.click({ timeout: 3000 });
+				await button.click({ timeout: clickWait });
 			} catch {
 				check(false, `${where}: "${label}" could not be clicked`);
 				continue;
@@ -106,10 +110,10 @@ for (const viewport of viewports) {
 		// The choice is remembered: reload, still across, and back down again.
 		await page.reload({ waitUntil: 'load' });
 		await page.locator('.timeline .toolbar').first().waitFor();
-		await page.waitForFunction(() => !document.querySelector('.timeline.down'), undefined, { timeout: 3000 }).catch(() => {});
+		await page.waitForFunction(() => !document.querySelector('.timeline.down'), undefined, { timeout: clickWait }).catch(() => {});
 		check(!(await isDown(page)), `${where}: after reloading, the timeline should stay across`);
 		try {
-			await page.getByRole('button', { name: 'Down the page', exact: true }).first().click({ timeout: 3000 });
+			await page.getByRole('button', { name: 'Down the page', exact: true }).first().click({ timeout: clickWait });
 			check(await isDown(page), `${where}: after reloading, "Down the page" should turn the timeline back`);
 		} catch {
 			check(false, `${where}: after reloading, "Down the page" could not be clicked`);

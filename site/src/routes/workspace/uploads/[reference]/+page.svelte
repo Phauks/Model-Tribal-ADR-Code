@@ -79,6 +79,7 @@
 			{ label: 'Workspace', href: '/workspace' },
 			{ label: 'Uploads', href: '/workspace/uploads' }
 		]}
+		current={name}
 	/>
 	<h1>{name}</h1>
 	<p class="muted">

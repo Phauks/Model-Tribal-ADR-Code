@@ -25,7 +25,7 @@
 	<title>{problem ? 'Error: ' : ''}Two-step sign-in · Tribal Law Project</title>
 </svelte:head>
 
-<Breadcrumbs trail={[{ label: 'Sign-in and security', href: '/account/security' }]} />
+<Breadcrumbs trail={[{ label: 'Sign-in and security', href: '/account/security' }]} current="Two-step sign-in" />
 <h1>Two-step sign-in</h1>
 
 <ErrorSummary {problems} />

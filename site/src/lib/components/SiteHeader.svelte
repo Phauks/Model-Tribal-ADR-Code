@@ -48,6 +48,7 @@
 	import SiteSearch from './SiteSearch.svelte';
 	import FollowButton from './FollowButton.svelte';
 	import StarButton from './StarButton.svelte';
+	import SaveOfflineButton from './SaveOfflineButton.svelte';
 
 	let { contentVersion }: { contentVersion: string } = $props();
 
@@ -145,6 +146,7 @@
 				<span class="page-controls-panel"><PageControls place="panel" /></span>
 				<ReportProblem link={reportLink} />
 				<StarButton />
+				<SaveOfflineButton />
 				<FollowButton />
 				<PrintOptions bind:this={printOptions} />
 				<CiteMenu />

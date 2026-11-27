@@ -16,8 +16,10 @@ import {
 } from '#lib/server/accounts.ts';
 import { workerEnvironment } from '#lib/server/environment.ts';
 import { newPasswordProblem } from '#lib/server/password-checks.ts';
+import { availableProviders } from '#lib/server/outside-sign-in.ts';
 import { emailDelivery } from '#lib/server/sign-in-email.ts';
 import { finishSignIn, safeReturnPath } from '#lib/server/sign-in.ts';
+import { checkTurnstile, turnstileActions, turnstileProblem, turnstileSiteKey, type TurnstileAction } from '#lib/server/turnstile.ts';
 import { refusalCookie } from './refused/reasons.ts';
 import type { Actions, PageServerLoad } from './$types';
 
@@ -33,9 +35,25 @@ export const load: PageServerLoad = async ({ url, locals }) => {
 		// "/sign-in?create" opens Create an account.
 		create: url.searchParams.has('create'),
 		signedInAs: locals.account?.email ?? null,
-		databaseReady: Boolean(environment.database)
+		databaseReady: Boolean(environment.database),
+		// The "are you a person?" check (src/lib/server/turnstile.ts), when it is on.
+		turnstileSiteKey: turnstileSiteKey(environment),
+		// Google and Microsoft, when switched on (src/lib/server/outside-sign-in.ts).
+		providers: availableProviders(environment)
 	};
 };
+
+/**
+ * The "are you a person?" check on every step that sends email or tries a
+ * password (src/lib/server/turnstile.ts). Typing the code from the email is
+ * not checked: only someone who got the email can do it, and it is limited
+ * to five tries per code.
+ */
+async function personChecked(request: Request, form: FormData, expected: TurnstileAction | readonly TurnstileAction[]): Promise<boolean> {
+	const result = await checkTurnstile(workerEnvironment(), form, expected, request.headers.get('cf-connecting-ip'));
+	if (result.outcome === 'refused') console.warn(`Turnstile refused a sign-in form: ${result.reason}`);
+	return result.outcome !== 'refused';
+}
 
 /**
  * Each address may try five times a minute for each step, and each network
@@ -128,6 +146,10 @@ export const actions: Actions = {
 				problem: 'Enter your email address, for example name@example.com.'
 			});
 		}
+		// Email me a code on the sign-in form, on a paused password, on Forgot your password, or Send a new code.
+		if (!(await personChecked(request, form, [turnstileActions.signIn, turnstileActions.forgotPassword]))) {
+			return fail(403, { step: 'email' as const, email, returnTo, keep, problem: turnstileProblem });
+		}
 		return sendCode(request, url, { step: 'email', email, returnTo, keep });
 	},
 
@@ -143,6 +165,9 @@ export const actions: Actions = {
 		const returnTo = safeReturnPath(formText(form, 'returnTo'));
 		const keep = form.get('keep') === 'yes';
 		const environment = workerEnvironment();
+		if (!(await personChecked(request, form, turnstileActions.createAccount))) {
+			return fail(403, { step: 'create' as const, email, returnTo, keep, problem: turnstileProblem });
+		}
 		const waiting = environment.database && looksLikeEmail(email) ? await waitingPasswordFor(environment.database, email) : undefined;
 		if (!waiting) {
 			return fail(400, {
@@ -177,6 +202,7 @@ export const actions: Actions = {
 		if (password === '') return again('Choose a password.', 'new-password');
 		const problem = await newPasswordProblem(password, email);
 		if (problem) return again(problem, 'new-password');
+		if (!(await personChecked(request, form, turnstileActions.createAccount))) return again(turnstileProblem, undefined, 403);
 		return sendCode(request, url, { step: 'create', email, returnTo, keep }, password);
 	},
 
@@ -242,6 +268,7 @@ export const actions: Actions = {
 		if (!looksLikeEmail(email)) return again('Enter your email address, for example name@example.com.', 'email');
 		if (password === '') return again('Enter your password.', 'password');
 		if (!(await withinLimit(request, email, 'password'))) return again(tooMany, undefined, 429);
+		if (!(await personChecked(request, form, turnstileActions.signIn))) return again(turnstileProblem, undefined, 403);
 
 		const result = await tryPassword(environment.database, email, password, usablePasswordKey(environment.PASSWORD_KEY));
 		if (result.outcome === 'paused' || result.outcome === 'off') {
