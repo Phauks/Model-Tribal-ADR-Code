@@ -104,6 +104,29 @@ reading_links:
     access: subscription
     link: https://advance.lexis.com/api/search?q=591%20U.S.%20977
     unchecked: true
+argument_audio:
+- kind: argument
+  date: '2018-11-27'
+  source: Supreme Court of the United States
+  link: https://www.supremecourt.gov/media/audio/mp3files/17-1107.mp3
+  duration_seconds: 3894
+  file:
+    storage_key: supreme-court-audio/court/2018/17-1107.mp3
+    checksum: 3676cf897c6b67ffe0e2786d8fd03574a31292e187414e509787a11232b0a554
+    media_type: audio/mpeg
+    bytes: 31155220
+- kind: argument
+  date: '2018-11-27'
+  source: National Archives
+  link: https://catalog.archives.gov/medialz/mopix/267a/GOLD/Batch_01/267a-2115-November27_2018.mp3
+  catalog: https://catalog.archives.gov/id/183518497
+  whole_session: true
+  duration_seconds: 8331
+  file:
+    storage_key: supreme-court-audio/national-archives/gold-series/267a-2115-november27_2018.mp3
+    checksum: 47ea1414e75116723387124a5a7e188d8464f739aa99958b994690e362a67d23
+    media_type: audio/mpeg
+    bytes: 166612838
 rights:
   status: no-permission-needed
   basis: us-government-work

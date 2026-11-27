@@ -100,6 +100,19 @@ reading_links:
     access: subscription
     link: https://advance.lexis.com/api/search?q=466%20U.S.%20765
     unchecked: true
+argument_audio:
+- kind: argument
+  date: '1984-03-26'
+  source: National Archives
+  link: https://catalog.archives.gov/medialz/mopix/267a/RED/267-480.mp3
+  catalog: https://catalog.archives.gov/id/102048856
+  whole_session: true
+  duration_seconds: 14745
+  file:
+    storage_key: supreme-court-audio/national-archives/red-series/267-480.mp3
+    checksum: 339628dd73c40b34e01c7b3b457c20be66542ea55f609e3a66b5939e42a51f65
+    media_type: audio/mpeg
+    bytes: 235929723
 rights:
   status: no-permission-needed
   basis: us-government-work

@@ -43,6 +43,7 @@ import Inbox from '@lucide/svelte/icons/inbox';
 import Info from '@lucide/svelte/icons/info';
 import KeyRound from '@lucide/svelte/icons/key-round';
 import Landmark from '@lucide/svelte/icons/landmark';
+import Languages from '@lucide/svelte/icons/languages';
 import Layers from '@lucide/svelte/icons/layers';
 import Library from '@lucide/svelte/icons/library';
 import LifeBuoy from '@lucide/svelte/icons/life-buoy';
@@ -115,6 +116,7 @@ export const navigationIcons: Record<NavigationIconName, typeof BookA> = {
 	info: Info,
 	'key-round': KeyRound,
 	landmark: Landmark,
+	languages: Languages,
 	layers: Layers,
 	library: Library,
 	'life-buoy': LifeBuoy,

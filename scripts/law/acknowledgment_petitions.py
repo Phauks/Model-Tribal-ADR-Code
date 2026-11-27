@@ -16,8 +16,9 @@ decisions about it.
 The Department's documents are works of the United States government, so
 the project keeps each PDF in the bucket under
 acknowledgment/<petition>/<file> and serves it, with a record of its own.
-A petitioner's own documents are not government works: they are stored
-privately (not served) and get no record.
+A petitioner's own documents and the public comments on a petition are not
+government works: they are stored privately (not served), and each gets a
+record that cites and links the Office's copy.
 
 The title and year come from the petition's page. The nation is matched by
 name (scripts/law/nation_names.py) for petitioners that were acknowledged.
@@ -28,11 +29,20 @@ Steps:
   file     Store each PDF in the bucket and add it to the capture index.
   records  Write content/sources/a/acknowledgment-<number>-<document>.yaml
            for each of the Department's documents.
+  link     Link every petition's records to the nation's profile (matched by
+           petition number), so the nation page can list them (Trevor,
+           Nov. 27, 2026: "if petitioning, we should show petitioning
+           documents"): the Department's documents, the Federal Register
+           notices and Interior Board of Indian Appeals decisions the
+           petition's page lists, and a record for each of the petitioner's
+           documents and public comments. --pages is the petition pages file
+           (research/raw/2026-11-27/acknowledgment-petition-pages.json).
 
 Usage:
   python3 scripts/law/acknowledgment_petitions.py fetch --work DIR
   python3 scripts/law/acknowledgment_petitions.py file --work DIR
   python3 scripts/law/acknowledgment_petitions.py records --work DIR
+  python3 scripts/law/acknowledgment_petitions.py link --pages FILE
 """
 from __future__ import annotations
 
@@ -295,13 +305,219 @@ def records(args) -> None:
     print(f"wrote {written} records")
 
 
+# Petitions the Office numbers differently from the nation's profile (each checked by hand against the profile).
+PETITION_PROFILES = {"158": "fernandeno-tataviam-band-of-mission-indians"}
+LINK_SESSION = "2026-11-27-petition-documents"
+PRIVATE_RIGHTS = {"status": "no-permission-needed", "basis": "link-only",
+                  "basis_note": "Not a government work: cited and linked to the Office of Federal Acknowledgment's copy; the project's copy is kept privately, not served.",
+                  "redistribution": False}
+
+
+def petition_key(number: str) -> str:
+    """'057' and '57' are one petition; '9A' and '009A' too."""
+    return number.lstrip("0").upper() or "0"
+
+
+def petition_profiles() -> dict[str, list[str]]:
+    """Each petition number's profiles, from the profiles' recognition facts."""
+    found: dict[str, set[str]] = {}
+    for path in sorted((ROOT / "content/tribes").glob("*/*.yaml")):
+        profile = yaml.safe_load(path.read_text(encoding="utf-8"))
+        for fact in profile.get("recognition") or []:
+            if fact.get("petition_number"):
+                found.setdefault(petition_key(str(fact["petition_number"])), set()).add(profile["id"])
+    for number, nation in PETITION_PROFILES.items():
+        found.setdefault(petition_key(number), set()).add(nation)
+    return {number: sorted(nations) for number, nations in found.items()}
+
+
+def source_files() -> dict[str, Path]:
+    return {path.stem: path for path in SOURCES.glob("*/*.yaml")}
+
+
+def add_links(path: Path, nations: list[str]) -> bool:
+    """Add the nations to the record's tribes and federal-recognition to its topics, editing only those lines."""
+    text = path.read_text(encoding="utf-8")
+    record = yaml.safe_load(text)
+    tribes = [nation for nation in nations if nation not in (record.get("tribes") or [])]
+    topic = "federal-recognition" not in (record.get("topics") or [])
+    if not tribes and not topic:
+        return False
+    lines = text.split("\n")
+
+    def block_end(name: str) -> int | None:
+        """The line after a top-level block, or None when the record has none."""
+        start = next((index for index, line in enumerate(lines) if line == f"{name}:"), None)
+        if start is None:
+            return None
+        end = start + 1
+        while end < len(lines) and (lines[end].startswith("- ") or lines[end].startswith("  ")):
+            end += 1
+        return end
+
+    def insert(name: str, items: list[str], after: tuple[str, ...]) -> None:
+        end = block_end(name)
+        if end is not None:
+            lines[end:end] = [f"- {item}" for item in items]
+            return
+        place = next((block_end(other) for other in after if block_end(other) is not None), None)
+        if place is None:
+            raise SystemExit(f"{path}: no place for {name}")
+        lines[place:place] = [f"{name}:"] + [f"- {item}" for item in items]
+
+    if tribes:
+        insert("tribes", tribes, ("jurisdictions", "rights", "file", "retrieved"))
+    # A Board decision names the nations it is about (nations_in_case), in the order tribes lists them: the petitioner is a party.
+    named = []
+    if tribes and "nations_in_case" in record:
+        found = re.search(r"Federal Acknowledgment of (?:the )?(.+?)\s*$", record["citation"].get("title", ""), re.I)
+        named = [{"nation": nation, "named_as": found.group(1) if found else record["citation"]["title"], "role": "party"} for nation in tribes]
+        start = lines.index("nations_in_case:")
+        at = next(index for index in range(start + 1, len(lines)) if lines[index].startswith("  named:"))
+        if lines[at] == "  named: []":
+            lines[at] = "  named:"
+        end = at + 1
+        while end < len(lines) and (lines[end].startswith("  - ") or lines[end].startswith("    ")):
+            end += 1
+        lines[end:end] = [line for entry in named for line in
+                          (f"  - nation: {entry['nation']}", f"    named_as: {yaml.safe_dump(entry['named_as'], width=10_000).strip().removesuffix(chr(10) + '...')}", "    role: party")]
+    if topic:
+        insert("topics", ["federal-recognition"], ("tribes", "nations_in_case", "jurisdictions", "rights", "retrieved"))
+    expected = dict(record)
+    expected["tribes"] = (record.get("tribes") or []) + tribes
+    expected["topics"] = (record.get("topics") or []) + (["federal-recognition"] if topic else [])
+    if named:
+        expected["nations_in_case"] = {**record["nations_in_case"], "named": record["nations_in_case"]["named"] + named}
+    edited = "\n".join(lines)
+    if yaml.safe_load(edited) != expected:
+        raise SystemExit(f"{path}: the edit changed more than tribes, topics and nations_in_case")
+    path.write_text(edited, encoding="utf-8")
+    return True
+
+
+def commenter(label: str) -> tuple[str, str]:
+    """'Duchesne County Commission, Public Comment on Petition #409' is ('Duchesne County Commission', 'Public Comment on Petition #409')."""
+    match = re.match(r"^(.*?),\s*(Public Comments?\b.*)$", label)
+    return (match.group(1).strip(), match.group(2).strip()) if match else ("", label)
+
+
+def private_record(petition: dict, document: dict, copy: dict | None, nations: list[str]) -> dict:
+    """A record for one of the petitioner's documents or one public comment: cited and linked, not served."""
+    comment = document["by"] == "public-comments"
+    author, label = commenter(document["label"]) if comment else (petition["name"], document["label"])
+    kind = re.sub(r"\s*\((?:[^()]|\([^()]*\))*\)\s*$", "", label).strip() or label
+    year = year_of(document["label"])
+    # The file name the Office gave the document often carries a year ("cor-2025-09-26-inc-...", "409_narr_2025_0.pdf"); only the year is used.
+    logged = None if year else re.search(r"[/_-]((?:19|20)\d\d)(?:[_-]|\.pdf$)", "/" + document["link"].rsplit("/", 1)[-1])
+    if logged:
+        year = int(logged.group(1))
+    title = f"{kind}: {petition['name']} (Petitioner #{petition['number']})" if not comment else f"{kind}: {petition['name']}"
+    citation = {"type": "document", "title": title, "author": [{"literal": author}] if author else [],
+                "genre": "Public comment" if comment else "Petitioner's document", "number": f"Petitioner #{petition['number']}",
+                "publisher": OFFICE, "URL": document["link"], "accessed": {"date-parts": [[2026, 11, 26]]}}
+    if not citation["author"]:
+        del citation["author"]
+    if year:
+        citation["issued"] = {"date-parts": [[year]]}
+    whose = f"A public comment on federal acknowledgment petition #{petition['number']}" if comment else f"A document the petitioner filed in federal acknowledgment petition #{petition['number']}"
+    year_note = " The year is the one in the file name the Office gave the document." if logged else ""
+    notes = (f"{whose} ({petition['name']}, {petition['state']}), listed on the petition's page ({petition['page']}) as \"{document['label']}\". "
+             f"Not a government work: the project's copy is kept privately and the record links the Office's copy.{year_note} "
+             f"Title from that page. Generated by {SCRIPT}; not yet read by a person (Unverified).")
+    record = {"key": record_key(petition, document), "kind": "other", "citation": citation, "original_link": document["link"], "retrieved": "2026-11-26"}
+    if copy:
+        record["file"] = copy
+    record.update({"rights": PRIVATE_RIGHTS, "jurisdictions": [{"level": "federal"}], "tribes": nations, "topics": ["federal-recognition"],
+                   "access": {"open": True, "pull_from": ["free-web"]}, "found_in": [LINK_SESSION], "notes": notes,
+                   "review": {"status": "unverified", "by": SCRIPT, "date": "2026-11-27",
+                              "checks": [{"check": "listing", "result": "missing", "detail": f"Only the petition's page was read: {petition['page']}"}]}})
+    return record
+
+
+def link(args) -> None:
+    petitions = json.loads(Path(args.pages).read_text(encoding="utf-8"))
+    profiles = petition_profiles()
+    files = source_files()
+    by_address: dict[str, str] = {}
+    for key, path in files.items():
+        if "ibia" not in key:
+            continue
+        record = yaml.safe_load(path.read_text(encoding="utf-8"))
+        for address in (record.get("original_link"), record.get("citation", {}).get("URL")):
+            if address:
+                by_address[address.lower()] = key
+    copies = {}
+    for row in csv.DictReader(CAPTURE_INDEX.open(encoding="utf-8")):
+        if row["key"].startswith("acknowledgment/"):
+            for address in row["link"].split():
+                copies.setdefault(address, {"storage_key": row["key"], "checksum": row["sha256"], "media_type": row["media_type"], "bytes": int(row["bytes"])})
+    # One letter or notice filed in several petitions (the Southeastern Cherokee Confederacy groups, the 1978 Federal Register list of letters of intent) keeps a record in each, listing the others.
+    # A key cut short can repeat (two parts of one narrative, two comments under one name): the second is numbered, in the page's order.
+    keys: dict[tuple[str, str], str] = {}
+    used: dict[str, int] = {}
+    shared: dict[str, list[str]] = {}
+    for petition in petitions:
+        for document in petition["documents"]:
+            if document["by"] != "department":
+                key = record_key(petition, document)
+                used[key] = used.get(key, 0) + 1
+                keys[(petition["number"], document["link"])] = key if used[key] == 1 else f"{key}-{used[key]}"
+                shared.setdefault(document["link"], []).append(keys[(petition["number"], document["link"])])
+    linked = written = 0
+    missing: list[str] = []
+    for petition in petitions:
+        nations = profiles.get(petition_key(petition["number"]), [])
+        if not nations:
+            missing.append(f"{petition['number']} {petition['name']}: no profile")
+            continue
+        prefix = f"acknowledgment-{petition['number'].lower()}-"
+        for document in petition["documents"]:
+            key = keys.get((petition["number"], document["link"])) or record_key(petition, document)
+            if document["by"] == "department":
+                if key in files:
+                    linked += add_links(files[key], nations)
+                else:
+                    missing.append(f"{petition['number']} {document['label']}: no record {key}")
+                continue
+            path = SOURCES / "a" / f"{key}.yaml"
+            record = {**private_record(petition, document, copies.get(document["link"]), nations), "key": key}
+            others = [other for other in shared[document["link"]] if other != key]
+            if others:
+                record = {**{name: value for name, value in record.items() if name in ("key", "kind", "citation", "original_link", "retrieved", "file")},
+                          "shares_link_with": others, **record}
+            path.write_text(dump(record), encoding="utf-8")
+            written += 1
+        for entry in petition.get("additional", []):
+            address = entry["link"]
+            if not re.search(r"federalregister\.gov/documents/|/IBIA/|ibia", address, re.I):
+                continue
+            number = re.search(r"federalregister\.gov/documents/\d{4}/\d\d/\d\d/([^/]+)", address)
+            decision = re.search(r"/(\d+)ibia(\d+)\.pdf$", address, re.I)
+            if number:
+                key = f"federal-register-{number.group(1).lower()}"
+            else:
+                key = by_address.get(address.lower()) or next(
+                    (key for key in files if decision and key.startswith("in-re-federal-acknowledgment") and key.endswith(f"-{decision.group(1)}-ibia-{decision.group(2)}")), None)
+            if key in files:
+                linked += add_links(files[key], nations)
+            else:
+                missing.append(f"{petition['number']} {entry['label']}: no record for {address}")
+        # Department records the page no longer lists, from an earlier reading, still belong to the petition.
+        for key in [key for key in files if key.startswith(prefix)]:
+            linked += add_links(files[key], nations)
+    print(f"linked {linked} records, wrote {written} petitioner and comment records")
+    for line in missing:
+        print("missing:", line)
+
+
 def main() -> None:
     parser = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
     sub = parser.add_subparsers(dest="command", required=True)
     for name in ("fetch", "file", "records"):
         sub.add_parser(name).add_argument("--work", required=True)
+    sub.add_parser("link").add_argument("--pages", required=True)
     args = parser.parse_args()
-    {"fetch": fetch, "file": file, "records": records}[args.command](args)
+    {"fetch": fetch, "file": file, "records": records, "link": link}[args.command](args)
 
 
 if __name__ == "__main__":

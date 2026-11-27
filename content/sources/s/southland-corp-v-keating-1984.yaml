@@ -72,6 +72,19 @@ reading_links:
     label: "Wikipedia"
     access: background
     link: https://en.wikipedia.org/wiki/Southland_Corp._v._Keating
+argument_audio:
+- kind: argument
+  date: '1983-10-04'
+  source: National Archives
+  link: https://catalog.archives.gov/medialz/mopix/267a/RED/267-450.mp3
+  catalog: https://catalog.archives.gov/id/102048826
+  whole_session: true
+  duration_seconds: 15114
+  file:
+    storage_key: supreme-court-audio/national-archives/red-series/267-450.mp3
+    checksum: 481b4fadb2a198f72bd4886a2d2ed70a6b910e6f896c55fc8817f8212bca6c9e
+    media_type: audio/mpeg
+    bytes: 241832978
 rights:
   status: no-permission-needed
   basis: us-government-work

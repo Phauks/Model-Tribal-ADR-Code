@@ -27,7 +27,7 @@ import { courts as namedCourts } from './courts.ts';
 import { heldBackOpinionCount, tribalCourtOpinions } from './tribal-court-opinions.ts';
 import { storySummaries } from './stories.ts';
 import { buildFormCatalog } from './form-catalog.ts';
-import { copyPagePath, isSavedWebPage, mediaLabel, type PublicCopy } from '../public-copies.ts';
+import { copyPagePath, copyPreference, isSavedWebPage, mediaLabel, type PublicCopy } from '../public-copies.ts';
 import { isNativeNation, recognitionStatus } from './recognition-status.ts';
 import type { Holding } from '../holding.ts';
 import { dataChartList, dataChartTrail } from '../data-chart-list.ts';
@@ -35,9 +35,10 @@ import { landCessions, royceSheets } from './land-cessions.ts';
 import { historicMapScans } from './historic-map-scans.ts';
 import type { ResultGroup } from '../search-everything.ts';
 import { allSections } from './title-25-sections.ts';
-import { isLawRecord } from './law-records.ts';
+import { isLawRecord, recordPageLink } from './law-records.ts';
 import { nationsInPrograms, programSummaries } from './federal-programs.ts';
 import { federalProgramPage } from '../federal-programs.ts';
+import { familyPath, languageFamilies, languages } from './languages.ts';
 
 /** The headings the collections are grouped under, in page order. */
 export const collectionGroups = ['Native nations', 'Federal law', 'State law', 'Courts and cases', 'People', 'Reference'] as const;
@@ -46,6 +47,8 @@ export type CollectionGroup = (typeof collectionGroups)[number];
 /** One item a collection counts, as a row of its list. */
 export interface CollectionItem {
 	title: string;
+	/** Its citation, when it is a numbered section such as "25 U.S.C. § 5321": the list shows it in a column of its own before the name (Trevor, Nov. 27, 2026). */
+	citation?: string;
 	/** Its page on this site, or where it is published. */
 	href?: string;
 	/** The year it was made, decided or issued, when known. */
@@ -155,6 +158,7 @@ function webPageBreakdown(items: CollectionItem[]): string[] {
 			try {
 				return new URL(copy.links[0] ?? '').hostname.replace(/^www\./, '');
 			} catch {
+				// expected: a copy whose link is not a web address names no site.
 				return undefined;
 			}
 		})
@@ -239,9 +243,12 @@ const typeOf = (record: SourceRecord) => (record.citation as { type?: string }).
 /** A source record as a list row: a case or law links to its page, anything else to our copy or else where it is published. */
 function sourceItem(record: SourceRecord, detail?: string): CollectionItem {
 	const link = record.original_link ?? record.citation.URL;
-	const copy = publicCopyFor(link);
-	const href = typeOf(record) === 'legal_case' ? `/cases/${record.key}` : isLawRecord(record) ? `/laws/${record.key}` : copy ? copyPagePath(copy) : publishedAt(record, link);
-	const copies = copiesOfRecord(record, copy);
+	const linked = publicCopyFor(link);
+	const copies = copiesOfRecord(record, linked);
+	// A copy that names the record opens too when the cited address does not match its own, such as an address with spaces or
+	// without "www." (Red Cliff's and Round Valley's constitutions, Nov. 27, 2026), so a row counted as saved never links out.
+	const copy = linked ?? [...copies].sort((first, second) => copyPreference(first.mediaType) - copyPreference(second.mediaType))[0];
+	const href = typeOf(record) === 'legal_case' ? `/cases/${record.key}` : isLawRecord(record) ? (recordPageLink(record.key) ?? `/laws/${record.key}`) : copy ? copyPagePath(copy) : publishedAt(record, link);
 	return { title: record.citation.title ?? record.key, href, year: record.citation.issued?.['date-parts']?.[0]?.[0], detail, key: record.key, ...(copies.length ? { copies } : {}) };
 }
 
@@ -264,6 +271,8 @@ function publishedAt(record: SourceRecord, link: string | undefined): string | u
  */
 const oklahomaTopic = 'oklahoma-state-tribal-agreement';
 const isOklahomaFiling = (record: SourceRecord) => (record.topics ?? []).includes(oklahomaTopic);
+/** The National Park Service's repatriation notices, their own collection (scripts/law/repatriation_notices.py). */
+const isRepatriationNotice = (record: SourceRecord) => kindOf(record) === 'federal-register-notice' && (record.topics ?? []).includes('repatriation');
 const oklahomaAgreements = () => [...sources().values()].filter(isOklahomaFiling);
 
 /**
@@ -280,7 +289,7 @@ function approvedNationLaws(): CollectionItem[] {
 function sourcesOfKind(kinds: string[], detail?: (record: SourceRecord) => string | undefined): () => CollectionItem[] {
 	return () =>
 		[...sources().values()]
-			.filter((record) => kinds.includes(kindOf(record)) && typeOf(record) !== 'treaty' && !isOklahomaFiling(record) && !isApprovedNationLaw(record))
+			.filter((record) => kinds.includes(kindOf(record)) && typeOf(record) !== 'treaty' && !isOklahomaFiling(record) && !isApprovedNationLaw(record) && !isRepatriationNotice(record))
 			.map((record) => sourceItem(record, detail?.(record)));
 }
 
@@ -352,6 +361,9 @@ function heldBackBoardDecisions(): number {
 
 const gamingCommission = 'National Indian Gaming Commission';
 
+/** The Indian Claims Commission's decisions (1948-1978), their own collection (scripts/law/indian_claims_commission.py). */
+const claimsCommission = (authority: string) => authority === 'Indian Claims Commission';
+
 /** The Gaming Commission's reading room: its opinions, letters, enforcement actions and bulletins, and its final decisions, which are cases (scripts/law/nigc_documents.py). */
 function gamingCommissionDocuments(): CollectionItem[] {
 	return [...sources().values()]
@@ -390,6 +402,23 @@ function solicitorOpinions(): CollectionItem[] {
 		.map((record) => sourceItem(record, (record.citation as { number?: string }).number));
 }
 
+/**
+ * The settlements of Native nations' water rights that Congress enacted, one item each, linking to the enacting Act's page
+ * (research/water-settlements/enacted-settlements.csv, copied from the Congressional Research Service's report R44148;
+ * scripts/law/water_settlements.py). The Acts are counted among the statutes too: this list is the settlements, not the records.
+ */
+function waterRightsSettlements(): CollectionItem[] {
+	const file = path.join(repositoryRoot, 'research/water-settlements/enacted-settlements.csv');
+	if (!existsSync(file)) return [];
+	const name = nationNameOf();
+	return parseCsv(readFileSync(file, 'utf8')).map((row) => ({
+		title: row.settlement,
+		href: `/laws/public-law-${row.public_law}`,
+		year: Number(row.year) || undefined,
+		detail: row.nations.split('; ').filter(Boolean).map(name).join('; ') || undefined
+	}));
+}
+
 function nationNameOf(): (id: string) => string {
 	const names = new Map(nations().map((nation) => [nation.id, nation.names.official]));
 	return (id) => names.get(id) ?? id;
@@ -399,6 +428,15 @@ const tribesOf = (record: SourceRecord) => {
 	const name = nationNameOf();
 	return record.tribes?.map(name).join('; ') || undefined;
 };
+
+/** A notice names up to dozens of nations; the list shows the first three and counts the rest. */
+function repatriationNotices(): CollectionItem[] {
+	const name = nationNameOf();
+	return [...sources().values()].filter(isRepatriationNotice).map((record) => {
+		const named = (record.tribes ?? []).map(name);
+		return sourceItem(record, named.length === 0 ? undefined : named.length <= 3 ? named.join('; ') : `${named.slice(0, 3).join('; ')} and ${named.length - 3} more`);
+	});
+}
 
 export const collections: Collection[] = [
 	// Native nations
@@ -474,6 +512,23 @@ export const collections: Collection[] = [
 		items: () => storySummaries().map((story) => ({ title: story.title, href: `/stories/${story.id}`, detail: story.nations.map((nation) => nation.name).join('; ') || undefined })),
 		breakdown: () => [`from ${counted(distinct(storySummaries().flatMap((story) => story.nations.map((nation) => nation.name))), 'nation', 'nations')}`]
 	},
+	// The languages nations' records name, and their families (language pages, approved Nov. 27, 2026).
+	{
+		identifier: 'languages', search: { group: 'reference', label: 'Language' },
+		title: 'Languages',
+		group: 'Native nations',
+		detailHeader: 'ISO 639-3',
+		list: '/languages',
+		items: () => languages().map((language) => ({ title: language.name, href: `/languages/${language.tag}`, detail: language.iso_639_3.code })),
+		breakdown: () => [`in ${counted(languageFamilies().length, 'family', 'families')}`, counted(languages().filter((language) => !language.family).length, 'isolate', 'isolates')]
+	},
+	{
+		identifier: 'language-families', search: { group: 'reference', label: 'Language family' },
+		title: 'Language Families',
+		group: 'Native nations',
+		detailHeader: 'Languages',
+		items: () => languageFamilies().map((family) => ({ title: `${family.name} languages`, href: familyPath(family.name), detail: String(family.members.length) }))
+	},
 
 	// Federal law
 	{ identifier: 'treaties', search: { group: 'law', label: 'Treaty' }, title: 'Treaties and Agreements', group: 'Federal law', detailHeader: 'Nation', items: treaties },
@@ -484,9 +539,26 @@ export const collections: Collection[] = [
 	{ identifier: 'regulation-sections', search: { group: 'law', label: 'Regulation section' }, title: 'Regulation Sections (25 C.F.R.)', group: 'Federal law', detailHeader: 'Part', items: () => allSections('regulations'), breakdown: (items) => [`in ${counted(distinct(items.map((item) => item.detail)), 'part', 'parts')}`] },
 	{ identifier: 'executive-orders', search: { group: 'law', label: 'Executive order' }, title: 'Executive Orders', group: 'Federal law', sourceKinds: ['executive-order'], items: sourcesOfKind(['executive-order']) },
 	{ identifier: 'federal-register-notices', search: { group: 'law', label: 'Federal Register notice' }, title: 'Federal Register Notices', group: 'Federal law', sourceKinds: ['federal-register-notice'], items: sourcesOfKind(['federal-register-notice']) },
+	{
+		identifier: 'repatriation-notices',
+		search: { group: 'law', label: 'Repatriation notice' },
+		title: 'Repatriation Notices',
+		group: 'Federal law',
+		detailHeader: 'Nations',
+		sourceKinds: ['federal-register-notice'],
+		items: repatriationNotices
+	},
 	{ identifier: 'federal-acknowledgment', search: { group: 'law', label: 'Acknowledgment document' }, title: 'Federal Acknowledgment Petitions', group: 'Federal law', detailHeader: 'Kind', sourceKinds: ['federal-agency-document'], items: acknowledgmentDocuments },
 	{ identifier: 'solicitor-opinions', search: { group: 'law', label: 'Solicitor’s opinion' }, title: 'Solicitor’s Opinions', group: 'Federal law', detailHeader: 'Number', sourceKinds: ['federal-agency-document'], items: solicitorOpinions },
 	{ identifier: 'national-indian-gaming-commission', search: { group: 'law', label: 'Gaming Commission document' }, title: 'Gaming Commission Opinions and Actions', group: 'Federal law', detailHeader: 'Kind', sourceKinds: ['federal-agency-document'], items: gamingCommissionDocuments },
+	{
+		identifier: 'water-rights-settlements',
+		search: { group: 'law', label: 'Water rights settlement' },
+		title: 'Indian Water Rights Settlements',
+		group: 'Federal law',
+		detailHeader: 'Nations',
+		items: waterRightsSettlements
+	},
 	{ identifier: 'congressional-hearings', search: { group: 'law', label: 'Congressional hearing' }, title: 'Congressional Hearings', group: 'Federal law', detailHeader: 'Committee', sourceKinds: ['congressional-document'], items: congressionalDocuments((genre) => genre === 'Hearing') },
 	{ identifier: 'committee-reports', search: { group: 'law', label: 'Committee report' }, title: 'Committee Reports', group: 'Federal law', detailHeader: 'Committee', sourceKinds: ['congressional-document'], items: congressionalDocuments((genre) => genre === 'House report' || genre === 'Senate report') },
 	{ identifier: 'committee-prints', search: { group: 'law', label: 'Committee print' }, title: 'Committee Prints', group: 'Federal law', detailHeader: 'Committee', sourceKinds: ['congressional-document'], items: congressionalDocuments((genre) => genre === 'Committee print' || genre === 'Congressional document' || genre === 'House document' || genre === 'Senate document') },
@@ -506,7 +578,7 @@ export const collections: Collection[] = [
 
 	// Courts and cases
 	{ identifier: 'supreme-court-cases', search: { group: 'case', label: 'Court case' }, title: 'U.S. Supreme Court Cases', group: 'Courts and cases', items: casesBy(supremeCourt) },
-	{ identifier: 'other-court-cases', search: { group: 'case', label: 'Court case' }, title: 'Other Court Cases', group: 'Courts and cases', detailHeader: 'Court', items: casesBy((authority) => !supremeCourt(authority) && !indianAppealsBoard(authority) && authority !== gamingCommission) },
+	{ identifier: 'other-court-cases', search: { group: 'case', label: 'Court case' }, title: 'Other Court Cases', group: 'Courts and cases', detailHeader: 'Court', items: casesBy((authority) => !supremeCourt(authority) && !indianAppealsBoard(authority) && !claimsCommission(authority) && authority !== gamingCommission) },
 	{
 		identifier: 'interior-board-of-indian-appeals',
 		search: { group: 'case', label: 'Interior Board of Indian Appeals decision' },
@@ -515,6 +587,13 @@ export const collections: Collection[] = [
 		items: casesBy(indianAppealsBoard),
 		heldBack: heldBackBoardDecisions,
 		heldBackReason: 'held back for a privacy review'
+	},
+	{
+		identifier: 'indian-claims-commission',
+		search: { group: 'case', label: 'Indian Claims Commission decision' },
+		title: 'Indian Claims Commission Decisions',
+		group: 'Courts and cases',
+		items: casesBy(claimsCommission)
 	},
 	{
 		identifier: 'federal-court-opinions', search: { group: 'case', label: 'Lower federal court opinion' },
@@ -642,25 +721,32 @@ export const collectionPath = (identifier: string) => `/stats/${identifier}`;
 
 /** Every collection with its count, in registry order, leaving out any that count nothing yet. */
 export function collectionCounts(): CollectionCount[] {
-	return collections
-		.map((collection) => {
-			const items = collection.items();
-			const held = collection.heldBack?.() ?? 0;
-			const breakdown = collection.breakdown?.(items) ?? documentBreakdown(items);
-			const withCopies = items.some((item) => item.copies?.length);
-			return {
-				identifier: collection.identifier,
-				title: collection.title,
-				group: collection.group,
-				href: collection.list ?? collectionPath(collection.identifier),
-				count: items.length,
-				...(collection.years ? { years: collection.years() } : yearSpan(items) ? { years: yearSpan(items) } : {}),
-				...(held > 0 ? { heldBack: held, heldBackReason: collection.heldBackReason } : {}),
-				...(breakdown.length > 0 ? { breakdown } : {}),
-				...(withCopies ? { copyColumns: collection.copyCounts ? ('counts' as const) : ('copy' as const) } : {})
-			};
-		})
-		.filter((collection) => collection.count > 0);
+	return collections.map(countOf).filter((collection) => collection.count > 0);
+}
+
+/** One collection with its count, for its own list page (src/routes/stats/[collection]), which needs no other. */
+export function collectionCount(identifier: string): CollectionCount | undefined {
+	const collection = collections.find((candidate) => candidate.identifier === identifier);
+	const counted = collection ? countOf(collection) : undefined;
+	return counted && counted.count > 0 ? counted : undefined;
+}
+
+function countOf(collection: (typeof collections)[number]): CollectionCount {
+	const items = collection.items();
+	const held = collection.heldBack?.() ?? 0;
+	const breakdown = collection.breakdown?.(items) ?? documentBreakdown(items);
+	const withCopies = items.some((item) => item.copies?.length);
+	return {
+		identifier: collection.identifier,
+		title: collection.title,
+		group: collection.group,
+		href: collection.list ?? collectionPath(collection.identifier),
+		count: items.length,
+		...(collection.years ? { years: collection.years() } : yearSpan(items) ? { years: yearSpan(items) } : {}),
+		...(held > 0 ? { heldBack: held, heldBackReason: collection.heldBackReason } : {}),
+		...(breakdown.length > 0 ? { breakdown } : {}),
+		...(withCopies ? { copyColumns: collection.copyCounts ? ('counts' as const) : ('copy' as const) } : {})
+	};
 }
 
 /** The collections under each heading, for the page, leaving out empty headings. */

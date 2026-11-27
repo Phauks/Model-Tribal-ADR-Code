@@ -19,6 +19,8 @@ describe('page data for the pages the Worker draws', () => {
 		const routes: Record<string, string> = {
 			cases: 'src/routes/cases/[id]/+page.server.ts',
 			laws: 'src/routes/laws/[key]/+page.server.ts',
+			collections: 'src/routes/laws/[collection=browse]/+page.server.ts',
+			sections: 'src/routes/laws/usc-25/[section]/+page.server.ts',
 			biographies: 'src/routes/biographies/[person]/+page.server.ts',
 			justices: 'src/routes/supreme-court/justices/[justice]/+page.server.ts',
 			presidents: 'src/routes/supreme-court/presidents/[president]/+page.server.ts',

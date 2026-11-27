@@ -1,0 +1,111 @@
+# Written by scripts/languages/build_registry.py from Glottolog 5.4 and the ISO 639-3 code tables; do not edit by hand.
+tag: ems
+name: Pacific Gulf Yupik
+iso_639_3:
+  code: ems
+  reference_name: Pacific Gulf Yupik
+  scope: individual
+  source: iso-639-3-code-tables
+glottolog:
+  glottocode: paci1278
+  level: language
+  source: glottolog-5-4
+family:
+  name: Eskimo-Aleut
+  glottocode: eski1264
+  source: glottolog-5-4
+endangered_languages_project:
+  link: https://endangeredlanguages.com/elp-language/672
+  source: glottolog-5-4
+alaska_native_language_center:
+  link: https://www.uaf.edu/anlc/languages-move/alutiiq.php
+  source: alaska-native-language-center-languages
+dialects:
+- name: Chugach
+  glottocode: chug1254
+  source: glottolog-5-4
+- name: Koniag
+  glottocode: koni1262
+  source: glottolog-5-4
+works:
+- glottolog_reference: '168491'
+  title: Alutiiq Dictionary lexical database files
+  kinds:
+  - dictionary
+  author: Jeff (compiler) Leer and Joe. (editor) Kwaraceius
+  year: 2011
+  source: glottolog-5-4
+- glottolog_reference: '681296'
+  title: Conversational Alutiiq Dictionary Kenai Peninsula Alutiiq
+  kinds:
+  - dictionary
+  author: Jeff Leer
+  year: 1991
+  publisher: Alaska Native Language Center
+  source: glottolog-5-4
+- glottolog_reference: '105705'
+  title: A Conversational Dictionary of Kodiak Alutiiq
+  kinds:
+  - dictionary
+  author: Jeff Leer
+  year: 1982
+  publisher: Alaska Native Language Center
+  source: glottolog-5-4
+- glottolog_reference: '714578'
+  title: A conversational dictionary of Kodiak Alutiiq
+  kinds:
+  - dictionary
+  author: Jeff Leer
+  year: 1979
+  publisher: Alaska Native Language Center, University of Alaska
+  pages: 121
+  source: glottolog-5-4
+- glottolog_reference: '166151'
+  title: A Conversational Dictionary of Kodiak Alutiiq
+  kinds:
+  - dictionary
+  author: Jeff Leer
+  year: 1978
+  publisher: Alaska Native Language Center
+  source: glottolog-5-4
+- glottolog_reference: '166150'
+  title: Conversational Alutiiq Dictionary, Kenai Peninsula Dialect
+  kinds:
+  - dictionary
+  author: Jeff Leer
+  year: 1978
+  publisher: National Bilingual Materials Development Center and the Alaska Native Language Center
+  pages: 313
+  source: glottolog-5-4
+- glottolog_reference: '166207'
+  title: 'Sugcestun Stem List: A Stem Dictionary of the Language of Port Graham and English Bay'
+  kinds:
+  - dictionary
+  author: Derenty. Tabios, Sergius Moonin, Carl Anahonak and Jeff (compiler) Leer
+  year: 1974
+  source: glottolog-5-4
+- glottolog_reference: '168539'
+  title: Sugpiaq dictionary]
+  kinds:
+  - dictionary
+  author: E. Irene Reed
+  year: 1970
+  source: glottolog-5-4
+- glottolog_reference: '168537'
+  title: 'Reed: Sugpiaq-English Dictionary file slips'
+  kinds:
+  - dictionary
+  author: E. Irene Reed
+  year: 1963
+  source: glottolog-5-4
+- glottolog_reference: '136829'
+  title: Grammatical Fundamentals of the Innuit Language, as spoken by the Eskimo of the Western Coast of Alaska
+  kinds:
+  - grammar
+  author: Francis Barnum
+  year: 1901
+  publisher: Ginn & Company
+  pages: 409
+  most_extensive_description: true
+  source: glottolog-5-4
+retrieved: '2026-11-27'

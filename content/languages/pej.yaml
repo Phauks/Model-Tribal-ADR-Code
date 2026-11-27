@@ -1,0 +1,48 @@
+# Written by scripts/languages/build_registry.py from Glottolog 5.4 and the ISO 639-3 code tables; do not edit by hand.
+tag: pej
+name: Northern Pomo
+iso_639_3:
+  code: pej
+  reference_name: Northern Pomo
+  scope: individual
+  source: iso-639-3-code-tables
+glottolog:
+  glottocode: nort2966
+  level: language
+  source: glottolog-5-4
+family:
+  name: Pomoan
+  glottocode: pomo1273
+  source: glottolog-5-4
+endangered_languages_project:
+  link: https://endangeredlanguages.com/elp-language/1531
+  source: glottolog-5-4
+dialects:
+- name: Guidiville
+  glottocode: guid1240
+  source: glottolog-5-4
+- name: Sherwood Valley
+  glottocode: sher1259
+  source: glottolog-5-4
+works:
+- glottolog_reference: '102953'
+  title: Topics in Northern Pomo Grammar
+  kinds:
+  - grammar
+  author: Mary Catherine O'Connor
+  year: 1992
+  publisher: Garland Publishing
+  pages: 357
+  most_extensive_description: true
+  source: glottolog-5-4
+- glottolog_reference: '414946'
+  title: Topics in Northern Pomo Grammar
+  kinds:
+  - grammar
+  author: Mary Catherine O'Connor
+  year: 1987
+  publisher: University of California at Berkeley
+  pages: 350
+  most_extensive_description: true
+  source: glottolog-5-4
+retrieved: '2026-11-27'

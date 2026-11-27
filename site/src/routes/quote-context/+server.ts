@@ -27,13 +27,13 @@ export const GET: RequestHandler = async ({ url }) => {
 
 	const cache = (globalThis as { caches?: { default?: Cache } }).caches?.default;
 	const cacheKey = `https://quote-context.invalid/${encodeURIComponent(siteBuild)}/${encodeURIComponent(source)}?${new URLSearchParams({ quote })}`;
-	const cached = cache ? await cache.match(cacheKey).catch(() => undefined) : undefined;
+	const cached = cache ? await cache.match(cacheKey).catch(() => /* expected: the cache is optional; a miss looks the quotation up */ undefined) : undefined;
 	if (cached) return cached;
 
 	const { found, documents } = await findQuotation(database, source, quote, { publicOnly: true });
 	// When the words are not found, the copy looked in is still named, for the reader to read it whole.
 	const answer = found ?? { document: documents[0] ?? null, context: null };
 	const response = json(answer, { headers: { 'Cache-Control': `public, max-age=${day}` } });
-	if (cache) await cache.put(cacheKey, response.clone()).catch(() => undefined);
+	if (cache) await cache.put(cacheKey, response.clone()).catch(() => /* expected: the cache is optional; the quotation is looked up again next time */ undefined);
 	return response;
 };

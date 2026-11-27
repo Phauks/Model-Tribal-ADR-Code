@@ -11,6 +11,7 @@
  * Shared by src/service-worker/index.ts, src/lib/offline-saving.ts and the build's lists
  * (src/routes/copies/offline/), so it must not use the page or the worker's own globals.
  */
+import { sendProblem } from './problem-reports.ts';
 
 /** The cache that holds saved copies. It does not start with the build caches' prefix, so updates leave it alone. */
 export const documentsCacheName = 'documents';
@@ -18,8 +19,11 @@ export const documentsCacheName = 'documents';
 /** A set of copies a reader can save: the United States documents, or one nation's documents. */
 export type DocumentSet = 'federal' | `nation:${string}`;
 
-/** One copy: its address on this site, its size in bytes, its SHA-256, its title and the address it was published at. */
-export type DocumentFile = [path: string, bytes: number, sha256: string, title?: string, original?: string];
+/**
+ * One copy: its address on this site, its size in bytes, its SHA-256, its title, the address it was
+ * published at and the name it is saved under (src/lib/readable-file-names.ts).
+ */
+export type DocumentFile = [path: string, bytes: number, sha256: string, title?: string, original?: string, name?: string];
 
 /** The list of a set's copies, built with the site. */
 export interface DocumentSetList {
@@ -78,7 +82,8 @@ export async function documentSummary(): Promise<DocumentSetSummary | undefined>
 	try {
 		const response = await fetch(summaryAddress);
 		return response.ok ? ((await response.json()) as DocumentSetSummary) : undefined;
-	} catch {
+	} catch (problem) {
+		sendProblem(problem, { code: 'offline.documents' });
 		return undefined;
 	}
 }

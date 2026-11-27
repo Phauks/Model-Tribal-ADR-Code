@@ -183,6 +183,15 @@ languages:
   verification: inferred
   as_of: '2026-11-21'
   note: '"speak Anishinabemowin in the home"'
+language_programs:
+- name: Anishinaabe Language Revitalization Department
+  link: https://www.sagchip.org/language/index.asp
+  run_by: nation
+  source: saginaw-chippewa-indian-tribe-of-michiga-language-index-asp
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-27'
+  locator: page title
 federal_administration:
   bureau_of_indian_affairs_region: Midwest
   bureau_of_indian_affairs_agency: Michigan Agency

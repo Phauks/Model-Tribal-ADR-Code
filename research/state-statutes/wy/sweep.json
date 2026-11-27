@@ -1,0 +1,53 @@
+{
+  "state": "WY",
+  "code": "Wyoming Statutes",
+  "edition": 2025,
+  "read": "2026-11-27",
+  "keyword_pass": {
+    "sections": 18752,
+    "live": 15650,
+    "strong": 111,
+    "weak_only": 127,
+    "repealed": 2985,
+    "reserved": 117
+  },
+  "reading": {
+    "missing_answers": 0,
+    "rows": 135,
+    "core": 32,
+    "incidental": 103,
+    "by_pool": {
+      "A": {
+        "core": 27,
+        "incidental": 81,
+        "none": 3
+      },
+      "B": {
+        "none": 101,
+        "incidental": 22,
+        "core": 4
+      },
+      "C": {
+        "none": 300
+      },
+      "D": {
+        "none": 300
+      },
+      "E": {
+        "core": 1
+      }
+    },
+    "meta": {
+      "live": 15650,
+      "A": 111,
+      "B": 127,
+      "E": 1,
+      "C": 323,
+      "C_sample": 300,
+      "D": 15088,
+      "D_sample": 300,
+      "items": 839,
+      "batches": 6
+    }
+  }
+}

@@ -257,6 +257,10 @@ const bucketCalls: Record<string, BucketUse> = {
     kind: "project-file",
     why: "The served copy of a case's opinions, which the project built from the Caselaw Access Project; only the file indexed with the site is read.",
   },
+  "src/routes/copies/reading/[...key]/+server.ts GET get(copy.key)": {
+    kind: "project-file",
+    why: "A served copy read for its reading version, the same file /copies serves; only the file indexed with the site is read.",
+  },
   "src/routes/nations/[id]/image/+server.ts GET get(image.key)": {
     kind: "project-file",
     why: "Nation seals and images the project collected from official sources.",
@@ -290,6 +294,10 @@ const bucketCalls: Record<string, BucketUse> = {
   "src/lib/server/document-zips.ts entries get(key)": {
     kind: "project-file",
     why: "The project's own copies of public documents (U.S. government works and nations' governing documents), zipped for download.",
+  },
+  "src/routes/search/download/+server.ts open get(key)": {
+    kind: "project-file",
+    why: "The project's own copies of the search results a reader ticked, zipped for download. Keys come only from the records built with the site and the list of copies it may serve, never from the request.",
   },
 };
 

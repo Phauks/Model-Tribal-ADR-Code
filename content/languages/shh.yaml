@@ -1,0 +1,76 @@
+# Written by scripts/languages/build_registry.py from Glottolog 5.4 and the ISO 639-3 code tables; do not edit by hand.
+tag: shh
+name: Shoshoni
+iso_639_3:
+  code: shh
+  reference_name: Shoshoni
+  scope: individual
+  source: iso-639-3-code-tables
+glottolog:
+  glottocode: shos1248
+  level: language
+  source: glottolog-5-4
+family:
+  name: Uto-Aztecan
+  glottocode: utoa1244
+  source: glottolog-5-4
+endangered_languages_project:
+  link: https://endangeredlanguages.com/elp-language/1473
+  source: glottolog-5-4
+dialects:
+- name: Gosiute
+  glottocode: gosi1242
+  source: glottolog-5-4
+- name: Northern Shoshoni
+  glottocode: nort2955
+  source: glottolog-5-4
+- name: Western Shoshoni
+  glottocode: west2622
+  source: glottolog-5-4
+works:
+- glottolog_reference: '320757'
+  title: Eastern Shoshone Working Dictionary
+  kinds:
+  - dictionary
+  author: David Leedom Shaul
+  year: 2012
+  pages: 253
+  source: glottolog-5-4
+- glottolog_reference: '150445'
+  title: Western Shoshoni Grammar
+  kinds:
+  - grammar
+  author: Beverly Crum and Jon Dayley
+  year: 1993
+  publisher: Department of Anthropology, Boise State University
+  pages: 310
+  most_extensive_description: true
+  source: glottolog-5-4
+- glottolog_reference: '124908'
+  title: 'Review of: Tümpisa (Panamint) Shoshone grammar, by Jon P. Dayley'
+  kinds:
+  - grammar
+  author: Charles W. Peck
+  year: 1992
+  publisher: 147-48
+  most_extensive_description: true
+  source: glottolog-5-4
+- glottolog_reference: '45144'
+  title: Big Smokey Valley Shoshoni
+  kinds:
+  - dictionary
+  author: Richley H. Crapo
+  year: 1976
+  publisher: Desert Research Institute
+  pages: 196
+  source: glottolog-5-4
+- glottolog_reference: '38808'
+  title: 'Newe Natekwinappeh: Shoshoni Stories and Dictionary'
+  kinds:
+  - dictionary
+  author: Wick R. Miller
+  year: 1972
+  publisher: University of Utah Press
+  pages: 172
+  source: glottolog-5-4
+retrieved: '2026-11-27'

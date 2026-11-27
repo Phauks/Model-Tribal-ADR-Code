@@ -71,6 +71,7 @@ export function fragmentId(hash: string): string | undefined {
 	try {
 		return decodeURIComponent(raw);
 	} catch {
+		// expected: a fragment that does not decode is used as typed.
 		return raw;
 	}
 }

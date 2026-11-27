@@ -1,0 +1,122 @@
+# Written by scripts/languages/build_registry.py from Glottolog 5.4 and the ISO 639-3 code tables; do not edit by hand.
+tag: chr
+name: Cherokee
+iso_639_3:
+  code: chr
+  reference_name: Cherokee
+  scope: individual
+  source: iso-639-3-code-tables
+glottolog:
+  glottocode: cher1273
+  level: language
+  source: glottolog-5-4
+family:
+  name: Iroquoian
+  glottocode: iroq1247
+  source: glottolog-5-4
+own_names:
+- name: ᏣᎳᎩ ᎧᏬᏂᎯᏍᏗ
+  language: chr
+  source: glottolog-5-4
+endangered_languages_project:
+  link: https://endangeredlanguages.com/elp-language/1684
+  source: glottolog-5-4
+dialects:
+- name: Elati
+  glottocode: elat1241
+  source: glottolog-5-4
+- name: Kituhwa
+  glottocode: kitu1247
+  source: glottolog-5-4
+- name: Otali
+  glottocode: otal1238
+  source: glottolog-5-4
+- name: Overhill-Middle Cherokee
+  glottocode: over1238
+  source: glottolog-5-4
+works:
+- glottolog_reference: '587836'
+  title: Raven Rock Cherokee-English Dictionary
+  kinds:
+  - dictionary
+  author: Michael Joyner and TommyLee Whitlock
+  year: 2015
+  publisher: Lulu
+  pages: 174
+  source: glottolog-5-4
+- glottolog_reference: '51102'
+  title: A Reference Grammar of Oklahoma Cherokee
+  kinds:
+  - grammar
+  author: Brad Montgomery-Anderson
+  year: 2008
+  publisher: University of Kansas
+  pages: 595
+  most_extensive_description: true
+  source: glottolog-5-4
+- glottolog_reference: '28822'
+  title: 'Easy to use Cherokee dictionary: Tsa la gi dictionary'
+  kinds:
+  - dictionary
+  author: Prentice Robinson
+  year: 1996
+  publisher: Cherokee Language and Culture
+  pages: 126
+  source: glottolog-5-4
+- glottolog_reference: '91729'
+  title: Grammatical relations and verb agreement in Cherokee
+  kinds:
+  - grammar
+  author: Janine Scancarelli
+  year: 1987
+  publisher: University of California at Los Angeles
+  pages: 412
+  most_extensive_description: true
+  source: glottolog-5-4
+- glottolog_reference: '60066'
+  title: Beginning Cherokee
+  kinds:
+  - grammar
+  author: Ruth Bradley Holmes and Betty Sharp Smith
+  year: 1977
+  publisher: University of Oklahoma Press
+  pages: 345
+  most_extensive_description: true
+  source: glottolog-5-4
+- glottolog_reference: '32347'
+  title: A Grammar and Dictionary of the Cherokee Language
+  kinds:
+  - grammar
+  - dictionary
+  author: Duane Harold King
+  year: 1975
+  publisher: University of Georgia
+  pages: 147
+  most_extensive_description: true
+  source: glottolog-5-4
+- glottolog_reference: '676363'
+  title: Cherokee-English Dictionary
+  kinds:
+  - dictionary
+  author: Durbin Feeling
+  year: 1975
+  publisher: Cherokee Nation of Oklahoma and Heritage Printing
+  source: glottolog-5-4
+- glottolog_reference: '475660'
+  title: Cherokee-English dictionary Tsalagi-Yonega Didehlogwasdohdi
+  kinds:
+  - dictionary
+  author: Durbin Feeling
+  year: 1975
+  publisher: Cherokee Nation of Oklahoma
+  pages: 355
+  source: glottolog-5-4
+- glottolog_reference: '310099'
+  title: A dictionary of the Cherokee Indian language
+  kinds:
+  - dictionary
+  author: J. T. Alexander
+  year: 1971
+  publisher: University of Oklahoma Press
+  source: glottolog-5-4
+retrieved: '2026-11-27'

@@ -184,6 +184,15 @@ languages:
   as_of: '2026-11-23'
   locator: Language Revitalization
   note: 'The source reads: “Online Cupeño Language Classes”.'
+language_programs:
+- name: Pala Language Revitalization Program
+  link: https://www.palatribe.com/residents/language-revitalization/
+  run_by: nation
+  source: pala-band-language-revitalization
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-27'
+  locator: Lesson Plans
 federal_administration:
   bureau_of_indian_affairs_region: Pacific
   bureau_of_indian_affairs_agency: Southern California Agency
@@ -577,6 +586,14 @@ jurisdiction:
   verification: inferred
   as_of: '2026-10-21'
   locator: 'Table of approvals by Tribe, column "Administrative Functions": "CAA § 505(a)(2)"'
+- topic: water-rights-settlement
+  value: enacted
+  detail: Congress enacted the San Luis Rey Indian Water Rights Settlement Act of 1988 in 1988, amended 2016 (Pub. L. No. 100-675, Pub. L. No. 114-322), settling the water rights of La Jolla, San Pasquale, Pauma, Pala Bands of Mission Indians. It authorizes about $30.0 million in federal funds, as the Congressional Research Service counts it (R44148, Table 1).
+  source: public-law-100-675
+  confidence: high
+  verification: inferred
+  as_of: '1988'
+  locator: Congressional Research Service, R44148, Table 1, 1988
 court_practice:
 - kind: filing-fees
   title: Fees & Costs (Pala Tribal Court)

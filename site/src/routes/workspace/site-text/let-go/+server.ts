@@ -17,7 +17,7 @@ export const POST: RequestHandler = async (event) => {
 	const person = requirePersonForData(event);
 	const { database } = storage(event);
 	await requireDocumentLevel(event, database, siteTextSubject, 'contribute');
-	const body = (await event.request.json().catch(() => null)) as { key?: unknown } | null;
+	const body = (await event.request.json().catch(() => /* expected: a body that is not JSON is refused just below with 400 */ null)) as { key?: unknown } | null;
 	if (typeof body?.key !== 'string') error(400, 'Name the edit to let go.');
 	try {
 		await letGo(database, body.key, person.identifier, catalogByKey());

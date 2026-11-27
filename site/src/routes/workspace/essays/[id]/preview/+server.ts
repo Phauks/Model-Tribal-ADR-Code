@@ -12,7 +12,7 @@ export const prerender = false;
 
 export const POST: RequestHandler = async (event) => {
 	await essayAccess(event, 'comment', { forData: true });
-	const body = (await event.request.json().catch(() => null)) as { text?: unknown } | null;
+	const body = (await event.request.json().catch(() => /* expected: a body that is not JSON is refused just below with 400 */ null)) as { text?: unknown } | null;
 	if (!body || typeof body.text !== 'string' || body.text.length > largestEssayBytes) error(400, 'Send the text to show.');
 	const rendered = await renderWithGenerated(body.text, 'saved');
 	return json(rendered);

@@ -1,0 +1,49 @@
+# Written by scripts/languages/build_registry.py from Glottolog 5.4 and the ISO 639-3 code tables; do not edit by hand.
+tag: kla
+name: Klamath-Modoc
+iso_639_3:
+  code: kla
+  reference_name: Klamath-Modoc
+  scope: individual
+  source: iso-639-3-code-tables
+glottolog:
+  glottocode: klam1254
+  level: language
+  source: glottolog-5-4
+family: null
+endangered_languages_project:
+  link: https://endangeredlanguages.com/elp-language/2291
+  source: glottolog-5-4
+dialects: []
+works:
+- glottolog_reference: '108794'
+  title: Klamath Dictionary
+  kinds:
+  - dictionary
+  author: M. A. R. Barker
+  year: 1963
+  publisher: University of California Press
+  pages: 550
+  source: glottolog-5-4
+- glottolog_reference: '90488'
+  title: The Klamath Language
+  kinds:
+  - grammar
+  author: Phillip Barker
+  year: 1960
+  publisher: University of California at Berkeley
+  pages: 523
+  most_extensive_description: true
+  source: glottolog-5-4
+- glottolog_reference: '160439'
+  title: The Klamath Indians of Southwestern Oregon
+  kinds:
+  - grammar
+  - dictionary
+  author: Albert S. Gatschet
+  year: 1890
+  publisher: Government Printing Office
+  pages: 440
+  most_extensive_description: true
+  source: glottolog-5-4
+retrieved: '2026-11-27'

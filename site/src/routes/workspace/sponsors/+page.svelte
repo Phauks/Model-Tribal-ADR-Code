@@ -1,4 +1,5 @@
 <script lang="ts">
+	import type { Snippet } from 'svelte';
 	import DataTable from '#lib/components/DataTable.svelte';
 	import { costItemQuestions, costItemUnits, costItems } from '#lib/sponsorship.ts';
 	import type { TableColumn, TableRow } from '#lib/tables/table-definition.ts';
@@ -120,11 +121,12 @@
 	</form>
 </section>
 
-<h2>Every sponsor</h2>
 {#if data.sponsors.length === 0}
+	<h2>Every sponsor</h2>
 	<p>No one has started a sponsorship yet. To see the page a new sponsor sees, open <a href="/account/sponsorship">your own Sponsorship page</a>.</p>
 {:else}
 	<DataTable identifier="sponsors" label="Table: every sponsor" columns={sponsorColumns} rows={sponsorRows} rowName={['sponsor', 'sponsors']}>
+		{#snippet heading(count: Snippet)}<h2>Every sponsor {@render count()}</h2>{/snippet}
 		{#snippet cell(row)}
 			{@const sponsor = sponsors.get(row.key)}
 			{#if sponsor?.shown && sponsor.listing !== 'anonymous'}<a href="/sponsors/{sponsor.slug}">Shown</a>{:else if sponsor}{sponsor.reason}{/if}

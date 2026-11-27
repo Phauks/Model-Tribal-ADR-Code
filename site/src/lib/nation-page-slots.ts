@@ -7,6 +7,7 @@
  * the server (src/lib/server/nation-page-overlay.ts).
  */
 import { readPageRestrictions, type PageRestrictions } from './nation-restrictions.ts';
+import { sendProblem } from './problem-reports.ts';
 
 export async function fillNationSlots(nationIdentifier: string, pagePath = `/nations/${encodeURIComponent(nationIdentifier)}`): Promise<void> {
 	const slots = [...document.querySelectorAll<HTMLElement>('[data-nation-slot]')];
@@ -23,8 +24,9 @@ export async function fillNationSlots(nationIdentifier: string, pagePath = `/nat
 			const html = overlay.slots?.[slot.dataset.nationSlot ?? ''];
 			if (html) slot.innerHTML = html;
 		}
-	} catch {
-		// Offline or the Worker is busy: the page shows what the project cites.
+	} catch (problem) {
+		// The page shows what the project cites; offline is only noted (sendProblem).
+		sendProblem(problem, { code: 'nations.page-slots' });
 	}
 }
 
@@ -33,5 +35,5 @@ export async function fillNationSlots(nationIdentifier: string, pagePath = `/nat
  * Worker or fillNationSlots put it in the page (src/lib/nation-restrictions.ts).
  */
 export function restrictionsInPage(): PageRestrictions {
-	return readPageRestrictions(document.querySelector('script[data-nation-restrictions]')?.textContent);
+	return readPageRestrictions(document.querySelector('script[data-nation-restrictions]')?.textContent, (problem) => sendProblem(problem, { code: 'nation-restrictions.page' }));
 }

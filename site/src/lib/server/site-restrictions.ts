@@ -17,6 +17,7 @@ import { readSettings, type RestrictionSettings } from '../nation-restrictions.t
 import type { SiteRestrictions } from '../restricted-files.ts';
 import { restrictableCopies } from './copy-list.ts';
 import { gatherRestrictions, restrictableList } from './nation-restrictions.ts';
+import { report } from './report.ts';
 import { restrictionStamp, restrictionStampSql, type RestrictionStampRow } from './restriction-stamp.ts';
 
 type Assets = { fetch: (input: string) => Promise<Response> };
@@ -26,7 +27,9 @@ let cached: { stamp: string; value: Promise<SiteRestrictions | undefined> } | un
 function parse(text: string): unknown {
 	try {
 		return JSON.parse(text);
-	} catch {
+	} catch (problem) {
+		// As in nation-restrictions.ts: reported, with what a damaged row means left for Trevor to decide.
+		report(problem, { code: 'nation-restrictions.read', place: 'site-restrictions' });
 		return undefined;
 	}
 }

@@ -29,7 +29,7 @@ export const POST: RequestHandler = async ({ request, url, getClientAddress, loc
 		return json({ placed: false, reason: 'Too many orders from this connection. Wait a minute and try again.' }, { status: 429 });
 	}
 
-	const body = (await request.json().catch(() => undefined)) as { format?: unknown; shippingLevel?: unknown; address?: unknown; gift?: unknown } | undefined;
+	const body = (await request.json().catch(() => /* expected: a body that is not JSON is refused just below with 400 */ undefined)) as { format?: unknown; shippingLevel?: unknown; address?: unknown; gift?: unknown } | undefined;
 	const format = standardFormats.find((candidate) => candidate.identifier === body?.format);
 	if (!format) return json({ placed: false, reason: 'Choose a book.' }, { status: 400 });
 	// Only the postal code, state and country: Stripe's page asks for the rest.

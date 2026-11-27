@@ -104,6 +104,31 @@ reading_links:
     access: subscription
     link: https://advance.lexis.com/api/search?q=534%20U.S.%2084
     unchecked: true
+argument_audio:
+- kind: argument
+  date: '2001-10-02'
+  source: National Archives
+  link: https://catalog.archives.gov/medialz/mopix/267a/RED/267-1190.mp3
+  catalog: https://catalog.archives.gov/id/138282835
+  whole_session: true
+  duration_seconds: 6928
+  file:
+    storage_key: supreme-court-audio/national-archives/red-series/267-1190.mp3
+    checksum: ffd8f7f2760e92fe7c7b64d8a386f6ecb148a47657851cb56cd94ff7ebfb5e12
+    media_type: audio/mpeg
+    bytes: 110855857
+- kind: opinion announcement
+  date: '2001-11-27'
+  source: National Archives
+  link: https://catalog.archives.gov/medialz/mopix/267a/RED/267-1201.mp3
+  catalog: https://catalog.archives.gov/id/138282846
+  whole_session: true
+  duration_seconds: 7518
+  file:
+    storage_key: supreme-court-audio/national-archives/red-series/267-1201.mp3
+    checksum: df31ff0a2a2f55796a42f6c430128cb59d4acee4871a96c85dda20bed6f1ccd2
+    media_type: audio/mpeg
+    bytes: 120287106
 rights:
   status: no-permission-needed
   basis: us-government-work

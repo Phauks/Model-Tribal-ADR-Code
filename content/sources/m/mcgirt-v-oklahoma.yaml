@@ -74,6 +74,17 @@ reading_links:
     label: "Lexis"
     access: subscription
     link: https://advance.lexis.com/api/search?q=591%20U.S.%20894
+argument_audio:
+- kind: argument
+  date: '2020-05-11'
+  source: Supreme Court of the United States
+  link: https://www.supremecourt.gov/media/audio/mp3files/18-9526.mp3
+  duration_seconds: 5505
+  file:
+    storage_key: supreme-court-audio/court/2019/18-9526.mp3
+    checksum: c548d253d92d5e17e3cab7bf5593f07de3a8ae30da4f70d6743e2b7918757b07
+    media_type: audio/mpeg
+    bytes: 44046858
 rights:
   status: no-permission-needed
   basis: us-government-work

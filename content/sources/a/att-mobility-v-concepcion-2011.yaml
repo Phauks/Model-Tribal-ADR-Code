@@ -72,6 +72,41 @@ reading_links:
     label: "Wikipedia"
     access: background
     link: https://en.wikipedia.org/wiki/AT%26T_Mobility_LLC_v._Concepcion
+argument_audio:
+- kind: argument
+  date: '2010-11-09'
+  source: Supreme Court of the United States
+  link: https://www.supremecourt.gov/media/audio/mp3files/09-893.mp3
+  duration_seconds: 3617
+  file:
+    storage_key: supreme-court-audio/court/2010/09-893.mp3
+    checksum: f1992eab817100c941b7b5455aa1390383d24fdb4a28b922c29624591672efed
+    media_type: audio/mpeg
+    bytes: 28941634
+- kind: argument
+  date: '2010-11-09'
+  source: National Archives
+  link: https://catalog.archives.gov/medialz/mopix/267a/GOLD/Batch_01/267a-1665-November9_2010.MP3
+  catalog: https://catalog.archives.gov/id/183518047
+  whole_session: true
+  duration_seconds: 7620
+  file:
+    storage_key: supreme-court-audio/national-archives/gold-series/267a-1665-november9_2010.mp3
+    checksum: 28deb710ee335a55d4c4ee613f3746b169a54bf239d2ff2e852635f02f73f51f
+    media_type: audio/mpeg
+    bytes: 121920512
+- kind: opinion announcement
+  date: '2011-04-27'
+  source: National Archives
+  link: https://catalog.archives.gov/medialz/mopix/267a/GOLD/Batch_01/267a-1694-April27_2011.MP3
+  catalog: https://catalog.archives.gov/id/183518076
+  whole_session: true
+  duration_seconds: 4124
+  file:
+    storage_key: supreme-court-audio/national-archives/gold-series/267a-1694-april27_2011.mp3
+    checksum: 82b61e3106fe6fd2b8be9359a5a4aa082dd35e8a8f399b82a3bdf2470d8158ee
+    media_type: audio/mpeg
+    bytes: 65985536
 rights:
   status: no-permission-needed
   basis: us-government-work

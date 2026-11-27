@@ -108,6 +108,19 @@ reading_links:
     access: subscription
     link: https://advance.lexis.com/api/search?q=527%20U.S.%20173
     unchecked: true
+argument_audio:
+- kind: argument
+  date: '1999-04-27'
+  source: National Archives
+  link: https://catalog.archives.gov/medialz/mopix/267a/RED/267-1108.mp3
+  catalog: https://catalog.archives.gov/id/138282749
+  whole_session: true
+  duration_seconds: 8041
+  file:
+    storage_key: supreme-court-audio/national-archives/red-series/267-1108.mp3
+    checksum: 061c8dd9660b9f753cf657625a90957485a062b82323ac42e88d02b053dd9932
+    media_type: audio/mpeg
+    bytes: 128657575
 rights:
   status: no-permission-needed
   basis: us-government-work

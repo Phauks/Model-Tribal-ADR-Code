@@ -252,10 +252,27 @@ export function frontMatterField(frontMatter: string, name: string): string | un
 		try {
 			return JSON.parse(value) as string;
 		} catch {
+			// expected: a quoted title that is not valid JSON keeps its text between the quotes.
 			return value.slice(1, -1);
 		}
 	}
 	return value.replace(/^'(.*)'$/, '$1').replaceAll("''", "'");
+}
+
+/**
+ * The front matter with one field set to a single line of text, written as a
+ * JSON string (which YAML reads as a quoted string), added at the end when
+ * it is missing, or taken out when the text is empty. A News post's summary
+ * is its `description` (src/lib/server/news-posts.ts).
+ */
+export function setFrontMatterField(frontMatter: string, name: string, value: string): string {
+	// Not trimmed, so a space typed at the end of the box stays while the writer types on; readers' pages trim it.
+	const text = value.replace(/\s+/g, ' ');
+	const line = new RegExp(`^${name}:.*$\\n?`, 'm');
+	if (!text.trim()) return frontMatter.replace(line, '').replace(/\n+$/, '');
+	const field = `${name}: ${JSON.stringify(text)}`;
+	if (line.test(frontMatter)) return frontMatter.replace(new RegExp(`^${name}:.*$`, 'm'), field);
+	return frontMatter.trim() ? `${frontMatter.replace(/\n+$/, '')}\n${field}` : field;
 }
 
 /** Every source key and glossary id an essay uses, to check that each exists before it is saved or published. */

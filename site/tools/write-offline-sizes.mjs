@@ -31,6 +31,8 @@ const neverCached = ['/workspace', '/sign-in', '/sign-out', '/requests', '/copie
 const onRequestFamilies = [
 	{ family: 'cases', prefix: '/cases/' },
 	{ family: 'laws', prefix: '/laws/' },
+	{ family: 'collections', prefix: '/laws/' },
+	{ family: 'sections', prefix: '/laws/usc-25/' },
 	{ family: 'biographies', prefix: '/biographies/' },
 	{ family: 'justices', prefix: '/supreme-court/justices/' },
 	{ family: 'presidents', prefix: '/supreme-court/presidents/' },

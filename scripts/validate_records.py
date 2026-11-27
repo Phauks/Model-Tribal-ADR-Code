@@ -9,6 +9,7 @@ Checks:
   - every [@key] and every glossary 'sources' entry names a source record
   - every [[id]], 'see_also', 'use_instead' and 'redirect_to' names a glossary entry
   - every 'found_in' names a research session
+  - each language file (content/languages/) is named by its tag and cites existing source records
   - each outreach record's source ids resolve within the record, 'part_of'
     names another outreach record, and a Native nation record names a Tribe
     profile (checked against content/tribes/ once profiles exist)
@@ -97,6 +98,7 @@ RECORD_FOLDERS = [
     ("content/documents/*/*.yaml", "document-history.schema.json"),
     ("content/stories/*/*.yaml", "story.schema.json"),
     ("content/biographies/*.yaml", "biography.schema.json"),
+    ("content/languages/*.yaml", "language.schema.json"),
     ("content/variables/*.yaml", "variable.schema.json"),
     # No provision or commentary files exist yet. The patterns stay for the model
     # code's text; until it is written, the run warns that they match nothing.
@@ -601,6 +603,15 @@ def main() -> int:
         for entry in record.get("cases", []):
             if entry.get("case") not in sources:
                 errors.append(f"{path}: cases names a missing source record '{entry.get('case')}'")
+    for path, record in records.get("language.schema.json", []):
+        if record.get("tag") != path.stem:
+            errors.append(f"{path}: tag does not match the file name")
+        facts = [record.get("iso_639_3"), record.get("glottolog"), record.get("family"),
+                 record.get("endangered_languages_project"), record.get("alaska_native_language_center"),
+                 *record.get("own_names", []), *record.get("iso_names", []), *record.get("dialects", []), *record.get("works", [])]
+        for fact in facts:
+            if fact and fact.get("source") not in sources:
+                errors.append(f"{path}: names a missing source record '{fact.get('source')}'")
     methods = {path.stem: record for path, record in records.get("method.schema.json", [])}
 
     def check_methods(path: pathlib.Path, field: str, identifiers) -> None:

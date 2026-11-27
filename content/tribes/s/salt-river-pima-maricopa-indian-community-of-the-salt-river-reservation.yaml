@@ -240,6 +240,15 @@ languages:
   verification: inferred
   as_of: '2026-11-21'
   note: '"Background and Status of the O’odham Ñiokĭ (Pima Language)"'
+language_programs:
+- name: 'O’odham Piipaash Language Program'
+  link: https://srpmic-nsn.gov/about/languages/
+  run_by: nation
+  source: salt-river-pima-maricopa-indian-communit-about-languages
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-27'
+  locator: 'O’odham Alphabet Pronunciation Guide'
 federal_administration:
   bureau_of_indian_affairs_region: Western
   bureau_of_indian_affairs_agency: Salt River Agency
@@ -939,6 +948,14 @@ jurisdiction:
   verification: inferred
   as_of: '2026-10-21'
   locator: 'Table of approvals by Tribe, column "Administrative Functions": "CAA §§ 106; 107(d); 505(a)(2)"'
+- topic: water-rights-settlement
+  value: enacted
+  detail: Congress enacted the Salt River Pima-Maricopa Indian Community Water Rights Settlement Act of 1988 in 1988 (Pub. L. No. 100-512), settling the water rights of Salt River Pima-Maricopa Indian Community of the Salt River Reservation. It quantifies 122,400 acre-feet a year in all and authorizes about $47.5 million in federal funds, as the Congressional Research Service counts it (R44148, Table 1).
+  source: public-law-100-512
+  confidence: high
+  verification: inferred
+  as_of: '1988'
+  locator: Congressional Research Service, R44148, Table 1, 1988
 court_practice:
 - kind: filing-fees
   title: Court (Filing Fees)

@@ -104,6 +104,19 @@ reading_links:
     access: subscription
     link: https://advance.lexis.com/api/search?q=538%20U.S.%20701
     unchecked: true
+argument_audio:
+- kind: argument
+  date: '2003-03-31'
+  source: National Archives
+  link: https://catalog.archives.gov/medialz/mopix/267a/RED/267-1259.mp3
+  catalog: https://catalog.archives.gov/id/183517565
+  whole_session: true
+  duration_seconds: 8116
+  file:
+    storage_key: supreme-court-audio/national-archives/red-series/267-1259.mp3
+    checksum: 257413744e597db984eee65c906352e4daf740fe3fff1405dfdcaaaff60b6d26
+    media_type: audio/mpeg
+    bytes: 129862551
 rights:
   status: no-permission-needed
   basis: us-government-work

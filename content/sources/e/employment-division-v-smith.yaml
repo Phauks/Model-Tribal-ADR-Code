@@ -108,6 +108,55 @@ reading_links:
     access: subscription
     link: https://advance.lexis.com/api/search?q=494%20U.S.%20872
     unchecked: true
+argument_audio:
+- kind: argument
+  date: '1989-11-06'
+  source: National Archives
+  link: https://catalog.archives.gov/medialz/mopix/267a/RED/267-727-r1.mp3
+  catalog: https://catalog.archives.gov/id/118974867
+  whole_session: true
+  duration_seconds: 3877
+  file:
+    storage_key: supreme-court-audio/national-archives/red-series/267-727-r1.mp3
+    checksum: df4b29d15c2510d7913f410be509e28f8dc78f62e3271c8808f3e994a4357fa2
+    media_type: audio/mpeg
+    bytes: 62035721
+- kind: argument
+  date: '1989-11-06'
+  source: National Archives
+  link: https://catalog.archives.gov/medialz/mopix/267a/RED/267-727-r2.mp3
+  catalog: https://catalog.archives.gov/id/118974867
+  whole_session: true
+  duration_seconds: 3771
+  file:
+    storage_key: supreme-court-audio/national-archives/red-series/267-727-r2.mp3
+    checksum: b6eda4ea03ea9626e65f05c891fc3714513c54ab1edb1941408f6e56d799db09
+    media_type: audio/mpeg
+    bytes: 60341314
+- kind: argument
+  date: '1989-11-06'
+  source: National Archives
+  link: https://catalog.archives.gov/medialz/mopix/267a/RED/267-727-r3.mp3
+  catalog: https://catalog.archives.gov/id/118974867
+  whole_session: true
+  duration_seconds: 3582
+  file:
+    storage_key: supreme-court-audio/national-archives/red-series/267-727-r3.mp3
+    checksum: f4acc39408369effdd0b2afc7758de0dafc36781e91997b31a39cbf123beb588
+    media_type: audio/mpeg
+    bytes: 57311946
+- kind: argument
+  date: '1989-11-06'
+  source: National Archives
+  link: https://catalog.archives.gov/medialz/mopix/267a/RED/267-727-r4.mp3
+  catalog: https://catalog.archives.gov/id/118974867
+  whole_session: true
+  duration_seconds: 3730
+  file:
+    storage_key: supreme-court-audio/national-archives/red-series/267-727-r4.mp3
+    checksum: 80d9284bc09d9cd8192c992ffdcf85004e6aa51fc9b909d6946899d5515f5a74
+    media_type: audio/mpeg
+    bytes: 59685536
 rights:
   status: no-permission-needed
   basis: us-government-work

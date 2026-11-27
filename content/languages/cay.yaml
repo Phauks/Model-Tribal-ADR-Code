@@ -1,0 +1,76 @@
+# Written by scripts/languages/build_registry.py from Glottolog 5.4 and the ISO 639-3 code tables; do not edit by hand.
+tag: cay
+name: Cayuga
+iso_639_3:
+  code: cay
+  reference_name: Cayuga
+  scope: individual
+  source: iso-639-3-code-tables
+glottolog:
+  glottocode: cayu1261
+  level: language
+  source: glottolog-5-4
+family:
+  name: Iroquoian
+  glottocode: iroq1247
+  source: glottolog-5-4
+endangered_languages_project:
+  link: https://endangeredlanguages.com/elp-language/1682
+  source: glottolog-5-4
+dialects: []
+works:
+- glottolog_reference: '675743'
+  title: A grammar and dictionary of Gayogo̱hó:nǫˀ (Cayuga)
+  kinds:
+  - grammar
+  author: Carrie Dyck, Frances Froman, Alfred Keye and Lottie Keye
+  year: 2024
+  publisher: Language Science Press
+  pages: 1134
+  most_extensive_description: true
+  source: glottolog-5-4
+- glottolog_reference: '12981'
+  title: English - Cayuga / Cayuga - English dictionary
+  kinds:
+  - dictionary
+  author: Frances Froman, Alfred Keye and Lottie Keye
+  year: 2002
+  publisher: Univ. of Toronto Press
+  pages: 744
+  source: glottolog-5-4
+- glottolog_reference: '555027'
+  title: English-Cayuga, Cayuga-English dictionary
+  kinds:
+  - dictionary
+  author: Frances Froman, Alfred Keye, Lottie Keye and Carrie Dyck
+  year: 2002
+  publisher: University of Toronto Press
+  pages: 744
+  source: glottolog-5-4
+- glottolog_reference: '692516'
+  title: English-Cayuga/Cayuga-English dictionary (Gayogo̲ho:nǫˀHnyǫˀohneha:ˀ Wadęwęnaga:da:s Ohyadǫhsrǫ:dǫˀ)
+  kinds:
+  - dictionary
+  author: Frances Froman, Alfred Keye, Lottie Keye and Carrie Dyck
+  year: 2002
+  publisher: University of Toronto Press
+  source: glottolog-5-4
+- glottolog_reference: '34495'
+  title: 'Watewayéstanih: a Cayuga teaching grammar'
+  kinds:
+  - grammar
+  author: Marianne Mithun and Reginald Henry
+  year: 1982
+  publisher: Woodland Indian Cultural Educational Centre
+  pages: 615
+  most_extensive_description: true
+  source: glottolog-5-4
+- glottolog_reference: '57784'
+  title: 'Report of Mr. Schoolcraft to the Secretary of State. NY State Senate Document 24.) American Language Reprints, Vol. 18. Evolution Publishing, Southampton, PA. 2000. Froman, Frances & Alfred Keye & Lottie Keye & Carrie Dyck (2002): English-Cayuga/Cayuga-English Dictionary'
+  kinds:
+  - dictionary
+  author: 'Adam. Elliot''s Vocabulary of Cayuga. (Reprinted from: Henry Schoolcraft Elliot'
+  year: 1846
+  publisher: Toronto University Press
+  source: glottolog-5-4
+retrieved: '2026-11-27'

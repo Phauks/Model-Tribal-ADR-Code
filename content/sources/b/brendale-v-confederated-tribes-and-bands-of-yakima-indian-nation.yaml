@@ -111,6 +111,19 @@ reading_links:
     access: subscription
     link: https://advance.lexis.com/api/search?q=492%20U.S.%20408
     unchecked: true
+argument_audio:
+- kind: argument
+  date: '1989-01-10'
+  source: National Archives
+  link: https://catalog.archives.gov/medialz/mopix/267a/RED/267-686.mp3
+  catalog: https://catalog.archives.gov/id/118974838
+  whole_session: true
+  duration_seconds: 12710
+  file:
+    storage_key: supreme-court-audio/national-archives/red-series/267-686.mp3
+    checksum: e941a7f90b0132fe6d1da940d18359d9c233bf871ef2c108df37e8b2889c4362
+    media_type: audio/mpeg
+    bytes: 203358164
 rights:
   status: no-permission-needed
   basis: us-government-work
