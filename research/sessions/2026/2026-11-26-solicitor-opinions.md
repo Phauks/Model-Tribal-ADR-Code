@@ -19,7 +19,7 @@ queries:
 - https://thorpe.law.ou.edu/solicitor.html and the 84 page files it links (sol_opinions/p1-26.html through p2076-2100.htm), Nov. 26, 2026
 - https://www.doi.gov/solicitor/opinions (the table "All Solicitor M-Opinions, 1993 to Present"), Nov. 26, 2026
 sources_added: []
-limits: 'Every record is Unverified. The 1917-1974 subjects, dates and pages were read by script from the University of Oklahoma web text, not from the printed volumes, and the subjects were set from capitals into title case by script, so a few read oddly. Nations are matched by name in the subject only, which links 48 records; most subjects name a nation by one word ("Osage", "Crow") that the matcher does not take alone.'
+limits: 'Every record is Unverified. The 1917-1974 subjects, dates and pages were read by script from the University of Oklahoma web text, not from the printed volumes, and the subjects were set from capitals into title case by script, so a few read oddly. Nations are matched by name in the subject only, which links 18 records; most subjects name a nation by one word ("Osage", "Crow") that the matcher does not take alone.'
 ---
 
 # Records for the Solicitor's opinions on Indian affairs: session notes
