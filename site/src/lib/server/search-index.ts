@@ -54,6 +54,7 @@ export const sitePages: SearchEntry[] = [
 	{ kind: 'page', title: 'Build a table', also: ['Table builder', 'Compare nations', 'Export'], link: '/nations/data/build' },
 	{ kind: 'page', title: 'Stories', also: ['Traditional stories', 'Peacemaking stories', 'Treaty stories', 'Accounts', 'Teachings'], detail: 'Stories about law, justice and governance, in the words of the nations and people who tell them', link: '/stories' },
 	{ kind: 'page', title: 'Glossary', also: ['Terms', 'Definitions'], detail: 'Defined terms, and how to use them', link: '/glossary' },
+	{ kind: 'page', title: 'Title 25. Indians', also: ['U.S. Code, Title 25', 'United States Code', '25 U.S.C.', 'Federal Indian law statutes'], detail: 'Title 25 of the United States Code, by chapter, subchapter and section', link: '/laws/usc-25' },
 	{ kind: 'page', title: 'Library', also: ['Sources', 'Research'], link: '/library' },
 	{ kind: 'page', title: 'Source documents', also: ['Copies', 'Documents', 'Primary sources'], link: '/copies' },
 	{ kind: 'page', title: 'Supreme Court', also: ['U.S. Supreme Court', 'Supreme Court cases', 'Justices', 'Courts'], link: '/supreme-court' },
