@@ -14,9 +14,14 @@
 
 /** The icons the menus use, by their Lucide names. */
 export const navigationIconNames = [
+	'activity',
+	'archive',
+	'bell',
 	'book-a',
 	'book-marked',
 	'book-open',
+	'book-user',
+	'briefcase',
 	'building',
 	'building-2',
 	'calendar',
@@ -24,40 +29,59 @@ export const navigationIconNames = [
 	'chart-column',
 	'chart-pie',
 	'clipboard-list',
+	'contact',
 	'copyright',
 	'database',
 	'dices',
+	'eye-off',
 	'file-check',
 	'file-code',
+	'file-diff',
 	'file-pen',
+	'file-search',
 	'file-text',
+	'flag',
 	'folder',
+	'folder-input',
 	'gauge',
 	'gavel',
+	'hand-coins',
 	'hand-heart',
 	'handshake',
 	'heart',
 	'history',
+	'inbox',
 	'info',
+	'key-round',
 	'landmark',
 	'layers',
 	'library',
 	'life-buoy',
 	'list',
 	'list-ordered',
+	'mail',
 	'map',
 	'map-pinned',
+	'message-square',
 	'newspaper',
 	'notebook-pen',
 	'pen-line',
 	'pen-tool',
+	'radar',
+	'receipt',
 	'scale',
 	'scroll',
 	'scroll-text',
+	'send',
+	'shield-check',
 	'shopping-bag',
 	'signature',
+	'star',
+	'text-cursor-input',
+	'upload',
 	'user-round',
 	'users',
+	'video',
 ] as const;
 
 export type NavigationIconName = (typeof navigationIconNames)[number];
@@ -172,7 +196,8 @@ export const navigationSections: NavigationSection[] = [
 				links: [
 					{ label: 'Cases', link: '/stats/supreme-court-cases', icon: 'gavel', count: 'supreme-court-cases' },
 					{ label: 'Courts by Chief Justice', link: '/supreme-court', icon: 'landmark', count: 'supreme-courts' },
-					{ label: 'Justices', link: '/stats/justices', icon: 'users', count: 'justices' }
+					{ label: 'Justices', link: '/stats/justices', icon: 'users', count: 'justices' },
+					{ label: 'Timeline', link: '/supreme-court/timeline', icon: 'history' }
 				]
 			},
 			{
@@ -202,7 +227,9 @@ export const navigationSections: NavigationSection[] = [
 					{ label: 'Glossary', link: '/glossary', icon: 'book-a', count: 'glossary-terms' },
 					{ label: 'Biographies', link: '/biographies', icon: 'user-round', count: 'biographies' },
 					{ label: 'U.S. Presidents', link: '/stats/presidents', icon: 'users', count: 'presidents' },
-					{ label: 'Historic Maps', link: '/stats/historic-maps', icon: 'map', count: 'historic-maps' }
+					{ label: 'Historic Maps', link: '/stats/historic-maps', icon: 'map', count: 'historic-maps' },
+					// The reader's own starred pages, kept on this device, so readers who are not signed in still find them (they are in the account menu too).
+					{ label: 'Starred Pages', link: '/starred', icon: 'star' }
 				]
 			},
 			{
@@ -256,7 +283,9 @@ export const navigationSections: NavigationSection[] = [
 				links: [
 					{ label: 'About the Project', link: '/about', icon: 'info' },
 					{ label: 'Timeline to Public Review', link: '/about/timeline', icon: 'calendar-clock' },
-					{ label: 'Events', link: '/events', icon: 'calendar' }
+					{ label: 'Events', link: '/events', icon: 'calendar' },
+					// Every change to the site's pages, like a wiki's (site/COLLABORATION.md, "Recent changes"); it left the side column on Nov. 27, 2026.
+					{ label: 'Recent Changes', link: '/changes', icon: 'history' }
 				]
 			},
 			{

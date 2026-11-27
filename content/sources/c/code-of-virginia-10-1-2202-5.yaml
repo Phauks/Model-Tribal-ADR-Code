@@ -1,0 +1,50 @@
+key: code-of-virginia-10-1-2202-5
+kind: state-statute
+citation:
+  type: legislation
+  title: Virginia Black, Indigenous, and People of Color Historic Preservation Fund; established
+  title-short: Va. Code Ann. § 10.1-2202.5
+  container-title: Code of Virginia
+  container-title-short: Va. Code Ann.
+  section: 10.1-2202.5
+  author:
+  - literal: Virginia General Assembly
+  issued:
+    date-parts:
+    - - 2022
+  URL: https://law.lis.virginia.gov/vacode/title10.1/chapter22/section10.1-2202.5/
+  accessed:
+    date-parts:
+    - - 2026
+      - 11
+      - 27
+original_link: https://law.lis.virginia.gov/vacode/title10.1/chapter22/section10.1-2202.5/
+retrieved: '2026-11-27'
+archives: []
+history:
+  status: live
+  last_checked: '2026-11-27'
+state_law:
+  relevance: incidental
+  citation: Va. Code Ann. § 10.1-2202.5 (2025)
+rights:
+  status: no-permission-needed
+  basis: government-edict
+  basis_note: 'Official state statutes are not copyrightable under the government edicts doctrine (Georgia v. Public.Resource.Org, Inc., 590 U.S. 255 (2020)). Linked, not served: state statutes stay link only.'
+  redistribution: false
+jurisdictions:
+- level: state
+  state: VA
+topics:
+- state-indian-law
+found_in:
+- 2026-11-27-state-statutes-sweep
+notes: 'Indigo Book citation: Va. Code Ann. § 10.1-2202.5 (2025). History: 2022, cc. 185, 186. Text read from the Virginia Division of Legislative Systems'' page for the section in the Code of Virginia (law.lis.virginia.gov) on Nov. 27, 2026. Found by the state statutes sweep (terms: federally recognized indian tribe; indian; indigenous; tribe); AI reader''s verdict incidental: Strong-term hit a reader marked none; the session read it again: state-recognized and federally recognized Indian tribes may receive grants from the fund. Unverified.'
+review:
+  status: unverified
+  by: scripts/law/state_statutes/run.py
+  date: '2026-11-27'
+  checks:
+  - check: 'Indian law section: the sweep''s keyword pass and an AI reader''s verdict (core, incidental or none)'
+    result: agree
+    detail: 'incidental; terms: federally recognized indian tribe; indian; indigenous; tribe'

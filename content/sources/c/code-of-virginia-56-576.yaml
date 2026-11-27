@@ -1,0 +1,50 @@
+key: code-of-virginia-56-576
+kind: state-statute
+citation:
+  type: legislation
+  title: Definitions
+  title-short: Va. Code Ann. § 56-576
+  container-title: Code of Virginia
+  container-title-short: Va. Code Ann.
+  section: 56-576
+  author:
+  - literal: Virginia General Assembly
+  issued:
+    date-parts:
+    - - 1999
+  URL: https://law.lis.virginia.gov/vacode/title56/chapter23/section56-576/
+  accessed:
+    date-parts:
+    - - 2026
+      - 11
+      - 27
+original_link: https://law.lis.virginia.gov/vacode/title56/chapter23/section56-576/
+retrieved: '2026-11-27'
+archives: []
+history:
+  status: live
+  last_checked: '2026-11-27'
+state_law:
+  relevance: incidental
+  citation: Va. Code Ann. § 56-576 (2025)
+rights:
+  status: no-permission-needed
+  basis: government-edict
+  basis_note: 'Official state statutes are not copyrightable under the government edicts doctrine (Georgia v. Public.Resource.Org, Inc., 590 U.S. 255 (2020)). Linked, not served: state statutes stay link only.'
+  redistribution: false
+jurisdictions:
+- level: state
+  state: VA
+topics:
+- state-indian-law
+found_in:
+- 2026-11-27-state-statutes-sweep
+notes: 'Indigo Book citation: Va. Code Ann. § 56-576 (2025). History: 1999, c. 411; 2000, c. 991; 2001, c. 421; 2007, cc. 888, 933; 2008, cc. 272, 883; 2009, cc. 748, 824; 2012, cc. 46, 200, 210, 821; 2013, c. 494; 2014, cc. 212, 548; 2018, c. 296; 2019, cc. 535, 741; 2020, cc. 1193, 1194, 1225; 2021, Sp. Sess. I, cc. 308, 532; 2022, c. 216; 2024, cc. 597, 607, 794, 818; 2025, c. 714; 2026, cc. 733, 734. Text read from the Virginia Division of Legislative Systems'' page for the section in the Code of Virginia (law.lis.virginia.gov) on Nov. 27, 2026. Found by the state statutes sweep (terms: native american; native); AI reader''s verdict incidental: Utility definition names Native Americans as a community group. Unverified.'
+review:
+  status: unverified
+  by: scripts/law/state_statutes/run.py
+  date: '2026-11-27'
+  checks:
+  - check: 'Indian law section: the sweep''s keyword pass and an AI reader''s verdict (core, incidental or none)'
+    result: agree
+    detail: 'incidental; terms: native american; native'

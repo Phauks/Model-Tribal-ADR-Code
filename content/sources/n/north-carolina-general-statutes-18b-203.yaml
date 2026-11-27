@@ -1,0 +1,50 @@
+key: north-carolina-general-statutes-18b-203
+kind: state-statute
+citation:
+  type: legislation
+  title: Powers and duties of the Commission
+  title-short: N.C. Gen. Stat. § 18B-203
+  container-title: General Statutes of North Carolina
+  container-title-short: N.C. Gen. Stat.
+  section: 18B-203
+  author:
+  - literal: North Carolina General Assembly
+  issued:
+    date-parts:
+    - - 1937
+  URL: https://www.ncleg.gov/EnactedLegislation/Statutes/HTML/BySection/Chapter_18B/GS_18B-203.html
+  accessed:
+    date-parts:
+    - - 2026
+      - 11
+      - 27
+original_link: https://www.ncleg.gov/EnactedLegislation/Statutes/HTML/BySection/Chapter_18B/GS_18B-203.html
+retrieved: '2026-11-27'
+archives: []
+history:
+  status: live
+  last_checked: '2026-11-27'
+state_law:
+  relevance: incidental
+  citation: N.C. Gen. Stat. § 18B-203 (2025)
+rights:
+  status: no-permission-needed
+  basis: government-edict
+  basis_note: 'Official state statutes are not copyrightable under the government edicts doctrine (Georgia v. Public.Resource.Org, Inc., 590 U.S. 255 (2020)). Linked, not served: state statutes stay link only.'
+  redistribution: false
+jurisdictions:
+- level: state
+  state: NC
+topics:
+- state-indian-law
+found_in:
+- 2026-11-27-state-statutes-sweep
+notes: 'Indigo Book citation: N.C. Gen. Stat. § 18B-203 (2025). History: 1937, c. 49, s. 4; cc. 237, 411; 1945, c. 954; 1949, c. 974, s. 9; 1961, c. 956; 1963, c. 426, s. 12; c. 916, s. 2; c. 1119, s. 1; 1965, c. 1063; c. 1102, s. 3; 1967, c. 222, s. 2; c. 1240, s. 1; 1971, c. 872, s. 1; 1973, c. 28; c. 473, s. 1; c. 476, s. 133; c. 606; c. 1288, s. 1; cc. 1369, 1396; 1975, cc. 240, 453, 640; 1977, c. 70, ss. 15.1, 15.2, 16; c. 176, ss. 2, 6; 1977, 2nd Sess., c. 1138, ss. 3, 4, 18; 1979, c. 384, s. 1; c. 445, s. 5; c. 482; c. 801, s. 4; 1981, c. 412, s. 2; c. 747, s. 38; 1981 (Reg. Sess., 1982), c. 1285, s. 2; 1987, c. 136, s. 1; 2003-339, s. 1; 2006-227, s. 10; 2010-122, s. 4; 2011-145, s. 19.1(q); 2011-183, s. 20; 2011-333, s. 2; 2014-100, s. 17.1(xxx); 2019-203, s. 9(a); 2024-41, s. 22(c); 2025-51, s. 4(a). Text read from the North Carolina General Assembly''s page for the section''s chapter of the General Statutes (ncleg.gov) on Nov. 27, 2026. Found by the state statutes sweep (terms: band of cherokee indians; indian country; indian nation; cherokee; eastern band; indian; indians; nation); AI reader''s verdict incidental: ABC Commission may distribute liquor to Eastern Band and Catawba Nation. Unverified.'
+review:
+  status: unverified
+  by: scripts/law/state_statutes/run.py
+  date: '2026-11-27'
+  checks:
+  - check: 'Indian law section: the sweep''s keyword pass and an AI reader''s verdict (core, incidental or none)'
+    result: agree
+    detail: 'incidental; terms: band of cherokee indians; indian country; indian nation; cherokee; eastern band; indian; indians; nation'

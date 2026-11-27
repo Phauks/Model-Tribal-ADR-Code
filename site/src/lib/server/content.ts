@@ -610,6 +610,7 @@ function indexedCopies(): PublicCopy[] {
 		const rows = existsSync(path.join(repositoryRoot, indexPath)) ? parseCsv(readText(indexPath)) : [];
 		const namesReplaced = redactedOpinionKeys();
 		const charsets = copyCharsets();
+		const pages = copyPageCounts();
 		indexedCopyCache = rows
 			.filter(
 				(row) =>
@@ -635,7 +636,8 @@ function indexedCopies(): PublicCopy[] {
 				rights: row.rights,
 				...(namesReplaced.has(row.key) ? { namesReplaced: true } : {}),
 				records: (row.records ?? '').split(';').filter(Boolean),
-				...(charsets.has(row.key) ? { charset: charsets.get(row.key) } : {})
+				...(charsets.has(row.key) ? { charset: charsets.get(row.key) } : {}),
+				...(pages.has(row.sha256) ? { pages: pages.get(row.sha256) } : {})
 			}))
 			// A redacted opinion never points to the original, which still has the names in it.
 			.map((copy) => (copy.namesReplaced ? { ...copy, links: [] } : copy))
@@ -691,6 +693,22 @@ export function copyMoves(): Record<string, string> {
 		}
 	}
 	return moves;
+}
+
+/**
+ * How many pages each PDF has, by SHA-256 (research/copy-pages.csv, written by
+ * scripts/library/count_pages.py), so the Statistics page and nation pages can
+ * give documents and their pages separately (Trevor, Nov. 27, 2026). Empty
+ * when the file is missing.
+ */
+function copyPageCounts(): Map<string, number> {
+	const file = 'research/copy-pages.csv';
+	if (!existsSync(path.join(repositoryRoot, file))) return new Map();
+	return new Map(
+		parseCsv(readText(file))
+			.map((row): [string, number] => [row.sha256, Number(row.pages)])
+			.filter(([, pages]) => pages > 0)
+	);
 }
 
 /**
