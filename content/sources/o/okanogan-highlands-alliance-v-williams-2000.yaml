@@ -1,0 +1,61 @@
+key: okanogan-highlands-alliance-v-williams-2000
+kind: federal-case
+citation:
+  type: legal_case
+  title: Okanogan Highlands Alliance v. Williams
+  authority: United States Court of Appeals for the Ninth Circuit
+  container-title: F.3d
+  volume: '236'
+  page: '468'
+  issued:
+    date-parts:
+    - - 2000
+      - 12
+      - 29
+  URL: https://static.case.law/f3d/236/html/0468-01.html
+  accessed:
+    date-parts:
+    - - 2026
+      - 11
+      - 26
+original_link: https://static.case.law/f3d/236/html/0468-01.html
+retrieved: '2026-11-26'
+archives: []
+history:
+  status: live
+  last_checked: '2026-11-26'
+rights:
+  status: no-permission-needed
+  basis: government-edict
+  basis_note: The text of a judicial opinion has no copyright (Georgia v. Public.Resource.Org, Inc., 590 U.S. 255 (2020)). The copy served on this site is the court's opinion only, without the publisher's headnotes, synopsis or other editorial matter (decision record 0060).
+  redistribution: true
+tribes:
+- confederated-tribes-of-the-colville-reservation
+nations_in_case:
+  checked: '2026-11-26'
+  named:
+  - nation: confederated-tribes-of-the-colville-reservation
+    named_as: Confederated Tribes of the Colville Reservation
+    role: party
+    note: Matched by the script to the nation record of the same name; not yet checked.
+  not_linked:
+  - named_as: Okanogan Nation
+    reason: No nation record matches this name; it may be a historical name or a group that is not a recognized nation today.
+jurisdictions:
+- level: federal
+topics:
+- federal-court-indian-law
+found_in:
+- 2026-11-26-federal-court-indian-law-opinions
+notes: Published at 236 F.3d 468. Decided by the United States Court of Appeals for the Ninth Circuit on Dec. 29, 2000. Found by scripts/caselaw/state_court_opinions.py in the Caselaw Access Project's volumes, with an Indian law term score of 6; an AI reader read excerpts and judged it an Indian law case (federal trust obligations to Colville tribe, Forest Service).
+review:
+  status: unverified
+  by: scripts/caselaw/state_court_opinions.py
+  date: '2026-11-26'
+  checks:
+  - check: 'Indian law case: the term score and, below the score kept without a reading, an AI reader''s judgment of excerpts'
+    result: agree
+    detail: 'score 6; reader: federal trust obligations to Colville tribe, Forest Service'
+  - check: Nations named in the caption, matched to nation records by name
+    result: missing
+    detail: 1 matched, 1 not linked

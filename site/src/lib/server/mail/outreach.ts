@@ -610,6 +610,7 @@ function audienceOf(value: string | null): AudienceFilter | null {
 		const parsed = JSON.parse(value) as Partial<AudienceFilter>;
 		return { tag: typeof parsed.tag === 'string' ? parsed.tag : null, label: typeof parsed.label === 'string' ? parsed.label : null, nationsOnly: parsed.nationsOnly !== false };
 	} catch {
+		// expected: the filter is written by this file as JSON; one that cannot be read shows as no filter, and the recipients already chosen stand.
 		return null;
 	}
 }

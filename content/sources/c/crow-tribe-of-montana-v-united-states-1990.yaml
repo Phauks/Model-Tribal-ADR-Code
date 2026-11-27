@@ -1,0 +1,58 @@
+key: crow-tribe-of-montana-v-united-states-1990
+kind: federal-case
+citation:
+  type: legal_case
+  title: Crow Tribe of Montana v. United States
+  authority: United States District Court for the District of Columbia
+  container-title: F. Supp.
+  volume: '789'
+  page: '398'
+  issued:
+    date-parts:
+    - - 1990
+      - 7
+      - 20
+  URL: https://static.case.law/f-supp/789/html/0398-01.html
+  accessed:
+    date-parts:
+    - - 2026
+      - 11
+      - 26
+original_link: https://static.case.law/f-supp/789/html/0398-01.html
+retrieved: '2026-11-26'
+archives: []
+history:
+  status: live
+  last_checked: '2026-11-26'
+rights:
+  status: no-permission-needed
+  basis: government-edict
+  basis_note: The text of a judicial opinion has no copyright (Georgia v. Public.Resource.Org, Inc., 590 U.S. 255 (2020)). The copy served on this site is the court's opinion only, without the publisher's headnotes, synopsis or other editorial matter (decision record 0060).
+  redistribution: true
+tribes:
+- crow-tribe-of-montana
+nations_in_case:
+  checked: '2026-11-26'
+  named:
+  - nation: crow-tribe-of-montana
+    named_as: Crow Tribe of Montana
+    role: party
+    note: Matched by the script to a name the nation record gives; not yet checked.
+jurisdictions:
+- level: federal
+topics:
+- federal-court-indian-law
+found_in:
+- 2026-11-26-federal-court-indian-law-opinions
+notes: Published at 789 F. Supp. 398. Decided by the United States District Court for the District of Columbia on July 20, 1990. Found by scripts/caselaw/state_court_opinions.py in the Caselaw Access Project's volumes, with an Indian law term score of 9; an AI reader read excerpts and judged it an Indian law case (Crow Act restrictions on land acquisition from Crow Indians).
+review:
+  status: unverified
+  by: scripts/caselaw/state_court_opinions.py
+  date: '2026-11-26'
+  checks:
+  - check: 'Indian law case: the term score and, below the score kept without a reading, an AI reader''s judgment of excerpts'
+    result: agree
+    detail: 'score 9; reader: Crow Act restrictions on land acquisition from Crow Indians'
+  - check: Nations named in the caption, matched to nation records by name
+    result: agree
+    detail: 1 matched, 0 not linked

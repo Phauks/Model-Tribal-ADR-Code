@@ -1,0 +1,52 @@
+key: united-states-v-talk-1993
+kind: federal-case
+citation:
+  type: legal_case
+  title: United States v. Talk
+  authority: United States Court of Appeals for the Tenth Circuit
+  container-title: F.3d
+  volume: '13'
+  page: '369'
+  issued:
+    date-parts:
+    - - 1993
+      - 12
+      - 30
+  URL: https://static.case.law/f3d/13/html/0369-01.html
+  accessed:
+    date-parts:
+    - - 2026
+      - 11
+      - 26
+original_link: https://static.case.law/f3d/13/html/0369-01.html
+retrieved: '2026-11-26'
+archives: []
+history:
+  status: live
+  last_checked: '2026-11-26'
+rights:
+  status: no-permission-needed
+  basis: government-edict
+  basis_note: The text of a judicial opinion has no copyright (Georgia v. Public.Resource.Org, Inc., 590 U.S. 255 (2020)). The copy served on this site is the court's opinion only, without the publisher's headnotes, synopsis or other editorial matter (decision record 0060).
+  redistribution: true
+nations_in_case:
+  checked: '2026-11-26'
+  named: []
+jurisdictions:
+- level: federal
+topics:
+- federal-court-indian-law
+found_in:
+- 2026-11-26-federal-court-indian-law-opinions
+notes: Published at 13 F.3d 369. Decided by the United States Court of Appeals for the Tenth Circuit on Dec. 30, 1993. Found by scripts/caselaw/state_court_opinions.py in the Caselaw Access Project's volumes, with an Indian law term score of 5; an AI reader read excerpts and judged it an Indian law case (rape in Indian country between Native Americans, Navajo).
+review:
+  status: unverified
+  by: scripts/caselaw/state_court_opinions.py
+  date: '2026-11-26'
+  checks:
+  - check: 'Indian law case: the term score and, below the score kept without a reading, an AI reader''s judgment of excerpts'
+    result: agree
+    detail: 'score 5; reader: rape in Indian country between Native Americans, Navajo'
+  - check: Nations named in the caption, matched to nation records by name
+    result: agree
+    detail: 0 matched, 0 not linked

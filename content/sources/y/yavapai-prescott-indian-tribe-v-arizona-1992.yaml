@@ -1,0 +1,81 @@
+key: yavapai-prescott-indian-tribe-v-arizona-1992
+kind: federal-case
+citation:
+  type: legal_case
+  title: Yavapai-Prescott Indian Tribe v. Arizona
+  authority: United States District Court for the District of Arizona
+  container-title: F. Supp.
+  volume: '796'
+  page: '1292'
+  issued:
+    date-parts:
+    - - 1992
+      - 5
+      - 28
+  URL: https://static.case.law/f-supp/796/html/1292-01.html
+  accessed:
+    date-parts:
+    - - 2026
+      - 11
+      - 26
+original_link: https://static.case.law/f-supp/796/html/1292-01.html
+retrieved: '2026-11-26'
+archives: []
+history:
+  status: live
+  last_checked: '2026-11-26'
+rights:
+  status: no-permission-needed
+  basis: government-edict
+  basis_note: The text of a judicial opinion has no copyright (Georgia v. Public.Resource.Org, Inc., 590 U.S. 255 (2020)). The copy served on this site is the court's opinion only, without the publisher's headnotes, synopsis or other editorial matter (decision record 0060).
+  redistribution: true
+tribes:
+- white-mountain-apache-tribe-of-the-fort-apache-reservation
+- cocopah-tribe-of-arizona
+- pascua-yaqui-tribe-of-arizona
+- tohono-oodham-nation-of-arizona
+- yavapai-prescott-indian-tribe
+nations_in_case:
+  checked: '2026-11-26'
+  named:
+  - nation: white-mountain-apache-tribe-of-the-fort-apache-reservation
+    named_as: White Mountain Apache Tribe
+    role: party
+    historical: true
+    note: Matched by the script to the only nation record sharing this name; not yet checked against the case's history.
+  - nation: cocopah-tribe-of-arizona
+    named_as: Cocopah Indian Tribe
+    role: party
+    note: Matched by the script to the nation record of the same name; not yet checked.
+  - nation: pascua-yaqui-tribe-of-arizona
+    named_as: Pascua Yaqui Indian Tribe
+    role: party
+    historical: true
+    note: Matched by the script to the only nation record sharing this name; not yet checked against the case's history.
+  - nation: tohono-oodham-nation-of-arizona
+    named_as: Tohono O'Odham Nation
+    role: party
+    historical: true
+    note: Matched by the script to the only nation record sharing this name; not yet checked against the case's history.
+  - nation: yavapai-prescott-indian-tribe
+    named_as: Yavapai-Prescott Indian Tribe
+    role: party
+    note: Matched by the script to a name the nation record gives; not yet checked.
+jurisdictions:
+- level: federal
+topics:
+- federal-court-indian-law
+found_in:
+- 2026-11-26-federal-court-indian-law-opinions
+notes: Published at 796 F. Supp. 1292. Decided by the United States District Court for the District of Arizona on May 28, 1992. Found by scripts/caselaw/state_court_opinions.py in the Caselaw Access Project's volumes, with an Indian law term score of 87, at or above 10, the level kept without a reading.
+review:
+  status: unverified
+  by: scripts/caselaw/state_court_opinions.py
+  date: '2026-11-26'
+  checks:
+  - check: 'Indian law case: the term score and, below the score kept without a reading, an AI reader''s judgment of excerpts'
+    result: agree
+    detail: score 87
+  - check: Nations named in the caption, matched to nation records by name
+    result: agree
+    detail: 5 matched, 0 not linked
