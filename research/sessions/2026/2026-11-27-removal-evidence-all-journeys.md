@@ -14,7 +14,7 @@ tools:
 purpose: 'Trevor said the removals data "feels somewhat weak" and that "we will need strong evidence to showcase how tribes or peoples were forced to move"; he approved a three-part standard (the order, the move recorded at the time, the force), piloted on six journeys, and its extension to the other 49 ("sounds good").'
 queries:
 - For each journey, the treaty, statute or order that required the move
-- Records made at the time of the move: dates, numbers moved, deaths
+- 'Records made at the time of the move: dates, numbers moved, deaths'
 - Records of troops, prisoners, escorts, threats, state laws, protests, or findings that the move was against the nation's will, and records that the move was negotiated or chosen
 sources_added: []
 limits: 'Every item is Unverified until a person reads it in the source. Pin pages read from scan running heads are often approximate (each says so). Quotations are matched to the fetched text, so they keep the scans'' spelling and OCR flaws. Nations'' own accounts are linked, not read in full. Seven Serial Set documents and two state laws could not be fetched and are in the hand-pull list.'
