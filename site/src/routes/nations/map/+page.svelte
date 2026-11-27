@@ -27,6 +27,7 @@
 	import ViewSwitch from '#lib/components/ViewSwitch.svelte';
 	import { censusYearFor, cessionLines, readCessionsSwitch, type CessionDetail } from '#lib/historic-map.ts';
 	import type { PageProps } from './$types';
+	import { sendProblem } from '#lib/problem-reports.ts';
 
 	let { data }: PageProps = $props();
 
@@ -140,7 +141,8 @@
 			.then((body) => {
 				cessionList = body;
 			})
-			.catch(() => {
+			.catch((problem) => {
+				sendProblem(problem, { code: 'map.cessions' });
 				cessionsLoading = undefined;
 			});
 		return cessionsLoading;
@@ -198,7 +200,8 @@
 					for (const row of body.areaRows) listedNations.set(row.anchor, row.nations);
 					shaded = { ...shaded, [view]: body };
 				})
-				.catch(() => {
+				.catch((problem) => {
+					sendProblem(problem, { code: 'map.shaded', place: view });
 					shadedFailed[view] = true;
 					shadedLoading.delete(view);
 				});
@@ -235,7 +238,8 @@
 				.then((body: ViewDrawing) => {
 					viewDrawings = { ...viewDrawings, [key]: body };
 				})
-				.catch(() => {
+				.catch((problem) => {
+					sendProblem(problem, { code: 'map.drawings', place: key });
 					drawingsFailed[key] = true;
 					drawingLoading.delete(key);
 				})
@@ -387,7 +391,7 @@
 			.then((detail) => {
 				if (detail) nationDetails[id] = detail;
 			})
-			.catch(() => {});
+			.catch((problem) => sendProblem(problem, { code: 'map.nation-preview', place: id }));
 	}
 
 	/** Every nation the page knows, with its states, from the table of nations by state. */

@@ -51,6 +51,7 @@
 	} from '#lib/table-builder.ts';
 	import type { PageProps } from './$types';
 	import { copyText } from '#lib/clipboard.ts';
+	import { sendProblem } from '#lib/problem-reports.ts';
 
 	let { data }: PageProps = $props();
 
@@ -146,6 +147,7 @@
 			await copyText(location.href);
 			copyStatus = 'Link copied';
 		} catch {
+			// expected: the browser would not copy; the status says to copy the address by hand.
 			copyStatus = 'Copy the address from the address bar';
 		}
 	}
@@ -165,12 +167,18 @@
 		const parameters = new URLSearchParams(location.search);
 		const requested = parameters.get('data') ?? '';
 		const identifier = data.datasets.some((summary) => summary.identifier === requested) ? requested : data.datasets[0].identifier;
-		open(identifier, parameters).catch(() => (loadFailed = true));
+		open(identifier, parameters).catch((problem) => {
+			sendProblem(problem, { code: 'table-builder.open', place: identifier });
+			loadFailed = true;
+		});
 		// The team makes essay charts here too (Trevor, Nov. 24, 2026: "it should be the same flow"); the list is empty unless someone who can edit an essay is signed in.
 		fetch('/workspace/essays/editable.json')
 			.then((response) => (response.ok ? response.json() : { essays: [] }))
 			.then((body: { essays?: { identifier: string; title: string; editLink: string }[] }) => (editableEssays = body.essays ?? []))
-			.catch(() => (editableEssays = []));
+			.catch((problem) => {
+				sendProblem(problem, { code: 'table-builder.essays' });
+				editableEssays = [];
+			});
 	});
 
 	/** Where "Add to essay" takes the editor: the essay in Editing, which places this chart at its end (src/lib/table-builder.ts, essayChartFrom). */
