@@ -428,9 +428,9 @@
 	}
 
 	.case:focus-visible .focus {
-		fill: var(--color-focus);
-		stroke: var(--color-focus-ring);
-		stroke-width: 2.5;
+		fill: none;
+		stroke: var(--focus-ring);
+		stroke-width: 3;
 	}
 
 	.key {

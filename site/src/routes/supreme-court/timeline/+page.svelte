@@ -705,11 +705,9 @@
 		overflow: visible;
 	}
 
-	/* The site's focus look, as on the bench chart: yellow with an ink ring behind the diamond. */
+	/* The site's focus ring, round to fit the diamond. */
 	.case-mark:focus-visible {
-		outline: none;
-		background: var(--color-focus);
-		box-shadow: 0 0 0 2px var(--color-focus-ring);
+		border-radius: 50%;
 	}
 
 	.what p {
