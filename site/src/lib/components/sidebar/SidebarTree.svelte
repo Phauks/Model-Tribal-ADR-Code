@@ -104,15 +104,18 @@
 		padding: 0;
 	}
 
+	/* A list under an entry: one step in, beside a guide line down from the entry's caret (the measures are in SiteSidebar.svelte). */
 	.outline {
 		font-size: var(--font-size-small);
 		border-left: 1px solid var(--color-line);
-		margin-left: var(--space-3) !important;
+		margin-left: var(--sidebar-line-at) !important;
+		padding-left: calc(var(--sidebar-line-to-rows) - 1px) !important;
 	}
 
 	.outline.flush {
 		border-left: 0;
 		margin-left: 0 !important;
+		padding-left: 0 !important;
 	}
 
 	/* Without scripts nothing can be unfolded, so everything shows. */
@@ -123,9 +126,15 @@
 	.entry {
 		display: flex;
 		align-items: flex-start;
-		/* The bar marking where the reader is spans the whole row, caret included. */
-		margin-left: -1px;
+		/* The bar marking where the reader is spans the whole row, caret included, and lies on the guide line. */
+		margin-left: calc(-1 * var(--sidebar-line-to-rows) - 1px);
+		padding-left: calc(var(--sidebar-line-to-rows) - 2px);
 		border-left: 3px solid transparent;
+	}
+
+	.flush > li > .entry {
+		margin-left: -1px;
+		padding-left: 0;
 	}
 
 	a {
