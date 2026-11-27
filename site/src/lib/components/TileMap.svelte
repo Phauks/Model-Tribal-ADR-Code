@@ -1148,7 +1148,9 @@
 			try {
 				// Both start at once; the bar moves on as each arrives, in the order the map needs them.
 				const dataComing = loadData();
-				dataComing.catch(() => undefined);
+				dataComing.catch(() => {
+					// expected: the same failure is met where the data is awaited below, which reports it; this only keeps it from counting as unhandled while the map program arrives.
+				});
 				const [{ default: maplibre }] = await loadTileMapLibrary();
 				if (stopped) return;
 				loadingStep = 1;
