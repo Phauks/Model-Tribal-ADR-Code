@@ -236,7 +236,8 @@
 	 * just before the buttons, with the buttons' gap.
 	 */
 	.masthead-search {
-		flex: 1 1 22rem;
+		/* A small basis, so the row fills before it wraps, and the box grows into whatever room is left. */
+		flex: 1 1 12rem;
 		min-width: 12rem;
 		max-width: 40rem;
 		margin-inline: auto;
