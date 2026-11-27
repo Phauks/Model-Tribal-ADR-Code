@@ -22,8 +22,36 @@ export function boxPartMarkdown(key, box, part) {
   let inner;
   if (part === "quotes") inner = box.quotes?.length ? box.quotes.map((quote) => `> ${quote.text}\n\n${quoteAttribution(key, quote)}`).join("\n\n") : undefined;
   else if (part === "topics") inner = box.topics?.length ? box.topics.join("; ") : undefined;
+  else if (part === "treatment") inner = [box.treatment?.trim(), laterCasesMarkdown(box)].filter(Boolean).join("\n\n") || undefined;
   else inner = box[part]?.trim() || undefined;
   return inner ? `::: ${part}\n${inner}\n:::` : "";
+}
+
+// The kinds of treatment in the order a list shows them, most serious first (schemas/source.schema.json).
+const LATER_CASE_KINDS = [
+  "Overruling recognized", "Abrogation recognized", "Superseded by statute", "Called into doubt by statute", "Called into doubt",
+  "Limitation of holding recognized", "Modification recognized", "Declined to follow", "Not followed as dicta",
+  "Disagreement recognized", "Declined to extend", "Followed with reservations", "Distinguished",
+];
+
+const escapeMarkdown = (text) => text.replace(/([\\`*_[\]])/g, "\\$1");
+
+/**
+ * The later cases that treated the case negatively (`case_box.later_cases`;
+ * Trevor, Nov. 27, 2026: name the cases rather than count them): each kind of
+ * treatment as a bold line with its count, then one Indigo Book citation to a
+ * line. The website links each case; the printed page does not.
+ */
+export function laterCasesMarkdown(box) {
+  const list = box?.later_cases?.list ?? [];
+  if (!list.length) return "";
+  const kinds = [...new Set(list.map((item) => item.treatment))].sort((one, other) => LATER_CASE_KINDS.indexOf(one) - LATER_CASE_KINDS.indexOf(other));
+  return kinds
+    .map((kind) => {
+      const items = list.filter((item) => item.treatment === kind);
+      return `**${kind}** (${items.length})\n\n${items.map((item) => `- *${escapeMarkdown(item.name)}*, ${escapeMarkdown(item.citation)}`).join("\n")}`;
+    })
+    .join("\n\n");
 }
 
 /** Everything inside a box, in the essay syntax, its parts in their order. */

@@ -1,0 +1,54 @@
+key: oklahoma-statutes-title-18-section-2001
+kind: state-statute
+citation:
+  type: legislation
+  title: Definitions
+  title-short: Okla. Stat. tit. 18, § 2001
+  container-title: Oklahoma Statutes
+  container-title-short: Okla. Stat.
+  volume: '18'
+  section: '2001'
+  author:
+  - literal: Oklahoma Legislature
+  issued:
+    date-parts:
+    - - 1992
+      - 9
+      - 1
+  URL: https://www.oklegislature.gov/OK_Statutes/CompleteTitles/os18.pdf#page=604
+  accessed:
+    date-parts:
+    - - 2026
+      - 11
+      - 26
+original_link: https://www.oklegislature.gov/OK_Statutes/CompleteTitles/os18.pdf#page=604
+retrieved: '2026-11-26'
+archives: []
+history:
+  status: live
+  last_checked: '2026-11-26'
+state_law:
+  relevance: incidental
+  citation: Okla. Stat. tit. 18, § 2001 (2026)
+  page: 604
+rights:
+  status: no-permission-needed
+  basis: government-edict
+  basis_note: 'Official state statutes are not copyrightable under the government edicts doctrine (Georgia v. Public.Resource.Org, Inc., 590 U.S. 255 (2020)). Linked, not served: state statutes stay link only.'
+  redistribution: false
+jurisdictions:
+- level: state
+  state: OK
+topics:
+- state-indian-law
+found_in:
+- 2026-11-26-state-statutes-pilot
+notes: 'Indigo Book citation: Okla. Stat. tit. 18, § 2001 (2026). History: laws of any jurisdiction other than this state; laws of this state; Added by Laws 1992, c. 148, § 2, eff. Sept. 1, 1992. Amended by Laws 1993, c. 366, § 2, eff. Text read from the Legislative Service Bureau''s Title 18 PDF (updated Nov. 12, 2026), page 604. Found by the state statutes pilot (terms: tribal government); AI reader''s verdict incidental: LLC definition of jurisdiction includes a tribal government. Unverified.'
+review:
+  status: unverified
+  by: scripts/law/oklahoma_statutes.py
+  date: '2026-11-26'
+  checks:
+  - check: 'Indian law section: the pilot''s keyword pass and an AI reader''s verdict (core, incidental or none)'
+    result: agree
+    detail: 'incidental; terms: tribal government'
