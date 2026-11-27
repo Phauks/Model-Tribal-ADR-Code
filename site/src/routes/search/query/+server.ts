@@ -11,6 +11,7 @@
 import type { D1Database } from '@cloudflare/workers-types/index.ts';
 import { json } from '@sveltejs/kit';
 import { afterResponse, workerEnvironment } from '#lib/server/environment.ts';
+import { reportHere } from '#lib/server/report-here.ts';
 import { answerWhenReady, fillSearchTables, searchTablesKey } from '#lib/server/search-tables.ts';
 import { siteRestrictions } from '#lib/server/site-restrictions.ts';
 import { filterSearchIndex, filterSearchRecords, type SiteRestrictions } from '#lib/restricted-files.ts';
@@ -68,11 +69,11 @@ export const GET: RequestHandler = async ({ url }) => {
 		// One trip to the database: the restrictions' stamp, the tables' key and the search together.
 		const outcome = await answerWhenReady(database, version, query, perGroup);
 		if (outcome.ready) return json(outcome.answer, { headers: { 'cache-control': 'public, max-age=0, must-revalidate' } });
-		afterResponse(fillWhenGathered(database, assets, url.origin, version, outcome.stamp));
+		afterResponse(fillWhenGathered(database, assets, url.origin, version, outcome.stamp), 'search.fill');
 		return notReady();
 	} catch (problem) {
 		// Tables not made yet (a migration not applied) or the database busy: the panel waits for the files.
-		console.error('The site search on the server could not answer', problem);
+		reportHere(problem, { code: 'search.query', place: '/search/query', path: url.pathname, method: 'GET' });
 		return notReady();
 	}
 };

@@ -10,7 +10,8 @@ describe('Coverage', () => {
 		const shown = nations().filter((record) => record.example !== true && record.review?.status !== 'withdrawn-at-request');
 		expect(rows).toHaveLength(shown.length);
 		expect(new Set(rows.map((row) => row.id)).size).toBe(rows.length);
-	}, 60_000);
+		// The first call reads every record (about 49,000 by Nov. 27, 2026), which took more than 60 seconds on a CI runner.
+	}, 180_000);
 
 	it('counts a row’s gaps as the sections with nothing on record', () => {
 		for (const row of coverageRows().slice(0, 50)) {

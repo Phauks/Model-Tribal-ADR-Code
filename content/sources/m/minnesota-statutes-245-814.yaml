@@ -1,0 +1,50 @@
+key: minnesota-statutes-245-814
+kind: state-statute
+citation:
+  type: legislation
+  title: Liability Insurance for Licensed Providers
+  title-short: Minn. Stat. § 245.814
+  container-title: Minnesota Statutes
+  container-title-short: Minn. Stat.
+  section: '245.814'
+  author:
+  - literal: Minnesota Office of the Revisor of Statutes
+  issued:
+    date-parts:
+    - - 1977
+  URL: https://www.revisor.mn.gov/statutes/cite/245.814
+  accessed:
+    date-parts:
+    - - 2026
+      - 11
+      - 27
+original_link: https://www.revisor.mn.gov/statutes/cite/245.814
+retrieved: '2026-11-27'
+archives: []
+history:
+  status: live
+  last_checked: '2026-11-27'
+state_law:
+  relevance: incidental
+  citation: Minn. Stat. § 245.814 (2026)
+rights:
+  status: no-permission-needed
+  basis: government-edict
+  basis_note: 'Official state statutes are not copyrightable under the government edicts doctrine (Georgia v. Public.Resource.Org, Inc., 590 U.S. 255 (2020)). Linked, not served: state statutes stay link only.'
+  redistribution: false
+jurisdictions:
+- level: state
+  state: MN
+topics:
+- state-indian-law
+found_in:
+- 2026-11-27-state-statutes-third-batch
+notes: 'Indigo Book citation: Minn. Stat. § 245.814 (2026). History: 1977 c 360 s 1; 1980 c 614 s 125; 1984 c 654 art 5 s 58; 1986 c 313 s 10; 1986 c 455 s 61; 1988 c 689 art 2 s 99 -101; 1994 c 465 art 1 s 62; 1994 c 631 s 31; 1999 c 139 art 4 s 2; 1Sp2001 c 9 art 11 s 2; 2002 c 379 art 1 s 113; 2004 c 288 art 1 s 1; 1Sp2017 c 6 art 7 s 23; 2020 c 83 art 1 s 67; 2023 c 25 s 119; 2024 c 80 art 1 s 45; 2025 c 21 s 34 -37; 2025 c 38 art 8 s 45. Text read from the Minnesota Revisor of Statutes'' full-text chapter page for the section (revisor.mn.gov/statutes) on Nov. 27, 2026. Found by the state statutes sweep (terms: tribal government; tribal); AI reader''s verdict incidental: Foster home liability insurance covers homes licensed by Tribal governments. Unverified.'
+review:
+  status: unverified
+  by: scripts/law/state_statutes/run.py
+  date: '2026-11-27'
+  checks:
+  - check: 'Indian law section: the sweep''s keyword pass and an AI reader''s verdict (core, incidental or none)'
+    result: agree
+    detail: 'incidental; terms: tribal government; tribal'

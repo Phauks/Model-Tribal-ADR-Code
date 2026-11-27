@@ -18,7 +18,7 @@
  */
 import type { D1Database, D1PreparedStatement } from '@cloudflare/workers-types/index.ts';
 import { followKindOf, followLimit, isEmailChoice, type EmailChoice, type FollowKind } from '#lib/following.ts';
-import { allListedPublications, essayPath } from './essays.ts';
+import { allListedPublications, essayPath, sha256Hex } from './essays.ts';
 
 /** One page built with the site that can be followed. */
 export interface FollowablePage {
@@ -57,13 +57,19 @@ export async function essayPages(database: D1Database): Promise<FollowablePage[]
 		const seen = newest.get(row.essay_identifier);
 		if (!seen || row.number > seen.number) newest.set(row.essay_identifier, row);
 	}
-	return [...newest.values()].map((row) => ({
+	const pages: FollowablePage[] = [...newest.values()].map((row) => ({
 		address: essayPath(row.essay_identifier, row.part),
 		kind: 'essay' as const,
 		title: row.title || row.essay_identifier,
 		// The text's hash: publishing the same text again is not an update.
 		fingerprint: row.sha256 ?? `${row.number}`
 	}));
+	// News as a whole changes when a post is published for the first time (or
+	// taken down), not when a post is corrected: its fingerprint is the list
+	// of published posts.
+	const posts = [...newest.values()].filter((row) => row.part === 'news').map((row) => row.essay_identifier).sort();
+	if (posts.length > 0) pages.push({ address: '/news', kind: 'news', title: 'News', fingerprint: await sha256Hex(posts.join('\n')) });
+	return pages;
 }
 
 /** Every page that can be followed now, by address. */
@@ -400,11 +406,11 @@ async function compareEssays(database: D1Database, essays: FollowablePage[], at:
 			database
 				.prepare(
 					`INSERT INTO page_updates (address, kind, updated_at)
-					 SELECT ?1, 'essay', ?2
+					 SELECT ?1, ?4, ?2
 					 WHERE EXISTS (SELECT 1 FROM page_fingerprints WHERE address = ?1 AND fingerprint = ?3)
 					 AND EXISTS (SELECT 1 FROM follows WHERE address = ?1)`
 				)
-				.bind(page.address, at, old),
+				.bind(page.address, at, old, page.kind),
 			database
 				.prepare('UPDATE page_fingerprints SET fingerprint = ?, seen_at = ? WHERE address = ? AND fingerprint = ?')
 				.bind(page.fingerprint, at, page.address, old)

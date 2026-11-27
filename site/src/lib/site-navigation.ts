@@ -106,8 +106,15 @@ export type NavigationGroup = { title: string; links: NavigationLink[] };
 export type NavigationSection = {
 	key: string;
 	label: string;
-	/** The section's own page, where it has one. */
+	/**
+	 * The section's own page, which its name in the section bar and the phone
+	 * Menu sheet links to (Trevor, Nov. 27, 2026: no "All of …" link; every
+	 * section has a home). Each of the six sections has one; the Workspace
+	 * has one only when the reader's role opens its Overview.
+	 */
 	home?: string;
+	/** The section's name in sentence case, as its own page's title and the breadcrumbs give it. */
+	title?: string;
 	groups: NavigationGroup[];
 	/**
 	 * The addresses that belong to the section besides its links: a path and
@@ -158,13 +165,15 @@ export const navigationSections: NavigationSection[] = [
 	{
 		key: 'federal-law',
 		label: 'Federal Law',
+		title: 'Federal law',
+		home: '/laws',
 		groups: [
 			{
 				title: 'Laws',
 				links: [
 					{ label: 'Treaties and Agreements', link: '/stats/treaties', icon: 'scroll', count: 'treaties' },
 					{ label: 'Statutes', link: '/stats/federal-statutes', icon: 'book-marked', count: 'federal-statutes' },
-					{ label: 'U.S. Code, Title 25', link: '/stats/united-states-code-sections', icon: 'library', count: 'united-states-code-sections' },
+					{ label: 'U.S. Code, Title 25', link: '/laws/usc-25', icon: 'library', count: 'united-states-code-sections' },
 					{ label: 'Executive Orders', link: '/stats/executive-orders', icon: 'pen-line', count: 'executive-orders' }
 				]
 			},
@@ -199,6 +208,8 @@ export const navigationSections: NavigationSection[] = [
 	{
 		key: 'courts-and-cases',
 		label: 'Courts and Cases',
+		title: 'Courts and cases',
+		home: '/cases',
 		groups: [
 			{
 				title: 'U.S. Supreme Court',
@@ -263,6 +274,7 @@ export const navigationSections: NavigationSection[] = [
 	{
 		key: 'writing',
 		label: 'Writing',
+		home: '/writing',
 		groups: [
 			{
 				title: 'Published',
@@ -291,6 +303,8 @@ export const navigationSections: NavigationSection[] = [
 				title: 'The Project',
 				links: [
 					{ label: 'About the Project', link: '/about', icon: 'info' },
+					// Posts for readers, written and published on the site like the essays (src/lib/server/news-posts.ts; design/news-section).
+					{ label: 'News', link: '/news', icon: 'newspaper' },
 					{ label: 'Timeline to Public Review', link: '/about/timeline', icon: 'calendar-clock' },
 					{ label: 'Events', link: '/events', icon: 'calendar' },
 					// Every change to the site's pages, like a wiki's (site/COLLABORATION.md, "Recent changes"); it left the side column on Nov. 27, 2026.

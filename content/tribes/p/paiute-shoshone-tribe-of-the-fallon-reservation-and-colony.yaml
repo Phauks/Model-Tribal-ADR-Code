@@ -19,6 +19,16 @@ recognition:
   verification: bulk-import
   as_of: '2026-01-30'
   locator: 91 Fed. Reg. 4104
+- type: federal
+  earliest_record: federal-list
+  legal_basis: Indian Tribal Entities That Have a Government-to-Government Relationship With the United States, 44 Fed. Reg. 7235, 7236 (Feb. 6, 1979)
+  since: '1979-02-06'
+  source: bia-recognized-entities-1979
+  confidence: medium
+  verification: bulk-import
+  as_of: '1979-02-06'
+  locator: 44 Fed. Reg. 7236 (entry "Paiute-Shoshone Indians of the Fallon Reservation, Nevada")
+  note: The earliest record this site has found that shows the United States dealing with the nation as a federally recognized nation. The relationship may be older. The list's entry reads "Paiute-Shoshone Indians of the Fallon Reservation, Nevada." The entry is matched to the nation by name.
 states:
 - state: NV
   presence: government-office
@@ -436,6 +446,14 @@ jurisdiction:
   verification: inferred
   locator: 40 Fed. Reg. at 27,501
   note: 'INFERENCE, not stated in any source the research read: because the notice covers only jurisdiction "acquired by the State," a nation absent from it was not under state jurisdiction in 1975. The 1976 AIPRC report (fn. 21) lists the previously covered areas and omits these nations. The 1955 act let counties exclude Indian country by Governor''s proclamation (Pyramid Lake did); the research did not locate the proclamations or minutes for the other counties, so the reason for each nation is unconfirmed. Fort Mojave also has AZ/CA lands; Duck Valley ID; Fort McDermitt OR. Also cites: american-indian-policy-review-commission-task-force-four-1976, goldberg-2010-tribal-jurisdictional-status-analysis.'
+- topic: water-rights-settlement
+  value: enacted
+  detail: Congress enacted the Fallon Paiute Shoshone Indian Water Rights Settlement Act of 1990 in 1990 (Pub. L. No. 101-618), settling the water rights of Paiute-Shoshone Tribe of the Fallon Reservation and Colony. It quantifies 10,588 acre-feet a year in all and authorizes about $43.0 million in federal funds, as the Congressional Research Service counts it (R44148, Table 1).
+  source: public-law-101-618
+  confidence: high
+  verification: inferred
+  as_of: '1990'
+  locator: Congressional Research Service, R44148, Table 1, 1990
 court_practice:
 - kind: forms
   title: Court Forms (Fallon)

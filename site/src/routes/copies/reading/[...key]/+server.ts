@@ -16,6 +16,7 @@
  * is never changed: its SHA-256 must match the publisher's.
  */
 import { error, json } from '@sveltejs/kit';
+import { contentDisposition } from '#lib/readable-file-names.ts';
 import { readingHtmlDocument, readingMarkdown, readingText } from '#lib/reading-text.ts';
 import { linkCitations, citationKeys } from '#lib/text-links.ts';
 import { hiddenCopyMessage } from '#lib/nation-restrictions.ts';
@@ -26,7 +27,7 @@ import { copyDetailsOf } from '#lib/server/copy-details.ts';
 import { servedCopy } from '#lib/server/copy-list.ts';
 import { workerEnvironment } from '#lib/server/environment.ts';
 import { copyLevel } from '#lib/server/nation-restrictions.ts';
-import { hexDigest } from '#lib/server/public-copy-serving.ts';
+import { hexDigest, savedFileName } from '#lib/server/public-copy-serving.ts';
 import { textLinkPages } from '#lib/server/text-link-pages.ts';
 import type { RequestHandler } from './$types';
 
@@ -85,13 +86,14 @@ export const GET: RequestHandler = async ({ params, url, fetch }) => {
 		captured: details?.captured ? readableDate(details.captured) : undefined
 	};
 	const site = url.origin;
-	const name = `${(key.split('/').at(-1) ?? 'document').replace(/\.[a-z]+$/i, '')}.${format}`;
+	// Saved under the copy's own readable name (src/lib/readable-file-names.ts), with the download's extension.
+	const name = `${savedFileName(copy).replace(/\.[a-z]+$/i, '')}.${format}`;
 	const body = format === 'md' ? readingMarkdown(reading, about, site) : readingHtmlDocument(reading, about, site);
 	return new Response(body, {
 		headers: {
 			...caching,
 			'content-type': formats[format],
-			'content-disposition': `attachment; filename="${name.replace(/[^\w.-]/g, '_')}"`,
+			'content-disposition': contentDisposition(name),
 			// A web page of words only: nothing in it runs or loads.
 			...(format === 'html' ? { 'content-security-policy': "default-src 'none'; style-src 'unsafe-inline'; sandbox" } : {}),
 			'x-content-type-options': 'nosniff'

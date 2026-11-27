@@ -21,6 +21,19 @@ recognition:
   verification: bulk-import
   as_of: '2026-01-30'
   locator: 91 Fed. Reg. 4105
+- type: federal
+  earliest_record: constitution
+  legal_basis: Constitution of the Yavapai-Prescott Indian Tribe (approved by the Secretary of the Interior Apr. 23, 1975)
+  since: '1975-04-23'
+  source: constitution-yavapai-prescott-indian-tribe-1975-text
+  document_version:
+    document: yavapai-prescott-indian-tribe-constitution
+    version: 1975-text
+  confidence: medium
+  verification: read-in-full
+  as_of: '1975-04-23'
+  locator: 1975 articles of association, as amended, approval certificate
+  note: The earliest record this site has found that shows the United States dealing with the nation as a federally recognized nation. The relationship may be older. The Secretary of the Interior approved the nation's constitution; the date is read from the approval certificate.
 states:
 - state: AZ
   presence: government-office
@@ -585,6 +598,14 @@ jurisdiction:
   verification: read-in-full
   locator: 113 Ariz. at 431
   note: 1976 holding about service of process on the Tohono O'odham (Papago) reservation, reasoning from the 1968 consent requirement. The research did not find any later Arizona assumption. Other federal statutes can still give Arizona limited authority; none checked here.
+- topic: water-rights-settlement
+  value: enacted
+  detail: Congress enacted the Yavapai-Prescott Indian Tribe Water Rights Settlement Act of 1994 in 1994, amended 1996 (Pub. L. No. 103-434, Pub. L. No. 104-91), settling the water rights of Yavapai-Prescott Indian Tribe. It quantifies 1,550 acre-feet a year in all and authorizes about $0.2 million in federal funds, as the Congressional Research Service counts it (R44148, Table 1).
+  source: public-law-103-434
+  confidence: high
+  verification: inferred
+  as_of: '1994'
+  locator: Congressional Research Service, R44148, Table 1, 1994
 nearby_state_courts:
 - state: AZ
   county: Yavapai County

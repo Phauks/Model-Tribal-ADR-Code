@@ -10,6 +10,7 @@ import { escapeHtml } from '../escape-html.ts';
 import { linkForMatching, type PublicCopy } from '../public-copies.ts';
 import { officialReportLinks, type ReadingLinks } from '../reading-links.ts';
 import { publicCopies, publicCopyFor, publicCopyWithDigest, type SourceRecord } from './content.ts';
+import { copyFileNames } from './copy-lists.ts';
 
 let byKey: Map<string, PublicCopy> | undefined;
 
@@ -52,7 +53,7 @@ export function recordDocument(record: SourceRecord, title: string, copy: Public
 		} else scan = undefined;
 	}
 	const page = scan ? /#page=(\d{1,5})$/.exec([record.original_link, record.citation.URL].find((link) => link && publicCopyFor(link)?.key === scan?.key) ?? '')?.[1] : undefined;
-	return documentFile(shown, {
+	return documentFile({ ...shown, name: copyFileNames().get(shown.key) }, {
 		title,
 		...(scan ? { scan: { key: scan.key, pages: scan.pages, ...(page ? { page: Number(page) } : {}) } } : {}),
 		...(/^usc-25-/.test(record.key) ? { codeTitle: '25' } : {})

@@ -1,0 +1,50 @@
+key: idaho-code-42-5201
+kind: state-statute
+citation:
+  type: legislation
+  title: Short title — Title of districts — Definitions
+  title-short: Idaho Code § 42-5201
+  container-title: Idaho Code
+  container-title-short: Idaho Code
+  section: 42-5201
+  author:
+  - literal: Idaho Legislature
+  issued:
+    date-parts:
+    - - 1995
+  URL: https://legislature.idaho.gov/statutesrules/idstat/Title42/T42CH52/SECT42-5201
+  accessed:
+    date-parts:
+    - - 2026
+      - 11
+      - 27
+original_link: https://legislature.idaho.gov/statutesrules/idstat/Title42/T42CH52/SECT42-5201
+retrieved: '2026-11-27'
+archives: []
+history:
+  status: live
+  last_checked: '2026-11-27'
+state_law:
+  relevance: incidental
+  citation: Idaho Code § 42-5201 (2026)
+rights:
+  status: no-permission-needed
+  basis: government-edict
+  basis_note: 'Official state statutes are not copyrightable under the government edicts doctrine (Georgia v. Public.Resource.Org, Inc., 590 U.S. 255 (2020)). Linked, not served: state statutes stay link only.'
+  redistribution: false
+jurisdictions:
+- level: state
+  state: ID
+topics:
+- state-indian-law
+found_in:
+- 2026-11-27-state-statutes-third-batch
+notes: 'Indigo Book citation: Idaho Code § 42-5201 (2026). History: 42-5201, added 1995, ch. 290, sec. 1, p. 983; am. 1997, ch. 374, sec. 7, p. 1203; am. 2005, ch. 367, sec. 1, p. 1155. Text read from the Idaho Legislature''s page for the section in the Idaho Statutes (legislature.idaho.gov/statutesrules/idstat) on Nov. 27, 2026. Found by the state statutes sweep (terms: indian reservation; indian tribe; tribal members; indian; reservation; tribal; tribe); AI reader''s verdict incidental: Ground water district excludes tribal water rights; Indian tribe is a person. Unverified.'
+review:
+  status: unverified
+  by: scripts/law/state_statutes/run.py
+  date: '2026-11-27'
+  checks:
+  - check: 'Indian law section: the sweep''s keyword pass and an AI reader''s verdict (core, incidental or none)'
+    result: agree
+    detail: 'incidental; terms: indian reservation; indian tribe; tribal members; indian; reservation; tribal; tribe'

@@ -12,6 +12,16 @@ recognition:
   verification: bulk-import
   as_of: '2026-01-30'
   locator: 91 Fed. Reg. 4103
+- type: federal
+  earliest_record: land
+  legal_basis: Exec. Order No. 2264
+  since: '1915-10-28'
+  source: executive-order-1915-10-28-2264
+  confidence: high
+  verification: read-in-full
+  as_of: '1915-10-28'
+  locator: 4 Kappler 1012
+  note: The earliest record this site has found that shows the United States dealing with the nation as a federally recognized nation. The relationship may be older. The instrument first set aside the Fort Independence Reservation, California.
 states:
 - state: CA
   presence: government-office

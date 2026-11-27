@@ -18,14 +18,14 @@
  * without naming it (src/lib/nation-restrictions.ts).
  */
 import { error, redirect } from '@sveltejs/kit';
-import { fileName } from '#lib/checksums.ts';
 import { documentFile, publisherName } from '#lib/document-text.ts';
-import { copyPagePath, copyPath } from '#lib/public-copies.ts';
+import { copyPagePath } from '#lib/public-copies.ts';
 import { copyDetailsOf } from '#lib/server/copy-details.ts';
 import { hiddenCopyMessage } from '#lib/nation-restrictions.ts';
 import { movedCopy, servedCopy } from '#lib/server/copy-list.ts';
 import { workerEnvironment } from '#lib/server/environment.ts';
 import { copyLevel } from '#lib/server/nation-restrictions.ts';
+import { savedFileName } from '#lib/server/public-copy-serving.ts';
 import { readableDate } from '#lib/readable-date.ts';
 import type { PageServerLoad } from './$types';
 
@@ -46,7 +46,9 @@ export const load: PageServerLoad = async ({ params, url, fetch, setHeaders }) =
 		error(404, hiddenCopyMessage);
 	}
 	const details = await copyDetailsOf(copy, url, fetch);
-	const title = details?.opinion?.name ?? details?.title ?? fileName(copyPath(copy));
+	// The name the file is saved under, its title (src/lib/readable-file-names.ts), not the code in its address.
+	const name = savedFileName(copy);
+	const title = details?.opinion?.name ?? details?.title ?? name;
 	const original = copy.links.at(-1) ?? copy.links[0] ?? '';
 	// A day, as for the file itself: a copy taken off the list stops being shown soon. A nation's
 	// law or opinion for five minutes, and not at all while restricted, since a nation's choice shows within minutes.
@@ -59,7 +61,7 @@ export const load: PageServerLoad = async ({ params, url, fetch, setHeaders }) =
 		decidedText: details?.opinion?.decided ? readableDate(details.opinion.decided) : '',
 		// The same card as a law's or case's page; a redacted opinion (research/tribal-court-opinions/redacted.csv) says so and has no link to the original.
 		file: documentFile(
-			{ ...copy, ...(details?.captured ? { captured: details.captured } : {}), ...(details?.opinion?.namesReplaced ? { namesReplaced: true } : {}) },
+			{ ...copy, name, ...(details?.captured ? { captured: details.captured } : {}), ...(details?.opinion?.namesReplaced ? { namesReplaced: true } : {}) },
 			{ title }
 		),
 		original: original && URL.canParse(original) && !details?.opinion?.namesReplaced ? { link: original, name: details?.opinion ? 'the Caselaw Access Project' : (publisherName(original) ?? original) } : undefined

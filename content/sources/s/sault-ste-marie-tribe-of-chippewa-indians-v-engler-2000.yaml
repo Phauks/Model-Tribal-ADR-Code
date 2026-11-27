@@ -1,0 +1,90 @@
+key: sault-ste-marie-tribe-of-chippewa-indians-v-engler-2000
+kind: federal-case
+citation:
+  type: legal_case
+  title: Sault Ste. Marie Tribe of Chippewa Indians v. Engler
+  authority: United States District Court for the Western District of Michigan
+  container-title: F. Supp. 2d
+  volume: '93'
+  page: '850'
+  issued:
+    date-parts:
+    - - 2000
+      - 2
+      - 28
+  URL: https://static.case.law/f-supp-2d/93/html/0850-01.html
+  accessed:
+    date-parts:
+    - - 2026
+      - 11
+      - 26
+original_link: https://static.case.law/f-supp-2d/93/html/0850-01.html
+retrieved: '2026-11-26'
+archives: []
+history:
+  status: live
+  last_checked: '2026-11-26'
+rights:
+  status: no-permission-needed
+  basis: government-edict
+  basis_note: The text of a judicial opinion has no copyright (Georgia v. Public.Resource.Org, Inc., 590 U.S. 255 (2020)). The copy served on this site is the court's opinion only, without the publisher's headnotes, synopsis or other editorial matter (decision record 0060).
+  redistribution: true
+tribes:
+- grand-traverse-band-of-ottawa-and-chippewa-indians
+- keweenaw-bay-indian-community
+- hannahville-indian-community
+- bay-mills-indian-community
+- lac-vieux-desert-band-of-lake-superior-chippewa-indians-of-michigan
+- saginaw-chippewa-indian-tribe-of-michigan
+- sault-ste-marie-tribe-of-chippewa-indians
+nations_in_case:
+  checked: '2026-11-26'
+  named:
+  - nation: grand-traverse-band-of-ottawa-and-chippewa-indians
+    named_as: Grand Traverse Band of Ottawa
+    role: party
+    historical: true
+    note: Matched by the script to the only nation record sharing this name; not yet checked against the case's history.
+  - nation: keweenaw-bay-indian-community
+    named_as: Keweenaw Bay Indian Community
+    role: party
+    note: Matched by the script to the nation record of the same name; not yet checked.
+  - nation: hannahville-indian-community
+    named_as: Hannahville Indian Community
+    role: party
+    note: Matched by the script to the nation record of the same name; not yet checked.
+  - nation: bay-mills-indian-community
+    named_as: Bay Mills Indian Community
+    role: party
+    note: Matched by the script to the nation record of the same name; not yet checked.
+  - nation: lac-vieux-desert-band-of-lake-superior-chippewa-indians-of-michigan
+    named_as: Lac View Desert Band of Lake Superior Chippewa Indians
+    role: party
+    historical: true
+    note: Matched by the script to the only nation record sharing this name; not yet checked against the case's history.
+  - nation: saginaw-chippewa-indian-tribe-of-michigan
+    named_as: Saginaw Chippewa Indian Tribe of Michigan
+    role: party
+    note: Matched by the script to the nation record of the same name; not yet checked.
+  - nation: sault-ste-marie-tribe-of-chippewa-indians
+    named_as: Sault Ste. Marie Tribe of Chippewa Indians
+    role: party
+    note: Matched by the script to a name the nation record gives; not yet checked.
+jurisdictions:
+- level: federal
+topics:
+- federal-court-indian-law
+found_in:
+- 2026-11-26-federal-court-indian-law-opinions
+notes: Published at 93 F. Supp. 2d 850. Decided by the United States District Court for the Western District of Michigan on Feb. 28, 2000. Found by scripts/caselaw/state_court_opinions.py in the Caselaw Access Project's volumes, with an Indian law term score of 20, at or above 10, the level kept without a reading.
+review:
+  status: unverified
+  by: scripts/caselaw/state_court_opinions.py
+  date: '2026-11-26'
+  checks:
+  - check: 'Indian law case: the term score and, below the score kept without a reading, an AI reader''s judgment of excerpts'
+    result: agree
+    detail: score 20
+  - check: Nations named in the caption, matched to nation records by name
+    result: agree
+    detail: 7 matched, 0 not linked

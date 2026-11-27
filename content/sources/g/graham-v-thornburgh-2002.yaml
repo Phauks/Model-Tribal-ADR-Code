@@ -1,0 +1,65 @@
+key: graham-v-thornburgh-2002
+kind: federal-case
+citation:
+  type: legal_case
+  title: Graham v. Thornburgh
+  authority: United States District Court for the District of Kansas
+  container-title: F. Supp. 2d
+  volume: '207'
+  page: '1280'
+  issued:
+    date-parts:
+    - - 2002
+      - 7
+      - 3
+  URL: https://static.case.law/f-supp-2d/207/html/1280-01.html
+  accessed:
+    date-parts:
+    - - 2026
+      - 11
+      - 26
+original_link: https://static.case.law/f-supp-2d/207/html/1280-01.html
+retrieved: '2026-11-26'
+archives: []
+history:
+  status: live
+  last_checked: '2026-11-26'
+rights:
+  status: no-permission-needed
+  basis: government-edict
+  basis_note: The text of a judicial opinion has no copyright (Georgia v. Public.Resource.Org, Inc., 590 U.S. 255 (2020)). The copy served on this site is the court's opinion only, without the publisher's headnotes, synopsis or other editorial matter (decision record 0060).
+  redistribution: true
+tribes:
+- prairie-band-potawatomi-nation
+nations_in_case:
+  checked: '2026-11-26'
+  named:
+  - nation: prairie-band-potawatomi-nation
+    named_as: Prairie Band Potawatomi Nation
+    role: party
+    note: Matched by the script to the nation record of the same name; not yet checked.
+  not_linked:
+  - named_as: Kickapoo Tribe of Indians
+    reason: More than one of today's nations shares this name (kickapoo-traditional-tribe-of-texas, kickapoo-tribe-of-indians-of-the-kickapoo-reservation-in-kansas, kickapoo-tribe-of-oklahoma); which the case concerns has not been checked.
+  - named_as: Kickapoo Reservation
+    reason: More than one of today's nations shares this name (kickapoo-traditional-tribe-of-texas, kickapoo-tribe-of-indians-of-the-kickapoo-reservation-in-kansas, kickapoo-tribe-of-oklahoma); which the case concerns has not been checked.
+  - named_as: Fox Nation of Missouri
+    reason: More than one of today's nations shares this name (cherokee-nation-west-of-missouri-and-arkansas, lost-cherokee-of-arkansas-and-missouri, northern-cherokee-tribe-of-indians-of-missouri-and-arkansas, ozark-mountain-cherokee-tribe-of-arkansas-and-missouri, sac-and-fox-nation-of-missouri-in-kansas-and-nebraska, sac-river-and-white-river-bands-of-the-chickamauga-cherokee-nation-of-arkansas-and-missouri-inc and 3 more); which the case concerns has not been checked.
+jurisdictions:
+- level: federal
+topics:
+- federal-court-indian-law
+found_in:
+- 2026-11-26-federal-court-indian-law-opinions
+notes: Published at 207 F. Supp. 2d 1280. Decided by the United States District Court for the District of Kansas on July 3, 2002. Found by scripts/caselaw/state_court_opinions.py in the Caselaw Access Project's volumes, with an Indian law term score of 5; an AI reader read excerpts and judged it an Indian law case (Kansas tribes intervene in redistricting).
+review:
+  status: unverified
+  by: scripts/caselaw/state_court_opinions.py
+  date: '2026-11-26'
+  checks:
+  - check: 'Indian law case: the term score and, below the score kept without a reading, an AI reader''s judgment of excerpts'
+    result: agree
+    detail: 'score 5; reader: Kansas tribes intervene in redistricting'
+  - check: Nations named in the caption, matched to nation records by name
+    result: missing
+    detail: 1 matched, 3 not linked

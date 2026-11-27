@@ -26,6 +26,16 @@ recognition:
   verification: bulk-import
   as_of: '2026-01-30'
   locator: 91 Fed. Reg. 4103
+- type: federal
+  earliest_record: land
+  legal_basis: Exec. Order of Sept. 27, 1917, 4 Kappler 1001
+  since: '1917-09-27'
+  source: executive-order-1917-09-27-cocopah-reservation
+  confidence: high
+  verification: read-in-full
+  as_of: '1917-09-27'
+  locator: 4 Kappler 1001
+  note: The earliest record this site has found that shows the United States dealing with the nation as a federally recognized nation. The relationship may be older. The instrument first set aside the Cocopah Reservation (west half of sec. 12 and related lands), Arizona.
 states:
 - state: AZ
   presence: government-office

@@ -20,6 +20,16 @@ recognition:
   verification: bulk-import
   as_of: '2026-01-30'
   locator: 91 Fed. Reg. 4105
+- type: federal
+  earliest_record: treaty
+  legal_basis: Treaty with the Choctaw, Jan. 3, 1786, 7 Stat. 21
+  since: '1786-01-03'
+  source: treaty-with-the-choctaw-1786
+  confidence: medium
+  verification: inferred
+  as_of: '1786-01-03'
+  locator: p. 11 (Treaty with the Choctaw, 1786; Kappler header "Jan. 3, 1786. | 7 Stat., 21.")
+  note: The earliest record this site has found that shows the United States dealing with the nation as a federally recognized nation. The relationship may be older. The treaty names the Choctaw; the nation's profile links it to the treaty by name, and the link has not yet been checked against a second source. 2 nations' profiles link this treaty.
 states:
 - state: OK
   presence: government-office
@@ -957,6 +967,14 @@ jurisdiction:
   verification: inferred
   as_of: '2025-05-13'
   locator: Bureau of Indian Affairs, Approved HEARTH Act Regulations, Approved in 2025
+- topic: water-rights-settlement
+  value: enacted
+  detail: Congress enacted the Choctaw Nation of Oklahoma and the Chickasaw Nation Water Settlement in 2016 (Pub. L. No. 114-322), settling the water rights of Choctaw Nation of Oklahoma and Chickasaw Nation. (Congressional Research Service, R44148, Table 1).
+  source: public-law-114-322
+  confidence: high
+  verification: inferred
+  as_of: '2016'
+  locator: Congressional Research Service, R44148, Table 1, 2016
 jurisdiction_agreements:
 - kind: child-welfare-agreement
   other_party: Oklahoma Department of Human Services

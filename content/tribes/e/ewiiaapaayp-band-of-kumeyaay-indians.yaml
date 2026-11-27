@@ -19,6 +19,16 @@ recognition:
   verification: bulk-import
   as_of: '2026-01-30'
   locator: 91 Fed. Reg. 4103
+- type: federal
+  earliest_record: federal-list
+  legal_basis: Indian Entities Recognized and Eligible To Receive Services From the United States Bureau of Indian Affairs, 68 Fed. Reg. 68180, 68181 (Dec. 5, 2003)
+  since: '2003-12-05'
+  source: bia-recognized-entities-2003
+  confidence: medium
+  verification: bulk-import
+  as_of: '2003-12-05'
+  locator: 68 Fed. Reg. 68181 (entry "Ewiiaapaayp Band of Kumeyaay Indians, California (formerly the Cuyapaipe Community of Diegueno")
+  note: The earliest record this site has found that shows the United States dealing with the nation as a federally recognized nation. The relationship may be older. The list's entry reads "Ewiiaapaayp Band of Kumeyaay Indians, California (formerly the Cuyapaipe Community of Diegueno." The entry is matched to the nation by name.
 states:
 - state: CA
   presence: government-office

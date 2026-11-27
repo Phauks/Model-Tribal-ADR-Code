@@ -32,6 +32,16 @@ recognition:
   verification: bulk-import
   as_of: '2026-01-30'
   locator: 91 Fed. Reg. 4103
+- type: federal
+  earliest_record: treaty
+  legal_basis: Treaty with the Blackfeet, Oct. 17, 1855, 11 Stat. 657
+  since: '1855-10-17'
+  source: treaty-with-the-blackfeet-1855
+  confidence: medium
+  verification: inferred
+  as_of: '1855-10-17'
+  locator: p. 736 (Treaty with the Blackfeet, 1855; Kappler header "Oct. 17, 1855. | 11 Stat., 657. | Ratified Apr. 15, 1856. | Proclaimed Apr. 25, 1856.")
+  note: The earliest record this site has found that shows the United States dealing with the nation as a federally recognized nation. The relationship may be older. The treaty names the Piegan; Blackfeet; the nation's profile links it to the treaty by name, and the link has not yet been checked against a second source. 5 nations' profiles link this treaty.
 states:
 - state: MT
   presence: government-office
@@ -752,6 +762,14 @@ jurisdiction:
   verification: inferred
   as_of: '2012-05-02'
   locator: 'Table of approvals by Tribe, column "Regulatory Programs": "WQS Program"'
+- topic: water-rights-settlement
+  value: enacted
+  detail: Congress enacted the Blackfeet Water Rights Settlement Act in 2016 (Pub. L. No. 114-322), settling the water rights of Blackfeet Tribe. It quantifies 50,000 acre-feet a year in all and authorizes about $420.0 million in federal funds, as the Congressional Research Service counts it (R44148, Table 1).
+  source: public-law-114-322
+  confidence: high
+  verification: inferred
+  as_of: '2016'
+  locator: Congressional Research Service, R44148, Table 1, 2016
 jurisdiction_agreements:
 - kind: child-welfare-agreement
   other_party: Montana Department of Public Health and Human Services

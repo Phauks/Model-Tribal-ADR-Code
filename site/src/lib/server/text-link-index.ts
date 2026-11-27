@@ -7,7 +7,7 @@
  * - "pl:100-89" and "stat:101:666": a statute's page, by its Public Law
  *   number and its Statutes at Large page;
  * - "eo:8473": an executive order's page, by its number;
- * - "usc:25:5321": a Title 25 section's place on its chapter's page, and
+ * - "usc:25:5321": a Title 25 section's own page, and
  *   "cfr:25:83.1" and "cfr:25:83" a 25 C.F.R. section's or part's.
  *
  * Built with the site and written as private static files spread by key
@@ -19,6 +19,7 @@ import { casePreviewList } from './case-previews.ts';
 import { sources, type SourceRecord } from './content.ts';
 import { isLawRecord } from './law-records.ts';
 import { orderNumber } from './law-facts.ts';
+import { titleTwentyFiveSectionLink } from './code-outline.ts';
 import { allSections } from './title-25-sections.ts';
 import { citationsInText } from '../text-links.ts';
 
@@ -57,7 +58,8 @@ export function textLinkIndex(records: Iterable<SourceRecord> = sources().values
 	for (const [key, record] of Object.entries(lawOf)) index[key] = `/laws/${record}`;
 	for (const row of allSections('code')) {
 		const number = /§ (\S+?)\.(?:\s|$)/.exec(row.title)?.[1];
-		if (number) index[`usc:25:${number}`] = row.href;
+		// The section's own page where it has one (code-outline.ts), else its place on its chapter's page.
+		if (number) index[`usc:25:${number}`] = titleTwentyFiveSectionLink(number) ?? row.href;
 	}
 	for (const row of allSections('regulations')) {
 		const number = /§ (\S+?)\.(?:\s|$)/.exec(row.title)?.[1];

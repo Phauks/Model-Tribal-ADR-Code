@@ -11,6 +11,16 @@ recognition:
   verification: bulk-import
   as_of: '2026-01-30'
   locator: 91 Fed. Reg. 4104
+- type: federal
+  earliest_record: treaty
+  legal_basis: Treaty with the Quapaw, Aug. 24, 1818, 7 Stat. 176
+  since: '1818-08-24'
+  source: treaty-with-the-quapaw-1818
+  confidence: medium
+  verification: inferred
+  as_of: '1818-08-24'
+  locator: p. 160 (Treaty with the Quapaw, 1818; Kappler header "Aug. 24, 1818. | 7 Stat., 176. | Proclamation Jan. 5, 1819 [1818].")
+  note: The earliest record this site has found that shows the United States dealing with the nation as a federally recognized nation. The relationship may be older. The treaty names the Quapaw; the nation's profile links it to the treaty by name, and the link has not yet been checked against a second source.
 states:
 - state: OK
   presence: government-office

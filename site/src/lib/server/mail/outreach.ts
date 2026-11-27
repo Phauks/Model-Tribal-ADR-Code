@@ -536,6 +536,8 @@ export interface BatchSummary {
 	identifier: string;
 	name: string;
 	status: string;
+	/** Where the batch shows on the Outreach page: sending, scheduled (running, but its start is still ahead), draft, paused, done or cancelled. */
+	stage: BatchStage;
 	perDay: number;
 	windowStartHour: number;
 	windowEndHour: number;
@@ -544,19 +546,30 @@ export interface BatchSummary {
 	askAcknowledgment: boolean;
 	subject: string;
 	body: string;
+	templateIdentifier: string | null;
+	templateName: string | null;
 	templateVersion: number | null;
+	startsAt: string | null;
+	replyAddress: string | null;
+	audience: AudienceFilter | null;
 	createdAt: string;
+	updatedAt: string;
 	startedAt: string | null;
 	finishedAt: string | null;
 	counts: Record<string, number>;
 }
 
+export type BatchStage = 'sending' | 'scheduled' | 'draft' | 'paused' | 'done' | 'cancelled';
+
 export async function listBatches(context: MailContext): Promise<BatchSummary[]> {
-	const { results } = await context.database.prepare('SELECT * FROM outreach_batches ORDER BY created_at DESC LIMIT 100').all<BatchRow>();
+	const { results } = await context.database
+		.prepare(`SELECT b.*, t.name AS template_name FROM outreach_batches b LEFT JOIN mail_templates t ON t.identifier = b.template_identifier ORDER BY COALESCE(b.updated_at, b.created_at) DESC LIMIT 200`)
+		.all<BatchRow>();
 	const { results: counts } = await context.database
 		.prepare('SELECT batch_identifier AS batch, status, COUNT(*) AS count FROM outreach_recipients GROUP BY batch_identifier, status')
 		.all<{ batch: string; status: string; count: number }>();
-	return results.map((row) => summaryOf(row, counts.filter((item) => item.batch === row.identifier)));
+	const now = currentTime(context).toISOString();
+	return results.map((row) => summaryOf(row, counts.filter((item) => item.batch === row.identifier), now));
 }
 
 interface BatchRow {
@@ -576,13 +589,38 @@ interface BatchRow {
 	started_at: string | null;
 	finished_at: string | null;
 	created_by: string | null;
+	template_identifier: string | null;
+	template_name?: string | null;
+	starts_at: string | null;
+	reply_address: string | null;
+	audience: string | null;
+	updated_at: string | null;
 }
 
-function summaryOf(row: BatchRow, counts: { status: string; count: number }[]): BatchSummary {
+/** Where a batch shows on the Outreach page, at a time given as an ISO string. */
+export function stageOf(row: { status: string; starts_at: string | null }, now: string): BatchStage {
+	if (row.status === 'running') return row.starts_at && row.starts_at > now ? 'scheduled' : 'sending';
+	if (row.status === 'done') return 'done';
+	return row.status as BatchStage;
+}
+
+function audienceOf(value: string | null): AudienceFilter | null {
+	if (!value) return null;
+	try {
+		const parsed = JSON.parse(value) as Partial<AudienceFilter>;
+		return { tag: typeof parsed.tag === 'string' ? parsed.tag : null, label: typeof parsed.label === 'string' ? parsed.label : null, nationsOnly: parsed.nationsOnly !== false };
+	} catch {
+		// expected: the filter is written by this file as JSON; one that cannot be read shows as no filter, and the recipients already chosen stand.
+		return null;
+	}
+}
+
+function summaryOf(row: BatchRow, counts: { status: string; count: number }[], now: string): BatchSummary {
 	return {
 		identifier: row.identifier,
 		name: row.name,
 		status: row.status,
+		stage: stageOf(row, now),
 		perDay: row.per_day,
 		windowStartHour: row.window_start_hour,
 		windowEndHour: row.window_end_hour,
@@ -591,8 +629,14 @@ function summaryOf(row: BatchRow, counts: { status: string; count: number }[]): 
 		askAcknowledgment: row.ask_acknowledgment === 1,
 		subject: row.subject,
 		body: row.body,
+		templateIdentifier: row.template_identifier,
+		templateName: row.template_name ?? null,
 		templateVersion: row.template_version,
+		startsAt: row.starts_at,
+		replyAddress: row.reply_address,
+		audience: audienceOf(row.audience),
 		createdAt: row.created_at,
+		updatedAt: row.updated_at ?? row.created_at,
 		startedAt: row.started_at,
 		finishedAt: row.finished_at,
 		counts: Object.fromEntries(counts.map((item) => [item.status, item.count]))
@@ -600,7 +644,10 @@ function summaryOf(row: BatchRow, counts: { status: string; count: number }[]): 
 }
 
 export async function getBatch(context: MailContext, identifier: string) {
-	const row = await context.database.prepare('SELECT * FROM outreach_batches WHERE identifier = ?').bind(identifier).first<BatchRow>();
+	const row = await context.database
+		.prepare('SELECT b.*, t.name AS template_name FROM outreach_batches b LEFT JOIN mail_templates t ON t.identifier = b.template_identifier WHERE b.identifier = ?')
+		.bind(identifier)
+		.first<BatchRow>();
 	if (!row) return null;
 	const { results: recipients } = await context.database
 		.prepare(
@@ -608,7 +655,7 @@ export async function getBatch(context: MailContext, identifier: string) {
 			 r.sent_at AS sentAt, r.replied_at AS repliedAt, r.thread_identifier AS threadIdentifier, r.fields,
 			 m.delivery_status AS deliveryStatus, m.acknowledged_at AS acknowledgedAt, m.error
 			 FROM outreach_recipients r LEFT JOIN mail_messages m ON m.identifier = r.message_identifier
-			 WHERE r.batch_identifier = ? ORDER BY r.status = 'queued' DESC, r.name`
+			 WHERE r.batch_identifier = ? ORDER BY COALESCE(r.replied_at, r.sent_at) IS NULL, COALESCE(r.replied_at, r.sent_at) DESC, r.status = 'skipped', r.rowid`
 		)
 		.bind(identifier)
 		.all<{
@@ -630,7 +677,7 @@ export async function getBatch(context: MailContext, identifier: string) {
 	const counts = new Map<string, number>();
 	for (const recipient of recipients) counts.set(recipient.status, (counts.get(recipient.status) ?? 0) + 1);
 	return {
-		batch: summaryOf(row, [...counts].map(([status, count]) => ({ status, count }))),
+		batch: summaryOf(row, [...counts].map(([status, count]) => ({ status, count })), currentTime(context).toISOString()),
 		recipients: recipients.map(({ fields, ...rest }) => ({ ...rest, fields: JSON.parse(fields) as MergeValues }))
 	};
 }
@@ -652,10 +699,15 @@ export async function runOutreach(context: MailContext, carriers: MailCarriers, 
 	const at = currentTime(context);
 	const stamp = at.toISOString();
 	const dayAgo = new Date(at.getTime() - 86_400_000).toISOString();
-	const { results: batches } = await context.database.prepare(`SELECT * FROM outreach_batches WHERE status = 'running'`).all<BatchRow>();
-	// Outreach conversations are kept in the inbox its replies come to.
-	const outreachInbox = batches.length ? await inboxForArrival(context, outreach.replyTo) : null;
+	// A scheduled batch waits for its start.
+	const { results: batches } = await context.database
+		.prepare(`SELECT * FROM outreach_batches WHERE status = 'running' AND (starts_at IS NULL OR starts_at <= ?)`)
+		.bind(stamp)
+		.all<BatchRow>();
 	for (const batch of batches) {
+		// Outreach conversations are kept in the inbox its replies come to.
+		const replyTo = batch.reply_address ?? outreach.replyTo;
+		const outreachInbox = await inboxForArrival(context, replyTo);
 		const sentToday = await context.database
 			.prepare(`SELECT COUNT(*) AS count FROM outreach_recipients WHERE batch_identifier = ? AND sent_at >= ?`)
 			.bind(batch.identifier, dayAgo)
@@ -709,7 +761,7 @@ export async function runOutreach(context: MailContext, carriers: MailCarriers, 
 						threadIdentifier,
 						subject,
 						normalizeSubject(subject),
-						outreach.replyTo ?? outreach.from,
+						replyTo ?? outreach.from,
 						recipient.email,
 						recipient.name,
 						recipient.nation_identifier,
@@ -742,7 +794,7 @@ export async function runOutreach(context: MailContext, carriers: MailCarriers, 
 			]);
 			const outcome = await sendMessage(context, carriers, messageIdentifier, {
 				fromName: settings.senderName,
-				replyTo: outreach.replyTo,
+				replyTo,
 				headers: {
 					'List-Unsubscribe': `<${unsubscribeLink}/one-click>, <mailto:${unsubscribeAddress}?subject=unsubscribe>`,
 					'List-Unsubscribe-Post': 'List-Unsubscribe=One-Click'
@@ -791,4 +843,238 @@ export async function unsubscribeWithToken(context: MailContext, token: string, 
 	if (!row) return null;
 	await suppress(context, row.email, 'unsubscribed', { source });
 	return row.email;
+}
+
+// ---------------------------------------------------------------------------
+// The Outreach page's views, drafts and schedule (site/MAIL.md, "Outreach")
+// ---------------------------------------------------------------------------
+
+/** The numbers beside the Outreach page's views, counted as the inbox counts its own: what is under way or waits for someone. */
+export async function outreachCounts(context: MailContext): Promise<{ all: number; sending: number; scheduled: number; drafts: number; replies: number; followUp: number; doNotEmail: number }> {
+	const now = currentTime(context).toISOString();
+	const batches = await context.database
+		.prepare(
+			`SELECT COUNT(*) AS all_count,
+			 SUM(status = 'running' AND (starts_at IS NULL OR starts_at <= ?1)) AS sending,
+			 SUM(status = 'running' AND starts_at > ?1) AS scheduled,
+			 SUM(status = 'draft') AS drafts
+			 FROM outreach_batches WHERE status <> 'cancelled'`
+		)
+		.bind(now)
+		.first<{ all_count: number; sending: number | null; scheduled: number | null; drafts: number | null }>();
+	const replies = await context.database
+		.prepare(`SELECT COUNT(DISTINCT t.identifier) AS count FROM outreach_recipients r JOIN mail_threads t ON t.identifier = r.thread_identifier WHERE r.status = 'replied' AND t.unread = 1`)
+		.first<{ count: number }>();
+	const followUp = await context.database.prepare(`SELECT COUNT(*) AS count FROM (${followUpDueQuery})`).bind(now).first<{ count: number }>();
+	const doNotEmail = await context.database.prepare('SELECT COUNT(*) AS count FROM mail_suppressions').first<{ count: number }>();
+	return {
+		all: batches?.all_count ?? 0,
+		sending: batches?.sending ?? 0,
+		scheduled: batches?.scheduled ?? 0,
+		drafts: batches?.drafts ?? 0,
+		replies: replies?.count ?? 0,
+		followUp: followUp?.count ?? 0,
+		doNotEmail: doNotEmail?.count ?? 0
+	};
+}
+
+/** Sent letters with no reply whose batch's follow-up time has passed. ?1 is now, as an ISO string. */
+const followUpDueQuery = `SELECT r.identifier FROM outreach_recipients r JOIN outreach_batches b ON b.identifier = r.batch_identifier
+	WHERE r.status = 'sent' AND b.follow_up_days IS NOT NULL AND r.sent_at IS NOT NULL
+	AND datetime(r.sent_at, '+' || b.follow_up_days || ' days') <= datetime(?1)`;
+
+export interface OutreachConversation {
+	threadIdentifier: string;
+	batchIdentifier: string;
+	batchName: string;
+	name: string;
+	email: string;
+	nationIdentifier: string | null;
+	subject: string;
+	snippet: string | null;
+	unread: boolean;
+	/** When they replied, or when the letter went. */
+	at: string;
+}
+
+/** The conversations of outreach letters that were answered ("replies"), or that wait for a follow-up ("follow"), newest first. */
+export async function outreachConversations(context: MailContext, kind: 'replies' | 'follow', search: string | null = null): Promise<OutreachConversation[]> {
+	const now = currentTime(context).toISOString();
+	const words = search ? `%${search.replace(/[%_\\]/g, (character) => `\\${character}`)}%` : null;
+	const where =
+		kind === 'replies'
+			? `r.status = 'replied'`
+			: `r.identifier IN (${followUpDueQuery})`;
+	const { results } = await context.database
+		.prepare(
+			`SELECT t.identifier AS threadIdentifier, b.identifier AS batchIdentifier, b.name AS batchName, r.name, r.email, r.nation_identifier AS nationIdentifier,
+			 t.subject, (SELECT snippet FROM mail_messages m WHERE m.thread_identifier = t.identifier ORDER BY m.created_at DESC LIMIT 1) AS snippet,
+			 t.unread, COALESCE(r.replied_at, r.sent_at, t.last_message_at) AS at
+			 FROM outreach_recipients r JOIN outreach_batches b ON b.identifier = r.batch_identifier JOIN mail_threads t ON t.identifier = r.thread_identifier
+			 WHERE ${where} ${words ? `AND (t.subject LIKE ?2 ESCAPE '\\' OR r.name LIKE ?2 ESCAPE '\\' OR r.email LIKE ?2 ESCAPE '\\' OR b.name LIKE ?2 ESCAPE '\\')` : ''}
+			 ORDER BY at DESC LIMIT 200`
+		)
+		.bind(...[now, ...(words ? [words] : [])])
+		.all<Omit<OutreachConversation, 'unread'> & { unread: number }>();
+	return results.map((row) => ({ ...row, unread: row.unread === 1 }));
+}
+
+export interface BatchDraft {
+	/** The draft being continued, or null for a new one. */
+	identifier: string | null;
+	name: string;
+	templateIdentifier: string | null;
+	subject: string;
+	body: string;
+	perDay: number;
+	windowStartHour: number;
+	windowEndHour: number;
+	weekdaysOnly: boolean;
+	followUpDays: number | null;
+	askAcknowledgment: boolean;
+	startsAt: string | null;
+	replyAddress: string | null;
+	audience: AudienceFilter;
+}
+
+const clampWhole = (value: number, low: number, high: number, fallback: number) =>
+	Number.isFinite(value) ? Math.min(high, Math.max(low, Math.round(value))) : fallback;
+
+/**
+ * Saves a batch being written on the New batch page, as the inbox saves a
+ * message being written: a new draft the first time, the same one after.
+ * Only a batch that has not started can be saved this way. Returns its
+ * identifier and when it was saved.
+ */
+export async function saveBatchDraft(context: MailContext, personIdentifier: string, draft: BatchDraft): Promise<{ identifier: string; updatedAt: string }> {
+	const at = currentTime(context).toISOString();
+	const start = clampWhole(draft.windowStartHour, 0, 23, 9);
+	const end = Math.max(start + 1, clampWhole(draft.windowEndHour, 1, 24, 15));
+	let template: { identifier: string; version: number } | null = null;
+	if (draft.templateIdentifier) {
+		template = await context.database
+			.prepare('SELECT identifier, version FROM mail_templates WHERE identifier = ?')
+			.bind(draft.templateIdentifier)
+			.first<{ identifier: string; version: number }>();
+	}
+	const values = [
+		draft.name.slice(0, 120),
+		template?.identifier ?? null,
+		template?.version ?? null,
+		draft.subject.slice(0, 300),
+		draft.body.slice(0, 20_000),
+		clampWhole(draft.perDay, 1, 200, 40),
+		start,
+		Math.min(24, end),
+		draft.weekdaysOnly ? 1 : 0,
+		draft.followUpDays === null ? null : clampWhole(draft.followUpDays, 1, 90, 10),
+		draft.askAcknowledgment ? 1 : 0,
+		draft.startsAt,
+		draft.replyAddress,
+		JSON.stringify(draft.audience),
+		at
+	];
+	if (draft.identifier) {
+		const changed = await context.database
+			.prepare(
+				`UPDATE outreach_batches SET name = ?1, template_identifier = ?2, template_version = ?3, subject = ?4, body = ?5, per_day = ?6, window_start_hour = ?7,
+				 window_end_hour = ?8, weekdays_only = ?9, follow_up_days = ?10, ask_acknowledgment = ?11, starts_at = ?12, reply_address = ?13, audience = ?14, updated_at = ?15
+				 WHERE identifier = ?16 AND status = 'draft'`
+			)
+			.bind(...values, draft.identifier)
+			.run();
+		if (changed.meta.changes) return { identifier: draft.identifier, updatedAt: at };
+	}
+	const identifier = crypto.randomUUID();
+	await context.database
+		.prepare(
+			`INSERT INTO outreach_batches (name, template_identifier, template_version, subject, body, per_day, window_start_hour, window_end_hour, weekdays_only,
+			 follow_up_days, ask_acknowledgment, starts_at, reply_address, audience, updated_at, identifier, status, created_by, created_at)
+			 VALUES (?1, ?2, ?3, ?4, ?5, ?6, ?7, ?8, ?9, ?10, ?11, ?12, ?13, ?14, ?15, ?16, 'draft', ?17, ?15)`
+		)
+		.bind(...values, identifier, personIdentifier)
+		.run();
+	return { identifier, updatedAt: at };
+}
+
+/** Throws away a batch that never started, with any recipients it had. */
+export async function discardBatchDraft(context: MailContext, personIdentifier: string, identifier: string): Promise<boolean> {
+	const row = await context.database.prepare(`SELECT name FROM outreach_batches WHERE identifier = ? AND status = 'draft'`).bind(identifier).first<{ name: string }>();
+	if (!row) return false;
+	await context.database.batch([
+		context.database.prepare(`DELETE FROM outreach_batches WHERE identifier = ? AND status = 'draft'`).bind(identifier),
+		actionStatement(context, { personIdentifier, action: 'Discarded an outreach batch', batchIdentifier: identifier, note: row.name })
+	]);
+	return true;
+}
+
+/**
+ * Starts a draft or paused batch, at once or at a time given as an ISO
+ * string, or moves a scheduled batch's start to now ("Start now").
+ */
+export async function startBatch(context: MailContext, personIdentifier: string, identifier: string, startsAt: string | null): Promise<void> {
+	const at = currentTime(context).toISOString();
+	const later = startsAt && startsAt > at ? startsAt : null;
+	const batch = await context.database.prepare('SELECT subject, body FROM outreach_batches WHERE identifier = ?').bind(identifier).first<{ subject: string; body: string }>();
+	if (!batch) throw new OutreachError('No such batch.');
+	if (!batch.subject.trim() || !batch.body.trim()) throw new OutreachError('Write a subject and a message first.');
+	const unknown = unknownFields(`${batch.subject}\n${batch.body}`);
+	if (unknown.length) throw new OutreachError(`The message uses fields the site does not know: ${unknown.map((key) => `{{${key}}}`).join(', ')}.`);
+	const result = await context.database
+		.prepare(
+			`UPDATE outreach_batches SET status = 'running', starts_at = ?1, started_at = COALESCE(started_at, ?2), updated_at = ?2
+			 WHERE identifier = ?3 AND status IN ('draft', 'paused', 'running')`
+		)
+		.bind(later, at, identifier)
+		.run();
+	if (!result.meta.changes) throw new OutreachError('This batch can no longer be started.');
+	await actionStatement(context, { personIdentifier, action: later ? 'Scheduled an outreach batch' : 'Started an outreach batch', batchIdentifier: identifier }).run();
+}
+
+/** A new draft with the same message, pace and audience as another batch, and no recipients yet. */
+export async function copyBatch(context: MailContext, personIdentifier: string, identifier: string): Promise<string> {
+	const found = await getBatch(context, identifier);
+	if (!found) throw new OutreachError('No such batch.');
+	const batch = found.batch;
+	const copy = await saveBatchDraft(context, personIdentifier, {
+		identifier: null,
+		name: `${batch.name} (copy)`,
+		templateIdentifier: batch.templateIdentifier,
+		subject: batch.subject,
+		body: batch.body,
+		perDay: batch.perDay,
+		windowStartHour: batch.windowStartHour,
+		windowEndHour: batch.windowEndHour,
+		weekdaysOnly: batch.weekdaysOnly,
+		followUpDays: batch.followUpDays,
+		askAcknowledgment: batch.askAcknowledgment,
+		startsAt: null,
+		replyAddress: batch.replyAddress,
+		audience: batch.audience ?? { tag: null, label: null, nationsOnly: true }
+	});
+	return copy.identifier;
+}
+
+/**
+ * About when a sending batch's next letter goes: the next five-minute run
+ * inside the sending hours of the first waiting recipient's time zone. It is
+ * a guide for the list, not a promise: the daily limit can hold it back.
+ */
+export function nextSendAt(batch: { windowStartHour: number; windowEndHour: number; weekdaysOnly: boolean; startsAt: string | null }, timeZone: string, now: Date): Date | null {
+	const window = { window_start_hour: batch.windowStartHour, window_end_hour: batch.windowEndHour, weekdays_only: batch.weekdaysOnly ? 1 : 0 };
+	let at = new Date(Math.max(now.getTime(), batch.startsAt ? new Date(batch.startsAt).getTime() : 0));
+	at = new Date(Math.ceil(at.getTime() / 300_000) * 300_000);
+	for (let step = 0; step < 8 * 24 * 12; step += 1) {
+		if (insideWindow(at, timeZone, window)) return at;
+		at = new Date(at.getTime() + 300_000);
+	}
+	return null;
+}
+
+/** Gives a batch a new name. */
+export async function renameBatch(context: MailContext, personIdentifier: string, identifier: string, name: string): Promise<void> {
+	await context.database.batch([
+		context.database.prepare('UPDATE outreach_batches SET name = ?, updated_at = ? WHERE identifier = ?').bind(name.slice(0, 120), currentTime(context).toISOString(), identifier),
+		actionStatement(context, { personIdentifier, action: 'Renamed an outreach batch', batchIdentifier: identifier, note: name.slice(0, 120) })
+	]);
 }

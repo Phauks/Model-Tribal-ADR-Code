@@ -88,6 +88,12 @@ export const essayCaseNamesFile = 'essay-case-names';
  */
 export const textLinkFiles: SpreadFiles = { name: 'text-links', count: 64 };
 
+/**
+ * Each search result's copy, citation and nation, by the result's link, which the Worker reads when a
+ * reader downloads several results at once (src/lib/server/search-selection.ts).
+ */
+export const searchSelectionFiles: SpreadFiles = { name: 'search-selection', count: 256 };
+
 /** Spreads records over a set's files, as the build writes them. */
 export function spreadRecords<T>(set: SpreadFiles, records: Record<string, T>): Record<string, T>[] {
 	const files: Record<string, T>[] = Array.from({ length: set.count }, () => ({}));

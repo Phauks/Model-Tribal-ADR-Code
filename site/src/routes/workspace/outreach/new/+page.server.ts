@@ -5,58 +5,71 @@ import { fillTemplate, outreachText } from '#lib/mail.ts';
 import {
 	addRecipients,
 	addressBookRecipients,
-	createBatch,
 	fieldsFor,
+	getBatch,
 	listTemplates,
 	OutreachError,
 	outreachAudience,
 	outreachReadiness,
+	saveBatchDraft,
 	sendOutreachTest,
-	setBatchStatus,
+	startBatch,
 	timeZoneForStates,
 	type AudienceFilter
 } from '#lib/server/mail/outreach.ts';
 import { mailCarriers, mailContext } from '#lib/server/mail/runtime.ts';
-import { formText, requirePermission } from '#lib/server/workspace.ts';
+import { listSavedReplies, listSignatures } from '#lib/server/mail/writing.ts';
+import { requirePermission } from '#lib/server/workspace.ts';
+import { draftOf, filterOf, hasFilter, replyChoicesOf } from './batch-form.ts';
 import type { Actions, PageServerLoad } from './$types';
 
-// New outreach batch (site/MAIL.md, "Outreach"; design/email-inbox, mockup
-// 3): 1 Who, 2 Message, 3 Pace and send, on one page. Who is read from the
-// address book with the reasons anyone is left out; the message can be
-// changed from its template; the preview steps through each recipient's
-// letter; "Send a test to me" and "Start the batch" both go only once the
-// outreach mailbox is set up.
+// New batch (site/MAIL.md, "Outreach"; design/outreach-redesign, approved by
+// Trevor on Nov. 27, 2026): the inbox's box for writing mail, made for a
+// batch. To is who in the address book it reaches, with who is left out and
+// why; Replies to is the inbox its replies arrive in; the template's words
+// can be changed for this batch; and the bar starts or schedules it, sets the
+// pace and the follow-up, sends a test, and previews each letter. What is
+// written saves itself as a draft (../drafts/save/+server.ts).
 export const prerender = false;
 
 const nationsByIdentifier = new Map(mailNations.map((nation) => [nation.identifier, nation]));
-const labels = ['general-office', 'leader', 'state-listed'] as const;
-
-function filterOf(values: URLSearchParams | FormData): AudienceFilter {
-	const read = (name: string) => {
-		const value = values.get(name);
-		return typeof value === 'string' ? value : null;
-	};
-	const label = read('label');
-	return {
-		tag: read('tag')?.trim().slice(0, 60) || null,
-		label: label && (labels as readonly string[]).includes(label) ? label : null,
-		// Contacts linked to a nation, unless "Every contact" is chosen.
-		nationsOnly: read('nations') !== 'any'
-	};
-}
 
 export const load: PageServerLoad = async (event) => {
 	const person = requirePermission(event, 'send-outreach');
 	const context = mailContext();
-	const filter = filterOf(event.url.searchParams);
+	const asked = event.url.searchParams.get('batch');
+	const found = asked ? await getBatch(context, asked.slice(0, 100)) : null;
+	const draft = found && found.batch.status === 'draft' ? found.batch : null;
+	if (found && !draft) redirect(303, `/workspace/outreach/${found.batch.identifier}`);
+	const filter: AudienceFilter = hasFilter(event.url.searchParams) || !draft?.audience ? filterOf(event.url.searchParams) : draft.audience;
 	const audience = await outreachAudience(context, filter, today());
 	const everyone = await addressBookRecipients(context);
 	const site = context.settings.siteAddress ?? 'https://example.org';
+	const replies = await replyChoicesOf(context);
+	const [templates, signatures, savedReplies] = await Promise.all([listTemplates(context), listSignatures(context), listSavedReplies(context)]);
 	return {
 		filter,
+		draft: draft
+			? {
+					identifier: draft.identifier,
+					name: draft.name,
+					templateIdentifier: draft.templateIdentifier,
+					subject: draft.subject,
+					body: draft.body,
+					perDay: draft.perDay,
+					windowStartHour: draft.windowStartHour,
+					windowEndHour: draft.windowEndHour,
+					weekdaysOnly: draft.weekdaysOnly,
+					followUpDays: draft.followUpDays,
+					askAcknowledgment: draft.askAcknowledgment,
+					startsAt: draft.startsAt,
+					replyAddress: draft.replyAddress,
+					updatedAt: draft.updatedAt
+				}
+			: null,
 		tags: [...new Set(everyone.flatMap((contact) => contact.tags))].sort(),
-		templates: (await listTemplates(context)).map(({ identifier, name, version, subject, body }) => ({ identifier, name, version, subject, body })),
-		recipients: audience.recipients.map((contact) => {
+		templates: templates.map(({ identifier, name, version, subject, body }) => ({ identifier, name, version, subject, body })),
+		recipients: audience.recipients.slice(0, 1000).map((contact) => {
 			const nation = contact.nationIdentifier ? (nationsByIdentifier.get(contact.nationIdentifier) ?? null) : null;
 			return {
 				name: contact.name,
@@ -64,10 +77,15 @@ export const load: PageServerLoad = async (event) => {
 				fields: fieldsFor(contact, nation, context.settings.siteAddress, person.displayName)
 			};
 		}),
+		recipientCount: audience.recipients.length,
 		leftOut: audience.leftOut,
 		problems: outreachReadiness(context, mailCarriers(context)),
 		mailbox: context.settings.outreach?.from ?? null,
-		testAddress: person.email,
+		replyChoices: replies.choices,
+		replyTo: draft?.replyAddress ?? replies.fallback,
+		signatures,
+		savedReplies: savedReplies.map(({ identifier, name, body }) => ({ identifier, name, body })),
+		senderName: person.displayName,
 		links: {
 			unsubscribeLink: `${site}/mail/unsubscribe/…`,
 			unsubscribeAddress: `unsubscribe+…@${context.settings.domain ?? 'example.org'}`,
@@ -76,28 +94,20 @@ export const load: PageServerLoad = async (event) => {
 	};
 };
 
-function whole(form: FormData, name: string, fallback: number, low: number, high: number): number {
-	const value = Number(formText(form, name, 10) ?? fallback);
-	return Number.isFinite(value) ? Math.min(high, Math.max(low, Math.round(value))) : fallback;
-}
-
 export const actions: Actions = {
-	/** "Send a test to me": the letter one recipient would get, sent to the person preparing the batch. */
+	/** "Send a test to me": the letter one recipient would get, sent to the person writing the batch. */
 	test: async (event) => {
 		const person = requirePermission(event, 'send-outreach');
 		const context = mailContext();
 		const form = await event.request.formData();
-		const subject = formText(form, 'subject', 300) ?? '';
-		const body = formText(form, 'body', 20_000) ?? '';
+		const subject = typeof form.get('subject') === 'string' ? String(form.get('subject')).slice(0, 300) : '';
+		const body = typeof form.get('body') === 'string' ? String(form.get('body')).slice(0, 20_000) : '';
 		if (!subject.trim() || !body.trim()) return fail(400, { problem: 'Write a subject and a message first.' });
-		const filter = filterOf(form);
-		const audience = await outreachAudience(context, filter, today());
-		const showing = whole(form, 'showing', 0, 0, Math.max(0, audience.recipients.length - 1));
+		const audience = await outreachAudience(context, filterOf(form), today());
+		const showing = Math.min(Math.max(0, Number(form.get('showing')) || 0), Math.max(0, audience.recipients.length - 1));
 		const contact = audience.recipients[showing];
 		const nation = contact?.nationIdentifier ? (nationsByIdentifier.get(contact.nationIdentifier) ?? null) : null;
-		const fields = contact
-			? fieldsFor(contact, nation, context.settings.siteAddress, person.displayName)
-			: { 'sender.name': person.displayName };
+		const fields = contact ? fieldsFor(contact, nation, context.settings.siteAddress, person.displayName) : { 'sender.name': person.displayName };
 		const site = context.settings.siteAddress ?? '';
 		try {
 			await sendOutreachTest(context, mailCarriers(context), {
@@ -116,56 +126,40 @@ export const actions: Actions = {
 		return { done: `A test went to ${person.email}.` };
 	},
 
-	/** Makes the batch with everyone shown, then starts it, or keeps it as a draft with "Save without starting". */
-	create: async (event) => {
+	/**
+	 * Starts the batch, or schedules it when a start time is set: saves it,
+	 * adds everyone the address book shows, and sets it going. Nothing is sent
+	 * until the outreach mailbox is set up (outreachReadiness), so a batch can
+	 * be scheduled before then.
+	 */
+	start: async (event) => {
 		const person = requirePermission(event, 'send-outreach');
 		const context = mailContext();
 		const form = await event.request.formData();
-		const start = form.get('start') === 'yes';
-		const template = formText(form, 'template', 100);
-		const subject = formText(form, 'subject', 300) ?? '';
-		const body = formText(form, 'body', 20_000) ?? '';
-		if (!template) return fail(400, { problem: 'Choose a template.' });
-		if (start) {
-			const problems = outreachReadiness(context, mailCarriers(context));
-			if (problems.length) return fail(400, { problem: `Not ready to send: ${problems.join(' ')} Save it without starting for now.` });
-		}
-		const filter = filterOf(form);
-		const audience = await outreachAudience(context, filter, today());
-		if (start && audience.recipients.length === 0) return fail(400, { problem: 'No one in the address book matches.' });
-		const followUp = form.get('followUp') === 'yes';
+		const draft = draftOf(form, (await replyChoicesOf(context)).choices.map((choice) => choice.value));
+		if (!draft.templateIdentifier) return fail(400, { problem: 'Choose a template.' });
+		if (!draft.subject.trim() || !draft.body.trim()) return fail(400, { problem: 'Write a subject and a message first.' });
+		const audience = await outreachAudience(context, draft.audience, today());
+		if (audience.recipients.length === 0) return fail(400, { problem: 'No one in the address book matches.' });
 		let identifier: string;
 		try {
-			identifier = await createBatch(context, person.identifier, {
-				name: formText(form, 'name', 120) || `Outreach, ${today()}`,
-				templateIdentifier: template,
-				subject,
-				body,
-				perDay: whole(form, 'perDay', 40, 1, 200),
-				windowStartHour: whole(form, 'windowStart', 9, 0, 23),
-				windowEndHour: whole(form, 'windowEnd', 15, 1, 24),
-				weekdaysOnly: form.get('weekdaysOnly') === 'yes',
-				followUpDays: followUp ? whole(form, 'followUpDays', 10, 1, 90) : null,
-				askAcknowledgment: form.get('askAcknowledgment') === 'yes'
-			});
-			if (audience.recipients.length) {
-				await addRecipients(
-					context,
-					identifier,
-					audience.recipients.map((contact) => {
-						const nation = contact.nationIdentifier ? (nationsByIdentifier.get(contact.nationIdentifier) ?? null) : null;
-						return {
-							contactIdentifier: contact.contactIdentifier,
-							nationIdentifier: contact.nationIdentifier,
-							email: contact.email,
-							name: contact.name,
-							fields: fieldsFor(contact, nation, context.settings.siteAddress, person.displayName),
-							timeZone: timeZoneForStates(nation?.states ?? [])
-						};
-					})
-				);
-			}
-			if (start) await setBatchStatus(context, person.identifier, identifier, 'running');
+			identifier = (await saveBatchDraft(context, person.identifier, draft)).identifier;
+			await addRecipients(
+				context,
+				identifier,
+				audience.recipients.map((contact) => {
+					const nation = contact.nationIdentifier ? (nationsByIdentifier.get(contact.nationIdentifier) ?? null) : null;
+					return {
+						contactIdentifier: contact.contactIdentifier,
+						nationIdentifier: contact.nationIdentifier,
+						email: contact.email,
+						name: contact.name,
+						fields: fieldsFor(contact, nation, context.settings.siteAddress, person.displayName),
+						timeZone: timeZoneForStates(nation?.states ?? [])
+					};
+				})
+			);
+			await startBatch(context, person.identifier, identifier, draft.startsAt);
 		} catch (problem) {
 			if (problem instanceof OutreachError) return fail(400, { problem: problem.message });
 			throw problem;

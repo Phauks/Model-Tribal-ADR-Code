@@ -162,9 +162,13 @@ export interface DocumentFileOptions {
 }
 
 /** The Text card's details for one served copy. */
-export function documentFile(copy: Pick<PublicCopy, 'key' | 'mediaType' | 'sha256' | 'bytes' | 'links'> & Partial<Pick<PublicCopy, 'captured' | 'namesReplaced' | 'pages'>>, options: DocumentFileOptions): DocumentFile {
+export function documentFile(
+	copy: Pick<PublicCopy, 'key' | 'mediaType' | 'sha256' | 'bytes' | 'links'> & Partial<Pick<PublicCopy, 'captured' | 'namesReplaced' | 'pages'>> & { name?: string },
+	options: DocumentFileOptions
+): DocumentFile {
 	const file = copyPath(copy);
-	const name = fileName(file);
+	// The name the file is saved under (src/lib/readable-file-names.ts), else the last part of its address.
+	const name = copy.name || fileName(file);
 	const original = copy.links.at(-1) ?? copy.links[0];
 	const host = original ? hostOf(original) : undefined;
 	const extension = extensions[copy.mediaType] ?? (name.includes('.') ? name.slice(name.lastIndexOf('.')) : '');

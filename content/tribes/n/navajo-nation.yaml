@@ -11,6 +11,16 @@ recognition:
   verification: bulk-import
   as_of: '2026-01-30'
   locator: 91 Fed. Reg. 4104
+- type: federal
+  earliest_record: treaty
+  legal_basis: Treaty with the Navaho, Sept. 9, 1849, 9 Stat. 974
+  since: '1849-09-09'
+  source: treaty-with-the-navaho-1849
+  confidence: medium
+  verification: inferred
+  as_of: '1849-09-09'
+  locator: p. 583 (Treaty with the Navaho, 1849; Kappler header "Sept. 9, 1849. | 9 Stat., 974. | Ratified Sept. 9, 1850. | Proclaimed Sept. 24, 1850.")
+  note: The earliest record this site has found that shows the United States dealing with the nation as a federally recognized nation. The relationship may be older. The treaty names the Navajo; the nation's profile links it to the treaty by name, and the link has not yet been checked against a second source.
 states:
 - state: AZ
   presence: government-office
@@ -960,6 +970,22 @@ jurisdiction:
   verification: inferred
   as_of: '2026-10-21'
   locator: 'Table of approvals by Tribe, column "Regulatory Programs with an Enforcement Component": "NPDES Program; PWSS Program; UIC Program"'
+- topic: water-rights-settlement
+  value: enacted
+  detail: Congress enacted the Northwestern New Mexico Rural Water Projects Act (Navajo-Gallup Water Supply Project and Navajo Nation water rights) in 2009 (Pub. L. No. 111-11), settling the water rights of Navajo Nation. It quantifies 535,330 acre-feet a year in all and authorizes about $984.1 million in federal funds, as the Congressional Research Service counts it (R44148, Table 1).
+  source: public-law-111-11
+  confidence: high
+  verification: inferred
+  as_of: '2009'
+  locator: Congressional Research Service, R44148, Table 1, 2009
+- topic: water-rights-settlement
+  value: enacted
+  detail: Congress enacted the Navajo Utah Water Rights Settlement Act of 2020 in 2020 (Pub. L. No. 116-260), settling the water rights of Navajo Nation. It quantifies 81,500 acre-feet a year in all and authorizes about $210.4 million in federal funds, as the Congressional Research Service counts it (R44148, Table 1).
+  source: public-law-116-260
+  confidence: high
+  verification: inferred
+  as_of: '2020'
+  locator: Congressional Research Service, R44148, Table 1, 2020
 jurisdiction_agreements:
 - kind: cross-deputization
   other_party: Arizona Department of Public Safety

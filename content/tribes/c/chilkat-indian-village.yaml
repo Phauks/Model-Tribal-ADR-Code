@@ -22,6 +22,19 @@ recognition:
   as_of: '2026-01-30'
   locator: 91 Fed. Reg. 4105
   note: 'The notice adds in parentheses: Klukwan.'
+- type: federal
+  earliest_record: constitution
+  legal_basis: Constitution of the Chilkat Indian Village (approved by the Secretary of the Interior Mar. 4, 1941), under the Act of May 1, 1936, ch. 254, § 1, 49 Stat. 1250, 1250
+  since: '1941-03-04'
+  source: university-of-oklahoma-indian-reorganization-act-chilcons
+  document_version:
+    document: chilkat-indian-village-constitution
+    version: 1941-text
+  confidence: medium
+  verification: inferred
+  as_of: '1941-03-04'
+  locator: 1941 constitution and bylaws, approval certificate
+  note: The earliest record this site has found that shows the United States dealing with the nation as a federally recognized nation. The relationship may be older. The Secretary of the Interior approved the nation's constitution; the date is read by rule from the approval certificate.
 states:
 - state: AK
   presence: government-office

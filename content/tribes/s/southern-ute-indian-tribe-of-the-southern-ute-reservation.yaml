@@ -11,6 +11,16 @@ recognition:
   verification: bulk-import
   as_of: '2026-01-30'
   locator: 91 Fed. Reg. 4105
+- type: federal
+  earliest_record: treaty
+  legal_basis: Treaty with the Utah, Dec. 30, 1849, 9 Stat. 984
+  since: '1849-12-30'
+  source: treaty-with-the-utah-1849
+  confidence: medium
+  verification: inferred
+  as_of: '1849-12-30'
+  locator: p. 585 (Treaty with the Utah, 1849; Kappler header "Dec. 30, 1849. | 9 Stats., 984. | Ratified, Sept. 9, 1850. | Proclaimed, Sept. 9, 1850.")
+  note: The earliest record this site has found that shows the United States dealing with the nation as a federally recognized nation. The relationship may be older. The treaty names the Utah; the nation's profile links it to the treaty by name, and the link has not yet been checked against a second source. 3 nations' profiles link this treaty.
 states:
 - state: CO
   presence: government-office
@@ -764,6 +774,14 @@ jurisdiction:
   verification: inferred
   as_of: '2026-10-21'
   locator: 'Table of approvals by Tribe, column "Regulatory Programs with an Enforcement Component": "NSPS; NESHAP; Operating Permit Program"'
+- topic: water-rights-settlement
+  value: enacted
+  detail: Congress enacted the Colorado Ute Water Rights Settlement of 1988 in 1988, amended 2000 (Pub. L. No. 100-585, Pub. L. No. 106-554), settling the water rights of Southern Ute, Ute Mountain Ute Tribes (and Navajo Nation). It quantifies 70,000 acre-feet a year in all and authorizes about $49.5 million in federal funds, as the Congressional Research Service counts it (R44148, Table 1).
+  source: public-law-100-585
+  confidence: high
+  verification: inferred
+  as_of: '1988'
+  locator: Congressional Research Service, R44148, Table 1, 1988
 nearby_state_courts:
 - state: CO
   county: La Plata County
