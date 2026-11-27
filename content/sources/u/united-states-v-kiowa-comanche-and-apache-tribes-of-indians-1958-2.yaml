@@ -38,7 +38,7 @@ topics:
 - federal-court-indian-law
 found_in:
 - 2026-11-26-federal-court-indian-law-opinions
-notes: Published at 166 F. Supp. 939. Decided by the United States Court of Claims on Oct. 8, 1958. Found by scripts/caselaw/state_court_opinions.py in the Caselaw Access Project's volumes, with an Indian law term score of 7; an AI reader read excerpts and judged it an Indian law case (Indian Claims Commission offsets).
+notes: Published at 166 F. Supp. 939; 143 Ct. Cl. 545. Decided by the United States Court of Claims on Oct. 8, 1958. Found by scripts/caselaw/state_court_opinions.py in the Caselaw Access Project's volumes, with an Indian law term score of 7; an AI reader read excerpts and judged it an Indian law case (Indian Claims Commission offsets).
 review:
   status: unverified
   by: scripts/caselaw/state_court_opinions.py
@@ -49,4 +49,4 @@ review:
     detail: 'score 7; reader: Indian Claims Commission offsets'
   - check: Nations named in the caption, matched to nation records by name
     result: agree
-    detail: 1 matched, 0 not linked
+    detail: 0 matched, 0 not linked

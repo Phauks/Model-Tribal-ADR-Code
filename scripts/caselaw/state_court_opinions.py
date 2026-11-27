@@ -208,8 +208,158 @@ def sensitivity(case: dict) -> str:
     for name in (case.get("name_abbreviation"), case.get("name")):
         if any(INITIALS_PARTY.match(side) for side in re.split(r"\bv\.?\s", name or "")):
             return "child or protected person"
+    # Juvenile cases in the federal courts often give a first name and an initial (United States v. Bernard S.),
+    # unless the full caption shows it is a shortened name with a surname (Charles E. and Carol M. SAUNOOKE).
+    short = case.get("name_abbreviation") or ""
+    if any(FIRST_NAME_INITIAL.match(side.strip()) for side in re.split(r"\bv\.?\s", short)) and not caption_surname(case):
+        return "child or protected person"
     hits = SENSITIVE_TEXT.findall(case_text(case))
-    return "child or protected person" if len(hits) >= 3 else ""
+    if len(hits) >= 3:
+        return "child or protected person"
+    # Federal criminal and civil rights cases about a child: a juvenile defendant, a child victim, a foster placement.
+    # Added after the review of Nov. 27, 2026, when readers found 107 shown opinions like these.
+    return "child or protected person" if len(CHILD_TEXT.findall(case_text(case))) >= 3 else ""
+
+
+FIRST_NAME_INITIAL = re.compile(r"^(?:In re )?[A-Z][a-z]+ [A-Z]\.$")
+CHILD_TEXT = re.compile(
+    r"Juvenile Delinquency Act|18 U\.S\.C\. ?§+ ?503[1-9]|juvenile delinquen|adjudicated (?:a )?delinquent|\bJuvenile (?:Male|Female)\b|"
+    r"sexual abuse of a minor|abusive sexual contact with a (?:child|minor)|aggravated sexual abuse of a child|child pornography|"
+    r"parental rights|Indian Child Welfare Act|foster (?:care|home)|guardian ad litem", re.I)
+
+
+def caption_surname(case: dict) -> str:
+    """The first party's surname in the full caption, where the court printed it in capitals (Charles E. SAUNOOKE)."""
+    first = re.split(r"\s+v\.?\s+", case.get("name") or "", maxsplit=1)[0]
+    given = (first.split() or [""])[0].upper()
+    for found in re.finditer(r"\b([A-Z][A-Z'’-]{2,})\b", first):
+        if found.group(1) != given and found.group(1) not in {"THE", "AND", "INC", "LLC", "USA"}:
+            return found.group(1)
+    return ""
+
+
+# Captions. The Caselaw Access Project's short names sometimes drop a nation's name ("Tribe v. Connecticut") or a
+# surname ("Charles E. v. United States"), CourtListener's short names are sometimes a surname alone ("Brewer"),
+# and some of its full names are in capitals. case_title rebuilds those from the full caption.
+ORGANIZATION = re.compile(
+    r"\b(?:Inc|LLC|L\.L\.C|Corp|Corporation|Co|Company|Ltd|LLP|Tribes?|Nation|Band|Indians?|Community|Village|Pueblo|Rancheria|"
+    r"County|City|State|States|Town|Department|Dep't|Dept|Bureau|Board|Commission|Authority|Agency|Services?|Office|Bank|"
+    r"University|College|School|District|Council|Association|Ass'n|Church|Hospital|Center|Trust|Fund|Group|Holdings|Partners|"
+    r"Enterprises?|Casino|Club|Union|Federation|Society|Foundation|Institute|Committee|Project|Coalition|Republic|Government|"
+    r"Court|Secretary|Administration|Corps|America|Reservation|Railroad|Railway|Insurance|Industries|Systems|Oil|Gas|Energy|"
+    r"Mining|Power|Electric|Water|Land|Farms?|Ranch|Estate|Heirs|Doe|Roe|Incorporated|Limited|Trustees?|Plan|Program|Facility|"
+    r"Police|Sheriff|Clinic|Health|Housing|Development|Management|Solutions|Finance|Credit|Lending|Financial|Capital|River|"
+    r"Irrigation|Lake|Creek|Valley|Mountain|Springs|Ditch|Canal|Partnership|Against|Friends|Citizens|Concerned|Alliance|"
+    r"Defense|Network|Save|Protect|Advocates|Defenders|Action|Watch|Keepers|Neighbors|Residents|Voters|Taxpayers|People)\b", re.I)
+HONORIFIC = re.compile(r"^(?:Hon\.|Honorable|Rev\.|Reverend|Dr\.|Sgt\.|Lt\.|Capt\.|Officer|Deputy|Sheriff|Warden|Judge|Mr\.|Ms\.|Mrs\.)\s+")
+PERSON_WORD = re.compile(r"^(?:[A-Z][A-Za-z'’-]+|(?:[A-Z]\.)+|[A-Z]|Mc[A-Z][a-z]+|de|De|La|Le|Van|van|von|Von|del|Del)$")
+SUFFIX = re.compile(r"^(?:Jr|Sr|II|III|IV)\.?$")
+SMALL_WORDS = {"a", "an", "and", "as", "at", "by", "de", "del", "ex", "for", "in", "of", "on", "or", "rel.", "the", "to", "v.", "vs.", "re"}
+KEEP_CAPITALS = {"LLC", "LLP", "USA", "BIA", "IHS", "EPA", "NLRB", "FBI", "FDIC", "II", "III", "IV", "PLLC", "NA", "TK"}
+GENERIC_LEAD = re.compile(r"^(Tribes?|Nation|Band|Indians|Community|Village)\b")
+
+
+def tidy_capitals(text: str) -> str:
+    """A caption printed in capitals, in title case ("WALTON v. UPROVA CREDIT LLC" to "Walton v. Uprova Credit LLC")."""
+    def word(token: str, first: bool) -> str:
+        bare = token.strip(",.;:()")
+        if bare in KEEP_CAPITALS or re.fullmatch(r"(?:[A-Z]\.){2,}", bare) or any(ch.isdigit() for ch in token):
+            return token
+        if token.lower() in SMALL_WORDS and not first:
+            return token.lower()
+        if bare.upper() == "INC":
+            return token.replace(bare, "Inc")
+        return "-".join(part[:1].upper() + (part[1:2].upper() + part[2:].lower() if part[1:2] in ("'", "’") else part[1:].lower()) for part in token.split("-"))
+    return " ".join(word(token, index == 0) for index, token in enumerate(text.split()))
+
+
+def shouting(text: str) -> bool:
+    letters = [ch for ch in text if ch.isalpha()]
+    return len(letters) > 6 and sum(ch.isupper() for ch in letters) / len(letters) > 0.8
+
+
+def is_person(side: str) -> bool:
+    tokens = [token.strip(",") for token in side.split()]
+    return (2 <= len(tokens) <= 5 and not ORGANIZATION.search(side)
+            and all(PERSON_WORD.match(token) or SUFFIX.match(token) for token in tokens)
+            and not re.fullmatch(r"(?:[A-Z]\.?)+", [token for token in tokens if not SUFFIX.match(token)][-1]))
+
+
+def short_side(side: str) -> str:
+    """One party of a full caption as a short caption gives it: the first party named, a person by surname alone."""
+    side = re.split(r";|,? (?:et al\b\.?|in (?:his|her|their|its) (?:official |individual )?capacit|individually\b|on behalf of\b|a/k/a\b|"
+                    r"aka\b|d/b/a\b|as (?:next friend|guardian|trustee|personal representative|administrat|executor|parent)|"
+                    r"a (?:political|federally|municipal|corporation|sovereign))", side.strip(), maxsplit=1, flags=re.I)[0]
+    side = re.split(r",\s+(?!(?:Inc|Incorporated|LLC|L\.L\.C|Ltd|Co|Corp|N\.A|P\.C|LLP|PLLC|L\.P|Jr|Sr|II|III)\b)", side.strip(" ,"), maxsplit=1)[0]
+    side = re.sub(r"\s*[“\"][^”\"]+[”\"]", "", side)  # a nickname in quotation marks
+    pieces = re.split(r"\s+and\s+", side)
+    if len(pieces) == 2 and (is_person(pieces[0]) or is_person(pieces[1]) or re.match(r"(?:the )?(?:State|City|County|Town|Commonwealth|United States)\b", pieces[1])):
+        side = pieces[0]
+    side = re.sub(r"\bUnited States of America\b|^U\.?S\.?A\.?$", "United States", side.strip(" ,"))
+    side = re.sub(r"^(?:The|the) ", "", HONORIFIC.sub("", side))
+    side = re.sub(r"^(?:State|Commonwealth) of (?=[A-Z][a-z]+(?: [A-Z][a-z]+)?$)", "", side)  # Bluebook rule 10.2.1(f)
+    if is_person(side):
+        return [token.strip(",") for token in side.split() if not SUFFIX.match(token.strip(","))][-1]
+    return side
+
+
+def case_title(case: dict) -> str:
+    """The caption a record gives a case: the short caption, rebuilt from the full one where the short one lost words."""
+    docket_notes = re.compile(r"\s*\((?:DO NOT FILE|ALL FILINGS)[^)]*\)?|\s+(?:LEAD )?DOCKET IN THIS CASE ONLY\b.*$")  # a clerk's filing notes
+    def clean(name: str) -> str:
+        name = " ".join((name or "").split())
+        return docket_notes.sub("", name).rstrip(" .") if docket_notes.search(name) else name
+    short, full = clean(case.get("name_abbreviation")), clean(case.get("name"))
+    title = short or full
+    versus = re.compile(r"\s+v\.?\s+", re.I)
+    if full and versus.search(full) and not versus.search(short) and not re.match(r"(?:In re|Ex parte|Matter of|In the Matter)\b", short, re.I):
+        title = " v. ".join(short_side(side) for side in versus.split(full, maxsplit=1))
+    elif full and (lead := GENERIC_LEAD.match(short)):
+        first = re.split(r",|\s+v\.?\s+", full, maxsplit=1)[0].strip()
+        if first.lower().endswith(lead.group(1).lower()) and len(first.split()) > 1:
+            first = re.sub(r"^(?:The|the) ", "", tidy_capitals(first) if shouting(first) else
+                           " ".join(tidy_capitals(token) if token.isupper() and len(token) > 3 and token not in KEEP_CAPITALS else token for token in first.split()))
+            title = first + short[len(lead.group(1)):]
+    elif full and (person := re.match(r"^([A-Z][a-z]+ [A-Z]\.)( v\. .*)$", short)) and caption_surname(case):
+        title = caption_surname(case).title() + person.group(2)
+    if shouting(title):
+        title = tidy_capitals(title)
+        if versus.search(title) and not re.match(r"(?:In re|Ex parte|Matter of|In the Matter)\b", title, re.I):
+            title = " v. ".join(short_side(side) for side in versus.split(title, maxsplit=1))
+    return title
+
+
+# Court names. The Caselaw Access Project files some District of Columbia district court opinions under the court
+# of appeals and spells a few courts more than one way; CourtListener's divisions are left out.
+COURT_SPELLINGS = {
+    "United States Court of Appeals for the Six Circuit": "United States Court of Appeals for the Sixth Circuit",
+    "United States District Court for the Central District of South Dakota": "United States District Court for the District of South Dakota",
+    "United States District Court for the District of the Virgin Islands": "District Court of the Virgin Islands",
+}
+
+
+def court_title(name: str, reporter: str = "", year: int = 0) -> str:
+    """One spelling for each court, and the court a reporter's series shows for the District of Columbia's opinions."""
+    name = " ".join((name or "").split())
+    if found := re.match(r"^United States District Court, D\. ([A-Z][A-Za-z. ]+?)(?:, [A-Z][a-z]+ Division)?$", name):
+        name = f"United States District Court for the District of {found.group(1)}"
+    name = COURT_SPELLINGS.get(name, name)
+    if name == "United States Court of Appeals for the District of Columbia" and (year >= 1948 or reporter.startswith("F. Supp")):
+        name = "United States Court of Appeals for the District of Columbia Circuit"  # its name from 1948
+    if reporter.startswith("F. Supp") and name == "United States Court of Appeals for the District of Columbia Circuit":
+        name = "United States District Court for the District of Columbia"
+    if reporter in ("F.2d", "F.3d", "F.4th", "F. App'x") and year > 1933 and name == "United States District Court for the District of Columbia":
+        name = "United States Court of Appeals for the District of Columbia Circuit"
+    return name
+
+
+# A word every nation shares is not a nation's name ("Arapahoe & Shoshone Tribes" once linked the Confederated Salish
+# and Kootenai Tribes through "Tribes" alone).
+GENERIC_NATION_NAMES = {"tribe", "tribes", "nation", "nations", "band", "bands", "indian", "indians", "dakota", "community", "village", "tribal"}
+
+
+def specific_names(named: list[dict]) -> list[dict]:
+    return [entry for entry in named if entry["named_as"].strip().lower() not in GENERIC_NATION_NAMES]
 
 
 def candidates(work: Path) -> list[dict]:
@@ -356,6 +506,12 @@ RELEASE_CHECK = {"check": "Privacy: no child or protected person named in the op
 # filing around a word about children, minors, victims, custody or abuse, by two or three readers.
 GOVINFO_RELEASE_NOTE = ("It was held at first for a privacy review because its text uses words about children or protected persons; "
                         "readings on Nov. 27, 2026 of every passage of the court's filing about children, victims or custody found no child or protected person named, so it is shown.")
+# The CourtListener opinions whose text is in CourtListener's bulk files (scripts/caselaw/courtlistener_federal_opinions.py),
+# read again on Nov. 27, 2026 in the passages around words about children, custody, victims or wards.
+BULK_RELEASE_NOTE = ("It was held at first for a privacy review because its text uses words about children or protected persons; "
+                     "a reading on Nov. 27, 2026 of the passages of CourtListener's text around those words found no child or protected person named, so it is shown.")
+BULK_RELEASE_CHECK = {"check": "Privacy: no child or protected person named in the opinion", "result": "agree",
+                      "detail": "an AI reading of the passages about children, victims or custody in CourtListener's text, Nov. 27, 2026; released from the privacy hold"}
 GOVINFO_RELEASE_CHECK = {"check": "Privacy: no child or protected person named in the opinion", "result": "agree",
                          "detail": "two or three AI readings of every passage about children, victims or custody in GovInfo's copy, Nov. 27, 2026; released from the privacy hold"}
 RIGHTS_NOTE = ("The text of a judicial opinion has no copyright (Georgia v. Public.Resource.Org, Inc., 590 U.S. 255 (2020)). "
@@ -472,6 +628,57 @@ def existing_citations(session: str = "") -> tuple[set[str], set[str], dict[str,
     return keys, cites, ours
 
 
+def privacy_reviews(private: Path) -> dict[str, str]:
+    """Readers' privacy choices by case id ("hold" or "show"), kept outside git with the held list (privacy-reviews.json)."""
+    path = private / "privacy-reviews.json"
+    return json.loads(path.read_text(encoding="utf-8")) if path.exists() else {}
+
+
+REPORTER_RANK = ["F.", "F.2d", "F.3d", "F.4th", "F. Supp.", "F. Supp. 2d", "F. Supp. 3d", "F. App'x", "Ct. Cl.", "Cl. Ct.", "Fed. Cl."]
+
+
+def shingles(text: str, size: int = 8) -> set[int]:
+    words = re.findall(r"[a-z0-9]+", text.lower())
+    every = (hash(" ".join(words[at:at + size])) for at in range(0, max(1, len(words) - size + 1)))
+    return {value for value in every if value % 4 == 0}  # a quarter of them, the same quarter in both texts
+
+
+def same_text(one: set[int], other: set[int]) -> bool:
+    return bool(one and other) and len(one & other) / min(len(one), len(other)) >= 0.75
+
+
+def parallel_reports(rows: list[dict], work: Path) -> dict:
+    """Cases that are one opinion: the same caption, date and court and nearly the same text, as when the Court of
+    Claims' opinions are printed in both the Court of Claims Reports and the Federal Reporter, or CourtListener has a
+    filing twice. The record keeps the Federal Reporter's (or the first) copy and lists every citation."""
+    def load(row: dict) -> dict:
+        return json.loads((work / "cases" / row["reporter"] / row["volume"] / row["file"]).read_text())
+
+    def reporter(case: dict) -> str:
+        found = parse_cite(((case.get("citations") or [{}])[0] or {}).get("cite") or "")
+        return found[1] if found else ""
+
+    groups: dict[tuple, list[dict]] = {}
+    for row in rows:
+        groups.setdefault(((row["name"] or "").lower(), row["date"], row["court"]), []).append(row)
+    duplicates, citations = set(), {}
+    for group in (group for group in groups.values() if len(group) > 1):
+        cases = {row["id"]: load(row) for row in group}
+        order = sorted(group, key=lambda row: (REPORTER_RANK.index(reporter(cases[row["id"]])) if reporter(cases[row["id"]]) in REPORTER_RANK else len(REPORTER_RANK), str(row["id"])))
+        texts = {row["id"]: shingles(case_text(cases[row["id"]])) for row in order}
+        for at, keeper in enumerate(order):
+            if keeper["id"] in duplicates:
+                continue
+            for other in order[at + 1:]:
+                # Two opinions in the same reporter (an opinion and its amended version) stay two records.
+                one, two = reporter(cases[keeper["id"]]), reporter(cases[other["id"]])
+                parallel = one != two or "courtlistener" in (keeper["reporter"], other["reporter"])
+                if other["id"] not in duplicates and parallel and same_text(texts[keeper["id"]], texts[other["id"]]):
+                    duplicates.add(other["id"])
+                    citations.setdefault(keeper["id"], []).extend(c.get("cite") for c in cases[other["id"]].get("citations", []) if c.get("cite"))
+    return {"duplicates": duplicates, "citations": citations}
+
+
 def write(args: argparse.Namespace) -> None:
     """Write a source record and file an opinion page for each selected case; list held ones privately."""
     import csv  # noqa: PLC0415
@@ -508,12 +715,17 @@ def write(args: argparse.Namespace) -> None:
         overrides = json.loads((ROOT / "research" / "capture-index-overrides.json").read_text(encoding="utf-8"))
     written, skipped, held, released_count, public_rows, private_rows = 0, 0, 0, 0, [], []
     pages = []
+    reviews = privacy_reviews(Path(args.private))
+    also = parallel_reports(rows, work)  # one opinion printed in two reporters, or filed twice: one record, both citations
     if args.file:
         from copy_links import CitationLinks  # noqa: PLC0415
         citation_links = CitationLinks()
     for row in rows:
+        if row["id"] in also["duplicates"]:
+            continue
         case = json.loads((work / "cases" / row["reporter"] / row["volume"] / row["file"]).read_text())
         cite_list = [c.get("cite") for c in case.get("citations", []) if c.get("cite")]
+        cite_list += [cite for cite in also["citations"].get(row["id"], []) if cite not in cite_list]
         court_name = (case.get("court") or {}).get("name") or row["court"] or ""
         if any(" ".join(cite.split()) in cites for cite in cite_list) or court_name == "Supreme Court of the United States":
             skipped += 1  # held already; every Supreme Court Native case has its own record
@@ -521,6 +733,10 @@ def write(args: argparse.Namespace) -> None:
         reason = sensitivity(case)
         if reason == "estate" and (args.show_estates or (args.estates_from and int((row["date"] or "0")[:4] or 0) < args.estates_from)):
             reason = ""  # an older estate: shown, per the choice recorded in decision record 0060
+        if reviews.get(str(row["id"])) == "hold":
+            reason = "child or protected person"  # a reader found a child or protected person (privacy-reviews.json)
+        elif reviews.get(str(row["id"])) == "show" and reason == "child or protected person":
+            reason = ""  # a reader found none, though the text uses words about children
         choice = selected[row["id"]]
         released = row["id"] in cleared  # held by the first run; a text read again elsewhere may score differently
         if released:
@@ -531,7 +747,7 @@ def write(args: argparse.Namespace) -> None:
                                  "court": row["court"], "date": row["date"], "reason": reason, "link": source_link(row)})
             continue
         year = (row["date"] or "0000")[:4]
-        base = f"{slug(case.get('name_abbreviation') or 'case')}-{year}"
+        base = f"{slug(case_title(case) or 'case')}-{year}"
         key = base
         if source_link(row) in ours:
             key = ours[source_link(row)].stem
@@ -546,16 +762,18 @@ def write(args: argparse.Namespace) -> None:
         jurisdiction = (case.get("jurisdiction") or {}).get("name_long") or ""
         territorial = "Terr" in jurisdiction or "Territory" in (row["court"] or "")
         named, not_linked = nations.propose(case.get("name") or case.get("name_abbreviation") or "")
+        named = specific_names(named)
         if federal:
             # The tier 2 scripts' shared matcher (scripts/law/nation_names.py) also knows each nation's other names and the Gaming Commission's.
             for nation, named_as in names.named(case.get("name_abbreviation") or case.get("name") or ""):
-                if nation not in {n["nation"] for n in named}:
+                if nation not in {n["nation"] for n in named} and named_as.strip().lower() not in GENERIC_NATION_NAMES:
                     named.append({"nation": nation, "named_as": named_as, "role": "party",
                                   "note": "Matched by the script to a name the nation record gives; not yet checked."})
                     not_linked = [n for n in not_linked if named_as.lower() not in n["named_as"].lower() and n["named_as"].lower() not in named_as.lower()]
         date_parts = [int(part) for part in (row["date"] or year).split("-") if part]
         link = source_link(row)
-        citation = {"type": "legal_case", "title": case.get("name_abbreviation"), "authority": (case.get("court") or {}).get("name")}
+        citation = {"type": "legal_case", "title": case_title(case),
+                    "authority": court_title((case.get("court") or {}).get("name"), first[1] if first else "", int(year or 0))}
         if first:
             citation.update({"container-title": first[1], "volume": first[0], "page": first[2]})
         citation.update({"issued": {"date-parts": [date_parts]}, "URL": link, "accessed": {"date-parts": [[int(part) for part in today.split("-")]]}})
@@ -584,14 +802,14 @@ def write(args: argparse.Namespace) -> None:
                       + f"Decided by the {citation['authority']}" + (f" on {readable(row['date'])}" if row["date"] else "")
                       + (". Found by scripts/caselaw/courtlistener_federal_opinions.py and scripts/caselaw/state_court_opinions.py in CourtListener's bulk files" if from_courtlistener(row)
                          else ". Found by scripts/caselaw/state_court_opinions.py in the Caselaw Access Project's volumes") + f", with {how}."
-                      + (" " + (GOVINFO_RELEASE_NOTE if row.get("pdf") else RELEASE_NOTE) if released else "")
+                      + (" " + (GOVINFO_RELEASE_NOTE if row.get("pdf") else BULK_RELEASE_NOTE if row.get("bulk") else RELEASE_NOTE) if released else "")
                       + (f" Its copy is the court's own filing, from GovInfo's United States Courts Opinions ({row['granule']}); CourtListener's page is {row['courtlistener']}." if row.get("pdf") else "")),
             "review": {"status": "unverified", "by": "scripts/caselaw/state_court_opinions.py", "date": today, "checks": [
                 {"check": "Indian law case: the term score and, below the score kept without a reading, an AI reader's judgment of excerpts",
                  "result": "agree", "detail": ("in CourtListener's text" if row.get("pdf") else f"score {row['score']}") + (f"; reader: {choice.get('topic', '')}" if choice["how"] == "reader" else "; kept because a party is a Native nation or organization" if choice["how"] == "caption" else "")},
                 {"check": "Nations named in the caption, matched to nation records by name", "result": "agree" if not not_linked else "missing",
                  "detail": f"{len(named)} matched, {len(not_linked)} not linked"}]
-                + ([GOVINFO_RELEASE_CHECK if row.get("pdf") else RELEASE_CHECK] if released else [])},
+                + ([GOVINFO_RELEASE_CHECK if row.get("pdf") else BULK_RELEASE_CHECK if row.get("bulk") else RELEASE_CHECK] if released else [])},
         }
         if record["jurisdictions"][0]["level"] == "territory":
             record["jurisdictions"][0] = {"level": "other", "note": "Indian Territory" if "Indian Territory" in court_name else jurisdiction or "Territorial court"}
@@ -699,7 +917,11 @@ def release(args: argparse.Namespace) -> None:
     # CourtListener opinions: the text and copy come from GovInfo (--govinfo, a JSON map of id to package,
     # granule, docket and the downloaded PDF and its text), since CourtListener's text needs a token.
     govinfo = json.loads(Path(args.govinfo).read_text(encoding="utf-8")) if args.govinfo else {}
-    cleared = [row for row in cleared if not row["id"].startswith("cl-") or row["id"] in govinfo]
+    # Or from the bulk files' text that the first run read (--earlier, that run's candidates.jsonl, beside its cases folder).
+    earlier = {}
+    if args.earlier:
+        earlier = {str(json.loads(line)["id"]): json.loads(line) for line in open(args.earlier, encoding="utf-8")}
+    cleared = [row for row in cleared if not row["id"].startswith("cl-") or row["id"] in govinfo or row["id"] in earlier]
     found = re.compile(re.escape(STATIC) + r"/([^/]+)/(\d+)/html/([^/]+)\.html$")
 
     def scored(case: dict) -> dict:
@@ -723,9 +945,17 @@ def release(args: argparse.Namespace) -> None:
                       "pdf": found_at["pdf"], "pdf_link": f"https://www.govinfo.gov/content/pkg/{found_at['package']}/pdf/{found_at['granule']}.pdf",
                       "granule": found_at["granule"], "courtlistener": row["link"]}
 
+    def from_bulk_files(row: dict) -> tuple[dict, dict]:
+        first = dict(earlier[row["id"]], bulk=True)
+        source = Path(args.earlier).parent / "cases" / first["reporter"] / first["volume"] / first["file"]
+        path = work / "cases" / first["reporter"] / first["volume"] / first["file"]
+        path.parent.mkdir(parents=True, exist_ok=True)
+        path.write_bytes(source.read_bytes())
+        return json.loads(source.read_text(encoding="utf-8")), first
+
     def fetch(row: dict) -> tuple[dict, dict]:
         if row["id"].startswith("cl-"):
-            return from_govinfo(row)
+            return from_govinfo(row) if row["id"] in govinfo else from_bulk_files(row)
         match = found.match(row["link"])
         if not match:
             raise SystemExit(f"not a Caselaw Access Project link: {row['id']}")
@@ -797,6 +1027,7 @@ def main() -> None:
     p.add_argument("--file", action="store_true", help="also file each opinion page in the bucket and the capture index")
     p = sub.add_parser("release")
     p.add_argument("--cleared", required=True, help="private CSV outside git (columns id, link, decision) of held cases a read check cleared")
+    p.add_argument("--earlier", help="the first run's candidates.jsonl, for CourtListener cases whose bulk-file text is in its cases folder")
     p.add_argument("--govinfo", help="JSON map of CourtListener ids to their GovInfo package, granule, docket, PDF and text (outside git)")
     p.add_argument("--work", required=True)
     p.add_argument("--auto", type=int, default=10)
