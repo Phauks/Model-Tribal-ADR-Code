@@ -1,6 +1,6 @@
 // Runs axe-core on every built page, in the light and the dark theme
 // (site/DESIGN.md, section 9). Run from site/ after `npm run build`:
-//   node tools/check-accessibility.mjs [--pages /,/nations/map] [--workers 2] [--shard 1/4]
+//   node tools/check-accessibility.mjs [--pages /,/nations/map | --pages-file pages.txt] [--workers 2] [--shard 1/4]
 //
 // The prerendered pages are served from the build output by a small local
 // server and opened in Chromium through Playwright. Each page is checked
@@ -23,18 +23,21 @@
 //
 // --shard K/N (or ACCESSIBILITY_SHARD) checks every Nth page starting at the
 // Kth, so N CI jobs can split the pages between them and finish sooner.
+// --pages-file reads the pages to check from a file, one per line; pull
+// requests pass the list tools/accessibility-scope.mjs picks.
 //
 // Set CHROMIUM_PATH to use a Chromium that is already installed. Set
 // ACCESSIBILITY_WORKERS (or pass --workers) to change how many pages are
 // checked at once; the default leaves one processor for the browser and server.
 
 import { createServer } from 'node:http';
-import { existsSync, readdirSync, statSync } from 'node:fs';
+import { existsSync, readFileSync, statSync } from 'node:fs';
 import { readFile } from 'node:fs/promises';
 import { availableParallelism } from 'node:os';
 import path from 'node:path';
 import { chromium } from 'playwright';
 import { axeViolations, describeViolation, themes, waitUntilSettled } from './accessibility-rules.mjs';
+import { pagePaths } from './built-pages.mjs';
 
 const output = path.resolve('.svelte-kit/cloudflare/client');
 
@@ -105,20 +108,6 @@ function fileFor(pathname) {
 	return undefined;
 }
 
-function pagePaths(folder = output) {
-	const found = [];
-	for (const name of readdirSync(folder)) {
-		const full = path.join(folder, name);
-		if (statSync(full).isDirectory()) {
-			if (name !== '_app') found.push(...pagePaths(full));
-		} else if (name.endsWith('.html')) {
-			const relative = path.relative(output, full).replace(/\\/g, '/').replace(/\.html$/, '');
-			found.push(relative === 'index' ? '/' : `/${relative.replace(/\/index$/, '')}`);
-		}
-	}
-	return found.sort();
-}
-
 /** Rejects with `message` if `promise` has not settled within `milliseconds`. */
 function withLimit(promise, milliseconds, message) {
 	let timer;
@@ -129,12 +118,18 @@ function withLimit(promise, milliseconds, message) {
 }
 
 const pagesArgument = argument('--pages');
+const pagesFile = argument('--pages-file');
 const shardArgument = argument('--shard') ?? process.env.ACCESSIBILITY_SHARD;
 const [shardNumber, shardCount] = (shardArgument ?? '1/1').split('/').map(Number);
 if (!(shardCount >= 1 && shardNumber >= 1 && shardNumber <= shardCount)) {
 	throw new Error(`--shard must look like 2/4, not ${shardArgument}`);
 }
-const pages = (pagesArgument ? pagesArgument.split(',') : pagePaths()).filter(
+const listed = pagesArgument
+	? pagesArgument.split(',')
+	: pagesFile
+		? readFileSync(pagesFile, 'utf8').split('\n').filter(Boolean)
+		: pagePaths(output);
+const pages = listed.filter(
 	(_, index) => index % shardCount === shardNumber - 1
 );
 
