@@ -6,16 +6,22 @@
 // Nothing it finds is published without a person.
 //
 // Workers Builds deploys it from the GitHub repository (site/watch/README.md,
-// "Setting it up"): root directory site/watch, build command
-// cd .. && npm ci && npm run watch:index, deploy command npx wrangler deploy.
+// "Setting it up"): root directory site/watch, build command cd .. && npm ci,
+// deploy command npx wrangler deploy. Wrangler itself makes the index of
+// known records before it bundles (the "build" below), so a deploy works
+// whatever the dashboard's build command says after npm ci.
 // No secret is stored here or in GitHub (decision record 0006); the models
 // are reached through the AI binding.
 {
 	"$schema": "../node_modules/wrangler/config-schema.json",
-	"name": "tribal-law-project-watch",
+	"name": "tribal-law-project-radar",
 	"main": "worker.ts",
 	"compatibility_date": "2026-11-20",
 	"compatibility_flags": ["nodejs_compat"],
+	// Writes known-identifiers.json, which worker.ts bundles; run from site/.
+	"build": {
+		"command": "cd .. && npm run watch:index"
+	},
 	// A public address for the read-only progress page (counts and each
 	// watcher's last run; never an item's title or text).
 	"workers_dev": true,
@@ -39,7 +45,7 @@
 	// One Workflows instance per watcher run, so each step is retried on its own.
 	"workflows": [
 		{
-			"name": "tribal-law-project-watch-run",
+			"name": "tribal-law-project-radar-run",
 			"binding": "watchRuns",
 			"class_name": "WatchRun"
 		}
@@ -48,15 +54,15 @@
 	"d1_databases": [
 		{
 			"binding": "database",
-			"database_name": "model-tribal-adr-code",
-			"database_id": "2386ebd3-cea2-4ca1-9fff-0772fcd8bc6b",
+			"database_name": "tribal-law-project",
+			"database_id": "eeb27102-f50e-40ff-bebd-5347c5c055c7",
 			"migrations_dir": "../migrations"
 		}
 	],
 	"r2_buckets": [
 		{
 			"binding": "sourceDocuments",
-			"bucket_name": "model-tribal-adr-code-sources"
+			"bucket_name": "tribal-law-project-files"
 		}
 	],
 	// The models that sort what the rules cannot decide: Workers AI, run by

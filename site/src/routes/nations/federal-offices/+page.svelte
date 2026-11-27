@@ -17,7 +17,7 @@
 	<title>Federal offices · Nations · Tribal Law Project</title>
 </svelte:head>
 
-<Breadcrumbs trail={[{ label: 'Nations', href: '/nations' }]} />
+<Breadcrumbs trail={[{ label: 'Nations', href: '/nations' }]} current="Federal offices that serve Native nations" />
 
 <h1>Federal offices that serve Native nations</h1>
 

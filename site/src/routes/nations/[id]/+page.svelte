@@ -165,7 +165,7 @@
 <!-- For someone on the nation's team: Edit, History and Your nation's team in the masthead (decision record 0041). -->
 {#if !page.withdrawn}<NationPageControls nation={page.id} />{/if}
 
-<Breadcrumbs trail={[{ label: 'Nations', href: '/nations' }]} />
+<Breadcrumbs trail={[{ label: 'Nations', href: '/nations' }]} current={page.officialName} />
 
 <!--
 	A record page (site/DESIGN.md, "Record pages", "Nation pages"): the text on
@@ -575,7 +575,8 @@
 <!-- 3. At a glance, with the seal and the map, then the contacts. -->
 {#snippet glance()}
 	{#if data.glance.length > 0 || data.map}
-		<GlancePanel>
+		<!-- On a phone the first facts show and the rest, with the map, wait behind "Show all" (GlancePanel.svelte). -->
+		<GlancePanel facts={data.glance.length} more={data.map ? 'the map' : undefined}>
 			{#snippet picture()}
 				{#if data.image && !imageFailed}
 					<!-- Selecting the seal opens it larger, as on Wikipedia (src/lib/image-viewer.ts). -->
@@ -604,7 +605,7 @@
 			<FactGroups groups={data.glance} />
 			<div class="nation-slot" data-nation-slot="glance"></div>
 			{#if data.map}
-				<div class="glance-map">
+				<div class="glance-map" data-glance-more>
 					<NationMap map={data.map} nationName={page.officialName} />
 				</div>
 			{/if}

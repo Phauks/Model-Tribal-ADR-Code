@@ -59,8 +59,7 @@ declare module 'virtual:source-citations' {
 }
 
 declare module 'virtual:essay-library' {
-	/** The full citation, as HTML in the project's Indigo Book style, of every source record, by key. */
-	export const essayCitations: Record<string, string>;
+	// The full citation of every source record is read on request instead (src/lib/server/essay-citations.ts).
 	/** Glossary terms by id, for every entry that has a page. */
 	export const essayTerms: Record<string, string>;
 	/** The lines under each case or law box's heading, as [label, HTML] pairs. */
@@ -101,6 +100,12 @@ declare module 'cloudflare:workers' {
 	export const env: WorkerEnvironment;
 	/** Keeps the Worker running until the promise settles, after the response has gone (at most 30 seconds). */
 	export function waitUntil(promise: Promise<unknown>): void;
+	/** The Worker's own edge cache (Workers Cache), for purging what it keeps (src/lib/server/edge-cache.ts). Missing where the runtime has none. */
+	export const cache:
+		| {
+				purge(options: { tags?: string[]; pathPrefixes?: string[]; purgeEverything?: boolean }): Promise<{ success: boolean; errors: { code: number; message: string }[] }>;
+		  }
+		| undefined;
 }
 
 declare module 'virtual:followable-pages' {

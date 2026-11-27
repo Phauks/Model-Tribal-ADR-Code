@@ -197,9 +197,24 @@ function isAttribution(inline) {
   return /^\[@[^\]]+\](?:\s+\([^()]+\))?$/.test((inline.content || "").trim());
 }
 
+// The words of inline tokens without their marks, for alternative text.
+function plainText(children, glossary) {
+  const words = (child) => {
+    if (child.type === "softbreak" || child.type === "hardbreak") return " ";
+    if (child.type === "text" || child.type === "code_inline") return child.content;
+    if (child.type === "term_link") return child.meta.text || glossary?.get(child.meta.id)?.term || child.meta.id;
+    return "";
+  };
+  return children
+    .map(words)
+    .join("")
+    .replace(/\s+/g, " ");
+}
+
 export class ChapterWriter {
-  constructor({ citations, glossary, printedGlossaryIds, notes = "footnotes", chapterIndex = 0, sourceRecords = new Map(), nationNames = new Map(), peopleIds = new Set(), boxedKeys = new Set() }) {
+  constructor({ citations, glossary, printedGlossaryIds, notes = "footnotes", chapterIndex = 0, sourceRecords = new Map(), nationNames = new Map(), peopleIds = new Set(), boxedKeys = new Set(), pictures = new Map() }) {
     this.citations = citations;
+    this.pictures = pictures;
     this.sourceRecords = sourceRecords;
     this.nationNames = nationNames;
     this.peopleIds = peopleIds;
@@ -244,7 +259,18 @@ export class ChapterWriter {
   }
 
   blocks(nodes) {
-    return nodes.map((node) => this.block(node)).filter((text) => text !== "").join("\n\n");
+    const out = [];
+    let afterPicture = false;
+    for (const node of nodes) {
+      let text = this.block(node);
+      // The paragraph after a picture keeps its first-line indent, since the
+      // picture may float to the next page and leave the two paragraphs
+      // side by side (figure-picture in typst/book.typ).
+      if (afterPicture && node.type === "paragraph" && this.document.kind === KINDS.essay && text) text = `#after-picture[${text}]`;
+      afterPicture = text.startsWith("#figure-picture(");
+      if (text !== "") out.push(text);
+    }
+    return out.join("\n\n");
   }
 
   block(node) {
@@ -307,12 +333,16 @@ export class ChapterWriter {
         return `#analysis-block(${title ? `[${separateCalls(shown)}]` : "none"})[${this.blocks(node.children)}]`;
       }
       case "container_figure": {
-        // The book cannot play a video or a recording, and pictures wait on a
-        // print copy of each file, so a figure prints as a box with its
-        // caption, description, credit and transcript, and where to find it.
+        // The book cannot play a video or a recording, so those print as a
+        // box with their caption, description, credit and transcript, and
+        // where to find them. A picture prints from its grayscale print copy
+        // (pictures.mjs) with its caption and credit under it, as on the
+        // website; without a copy it prints as a box too.
         const [, kind, address = ""] = token.info.trim().split(/\s+/);
         // A chart prints as its table, the same numbers the website draws as bars.
         if (kind === "chart") return `#figure-block("Chart", none)[${this.blocks(node.children)}]`;
+        const picture = kind === "picture" ? this.pictures.get(address) : undefined;
+        if (picture && picture.file) return this.picture(node, picture);
         const label = { picture: "Picture", video: "Video", sound: "Sound recording" }[kind];
         const youtube = /(?:youtu\.be\/|[?&]v=|\/(?:embed|shorts|live)\/)([A-Za-z0-9_-]{11})/.exec(address);
         const where = youtube
@@ -323,7 +353,7 @@ export class ChapterWriter {
       case "container_description":
         return `#case-part("Description")[${this.blocks(node.children)}]`;
       case "container_credit":
-        return `#figure-credit[${this.blocks(node.children)}]`;
+        return `#${this.inPicture ? "picture-credit" : "figure-credit"}[${this.blocks(node.children)}]`;
       case "container_transcript":
         return `#case-part("Transcript")[${this.blocks(node.children)}]`;
       case "container_alternative": {
@@ -342,6 +372,24 @@ export class ChapterWriter {
       default:
         throw new Error(`${this.document.file}: Markdown "${node.type}" is not supported in the print edition`);
     }
+  }
+
+  // A picture and what is written under it. Its description is the
+  // picture's alternative text in the PDF, as on the website, where it is the
+  // image's alt text; a description with a citation or note prints as a
+  // part instead, so no note goes missing.
+  picture(node, picture) {
+    const parts = node.children;
+    const description = parts.find((child) => child.type === "container_description");
+    const inlines = description ? description.children.flatMap((child) => child.children).filter((child) => child.type === "inline") : [];
+    const hasNotes = inlines.some((inline) => inline.token.children.some((child) => child.type === "citation" || child.type === "footnote_ref"));
+    const alternative = hasNotes ? "" : inlines.map((inline) => plainText(inline.token.children, this.glossary)).join(" ").trim();
+    const shown = parts.filter((child) => child !== description || hasNotes);
+    const ratio = Math.round((picture.width / picture.height) * 10000) / 10000;
+    this.inPicture = true;
+    const text = this.blocks(shown);
+    this.inPicture = false;
+    return `#figure-picture(layout, ${typstString(`/${picture.file}`)}, ${ratio}, ${alternative ? typstString(alternative) : "none"})[${text}]`;
   }
 
   isTight(list) {

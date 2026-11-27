@@ -20,23 +20,30 @@ The records take the name from the cover sheet and the date from the
 decision's own "Decided" line, and the check step compares both with the
 index.
 
-Probate appeals ("Estate of ..."; 1,424 in the index) name people who died
-and their heirs. Until Trevor decides how to show them (project chat,
-Nov. 26, 2026), they get the handling the Tribal court opinions about
-children got (decision record 0057): their copies are stored but never
-served (redistribution "no"), no record is written, and no name of theirs
-is written anywhere in the repository: research/ibia/held-back.csv lists
-them by citation and date only. Any other decision whose cover sheet names a
-minor or a guardianship is held back the same way.
+A decision about a child or a protected person gets the handling the Tribal
+court opinions about children got (decision record 0057): its copy is
+stored but never served (redistribution "no"), no record is written, and no
+name of its parties is written anywhere in the repository:
+research/ibia/held-back.csv lists them by citation and date only. That is a
+decision whose name speaks of a minor or a guardianship, and a probate
+appeal ("Estate of ...") whose text is about a child or a protected person:
+a minor heir or child, a guardian, a conservator, custody, child support,
+or at least three mentions of adoption, the Indian Child Welfare Act or the
+like (the rule the state court estate cases follow, PR #538). Trevor chose
+on Nov. 26, 2026 to show the other probate appeals like any other decision
+(project thread "Collect state court Indian law opinions and Oklahoma
+compacts"); they were held until then.
 
 Steps:
   fetch    Download every PDF into --work/pdf and extract its first two
            pages' text into --work/head.
-  check    Read each cover sheet and compare it with the index. Writes
+  check    Read each cover sheet and compare it with the index, and read the
+           whole text of each probate appeal for the child rule. Writes
            research/reviews/ibia-decisions-check.csv (no names for held-back
            decisions) and --work/decisions.json.
   file     Store each PDF in the bucket and add it to the capture index
-           (research/capture-index.csv).
+           (research/capture-index.csv). A file already in the index whose
+           held status changed gets its row updated; nothing is uploaded again.
   records  Write content/sources/<letter>/<key>.yaml for each decision shown
            and research/ibia/held-back.csv for the rest.
 
@@ -80,11 +87,17 @@ CAPTION_DATE = re.compile(r"^[:\s]*(" + "|".join(MONTHS) + r")\.?\s+(\d{1,2})\s*
 DOCKET = re.compile(r"\b(?:IBIA|Docket No\.?)\s+((?:IBIA\s+)?\d{2}-\d{1,4}(?:-[A-Z])?)")
 # A decision about a minor or a guardianship names a child: held back like the probate appeals.
 CHILD = re.compile(r"\b(minors?|conservator|guardianship|guardian ad litem|guardian of|juvenile)\b", re.IGNORECASE)
+# A probate appeal is held when its text is about a child or a protected person: any of these words ...
+CHILD_TEXT = re.compile(r"\bminor (?:child|children|heirs?|daughter|son|grandchild|grandchildren|beneficiar|at the time|when)\b|\bminors\b|"
+                        r"\bguardian(?:ship)?\b|\bguardian ad litem\b|\bconservator\b|\bjuvenile\b|\bcustody\b|\bchild support\b", re.IGNORECASE)
+# ... or three mentions of these, the state court estate cases' rule (scripts/caselaw/state_court_opinions.py, PR #538).
+CHILD_CASE_TEXT = re.compile(r"Indian Child Welfare Act|\bICWA\b|termination of (?:the )?parental rights|\badoption\b|child custody|"
+                             r"protective order|order of protection|protection order|juvenile court|youth court", re.IGNORECASE)
 RIGHTS = {"status": "no-permission-needed", "basis": "us-government-work",
           "basis_note": "A work of the United States government, not subject to copyright (17 U.S.C. § 105).",
           "redistribution": True}
 HELD_RIGHTS = ("United States government work (17 U.S.C. § 105). Held back for a privacy review: "
-               "a probate appeal or a decision about a minor, which names private people (decision record 0057).")
+               "a decision about a child or a protected person, which names private people (decision record 0057).")
 
 
 def dump(value) -> str:
@@ -230,6 +243,16 @@ def note_text(notes: list[str]) -> str:
     return "; ".join(out)
 
 
+def about_a_child(work: Path, name: str) -> bool:
+    """Whether a probate appeal's whole text is about a child or a protected person (the PDF's text, cached in --work/text)."""
+    text_file = work / "text" / (Path(name).stem + ".txt")
+    if not text_file.exists():
+        text_file.parent.mkdir(exist_ok=True)
+        subprocess.run(["pdftotext", "-q", "-enc", "UTF-8", str(work / "pdf" / name), str(text_file)], check=False)
+    text = re.sub(r"\s+", " ", text_file.read_text(encoding="utf-8", errors="replace")) if text_file.exists() else ""
+    return bool(CHILD_TEXT.search(text)) or len(CHILD_CASE_TEXT.findall(text)) >= 3
+
+
 def check(args) -> None:
     work = Path(args.work)
     decisions = []
@@ -243,6 +266,7 @@ def check(args) -> None:
         listed = index_date(row["decided"])
         probate = row["probate"] == "True" or bool(re.search(r"\bEstate of\b", sheet.get("name", "")))
         child = bool(CHILD.search(row["name"] + " " + sheet.get("name", "")))
+        probate_child = probate and not child and about_a_child(work, row["file"])
         same_sheet = sheet.get("volume") == volume and sheet.get("page") == page
         decided = sheet.get("decided")
         checks = []
@@ -271,7 +295,7 @@ def check(args) -> None:
             "name": sheet.get("name") or row["name"], "index_name": row["name"], "date": date, "date_from": date_from,
             "name_from": "the decision's cover sheet" if sheet.get("name") else "the Board's index",
             "docket": sheet.get("docket"), "notes": note_text(sheet.get("notes", [])),
-            "held": "probate" if probate else ("minor" if child else ""), "checks": checks,
+            "probate": probate, "held": "minor" if child else ("probate about a child" if probate_child else ""), "checks": checks,
         })
     # Index rows that share one PDF: consolidated appeals decided in one decision, or a row linked to another decision's
     # file. Each file becomes one decision, under the citation and name its cover sheet prints; a row the file does not
@@ -330,10 +354,22 @@ def file(args) -> None:
     for item in decisions:
         by_file.setdefault(item["file"], []).append(item)
 
+    def described(name: str) -> dict:
+        items = by_file[name]
+        held = any(item["held"] for item in items)
+        title = ("; ".join(f"Interior Board of Indian Appeals decision, {i['citation']}" for i in items) if held
+                 else "; ".join(f"{i['name']}, {i['citation']} ({i['date'][:4]})" for i in items))
+        record = "" if held else ";".join(record_key(i) for i in items)
+        return {"title": title, "records": record, "record_kinds": "source" if record else "", "orphan": "no" if record else "yes",
+                "redistribution": "no" if held else "yes",
+                "rights": HELD_RIGHTS if held else "United States government work (17 U.S.C. § 105)."}
+
     def put(name: str):
         key = f"{TOPIC}/{name}"
         path = work / "pdf" / name
-        if key in filed or not path.exists():
+        if key in filed:
+            return ("update", key, described(name))
+        if not path.exists():
             return None
         digest = mirror_captures.sha256_of(path)
         if mirror_captures.remote_state(s3, bucket, key) != (path.stat().st_size, digest):
@@ -341,30 +377,32 @@ def file(args) -> None:
                 "sha256": digest, "captured": dt.date.today().isoformat()}})
             if mirror_captures.remote_state(s3, bucket, key) != (path.stat().st_size, digest):
                 return ("failed", key)
-        items = by_file[name]
-        held = any(item["held"] for item in items)
-        title = ("; ".join(f"Interior Board of Indian Appeals decision, {i['citation']}" for i in items) if held
-                 else "; ".join(f"{i['name']}, {i['citation']} ({i['date'][:4]})" for i in items))
+        fields = described(name)
         row = mirror_captures.index_row(
-            key=key, size=path.stat().st_size, digest=digest, media="application/pdf", topic=TOPIC, title=title, nations="",
-            obtained="downloaded from the Office of Hearings and Appeals (oha.doi.gov) by script", links=[items[0]["link"]],
-            record="" if held else ";".join(record_key(i) for i in items), redistribution="no" if held else "yes",
-            rights=HELD_RIGHTS if held else "United States government work (17 U.S.C. § 105).", existing_keys=filed)
+            key=key, size=path.stat().st_size, digest=digest, media="application/pdf", topic=TOPIC, title=fields["title"], nations="",
+            obtained="downloaded from the Office of Hearings and Appeals (oha.doi.gov) by script", links=[by_file[name][0]["link"]],
+            record=fields["records"], redistribution=fields["redistribution"], rights=fields["rights"], existing_keys=filed)
         return ("ok", row)
 
-    added = failed = 0
+    by_key = {row["key"]: row for row in rows}
+    added = failed = updated = 0
     with concurrent.futures.ThreadPoolExecutor(8) as pool:
         for result in pool.map(put, sorted(by_file)):
             if not result:
                 continue
-            if result[0] == "failed":
+            if result[0] == "update":
+                row = by_key[result[1]]
+                if any(row[field] != value for field, value in result[2].items()):
+                    row.update(result[2])
+                    updated += 1
+            elif result[0] == "failed":
                 failed += 1
                 print("verification failed", result[1], file=sys.stderr)
             else:
                 rows.append(result[1])
                 added += 1
     mirror_captures.write_index(rows)
-    print(f"filed {added}, failed {failed}")
+    print(f"filed {added}, updated {updated}, failed {failed}")
 
 
 # records --------------------------------------------------------------------

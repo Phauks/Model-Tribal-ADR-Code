@@ -1,6 +1,6 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "$id": "https://github.com/Phauks/Model-Tribal-ADR-Code/schemas/compact-clauses.schema.json",
+  "$id": "https://github.com/Phauks/Tribal-Law-Project/schemas/compact-clauses.schema.json",
   "title": "Gaming compact clauses (table row)",
   "description": "One row of research/gaming/compact-clauses.csv: a governing compact document, with the dispute resolution, renegotiation, term, revenue sharing and immunity clauses AI reviewers found in it (research/gaming/README.md). Built by scripts/gaming/clause_evidence.py; the site's data charts and table builder read it (site/src/lib/server/data-charts.ts, table-builder-datasets.ts). Every cell is text and an empty cell is left out before checking, so 'required' means the cell may not be empty. The vocabularies are those of the reviewers' briefs (research/gaming/briefs/).",
   "type": "object",

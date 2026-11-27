@@ -16,6 +16,7 @@
 		{ label: 'Requests', href: '/workspace/requests' },
 		{ label: `Request ${data.reference}`, href: `/workspace/requests/${data.reference}` }
 	]}
+	current={data.title}
 />
 <h1>{data.title}</h1>
 <p class="small muted">

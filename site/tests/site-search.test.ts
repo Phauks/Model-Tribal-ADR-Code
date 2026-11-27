@@ -42,4 +42,10 @@ describe('searchEntries', () => {
 		expect(searchEntries(entries, '25 usc 1901').map((result) => result.link)).toEqual(['/laws/usc-25-chapter-21#sec-1901', '/laws/indian-child-welfare-act-1978']);
 		expect(searchEntries(entries, '25 U.S.C. 1901').map((result) => result.link)).toEqual(['/laws/usc-25-chapter-21#sec-1901', '/laws/indian-child-welfare-act-1978']);
 	});
+	it('gives the same answers when the same index is searched again', () => {
+		const first = searchEntries(entries, 'icwa');
+		expect(first.map((result) => [result.link, result.matchedName])).toEqual([['/laws/indian-child-welfare-act-1978', 'ICWA']]);
+		expect(searchEntries(entries, 'icwa')).toEqual(first);
+		expect(searchEntries(entries, 'paiute').map((result) => result.link)).toEqual(['/nations/paiute-utah', '/nations/big-pine']);
+	});
 });
