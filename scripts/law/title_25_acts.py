@@ -581,6 +581,17 @@ def act_record(act: dict, name: str, long_title: str, copy: dict | None, enacted
     return record
 
 
+def keep_added_fields(record: dict, before: dict) -> dict:
+    """The record this script writes, keeping what other work added to its earlier copy: fields it never writes (such
+    as the tribes and topics scripts/law/water_settlements.py adds) and the other sessions in found_in."""
+    merged = dict(record)
+    for field, value in before.items():
+        if field not in merged:
+            merged[field] = value
+    merged["found_in"] = record["found_in"] + [session for session in before.get("found_in", []) if session not in record["found_in"]]
+    return merged
+
+
 def records(args) -> None:
     raw = json.loads(RAW.read_text(encoding="utf-8"))
     sections = {section["number"]: section for section in raw["code"]["sections"]}
@@ -620,6 +631,8 @@ def records(args) -> None:
             path = SOURCES / key[0] / f"{key}.yaml"
             if path.exists() and GENERATED not in path.read_text(encoding="utf-8"):
                 sys.exit(f"key in use by another record: {key}")
+            if path.exists():
+                record = keep_added_fields(record, yaml.safe_load(path.read_text(encoding="utf-8")))
             path.parent.mkdir(exist_ok=True)
             path.write_text(dump(record), encoding="utf-8")
             written += 1

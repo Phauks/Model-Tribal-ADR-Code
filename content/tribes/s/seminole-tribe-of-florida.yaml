@@ -11,6 +11,16 @@ recognition:
   verification: bulk-import
   as_of: '2026-01-30'
   locator: 91 Fed. Reg. 4105
+- type: federal
+  earliest_record: treaty
+  legal_basis: Treaty with the Florida Tribes of Indians, Sept. 18, 1823, 7 Stat. 224
+  since: '1823-09-18'
+  source: treaty-with-the-florida-tribes-of-indians-1823
+  confidence: medium
+  verification: inferred
+  as_of: '1823-09-18'
+  locator: p. 203 (Treaty with the Florida Tribes of Indians, 1823; Kappler header "Sept. 18, 1823. | 7 Stat., 224. | Proclamation, Jan. 2, 1824.")
+  note: The earliest record this site has found that shows the United States dealing with the nation as a federally recognized nation. The relationship may be older. The treaty names the Florida Tribes; the nation's profile links it to the treaty by name, and the link has not yet been checked against a second source. 2 nations' profiles link this treaty.
 states:
 - state: FL
   presence: government-office
@@ -908,6 +918,14 @@ jurisdiction:
   verification: inferred
   as_of: '1994-06-01'
   locator: 'Table of approvals by Tribe, column "Regulatory Programs": "WQS Program"'
+- topic: water-rights-settlement
+  value: enacted
+  detail: Congress enacted the Seminole Indian Land Claims Settlement Act of 1987 in 1987 (Pub. L. No. 100-228), settling the water rights of Seminole Tribe of Florida. (Congressional Research Service, R44148, Table 1).
+  source: public-law-100-228
+  confidence: high
+  verification: inferred
+  as_of: '1987'
+  locator: Congressional Research Service, R44148, Table 1, 1987
 court_practice:
 - kind: forms
   title: Forms (Seminole Tribe of Florida Tribal Court)

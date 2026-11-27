@@ -1,0 +1,50 @@
+key: minnesota-statutes-85-053
+kind: state-statute
+citation:
+  type: legislation
+  title: State Park Permits
+  title-short: Minn. Stat. § 85.053
+  container-title: Minnesota Statutes
+  container-title-short: Minn. Stat.
+  section: '85.053'
+  author:
+  - literal: Minnesota Office of the Revisor of Statutes
+  issued:
+    date-parts:
+    - - 1987
+  URL: https://www.revisor.mn.gov/statutes/cite/85.053
+  accessed:
+    date-parts:
+    - - 2026
+      - 11
+      - 27
+original_link: https://www.revisor.mn.gov/statutes/cite/85.053
+retrieved: '2026-11-27'
+archives: []
+history:
+  status: live
+  last_checked: '2026-11-27'
+state_law:
+  relevance: incidental
+  citation: Minn. Stat. § 85.053 (2026)
+rights:
+  status: no-permission-needed
+  basis: government-edict
+  basis_note: 'Official state statutes are not copyrightable under the government edicts doctrine (Georgia v. Public.Resource.Org, Inc., 590 U.S. 255 (2020)). Linked, not served: state statutes stay link only.'
+  redistribution: false
+jurisdictions:
+- level: state
+  state: MN
+topics:
+- state-indian-law
+found_in:
+- 2026-11-27-state-statutes-third-batch
+notes: 'Indigo Book citation: Minn. Stat. § 85.053 (2026). History: 1987 c 253 s 2; 1989 c 137 s 1; 1990 c 427 s 1; 1991 c 254 art 2 s 15; 1992 c 481 s 1; 1994 c 458 s 1,2; 1996 c 407 s 36; 2000 c 278 s 1,2; 2003 c 128 art 1 s 44; 2004 c 228 art 1 s 19; 2005 c 64 s 2; 1Sp2005 c 1 art 2 s 50,51; 2006 c 236 art 1 s 2; 2006 c 273 s 2; 2006 c 281 art 3 s 4,5; 2007 c 13 art 2 s 19; 2007 c 131 art 1 s 17,18,96; 2008 c 357 s 17; 2009 c 37 art 1 s 21; 2009 c 176 art 1 s 12; 2010 c 361 art 4 s 30; 2012 c 272 s 18; 2013 c 114 art 4 s 16; 2014 c 312 art 13 s 14; 2017 c 93 art 2 s 31,32; 1Sp2021 c 6 art 2 s 37,38. Text read from the Minnesota Revisor of Statutes'' full-text chapter page for the section (revisor.mn.gov/statutes) on Nov. 27, 2026. Found by the state statutes sweep (terms: federally recognized tribes; tribal governments; tribal; tribes); AI reader''s verdict incidental: Free state park permit for members of federally recognized Tribes. Unverified.'
+review:
+  status: unverified
+  by: scripts/law/state_statutes/run.py
+  date: '2026-11-27'
+  checks:
+  - check: 'Indian law section: the sweep''s keyword pass and an AI reader''s verdict (core, incidental or none)'
+    result: agree
+    detail: 'incidental; terms: federally recognized tribes; tribal governments; tribal; tribes'

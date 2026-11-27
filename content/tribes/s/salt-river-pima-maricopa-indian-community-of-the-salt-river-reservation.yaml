@@ -72,6 +72,16 @@ recognition:
   verification: bulk-import
   as_of: '2026-01-30'
   locator: 91 Fed. Reg. 4105
+- type: federal
+  earliest_record: land
+  legal_basis: Exec. Order of June 14, 1879, 1 Kappler 806
+  since: '1879-06-14'
+  source: executive-order-1879-06-14-pima-maricopa-salt-river
+  confidence: medium
+  verification: read-in-full
+  as_of: '1879-06-14'
+  locator: 1 Kappler 806
+  note: The earliest record this site has found that shows the United States dealing with the nation as a federally recognized nation. The relationship may be older. The instrument first set aside the Salt River lands (Pima and Maricopa Reserve), Arizona.
 states:
 - state: AZ
   presence: government-office
@@ -929,6 +939,14 @@ jurisdiction:
   verification: inferred
   as_of: '2026-10-21'
   locator: 'Table of approvals by Tribe, column "Administrative Functions": "CAA §§ 106; 107(d); 505(a)(2)"'
+- topic: water-rights-settlement
+  value: enacted
+  detail: Congress enacted the Salt River Pima-Maricopa Indian Community Water Rights Settlement Act of 1988 in 1988 (Pub. L. No. 100-512), settling the water rights of Salt River Pima-Maricopa Indian Community of the Salt River Reservation. It quantifies 122,400 acre-feet a year in all and authorizes about $47.5 million in federal funds, as the Congressional Research Service counts it (R44148, Table 1).
+  source: public-law-100-512
+  confidence: high
+  verification: inferred
+  as_of: '1988'
+  locator: Congressional Research Service, R44148, Table 1, 1988
 court_practice:
 - kind: filing-fees
   title: Court (Filing Fees)

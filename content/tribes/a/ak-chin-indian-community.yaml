@@ -11,6 +11,16 @@ recognition:
   verification: bulk-import
   as_of: '2026-01-30'
   locator: 91 Fed. Reg. 4103
+- type: federal
+  earliest_record: federal-list
+  legal_basis: Indian Tribal Entities That Have a Government-to-Government Relationship With the United States, 44 Fed. Reg. 7235, 7235 (Feb. 6, 1979)
+  since: '1979-02-06'
+  source: bia-recognized-entities-1979
+  confidence: medium
+  verification: bulk-import
+  as_of: '1979-02-06'
+  locator: 44 Fed. Reg. 7235 (entry "Ak Chin Indian Community, Maricopa, Ak")
+  note: The earliest record this site has found that shows the United States dealing with the nation as a federally recognized nation. The relationship may be older. The list's entry reads "Ak Chin Indian Community, Maricopa, Ak." The entry is matched to the nation by name.
 states:
 - state: AZ
   presence: government-office
@@ -612,6 +622,14 @@ jurisdiction:
   verification: inferred
   as_of: '2013-11-10'
   locator: Bureau of Indian Affairs, Approved HEARTH Act Regulations, Approved in 2013
+- topic: water-rights-settlement
+  value: enacted
+  detail: Congress enacted the Ak-Chin Indian Water Rights Settlement Act in 1978, amended 1984, 1992, 2000 (Pub. L. No. 95-328, Pub. L. No. 98-530, Pub. L. No. 102-497, Pub. L. No. 106-285), settling the water rights of Ak-Chin Indian Community of Papago Indians of the Maricopa. It quantifies 85,000 acre-feet a year in all and authorizes about $101.1 million in federal funds, as the Congressional Research Service counts it (R44148, Table 1).
+  source: public-law-95-328
+  confidence: high
+  verification: inferred
+  as_of: '1978'
+  locator: Congressional Research Service, R44148, Table 1, 1978
 nearby_state_courts:
 - state: AZ
   county: Pinal County

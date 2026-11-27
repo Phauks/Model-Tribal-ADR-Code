@@ -1,0 +1,50 @@
+key: minnesota-statutes-116-182
+kind: state-statute
+citation:
+  type: legislation
+  title: Financial Assistance Program
+  title-short: Minn. Stat. § 116.182
+  container-title: Minnesota Statutes
+  container-title-short: Minn. Stat.
+  section: '116.182'
+  author:
+  - literal: Minnesota Office of the Revisor of Statutes
+  issued:
+    date-parts:
+    - - 1992
+  URL: https://www.revisor.mn.gov/statutes/cite/116.182
+  accessed:
+    date-parts:
+    - - 2026
+      - 11
+      - 27
+original_link: https://www.revisor.mn.gov/statutes/cite/116.182
+retrieved: '2026-11-27'
+archives: []
+history:
+  status: live
+  last_checked: '2026-11-27'
+state_law:
+  relevance: incidental
+  citation: Minn. Stat. § 116.182 (2026)
+rights:
+  status: no-permission-needed
+  basis: government-edict
+  basis_note: 'Official state statutes are not copyrightable under the government edicts doctrine (Georgia v. Public.Resource.Org, Inc., 590 U.S. 255 (2020)). Linked, not served: state statutes stay link only.'
+  redistribution: false
+jurisdictions:
+- level: state
+  state: MN
+topics:
+- state-indian-law
+found_in:
+- 2026-11-27-state-statutes-third-batch
+notes: 'Indigo Book citation: Minn. Stat. § 116.182 (2026). History: 1992 c 601 s 10; 1994 c 628 art 3 s 9; 1994 c 632 art 2 s 32 -35; 1996 c 463 s 60; 1998 c 404 s 39,40; 1999 c 86 art 1 s 24; 2000 c 492 art 1 s 44; 2005 c 20 art 1 s 32; 2007 c 96 art 2 s 1; 2013 c 125 art 1 s 26; 1Sp2025 c 15 art 2 s 3. Text read from the Minnesota Revisor of Statutes'' full-text chapter page for the section (revisor.mn.gov/statutes) on Nov. 27, 2026. Found by the state statutes sweep (terms: indian tribe; indian; tribal; tribe); AI reader''s verdict incidental: Indian Tribe and Tribal organization eligible as municipalities for financing. Unverified.'
+review:
+  status: unverified
+  by: scripts/law/state_statutes/run.py
+  date: '2026-11-27'
+  checks:
+  - check: 'Indian law section: the sweep''s keyword pass and an AI reader''s verdict (core, incidental or none)'
+    result: agree
+    detail: 'incidental; terms: indian tribe; indian; tribal; tribe'

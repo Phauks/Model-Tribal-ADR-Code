@@ -1,0 +1,61 @@
+key: san-luis-and-delta-mendota-water-authority-v-haugrud-2017
+kind: federal-case
+citation:
+  type: legal_case
+  title: San Luis & Delta-Mendota Water Authority v. Haugrud
+  authority: United States Court of Appeals for the Ninth Circuit
+  container-title: F.3d
+  volume: '848'
+  page: '1216'
+  issued:
+    date-parts:
+    - - 2017
+      - 2
+      - 21
+  URL: https://static.case.law/f3d/848/html/1216-01.html
+  accessed:
+    date-parts:
+    - - 2026
+      - 11
+      - 26
+original_link: https://static.case.law/f3d/848/html/1216-01.html
+retrieved: '2026-11-26'
+archives: []
+history:
+  status: live
+  last_checked: '2026-11-26'
+rights:
+  status: no-permission-needed
+  basis: government-edict
+  basis_note: The text of a judicial opinion has no copyright (Georgia v. Public.Resource.Org, Inc., 590 U.S. 255 (2020)). The copy served on this site is the court's opinion only, without the publisher's headnotes, synopsis or other editorial matter (decision record 0060).
+  redistribution: true
+tribes:
+- hoopa-valley-tribe
+nations_in_case:
+  checked: '2026-11-26'
+  named:
+  - nation: hoopa-valley-tribe
+    named_as: Hoopa Valley Tribe
+    role: party
+    note: Matched by the script to the nation record of the same name; not yet checked.
+  not_linked:
+  - named_as: Yurok Tribe
+    reason: More than one of today's nations shares this name (pulikla-tribe-of-yurok-people, yurok-tribe-of-the-yurok-reservation); which the case concerns has not been checked.
+jurisdictions:
+- level: federal
+topics:
+- federal-court-indian-law
+found_in:
+- 2026-11-26-federal-court-indian-law-opinions
+notes: Published at 848 F.3d 1216. Decided by the United States Court of Appeals for the Ninth Circuit on Feb. 21, 2017. Found by scripts/caselaw/state_court_opinions.py in the Caselaw Access Project's volumes, with an Indian law term score of 5; an AI reader read excerpts and judged it an Indian law case (Yurok and Hoopa Valley tribal fishing and Trinity River water).
+review:
+  status: unverified
+  by: scripts/caselaw/state_court_opinions.py
+  date: '2026-11-26'
+  checks:
+  - check: 'Indian law case: the term score and, below the score kept without a reading, an AI reader''s judgment of excerpts'
+    result: agree
+    detail: 'score 5; reader: Yurok and Hoopa Valley tribal fishing and Trinity River water'
+  - check: Nations named in the caption, matched to nation records by name
+    result: missing
+    detail: 1 matched, 1 not linked

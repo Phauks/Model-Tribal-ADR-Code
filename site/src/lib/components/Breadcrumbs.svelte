@@ -11,8 +11,10 @@
 	// (Trevor chose the "plain trail" mockup on Nov. 27, 2026, in place of the
 	// eyebrow of Nov. 23; site/DESIGN.md, Breadcrumbs). It lists the pages above
 	// this one, then this page's own name, in small muted type with a chevron
-	// between them, on one line: a long name is cut short with "…" and shown whole
-	// on hover. On phones only a link back to the page just above shows, since the
+	// between them, on one line. Names are cut short with "…" only when the
+	// line runs out of room, each name giving way in proportion to its
+	// length, and a cut name shows whole on hover (Trevor, Nov. 27, 2026: no "…"
+	// "unless it runs out of space to the right"). On phones only a link back to the page just above shows, since the
 	// menu bar already names the section. No page draws its own trail
 	// (tests/breadcrumbs.test.ts).
 	import ChevronLeft from '@lucide/svelte/icons/chevron-left';
@@ -75,7 +77,6 @@
 	.current {
 		overflow: hidden;
 		text-overflow: ellipsis;
-		max-width: 22ch;
 	}
 
 	.trail a {

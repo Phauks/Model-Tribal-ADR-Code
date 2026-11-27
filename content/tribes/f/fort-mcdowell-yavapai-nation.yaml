@@ -21,6 +21,19 @@ recognition:
   verification: bulk-import
   as_of: '2026-01-30'
   locator: 91 Fed. Reg. 4103
+- type: federal
+  earliest_record: constitution
+  legal_basis: Constitution of the Fort McDowell Yavapai Nation, Arizona (approved by the Secretary of the Interior Aug. 18, 1936), under the Indian Reorganization Act, ch. 576, § 16, 48 Stat. 984, 987 (1934)
+  since: '1936-08-18'
+  source: university-of-oklahoma-indian-reorganization-act-ftmcdowcons
+  document_version:
+    document: fort-mcdowell-yavapai-nation-constitution
+    version: 1936-text
+  confidence: medium
+  verification: inferred
+  as_of: '1936-08-18'
+  locator: 1936 constitution and bylaws, approval certificate
+  note: The earliest record this site has found that shows the United States dealing with the nation as a federally recognized nation. The relationship may be older. The Secretary of the Interior approved the nation's constitution; the date is read by rule from the approval certificate.
 states:
 - state: AZ
   presence: government-office
@@ -854,6 +867,14 @@ jurisdiction:
   verification: read-in-full
   locator: 113 Ariz. at 431
   note: 1976 holding about service of process on the Tohono O'odham (Papago) reservation, reasoning from the 1968 consent requirement. The research did not find any later Arizona assumption. Other federal statutes can still give Arizona limited authority; none checked here.
+- topic: water-rights-settlement
+  value: enacted
+  detail: Congress enacted the Fort McDowell Indian Community Water Rights Settlement Act of 1990 in 1990, amended 2006 (Pub. L. No. 101-628, Pub. L. No. 109-373), settling the water rights of Fort McDowell Indian Community. It quantifies 36,350 acre-feet a year in all and authorizes about $23.0 million in federal funds, as the Congressional Research Service counts it (R44148, Table 1).
+  source: public-law-101-628
+  confidence: high
+  verification: inferred
+  as_of: '1990'
+  locator: Congressional Research Service, R44148, Table 1, 1990
 court_practice:
 - kind: bar-admission
   title: Attorneys (Fort McDowell Yavapai Nation Tribal Court)

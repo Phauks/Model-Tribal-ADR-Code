@@ -19,6 +19,16 @@ recognition:
   verification: bulk-import
   as_of: '2026-01-30'
   locator: 91 Fed. Reg. 4104
+- type: federal
+  earliest_record: federal-list
+  legal_basis: Indian Tribal Entities That Have a Government-to-Government Relationship With the United States, 44 Fed. Reg. 7235, 7236 (Feb. 6, 1979)
+  since: '1979-02-06'
+  source: bia-recognized-entities-1979
+  confidence: medium
+  verification: bulk-import
+  as_of: '1979-02-06'
+  locator: 44 Fed. Reg. 7236 (entry "Pechanga Band of Luiseno Mission Indians, Pechanga Reservation, California")
+  note: The earliest record this site has found that shows the United States dealing with the nation as a federally recognized nation. The relationship may be older. The list's entry reads "Pechanga Band of Luiseno Mission Indians, Pechanga Reservation, California." The entry is matched to the nation by name.
 states:
 - state: CA
   presence: government-office
@@ -354,6 +364,14 @@ jurisdiction:
   verification: inferred
   as_of: '2026-10-21'
   locator: 'Table of approvals by Tribe, column "Administrative Functions": "CAA §§ 107(d); 126; 505(a)(2)"'
+- topic: water-rights-settlement
+  value: enacted
+  detail: Congress enacted the Pechanga Band of Luiseño Mission Indians Water Rights Settlement Act in 2016 (Pub. L. No. 114-322), settling the water rights of Pechanga Band of Luiseño Mission Indians. It quantifies 4,994 acre-feet a year in all and authorizes about $28.5 million in federal funds, as the Congressional Research Service counts it (R44148, Table 1).
+  source: public-law-114-322
+  confidence: high
+  verification: inferred
+  as_of: '2016'
+  locator: Congressional Research Service, R44148, Table 1, 2016
 nearby_state_courts:
 - state: CA
   county: Riverside County

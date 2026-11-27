@@ -18,6 +18,16 @@ recognition:
   verification: bulk-import
   as_of: '2026-01-30'
   locator: 91 Fed. Reg. 4104
+- type: federal
+  earliest_record: land
+  legal_basis: Exec. Order No. 1904
+  since: '1914-03-23'
+  source: executive-order-1914-03-23-1904
+  confidence: high
+  verification: read-in-full
+  as_of: '1914-03-23'
+  locator: 4 Kappler 1051
+  note: The earliest record this site has found that shows the United States dealing with the nation as a federally recognized nation. The relationship may be older. The instrument first set aside the Kalispel Reservation, Washington.
 states:
 - state: WA
   presence: government-office

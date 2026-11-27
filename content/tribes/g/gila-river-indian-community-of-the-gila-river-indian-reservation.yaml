@@ -27,6 +27,16 @@ recognition:
   verification: bulk-import
   as_of: '2026-01-30'
   locator: 91 Fed. Reg. 4103
+- type: federal
+  earliest_record: land
+  legal_basis: Act of Feb. 28, 1859, ch. 66, § 4, 11 Stat. 388, 401
+  since: '1859-02-28'
+  source: act-1859-02-28-pima-maricopa-reservation
+  confidence: medium
+  verification: read-in-full
+  as_of: '1859-02-28'
+  locator: 11 Stat. 401
+  note: The earliest record this site has found that shows the United States dealing with the nation as a federally recognized nation. The relationship may be older. The instrument first set aside the Gila River (Pima and Maricopa) Reservation, Arizona.
 states:
 - state: AZ
   presence: government-office
@@ -915,6 +925,14 @@ jurisdiction:
   verification: inferred
   as_of: '2026-10-21'
   locator: 'Table of approvals by Tribe, column "Administrative Functions": "CAA §§ 107(d); 505(a)(2)"'
+- topic: water-rights-settlement
+  value: enacted
+  detail: Congress enacted the Arizona Water Settlements Act in 2004 (Pub. L. No. 108-451), settling the water rights of Gila River Indian Community, Tohono O'odham Nation. It quantifies 653,500 acre-feet a year in all and authorizes about $2,328.3 million in federal funds, as the Congressional Research Service counts it (R44148, Table 1).
+  source: public-law-108-451
+  confidence: high
+  verification: inferred
+  as_of: '2004'
+  locator: Congressional Research Service, R44148, Table 1, 2004
 court_practice:
 - kind: court-rules
   title: Res. GR-97-13 Rules of Criminal Procedures

@@ -1,4 +1,5 @@
 <script lang="ts">
+	import type { Snippet } from 'svelte';
 	import Check from '@lucide/svelte/icons/check';
 	import RotateCcw from '@lucide/svelte/icons/rotate-ccw';
 	import Undo2 from '@lucide/svelte/icons/undo-2';
@@ -36,7 +37,6 @@
 	<title>Site text · Workspace · Tribal Law Project</title>
 </svelte:head>
 
-<p class="small"><a href="/workspace/site-text">Site text</a></p>
 <h1>{data.record ? data.place : (data.draft ?? data.published ?? data.builtIn)}</h1>
 
 <dl class="facts" class:record={data.record}>
@@ -64,8 +64,8 @@
 	</form>
 {/if}
 
-<h2>History</h2>
 {#if data.versions.length === 0}
+	<h2>History</h2>
 	<p class="muted">None</p>
 {:else}
 	<DataTable
@@ -76,6 +76,7 @@
 		defaultSort={{ key: 'when', direction: 'descending' }}
 		rowName={['version', 'versions']}
 	>
+		{#snippet heading(count: Snippet)}<h2>History {@render count()}</h2>{/snippet}
 		{#snippet cell(row, column)}
 			{@const version = versions.get(row.key)}
 			{#if version && column.key === 'text'}

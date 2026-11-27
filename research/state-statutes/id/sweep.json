@@ -1,0 +1,49 @@
+{
+  "state": "ID",
+  "code": "Idaho Code",
+  "edition": 2026,
+  "read": "2026-11-27",
+  "keyword_pass": {
+    "sections": 20496,
+    "live": 20493,
+    "strong": 113,
+    "weak_only": 170,
+    "repealed": 3
+  },
+  "reading": {
+    "missing_answers": 0,
+    "rows": 134,
+    "core": 31,
+    "incidental": 103,
+    "by_pool": {
+      "A": {
+        "incidental": 82,
+        "core": 27,
+        "none": 4
+      },
+      "B": {
+        "none": 145,
+        "incidental": 21,
+        "core": 4
+      },
+      "C": {
+        "none": 300
+      },
+      "D": {
+        "none": 300
+      }
+    },
+    "meta": {
+      "live": 20493,
+      "A": 113,
+      "B": 170,
+      "E": 0,
+      "C": 722,
+      "C_sample": 300,
+      "D": 19488,
+      "D_sample": 300,
+      "items": 883,
+      "batches": 6
+    }
+  }
+}

@@ -155,7 +155,8 @@
           "legal_basis": { "type": "string", "description": "Citation of the law, regulation, notice or resolution that confers or describes the status." },
           "since": { "$ref": "common.schema.json#/$defs/partialDate" },
           "petition_number": { "type": "string", "description": "Federal acknowledgment petition number, as the Office of Federal Acknowledgment lists it." },
-          "petition_stage": { "type": "string", "description": "Stage of the petition, worded as the source words it." }
+          "petition_stage": { "type": "string", "description": "Stage of the petition, worded as the source words it." },
+          "earliest_record": { "type": "string", "enum": ["treaty", "land", "constitution", "federal-list"], "description": "For a federal fact that cites the earliest document found showing the United States dealing with the nation as a recognized nation, not the act that conferred recognition: its kind. treaty: a ratified treaty linked to the nation. land: the instrument that first set aside its land. constitution: the Secretary of the Interior's approval of its constitution. federal-list: the earliest Federal Register list of recognized tribes that names it. Written by scripts/tribes/first_recognition.py (profiles step)." }
         },
         "unevaluatedProperties": false
       }
@@ -730,6 +731,7 @@
               "indian-child-welfare-act",
               "hearth-act-leasing-regulations",
               "environmental-treatment-as-a-state",
+              "water-rights-settlement",
               "other"
             ]
           },

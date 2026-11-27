@@ -28,6 +28,7 @@ export const workerFirstPaths = [
 	'/copies/details/*',
 	'/search/records.json',
 	'/search/index.json',
+	'/search/files.json',
 	'/zip/data.zip',
 	'/stats/*',
 	'/courts/*',

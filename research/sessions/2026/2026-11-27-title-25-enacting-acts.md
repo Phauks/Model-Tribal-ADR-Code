@@ -23,7 +23,6 @@ sources_added:
 - public-law-100-202
 - public-law-101-624
 - public-law-101-82
-- public-law-102-575
 - public-law-104-134
 - public-law-104-208
 - public-law-104-313
@@ -32,7 +31,6 @@ sources_added:
 - public-law-105-276
 - public-law-105-277
 - public-law-106-216
-- public-law-106-554
 - public-law-108-267
 - public-law-108-329
 - public-law-109-147
@@ -51,7 +49,7 @@ sources_added:
 - public-law-99-389
 - public-law-99-498
 - public-law-99-500
-limits: 'The Code is the 2024 edition on GovInfo, the same edition the site shows; a section changed after Jan. 6, 2025 is not reflected. Records stay Unverified. The 36 new Act records carry the first run''s dates (retrieved Nov. 26, 2026, found in session 2026-11-26-title-25-acts) because the script writes those dates; they were looked up on Nov. 27.'
+limits: 'The Code is the 2024 edition on GovInfo, the same edition the site shows; a section changed after Jan. 6, 2025 is not reflected. Records stay Unverified. The 34 new Act records carry the first run''s dates (retrieved Nov. 26, 2026, found in session 2026-11-26-title-25-acts) because the script writes those dates; they were looked up on Nov. 27.'
 ---
 
 # The Act that enacted each section of Title 25: session notes
@@ -74,7 +72,7 @@ The enacting Act is the Act the credit's first citation names, up to the first s
 
 Of the 1,181 sections in force, 1,127 now link to the record of the Act that enacted them (before, 1,014 of 1,180 linked, many wrongly). 315 sections in force changed: 190 moved to a different Act, 119 gained a link they lacked, and 6 lost a link because they come from the Revised Statutes (§§ 8, 65, 71, 81, 179 and 264). 308 sections in force are "as added" and name the Act they belong to; 396 sections list the Acts that amended them. research/reviews/2026-11-27-title-25-enacting-acts.csv lists every changed section with its old and new Act and every section noted below.
 
-Reading the credits correctly found 94 more Acts in them (562 citations in all, 447 Acts with a record). 36 got new records; 32 new Statutes at Large slips were stored; 7 Acts over 64 MB, most of them omnibus appropriations Acts, have no stored copy and link GovInfo. The 10 Acts first recorded as enacting a section that they only amended (Pub. L. 100-446, 100-647 and 118-15 among them) keep their records, which now say which sections they amended and that they enacted none. The Patient Protection and Affordable Care Act (Pub. L. 111-148) is named as such, not by the short title of the Indian health bill it enacted.
+Reading the credits correctly found 94 more Acts in them (562 citations in all, 447 Acts with a record). 34 got new records (Pub. L. 102-575 and 106-554 got theirs from the water rights settlements work, #659, which Title 25 now links to); 32 new Statutes at Large slips were stored; 7 Acts over 64 MB, most of them omnibus appropriations Acts, have no stored copy and link GovInfo. The 10 Acts first recorded as enacting a section that they only amended (Pub. L. 100-446, 100-647 and 118-15 among them) keep their records, which now say which sections they amended and that they enacted none. The Patient Protection and Affordable Care Act (Pub. L. 111-148) is named as such, not by the short title of the Indian health bill it enacted.
 
 ## Sections to check by hand
 

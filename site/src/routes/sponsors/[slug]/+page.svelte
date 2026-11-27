@@ -3,7 +3,7 @@
 	A sponsor's own page (docs/sponsorship.md), as an info page
 	(site/DESIGN.md, "Info pages"): the logo and what the gift helps fund At a
 	glance. The amount is never shown. The sponsor's link keeps
-	rel="sponsored", so it sits in the text rather than At a glance.
+	rel="sponsored", so it sits in the text rather than Key facts.
 -->
 <script lang="ts">
 	import InfoPage from '#lib/components/InfoPage.svelte';
