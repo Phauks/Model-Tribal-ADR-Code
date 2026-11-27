@@ -36,6 +36,7 @@ export function readAsks(text: string): CommentAsk[] {
 		const parsed = JSON.parse(text) as unknown;
 		return Array.isArray(parsed) ? parsed.filter(isCommentAsk) : [];
 	} catch {
+		// expected: damaged stored asks read as none.
 		return [];
 	}
 }

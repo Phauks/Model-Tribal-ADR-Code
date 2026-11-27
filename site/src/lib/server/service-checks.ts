@@ -157,7 +157,9 @@ const database: Check = {
 				.prepare('SELECT name FROM d1_migrations ORDER BY id')
 				.all<{ name: string }>();
 			applied = results.map((row) => row.name);
-		} catch {
+		} catch (problem) {
+			// Only a missing table means this; anything else shows as the check failing, with its message.
+			if (!isMissingTable(problem)) throw problem;
 			return {
 				state: 'warning',
 				summary: 'The database answers, but it has no record of which migrations were applied.',
@@ -194,7 +196,9 @@ const sourceLibrary: Check = {
 			counts = await library
 				.prepare('SELECT (SELECT COUNT(*) FROM documents) AS documents, (SELECT COUNT(*) FROM pages) AS pages')
 				.first<{ documents: number; pages: number }>();
-		} catch {
+		} catch (problem) {
+			// Only a missing table means this; anything else shows as the check failing, with its message.
+			if (!isMissingTable(problem)) throw problem;
 			return { state: 'warning', summary: 'The library database answers, but its tables are missing.', details: [], fix: 'Load it from scripts/library/ (src/lib/server/source-library.ts).' };
 		}
 		const documents = counts?.documents ?? 0;
@@ -425,6 +429,7 @@ async function readJson(response: Response): Promise<unknown> {
 	try {
 		return text ? JSON.parse(text) : undefined;
 	} catch {
+		// expected: an answer that is not JSON is read as none, and the check says what it expected.
 		return undefined;
 	}
 }
@@ -553,16 +558,16 @@ export async function trySmtpSignIn(
 		}
 		const plain = btoa(`\u0000${connection.username}\u0000${connection.password}`);
 		await command(`AUTH PLAIN ${plain}`, [235], 'Sign-in');
-		await command('QUIT', [221], 'QUIT').catch(() => undefined);
+		await command('QUIT', [221], 'QUIT').catch(() => /* expected: the sign-in already succeeded; quitting politely is a courtesy */ undefined);
 		return { greeting: greeting.text, steps };
 	} finally {
 		try {
 			reader.releaseLock();
 			writer.releaseLock();
 		} catch {
-			// Already released.
+			// expected: already released.
 		}
-		await socket.close().catch(() => undefined);
+		await socket.close().catch(() => /* expected: the connection is ending either way */ undefined);
 	}
 }
 
@@ -633,7 +638,9 @@ const scanner: Check = {
 				.prepare('SELECT status, COUNT(*) AS count, MIN(requested_at) AS oldest FROM file_scans GROUP BY status')
 				.all<{ status: string; count: number; oldest: string | null }>();
 			rows = result.results;
-		} catch {
+		} catch (problem) {
+			// Only a missing table means this; anything else shows as the check failing, with its message.
+			if (!isMissingTable(problem)) throw problem;
 			return { state: 'off', summary: 'The file_scans table is missing.', details: [], fix: 'Apply migration 0021 and deploy the scanner Worker (site/SCANNING.md).' };
 		}
 		const count = (status: string) => rows.find((row) => row.status === status)?.count ?? 0;
@@ -920,7 +927,9 @@ const siteTextRebuilds: Check = {
 		try {
 			publication = await latestPublication(environment.database);
 			last = await latestRebuild(environment.database);
-		} catch {
+		} catch (problem) {
+			// Only a missing table means this; anything else shows as the check failing, with its message.
+			if (!isMissingTable(problem)) throw problem;
 			return { state: 'off', summary: 'The site text tables are missing.', details: [], fix: 'Apply migration 20261124T0119_add_site_text.sql.' };
 		}
 		const details = [

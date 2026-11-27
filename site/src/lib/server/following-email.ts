@@ -29,6 +29,7 @@ export function siteAddress(environment: Pick<WorkerEnvironment, 'SITE_ADDRESS'>
 		const url = new URL(value);
 		return url.protocol === 'https:' && url.pathname === '/' && !url.search && !url.hash ? url.origin : undefined;
 	} catch {
+		// expected: a setting that is not a web address counts as unset, which the Service checks page shows.
 		return undefined;
 	}
 }
