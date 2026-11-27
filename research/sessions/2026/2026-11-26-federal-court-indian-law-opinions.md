@@ -50,7 +50,7 @@ Of the 9,254, 592 share a citation with a Project case and 55 more match one by 
 
 District court names are given in the Project's style ("United States District Court for the Eastern District of New York", not CourtListener's "District Court, E.D. New York"), so each court is listed one way.
 
-In all, the collection had 12,392 records and 673 cases held for a privacy review; after the read check below (Nov. 27, 2026) it has 12,749 records and 316 held.
+In all, the collection had 12,392 records and 673 cases held for a privacy review; after the read check and the review below (Nov. 27, 2026) it has 12,642 records and 423 held.
 
 ## Hosting
 
@@ -73,3 +73,7 @@ The 63 records keep CourtListener's case name and citation, link to GovInfo's pa
 The private list of held cases now has 316 rows: 44 whose caption is about a child or protected person, 74 with a party named only by initials, 93 Caselaw Access Project opinions whose text names one, and 105 CourtListener opinions (79 with no single GovInfo match and the 26 above).
 
 One copy, of a 1917 Court of Claims estate case, had stayed in the capture index after its record was held in the first run; the case is among the 294, so the row is right again.
+
+## Review, Nov. 27, 2026
+
+Trevor asked on Nov. 27, 2026 for a review of these opinions. AI readers read the passages of 133 shown opinions that either use words about juvenile cases, child victims or foster care three or more times or name a party in the caption the way courts name minors ("United States v. Doe", a first name and an initial). The readers found 107 that are about a specific child: a juvenile defendant, a child victim the opinion describes, or a child's placement. Their records and copies were withdrawn and the cases joined the private held list, so the collection had 12,285 records and 780 cases held for a privacy review before the read check above was merged, and has 12,642 records and 423 held with it. The readers' choices are in the private files beside the held list (privacy-reviews.json), and the next change to `scripts/caselaw/state_court_opinions.py` makes a later run keep them.
