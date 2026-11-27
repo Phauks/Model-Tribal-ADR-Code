@@ -744,10 +744,10 @@
 		color: var(--color-ink-muted);
 	}
 
-	/* The site's focus ring goes round the whole box, not the input inside it. */
+	/* The site's focus ring (focus F1, a ring with no fill) goes round the whole box, not the input inside it. */
 	.table-search:focus-within {
-		outline: 3px solid var(--color-focus-ring);
-		box-shadow: 0 0 0 3px var(--color-focus);
+		outline: 3px solid var(--focus-ring, var(--color-focus-ring));
+		outline-offset: 2px;
 	}
 
 	.table-search input:focus-visible {
