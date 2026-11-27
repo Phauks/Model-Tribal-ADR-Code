@@ -10,6 +10,7 @@ import { imageMayBeShown, imagePath } from '#lib/official-images.ts';
 import {
 	nations,
 	sources as sourceRecords,
+	sourcesOfNation,
 	type CitedFact,
 	type NationRecord,
 	type SourceRecord
@@ -35,7 +36,7 @@ import { offlineSets } from '#lib/server/copy-lists.ts';
 import { nationStorySummaries } from '#lib/server/stories.ts';
 import { opinionsOf, opinionsSourceKey, type TribalCourtOpinion } from '#lib/server/tribal-court-opinions.ts';
 import { issuedDate, nationTimeline, timelineHeading } from '#lib/server/timeline.ts';
-import { casePreviewList } from '#lib/server/case-previews.ts';
+import { casePreviewOf } from '#lib/server/case-previews.ts';
 import { courtAbbreviation } from '#lib/server/case-citations.ts';
 import { bureauRegionPage, healthAreaPage } from '#lib/federal-offices.ts';
 import { federalProgramPage } from '#lib/federal-programs.ts';
@@ -701,10 +702,9 @@ export interface NationCase {
  */
 function nationCases(record: NationRecord, sources: SourceUses): NationCase[] {
 	const section = casesHeading;
-	const previews = new Map(casePreviewList().cases.map((preview) => [preview.id, preview]));
 	const ownName = displayName(record.names.official).toLocaleLowerCase('en-US');
-	return [...sourceRecords().values()]
-		.filter((source) => source.kind.endsWith('-case') && source.tribes?.includes(record.id) && source.citation.title)
+	return sourcesOfNation(record.id)
+		.filter((source) => source.kind.endsWith('-case') && source.citation.title)
 		.map((source) => {
 			const { volume, page, number, authority } = source.citation;
 			const reporter = source.citation['container-title'];
@@ -723,7 +723,7 @@ function nationCases(record: NationRecord, sources: SourceUses): NationCase[] {
 				role: caseRoles[named?.role ?? 'subject'],
 				namedAs: namedAs && namedAs.toLocaleLowerCase('en-US') !== ownName ? namedAs : undefined,
 				note: named?.note,
-				link: previews.get(source.key)?.link ?? (address && URL.canParse(address) ? webLink(address) : undefined),
+				link: casePreviewOf(source.key)?.link ?? (address && URL.canParse(address) ? webLink(address) : undefined),
 				citations
 			};
 		})
@@ -885,10 +885,9 @@ function petitionDocumentName(source: SourceRecord): string {
  */
 function petitionDocuments(record: NationRecord, sources: SourceUses): PetitionDocument[] {
 	if (!(record.recognition ?? []).some((fact) => fact.petition_number)) return [];
-	return [...sourceRecords().values()]
+	return sourcesOfNation(record.id)
 		.filter(
 			(source) =>
-				source.tribes?.includes(record.id) &&
 				source.topics?.includes('federal-recognition') &&
 				(source.key.startsWith('acknowledgment-') || source.kind === 'federal-register-notice' || (source.kind === 'federal-case' && source.citation['container-title'] === 'IBIA'))
 		)
