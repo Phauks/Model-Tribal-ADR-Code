@@ -11,8 +11,20 @@ recognition:
   verification: bulk-import
   as_of: '2026-01-30'
   locator: 91 Fed. Reg. 4105
-  note: 'The notice adds in parentheses: Carson Colony, Dresslerville Colony, Woodfords Community, Stewart
-    Community, & Washoe Ranches.'
+  note: 'The notice adds in parentheses: Carson Colony, Dresslerville Colony, Woodfords Community, Stewart Community, & Washoe Ranches.'
+- type: federal
+  earliest_record: constitution
+  legal_basis: Constitution of the Washoe Tribe of Nevada & California (approved by the Secretary of the Interior Nov. 22, 1935), under the Indian Reorganization Act, ch. 576, § 16, 48 Stat. 984, 987 (1934)
+  since: '1935-11-22'
+  source: university-of-oklahoma-indian-reorganization-act-washcons
+  document_version:
+    document: washoe-tribe-of-nevada-and-california-constitution
+    version: 1935-text
+  confidence: medium
+  verification: inferred
+  as_of: '1935-11-22'
+  locator: 1935 constitution and bylaws, approval certificate
+  note: The earliest record this site has found that shows the United States dealing with the nation as a federally recognized nation. The relationship may be older. The Secretary of the Interior approved the nation's constitution; the date is read by rule from the approval certificate.
 states:
 - state: NV
   presence: government-office

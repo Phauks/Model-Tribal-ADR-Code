@@ -20,6 +20,16 @@ recognition:
   verification: bulk-import
   as_of: '2026-01-30'
   locator: 91 Fed. Reg. 4103
+- type: federal
+  earliest_record: land
+  legal_basis: Exec. Order of Sept. 11, 1893, 1 Kappler 916
+  since: '1893-09-11'
+  source: executive-order-1893-09-11-hoh-reservation
+  confidence: high
+  verification: read-in-full
+  as_of: '1893-09-11'
+  locator: 1 Kappler 917
+  note: The earliest record this site has found that shows the United States dealing with the nation as a federally recognized nation. The relationship may be older. The instrument first set aside the Hoh River Reserve, Washington.
 states:
 - state: WA
   presence: government-office

@@ -1,0 +1,50 @@
+key: minnesota-statutes-260c-221
+kind: state-statute
+citation:
+  type: legislation
+  title: Relative Search and Engagement; Placement Consideration
+  title-short: Minn. Stat. § 260C.221
+  container-title: Minnesota Statutes
+  container-title-short: Minn. Stat.
+  section: 260C.221
+  author:
+  - literal: Minnesota Office of the Revisor of Statutes
+  issued:
+    date-parts:
+    - - 1999
+  URL: https://www.revisor.mn.gov/statutes/cite/260C.221
+  accessed:
+    date-parts:
+    - - 2026
+      - 11
+      - 27
+original_link: https://www.revisor.mn.gov/statutes/cite/260C.221
+retrieved: '2026-11-27'
+archives: []
+history:
+  status: live
+  last_checked: '2026-11-27'
+state_law:
+  relevance: incidental
+  citation: Minn. Stat. § 260C.221 (2026)
+rights:
+  status: no-permission-needed
+  basis: government-edict
+  basis_note: 'Official state statutes are not copyrightable under the government edicts doctrine (Georgia v. Public.Resource.Org, Inc., 590 U.S. 255 (2020)). Linked, not served: state statutes stay link only.'
+  redistribution: false
+jurisdictions:
+- level: state
+  state: MN
+topics:
+- state-indian-law
+found_in:
+- 2026-11-27-state-statutes-third-batch
+notes: 'Indigo Book citation: Minn. Stat. § 260C.221 (2026). History: 1999 c 245 art 8 s 22; 2001 c 178 art 1 s 28; 2004 c 288 art 3 s 30; 2005 c 56 s 1; 2009 c 163 art 2 s 34; 2012 c 216 art 1 s 18; art 4 s 17; art 6 s 13; 2013 c 125 art 1 s 105; 2015 c 71 art 1 s 61; 2016 c 158 art 1 s 151; 1Sp2020 c 2 art 8 s 125; 2022 c 98 art 8 s 21; 2023 c 70 art 14 s 10; 2024 c 80 art 2 s 74; 1Sp2025 c 3 art 10 s 24. Text read from the Minnesota Revisor of Statutes'' full-text chapter page for the section (revisor.mn.gov/statutes) on Nov. 27, 2026. Found by the state statutes sweep (terms: indian child; indian); AI reader''s verdict incidental: Relative search must meet ICWA active efforts and placement preferences. Unverified.'
+review:
+  status: unverified
+  by: scripts/law/state_statutes/run.py
+  date: '2026-11-27'
+  checks:
+  - check: 'Indian law section: the sweep''s keyword pass and an AI reader''s verdict (core, incidental or none)'
+    result: agree
+    detail: 'incidental; terms: indian child; indian'
