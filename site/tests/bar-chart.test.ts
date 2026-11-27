@@ -58,7 +58,9 @@ describe('dataCharts (repository data)', () => {
 		'supreme-court-cases-by-court',
 		'supreme-court-cases-by-vote',
 		'tribal-opinions-by-decade',
-		'opinions-on-dispute-resolution-by-decade'
+		'opinions-on-dispute-resolution-by-decade',
+		// Federal, state only, not recognized: the order Trevor named them in (Nov. 27, 2026).
+		'nations-by-recognition-status'
 	]);
 
 	it('builds every chart with bars, largest first unless they follow an order of their own', () => {
@@ -174,6 +176,10 @@ describe('dataCharts pies (repository data)', () => {
 			'compacts-by-decision',
 			'compacts-by-period',
 			'compacts-by-state',
+			'nations-by-recognition-status',
+			'federal-recognition-by-basis',
+			'federal-list-sections',
+			'without-federal-recognition',
 			'nations-by-bureau-region',
 			'treaties-by-decade',
 			'supreme-court-cases-by-court',
