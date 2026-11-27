@@ -43,6 +43,7 @@ export const notWatched: NotWatched[] = [
 	{ feed: 'historic-nation-laws', kind: 'never', reason: 'Volumes printed by the nations’ own governments before 1934; nothing new is published. A newly digitized copy is added by rerunning scripts/law/historic_nation_laws.py.' },
 	{ feed: 'water-rights-settlements', kind: 'derived', reason: 'A new settlement is an Act of Congress, which the federal statutes watchers will find; research/water-settlements/enacted-settlements.csv is updated by hand from the Congressional Research Service’s report R44148 when it is revised.' },
 	{ feed: 'state-statutes', kind: 'planned', reason: 'One watcher per state legislature’s code site, re-running the state statutes sweep on each new edition (research/analyses/2026-11-26-state-statutes-pilot.md, section 7); scripts/law/state_statutes/run.py rebuilds each state meanwhile.' },
+	{ feed: 'indian-affairs-manual', kind: 'planned', reason: 'bia-manual (the Bureau of Indian Affairs’ manual page, compared by part, chapter and issued date, monthly), phase 2; scripts/law/indian_affairs_manual.py rebuilds the collection meanwhile.' },
 	{ feed: 'supreme-courts', kind: 'derived', reason: 'Built from the Justices.' },
 	{ feed: 'courts', kind: 'planned', reason: 'nation-sites (court pages) in phase 3, and courtlistener (new court names) in phase 2.' },
 	{ feed: 'biographies', kind: 'planned', reason: 'wikidata, phase 2, and new parties and leaders in accepted cases and treaties. No automatic people pages.' },

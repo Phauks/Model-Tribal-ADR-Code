@@ -1,0 +1,50 @@
+key: louisiana-revised-statutes-40-1664-8
+kind: state-statute
+citation:
+  type: legislation
+  title: Criminal background checks; provisional license
+  title-short: La. Stat. Ann. § 40:1664.8
+  container-title: Louisiana Revised Statutes
+  container-title-short: La. Stat. Ann.
+  section: 40:1664.8
+  author:
+  - literal: Louisiana State Legislature
+  issued:
+    date-parts:
+    - - 2006
+  URL: https://legis.la.gov/Legis/Law.aspx?d=409647
+  accessed:
+    date-parts:
+    - - 2026
+      - 11
+      - 27
+original_link: https://legis.la.gov/Legis/Law.aspx?d=409647
+retrieved: '2026-11-27'
+archives: []
+history:
+  status: live
+  last_checked: '2026-11-27'
+state_law:
+  relevance: incidental
+  citation: La. Stat. Ann. § 40:1664.8 (2026)
+rights:
+  status: no-permission-needed
+  basis: government-edict
+  basis_note: 'Official state statutes are not copyrightable under the government edicts doctrine (Georgia v. Public.Resource.Org, Inc., 590 U.S. 255 (2020)). Linked, not served: state statutes stay link only.'
+  redistribution: false
+jurisdictions:
+- level: state
+  state: LA
+topics:
+- state-indian-law
+found_in:
+- 2026-11-27-state-statutes-ky-la-hi
+notes: 'Indigo Book citation: La. Stat. Ann. § 40:1664.8 (2026). History: Acts 2006, No. 307, §2, eff. Jan. 1, 2007; Acts 2010, No. 984, §1; Acts 2016, No. 229, §1; Acts 2020, No. 339, §1, eff. June 13, 2020; Acts 2020, 2 nd Ex. Sess., No. 54, §1, eff. Nov. 5, 2020. Text read from the Louisiana State Legislature''s page for the section (legis.la.gov/Legis/Law.aspx) on Nov. 27, 2026. Found by the state statutes sweep (terms: tribal); AI reader''s verdict incidental: Background check counts tribal-law felony convictions as equivalent. Unverified.'
+review:
+  status: unverified
+  by: scripts/law/state_statutes/run.py
+  date: '2026-11-27'
+  checks:
+  - check: 'Indian law section: the sweep''s keyword pass and an AI reader''s verdict (core, incidental or none)'
+    result: agree
+    detail: 'incidental; terms: tribal'

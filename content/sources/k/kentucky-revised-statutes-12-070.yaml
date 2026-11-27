@@ -1,0 +1,47 @@
+key: kentucky-revised-statutes-12-070
+kind: state-statute
+citation:
+  type: legislation
+  title: Appointments to boards and commissions -- Minority representation -- Reimbursement for expenses when compensation not provided
+  title-short: Ky. Rev. Stat. Ann. § 12.070
+  container-title: Kentucky Revised Statutes
+  container-title-short: Ky. Rev. Stat. Ann.
+  section: '12.070'
+  author:
+  - literal: Kentucky Legislative Research Commission
+  URL: https://apps.legislature.ky.gov/law/statutes/statute.aspx?id=633
+  accessed:
+    date-parts:
+    - - 2026
+      - 11
+      - 27
+original_link: https://apps.legislature.ky.gov/law/statutes/statute.aspx?id=633
+retrieved: '2026-11-27'
+archives: []
+history:
+  status: live
+  last_checked: '2026-11-27'
+state_law:
+  relevance: incidental
+  citation: Ky. Rev. Stat. Ann. § 12.070 (2026)
+rights:
+  status: no-permission-needed
+  basis: government-edict
+  basis_note: 'Official state statutes are not copyrightable under the government edicts doctrine (Georgia v. Public.Resource.Org, Inc., 590 U.S. 255 (2020)). Linked, not served: state statutes stay link only.'
+  redistribution: false
+jurisdictions:
+- level: state
+  state: KY
+topics:
+- state-indian-law
+found_in:
+- 2026-11-27-state-statutes-ky-la-hi
+notes: 'Indigo Book citation: Ky. Rev. Stat. Ann. § 12.070 (2026). History: Amended 1994 Ky. Acts ch. 359, sec. 1, effective July 15, 1994. -- Amended 1962 Ky. Acts ch. 106, Art. I, sec. 10. -- Recodified 1942 Ky. Acts ch. 208, sec. 1, effective October 1, 1942, from Ky. Stat. secs. 4618-120, 4618-156. Text read from the Kentucky Legislative Research Commission''s PDF of the section (apps.legislature.ky.gov/law/statutes) on Nov. 27, 2026. Found by the state statutes sweep (terms: american indian; indian; native); AI reader''s verdict incidental: Board appointment minority definition and preference includes American Indians. Unverified.'
+review:
+  status: unverified
+  by: scripts/law/state_statutes/run.py
+  date: '2026-11-27'
+  checks:
+  - check: 'Indian law section: the sweep''s keyword pass and an AI reader''s verdict (core, incidental or none)'
+    result: agree
+    detail: 'incidental; terms: american indian; indian; native'

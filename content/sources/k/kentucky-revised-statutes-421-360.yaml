@@ -1,0 +1,50 @@
+key: kentucky-revised-statutes-421-360
+kind: state-statute
+citation:
+  type: legislation
+  title: Uniform Interstate Depositions and Discovery Act
+  title-short: Ky. Rev. Stat. Ann. § 421.360
+  container-title: Kentucky Revised Statutes
+  container-title-short: Ky. Rev. Stat. Ann.
+  section: '421.360'
+  author:
+  - literal: Kentucky Legislative Research Commission
+  issued:
+    date-parts:
+    - - 2008
+  URL: https://apps.legislature.ky.gov/law/statutes/statute.aspx?id=18075
+  accessed:
+    date-parts:
+    - - 2026
+      - 11
+      - 27
+original_link: https://apps.legislature.ky.gov/law/statutes/statute.aspx?id=18075
+retrieved: '2026-11-27'
+archives: []
+history:
+  status: live
+  last_checked: '2026-11-27'
+state_law:
+  relevance: incidental
+  citation: Ky. Rev. Stat. Ann. § 421.360 (2026)
+rights:
+  status: no-permission-needed
+  basis: government-edict
+  basis_note: 'Official state statutes are not copyrightable under the government edicts doctrine (Georgia v. Public.Resource.Org, Inc., 590 U.S. 255 (2020)). Linked, not served: state statutes stay link only.'
+  redistribution: false
+jurisdictions:
+- level: state
+  state: KY
+topics:
+- state-indian-law
+found_in:
+- 2026-11-27-state-statutes-ky-la-hi
+notes: 'Indigo Book citation: Ky. Rev. Stat. Ann. § 421.360 (2026). History: Created 2008 Ky. Acts ch. 114, sec. 1, effective July 15, 2008. Text read from the Kentucky Legislative Research Commission''s PDF of the section (apps.legislature.ky.gov/law/statutes) on Nov. 27, 2026. Found by the state statutes sweep (terms: federally recognized indian tribe; indian; tribe); AI reader''s verdict incidental: Uniform depositions act defines state to include federally recognized tribes. Unverified.'
+review:
+  status: unverified
+  by: scripts/law/state_statutes/run.py
+  date: '2026-11-27'
+  checks:
+  - check: 'Indian law section: the sweep''s keyword pass and an AI reader''s verdict (core, incidental or none)'
+    result: agree
+    detail: 'incidental; terms: federally recognized indian tribe; indian; tribe'
