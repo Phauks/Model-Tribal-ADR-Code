@@ -11,12 +11,14 @@
 	//
 	// To keep the section short (Trevor chose this on Nov. 23, 2026): each
 	// source is one row, with its letters on a "Cited 7 times" line under the
-	// citation; the facts each source supports wait behind "Show what each
-	// source supports"; and a long list folds into groups by the part of the
-	// page that first cites each source (src/lib/source-groups.ts). Without
-	// scripts the facts show and the groups still open, since they are the
-	// browser's own <details>. Printing opens every group (PrintOptions.svelte)
-	// and prints every fact.
+	// citation; the facts each source supports stay hidden; and a long list
+	// folds into groups by the part of the page that first cites each source
+	// (src/lib/source-groups.ts). One button on the heading row, "Expand all",
+	// opens every group and shows the facts, and "Collapse all" folds it all
+	// back (Trevor found two expand buttons confusing, Nov. 27, 2026). Each
+	// group still opens on its own. Without scripts the facts show and the
+	// groups still open, since they are the browser's own <details>. Printing
+	// opens every group (PrintOptions.svelte) and prints every fact.
 	import { onMount } from 'svelte';
 	import ChevronDown from '@lucide/svelte/icons/chevron-down';
 	import ChevronsDownUp from '@lucide/svelte/icons/chevrons-down-up';
@@ -33,6 +35,8 @@
 	let showFacts = $state(false);
 	let openGroups = $state(0);
 	let groupList: HTMLElement | undefined = $state();
+	// Everything shows once the facts show and every group is open; folding one group by hand turns the button back to "Expand all".
+	const expanded = $derived(showFacts && openGroups === (groups?.length ?? 0));
 
 	const groupElements = () => [...(groupList?.querySelectorAll<HTMLDetailsElement>('details.source-group') ?? [])];
 
@@ -40,9 +44,15 @@
 		openGroups = groupElements().filter((group) => group.open).length;
 	}
 
-	function openOrFoldAll(): void {
-		const open = openGroups < (groups?.length ?? 0);
+	function expandOrCollapseAll(event: MouseEvent): void {
+		const open = !expanded;
+		// The button stays on the heading row when the section is folded, so expanding opens the section too.
+		if (open) {
+			const section = (event.currentTarget as HTMLElement).closest('.notes')?.querySelector('details.collapsible');
+			if (section instanceof HTMLDetailsElement) section.open = true;
+		}
 		for (const group of groupElements()) group.open = open;
+		showFacts = open;
 		countOpen();
 	}
 
@@ -119,25 +129,19 @@
 	<div class="notes" class:showing-facts={showFacts} data-print-part="sources">
 		<!-- "References", not "Sources", so it never clashes with a story's "Source" (Trevor, Nov. 23, 2026). -->
 		<Collapsible heading="References" identifier="sources-heading" count={sources.length}>
-			<div class="source-tools needs-scripts no-print">
-				{#if groups}
-					<!-- The open and close symbols, not words (Trevor, Nov. 23, 2026). -->
-					{@const allOpen = openGroups === groups.length}
-					<button
-						class="icon-button"
-						type="button"
-						aria-label={allOpen ? 'Close all groups' : 'Open all groups'}
-						title={allOpen ? 'Close all groups' : 'Open all groups'}
-						onclick={openOrFoldAll}
-					>
-						{#if allOpen}<ChevronsDownUp size={20} aria-hidden="true" />{:else}<ChevronsUpDown size={20} aria-hidden="true" />{/if}
-					</button>
-				{/if}
-				<!-- "Expand" (Trevor, Nov. 23, 2026); the hidden words tell screen readers what it opens. -->
-				<button class="text-button" type="button" aria-expanded={showFacts} onclick={() => (showFacts = !showFacts)}
-					>{showFacts ? 'Collapse' : 'Expand'}<span class="visually-hidden"> what each source supports</span></button
+			{#snippet actions()}
+				<!-- One control for the whole list, an icon like the other heading-row buttons (Trevor, Nov. 27, 2026). -->
+				<button
+					class="icon-button needs-scripts"
+					type="button"
+					aria-expanded={expanded}
+					aria-label={expanded ? 'Collapse all references' : 'Expand all references'}
+					title={expanded ? 'Collapse all' : 'Expand all'}
+					onclick={expandOrCollapseAll}
 				>
-			</div>
+					{#if expanded}<ChevronsDownUp size={20} aria-hidden="true" />{:else}<ChevronsUpDown size={20} aria-hidden="true" />{/if}
+				</button>
+			{/snippet}
 			{#if groups}
 				<div class="source-groups" bind:this={groupList}>
 					{#each groups as group (group.part)}
@@ -172,27 +176,13 @@
 {/if}
 
 <style>
-	.source-tools {
-		display: flex;
-		flex-wrap: wrap;
-		align-items: center;
-		gap: var(--space-2) var(--space-4);
-		margin: var(--space-2) 0 var(--space-3);
-	}
-
-	.text-button {
-		min-height: 1.5rem;
-		padding: 0;
-		border: 0;
-		background: none;
-		color: var(--color-link);
-		font: inherit;
-		text-decoration: underline;
-		cursor: pointer;
-	}
-
 	.source-group {
 		border-top: 1px solid var(--color-line);
+	}
+
+	/* The heading's own rule already sits above the first group. */
+	.source-group:first-child {
+		border-top: 0;
 	}
 
 	.source-group:last-child {

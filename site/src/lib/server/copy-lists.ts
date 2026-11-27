@@ -174,6 +174,8 @@ const opinionPrefix = 'opinions-';
 function groupOf(copy: PublicCopy, names: Map<string, string>): string {
 	if (copy.topic === 'caselaw-access-project') return `${opinionPrefix}${copy.nations[0] ?? 'other'}`;
 	if (copy.topic === 'ibia-decisions') return boardGroup(copy);
+	// The Supreme Court's opinions as text, split by opinion, beside the scans of the United States Reports (scripts/caselaw/case_opinion_texts.py).
+	if (copy.topic === 'supreme-court-opinions') return 'supreme-court';
 	if (copy.topic === 'indian-claims-commission') return claimsGroup(copy);
 	if (copy.topic === 'federal-court-opinions') return 'federal-court-opinions';
 	if (copy.topic === 'state-court-opinions') return 'state-court-opinions';

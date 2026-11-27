@@ -41,6 +41,11 @@ reading_links:
     label: "Lexis"
     access: subscription
     link: https://advance.lexis.com/api/search?q=25%20U.S.C.%20%C2%A7%201322
+file:
+  storage_key: united-states-code/2024/title-25-section-1322.pdf
+  checksum: 9cdf7a3f0cdee67b9ed032a14faeef60233d1d01dd956a04e83a2fe9621380c5
+  media_type: application/pdf
+  bytes: 145829
 rights:
   status: no-permission-needed
   basis: government-edict
@@ -51,4 +56,5 @@ topics:
 - public-law-280
 found_in:
 - 2026-11-22-foundations-sources
-notes: Current text read on Cornell LII on Nov. 22, 2026. Codifies section 402 of the Indian Civil Rights Act of 1968 (Title IV); subsection (c) gives Tribal ordinances and customs "full force and effect" in state civil cases. Citator check not yet run.
+- 2026-11-27-us-code-sections
+notes: Current text read on Cornell LII on Nov. 22, 2026. Codifies section 402 of the Indian Civil Rights Act of 1968 (Title IV); subsection (c) gives Tribal ordinances and customs "full force and effect" in state civil cases. Citator check not yet run. The stored copy is 25 U.S.C. § 1322 from the 2024 edition of the Code on GovInfo (the text with its notes), saved by scripts/law/us_code_sections.py.

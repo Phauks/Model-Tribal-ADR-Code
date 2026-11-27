@@ -48,6 +48,11 @@ reading_links:
     label: "Lexis"
     access: subscription
     link: https://advance.lexis.com/api/search?q=9%20U.S.C.%20%C2%A7%201
+file:
+  storage_key: united-states-code/2024/title-9-section-1.pdf
+  checksum: 318bfe855d4b5b2c18deb21d3099fcc6317907a85509723ed00089b72b61cfe5
+  media_type: application/pdf
+  bytes: 141764
 rights:
   status: no-permission-needed
   basis: us-government-work
@@ -82,6 +87,5 @@ access:
   note: Also on uscode.house.gov.
 found_in:
 - 2026-11-21-united-states-dispute-resolution
-notes: >-
-  Read on the original page. Citator check not yet run. Wayback capture added from the archive workflow's report on 2026-11-21.
-  Read in the 2022 edition of the United States Code published by the U.S. Government Publishing Office.
+- 2026-11-27-us-code-sections
+notes: Read on the original page. Citator check not yet run. Wayback capture added from the archive workflow's report on 2026-11-21. Read in the 2022 edition of the United States Code published by the U.S. Government Publishing Office. The stored copy is 9 U.S.C. § 1 from the 2024 edition of the Code on GovInfo (the text with its notes), saved by scripts/law/us_code_sections.py.

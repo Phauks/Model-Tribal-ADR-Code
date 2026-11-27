@@ -182,6 +182,10 @@ function addLandAreaSources(records: ReturnType<typeof nations>, sources: Source
 		section: 'Basemap',
 		text: 'the map of places, roads and water under each view, where the browser can draw it'
 	});
+	sources.add('esa-hipparcos-catalogue', {
+		section: 'Basemap',
+		text: 'the stars behind the globe'
+	});
 	sources.add('census-geocoder', {
 		section: 'Offices of nations with no land area',
 		text: 'where the office address in each nation’s entry lies',

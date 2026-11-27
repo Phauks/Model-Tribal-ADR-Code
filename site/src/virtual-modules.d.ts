@@ -73,6 +73,11 @@ declare module 'virtual:build' {
 	export const recentChanges: import('#lib/recent-changes.ts').Change[];
 }
 
+declare module 'virtual:build-change' {
+	/** The newest pull request this build has, or null when git named none (vite.config.ts). */
+	export const newestChange: Pick<import('#lib/recent-changes.ts').Change, 'number' | 'merged'> | null;
+}
+
 declare module 'virtual:sponsorship-counts' {
 	/** Counts the Sponsorship page shows, taken when the site is built (src/lib/server/sponsorship-goals.ts). */
 	export const sponsorshipCounts: import('#lib/server/sponsorship-goals.ts').SponsorshipCounts;

@@ -123,7 +123,7 @@ review:
     detail: Supreme Court Library's table (from the Court's minutes) Mar. 3, 1812; Database 1812-03-03
   - check: opinions
     result: confirmed
-    detail: 'Report: majority Marshall p. 165; Database writers: Marshall; scan pages [(165, 167)]. Read from the scan by an AI reader (corrected): p.164: case was submitted ... without argument. March 3d ... all the Judges being present, [Marshall] Ch. J. delivered the opinion of the Court as follows (OCR: delivered the opinion of the / Court as follows). p.165: The case appears to be this. The opinion heading is on p.164, not p.165.. Confirmed: the report prints (read from the page images) p. 164: "MARSHALL, Ch. Justice, delivered the opinion of the"'
+    detail: 'Report: majority Marshall p. 165; Database writers: Marshall; scan pages [(165, 167)]. Read from the scan by an AI reader (corrected): p.164: case was submitted . . . without argument. March 3d . . . all the Judges being present, [Marshall] Ch. J. delivered the opinion of the Court as follows (OCR: delivered the opinion of the / Court as follows). p.165: The case appears to be this. The opinion heading is on p.164, not p.165.. Confirmed: the report prints (read from the page images) p. 164: "MARSHALL, Ch. Justice, delivered the opinion of the"'
   - check: bench
     result: agree
     detail: No Oyez votes; each opinion writer in the report sits on the Database's bench on the side the opinion takes
