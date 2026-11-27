@@ -144,6 +144,7 @@
 			clearTimeout(copiedTimer);
 			copiedTimer = setTimeout(() => (copied = null), 4000);
 		} catch {
+			// expected: the browser would not copy; the message shows the citation.
 			message = `Your browser did not allow copying. The citation is: ${citation.text}`;
 		}
 	}

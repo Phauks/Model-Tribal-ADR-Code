@@ -101,8 +101,9 @@
 	import { essayChartFrom } from '#lib/table-builder.ts';
 	import { addAfterCurrent, addSection, moveCurrent } from '#lib/essays/placement.ts';
 	import { dropLocalDraft, isSaveAnswer, keepaliveLimit, keepLocalDraft, localDraft, type LocalDraft } from '#lib/essays/local-draft.ts';
-	import { writeStored } from '#lib/browser-storage.ts';
+	import { readStored, writeStored } from '#lib/browser-storage.ts';
 	import { sendJson } from '#lib/send-json.ts';
+	import { sendProblem } from '#lib/problem-reports.ts';
 
 	let {
 		identifier,
@@ -262,7 +263,9 @@
 		try {
 			const response = await fetch(`/workspace/essays/source-documents.json?keys=${wanted.join(',')}`);
 			if (response.ok) documents = { ...documents, ...(await response.json()) };
-		} catch {
+		} catch (problem) {
+			// Asked again with the next change.
+			sendProblem(problem, { code: 'essays.source-documents' });
 			for (const key of wanted) asked.delete(key);
 		}
 	}
@@ -277,7 +280,7 @@
 
 	/** The credits for the newest saved version, and the credits added by hand. */
 	async function loadCredits(): Promise<void> {
-		const response = await fetch(`/workspace/essays/${identifier}/credits`).catch(() => null);
+		const response = await fetch(`/workspace/essays/${identifier}/credits`).catch(() => /* expected: offline; the credits are left as they were, and the server reports its own failures. */ null);
 		if (!response?.ok) return;
 		creditsChanged((await response.json()) as EssayCredits);
 	}
@@ -303,7 +306,7 @@
 	const wholeDraftReviews = $derived(openRequestsOn(reviewRequests, null));
 
 	async function loadReviewRequests(): Promise<void> {
-		const response = await fetch(`/workspace/essays/${identifier}/sharing`).catch(() => null);
+		const response = await fetch(`/workspace/essays/${identifier}/sharing`).catch(() => /* expected: offline; review requests are left as they were, and the server reports its own failures. */ null);
 		if (!response?.ok) return;
 		const body = (await response.json()) as { requests: ReviewRequest[]; you: string };
 		reviewingPerson = body.you;
@@ -468,7 +471,7 @@
 	let selectionMenu = $state<{ top: number; left: number } | null>(null);
 
 	async function loadComments(): Promise<void> {
-		const response = await fetch(`/workspace/essays/${identifier}/comments`).catch(() => null);
+		const response = await fetch(`/workspace/essays/${identifier}/comments`).catch(() => /* expected: offline; comments are left as they were, and the server reports its own failures. */ null);
 		if (!response?.ok) return;
 		const body = (await response.json()) as { comments: EssayComment[]; you: string; mayResolveAny: boolean };
 		commentingPerson = body.you;
@@ -488,6 +491,7 @@
 		try {
 			return view.coordsAtPos(position).top - textAndMargin.getBoundingClientRect().top;
 		} catch {
+			// expected: a position the editor no longer has sits at the top.
 			return 0;
 		}
 	}
@@ -671,6 +675,7 @@
 			const middle = start.top === end.top ? (start.left + end.left) / 2 : ((area?.left ?? box.left) + (area?.right ?? box.right)) / 2;
 			selectionMenu = { top: start.top - box.top, left: middle - box.left };
 		} catch {
+			// expected: a selection the editor no longer has gets no menu.
 			selectionMenu = null;
 		}
 	}
@@ -787,8 +792,9 @@
 			if (closed || asking.signal.aborted) return;
 			boxesShownFor = file;
 			recordBoxes.update(shownBoxes(rendered.html));
-		} catch {
-			// Offline or replaced by a newer request: the boxes keep what they show.
+		} catch (problem) {
+			// The boxes keep what they show; offline, or a newer request, is not sent (sendProblem).
+			sendProblem(problem, { code: 'essays.record-boxes' });
 		} finally {
 			if (boxesAsking === asking) boxesAsking = null;
 		}
@@ -1417,6 +1423,7 @@
 			const position = relativePositionToAbsolutePosition(synced.doc, synced.type, Y.createRelativePositionFromJSON(head), synced.binding.mapping as never);
 			return position === null ? null : Math.min(position, view.state.doc.content.size);
 		} catch {
+			// expected: a place another person had that is gone from the text.
 			return null;
 		}
 	}
@@ -1454,7 +1461,7 @@
 		try {
 			(view.domAtPos(at).node as HTMLElement).parentElement?.scrollIntoView({ block: 'center', behavior: 'smooth' });
 		} catch {
-			// The place is gone; nothing to scroll to.
+			// expected: the place is gone; nothing to scroll to.
 		}
 	}
 
@@ -1665,7 +1672,7 @@
 			// Keepalive lets a save finish after the tab closes, but browsers refuse it over 64 KiB.
 			keepalive: last && body.length < keepaliveLimit,
 			body
-		}).catch(() => null);
+		}).catch(() => /* expected: the status line says the site could not be reached, and the save is tried again. */ null);
 		if (!response) {
 			status = 'Not saved: the site could not be reached. Your text is kept in this browser; it will try again.';
 			if (automatic) retryAutoSave();
@@ -1676,7 +1683,7 @@
 			if (automatic) retryAutoSave();
 			return;
 		}
-		const answer = await response.json().catch(() => ({}));
+		const answer = await response.json().catch(() => /* expected: an answer that is not JSON; the status below uses its own words. */ ({}));
 		if (response.status === 401) {
 			status = `Not saved: ${answer.message ?? 'you are signed out.'} Your text is kept in this browser.`;
 			if (automatic) retryAutoSave();
@@ -1774,12 +1781,9 @@
 		const kept = canEdit ? localDraft(identifier) : null;
 		if (kept && kept.text === untrack(() => text)) dropLocalDraft(identifier);
 		else if (kept) recovered = kept;
-		try {
-			if (canEdit && localStorage.getItem(checksKey) === 'on') toggleChecks();
-			else void loadLibrary();
-		} catch {
-			// Storage can be blocked; the choice is then not remembered.
-		}
+		// Storage can be blocked; the choice is then not remembered (readStored).
+		if (canEdit && readStored(checksKey) === 'on') toggleChecks();
+		else void loadLibrary();
 	});
 
 	onDestroy(() => {

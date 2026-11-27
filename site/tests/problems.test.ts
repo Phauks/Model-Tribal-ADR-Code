@@ -139,6 +139,10 @@ describe('problems in the browser', () => {
 			sendProblem(new SyntaxError('Unexpected token < in JSON at position 0'), { code: 'nations.names', path: '/uploads/send' });
 			expect(logged).toHaveBeenCalledTimes(1);
 			expect(beacon).toHaveBeenCalledTimes(1);
+			sendProblem(new DOMException('The operation was aborted.', 'AbortError'), { code: 'search.query', path: '/search' });
+			expect(warned).toHaveBeenCalledTimes(1);
+			expect(logged).toHaveBeenCalledTimes(1);
+			expect(beacon).toHaveBeenCalledTimes(1);
 		} finally {
 			vi.unstubAllGlobals();
 		}

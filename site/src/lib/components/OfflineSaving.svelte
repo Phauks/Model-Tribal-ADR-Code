@@ -19,6 +19,7 @@
 		type StorageUse
 	} from '#lib/offline-saving.ts';
 	import { siteUpdates } from '#lib/site-updates.svelte.ts';
+	import { sendProblem } from '#lib/problem-reports.ts';
 
 	let {
 		layout,
@@ -72,8 +73,9 @@
 		try {
 			const response = await fetch(catalogAddress);
 			if (response.ok) catalog = (await response.json()) as Catalog;
-		} catch {
-			// Offline before the catalog was ever read: the summary shows without the outline.
+		} catch (problem) {
+			// The summary shows without the outline.
+			sendProblem(problem, { code: 'offline.catalog' });
 		}
 	}
 
@@ -120,7 +122,10 @@
 	}
 
 	async function clearRead(): Promise<void> {
-		status = await clearReadPages().catch(() => status);
+		status = await clearReadPages().catch((problem) => {
+			sendProblem(problem, { code: 'offline.clear-read' });
+			return status;
+		});
 		storage = await storageUse();
 	}
 

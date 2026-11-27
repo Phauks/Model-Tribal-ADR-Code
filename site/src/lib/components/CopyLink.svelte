@@ -18,6 +18,7 @@
 			await copyText(link);
 			copied = 'Copied.';
 		} catch {
+			// expected: the browser would not copy; the message says to copy the link by hand.
 			copied = 'Could not copy. Select the link and copy it yourself.';
 		}
 	}

@@ -16,6 +16,7 @@
 	import Circle from '@lucide/svelte/icons/circle';
 	import Square from '@lucide/svelte/icons/square';
 	import type { RecordingChoice } from '#lib/event-calendar.ts';
+	import { sendProblem } from '#lib/problem-reports.ts';
 
 	interface Props {
 		token: string;
@@ -70,7 +71,7 @@
 			});
 			setTimeout(() => void context.close(), 800);
 		} catch {
-			// No sound is possible here; the banner still shows.
+			// expected: no sound is possible here; the banner still shows.
 		}
 	}
 
@@ -88,7 +89,8 @@
 		try {
 			if (recording) await meeting.recording.stop();
 			else await meeting.recording.start();
-		} catch {
+		} catch (problem) {
+			sendProblem(problem, { code: 'video.recording' });
 			announcement = recording ? 'The recording could not be stopped. Try again.' : 'The recording could not be started. Try again.';
 		} finally {
 			busy = false;
@@ -110,7 +112,7 @@
 				if (stopped || !container) return;
 				const client = (await RealtimeKitClient.init({ authToken: token, defaults: { audio: false, video: false } })) as unknown as RoomMeeting;
 				if (stopped) {
-					await client.leave().catch(() => undefined);
+					await client.leave().catch(() => /* expected: leaving a room the reader has already left. */ undefined);
 					return;
 				}
 				meeting = client;
@@ -133,7 +135,7 @@
 		return () => {
 			stopped = true;
 			meeting?.recording.off?.('recordingUpdate', onRecordingState);
-			void meeting?.leave().catch(() => undefined);
+			void meeting?.leave().catch(() => /* expected: leaving a room the reader has already left. */ undefined);
 		};
 	});
 </script>

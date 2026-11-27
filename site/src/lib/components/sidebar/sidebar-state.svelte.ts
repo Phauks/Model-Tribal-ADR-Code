@@ -22,7 +22,7 @@ export class SidebarState {
 		try {
 			this.sectionChoices = parseSectionChoices(localStorage.getItem(sectionChoicesKey));
 		} catch {
-			// Storage can be blocked; every section then starts as the defaults say.
+			// expected: storage can be blocked; every section then starts as the defaults say.
 		}
 	}
 
@@ -35,7 +35,7 @@ export class SidebarState {
 		try {
 			localStorage.setItem(sectionChoicesKey, JSON.stringify(this.sectionChoices));
 		} catch {
-			// Nothing to remember with; the choice lasts for this page only.
+			// expected: nothing to remember with; the choice lasts for this page only.
 		}
 	}
 
@@ -56,6 +56,6 @@ export function forgetSidebarChoices(): void {
 		localStorage.removeItem(sidebarHiddenKey);
 		delete document.documentElement.dataset.sidebarHidden;
 	} catch {
-		// Storage can be blocked; there is then nothing to forget.
+		// expected: storage can be blocked; there is then nothing to forget.
 	}
 }
