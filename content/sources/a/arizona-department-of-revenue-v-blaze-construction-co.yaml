@@ -100,6 +100,19 @@ reading_links:
     access: subscription
     link: https://advance.lexis.com/api/search?q=526%20U.S.%2032
     unchecked: true
+argument_audio:
+- kind: argument
+  date: '1998-12-08'
+  source: National Archives
+  link: https://catalog.archives.gov/medialz/mopix/267a/RED/267-1085.mp3
+  catalog: https://catalog.archives.gov/id/138282726
+  whole_session: true
+  duration_seconds: 7027
+  file:
+    storage_key: supreme-court-audio/national-archives/red-series/267-1085.mp3
+    checksum: e0cfd71adaef9fd509274fbfccaad6187f2d2f242347fb1d13143221826e4edc
+    media_type: audio/mpeg
+    bytes: 112427384
 rights:
   status: no-permission-needed
   basis: us-government-work

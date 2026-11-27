@@ -117,6 +117,19 @@ reading_links:
     access: subscription
     link: https://advance.lexis.com/api/search?q=476%20U.S.%20693
     unchecked: true
+argument_audio:
+- kind: argument
+  date: '1986-01-14'
+  source: National Archives
+  link: https://catalog.archives.gov/medialz/mopix/267a/RED/267-546.mp3
+  catalog: https://catalog.archives.gov/id/118974721
+  whole_session: true
+  duration_seconds: 13712
+  file:
+    storage_key: supreme-court-audio/national-archives/red-series/267-546.mp3
+    checksum: 89ff09944290858d33577910fc331a7a2401f8e25341e5b1eb9accd7c253d1e4
+    media_type: audio/mpeg
+    bytes: 219394004
 rights:
   status: no-permission-needed
   basis: us-government-work

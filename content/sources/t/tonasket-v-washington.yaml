@@ -100,6 +100,55 @@ reading_links:
     access: subscription
     link: https://advance.lexis.com/api/search?q=411%20U.S.%20451
     unchecked: true
+argument_audio:
+- kind: argument
+  date: '1972-12-12'
+  source: National Archives
+  link: https://catalog.archives.gov/medialz/mopix/267a/RED/267-2d-r1.mp3
+  catalog: https://catalog.archives.gov/id/102048348
+  whole_session: true
+  duration_seconds: 181
+  file:
+    storage_key: supreme-court-audio/national-archives/red-series/267-2d-r1.mp3
+    checksum: 4e5f53cf24d6cfbf27209e11697cf2ba80f4f7407044d2fe83350073bc6523c4
+    media_type: audio/mpeg
+    bytes: 2898256
+- kind: argument
+  date: '1972-12-12'
+  source: National Archives
+  link: https://catalog.archives.gov/medialz/mopix/267a/RED/267-2d-r2.mp3
+  catalog: https://catalog.archives.gov/id/102048348
+  whole_session: true
+  duration_seconds: 1560
+  file:
+    storage_key: supreme-court-audio/national-archives/red-series/267-2d-r2.mp3
+    checksum: 6a618ba4d1709fa21c231d09c0cb85c985e7cf196c5d4499a0e0faaf4df4f109
+    media_type: audio/mpeg
+    bytes: 24962739
+- kind: argument
+  date: '1972-12-12'
+  source: National Archives
+  link: https://catalog.archives.gov/medialz/mopix/267a/RED/267-2d-r3.mp3
+  catalog: https://catalog.archives.gov/id/102048348
+  whole_session: true
+  duration_seconds: 2616
+  file:
+    storage_key: supreme-court-audio/national-archives/red-series/267-2d-r3.mp3
+    checksum: a74393e7572b267d6f1543f64d85187e2b8db3fc47dcdce57dcca96a5021e73f
+    media_type: audio/mpeg
+    bytes: 41858321
+- kind: argument
+  date: '1972-12-13'
+  source: National Archives
+  link: https://catalog.archives.gov/medialz/mopix/267a/RED/267-3a.mp3
+  catalog: https://catalog.archives.gov/id/102048349
+  whole_session: true
+  duration_seconds: 2553
+  file:
+    storage_key: supreme-court-audio/national-archives/red-series/267-3a.mp3
+    checksum: 3e4b3ae3b6911537f7d3818b747d5edbaa44ccd5ce5586a31ae88c0fb6eec86b
+    media_type: audio/mpeg
+    bytes: 40850615
 rights:
   status: no-permission-needed
   basis: us-government-work
