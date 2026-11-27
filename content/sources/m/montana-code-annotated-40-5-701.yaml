@@ -1,0 +1,50 @@
+key: montana-code-annotated-40-5-701
+kind: state-statute
+citation:
+  type: legislation
+  title: Definitions
+  title-short: Mont. Code Ann. § 40-5-701
+  container-title: Montana Code Annotated
+  container-title-short: Mont. Code Ann.
+  section: 40-5-701
+  author:
+  - literal: Montana Legislature
+  issued:
+    date-parts:
+    - - 1993
+  URL: https://mca.legmt.gov/bills/mca/title_0400/chapter_0050/part_0070/section_0010/0400-0050-0070-0010.html
+  accessed:
+    date-parts:
+    - - 2026
+      - 11
+      - 27
+original_link: https://mca.legmt.gov/bills/mca/title_0400/chapter_0050/part_0070/section_0010/0400-0050-0070-0010.html
+retrieved: '2026-11-27'
+archives: []
+history:
+  status: live
+  last_checked: '2026-11-27'
+state_law:
+  relevance: incidental
+  citation: Mont. Code Ann. § 40-5-701 (2025)
+rights:
+  status: no-permission-needed
+  basis: government-edict
+  basis_note: 'Official state statutes are not copyrightable under the government edicts doctrine (Georgia v. Public.Resource.Org, Inc., 590 U.S. 255 (2020)). Linked, not served: state statutes stay link only.'
+  redistribution: false
+jurisdictions:
+- level: state
+  state: MT
+topics:
+- state-indian-law
+found_in:
+- 2026-11-27-state-statutes-sweep
+notes: 'Indigo Book citation: Mont. Code Ann. § 40-5-701 (2025). History: En. Sec. 3, Ch. 523, L. 1993; amd. Sec. 141, Ch. 546, L. 1995; amd. Sec. 186, Ch. 42, L. 1997; amd. Sec. 78, Ch. 552, L. 1997; amd. Sec. 13, Ch. 579, L. 1999; amd. Sec. 14, Ch. 21, L. 2005; amd. Sec. 3, Ch. 223, L. 2009; amd. Sec. 1, Ch. 397, L. 2017; amd. Sec. 5, Ch. 506, L. 2023; amd. Sec. 3, Ch. 507, L. 2023. Text read from the Montana Legislature''s page for the section in the Montana Code Annotated 2025 (mca.legmt.gov) on Nov. 27, 2026. Found by the state statutes sweep (terms: indian tribe; indian; tribe); AI reader''s verdict incidental: Support definitions include Indian tribe obligees, orders and agencies. Unverified.'
+review:
+  status: unverified
+  by: scripts/law/state_statutes/run.py
+  date: '2026-11-27'
+  checks:
+  - check: 'Indian law section: the sweep''s keyword pass and an AI reader''s verdict (core, incidental or none)'
+    result: agree
+    detail: 'incidental; terms: indian tribe; indian; tribe'

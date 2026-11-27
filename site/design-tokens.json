@@ -255,6 +255,14 @@
         "$value": "#F0E442",
         "$description": "Chart slice 7 (yellow), from the Okabe-Ito palette (Okabe & Ito, Color Universal Design), in this fixed order and never cycled. Each slice carries its number, which leads its line in the key, so no reader has to match colors; every chart also has a table view. The set must pass npm run check:color-vision."
       },
+      "vote-majority": {
+        "$value": "#0072B2",
+        "$description": "Justice timelines: a vote with the majority, drawn as a filled dot (Okabe-Ito blue). Always a dot, never only a color; the card names the Justices. The vote colors must pass npm run check:color-vision."
+      },
+      "vote-dissent": {
+        "$value": "#D55E00",
+        "$description": "Justice timelines: a dissent, drawn as a cross (Okabe-Ito vermillion). Always a cross, never only a color; the card names the Justices."
+      },
       "viewer-checker-light": {
         "$value": "#FFFFFF",
         "$description": "Light squares of the checkerboard behind a picture in the image viewer, which shows through its clear parts, the same in both themes."
@@ -516,6 +524,14 @@
       "chart-series-7": {
         "$value": "#F0E442",
         "$description": "Chart slice 7 (yellow), from the Okabe-Ito palette (Okabe & Ito, Color Universal Design), in this fixed order and never cycled. Each slice carries its number, which leads its line in the key, so no reader has to match colors; every chart also has a table view. The set must pass npm run check:color-vision."
+      },
+      "vote-majority": {
+        "$value": "#56B4E9",
+        "$description": "Justice timelines: a vote with the majority, drawn as a filled dot (Okabe-Ito sky blue). Always a dot, never only a color; the card names the Justices. The vote colors must pass npm run check:color-vision."
+      },
+      "vote-dissent": {
+        "$value": "#E69F00",
+        "$description": "Justice timelines: a dissent, drawn as a cross (Okabe-Ito orange). Always a cross, never only a color; the card names the Justices."
       },
       "viewer-checker-light": {
         "$value": "#FFFFFF",

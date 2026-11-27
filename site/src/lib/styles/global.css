@@ -769,9 +769,20 @@ sup.citation {
  * The marker or source a link has just gone to is highlighted, so the eye
  * finds it. It arrives marked in the fill-in yellow, which fades to the
  * resting highlight; with motion reduced it shows the resting highlight at once.
+ * With scripts on, the highlight goes a few seconds later, or when the reader
+ * clicks or taps elsewhere (src/lib/arrival-highlight.ts; Trevor, Nov. 27,
+ * 2026: the highlight "would not go away"). Without scripts the browser's
+ * :target shows it until the address changes.
  */
-.note-marker:target,
-.source-list > li:target {
+/* Only the entry fades out; a marker's own fill is also its focus fill, which must show at once. */
+.source-list > li {
+	transition: background-color var(--motion-duration-medium) var(--motion-easing-exit);
+}
+
+:root:not([data-scripts='on']) .note-marker:target,
+:root:not([data-scripts='on']) .source-list > li:target,
+.note-marker[data-arrived],
+.source-list > li[data-arrived] {
 	background: var(--color-notice-background);
 	outline: 2px solid var(--color-focus-ring);
 	outline-offset: 1px;
@@ -2337,10 +2348,7 @@ details > .nation-edit-link {
 	}
 }
 
-/*
- * A stub (src/lib/stubs.ts): the "Stub" badge beside the title, and the note
- * at the page's end, where Wikipedia puts its stub template.
- */
+/* A stub (src/lib/stubs.ts): the "Stub" badge beside the title, whose panel has the links to expand the page. */
 .status-badges {
 	display: flex;
 	flex-wrap: wrap;
@@ -2356,30 +2364,10 @@ details > .nation-edit-link {
 	color: var(--color-link);
 }
 
-.stub-note {
-	display: flex;
-	align-items: flex-start;
-	gap: var(--space-3);
-	margin: var(--space-5) 0 var(--space-2);
-	padding: var(--space-3) var(--space-4);
-	border: 1px dashed var(--color-line);
-	border-radius: var(--radius-control);
-}
-
-.stub-note p {
-	margin: 0;
-}
-
-.stub-note .stub-mark {
-	flex: none;
-	margin-top: 3px;
-}
-
-.stub-note .stub-actions {
+.status-panel .stub-actions {
 	display: flex;
 	flex-wrap: wrap;
 	gap: var(--space-2) var(--space-4);
-	margin-top: var(--space-2);
 }
 
 /* Topics, methods and other short tags as badges (src/lib/components/TopicBadges.svelte; Trevor, Nov. 23, 2026). */
@@ -2571,4 +2559,69 @@ a.topic-badge:hover {
 
 .table-popover .popover-button:hover {
 	background: var(--color-surface);
+}
+
+/*
+ * Controls that float on a map (Trevor, 2026-11-26: one visual language for the map's search, layers and buttons; map redesign D). Everything on the map is paper with a 1px border and one soft shadow. Controls are the touch size tall with the control corner; panels have the panel corner. One "on" look everywhere: a light action fill, an action border and an action check. Teal stays for links and the map's own colors, so a control never looks like map data.
+ */
+:root {
+	--map-float-shadow: 0 2px 10px color-mix(in srgb, var(--color-ink) 16%, transparent);
+	--map-on-background: color-mix(in srgb, var(--color-action) 12%, var(--color-paper));
+}
+
+.map-float {
+	border: 1px solid var(--color-control-border);
+	background: var(--color-paper);
+	box-shadow: var(--map-float-shadow);
+	color: var(--color-ink);
+}
+
+.map-control {
+	display: inline-flex;
+	flex: none;
+	align-items: center;
+	gap: var(--space-2);
+	min-height: var(--layout-target-minimum);
+	padding: 0 var(--space-3);
+	border-radius: var(--radius-control);
+	font: inherit;
+	font-weight: var(--font-weight-bold);
+	white-space: nowrap;
+	cursor: pointer;
+}
+
+.map-control-square {
+	justify-content: center;
+	width: var(--layout-target-minimum);
+	padding: 0;
+}
+
+.map-control[aria-pressed='true'],
+.map-control[aria-expanded='true'],
+.map-control-on {
+	border-color: var(--color-action);
+	background: var(--map-on-background);
+}
+
+.map-control-check {
+	color: var(--color-action);
+}
+
+.map-control:focus-visible {
+	outline: 3px solid var(--color-focus-ring);
+	outline-offset: 2px;
+}
+
+.map-panel {
+	border-radius: var(--radius-panel);
+}
+
+/* Small capitals over a group in a map panel, as the Layers list and the key name theirs. */
+.map-panel-heading {
+	margin: var(--space-3) 0 var(--space-1);
+	color: var(--color-ink-muted);
+	font-size: var(--font-size-small);
+	font-weight: var(--font-weight-bold);
+	letter-spacing: 0.06em;
+	text-transform: uppercase;
 }

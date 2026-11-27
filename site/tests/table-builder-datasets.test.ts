@@ -101,6 +101,14 @@ describe('the treaties dataset', () => {
 		}
 		for (const link of dataset.links) expect(link).toMatch(/^\/nations\/[a-z0-9-]+#treaties-heading$/);
 	});
+
+	it('links each nation named in a treaty to its page', () => {
+		const nationsColumn = column(dataset, 'nations');
+		const named = new Set(dataset.rows.flatMap((row) => (row[nationsColumn] as string[] | null) ?? []));
+		const links = dataset.nationLinks ?? {};
+		expect(Object.keys(links).length).toBeGreaterThan(named.size * 0.95);
+		for (const link of Object.values(links)) expect(link).toMatch(/^\/nations\/[a-z0-9-]+$/);
+	});
 });
 
 describe('builtChart', () => {

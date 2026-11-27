@@ -169,6 +169,35 @@ indian_health_service:
   as_of: '2026-11-23'
   locator: list of Tribes
   note: Listed as "White Mountain Apache Tribe". The Direct Service Tribes list says some Tribes have a mixed Indian Health Service and Tribal arrangement.
+federal_programs:
+- program: indian-housing-block-grant
+  fiscal_year: 2026
+  amount: 12652262
+  amount_kind: allocation
+  source: hud-ihbg-fy2026-formula-allocations
+  confidence: high
+  verification: bulk-import
+  as_of: '2026'
+  locator: AZ, row 'White Mountain Apache (Fort Apache)' (Whiteriver)
+- program: fdpir-self-determination-demonstration
+  start: 2023-08
+  detail: Round 2
+  source: fns-fdpir-self-determination-demonstration-projects
+  confidence: medium
+  verification: bulk-import
+  as_of: '2026-11-26'
+  locator: Round 2 projects, 'White Mountain Apache Tribe'
+  note: The list's name was matched to this nation by a person or AI review; the list names 'White Mountain Apache Tribe'.
+- program: isdeaa-contract-indian-health-service
+  fiscal_year: 2025
+  amount: 3339792
+  amount_kind: obligations
+  source: usaspending-fy2025-assistance-listing-93-441
+  confidence: medium
+  verification: bulk-import
+  as_of: '2025'
+  locator: Assistance Listing 93.441, recipient 'WHITE MOUNTAIN APACHE TRIBE' (UEI S8UKXJ8B7A83), Oct. 1, 2024 to Sept. 30, 2025
+  note: The list's name was matched to this nation by a person or AI review; the list names 'WHITE MOUNTAIN APACHE TRIBE'.
 government_structure:
 - kind: indian-reorganization-act
   detail: Listed as "White Mountain Apache Tribe, Arizona" among organizations under constitutions approved
@@ -654,6 +683,14 @@ jurisdiction:
   verification: read-in-full
   locator: 113 Ariz. at 431
   note: 1976 holding about service of process on the Tohono O'odham (Papago) reservation, reasoning from the 1968 consent requirement. The research did not find any later Arizona assumption. Other federal statutes can still give Arizona limited authority; none checked here.
+- topic: environmental-treatment-as-a-state
+  value: clean-water-act-water-quality-standards
+  detail: EPA found the nation eligible on Feb. 3, 1997 to set water quality standards (treatment in a similar manner as a state under Clean Water Act § 518), and first approved its standards on Sept. 27, 2001.
+  source: epa-actions-on-tribal-water-quality-standards
+  confidence: high
+  verification: inferred
+  as_of: '1997-02-03'
+  locator: 'Table of approvals by Tribe, column "Regulatory Programs": "WQS Program"'
 nearby_state_courts:
 - state: AZ
   county: Navajo County

@@ -14,7 +14,7 @@ const section = (key: string) => navigationSections.find((candidate) => candidat
 
 describe('the six sections in the bar under the masthead', () => {
 	it('lists the sections Trevor chose, in order (design/navigation-models, model C)', () => {
-		expect(navigationSections.map((candidate) => candidate.label)).toEqual(['Nations', 'Federal law', 'Courts and cases', 'Library', 'Writing', 'About']);
+		expect(navigationSections.map((candidate) => candidate.label)).toEqual(['Nations', 'Federal Law', 'Courts and Cases', 'Library', 'Writing', 'About']);
 	});
 
 	it('links only to pages that exist, apart from those marked soon', () => {
@@ -33,10 +33,10 @@ describe('the six sections in the bar under the masthead', () => {
 		expect(sectionOf('/nations')).toBe('Nations');
 		expect(sectionOf('/nations/navajo-nation')).toBe('Nations');
 		expect(sectionOf('/nations/navajo-nation/opinions')).toBe('Nations');
-		expect(sectionOf('/stats/treaties')).toBe('Federal law');
-		expect(sectionOf('/laws/some-law')).toBe('Federal law');
-		expect(sectionOf('/cases/worcester-v-georgia')).toBe('Courts and cases');
-		expect(sectionOf('/supreme-court/marshall-court')).toBe('Courts and cases');
+		expect(sectionOf('/stats/treaties')).toBe('Federal Law');
+		expect(sectionOf('/laws/some-law')).toBe('Federal Law');
+		expect(sectionOf('/cases/worcester-v-georgia')).toBe('Courts and Cases');
+		expect(sectionOf('/supreme-court/marshall-court')).toBe('Courts and Cases');
 		expect(sectionOf('/stats')).toBe('Library');
 		expect(sectionOf('/copies/view/constitutions/law.pdf')).toBe('Library');
 		expect(sectionOf('/glossary/adr')).toBe('Library');
@@ -58,7 +58,7 @@ describe('the six sections in the bar under the masthead', () => {
 	});
 
 	it('finds the link above a page for the side column', () => {
-		expect(holdingNavigationLink(section('nations'), '/nations/data/population', '')?.label).toBe('Data and charts');
+		expect(holdingNavigationLink(section('nations'), '/nations/data/population', '')?.label).toBe('Data and Charts');
 		expect(holdingNavigationLink(section('nations'), '/nations/map', '')?.label).toBe('Map');
 		expect(holdingNavigationLink(section('library'), '/glossary/adr', '')?.label).toBe('Glossary');
 	});
@@ -70,8 +70,8 @@ describe('a nation’s own pages in the side column', () => {
 			back: { label: 'Nations', link: '/nations' },
 			title: 'Navajo Nation',
 			pages: [
-				{ label: 'Nation page', link: '/nations/navajo-nation' },
-				{ label: 'Court opinions', link: '/nations/navajo-nation/opinions', count: 949 }
+				{ label: 'Nation Page', link: '/nations/navajo-nation' },
+				{ label: 'Court Opinions', link: '/nations/navajo-nation/opinions', count: 949 }
 			]
 		});
 		expect(nationFamily('hopi-tribe', 'Hopi Tribe', 0).pages).toHaveLength(1);

@@ -8,7 +8,7 @@
 	import Breadcrumbs from '#lib/components/Breadcrumbs.svelte';
 	import CountBadge from '#lib/components/CountBadge.svelte';
 	import DataTable from '#lib/components/DataTable.svelte';
-	import type { TableColumn, TableRow } from '#lib/tables/table-definition.ts';
+	import { listCell, type TableColumn, type TableRow } from '#lib/tables/table-definition.ts';
 	import type { PageProps } from './$types';
 
 	let { data }: PageProps = $props();
@@ -23,7 +23,7 @@
 			key: person.key,
 			cells: {
 				name: { text: person.name, href: `/biographies/${person.key}` },
-				nation: person.unitedStates ? { text: 'United States' } : { text: person.nations.map((nation) => nation.name).join('; '), href: person.nations.length === 1 ? `/nations/${person.nations[0].id}` : undefined },
+				nation: person.unitedStates ? { text: 'United States' } : listCell(person.nations.map((nation) => ({ text: nation.name, href: `/nations/${nation.id}` }))),
 				lead: { text: person.lead },
 				cases: { text: String(person.cases), sortValue: person.cases }
 			}

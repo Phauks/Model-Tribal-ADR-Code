@@ -1,0 +1,52 @@
+key: nevada-revised-statutes-200-481
+kind: state-statute
+citation:
+  type: legislation
+  title: 'Battery: Definitions; penalties'
+  title-short: Nev. Rev. Stat. § 200.481
+  container-title: Nevada Revised Statutes
+  container-title-short: Nev. Rev. Stat.
+  section: '200.481'
+  author:
+  - literal: Nevada Legislature
+  issued:
+    date-parts:
+    - - 1971
+  URL: https://www.leg.state.nv.us/nrs/NRS-200.html#NRS200Sec481
+  accessed:
+    date-parts:
+    - - 2026
+      - 11
+      - 27
+original_link: https://www.leg.state.nv.us/nrs/NRS-200.html#NRS200Sec481
+retrieved: '2026-11-27'
+archives: []
+history:
+  status: live
+  last_checked: '2026-11-27'
+shares_link_with:
+- nevada-revised-statutes-200-471
+state_law:
+  relevance: incidental
+  citation: Nev. Rev. Stat. § 200.481 (2025)
+rights:
+  status: no-permission-needed
+  basis: government-edict
+  basis_note: 'Official state statutes are not copyrightable under the government edicts doctrine (Georgia v. Public.Resource.Org, Inc., 590 U.S. 255 (2020)). Linked, not served: state statutes stay link only.'
+  redistribution: false
+jurisdictions:
+- level: state
+  state: NV
+topics:
+- state-indian-law
+found_in:
+- 2026-11-27-state-statutes-sweep
+notes: 'Indigo Book citation: Nev. Rev. Stat. § 200.481 (2025). History: (Added to NRS by 1971, 1385; A 1973, 1444; 1975, 1063; 1977, 736; 1979, 213, 1427; 1981, 12, 614; 1983, 673; 1985, 248, 2171; 1987, 515; 1989, 1178; 1991, 154, 774; 1995, 22, 903, 1191, 1321, 1335; 1997, 435, 1180, 1813; 1999, 141; 2001, 381; 2003, 355; 2005, 178; 2009, 87; 2013, 1764; 2017, 228; 2019, 1812; 2023, 936, 2004, 2972; 2025, 588, 2209; 2025, 36th Special Session, 76). Text read from the Nevada Legislature''s chapter page for the section (leg.state.nv.us/nrs) on Nov. 27, 2026. Found by the state statutes sweep (terms: indian tribe; indian; tribe); AI reader''s verdict incidental: Battery penalties cover Indian tribe judicial personnel as victims. Unverified.'
+review:
+  status: unverified
+  by: scripts/law/state_statutes/run.py
+  date: '2026-11-27'
+  checks:
+  - check: 'Indian law section: the sweep''s keyword pass and an AI reader''s verdict (core, incidental or none)'
+    result: agree
+    detail: 'incidental; terms: indian tribe; indian; tribe'

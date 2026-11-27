@@ -18,8 +18,11 @@
 	  as in a spreadsheet (Trevor, Nov. 24, 2026: "filters should be on the
 	  top of the columns of tables, not in a separate area"). A column marked
 	  filterable opens a list of its values to tick, each with how many rows
-	  it leaves, and a "Find a value" box when the list is long; a searchable
-	  column opens a "Contains" box. A column being filtered shows a filled
+	  it leaves, and a "Find a value" box when the list is long. A searchable
+	  column opens the same list when its values are few enough to pick from
+	  (Trevor, Nov. 27, 2026: filters should show the options), and a
+	  "Contains" box for the row's name or values nearly every row has its
+	  own of (filterKindFor). A column being filtered shows a filled
 	  funnel. The menus are popovers (HTML popover attribute), so they sit
 	  above the table's scrolling box instead of being cut off by it.
 	- download: names the downloaded files <download>.csv and .xlsx.
@@ -89,7 +92,7 @@
 		defaultColumnKeys,
 		filterChoices,
 		filterIsActive,
-		filterKind,
+		filterKindFor,
 		filterRows,
 		readTableState,
 		shownColumnsOf,
@@ -180,7 +183,9 @@
 	const sort = $derived(chosenSort ?? defaultSort);
 	/** The columns drawn: the reader's choice, or every column not marked optional. */
 	const visibleColumns = $derived(shownColumnsOf(columns, shownColumns));
-	const filterColumns = $derived(filters ? visibleColumns.filter((column) => filterKind(column) !== undefined) : []);
+	/** Each column's kind of filter, from its rows: a list to tick or a "Contains" box. */
+	const filterKinds = $derived(new Map(filters ? columns.map((column) => [column.key, filterKindFor(column, rows)]) : []));
+	const filterColumns = $derived(filters ? visibleColumns.filter((column) => filterKinds.get(column.key) !== undefined) : []);
 	const sumColumns = $derived(visibleColumns.filter((column) => column.sum));
 	const shownRows = $derived.by(() => {
 		const found = applyColumnFilters(filterRows(columns, rows, query), columnFilters).filter((row) => !leftOut.includes(row.key));
@@ -463,6 +468,8 @@
 								{@render cell(row, column)}
 							{:else if value?.href}
 								<a href={value.href}>{value.text}</a>
+							{:else if value?.parts}
+								{#each value.parts as part, index (index)}{#if index > 0}{'; '}{/if}{#if part.href}<a href={part.href}>{part.text}</a>{:else}{part.text}{/if}{/each}
 							{:else}
 								{value?.text ?? ''}
 							{/if}
@@ -533,8 +540,8 @@
 				<ColumnFilterMenu
 					identifier="{identifier}-{column.key}"
 					title={column.header}
-					kind={filterKind(column) ?? 'contains'}
-					choices={filterKind(column) === 'values' ? choicesFor(column) : []}
+					kind={filterKinds.get(column.key) ?? 'contains'}
+					choices={filterKinds.get(column.key) === 'values' ? choicesFor(column) : []}
 					filter={columnFilters[column.key]}
 					onchange={(filter) => setFilter(column, filter)}
 				/>

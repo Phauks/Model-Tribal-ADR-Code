@@ -172,6 +172,33 @@ indian_health_service:
   as_of: '2026-11-23'
   locator: '"Tribes of Oregon, Washington and Idaho" list'
   note: 'Listed as "Kalispel Tribe of Indians". Also listed under the same Area in: indian-health-service-self-governance-tribes. Also on the Indian Health Service Self-Governance Tribes list (Kalispel Tribe of Indians (2006)); the list does not say which service unit or programs the compact covers.'
+federal_programs:
+- program: indian-health-service-self-governance-compact
+  since: 2006
+  source: indian-health-service-self-governance-tribes
+  confidence: medium
+  verification: bulk-import
+  as_of: '2025-07-01'
+  locator: Portland Area, row 'Kalispel Tribe of Indians'
+  note: The list's name was matched to this nation by a person or AI review; the list names 'Kalispel Tribe of Indians'.
+- program: indian-housing-block-grant
+  fiscal_year: 2026
+  amount: 487981
+  amount_kind: allocation
+  source: hud-ihbg-fy2026-formula-allocations
+  confidence: high
+  verification: bulk-import
+  as_of: '2026'
+  locator: WA, row 'Kalispel Indian Community' (Usk)
+- program: indian-health-service-self-governance-compact
+  fiscal_year: 2025
+  amount: 1527717
+  amount_kind: obligations
+  source: usaspending-fy2025-assistance-listing-93-210
+  confidence: high
+  verification: bulk-import
+  as_of: '2025'
+  locator: Assistance Listing 93.210, recipient 'KALISPEL INDIAN COMMUNITY OF THE KALISPEL RESERVATION' (UEI XY4MRBMRTWL5), Oct. 1, 2024 to Sept. 30, 2025
 government_structure:
 - kind: indian-reorganization-act
   detail: Listed as "The Kalispel Indian Community of the Kalispel Reservation, Washington" among organizations
@@ -710,6 +737,22 @@ jurisdiction:
     and matched to the roster. Row re-read on 2026-11-22 from the page image (the govinfo PDF has no text
     layer for the table); verification level unchanged because the name was not matched word for word
     in machine-read text.'
+- topic: environmental-treatment-as-a-state
+  value: clean-water-act-water-quality-standards
+  detail: EPA found the nation eligible on Nov. 4, 2002 to set water quality standards (treatment in a similar manner as a state under Clean Water Act § 518), and first approved its standards on June 24, 2004.
+  source: epa-actions-on-tribal-water-quality-standards
+  confidence: high
+  verification: inferred
+  as_of: '2002-11-04'
+  locator: 'Table of approvals by Tribe, column "Regulatory Programs": "WQS Program"'
+- topic: environmental-treatment-as-a-state
+  value: clean-air-act-administrative-functions
+  detail: 'EPA has approved the nation for treatment in a similar manner as a state to perform administrative functions under the Clean Air Act: §§ 110(a)(2)(D); 126; 169B; 176A; 505(a)(2).'
+  source: epa-tribes-approved-for-treatment-as-a-state
+  confidence: high
+  verification: inferred
+  as_of: '2026-10-21'
+  locator: 'Table of approvals by Tribe, column "Administrative Functions": "CAA §§ 110(a)(2)(D); 126; 169B; 176A; 505(a)(2)"'
 nearby_state_courts:
 - state: WA
   county: Pend Oreille County

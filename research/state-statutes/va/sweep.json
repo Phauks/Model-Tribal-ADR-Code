@@ -1,0 +1,52 @@
+{
+  "state": "VA",
+  "code": "Code of Virginia",
+  "edition": 2025,
+  "read": "2026-11-27",
+  "keyword_pass": {
+    "sections": 33354,
+    "live": 31080,
+    "strong": 63,
+    "weak_only": 228,
+    "repealed": 2273,
+    "reserved": 1
+  },
+  "reading": {
+    "missing_answers": 0,
+    "rows": 69,
+    "core": 18,
+    "incidental": 51,
+    "by_pool": {
+      "A": {
+        "incidental": 47,
+        "core": 15,
+        "none": 1
+      },
+      "B": {
+        "none": 224,
+        "incidental": 4
+      },
+      "C": {
+        "none": 300
+      },
+      "D": {
+        "none": 300
+      },
+      "E": {
+        "core": 3
+      }
+    },
+    "meta": {
+      "live": 31080,
+      "A": 63,
+      "B": 228,
+      "E": 3,
+      "C": 535,
+      "C_sample": 300,
+      "D": 30251,
+      "D_sample": 300,
+      "items": 894,
+      "batches": 7
+    }
+  }
+}

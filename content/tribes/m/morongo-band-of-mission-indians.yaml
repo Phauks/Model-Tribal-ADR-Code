@@ -185,6 +185,43 @@ indian_health_service:
   as_of: '2026-11-23'
   locator: regional lists (West Central, Southern, Northern, East Central)
   note: Listed as "Morongo Band of Mission Indians, California".
+federal_programs:
+- program: interior-self-governance-compact
+  since: 2015
+  source: bia-office-of-self-governance-tribes-2024-07-24
+  confidence: medium
+  verification: bulk-import
+  as_of: '2024-07-24'
+  locator: row 'Morongo Band Of Mission Indians' (Pacific Region)
+  note: The list's name was matched to this nation by a person or AI review; the list names 'Morongo Band Of Mission Indians'.
+- program: indian-housing-block-grant
+  fiscal_year: 2026
+  amount: 358806
+  amount_kind: allocation
+  source: hud-ihbg-fy2026-formula-allocations
+  confidence: high
+  verification: bulk-import
+  as_of: '2026'
+  locator: CA, row 'Morongo Band of Mission Indians' (Banning)
+- program: interior-non-bia-funding-agreement
+  agency: Appraisal and Valuation Services Office
+  fiscal_year: 2024
+  source: federal-register-2024-30252
+  confidence: medium
+  verification: bulk-import
+  as_of: '2024-12-19'
+  locator: 89 Fed. Reg. 103858, 103859-60, Appraisal and Valuation Services Office agreements, 'Morongo Band of Mission Indians'
+  note: The list's name was matched to this nation by a person or AI review; the list names 'Morongo Band of Mission Indians'.
+- program: interior-self-governance-compact
+  fiscal_year: 2025
+  amount: 1098412
+  amount_kind: obligations
+  source: usaspending-fy2025-assistance-listing-15-022
+  confidence: medium
+  verification: bulk-import
+  as_of: '2025'
+  locator: Assistance Listing 15.022, recipient 'MORONGO BAND OF MISSION INDIANS' (UEI NMPLX2KMJND6), Oct. 1, 2024 to Sept. 30, 2025
+  note: The list's name was matched to this nation by a person or AI review; the list names 'MORONGO BAND OF MISSION INDIANS'.
 governance:
 - aspect: governing-body
   value: Tribal Council
@@ -396,6 +433,38 @@ jurisdiction:
     to the roster. Row re-read on 2026-11-22 from the page image (the govinfo PDF has no text layer for
     the table); verification level unchanged because the name was not matched word for word in machine-read
     text.'
+- topic: hearth-act-leasing-regulations
+  value: approved
+  detail: The Secretary of the Interior approved the leasing regulations (Business, Residential) of the Morongo Band of Mission Indians, as the Bureau of Indian Affairs' list names it, under the HEARTH Act, 25 U.S.C. § 415(h), on Apr. 14, 2022, so the nation can lease its trust land for those purposes under its own regulations without the Bureau of Indian Affairs approving each lease.
+  source: hearth-act-leasing-regulations-morongo-band-of-mission-indians-2022-04-14
+  confidence: high
+  verification: inferred
+  as_of: '2022-04-14'
+  locator: Bureau of Indian Affairs, Approved HEARTH Act Regulations, Approved in 2022
+- topic: environmental-treatment-as-a-state
+  value: clean-water-act-water-quality-standards
+  detail: EPA found the nation eligible on Apr. 3, 2018 to set water quality standards (treatment in a similar manner as a state under Clean Water Act § 518), and first approved its standards on Jan. 20, 2026.
+  source: epa-actions-on-tribal-water-quality-standards
+  confidence: high
+  verification: inferred
+  as_of: '2018-04-03'
+  locator: 'Table of approvals by Tribe, column "Regulatory Programs": "WQS Program"'
+- topic: environmental-treatment-as-a-state
+  value: clean-air-act-implementation-plan
+  detail: EPA has approved the nation for treatment in a similar manner as a state for tribal implementation plan (Clean Air Act § 110).
+  source: epa-tribes-approved-for-treatment-as-a-state
+  confidence: high
+  verification: inferred
+  as_of: '2026-10-21'
+  locator: 'Table of approvals by Tribe, column "Regulatory Programs with an Enforcement Component": "TIP"'
+- topic: environmental-treatment-as-a-state
+  value: clean-air-act-administrative-functions
+  detail: 'EPA has approved the nation for treatment in a similar manner as a state to perform administrative functions under the Clean Air Act: §§ 107; 126(a)-(b); 172; 319; 505(a).'
+  source: epa-tribes-approved-for-treatment-as-a-state
+  confidence: high
+  verification: inferred
+  as_of: '2026-10-21'
+  locator: 'Table of approvals by Tribe, column "Administrative Functions": "CAA §§ 107; 126(a)-(b); 172; 319; 505(a)"'
 court_practice:
 - kind: court-rules
   title: Court Rules (Morongo Rules of Tribal Court)

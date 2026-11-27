@@ -177,6 +177,56 @@ indian_health_service:
   as_of: '2026-11-23'
   locator: '"Tribes of Oregon, Washington and Idaho" list'
   note: 'Listed as "Quinault Indian Nation". Also listed under the same Area in: indian-health-service-self-governance-tribes. Also on the Indian Health Service Self-Governance Tribes list (Quinault Indian Nation (1995)); the list does not say which service unit or programs the compact covers.'
+federal_programs:
+- program: interior-self-governance-compact
+  since: 1991
+  source: bia-office-of-self-governance-tribes-2024-07-24
+  confidence: high
+  verification: bulk-import
+  as_of: '2024-07-24'
+  locator: row 'Quinault Indian Nation' (Northwest Region)
+- program: indian-health-service-self-governance-compact
+  since: 1995
+  source: indian-health-service-self-governance-tribes
+  confidence: high
+  verification: bulk-import
+  as_of: '2025-07-01'
+  locator: Portland Area, row 'Quinault Indian Nation'
+- program: indian-housing-block-grant
+  fiscal_year: 2026
+  amount: 3968021
+  amount_kind: allocation
+  source: hud-ihbg-fy2026-formula-allocations
+  confidence: high
+  verification: bulk-import
+  as_of: '2026'
+  locator: WA, row 'Quinault Indian Nation' (Taholah)
+- program: fdpir-self-determination-demonstration
+  start: 2023-08
+  detail: Round 2
+  source: fns-fdpir-self-determination-demonstration-projects
+  confidence: high
+  verification: bulk-import
+  as_of: '2026-11-26'
+  locator: Round 2 projects, 'Quinault Indian Nation'
+- program: interior-self-governance-compact
+  fiscal_year: 2025
+  amount: 43513392
+  amount_kind: obligations
+  source: usaspending-fy2025-assistance-listing-15-022
+  confidence: high
+  verification: bulk-import
+  as_of: '2025'
+  locator: Assistance Listing 15.022, recipient 'QUINAULT INDIAN NATION' (UEI HLRLS7PJ7FT3), Oct. 1, 2024 to Sept. 30, 2025
+- program: indian-health-service-self-governance-compact
+  fiscal_year: 2025
+  amount: 10328179
+  amount_kind: obligations
+  source: usaspending-fy2025-assistance-listing-93-210
+  confidence: high
+  verification: bulk-import
+  as_of: '2025'
+  locator: Assistance Listing 93.210, recipient 'QUINAULT INDIAN NATION' (UEI HLRLS7PJ7FT3), Oct. 1, 2024 to Sept. 30, 2025
 governance:
 - aspect: form
   value: Quinault Indian Nation Constitution
@@ -552,6 +602,22 @@ jurisdiction:
   as_of: 2022-05
   locator: '"Exercising jurisdiction since" line'
   note: Listed as "Quinault Nation". Also on the NCAI implementing tribes list (national-congress-of-american-indians-implementing-tribes-special-tribal-criminal-jurisdiction).
+- topic: hearth-act-leasing-regulations
+  value: approved
+  detail: The Secretary of the Interior approved the leasing regulations (Business, Residential) of the Quinault Indian Nation, as the Bureau of Indian Affairs' list names it, under the HEARTH Act, 25 U.S.C. § 415(h), on Oct. 31, 2018, so the nation can lease its trust land for those purposes under its own regulations without the Bureau of Indian Affairs approving each lease.
+  source: hearth-act-leasing-regulations-quinault-indian-nation-2018-10-31
+  confidence: high
+  verification: inferred
+  as_of: '2018-10-31'
+  locator: Bureau of Indian Affairs, Approved HEARTH Act Regulations, Approved in 2018
+- topic: environmental-treatment-as-a-state
+  value: clean-water-act-water-quality-standards
+  detail: EPA found the nation eligible on Sept. 20, 2018 to set water quality standards (treatment in a similar manner as a state under Clean Water Act § 518); EPA's list gives no date of approved standards of the nation's own.
+  source: epa-actions-on-tribal-water-quality-standards
+  confidence: high
+  verification: inferred
+  as_of: '2018-09-20'
+  locator: 'Table of approvals by Tribe, column "Regulatory Programs": "WQS Program"'
 jurisdiction_agreements:
 - kind: child-welfare-agreement
   other_party: Washington Department of Social and Health Services

@@ -194,6 +194,70 @@ indian_health_service:
   as_of: '2026-11-23'
   locator: regional lists (West Central, Southern, Northern, East Central)
   note: 'Listed as "Hoopa Valley Tribe, California". Also listed under the same Area in: indian-health-service-self-governance-tribes. Also on the Indian Health Service Self-Governance Tribes list (Hoopa Valley Tribe (1994)); the list does not say which service unit or programs the compact covers.'
+federal_programs:
+- program: interior-self-governance-compact
+  since: 1991
+  source: bia-office-of-self-governance-tribes-2024-07-24
+  confidence: medium
+  verification: bulk-import
+  as_of: '2024-07-24'
+  locator: row 'Hoopa Valley Tribe' (Pacific Region)
+  note: The list's name was matched to this nation by a person or AI review; the list names 'Hoopa Valley Tribe'.
+- program: indian-health-service-self-governance-compact
+  since: 1994
+  source: indian-health-service-self-governance-tribes
+  confidence: medium
+  verification: bulk-import
+  as_of: '2025-07-01'
+  locator: California Area, row 'Hoopa Valley Tribe'
+  note: The list's name was matched to this nation by a person or AI review; the list names 'Hoopa Valley Tribe'.
+- program: indian-housing-block-grant
+  fiscal_year: 2026
+  amount: 2116935
+  amount_kind: allocation
+  source: hud-ihbg-fy2026-formula-allocations
+  confidence: high
+  verification: bulk-import
+  as_of: '2026'
+  locator: CA, row 'Hoopa Valley Tribe' (Hoopa)
+- program: interior-non-bia-funding-agreement
+  agency: Bureau of Reclamation
+  fiscal_year: 2024
+  source: federal-register-2024-30252
+  confidence: medium
+  verification: bulk-import
+  as_of: '2024-12-19'
+  locator: 89 Fed. Reg. 103858, 103859-60, Bureau of Reclamation agreements, 'Hoopa Valley Tribe'
+  note: The list's name was matched to this nation by a person or AI review; the list names 'Hoopa Valley Tribe'.
+- program: interior-non-bia-funding-agreement
+  agency: Appraisal and Valuation Services Office
+  fiscal_year: 2024
+  source: federal-register-2024-30252
+  confidence: medium
+  verification: bulk-import
+  as_of: '2024-12-19'
+  locator: 89 Fed. Reg. 103858, 103859-60, Appraisal and Valuation Services Office agreements, 'Hoopa Valley Tribe'
+  note: The list's name was matched to this nation by a person or AI review; the list names 'Hoopa Valley Tribe'.
+- program: interior-self-governance-compact
+  fiscal_year: 2025
+  amount: 17028345
+  amount_kind: obligations
+  source: usaspending-fy2025-assistance-listing-15-022
+  confidence: medium
+  verification: bulk-import
+  as_of: '2025'
+  locator: Assistance Listing 15.022, recipient 'THE HOOPA VALLEY TRIBE' (UEI NRVJHS1A2E78), Oct. 1, 2024 to Sept. 30, 2025
+  note: The list's name was matched to this nation by a person or AI review; the list names 'THE HOOPA VALLEY TRIBE'.
+- program: indian-health-service-self-governance-compact
+  fiscal_year: 2025
+  amount: 14776691
+  amount_kind: obligations
+  source: usaspending-fy2025-assistance-listing-93-210
+  confidence: medium
+  verification: bulk-import
+  as_of: '2025'
+  locator: Assistance Listing 93.210, recipient 'THE HOOPA VALLEY TRIBE' (UEI NRVJHS1A2E78), Oct. 1, 2024 to Sept. 30, 2025
+  note: The list's name was matched to this nation by a person or AI review; the list names 'THE HOOPA VALLEY TRIBE'.
 governance:
 - aspect: form
   value: Constitution and Bylaws approved under Article IX of original constitution
@@ -712,6 +776,14 @@ jurisdiction:
     notice prints its table as page images, so nation names were read from images and matched to the roster.
     Row re-read on 2026-11-22 from the page image (the govinfo PDF has no text layer for the table); verification
     level unchanged because the name was not matched word for word in machine-read text.'
+- topic: environmental-treatment-as-a-state
+  value: clean-water-act-water-quality-standards
+  detail: EPA found the nation eligible on May 17, 1996 to set water quality standards (treatment in a similar manner as a state under Clean Water Act § 518), and first approved its standards on Sept. 11, 2002.
+  source: epa-actions-on-tribal-water-quality-standards
+  confidence: high
+  verification: inferred
+  as_of: '1996-05-17'
+  locator: 'Table of approvals by Tribe, column "Regulatory Programs": "WQS Program"'
 nearby_state_courts:
 - state: CA
   county: Humboldt County

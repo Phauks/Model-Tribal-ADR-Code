@@ -215,6 +215,26 @@ indian_health_service:
   as_of: '2026-11-23'
   locator: regional lists (West Central, Southern, Northern, East Central)
   note: Listed as "Shingle Springs Band of Miwok Indians of California, Shingle Springs Rancheria (Verona Tract), California".
+federal_programs:
+- program: indian-housing-block-grant
+  fiscal_year: 2026
+  amount: 567553
+  amount_kind: allocation
+  source: hud-ihbg-fy2026-formula-allocations
+  confidence: high
+  verification: bulk-import
+  as_of: '2026'
+  locator: CA, row 'Shingle Springs Band of Miwok Indians' (Shingle Springs)
+- program: isdeaa-contract-indian-health-service
+  fiscal_year: 2025
+  amount: 3610752
+  amount_kind: obligations
+  source: usaspending-fy2025-assistance-listing-93-441
+  confidence: medium
+  verification: bulk-import
+  as_of: '2025'
+  locator: Assistance Listing 93.441, recipient 'SHINGLE SPRINGS RANCHERIA' (UEI SJQDGWM4HNS5), Oct. 1, 2024 to Sept. 30, 2025
+  note: The list's name was matched to this nation by a person or AI review; the list names 'SHINGLE SPRINGS RANCHERIA'.
 governance:
 - aspect: form
   value: Articles of Association
@@ -689,6 +709,14 @@ jurisdiction:
     names were read from images and matched to the roster. Row re-read on 2026-11-22 from the page image
     (the govinfo PDF has no text layer for the table); verification level unchanged because the name was
     not matched word for word in machine-read text.'
+- topic: hearth-act-leasing-regulations
+  value: approved
+  detail: The Secretary of the Interior approved the leasing regulations (Business) of the Shingle Springs Band of Miwok Indians, as the Bureau of Indian Affairs' list names it, under the HEARTH Act, 25 U.S.C. § 415(h), on Apr. 13, 2020, so the nation can lease its trust land for those purposes under its own regulations without the Bureau of Indian Affairs approving each lease.
+  source: hearth-act-leasing-regulations-shingle-springs-band-of-miwok-indians-shingle-springs-ranche-2020-04-13
+  confidence: high
+  verification: inferred
+  as_of: '2020-04-13'
+  locator: Bureau of Indian Affairs, Approved HEARTH Act Regulations, Approved in 2020
 nearby_state_courts:
 - state: CA
   county: El Dorado County

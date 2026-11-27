@@ -201,6 +201,53 @@ indian_health_service:
   as_of: '2026-11-23'
   locator: Direct Service Tribes by IHS Area > Albuquerque Area
   note: Listed as "Pueblo of Santa Clara". The Direct Service Tribes list says some Tribes have a mixed Indian Health Service and Tribal arrangement.
+federal_programs:
+- program: interior-self-governance-compact
+  since: 1995
+  source: bia-office-of-self-governance-tribes-2024-07-24
+  confidence: medium
+  verification: bulk-import
+  as_of: '2024-07-24'
+  locator: row 'Santa Clara Pueblo' (Southwest Region)
+  note: The list's name was matched to this nation by a person or AI review; the list names 'Santa Clara Pueblo'.
+- program: indian-housing-block-grant
+  fiscal_year: 2026
+  amount: 914346
+  amount_kind: allocation
+  source: hud-ihbg-fy2026-formula-allocations
+  confidence: high
+  verification: bulk-import
+  as_of: '2026'
+  locator: NM, row 'Santa Clara Pueblo' (Espanola)
+- program: interior-non-bia-funding-agreement
+  agency: National Park Service (Bandelier National Monument; Valles Caldera National Preserve)
+  fiscal_year: 2024
+  source: federal-register-2024-30252
+  confidence: medium
+  verification: bulk-import
+  as_of: '2024-12-19'
+  locator: 89 Fed. Reg. 103858, 103859-60, National Park Service agreements, 'Santa Clara Pueblo'
+  note: The list's name was matched to this nation by a person or AI review; the list names 'Santa Clara Pueblo'.
+- program: interior-self-governance-compact
+  fiscal_year: 2025
+  amount: 4017067
+  amount_kind: obligations
+  source: usaspending-fy2025-assistance-listing-15-022
+  confidence: medium
+  verification: bulk-import
+  as_of: '2025'
+  locator: Assistance Listing 15.022, recipient 'SANTA CLARA PUEBLO' (UEI E2CKL5RLKVS9), Oct. 1, 2024 to Sept. 30, 2025
+  note: The list's name was matched to this nation by a person or AI review; the list names 'SANTA CLARA PUEBLO'.
+- program: isdeaa-contract-indian-health-service
+  fiscal_year: 2025
+  amount: 795466
+  amount_kind: obligations
+  source: usaspending-fy2025-assistance-listing-93-441
+  confidence: medium
+  verification: bulk-import
+  as_of: '2025'
+  locator: Assistance Listing 93.441, recipient 'SANTA CLARA PUEBLO' (UEI E2CKL5RLKVS9), Oct. 1, 2024 to Sept. 30, 2025
+  note: The list's name was matched to this nation by a person or AI review; the list names 'SANTA CLARA PUEBLO'.
 government_structure:
 - kind: indian-reorganization-act
   detail: Listed as "The Pueblo of Santa Clara, New Mexico" among organizations under constitutions approved
@@ -649,6 +696,22 @@ jurisdiction:
   as_of: '2017-07-18'
   locator: Answer, second and third paragraphs (the lists of mandatory and optional states)
   note: Inferred from the state's absence from both lists. Nation placed in New Mexico by the Census Bureau's land areas.
+- topic: hearth-act-leasing-regulations
+  value: approved
+  detail: The Secretary of the Interior approved the leasing regulations (Business, Residential) of the Pueblo of Santa Clara, as the Bureau of Indian Affairs' list names it, under the HEARTH Act, 25 U.S.C. § 415(h), on May 24, 2023, so the nation can lease its trust land for those purposes under its own regulations without the Bureau of Indian Affairs approving each lease.
+  source: hearth-act-leasing-regulations-pueblo-of-santa-clara-2023-05-24
+  confidence: high
+  verification: inferred
+  as_of: '2023-05-24'
+  locator: Bureau of Indian Affairs, Approved HEARTH Act Regulations, Approved in 2023
+- topic: environmental-treatment-as-a-state
+  value: clean-water-act-water-quality-standards
+  detail: EPA found the nation eligible on July 19, 1995 to set water quality standards (treatment in a similar manner as a state under Clean Water Act § 518), and first approved its standards on July 19, 1995.
+  source: epa-actions-on-tribal-water-quality-standards
+  confidence: high
+  verification: inferred
+  as_of: '1995-07-19'
+  locator: 'Table of approvals by Tribe, column "Regulatory Programs": "WQS Program"'
 jurisdiction_agreements:
 - kind: child-welfare-agreement
   other_party: New Mexico Children, Youth and Families Department

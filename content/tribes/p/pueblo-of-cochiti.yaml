@@ -194,6 +194,44 @@ indian_health_service:
   as_of: '2026-11-23'
   locator: page text
   note: 'The source''s words: "eight constituent tribal governments: the Pueblos of Cochiti, Nambé, Ohkay Owingeh, Pojoaque, San Felipe, San Ildefonso, Santa Clara, and Tesuque".'
+federal_programs:
+- program: interior-self-governance-compact
+  since: 2020
+  source: bia-office-of-self-governance-tribes-2024-07-24
+  confidence: medium
+  verification: bulk-import
+  as_of: '2024-07-24'
+  locator: row 'Pueblo De Cochiti' (Southwest Region)
+  note: The list's name was matched to this nation by a person or AI review; the list names 'Pueblo De Cochiti'.
+- program: indian-housing-block-grant
+  fiscal_year: 2026
+  amount: 383902
+  amount_kind: allocation
+  source: hud-ihbg-fy2026-formula-allocations
+  confidence: high
+  verification: bulk-import
+  as_of: '2026'
+  locator: NM, row 'Cochiti Pueblo' (Cochiti Pueblo)
+- program: interior-self-governance-compact
+  fiscal_year: 2025
+  amount: 2095609
+  amount_kind: obligations
+  source: usaspending-fy2025-assistance-listing-15-022
+  confidence: medium
+  verification: bulk-import
+  as_of: '2025'
+  locator: Assistance Listing 15.022, recipient 'COCHITI DE PUEBLO' (UEI QJFEJMYMF9V7), Oct. 1, 2024 to Sept. 30, 2025
+  note: The list's name was matched to this nation by a person or AI review; the list names 'COCHITI DE PUEBLO'.
+- program: isdeaa-contract-indian-health-service
+  fiscal_year: 2025
+  amount: 634638
+  amount_kind: obligations
+  source: usaspending-fy2025-assistance-listing-93-441
+  confidence: medium
+  verification: bulk-import
+  as_of: '2025'
+  locator: Assistance Listing 93.441, recipient 'COCHITI DE PUEBLO' (UEI QJFEJMYMF9V7), Oct. 1, 2024 to Sept. 30, 2025
+  note: The list's name was matched to this nation by a person or AI review; the list names 'COCHITI DE PUEBLO'.
 governance:
 - aspect: head-of-government
   value: Governor

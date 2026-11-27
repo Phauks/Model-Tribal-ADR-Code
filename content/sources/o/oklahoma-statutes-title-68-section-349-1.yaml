@@ -86,7 +86,7 @@ found_in:
 notes: 'Indigo Book citation: Okla. Stat. tit. 68, § 349.1 (2026). History: Added by Laws 2009, c. 434, § 9, eff. Jan. 1, 2010. Amended by Laws 2014, c. 338, § 3, eff. Text read from the Legislative Service Bureau''s Title 68 PDF (updated Nov. 12, 2026), page 215. Found by the state statutes pilot (terms: bureau of indian affairs; federally recognized indian tribe; federally recognized indian tribes; federally recognized tribes; indian country; indian tribe; native american; tribal members); AI reader''s verdict core: Tobacco taxes and tax-free purchases for noncompacting tribes'' members. Unverified.'
 review:
   status: unverified
-  by: scripts/law/oklahoma_statutes.py
+  by: scripts/law/state_statutes/run.py
   date: '2026-11-26'
   checks:
   - check: 'Indian law section: the pilot''s keyword pass and an AI reader''s verdict (core, incidental or none)'

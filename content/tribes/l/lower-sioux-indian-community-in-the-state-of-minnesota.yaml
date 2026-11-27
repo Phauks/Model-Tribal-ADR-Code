@@ -195,6 +195,25 @@ indian_health_service:
   as_of: '2026-11-23'
   locator: Tribal Health Programs lists (Michigan, Minnesota, Wisconsin)
   note: Listed as "Lower Sioux Indian Community in the State of Minnesota".
+federal_programs:
+- program: indian-housing-block-grant
+  fiscal_year: 2026
+  amount: 469697
+  amount_kind: allocation
+  source: hud-ihbg-fy2026-formula-allocations
+  confidence: high
+  verification: bulk-import
+  as_of: '2026'
+  locator: MN, row 'Lower Sioux Indian Community' (Morton)
+- program: isdeaa-contract-indian-health-service
+  fiscal_year: 2025
+  amount: 2816150
+  amount_kind: obligations
+  source: usaspending-fy2025-assistance-listing-93-441
+  confidence: high
+  verification: bulk-import
+  as_of: '2025'
+  locator: Assistance Listing 93.441, recipient 'LOWER SIOUX INDIAN COMMUNITY IN THE STATE OF MINNESOTA' (UEI XNZKFEJ5DA89), Oct. 1, 2024 to Sept. 30, 2025
 government_structure:
 - kind: indian-reorganization-act
   detail: Listed as "The Lower Sioux Tribe in the State of Minnesota" among organizations under constitutions
@@ -689,6 +708,14 @@ jurisdiction:
     and matched to the roster. Row re-read on 2026-11-22 from the page image (the govinfo PDF has no text
     layer for the table); verification level unchanged because the name was not matched word for word
     in machine-read text.'
+- topic: environmental-treatment-as-a-state
+  value: toxic-substances-control-act-lead-programs
+  detail: EPA has approved the nation for treatment in a similar manner as a state for lead abatement and renovation programs (Toxic Substances Control Act §§ 402, 404, 406).
+  source: epa-tribes-approved-for-treatment-as-a-state
+  confidence: high
+  verification: inferred
+  as_of: '2026-10-21'
+  locator: 'Table of approvals by Tribe, column "Regulatory Programs with an Enforcement Component": "Lead Abatement"'
 jurisdiction_agreements:
 - kind: tax-agreement
   other_party: Minnesota Department of Revenue

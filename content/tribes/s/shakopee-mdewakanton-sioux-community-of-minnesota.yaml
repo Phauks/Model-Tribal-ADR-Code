@@ -221,6 +221,34 @@ indian_health_service:
   as_of: '2026-11-23'
   locator: Tribal Health Programs lists (Michigan, Minnesota, Wisconsin)
   note: 'Listed as "Shakopee Mdewakanton Sioux Community of Minnesota". Also listed under the same Area in: indian-health-service-self-governance-tribes. Also on the Indian Health Service Self-Governance Tribes list (Shakopee Mdewakanton Sioux Community (2004)); the list does not say which service unit or programs the compact covers.'
+federal_programs:
+- program: indian-health-service-self-governance-compact
+  since: 2004
+  source: indian-health-service-self-governance-tribes
+  confidence: medium
+  verification: bulk-import
+  as_of: '2025-07-01'
+  locator: Bemidji Area, row 'Shakopee Mdewakanton Sioux Community'
+  note: The list's name was matched to this nation by a person or AI review; the list names 'Shakopee Mdewakanton Sioux Community'.
+- program: indian-housing-block-grant
+  fiscal_year: 2026
+  amount: 214555
+  amount_kind: allocation
+  source: hud-ihbg-fy2026-formula-allocations
+  confidence: high
+  verification: bulk-import
+  as_of: '2026'
+  locator: MN, row 'Shakopee Mdewakanton Sioux Community' (Prior Lake)
+- program: indian-health-service-self-governance-compact
+  fiscal_year: 2025
+  amount: 2237447
+  amount_kind: obligations
+  source: usaspending-fy2025-assistance-listing-93-210
+  confidence: medium
+  verification: bulk-import
+  as_of: '2025'
+  locator: Assistance Listing 93.210, recipient 'SHAKOPEE MDEWAKANTON SIOUX COMMUNITY' (UEI G11HL1HD82Z4), Oct. 1, 2024 to Sept. 30, 2025
+  note: The list's name was matched to this nation by a person or AI review; the list names 'SHAKOPEE MDEWAKANTON SIOUX COMMUNITY'.
 governance:
 - aspect: form
   value: Constitution and bylaws
@@ -608,6 +636,14 @@ jurisdiction:
     and matched to the roster. Row re-read on 2026-11-22 from the page image (the govinfo PDF has no text
     layer for the table); verification level unchanged because the name was not matched word for word
     in machine-read text.'
+- topic: hearth-act-leasing-regulations
+  value: approved
+  detail: The Secretary of the Interior approved the leasing regulations (Business) of the Shakopee Mdewakanton Sioux Community, as the Bureau of Indian Affairs' list names it, under the HEARTH Act, 25 U.S.C. § 415(h), on Mar. 3, 2016, so the nation can lease its trust land for those purposes under its own regulations without the Bureau of Indian Affairs approving each lease.
+  source: hearth-act-leasing-regulations-shakopee-mdewakanton-sioux-community-of-minnesota-2016-03-03
+  confidence: high
+  verification: inferred
+  as_of: '2016-03-03'
+  locator: Bureau of Indian Affairs, Approved HEARTH Act Regulations, Approved in 2016
 jurisdiction_agreements:
 - kind: tax-agreement
   other_party: Minnesota Department of Revenue

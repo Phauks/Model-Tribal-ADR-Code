@@ -13,7 +13,7 @@
 import type { R2Bucket, R2Object, R2ObjectBody, R2Range } from '@cloudflare/workers-types/index.ts';
 import type { PublicCopy } from '../public-copies.ts';
 
-export type ServableCopy = Pick<PublicCopy, 'key' | 'mediaType' | 'sha256' | 'bytes' | 'links'>;
+export type ServableCopy = Pick<PublicCopy, 'key' | 'mediaType' | 'sha256' | 'bytes' | 'links' | 'charset'>;
 
 /** Larger files are left at their original address; reading one would strain the Worker. */
 export const largestFill = 64 * 1024 * 1024;
@@ -87,10 +87,27 @@ function fileName(copy: ServableCopy): string {
 	return (copy.key.split('/').at(-1) ?? 'document.pdf').replace(/[^A-Za-z0-9._-]/g, '_');
 }
 
+/** What a saved web page may still do, in its frame or opened on its own: follow a link the reader clicks. */
+export const copySandbox = 'allow-top-navigation-by-user-activation allow-popups allow-popups-to-escape-sandbox';
+
+/**
+ * The Content-Type a copy is served with. Text and saved web pages name their
+ * encoding, UTF-8 unless the copy says otherwise (research/copy-charsets.csv),
+ * so accented letters, dashes and section signs show as written. Until
+ * Nov. 27, 2026 saved pages were served as plain "text/html", and a browser
+ * read the ones with no <meta charset> near the top, such as the Caselaw
+ * Access Project's opinion fragments, as Windows-1252: "§" showed as "Â§".
+ * The header wins over a page's own <meta charset>, which a few pages state
+ * wrongly.
+ */
+export function copyContentType(copy: Pick<ServableCopy, 'mediaType' | 'charset'>): string {
+	if (copy.mediaType !== 'text/plain' && copy.mediaType !== 'text/html') return copy.mediaType;
+	return `${copy.mediaType}; charset=${copy.charset ?? 'utf-8'}`;
+}
+
 function copyHeaders(copy: ServableCopy, etag?: string): Headers {
 	const headers = new Headers({
-		// Plain text says it is UTF-8, so a transcription's accented letters and dashes show as written.
-		'Content-Type': copy.mediaType === 'text/plain' ? 'text/plain; charset=utf-8' : copy.mediaType,
+		'Content-Type': copyContentType(copy),
 		'Content-Disposition': `inline; filename="${fileName(copy)}"`,
 		// A day: the file never changes under its key, but a copy taken off the list should stop being served soon.
 		'Cache-Control': 'public, max-age=86400',
@@ -100,7 +117,8 @@ function copyHeaders(copy: ServableCopy, etag?: string): Headers {
 	});
 	if (copy.mediaType === 'text/html') {
 		// A saved web page runs nothing and loads nothing: its text and layout show, its scripts, frames and images do not.
-		headers.set('Content-Security-Policy', "default-src 'none'; style-src 'unsafe-inline'; sandbox");
+		// Its links still work when a reader clicks one, in the window or a new tab (the opinion copies' citations).
+		headers.set('Content-Security-Policy', `default-src 'none'; style-src 'unsafe-inline'; sandbox ${copySandbox}`);
 	}
 	if (etag) headers.set('ETag', etag);
 	return headers;

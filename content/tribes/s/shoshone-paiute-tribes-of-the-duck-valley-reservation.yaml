@@ -168,6 +168,79 @@ indian_health_service:
   as_of: '2026-11-23'
   locator: '"Arizona Tribes" / "Nevada and Utah Tribes" lists'
   note: 'Listed as "Shoshone-Paiute Tribe of the Duck Valley Reservation". Also listed under the same Area in: indian-health-service-self-governance-tribes. Also on the Indian Health Service Self-Governance Tribes list (Duck Valley Shoshone-Paiute Tribes (1995)); the list does not say which service unit or programs the compact covers.'
+federal_programs:
+- program: interior-self-governance-compact
+  since: 1992
+  source: bia-office-of-self-governance-tribes-2024-07-24
+  confidence: medium
+  verification: bulk-import
+  as_of: '2024-07-24'
+  locator: row 'Shoshone-Paiute Tribes Of Duck Valley' (Western Region)
+  note: The list's name was matched to this nation by a person or AI review; the list names 'Shoshone-Paiute Tribes Of Duck Valley'.
+- program: indian-health-service-self-governance-compact
+  since: 1995
+  source: indian-health-service-self-governance-tribes
+  confidence: medium
+  verification: bulk-import
+  as_of: '2025-07-01'
+  locator: Phoenix Area, row 'Duck Valley Shoshone-Paiute Tribes'
+  note: The list's name was matched to this nation by a person or AI review; the list names 'Duck Valley Shoshone-Paiute Tribes'.
+- program: pl-102-477-plan
+  start: '2024-07-01'
+  end: '2027-06-30'
+  programs_included:
+  - Workforce Innovation and Opportunity Act – Adult Comprehensive Services
+  - Workforce Innovation and Opportunity Act – Supplementary Youth Services
+  - Child Care & Development Funds – Discretionary
+  - Child Care & Development Funds – Mandatory
+  - Native Employment Works
+  - Job Placement and Training
+  - 'Welfare Assistance: General Assistance'
+  - Higher Education
+  - Johnson O’Malley
+  detail: Carried under a self-governance compact
+  source: bia-pl-102-477-plan-directory
+  confidence: high
+  verification: bulk-import
+  as_of: '2026-11-26'
+  locator: PL102_477_Contracts, plan 'Shoshone-Paiute Tribes of the Duck Valley Reservation, Nevada'; PL102_477_PartnerEnrollment, its 9 programs
+- program: indian-housing-block-grant
+  fiscal_year: 2026
+  amount: 3458591
+  amount_kind: allocation
+  source: hud-ihbg-fy2026-formula-allocations
+  confidence: high
+  verification: bulk-import
+  as_of: '2026'
+  locator: NV, row 'Duck Valley Shoshone-Paiute Tribes' (Owyhee)
+- program: interior-non-bia-funding-agreement
+  agency: Appraisal and Valuation Services Office
+  fiscal_year: 2024
+  source: federal-register-2024-30252
+  confidence: high
+  verification: bulk-import
+  as_of: '2024-12-19'
+  locator: 89 Fed. Reg. 103858, 103859-60, Appraisal and Valuation Services Office agreements, 'Shoshone-Paiute Tribes of the Duck Valley Reservation, Nevada'
+- program: interior-self-governance-compact
+  fiscal_year: 2025
+  amount: 5564172
+  amount_kind: obligations
+  source: usaspending-fy2025-assistance-listing-15-022
+  confidence: medium
+  verification: bulk-import
+  as_of: '2025'
+  locator: Assistance Listing 15.022, recipient 'SHOSHONE-PAIUTE TRIBES' (UEI DB14JLNJX655), Oct. 1, 2024 to Sept. 30, 2025
+  note: The list's name was matched to this nation by a person or AI review; the list names 'SHOSHONE-PAIUTE TRIBES'.
+- program: indian-health-service-self-governance-compact
+  fiscal_year: 2025
+  amount: 10693690
+  amount_kind: obligations
+  source: usaspending-fy2025-assistance-listing-93-210
+  confidence: medium
+  verification: bulk-import
+  as_of: '2025'
+  locator: Assistance Listing 93.210, recipient 'SHOSHONE-PAIUTE TRIBES' (UEI DB14JLNJX655), Oct. 1, 2024 to Sept. 30, 2025
+  note: The list's name was matched to this nation by a person or AI review; the list names 'SHOSHONE-PAIUTE TRIBES'.
 government_structure:
 - kind: indian-reorganization-act
   detail: Listed as "The Shoshone-Paiute Tribes of the Duck Valley Reservation, Nevada" among organizations
@@ -593,6 +666,14 @@ jurisdiction:
   verification: inferred
   locator: 40 Fed. Reg. at 27,501
   note: 'INFERENCE, not stated in any source the research read: because the notice covers only jurisdiction "acquired by the State," a nation absent from it was not under state jurisdiction in 1975. The 1976 AIPRC report (fn. 21) lists the previously covered areas and omits these nations. The 1955 act let counties exclude Indian country by Governor''s proclamation (Pyramid Lake did); the research did not locate the proclamations or minutes for the other counties, so the reason for each nation is unconfirmed. Fort Mojave also has AZ/CA lands; Duck Valley ID; Fort McDermitt OR. Also cites: american-indian-policy-review-commission-task-force-four-1976, goldberg-2010-tribal-jurisdictional-status-analysis.'
+- topic: environmental-treatment-as-a-state
+  value: clean-water-act-water-quality-standards
+  detail: EPA found the nation eligible on June 17, 2020 to set water quality standards (treatment in a similar manner as a state under Clean Water Act § 518); EPA's list gives no date of approved standards of the nation's own.
+  source: epa-actions-on-tribal-water-quality-standards
+  confidence: high
+  verification: inferred
+  as_of: '2020-06-17'
+  locator: 'Table of approvals by Tribe, column "Regulatory Programs": "WQS Program"'
 nearby_state_courts:
 - state: ID
   county: Owyhee County

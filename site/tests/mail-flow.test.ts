@@ -55,9 +55,9 @@ describe('mail arriving', () => {
 		expect(thread).toMatchObject({ subject: 'A question about the model code', counterpartAddress: 'office@nation.example', counterpartName: 'Tribal Office', folder: 'inbox', unread: true });
 		expect(thread!.messages[0].text).toContain('peacemaking provisions');
 		expect([...context.bucket.files.keys()].some((key) => key.startsWith('mail/raw/2026/11/'))).toBe(true);
-		// A second message within 30 minutes sends no second notice.
+		// Each message people should hear about says so; how often anyone is told is the alerts' own business (tests/mail-alerts.test.ts).
 		const again = await receiveMail(context, arriving(rawMessage({ From: 'other@else.example', To: 'contact@example.org', Subject: 'Other' }, 'Hi')));
-		expect(again).toMatchObject({ notify: false });
+		expect(again).toMatchObject({ notify: true, inboxIdentifier: 'contact' });
 	});
 
 	it('threads a reply by its headers, and by subject and sender when the headers are gone', async () => {

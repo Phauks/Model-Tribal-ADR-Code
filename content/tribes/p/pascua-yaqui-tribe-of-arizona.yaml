@@ -177,6 +177,52 @@ indian_health_service:
   as_of: '2026-11-23'
   locator: page text
   note: Listed as "Pascua Yaqui Tribe". Also on the Indian Health Service Self-Governance Tribes list (Pascua Yaqui Tribe (2018)); the list does not say which service unit or programs the compact covers.
+federal_programs:
+- program: indian-health-service-self-governance-compact
+  since: 2018
+  source: indian-health-service-self-governance-tribes
+  confidence: medium
+  verification: bulk-import
+  as_of: '2025-07-01'
+  locator: Tucson Area, row 'Pascua Yaqui Tribe'
+  note: The list's name was matched to this nation by a person or AI review; the list names 'Pascua Yaqui Tribe'.
+- program: pl-102-477-plan
+  start: '2025-10-01'
+  end: '2030-09-30'
+  programs_included:
+  - Workforce Innovation and Opportunity Act – Adult Comprehensive Services
+  - Workforce Innovation and Opportunity Act – Supplementary Youth Services
+  - Congressional Funded Community Project - Language Nest Program
+  - Native American Career and Technical Education Program
+  - Job Placement and Training
+  - Adult Education
+  - Higher Education
+  - Johnson O’Malley
+  detail: Carried under a self-determination contract
+  source: bia-pl-102-477-plan-directory
+  confidence: high
+  verification: bulk-import
+  as_of: '2026-11-26'
+  locator: PL102_477_Contracts, plan 'Pascua Yaqui Tribe of Arizona'; PL102_477_PartnerEnrollment, its 8 programs
+- program: indian-housing-block-grant
+  fiscal_year: 2026
+  amount: 7462044
+  amount_kind: allocation
+  source: hud-ihbg-fy2026-formula-allocations
+  confidence: high
+  verification: bulk-import
+  as_of: '2026'
+  locator: AZ, row 'Pascua Yaqui Tribe' (Tucson)
+- program: indian-health-service-self-governance-compact
+  fiscal_year: 2025
+  amount: 26121274
+  amount_kind: obligations
+  source: usaspending-fy2025-assistance-listing-93-210
+  confidence: medium
+  verification: bulk-import
+  as_of: '2025'
+  locator: Assistance Listing 93.210, recipient 'PASCUA YAQUI TRIBE' (UEI Z6S8EJ465CM5), Oct. 1, 2024 to Sept. 30, 2025
+  note: The list's name was matched to this nation by a person or AI review; the list names 'PASCUA YAQUI TRIBE'.
 governance:
 - aspect: form
   value: Adopted under the Indian Reorganization Act of June 18, 1934, as amended
@@ -936,6 +982,30 @@ jurisdiction:
   verification: read-in-full
   locator: 113 Ariz. at 431
   note: 1976 holding about service of process on the Tohono O'odham (Papago) reservation, reasoning from the 1968 consent requirement. The research did not find any later Arizona assumption. Other federal statutes can still give Arizona limited authority; none checked here.
+- topic: hearth-act-leasing-regulations
+  value: approved
+  detail: The Secretary of the Interior approved the leasing regulations (Solar and Wind Resource, WEEL) of the Pascua Yaqui Tribe of Arizona, as the Bureau of Indian Affairs' list names it, under the HEARTH Act, 25 U.S.C. § 415(h), on Dec. 22, 2021, so the nation can lease its trust land for those purposes under its own regulations without the Bureau of Indian Affairs approving each lease.
+  source: hearth-act-leasing-regulations-pascua-yaqui-tribe-of-arizona-2021-12-22
+  confidence: high
+  verification: inferred
+  as_of: '2021-12-22'
+  locator: Bureau of Indian Affairs, Approved HEARTH Act Regulations, Approved in 2021
+- topic: hearth-act-leasing-regulations
+  value: approved
+  detail: The Secretary of the Interior approved the leasing regulations (Residential) of the Pascua Yaqui Tribe of Arizona, as the Bureau of Indian Affairs' list names it, under the HEARTH Act, 25 U.S.C. § 415(h), on Oct. 26, 2021, so the nation can lease its trust land for those purposes under its own regulations without the Bureau of Indian Affairs approving each lease.
+  source: hearth-act-leasing-regulations-pascua-yaqui-tribe-of-arizona-2021-10-26
+  confidence: high
+  verification: inferred
+  as_of: '2021-10-26'
+  locator: Bureau of Indian Affairs, Approved HEARTH Act Regulations, Approved in 2021
+- topic: hearth-act-leasing-regulations
+  value: approved
+  detail: The Secretary of the Interior approved the leasing regulations (Business) of the Pascua Yaqui Tribe of Arizona, as the Bureau of Indian Affairs' list names it, under the HEARTH Act, 25 U.S.C. § 415(h), on Aug. 25, 2021, so the nation can lease its trust land for those purposes under its own regulations without the Bureau of Indian Affairs approving each lease.
+  source: hearth-act-leasing-regulations-pascua-yaqui-tribe-of-arizona-2021-08-25
+  confidence: high
+  verification: inferred
+  as_of: '2021-08-25'
+  locator: Bureau of Indian Affairs, Approved HEARTH Act Regulations, Approved in 2021
 court_practice:
 - kind: public-defender
   title: Public Defender

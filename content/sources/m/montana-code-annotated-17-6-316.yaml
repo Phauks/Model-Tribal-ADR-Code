@@ -1,0 +1,50 @@
+key: montana-code-annotated-17-6-316
+kind: state-statute
+citation:
+  type: legislation
+  title: Economic development loan -- infrastructure tax credit
+  title-short: Mont. Code Ann. § 17-6-316
+  container-title: Montana Code Annotated
+  container-title-short: Mont. Code Ann.
+  section: 17-6-316
+  author:
+  - literal: Montana Legislature
+  issued:
+    date-parts:
+    - - 1995
+  URL: https://mca.legmt.gov/bills/mca/title_0170/chapter_0060/part_0030/section_0160/0170-0060-0030-0160.html
+  accessed:
+    date-parts:
+    - - 2026
+      - 11
+      - 27
+original_link: https://mca.legmt.gov/bills/mca/title_0170/chapter_0060/part_0030/section_0160/0170-0060-0030-0160.html
+retrieved: '2026-11-27'
+archives: []
+history:
+  status: live
+  last_checked: '2026-11-27'
+state_law:
+  relevance: incidental
+  citation: Mont. Code Ann. § 17-6-316 (2025)
+rights:
+  status: no-permission-needed
+  basis: government-edict
+  basis_note: 'Official state statutes are not copyrightable under the government edicts doctrine (Georgia v. Public.Resource.Org, Inc., 590 U.S. 255 (2020)). Linked, not served: state statutes stay link only.'
+  redistribution: false
+jurisdictions:
+- level: state
+  state: MT
+topics:
+- state-indian-law
+found_in:
+- 2026-11-27-state-statutes-sweep
+notes: 'Indigo Book citation: Mont. Code Ann. § 17-6-316 (2025). History: En. Sec. 5, Ch. 2, L. 1995; En. Sec. 5, Ch. 477, L. 1995; amd. Sec. 7, Ch. 477, L. 1995; amd. Sec. 4, Ch. 359, L. 2019; amd. Sec. 3, Ch. 93, L. 2025. Text read from the Montana Legislature''s page for the section in the Montana Code Annotated 2025 (mca.legmt.gov) on Nov. 27, 2026. Found by the state statutes sweep (terms: tribal government; indian; tribal); AI reader''s verdict incidental: Economic development loans must go to local or Indian tribal governments. Unverified.'
+review:
+  status: unverified
+  by: scripts/law/state_statutes/run.py
+  date: '2026-11-27'
+  checks:
+  - check: 'Indian law section: the sweep''s keyword pass and an AI reader''s verdict (core, incidental or none)'
+    result: agree
+    detail: 'incidental; terms: tribal government; indian; tribal'

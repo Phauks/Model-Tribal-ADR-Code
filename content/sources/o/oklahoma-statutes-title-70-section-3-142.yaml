@@ -73,7 +73,7 @@ found_in:
 notes: 'Indigo Book citation: Okla. Stat. tit. 70, § 3-142 (2026). History: Added by Laws 1999, c. 320, § 17, eff. July 1, 1999. Amended by Laws 2004, c. 472, § 2, Laws 2010, c. 204, § 1; Laws 2010, c. 288, § 4, eff. Nov. 1, 2010; Laws 2011, c. 1, § 39, Laws 2026, c. 108, § 2, eff. Nov. 1, 2026. Laws 2020, c. 61, § 1 repealed by Laws 2021, c. 101, § 10, emerg. eff. April 20, 2021. Text read from the Legislative Service Bureau''s Title 70 PDF (updated Nov. 12, 2026), page 242. Found by the state statutes pilot (terms: federally recognized indian tribe); AI reader''s verdict incidental: Federally recognized tribe may sponsor charter schools. Unverified.'
 review:
   status: unverified
-  by: scripts/law/oklahoma_statutes.py
+  by: scripts/law/state_statutes/run.py
   date: '2026-11-26'
   checks:
   - check: 'Indian law section: the pilot''s keyword pass and an AI reader''s verdict (core, incidental or none)'

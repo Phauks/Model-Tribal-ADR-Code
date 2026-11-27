@@ -202,6 +202,46 @@ indian_health_service:
   as_of: '2026-11-23'
   locator: list of Tribes
   note: Listed as "Fort Hall Business Council (Sho-Ban)". The Direct Service Tribes list says some Tribes have a mixed Indian Health Service and Tribal arrangement.
+federal_programs:
+- program: pl-102-477-plan
+  start: '2023-10-01'
+  end: '2028-09-30'
+  programs_included:
+  - Workforce Innovation and Opportunity Act – Adult Comprehensive Services
+  - Workforce Innovation and Opportunity Act – Supplementary Youth Services
+  - Community Service Block Grant
+  - Low Income Home Energy Assistance Program
+  - Temporary Assistance for Needy Families
+  - Job Placement and Training
+  - 'Welfare Assistance: General Assistance'
+  - Adult Education
+  - Higher Education
+  - Johnson O’Malley
+  detail: Carried under a self-determination contract
+  source: bia-pl-102-477-plan-directory
+  confidence: high
+  verification: bulk-import
+  as_of: '2026-11-26'
+  locator: PL102_477_Contracts, plan 'Shoshone-Bannock Tribes of the Fort Hall Reservation'; PL102_477_PartnerEnrollment, its 10 programs
+- program: indian-housing-block-grant
+  fiscal_year: 2026
+  amount: 2644209
+  amount_kind: allocation
+  source: hud-ihbg-fy2026-formula-allocations
+  confidence: high
+  verification: bulk-import
+  as_of: '2026'
+  locator: ID, row 'Shoshone-Bannock Tribes, Ft. Hall Reservation' (Fort Hall)
+- program: isdeaa-contract-indian-health-service
+  fiscal_year: 2025
+  amount: 11952753
+  amount_kind: obligations
+  source: usaspending-fy2025-assistance-listing-93-441
+  confidence: medium
+  verification: bulk-import
+  as_of: '2025'
+  locator: Assistance Listing 93.441, recipient 'SHOSHONE BANNOCK TRIBES' (UEI PFM3F9M7MG44), Oct. 1, 2024 to Sept. 30, 2025
+  note: The list's name was matched to this nation by a person or AI review; the list names 'SHOSHONE BANNOCK TRIBES'.
 government_structure:
 - kind: indian-reorganization-act
   detail: Listed as "The Shoshone-Bannock Tribes of the Fort Hall Reservation, Idaho" among organizations
@@ -649,6 +689,22 @@ jurisdiction:
     and matched to the roster. Row re-read on 2026-11-22 from the page image (the govinfo PDF has no text
     layer for the table); verification level unchanged because the name was not matched word for word
     in machine-read text.'
+- topic: environmental-treatment-as-a-state
+  value: clean-water-act-water-quality-standards
+  detail: EPA found the nation eligible on Sept. 5, 2008 to set water quality standards (treatment in a similar manner as a state under Clean Water Act § 518); EPA's list gives no date of approved standards of the nation's own.
+  source: epa-actions-on-tribal-water-quality-standards
+  confidence: high
+  verification: inferred
+  as_of: '2008-09-05'
+  locator: 'Table of approvals by Tribe, column "Regulatory Programs": "WQS Program"'
+- topic: environmental-treatment-as-a-state
+  value: clean-air-act-administrative-functions
+  detail: 'EPA has approved the nation for treatment in a similar manner as a state to perform administrative functions under the Clean Air Act: §§ 106; 107(c)-(e); 110(a)(2)(D); 126; 505(a)(2).'
+  source: epa-tribes-approved-for-treatment-as-a-state
+  confidence: high
+  verification: inferred
+  as_of: '2026-10-21'
+  locator: 'Table of approvals by Tribe, column "Administrative Functions": "CAA §§ 106; 107(c)-(e); 110(a)(2)(D); 126; 505(a)(2)"'
 nearby_state_courts:
 - state: ID
   county: Bingham County

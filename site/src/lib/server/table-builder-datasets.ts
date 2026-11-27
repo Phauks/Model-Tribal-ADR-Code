@@ -371,8 +371,28 @@ const datasetCache = new Map<string, BuilderDataset>();
 export function builderDataset(identifier: string): BuilderDataset | undefined {
 	const build = builders[identifier];
 	if (!build) return undefined;
-	if (!datasetCache.has(identifier)) datasetCache.set(identifier, build());
+	if (!datasetCache.has(identifier)) datasetCache.set(identifier, withNationLinks(build()));
 	return datasetCache.get(identifier);
+}
+
+/** Adds the page of each nation named in the dataset's nation column, so every nation in a cell links to it. */
+function withNationLinks(dataset: BuilderDataset): BuilderDataset {
+	const position = dataset.columns.findIndex((column) => column.key === dataset.nationColumn);
+	if (position === -1) return dataset;
+	const byName = new Map<string, string | null>();
+	for (const record of nations()) {
+		const name = displayName(record.names.official);
+		byName.set(name, byName.has(name) ? null : nationPath(record.id));
+	}
+	const nationLinks: Record<string, string> = {};
+	for (const row of dataset.rows) {
+		const value = row[position];
+		for (const name of Array.isArray(value) ? value : typeof value === 'string' ? [value] : []) {
+			const link = byName.get(name);
+			if (link) nationLinks[name] = link;
+		}
+	}
+	return { ...dataset, nationLinks };
 }
 
 export const builderDatasetIdentifiers = Object.keys(builders);

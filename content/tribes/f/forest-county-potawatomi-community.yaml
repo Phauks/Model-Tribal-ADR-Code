@@ -165,6 +165,52 @@ indian_health_service:
   as_of: '2026-11-23'
   locator: Tribal Health Programs lists (Michigan, Minnesota, Wisconsin)
   note: 'Listed as "Forest County Potawatomi Community, Wisconsin". Also listed under the same Area in: indian-health-service-self-governance-tribes. Also on the Indian Health Service Self-Governance Tribes list (Forest County Potawatomi Community (2005)); the list does not say which service unit or programs the compact covers.'
+federal_programs:
+- program: indian-health-service-self-governance-compact
+  since: 2005
+  source: indian-health-service-self-governance-tribes
+  confidence: medium
+  verification: bulk-import
+  as_of: '2025-07-01'
+  locator: Bemidji Area, row 'Forest County Potawatomi Community'
+  note: The list's name was matched to this nation by a person or AI review; the list names 'Forest County Potawatomi Community'.
+- program: indian-housing-block-grant
+  fiscal_year: 2026
+  amount: 534806
+  amount_kind: allocation
+  source: hud-ihbg-fy2026-formula-allocations
+  confidence: high
+  verification: bulk-import
+  as_of: '2026'
+  locator: WI, row 'Forest County Potawatomi Community' (Crandon)
+- program: tribal-transportation-self-governance-compact
+  since: 2024
+  source: ict-news-2024-08-20-potawatomi-transportation-compact
+  confidence: medium
+  verification: bulk-import
+  as_of: '2024-08-20'
+  locator: 'names ''Forest County Potawatomi Community'': fourth compact (august 2024)'
+  note: The list's name was matched to this nation by a person or AI review; the list names 'Forest County Potawatomi Community'.
+- program: interior-self-governance-compact
+  fiscal_year: 2025
+  amount: 0
+  amount_kind: obligations
+  source: usaspending-fy2025-assistance-listing-15-022
+  confidence: medium
+  verification: bulk-import
+  as_of: '2025'
+  locator: Assistance Listing 15.022, recipient 'FOREST COUNTY POTAWATOMI COMMUNITY' (UEI VLPYRBJM7ZK5), Oct. 1, 2024 to Sept. 30, 2025
+  note: The list's name was matched to this nation by a person or AI review; the list names 'FOREST COUNTY POTAWATOMI COMMUNITY'.
+- program: indian-health-service-self-governance-compact
+  fiscal_year: 2025
+  amount: 4094643
+  amount_kind: obligations
+  source: usaspending-fy2025-assistance-listing-93-210
+  confidence: medium
+  verification: bulk-import
+  as_of: '2025'
+  locator: Assistance Listing 93.210, recipient 'FOREST COUNTY POTAWATOMI COMMUNITY' (UEI VLPYRBJM7ZK5), Oct. 1, 2024 to Sept. 30, 2025
+  note: The list's name was matched to this nation by a person or AI review; the list names 'FOREST COUNTY POTAWATOMI COMMUNITY'.
 government_structure:
 - kind: indian-reorganization-act
   detail: Listed as "The Forest County Potawatomi Community, Wisconsin" among organizations under constitutions
@@ -787,6 +833,22 @@ jurisdiction:
   confidence: high
   verification: read-in-full
   as_of: '1997-01-10'
+- topic: hearth-act-leasing-regulations
+  value: approved
+  detail: The Secretary of the Interior approved the leasing regulations (Leasing Ordinance (Agriculture, Business, Residential, Wind and Solar Resource, WEEL) of the Forest County Potawatomi Community, as the Bureau of Indian Affairs' list names it, under the HEARTH Act, 25 U.S.C. § 415(h), on Aug. 6, 2024, so the nation can lease its trust land for those purposes under its own regulations without the Bureau of Indian Affairs approving each lease.
+  source: hearth-act-leasing-regulations-forest-county-potawatomi-community-2024-08-06
+  confidence: high
+  verification: inferred
+  as_of: '2024-08-06'
+  locator: Bureau of Indian Affairs, Approved HEARTH Act Regulations, Approved in 2024
+- topic: environmental-treatment-as-a-state
+  value: clean-air-act-administrative-functions
+  detail: 'EPA has approved the nation for treatment in a similar manner as a state to perform administrative functions under the Clean Air Act: §§ 126; 505(a)(2).'
+  source: epa-tribes-approved-for-treatment-as-a-state
+  confidence: high
+  verification: inferred
+  as_of: '2026-10-21'
+  locator: 'Table of approvals by Tribe, column "Administrative Functions": "CAA §§ 126; 505(a)(2)"'
 court_practice:
 - kind: court-rules
   title: Tribal Court Rules (Forest County Potawatomi)

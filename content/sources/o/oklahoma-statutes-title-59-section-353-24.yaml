@@ -48,10 +48,10 @@ topics:
 - state-indian-law
 found_in:
 - 2026-11-26-state-statutes-pilot
-notes: 'Indigo Book citation: Okla. Stat. tit. 59, § 353.24 (2026). History: from being shipped directly from an Oklahoma licensed wholesaler or distributor Added by Laws 1961, p. 452, § 24, emerg. eff. May 22, 1961. Amended by Laws 1986, c. Laws 2015, c. 230, § 16, eff. Nov. 1, 2015; Laws 2016, c. 285, § 5, eff. Nov. 1, 2016; Laws Laws 2004, c. 374, § 8 repealed by Laws 2005, c. 1, § 88, emerg. eff. March 15, 2005. Text read from the Legislative Service Bureau''s Title 59 PDF (updated Nov. 12, 2026), page 367. Found by the state statutes pilot (terms: indian health); AI reader''s verdict incidental: Allows IHS or tribal health organization to deliver prescriptions. Unverified.'
+notes: 'Indigo Book citation: Okla. Stat. tit. 59, § 353.24 (2026). History: Added by Laws 1961, p. 452, § 24, emerg. eff. May 22, 1961. Amended by Laws 1986, c. Laws 2015, c. 230, § 16, eff. Nov. 1, 2015; Laws 2016, c. 285, § 5, eff. Nov. 1, 2016; Laws Laws 2004, c. 374, § 8 repealed by Laws 2005, c. 1, § 88, emerg. eff. March 15, 2005. Text read from the Legislative Service Bureau''s Title 59 PDF (updated Nov. 12, 2026), page 367. Found by the state statutes pilot (terms: indian health); AI reader''s verdict incidental: Allows IHS or tribal health organization to deliver prescriptions. Unverified.'
 review:
   status: unverified
-  by: scripts/law/oklahoma_statutes.py
+  by: scripts/law/state_statutes/run.py
   date: '2026-11-26'
   checks:
   - check: 'Indian law section: the pilot''s keyword pass and an AI reader''s verdict (core, incidental or none)'

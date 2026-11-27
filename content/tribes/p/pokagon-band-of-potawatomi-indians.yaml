@@ -231,6 +231,26 @@ indian_health_service:
   as_of: '2026-11-23'
   locator: Tribal Health Programs lists (Michigan, Minnesota, Wisconsin)
   note: Listed as "Pokagon Band of Potawatomi Indians, Michigan and Indiana".
+federal_programs:
+- program: indian-housing-block-grant
+  fiscal_year: 2026
+  amount: 5669927
+  amount_kind: allocation
+  source: hud-ihbg-fy2026-formula-allocations
+  confidence: high
+  verification: bulk-import
+  as_of: '2026'
+  locator: MI, row 'Pokagon Band of Potawatomi Indians' (Dowagiac)
+- program: isdeaa-contract-indian-health-service
+  fiscal_year: 2025
+  amount: 7558815
+  amount_kind: obligations
+  source: usaspending-fy2025-assistance-listing-93-441
+  confidence: medium
+  verification: bulk-import
+  as_of: '2025'
+  locator: Assistance Listing 93.441, recipient 'POKAGON BAND OF POTAWATOMI' (UEI D2ZGT1LU6SE9), Oct. 1, 2024 to Sept. 30, 2025
+  note: The list's name was matched to this nation by a person or AI review; the list names 'POKAGON BAND OF POTAWATOMI'.
 governance:
 - aspect: form
   value: Approved by BIA under Act to Restore Federal Services and IRA Section 16
@@ -864,6 +884,22 @@ jurisdiction:
   as_of: '2017-07-18'
   locator: Answer, second and third paragraphs (the lists of mandatory and optional states)
   note: Inferred from the state's absence from both lists. Nation placed in Michigan by the Census Bureau's land areas.
+- topic: hearth-act-leasing-regulations
+  value: approved
+  detail: The Secretary of the Interior approved the leasing regulations (Residential) of the Pokagon Band of Potawatomi Indians, as the Bureau of Indian Affairs' list names it, under the HEARTH Act, 25 U.S.C. § 415(h), on Nov. 24, 2014, so the nation can lease its trust land for those purposes under its own regulations without the Bureau of Indian Affairs approving each lease.
+  source: hearth-act-leasing-regulations-pokagon-band-of-potawatomi-indians-2014-11-24
+  confidence: high
+  verification: inferred
+  as_of: '2014-11-24'
+  locator: Bureau of Indian Affairs, Approved HEARTH Act Regulations, Approved in 2014
+- topic: hearth-act-leasing-regulations
+  value: approved
+  detail: The Secretary of the Interior approved the leasing regulations (Residential) of the Pokagon Band of Potawatomi Indians, as the Bureau of Indian Affairs' list names it, under the HEARTH Act, 25 U.S.C. § 415(h), on Apr. 11, 2013, so the nation can lease its trust land for those purposes under its own regulations without the Bureau of Indian Affairs approving each lease.
+  source: hearth-act-leasing-regulations-pokagon-band-of-potawatomi-indians-2013-04-11
+  confidence: high
+  verification: inferred
+  as_of: '2013-04-11'
+  locator: Bureau of Indian Affairs, Approved HEARTH Act Regulations, Approved in 2013
 jurisdiction_agreements:
 - kind: tax-agreement
   other_party: Michigan Department of Treasury

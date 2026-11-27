@@ -209,6 +209,47 @@ indian_health_service:
   as_of: '2026-11-23'
   locator: Tribal Health Programs lists (Michigan, Minnesota, Wisconsin)
   note: 'Listed as "Ho-Chunk Nation of Wisconsin". Also listed under the same Area in: indian-health-service-self-governance-tribes. Also on the Indian Health Service Self-Governance Tribes list (Ho-Chunk Nation (2017)); the list does not say which service unit or programs the compact covers.'
+federal_programs:
+- program: indian-health-service-self-governance-compact
+  since: 2017
+  source: indian-health-service-self-governance-tribes
+  confidence: medium
+  verification: bulk-import
+  as_of: '2025-07-01'
+  locator: Bemidji Area, row 'Ho-Chunk Nation'
+  note: The list's name was matched to this nation by a person or AI review; the list names 'Ho-Chunk Nation'.
+- program: pl-102-477-plan
+  start: '2023-07-01'
+  end: '2026-12-31'
+  programs_included:
+  - Workforce Innovation and Opportunity Act – Adult Comprehensive Services
+  - Workforce Innovation and Opportunity Act – Supplementary Youth Services
+  - Native Employment Works
+  - Job Placement and Training
+  detail: Carried under a self-determination contract
+  source: bia-pl-102-477-plan-directory
+  confidence: high
+  verification: bulk-import
+  as_of: '2026-11-26'
+  locator: PL102_477_Contracts, plan 'Ho-Chunk Nation of Wisconsin'; PL102_477_PartnerEnrollment, its 4 programs
+- program: indian-housing-block-grant
+  fiscal_year: 2026
+  amount: 6738719
+  amount_kind: allocation
+  source: hud-ihbg-fy2026-formula-allocations
+  confidence: high
+  verification: bulk-import
+  as_of: '2026'
+  locator: WI, row 'Ho-Chunk Nation' (Black River Falls)
+- program: indian-health-service-self-governance-compact
+  fiscal_year: 2025
+  amount: 12346587
+  amount_kind: obligations
+  source: usaspending-fy2025-assistance-listing-93-210
+  confidence: high
+  verification: bulk-import
+  as_of: '2025'
+  locator: Assistance Listing 93.210, recipient 'HO-CHUNK NATION OF WISCONSIN' (UEI E14CPCHZGAC3), Oct. 1, 2024 to Sept. 30, 2025
 governance:
 - aspect: form
   value: Constitution approved under Act of June 18, 1934
@@ -882,6 +923,38 @@ jurisdiction:
   as_of: '2010-07-29'
   locator: 18 U.S.C. § 1162(a) and 28 U.S.C. § 1360(a), entry "Minnesota"
   note: Statute is primary; nation placed in Minnesota by the Census Bureau's land areas, so confidence is medium. Cited jointly with us-code-title-28-section-1360. Added on 2026-11-23 where the profile had no fact for this state (for example a band split out of a combined record).
+- topic: hearth-act-leasing-regulations
+  value: approved
+  detail: The Secretary of the Interior approved the leasing regulations (Residential) of the Ho-Chunk Nation of Wisconsin, as the Bureau of Indian Affairs' list names it, under the HEARTH Act, 25 U.S.C. § 415(h), on Oct. 26, 2023, so the nation can lease its trust land for those purposes under its own regulations without the Bureau of Indian Affairs approving each lease.
+  source: hearth-act-leasing-regulations-ho-chunk-nation-of-wisconsin-2023-10-26
+  confidence: high
+  verification: inferred
+  as_of: '2023-10-26'
+  locator: Bureau of Indian Affairs, Approved HEARTH Act Regulations, Approved in 2023
+- topic: hearth-act-leasing-regulations
+  value: approved
+  detail: The Secretary of the Interior approved the leasing regulations (Business) of the Ho-Chunk Nation, as the Bureau of Indian Affairs' list names it, under the HEARTH Act, 25 U.S.C. § 415(h), on Feb. 4, 2015, so the nation can lease its trust land for those purposes under its own regulations without the Bureau of Indian Affairs approving each lease.
+  source: hearth-act-leasing-regulations-ho-chunk-nation-of-wisconsin-2015-02-04
+  confidence: high
+  verification: inferred
+  as_of: '2015-02-04'
+  locator: Bureau of Indian Affairs, Approved HEARTH Act Regulations, Approved in 2015
+- topic: hearth-act-leasing-regulations
+  value: approved
+  detail: The Secretary of the Interior approved the leasing regulations (Residential) of the Ho-Chunk Nation, as the Bureau of Indian Affairs' list names it, under the HEARTH Act, 25 U.S.C. § 415(h), on Feb. 4, 2015, so the nation can lease its trust land for those purposes under its own regulations without the Bureau of Indian Affairs approving each lease.
+  source: hearth-act-leasing-regulations-ho-chunk-nation-of-wisconsin-2015-02-04-2
+  confidence: high
+  verification: inferred
+  as_of: '2015-02-04'
+  locator: Bureau of Indian Affairs, Approved HEARTH Act Regulations, Approved in 2015
+- topic: hearth-act-leasing-regulations
+  value: approved
+  detail: The Secretary of the Interior approved the leasing regulations (Agricultural) of the Ho-Chunk Nation, as the Bureau of Indian Affairs' list names it, under the HEARTH Act, 25 U.S.C. § 415(h), on Feb. 4, 2015, so the nation can lease its trust land for those purposes under its own regulations without the Bureau of Indian Affairs approving each lease.
+  source: hearth-act-leasing-regulations-ho-chunk-nation-of-wisconsin-2015-02-04-3
+  confidence: high
+  verification: inferred
+  as_of: '2015-02-04'
+  locator: Bureau of Indian Affairs, Approved HEARTH Act Regulations, Approved in 2015
 court_practice:
 - kind: bar-admission
   title: Rules for Admission to Practice in the Courts of the Ho-Chunk Nation

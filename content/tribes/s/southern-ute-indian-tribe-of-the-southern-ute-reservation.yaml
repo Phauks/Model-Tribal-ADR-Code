@@ -192,6 +192,26 @@ indian_health_service:
   as_of: '2026-11-23'
   locator: Direct Service Tribes by IHS Area > Albuquerque Area
   note: Listed as "Southern Ute Indian Tribe". The Direct Service Tribes list says some Tribes have a mixed Indian Health Service and Tribal arrangement.
+federal_programs:
+- program: indian-housing-block-grant
+  fiscal_year: 2026
+  amount: 2043268
+  amount_kind: allocation
+  source: hud-ihbg-fy2026-formula-allocations
+  confidence: high
+  verification: bulk-import
+  as_of: '2026'
+  locator: CO, row 'Southern Ute Indian Tribe' (Ignacio)
+- program: isdeaa-contract-indian-health-service
+  fiscal_year: 2025
+  amount: 9112968
+  amount_kind: obligations
+  source: usaspending-fy2025-assistance-listing-93-441
+  confidence: medium
+  verification: bulk-import
+  as_of: '2025'
+  locator: Assistance Listing 93.441, recipient 'SOUTHERN UTE INDIAN TRIBE' (UEI H3VJM313MK56), Oct. 1, 2024 to Sept. 30, 2025
+  note: The list's name was matched to this nation by a person or AI review; the list names 'SOUTHERN UTE INDIAN TRIBE'.
 government_structure:
 - kind: indian-reorganization-act
   detail: Listed as "The Southern Ute Tribe of the Southern Ute Reservation, Colorado" among organizations
@@ -704,6 +724,46 @@ jurisdiction:
   as_of: '2017-07-18'
   locator: Answer, second and third paragraphs (the lists of mandatory and optional states)
   note: Inferred from the state's absence from both lists. Nation placed in Colorado by the Census Bureau's land areas.
+- topic: hearth-act-leasing-regulations
+  value: approved
+  detail: The Secretary of the Interior approved the leasing regulations (Agricultural, Business, Residential, Wind and Solar Resource, WEEL) of the Southern Ute Indian Tribe, as the Bureau of Indian Affairs' list names it, under the HEARTH Act, 25 U.S.C. § 415(h), on Mar. 28, 2023, so the nation can lease its trust land for those purposes under its own regulations without the Bureau of Indian Affairs approving each lease.
+  source: hearth-act-leasing-regulations-southern-ute-indian-tribe-of-the-southern-ute-reservation-2023-03-28
+  confidence: high
+  verification: inferred
+  as_of: '2023-03-28'
+  locator: Bureau of Indian Affairs, Approved HEARTH Act Regulations, Approved in 2023
+- topic: environmental-treatment-as-a-state
+  value: clean-water-act-water-quality-standards
+  detail: EPA found the nation eligible on Mar. 28, 2018 to set water quality standards (treatment in a similar manner as a state under Clean Water Act § 518), and first approved its standards on Apr. 15, 2022.
+  source: epa-actions-on-tribal-water-quality-standards
+  confidence: high
+  verification: inferred
+  as_of: '2018-03-28'
+  locator: 'Table of approvals by Tribe, column "Regulatory Programs": "WQS Program"'
+- topic: environmental-treatment-as-a-state
+  value: clean-air-act-new-source-standards
+  detail: EPA has approved the nation for treatment in a similar manner as a state for new source performance standards (Clean Air Act § 111).
+  source: epa-tribes-approved-for-treatment-as-a-state
+  confidence: high
+  verification: inferred
+  as_of: '2026-10-21'
+  locator: 'Table of approvals by Tribe, column "Regulatory Programs with an Enforcement Component": "NSPS; NESHAP; Operating Permit Program"'
+- topic: environmental-treatment-as-a-state
+  value: clean-air-act-hazardous-air-pollutants
+  detail: EPA has approved the nation for treatment in a similar manner as a state for hazardous air pollutant standards (Clean Air Act § 112).
+  source: epa-tribes-approved-for-treatment-as-a-state
+  confidence: high
+  verification: inferred
+  as_of: '2026-10-21'
+  locator: 'Table of approvals by Tribe, column "Regulatory Programs with an Enforcement Component": "NSPS; NESHAP; Operating Permit Program"'
+- topic: environmental-treatment-as-a-state
+  value: clean-air-act-operating-permits
+  detail: EPA has approved the nation for treatment in a similar manner as a state for operating permits (Clean Air Act title V).
+  source: epa-tribes-approved-for-treatment-as-a-state
+  confidence: high
+  verification: inferred
+  as_of: '2026-10-21'
+  locator: 'Table of approvals by Tribe, column "Regulatory Programs with an Enforcement Component": "NSPS; NESHAP; Operating Permit Program"'
 nearby_state_courts:
 - state: CO
   county: La Plata County

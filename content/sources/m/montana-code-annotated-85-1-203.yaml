@@ -1,0 +1,50 @@
+key: montana-code-annotated-85-1-203
+kind: state-statute
+citation:
+  type: legislation
+  title: State water plan
+  title-short: Mont. Code Ann. § 85-1-203
+  container-title: Montana Code Annotated
+  container-title-short: Mont. Code Ann.
+  section: 85-1-203
+  author:
+  - literal: Montana Legislature
+  issued:
+    date-parts:
+    - - 1967
+  URL: https://mca.legmt.gov/bills/mca/title_0850/chapter_0010/part_0020/section_0030/0850-0010-0020-0030.html
+  accessed:
+    date-parts:
+    - - 2026
+      - 11
+      - 27
+original_link: https://mca.legmt.gov/bills/mca/title_0850/chapter_0010/part_0020/section_0030/0850-0010-0020-0030.html
+retrieved: '2026-11-27'
+archives: []
+history:
+  status: live
+  last_checked: '2026-11-27'
+state_law:
+  relevance: incidental
+  citation: Mont. Code Ann. § 85-1-203 (2025)
+rights:
+  status: no-permission-needed
+  basis: government-edict
+  basis_note: 'Official state statutes are not copyrightable under the government edicts doctrine (Georgia v. Public.Resource.Org, Inc., 590 U.S. 255 (2020)). Linked, not served: state statutes stay link only.'
+  redistribution: false
+jurisdictions:
+- level: state
+  state: MT
+topics:
+- state-indian-law
+found_in:
+- 2026-11-27-state-statutes-sweep
+notes: 'Indigo Book citation: Mont. Code Ann. § 85-1-203 (2025). History: En. Sec. 5, Ch. 158, L. 1967; amd. Sec. 138, Ch. 253, L. 1974; R.C.M. 1947, 89-132.1(1) thru (5); amd. Sec. 18, Ch. 573, L. 1985; amd. Sec. 1, Ch. 381, L. 1989; amd. Sec. 417, Ch. 418, L. 1995; amd. Sec. 70, Ch. 545, L. 1995; amd. Sec. 1, Ch. 404, L. 2009; amd. Sec. 7, Ch. 122, L. 2015; amd. Sec. 113, Ch. 261, L. 2021; amd. Sec. 1, Ch. 284, L. 2021; amd. Sec. 10, Ch. 460, L. 2025. Text read from the Montana Legislature''s page for the section in the Montana Code Annotated 2025 (mca.legmt.gov) on Nov. 27, 2026. Found by the state statutes sweep (terms: tribal); AI reader''s verdict incidental: Basin advisory councils must include a tribal representative. Unverified.'
+review:
+  status: unverified
+  by: scripts/law/state_statutes/run.py
+  date: '2026-11-27'
+  checks:
+  - check: 'Indian law section: the sweep''s keyword pass and an AI reader''s verdict (core, incidental or none)'
+    result: agree
+    detail: 'incidental; terms: tribal'

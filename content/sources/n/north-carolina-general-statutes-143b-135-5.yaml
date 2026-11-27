@@ -1,0 +1,47 @@
+key: north-carolina-general-statutes-143b-135-5
+kind: state-statute
+citation:
+  type: legislation
+  title: American Indian Heritage Commission established
+  title-short: N.C. Gen. Stat. § 143B-135.5
+  container-title: General Statutes of North Carolina
+  container-title-short: N.C. Gen. Stat.
+  section: 143B-135.5
+  author:
+  - literal: North Carolina General Assembly
+  URL: https://www.ncleg.gov/EnactedLegislation/Statutes/HTML/BySection/Chapter_143B/GS_143B-135.5.html
+  accessed:
+    date-parts:
+    - - 2026
+      - 11
+      - 27
+original_link: https://www.ncleg.gov/EnactedLegislation/Statutes/HTML/BySection/Chapter_143B/GS_143B-135.5.html
+retrieved: '2026-11-27'
+archives: []
+history:
+  status: live
+  last_checked: '2026-11-27'
+state_law:
+  relevance: core
+  citation: N.C. Gen. Stat. § 143B-135.5 (2025)
+rights:
+  status: no-permission-needed
+  basis: government-edict
+  basis_note: 'Official state statutes are not copyrightable under the government edicts doctrine (Georgia v. Public.Resource.Org, Inc., 590 U.S. 255 (2020)). Linked, not served: state statutes stay link only.'
+  redistribution: false
+jurisdictions:
+- level: state
+  state: NC
+topics:
+- state-indian-law
+found_in:
+- 2026-11-27-state-statutes-sweep
+notes: 'Indigo Book citation: N.C. Gen. Stat. § 143B-135.5 (2025). History: 2021-180, s. 14.9(a); 2022-6, s. 7.4. Text read from the North Carolina General Assembly''s page for the section''s chapter of the General Statutes (ncleg.gov) on Nov. 27, 2026. Found by the state statutes sweep (terms: american indian; band of cherokee indians; indian people; native american; cherokee; coharie; eastern band; haliwa-saponi; indian; indians; lumbee; meherrin; nation; native; occaneechi; saponi; sappony; tribes; waccamaw-siouan); AI reader''s verdict core: American Indian Heritage Commission establishment and duties. Unverified.'
+review:
+  status: unverified
+  by: scripts/law/state_statutes/run.py
+  date: '2026-11-27'
+  checks:
+  - check: 'Indian law section: the sweep''s keyword pass and an AI reader''s verdict (core, incidental or none)'
+    result: agree
+    detail: 'core; terms: american indian; band of cherokee indians; indian people; native american; cherokee; coharie; eastern band; haliwa-saponi; indian; indians; lumbee; meherrin; nation; native; occaneechi; saponi; sappony; tribes; waccamaw-siouan'

@@ -10,7 +10,7 @@ export const prerender = true;
 
 export function GET(): Response {
 	const header = ['title', 'nations', 'copy', 'published_at', 'captured', 'bytes', 'sha256'];
-	const lines = allCopyRows().map((copy) => [copy.title, copy.nations.join('; '), copy.path, copy.original, copy.captured, copy.bytes, copy.sha256]);
+	const lines = allCopyRows().map((copy) => [copy.title, copy.nations.map((nation) => nation.name).join('; '), copy.path, copy.original, copy.captured, copy.bytes, copy.sha256]);
 	// This file has always ended its lines with a line feed alone and quoted only fields that hold one, so it keeps those rules.
 	return csvResponse(csvDocument([header, ...lines], { quoteCarriageReturns: false, lineEnding: '\n' }));
 }

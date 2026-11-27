@@ -171,6 +171,17 @@ indian_health_service:
   as_of: '2026-11-23'
   locator: '"Federally Recognized Tribes" list, Interior Alaska Service Area profile'
   note: 'The source''s words: "Village of Anaktuvuk Pass".'
+federal_programs:
+- program: indian-housing-block-grant
+  fiscal_year: 2026
+  amount: 358805
+  amount_kind: allocation
+  source: hud-ihbg-fy2026-formula-allocations
+  confidence: medium
+  verification: bulk-import
+  as_of: '2026'
+  locator: AK, row 'Anaktuvuk Pass' (Anaktuvuk Pass)
+  note: The list's name was matched to this nation by a person or AI review; the list names 'Anaktuvuk Pass'.
 governance:
 - aspect: head-of-government
   value: President

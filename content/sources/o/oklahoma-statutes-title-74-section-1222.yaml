@@ -87,7 +87,7 @@ found_in:
 notes: 'Indigo Book citation: Okla. Stat. tit. 74, § 1222 (2026). History: Added by Laws 1988, c. 160, § 2. Amended by Laws 1989, c. 296, § Text read from the Legislative Service Bureau''s Title 74 PDF (updated Nov. 12, 2026), page 827. Found by the state statutes pilot (terms: state-tribal; tribal governments); AI reader''s verdict core: Joint Committee on State-Tribal Relations approves tribal agreements. Unverified.'
 review:
   status: unverified
-  by: scripts/law/oklahoma_statutes.py
+  by: scripts/law/state_statutes/run.py
   date: '2026-11-26'
   checks:
   - check: 'Indian law section: the pilot''s keyword pass and an AI reader''s verdict (core, incidental or none)'

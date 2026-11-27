@@ -1,9 +1,10 @@
 import { describe, expect, it } from 'vitest';
-import { copiesByLink, copyDetailsShard, copyPagePath, copyPath, linkForMatching, type PublicCopy } from '../src/lib/public-copies.ts';
+import { copiesByLink, copyDetailsShard, copyPagePath, copyPath, copyPreference, linkForMatching, type PublicCopy } from '../src/lib/public-copies.ts';
 import { copyDetailShardNames, copyDetails } from '../src/lib/server/copy-lists.ts';
-import { publicCopies } from '../src/lib/server/content.ts';
+import { copyMoves, publicCopies } from '../src/lib/server/content.ts';
 import { navigationSectionOf } from '../src/lib/site-navigation.ts';
 import {
+	copyContentType,
 	fetchOriginal,
 	hexDigest,
 	isIndexedFile,
@@ -233,6 +234,48 @@ describe('copies of nations’ documents', async () => {
 		const { bucket } = memoryBucket({ [saved.key]: { bytes: page, sha256: saved.sha256 } });
 		const response = await servePublicCopy(new Request('https://site.test/copies/x'), saved, bucket, network({}));
 		expect(response.headers.get('content-security-policy')).toContain('sandbox');
+		// No scripts, but a clicked link may leave the frame (an opinion's citations).
+		expect(response.headers.get('content-security-policy')).not.toContain('allow-scripts');
+		expect(response.headers.get('content-security-policy')).toContain('allow-top-navigation-by-user-activation');
 		expect(mediaLabel(saved.mediaType)).toBe('saved web page');
+		// Named as UTF-8, so a page with no <meta charset> is not read as Windows-1252.
+		expect(response.headers.get('content-type')).toBe('text/html; charset=utf-8');
+	});
+
+	it('names a saved page’s own encoding when it is not UTF-8', () => {
+		expect(copyContentType({ mediaType: 'text/html', charset: 'windows-1252' })).toBe('text/html; charset=windows-1252');
+		expect(copyContentType({ mediaType: 'text/plain' })).toBe('text/plain; charset=utf-8');
+		expect(copyContentType({ mediaType: 'application/pdf' })).toBe('application/pdf');
+	});
+});
+
+describe('more than one copy of the same document', () => {
+	const order = (mediaType: string, key: string) =>
+		({ key, mediaType, links: ['https://treaties.okstate.edu/treaties/executive-order-fort-stanton-indian-reserve-1873'] }) as PublicCopy;
+
+	it('opens a PDF or a text before a saved web page, whatever order they come in', () => {
+		const page = order('text/html', 'jurisdiction/order.html');
+		const text = order('text/plain', 'executive-orders/order.txt');
+		for (const copies of [
+			[page, text],
+			[text, page]
+		]) {
+			expect(copiesByLink(copies).get(page.links[0])?.key).toBe(text.key);
+		}
+		expect(copyPreference('application/pdf')).toBeLessThan(copyPreference('text/plain'));
+	});
+
+	it('sends a saved page of an executive order to the order’s text', () => {
+		const moves = copyMoves();
+		const served = new Set(publicCopies().map((copy) => copy.key));
+		for (const [from, to] of Object.entries(moves)) {
+			expect(served.has(to)).toBe(true);
+			expect(from.endsWith('.html')).toBe(true);
+		}
+		if (served.has('executive-orders/executive-order-1873-05-29-mescalero-apache-reservation.txt')) {
+			expect(moves['jurisdiction/executive-order-1873-05-29-mescalero-apache-reservation.html']).toBe(
+				'executive-orders/executive-order-1873-05-29-mescalero-apache-reservation.txt'
+			);
+		}
 	});
 });

@@ -185,6 +185,45 @@ indian_health_service:
   as_of: '2026-11-23'
   locator: '"Nashville Area Tribes, Nations and Partners" list'
   note: 'Listed as "Eastern Band of Cherokee Indians". Also listed under the same Area in: indian-health-service-self-governance-tribes. Also on the Indian Health Service Self-Governance Tribes list (Eastern Band of Cherokee Indians (2002)); the list does not say which service unit or programs the compact covers.'
+federal_programs:
+- program: indian-health-service-self-governance-compact
+  since: 2002
+  source: indian-health-service-self-governance-tribes
+  confidence: high
+  verification: bulk-import
+  as_of: '2025-07-01'
+  locator: Nashville Area, row 'Eastern Band of Cherokee Indians'
+- program: pl-102-477-plan
+  start: '2024-10-01'
+  end: '2029-09-30'
+  programs_included:
+  - Workforce Innovation and Opportunity Act – Adult Comprehensive Services
+  - Workforce Innovation and Opportunity Act – Supplementary Youth Services
+  - Native Employment Works
+  detail: Carried under a self-determination contract
+  source: bia-pl-102-477-plan-directory
+  confidence: high
+  verification: bulk-import
+  as_of: '2026-11-26'
+  locator: PL102_477_Contracts, plan 'Eastern Band of Cherokee Indians'; PL102_477_PartnerEnrollment, its 3 programs
+- program: indian-housing-block-grant
+  fiscal_year: 2026
+  amount: 4746585
+  amount_kind: allocation
+  source: hud-ihbg-fy2026-formula-allocations
+  confidence: high
+  verification: bulk-import
+  as_of: '2026'
+  locator: NC, row 'Eastern Band of Cherokee Indians' (Cherokee)
+- program: indian-health-service-self-governance-compact
+  fiscal_year: 2025
+  amount: 50701065
+  amount_kind: obligations
+  source: usaspending-fy2025-assistance-listing-93-210
+  confidence: high
+  verification: bulk-import
+  as_of: '2025'
+  locator: Assistance Listing 93.210, recipient 'EASTERN BAND OF CHEROKEE INDIANS' (UEI XKNCQTSZ8VD8), Oct. 1, 2024 to Sept. 30, 2025
 governance:
 - aspect: governing-body
   value: Tribal Council
@@ -635,6 +674,14 @@ jurisdiction:
   as_of: 2024-11
   locator: p. 14 and Appendix D, (PDF p.51)
   note: Listed as "EASTERN BAND OF CHEROKEE INDIANS" with an "OVW TJ TRP FY 2024" award. Awards were based on 2023 expenses.
+- topic: environmental-treatment-as-a-state
+  value: clean-water-act-water-quality-standards
+  detail: EPA found the nation eligible on Jan. 26, 2015 to set water quality standards (treatment in a similar manner as a state under Clean Water Act § 518), and first approved its standards on Mar. 28, 2019.
+  source: epa-actions-on-tribal-water-quality-standards
+  confidence: high
+  verification: inferred
+  as_of: '2015-01-26'
+  locator: 'Table of approvals by Tribe, column "Regulatory Programs": "WQS Program"'
 nearby_state_courts:
 - state: NC
   county: Swain County

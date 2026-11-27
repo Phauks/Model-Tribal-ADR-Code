@@ -246,6 +246,61 @@ indian_health_service:
   as_of: '2026-11-23'
   locator: '"Arizona Tribes" / "Nevada and Utah Tribes" lists'
   note: 'Listed as "Salt River Pima-Maricopa Indian Community". Also listed under the same Area in: indian-health-service-self-governance-tribes. Also on the Indian Health Service Self-Governance Tribes list (Salt River Pima-Maricopa Indian Community (2017)); the list does not say which service unit or programs the compact covers.'
+federal_programs:
+- program: interior-self-governance-compact
+  since: 1994
+  source: bia-office-of-self-governance-tribes-2024-07-24
+  confidence: medium
+  verification: bulk-import
+  as_of: '2024-07-24'
+  locator: row 'Salt River Pima-Maricopa' (Western Region)
+  note: The list's name was matched to this nation by a person or AI review; the list names 'Salt River Pima-Maricopa'.
+- program: indian-health-service-self-governance-compact
+  since: 2017
+  source: indian-health-service-self-governance-tribes
+  confidence: medium
+  verification: bulk-import
+  as_of: '2025-07-01'
+  locator: Phoenix Area, row 'Salt River Pima-Maricopa Indian Community'
+  note: The list's name was matched to this nation by a person or AI review; the list names 'Salt River Pima-Maricopa Indian Community'.
+- program: indian-housing-block-grant
+  fiscal_year: 2026
+  amount: 4288098
+  amount_kind: allocation
+  source: hud-ihbg-fy2026-formula-allocations
+  confidence: high
+  verification: bulk-import
+  as_of: '2026'
+  locator: AZ, row 'Salt River Pima-Maricopa Indian Community' (Scottsdale)
+- program: interior-non-bia-funding-agreement
+  agency: Appraisal and Valuation Services Office
+  fiscal_year: 2024
+  source: federal-register-2024-30252
+  confidence: medium
+  verification: bulk-import
+  as_of: '2024-12-19'
+  locator: 89 Fed. Reg. 103858, 103859-60, Appraisal and Valuation Services Office agreements, 'Salt River Pima-Maricopa Indian Community of the Salt River Reservation'
+  note: The list's name was matched to this nation by a person or AI review; the list names 'Salt River Pima-Maricopa Indian Community of the Salt River Reservation'.
+- program: interior-self-governance-compact
+  fiscal_year: 2025
+  amount: 35115105
+  amount_kind: obligations
+  source: usaspending-fy2025-assistance-listing-15-022
+  confidence: medium
+  verification: bulk-import
+  as_of: '2025'
+  locator: Assistance Listing 15.022, recipient 'SALT RIVER PIMA-MARICOPA INDIAN COMMUNITY' (UEI CMTGGNVGKE65), Oct. 1, 2024 to Sept. 30, 2025
+  note: The list's name was matched to this nation by a person or AI review; the list names 'SALT RIVER PIMA-MARICOPA INDIAN COMMUNITY'.
+- program: indian-health-service-self-governance-compact
+  fiscal_year: 2025
+  amount: 83219861
+  amount_kind: obligations
+  source: usaspending-fy2025-assistance-listing-93-210
+  confidence: medium
+  verification: bulk-import
+  as_of: '2025'
+  locator: Assistance Listing 93.210, recipient 'SALT RIVER PIMA-MARICOPA INDIAN COMMUNITY' (UEI CMTGGNVGKE65), Oct. 1, 2024 to Sept. 30, 2025
+  note: The list's name was matched to this nation by a person or AI review; the list names 'SALT RIVER PIMA-MARICOPA INDIAN COMMUNITY'.
 government_structure:
 - kind: indian-reorganization-act
   detail: Listed as "The Salt River Pima-Maricopa Community of the Salt River Reservation, Arizona" among
@@ -858,6 +913,22 @@ jurisdiction:
   verification: read-in-full
   locator: 113 Ariz. at 431
   note: 1976 holding about service of process on the Tohono O'odham (Papago) reservation, reasoning from the 1968 consent requirement. The research did not find any later Arizona assumption. Other federal statutes can still give Arizona limited authority; none checked here.
+- topic: environmental-treatment-as-a-state
+  value: clean-water-act-water-quality-standards
+  detail: EPA found the nation eligible on Apr. 13, 2023 to set water quality standards (treatment in a similar manner as a state under Clean Water Act § 518); EPA's list gives no date of approved standards of the nation's own.
+  source: epa-actions-on-tribal-water-quality-standards
+  confidence: high
+  verification: inferred
+  as_of: '2023-04-13'
+  locator: 'Table of approvals by Tribe, column "Regulatory Programs": "WQS Program"'
+- topic: environmental-treatment-as-a-state
+  value: clean-air-act-administrative-functions
+  detail: 'EPA has approved the nation for treatment in a similar manner as a state to perform administrative functions under the Clean Air Act: §§ 106; 107(d); 505(a)(2).'
+  source: epa-tribes-approved-for-treatment-as-a-state
+  confidence: high
+  verification: inferred
+  as_of: '2026-10-21'
+  locator: 'Table of approvals by Tribe, column "Administrative Functions": "CAA §§ 106; 107(d); 505(a)(2)"'
 court_practice:
 - kind: filing-fees
   title: Court (Filing Fees)

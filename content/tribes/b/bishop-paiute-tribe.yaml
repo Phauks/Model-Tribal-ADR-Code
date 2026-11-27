@@ -196,6 +196,32 @@ indian_health_service:
   as_of: '2026-11-23'
   locator: regional lists (West Central, Southern, Northern, East Central)
   note: Listed as "Bishop Paiute Tribe".
+federal_programs:
+- program: interior-self-governance-compact
+  since: 2011
+  source: bia-office-of-self-governance-tribes-2024-07-24
+  confidence: high
+  verification: bulk-import
+  as_of: '2024-07-24'
+  locator: row 'Bishop Paiute Tribe' (Pacific Region)
+- program: indian-housing-block-grant
+  fiscal_year: 2026
+  amount: 1347235
+  amount_kind: allocation
+  source: hud-ihbg-fy2026-formula-allocations
+  confidence: high
+  verification: bulk-import
+  as_of: '2026'
+  locator: CA, row 'Bishop Paiute Tribe' (Bishop)
+- program: interior-self-governance-compact
+  fiscal_year: 2025
+  amount: 375458
+  amount_kind: obligations
+  source: usaspending-fy2025-assistance-listing-15-022
+  confidence: high
+  verification: bulk-import
+  as_of: '2025'
+  locator: Assistance Listing 15.022, recipient 'BISHOP PAIUTE TRIBE' (UEI UUNDRN9KHE91), Oct. 1, 2024 to Sept. 30, 2025
 governance:
 - aspect: governing-body
   value: Elected Governing Council
@@ -489,6 +515,14 @@ jurisdiction:
     its table as page images, so nation names were read from images and matched to the roster. Row re-read
     on 2026-11-22 from the page image (the govinfo PDF has no text layer for the table); verification
     level unchanged because the name was not matched word for word in machine-read text.'
+- topic: environmental-treatment-as-a-state
+  value: clean-water-act-water-quality-standards
+  detail: EPA found the nation eligible on Apr. 11, 2006 to set water quality standards (treatment in a similar manner as a state under Clean Water Act § 518), and first approved its standards on Aug. 15, 2008.
+  source: epa-actions-on-tribal-water-quality-standards
+  confidence: high
+  verification: inferred
+  as_of: '2006-04-11'
+  locator: 'Table of approvals by Tribe, column "Regulatory Programs": "WQS Program"'
 court_practice:
 - kind: court-rules
   title: Tribal Court Rules (approved 8.19.26)

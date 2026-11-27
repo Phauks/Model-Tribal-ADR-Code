@@ -222,6 +222,41 @@ indian_health_service:
   as_of: '2026-11-23'
   locator: Direct Service Tribes by IHS Area > Oklahoma City Area
   note: Listed as "Cheyenne & Arapaho Tribes". The Direct Service Tribes list says some Tribes have a mixed Indian Health Service and Tribal arrangement.
+federal_programs:
+- program: pl-102-477-plan
+  start: '2024-01-01'
+  end: '2026-12-31'
+  programs_included:
+  - Workforce Innovation and Opportunity Act – Adult Comprehensive Services
+  - Workforce Innovation and Opportunity Act – Supplementary Youth Services
+  - Native Employment Works
+  - Job Placement and Training
+  - Adult Education
+  detail: Carried under a self-determination contract
+  source: bia-pl-102-477-plan-directory
+  confidence: high
+  verification: bulk-import
+  as_of: '2026-11-26'
+  locator: PL102_477_Contracts, plan 'Cheyenne and Arapaho Tribes, Oklahoma'; PL102_477_PartnerEnrollment, its 5 programs
+- program: indian-housing-block-grant
+  fiscal_year: 2026
+  amount: 4481543
+  amount_kind: allocation
+  source: hud-ihbg-fy2026-formula-allocations
+  confidence: high
+  verification: bulk-import
+  as_of: '2026'
+  locator: OK, row 'Cheyenne and Arapaho Tribes' (Concho)
+- program: isdeaa-contract-indian-health-service
+  fiscal_year: 2025
+  amount: 2956583
+  amount_kind: obligations
+  source: usaspending-fy2025-assistance-listing-93-441
+  confidence: medium
+  verification: bulk-import
+  as_of: '2025'
+  locator: Assistance Listing 93.441, recipient 'CHEYENNE ARAPAHO TRIBE' (UEI K26TL2SG17E7), Oct. 1, 2024 to Sept. 30, 2025
+  note: The list's name was matched to this nation by a person or AI review; the list names 'CHEYENNE ARAPAHO TRIBE'.
 government_structure:
 - kind: oklahoma-indian-welfare-act
   detail: Listed as "The Cheyenne-Arapaho Tribes of Oklahoma" among organizations under constitutions
@@ -744,6 +779,14 @@ jurisdiction:
   as_of: '2017-07-18'
   locator: Answer, second and third paragraphs (the lists of mandatory and optional states)
   note: Inferred from the state's absence from both lists. Nation placed in Oklahoma by its office state in the BIA Tribal Leaders Directory, so confidence is medium.
+- topic: hearth-act-leasing-regulations
+  value: approved
+  detail: The Secretary of the Interior approved the leasing regulations (Business) of the Cheyenne and Arapaho Tribe of Oklahoma, as the Bureau of Indian Affairs' list names it, under the HEARTH Act, 25 U.S.C. § 415(h), on Nov. 9, 2017, so the nation can lease its trust land for those purposes under its own regulations without the Bureau of Indian Affairs approving each lease.
+  source: hearth-act-leasing-regulations-cheyenne-and-arapaho-tribes-2017-11-09
+  confidence: high
+  verification: inferred
+  as_of: '2017-11-09'
+  locator: Bureau of Indian Affairs, Approved HEARTH Act Regulations, Approved in 2017
 jurisdiction_agreements:
 - kind: child-welfare-agreement
   other_party: Oklahoma Department of Human Services

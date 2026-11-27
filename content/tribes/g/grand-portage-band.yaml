@@ -118,6 +118,45 @@ indian_health_service:
   as_of: '2026-11-23'
   locator: Tribal Health Programs lists (Michigan, Minnesota, Wisconsin)
   note: Listed as "Grand Portage Band".
+federal_programs:
+- program: interior-self-governance-compact
+  since: 1997
+  source: bia-office-of-self-governance-tribes-2024-07-24
+  confidence: medium
+  verification: bulk-import
+  as_of: '2024-07-24'
+  locator: row 'Grand Portage Indian Reservation' (Midwest Region)
+  note: The list's name was matched to this nation by a person or AI review; the list names 'Grand Portage Indian Reservation'.
+- program: indian-housing-block-grant
+  fiscal_year: 2026
+  amount: 557891
+  amount_kind: allocation
+  source: hud-ihbg-fy2026-formula-allocations
+  confidence: medium
+  verification: bulk-import
+  as_of: '2026'
+  locator: MN, row 'Grand Portage Band, Minnesota Chippewa Tribe' (Grand Portage)
+  note: The list's name was matched to this nation by a person or AI review; the list names 'Grand Portage Band, Minnesota Chippewa Tribe'.
+- program: interior-self-governance-compact
+  fiscal_year: 2025
+  amount: 4224535
+  amount_kind: obligations
+  source: usaspending-fy2025-assistance-listing-15-022
+  confidence: medium
+  verification: bulk-import
+  as_of: '2025'
+  locator: Assistance Listing 15.022, recipient 'GRAND PORTAGE RESERVATION TRIBAL COUNCIL' (UEI SJ9XVULLH753), Oct. 1, 2024 to Sept. 30, 2025
+  note: The list's name was matched to this nation by a person or AI review; the list names 'GRAND PORTAGE RESERVATION TRIBAL COUNCIL'.
+- program: isdeaa-contract-indian-health-service
+  fiscal_year: 2025
+  amount: 1307855
+  amount_kind: obligations
+  source: usaspending-fy2025-assistance-listing-93-441
+  confidence: medium
+  verification: bulk-import
+  as_of: '2025'
+  locator: Assistance Listing 93.441, recipient 'GRAND PORTAGE RESERVATION TRIBAL COUNCIL' (UEI SJ9XVULLH753), Oct. 1, 2024 to Sept. 30, 2025
+  note: The list's name was matched to this nation by a person or AI review; the list names 'GRAND PORTAGE RESERVATION TRIBAL COUNCIL'.
 governance:
 - aspect: governing-body
   value: Reservation Tribal Council
@@ -268,6 +307,22 @@ jurisdiction:
   as_of: '2026-05-26'
   locator: 91 FR 30694 (Tribe column of the designated agent table)
   note: 'Listed as: Minnesota Chippewa Tribe - Grand Portage Band. Added on 2026-11-23: the second data gap review found this band''s own row in the notice (page image p-027; the govinfo PDF has no text layer for the table), and the Minnesota Chippewa Tribe profile already lists the six band rows (research/reviews/2026-11-22-second-gap-review.md). Verification is inferred because the name was read from a page image, not matched in machine-read text.'
+- topic: environmental-treatment-as-a-state
+  value: clean-water-act-water-quality-standards
+  detail: EPA found the nation eligible on July 16, 1996 to set water quality standards (treatment in a similar manner as a state under Clean Water Act § 518), and first approved its standards on Nov. 2, 2005.
+  source: epa-actions-on-tribal-water-quality-standards
+  confidence: high
+  verification: inferred
+  as_of: '1996-07-16'
+  locator: 'Table of approvals by Tribe, column "Regulatory Programs": "WQS Program"'
+- topic: environmental-treatment-as-a-state
+  value: clean-air-act-administrative-functions
+  detail: 'EPA has approved the nation for treatment in a similar manner as a state to perform administrative functions under the Clean Air Act: §§ 126; 505(a)(2).'
+  source: epa-tribes-approved-for-treatment-as-a-state
+  confidence: high
+  verification: inferred
+  as_of: '2026-10-21'
+  locator: 'Table of approvals by Tribe, column "Administrative Functions": "CAA §§ 126; 505(a)(2)"'
 jurisdiction_agreements:
 - kind: tax-agreement
   other_party: Minnesota Department of Revenue

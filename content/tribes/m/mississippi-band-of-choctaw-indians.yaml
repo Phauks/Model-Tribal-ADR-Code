@@ -217,6 +217,40 @@ indian_health_service:
   as_of: '2026-11-23'
   locator: Tribally Administered Programs table
   note: Listed as "Mississippi Band of Choctaw Indians".
+federal_programs:
+- program: indian-health-service-self-governance-compact
+  since: 1995
+  source: indian-health-service-self-governance-tribes
+  confidence: high
+  verification: bulk-import
+  as_of: '2025-07-01'
+  locator: Nashville Area, row 'Mississippi Band of Choctaw Indians'
+- program: indian-housing-block-grant
+  fiscal_year: 2026
+  amount: 5806281
+  amount_kind: allocation
+  source: hud-ihbg-fy2026-formula-allocations
+  confidence: high
+  verification: bulk-import
+  as_of: '2026'
+  locator: MS, row 'Mississippi Band of Choctaw Indians' (Choctaw)
+- program: fdpir-self-determination-demonstration
+  start: 2021-10
+  detail: Round 1
+  source: fns-fdpir-self-determination-demonstration-projects
+  confidence: high
+  verification: bulk-import
+  as_of: '2026-11-26'
+  locator: Round 1 projects, 'Mississippi Band of Choctaw Indians'
+- program: indian-health-service-self-governance-compact
+  fiscal_year: 2025
+  amount: 52358528
+  amount_kind: obligations
+  source: usaspending-fy2025-assistance-listing-93-210
+  confidence: high
+  verification: bulk-import
+  as_of: '2025'
+  locator: Assistance Listing 93.210, recipient 'MISSISSIPPI BAND OF CHOCTAW INDIANS' (UEI WZTDGUNAJ5V3), Oct. 1, 2024 to Sept. 30, 2025
 government_structure:
 - kind: indian-reorganization-act
   detail: Listed as "The Mississippi Band of Choctaw Indians" among organizations under constitutions
@@ -847,6 +881,22 @@ jurisdiction:
   verification: read-in-full
   locator: 437 U.S. at 653
   note: 'Narrow: John concerns a Major Crimes Act offense (assault with intent to kill) on Choctaw trust land. "Not assumed" for broader civil or criminal matters rests on not finding any grant; the research did not find a Mississippi statute assuming jurisdiction. Quote begins mid-sentence in the opinion.'
+- topic: hearth-act-leasing-regulations
+  value: approved
+  detail: The Secretary of the Interior approved the leasing regulations (Agricultural, Business, Residential, Wind and Solar Resource) of the Mississippi Band of Choctaw, as the Bureau of Indian Affairs' list names it, under the HEARTH Act, 25 U.S.C. § 415(h), on Mar. 5, 2019, so the nation can lease its trust land for those purposes under its own regulations without the Bureau of Indian Affairs approving each lease.
+  source: hearth-act-leasing-regulations-mississippi-band-of-choctaw-indians-2019-03-05
+  confidence: high
+  verification: inferred
+  as_of: '2019-03-05'
+  locator: Bureau of Indian Affairs, Approved HEARTH Act Regulations, Approved in 2019
+- topic: environmental-treatment-as-a-state
+  value: clean-air-act-administrative-functions
+  detail: 'EPA has approved the nation for treatment in a similar manner as a state to perform administrative functions under the Clean Air Act: §§ 107(c),(d); 110(a)(2)(d)(i); 126(a),(b); 319; 505(a)(2).'
+  source: epa-tribes-approved-for-treatment-as-a-state
+  confidence: high
+  verification: inferred
+  as_of: '2026-10-21'
+  locator: 'Table of approvals by Tribe, column "Administrative Functions": "CAA §§ 107(c),(d); 110(a)(2)(d)(i); 126(a),(b); 319; 505(a)(2)"'
 nearby_state_courts:
 - state: MS
   county: Neshoba County

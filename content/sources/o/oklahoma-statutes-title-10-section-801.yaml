@@ -74,7 +74,7 @@ found_in:
 notes: 'Indigo Book citation: Okla. Stat. tit. 10, § 801 (2026). History: Added by Laws 2023, 1st Ex. Sess., c. 35, § 1, eff. Nov. 1, 2023. Text read from the Legislative Service Bureau''s Title 10 PDF (updated Nov. 12, 2026), page 217. Found by the state statutes pilot (terms: indian); AI reader''s verdict incidental: Family advocacy program appoints counsel for Indian custodians. Unverified.'
 review:
   status: unverified
-  by: scripts/law/oklahoma_statutes.py
+  by: scripts/law/state_statutes/run.py
   date: '2026-11-26'
   checks:
   - check: 'Indian law section: the pilot''s keyword pass and an AI reader''s verdict (core, incidental or none)'

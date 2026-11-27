@@ -39,7 +39,8 @@
 	import SiteTextEditor from '#lib/components/SiteTextEditor.svelte';
 	import PageComments from '#lib/components/PageComments.svelte';
 	import { onMount } from 'svelte';
-	import { onNavigate } from '$app/navigation';
+	import { afterNavigate, onNavigate } from '$app/navigation';
+	import { arriveAfterNavigate, watchArrivals } from '#lib/arrival-highlight.ts';
 	import { page } from '$app/state';
 	import { crossFadePages, startMotion } from '#lib/motion.ts';
 	import { copyHashOnClick } from '#lib/copy-hash.ts';
@@ -64,6 +65,9 @@
 		document.addEventListener('click', copy);
 		return () => document.removeEventListener('click', copy);
 	});
+	// The place a link goes to is highlighted for a moment, then the highlight goes (src/lib/arrival-highlight.ts).
+	onMount(watchArrivals);
+	afterNavigate(arriveAfterNavigate);
 	// The layout's own start comes after every part inside it has started (src/lib/page-started.ts).
 	onMount(markPageStarted);
 
@@ -89,12 +93,12 @@
 		{@render children()}
 	</main>
 {:else}
-	<SiteHeader contentVersion={data.versions.content} />
+	<SiteHeader contentVersion={data.versions.content} versions={data.versions} />
 	<!-- The site's six sections in a row under the masthead, on wide screens (SectionBar.svelte). -->
 	<SectionBar />
 	<PrintDetails />
 	<OfflineNotice contentVersion={data.versions.content} />
-	<UpdateNotice versions={data.versions} />
+	<UpdateNotice />
 	<div class="site-body">
 		<SiteSidebar />
 		<main id="main-content" class="page-width" tabindex="-1" {@attach resizableTables}>

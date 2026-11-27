@@ -68,6 +68,16 @@ export function currentPageControls(): PageControls | null {
 }
 
 /**
+ * Whether the page has commenting of its own, such as an essay's on its
+ * draft (EssayArticle.svelte, also on About, Sponsor and Using AI); the
+ * page's comments (PageComments.svelte) then stay out, as the masthead does
+ * (joinPageControls).
+ */
+export function pageHasOwnCommenting(): boolean {
+	return offers.some((offer) => !offer.fallback && offer.controls.modes.includes('commenting'));
+}
+
+/**
  * Offers the page's controls to the masthead; call the returned function to
  * take them back. A fallback, such as the site text's controls that every
  * page has (src/lib/components/SiteTextEditor.svelte) or the page's comments

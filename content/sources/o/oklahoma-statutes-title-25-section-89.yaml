@@ -45,10 +45,10 @@ topics:
 - state-indian-law
 found_in:
 - 2026-11-26-state-statutes-pilot
-notes: 'Indigo Book citation: Okla. Stat. tit. 25, § 89 (2026). History: Laws 1972, p. 619, S.J.R.No.29, § 1. der Text read from the Legislative Service Bureau''s Title 25 PDF (updated Nov. 12, 2026), page 19. Found by the state statutes pilot (terms: indian tribe; indian tribes); AI reader''s verdict core: Governor declares official day for each Indian tribe. Unverified.'
+notes: 'Indigo Book citation: Okla. Stat. tit. 25, § 89 (2026). History: Laws 1972, p. 619, S.J.R.No.29, § 1. der. Text read from the Legislative Service Bureau''s Title 25 PDF (updated Nov. 12, 2026), page 19. Found by the state statutes pilot (terms: indian tribe; indian tribes); AI reader''s verdict core: Governor declares official day for each Indian tribe. Unverified.'
 review:
   status: unverified
-  by: scripts/law/oklahoma_statutes.py
+  by: scripts/law/state_statutes/run.py
   date: '2026-11-26'
   checks:
   - check: 'Indian law section: the pilot''s keyword pass and an AI reader''s verdict (core, incidental or none)'

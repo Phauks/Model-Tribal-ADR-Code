@@ -70,7 +70,7 @@ found_in:
 notes: 'Indigo Book citation: Okla. Stat. tit. 10A, § 1-7-106 (2026). History: Added by Laws 1996, c. 353, § 2, eff. Nov. 1, 1996. Amended by Laws 1997, c. 389, § 9, eff. Text read from the Legislative Service Bureau''s Title 10A PDF (updated Nov. 12, 2026), page 215. Found by the state statutes pilot (terms: indian child); AI reader''s verdict incidental: Foster placement; Indian child placement preferences apply. Unverified.'
 review:
   status: unverified
-  by: scripts/law/oklahoma_statutes.py
+  by: scripts/law/state_statutes/run.py
   date: '2026-11-26'
   checks:
   - check: 'Indian law section: the pilot''s keyword pass and an AI reader''s verdict (core, incidental or none)'

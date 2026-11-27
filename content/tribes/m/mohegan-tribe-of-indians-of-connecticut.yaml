@@ -154,6 +154,48 @@ indian_health_service:
   as_of: '2026-11-23'
   locator: Tribally Administered Programs table
   note: Listed as "Mohegan Tribe of Indians of Connecticut".
+federal_programs:
+- program: interior-self-governance-compact
+  since: 2014
+  source: bia-office-of-self-governance-tribes-2024-07-24
+  confidence: high
+  verification: bulk-import
+  as_of: '2024-07-24'
+  locator: row 'Mohegan Tribe Of Indians Of Connecticut' (Eastern Region)
+- program: indian-health-service-self-governance-compact
+  since: 2001
+  source: indian-health-service-self-governance-tribes
+  confidence: high
+  verification: bulk-import
+  as_of: '2025-07-01'
+  locator: Nashville Area, row 'Mohegan Tribe of Indians of Connecticut'
+- program: indian-housing-block-grant
+  fiscal_year: 2026
+  amount: 110362
+  amount_kind: allocation
+  source: hud-ihbg-fy2026-formula-allocations
+  confidence: high
+  verification: bulk-import
+  as_of: '2026'
+  locator: CT, row 'Mohegan Tribe of Indians of Connecticut' (Uncasville)
+- program: interior-self-governance-compact
+  fiscal_year: 2025
+  amount: 4469699
+  amount_kind: obligations
+  source: usaspending-fy2025-assistance-listing-15-022
+  confidence: high
+  verification: bulk-import
+  as_of: '2025'
+  locator: Assistance Listing 15.022, recipient 'MOHEGAN TRIBE OF INDIANS OF CONNECTICUT' (UEI UYRSS7MHKLL9), Oct. 1, 2024 to Sept. 30, 2025
+- program: indian-health-service-self-governance-compact
+  fiscal_year: 2025
+  amount: 3333056
+  amount_kind: obligations
+  source: usaspending-fy2025-assistance-listing-93-210
+  confidence: high
+  verification: bulk-import
+  as_of: '2025'
+  locator: Assistance Listing 93.210, recipient 'MOHEGAN TRIBE OF INDIANS OF CONNECTICUT' (UEI UYRSS7MHKLL9), Oct. 1, 2024 to Sept. 30, 2025
 governance:
 - aspect: head-of-government
   value: Chairperson
@@ -361,6 +403,30 @@ jurisdiction:
   verification: read-in-full
   locator: Pub. L. 103-377 § 6(a), (b), 108 Stat. at 3505
   note: Criminal only. Quote skips the words "Subject to subsection (b)," at the start of § 6(a). 25 U.S.C. § 1775d (omitted from the Code).
+- topic: hearth-act-leasing-regulations
+  value: approved
+  detail: The Secretary of the Interior approved the leasing regulations (Residential) of the Mohegan Tribe of Indians of Connecticut, as the Bureau of Indian Affairs' list names it, under the HEARTH Act, 25 U.S.C. § 415(h), on Mar. 18, 2025, so the nation can lease its trust land for those purposes under its own regulations without the Bureau of Indian Affairs approving each lease.
+  source: hearth-act-leasing-regulations-mohegan-tribe-of-indians-of-connecticut-2025-03-18
+  confidence: high
+  verification: inferred
+  as_of: '2025-03-18'
+  locator: Bureau of Indian Affairs, Approved HEARTH Act Regulations, Approved in 2025
+- topic: hearth-act-leasing-regulations
+  value: approved
+  detail: The Secretary of the Interior approved the leasing regulations (Business) of the Mohegan Tribe of Indians of Connecticut, as the Bureau of Indian Affairs' list names it, under the HEARTH Act, 25 U.S.C. § 415(h), on Apr. 8, 2014, so the nation can lease its trust land for those purposes under its own regulations without the Bureau of Indian Affairs approving each lease.
+  source: hearth-act-leasing-regulations-mohegan-tribe-of-indians-of-connecticut-2014-04-08
+  confidence: high
+  verification: inferred
+  as_of: '2014-04-08'
+  locator: Bureau of Indian Affairs, Approved HEARTH Act Regulations, Approved in 2014
+- topic: environmental-treatment-as-a-state
+  value: clean-air-act-implementation-plan
+  detail: EPA has approved the nation for treatment in a similar manner as a state for tribal implementation plan (Clean Air Act § 110).
+  source: epa-tribes-approved-for-treatment-as-a-state
+  confidence: high
+  verification: inferred
+  as_of: '2026-10-21'
+  locator: 'Table of approvals by Tribe, column "Regulatory Programs with an Enforcement Component": "TIP"'
 nearby_state_courts:
 - state: CT
   county: New London County

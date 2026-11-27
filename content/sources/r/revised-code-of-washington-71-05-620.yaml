@@ -1,0 +1,50 @@
+key: revised-code-of-washington-71-05-620
+kind: state-statute
+citation:
+  type: legislation
+  title: Court files and records closed — Exceptions — Rules
+  title-short: Wash. Rev. Code § 71.05.620
+  container-title: Revised Code of Washington
+  container-title-short: Wash. Rev. Code
+  section: 71.05.620
+  author:
+  - literal: Washington State Legislature
+  issued:
+    date-parts:
+    - - 1989
+  URL: https://app.leg.wa.gov/RCW/default.aspx?cite=71.05.620
+  accessed:
+    date-parts:
+    - - 2026
+      - 11
+      - 27
+original_link: https://app.leg.wa.gov/RCW/default.aspx?cite=71.05.620
+retrieved: '2026-11-27'
+archives: []
+history:
+  status: live
+  last_checked: '2026-11-27'
+state_law:
+  relevance: incidental
+  citation: Wash. Rev. Code § 71.05.620 (2026)
+rights:
+  status: no-permission-needed
+  basis: government-edict
+  basis_note: 'Official state statutes are not copyrightable under the government edicts doctrine (Georgia v. Public.Resource.Org, Inc., 590 U.S. 255 (2020)). Linked, not served: state statutes stay link only.'
+  redistribution: false
+jurisdictions:
+- level: state
+  state: WA
+topics:
+- state-indian-law
+found_in:
+- 2026-11-27-state-statutes-sweep
+notes: 'Indigo Book citation: Wash. Rev. Code § 71.05.620 (2026). History: [2026 c 36 s 36; 2024 c 209 s 25; 2023 c 298 s 1; 2018 c 201 s 3028; 2016 sp.s. c 29 s 249; 2015 c 269 s 16; 2013 c 200 s 23; 2005 c 504 s 111; 1989 c 205 s 12.]. Text read from the Washington State Legislature''s full-text chapter page for the section (app.leg.wa.gov/RCW) on Nov. 27, 2026. Found by the state statutes sweep (terms: indian health; indian; tribe); AI reader''s verdict incidental: Tribe prosecutors and Indian health providers get court record access. Unverified.'
+review:
+  status: unverified
+  by: scripts/law/state_statutes/run.py
+  date: '2026-11-27'
+  checks:
+  - check: 'Indian law section: the sweep''s keyword pass and an AI reader''s verdict (core, incidental or none)'
+    result: agree
+    detail: 'incidental; terms: indian health; indian; tribe'

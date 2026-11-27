@@ -144,6 +144,34 @@ indian_health_service:
   as_of: '2026-11-23'
   locator: Tribal Health Programs lists (Michigan, Minnesota, Wisconsin)
   note: 'Listed as "Keweenaw Bay Indian Community, Michigan". Also listed under the same Area in: indian-health-service-self-governance-tribes. Also on the Indian Health Service Self-Governance Tribes list (Keweenaw Bay Indian Community (2002)); the list does not say which service unit or programs the compact covers.'
+federal_programs:
+- program: indian-health-service-self-governance-compact
+  since: 2002
+  source: indian-health-service-self-governance-tribes
+  confidence: medium
+  verification: bulk-import
+  as_of: '2025-07-01'
+  locator: Bemidji Area, row 'Keweenaw Bay Indian Community'
+  note: The list's name was matched to this nation by a person or AI review; the list names 'Keweenaw Bay Indian Community'.
+- program: indian-housing-block-grant
+  fiscal_year: 2026
+  amount: 2840423
+  amount_kind: allocation
+  source: hud-ihbg-fy2026-formula-allocations
+  confidence: high
+  verification: bulk-import
+  as_of: '2026'
+  locator: MI, row 'Keweenaw Bay Indian Community' (Baraga)
+- program: indian-health-service-self-governance-compact
+  fiscal_year: 2025
+  amount: 5909569
+  amount_kind: obligations
+  source: usaspending-fy2025-assistance-listing-93-210
+  confidence: medium
+  verification: bulk-import
+  as_of: '2025'
+  locator: Assistance Listing 93.210, recipient 'KEWEENAW BAY INDIAN COMMUNITY' (UEI Q78EDCFBCKB3), Oct. 1, 2024 to Sept. 30, 2025
+  note: The list's name was matched to this nation by a person or AI review; the list names 'KEWEENAW BAY INDIAN COMMUNITY'.
 government_structure:
 - kind: indian-reorganization-act
   detail: Listed as "Keweenah Bay Indian Community, Michigan" among organizations under constitutions
@@ -632,6 +660,22 @@ jurisdiction:
   as_of: '2017-07-18'
   locator: Answer, second and third paragraphs (the lists of mandatory and optional states)
   note: Inferred from the state's absence from both lists. Nation placed in Michigan by the Census Bureau's land areas.
+- topic: environmental-treatment-as-a-state
+  value: clean-water-act-water-quality-standards
+  detail: EPA found the nation eligible on Apr. 21, 2020 to set water quality standards (treatment in a similar manner as a state under Clean Water Act § 518), and first approved its standards on Apr. 8, 2024.
+  source: epa-actions-on-tribal-water-quality-standards
+  confidence: high
+  verification: inferred
+  as_of: '2020-04-21'
+  locator: 'Table of approvals by Tribe, column "Regulatory Programs": "WQS Program"'
+- topic: environmental-treatment-as-a-state
+  value: clean-air-act-administrative-functions
+  detail: 'EPA has approved the nation for treatment in a similar manner as a state to perform administrative functions under the Clean Air Act: § 505(a)(2).'
+  source: epa-tribes-approved-for-treatment-as-a-state
+  confidence: high
+  verification: inferred
+  as_of: '2026-10-21'
+  locator: 'Table of approvals by Tribe, column "Administrative Functions": "CAA § 505(a)(2)"'
 jurisdiction_agreements:
 - kind: child-welfare-agreement
   other_party: Michigan Department of Human Services

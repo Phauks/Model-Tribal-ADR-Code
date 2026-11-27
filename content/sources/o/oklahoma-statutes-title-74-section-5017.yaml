@@ -84,10 +84,10 @@ topics:
 - state-indian-law
 found_in:
 - 2026-11-26-state-statutes-pilot
-notes: 'Indigo Book citation: Okla. Stat. tit. 74, § 5017 (2026). History: Added by Laws 1986, c. 207, § 23, operative July 1, 1986. Amended by Laws 1989, c. 313, § 14, operative July 1, 1989; Laws Text read from the Legislative Service Bureau''s Title 74 PDF (updated Nov. 12, 2026), page 1174. Found by the state statutes pilot (terms: indian tribes); AI reader''s verdict incidental: Commerce must provide technical and financial aid to Indian tribes. Unverified.'
+notes: 'Indigo Book citation: Okla. Stat. tit. 74, § 5017 (2026). History: Added by Laws 1986, c. 207, § 23, operative July 1, 1986. Amended by Laws 1989, c. 313, § 14, operative July 1, 1989; Laws. Text read from the Legislative Service Bureau''s Title 74 PDF (updated Nov. 12, 2026), page 1174. Found by the state statutes pilot (terms: indian tribes); AI reader''s verdict incidental: Commerce must provide technical and financial aid to Indian tribes. Unverified.'
 review:
   status: unverified
-  by: scripts/law/oklahoma_statutes.py
+  by: scripts/law/state_statutes/run.py
   date: '2026-11-26'
   checks:
   - check: 'Indian law section: the pilot''s keyword pass and an AI reader''s verdict (core, incidental or none)'

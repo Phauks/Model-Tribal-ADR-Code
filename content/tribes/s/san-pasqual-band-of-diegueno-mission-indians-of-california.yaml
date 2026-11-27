@@ -186,6 +186,16 @@ indian_health_service:
   as_of: '2026-11-23'
   locator: regional lists (West Central, Southern, Northern, East Central)
   note: Listed as "San Pasqual Band of Diegueno Mission Indians of California".
+federal_programs:
+- program: indian-housing-block-grant
+  fiscal_year: 2026
+  amount: 445511
+  amount_kind: allocation
+  source: hud-ihbg-fy2026-formula-allocations
+  confidence: high
+  verification: bulk-import
+  as_of: '2026'
+  locator: CA, row 'San Pasqual Band of Diegueno Mission Indians' (Valley Center)
 governance:
 - aspect: form
   value: Organized under Section 16 of the Indian Reorganization Act
@@ -498,6 +508,14 @@ jurisdiction:
     images and matched to the roster. Row re-read on 2026-11-22 from the page image (the govinfo PDF has
     no text layer for the table); verification level unchanged because the name was not matched word for
     word in machine-read text.'
+- topic: hearth-act-leasing-regulations
+  value: approved
+  detail: The Secretary of the Interior approved the leasing regulations (Business) of the San Pasqual Band of Diegueno Mission, as the Bureau of Indian Affairs' list names it, under the HEARTH Act, 25 U.S.C. § 415(h), on Nov. 5, 2020, so the nation can lease its trust land for those purposes under its own regulations without the Bureau of Indian Affairs approving each lease.
+  source: hearth-act-leasing-regulations-san-pasqual-band-of-diegueno-mission-indians-of-california-2020-11-05
+  confidence: high
+  verification: inferred
+  as_of: '2020-11-05'
+  locator: Bureau of Indian Affairs, Approved HEARTH Act Regulations, Approved in 2020
 court_practice:
 - kind: bar-admission
   title: Southern California Tribal Bar Association admission application

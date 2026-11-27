@@ -119,6 +119,72 @@ indian_health_service:
   as_of: '2026-11-23'
   locator: Tribal Health Programs lists (Michigan, Minnesota, Wisconsin)
   note: 'Listed as "Mille Lacs Band". Also listed under the same Area in: indian-health-service-self-governance-tribes. Also on the Indian Health Service Self-Governance Tribes list (Mille Lacs Band of Ojibwe Indians (1994)); the list does not say which service unit or programs the compact covers.'
+federal_programs:
+- program: interior-self-governance-compact
+  since: 1991
+  source: bia-office-of-self-governance-tribes-2024-07-24
+  confidence: medium
+  verification: bulk-import
+  as_of: '2024-07-24'
+  locator: row 'Mille Lacs Band Of Ojibwe' (Midwest Region)
+  note: The list's name was matched to this nation by a person or AI review; the list names 'Mille Lacs Band Of Ojibwe'.
+- program: indian-health-service-self-governance-compact
+  since: 1994
+  source: indian-health-service-self-governance-tribes
+  confidence: medium
+  verification: bulk-import
+  as_of: '2025-07-01'
+  locator: Bemidji Area, row 'Mille Lacs Band of Ojibwe Indians'
+  note: The list's name was matched to this nation by a person or AI review; the list names 'Mille Lacs Band of Ojibwe Indians'.
+- program: pl-102-477-plan
+  start: '2025-10-01'
+  end: '2028-09-30'
+  programs_included:
+  - Workforce Innovation and Opportunity Act – Adult Comprehensive Services
+  - Workforce Innovation and Opportunity Act – Supplementary Youth Services
+  - Child Care & Development Funds – Discretionary
+  - Child Care & Development Funds – Mandatory
+  - Native Employment Works
+  - Temporary Assistance for Needy Families
+  - Job Placement and Training
+  - 'Welfare Assistance: General Assistance'
+  detail: Carried under a self-governance compact
+  source: bia-pl-102-477-plan-directory
+  confidence: medium
+  verification: bulk-import
+  as_of: '2026-11-26'
+  locator: PL102_477_Contracts, plan 'Minnesota Chippewa Tribe, Minnesota (Mille Lacs Band)'; PL102_477_PartnerEnrollment, its 8 programs
+  note: The list's name was matched to this nation by a person or AI review; the list names 'Minnesota Chippewa Tribe, Minnesota (Mille Lacs Band)'.
+- program: indian-housing-block-grant
+  fiscal_year: 2026
+  amount: 2597581
+  amount_kind: allocation
+  source: hud-ihbg-fy2026-formula-allocations
+  confidence: medium
+  verification: bulk-import
+  as_of: '2026'
+  locator: MN, row 'Mille Lacs Band, Minnesota Chippewa Tribe' (Onamia)
+  note: The list's name was matched to this nation by a person or AI review; the list names 'Mille Lacs Band, Minnesota Chippewa Tribe'.
+- program: interior-self-governance-compact
+  fiscal_year: 2025
+  amount: 8564253
+  amount_kind: obligations
+  source: usaspending-fy2025-assistance-listing-15-022
+  confidence: medium
+  verification: bulk-import
+  as_of: '2025'
+  locator: Assistance Listing 15.022, recipient 'MILLE LACS BAND OF OJIBWE' (UEI KR5CGFZ5W2R4), Oct. 1, 2024 to Sept. 30, 2025
+  note: The list's name was matched to this nation by a person or AI review; the list names 'MILLE LACS BAND OF OJIBWE'.
+- program: indian-health-service-self-governance-compact
+  fiscal_year: 2025
+  amount: 6488466
+  amount_kind: obligations
+  source: usaspending-fy2025-assistance-listing-93-210
+  confidence: medium
+  verification: bulk-import
+  as_of: '2025'
+  locator: Assistance Listing 93.210, recipient 'MILLE LACS BAND OF OJIBWE' (UEI KR5CGFZ5W2R4), Oct. 1, 2024 to Sept. 30, 2025
+  note: The list's name was matched to this nation by a person or AI review; the list names 'MILLE LACS BAND OF OJIBWE'.
 governance:
 - aspect: governing-body
   value: Band Assembly
@@ -484,6 +550,14 @@ jurisdiction:
   as_of: '2026-05-26'
   locator: 91 FR 30694 (Tribe column of the designated agent table)
   note: 'Listed as: Minnesota Chippewa Tribe - Mille Lacs Band. Added on 2026-11-23: the second data gap review found this band''s own row in the notice (page image p-027; the govinfo PDF has no text layer for the table), and the Minnesota Chippewa Tribe profile already lists the six band rows (research/reviews/2026-11-22-second-gap-review.md). Verification is inferred because the name was read from a page image, not matched in machine-read text.'
+- topic: environmental-treatment-as-a-state
+  value: clean-air-act-administrative-functions
+  detail: 'EPA has approved the nation for treatment in a similar manner as a state to perform administrative functions under the Clean Air Act: § 505(a)(2).'
+  source: epa-tribes-approved-for-treatment-as-a-state
+  confidence: high
+  verification: inferred
+  as_of: '2026-10-21'
+  locator: 'Table of approvals by Tribe, column "Administrative Functions": "CAA § 505(a)(2)"'
 jurisdiction_agreements:
 - kind: child-welfare-agreement
   other_party: Minnesota Department of Human Services

@@ -197,6 +197,101 @@ indian_health_service:
   as_of: '2026-11-23'
   locator: Direct Service Tribes by IHS Area > Navajo Area
   note: Listed as "Navajo Nation". The Direct Service Tribes list says some Tribes have a mixed Indian Health Service and Tribal arrangement.
+federal_programs:
+- program: indian-health-service-self-governance-compact
+  since: 2011
+  through: Utah Navaho Health System, Inc.
+  source: indian-health-service-self-governance-tribes
+  confidence: medium
+  verification: bulk-import
+  as_of: '2025-07-01'
+  locator: Navajo Area, row 'Utah Navaho Health System, Inc.'
+  note: The list's name was matched to this nation by a person or AI review; the list names 'Utah Navaho Health System, Inc.'.
+- program: pl-102-477-plan
+  start: '2024-10-01'
+  end: '2029-09-30'
+  programs_included:
+  - Child Care & Development Funds – Discretionary
+  - Child Care & Development Funds – Mandatory
+  - Community Service Block Grant
+  - Family Violence Prevention and Services/Domestic Violence Shelter and Supportive Services
+  - Low Income Home Energy Assistance Program
+  - Temporary Assistance for Needy Families
+  - Title IV-B Subpart 1 – Stephanie Tubbs Jones Child Welfare Services Program
+  - Title IV-B Subpart 2 – MaryLee Allen Promoting Safe and Stable Families Program
+  - Indian Child Welfare Act
+  - 'Welfare Assistance: Burial Assistance'
+  - 'Welfare Assistance: Custodial Care of Adults/ Homemaker Services'
+  - 'Welfare Assistance: General Assistance'
+  detail: Carried under a self-determination contract
+  source: bia-pl-102-477-plan-directory
+  confidence: high
+  verification: bulk-import
+  as_of: '2026-11-26'
+  locator: PL102_477_Contracts, plan 'Navajo Nation, Arizona, New Mexico, & Utah'; PL102_477_PartnerEnrollment, its 12 programs
+- program: indian-housing-block-grant
+  fiscal_year: 2026
+  amount: 130586757
+  amount_kind: allocation
+  source: hud-ihbg-fy2026-formula-allocations
+  confidence: high
+  verification: bulk-import
+  as_of: '2026'
+  locator: AZ, row 'Navajo Nation' (Window Rock)
+- program: isdeaa-contract-indian-health-service
+  fiscal_year: 2025
+  amount: 55776862
+  amount_kind: obligations
+  source: usaspending-fy2025-assistance-listing-93-441
+  confidence: medium
+  verification: bulk-import
+  as_of: '2025'
+  locator: Assistance Listing 93.441, recipient 'NAVAJO NATION TRIBAL GOVERNMENT' (UEI KEBVZNK93W87), Oct. 1, 2024 to Sept. 30, 2025
+  note: The list's name was matched to this nation by a person or AI review; the list names 'NAVAJO NATION TRIBAL GOVERNMENT'.
+- program: isdeaa-contract-indian-health-service
+  fiscal_year: 2025
+  amount: 50412052
+  amount_kind: obligations
+  through: Navajo Health Foundation-Sage Memorial Hospital Inc
+  source: usaspending-fy2025-assistance-listing-93-441
+  confidence: medium
+  verification: bulk-import
+  as_of: '2025'
+  locator: Assistance Listing 93.441, recipient 'NAVAJO HEALTH FOUNDATION-SAGE MEMORIAL HOSPITAL INC' (UEI NJKMGPDC6V97), Oct. 1, 2024 to Sept. 30, 2025
+  note: The list's name was matched to this nation by a person or AI review; the list names 'NAVAJO HEALTH FOUNDATION-SAGE MEMORIAL HOSPITAL INC'.
+- program: isdeaa-contract-indian-health-service
+  fiscal_year: 2025
+  amount: 11257407
+  amount_kind: obligations
+  through: The Alamo Navajo School Board Inc
+  source: usaspending-fy2025-assistance-listing-93-441
+  confidence: medium
+  verification: bulk-import
+  as_of: '2025'
+  locator: Assistance Listing 93.441, recipient 'THE ALAMO NAVAJO SCHOOL BOARD INC' (UEI XGG4Q7387LR1), Oct. 1, 2024 to Sept. 30, 2025
+  note: The list's name was matched to this nation by a person or AI review; the list names 'THE ALAMO NAVAJO SCHOOL BOARD INC'.
+- program: isdeaa-contract-indian-health-service
+  fiscal_year: 2025
+  amount: 5228830
+  amount_kind: obligations
+  through: Ramah Navajo School Board Inc
+  source: usaspending-fy2025-assistance-listing-93-441
+  confidence: medium
+  verification: bulk-import
+  as_of: '2025'
+  locator: Assistance Listing 93.441, recipient 'RAMAH NAVAJO SCHOOL BOARD INC' (UEI NLPKQD8L6ZW6), Oct. 1, 2024 to Sept. 30, 2025
+  note: The list's name was matched to this nation by a person or AI review; the list names 'RAMAH NAVAJO SCHOOL BOARD INC'.
+- program: isdeaa-contract-indian-health-service
+  fiscal_year: 2025
+  amount: 4907446
+  amount_kind: obligations
+  through: Canoncito Band of Navajos Health Center, Inc
+  source: usaspending-fy2025-assistance-listing-93-441
+  confidence: medium
+  verification: bulk-import
+  as_of: '2025'
+  locator: Assistance Listing 93.441, recipient 'CANONCITO BAND OF NAVAJOS HEALTH CENTER, INC' (UEI KCXRANDMNHH5), Oct. 1, 2024 to Sept. 30, 2025
+  note: The list's name was matched to this nation by a person or AI review; the list names 'CANONCITO BAND OF NAVAJOS HEALTH CENTER, INC'.
 governance:
 - aspect: governing-body
   value: Navajo Nation Council
@@ -817,6 +912,54 @@ jurisdiction:
   verification: read-in-full
   locator: 113 Ariz. at 431
   note: 1976 holding about service of process on the Tohono O'odham (Papago) reservation, reasoning from the 1968 consent requirement. The research did not find any later Arizona assumption. Other federal statutes can still give Arizona limited authority; none checked here.
+- topic: hearth-act-leasing-regulations
+  value: approved
+  detail: The Secretary of the Interior approved the leasing regulations of the Navajo Nation General Leasing Act, as the Bureau of Indian Affairs' list names it, under the HEARTH Act, 25 U.S.C. § 415(h), on May 16, 2014, so the nation can lease its trust land for those purposes under its own regulations without the Bureau of Indian Affairs approving each lease.
+  source: hearth-act-leasing-regulations-navajo-nation-2014-05-16
+  confidence: high
+  verification: inferred
+  as_of: '2014-05-16'
+  locator: Bureau of Indian Affairs, Approved HEARTH Act Regulations, Approved in 2014
+- topic: environmental-treatment-as-a-state
+  value: clean-air-act-operating-permits
+  detail: EPA has approved the nation for treatment in a similar manner as a state for operating permits (Clean Air Act title V).
+  source: epa-tribes-approved-for-treatment-as-a-state
+  confidence: high
+  verification: inferred
+  as_of: '2026-10-21'
+  locator: 'Table of approvals by Tribe, column "Regulatory Programs": "Operating Permit Program; WQS Program"'
+- topic: environmental-treatment-as-a-state
+  value: clean-water-act-water-quality-standards
+  detail: EPA found the nation eligible on Jan. 20, 2006 to set water quality standards (treatment in a similar manner as a state under Clean Water Act § 518), and first approved its standards on Apr. 11, 2006.
+  source: epa-actions-on-tribal-water-quality-standards
+  confidence: high
+  verification: inferred
+  as_of: '2006-01-20'
+  locator: 'Table of approvals by Tribe, column "Regulatory Programs": "Operating Permit Program; WQS Program"'
+- topic: environmental-treatment-as-a-state
+  value: clean-water-act-discharge-permits
+  detail: EPA has approved the nation for treatment in a similar manner as a state for discharge permits (Clean Water Act § 402).
+  source: epa-tribes-approved-for-treatment-as-a-state
+  confidence: high
+  verification: inferred
+  as_of: '2026-10-21'
+  locator: 'Table of approvals by Tribe, column "Regulatory Programs with an Enforcement Component": "NPDES Program; PWSS Program; UIC Program"'
+- topic: environmental-treatment-as-a-state
+  value: safe-drinking-water-act-public-water-systems
+  detail: EPA has approved the nation for treatment in a similar manner as a state for public water system supervision (Safe Drinking Water Act § 1413).
+  source: epa-tribes-approved-for-treatment-as-a-state
+  confidence: high
+  verification: inferred
+  as_of: '2026-10-21'
+  locator: 'Table of approvals by Tribe, column "Regulatory Programs with an Enforcement Component": "NPDES Program; PWSS Program; UIC Program"'
+- topic: environmental-treatment-as-a-state
+  value: safe-drinking-water-act-underground-injection
+  detail: EPA has approved the nation for treatment in a similar manner as a state for underground injection control (Safe Drinking Water Act § 1425).
+  source: epa-tribes-approved-for-treatment-as-a-state
+  confidence: high
+  verification: inferred
+  as_of: '2026-10-21'
+  locator: 'Table of approvals by Tribe, column "Regulatory Programs with an Enforcement Component": "NPDES Program; PWSS Program; UIC Program"'
 jurisdiction_agreements:
 - kind: cross-deputization
   other_party: Arizona Department of Public Safety

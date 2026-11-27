@@ -73,6 +73,16 @@
 							<span class="number">{number(collection.count)}</span>
 						</a>
 						{#if collection.years}<span class="years">{collection.years}</span>{/if}
+						<!-- More about the number (Trevor, Nov. 27, 2026), such as documents with their pages, saved web pages and items without a copy. -->
+						{#if collection.breakdown}
+							<ul class="breakdown">
+								{#each collection.breakdown as part (part)}
+									<!-- "593 documents (11,010 pages)" wraps before the pages, never inside them. -->
+									{@const [lead, pages] = part.split(' (')}
+									<li>{lead}{#if pages}{' '}<span class="pages">({pages}</span>{/if}</li>
+								{/each}
+							</ul>
+						{/if}
 						{#if collection.heldBack}
 							<span class="held"><Lock size={14} aria-hidden="true" />{number(collection.heldBack)} {collection.heldBackReason}</span>
 						{/if}
@@ -194,9 +204,29 @@
 	}
 
 	.years,
+	.breakdown,
 	.held {
 		font-size: var(--font-size-small);
 		color: var(--color-ink-muted);
+	}
+
+	.breakdown {
+		list-style: none;
+		margin: 0;
+		padding: 0;
+	}
+
+	.cards .breakdown li {
+		/* One part to a line, so the parts of the number read as a sum. */
+		display: block;
+		position: static;
+		padding: 0;
+		border: 0;
+		background: none;
+	}
+
+	.breakdown .pages {
+		white-space: nowrap;
 	}
 
 	.held {

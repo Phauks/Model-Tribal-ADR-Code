@@ -207,6 +207,25 @@ indian_health_service:
   as_of: '2026-11-23'
   locator: '"Tribes of Oklahoma, Kansas and Texas" list'
   note: Listed as "Peoria Tribe of Indians of Oklahoma".
+federal_programs:
+- program: indian-housing-block-grant
+  fiscal_year: 2026
+  amount: 1922353
+  amount_kind: allocation
+  source: hud-ihbg-fy2026-formula-allocations
+  confidence: high
+  verification: bulk-import
+  as_of: '2026'
+  locator: OK, row 'Peoria Tribe' (Miami)
+- program: isdeaa-contract-indian-health-service
+  fiscal_year: 2025
+  amount: 146962
+  amount_kind: obligations
+  source: usaspending-fy2025-assistance-listing-93-441
+  confidence: high
+  verification: bulk-import
+  as_of: '2025'
+  locator: Assistance Listing 93.441, recipient 'PEORIA TRIBE OF INDIANS OF OKLAHOMA' (UEI W1MBR397G6U5), Oct. 1, 2024 to Sept. 30, 2025
 government_structure:
 - kind: oklahoma-indian-welfare-act
   detail: Listed as "The Peoria Tribe of Indians of Oklahoma" among organizations under constitutions
@@ -681,6 +700,22 @@ jurisdiction:
   as_of: '2017-07-18'
   locator: Answer, second and third paragraphs (the lists of mandatory and optional states)
   note: Inferred from the state's absence from both lists. Nation placed in Oklahoma by its office state in the BIA Tribal Leaders Directory, so confidence is medium.
+- topic: hearth-act-leasing-regulations
+  value: approved
+  detail: The Secretary of the Interior approved the leasing regulations (Business Leasing Ordinance) of the Peoria Tribe of Indians of Oklahoma, as the Bureau of Indian Affairs' list names it, under the HEARTH Act, 25 U.S.C. § 415(h), on May 21, 2026, so the nation can lease its trust land for those purposes under its own regulations without the Bureau of Indian Affairs approving each lease.
+  source: hearth-act-leasing-regulations-peoria-tribe-of-indians-of-oklahoma-2026-05-21
+  confidence: high
+  verification: inferred
+  as_of: '2026-05-21'
+  locator: Bureau of Indian Affairs, Approved HEARTH Act Regulations, Approved in 2026
+- topic: environmental-treatment-as-a-state
+  value: clean-air-act-administrative-functions
+  detail: 'EPA has approved the nation for treatment in a similar manner as a state to perform administrative functions under the Clean Air Act: §§ 126(a); 505(a)(2).'
+  source: epa-tribes-approved-for-treatment-as-a-state
+  confidence: high
+  verification: inferred
+  as_of: '2026-10-21'
+  locator: 'Table of approvals by Tribe, column "Administrative Functions": "CAA §§ 126(a); 505(a)(2)"'
 jurisdiction_agreements:
 - kind: child-welfare-agreement
   other_party: Oklahoma Department of Human Services

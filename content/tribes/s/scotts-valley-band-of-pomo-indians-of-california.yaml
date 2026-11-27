@@ -98,6 +98,44 @@ indian_health_service:
   as_of: '2026-11-23'
   locator: regional lists (West Central, Southern, Northern, East Central)
   note: Listed as "Scotts Valley Band of Pomo Indians of California".
+federal_programs:
+- program: interior-self-governance-compact
+  since: 2017
+  source: bia-office-of-self-governance-tribes-2024-07-24
+  confidence: medium
+  verification: bulk-import
+  as_of: '2024-07-24'
+  locator: row 'Scotts Valley Band Of Pomo Indians' (Pacific Region)
+  note: The list's name was matched to this nation by a person or AI review; the list names 'Scotts Valley Band Of Pomo Indians'.
+- program: indian-housing-block-grant
+  fiscal_year: 2026
+  amount: 269771
+  amount_kind: allocation
+  source: hud-ihbg-fy2026-formula-allocations
+  confidence: high
+  verification: bulk-import
+  as_of: '2026'
+  locator: CA, row 'Scotts Valley Band of Pomo Indians' (Lakeport)
+- program: interior-self-governance-compact
+  fiscal_year: 2025
+  amount: 348419
+  amount_kind: obligations
+  source: usaspending-fy2025-assistance-listing-15-022
+  confidence: medium
+  verification: bulk-import
+  as_of: '2025'
+  locator: Assistance Listing 15.022, recipient 'SCOTTS VALLEY BAND POMO INDIANS' (UEI SB75ZH4VKEM9), Oct. 1, 2024 to Sept. 30, 2025
+  note: The list's name was matched to this nation by a person or AI review; the list names 'SCOTTS VALLEY BAND POMO INDIANS'.
+- program: isdeaa-contract-indian-health-service
+  fiscal_year: 2025
+  amount: 1584114
+  amount_kind: obligations
+  source: usaspending-fy2025-assistance-listing-93-441
+  confidence: medium
+  verification: bulk-import
+  as_of: '2025'
+  locator: Assistance Listing 93.441, recipient 'SCOTTS VALLEY BAND POMO INDIANS' (UEI SB75ZH4VKEM9), Oct. 1, 2024 to Sept. 30, 2025
+  note: The list's name was matched to this nation by a person or AI review; the list names 'SCOTTS VALLEY BAND POMO INDIANS'.
 governance:
 - aspect: governing-body
   value: Tribal Council

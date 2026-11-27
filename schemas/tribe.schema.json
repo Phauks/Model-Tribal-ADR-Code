@@ -323,6 +323,33 @@
         "unevaluatedProperties": false
       }
     },
+    "federal_programs": {
+      "type": "array",
+      "description": "Federal self-governance and self-determination programs the nation runs, and federal block grants it runs under its own plan, one fact per program per source (research/analyses/2026-11-26-self-governance-programs.md). A fact from a funding list carries the amount; a fact from a participant list carries the dates. Absence from a list never means the nation does not take part.",
+      "items": {
+        "type": "object",
+        "$ref": "#/$defs/citedFact",
+        "required": ["program"],
+        "properties": {
+          "program": {
+            "type": "string",
+            "enum": ["interior-self-governance-compact", "interior-non-bia-funding-agreement", "indian-health-service-self-governance-compact", "isdeaa-contract-interior", "isdeaa-contract-indian-health-service", "tribally-controlled-school-grant", "pl-102-477-plan", "tribal-transportation-self-governance-compact", "fdpir-self-determination-demonstration", "tribal-forest-protection-act-agreement", "indian-housing-block-grant", "tribal-tanf", "tribal-title-iv-e-plan"],
+            "description": "The program, by the keys in site/src/lib/federal-programs.ts."
+          },
+          "agency": { "type": "string", "description": "The federal agency, bureau, office or park unit that is party, as the source names it, when the program alone does not say." },
+          "since": { "type": "integer", "description": "The year the nation entered the program, as the source gives it." },
+          "start": { "$ref": "common.schema.json#/$defs/partialDate", "description": "Start of the agreement or plan in force." },
+          "end": { "$ref": "common.schema.json#/$defs/partialDate", "description": "End of the agreement or plan in force." },
+          "fiscal_year": { "type": "integer", "description": "The federal fiscal year the source's list or amount is for." },
+          "through": { "type": "string", "description": "The organization that holds the agreement or receives the funds for the nation, as the source names it, when it is not the nation's government." },
+          "programs_included": { "type": "array", "items": { "type": "string" }, "description": "For a 477 plan, the federal programs merged into it, as the source names them." },
+          "amount": { "type": "number", "minimum": 0, "description": "U.S. dollars for the fiscal year: an allocation or an obligation, as amount_kind says." },
+          "amount_kind": { "type": "string", "enum": ["allocation", "obligations"], "description": "allocation: the agency's formula allocation. obligations: the total obligated to the recipient in the fiscal year as reported to USAspending." },
+          "detail": { "type": "string" }
+        },
+        "unevaluatedProperties": false
+      }
+    },
     "government_structure": {
       "type": "array",
       "description": "The legal form of the government, only where a source states it.",
@@ -701,6 +728,8 @@
               "violence-against-women-act-special-tribal-criminal-jurisdiction",
               "tribal-law-and-order-act-enhanced-sentencing",
               "indian-child-welfare-act",
+              "hearth-act-leasing-regulations",
+              "environmental-treatment-as-a-state",
               "other"
             ]
           },

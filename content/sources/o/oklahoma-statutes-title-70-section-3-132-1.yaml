@@ -73,7 +73,7 @@ found_in:
 notes: 'Indigo Book citation: Okla. Stat. tit. 70, § 3-132.1 (2026). History: Added by Laws 2023, c. 323, § 1, eff. Sept. 1, 2023. Text read from the Legislative Service Bureau''s Title 70 PDF (updated Nov. 12, 2026), page 216. Found by the state statutes pilot (terms: federally recognized indian tribe); AI reader''s verdict incidental: Federally recognized Indian tribe may seek charter school sponsorship renewal. Unverified.'
 review:
   status: unverified
-  by: scripts/law/oklahoma_statutes.py
+  by: scripts/law/state_statutes/run.py
   date: '2026-11-26'
   checks:
   - check: 'Indian law section: the pilot''s keyword pass and an AI reader''s verdict (core, incidental or none)'
