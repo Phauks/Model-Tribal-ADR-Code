@@ -20,6 +20,11 @@ export const sourceSlots = 3;
 const shortText = 300;
 const longText = 8000;
 
+/** An address with a name, an at sign and a domain with a dot; the sender's own mail system decides the rest. */
+function isEmailAddress(value: string): boolean {
+	return /^[^\s@]+@[^\s@]+\.[^\s@]+$/u.test(value);
+}
+
 /** File types accepted, checked by their first bytes, not only by their name. */
 const acceptedFiles: { type: string; extension: string; matches: (bytes: Uint8Array) => boolean }[] = [
 	{
@@ -125,8 +130,9 @@ export async function readFile(
 }
 
 /**
- * Checks a submitted request. Only a way to reply is always required
- * (docs/requests.md, step 3); each kind adds what it needs.
+ * Checks a submitted request. An email address and accepting the statements
+ * are always required (docs/requests.md, steps 3 and 6); each kind adds what
+ * it needs.
  */
 export async function readRequestForm(form: FormData): Promise<FormResult> {
 	const errors: Record<string, string> = {};
@@ -150,8 +156,12 @@ export async function readRequestForm(form: FormData): Promise<FormResult> {
 		return value;
 	};
 
+	// Replies go by email only (Trevor, Nov. 27, 2026). Requests saved earlier may hold a phone number.
 	const contact = limit('contact', shortText, text(form, 'contact'));
-	if (contact === '') errors.contact = 'Give an email address or phone number so we can reply.';
+	if (contact === '') errors.contact = 'Give an email address so we can reply.';
+	else if (!errors.contact && !isEmailAddress(contact)) errors.contact = 'Write the whole address, for example name@example.org.';
+
+	if (text(form, 'acceptStatements') !== 'yes') errors.acceptStatements = 'Tick the box to accept these statements.';
 
 	const details = limit('details', longText, text(form, 'details'));
 	if (details === '' && kind !== 'add-nation') {

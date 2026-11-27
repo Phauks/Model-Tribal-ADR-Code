@@ -3,16 +3,26 @@ import { readRequestForm } from '#lib/server/request-form.ts';
 
 function form(fields: Record<string, string | File>): FormData {
 	const data = new FormData();
-	for (const [name, value] of Object.entries(fields)) data.append(name, value);
+	for (const [name, value] of Object.entries({ acceptStatements: 'yes', ...fields })) data.append(name, value);
 	return data;
 }
 
 const pdf = () => new File([new Uint8Array([0x25, 0x50, 0x44, 0x46, 0x2d, 0x31])], 'resolution.pdf', { type: 'application/pdf' });
 
 describe('request form', () => {
-	it('needs only a way to reply and the details for a question', async () => {
+	it('needs only an email address, the details and the accepted statements for a question', async () => {
 		const result = await readRequestForm(form({ kind: 'question', contact: 'office@example.org', details: 'Hello' }));
 		expect(result.ok).toBe(true);
+	});
+
+	it('takes an email address only, not a phone number', async () => {
+		const result = await readRequestForm(form({ kind: 'question', contact: '555-0100', details: 'Hello' }));
+		expect(!result.ok && result.errors.contact).toMatch(/whole address/);
+	});
+
+	it('needs the statements accepted before a request is sent', async () => {
+		const result = await readRequestForm(form({ kind: 'question', contact: 'office@example.org', details: 'Hello', acceptStatements: '' }));
+		expect(!result.ok && Object.keys(result.errors)).toEqual(['acceptStatements']);
 	});
 
 	it('shares the sender with the nation’s team only when ticked, and never for a removal', async () => {
@@ -27,26 +37,26 @@ describe('request form', () => {
 	});
 
 	it('asks where the material is for a request to restrict it', async () => {
-		const result = await readRequestForm(form({ kind: 'restrict', contact: '555-0100', details: 'Please hide it' }));
+		const result = await readRequestForm(form({ kind: 'restrict', contact: 'office@example.org', details: 'Please hide it' }));
 		expect(result.ok).toBe(false);
 		expect(!result.ok && Object.keys(result.errors)).toEqual(['material']);
 	});
 
 	it('turns away a filled-in hidden field', async () => {
-		const result = await readRequestForm(form({ kind: 'question', contact: 'x', details: 'y', website: 'spam' }));
+		const result = await readRequestForm(form({ kind: 'question', contact: 'person@example.org', details: 'y', website: 'spam' }));
 		expect(!result.ok && result.spam).toBe(true);
 	});
 
 	it('checks a file by its first bytes, not its name', async () => {
 		const fake = new File(['<html>'], 'evil.pdf', { type: 'application/pdf' });
-		const result = await readRequestForm(form({ kind: 'question', contact: 'x', details: 'y', file1: fake }));
+		const result = await readRequestForm(form({ kind: 'question', contact: 'person@example.org', details: 'y', file1: fake }));
 		expect(!result.ok && result.errors.file1).toMatch(/Only PDF/);
-		const real = await readRequestForm(form({ kind: 'question', contact: 'x', details: 'y', file1: pdf() }));
+		const real = await readRequestForm(form({ kind: 'question', contact: 'person@example.org', details: 'y', file1: pdf() }));
 		expect(real.ok && real.request.sources[0]?.file?.type).toBe('application/pdf');
 	});
 
 	it('asks a contributor for permission to publish', async () => {
-		const result = await readRequestForm(form({ kind: 'contribute', contact: 'x', details: 'A source' }));
+		const result = await readRequestForm(form({ kind: 'contribute', contact: 'person@example.org', details: 'A source' }));
 		expect(!result.ok && Object.keys(result.errors)).toEqual(['publicationPermission']);
 	});
 

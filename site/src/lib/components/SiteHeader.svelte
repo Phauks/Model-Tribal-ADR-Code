@@ -1,7 +1,7 @@
 <script lang="ts">
 	// The masthead (site/DESIGN.md, section 6, "Masthead"). One row: the
 	// sidebar button and the site's name at the left; at the right one evenly
-	// spaced row of icon buttons (search, Report a problem as a flag, Star,
+	// spaced row of icon buttons (search, Request a Change as a flag, Star,
 	// Follow, Print, Download, Settings), then sign-in or the account
 	// menu at the far right (Trevor, Nov. 23, 2026). Contribute left the
 	// masthead for the About menu, so the row holds only the buttons (Trevor,
@@ -43,7 +43,7 @@
 	import CiteMenu from './CiteMenu.svelte';
 	import DownloadMenu from './DownloadMenu.svelte';
 	import PrintOptions from './PrintOptions.svelte';
-	import ReportProblem from './ReportProblem.svelte';
+	import RequestChange from './RequestChange.svelte';
 	import PageSettings from './PageSettings.svelte';
 	import SiteSearch from './SiteSearch.svelte';
 	import FollowButton from './FollowButton.svelte';
@@ -55,7 +55,7 @@
 	let { contentVersion, versions }: { contentVersion: string; versions: TrackVersions } = $props();
 
 	/**
-	 * "Report a problem" opens a dialog with the request form (ReportProblem),
+	 * "Request a Change" opens a dialog with the request form (RequestChange),
 	 * where the reader picks what is wrong, including "Add a nation that is
 	 * missing"; without scripts it goes to the request page. On a nation or
 	 * glossary page, or a story's page, it names that record, so the report
@@ -141,13 +141,13 @@
 				class="more-button"
 				type="button"
 				popovertarget="masthead-more"
-				aria-label="More: report a problem, star, follow, print, cite, download, settings and sign in"
+				aria-label="More: request a change, star, follow, print, cite, download, settings and sign in"
 			>
 				<Ellipsis size={24} /><span aria-hidden="true">More</span>
 			</button>
 			<div class="masthead-more" id="masthead-more" popover>
 				<span class="page-controls-panel"><PageControls place="panel" /></span>
-				<ReportProblem link={reportLink} />
+				<RequestChange link={reportLink} />
 				<StarButton />
 				<SaveOfflineButton />
 				<FollowButton />

@@ -117,7 +117,7 @@ export function readImageViewerItem(link: HTMLAnchorElement): ImageViewerItem {
 
 /**
  * A copy of the caption under the picture, without the link to ask for its
- * removal (Report a problem is always at hand, Trevor, Nov. 23, 2026) and
+ * removal (Request a Change is always at hand, Trevor, Nov. 23, 2026) and
  * without ids, which must stay unique on the page.
  */
 function captionHtml(link: HTMLAnchorElement): string {

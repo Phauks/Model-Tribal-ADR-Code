@@ -87,8 +87,7 @@ export const actions: Actions = {
 			sent: {
 				reference,
 				kind: result.request.kind,
-				receivedAt: new Date().toISOString(),
-				hasEmail: result.request.contact.includes('@')
+				receivedAt: new Date().toISOString()
 			}
 		};
 	}

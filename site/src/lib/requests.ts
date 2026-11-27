@@ -112,6 +112,26 @@ export const authorityStatementLabels: Record<AuthorityStatement, string> = {
 		'I am not writing for the nation’s government. We will contact the nation ourselves.'
 };
 
+/**
+ * The statements a reader accepts, with one checkbox, before any request is
+ * sent, each on its own line (Trevor, Nov. 27, 2026). The last three repeat
+ * how the project uses what is sent (docs/requests.md, "How it is used").
+ */
+export function requestStatements(kind: RequestKind): string[] {
+	const sensitive = kind === 'restrict' || kind === 'remove' || kind === 'replace-name';
+	return [
+		'The information you give is true to the best of your knowledge.',
+		'You have the right to share any files and sources you send.',
+		'Nothing you send is confidential or legally privileged.',
+		'You have not included the name or other personal details of a child or a protected person.',
+		sensitive
+			? 'We never publish the material you ask us to make private or delete.'
+			: 'Files and sources you send may be cited or published, because the work shows its sources.',
+		'Your contact details are never published.',
+		'Your name, role and contact details are deleted 12 months after the request is resolved, unless you asked to be credited.'
+	];
+}
+
 const day = 24 * 60 * 60 * 1000;
 
 function addDays(time: string, days: number): string {

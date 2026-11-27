@@ -1,7 +1,7 @@
 /**
  * Cloudflare Turnstile, the "are you a person?" check on the forms anyone can
  * send: sign in, Create an account, Forgot your password, the request form
- * and Report a problem (decision record 0062). The page shows Cloudflare's
+ * and Request a Change (decision record 0062). The page shows Cloudflare's
  * widget, which usually decides on its own and stays out of sight; the
  * widget's answer (a single-use token) comes with the form, and this module
  * asks Cloudflare whether it is good before the form's own work runs.
