@@ -6,8 +6,8 @@
 import { lawNames } from '../law-names.ts';
 import { sources, type SourceRecord } from './content.ts';
 
-/** The record kinds that get a page at /laws/<key>: federal laws, treaties and orders, and federal agencies' own documents (opinions, enforcement actions, bulletins). */
-const lawKinds = new Set(['federal-statute', 'federal-regulation', 'federal-register-notice', 'federal-agency-document', 'executive-order']);
+/** The record kinds that get a page at /laws/<key>: federal laws, treaties and orders, federal agencies' own documents (opinions, enforcement actions, bulletins), and state statute sections (Trevor, Nov. 26, 2026). */
+const lawKinds = new Set(['federal-statute', 'federal-regulation', 'federal-register-notice', 'federal-agency-document', 'executive-order', 'state-statute']);
 
 export function isLawRecord(record: SourceRecord): boolean {
 	const type = (record.citation as { type?: string }).type;
@@ -46,7 +46,8 @@ export function recordName(key: string): { name: string; italic?: boolean; kind?
 		const title = citation['title-short'] ?? (citation.title ?? key).replace(/,\s+[A-Z][a-z]{2,4}\.? \d{1,2}, \d{4}.*$/, '');
 		return { name: year && !title.includes(String(year)) ? `${title} (${year})` : title, kind: record.kind, what: 'Treaty' };
 	}
-	const year = yearOf(record);
+	// A state statute section is named by its citation ("Okla. Stat. tit. 10, § 40"), which a year after it would misread as the code's edition.
+	const year = record.kind === 'state-statute' ? undefined : yearOf(record);
 	const short = lawNames[key] ?? citation['title-short'];
 	return { name: short ? (year && !short.includes(String(year)) ? `${short} (${year})` : short) : (citation.title ?? key), kind: record.kind, what: 'Law' };
 }
