@@ -7,7 +7,7 @@
  * the public pages already show.
  */
 import { json } from '@sveltejs/kit';
-import { essayCitations } from 'virtual:essay-library';
+import { citationsFor } from '#lib/server/essay-citations.ts';
 import { requirePersonForData } from '#lib/server/workspace.ts';
 import { sourceDocuments, type SourceDocuments } from '#lib/essays/source-documents.ts';
 import { keyPattern } from '#lib/essays/syntax.ts';
@@ -17,15 +17,16 @@ export const prerender = false;
 
 const key = new RegExp(`^${keyPattern}$`);
 
-export const GET: RequestHandler = (event) => {
+export const GET: RequestHandler = async (event) => {
 	requirePersonForData(event);
 	const keys = (event.url.searchParams.get('keys') ?? '')
 		.split(',')
 		.filter((candidate) => key.test(candidate))
 		.slice(0, 500);
+	const citations = await citationsFor(keys);
 	const documents: Record<string, SourceDocuments> = {};
 	for (const wanted of keys) {
-		const html = essayCitations[wanted];
+		const html = citations.get(wanted);
 		documents[wanted] = html ? sourceDocuments(html) : {};
 	}
 	return json(documents, { headers: { 'Cache-Control': 'private, max-age=3600' } });

@@ -38,6 +38,7 @@
 		{ label: 'Workspace', href: '/workspace' },
 		{ label: 'Requests', href: '/workspace/requests' }
 	]}
+	current="Request {request.reference}"
 />
 <h1>Request {request.reference}</h1>
 
