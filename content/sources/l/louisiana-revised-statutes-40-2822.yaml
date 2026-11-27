@@ -1,0 +1,50 @@
+key: louisiana-revised-statutes-40-2822
+kind: state-statute
+citation:
+  type: legislation
+  title: Definitions
+  title-short: La. Stat. Ann. § 40:2822
+  container-title: Louisiana Revised Statutes
+  container-title-short: La. Stat. Ann.
+  section: 40:2822
+  author:
+  - literal: Louisiana State Legislature
+  issued:
+    date-parts:
+    - - 1997
+  URL: https://legis.la.gov/Legis/Law.aspx?d=98350
+  accessed:
+    date-parts:
+    - - 2026
+      - 11
+      - 27
+original_link: https://legis.la.gov/Legis/Law.aspx?d=98350
+retrieved: '2026-11-27'
+archives: []
+history:
+  status: live
+  last_checked: '2026-11-27'
+state_law:
+  relevance: incidental
+  citation: La. Stat. Ann. § 40:2822 (2026)
+rights:
+  status: no-permission-needed
+  basis: government-edict
+  basis_note: 'Official state statutes are not copyrightable under the government edicts doctrine (Georgia v. Public.Resource.Org, Inc., 590 U.S. 255 (2020)). Linked, not served: state statutes stay link only.'
+  redistribution: false
+jurisdictions:
+- level: state
+  state: LA
+topics:
+- state-indian-law
+found_in:
+- 2026-11-27-state-statutes-ky-la-hi
+notes: 'Indigo Book citation: La. Stat. Ann. § 40:2822 (2026). History: Acts 1997, No. 480, §2, eff. June 30, 1997; Acts 2001, No. 862, §1; Acts 2003, No. 67, §3, eff. May 28, 2003; Acts 2006, No. 39, §1, eff. May 12, 2006. Text read from the Louisiana State Legislature''s page for the section (legis.la.gov/Legis/Law.aspx) on Nov. 27, 2026. Found by the state statutes sweep (terms: indian tribe; indian tribes; allotted; indian; tribe; tribes); AI reader''s verdict incidental: Drinking water loan fund defines Indian tribes as eligible governmental agencies. Unverified.'
+review:
+  status: unverified
+  by: scripts/law/state_statutes/run.py
+  date: '2026-11-27'
+  checks:
+  - check: 'Indian law section: the sweep''s keyword pass and an AI reader''s verdict (core, incidental or none)'
+    result: agree
+    detail: 'incidental; terms: indian tribe; indian tribes; allotted; indian; tribe; tribes'

@@ -1,0 +1,50 @@
+key: louisiana-revised-statutes-33-4710-28
+kind: state-statute
+citation:
+  type: legislation
+  title: Minority businesses
+  title-short: La. Stat. Ann. § 33:4710.28
+  container-title: Louisiana Revised Statutes
+  container-title-short: La. Stat. Ann.
+  section: 33:4710.28
+  author:
+  - literal: Louisiana State Legislature
+  issued:
+    date-parts:
+    - - 2019
+  URL: https://legis.la.gov/Legis/Law.aspx?d=1148902
+  accessed:
+    date-parts:
+    - - 2026
+      - 11
+      - 27
+original_link: https://legis.la.gov/Legis/Law.aspx?d=1148902
+retrieved: '2026-11-27'
+archives: []
+history:
+  status: live
+  last_checked: '2026-11-27'
+state_law:
+  relevance: incidental
+  citation: La. Stat. Ann. § 33:4710.28 (2026)
+rights:
+  status: no-permission-needed
+  basis: government-edict
+  basis_note: 'Official state statutes are not copyrightable under the government edicts doctrine (Georgia v. Public.Resource.Org, Inc., 590 U.S. 255 (2020)). Linked, not served: state statutes stay link only.'
+  redistribution: false
+jurisdictions:
+- level: state
+  state: LA
+topics:
+- state-indian-law
+found_in:
+- 2026-11-27-state-statutes-ky-la-hi
+notes: 'Indigo Book citation: La. Stat. Ann. § 33:4710.28 (2026). History: Acts 2019, No. 172, §1; Acts 2025, No. 178, §1, eff. June 8, 2025. Text read from the Louisiana State Legislature''s page for the section (legis.la.gov/Legis/Law.aspx) on Nov. 27, 2026. Found by the state statutes sweep (terms: american indian; indian; native); AI reader''s verdict incidental: Minority set-asides include American Indian or Alaskan Native group. Unverified.'
+review:
+  status: unverified
+  by: scripts/law/state_statutes/run.py
+  date: '2026-11-27'
+  checks:
+  - check: 'Indian law section: the sweep''s keyword pass and an AI reader''s verdict (core, incidental or none)'
+    result: agree
+    detail: 'incidental; terms: american indian; indian; native'

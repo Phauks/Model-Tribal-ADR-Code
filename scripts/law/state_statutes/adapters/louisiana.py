@@ -95,8 +95,16 @@ class Louisiana(State):
             return 'louisiana-childrens-code-art-' + re.sub(r'[^a-z0-9]+', '-', number[5:].lower()).strip('-')
         return super().key(number)
 
+    @staticmethod
+    def carry(before: list[str], heads: list[str]) -> list[str]:
+        """Replace the headings at and below the level of the new ones: a new PART keeps its TITLE and CHAPTER."""
+        levels = ['TITLE', 'CHAPTER', 'PART', 'SUBPART', 'SUBSUBPART']
+        level = lambda head: next((i for i, name in enumerate(levels) if re.match(rf'^{name}\b', head, re.I)), len(levels))
+        top = min(level(head) for head in heads)
+        return [head for head in before if level(head) < top] + heads
+
     def parse(self, raw: Path) -> Iterator[Section]:
-        seen = set()
+        seen, current = set(), {}
         for row in json.loads((raw / 'sections.json').read_text()):
             number = self.number(row['label'])
             if not number or number in seen:
@@ -122,7 +130,11 @@ class Louisiana(State):
             gone = r'^\[?(?:Repealed|Blank|Reserved|Redesignated|Expired|Transferred|Renumbered|Obsolete)\b'
             status = 'repealed' if re.match(gone, heading, re.I) or (re.match(gone, text, re.I) and len(text) < 300) else ('reserved' if not text else 'live')
             law = LAW.search(history_text)
-            chapter = ' / '.join(h for h in heads if not h.startswith('LOUISIANA ') and h != "CHILDREN'S CODE")
+            # Only the first section of a chapter or part prints its headings: carry them forward through the title, in code order.
+            heads = [h for h in heads if not h.startswith('LOUISIANA ') and h != "CHILDREN'S CODE"]
+            if heads:
+                current[row['folder']] = heads if re.match(r'^(?:TITLE|Title) ', heads[0]) or row['folder'] not in current else self.carry(current[row['folder']], heads)
+            chapter = ' / '.join(current.get(row['folder'], []))
             title = number.split(':')[0] if ':' in number else 'ChC'
             yield Section(number=number, heading=heading, text=text, url=f"{SITE}Law.aspx?d={row['doc']}", title=title,
                           title_name=chapter or row['folder_name'], history=history_text, status=status,

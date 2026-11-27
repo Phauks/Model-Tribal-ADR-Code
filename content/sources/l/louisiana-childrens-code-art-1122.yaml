@@ -1,0 +1,50 @@
+key: louisiana-childrens-code-art-1122
+kind: state-statute
+citation:
+  type: legislation
+  title: Contents of surrender; form
+  title-short: La. Child. Code Ann. art. 1122
+  container-title: Louisiana Revised Statutes
+  container-title-short: La. Stat. Ann.
+  section: art. 1122
+  author:
+  - literal: Louisiana State Legislature
+  issued:
+    date-parts:
+    - - 1991
+  URL: https://legis.la.gov/Legis/Law.aspx?d=72607
+  accessed:
+    date-parts:
+    - - 2026
+      - 11
+      - 27
+original_link: https://legis.la.gov/Legis/Law.aspx?d=72607
+retrieved: '2026-11-27'
+archives: []
+history:
+  status: live
+  last_checked: '2026-11-27'
+state_law:
+  relevance: incidental
+  citation: La. Child. Code Ann. art. 1122 (2026)
+rights:
+  status: no-permission-needed
+  basis: government-edict
+  basis_note: 'Official state statutes are not copyrightable under the government edicts doctrine (Georgia v. Public.Resource.Org, Inc., 590 U.S. 255 (2020)). Linked, not served: state statutes stay link only.'
+  redistribution: false
+jurisdictions:
+- level: state
+  state: LA
+topics:
+- state-indian-law
+found_in:
+- 2026-11-27-state-statutes-ky-la-hi
+notes: 'Indigo Book citation: La. Child. Code Ann. art. 1122 (2026). History: Acts 1991, No. 235, §11, eff. Jan. 1, 1992; Acts 1992, No. 705, §1, eff. July 6, 1992; Acts 1993, No. 634, §1, eff. June 15, 1993; Acts 1995, No. 1095, §5; Acts 1999, No. 1243, §2, eff. Jan. 1, 2000; Acts 2001, No. 953, §2; Acts 2001, No. 1064, §2; Acts 2003, No. 567, §1; Acts 2008, No. 583, §1; Acts 2008, No. 584, §1; Acts 2010, No. 266, §1; Acts 2016, No. 434, §1; Acts 2018, No. 296, §1. Text read from the Louisiana State Legislature''s page for the section (legis.la.gov/Legis/Law.aspx) on Nov. 27, 2026. Found by the state statutes sweep (terms: indian child; indian); AI reader''s verdict incidental: Surrender act must state whether child is Indian child. Unverified.'
+review:
+  status: unverified
+  by: scripts/law/state_statutes/run.py
+  date: '2026-11-27'
+  checks:
+  - check: 'Indian law section: the sweep''s keyword pass and an AI reader''s verdict (core, incidental or none)'
+    result: agree
+    detail: 'incidental; terms: indian child; indian'
