@@ -11,6 +11,16 @@ recognition:
   verification: bulk-import
   as_of: '2026-01-30'
   locator: 91 Fed. Reg. 4104
+- type: federal
+  earliest_record: treaty
+  legal_basis: Treaty with the Sauk and Foxes, etc., July 15, 1830, 7 Stat. 328
+  since: '1830-07-15'
+  source: treaty-with-the-sauk-and-foxes-etc-1830
+  confidence: low
+  verification: inferred
+  as_of: '1830-07-15'
+  locator: p. 305 (Treaty with the Sauk and Foxes, etc., 1830; Kappler header "July 15, 1830. | 7 Stat., 328. | Proclamation, Feb. 24, 1831.")
+  note: The earliest record this site has found that shows the United States dealing with the nation as a federally recognized nation. The relationship may be older. The treaty names the Mdewakanton; the nation's profile links it to the treaty by name, and the link has not yet been checked against a second source. 14 nations' profiles link this treaty.
 states:
 - state: MN
   presence: government-office

@@ -11,6 +11,16 @@ recognition:
   verification: bulk-import
   as_of: '2026-01-30'
   locator: 91 Fed. Reg. 4103
+- type: federal
+  earliest_record: treaty
+  legal_basis: Treaty with the Ottawa, etc., Mar. 28, 1836, 7 Stat. 491
+  since: '1836-03-28'
+  source: treaty-with-the-ottawa-etc-1836
+  confidence: medium
+  verification: inferred
+  as_of: '1836-03-28'
+  locator: p. 450 (Treaty with the Ottawa, etc., 1836; Kappler header "Mar. 28, 1836. | 7 Stat., 491. | Proclamation, May 27, 1836.")
+  note: The earliest record this site has found that shows the United States dealing with the nation as a federally recognized nation. The relationship may be older. The treaty names the Chippewa; the nation's profile links it to the treaty by name, and the link has not yet been checked against a second source. 6 nations' profiles link this treaty.
 states:
 - state: MI
   presence: government-office

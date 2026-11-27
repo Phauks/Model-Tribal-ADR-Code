@@ -1,11 +1,22 @@
 <script lang="ts">
 	import Breadcrumbs from '#lib/components/Breadcrumbs.svelte';
 	import DataTable from '#lib/components/DataTable.svelte';
+	import { navigationSectionOf } from '#lib/site-navigation.ts';
 	import type { TableColumn, TableRow } from '#lib/tables/table-definition.ts';
 	import type { Holding } from '#lib/holding.ts';
 	import type { PageProps } from './$types';
 
 	let { data }: PageProps = $props();
+	// A list that is a page of another section's menu, such as Treaties and Agreements in Federal Law, sits under that section's own page; the rest sit under the Library's Statistics.
+	const section = $derived(navigationSectionOf(`/stats/${data.identifier}`));
+	const trail = $derived(
+		section?.home && section.key !== 'library'
+			? [{ label: section.title ?? section.label, href: section.home }]
+			: [
+					{ label: 'Library', href: '/library' },
+					{ label: 'Statistics', href: `/stats#${data.identifier}` }
+				]
+	);
 	const number = (value: number) => value.toLocaleString('en-US');
 	const hasYears = $derived(data.items.some((item) => item.year));
 	// A list whose third column gives each item's years ("1801–1835") needs no Year column too; it still sorts by the first year.
@@ -51,7 +62,7 @@
 </svelte:head>
 
 <div class="collection-page">
-	<Breadcrumbs trail={[{ label: 'Library', href: '/library' }, { label: 'Statistics', href: `/stats#${data.identifier}` }]} current={data.title} />
+	<Breadcrumbs {trail} current={data.title} />
 	<h1 class:alone={!data.years && !data.breakdown && !data.heldBack}>{data.title}</h1>
 	<!-- No count here: the table's "Showing N of N items" already gives it (Trevor, Nov. 27, 2026). The parts of the number follow the years. -->
 	{#if data.years || data.breakdown || data.heldBack}

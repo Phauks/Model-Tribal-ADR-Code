@@ -11,6 +11,19 @@ recognition:
   verification: bulk-import
   as_of: '2026-01-30'
   locator: 91 Fed. Reg. 4104
+- type: federal
+  earliest_record: constitution
+  legal_basis: Constitution of the Pueblo of Laguna, New Mexico (approved by the Secretary of the Interior July 7, 1949), under the Indian Reorganization Act, ch. 576, § 16, 48 Stat. 984, 987 (1934)
+  since: '1949-07-07'
+  source: university-of-oklahoma-indian-reorganization-act-nmpuebcons
+  document_version:
+    document: pueblo-of-laguna-constitution
+    version: 1949-text
+  confidence: medium
+  verification: inferred
+  as_of: '1949-07-07'
+  locator: 1949 constitution and bylaws, approval certificate
+  note: The earliest record this site has found that shows the United States dealing with the nation as a federally recognized nation. The relationship may be older. The Secretary of the Interior approved the nation's constitution; the date is read by rule from the approval certificate.
 states:
 - state: NM
   presence: government-office
