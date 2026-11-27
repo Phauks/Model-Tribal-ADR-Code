@@ -36,3 +36,7 @@ limits: 'Glottolog gives four of the 115 codes to a family rather than a languag
 - 95 languages link the Endangered Languages Project, through Glottolog's links.
 - 20 languages link the Alaska Native Language Center.
 - 7 languages have an own name in Glottolog's catalogs tagged with the language's code; the rest show only the names the records and ISO 639-3 give.
+
+## Language programs, first pass
+
+Of the language facts in the nation records, 58 nation and source pairs cite a page on the nation's own website about its language, culture, history or education. Each page was fetched on Nov. 27, 2026, and the part naming a program was read. 30 nations name a program they run: a language program or department, an immersion school, or classes. Each now has a `language_programs` entry with the program's name as the page gives it, the page's link and the record's existing source key. The other 28 pages get no entry. They describe the language or the nation's history without naming a program (a word list, a history page, a news story), name one only through a grant, or did not load (Comanche Nation). Programs that only a federal grant list or another organization names are left for the next pass.

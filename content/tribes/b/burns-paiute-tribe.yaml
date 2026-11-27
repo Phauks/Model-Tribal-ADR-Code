@@ -195,6 +195,15 @@ languages:
   verification: inferred
   as_of: '2026-11-21'
   note: Language & Traditional Culture Program page refers to the Wadatika Paiute language.
+language_programs:
+- name: 'Language & Traditional Culture Program'
+  link: https://burnspaiute-nsn.gov/language-traditional-culture-program/
+  run_by: nation
+  source: burnspaiute-nsn-language-traditional-culture-program
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-27'
+  locator: page title
 federal_administration:
   bureau_of_indian_affairs_region: Northwest
   bureau_of_indian_affairs_agency: Warm Springs Agency
