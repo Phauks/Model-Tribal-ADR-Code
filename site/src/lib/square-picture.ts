@@ -31,6 +31,7 @@ export async function squarePicture(file: File, side: number): Promise<File | nu
 		const blob = await new Promise<Blob | null>((resolve) => canvas.toBlob(resolve, 'image/jpeg', 0.86));
 		return blob ? new File([blob], 'picture.jpg', { type: 'image/jpeg' }) : null;
 	} catch {
+		// expected: a file the browser cannot open as a picture; the page asks for a photo or picture file.
 		return null;
 	}
 }

@@ -252,6 +252,7 @@ export function frontMatterField(frontMatter: string, name: string): string | un
 		try {
 			return JSON.parse(value) as string;
 		} catch {
+			// expected: a quoted title that is not valid JSON keeps its text between the quotes.
 			return value.slice(1, -1);
 		}
 	}

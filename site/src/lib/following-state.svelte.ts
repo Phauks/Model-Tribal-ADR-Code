@@ -8,6 +8,7 @@
  */
 import { readFollowState, signedOutState, type FollowState } from './following.ts';
 import { readSignedInHint } from './signed-in-hint.ts';
+import { sendProblem } from './problem-reports.ts';
 
 class FollowingState {
 	/** The page the current answer is about. */
@@ -34,8 +35,9 @@ class FollowingState {
 			});
 			const answer = response.ok ? readFollowState(await response.json()) : signedOutState;
 			if (this.asked === address) this.current = answer;
-		} catch {
-			// Offline or the Worker could not answer: show the page as for a signed-out reader.
+		} catch (problem) {
+			// Show the page as for a signed-out reader; offline is only noted (sendProblem).
+			sendProblem(problem, { code: 'following.state' });
 			if (this.asked === address) this.current = signedOutState;
 		} finally {
 			if (this.asked === address) this.loading = false;
@@ -58,6 +60,7 @@ class FollowingState {
 			this.current = readFollowState(await response.json());
 			return undefined;
 		} catch {
+			// expected: the reader is shown that the site could not be reached.
 			return 'The site could not be reached. Check the connection and try again.';
 		}
 	}

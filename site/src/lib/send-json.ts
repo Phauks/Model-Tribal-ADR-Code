@@ -21,8 +21,8 @@ export async function sendJson<Answer extends object>(
 		method,
 		headers: { 'content-type': 'application/json', ...options.headers },
 		body: JSON.stringify(payload)
-	}).catch(() => null);
-	const answer = (await response?.json().catch(() => null)) as (Answer & { message?: string }) | null;
+	}).catch(() => /* expected: the request never got an answer; the caller shows notThroughProblem. */ null);
+	const answer = (await response?.json().catch(() => /* expected: an answer that is not JSON gives the caller notThroughProblem to show. */ null)) as (Answer & { message?: string }) | null;
 	if (!response?.ok || !answer || (options.complete && !options.complete(answer))) {
 		return { ok: false, problem: answer?.message || notThroughProblem };
 	}

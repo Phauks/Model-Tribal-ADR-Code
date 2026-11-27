@@ -14,6 +14,7 @@ export function readStored(key: string, area: StorageArea = 'local'): string | n
 	try {
 		return storageFor(area).getItem(key);
 	} catch {
+		// expected: storage is blocked or missing, as in a private window or on the server; nothing is kept.
 		return null;
 	}
 }
@@ -25,6 +26,7 @@ export function writeStored(key: string, value: string | null, area: StorageArea
 		else storageFor(area).setItem(key, value);
 		return true;
 	} catch {
+		// expected: storage refused the value, as when it is blocked or full; the caller is told.
 		return false;
 	}
 }
@@ -36,6 +38,7 @@ export function readStoredJson(key: string, area: StorageArea = 'local'): unknow
 	try {
 		return JSON.parse(text);
 	} catch {
+		// expected: a stored value that is not JSON was not written by this site; it is ignored.
 		return null;
 	}
 }
@@ -46,6 +49,7 @@ export function writeStoredJson(key: string, value: unknown, area: StorageArea =
 	try {
 		text = JSON.stringify(value);
 	} catch {
+		// expected: a value that cannot be written as JSON is not kept; the caller is told.
 		return false;
 	}
 	return writeStored(key, text, area);

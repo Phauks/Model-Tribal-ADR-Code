@@ -48,6 +48,7 @@ export function copyIdOfLink(link: string | undefined | null): string | undefine
 	try {
 		return copyItemId(link.split(/[?#]/)[0]);
 	} catch {
+		// expected: a link that does not name a copy is not one.
 		return undefined;
 	}
 }

@@ -17,6 +17,7 @@
  * These rules are pure, so the server, the Worker's page overlay, the pages
  * and the tests share them.
  */
+import { sendProblem } from './problem-reports.ts';
 
 export const restrictionKinds = ['laws', 'opinions', 'agreements'] as const;
 export type RestrictionKind = (typeof restrictionKinds)[number];
@@ -404,7 +405,9 @@ export function readPageRestrictions(text: string | null | undefined): PageRestr
 		const value = JSON.parse(text) as Partial<PageRestrictions>;
 		if (!value || typeof value.levels !== 'object' || value.levels === null) return noPageRestrictions;
 		return { ...noPageRestrictions, ...value } as PageRestrictions;
-	} catch {
+	} catch (problem) {
+		// The site wrote this text, so text that is not JSON is a fault. What a reader sees is unchanged until Trevor decides whether a fault should hide restricted parts.
+		sendProblem(problem, { code: 'nation-restrictions.page' });
 		return noPageRestrictions;
 	}
 }
