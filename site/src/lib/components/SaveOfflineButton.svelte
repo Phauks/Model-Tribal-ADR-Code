@@ -8,6 +8,7 @@
 	import { page } from '$app/state';
 	import { applyChoices, controllingWorker, pageChoice } from '#lib/offline-saving.ts';
 	import type { PageChoice } from '#lib/offline-choices.ts';
+	import { sendProblem } from '#lib/problem-reports.ts';
 
 	const address = $derived(page.url.pathname);
 	let choice = $state<PageChoice | undefined>();
@@ -24,7 +25,7 @@
 			.then((answer) => {
 				if (asked === page.url.pathname) choice = answer;
 			})
-			.catch(() => undefined);
+			.catch((problem) => sendProblem(problem, { code: 'offline.page-choice' }));
 	});
 
 	async function toggle(): Promise<void> {
@@ -44,7 +45,8 @@
 			choice = await pageChoice(address);
 			if (!saving) message = 'Removed from this device.';
 			else if (!choice.chosen) message = 'This page cannot be saved on its own.';
-		} catch {
+		} catch (problem) {
+			sendProblem(problem, { code: 'offline.save-page' });
 			message = 'The page could not be saved. Try again once you are online.';
 		} finally {
 			working = false;

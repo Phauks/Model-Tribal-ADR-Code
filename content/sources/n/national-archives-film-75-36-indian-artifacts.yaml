@@ -1,0 +1,44 @@
+key: national-archives-film-75-36-indian-artifacts
+kind: federal-agency-document
+citation:
+  type: motion_picture
+  title: Indian Artifacts
+  author:
+  - literal: U.S. Department of the Interior, Bureau of Indian Affairs
+  genre: Motion picture
+  number: NAID 12708
+  archive: National Archives at College Park, Motion Pictures
+  archive_location: Record Group 75, Moving Images Documenting the Life and Culture of North American Indians (NAID 12678), item 75.36
+  URL: https://catalog.archives.gov/id/12708
+  accessed:
+    date-parts:
+    - - 2026
+      - 11
+      - 27
+original_link: https://catalog.archives.gov/id/12708
+retrieved: '2026-11-27'
+rights:
+  status: not-assessed
+  basis: link-only
+  basis_note: The catalog names the Bureau of Indian Affairs as sponsor; the film is not digitized, so the project links to the National Archives' description and keeps no copy.
+  redistribution: false
+jurisdictions:
+- level: federal
+topics:
+- federal-indian-policy-film
+access:
+  open: false
+  pull_from:
+  - library
+  note: Ask the National Archives at College Park, Motion Pictures (mopix@nara.gov) for a viewing or a copy, citing the National Archives Identifier.
+found_in:
+- 2026-11-27-national-archives-films
+notes: 'Indigo Book citation: Indian Artifacts (U.S. Department of the Interior, Bureau of Indian Affairs n.d.) (motion picture), National Archives Identifier 12708, RG 75, item 75.36. The National Archives describes it: "PUBLIC SERVICE ANNOUNCEMENT: Two short announcements advising thepublic not to deface or steal Indian property or artifacts." Not digitized: the National Archives holds the film at College Park, where it can be viewed or copied on request. Chosen as a federal Indian policy item (notices against taking Indian artifacts) by scripts/law/national_archives_films.py; ceremony films and children''s recordings in the same series are left out (CARE principles). Not yet watched or heard in full by a person (Unverified).'
+review:
+  status: unverified
+  by: scripts/law/national_archives_films.py
+  date: '2026-11-27'
+  checks:
+  - check: listing
+    result: missing
+    detail: Only the National Archives Catalog's description was read

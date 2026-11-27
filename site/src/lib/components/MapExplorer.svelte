@@ -41,6 +41,7 @@
 		try {
 			return localStorage.getItem(key);
 		} catch {
+			// expected: storage is blocked, as in a private window; the defaults apply.
 			return null;
 		}
 	}
@@ -48,7 +49,7 @@
 		try {
 			localStorage.setItem(key, value);
 		} catch {
-			// The choice lasts for this visit only.
+			// expected: the choice lasts for this visit only.
 		}
 	}
 </script>
@@ -177,7 +178,7 @@
 			const stored = JSON.parse(readStored(foldedStorage) ?? '{}') as Partial<Record<Section, boolean>>;
 			folded = { ...folded, ...Object.fromEntries(Object.entries(stored).filter(([, value]) => typeof value === 'boolean')) };
 		} catch {
-			// A damaged entry leaves every section open.
+			// expected: a damaged entry leaves every section open.
 		}
 		const keyChoice = readStored(keyStorage);
 		keyFolded = keyChoice === null ? matchMedia('(max-width: 40rem)').matches : keyChoice === 'yes';

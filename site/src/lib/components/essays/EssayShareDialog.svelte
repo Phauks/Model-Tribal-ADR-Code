@@ -81,8 +81,8 @@
 	}
 
 	async function load(): Promise<void> {
-		const response = await fetch(`/workspace/essays/${essay}/sharing`).catch(() => null);
-		const body = (await response?.json().catch(() => null)) as {
+		const response = await fetch(`/workspace/essays/${essay}/sharing`).catch(() => /* expected: offline; the dialog says the list of people could not be loaded. */ null);
+		const body = (await response?.json().catch(() => /* expected: an answer that is not JSON; the dialog says the list of people could not be loaded. */ null)) as {
 			people: Person[];
 			others: typeof others;
 			requests: ReviewRequest[];
@@ -165,6 +165,7 @@
 			notice = 'Link copied. People who can open the essay see the draft there; readers see only what is published.';
 			linkCopied = true;
 		} catch {
+			// expected: the browser would not copy; the notice shows the link.
 			notice = `The link is ${link}`;
 		}
 	}

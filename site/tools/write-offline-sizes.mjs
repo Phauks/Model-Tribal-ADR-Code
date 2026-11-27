@@ -35,7 +35,7 @@ const onRequestFamilies = [
 	{ family: 'sections', prefix: '/laws/usc-25/' },
 	{ family: 'biographies', prefix: '/biographies/' },
 	{ family: 'justices', prefix: '/supreme-court/justices/' },
-	{ family: 'presidents', prefix: '/supreme-court/presidents/' },
+	{ family: 'presidents', prefix: '/presidents/' },
 	{ family: 'courts', prefix: '/supreme-court/' }
 ];
 

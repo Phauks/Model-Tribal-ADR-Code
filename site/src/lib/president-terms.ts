@@ -6,8 +6,7 @@
  * (the sources content/supreme-court/people.yaml already cites): March 4 until
  * 1933, January 20 since, and the day a Vice President took the oath after a
  * President died or resigned. The key is the President's page under
- * /supreme-court/presidents/ where one exists; the four Presidents who
- * appointed no Justice have no page there.
+ * /presidents/; every President has one since Nov. 27, 2026.
  */
 export interface PresidentTerm {
 	name: string;

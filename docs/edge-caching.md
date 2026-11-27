@@ -11,7 +11,7 @@ The site has three kinds of answers.
 
   | Addresses | Kept for | Tag |
   | --- | --- | --- |
-  | `/cases/<id>`, `/laws/<key>`, `/biographies/<person>`, `/supreme-court/justices/<key>`, `/supreme-court/presidents/<key>`, `/supreme-court/<court>`, and the `__data.json` of each | 1 day | `record-pages` |
+  | `/cases/<id>`, `/laws/<key>`, `/biographies/<person>`, `/supreme-court/justices/<key>`, `/presidents/<key>`, `/supreme-court/<court>`, and the `__data.json` of each | 1 day | `record-pages` |
   | `/supreme-court/portraits/<person>` | 30 days | `record-pages` |
   | `/map-tiles/<set>/<z>/<x>/<y>.mvt`, `/map-tiles/imagery/<name>/<z>/<x>/<y>` | 30 days | `map-tiles` |
   | `/map-tiles/assets/…` (the map's fonts and icons) | 7 days | `map-tiles` |

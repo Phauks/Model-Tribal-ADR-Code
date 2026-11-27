@@ -33,7 +33,7 @@ const day = 86_400;
 export const edgeCacheRules = [
 	// Item pages the Worker draws from data built with the site (decision
 	// record 0058): the same for every reader until the next deploy.
-	{ pattern: /^\/(?:cases|laws|biographies)\/[^/]+(?:\/__data\.json)?$/, seconds: day, tags: ['record-pages'], statuses: [200] },
+	{ pattern: /^\/(?:cases|laws|biographies|presidents)\/[^/]+(?:\/__data\.json)?$/, seconds: day, tags: ['record-pages'], statuses: [200] },
 	{ pattern: /^\/supreme-court\/(?:justices|presidents)\/[^/]+(?:\/__data\.json)?$/, seconds: day, tags: ['record-pages'], statuses: [200] },
 	{ pattern: /^\/supreme-court\/(?!justices$|presidents$|portraits$)[^/]+(?:\/__data\.json)?$/, seconds: day, tags: ['record-pages'], statuses: [200] },
 	{ pattern: /^\/supreme-court\/portraits\/[^/]+$/, seconds: 30 * day, tags: ['record-pages'], statuses: [200] },

@@ -121,6 +121,7 @@
 			});
 			if (asked === leakAsked) leaks = found ? 'found' : 'clear';
 		} catch {
+			// expected: the password leak check is another service; the form says the check is unavailable.
 			if (asked === leakAsked) leaks = 'unavailable';
 		}
 	}
@@ -178,7 +179,7 @@
 					keep: Boolean((document.getElementById(`${prefix}keep`) as HTMLInputElement | null)?.checked)
 				})
 			});
-			const result: { location?: string; problem?: string } = await checked.json().catch(() => ({}));
+			const result: { location?: string; problem?: string } = await checked.json().catch(() => /* expected: an answer that is not JSON; the form says the passkey did not work. */ ({}));
 			if (result.location) {
 				location.assign(result.location);
 				return;
