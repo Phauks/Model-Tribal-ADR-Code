@@ -84,7 +84,9 @@ function linkHtml(link: ReadingLink): string {
  * line "Further reading: Wikipedia". Without scripts the button is
  * hidden and the list shows. Empty when there is nothing to list.
  */
-export function readingLinksHtml(readingLinks: ReadingLinks | undefined, saved = ''): string {
+export function readingLinksHtml(readingLinks: ReadingLinks | undefined, saved: string | string[] = ''): string {
+	// A record page puts the original publisher first, and may add a line after it (src/lib/server/record-document.ts).
+	const firstLines = (Array.isArray(saved) ? saved : [saved]).filter(Boolean);
 	const sites: string[] = [];
 	const further: string[] = [];
 	for (const group of readingLinkGroups(readingLinks?.links)) {
@@ -99,12 +101,12 @@ export function readingLinksHtml(readingLinks: ReadingLinks | undefined, saved =
 			}
 		}
 	}
-	const count = (saved ? 1 : 0) + sites.length + further.length;
+	const count = firstLines.length + sites.length + further.length;
 	if (count === 0) return '';
 	// One line for each place, with no dots between them: the saved copy, each other site, then further reading (Trevor, Nov. 23,
 	// 2026: "our saved copy should get its own line and further reading as well"; Nov. 24: "new line each where to read. Don't use dot to separate").
 	const lines = [
-		saved && `<span class="reading-line reading-saved">${saved}</span>`,
+		...firstLines.map((line, index) => `<span class="reading-line${index === 0 && !Array.isArray(saved) ? ' reading-saved' : ''}">${line}</span>`),
 		...sites.map((site) => `<span class="reading-line">${site}</span>`),
 		...further.map((link) => `<span class="reading-line reading-further">Further reading: ${link}</span>`)
 	].filter(Boolean);
