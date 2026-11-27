@@ -63,6 +63,7 @@ function decoded(text: string): string {
 	try {
 		return decodeURIComponent(text);
 	} catch {
+		// expected: a name with a stray % is kept as it is written.
 		return text;
 	}
 }
