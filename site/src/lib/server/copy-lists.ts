@@ -186,6 +186,9 @@ const fixedGroups: Record<string, string> = {
 	acknowledgment: 'Federal acknowledgment documents',
 	...Object.fromEntries(congressLists.map((list) => [list.slug, list.title])),
 	'congressional-research-service': 'Congressional Research Service reports',
+	// The Serial Set's documents on Indian affairs, 1817 to 1899: in the other federal documents' list they made a 29 MiB page,
+	// over Cloudflare's 25 MiB limit for one file (Nov. 27, 2026).
+	'serial-set': 'Congressional Serial Set, 1817 to 1899',
 	'solicitor-opinions': 'Solicitor’s opinions',
 	// Films are large; a list of their own keeps them out of the documents' offline sets.
 	'indian-affairs-films': 'Indian Affairs films',
@@ -199,12 +202,13 @@ const fixedGroups: Record<string, string> = {
 };
 
 /**
- * Court opinion lists longer than pageSize rows (decision record 0060) are split into parts, in the
+ * Court opinion lists longer than pageSize rows (decision record 0060), and the Serial Set's 5,575 documents
+ * (scripts/law/serial_set.py, in the order of their volumes' serial numbers), are split into parts, in the
  * order of the copies' keys (source, reporter, volume): the first part keeps the list's address and
  * the others add "-2", "-3" and so on. One page of thousands of rows is too big for a Worker asset
  * and for the accessibility check, which gives up on a page after 90 seconds.
  */
-const pagedGroups = new Set(['federal-court-opinions', 'state-court-opinions']);
+const pagedGroups = new Set(['federal-court-opinions', 'state-court-opinions', 'serial-set']);
 const pageSize = 2500;
 let pageCache: Map<string, { slug: string; parts: number }> | undefined;
 
