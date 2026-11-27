@@ -42,8 +42,6 @@ export type PageOutline = {
 export type PageFamily = {
 	/** A browsed collection's find box and filters, in place of a list of pages (src/lib/collection-browser.ts). */
 	filters?: import('./collection-browser.ts').FilterColumn;
-	/** Back up to the section, such as "‹ Nations". */
-	back?: { label: string; link: string };
 	/** The family's name, such as the nation's name. */
 	title: string;
 	/** The family's own page, when its name links to one. */

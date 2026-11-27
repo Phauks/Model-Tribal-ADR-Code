@@ -84,7 +84,6 @@ describe('the six sections in the bar under the masthead', () => {
 describe('a nation’s own pages in the side column', () => {
 	it('lists the nation page, and its court opinions only when it has some', () => {
 		expect(nationFamily('navajo-nation', 'Navajo Nation', 949)).toEqual({
-			back: { label: 'Nations', link: '/nations' },
 			title: 'Navajo Nation',
 			pages: [
 				{ label: 'Nation Page', link: '/nations/navajo-nation' },
