@@ -50,7 +50,7 @@
 	import { joinEssayRoom, type EssayRoom, type LiveStatus } from '#lib/essays/live.ts';
 	import SourceList from '#lib/components/SourceList.svelte';
 	import { essaySchema as schema, parseEssay, writeEssay } from '#lib/essays/document.ts';
-	import { boxParts, casePartOrder, citationReferences, joinFrontMatter, lawPartOrder, splitFrontMatter, type BoxPart } from '#lib/essays/syntax.ts';
+	import { boxParts, casePartOrder, citationReferences, frontMatterField, joinFrontMatter, lawPartOrder, setFrontMatterField, splitFrontMatter, type BoxPart } from '#lib/essays/syntax.ts';
 	import type { RenderedEssay } from '#lib/essays/render.ts';
 	import { componentFrames } from '#lib/essays/components.ts';
 	import { checkMarks, issueAt } from '#lib/essays/check-marks.ts';
@@ -118,6 +118,7 @@
 		yourName = null,
 		toolsInMasthead = false,
 		titleExtras,
+		summaryField = false,
 		addChart = null,
 		onsaved,
 		onoutline,
@@ -148,6 +149,12 @@
 		yourName?: string | null;
 		/** Shown under the essay's title in the text, such as where the draft stands. */
 		titleExtras?: Snippet<[TitleExtras]>;
+		/**
+		 * A Summary box under the title that writes the front matter's
+		 * `description`, in place of the front matter box: a News post's
+		 * one-line summary (design/news-section/4).
+		 */
+		summaryField?: boolean;
 		/** Called with the version number after each save. */
 		onsaved?: (version: number) => void;
 		/** Called with the essay's outline as the draft stands, for the sidebar (editor-outline.ts). */
@@ -1541,6 +1548,14 @@
 		markChanged();
 	}
 
+	/** A News post's summary, the front matter's `description`, typed in the Summary box under the title. */
+	const summaryText = $derived(frontMatterField(frontMatter, 'description') ?? '');
+
+	function summaryEdited(value: string): void {
+		frontMatter = setFrontMatterField(frontMatter, 'description', value);
+		frontMatterEdited();
+	}
+
 	function liveText(state: LiveStatus): string {
 		if (state.state === 'connecting') return 'Joining the live room…';
 		if (state.state === 'offline') return 'Offline. Your changes stay here and go to the room when the connection is back.';
@@ -2024,6 +2039,22 @@
 	<!-- Shown under the title in the text (titleExtrasPlugin); kept here until the editor moves it there. -->
 	<div class="title-extras" bind:this={extrasHost}>
 		{#if titleExtras}{@render titleExtras({ inReview: sectionsInReview, ...titleNumbers })}{/if}
+		{#if summaryField}
+			<div class="summary-field">
+				<label for="post-summary">Summary</label>
+				<textarea
+					id="post-summary"
+					rows="1"
+					maxlength="300"
+					value={summaryText}
+					readonly={!editable()}
+					onkeydown={(event) => {
+						if (event.key === 'Enter') event.preventDefault();
+					}}
+					oninput={(event) => summaryEdited(event.currentTarget.value)}
+				></textarea>
+			</div>
+		{/if}
 	</div>
 	{#if naming}
 		<form class="name-version" onsubmit={(event) => { event.preventDefault(); void save().then(() => (naming = false)); }}>
@@ -2185,7 +2216,7 @@
 		{/if}
 	{/if}
 
-	<details class="details">
+	<details class="details" hidden={summaryField}>
 		<summary>Details (front matter)</summary>
 		<p class="small">The title, part and status, in YAML. The title shown on the page comes from here.</p>
 		<label class="visually-hidden" for="front-matter">Front matter</label>
@@ -2643,6 +2674,59 @@
 
 	.title-extras :global(.pills) {
 		margin-bottom: 0;
+	}
+
+	/* A News post's summary, framed and labeled like the components below it. */
+	.summary-field {
+		position: relative;
+		/* The editor keeps its spaces (white-space: break-spaces), which would give the space between the label and the box a line of its own. */
+		white-space: normal;
+		margin-top: calc(2 * var(--space-2) + 1.25rem);
+		margin-bottom: calc(-1 * var(--space-2));
+		outline: 1px dashed var(--color-line);
+		outline-offset: var(--space-2);
+		border-radius: var(--radius-control);
+	}
+
+	.summary-field:focus-within {
+		outline: 2px solid var(--color-link);
+	}
+
+	.summary-field label {
+		position: absolute;
+		top: calc(-1 * var(--space-2) - 0.75em);
+		left: var(--space-2);
+		padding: 0 var(--space-1);
+		background: var(--color-paper);
+		font-size: 0.75rem;
+		font-weight: var(--font-weight-semibold);
+		line-height: 1.5;
+		letter-spacing: 0.04em;
+		text-transform: uppercase;
+		color: var(--color-ink-muted);
+	}
+
+	.summary-field:focus-within label {
+		color: var(--color-link);
+	}
+
+	.summary-field textarea {
+		display: block;
+		width: 100%;
+		min-height: 0;
+		padding: 0;
+		border: 0;
+		background: transparent;
+		color: var(--color-ink-muted);
+		font: inherit;
+		font-style: italic;
+		field-sizing: content;
+		resize: none;
+		user-select: text;
+	}
+
+	.summary-field textarea:focus {
+		outline: 0;
 	}
 
 	/* "With drafts": an amber bar beside each changed component, dotted for a new one (draft-marks.ts), and a purple one beside a section in review, as on essay-editor-mockups/4 and v2-1. */

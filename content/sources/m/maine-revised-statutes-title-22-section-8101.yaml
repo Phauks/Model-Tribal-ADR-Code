@@ -1,0 +1,51 @@
+key: maine-revised-statutes-title-22-section-8101
+kind: state-statute
+citation:
+  type: legislation
+  title: Definitions
+  title-short: Me. Rev. Stat. tit. 22, § 8101
+  container-title: Maine Revised Statutes
+  container-title-short: Me. Rev. Stat.
+  volume: '22'
+  section: '8101'
+  author:
+  - literal: Maine Legislature, Office of the Revisor of Statutes
+  issued:
+    date-parts:
+    - - 1975
+  URL: https://legislature.maine.gov/statutes/22/title22sec8101.html
+  accessed:
+    date-parts:
+    - - 2026
+      - 11
+      - 27
+original_link: https://legislature.maine.gov/statutes/22/title22sec8101.html
+retrieved: '2026-11-27'
+archives: []
+history:
+  status: live
+  last_checked: '2026-11-27'
+state_law:
+  relevance: incidental
+  citation: Me. Rev. Stat. tit. 22, § 8101 (2026)
+rights:
+  status: no-permission-needed
+  basis: government-edict
+  basis_note: 'Official state statutes are not copyrightable under the government edicts doctrine (Georgia v. Public.Resource.Org, Inc., 590 U.S. 255 (2020)). Linked, not served: state statutes stay link only.'
+  redistribution: false
+jurisdictions:
+- level: state
+  state: ME
+topics:
+- state-indian-law
+found_in:
+- 2026-11-27-state-statutes-california-nebraska-utah-maine-florida
+notes: 'Indigo Book citation: Me. Rev. Stat. tit. 22, § 8101 (2026). History: PL 1975, c. 719, §6 (NEW). PL 1981, c. 260, §4 (RPR). PL 1983, c. 629, §1 (AMD). PL 1987, c. 778, §2 (AMD). PL 1989, c. 270, §15 (AMD). PL 1995, c. 301, §1 (AMD). PL 1999, c. 392, §§4,5 (AMD). PL 2003, c. 689, §B6 (REV). PL 2007, c. 324, §§12-15 (AMD). PL 2009, c. 211, Pt. B, §19 (AMD). PL 2009, c. 557, §5 (AMD). PL 2011, c. 186, Pt. A, §1 (AMD). PL 2011, c. 187, §1 (AMD). PL 2013, c. 179, §7 (AMD). PL 2021, c. 98, §§1, 2 (AMD). PL 2021, c. 348, §32 (AMD). PL 2023, c. 39, §2 (AMD). PL 2023, c. 359, §9 (AMD). Text read from the Maine Revisor of Statutes'' page for the section (legislature.maine.gov/statutes) on Nov. 27, 2026. Found by the state statutes sweep (terms: indian child; indian; tribe); AI reader''s verdict incidental: Defines Indian foster home licensed by Indian child''s tribe. Unverified.'
+review:
+  status: unverified
+  by: scripts/law/state_statutes/run.py
+  date: '2026-11-27'
+  checks:
+  - check: 'Indian law section: the sweep''s keyword pass and an AI reader''s verdict (core, incidental or none)'
+    result: agree
+    detail: 'incidental; terms: indian child; indian; tribe'

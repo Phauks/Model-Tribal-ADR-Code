@@ -59,3 +59,7 @@ Each record's copy is the court's opinion only, built from the Project's JSON (o
 ## Privacy holds
 
 The held cases follow the state court set's rules (decision record 0060): cases about children, protected persons and adoptions are not written as records and their copies are not served until a person reviews them. Federal courts name minors and victims by initials, so a case with a party named only by initials (*United States v. B.N.M.*) is held too. Estate cases are shown. The list is in the project's private files under `research/federal-court-opinions/private/`.
+
+## Review, Nov. 27, 2026
+
+Trevor asked on Nov. 27, 2026 for a review of these opinions. AI readers read the passages of 133 shown opinions that either use words about juvenile cases, child victims or foster care three or more times or name a party in the caption the way courts name minors ("United States v. Doe", a first name and an initial). The readers found 107 that are about a specific child: a juvenile defendant, a child victim the opinion describes, or a child's placement. Their records and copies were withdrawn and the cases joined the private held list, so the collection has 12,285 records and 780 cases held for a privacy review. The readers' choices are in the private files beside the held list (privacy-reviews.json), and the next change to `scripts/caselaw/state_court_opinions.py` makes a later run keep them.

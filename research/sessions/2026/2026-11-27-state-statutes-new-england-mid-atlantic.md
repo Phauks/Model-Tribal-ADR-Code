@@ -16,7 +16,7 @@ queries:
 - Which sections of the Vermont, New Jersey, Pennsylvania and Connecticut codes are Indian law, labeled core or incidental, by the Oklahoma pilot's method
 - How well the keyword pass finds them in each state, measured on random samples of the other sections
 sources_added: []
-limits: 'Reader verdicts are Unverified until a person checks them (Trevor will review every state''s labels once all are in). Recall rests on samples of up to 300 non-hits near a strong hit and 300 other non-hits per state. Each record links to the official site and is not served (state statutes stay link only). Sections in force only. Pennsylvania covers the Consolidated Statutes only, not the unconsolidated acts. New Hampshire and West Virginia are not read: both sites reset connections from cloud sessions.'
+limits: 'Reader verdicts are Unverified until a person checks them (Trevor will review every state''s labels once all are in). Recall rests on samples of up to 300 non-hits near a strong hit and 300 other non-hits per state. Each record links to the official site and is not served (state statutes stay link only). Sections in force only. Pennsylvania covers the Consolidated Statutes only, not the unconsolidated acts. New Hampshire and West Virginia are not read: both sites reset connections from cloud sessions, and a separate thread fetches them through Cloudflare.'
 ---
 
 # State statutes sweep, New England and Mid-Atlantic: session notes
@@ -41,4 +41,4 @@ The General Assembly's site sends its certificate without the issuing intermedia
 
 ## New Hampshire and West Virginia
 
-Both legislatures' sites (gc.nh.gov/rsa and code.wvlegislature.gov) reset the connection during the handshake from cloud sessions, as in the fifty-state survey. They are not read in this session; Trevor is choosing where to fetch them from (a runner or Worker outside the cloud session, or his own computer).
+Both legislatures' sites (gc.nh.gov/rsa and code.wvlegislature.gov) reset the connection during the handshake from cloud sessions, as in the fifty-state survey. They are not read in this session; Trevor chose to fetch them through Cloudflare, which a separate thread is doing.
