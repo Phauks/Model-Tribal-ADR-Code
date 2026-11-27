@@ -463,6 +463,8 @@
 								{@render cell(row, column)}
 							{:else if value?.href}
 								<a href={value.href}>{value.text}</a>
+							{:else if value?.parts}
+								{#each value.parts as part, index (index)}{#if index > 0}{'; '}{/if}{#if part.href}<a href={part.href}>{part.text}</a>{:else}{part.text}{/if}{/each}
 							{:else}
 								{value?.text ?? ''}
 							{/if}
