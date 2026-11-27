@@ -1,7 +1,12 @@
 key: ziba-t-peters
 name: Ziba T. Peters
-lead: Signed two treaties with the United States for the Stockbridges, 1839–1856, listed in one as sachem.
+lead: Sachem of the Stockbridge and Munsee tribes, as listed in the Treaty with the Stockbridge and Munsee, 1856. Signed three treaties with the United States, 1839–1856.
 living: false
+names:
+- name: Zeba T. Peters
+  note: as the Treaty with the Stockbridge Tribe, 1848 prints it
+  source: treaty-with-the-stockbridge-tribe-1848
+  where: 9 Stat. 958
 nations:
 - nation: stockbridge-munsee-community
   named_as: Stockbridges
@@ -13,8 +18,12 @@ events:
   text: Signed the Treaty with the Stockbridge and Munsee, 1839, for the Stockbridges.
   source: treaty-with-the-stockbridge-and-munsee-1839
   where: 7 Stat. 581
+- when: Nov. 24, 1848
+  text: Signed the Treaty with the Stockbridge Tribe, 1848, for the Stockbridge tribe.
+  source: treaty-with-the-stockbridge-tribe-1848
+  where: 9 Stat. 958
 - when: Feb. 5, 1856
   text: Signed the Treaty with the Stockbridge and Munsee, 1856, for the Stockbridge and Munsee tribes, listed as sachem.
   source: treaty-with-the-stockbridge-and-munsee-1856
   where: 11 Stat. 668
-checked: '2026-11-24'
+checked: '2026-11-27'

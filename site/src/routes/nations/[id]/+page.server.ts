@@ -2,6 +2,7 @@ import { courtPagePath } from '#lib/court-pages.ts';
 import { peopleOfNation } from '#lib/server/biographies.ts';
 import { error, redirect } from '@sveltejs/kit';
 import type { OutlineItem, PageOutline } from '#lib/site-sections.ts';
+import { nationFamily } from '#lib/nation-family.ts';
 import geometry from 'virtual:map-geometry';
 import { webLink } from '#lib/contact-links.ts';
 import { contactCards, contactsHeading, defaultOfficeFor, type ContactCards } from '#lib/contact-card.ts';
@@ -1401,7 +1402,7 @@ export const load: PageServerLoad = ({ params }) => {
 	}
 	items.push({ label: 'References', link: '#sources-heading' });
 
-	// The sidebar puts the nation and these headings under Directory (src/lib/sidebar-outline.ts).
+	// The side column lists these headings under "On this page", after the nation's own pages (SiteSidebar.svelte).
 	const outline: PageOutline = { title: page.officialName, items };
-	return { ...result, outline };
+	return { ...result, outline, family: nationFamily(record.id, page.officialName, opinions?.count ?? 0) };
 };

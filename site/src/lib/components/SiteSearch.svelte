@@ -24,33 +24,18 @@
 	import ChevronDown from '@lucide/svelte/icons/chevron-down';
 	import Search from '@lucide/svelte/icons/search';
 	import X from '@lucide/svelte/icons/x';
-	import type { RecognitionBadge } from '#lib/recognition-badges.ts';
-	import {
-		countMatches,
-		forEntryGroups,
-		matchEverything,
-		resultGroupLabels,
-		resultGroups,
-		type ResultGroup
-	} from '#lib/search-everything.ts';
+	import { matchEverything, panelAnswer, resultGroupLabels, type PanelAnswer, type ResultGroup } from '#lib/search-everything.ts';
 	import { loadSearchRecords, type SearchRecords } from '#lib/search-records.ts';
-	import { loadSearchIndex, type SearchEntry } from '#lib/site-search.ts';
+	import { loadSearchIndex, prepareSearchIndex, type SearchEntry } from '#lib/site-search.ts';
 
 	let { identifier = 'site-search' }: { identifier?: string } = $props();
 
-	/** Results shown per group in the panel; the search page shows them all. */
+	/** Results shown per group in the panel; the search page shows them all. Keep in step with src/routes/search/query. */
 	const perGroup = 5;
-
-	/** One line in the panel, whatever group it is in. */
-	interface PanelResult {
-		title: string;
-		link: string;
-		matchedName?: string;
-		matchedGroup?: string;
-		badges?: RecognitionBadge[];
-		image?: string;
-		detail?: string;
-	}
+	/** How long typing must pause before the server is asked, in milliseconds. */
+	const serverPause = 120;
+	/** How long after opening the files start downloading when the server has not been asked, in milliseconds. */
+	const filesWait = 1000;
 
 	let scripted = $state(false);
 	let expanded = $state(false);
@@ -77,25 +62,41 @@
 
 	const trimmed = $derived(query.trim());
 	const ready = $derived(entries !== undefined && records !== undefined);
-	const matches = $derived(entries && records && trimmed ? matchEverything(entries, records, trimmed) : undefined);
-	const total = $derived(matches ? countMatches(matches) : 0);
-	const groups = $derived.by(() => {
-		if (!matches) return [];
-		const lists: Record<ResultGroup, PanelResult[]> = {
-			nation: matches.nation.map((match) => match.result),
-			document: matches.document.map((row) => ({
-				title: row.title,
-				link: row.link,
-				detail: [row.kindLabel, row.year, row.nationName].filter(Boolean).join(' · ')
-			})),
-			...forEntryGroups<PanelResult[]>((group) => matches[group])
+	/**
+	 * The server's answer while the files download (src/routes/search/query),
+	 * for the words it answers; once the files are here, the device answers,
+	 * faster and offline, with the same results (src/lib/server/search-tables.ts).
+	 */
+	let fromServer = $state.raw<{ words: string; answer: PanelAnswer } | undefined>();
+	const answer = $derived(
+		entries && records && trimmed ? panelAnswer(matchEverything(entries, records, trimmed), perGroup) : fromServer?.words === trimmed ? fromServer.answer : undefined
+	);
+	const total = $derived(answer?.total ?? 0);
+
+	// Until the files arrive, ask the server a moment after typing stops. A newer search cancels an older one,
+	// and an answer the server cannot give leaves the panel waiting for the files, as it always did.
+	$effect(() => {
+		const words = trimmed;
+		if (!expanded || ready || !words || fromServer?.words === words) return;
+		const controller = new AbortController();
+		const timer = setTimeout(async () => {
+			try {
+				const response = await fetch(`/search/query?q=${encodeURIComponent(words)}`, { signal: controller.signal });
+				if (response.ok) fromServer = { words, answer: (await response.json()) as PanelAnswer };
+			} catch {
+				// Offline or cancelled: the files answer when they come.
+			}
+			if (!controller.signal.aborted) loadFiles();
+		}, serverPause);
+		return () => {
+			clearTimeout(timer);
+			controller.abort();
 		};
-		return resultGroups.map((group) => ({ group, results: lists[group] })).filter((entry) => entry.results.length > 0);
 	});
 	const allLink = $derived(`/search?q=${encodeURIComponent(trimmed)}`);
 	const groupLink = (group: ResultGroup) => `${allLink}&type=${group}`;
 	const status = $derived(
-		!trimmed || !ready
+		!trimmed || !answer
 			? ''
 			: total === 0
 				? `Nothing matches “${trimmed}”.`
@@ -110,12 +111,26 @@
 		const masthead = opener?.closest('header');
 		if (masthead && panel) panel.style.setProperty('--search-panel-top', `${Math.max(masthead.getBoundingClientRect().bottom, 0) + 8}px`);
 		input?.focus();
-		if (!ready && !failed) {
-			try {
-				[entries, records] = await Promise.all([loadSearchIndex(), loadSearchRecords()]);
-			} catch {
-				failed = true;
-			}
+		// The files start downloading once the server has answered the first search, so on a slow connection that
+		// answer is not held up behind them, or after a short wait when nothing is typed.
+		setTimeout(loadFiles, filesWait);
+	}
+
+	let loading = false;
+
+	/** Downloads the search files, once, and searches them on the device from then on. */
+	async function loadFiles() {
+		if (ready || failed || loading) return;
+		loading = true;
+		try {
+			const [index, recordsFile] = await Promise.all([loadSearchIndex(), loadSearchRecords()]);
+			// Fold the names a part at a time before switching from the server's answers, so no keystroke waits for it.
+			await prepareSearchIndex(index);
+			[entries, records] = [index, recordsFile];
+		} catch {
+			failed = true;
+		} finally {
+			loading = false;
 		}
 	}
 
@@ -205,22 +220,22 @@
 			<p class="visually-hidden" id="{identifier}-hint">Results appear below as you type. Use the down arrow to reach them, and Enter to see every result.</p>
 			<p class="visually-hidden" role="status">{status}</p>
 
-			{#if failed}
+			{#if failed && !answer}
 				<p class="message">The search index could not be loaded. Press Enter to open the search page.</p>
-			{:else if trimmed && ready}
+			{:else if trimmed && answer}
 				{#if total === 0}
 					<p class="message">Nothing matches “{trimmed}”. Check the spelling or try fewer words.</p>
 				{:else}
 					<div class="results">
-						{#each groups as { group, results } (group)}
+						{#each answer.groups as { group, count, results } (group)}
 							<details open>
 								<summary>
 									<span class="fold-mark"><ChevronDown size={18} /></span>
 									<span>{resultGroupLabels[group]}</span>
-									<CountBadge count={results.length} />
+									<CountBadge {count} />
 								</summary>
 								<ul>
-									{#each results.slice(0, perGroup) as result (`${result.link} ${result.title}`)}
+									{#each results as result (`${result.link} ${result.title}`)}
 										<li>
 											{#if result.image && !failedImages.has(result.image)}<img
 													class="seal image-backing"
@@ -238,8 +253,8 @@
 											{#if result.detail}<span class="detail">{result.detail}</span>{/if}
 										</li>
 									{/each}
-									{#if results.length > perGroup}
-										<li><a class="more" href={groupLink(group)}>{(results.length - perGroup).toLocaleString('en-US')} more</a></li>
+									{#if count > results.length}
+										<li><a class="more" href={groupLink(group)}>{(count - results.length).toLocaleString('en-US')} more</a></li>
 									{/if}
 								</ul>
 							</details>

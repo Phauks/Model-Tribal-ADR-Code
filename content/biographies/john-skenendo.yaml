@@ -1,11 +1,20 @@
 key: john-skenendo
 name: John Skenendo
-lead: Signed the Treaty with the Oneida, etc., 1794, for the Wolf tribe as eldest war chief.
+lead: Eldest war chief of the Wolf tribe, as listed in the Treaty with the Oneida, etc., 1794. Signed two treaties with the United States, 1794.
 living: false
+names:
+- name: John Sken-en-do-a
+  note: as the Treaty with the Six Nations, 1794 prints it
+  source: treaty-with-the-six-nations-1794
+  where: 7 Stat. 47
 cases: []
 events:
+- when: Nov. 11, 1794
+  text: Signed the Treaty with the Six Nations, 1794, for the Six Nations.
+  source: treaty-with-the-six-nations-1794
+  where: 7 Stat. 47
 - when: Dec. 2, 1794
   text: Signed the Treaty with the Oneida, etc., 1794, for the Wolf tribe, listed as eldest war chief.
   source: treaty-with-the-oneida-etc-1794
   where: 7 Stat. 48
-checked: '2026-11-24'
+checked: '2026-11-27'

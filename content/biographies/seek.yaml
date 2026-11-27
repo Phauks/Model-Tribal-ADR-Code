@@ -1,12 +1,20 @@
 key: seek
 name: Seek
-lead: Signed two treaties with the United States for the Miami tribe, 1826–1834.
+lead: Signed four treaties with the United States for the Miami tribe, 1826–1840.
 living: false
 names:
 - name: Ma-con-saw
   note: as the Treaty with the Miami, 1834 prints it
   source: treaty-with-the-miami-1834
   where: 7 Stat. 461
+- name: Mack kon zaw
+  note: as the Treaty with the Miami, 1828 prints it
+  source: treaty-with-the-miami-1828
+  where: 7 Stat. 310
+- name: Mah-gon-zah
+  note: as the Treaty with the Miami, 1840 prints it
+  source: treaty-with-the-miami-1840
+  where: 7 Stat. 586
 nations:
 - nation: miami-tribe-of-oklahoma
   named_as: Miami tribe
@@ -18,8 +26,16 @@ events:
   text: Signed the Treaty with the Miami, 1826, for the Miami tribe.
   source: treaty-with-the-miami-1826
   where: 7 Stat. 302
+- when: Feb. 11, 1828
+  text: Signed the Treaty with the Miami, 1828, for the Miamies.
+  source: treaty-with-the-miami-1828
+  where: 7 Stat. 310
 - when: Oct. 23, 1834
   text: Signed the Treaty with the Miami, 1834, for the Miami tribe.
   source: treaty-with-the-miami-1834
   where: 7 Stat. 461
-checked: '2026-11-24'
+- when: Nov. 28, 1840
+  text: Signed the Treaty with the Miami, 1840, for the Miami tribe of Indians.
+  source: treaty-with-the-miami-1840
+  where: 7 Stat. 586
+checked: '2026-11-26'
