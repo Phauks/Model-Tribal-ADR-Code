@@ -1,0 +1,44 @@
+key: epa-tribes-approved-for-treatment-as-a-state
+kind: web-page
+citation:
+  type: webpage
+  title: Tribes Approved for Treatment as a State (TAS)
+  author:
+  - literal: U.S. Environmental Protection Agency
+  issued:
+    date-parts:
+    - - 2026
+      - 10
+      - 21
+  URL: https://www.epa.gov/tribal/tribes-approved-treatment-state-tas
+  accessed:
+    date-parts:
+    - - 2026
+      - 11
+      - 27
+original_link: https://www.epa.gov/tribal/tribes-approved-treatment-state-tas
+retrieved: '2026-11-27'
+rights:
+  status: no-permission-needed
+  basis: us-government-work
+  basis_note: A work of the United States government, not subject to copyright (17 U.S.C. § 105).
+  redistribution: true
+jurisdictions:
+- level: federal
+topics:
+- approved-nation-laws
+access:
+  open: true
+  pull_from:
+  - free-web
+found_in:
+- 2026-11-27-approved-nation-laws
+notes: EPA's table of each federally recognized Tribe approved for treatment in a similar manner as a state to run an environmental regulatory program or perform an administrative function under the Clean Air Act, Clean Water Act, Safe Drinking Water Act and Toxic Substances Control Act, and the count of Tribes approved for each program and grant. Page last updated Oct. 21, 2026. Read by scripts/law/approved_nation_laws.py (Unverified).
+review:
+  status: unverified
+  by: scripts/law/approved_nation_laws.py
+  date: '2026-11-27'
+  checks:
+  - check: listing
+    result: missing
+    detail: Read by script only
