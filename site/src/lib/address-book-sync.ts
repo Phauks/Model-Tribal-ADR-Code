@@ -143,6 +143,7 @@ function registrable(address: string | null | undefined): string {
 			.slice(-2)
 			.join('.');
 	} catch {
+		// expected: a link that is not a web address has no domain.
 		return '';
 	}
 }
@@ -162,7 +163,7 @@ export function sourceKindOf(source: string, sourceLink: string | null, nationSi
 		const host = new URL(sourceLink ?? '').hostname.toLowerCase();
 		if (/\.gov$|\.state\.[a-z]{2}\.us$/.test(host)) return 'state-directory';
 	} catch {
-		// No usable link.
+		// expected: no usable link.
 	}
 	return 'other';
 }

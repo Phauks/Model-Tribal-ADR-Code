@@ -1,0 +1,50 @@
+key: pennsylvania-consolidated-statutes-title-18-section-4107-2
+kind: state-statute
+citation:
+  type: legislation
+  title: Deception relating to certification of minority business enterprise or women's business enterprise
+  title-short: 18 Pa. Cons. Stat. § 4107.2
+  container-title: Pennsylvania Consolidated Statutes
+  container-title-short: Pa. Cons. Stat.
+  section: 18:4107.2
+  author:
+  - literal: Pennsylvania General Assembly
+  issued:
+    date-parts:
+    - - 1984
+  URL: https://www.palegis.us/statutes/consolidated/view-statute?txtType=HTM&ttl=18&div=0&chpt=41&sctn=7&subsctn=2
+  accessed:
+    date-parts:
+    - - 2026
+      - 11
+      - 27
+original_link: https://www.palegis.us/statutes/consolidated/view-statute?txtType=HTM&ttl=18&div=0&chpt=41&sctn=7&subsctn=2
+retrieved: '2026-11-27'
+archives: []
+history:
+  status: live
+  last_checked: '2026-11-27'
+state_law:
+  relevance: incidental
+  citation: 18 Pa. Cons. Stat. § 4107.2 (2026)
+rights:
+  status: no-permission-needed
+  basis: government-edict
+  basis_note: 'Official state statutes are not copyrightable under the government edicts doctrine (Georgia v. Public.Resource.Org, Inc., 590 U.S. 255 (2020)). Linked, not served: state statutes stay link only.'
+  redistribution: false
+jurisdictions:
+- level: state
+  state: PA
+topics:
+- state-indian-law
+found_in:
+- 2026-11-27-state-statutes-new-england-mid-atlantic
+notes: 'Indigo Book citation: 18 Pa. Cons. Stat. § 4107.2 (2026). History: (Dec. 21, 1984, P.L.1210, No.230, eff. 60 days) 1984 Amendment. Act 230 added section 4107.2. Text read from the Pennsylvania General Assembly''s page for the title of the Pennsylvania Consolidated Statutes (palegis.us/statutes/consolidated) on Nov. 27, 2026. Found by the state statutes sweep (terms: native americans; native); AI reader''s verdict incidental: Minority business definitions list Native Americans as disadvantaged persons. Unverified.'
+review:
+  status: unverified
+  by: scripts/law/state_statutes/run.py
+  date: '2026-11-27'
+  checks:
+  - check: 'Indian law section: the sweep''s keyword pass and an AI reader''s verdict (core, incidental or none)'
+    result: agree
+    detail: 'incidental; terms: native americans; native'

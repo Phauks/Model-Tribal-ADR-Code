@@ -7,7 +7,9 @@
  * What is sent: the problem's code, its message and stack with secrets taken
  * out, the page's path without its query, and the reference the reader was
  * shown. Nothing about the reader is sent. A page sends at most ten, and the
- * same message once, so a loop cannot flood the site.
+ * same message once, so a loop cannot flood the site. A request that failed
+ * because the reader is offline, or the network dropped it, is not sent: it
+ * says nothing about the site, and could not reach it anyway.
  */
 import { causeChain, codeOf, cut, isReference, newReference, withoutSecrets } from './problems.ts';
 
@@ -26,15 +28,41 @@ export interface BrowserProblem {
 const mostPerPage = 10;
 const sent = new Set<string>();
 
+/** Where a problem happened. The path defaults to the page's own. */
+export interface ProblemPlace {
+	code?: string;
+	path?: string;
+	place?: string;
+	reference?: string;
+}
+
+/**
+ * Whether a problem is the network's rather than the site's: the reader is
+ * offline, or a request never got an answer ("Failed to fetch" in Chrome,
+ * "NetworkError when attempting to fetch resource." in Firefox, "Load
+ * failed" in Safari). An answer with an error status is not one of these;
+ * the site reports its own errors where they happen.
+ */
+export function isNetworkFailure(problem: unknown): boolean {
+	if (typeof navigator !== 'undefined' && navigator.onLine === false) return true;
+	if (problem instanceof DOMException && problem.name === 'NetworkError') return true;
+	return problem instanceof TypeError && /fetch|network|load failed/iu.test(problem.message);
+}
+
+function pagePath(): string {
+	return typeof location === 'undefined' ? '/' : location.pathname;
+}
+
 /** What goes to the site for a problem. Exported for tests. */
-export function browserProblem(problem: unknown, where: { code?: string; path: string; place?: string; reference?: string }): BrowserProblem {
+export function browserProblem(problem: unknown, where: ProblemPlace): BrowserProblem {
+	const path = where.path ?? pagePath();
 	const [message = 'Unknown problem', ...causes] = causeChain(problem).map((text) => cut(withoutSecrets(text), 500));
 	const body: BrowserProblem = {
 		code: codeOf(problem, where.code ?? 'browser.unexpected'),
 		reference: isReference(where.reference) ? where.reference : newReference(),
 		message,
 		causes,
-		path: where.path.split('?')[0] ?? where.path
+		path: path.split('?')[0] ?? path
 	};
 	if (where.place) body.place = where.place;
 	if (problem instanceof Error && problem.stack) body.stack = cut(withoutSecrets(problem.stack), 2000);
@@ -44,10 +72,15 @@ export function browserProblem(problem: unknown, where: { code?: string; path: s
 /**
  * Sends a problem from the browser and returns the reference to show the
  * reader. Sending never throws: if it cannot go, the reader still sees the
- * reference, and the problem stays in the browser's console.
+ * reference, and the problem stays in the browser's console. A network
+ * failure (isNetworkFailure) is only noted in the console.
  */
-export function sendProblem(problem: unknown, where: { code?: string; path: string; place?: string; reference?: string }): string {
+export function sendProblem(problem: unknown, where: ProblemPlace = {}): string {
 	const body = browserProblem(problem, where);
+	if (isNetworkFailure(problem)) {
+		console.warn(body.code, body.reference, problem);
+		return body.reference;
+	}
 	console.error(body.code, body.reference, problem);
 	const key = `${body.code}|${body.message}`;
 	if (sent.has(key) || sent.size >= mostPerPage) return body.reference;

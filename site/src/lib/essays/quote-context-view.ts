@@ -15,6 +15,7 @@
  */
 import { caseMentions, type CasePreviewList } from '../case-links.ts';
 import type { ContextParagraph, QuoteContext } from '../quote-context.ts';
+import { sendProblem } from '../problem-reports.ts';
 
 interface Answer {
 	document: {
@@ -61,7 +62,8 @@ let caseList: Promise<CasePreviewList | null> | undefined;
 function loadCases(): Promise<CasePreviewList | null> {
 	caseList ??= fetch('/cases/previews.json')
 		.then((response) => (response.ok ? (response.json() as Promise<CasePreviewList>) : null))
-		.catch(() => {
+		.catch((problem) => {
+			sendProblem(problem, { code: 'essays.quote-cases' });
 			caseList = undefined;
 			return null;
 		});
@@ -136,7 +138,7 @@ async function fillPanel(panel: HTMLElement, source: string, quote: string, pinp
 	const [answer, cases] = await Promise.all([
 		fetch(`/quote-context?${new URLSearchParams({ source, quote })}`)
 			.then((response) => (response.ok ? (response.json() as Promise<Answer>) : Promise.reject(new Error(String(response.status)))))
-			.catch(() => null),
+			.catch(() => /* expected: the panel says the paragraph could not be loaded; the server reports its own failures, and a failed request is the network. */ null),
 		loadCases()
 	]);
 	panel.removeAttribute('aria-busy');
@@ -248,7 +250,10 @@ export async function addQuoteContext(root: HTMLElement): Promise<() => void> {
 	const open = await fetch(`/quote-context/sources?${new URLSearchParams({ keys: keys.join(',') })}`)
 		.then((response) => (response.ok ? (response.json() as Promise<{ sources: string[] }>) : { sources: [] }))
 		.then((answer) => new Set(answer.sources))
-		.catch(() => new Set<string>());
+		.catch((problem) => {
+			sendProblem(problem, { code: 'essays.quote-sources' });
+			return new Set<string>();
+		});
 	for (const attribution of attributions) {
 		const source = attribution.dataset.quoteSource!;
 		if (!open.has(source) || !attribution.isConnected) continue;

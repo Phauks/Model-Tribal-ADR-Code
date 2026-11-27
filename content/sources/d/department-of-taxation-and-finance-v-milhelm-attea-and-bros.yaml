@@ -100,6 +100,19 @@ reading_links:
     access: subscription
     link: https://advance.lexis.com/api/search?q=512%20U.S.%2061
     unchecked: true
+argument_audio:
+- kind: argument
+  date: '1994-03-23'
+  source: National Archives
+  link: https://catalog.archives.gov/medialz/mopix/267a/RED/267-912.mp3
+  catalog: https://catalog.archives.gov/id/118975039
+  whole_session: true
+  duration_seconds: 11405
+  file:
+    storage_key: supreme-court-audio/national-archives/red-series/267-912.mp3
+    checksum: 12992601979ab9a56a9b1200619a46f4efdb3fdad9142b778da135508773c971
+    media_type: audio/mpeg
+    bytes: 182487372
 rights:
   status: no-permission-needed
   basis: us-government-work

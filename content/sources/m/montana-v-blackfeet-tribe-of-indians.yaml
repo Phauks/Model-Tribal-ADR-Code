@@ -106,6 +106,43 @@ reading_links:
     access: subscription
     link: https://advance.lexis.com/api/search?q=471%20U.S.%20759
     unchecked: true
+argument_audio:
+- kind: argument
+  date: '1985-01-15'
+  source: National Archives
+  link: https://catalog.archives.gov/medialz/mopix/267a/RED/267-510.mp3
+  catalog: https://catalog.archives.gov/id/118974684
+  whole_session: true
+  duration_seconds: 14153
+  file:
+    storage_key: supreme-court-audio/national-archives/red-series/267-510.mp3
+    checksum: a33fca957b6486ca8983139cde8dd3c0d1ab2892224e72fa968716c4df60264e
+    media_type: audio/mpeg
+    bytes: 226444557
+- kind: argument
+  date: '1985-04-23'
+  source: National Archives
+  link: https://catalog.archives.gov/medialz/mopix/267a/RED/267-527-r1.mp3
+  catalog: https://catalog.archives.gov/id/118974702
+  whole_session: true
+  duration_seconds: 6884
+  file:
+    storage_key: supreme-court-audio/national-archives/red-series/267-527-r1.mp3
+    checksum: bebba534b0dc1eaa8a051000abdd745ba7dce0987dadc1350cf7ccda1c54fc8b
+    media_type: audio/mpeg
+    bytes: 110139061
+- kind: argument
+  date: '1985-04-23'
+  source: National Archives
+  link: https://catalog.archives.gov/medialz/mopix/267a/RED/267-527-r2.mp3
+  catalog: https://catalog.archives.gov/id/118974702
+  whole_session: true
+  duration_seconds: 3640
+  file:
+    storage_key: supreme-court-audio/national-archives/red-series/267-527-r2.mp3
+    checksum: 1ac29458633ec1b05e50271e4edf216cdf9867e1b013958511f7f59ffc153ae3
+    media_type: audio/mpeg
+    bytes: 58246503
 rights:
   status: no-permission-needed
   basis: us-government-work

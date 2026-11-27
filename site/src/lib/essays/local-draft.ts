@@ -54,6 +54,6 @@ export function forgetLocalDrafts(): void {
 	try {
 		for (const stored of Object.keys(localStorage)) if (stored.startsWith('essay-draft:')) localStorage.removeItem(stored);
 	} catch {
-		// Storage can be blocked; then nothing was kept.
+		// expected: storage can be blocked; then nothing was kept.
 	}
 }

@@ -104,6 +104,19 @@ reading_links:
     access: subscription
     link: https://advance.lexis.com/api/search?q=485%20U.S.%20439
     unchecked: true
+argument_audio:
+- kind: argument
+  date: '1987-11-30'
+  source: National Archives
+  link: https://catalog.archives.gov/medialz/mopix/267a/RED/267-620.mp3
+  catalog: https://catalog.archives.gov/id/118974792
+  whole_session: true
+  duration_seconds: 13681
+  file:
+    storage_key: supreme-court-audio/national-archives/red-series/267-620.mp3
+    checksum: dac3461a960634ace974d8339226047b7b94d4738a1209730d785f5422e31d6d
+    media_type: audio/mpeg
+    bytes: 218899976
 rights:
   status: no-permission-needed
   basis: us-government-work

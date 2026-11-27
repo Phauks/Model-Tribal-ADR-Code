@@ -4,13 +4,16 @@
  * they are built. Asked once per page from /sign-in/options; nothing while
  * the check is off or the answer does not come.
  */
+import { sendProblem } from './problem-reports.ts';
+
 let asking: Promise<string | undefined> | undefined;
 
 export function turnstileKey(): Promise<string | undefined> {
 	asking ??= fetch('/sign-in/options', { headers: { accept: 'application/json' } })
 		.then((response) => (response.ok ? response.json() : {}))
 		.then((options: { turnstileSiteKey?: string | null }) => options.turnstileSiteKey ?? undefined)
-		.catch(() => {
+		.catch((problem) => {
+			sendProblem(problem, { code: 'sign-in.options' });
 			asking = undefined;
 			return undefined;
 		});

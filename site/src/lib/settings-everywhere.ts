@@ -74,7 +74,7 @@ async function send(): Promise<AccountCopy | undefined> {
 		method: 'PUT',
 		headers: { 'content-type': 'application/json' },
 		body: JSON.stringify({ settings: loadSettings(), theme: loadTheme() })
-	}).catch(() => undefined);
+	}).catch(() => /* expected: offline; the settings panel says the change could not be saved. */ undefined);
 	if (!response?.ok) return undefined;
 	const copy = (await response.json()) as AccountCopy;
 	remember({ on: true, updatedAt: copy.updatedAt });
@@ -88,7 +88,7 @@ export async function turnEverywhereOn(): Promise<boolean> {
 
 /** Turns the switch off and deletes the account's copy. */
 export async function turnEverywhereOff(): Promise<boolean> {
-	const response = await fetch(address, { method: 'DELETE' }).catch(() => undefined);
+	const response = await fetch(address, { method: 'DELETE' }).catch(() => /* expected: offline; the settings panel says the change could not be saved. */ undefined);
 	if (!response?.ok) return false;
 	remember({ on: false, updatedAt: undefined });
 	return true;
@@ -102,7 +102,7 @@ export async function checkAccountCopy(force = false): Promise<EverywhereState> 
 		if (Date.now() - last < checkEveryMinutes * 60 * 1000) return readEverywhere();
 		writeStored(checkedStorageKey, String(Date.now()), 'session');
 	}
-	const response = await fetch(address, { headers: { accept: 'application/json' } }).catch(() => undefined);
+	const response = await fetch(address, { headers: { accept: 'application/json' } }).catch(() => /* expected: offline; the settings on this device stay, and the next page asks again. */ undefined);
 	if (!response?.ok) return readEverywhere();
 	const copy = (await response.json()) as AccountCopy;
 	if (!copy.on || !copy.settings || !copy.theme) {

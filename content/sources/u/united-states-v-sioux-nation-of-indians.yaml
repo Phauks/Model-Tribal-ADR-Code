@@ -108,6 +108,19 @@ reading_links:
     access: subscription
     link: https://advance.lexis.com/api/search?q=448%20U.S.%20371
     unchecked: true
+argument_audio:
+- kind: argument
+  date: '1980-03-24'
+  source: National Archives
+  link: https://catalog.archives.gov/medialz/mopix/267a/RED/267-314.mp3
+  catalog: https://catalog.archives.gov/id/102048696
+  whole_session: true
+  duration_seconds: 15018
+  file:
+    storage_key: supreme-court-audio/national-archives/red-series/267-314.mp3
+    checksum: 8ed75e6119cc91a945772395f5e1ca6f6c7b6e12881658e6216484abc5f4fabd
+    media_type: audio/mpeg
+    bytes: 240285275
 rights:
   status: no-permission-needed
   basis: us-government-work

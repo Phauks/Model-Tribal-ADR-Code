@@ -112,6 +112,31 @@ reading_links:
     access: subscription
     link: https://advance.lexis.com/api/search?q=497%20U.S.%20547
     unchecked: true
+argument_audio:
+- kind: argument
+  date: '1990-03-28'
+  source: National Archives
+  link: https://catalog.archives.gov/medialz/mopix/267a/RED/267-753-r1.mp3
+  catalog: https://catalog.archives.gov/id/118974889
+  whole_session: true
+  duration_seconds: 3761
+  file:
+    storage_key: supreme-court-audio/national-archives/red-series/267-753-r1.mp3
+    checksum: 3784fcbc03da9f17f9853343a86b18888f2672b12ed6710f5bd47e3753d90920
+    media_type: audio/mpeg
+    bytes: 60185833
+- kind: argument
+  date: '1990-03-28'
+  source: National Archives
+  link: https://catalog.archives.gov/medialz/mopix/267a/RED/267-753-r2.mp3
+  catalog: https://catalog.archives.gov/id/118974889
+  whole_session: true
+  duration_seconds: 3853
+  file:
+    storage_key: supreme-court-audio/national-archives/red-series/267-753-r2.mp3
+    checksum: 0b986230fe709b32d324f89d8abe359c96628a811c70eebdd0690b30799bbf14
+    media_type: audio/mpeg
+    bytes: 61650362
 rights:
   status: no-permission-needed
   basis: us-government-work

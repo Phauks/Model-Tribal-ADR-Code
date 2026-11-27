@@ -108,6 +108,41 @@ reading_links:
     access: subscription
     link: https://advance.lexis.com/api/search?q=587%20U.S.%20329
     unchecked: true
+argument_audio:
+- kind: argument
+  date: '2019-01-08'
+  source: Supreme Court of the United States
+  link: https://www.supremecourt.gov/media/audio/mp3files/17-532.mp3
+  duration_seconds: 3685
+  file:
+    storage_key: supreme-court-audio/court/2018/17-532.mp3
+    checksum: c03990e92dc97c5d29d73a8b92cdf55b0b25a91f88ddf70a5bfd56a64aa087d5
+    media_type: audio/mpeg
+    bytes: 29488468
+- kind: argument
+  date: '2019-01-08'
+  source: National Archives
+  link: https://catalog.archives.gov/medialz/mopix/267a/GOLD/Batch_01/267a-2121-January8_2019.mp3
+  catalog: https://catalog.archives.gov/id/183518503
+  whole_session: true
+  duration_seconds: 8180
+  file:
+    storage_key: supreme-court-audio/national-archives/gold-series/267a-2121-january8_2019.mp3
+    checksum: fb9b2f87b458123be0d819a5d3f941f25814e38751cc201065964509a80769d8
+    media_type: audio/mpeg
+    bytes: 163607558
+- kind: opinion announcement
+  date: '2019-05-20'
+  source: National Archives
+  link: https://catalog.archives.gov/medialz/mopix/267a/GOLD/Batch_01/267a-2149-May20_2019.mp3
+  catalog: https://catalog.archives.gov/id/183518531
+  whole_session: true
+  duration_seconds: 1516
+  file:
+    storage_key: supreme-court-audio/national-archives/gold-series/267a-2149-may20_2019.mp3
+    checksum: fdb653db8afaa7d76035d992e100471ff6d90ae0845c513068cc0a84c5669ce9
+    media_type: audio/mpeg
+    bytes: 30318758
 rights:
   status: no-permission-needed
   basis: us-government-work

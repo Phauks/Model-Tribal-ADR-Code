@@ -11,6 +11,7 @@
  * Shared by src/service-worker/index.ts, src/lib/offline-saving.ts and the build's lists
  * (src/routes/copies/offline/), so it must not use the page or the worker's own globals.
  */
+import { sendProblem } from './problem-reports.ts';
 
 /** The cache that holds saved copies. It does not start with the build caches' prefix, so updates leave it alone. */
 export const documentsCacheName = 'documents';
@@ -81,7 +82,8 @@ export async function documentSummary(): Promise<DocumentSetSummary | undefined>
 	try {
 		const response = await fetch(summaryAddress);
 		return response.ok ? ((await response.json()) as DocumentSetSummary) : undefined;
-	} catch {
+	} catch (problem) {
+		sendProblem(problem, { code: 'offline.documents' });
 		return undefined;
 	}
 }

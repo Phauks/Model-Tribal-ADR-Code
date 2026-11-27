@@ -116,6 +116,19 @@ reading_links:
     access: subscription
     link: https://advance.lexis.com/api/search?q=448%20U.S.%20448
     unchecked: true
+argument_audio:
+- kind: argument
+  date: '1979-11-27'
+  source: National Archives
+  link: https://catalog.archives.gov/medialz/mopix/267a/RED/267-294.mp3
+  catalog: https://catalog.archives.gov/id/102048676
+  whole_session: true
+  duration_seconds: 14527
+  file:
+    storage_key: supreme-court-audio/national-archives/red-series/267-294.mp3
+    checksum: d058a4af5a090a8029ed7786fe889143a61781960b9d9e5525436e4733b9d0ff
+    media_type: audio/mpeg
+    bytes: 232441853
 rights:
   status: no-permission-needed
   basis: us-government-work

@@ -108,6 +108,19 @@ reading_links:
     access: subscription
     link: https://advance.lexis.com/api/search?q=470%20U.S.%20226
     unchecked: true
+argument_audio:
+- kind: argument
+  date: '1984-10-01'
+  source: National Archives
+  link: https://catalog.archives.gov/medialz/mopix/267a/RED/267-489.mp3
+  catalog: https://catalog.archives.gov/id/102048865
+  whole_session: true
+  duration_seconds: 12293
+  file:
+    storage_key: supreme-court-audio/national-archives/red-series/267-489.mp3
+    checksum: 5bef62c030e66cfdf63ff385c23b339f471127dd7e70dd2bfd32e5bdd8505c4b
+    media_type: audio/mpeg
+    bytes: 196697984
 rights:
   status: no-permission-needed
   basis: us-government-work

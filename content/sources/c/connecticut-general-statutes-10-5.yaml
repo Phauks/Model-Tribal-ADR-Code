@@ -1,0 +1,47 @@
+key: connecticut-general-statutes-10-5
+kind: state-statute
+citation:
+  type: legislation
+  title: State high school diploma; “honors diploma”; Connecticut State Seal of Biliteracy. Payment of fees; exceptions
+  title-short: Conn. Gen. Stat. § 10-5
+  container-title: General Statutes of Connecticut
+  container-title-short: Conn. Gen. Stat.
+  section: 10-5
+  author:
+  - literal: Connecticut General Assembly
+  URL: https://www.cga.ct.gov/current/pub/chap_163.htm#sec_10-5
+  accessed:
+    date-parts:
+    - - 2026
+      - 11
+      - 27
+original_link: https://www.cga.ct.gov/current/pub/chap_163.htm#sec_10-5
+retrieved: '2026-11-27'
+archives: []
+history:
+  status: live
+  last_checked: '2026-11-27'
+state_law:
+  relevance: incidental
+  citation: Conn. Gen. Stat. § 10-5 (2026)
+rights:
+  status: no-permission-needed
+  basis: government-edict
+  basis_note: 'Official state statutes are not copyrightable under the government edicts doctrine (Georgia v. Public.Resource.Org, Inc., 590 U.S. 255 (2020)). Linked, not served: state statutes stay link only.'
+  redistribution: false
+jurisdictions:
+- level: state
+  state: CT
+topics:
+- state-indian-law
+found_in:
+- 2026-11-27-state-statutes-new-england-mid-atlantic
+notes: 'Indigo Book citation: Conn. Gen. Stat. § 10-5 (2026). History: 1949 Rev., S. 1336; 1951, S. 880d; 1957, P.A. 163, S. 17; February, 1965, P.A. 330, S. 11; P.A. 73-79; P.A. 77-614, S. 302, 587, 610; P.A. 78-218, S. 7; 78-303, S. 85, 136; P.A. 83-146, S. 1, 2; P.A. 84-325, S. 6; P.A. 86-333, S. 1, 32; P.A. 89-251, S. 65, 203; P.A. 91-295, S. 1, 7; P.A. 95-259, S. 2, 32; P.A. 00-157, S. 2, 8; P.A. 12-120, S. 7; P.A. 13-31, S. 4; P.A. 17-29, S. 1; P.A. 18-47, S. 6; P.A. 21-79, S. 7; 21-199, S. 11; P.A. 24-78, S. 5. Text read from the Connecticut General Assembly''s chapter page for the section in the General Statutes of Connecticut, revised to Jan. 1, 2025, or in its 2026 Supplement (cga.ct.gov), on Nov. 27, 2026. Found by the state statutes sweep (terms: native american; native; tribe); AI reader''s verdict incidental: Biliteracy seal counts tribal languages as foreign languages. Unverified.'
+review:
+  status: unverified
+  by: scripts/law/state_statutes/run.py
+  date: '2026-11-27'
+  checks:
+  - check: 'Indian law section: the sweep''s keyword pass and an AI reader''s verdict (core, incidental or none)'
+    result: agree
+    detail: 'incidental; terms: native american; native; tribe'
