@@ -1,0 +1,34 @@
+key: interior-land-buy-back-final-report-2023
+kind: report
+citation:
+  type: report
+  title: 'Land Buy-Back Program for Tribal Nations: Ten Years of Restoring Land and Building Trust 2012-2022'
+  author:
+  - literal: U.S. Department of the Interior
+  container-title: doi.gov
+  URL: https://www.doi.gov/sites/default/files/doi-lbb.pdf
+  issued:
+    date-parts: [[2023, 12]]
+  accessed:
+    date-parts: [[2026, 11, 27]]
+original_link: https://www.doi.gov/sites/default/files/doi-lbb.pdf
+retrieved: '2026-11-27'
+archives: []
+file:
+  storage_key: land-buy-back/interior-land-buy-back-final-report-2023.pdf
+  checksum: 65ee46bd1292437237fb8be4db7bbf987e4445f7df4658d1fd876a17b402b77c
+  media_type: application/pdf
+  bytes: 13814707
+history:
+  status: live
+  last_checked: '2026-11-27'
+rights:
+  status: no-permission-needed
+  basis: us-government-work
+  basis_note: A work of the U.S. Department of the Interior, a federal agency, so not protected by copyright in the United States (17 U.S.C. § 105).
+  redistribution: true
+jurisdictions:
+- level: federal
+found_in:
+- 2026-11-27-land-buy-back-and-spectrum
+notes: 'Indigo Book citation: U.S. Dep''t of the Interior, Land Buy-Back Program for Tribal Nations: Ten Years of Restoring Land and Building Trust 2012-2022 (2023). Interior''s final report on the Program, which carried out the land consolidation part of the Cobell settlement until its money ran out in November 2022. Its table "Sales and consolidation results by location" (pages 28 and 29) gives the amount paid, fractional interests and equivalent acres for each of the 53 locations, six of them in one row. That table prints 17 locations'' figures beside another location''s name (for example $44,429,584 paid at "Colville", where Interior offered about $25 million in all); scripts/tribes/land_buy_back.py keeps the names of the October 2022 cumulative sales table, whose figures agree with each other, and matches each figure row to the table row it continues (research/land-buy-back/locations.csv). Read with pdftotext.'
