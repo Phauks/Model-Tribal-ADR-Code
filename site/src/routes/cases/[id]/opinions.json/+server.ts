@@ -12,10 +12,10 @@
  * Worker's code or the page's built data.
  */
 import { error, json } from '@sveltejs/kit';
-import { publicCopies } from 'virtual:public-copies';
 import type { CasePage } from '#lib/server/case-pages.ts';
 import { builtPageData } from '#lib/server/page-data.ts';
 import { workerEnvironment } from '#lib/server/environment.ts';
+import { servedCopy } from '#lib/server/copy-list.ts';
 import { copyLevel } from '#lib/server/nation-restrictions.ts';
 import { hexDigest } from '#lib/server/public-copy-serving.ts';
 import { opinionTexts, type CaseOpinionTexts } from '#lib/opinion-text.ts';
@@ -23,11 +23,9 @@ import type { RequestHandler } from './$types';
 
 export const prerender = false;
 
-const byKey = new Map(publicCopies.map((copy) => [copy.key, copy]));
-
 export const GET: RequestHandler = async ({ params, url }) => {
 	const page = await builtPageData<CasePage>('cases', params.id, url);
-	const copy = page.opinionCopy ? byKey.get(page.opinionCopy) : undefined;
+	const copy = page.opinionCopy ? await servedCopy(page.opinionCopy) : undefined;
 	if (!copy || copy.mediaType !== 'text/html') error(404, 'This site does not keep the text of this case’s opinions.');
 	const environment = workerEnvironment();
 	if ((await copyLevel(environment.database, copy)) !== 'show') error(404, 'This case’s opinions are not shown on this site.');
