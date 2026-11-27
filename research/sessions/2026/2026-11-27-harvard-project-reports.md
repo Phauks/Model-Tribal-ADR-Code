@@ -28,14 +28,15 @@ sources_added:
 - honoring-nations-2010-leech-lake-joint-tribal-state-jurisdiction
 - honoring-nations-2015-kenaitze-tribal-court
 - honoring-nations-2018-sitka-icwa-partnership
+- garrow-jones-2000-hualapai-department-of-justice
 limits: >-
-  The five policy reports (PRS 93-8, 94-11, 97-5, 98-3 and 99-4) are scans with no text layer; only their title and contents pages were read, so their records carry no annotation. The Kenaitze and Sitka profiles carry no date; their years are the honoree years on the Harvard Project's Justice topic listing. Two items on the list did not come in this batch: Jiway Gwavo, The War Room: Building a Hualapai Department of Justice (2000) and Northwest Intertribal Court System (2003).
+  The six policy reports (PRS 93-8, 94-11, 97-5, 98-3, 99-4 and 00-8) are scans with no text layer; only their title and contents pages were read, so their records carry no annotation. The Kenaitze and Sitka profiles carry no date; their years are the honoree years on the Harvard Project's Justice topic listing. One item on the list did not come in: Northwest Intertribal Court System (2003).
 ---
 
 # Harvard Project reports on Tribal courts
 
-The lead author sent 12 files on 2026-11-26. Eleven are pull list items in section 1k; none was already in the capture index by SHA-256. Each is copyrighted by the Harvard Project, whose terms allow viewing and printing in hard copy and other uses only by permission, so each is a private copy under `reports/` in the bucket that the site cites and links but never serves.
+The lead author sent 12 files in a thread on 2026-11-26 and one more, too large for the thread, through the site's Intake page on 2026-11-27. Twelve are pull list items in section 1k; none was already in the capture index by SHA-256. Each is copyrighted by the Harvard Project, whose terms allow viewing and printing in hard copy and other uses only by permission, so each is a private copy under `reports/` in the bucket that the site cites and links but never serves.
 
-The twelfth file, "Wayback captures.pdf", is a three-page print of the website's own Wayback captures status page in the workspace, not a source document, so it was not filed.
+The other file, "Wayback captures.pdf", is a three-page print of the website's own Wayback captures status page in the workspace, not a source document, so it was not filed.
 
 Methods recorded: peacemaking in the Navajo (1999) and Mississippi Choctaw (2005) profiles, a justice circle in the Kenaitze profile, restorative justice in the Leech Lake profile and (from its title, restitution as an alternative sanction) the Tuba City report, and mediation in the 1997 Hualapai report (Part Three, at 19-30, per its contents page).
