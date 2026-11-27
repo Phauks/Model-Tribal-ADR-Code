@@ -182,19 +182,21 @@ def opinion_page(case: dict, fragment: str, key: str, source_link: str, redactor
     With a redactor (scripts/caselaw/redaction.py), protected people's names are replaced: in brackets in the
     text, without brackets in the heading. The page then says so and does not link to the unredacted original.
 
-    With links (copy_links.CitationLinks), the citations link to this site's pages, or to case.law, as that module says."""
+    With links (copy_links.CitationLinks), the citations of a page that is not redacted link to this site's pages, or to case.law, as that module says."""
     citations = ", ".join(c["cite"] for c in case.get("citations", []))
     name = case.get("name_abbreviation") or case.get("name") or "Opinion"
     court = case["court"]["name"]
     date = case.get("decision_date", "")
     body = re.sub(r"\s+data-(blocks|firstpage|lastpage|case-id)='[^']*'", "", fragment)
     body = re.sub(r'\s+data-(blocks|firstpage|lastpage|case-id)="[^"]*"', "", body)
-    if links is not None:
-        body = links.rewrite(body, key)
     redacted = redactor is not None and bool(redactor.replacements)
     if redacted:
+        # A redacted page keeps no citation links: the redactor takes them out, since their addresses can carry
+        # other words (scripts/caselaw/redaction.py), and linking first would change what it replaces.
         name = redactor.caption(name, case.get("name") or "")
         body = redactor.html(body)
+    elif links is not None:
+        body = links.rewrite(body, key)
     removal = "/requests?kind=remove&record=copies/" + key
     title = f"{name}, {citations} ({court} {date[:4]})" if citations else f"{name} ({court} {date[:4]})"
     if redacted:

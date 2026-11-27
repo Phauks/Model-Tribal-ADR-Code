@@ -116,7 +116,7 @@ def build(args: argparse.Namespace) -> None:
     from redaction import Redactor  # noqa: PLC0415
     _, s3, bucket = bucket_client()
     links = CitationLinks(external=not args.no_external)
-    names = names_map(s3, bucket)
+    names = json.loads(Path(args.names_map).read_text(encoding="utf-8")) if args.names_map else names_map(s3, bucket)
     rows = copy_rows(args.keys)
     out, cache = Path(args.out), Path(args.cache)
     report = {}
@@ -212,6 +212,7 @@ def main() -> None:
     one.add_argument("--out", required=True)
     one.add_argument("--keys", nargs="*")
     one.add_argument("--jobs", type=int, default=8)
+    one.add_argument("--names-map", help="a private copy of the names map to use instead of the bucket's (never in git)")
     one.add_argument("--no-external", action="store_true", help="link only to this site's pages; leave other citations as text")
     two = commands.add_parser("file")
     two.add_argument("--out", required=True)
