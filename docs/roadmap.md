@@ -20,6 +20,19 @@ The collections the website gathers (cases, laws, treaties, reports, land, inter
 
 Peacemaking runs as its own track through every phase. In the model code it is its own division, never a kind of mediation or arbitration ([charter, commitment 3](charter.md#3-peacemaking-as-its-own-track); [decision record 0026](decisions/0026-model-peacemaking-code.md)).
 
+## Organization: the nonprofit and the Indigenous Advisory Council
+
+The project is to become a Nevada nonprofit corporation that applies for 501(c)(3) status; its one-time setup steps and recurring filings are tracked on the workspace's Nonprofit page (`site/src/lib/nonprofit.ts`). Alongside the board, an [Indigenous Advisory Council](indigenous-advisory-council.md) made up only of Indigenous people reviews decisions that affect Native people ([decision record 0067](decisions/0067-form-an-indigenous-advisory-council.md)).
+
+| Step | When | Who |
+| --- | --- | --- |
+| Invite the first council: 3 to 5 Indigenous volunteers, unpaid, advice only, with a hold on sacred or privacy-sensitive items | Now, before incorporation | Trevor and Danielle Finn |
+| First council reviews the decisions listed in the council plan, sacred material and privacy first | After members agree to serve | The council |
+| Add a charter commitment naming the council | After members agree to serve | Trevor |
+| Name the council in the bylaws at the organizing board meeting | When the nonprofit is formed | The board |
+| The council advises on scope and outline at Gate 2 and on consultation at Gate 3 | At those gates | The council |
+| Move to the full council (5 to 7 members, consent over a written list, nominations through nations' offices); decide whether members are paid | When the project has the resources and connections | Trevor and the board |
+
 ## Phase 0: preparation (now)
 
 These steps do not depend on reviewed data and can proceed in parallel with Trevor's review:
