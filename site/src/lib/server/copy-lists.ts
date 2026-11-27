@@ -72,6 +72,52 @@ function boardGroup(copy: PublicCopy): string {
 	return boardSlug(...range);
 }
 
+/**
+ * Congress's documents, in lists by the year of the document (its source record's date), each a few hundred long:
+ * hearings, committee reports from the Serial Set back to the 1820s and from GovInfo since 1995, and committee prints
+ * (scripts/law/congressional_documents.py), then the Congressional Research Service's products (scripts/law/crs_reports.py).
+ */
+const congressLists: { slug: string; title: string; genres: string[]; from?: number; to?: number }[] = [
+	{ slug: 'congressional-hearings-to-1994', title: 'Congressional hearings to 1994', genres: ['Hearing'], to: 1994 },
+	{ slug: 'congressional-hearings-1995-2006', title: 'Congressional hearings, 1995 to 2006', genres: ['Hearing'], from: 1995, to: 2006 },
+	{ slug: 'congressional-hearings-2007-on', title: 'Congressional hearings, 2007 and later', genres: ['Hearing'], from: 2007 },
+	...(
+		[
+			[undefined, 1869],
+			[1870, 1884],
+			[1885, 1894],
+			[1895, 1904],
+			[1905, 1919],
+			[1920, 1925],
+			[1926, 1930],
+			[1931, 1934],
+			[1935, 1940],
+			[1941, 1959],
+			[1960, 1979],
+			[1980, 1994],
+			[1995, 2009],
+			[2010, undefined]
+		] as [number | undefined, number | undefined][]
+	).map(([from, to]) => ({
+		slug: from === undefined ? `committee-reports-to-${to}` : `committee-reports-${from}-${to ?? 'on'}`,
+		title: from === undefined ? `Committee reports to ${to}` : to === undefined ? `Committee reports, ${from} and later` : `Committee reports, ${from} to ${to}`,
+		genres: ['House report', 'Senate report'],
+		from,
+		to
+	})),
+	{ slug: 'committee-prints', title: 'Committee prints', genres: ['Committee print', 'House document', 'Senate document', 'Congressional document'] }
+];
+
+function congressGroup(copy: PublicCopy): string {
+	const record = copy.records.map((key) => sources().get(key)).find((found) => found?.kind === 'congressional-document');
+	const genre = (record?.citation as { genre?: string } | undefined)?.genre ?? '';
+	const year = record?.citation.issued?.['date-parts']?.[0]?.[0] ?? 0;
+	// Other files kept under congress/, such as a bill's text, stay in the other federal documents' list.
+	if (!record) return 'other-federal';
+	const list = congressLists.find((entry) => entry.genres.includes(genre) && (entry.from === undefined || year >= entry.from) && (entry.to === undefined || year <= entry.to));
+	return list?.slug ?? 'committee-prints';
+}
+
 /** The lists that are not one nation's, in page order: federal documents, then state material. */
 const fixedGroups: Record<string, string> = {
 	'supreme-court': 'Supreme Court opinions',
@@ -86,6 +132,8 @@ const fixedGroups: Record<string, string> = {
 	'federal-court-opinions': 'Lower federal court opinions',
 	'gaming-commission': 'National Indian Gaming Commission documents',
 	acknowledgment: 'Federal acknowledgment documents',
+	...Object.fromEntries(congressLists.map((list) => [list.slug, list.title])),
+	'congressional-research-service': 'Congressional Research Service reports',
 	'solicitor-opinions': 'Solicitor’s opinions',
 	'other-federal': 'Other federal documents',
 	// Published state and territorial court opinions (decision record 0060).
@@ -140,6 +188,8 @@ function groupOf(copy: PublicCopy, names: Map<string, string>): string {
 	if (copy.topic === 'federal-register') return 'federal-register';
 	if (copy.topic === 'nigc') return 'gaming-commission';
 	if (copy.topic === 'acknowledgment') return 'acknowledgment';
+	if (copy.topic === 'congress') return congressGroup(copy);
+	if (copy.topic === 'crs') return 'congressional-research-service';
 	if (copy.topic === 'solicitor-opinions') return 'solicitor-opinions';
 	return 'other-federal';
 }

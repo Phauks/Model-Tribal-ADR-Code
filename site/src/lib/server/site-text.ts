@@ -143,6 +143,86 @@ export async function drafts(database: D1Database): Promise<PieceState[]> {
 		.sort((first, second) => (second.draft?.identifier ?? 0) - (first.draft?.identifier ?? 0));
 }
 
+/** How many drafts wait to be published, counting only text still on the site. */
+export function waitingCount(states: ReadonlyMap<string, PieceState>, catalog: ReadonlyMap<string, SiteTextEntry>): number {
+	return [...states.values()].filter((state) => state.draft && catalog.has(state.key)).length;
+}
+
+export interface GoneEdit {
+	key: string;
+	/** The page the edit was made on, if any. */
+	page: string | null;
+	sourceFile: string;
+	/** The edit: the draft's words, or else the published words. */
+	words: string;
+	/** What the code said when the edit was made. */
+	builtInWords: string;
+}
+
+/**
+ * Edits to text the code no longer has, because a later code change
+ * reworded it and so renamed it (docs/site-text.md). An edit someone let
+ * go (a newest version with no words) is left out.
+ */
+export async function goneEdits(
+	database: D1Database,
+	states: ReadonlyMap<string, PieceState>,
+	catalog: ReadonlyMap<string, SiteTextEntry>
+): Promise<GoneEdit[]> {
+	const gone = [...states.values()].filter(
+		(state) => !catalog.has(state.key) && (state.draft ? state.draft.words !== null : state.published !== null)
+	);
+	if (gone.length === 0) return [];
+	const result = await database
+		.prepare(
+			`SELECT v.text_key AS key, v.built_in_words AS builtInWords, v.source_file AS sourceFile,
+			        (SELECT page FROM site_text_versions withPage WHERE withPage.text_key = v.text_key AND withPage.page IS NOT NULL
+			         ORDER BY withPage.identifier DESC LIMIT 1) AS page
+			 FROM site_text_versions v
+			 JOIN (SELECT text_key, MAX(identifier) AS identifier FROM site_text_versions GROUP BY text_key) newest ON newest.identifier = v.identifier
+			 WHERE v.text_key IN (SELECT value FROM json_each(?))`
+		)
+		.bind(JSON.stringify(gone.map((state) => state.key)))
+		.all<{ key: string; builtInWords: string; sourceFile: string; page: string | null }>();
+	const details = new Map(result.results.map((row) => [row.key, row]));
+	return gone.map((state) => {
+		const row = details.get(state.key);
+		return {
+			key: state.key,
+			page: row?.page ?? null,
+			sourceFile: row?.sourceFile ?? '',
+			words: state.draft?.words ?? state.published ?? '',
+			builtInWords: row?.builtInWords ?? ''
+		};
+	});
+}
+
+/**
+ * Lets go of an edit to text the code no longer has: a new version with no
+ * words, so the edit leaves the list. Nothing on the site changes, since no
+ * page shows that text any more.
+ */
+export async function letGo(database: D1Database, key: string, personIdentifier: string, catalog: ReadonlyMap<string, SiteTextEntry>): Promise<void> {
+	if (catalog.has(key)) throw new SiteTextProblem('This text is still on the site. Edit it there instead.', 409);
+	const edit = (await goneEdits(database, await pieceStates(database), catalog)).find((each) => each.key === key);
+	if (!edit) throw new SiteTextProblem('There is no such edit to let go.', 404);
+	await database.batch([
+		database
+			.prepare(
+				`INSERT INTO site_text_versions (text_key, words, built_in_words, source_file, page, person_identifier, created_at)
+				 VALUES (?, NULL, ?, ?, NULL, ?, ?)`
+			)
+			.bind(key, edit.builtInWords, edit.sourceFile, personIdentifier, now()),
+		activityStatement(database, {
+			personIdentifier,
+			action: 'Let go of an edit to site text no longer on the site',
+			targetKind: 'document',
+			targetIdentifier: `site-text:${key}`,
+			note: edit.words
+		})
+	]);
+}
+
 export interface SaveInput {
 	entry: SiteTextEntry;
 	/** Null puts the built-in words back. */

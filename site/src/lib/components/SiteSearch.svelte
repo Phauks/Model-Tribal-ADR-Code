@@ -379,7 +379,10 @@
 		border-radius: 1.25rem;
 		background: var(--color-paper);
 		color: var(--color-ink-muted);
-		box-shadow: 0 0 0 3px var(--color-focus-ring);
+		/* The site's focus ring (F1), 2 px off the box, in the band's ring color. */
+		box-shadow:
+			0 0 0 2px var(--color-band),
+			0 0 0 5px var(--focus-ring);
 	}
 
 	/* With results under it, the box and the results are one card. */

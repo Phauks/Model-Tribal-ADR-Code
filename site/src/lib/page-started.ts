@@ -11,4 +11,6 @@ export function pageStarted(): boolean {
 
 export function markPageStarted(): void {
 	started = true;
+	// Also on the page, as <html data-started="on">, for the checks that press the page's controls (tools/check-accessibility-live.mjs): a control pressed before the page has started may not answer yet.
+	document.documentElement.dataset.started = 'on';
 }

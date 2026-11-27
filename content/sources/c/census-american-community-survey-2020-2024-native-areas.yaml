@@ -1,0 +1,29 @@
+key: census-american-community-survey-2020-2024-native-areas
+kind: dataset
+citation:
+  type: dataset
+  title: American Community Survey 2020-2024 5-Year Estimates, Table-Based Summary File, summary level 250 (American Indian Area/Alaska Native Area/Hawaiian Home Land)
+  author:
+  - literal: U.S. Census Bureau
+  container-title: www2.census.gov
+  URL: https://www2.census.gov/programs-surveys/acs/summary_file/2024/table-based-SF/
+  issued:
+    date-parts: [[2026, 1, 29]]
+  accessed:
+    date-parts: [[2026, 11, 27]]
+original_link: https://www2.census.gov/programs-surveys/acs/summary_file/2024/table-based-SF/
+retrieved: '2026-11-27'
+archives: []
+history:
+  status: live
+  last_checked: '2026-11-27'
+rights:
+  status: no-permission-needed
+  basis: us-government-work
+  basis_note: A work of the U.S. Census Bureau, a federal agency, so not protected by copyright in the United States (17 U.S.C. § 105).
+  redistribution: true
+jurisdictions:
+- level: federal
+found_in:
+- 2026-11-27-congressional-documents
+notes: 'Tables B01003, B02001, B02010, B01002, B19013, B17001, B23025, B15003 and B28002 for the 704 areas at summary level 250 (geographic component 00), read by scripts/tribes/acs_native_areas.py into research/census/acs-2020-2024-native-areas.csv, which the table builder''s "Census areas" dataset shows. Used because api.census.gov refuses the api.data.gov key (it wants a Census key of its own) and redirects keyless requests to a missing-key page. Estimates with margins of error; rates are worked out from the counts. The figures describe everyone living in an area, Native or not, and are not counts of any nation''s citizens.'
