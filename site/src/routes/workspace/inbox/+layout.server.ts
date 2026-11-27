@@ -16,6 +16,8 @@ export const prerender = false;
 
 export const load: LayoutServerLoad = async (event) => {
 	const person = await requireMail(event);
+	// The counts reload when a page says they changed, such as when writing starts a new draft (Composer.svelte).
+	event.depends('mail:counts');
 	const context = mailContext();
 	const inboxes = await reachableInboxes(context, person.identifier);
 	const asked = event.url.searchParams.get('inbox');

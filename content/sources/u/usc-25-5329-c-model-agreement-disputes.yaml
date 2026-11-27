@@ -41,6 +41,11 @@ reading_links:
     label: "Lexis"
     access: subscription
     link: https://advance.lexis.com/api/search?q=25%20U.S.C.%20%C2%A7%205329
+file:
+  storage_key: united-states-code/2024/title-25-section-5329.pdf
+  checksum: d09ab888adff1401899646689d9c906b748da714f42553cc70af58138d3deb85
+  media_type: application/pdf
+  bytes: 166167
 rights:
   status: no-permission-needed
   basis: us-government-work
@@ -70,11 +75,5 @@ access:
 found_in:
 - 2026-11-21-united-states-dispute-resolution
 - 2026-11-21-legal-history-and-key-cases
-notes: >-
-  Read on the original page. Citator check not yet run. Legal history session (2026-11-21):
-  Citations: Pub. L. No. 93-638, § 108, as added by Pub. L. No. 103-413, § 103; 108 Stat. 4260; 25
-  U.S.C. § 5329(c). Also read:
-  https://www.govinfo.gov/content/pkg/STATUTE-108/pdf/STATUTE-108-Pg4250.pdf. Later history: §
-  5329 amended 2000 (Pub. L. 106-568) and 2020 (PROGRESS for Indian Tribes Act, Pub. L. 116-180, §
-  205) per LII credits; whether those amendments touched ¶ (12) was not checked. Westlaw: KeyCite
-  25 U.S.C. § 5329; check whether the 2020 amendments altered ¶ (12).
+- 2026-11-27-us-code-sections
+notes: 'Read on the original page. Citator check not yet run. Legal history session (2026-11-21): Citations: Pub. L. No. 93-638, § 108, as added by Pub. L. No. 103-413, § 103; 108 Stat. 4260; 25 U.S.C. § 5329(c). Also read: https://www.govinfo.gov/content/pkg/STATUTE-108/pdf/STATUTE-108-Pg4250.pdf. Later history: § 5329 amended 2000 (Pub. L. 106-568) and 2020 (PROGRESS for Indian Tribes Act, Pub. L. 116-180, § 205) per LII credits; whether those amendments touched ¶ (12) was not checked. Westlaw: KeyCite 25 U.S.C. § 5329; check whether the 2020 amendments altered ¶ (12). The stored copy is 25 U.S.C. § 5329 from the 2024 edition of the Code on GovInfo (the text with its notes), saved by scripts/law/us_code_sections.py.'
