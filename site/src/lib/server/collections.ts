@@ -18,6 +18,7 @@ import { existsSync, readFileSync } from 'node:fs';
 import path from 'node:path';
 import { documentHistories, glossary, nations, publicCopies, publicCopyFor, repositoryRoot, sources, type SourceRecord } from './content.ts';
 import { parseCsv } from '../csv.ts';
+import { stateName } from '../nation-labels.ts';
 import { biographies, biographyPath } from './biographies.ts';
 import { peopleIndex } from './justice-pages.ts';
 import { courtsWithPages } from './supreme-court-pages.ts';
@@ -34,7 +35,7 @@ import { allSections } from './title-25-sections.ts';
 import { isLawRecord } from './law-records.ts';
 
 /** The headings the collections are grouped under, in page order. */
-export const collectionGroups = ['Native nations', 'Federal law', 'Courts and cases', 'People', 'Reference'] as const;
+export const collectionGroups = ['Native nations', 'Federal law', 'State law', 'Courts and cases', 'People', 'Reference'] as const;
 export type CollectionGroup = (typeof collectionGroups)[number];
 
 /** One item a collection counts, as a row of its list. */
@@ -114,6 +115,23 @@ function sourcesOfKind(kinds: string[], detail?: (record: SourceRecord) => strin
 /** Treaties and the agreements ratified like them, cited as treaties whatever their kind. */
 function treaties(): CollectionItem[] {
 	return [...sources().values()].filter((record) => typeOf(record) === 'treaty').map((record) => sourceItem(record, tribesOf(record)));
+}
+
+/**
+ * State statute sections, each named by its citation and heading ("Okla. Stat. tit. 10, § 40: Short title"), with its state and,
+ * for a section a state's Indian law sweep found, whether it is core or incidental Indian law (scripts/law/oklahoma_statutes.py).
+ */
+function stateStatutes(): CollectionItem[] {
+	return [...sources().values()]
+		.filter((record) => kindOf(record) === 'state-statute')
+		.map((record) => {
+			const short = (record.citation as { 'title-short'?: string })['title-short'];
+			const states = ((record as SourceRecord & { jurisdictions?: { level?: string; state?: string }[] }).jurisdictions ?? []).flatMap((entry) => (entry.level === 'state' && entry.state ? [stateName(entry.state)] : []));
+			const state = [...new Set(states)].join('; ');
+			const relevance = record.state_law?.relevance;
+			const item = sourceItem(record, relevance ? `${state} (${relevance})` : state || undefined);
+			return short && record.citation.title ? { ...item, title: `${short}: ${record.citation.title}` } : item;
+		});
 }
 
 const stateOpinionTopic = 'state-court-indian-law';
@@ -243,6 +261,9 @@ export const collections: Collection[] = [
 		items: () => landCessions().map((cession) => ({ title: `Royce cession ${cession.royce}`, href: `/nations/map?cession=${cession.royce}`, year: cession.dates[0] ? Number(cession.dates[0].slice(0, 4)) : undefined, detail: cession.schedule }))
 	},
 
+	// State law
+	{ identifier: 'state-statutes', search: { group: 'law', label: 'State statute' }, title: 'State Statutes', group: 'State law', detailHeader: 'State', sourceKinds: ['state-statute'], items: stateStatutes },
+
 	// Courts and cases
 	{ identifier: 'supreme-court-cases', search: { group: 'case', label: 'Court case' }, title: 'U.S. Supreme Court Cases', group: 'Courts and cases', items: casesBy(supremeCourt) },
 	{ identifier: 'other-court-cases', search: { group: 'case', label: 'Court case' }, title: 'Other Court Cases', group: 'Courts and cases', detailHeader: 'Court', items: casesBy((authority) => !supremeCourt(authority) && !indianAppealsBoard(authority) && authority !== gamingCommission) },
@@ -325,7 +346,7 @@ export const collections: Collection[] = [
  * collection of their own. A kind in neither this list nor any collection's
  * sourceKinds fails tests/collections.test.ts, so a new data set is not missed.
  */
-export const kindsCountedOnlyAsSources = ['web-page', 'other', 'journal-article', 'report', 'book', 'book-chapter', 'journal', 'dataset', 'state-statute', 'territorial-statute', 'uniform-act', 'model-law', 'court-rule', 'federal-case', 'state-case', 'territorial-case', 'tribal-case'];
+export const kindsCountedOnlyAsSources = ['web-page', 'other', 'journal-article', 'report', 'book', 'book-chapter', 'journal', 'dataset', 'territorial-statute', 'uniform-act', 'model-law', 'court-rule', 'federal-case', 'state-case', 'territorial-case', 'tribal-case'];
 
 export interface CollectionCount {
 	identifier: string;
