@@ -1,6 +1,6 @@
 key: bear
 name: Bear
-lead: Signed two treaties with the United States for the Kickapoo Tribe or Nation, 1815–1816.
+lead: Signed three treaties with the United States for the Kickapoo Tribe or Nation, 1815–1820.
 living: false
 names:
 - name: Paywaynequa
@@ -11,6 +11,10 @@ names:
   note: as the Treaty with the Wea and Kickapoo, 1816 prints it
   source: treaty-with-the-wea-and-kickapoo-1816
   where: 7 Stat. 146
+- name: Paywaneckway
+  note: as the Treaty with the Kickapoo, 1820 prints it
+  source: treaty-with-the-kickapoo-1820
+  where: 7 Stat. 208
 cases: []
 events:
 - when: Sept. 2, 1815
@@ -21,4 +25,8 @@ events:
   text: Signed the Treaty with the Wea and Kickapoo, 1816, for the Kickapoos.
   source: treaty-with-the-wea-and-kickapoo-1816
   where: 7 Stat. 146
-checked: '2026-11-24'
+- when: July 19, 1820
+  text: Signed the Treaty with the Kickapoo, 1820, for the Kickapoo tribe of Indians.
+  source: treaty-with-the-kickapoo-1820
+  where: 7 Stat. 208
+checked: '2026-11-26'

@@ -47,7 +47,13 @@ const phone = { width: 390, height: 844 };
 const allowed = [
 	// The small "Document access" link in each row sits 2 px above the row's
 	// "Remove access" button. Making it a 24 px target moves the buttons.
-	{ where: '/workspace/people as leadAuthor', rule: 'target-size', reason: 'link and button stacked in the Actions column' }
+	{ where: '/workspace/people as leadAuthor', rule: 'target-size', reason: 'link and button stacked in the Actions column' },
+	// The open search panel drops from the masthead over the right of the
+	// section bar (SectionBar.svelte), so axe measures the sections under it
+	// as partly covered. They are behind the panel, which closes on a click
+	// outside it, not beside it.
+	{ where: '/glossary as signedOut › search', rule: 'target-size', reason: 'sections behind the open search panel' },
+	{ where: '/workspace as leadAuthor › search', rule: 'target-size', reason: 'sections behind the open search panel' }
 ];
 
 /* Opening menus and dialogs ------------------------------------------------ */
@@ -103,14 +109,14 @@ const openers = {
 		await mastheadButton(page, 'Sign in');
 		await page.locator('#sign-in-panel form').first().waitFor({ state: 'visible' });
 	},
-	async 'all sections'(page) {
-		await page.locator('.sidebar-wide .pages-column button.back').click();
-		await page.locator('.sidebar-wide .sections-column').waitFor({ state: 'visible' });
+	async 'section menu'(page) {
+		await page.locator('.section-bar summary').first().click();
+		await page.locator('.section-bar details[open] .menu-panel').waitFor({ state: 'visible' });
 	},
 	async 'phone menu'(page) {
 		await page.setViewportSize(phone);
-		await page.locator('.sidebar-narrow summary').click();
-		await page.locator('.sidebar-narrow[open] > nav').waitFor({ state: 'visible' });
+		await page.locator('.sidebar-narrow .menu-sheet > summary').click();
+		await page.locator('.sidebar-narrow .menu-sheet[open] > nav').waitFor({ state: 'visible' });
 	},
 	async 'phone more'(page) {
 		await page.setViewportSize(phone);
@@ -134,7 +140,7 @@ const headerStates = ['search', 'page settings', 'settings', 'settings dropdown'
 /** Each visitor's pages: an address, or an address and the open states to check it in. */
 const visits = {
 	signedOut: [
-		['/glossary', [...headerStates, 'sign-in panel', 'all sections', 'phone menu', 'phone more']],
+		['/glossary', [...headerStates, 'sign-in panel', 'section menu', 'phone menu', 'phone more']],
 		['/nations/hannahville-indian-community', ['follow']],
 		['/supreme-court/burger-court', ['column filter']],
 		// One page of each family the Worker draws from built data (src/lib/server/page-data.ts); the prerendered check no longer sees them.
@@ -216,7 +222,17 @@ const { statements, tokens } = fixtureSessions(signedIn);
 executeLocally(statements);
 
 const worker = await startLocalWorker();
-const browser = await chromium.launch(process.env.CHROMIUM_PATH ? { executablePath: process.env.CHROMIUM_PATH } : {});
+// The browser reaches no other host: every request to one goes to a proxy
+// that is not there and fails at once. Blocking them with context.route()
+// alone is not enough, because Playwright routes a request's first address
+// and not where it is redirected. A copy the local bucket lacks is answered
+// with a redirect to its government address, so the law page's embedded
+// Statutes at Large copy loaded www.govinfo.gov, and when govinfo.gov stopped
+// answering on Nov. 27, 2026 the page's load never finished.
+const browser = await chromium.launch({
+	...(process.env.CHROMIUM_PATH ? { executablePath: process.env.CHROMIUM_PATH } : {}),
+	proxy: { server: 'http://127.0.0.1:9', bypass: '127.0.0.1' }
+});
 const problems = [];
 const accepted = [];
 let checked = 0;

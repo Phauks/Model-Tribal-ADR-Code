@@ -117,6 +117,8 @@ export interface SourceRecord {
 	case_box?: RecordBox;
 	/** A law's box: what it does, quotations and treatment (src/lib/essays/record-boxes.ts). */
 	law_box?: RecordBox;
+	/** A state statute section's Indian law label and citation (schemas/source.schema.json). */
+	state_law?: { relevance: 'core' | 'incidental'; citation: string; act?: string; page?: number };
 }
 
 let sourceCache: Map<string, SourceRecord> | undefined;
@@ -204,6 +206,8 @@ export interface NationRecord {
 	/** Ids of profiles merged into this one; their old page addresses redirect here. */
 	former_ids?: string[];
 	entity_type: string;
+	/** The entity whose entry in the federal list names this band, such as the Minnesota Chippewa Tribe for its six bands. */
+	part_of?: string;
 	names: {
 		official: string;
 		official_source?: string;

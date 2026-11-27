@@ -110,9 +110,19 @@ describe('Biographies of Native people', () => {
 		expect(biographyPage('andrew-jackson')!.glance.find((group) => group.field === 'office')).toBeUndefined();
 	});
 
+	it('gives a treaty signer the offices the treaty names and the terms in Congress', () => {
+		const parris = biographyPage('albion-k-parris')!;
+		expect(parris.lead).toBe('U.S. Representative from Massachusetts and U.S. Senator from Maine. Signed the Treaty with the Winnebago, 1846, for the United States.');
+		const directory = parris.sources.find((source) => source.key === 'biographical-directory-of-the-united-states-congress');
+		expect(directory?.html).toContain('Biographical Directory of the United States Congress');
+		expect(biographyPage('william-clark')!.lead).toContain('Governor of the Missouri Territory');
+	});
+
 	it('marks a page that holds only treaty signings as a stub, and no other', () => {
 		expect(biographyPage('little-robe')!.stub).toEqual({ kind: 'person', record: 'biographies/little-robe' });
-		expect(biographyPage('lewis-cass')!.stub?.kind).toBe('person');
+		expect(biographyPage('william-clark')!.stub?.kind).toBe('person');
+		// Terms in Congress are more than a signing, so Lewis Cass's page is not a stub.
+		expect(biographyPage('lewis-cass')!.stub).toBeUndefined();
 		expect(biographyPage('crow-dog')!.stub).toBeUndefined();
 	});
 });

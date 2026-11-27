@@ -2,7 +2,7 @@ import { describe, expect, it } from 'vitest';
 import { copiesByLink, copyDetailsShard, copyPagePath, copyPath, linkForMatching, type PublicCopy } from '../src/lib/public-copies.ts';
 import { copyDetailShardNames, copyDetails } from '../src/lib/server/copy-lists.ts';
 import { publicCopies } from '../src/lib/server/content.ts';
-import { sectionOf } from '../src/lib/site-sections.ts';
+import { navigationSectionOf } from '../src/lib/site-navigation.ts';
 import {
 	fetchOriginal,
 	hexDigest,
@@ -78,7 +78,7 @@ describe('matching a page link to a copy', () => {
 	it('gives each copy a page inside the site, in the Library section, apart from its file', () => {
 		const page = copyPagePath({ key: 'constitutions/a b/law.pdf' });
 		expect(page).toBe('/copies/view/constitutions/a%20b/law.pdf');
-		expect(sectionOf(page)?.label).toBe('Library');
+		expect(navigationSectionOf(page)?.label).toBe('Library');
 	});
 });
 
@@ -128,6 +128,15 @@ describe('filling the bucket', () => {
 		const changed = new TextEncoder().encode('%PDF-1.4 a different page').buffer as ArrayBuffer;
 		expect(await fetchOriginal(copy, network({ [copy.links[0]]: changed }))).toBeUndefined();
 		expect((await fetchOriginal(copy, network({ [copy.links[1]]: pdf })))?.source).toBe(copy.links[1]);
+	});
+
+	it('gives up on a government site that does not answer', async () => {
+		// A site that never answers, as www.govinfo.gov did on Nov. 27, 2026, until the request is called off.
+		const silent = ((_link: string, init?: RequestInit) =>
+			new Promise<Response>((_resolve, reject) => init?.signal?.addEventListener('abort', () => reject(init.signal?.reason)))) as typeof fetch;
+		const started = Date.now();
+		expect(await fetchOriginal(copy, silent, 50)).toBeUndefined();
+		expect(Date.now() - started).toBeLessThan(2_000);
 	});
 });
 
