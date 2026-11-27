@@ -7,7 +7,9 @@
 	// was divided), its name and citation, a mark for each Justice's vote, the
 	// tally and who wrote for the Court and in dissent. Pointing at a case's
 	// diamond, moving to it with the keyboard or tapping it opens the same card
-	// as the bench charts. Filters by Court, outcome and Justice and a search
+	// as the bench charts. A bar held at the top of the list steps through the
+	// cases one at a time, earlier and later (CaseStepper), and follows the
+	// case passing under it as the list scrolls. Filters by Court, outcome and Justice and a search
 	// by name are kept in the address (?court=, ?outcome=, ?justice=, ?q=), as
 	// are newest first (?order=newest) and the across view (?view=across),
 	// which draws every Justice's service as the Court pages' bench chart.
@@ -22,8 +24,10 @@
 	import BenchChart from '#lib/components/BenchChart.svelte';
 	import Breadcrumbs from '#lib/components/Breadcrumbs.svelte';
 	import CaseDiamond from '#lib/components/CaseDiamond.svelte';
+	import CaseStepper from '#lib/components/CaseStepper.svelte';
 	import CaseVoteCard from '#lib/components/CaseVoteCard.svelte';
 	import CountBadge from '#lib/components/CountBadge.svelte';
+	import FilterSheet from '#lib/components/FilterSheet.svelte';
 	import SearchableDropdown from '#lib/components/SearchableDropdown.svelte';
 	import VoteMark from '#lib/components/VoteMark.svelte';
 	import type { PageProps } from './$types';
@@ -100,6 +104,58 @@
 	let narrow = $state(false);
 	let closing: ReturnType<typeof setTimeout> | undefined;
 	const chosenCase = $derived(chosen ? ordered.find((item) => item.key === chosen) : undefined);
+
+	/* The case bar: the case it is on follows the list as it scrolls past a line just under the bar. */
+	let stepped = $state<string | undefined>();
+	let caseBar = $state<HTMLDivElement>();
+	/** Where a step's own scroll is going: until it gets there, the list does not move the bar. */
+	let stepTarget: number | undefined;
+	let stepTimer: ReturnType<typeof setTimeout> | undefined;
+	const steppedIndex = $derived.by(() => {
+		const index = stepped ? ordered.findIndex((item) => item.key === stepped) : -1;
+		return index === -1 ? undefined : index;
+	});
+	const readingLine = () => (caseBar?.getBoundingClientRect().bottom ?? 0) + 12;
+
+	function onStep(index: number) {
+		const item = ordered[index];
+		if (!item) return;
+		close();
+		stepped = item.key;
+		current = item.key;
+		const row = markOf(item.key)?.closest('.case-row');
+		if (!row) return;
+		const most = document.documentElement.scrollHeight - window.innerHeight;
+		stepTarget = Math.min(Math.max(window.scrollY + row.getBoundingClientRect().top - readingLine(), 0), most);
+		clearTimeout(stepTimer);
+		stepTimer = setTimeout(() => (stepTarget = undefined), 1500);
+		const still = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+		window.scrollTo({ top: stepTarget, behavior: still ? 'auto' : 'smooth' });
+	}
+
+	/** The case whose row has reached the line under the bar, once the list scrolls under it. */
+	function followScroll() {
+		if (across || !caseBar) return;
+		if (stepTarget !== undefined) {
+			if (Math.abs(window.scrollY - stepTarget) > 2) return;
+			stepTarget = undefined;
+			return;
+		}
+		// Above the point where the bar is held, the bar stays on the case it was put on.
+		const held = caseBar.getBoundingClientRect().top <= parseFloat(getComputedStyle(caseBar).top) + 1;
+		if (!held) return;
+		const line = readingLine() + 8;
+		let found: HTMLElement | undefined;
+		for (const row of document.querySelectorAll<HTMLElement>('.supreme-timeline .case-row')) {
+			if (row.getBoundingClientRect().top > line) break;
+			found = row;
+		}
+		const key = found?.querySelector<HTMLElement>('.case-mark')?.dataset.case;
+		if (key && key !== stepped) {
+			stepped = key;
+			current = key;
+		}
+	}
 	const tabStop = $derived(current && ordered.some((item) => item.key === current) ? current : ordered[0]?.key);
 
 	function markOf(key: string): HTMLElement | null {
@@ -122,6 +178,7 @@
 		chosen = key;
 		current = key;
 		how = by;
+		if (by !== 'hover') stepped = key;
 		place();
 	}
 
@@ -242,6 +299,7 @@
 		const onScroll = () => {
 			place();
 			measureView();
+			followScroll();
 		};
 		const onResize = () => {
 			fit();
@@ -312,20 +370,28 @@
 			<Search size={18} aria-hidden="true" />
 			<input type="search" placeholder="Find a case" aria-label="Find a case" bind:value={query} />
 		</span>
-		<button class="button button-quiet" type="button" aria-expanded={filtersOpen} aria-controls="supreme-timeline-filters" onclick={() => (filtersOpen = !filtersOpen)}>
+		<button
+			class="icon-button filters-button"
+			type="button"
+			aria-label="Filters"
+			title="Filters"
+			aria-expanded={filtersOpen}
+			aria-controls="supreme-timeline-filters"
+			onclick={() => (filtersOpen = !filtersOpen)}
+		>
 			<Funnel size={20} aria-hidden="true" />
-			<span>Filters{filterCount > 0 ? ` (${filterCount})` : ''}</span>
+			{#if filterCount > 0}<CountBadge count={filterCount} label={filterCount === 1 ? 'filter set' : 'filters set'} />{/if}
 		</button>
 	</div>
-	<form class="filters no-print" class:open={filtersOpen} id="supreme-timeline-filters" onsubmit={(event) => event.preventDefault()} aria-label="Filters">
-		<div class="filter wide-only">
+	<FilterSheet id="supreme-timeline-filters" bind:open={filtersOpen} count={filterCount}>
+		<div class="filter first wide-only">
 			<label for="supreme-timeline-search" class="visually-hidden">Find a case</label>
 			<span class="search">
 				<Search size={18} aria-hidden="true" />
 				<input id="supreme-timeline-search" type="search" placeholder="Find a case" bind:value={query} />
 			</span>
 		</div>
-		<fieldset class="filter">
+		<fieldset class="filter first-narrow">
 			<legend>Court</legend>
 			{#each courtNames as name (name)}
 				<label class="option">
@@ -357,7 +423,7 @@
 		<div class="filter">
 			<SearchableDropdown label="Justice" id="supreme-timeline-justice" choices={justiceChoices} bind:value={justice} />
 		</div>
-	</form>
+	</FilterSheet>
 
 	<div class="results">
 		<div class="head">
@@ -385,6 +451,11 @@
 				<BenchChart rows={acrossRows} start={from} end={to} cases={matching} width={Math.max(760, 170 + spanYears * 14)} />
 			{/if}
 		{:else}
+			{#if ordered.length > 0}
+				<div class="case-bar" bind:this={caseBar}>
+					<CaseStepper cases={ordered} index={steppedIndex} onmove={onStep} showCourt />
+				</div>
+			{/if}
 			<p class="key small">
 				<span><svg width="16" height="16" viewBox="0 0 16 16" aria-hidden="true"><CaseDiamond cx={8} cy={8} size={5.5} /></svg> Unanimous</span>
 				<span><svg width="16" height="16" viewBox="0 0 16 16" aria-hidden="true"><CaseDiamond cx={8} cy={8} size={5.5} divided /></svg> Divided</span>
@@ -405,7 +476,7 @@
 							<ol class="cases">
 								{#each group.cases as item (item.key)}
 									{@const writers = writersText(item)}
-									<li class="case-row" class:chosen={chosen === item.key} data-year={item.decided?.slice(0, 4)}>
+									<li class="case-row" class:chosen={chosen === item.key || stepped === item.key} data-year={item.decided?.slice(0, 4)}>
 										<span class="date">{dateText(item)}</span>
 										<span class="rail">
 											<button
@@ -497,12 +568,6 @@
 		align-items: start;
 	}
 
-	.filters {
-		position: sticky;
-		top: var(--space-3);
-		font-size: var(--font-size-small);
-	}
-
 	.phone-bar {
 		display: none;
 	}
@@ -515,7 +580,7 @@
 		min-width: 0;
 	}
 
-	.filter:first-child {
+	.filter.first {
 		border-top: 0;
 		padding-top: 0;
 	}
@@ -570,6 +635,21 @@
 	.option .count {
 		color: var(--color-ink-muted);
 		font-variant-numeric: tabular-nums;
+	}
+
+	/* Held at the top of the window while the list scrolls under it. */
+	.case-bar {
+		position: sticky;
+		top: calc(var(--masthead-stuck, 0px) + var(--space-2));
+		z-index: 3;
+		margin-top: var(--space-2);
+	}
+
+	/* Below the Menu strip, which stays at the top on narrower screens. */
+	@media (max-width: 63.99rem) {
+		.case-bar {
+			top: calc(var(--masthead-stuck, 0px) + var(--layout-target-minimum) + 1px + var(--space-1));
+		}
 	}
 
 	.head {
@@ -774,36 +854,34 @@
 			gap: var(--space-3);
 		}
 
+		/* The search and the Filters button stay at the top of the window, under the side column's Menu bar, while the cases scroll (FilterSheet.svelte). */
 		.phone-bar {
+			position: sticky;
+			top: calc(var(--masthead-stuck, 0px) + var(--layout-target-minimum) + 1px);
+			z-index: 3;
 			display: flex;
+			align-items: center;
 			gap: var(--space-2);
+			padding: var(--space-2) 0;
+			border-bottom: 1px solid var(--color-line);
+			background: var(--color-paper);
 		}
 
 		.phone-bar .search {
 			flex: 1;
 		}
 
-		.phone-bar .button {
-			gap: var(--space-2);
+		.filters-button {
+			width: auto;
+			gap: var(--space-1);
+			padding: 0 var(--space-2);
 		}
 
 		.wide-only {
 			display: none;
 		}
 
-		.filters {
-			position: static;
-			display: none;
-		}
-
-		.filters.open {
-			display: block;
-			border: 1px solid var(--color-line);
-			border-radius: var(--radius-panel);
-			padding: var(--space-3) var(--space-4);
-		}
-
-		.filters.open .filter:nth-child(2) {
+		.filter.first-narrow {
 			border-top: 0;
 			padding-top: 0;
 		}

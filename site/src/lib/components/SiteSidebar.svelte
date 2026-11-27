@@ -807,10 +807,8 @@
 
 	.phone-name:focus-visible,
 	.phone-sections summary.toggle:focus-visible {
-		outline: 3px solid var(--color-focus-ring);
+		outline: 3px solid var(--focus-ring);
 		outline-offset: -3px;
-		background: var(--color-focus);
-		color: var(--focus-text);
 	}
 
 	.phone-sections summary.toggle {
