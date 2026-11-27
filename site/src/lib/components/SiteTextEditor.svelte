@@ -253,7 +253,7 @@
 
 	function onClick(event: MouseEvent) {
 		if (!editing || !(event.target instanceof Element)) return;
-		if (event.target.closest('.site-text-box, .site-text-list, .page-controls')) return;
+		if (event.target.closest('.site-text-box, .site-text-list, .site-text-scrim, .page-controls, .more-button')) return;
 		const found = pieceAt(event.target);
 		if (!found) {
 			if (open) close();
@@ -271,7 +271,7 @@
 			return;
 		}
 		if (!editing || event.key !== 'Enter' || !(document.activeElement instanceof Element)) return;
-		if (document.activeElement.closest('.site-text-box, .site-text-list, .page-controls')) return;
+		if (document.activeElement.closest('.site-text-box, .site-text-list, .site-text-scrim, .page-controls, .more-button')) return;
 		const inside = document.activeElement.querySelector('[data-text]') ?? document.activeElement;
 		const found = pieceAt(inside);
 		if (!found) return;
@@ -313,11 +313,14 @@
 		const response = await fetch('/workspace/site-text/list.json').catch(() => null);
 		if (!response?.ok) return;
 		const answer = (await response.json()) as ListAnswer;
+		const sheet = window.matchMedia('(max-width: 37.5rem)').matches;
+		// On a phone the list is a sheet, so the More menu it was opened from closes.
+		if (sheet) document.querySelector<HTMLElement>('#masthead-more:popover-open')?.hidePopover();
 		list = {
 			...answer,
 			done: false,
 			problem: '',
-			sheet: window.matchMedia('(max-width: 37.5rem)').matches,
+			sheet,
 			top: (box?.bottom ?? 60) + window.scrollY + 10,
 			left: Math.max(16, Math.min((box?.left ?? 16) + window.scrollX - 8, window.scrollX + window.innerWidth - width - 16))
 		};
@@ -511,6 +514,7 @@
 
 {#if list}
 	{@const latest = list.publications[0]}
+	{#if list.sheet}<button type="button" class="site-text-scrim" aria-label="Close" onclick={() => (list = null)}></button>{/if}
 	<div
 		class="site-text-list"
 		class:sheet={list.sheet}
@@ -743,6 +747,13 @@
 		max-height: calc(100vh - 96px);
 		overflow: auto;
 		padding-top: 0;
+	}
+	.site-text-scrim {
+		position: fixed;
+		inset: 0;
+		z-index: 59;
+		border: 0;
+		background: color-mix(in srgb, var(--color-ink) 35%, transparent);
 	}
 	.site-text-list.sheet {
 		position: fixed;
