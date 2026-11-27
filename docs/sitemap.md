@@ -47,6 +47,7 @@ Then submit `https://triballawproject.org/sitemap.xml` in Google Search Console 
 - `site/src/routes/sitemaps/built/[part].json`: the lists as built.
 - `site/src/lib/server/sitemap-live.ts`, `site/src/routes/sitemap.xml`, `site/src/routes/sitemaps/[part].xml`: what a crawler gets.
 - `site/tools/nation-page-changes-worker.js`: answers "not found" for the lists as built, so only the Worker reads them.
+- `site/tools/edge-cache-worker.js`: Cloudflare's edge keeps the index and each part for up to an hour under the `nation-restrictions` tag, so a nation's new choice purges them at once ([edge-caching.md](edge-caching.md)). A newly published essay or a nation's own page change can take that hour to appear, since neither purges.
 
 [^protocol]: Sitemaps.org, *Sitemaps XML format* (2016), https://www.sitemaps.org/protocol.html ("Each Sitemap file that you provide must have no more than 50,000 URLs and must be no larger than 50MB"; sitemap index files).
 [^robots]: M. Koster et al., *Robots Exclusion Protocol*, RFC 9309 (2022), https://www.rfc-editor.org/rfc/rfc9309; the `Sitemap:` line is from Sitemaps.org, *Sitemaps XML format*, "Informing search engine crawlers".

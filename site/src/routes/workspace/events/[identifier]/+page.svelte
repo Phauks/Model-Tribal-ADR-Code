@@ -54,6 +54,7 @@
 		{ label: 'Workspace', href: '/workspace' },
 		{ label: 'Events', href: '/workspace/events' }
 	]}
+	current={data.event.title}
 />
 <h1>{data.event.title}</h1>
 <p>

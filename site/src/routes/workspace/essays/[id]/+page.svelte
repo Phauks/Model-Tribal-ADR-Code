@@ -39,6 +39,7 @@
 		...(section ? [{ label: section.label, href: section.link }] : []),
 		{ label: data.title, href: data.page }
 	]}
+	current={data.title}
 />
 
 <h1>{data.title}</h1>

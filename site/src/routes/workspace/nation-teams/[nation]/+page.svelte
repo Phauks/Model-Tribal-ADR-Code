@@ -203,6 +203,7 @@
 			{ label: 'Workspace', href: '/workspace' },
 			{ label: 'Nation teams', href: '/workspace/nation-teams' }
 		]}
+		current="{the(data.nation.title).replace(/^the /, 'The ')}’s team"
 	/>
 {/if}
 <!-- The title comes right after the breadcrumbs, which pull it up to meet them

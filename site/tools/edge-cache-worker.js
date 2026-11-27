@@ -47,7 +47,11 @@ export const edgeCacheRules = [
 	// (src/routes/restricted-files), so a nation's new choice purges them
 	// (src/lib/server/edge-cache.ts); five minutes is the longest they could
 	// stay if that purge failed.
-	{ pattern: /^\/search\/(?:index|records)\.json$/, seconds: 300, tags: ['nation-restrictions'], statuses: [200] }
+	{ pattern: /^\/search\/(?:index|records)\.json$/, seconds: 300, tags: ['nation-restrictions'], statuses: [200] },
+	// The sitemap (src/lib/sitemap.ts) leaves out what nations hid too, so it
+	// is purged with them. It also adds published essays and nations' own
+	// page changes, which purge nothing: an hour is how late those can be.
+	{ pattern: /^\/(?:sitemap|sitemaps\/[a-z]+(?:-[a-z]+)*(?:-\d+)?)\.xml$/, seconds: 3600, tags: ['nation-restrictions'], statuses: [200] }
 ];
 
 export const edgeHeader = 'cloudflare-cdn-cache-control';

@@ -15,6 +15,7 @@
 		{ label: 'Workspace', href: '/workspace' },
 		{ label: 'Events', href: '/workspace/events' }
 	]}
+	current="Add an event"
 />
 <h1>Add an event</h1>
 <p>The event is saved as a draft. Add the kinds of seat and the speakers on the next page, then publish it.</p>
