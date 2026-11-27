@@ -69,7 +69,7 @@ export function pictureCredit(picture: SupremeCourtPicture): string {
 	return [maker, source, picture.license].filter(Boolean).join('. ') + '.';
 }
 
-/** A person's or a Court's picture as At a glance shows it. */
+/** A person's or a Court's picture as Key facts shows it. */
 export function pictureView(subject: string): InfoPicture | undefined {
 	const picture = pictureOf(subject);
 	if (!picture) return undefined;

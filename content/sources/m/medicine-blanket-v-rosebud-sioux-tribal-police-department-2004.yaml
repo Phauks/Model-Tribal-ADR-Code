@@ -1,0 +1,55 @@
+key: medicine-blanket-v-rosebud-sioux-tribal-police-department-2004
+kind: federal-case
+citation:
+  type: legal_case
+  title: Medicine Blanket v. Rosebud Sioux Tribal Police Department
+  authority: United States Court of Appeals for the Eighth Circuit
+  container-title: F. App'x
+  volume: '91'
+  page: '533'
+  issued:
+    date-parts:
+    - - 2004
+      - 3
+      - 24
+  URL: https://static.case.law/f-appx/91/html/0533-01.html
+  accessed:
+    date-parts:
+    - - 2026
+      - 11
+      - 26
+original_link: https://static.case.law/f-appx/91/html/0533-01.html
+retrieved: '2026-11-26'
+archives: []
+history:
+  status: live
+  last_checked: '2026-11-26'
+rights:
+  status: no-permission-needed
+  basis: government-edict
+  basis_note: The text of a judicial opinion has no copyright (Georgia v. Public.Resource.Org, Inc., 590 U.S. 255 (2020)). The copy served on this site is the court's opinion only, without the publisher's headnotes, synopsis or other editorial matter (decision record 0060).
+  redistribution: true
+nations_in_case:
+  checked: '2026-11-26'
+  named: []
+  not_linked:
+  - named_as: Redbud Sioux Indian Reservation
+    reason: More than one of today's nations shares this name (assiniboine-and-sioux-tribes-of-the-fort-peck-indian-reservation, cheyenne-river-sioux-tribe-of-the-cheyenne-river-reservation, crow-creek-sioux-tribe-of-the-crow-creek-reservation, flandreau-santee-sioux-tribe-of-south-dakota, lower-brule-sioux-tribe-of-the-lower-brule-reservation, lower-sioux-indian-community-in-the-state-of-minnesota and 7 more); which the case concerns has not been checked.
+jurisdictions:
+- level: federal
+topics:
+- federal-court-indian-law
+found_in:
+- 2026-11-26-federal-court-indian-law-opinions
+notes: Published at 91 F. App'x 533. Decided by the United States Court of Appeals for the Eighth Circuit on Mar. 24, 2004. Found by scripts/caselaw/state_court_opinions.py in the Caselaw Access Project's volumes, with an Indian law term score of 5; an AI reader read excerpts and judged it an Indian law case (tribal police conduct on reservation, tribal court).
+review:
+  status: unverified
+  by: scripts/caselaw/state_court_opinions.py
+  date: '2026-11-26'
+  checks:
+  - check: 'Indian law case: the term score and, below the score kept without a reading, an AI reader''s judgment of excerpts'
+    result: agree
+    detail: 'score 5; reader: tribal police conduct on reservation, tribal court'
+  - check: Nations named in the caption, matched to nation records by name
+    result: missing
+    detail: 0 matched, 1 not linked

@@ -1,0 +1,69 @@
+key: citizen-band-of-potawatomi-indians-1979
+kind: federal-case
+citation:
+  type: legal_case
+  title: Citizen Band of Potawatomi Indians
+  authority: United States Court of Claims
+  container-title: Ct. Cl.
+  volume: '221'
+  page: '847'
+  issued:
+    date-parts:
+    - - 1979
+      - 8
+      - 24
+  URL: https://static.case.law/us-ct-cl/221/html/0847-01.html
+  accessed:
+    date-parts:
+    - - 2026
+      - 11
+      - 26
+original_link: https://static.case.law/us-ct-cl/221/html/0847-01.html
+retrieved: '2026-11-26'
+archives: []
+history:
+  status: live
+  last_checked: '2026-11-26'
+rights:
+  status: no-permission-needed
+  basis: government-edict
+  basis_note: The text of a judicial opinion has no copyright (Georgia v. Public.Resource.Org, Inc., 590 U.S. 255 (2020)). The copy served on this site is the court's opinion only, without the publisher's headnotes, synopsis or other editorial matter (decision record 0060).
+  redistribution: true
+tribes:
+- citizen-potawatomi-nation
+- hannahville-indian-community
+nations_in_case:
+  checked: '2026-11-26'
+  named:
+  - nation: citizen-potawatomi-nation
+    named_as: Citizen Band of Potawatomi Indians
+    role: party
+    historical: true
+    note: Matched by the script to the only nation record sharing this name; not yet checked against the case's history.
+  - nation: hannahville-indian-community
+    named_as: Hannahville Indian Community
+    role: party
+    note: Matched by the script to the nation record of the same name; not yet checked.
+  not_linked:
+  - named_as: Pottawatomie Tribe of Indians
+    reason: No nation record matches this name; it may be a historical name or a group that is not a recognized nation today.
+  - named_as: Prairie Band
+    reason: More than one of today's nations shares this name (prairie-band-potawatomi-nation, prairie-island-indian-community-in-the-state-of-minnesota); which the case concerns has not been checked.
+jurisdictions:
+- level: federal
+topics:
+- federal-court-indian-law
+found_in:
+- 2026-11-26-federal-court-indian-law-opinions
+notes: Published at 221 Ct. Cl. 847. Decided by the United States Court of Claims on Aug. 24, 1979. Found by scripts/caselaw/state_court_opinions.py in the Caselaw Access Project's volumes, with an Indian law term score of 5; an AI reader read excerpts and judged it an Indian law case (Potawatomi attorney fee on Indian claim judgment).
+review:
+  status: unverified
+  by: scripts/caselaw/state_court_opinions.py
+  date: '2026-11-26'
+  checks:
+  - check: 'Indian law case: the term score and, below the score kept without a reading, an AI reader''s judgment of excerpts'
+    result: agree
+    detail: 'score 5; reader: Potawatomi attorney fee on Indian claim judgment'
+  - check: Nations named in the caption, matched to nation records by name
+    result: missing
+    detail: 2 matched, 2 not linked

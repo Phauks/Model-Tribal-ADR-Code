@@ -22,7 +22,7 @@
 </script>
 
 <Collapsible heading="Text" {identifier}>
-	<!-- Its own block, so the frame takes the width beside At a glance instead of dropping below it. -->
+	<!-- Its own block, so the frame takes the width beside Key facts instead of dropping below it. -->
 	<div class="saved-text-box">
 		{#if isPdf}
 			<iframe class="saved-text" src={file} title="{name} (PDF)" loading="lazy"></iframe>

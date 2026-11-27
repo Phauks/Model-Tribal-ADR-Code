@@ -26,7 +26,7 @@ beforeAll(() => {
 	records = expandRecords(searchRecords());
 	links = new Set([...entries.map((entry) => entry.link), ...records.documents.map((row) => row.link)]);
 	// Reading every record the first time takes a while.
-}, 120_000);
+}, 180_000);
 
 /** Every link a search for these words finds, in any group. */
 function found(query: string): string[] {

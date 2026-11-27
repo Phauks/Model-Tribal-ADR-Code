@@ -1,0 +1,52 @@
+key: united-states-v-dooley-1906
+kind: federal-case
+citation:
+  type: legal_case
+  title: United States v. Dooley
+  authority: United States Circuit Court for the Eastern District of Washington
+  container-title: F.
+  volume: '151'
+  page: '697'
+  issued:
+    date-parts:
+    - - 1906
+      - 12
+      - 13
+  URL: https://static.case.law/f/151/html/0697-01.html
+  accessed:
+    date-parts:
+    - - 2026
+      - 11
+      - 26
+original_link: https://static.case.law/f/151/html/0697-01.html
+retrieved: '2026-11-26'
+archives: []
+history:
+  status: live
+  last_checked: '2026-11-26'
+rights:
+  status: no-permission-needed
+  basis: government-edict
+  basis_note: The text of a judicial opinion has no copyright (Georgia v. Public.Resource.Org, Inc., 590 U.S. 255 (2020)). The copy served on this site is the court's opinion only, without the publisher's headnotes, synopsis or other editorial matter (decision record 0060).
+  redistribution: true
+nations_in_case:
+  checked: '2026-11-26'
+  named: []
+jurisdictions:
+- level: federal
+topics:
+- federal-court-indian-law
+found_in:
+- 2026-11-26-federal-court-indian-law-opinions
+notes: Published at 151 F. 697. Decided by the United States Circuit Court for the Eastern District of Washington on Dec. 13, 1906. Found by scripts/caselaw/state_court_opinions.py in the Caselaw Access Project's volumes, with an Indian law term score of 3; an AI reader read excerpts and judged it an Indian law case (Yakima allottee deed clouding trust title).
+review:
+  status: unverified
+  by: scripts/caselaw/state_court_opinions.py
+  date: '2026-11-26'
+  checks:
+  - check: 'Indian law case: the term score and, below the score kept without a reading, an AI reader''s judgment of excerpts'
+    result: agree
+    detail: 'score 3; reader: Yakima allottee deed clouding trust title'
+  - check: Nations named in the caption, matched to nation records by name
+    result: agree
+    detail: 0 matched, 0 not linked

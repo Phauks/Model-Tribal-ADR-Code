@@ -1,0 +1,67 @@
+key: cayuga-nation-v-tanner-2016
+kind: federal-case
+citation:
+  type: legal_case
+  title: Cayuga Nation v. Tanner
+  authority: United States Court of Appeals for the Second Circuit
+  container-title: F.3d
+  volume: '824'
+  page: '321'
+  issued:
+    date-parts:
+    - - 2016
+      - 6
+      - 2
+  URL: https://static.case.law/f3d/824/html/0321-01.html
+  accessed:
+    date-parts:
+    - - 2026
+      - 11
+      - 26
+original_link: https://static.case.law/f3d/824/html/0321-01.html
+retrieved: '2026-11-26'
+archives: []
+history:
+  status: live
+  last_checked: '2026-11-26'
+rights:
+  status: no-permission-needed
+  basis: government-edict
+  basis_note: The text of a judicial opinion has no copyright (Georgia v. Public.Resource.Org, Inc., 590 U.S. 255 (2020)). The copy served on this site is the court's opinion only, without the publisher's headnotes, synopsis or other editorial matter (decision record 0060).
+  redistribution: true
+tribes:
+- cayuga-nation
+nations_in_case:
+  checked: '2026-11-26'
+  named:
+  - nation: cayuga-nation
+    named_as: Cayuga Nation
+    role: party
+    note: Matched by the script to a name the nation record gives; not yet checked.
+  not_linked:
+  - named_as: Village of Union Springs Code Enforcement Officer
+    reason: More than one of today's nations shares this name (cold-springs-rancheria-of-mono-indians-of-california, confederated-tribes-of-the-warm-springs-reservation-of-oregon, fort-sill-chiricahua-warm-springs-apache-tribe, manley-hot-springs-village, shingle-springs-band-of-miwok-indians-shingle-springs-rancheria); which the case concerns has not been checked.
+  - named_as: Village of Union Springs Mayor
+    reason: More than one of today's nations shares this name (cold-springs-rancheria-of-mono-indians-of-california, confederated-tribes-of-the-warm-springs-reservation-of-oregon, fort-sill-chiricahua-warm-springs-apache-tribe, manley-hot-springs-village, shingle-springs-band-of-miwok-indians-shingle-springs-rancheria); which the case concerns has not been checked.
+  - named_as: Village of Union Springs Attorney
+    reason: More than one of today's nations shares this name (cold-springs-rancheria-of-mono-indians-of-california, confederated-tribes-of-the-warm-springs-reservation-of-oregon, fort-sill-chiricahua-warm-springs-apache-tribe, manley-hot-springs-village, shingle-springs-band-of-miwok-indians-shingle-springs-rancheria); which the case concerns has not been checked.
+  - named_as: Village of Union Springs
+    reason: More than one of today's nations shares this name (cold-springs-rancheria-of-mono-indians-of-california, confederated-tribes-of-the-warm-springs-reservation-of-oregon, fort-sill-chiricahua-warm-springs-apache-tribe, manley-hot-springs-village, shingle-springs-band-of-miwok-indians-shingle-springs-rancheria); which the case concerns has not been checked.
+jurisdictions:
+- level: federal
+topics:
+- federal-court-indian-law
+found_in:
+- 2026-11-26-federal-court-indian-law-opinions
+notes: Published at 824 F.3d 321. Decided by the United States Court of Appeals for the Second Circuit on June 2, 2016. Found by scripts/caselaw/state_court_opinions.py in the Caselaw Access Project's volumes, with an Indian law term score of 44, at or above 10, the level kept without a reading.
+review:
+  status: unverified
+  by: scripts/caselaw/state_court_opinions.py
+  date: '2026-11-26'
+  checks:
+  - check: 'Indian law case: the term score and, below the score kept without a reading, an AI reader''s judgment of excerpts'
+    result: agree
+    detail: score 44
+  - check: Nations named in the caption, matched to nation records by name
+    result: missing
+    detail: 1 matched, 4 not linked

@@ -1,6 +1,6 @@
 <!--
 	@component
-	The map on a state's page: the Map page's Land Areas map, with its Layers button and corner buttons, opened on the state (Trevor, 2026-11-24: "if you go to the alaska tribe map, or any state, generate the map and zoom into that state"). Choosing a land area or an office opens it on the Map page, where its details are. Without a device that can draw it, the page has its table of nations alone.
+	The map on a state's page: the Map page's Land Areas map, with its Layers button and corner buttons, opened on the state (Trevor, 2026-11-24: "if you go to the alaska tribe map, or any state, generate the map and zoom into that state"). Choosing a land area or an office opens it on the Map page, where its details are. If the map cannot start, it says so in its frame, with Try again (Trevor, 2026-11-27).
 -->
 <script lang="ts">
 	import TileMap from './TileMap.svelte';
@@ -8,36 +8,27 @@
 
 	let { name, bounds }: { name: string; bounds: [number, number, number, number] } = $props();
 
-	let wanted = $state(true);
 	let ready = $state(false);
-	/** Said to screen readers when the map cannot start and the page keeps its table alone. */
-	let problem = $state('');
 </script>
 
-{#if wanted}
-	<figure class="state-map" class:ready data-print-part="maps">
-		<TileMap
-			view="lands"
-			label="Land areas in {name}"
-			opening={bounds}
-			onselect={(anchor) => location.assign(anchor.startsWith('/') ? anchor : `/nations/map#${anchor}`)}
-			onready={() => (ready = true)}
-			onfail={() => {
-				wanted = false;
-				problem = 'The interactive map could not be loaded.';
-			}}
-		/>
-		<figcaption>
-			<ul class="legend" aria-label="Key">
-				{#each landAreaGroups as group (group.key)}
-					<li><span class="swatch land-{group.key}" aria-hidden="true"></span>{group.label}</li>
-				{/each}
-				<li><span class="swatch office" aria-hidden="true"></span>Office of a nation with no Census land area</li>
-			</ul>
-		</figcaption>
-	</figure>
-{/if}
-<p class="visually-hidden" role="status">{problem}</p>
+<figure class="state-map" class:ready data-print-part="maps">
+	<TileMap
+		view="lands"
+		label="Land areas in {name}"
+		opening={bounds}
+		onselect={(anchor) => location.assign(anchor.startsWith('/') ? anchor : `/nations/map#${anchor}`)}
+		onready={() => (ready = true)}
+		onfail={() => (ready = false)}
+	/>
+	<figcaption>
+		<ul class="legend" aria-label="Key">
+			{#each landAreaGroups as group (group.key)}
+				<li><span class="swatch land-{group.key}" aria-hidden="true"></span>{group.label}</li>
+			{/each}
+			<li><span class="swatch office" aria-hidden="true"></span>Office of a nation with no Census land area</li>
+		</ul>
+	</figcaption>
+</figure>
 
 <style>
 	/* The map fits in the window with its key, so its buttons are always in sight. */
@@ -46,7 +37,7 @@
 		margin: var(--space-4) 0 var(--space-5);
 	}
 
-	/* The key waits for the map, so a device that cannot draw it never shows a key alone. */
+	/* The key waits for the map, so a map that could not load never shows a key. */
 	.state-map:not(.ready) figcaption {
 		visibility: hidden;
 	}
