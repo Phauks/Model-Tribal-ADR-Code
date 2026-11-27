@@ -65,8 +65,8 @@ export const load: PageServerLoad = async (event) => {
 				seesAddressBook: can(person, 'manage-address-book')
 			})
 		: null;
-	// From the conversation's own inbox's address, unless the writer picks another of theirs (src/lib/server/mail/inboxes.ts).
-	const addresses = await replyAddresses(context, person.identifier, thread.inboxIdentifier);
+	// From the inbox address the conversation is with (info@ for mail to info@), unless the writer picks another of theirs (src/lib/server/mail/inboxes.ts).
+	const addresses = await replyAddresses(context, person.identifier, thread.inboxIdentifier, thread.projectAddress);
 	const people = await threadPeople(context, thread.identifier);
 	const nation = card?.contact?.nationIdentifier ? mailNations.find((item) => item.identifier === card.contact!.nationIdentifier) : undefined;
 	const sender = card ? { ...card, nation: nation ? { name: nation.name, page: nation.page } : null } : null;

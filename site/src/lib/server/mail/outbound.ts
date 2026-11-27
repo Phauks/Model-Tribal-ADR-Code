@@ -13,8 +13,7 @@
 import { attachmentLimitBytes, snippetOf, textToHtml, type MailAddress, normalizeSubject } from '#lib/mail.ts';
 import { buildRawMessage, newMessageIdentifier, type OutgoingAttachment, type OutgoingMail } from './mime.ts';
 import { actionStatement, bucketKeys, currentTime, type MailCarriers, type MailContext } from './context.ts';
-import { noticeHeader } from './inbound.ts';
-import { catchAllInbox, inboxForAddress, mayOpenThread, sendingAddresses } from './inboxes.ts';
+import { inboxForAddress, mayOpenThread, sendingAddresses } from './inboxes.ts';
 import { openScannedFile, stillScanning, storeSentFile } from '#lib/server/file-scans.ts';
 import { CompositionLinkError, joinStatements, linkedFilesForMessage, linkedFilesState, linkExpiry, withLinks } from './linked-files.ts';
 import { heldForVirusCheck } from '#lib/mail.ts';
@@ -559,28 +558,8 @@ export async function recordDeliveryEvent(context: MailContext, event: unknown):
 }
 
 // ---------------------------------------------------------------------------
-// The "new mail" notice and acknowledgments
+// Acknowledgments
 // ---------------------------------------------------------------------------
-
-/**
- * Tells the notice address that new mail is waiting, without quoting it,
- * so the message itself stays in the project's own storage.
- */
-export async function sendNewMailNotice(context: MailContext, carriers: MailCarriers): Promise<boolean> {
-	const { settings } = context;
-	const from = (await catchAllInbox(context))?.address;
-	if (!carriers.replies || !settings.noticeAddress || !from) return false;
-	const link = settings.siteAddress ? `${settings.siteAddress}/workspace/inbox` : 'the workspace inbox on the website';
-	await carriers.replies.send({
-		from: { email: from, name: `${settings.senderName} inbox` },
-		to: [{ email: settings.noticeAddress }],
-		subject: 'New mail in the project inbox',
-		text: `New mail has arrived in the project inbox. Read it at ${link}.\n\nThis notice does not quote the message, so it stays in the project's own storage. At most one notice is sent every 30 minutes.`,
-		headers: { [noticeHeader]: 'yes', 'X-Auto-Response-Suppress': 'All' },
-		messageId: newMessageIdentifier(settings.domain ?? 'invalid')
-	});
-	return true;
-}
 
 /** Records the recipient's use of the visible "let us know you got this" link. */
 export async function acknowledge(context: MailContext, messageIdentifier: string): Promise<boolean> {
