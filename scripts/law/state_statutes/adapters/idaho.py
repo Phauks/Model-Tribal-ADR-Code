@@ -15,7 +15,9 @@ from core import Section, clean
 
 SITE = 'https://legislature.idaho.gov'
 BASE = SITE + '/statutesrules/idstat/'
-LAW = re.compile(r'(\d{4}), ch\. (\d+)')
+# The enactment is the first item of the history line when it is a session law ("7-701A, added 2006, ch. 96"); a line that opens
+# with an older code ("C.C.P. 1881, sec. 17; ... am. 1969, ch. 108") names only amendments after it.
+LAW = re.compile(r'^(?:\([^)]*\)\s*)?(?:[0-9A-Z-]+, )?(?:added )?(\d{4}), (?:\d+(?:st|nd|rd|th) E\.S\., )?ch\. (\d+)')
 GONE = re.compile(r'^\[?\s*(?:Repealed|Redesignated|Reserved|Expired|Null|Void|Obsolete|Transferred|Renumbered)\b', re.I)
 SMALL = {'a', 'an', 'and', 'as', 'at', 'by', 'for', 'from', 'in', 'into', 'of', 'on', 'or', 'the', 'to', 'with', 'upon', 'under', 'nor'}
 
@@ -126,7 +128,7 @@ class Idaho(State):
             else:
                 heading = title_case(heading)
             status = 'repealed' if GONE.match(body) and len(body) < 300 else ('reserved' if not body else 'live')
-            law = LAW.search(history)
+            law = LAW.search(history.strip('[] ').split(';')[0])
             yield Section(heading=heading, text=body, history=history.strip('[] '), status=status,
                           act=f'{law.group(1)}-{law.group(2)}' if law else '', enacted=[int(law.group(1))] if law else None, **common)
 

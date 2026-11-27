@@ -97,7 +97,8 @@ class SouthDakota(State):
                 text = ' '.join(text_parts)
                 gone = r'^\[?(?:Repealed|Superseded|Transferred|Renumbered|Expired|Omitted|Executed|Obsolete|Reserved)\b'
                 status = 'repealed' if re.match(gone, heading, re.I) or re.match(gone, text, re.I) else ('reserved' if not text else 'live')
-                law = LAW.search(history)
+                # Only a session law at the head of the source note is the enactment ("SDC 1939, § 16.1903; SL 1951, ch 5" names an amendment).
+                law = LAW.match(history.split(';')[0].strip())
                 yield Section(number=number, heading=heading, text=text, url=PAGE + number, title=chapter,
                               title_name=f'Title {chapter.split("-")[0]}: {title_name} / Chapter {chapter}: {chapter_name}', history=history, status=status,
                               act=f'{law.group(1)}-{law.group(2)}' if law else '', enacted=[int(law.group(1))] if law else None)
