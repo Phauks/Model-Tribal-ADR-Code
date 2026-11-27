@@ -769,9 +769,20 @@ sup.citation {
  * The marker or source a link has just gone to is highlighted, so the eye
  * finds it. It arrives marked in the fill-in yellow, which fades to the
  * resting highlight; with motion reduced it shows the resting highlight at once.
+ * With scripts on, the highlight goes a few seconds later, or when the reader
+ * clicks or taps elsewhere (src/lib/arrival-highlight.ts; Trevor, Nov. 27,
+ * 2026: the highlight "would not go away"). Without scripts the browser's
+ * :target shows it until the address changes.
  */
-.note-marker:target,
-.source-list > li:target {
+/* Only the entry fades out; a marker's own fill is also its focus fill, which must show at once. */
+.source-list > li {
+	transition: background-color var(--motion-duration-medium) var(--motion-easing-exit);
+}
+
+:root:not([data-scripts='on']) .note-marker:target,
+:root:not([data-scripts='on']) .source-list > li:target,
+.note-marker[data-arrived],
+.source-list > li[data-arrived] {
 	background: var(--color-notice-background);
 	outline: 2px solid var(--color-focus-ring);
 	outline-offset: 1px;

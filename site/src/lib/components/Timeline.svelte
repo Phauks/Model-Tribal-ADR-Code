@@ -1280,7 +1280,9 @@
 		padding-left: var(--space-4);
 	}
 
-	:target {
+	/* The entry a link goes to is shaded for a moment, then not (src/lib/arrival-highlight.ts); without scripts, while the address points to it. */
+	:global(:root:not([data-scripts='on'])) .entry:target,
+	.entry:global([data-arrived]) {
 		background: var(--color-notice-background);
 	}
 

@@ -197,8 +197,11 @@
 		scroll-margin-top: 4.5rem;
 	}
 
-	.section-list dt:target,
-	.section-list dt:target + dd {
+	/* Shaded for a moment, then not (src/lib/arrival-highlight.ts); without scripts, while the address points to it. */
+	:global(:root:not([data-scripts='on'])) .section-list dt:target,
+	:global(:root:not([data-scripts='on'])) .section-list dt:target + dd,
+	.section-list dt:global([data-arrived]),
+	.section-list dt:global([data-arrived]) + dd {
 		background: var(--color-surface-raised);
 	}
 
