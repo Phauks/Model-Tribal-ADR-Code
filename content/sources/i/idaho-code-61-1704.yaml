@@ -1,0 +1,50 @@
+key: idaho-code-61-1704
+kind: state-statute
+citation:
+  type: legislation
+  title: Notice of intent to file — Content — Prefiling procedures
+  title-short: Idaho Code § 61-1704
+  container-title: Idaho Code
+  container-title-short: Idaho Code
+  section: 61-1704
+  author:
+  - literal: Idaho Legislature
+  issued:
+    date-parts:
+    - - 2007
+  URL: https://legislature.idaho.gov/statutesrules/idstat/Title61/T61CH17/SECT61-1704
+  accessed:
+    date-parts:
+    - - 2026
+      - 11
+      - 27
+original_link: https://legislature.idaho.gov/statutesrules/idstat/Title61/T61CH17/SECT61-1704
+retrieved: '2026-11-27'
+archives: []
+history:
+  status: live
+  last_checked: '2026-11-27'
+state_law:
+  relevance: incidental
+  citation: Idaho Code § 61-1704 (2026)
+rights:
+  status: no-permission-needed
+  basis: government-edict
+  basis_note: 'Official state statutes are not copyrightable under the government edicts doctrine (Georgia v. Public.Resource.Org, Inc., 590 U.S. 255 (2020)). Linked, not served: state statutes stay link only.'
+  redistribution: false
+jurisdictions:
+- level: state
+  state: ID
+topics:
+- state-indian-law
+found_in:
+- 2026-11-27-state-statutes-third-batch
+notes: 'Indigo Book citation: Idaho Code § 61-1704 (2026). History: 61-1704, added 2007, ch. 186, sec. 1, p. 537. Text read from the Idaho Legislature''s page for the section in the Idaho Statutes (legislature.idaho.gov/statutesrules/idstat) on Nov. 27, 2026. Found by the state statutes sweep (terms: tribal); AI reader''s verdict incidental: Transmission notice must go to tribal permitting entities and landowners. Unverified.'
+review:
+  status: unverified
+  by: scripts/law/state_statutes/run.py
+  date: '2026-11-27'
+  checks:
+  - check: 'Indian law section: the sweep''s keyword pass and an AI reader''s verdict (core, incidental or none)'
+    result: agree
+    detail: 'incidental; terms: tribal'

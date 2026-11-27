@@ -1,0 +1,50 @@
+key: minnesota-statutes-260-821
+kind: state-statute
+citation:
+  type: legislation
+  title: Grant Formula
+  title-short: Minn. Stat. § 260.821
+  container-title: Minnesota Statutes
+  container-title-short: Minn. Stat.
+  section: '260.821'
+  author:
+  - literal: Minnesota Office of the Revisor of Statutes
+  issued:
+    date-parts:
+    - - 1999
+  URL: https://www.revisor.mn.gov/statutes/cite/260.821
+  accessed:
+    date-parts:
+    - - 2026
+      - 11
+      - 27
+original_link: https://www.revisor.mn.gov/statutes/cite/260.821
+retrieved: '2026-11-27'
+archives: []
+history:
+  status: live
+  last_checked: '2026-11-27'
+state_law:
+  relevance: core
+  citation: Minn. Stat. § 260.821 (2026)
+rights:
+  status: no-permission-needed
+  basis: government-edict
+  basis_note: 'Official state statutes are not copyrightable under the government edicts doctrine (Georgia v. Public.Resource.Org, Inc., 590 U.S. 255 (2020)). Linked, not served: state statutes stay link only.'
+  redistribution: false
+jurisdictions:
+- level: state
+  state: MN
+topics:
+- state-indian-law
+found_in:
+- 2026-11-27-state-statutes-third-batch
+notes: 'Indigo Book citation: Minn. Stat. § 260.821 (2026). History: 1999 c 139 art 1 s 15; 2023 c 16 s 35; 1Sp2025 c 3 art 11 s 4. Text read from the Minnesota Revisor of Statutes'' full-text chapter page for the section (revisor.mn.gov/statutes) on Nov. 27, 2026. Found by the state statutes sweep (terms: indian child; indian children; indian communities; indian community; indian organizations; indian; reservation; reservations; tribal; tribe; tribes); AI reader''s verdict core: Indian child welfare grant formula for Tribes and Indian organizations. Unverified.'
+review:
+  status: unverified
+  by: scripts/law/state_statutes/run.py
+  date: '2026-11-27'
+  checks:
+  - check: 'Indian law section: the sweep''s keyword pass and an AI reader''s verdict (core, incidental or none)'
+    result: agree
+    detail: 'core; terms: indian child; indian children; indian communities; indian community; indian organizations; indian; reservation; reservations; tribal; tribe; tribes'

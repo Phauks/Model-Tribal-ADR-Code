@@ -1,0 +1,50 @@
+key: minnesota-statutes-142e-32
+kind: state-statute
+citation:
+  type: legislation
+  title: Child Care Services Grants
+  title-short: Minn. Stat. § 142E.32
+  container-title: Minnesota Statutes
+  container-title-short: Minn. Stat.
+  section: 142E.32
+  author:
+  - literal: Minnesota Office of the Revisor of Statutes
+  issued:
+    date-parts:
+    - - 1989
+  URL: https://www.revisor.mn.gov/statutes/cite/142E.32
+  accessed:
+    date-parts:
+    - - 2026
+      - 11
+      - 27
+original_link: https://www.revisor.mn.gov/statutes/cite/142E.32
+retrieved: '2026-11-27'
+archives: []
+history:
+  status: live
+  last_checked: '2026-11-27'
+state_law:
+  relevance: incidental
+  citation: Minn. Stat. § 142E.32 (2026)
+rights:
+  status: no-permission-needed
+  basis: government-edict
+  basis_note: 'Official state statutes are not copyrightable under the government edicts doctrine (Georgia v. Public.Resource.Org, Inc., 590 U.S. 255 (2020)). Linked, not served: state statutes stay link only.'
+  redistribution: false
+jurisdictions:
+- level: state
+  state: MN
+topics:
+- state-indian-law
+found_in:
+- 2026-11-27-state-statutes-third-batch
+notes: 'Indigo Book citation: Minn. Stat. § 142E.32 (2026). History: 1989 c 282 art 2 s 155; 1990 c 426 art 1 s 32,33; 1990 c 568 art 4 s 56 -58; 1991 c 292 art 5 s 66,67; 1994 c 465 art 3 s 38; 1997 c 162 art 4 s 47 -56; 1999 c 205 art 5 s 12 -19,21; 1Sp2003 c 14 art 9 s 29; 2007 c 147 art 2 s 14; 2008 c 361 art 3 s 9,10; 2009 c 79 art 2 s 3,4; 2010 c 301 art 2 s 4; 1Sp2020 c 2 art 1 s 2; 2024 c 80 art 5 s 7. Text read from the Minnesota Revisor of Statutes'' full-text chapter page for the section (revisor.mn.gov/statutes) on Nov. 27, 2026. Found by the state statutes sweep (terms: tribally); AI reader''s verdict incidental: Child care grant providers include tribally licensed programs. Unverified.'
+review:
+  status: unverified
+  by: scripts/law/state_statutes/run.py
+  date: '2026-11-27'
+  checks:
+  - check: 'Indian law section: the sweep''s keyword pass and an AI reader''s verdict (core, incidental or none)'
+    result: agree
+    detail: 'incidental; terms: tribally'
