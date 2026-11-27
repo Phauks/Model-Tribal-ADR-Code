@@ -22,7 +22,8 @@ export const pageKinds = [
 	'story',
 	'glossary',
 	'front-matter',
-	'about'
+	'about',
+	'news'
 ] as const;
 export type PageKind = (typeof pageKinds)[number];
 
@@ -35,7 +36,8 @@ export const pageKindLabels: Record<PageKind, string> = {
 	story: 'Story',
 	glossary: 'Glossary',
 	'front-matter': 'Front matter',
-	about: 'About the site'
+	about: 'About the site',
+	news: 'News post'
 };
 
 /** Plural names for the "Kind of page" filter. */
@@ -48,7 +50,8 @@ export const pageKindFilterLabels: Record<PageKind, string> = {
 	story: 'Stories',
 	glossary: 'Glossary',
 	'front-matter': 'Front matter',
-	about: 'About the site'
+	about: 'About the site',
+	news: 'News'
 };
 
 /** Pages whose earlier wording is never shown: a change names only the parts that changed. */
@@ -339,7 +342,7 @@ export function followedPageAddress(path: string): string | undefined {
 	if (!address) return undefined;
 	const nation = /^\/nations\/([a-z0-9-]+)$/.exec(address);
 	if (nation) return nationListings.has(nation[1]) ? undefined : address;
-	if (/^\/(stories|glossary|essays|foundations|back-matter|licenses)\/[a-z0-9][a-z0-9-]*$/.test(address)) return address;
+	if (/^\/(stories|glossary|essays|foundations|back-matter|news|licenses)\/[a-z0-9][a-z0-9-]*$/.test(address)) return address;
 	return ['/acknowledgments', '/charter', '/licenses', '/about', '/sponsor'].includes(address) ? address : undefined;
 }
 

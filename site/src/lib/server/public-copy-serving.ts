@@ -12,8 +12,10 @@
  */
 import type { R2Bucket, R2Object, R2ObjectBody, R2Range } from '@cloudflare/workers-types/index.ts';
 import type { PublicCopy } from '../public-copies.ts';
+import { contentDisposition } from '../readable-file-names.ts';
 
-export type ServableCopy = Pick<PublicCopy, 'key' | 'mediaType' | 'sha256' | 'bytes' | 'links' | 'charset'>;
+/** A copy as it is served; `name` is the name a reader saves it under (src/lib/readable-file-names.ts). */
+export type ServableCopy = Pick<PublicCopy, 'key' | 'mediaType' | 'sha256' | 'bytes' | 'links' | 'charset'> & { name?: string };
 
 /** Larger files are left at their original address; reading one would strain the Worker. */
 export const largestFill = 64 * 1024 * 1024;
@@ -83,8 +85,13 @@ export async function fetchOriginal(
 	return undefined;
 }
 
-function fileName(copy: ServableCopy): string {
-	return (copy.key.split('/').at(-1) ?? 'document.pdf').replace(/[^A-Za-z0-9._-]/g, '_');
+/**
+ * The name the file is saved under: its title, from the build's list, rather than the code its key
+ * ends in (Trevor, Nov. 27, 2026: files were "downloading with unreadable codes like
+ * 6df61ccdf0a3cbf733b3.pdf"). A copy listed without a name keeps the key's own.
+ */
+export function savedFileName(copy: ServableCopy): string {
+	return copy.name || (copy.key.split('/').at(-1) ?? 'document.pdf').replace(/[^A-Za-z0-9._-]/g, '_');
 }
 
 /** What a saved web page may still do, in its frame or opened on its own: follow a link the reader clicks. */
@@ -108,7 +115,8 @@ export function copyContentType(copy: Pick<ServableCopy, 'mediaType' | 'charset'
 function copyHeaders(copy: ServableCopy, etag?: string): Headers {
 	const headers = new Headers({
 		'Content-Type': copyContentType(copy),
-		'Content-Disposition': `inline; filename="${fileName(copy)}"`,
+		// Inline, so it opens in the browser; a browser's Save and a link's download both use this name.
+		'Content-Disposition': contentDisposition(savedFileName(copy), 'inline'),
 		// A day: the file never changes under its key, but a copy taken off the list should stop being served soon.
 		'Cache-Control': 'public, max-age=86400',
 		'Accept-Ranges': 'bytes',

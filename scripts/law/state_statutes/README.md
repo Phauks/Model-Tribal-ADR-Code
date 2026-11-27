@@ -61,3 +61,8 @@ Records the project already holds under the same key (most were made by hand for
 | Wyoming | `adapters/wyoming.py` (no history lines in the PDFs, so no enactment years) | Title PDFs, wyoleg.gov/statutes/compress; each record links to its title's PDF at the section's page |
 | Wisconsin | `adapters/wisconsin.py` (the two-column PDF text is split back into columns; history lines reach back only to the acts printed since the 1970s, so no enactment years) | Whole-chapter PDFs, docs.legis.wisconsin.gov/document/statutes/<chapter>.pdf, downloaded on GitHub because the site refuses cloud sessions; each record links to the section's own page |
 | Oklahoma | `adapters/oklahoma.py` (read in the pilot; `run.py seed OK` turns the pilot's list into this pipeline's list) | Title PDFs, oklegislature.gov |
+| California | `adapters/california.py` (the leginfo site refuses scripts; numbers are `<code>:<section>`, cited by each code's own name) | Legislative Counsel's bulk database, downloads.leginfo.legislature.ca.gov (pubinfo_2025.zip) |
+| Nebraska | `adapters/nebraska.py` | Printable section pages, nebraskalegislature.gov/laws, listed on each chapter's page |
+| Utah | `adapters/utah.py` | XML file of each title, le.utah.gov/xcode |
+| Maine | `adapters/maine.py` (cited by title: section numbers are `<title>:<section>`; a section with versions keeps the one in force) | Section pages, legislature.maine.gov/statutes, listed on each chapter's page |
+| Florida | `adapters/florida.py` | Whole-chapter pages, leg.state.fl.us/statutes; each record links to the section's own page |

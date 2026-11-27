@@ -1,0 +1,50 @@
+key: florida-statutes-1009-60
+kind: state-statute
+citation:
+  type: legislation
+  title: Minority teacher education scholars program
+  title-short: Fla. Stat. § 1009.60
+  container-title: Florida Statutes
+  container-title-short: Fla. Stat.
+  section: '1009.60'
+  author:
+  - literal: Florida Legislature
+  issued:
+    date-parts:
+    - - 2002
+  URL: https://www.leg.state.fl.us/statutes/index.cfm?App_mode=Display_Statute&URL=1000-1099/1009/Sections/1009.60.html
+  accessed:
+    date-parts:
+    - - 2026
+      - 11
+      - 27
+original_link: https://www.leg.state.fl.us/statutes/index.cfm?App_mode=Display_Statute&URL=1000-1099/1009/Sections/1009.60.html
+retrieved: '2026-11-27'
+archives: []
+history:
+  status: live
+  last_checked: '2026-11-27'
+state_law:
+  relevance: incidental
+  citation: Fla. Stat. § 1009.60 (2026)
+rights:
+  status: no-permission-needed
+  basis: government-edict
+  basis_note: 'Official state statutes are not copyrightable under the government edicts doctrine (Georgia v. Public.Resource.Org, Inc., 590 U.S. 255 (2020)). Linked, not served: state statutes stay link only.'
+  redistribution: false
+jurisdictions:
+- level: state
+  state: FL
+topics:
+- state-indian-law
+found_in:
+- 2026-11-27-state-statutes-california-nebraska-utah-maine-florida
+notes: 'Indigo Book citation: Fla. Stat. § 1009.60 (2026). History: s. 438, ch. 2002-387; s. 23, ch. 2009-60; s. 136, ch. 2011-5; s. 24, ch. 2011-63; s. 30, ch. 2012-134; s. 63, ch. 2017-116. Text read from the Florida Legislature''s page for the section''s chapter in the 2026 Florida Statutes (leg.state.fl.us/statutes) on Nov. 27, 2026. Found by the state statutes sweep (terms: native american; native); AI reader''s verdict incidental: Minority teacher scholarship program names Native American students as eligible beneficiaries. Unverified.'
+review:
+  status: unverified
+  by: scripts/law/state_statutes/run.py
+  date: '2026-11-27'
+  checks:
+  - check: 'Indian law section: the sweep''s keyword pass and an AI reader''s verdict (core, incidental or none)'
+    result: agree
+    detail: 'incidental; terms: native american; native'

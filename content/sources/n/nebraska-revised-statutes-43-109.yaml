@@ -1,0 +1,50 @@
+key: nebraska-revised-statutes-43-109
+kind: state-statute
+citation:
+  type: legislation
+  title: Decree; conditions; content
+  title-short: Neb. Rev. Stat. § 43-109
+  container-title: Revised Statutes of Nebraska
+  container-title-short: Neb. Rev. Stat.
+  section: 43-109
+  author:
+  - literal: Nebraska Legislature
+  issued:
+    date-parts:
+    - - 1943
+  URL: https://nebraskalegislature.gov/laws/statutes.php?statute=43-109
+  accessed:
+    date-parts:
+    - - 2026
+      - 11
+      - 27
+original_link: https://nebraskalegislature.gov/laws/statutes.php?statute=43-109
+retrieved: '2026-11-27'
+archives: []
+history:
+  status: live
+  last_checked: '2026-11-27'
+state_law:
+  relevance: core
+  citation: Neb. Rev. Stat. § 43-109 (2026)
+rights:
+  status: no-permission-needed
+  basis: government-edict
+  basis_note: 'Official state statutes are not copyrightable under the government edicts doctrine (Georgia v. Public.Resource.Org, Inc., 590 U.S. 255 (2020)). Linked, not served: state statutes stay link only.'
+  redistribution: false
+jurisdictions:
+- level: state
+  state: NE
+topics:
+- state-indian-law
+found_in:
+- 2026-11-27-state-statutes-california-nebraska-utah-maine-florida
+notes: 'Indigo Book citation: Neb. Rev. Stat. § 43-109 (2026). History: Laws 1943, c. 104, § 7, p. 351; R.S.1943, § 43-109; Laws 1984, LB 510, § 4; Laws 1985, LB 255, § 22; Laws 1988, LB 372, § 2; Laws 1988, LB 301, § 8; Laws 1989, LB 231, § 2; Laws 1999, LB 594, § 19; Laws 2011, LB94, § 2; Laws 2012, LB768, § 2; Laws 2022, LB741, § 25; Laws 2026, LB1032, § 5. Effective Date: July 18, 2026. Text read from the Nebraska Legislature''s page for the section (nebraskalegislature.gov/laws) on Nov. 27, 2026. Found by the state statutes sweep (terms: indian child; indian); AI reader''s verdict core: Adoption decree conditions expressly carve out Nebraska Indian Child Welfare Act. Unverified.'
+review:
+  status: unverified
+  by: scripts/law/state_statutes/run.py
+  date: '2026-11-27'
+  checks:
+  - check: 'Indian law section: the sweep''s keyword pass and an AI reader''s verdict (core, incidental or none)'
+    result: agree
+    detail: 'core; terms: indian child; indian'
