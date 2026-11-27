@@ -4,7 +4,7 @@ import type { D1Database } from '@cloudflare/workers-types/index.ts';
 // Story credits format citations through a module the site build makes; the index doesn't need it.
 vi.mock('virtual:source-citations', () => ({ sourceCitations: {} }));
 
-import { fillSearchTables, querySearchTables, searchTablesKey, searchTablesReady } from '#lib/server/search-tables.ts';
+import { answerWhenReady, fillSearchTables, querySearchTables, searchTablesKey, searchTablesReady } from '#lib/server/search-tables.ts';
 import { searchIndex } from '#lib/server/search-index.ts';
 import { searchRecords } from '#lib/server/search-records.ts';
 import { expandRecords, type SearchRecords } from '#lib/search-records.ts';
@@ -80,5 +80,20 @@ describe('the search tables', () => {
 		await database.prepare("INSERT INTO site_search_state (name, value) VALUES ('filling', ?)").bind(String(Date.now())).run();
 		expect(await fillSearchTables(database, searchTablesKey('build-3', undefined), entries, records)).toBe('busy');
 		await database.prepare("DELETE FROM site_search_state WHERE name = 'filling'").run();
+	});
+	it('answer in one trip only while the key matches the build and the restrictions', async () => {
+		const fresh = testDatabase();
+		await fillSearchTables(fresh, searchTablesKey('build-9', undefined), entries, records);
+		const ready = await answerWhenReady(fresh, 'build-9', 'navajo', perGroup);
+		expect(ready.ready).toBe(true);
+		if (ready.ready) expect(JSON.parse(JSON.stringify(ready.answer))).toEqual(JSON.parse(JSON.stringify(panelAnswer(matchEverything(entries, records, 'navajo'), perGroup))));
+		expect(await answerWhenReady(fresh, 'build-10', 'navajo', perGroup)).toEqual({ ready: false, stamp: undefined });
+		// A nation saves its restrictions: the tables no longer answer until they are filled for the new stamp.
+		await fresh.prepare('PRAGMA foreign_keys = OFF').run();
+		await fresh
+			.prepare("INSERT INTO nation_restriction_changes (identifier, nation_identifier, settings, changes, made_by, made_at) VALUES ('change-1', 'navajo-nation', '{}', '[]', 'someone', '2026-11-27T03:40:00Z')")
+			.run();
+		expect(await answerWhenReady(fresh, 'build-9', 'navajo', perGroup)).toEqual({ ready: false, stamp: '1-2026-11-27T03:40:00Z' });
+		expect(await answerWhenReady(fresh, 'build-9', '', perGroup)).toEqual({ ready: false, stamp: '1-2026-11-27T03:40:00Z' });
 	});
 });
