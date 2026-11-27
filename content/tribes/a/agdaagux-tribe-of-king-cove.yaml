@@ -167,6 +167,16 @@ indian_health_service:
   as_of: '2026-11-23'
   locator: '"Federally Recognized Tribes" list, Anchorage Service Area profile'
   note: 'The source''s words: "Agdaagux Tribe of King Cove".'
+federal_programs:
+- program: indian-housing-block-grant
+  fiscal_year: 2026
+  amount: 359954
+  amount_kind: allocation
+  source: hud-ihbg-fy2026-formula-allocations
+  confidence: high
+  verification: bulk-import
+  as_of: '2026'
+  locator: AK, row 'Agdaagux Tribe of King Cove' (King Cove)
 governance:
 - aspect: head-of-government
   value: President

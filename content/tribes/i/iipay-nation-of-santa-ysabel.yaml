@@ -157,6 +157,16 @@ indian_health_service:
   as_of: '2026-11-23'
   locator: regional lists (West Central, Southern, Northern, East Central)
   note: Listed as "Iipay Nation of Santa Ysabel, California".
+federal_programs:
+- program: indian-housing-block-grant
+  fiscal_year: 2026
+  amount: 128024
+  amount_kind: allocation
+  source: hud-ihbg-fy2026-formula-allocations
+  confidence: high
+  verification: bulk-import
+  as_of: '2026'
+  locator: CA, row 'Iipay Nation of Santa Ysabel' (Santa Ysabel)
 governance:
 - aspect: governing-body
   value: Tribal Council

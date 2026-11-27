@@ -245,6 +245,20 @@ export interface NationRecord {
 		bureau_of_indian_affairs_agency?: string;
 	};
 	indian_health_service?: (CitedFact & { area: string; service_unit?: string; operator?: string })[];
+	/** Federal self-governance, self-determination and block grant programs, one fact per program per source (site/src/lib/federal-programs.ts). */
+	federal_programs?: (CitedFact & {
+		program: string;
+		agency?: string;
+		since?: number;
+		start?: string;
+		end?: string;
+		fiscal_year?: number;
+		through?: string;
+		programs_included?: string[];
+		amount?: number;
+		amount_kind?: 'allocation' | 'obligations';
+		detail?: string;
+	})[];
 	government_structure?: (CitedFact & { kind: string; detail?: string })[];
 	/** How the government is set up, one plain fact per item (decision record 0042). */
 	governance?: (CitedFact & { aspect: string; value: string; quote?: string })[];

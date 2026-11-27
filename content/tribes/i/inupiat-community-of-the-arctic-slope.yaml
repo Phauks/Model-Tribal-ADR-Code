@@ -157,6 +157,16 @@ indian_health_service:
   locator: '"Federally Recognized Tribes" list, Barrow Service Area profile'
   note: 'The source''s words: "Inupiat Community of the Arctic Slope".'
   operator: tribal
+federal_programs:
+- program: indian-housing-block-grant
+  fiscal_year: 2026
+  amount: 3119083
+  amount_kind: allocation
+  source: hud-ihbg-fy2026-formula-allocations
+  confidence: high
+  verification: bulk-import
+  as_of: '2026'
+  locator: AK, row 'Inupiat Community of the Arctic Slope' (Barrow)
 governance:
 - aspect: form
   value: Indian Reorganization Act of 1934 and ICAS Constitution as amended

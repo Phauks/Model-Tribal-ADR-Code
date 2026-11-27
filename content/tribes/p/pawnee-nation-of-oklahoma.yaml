@@ -166,6 +166,68 @@ indian_health_service:
   as_of: '2026-11-23'
   locator: Direct Service Tribes by IHS Area > Oklahoma City Area
   note: Listed as "Pawnee Nation of Oklahoma". The Direct Service Tribes list says some Tribes have a mixed Indian Health Service and Tribal arrangement.
+federal_programs:
+- program: interior-self-governance-compact
+  since: 2024
+  source: bia-office-of-self-governance-tribes-2024-07-24
+  confidence: medium
+  verification: bulk-import
+  as_of: '2024-07-24'
+  locator: row 'Pawnee Nation' (Southern Plains Region)
+  note: The list's name was matched to this nation by a person or AI review; the list names 'Pawnee Nation'.
+- program: indian-health-service-self-governance-compact
+  since: 2022
+  source: indian-health-service-self-governance-tribes
+  confidence: high
+  verification: bulk-import
+  as_of: '2025-07-01'
+  locator: Oklahoma City Area, row 'Pawnee Nation of Oklahoma'
+- program: pl-102-477-plan
+  start: '2023-01-01'
+  end: '2027-12-31'
+  programs_included:
+  - Workforce Innovation and Opportunity Act – Adult Comprehensive Services
+  - Workforce Innovation and Opportunity Act – Supplementary Youth Services
+  - Native Youth Community Project
+  - Child Care & Development Funds – Discretionary
+  - Child Care & Development Funds – Mandatory
+  - Job Placement and Training
+  - Adult Education
+  - Higher Education
+  - Johnson O’Malley
+  detail: Carried under a self-governance compact
+  source: bia-pl-102-477-plan-directory
+  confidence: high
+  verification: bulk-import
+  as_of: '2026-11-26'
+  locator: PL102_477_Contracts, plan 'Pawnee Nation of Oklahoma'; PL102_477_PartnerEnrollment, its 9 programs
+- program: indian-housing-block-grant
+  fiscal_year: 2026
+  amount: 1025611
+  amount_kind: allocation
+  source: hud-ihbg-fy2026-formula-allocations
+  confidence: high
+  verification: bulk-import
+  as_of: '2026'
+  locator: OK, row 'Pawnee Nation' (Pawnee)
+- program: interior-self-governance-compact
+  fiscal_year: 2025
+  amount: 2762847
+  amount_kind: obligations
+  source: usaspending-fy2025-assistance-listing-15-022
+  confidence: high
+  verification: bulk-import
+  as_of: '2025'
+  locator: Assistance Listing 15.022, recipient 'PAWNEE NATION OF OKLAHOMA' (UEI Q8CAGGKTKXS3), Oct. 1, 2024 to Sept. 30, 2025
+- program: indian-health-service-self-governance-compact
+  fiscal_year: 2025
+  amount: 954644
+  amount_kind: obligations
+  source: usaspending-fy2025-assistance-listing-93-210
+  confidence: high
+  verification: bulk-import
+  as_of: '2025'
+  locator: Assistance Listing 93.210, recipient 'PAWNEE NATION OF OKLAHOMA' (UEI Q8CAGGKTKXS3), Oct. 1, 2024 to Sept. 30, 2025
 government_structure:
 - kind: oklahoma-indian-welfare-act
   detail: Listed as "The Pawnee Indians of Oklahoma" among organizations under constitutions approved

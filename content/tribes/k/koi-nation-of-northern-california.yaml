@@ -99,6 +99,41 @@ indian_health_service:
   as_of: '2026-11-23'
   locator: regional lists (West Central, Southern, Northern, East Central)
   note: Listed as "Koi Nation of Northern California".
+federal_programs:
+- program: interior-self-governance-compact
+  since: 2010
+  source: bia-office-of-self-governance-tribes-2024-07-24
+  confidence: high
+  verification: bulk-import
+  as_of: '2024-07-24'
+  locator: row 'Koi Nation Of Northern California' (Pacific Region)
+- program: indian-housing-block-grant
+  fiscal_year: 2026
+  amount: 110362
+  amount_kind: allocation
+  source: hud-ihbg-fy2026-formula-allocations
+  confidence: high
+  verification: bulk-import
+  as_of: '2026'
+  locator: CA, row 'Koi Nation of Northern California (Lower Lake)' (Santa Rosa)
+- program: interior-self-governance-compact
+  fiscal_year: 2025
+  amount: 239758
+  amount_kind: obligations
+  source: usaspending-fy2025-assistance-listing-15-022
+  confidence: high
+  verification: bulk-import
+  as_of: '2025'
+  locator: Assistance Listing 15.022, recipient 'KOI NATION OF NORTHERN CALIFORNIA' (UEI Y618KC2TXZY1), Oct. 1, 2024 to Sept. 30, 2025
+- program: isdeaa-contract-indian-health-service
+  fiscal_year: 2025
+  amount: 164336
+  amount_kind: obligations
+  source: usaspending-fy2025-assistance-listing-93-441
+  confidence: high
+  verification: bulk-import
+  as_of: '2025'
+  locator: Assistance Listing 93.441, recipient 'KOI NATION OF NORTHERN CALIFORNIA' (UEI Y618KC2TXZY1), Oct. 1, 2024 to Sept. 30, 2025
 governance:
 - aspect: head-of-government
   value: Chairperson

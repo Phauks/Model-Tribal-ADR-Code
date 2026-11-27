@@ -191,6 +191,35 @@ indian_health_service:
   as_of: '2026-11-23'
   locator: '"Federally Recognized Tribes" list, Interior Alaska Service Area profile'
   note: 'The source''s words: "Nulato Village".'
+federal_programs:
+- program: interior-self-governance-compact
+  since: 2002
+  source: bia-office-of-self-governance-tribes-2024-07-24
+  confidence: medium
+  verification: bulk-import
+  as_of: '2024-07-24'
+  locator: row 'Nulato Tribal Council' (Alaska Region)
+  note: The list's name was matched to this nation by a person or AI review; the list names 'Nulato Tribal Council'.
+- program: indian-housing-block-grant
+  fiscal_year: 2026
+  amount: 222540
+  amount_kind: allocation
+  source: hud-ihbg-fy2026-formula-allocations
+  confidence: medium
+  verification: bulk-import
+  as_of: '2026'
+  locator: AK, row 'Nulato' (Nulato)
+  note: The list's name was matched to this nation by a person or AI review; the list names 'Nulato'.
+- program: interior-self-governance-compact
+  fiscal_year: 2025
+  amount: 849592
+  amount_kind: obligations
+  source: usaspending-fy2025-assistance-listing-15-022
+  confidence: medium
+  verification: bulk-import
+  as_of: '2025'
+  locator: Assistance Listing 15.022, recipient 'NULATO TRIBAL COUNCIL' (UEI C8A5FKWNN2G7), Oct. 1, 2024 to Sept. 30, 2025
+  note: The list's name was matched to this nation by a person or AI review; the list names 'NULATO TRIBAL COUNCIL'.
 governance:
 - aspect: governing-body
   value: Nulato Tribal Council

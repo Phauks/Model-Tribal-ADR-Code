@@ -208,6 +208,34 @@ indian_health_service:
   locator: '"Federally Recognized Tribes" list, Barrow Service Area profile'
   note: 'The source''s words: "Native Village of Barrow Inupiat Traditional Government".'
   operator: tribal
+federal_programs:
+- program: interior-self-governance-compact
+  since: 2000
+  source: bia-office-of-self-governance-tribes-2024-07-24
+  confidence: medium
+  verification: bulk-import
+  as_of: '2024-07-24'
+  locator: row 'Native Village Of Barrow Inupiat Tribal Government' (Alaska Region)
+  note: The list's name was matched to this nation by a person or AI review; the list names 'Native Village Of Barrow Inupiat Tribal Government'.
+- program: indian-housing-block-grant
+  fiscal_year: 2026
+  amount: 3158233
+  amount_kind: allocation
+  source: hud-ihbg-fy2026-formula-allocations
+  confidence: medium
+  verification: bulk-import
+  as_of: '2026'
+  locator: AK, row 'Barrow Inupiat Traditional Government' (Barrow)
+  note: The list's name was matched to this nation by a person or AI review; the list names 'Barrow Inupiat Traditional Government'.
+- program: interior-self-governance-compact
+  fiscal_year: 2025
+  amount: 1818590
+  amount_kind: obligations
+  source: usaspending-fy2025-assistance-listing-15-022
+  confidence: high
+  verification: bulk-import
+  as_of: '2025'
+  locator: Assistance Listing 15.022, recipient 'NATIVE VILLAGE OF BARROW INUPIAT TRADITIONAL GOVERNMENT' (UEI NEWHJYSM6AE7), Oct. 1, 2024 to Sept. 30, 2025
 government_structure:
 - kind: alaska-indian-reorganization-act
   detail: Listed as "The Native Village of Barrow" among organizations under constitutions approved by

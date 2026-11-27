@@ -182,6 +182,16 @@ indian_health_service:
   locator: '"Federally Recognized Tribes" list, Bristol Bay Service Area profile'
   note: 'The source''s words: "Native Village of Chignik".'
   operator: tribal
+federal_programs:
+- program: indian-housing-block-grant
+  fiscal_year: 2026
+  amount: 110362
+  amount_kind: allocation
+  source: hud-ihbg-fy2026-formula-allocations
+  confidence: high
+  verification: bulk-import
+  as_of: '2026'
+  locator: AK, row 'Chignik Bay Tribal Council' (Chignik)
 governance:
 - aspect: head-of-government
   value: President

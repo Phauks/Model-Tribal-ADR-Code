@@ -207,6 +207,52 @@ indian_health_service:
   as_of: '2026-11-23'
   locator: '"Tribes of Oregon, Washington and Idaho" list'
   note: 'Listed as "Confederated Tribes of the Coos, Lower Umpqua and Siuslaw Indians". Also listed under the same Area in: indian-health-service-self-governance-tribes. Also on the Indian Health Service Self-Governance Tribes list (Confederated Tribes of the Coos, Lower Umpqua and Siuslaw Indians (2005)); the list does not say which service unit or programs the compact covers.'
+federal_programs:
+- program: interior-self-governance-compact
+  since: 2016
+  source: bia-office-of-self-governance-tribes-2024-07-24
+  confidence: medium
+  verification: bulk-import
+  as_of: '2024-07-24'
+  locator: row 'Confederated Tribes Of Coos, Lower Umpqua, And Siuslaw Indians' (Northwest Region)
+  note: The list's name was matched to this nation by a person or AI review; the list names 'Confederated Tribes Of Coos, Lower Umpqua, And Siuslaw Indians'.
+- program: indian-health-service-self-governance-compact
+  since: 2005
+  source: indian-health-service-self-governance-tribes
+  confidence: high
+  verification: bulk-import
+  as_of: '2025-07-01'
+  locator: Portland Area, row 'Confederated Tribes of the Coos, Lower Umpqua and Siuslaw Indians'
+- program: indian-housing-block-grant
+  fiscal_year: 2026
+  amount: 1928200
+  amount_kind: allocation
+  source: hud-ihbg-fy2026-formula-allocations
+  confidence: medium
+  verification: bulk-import
+  as_of: '2026'
+  locator: OR, row 'Confederated Tribes of the Coos, Indians' (Coos Bay)
+  note: The list's name was matched to this nation by a person or AI review; the list names 'Confederated Tribes of the Coos, Indians'.
+- program: interior-self-governance-compact
+  fiscal_year: 2025
+  amount: 1266610
+  amount_kind: obligations
+  source: usaspending-fy2025-assistance-listing-15-022
+  confidence: medium
+  verification: bulk-import
+  as_of: '2025'
+  locator: Assistance Listing 15.022, recipient 'CONFEDERATED TRIBES OF COOS, LOWER UMPQUA & SIUSLAW INDIANS' (UEI X8QTNZ5GZ6W3), Oct. 1, 2024 to Sept. 30, 2025
+  note: The list's name was matched to this nation by a person or AI review; the list names 'CONFEDERATED TRIBES OF COOS, LOWER UMPQUA & SIUSLAW INDIANS'.
+- program: indian-health-service-self-governance-compact
+  fiscal_year: 2025
+  amount: 3140190
+  amount_kind: obligations
+  source: usaspending-fy2025-assistance-listing-93-210
+  confidence: medium
+  verification: bulk-import
+  as_of: '2025'
+  locator: Assistance Listing 93.210, recipient 'CONFEDERATED TRIBES OF COOS, LOWER UMPQUA & SIUSLAW INDIANS' (UEI X8QTNZ5GZ6W3), Oct. 1, 2024 to Sept. 30, 2025
+  note: The list's name was matched to this nation by a person or AI review; the list names 'CONFEDERATED TRIBES OF COOS, LOWER UMPQUA & SIUSLAW INDIANS'.
 governance:
 - aspect: form
   value: Constitution adopted under the Indian Reorganization Act

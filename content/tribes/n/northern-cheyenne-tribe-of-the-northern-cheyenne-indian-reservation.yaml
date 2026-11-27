@@ -198,6 +198,26 @@ indian_health_service:
   as_of: '2026-11-23'
   locator: Direct Service Tribes by IHS Area > Billings Area
   note: Listed as "Northern Cheyenne Tribal Council". The Direct Service Tribes list says some Tribes have a mixed Indian Health Service and Tribal arrangement.
+federal_programs:
+- program: indian-housing-block-grant
+  fiscal_year: 2026
+  amount: 4180972
+  amount_kind: allocation
+  source: hud-ihbg-fy2026-formula-allocations
+  confidence: high
+  verification: bulk-import
+  as_of: '2026'
+  locator: MT, row 'Northern Cheyenne Tribe' (Lame Deer)
+- program: isdeaa-contract-indian-health-service
+  fiscal_year: 2025
+  amount: 9298430
+  amount_kind: obligations
+  source: usaspending-fy2025-assistance-listing-93-441
+  confidence: medium
+  verification: bulk-import
+  as_of: '2025'
+  locator: Assistance Listing 93.441, recipient 'NORTHERN CHEYENNE TRIBE' (UEI WQV6F3GXKPR8), Oct. 1, 2024 to Sept. 30, 2025
+  note: The list's name was matched to this nation by a person or AI review; the list names 'NORTHERN CHEYENNE TRIBE'.
 government_structure:
 - kind: indian-reorganization-act
   detail: Listed as "The Northern Cheyenne Tribe, Montana" among organizations under constitutions approved

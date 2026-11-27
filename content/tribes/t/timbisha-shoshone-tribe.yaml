@@ -188,6 +188,16 @@ indian_health_service:
   as_of: '2026-11-23'
   locator: regional lists (West Central, Southern, Northern, East Central)
   note: Listed as "Timbisha Shoshone Tribe".
+federal_programs:
+- program: indian-housing-block-grant
+  fiscal_year: 2026
+  amount: 206707
+  amount_kind: allocation
+  source: hud-ihbg-fy2026-formula-allocations
+  confidence: high
+  verification: bulk-import
+  as_of: '2026'
+  locator: CA, row 'Timbisha Shoshone Tribe (Death Valley)' (Bishop)
 governance:
 - aspect: form
   value: Adopted in accordance with Indian Reorganization Act of June 18, 1934, as amended

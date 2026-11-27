@@ -176,6 +176,17 @@ indian_health_service:
   locator: '"Federally Recognized Tribes" list, Yukon-Kuskokwim Delta Service Area profile'
   note: 'The source''s words: "Akiak Native Community".'
   operator: tribal
+federal_programs:
+- program: indian-housing-block-grant
+  fiscal_year: 2026
+  amount: 368763
+  amount_kind: allocation
+  source: hud-ihbg-fy2026-formula-allocations
+  confidence: medium
+  verification: bulk-import
+  as_of: '2026'
+  locator: AK, row 'Akiak' (Akiak)
+  note: The list's name was matched to this nation by a person or AI review; the list names 'Akiak'.
 government_structure:
 - kind: alaska-indian-reorganization-act
   detail: Constitution and By-Laws of the Akiak Native Community (approved 1949) states it was adopted

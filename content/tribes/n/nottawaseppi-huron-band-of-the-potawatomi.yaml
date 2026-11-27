@@ -202,6 +202,52 @@ indian_health_service:
   as_of: '2026-11-23'
   locator: Tribal Health Programs lists (Michigan, Minnesota, Wisconsin)
   note: 'Listed as "Nottawaseppi Huron Band of Potawatomi, Michigan". Also listed under the same Area in: indian-health-service-self-governance-tribes. Also on the Indian Health Service Self-Governance Tribes list (Nottawaseppi Huron Band of the Potawatomi (2018)); the list does not say which service unit or programs the compact covers.'
+federal_programs:
+- program: interior-self-governance-compact
+  since: 2021
+  source: bia-office-of-self-governance-tribes-2024-07-24
+  confidence: medium
+  verification: bulk-import
+  as_of: '2024-07-24'
+  locator: row 'Nottawaseppi Huron Band of the Potawatomi' (Midwest Region)
+  note: The list's name was matched to this nation by a person or AI review; the list names 'Nottawaseppi Huron Band of the Potawatomi'.
+- program: indian-health-service-self-governance-compact
+  since: 2018
+  source: indian-health-service-self-governance-tribes
+  confidence: medium
+  verification: bulk-import
+  as_of: '2025-07-01'
+  locator: Bemidji Area, row 'Nottawaseppi Huron Band of the Potawatomi'
+  note: The list's name was matched to this nation by a person or AI review; the list names 'Nottawaseppi Huron Band of the Potawatomi'.
+- program: indian-housing-block-grant
+  fiscal_year: 2026
+  amount: 927922
+  amount_kind: allocation
+  source: hud-ihbg-fy2026-formula-allocations
+  confidence: high
+  verification: bulk-import
+  as_of: '2026'
+  locator: MI, row 'Nottawaseppi Huron Band of Potawatomi' (Fulton)
+- program: interior-self-governance-compact
+  fiscal_year: 2025
+  amount: 4624078
+  amount_kind: obligations
+  source: usaspending-fy2025-assistance-listing-15-022
+  confidence: medium
+  verification: bulk-import
+  as_of: '2025'
+  locator: Assistance Listing 15.022, recipient 'NOTTAWASEPPI HURON BAND OF THE POTAWATOMI' (UEI MFTNFRBDAD21), Oct. 1, 2024 to Sept. 30, 2025
+  note: The list's name was matched to this nation by a person or AI review; the list names 'NOTTAWASEPPI HURON BAND OF THE POTAWATOMI'.
+- program: indian-health-service-self-governance-compact
+  fiscal_year: 2025
+  amount: 3979180
+  amount_kind: obligations
+  source: usaspending-fy2025-assistance-listing-93-210
+  confidence: medium
+  verification: bulk-import
+  as_of: '2025'
+  locator: Assistance Listing 93.210, recipient 'NOTTAWASEPPI HURON BAND OF THE POTAWATOMI' (UEI MFTNFRBDAD21), Oct. 1, 2024 to Sept. 30, 2025
+  note: The list's name was matched to this nation by a person or AI review; the list names 'NOTTAWASEPPI HURON BAND OF THE POTAWATOMI'.
 governance:
 - aspect: form
   value: Amended and Restated Constitution
