@@ -1,0 +1,55 @@
+key: pawnee-nation-of-oklahoma-v-united-states-bureau-of-indian-affairs-2020
+kind: federal-case
+citation:
+  type: legal_case
+  title: Pawnee Nation of Oklahoma v. United States Bureau of Indian Affairs
+  authority: United States District Court for the Northern District of Oklahoma
+  issued:
+    date-parts:
+    - - 2020
+      - 1
+      - 8
+  URL: https://www.courtlistener.com/opinion/9919682/pawnee-nation-of-oklahoma-v-united-states-bureau-of-indian-affairs/
+  accessed:
+    date-parts:
+    - - 2026
+      - 11
+      - 26
+original_link: https://www.courtlistener.com/opinion/9919682/pawnee-nation-of-oklahoma-v-united-states-bureau-of-indian-affairs/
+retrieved: '2026-11-26'
+archives: []
+history:
+  status: live
+  last_checked: '2026-11-26'
+rights:
+  status: no-permission-needed
+  basis: government-edict
+  basis_note: The text of a judicial opinion has no copyright (Georgia v. Public.Resource.Org, Inc., 590 U.S. 255 (2020)). The copy served on this site is the court's opinion only, without the publisher's headnotes, synopsis or other editorial matter (decision record 0060).
+  redistribution: true
+tribes:
+- pawnee-nation-of-oklahoma
+nations_in_case:
+  checked: '2026-11-26'
+  named:
+  - nation: pawnee-nation-of-oklahoma
+    named_as: Pawnee Nation of Oklahoma
+    role: party
+    note: Matched by the script to the nation record of the same name; not yet checked.
+jurisdictions:
+- level: federal
+topics:
+- federal-court-indian-law
+found_in:
+- 2026-11-26-federal-court-indian-law-opinions
+notes: Docket 4:16-cv-00697; no reporter citation yet. Decided by the United States District Court for the Northern District of Oklahoma on Jan. 8, 2020. Found by scripts/caselaw/courtlistener_federal_opinions.py and scripts/caselaw/state_court_opinions.py in CourtListener's bulk files, with an Indian law term score of 6; an AI reader read excerpts and judged it an Indian law case (BIA oil and gas approvals on allotment, NHPA and AIARMA).
+review:
+  status: unverified
+  by: scripts/caselaw/state_court_opinions.py
+  date: '2026-11-26'
+  checks:
+  - check: 'Indian law case: the term score and, below the score kept without a reading, an AI reader''s judgment of excerpts'
+    result: agree
+    detail: 'score 6; reader: BIA oil and gas approvals on allotment, NHPA and AIARMA'
+  - check: Nations named in the caption, matched to nation records by name
+    result: agree
+    detail: 1 matched, 0 not linked

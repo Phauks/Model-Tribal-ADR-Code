@@ -1,0 +1,75 @@
+key: cabazon-band-of-mission-indians-v-wilson-1997
+kind: federal-case
+citation:
+  type: legal_case
+  title: Cabazon Band of Mission Indians v. Wilson
+  authority: United States Court of Appeals for the Ninth Circuit
+  container-title: F.3d
+  volume: '124'
+  page: '1050'
+  issued:
+    date-parts:
+    - - 1997
+      - 9
+      - 2
+  URL: https://static.case.law/f3d/124/html/1050-01.html
+  accessed:
+    date-parts:
+    - - 2026
+      - 11
+      - 26
+original_link: https://static.case.law/f3d/124/html/1050-01.html
+retrieved: '2026-11-26'
+archives: []
+history:
+  status: live
+  last_checked: '2026-11-26'
+rights:
+  status: no-permission-needed
+  basis: government-edict
+  basis_note: The text of a judicial opinion has no copyright (Georgia v. Public.Resource.Org, Inc., 590 U.S. 255 (2020)). The copy served on this site is the court's opinion only, without the publisher's headnotes, synopsis or other editorial matter (decision record 0060).
+  redistribution: true
+tribes:
+- barona-group-of-capitan-grande-band-of-mission-indians
+- viejas-baron-long-group-of-capitan-grande-band-of-mission-indians
+- cabazon-band-of-cahuilla-indians
+nations_in_case:
+  checked: '2026-11-26'
+  named:
+  - nation: barona-group-of-capitan-grande-band-of-mission-indians
+    named_as: Barona Band of Mission Indians
+    role: party
+    historical: true
+    note: Matched by the script to the only nation record sharing this name; not yet checked against the case's history.
+  - nation: viejas-baron-long-group-of-capitan-grande-band-of-mission-indians
+    named_as: Viejas Band of Mission Indians
+    role: party
+    historical: true
+    note: Matched by the script to the only nation record sharing this name; not yet checked against the case's history.
+  - nation: cabazon-band-of-cahuilla-indians
+    named_as: Cabazon Band of Mission Indians
+    role: party
+    note: Matched by the script to a name the nation record gives; not yet checked.
+  not_linked:
+  - named_as: Sycuan Band of Mission Indians
+    reason: No nation record matches this name; it may be a historical name or a group that is not a recognized nation today.
+  - named_as: Capitan Grande Band of Mission Indians
+    reason: More than one of today's nations shares this name (barona-group-of-capitan-grande-band-of-mission-indians, capitan-grande-band-of-diegueno-mission-indians-of-california, viejas-baron-long-group-of-capitan-grande-band-of-mission-indians); which the case concerns has not been checked.
+jurisdictions:
+- level: federal
+topics:
+- federal-court-indian-law
+found_in:
+- 2026-11-26-federal-court-indian-law-opinions
+notes: Published at 124 F.3d 1050. Decided by the United States Court of Appeals for the Ninth Circuit on Sept. 2, 1997. Found by scripts/caselaw/state_court_opinions.py in the Caselaw Access Project's volumes, with an Indian law term score of 112, at or above 10, the level kept without a reading.
+review:
+  status: unverified
+  by: scripts/caselaw/state_court_opinions.py
+  date: '2026-11-26'
+  checks:
+  - check: 'Indian law case: the term score and, below the score kept without a reading, an AI reader''s judgment of excerpts'
+    result: agree
+    detail: score 112
+  - check: Nations named in the caption, matched to nation records by name
+    result: missing
+    detail: 3 matched, 2 not linked

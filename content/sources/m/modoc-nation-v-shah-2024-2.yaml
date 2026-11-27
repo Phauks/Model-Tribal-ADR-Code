@@ -1,0 +1,55 @@
+key: modoc-nation-v-shah-2024-2
+kind: federal-case
+citation:
+  type: legal_case
+  title: Modoc Nation v. Shah
+  authority: United States District Court for the Northern District of Oklahoma
+  issued:
+    date-parts:
+    - - 2024
+      - 10
+      - 30
+  URL: https://www.courtlistener.com/opinion/10199253/modoc-nation-v-shah/
+  accessed:
+    date-parts:
+    - - 2026
+      - 11
+      - 26
+original_link: https://www.courtlistener.com/opinion/10199253/modoc-nation-v-shah/
+retrieved: '2026-11-26'
+archives: []
+history:
+  status: live
+  last_checked: '2026-11-26'
+rights:
+  status: no-permission-needed
+  basis: government-edict
+  basis_note: The text of a judicial opinion has no copyright (Georgia v. Public.Resource.Org, Inc., 590 U.S. 255 (2020)). The copy served on this site is the court's opinion only, without the publisher's headnotes, synopsis or other editorial matter (decision record 0060).
+  redistribution: true
+tribes:
+- modoc-nation
+nations_in_case:
+  checked: '2026-11-26'
+  named:
+  - nation: modoc-nation
+    named_as: Modoc Nation
+    role: party
+    note: Matched by the script to the nation record of the same name; not yet checked.
+jurisdictions:
+- level: federal
+topics:
+- federal-court-indian-law
+found_in:
+- 2026-11-26-federal-court-indian-law-opinions
+notes: Docket 4:19-cv-00588; no reporter citation yet. Decided by the United States District Court for the Northern District of Oklahoma on Oct. 30, 2024. Found by scripts/caselaw/courtlistener_federal_opinions.py and scripts/caselaw/state_court_opinions.py in CourtListener's bulk files, with an Indian law term score of 1; an AI reader read excerpts and judged it an Indian law case (Modoc Nation tribe counterclaims and tribal immunity).
+review:
+  status: unverified
+  by: scripts/caselaw/state_court_opinions.py
+  date: '2026-11-26'
+  checks:
+  - check: 'Indian law case: the term score and, below the score kept without a reading, an AI reader''s judgment of excerpts'
+    result: agree
+    detail: 'score 1; reader: Modoc Nation tribe counterclaims and tribal immunity'
+  - check: Nations named in the caption, matched to nation records by name
+    result: agree
+    detail: 1 matched, 0 not linked

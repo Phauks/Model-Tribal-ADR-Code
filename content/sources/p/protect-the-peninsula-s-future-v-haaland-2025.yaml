@@ -1,0 +1,49 @@
+key: protect-the-peninsula-s-future-v-haaland-2025
+kind: federal-case
+citation:
+  type: legal_case
+  title: Protect The Peninsula's Future v. Haaland
+  authority: United States District Court for the Western District of Washington
+  issued:
+    date-parts:
+    - - 2025
+      - 7
+      - 14
+  URL: https://www.courtlistener.com/opinion/10633133/protect-the-peninsulas-future-v-haaland/
+  accessed:
+    date-parts:
+    - - 2026
+      - 11
+      - 26
+original_link: https://www.courtlistener.com/opinion/10633133/protect-the-peninsulas-future-v-haaland/
+retrieved: '2026-11-26'
+archives: []
+history:
+  status: live
+  last_checked: '2026-11-26'
+rights:
+  status: no-permission-needed
+  basis: government-edict
+  basis_note: The text of a judicial opinion has no copyright (Georgia v. Public.Resource.Org, Inc., 590 U.S. 255 (2020)). The copy served on this site is the court's opinion only, without the publisher's headnotes, synopsis or other editorial matter (decision record 0060).
+  redistribution: true
+nations_in_case:
+  checked: '2026-11-26'
+  named: []
+jurisdictions:
+- level: federal
+topics:
+- federal-court-indian-law
+found_in:
+- 2026-11-26-federal-court-indian-law-opinions
+notes: Docket 3:23-cv-05737; no reporter citation yet. Decided by the United States District Court for the Western District of Washington on July 14, 2025. Found by scripts/caselaw/courtlistener_federal_opinions.py and scripts/caselaw/state_court_opinions.py in CourtListener's bulk files, with an Indian law term score of 3; an AI reader read excerpts and judged it an Indian law case (Jamestown tribe interest, tribal land and shellfish NEPA).
+review:
+  status: unverified
+  by: scripts/caselaw/state_court_opinions.py
+  date: '2026-11-26'
+  checks:
+  - check: 'Indian law case: the term score and, below the score kept without a reading, an AI reader''s judgment of excerpts'
+    result: agree
+    detail: 'score 3; reader: Jamestown tribe interest, tribal land and shellfish NEPA'
+  - check: Nations named in the caption, matched to nation records by name
+    result: agree
+    detail: 0 matched, 0 not linked
