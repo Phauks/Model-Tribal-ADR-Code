@@ -136,6 +136,7 @@ export const load: PageServerLoad = async (event) => {
 			logoChecking: Boolean(sponsor.logoKey) && !logoReady,
 			listing: sponsor.listing,
 			earmark: sponsor.earmark,
+			homeRowChosen: sponsor.homeRowChosen,
 			createdAt: sponsor.createdAt
 		},
 		preview: publicView(sponsor, totals.firstAt ?? sponsor.createdAt, logoReady),
@@ -223,7 +224,8 @@ export const actions: Actions = {
 			link: link.link,
 			oneLine,
 			listing,
-			earmark
+			earmark,
+			homeRowChosen: form.get('homeRow') === 'yes'
 		});
 		const logo = form.get('logo');
 		if (logo instanceof File && logo.size > 0) {

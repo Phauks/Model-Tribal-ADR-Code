@@ -35,7 +35,7 @@ import {
 } from './seed-local-database.mjs';
 
 /** Time limits, in milliseconds. */
-const limits = { navigation: 60_000, page: 120_000, open: 10_000 };
+const limits = { navigation: 60_000, page: 120_000, start: 30_000, open: 10_000 };
 const wide = { width: 1280, height: 800 };
 const phone = { width: 390, height: 844 };
 
@@ -99,7 +99,7 @@ const openers = {
 		await page.locator('#download-choices').waitFor({ state: 'visible' });
 	},
 	async report(page) {
-		await mastheadButton(page, 'Report a problem');
+		await mastheadButton(page, 'Request a Change');
 		await page.locator('dialog.modal[open]').waitFor({ state: 'visible' });
 	},
 	async follow(page) {
@@ -154,6 +154,9 @@ const visits = {
 		'/biographies/a-pish-ka-go-gi',
 		'/supreme-court/justices/john-marshall',
 		'/supreme-court/presidents/abraham-lincoln',
+		// A page's own Changes view (src/lib/server/page-changes.ts): a nation's, with its badges, and a glossary entry's.
+		'/nations/hannahville-indian-community/changes',
+		'/glossary/peacemaking/changes',
 		'/sign-in',
 		'/sign-in/forgot',
 		['/requests', ['sign-in panel']],
@@ -248,6 +251,12 @@ async function load(page, address) {
 	const landed = new URL(page.url()).pathname;
 	if (!response?.ok()) return `answered ${response?.status()}`;
 	if (landed !== address) return `went to ${landed} instead`;
+	// The load event can come before the page's script has started, since SvelteKit loads it with import(), which the load event does not wait for. A control pressed in between may do nothing: on Nov. 27, 2026 the Download menu on /workspace "could not be opened" when the script reached the CI runner's browser late. The site's layout marks the start once every part of the page is running (src/lib/page-started.ts).
+	try {
+		await page.locator('html[data-started="on"]').waitFor({ state: 'attached', timeout: limits.start });
+	} catch {
+		return `its script did not start within ${limits.start / 1000} s`;
+	}
 	await waitUntilSettled(page);
 	return undefined;
 }
@@ -294,7 +303,11 @@ try {
 						await check(page, label);
 						for (const state of states) {
 							await page.setViewportSize(wide);
-							if ((await load(page, address)) !== undefined) continue;
+							const reloadProblem = await load(page, address);
+							if (reloadProblem) {
+								problems.push(`${label} › ${state}: ${reloadProblem}`);
+								continue;
+							}
 							try {
 								await openers[state](page);
 							} catch (error) {

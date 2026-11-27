@@ -3,9 +3,9 @@
 	A data table that readers can sort and search (spikes/tables/REPORT.md).
 
 	The page is built with every row already in order, as a plain <table>, so
-	it reads the same with scripts turned off. Once scripts run, sortable
-	headers become buttons and, when searchLabel is given, a search box and a
-	live count appear above the table. Sorting follows the WAI-ARIA Authoring
+	it reads the same with scripts turned off. Sortable headers are buttons,
+	and the title row, its count and its icons are drawn with the page, so
+	nothing moves when scripts start (see below). Sorting follows the WAI-ARIA Authoring
 	Practices sortable table example: the sorted column's header carries
 	aria-sort, and the button names the column.
 
@@ -49,14 +49,21 @@
 	column's sum under it, over the rows shown. It sits in the table's footer,
 	below a heavy rule, and stays at the bottom however the table is sorted.
 
-	Every table also has one control row (Trevor, Nov. 23, 2026: a .csv
-	download "should always be available", any table can go full screen, and
-	a reader can leave rows out "to see how things would change without
-	it"): borderless icons at the right of the count for Copy link (when
-	shareable), download (always: a list of .csv and .xlsx, TableDownload.svelte;
-	the files are named `download`, or the table's identifier) and full screen (Lucide maximize and minimize, as on the map
-	and the charts). `tools={false}` leaves the row off, for a table inside
-	something with its own, such as a chart.
+	Every table sits in a box with a title row, the way a chart does (Trevor
+	chose this on Nov. 27, 2026, from design/table-title-row/: "A. Title row
+	on the table"). The row is part of the page as built, so the table no
+	longer moves down when scripts run. At its left is the page's `heading`
+	snippet with the table's count badge ("19", then "8 of 19" when narrowed),
+	or, with no heading, the count in words ("229 courts"). At its right are
+	borderless icons, always in this order: Search (when searchLabel is
+	given; it opens a box in the row), Columns, Copy link (when shareable),
+	download (always: a list of .csv and .xlsx, TableDownload.svelte; the files
+	are named `download`, or the table's identifier) and full screen (Lucide
+	maximize and minimize, as on the map and the charts; Trevor, Nov. 23,
+	2026: a .csv download "should always be available"). Under the row, each
+	column being filtered gets a chip naming what it keeps, with an x to
+	remove it, then "Show all". `tools={false}` leaves the row off, for a
+	table inside something with its own, such as a chart.
 
 	Leaving rows out is for charts only (Trevor chose this on Nov. 23, 2026,
 	after it showed on every table): `leaveOut` gives each row a button to
@@ -69,7 +76,7 @@
 		defaultSort={{ key: 'name', direction: 'ascending' }} searchLabel="Search nations" />
 -->
 <script lang="ts">
-	import { flushSync, onMount, type Snippet } from 'svelte';
+	import { flushSync, onMount, tick, type Snippet } from 'svelte';
 	import ArrowDown from '@lucide/svelte/icons/arrow-down';
 	import ArrowUp from '@lucide/svelte/icons/arrow-up';
 	import ArrowUpDown from '@lucide/svelte/icons/arrow-up-down';
@@ -80,6 +87,7 @@
 	import Maximize from '@lucide/svelte/icons/maximize';
 	import Minimize from '@lucide/svelte/icons/minimize';
 	import RotateCcw from '@lucide/svelte/icons/rotate-ccw';
+	import Search from '@lucide/svelte/icons/search';
 	import X from '@lucide/svelte/icons/x';
 	import ColumnFilterMenu from '#lib/components/ColumnFilterMenu.svelte';
 	import TableDownload from '#lib/components/TableDownload.svelte';
@@ -144,6 +152,10 @@
 		total?: number;
 		/** The keys of the columns shown; undefined shows every column not marked optional. Bind it to set or follow the reader's choice. */
 		shownColumns?: string[];
+		/**
+		 * The table's heading, drawn at the left of its title row; it gets the table's count badge to place, such as `<h3 id="treaties-heading">Treaties {@render count()}</h3>`. Without it the title row shows the count in words ("229 courts").
+		 */
+		heading?: Snippet<[count: Snippet]>;
 		/** Each column's filter. A page can bind it to set the filters and to hear when the reader changes them, as Build a table does to carry them into a grouped table. */
 		columnFilters?: ColumnFilters;
 	}
@@ -168,7 +180,8 @@
 		leaveOut = false,
 		total,
 		shownColumns = $bindable(undefined),
-		columnFilters = $bindable({})
+		columnFilters = $bindable({}),
+		heading
 	}: Props = $props();
 
 	// A table drawn on the server gets its buttons once the browser has it; one made later in the browser, such as a map view's table, starts with them, so it is drawn once and does not jump (src/lib/page-started.ts).
@@ -211,7 +224,8 @@
 	});
 	const leftOutRows = $derived(rows.filter((row) => leftOut.includes(row.key)));
 	const narrowed = $derived(query.trim() !== '' || Object.values(columnFilters).some(filterIsActive) || leftOut.length > 0);
-	const hasTools = $derived(tools || Boolean(searchLabel) || filterColumns.length > 0 || Boolean(download) || shareable);
+	/** The title row is drawn with the page, so the table does not move down once scripts run (Trevor chose a title row on every table, Nov. 27, 2026). */
+	const titleRow = $derived(tools || Boolean(searchLabel) || filterColumns.length > 0 || Boolean(download) || shareable);
 	const rowHeader = $derived(columns.find((column) => column.isRowHeader) ?? columns[0]);
 	const firstVisible = $derived(visibleColumns[0]);
 	/** A row's name, for its leave-out button and its chip: its row header's text. */
@@ -222,6 +236,50 @@
 			allRows === 1 ? rowName[0] : rowName[1]
 		}`
 	);
+
+	/** Fewer rows than the table has: narrowed, or only the first of them passed. */
+	const partial = $derived(shownRows.length < allRows);
+	/** The count in the heading's badge: "19", or "8 of 19" when narrowed. */
+	const badgeText = $derived(partial ? `${shownRows.length.toLocaleString('en-US')} of ${allRows.toLocaleString('en-US')}` : allRows.toLocaleString('en-US'));
+	/** The count in words, for a title row without a heading: "229 courts", or "48 of 229 courts". */
+	const countText = $derived(
+		showCount || narrowed
+			? `${partial ? `${shownRows.length.toLocaleString('en-US')} of ` : ''}${allRows.toLocaleString('en-US')} ${allRows === 1 ? rowName[0] : rowName[1]}`
+			: ''
+	);
+	/** One chip for each column being filtered, naming what it keeps. */
+	const chips = $derived(
+		columns.flatMap((column) => {
+			const filter = columnFilters[column.key];
+			if (!filterIsActive(filter)) return [];
+			const parts = [...(filter?.values ?? [])];
+			if (filter?.contains?.trim()) parts.push(`contains “${filter.contains.trim()}”`);
+			return [{ column, text: parts.join(', ') }];
+		})
+	);
+
+	/* The search: an icon in the title row that opens a box in its place. */
+	let searchOpen = $state(false);
+	let searchInput = $state<HTMLInputElement | undefined>();
+
+	async function openSearch() {
+		searchOpen = true;
+		await tick();
+		searchInput?.focus();
+	}
+
+	function closeSearch() {
+		query = '';
+		searchOpen = false;
+	}
+
+	function onSearchKeydown(event: KeyboardEvent) {
+		if (event.key !== 'Escape') return;
+		// Escape closes the search box; it does not also leave full screen.
+		event.stopPropagation();
+		event.preventDefault();
+		closeSearch();
+	}
 
 	function sortBy(column: TableColumn) {
 		const ascending = sort?.key !== column.key || sort.direction === 'descending';
@@ -319,6 +377,7 @@
 			chosenSort = state.sort;
 			columnFilters = state.filters;
 			if (state.columns) shownColumns = state.columns;
+			if (query) searchOpen = true;
 		}
 		addressRead = true;
 		interactive = true;
@@ -340,68 +399,97 @@
 
 <svelte:window onkeydown={onKeydown} />
 
-<div class="data-table" class:filling-window={fullScreen.fillingWindow} bind:this={frame}>
+{#snippet countBadge()}<span class="count-badge"><span class="visually-hidden">, </span>{badgeText}</span>{/snippet}
 
-{#if interactive && hasTools}
-	{#if searchLabel}
-	<div class="table-tools no-print">
-		<div class="field">
-			<label for="{identifier}-search">{searchLabel}</label>
-			<input id="{identifier}-search" type="search" autocomplete="off" bind:value={query} />
+<div class="data-table" class:boxed={titleRow} class:filling-window={fullScreen.fillingWindow} bind:this={frame}>
+
+{#if titleRow}
+	<div class="table-head">
+		<div class="table-title">
+			{#if heading}
+				{@render heading(countBadge)}
+			{:else if countText}
+				<p class="small muted table-count">{countText}</p>
+			{/if}
+		</div>
+		{#if searchLabel && searchOpen}
+			<div class="table-search no-print">
+				<Search aria-hidden="true" size="1.1em" strokeWidth={1.75} />
+				<label class="visually-hidden" for="{identifier}-search">{searchLabel}</label>
+				<input id="{identifier}-search" type="search" autocomplete="off" placeholder={searchLabel} bind:value={query} bind:this={searchInput} onkeydown={onSearchKeydown} />
+				<button type="button" class="search-close" aria-label="Close search" title="Close search" onclick={closeSearch}>
+					<X aria-hidden="true" size="1.1em" strokeWidth={1.75} />
+				</button>
+			</div>
+		{/if}
+		<div class="table-icons no-print">
+			{#if searchLabel && !searchOpen}
+				<button type="button" class="icon-tool" aria-label={searchLabel} title={searchLabel} onclick={openSearch}>
+					<Search aria-hidden="true" size="1.25em" strokeWidth={1.75} />
+				</button>
+			{/if}
+			{#if tools && columns.length > 1}
+				<button
+					type="button"
+					class="icon-tool"
+					class:open={openPopover?.key === '#columns'}
+					aria-label="Columns"
+					title="Show or hide columns"
+					aria-expanded={openPopover?.key === '#columns'}
+					popovertarget="{identifier}-columns"
+				>
+					<Columns3Cog aria-hidden="true" size="1.25em" strokeWidth={1.75} />
+				</button>
+			{/if}
+			{#if shareable}
+				<button type="button" class="icon-tool" aria-label="Copy link" title="Copy a link to the table as it is now" onclick={copyLink}>
+					<Link aria-hidden="true" size="1.25em" strokeWidth={1.75} />
+				</button>
+			{/if}
+			{#if tools || download}
+				<TableDownload name={download ?? identifier} title={caption ?? download ?? identifier} table={() => ({ columns: visibleColumns, rows: shownRows })} />
+			{/if}
+			{#if tools}
+				<button type="button" class="icon-tool" aria-label={fullScreen.shown ? 'Leave full screen' : 'Full screen'} title={fullScreen.shown ? 'Leave full screen' : 'Full screen'} onclick={fullScreen.toggle}>
+					{#if fullScreen.shown}<Minimize aria-hidden="true" size="1.25em" strokeWidth={1.75} />{:else}<Maximize aria-hidden="true" size="1.25em" strokeWidth={1.75} />{/if}
+				</button>
+			{/if}
 		</div>
 	</div>
-	{/if}
-	<div class="table-status no-print">
-		<p class="small muted table-count" role="status">{showCount || narrowed ? count : ''}</p>
-		{#if narrowed}
-			<button type="button" class="button button-quiet small-button" onclick={clearFilters}>
-				<RotateCcw aria-hidden="true" size="1.1em" strokeWidth={1.75} />Show all
-			</button>
-		{/if}
-		{#if tools && columns.length > 1}
-			<button
-				type="button"
-				class="icon-tool"
-				class:open={openPopover?.key === '#columns'}
-				aria-label="Columns"
-				title="Show or hide columns"
-				aria-expanded={openPopover?.key === '#columns'}
-				popovertarget="{identifier}-columns"
-			>
-				<Columns3Cog aria-hidden="true" size="1.25em" strokeWidth={1.75} />
-			</button>
-		{/if}
-		{#if shareable}
-			<button type="button" class="icon-tool" aria-label="Copy link" title="Copy a link to the table as it is now" onclick={copyLink}>
-				<Link aria-hidden="true" size="1.25em" strokeWidth={1.75} />
-			</button>
-		{/if}
-		{#if tools || download}
-			<TableDownload name={download ?? identifier} title={caption ?? download ?? identifier} table={() => ({ columns: visibleColumns, rows: shownRows })} />
-		{/if}
-		{#if tools}
-			<button type="button" class="icon-tool" aria-label={fullScreen.shown ? 'Leave full screen' : 'Full screen'} title={fullScreen.shown ? 'Leave full screen' : 'Full screen'} onclick={fullScreen.toggle}>
-				{#if fullScreen.shown}<Minimize aria-hidden="true" size="1.25em" strokeWidth={1.75} />{:else}<Maximize aria-hidden="true" size="1.25em" strokeWidth={1.75} />{/if}
-			</button>
-		{/if}
-		{#if copyStatus}<p class="small table-copied" role="status">{copyStatus}</p>{/if}
-		{#if leftOutRows.length > 0}
-			<ul class="left-out" aria-label="Left out">
-				{#each leftOutRows as row (row.key)}
-					<li>
-						<button type="button" class="chip-button" aria-label="Bring back {rowLabel(row)}" onclick={() => (leftOut = leftOut.filter((key) => key !== row.key))}>
-							{rowLabel(row)}<X aria-hidden="true" size="1em" />
-						</button>
-					</li>
-				{/each}
+	<p class="visually-hidden table-live-count" role="status">{interactive && (showCount || narrowed) ? count : ''}</p>
+	{#if copyStatus}<p class="small table-copied" role="status">{copyStatus}</p>{/if}
+	{#if interactive && chips.length > 0}
+		<ul class="table-chips no-print" aria-label="Filters">
+			{#each chips as chip (chip.column.key)}
 				<li>
-					<button type="button" class="button button-quiet small-button" onclick={() => (leftOut = [])}>
-						<RotateCcw aria-hidden="true" size="1.1em" strokeWidth={1.75} />Bring back all
+					<button type="button" class="filter-chip" aria-label="Remove the filter on {chip.column.header}: {chip.text}" onclick={() => setFilter(chip.column, undefined)}>
+						{chip.column.header}:<b>{chip.text}</b><X aria-hidden="true" size="1em" strokeWidth={1.75} />
 					</button>
 				</li>
-			</ul>
-		{/if}
-	</div>
+			{/each}
+			<li>
+				<button type="button" class="show-all" onclick={clearFilters}>
+					<RotateCcw aria-hidden="true" size="1em" strokeWidth={1.75} />Show all
+				</button>
+			</li>
+		</ul>
+	{/if}
+{/if}
+{#if interactive && titleRow && leftOutRows.length > 0}
+	<ul class="left-out no-print" aria-label="Left out">
+		{#each leftOutRows as row (row.key)}
+			<li>
+				<button type="button" class="chip-button" aria-label="Bring back {rowLabel(row)}" onclick={() => (leftOut = leftOut.filter((key) => key !== row.key))}>
+					{rowLabel(row)}<X aria-hidden="true" size="1em" />
+				</button>
+			</li>
+		{/each}
+		<li>
+			<button type="button" class="button button-quiet small-button" onclick={() => (leftOut = [])}>
+				<RotateCcw aria-hidden="true" size="1.1em" strokeWidth={1.75} />Bring back all
+			</button>
+		</li>
+	</ul>
 {/if}
 
 <div class="table-scroll" role="region" aria-label={label} data-print-part="tables" {@attach keyboardScroll}>
@@ -410,7 +498,7 @@
 		<thead>
 			<tr>
 				{#each visibleColumns as column (column.key)}
-					{@const filtering = interactive && filterColumns.includes(column)}
+					{@const filtering = filterColumns.includes(column)}
 					{@const active = filterIsActive(columnFilters[column.key])}
 					<th
 						scope="col"
@@ -418,7 +506,7 @@
 						aria-sort={sort?.key === column.key ? sort.direction : undefined}
 					>
 						{#snippet heading()}
-							{#if interactive && column.sortable}
+							{#if column.sortable}
 								<button type="button" class="sort-button" onclick={() => sortBy(column)}>
 									{column.header}
 									{#if sort?.key === column.key && sort.direction === 'ascending'}
@@ -584,18 +672,179 @@
 </div>
 
 <style>
-	.table-tools {
+	/*
+	 * The table is a box with a title row, as a chart is (Trevor chose this on
+	 * Nov. 27, 2026, design/table-title-row/): the heading and its count at the
+	 * left, the tools as borderless icons at the right, then a chip for each
+	 * filter.
+	 */
+	.data-table.boxed {
+		margin: 0 0 var(--space-6);
+		padding: var(--space-4);
+		border: 1px solid var(--color-line);
+		border-radius: var(--radius-control);
+		background: var(--color-surface-raised);
+	}
+
+	.data-table.boxed .table-scroll {
+		margin-bottom: 0;
+	}
+
+	.data-table.boxed > :last-child :global(table) {
+		margin-bottom: 0;
+	}
+
+	.table-head {
 		display: flex;
 		flex-wrap: wrap;
-		align-items: flex-end;
-		gap: var(--space-2) var(--space-4);
+		align-items: center;
+		justify-content: space-between;
+		gap: var(--space-1) var(--space-3);
 		margin-bottom: var(--space-3);
 	}
 
-	.table-tools .field {
+	/* On a narrow screen the title takes the line and the tools wrap under it, at the right. */
+	.table-title {
+		flex: 1 1 14rem;
+		min-width: 0;
+	}
+
+	/* The count in words is short, so the icons stay beside it on a phone. */
+	.table-title:has(> .table-count) {
+		flex-basis: 10rem;
+	}
+
+	.table-title:empty {
+		flex-basis: 0;
+	}
+
+	.table-title > :global(:is(h2, h3, h4)) {
+		margin: 0;
+	}
+
+	.table-icons {
+		display: flex;
+		flex-shrink: 0;
+		align-items: center;
+		gap: var(--space-1);
+		margin-left: auto;
+	}
+
+	.table-search {
+		display: flex;
+		align-items: center;
+		gap: var(--space-2);
 		flex: 1 1 16rem;
 		max-width: var(--layout-field);
-		margin: 0;
+		min-height: 2.5rem;
+		padding: 0 var(--space-1) 0 var(--space-2);
+		border: 1px solid var(--color-control-border);
+		border-radius: var(--radius-control);
+		background: var(--color-paper);
+		color: var(--color-ink-muted);
+	}
+
+	/* The site's focus ring (focus F1, a ring with no fill) goes round the whole box, not the input inside it. */
+	.table-search:focus-within {
+		outline: 3px solid var(--focus-ring, var(--color-focus-ring));
+		outline-offset: 2px;
+	}
+
+	.table-search input:focus-visible {
+		outline: none;
+		box-shadow: none;
+		background: transparent;
+		color: var(--color-ink);
+	}
+
+	/* The box has its own close button, so the browser's clear button is left off. */
+	.table-search input::-webkit-search-cancel-button {
+		appearance: none;
+	}
+
+	.table-search input {
+		flex: 1 1 auto;
+		min-width: 0;
+		min-height: 2.25rem;
+		padding: 0;
+		border: 0;
+		background: transparent;
+		color: var(--color-ink);
+		font: inherit;
+		outline: none;
+	}
+
+	.search-close {
+		display: inline-flex;
+		align-items: center;
+		justify-content: center;
+		min-width: 2rem;
+		min-height: 2rem;
+		padding: 0;
+		border: 0;
+		border-radius: var(--radius-control);
+		background: transparent;
+		color: var(--color-ink-muted);
+		cursor: pointer;
+	}
+
+	.search-close:hover {
+		color: var(--color-ink);
+	}
+
+	.table-chips {
+		display: flex;
+		flex-wrap: wrap;
+		align-items: center;
+		gap: var(--space-2);
+		margin: 0 0 var(--space-3);
+		padding: 0;
+		list-style: none;
+		font-size: var(--font-size-small);
+	}
+
+	.filter-chip {
+		display: inline-flex;
+		align-items: center;
+		gap: var(--space-1);
+		min-height: 2rem;
+		padding: 0 var(--space-2) 0 var(--space-3);
+		border: 1px solid var(--color-control-border);
+		border-radius: 999px;
+		background: var(--color-surface);
+		color: var(--color-ink);
+		font: inherit;
+		cursor: pointer;
+	}
+
+	.filter-chip b {
+		font-weight: var(--font-weight-semibold);
+	}
+
+	.filter-chip:hover {
+		border-color: var(--color-ink-muted);
+	}
+
+	.show-all {
+		display: inline-flex;
+		align-items: center;
+		gap: var(--space-1);
+		min-height: 2rem;
+		padding: 0 var(--space-2);
+		border: 0;
+		background: transparent;
+		color: var(--color-link);
+		font: inherit;
+		font-weight: var(--font-weight-semibold);
+		cursor: pointer;
+	}
+
+	@media print {
+		.data-table.boxed {
+			padding: 0;
+			border: 0;
+			background: none;
+		}
 	}
 
 	/* A header with a filter: its name and sort arrows, then the funnel at the right. */
@@ -650,22 +899,12 @@
 		font-weight: var(--font-weight-bold);
 	}
 
-	.table-status {
-		display: flex;
-		flex-wrap: wrap;
-		align-items: center;
-		gap: var(--space-2) var(--space-3);
-		margin-bottom: var(--space-3);
-	}
-
 	.table-count {
 		margin: 0;
-		margin-right: auto;
 	}
 
 	.table-copied {
-		flex-basis: 100%;
-		margin: 0;
+		margin: calc(-1 * var(--space-2)) 0 var(--space-3);
 		overflow-wrap: anywhere;
 	}
 
@@ -707,7 +946,7 @@
 		flex: none;
 	}
 
-	/* The control row's icons: borderless, at the right of the count, as on the charts. */
+	/* The title row's icons: borderless, at the right, as on the charts. */
 	.icon-tool {
 		display: inline-flex;
 		align-items: center;
@@ -732,12 +971,11 @@
 	}
 
 	.left-out {
-		flex-basis: 100%;
 		display: flex;
 		flex-wrap: wrap;
 		gap: var(--space-1);
 		list-style: none;
-		margin: 0;
+		margin: 0 0 var(--space-3);
 		padding: 0;
 	}
 

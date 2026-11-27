@@ -9,7 +9,7 @@
  * only the sponsor's own managers and the lead author see it.
  */
 import type { D1Database, D1PreparedStatement, R2Bucket } from '@cloudflare/workers-types/index.ts';
-import { isEarmark, isListing, slugFor, type Earmark, type Listing } from '#lib/sponsorship.ts';
+import { homeRowPlacementLabels, isEarmark, isHomeRowPlacement, isListing, slugFor, type Earmark, type HomeRowPlacement, type Listing } from '#lib/sponsorship.ts';
 import { fileScans, forgetScan, mayServe, storeSentFile } from './file-scans.ts';
 import { newIdentifier, now } from './identifiers.ts';
 import { randomToken, sha256 } from './sign-in-secrets.ts';
@@ -132,11 +132,15 @@ export interface Sponsor {
 	stripeCustomerLive: string | null;
 	hiddenByProject: boolean;
 	hiddenNote: string | null;
+	/** The sponsor's managers chose to be in the home page row, which shows they give at least a Patron's amount. */
+	homeRowChosen: boolean;
+	/** The lead author's choice: by level, always or never (docs/sponsorship.md, "The home page row"). */
+	homeRowPlacement: HomeRowPlacement;
 	createdAt: string;
 	updatedAt: string;
 }
 
-interface SponsorRow {
+export interface SponsorRow {
 	identifier: string;
 	slug: string;
 	name: string;
@@ -150,11 +154,13 @@ interface SponsorRow {
 	stripe_customer_live: string | null;
 	hidden_by_project: number;
 	hidden_note: string | null;
+	home_row_chosen: number;
+	home_row_placement: string;
 	created_at: string;
 	updated_at: string;
 }
 
-function sponsorFrom(row: SponsorRow): Sponsor {
+export function sponsorFrom(row: SponsorRow): Sponsor {
 	return {
 		identifier: row.identifier,
 		slug: row.slug,
@@ -169,6 +175,8 @@ function sponsorFrom(row: SponsorRow): Sponsor {
 		stripeCustomerLive: row.stripe_customer_live,
 		hiddenByProject: row.hidden_by_project === 1,
 		hiddenNote: row.hidden_note,
+		homeRowChosen: row.home_row_chosen === 1,
+		homeRowPlacement: isHomeRowPlacement(row.home_row_placement) ? row.home_row_placement : 'by-level',
 		createdAt: row.created_at,
 		updatedAt: row.updated_at
 	};
@@ -308,6 +316,8 @@ export interface ListingChanges {
 	oneLine: string | null;
 	listing: Listing;
 	earmark: Earmark;
+	/** Left out, the choice to be in the home page row stays as it was. */
+	homeRowChosen?: boolean;
 }
 
 /** A link a sponsor may show: an https address with a host, or a problem to tell them. */
@@ -339,15 +349,17 @@ export async function saveListing(database: D1Database, sponsor: Sponsor, actor:
 	if (changes.oneLine !== sponsor.oneLine) changed.push('one line');
 	if (changes.listing !== sponsor.listing) changed.push('how they are listed');
 	if (changes.earmark !== sponsor.earmark) changed.push('where the gift goes');
+	const homeRowChosen = changes.homeRowChosen ?? sponsor.homeRowChosen;
+	if (homeRowChosen !== sponsor.homeRowChosen) changed.push(homeRowChosen ? 'chose the home page row' : 'left the home page row');
 	if (changed.length === 0) return sponsor;
 	const slug = changes.name === sponsor.name ? sponsor.slug : await freeSlug(database, changes.name, sponsor.identifier);
 	await database.batch([
 		database
 			.prepare(
-				`UPDATE sponsors SET name = ?, slug = ?, link = ?, one_line = ?, listing = ?, earmark = ?, updated_at = ?
+				`UPDATE sponsors SET name = ?, slug = ?, link = ?, one_line = ?, listing = ?, earmark = ?, home_row_chosen = ?, updated_at = ?
 				 WHERE identifier = ?`
 			)
-			.bind(changes.name, slug, changes.link, changes.oneLine, changes.listing, changes.earmark, now(), sponsor.identifier),
+			.bind(changes.name, slug, changes.link, changes.oneLine, changes.listing, changes.earmark, homeRowChosen ? 1 : 0, now(), sponsor.identifier),
 		historyStatement(database, sponsor.identifier, actor, 'Changed the listing', changed.join(', '))
 	]);
 	return (await sponsorByIdentifier(database, sponsor.identifier)) as Sponsor;
@@ -747,6 +759,15 @@ export async function allSponsors(database: D1Database, mode: GiftMode): Promise
 			status: publicStatus(sponsor, (mode === 'live' ? live : test).count > 0)
 		};
 	});
+}
+
+/** Places a sponsor in the home page row, keeps them off it, or leaves it to their level, as the lead author. */
+export async function setHomeRowPlacement(database: D1Database, sponsor: Sponsor, placement: HomeRowPlacement, actor: Actor): Promise<void> {
+	if (!isHomeRowPlacement(placement) || placement === sponsor.homeRowPlacement) return;
+	await database.batch([
+		database.prepare('UPDATE sponsors SET home_row_placement = ?, updated_at = ? WHERE identifier = ?').bind(placement, now(), sponsor.identifier),
+		historyStatement(database, sponsor.identifier, actor, 'Home page row changed by the project', homeRowPlacementLabels[placement])
+	]);
 }
 
 /** Takes a sponsor off the public pages, or puts them back, as the lead author. */
