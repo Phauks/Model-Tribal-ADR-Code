@@ -1,0 +1,50 @@
+key: hawaii-revised-statutes-571-61
+kind: state-statute
+citation:
+  type: legislation
+  title: Termination of parental rights; petition
+  title-short: Haw. Rev. Stat. § 571-61
+  container-title: Hawaii Revised Statutes
+  container-title-short: Haw. Rev. Stat.
+  section: 571-61
+  author:
+  - literal: Hawaii State Legislature
+  issued:
+    date-parts:
+    - - 1965
+  URL: https://data.capitol.hawaii.gov/hrscurrent/Vol12_Ch0501-0588/HRS0571/HRS_0571-0061.htm
+  accessed:
+    date-parts:
+    - - 2026
+      - 11
+      - 27
+original_link: https://data.capitol.hawaii.gov/hrscurrent/Vol12_Ch0501-0588/HRS0571/HRS_0571-0061.htm
+retrieved: '2026-11-27'
+archives: []
+history:
+  status: live
+  last_checked: '2026-11-27'
+state_law:
+  relevance: incidental
+  citation: Haw. Rev. Stat. § 571-61 (2025)
+rights:
+  status: no-permission-needed
+  basis: government-edict
+  basis_note: 'Official state statutes are not copyrightable under the government edicts doctrine (Georgia v. Public.Resource.Org, Inc., 590 U.S. 255 (2020)). Linked, not served: state statutes stay link only.'
+  redistribution: false
+jurisdictions:
+- level: state
+  state: HI
+topics:
+- state-indian-law
+found_in:
+- 2026-11-27-state-statutes-ky-la-hi
+notes: 'Indigo Book citation: Haw. Rev. Stat. § 571-61 (2025). History: L 1965, c 232, pt of §1; Supp, §333-29; HRS §571-61; am L 1970, c 205, §2; am L 1971, c 46, §1; am L 1973, c 211, §1(h); am L 1974, c 74, §1; am L 1976, c 85, §14; am L 1980, c 55, §1; am L 1982, c 49, §1; am L 1983, c 171, §4; am L 1993, c 160, §2; am L 2011, c 220, §17; am L 2013, c 253, §3; am L 2016, c 213, §2; am L 2023, c 160, §2. Text read from the Hawaii State Legislature''s page for the section in the Hawaii Revised Statutes (data.capitol.hawaii.gov/hrscurrent) on Nov. 27, 2026. Found by the state statutes sweep (terms: native american; native; tribe); AI reader''s verdict incidental: Termination ground counts tribal-law equivalent offenses as conclusive. Unverified.'
+review:
+  status: unverified
+  by: scripts/law/state_statutes/run.py
+  date: '2026-11-27'
+  checks:
+  - check: 'Native Hawaiian or Indian law section: the sweep''s keyword pass and an AI reader''s verdict (core, incidental or none)'
+    result: agree
+    detail: 'incidental; terms: native american; native; tribe'

@@ -1,0 +1,50 @@
+key: kentucky-revised-statutes-403-800
+kind: state-statute
+citation:
+  type: legislation
+  title: Definitions for KRS 403.800 to 403.880
+  title-short: Ky. Rev. Stat. Ann. § 403.800
+  container-title: Kentucky Revised Statutes
+  container-title-short: Ky. Rev. Stat. Ann.
+  section: '403.800'
+  author:
+  - literal: Kentucky Legislative Research Commission
+  issued:
+    date-parts:
+    - - 2004
+  URL: https://apps.legislature.ky.gov/law/statutes/statute.aspx?id=17494
+  accessed:
+    date-parts:
+    - - 2026
+      - 11
+      - 27
+original_link: https://apps.legislature.ky.gov/law/statutes/statute.aspx?id=17494
+retrieved: '2026-11-27'
+archives: []
+history:
+  status: live
+  last_checked: '2026-11-27'
+state_law:
+  relevance: incidental
+  citation: Ky. Rev. Stat. Ann. § 403.800 (2026)
+rights:
+  status: no-permission-needed
+  basis: government-edict
+  basis_note: 'Official state statutes are not copyrightable under the government edicts doctrine (Georgia v. Public.Resource.Org, Inc., 590 U.S. 255 (2020)). Linked, not served: state statutes stay link only.'
+  redistribution: false
+jurisdictions:
+- level: state
+  state: KY
+topics:
+- state-indian-law
+found_in:
+- 2026-11-27-state-statutes-ky-la-hi
+notes: 'Indigo Book citation: Ky. Rev. Stat. Ann. § 403.800 (2026). History: Created 2004 Ky. Acts ch. 133, sec. 1, effective July 13, 2004. Text read from the Kentucky Legislative Research Commission''s PDF of the section (apps.legislature.ky.gov/law/statutes) on Nov. 27, 2026. Found by the state statutes sweep (terms: indian tribe; native village; indian; native; tribe); AI reader''s verdict incidental: Custody act definition of tribe with state-like legal status. Unverified.'
+review:
+  status: unverified
+  by: scripts/law/state_statutes/run.py
+  date: '2026-11-27'
+  checks:
+  - check: 'Indian law section: the sweep''s keyword pass and an AI reader''s verdict (core, incidental or none)'
+    result: agree
+    detail: 'incidental; terms: indian tribe; native village; indian; native; tribe'

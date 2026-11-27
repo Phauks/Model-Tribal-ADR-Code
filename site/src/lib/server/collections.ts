@@ -376,6 +376,15 @@ function gamingCommissionDocuments(): CollectionItem[] {
 		.map((record) => sourceItem(record, (record.citation as { genre?: string }).genre ?? 'Commission final decision'));
 }
 
+const manualGenre = 'Indian Affairs Manual chapter';
+
+/** The chapters of the Indian Affairs Manual, Indian Affairs' own policy for its offices (scripts/law/indian_affairs_manual.py). */
+function indianAffairsManual(): CollectionItem[] {
+	return [...sources().values()]
+		.filter((record) => kindOf(record) === 'federal-agency-document' && (record.citation as { genre?: string }).genre === manualGenre)
+		.map((record) => sourceItem(record, (record.citation as { section?: string }).section));
+}
+
 const acknowledgmentOffice = 'U.S. Department of the Interior, Office of Federal Acknowledgment';
 
 /** The Department's documents in each federal acknowledgment petition: proposed findings, final determinations and the rest (scripts/law/acknowledgment_petitions.py). */
@@ -394,7 +403,7 @@ const genreOf = (record: SourceRecord) => (record.citation as { genre?: string }
 function congressionalDocuments(test: (genre: string) => boolean): () => CollectionItem[] {
 	return () =>
 		[...sources().values()]
-			.filter((record) => kindOf(record) === 'congressional-document' && test(genreOf(record)))
+			.filter((record) => kindOf(record) === 'congressional-document' && test(genreOf(record)) && !isEarlySerialSet(record))
 			.map((record) => sourceItem(record, genreOf(record).startsWith('CRS') ? genreOf(record) : record.legislative?.committees?.[0] ?? genreOf(record)));
 }
 
@@ -427,6 +436,22 @@ function waterRightsSettlements(): CollectionItem[] {
 		year: Number(row.year) || undefined,
 		detail: row.nations.split('; ').filter(Boolean).map(name).join('; ') || undefined
 	}));
+}
+
+/** A congressional document of the Serial Set issued before 1900, whichever script wrote its record. */
+function isEarlySerialSet(record: SourceRecord): boolean {
+	if ((record.topics ?? []).includes('serial-set')) return true;
+	const year = record.citation.issued?.['date-parts']?.[0]?.[0];
+	return kindOf(record) === 'congressional-document' && (record.legislative?.govinfo_package ?? '').startsWith('SERIALSET-') && typeof year === 'number' && year < 1900;
+}
+
+/**
+ * The Congressional Serial Set's documents on American Indians and Alaska Natives, 1817-1899: those in the University of
+ * Oklahoma's index (scripts/law/serial_set.py) and the reports on Indian affairs scripts/law/congressional_documents.py
+ * found, each with its citation. They are listed here rather than among the committee reports and documents.
+ */
+function serialSetDocuments(): CollectionItem[] {
+	return [...sources().values()].filter(isEarlySerialSet).map((record) => sourceItem(record, (record.citation as { number?: string }).number));
 }
 
 function nationNameOf(): (id: string) => string {
@@ -570,6 +595,7 @@ export const collections: Collection[] = [
 	{ identifier: 'federal-acknowledgment', search: { group: 'law', label: 'Acknowledgment document' }, title: 'Federal Acknowledgment Petitions', group: 'Federal law', detailHeader: 'Kind', sourceKinds: ['federal-agency-document'], items: acknowledgmentDocuments },
 	{ identifier: 'solicitor-opinions', search: { group: 'law', label: 'Solicitor’s opinion' }, title: 'Solicitor’s Opinions', group: 'Federal law', detailHeader: 'Number', sourceKinds: ['federal-agency-document'], items: solicitorOpinions },
 	{ identifier: 'indian-affairs-films', search: { group: 'law', label: 'Indian Affairs film or recording' }, title: 'Indian Affairs Films and Recordings', group: 'Federal law', detailHeader: 'Kind', sourceKinds: ['federal-agency-document'], items: indianAffairsFilms },
+	{ identifier: 'serial-set', search: { group: 'law', label: 'Serial Set document' }, title: 'Congressional Serial Set, 1817–1899', group: 'Federal law', detailHeader: 'Citation', sourceKinds: ['congressional-document'], items: serialSetDocuments },
 	{ identifier: 'national-indian-gaming-commission', search: { group: 'law', label: 'Gaming Commission document' }, title: 'Gaming Commission Opinions and Actions', group: 'Federal law', detailHeader: 'Kind', sourceKinds: ['federal-agency-document'], items: gamingCommissionDocuments },
 	{
 		identifier: 'water-rights-settlements',
@@ -592,6 +618,7 @@ export const collections: Collection[] = [
 		detailHeader: 'Named in Royce’s schedule',
 		items: () => landCessions().map((cession) => ({ title: `Royce cession ${cession.royce}`, href: `/nations/map?cession=${cession.royce}`, year: cession.dates[0] ? Number(cession.dates[0].slice(0, 4)) : undefined, detail: cession.schedule }))
 	},
+	{ identifier: 'indian-affairs-manual', search: { group: 'law', label: 'Indian Affairs Manual chapter' }, title: 'Indian Affairs Manual', group: 'Federal law', detailHeader: 'Part', sourceKinds: ['federal-agency-document'], items: indianAffairsManual },
 
 	// State law
 	{ identifier: 'state-statutes', search: { group: 'law', label: 'State statute' }, title: 'State Statutes', group: 'State law', detailHeader: 'State', sourceKinds: ['state-statute'], items: stateStatutes, breakdown: stateBreakdown },

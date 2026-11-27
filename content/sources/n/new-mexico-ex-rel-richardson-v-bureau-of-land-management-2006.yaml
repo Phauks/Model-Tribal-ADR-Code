@@ -1,0 +1,55 @@
+key: new-mexico-ex-rel-richardson-v-bureau-of-land-management-2006
+kind: federal-case
+citation:
+  type: legal_case
+  title: New Mexico ex rel. Richardson v. Bureau of Land Management
+  authority: United States District Court for the District of New Mexico
+  container-title: F. Supp. 2d
+  volume: '459'
+  page: '1102'
+  issued:
+    date-parts:
+    - - 2006
+      - 9
+      - 27
+  URL: https://static.case.law/f-supp-2d/459/html/1102-01.html
+  accessed:
+    date-parts:
+    - - 2026
+      - 11
+      - 27
+original_link: https://static.case.law/f-supp-2d/459/html/1102-01.html
+retrieved: '2026-11-27'
+archives: []
+history:
+  status: live
+  last_checked: '2026-11-27'
+rights:
+  status: no-permission-needed
+  basis: government-edict
+  basis_note: The text of a judicial opinion has no copyright (Georgia v. Public.Resource.Org, Inc., 590 U.S. 255 (2020)). The copy served on this site is the court's opinion only, without the publisher's headnotes, synopsis or other editorial matter (decision record 0060).
+  redistribution: true
+nations_in_case:
+  checked: '2026-11-27'
+  named: []
+jurisdictions:
+- level: federal
+topics:
+- federal-court-indian-law
+found_in:
+- 2026-11-26-federal-court-indian-law-opinions
+notes: Published at 459 F. Supp. 2d 1102. Decided by the United States District Court for the District of New Mexico on Sept. 27, 2006. Found by scripts/caselaw/state_court_opinions.py in the Caselaw Access Project's volumes, with an Indian law term score of 12, at or above 10, the level kept without a reading. It was held at first for a privacy review because its text uses words about children or protected persons; two readings of the full opinion on Nov. 27, 2026 found no child or protected person named, so it is shown.
+review:
+  status: unverified
+  by: scripts/caselaw/state_court_opinions.py
+  date: '2026-11-27'
+  checks:
+  - check: 'Indian law case: the term score and, below the score kept without a reading, an AI reader''s judgment of excerpts'
+    result: agree
+    detail: score 12
+  - check: Nations named in the caption, matched to nation records by name
+    result: agree
+    detail: 0 matched, 0 not linked
+  - check: 'Privacy: no child or protected person named in the opinion'
+    result: agree
+    detail: two AI readings of the full text, Nov. 27, 2026; released from the privacy hold
