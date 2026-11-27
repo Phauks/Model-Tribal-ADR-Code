@@ -39,6 +39,11 @@ reading_links:
     label: "Lexis"
     access: subscription
     link: https://advance.lexis.com/api/search?q=28%20U.S.C.%20%C2%A7%20654
+file:
+  storage_key: united-states-code/2024/title-28-sections-654-658.pdf
+  checksum: f4d1b8b0525ba6ad9797da70a52c143156c278aa3e32b2eece302d85f6a661de
+  media_type: application/pdf
+  bytes: 340564
 rights:
   status: no-permission-needed
   basis: us-government-work
@@ -64,4 +69,5 @@ access:
   note: § 654 opened on LII; read §§ 655–658 on LII or 28 U.S.C.A. on Westlaw.
 found_in:
 - 2026-11-21-united-states-dispute-resolution
-notes: Read on the original page. Citator check not yet run.
+- 2026-11-27-us-code-sections
+notes: Read on the original page. Citator check not yet run. The stored copy is 28 U.S.C. §§ 654, 655, 656, 657, 658 from the 2024 edition of the Code on GovInfo joined from GovInfo's section PDFs (the text with its notes), saved by scripts/law/us_code_sections.py.

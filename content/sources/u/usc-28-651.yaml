@@ -43,6 +43,11 @@ reading_links:
     label: "Lexis"
     access: subscription
     link: https://advance.lexis.com/api/search?q=28%20U.S.C.%20%C2%A7%20651
+file:
+  storage_key: united-states-code/2024/title-28-section-651.pdf
+  checksum: de4395bc229b51adfde069e6d0cdb215f49d834e637cdb4015cd42466b36fcc0
+  media_type: application/pdf
+  bytes: 140485
 rights:
   status: no-permission-needed
   basis: us-government-work
@@ -70,4 +75,5 @@ access:
     on Westlaw.
 found_in:
 - 2026-11-21-united-states-dispute-resolution
-notes: Read on the original page. Citator check not yet run. Enacted 1998-10-30; the citation omits the year because the section is cited from the current code (Indigo Book R16.1.2).
+- 2026-11-27-us-code-sections
+notes: Read on the original page. Citator check not yet run. Enacted 1998-10-30; the citation omits the year because the section is cited from the current code (Indigo Book R16.1.2). The stored copy is 28 U.S.C. § 651 from the 2024 edition of the Code on GovInfo (the text with its notes), saved by scripts/law/us_code_sections.py.

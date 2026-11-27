@@ -44,6 +44,11 @@ reading_links:
     label: "Lexis"
     access: subscription
     link: https://advance.lexis.com/api/search?q=104%20Stat.%201892
+file:
+  storage_key: united-states-code/2024/title-25-section-1301.pdf
+  checksum: 1ced60611cb246e79916487c3b8d0e96fb46f0f9e4d178a83ed09a1444c7504b
+  media_type: application/pdf
+  bytes: 134752
 rights:
   status: no-permission-needed
   basis: us-government-work
@@ -51,9 +56,5 @@ rights:
   redistribution: true
 found_in:
 - 2026-11-21-legal-history-and-key-cases
-notes: >-
-  Citations: Pub. L. No. 101-511, § 8077(b)–(d) (1990); Pub. L. No. 102-137 (1991); 104 Stat. 1892–93
-  (1990); 105 Stat. 646 (1991); 25 U.S.C. § 1301(2), (4). Later history: Sunset in § 8077(d) (as amended
-  by Pub. L. 102-124) repealed by Pub. L. 102-137, Oct. 28, 1991, 105 Stat. 646. A later Pub. L. 102-172
-  § 8112A(b) purported to amend the repealed sunset (LII notes). Westlaw: KeyCite 25 U.S.C. § 1301; the
-  legal history timeline handles Duro v. Reina (1990) and the 2004 Supreme Court decision upholding the fix.
+- 2026-11-27-us-code-sections
+notes: 'Citations: Pub. L. No. 101-511, § 8077(b)–(d) (1990); Pub. L. No. 102-137 (1991); 104 Stat. 1892–93 (1990); 105 Stat. 646 (1991); 25 U.S.C. § 1301(2), (4). Later history: Sunset in § 8077(d) (as amended by Pub. L. 102-124) repealed by Pub. L. 102-137, Oct. 28, 1991, 105 Stat. 646. A later Pub. L. 102-172 § 8112A(b) purported to amend the repealed sunset (LII notes). Westlaw: KeyCite 25 U.S.C. § 1301; the legal history timeline handles Duro v. Reina (1990) and the 2004 Supreme Court decision upholding the fix. The stored copy is 25 U.S.C. § 1301 from the 2024 edition of the Code on GovInfo (the text with its notes), saved by scripts/law/us_code_sections.py.'
