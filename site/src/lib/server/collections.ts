@@ -394,7 +394,7 @@ const genreOf = (record: SourceRecord) => (record.citation as { genre?: string }
 function congressionalDocuments(test: (genre: string) => boolean): () => CollectionItem[] {
 	return () =>
 		[...sources().values()]
-			.filter((record) => kindOf(record) === 'congressional-document' && test(genreOf(record)))
+			.filter((record) => kindOf(record) === 'congressional-document' && test(genreOf(record)) && !isEarlySerialSet(record))
 			.map((record) => sourceItem(record, genreOf(record).startsWith('CRS') ? genreOf(record) : record.legislative?.committees?.[0] ?? genreOf(record)));
 }
 
@@ -427,6 +427,22 @@ function waterRightsSettlements(): CollectionItem[] {
 		year: Number(row.year) || undefined,
 		detail: row.nations.split('; ').filter(Boolean).map(name).join('; ') || undefined
 	}));
+}
+
+/** A congressional document of the Serial Set issued before 1900, whichever script wrote its record. */
+function isEarlySerialSet(record: SourceRecord): boolean {
+	if ((record.topics ?? []).includes('serial-set')) return true;
+	const year = record.citation.issued?.['date-parts']?.[0]?.[0];
+	return kindOf(record) === 'congressional-document' && (record.legislative?.govinfo_package ?? '').startsWith('SERIALSET-') && typeof year === 'number' && year < 1900;
+}
+
+/**
+ * The Congressional Serial Set's documents on American Indians and Alaska Natives, 1817-1899: those in the University of
+ * Oklahoma's index (scripts/law/serial_set.py) and the reports on Indian affairs scripts/law/congressional_documents.py
+ * found, each with its citation. They are listed here rather than among the committee reports and documents.
+ */
+function serialSetDocuments(): CollectionItem[] {
+	return [...sources().values()].filter(isEarlySerialSet).map((record) => sourceItem(record, (record.citation as { number?: string }).number));
 }
 
 function nationNameOf(): (id: string) => string {
@@ -570,6 +586,7 @@ export const collections: Collection[] = [
 	{ identifier: 'federal-acknowledgment', search: { group: 'law', label: 'Acknowledgment document' }, title: 'Federal Acknowledgment Petitions', group: 'Federal law', detailHeader: 'Kind', sourceKinds: ['federal-agency-document'], items: acknowledgmentDocuments },
 	{ identifier: 'solicitor-opinions', search: { group: 'law', label: 'Solicitor’s opinion' }, title: 'Solicitor’s Opinions', group: 'Federal law', detailHeader: 'Number', sourceKinds: ['federal-agency-document'], items: solicitorOpinions },
 	{ identifier: 'indian-affairs-films', search: { group: 'law', label: 'Indian Affairs film or recording' }, title: 'Indian Affairs Films and Recordings', group: 'Federal law', detailHeader: 'Kind', sourceKinds: ['federal-agency-document'], items: indianAffairsFilms },
+	{ identifier: 'serial-set', search: { group: 'law', label: 'Serial Set document' }, title: 'Congressional Serial Set, 1817–1899', group: 'Federal law', detailHeader: 'Citation', sourceKinds: ['congressional-document'], items: serialSetDocuments },
 	{ identifier: 'national-indian-gaming-commission', search: { group: 'law', label: 'Gaming Commission document' }, title: 'Gaming Commission Opinions and Actions', group: 'Federal law', detailHeader: 'Kind', sourceKinds: ['federal-agency-document'], items: gamingCommissionDocuments },
 	{
 		identifier: 'water-rights-settlements',
