@@ -24,6 +24,7 @@
 	import CaseDiamond from '#lib/components/CaseDiamond.svelte';
 	import CaseVoteCard from '#lib/components/CaseVoteCard.svelte';
 	import CountBadge from '#lib/components/CountBadge.svelte';
+	import FilterSheet from '#lib/components/FilterSheet.svelte';
 	import SearchableDropdown from '#lib/components/SearchableDropdown.svelte';
 	import VoteMark from '#lib/components/VoteMark.svelte';
 	import type { PageProps } from './$types';
@@ -312,20 +313,28 @@
 			<Search size={18} aria-hidden="true" />
 			<input type="search" placeholder="Find a case" aria-label="Find a case" bind:value={query} />
 		</span>
-		<button class="button button-quiet" type="button" aria-expanded={filtersOpen} aria-controls="supreme-timeline-filters" onclick={() => (filtersOpen = !filtersOpen)}>
+		<button
+			class="icon-button filters-button"
+			type="button"
+			aria-label="Filters"
+			title="Filters"
+			aria-expanded={filtersOpen}
+			aria-controls="supreme-timeline-filters"
+			onclick={() => (filtersOpen = !filtersOpen)}
+		>
 			<Funnel size={20} aria-hidden="true" />
-			<span>Filters{filterCount > 0 ? ` (${filterCount})` : ''}</span>
+			{#if filterCount > 0}<CountBadge count={filterCount} label={filterCount === 1 ? 'filter set' : 'filters set'} />{/if}
 		</button>
 	</div>
-	<form class="filters no-print" class:open={filtersOpen} id="supreme-timeline-filters" onsubmit={(event) => event.preventDefault()} aria-label="Filters">
-		<div class="filter wide-only">
+	<FilterSheet id="supreme-timeline-filters" bind:open={filtersOpen} count={filterCount}>
+		<div class="filter first wide-only">
 			<label for="supreme-timeline-search" class="visually-hidden">Find a case</label>
 			<span class="search">
 				<Search size={18} aria-hidden="true" />
 				<input id="supreme-timeline-search" type="search" placeholder="Find a case" bind:value={query} />
 			</span>
 		</div>
-		<fieldset class="filter">
+		<fieldset class="filter first-narrow">
 			<legend>Court</legend>
 			{#each courtNames as name (name)}
 				<label class="option">
@@ -357,7 +366,7 @@
 		<div class="filter">
 			<SearchableDropdown label="Justice" id="supreme-timeline-justice" choices={justiceChoices} bind:value={justice} />
 		</div>
-	</form>
+	</FilterSheet>
 
 	<div class="results">
 		<div class="head">
@@ -497,12 +506,6 @@
 		align-items: start;
 	}
 
-	.filters {
-		position: sticky;
-		top: var(--space-3);
-		font-size: var(--font-size-small);
-	}
-
 	.phone-bar {
 		display: none;
 	}
@@ -515,7 +518,7 @@
 		min-width: 0;
 	}
 
-	.filter:first-child {
+	.filter.first {
 		border-top: 0;
 		padding-top: 0;
 	}
@@ -774,36 +777,34 @@
 			gap: var(--space-3);
 		}
 
+		/* The search and the Filters button stay at the top of the window, under the side column's Menu bar, while the cases scroll (FilterSheet.svelte). */
 		.phone-bar {
+			position: sticky;
+			top: calc(var(--masthead-stuck, 0px) + var(--layout-target-minimum) + 1px);
+			z-index: 3;
 			display: flex;
+			align-items: center;
 			gap: var(--space-2);
+			padding: var(--space-2) 0;
+			border-bottom: 1px solid var(--color-line);
+			background: var(--color-paper);
 		}
 
 		.phone-bar .search {
 			flex: 1;
 		}
 
-		.phone-bar .button {
-			gap: var(--space-2);
+		.filters-button {
+			width: auto;
+			gap: var(--space-1);
+			padding: 0 var(--space-2);
 		}
 
 		.wide-only {
 			display: none;
 		}
 
-		.filters {
-			position: static;
-			display: none;
-		}
-
-		.filters.open {
-			display: block;
-			border: 1px solid var(--color-line);
-			border-radius: var(--radius-panel);
-			padding: var(--space-3) var(--space-4);
-		}
-
-		.filters.open .filter:nth-child(2) {
+		.filter.first-narrow {
 			border-top: 0;
 			padding-top: 0;
 		}
