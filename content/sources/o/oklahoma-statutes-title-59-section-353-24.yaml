@@ -1,0 +1,59 @@
+key: oklahoma-statutes-title-59-section-353-24
+kind: state-statute
+citation:
+  type: legislation
+  title: Unlawful acts
+  title-short: Okla. Stat. tit. 59, § 353.24
+  container-title: Oklahoma Statutes
+  container-title-short: Okla. Stat.
+  volume: '59'
+  section: '353.24'
+  author:
+  - literal: Oklahoma Legislature
+  issued:
+    date-parts:
+    - - 1961
+      - 5
+      - 22
+  URL: https://www.oklegislature.gov/OK_Statutes/CompleteTitles/os59.pdf#page=367
+  accessed:
+    date-parts:
+    - - 2026
+      - 11
+      - 26
+original_link: https://www.oklegislature.gov/OK_Statutes/CompleteTitles/os59.pdf#page=367
+retrieved: '2026-11-26'
+archives: []
+history:
+  status: live
+  last_checked: '2026-11-26'
+shares_link_with:
+- oklahoma-statutes-title-59-section-1150-5
+- oklahoma-statutes-title-59-section-1750-5v1
+- oklahoma-statutes-title-59-section-3021
+- oklahoma-statutes-title-59-section-328-3
+state_law:
+  relevance: incidental
+  citation: Okla. Stat. tit. 59, § 353.24 (2026)
+  page: 367
+rights:
+  status: no-permission-needed
+  basis: government-edict
+  basis_note: 'Official state statutes are not copyrightable under the government edicts doctrine (Georgia v. Public.Resource.Org, Inc., 590 U.S. 255 (2020)). Linked, not served: state statutes stay link only.'
+  redistribution: false
+jurisdictions:
+- level: state
+  state: OK
+topics:
+- state-indian-law
+found_in:
+- 2026-11-26-state-statutes-pilot
+notes: 'Indigo Book citation: Okla. Stat. tit. 59, § 353.24 (2026). History: from being shipped directly from an Oklahoma licensed wholesaler or distributor Added by Laws 1961, p. 452, § 24, emerg. eff. May 22, 1961. Amended by Laws 1986, c. Laws 2015, c. 230, § 16, eff. Nov. 1, 2015; Laws 2016, c. 285, § 5, eff. Nov. 1, 2016; Laws Laws 2004, c. 374, § 8 repealed by Laws 2005, c. 1, § 88, emerg. eff. March 15, 2005. Text read from the Legislative Service Bureau''s Title 59 PDF (updated Nov. 12, 2026), page 367. Found by the state statutes pilot (terms: indian health); AI reader''s verdict incidental: Allows IHS or tribal health organization to deliver prescriptions. Unverified.'
+review:
+  status: unverified
+  by: scripts/law/oklahoma_statutes.py
+  date: '2026-11-26'
+  checks:
+  - check: 'Indian law section: the pilot''s keyword pass and an AI reader''s verdict (core, incidental or none)'
+    result: agree
+    detail: 'incidental; terms: indian health'

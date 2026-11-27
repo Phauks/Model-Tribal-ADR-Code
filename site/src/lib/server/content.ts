@@ -117,6 +117,8 @@ export interface SourceRecord {
 	case_box?: RecordBox;
 	/** A law's box: what it does, quotations and treatment (src/lib/essays/record-boxes.ts). */
 	law_box?: RecordBox;
+	/** A state statute section's Indian law label and citation (schemas/source.schema.json). */
+	state_law?: { relevance: 'core' | 'incidental'; citation: string; act?: string; page?: number };
 }
 
 let sourceCache: Map<string, SourceRecord> | undefined;
