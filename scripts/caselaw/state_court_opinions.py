@@ -352,6 +352,12 @@ RELEASE_NOTE = ("It was held at first for a privacy review because its text uses
                 "two readings of the full opinion on Nov. 27, 2026 found no child or protected person named, so it is shown.")
 RELEASE_CHECK = {"check": "Privacy: no child or protected person named in the opinion", "result": "agree",
                  "detail": "two AI readings of the full text, Nov. 27, 2026; released from the privacy hold"}
+# The CourtListener opinions released through GovInfo's copies were read in passages: every passage of the court's
+# filing around a word about children, minors, victims, custody or abuse, by two or three readers.
+GOVINFO_RELEASE_NOTE = ("It was held at first for a privacy review because its text uses words about children or protected persons; "
+                        "readings on Nov. 27, 2026 of every passage of the court's filing about children, victims or custody found no child or protected person named, so it is shown.")
+GOVINFO_RELEASE_CHECK = {"check": "Privacy: no child or protected person named in the opinion", "result": "agree",
+                         "detail": "two or three AI readings of every passage about children, victims or custody in GovInfo's copy, Nov. 27, 2026; released from the privacy hold"}
 RIGHTS_NOTE = ("The text of a judicial opinion has no copyright (Georgia v. Public.Resource.Org, Inc., 590 U.S. 255 (2020)). "
                "The copy served on this site is the court's opinion only, without the publisher's headnotes, synopsis or other editorial matter (decision record 0060).")
 
@@ -498,7 +504,7 @@ def write(args: argparse.Namespace) -> None:
         if reason == "estate" and (args.show_estates or (args.estates_from and int((row["date"] or "0")[:4] or 0) < args.estates_from)):
             reason = ""  # an older estate: shown, per the choice recorded in decision record 0060
         choice = selected[row["id"]]
-        released = row["id"] in cleared and reason == "child or protected person"
+        released = row["id"] in cleared  # held by the first run; a text read again elsewhere may score differently
         if released:
             reason = ""
         if reason:
@@ -538,6 +544,10 @@ def write(args: argparse.Namespace) -> None:
         how = {"score": f"an Indian law term score of {row['score']}, at or above {args.auto}, the level kept without a reading",
                "reader": f"an Indian law term score of {row['score']}; an AI reader read excerpts and judged it an Indian law case ({choice.get('topic', '')})",
                "caption": f"an Indian law term score of {row['score']} and a Native nation or Native organization named as a party"}[choice["how"]]
+        if row.get("pdf"):
+            # Released through GovInfo: the first run scored and read CourtListener's text, which this run does not have.
+            how = {"score": f"an Indian law term score in CourtListener's text at or above {args.auto}, the level kept without a reading",
+                   "reader": f"an AI reader's judgment of excerpts of CourtListener's text that it is an Indian law case ({choice.get('topic', '')})"}[choice["how"]]
         record = {
             "key": key,
             "kind": "territorial-case" if territorial else "state-case",
@@ -556,13 +566,14 @@ def write(args: argparse.Namespace) -> None:
                       + f"Decided by the {citation['authority']}" + (f" on {readable(row['date'])}" if row["date"] else "")
                       + (". Found by scripts/caselaw/courtlistener_federal_opinions.py and scripts/caselaw/state_court_opinions.py in CourtListener's bulk files" if from_courtlistener(row)
                          else ". Found by scripts/caselaw/state_court_opinions.py in the Caselaw Access Project's volumes") + f", with {how}."
-                      + (" " + RELEASE_NOTE if released else "")),
+                      + (" " + (GOVINFO_RELEASE_NOTE if row.get("pdf") else RELEASE_NOTE) if released else "")
+                      + (f" Its copy is the court's own filing, from GovInfo's United States Courts Opinions ({row['granule']}); CourtListener's page is {row['courtlistener']}." if row.get("pdf") else "")),
             "review": {"status": "unverified", "by": "scripts/caselaw/state_court_opinions.py", "date": today, "checks": [
                 {"check": "Indian law case: the term score and, below the score kept without a reading, an AI reader's judgment of excerpts",
-                 "result": "agree", "detail": f"score {row['score']}" + (f"; reader: {choice.get('topic', '')}" if choice["how"] == "reader" else "; kept because a party is a Native nation or organization" if choice["how"] == "caption" else "")},
+                 "result": "agree", "detail": ("in CourtListener's text" if row.get("pdf") else f"score {row['score']}") + (f"; reader: {choice.get('topic', '')}" if choice["how"] == "reader" else "; kept because a party is a Native nation or organization" if choice["how"] == "caption" else "")},
                 {"check": "Nations named in the caption, matched to nation records by name", "result": "agree" if not not_linked else "missing",
                  "detail": f"{len(named)} matched, {len(not_linked)} not linked"}]
-                + ([RELEASE_CHECK] if released else [])},
+                + ([GOVINFO_RELEASE_CHECK if row.get("pdf") else RELEASE_CHECK] if released else [])},
         }
         if record["jurisdictions"][0]["level"] == "territory":
             record["jurisdictions"][0] = {"level": "other", "note": "Indian Territory" if "Indian Territory" in court_name else jurisdiction or "Territorial court"}
@@ -575,7 +586,10 @@ def write(args: argparse.Namespace) -> None:
         written += 1
         released_count += released
         public_rows.append({"key": key, "citation": "; ".join(cite_list), "court": row["court"], "date": row["date"], "score": row["score"], "how": choice["how"]})
-        if args.file:
+        if args.file and row.get("pdf"):
+            # A CourtListener opinion released through GovInfo: its copy is the court's own filing.
+            pages.append((f"{FEDERAL_CAPTURE_TOPIC}/govinfo/{Path(row['pdf']).name}", Path(row["pdf"]).read_bytes(), record, row))
+        elif args.file:
             capture = copy_key(row, FEDERAL_CAPTURE_TOPIC if federal else CAPTURE_TOPIC)
             page = opinion_page(case, capture, link, from_courtlistener(row))
             pages.append((capture, page, record, row))
@@ -592,18 +606,21 @@ def write(args: argparse.Namespace) -> None:
             capture, data, record, row = item
             digest = hashlib.sha256(data).hexdigest()
             existing = by_key.get(capture)
+            media = "application/pdf" if row.get("pdf") else "text/html"
             if not (existing and existing["sha256"] == digest):
-                with tempfile.NamedTemporaryFile(suffix=".html") as handle:
+                with tempfile.NamedTemporaryFile(suffix=".pdf" if row.get("pdf") else ".html") as handle:
                     handle.write(data)
                     handle.flush()
-                    s3.upload_file(handle.name, bucket, capture, ExtraArgs={"ContentType": "text/html; charset=utf-8", "Metadata": {"sha256": digest, "captured": today}})
+                    s3.upload_file(handle.name, bucket, capture, ExtraArgs={"ContentType": media + ("" if row.get("pdf") else "; charset=utf-8"), "Metadata": {"sha256": digest, "captured": today}})
                 if mirror_captures.remote_state(s3, bucket, capture) != (len(data), digest):
                     raise SystemExit(f"verification failed for {capture}")
             new = {field: "" for field in mirror_captures.FIELDS}
             topic = FEDERAL_CAPTURE_TOPIC if record["kind"] == "federal-case" else CAPTURE_TOPIC
-            new.update(key=capture, bytes=len(data), sha256=digest, media_type="text/html", topic=topic,
+            obtained = (f"downloaded from GovInfo, United States Courts Opinions, {today}" if row.get("pdf") else
+                        f"built from {'CourtListener' if from_courtlistener(row) else 'the Caselaw Access Project'}'s files, {today}")
+            new.update(key=capture, bytes=len(data), sha256=digest, media_type=media, topic=topic,
                        title=record["citation"]["title"], nations=";".join(record.get("tribes", [])),
-                       obtained=f"built from {'CourtListener' if from_courtlistener(row) else 'the Caselaw Access Project'}'s files, {today}", link=record["original_link"], captured=today,
+                       obtained=obtained, link=row.get("pdf_link") or record["original_link"], captured=today,
                        records=record["key"], record_kinds="source", rights=mirror_captures.TOPIC_RIGHTS[topic], redistribution="yes", keep_local="no", orphan="no")
             for field in ("redistribution", "rights"):
                 if overrides.get(capture, {}).get(field):
@@ -658,9 +675,36 @@ def release(args: argparse.Namespace) -> None:
     with open(args.cleared, newline="", encoding="utf-8") as handle:
         cleared = [row for row in csv.DictReader(handle) if row["decision"] == "release"]
     readings = {answer["id"]: answer for answer in json.loads((data / "readings.json").read_text(encoding="utf-8"))}
+    # CourtListener opinions: the text and copy come from GovInfo (--govinfo, a JSON map of id to package,
+    # granule, docket and the downloaded PDF and its text), since CourtListener's text needs a token.
+    govinfo = json.loads(Path(args.govinfo).read_text(encoding="utf-8")) if args.govinfo else {}
+    cleared = [row for row in cleared if not row["id"].startswith("cl-") or row["id"] in govinfo]
     found = re.compile(re.escape(STATIC) + r"/([^/]+)/(\d+)/html/([^/]+)\.html$")
 
+    def scored(case: dict) -> dict:
+        body = case.get("casebody") or {}
+        text = (body.get("head_matter") or "") + "\n" + "\n".join((opinion.get("text") or "") for opinion in body.get("opinions", []))
+        return {key: len(pattern.findall(text)) for key, pattern in MARKERS.items()}  # as scripts/caselaw/federal_indian_law_cases.py scored it
+
+    def from_govinfo(row: dict) -> tuple[dict, dict]:
+        found_at = govinfo[row["id"]]
+        case = {"id": row["id"], "name": row["name"], "name_abbreviation": row["name"],
+                "citations": [{"cite": cite} for cite in row["citation"].split("; ") if cite], "court": {"name": row["court"]},
+                "decision_date": row["date"], "docket_number": found_at["docket"],
+                "casebody": {"opinions": [{"text": Path(found_at["text"]).read_text(encoding="utf-8", errors="replace")}]}}
+        hits = scored(case)
+        path = work / "cases" / "courtlistener" / "govinfo" / f"{found_at['granule']}.json"
+        path.parent.mkdir(parents=True, exist_ok=True)
+        path.write_text(json.dumps(case), encoding="utf-8")
+        return case, {"reporter": "courtlistener", "volume": "govinfo", "file": path.name, "id": row["id"], "name": row["name"],
+                      "date": row["date"], "court": row["court"], "jurisdiction": "", "citations": [c["cite"] for c in case["citations"]],
+                      "score": sum(hits.values()), "hits": hits, "link": f"https://www.govinfo.gov/app/details/{found_at['package']}/{found_at['granule']}",
+                      "pdf": found_at["pdf"], "pdf_link": f"https://www.govinfo.gov/content/pkg/{found_at['package']}/pdf/{found_at['granule']}.pdf",
+                      "granule": found_at["granule"], "courtlistener": row["link"]}
+
     def fetch(row: dict) -> tuple[dict, dict]:
+        if row["id"].startswith("cl-"):
+            return from_govinfo(row)
         match = found.match(row["link"])
         if not match:
             raise SystemExit(f"not a Caselaw Access Project link: {row['id']}")
@@ -672,9 +716,7 @@ def release(args: argparse.Namespace) -> None:
         case = json.loads(path.read_text(encoding="utf-8"))
         if str(case.get("id")) != row["id"]:
             raise SystemExit(f"case {row['id']} is not at its link")
-        body = case.get("casebody") or {}
-        text = (body.get("head_matter") or "") + "\n" + "\n".join((opinion.get("text") or "") for opinion in body.get("opinions", []))
-        hits = {key: len(pattern.findall(text)) for key, pattern in MARKERS.items()}  # as scripts/caselaw/federal_indian_law_cases.py scored it
+        hits = scored(case)
         return case, {"reporter": reporter, "volume": volume, "file": f"{name}.json", "id": case["id"], "name": case.get("name_abbreviation"),
                       "date": case.get("decision_date") or "", "court": (case.get("court") or {}).get("name"),
                       "jurisdiction": (case.get("jurisdiction") or {}).get("name"),
@@ -684,9 +726,12 @@ def release(args: argparse.Namespace) -> None:
         laid_out = list(pool.map(fetch, cleared))
     selected = []
     for case, row in laid_out:
-        # How select chose it: the score, else a reader's answer, else a Native party in the caption.
+        # How select chose it: the score, else a reader's answer, else a Native party in the caption. A CourtListener
+        # opinion's score here is from GovInfo's text, so its reader's answer, or else the score kept, is what chose it.
         answer = readings.get(row["id"]) or {}
-        if row["score"] >= args.auto and not only_native(row):
+        if row.get("pdf"):
+            selected.append({"id": row["id"], "how": "reader", "topic": answer.get("topic", "")} if answer.get("indian_law") is True else {"id": row["id"], "how": "score"})
+        elif row["score"] >= args.auto and not only_native(row):
             selected.append({"id": row["id"], "how": "score"})
         elif answer.get("indian_law") is True:
             selected.append({"id": row["id"], "how": "reader", "topic": answer.get("topic", "")})
@@ -731,6 +776,7 @@ def main() -> None:
     p.add_argument("--file", action="store_true", help="also file each opinion page in the bucket and the capture index")
     p = sub.add_parser("release")
     p.add_argument("--cleared", required=True, help="private CSV outside git (columns id, link, decision) of held cases a read check cleared")
+    p.add_argument("--govinfo", help="JSON map of CourtListener ids to their GovInfo package, granule, docket, PDF and text (outside git)")
     p.add_argument("--work", required=True)
     p.add_argument("--auto", type=int, default=10)
     p.add_argument("--private", required=True, help="folder outside git with the list of held cases, which names people")
