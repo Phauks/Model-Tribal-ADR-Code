@@ -1,0 +1,61 @@
+key: miccosukee-tribe-of-indians-v-southern-everglades-restoration-alliance-2002
+kind: federal-case
+citation:
+  type: legal_case
+  title: Miccosukee Tribe of Indians v. Southern Everglades Restoration Alliance
+  authority: United States Court of Appeals for the Eleventh Circuit
+  container-title: F.3d
+  volume: '304'
+  page: '1076'
+  issued:
+    date-parts:
+    - - 2002
+      - 9
+      - 4
+  URL: https://static.case.law/f3d/304/html/1076-01.html
+  accessed:
+    date-parts:
+    - - 2026
+      - 11
+      - 26
+original_link: https://static.case.law/f3d/304/html/1076-01.html
+retrieved: '2026-11-26'
+archives: []
+history:
+  status: live
+  last_checked: '2026-11-26'
+rights:
+  status: no-permission-needed
+  basis: government-edict
+  basis_note: The text of a judicial opinion has no copyright (Georgia v. Public.Resource.Org, Inc., 590 U.S. 255 (2020)). The copy served on this site is the court's opinion only, without the publisher's headnotes, synopsis or other editorial matter (decision record 0060).
+  redistribution: true
+tribes:
+- miccosukee-tribe-of-indians
+nations_in_case:
+  checked: '2026-11-26'
+  named:
+  - nation: miccosukee-tribe-of-indians
+    named_as: Miccosukee Tribe of Indians
+    role: party
+    note: Matched by the script to a name the nation record gives; not yet checked.
+  not_linked:
+  - named_as: Everglades Nation
+    reason: No nation record matches this name; it may be a historical name or a group that is not a recognized nation today.
+jurisdictions:
+- level: federal
+topics:
+- federal-court-indian-law
+found_in:
+- 2026-11-26-federal-court-indian-law-opinions
+notes: Published at 304 F.3d 1076. Decided by the United States Court of Appeals for the Eleventh Circuit on Sept. 4, 2002. Found by scripts/caselaw/state_court_opinions.py in the Caselaw Access Project's volumes, with an Indian law term score of 9; an AI reader read excerpts and judged it an Indian law case (federally recognized tribe, FACA and Everglades tribal lands).
+review:
+  status: unverified
+  by: scripts/caselaw/state_court_opinions.py
+  date: '2026-11-26'
+  checks:
+  - check: 'Indian law case: the term score and, below the score kept without a reading, an AI reader''s judgment of excerpts'
+    result: agree
+    detail: 'score 9; reader: federally recognized tribe, FACA and Everglades tribal lands'
+  - check: Nations named in the caption, matched to nation records by name
+    result: missing
+    detail: 1 matched, 1 not linked

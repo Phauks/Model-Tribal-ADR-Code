@@ -1,0 +1,58 @@
+key: northern-cheyenne-tribe-of-the-northern-cheyenne-indian-reservation-v-tongue-riv-1979
+kind: federal-case
+citation:
+  type: legal_case
+  title: Northern Cheyenne Tribe of the Northern Cheyenne Indian Reservation v. Tongue River Water Users Ass'n
+  authority: United States District Court for the District of Montana
+  container-title: F. Supp.
+  volume: '484'
+  page: '31'
+  issued:
+    date-parts:
+    - - 1979
+      - 11
+      - 29
+  URL: https://static.case.law/f-supp/484/html/0031-01.html
+  accessed:
+    date-parts:
+    - - 2026
+      - 11
+      - 26
+original_link: https://static.case.law/f-supp/484/html/0031-01.html
+retrieved: '2026-11-26'
+archives: []
+history:
+  status: live
+  last_checked: '2026-11-26'
+rights:
+  status: no-permission-needed
+  basis: government-edict
+  basis_note: The text of a judicial opinion has no copyright (Georgia v. Public.Resource.Org, Inc., 590 U.S. 255 (2020)). The copy served on this site is the court's opinion only, without the publisher's headnotes, synopsis or other editorial matter (decision record 0060).
+  redistribution: true
+tribes:
+- northern-cheyenne-tribe-of-the-northern-cheyenne-indian-reservation
+nations_in_case:
+  checked: '2026-11-26'
+  named:
+  - nation: northern-cheyenne-tribe-of-the-northern-cheyenne-indian-reservation
+    named_as: Northern Cheyenne Tribe of the Northern Cheyenne Indian Reservation
+    role: party
+    note: Matched by the script to a name the nation record gives; not yet checked.
+jurisdictions:
+- level: federal
+topics:
+- federal-court-indian-law
+found_in:
+- 2026-11-26-federal-court-indian-law-opinions
+notes: Published at 484 F. Supp. 31. Decided by the United States District Court for the District of Montana on Nov. 29, 1979. Found by scripts/caselaw/state_court_opinions.py in the Caselaw Access Project's volumes, with an Indian law term score of 7; an AI reader read excerpts and judged it an Indian law case (Northern Cheyenne tribal water rights).
+review:
+  status: unverified
+  by: scripts/caselaw/state_court_opinions.py
+  date: '2026-11-26'
+  checks:
+  - check: 'Indian law case: the term score and, below the score kept without a reading, an AI reader''s judgment of excerpts'
+    result: agree
+    detail: 'score 7; reader: Northern Cheyenne tribal water rights'
+  - check: Nations named in the caption, matched to nation records by name
+    result: agree
+    detail: 1 matched, 0 not linked

@@ -1,0 +1,59 @@
+key: latham-v-gold-country-casino-2005
+kind: federal-case
+citation:
+  type: legal_case
+  title: Latham v. Gold Country Casino
+  authority: United States Court of Appeals for the Ninth Circuit
+  container-title: F. App'x
+  volume: '154'
+  page: '675'
+  issued:
+    date-parts:
+    - - 2005
+      - 11
+      - 23
+  URL: https://static.case.law/f-appx/154/html/0675-01.html
+  accessed:
+    date-parts:
+    - - 2026
+      - 11
+      - 26
+original_link: https://static.case.law/f-appx/154/html/0675-01.html
+retrieved: '2026-11-26'
+archives: []
+history:
+  status: live
+  last_checked: '2026-11-26'
+rights:
+  status: no-permission-needed
+  basis: government-edict
+  basis_note: The text of a judicial opinion has no copyright (Georgia v. Public.Resource.Org, Inc., 590 U.S. 255 (2020)). The copy served on this site is the court's opinion only, without the publisher's headnotes, synopsis or other editorial matter (decision record 0060).
+  redistribution: true
+tribes:
+- berry-creek-rancheria-of-maidu-indians-of-california
+nations_in_case:
+  checked: '2026-11-26'
+  named:
+  - nation: berry-creek-rancheria-of-maidu-indians-of-california
+    named_as: Berry Creek Rancheria of Maidu Indians
+    role: party
+    historical: true
+    note: Matched by the script to the only nation record sharing this name; not yet checked against the case's history.
+jurisdictions:
+- level: federal
+topics:
+- federal-court-indian-law
+found_in:
+- 2026-11-26-federal-court-indian-law-opinions
+notes: Published at 154 F. App'x 675. Decided by the United States Court of Appeals for the Ninth Circuit on Nov. 23, 2005. Found by scripts/caselaw/state_court_opinions.py in the Caselaw Access Project's volumes, with an Indian law term score of 7; an AI reader read excerpts and judged it an Indian law case (IGRA tribal-state compact private right of action).
+review:
+  status: unverified
+  by: scripts/caselaw/state_court_opinions.py
+  date: '2026-11-26'
+  checks:
+  - check: 'Indian law case: the term score and, below the score kept without a reading, an AI reader''s judgment of excerpts'
+    result: agree
+    detail: 'score 7; reader: IGRA tribal-state compact private right of action'
+  - check: Nations named in the caption, matched to nation records by name
+    result: agree
+    detail: 1 matched, 0 not linked
