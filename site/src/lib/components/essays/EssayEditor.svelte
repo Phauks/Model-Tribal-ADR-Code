@@ -2679,6 +2679,8 @@
 	/* A News post's summary, framed and labeled like the components below it. */
 	.summary-field {
 		position: relative;
+		/* The editor keeps its spaces (white-space: break-spaces), which would give the space between the label and the box a line of its own. */
+		white-space: normal;
 		margin-top: calc(2 * var(--space-2) + 1.25rem);
 		margin-bottom: calc(-1 * var(--space-2));
 		outline: 1px dashed var(--color-line);
