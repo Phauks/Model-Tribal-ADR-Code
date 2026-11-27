@@ -43,7 +43,7 @@ found_in:
 notes: 'Indigo Book citation: Okla. Stat. tit. 51, § 6 (2026). History: R.L. 1910, § 4274. Amended by Laws 1929, c. 255, p. 363, § 1; Laws 1939, p. 22, § 1, emerg. eff. April 27, 1939; Laws 1981, c. Laws 1989, c. 357, § 1, emerg. eff. June 3, 1989; Laws 1990, c. Laws 2000, c. 162, § 1, eff. Nov. 1, 2000; Laws 2001, c. 33, § Laws 2013, c. 288, § 1, emerg. eff. May 15, 2013; Laws 2015, c. Laws 2017, c. 114, § 1 repealed by Laws 2018, c. 304, § 18, Text read from the Legislative Service Bureau''s Title 51 PDF (updated Nov. 12, 2026), page 7. Found by the state statutes pilot (terms: indian tribe; tribal law enforcement); AI reader''s verdict incidental: Dual-office exemption for tribal cross-deputized peace officers. Unverified.'
 review:
   status: unverified
-  by: scripts/law/oklahoma_statutes.py
+  by: scripts/law/state_statutes/run.py
   date: '2026-11-26'
   checks:
   - check: 'Indian law section: the pilot''s keyword pass and an AI reader''s verdict (core, incidental or none)'

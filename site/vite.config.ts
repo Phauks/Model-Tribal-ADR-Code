@@ -12,7 +12,7 @@ import { keptChanges, mergeChanges, parseGitLog, type Change } from './src/lib/r
 import { fullCitations } from './src/lib/server/citations.ts';
 import { citationFileCount, citationFileNumber, citationFilePath, citationTextsPath, plainCitation } from './src/lib/essay-citation-files.ts';
 import { caseNames, essayRecords, essaysInGit, everyBoxFact, everyFullCitation, everyOpinionList, everyRecordBox, glossaryTerms, spellingWords, type EssayRecord } from './src/lib/server/essay-library.ts';
-import { builtDataFolder, copyFiles, restrictableCopiesFile, essayCaseNamesFile, essayRecordFiles, privateFilePath, spreadFilePath, spreadRecords, type SpreadFiles } from './src/lib/built-files.ts';
+import { builtDataFolder, copyFiles, copyMovesFile, restrictableCopiesFile, essayCaseNamesFile, essayRecordFiles, privateFilePath, spreadFilePath, spreadRecords, type SpreadFiles } from './src/lib/built-files.ts';
 import type { StoredCopy } from './src/lib/server/copy-list.ts';
 import { caseLinks } from './src/lib/server/case-previews.ts';
 import { buildFormCatalog } from './src/lib/server/form-catalog.ts';
@@ -26,6 +26,7 @@ import {
 	glossaryForReview,
 	nations,
 	nationsForReview,
+	copyMoves,
 	publicCopies,
 	servableImages,
 	sources,
@@ -314,12 +315,14 @@ let servedCopies: Record<string, StoredCopy> | undefined;
 const servedCopiesOnce = () =>
 	(servedCopies ??= Object.fromEntries(
 		publicCopies().map((copy) => {
-			const { key, mediaType, sha256, bytes, links } = copy;
+			const { key, mediaType, sha256, bytes, links, charset } = copy;
 			// A nation's law or opinion carries its kind and nations, so the Worker can follow the nation's choices (src/lib/nation-restrictions.ts).
 			const restrict = copyRestriction(copy);
-			return [key, restrict ? { mediaType, sha256, bytes, links, restrict } : { mediaType, sha256, bytes, links }];
+			return [key, { mediaType, sha256, bytes, links, ...(charset ? { charset } : {}), ...(restrict ? { restrict } : {}) }];
 		})
 	));
+let movedCopies: Record<string, string> | undefined;
+const copyMovesOnce = () => (movedCopies ??= copyMoves());
 const restrictableCopiesOnce = () => Object.entries(servedCopiesOnce()).flatMap(([key, copy]) => (copy.restrict ? [{ key, restrict: copy.restrict }] : []));
 
 /**
@@ -338,11 +341,13 @@ function publicCopiesList(): Plugin {
 		buildStart() {
 			writeBuiltData(copyFiles.name, servedCopiesOnce());
 			writeBuiltData(restrictableCopiesFile, restrictableCopiesOnce());
+			writeBuiltData(copyMovesFile, copyMovesOnce());
 		},
 		generateBundle() {
 			if (this.environment.name !== 'client') return;
 			emitSpreadFiles(this, copyFiles, servedCopiesOnce());
 			this.emitFile({ type: 'asset', fileName: privateFilePath(restrictableCopiesFile).slice(1), source: JSON.stringify(restrictableCopiesOnce()) });
+			this.emitFile({ type: 'asset', fileName: privateFilePath(copyMovesFile).slice(1), source: JSON.stringify(copyMovesOnce()) });
 		}
 	};
 }

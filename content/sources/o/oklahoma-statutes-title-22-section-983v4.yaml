@@ -51,10 +51,10 @@ topics:
 - state-indian-law
 found_in:
 - 2026-11-26-state-statutes-pilot
-notes: 'Indigo Book citation: Okla. Stat. tit. 22, § 983v4 (2026). History: Added by Laws 1971, c. 341, § 5, emerg. eff. June 24, 1971. Amended by Laws 1990, c. 259, Laws 2023, c. 247, § 5 and SB 907, Laws 2023, c. 369, § 1. Repealer sections were included from the 2nd Regular Session of the 58th Oklahoma Legislature (2022). The text of the Text read from the Legislative Service Bureau''s Title 22 PDF (updated Nov. 12, 2026), page 319. Found by the state statutes pilot (terms: tribal government); AI reader''s verdict incidental: Tribal benefits excluded from income; tribal disability presumes inability to pay. Unverified.'
+notes: 'Indigo Book citation: Okla. Stat. tit. 22, § 983v4 (2026). History: Added by Laws 1971, c. 341, § 5, emerg. eff. June 24, 1971. Amended by Laws 1990, c. 259, Laws 2023, c. 247, § 5 and SB 907, Laws 2023, c. 369, § 1. Repealer sections were included. Text read from the Legislative Service Bureau''s Title 22 PDF (updated Nov. 12, 2026), page 319. Found by the state statutes pilot (terms: tribal government); AI reader''s verdict incidental: Tribal benefits excluded from income; tribal disability presumes inability to pay. Unverified.'
 review:
   status: unverified
-  by: scripts/law/oklahoma_statutes.py
+  by: scripts/law/state_statutes/run.py
   date: '2026-11-26'
   checks:
   - check: 'Indian law section: the pilot''s keyword pass and an AI reader''s verdict (core, incidental or none)'

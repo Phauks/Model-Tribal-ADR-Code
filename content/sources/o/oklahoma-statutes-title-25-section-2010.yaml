@@ -50,7 +50,7 @@ found_in:
 notes: 'Indigo Book citation: Okla. Stat. tit. 25, § 2010 (2026). History: Added by Laws 2026, c. 355, § 2, emerg. eff. May 11, 2026. Text read from the Legislative Service Bureau''s Title 25 PDF (updated Nov. 12, 2026), page 116. Found by the state statutes pilot (terms: native american); AI reader''s verdict incidental: Foreign law definition excludes laws of Native American tribes. Unverified.'
 review:
   status: unverified
-  by: scripts/law/oklahoma_statutes.py
+  by: scripts/law/state_statutes/run.py
   date: '2026-11-26'
   checks:
   - check: 'Indian law section: the pilot''s keyword pass and an AI reader''s verdict (core, incidental or none)'

@@ -1,0 +1,60 @@
+key: oregon-revised-statutes-285c-115
+kind: state-statute
+citation:
+  type: legislation
+  title: Change of zone boundaries; positive determination by department required
+  title-short: Or. Rev. Stat. § 285C.115
+  container-title: Oregon Revised Statutes
+  container-title-short: Or. Rev. Stat.
+  section: 285C.115
+  author:
+  - literal: Oregon Legislative Assembly
+  issued:
+    date-parts:
+    - - 2005
+  URL: https://www.oregonlegislature.gov/bills_laws/ors/ors285C.html
+  accessed:
+    date-parts:
+    - - 2026
+      - 11
+      - 27
+original_link: https://www.oregonlegislature.gov/bills_laws/ors/ors285C.html
+retrieved: '2026-11-27'
+archives: []
+history:
+  status: live
+  last_checked: '2026-11-27'
+shares_link_with:
+- oregon-revised-statutes-285c-050
+- oregon-revised-statutes-285c-090
+- oregon-revised-statutes-285c-245
+- oregon-revised-statutes-285c-255
+- oregon-revised-statutes-285c-300
+- oregon-revised-statutes-285c-303
+- oregon-revised-statutes-285c-306
+- oregon-revised-statutes-285c-320
+- oregon-revised-statutes-285c-609
+state_law:
+  relevance: incidental
+  citation: Or. Rev. Stat. § 285C.115 (2025)
+rights:
+  status: no-permission-needed
+  basis: government-edict
+  basis_note: 'Official state statutes are not copyrightable under the government edicts doctrine (Georgia v. Public.Resource.Org, Inc., 590 U.S. 255 (2020)). Linked, not served: state statutes stay link only.'
+  redistribution: false
+jurisdictions:
+- level: state
+  state: OR
+topics:
+- state-indian-law
+found_in:
+- 2026-11-27-state-statutes-sweep
+notes: 'Indigo Book citation: Or. Rev. Stat. § 285C.115 (2025). History: [Formerly 285B.680; 2005 c.94 §6; 2005 c.704 §11; 2010 c.76 §20; 2015 c.648 §16; 2023 c.298 §32]. Text read from the Oregon Legislature''s 2025 edition chapter page for the section (oregonlegislature.gov/bills_laws/ors) on Nov. 27, 2026. Found by the state statutes sweep (terms: reservation); AI reader''s verdict incidental: Reservation enterprise zone boundary changes with tribal sponsor rules. Unverified.'
+review:
+  status: unverified
+  by: scripts/law/state_statutes/run.py
+  date: '2026-11-27'
+  checks:
+  - check: 'Indian law section: the sweep''s keyword pass and an AI reader''s verdict (core, incidental or none)'
+    result: agree
+    detail: 'incidental; terms: reservation'

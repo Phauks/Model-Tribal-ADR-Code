@@ -52,10 +52,10 @@ topics:
 - state-indian-law
 found_in:
 - 2026-11-26-state-statutes-pilot
-notes: 'Indigo Book citation: Okla. Stat. tit. 43, § 118F (2026). History: from the primary residence of the children. Added by Laws 2008, c. 407, § 7, eff. July 1, 2009. Amended by Laws 2018, c. 87, § 1, eff. Text read from the Legislative Service Bureau''s Title 43 PDF (updated Nov. 12, 2026), page 99. Found by the state statutes pilot (terms: indian health); AI reader''s verdict incidental: Indian Health Services coverage counts as qualifying medical support. Unverified.'
+notes: 'Indigo Book citation: Okla. Stat. tit. 43, § 118F (2026). History: Added by Laws 2008, c. 407, § 7, eff. July 1, 2009. Amended by Laws 2018, c. 87, § 1, eff. Text read from the Legislative Service Bureau''s Title 43 PDF (updated Nov. 12, 2026), page 99. Found by the state statutes pilot (terms: indian health); AI reader''s verdict incidental: Indian Health Services coverage counts as qualifying medical support. Unverified.'
 review:
   status: unverified
-  by: scripts/law/oklahoma_statutes.py
+  by: scripts/law/state_statutes/run.py
   date: '2026-11-26'
   checks:
   - check: 'Indian law section: the pilot''s keyword pass and an AI reader''s verdict (core, incidental or none)'

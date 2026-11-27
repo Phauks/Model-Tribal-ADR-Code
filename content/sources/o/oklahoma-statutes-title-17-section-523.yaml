@@ -52,7 +52,7 @@ found_in:
 notes: 'Indigo Book citation: Okla. Stat. tit. 17, § 523 (2026). History: Added by Laws 1990, c. 255, § 24, eff. Sept. 1, 1990. Text read from the Legislative Service Bureau''s Title 17 PDF (updated Nov. 12, 2026), page 338. Found by the state statutes pilot (terms: indian tribe); AI reader''s verdict incidental: Brine act excludes property held by Indians or tribes. Unverified.'
 review:
   status: unverified
-  by: scripts/law/oklahoma_statutes.py
+  by: scripts/law/state_statutes/run.py
   date: '2026-11-26'
   checks:
   - check: 'Indian law section: the pilot''s keyword pass and an AI reader''s verdict (core, incidental or none)'

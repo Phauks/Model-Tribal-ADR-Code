@@ -1,0 +1,50 @@
+key: montana-code-annotated-2-15-2502
+kind: state-statute
+citation:
+  type: legislation
+  title: Transportation commission
+  title-short: Mont. Code Ann. § 2-15-2502
+  container-title: Montana Code Annotated
+  container-title-short: Mont. Code Ann.
+  section: 2-15-2502
+  author:
+  - literal: Montana Legislature
+  issued:
+    date-parts:
+    - - 1965
+  URL: https://mca.legmt.gov/bills/mca/title_0020/chapter_0150/part_0250/section_0020/0020-0150-0250-0020.html
+  accessed:
+    date-parts:
+    - - 2026
+      - 11
+      - 27
+original_link: https://mca.legmt.gov/bills/mca/title_0020/chapter_0150/part_0250/section_0020/0020-0150-0250-0020.html
+retrieved: '2026-11-27'
+archives: []
+history:
+  status: live
+  last_checked: '2026-11-27'
+state_law:
+  relevance: incidental
+  citation: Mont. Code Ann. § 2-15-2502 (2025)
+rights:
+  status: no-permission-needed
+  basis: government-edict
+  basis_note: 'Official state statutes are not copyrightable under the government edicts doctrine (Georgia v. Public.Resource.Org, Inc., 590 U.S. 255 (2020)). Linked, not served: state statutes stay link only.'
+  redistribution: false
+jurisdictions:
+- level: state
+  state: MT
+topics:
+- state-indian-law
+found_in:
+- 2026-11-27-state-statutes-sweep
+notes: 'Indigo Book citation: Mont. Code Ann. § 2-15-2502 (2025). History: En. Sec. 4-102, Ch. 197, L. 1965; Sec. 32-2402, R.C.M. 1947; amd. and redes. 82A-706.1 by Sec. 72, Ch. 316, L. 1974; amd. Sec. 2, Ch. 186, L. 1977; R.C.M. 1947, 82A-706.1; amd. Sec. 1, Ch. 62, L. 1983; amd. Sec. 5, Ch. 512, L. 1991; amd. Sec. 7, Ch. 87, L. 1993; amd. Sec. 1, Ch. 75, L. 1995; amd. Sec. 1, Ch. 587, L. 1999; amd. Sec. 1, Ch. 270, L. 2023; amd. Sec. 5, Ch. 323, L. 2025. Text read from the Montana Legislature''s page for the section in the Montana Code Annotated 2025 (mca.legmt.gov) on Nov. 27, 2026. Found by the state statutes sweep (terms: indian; tribal); AI reader''s verdict incidental: Transportation commission requires member with tribal transportation knowledge. Unverified.'
+review:
+  status: unverified
+  by: scripts/law/state_statutes/run.py
+  date: '2026-11-27'
+  checks:
+  - check: 'Indian law section: the sweep''s keyword pass and an AI reader''s verdict (core, incidental or none)'
+    result: agree
+    detail: 'incidental; terms: indian; tribal'

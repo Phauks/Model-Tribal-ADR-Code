@@ -46,10 +46,10 @@ topics:
 - state-indian-law
 found_in:
 - 2026-11-26-state-statutes-pilot
-notes: 'Indigo Book citation: Okla. Stat. tit. 2, § 6-405 (2026). History: from the owner relating to animals or personal property destroyed pursuant to this section, Added by Laws 2002, c. 173, § 19, emerg. eff. May 6, 2002. Amended by Laws 2012, c. 304, Text read from the Legislative Service Bureau''s Title 2 PDF (updated Nov. 12, 2026), page 402. Found by the state statutes pilot (terms: federally recognized indian tribes); AI reader''s verdict incidental: Disease eradication board may cooperate with federally recognized tribes. Unverified.'
+notes: 'Indigo Book citation: Okla. Stat. tit. 2, § 6-405 (2026). History: Added by Laws 2002, c. 173, § 19, emerg. eff. May 6, 2002. Amended by Laws 2012, c. 304, Text read from the Legislative Service Bureau''s Title 2 PDF (updated Nov. 12, 2026), page 402. Found by the state statutes pilot (terms: federally recognized indian tribes); AI reader''s verdict incidental: Disease eradication board may cooperate with federally recognized tribes. Unverified.'
 review:
   status: unverified
-  by: scripts/law/oklahoma_statutes.py
+  by: scripts/law/state_statutes/run.py
   date: '2026-11-26'
   checks:
   - check: 'Indian law section: the pilot''s keyword pass and an AI reader''s verdict (core, incidental or none)'

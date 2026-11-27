@@ -45,6 +45,35 @@ describe('Build a table', () => {
 		expect(rows[3].cells.name.href).toBeUndefined();
 	});
 
+	it('links every nation in a nation cell, one or several (Nov. 27, 2026)', () => {
+		const treaties: BuilderDataset = {
+			identifier: 'treaties',
+			title: 'Treaties',
+			rowName: ['treaty', 'treaties'],
+			nameColumn: 'title',
+			nationColumn: 'nations',
+			sourceHref: '/nations',
+			columns: [
+				{ key: 'title', header: 'Treaty', type: 'text', starting: true },
+				{ key: 'nations', header: 'Nations', type: 'list', starting: true }
+			],
+			rows: [
+				['Treaty one', ['Alpha', 'Beta', 'Unknown']],
+				['Treaty two', ['Beta']]
+			],
+			links: ['/nations/alpha', '/nations/beta'],
+			nationLinks: { Alpha: '/nations/alpha', Beta: '/nations/beta' }
+		};
+		const { rows } = recordTable(treaties, startingSettings(treaties));
+		expect(rows[0].cells.nations.text).toBe('Alpha; Beta; Unknown');
+		expect(rows[0].cells.nations.parts).toEqual([
+			{ text: 'Alpha', href: '/nations/alpha' },
+			{ text: 'Beta', href: '/nations/beta' },
+			{ text: 'Unknown', href: undefined }
+		]);
+		expect(rows[1].cells.nations).toMatchObject({ text: 'Beta', href: '/nations/beta' });
+	});
+
 	it('filters a list column by any of its values, as the shared table does', () => {
 		const settings = { ...startingSettings(dataset), filters: { states: { values: ['Nevada'] } } };
 		expect(recordTable(dataset, settings).rows).toHaveLength(3);

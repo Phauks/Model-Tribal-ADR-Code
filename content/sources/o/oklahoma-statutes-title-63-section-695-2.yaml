@@ -77,10 +77,10 @@ topics:
 - state-indian-law
 found_in:
 - 2026-11-26-state-statutes-pilot
-notes: 'Indigo Book citation: Okla. Stat. tit. 63, § 695.2 (2026). History: from entering into supplementary agreements with another jurisdiction and does not affect from local jurisdictions for other states or their jurisdictions. In such situations, the Added by Laws 2006, c. 199, § 4, emerg. eff. May 26, 2006. Amended by Laws 2009, c. 79, § Text read from the Legislative Service Bureau''s Title 63 PDF (updated Nov. 12, 2026), page 1471. Found by the state statutes pilot (terms: tribal nations); AI reader''s verdict incidental: Sovereign Tribal Nations deemed participating jurisdictions in mutual aid compact. Unverified.'
+notes: 'Indigo Book citation: Okla. Stat. tit. 63, § 695.2 (2026). History: Added by Laws 2006, c. 199, § 4, emerg. eff. May 26, 2006. Amended by Laws 2009, c. 79, § Text read from the Legislative Service Bureau''s Title 63 PDF (updated Nov. 12, 2026), page 1471. Found by the state statutes pilot (terms: tribal nations); AI reader''s verdict incidental: Sovereign Tribal Nations deemed participating jurisdictions in mutual aid compact. Unverified.'
 review:
   status: unverified
-  by: scripts/law/oklahoma_statutes.py
+  by: scripts/law/state_statutes/run.py
   date: '2026-11-26'
   checks:
   - check: 'Indian law section: the pilot''s keyword pass and an AI reader''s verdict (core, incidental or none)'

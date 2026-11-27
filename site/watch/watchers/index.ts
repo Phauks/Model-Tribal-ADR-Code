@@ -32,7 +32,7 @@ export const notWatched: NotWatched[] = [
 	{ feed: 'tribal-court-opinions', kind: 'planned', reason: 'consented-courts, phase 3: only nations that publish their opinions and agree, with initials and privacy holds first (decision record 0057). Its list of courts starts empty.' },
 	{ feed: 'oklahoma-state-tribal-agreements', kind: 'planned', reason: 'oklahoma-register (the Oklahoma Secretary of State’s register data file, json/dataTribal.json, compared by file number; scripts/agreements/oklahoma_register.py reads it today), phase 2.' },
 	{ feed: 'federal-programs', kind: 'derived', reason: 'Built from the nation profiles’ federal_programs facts.' },
-	{ feed: 'state-statutes', kind: 'planned', reason: 'One watcher per state legislature’s code site, re-running the state statutes sweep on each new edition (research/analyses/2026-11-26-state-statutes-pilot.md, section 7); scripts/law/oklahoma_statutes.py rebuilds Oklahoma meanwhile.' },
+	{ feed: 'state-statutes', kind: 'planned', reason: 'One watcher per state legislature’s code site, re-running the state statutes sweep on each new edition (research/analyses/2026-11-26-state-statutes-pilot.md, section 7); scripts/law/state_statutes/run.py rebuilds each state meanwhile.' },
 	{ feed: 'supreme-courts', kind: 'derived', reason: 'Built from the Justices.' },
 	{ feed: 'courts', kind: 'planned', reason: 'nation-sites (court pages) in phase 3, and courtlistener (new court names) in phase 2.' },
 	{ feed: 'biographies', kind: 'planned', reason: 'wikidata, phase 2, and new parties and leaders in accepted cases and treaties. No automatic people pages.' },

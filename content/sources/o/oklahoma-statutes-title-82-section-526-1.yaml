@@ -51,7 +51,7 @@ found_in:
 notes: 'Indigo Book citation: Okla. Stat. tit. 82, § 526.1 (2026). History: Added by Laws 1951, c. 327, § 1. Text read from the Legislative Service Bureau''s Title 82 PDF (updated Nov. 12, 2026), page 74. Found by the state statutes pilot (terms: indian tribes); AI reader''s verdict incidental: Compact saving clause protects US obligations to Indian Tribes. Unverified.'
 review:
   status: unverified
-  by: scripts/law/oklahoma_statutes.py
+  by: scripts/law/state_statutes/run.py
   date: '2026-11-26'
   checks:
   - check: 'Indian law section: the pilot''s keyword pass and an AI reader''s verdict (core, incidental or none)'

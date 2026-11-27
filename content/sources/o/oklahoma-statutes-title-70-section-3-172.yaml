@@ -73,7 +73,7 @@ found_in:
 notes: 'Indigo Book citation: Okla. Stat. tit. 70, § 3-172 (2026). History: Added by Laws 2010, c. 313, § 2, eff. July 1, 2010. Text read from the Legislative Service Bureau''s Title 70 PDF (updated Nov. 12, 2026), page 275. Found by the state statutes pilot (terms: indian education; indian tribes; native american; native americans); AI reader''s verdict core: Purpose of Oklahoma Advisory Council on Indian Education Act. Unverified.'
 review:
   status: unverified
-  by: scripts/law/oklahoma_statutes.py
+  by: scripts/law/state_statutes/run.py
   date: '2026-11-26'
   checks:
   - check: 'Indian law section: the pilot''s keyword pass and an AI reader''s verdict (core, incidental or none)'

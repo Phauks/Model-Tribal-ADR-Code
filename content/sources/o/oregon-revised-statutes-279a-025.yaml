@@ -1,0 +1,52 @@
+key: oregon-revised-statutes-279a-025
+kind: state-statute
+citation:
+  type: legislation
+  title: Application of Public Contracting Code
+  title-short: Or. Rev. Stat. § 279A.025
+  container-title: Oregon Revised Statutes
+  container-title-short: Or. Rev. Stat.
+  section: 279A.025
+  author:
+  - literal: Oregon Legislative Assembly
+  issued:
+    date-parts:
+    - - 2003
+  URL: https://www.oregonlegislature.gov/bills_laws/ors/ors279A.html
+  accessed:
+    date-parts:
+    - - 2026
+      - 11
+      - 27
+original_link: https://www.oregonlegislature.gov/bills_laws/ors/ors279A.html
+retrieved: '2026-11-27'
+archives: []
+history:
+  status: live
+  last_checked: '2026-11-27'
+shares_link_with:
+- oregon-revised-statutes-279a-200
+state_law:
+  relevance: incidental
+  citation: Or. Rev. Stat. § 279A.025 (2025)
+rights:
+  status: no-permission-needed
+  basis: government-edict
+  basis_note: 'Official state statutes are not copyrightable under the government edicts doctrine (Georgia v. Public.Resource.Org, Inc., 590 U.S. 255 (2020)). Linked, not served: state statutes stay link only.'
+  redistribution: false
+jurisdictions:
+- level: state
+  state: OR
+topics:
+- state-indian-law
+found_in:
+- 2026-11-27-state-statutes-sweep
+notes: 'Indigo Book citation: Or. Rev. Stat. § 279A.025 (2025). History: [2003 c.794 §5; 2003 c.794 §5a; 2005 c.22 §200; 2005 c.103 §3; 2005 c.109 §3; 2005 c.297 §3; 2005 c.748 §12; 2005 c.777 §15; 2007 c.7 §19; 2007 c.70 §67; 2007 c.71 §81; 2007 c.764 §2; 2007 c.783 §91; 2011 c.637 §88; 2013 c.492 §28; 2013 c.768 §123; 2015 c.447 §3; 2015 c.843 §19; 2017 c.183 §94; 2017 c.533 §3; 2019 c.90 §1; 2021 c.351 §19; 2023 c.193 §13; 2025 c.40 §1; 2025 c.414 §1; 2025 c.475 §7]. Text read from the Oregon Legislature''s 2025 edition chapter page for the section (oregonlegislature.gov/bills_laws/ors) on Nov. 27, 2026. Found by the state statutes sweep (terms: american indian; tribal governing bodies; indian; nation; tribal; tribe); AI reader''s verdict incidental: Public Contracting Code excludes contracts with American Indian tribes. Unverified.'
+review:
+  status: unverified
+  by: scripts/law/state_statutes/run.py
+  date: '2026-11-27'
+  checks:
+  - check: 'Indian law section: the sweep''s keyword pass and an AI reader''s verdict (core, incidental or none)'
+    result: agree
+    detail: 'incidental; terms: american indian; tribal governing bodies; indian; nation; tribal; tribe'

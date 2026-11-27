@@ -32,7 +32,8 @@ export interface CopyRow {
 	key: string;
 	title: string;
 	kind: string;
-	nations: string[];
+	/** The nations the copy belongs to, each linked to its page in the list. */
+	nations: { id: string; name: string }[];
 	/** The file itself, for downloading and checking. */
 	path: string;
 	/** The copy's page on this site, for reading. */
@@ -134,13 +135,18 @@ function nationNames(): Map<string, string> {
 	return new Map(nations().map((record) => [record.id, displayName(record.names.official)]));
 }
 
-/** The nations a copy belongs to, by name. */
-function namesOf(copy: PublicCopy, names: Map<string, string>): string[] {
+/** The nations a copy belongs to, with their names; nations with no record are left out. */
+function nationsOf(copy: PublicCopy, names: Map<string, string>): { id: string; name: string }[] {
 	const ids = copy.nations.length > 0 ? copy.nations : copy.topic === 'constitutions' ? [copy.key.split('/')[1]] : [];
 	return ids.flatMap((id) => {
 		const name = names.get(id);
-		return name ? [name] : [];
+		return name ? [{ id, name }] : [];
 	});
+}
+
+/** The nations a copy belongs to, by name. */
+function namesOf(copy: PublicCopy, names: Map<string, string>): string[] {
+	return nationsOf(copy, names).map((nation) => nation.name);
 }
 
 /** Topics whose copies belong to a nation's set for saving and downloading, not the United States set. */
@@ -189,7 +195,7 @@ function row(copy: PublicCopy, names: Map<string, string>): CopyRow {
 		key: copy.key,
 		title: copy.title,
 		kind: mediaLabel(copy.mediaType),
-		nations: namesOf(copy, names),
+		nations: nationsOf(copy, names),
 		path: copyPath(copy),
 		page: copyPagePath(copy),
 		original: copy.links.at(-1) ?? copy.links[0] ?? '',

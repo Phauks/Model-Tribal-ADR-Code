@@ -72,7 +72,7 @@ found_in:
 notes: 'Indigo Book citation: Okla. Stat. tit. 10, § 7505-3.1 (2026). History: Added by Laws 1957, p. 24, § 12. Amended by Laws 1994, c. 122, § 2, eff. July 1, 1994; Laws Laws 2011, c. 371, § 4, eff. Nov. 1, 2011; Laws 2021, c. 186, § 2, emerg. eff. April 23, 2021. Text read from the Legislative Service Bureau''s Title 10 PDF (updated Nov. 12, 2026), page 404. Found by the state statutes pilot (terms: indian child; indian tribe); AI reader''s verdict incidental: Adoption petition must state Indian child status and tribe. Unverified.'
 review:
   status: unverified
-  by: scripts/law/oklahoma_statutes.py
+  by: scripts/law/state_statutes/run.py
   date: '2026-11-26'
   checks:
   - check: 'Indian law section: the pilot''s keyword pass and an AI reader''s verdict (core, incidental or none)'

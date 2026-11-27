@@ -87,7 +87,7 @@ found_in:
 notes: 'Indigo Book citation: Okla. Stat. tit. 74, § 840-7.1 (2026). History: Added by Laws 2004, c. 133, § 1, emerg. eff. April 20, 2004. Amended by Laws 2022, c. 243, Text read from the Legislative Service Bureau''s Title 74 PDF (updated Nov. 12, 2026), page 653. Found by the state statutes pilot (terms: federally recognized tribe; indian nation; indian tribe); AI reader''s verdict core: State agencies may lease employees to tribes that bought state land. Unverified.'
 review:
   status: unverified
-  by: scripts/law/oklahoma_statutes.py
+  by: scripts/law/state_statutes/run.py
   date: '2026-11-26'
   checks:
   - check: 'Indian law section: the pilot''s keyword pass and an AI reader''s verdict (core, incidental or none)'

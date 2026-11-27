@@ -86,10 +86,10 @@ topics:
 - state-indian-law
 found_in:
 - 2026-11-26-state-statutes-pilot
-notes: 'Indigo Book citation: Okla. Stat. tit. 74, § 1226.19 (2026). History: from the proceeds of bonds issued pursuant to Section 304.2 of Title 73 of the Oklahoma Added by Laws 2015, c. 339, § 4, eff. Sept. 1, 2015. Amended by Laws 2017, c. 373, § 2, Text read from the Legislative Service Bureau''s Title 74 PDF (updated Nov. 12, 2026), page 854. Found by the state statutes pilot (terms: american indian; native american); AI reader''s verdict core: Bond proceeds for American Indian Cultural Center and Museum. Unverified.'
+notes: 'Indigo Book citation: Okla. Stat. tit. 74, § 1226.19 (2026). History: Added by Laws 2015, c. 339, § 4, eff. Sept. 1, 2015. Amended by Laws 2017, c. 373, § 2, Text read from the Legislative Service Bureau''s Title 74 PDF (updated Nov. 12, 2026), page 854. Found by the state statutes pilot (terms: american indian; native american); AI reader''s verdict core: Bond proceeds for American Indian Cultural Center and Museum. Unverified.'
 review:
   status: unverified
-  by: scripts/law/oklahoma_statutes.py
+  by: scripts/law/state_statutes/run.py
   date: '2026-11-26'
   checks:
   - check: 'Indian law section: the pilot''s keyword pass and an AI reader''s verdict (core, incidental or none)'

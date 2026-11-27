@@ -86,10 +86,10 @@ topics:
 - state-indian-law
 found_in:
 - 2026-11-26-state-statutes-pilot
-notes: 'Indigo Book citation: Okla. Stat. tit. 74, § 85.12 (2026). History: Added by Laws 1959, p. 353, § 12, eff. July 1, 1959. Amended by Laws 1963, c. 22, § 1; Laws Laws 1989, c. 378, § 1, emerg. eff. June 7, 1989; Laws 1990, c. 337, § 20; Laws 1991, c. 70, § Laws 1987, c. 222, § 118 repealed by Laws 1987, c. 236, § 203, emerg. eff. July 20, 1987. Laws 1987, c. 208, § 9 repealed by Laws 1988, c. 81, § 2, emerg. eff. March 25, 1988. Laws repealed by Laws 1991, c. 70, § 2, emerg. eff. April 15, 1991. Laws 1991, c. 130, § 1 repealed by Laws 1991, c. 335, § 37, emerg. eff. June 15, 1991. Laws 1992, c. 37, § 1 repealed by Laws 1992, c. 246, § 9, emerg. eff. May 21, 1992 Text read from the Legislative Service Bureau''s Title 74 PDF (updated Nov. 12, 2026), page 199. Found by the state statutes pilot (terms: tribal council); AI reader''s verdict incidental: Acquisitions exclude utilities regulated by an Indian Tribal Council. Unverified.'
+notes: 'Indigo Book citation: Okla. Stat. tit. 74, § 85.12 (2026). History: Added by Laws 1959, p. 353, § 12, eff. July 1, 1959. Amended by Laws 1963, c. 22, § 1; Laws Laws 1989, c. 378, § 1, emerg. eff. June 7, 1989; Laws 1990, c. 337, § 20; Laws 1991, c. 70, § Laws 1987, c. 222, § 118 repealed by Laws 1987, c. 236, § 203, emerg. eff. July 20, 1987. Laws 1987, c. 208, § 9 repealed by Laws 1988, c. 81, § 2, emerg. eff. March 25, 1988. Laws Laws 2004, c. 5, § 91, emerg. eff. March 1, 2004. Laws 2006, c. 80, § 1 repealed by Laws. Text read from the Legislative Service Bureau''s Title 74 PDF (updated Nov. 12, 2026), page 199. Found by the state statutes pilot (terms: tribal council); AI reader''s verdict incidental: Acquisitions exclude utilities regulated by an Indian Tribal Council. Unverified.'
 review:
   status: unverified
-  by: scripts/law/oklahoma_statutes.py
+  by: scripts/law/state_statutes/run.py
   date: '2026-11-26'
   checks:
   - check: 'Indian law section: the pilot''s keyword pass and an AI reader''s verdict (core, incidental or none)'

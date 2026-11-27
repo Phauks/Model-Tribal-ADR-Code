@@ -1,0 +1,50 @@
+key: montana-code-annotated-7-2-2202
+kind: state-statute
+citation:
+  type: legislation
+  title: Limitations on creation of new counties
+  title-short: Mont. Code Ann. § 7-2-2202
+  container-title: Montana Code Annotated
+  container-title-short: Mont. Code Ann.
+  section: 7-2-2202
+  author:
+  - literal: Montana Legislature
+  issued:
+    date-parts:
+    - - 1919
+  URL: https://mca.legmt.gov/bills/mca/title_0070/chapter_0020/part_0220/section_0020/0070-0020-0220-0020.html
+  accessed:
+    date-parts:
+    - - 2026
+      - 11
+      - 27
+original_link: https://mca.legmt.gov/bills/mca/title_0070/chapter_0020/part_0220/section_0020/0070-0020-0220-0020.html
+retrieved: '2026-11-27'
+archives: []
+history:
+  status: live
+  last_checked: '2026-11-27'
+state_law:
+  relevance: incidental
+  citation: Mont. Code Ann. § 7-2-2202 (2025)
+rights:
+  status: no-permission-needed
+  basis: government-edict
+  basis_note: 'Official state statutes are not copyrightable under the government edicts doctrine (Georgia v. Public.Resource.Org, Inc., 590 U.S. 255 (2020)). Linked, not served: state statutes stay link only.'
+  redistribution: false
+jurisdictions:
+- level: state
+  state: MT
+topics:
+- state-indian-law
+found_in:
+- 2026-11-27-state-statutes-sweep
+notes: 'Indigo Book citation: Mont. Code Ann. § 7-2-2202 (2025). History: En. Sec. 1, Ch. 226, L. 1919; re-en. Sec. 4390, R.C.M. 1921; amd. Sec. 1, Ch. 106, L. 1929; re-en. Sec. 4390, R.C.M. 1935; amd. Sec. 6, Ch. 406, L. 1973; R.C.M. 1947, 16-501(part); amd. Sec. 2, Ch. 742, L. 1985; amd. Sec. 12, Ch. 347, L. 2011. Text read from the Montana Legislature''s page for the section in the Montana Code Annotated 2025 (mca.legmt.gov) on Nov. 27, 2026. Found by the state statutes sweep (terms: indian reservations; indian; reservations); AI reader''s verdict incidental: County area thresholds exclude Indian reservation land. Unverified.'
+review:
+  status: unverified
+  by: scripts/law/state_statutes/run.py
+  date: '2026-11-27'
+  checks:
+  - check: 'Indian law section: the sweep''s keyword pass and an AI reader''s verdict (core, incidental or none)'
+    result: agree
+    detail: 'incidental; terms: indian reservations; indian; reservations'
