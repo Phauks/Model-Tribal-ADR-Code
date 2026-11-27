@@ -41,14 +41,11 @@
 
 	/** The base map and switches are remembered on the device, and every map on the site shares them. */
 	const baseStorage = 'map-base';
-	const placeNamesStorage = 'map-place-names';
 	const outlinesStorage = 'map-land-outlines';
 	export function storedBaseMap(): TileMapBase {
 		const stored = typeof window === 'undefined' ? null : readStored(baseStorage);
 		return tileMapBases.some((entry) => entry.value === stored) ? (stored as TileMapBase) : 'map';
 	}
-	/** Whether place names and roads are drawn over a picture base map, as remembered on the device. */
-	export const storedPlaceNames = () => typeof window === 'undefined' || readStored(placeNamesStorage) !== 'off';
 	/** Whether land areas are outlined, as remembered on the device. */
 	export const storedOutlines = () => typeof window === 'undefined' || readStored(outlinesStorage) !== 'off';
 
@@ -113,7 +110,6 @@
 		statesBy = 'count',
 		onfeature,
 		baseMap = $bindable(storedBaseMap()),
-		placeNames = $bindable(storedPlaceNames()),
 		outlines = $bindable(storedOutlines())
 	}: {
 		view: TileMapView;
@@ -154,8 +150,6 @@
 		onfeature?: (feature: TileMapFeature) => void;
 		/** The base map, which the page's Layers list can choose too; remembered on the device. */
 		baseMap?: TileMapBase;
-		/** On a picture base map, whether place names and roads are drawn over it. */
-		placeNames?: boolean;
 		/** Whether the land areas are outlined. */
 		outlines?: boolean;
 	} = $props();
@@ -306,7 +300,6 @@
 
 	$effect(() => {
 		writeStored(baseStorage, baseMap);
-		writeStored(placeNamesStorage, placeNames ? 'on' : 'off');
 		// The Map page has its own Nations' land switch and no outline switch, so it leaves the nation pages' choice alone.
 		if (!explorer) writeStored(outlinesStorage, outlines ? 'on' : 'off');
 	});
@@ -328,7 +321,7 @@
 	// A new base map or switch redraws the map's layers on the same map, as changing the view does.
 	let styledWith = '';
 	$effect(() => {
-		const wanted = `${baseMap} ${placeNames} ${outlines} ${drawsCessions} ${year} ${statesBy} ${cessionsShown?.join(',')} ${JSON.stringify(layerSwitches ?? {})}`;
+		const wanted = `${baseMap} ${outlines} ${drawsCessions} ${year} ${statesBy} ${cessionsShown?.join(',')} ${JSON.stringify(layerSwitches ?? {})}`;
 		if (!ready || !map) return;
 		if (styledWith === '') styledWith = wanted;
 		if (wanted === styledWith) return;
@@ -866,16 +859,15 @@
 				worldLand,
 				...pictureLayers(baseMap),
 				...shownFills,
-				...(placeNames ? over : []),
+				// Place names and roads are always drawn (Trevor, 2026-11-27). The site's own fills (water, buildings, runways) are left off, so the picture shows its own water and ground.
+				...over.filter((layer) => layer.type !== 'fill'),
 				...shownTops
 			];
 		} else if (baseMap === 'topographic') {
-			// The site's own land, water and parks, with the survey's shaded relief laid over the land and its contour lines over that. Neither carries names, so the only names are the site's own, which the reader can turn off.
-			const water = under.findIndex((layer) => layer.id.startsWith('water'));
-			const firstWater = water === -1 ? under.length : water;
+			// The site's own land and parks, with the survey's shaded relief laid over the land and its contour lines over that, then the site's own water, roads and names. Protomaps lists the water after its first road layers (the runways), so the water comes in `over`: without it the relief covers the oceans and the globe is all white (Trevor, 2026-11-27, with place names turned off), so names and roads are always drawn.
 			const relief = pictureLayers('terrain', dark ? { 'raster-opacity': 0.55, 'raster-brightness-max': 0.45 } : { 'raster-opacity': 0.7 });
 			const contours: LayerSpecification = { id: 'contours', type: 'raster', source: 'imagery-contours', minzoom: 10, paint: { 'raster-opacity': dark ? 1 : 0.85 } };
-			layers = [...under.slice(0, firstWater), ...relief, ...under.slice(firstWater), contours, ...shownFills, ...(placeNames ? over : []), ...shownTops];
+			layers = [...under, ...relief, contours, ...shownFills, ...over, ...shownTops];
 		} else {
 			layers = [...under, ...shownFills, ...over, ...shownTops];
 		}
@@ -931,7 +923,8 @@
 				...(layerSwitches?.reservations1909
 					? {
 							reservations1909: { type: 'vector', tiles: [`${origin}/map-tiles/${data.tiles.reservations1909}/{z}/{x}/{y}.mvt`], maxzoom: data.tiles.reservations1909MaximumZoom, promoteId: { reservations: 'n' }, attribution: 'Office of Indian Affairs (1909), National Archives' } as SourceSpecification,
-							...(layerSwitches.scan1909 ? { scan1909: { type: 'raster', tiles: [`${origin}/map-tiles/${data.tiles.scan1909}/{z}/{x}/{y}.webp`], tileSize: 256, maxzoom: data.tiles.scan1909MaximumZoom } as SourceSpecification } : {})
+							// On a high-density screen each 256-pixel picture is laid out at 128 pixels, so the map asks for the next zoom's pictures and the old lettering stays sharp instead of being stretched (Trevor, 2026-11-27: "low resolution when zoomed out").
+							...(layerSwitches.scan1909 ? { scan1909: { type: 'raster', tiles: [`${origin}/map-tiles/${data.tiles.scan1909}/{z}/{x}/{y}.webp`], tileSize: devicePixelRatio >= 1.5 ? 128 : 256, maxzoom: data.tiles.scan1909MaximumZoom } as SourceSpecification } : {})
 						}
 					: {}),
 				...(layerSwitches?.routes ? { routes: { type: 'vector', tiles: [`${origin}/map-tiles/${data.tiles.removalRoutes}/{z}/{x}/{y}.mvt`], maxzoom: data.tiles.removalRoutesMaximumZoom, attribution: 'National Park Service' } as SourceSpecification } : {}),
@@ -1503,9 +1496,6 @@
 				{/each}
 			</div>
 		</fieldset>
-		{#if baseMap !== 'map'}
-			<label class="layers-switch"><input type="checkbox" bind:checked={placeNames} />Place names and roads</label>
-		{/if}
 		{#if hasLandAreas}
 			<label class="layers-switch"><input type="checkbox" bind:checked={outlines} />Land area outlines</label>
 		{/if}
