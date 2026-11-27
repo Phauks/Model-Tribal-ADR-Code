@@ -21,6 +21,16 @@ recognition:
   verification: bulk-import
   as_of: '2026-01-30'
   locator: 91 Fed. Reg. 4104
+- type: federal
+  earliest_record: land
+  legal_basis: Exec. Order of July 6, 1883, 1 Kappler 832
+  since: '1883-07-06'
+  source: executive-order-1883-07-06-yuma-reservation
+  confidence: medium
+  verification: read-in-full
+  as_of: '1883-07-06'
+  locator: 1 Kappler 832
+  note: The earliest record this site has found that shows the United States dealing with the nation as a federally recognized nation. The relationship may be older. The instrument first set aside the Yuma Reserve (Arizona side of the Colorado River opposite the Gila mouth).
 states:
 - state: CA
   presence: government-office

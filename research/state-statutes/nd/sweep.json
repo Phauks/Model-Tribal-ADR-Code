@@ -1,0 +1,54 @@
+{
+  "state": "ND",
+  "code": "North Dakota Century Code",
+  "edition": 2025,
+  "read": "2026-11-27",
+  "keyword_pass": {
+    "sections": 29116,
+    "live": 25326,
+    "strong": 208,
+    "weak_only": 232,
+    "repealed": 3781,
+    "missing": 9
+  },
+  "reading": {
+    "missing_answers": 0,
+    "rows": 281,
+    "core": 118,
+    "incidental": 163,
+    "by_pool": {
+      "A": {
+        "incidental": 130,
+        "none": 6,
+        "core": 72
+      },
+      "B": {
+        "core": 29,
+        "none": 170,
+        "incidental": 33
+      },
+      "C": {
+        "none": 299,
+        "core": 1
+      },
+      "D": {
+        "none": 300
+      },
+      "E": {
+        "core": 16
+      }
+    },
+    "meta": {
+      "live": 25326,
+      "A": 208,
+      "B": 232,
+      "E": 16,
+      "C": 433,
+      "C_sample": 300,
+      "D": 24437,
+      "D_sample": 300,
+      "items": 1056,
+      "batches": 8
+    }
+  }
+}

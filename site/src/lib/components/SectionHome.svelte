@@ -114,10 +114,8 @@
 	}
 
 	a.tile:focus-visible {
-		outline: 3px solid var(--color-focus-ring);
+		outline: 3px solid var(--focus-ring);
 		outline-offset: 2px;
-		background: var(--color-focus);
-		color: var(--focus-text);
 	}
 
 	/* Not published yet: named, not linked. */

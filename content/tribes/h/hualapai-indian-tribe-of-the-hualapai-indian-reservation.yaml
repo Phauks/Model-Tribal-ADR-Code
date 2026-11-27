@@ -21,6 +21,16 @@ recognition:
   verification: bulk-import
   as_of: '2026-01-30'
   locator: 91 Fed. Reg. 4104
+- type: federal
+  earliest_record: land
+  legal_basis: Exec. Order of Jan. 4, 1883, 1 Kappler 804
+  since: '1883-01-04'
+  source: executive-order-1883-01-04-hualapai-reservation
+  confidence: high
+  verification: read-in-full
+  as_of: '1883-01-04'
+  locator: 1 Kappler 804
+  note: The earliest record this site has found that shows the United States dealing with the nation as a federally recognized nation. The relationship may be older. The instrument first set aside the Hualpai (Walapai) Reserve, Arizona.
 states:
 - state: AZ
   presence: government-office

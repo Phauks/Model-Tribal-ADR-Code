@@ -11,6 +11,19 @@ recognition:
   verification: bulk-import
   as_of: '2026-01-30'
   locator: 91 Fed. Reg. 4103
+- type: federal
+  earliest_record: constitution
+  legal_basis: Constitution of the Agua Caliente Band of Cahuilla Indians of the Agua Caliente Indian Reservation, California (approved by the Secretary of the Interior Apr. 18, 1957)
+  since: '1957-04-18'
+  source: university-of-oklahoma-indian-reorganization-act-aguacalcons
+  document_version:
+    document: agua-caliente-band-of-cahuilla-indians-of-the-agua-caliente-indian-reservation-constitution
+    version: 1957-text
+  confidence: medium
+  verification: inferred
+  as_of: '1957-04-18'
+  locator: 1957 constitution and bylaws, approval certificate
+  note: The earliest record this site has found that shows the United States dealing with the nation as a federally recognized nation. The relationship may be older. The Secretary of the Interior approved the nation's constitution; the date is read by rule from the approval certificate.
 states:
 - state: CA
   presence: government-office

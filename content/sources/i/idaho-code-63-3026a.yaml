@@ -1,0 +1,50 @@
+key: idaho-code-63-3026a
+kind: state-statute
+citation:
+  type: legislation
+  title: Computing Idaho taxable income of part-year or nonresident individuals, trusts and estates
+  title-short: Idaho Code § 63-3026A
+  container-title: Idaho Code
+  container-title-short: Idaho Code
+  section: 63-3026A
+  author:
+  - literal: Idaho Legislature
+  issued:
+    date-parts:
+    - - 1995
+  URL: https://legislature.idaho.gov/statutesrules/idstat/Title63/T63CH30/SECT63-3026A
+  accessed:
+    date-parts:
+    - - 2026
+      - 11
+      - 27
+original_link: https://legislature.idaho.gov/statutesrules/idstat/Title63/T63CH30/SECT63-3026A
+retrieved: '2026-11-27'
+archives: []
+history:
+  status: live
+  last_checked: '2026-11-27'
+state_law:
+  relevance: core
+  citation: Idaho Code § 63-3026A (2026)
+rights:
+  status: no-permission-needed
+  basis: government-edict
+  basis_note: 'Official state statutes are not copyrightable under the government edicts doctrine (Georgia v. Public.Resource.Org, Inc., 590 U.S. 255 (2020)). Linked, not served: state statutes stay link only.'
+  redistribution: false
+jurisdictions:
+- level: state
+  state: ID
+topics:
+- state-indian-law
+found_in:
+- 2026-11-27-state-statutes-third-batch
+notes: 'Indigo Book citation: Idaho Code § 63-3026A (2026). History: 63-3026A, added 1995, ch. 111, sec. 26, p. 364; am. 1996, ch. 40, sec. 3, p. 105; am. 1998, ch. 42, sec. 4, p. 180; am. 2000, ch. 38, sec. 5, p. 74; am. 2005, ch. 21, sec. 1, p. 57; am. 2005, ch. 405, sec. 1, p. 1380; am. 2007, ch. 12, sec. 1, p. 21; am. 2010, ch. 108, sec. 1, p. 219; am. 2011, ch. 3, sec. 2, p. 6; am. 2013, ch. 83, sec. 1, p. 203. Text read from the Idaho Legislature''s page for the section in the Idaho Statutes (legislature.idaho.gov/statutesrules/idstat) on Nov. 27, 2026. Found by the state statutes sweep (terms: federally recognized indian tribe; indian reservation; indian; reservation; tribe); AI reader''s verdict core: Income tax adds reservation income of enrolled tribal members. Unverified.'
+review:
+  status: unverified
+  by: scripts/law/state_statutes/run.py
+  date: '2026-11-27'
+  checks:
+  - check: 'Indian law section: the sweep''s keyword pass and an AI reader''s verdict (core, incidental or none)'
+    result: agree
+    detail: 'core; terms: federally recognized indian tribe; indian reservation; indian; reservation; tribe'
