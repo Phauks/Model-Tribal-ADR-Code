@@ -149,5 +149,8 @@ describe('the silent catches check', () => {
 		expect(silent('try { a(); } catch (problem) { throw new Problem("x", "y", { cause: problem }); }')).toEqual([false]);
 		expect(silent('try { a(); } catch { problem = "Could not save."; }')).toEqual([false]);
 		expect(silent('try { a(); } catch { error(404, "Not found"); }')).toEqual([false]);
+		expect(silent('try { a(); } catch (problem) { return caught(problem); }')).toEqual([false]);
+		expect(silent("try { a(); } catch { saving = 'failed'; }")).toEqual([false]);
+		expect(silent("try { a(); } catch { saving = 'idle'; }")).toEqual([true]);
 	});
 });

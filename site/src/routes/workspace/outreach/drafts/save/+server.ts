@@ -11,7 +11,7 @@ export const prerender = false;
 export const POST: RequestHandler = async (event) => {
 	const person = requirePermission(event, 'send-outreach');
 	const context = mailContext();
-	const form = await event.request.formData().catch(() => null);
+	const form = await event.request.formData().catch(() => /* expected: a body that is not a form is answered with a 400 on the next line. */ null);
 	if (!form) error(400, 'Send the batch to save.');
 	const saved = await saveBatchDraft(context, person.identifier, draftOf(form, (await replyChoicesOf(context)).choices.map((choice) => choice.value)));
 	return json(saved, { headers: { 'cache-control': 'no-store' } });

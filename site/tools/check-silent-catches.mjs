@@ -66,7 +66,9 @@ const handledPatterns = [
 	/\bconsole\.(?:error|warn)\(/,
 	/\b\w*(?:problem|Problem|fail|Fail|error|Error|trouble)\w*\s*(?:[:=](?!=)|\+=)/,
 	/\bon(?:fail|error)\b/,
-	/\bfail\b/
+	/\bfail\b/,
+	// A state the page shows, such as saving = 'failed'.
+	/=\s*['"`][^'"`]*\b(?:fail|failed|error)\b/
 ];
 
 /**
@@ -77,15 +79,17 @@ const handledPatterns = [
 export function catchesIn(text) {
 	/** @type {{ line: number, silent: boolean }[]} */
 	const found = [];
-	/** @param {number} index @param {string} body */
-	const consider = (index, body) => {
+	/** @param {number} index @param {string} body @param {string} [binding] */
+	const consider = (index, body, binding) => {
 		const line = text.slice(0, index).split('\n').length;
 		if (/\bexpected:/i.test(body)) return found.push({ line, silent: false });
 		const code = withoutComments(body);
-		found.push({ line, silent: !handledPatterns.some((pattern) => pattern.test(code)) });
+		// Handing what was caught to another function, such as caught(problem), passes it on.
+		const passedOn = binding !== undefined && new RegExp(`\\w\\(\\s*${binding}\\b`).test(code);
+		found.push({ line, silent: !passedOn && !handledPatterns.some((pattern) => pattern.test(code)) });
 	};
-	for (const match of text.matchAll(/\bcatch\s*(?:\([^)]*\))?\s*\{/g)) {
-		consider(match.index ?? 0, enclosed(text, (match.index ?? 0) + match[0].length - 1, '{', '}'));
+	for (const match of text.matchAll(/\bcatch\s*(?:\(\s*(\w+)?[^)]*\))?\s*\{/g)) {
+		consider(match.index ?? 0, enclosed(text, (match.index ?? 0) + match[0].length - 1, '{', '}'), match[1]);
 	}
 	for (const match of text.matchAll(/\.catch\(/g)) {
 		consider(match.index ?? 0, enclosed(text, (match.index ?? 0) + match[0].length - 1, '(', ')'));
