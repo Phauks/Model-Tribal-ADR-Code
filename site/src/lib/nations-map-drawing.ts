@@ -15,6 +15,7 @@
 import type { LandAreaKind, MapGeometry, ScaleBar } from './map-geometry.ts';
 import type { ShadedMapView } from './shaded-map-views.ts';
 import { escapeHtml } from './escape-html.ts';
+import { shapeFor, shapePath } from './map-shapes.ts';
 
 /** A state or territory, with how many nations have a recorded presence there. */
 export interface StateCount {
@@ -286,13 +287,16 @@ export interface DrawnOffice {
 	description: string;
 }
 
-/** Office dots, drawn over the land areas with a dark ring so they read apart from the areas' own dots. */
-function drawOffices(geometry: MapGeometry, offices: DrawnOffice[]): string {
+/** Office dots, drawn over the land areas with a dark ring so they read apart from the areas' own dots. On a category view an office with a category takes its category's shape (src/lib/map-shapes.ts), so the category never rests on its shade alone. */
+function drawOffices(geometry: MapGeometry, offices: DrawnOffice[], shaped = false): string {
 	const byNation = new Map(offices.map((office) => [office.nation, office]));
 	const drawn = geometry.offices.flatMap((place) => {
 		const office = byNation.get(place.nation);
 		if (!office) return [];
-		const dot = titled('circle', `class="office count-${office.shade}" cx="${place.x}" cy="${place.y}" r="4"`, office.description);
+		const shape = shaped ? shapeFor(office.shade) : undefined;
+		const dot = shape
+			? titled('path', `class="office shape shape-${shape} count-${office.shade}" d="${shapePath(shape, place.x, place.y, 4.5)}"`, office.description)
+			: titled('circle', `class="office count-${office.shade}" cx="${place.x}" cy="${place.y}" r="4"`, office.description);
 		return [office.href ? `<a href="${escapeHtml(office.href)}" aria-label="${escapeHtml(office.description)}">${dot}</a>` : `<g class="unlinked">${dot}</g>`];
 	});
 	return drawn.length > 0 ? `<g class="offices">${drawn.join('')}</g>` : '';
@@ -371,8 +375,12 @@ export function drawShadedLandAreasMap(
 		const middle = shape.dot ?? middleOf(shape.path);
 		if (middle) middles.set(shape.identifier, middle);
 		const fill = `land-area count-${area.shade}`;
+		// A small area with a category is marked with its category's shape; one with none stays a plain dot.
+		const mark = shapeFor(area.shade);
 		const drawn = shape.dot
-			? titled('circle', `class="${fill} dot" cx="${shape.dot.x}" cy="${shape.dot.y}" r="3"`, area.description)
+			? mark
+				? titled('path', `class="${fill} dot shape shape-${mark}" d="${shapePath(mark, shape.dot.x, shape.dot.y, 4.2)}"`, area.description)
+				: titled('circle', `class="${fill} dot" cx="${shape.dot.x}" cy="${shape.dot.y}" r="3"`, area.description)
 			: titled('path', `class="${fill}" d="${shape.path}"`, area.description);
 		if (area.anchor) recorded.push(link(area.anchor, area.description, drawn));
 		else unrecorded.push(`<g class="unlinked">${drawn}</g>`);
@@ -392,7 +400,7 @@ export function drawShadedLandAreasMap(
 		`<path class="land" d="${geometry.land}"/>` +
 		`<path class="state-borders faint" d="${geometry.stateBorders}"/>` +
 		`<g class="land-areas">${unrecorded.join('')}${recorded.join('')}</g>` +
-		drawOffices(geometry, view.offices ?? []) +
+		drawOffices(geometry, view.offices ?? [], true) +
 		(labels.length > 0 ? `<g class="region-labels" aria-hidden="true">${labels.join('')}</g>` : '') +
 		drawFrameLabels(geometry) +
 		`</svg>`
