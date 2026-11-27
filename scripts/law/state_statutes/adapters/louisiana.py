@@ -90,6 +90,11 @@ class Louisiana(State):
             return f'La. Child. Code Ann. {number}'
         return f'{self.CODE_SHORT} § {number}'
 
+    def citation_parts(self, row: dict) -> dict:
+        if row['number'].startswith('art. '):
+            return {'container-title': "Louisiana Children's Code", 'container-title-short': 'La. Child. Code Ann.', 'section': row['number']}
+        return {'section': row['number']}
+
     def key(self, number: str) -> str:
         if number.startswith('art. '):
             return 'louisiana-childrens-code-art-' + re.sub(r'[^a-z0-9]+', '-', number[5:].lower()).strip('-')
