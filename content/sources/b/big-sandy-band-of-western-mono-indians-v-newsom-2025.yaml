@@ -1,0 +1,56 @@
+key: big-sandy-band-of-western-mono-indians-v-newsom-2025
+kind: federal-case
+citation:
+  type: legal_case
+  title: Big Sandy Band of Western Mono Indians v. Newsom
+  authority: United States District Court for the Eastern District of California
+  issued:
+    date-parts:
+    - - 2025
+      - 9
+      - 3
+  URL: https://www.courtlistener.com/opinion/10691165/big-sandy-band-of-western-mono-indians-v-newsom/
+  accessed:
+    date-parts:
+    - - 2026
+      - 11
+      - 26
+original_link: https://www.courtlistener.com/opinion/10691165/big-sandy-band-of-western-mono-indians-v-newsom/
+retrieved: '2026-11-26'
+archives: []
+history:
+  status: live
+  last_checked: '2026-11-26'
+rights:
+  status: no-permission-needed
+  basis: government-edict
+  basis_note: The text of a judicial opinion has no copyright (Georgia v. Public.Resource.Org, Inc., 590 U.S. 255 (2020)). The copy served on this site is the court's opinion only, without the publisher's headnotes, synopsis or other editorial matter (decision record 0060).
+  redistribution: true
+tribes:
+- big-sandy-rancheria-of-western-mono-indians-of-california
+nations_in_case:
+  checked: '2026-11-26'
+  named:
+  - nation: big-sandy-rancheria-of-western-mono-indians-of-california
+    named_as: Big Sandy Band of Western Mono Indians
+    role: party
+    historical: true
+    note: Matched by the script to the only nation record sharing this name; not yet checked against the case's history.
+jurisdictions:
+- level: federal
+topics:
+- federal-court-indian-law
+found_in:
+- 2026-11-26-federal-court-indian-law-opinions
+notes: Docket 1:22-cv-00844; no reporter citation yet. Decided by the United States District Court for the Eastern District of California on Sept. 3, 2025. Found by scripts/caselaw/courtlistener_federal_opinions.py and scripts/caselaw/state_court_opinions.py in CourtListener's bulk files, with an Indian law term score of 1; an AI reader read excerpts and judged it an Indian law case (federally recognized tribe as plaintiff, sanctions order).
+review:
+  status: unverified
+  by: scripts/caselaw/state_court_opinions.py
+  date: '2026-11-26'
+  checks:
+  - check: 'Indian law case: the term score and, below the score kept without a reading, an AI reader''s judgment of excerpts'
+    result: agree
+    detail: 'score 1; reader: federally recognized tribe as plaintiff, sanctions order'
+  - check: Nations named in the caption, matched to nation records by name
+    result: agree
+    detail: 1 matched, 0 not linked
