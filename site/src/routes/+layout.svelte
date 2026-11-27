@@ -152,15 +152,18 @@
 		   first screen and the Hide sidebar button keeps its place at the bottom. */
 		.site-body {
 			display: grid;
-			/* One width on every page, so the page never moves from page to page
-			   (SiteSidebar.svelte; design/navigation-models, model C). */
+			/* One width on every page with a column, so the page never moves from
+			   page to page (SiteSidebar.svelte; design/navigation-models, model C).
+			   A page with nothing beneath it to list, such as the home page, has
+			   no column and takes the whole width (Trevor, Nov. 27, 2026). */
 			grid-template-columns: 16rem minmax(0, 1fr);
 			align-items: start;
 			min-height: 100dvh;
 		}
 
 		/* Hidden with the masthead's button, the sidebar is gone and the page takes the whole width. */
-		:global(:root[data-sidebar-hidden='true']) .site-body {
+		:global(:root[data-sidebar-hidden='true']) .site-body,
+		.site-body:has(> :global(.sidebar-wide.empty)) {
 			grid-template-columns: minmax(0, 1fr);
 		}
 	}

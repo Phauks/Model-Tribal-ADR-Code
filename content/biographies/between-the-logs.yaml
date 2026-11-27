@@ -1,6 +1,6 @@
 key: between-the-logs
 name: Between The Logs
-lead: Signed two treaties with the United States for the Wyandots, 1814–1818.
+lead: Signed three treaties with the United States for the Wyandots, 1814–1818.
 living: false
 names:
 - name: Te-ar-ront-ou-ose
@@ -11,6 +11,10 @@ names:
   note: as the Treaty with the Wyandot, 1818 prints it
   source: treaty-with-the-wyandot-1818
   where: 7 Stat. 181
+- name: T. Aruntue
+  note: as the Treaty with the Wyandot, etc., 1817 prints it
+  source: treaty-with-the-wyandot-etc-1817
+  where: 7 Stat. 167
 nations:
 - nation: wyandotte-nation
   named_as: Wyandots
@@ -22,8 +26,12 @@ events:
   text: Signed the Treaty with the Wyandot, etc., 1814, for the Wyandots.
   source: treaty-with-the-wyandot-etc-1814
   where: 7 Stat. 119
+- when: Sept. 29, 1817
+  text: Signed the Treaty with the Wyandot, etc., 1817, for the Wyandots.
+  source: treaty-with-the-wyandot-etc-1817
+  where: 7 Stat. 167
 - when: Sept. 20, 1818
   text: Signed the Treaty with the Wyandot, 1818, for the Wyandot tribe of Indians.
   source: treaty-with-the-wyandot-1818
   where: 7 Stat. 181
-checked: '2026-11-24'
+checked: '2026-11-26'

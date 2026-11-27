@@ -1,0 +1,50 @@
+key: nebraska-revised-statutes-71-961
+kind: state-statute
+citation:
+  type: legislation
+  title: Subject's records; confidential; exceptions
+  title-short: Neb. Rev. Stat. § 71-961
+  container-title: Revised Statutes of Nebraska
+  container-title-short: Neb. Rev. Stat.
+  section: 71-961
+  author:
+  - literal: Nebraska Legislature
+  issued:
+    date-parts:
+    - - 1976
+  URL: https://nebraskalegislature.gov/laws/statutes.php?statute=71-961
+  accessed:
+    date-parts:
+    - - 2026
+      - 11
+      - 27
+original_link: https://nebraskalegislature.gov/laws/statutes.php?statute=71-961
+retrieved: '2026-11-27'
+archives: []
+history:
+  status: live
+  last_checked: '2026-11-27'
+state_law:
+  relevance: incidental
+  citation: Neb. Rev. Stat. § 71-961 (2026)
+rights:
+  status: no-permission-needed
+  basis: government-edict
+  basis_note: 'Official state statutes are not copyrightable under the government edicts doctrine (Georgia v. Public.Resource.Org, Inc., 590 U.S. 255 (2020)). Linked, not served: state statutes stay link only.'
+  redistribution: false
+jurisdictions:
+- level: state
+  state: NE
+topics:
+- state-indian-law
+found_in:
+- 2026-11-27-state-statutes-california-nebraska-utah-maine-florida
+notes: 'Indigo Book citation: Neb. Rev. Stat. § 71-961 (2026). History: Laws 1976, LB 806, § 78; Laws 1996, LB 1055, § 17; Laws 1996, LB 1155, § 111; Laws 1997, LB 307, § 230; R.S.1943, (1999), § 83-1068; Laws 2004, LB 1083, § 81; Laws 2006, LB 1199, § 52; Laws 2007, LB296, § 463; Laws 2018, LB841, § 13; Laws 2024, LB1288, § 23; Laws 2025, LB150, § 120. Text read from the Nebraska Legislature''s page for the section (nebraskalegislature.gov/laws) on Nov. 27, 2026. Found by the state statutes sweep (terms: indian country; tribal court; indian; tribal); AI reader''s verdict incidental: Mental health records open to tribal court for Indian country subjects. Unverified.'
+review:
+  status: unverified
+  by: scripts/law/state_statutes/run.py
+  date: '2026-11-27'
+  checks:
+  - check: 'Indian law section: the sweep''s keyword pass and an AI reader''s verdict (core, incidental or none)'
+    result: agree
+    detail: 'incidental; terms: indian country; tribal court; indian; tribal'

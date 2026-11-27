@@ -1,0 +1,59 @@
+key: standing-rock-sioux-tribe-v-united-states-army-corps-2021
+kind: federal-case
+citation:
+  type: legal_case
+  title: Standing Rock Sioux Tribe v. United States Army Corps
+  authority: United States Court of Appeals for the District of Columbia Circuit
+  container-title: F.3d
+  volume: '985'
+  page: '1032'
+  issued:
+    date-parts:
+    - - 2021
+      - 1
+      - 26
+  URL: https://www.courtlistener.com/opinion/4850761/standing-rock-sioux-tribe-v-united-states-army-corps/
+  accessed:
+    date-parts:
+    - - 2026
+      - 11
+      - 26
+original_link: https://www.courtlistener.com/opinion/4850761/standing-rock-sioux-tribe-v-united-states-army-corps/
+retrieved: '2026-11-26'
+archives: []
+history:
+  status: live
+  last_checked: '2026-11-26'
+rights:
+  status: no-permission-needed
+  basis: government-edict
+  basis_note: The text of a judicial opinion has no copyright (Georgia v. Public.Resource.Org, Inc., 590 U.S. 255 (2020)). The copy served on this site is the court's opinion only, without the publisher's headnotes, synopsis or other editorial matter (decision record 0060).
+  redistribution: true
+tribes:
+- standing-rock-sioux-tribe-of-north-and-south-dakota
+nations_in_case:
+  checked: '2026-11-26'
+  named:
+  - nation: standing-rock-sioux-tribe-of-north-and-south-dakota
+    named_as: Standing Rock Sioux Tribe
+    role: party
+    historical: true
+    note: Matched by the script to the only nation record sharing this name; not yet checked against the case's history.
+jurisdictions:
+- level: federal
+topics:
+- federal-court-indian-law
+found_in:
+- 2026-11-26-federal-court-indian-law-opinions
+notes: Published at 985 F.3d 1032. Decided by the United States Court of Appeals for the District of Columbia Circuit on Jan. 26, 2021. Found by scripts/caselaw/courtlistener_federal_opinions.py and scripts/caselaw/state_court_opinions.py in CourtListener's bulk files, with an Indian law term score of 5; an AI reader read excerpts and judged it an Indian law case (tribes challenge Dakota Access pipeline Corps permits, tribal sovereignty).
+review:
+  status: unverified
+  by: scripts/caselaw/state_court_opinions.py
+  date: '2026-11-26'
+  checks:
+  - check: 'Indian law case: the term score and, below the score kept without a reading, an AI reader''s judgment of excerpts'
+    result: agree
+    detail: 'score 5; reader: tribes challenge Dakota Access pipeline Corps permits, tribal sovereignty'
+  - check: Nations named in the caption, matched to nation records by name
+    result: agree
+    detail: 1 matched, 0 not linked

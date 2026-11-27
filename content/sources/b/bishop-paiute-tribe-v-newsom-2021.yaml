@@ -1,0 +1,55 @@
+key: bishop-paiute-tribe-v-newsom-2021
+kind: federal-case
+citation:
+  type: legal_case
+  title: Bishop Paiute Tribe v. Newsom
+  authority: United States District Court for the Eastern District of California
+  issued:
+    date-parts:
+    - - 2021
+      - 6
+      - 17
+  URL: https://www.courtlistener.com/opinion/9560691/bishop-paiute-tribe-v-newsom/
+  accessed:
+    date-parts:
+    - - 2026
+      - 11
+      - 26
+original_link: https://www.courtlistener.com/opinion/9560691/bishop-paiute-tribe-v-newsom/
+retrieved: '2026-11-26'
+archives: []
+history:
+  status: live
+  last_checked: '2026-11-26'
+rights:
+  status: no-permission-needed
+  basis: government-edict
+  basis_note: The text of a judicial opinion has no copyright (Georgia v. Public.Resource.Org, Inc., 590 U.S. 255 (2020)). The copy served on this site is the court's opinion only, without the publisher's headnotes, synopsis or other editorial matter (decision record 0060).
+  redistribution: true
+tribes:
+- bishop-paiute-tribe
+nations_in_case:
+  checked: '2026-11-26'
+  named:
+  - nation: bishop-paiute-tribe
+    named_as: Bishop Paiute Tribe
+    role: party
+    note: Matched by the script to the nation record of the same name; not yet checked.
+jurisdictions:
+- level: federal
+topics:
+- federal-court-indian-law
+found_in:
+- 2026-11-26-federal-court-indian-law-opinions
+notes: Docket 1:20-cv-01318; no reporter citation yet. Decided by the United States District Court for the Eastern District of California on June 17, 2021. Found by scripts/caselaw/courtlistener_federal_opinions.py and scripts/caselaw/state_court_opinions.py in CourtListener's bulk files, with an Indian law term score of 2; an AI reader read excerpts and judged it an Indian law case (Bishop Paiute Tribe litigation with State).
+review:
+  status: unverified
+  by: scripts/caselaw/state_court_opinions.py
+  date: '2026-11-26'
+  checks:
+  - check: 'Indian law case: the term score and, below the score kept without a reading, an AI reader''s judgment of excerpts'
+    result: agree
+    detail: 'score 2; reader: Bishop Paiute Tribe litigation with State'
+  - check: Nations named in the caption, matched to nation records by name
+    result: agree
+    detail: 1 matched, 0 not linked

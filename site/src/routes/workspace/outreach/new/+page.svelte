@@ -31,6 +31,7 @@
 	import { localInputValue } from '../../inbox/dates.ts';
 	import ReadinessNotice from '../ReadinessNotice.svelte';
 	import { outreachBase as base } from '../views.ts';
+	import { sendProblem } from '#lib/problem-reports.ts';
 	import { whenWords } from '../when.ts';
 	import TokenText from './TokenText.svelte';
 	import type { PageProps } from './$types';
@@ -195,7 +196,7 @@
 	async function discardDraft(): Promise<void> {
 		sending = true;
 		clearTimeout(timer);
-		if (draftIdentifier) await fetch(`${base}/drafts/save?identifier=${encodeURIComponent(draftIdentifier)}`, { method: 'DELETE' }).catch(() => undefined);
+		if (draftIdentifier) await fetch(`${base}/drafts/save?identifier=${encodeURIComponent(draftIdentifier)}`, { method: 'DELETE' }).catch((problem) => sendProblem(problem, { code: 'outreach.discard', path: location.pathname }));
 		await invalidate('outreach:counts');
 		await goto(base);
 	}
