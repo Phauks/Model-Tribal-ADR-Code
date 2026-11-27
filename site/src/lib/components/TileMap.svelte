@@ -48,6 +48,7 @@
 	import type { TileMapData } from '#lib/server/nations-map.ts';
 	import { motionDuration, motionEasing } from '#lib/motion.ts';
 	import { censusYearFor, writeCessionsSwitch } from '#lib/historic-map.ts';
+	import { loadAllNationsTileMapData, loadTileMapLibrary } from '#lib/tile-map-loading.ts';
 
 	let {
 		view,
@@ -229,15 +230,10 @@
 		if (returnFocus) layersButton?.focus();
 	}
 
-	let dataLoading: Promise<TileMapData> | undefined;
-	/** The map's data is the same for every view, so it is fetched once a page. */
+	/** The map's data is the same for every view, so it is fetched once a page (src/lib/tile-map-loading.ts). */
 	function loadData(): Promise<TileMapData> {
 		if (given) return Promise.resolve(given);
-		dataLoading ??= fetch('/nations/map/tile-map.json').then((response) => {
-			if (!response.ok) throw new Error(`The map data answered ${response.status}`);
-			return response.json() as Promise<TileMapData>;
-		});
-		return dataLoading;
+		return loadAllNationsTileMapData();
 	}
 
 	function canDrawMaps(): boolean {
@@ -280,7 +276,7 @@
 	];
 
 	async function styleFor(data: TileMapData): Promise<StyleSpecification> {
-		const basemaps = await import('@protomaps/basemaps');
+		const [, , basemaps] = await loadTileMapLibrary();
 		const dark = isDark();
 		const colors = {
 			paper: token('paper'),
@@ -759,7 +755,7 @@
 
 		void (async () => {
 			try {
-				const [{ default: maplibre }, data] = await Promise.all([import('maplibre-gl'), loadData(), import('maplibre-gl/dist/maplibre-gl.css')]);
+				const [[{ default: maplibre }], data] = await Promise.all([loadTileMapLibrary(), loadData()]);
 				if (stopped || !container) return;
 				if (data.areas.length === 0 && oneNation && !openingBox) throw new Error('The nation has no land areas to show');
 				const style = await styleFor(data);
