@@ -292,8 +292,18 @@ def source_link(row: dict) -> str:
     return f"{STATIC}/{row['reporter']}/{row['volume']}/html/{row['file'].removesuffix('.json')}.html"
 
 
-def opinion_page(case: dict, key: str, link: str) -> bytes:
-    """The court's opinions only (no head matter, where the publishers' headnotes and synopses are), as one page."""
+def opinions_html(fragment: str) -> list[str]:
+    """The court's opinions from the Project's HTML of a case: each <article class="opinion">, without the head matter and layout data."""
+    articles = re.findall(r"<article class=\"opinion\"[^>]*>.*?</article>", fragment, re.S)
+    return [re.sub(r"\s+data-(?:blocks|firstpage|lastpage|case-id)=(?:'[^']*'|\"[^\"]*\")", "", article) for article in articles]
+
+
+def opinion_page(case: dict, key: str, link: str, fragment: str | None = None, links=None) -> bytes:
+    """The court's opinions only (no head matter, where the publishers' headnotes and synopses are), as one page.
+
+    With the Project's HTML of the case (fragment), the opinions keep its page numbers, footnotes and citations, and with
+    links (copy_links.CitationLinks) the citations link to this site's pages or to case.law. Without it, the opinions are
+    built from the JSON text, as plain paragraphs."""
     import html  # noqa: PLC0415
     sys.path.insert(0, str(Path(__file__).resolve().parent))
     from tribal_court_opinions import PAGE_STYLE  # noqa: PLC0415
@@ -302,10 +312,13 @@ def opinion_page(case: dict, key: str, link: str) -> bytes:
     court = (case.get("court") or {}).get("name", "")
     date = case.get("decision_date", "")
     removal = "/requests?kind=remove&record=copies/" + key
-    parts = []
-    for opinion in (case.get("casebody") or {}).get("opinions", []):
-        paragraphs = [line.strip() for line in (opinion.get("text") or "").split("\n") if line.strip()]
-        parts.append("<section>\n" + "\n".join(f"<p>{html.escape(line)}</p>" for line in paragraphs) + "\n</section>")
+    parts = opinions_html(fragment) if fragment else []
+    if parts and links is not None:
+        parts = [links.rewrite(part, key) for part in parts]
+    if not parts:
+        for opinion in (case.get("casebody") or {}).get("opinions", []):
+            paragraphs = [line.strip() for line in (opinion.get("text") or "").split("\n") if line.strip()]
+            parts.append("<section>\n" + "\n".join(f"<p>{html.escape(line)}</p>" for line in paragraphs) + "\n</section>")
     title = f"{name}, {citations} ({court} {date[:4]})" if citations else f"{name} ({court} {date[:4]})"
     return (
         "<!doctype html>\n<html lang=\"en\">\n<head>\n<meta charset=\"utf-8\">\n"
@@ -314,7 +327,7 @@ def opinion_page(case: dict, key: str, link: str) -> bytes:
         f"<h1>{html.escape(name)}</h1>\n"
         f"<p>{html.escape(citations)}{' · ' if citations else ''}{html.escape(court)}{', decided ' + readable(date) if date else ''}</p>\n"
         "<p>The court's opinion, from the Caselaw Access Project, Harvard Law School Library, without the publisher's headnotes and synopsis. "
-        f"<a href=\"{html.escape(link)}\">Original</a>. <a href=\"{html.escape(removal)}\">Ask to remove it</a>.</p>\n"
+        f"<a class=\"external\" href=\"{html.escape(link)}\" target=\"_blank\" rel=\"noopener\">Original</a>. <a href=\"{html.escape(removal)}\" target=\"_top\">Ask to remove it</a>.</p>\n"
         "</header>\n<main>\n" + "\n".join(parts) + "\n</main>\n</body>\n</html>\n"
     ).encode("utf-8")
 
@@ -363,6 +376,9 @@ def write(args: argparse.Namespace) -> None:
         overrides = json.loads((ROOT / "research" / "capture-index-overrides.json").read_text(encoding="utf-8"))
     written, skipped, held, public_rows, private_rows = 0, 0, 0, [], []
     pages = []
+    if args.file:
+        from copy_links import CitationLinks  # noqa: PLC0415
+        citation_links = CitationLinks()
     for row in rows:
         case = json.loads((work / "cases" / row["reporter"] / row["volume"] / row["file"]).read_text())
         cite_list = [c.get("cite") for c in case.get("citations", []) if c.get("cite")]
@@ -434,7 +450,7 @@ def write(args: argparse.Namespace) -> None:
         public_rows.append({"key": key, "citation": "; ".join(cite_list), "court": row["court"], "date": row["date"], "score": row["score"], "how": choice["how"]})
         if args.file:
             capture = copy_key(row)
-            data = opinion_page(case, capture, link)
+            data = opinion_page(case, capture, link, get(link).decode("utf-8"), citation_links)
             pages.append((capture, data, record, row))
     if args.file:
         def upload(item):
