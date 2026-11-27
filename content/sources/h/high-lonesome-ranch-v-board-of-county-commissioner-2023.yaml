@@ -1,0 +1,52 @@
+key: high-lonesome-ranch-v-board-of-county-commissioner-2023
+kind: federal-case
+citation:
+  type: legal_case
+  title: High Lonesome Ranch v. Board of County Commissioner
+  authority: United States Court of Appeals for the Tenth Circuit
+  container-title: F.4th
+  volume: '61'
+  page: '1225'
+  issued:
+    date-parts:
+    - - 2023
+      - 3
+      - 6
+  URL: https://www.courtlistener.com/opinion/9381560/high-lonesome-ranch-v-board-of-county-commissioner/
+  accessed:
+    date-parts:
+    - - 2026
+      - 11
+      - 26
+original_link: https://www.courtlistener.com/opinion/9381560/high-lonesome-ranch-v-board-of-county-commissioner/
+retrieved: '2026-11-26'
+archives: []
+history:
+  status: live
+  last_checked: '2026-11-26'
+rights:
+  status: no-permission-needed
+  basis: government-edict
+  basis_note: The text of a judicial opinion has no copyright (Georgia v. Public.Resource.Org, Inc., 590 U.S. 255 (2020)). The copy served on this site is the court's opinion only, without the publisher's headnotes, synopsis or other editorial matter (decision record 0060).
+  redistribution: true
+nations_in_case:
+  checked: '2026-11-26'
+  named: []
+jurisdictions:
+- level: federal
+topics:
+- federal-court-indian-law
+found_in:
+- 2026-11-26-federal-court-indian-law-opinions
+notes: Published at 61 F.4th 1225. Decided by the United States Court of Appeals for the Tenth Circuit on Mar. 6, 2023. Found by scripts/caselaw/courtlistener_federal_opinions.py and scripts/caselaw/state_court_opinions.py in CourtListener's bulk files, with an Indian law term score of 1; an AI reader read excerpts and judged it an Indian law case (Ute reservation termination history, land status).
+review:
+  status: unverified
+  by: scripts/caselaw/state_court_opinions.py
+  date: '2026-11-26'
+  checks:
+  - check: 'Indian law case: the term score and, below the score kept without a reading, an AI reader''s judgment of excerpts'
+    result: agree
+    detail: 'score 1; reader: Ute reservation termination history, land status'
+  - check: Nations named in the caption, matched to nation records by name
+    result: agree
+    detail: 0 matched, 0 not linked

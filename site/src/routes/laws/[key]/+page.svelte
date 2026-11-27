@@ -19,8 +19,9 @@
 
 	let { data }: PageProps = $props();
 
-	let cededMapWanted = $state(true);
 	let cededMapReady = $state(false);
+	/** If the map cannot start it says so in its frame, with Try again (Trevor, 2026-11-27), so the frame shows then too. */
+	let cededMapFailed = $state(false);
 
 	/** Past this many, the nation pages wait behind a summary line. */
 	const longList = 12;
@@ -50,10 +51,10 @@
 	<meta name="description" content="{data.name}, {data.citation}: what it did, the accounts of its impact and where to read it." />
 </svelte:head>
 
-<!-- The land a treaty ceded, drawn under Key facts (Trevor, 2026-11-26, historic maps mockup 7). With no map on the device, Key facts' Land ceded row says the same in words. -->
+<!-- The land a treaty ceded, drawn under Key facts (Trevor, 2026-11-26, historic maps mockup 7). Key facts' Land ceded row says the same in words. -->
 {#snippet cededMap()}
-	{#if data.landCeded && cededMapWanted}
-		<div class="ceded-map no-print" class:ready={cededMapReady}>
+	{#if data.landCeded}
+		<div class="ceded-map no-print" class:ready={cededMapReady || cededMapFailed}>
 			<TileMap
 				view="lands"
 				label="Land ceded by {data.name}"
@@ -62,7 +63,7 @@
 				cessionsShown={data.landCeded.royce}
 				cessionsAlways
 				onready={() => (cededMapReady = true)}
-				onfail={() => (cededMapWanted = false)}
+				onfail={() => (cededMapFailed = true)}
 			/>
 		</div>
 	{/if}
@@ -175,7 +176,7 @@
 {#snippet stubStatus()}{#if data.stub}<StubBadge stub={data.stub} />{/if}{/snippet}
 
 <style>
-	/* The map takes its place once it has drawn, so a device that cannot draw it never shows an empty frame. */
+	/* The map takes its place once it has drawn, or once it says it could not load, so the page never shows an empty frame. */
 	.ceded-map {
 		margin-top: var(--space-3);
 	}

@@ -1,0 +1,73 @@
+key: drummond-2026
+kind: federal-case
+citation:
+  type: legal_case
+  title: Drummond
+  authority: United States District Court for the Northern District of Oklahoma
+  issued:
+    date-parts:
+    - - 2026
+      - 2
+      - 17
+  URL: https://www.courtlistener.com/opinion/10795236/the-eastern-shawnee-tribe-of-oklahoma-and-the-ottawa-tribe-of-oklahoma/
+  accessed:
+    date-parts:
+    - - 2026
+      - 11
+      - 26
+original_link: https://www.courtlistener.com/opinion/10795236/the-eastern-shawnee-tribe-of-oklahoma-and-the-ottawa-tribe-of-oklahoma/
+retrieved: '2026-11-26'
+archives: []
+history:
+  status: live
+  last_checked: '2026-11-26'
+rights:
+  status: no-permission-needed
+  basis: government-edict
+  basis_note: The text of a judicial opinion has no copyright (Georgia v. Public.Resource.Org, Inc., 590 U.S. 255 (2020)). The copy served on this site is the court's opinion only, without the publisher's headnotes, synopsis or other editorial matter (decision record 0060).
+  redistribution: true
+tribes:
+- eastern-shawnee-tribe-of-oklahoma
+- ottawa-tribe-of-oklahoma
+- miami-tribe-of-oklahoma
+- seneca-cayuga-nation
+nations_in_case:
+  checked: '2026-11-26'
+  named:
+  - nation: eastern-shawnee-tribe-of-oklahoma
+    named_as: Eastern Shawnee Tribe of Oklahoma
+    role: party
+    note: Matched by the script to the nation record of the same name; not yet checked.
+  - nation: ottawa-tribe-of-oklahoma
+    named_as: Ottawa Tribe of Oklahoma
+    role: party
+    note: Matched by the script to the nation record of the same name; not yet checked.
+  - nation: miami-tribe-of-oklahoma
+    named_as: Miami Tribe of Oklahoma
+    role: party
+    note: Matched by the script to the nation record of the same name; not yet checked.
+  - nation: seneca-cayuga-nation
+    named_as: Seneca-Cayuga Nation
+    role: party
+    note: Matched by the script to the nation record of the same name; not yet checked.
+  not_linked:
+  - named_as: Mopoc Nation
+    reason: No nation record matches this name; it may be a historical name or a group that is not a recognized nation today.
+jurisdictions:
+- level: federal
+topics:
+- federal-court-indian-law
+found_in:
+- 2026-11-26-federal-court-indian-law-opinions
+notes: Docket 4:23-cv-00105; no reporter citation yet. Decided by the United States District Court for the Northern District of Oklahoma on Feb. 17, 2026. Found by scripts/caselaw/courtlistener_federal_opinions.py and scripts/caselaw/state_court_opinions.py in CourtListener's bulk files, with an Indian law term score of 3; an AI reader read excerpts and judged it an Indian law case (reservation disestablishment, Indian country criminal jurisdiction).
+review:
+  status: unverified
+  by: scripts/caselaw/state_court_opinions.py
+  date: '2026-11-26'
+  checks:
+  - check: 'Indian law case: the term score and, below the score kept without a reading, an AI reader''s judgment of excerpts'
+    result: agree
+    detail: 'score 3; reader: reservation disestablishment, Indian country criminal jurisdiction'
+  - check: Nations named in the caption, matched to nation records by name
+    result: missing
+    detail: 4 matched, 1 not linked

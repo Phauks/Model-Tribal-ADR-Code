@@ -1,0 +1,52 @@
+key: choctaw-and-chickasaw-nations-v-united-states-1900
+kind: federal-case
+citation:
+  type: legal_case
+  title: Choctaw & Chickasaw Nations v. United States
+  authority: United States Court of Claims
+  container-title: Ct. Cl.
+  volume: '36'
+  page: '573'
+  issued:
+    date-parts:
+    - - 1900
+      - 12
+      - 10
+  URL: https://static.case.law/us-ct-cl/36/html/0573-02.html
+  accessed:
+    date-parts:
+    - - 2026
+      - 11
+      - 26
+original_link: https://static.case.law/us-ct-cl/36/html/0573-02.html
+retrieved: '2026-11-26'
+archives: []
+history:
+  status: live
+  last_checked: '2026-11-26'
+rights:
+  status: no-permission-needed
+  basis: government-edict
+  basis_note: The text of a judicial opinion has no copyright (Georgia v. Public.Resource.Org, Inc., 590 U.S. 255 (2020)). The copy served on this site is the court's opinion only, without the publisher's headnotes, synopsis or other editorial matter (decision record 0060).
+  redistribution: true
+nations_in_case:
+  checked: '2026-11-26'
+  named: []
+jurisdictions:
+- level: federal
+topics:
+- federal-court-indian-law
+found_in:
+- 2026-11-26-federal-court-indian-law-opinions
+notes: Published at 36 Ct. Cl. 573. Decided by the United States Court of Claims on Dec. 10, 1900. Found by scripts/caselaw/state_court_opinions.py in the Caselaw Access Project's volumes, with an Indian law term score of 1; an AI reader read excerpts and judged it an Indian law case (Choctaw and Chickasaw tribal land under 1855 treaty).
+review:
+  status: unverified
+  by: scripts/caselaw/state_court_opinions.py
+  date: '2026-11-26'
+  checks:
+  - check: 'Indian law case: the term score and, below the score kept without a reading, an AI reader''s judgment of excerpts'
+    result: agree
+    detail: 'score 1; reader: Choctaw and Chickasaw tribal land under 1855 treaty'
+  - check: Nations named in the caption, matched to nation records by name
+    result: agree
+    detail: 0 matched, 0 not linked

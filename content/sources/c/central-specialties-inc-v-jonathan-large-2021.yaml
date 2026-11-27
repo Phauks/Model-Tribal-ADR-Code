@@ -1,0 +1,52 @@
+key: central-specialties-inc-v-jonathan-large-2021
+kind: federal-case
+citation:
+  type: legal_case
+  title: Central Specialties, Inc. v. Jonathan Large
+  authority: United States Court of Appeals for the Eighth Circuit
+  container-title: F.4th
+  volume: '18'
+  page: '989'
+  issued:
+    date-parts:
+    - - 2021
+      - 11
+      - 24
+  URL: https://www.courtlistener.com/opinion/5300596/central-specialties-inc-v-jonathan-large/
+  accessed:
+    date-parts:
+    - - 2026
+      - 11
+      - 26
+original_link: https://www.courtlistener.com/opinion/5300596/central-specialties-inc-v-jonathan-large/
+retrieved: '2026-11-26'
+archives: []
+history:
+  status: live
+  last_checked: '2026-11-26'
+rights:
+  status: no-permission-needed
+  basis: government-edict
+  basis_note: The text of a judicial opinion has no copyright (Georgia v. Public.Resource.Org, Inc., 590 U.S. 255 (2020)). The copy served on this site is the court's opinion only, without the publisher's headnotes, synopsis or other editorial matter (decision record 0060).
+  redistribution: true
+nations_in_case:
+  checked: '2026-11-26'
+  named: []
+jurisdictions:
+- level: federal
+topics:
+- federal-court-indian-law
+found_in:
+- 2026-11-26-federal-court-indian-law-opinions
+notes: Published at 18 F.4th 989. Decided by the United States Court of Appeals for the Eighth Circuit on Nov. 24, 2021. Found by scripts/caselaw/courtlistener_federal_opinions.py and scripts/caselaw/state_court_opinions.py in CourtListener's bulk files, with an Indian law term score of 1; an AI reader read excerpts and judged it an Indian law case (tribal police authority over traffic enforcement).
+review:
+  status: unverified
+  by: scripts/caselaw/state_court_opinions.py
+  date: '2026-11-26'
+  checks:
+  - check: 'Indian law case: the term score and, below the score kept without a reading, an AI reader''s judgment of excerpts'
+    result: agree
+    detail: 'score 1; reader: tribal police authority over traffic enforcement'
+  - check: Nations named in the caption, matched to nation records by name
+    result: agree
+    detail: 0 matched, 0 not linked
