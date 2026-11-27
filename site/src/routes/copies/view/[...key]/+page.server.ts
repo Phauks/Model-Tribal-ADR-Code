@@ -15,11 +15,12 @@
  * original is kept, without the file; one the nation chose to hide answers
  * without naming it (src/lib/nation-restrictions.ts).
  */
-import { error } from '@sveltejs/kit';
+import { error, redirect } from '@sveltejs/kit';
 import { fileName, verifyLink } from '#lib/checksums.ts';
 import {
 	copyDetailsPath,
 	copyDetailsShard,
+	copyPagePath,
 	copyPath,
 	fileSize,
 	mediaLabel,
@@ -28,7 +29,7 @@ import {
 	type CopyDetails
 } from '#lib/public-copies.ts';
 import { hiddenCopyMessage } from '#lib/nation-restrictions.ts';
-import { servedCopy } from '#lib/server/copy-list.ts';
+import { movedCopy, servedCopy } from '#lib/server/copy-list.ts';
 import { workerEnvironment } from '#lib/server/environment.ts';
 import { copyLevel } from '#lib/server/nation-restrictions.ts';
 import { readableDate } from '#lib/readable-date.ts';
@@ -51,6 +52,12 @@ async function detailsOf(key: string, shard: string, url: URL, fetcher: typeof f
 }
 
 export const load: PageServerLoad = async ({ params, url, fetch, setHeaders }) => {
+	// A saved web page of a document the site also keeps as a PDF or a text opens that copy (copyMoves).
+	const moved = await movedCopy(params.key);
+	if (moved) {
+		setHeaders({ 'cache-control': 'public, max-age=86400' });
+		redirect(302, copyPagePath({ key: moved }));
+	}
 	const copy = await servedCopy(params.key);
 	if (!copy) error(404, 'This site keeps no copy at this address.');
 	const level = await copyLevel(workerEnvironment().database, copy);
